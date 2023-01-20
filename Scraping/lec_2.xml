@@ -1,0 +1,508 @@
+<doc><lectureno>2</lectureno><course>dummy</course><date>dummy</date><headline>dummy</headline><url>https://ocw.mit.edu/courses/6-s897-machine-learning-for-healthcare-spring-2019/2020812c6b3be9e2c27873595d1a9aed_MIT6_S897S19_lec1.pdf</url><slides><slide><slideno>0</slideno><text>	 	 	
+	
+	 	 	 	
+	 	 	 	Machine Learning for Healthcare 
+HST.956, 6.S897 
+Lecture 1: What makes	 healthcare unique ? 
+Prof. David Sontag &amp; Pete	 Szolovits 
+1</text><slideno>1</slideno><text>	
+		 	 	 	 	 	
+	 	 	 	
+	 	 	 	 	 	 	
+	 	 	 	
+	
+	 	
+	 	 	The Problem 
+•Cost of health	 ca re expenditures in the US are
+over $3 trillion, and rising
+•Despite having som e of the best clinicians in
+the world, chronic conditions are
+–Often diagnosed	 lat e
+–Often inappropriately mana ged
+•Medical errors are  pervasive
+2</text><slideno>2</slideno><text>	 	 	
+	 	 	 	 	 	 	
+	
+	 	 	 	 	
+	 	 	 	 	
+	 	 	Outline for today’s class 
+1.Brief history of A I and ML in healthcare
+2.Why now?
+3.Exa
+mples of how  ML will transform
+healthcare
+4.What is unique abo ut ML in healthcare ?
+5.Overview of cla ss syllabus
+3</text><slideno>3</slideno><text>	 	
+	 	 	
+	 	 	
+	 	
+	 	 	 	
+	 	 	 	
+	 		
+USERIDescription
+of new case
+Advice &amp;
+Explanation=~User
+inter-
+faceEXPERT SYSTEM
+qp~ Inference Engine
+t
+qp_~ Knowledge [Base
+FIGURE 1-1 Major parts of an expert system. Arrows indicate
+information flow.I am ready
+** THIS IS A 26 YEAR OLD MALE PATIENT
+My understanding is:
+The age of the patient is 26
+The sex of the patient is male
+** FIVE DAYS AGO, HE HAD RESPIRATORY-TRACT SYMPTOMS
+What is his name?** JO
+My understanding is:
+The name of the patient is Jo
+Respiratory-tract is one of the symptoms that the patient had
+** A COUPLE OF DAYS BEFORE THE ADMISSION, HE HAD A MALAISE
+Please give me the date of admission
+** MARCH 12, 1979My understanding is:
+The patient was admitted at the hospital 3 days ago
+Malaise is one of the symptoms that the patient had 5 days ago
+FIGURE 33-1 Short sample dialogue. The physician’s inputs
+appear in capital letters after the double asterisks.1970’s: MYCIN	 expert system 
+• 1970’s (Stanford): MY CIN expert Dialogue interface system for identifying bacteria 
+causing severe infections 
+• Proposed a go od therapy in 
+~69% of cases. Better than 
+infectious disease	 experts 
+4
+© Addison-Wesley Publishing Company, Inc. This content is excluded from our Creative Commons license. For more information, see https://ocw.mit.edu/help/faq-fair-use/ </text><slideno>4</slideno><text>2%*UQ93)WX#S^XW"# _2`aP^)7@F-: 
+!2%*UQ9)YG;&lt;H$)@C)?&lt;//9A01K5Z3
+WX#S^XW"# _2`a0&lt;.8)P-F&lt;.6:
+^-C-1-;. -
+!L&lt;6K;@9&lt;9)C@1)&lt;;/-1;6:)7-F&lt;.&lt;; -
+C:0 E;-07@;&lt;6 F&lt;6A-/-9 
+L&lt;9-69-9 
+"O7E/@79 
+C6/&lt;K0-
+ .@0K5 .5-9/ 5&lt;K5
+E6&lt;; b2B 1*-?"?%/%90%#(@-5'/(*'/"0%&amp;+A 
+&amp;+U)A&lt;;61O)F&lt;9-69-)H61&lt;6A:-9 
+T(U+&amp;)A&lt;;61O)9O7E/@7)H61&lt;6A:-9) T&amp;(T+U)F&lt;1-./-F)-FK-9 
+S:&lt;.&lt;/-F)C1@7)F@./@193 
+:B(C'*9-&amp; D&lt;'"*9(-,(E-*F 
+)'5(0-("54"&amp;#'9(%&amp;(!)(7(=&gt;( 
+G;"&lt;'9%"&amp;(&amp;'0E-*F9H("CC*-I%@"0'( %&amp;,'*'&amp;#'J 
+1*-?/'@9A 2$ B:&lt;;&lt;.&lt;6;9)-;/-1-F)9O7E/@79) ()!$)**+ 
+R$ L&lt;CC&lt;.0:/)/@)76&lt;;/6&lt;;()F&lt;CC&lt;.0:/)/@)K-;-16:&lt;f -
+5
+cP&lt;::-1)-/)6:$()d*'() "5M- -/)6:$()d%2e </text><slideno>5</slideno><text>	 	 	
+	 	 	
+	
+	 	
+	 	 	 	 	 	 	
+	 	 	 	 	 	 	 	 	 	 	 	 	
+	1980’s: automating medical discovery 
+Discovers that prednisone 
+elevates cholesterol 
+(Annals 	of Internal Medicine, 	‘86) 
+[Robert Blum,	 “Discovery,	 Confirmation and Incorporation of Causal Relationships 
+from a Large Time -Oriented Clinical Data Base: The RX Project”. Dept. of Computer 
+Science,	 Stanford. 1981] 
+Diagram © Robert Blum . All rights reserved. This content is excluded from our Creative Commons license. For more information, see https://ocw.mit.edu/help/faq-fair-use/ 
+6</text><slideno>6</slideno><text>	 	 	
+	 	 	
+	 	 	 	 	
+	 	 	 	
+	 	 	 	
+	 	 	 	
+	
+	 	 	 	 	 	 	 	 	 		 	 	 	 	 	
+	 	 	 	 	
+	 	 	 	FIGURE 2. A multilayer perceptron. This is a two-layer percep-
+tron with four inputs, four hidden units, and one output unit.1990’s: neural networks	 in medicine 
+•Neural networks with
+cl
+inical data took off in
+1990, with 88	 new studies
+that	 year
+•Small number of f eatures
+(inputs)
+•Data often collected by
+ch
+art review
+Problems: 1. Did not fit well into clinical workflow 
+2.Hard to get en ough training data
+3.Poor generalization to n ew places
+[Penny &amp; Frost,Neural Networks in Clinical Medicine. Med Decis Making, 1996] 
+7
+© Society for Medical Decision Making. All rights reserved. This content is excluded from our Creative Commons license. 
+For more information, see https://ocw.mit.edu/help/faq-fair-use/ </text><slideno>7</slideno><text>	 	 	
+	 	 	 	 	 	 	
+	
+	 	 	 	 	
+	 	 	 	 	
+	 	 	Outline for today’s class 
+1.Brief history of A I and ML in healthcare
+2.Why now?
+3.Exa
+mples of how  ML will transform
+healthcare
+4.What is unique abo ut ML in healthcare ?
+5.Overview of cla ss syllabus
+8</text><slideno>8</slideno><text>	
+	 		
+	 	 	 	 	
+	 	 	 	 	 	
+	 	 	 	 	71.9%85.2%*9496.9%*96%
+Certied EHR
+Basic EHR00000The Opportunity : 
+Adoption of Electronic Health Records 
+(EHR)	 has increased 9x in US since 2008
+%* 
+9.4% 12.2% 15.6% 27.6%* 44.4%* 59.4%* 75.5%* 83.8%* 
+Percentage 
+of hospitals 
+in the	 US 
+2008 2009 2010 2011 2012 2013 2014 2015 
+Courtesy of Health and Human Services. Image is in the public domain. 
+[Henry et al.,	 ONC Data Brief,	 May 2016] 
+9</text><slideno>9</slideno><text> 
+ 
+10,61K-)F6/69-/9 
+,6A@16/@1O) C@1)
+B@7E0/6/&lt;@;6:)
+?5O9&lt;@:@KO 
+L-_&lt;F-;/&lt;C&lt;-F) 
+5-6:/5)F6/6)C1@7) 
+[TUm).1&lt;/&lt;.6:).61 -) 
+E6/&lt;-;/9 
+L-7@K16E5&lt;.9 () 
+H&lt;/6:)9&lt;K;9() 
+:6A@16/@1O)/-9/9() 7-F&lt;.6/&lt;@;9() ;@/-9() n 
+© Lab for Computational Physiology. All rights reserved. This content is excluded from our Creative Commons license. 
+For more information, see https://ocw.mit.edu/help/faq-fair-use/ </text><slideno>10</slideno><text>	 	 	 	 	 	 	 	
+	 	 	 	 	 	 	 		
+	 	
+	 	
+	 	
+	 	
+	
+	
+	Large datasets 
+President Obama’s initiative to create a 1 million 
+person	 research	 cohort Core data set: 
+• Baseline health ex am 
+• Clinical data de rived 
+from electronic health 
+records (EHRs ) 
+• Healthcare cla ims 
+• Laboratory dat a 
+[Precision Medicine Initiative (PMI) working Group Report,	 Sept. 17 2015] 
+11</text><slideno>11</slideno><text>  
+ 
+ 
+ L&lt;H-19&lt;/O)@C)F&lt;K&lt;/6:)5-6:/5)F6/6 
+genomics lab tests proteomics 
+social media 
+phone 
+imaging 
+vital signs 
+ devices 
+/mages are h^ 'overnment worŬ. /mages are in the public domain. 
+12</text><slideno>12</slideno><text>"/6;F61F&lt;f6/&lt;@; 
+! L&lt;6K;@9&lt;9).@F-93)WBL _%)6;F 
+WBL_2U)YW;/-1;6/&lt;@;6:
+B:699&lt;C&lt;.6/&lt;@;)@C) L&lt;9-69-9Z 
+n 
+n n 
+5//E93``-; $M&lt;8&lt;E- F&lt;6$@1K`M&lt;8&lt;`,&lt;9/p@CpWBL_% p.@F-9 
+5//E93``A: @K$.01-7F$.@7`/5-_7@ 9/_A&lt;f611-_&lt;.F_2U_.@F -9_&lt;;C@K16 E5&lt;.` 
+13</text><slideno>13</slideno><text> 
+ "/6;F61F&lt;f6/&lt;@; 
+! L&lt;6K;@9&lt;9).@F-93)WBL _%)6;F 
+WBL_2U)YW;/-1;6/&lt;@;6:
+B:699&lt;C&lt;.6/&lt;@;)@C) L&lt;9-69-9Z 
+! ,6A@16/@1O)/-9/93),NWXB
+.@F-9 
+! ?56176.O3)X6/&lt;@;6:)L10K 
+B@F-9)YXLB9Z 
+! G;&lt;C&lt;-F) P-F&lt;.6:),6;K06K -
+"O9/-7)YGP,"Z3)7&lt;::&lt;@;9)@C7-F&lt;.6:).@;.-E/9 
+© -O*/C. All rights reserved. This content is excluded 
+from our Creative Commons license. For more 
+information, see https://ocw.mit .edu/help/faq-fair-use/ 
+© Oplinc. All rights reserved. This content is excluded from our Creative Commons 
+license. For more information, see https://ocw.mit.edu/help/faq-fair-use/ 
+14</text><slideno>14</slideno><text>"/6;F61F&lt;f6/&lt;@; 
+/mage is in the public domain. 
+15</text><slideno>15</slideno><text>	Standardization 
+OMOP 
+Common Data Model v5.0 
+Image is in the public domain. 
+16</text><slideno>16</slideno><text> 
+ ]1-68/51@0K59)&lt;;)76.5&lt;;-):-61;&lt;;K 
+$%&amp;'!"#( 
+! ]&lt;K)F6/6 
+! b:K@1&lt;/57&lt;.)6FH6;.-9 
+! NE-;_9@01.-)9@C/M61-
+© &amp;co nomist and 4tanford 7ision -aC. All rights reserved. This content is excluded from our Creative Commons license. For more information, 
+see https://ocw .mit.edu/help/faq-fair-use/ 
+17</text><slideno>17</slideno><text>	 	 	
+	 	 	 	 	
+	 	 	 	 	
+	 	 	
+	 	 	 	 	
+	 	
+	 	 	
+	 	 	 	 	
+	 	Breakthroughs in machine learning 
+• Major advances in  ML &amp; AI 
+– Learning with hi gh-dimensional features (e.g., l1-
+regularization) 
+– Semi -supervised an d unsupervised learning 
+– Modern deep le arning techniques (e.g. convnets , 
+variants of SGD) 
+• Democratization of m achine learning 
+– High quality op en-source software, such as 
+Python’s scikit -learn, TensorFlow ,	 Torch,	 Theano 
+18</text><slideno>18</slideno><text>19© Rock Health. All rights reserved. This content is excluded from our Creative Commons license. 
+For more information, see https://ocw.mit.edu/help/faq-fair-use/ </text><slideno>19</slideno><text>20© C# *nformation 4ervices. All rights reserved. This content is excluded from our Creative Commons license. For more information, see 
+https://ocw.mit.edu/help/faq-fair-use/ </text><slideno>20</slideno><text>	 	 	 	 	
+	 	 	 	 	 	 	
+	 	 	 	 	 	
+	
+	 	 	 	 	
+	
+	
+	 	 	
+	 	 	Industry interest in ML &amp; healthcare 
+• Major acquisitions to  get big data for ML: 
+– Merge ($1 billion p urchase by IBM, 2015) 
+medical imaging 
+– Tr
+uven Health An alytics ($2.6 billion purchase by 
+IBM, 2016 ) 
+health	 insurance cl aims 
+– Flatiron 	Health ($ 1.9 billion purchase 	by 	Roche, 
+2018) 
+electronic health rec ords (oncology) 
+21</text><slideno>21</slideno><text>	 	 	
+	 	 	 	 	 	 	
+	
+	 	 	 	
+	 	 	 	 	
+	 	 	Outline for today’s class 
+1. Brief history of  AI and ML in healthcare 
+2. Why now? 
+3.
+ Examples of ho w	 ML will transform 
+healthcare 
+4. What is unique ab out ML in healthcare ? 
+5. Overview of cl ass syllabus 
+22</text><slideno>22</slideno><text>P,)M&lt;::)/16;9C@17)-H-1O)69E-./)@C)5-6:/5.61 -
+#5-)9/68-5@:F-193 
+ªTPVSDFVOLOPXO"MMSJHIUTSFTFSWFE5IJTDPOUFOUJTFYDMVEFEGSPNPVS$SFBUJWF$PNNPOTMJDFOTF'PSNPSFJOGPSNBUJPO 
+TFFIUUQTPDXNJUFEVIFMQGBRGBJSVTF 
+23</text><slideno>23</slideno><text>	
+	
+	
+	
+24Emergency Department: 
+• Limited resources 
+• Time sensitive 
+• Critical decisions 
+Courtesy of the US Navy. Image is in the public domain. </text><slideno>24</slideno><text>456/)M&lt;::)/5-)S^)@C)/5-)C0/01-)A-):&lt;8-&gt; 
+]-5&lt;;F_/5-_9.-;-9)1-69@;&lt;;K)6A@0/)/5-)E6/&lt;-;/Q9 ) 
+.@;F&lt;/&lt;@;9)Y.011-;/)6;F)C0/01-Z 
+C:0 E;-07@;&lt;6 F&lt;6A-/-9 ! ]-//-1)/1&lt;6K -
+! l69/-1) F&lt;6K;@9&lt;9 
+! S61:O)F-/-./&lt;@;)@C 
+6FH-19-)-H-;/9 
+! ?1-H-;/)7-F&lt;.6: -11@19 
+b0/@76/&lt;.6::O)-D/16./-F)C1@7) 
+-:-./1@;&lt;.)5-6:/5)1-.@1F 
+L&lt;9-69-9 
+"O7E/@79 
+C6/&lt;K0- .5-9/ 
+E6&lt;; .@0K5 5&lt;K5 
+b2B 
+L1&lt;H-9 
+E6&lt;;
+ b2B
+25</text><slideno>25</slideno><text>             
+456/)M&lt;::)/5-)S^)@C)/5-)C0/01-)A-):&lt;8-&gt; 
+?1@E6K6/&lt;;K)A-9/)E16./&lt;.-9 ) 
+26
+© source unLnown. All rights reserved. This content is excluded from our Creative Commons license. For more information, see https://ocw.mit.edu/help/faq-fair-use/ </text><slideno>26</slideno><text>               456/)M&lt;::)/5-)S^)@C)/5-)C0/01-)A-):&lt;8-&gt; 
+© source unLnown. All rights reserved. This content is excluded from our Creative Commons license. For more information, see https://ocw.mit.edu/help/faq-fair-use/ b;/&lt;.&lt;E6/&lt;;K)/5-).:&lt;;&lt;.&lt;6;9Q 
+;--F9 
+27</text><slideno>27</slideno><text> 456/)M&lt;::)/5-)S^)@C)/5-)C0/01-)A-):&lt;8-&gt; 
+^-F0.&lt;;K)/5-);--F)C@1)9E-.&lt;6:&lt;9/).@;90:/9 
+Output 
+Pneumonia Positive (85%) Input 
+Chest X-Ray Image 
+CheXNet 
+121-layer CNN 
+b115O/57&lt;6&gt; 
+l&lt;K01-) 9@01.-93) ^6iE01861 -/)6:$()61h&lt;H32+22$U&amp;RR&amp;) Q2+ 
+^6iE01861 -/)6:$()61h&lt;H32+U+$U2*J'()q2+ © 3aKpurLar et al. All rights reserved. This content is excluded from our 
+Creative Commons license. For more information, see https://ocw.mit.edu/help/faq-fair-use/ 
+28</text><slideno>28</slideno><text>             456/)M&lt;::)/5-)S^)@C)/5-)C0/01-)A-):&lt;8-&gt; 
+b0/@76/-F)F@.07-;/6/&lt;@;)6;F)A&lt;::&lt;;K 
+#1&lt;6K-);@/-
+?1-F&lt;./-F) 
+.5&lt;-C) 
+.@7E:6&lt;;/9 B@;/-D/06:) 
+60/@_ 
+.@7E:-/-
+29
+© source unLnown. All rights reserved. This content is excluded from our Creative Commons license. For more information, see https://ocw.mit.edu/help/faq-fair-use/ </text><slideno>29</slideno><text>P,)M&lt;::)/16;9C@17)-H-1O)69E-./)@C)5-6:/5.61 -
+#5-)9/68-5@:F-193 
+ªTPVSDFVOLOPXO"MMSJHIUTSFTFSWFE5IJTDPOUFOUJTFYDMVEFEGSPNPVS$SFBUJWF$PNNPOTMJDFOTF'PSNPSFJOGPSNBUJPO 
+TFFIUUQTPDXNJUFEVIFMQGBRGBJSVTF 
+30</text><slideno>30</slideno><text>456/)&lt;9)/5-)C0/01-)@C)5@M)M-)/1-6/) 
+.51@;&lt;.)F&lt;9-69-&gt; 
+! ?1-F&lt;./&lt;;K)6)E6/&lt;-;/Q9)C0/01-)F&lt;9-69-)E1@K1-99 &lt;@; 
+R%@' 
+Disease burden 
+#&lt;7-Undiagnosed
+condition 
+Courtesy of the CDC. Image is in the public domain. 
+l&lt;K01-).1-F&lt;/3)5//E93``MMM$.F.$K@H`8 &lt;F;-OF&lt;9-69-`E1-H-;/&lt;@;_1 &lt;98$5/7: 
+31</text><slideno>31</slideno><text>   
+   
+  456/)&lt;9)/5-)C0/01-)@C)5@M)M-)/1-6/) 
+.51@;&lt;.)F&lt;9-69-&gt; 
+! ?1-F&lt;./&lt;;K)6)E6/&lt;-;/Q9)C0/01-)F&lt;9-69-)E1@K1-99 &lt;@; 
+! ?1-.&lt;9&lt;@;)7-F&lt;.&lt;; -
+S$--9%&amp;+(,%*90(/%&amp;'(0$'*"C&lt;(%&amp;(@Q/0%C/'(@&lt;'/-@" 
+=J TU5A .61C&lt;:f@7&lt;A _:-;6:&lt;F@7&lt;F- _F-D67-/569@;- ();J(VU5A A@1/-f@7&lt;A _:-;6:&lt;F@7&lt;F- _F-D67-/569@;-
+Progression on KRd 
+Treatment A 
+Treatment B Patient w. 
+condition X Response to treatment A 
+Response to treatment B Diagnosis and first -line treatment 
+Progression on VRd 
+#&lt;7-
+32</text><slideno>32</slideno><text>	 	 	 	 	 	 	 	
+	 	 	 	 	
+	 	 	 	 	 	
+	 	 	
+	 	 	 	 	 	
+	 	 	What is the future of how we treat 
+chronic	 disease? 
+• Early diagnosis, e. g. of diabetes, Alzheimer's, 
+cancer 
+• Continuous monitoring and coaching, e.g. for the 
+elderly, diabetes, psychiatric disease 
+• Discovery of new disease subtypes; design of 
+new drugs;	 better targeted	 clinical trials 
+33</text><slideno>33</slideno><text>	 	
+	 	 	 	 	 	 	
+	
+	 	 	 	 	
+	 	 	 	 	
+	 	 	Outline for today’s	 class 
+1. Brief history of  AI and ML in healthcare 
+2. Why now? 
+3.
+ Examples of ho w ML will transform 
+healthcare 
+4. What is unique ab out ML in healthcare ? 
+5. Overview of cl ass syllabus 
+34</text><slideno>34</slideno><text>	 	 	
+	 	 	
+	
+	 	 	 	 	 	
+	 	 	 	 	
+	 	 	
+	 	 	 	 	
+	 	 	 	 	 	
+	 	 	 	 	 	 	 	 	 	
+	 	 	
+	 	 	 	 	 	 	 	 	
+	 	 	 	 	 	 	What makes healthcare different? 
+• Life or death d ecisions 
+– Need robust alg orithms 
+– Checks and ba lances built into ML deployment 
+– (Also 	arises 	in  	other applications of 	AI such as autonomous 
+driving) 
+– Need fair and a ccountable algorithms 
+• Many questions are ab out unsupervised learning 
+– Discovering dis ease subtypes, or answering question such 
+as “characterize the types of people that are highly likely to 
+be readmitted	 to the hospital”? 
+• Many of the q uestions we want to answer are causal 
+– Naïve use of s upervised machine learning is insufficient 
+35</text><slideno>35</slideno><text>	 	 	
+	 	 	
+	 	 	
+	 	 	 	 	 	
+	
+	 	 	 	 	 	 	 	
+	
+	 	 	
+	 	 	 	 	
+	What makes healthcare different? 
+• Very little labeled d ata 
+– Motivates semi -sup ervised learning algorithms 
+• Sometimes sma ll numbers of samples (e.g., a 
+rare disease) 
+– Learn as much a s possible from other data (e.g. 
+healthy patients) 
+– Model the pr oblem carefully 
+• Lots	 of missing d ata, varying time intervals, 
+censored labels 
+36</text><slideno>36</slideno><text>	 	 	
+	 	 	
+	 	 	 	 	
+	 	 	
+	 	 	 	 	
+	 	
+	 	 	 	 	 	 	 	
+	 	 	
+	 	 	 	 	What makes healthcare different? 
+• Difficulty of de-id entifying data 
+– Need for data	 s haring agreements and sensitivity 
+• Difficulty of de ploying ML 
+– Commercial ele ctronic health record software is 
+difficult to modify 
+– Data is often i n silos; everyone recognizes need for 
+interoperability, but slow progress 
+– Careful testing an d iteration is needed 
+37</text><slideno>37</slideno><text>	 	 	
+	 	 	 	 	
+	 	 	 	 	 	 	
+	 	 	 	
+	 	 	 	
+	 	 	 	 	
+	 	 	
+	 	 	 	 	 	 	Goals for the semester 
+• Intuition for wo rking with healthcare data 
+• How to set u p as machine learning problems 
+• Understand whi ch learning algorithms are 
+likely to be useful	 and when 
+• Appreciate subtleties in  safely &amp; robustly 
+applying ML in healthcare 
+• Set the research a genda for the next decade 
+38</text><slideno>38</slideno><text>	 	 	 	 	 	  	 	
+	 	 	
+	 	 	 	 	 	 	 	 	
+	 	 	 	
+	 	 	 	 	
+	 	 	 	
+	 	 	6.S897/HST.956	 vs 6.874 
+• Our class will focus on clinical data and its use 
+to improve health care 
+• For reasons of time &amp; scope, we will not go 
+deep	 into applications in	 the life sciences 
+– For this, we recommend taking 6.874 
+Computational Systems Biology: Deep Learning 
+in the Life Sciences 
+39</text><slideno>39</slideno><text> 
+ 
+ 
+            MIT OpenCourseWare 
+https://ocw.mit.edu 
+6.S897 / HST.956 Machine Learning for Healthcare 
+Spring 2019 
+For information about citing these materials or our Terms of Use, visit: https://ocw.mit.edu/terms 
+40</text></slide></slides><source>dummy</source></doc>
