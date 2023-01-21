@@ -31,7 +31,7 @@ tree.write("index_format.xml")
 """
 
 class Scraper:
-    SCROLL_PAUSE_TIME = 1
+    SCROLL_PAUSE_TIME = 0.8
     COURSES_ON_ONE_SCROLL = 10  # The MIT website displays 10 more pages every time you scroll
 
     def __init__(self, num_courses):
@@ -73,17 +73,28 @@ class Scraper:
         """
         page = self.driver.page_source
         self.driver.quit()
-        soup = BeautifulSoup(page, 'html.parser')
+        soup = BeautifulSoup(page, 'lxml')
 
-        for link in soup.find_all('div', {'class': 'course-title'}):
-            link_title = link.find('span')
-            href = 'https://ocw.mit.edu' + link.find('a')['href']
-            title = link_title.string
-            self.get_single_course_data(href)
+        for course_card in soup.find_all('div', {'class': 'card-contents'}):
+            # Course title info
+            course_title_info = course_card.find('div', {'class': 'course-title'})
+            course_title = course_title_info.find('span').string
+            href = 'https://ocw.mit.edu' + course_title_info.find('a')['href']
+            # Course tags
+            course_tag_info = course_card.find('div', {'class': 'topics-list'})
+            course_tags = [tag.text for tag in course_tag_info.find_all('a', {'class': 'topic-link'})]
+            # Grad / Undergrad
+            level_info = course_card.find('div', {'class': ['lr-row', 'resource-header']}).text
+            # Professor
+            prof_info = course_card.find('div', {'class': ['lr-subtitle', 'listitem']}).find('a').text
 
-    def get_single_course_data(self, item_url):
+            print("\nCourse: '{}'\nLink: {}\nTags: {}\nLevel: {}\nProf: {}\n".format(course_title, href, course_tags, level_info, prof_info))
+            self.get_single_course_data(course_title, href, course_tags, level_info, prof_info)
+
+    def get_single_course_data(self, course_title, href, course_tags, level_info, prof_info):
         """ Scrape each individual course information
         """
+        pass
         # TODO: Link to get_pdf_data etc..
         # source_code = requests.get(item_url)
         # soup = BeautifulSoup(source_code.text, 'html.parser')
