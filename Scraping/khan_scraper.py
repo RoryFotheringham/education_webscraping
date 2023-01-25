@@ -7,6 +7,7 @@ from selenium import webdriver
 from selenium.webdriver.chrome.options import Options
 import time
 import math
+import json
 #from lecture import Lecture, Slide
 
 
@@ -74,9 +75,15 @@ class Scraper:
             soup = BeautifulSoup(response.text, 'lxml')
             content_text = ''
             #print(str(soup.find_all('div')))
-            main = soup.find('main')
+            scripts = soup.find_all('script')
+            for script in scripts:
+                if not script.string:
+                    continue
+                if '__PAGE_SETTINGS__' in script.string[:100]:
+                    content = script.string.strip()
             
-            content = main.find_all('div', {'class':'clearfix'})
+            
+            json_data = json.loads(content)
             for paragraph in content:
                 if paragraph.text:
                     print(paragraph.text)
