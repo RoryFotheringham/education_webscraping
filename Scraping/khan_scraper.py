@@ -8,6 +8,7 @@ from selenium.webdriver.chrome.options import Options
 import time
 import math
 import json
+import slimit
 #from lecture import Lecture, Slide
 
 
@@ -38,6 +39,7 @@ class Scraper:
 
     def __init__(self, num_courses):
         # Initialise variables
+        self.doc_list = []
         self.base_url = 'https://www.khanacademy.org/computing/computer-programming'
         self.options = Options()
         self.options.add_argument('--headless')
@@ -70,42 +72,72 @@ class Scraper:
         
         self.parse_khan_page()
 
-    def get_text_from_article(self, url):
-            response = requests.get(url)
+    def get_text_from_article(self, article_link):
+            response = requests.get(article_link)
             soup = BeautifulSoup(response.text, 'lxml')
-            content_text = ''
+            content = 'no content!'
             #print(str(soup.find_all('div')))
             scripts = soup.find_all('script')
             for script in scripts:
                 if not script.string:
                     continue
                 if '__PAGE_SETTINGS__' in script.string[:100]:
-                    content = script.string.strip()
-            
-            
-            json_data = json.loads(content)
-            for paragraph in content:
-                if paragraph.text:
-                    print(paragraph.text)
-                    content_text = content_text + ' ' + paragraph.text
+                    content = script.string[:20].strip()
+                    
+            return content # currently giving just raw javascript
+                                        # so we can handle a string output
+                                        # ultimately, this method should unpack the JS in 
+                                        # content and return that
                     
 
-    def get_lesson_articles(self, url):
+    
+
+    def get_lesson_articles(self, url, unit_title):
+        """Retrieves all lessons and then all activities in that lesson
+        that are articles. will potentialy update to also retrieve videos
+
+        Args:
+            url (): url
+            unit_title (string): unit_title
+            doc (_type_): ElementTree root
+        """
         response = requests.get(url)
         soup = BeautifulSoup(response.text, 'lxml')
+        lesson_no = 0
         for lesson_card in soup.find_all('div', {'data-test-id':'lesson-card'}):
+            lesson_no += 1
             lesson_card_title = lesson_card.find('a', {'data-test-id':'lesson-card-link'}).text
+            lesson_link = lesson_card.find('a', {'data-test-id':'lesson-card-link'})['href']
             print('\t' + str(lesson_card_title))
             contents = lesson_card.find('div', {'class':'_1g8ypdt'})
+            activity_no = 0
+            
+            doc = ET.Element('doc')
+            self.doc_list.append(doc)
+            slides = ET.SubElement(doc, 'slides')
+            ET.SubElement(doc, 'course').text = unit_title
+            ET.SubElement(doc, 'headline').text = lesson_card_title
+            ET.SubElement(doc, 'url').text = self.base_url + lesson_link
+            ET.SubElement(doc, 'date').text  = 'None'
+            ET.SubElement(doc, 'lectureno').text = str(lesson_no)
+            ET.SubElement(doc, 'source').text = 'Khan Academy'
+            
+            
             for activity in contents.find_all('div', {'class' : '_u7elqji'}):
+                
                 activity_type = activity.find('span', {'aria-label':'Article'}) # might be useful in future to consider 
                                                                                 # aria-label:Talk-Through
                 if activity_type:
+                    activity_no += 1
                     activity_title = activity.find('span', {'class':'_14hvi6g8'}).text
                     print('\t\t' + str(activity_title))
-                    link = self.base_url + activity.find('a')['href']
-                    print('\t\t' + str(link)[:30])
-                    self.get_text_from_article(link)
+                    article_link = self.base_url + activity.find('a')['href']
+                    print('\t\t' + str(article_link)[:30])
+                    
+                    slide = ET.SubElement(slides, 'slide')
+                    ET.SubElement(slide, 'slideno').text = str(activity_no)
+                    ET.SubElement(slide, 'text').text = self.get_text_from_article(article_link)
+                    
                                 
                 
    
@@ -119,6 +151,7 @@ class Scraper:
         #for link in soup.find_all('a', {'data-test-id':'lesson-link'}):
             #print(str(link['href']))
 
+
         for unit_card in soup.find_all('div', {'data-slug':'table-of-contents'}):
             unit_header = unit_card.find('a', {'data-test-id':'unit-header'})
             unit_title = unit_header.find('h3').text
@@ -128,9 +161,20 @@ class Scraper:
             print(unit_title)
             print(unit_link)
             print('=============================')
+            
+           
 
-            self.get_lesson_articles(self.base_url + unit_link)
-
+            self.get_lesson_articles(self.base_url + unit_link, unit_title)
+            
+            
+            docno = 0
+            for doc in self.doc_list:
+                docno += 1
+                tree = ET.ElementTree(doc)
+                with open('khan_lec_{}.xml'.format(str(docno)), 'wb') as f:
+                    tree.write(f)                
+                
+            
 
 
     def get_single_course_data(self, course_title, href, course_tags, level_info, prof_info):
