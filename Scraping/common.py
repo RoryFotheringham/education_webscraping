@@ -10,10 +10,10 @@ class CourseProviders(Enum):
     MIT = 1
     KHAN_ACADEMY = 2
 
-def link_nav(link, *args):
+def link_join(link, *args):
     """ Simplify navigating through links, this function allows you to go into deeper directories (specify in *args) """
     for arg in args:
-        link += "{}{}".format("/" if link[-1] != "/" else "", arg)
+        link += "{}{}".format("/" if (link[-1] != "/" and arg[0] != "/") else "", arg)
     return link
 
 
@@ -45,7 +45,7 @@ class Lectures:
     def add_lecture(self, lecture_title, lecture_pdf_url, lecture_num, slides, videos):
         self.struct.add((lecture_title, lecture_pdf_url, lecture_num, slides, videos))
     
-    def get_info():
+    def get_info(self):
         return self.struct
 
 
@@ -57,7 +57,7 @@ class Slides:
     def insert_slide(self, slide_num, slide_text):
         self.struct.add((slide_num, slide_text))
 
-    def get_info():
+    def get_info(self):
         return self.struct
 
 
@@ -74,7 +74,9 @@ class Videos:
 
 
 class XMLHandler:
-    """ Class to handle XML file creation and storage in desired structure for one whole course """
+    """ Class to handle XML file creation and storage in desired structure for one whole course.
+        Simply provide it with course_provider ENUM type and the Course class.
+    """
     def __init__(self):
         self.course_title = None
 
@@ -95,10 +97,18 @@ class XMLHandler:
             slides_xml = []
             for slide in slides:
                 slide_num, slide_text = slide
-                slides_xml.append(
-                    E.slide(
-                        E.slideno(slide_num),
-                        E.text(slide_text),
+                try:
+                    slides_xml.append(
+                        E.slide(
+                            E.slideno(str(slide_num)),
+                            E.text(slide_text),
+                        ))
+                # Sometimes get 'ValueError: All strings must be XML compatible: Unicode or ASCII, no NULL bytes or control characters'
+                except ValueError:
+                    slides_xml.append(
+                        E.slide(
+                            E.slideno(str(slide_num)),
+                            E.text(""),
                         ))
             return slides_xml
 
@@ -132,17 +142,15 @@ class XMLHandler:
                     )
                 ),
                 E.lectures(
-                    E.lecture(
-                        *lecture_func(lectures),
-                        E.videos(
-                            E.video(
-                                E.video_url(),
-                                E.video_title(),
-                                E.transcript(
-                                    E.slice(
-                                        E.text_slice(),
-                                        E.time_slice(),
-                                    )
+                    *lecture_func(lectures),
+                    E.videos(
+                        E.video(
+                            E.video_url(),
+                            E.video_title(),
+                            E.transcript(
+                                E.slice(
+                                    E.text_slice(),
+                                    E.time_slice(),
                                 )
                             )
                         )

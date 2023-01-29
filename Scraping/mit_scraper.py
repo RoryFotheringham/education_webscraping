@@ -8,11 +8,11 @@ from selenium.webdriver.chrome.options import Options
 from selenium.webdriver.chrome.service import Service
 import time
 import math
-from common import Course, Lectures, Slides, Videos, CourseProviders, XMLHandler, link_nav
+from common import Course, Lectures, Slides, Videos, CourseProviders, XMLHandler, link_join
 
 
 class Scraper:
-    SCROLL_PAUSE_TIME = 0.8
+    SCROLL_PAUSE_TIME = 0.7
     COURSES_ON_ONE_SCROLL = 10  # The MIT website displays 10 more pages every time you scroll
 
     def __init__(self, num_courses):
@@ -44,8 +44,10 @@ class Scraper:
         """
         # Get scroll height
         last_height = self.driver.execute_script("return document.documentElement.scrollHeight")
+        num_courses = math.ceil(num_courses / self.COURSES_ON_ONE_SCROLL) - 1
+        print("======================\nLOADING {} COURSES\n====================".format(num_courses*self.COURSES_ON_ONE_SCROLL))
 
-        for scroll_num in range(math.ceil(num_courses / self.COURSES_ON_ONE_SCROLL) - 1):
+        for scroll_num in range(num_courses):
             # Scroll down to bottom
             self.driver.execute_script("window.scrollTo(0, document.documentElement.scrollHeight);")
 
@@ -73,9 +75,12 @@ class Scraper:
                 course_title_info = course_card.find('div', {'class': 'course-title'})
             except AttributeError:
                 time.sleep(0.2)
-                course_title_info = course_card.find('div', {'class': 'course-title'})
-
-            course_title = course_title_info.find('span').string
+                course_title_info = course_card.find('div', {'class': 'course-title'})   
+            try:
+                course_title = course_title_info.find('span').string
+            except AttributeError:
+                    print("ERROR: Could not load course-title. Skipping...")
+                    continue
             course_url = 'https://ocw.mit.edu' + course_title_info.find('a')['href']
             # Course tags
             course_tag_info = course_card.find('div', {'class': 'topics-list'})
@@ -105,14 +110,14 @@ class Scraper:
         # Get content of each lecture (each PDF link for a course)
         lectures = Lectures()
         for lecture_title, lecture_pdf_url, lecture_num in lec_num_to_link:
-            slides = self.get_pdf_data(lec_link)
+            slides = self.get_pdf_data(lecture_pdf_url)
             lectures.add_lecture(lecture_title, lecture_pdf_url, lecture_num, slides, None)
 
         return lectures
 
     def get_lecture_notes(self, course_link):
         """ Get all of the lecture PDF links for a given course """
-        notes_link = link_nav(course_link, 'pages', 'lecture-notes')
+        notes_link = link_join(course_link, 'pages', 'lecture-notes')
 
         service = Service('\chromedriver_win32\chromedriver.exe')
         driver = webdriver.Chrome(options=self.options, service=service)
@@ -126,20 +131,35 @@ class Scraper:
         # Store the lecture number : lecture pdf link mapping
         lec_num_to_link = set()  # e.g {lec_title, lec_link, lec_num}
         for lecture in soup.find_all('tr'):
-            lecture_title = soup.find('td', {'data-title': 'TOPICS '}).text
-            lecture_num = soup.find('td', {'data-title': 'LECTURE\xa0# '}).text
-            lecture_note_link = soup.find('td', {'data-title': 'LECTURE\xa0NOTES: '}).find('a')
+            if not lecture.find('td'):
+                # Table did not load properly
+                continue
+            lecture_title = ""
+            lecture_num = 0
+            lecture_note_link = ""
+            # Sometimes the first 'tr' might not be what we expect
+            try:
+                lecture_title = lecture.find('td', {'data-title': 'TOPICS: '}).text.strip('\n')
+                lecture_num = lecture.find('td', {'data-title': 'LEC\xa0#: '}).text.strip('\n')
+                lecture_note_link = lecture.find('td', {'data-title': 'LECTURE\xa0NOTES: '}).find('a')
+            except AttributeError:
+                lecture_num = lecture.find_all('td')[0].text.strip('\n')
+                if len(lecture.find_all('td')) == 3:
+                    lecture_title = lecture.find_all('td')[1].text.strip('\n')
+                    lecture_note_link = lecture.find_all('td')[2].find('a')
+                elif len(lecture.find_all('td')) == 2:
+                    lecture_title = lecture.find_all('td')[1].find('a').text.strip('\n')
+                    lecture_note_link = lecture.find_all('td')[1].find('a')
             # Get response object for link
             try:
-                link_ref = lecture_note_link.get('href')
+                lecture_note_link = lecture_note_link.get('href')
                 # If link does not contain the subdomain - usually the case
-                if link_ref[0] == '/':
-                    link_ref = 'https://ocw.mit.edu{}'.format(link_ref)
+                lecture_note_link = link_join('https://ocw.mit.edu', lecture_note_link)
             except Exception as e:
                 print("Warning: No link found for this lecture")
                 print(e)
                 continue
-            lec_num_to_link.add(lecture_title, lecture_note_link, lecture_num)
+            lec_num_to_link.add((lecture_title, lecture_note_link, lecture_num))
         
         return lec_num_to_link
 
@@ -152,6 +172,15 @@ class Scraper:
         """
         # Requests URL and get response object
         response = requests.get(pdf_url)
+        soup = BeautifulSoup(response.text, 'lxml')
+        # Find all hyperlinks present on webpage
+        link = soup.find('a', {'class': 'download-file'})
+        if not link:
+            print("ERROR: No PDF (link) found for this lecture, skipping...")
+            return
+        link = link_join('https://ocw.mit.edu', link.get('href'))
+        response = requests.get(link)
+        # Get the contents of PDF as text
         raw_data = response.content
 
         slides = Slides()
@@ -162,9 +191,6 @@ class Scraper:
                 slides.insert_slide(slide_num, read_pdf.pages[slide_num].extract_text())
 
         return slides
-        
-        # tree = ET.ElementTree(doc)
-        # tree.write("lec_{}.xml".format(lec_num), encoding="utf-8")
 
 
 if __name__ == '__main__':
