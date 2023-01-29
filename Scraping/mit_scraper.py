@@ -5,30 +5,11 @@ from io import BytesIO
 import xml.etree.cElementTree as ET
 from selenium import webdriver
 from selenium.webdriver.chrome.options import Options
+from selenium.webdriver.chrome.service import Service
 import time
 import math
+from common import Course, Lectures, Slides, Videos, CourseProviders, XMLHandler, link_nav
 
-
-""" XML Format 
-
-doc = ET.Element("doc")
-ET.SubElement(doc, "lectureno")
-ET.SubElement(doc, "course")
-ET.SubElement(doc, "date")
-ET.SubElement(doc, "headline")
-ET.SubElement(doc, "url")
-
-slides = ET.SubElement(doc, "slides")
-slide = ET.SubElement(slides, "slide")
-ET.SubElement(slide, "slideno")
-ET.SubElement(slide, "text")
-
-ET.SubElement(doc, "source")
-
-tree = ET.ElementTree(doc)
-tree.write("index_format.xml")
-
-"""
 
 class Scraper:
     SCROLL_PAUSE_TIME = 0.8
@@ -40,10 +21,21 @@ class Scraper:
         self.options = Options()
         self.options.add_argument('--headless')
         self.options.add_argument('--disable-gpu')
-        self.driver = webdriver.Chrome(chrome_options=self.options, executable_path='\chromedriver_win32\chromedriver.exe')
+        service = Service('\chromedriver_win32\chromedriver.exe')
+        self.driver = webdriver.Chrome(options=self.options, service=service)
         self.driver.get(self.base_url)
+        self.course_provider = CourseProviders.MIT
         # Call methods
         self.scroll_scrape(num_courses)
+
+    def check_page_exists(self, soup):
+        """ Check whether soup is using a dead url - specific to MIT website """
+        if not soup:
+            return False
+        if soup.find('div', {'class': 'title-text m-auto h1 m-0'}):
+            return 'page not found' not in soup.find('div', {'class': 'title-text m-auto h1 m-0'}).text.lower()
+        else:
+            return True
 
     def scroll_scrape(self, num_courses):
         """ Scroll to the bottom of the page to load a specific number of courses to scrape
@@ -69,17 +61,22 @@ class Scraper:
         self.parse_main_page()
 
     def parse_main_page(self):
-        """ Scrape the courses, now that we have scrolled to the bottom a few times to load the courses
-        """
+        """ Scrape the courses, now that we have scrolled to the bottom a few times to load the courses """
         page = self.driver.page_source
         self.driver.quit()
         soup = BeautifulSoup(page, 'lxml')
 
         for course_card in soup.find_all('div', {'class': 'card-contents'}):
             # Course title info
-            course_title_info = course_card.find('div', {'class': 'course-title'})
+            # Sometimes course title may not be loaded, so returns null type
+            try:
+                course_title_info = course_card.find('div', {'class': 'course-title'})
+            except AttributeError:
+                time.sleep(0.2)
+                course_title_info = course_card.find('div', {'class': 'course-title'})
+
             course_title = course_title_info.find('span').string
-            href = 'https://ocw.mit.edu' + course_title_info.find('a')['href']
+            course_url = 'https://ocw.mit.edu' + course_title_info.find('a')['href']
             # Course tags
             course_tag_info = course_card.find('div', {'class': 'topics-list'})
             course_tags = [tag.text for tag in course_tag_info.find_all('a', {'class': 'topic-link'})]
@@ -88,77 +85,87 @@ class Scraper:
             # Professor
             prof_info = course_card.find('div', {'class': ['lr-subtitle', 'listitem']}).find('a').text
 
-            print("\nCourse: '{}'\nLink: {}\nTags: {}\nLevel: {}\nProf: {}\n".format(course_title, href, course_tags, level_info, prof_info))
-            self.get_single_course_data(course_title, href, course_tags, level_info, prof_info)
+            print("\nCourse: '{}'\nLink: {}\nTags: {}\nLevel: {}\nProf: {}\n".format(course_title, course_url, course_tags, level_info, prof_info))
+            
+            course = Course(course_title, course_url, course_tags, "28/01/2023")
+            lectures = self.get_single_course_lectures(course_url)
+            course.add_lectures_info(lectures)
 
-    def get_single_course_data(self, course_title, href, course_tags, level_info, prof_info):
-        """ Scrape each individual course information
-        """
-        pass
-        # TODO: Link to get_pdf_data etc..
-        # source_code = requests.get(item_url)
-        # soup = BeautifulSoup(source_code.text, 'html.parser')
-        # # for item_description in soup.findAll('p'):
-        # for item_description in soup.findAll('div', {'id': 'description'}):
-        #     description = item_description.findAll('p')
-        #     print(description[0].string)
-    
-    def get_pdf_data(self):
-        """ Scrape textual information from PDF slides
-        """
-        url = "https://ocw.mit.edu/courses/6-s897-machine-learning-for-healthcare-spring-2019/resources/mit6_s897s19_lec1/"
+            xml_handler = XMLHandler()
+            xml_handler.build_and_store_xml(self.course_provider, course)
 
+    def get_single_course_lectures(self, course_link):
+        """ Gather all information for individual course by calling upon supporting methods """
+        # Get all lecture PDF links for this course
+        lec_num_to_link = self.get_lecture_notes(course_link)
+        # Some lectures don't have PDF links
+        if not lec_num_to_link:
+            return
+
+        # Get content of each lecture (each PDF link for a course)
+        lectures = Lectures()
+        for lecture_title, lecture_pdf_url, lecture_num in lec_num_to_link:
+            slides = self.get_pdf_data(lec_link)
+            lectures.add_lecture(lecture_title, lecture_pdf_url, lecture_num, slides, None)
+
+        return lectures
+
+    def get_lecture_notes(self, course_link):
+        """ Get all of the lecture PDF links for a given course """
+        notes_link = link_nav(course_link, 'pages', 'lecture-notes')
+
+        service = Service('\chromedriver_win32\chromedriver.exe')
+        driver = webdriver.Chrome(options=self.options, service=service)
+        driver.get(notes_link)
+
+        page = driver.page_source
+        soup = BeautifulSoup(page, 'lxml')
+
+        if not self.check_page_exists(soup):
+            return
+        # Store the lecture number : lecture pdf link mapping
+        lec_num_to_link = set()  # e.g {lec_title, lec_link, lec_num}
+        for lecture in soup.find_all('tr'):
+            lecture_title = soup.find('td', {'data-title': 'TOPICS '}).text
+            lecture_num = soup.find('td', {'data-title': 'LECTURE\xa0# '}).text
+            lecture_note_link = soup.find('td', {'data-title': 'LECTURE\xa0NOTES: '}).find('a')
+            # Get response object for link
+            try:
+                link_ref = lecture_note_link.get('href')
+                # If link does not contain the subdomain - usually the case
+                if link_ref[0] == '/':
+                    link_ref = 'https://ocw.mit.edu{}'.format(link_ref)
+            except Exception as e:
+                print("Warning: No link found for this lecture")
+                print(e)
+                continue
+            lec_num_to_link.add(lecture_title, lecture_note_link, lecture_num)
+        
+        return lec_num_to_link
+
+    def get_pdf_data(self, pdf_url):
+        """ Scrape textual information from a given lecture (PDF slide URL)
+        Args:
+            - pdf_link : Link to pdf file
+        Returns:
+            (Slides object) : The textual info in the PDF, broken into individual slides
+        """
         # Requests URL and get response object
-        response = requests.get(url)
-        # Parse text obtained
-        soup = BeautifulSoup(response.text, 'html.parser')
-        # Find all hyperlinks present on webpage
-        links = soup.find_all('a')
-        
-        lec_num = 0
-        # From all links check for pdf link and
-        # if present download file
-        for link in links:
-            if ('.pdf' in link.get('href', [])):
-                lec_num += 1
-                print("Lectures Downloaded: {} ".format(lec_num))
-        
-                # Get response object for link
-                try:
-                    link_ref = link.get('href')
-                    if link_ref[0] == '/':
-                        link_ref = 'https://ocw.mit.edu{}'.format(link_ref)
-                    response = requests.get(link_ref)
-                except Exception as e:
-                    print(e)
-                    continue
+        response = requests.get(pdf_url)
+        raw_data = response.content
 
-                # Start building XML tree
-                doc = ET.Element("doc")
-                ET.SubElement(doc, "lectureno").text = str(lec_num)
-                ET.SubElement(doc, "course").text = 'dummy'
-                ET.SubElement(doc, "date").text = 'dummy'
-                ET.SubElement(doc, "headline").text = 'dummy'
-                ET.SubElement(doc, "url").text = link_ref
-                slides = ET.SubElement(doc, "slides")
-                
-                # Get the contents of PDF as text
-                raw_data = response.content
-                with BytesIO(raw_data) as data:
-                    read_pdf = PyPDF2.PdfReader(data)
+        slides = Slides()
+        with BytesIO(raw_data) as data:
+            read_pdf = PyPDF2.PdfReader(data)
+            # Go through each slide in the lecture, and add it to Slides object
+            for slide_num in range(len(read_pdf.pages)):
+                slides.insert_slide(slide_num, read_pdf.pages[slide_num].extract_text())
 
-                    slide = ET.SubElement(slides, "slide")
-                    for page in range(len(read_pdf.pages)):
-                        # Add slide info to XML tree
-                        ET.SubElement(slide, "slideno").text = str(page)
-                        ET.SubElement(slide, "text").text = read_pdf.pages[page].extract_text()
-                
-                ET.SubElement(doc, "source").text = 'dummy'
-                tree = ET.ElementTree(doc)
-                tree.write("lec_{}.xml".format(lec_num), encoding="utf-8")
+        return slides
         
-        print("All PDF files text extracted")
+        # tree = ET.ElementTree(doc)
+        # tree.write("lec_{}.xml".format(lec_num), encoding="utf-8")
 
 
 if __name__ == '__main__':
-    scraper = Scraper(30)
+    scraper = Scraper(20)
