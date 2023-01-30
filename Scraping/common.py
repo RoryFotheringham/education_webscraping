@@ -91,6 +91,8 @@ class XMLHandler:
             return [E("list", a) for a in course_tags]
         
         def slide_func(slides):
+            if not slides:
+                return []
             slides = slides.get_info()
             if not slides:
                 return []

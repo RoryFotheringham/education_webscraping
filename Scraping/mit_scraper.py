@@ -9,13 +9,15 @@ from selenium.webdriver.chrome.service import Service
 import time
 import math
 from common import Course, Lectures, Slides, Videos, CourseProviders, XMLHandler, link_join
+import argparse
+import os
 
 
 class Scraper:
     SCROLL_PAUSE_TIME = 0.7
     COURSES_ON_ONE_SCROLL = 10  # The MIT website displays 10 more pages every time you scroll
 
-    def __init__(self, num_courses):
+    def __init__(self, num_courses, skip):
         # Initialise variables
         self.base_url = 'https://ocw.mit.edu/search/'
         self.options = Options()
@@ -25,6 +27,7 @@ class Scraper:
         self.driver = webdriver.Chrome(options=self.options, service=service)
         self.driver.get(self.base_url)
         self.course_provider = CourseProviders.MIT
+        self.skip_already_seen = skip
         # Call methods
         self.scroll_scrape(num_courses)
 
@@ -80,6 +83,13 @@ class Scraper:
                 course_title = course_title_info.find('span').string
             except AttributeError:
                     print("ERROR: Could not load course-title. Skipping...")
+                    continue
+            # Check if file already exists
+            if self.skip_already_seen:
+                dirname = os.path.dirname(__file__)
+                fname = os.path.join(dirname, self.course_provider.name, "{}.xml".format(course_title[:20]))
+                if os.path.isfile(fname):
+                    print("Skipping course: {}, as it already exists".format(course_title[:20]))
                     continue
             course_url = 'https://ocw.mit.edu' + course_title_info.find('a')['href']
             # Course tags
@@ -144,12 +154,20 @@ class Scraper:
                 lecture_note_link = lecture.find('td', {'data-title': 'LECTURE\xa0NOTES: '}).find('a')
             except AttributeError:
                 lecture_num = lecture.find_all('td')[0].text.strip('\n')
-                if len(lecture.find_all('td')) == 3:
-                    lecture_title = lecture.find_all('td')[1].text.strip('\n')
-                    lecture_note_link = lecture.find_all('td')[2].find('a')
-                elif len(lecture.find_all('td')) == 2:
-                    lecture_title = lecture.find_all('td')[1].find('a').text.strip('\n')
-                    lecture_note_link = lecture.find_all('td')[1].find('a')
+                try:
+                    if len(lecture.find_all('td')) == 3:
+                        lecture_title = lecture.find_all('td')[1].text.strip('\n')
+                        lecture_note_link = lecture.find_all('td')[2].find('a')
+                    elif len(lecture.find_all('td')) == 2:
+                        lecture_title = lecture.find_all('td')[1].find('a').text.strip('\n')
+                        if lecture_title.upper() == 'PDF':  # e.g https://ocw.mit.edu/courses/21a-231j-gender-sexuality-and-society-spring-2006/pages/lecture-notes/
+                            lecture_title = lecture.find_all('td')[1].text.strip('\n')
+                        lecture_note_link = lecture.find_all('td')[1].find('a')
+                    elif len(lecture.find_all('td')) == 1:  # e.g https://ocw.mit.edu/courses/21a-231j-gender-sexuality-and-society-spring-2006/pages/lecture-notes/
+                        continue  # Likely not a lecture, but some sort of heading
+                except AttributeError:
+                    # Likely no lecture link
+                    lecture_note_link = ""
             # Get response object for link
             try:
                 lecture_note_link = lecture_note_link.get('href')
@@ -171,6 +189,8 @@ class Scraper:
             (Slides object) : The textual info in the PDF, broken into individual slides
         """
         # Requests URL and get response object
+        if (not pdf_url) or (pdf_url == ""):
+            return Slides()
         response = requests.get(pdf_url)
         soup = BeautifulSoup(response.text, 'lxml')
         # Find all hyperlinks present on webpage
@@ -194,4 +214,9 @@ class Scraper:
 
 
 if __name__ == '__main__':
-    scraper = Scraper(20)
+    parser = argparse.ArgumentParser()
+    parser.add_argument('-c', '--count', default=30, type=int)
+    parser.add_argument('-s', '--skip', default=1, type=int)
+    args = parser.parse_args()
+
+    scraper = Scraper(args.count, args.skip)

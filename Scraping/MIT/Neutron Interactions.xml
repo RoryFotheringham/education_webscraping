@@ -1,0 +1,4086 @@
+<doc>
+  <source>MIT</source>
+  <date>28/01/2023</date>
+  <course>
+    <course_url>https://ocw.mit.edu/courses/22-106-neutron-interactions-and-applications-spring-2010/</course_url>
+    <course_title>Neutron Interactions and Applications</course_title>
+    <course_tags>
+      <list>Engineering </list>
+      <list>Science </list>
+      <list>Chemistry </list>
+    </course_tags>
+  </course>
+  <lectures>
+    <lecture>
+      <lecture_title>Variance Reduction Techniques</lecture_title>
+      <lecture_pdf_url>https://ocw.mit.edu/https://laws.lanl.gov/vhosts/mcnp.lanl.gov/pdf_files/la-ur-05-4983.pdf</lecture_pdf_url>
+      <lectureno>11</lectureno>
+      <slides/>
+    </lecture>
+    <lecture>
+      <lecture_title>Scattering Laws / SANS</lecture_title>
+      <lecture_pdf_url>https://ocw.mit.edu/courses/22-106-neutron-interactions-and-applications-spring-2010/resources/mit22_106s10_lec06a/</lecture_pdf_url>
+      <lectureno>6</lectureno>
+      <slides>
+        <slide>
+          <slideno>10</slideno>
+          <text>&#8233;
+Hence&#8233;
+&#61554;&#968;&#8233;
+sc(r  eikr
+)=f(&#952;)
+  r&#8233;
+&#8233;
+W
+sece
+t&#8233;k
+ion
+no
+&#8233;w
+is&#8233;&#8233;
+gth
+iva
+et
+n&#8233;t
+&#8233;h
+ae
+s&#8233;
+&#8233;differential&#8233;scattering&#8233;cross&#8233;
+&#8233;
+&#963;(&#952;)d2&#963;=dEd&#937;=f(&#952;)
+&#8233;2
+&#8233;
+&#8233;
+&#963;(&#952;)&#181;=&#8722;
+  2&#960;&#61544;2r &#61554;&#8747;e&#8722;ikr &#61554; '.u &#710; V( ')&#968;(r &#61554; ')d&#964;
+&#964;2
+&#8233;
+&#8233;
+T
+noh
+te
+&#8233;&#8233;&#8233;
+Kfu
+nn
+oc
+wti
+no
+!n
+!!s
+&#8233;&#8233;&#968;(r &#61554; 
+  )&#8233;and&#8233;  V(r &#61554; )&#8233;are&#8233;still&#8233;&#8364; 
+&#8364; 
+&#8364; 
+&#8364; &#8364; </text>
+        </slide>
+        <slide>
+          <slideno>21</slideno>
+          <text>&#8233;
+unbT
+ouhe&#8233;
+d&#8233;r
+se
+clation
+&#8233;
+boundn a
+Atte
++rin&#8233; b
+&#8233;ce
+rtween&#8233;
+1g oss&#8233;sectt
+ih
+oe
+n&#8233;
+&#8233;ib
+s&#8233;ound&#8233; and&#8233;
+&#963;s=A&#63723; &#63734; 2
+&#63724; 
+A&#8233;&#63735; &#963;
+&#8233;
+&#8233;
+&#963;s&#8233;
+bound
+san&#8233;exam&#63725;
+p 
+=4l
+&#963;e,&#8233;
+freefor&#8233;free&#63736;
+A 
+=1&#8233;(hydrogen)&#8233;&#8233;
+&#8233;
+Suggested&#8233;homew&#8233;
+ork:&#8233;
+bound(a) Which&#8233; one&#8233; is&#8233; measured&#8233; &#963;s&#8233;or&#8233;
+&#963;free
+s?&#8233;
+&#8233;
+(b) &#8233;If&#8233;both,&#8233;how? &#8233;&#8364; 
+&#8364; 
+&#8364; 
+&#8364; </text>
+        </slide>
+        <slide>
+          <slideno>2</slideno>
+          <text>N
+&#8233;
+n&#8233;+&#8233;targeteutron&#8233;Intera
+&#8233;&#8233;&#8594;&#8233;&#8233;???&#8233;ction&#8233;
+&#8233;
+In&#8233;all&#8233;three&#8233;regions&#8233;there&#8233;are&#8233;always:&#8233;&#8233;
+&#8233;
+S
+&#8233;CATTERING&#8233;and&#8233;REACTION&#8233;
+cR
+&#8233;oe
+mgi
+po
+on
+u&#8233;
+n1
+d:&#8233;
+&#8233;H
+nuig
+ch
+le&#8233;e
+un
+se
+&#8233;fr
+og
+ry
+m&#8233;n
+ae
+tiu
+ot
+nr
+;o
+&#8233;ns&#8233;&#8211;&#8233;direct&#8233;and&#8233;
+uR
+ne
+rg
+ei
+so
+on
+l&#8233;
+v2
+ed:&#8233;
+)R
+&#8233; &#8211;e
+&#8233;so
+Dn
+eance&#8233; region&#8233; (resolved&#8233; and&#8233;
+f
+&#8233;
+Ro
+er
+gm
+ioat
+nion&#8233;and&#8233;somfi
+en
+&#8233;dit
+ie
+rl
+ey
+c&#8233;
+tc
+&#8233;io
+nm
+tep
+rao
+cu
+tn
+iod
+n&#8233;
+sn
+;u
+&#8233;cleus&#8233;
+o
+chf&#8233;
+ei
+mn
+ic
+ci
+ad&#8233;3
+en:&#8233;
+tC
+&#8233;h
+ne
+em
+ui
+tc
+ra
+ol
+n&#8233;r
+&#8233;e
+ig
+si
+&#8233;o
+cn
+o&#8233;
+m&#8211;&#8233;
+pn
+ae
+ru
+at
+bro
+len
+&#8233;&#8233;e
+ton
+&#8233;er
+thgy
+e&#8233;
+moleculel&#8233;&#8233;
+s;b
+&#8233;inding&#8233; energy&#8233; of&#8233; atoms&#8233; in&#8233; the&#8233;
+&#8233;
+&#8233;</text>
+        </slide>
+        <slide>
+          <slideno>11</slideno>
+          <text>&#8233;
+Born&#8233;Approximation &#8233;
+&#8233;
+A
+&#8233;ssumption:&#8233;
+T
+poh
+te
+e&#8233;
+nc
+to
+iam
+l&#8233;p
+rl
+ee
+gte
+io&#8233;
+nw
+&#8233; ia
+sv
+&#8233;e
+r&#8233;
+epfu
+lan
+cc
+eti
+do
+&#8233;n
+b&#8233;
+y&#8233; th(r &#61554;&#968;
+e 
+  
+&#8233;)
+i&#8233;
+ni
+cn
+i&#8233;
+dethe&#8233;
+w&#8233;ave&#8233;
+&#61554;fu
+ nction,&#8233;that&#8233;is,&#8233;nt&#8233;
+&#968;
+&#8233;  (r )eikz=eikr &#61554; .u &#710; z
+&#8233;
+&#8233;&#8233;
+R=
+ationale:&#8233;
+I
+pn
+oc
+ti
+ed
+ne
+tn
+iat&#8233;
+l&#8233;p
+rea
+gr
+it
+oic
+nle
+,&#8233;&#8233; is&#8233; weakly&#8233; scattered&#8233; in&#8233; the&#8233;
+&#8233;
+&#963;(&#952;)&#181;=&#8722;
+  2&#960;&#61544;2 &#8747;e&#8722;ikr &#61554; '.(u &#710; z&#8722;u &#710; )V(r &#61554;')d&#964;
+&#964;2
+&#8233;
+&#8233;&#8364; 
+&#8364; 
+&#8364; </text>
+        </slide>
+        <slide>
+          <slideno>22</slideno>
+          <text>MIT OpenCourseWare
+http://ocw.mit.edu 
+22.106  Neutron Interactions and Applications 
+Spring 2010 
+For information about citing these materials or our Terms of Use, visit: http://ocw.mit.edu/terms . </text>
+        </slide>
+        <slide>
+          <slideno>18</slideno>
+          <text>(b)System&#8233;m&#8233;and&#8233;M&#8217; &#8233;
+&#8233;
+&#8233; 
+&#61544;2
+&#8722;
+  2&#181;'&#63726; 2  +V(&#61554;&#8711; r )&#63737; 
+(&#61554; &#63727; &#63738;&#968; r )&#61554; 
+&#8233;=E&#968;(r )
+&#63728; &#63739; &#8233;
+w
+&#8233;
+mM&#181;'h
+=ere&#8233;
+'
+m+M '&#8233;
+&#8233;
+T
+anh
+de
+&#8233;&#8233;
+MSchr&#246;din
+&#8233;
+&#61544;2
+&#8722;&#8217;&#8233;can&#8233;be&#8233;g
+we
+rr
+i&#8233;
+te
+tq
+enu
+&#8233;a
+at
+si
+&#8233;on&#8233; for&#8233; the&#8233; system&#8233; m&#8233;
+  2&#181;2&#8711;&#968;(r &#61554; )&#181;'+&#181;&#61554; 'V(r  )&#968;(r &#61554; )&#181;=&#181; &#8233;
+&#8233;E&#968;(r &#61554; )
+mW
+&#8208;e
+M&#8233;s
+&#8217;
+&#61554;&#8233;e
+a
+ e
+s&#8233;
+&#8233;a
+&#181;n&#8233;
+'V (r )=effective&#8233; potential&#8233; for&#8233; the&#8233; system&#8233;
+eff
+  &#181;V(r &#61554; )&#8233;&#8364; 
+&#8364; 
+&#8364; 
+&#8364; </text>
+        </slide>
+        <slide>
+          <slideno>14</slideno>
+          <text>&#8233;
+The&#8233;scattering&#8233;length&#8233; &#8233;is&#8233;defined&#8233;as&#8233; &#8233;
+&#8233;a
+a=&#8722;lim f (&#952;)
+k&#8594;0
+&#8233;r&gt;R
+&#8233;I
+Fn&#8233;
+ot
+re
+&#8233;rrpr
+&#8233;=R
+R&#968;(R&#8233;e
+atta
+&#8233;tt
+hi
+eo
+&#8233;n
+n&#8233;
+uo
+cf
+l&#8233;
+eth
+ae
+)=R&#8722;ar&#8233;&#8233;
+ss
+uc
+ra
+ft
+at
+ce
+er
+&#8233;win
+eg
+&#8233;&#8233;
+hle
+avn
+eg
+&#8233;th&#8233;a&#8233;
+&#8233;or&#8233;&#8233;&#8233;&#8233;
+&#8233;a=R[1&#8722;&#968;
+&#8233;(
+iR
+m)
+p]
+(
+and&#8233;a)&#8233;&#968;(R)=0
+a=R&#8233;e&#8233;
+netrable&#8233; sphere&#8233;&#8364; 
+&#8364; 
+&#8364; &#8364; &#8233;
+&#8233;
+&#8233;</text>
+        </slide>
+        <slide>
+          <slideno>20</slideno>
+          <text>The&#8233;relation&#8233;between&#8233; &#8233;and&#8233; &#8233;is&#8233;
+&#8233;abound afree
+ma+M
+bound=M&#8233;
+&#8233;a
+nuclD
+ee
+uf
+si
+&#8233;n
+min
+ag
+s&#8233;
+sA
+&#8233; M&#8233; a
+&#8233;s
+a&#8233;free
+ndth
+&#8233;e
+th&#8233;
+er
+&#8233;a
+ntio&#8233; between&#8233; the&#8233;
+A=M/m&#8233;we&#8233;have&#8233;eutron&#8233; mass&#8233; m,&#8233;
+abound&#8233;
+A+1=A&#8233;
+&#8233;a
+&#8233;free
+S
+sein
+cc
+tie
+o&#8233;
+nth
+&#8233;ie
+s&#8233;
+&#8233;low&#8208;energy&#8233;bound&#8208;scattering&#8233;cross&#8208;
+&#8233;
+bound&#963;s=4&#960;a2
+bound &#8233;
+&#8233;
+&#8233;&#8233;&#8364; 
+&#8364; 
+&#8364; &#8233;
+&#8233;</text>
+        </slide>
+        <slide>
+          <slideno>4</slideno>
+          <text>Born&#8233;approximation&#8233; &#8233;
+Conside r&#8233;the&#8233;situatA
+&#8233;&#8233;Fermi&#8233;pseun
+dd
+o&#8233;
+&#8233;potential&#8233;&#8233;
+ion:&#8233;Scattering&#8233;by&#8233;a&#8233;single&#8233;
+spinless &#8233;nucleus &#8233;
+&#8233;
+&#8233;&#8233;&#8233;
+&#8364; &#968;  (r &#61554; )
+&#61544;2
+&#8722;
+  2&#181;&#63726; 2&#8711;+V(r &#61554; &#63727; )&#63737; 
+&#63738;&#968; (r &#61554; )=E&#968;(r &#61554; )
+&#63728; &#63739; &#8233;&#8233;at&#8233;the&#8233;detector&#8233;satisfy&#8233;the&#8233;equation: &#8233;
+&#8233;
+&#8364; &#8233;
+</text>
+        </slide>
+        <slide>
+          <slideno>12</slideno>
+          <text>Fe 
+  
+&#8233;
+FV(r &#61554;)
+&#8233;
+err
+mm
+i&#8233;i
+c&#8233;P
+eamse
+e&#8233;u
+xpression&#8233;forud
+Vpo
+&#8233;
+(p
+r &#61554;w 
+  )o
+itencial&#8233;
+is&#8233;very&#8233;low.&#8233;&#8233;t
+wh&#8233;
+ha
+e&#8233;
+n&#8233;c
+tl
+he
+ev
+&#8233;e
+nr
+e&#8233;
+ui
+td
+re
+oa
+n&#8233;
+&#8233;efo
+nr
+e&#8233;
+ra
+gn
+y&#8233;&#8233;
+&#8233;
+A
+&#8233;ssumptions:&#8233;
+(ma
+o)&#8233;
+mTh
+ee
+n&#8233;
+tp
+umote
+&#8233;n
+sp elt
+=ia
+0l
+h rically&#8233;symm,&#8233;
+&#8233;is
+t&#8233;
+hap
+atp
+&#8233;li
+ie
+sd
+,&#8233;&#8233;to
+etric;&#8233;th&#8233;s
+e&#173;
+&#8233;w
+pa
+ov
+te
+e,&#8233;
+na
+tn
+iag
+lu
+&#8233;la
+isr
+&#8233;&#8233;
+&#8233;
+(
+Tb
+h)
+e&#8233;S
+&#8233;ph
+oo
+tr
+et
+n&#8233;r
+ta
+ian
+l
+2g
+&#8233;se
+u&#8233;p
+go
+gte
+&#8233;
+&#61554; 2&#960;=esn
+tetia
+&#61544;d&#8233;l
+b&#8233;
+y&#8233;Fermi&#8233;is&#8233;
+V(r )
+  &#181;&#948;&#8233;
+Where&#8233;&#8233;&#8233; &#8233;&#8233;&#8233;is&#8233;tha
+&#8233;a e&#8233;s(
+cr &#61554;
+a )
+ttering&#8233;length&#8233;&#8233;
+&#8233;
+&#8233;&#8364; &#8233;is&#8233;still&#8233;not&#8233;known!! &#8233;
+&#8364; 
+&#8364; </text>
+        </slide>
+        <slide>
+          <slideno>13</slideno>
+          <text>&#8233;
+To&#8233;understand&#8233;the&#8233;concept&#8233;introduced&#8233;by&#8233;
+F
+ofe
+&#8233;r
+nm
+eui&#8233;
+tl
+re
+ot&#8217;
+ns&#8233;continue&#8233;examining&#8233;the&#8233;scattering&#8233;
+e&#8233;ffect&#8233;consis
+d&#8233;
+eb
+ry
+e&#8233;
+da&#8233;
+.&#8233;single&#8233;nucleus&#8233;with&#8233;no&#8233;spin&#8233;
+R&#8233;ecall&#8233;that:&#8233;
+(&#61554; ikz eikr
+&#968;r )=e+f(&#952;)
+  r
+r&#8233;
+&#8233;for&#8233;&gt;R&#8233;
+Low&#8233; energy&#8233; neutron,&#8233; since&#8233;k22&#181;E=2  &#61544;
+H&#8594;l
+&#8233;k,&#8233; imp ies&#8233;
+that&#8233; 0&#8233;
+&#8233;
+lie
+mnc
+re
+&#968;&#8233;
+(r)=r+lim f (&#952;)
+k&#8594;0 k&#8594;0
+r&gt;R r &gt;R&#8233;&#8364; 
+&#8364; &#8364; 
+&#8364; 
+&#8364; </text>
+        </slide>
+        <slide>
+          <slideno>3</slideno>
+          <text>&#8233;
+The&#8233; neutron&#8233; reaction&#8233; cross&#8233; sections&#8233;
+such&#8233; as&#8233; (n,&#8233; fission),&#8233; (n,&#8233; gamma)&#8233; are&#8233;affected&#8233; only&#8233; by&#8233; the&#8233; motion&#8233; of&#8233; the&#8233;t
+&#8233;arget&#8233; atoms&#8233; (Doppler&#8233; broadening&#8233;
+effects)
+In&#8233; the&#8233; t.
+r&#8233;
+eatment&#8233; of&#8233; the&#8233; neutron&#8233; scattering&#8233;
+cross&#8233;section&#8233;in&#8233;the&#8233;chemical&#8233;region &#8233;one&#8233;mu t&#8233;
+&#8233;consis
+ der:&#8233;&#8233;
+(a) K
+isi
+&#8233;n
+ce
+ot
+mic
+p&#8233;e
+an
+rae
+brgy&#8233;of&#8233;the&#8233;incident&#8233;neutrons&#8233;
+t
+lih
+qe
+u&#8233;
+ia
+dt
+)o
+.&#8233;m&#8233; in &#8233;l
+te
+h&#8233;
+eto
+&#8233; t&#8233;
+at
+rh
+ge
+e&#8233;
+tb
+&#8233;i
+(n
+md
+oin
+leg
+c&#8233;
+uen
+lee
+,&#8233;r
+sg
+oy
+l&#8233;
+io
+df
+,&#8233;&#8233;
+&#8233;
+ ATOMS&#8233;ARE&#8233;NOT&#8233;FREE!!!&#8233;
+(b) N
+the
+eu
+&#8233;it
+nro
+ten
+r&#8233;
+aw
+toa
+mve
+il
+ce
+&#8233;n
+spg
+ath
+ci&#8233;
+nis&#8233; of&#8233; the&#8233; order&#8233;
+ crystals ;&#8233;g&#8233;in&#8233;molecules&#8233;oo
+ff
+&#8233;&#8233;
+(c)S
+sac
+mat
+ete
+&#8233;ri
+mng
+ o&#8233;
+lfrom&#8233; v
+(coherent,&#8233;ie
+nc
+cu
+ol
+he
+e&#8233;
+reoa
+fr
+&#8233;io
+cu
+rs
+y&#8233;
+sn
+tuclei
+n&#8233;
+ti
+en
+r&#8233;
+nt);&#8233;al&#8233; i feth
+ree
+&#8233;&#8233;
+(d) Neutron&#8233;may&#8233;GAIN&#8233;or&#8233;lose&#8233;energy;&#8233;</text>
+        </slide>
+        <slide>
+          <slideno>15</slideno>
+          <text>(b)&#8233;
+&#8364; &#8233;
+&#8233;&#968;(R)&lt;1
+a
+&#8233;&#8233;&gt;&#8233;
+R0
+e&#8233;
+aa
+ln
+isd
+tic&#8233;a
+&#8233;p&#8233;
+o&lt;
+t&#8233;
+eR
+n&#8233;
+tial&#8233;indicating&#8233;bound&#8233;states&#8233;
+&#8233;(c)&#8233;&#968;(
+&#8233;R)&gt;1
+a&#8233;&#8233;&#8233;
+&#8233;
+No&lt;
+&#8233;b&#8233;0
+ou&#8233;
+nd&#8233;states!!&#8233;
+&#8364; </text>
+        </slide>
+        <slide>
+          <slideno>19</slideno>
+          <text>As&#8233; we&#8233; have&#8233; seen,&#8233; in&#8233; the&#8233; Born&#8233;
+a
+pp
+sep
+uro
+dx
+oi
+pm
+oa
+teti
+no
+tn
+ia&#8233;
+l&#8233;t
+to
+hg
+ee
+&#8233;th
+sce
+ar
+t&#8233;
+tew
+rii
+nth
+g&#8233;&#8233;
+leth
+ne&#8233; Fermi&#8233;
+the&#8233;e
+&#8233;ffective&#8233;poten
+&#181;tial&#8233;is&#8233;gth&#8233; with&#8233;
+abound=
+  2&#960;&#61544;2&#61554;&#8747;Veff(r  )d&#964;
+&#964;&#8233;
+&#8233;
+or&#8233;&#8233;&#8233;
+ma+M
+bound=
+  M&#181;
+2&#960;&#61544;2&#61554;&#8747;V(r  )d&#964;
+&#964;&#8233;
+&#8233;
+&#8233;&#8364; 
+&#8364; &#8233;
+&#8233;
+&#8233;
+&#8233;
+&#8233;
+&#8233;</text>
+        </slide>
+        <slide>
+          <slideno>16</slideno>
+          <text>The&#8233; differential&#8233; scattering&#8233; cross&#8233; section&#8233;
+w
+&#8233;ith&#8233;the&#8233;Ferm
+&#181;i&#8233;pseudopotential&#8233;is&#8233;then&#8233;
+&#963;(&#952;)=&#8722;
+  2&#960;&#61544;22&#8747;e&#8722;ikr &#61554; .(u &#710; z&#8722;u &#710; )&#960;&#61544;2
+&#964; &#181;a&#948;(r &#61554; )d&#964;2
+&#8233;
+f
+&#8233;or&#8233;k&#8594;0
+&#963;(&#952;)=&#8233;(
+alow&#8233;energy&#8233;neutrons)&#8233;
+&#8233;2
+&#8233;
+T
+&#8233;
+&#963;h
+se&#8233;
+=tot
+&#8747;al
+&#963;&#8233;sc
+sa
+(&#952;tte
+)r
+din
+&#937;g&#8233;cross&#8233;section&#8233;is&#8233;
+4&#960;&#8233;
+&#8233;o&#8233;
+&#963;r&#8233;
+s&#8233;
+=4&#960;a
+&#8233;2
+&#8233;
+&#8233;
+&#8233;&#8364; &#8364; 
+&#8364; 
+&#8364; 
+&#8364; </text>
+        </slide>
+        <slide>
+          <slideno>17</slideno>
+          <text>The&#8233; derivation&#8233; so&#8233; far&#8233; assumes&#8233; that&#8233; the&#8233;
+i
+an
+lsc
+oid
+&#8233;e
+an
+sst
+u&#8233;n
+me
+eu
+dtr
+&#8233;o
+thn
+as
+t&#8233;h
+&#8233; ta
+hv
+ee
+&#8233;&#8233;
+nvery&#8233;low&#8233;energy.&#8233;I
+not&#8233;bound;&#8233;therefore,&#8233;theu
+&#8233;c
+scleus&#8233; of&#8233; mass&#8233; Mt
+&#8233;&#8233;
+ii
+ss
+&#8233;&#8233;
+c
+ma
+oll
+le
+ed
+c&#8233; If&#8233; the&#8233; neutron&#8233;a
+intt
+te
+er
+ri
+an
+cg
+t&#8233;
+sl
+&#8233;e
+wng
+itt
+hh
+&#8233;&#8233;i
+as
+&#8233;&#8233;
+mm
+oas
+les
+c&#8233;Mua
+lefree
+&#8233; o.&#8233;
+f&#8233; mass
+ul&#8233;
+eis
+,&#8233;&#8233;i
+tn
+hc
+el
+&#8233;u
+Sd
+ce&#8233; M&#8217;&#8233; in&#8233;
+hd
+r,
+&#246;&#8233;i
+d.e
+in.,&#8233;nwh
+ci
+lc
+&#8233;eh
+u&#8233;
+geu
+r equst
+&#8233;h
+be
+o&#8233;
+un
+nu
+dcl
+&#8233;e
+tou
+&#8233;s
+t&#8233;
+ho
+ef&#8233;
+&#8233;
+s
+my
+as
+ste
+s&#8233;m
+b&#8233;
+en
+tweu
+et
+er
+no
+&#8233;n&#8208;
+tm
+heo
+&#8233;le
+nc
+eu
+ule
+tr&#8233;
+ow
+ni
+&#8233;ll&#8233;at
+ii
+no
+cn
+lu&#8233;
+dfo
+er
+&#8233;&#8233;
+tt
+hh
+m &#8217;(ee
+&#8233;&#8233;
+olecule&#8233;(M ). &#8233;m)&#8233; and&#8233; the&#8233;
+&#8233;
+T
+&#8233;he&#8233;scenarios&#8233;are:&#8233;
+&#8233;(a) 
+&#61544;S
+2ystem&#8233;m&#8233;and&#8233;M&#8233;
+&#8722;
+  2&#181;&#63726; 2  +V(&#61554;&#63727; &#8711; r )&#63737; 
+&#968; (
+&#8233;&#63738;r &#61554; )=E&#968;(r &#61554; )
+&#63728; &#63739; &#8233;
+w
+&#8233;
+&#181;h
+=ere
+mM&#8233;
+m+M&#8233;&#8364; 
+&#8364; </text>
+        </slide>
+        <slide>
+          <slideno>6</slideno>
+          <text>We&#8233;also&#8233;know &#8233;that&#8233; &#8233;
+&#8233;
+&#8233;[2 ikz&#8711; k2+]e=0
+Suggested&#8233;homework:&#8233;&#8233;
+Demonstrate&#8233;that&#8233;&#8233;
+&#8233;
+[2k2
+&#8233;&#8711;+]eikz=0
+&#8233;&#8233;
+T
+&#8233;heref
+2ore,&#8233;the&#8233;
+2equations&#8233;to&#8233;be&#8233;solved&#8233;is&#8233;
+w[
+it&#8711;
+h&#8233;+k  ] &#968;(r &#61554;)=F(r &#61554; 
+sc )
+F(r &#61554; 2)&#181;=&#8233;
+2  &#61544;
+&#8233;V(r &#61554; )&#968;(r &#61554; )
+Recall&#8233;that&#8233; &#968;  (r &#61554; )&#8233;
+&#8233;is&#8233;included&#8233;in&#8233;   F(r &#61554; )&#8233;&#8364; 
+&#8364; 
+&#8364; &#8364; 
+&#8364; &#8364; </text>
+        </slide>
+        <slide>
+          <slideno>1</slideno>
+          <text>N
+&#8233;
+r &#61554;
+  T
+&#934;im
+(Ee
+,&#8233; ,&#937;In
+&#710; ) dependent&#8233; Transport&#8233; Equation&#8233; for&#8233;
+&#8233;
+&#937;&#710; . &#8711;&#934;+&#931; &#934;&#8233;
+&#8233;
+&#8233;t=&#8747;d&#937;&#710; '&#8734;
+ &#8747;dE'&#931;s(E'&#8594;E,&#61554; &#937;&#710; ' &#8594; &#937; )&#934;(E',r ',&#937;&#710; ) +S
+  4&#960; 0
+&#931;t&#8233;
+&#931;M
+&#8233;acroscopic&#8233;total&#8233;cross&#8233;section&#8233;
+s&#8233;&#8233;
+How&#8233;aM
+&#8233;
+reac
+&#8233;tr
+ho
+es
+scopic&#8233;scattering&#8233;cross&#8233;section&#8233;
+&#8233;
+(a)
+r 
+eacM
+toe
+ra
+s,s
+&#8233;eue
+r&#8233;q
+emua
+en
+nt
+ti
+&#8233;t
+tc;&#8233;bie
+ys
+&#8233;&#8233;
+tt
+ir
+mea
+e&#8208;t
+ofed
+&#8208;f?
+l&#8233;
+ight&#8233; machine ,&#8233;
+&#8233;
+&#8233;(b) 
+ Evaluated&#8233;using&#8233;nuclear&#8233;physics&#8233;models;&#8233;
+&#8233;(c) G
+Pe
+on
+oe
+&#8233;(
+How&#8233; is&#8233; nuclerra
+&#8233;Cte
+hd
+o&#8233;
+iu
+cs
+ei
+!ng&#8233;nuclear&#8233;physics&#8233;codes&#8233;&#8233;
+)&#8233;&#8233;&#8233;&#8233;&#8233;&#8233;&#8233;
+ar&#8233; physics&#8233; applied&#8233; to&#8233; get&#8233; the&#8233; cross&#8233;eutron&#8233;Interaction&#8233;
+sections?&#8233;&#8364; 
+&#8364; 
+&#8364; 
+&#8364; </text>
+        </slide>
+        <slide>
+          <slideno>9</slideno>
+          <text>&#8364; r &#61554; 
+u &#710; =
+  r
+&#8233;
+Sugge st&#8233;
+ed&#8233;homework:&#8233;
+Show&#8233;that&#8233;&#8233;
+&#8233;
+  |r &#61554; r &#61554; '| &#8722; r&#8722;
+&#8233;r &#61554;&#8776; '.u &#710; 
+&#8233;&#8233;
+The&#8233;function&#8233;&#8233;
+&#968;  sc(r &#61554; )
+(&#61554; &#181;becomes,&#8233;
+&#968;scr )=&#8722;
+  2&#960;&#61544;2&#63726; 
+e&#8722;ikr &#61554; '.u &#710; V(r &#61554; ') (r &#61554; &#63737; eikr
+&#63727; &#8747; &#968;')d&#964;&#63738; &#63728; &#964; &#63739; r
+D
+&#8233;efining&#8233;
+f(&#952;)&#181;=&#8722;
+  2&#960;&#61544;2e&#61554;
+&#8233;&#8747;&#8722;ikr &#61554; '.u &#710; V(r  ')&#968;(r &#61554; ')d&#964;
+&#8233;&#964;
+&#8233;&#8233;&#8364; &#8364; 
+&#8364; 
+&#8364; </text>
+        </slide>
+        <slide>
+          <slideno>7</slideno>
+          <text>Green&#8217;s&#8233;Function&#8233;
+&#8364; &#8233;
+S&#8233;
+ol
+r &#61554; 
+  ut
+&#8722;ion
+r &#61554;&#8233; 'at&#8233;the&#8233;detecto&#968;  
+r&#8233;r &#61554;
+0
+d(
+ue )
+&#8233;to&#8233;a&#8233;point&#8233;source&#8233;
+&#8233;at&#8233; &#8233;
+  [2&#8711;+k2]&#61554; &#61554; &#61554; 
+&#8233;is&#8233;given&#8233;as&#8233;&#968;
+&#8233;0(r )=&#948;(r &#8722;r ')
+  0(r )&#8233;
+&#8233;&#61554; &#968;
+&#61554; eik|r &#61554; 
+&#968;0(r )&#8722;r &#61554; '|
+=&#8722;4 &#960;|r &#61554; &#61554;   &#8722;r '|&#8233;
+&#8233;
+The&#8233; solution&#8233; for&#8233; is&#8233; obtained&#8233; by&#8233;
+&#8233;integrat
+&#61554;in&#968;sc(r &#61554;
+ g&#8233;in&#8233;volum  
+e&#8233;&#964;&#8233; )
+ik&#8233;
+|&#61554; 
+(r )er &#8722;r &#61554; '|
+&#968;sc =&#8722;
+  4&#960;|r &#61554; &#61554; &#8722;r '|r &#61554;&#8747; F( ')d&#964;
+&#964;&#8233;
+or&#8233;&#8364; 
+&#8364; &#8364; 
+&#8364; &#8364; 
+&#8364; 
+&#8364; </text>
+        </slide>
+        <slide>
+          <slideno>8</slideno>
+          <text>&#8233;
+&#8364; r &#61554;&#968;sc( )&#181;=&#8722;
+  2&#960;&#61544;2eik|r &#61554; &#8722;r &#61554; '|
+4&#960;|r &#61554; &#61554; &#8722;r '|
+  &#8233;&#61554;&#8747; V(r  ') &#968;(r &#61554;')d&#964;
+Nice&#964;
+&#8233;BV
+e(
+for &#61554;&#8233; )&#8233;solut
+reno
+&#8233;prr
+o&#8233;&#968;  io
+(n&#8233; of&#8233; little&#8233; value&#8233; since&#8233; neither&#8233;
+  |r &#61554; |&gt;&gt; |ce
+r &#61554;er &#61554;
+d )
+ina
+gr
+&#8233;e
+f&#8233;
+uk
+rn
+to
+hw
+ern
+&#8233;n&#8233;q
+ou
+tea
+&#8233;n
+thti
+ati s
+ te
+&#8233;fo.&#8233;
+' |r&#8233;&#8233;
+&#8233;&#8233;
+r &#61554; '.u &#710; |r &#61554; &#61554; &#8722;r '|&#8776;r1&#8722;2
+  r
+&#8233;&#63726; &#63737;1 / 2
+&#63727; &#63738; &#63728; &#63739; &#8233;
+  or
+&#8233;
+|&#8233;
+&#8233;r &#61554; 
+wher&#8722;
+&#8233;er &#61554; '|&#8776;r&#8722;r &#61554; '.u &#710; &#8233;
+&#8233;&#8233;&#8364; &#8364; 
+&#8364; 
+&#8364; 
+&#8364; </text>
+        </slide>
+        <slide>
+          <slideno>5</slideno>
+          <text>Or&#8233;
+&#8364; &#8233;
+[2  &#8711;+k2](r &#61554; )F(r &#61554;&#968; = )
+&#8233;  
+W&#8233;
+&#8233;here:&#8233;
+k22&#181;E=2  &#61544;&#8233;
+and
+&#8233;
+F(r &#61554;&#8233;
+ 2)&#181;=2  &#61544;&#968;&#8233;
+&#8233;V(r &#61554; ) (r &#61554; )
+tT
+rh
+ae
+v&#8233;
+ei
+ln
+inc
+gid
+&#8233;ie
+nn
+&#8233;tt
+h&#8233;
+ew
+&#8233;za
+&#8233;v
+de
+ir&#8233;
+ed
+ce
+tscribe
+&#8233;&#61554; ikzion.&#8233;It&#8233;s
+i&#8233;
+sa
+&#8233;g&#8233;
+if
+vr
+ee
+ne
+&#8233;&#8233;
+ap
+sa
+&#8233;&#8233;rticle&#8233;
+&#968;  inc(r )=e&#8233;&#8364; 
+&#8364; 
+&#8364; &#8233;
+&#8233;
+&#8233;</text>
+        </slide>
+        <slide>
+          <slideno>0</slideno>
+          <text>&#8233;
+&#8233;
+&#8233;
+&#8233;
+Luiz&#8233;Leal &#8233;
+Oak&#8233;Ridge&#8233;National&#8233;Laboratory&#8233;
+Le
+Ec
+nt s&#8233;
+gu
+ir
+ne
+ee&#8233;P
+rir
+ne
+gs
+&#8233;e
+Dn
+et
+ped
+ar&#8233;a
+tt
+m&#8233;the&#8233;Nu
+Massachusetts&#8233;Instie
+tn
+ut
+t&#8233;
+eo
+&#8233;f&#8233;c
+tl
+he
+ea
+&#8233;r&#8233;
+Technology&#8233;(MIT)&#8233;of&#8233;
+&#8233;
+&#8233;&#8233;
+&#8233;
+&#8233;
+&#8233;
+&#8233;
+&#8233;
+Courtesy of Luiz Leal, Oak Ridge National Laboratory. Used with permission.</text>
+        </slide>
+      </slides>
+    </lecture>
+    <lecture>
+      <lecture_title>Collision Physics and Sampling</lecture_title>
+      <lecture_pdf_url>https://ocw.mit.edu/https://laws.lanl.gov/vhosts/mcnp.lanl.gov/pdf_files/la-ur-05-4983.pdf</lecture_pdf_url>
+      <lectureno>9</lectureno>
+      <slides/>
+    </lecture>
+    <lecture>
+      <lecture_title>Macroscopic Interactions</lecture_title>
+      <lecture_pdf_url>https://ocw.mit.edu/courses/22-106-neutron-interactions-and-applications-spring-2010/resources/mit22_106s10_lec02/</lecture_pdf_url>
+      <lectureno>2</lectureno>
+      <slides>
+        <slide>
+          <slideno>23</slideno>
+          <text>Considerations
+&#8226; Source characterization
+&#8211; Particle type
+&#8211;E n e r g y
+&#8211; Rate of emission
+&#8211; Direction of the source
+&#8211; Utilization factor
+&#8226; Geometry of the room
+&#8211; Shielding is a 3-D problem
+&#8226; Location
+&#8211;1 0thfloor vs basement
+&#8226; Requirements
+&#8211; Size, cost, weight, &#8230;Images removed due to copyright restrictions.</text>
+        </slide>
+        <slide>
+          <slideno>4</slideno>
+          <text>&#8226; Integrating the previous equation from 0 to 
+x, we get
+I(x) = I0exp(-N&#963;tx)
+&#8226; We define the macroscopic x.s. has&#931;= N&#963;
+units of &#931;are cm-1
+&#8226;T h u s
+-dI(x) = &#931;tI(x)dx   or   -dI(x)/I(x) = &#931;tdx</text>
+        </slide>
+        <slide>
+          <slideno>10</slideno>
+          <text>Mean Free Path
+&#8226; The distance that a neutron moves between 
+interactions is called a free path , and the 
+average distance is known as the mean free 
+path.
+&#8226; Integral of xp(x)dx between 0and infinity</text>
+        </slide>
+        <slide>
+          <slideno>26</slideno>
+          <text>Neutron shielding
+&#8226; Much more scattering than neutrons
+&#8226; Attenuation depends very strongly on 
+neutron energy
+&#8226; Shielding designs require multiple layers
+&#8211; Premoderator
+&#8211; Moderator
+&#8211; Gamma shield
+Gamma ShieldModeratorPremoderator
+Image  by MIT OpenCourseWare.</text>
+        </slide>
+        <slide>
+          <slideno>15</slideno>
+          <text>Mine Detection
+&#8226; Neutron sources and neutron moderation 
+are used to detect land mines
+&#8226; Cf252 source
+&#8211; Spontaneous fission with spectrum in slides of 
+Lecture 1
+&#8226; Explosives
+&#8211; Organic compounds with lots of Carbon and 
+Hydrogen</text>
+        </slide>
+        <slide>
+          <slideno>2</slideno>
+          <text>Macroscopic interactions
+&#8226; Suppose a target of thickness X is placed 
+in a monodirectional beam of intensity I0 
+and that a neutron detector is placed at 
+some distance behind the target.  It is also 
+assumed that the target and the detector 
+are small so that the detector only detects the neutrons that do not interact.</text>
+        </slide>
+        <slide>
+          <slideno>28</slideno>
+          <text>Typical Materials &#8211; Moderator
+&#8226; Absorbs and slows neutrons down
+&#8226; Concrete
+&#8211; Cheap
+&#8211; Loses water (i.e. hydrogen) at high 
+temperatures, H creates 2.2 MeV gamma
+&#8226; Borated concrete
+&#8211; Increase absorption
+&#8211; Boron depletes over time
+&#8226; Water
+&#8211; Good absorption
+&#8211; No structural integrity, H creates 2.2 MeV 
+gamma
+&#8226; Polyethylene
+&#8211; Lightweight, good absorption
+&#8211; H creates 2.2 MeV gamma, C creates 4.4 
+MeV gammaImage removed due to copyright restrictions.</text>
+        </slide>
+        <slide>
+          <slideno>14</slideno>
+          <text>Slowing Down
+&#8226; Neutrons are slowed down by collisions in 
+the manner of a random walk
+&#8226; Since fast neutrons have much more 
+energy than the molecules they are 
+colliding with, the neutrons will lose energy
+&#8226; Extent of slowing down depends on 
+&#8211; Temperature of medium
+&#8211; Size, shape and nature of moderation 
+medium</text>
+        </slide>
+        <slide>
+          <slideno>17</slideno>
+          <text>Mine Detection
+&#8226; Fast neutrons enter soil
+&#8226; If there is no explosive they scatter in sand, soil, 
+&#8230;
+&#8211; Not really good moderators
+&#8226; If a plastic explosive is found
+&#8211; Neutrons scatter off hydrogen and carbon
+&#8211; Lower energy neutrons are reflected and detected on 
+the surface
+&#8226; Potential issues
+&#8211; Wet soil, requires very fine calibration</text>
+        </slide>
+        <slide>
+          <slideno>21</slideno>
+          <text>Moderating Ratio
+&#8226; A material with a large moderating power might 
+still not be practical if it has a large absorption 
+x.s.
+&#8226; Moderating ratio helps in selecting a good 
+moderator:  &#958;&#931;s / &#931;a
+Water
+Heavy WaterModerating Power Moderating Ratio
+58 1.280.18
+0.00001
+0.16
+0.064
+3.2621000
+45
+130
+200
+122He @ STP
+Be
+Graphite
+Polyethylene
+Image by MIT OpenCourseWare.</text>
+        </slide>
+        <slide>
+          <slideno>22</slideno>
+          <text>Shielding Objectives
+&#8226; Limit radiation exposure of staff, patients, 
+visitors and the public to acceptable levels
+&#8226; Optimize protection of patients, staff and 
+the public
+&#8226; Protect electronics (i.e. computer chips, 
+transistors, &#8230;) in satellites or other 
+instruments
+&#8226; Reduce background counts in detectors</text>
+        </slide>
+        <slide>
+          <slideno>7</slideno>
+          <text>&#8226; Macroscopic interactions are the simplest 
+way to evaluate gamma ray attenuation
+&#8211; Low energy gamma&#8217;s are more likely to be 
+absorbed
+&#8211; Neutrons on the other hand are more likely to 
+scatter, which interferes with the 
+measurements.
+&#8226; If the target is a compound, the total 
+macroscopic x.s. is the sum of the 
+individual elements macroscopic x.s.&#931;t= &#931;1+ &#931;2+ &#8230;</text>
+        </slide>
+        <slide>
+          <slideno>29</slideno>
+          <text>Typical Materials &#8211; Gamma Shield
+&#8226; Lead
+&#8211; Excellent gamma absorption
+&#8211;T o x i c
+&#8226; Depleted uranium
+&#8211; Very high Z number
+&#8211; expensive</text>
+        </slide>
+        <slide>
+          <slideno>38</slideno>
+          <text>&#8226; Conversion will also depend on specific target
+&#8211; Tissues and organs
+&#8211; Orientation
+&#8211; Self-shielding
+&#8211; Attenuation
+&#8226; Effective dose equivalent is correlated to the flux
+HE= hE&#934;
+where hEis the fluence-to-dose factor and is evaluated for 
+different models using photon-neutron-electron transport 
+calculations</text>
+        </slide>
+        <slide>
+          <slideno>41</slideno>
+          <text>MIT OpenCourseWare
+http://ocw.mit.edu 
+22.106 Neutron Interactions and Applications
+Spring 2010 
+For information about citing these materials or our Terms of Use, visit: http://ocw.mit.edu/terms . </text>
+        </slide>
+        <slide>
+          <slideno>35</slideno>
+          <text>Effective Dose Equivalent
+&#8226; The energy absorbed from any type of 
+radiation per unit mass of the absorber is 
+defined as the absorbed dose
+&#8211; Historical unit is the rad = 100 ergs/gram (1 
+erg = 10-7J)
+&#8211; SI unit is the Gray (Gy) = 1J/gram (1 Gy = 100 
+rad)</text>
+        </slide>
+        <slide>
+          <slideno>39</slideno>
+          <text>Conversion factor
+Neutrons Photons
+1.0E-09
+1.0E-10
+1.0E-11
+1.0E-121E-7 1E-6 1E-5 1E-4 1E-3 0.01 0.1 1.0 10
+Energy (MeV)hE(Sv cm2)AP
+PA
+LAT
+ROTNeutrons1.0E-10
+1.0E-11
+1.0E-12
+1.0E-13
+1.0E-14
+1.0E-15
+1.0E-16
+0.01 0.1 1.0 10
+Energy (MeV)hE(Sv cm2)
+AP
+PA
+LAT
+ROT
+ISOGamma Rays
+Image s by MIT OpenCourseWare.</text>
+        </slide>
+        <slide>
+          <slideno>24</slideno>
+          <text>&#8226; Must consider
+&#8211; Primary beam
+&#8211; Scattered beams
+&#8211; Leakage from 
+source
+Image by MIT OpenCourseWare.
+</text>
+        </slide>
+        <slide>
+          <slideno>31</slideno>
+          <text>Geometry - Maze
+Calculate dose rate at reflection point by ISL, then reduce this by 
+0.1% to give the dose rate at 1 metre from reflection point.Radiation along the Maze
+Isocentre
+Image by MIT OpenCourseWare.</text>
+        </slide>
+        <slide>
+          <slideno>9</slideno>
+          <text>&#8226;&#931;= &#961;Na (n1&#963;1+ n2&#963;2+ &#8230;) / Mm
+&#8226; Example of Natural Uranium</text>
+        </slide>
+        <slide>
+          <slideno>6</slideno>
+          <text>&#8226; Let the quantity p(x)dx be the probability 
+that a neutron will have its first interaction 
+in dxin the neighborhood of x.
+p(x)dx = exp(-&#931;tx) .&#931;tdx
+First interaction probability distribution function
+&#8226; Examples
+&#8211; Calculate first interaction probability between 
+x = a and x = b
+&#8211; Calculate probability of not interacting in slab</text>
+        </slide>
+        <slide>
+          <slideno>37</slideno>
+          <text>&#8226; In air, since there is almost no attenuation, we 
+can estimate fluence to be
+&#934;= N / 4&#960; d2
+where dis the distance from the source and Nthe total 
+integrated number of neutrons
+&#8226; Conversion from fluence-to-dose must take into 
+account
+&#8211; Secondary particle production
+&#8211; Kinetic energy of these particles
+&#8211; Quality factor of particle type
+&#8226; Fast electrons Q = 1
+&#8226; Gamma&#8217;s Q = 1
+&#8226; Alpha Q = 20
+&#8226; Neutrons Q = 5-20 (depends on energy level)</text>
+        </slide>
+        <slide>
+          <slideno>13</slideno>
+          <text>Moderation in Bulk Matter
+&#8226; Moderation is often times needed for
+&#8211; Neutron detection
+&#8211; Thermal reactors
+&#8211; Neutron diffraction
+&#8211; Small angle neutron scattering (SANS)
+&#8226;P u r p o s e :  
+&#8211; Increase the probability of interaction in &#8220;1/v&#8221; region
+&#8211; Or, produce neutrons with low energy for condensed 
+matter studies</text>
+        </slide>
+        <slide>
+          <slideno>33</slideno>
+          <text>&#8226; Effective radiation shields consist of 
+combinations of materials
+&#8211; Low A materials to moderate
+&#8211; Thermal neutron absorbers
+&#8211; High Z materials to absorb gamma&#8217;s
+&#8226; Examples
+&#8211; Polyethylene &#8211; lead
+&#8211; Concrete &#8211; Iron
+&#8211; Lithium hydride
+&#8226; Choice of material depends on sample to 
+shield, cost, space, weight restrictions, &#8230;</text>
+        </slide>
+        <slide>
+          <slideno>27</slideno>
+          <text>Typical Materials &#8211; Premoderator
+&#8226; Scatter the high energy neutrons to facilitate 
+efficient of other two layers
+&#8211;I r o n
+&#8226; Low activation, high Z number
+&#8226; Corrodes
+&#8211; Tungsten
+&#8226; Dense, high Z number
+&#8226; Expensive
+&#8211; Lead
+&#8226; Low activation, high Z number
+&#8226;T o x i cImages removed due to copyright restrictions.</text>
+        </slide>
+        <slide>
+          <slideno>0</slideno>
+          <text>Lecture 2
+Macroscopic Interactions
+22.106 Neutron Interactions and Applications
+Spring 2010</text>
+        </slide>
+        <slide>
+          <slideno>1</slideno>
+          <text>Objectives
+&#8226; Macroscopic Interactions
+&#8226; Atom Density
+&#8226; Mean Free Path
+&#8226; Moderation in Bulk Matter
+&#8226; Neutron Shielding
+&#8226; Effective Dose Equivalent</text>
+        </slide>
+        <slide>
+          <slideno>40</slideno>
+          <text>&#8226; Estimation of the effects of a given 
+exposure to ionizing radiation is by its 
+nature an inexact science.
+&#8226; Biological effects are not absolute physical 
+quantities that can be measured with high 
+precision.
+&#8226; Effective dose calculations provide 
+guidance in approximating the potential effects of a given exposure to radiation.</text>
+        </slide>
+        <slide>
+          <slideno>12</slideno>
+          <text>Objectives
+&#8226; Neutron Moderation
+&#8226; Shielding
+&#8226;D o s e</text>
+        </slide>
+        <slide>
+          <slideno>16</slideno>
+          <text>Mine Detection
+6
+5
+3
+8217
+4
+Experimental arrangement. Detector consisting of six 14-inch, 4-atmosphere 3He tubes (1) held between
+two Al plates (7). Time-tagged neutron source (2) is located directly below detector. Simulated mine (3)
+is buried in sand (5); sand is held in 4-foot stock tank (6) supported on a wooden pallet (8). Cd sheet
+(4) forms thermal neutron shield. For wet-sand tests, a stainless steel pan is buried in sand and filled
+with dry sand. Water is added to give the desired water content.
+Image  by MIT OpenCourseWare.</text>
+        </slide>
+        <slide>
+          <slideno>5</slideno>
+          <text>&#8226;-dI(x)/I(x) in the previous equation is equal to the 
+fraction of the neutrons that have penetrated the 
+distance x into the target without interacting, which subsequently interact in the distance dx
+&#8211; Equivalent to the probability that a neutron which 
+survives up to xand interacts in the next dx
+&#8211;T h u s  &#931;tdxis the probability that a neutron interacts in 
+dx
+&#8211; It follows that &#931;t is the probability per unit path length 
+that a neutron will undergo an interaction
+&#8226;I(x)/I0 = exp(-&#931;tx)is equal to the probability that a 
+neutron can move through this distance without 
+interacting.</text>
+        </slide>
+        <slide>
+          <slideno>19</slideno>
+          <text>Average Log Energy Decrement
+&#8226;&#958;= ln (E0/E1)
+&#8226; Assuming isotropic elastic scattering only, we 
+can find the following expression
+Target Nucleus
+Target NucleusNeutronNeutronElastic Scattering
+( )
+11ln
+2112
+-+ --=
+AA
+AAx
+2
+11, ln11 &#247;&#248;&#246;&#231;&#232;&#230;
++-=-+ =AAwhere a aaax
+Image s by MIT OpenCourseWare.</text>
+        </slide>
+        <slide>
+          <slideno>32</slideno>
+          <text>Activation
+&#8226; Neutrons tend to activate shield material 
+which can create disposition problems and 
+can also contribute to dose to environment
+&#8211; Must carefully select materials with low 
+activation and short-lived decay</text>
+        </slide>
+        <slide>
+          <slideno>8</slideno>
+          <text>Atom Density
+&#8226; The atom density of each element iis 
+given by:
+Ni= &#961;Na ni / Mm
+where&#961;= density of compound (g/cc)
+Mm= molecular mass (g/mol)
+Na= Avogadro number
+ni= number of atoms of element i
+in one molecule</text>
+        </slide>
+        <slide>
+          <slideno>18</slideno>
+          <text>Moderating Power
+&#8226; Compares ability of materials to moderate 
+neutrons
+&#8226; Two important factors to consider
+&#8211; Probability of scattering interaction
+&#8211; Average change in kinetic energy of the 
+neutron after scattering
+&#8226; Define as
+&#958;&#931;s&#958;: average logarithmic energy decrement
+&#931;s: scattering macroscopic x.s.</text>
+        </slide>
+        <slide>
+          <slideno>34</slideno>
+          <text>Pb-208
+H-1105
+104
+103
+102
+101
+100
+10-1
+10-2
+10-3
+10-4
+10-5
+10-6
+10-910-810-710-610-510-410-310-210-1100101
+Energy (MeV)Cross Section (b)
+10-910-610-510-410-310-210-1
+10-810-710-610-510-410-310-210-1100101
+Energy (MeV)100101102103104105Cross Section (b)Image  by MIT OpenCourseWare.
+Image  by MIT OpenCourseWare.</text>
+        </slide>
+        <slide>
+          <slideno>25</slideno>
+          <text>Gamma Shielding
+&#8226; Low energy gamma
+&#8211; Lead
+&#8226; High energy gamma
+&#8211; Concrete (high density)
+&#8226; Cost plays a major role in the decision
+&#8211; Lead is much more expensive than concrete!
+&#8226; Very little scattering present</text>
+        </slide>
+        <slide>
+          <slideno>30</slideno>
+          <text>&#8226; Thermal neutrons can be 
+easily shielded by Boron 
+or Cadmium as they have 
+large neutron cross 
+sections in the thermal region
+&#8211; Cd has the disadvantage of 
+emitting high energy 
+gamma&#8217;s after neutron 
+capture which requires 
+additional gamma shielding
+&#8226; High speed neutrons are 
+more difficult to shield 
+against, because 
+absorption x.s. are smaller in that range.
+&#8211; Thus it is first necessary to 
+moderate the neutrons105
+104
+103
+102
+101
+100
+10-1
+10-110-210-310-410-510-610-710-810-9100101
+Energy (MeV)Cross Section (b)
+Image by MIT OpenCourseWare.</text>
+        </slide>
+        <slide>
+          <slideno>20</slideno>
+          <text>Number of collisions
+&#8226; If we lose &#958; at every collision, we can 
+approximate the average number of 
+collisions it takes to go from E0to En
+which yields
+Derivation: See PDF on Neutron Moderation on stellarln E n = In E 0 _ nx
+n = 1_
+xln E0
+E1nImage  by MIT OpenCourseWare.
+Image  by MIT OpenCourseWare.</text>
+        </slide>
+        <slide>
+          <slideno>36</slideno>
+          <text>&#8226; Since neutron and gamma&#8217;s are relatively 
+penetrating radiations, the dose equivalent 
+is easier to estimate from fluence
+&#8211; Dose equivalent (H) = Dose (D) x Quality (Q)
+&#8226; Quality factor is a function of the type of radiation
+&#8226; If D is in rad, H is in rem
+&#8226; If D is in Gy, H is in Sievert (Sv)
+&#8226; Fluence is given by &#934;
+&#8211; Integral of the flux over time of exposure</text>
+        </slide>
+        <slide>
+          <slideno>3</slideno>
+          <text>&#8226; Let I(x) be the intensity of the non 
+interacted neutrons after penetrating the 
+distance xinto the target.
+&#8226; In traversing an additional distance dx, the 
+intensity of the beam will be decreased by 
+the number of neutron that have interacted in dx.  This decrease in intensity will be 
+given by:
+- dI(x) = N&#963;tI(x)dx
+where Nis the atom density in the target (at/cc)</text>
+        </slide>
+        <slide>
+          <slideno>11</slideno>
+          <text>Significance
+&#8226; If the mean free path of neutrons emitted by a sample in 
+a passive assay instrument is long compared to the 
+dimensions of the sample, it is likely that most neutrons will escape the sample and enter the detection region.
+&#8226; If we know the number of collisions to thermalize, we can 
+estimate the needed moderator thickness (must also consider the scattering angle)
+&#8226; If the thickness of a shield is many times the mean free 
+path of a neutron trying to penetrate the shield, then the 
+shield fulfills its purpose (complicated by the energy 
+dependance of the x.s.)</text>
+        </slide>
+      </slides>
+    </lecture>
+    <lecture>
+      <lecture_title>Neutron Thermalization</lecture_title>
+      <lecture_pdf_url>https://ocw.mit.edu/courses/22-106-neutron-interactions-and-applications-spring-2010/resources/mit22_106s10_lec05/</lecture_pdf_url>
+      <lectureno>5</lectureno>
+      <slides>
+        <slide>
+          <slideno>3</slideno>
+          <text>&#8364; A and B become
+IA+1=2I+1Ia++2I+1a&#8722;
+and
+2B=2I+1(a+&#8722;a&#8722;)&#8233;
+&#8233;
+&#8233;
+If
+eT
+xh&#8233;
+ii
+ss
+t&#8233;
+si
+.&#8233;na
+di+
+ca=
+tesa
+&#8233;&#8722;
+th=
+ata
+&#8233; n&#8233;
+oth
+&#8233; se
+pn
+i&#8233;
+nB
+&#8233; co=
+he0
+r&#8233;
+enan
+t&#8233;d
+s&#8233;
+caA
+tte=
+rina
+g.&#8233;
+&#8233;
+the&#8233;incoH
+he
+en
+rc
+ee
+n,&#8233;
+t&#8233;A
+sc&#8233;
+ar
+te
+tl
+ea
+rt
+ie
+ns
+g&#8233;t
+.&#8233;o&#8233;the&#8233;coherent&#8233;and&#8233; B&#8233;to&#8233;
+&#8233;
+be&#8233;dT
+erh
+ie
+v&#8233;
+ee
+dx
+&#8233;p
+ase
+:c
+&#8233;ted&#8233;values&#8233;for&#8233;the&#8233;operator&#8233;~2
+a&#8233;can&#8233;
+&#8233;
+&lt;a2&gt;=&#950;~ ~*
+a a&#950;&#8233;&#8364; &#8364; &#8364; 
+&#8364; &#8364; 
+&#8364; 
+&#8364; &#8233;</text>
+        </slide>
+        <slide>
+          <slideno>0</slideno>
+          <text>Coherent&#8233;an
+&#8233;
+incoL
+he
+et
+r&#8233;
+ea
+ns
+ts
+&#8233;u
+spm
+ine
+&#8233;&#8233; ad e
+asn&#8233;I
+&#8233;&#8233;n
+oc
+po
+R
+eh
+a
+rd
+ae
+tr
+i
+ou
+rn
+ft S
+s
+&#8233;&#8233;
+o&#8233;
+rp
+&#8233; ti
+hn
+e&#8233;Scattering&#8233;
+&#8233; coherent&#8233; and&#8233;
+  &#8233;
+&#8233;a~ ~
+=A+B~
+I &#61554; 
+.&#61554;i  
+  
+&#8233;J &#61554; 
+=I &#61554; 
++&#61554;i  &#8233;
+  J &#61554; 2=I &#61554; 2+&#8233;
+&#8233;&#61554;i  
+2+2I &#61554; 
+.&#61554;i  
+&#61554; &#61554;&#8233;
+I .i  1=
+  2[J &#61554; &#61554; 2&#8722;I &#61554; 2&#8722;i 2]
+&#8233;
+  &#8233;
+a~
+&#950;~
+=A&#950;~
++B I &#61554; 
+.&#61554;i  
+&#950;
+&#8233;
+&#950;&#8233;
+&#8594;spin state eigenvector&#8233;&#8364; 
+&#8364; 
+&#8364; 
+&#8364; 
+&#8364; 
+&#8364; </text>
+        </slide>
+        <slide>
+          <slideno>6</slideno>
+          <text>&#8364; 2 I&lt;a+1&gt;=2I+1Ia++2I+1&#63726; a&#8722;&#63737;2 I(I+1)+&#63727; &#63738; &#63728; &#63739; (2I+1)2
+&#8233;(a+&#8722;a&#8722;)2
+&#8233;
+aI+1
+coh=2I+1a+ I+2I+1a&#8722;
+&#8233;
+&#8233;
+[I(Ia+1)]1/ 2
+inch=2I+1(a+&#8722;a&#8722;)
+&#8233;&#8233;
+&#8233;
+&#8233;
+&#8233;
+&#8233;
+&#8233;
+&#8233;
+&#8233;
+&#8233;
+&#8233;&#8364; 
+&#8364; </text>
+        </slide>
+        <slide>
+          <slideno>4</slideno>
+          <text>&#8364; &#8233;2  
+&#8233;&lt;a
+h&gt;=
+e&#8233;cA&#61554; 
+T ro2
+s+
+s&#8233;tAB
+erm&lt;
+s&#8233;I 
+ar.
+e&#61554;i 
+&#8233; 
+z&gt;
+er+
+oBA&lt;I &#61554; 
+.&#61554;i  &gt; +B2&lt;(I &#61554; 
+.&#61554;i  )2&gt;
+se
+pxi
+is
+nt
+,s
+&#8233;i&#8233;
+.eb
+.e
+,&#8233;t&#61554; 
+  &lt;w
+I &#61554;e 
+.e
+i n
+&gt;=&#8233; th
+0e&#8233;
+&#8233;neutron&#8233; s&#8233;
+psi
+.in
+nc
+&#8233; ae
+n&#8233;n
+do
+&#8233;&#8233;
+tc
+ho
+er
+&#8233;r
+ne
+ula
+clt
+eio
+un
+s&#8233;&#8233;
+  &#8233;
+&#8233;&lt;a2&gt;=A2+B2&lt;(I &#61554; 
+.&#61554;
+&#8233;i  )2&gt;&#8233;
+  
+&#8233;&lt;(I &#61554; 
+.i &#61554; )2&gt;=&lt; (Ixix)2+(I2
+yiy)+(Iziz)2
+&#8233;&gt;
+&#8233;&lt;(i)2&gt;=&lt; (i)2 2
+x y&gt;=&lt; (iz)&gt;=1/4&#8233;
+&lt;(I &#61554; 
+.&#61554;i  )2 1&gt;=4
+  I &#61554; 2&lt; &gt;
+or
+&#61554; 
+&lt;(I .&#61554; i )2 1&gt;=4I(I+1)&#8233;&#8364; 
+&#8364; 
+&#8364; 
+&#8364; 
+&#8364; </text>
+        </slide>
+        <slide>
+          <slideno>5</slideno>
+          <text>&#8233;
+&#8364; 2&lt;a&gt;=A2+B21
+4I(I+1)
+&#8233;
+&#8233;
+&#8233;
+With A and B as
+IA+1=2I+1Ia++2I+1a&#8722;
+and
+2B=2I+1(a+&#8722;a&#8722;)&#8233;
+&#8233;&#8233;
+&#8233;
+&#8233;
+&#8364; &#8233;
+&#8233;
+&#8233;</text>
+        </slide>
+        <slide>
+          <slideno>7</slideno>
+          <text>MIT OpenCourseWare
+http://ocw.mit.edu 
+22.106 Neutron Interactions and Applications
+Spring 2010
+ 
+ 
+ 
+For information about citing these materials or our Terms of Use, visit: http://ocw.mit.edu/terms . </text>
+        </slide>
+        <slide>
+          <slideno>2</slideno>
+          <text>&#8364; b)For J =I+1/2
+we have
+a+ 1=A+2B[(I+1/2)( I+3/2)&#8722;I2&#8722;I&#8722;3/4]
+or
+a+ 1=A+2
+&#8233;B I
+&#8233;
+A and B as a function of a&#8722;and a+
+Froma
++ 1=A+2B I
+and
+a&#8722; 1=A&#8722;2B(I+1)
+&#8364; &#8233;</text>
+        </slide>
+        <slide>
+          <slideno>1</slideno>
+          <text>&#8364; a~
+&#950;
+  ~
+=A&#950;~
++B1
+2[J &#61554; &#61554; 2&#8722;I &#61554; 2&#8722;i 2]&#950;
+&#8233;
+a=A+B12
+&#8233;[J(J+1)&#8722;I(I+1)&#8722;i(i+1)]
+&#8233;
+&#8233;For i =1/2&#8658;J=I&#8722;1/2and J =I+1/2
+a)For J =I&#8722;1/2
+we have
+a&#8722; 1=A+2B[(I&#8722;1/2)( I+1/4)&#8722;I2&#8722;I&#8722;3/4]
+or
+a&#8722; 1=A&#8722;2
+&#8233;B(I+1)&#8364; 
+&#8364; 
+&#8364; </text>
+        </slide>
+      </slides>
+    </lecture>
+    <lecture>
+      <lecture_title>Tallying and Uncertainties</lecture_title>
+      <lecture_pdf_url>https://ocw.mit.edu/https://laws.lanl.gov/vhosts/mcnp.lanl.gov/pdf_files/la-ur-05-4983.pdf</lecture_pdf_url>
+      <lectureno>10</lectureno>
+      <slides/>
+    </lecture>
+    <lecture>
+      <lecture_title>Neutron Fundamentals / Microscopic Interactions</lecture_title>
+      <lecture_pdf_url>https://ocw.mit.edu/courses/22-106-neutron-interactions-and-applications-spring-2010/resources/mit22_106s10_lec01/</lecture_pdf_url>
+      <lectureno>1</lectureno>
+      <slides>
+        <slide>
+          <slideno>21</slideno>
+          <text>&#8226; Heavy Nucleus
+&#8211; eV range: resonances appear
+&#8211; keV range: resonances are too close to be 
+distinguished
+&#8211; MeV range: resonances are broader and 
+small, x.s. becomes smooth and rolling.</text>
+        </slide>
+        <slide>
+          <slideno>25</slideno>
+          <text>&#8226; Spontaneous Fission from Cf252
+1 2 3 4 5100101102Intensity (ARB. UNITS)
+Measured neutron energy spectrum from the spontaneous fission of  252Cf.Neutron energy (MeV)
+Image by MIT OpenCourseWare.</text>
+        </slide>
+        <slide>
+          <slideno>18</slideno>
+          <text>Charged particles (n,p), (n, &#945;)
+&#8226; Usually requires lots of energy to happen with 
+one notable exception
+&#8211;10B (n,&#945;) 7Li: very high x.s. at low energy which is why 
+10B is used as a thermal absorber
+&#8226; Very small x.s. in heavy nucleis, because 
+emitted charge particle must overcome Coulomb 
+barrier in order to escape nucleus
+&#8211; Delay is so long that compound nucleus (CN) will 
+scatter (elastic or inelastic) instead.</text>
+        </slide>
+        <slide>
+          <slideno>5</slideno>
+          <text>&#8226; Neutron interacts with materials for different purposes or 
+consequences:
+&#8211; Detection
+&#8226; Based on the interaction of neutrons with other materials
+&#8211; Shielding
+&#8226; Neutron absorption or reflection prevents neutrons from escaping
+&#8211; Inducing fission
+&#8226; Active detection systems
+&#8226; Ionization chambers
+&#8211; Structural displacement
+&#8226; Material damage by creating defects in lattice
+&#8211; Material assay
+&#8226; Neutron Diffraction
+&#8226; Small Angle Neutron Scattering</text>
+        </slide>
+        <slide>
+          <slideno>1</slideno>
+          <text>Objectives
+&#8226; Basic Neutron Properties
+&#8226; Concept of Microscopic x.s.
+&#8226; Brief review of Neutron Interactions
+&#8226; Energy dependence of neutrons
+&#8211; Neutron &#8211; nucleus interactions
+&#8211; Neutron sources</text>
+        </slide>
+        <slide>
+          <slideno>16</slideno>
+          <text>(n,2n), (n,3n), &#8230;
+&#8226; Two step process
+&#8211; Incident neutron is inelastically scattered by a 
+target nucleus (threshold reaction)
+&#8211; If residual energy is left with excitation energy 
+above binding energy of last neutron, the 
+neutron is free to escape
+&#8226; (n,2n) threshold usually is 7-10 MeV
+&#8211; 1.8 MeV for Be
+&#8226; (n,3n) threshold usually is 11-30 MeV</text>
+        </slide>
+        <slide>
+          <slideno>9</slideno>
+          <text>Examples
+&#8226; 1 MeV neutron has a speed of
+&#8211; 1.383 x 107m/s
+&#8211; Will cross a 15 cm sample in 11 nanoseconds
+&#8226; 0.025 eV neutron has a speed of
+&#8211; 2187 m/s
+&#8211; Will cross a 15 cm sample in 70 microseconds
+&#8226; Conclusion: When studying neutron 
+distributions, the energy levels involved and the 
+size of the systems usually make it possible to 
+neglect the beta decay of the free neutron.</text>
+        </slide>
+        <slide>
+          <slideno>28</slideno>
+          <text>MIT OpenCourseWare
+http://ocw.mit.edu 
+22.106 Neutron Interactions and Applications
+Spring 2010 
+For information about citing these materials or our Terms of Use, visit: http://ocw.mit.edu/terms . </text>
+        </slide>
+        <slide>
+          <slideno>12</slideno>
+          <text>Inelastic Scattering (n,n&#8217;)
+&#8226; Plays a key role in neutron slowing down a 
+high energies
+&#8211; Requires a threshold energy to excite the 
+nucleus to a quantum state
+&#8211; The neutron can thus lose a considerable 
+amount of energy in one collision since most 
+of it is used to bring the nucleus to this 
+quantum state</text>
+        </slide>
+        <slide>
+          <slideno>15</slideno>
+          <text>Technitium-99m
+&#8226; Technetium-99m is used in 20 million diagnostic nuclear 
+medical procedures every year.
+&#8226; It is a gamma ray emitting isotope used as a radioactive 
+tracer that medical equipment can detect in the body. It 
+is well suited to the role because it emits readily detectable 140 keV gamma rays (about the same 
+wavelength emitted by conventional X-ray diagnostic 
+equipment), and its 
+half-life for gamma emission is 6.01 
+hours. The short half life of the isotope allows for 
+scanning procedures which collect data rapidly, but keep 
+total patient radiation exposure low.
+&#8226; Molybdenum-99 is produced mainly by fission of HEU
+&#8211; Decays to Tc-99m (half-life of 66hrs)
+&#8211; Tc-99m is chemically extracted from Mo-99 fairly easily</text>
+        </slide>
+        <slide>
+          <slideno>20</slideno>
+          <text>Energy Dependence of x.s.
+&#8226; General Rule: x.s. decreases with increasing 
+energy of incoming neutron
+&#8226; At low energies (&lt;1 MeV), (n,n) is nearly 
+constant whereas (n, &#947;) is proportional to &#8220;1/v&#8221;
+&#8226; In the keV range, resonances are superimposed 
+on the &#8220;1/v&#8221; trend, these resonances are formed 
+when neutron energy + binding energy 
+correspond to an excitation level of the nucleus.</text>
+        </slide>
+        <slide>
+          <slideno>6</slideno>
+          <text>Microscopic x.s.
+&#8226; Probability of a particular event occurring between a 
+neutron and a nucleus is expressed through the concept 
+of a cross-section.
+&#8226; Consider a beam of mono-energetic neutrons of intensity 
+I (neutrons/cm2.s) incident on a very thin sample material 
+such that there are NAatom per cm2
+NA nuclei/cm2I neutrons/cm2 . sec
+x
+Image by MIT OpenCourseWare.</text>
+        </slide>
+        <slide>
+          <slideno>7</slideno>
+          <text>Probability of a neutron-
+nuclear reaction ischaracterized by the nuclear microscopiccross section.                              A RI N&#963;=
+2#
+cm&#9121;&#9124;
+&#9122;&#9125;&#9123;&#9126;2#
+cm s&#9121;&#9124;
+&#9122;&#9125;&#9123;&#9126;2cm&#9121;&#9124;&#9123;&#9126; 2#
+cm s&#9121;&#9124;
+&#9122;&#9125;&#9123;&#9126;Microscopic Cross section
+NA nuclei/cm2I neutrons/cm2 . sec
+x
+Image  by MIT OpenCourseWare.</text>
+        </slide>
+        <slide>
+          <slideno>17</slideno>
+          <text>(n,2n), (n,3n) for U-238
+101
+100
+10-1
+10-2
+100Cross Section (b)
+Energy (MeV)
+Image by MIT OpenCourseWare.</text>
+        </slide>
+        <slide>
+          <slideno>19</slideno>
+          <text>Fission Reaction (n,f)
+&#8226; Activation energy required to induce fission.  Energy 
+not available in ground state of 236U but it is supplied 
+in the form of the neutron binding energy in (236U)*
+&#8226; Fission usually provides two fission products (FP)
+&#8211; Scission in 3 or more FPs is possible but very rare
+&#8226; 1/400 scission in 3 FPs
+&#8226; 1/3000 scission in 4 FPs
+&#8226; Releases roughly 200MeV of energy and &#957;neutrons 
+(typically 2-3).12
+121
+0 200AA A
+ZZ Zn X X X neutrons MeV+&#8594;++ +</text>
+        </slide>
+        <slide>
+          <slideno>24</slideno>
+          <text>&#8226; Neutrons are produced with varying energy 
+depending on the source.
+&#8211; Fission produces 2-3 neutrons/fission
+&#8211; Large fraction is prompt (10-13seconds)
+&#8211; Small fraction is delayed (decay of FPs)
+1.036( ) 0.453 sinh 2.29EEe E
+&#967;&#8722;=
+E (MeV)5 4 3 2 1c (E)
+00.10.20.30.40.5
+Image by MIT OpenCourseWare.</text>
+        </slide>
+        <slide>
+          <slideno>4</slideno>
+          <text>Stability of fission products
+&#8226; Neutron rich 
+fission products 
+beta decay 
+towards stability
+Image removed due to copyright restrictions.</text>
+        </slide>
+        <slide>
+          <slideno>26</slideno>
+          <text>&#8226; Alpha Neutron Source
+02468
+2 4 6 8 10
+Neutron energy (MeV)Relative neutron intensity (MeV-1)
+EmulsionsStilbene
+Measured energy spectra for neutrons from a 239 Pu/Be source containing 80g of the isotope.
+Image by MIT OpenCourseWare.</text>
+        </slide>
+        <slide>
+          <slideno>2</slideno>
+          <text>Neutron
+&#8226; Discovered by James Chadwick in 1932
+&#8211; No electric charge
+&#8211; Mass of 1.008664915 amu (slightly more than 
+a proton)
+&#8211; Spin of &#189;
+&#8226; Its existence explained the atomic model 
+and the cohesion of the nucleus.  The 
+strong nuclear forces are able to keep the protons from repulsion.</text>
+        </slide>
+        <slide>
+          <slideno>13</slideno>
+          <text>Radiative Capture (n,&#947;)
+&#8226; Neutron combines with target of mass A to 
+produce nucleus of mass A+1 in a quantum 
+state.  The excitation of this state is equal to the sum of the neutron binding energy and the 
+kinetic of the neutron.
+&#8226; Energy is released in one or more gamma rays
+&#8226; This reaction is very important in the 
+production of radioactive medical isotopes.()*11 1
+0AA A
+ZZ ZnX X X&#947;+++&#8594;&#8594; +</text>
+        </slide>
+        <slide>
+          <slideno>23</slideno>
+          <text>C-12 total x.s.
+101
+100
+10-1
+10-910-810-710-610-510-410-310-210-1100101Cross Section (b)
+Energy (MeV)
+Image by MIT OpenCourseWare.</text>
+        </slide>
+        <slide>
+          <slideno>22</slideno>
+          <text>&#8226; Light Nucleus
+&#8211; Resonances appear only in MeV range.  They 
+are broad and small
+&#8211; Exceptions
+&#8226;1H and 2H have no resonances at all (no excitation 
+level in the nucleus)
+&#8226; Nuclides with &#8220;magic number&#8221; of protons and 
+neutrons may behave more like light nuclei</text>
+        </slide>
+        <slide>
+          <slideno>10</slideno>
+          <text>Types of Interactions
+&#8226; Two major types
+&#8211; Scattering: Speed and Direction change but 
+nucleus is left with same number of neutrons 
+and protons
+&#8211; Absorption: Original neutron disappears within 
+the nucleus</text>
+        </slide>
+        <slide>
+          <slideno>11</slideno>
+          <text>Elastic Scattering (n,n)
+&#8226; One of the most difficult neutron interactions to 
+measure and the most complicated to analyze 
+theoretically.
+&#8211; It is also one of the most important reactions in 
+reactors, characterization devices, &#8230;
+&#8226; Elastic Scattering requires to consider the 
+double differential cross section which describes the angular distribution and the energy 
+distribution as well as the total elastic cross-section.</text>
+        </slide>
+        <slide>
+          <slideno>27</slideno>
+          <text>&#8226; Spallation Neutron Source
+&#8211; High energy proton bombard a heavy target and 
+creates spallation particles
+1)Negative hydrogen ions (1 proton and 2 electrons) are 
+generated in pulses
+2)Accelerated to 1GeV (almost 90% of speed of light) 
+by a linear accelerator
+3)Electrons are stripped and protons are concentrated 
+in a 2MW beam
+4)Directed at liquid Mercury
+&#8226; Liquid at room temperature
+&#8226; Absorbs rapidly changes in  temperature and can survive 
+intense bombardment shock
+&#8226; Ejects 20-30 neutrons per collision (avg energy of 20-25 
+MeV)</text>
+        </slide>
+        <slide>
+          <slideno>0</slideno>
+          <text>Lecture 1
+Neutron Fundamentals
+Microscopic Interactions
+22.106 Neutron Interactions and Applications
+Spring 2010</text>
+        </slide>
+        <slide>
+          <slideno>3</slideno>
+          <text>&#8226; Bound neutrons (i.e. in the nucleus) are stable
+&#8226; Free neutrons are unstable
+&#8211; They are produced by:
+&#8226; Fission
+&#8226;F u s i o n
+&#8226; Photoneutrons
+&#8226; Alpha sources (PuBe, AmBe, AmLi)
+&#8211; Decays by beta emission
+&#8211; Half life of 885.7s (roughly 15 min)
+&#8226; Bounded nucleus may also use beta decay if unstable
+&#8211; This is the case for the fissi on products who are neutron rich. 
+Successive beta decay brings them closer to stability.</text>
+        </slide>
+        <slide>
+          <slideno>8</slideno>
+          <text>&#8226; Cross-sections are strongly dependent of 
+neutron incoming energy. This relation is 
+important in the understanding of x.s. but also to 
+estimate the time a neutron spends in a 
+particular region.
+&#8211; Classical expression for K.E. is sufficiently accurate 
+because rest mass of a neutron is fairly large (939.55 
+MeV)
+E = &#189; mv2
+E = 5.227 x 10-15v2or v = 1.383 x 107 E1/2</text>
+        </slide>
+        <slide>
+          <slideno>14</slideno>
+          <text>Cobalt-60
+&#8226; Production of 
+radioactive medical 
+isotopes
+&#8211; Sterilization
+&#8226; Medical Equipment
+&#8226; Food
+&#8226; Blood
+&#8211; Chemical tracer5.26 a0.31 MeV b
+1.33 MeV g1.17 MeV g27Co60
+28Ni60
+Image by MIT OpenCourseWare.</text>
+        </slide>
+      </slides>
+    </lecture>
+    <lecture>
+      <lecture_title>Review of Probability and Statistics, Introduction to Monte Carlo</lecture_title>
+      <lecture_pdf_url>https://ocw.mit.edu/https://laws.lanl.gov/vhosts/mcnp.lanl.gov/pdf_files/la-ur-05-4983.pdf</lecture_pdf_url>
+      <lectureno>8</lectureno>
+      <slides/>
+    </lecture>
+    <lecture>
+      <lecture_title>Criticality Safety / Monte Carlo Criticality</lecture_title>
+      <lecture_pdf_url>https://ocw.mit.edu/https://laws.lanl.gov/vhosts/mcnp.lanl.gov/pdf_files/la-ur-05-4983.pdf</lecture_pdf_url>
+      <lectureno>12</lectureno>
+      <slides/>
+    </lecture>
+    <lecture>
+      <lecture_title>Neutron Detection</lecture_title>
+      <lecture_pdf_url>https://ocw.mit.edu/courses/22-106-neutron-interactions-and-applications-spring-2010/resources/mit22_106s10_lec07/</lecture_pdf_url>
+      <lectureno>7</lectureno>
+      <slides>
+        <slide>
+          <slideno>6</slideno>
+          <text>Paralyzable or nonparalyzable
+&#8226; In a paralyzable system, an interaction 
+that occurs during the dead time after a 
+previous interaction extends the dead time
+&#8226; In a nonparalyzable system, it does not
+&#8226; At very high interaction rates, a 
+paralyzable system will be unable to detect any interactions after the first, 
+causing the detector to indicate a count 
+rate of zero</text>
+        </slide>
+        <slide>
+          <slideno>12</slideno>
+          <text>Detection efficiency
+&#8226;T h e  efficiency (sensitivity) of a detector is 
+a measure of its ability to detect radiation
+&#8226; Efficiency of a detection system operated 
+in pulse mode is defined as the probability 
+that a particle or photon emitted by a 
+source will be detected</text>
+        </slide>
+        <slide>
+          <slideno>22</slideno>
+          <text>GM counters
+&#8226; GM counters also must contain gases with 
+specific properties
+&#8226; Gas amplification produces billions of ion pairs 
+after an interaction &#8211; signal from detector 
+requires little amplification
+&#8226; Often used for inexpensive survey meters
+&#8226; In general, GM survey meters are inefficient 
+detectors of x-rays and gamma rays
+&#8226; Over-response to low energy x-rays &#8211; partially 
+corrected by placing a thin layer of higher atomic 
+number material around the detector</text>
+        </slide>
+        <slide>
+          <slideno>48</slideno>
+          <text>MIT OpenCourseWare
+http://ocw.mit.edu 
+22.106 Neutron Interactions and Applications
+Spring 2010 
+For information about citing these materials or our Terms of Use, visit: http://ocw.mit.edu/terms . </text>
+        </slide>
+        <slide>
+          <slideno>13</slideno>
+          <text>efficiency  Intrinsic   efficiency  Geometric   Efficiencydetector  reaching Number detected Number                             emitted Number detector  reaching Number   Efficiencyemitted Number detected Number   Efficiency
+&#215; =&#215; ==
+A
+aS
+W
+d
+Image by MIT OpenCourseWare.</text>
+        </slide>
+        <slide>
+          <slideno>8</slideno>
+          <text>Interaction Rate50,000 40,000 30,000 20,000 10,000 0Count Rate
+0200040006000800010,000
+Ideal
+Non-paralyzable
+Paralyzable
+Image by MIT OpenCourseWare.</text>
+        </slide>
+        <slide>
+          <slideno>30</slideno>
+          <text>6Li(n,alpha)
+&#8226; Equation
+&#8226; Only a ground state exists with Q-value of 
+4.78 MeV
+&#8211;EHe-3= 2.73 MeV and Ealpha= 2.05 MeV
+&#8226; Other possible reactions
+&#8211;3He(n,p)
+&#8211;157Gd</text>
+        </slide>
+        <slide>
+          <slideno>18</slideno>
+          <text>Ionization chambers
+&#8226; If gas is air and walls of chamber are of a 
+material whose effective atomic number is 
+similar to air, the amount of current produced is 
+proportional to the exposure rate
+&#8226; Air-filled ion chambers are used in portable 
+survey meters, for performing QA testing of 
+diagnostic and therapeutic x-ray machines, and 
+are the detectors in most x-ray machine 
+phototimers
+&#8226; Low intrinsic efficiencies because of low 
+densities of gases and low atomic numbers of 
+most gases</text>
+        </slide>
+        <slide>
+          <slideno>5</slideno>
+          <text>Dead time
+&#8226; Dead time of a detector system largely 
+determined by the component in the series with 
+the longest dead time
+&#8211; Detector has longest dead time in GM counter 
+systems
+&#8211; In multichannel analyzer systems the analog-to-digital 
+converter often has the longest dead time
+&#8226; GM counters have dead times ranging from tens 
+to hundreds of microseconds, most other systems have dead times of less than a few 
+microseconds</text>
+        </slide>
+        <slide>
+          <slideno>9</slideno>
+          <text>Current mode operation
+&#8226; In current mode, all information regarding 
+individual interactions is lost
+&#8226; If the amount of electrical charge collected from 
+each interaction is proportional to the energy 
+deposited by that interaction, then the net 
+current is proportional to the dose rate in the 
+detector material
+&#8226; Used for detectors subjected to very high 
+interaction rates</text>
+        </slide>
+        <slide>
+          <slideno>7</slideno>
+          <text>t
+tDead Live
+Dead LiveParalyzableNonparalyzableTime Events in detector
+Image by MIT OpenCourseWare.</text>
+        </slide>
+        <slide>
+          <slideno>28</slideno>
+          <text>BF3 Tube
+B-10a Li-7
+nB-10a Li-7
+nThe Li-7 deposits all its kinetic energy
+in the gas while the alpha particledeposits only a fraction of itsenergy.The alpha particle deposits all its kinetic energy in the gas while the Li-7deposits only a fraction of itsenergy.
+Pulse Size (energy deposited in detector)# Pulses2.31 MeV
+2.79 MeV1.47 MeV0.84 MeVGamma ray
+pulse, noise, etc.
+Image  by MIT OpenCourseWare.
+Image  by MIT OpenCourseWare.</text>
+        </slide>
+        <slide>
+          <slideno>47</slideno>
+          <text>PMT amplification
+&#8226; Total amplification of the PMT is the product of 
+the individual amplifications at each dynode
+&#8226; If a PMT has ten dynodes and the amplification 
+at each stage is 5, the total amplification will be 
+approximately 10,000,000
+&#8226; Amplification can be adjusted by changing the 
+voltage applied to the PMT</text>
+        </slide>
+        <slide>
+          <slideno>0</slideno>
+          <text>Lecture 7 
+Neutron Detection
+22.106 Neutron Interactions and Applications
+Spring 2010</text>
+        </slide>
+        <slide>
+          <slideno>32</slideno>
+          <text>Fission chambers
+&#8226; Inner surface of gas tube is coated with a fissile 
+material (U-235)
+&#8211; Current mode in reactor operation
+&#8211; Pulse mode elsewhere
+&#8226; Efficiency of about 0.5% at thermal energies
+&#8226; Combine fissile and fertile material to avoid loss 
+of sensitivity (regenerative chambers)
+&#8226; Memory effect when used in high flux regions
+&#8211; Decay of FPs</text>
+        </slide>
+        <slide>
+          <slideno>21</slideno>
+          <text>GM Counter
+&#8226; Geiger-Mueller region
+&#8211; Saturation of the 
+anode wire
+&#8211; Avalanche over the 
+entire wire
+&#8211; Cannot be used for 
+high count rate 
+applications1012
+1010
+108
+106
+104
+102
+1000 500 0Pulse Height (Arbitrary Units)
+Applied V oltageGeiger-
+Muller
+Region
+Proportional RegionIonization Chamber
+RegionRecombination
+Region
+Cathode
+CathodeAnode Wire
+UV PhotonUV Photon
+Individual
+avalanchese
+Images by MIT OpenCourseWare.</text>
+        </slide>
+        <slide>
+          <slideno>43</slideno>
+          <text>Materials
+&#8226; Sodium iodide activated with thallium 
+[NaI(Tl)], coupled to PMTs and operated in 
+pulse mode, is used for most nuclear 
+medicine applications
+&#8211; Fragile and hygroscopic
+&#8226; Bismuth germanate (BGO) is coupled to 
+PMTs and used in pulse mode as 
+detectors in most PET scanners</text>
+        </slide>
+        <slide>
+          <slideno>42</slideno>
+          <text>Scintillators (cont.)
+&#8226; Amount of light emitted after an interaction 
+increases with energy deposited by the 
+interaction
+&#8226; May be operated in pulse mode as 
+spectrometers
+&#8226; High conversion efficiency produces 
+superior energy resolution</text>
+        </slide>
+        <slide>
+          <slideno>44</slideno>
+          <text>Photomultiplier tubes
+&#8226; PMTs perform two functions:
+&#8211; Conversion of ultraviolet and visible light 
+photons into an electrical signal
+&#8211; Signal amplification, on the order of millions to 
+billions
+&#8226; Consists of an evacuated glass tube 
+containing a photocathode, typically 10 to 
+12 electrodes called dynodes, and an 
+anode</text>
+        </slide>
+        <slide>
+          <slideno>1</slideno>
+          <text>Types of detectors
+&#8226;Gas-filled detectors consist of a volume of gas 
+between two electrodes
+&#8226;I n  scintillation detectors , the interaction of 
+ionizing radiation produces UV and/or visible 
+light
+&#8226;Semiconductor detectors are especially pure 
+crystals of silicon, germanium, or other materials 
+to which trace amounts of impurity atoms have 
+been added so that they act as diodes</text>
+        </slide>
+        <slide>
+          <slideno>16</slideno>
+          <text>Types of gas-filled detectors
+&#8226; Three types of gas-filled detectors in common 
+use:
+&#8211; Ionization chambers
+&#8211; Proportional counters
+&#8211; Geiger-Mueller (GM) counters
+&#8226; Type determined primarily by the voltage applied 
+between the two electrodes
+&#8226; Ionization chambers have wider range of 
+physical shape (parallel plates, concentric 
+cylinders, etc.)
+&#8226; Proportional counters and GM counters must 
+have thin wire anode</text>
+        </slide>
+        <slide>
+          <slideno>15</slideno>
+          <text>&#8226; Outer shell is a metal cylinder made of either Steel or Aluminum
+&#8211; Filled with a gas
+&#8226; Inner wire is gold plated tungsten
+&#8211; Tungsten provides strength to the thin wire
+&#8211; Gold provides improved conductivityIncident
+chargedparticle
+Anode (+)
+Cathode (-)Battery or power supplyMeter
+++++++
+--
+----
+Image  by MIT OpenCourseWare.</text>
+        </slide>
+        <slide>
+          <slideno>20</slideno>
+          <text>Avalanche Ionization
+Anode wire25mm
+Image by MIT OpenCourseWare.</text>
+        </slide>
+        <slide>
+          <slideno>4</slideno>
+          <text>Interaction rate
+&#8226; Main problem with detectors in pulse mode is 
+that two interactions must be separated by a 
+finite amount of time if they are to produce 
+distinct signals
+&#8211; This interval is called the dead time of the system
+&#8226; If a second interaction occurs in this interval, its 
+signal will be lost; if it occurs close enough to the 
+first interaction, it may distort the signal from the 
+first interaction
+&#8211; Show figure p.120</text>
+        </slide>
+        <slide>
+          <slideno>41</slideno>
+          <text>Scintillators
+&#8226; Desirable properties:
+&#8211; High conversion efficiency
+&#8211; Decay times of excited states should be short
+&#8211; Material transparent to its own emissions
+&#8211; Color of emitted light should match spectral sensitivity 
+of the light receptor
+&#8211; For x-ray and gamma-ray detectors, &#956;should be large 
+&#8211; high detection efficiencies
+&#8211; Rugged, unaffected by moisture, and inexpensive to 
+manufacture</text>
+        </slide>
+        <slide>
+          <slideno>40</slideno>
+          <text>Gas recoil detectors
+0.40.60.81.0
+1.2
+1.6
+2.0
+4He Recoil Pulse Height, MeV4He Weight/MeV
+(~ Counts/Channel)
+00102030
+0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.9 1.0 1.1 1.2 1.3 1.4
+4He Recoil Pulse Height, MeV4He Weight/MeV (~ Counts/Channel)1.6
+1.4
+1.2
+1.0
+0.8
+0.6
+0.4
+0.2
+0
+0 1 2 3 4 5 64.0
+6.0
+8.0Incident Neutron Energy (MeV)
+4He Recoil Pulse Height, MeVIncident Neutron Energy (MeV)Incident Neutron Energy (MeV)
+4He Weight/MeV (~ Counts/Channel)10.012.0
+14.0
+000.10.20.30.40.50.60.70.8
+1 2 3 4 5 6 7 8 9
+Image by MIT OpenCourseWare.</text>
+        </slide>
+        <slide>
+          <slideno>35</slideno>
+          <text>Long Counter
+&#8226; Flat response for neutrons of all energy
+ParaffinBF3_ Counter (12.2" active length) B2O320"
+8 holes on a 31/2"
+diameter pitch
+circle 6" deep
+1" diameter
+0.018" Cd cap14"
+8" diameter
+9" diameter
+15" diameter
+1.0
+0.9
+0.8
+0.7
+0.6
+0.5
+0.4
+0.02 0.04 0.06 0.1 0.2 0.4 0.6 0.81.0 2 4 MeV 6
+E Relative Sensitivity0"
+0.5"
+1.0" 3.0"Counter Position2.5"1"
+Image by MIT OpenCourseWare.</text>
+        </slide>
+        <slide>
+          <slideno>29</slideno>
+          <text>Efficiency of BF3 Tube
+&#8226; Intrinsic efficiency
+&#8211; Eff(E) = 1- exp(-Sigma(E) * L)</text>
+        </slide>
+        <slide>
+          <slideno>17</slideno>
+          <text>Ionization Counter
+&#8226; Ionization region
+&#8211; All electrons are 
+collected
+&#8211; Charge collected is 
+proportional to the 
+energy deposited
+&#8211; Called ion chambers1012
+1010
+108
+106
+104
+102
+1000 500 0Pulse Height (Arbitrary Units)
+Applied V oltageGeiger-
+Muller
+Region
+Proportional RegionIonization Chamber
+RegionRecombination
+Region
+Image by MIT OpenCourseWare.</text>
+        </slide>
+        <slide>
+          <slideno>26</slideno>
+          <text>Thermal Neutron Detectors
+&#8226; Two important aspects to consider
+&#8211; Find a material with large thermal x.s.
+&#8211; Find an arrangement that allows you to 
+distinguish from gamma rays
+&#8226; High Q-value of neutron capture will make it easier
+104
+103
+102
+10-210-11 10110210310410510610710
+1
+10-1
+Neutron Energy (eV)Cross Section (barns)He-3 (n, p)
+B-10 (n, a)
+Li-6 (n, a)
+Image by MIT OpenCourseWare.</text>
+        </slide>
+        <slide>
+          <slideno>23</slideno>
+          <text>GM counters (cont.)
+&#8226; GM detectors suffer from extremely long dead 
+times &#8211; seldom used when accurate 
+measurements are required of count rates 
+greater than a few hundred counts per second
+&#8226; Portable GM survey meter may become 
+paralyzed in a very high radiation field &#8211; should 
+always use ionization chamber instruments for 
+measuring such fields</text>
+        </slide>
+        <slide>
+          <slideno>37</slideno>
+          <text>&#8226;3He(n,p)
+&#8211; Energy range 20 keV to 2 MeV
+&#8226; Smooth, nearly flat x.s.
+&#8226; Tube is wrapped in Cadmium and Boron layersto 
+reduce contribution from thermal neutrons
+&#8226; Lead shield is also added to reduce impact of 
+photons
+&#8226; Intrinsic efficiency is very low (0.1%)
+&#8226; Full energy peak at En + 765 keV
+&#8226; Thermal neutron capture peak at 765 keV
+&#8226; Elastic scattering spectrum with a max at 0.75En</text>
+        </slide>
+        <slide>
+          <slideno>33</slideno>
+          <text>Fission Chambers
+104
+103
+102
+10
+0 20 40 60 80100120N(E)
+Energy (MeV)104
+103
+102
+10
+0 20 40 60 80100120N(E)
+Energy (MeV)
+Deposit thickness = 0.0286 mm - 0.0312 
+cm2mgDeposit thickness = 0.714 mm - 0.778 
+cm2mg
+Image by MIT OpenCourseWare.</text>
+        </slide>
+        <slide>
+          <slideno>36</slideno>
+          <text>Fast-Neutron induced reaction 
+detectors
+&#8226;6Li(n,alpha)
+&#8211; Q-value of 4.78 MeV
+&#8211; Peaks appear at Q-value + neutron kinetic 
+energy
+&#8211; Lithium based scintillators 
+1 x 1041 x 10-1 1 x 101
+1 x 1051 x 1061 x 1071
+2 3456789 2 3456789 2 34567892 3456789 2 3456789
+Energy [eV]Cross-section [barns]3He [p, r] 
+6Li [p, a] 
+Image by MIT OpenCourseWare.</text>
+        </slide>
+        <slide>
+          <slideno>3</slideno>
+          <text>Modes of operation
+&#8226;I n  pulse mode , the signal from each 
+interaction is processed individually
+&#8226;I n  current mode , the electrical signals from 
+individual interactions are averaged 
+together, forming a net current signal</text>
+        </slide>
+        <slide>
+          <slideno>2</slideno>
+          <text>Types of detectors (cont.)
+&#8226; Detectors may also be classified by the type of 
+information produced:
+&#8211; Detectors, such as Geiger-Mueller (GM) detectors, 
+that indicate the number of interactions occurring in 
+the detector are called counters
+&#8211; Detectors that yield information about the energy 
+distribution of the incident radiation, such as NaI scintillation detectors, are called spectrometers
+&#8211; Detectors that indicate the net amount of energy 
+deposited in the detector by multiple interactions are 
+called dosimeters</text>
+        </slide>
+        <slide>
+          <slideno>31</slideno>
+          <text>Gamma-ray sensitivity
+3He (2.5 cm diam, 4 atm)
+Ar (2.5 cm diam, 2 atm)
+BF3 (5.0 cm diam, 0.66 atm)
+Al tube wall (0.8 mm)
+4He (5.0 cm diam, 18 atm)
+Scintillator (5.0 cm thick)Al tube wall (0.8 mm)Thermal Detectors
+Fast DetectorsInteraction Probability
+Interaction ProbabilityThermal Neutron
+1 - MeV Gamma Ray1 - MeV Gamma Ray
+1 - MeV Neutron0.77
+0.0
+0.29
+0.00.0001
+0.0005
+0.0006
+0.014
+0.01
+0.0
+0.780.001
+0.014
+0.26
+Neutron and gamma-ray interaction probabilities in typical gas proportional counters 
+and scintillators
+Image by MIT OpenCourseWare.</text>
+        </slide>
+        <slide>
+          <slideno>14</slideno>
+          <text>Gas-filled detectors
+&#8226; A gas-filled detector consists of a volume of gas 
+between two electrodes, with an electrical 
+potential difference (voltage) applied between 
+the electrodes
+&#8226; Ionizing radiation produces ion pairs in the gas
+&#8226; Positive ions (cations) attracted to negative 
+electrode (cathode); electrons or anions attracted to positive electrode (anode)
+&#8226; In most detectors, cathode is the wall of the 
+container that holds the gas and anode is a wire inside the container</text>
+        </slide>
+        <slide>
+          <slideno>27</slideno>
+          <text>10B(n,alpha)
+&#8226; Equations
+&#8226; 94% of the time in excited state
+&#8211; Q-value of 2.310 MeV
+&#8211; Other 6%, Q-value of 2.792 MeV
+B-10
+*Li-7a
+n
+(excited)B-10
+Li-7a
+nAlpha kinetic energy = 1.78 MeV
+Li-7 kinetic energy = 1.02 MeVAlpha kinetic energy = 1.47 MeVLi-7 kinetic energy = 0.84 MeV
+Image by MIT OpenCourseWare.</text>
+        </slide>
+        <slide>
+          <slideno>45</slideno>
+          <text>+100 volts +300 volts
++400 volts +200 voltsSignal to
+preampVisible light
+photonGlass tube
+Anode
++500 voltsPhotocathode
+0 voltsDynodes
+Image by MIT OpenCourseWare.</text>
+        </slide>
+        <slide>
+          <slideno>10</slideno>
+          <text>Spectroscopy
+&#8226; Most spectrometers operate in pulse mode
+&#8226; Amplitude of each pulse is proportional to the 
+energy deposited in the detector by the 
+interaction causing that pulse
+&#8226;The energy deposited by an interaction is not 
+always the total energy of the incident particle or 
+photon
+&#8226;A  pulse height spectrum is usually depicted as a 
+graph of the number of interactions depositing a particular amount of energy in the spectrometer 
+as a function of energy</text>
+        </slide>
+        <slide>
+          <slideno>34</slideno>
+          <text>Neutron Spectroscopy
+&#8226; Bonner Sphere
+2"3" 5" 8" 10" 12" 12" + Pb
+12" + Pb
+internal part
+Image by MIT OpenCourseWare.</text>
+        </slide>
+        <slide>
+          <slideno>24</slideno>
+          <text>Neutron Detection
+&#8226; Neutral particles
+&#8211; Detection is based on indirect interactions
+&#8226; Two basic interactions
+&#8211;S c a t t e r i n g
+&#8226; Recoiling nucleus ionizes surrounding material
+&#8226; Only effective with light nucleus (Hydrogen, 
+Helium)
+&#8211; Nuclear reactions
+&#8226; Products of the reaction can be detected (gamma, 
+proton, alpha, fission fragments)</text>
+        </slide>
+        <slide>
+          <slideno>11</slideno>
+          <text>700 600 500 400
+Energy (keV)300 200 100 0Number of Interactions32 keV
+662 keVEnergy (keV)700 600 500 400 300 200 100 0100
+Relative number of photons 32 keV662 keV
+Image by MIT OpenCourseWare.</text>
+        </slide>
+        <slide>
+          <slideno>19</slideno>
+          <text>Proportional Counter
+&#8226; Proportional region
+&#8211; Electric field is strong 
+enough to create 
+secondary ionization
+&#8211; Further increases 
+create more ionization 
+in the gas
+&#8226; Avalanche ionization
+&#8211; Charge collected is 
+linearly proportional to 
+energy deposited1012
+1010
+108
+106
+104
+102
+1000 500 0Pulse Height (Arbitrary Units)
+Applied V oltageGeiger-
+Muller
+Region
+Proportional RegionIonization Chamber
+RegionRecombination
+Region
+Image by MIT OpenCourseWare.</text>
+        </slide>
+        <slide>
+          <slideno>25</slideno>
+          <text>Neutron Detection
+&#8226; Since x.s. in most materials are strongly 
+dependent on neutron energy, different 
+techniques exist for different regions:
+&#8211; Slow neutrons (or thermal neutrons), below 
+the Cadmium cutoff
+&#8211; Fast neutrons105
+104
+103
+102
+101
+100
+10-1
+10-110-210-310-410-510-610-710-810-9100101
+Energy (MeV)Cross Section (b)
+Image  by MIT OpenCourseWare.</text>
+        </slide>
+        <slide>
+          <slideno>39</slideno>
+          <text>Fast Neutron Recoil Detectors
+&#8226; Most useful reaction is elastic 
+scattering
+&#8211; Recoil nucleus will ionize medium
+&#8211; Most popular target is hydrogen
+&#8226; Large elastic scattering x.s
+&#8226; Well known x.s.
+&#8226; Neutron can transfer all of its energy  
+0 1 2 3 4 5 60.1110100
+Fission spectrum 
+shape
+4He
+1H
+Neutron energy (MeV)Scattering cross section (barns)in one collision
+&#8211; Q-value is zero
+&#8226; Information can be found about the 
+incoming neutron energy
+Image by MIT OpenCourseWare.</text>
+        </slide>
+        <slide>
+          <slideno>46</slideno>
+          <text>Dynodes
+&#8226; Electrons emitted by the photocathode are 
+attracted to the first dynode and are accelerated 
+to kinetic energies equal to the potential 
+difference between the photocathode and the 
+first dynode
+&#8226; When these electrons strike the first dynode, 
+about 5 electrons are ejected from the dynode 
+for each electron hitting it
+&#8226; These electrons are attracted to the second 
+dynode, and so on, finally reaching the anode</text>
+        </slide>
+        <slide>
+          <slideno>38</slideno>
+          <text>0.764 MeV En + 0.764 MeV 0.75 En E
+EndN
+dEEpithermal
+peak
+Recoil
+distributionFull-energy
+peak
+Image by MIT OpenCourseWare.</text>
+        </slide>
+      </slides>
+    </lecture>
+    <lecture>
+      <lecture_title>Nuclear Data</lecture_title>
+      <lecture_pdf_url>https://ocw.mit.edu/courses/22-106-neutron-interactions-and-applications-spring-2010/resources/mit22_106s10_lec03/</lecture_pdf_url>
+      <lectureno>3</lectureno>
+      <slides>
+        <slide>
+          <slideno>12</slideno>
+          <text>Cross section
+processing methodsCross section
+measurements
+Cross section
+evaluation
+Cross section
+processing
+Point data libraries Multigroup libraries
+Sensitivity and uncertainty analyses
+Cross sections for user applicationsTransport methodsCross section
+processing methodsData testing using transport methods
+and integral experiments
+Image by MIT OpenCourseWare.</text>
+        </slide>
+        <slide>
+          <slideno>4</slideno>
+          <text>Three energy regions
+&#8226; Resolved resonance range
+&#8211; Experimental resolution is smaller than the 
+width of the resonances; resonances can be 
+distinguished.  Cross-section representation 
+can be made by resonance parameters
+&#8211; R-matrix theory provides for the general 
+formalism that are used</text>
+        </slide>
+        <slide>
+          <slideno>22</slideno>
+          <text>Computational cost
+&#8226; Large cases require special care
+&#8211; U-235 has ~3000 resonances
+&#8226; 5 parameters for each resonance need to be 
+varied
+&#8226; Very time consuming</text>
+        </slide>
+        <slide>
+          <slideno>0</slideno>
+          <text>Lecture 3 
+Nuclear Data
+22.106 Neutron Interactions and Applications
+Spring 2010</text>
+        </slide>
+        <slide>
+          <slideno>5</slideno>
+          <text>&#8226; Unresolved energy range
+&#8211; Cross-section fluctuations still exist but experimental 
+resolution is not enough to distinguish multiplets.  
+Cross-section representation is made by average resonance parameters
+&#8211; Formalism
+&#8226; Statistical models e.g. Hauser-Feshbach model combined 
+with optical model
+&#8226; level density models, &#8230;.
+&#8226; Probability tables</text>
+        </slide>
+        <slide>
+          <slideno>7</slideno>
+          <text>Image by MIT OpenCourseWare.</text>
+        </slide>
+        <slide>
+          <slideno>19</slideno>
+          <text>Advantages of evaluated data
+&#8226; Incorporate theoretical understanding
+&#8211; Cross-section shapes
+&#8211; Relationships between cross-sections for different 
+reactions
+&#8226; Incorporate all available experimental data and 
+all available uncertainty
+&#8226; Allow extrapolation
+&#8211; Different temperatures
+&#8211; Different energies
+&#8211; Different reactions</text>
+        </slide>
+        <slide>
+          <slideno>6</slideno>
+          <text>The Unresolved Resonance Range (URR)
+Energy range over which resonances are so narrow and close together that they cannot 
+be experimentally resolved.
+A combination of experimental measurements of the average cross section and 
+theoretical models yields distribution functions for the spacings and widths.
+The distributions may be used to compute the &#8216;dilute-average&#8217; cross sections:
+( ) ( )2 2
+n, ,
+n, ,2 2
+s 2 2
+, ,4 22 1 sin 2 sinl J J
+l l J l
+l J l J l JgE lk k D&#233; &#249; &#230; &#246; G p p&#234; &#250; s = + j + - G j &#231; &#247;&#231; &#247; G &#234; &#250; &#232; &#248; &#235; &#251;&#229; &#229;
+( )2
+n, , , ,
+c 2
+, ,2 l J l J J
+l J l J l JgEk Dg G G ps =G&#229; &#229;
+( )2
+n, , f, ,
+f 2
+, ,2 l J l J J
+l J l J l JgEk DG G ps =G&#229; &#229;
+l = orbital angular momentum quantum no., J = spin of the compound nucleus
+k = wave number, Jg = spin statistical factor, lj= phase shift
+n, ,l JG , , ,l JgG , f , ,l JG , ,l JG= neutron, capture, fission, and total widths
+,l JD= resonance spacing, Ldenotes averaging over the distribution(s)-
+-
+-
+Image by MIT OpenCourseWare.</text>
+        </slide>
+        <slide>
+          <slideno>16</slideno>
+          <text>Cost of evaluations
+Assumptions (for single 3GHz PC):
+400 nuclides
+50 parameters/nuclide
+Single model calculation (1 nuclide
+up to 20 MeV - 20 min)
+Benchmark sensitivity to a single
+parameter 500 min
+Full library benchmark
+400 000 minModel calculations:
+400 X 50 X 2 X 20 = 800 000
+Benchmark parameter-sensitivity:
+400 X 50 X 2 X 500 = 20 000 000
+Library Benchmarking:
+400 000
+Total:
+~ 21 000 000 min = 40 yearsSingle iteration (min):
+1 iteration per week - 2100 CPU's
+Image by MIT OpenCourseWare .</text>
+        </slide>
+        <slide>
+          <slideno>23</slideno>
+          <text>MIT OpenCourseWare
+http://ocw.mit.edu 
+22.106 Neutron Interactions and Applications
+Spring 2010 
+For information about citing these materials or our Terms of Use, visit: http://ocw.mit.edu/terms . </text>
+        </slide>
+        <slide>
+          <slideno>2</slideno>
+          <text>Traditional evaluation method
+Exp. dataAnalysis
+&amp;
+line fittingExp.
+x-sections
+Comparison
+&amp;
+mergingEvaluation
+Model param.Model
+calculationsTheo.
+x-sections
+Image by MIT OpenCourseware.</text>
+        </slide>
+        <slide>
+          <slideno>21</slideno>
+          <text>&#8226; Run models with varying resonance 
+parameters with an assumed distribution
+&#8226; Include systematic uncertainties for 
+measurement-related quantities
+&#8226; Perform simultaneous fit to all data
+&#8211; All experimental uncertainty is thus 
+propagated</text>
+        </slide>
+        <slide>
+          <slideno>10</slideno>
+          <text>- Use ENDF/B parameters to create probability distribution functions (PDFs) for resonance widths
+   (Wigner distribution) and spacings (chi-squared distributions).
+- Randomly sample widths and spacings from PDFs to generate 'fictitious' sequences (realizations)
+   of resonances about the energy E for which the table is being created.
+- Use single-level Breit-Wigner formulae to compute sampled cross section values at E:
+             = tabulated background cross section,  
+                           = neutron, capture, fission and total widths for resonance r
+RlJ = set of sampled resonances for quantum number pair (l,J)Monte Carlo Algorithm for Generating the Tables
+( ) ( ) ( )2
+s s, smooth 242 1 sinl
+lE E lkps = s + + j &#229;
+( ) ( ) ( ) ( )n n
+24cos 2 1 , sin 2 ,
+lJr r
+J l r r l r r
+l J r R r rg X Xk &#206;&#236; &#252; &#233; &#249; &#230; &#246; p G G &#239; &#239;+ j - - y q - j c q &#237; &#253; &#234; &#250; &#231; &#247;G G &#232; &#248; &#239; &#239; &#235; &#251; &#238; &#254;&#229;&#229; &#229;
+( ) ( ) ( ) ,n
+, smooth 2 24,
+lJr r
+J r r
+l J r R rE E g Xka
+a a
+&#206;G G ps = s + y qG&#229;&#229; &#229; c, fa =
+,smoothas s, c, fa =
+n,rG, , , ,rgGf ,rGrG
+,y cB4r r k TE A q &#186; G        = Doppler functions,                                 ,                                 , A = atomic mass
+- Use the sampled cross sections to compute band averages and probabilities.( )2r r r X E E&#186; - G
+Image by MIT OpenCourseWare.</text>
+        </slide>
+        <slide>
+          <slideno>9</slideno>
+          <text>Mathematical Theory of the Probability Table Method
+t( , )p E ds s &#186; probability that the total cross section lies in d s about s at energy E
+Average total cross section:t t ( ) ( , )E d p Es = ss s &#242;
+Band probability: 
+1&#710;
+t&#710;( ) ( , )n
+nnp E d p E
+-s
+s= s s&#242;
+Band-average total cross section:
+1&#710;
+t, t&#710;1( ) ( , )( )n
+nn
+nE d p Ep E -s
+ss = ss s&#242;
+( , )q E da&#162; &#162;s s s &#186;  conditional probability that the partial cross section of type a lies in 
+ds&#162; about s&#162; given that the total cross section has the value s
+Band-average partial cross section:
+1&#710;
+, t&#710; 01( ) ( , ) ( , )( )n
+nn
+nE d p E d q Ep E -s s
+a as&#162; &#162; s = s s s s s&#242; &#242;
+Unfortunately, computingt( , )p Es and ( , )q Ea&#162;s s directly is an intractable problem.-
+--
+-
+-
+-
+Image by MIT OpenCourseWare.</text>
+        </slide>
+        <slide>
+          <slideno>14</slideno>
+          <text>ORELA Target
+&#8226; High energy electrons 
+hitting a tantalum 
+target produce 
+bremsstrahlung
+(photon) spectrum.  
+Neutrons are generated by 
+photonuclear 
+reactions, Ta(gamma, 
+n), Ta(gamma, 2n), &#8230;Figure removed due to copyright restrictions.</text>
+        </slide>
+        <slide>
+          <slideno>3</slideno>
+          <text>Theoretical model
+&#8226; Computer code SAMMY
+&#8211; Used for analysis of neutron and charged particle cross-section 
+data
+&#8211; Uses Bayes method to find parameter values
+&#8226; Generalized least squares
+&#8211; Uses R-matrix theory to tie experimental data to theoretical 
+models
+&#8226; Reich-Moore approximation
+&#8226; Breit-Wigner theory
+&#8211; Treats most types of energy -differential cross sections
+&#8226; Treats energy and angle differential distributions of scattering
+&#8211; Fits integral data
+&#8211; Generates covariance and sensitivity parameters for resolved 
+and unresolved resonance region</text>
+        </slide>
+        <slide>
+          <slideno>1</slideno>
+          <text>Common Misconceptions
+&#8226; It&#8217;s just a &#8220;bunch&#8221; of numbers
+&#8226; Just give me the right value and stop 
+changing it.</text>
+        </slide>
+        <slide>
+          <slideno>15</slideno>
+          <text>Bayesian Inference
+&#8226; Bayesian inference is statistical inference 
+in which evidence or observations are 
+used to update or to newly infer what is 
+known about underlying parameters or 
+hypotheses.</text>
+        </slide>
+        <slide>
+          <slideno>17</slideno>
+          <text>Covariance Matrix
+&#8226; The covariance matrix or dispersion matrix 
+is a matrix of covariances between 
+elements of a random vector. It is the 
+natural generalization to higher 
+dimensions of the concept of the variance 
+of a scalar-valued random variable.
+E[(X 1 - m1) (X1 - m1)]   E[(X 1 - m1) (X2 - m2)]          E[(X 1 - m1) (Xn - mn)] ...
+E[(X 2 - m2) (X1 - m1)]   E[(X 2 - m2) (X2 - m2)]          E[(X 2 - m2) (Xn - mn)] ...
+E[(X n - mn) (X1 - m1)]   E[(X n - mn) (X2 - m2)]          E[(X n - mn) (Xn - mn)] ...
+............
+Image  by MIT OpenCourseWare.</text>
+        </slide>
+        <slide>
+          <slideno>11</slideno>
+          <text>&#8226; High energy region
+&#8211; No cross-section fluctuations exist.  Cross-
+sections are represented by smooth curves.
+&#8211;F o r m a l i s m
+&#8226; Statistical models e.g. Hauser-Feshbach
+&#8226; Intra-nuclear cascade model
+&#8226; Pre-equilibirum model
+&#8226; Evaporation model</text>
+        </slide>
+        <slide>
+          <slideno>18</slideno>
+          <text>&#8226; Each type of data comes from a separate 
+measurement
+&#8211; Cross-sections are measured independently
+&#8211; However, the various types are highly interrelated
+&#8226; Data include measurement-related effects
+&#8211; Finite temperature
+&#8211; Finite size of samples
+&#8211; Finite resolution
+&#8211;&#8230;
+&#8226; Measured data may look very different from the 
+underlying true cross-section
+&#8211; Think Doppler broadening</text>
+        </slide>
+        <slide>
+          <slideno>20</slideno>
+          <text>&#8226; Generate artificial &#8220;experimental&#8221; points 
+from ENDF resonance parameters
+&#8211; Include Doppler and resolution broadening
+&#8226; Make reasonable assumptions regarding 
+experimental uncertainties
+&#8211; Statistical (diagonal terms)
+&#8211; Systematic (off-diagonal terms)
+&#8226; Normalization, background, broadening, &#8230;</text>
+        </slide>
+        <slide>
+          <slideno>13</slideno>
+          <text>ORELA
+&#8226; High flux (1014n/s)
+&#8226; Excellent Resolution ( &#916;t = 2-30 
+ns)
+&#8211; faciliates better evaluations
+&#8226; &#8220;White&#8221; neutron spectrum from 
+0.01eV to 80 MeV
+&#8211; Reduces systematic 
+uncertainties
+&#8226; Measurement systems and 
+background well understood
+&#8211; Very accurate data
+&#8226; Simultaneous measurements in 
+different beams lines
+&#8226; Measurements performed on 
+over 180 isotopesFigures removed due to copyright restrictions.</text>
+        </slide>
+        <slide>
+          <slideno>8</slideno>
+          <text>The Probability Table Method
+- Concept developed in the early 1970s by Levitt (USA) and Nikolaev, et al. (USSR).
+- Uses the distributions of resonance widths and spacings to infer distributions of  cross section values.
+- Basic idea:
+	 - Compute the probability p
+n that a cross section in the URR lies in band n
+	   defined as
+	 - Compute the average value of the cross sections (s n) for each band n.
+	 - Following every collision (or source event) in a Monte Carlo calculation for	   which the final energy of the neutron is in the URR, sample a band-averaged	   cross section with the computed probabilities and use that value for that neutron	   until its next collision.s
+n-1 &lt; s    s n.^ ^
+Image by MIT OpenCourseWare.</text>
+        </slide>
+      </slides>
+    </lecture>
+    <lecture>
+      <lecture_title>R-Matrix Theory</lecture_title>
+      <lecture_pdf_url>https://ocw.mit.edu/courses/22-106-neutron-interactions-and-applications-spring-2010/resources/mit22_106s10_lec04a/</lecture_pdf_url>
+      <lectureno>4</lectureno>
+      <slides>
+        <slide>
+          <slideno>17</slideno>
+          <text>&#8226;Our goal is to eliminate the potential V(r)
+&#8211;Multiply eq (1) by the eigenvector and multiply 
+eq (2) by the moment
+&#8211;Subtract resulting equations
+&#8211;Integrate between 0 and a
+&#8211;Result: Gives an expression for 
+&#8226;Which can be used to find the expansion 
+coefficients
+</text>
+        </slide>
+        <slide>
+          <slideno>18</slideno>
+          <text>&#8226;We can now find an expression for the 
+moment at r = a 
+&#8226;Where we can extract a definition of the R -
+matrix
+&#8226;Or more commonly
+</text>
+        </slide>
+        <slide>
+          <slideno>19</slideno>
+          <text>&#8211;&#947;&#955;lis the reduced width amplitude for level &#955;
+and angular momentum l
+&#8211;&#955;is the resonance
+&#8211;E&#955;is the energy at the resonance peak
+&#8211;&#947;&#955;l&#8217;s and E&#955;&#8217;s are unknown parameters and 
+can be evaluated by observing measured 
+cross -sections
+&#8226;E&#955;is the energy value at the peak
+&#8226;&#947;&#955;l is a measure of the width of the resonance at a certain 
+amplitude for the nuclei at rest
+&#8211;Related to the more common &#915;through a matrix transform
+&#8211;Not easy to measure because of temperature effects (Doppler)
+&#8211;Usually inferred from the resonance integral</text>
+        </slide>
+        <slide>
+          <slideno>21</slideno>
+          <text>Advantages/Disadvatages of
+R-matrix theory
+&#8226;Disadvantages
+&#8211;Matrix inversion is always required
+&#8211;Channel radii and boundary condition appear arbitrary
+&#8211;Difficult to accommodate direct reactions (i.e. 
+potential scattering)
+&#8226;Advantages
+&#8211;Channel radii and boundary condition have natural 
+definitions which makes them appealing
+&#8211;Reduced width concept has an appealing relation to 
+nuclear spectroscopy</text>
+        </slide>
+        <slide>
+          <slideno>29</slideno>
+          <text>Multi -level Breit Wigner
+&#8226;Neglecting off -diagonal terms yields the 
+Breit Wigner approximation
+&#8211;Analyzing a single level at a time yields the 
+Single level Breit Wigner (SLBW) 
+approximation
+&#8226;Works well if resonances are well spaced
+&#8226;Originally developed by Wigner based on an 
+analogy to the dispersion of light
+&#8211;In some cases, off -diagonal terms matter
+</text>
+        </slide>
+        <slide>
+          <slideno>30</slideno>
+          <text>Reich Moore Formalism
+&#8226;Current method of choice
+&#8211;Keeps most off -diagonal terms
+&#8211;Neglects impact of gamma channels
+&#8226;Measurements have shown that fluctuations 
+between gamma channels at different levels must 
+be small
+</text>
+        </slide>
+        <slide>
+          <slideno>5</slideno>
+          <text>Definition
+&#8226;R-matrix is called a channel -channel matrix
+&#8226;Channel
+&#8211;Designates a possible pair of nucleus and particle 
+and the spin of the pair
+&#8211;Incoming channel (c)
+&#8211;Outgoing channel (c&#8217;)
+&#8211;Defined by pair of particles, mass, charge, spin
+&#8226;Many possible channels exist </text>
+        </slide>
+        <slide>
+          <slideno>7</slideno>
+          <text>&#8226;Incoming channel (c) 
+&#8211;We can control the incoming channel by the 
+way we set up the experiment
+&#8226;Neutron energy
+&#8226;Target
+&#8226;Outgoing channel (c&#8217;)
+&#8211;We can observe the outgoing channel with 
+precise measurement </text>
+        </slide>
+        <slide>
+          <slideno>14</slideno>
+          <text>&#8226;In radial geometry, the moment is a 
+solution of the following equation
+(1)
+&#8226;Additionally, the moment can be 
+represented by an expansion in terms of 
+the eigenvectors of the solution
+&#8211;Eigenvectors are also solutions of the above 
+equation
+</text>
+        </slide>
+        <slide>
+          <slideno>3</slideno>
+          <text>Why bother?
+&#8226;Couldn&#8217;t we just use the measured data?
+&#8211;Too much information, too little understanding
+&#8226;x.s. vs energy would requires 100,000&#8217;s of 
+experimental points
+&#8226;Angular distributions would require even more
+&#8211;Need for extrapolation
+&#8226;Different energies
+&#8226;Temperature changes
+&#8226;Geometry considerations (self -shielding, &#8230;)
+&#8226;Unstable or rare nuclides</text>
+        </slide>
+        <slide>
+          <slideno>10</slideno>
+          <text></text>
+        </slide>
+        <slide>
+          <slideno>0</slideno>
+          <text>Resonance Theory</text>
+        </slide>
+        <slide>
+          <slideno>23</slideno>
+          <text>Relation with collision matrix
+&#8226;We found an expression for the solution of the 
+wavefunction that doesn&#8217;t depend on the 
+potential
+&#8211;Depends on R -matrix
+&#8211;R-matrix depends on experimentally measured data
+&#8226;Total wave function in region outside nuclear 
+potential interaction can be expressed as a 
+linear combination of the incoming and outgoing 
+waves
+</text>
+        </slide>
+        <slide>
+          <slideno>8</slideno>
+          <text>Total spin of the channel
+</text>
+        </slide>
+        <slide>
+          <slideno>12</slideno>
+          <text>Goal of R -matrix
+&#8226;Phase shift theory requires knowledge of the 
+potential V(r)
+&#8211;Approximated by square well
+&#8226;R-matrix theory builds a relationship between a 
+matrix R that depends only on observable, 
+measurable quantities and the collision matrix
+&#8211;Bypasses the need for the potential
+&#8211;Requires experimental data
+&#8226;We will derive a simplistic case of a neutron 
+interaction with no spin dependence</text>
+        </slide>
+        <slide>
+          <slideno>27</slideno>
+          <text>Level matrix
+&#8226;The R -matrix is fairly small but fairly 
+complex to built
+&#8226;Wigner introduced a clearer representation 
+called the A -matrix whose elements 
+correspond to energy levels 
+&#8211;A is much larger
+&#8211;But its parameters are clearly defined
+&#8211;Summation is over incoming channels
+</text>
+        </slide>
+        <slide>
+          <slideno>25</slideno>
+          <text>&#8226;Defining
+&#8226;We get
+</text>
+        </slide>
+        <slide>
+          <slideno>20</slideno>
+          <text>General Form
+</text>
+        </slide>
+        <slide>
+          <slideno>31</slideno>
+          <text>&#8226;MLBW is more restrictive than Reich 
+Moore
+&#8211;Poor treatment of multi -channel effects
+&#8226;SLBW is more restrictive than MLBW
+&#8211;Can give negative cross -section values</text>
+        </slide>
+        <slide>
+          <slideno>2</slideno>
+          <text>R-matrix theory
+&#8226;Introduced by Wigner and Eisenbud (1947)
+&#8226;Requires no information about internal structure 
+of the nucleus
+&#8226;It is mathematically rigorous
+&#8211;Usually approximated
+&#8211;Most physical and appropriate of resonance 
+framework
+&#8226;Cross -sections are parametrized in terms of
+&#8211;Interaction radii &amp; boundary condition
+&#8211;Resonance energy &amp; widths
+&#8211;Quantum number (angular momentum, spin, &#8230;)</text>
+        </slide>
+        <slide>
+          <slideno>4</slideno>
+          <text>R-matrix theory Assumptions
+&#8226;Applicability of non -relativistic quantum mechanics
+&#8226;Unimportance of processes where more than two 
+product nuclei are formed
+&#8226;Unimportance of all processes of creation or destruction
+&#8226;Existence of a finite radial distance beyond which no 
+nuclear interaction occurs
+&#8226;Based on the notion that we can describe accurately 
+what&#8217;s far enough from the compound nucleus but not 
+what&#8217;s inside</text>
+        </slide>
+        <slide>
+          <slideno>1</slideno>
+          <text>Basics
+&#8226;Deals with the description of nucleus -
+nucleus interaction and aims at the 
+prediction of the experimental structure of 
+cross -sections
+&#8226;Interaction model which treats the nucleus 
+as a black box
+&#8211;Potential is unknown so models cannot 
+predict accurately
+&#8211;Only care at what can be observed before 
+and after a collision</text>
+        </slide>
+        <slide>
+          <slideno>9</slideno>
+          <text></text>
+        </slide>
+        <slide>
+          <slideno>11</slideno>
+          <text>Cross -section
+&#8226;In 22.101, you used the phase shift theory 
+to determine an expression for the 
+scattering cross -section
+&#8211;This expression can be defined in terms of the 
+collision matrix U
+&#8211;Different relations between x.s and U exist for 
+other interaction type
+</text>
+        </slide>
+        <slide>
+          <slideno>24</slideno>
+          <text>&#8226;From R -matrix analysis, we found
+&#8226;We can then find that
+</text>
+        </slide>
+        <slide>
+          <slideno>28</slideno>
+          <text>A-matrix
+&#8226;Very large
+&#8211;Corresponds to the total number of 
+resonances
+&#8211;Symmetric matrix
+&#8211;Diagonal terms depend on each level 
+independently
+&#8211;Off-diagonal terms are mixed terms that 
+introduce the influence of different levels on 
+each other
+</text>
+        </slide>
+        <slide>
+          <slideno>32</slideno>
+          <text>Reich Moore vs SLBW
+(U235 fission)
+&#8226;Solid line : SLBW
+&#8226;Dotted line : RM
+</text>
+        </slide>
+        <slide>
+          <slideno>22</slideno>
+          <text>Boundary conditon
+&#8226;In the early days, there was much confusion in the 
+choice of channel radii and boundary condition
+&#8211;This topic has been debated heavily over the last 40 years!
+&#8211;Early papers described their choice as arbitrary
+&#8211;Optical model has facilitated the choice of these parameters
+&#8226;&#8220;Natural&#8221; choices exist
+&#8211;Described in more details in pdf R -matrix theory (2)
+&#8211;Blmust be kept real to preserve the nature of the eigenvalue 
+problem
+&#8211;Choice of boundary condition is to set it equal to the shift 
+function at some point in the energy interval of measurement.  
+&#8226;Keep only real part of the logarithmic derivative of the outgoing 
+wave
+&#8211;Matching radii usually selected based on square -well interaction</text>
+        </slide>
+        <slide>
+          <slideno>16</slideno>
+          <text>&#8226;The eigenvectors form a basis set, if 
+normalized properly, they have the 
+following property:
+&#8211;They form an orthonormal basis set
+&#8226;From this condition, the expansion 
+coefficients can be defined as:
+</text>
+        </slide>
+        <slide>
+          <slideno>26</slideno>
+          <text>General form
+&#8226;No approximation has been made
+&#8211;Exact representation between U and R
+</text>
+        </slide>
+        <slide>
+          <slideno>34</slideno>
+          <text>MIT OpenCourseWare
+http://ocw.mit.edu 
+22.106 Neutron Interactions and Applications
+Spring 2010 
+ 
+ 
+ 
+For information about citing these materials or our Terms of Use, visit: http://ocw.mit.edu/terms . </text>
+        </slide>
+        <slide>
+          <slideno>15</slideno>
+          <text>&#8226;Eigenvectors are also a solution of:
+(2)
+&#8226;Boundary conditions
+&#8211;Both equations must be finite at r = 0
+&#8211;Logarithmic derivative at nuclear surface is 
+taken to be constant (where Blis real)
+</text>
+        </slide>
+        <slide>
+          <slideno>6</slideno>
+          <text></text>
+        </slide>
+        <slide>
+          <slideno>33</slideno>
+          <text>Fe-56: RM, MLBW, SLBW
+&#8226;Solid line: RM
+&#8226;Dashed line: MLBW
+&#8226;Dotted line: SLBW
+</text>
+        </slide>
+        <slide>
+          <slideno>13</slideno>
+          <text>R-Matrix Derivation
+&#8226;Start with the steady -state Schr &#246;dinger 
+equation with a complex potential
+&#8211;Eigenvalue problem 
+&#8226;The wavefunction is expressed in the form 
+of partial waves
+</text>
+        </slide>
+      </slides>
+    </lecture>
+    <videos>
+      <video>
+        <video_url/>
+        <video_title/>
+        <transcript>
+          <slice>
+            <text_slice/>
+            <time_slice/>
+          </slice>
+        </transcript>
+      </video>
+    </videos>
+  </lectures>
+</doc>
