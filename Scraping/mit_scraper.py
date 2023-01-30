@@ -25,7 +25,6 @@ class Scraper:
         self.options.add_argument('--disable-gpu')
         service = Service('\chromedriver_win32\chromedriver.exe')
         self.driver = webdriver.Chrome(options=self.options, service=service)
-        self.driver.get(self.base_url)
         self.course_provider = CourseProviders.MIT
         self.skip_already_seen = skip
         # Call methods
@@ -46,6 +45,7 @@ class Scraper:
             - num_courses: The number of courses to load
         """
         # Get scroll height
+        self.driver.get(self.base_url)
         last_height = self.driver.execute_script("return document.documentElement.scrollHeight")
         num_courses = math.ceil(num_courses / self.COURSES_ON_ONE_SCROLL) - 1
         print("======================\nLOADING {} COURSES\n====================".format(num_courses*self.COURSES_ON_ONE_SCROLL))
@@ -74,11 +74,7 @@ class Scraper:
         for course_card in soup.find_all('div', {'class': 'card-contents'}):
             # Course title info
             # Sometimes course title may not be loaded, so returns null type
-            try:
-                course_title_info = course_card.find('div', {'class': 'course-title'})
-            except AttributeError:
-                time.sleep(0.2)
-                course_title_info = course_card.find('div', {'class': 'course-title'})   
+            course_title_info = course_card.find('div', {'class': 'course-title'})
             try:
                 course_title = course_title_info.find('span').string
             except AttributeError:
@@ -195,7 +191,7 @@ class Scraper:
         soup = BeautifulSoup(response.text, 'lxml')
         # Find all hyperlinks present on webpage
         link = soup.find('a', {'class': 'download-file'})
-        if not link:
+        if (not link) or link.get('href').split('.')[-1].lower() != 'pdf':
             print("ERROR: No PDF (link) found for this lecture, skipping...")
             return
         link = link_join('https://ocw.mit.edu', link.get('href'))
@@ -205,10 +201,15 @@ class Scraper:
 
         slides = Slides()
         with BytesIO(raw_data) as data:
-            read_pdf = PyPDF2.PdfReader(data)
-            # Go through each slide in the lecture, and add it to Slides object
-            for slide_num in range(len(read_pdf.pages)):
-                slides.insert_slide(slide_num, read_pdf.pages[slide_num].extract_text())
+            try:
+                read_pdf = PyPDF2.PdfReader(data)
+            except PyPDF2.errors.PdfReadError:
+                print("ERROR: Could read PDF data for {}".format(link))
+                return Slides()
+            else:
+                # Go through each slide in the lecture, and add it to Slides object
+                for slide_num in range(len(read_pdf.pages)):
+                    slides.insert_slide(slide_num, read_pdf.pages[slide_num].extract_text())
 
         return slides
 
