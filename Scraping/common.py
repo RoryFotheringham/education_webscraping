@@ -69,7 +69,7 @@ class Videos:
     def insert_slide(self, video_title, video_url, transcript):
         self.struct.add((video_title, video_url, transcript))
     
-    def get_info():
+    def get_info(self):
         return self.struct
 
 
