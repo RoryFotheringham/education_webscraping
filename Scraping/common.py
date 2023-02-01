@@ -173,6 +173,15 @@ class XMLHandler:
             os.makedirs(course_provider.name)
         # Store XML in directory
         dirname = os.path.dirname(__file__)
-        save_path = os.path.join(dirname, course_provider.name, "{}.xml".format(self.course_title[:20]))
+        # cleans name for the case where "/" is in a course title
+        provider_clean = self.clean_name(course_provider.name)
+        filename_clean = self.clean_name("{}.xml".format(self.course_title[:20]))
+        save_path = os.path.join(dirname, provider_clean, filename_clean)
         with open(save_path, 'w') as f:
             f.write(etree.tostring(xml,pretty_print=True).decode())
+            
+    def clean_name(self, name):
+        return name.replace('/','_')
+    
+        
+        

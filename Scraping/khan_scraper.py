@@ -100,7 +100,7 @@ class Scraper:
                     article_no += 1
                     activity_title = activity.find('span', {'class':'_14hvi6g8'}).text
                     article_link = self.base_url + activity.find('a')['href']
-                    slides.insert_slide(str(article_no, self.get_text_from_article(article_link)))
+                    slides.insert_slide(str(article_no), self.get_text_from_article(article_link))
                     
                 is_talkthrough = activity.find('span', {'aria-label':'Talk-through'})
                 
@@ -129,8 +129,7 @@ class Scraper:
         #for link in soup.find_all('a', {'data-test-id':'lesson-link'}):
             #print(str(link['href']))
 
-
-        for unit_card in soup.find_all('div', {'data-slug':'table-of-contents'}):
+        for unit_card in soup.find_all('div', {'class':'_xmja1e8'}):
             unit_header = unit_card.find('a', {'data-test-id':'unit-header'})
             unit_title = unit_header.find('h3').text
             unit_link = unit_header['href']
