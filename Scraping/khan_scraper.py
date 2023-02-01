@@ -1,3 +1,4 @@
+from urllib import response
 import requests
 import PyPDF2
 from bs4 import BeautifulSoup
@@ -39,13 +40,14 @@ class Scraper:
     def __init__(self, num_courses):
         # Initialise variables
         self.doc_list = []
-        self.base_url = 'https://www.khanacademy.org/computing/computer-programming'
+        self.base_url = 'https://www.khanacademy.org'
         # Call methods
-        self.parse_khan_page()
-
+        self.parse_courses()
 
 
     def get_text_from_article(self, article_link):
+        # currently this is painfully slow - there might be a quicker way to get the text than this
+        
             response = requests.get(article_link)
             soup = BeautifulSoup(response.text, 'lxml')
             content = 'no content!'
@@ -116,14 +118,14 @@ class Scraper:
    
 
 
-    def parse_khan_page(self):
+    def parse_khan_page(self, url):
     
         """_summary_ iterates through every 'course', adds a Course obj depth first
         and returns the course object
         """        
         
 
-        response = requests.get(self.base_url)
+        response = requests.get(url)
         soup = BeautifulSoup(response.text, 'lxml')
         #print(str(soup)[:1000])
         #for link in soup.find_all('a', {'data-test-id':'lesson-link'}):
@@ -154,7 +156,19 @@ class Scraper:
             #     with open('khan_lec_{}.xml'.format(str(docno)), 'wb') as f:
             #         tree.write(f)                
                 
-            
+    def parse_courses(self):
+        response = requests.get(self.base_url)
+        soup = BeautifulSoup(response.text, 'lxml')
+        
+        entries = soup.find_all('li', {'class':'_3hmsj'})
+        links = []
+        for entry in entries:
+            link = entry.find('a')['href']
+            if link != '/kids':
+                links.append(link)
+
+        print(links)
+        
 
 
 
