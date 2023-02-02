@@ -25,16 +25,12 @@ class Course:
         self.course_tags = course_tags
         self.date = date
         self.lectures = None
-        self.videos = None
 
     def add_lectures_info(self, lectures):
         self.lectures = lectures  # single instance of Lectures obj
 
-    def add_videos_info(self, videos):
-        self.videos = videos  # single instance of Videos obj
-
     def get_info(self):
-        return self.course_title, self.course_url, self.course_tags, self.date, self.lectures, self.videos
+        return self.course_title, self.course_url, self.course_tags, self.date, self.lectures
 
 
 class Lectures:
@@ -65,12 +61,22 @@ class Videos:
     """ Handle the storage of multiple videos """
     def __init__(self):
         self.struct = set()  # {(video_title, video_url, transcript), ...}
-
-    def insert_slide(self, video_title, video_url, transcript):
+    
+    def insert_slide(self, video_title, video_url, transcript: [Slice]):
+        # Note: A 'transcript' is an array of Slices
         self.struct.add((video_title, video_url, transcript))
     
     def get_info():
         return self.struct
+
+
+class Slice:
+    """ Handle the storage of a single slice in the transcript """
+    def __init__(self, time, text):
+        self.time = time  # e.g: 28:40
+        self.text = text  # e.g: So now, that's a picture with name but not details, right?
+    def get_info():
+        return (self.time, self.text)
 
 
 class XMLHandler:
@@ -81,10 +87,6 @@ class XMLHandler:
         self.course_title = None
 
     def build_and_store_xml(self, course_provider, course):
-        # Add course info to XML
-        course_title, course_url, course_tags, date, lectures, videos = course.get_info()
-        self.course_title = course_title
-
         def tag_func(course_tags):
             if not course_tags:
                 return []
@@ -97,8 +99,7 @@ class XMLHandler:
             if not slides:
                 return []
             slides_xml = []
-            for slide in slides:
-                slide_num, slide_text = slide
+            for slide_num, slide_text in slides:
                 try:
                     slides_xml.append(
                         E.slide(
@@ -107,12 +108,21 @@ class XMLHandler:
                         ))
                 # Sometimes get 'ValueError: All strings must be XML compatible: Unicode or ASCII, no NULL bytes or control characters'
                 except ValueError:
-                    slides_xml.append(
-                        E.slide(
-                            E.slideno(str(slide_num)),
-                            E.text(""),
-                        ))
+                    continue
             return slides_xml
+
+        def slice_func(transcript):
+            if not transcript:
+                return []
+            slice_xml = []
+            for time, text in transcript:
+                slice_xml.append(
+                    E.slice(
+                        E.time_slice(time),
+                        E.text_slice(text)
+                    )
+                )
+            return slice_xml
 
         def lecture_func(lectures):
             if not lectures:
@@ -121,6 +131,7 @@ class XMLHandler:
             lectures_xml = []
             for lecture in lectures:
                 lecture_title, lecture_pdf_url, lecture_num, slides, videos = lecture
+                video_title, video_url, transcript = videos
                 lectures_xml.append(
                     E.lecture(
                         E.lecture_title(lecture_title),
@@ -128,9 +139,22 @@ class XMLHandler:
                         E.lectureno(lecture_num),
                         E.slides(
                             *slide_func(slides)
+                        ),
+                        E.videos(
+                            E.video(
+                                E.video_url(video_url),
+                                E.video_title(video_title),
+                                E.transcript(
+                                    *slice_func(transcript)
+                                )
+                            )
                         )
                     ))
             return lectures_xml
+
+        # Add course info to XML
+        course_title, course_url, course_tags, date, lectures = course.get_info()
+        self.course_title = course_title
 
         xml = (
             E.doc(
@@ -144,19 +168,7 @@ class XMLHandler:
                     )
                 ),
                 E.lectures(
-                    *lecture_func(lectures),
-                    E.videos(
-                        E.video(
-                            E.video_url(),
-                            E.video_title(),
-                            E.transcript(
-                                E.slice(
-                                    E.text_slice(),
-                                    E.time_slice(),
-                                )
-                            )
-                        )
-                    )
+                    *lecture_func(lectures)
                 )
             )
         )
