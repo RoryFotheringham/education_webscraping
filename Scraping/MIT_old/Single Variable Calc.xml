@@ -1,0 +1,4874 @@
+<doc>
+  <source>MIT</source>
+  <date>28/01/2023</date>
+  <course>
+    <course_url>https://ocw.mit.edu/courses/18-01-single-variable-calculus-fall-2006/</course_url>
+    <course_title>Single Variable Calculus</course_title>
+    <course_tags>
+      <list>Mathematics </list>
+      <list>Differential Equations </list>
+      <list>Calculus</list>
+    </course_tags>
+  </course>
+  <lectures>
+    <lecture>
+      <lecture_title>Final review</lecture_title>
+      <lecture_pdf_url>https://ocw.mit.edu/courses/18-01-single-variable-calculus-fall-2006/resources/lec38/</lecture_pdf_url>
+      <lectureno>38</lectureno>
+      <slides>
+        <slide>
+          <slideno>2</slideno>
+          <text>&#65533; &#65533; &#65533; 
+&#65533; &#65533; 
+&#65533; &#65533; Lecture 38 18.01 Fall 2006 
+Now,let u = &#8722;x2 . 
+1 13 135(1 &#8722; x 2)&#8722;1/2 =1+ 2x 2 +2 &#183; 
+4 x 4 +2 &#183; 
+4 &#183; 
+6 x 6 + &#183;&#183;&#183; &#183; &#183;&#183; 
+1 x3 13 x5 135 x7 
+(1 &#8722; x 2)&#8722;1/2dx = C + x +23 +2 &#183; 
+45 +2 &#183; 
+4 &#183; 
+67 + &#183;&#183;&#183; &#183; &#183;&#183; 
+&#65533; 1 &#65533;&#65533;&#65533; &#65533;&#65533; &#65533;&#65533; &#65533;&#65533; &#65533; &#960; 11 13 1 135 1 
+2= 
+0 (1 &#8722; x 2)&#8722;1/2dx =1+ 2 3+2 &#183; 
+4 5+2 &#183; 
+4 &#183; 
+6 7+ &#183;&#183;&#183; &#183; &#183;&#183; 
+Here&#8217;s a hard (optional) extra credit problem: why does this series converge? Hint: use 
+L&#8217;H&#244;pital&#8217;s ruleto&#64257;ndouthowquicklythetermsdecrease. 
+The Final Exam 
+Here&#8217;sanotherattempt toclarifytheconceptofweightedaverages. 
+WeightedAverage 
+Aweightedaverageofsomefunction, f,isde&#64257;nedas: 
+&#65533; b w(x)f(x) dx aAverage(f )= &#65533; b w(x) dx a 
+&#65533; b 
+Here, w(x) dx isthetotal,and w(x) istheweightingfunction. 
+a 
+Example: taken from a past problem set. 
+Youget$tifacertainparticledecaysin t seconds. How much should you pay to play? You were 
+giventhatthelikelihoodthattheparticlehasnotdecayed(theweightingfunction) is: 
+w(x)= e&#8722;kt 
+Remember, &#65533; &#8734; 1 e&#8722;kt dt = k0 
+Thepayo&#64256;is 
+f(t)= t 
+Theexpected(oraverage)payo&#64256;is 
+&#8734; f(t)w(t) dt &#8734; te&#8722;kt dt0&#65533; = &#65533;0 
+&#8734; w(t) dt &#8734; e&#8722;kt dt0 0 
+= k &#8734; 
+te&#8722;kt dt = &#8734;
+(kt)e&#8722;kt dt 
+0 0 
+Dothechangeofvariable: 
+u = kt and du = k dt 
+2 </text>
+        </slide>
+        <slide>
+          <slideno>1</slideno>
+          <text>&#65533; 
+&#65533; &#65533; &#65533; &#65533; 
+&#65533; &#65533; &#65533; 
+&#65533; 
+&#65533; &#65533; Lecture 38 18.01 Fall 2006 
+Lecture 38: Final Revie w 
+Review: Di&#64256;erentiating and Integrating Series. 
+&#8734;
+If f(x)= anx n,then 
+n=0 
+&#65533; &#65533; n+1&#8734; &#65533; &#8734;anxf&#65533;(x)= nanx n&#8722;1 and f(x)dx = C + n +1 n=1 n=0 
+Example 1: Normal (or Gaussian) Distribution. 
+x x 
+e&#8722;t2 dt = 1 &#8722; t2 +(&#8722;
+2! t2)2 
++(&#8722;
+3! t2)3 
++ &#183;&#183;&#183; dt 
+0 0 
+x t4 t6 t8 
+= 1 &#8722; t2 + 2! &#8722; 3! + 4! &#8722; ... dt 
+0 
+x3 1 x5 1 x7 
+= x &#8722; 3 +2! 5 &#8722; 3!7 + ... 
+x 2Eventhough e&#8722;tdt isn&#8217;t an elementary function, we can still compute it. Elementary functions 
+0 are still a little bit better, though. For example: 
+sin x = x &#8722; x
+3! 3 
++ x
+5! 5 
+&#8722;&#183;&#183;&#183; = &#8658; sin &#960; 
+2= &#960; 
+2 &#8722; (&#960;/
+3!2)3 
++(&#960;/
+5!2)5 
+&#8722;&#183;&#183;&#183; 
+Buttocompute sin(&#960;/2) numerically is a waste of time. We know that the sum if something very 
+simple,namely, &#960;sin =1 2 
+It&#8217;s not obvious from the series expansion that sin x deals with angles. Series are sometimes com&#173;
+plicated andunintuitive. 
+&#960; &#960;Nevertheless, we can read this formula backwards to &#64257;nd a formula for . Start with sin =1.2 2 Then, &#65533; 1 dx &#65533;&#65533;1 &#960;&#960; 
+0 &#8730;
+1 &#8722; x2 = sin&#8722;1 x&#65533; = sin&#8722;1 1 &#8722; sin&#8722;1 0= 2 &#8722; 0= 
+0 2 
+Wewantto&#64257;ndtheseriesexpansion for (1 &#8722; x2)&#8722;1/2,butlet&#8217;stackleasimplercase&#64257;rst: 
+&#65533;&#65533;&#65533; &#65533;&#65533;&#65533;&#65533; &#65533;&#65533; &#65533;1 1 1 1 1 
+1 &#8722; 2 &#8722; 2 &#8722; 1 &#8722; 2 &#8722; 2 &#8722; 1 &#8722; 2 &#8722; 2 
+(1 + u)&#8722;1/2 =1+ &#8722; 2 u + 12 u 2 + 123 u 3 + &#183;&#183;&#183; &#183; &#183;&#183; 
+1 13 135
+=1 &#8722; 2 u +2 &#183; 
+4 u 2 &#8722; 2 &#183; 
+4 &#183; 
+6 u 3 + &#183;&#183;&#183;
+&#183; &#183;&#183; 
+Notice the pattern: odd numbers go on the top, even numbers go on the bottom, and the signs 
+alternate. 
+1 </text>
+        </slide>
+        <slide>
+          <slideno>3</slideno>
+          <text>&#65533; 
+&#65533; Lecture 38 18.01 Fall 2006 
+&#8734; duAverage = ue&#8722;u 
+k0 
+&#8734;
+Onapreviousproblem set,youevaluatedthisusingintegration byparts: ue&#8722;u du =1. 
+0 
+Average = &#65533; &#8734; 
+0 ue&#8722;u du 
+k = 1 
+k 
+Ontheproblem set,wecalculated thehalf-life(H)forPolonium120 was (131)(24)(60)2 seconds. We 
+alsofoundthat ln2 k = H 
+Therefore, theexpectedpayo&#64256;is 
+1 H = k ln2 
+where H isthehalf-lifeoftheparticleinseconds. 
+Now, you&#8217;re all probably wondering: who on earth bets on particle decays? 
+In truth, no one does. There is, however, a very similar problem that is useful in the real world. 
+There is something called an annuity, which is basically a retiremen t pension. You can buy an 
+annuity, and then get paid a certain amount every month once you retire. Once you die, the annuity 
+paymentsstop. 
+You(andthepeoplepayingyou)naturally careabouthowmuchmoneyyoucanexpecttoget 
+over the course of your retiremen t. In this case, f(t)= t representshowmuchmoneyyouendup 
+with,and w(t)= e&#8722;kt representshowlikelyyouraretobealiveafter t years. 
+What if you want a 2-life annuity? Then, you need multiple integrals, which you will learn about 
+inmultivariablecalculus (18.02). 
+Our &#64257;rst goal in this class was to be able to di&#64256;erentiate anything. In multivariable calculus, you 
+will learn about another chain rule. That chain rule will unify the (single-variable) chain rule, the 
+productrule,thequotientrule,andimplicitdi&#64256;erentiation. 
+Youmightsaythemultivariablechainruleis 
+Onethingtorulethemall 
+Onethingto&#64257;ndthem 
+Onethingtobringthemall 
+Andinamatrixbindthem. 
+(withapologiestoJRRTolkien). 
+3 </text>
+        </slide>
+        <slide>
+          <slideno>0</slideno>
+          <text>MIT Open CourseWare 
+http://oc w.mit.edu 
+18.01  Single Variable Calculus 
+Fall 2006 
+For info rmati on abo ut citin g these mate rials or o ur Terms of Use, visit: http://ocw.mit.edu/term s. </text>
+        </slide>
+      </slides>
+    </lecture>
+    <lecture>
+      <lecture_title>Implicit differentiation, inverses</lecture_title>
+      <lecture_pdf_url>https://ocw.mit.edu/courses/18-01-single-variable-calculus-fall-2006/resources/lec5/</lecture_pdf_url>
+      <lectureno>5</lectureno>
+      <slides>
+        <slide>
+          <slideno>0</slideno>
+          <text>MIT Open CourseWare 
+http://oc w.mit.edu 
+18.01  Single Variable Calculus 
+Fall 2006 
+For info rmati on abo ut citin g these mate rials or o ur Terms of Use, visit: http://ocw.mit.edu/term s. </text>
+        </slide>
+        <slide>
+          <slideno>3</slideno>
+          <text>&#65533; Lecture 5 18.01 Fall 2006 
+So, implicit di&#64256;eren tiation makes it possible to &#64257;nd the deriv ative of the inverse function. 
+Example. y = arctan( x) 
+tan y = x 
+d 
+dx [tan(y )] = dx 
+dx = 1 
+d 
+dy [tan(y )] 
+&#65533; 1 
+cos2(y) &#65533; dy 
+dx 
+dy 
+dx = 
+= 1 1 
+dy 
+dx = cos2(y) = cos2(arctan(x)) 
+This form is messy . Let us use some geometry to simplif y it. 
+1
+x(1+x2)1/2y
+Figure 1: Triangle with angles and lengths corresp onding to those in the example illustrating di&#64256;eren tiation using 
+the inverse function arctan 
+In this triangle, tan(y )= x so
+arctan( x)= y
+The Pythagorian theorem tells us the length of the hypotenuse: 
+h = 1+ x2 
+From this, we can &#64257;nd 
+1cos(y )= &#8730;
+1+ x2 
+From this, we get &#65533;&#65533;21 1 cos2(y)= =&#8730;
+1+ x2 1+ x2 
+3 </text>
+        </slide>
+        <slide>
+          <slideno>1</slideno>
+          <text>&#65533; &#65533; 
+&#65533; &#65533; 
+&#65533; &#65533; Lecture 5 18.01 Fall 2006 
+Lecture  5      
+Implicit 
+Di&#64256;erentiation  and  Inverses  
+Implicit Di&#64256;eren tiation 
+dExample 1. (x a)= ax a&#8722;1 . dx We proved this by an explicit compu tation for a =0, 1, 2,.... From this, we also got the formula for 
+a = &#8722;1, &#8722;2,.... Let us try to extend this formula to cover rational numbers, as well: 
+m m a = ; y = xn where m and n are integers. n 
+We want to compute dy . We can say yn = xm so nyn&#8722;1 dy = mx m&#8722;1 . Solve for dy : dx dx dx 
+dy = mxm&#8722;1 
+dx nyn&#8722;1 
+( m 
+We know that y = xn ) is a function of x. 
+dy = mxm&#8722;1 
+dx nyn&#8722;1 
+m xm&#8722;1 
+= n (xm/n)n&#8722;1 
+mxm&#8722;1 
+= nxm(n&#8722;1)/n 
+= x(m&#8722;1)&#8722; m(n
+n &#8722;1) m 
+n 
+m n(m&#8722;1)&#8722;m(n&#8722;1) 
+= x n n 
+m nm&#8722;n&#8722;nm+m 
+= x n n 
+m m n 
+= x n &#8722; n n 
+dy m m 
+So, = x n &#8722; 1 
+dx n 
+This is the same answer as we were hoping to get! 
+Example 2. Equation of a circle with a radius of 1: x2 +y2 = 1 which we can write as y2 =1&#8722;x2 . 
+So y = &#177;&#8730;
+1 &#8722; x2. Let us look at the positiv e case: 
+&#65533; 1
+y = +1 &#8722; x2 = (1 &#8722; x 2) 2
+dy = 1(1 &#8722; x 2) &#8722;
+21 
+(&#8722;2x)= &#8722;x = &#8722;x 
+dx 2 &#8730;
+1 &#8722; x2 y 
+1 </text>
+        </slide>
+        <slide>
+          <slideno>2</slideno>
+          <text>Lecture 5	 18.01 Fall 2006 
+Now, let&#8217;s do the same thing, using implicit di&#64256;eren tiation. 
+x 2 + y 2 =1 
+d &#65533; 2&#65533; d x 2 + y = (1)=0 dx dx 
+d d(x 2)+ (y 2)=0 dx dx 
+Applying chain rule in the second term, 
+2x +2ydy =0 dx 
+2ydy = &#8722;2x dx 
+dy = &#8722;x 
+dx y 
+Same answ er! 
+Example 3. y3 + xy2 + 1 = 0. In this case, it&#8217;s not easy to solve for y as a function of x. Instead, 
+we use implicit di&#64256;eren tiation to &#64257;nd dy . dx 
+3y 2 dy + y 2 +2xydy =0 dx dx 
+We can now solve for dy in terms of y and x. dx 
+dy 
+dx (3y 2 +2xy)= &#8722;y 2 
+dy = &#8722;y2 
+dx 3y2 +2xy 
+Inverse Functions 
+If y = f(x) and g(y)= x, we call g the inverse function of f, f&#8722;1: 
+x = g(y)= f&#8722;1(y) 
+Now, let us use implicit di&#64256;eren tiation to &#64257;nd the deriv ative of the inverse function . 
+y = f(x) 
+f&#8722;1(y)= x 
+d d(f&#8722;1(y))= (x)=1 dx	 dx
+By the chain rule: 
+d dy(f&#8722;1(y)) =1 dy dx 
+and
+d 1
+(f&#8722;1(y)) = dy	 dy 
+dx 
+2 </text>
+        </slide>
+        <slide>
+          <slideno>4</slideno>
+          <text>Lecture 5 18.01 Fall 2006 
+So, 
+dy = 1 
+dx 1 + x2 
+In other words, 
+d 1arctan( x)= dx 1+ x2 
+Graphing an Inverse Function. 
+Supp ose y = f(x) and g(y)= f&#8722;1(y)= x. To graph g and f together we need to write g as a 
+function of the variable x. If g(x)= y, then x = f(y), and what we have done is to trade the 
+variables x and y. This is illustrated in Fig. 2 
+f&#8722;1(f(x)) = x f&#8722;1 f(x)= x&#9702; 
+f(f&#8722;1(x)) = x ff&#8722;1(x)= x&#9702; 
+f(x)
+g(x)
+a=f-1(b)b=f(a)
+xy y=x
+Figure 2: You can think about f &#8722;1 as the graph of f re&#64258;ected about the line y = x 
+4 </text>
+        </slide>
+      </slides>
+    </lecture>
+    <lecture>
+      <lecture_title>Polar coordinates; area in polar coordinates
+Exam 4 review</lecture_title>
+      <lecture_pdf_url>https://ocw.mit.edu/courses/18-01-single-variable-calculus-fall-2006/resources/lec32/</lecture_pdf_url>
+      <lectureno>32</lectureno>
+      <slides>
+        <slide>
+          <slideno>7</slideno>
+          <text>&#65533; 
+&#65533; 
+&#65533; &#65533; &#65533; Lecture 32 18.01 Fall 2006 
+Example 7: Going back to (x,y) coordinates from r = f(&#952;). 
+Startwith 1 r = .1+ 1 sin &#952;2 
+Hence, r r + sin &#952; =1 2 
+Plugin r = x2 + y2: 
+x2 + y2 + y =1 2 
+&#65533; &#65533;&#65533;2 2 
+x2 + y2 =1 &#8722; y 
+2= &#8658; x 2 + y 2 =1 &#8722; y 
+2 =1 &#8722; y + y
+4 
+Finally, 
+3y2 
+x 2 + + y =1 4 
+Thisisanequation foranellipse,withtheoriginatonefocus. 
+Usefulconversionformulas: 
+r = x2 + y2 and &#952; = tan&#8722;1 y 
+x 
+Example 8: A Rose r = cos(2&#952;) 
+Thegraphlooksabitlikea&#64258;ower: 
+1r&gt;0
+r&lt;0r&gt;0r&lt;0 &#960;/4
+-&#960;/4
+Figure11: Example 8: Rose 
+Forthe&#64257;rst &#8220;petal&#8221; &#960;&#960; &#8722; 4 &lt;&#952;&lt; 4 
+Note: Next lecture is Lecture 34 as Lecture 33 is Exam 4. 
+7 </text>
+        </slide>
+        <slide>
+          <slideno>0</slideno>
+          <text>MIT Open CourseWare 
+http://oc w.mit.edu 
+18.01  Single Variable Calculus 
+Fall 2006 
+For info rmati on abo ut citin g these mate rials or o ur Terms of Use, visit: http://ocw.mit.edu/term s. </text>
+        </slide>
+        <slide>
+          <slideno>3</slideno>
+          <text>Lecture 32	 18.01 Fall 2006 
+Weknowtheequation forthecircleinrectangular coordinates is 
+(x &#8722; a)2 + y 2 = a 2 
+Startbyplugging in: 
+x = r cos &#952; and y = r sin &#952; 
+Thisgivesus 
+(r cos &#952; &#8722; a)2 +(r sin &#952;)2 = a 2
+r 2cos2&#952; &#8722; 2arcos&#952; + a 2 + r 2sin2&#952; = a 2
+r 2 &#8722; 2ar cos &#952; =0
+r =2a cos &#952; 
+&#960;	 &#960;Therangeof 0 &#8804; &#952; &#8804; 2 tracesoutthetophalfofthecircle,while &#8722; 2 &#8804; &#952; &#8804; 0 tracesoutthebottom 
+half. Let&#8217;s graph this. 
+(a,0)r
+&#952;y
+x&#952; = &#960;/4
+&#952; = 0
+Figure5: r =2a cos &#952;, &#8722;&#960;/2 &#8804; &#952; &#8804; &#960;/2. 
+At &#952; =0,r =2a = x =2a, y =0 
+At &#952; = &#960;, r =2a cos &#8658;&#960; = a&#8730;
+24 4 
+Themainissueis&#64257;ndingtherangeof &#952; tracing the circle once. In this case, &#8722;&#960; &lt;&#952;&lt; &#960; .2 2 
+&#960; &#952; =	&#8722; 2 (down) 
+&#960; &#952; = (up)2 
+&#960; 3&#960;Weird range (avoid this one): 2 &lt;&#952;&lt; 2 . When &#952; = &#960;, r =2a cos &#960; =2a(&#8722;1) = &#8722;2a. The 
+&#960; 3&#960;radius points &#8220;backwards&#8221;. In the range &lt;&#952;&lt; ,thesamecircleistracedoutasecondtime. 2 2 
+3 </text>
+        </slide>
+        <slide>
+          <slideno>6</slideno>
+          <text>Lecture 32 18.01 Fall 2006 
+Example 5: A Ray. Inthiscase, &#952; = b. 
+&#952;=b
+Figure9: Example 5: The ray &#952; = b, 0 &#8804; r&lt; &#8734;.
+Therangeof r is 0 &#8804; r&lt; &#8734;; x = r cos b; y = r sin b.
+Example 6: Finding the Polar Formula, based on the Cartesian Formula 
+y
+x1/sin &#952;
+&#952;1
+Figure10: Example 6: Cartesian Form to Polar Form 
+Consider, in cartesian coordinates, the line y =1. To &#64257;nd the polar coordinate equation, plug 
+in y = r sin &#952; and x = r cos &#952; andsolvefor r. 
+1 r sin &#952; =1 = r = with 0 &lt;&#952;&lt;&#960; &#8658; sin &#952; 
+6 </text>
+        </slide>
+        <slide>
+          <slideno>1</slideno>
+          <text>Lecture 32 18.01 Fall 2006 
+Lecture 32: Polar Co-ordinates, Area in Polar
+Co-ordinates
+Polar Coordinates 
+r
+&#952;
+Figure1: PolarCo-ordinates. 
+In polar coordinates, we specify an object&#8217;s position in terms of its distance r from the origin 
+andtheangle &#952; thattherayfromtheorigintothepointmakeswithrespecttothe x-axis. 
+Example 1. What are the polar coordinates for the point speci&#64257;ed by (1, &#8722;1) in rectangular 
+coordinates? 
+r
+(1,-1)
+Figure2: Rectangular Co-ordinates toPolarCo-ordinates. 
+r = &#65533; 
+12 +(&#8722;1)2 = &#8730;
+2 
+&#960; &#952; = &#8722; 4 
+Inmost cases,we usetheconventionthat r &#8805; 0 and 0 &#8804; &#952; &#8804; 2&#960;. Butanother common convention 
+istosay r &#8805; 0 and &#8722;&#960; &#8804; &#952; &#8804; &#960;. All values of &#952; andevennegativevaluesof r canbeused. 
+1 </text>
+        </slide>
+        <slide>
+          <slideno>4</slideno>
+          <text>Lecture 32 18.01 Fall 2006 
+r=f(&#952;)
+Figure6: Usingpolarco-ordinates to&#64257;ndareaofagenericfunction. 
+Area in Polar Coordinates 
+Sinceradiusisafunction ofangle(r = f(&#952;)),wewillintegratewithrespectto &#952;. The question 
+is: what, exactly, should we integrate? &#65533; &#952;2 
+?? d&#952; 
+&#952;1 
+Let&#8217;slookataverysmallsliceofthisregion: 
+rd&#952;
+rd&#952;
+Figure7: Approximatesliceofareainpolarcoordinates. 
+This in&#64257;nitesimal slice is approximately a right triangle. To &#64257;nd its area, we take: 
+1 1Areaofslice &#8776; 2(base) (height)= 2 r(r d&#952;) 
+So, &#65533; &#952;2 1TotalArea = r 2 d&#952;2&#952;1 
+4 </text>
+        </slide>
+        <slide>
+          <slideno>5</slideno>
+          <text>Lecture 32 18.01 Fall 2006 
+&#960;&#960;Example 3. r =2a cos &#952;,and &#8722; 2 &lt;&#952;&lt; 2 (the circle in Figure 5). 
+&#65533; &#960;/2 1 2 &#65533; &#960;/2 
+A = area = (2a cos &#952;)2 d&#952; =2a cos2&#952; d&#952;2&#8722;&#960;/2 &#8722;&#960;/2 
+11Because cos2 &#952; = + cos2&#952;,wecanrewritethisas22 
+&#65533; &#960;/2 &#65533; &#960;/2 &#65533; &#960;/2 
+A = area = (1+cos2&#952;) d&#952; = a 2 d&#952; + a 2 cos2&#952; d&#952; 
+&#8722;&#960;/2 &#8722;&#960;/2 &#8722;&#960;/2 
+1 &#65533;&#65533;&#960;/2 1
+2&#65533;&#65533;&#65533;&#65533;&#65533;&#65533;&#65533;&#65533;&#65533;0 
+= &#960;a2 + 2 sin2&#952;&#65533; 
+&#8722;&#960;/2 = &#960;a2 + [sin &#960; &#8722; sin(&#8722;&#960;)] 
+A = area = &#960;a2 
+Example 4: Circle centered at the Origin. 
+r=a
+Figure8: Example 4: Circle centered at the origin 
+x = r cos &#952;; y = r sin &#952; 
+x 2 + y 2 = r 2 cos2 &#952; + r 2 sin2 &#952; = r 2 
+Thecircleis x2 + y2 = a2,so r = a and 
+x = a cos &#952;; y = a sin &#952; 
+&#65533; 2&#960; 1 1 A = a 2 d&#952; = a 2 2&#960; = &#960;a2 .2 2 &#183; 
+0 
+5 </text>
+        </slide>
+        <slide>
+          <slideno>2</slideno>
+          <text>Lecture 32 18.01 Fall 2006 
+r
+&#952;
+xy
+Figure3: Rectangular Co-ordinates toPolarCo-ordinates.
+Regardless ofwhether weallowpositiveornegativevaluesof r or &#952;,whatis always trueis:
+x = r cos &#952; and y = r sin &#952; 
+Forinstance, x =1, y = &#8722;1 canberepresentedby r = &#8722;&#8730;
+2, &#952; =3&#960; :4 
+1= x = &#8722;&#8730;
+2 cos 3&#960; and &#8722; 1= y = &#8722;&#8730;
+2 sin 3&#960; 
+4 4 
+Example 2. Consider a circle of radius a with its center at x = a, y =0. We want to &#64257;nd an 
+equation thatrelates r to &#952;. 
+(a,0)
+Figure4: Circleofradius a withcenterat x = a,y =0. 
+2 </text>
+        </slide>
+      </slides>
+    </lecture>
+    <lecture>
+      <lecture_title>Max-min problems</lecture_title>
+      <lecture_pdf_url>https://ocw.mit.edu/courses/18-01-single-variable-calculus-fall-2006/resources/lec11/</lecture_pdf_url>
+      <lectureno>11</lectureno>
+      <slides>
+        <slide>
+          <slideno>4</slideno>
+          <text>Example 4. Consider a wire of length 1, cut into two pieces. Bend each piece into a square. We 
+want to &#64257;gure out where to cut the wire in order to enclose as much area in the two squares as 
+possible. 
+(1/4)x0 x 1
+(1/4)(1-x)
+Figure 5: Illustration for Example 5. 
+2 x xThe &#64257;rst square will have sides of length . Its area will be . The second square will have &#65533; &#65533;24 16 
+sides of length 1&#8722;
+4 x . Its area will be 1&#8722;
+4 x . The total area is then 
+&#65533; x &#65533;2 &#65533; 1 &#8722; x &#65533;2 
+A = +4 4 
+A&#65533; = 2
+16 x + 2(1
+16&#8722; x)(&#8722;1) = x 
+8 &#8722; 1
+8 + x 
+8=0 = &#8658; 2x &#8722; 1=0 = &#8658; x = 1
+2 
+So, one extreme value of the area is 
+&#65533; 1 &#65533;2 &#65533; 1 &#65533;2 1 A = 2 + 2 = 4 4 32 
+We&#8217;re not done yet, though. We still need to check the endp oints! At x = 0, 
+A =02 + &#65533; 1 &#8722; 0 &#65533;2 
+=1 
+4 16 
+At x = 1, &#65533;&#65533;21 1 A = +02 = 4 16 
+4 Lecture 11 18.01  Fall  2006  </text>
+        </slide>
+        <slide>
+          <slideno>0</slideno>
+          <text>MIT Open CourseWare 
+http://oc w.mit.edu 
+18.01  Single Variable Calculus 
+Fall 2006 
+For info rmati on abo ut citin g these mate rials or o ur Terms of Use, visit: http://ocw.mit.edu/term s. </text>
+        </slide>
+        <slide>
+          <slideno>2</slideno>
+          <text>max
+minFigure 2: Searc h for max and min among critical points and endp oints
+Example 3. Find the open-topp ed can with the least surface area enclosing a &#64257;xed volume, V.
+rh
+Figure 3: Open-to pped can. 
+1. Draw the picture. 
+2. Figure out what variables to use. (In this case, r, h, V and surface area, S.) 
+3. Figure out what the constrain ts are in the problem, and express them using a formula. In this 
+example, the constrain t is 
+V = &#960;r2h = constan t 
+We&#8217;re also looking for the surface area. So we need the formula for that, too: 
+S = &#960;r2 + (2&#960;r)h
+Now, in symbols, the problem is to minimize S with V constan t.
+2 Lecture 11 18.01  Fall  2006  </text>
+        </slide>
+        <slide>
+          <slideno>1</slideno>
+          <text>Lecture 11 18.01  Fall  2006  
+Lecture 11: Max/Min Problems 
+Example 1. y = ln x (same function as in last lecture) x 
+x0=e1/e
+Figure 1: Graph of y = ln x . x 
+1What is the maxim um value? Answ er: y =. &#8226; e 
+&#8226; Where (or at what point) is the maxim um achieved? Answ er: x = e. (See Fig. 1).) 
+Beware: Some people will ask &#8220;What is the maxim um?&#8221;. The answ er is not e. You will get so used 
+to &#64257;nding the critical point x = e, the main calculus step, that you will forget to &#64257;nd the maxim um 
+1 1value y = . Both the critical point x = e and critical value y = are importan t. Together, they e e1form the point of the graph (e, ) where it turns around. e 
+Example 2. Find the max and the min of the function in Fig. 2 
+Answ er: If you&#8217;ve already graphed the function, it&#8217;s obvious where the maxim um and minim um 
+values are. The point is to &#64257;nd the maxim um and minim um without sketching the whole graph. 
+Idea : Look for the max and min among the critical points and endp oints.You can see from Fig. 2 
+that we only need to compare the heigh ts or y-values corresp onding to endpoints and critical points. 
+(Watch out for discon tinuities!) 
+1 </text>
+        </slide>
+        <slide>
+          <slideno>3</slideno>
+          <text>&#65533; &#65533; 4. Use the constrain t equation to express everything in terms of r (and the constan t V ). 
+h = V ; S = &#960;r2 + (2&#960;r) V 
+2&#960;r &#960;r2 
+5. Find the critical points (solve dS/dr = 0), as well as the endp oints. S will achieve its max and 
+min at one of these places. 
+dS 2V 3 V &#65533; V &#65533;1/3 
+dr =2&#960;r &#8722; r2 =0 = &#8658; &#960;r3 &#8722; V =0 = &#8658; r = &#960; = &#8658; r = &#960; 
+We&#8217;re not done yet. We&#8217;ve still got to evaluate S at the endp oints: r =0 and &#8220;r = &#8734;&#8221;. 
+2V S = &#960;r2 + , 0 &#8804; r&lt; &#8734;r 
+2As r &#8594; 0, the second term, r , goes to in&#64257;nit y, so S &#8594;&#8734;. As r &#8594;&#8734;, the &#64257;rst term &#960;r2 goes 
+to in&#64257;nit y, so S &#8594;&#8734;. Since S =+&#8734; at each end, the minim um is achieved at the critical point 
+r =(V/&#960;)1/3, not at either endp oint. 
+s
+rto &#8734;to &#8734;
+Figure 4: Graph of S 
+We&#8217;re still not done. We want to &#64257;nd the minim um value of the surface area, S, and the values 
+of h. &#65533;&#65533;1/3 &#65533;&#65533;&#8722;2/3 &#65533;&#65533;1/3V VVVV V r = &#960; ; h = &#960;r2 = 
+&#960; &#65533; V &#65533;2/3 = &#960;&#960; = &#960; 
+&#960; 
+&#65533;&#65533;2/3 &#65533;&#65533;1/3 
+S = &#960;r2 +2 V = &#960;V +2VV =3&#960;&#8722;1/3V 2/3 
+r&#960; &#960; 
+Finally , another, often better, way of answ ering that question is to &#64257;nd the proportions of the 
+can. In other words, what is h 
+r ? Answ er: h 
+r = (V/&#960;)1/3 
+(V/&#960;)1/3 = 1. 
+3 Lecture 11 18.01  Fall  2006  </text>
+        </slide>
+        <slide>
+          <slideno>5</slideno>
+          <text>By checking the endp oints in Fig. 6, we see that the minimum area was achieved at x = 1
+2 . 
+The maxim um area is not achieved in 0 &lt;x&lt; 1, but it is achieved at x = 0 or 1. The maxim um 
+corresp onds to using the whole length of wire for one square. 
+1/2 11/16
+1/32
+xArea
+Figure 6: Graph of the area function. 
+Moral: Don&#8217;t forget endpoints. If you only look at critical points you may &#64257;nd the worst answer, 
+rather than the best one. 
+5 Lecture 11 18.01  Fall  2006  </text>
+        </slide>
+      </slides>
+    </lecture>
+    <lecture>
+      <lecture_title>Integration by inverse substitution; completing the square</lecture_title>
+      <lecture_pdf_url>https://ocw.mit.edu/courses/18-01-single-variable-calculus-fall-2006/resources/lec28/</lecture_pdf_url>
+      <lectureno>28</lectureno>
+      <slides>
+        <slide>
+          <slideno>5</slideno>
+          <text>Lecture 28 18.01 Fall 2006 
+Ifwewriteitabitdi&#64256;erently,however,itbecomesmuchhardertointegrate: 
+1+3= x + 2 + 3(x &#8722; 1)= 4x &#8722; 1
+x &#8722; 1 x +2 (x &#8722; 1)(x + 2) x2 + x &#8722; 2
+&#65533; 4x &#8722; 1 = ??? x2 + x &#8722; 2
+Howcanwereorganize whattodostarting from (4x &#8722; 1)/(x2 + x &#8722; 2)? Next time, we&#8217;ll see how. 
+Itinvolvessomealgebra. 
+5 </text>
+        </slide>
+        <slide>
+          <slideno>0</slideno>
+          <text>MIT Open CourseWare 
+http://oc w.mit.edu 
+18.01  Single Variable Calculus 
+Fall 2006 
+For info rmati on abo ut citin g these mate rials or o ur Terms of Use, visit: http://ocw.mit.edu/term s. </text>
+        </slide>
+        <slide>
+          <slideno>4</slideno>
+          <text>&#65533; &#65533; &#65533; 
+&#65533; 
+&#65533; 
+&#65533; &#65533; &#65533; Lecture 28 18.01 Fall 2006 
+Rememberthat &#65533; 
+sec udu = ln(sec u + tan u)+ c 
+Finally,rewriteeverythingintermsofx. 
+2 v = 2 sec u cos u = &#8660; v 
+Set up a right triangle as in Figure 4. Express tan u intermsof v. 
+v
+2&#8730;v&#178;-4
+u
+Figure4: sec u = v/2 or cos u =2/v. 
+Justfromlookingatthetriangle, wecanreado&#64256; 
+v &#8730;
+v2 &#8722; 4 sec u = and tan u = 2 2 
+2sec udu = ln v + &#8730;
+v2 &#8722; 4+ c2 2 
+= ln(v + v2 &#8722; 4) &#8722; ln2 + c 
+Wecancombinethoselasttwotermsintoanotherconstant, c&#732;. 
+dx &#65533; 
+&#8730;
+x2 +4x = ln(x +2+ x2 +4x)+&#732;c 
+Here&#8217;s a teaser for next time. In the next lecture, we&#8217;ll integrate all rational functions. By 
+&#8220;rational functions,&#8221; we mean functions that are the ratios of polynomials: 
+P (x)
+Q(x)
+It&#8217;seasytoevaluateanexpression likethis: 
+1 3 
+x &#8722; 1+ x +2 dx = ln |x &#8722; 1| + 3ln |x +2| + c 
+4 </text>
+        </slide>
+        <slide>
+          <slideno>3</slideno>
+          <text>&#65533; 
+&#65533; 
+&#65533; = 
+&#65533; &#65533; &#65533; Lecture 28 18.01 Fall 2006 
+0 x
+u
+Figure3: Area divided into a sector and a triangle. 
+Hereisalistofintegralsthatcanbecomputed usingatrigsubstitution andatrigidentity. 
+integral substitution trig identity 
+dx 
+&#65533; &#8730;
+x2 +1 x = tan u tan2 u +1 = sec2 u 
+dx &#8730;
+x2 x = sec u sec2 u &#8722; 1 = tan2 u 
+&#65533; &#8722; 1 
+dx &#8730;
+1 &#8722; x2 x = sin u 1 &#8722; sin2 u = cos2 u 
+Let&#8217;s extend this further. How can we evaluate an integral like this? 
+dx &#8730;
+x2 +4x 
+Whenyouhavealinearandaquadratic termunderthesquareroot,complete thesquare. 
+x 2 +4x =(something)2 &#177; constant 
+Inthiscase, 
+(x + 2)2 = x 2 +4x +4 = &#8658; x 2 +4x =(x + 2)2 &#8722; 4 
+Now,wemakeasubstitution. 
+v = x +2 and dv = dx 
+Plugging theseingivesus &#65533; &#65533; dx dv 
+(x + 2)2 &#8722; 4 &#8730;
+v2 &#8722; 4 
+Now,let 
+v = 2 sec u and dv = 2 sec u tan u 
+dv 2sec u tan udu &#8730;
+v2 = 2 tan u = sec udu 
+&#8722; 4 
+3 </text>
+        </slide>
+        <slide>
+          <slideno>1</slideno>
+          <text>&#65533; Lecture 28 18.01 Fall 2006 
+Lecture 28: Integration by Inverse Substitutio n;
+Completing the Square
+Trigonometric Substitutions, continued 
+-a 0 x a
+Figure1: Find area of shaded portion of semicircle. 
+&#65533; x &#65533; 
+a2 &#8722; t2dt 
+0 
+t = a sin u; dt = a cos udu 
+a 2 &#8722; t2 = a 2 &#8722; a 2 sin2 u = a 2 cos2 u = &#8658; a2 &#8722; t2 = a cos u (Nomoresquareroot!) 
+Start: x = &#8722;a &#8660; u = &#8722;&#960;/2; Finish: x = a &#8660; u = &#960;/2 
+&#65533; &#65533; &#65533; &#65533;&#65533;&#65533; 
+a2 &#8722; t2 dt = a 2 cos2 udu = a 2 1 + cos(2u ) du = a 2 u + sin(2u )+ c2 2 4 
+1 + cos(2u)(Recall, cos2 u = ).2 
+Wewanttoexpressthisintermsof x,not u. When t =0, a sin u =0,andtherefore u =0. 
+When t = x, a sin u = x,andtherefore u = sin&#8722;1(x/a). 
+sin(2u ) 2 sin u cos u 1 = = sin u cos u4 4 2 
+&#65533;&#65533; xsin u = sin sin&#8722;1(x/a) = a 
+1 </text>
+        </slide>
+        <slide>
+          <slideno>2</slideno>
+          <text>&#65533; &#65533; 
+&#65533; Lecture 28 18.01 Fall 2006 
+Howcanwe&#64257;nd cos u = cos sin&#8722;1(x/a) ? Answer: use a right triangle (Figure 2). 
+a
+x
+&#8730;a&#178;-x&#178;u
+2 Figure2: sin u = x/a; cos u = p
+a&#8722; x2/a. 
+Fromthediagram, wesee &#8730;
+a2 &#8722; x2 
+cos u = a 
+And&#64257;nally, 
+&#65533; &#65533; &#65533;&#65533; &#65533; 
+x &#65533; 
+a2 &#8722; t2 dt = a 2 u + 1 sin u cos u &#8722; 0= a 2 sin&#8722;1(x/a)+1 &#65533; x &#65533; &#8730;
+a2 &#8722; x2 
+42 2 2 aa0 
+x 2 &#65533; ax 1 &#65533; 
+a2 &#8722; t2 dt = 2 sin&#8722;1( a )+ 2 xa2 &#8722; x2 
+0 
+When the answer is this complicated, the route to getting there has to be rather complicated. 
+There&#8217;snowaytoavoidthecomplexit y. 
+1Let&#8217;s double-check this answer. The area of the upper shaded sector in Figure 3 is a 2 u. The 2 
+areaofthelowershadedregion,whichisatriangleofheight &#8730;
+a2 &#8722; x2 andbase x,is 1 x&#8730;
+a2 &#8722; x2.2 
+2 </text>
+        </slide>
+      </slides>
+    </lecture>
+    <lecture>
+      <lecture_title>Newton&#8217;s method and other applications</lecture_title>
+      <lecture_pdf_url>https://ocw.mit.edu/courses/18-01-single-variable-calculus-fall-2006/resources/lec13/</lecture_pdf_url>
+      <lectureno>13</lectureno>
+      <slides>
+        <slide>
+          <slideno>1</slideno>
+          <text>Lecture 13    18.01 Fall 2006 
+Lecture 13: Newton&#8217;s Metho d and Other Applications 
+Newton&#8217;s Metho d 
+Newton&#8217;s metho d is a powerful tool for solving equations of the form f(x) = 0. 
+Example 1. f(x)= x2 &#8722; 3. In other words, solve x2 &#8722; 3 = 0. We already know that the solution 
+to this is x = &#8730;
+3. Newton&#8217;s metho d, gives a good numerical appro ximation to the answ er. The 
+metho d uses tangent lines (see Fig. 1). 
+x0=1 x1
+(1,-2)y = x2 -3
+Figure 1: Illustration of Newton&#8217;s Metho d, Example 1. 
+The goal is to &#64257;nd where the graph crosses the x-axis. We start with a guess of x0 = 1. Plugging 
+that back into the equation for y, we get y0 =12 &#8722; 3= &#8722;2, which isn&#8217;t very close to 0. 
+Our next guess is x1, where the tangen t line to the function at x 0 crosses the x-axis. The equation 
+for the tangen t line is: 
+y &#8722; y0 = m(x &#8722; x0) 
+When the tangen t line intercepts the x-axis, y = 0, so 
+&#8722;y0 = m(x 1 &#8722; x0) 
+y0 &#8722; m = x1 &#8722; x0 
+y0 x1 = x0 &#8722; m 
+Remem ber: m is the slope of the tangen t line to y = f(x) at the point (x0,y0). 
+1 </text>
+        </slide>
+        <slide>
+          <slideno>6</slideno>
+          <text>&#65533; &#65533; From Fig. 6, we see that the last equation can be interpreted geometrically as saying that 
+sin &#945; = sin &#946; 
+where &#945; and &#946; are the angles the left and right portions of the string make with the vertical. 
+Physical and geometric conclusions 
+The angles &#945; and &#946; are equal. Using vectors to compute the force exerted by gravity on the two 
+halves of the string, one &#64257;nds that there is equal tension in the two halves of the string -a physical 
+equilibrium. (From another point of view, the equal angle property expresses a geometric property 
+of ellipses: Supp ose that the ellipse is a mirror. A ray of light from the focus (0, 0) re&#64258;ects o&#64256; the 
+mirror according to the rule angle of incidence equals angle of re&#64258;ection, and therefore the ray goes 
+directly to the other focus at (a,b).) 
+Formulae for x and y 
+We did not yet &#64257;nd the location of (x,y). We will now show that 
+&#65533; &#65533; &#65533;&#65533;&#65533; a b 1 x =2 1 &#8722;&#8730;
+L2 &#8722; a2 ,y =2 b &#8722; L2 &#8722; a2 
+Because &#945; = &#946;, &#65533; &#65533; 
+x = x2 + y2 sin &#945;; a &#8722; x =(x &#8722; a)2 +(y &#8722; b)2 sin &#945; 
+Adding these two equations, 
+&#65533;&#65533;&#65533; &#65533; a a = x2 + y2 +(x &#8722; a)2 +(y &#8722; b)2 sin &#945; = L sin &#945; = &#8658; sin &#945; = L 
+The equations for the vertical legs of the right triangles are (note that y&lt; 0): 
+&#8722;y = x2 + y2 cos &#945;; b &#8722; y =(x &#8722; a)2 +(y &#8722; b)2 cos &#946; 
+Adding these two equations, and using &#945; = &#946;, 
+&#65533;&#65533;&#65533; &#65533; 1 b &#8722; 2y = x2 + y2 +(x &#8722; a)2 +(y &#8722; b)2 cos &#945; = L cos &#945; = &#8658; y = 2(b &#8722; L cos &#945;) 
+aUse the relation sin &#945; = to write L cos &#945; = L &#65533; 
+1 &#8722; sin2 &#945; = &#8730;
+L2 &#8722; a2. Then the formula for y is L 
+1 &#65533;&#65533; &#65533; 
+y =2 b &#8722; L2 &#8722; a2 
+Finally , to &#64257;nd the formula for x, use the similar right triangles 
+tan &#945; = x = a &#8722; x = x(b &#8722; y)=(&#8722;y)(a &#8722; x)= (b &#8722; 2y)x = &#8722;ay &#8722;yb &#8722; y &#8658; &#8658; 
+Therefore, &#65533; &#65533; 
+x = = b &#8722;
+&#8722; ay 
+2ya 
+21 &#8722;&#8730;
+L2 b 
+&#8722; a2 
+Thus we have formulae for x and y in terms of a, b and L. 
+I omitted the deriv ation of the formulae for x and y in lecture because it is long and because we 
+got all of our physical intuition and understanding out of the problem from the balance condition 
+that was the immediate consequence of the critical point computation. 
+Final Remark. In 18.02, you will learn to treat constrained max/min problems in any number 
+of variables using a metho d called Lagrange multipliers. 
+6 Lecture 13    18.01 Fall 2006 </text>
+        </slide>
+        <slide>
+          <slideno>0</slideno>
+          <text>MIT Open CourseWare 
+http://oc w.mit.edu 
+18.01  Single Variable Calculus 
+Fall 2006 
+For info rmati on abo ut citin g these mate rials or o ur Terms of Use, visit: http://ocw.mit.edu/term s. </text>
+        </slide>
+        <slide>
+          <slideno>3</slideno>
+          <text>x y accuracy: |y &#8722; &#8730;3|
+x0 1 
+x1 2 3 &#215; 10&#8722;1 
+x2 7 
+4 2 &#215; 10&#8722;2 
+x3 7 8 + 6 7 10&#8722;4 
+x4 18,817 
+10,864 3 &#215; 10&#8722;9 
+Notice that the number of digits of accuracy doubles with each iteration. 
+Summary 
+Newton&#8217;s Metho d is illustrated in Fig. 3 and can be summarized as follows: 
+f(xk) xk+1 = xk &#8722; f&#65533;(xk) 
+xk = kth iterate(xk, yk)
+xk+1y=f(x)
+Figure 3: Illustration of Newton&#8217;s Metho d. 
+Example 1 considered the particular case of 
+f(x)= x 2 &#8722; 3 
+f(xk) 1 3 xk+1 = xk &#8722; f&#65533;(xk)= ... =2xk +2xk 
+Now, we de&#64257;ne 
+x = lim xk (xk &#8594; x as k &#8594;&#8734;) 
+k&#8594;&#8734; 
+To evaluate x in Example 1, take the limit as k &#8594;&#8734; in the equation 
+1 3 xk+1 = xk +2 2xk 
+3 Lecture 13    18.01 Fall 2006 </text>
+        </slide>
+        <slide>
+          <slideno>2</slideno>
+          <text>In terms of f: 
+y0 = f(x0) 
+m = f&#65533;(x0) 
+Therefore, 
+f(x0) x1 = x0 &#8722; f&#65533;(x0) 
+x1x0x2
+Figure 2: Illustration of Newton&#8217;s Metho d, Example 1. 
+In our example, f(x)= x2 &#8722; 3,f&#65533;(x)=2x. Thus, 
+(x02 &#8722; 3) 1 3 x1 = x0 &#8722; 2x = x0 &#8722; 2 x0 +2x0 
+1 3 x1 = x0 +2 2x0 
+The main idea is to repeat (iterate) this process: 
+1 3 x2 = x1 +2 2x1 
+1 3 x3 = x2 +2 2x2 
+and so on. The procedure appro ximates &#8730;
+3 extremely well. 
+2 Lecture 13    18.01 Fall 2006 </text>
+        </slide>
+        <slide>
+          <slideno>5</slideno>
+          <text>&#65533; &#65533; Ring on a String 
+Consider a ring on a string 1 held &#64257;xed at two ends at (0, 0) and (a,b) (see Fig. 6). The ring is 
+free to slide to any point. Find the position (x,y) of the string. 
+(a, b)
+(0, 0)
+(x, y)a-x
+x
+&#945;&#946;
+&#8730;(x2 +y2)&#8730;[(a-x)2 +(b-y2)]
+&#945; = &#946;
+Figure 6: Illustration of the Ring on a String problem. 
+Physical Principle The ring settles at the lowest heigh t (lowest potential energy), so the prob&#173;
+lem is to minimize y subject to the constrain t that (x,y) is on the string. 
+Constrain t The length L of the string is &#64257;xed: 
+x2 + y2 +(x &#8722; a)2 +(y &#8722; b)2 = L 
+The function y = y(x) is determined implicitly by the constrain t equation above. We traced the 
+constrain t curve (possible positions of the ring) on the blackboard. This curve is an ellipse with foci 
+at (0, 0) and (a,b), but knowing that the curve is an ellipse does not help us &#64257;nd the lowest point. 
+Experimen ts with the hanging ring show that the lowest point is somewhere in the middle. Since 
+the ends of the constrain t curve are higher than the middle, the lowest point is a critical point 
+(a point where y&#65533;(x) = 0). In class we also gave a physical demonstration of this by drawing the 
+horizon tal tangen t at the lowest point. 
+To &#64257;nd the critical point, di&#64256;eren tiate the constrain t equation implicitly with respect to x, 
+&#65533; x + yy&#65533; 
++ &#65533; x &#8722; a +(y &#8722; b)y&#65533; 
+=0 
+x2 + y2 (x &#8722; a)2 +(y &#8722; b)2 
+Since y&#65533; = 0 a the critical point, the equation can be rewritten as 
+&#65533; x = &#65533; a &#8722; x 
+x2 + y2 (x &#8722; a)2 +(y &#8722; b)2 
+1&#65533;c1999 and c&#65533;2007 David Jerison 
+5 Lecture 13    18.01 Fall 2006 </text>
+        </slide>
+        <slide>
+          <slideno>4</slideno>
+          <text>This yields 
+1 3 1 3 1 3 x&#175;= 2 x&#175;+ 2&#175;x = &#8658; x &#8722; 2 x =2x = &#8658; 2 x =2x = &#8658; x 2 =3 
+which is just what we hoped: x = &#8730;
+3. 
+Warning 1. Newton&#8217;s Metho d can &#64257;nd an unexp ected root. 
+Example: if you take x0 = &#8722;1, then xk &#8594; &#8722;&#8730;
+3 instead of +&#8730;
+3. This convergence to an unexp ected 
+root is illustrated in Fig. 4 
+y = x2-3
+x0
+x1
+tangent to 
+curve at x = x0
+Figure 4: Newton&#8217;s metho d converging to an unexp ected root. 
+Warning 2. Newton&#8217;s Metho d can fail completely . 
+This failure is illustrated in Fig. 5. In this case, x2 = x0, x3 = x1, and so forth. It repeats in a 
+cycle, and never converges to a single value. 
+x0
+x1(x1, y1)
+(x0, y0)
+Figure 5: Newton&#8217;s metho d converging to an unexp ected root. 
+4 Lecture 13    18.01 Fall 2006 </text>
+        </slide>
+      </slides>
+    </lecture>
+    <lecture>
+      <lecture_title>Mean value theorem
+Inequalities</lecture_title>
+      <lecture_pdf_url>https://ocw.mit.edu/courses/18-01-single-variable-calculus-fall-2006/resources/lec14/</lecture_pdf_url>
+      <lectureno>14</lectureno>
+      <slides>
+        <slide>
+          <slideno>1</slideno>
+          <text>Lecture 14 18.01 Fall 2006 
+Lecture 14: Mean Value Theorem and Inequalities
+Mean-V alue Theorem
+The Mean-V alue Theorem (MVT) is the underpinnin g of calculus. It says: 
+If f is di&#64256;eren tiable on a&lt;x&lt;b, and continuous on a &#8804; x &#8804; b, then 
+f(b) &#8722; f(a) = f&#65533;(c) (for some c, a&lt;c&lt;b)b &#8722; a 
+f(b) &#8722; f(a)Here, is the slope of a secan t line, while f&#65533;(c) is the slope of a tangen t line. b &#8722; a 
+secant line
+slope 
+f&#8217;(c)
+ab
+c
+Figure 1: Illustration of the Mean Value Theorem. 
+Geometric Proof: Take (dotted) lines parallel to the secan t line, as in Fig. 1 and shift them up 
+from below the graph until one of them &#64257;rst touches the graph. Alternatively, one may have to start 
+with a dotted line above the graph and move it down until it touches. 
+If the function isn&#8217;t di&#64256;eren tiable, this approac h goes wrong. For instance, it breaks down for 
+the function f(x)= |x|. The dotted line always touches the graph &#64257;rst at x = 0, no matter what its 
+slope is, and f&#65533;(0) is unde&#64257;ned (see Fig. 2). 
+1 </text>
+        </slide>
+        <slide>
+          <slideno>0</slideno>
+          <text>MIT Open CourseWare 
+http://oc w.mit.edu 
+18.01  Single Variable Calculus 
+Fall 2006 
+For info rmati on abo ut citin g these mate rials or o ur Terms of Use, visit: http://ocw.mit.edu/term s. </text>
+        </slide>
+        <slide>
+          <slideno>4</slideno>
+          <text>Lecture 14 18.01 Fall 2006 
+Inequalities 
+The fundamen tal property f&#65533; &gt; 0= f is increasing can be used to deduce many other inequali&#173; &#8658;
+ties. 
+xExample. e
+x1. e&gt; 0 
+x2. e&gt; 1 for x&gt; 0 
+x3. e&gt; 1+ x 
+xProofs. We will take property 1 (e&gt; 0) for granted. Proofs of the other two properties follow: 
+Proof of 2: De&#64257;ne f1(x)= ex &#8722;1. Then, f1(0) = e0 &#8722;1 = 0, and f&#65533;(x)= ex &gt; 0. (This last assertion 1
+is from step 1). Hence, f1(x) is increasing, so f(x) &gt;f(0) for x&gt; 0. That is: 
+e x &gt; 1 for x&gt; 0 
+. 
+xProof of 3: Let f2(x)= e&#8722; (1 + x). 
+f&#65533;(x)= e x &#8722; 1= f1(x) &gt; 0 (if x&gt; 0).2
+Hence, f2(x) &gt; 0 for x&gt; 0. In other words, 
+e x &gt; 1+ x 
+2 2x xSimilarly , e x &gt; 1+ x + 2 (proved using f3(x)= e x &#8722; (1 + x + 2 )). One can keep on going: 
+2 3x xe x &gt; 1+ x + + for x&gt; 0. Eventually , it turns out that 2 3! 
+2 3x xe x =1+ x + + + (an in&#64257;nite sum) 2 3! &#183;&#183;&#183; 
+We will be discuss ing this when we get to Taylor series near the end of the course. 
+4 </text>
+        </slide>
+        <slide>
+          <slideno>3</slideno>
+          <text>Lecture 14 18.01 Fall 2006 
+The tangen t line in the linear appro ximation has a de&#64257;n ite slope f&#65533;(a). by contrast formula is an 
+exact formula. It conceals its lack of speci&#64257;cit y in the slope f&#65533;(c), which could be the slope of f at 
+any point between a and x. 
+(a,f(a))(x,f(x))
+y=f(a) + f&#8217;(a)(x-a)error
+Figure 3: MVT vs. Linear Appro ximation. 
+Uses of the Mean Value Theorem. 
+Key conclusions: (The conclusions from the MVT are theoretical) 
+1. If f&#65533;(x) &gt; 0, then f is increasing. 
+2. If f&#65533;(x) &lt; 0, then f is decreas ing. 
+3. If f&#65533;(x) = 0 all x, then f is constan t. 
+De&#64257;nition of increasing/decreasing: 
+Increasing means a&lt;b f(a) &lt;f(b). Decreasing means a&lt;b = f(a) &lt;f(b). &#8658; &#8658; 
+Proofs: 
+Proof of 1: 
+a&lt;b 
+f(b) = f(a)+ f&#65533;(c)(b &#8722; a) 
+Because f&#65533;(c) and (b &#8722; a) are both positiv e, 
+f(b)= f(a)+ f&#65533;(c)(b &#8722; a) &gt;f(a) 
+(The proof of 2 is omitted because it is similar to the proof of 1) 
+Proof of 3: 
+f(b)= f(a)+ f&#65533;(c)(b &#8722; a)= f(a) + 0(b &#8722; a)= f(a) 
+Conclusions 1,2, and 3 seem obvious, but let me persuade you that they are not. Thin k back to the 
+de&#64257;nition of the deriv ative. It involves in&#64257;nitesimals. It&#8217;s not a sure thing that these in&#64257;nitesimals 
+have anything to do with the non-in&#64257;nitesimal behavior of the function. 
+3 </text>
+        </slide>
+        <slide>
+          <slideno>2</slideno>
+          <text>Lecture 14 18.01 Fall 2006 
+Figure 2: Graph of y = |x|, with secan t line. (MVT goes wrong.) 
+Interpretation of the Mean Value Theorem 
+You travel from Boston to Chicago (whic h we&#8217;ll assume is a 1,000 mile trip) in exactly 3 hours. At 
+1000some time in between the two cities, you must have been going at exactly mph.3
+f(t) = position, measured as the distance from Boston.
+f(3) = 1000, f(0) = 0,a =0, and b=3. 
+1000 = f(b) &#8722; f(a)= f&#65533;(c)3 3 
+where f&#65533;(c) is your speed at some time, c. 
+Versions of the Mean Value Theorem 
+There is a second way of writing the MVT: 
+f(b) &#8722; f(a) = f&#65533;(c)(b &#8722; a) 
+f(b) = f(a)+ f&#65533;(c)(b &#8722; a) (for some c,a &lt; c &lt; b) 
+There is also a third way of writing the MVT: change the name of b to x. 
+f(x)= f(a)+ f&#65533;(c)(x &#8722; a) for some c,a &lt; c &lt; x 
+The theorem does not say what c is. It depends on f, a, and x. 
+This version of the MVT should be compared with linear appro ximation (see Fig. 3). 
+f(x) &#8776; f(a)+ f&#65533;(a)(x &#8722; a) x near a 
+2 </text>
+        </slide>
+      </slides>
+    </lecture>
+    <lecture>
+      <lecture_title>Indeterminate forms - L&#8217;H&#244;spital&#8217;s rule</lecture_title>
+      <lecture_pdf_url>https://ocw.mit.edu/courses/18-01-single-variable-calculus-fall-2006/resources/lec34/</lecture_pdf_url>
+      <lectureno>34</lectureno>
+      <slides>
+        <slide>
+          <slideno>4</slideno>
+          <text>Lecture 34 18.01 Fall 2006 
+You can apply L&#8217;H&#244;pital&#8217;s rule ten times. There&#8217;s a better way, though: 
+&#65533; eax &#65533;1/10 eax/10 
+= x10 x 
+&#65533; &#65533;10 ax ax/10 
+lim xe
+10 = lim e= &#8734;10 = &#8734;
+x&#8594;&#8734; x&#8594;&#8734; x 
+Example 9. 
+lim ln x = lim 1/x = lim 3x&#8722;1/3 =0 
+x&#8594;&#8734; x1/3 x&#8594;&#8734; 1/3x&#8722;2/3 x&#8594;&#8734; 
+Combiningthepreceding examples, ln x &#65533; x 1/3 &#65533; x &#65533; x 10 &#65533; e ax (x &#8594;&#8734;,a &gt; 0) 
+L&#8217;H&#244;pital&#8217;s ruleappliesto 0 and &#8734; . But, we sometimes face other indeterminate limits, such 0 &#8734;
+as 1&#8734;, 00,and 0 &#183;&#8734;. Use algebra, exponentials, and logarithms to put these in L&#8217;H&#244;pital form. 
+Example 10. lim x x for x&gt; 0. 
+x0&#8594;
+Because theexponentisavariable,usebase e: 
+lim x x = lim e x ln x 
+x0 x0&#8594;&#8594;
+First,weneedtoevaluatethelimitoftheexponent 
+lim x ln x 
+x0&#8594;
+Thislimithastheform 0 &#183;&#8734;. We want to put it in the form 0 or &#8734; .0 &#8734;
+0Let&#8217;s try to put it into the form:0 x 
+1/ ln x 
+1Wedon&#8217;tknowhowto&#64257;nd lim ,though,sothatapproachisn&#8217;thelpful. 
+x&#8594;0 ln x 
+Instead, let&#8217;strytoputitintothe &#8734; form:
+&#8734;
+ln x 
+1/x 
+UsingL&#8217;H&#244;pital&#8217;s rule,we&#64257;nd 
+lim x ln x = lim ln x = lim 1/x = lim(&#8722;x)=0 
+x0 x0 1/x x0 &#8722;1/x2 x0 &#8594;&#8594;&#8594; &#8594;
+Therefore, 
+lim(x ln x)
+lim x x = lim e x ln x = e &#8594;0 = e 0 =1 x
+x0 x0&#8594;&#8594;
+4 </text>
+        </slide>
+        <slide>
+          <slideno>3</slideno>
+          <text>Lecture 34 18.01 Fall 2006 
+Example 5. lim cos 
+xx 
+2&#8722; 1 . 
+x0&#8594;
+cos x &#8722; 1 cos x &#8722; 1 &#8722; sin x &#8722; cos x 1 
+xlim 
+0 x2 = 
+xlim 
+0 x2 = 
+xlim 
+0 2x = 
+xlim 
+0 2= &#8722; 2 &#8594; &#8594; &#8594; &#8594;
+Justtocheck,let&#8217;scompare thatanswertotheonewewouldgetifweusedquadratic approximation 
+techniques. Remember that: 
+1 cos x &#8776; 1 &#8722; x 2 (x &#8776; 0)2 
+1 1 
+cos x &#8722; 11 &#8722; x 2 &#8722; 1(&#8722; )x 2 
+1 2 =2 
+x2 &#8776; x2 x2 = &#8722; 2 
+sin xExample 6. lim . 
+x0 x2 &#8594;
+sin x cos xlim = lim ByL&#8217;H&#244;pital&#8217;s rule 
+x0 x2 x0 2x &#8594;&#8594;
+IfweapplyL&#8217;H&#244;pital again,weget 
+sin x 
+xlim 
+0 &#8722; 2 =0 
+&#8594;
+Butthisdoesn&#8217;tagreewithwhatwegetfromtakingthelinearapproximation: 
+sin xx 1 
+x2 &#8776; x2 = x &#8594;&#8734; as x &#8594; 0+ 
+Wecanclearupthisseeming paradoxbynotingthat 
+cos x 1lim = 
+x&#8594;0 2x 0 
+0The limit is not of the form , which means L&#8217;H&#244;pital&#8217;s rule cannot be used. The point is: look 0 before you L&#8217;H&#244;p! 
+More &#8220;interesting&#8221; cases that work. 
+It is also okay to use L&#8217;H&#244;pital&#8217;s rule on limits of the form &#8734; , or if x &#8594;&#8734;, or x &#8594; &#8722;&#8734;. Let&#8217;s &#8734;
+apply this to rates of growth. Which function goes to &#8734; faster: x, e ax,or ln x? 
+Example 7. For a&gt; 0, 
+ax axe aelim =lim =+&#8734;
+x&#8594;&#8734; x x&#8594;&#8734; 1 
+So e ax growsfasterthan x (for a&gt; 0). 
+Example 8. 
+ax ax 2ax 10axe ae ce aelim x10 = byL&#8217;H&#244;pital = lim 10x9 = lim 10 9x8 = &#183;&#183;&#183; = lim 10! = &#8734;
+x&#8594;&#8734; x&#8594;&#8734; x&#8594;&#8734; x&#8594;&#8734;&#183; 
+3 </text>
+        </slide>
+        <slide>
+          <slideno>2</slideno>
+          <text>&#65533;&#65533;&#65533; &#65533;&#65533;&#65533; 
+&#65533;&#65533; Lecture 34 18.01 Fall 2006 
+Example 1. Apply L&#8217;H&#244;pital&#8217;s rule (a.k.a. &#8220;L&#8217;Hop&#8221;) to 
+xlim 15 &#8722; 1 
+x1 x3 &#8594;&#8722; 1 
+toget 
+lim x15 &#8722; 1 = lim 15x14 
+= 15 =5 
+x&#8594;1 x3 &#8722; 1 x&#8594;1 3x2 3 
+Let&#8217;scompare thiswiththeanswerwe&#8217;dgetifweusedlinearapproximation techniques,insteadof 
+L&#8217;H&#244;pital&#8217;s rule: 
+x 15 &#8722; 1 &#8776; 15(x &#8722; 1) 
+(Here, f(x)= x15 &#8722; 1,a =1,f(a)= b =0,m = f&#65533;(1) = 15,and f(x) &#8776; m(x &#8722; a)+ b.) 
+Similarly , 
+x 3 &#8722; 1 &#8776; 3(x &#8722; 1) 
+Therefore, 
+x15 &#8722; 1 15(x &#8722; 1) =5 x3 &#8722; 1 &#8776; 3(x &#8722; 1) 
+Example 2. ApplyL&#8217;Hopto 
+sin3xlim 
+x0 x&#8594;
+toget 
+3cos3xlim =3 
+x0 1&#8594;
+Thisisthesameas d sin(3x) = 3 cos(3x) =3 dx x=0 x=0 
+Example 3. 
+lim sin x &#8722; cos x = lim cos x + sin x =1+1= &#8730;
+2 &#960; &#960; &#960; 
+4 4x&#8594; x &#8722; 4 x&#8594; 1 &#8730;
+2 &#8730;
+2 
+f(x) = sin x &#8722; cos x, f&#65533;(x) = cos x + sin x 
+= &#8730;
+2 f&#65533; &#960; 
+4 
+&#916;y 0Remark: Derivatives lim are always a type of limit. 
+&#916;x0 &#916;x 0 &#8594;
+Example 4. lim cos x &#8722; 1 . 
+x0 x&#8594;
+UseL&#8217;H&#244;pital&#8217;s ruletoevaluatethelimit: 
+lim cos x &#8722; 1 = lim &#8722; sin x =0 
+x0 x x0 x &#8594; &#8594;
+2 </text>
+        </slide>
+        <slide>
+          <slideno>0</slideno>
+          <text>MIT Open CourseWare 
+http://oc w.mit.edu 
+18.01  Single Variable Calculus 
+Fall 2006 
+For info rmati on abo ut citin g these mate rials or o ur Terms of Use, visit: http://ocw.mit.edu/term s. </text>
+        </slide>
+        <slide>
+          <slideno>1</slideno>
+          <text>Lecture 34	 18.01 Fall 2006 
+Lecture 34: Indeterminate Forms -L&#8217;H&#244;pita l&#8217;s Rule 
+L&#8217;H&#244;pital&#8217;s Rule 
+(Two correct spellings: &#8220;L&#8217;H&#244;pital&#8221; and &#8220;L&#8217;Hospital&#8221;) 
+Sometimes, we run into indeterminate forms. These are things like 
+0 
+0 
+and &#8734; 
+&#8734;
+Forinstance, howdoyoudealwiththefollowing? 
+lim x3 &#8722; 1 = 0?? 
+x1 x2 &#8722; 10&#8594;
+Example 0. Onewayofdealingwiththisistousealgebratosimplify things: 
+lim x3 &#8722; 1 = lim (x &#8722; 1)(x2 + x + 1) = lim x2 + x +1 = 3 
+x&#8594;1 x2 &#8722; 1 x&#8594;1 (x &#8722; 1)(x + 1) x&#8594;1 x +1 2 
+Ingeneral,when f(a)= g(a)=0, 
+f(x) f(x) 
+xlim 
+a f(x) &#8722; f(a) 
+f&#65533;(a)lim = lim x &#8722; a = &#8594;x &#8722; a = 
+x&#8594;a g(x) x&#8594;a g(x)	lim g(x) &#8722; g(a) g&#65533;(a) 
+xa x &#8722; a &#8594;x &#8722; a 
+ThisistheeasyversionofL&#8217;H&#244;pital&#8217;s rule: 
+f(x) f&#65533;(a)lim = 
+x&#8594;a g(x) g&#65533;(a) 
+Note: this only works when g&#65533;(a)=0&#65533;! 
+Inexample 0, 
+f(x)= x 3 = 1; g(x)= x 2 &#8722; 1
+f&#65533;(x)=3x 2; g&#65533;(x)=2x = f&#65533;(1) = 3; g&#65533;(1) = 2
+ &#8658; 
+Thelimitis f&#65533;(1)/g&#65533;(1) = 3/2. Now, let&#8217;s go on to the full L&#8217;H&#244;pital rule. 
+1 </text>
+        </slide>
+      </slides>
+    </lecture>
+    <lecture>
+      <lecture_title>Second fundamental theorem</lecture_title>
+      <lecture_pdf_url>https://ocw.mit.edu/courses/18-01-single-variable-calculus-fall-2006/resources/lec20/</lecture_pdf_url>
+      <lectureno>20</lectureno>
+      <slides>
+        <slide>
+          <slideno>3</slideno>
+          <text>&#65533; 
+&#65533; Lecture 20 18.01 Fall 2006 
+If, for example, F (x) = sin x + 21. Then F &#65533;(x) = cos x and 
+&#65533; b 
+sin xdx = F (b) &#8722; F (a) = (sin b + 21) &#8722; (sin a + 21) = sin b &#8722; sin a 
+a 
+Every function of the form F (x)= G(x)+ c works in FTC 1. 
+Examples of &#8220;new&#8221; functions 
+The error function, which is often used in statistics and probabilit y, is de&#64257;ned as 
+2 2 x 
+erf(x)= e&#8722;tdt&#8730;&#960; 0 
+and lim erf(x) = 1 (See Figure 2) 
+x&#8594;&#8734; 
+Figure 2: Graph of the error function. 
+Another &#8220;new&#8221; function of this type, called the logarithmic integral, is de&#64257;ned as 
+x dtLi(x) = ln t2 
+This function gives the appro ximate number of prime numbers less than x. A common encryption 
+technique involves encoding sensitiv e information like your bank accoun t number so that it can be 
+sent over an insecure comm unication channel. The message can only be decoded using a secret 
+prime number. To know how safe the secret is, a cryptographer needs to know roughl y how many 
+200-digit primes there are. You can &#64257;nd out by estimating the following integral: 
+&#65533; 10201 dt 
+10200 ln t 
+We know that 
+ln10200 = 200 ln(10) &#8776; 200(2.3) = 460 and ln10201 = 201 ln(10) &#8776; 462 
+3 </text>
+        </slide>
+        <slide>
+          <slideno>4</slideno>
+          <text>&#65533; 
+&#65533; Lecture 20 18.01 Fall 2006 
+We will appro ximate to one signi&#64257;can t &#64257;gure: ln t &#8776; 500 for 200 &#8804; t &#8804; 10201 . 
+With all of that in mind, the number of 200-digit primes is roughly 1 
+&#65533; 10201 &#65533; 10201 10200dt dt 1 &#65533; &#65533; 9 &#183; 
+10200 ln t &#8776; 
+10200 500=500 10201 &#8722; 10200&#8776; 500 &#8776; 10198 
+There are LOTS of 200-digit primes . The odds of some hacker &#64257;nding the 200-digit prime required 
+to break into your bank accoun t number are very very slim. 
+Another set of &#8220;new&#8221; functions are the Fresnel functions, which arise in optics: 
+x 
+C(x) = cos(t2)dt 
+&#65533;0 
+x 
+S(x) = sin(t2)dt 
+0 
+Bessel functions often arise in problems with circular symmetry: 
+&#65533; &#960;1 J0(x) = cos(x sin &#952;)d&#952;2&#960; 0 
+On the homew ork, you are asked to &#64257;nd C&#65533;(x). That&#8217;s easy! 
+C&#65533;(x) = cos(x 2) 
+x dtWe will use FTC 2 to discuss the function L(x) = from &#64257;rst princip les next lecture. t1 
+1 The middle equalit y in this appro ximation is a very basic and useful fact 
+&#65533; b 
+cdx = c(b &#8722; a) 
+a 
+Think of this as &#64257;nding the area of a rectangle with base (b &#8722; a) and heigh t c. In the computation above, a = 
+110200,b = 10201,c = 500 
+4 </text>
+        </slide>
+        <slide>
+          <slideno>0</slideno>
+          <text>MIT Open CourseWare 
+http://oc w.mit.edu 
+18.01  Single Variable Calculus 
+Fall 2006 
+For info rmati on abo ut citin g these mate rials or o ur Terms of Use, visit: http://ocw.mit.edu/term s. </text>
+        </slide>
+        <slide>
+          <slideno>2</slideno>
+          <text>&#65533;&#65533; &#65533; &#65533; 
+&#65533; Lecture 20 18.01 Fall 2006 
+x+&#8710;xx aF(x)&#8710;Fy
+Figure 1: Geometric Proof of FTC 2. 
+Therefore, 
+F &#65533;(x)= f(x) 
+Another way to prove FTC 2 is as follows: 
+&#916;F 1 x+&#916;x x 
+&#916;x =&#916;xf(t)dt &#8722; f(t)dt 
+a a 
+1 &#65533; x+&#916;x 
+=&#916;xf(t)dt (whic h is the &#8220;average value&#8221; of f on the interval x &#8804; t &#8804; x +&#916;x.) 
+x 
+As the length &#916;x of the interval tends to 0, this average tends to f(x). 
+Proof of FTC 1 (using FTC 2) 
+x 
+Start with F &#65533; = f (we assume that f is continuous). Next, de&#64257;ne G(x)= f(t)dt. By FTC2, 
+a 
+G&#65533;(x)= f(x). Therefore, (F &#8722; G)&#65533; = F &#65533; &#8722; G&#65533; = f &#8722; f = 0. Thus, F &#8722; G = constan t. (Recall we 
+used the Mean Value Theorem to show this). 
+Hence, F (x)= G(x)+ c. Finally since G(a) = 0, 
+&#65533; b 
+f(t)dt = G(b) = G(b) &#8722; G(a) =[F (b) &#8722; c] &#8722; [F (a) &#8722; c]= F (b) &#8722; F (a) 
+a 
+which is FTC 1. 
+Remark. In the preceding proof G was a de&#64257;nite integral and F could be any antideriv ative. Let 
+us illustrate with the example f(x) = sin x. Taking a = 0 in the proof of FTC 1, 
+&#65533; x &#65533;x 
+G(x) = cos tdt = sin t&#65533;&#65533; = sin x and G(0) = 0. 
+00 
+2 </text>
+        </slide>
+        <slide>
+          <slideno>1</slideno>
+          <text>&#65533; &#65533;&#65533;&#65533; 
+&#65533; 
+&#65533;
+&#65533;Lecture 20 18.01 Fall 2006 
+Lecture 20: Second Fundamen tal Theorem 
+Recall: First Fundamen tal Theorem of Calculus (FTC 1) 
+If f is continuous and F &#65533; = f, then &#65533; b 
+f(x)dx = F (b) &#8722; F (a) 
+a 
+We can also write that as &#65533; b x=b 
+f(x)dx = f(x)dx 
+x=aa 
+Do all continuous functions have antideriv atives? Yes. However... 
+What about a function like this?
+2 e&#8722;x dx =?? 
+Yes, this antiderivative exists. No, it&#8217;s not a function we&#8217;ve met before: it&#8217;s a new function. 
+The new function is de&#64257;ned as an integral: 
+x 2 F (x)= e&#8722;tdt 
+0 
+2It will have the property that F &#65533;(x)= e&#8722;x . 
+sin x1/2Other new function s include antideriv atives of e&#8722;x 2 ,x e&#8722;x 2 ,, sin(x 2), cos(x 2),... x 
+Second Fundamen tal Theorem of Calculus (FTC 2) 
+x 
+If F (x)= f(t)dt and f is continuous, then 
+a 
+F &#65533;(x)= f(x) 
+Geometric Proof of FTC 2: Use the area interpretation: F (x) equals the area under the curve 
+between a and x. 
+&#916;F = F (x +&#916;x) &#8722; F (x)
+&#916;F &#8776; (base)(heigh t) &#8776; (&#916;x)f(x) (See Figure 1.)
+&#916;F
+&#916;x &#8776; f(x)
+&#916;F
+Hence lim = f(x)
+&#916;x0 &#916;x&#8594;
+But, by the de&#64257;nition of the deriv ative: 
+&#916;Flim = F &#65533;(x)
+&#916;x0 &#916;x&#8594;
+1 </text>
+        </slide>
+      </slides>
+    </lecture>
+    <lecture>
+      <lecture_title>Improper integrals</lecture_title>
+      <lecture_pdf_url>https://ocw.mit.edu/courses/18-01-single-variable-calculus-fall-2006/resources/lec35/</lecture_pdf_url>
+      <lectureno>35</lectureno>
+      <slides>
+        <slide>
+          <slideno>6</slideno>
+          <text>&#65533; 
+&#65533; Lecture 35 18.01 Fall 2006 
+&#8734;
+Example 10 (from PS8). x n e&#8722;xdx 
+0 This converges. To carry out a convenient comparison requires some experience with growth rates 
+offunctions. 
+x n &lt;&lt; ex not enough. Instead use x n/ex/2 0 (true by L&#8217;Hop). It follows that &#8594; 
+x n &lt;&lt; ex/2 = x n e&#8722;x &lt;&lt; ex/2 e&#8722;x = e&#8722;x/2 &#8658; 
+&#8734;
+Nowbylimitcomparison, since e&#8722;x/2dx converges, so does our integral. You will deal with this 
+0 integralontheproblem set. 
+ImproperIntegralsoftheSecondType 
+&#65533; 1 dx &#8730;x0 
+1Weknowthat 0. &#8730;x &#8594;&#8734; as x &#8594; 
+&#65533; 1 &#65533; 1dx &#8730;x = 
+alim 
+0+ x&#8722;1/2dx 
+0 &#8594;a 
+&#65533; 1 &#65533;1 
+x&#8722;1/2dx =2x 1/2 &#65533;&#65533; =2 &#8722; 2a 1/2 
+aa 
+As a 0, 2a1/2 0. So, &#8594;&#8594; &#65533; 1
+x&#8722;1/2 dx =2
+0
+Similarly , &#65533; 1 1 x&#8722;pdx = &#8722;p +1 0 
+forall p&lt; 1. 
+1For p = ,2 1 &#65533;&#65533; =2 1 &#8722; 2 +1 
+However,for p &#8805; 1,theintegraldiverges. 
+6 </text>
+        </slide>
+        <slide>
+          <slideno>0</slideno>
+          <text>MIT Open CourseWare 
+http://oc w.mit.edu 
+18.01  Single Variable Calculus 
+Fall 2006 
+For info rmati on abo ut citin g these mate rials or o ur Terms of Use, visit: http://ocw.mit.edu/term s. </text>
+        </slide>
+        <slide>
+          <slideno>4</slideno>
+          <text>&#65533; 
+&#65533; &#65533; 
+&#65533; &#65533; Lecture 35 18.01 Fall 2006 
+Determining DivergenceandConvergence 
+Todecidewhether an integral converges ordiverges,don&#8217;t needto evaluate. Instead onecan compare 
+ittoasimplerintegralthatcanbeevaluated. 
+&#8734; dxThe Gener al Story for powers: xp1 
+FromExamples 4,5and6weknowthatthisdiverges(isin&#64257;nite) for 0 &lt;p &#8804; 1 andconverges(is 
+&#64257;nite)for p&gt; 1. 
+The comparison of integrals says that a larger function has a larger integral. If we restrict 
+ourselves to nonnegativ e functions, then even when the region is unbounded, as in the case of an 
+improperintegral,theareaunderthegraphofthelargerfunction ismorethantheareaunderthe 
+graph of the smaller one. Consider 0 &#8804; f(x) &#8804; g(x) (as in Figure 3) 
+g(x) f(x)
+x  = ay
+x
+Figure3: The area under f(x) is less than the area under g(x) for a &#8804; x&lt; &#8734;. 
+&#8734; &#8734;
+If g(x) dx converges,thensodoes f(x) dx. (In other words, if the area under g is&#64257;nite, 
+a a 
+thentheareaunder f,beingsmaller,mustalsobe&#64257;nite.) 
+&#8734; &#8734;
+If f(x) dx diverges,thensodoes g(x) dx. (In other words, if the area under f isin&#64257;nite, 
+a a 
+thentheareaunder g,beinglarger,mustalsobein&#64257;nite.) 
+The way comparison is used is by replacing functions by simpler ones whose integrals we can 
+calculate. You will have to decide whether you want to trap the function from above or below. This 
+willdependonwhether youaredemonstrating thattheintegralis&#64257;niteorin&#64257;nite. 
+4 </text>
+        </slide>
+        <slide>
+          <slideno>1</slideno>
+          <text>&#65533;
+&#65533;
+&#65533;&#65533;&#65533;&#65533;&#65533; 
+&#65533;
+&#65533; &#65533;&#65533;&#65533;&#65533; 
+&#65533;
+&#65533;Lecture 35 18.01 Fall 2006 
+Lecture 35: Improp er Integrals 
+De&#64257;nition. 
+An impr oper integral,de&#64257;nedby 
+&#8734; &#65533; M 
+f(x)dx = lim f(x)dx 
+aM&#8594;&#8734; a 
+issaidtoconvergeifthelimitexists(divergesifthelimitdoesnotexist). 
+&#8734; 
+e&#8722;kxdx =1/k (k&gt; 0) Example 1. 
+0 
+&#65533; M M 
+e&#8722;kxdx =(&#8722;1/k)e&#8722;kx = (1/k)(1 &#8722; e&#8722;kM ) 
+0 0 
+Takingthelimitas M &#8594;&#8734;,we&#64257;nd e&#8722;kM &#8594; 0 and 
+&#8734; 
+e&#8722;kxdx =1/k 
+0 
+Werewritethiscalculation moreinformally asfollows, 
+0 &#8734; 
+e&#8722;kxdx =(&#8722;1/k)e&#8722;kx &#8734; 
+0 = (1/k)(1 &#8722; e&#8722;k&#8734;)=1/k (since k&gt; 0) 
+&#8734; 
+e&#8722;kxdx =1/k has an easier formula than the Note that the integral over the in&#64257;nite interval 
+&#65533; M 0 
+corresponding&#64257;niteintegral e&#8722;kxdx = (1/k)(1&#8722;e&#8722;kM ). As a practical matter, for large M,the 
+0 
+term e&#8722;kM isnegligible, soeventhesimplerformula 1/k servesasagoodapproximation tothe&#64257;nite
+integral. In&#64257;nite integrals are often easier than &#64257;nite ones, just as in&#64257;nitesimals and derivatives are
+easierthandi&#64256;erence quotients.
+Application: Replace x by t =timeinsecondsinExample 1.
+R = rateofdecay =numberofatomsthatdecaypersecondattime 0.
+Atlatertimes t&gt; 0 thedecayrateis Re&#8722;kt (smaller byanexponentialfactor e&#8722;kt)
+Eventually (over time 0 &#8804; t&lt; &#8734;) every atom decays. So the total number of atoms N is 
+calculated usingtheformulawefoundinExample 1, 
+&#8734; 
+Re&#8722;ktdt = R/k N = 
+0 
+Thehalflife H ofaradioactiv eelementisthetime H atwhichthedecayrateishalfwhatitwasat 
+the start. Thus 
+e&#8722;kH =1/2 = &#8658;&#8722;kH = ln(1/2) = &#8658; k = (ln 2)/H 
+1 </text>
+        </slide>
+        <slide>
+          <slideno>2</slideno>
+          <text>&#65533;
+&#65533;&#65533;&#65533;&#65533;&#65533; Lecture 35 18.01 Fall 2006 
+Hence 
+R = Nk = N(ln2)/H 
+Let us illustrate with Polonium 210, which has been in the news lately. The half life is 138 days 
+or 
+H = (138days)(24hr/da y)(602sec/hr) = (138)( 24)(60)2seconds 
+Using this value of H, we &#64257;nd that one gram of Polonium 210 emits (1 gram)(6 &#215; 1023/210 
+atoms/gram)(l n2)/H =1.661014 decays/sec &#8776; 4500 curies 
+At 5.3 MeVperdecay,Polonium giveso&#64256; 140 wattsofradioactiv eenergypergram(whitehot). 
+Poloniumemitsalpharays,whichareblockedbyskinbutwheningested are 20 timesmoredangerous 
+than gamma and X-rays. The lethal dose, when ingested, is about 10&#8722;7 grams. 
+&#8734; 
+dx/(1 + x 2)= &#960;/2. Example 2. 
+0 Wecalculate, 
+&#65533; M M 
+dx = tan&#8722;1 = tan&#8722;1 M &#960;/2&#8594; x1+ x2 0 0 
+as M &#8594;&#8734;. (If &#952; = tan&#8722;1 M then &#952; &#8594; &#960;/2 as M &#8594;&#8734;. See Figures 1 and 2.) 
+xy = tan(x)
+M
+&#952;
+x = &#960;/2x = -&#960;/2.
+Figure1: Graph of the tangen t function, M = tan &#952;. 
+2 </text>
+        </slide>
+        <slide>
+          <slideno>3</slideno>
+          <text>&#65533;
+&#65533;&#65533;&#65533;&#65533;&#65533; 
+&#65533;
+&#65533;&#65533;&#65533;&#65533;&#65533; 
+&#65533;
+&#65533;&#65533;&#65533;&#65533;&#65533; Lecture 35 18.01 Fall 2006 
+x = tan(y)y = arctan(x)
+M&#952;
+y = -&#960;/2y= &#960;/2
+.
+Figure2: Graph of the arctangen t function, &#952; = tan&#8722;1 M. 
+&#8734; 
+e&#8722;x 2 dx = &#8730;&#960;/2 Example 3. 
+0 
+Recallthatwealreadycomputed thisimproperintegral(bycomputing avolumeintwoways,slices 
+and the method of shells). This shows vividly that a &#64257;nite integral can be harder to understand 
+thanitsin&#64257;nitecounterpart: &#65533; M 2 e&#8722;x dx 
+0 
+can only evaluated numerically . It has no elementary formula. By contrast, we found an explicit 
+formulawhen M = &#8734;. 
+&#65533;&#8734;
+Example 4. dx/x 
+1 
+&#65533; M 
+1 dx/x = ln x M 
+= ln M &#8722; ln1 = ln M &#8594;&#8734; 
+1 
+as M &#8594;&#8734;. This improper integral is in&#64257;nite (called divergent or not convergent). 
+&#8734; 
+dx/xp (p&gt; 1) Example 5. 
+1 
+1&#8722;p &#65533; M M 
+dx/xp = (1/(1 &#8722; p))x = (1/(1 &#8722; p))(M1&#8722;p &#8722; 1) &#8594; 1/(p &#8722; 1) 
+1 1 
+as M &#8594;&#8734; because 1 &#8722; p&lt; 0. Thus, this integral is convergent. 
+&#8734; 
+dx/xp (0 &lt;p&lt; 1) Example 6. 
+1 Thisisverysimilartotheprevious example, butdiverges 
+&#65533; M 
+1 dx/xp = (1/(1 &#8722; p))x 1&#8722;p M 
+= (1/(1 &#8722; p))(M1&#8722;p &#8722; 1) &#8594;&#8734; 
+1 
+as M &#8594;&#8734; because 1 &#8722; p&gt; 0. 
+3 </text>
+        </slide>
+        <slide>
+          <slideno>5</slideno>
+          <text>&#65533; 
+&#65533; 
+&#65533; &#65533; 
+&#65533; 
+&#65533; &#65533; 
+&#65533; 
+&#65533; &#65533; Lecture 35 18.01 Fall 2006 
+&#8734; dxExample 7. Itisnaturaltotrythecomparison &#8730;
+x3 +1 0 
+1 1 
+x3/2&#8730;
+x3 +1 &#8804; 
+Buttheareaunder x&#8722;3/2 ontheinterval 0 &lt;x&lt; &#8734;, 
+&#8734; dx 
+x3/2 0 
+turnsouttobein&#64257;nitebecauseofthein&#64257;nitebehavioras x 0. We can rescue this comparison by 
+excluding anintervalnear 0. &#8594; 
+&#65533; &#65533; 1 &#65533;&#8734; dx dx &#8734; dx 
+0 &#8730;
+x3 +1 = 
+0 &#8730;
+x3 +1 + 
+1 &#8730;
+x3 +1 
+Theintegral on 0 &lt;x&lt; 1 isa&#64257;niteintegralandthesecondintegral now works wellwith comparison, 
+&#8734; dx &#8734; dx 
+1 &#8730;
+x3 +1 &#8804; 
+1 x3/2 &lt; &#8734; 
+because 3/2 &gt; 1. 
+&#8734; 3Example 8. e&#8722;x dx 
+0 
+For x &#8805; 1, x3 &#8805; x,so 
+&#8734; 3 &#8734; 
+e&#8722;x dx &#8804; e&#8722;xdx =1 &lt; &#8734;
+1 1 
+3Thus the full integral from 0 &#8804; x&lt; &#8734; of e&#8722;x converges as well. We can ignore the interval 
+30 &#8804; x &#8804; 1 becauseithas&#64257;nitelengthand e&#8722;x doesnottendtoin&#64257;nitythere. 
+Limit comparison: 
+Supposethat 0 &#8804; f(x) and lim f(x)/g(x) &#8804; 1. Then f(x) &#8804; 2g(x) for x &#8805; a (somelarge a).
+&#65533; &#65533; x&#8594;&#8734;
+&#8734; &#8734;
+Hence f(x) dx &#8804; 2 g(x) dx. 
+a a 
+&#8734; (x + 10) dxExample 9. x2 +1 0 Thelimitingbehavioras x &#8594;&#8734; is 
+(x + 10)dx x =1 
+x2 +1 &#65533; x2 x 
+Since &#8734; dx = &#8734;,theintegral &#8734; (x + 10) dx alsodiverges. 
+1 x 0 x2 +1 
+5 </text>
+        </slide>
+      </slides>
+    </lecture>
+    <lecture>
+      <lecture_title>Limits, continuity
+Trigonometric limits</lecture_title>
+      <lecture_pdf_url>https://ocw.mit.edu/courses/18-01-single-variable-calculus-fall-2006/resources/lec2/</lecture_pdf_url>
+      <lectureno>2</lectureno>
+      <slides>
+        <slide>
+          <slideno>4</slideno>
+          <text>Lecture 2 18.01 Fall 2006 
+This discontinuous function is seen in Fig. 4. For x&gt; 0,
+lim f(x)=1
+x0&#8594;
+but f(0) = 0. (One can also say, f is continuous from the left at 0, not the right.) 
+1. Remo vable Discon tinuity 
+Figure 5: A remo vable discon tinuity: functi on is continuous everywhere, except for one point 
+De&#64257;nition of remo vable discon tinuity
+Right-hand limit: lim f(x) means lim f(x) for x&gt;x0.
++
+0 xx0&#8594;xx&#8594;
+Left-hand limit: lim f(x) means lim f(x) for x&lt;x0. 
+0x&#8722;
+f(x) = lim f(x) but this is not f(x0), or if f(x0) is unde&#64257;ned, we say the discon ti&#173;xx0 x&#8594;&#8594;
+If lim 
++
+0 0x&#8722;&#8594;
+nuity is removable . xx x&#8594;
+For example, sin(
+xx) is de&#64257;ned for x = 0. We will see later how to evaluate the limit as &#65533; x &#8594; 0. 
+4 </text>
+        </slide>
+        <slide>
+          <slideno>6</slideno>
+          <text>Lecture 2 18.01 Fall 2006 
+4. Other (ugly) discon tinuities 
+Figure 8: An example of an ugly discon tinuity: a function that oscillates a lot as it approac hes the origin 
+This function doesn&#8217;t even go to &#177;&#8734; &#8212; it doesn&#8217;t make sense to say it goes to anything. For 
+something like this, we say the limit does not exist. 
+6 </text>
+        </slide>
+        <slide>
+          <slideno>0</slideno>
+          <text>MIT Open CourseWare 
+http://oc w.mit.edu 
+18.01  Single Variable Calculus 
+Fall 2006 
+For info rmati on abo ut citin g these mate rials or o ur Terms of Use, visit: http://ocw.mit.edu/term s. </text>
+        </slide>
+        <slide>
+          <slideno>5</slideno>
+          <text>Lecture 2 18.01 Fall 2006 
+2. Jump Discon tinuity 
+x0
+Figure 6: An example of a jump discon tinuity
+lim for (x&lt;x0) exists, and lim for (x&gt;x0) also exists, but they are NOT equal.
++
+0&#8722;x0xx x &#8594; &#8594; 
+3. In&#64257;nite Discon tinuity 
+y
+x
+Figure 7: An example of an in&#64257;nite discon tinuity: 1 
+x 
+1 1Right-hand limit: lim = &#8734;; Left-hand limit: lim 
+x&#8594;0+ x x&#8594;0&#8722; x = &#8722;&#8734; 
+5 </text>
+        </slide>
+        <slide>
+          <slideno>3</slideno>
+          <text>&#65533; Lecture 2 18.01 Fall 2006 
+Limits and Continuity 
+Easy Limits 
+x2 + x 32 +3 12lim = = =3 
+x&#8594;3 x +1 3+1 4 
+With an easy limit, you can get a meaningful answ er just by plugging in the limiting value. 
+Remem ber, 
+lim &#916;f = lim f(x0 +&#916;x) &#8722; f(x0) 
+x&#8594;x0 &#916;x x&#8594;x0 &#916;x 
+is never an easy limit, because the denominator &#916;x = 0 is not allowed. (The limit xx0 is 
+computed under the implicit assumption that x =&#65533;x0.) &#8594; 
+Continuity 
+We say f(x) is continuous at x0 when 
+lim f(x)= f(x0) 
+xx0&#8594;
+Pictures 
+xy
+Figure 4: Graph of the discon tinuous function listed below 
+x +1 x&gt; 0 f(x)= &#8722;xx &#8805; 0 
+3 </text>
+        </slide>
+        <slide>
+          <slideno>7</slideno>
+          <text>Lecture 2 18.01 Fall 2006 
+Picturing the deriv ative
+xy
+xy&#8217;
+Figure 9: Top: graph of f (x) = 1 and Bottom: graph of f &#65533;(x)= &#8722; 1
+2
+ x x
+Notice that the graph of f(x) does NOT look like the graph of f&#65533;(x)! (You migh t also notice 
+that f(x) is an odd function, while f&#65533;(x) is an even function. The deriv ative of an odd function is 
+always even, and vice versa.) 
+7
+</text>
+        </slide>
+        <slide>
+          <slideno>9</slideno>
+          <text>Lecture 2 18.01 Fall 2006 
+Two Trig Limits 
+Note: In the expressions below, &#952; is in radian s&#8212; NOT degrees! 
+lim sin &#952; = 1; lim 1 &#8722; cos &#952; =0 
+&#952;0 &#952; &#952;0 &#952; &#8594; &#8594;
+Here is a geometric proof for the &#64257;rst limit: 
+1
+&#952;arc
+length 
+= &#952;sin&#952;
+Figure 12: A circle of radius 1 with an arc of angle &#952; 
+sin &#952; arc
+length 
+= &#952;  1
+&#952;
+Figure 13: The sector in Fig. 12 as &#952; becomes very small 
+Imagine what happ ens to the picture as &#952; gets very small (see Fig. 13). As &#952; 0, we see that 
+sin &#952; &#8594; 
+1. &#952; &#8594; 
+9 </text>
+        </slide>
+        <slide>
+          <slideno>2</slideno>
+          <text>Lecture 2 18.01 Fall 2006 
+4. Sensitivit y of meas urements: An example is carried out on Problem Set 1. In GPS, radio 
+signals give us h up to a certain measuremen t error (See Fig. 2 and Fig. 3). The question is 
+&#916;Lhow accurately can we measure L. To decide, we &#64257;nd . In other words, these variables are &#916;h related to each other. We want to &#64257;nd how a change in one variable a&#64256;ects the other variable. 
+Lhssatellite
+you
+Figure 2: The Global Positioning System Problem (GPS) 
+hs
+L
+Figure 3: On problem set 1, you will look at this simpli&#64257;ed &#8220;&#64258;at earth&#8221; model 
+2 </text>
+        </slide>
+        <slide>
+          <slideno>1</slideno>
+          <text>Lecture 2 18.01 Fall 2006 
+Lecture 2: Limits, Continuity, and Trigonometric
+Limits
+More about the &#8220;rate of change&#8221; interpretation of the 
+deriv ative 
+y = f(x)y
+x&#8710;x&#8710;y
+Figure 1: Graph of a generic functi on, with &#916;x and &#916;y mark ed on the graph 
+3. T temp erature gradien t &#916;y 
+&#916;x &#8594; dy 
+dx as &#916;x &#8594; 0 
+Average rate of change &#8594; Instan taneous rate of change 
+Examples 
+1. q = charge dq 
+dt = electrical curren t 
+2. s = distance ds 
+dt = speed 
+dT = temp erature = dx 
+1 </text>
+        </slide>
+        <slide>
+          <slideno>10</slideno>
+          <text>Lecture 2 18.01 Fall 2006 
+What about the second limit involving cosine? 
+1
+cos  &#952;1 - cos  &#952;arc
+length 
+= &#952;
+&#952;
+Figure 14: Same picture as Fig. 12 except that the horizon tal distance between the edge of the triangle and the 
+perimeter of the circle is mark ed 
+From Fig. 15 we can see that as &#952; &#8594; 0, the length 1 &#8722; cos &#952; of the short segmen t gets much 
+smaller than the vertical distance &#952; along the arc. Hence, 1 &#8722; cos &#952; 0. &#952; &#8594; 
+1
+cos  &#952;
+1 - cos  &#952;arc
+length
+ = &#952;
+&#952;
+Figure 15: The sector in Fig. 14 as &#952; becomes very small 
+10 </text>
+        </slide>
+        <slide>
+          <slideno>11</slideno>
+          <text>&#65533; &#65533; Lecture 2 18.01 Fall 2006 
+We end this lecture with a theorem that will help us to compute more deriv atives next time. 
+Theorem: Di&#64256;eren tiable Implies Continuous. 
+If f is di&#64256;eren tiable at x0, then f is continuous at x0. 
+f(x) &#8722; f(x0)Proof: 
+xlim 
+x0 (f(x) &#8722; f(x0)) = 
+xlim 
+x0 x &#8722; x0 (x &#8722; x0)= f&#65533;(x0) &#183; 0=0. 
+&#8594; &#8594;
+Remem ber: you can never divide by zero! The &#64257;rst step was to multiply by x &#8722; x0 . It looks as 
+0 x &#8722; x0 
+if this is illegal because when x = x0, we are multiplying by . But when computing the limit as 0 x &#8594; x0 we always assume x &#65533;= x0. In other words x &#8722; x0 &#65533;= 0. So the proof is valid. 
+11 </text>
+        </slide>
+        <slide>
+          <slideno>8</slideno>
+          <text>Lecture 2 18.01 Fall 2006 
+Pumpkin Drop, Part II
+This time, someone throws a pumpkin over the tallest buildin g on campus. 
+Figure 10: y = 400 &#8722; 16t2 , &#8722;5 &#8804; t &#8804; 5
+Figure 11: Top: graph of y(t) = 400 &#8722; 16t2 . Bottom: the deriv ative, y&#65533;(t) 
+8 </text>
+        </slide>
+      </slides>
+    </lecture>
+    <lecture>
+      <lecture_title>Numerical integration</lecture_title>
+      <lecture_pdf_url>https://ocw.mit.edu/courses/18-01-single-variable-calculus-fall-2006/resources/lec24/</lecture_pdf_url>
+      <lectureno>24</lectureno>
+      <slides>
+        <slide>
+          <slideno>2</slideno>
+          <text>&#65533; &#65533; &#65533; &#65533; 
+&#65533; &#65533; 
+&#65533; &#65533; 
+&#65533; &#65533; Lecture 24 18.01 Fall 2006 
+2. Trapezoidal Rule 
+The trapezoidal rule divides up the area under the function into trapezoids, rather than rectangles. 
+The area of a trapezoid is the heigh t times the average of the parallel bases: 
+base 1+base 2 y3 + y4Area = height = &#916;x (See Figure 2) 2 2 
+y3y4
+&#8710;x
+Figure 2: Area = y3 + y4 &#916;x 2 
+a b
+Figure 3: Trapezoidal rule = sum of areas of trapezoids. 
+Total Trapezoidal Area = &#916;xy0 + y1 + y1 + y2 + y2 + y3 + ... + yn&#8722;1 + yn 
+2 2 2 2 
+=&#916;xy
+2 0 + y1 + y2 + ... + yn&#8722;1 + y
+2 n 
+2 </text>
+        </slide>
+        <slide>
+          <slideno>0</slideno>
+          <text>MIT Open CourseWare 
+http://oc w.mit.edu 
+18.01  Single Variable Calculus 
+Fall 2006 
+For info rmati on abo ut citin g these mate rials or o ur Terms of Use, visit: http://ocw.mit.edu/term s. </text>
+        </slide>
+        <slide>
+          <slideno>4</slideno>
+          <text>Lecture 24 18.01 Fall 2006 
+0 1 2 3 41st chunk 2nd chunk
+Figure 5: Area given by Simpson&#8217;s rule for four intervals 
+Simpson&#8217;s rule: 
+&#65533; b &#916;x f(x) dx &#8776; 3(y0 +4y1 +2y2 +4y3 +2y4 + ... +4yn&#8722;3 +2yn&#8722;2 +4yn&#8722;1 + yn) 
+a 
+The pattern of coe&#64259;cien ts in paren theses is: 
+141 = sum 6 
+14241 =sum 12 
+1 4 2 4 241= sum 18 
+To double check &#8211; plug in f(x)=1(n even!). 
+&#916;x &#916;x &#65533;&#65533; n &#65533;&#65533; n &#65533;&#65533; 
+3 (1+4+2+4+2+ &#183;&#183;&#183; +2+4+1)= 3 1+1+4 2 +2 2 &#8722; 1= n&#916;x (n even) 
+4 </text>
+        </slide>
+        <slide>
+          <slideno>5</slideno>
+          <text>&#65533; &#65533; &#65533; Lecture 24 18.01 Fall 2006 
+&#65533; 1
+1
+Example 1. Evaluate dx using two metho ds (trap ezoidal and Simpson&#8217;s) of numerical 1+ x2 0 integration. 
+0 1 &#8710;x&#8710;x
+Figure 6: Area under (1+1 
+x2) above [0, 1]. 
+&#916;xy0 + y1 
+By Simpson&#8217;s rule:
+2 2 22 522 2254
+&#65533; &#65533; &#65533;&#65533;&#916;x 1/2 41
+(y0 +4y1 + y2)= 1+4 + =0.78333...3 
+Exact answ er:
+3 52
+1 &#65533; 1 1 &#65533;&#65533; &#960;&#960; dx = tan&#8722;1 x&#65533; = tan&#8722;1 1 &#8722; tan&#8722;1 0= 4 &#8722; 0= 4 &#8776; 0.7851+ x20 
+Roughly speaking, the error, | Simpson&#8217;s &#8722; Exact |, has order of magnitude (&#916;x)4 . 0 x 
+0
+ 1 
+1
+ 4
+5
+ 2
+1 
+By the trapezoidal rule: 1/(1 + x2) 
+1
+2
+&#65533;&#65533;&#65533;&#65533; &#65533; 
++ y2 = (1)+ + = ++ =0.7751 1 11
+ 411 1141 
+5 </text>
+        </slide>
+        <slide>
+          <slideno>1</slideno>
+          <text>Lecture 24 18.01 Fall 2006 
+Lecture 24: Numerical Integration 
+Numerical Integration 
+We use numerical integration to &#64257;nd the de&#64257;nite integrals of expressions that look like: 
+&#65533; b 
+(a big mess) 
+a 
+We also resort to numerical integration when an integral has no elemen tary antideriv ative. For 
+instance, there is no formula for 
+&#65533; x &#65533; 3 
+cos(t2)dt or e&#8722;x 2 dx 
+0 0 
+Numerical integration yields numbers rather than analytical express ions. 
+We&#8217;ll talk about three techniques for numerical integration: Riemann sums, the trapezoidal rule, 
+and Simpson&#8217;s rule. 
+1. Riemann Sum 
+a b
+Figure 1: Riemann sum with left endp oints: (y0 + y1 + ... + yn&#8722;1)&#916;x 
+Here, 
+xi &#8722; xi&#8722;1 =&#916;x
+(or, xi = xi&#8722;1 +&#916;x)
+a = x0 &lt;x1 &lt;x2 &lt; ... &lt; xn = b
+y0 = f(x0),y1 = f(x1),...yn = f(xn) 
+1 </text>
+        </slide>
+        <slide>
+          <slideno>3</slideno>
+          <text>&#65533; &#65533; 
+&#65533; &#65533; Lecture 24 18.01 Fall 2006 
+Note: The trapezoidal rule gives a more symmetric treatmen t of the two ends (a and b) than a 
+Riemann sum does &#8212; the average of left and right Riemann sums. 
+3. Simpson&#8217;s Rule 
+This approac h often yields much more accurate results than the trapezoidal rule does. Here, we 
+matc h quadrati cs (i.e. parab olas), instead of straigh t or slanted lines, to the graph. This approac h 
+requires an even number of intervals. 
+x&#8320; x&#8321; x&#8322;y0
+y1y2
+&#8710;x &#8710;x
+Figure 4: Area under a parab ola. 
+y0 +4y1 + y2Area under parab ola = (base)(w eighted average heigh t) = (2&#916;x) 6 
+Simpson&#8217;s rule for n intervals (n must be even!) 
+1Area = (2&#916;x ) 6 [(y0 +4y1 + y2)+(y2 +4y3 + y4)+(y4 +4y5 + y6)+ &#183;&#183;&#183; +(yn&#8722;2 +4yn&#8722;1 + yn)] 
+Notice the following pattern in the coe&#64259;cien ts: 
+1 4 1 
+1 4 1 
+1 4 1 
+1 4 2 4 2 4 1 
+3 </text>
+        </slide>
+      </slides>
+    </lecture>
+    <lecture>
+      <lecture_title>Curve sketching</lecture_title>
+      <lecture_pdf_url>https://ocw.mit.edu/courses/18-01-single-variable-calculus-fall-2006/resources/lec10/</lecture_pdf_url>
+      <lectureno>10</lectureno>
+      <slides>
+        <slide>
+          <slideno>5</slideno>
+          <text>Lecture 10   18.01 Fall 2006 
+Next, &#64257;nd the zeros of this function: 
+y =0 ln x =0 &#8660; 
+So y = 0 when x = 1. 
+What happ ens as x &#8594;&#8734;? This time, consider x =2+n . 
+ln2n n ln2 n(0.7) y = = 2n 2n &#8776; 2n 
+So, y &#8594; 0 as n &#8594;&#8734;. Putting all of this together gets us the graph in Fig. 7. 
+e 11/e(e,1/e)
+Figure 7: Graph of y = ln 
+xx 
+Finally , let&#8217;s double-c heck this picture against the information we get from step 3b: 
+y&#65533; =1 &#8722; ln x&gt; 0 for 0 &lt;x&lt;e x2 
+Sure enough, the function is increasing between 0 and the critical point. 
+5 </text>
+        </slide>
+        <slide>
+          <slideno>0</slideno>
+          <text>MIT Open CourseWare 
+http://oc w.mit.edu 
+18.01  Single Variable Calculus 
+Fall 2006 
+For info rmati on abo ut citin g these mate rials or o ur Terms of Use, visit: http://ocw.mit.edu/term s. </text>
+        </slide>
+        <slide>
+          <slideno>7</slideno>
+          <text>Lecture 10   18.01 Fall 2006 
+The points where f&#65533;&#65533; = 0 are called in&#64258;ection points. Usually , at these points the graph changes 
+from conca ve up to down, or vice versa. Refer to Fig. 10 to see how this looks on Example 1. 
+Inflection point 
+(where f&#8221; = 0)
+3 Figure 10: In&#64258;ection point: y =3x &#8722; x, y&#65533;&#65533; = &#8722;6x = 0, at x = 0. 
+7 </text>
+        </slide>
+        <slide>
+          <slideno>1</slideno>
+          <text>Lecture 10   18.01 Fall 2006 
+Lecture 10: Curv e Sketching 
+Goal: To draw the graph of f using the behavior of f&#65533; and f&#65533;&#65533;. We want the graph to be 
+qualitativ ely correct, but not necess arily to scale. 
+Typical Picture: Here, y0 is the minim um value, and x0 is the point where that minim um occurs. 
+x0= critical pointy0
+Figure 1: The critical point of a function 
+Notice that for x&lt;x0, f&#65533;(x) &lt; 0. In other words, f is decreas ing to the left of the critical point. 
+For x&gt;x0, f&#65533;(x) &gt; 0: f is increasing to the right of the critical point. 
+Another typical picture: Here, y0 is the critical (maxim um) value, and x0 is the critical point. f 
+is decreasing on the right side of the critical point, and increasing to the left of x0. 
+x0= critical pointy0
+f&#8217;(x) &lt; 0
+x &gt; x0
+Figure 2: A conca ve-down graph 
+1 </text>
+        </slide>
+        <slide>
+          <slideno>2</slideno>
+          <text>Lecture 10   18.01 Fall 2006 
+Rubric for curve-sketching 
+1. (Precalc skill) Plot the discon tinuities of f &#8212; especially the in&#64257;nite ones! 
+2. Find the critical points.	These are the points at which f&#65533;(x) = 0 (usually where the slope 
+changes from positiv e to negativ e, or vice versa.) 
+3. (a) Plot the critical points (and critical values), but only if it&#8217;s relativ ely easy to do so. 
+(b) Decide the sign of f&#65533;(x) in between the critical points (if it&#8217;s not already obvious). 
+4. (Precalc skill) Find and plot the zeros of f. These are the values of x for which f(x) = 0. 
+Only do this if it&#8217;s relativ ely easy. 
+5. (Precalc skill) Determine the behavior at the endp oints (or at &#177;&#8734;). 
+Example 1. y =3x &#8722; x3 
+1. No discon tinuities. 
+2.	y&#65533; =3 &#8722; 3x2 = 3(1 &#8722; x2) so, y&#65533; =0 at x = &#177;1. 
+3. (a) At x = 1, y =3 &#8722; 1 = 2. 
+(b) At x = &#8722;1, y = &#8722;3+1= &#8722;2. Mark these two points on the graph. 
+34. Find the zeros: y =3x &#8722; x= x(3 &#8722; x2) = 0 so the zeros lie at x =0, &#177;&#8730;
+3. 
+5. Beha vior of the function as x &#8594; &#177;&#8734;.
+As x &#8594;&#8734;, the x3 term of y dominates, so y &#8594; &#8722;&#8734;. Likewise, as x &#8594; &#8722;&#8734;, y &#8594;&#8734;.
+Putting all of this information together gives us the graph as illustrated in Fig. 3) 
+(-&#8730;3,0 )
+(&#8730;3,0)
+(-1,-2)(1,2)
+2 1 -2 -1
+3 Figure 3: Sketch of the function y =3x &#8722; x. Note the labeled zeros and critical points 
+Let us do step 3b (the sign of f&#65533;) to doub le-check for consistency . 
+y&#65533; =3 &#8722; 3x 2 = 3(1 &#8722; x 2) 
+y&#65533; &gt; 0 when |x| &lt; 1; y&#65533; &lt; 0 when |x| &gt; 1. Sure enough, y is increasing between x = &#8722;1 and x = 1, 
+and is decreasing everywhere else. 
+2 </text>
+        </slide>
+        <slide>
+          <slideno>6</slideno>
+          <text>Lecture 10   18.01 Fall 2006 
+2nd Deriv ative Information 
+When f&#65533;&#65533; &gt; 0, f&#65533; is increasing. When f&#65533;&#65533; &lt; 0, f&#65533; is decreasing. (See Fig. 8 and Fig. 9) 
+slope &lt; 0
+slope = 0slope &gt; 0
+Figure 8: f is convex (conca ve-up). The slope increases from negativ e to positiv e as x increases. 
+Figure 9: f is conca ve-down. The slope decreases from positive to negativ e as x increases. 
+Therefore, the sign of the second deriv ative tells us about conca vity/con vexity of the graph. Thus 
+the second deriv ative is good for two purp oses. 
+1. Deciding whether a critical point is a maxim um or a minim um. This is known as the second deriv ative 
+test. 
+f&#65533;(x0) f&#65533;&#65533;(x0) Critical point is a: 
+0 negativ e maxim um 
+0 positiv e minim um 
+2. Conca ve/con vex &#8220;decoration.&#8221; 
+6 </text>
+        </slide>
+        <slide>
+          <slideno>4</slideno>
+          <text>Lecture 10   18.01 Fall 2006 
+&#65533; &#65533;Example 3. y = x3 &#8722; 3x2 +3x. 
+y&#65533; =3x 2 &#8722; 6x +3 = 3(x 2 &#8722; 2x +1) = 3(x &#8722; 1)2 
+There is a critical point at x = 1. y&#65533; &gt; 0 on both sides of x = 1, so y is increasing everywhere. In 
+this case, the sign of y&#65533; doesn&#8217;t change at the critical point, but the graph does level out (see Fig. 6. 
+11
+horizontal slope(1,1)
+3 Figure 6: Graph of y = y = x&#8722; 3x2 +3x 
+ln xExample 4. y = (Note: this function is only de&#64257;ned for x&gt; 0) x 
+What happ ens as x decreases towards zero? Let x =2&#8722;n . Then, 
+ln2&#8722;n 
+y =2&#8722;n =(&#8722;n ln2)2n &#8594; &#8722;&#8734; asn &#8594;&#8734; 
+In other words, y decreases to &#8722;&#8734; as x approac hes zero. 
+Next, we want to &#64257;nd the critical points. 
+y&#65533; = ln x &#65533; 
+= x( x 1 ) &#8722; 1(ln x)=1 &#8722; ln x 
+x x2 x2 
+y&#65533; =0 = &#8658; 1 &#8722; ln x =0 = &#8658; ln x =1 = &#8658; x = e 
+In other words, the critical point is x = e (from previous page). The critical value is 
+ln e 1 y(x) |x=e = e = e 
+4 </text>
+        </slide>
+        <slide>
+          <slideno>3</slideno>
+          <text>1Example 2. y =. x This example illustrates why it&#8217;s importan t to &#64257;nd a function&#8217;s discontinuities before looking at the 
+properties of its deriv ative. We calculate 
+y&#65533; = &#8722;
+x2 1 &lt; 0 
+Warning: The deriv ative is never positiv e, so you migh t think that y is always decreasing, and its 
+graph looks something like that in Fig. 4. 
+Figure 4: A monotonically decreasing functi on 
+1But as you probably know, the graph of looks nothing like this! It actually looks like Fig. 5. In x 1fact, y = is decreasing except at x = 0, where it jumps from &#8722;&#8734; to +&#8734;. This is why we must x watch out for discon tinuities. 
+Figure 5: Graph of y = 1. x 
+3 Lecture 10   18.01 Fall 2006 </text>
+        </slide>
+      </slides>
+    </lecture>
+    <lecture>
+      <lecture_title>Derivatives of products, quotients, sine, cosine</lecture_title>
+      <lecture_pdf_url>https://ocw.mit.edu/courses/18-01-single-variable-calculus-fall-2006/resources/lec3/</lecture_pdf_url>
+      <lectureno>3</lectureno>
+      <slides>
+        <slide>
+          <slideno>0</slideno>
+          <text>MIT Open CourseWare 
+http://oc w.mit.edu 
+18.01  Single Variable Calculus 
+Fall 2006 
+For info rmati on abo ut citin g these mate rials or o ur Terms of Use, visit: http://ocw.mit.edu/term s. </text>
+        </slide>
+        <slide>
+          <slideno>3</slideno>
+          <text>Lecture 3 18.01 Fall 2006 
+Figure 1: A graphical "proof" of the product rule 
+An intuitive justification: 
+We want to find the difference in area between the large rectangle and the smaller, inner rectangle. 
+The inner (orange) rectangle has area uv. Define Au, the change in u,by 
+Au = u(x+ Ax) -U(X) 
+We also abbreviate u = u(x),so that u(x+ Ax) + = u + Au, and, similarly, v(x+ Ax) = v + Av. 
+Therefore the area of the largest rectangle is (uAu) (v + Av). 
+If you let v increase and keep u constant, you add the area shaded in red. If you let u increase 
+and keep v constant, you add the area shaded in yellow. The sum of areas of the red and yellow 
+rectangles is: 
+[u(v+ Av) -uv]+ [v(u+ Au) -uv]= uAv + vAu 
+If Au and Av are small, then (Au)(Av) FZ 0, that is, the area of the white rectangle is very 
+small. Therefore the difference in area between the laxgest rectangle and the orange rectangle is 
+approximately the same as the sum of areas of the red and yellow rectangles. Thus we have: 
+[(u+ Au) (v + Av) -uv]w uAv + vAu 
+(Divide by Ax and let Ax + 0 to finish the argument.) </text>
+        </slide>
+        <slide>
+          <slideno>1</slideno>
+          <text>Lecture 3 18.01 Fall 2006 
+Lecture 3 (presented by Kobi Kremnizer): 
+Derivatives of Products, Quotients, Sine, and 
+Cosine 
+Derivative Formulas 
+There are two kinds of derivative formulas: 
+d1. Specific Examples: -x" or -dx 
+2. General Examples: (u +v)' =u1+v1 and (cu) = cul (where c is a constant) 
+A notational convention we will use today is: 
+Proof of (u+v) = u' +v'. (General) 
+$@rt by using the definition af &amp;hederivative. 
+(U +v)'(x) = lirn (U+U)(X+ax) -(U+v)(x) 
+Ax-0 ax 
+U(X+ax) +V(X+AX)-U(X)-V(X) = lirn 
+Ax-0 ax 
+= lim {u(x +Ax) -u(x) + v (x +Ax) -v(x) 
+AX-O Ax Ax 
+Follow the same procedure to prove that (cu)' = cu'. 
+Derivatives of sin x and cos x. (Specific) 
+Last time, we computed 
+sinxlim -= 1 x-0 x 
+d sin(0 +Ax) -sin(0) sin( Ax) -(sinx) IZEo = lirn = lim -= 1dx AX-o ax AX-o ax 
+d COS(O +ax) -COS(O) COS(~X) i--(co~x)I~=~ = lim = lim = 0dx AX-0 ax AZ-O ax 
+d dSo, we know the value of -sin x and of -cos x at x = 0. Let us find these for arbitrary x. dx dx 
+d sin(x +Ax) -sin(x) -sin x = lirndx AX-0 ax </text>
+        </slide>
+        <slide>
+          <slideno>2</slideno>
+          <text>Lecture 3 18.01 Fall 2006 
+Recall: 
+sin x cos Ax + cos x sin Ax -sin(%) - lirn 
+Ax-0 Ax 
+sin x(cos Ax -1) cos x sin Ax = lim [ 1 AX-o Ax Ax + 
+cos Ax -1 sin Ax = AX-o Ax lim COSX(~) lim sins( )+ asto 
+cos Ax -1 sin Ax Since +0 and that --+ 1,the equation above simplifies to Ax Ax 
+d
+-sinx = cosxdx 
+A similar calculation gives 
+d -cosx = -dx 
+Product formula (General) 
+(uv)' = ulv + uvl 
+Proof: 
+(uv) (X + AX)-(UV)(x) u(x + Ax)v(x + Ax) -u(x)v(x)(uv)' = lim = lim 
+hxt~ Ax Axto AX 
+Now obviously, 
+so adding that to the numerator won't change anything. 
+u(x + Ax)v(x) -u(x)v(x) + U(X + AX)V(X+ Ax) -u(x + Ax)v(x)(uv)' = lirn 
+Ax-0 AX 
+We can re-arrange that expression to get 
+(uv)' = lim ) V(X)+ U(X + AX)Ax-0 
+Remember, the limit of a sum is the sum of the limits. 
+u(x + Ax) -u(x) 
+Ax-0 Ax 
+ I &gt; 
+(uv)' =ul(x)v(x)+ u(x)vl(x) 
+Note: we also used the fact that 
+lirn u(x + Ax) = u(x) (true because u is continuous) 
+Ax-0 
+This proof of the product rule assumes that u and v have derivatives, which implies both functions 
+are continuous. </text>
+        </slide>
+        <slide>
+          <slideno>4</slideno>
+          <text>-- - - - Lecture 3 18.01 Fall 2006 
+Quotient formula (General) 
+To calculate the derivative of ulv, we use the notations Au and Av above. Thus, 
+u(x +Ax) u(x) u+Au u -
+U(X+Ax) V(X) -
+v+Av v 
+--(" + -u(v + (common denominator)
+(v +Av)v 
+(Au)~-u(Av)--
+(v +Av)v (cancel uv -uv) 
+Hence, 
+Therefore. 
+u u'v -uv' 
+u2 </text>
+        </slide>
+      </slides>
+    </lecture>
+    <lecture>
+      <lecture_title>Differential equations, separation of variables</lecture_title>
+      <lecture_pdf_url>https://ocw.mit.edu/courses/18-01-single-variable-calculus-fall-2006/resources/lec16/</lecture_pdf_url>
+      <lectureno>16</lectureno>
+      <slides>
+        <slide>
+          <slideno>0</slideno>
+          <text>MIT Open CourseWare 
+http://oc w.mit.edu 
+18.01  Single Variable Calculus 
+Fall 2006 
+For info rmati on abo ut citin g these mate rials or o ur Terms of Use, visit: http://ocw.mit.edu/term s. </text>
+        </slide>
+        <slide>
+          <slideno>1</slideno>
+          <text>&#65533; 
+&#65533; &#65533; &#65533; &#65533; 
+&#65533; &#65533; 
+&#65533; &#65533; Lecture 16 18.01 Fall 2006 
+Lecture 16: Di&#64256;eren tial Equations and Separation
+of Variables 
+Ordinary Di&#64256;eren tial Equations (ODEs) 
+Example 1. dy = f(x)dx 
+Solution: y = f(x)dx. We consider these types of equations as solved. 
+Example 2. d + xy =0 or dy + xy =0 dx dx 
+d( + x is known in quan tum mechanics as the annihilation operator. )dx 
+Besides integration, we have only one metho d of solving this so far, namely , substitution. Solving 
+for dy gives: dx dy = &#8722;xydx 
+The key step is to separate variables. 
+dy = &#8722;xdx y 
+Note that all y-dependence is on the left and all x-dependence is on the right. 
+Next, take the antideriv ative of both sides: 
+dy 
+y = &#8722; xdx 
+2xln |y| = &#8722; 2+ c (only need one constan t c) 
+|y| = e c e&#8722;x 2/2 (exponentiate) 
+2y = ae&#8722;x/2 (a = &#177;e c) 
+cDespite the fact that e=&#65533;0,a = 0 is possible along with all a =&#65533;0, dependin g on the initial 
+conditions. For instance, if y(0) = 1, then y = e&#8722;x 2/2 . If y(0) = a, then y = ae&#8722;x 2/2 (See Fig. 1). 
+1 </text>
+        </slide>
+        <slide>
+          <slideno>2</slideno>
+          <text>&#65533; &#65533; Lecture 16 18.01 Fall 2006 
+&#8722;6 &#8722;4 &#8722;2 0 2 4 600.20.40.60.81
+XY
+2 Figure 1: Graph of y = e&#8722; x 
+2 . 
+In general: 
+dy = f(x)g(y)dx 
+dy = f(x)dx which we can write as g(y) 
+1 h(y)dy = f(x)dx where h(y)= . g(y) 
+Now, we get an implicit formula for y: 
+H(y)= F (x)+ c (H(y)= h(y)dy; F (x)= f(x)dx) 
+where H&#65533; = h, F &#65533; = f, and 
+y = H&#8722;1(F (x)+ c) 
+(H&#8722;1 is the inverse function.) 
+In the previous example: 
+2 
+f(x) = x; F (x)= &#8722;
+2 x; 
+1 1 g(y)= y; h(y)= g(y)= y, H(y) = ln |y| 
+2 </text>
+        </slide>
+        <slide>
+          <slideno>4</slideno>
+          <text>&#65533; &#65533; &#65533; Lecture 16 18.01 Fall 2006 
+Example 4. Find the curves that are perpendicular to the parab olas in Example 3. 
+We know that their slopes, 
+dy &#8722;1 &#8722;x = = dx slope of parab ola 2y 
+Separate variables: 
+ydy = &#8722;xdx2 
+Take the antideriv ative: 2 2 2 2y x x y
+2= &#8722; 4+ c = &#8658; 4+2= c 
+which is an equation for a family of ellipses. For these ellipses, the ratio of the x-semi-ma jor axis to 
+the y-semi-m inor axis is &#8730;
+2 (see Fig. 3). 
+Figure 3: The ellipses are perpendicular to the parab olas. 
+Separation of variables leads to implicit formulas for y, but in this case you can solve for y. 
+x2 
+y = &#177; 2 c &#8722; 4 
+Exam Review 
+Exam 2 will be harder than exam 1 &#8212; be warned! Here&#8217;s a list of topics that exam 2 will cover: 
+1. Linear and/or quadratic appro ximations 
+2. Sketches of y = f(x) 
+3. Maxim um/minim um problems. 
+4. Related rates. 
+5. Antideriv atives. Separation of variables. 
+6. Mean value theorem. 
+More detailed notes on all of these topics are provided in the Exam 2 review sheet. 
+4 </text>
+        </slide>
+        <slide>
+          <slideno>3</slideno>
+          <text>Lecture 16 18.01 Fall 2006 
+dy &#65533; y &#65533; 
+Example 3 (Geometric Example). =2 . dx x 
+Find a graph such that the slope of the tangen t line is twice the slope of the ray from (0, 0) to (x,y) 
+seen in Fig. 2. 
+(x,y)
+Figure 2: The slope of the tangen t line (red) is twice the slope of the ray from the origin to the point (x,y). 
+dy = 2dx (separate variables) y x 
+ln |y| 
+|y| = 
+= 2 ln |x| + c (antideriv ative) 
+e c x 2 (exponentiate; remem ber, e 2 ln |x| = x 2 ) 
+Thus, 
+y = ax 2 
+Again, a&lt; 0, a&gt; 0 and a = 0 are all acceptable. Possible solutions include, for example, 
+y = x 2 (a = 1) 
+y =2x 2 (a = 2) 
+y = &#8722;x 2 (a = &#8722;1) 
+y =0x 2 =0 (a = 0) 
+y = &#8722;2y 2 (a = &#8722;2) 
+y = 100x 2 (a = 100) 
+3 </text>
+        </slide>
+      </slides>
+    </lecture>
+    <lecture>
+      <lecture_title>Work, average value, probability</lecture_title>
+      <lecture_pdf_url>https://ocw.mit.edu/courses/18-01-single-variable-calculus-fall-2006/resources/lec23/</lecture_pdf_url>
+      <lectureno>23</lectureno>
+      <slides>
+        <slide>
+          <slideno>0</slideno>
+          <text>MIT Open CourseWare 
+http://oc w.mit.edu
+ 
+ 
+ 
+18.01 Single Variable Calculus
+Fall 2006
+ 
+ 
+ 
+For info rmation about citing these materials or our Terms of Use, visit: http://ocw.mit.edu/terms .  
+ </text>
+        </slide>
+        <slide>
+          <slideno>6</slideno>
+          <text>&#65533; 
+&#65533; 
+&#65533; Lecture 23 18.01 Fall 2006 
+Probabilit y = &#8722;e&#8722;9r 2
+1
+2
+1
+ + e&#8722;4r 
+6
+Let&#8217;s assume that the person throwing the darts hits the dartb oard 0 &#8804; r &#8804; r1 about half the time. 
+(Based on personal experience with 7-year-old s, this is realistic.) 
+1
+ 1
+r12
+ 2
+1
++1 2
+P (0 &#8804; r &#8804; r1)= 2e&#8722;r rdr = &#8722;e&#8722;r e&#8722;r1= = = &#8658;2
+ 2
+0 
+1
+ 2
+1
+e&#8722;r = 2
+&#65533;&#65533;9&#65533;9 1
+ 2
+1
+2
+1
+ e&#8722;9r &#8776; 0 
+1
+= e&#8722;r = 2
+&#65533;&#65533;4&#65533;4 1
+e&#8722;4r 2
+1
+2
+1
+ = e&#8722;r = = 2 16
+So, the probability that a stray dart will strike your little brother is 
+&#65533; &#65533;&#65533; &#65533;1 1 1
+16 6 &#8776; 100
+In other words, there&#8217;s about a 1% chance he&#8217;ll get hit with each dart thrown. 
+6
+</text>
+        </slide>
+        <slide>
+          <slideno>3</slideno>
+          <text>&#65533;&#65533;&#65533; 
+&#65533;&#65533;&#65533; 
+&#65533;&#65533;&#65533; 
+&#65533;&#65533;&#65533; Lecture 23 18.01 Fall 2006 
+y = sin &#952; &#65533; &#960;1 1 (&#8722; cos &#952;) &#960; 1 2Average = sin &#952; d&#952; = (&#8722; cos &#960; &#8722; (&#8722; cos 0)) = = 
+0 &#960; &#960; &#960; &#960;0 
+Example 4. Find the average temp eratu re of water in the witches cauldron from last lecture. (See 
+Figure 4). 
+2m
+1m
+Figure 4: y = x2, rotated about the y-axis. 
+First, recall how to &#64257;nd the volume of the solid of revolution by disks. 
+&#65533; 1 &#65533; 1 &#960;y2 1 &#960; = 
+0 2V = (&#960;x2) dy = &#960;y dy = 20 0 
+Recall that T (y) = 100 &#8722; 30y and (T (0) = 100o; T (1) = 70o). The average temp erature per unit 
+volume is computed by giving an importance or &#8220;weighting&#8221; w(y)= &#960;y to the disk at heigh t y. 
+&#65533; 1 T (y)w(y) dy0 &#65533; 1 w(y) dy0 
+The numerator is 
+&#65533; 1 &#65533; 1 1 
+(100 &#8722; 30y)ydy = &#960;(500y 2 &#8722; 10y 3) = 40&#960; T &#960;y dy = &#960; 
+0 0 
+Thus the average temp eratu re is: 0 
+40&#960; = 80oC &#960;/2 
+Compare this with the average taken with respect to height y: 
+&#65533; 1 &#65533; 11 T dy = 1 (100 &#8722; 30y)dy = (100y &#8722; 15y 2) 1 
+= 85oC 
+00 0 
+T is linear. Largest T = 100oC, smallest T = 70oC, and the average of the two is 
+70 + 100 = 85 2 
+3 </text>
+        </slide>
+        <slide>
+          <slideno>1</slideno>
+          <text>Lecture 23 18.01 Fall 2006 
+Lecture 23: Work, Average Value, Probabilit y 
+Application of Integration to Average Value 
+You already know how to take the average of a set of discrete numbers: 
+a1 + a2 a1 + a2 + a3 or2 3 
+Now, we want to &#64257;nd the average of a continuum. 
+y=f(x)
+a b.
+x4y4.
+Figure 1: Discrete appro ximation to y = f (x) on a &#8804; x &#8804; b. 
+Average &#8776; y1 + y2 + ... + yn 
+n 
+where 
+a = x0 &lt;x1 &lt;xn = b&#183;&#183;&#183; 
+y0 = f(x0),y1 = f(x1), ...yn = f(xn) 
+and 
+n(&#916;x )= b &#8722; a &#8656;&#8658; &#916;x = b &#8722; 
+na 
+and 
+The limit of the Riemann Sums is 
+&#65533; b 
+lim (y1 + &#183;&#183;&#183; + yn) b &#8722; 
+na = f(x) dx 
+a n&#8594;&#8734; 
+Divide by b &#8722; a to get the continuous average 
+y1 + + yn 1 &#65533; b 
+lim &#183;&#183;&#183; = f(x) dx 
+n&#8594;&#8734; nb &#8722; a a 
+1 </text>
+        </slide>
+        <slide>
+          <slideno>8</slideno>
+          <text>Lecture 23 18.01 Fall 2006 
+rwidth dr
+Figure 9: Area of annulus or ring, (2&#960;r)dr. 
+Next, we will &#64257;nd V by a second metho d, the metho d of slices. Slice the solid along a plane 
+where y is &#64257;xed. (See Figure 10). Call A(y) the cross-sectional area. Since the thickness is dy (see 
+Figure 11), &#65533; &#8734; 
+V = A(y) dy 
+&#8722;&#8734; 
+A(y)z
+yx
+Figure 10: Slice A(y). 
+8 </text>
+        </slide>
+        <slide>
+          <slideno>2</slideno>
+          <text>Lecture 23 18.01 Fall 2006 
+area = &#65533;/2y=&#8730;1-x2
+Figure 2: Average heigh t of the semicircle. 
+Example 1. Find the average of y = &#8730;
+1 &#8722; x2 on the interval &#8722;1 &#8804; x &#8804; 1. (See Figure 2) 
+1 &#65533; 1 &#65533; 1 &#65533; &#960; &#65533; &#960;Average heigh t = 2 1 &#8722; x2dx =2 2 =4&#8722;1 
+Example 2. The average of a constan t is the same constan t 
+&#65533; b1 53 dx = 53 b &#8722; a a 
+Example 3. Find the average heigh t y on a semicircle, with respect to arclength. (Use d&#952; not dx. 
+See Figure 3) 
+equal weighting in &#952;
+di&#64256;erent weighting in x
+Figure 3: Di&#64256;eren t weighted averages. 
+2 </text>
+        </slide>
+        <slide>
+          <slideno>10</slideno>
+          <text>&#65533; &#65533; &#65533; 
+&#65533; Lecture 23 18.01 Fall 2006 
+It follows that 
+&#8734; &#8734; 2 &#8734; 2 V = A(y) dy = e&#8722;y Qdy = Qe&#8722;y dy = Q2 
+&#8722;&#8734; &#8722;&#8734; &#8722;&#8734; 
+Indeed, &#65533; &#65533;&#8734; 2 &#8734; 2 Q = e&#8722;x dx = e&#8722;y dy 
+&#8722;&#8734; &#8722;&#8734; 
+because the name of the variable does not matter. To conclude the calculation read the equation 
+backwards: 
+&#960; = V = Q2 = Q = &#8730;&#960;&#8658; 
+We can rewrite Q = &#8730;&#960; as &#65533;
+1 &#8734;
+2 &#8730;&#960;e&#8722;x dx =1 
+&#8722;&#8734; 
+An equiv alent rescaled version of this formula (replacing x with x/&#8730;
+2&#963;)is used: 
+1 &#8734; 2 /2&#963;2 &#8730;
+2&#960;&#963; &#8722;&#8734; e&#8722;x dx =1 
+1 2/2&#963;2This formula is central to probabilit y and statistics. The probabilit y distribution e&#8722;x on&#8730;
+2&#960;&#963; 
+&#8722;&#8734; &lt;x&lt; &#8734; is known as the normal distribution, and &#963;&gt; 0 is its standard deviation. 
+10 </text>
+        </slide>
+        <slide>
+          <slideno>7</slideno>
+          <text>&#65533;
+&#65533; 
+&#65533;&#65533;&#65533; 
+&#65533;Lecture 23 18.01 Fall 2006 
+Volume by Slices: An Importan t Example
+&#8734; 2Compute Q = e&#8722;x dx 
+&#8722;&#8734; 
+Figure 8: Q = Area under curve e(&#8722;x 2). 
+This is one of the most importan t integrals in all of calculus. It is especially importan t in probabi lity 
+and statistics. It&#8217;s an improp er integral, but don&#8217;t let those &#8734;&#8217;s scare you. In this integral, they&#8217;re 
+actually easier to work with than &#64257;nite numbers would be. 
+To &#64257;nd Q, we will &#64257;rst &#64257;nd a volume of revolution, namely , 
+2 V = volume under e&#8722;r (r = x2 + y2) 
+We &#64257;nd this volume by the metho d of shells, which leads to the same integral as in the last problem. 
+2The shell or cylinder under e&#8722;r at radius r has circumference 2&#960;r, thickness dr; (see Figure 9). 
+2Therefore dV = e&#8722;r 2&#960;rdr. In the range 0 &#8804; r &#8804; R, 
+&#65533; R 2 2 R 
+= &#8722;&#960;e&#8722;R2 + &#960; e&#8722;r 2&#960;r dr = &#8722;&#960;e&#8722;r 
+0 
+When R &#8594;&#8734;,e&#8722;R2 &#8594; 0, 0 
+&#8734; 2 e&#8722;r 2&#960;r dr = &#960; (same as in the darts problem) V = 
+0 
+7 </text>
+        </slide>
+        <slide>
+          <slideno>4</slideno>
+          <text>Lecture 23 18.01 Fall 2006 
+The answ er 85o is consisten t with the ordinary average. The weighted average (integration with 
+respect to &#960;y dy) is lower (80o) because there is more water at cooler temp eratures in the upper 
+parts of the cauldron. 
+Dart board, revisited 
+Last time, we said that the accuracy of your aim at a dart board follows a &#8220;normal distribution&#8221;: 
+2 ce&#8722;r 
+Now, let&#8217;s pretend someone &#8211; say, your little brother &#8211; foolishly decides to stand close to the dart 
+board. What is the chance that he&#8217;ll get hit by a stray dart? 
+r&#8321;
+2r&#8321;3r&#8321;
+little 
+brotherdart board
+Figure 5: Shaded section is 2ri &lt;r&lt; 3r1 between 3 and 5 o&#8217;clock. 
+To make our calculations easier, let&#8217;s appro ximate your brother as a sector (the shaded region 
+in Fig. 5). Your brother doesn&#8217;t quite stand in front of the dart board. Let us say he stands at a 
+distance r from the center where 2r1 &lt;r&lt; 3r1 and r1 is the radius of the dart board. Note that 
+your brother doesn&#8217;t surround the dart board. Let us say he covers the region between 3 o&#8217;clock 
+1and 5 o&#8217;clock, or of a ring. 6 
+Remem ber that 
+partprobabilit y = whole 
+4 </text>
+        </slide>
+        <slide>
+          <slideno>5</slideno>
+          <text>&#65533; &#65533; 
+&#65533;&#65533;&#65533; &#65533; &#65533; 
+&#65533; &#65533;&#65533;&#65533; 
+&#65533; &#65533;&#65533;&#65533;&#65533; Lecture 23 18.01 Fall 2006 
+dr/two.superiorwidth dr, 
+circumference 2&#960;r
+weighting ce-rr
+Figure 6: Integra ting over rings. 
+&#65533; 3r1 
+&#65533;&#8734; 2The ring has weight ce&#8722;r (2&#960;r)(dr) (see Figure 6). The probabilit y of a dart hitting your brother 
+is: 
+1
+2r1 ce&#8722;r 2 2&#960;r dr 6 
+ce&#8722;r2 2&#960;r dr 0 
+Recall that 1 = 5 &#8722; 3 
+12 is our appro ximation to the portion of the circumference where the little 6 
+brother stands. (Note: e&#8722;r 2 = e(&#8722;</text>
+        </slide>
+        <slide>
+          <slideno>9</slideno>
+          <text>&#65533; &#65533; &#65533; 
+&#65533; &#65533; Lecture 23 18.01 Fall 2006 
+y
+xdy
+top viewabove level of y
+in cross-sectionof area A(y)
+Figure 11: Top view of A(y) slice. 
+To compute A(y), note that it is an integral (with respect to dx) 
+&#8734; 2 &#8734; 2 2 2 &#8734; 2 2 A(y)= e&#8722;r dx = e&#8722;x &#8722;y dx = e&#8722;y e&#8722;x dx = e&#8722;y Q 
+&#8722;&#8734; &#8722;&#8734; &#8722;&#8734; 
+Here, we have used r2 = x2 + y2 and 
+2 2 2 2 e&#8722;x &#8722;y = e&#8722;x e&#8722;y 
+and the fact that y is a constan t in the A(y) slice (see Figure 12). In other words, 
+&#8734; 2 &#8734; 2 2 ce&#8722;x dx = ce&#8722;x dx with c = e&#8722;y 
+&#8722;&#8734; &#8722;&#8734; 
+x    -&#8734;y fixed
+ce-x
+x    &#8734;2
+Figure 12: Side view of A(y) slice. 
+9 </text>
+        </slide>
+      </slides>
+    </lecture>
+    <lecture>
+      <lecture_title>Differentials, antiderivatives</lecture_title>
+      <lecture_pdf_url>https://ocw.mit.edu/courses/18-01-single-variable-calculus-fall-2006/resources/lec15/</lecture_pdf_url>
+      <lectureno>15</lectureno>
+      <slides>
+        <slide>
+          <slideno>1</slideno>
+          <text>&#65533; &#65533; Lecture 15  	 18.01 Fall 2006 
+Lecture 15: Di&#64256;eren tials and Antideriv atives 
+Di&#64256;eren tials 
+New notation: 
+dy = f&#65533;(x)dx (y = f(x)) 
+Both dy and f&#65533;(x)dx are called di&#64256;er entials . You can think of 
+dy = f&#65533;(x)dx 
+as a quotien t of di&#64256;erentials. One way this is used is for linear appro ximations. 
+&#916;y dy 
+&#916;x &#8776; dx 
+Example 1. Appro ximate 651/3 
+Metho d 1 (review of linear appro ximation metho d) 
+f(x)=	x 1/3 
+1 f&#65533;(x) = x&#8722;2/3 
+3 
+f(x) &#8776; f(a)+ f&#65533;(a)(x &#8722; a) 
+1 x 1/3 &#8776; a 1/3 +3 a&#8722;2/3(x &#8722; a) 
+A good base point is a = 64, because 641/3 = 4. 
+Let x = 65. 
+1	 11 1651/3 = 641/3 + 64&#8722;2/3(65 &#8722; 64)=4+ (1)=4+ 48 &#8776; 4.023	 316 
+Similarly , 
+1(64.1)1/3 &#8776; 4+ 480 
+Metho d 2 (review) 
+&#65533;&#65533;1/31	 1 1651/3 = (64 + 1)1/3 = [64(1 + )]1/3 = 641/3[1+ ]1/3 =4 1+ 64 64 64 
+1 1Next, use the appro ximation (1 + x)r &#8776; 1+ rx with r = 3 and x = 64. 
+11 1651/3 &#8776; 4(1+ ( ))=4+ 3 64 48 
+This is the same result that we got from Metho d 1. 
+1 </text>
+        </slide>
+        <slide>
+          <slideno>0</slideno>
+          <text>MIT Open CourseWare 
+http://oc w.mit.edu 
+18.01  Single Variable Calculus 
+Fall 2006 
+For info rmati on abo ut citin g these mate rials or o ur Terms of Use, visit: http://ocw.mit.edu/term s. </text>
+        </slide>
+        <slide>
+          <slideno>4</slideno>
+          <text>&#65533; 
+&#65533; 
+&#65533; 
+&#65533; 2
+Example 4. xe&#8722;x dx 
+2
+Guess: e&#8722;x Again, take the deriv ative to check: 
+d e&#8722;x 2 2
+=(&#8722;2x)(e&#8722;x )
+dx 
+Therefore, &#65533; 
+2xe&#8722;x dx = &#8722; 2
+ 1 
+2 e&#8722;x + c 
+1
+Example 5. sin x cos xdx = sin2 x + c2
+Another, equally acceptable answ er is 
+sin x cos xdx = &#8722; 1
+cos2 x + c
+2 
+This seem s like a contradiction, so let&#8217;s check our answ ers: 
+d sin2 x = (2 sin x)(cos x)dx 
+and d 2
+cosx = (2 cos x)(&#8722; sin x)dx 
+So both of these are correct. Here&#8217;s how we resolv e this apparen t parado x: the di&#64256;erence between 
+the two answ ers is a constant. 
+1 sin2 x &#8722; (&#8722; 1 cos2 x) = 1(sin2 x + cos2 x)= 1
+2 2 2 2 
+So, 
+1 sin2 x &#8722; 1 = 1(sin2 x &#8722; 1)= 1(&#8722; cos2 x)= &#8722; 1 cos2 x
+2 22 2 2 
+The two answ ers are, in fact, equiv alent. The constan t c is shifted by 1
+2 from one answ er to the 
+other. 
+dxExample 6. (We will assume x&gt; 0.) x ln x
+1
+Let u = ln x. This means du = dx. Substitute these into the integral to get x
+&#65533; &#65533; dx 1
+= du = ln u + c = ln(ln( x)) + c x ln x u 
+4 Lecture 15  	 18.01 Fall 2006 </text>
+        </slide>
+        <slide>
+          <slideno>2</slideno>
+          <text>&#65533; 
+&#65533; 
+&#65533; 
+&#65533; 
+&#65533; 
+&#65533; 
+&#65533; Metho d 3 (with di&#64256;eren tial notat ion) 
+y =	x 1/3|x=64 =4 &#65533;&#65533;1 11 1 dy =3 x&#8722;2/3dx|x=64 =3 16 dx = 48 dx 
+1We want dx = 1, since (x + dx) = 65. dy = when dx = 1. 48 
+1(65)1/3 =4+ 48 
+What underlies all three of these metho ds is 
+y = x 1/3 
+dy 1 x&#8722;2/3
+dx =3|x=64 
+Anti-deriv atives 
+F (x)= f(x)dx means that F is the antideriv ative of f. 
+Other ways of saying this are: 
+F &#65533;(x)= f(x) or, dF = f(x)dx 
+Examples: 
+1. sin xdx = &#8722; cos x + c where c is any constan t. 
+n+1x2. x ndx = n +1 + c for n &#65533;= &#8722;1. 
+dx3. x = ln |x| + c (This takes care of the exceptional case n = &#8722;1 in 2.) 
+4. sec2 xdx = tan x + c 
+dx	 15. &#8730;
+1 &#8722; x2 = sin&#8722;1 x + c (where sin&#8722;1 x denotes &#8220;inverse sin&#8221; or arcsin, and not sin x ) 
+6.	dx = tan&#8722;1(x)+ c1+ x2 
+Proof of Prop erty 2: The absolute value |x| gives the correct answ er for both positiv e and negativ e 
+x. We will double check this now for the case x&lt; 0: 
+ln |x|
+d 
+dx ln(&#8722;x ) = 
+= ln(&#8722;x)&#65533; d 
+du ln(u) &#65533; du 
+dx where u = &#8722;x. 
+d 
+dx ln(&#8722;x ) = 1 
+u (&#8722;1) = 1 
+&#8722;x (&#8722;1) = 1 
+x 
+2 Lecture 15  	 18.01 Fall 2006 </text>
+        </slide>
+        <slide>
+          <slideno>3</slideno>
+          <text>&#65533; 
+&#65533; 
+&#65533; &#65533; 
+&#65533; Uniqueness of the antideriv ative up to an additiv e constan t. 
+If F &#65533;(x)= f(x), and G&#65533;(x)= f(x), then G(x)= F (x)+ c for some constan t factor c. 
+Proof:
+(G &#8722; F )&#65533; = f &#8722; f =0
+Recall that we proved as a corollary of the Mean Value Theorem that if a function has a deriv ative 
+zero then it is constan t. Hence G(x) &#8722; F (x)= c (for some constan t c). That is, G(x)= F (x)+ c. 
+Metho d of substitution. 
+Example 1. x 3(x 4 + 2)5dx 
+Substitution: 
+1 u = x 4 +2, du =4x 3dx, (x 4 + 2)5 = u 5 ,x 3dx = du4 
+Hence, &#65533; &#65533;1 u6 u6 1 x 3(x 4 + 2)5dx = u 5du = = + c = (x 4 + 2)6 + c4 4(6) 24 24 
+xExample 2. dx&#8730;
+1+ x2 
+Another way to &#64257;nd an anti-deriv ative is &#8220;advanced guessing.&#8221; First write 
+x &#8730;
+1+ x2 dx = x(1 + x 2)&#8722;1/2dx 
+Guess: (1 + x 2)1/2 . Chec k this. 
+d 1(1 + x 2)1/2 = (1+ x 2)&#8722;1/2(2x) = x(1 + x 2)&#8722;1/2 
+dx 2 
+Therefore, &#65533; 
+x(1 + x 2)&#8722;1/2dx = (1+ x 2)1/2 + c 
+Example 3. e 6xdx 
+Guess: e 6x . Chec k this: de 6x =6e 6x 
+dx 
+Therefore, &#65533; 1 e 6xdx = e 6x + c6 
+3 Lecture 15  	 18.01 Fall 2006 </text>
+        </slide>
+      </slides>
+    </lecture>
+    <lecture>
+      <lecture_title>Chain rule
+Higher derivatives</lecture_title>
+      <lecture_pdf_url>https://ocw.mit.edu/courses/18-01-single-variable-calculus-fall-2006/resources/lec4/</lecture_pdf_url>
+      <lectureno>4</lectureno>
+      <slides>
+        <slide>
+          <slideno>1</slideno>
+          <text>Lecture 4 Sept. 14, 2006 18.01 Fall 2006 
+Lecture 4  
+Chain  
+Rule, and Higher Derivatives 
+Chain Rule 
+We&#8217;ve got general procedures for di&#64256;eren tiating expressions with addition, subtraction, and multi&#173; 
+plication. What about comp osition?
+Example 1. y = f(x) = sin x,x = g(t)= t2 .
+So, y = f(g(t)) = sin(t2). To &#64257;nd dy , write
+dt 
+t = t0 +&#916;t t0 = t0 
+x = x0 +&#916;x x0 = g(t0) 
+y = y0 +&#916;y y0 = f(x0) 
+&#916;y =&#916;y &#916;x 
+&#916;t &#916;x &#183; &#916;t 
+As &#916;t 0, &#916;x 0 too, because of continuity. So we get: &#8594;&#8594; 
+dy dydx = The Chain Rule! dt dx dt &#8592; 
+In the example, dx 
+dt = 2t and dy 
+dx = cos x. 
+So, d 
+dt &#65533; 
+sin(t2) &#65533; 
+= ( dy 
+dx )( dx 
+dt ) 
+= 
+= (cos x)(2t) 
+(2t) &#65533; 
+cos(t2) &#65533; 
+Another notation for the chain rule 
+&#65533; &#65533; d 
+dt f(g(t)) = f&#65533;(g(t))g&#65533;(t) or d 
+dx f(g(x)) = f&#65533;(g(x))g&#65533;(x) 
+Example 1. (continued) Comp osition of functions f(x) = sin x and g(x)= x2 
+(fg)(x) = f(g(x)) = sin(x 2) &#9702; 
+(gf)(x) = g(f(x)) = sin2(x) &#9702; 
+Note: f &#9702; g &#65533;= g &#9702; f. Not Commutative! 
+1 </text>
+        </slide>
+        <slide>
+          <slideno>2</slideno>
+          <text>&#65533; &#65533; 
+&#65533; &#65533; &#65533; &#65533; Lecture 4 Sept. 14, 2006 18.01 Fall 2006 
+xgg(x) f(g(x))f
+Figure 1: Comp osition of functions: fg(x)= f(g(x)) &#9702; 
+d 1Example 2. cos =? dx x 
+1Let u = x 
+dy = dy du 
+dx dudx 
+dy du 1 
+du = &#8722; sin(u ); dx = &#8722; x2 &#65533;&#65533;1 &#65533; &#65533; sin dy sin(u) x = =(&#8722; sin u) &#8722;1= dx x2 x2 x2 
+d &#65533; &#65533; 
+Example 3. x&#8722;n =? dx &#65533;&#65533;n1 1There are two ways to proceed. x&#8722;n = ,or x&#8722;n = x xn 
+1. d &#65533; 
+x&#8722;n &#65533; 
+= d &#65533; 1 &#65533;n 
+= n &#65533; 1 &#65533;n&#8722;1 &#65533; &#8722;1 &#65533; 
+= &#8722;nx&#8722;(n&#8722;1)x&#8722;2 = &#8722;nx&#8722;n&#8722;1 
+dx dxx x x2 
+2. d &#65533; 
+x&#8722;n &#65533; 
+= d 1= nx n&#8722;1 &#8722;1= &#8722;nx&#8722;n&#8722;1 (Think of xn as u)dx dxxn x2n 
+2 </text>
+        </slide>
+        <slide>
+          <slideno>3</slideno>
+          <text>&#65533; &#65533; Lecture 4 Sept. 14, 2006 18.01 Fall 2006 
+Higher Deriv atives
+Higher derivatives are deriv atives of deriv atives. For instance, if g = f&#65533;, then h = g&#65533; is the second 
+deriv ative of f. We write h =(f&#65533;)&#65533; = f&#65533;&#65533;</text>
+        </slide>
+        <slide>
+          <slideno>0</slideno>
+          <text>MIT Open CourseWare 
+http://oc w.mit.edu 
+18.01  Single Variable Calculus 
+Fall 2006 
+For info rmati on abo ut citin g these mate rials or o ur Terms of Use, visit: http://ocw.mit.edu/term s. </text>
+        </slide>
+      </slides>
+    </lecture>
+    <lecture>
+      <lecture_title>Taylor&#8217;s series</lecture_title>
+      <lecture_pdf_url>https://ocw.mit.edu/courses/18-01-single-variable-calculus-fall-2006/resources/lec37/</lecture_pdf_url>
+      <lectureno>37</lectureno>
+      <slides>
+        <slide>
+          <slideno>2</slideno>
+          <text>&#65533; &#65533; 
+&#65533; &#65533; &#65533; 
+&#65533; 
+&#65533; &#65533; 
+&#65533; 
+&#65533; 
+&#65533; &#65533; &#65533; 
+&#65533; Lecture 37 18.01 Fall 2006 
+Example 4. 
+&#65533; &#65533;&#65533; &#65533;1 1 
+1 &#8722; x 1 &#8722; x = (1+ x + x 2 + &#183;&#183;&#183; )(1 + x + x 2 + &#183;&#183;&#183; ) 
+Term-by-termmultiplicationgives: 
+1+2x +3x 2 + &#183;&#183;&#183; 
+1Remember, here x is some number like . As you take higher and higher powers of x, the result 2 getssmallerandsmaller. 
+Di&#64256;erentiation(termbyterm) 
+d 1 d &#65533; &#65533; 
+= 1+ x + x 2 + x 3 + dx 1 &#8722; x dx &#183;&#183;&#183; 
+1 
+(1 &#8722; x)2 =0+1+2x +3x 2 + &#183;&#183;&#183; where 1 is a0, 2 is a1 and 3 is a2 
+SameanswerasExample 4,butusinganewmethod. 
+Integration (termbyterm) 
+f(x) dx = c + a0 + a1 x 2 + a2 x 3 +2 3 &#183;&#183;&#183; 
+where 
+f(x)= a0 + a1x + a2x 2 + &#183;&#183;&#183; 
+duExample 5. 1+ u 
+1 + 1 
+u =1 &#8722; u + u 2 &#8722; u 3 + &#183;&#183;&#183; 
+du u2 u3 u4 
+1+ u = c + u &#8722; 2+3 &#8722; 4+ &#183;&#183;&#183; 
+x du x2 x3 x4 
+ln(1 + x)= 1+ u = x &#8722; 2+3+40 
+Sonowweknowtheseriesexpansion of ln(1 + x). 
+Example 6. IntegrateExample 3. 
+1 
+1+ v2 =1 &#8722; v 2 + v 4 &#8722; v 6 + &#183;&#183;&#183; 
+dv v3 v5 v7 
+1+ v2 = c + v &#8722; 3+5 &#8722; 7+ &#183;&#183;&#183; 
+x dv x3 x5 x7 
+tan&#8722;1 x = 1+ v2 = x &#8722; 3+5 &#8722; 7+ &#183;&#183;&#183; 
+0 
+2 </text>
+        </slide>
+        <slide>
+          <slideno>4</slideno>
+          <text>&#65533; &#65533; Lecture 37 18.01 Fall 2006 
+f&#65533;&#65533;&#65533;(x) = sin x
+f(4)(x) = cos x
+f(0) = cos(0) = 1
+f&#65533;(0) = &#8722; sin(0) = 0
+f&#65533;&#65533;(0) = &#8722; cos(0) = &#8722;1
+f&#65533;&#65533;&#65533;(0) = sin(0) = 0
+Only even coe&#64259;cients are non-zero, and their signs alternate. Therefore, 
+cos x =1 &#8722; 1
+2 x 2 + 4!1 x 4 &#8722; 6!1 x 6 + 8!1 x 8 + &#183;&#183;&#183; 
+Note: cos(x ) is an even function. So is this power series &#8212; as it contains only even powers of x. 
+Therearetwowaysof&#64257;ndingtheTaylorSeriesfor sin x. Take derivative of cos x,oruseTaylor&#8217;s 
+formula. We will take the derivative: 
+&#8722; sin x = d cos x =0 &#8722; 21 x +4 x 3 6 x 5 +8 x 7 + dx 2 4! &#8722; 6! 8! &#183;&#183;&#183; 
+3 5 7x x x= &#8722;x + 3! &#8722; 5! + 7! + &#183;&#183;&#183; 
+3 5 7x x xsin(x) = x &#8722; + +3! 5! &#8722; 7! &#183;&#183;&#183; 
+Compare withquadratic approximation fromearlierintheterm: 
+cos x &#8776; 1 &#8722; 21 x 2 sin x &#8776; x 
+Wecanalsowrite: 
+&#65533; 2k 0 2 
+2 +(2k)! 0! 2! &#183;&#183;&#183; 2 &#183;&#183;&#183; cos x = &#8734;x(&#8722;1)k =(&#8722;1)0 x+(&#8722;1)2 x+ =1 &#8722; 1 x 
+k=0 
+&#65533; 2k+1&#8734;xsin x = (2k + 1)!(&#8722;1)k &#8592; n =2k +1 
+k=0 
+Example 8: Binomial Expansion. f(x) = (1+ x)a 
+(1 + x)a =1+ ax + a(a &#8722; 1) x 2 + a(a &#8722; 1)(a &#8722; 2) x 3 +1 2! 3! &#183;&#183;&#183; 
+4 </text>
+        </slide>
+        <slide>
+          <slideno>0</slideno>
+          <text>MIT Open CourseWare 
+http://oc w.mit.edu 
+18.01  Single Variable Calculus 
+Fall 2006 
+For info rmati on abo ut citin g these mate rials or o ur Terms of Use, visit: http://ocw.mit.edu/term s. </text>
+        </slide>
+        <slide>
+          <slideno>1</slideno>
+          <text>Lecture 37 18.01 Fall 2006 
+Lecture 37: Taylor Series 
+General Power Series 
+What is cos x anyway? 
+Recall: geometric series 
+11+ a + a 2 + = for a&lt; 1 &#183;&#183;&#183; 1 &#8722; a ||
+Generalpowerseriesisanin&#64257;nitesum: 
+f(x)= a0 + a1x + a2x 2 + a3x 3 + &#183;&#183;&#183; 
+represents f when x&lt;R where R = radiusofconvergence. Thismeansthatfor x&lt;R, |anx 0 || 
+n|| n|&#8594; 
+as n &#8594;&#8734; (&#8220;geometrically&#8221;). On the other hand, if 
+1|x| &gt;R, then 
+1|anx| does not tend to 0. For 
+example, inthecaseofthegeometric series,if |a| =2 ,then |a n| =2n . Since the higher-order terms 
+getincreasingly smallif |a| &lt; 1, the &#8220;tail&#8221; of the series is negligible. 
+nExample 1. If a = &#8722;1, |a| =1 doesnottendto 0. 
+1 &#8722; 1+1 &#8722; 1+ &#183;&#183;&#183; 
+Thesumbouncesbackandforthbetween 0 and 1. Therefore it does not approach 0. Outside the 
+interval &#8722;1 &lt;a&lt; 1,theseriesdiverges. 
+Basic Tools 
+Rulesofpolynomials applytoserieswithintheradiusofconvergence. 
+Substitution/Algebra 
+1 =1+ x + x 2 +1 &#8722; x &#183;&#183;&#183; 
+Example 2. x=-u. 
+1 
+1+ u =1 &#8722; u + u 2 &#8722; u 3 + &#183;&#183;&#183; 
+Example 3. x = &#8722;v2 . 
+1 + 1 
+v2 =1 &#8722; v 2 + v 4 &#8722; v 6 + &#183;&#183;&#183; 
+1 </text>
+        </slide>
+        <slide>
+          <slideno>3</slideno>
+          <text>&#65533; &#65533; Lecture 37 18.01 Fall 2006 
+Taylor&#8217;s Series and Taylor&#8217;s Formula 
+If f(x)= a0 + a1x + a2x2 + ,wewantto&#64257;gureoutwhatallthesecoe&#64259;cientsare. &#183;&#183;&#183; 
+Di&#64256;erentiating, 
+f&#65533;(x)= a1 +2a2x +3a3x 2 + &#183;&#183;&#183; 
+f&#65533;&#65533;(x) = (2)(1)a 2 + (3)(2)a 3x + (4)(3)a 4x 2 + &#183;&#183;&#183; 
+f&#65533;&#65533;&#65533;(x) = (3)(2) (1)a 3 + (4)(3)(2)a 4x + &#183;&#183;&#183; 
+Let&#8217;splugin x =0 toalloftheseequations. 
+f(0) = a0; f&#65533;(0) = a1; f&#65533;&#65533;(0) = 2a2; f&#65533;&#65533;&#65533;(0) = (3!)a 3 
+Taylor&#8217;sFormula tellsuswhatthecoe&#64259;cientsare: 
+f(n)(0) = (n!)an 
+Remember, n!= n(n &#8722; 1)(n &#8722; 2) (2)(1) and 0! = 1. Coe&#64259;cients an aregivenby: &#183;&#183;&#183; 
+1 an = f(n)(0) n! 
+xExample 7. f(x)= e. 
+f&#65533;(x)= e x 
+f&#65533;&#65533;(x)= e x 
+xf(n)(x)= e 
+f(n)(0) = e 0 =1 
+1Therefore, byTaylor&#8217;sFormula an = and n! 
+1 1 1 1 e x = + x + x 2 + x 3 +0! 1! 2! 3! &#183;&#183;&#183; 
+Orincompactform, 
+&#65533; n&#8734;xe x = n! n=0 
+Now,wecancalculate e toanyaccuracy: 
+1 1 1 1 e =1+1+ + + + +2 3! 4! 5! &#183;&#183;&#183; 
+Example 7. f(x) = cos x. 
+f&#65533;(x)= &#8722; sin x 
+f&#65533;&#65533;(x)= &#8722; cos x 
+3 </text>
+        </slide>
+        <slide>
+          <slideno>5</slideno>
+          <text>Lecture 37 18.01 Fall 2006 
+Taylor Series with Another Base Point 
+ATaylorserieswithitsbasepointat a (instead ofat0)lookslike: 
+f(x)= f(b)+ f&#65533;(b)(x &#8722; b)+ f&#65533;&#65533;(b)(x &#8722; b)2 + f(3)(b)(x &#8722; b)3 + ...2 3! 
+Taylorseriesfor &#8730;x. It&#8217;s a bad idea to expand using b =0 because &#8730;x isnotdi&#64256;erentiableat x =0.
+Insteaduse b =1. &#65533;&#65533;&#65533; &#65533;
+1 1
+1 2 2 &#8722; 1
+x 1/2 =1+ 2(x &#8722; 1)+ 2!(x &#8722; 1)2 + &#183;&#183;&#183; 
+5
+</text>
+        </slide>
+      </slides>
+    </lecture>
+    <lecture>
+      <lecture_title>Infinite series and convergence tests</lecture_title>
+      <lecture_pdf_url>https://ocw.mit.edu/courses/18-01-single-variable-calculus-fall-2006/resources/lec36/</lecture_pdf_url>
+      <lectureno>36</lectureno>
+      <slides>
+        <slide>
+          <slideno>7</slideno>
+          <text>Lecture 36 18.01 Fall 2006 
+}n
+n+1&#63218;&#63219; block
+center of mass of 
+the &#64257;rst n blocks
+Figure6: Stack of n +1 Blocks. 
+Soyes,youcanextendthisstackasfar(horizontally)asyouwant &#8212;providedthatyouhaveenough 
+blocks. Another way of looking at this problem is to say 
+N&#65533; 1 = SN n n=1 
+RecalltheRiemann Sumestimationfromthebeginning ofthislecture: 
+ln N &lt;SN &lt; (ln N)+1 
+as N &#8594;&#8734;, SN &#8594;&#8734;. 
+How high would this stack of blocks be if we extended it across the two lab tables here at the 
+front of the lecture hall? The blocks are 30 cmby 3 cm (see Figure 7). One lab table is 6.5 blocks, 
+or 13 units, long. Two tables are 26 units long. There will be 26 &#8722; 2 = 24 unitsofoverhanginthe 
+stack. 
+30 cm3 cm
+Figure7: Side view of one block. 
+If ln N = 24,then N = e 24 . 
+Height =3 cme 24 &#8776; 8 &#215; 108 m&#183; 
+Thatheightisroughlytwicethedistance tothemoon. 
+Ifyouwantthestacktospanthisroom(&#8764; 30ft.),itwouldhavetobe 1026 meters high. That&#8217;s 
+aboutthediameter oftheobservableuniverse. 
+7 </text>
+        </slide>
+        <slide>
+          <slideno>0</slideno>
+          <text>MIT Open CourseWare 
+http://oc w.mit.edu 
+18.01  Single Variable Calculus 
+Fall 2006 
+For info rmati on abo ut citin g these mate rials or o ur Terms of Use, visit: http://ocw.mit.edu/term s. </text>
+        </slide>
+        <slide>
+          <slideno>1</slideno>
+          <text>&#65533; 
+&#65533; Lecture 36 18.01 Fall 2006 
+Lecture 36: In&#64257;nite Series and Convergence Tests 
+In&#64257;niteSeries 
+Geometric Series 
+Ageometric serieslookslike 
+1+ a + a 2 + a 3 + ... = S 
+There&#8217;s a trick to evaluate this: multiply both sides by a: 
+a + a 2 + a 3 + ... = aS 
+Subtracting, 
+(1 + a + a 2 + a 3 + ) &#8722; (a + a 2 + a 3 + )= S &#8722; aS &#183;&#183;&#183; &#183;&#183;&#183; 
+Inotherwords, 
+11= S &#8722; aS = &#8658; 1 = (1 &#8722; a)S = &#8658; S =1 &#8722; a 
+Thisonlyworkswhen |a| &lt; 1,i.e. &#8722;1 &lt;a&lt; 1. 
+a =1 can&#8217;twork: 
+1+1+1+ ... = &#8734; 
+a = &#8722;1 can&#8217;twork,either: 
+1 11 &#8722; 1+1 &#8722; 1+ ... =&#65533;1 &#8722; (&#8722;1) = 2 
+Notation 
+Here is some notation that&#8217;s useful for dealing with series or sums. An in&#64257;nite sum is written: 
+&#8734;
+ak = a0 + a1 + a2 + ... 
+k=0 
+The&#64257;nitesum n
+Sn = ak = a0 + ... + an 
+k=0 
+iscalledthe &#8220;nth partial sum&#8221; of the in&#64257;nite series. 
+1 </text>
+        </slide>
+        <slide>
+          <slideno>5</slideno>
+          <text>Lecture 36 18.01 Fall 2006 
+Playingwithblocks 
+At this point in the lecture, the professor brings out sever al long, identic al buildin g blocks. 
+Doyouthinkit&#8217;spossibletostacktheblockslikethis? 
+Top block is farther out
+than the bottom block.
+Figure3: Collectiv e center of mass of upper blocks is always over the base block. 
+Inorderforthistowork,youwantthecollectivecenterofmassoftheupperblocksalwaystobe 
+overthebaseblock. 
+The professor successful ly builds the stack. 
+Isitpossibletoextendthisstackclearacrosstheroom? 
+Thebeststrategyistobuildfromthe top blockdown. 
+Let C0 betheleftendofthe&#64257;rst(top)block. 
+Let C1 = thecenterofmassofthe&#64257;rstblock(topblock). 
+Putthesecondblockasfartotherightaspossible,namely,sothatit&#8217;sleftendisat C1 (Figure 4). 
+Let C2 = thecenterofmassofthetoptwoblocks. 
+Strategy: put the left end ofthenextblockunderneath thecenterofmassofalltheprevious ones 
+combined. (See Figure 5). 
+5 </text>
+        </slide>
+        <slide>
+          <slideno>4</slideno>
+          <text>&#65533;&#65533;&#65533;&#65533;&#65533; &#65533;&#65533;&#65533;&#65533;&#65533;&#65533; 
+&#65533;
+&#65533; 
+&#65533; &#65533; 
+&#65533; Lecture 36 18.01 Fall 2006 
+IntegralComparison 
+1Consider apositive,decreasing function f(x) &gt; 0. (For example, f(x)= )xp 
+&#8734; 
+f(x)dx &#8734;&#65533; 
+=1nf(n) &#8722; &lt;f(1) 
+1 
+So, either both of the terms converge, or they both diverge. This is what we mean when we say 
+&#8734;
+np &#8764; 
+1 xp &#65533; 
+=1n1 &#8734; dx 
+&#8734;
+Lots of fudge room: in comparison. &#65533; 
+=1nTherefore, 1 divergesfor p &#8804; 1 andconvergesfor p&gt; 1. np 
+&#8734;
+n=1 1
+&#8730;
+n2 + 10
+diverges,because 
+1 1 1 &#8730;
+n2 + 10 &#8764; (n2)1/2 = n 
+Limit comparison: 
+If f(x) &#8764; g(x) as x &#8594;&#8734;,then f(n) and g(n) eitherbothconvergeorbothdiverge. 
+What,exactly,does f(x) &#8764; g(x) mean? It means that 
+f(x)lim = c 
+x&#8594;&#8734; g(x) 
+where 0 &lt;c&lt; &#8734;. 
+Let&#8217;s check: does the following series converge? 
+&#8734;
+&#8730;
+n5 &#8722; 10 n=1 
+nn 1 = n5/2 n3/2&#8730;
+n5 &#8722; 10 &#8764; = n&#8722;3/2 
+3Since &gt; 1,thisseriesdoesconverge. 2 n 
+4 </text>
+        </slide>
+        <slide>
+          <slideno>2</slideno>
+          <text>&#65533; 
+&#65533; 
+&#65533; 
+&#65533; 
+&#65533; 
+&#65533; Lecture 36 18.01 Fall 2006 
+De&#64257;nition 
+&#8734;
+ak = s 
+k=0 
+meansthesamethingas 
+n
+lim Sn = s, where Sn = ak n&#8594;&#8734; 
+k=0 
+Wesaytheseries conver ges to s, if the limit exists and is &#64257;nite. The importance of convergence is 
+illustrated here by the example of the geometric series. If a =1,S =1+1+1+ ... = &#8734;. But 
+S &#8722; aS =1 or &#8734;&#8722;&#8734; =1 
+doesnotmakesenseandisnotusable! 
+Another typeofseries: 
+&#8734;1 
+np 
+n=1 
+We can use integrals to decide if this type of series converges. First, turn the sum into an integral: 
+&#8734;1 &#65533; &#8734; dx 
+np &#8764; xp 
+n=1 1 
+Ifthatimproperintegralevaluatestoa&#64257;nitenumber,theseriesconverges. 
+Note: This approach only tells us whether or not a series converges. It does not tell us what 
+number the series converges to. That is a much harder problem. For example, it takes a lot of work 
+todetermine 
+&#65533; &#960;2&#8734;1 = n2 6 n=1 
+Mathematicians haveonlyrecentlybeenabletodetermine that 
+&#8734;1 
+n3 
+n=1 
+convergestoanirrational number! 
+Harmonic Series 
+&#8734;1 &#65533; &#8734; dx 
+n &#8764; 
+1 x n=1 
+WecanevaluatetheimproperintegralviaRiemann sums. 
+We&#8217;ll use the upper Riemann sum (see Figure 1) to get an upper bound on the value of the 
+integral. 
+2 </text>
+        </slide>
+        <slide>
+          <slideno>3</slideno>
+          <text>&#65533; Lecture 36 18.01 Fall 2006 
+1 2 31
+&#189; &#8531;1
+&#189; y=/uniF662&#8260;x
+Figure1: Upper Riemann Sum. 
+&#65533; N dx 1 1 
+1 x &#8804; 1+ 2 + ... + N &#8722; 1= sN &#8722;1 &#8804; sN 
+Weknowthat &#65533; N dx = ln N 
+1 x 
+As N &#8594;&#8734;, ln N &#8594;&#8734;,so sN &#8594;&#8734; as well. In other words, 
+&#8734;1 
+n n=1 
+diverges. 
+Actually, sN approaches &#8734; rather slowly. Let&#8217;s take the lower Riemann sum (see Figure 2). 
+1 2 3y=/uniF662&#8260;x
+4&#189;
+&#8531;&#188;
+Therefore, Figure 2: Lower Riemann Sum. 
+sN = 1 + 1 
+2 + ... + 1 
+N = 1 + N&#65533; 
+n=2 1 
+n &#8804; 1 + &#65533; N 
+1 
+ln N &lt; sN &lt; 1 + ln N dx 
+x = 1 + ln N 
+3 </text>
+        </slide>
+        <slide>
+          <slideno>6</slideno>
+          <text>Lecture 36 18.01 Fall 2006 
+C0 C1C22
+11/2
+Figure4: Stack of 2 Blocks. 
+C0C1C22
+11/2
+C31/31
+2
+3
+Figure5: Stack of 3 Blocks. Left end of block 3 is C2 = center of mass of blocks 1 and 2. 
+C0 =0
+C1 =1
+1
+C2 =1+ 2
+nCn + 1(Cn +1) (n + 1)Cn +1 1
+Cn+1 = = = Cn + n +1 n +1 n +1
+11
+C3 =1+ +23
+111
+C4 =1+ + +234
+1111
+C5 =1+ + + + &gt; 2
+2345
+6 </text>
+        </slide>
+      </slides>
+    </lecture>
+    <lecture>
+      <lecture_title>Exam 3 review</lecture_title>
+      <lecture_pdf_url>https://ocw.mit.edu/courses/18-01-single-variable-calculus-fall-2006/resources/lec25/</lecture_pdf_url>
+      <lectureno>25</lectureno>
+      <slides>
+        <slide>
+          <slideno>3</slideno>
+          <text>&#65533; Exam 3 Review 18.01 Fall 2006 
+Is it possible to build a perpetual motion machine? Let&#8217;s think about a simple pendulum, and 
+how much work gravity performs in pulling the pendulum from &#952;0 to the bottom of the pendulum&#8217;s 
+arc. 
+Notice that F varies. That&#8217;s why we have to use an integral for this problem. 
+&#65533; &#952;0 &#65533; &#952;0 
+W = (Force) (Distance) = (mg sin &#952;)(Ld&#952;) &#183; 
+0 0 
+W = &#8722;Lmg cos &#952;&#65533;&#65533;&#952;0 
+= &#8722;Lmg(cos &#952;0 &#8722; 1) = mg [L(1 &#8722; cos &#952;0)] 
+0 
+In Figure 3, we see that the work performed by gravity moving the pendulum down a distance 
+L(1 &#8722; cos &#952;) is the same as if it went straigh t down. 
+&#952;
+L
+L(1-cos&#952;)
+Figure 3: E&#64256;ect of gravity on a pendulum. 
+In other words, the amoun t of work required depends only on how far down the pendulum goes. 
+It doesn&#8217;t matter what path it takes to get there. So, there&#8217;s no free (energy) lunch, no perpetual 
+motion machine. 
+3 </text>
+        </slide>
+        <slide>
+          <slideno>1</slideno>
+          <text>&#65533; Exam 3 Review 18.01 Fall 2006 
+Lecture 25: Exam 3 Review 
+Integration 
+1. Evaluate de&#64257;nite integrals. Substitution, &#64257;rst fundamen tal theorem of calculus (FTC 1), (and 
+hints?) 
+2. FTC 2: &#65533; d x 
+f(t) dt = f(t)dx a 
+x 
+If F (x)= f(t) dt, &#64257;nd the graph of F , estimate F , and change variab les. 
+a 
+3. Riemann sums; trapezoidal and Simpson&#8217;s rules. 
+4. Areas, volumes. 
+5. Other cumulativ e sums: average value, probabilit y, work, etc. 
+There are two types of volume problems: 
+1. solids of revolution 
+2. other (do by slices) 
+In these problems, there will be somethin g you can draw in 2D, to be able to see what&#8217;s going on in 
+that one plane. 
+In solid of revolution problems, the solid is formed by revolution around the x-axis or the y-axis. 
+You will have to decide how to chop up the solid: into shells or disks. Put another way, you must 
+decide whether to integrate with dx or dy. After making that choice, the rest of the procedure is 
+systematically determined. For example, consider a shape rotated around the y-axis. 
+&#8226; Shells: heigh t y2 &#8722; y1, circumference 2&#960;x, thickness dx 
+&#8226; Disks (washers) : area &#960;x2 (or &#960;x2
+2 &#8722; &#960;x2), thickness dy; integrate dy.1
+Work 
+Work = Force Distance&#183; 
+We need to use an integral if the force is variable. 
+1 </text>
+        </slide>
+        <slide>
+          <slideno>0</slideno>
+          <text>MIT Open CourseWare 
+http://oc w.mit.edu 
+18.01  Single Variable Calculus 
+Fall 2006 
+For info rmati on abo ut citin g these mate rials or o ur Terms of Use, visit: http://ocw.mit.edu/term s. </text>
+        </slide>
+        <slide>
+          <slideno>2</slideno>
+          <text>Exam 3 Review 18.01 Fall 2006 
+Example 1: Pendulum. See Figure 1
+Consider a pendulum of length L, with mass m at angle &#952;. The vertical force of gravity is mg (g =
+gravitational coe&#64259;cien t on Earth&#8217;s surface)
+&#952;L
+mass m
+mg
+Figure 1: Pendulum. 
+In Figure 2, we &#64257;nd the comp onent of gravitati onal force acting along the pendulum&#8217;s path 
+F = mg sin &#952;. 
+&#952;
+mg
+&#952;
+Figure 2: F = mg sin &#952; (force tangen t to path of motion). 
+2 </text>
+        </slide>
+      </slides>
+    </lecture>
+    <lecture>
+      <lecture_title>First fundamental theorem of calculus</lecture_title>
+      <lecture_pdf_url>https://ocw.mit.edu/courses/18-01-single-variable-calculus-fall-2006/resources/lec19/</lecture_pdf_url>
+      <lectureno>19</lectureno>
+      <slides>
+        <slide>
+          <slideno>4</slideno>
+          <text>&#65533; &#65533; &#65533; 
+&#65533; &#65533; Lecture 19 18.01 Fall 2006 
+Estimation: 
+&#65533; b &#65533; b 
+If f(x) &#8804; g(x), then f(x)dx &#8804; g(x)dx (only if a&lt;b) 
+a a 
+xExample 5. Estimation of e
+xSince 1 &#8804; efor x &#8805; 0, &#65533; 1 &#65533; 1 
+1dx &#8804; e xdx 
+0 0 
+&#65533; 1 &#65533; 
+e xdx = e x &#65533;&#65533; 1 
+= e 1 &#8722; e 0 = e &#8722; 1 
+00 
+Thus 1 &#8804; e &#8722; 1, or e &#8805; 2. 
+xExample 6. We showed earlier that 1 + x &#8804; e. It follows that 
+&#65533; 1 &#65533; 1 
+(1 + x)dx &#8804; e xdx = e &#8722; 1 
+0 0 
+&#65533; 1 &#65533; 2 &#65533;&#65533;1 x&#65533; 3(1 + x)dx = x + &#65533;&#65533; = 2 20 0 
+3 5Hence, 2 &#8804; e &#8722; 1,or, e &#8805; 2. 
+Change of Variable: 
+If f(x)= g(u(x)), then we write du = u&#65533;(x)dx and 
+g(u)du = g(u(x))u&#65533;(x)dx = f(x)u&#65533;(x)dx (inde&#64257;nite integrals) 
+For de&#64257;nite integrals: 
+x2 u2 
+f(x)u&#65533;(x)dx = g(u)du where u1 = u(x1),u2 = u(x2) 
+x1 u1 
+&#65533; 2 &#65533;&#65533;4Example 7. x 3 +2 x 2dx 
+1 
+Let u = x 3 +2. Then du =3x 2dx = x 2dx = du ;&#8658; 3 
+x1 =1,x2 =2 = u1 =13 +2=3,u2 =23 +2 = 10, and &#8658;
+&#65533; 2 &#65533;10&#65533;&#65533;4 &#65533; 10 
+4 du u5 &#65533;&#65533;105 &#8722; 35 
+x 3 +2 x 2dx = u = = 
+1 3 3 15 &#65533; 
+3 15 
+4 </text>
+        </slide>
+        <slide>
+          <slideno>0</slideno>
+          <text>MIT Open CourseWare 
+http://oc w.mit.edu 
+18.01  Single Variable Calculus 
+Fall 2006 
+For info rmati on abo ut citin g these mate rials or o ur Terms of Use, visit: http://ocw.mit.edu/term s. </text>
+        </slide>
+        <slide>
+          <slideno>2</slideno>
+          <text>&#65533;&#65533;&#65533; Lecture 19 18.01 Fall 2006 
+Intuitiv e Interpretation of FTC: 
+dx x(t) is a position; v(t)= x&#65533;(t) = is the speed or rate of change of x. dt 
+&#65533; b 
+v(t)dt = x(b) &#8722; x(a) (FTC 1) 
+a 
+R.H.S. is how far x(t) went from time t = a to time t = b (di&#64256;erence between two odometer readings). 
+L.H.S. represen ts speedometer readings. 
+n
+i=1
+x(b) &#8722; x(a)= v(t) cancel each other, whereas an &#65533; 
+()&#916; appro ximates thesum ofdistance straveledovertimes &#916; tt t vi
+thTheapproximation aboveisaccurate if ()isclose to ()onthe interval.Theinterpretation i t t v vi
+of()asanodometer reading isnolonger validif changes sign. Imagine around tripsothat tx v 
+0.Then thepositiv eand negativ evelocities 
+odometer would measure thetotal distance notthenetdistance traveled. 
+Example 4. &#65533; 2&#960; 
+0 sin xdx = &#8722; cos x 2&#960; 
+= &#8722; cos2&#960; &#8722; (&#8722; cos0) = 0. 
+0 
+The integral represents the sum of areas under the curve, above the x-axis minus the areas below 
+the x-axis. (See Figure 2.) 
++
+-1
+2&#65533;
+Figure 2: Graph of f(x) = sin x for 0 &#8804; x &#8804; 2&#960;. 
+2 </text>
+        </slide>
+        <slide>
+          <slideno>1</slideno>
+          <text>&#65533;&#65533;&#65533; &#65533;&#65533;&#65533; 
+&#65533;&#65533;&#65533;&#65533; 
+&#65533;&#65533;&#65533; 
+&#65533;&#65533;&#65533;&#65533; Lecture 19 18.01 Fall 2006 
+Lecture 19: First Fundamen tal Theorem of Calculus
+Fundamen tal Theorem of Calculus (FTC 1)
+If f(x) is continuous and F &#65533;(x)= f(x), then &#65533; b 
+f(x)dx = F (b) &#8722; F (a) 
+a 
+Notation: F (x) b 
+= F (x) x=b 
+= F (b) &#8722; F (a) 
+a x=a 
+&#65533; b b 3 3 b3 a3x x2; x 2dx = Example 1. F (x)= F &#65533;(x)= x = 3 &#8722; 3 3 , 3a a 
+Example 2. Area under one hump of sin x (See Figure 1.) 
+&#65533; &#960; 
+0 sin xdx = &#8722; cos x &#960; 
+= &#8722; cos &#960; &#8722; (&#8722; cos0) = &#8722;(&#8722;1) &#8722; (&#8722;1) = 2 
+0 
+1
+&#65533;
+Figure 1: Graph of f (x) = sin x for 0 &#8804; x &#8804; &#960;. 
+&#65533; 1 16 
+= 1 1 
+6 &#8722; 0= 6 5dx = xExample 3. x 60 0 
+1 </text>
+        </slide>
+        <slide>
+          <slideno>3</slideno>
+          <text>Lecture 19 18.01 Fall 2006 
+Integrals have an importan t additiv e property (See Figure 3.) 
+&#65533; b &#65533; c &#65533; c 
+f(x)dx + f(x)dx = f(x)dx 
+a b a 
+a b c
+Figure 3: Illustration of the additiv e property of integrals 
+New De&#64257;nition : &#65533; a &#65533; b 
+f(x)dx = &#8722; f(x)dx 
+b a 
+This de&#64257;nition is used so that the fundamen tal theorem is valid no matter if a&lt;b or b&lt;a. It also 
+makes it so that the additiv e property works for a,b,c in any order, not just the one pictured in 
+Figure 3. 
+3 </text>
+        </slide>
+      </slides>
+    </lecture>
+    <lecture>
+      <lecture_title>Related rates</lecture_title>
+      <lecture_pdf_url>https://ocw.mit.edu/courses/18-01-single-variable-calculus-fall-2006/resources/lec12/</lecture_pdf_url>
+      <lectureno>12</lectureno>
+      <slides>
+        <slide>
+          <slideno>0</slideno>
+          <text>MIT Open CourseWare 
+http://oc w.mit.edu 
+18.01  Single Variable Calculus 
+Fall 2006 
+For info rmati on abo ut citin g these mate rials or o ur Terms of Use, visit: http://ocw.mit.edu/term s. </text>
+        </slide>
+        <slide>
+          <slideno>3</slideno>
+          <text>&#65533; &#65533; The key here is to draw the two-dimensional cross-section. We use the letters r and h to represen t 
+the variable radius and heigh t of the water at any level. We can &#64257;nd the relationship between r and 
+h from Fig. 3) using similar triangles. 
+104
+r
+h
+Figure 3: Relating r and h. 
+From Fig. 3), we see that 
+r 4 = h 10 
+or, in other words, 
+2 r = 5 h 
+Plug this expression for r back into V to get 
+&#65533;&#65533;21 2 4 V = &#960; hh = &#960;h3 
+3 5 3(25) 
+dV 4 = V &#65533; = &#960;h2h&#65533; 
+dt 25 
+dVNow, plug in the numbers ( = 2, h = 5): dt 
+42= &#960;(5)2h&#65533;
+25 
+1 h&#65533; = 2&#960; 
+Related rates also arise on Problem Set 3 (Fig. 4). There&#8217;s a part II margin of error problem 
+&#916;Linvolving a satellite, where you&#8217;re asked to &#64257;nd .&#916;h 
+3 Lecture 12    18.01  Fall  2006  </text>
+        </slide>
+        <slide>
+          <slideno>4</slideno>
+          <text>h
+Lsatellite
+cFigure 4: Illustration of the satellite problem. 
+L2 + c 2 = h2 
+2LL&#65533; =2hh&#65533; 
+&#916;LL&#65533; hHence, &#916;h &#8776; h&#65533; = L 
+There is also a parab olic mirror problem based on similar ideas (Fig. 5). 
+&#916;a
+&#916;&#952;
+Figure 5: Illustration of the parab olic mirror problem. 
+&#916;a &#916;&#952;Here, you want to &#64257;nd either or . This type of sensitiv ity of measureme nt problem &#916;&#952; &#916;a matters in every measuremen t problem, for instance predicting whether asteroids will hit Earth. 
+4 Lecture 12    18.01  Fall  2006  </text>
+        </slide>
+        <slide>
+          <slideno>1</slideno>
+          <text>Lecture 12    18.01  Fall  2006  
+Lecture 12: Related Rates
+Example 1. Police are 30 feet from the side of the road. Their radar sees your car approac hing at 
+80 feet per second when your car is 50 feet away from the radar gun. The speed limit is 65 miles 
+per hour (whic h translates to 95 feet per second). Are you speeding? 
+First, draw a diagram of the setup (as in Fig. 1): 
+RoadCarPolice
+30 D=50
+x
+Figure 1: Illustration of example 1: triangle with the police, the car, the road, D and x labelled. 
+Next, give the variables names. The importan t thing to &#64257;gure out is which variables are changing. 
+dDAt D = 50, x = 40. (We know this because it&#8217;s a 3-4-5 right triangle.) In addition, = D&#65533; = dt 
+&#8722;80. D&#65533; is negativ e because the car is moving in the &#8722;x direction. Don&#8217;t plug in the value for D 
+yet! D is changi ng, and it depends on x. 
+The Pythagorean theorem says
+302 + x 2 = D2
+Di&#64256;eren tiate this equation with respect to time (implicit di&#64256;eren tiation: 
+d &#65533; 2 &#65533; 2DD&#65533;
+302 + x = D2= 2xx&#65533; =2DD&#65533; = x&#65533; = dt &#8658; &#8658; 2x 
+Now, plug in the instan taneous numerical values: 
+50 feet x&#65533; = 40(&#8722;80) = &#8722;100 s 
+This excee ds the speed limit of 95 feet per second; you are, in fact, speeding. 
+1 </text>
+        </slide>
+        <slide>
+          <slideno>2</slideno>
+          <text>&#65533; There is another, longer, way of solving this problem. Start with 
+D = 302 + x2 = (302 + x 2)1/2 
+d 1 dx D = (302 + x 2)&#8722;1/2(2x )dt 2 dt 
+Plug in the values: 
+1 dx &#8722;80= (302 + 402)&#8722;1/2(2)(40)2 dt 
+and solve to &#64257;nd dx feet = &#8722;100dt s 
+(A third strategy is to di&#64256;eren tiate x = &#8730;
+D2 &#8722; 302). It is easiest to di&#64256;ere ntiate the equation in its 
+simplest algebraic form 302 + x2 = D2, our &#64257;rst approac h. 
+The general strategy for these types of problems is: 
+1. Draw a picture. Set up variables and equations. 
+2. Take deriv atives. 
+3. Plug in the given values. Don&#8217;t plug the values in until after taking the deriv atives. 
+Example 2. Consider a conical tank. Its radius at the top is 4 feet, and it&#8217;s 10 feet high. It&#8217;s being 
+&#64257;lled with water at the rate of 2 cubic feet per minute. How fast is the water level rising when it is 
+5 feet high? 
+hr
+Figure 2: Illustration of example 2: inverted cone water tank. 
+From Fig. 2), the volume of the tank is given by 
+1 V = &#960;r2h3 
+2 Lecture 12    18.01  Fall  2006  </text>
+        </slide>
+      </slides>
+    </lecture>
+    <lecture>
+      <lecture_title>Integration by parts, reduction formulae</lecture_title>
+      <lecture_pdf_url>https://ocw.mit.edu/courses/18-01-single-variable-calculus-fall-2006/resources/lec30/</lecture_pdf_url>
+      <lectureno>30</lectureno>
+      <slides>
+        <slide>
+          <slideno>0</slideno>
+          <text>MIT Open CourseWare 
+http://oc w.mit.edu 
+18.01  Single Variable Calculus 
+Fall 2006 
+For info rmati on abo ut citin g these mate rials or o ur Terms of Use, visit: http://ocw.mit.edu/term s. </text>
+        </slide>
+        <slide>
+          <slideno>2</slideno>
+          <text>&#65533; &#65533; 
+&#65533; 
+&#65533; Lecture 30 18.01 Fall 2006 
+Bythefundamentaltheorem ofcalculus, wecansay 
+&#65533; b &#65533;&#65533; b&#65533;b 
+uv&#65533; dx = uv&#65533; u&#65533;v dx 
+a &#8722;
+a a 
+Another notation intheinde&#64257;nite caseis 
+udv = uv &#8722; v du 
+Thisisthesamebecause 
+dv = v&#65533; dx = uv&#65533; dx = udv and du = u&#65533; dx = u&#65533;v dx = vu&#65533; dx = v du &#8658; &#8658; 
+Example 2. (ln x)dx 
+1 u = ln x; du = dx and dv = dx; v = x x &#65533; &#65533;&#65533;&#65533; &#65533;1(ln x)dx = x ln x &#8722; x dx = x ln x &#8722; dx = x ln x &#8722; x + c x 
+We can also use &#8220;advanced guessing&#8221; to solve this problem. We know that the derivative of 
+something equals ln x: 
+d (??) = ln x dx 
+Let&#8217;stry 
+d 1(x ln x) = ln x + x = ln x +1 dx &#183; x 
+That&#8217;s almost it, but not quite. Let&#8217;s repair this guess to get: 
+d (x ln x &#8722; x) = ln x +1 &#8722; 1 = ln x dx 
+Reduction Formulas (Recurrence Formulas) 
+Example 3. (ln x)n dx 
+Let&#8217;stry: &#65533;&#65533;1 u = (ln x)n = u&#65533; = n(ln x)n&#8722;1 &#8658; x 
+v&#65533; = dx; v = x 
+Plugging theseintotheformulaforintegration bypartsgivesus: 
+&#65533; &#65533; &#65533;&#65533; 1 
+1&#65533;&#65533;&#65533;
+(ln x)ndx = x(ln x)n n(ln x)n&#8722;1 x &#65533;dx &#8722; 
+&#65533;x 
+Keeprepeatingintegration bypartstogetthefullformula: n (n &#8722; 1) (n &#8722; 2) (n &#8722; 3) etc 
+&#65533; &#8594;&#8594;&#8594;&#8594; 
+Example 4. x n e x dx Let&#8217;stry: 
+u = x n = u&#65533; = nx n&#8722;1; v&#65533; = e x = v = e x &#8658; &#8658; 
+2 </text>
+        </slide>
+        <slide>
+          <slideno>5</slideno>
+          <text>Lecture 30 18.01 Fall 2006 
+P&#8320;P&#8321;
+a b
+Figure3: Findlengthofcurvebetween P0 and P1. 
+We want to integrate with respect to x, not s, so we do the same algebra as above to &#64257;nd ds in 
+termsof dx. 
+(ds)2 (dx)2 (dy)2 &#65533; dy &#65533;2 
+= + =1+ (dx)2 (dx)2 (dx)2 dx 
+Therefore, &#65533;&#65533; P1 &#65533; b &#65533;&#65533;2 
+ds = 1+ dy dx dxP0 a 
+Example 5: The Circle. x 2 + y 2 =1 (see Figure 4). 
+Figure4: ThecircleinExample 1. 
+5 </text>
+        </slide>
+        <slide>
+          <slideno>3</slideno>
+          <text>&#65533; &#65533; 
+&#65533; 
+&#65533; 
+&#65533; Lecture 30 18.01 Fall 2006 
+Puttingtheseintotheintegration bypartsformulagivesus: 
+n nx xe x dx = xe nx n&#8722;1 e x dx&#8722; 
+Repeat,goingfrom n &#8594; (n &#8722; 1) &#8594; (n &#8722; 2) &#8594; etc. 
+Bad news: Ifyouchangetheintegralsjustalittlebit,theybecomeimpossibletoevaluate: 
+&#65533;&#65533;2tan&#8722;1 x dx = impossible 
+xedx = alsoimpossible x 
+Good news: Whenyoucan&#8217;tevaluateanintegral,then 
+&#65533; 2 xedx 
+1 x 
+isan answer, not a question. This is thesolution&#8211; youdon&#8217;thavetointegrateit! 
+The most important thing is setting up the integral! (Once you&#8217;ve done that, you can always 
+evaluate it numerically on a computer.) So, why bother to evaluate integrals by hand, then? Because 
+youoftengetfamiliesofrelatedintegrals,suchas 
+x&#8734; eF (a)= dx xa 1 
+whereyouwantto&#64257;ndhowtheanswerdependson,say, a. 
+3 </text>
+        </slide>
+        <slide>
+          <slideno>1</slideno>
+          <text>&#65533; &#65533; 
+&#65533; 
+&#65533; &#65533; &#65533; 
+&#65533; &#65533; &#65533; Lecture 30 18.01 Fall 2006 
+Lecture 30: Integration by Parts, Reduction
+Formulae 
+Integration by Parts 
+Remembertheproductrule: 
+(uv)&#65533; = u&#65533;v + uv&#65533; 
+Wecanrewritethatas 
+uv&#65533; =(uv)&#65533; &#8722; u&#65533;v 
+Integratethistogettheformulaforintegration byparts: 
+uv&#65533; dx = uv &#8722; u&#65533;v dx 
+Example 1. tan&#8722;1 xdx. 
+At &#64257;rst, it&#8217;s not clear how integration by parts helps. Write 
+tan&#8722;1 xdx = tan&#8722;1 x(1 dx)= uv&#65533; dx&#183; 
+with 
+u = tan&#8722;1 x and v&#65533; =1. 
+Therefore, 
+1 v = x and u&#65533; = 1+ x2 
+Plugalloftheseintotheformulaforintegration bypartstoget: 
+1 tan&#8722;1 xdx = uv&#65533; dx = (tan&#8722;1 x)x &#8722; 1+ x2 (x)dx 
+= x tan&#8722;1 x &#8722; 1
+2 ln |1+ x 2| + c 
+Alternativ e Approac h to Integration by Parts 
+Asabove,theproductrule: 
+(uv)&#65533; = u&#65533;v + uv&#65533; 
+canberewritten as 
+uv&#65533; =(uv)&#65533; &#8722; u&#65533;v 
+Thistime,let&#8217;stakethe de&#64257;nite integral: 
+&#65533; b &#65533; b &#65533; b 
+uv&#65533; dx = (uv)&#65533; dx &#8722; u&#65533;v dx 
+a a a 
+1 </text>
+        </slide>
+        <slide>
+          <slideno>7</slideno>
+          <text>Lecture 30 18.01 Fall 2006 
+a11as
+Figure6: s = angleinradians. 
+Parame tric Equations 
+Example 6. 
+x = a cos t 
+y = a sin t 
+Ask yourself: what&#8217;s constant? What&#8217;s varying? Here, t isvariableand a isconstant. 
+Istherearelationship between x and y? Yes: 
+x 2 + y 2 = a 2 cos2 t + a 2 sin2 t = a 2 
+Extrainformation (besidesthecircle): 
+At t =0, 
+x = a cos0 = a and y = a sin0 = 0 
+&#960;At t = ,2 &#960; &#960; x = a cos =0 and y = a sin = a2 2 
+Thus,for 0 &#8804; t &#8804; &#960;/2, a quarter circle is traced counter-clockwise (Figure 7). 
+7 </text>
+        </slide>
+        <slide>
+          <slideno>4</slideno>
+          <text>&#65533; &#65533; Lecture 30 18.01 Fall 2006 
+Arc Length 
+Thisisveryusefultoknowfor18.02(multi-variablecalculus). 
+y
+xds
+dxdy y=f(x)
+Figure1: In&#64257;nitesimal ArcLength ds 
+dy
+dxds
+Figure2: Zoom in on Figure 1 to see an approximate right triangle. 
+In Figures 1 and 2, s denotesarclengthand ds = thein&#64257;nitesmal ofarclength. 
+ds = (dx)2 +(dy)2 = 1+(dy/dx)2dx 
+Integrating withrespectto ds &#64257;nds the length of a curve between two points (see Figure 3). 
+To&#64257;ndthelengthofthecurvebetween P0 and P1,evaluate: 
+&#65533; P1 
+ds 
+P0 
+4 </text>
+        </slide>
+        <slide>
+          <slideno>8</slideno>
+          <text>&#65533; &#65533; &#65533; Lecture 30 18.01 Fall 2006 
+(a,0)
+t=0(0,a)t=&#960;/2
+Figure7: Example 6. x = a cos t, y = a sin t; theparticleismovingcounterclockwise. 
+Example 7: The Ellipse See Figure 8. 
+x = 2 sin t; y = cos t 
+2x+ y 2 = 1( = (2sin t)2/4 + (cos t)2 = sin2t + cos2t = 1) 4 &#8658; 
+(2,0)
+t=&#960;/2t=0
+(0,1)
+Figure8: Ellipse: x = 2 sin t, y = cos t (tracedclockwise). 
+Arclength ds for Example 6. 
+dx = &#8722;a sin t dt, dy = a cos tdt 
+ds = (dx)2 +(dy)2 = (&#8722;a sin tdt)2 +(a cos tdt)2 = (a sin t)2 +(a cos t)2 dt = adt 
+8 </text>
+        </slide>
+        <slide>
+          <slideno>6</slideno>
+          <text>&#65533; 
+&#65533; &#65533; 
+&#65533; 
+&#65533; Lecture 30 18.01 Fall 2006 
+We want to &#64257;nd the length of the arc in Figure 5: 
+a
+Figure5: Arclengthtobeevaluated. 
+y = 1 &#8722; x2 
+dy &#8722;2x 1 &#8722;x 
+dx = &#8730;
+1 &#8722; x2 2= &#8730;
+1 &#8722; x2 
+&#65533;&#65533;2 
+ds = 1+ &#8730;
+1 &#8722;
+&#8722; x
+x2 dx 
+&#65533;&#65533;2 
+1+ &#8730;
+1 &#8722;
+&#8722; x
+x2 =1+ 1 &#8722; x2 
+x2 =1 &#8722;
+1 x
+&#8722; 2 
+x+ 
+2 x2 
+=1 &#8722; 1 
+x2 
+1 ds = dx1 &#8722; x2 
+&#65533; a &#9168;dx &#9168;a 
+s = &#8730;
+1 &#8722; x2 = sin&#8722;1 x&#9168; 
+0 = sin&#8722;1 a &#8722; sin&#8722;1 0 = sin&#8722;1 a 
+0 
+sin s = a 
+This is illustrated in Figure 6. 
+6 </text>
+        </slide>
+      </slides>
+    </lecture>
+    <lecture>
+      <lecture_title>Exponential and log
+Logarithmic differentiation; hyperbolic functions</lecture_title>
+      <lecture_pdf_url>https://ocw.mit.edu/courses/18-01-single-variable-calculus-fall-2006/resources/lec6/</lecture_pdf_url>
+      <lectureno>6</lectureno>
+      <slides>
+        <slide>
+          <slideno>0</slideno>
+          <text>MIT Open CourseWare 
+http://oc w.mit.edu 
+18.01  Single Variable Calculus 
+Fall 2006 
+For info rmati on abo ut citin g these mate rials or o ur Terms of Use, visit: http://ocw.mit.edu/term s. </text>
+        </slide>
+        <slide>
+          <slideno>4</slideno>
+          <text>Lecture 6 18.01 Fall 2006 
+Thus we can de&#64257;ne e to be the unique number such that 
+M(e)=1 
+or, to put it another way, 
+lim eh &#8722; 1 =1 
+h0 h &#8594;
+or, to put it still another way, 
+d (e x)=1 at x =0 dx
+d d
+What is (e x)? We just de&#64257;ned M(e)=1,and (e x)= M(e)e x . So dx dx 
+d (e x)= e x 
+dx 
+Natural log (inverse function of ex) 
+To understand M(a) better, we study the natural log function ln(x). This function is de&#64257;ned as 
+follows: 
+If y = e x , then ln(y)= x 
+(or) 
+If w = ln(x), then e x = w 
+xNote that eis always positiv e, even if x is negativ e. 
+Recall that ln(1) = 0; ln(x) &lt; 0 for 0 &lt;x&lt; 1; ln(x) &gt; 0 for x&gt; 1. Recall also that 
+ln(x 1x2) = ln x1 + ln x2 
+Let us use implicit di&#64256;eren tiation to &#64257;nd d ln(x). w = ln(x). We want to &#64257;nd dw . dx dx 
+e w = x 
+d (e w) = d (x)dx dx 
+d (e w) dw = 1 dw dx 
+e w dw = 1 dx 
+dw 1 1 = = dx ew x 
+d 1(ln(x)) = dx x 
+4 </text>
+        </slide>
+        <slide>
+          <slideno>3</slideno>
+          <text>Lecture 6 18.01 Fall 2006 
+y=2x
+slope M(2) slope = 1(1,2)
+secant line
+Figure 2: Slope M(2) &lt; 1
+y=4x
+secant line
+(1,0) (-1/2, 1/2)slope M(4)
+Figure 3: Slope M(4) &gt; 1
+3 </text>
+        </slide>
+        <slide>
+          <slideno>1</slideno>
+          <text>&#65533;&#65533;&#65533;&#65533; Lecture 6 18.01 Fall 2006 
+Lecture 6: Exponential and Log, Logarithmic 
+Di&#64256;eren tiation, Hyperbolic Functions 
+Taking the deriv atives of exponentials and logarithms 
+Background 
+We always assume the base, a, is greater than 1. 
+a 0 = 1; a 1 = a; a 2 = aa; ... &#183; 
+a x1+x2 = a x1 a x2 
+(a x1 )x2 = a x1 x2 
+p qqa = &#8730;
+ap (where p and q are integers) 
+rTo de&#64257;ne afor real numbers r, &#64257;ll in by continuity. 
+d Today&#8217;s main task: &#64257;nd a x 
+dx 
+We can write 
+d ax+&#916; x x 
+x a = lim &#8722; a
+dx &#916;x0 &#916;x &#8594;
+We can factor out the a x:
+x+&#916; x x &#916;x &#916;x
+lim a&#8722; a= lim a x a&#8722; 1= a x lim a&#8722; 1 
+&#916;x0 &#916;x &#916;x0 &#916;x &#916;x0 &#916;x &#8594; &#8594; &#8594;
+Let&#8217;s call 
+M(a) &#8801; lim a&#916;x &#8722; 1 
+&#916;x0 &#916;x &#8594;
+We don&#8217;t yet know what M(a) is, but we can say 
+d a x = M(a)a x 
+dx 
+Here are two ways to describ e M(a): 
+d1. Analytically M(a)= a x at x = 0. dx 
+Indeed, M(a) = lim a0+&#916;x &#8722; a0 
+= da x 
+&#916;x0 &#916;x dx &#8594;x=0 
+1 </text>
+        </slide>
+        <slide>
+          <slideno>2</slideno>
+          <text>Lecture 6 18.01 Fall 2006 
+M(a) 
+(slope of ax at x=0)ax
+Figure 1: Geometric de&#64257;nition of M(a) 
+x2. Geometrically , M(a) is the slope of the graph y = aat x = 0. 
+The trick to &#64257;guring out what M(a) is is to beg the question and de&#64257;ne e as the number such 
+that M(e) = 1. Now can we be sure there is such a number e? First notice that as the base a 
+xincreases, the graph agets steeper. Next, we will estimate the slope M(a) for a = 2 and a =4 
+geometrically . Look at the graph of 2x in Fig. 2. The secant line from (0, 1) to (1, 2) of the graph 
+y =2x has slope 1. Therefore, the slope of y =2x at x = 0 is less: M(2) &lt; 1 (see Fig. 2). 
+11Next, look at the graph of 4x in Fig. 3. The secant line from (&#8722; 2 , 2) to (1, 0) on the graph of 
+y =4x has slope 1. Therefore, the slope of y =4x at x = 0 is greate r than M(4) &gt; 1 (see Fig. 3). 
+Somewhere in between 2 and 4 there is a base whose slope at x =0 is 1. 
+2 </text>
+        </slide>
+        <slide>
+          <slideno>7</slideno>
+          <text>Lecture 6 18.01 Fall 2006 
+1Take the limit: h = k &#8594; 0 as k &#8594;&#8734;, so that 
+ln(1 + h) &#8722; ln(1) d &#65533;&#65533; 
+lim = ln(x)&#65533; =1 
+h0 h dx x=1 &#8594;
+In all, &#65533;&#65533;k1limln 1+ =1. 
+k&#8594;&#8734; k 
+&#65533;&#65533;k1We have just found that ak =ln[ 1+ k ] &#8594; 1 as k &#8594;&#8734;. 
+&#65533;&#65533;k1If bk = 1+ k , then bk = e ak &#8594; e 1 as k &#8594;&#8734;. In other words, we have evaluated the limit we 
+wanted: 
+&#65533;&#65533;k1lim 1+ = e 
+k&#8594;&#8734; k 
+Remark 1. We never &#64257;gured out what the exact numerical value of e was. Now we can use this 
+limit formula; k = 10 gives a prett y good appro ximation to the actual value of e. 
+Remark 2. Logs are used in all sciences and even in &#64257;nance. Think about the stock mark et. If I 
+say the mark et fell 50 points today, you&#8217;d need to know whether the mark et average before the drop 
+was 300 points or 10, 000. In other words, you care about the percen t change, or the ratio of the 
+change to the starting value: 
+f&#65533;(t) d = ln(f(t))f(t) dt 
+7 </text>
+        </slide>
+        <slide>
+          <slideno>5</slideno>
+          <text>Lecture 6 18.01 Fall 2006 
+d Finally , what about (a x)? dx
+There are two metho ds we can use: 
+Metho d 1: Write base e and use chain rule. 
+Rewrite a as eln(a). Then, &#65533;&#65533;x 
+a x = eln(a) = e x ln(a) 
+That looks like it migh t be tricky to di&#64256;eren tiate. Let&#8217;s work up to it: 
+d e x = e x 
+dx 
+and by the chain rule, 
+d e 3x = 3e 3x 
+dx 
+Remem ber, ln(a) is just a constan t number&#8211; not a variable! Therefore, 
+de(ln a)x = (ln a)e(ln a)x 
+dx 
+or 
+d (a x) = ln(a) a x 
+dx &#183; 
+Recall that d (a x)= M (a) a x 
+dx &#183;
+So now we know the value of M(a): M(a) = ln(a).
+Even if we insist on starting with another base, like 10, the natural logarithm appears:
+d 10x = (ln 10)10x 
+dx 
+The base e may seem strange at &#64257;rst. But, it comes up everywhere. After a while, you&#8217;ll learn to 
+appreciate just how natural it is. 
+Metho d 2: Logarithmic Di&#64256;eren tiation. 
+d dThe idea is to &#64257;nd f(x) by &#64257;ndin g ln(f(x)) instead. Some times this approac h is easier. Let dx dx 
+u = f(x). &#65533;&#65533; d d ln(u) du 1 duln(u)= = dx dudx udx 
+duSince u = f and = f&#65533;, we can also write dx 
+f&#65533;
+(ln f)&#65533; = or f&#65533; = f(ln f)&#65533; 
+f 
+5 </text>
+        </slide>
+        <slide>
+          <slideno>6</slideno>
+          <text>&#65533; &#65533; 
+&#65533; &#65533; Lecture 6 18.01 Fall 2006 
+xApply this to f(x)= a. 
+d d dln f(x)= x ln a = ln(f) = ln(a x)= (x ln(a)) = ln(a). &#8658; dx dx dx 
+(Remem ber, ln(a) is a constan t, not a variable.) Hence, 
+d f&#65533; d x x(ln f) = ln(a) = =ln(a) = f&#65533; = ln(a)f = a = (ln a)a dx &#8658; f &#8658; &#8658; dx 
+dExample 1. (x x) =? dx 
+With variable (&#8220;mo ving&#8221;) exponents, you should use either base e or logarithmic di&#64256;eren tiation . 
+In this example, we will use the latter. 
+f = x x 
+ln f = x ln x 
+1(ln f)&#65533; = 1 (ln x)+ x = ln(x)+1 &#183; x 
+f&#65533;
+(ln f)&#65533; = f 
+Therefore, 
+f&#65533; = f(ln f)&#65533; = x x (ln(x) + 1) 
+If you wanted to solve this using the base e approac h, you would say f = ex ln x and di&#64256;erentiate 
+it using the chain rule. It gets you the same answ er, but requires a little more writing. 
+&#65533;&#65533;k1Example 2. Use logs to evaluate lim 1 + . 
+k&#8594;&#8734; k 
+Because the exponent k changes, it is better to &#64257;nd the limit of the logarithm. 
+&#65533;&#65533; &#65533;k &#65533; 
+1lim ln 1+ 
+k&#8594;&#8734; k 
+We know that &#65533;&#65533; &#65533;k &#65533; &#65533;&#65533;
+1 1
+ln 1+ = k ln 1+ k k 
+1This expression has two comp eting parts, which balance: k &#8594;&#8734; while ln 1+ k &#8594; 0. 
+&#65533;&#65533; 1 &#65533;k &#65533;&#65533; 1 &#65533; ln &#65533; 
+1+ k 1 &#65533; 
+ln(1 + h) 1ln 1+ = k ln1+ = 1 = (with h =)k k h kk 
+Next, because ln 1 = 0 &#65533;&#65533; &#65533;k &#65533;
+ln 1+ 1 =ln(1+ h) &#8722; ln(1)
+k h
+6 </text>
+        </slide>
+      </slides>
+    </lecture>
+    <lecture>
+      <lecture_title>Partial fractions</lecture_title>
+      <lecture_pdf_url>https://ocw.mit.edu/courses/18-01-single-variable-calculus-fall-2006/resources/lec29/</lecture_pdf_url>
+      <lectureno>29</lectureno>
+      <slides>
+        <slide>
+          <slideno>2</slideno>
+          <text>Lecture 29 18.01 Fall 2006 
+The fastest way is to do this in your head or physically cover up the struck-through terms. For 
+instance, toevaluate B: 
+4x &#8722; 1 A&#65533; B 
+(x &#8722; 1)&#65533;&#65533;&#65533;&#65533;x &#8722; 1(x + 2) (x +2) = 
+&#65533;&#65533;+ 
+&#65533;&#65533;&#65533;&#65533;
+Implicitly ,wearemultiplying by (x + 2) andsetting x = &#8722;2. This gives us 
+4(&#8722;2) &#8722; 1= B = B =3 &#8722;2 &#8722; 1 &#8658; 
+What we&#8217;ve described so far works when Q(x) factors completely into distinct factors and the 
+degreeof P islessthanthedegreeof Q. 
+Ifthefactorsof Q repeat, we use a slightly di&#64256;erent approach. For example:
+x2 +2 A B C
+= + +(x &#8722; 1)2(x + 2) x &#8722; 1(x &#8722; 1)2 x +2 
+Usethecover-upmethodonthehighestdegreetermin (x &#8722; 1). 
+x2 +1 12 +2 = B +[stu&#64256;](x &#8722; 1)2 = = B = B =1 x +2 &#8658; 1+2 &#8658; 
+Implicitly ,wemultiplied by (x &#8722; 1)2,thentookthelimitas x &#8594; 1. 
+C can also be evaluated by the cover-up method. Set x = &#8722;2 toget 
+x2 +2 2 
+= C +[stu&#64256;](x +2) = (&#8722;2)2 +2 = C = C =2 
+(x &#8722; 1) &#8658; (&#8722;2 &#8722; 1)2 &#8658; 3 
+Thisyields 
+x2 +2 A 1 2/3 = + +(x &#8722; 1)2(x + 2) x &#8722; 1(x &#8722; 1)2 x +2 
+Cover-upcan&#8217;tbeusedtoevaluateA.Instead, pluginaneasyvalueofx: x =0. 
+2 A 1 1 1 
+(&#8722;1)2(2) = &#8722;1+1+ 3 = &#8658; 1=1+ 3 &#8722; A = &#8658; A =3 
+Nowwehaveacomplete answer: 
+x2 +2 1 1 2 = + +(x &#8722; 1)2(x + 2) 3(x &#8722; 1) (x &#8722; 1)2 3(x + 2) 
+Not all polynomials factor completely (without resorting to using complex numbers). For exam&#173;
+ple: 
+1 A1 B1x + C1 = +(x2 + 1)(x &#8722; 1) x &#8722; 1 x2 +1 
+We&#64257;nd A1,asusual,bythecover-upmethod. 
+1 1 = A1 = A1 = 12 +1 &#8658; 2 
+2 </text>
+        </slide>
+        <slide>
+          <slideno>3</slideno>
+          <text>&#65533; &#65533; &#65533; &#65533; 
+&#65533; 
+&#65533; Lecture 29 18.01 Fall 2006 
+Now,wehave 
+1 1/2 B1x + C1 = +(x2 + 1)(x &#8722; 1) x &#8722; 1 x2 +1 
+Plugin x =0. 
+1 1 C1 1 
+1(&#8722;1) = &#8722; 2+1 = &#8658; C1 = &#8722; 2 
+Now,pluginanyvalueotherthan x =0, 1. For example, let&#8217;s use x = &#8722;1. 
+1 =1/2+ B1(&#8722;1) &#8722; 1/2= 0= &#8722; B1 &#8722; 1/2= B1 = &#8722; 1 
+2(&#8722;2) &#8722;2 2 &#8658; 2 &#8658; 2 
+Alternativ ely,youcanmultiplyouttoclearthedenominators (notdonehere). 
+Let&#8217;strytointegratethisfunction, now. 
+dx 1 dx 1 xdx 1 dx 
+(x2 + 1)(x &#8722; 1) = 2 x &#8722; 1 &#8722; 2 x2 +1 &#8722; 2 x2 +1 
+1 1 1 = 2ln |x &#8722; 1|&#8722; 4 ln | x 2 +1 |&#8722; 2 tan&#8722;1 x + c 
+Whatifwe&#8217;refacedwithsomething thatlookslikethis? 
+dx 
+(x &#8722; 1)10 
+Thisisactually quitesimpletointegrate: 
+dx 1 
+(x &#8722; 1)10 = &#8722; 9(x &#8722; 1)&#8722;9 + c 
+Whataboutthis? &#65533; dx 
+(x2 + 1)10 
+Here,wewouldusetrigsubstitution: 
+x = tan u and dx = sec2 udu 
+andthetrigidentity 
+tan2 u +1 = sec2 u 
+toget &#65533; &#65533; sec2 udu = cos18 udu (sec2 u)10 
+Fromhere,wecanevaluatethisintegralusingthemethodsweintroducedtwolecturesago. 
+3 </text>
+        </slide>
+        <slide>
+          <slideno>1</slideno>
+          <text>&#65533; &#65533; &#65533; Lecture 29 18.01 Fall 2006 
+Lecture 29: Partial Fractio ns 
+We continue the discussion we started last lecture about integrating rational functions. We 
+de&#64257;nedarationalfunction astheratiooftwopolynomials: 
+P (x)
+Q(x)
+Welookedattheexample 
+1 3 
+x &#8722; 1+ x +2 dx = ln |x &#8722; 1| + 3ln |x +2| + c 
+Thatsameproblem canbedisguised: 
+1+3 =(x + 2) + 3(x &#8722; 1)= 4x &#8722; 1
+x &#8722; 1 x +2 (x &#8722; 1)(x + 2) x2 + x &#8722; 2
+whichleavesustointegratethis: &#65533; 4x &#8722; 1 dx = ??? x2 + x &#8722; 2 
+P (x)Goal: we want to &#64257;gure out a systematic way to split into simpler pieces. Q(x)
+First,wefactorthedenominator Q(x).
+4x &#8722; 1= 4x &#8722; 1= A + B
+x2 + x &#8722; 2 (x &#8722; 1)(x + 2) x &#8722; 1 x +2
+There&#8217;saslowwayto&#64257;nd A and B. You can clear the denominator by multiplying through by 
+(x &#8722; 1)(x + 2): 
+(4x &#8722; 1) = A(x + 2) + B(x &#8722; 1) 
+Fromthis,you&#64257;nd 
+4= A + B and &#8722; 1=2A &#8722; B 
+Youcanthensolvethesesimultaneous linearequations for A and B. This approach can take a very 
+longtimeifyou&#8217;reworkingwith3,4,ormorevariables. 
+There&#8217;s a faster way, which we call the &#8220;cover-up method&#8221;. Multiply both sides by (x &#8722; 1): 
+4x &#8722; 1 B 
+x +2 = A + x + 2 (x &#8722; 1) 
+Set x =1 tomakethe B termdropout: 
+4 &#8722; 1= A1+2 
+A =1 
+1 </text>
+        </slide>
+        <slide>
+          <slideno>0</slideno>
+          <text>MIT Open CourseWare 
+http://oc w.mit.edu 
+18.01  Single Variable Calculus 
+Fall 2006 
+For info rmati on abo ut citin g these mate rials or o ur Terms of Use, visit: http://ocw.mit.edu/term s. </text>
+        </slide>
+      </slides>
+    </lecture>
+    <lecture>
+      <lecture_title>Parametric equations, arclength, surface area</lecture_title>
+      <lecture_pdf_url>https://ocw.mit.edu/courses/18-01-single-variable-calculus-fall-2006/resources/lec31/</lecture_pdf_url>
+      <lectureno>31</lectureno>
+      <slides>
+        <slide>
+          <slideno>2</slideno>
+          <text>Lecture 31 18.01 Fall 2006 
+Surface Area (surfaces of revolution)
+yds
+a by
+x
+Figure2: Calculating surfacearea 
+ds (the in&#64257;nitesimal curve length in Figure 2) is revolved a distance 2&#960;y. The surface area of the 
+thinstripofwidth ds is 2&#960;y ds. 
+Example 2. RevolveExample 1(x = t2,y = t3 , 0 &#8804; t &#8804; 1) around the x-axis. Refer to Figure 3. 
+y
+x
+Figure3: Curvedsurfaceofatrumpet. 
+2 </text>
+        </slide>
+        <slide>
+          <slideno>0</slideno>
+          <text>MIT Open CourseWare 
+http://oc w.mit.edu 
+18.01  Single Variable Calculus 
+Fall 2006 
+For info rmati on abo ut citin g these mate rials or o ur Terms of Use, visit: http://ocw.mit.edu/term s. </text>
+        </slide>
+        <slide>
+          <slideno>1</slideno>
+          <text>Lecture 31 18.01 Fall 2006 
+Lecture 31: Parametric Equations, Arclength,
+Surface Area 
+Arclength, continued 
+Example 1. Consider thisparametric equation: 
+x = t2 y = t3 for 0 &#8804; t &#8804; 1 
+x 3 =(t2)3 = t6; y 2 =(t3)2 = t6 = &#8658; x 3 = y 2 = &#8658; y = x 2/3 0 &#8804; x &#8804; 1 
+dsdy
+dxds
+dy
+dx
+Figure1: In&#64257;nitesimal Arclength. 
+(ds)2 =(dx)2 +(dy)2 
+(ds)2 = (2tdt)2 +(3t2 dt)2 = (4t2 +9t4)(dt)2 
+&#65533;&#65533;&#65533;&#65533; &#65533;&#65533;&#65533;&#65533; 
+(dx)2 (dy)2 
+&#65533; t=1 &#65533; 1 &#65533;&#65533; 1 &#65533; 
+Length = ds = 4t2 +9t4dt = t 4+9t2dt 
+t=0 0 0 
+1 
+= (4+9t2)3/2 
+&#65533;&#65533;&#65533; 
+= 1 (133/2 &#8722; 43/2)27 0 27 
+Evenifyoucan&#8217;tevaluatetheintegralanalytically ,youcanalwaysusenumerical methods. 
+1 </text>
+        </slide>
+        <slide>
+          <slideno>4</slideno>
+          <text>Lecture 31 18.01 Fall 2006 
+Forthetophalfofthesphere, &#65533; 
+y = 1 &#8722; x2 
+Wewantto&#64257;ndtheareaofthesphericalslicebetween x = a and x = b. A spherical slice has area 
+&#65533; x=b 
+A = 2&#960;y ds 
+x=a 
+Fromlasttime, 
+dx ds = &#8730;
+1 &#8722; x2 
+Plugging thatinyieldsaremarkablysimpleformulafor A: 
+&#65533; b &#65533; dx &#65533; b 
+A = 
+a 2&#960; 1 &#8722; x2 &#8730;
+1 &#8722; x2 = 
+a 2&#960; dx 
+=2&#960;(b &#8722; a) 
+Special Cases 
+Forawholesphere, a = &#8722;1,and b =1. 
+2&#960;(1 &#8722; (&#8722;1)) = 4&#960; 
+isthesurfaceareaofaunitsphere. 
+Forahalfsphere, a =0 and b =1. 
+2&#960;(1 &#8722; 0) = 2&#960; 
+4 </text>
+        </slide>
+        <slide>
+          <slideno>3</slideno>
+          <text>&#65533; Lecture 31 18.01 Fall 2006 
+&#65533;&#65533; 1
+3 &#65533; &#65533; 1 &#65533;2&#960;tt 4+9t2 dt 4Area = 2&#960;y ds = 0 &#65533;&#65533;&#65533;&#65533;&#65533; &#65533;&#65533; &#65533; =2&#960;t4+9t2 dt 
+y ds 0 
+Now,wediscussthemethodusedtoevaluate 
+t4(4 + 9t2)1/2dt 
+We&#8217;regoingtoignorethefactorof 2&#960;. You can reinsert it once you&#8217;re done evaluating the integral. 
+Weusethetrigonometric substitution 
+2 2 t = tan u; dt = sec2 udu; tan2 u +1 = sec2 u3 3 
+Puttingallofthistogether givesus: 
+&#65533; &#65533;&#65533;&#65533;4 &#65533;&#65533; &#65533;&#65533; 1/2 &#65533;&#65533;2 4 2 t4(4 + 9t2)1/2 dt = tan u 4+9 tan2 u sec2 udu 3 9 3 
+&#65533;&#65533;5 &#65533;2 = tan4 u(2sec u)(sec2 udu)3 
+Thisisa tan &#8722; sec integral. It&#8217;s doable, but it will take a long time for you to work the whole thing 
+out. We&#8217;re going to stop evaluating it here. 
+Example 3 Let&#8217;s use what we&#8217;ve learned to &#64257;nd the surface area of the unit sphere (see Figure 4). 
+ab
+rotate the curve 
+  by 2&#960; radians 
+xy
+..
+Figure4: Sliceofspherical surface(orangepeel,only,nottheinsides). 
+3 </text>
+        </slide>
+      </slides>
+    </lecture>
+    <lecture>
+      <lecture_title>Exam 1 review</lecture_title>
+      <lecture_pdf_url>https://ocw.mit.edu/courses/18-01-single-variable-calculus-fall-2006/resources/lec7/</lecture_pdf_url>
+      <lectureno>7</lectureno>
+      <slides>
+        <slide>
+          <slideno>2</slideno>
+          <text>&#65533; &#65533;
+&#65533; &#65533;Lecture 7 18.01 Fall 2006 
+Exam 1 Review 
+General Di&#64256;eren tiation Formulas 
+(u + v)&#65533; = u&#65533; + v&#65533; 
+(cu)&#65533; = cu&#65533; 
+(uv)&#65533; = u&#65533;v + uv&#65533; (product rule) 
+u &#65533; 
+= u&#65533;v &#8722; uv&#65533; 
+(quotien t rule) v v2 
+d f(u(x)) = f&#65533;(u(x)) u&#65533;(x) (chain rule) dx &#183; 
+You can remem ber the quotien t rule by rewriting 
+u &#65533; 
+=(uv&#8722;1)&#65533; 
+v 
+and applying the product rule and chain rule. 
+Implicit di&#64256;eren tiation 
+Let&#8217;s say you want to &#64257;nd y&#65533; from an equation like 
+y 3 +3xy 2 =8 
+dInstead of solving for y and then taking its deriv ative, just take of the whole thing. In this dx example, 
+3y 2 y&#65533; +6xyy&#65533; +3y 2 =0 
+(3y 2 +6xy)y&#65533; = &#8722;3y 2 
+y&#65533; = &#8722;3y2 
+3y2 +6xy 
+Note that this formula for y&#65533; involves both x and y. Implicit di&#64256;eren tiation can be very useful for 
+taking the deriv atives of inverse functions. 
+For instance,
+y = sin&#8722;1 x sin y = x
+&#8658; 
+Implicit di&#64256;eren tiation yields 
+(cos y)y&#65533; =1 
+and 1 1 y&#65533; = = cos y &#8730;
+1 &#8722; x2 
+2 </text>
+        </slide>
+        <slide>
+          <slideno>0</slideno>
+          <text>MIT Open CourseWare 
+http://oc w.mit.edu 
+18.01  Single Variable Calculus 
+Fall 2006 
+For info rmati on abo ut citin g these mate rials or o ur Terms of Use, visit: http://ocw.mit.edu/term s. </text>
+        </slide>
+        <slide>
+          <slideno>4</slideno>
+          <text>&#65533; &#65533; &#65533;&#65533; Lecture 7 18.01 Fall 2006 
+Finally , in the &#64257;rst lecture I promised you that you&#8217;d learn to di&#64256;ere ntiate anything&#8212; even 
+something as complicated as 
+dx tan&#8722;1 x e dx 
+So let&#8217;s do it! 
+d d e uv = e uv (uv)= e uv (u&#65533;v + uv&#65533;)dx dx 
+Substituting, 
+de x tan&#8722;1 x = e x tan&#8722;1 x tan&#8722;1 x + x 1 
+dx 1+ x2 
+4 </text>
+        </slide>
+        <slide>
+          <slideno>1</slideno>
+          <text>&#65533; &#65533; Lecture 7 18.01 Fall 2006 
+Lecture 7: Continuation and Exam Review 
+Hyperbolic Sine and Cosine 
+Hyperbolic sine (pronounced &#8220;sinsh&#8221;): 
+sinh(x) = ex &#8722; e&#8722;x 
+2 
+Hyperbolic cosine (pronounced &#8220;cosh&#8221;): 
+ex + e&#8722;x 
+cosh(x) = 2 
+x xd sinh(x) = de&#8722; e&#8722;x 
+= e&#8722; (&#8722;e&#8722;x) = cosh(x )dx dx 2 2 
+Likewise, 
+d cosh(x) = sinh(x)dx 
+d(Note that this is di&#64256;eren t from cos(x ).)dx 
+Importan t identity:
+cosh2(x) &#8722; sinh2(x)=1
+Proof: 
+&#65533; &#65533;2 &#65533; x &#65533;2 
+cosh2(x) &#8722; sinh2(x)= ex +
+2 e&#8722;x 
+&#8722; e&#8722;
+2 e&#8722;x 
+1 &#65533; &#65533; 1 &#65533; &#65533; 1cosh2(x) &#8722; sinh2(x)= 4 e 2x +2e x e&#8722;x + e&#8722;2x &#8722; 4 e 2x &#8722; 2+ e&#8722;2x = 4(2+2)=1 
+Why are these functions called &#8220;hyperbolic&#8221;? 
+Let u = cosh(x ) and v = sinh(x ), then 
+u 2 &#8722; v 2 =1 
+which is the equation of a hyperbola. 
+Regular trig functions are &#8220;circular&#8221; functions. If u = cos(x) and v = sin(x), then 
+u 2 + v 2 =1 
+which is the equation of a circle. 
+1 </text>
+        </slide>
+        <slide>
+          <slideno>3</slideno>
+          <text>&#65533; &#65533; Lecture 7	 18.01 Fall 2006 
+Speci&#64257;c di&#64256;eren tiation formulas 
+You will be responsible for knowing formulas for the deriv atives and how to deduce these formulas 
+n	 xfrom previous information: x, sin&#8722;1 x, tan&#8722;1 x, sin x, cos x, tan x, sec x,e , ln x . 
+dFor example, let&#8217;s calculate sec x: dx 
+d d 1 &#8722;(&#8722; sin x)sec x = = =tan x sec x dx	 dx cos x cos2 x 
+d	 dYou may be asked to &#64257;nd sin x or cos x, using the following information: dx dx 
+sin(h)lim =1 
+h0 h&#8594;
+lim cos(h) &#8722; 1 =0 
+h0 h&#8594;
+Remem ber the de&#64257;nition of the deriv ative: 
+df(x) = lim f(x +&#916;x) &#8722; f(x) 
+dx &#916;x0 &#916;x&#8594;
+Tying up a loose end 
+dHow to &#64257;nd x r, where r is a real (but not necessarily rational) number? All we have done so far dx is the case of rational numbers, using implicit di&#64256;eren tiation. We can do this two ways: 
+1st metho d: base e 
+x = e ln x 
+x r = &#65533; 
+e ln x &#65533;r = e r ln x 
+d 
+dx x r = d 
+dx e r ln x = e r ln x d 
+dx (r ln x) = e r ln x r 
+x 
+d 
+dx x r = x r &#65533; r 
+x &#65533; 
+= rx r&#8722;1 
+2nd metho d: logari thmic di&#64256;eren tiation 
+f&#65533;
+(ln f)&#65533; = f 
+f = x r 
+ln f =	r ln x 
+r(ln f)&#65533; = x 
+f&#65533; = f(ln f)&#65533; = x r r = rx r&#8722;1 
+x 
+3 </text>
+        </slide>
+      </slides>
+    </lecture>
+    <lecture>
+      <lecture_title>Applications to logarithms and geometry</lecture_title>
+      <lecture_pdf_url>https://ocw.mit.edu/courses/18-01-single-variable-calculus-fall-2006/resources/lec21/</lecture_pdf_url>
+      <lectureno>21</lectureno>
+      <slides>
+        <slide>
+          <slideno>1</slideno>
+          <text>Lecture 21 18.01 Fall 2006 
+Lecture 21: Applications to Logarithms and
+Geometry
+Application of FTC 2 to Logarithms 
+The integral de&#64257;nition of functions like C(x), S(x) of Fresnel makes them nearly as easy to use as 
+elemen tary functions. It is possible to draw their graphs and tabulate values. You are asked to 
+carry out an example or two of this on your problem set. To get used to using de&#64257;nite integrals 
+and FTC2, we will discuss in detail the simplest integral that gives rise to a relativ ely new function, 
+namely the logarithm. 
+Recall that &#65533; n+1xx ndx = + c n +1 
+except when n = &#8722;1. It follows that the antideriv ative of 1/x is not a power, but something else. 
+So let us de&#64257;ne a function L(x) by &#65533; x dt L(x)= t1 
+(This function turns out to be the logarithm. But recall that our approac h to the logarithm was fairly 
+involved. We &#64257;rst analyzed ax, and then de&#64257;ned the number e, and &#64257;nally de&#64257;ned the logarith m as 
+xthe inverse function to e. The direct approac h using this integral formula will be easier.) 
+All the basic properties of L(x) follow directly from its de&#64257;nition. Note that L(x) is de&#64257;ned for 
+0 &lt;x&lt; &#8734;. (We will not extend the de&#64257;nition past x = 0 because 1/t is in&#64257;nite at t = 0.) Next, 
+the fundamen tal theorem of calculus (FTC2) implies 
+1 L&#65533;(x)= x 
+Also, because we have started the integration with lower limit 1, we see that 
+&#65533; 1 dt L(1)= =0 t1 
+Thus L is increasing and crosses the x-axis at x = 1: L(x) &lt; 0 for 0 &lt;x&lt; 1 and L(x) &gt; 0 for 
+x&gt; 1. Di&#64256;erentiating a second time, 
+L&#65533;&#65533;(x)= &#8722;1/x2 
+It follows that L is conca ve down. 
+The key property of L(x) (showing that it is, indeed, a logarithm) is that it converts multiplication 
+into addition: 
+Claim 1. L(ab)= L(a)+ L(b) 
+Proof: By de&#64257;nition of L(ab) and L(a), 
+&#65533; ab dt &#65533; a dt &#65533; ab dt &#65533; ab dt L(ab)= = + = L(a)+ ttt t1 1 a a 
+1 </text>
+        </slide>
+        <slide>
+          <slideno>0</slideno>
+          <text>MIT Open CourseWare 
+http://oc w.mit.edu 
+18.01  Single Variable Calculus 
+Fall 2006 
+For info rmati on abo ut citin g these mate rials or o ur Terms of Use, visit: http://ocw.mit.edu/term s. </text>
+        </slide>
+        <slide>
+          <slideno>3</slideno>
+          <text>Lecture 21 18.01 Fall 2006 
+Application of FTCs to Geometry (Volumes and Areas) 
+1. Areas between two curves 
+yf(x)
+g(x)
+dx
+b a
+Figure 2: Finding the area between two curves. 
+Refer to Figure 2. Find the crossing points a and b. The area, A, between the curves is 
+&#65533; b 
+A = (f(x) &#8722; g(x)) dx 
+a 
+Example 1. Find the area in the region between x = y2 and y = x &#8722; 2. 
+x = y2
+y = x &#8722; 2
+(1,&#8722;1)(4, 2)
+(0, 0)
+(0, -2)
+2 Figure 3: The intersection of x = yand y = x &#8722; 2. 
+3 </text>
+        </slide>
+        <slide>
+          <slideno>2</slideno>
+          <text>Lecture 21 18.01 Fall 2006 
+&#65533; ab dtTo handle , make the substitution t = au. Then ta 
+dt = adu; a &lt; t &lt; ab = 1 &lt;u&lt;b &#8658; 
+Therefore, &#65533; ab dt &#65533; u=b adu &#65533; b du = = = L(b) 
+a t u=1 au 1 u 
+This con&#64257;rms L(ab)= L(a)+ L(b). 
+Two more properties, the end values, complete the general pictu re of the graph. 
+Claim 2. L(x) &#8594;&#8734; as x &#8594;&#8734;. 
+Proof: It su&#64259;ces to show that L(2n) &#8594;&#8734; as n &#8594;&#8734;, because the fact that L is increasing &#64257;lls in 
+all the values in between the powers of 2. 
+L(2n)= L(2 2n&#8722;1)= L(2) + L(2n&#8722;1) &#183; 
+= L(2) + L(2) + L(2n&#8722;2)= L(2) + L(2)+ + L(2) (n times)&#183;&#183;&#183; 
+Consequen tly, L(2n)= nL(2) &#8594;&#8734; as n &#8594;&#8734;. (In more familiar notation, ln 2n = n ln2.) 
+Claim 3. L(x) &#8594; &#8722;&#8734; as x 0+ . 
+&#65533;&#65533; &#8594; 
+1Proof: 0 = L(1) = Lx &#183; x = L(x)+ L(1/x )= &#8658; L(x)= &#8722;L(1/x). As x &#8594; 0+,1/x &#8594; +&#8734;, so 
+Claim 2 implies L(1/x) &#8594;&#8734;. Hence 
+L(x)= &#8722;L(1/x) &#8594; &#8722;&#8734;, as x &#8594; 0+ 
+Thus L(x), de&#64257;ned on 0 &lt;x&lt; &#8734; increases from &#8722;&#8734; to &#8734;, crossing the x-axis at x = 1. It is 
+conca ve down and its graph can be drawn as in Fig. 1. 
+This provides an alternativ e to our previous approac h to the exponential and log functions. 
+Starting from L(x), we can de&#64257;ne the log function by ln x = L(x), de&#64257;ne e as the number such that 
+xL(e) = 1, de&#64257;ne eas the inverse function of L(x), and de&#64257;ne a x = e xL(a). 
+to +&#8734;
+to &#8722;&#8734;.
+(1,0)
+Figure 1: Graph of y = ln(x). 
+2 </text>
+        </slide>
+        <slide>
+          <slideno>5</slideno>
+          <text>Lecture 21 18.01 Fall 2006 
+x = y2
+(1,&#8722;1)(4, 2)
+y = x &#8722; 2 ; (x = y +2)
+(0, 0)
+(0, -2)dy
+2 Figure 5: The intersection of x = yand y = x &#8722; 2. 
+2. Volumes of solids of revolution 
+Rotate f(x) about the x-axis, coming out of the page, to get: 
+f(x)
+y
+rotate an x-y plane section
+        by 2&#960; radians
+x
+zdx
+Figure 6: A solid of revolution: the purple slice is rotated by &#960;/4 and &#960;/2. 
+We want to &#64257;gure out the volume of a &#8220;slice&#8221; of that solid. We can appro ximate each slice as a 
+disk with width dx, radius y, and a cross-sectional area of &#960;y2 . The volume of one slice is then: 
+dV = &#960;y2dx (for a solid of revolution around the x-axis) 
+Integrate with respect to x to &#64257;nd the total volume of the solid of revolution. 
+5 </text>
+        </slide>
+        <slide>
+          <slideno>4</slideno>
+          <text>Lecture 21 18.01 Fall 2006 
+First, graph these functions and &#64257;nd the crossing points (see Figure 3). 
+y +2 = x = y 2 
+y 2 &#8722; y &#8722; 2=0 
+(y &#8722; 2)(y +1) = 0 
+Crossing points at y = &#8722;1, 2. Plug these back in to &#64257;nd the associated x values, x = 1 and x = 4. 
+Thus the curves meet at (1, &#8722;1) and (4, 2) (see Figure 3). 
+There are two ways of &#64257;ndin g the area between these two curves, a hard way and an easy way. 
+Hard Way: Vertical Slices 
+If we slice the region between the two curves vertically , we need to consider two di&#64256;eren t regions. 
+x = y2
+y = x &#8722; 2
+(1,&#8722;1)(4, 2)
+(0, 0)
+(0, -2)dx
+2 Figure 4: The intersection of x = yand y = x &#8722; 2. 
+Where x&gt; 1, the region&#8217;s lower bound is the straigh t line. For x&lt; 1, however, the region&#8217;s lower 
+bound is the lower half of the sidew ays parab ola. We &#64257;nd the area, A, between the two curves by 
+integrating the di&#64256;erence between the top curve and the bottom curve in each region: 
+A = &#65533; 1 &#65533;&#8730;x &#8722; (&#8722;&#8730;x) &#65533; 
+dx + &#65533; 4 &#65533;&#8730;x &#8722; (x &#8722; 2) &#65533; 
+dx = &#65533; 
+(ytop &#8722; ybottom ) dx 
+0 1 
+Easy Way: Horizon tal Slices 
+Here, instead of subtracting the bottom curve from the top curve, we subtract the right curve from 
+the left one. 
+&#65533; &#65533; &#65533; &#65533;&#65533; y=2 &#65533;&#65533; y2 3 &#65533;2 4 81 1 92A =(xleft&#8722;xright) dy = 
+y=&#8722;1 (y + 2) &#8722; y dx = 2+2y + &#8722;
+3 y&#65533; 
+&#8722;1 = 2+4&#8722; 3 &#8722;(2 &#8722;2+3)= 2 
+4 </text>
+        </slide>
+        <slide>
+          <slideno>6</slideno>
+          <text>&#65533; 
+&#65533; &#65533; &#65533; &#65533;&#65533;&#65533;&#65533; &#65533; &#65533; 
+&#65533; &#65533; &#65533; &#65533;&#65533;&#65533;&#65533; 
+&#65533; &#65533;&#65533;&#65533;&#65533; &#65533; &#65533; Lecture 21 18.01 Fall 2006 
+Example 2. Find the volume of a ball of radius a. 
+a
+dxxy
+a &#8722;a
+Figure 7: A ball of radius a 
+The equation for the upper half of the circle is 
+y = a2 &#8722; x2 . 
+If we spin the upper part of the curve about the x-axis, we get a ball of radius a. Notice that x 
+ranges from &#8722;a to +a. Putting all this together, we &#64257;nd 
+&#960;x3 2 2 4x=a a 
+&#960;y2dx = &#960;(a 2 &#8722; x 2)dx = &#960;a2 &#960;a3 &#960;a3 = &#960;a3V = = x &#8722; &#8722;&#8722;3 3 3 3 &#8722;ax=&#8722;a 
+One can often exploit symmetry to further simplify these types of problems. In the problem 
+above, for example, notice that the curve is symmetric about the y-axis. Therefore, 
+3 a a a 
+V = &#960;(a 2 &#8722; x 2)dx =2 &#960;(a 2 &#8722; x 2)dx =2 &#960;a2 x &#8722; x
+3 00 &#8722;a 
+(The savings is that zero is an easier lower limit to work with than &#8722;a.) We get the same answ er: 
+3 
+=2 &#960;a3 &#960; &#8722; 3 a 3 = 4a 
+&#960;a2 x&#960;a3V =2 x &#8722; 3 3 0 
+6 </text>
+        </slide>
+      </slides>
+    </lecture>
+    <lecture>
+      <lecture_title>Volumes by disks and shells</lecture_title>
+      <lecture_pdf_url>https://ocw.mit.edu/courses/18-01-single-variable-calculus-fall-2006/resources/lec22/</lecture_pdf_url>
+      <lectureno>22</lectureno>
+      <slides>
+        <slide>
+          <slideno>2</slideno>
+          <text>Lecture 22 18.01 Fall 2006 
+If a = 1 meter, then V = &#960;a 2 gives 2 
+V = &#960;m 3 = &#960; (100 cm)3 = &#960; 106 cm3 &#8776; 1600 liters (a huge cauldron) 2 2 2 
+Warning about units. 
+If a = 100 cm, then 
+V = &#960; (100)2 = &#960; 104 cm3 = &#960; 10 &#8764; 16 liters 2 2 2 
+But 100cm = 1m. Why is this answ er di&#64256;eren t? The resolution of this parado x is hiding in the 
+equation. 
+y = x 2 
+At the top, 100 = x 2 = x = 10 cm. So the second cauldr on looks like Figure 3. By contrast, when &#8658; 
+100 cm20 cm
+Figure 3: The skinn y cauldron. 
+a = 1 m, the top is ten times wider: 1 = x2 or x = 1 m. Our equation, y = x2, is not scale-in varian t. 
+The shape described depends on the units used. 
+Metho d 2: Shells 
+This really should be called the cylinder metho d. 
+xy
+x
+a
+&#8730;a
+2 Figure 4: x = radius of cylinder. Thickness of cylinder = dx. Heigh t of cylinder = a &#8722; y = a &#8722; x. 
+2 </text>
+        </slide>
+        <slide>
+          <slideno>1</slideno>
+          <text>&#65533; Lecture 22 18.01 Fall 2006 
+Lecture 22: Volumes by Disks and Shells 
+Disks and Shells 
+We will illustrate the 2 metho ds of &#64257;nding volume through an example. 
+Example 1. A witch&#8217;s cauldron 
+y
+x
+2 Figure 1: y = xrotated around the y-axis. 
+Metho d 1: Disks 
+y
+xthickness of dy
+a
+Figure 2: Volume by Disks for the Witc h&#8217;s Cauldron problem. 
+The area of the disk in Figure 2 is &#960;x2 . The disk has thickness dy and volume dV = &#960;x2dy. 
+The volume V of the cauldron is 
+a 
+V = &#960;x2 dy (substitute y = x 2) 
+0&#65533; a 2 &#65533;ay&#65533; &#960;a2 
+V = &#960;y dy = &#960; &#65533; = 2 0 20 
+1 </text>
+        </slide>
+        <slide>
+          <slideno>0</slideno>
+          <text>MIT Open CourseWare 
+http://oc w.mit.edu 
+18.01  Single Variable Calculus 
+Fall 2006 
+For info rmati on abo ut citin g these mate rials or o ur Terms of Use, visit: http://ocw.mit.edu/term s. </text>
+        </slide>
+        <slide>
+          <slideno>4</slideno>
+          <text>Lecture 22 18.01 Fall 2006 
+R
+velocity
+Figure 6: Flow is faster in the center of the pipe. It slows&#8211; &#8220;sticks&#8221;&#8211; at the edges (i.e. the inner surface of the pipe.) 
+Example 3. Pipe &#64258;ow 
+Poiseuille was the &#64257;rst person to study &#64258;uid &#64258;ow in pipes (arteries, capillaries). He &#64257;gured out the 
+velocity pro&#64257;le for &#64258;uid &#64258;owing in pipes is: 
+v = c(R2 &#8722; r 2) 
+distance v = speed = time 
+rv
+cR2
+Rv=c(R2-r2)
+Figure 7: The velocity of &#64258;uid &#64258;ow vs. distance from the center of a pipe of radius R. 
+The &#64258;ow through the &#8220;ann ulus&#8221; (a.k.a ring) is (area of ring)(&#64258;o w rate) 
+area of ring = 2&#960;rdr (See Fig. 8: circumference 2&#960;r, thickness dr) 
+v is analogous to the heigh t of the shell. 
+4 </text>
+        </slide>
+        <slide>
+          <slideno>5</slideno>
+          <text>&#65533; Lecture 22 18.01 Fall 2006 
+drr
+Figure 8: Cross-section of the pipe. 
+&#65533; R &#65533; R 
+total &#64258;ow through pipe = v(2&#960;rdr)= c (R2 &#8722; r 2)2&#960;rdr 
+0 0 &#65533; R 
+(R2 &#65533; R2r2 r4 &#65533; 
+&#65533;&#65533;R 
+=2&#960;c r &#8722; r 3)dr =2&#960;c 2 &#8722; 4 &#65533; 
+00 
+&#64258;ow through pipe = &#960;cR4 
+2 
+Notice that the &#64258;ow is proportional to R4. This means there&#8217;s a big advantage to having thick pipes. 
+Example 4. Dart board 
+You aim for the center of the board, but your aim&#8217;s not always perfect. Your number of hits, N, at 
+2radius r is proportional to e&#8722;r . 
+2 N = ce&#8722;r 
+This looks like: 
+1
+2 ry = ce-r2
+Figure 9: This graph shows how likely you are to hit the dart board at some distance r from its center. 
+The number of hits within a given ring with r1 &lt;r&lt;r2 is 
+r2 2 ce&#8722;r (2&#960;rdr) 
+r1 
+We will examine this problem more in the next lecture. 
+5 </text>
+        </slide>
+        <slide>
+          <slideno>3</slideno>
+          <text>&#65533; &#65533; Lecture 22 18.01 Fall 2006 
+The thin shell/cylinder has heigh t a &#8722; x2, circumference 2&#960;x, and thickness dx. 
+dV =(a &#8722; x 2)(2&#960;x)dx 
+&#65533; x=&#8730;a &#65533; &#8730;a 
+V = (a &#8722; x 2)(2&#960;x)dx =2&#960; (ax &#8722; x 3)dx
+x=0 0
+&#65533; 2 4 &#65533;&#65533;&#65533; 2 2 &#65533;&#65533; 2 &#65533; xx&#65533;&#8730;a aa a&#960;a2 
+=2&#960;a 2 &#8722; 4 &#65533; 
+0 =2&#960; 2 &#8722; 4 =2&#960; 4 = 2 (same as before) 
+Example 2. The boiling cauldron 
+Now, let&#8217;s &#64257;ll this cauldron with water, and light a &#64257;re under it to get the water to boil (at 100oC). 
+Let&#8217;s say it&#8217;s a cold day: the temp erature of the air outside the cauldron is 0oC. How much energy 
+does it take to boil this water, i.e. to raise the water&#8217;s temp erature from 0oC to 100oC? Assume the 
+y
+x
+70oC
+100oC
+Figure 5: The boiling cauldron (y = a = 1 meter.) 
+temp erature decreases linearly between the top and the bottom (y = 0) of the cauldron: 
+T = 100 &#8722; 30y (degrees Celsius) 
+Use the metho d of disks, because the water&#8217;s temp erature is constan t over each horizon tal disk. The 
+total heat required is 
+&#65533; 1 
+H = T (&#960;x2)dy (units are (degree)(cubic meters)) 
+0 &#65533; 1 
+= (100 &#8722; 30y)(&#960;y)dy 
+0 &#65533; 1 &#65533;1 
+= &#960; (100y &#8722; 30y 2)dy = &#960;(50y 2 &#8722; 10y 3)&#65533;&#65533; = 40&#960; (deg.)m3 
+00 
+How many calories is that? 
+&#65533;&#65533;31 cal 100 cm # of calories = cm3 deg (40&#960;) 1m = (40&#960;)(106) cal = 125 &#215; 103 kcal &#183; 
+There are about 250 kcals in a candy bar, so there are about 
+1# of calories = candy bar &#215; 103 &#8776; 500 candy bars 2 
+So, it takes about 500 candy bars&#8217; worth of energy to boil the water. 
+3 </text>
+        </slide>
+      </slides>
+    </lecture>
+    <videos>
+      <video>
+        <video_url/>
+        <video_title/>
+        <transcript>
+          <slice>
+            <text_slice/>
+            <time_slice/>
+          </slice>
+        </transcript>
+      </video>
+    </videos>
+  </lectures>
+</doc>

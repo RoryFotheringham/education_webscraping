@@ -14,12 +14,12 @@ import os
 
 
 class Scraper:
-    SCROLL_PAUSE_TIME = 0.7
+    SCROLL_PAUSE_TIME = 1.0
     COURSES_ON_ONE_SCROLL = 10  # The MIT website displays 10 more pages every time you scroll
 
     def __init__(self, num_courses, skip):
         # Initialise variables
-        self.base_url = 'https://ocw.mit.edu/search/'
+        self.base_url = 'https://ocw.mit.edu/search/?f=Lecture%20Notes'
         self.options = Options()
         self.options.add_argument('--headless')
         self.options.add_argument('--disable-gpu')
@@ -47,7 +47,7 @@ class Scraper:
         # Get scroll height
         self.driver.get(self.base_url)
         last_height = self.driver.execute_script("return document.documentElement.scrollHeight")
-        num_courses = math.ceil(num_courses / self.COURSES_ON_ONE_SCROLL) - 1
+        num_courses = math.ceil(num_courses / self.COURSES_ON_ONE_SCROLL)
         print("======================\nLOADING {} COURSES\n====================".format(num_courses*self.COURSES_ON_ONE_SCROLL))
 
         for scroll_num in range(num_courses):
@@ -68,7 +68,7 @@ class Scraper:
     def parse_main_page(self):
         """ Scrape the courses, now that we have scrolled to the bottom a few times to load the courses """
         page = self.driver.page_source
-        self.driver.quit()
+        #self.driver.quit()
         soup = BeautifulSoup(page, 'lxml')
 
         for course_card in soup.find_all('div', {'class': 'card-contents'}):
@@ -79,6 +79,9 @@ class Scraper:
                 course_title = course_title_info.find('span').string
             except AttributeError:
                     print("ERROR: Could not load course-title. Skipping...")
+                    page = self.driver.page_source
+                    #self.driver.quit()
+                    soup = BeautifulSoup(page, 'lxml')
                     continue
             # Check if file already exists
             if self.skip_already_seen:
@@ -123,19 +126,52 @@ class Scraper:
 
     def get_lecture_notes(self, course_link):
         """ Get all of the lecture PDF links for a given course """
-        notes_link = link_join(course_link, 'pages', 'lecture-notes')
-
         service = Service('\chromedriver_win32\chromedriver.exe')
         driver = webdriver.Chrome(options=self.options, service=service)
-        driver.get(notes_link)
-
-        page = driver.page_source
-        soup = BeautifulSoup(page, 'lxml')
-
-        if not self.check_page_exists(soup):
-            return
         # Store the lecture number : lecture pdf link mapping
         lec_num_to_link = set()  # e.g {lec_title, lec_link, lec_num}
+
+        pos_links = ['lecture-notes', 'lecture-summaries', 'lecture-slides', 'readings', 'lecture-notes']
+        for i, pos_link in enumerate(pos_links):
+            notes_link = link_join(course_link, 'pages', pos_link)
+            
+            driver.get(notes_link)
+            page = driver.page_source
+            soup = BeautifulSoup(page, 'lxml')
+            # If page exists, break out of loop, we have a ready link to use
+            if self.check_page_exists(soup):  # Sometimes endpoint works, but not what we expect
+                break
+            
+        # If at final iteration and link still doesn't work (find hidden link)
+        if not soup.find_all('tr'):
+            # If table doesn't exist, but link does e.g https://ocw.mit.edu/courses/15-317-organizational-leadership-and-change-summer-2009/resources/lecture-notes/
+            if self.check_page_exists(soup):
+                try:
+                    for i, lecture in enumerate(soup.find_all('div', {'class': 'pt-2'})):
+                        lecture_num = str(i)
+                        lecture_title = lecture.find('a', {'class': 'resource-list-title'}).text.strip('\n')
+                        lecture_note_link = lecture.find('a', {'class': 'resource-list-title'})['href']
+
+                        lecture_note_link = link_join('https://ocw.mit.edu', lecture_note_link)
+                        lec_num_to_link.add((lecture_title, lecture_note_link, lecture_num))
+                except AttributeError:
+                    return
+            else:
+                return
+
+        # Last ditch effort if table does not exist (download all PDFs on page)
+        # e.g https://ocw.mit.edu/courses/15-433-investments-spring-2003/pages/lecture-notes/
+        if not soup.find_all('tr'):
+            lecture_num = 0
+            for links in soup.find_all('a'):
+                if 'PDF' in links.text.upper():
+                    lecture_note_link = link_join('https://ocw.mit.edu', links.get('href'))
+                    lecture_title = links.get('href').strip('/')
+                    
+                    lec_num_to_link.add((lecture_title, lecture_note_link, str(lecture_num)))
+                    lecture_num += 1
+        
+        # If table exists
         for lecture in soup.find_all('tr'):
             if not lecture.find('td'):
                 # Table did not load properly
@@ -145,20 +181,35 @@ class Scraper:
             lecture_note_link = ""
             # Sometimes the first 'tr' might not be what we expect
             try:
-                lecture_title = lecture.find('td', {'data-title': 'TOPICS: '}).text.strip('\n')
                 lecture_num = lecture.find('td', {'data-title': 'LEC\xa0#: '}).text.strip('\n')
+                lecture_title = lecture.find('td', {'data-title': 'TOPICS: '}).text.strip('\n')
                 lecture_note_link = lecture.find('td', {'data-title': 'LECTURE\xa0NOTES: '}).find('a')
             except AttributeError:
                 lecture_num = lecture.find_all('td')[0].text.strip('\n')
                 try:
+                    if len(lecture.find_all('td')) == 4:
+                        lecture_num = lecture.find_all('td')[0].text.strip('\n')
+                        lecture_title = lecture.find_all('td')[1].text.strip('\n')
+                        if 'PDF' in lecture_title.upper():
+                            lecture_note_link = lecture.find_all('td')[1].find('a')
+                        elif 'PDF' in lecture.find_all('td')[2].text.upper():
+                            lecture_note_link = lecture.find_all('td')[2].find('a')
+                        else:
+                            lecture_note_link = lecture.find_all('td')[3].find('a')
+
                     if len(lecture.find_all('td')) == 3:
                         lecture_title = lecture.find_all('td')[1].text.strip('\n')
-                        lecture_note_link = lecture.find_all('td')[2].find('a')
+                        if 'PDF' in lecture_title.upper():  # e.g https://ocw.mit.edu/courses/20-310j-molecular-cellular-and-tissue-biomechanics-spring-2015/pages/lecture-slides/
+                            lecture_note_link = lecture.find_all('td')[1].find('a')
+                        else:
+                            lecture_note_link = lecture.find_all('td')[2].find('a')
+
                     elif len(lecture.find_all('td')) == 2:
                         lecture_title = lecture.find_all('td')[1].find('a').text.strip('\n')
                         if lecture_title.upper() == 'PDF':  # e.g https://ocw.mit.edu/courses/21a-231j-gender-sexuality-and-society-spring-2006/pages/lecture-notes/
                             lecture_title = lecture.find_all('td')[1].text.strip('\n')
                         lecture_note_link = lecture.find_all('td')[1].find('a')
+
                     elif len(lecture.find_all('td')) == 1:  # e.g https://ocw.mit.edu/courses/21a-231j-gender-sexuality-and-society-spring-2006/pages/lecture-notes/
                         continue  # Likely not a lecture, but some sort of heading
                 except AttributeError:
@@ -169,12 +220,11 @@ class Scraper:
                 lecture_note_link = lecture_note_link.get('href')
                 # If link does not contain the subdomain - usually the case
                 lecture_note_link = link_join('https://ocw.mit.edu', lecture_note_link)
-            except Exception as e:
-                print("Warning: No link found for this lecture")
-                print(e)
+            except Exception:
+                print("Warning: No link found for lecture {}".format(lecture_num))
                 continue
             lec_num_to_link.add((lecture_title, lecture_note_link, lecture_num))
-        
+
         return lec_num_to_link
 
     def get_pdf_data(self, pdf_url):
@@ -209,14 +259,15 @@ class Scraper:
             else:
                 # Go through each slide in the lecture, and add it to Slides object
                 for slide_num in range(len(read_pdf.pages)):
-                    slides.insert_slide(slide_num, read_pdf.pages[slide_num].extract_text())
+                    slides.insert_slide(slide_num, 
+                    read_pdf.pages[slide_num].extract_text().encode('ascii', 'ignore').decode('ascii').strip())
 
         return slides
 
 
 if __name__ == '__main__':
     parser = argparse.ArgumentParser()
-    parser.add_argument('-c', '--count', default=30, type=int)
+    parser.add_argument('-c', '--count', default=20, type=int)
     parser.add_argument('-s', '--skip', default=1, type=int)
     args = parser.parse_args()
 
