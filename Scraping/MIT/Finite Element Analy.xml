@@ -12,458 +12,105 @@
   </course>
   <lectures>
     <lecture>
-      <lecture_title>Finite element formulation of solids and structures</lecture_title>
-      <lecture_pdf_url>https://ocw.mit.edu/courses/2-094-finite-element-analysis-of-solids-and-fluids-ii-spring-2011/resources/mit2_094s11_lec2/</lecture_pdf_url>
-      <lectureno>2</lectureno>
-      <slides>
-        <slide>
-          <slideno>0</slideno>
-          <text>&#65533;	 &#65533; 
-&#65533; &#65533; 2.094 &#8212; Finite Elemen t Analysis of Solids and Fluids	 Fall &#8216;08 
-Lecture 2 -Finite element formulation of solids and structures 
-Prof. K.J. Bathe	 MIT OpenCourseWare 
-Reading: 
-Ch. 1, Sec. Assu me that on tSu the displacemen ts are zero (and tSu is constant). Need to satisfy at time t: 6.1-6.2 
-Equilibrium of Cauchy stresses t&#964;ij with applied loads &#8226; 
-t&#964;T = t&#964;11 t&#964;22 t&#964;33 t&#964;12 t&#964;23 t&#964;31 (2.1)
-(For i =1, 2, 3)
-t&#964;ij,j + tfiB = 0in tV (sum over j) (2.2)
-t&#964;ij t nj = tfiSf on tSf (sum over j) (2.3)
-(e.g. tfiSf = t&#964;i1 t n1 + t&#964;i2 t n2 + t&#964;i3 t n3 )	 (2.4) 
-And: t&#964;11 tn1 + t&#964;12 tn2 = tf1 Sf 
-&#8226;	Compatibility The displacemen ts tui need to be continuous and zero on tSu. 
-Stress-Strain law &#8226; 
-t&#964;ij = function t uj	 (2.5) 
-7 </text>
-        </slide>
-        <slide>
-          <slideno>3</slideno>
-          <text>MIT OpenCourseWare 
-http://ocw.mit.edu 
-2.094 Finite Element Analysis of Solids and Fluids II
-Spring 20 11 
-For information about citing these materials or our Terms of Use, visit: http://ocw.mit.edu/terms .  </text>
-        </slide>
-        <slide>
-          <slideno>2</slideno>
-          <text>&#65533; &#65533; &#65533; 
-&#65533;&#65533; &#65533; 
-&#65533; &#65533; 
-&#65533; &#65533; &#65533;
-&#65533; &#65533; &#65533; &#65533; &#65533; 
-&#65533; &#65533; &#65533; &#65533; MIT 2.094 2. Finite elemen t formulation of solids and structures 
-Hence, 
-t&#964;11,1 + tf1 B u1 d tV = 0 (2.12) 
-tV 
-t&#964; u1,1t&#964;11 dV+ u1 d tV = 0 (2.13) 
-&#65533; 11u
-&#65533;&#65533; 1 &#65533; 
-tt
-SS
-uf 
-&#65533; &#8722; 
-tV &#65533;&#65533;&#65533;&#65533; t 
-tVtf1 B
-Sf t&#964;tSte11
-u1 11 f 
-where t&#964;11|tSf = tPr. 
-Therefore we have 
-te11 t&#964;11 d tV = u1 tf1 B d tV + u S
-1 f tPrtSf (2.14) 
-tV tV 
-From (2.12) to (2.14) we simply used mathemat ics. Hence, if (2.2) and (2.3) are satis&#64257;ed, then (2.14) 
-must hold. If (2.14) holds, then also (2.2) and (2.3) hold! 
-Namel y, from (2.14) 
-t &#65533;&#65533; tSf t Bt Sf
-u1,1 t&#964;11dV= u1 t&#964;11 tS u &#8722; u1 t&#964;11,1dV= u1 tf1 dV+ u1 tPrtSf (2.15) 
-tV tV tV 
-or 
-B t Sf u1 t&#964;11,1 + tf1 dV+ u1 tPr &#8722; t&#964;11 tSf = 0 (2.16) 
-tV 
-Now let u1 = x 1 &#8722; tx
-L t&#964;11,1 + tf1 B , where tL = length of bar. 
-Hence we must have from (2.16) 
-t&#964;11,1 + tf1 B = 0 (2.17) 
-and then also 
-tP= t&#964; (2.18) r 11 
-9 </text>
-        </slide>
-        <slide>
-          <slideno>1</slideno>
-          <text>MIT 2.094 2. Finite elemen t formulation of solids and structures 
-2.1 Principle of Virtua l Work&#8727; 
-&#65533; 
-tV t&#964;ij teij d tV = &#65533; 
-tV tfB 
-i ui d tV + &#65533; 
-tSf tfSf 
-i u Sf 
-i d tSf (2.6) 
-where 
-teij 
-with ui &#65533; &#65533; &#65533; 
-tSu = 
-= 1 
-2 &#65533; &#8706;ui 
-&#8706; txj 
-0 + &#8706;uj 
-&#8706; txi &#65533; 
-(2.7) 
-(2.8) 
-2.2 Example 
-Assu me &#8220;plane sections remain plane&#8221; 
-Principle of Virtual Work 
-&#65533; 
-tV t&#964;11 te11 d tV = &#65533; 
-t V tfB 
-1 u1 d tV + &#65533; 
-tSf tPr u Sf 
-1 d tSf (2.9) 
-Derivation of (2.9) 
-t&#964;11,1 + tfB 
-1 = 0 by (2.2) 
-&#65533; t&#964;11,1 + tfB 
-1 &#65533; 
-u1 = 0 
-&#8727;or Principle of Virtual Displacemen ts (2.10) 
-(2.11) 
-8 </text>
-        </slide>
-      </slides>
-    </lecture>
-    <lecture>
-      <lecture_title>Field problems</lecture_title>
-      <lecture_pdf_url>https://ocw.mit.edu/courses/2-094-finite-element-analysis-of-solids-and-fluids-ii-spring-2011/resources/mit2_094s11_lec15/</lecture_pdf_url>
-      <lectureno>15</lectureno>
-      <slides>
-        <slide>
-          <slideno>1</slideno>
-          <text>&#65533; &#65533; &#65533; &#65533; &#65533; &#65533; 
-&#65533; ||&#65533; 
-&#65533; &#65533; 
-&#65533; &#65533; 
-&#65533; &#65533; &#65533; &#65533; 
-&#65533; MIT 2.094 15. Field problems 
-Heat &#64258;ow equilibrium gives 
-&#8706; &#8706;&#952; &#8706; &#8706;&#952; &#8706; &#8706;&#952; Bk + k + k = &#8722;q (15.3)&#8706;x &#8706;x &#8706;y &#8706;y &#8706;z &#8706;z 
-where qB is the heat generated per unit volume. Recal l 1D case: 
-unit cross-sect ion 
-dV = dx (1) (15.4) &#183; 
-qx &#8722; qx+dx + q B dx = 0 (15.5) 
-&#8706;qx q|x &#8722; q|x + &#8706;x dx + q B dx = 0 (15.6) 
-&#8706; &#8706;&#952; B &#65533;&#65533; &#8722; &#8706;x &#8722;k&#8706;x &#65533;&#65533;dx + q dx = 0 (15.7) 
-&#8706; &#8706;&#952; Bk = &#8722;q (15.8)&#8706;x &#8706;x 
-We also need to satisfy 
-k &#8706;&#952; = q S (15.9)&#8706;n 
-on Sq. 
-15.1.2 Principle of virtua l temp eratures 
-&#952; &#8706; k&#8706;&#952; + + q B = 0 (15.10)&#8706;x &#8706;x &#183;&#183;&#183; 
-( &#952;&#65533; = 0 and &#952; to be continuous.)S&#952; 
-&#65533;&#65533;&#65533;&#65533; &#65533; 
-&#952; &#8706; k&#8706;&#952; + + q B dV = 0 (15.11) 
-V &#8706;x &#8706;x &#183;&#183;&#183; 
-62 </text>
-        </slide>
-        <slide>
-          <slideno>0</slideno>
-          <text>2.094 &#8212; Finite Elemen t Analysis of Solids and Fluids Fall &#8216;08 
-Lecture 15 -Field problems 
-Prof. K.J. Bathe MIT OpenCourseWare 
-Heat transfer, incomp ressible/inviscid/irrotational &#64258;ow, seepage &#64258;ow, etc.	 Reading: 
-Sec. 7.2-7.3 
-Di&#64256;erential formulation &#8226; 
-Variational formulation &#8226; 
-Incremen tal formulation &#8226; 
-F.E. discretization &#8226; 
-15.1 Heat transfer 
-Assu me V constant for now: 
-S = S&#952; &#8746; Sq
-s
-&#952;(x,y,z,t) is unkown except &#952;|S&#952; = &#952;pr. In addition, q|Sq is also prescribed. 
-15.1.1 Di&#64256;eren tial formulation 
-I. Heat &#64258;ow equilibrium in V and on Sq. 
-II. Constitutive laws qx = &#8722;k &#8706;&#952; .&#8706;x 
-&#8706;&#952; qy = &#8722;k	 (15.1) &#8706;y
-&#8706;&#952;
-qz = &#8722;k	 (15.2) &#8706;z 
-III. Comp atibility: temperatures need to be continuous and satisfy the boundary conditions. 
-61 </text>
-        </slide>
-        <slide>
-          <slideno>3</slideno>
-          <text>&#65533; &#65533; 
-&#65533; &#65533; 
-&#65533; &#65533;&#65533; &#65533; 
-&#65533; MIT 2.094 15. Field problems 
-F.E. discretizatio n 
-t+&#916;t t+&#916;t&#952; = H1x4 &#183; &#952;&#710;4x1 for 4-node 2D planar elemen t 
-t+&#916;t&#952;&#65533; t+&#916;t&#952;&#710;2x1 = B2x4 &#183; 4x1 
-t+&#916;t&#952;S = HSt+&#916;t&#952;&#710;&#183; 
-For (15.23) 
-&#9115; &#9118; 
-t+&#916;t (i&#8722;1)&#916;&#952;&#65533;(i) gives t+&#916;t (i&#8722;1)&#952;&#65533;T k dV = &#9117; BT k BdV &#9120; &#916; &#952;&#710;(i) &#8658; &#65533;&#65533;&#65533;&#65533; &#65533; &#65533;&#65533; &#65533; &#65533;&#65533;&#65533;&#65533; &#65533;&#65533;&#65533;&#65533; V V 4x2 2x2 2x4 4x1 
-&#952;t+&#916;t q B dV HTt+&#916;t q B dV&#8658;
-V V 
-&#952;&#65533;Tt+&#916;tk(i&#8722;1) t+&#916;t&#952;&#65533;(i&#8722;1)dV BTt+&#916;tk(i&#8722;1)BdV t+&#916;t&#952;&#710;(i&#8722;1) &#8658; &#65533; &#65533;&#65533; &#65533;V V 
-known 
-&#65533; &#65533;&#65533; &#65533;&#65533; 
-Sq &#952; ST t+&#916;th(i&#8722;1) t+&#916;t&#952;e &#8722; t+&#916;t&#952;S(i&#8722;1) +&#916;&#952;S(i) dSq = &#8658; 
-&#9115;&#9115; &#9118;&#9118; 
-HST t+&#916;th(i&#8722;1) HS &#9117;t+&#916;t&#952;&#710;e &#9117;t+&#916;t&#952;&#710;(i&#8722;1) +&#916; &#952;&#710;(i) &#9120;&#9120; dSq &#65533;&#65533;&#65533;&#65533; &#65533;&#65533;&#65533;&#65533; &#65533; &#65533;&#65533; &#65533; &#8722; &#65533; &#65533;&#65533; &#65533; &#65533;&#65533;&#65533;&#65533; Sq 4x1 1x4 4x1 4x1 4x1 
-15.2 Inviscid, incompres sible, irrota tiona l &#64258;ow 
-2D case: vx, vy are velocities in x and y directions. 
-&#65533; &#183; v =0 
-or &#8706;vx + &#8706;vy = 0 (incomp ressible) &#8706;x &#8706;y 
-&#8706;vx &#8706;vy 
-&#8706;y &#8722; &#8706;x = 0 (irrotational) 
-Use the potential &#966;(x,y), 
-&#8706;&#966; &#8706;&#966; vx = vy = &#8706;x &#8706;y 
-&#8706;2&#966;&#8706;2&#966; + =0 in V &#8658; &#8706;x2 &#8706;y2 
-(Same as the heat transfer equation with k = 1, qB = 0) 
-64 (15.25) 
-(15.26) 
-(15.27) 
-(15.28) 
-(15.29) 
-(15.30) 
-(15.31) 
-Reading: 
-Sec. 7.3.2 
-(15.32) 
-(15.33) 
-(15.34) 
-(15.35) 
-(15.36) </text>
-        </slide>
-        <slide>
-          <slideno>2</slideno>
-          <text>&#65533; &#65533; &#65533; 
-&#65533;&#65533;&#65533;&#65533; 
-&#65533; &#65533; 
-&#65533; &#65533; 
-&#65533; &#65533; &#65533; 
-&#65533; 
-&#65533; &#65533; 
-&#65533; &#65533; &#65533; &#65533;&#65533; 
-&#65533; MIT 2.094 15. Field problems 
-Transform using divergence theorem (see Ex 4.2, 7.1) 
-Sq&#952;&#65533;T k&#952;&#65533;dV = &#952;qB dV + &#952;q S dSq (15.12) 
-V V Sqheat &#64258;ow 
-&#9115;&#9118;&#8706;&#952; 
-&#8706;x &#9116;&#9119; &#9116;&#9119; 
-&#952;&#65533; = &#9116;&#8706;&#952; &#9119; (15.13) &#9116; &#8706;y &#9119; &#9117;&#9120; 
-&#8706;&#952; 
-&#8706;z 
-&#9121;&#9124; 
-k 00 
-k = &#9123; 0 k 0 &#9126; (15.14) 
-00 k 
-Convectio n boundary condition 
-q S = h&#952;e &#8722; &#952;S (15.15) 
-where &#952;e is the given environmental temperature. 
-Radiation 
-q S = &#954;&#8727; &#65533; 
-(&#952;r)4 &#8722; &#65533; 
-&#952;S &#65533;4 &#65533; 
-(15.16) 
-= &#954;&#8727; &#65533; 
-(&#952;r)2 + &#65533; 
-&#952;S &#65533;2 &#65533;&#65533; 
-&#952;r + &#952;S &#65533;&#65533; 
-&#952;r &#8722; &#952;S &#65533; 
-(15.17) 
-= &#954;&#952;r &#8722; &#952;S (15.18) 
-where &#954; = &#954;(&#952;S ) and &#952;r is given temperature of source. At time t +&#916;t 
-&#952;&#65533;Tt+&#916;tk t+&#916;t&#952;&#65533;dV = &#952;t+&#916;t q B dV + &#952; St+&#916;t q S dSq (15.19) 
-V V Sq 
-Let t+&#916;t&#952; = t&#952; + &#952; (15.20) 
-or t+&#916;t&#952;(i) = t+&#916;t&#952;</text>
-        </slide>
-        <slide>
-          <slideno>4</slideno>
-          <text>MIT OpenCourseWare 
-http://ocw.mit.edu 
-2.094 Finite Element Analysis of Solids and Fluids II
-Spring 20 11 
-For information about citing these materials or our Terms of Use, visit: http://ocw.mit.edu/terms .  </text>
-        </slide>
-      </slides>
-    </lecture>
-    <lecture>
-      <lecture_title>Finite element analysis of Navier-Stokes fluids</lecture_title>
-      <lecture_pdf_url>https://ocw.mit.edu/courses/2-094-finite-element-analysis-of-solids-and-fluids-ii-spring-2011/resources/mit2_094s11_lec16/</lecture_pdf_url>
-      <lectureno>16</lectureno>
-      <slides>
-        <slide>
-          <slideno>3</slideno>
-          <text>&#65533; &#65533; MIT 2.094 16. F.E. analysis of Navier-Stokes &#64258;uids 
-and &#8706;vn is solved for. Actually, we frequently just set p = 0. &#8706;t 
-Frequently used is the 4-node elemen t with constant pressure 
-It does not strictly satisfy the inf-sup condition. Or use Reading: 
-Sec. 7.4 
-3-node elemen t with a bubble node. 
-Satis&#64257;es inf-sup condition 
-1D case of heat transfer with &#64258;uid &#64258;ow, v = constant Reading: 
-Sec. 7.4.3 
-Re = vL Pe = vL &#945; = k (16.16) &#957; &#945; &#961;cp 
-Di&#64256;erential equations &#8226; 
-k&#952;&#65533;&#65533; = &#961;cp&#952;&#65533;v (16.17) 
-&#952;|x=0 = &#952;L &#952;|x=L = &#952;R (16.18) 
-In non-dimensional form Reading: 
-p. 683 
-1 (now &#952;&#65533;&#65533; and &#952;&#65533; are non-dimensional) (16.19) &#952;&#65533;&#65533; = &#952;&#65533;
-Pe 
-exp Pe x &#952; &#8722; &#952;L L &#8722; 1 &#8658; &#952;R &#8722; &#952;L = exp (Pe) &#8722; 1 (16.20) 
-68 </text>
-        </slide>
-        <slide>
-          <slideno>0</slideno>
-          <text>&#65533;&#65533;&#65533; &#65533;&#65533;&#65533; &#65533;&#65533;&#65533; 
-&#65533; &#65533; &#65533; 2.094 &#8212; Finite Elemen t Analysis of Solids and Fluids Fall &#8216;08 
-Lecture 16 -F.E. analysis of Navier-Stokes &#64258;uids 
-Prof. K.J. Bathe MIT OpenCourseWare 
-Incompres sible &#64258;ow with heat transfer 
-Reading: 
-Sec.We recall heat transfer for a solid: 7.1-7.4, 
-Table 7.3 
-Governing di&#64256;erential equations 
-(k&#952;,i),i + q B =0 in V (16.1) 
-is prescribed, k = q S &#8706;&#952; (16.2) &#952; &#8706;n S&#952; Sq Sq 
-S&#952; &#8746; Sq =S S&#952; &#8745; Sq = &#8709; (16.3) 
-Principle of virtual temp eratures 
-&#952;,ik&#952;,idV = &#952;qB dV + &#952; S q S dSq (16.4) 
-V V Sq 
-for arbitrary continuous &#952;(x1,x2,x3) zero on S&#952; 
-For a &#64258;uid, we use the Eulerian formulation. 
-65 </text>
-        </slide>
-        <slide>
-          <slideno>4</slideno>
-          <text>&#65533; &#65533; &#65533; &#65533; 
-&#65533; &#65533; MIT 2.094 16. F.E. analysis of Navier-Stokes &#64258;uids 
-&#8226; F.E. discretization 
-&#952;&#65533;&#65533; = Pe&#952;&#65533; (16.21) 
-&#65533; 1 
-0 &#952;&#65533;&#952;&#65533;dx + Pe &#65533; 1 
-0 &#952;&#952;&#65533;dx = 0 + { e&#64256;ect of boundary conditions = 0 here} 
-Using 2-node elemen ts gives (16.22) 
-1 Pe 
-(h&#8727;)2 (&#952;i+1 &#8722; 2&#952;i + &#952;i&#8722;1)= 2h&#8727; (&#952;i+1 &#8722; &#952;i&#8722;1) (16.23) 
-vL Pe = (16.24) &#945; 
-De&#64257;ne 
-h vh Pee = Pe = (16.25) &#183; L &#945; 
-Pee Pee 
-&#8722;1 &#8722; 2 &#952;i&#8722;1 +2&#952;i +2 &#8722; 1 &#952;i+1 = 0 (16.26) 
-what is happening when Pee is large? Assu me two 2-node elemen ts only. 
-&#952;i&#8722;1 = 0 (16.27) 
-&#952;i+1 = 1 (16.28) 
-1 Pee 
-&#952;i =2 1 &#8722; 2 (16.29) 
-69 </text>
-        </slide>
-        <slide>
-          <slideno>6</slideno>
-          <text>MIT OpenCourseWare 
-http://ocw.mit.edu 
-2.094 Finite Element Analysis of Solids and Fluids II
-Spring 20 11 
-For information about citing these materials or our Terms of Use, visit: http://ocw.mit.edu/terms .  </text>
-        </slide>
-        <slide>
-          <slideno>2</slideno>
-          <text>&#65533; &#65533; &#65533; &#65533; 
-&#65533; MIT 2.094 16. F.E. analysis of Navier-Stokes &#64258;uids 
-Variational form &#8226; 
-vi&#961;vi,j vj dV + eij &#964;ij dV = vifiB dV + viSf fiSf dSf (16.13) 
-V V V Sf 
-p&#65533; &#183; vdV = 0 (16.14) 
-V 
-F.E. solution &#8226; 
-We interpolate (x1,x2,x3), vi, vi, &#952;, &#952;, p, p. Good elemen ts are 
-&#215;: linear pressure 
-: biquadratic velocities &#9702;
-(Q2,P1), 9/3 elemen t 
-9/4c elemen t 
-Both satisfy the inf-sup condition. 
-So in general, 
-Example: 
-For Sf e.g. 
-&#964;nn =0, &#8706;vt = 0; (16.15) &#8706;n 
-67 </text>
-        </slide>
-        <slide>
-          <slideno>5</slideno>
-          <text>&#65533; &#65533; MIT 2.094 16. F.E. analysis of Navier-Stokes &#64258;uids 
-1 Pee 
-&#952;i =2 1 &#8722; 2 (16.30) 
-For Pee &gt; 2, we have negative &#952;i (unreason able). 
-70 </text>
-        </slide>
-        <slide>
-          <slideno>1</slideno>
-          <text>MIT 2.094 16. F.E. analysis of Navier-Stokes &#64258;uids 
-&#961;cpv &#952;|x &#8722; &#65533; 
-&#961;cpv &#952;|x + &#8706; 
-&#8706;x (&#961;cpv&#952;)dx &#65533; 
-+ conduction + etc (16.5) 
-In general 3D, we have an additional term for the left hand side of (16.1): 
-&#8722;&#65533; &#183; (&#961;cpv&#952;) = &#8722;&#961;c p&#65533; &#183; (v&#952;) = &#8722;&#961;c p(&#65533;&#65533;&#65533;&#65533; &#183; v )&#952; &#8722; &#961;cp (v &#183; &#65533;) &#952; &#65533; &#65533;&#65533; &#65533; 
-term (A) (16.6) 
-where &#65533; &#183; v = 0 in the incompressible case. 
-&#65533; &#183; v = vi,i = div(v) = 0 (16.7) 
-So (16.1) becomes 
-(k&#952;,i),i + q B = &#961;cp&#952;,ivi &#8658; (k&#952;,i),i + &#65533; 
-q B &#8722; &#961;cp&#952;,ivi &#65533; 
-= 0 (16.8) 
-Principle of virtual temperatures is now (use (16.4)) 
-&#65533; 
-V &#952;,ik&#952;,idV + &#65533; 
-V &#952; (&#961;cp&#952;,ivi) dV = &#65533; 
-V &#952;qB dV + &#65533; 
-Sq &#952; S q S dSq (16.9) 
-Navier-Stokes equations 
-&#8226; Di&#64256;erential form 
-&#964;ij,j + fB 
-i = &#961;vi,j vj (16.10) 
-with &#961;vi,j vj like term (A) in (16.6) = &#961;(v &#183; &#65533;)v in V . 
-&#964;ij = &#8722;p&#948; ij + 2&#181;eij eij = 1 
-2 &#65533; &#8706;vi 
-&#8706;xj + &#8706;vj 
-&#8706;xi &#65533; 
-(16.11) 
-&#8226; Boundary conditions (need be modi&#64257;ed for various &#64258;ow conditions) 
-&#964;ij nj = fSf 
-i on Sf (16.12) 
-Mostly used as fn = &#964;nn 
-in&#64258;ow conditions). = prescribed, ft = unknown with possibly &#8706;vn 
-&#8706;n = &#8706;vt 
-&#8706;n = 0 (out&#64258;ow or 
-And vi prescribed on Sv, and Sv &#8746; Sf =S and Sv &#8745; Sf = &#8709;. 
-66 </text>
-        </slide>
-      </slides>
-    </lecture>
-    <lecture>
       <lecture_title>Finite element displacement formulation (cont.)</lecture_title>
       <lecture_pdf_url>https://ocw.mit.edu/courses/2-094-finite-element-analysis-of-solids-and-fluids-ii-spring-2011/resources/mit2_094s11_lec5/</lecture_pdf_url>
       <lectureno>5</lectureno>
       <slides>
         <slide>
-          <slideno>2</slideno>
-          <text>&#65533; &#65533; MIT 2.094 5. F.E. displacemen t formulation, cont&#8217;d 
-&#9118;&#9115; 
-u(x,y) 
-v(x,y) = H &#9116;&#9116;&#9116;&#9116;&#9116;&#9116;&#9116;&#9116;&#9116;&#9116;&#9117; u1 
+          <slideno>3</slideno>
+          <text>    
+   
+   MIT 2.094 5. F.E. displacemen t formulation, contd 
+h3(x,y)= 1 (1  x)(1  y)4 
+h4(x,y)= 1 (1 + x)(1  y)4 
+u(x,y)= h1u1 + h2u2 + h3u3 + h4u4 (5.16) 
+v(x,y)= h1v1 + h2v2 + h3v3 + h4v4 (5.17) 
+ 
+ u1 
 u2 
 u3 
 u4 
 v1 
 v2 
 v3 
-v4 &#9119;&#9119;&#9119;&#9119;&#9119;&#9119;&#9119;&#9119;&#9119;&#9119;&#9120; (5.12) 
+v4  u(x,y)= h1 h2 h3 h4 0000 (5.18) v(x,y) 0000 h1 h2 h3 h4 
+H (2x8) 
+We also want, 
+ 
+ u1 
+u2 
+u3 
+u4 
+v1 
+v2 
+v3 
+v4    
+xx h1,x h2,x h3,x h4,x 0 0 0 0 
+ =0 0 0 0 h1,y h2,y h3,y h4,y  (5.19) yy 
+xy h1,y h2,y h3,y h4,y h1,x h2,x h3,x h4,x 
+B (3x8) 
+xx = u 
+x (5.20) 
+yy = v 
+y (5.21) 
+xy = u 
+y + v 
+x (5.22) 
+22 </text>
+        </slide>
+        <slide>
+          <slideno>0</slideno>
+          <text> 
+ 
+	  
+ 
+ 
+ 2.094  Finite Elemen t Analysis of Solids and Fluids	 Fall 08 
+Lecture 5 -F.E. displacement formulation, contd 
+Prof. K.J. Bathe	 MIT OpenCourseWare 
+For the continuum	 Reading: 
+Ch. 4 
+Dierential formulation  
+Variational formulation (Principle of Virtual Displacemen ts)  
+Next, we assumed innitesimal small displacemen t, Hookes Law, linear analysis 
+KU = R	 (5.1a) 
+(m) = H(m)U u (5.1b) 
+K = K(m)	(5.1c) 
+m 
+R = R(m)	(5.1d) B
+m
+(m) = B(m)U	 (5.1e) 
+U T = U1 U2 Un , (n = all d.o.f. of elemen t assem blage)	 (5.1f)   
+K(m) = B(m)T C(m) B(m) dV (m) (5.1g) 
+V (m) 
+RB (m) = H(m)T fB(m) dV (m) (5.1h) 
+V (m) 
+Surface loads 
+Recal l that in the principle of virtual displacemen ts, 
+surface loads = U Sf T 
+fSf dSf (5.2) 
+Sf 
+u S (m) = HS (m)U	 (5.3) 
+HS (m) = H(m) (5.4) 
+evaluated at the surface 
+19 </text>
+        </slide>
+        <slide>
+          <slideno>2</slideno>
+          <text>  MIT 2.094 5. F.E. displacemen t formulation, contd 
+ 
+u(x,y) 
+v(x,y) = H  u1 
+u2 
+u3 
+u4 
+v1 
+v2 
+v3 
+v4  (5.12) 
 If we can set this relation up, then clearly we can get H(1), H(2), H(3), H(4). 
 u(m) = H(m)U (5.13) 
-Also want &#65533;(m) = B(m)U . We want H. We could proceed this way 
+Also want (m) = B(m)U . We want H. We could proceed this way 
 u(x,y)= a1 + a2x + a3y + a4xy (5.14) 
 v(x,y)= b1 + b2x + b3y + b4xy (5.15) 
 Express a1... a4, b1... b4 in terms of the nodal displacemen ts u1... u4, v1... v4.
@@ -471,13 +118,21 @@ Express a1... a4, b1... b4 in terms of the nodal displacemen ts u1... u4, v1... 
 h1(x,y)= 1
 4 (1 + x)(1 + y) interpolation function 
 for node 1. 
-h2(x,y)= 1 (1 &#8722; x)(1 + y)4 
+h2(x,y)= 1 (1  x)(1 + y)4 
 21 </text>
         </slide>
         <slide>
+          <slideno>4</slideno>
+          <text>MIT OpenCourseWare 
+http://ocw.mit.edu 
+2.094 Finite Element Analysis of Solids and Fluids II
+Spring 20 11 
+For information about citing these materials or our Terms of Use, visit: http://ocw.mit.edu/terms .  </text>
+        </slide>
+        <slide>
           <slideno>1</slideno>
-          <text>&#65533; 
-&#65533; MIT 2.094 5. F.E. displacemen t formulation, cont&#8217;d 
+          <text> 
+ MIT 2.094 5. F.E. displacemen t formulation, contd 
 Substitute into (5.2) 
 U T HS(m) T 
 fS(m) dS(m) (5.5) 
@@ -491,269 +146,315 @@ Need to add contributions from all surfaces of all loaded external elemen ts.
 KU = RB + RS + Rc (5.7) 
 where Rc are concentrated nodal loads. 
 Assu me 
-&#8226; (5.7) has been established without any displacemen t boundary conditions. 
-&#8226; We, however, know nodal displacemen ts Ub (rewriting (5.7)). 
-KU = R &#8658; &#65533; Kaa 
+ (5.7) has been established without any displacemen t boundary conditions. 
+ We, however, know nodal displacemen ts Ub (rewriting (5.7)). 
+KU = R   Kaa 
 Kba Kab 
-Kbb &#65533; &#65533; Ua 
-Ub &#65533; 
-= &#65533; Ra 
-Rb &#65533; 
+Kbb   Ua 
+Ub  
+=  Ra 
+Rb  
 (5.8) 
 Solve for Ua: 
-KaaUa = Ra &#8722; KabUb 
+KaaUa = Ra  KabUb 
 where Ub is known! 
 Then use (5.9) 
 KbaUa + KbbUb = Rb + Rr (5.10) 
 where Rr are unknown reactions. 
 Example 4.6 textbook 
-&#9115;&#9118;&#9121; &#9124;&#9115;&#9118; 
-&#964;xx E 1 &#957; 0 &#65533;xx 
-&#9117; &#964;yy &#9120; = &#9123; &#957; 1 0 &#9126;&#9117; &#65533;yy &#9120; (5.11) 
-&#964;xy 1 &#8722; &#957;2 00 1&#8722;
-2 &#957; &#947;xy 
+  
+xx E 1  0 xx 
+ yy  =   1 0  yy  (5.11) 
+xy 1  2 00 1
+2  xy 
 20 </text>
         </slide>
-        <slide>
-          <slideno>3</slideno>
-          <text>&#65533; &#65533; &#65533; &#65533; 
-&#65533; &#65533;&#65533; &#65533; 
-&#65533; &#65533;&#65533; &#65533; MIT 2.094 5. F.E. displacemen t formulation, cont&#8217;d 
-h3(x,y)= 1 (1 &#8722; x)(1 &#8722; y)4 
-h4(x,y)= 1 (1 + x)(1 &#8722; y)4 
-u(x,y)= h1u1 + h2u2 + h3u3 + h4u4 (5.16) 
-v(x,y)= h1v1 + h2v2 + h3v3 + h4v4 (5.17) 
-&#9118;&#9115; 
-&#9116;&#9116;&#9116;&#9116;&#9116;&#9116;&#9116;&#9116;&#9116;&#9116;&#9117; u1 
-u2 
-u3 
-u4 
-v1 
-v2 
-v3 
-v4 &#9119;&#9119;&#9119;&#9119;&#9119;&#9119;&#9119;&#9119;&#9119;&#9119;&#9120; u(x,y)= h1 h2 h3 h4 0000 (5.18) v(x,y) 0000 h1 h2 h3 h4 
-H (2x8) 
-We also want, 
-&#9118;&#9115; 
-&#9116;&#9116;&#9116;&#9116;&#9116;&#9116;&#9116;&#9116;&#9116;&#9116;&#9117; u1 
-u2 
-u3 
-u4 
-v1 
-v2 
-v3 
-v4 &#9119;&#9119;&#9119;&#9119;&#9119;&#9119;&#9119;&#9119;&#9119;&#9119;&#9120; &#9124; &#9121;&#9118;&#9115; 
-&#65533;xx h1,x h2,x h3,x h4,x 0 0 0 0 
-&#9117;&#9120; =&#9123;0 0 0 0 h1,y h2,y h3,y h4,y &#9126; (5.19) &#65533;yy 
-&#947;xy h1,y h2,y h3,y h4,y h1,x h2,x h3,x h4,x 
-B (3x8) 
-&#65533;xx = &#8706;u 
-&#8706;x (5.20) 
-&#65533;yy = &#8706;v 
-&#8706;y (5.21) 
-&#947;xy = &#8706;u 
-&#8706;y + &#8706;v 
-&#8706;x (5.22) 
-22 </text>
-        </slide>
-        <slide>
-          <slideno>0</slideno>
-          <text>&#65533; 
-&#65533; 
-&#65533;	 &#65533; 
-&#65533; 
-&#65533; 
-&#65533; 2.094 &#8212; Finite Elemen t Analysis of Solids and Fluids	 Fall &#8216;08 
-Lecture 5 -F.E. displacement formulation, cont&#8217;d 
-Prof. K.J. Bathe	 MIT OpenCourseWare 
-For the continuum	 Reading: 
-Ch. 4 
-Di&#64256;erential formulation &#8226; 
-Variational formulation (Principle of Virtual Displacemen ts) &#8226; 
-Next, we assumed in&#64257;nitesimal small displacemen t, Hooke&#8217;s Law, linear analysis 
-KU = R	 (5.1a) 
-(m) = H(m)U u (5.1b) 
-K = K(m)	(5.1c) 
-m 
-R = R(m)	(5.1d) B
-m
-&#65533;(m) = B(m)U	 (5.1e) 
-U T = U1 U2 Un , (n = all d.o.f. of elemen t assem blage)	 (5.1f) &#65533; &#183;&#183;&#183; 
-K(m) = B(m)T C(m) B(m) dV (m) (5.1g) 
-V (m) 
-RB (m) = H(m)T fB(m) dV (m) (5.1h) 
-V (m) 
-Surface loads 
-Recal l that in the principle of virtual displacemen ts, 
-&#8220;surface&#8221; loads = U Sf T 
-fSf dSf (5.2) 
-Sf 
-u S (m) = HS (m)U	 (5.3) 
-HS (m) = H(m)&#65533;&#65533; (5.4) 
-evaluated at the surface 
-19 </text>
-        </slide>
-        <slide>
-          <slideno>4</slideno>
-          <text>MIT OpenCourseWare 
-http://ocw.mit.edu 
-2.094 Finite Element Analysis of Solids and Fluids II
-Spring 20 11 
-For information about citing these materials or our Terms of Use, visit: http://ocw.mit.edu/terms .  </text>
-        </slide>
       </slides>
     </lecture>
     <lecture>
-      <lecture_title>Slender structures</lecture_title>
-      <lecture_pdf_url>https://ocw.mit.edu/courses/2-094-finite-element-analysis-of-solids-and-fluids-ii-spring-2011/resources/mit2_094s11_lec19/</lecture_pdf_url>
-      <lectureno>19</lectureno>
+      <lecture_title>Beams, plates, and shells</lecture_title>
+      <lecture_pdf_url>https://ocw.mit.edu/courses/2-094-finite-element-analysis-of-solids-and-fluids-ii-spring-2011/resources/mit2_094s11_lec20/</lecture_pdf_url>
+      <lectureno>20</lectureno>
       <slides>
         <slide>
-          <slideno>3</slideno>
-          <text>MIT 2.094 19. Slender structures 
-Now interpolate 
-w(r) = h1w1 + h2w2 (19.28) 
-&#946;(r) = h1&#952;1 + h2&#952;2 (19.29) 
-Revisit the simple case: 
-1+ r w = w1 (19.30) 2 
-1+ r &#946; = &#952;1 (19.31) 2 
-Shearing strain 
-w1 1+ r &#947; = L &#8722; 2 &#952;1 (19.32) 
-Shear strain is not zero all along the beam. But, at r = 0, we can have the shear strain = 0. 
-w1 
-L &#8722; &#952;1 
-2 can be zero (19.33) 
-Namel y, 
-w1 
-L &#8722; &#952;1 
-2 = 0 for &#952;1 = 2 
-L w1 (19.34) 
-84 </text>
-        </slide>
-        <slide>
-          <slideno>0</slideno>
-          <text>&#65533; &#65533; 2.094 &#8212; Finite Elemen t Analysis of Solids and Fluids Fall &#8216;08 
-Lecture 19 -Slender structures 
-Prof. K.J. Bathe MIT OpenCourseWare 
-Beam analysis,t 
-L&#65533; 1 (e.g.t 
-L =1 1 
-100 , 1000 , &#183;&#183;&#183; ) Reading: 
-Sec. 5.4, 
-6.5 
-(plane stress) 
-2L0 (19.1) J = 0
-1 t 
-2 
-(1 &#8722; r)(1 + s) (19.2) h2 = 4 
-1 (1 &#8722; r)(1 &#8722; s) (19.3) h3 = 4 
-&#8727; &#8727;=v v3 2
-3 
-2 Beam theory assumptions (Timosh enko beam theory): 
-u&#8727; 
-u&#8727; (19.4) 
-(19.5) 
-(19.6) = v2 
-t = u2 + &#952;22 
-t = u2 &#8722; 2 &#952;2 
-&#9124; &#8727; &#8727; &#8727; &#8727;u v u v3 3 2 2
-&#9121; 1 2 
-L0 &#8722;1 
-4(1 &#8722; s)2 
-L0 
-2(1 )&#8722; rt(1 + s)&#8722;4&#9122;&#9122;&#9122;&#9122;&#9123; 0&#9125;&#9125;&#9125;&#9125;&#9126; etc (19.7) B&#8727; = 
+          <slideno>1</slideno>
+          <text>  
+  
+   
+ MIT 2.094 20. Beams, plates, and shells 
+dw = J1Hw,r u (20.8) 
+= J1H,r  (20.9) dx    
+Bw 
+d u dx   
+B 
+Hence we obtain 
+ 1  1  
+EI BT B det(J )dr +(Ak)G (Bw  H )T (Bw  H )det(J)dr u
+1 1  1 
+= HwT p det(J )dr (20.10) 
 1 
-42(1 )&#8722; rt 
-(1 + s)1 
-42(1 )&#8722; rt 
-2(1 &#8722; s)0 &#8722;
-1 2 
-L&#8722;1 
-42(1 )&#8722; rt
-81 &#8722;1 
-4&#8722;4 L 1 
-4</text>
+Ku= R (20.11) 
+K is a result of the term inside the bracket in (20.10) and R is a result of the right hand side. 
+For the 2-node elemen t, 
+w1 = 1 = 0 (20.12) 
+w2,2 = ? (20.13) 
+w2 1+ r  = L  2 2 (20.14) 
+We cannot make  equal to zero for every r (page 404, textbook). Becau se of this, we need to use 
+about 200 elemen ts to get an error of 10%. (Not good!) 
+Recal l almost or fully incomp ressible analysis: Principle of virtual displacemen ts:
+T CdV + v (v )dV = R (20.15) 
+V V 
+u/p formulation 
+T CdV  vpdV = R (20.16) 
+V V 
+p p + v dV = 0 (20.17) V 
+But now we needed to select wisely the interpolations of u and p. We needed to satisfy the inf-sup 
+condition 
+infsupVol qh  vhdVol  &gt; 0 (20.18)   
+qhQh vhVh qhvh 
+86 </text>
+        </slide>
+        <slide>
+          <slideno>4</slideno>
+          <text> MIT 2.094 20. Beams, plates, and shells 
+Plates Reading: 
+Fig. 5.25, 
+p. 421 
+ 
+ 
+ w = w(x,y) is the transverse displacemen t of the mid-surface 
+v = zy(x,y) (20.31) 
+u = zx(x,y) 
+For any particle in the plate with coordinates (x,y,z), the expressions in (20.31) hold! 
+We use 
+q
+w = hiwi (20.32)  
+i=1 
+q
+x =  hiyi (20.33)  
+i=1 
+q
+y =+ hixi (20.34) 
+i=1 
+where q equals the number of nodes. Then the elemen t locks in the same way as the displacemen t-based 
+beam elemen t. 
+89 </text>
+        </slide>
+        <slide>
+          <slideno>5</slideno>
+          <text>MIT OpenCourseWare 
+http://ocw.mit.edu 
+2.094 Finite Element Analysis of Solids and Fluids II
+Spring 20 11 
+For information about citing these materials or our Terms of Use, visit: http://ocw.mit.edu/terms .  </text>
+        </slide>
+        <slide>
+          <slideno>0</slideno>
+          <text>2.094  Finite Elemen t Analysis of Solids and Fluids Fall 08 
+Lecture 20 -Beams, plates, and shells 
+Prof. K.J. Bathe MIT OpenCourseWare 
+Timosh enko beam theory 
+The ber moves up and rotates and its length does not change. 
+Principle of virtual displacemen t (Linear Analysis) 
+ L  L T   L T dw dw EI  dx +(Ak)G dx   dx   dx = w T pdx (20.1) 
+0 0 0 
+Two-node elemen t: 
+Three-node elemen t: 
+For a q-node elemen t, 
+u =  w1    wq 1    q T (20.2) 
+w = Hw u (20.3) 
+ = H u 
+Hw =  h1    
+H =  0    hq 0 
+0 h1    
+   0 
+hq  
+ (20.4) 
+(20.5) 
+(20.6) 
+J = dx 
+dr (20.7) 
+85 </text>
         </slide>
         <slide>
           <slideno>2</slideno>
-          <text>&#65533; &#65533; MIT 2.094 19. Slender structures 
-For a pure bending momen t, we want
-1 1
-&#8722; Lv2 &#8722; 2(1 &#8722; r)&#952;2 = 0 (19.20) 
-for all r! Impossible (except for v2 = &#952;2 = 0) So, the elemen t has a spurious shear strain! &#8658; &#8658; 
-Beam kinematics (Timosh enko, Reissner-Mindlin) 
-dw &#947; = dx &#8722; &#946; (19.21) 
-1 I = bt3 (19.22) 12 
-Principle of virtual work 
-EI &#65533; L 
-0 d&#946; 
-dx d&#946; 
-dx dx + AS G &#65533; L 
-0 &#65533; dw 
-dx &#8722; &#946; &#65533; &#65533; dw 
-dx &#8722; &#946; &#65533; 
-dx = &#65533; L 
-0 pwdx (19.23) 
-As = kA = kbt (19.24) 
-To calculate k Reading: 
-&#65533; 
-A 1 
-2G (&#964;a)2dA = &#65533; 
-AS 1 
-2G &#65533; V 
-As &#65533;2 
-dAs (19.25) p. 400 
-where &#964;a is the actual shear stress: 
-&#964;a = 3 
-2 &#183; V 
-A &#65533; &#65533; t 
-2 &#65533;2 &#8722; y2 
-&#65533; t &#65533;2 &#65533; 
-(19.26) 
-2 
-and V is the shear force. Reading: 
-Ex. 5.23 
-5 k = (19.27) &#8658; 6 
-83 </text>
+          <text> 
+9/4-c MIT 2.094 20. Beams, plates, and shells 
+4/1 elemen t: 
+We can show mathemat ically that this elemen t does not satisfy inf-sup condition. But, we can also 
+show it by giving an example of this elemen t which violates the inf-sup condition. 
+v1 = ,v2 =0    vh for both elemen ts is positive and the same. Now, if I choose pressures as 
+above 
+qhvhdVol = 0, hence (20.18) is not satised! (20.19) 
+Vol 
+9/3 elemen t 
+satises inf-sup 
+satises inf-sup 
+Getting back to beams 
+ L  L  
+EI dx +(AkG) d
+dxw  AS dx = R (20.20) 
+0 0 
+ L  
+AS   AS dx = 0 (20.21) 
+0 
+where 
+dw  = dx  , from displacemen t interpolation (20.22) 
+87 </text>
+        </slide>
+        <slide>
+          <slideno>3</slideno>
+          <text>MIT 2.094	 20. Beams, plates, and shells 
+AS = Assu med shear strain interpolation	 (20.23) 
+2-node elemen t, constant shear assumption. From (20.21),	 Reading: 
+Sec. 4.5.7 
+ L   Ldw ASdx = ASdx	 (20.24) dx   AS 0	 0 
+ +1  1+ r  L  
+1 2 2  2 dr + w2 = AS  L	 (20.25) 
+L 
+AS = w2  2 2	(20.26)  L 
+AS (shear strain) is equal to the displacemen t-based shear strain at the middle of the beam. 
+Use AS in (20.20) to obtain a powerful elemen t. For our problem, 
+AS = 0 hence w2 = L2	 (20.27) 2 
+ L  
+EI dx = M	 (20.28) 	x=L 0 
+ 2  
+1 EI L2 = M	 (20.29)  L  
+ML ML2 
+2 = , w2 = (20.30)  EI 2EI 
+(exact solutions) 
+88 </text>
+        </slide>
+      </slides>
+    </lecture>
+    <lecture>
+      <lecture_title>Total Lagrangian formulation (cont.)</lecture_title>
+      <lecture_pdf_url>https://ocw.mit.edu/courses/2-094-finite-element-analysis-of-solids-and-fluids-ii-spring-2011/resources/mit2_094s11_lec14/</lecture_pdf_url>
+      <lectureno>14</lectureno>
+      <slides>
+        <slide>
+          <slideno>0</slideno>
+          <text> 
+ 
+  
+   
+   
+  2.094  Finite Elemen t Analysis of Solids and Fluids Fall 08 
+Lecture 14 -Total Lagrangian formulation, contd 
+Prof. K.J. Bathe MIT OpenCourseWare 
+Truss elemen t. 2D and 3D solids. 
+t+t t+t t+tij t+teij d V = R (14.1) 
+t+tV 
+t+t t+t 0 t+t 
+0Sij  0ij V= R (14.2) 
+0V   linearization
+ij V+ tSij ij V= tS ij V (14.3) 
+0V 0Cijrs 0ers0e0 
+0V 0 00 t+tR 
+0V 0 ij 0e0 
+Note: 
+t = 0eij 0 ij 
+varying with respect to the conguration at time t. 
+F.E. discretizatio n 
+0 0 k t tk t+t t+tk xi = hk xi xi = hk xi xi = hk xi (14.4a) 
+k k k 
+t tk t+t t+tk k ui = hk ui ui = hk ui ui = hkui (14.4b) 
+k k k 
+(14.4) into (14.3) gives 
+0 tKL + 0 tKNL U = t+tR 0 tF (14.5) 
+57 </text>
         </slide>
         <slide>
           <slideno>1</slideno>
-          <text>&#65533;&#65533; &#65533;MIT 2.094 19. Slender structures 
-u2 v2 &#952;2&#9115;&#9118;&#8706;u &#9121; &#9124; &#8706;x 1 t0&#8722; s 
-&#9125;&#9125;&#9125;&#9125;&#9126;&#8764; &#9116;&#9116;&#9116;&#9116;&#9116;&#9116;&#9117; &#9119;&#9119;&#9119;&#9119;&#9119;&#9119;&#9120; L 2L 
-Bbeam = &#9122;&#9122;&#9122;&#9122;&#9123; &#183;&#183;&#183; 0 (19.8)0 0 0 &#8706;v&#65533; &#65533;
-&#65533;&#8706;y 
-0 &#8722; 1 &#8722; 1 (1 &#8722; r) 
-&#8706;y &#8706;x L 2 &#8706;u + &#8706;v 
-1 v(r) = 2(1 &#8722; r)v2
-1 st
-u(r) = 2(1 &#8722; r)u2 &#8722; 4 (1 &#8722; r)&#952;2 
-at r = &#8722;1, 
-v(&#8722;1) = v2 
-st u(&#8722;1) = &#8722; 2 &#952;2 + u2 
-Kinemat ics is 
-1 u(r) = 2(1 &#8722; r)u2 
-results into &#65533;xx 
-&#8706;u 2 1 &#8594; &#65533;xx = &#8706;r &#183; L = &#8722; L 
-st u(r,s)= &#8722; 4 (1 &#8722; r)&#952;2 
-results into &#65533;xx, &#947;xy 
-st &#65533;xx = &#8594; 2L 
-&#8706;u 2 1 &#947;xy = &#8706;s &#183; t = &#8722; 2(1 &#8722; r) 
-1 v(r) = 2(1 &#8722; r)v2 
-results into &#947;xy 
-1 &#8594; &#947;xy = &#8722; L 
-(19.9) 
-(19.10) 
-(19.11) 
-(19.12) 
-(19.13) 
-(19.14) 
-(19.15) 
-(19.16) 
-(19.17) 
-(19.18) 
-(19.19) 
-82 </text>
+          <text>    MIT 2.094 14. Total Lagrangian formulation, contd 
+Truss 
+L  1 small strain assumption: 0L 
+0EAtK = 0 0L   cos2  cos  sin   cos2   cos  sin  
+cos  sin  sin2   sin  cos   sin2  
+cos2  sin  cos    =  cos2  
+ cos  sin  
+  cos  sin  
+ sin2  (14.6) sin  cos  sin2  
+ 
+1 0 1 0 
+0tP 
+0L   0 1 1 
+0+ 1 0 1 
+0 1 0 1 
+(notice that the both matrices are symmet ric) 
+ 
+cos  sin  u1 u1 (14.7) = v1  sin  cos  v1 
+Corresponding to the u and v displacemen ts we have: 
+0EAtK = (14.8) 0L    
+10 10 
+0 1 0 1 0 
+0  + tP 
+0L  00 0 0 1 1 
+0 (14.9) = 10 10 
+00 1 0 1 
+0 00 1 0 1 
+58 0 </text>
+        </slide>
+        <slide>
+          <slideno>2</slideno>
+          <text>   
+  MIT 2.094	 14. Total Lagrangian formulation, contd 
+tP0 tP QL=  Q = 	 (14.10) 0L  
+tPwhere the boxed term is the stiness. In axial direction, 0L is not very important because usually 
+E 0A tP tP 
+0L  0L . But, in vertical direction, 0L is important. 
+ 
+ cos 
+tF tP  sin  
+0 = 	cos   (14.11) 
+sin  
+2D/3D (e.g. Table 6.5) 2D: 
+1  2 2  
+011 = 
+0u1,1 + 0 t u1,10u
+1,1 + 0 t u2,10u2,1 +2 0u1,1 + 0u2,1 (14.12) 
+0e11	011 
+022 =	 (14.13)  
+012 =	 (14.14)  
+(Axisymmet ric) 
+033 = ? (14.15) 
+1  2  
+t=2 tU  I (14.16) 0 0 
+  
+  0 
+ 0  
+0 tU 2 = 00 	 (14.17) 
+(t
+)2 
+t 0 tds 2x1 + u1 t = = 0 0ds 2x1 (14.18) t 
+=1+ u1 
+0x1 
+ 2  
+0 t33 = 21 1+ 0 tu
+x1  1
+1
+(14.19) 2 tu1 1 tu1= +0x1 2 0x1 
+59 </text>
+        </slide>
+        <slide>
+          <slideno>3</slideno>
+          <text>MIT 2.094	 14. Total Lagrangian formulation, contd 
+2 tu+ u1 1 tu+ u1 t+t 1 1 = +	 (14.20) 033 0 0x1 2 x1 
+2 u1 tu u1 1 u1 
+033 = t+
+0 t33  0 t33 = 0x1 + 0x1
+1  0x1 +2 0x1	(14.21) 
+How do we assess the accuracy of an analysis?	 Reading: 
+Sec. 4.3.6 
+ Mathemat ical model  u 
+ F.E. solution  uh
+Find u  uh and   h.
+References 
+[1] T. Sussman and K. J. Bathe. Studies of Finite Elemen t Procedures -on Mesh Selection. Computers 
+&amp; Structures, 21:257264, 1985. 
+[2] T. Sussman and K. J. Bathe. Studies of Finite Elemen t Procedures -Stress Band Plots and the 
+Evaluation of Finite Elemen t Meshes. Journal of Engineering Computations, 3:178191, 1986. 
+60 </text>
         </slide>
         <slide>
           <slideno>4</slideno>
@@ -766,155 +467,277 @@ For information about citing these materials or our Terms of Use, visit: http://
       </slides>
     </lecture>
     <lecture>
-      <lecture_title>u/p formulation</lecture_title>
-      <lecture_pdf_url>https://ocw.mit.edu/courses/2-094-finite-element-analysis-of-solids-and-fluids-ii-spring-2011/resources/mit2_094s11_lec9/</lecture_pdf_url>
-      <lectureno>9</lectureno>
+      <lecture_title>Finite element formulation of solids and structures (cont.)</lecture_title>
+      <lecture_pdf_url>https://ocw.mit.edu/courses/2-094-finite-element-analysis-of-solids-and-fluids-ii-spring-2011/resources/mit2_094s11_lec3/</lecture_pdf_url>
+      <lectureno>3</lectureno>
       <slides>
         <slide>
-          <slideno>1</slideno>
-          <text>&#65533; 
-&#65533;&#65533; = 
-&#65533;
-&#65533; 
-&#65533; MIT 2.094 9. u/p formulation 
-We need another equation because we now have another unknown p. 
-p + &#954;&#65533;V = 0 (9.12) 
-p (p + &#954;&#65533;V ) dV = 0 (9.13) 
-&#65533; V &#65533;&#65533; 
-&#8722; 
-V p&#65533;V + &#954;p dV = 0 (9.14) 
-For an elemen t, 
-u = Hu&#710; (9.15) 
-&#65533;&#65533; = BDu&#710; (9.16) 
-&#65533;V = BV u&#710; (9.17) 
-p = Hpp&#710; (9.18) 
-Plane strain (&#65533;zz 
-4/1 elemen t = 0) Example Reading: 
-Ex. 4.32 in 
-the text 
-&#65533;V = &#65533;xx + &#65533;yy (9.19) 
-&#9121; &#9124; 1 
-31 
-3(&#65533;xx + &#65533;yy) &#65533;xx &#8722;
-&#9122; &#65533;yy &#8722;(&#65533;xx + &#65533;yy) &#9125; &#9122; &#9125; (9.20) &#9126; &#9123; &#947;xy 
-(&#65533;xx + &#65533;yy)&#8722;1 
-3
-Note: &#65533;zz = 0 but &#65533;&#65533;= 0! zz 
-p = Hpp&#710;= [1]{p0} (9.21) 
-p(x,y)= p0 (9.22) 
-We obtain from (9.11) and (9.14) 
-&#65533; &#65533;&#65533; &#65533;&#65533; &#65533; 
-Kuu Kup u&#710; R 
-Kpu Kpp p&#710;= 0 (9.23) 
-BT
-V
-Kuu = DC&#65533;BD dV (9.24a) 
-Kup = &#8722; BVT Hp dV (9.24b) 
-&#65533;V 
-Kpu = &#8722; HpT BV dV (9.24c) 
-&#65533;V 
-1 Kpp = &#8722; HpT 
-&#954; Hp dV (9.24d) 
-V 
-38 </text>
-        </slide>
-        <slide>
-          <slideno>3</slideno>
-          <text>&#65533;MIT 2.094 9. u/p formulation 
-For 
- (entry [3,1] in matrix) assume the circled entry is the minimum (inf) of 
- . 
-Also, all entries in the matrix not shown are zero. 
-Case 1 &#946;h =0 
-&#9127; 
-&#9128; 0 uh|i = 0 (from the bottom equation) &#183; 
-&#945;uh+0 ph= Rh (from the top equation) &#8658; &#9129;&#65533;&#65533;&#65533;&#65533; &#183;|i &#183;|j |i 
-=0 
-&#8658; no equation for ph|j 
-spurious pressure! (any pressure satis&#64257;es equation) &#8658; 
-Case 2 &#946;h = small = &#65533; 
-&#65533; &#183; uh|i =0 &#8658; uh|i =0
-&#8756; &#65533; &#183; ph|j + uh|i &#183; &#945; = Rh|i &#65533; &#65533;
-i
-ph|j = Rh| displ. = 0 as &#65533; is small &#8658; &#65533; &#8658; pressure large &#8594; 
-The behavior of given mesh when bulk modulus increases: locking, large pressures. See Example 
-4.39 textbook. 
-40 </text>
-        </slide>
-        <slide>
           <slideno>0</slideno>
-          <text>&#65533; 
-&#65533; 
-&#65533; 
-&#65533; &#65533; 
-&#65533; &#65533; 
-&#65533; &#65533; 2.094 &#8212; Finite Elemen t Analysis of Solids and Fluids Fall &#8216;08 
-Lecture 9 -u/p formulation 
+          <text>  2.094  Finite Elemen t Analysis of Solids and Fluids Fall 08 
+Lecture 3 -Finite element formulation for solids and structures 
 Prof. K.J. Bathe MIT OpenCourseWare 
-We want to solve	 Reading: 
-Sec. 4.4.3 
-I. Equilibrium 
-&#964;ij,j + fiB = 0 in Volume (9.1) Sf&#964;ij nj = fi on Sf 
-II. Comp atibility 
-III. Stress-st rain law 
-Use the principle of virtual displacemen ts 
-&#65533;T C&#65533; dV = R	 (9.2) 
-V 
-We recogn ize that if &#957; 0.5&#8594; 
-&#65533;V 0(&#65533;V = &#65533;xx + &#65533;yy + &#65533;zz)	 (9.3) &#8594; 
-E &#954; = 3(1 &#8722; 2&#957;) &#8594;&#8734; (9.4) 
-p = &#8722;&#954;&#65533;V must be accurately comp uted	 (9.5) 
-Solution 
-&#964;ij = &#954;&#65533;V &#948;ij +2G&#65533;&#65533;
-ij	 (9.6) 
-where 
-1 i = j&#948;ij = Kronecker delta =	 (9.7) 0 i =&#65533;j 
-Deviatoric strains: 
-&#65533;V&#65533;&#65533;
-ij = &#65533;ij &#8722; 3 &#948;ij	 (9.8) 
-&#964;kk &#964;ij = &#8722;p&#948;ij +2G&#65533;&#65533;
-ij p = &#8722; 3	(9.9) 
-(9.2) becomes 
-&#65533;&#65533;T C&#65533;&#65533;&#65533; dV + &#65533;V &#954;&#65533;V dV = R (9.10) 
-V V 
-&#65533;&#65533;T C&#65533;&#65533;&#65533; dV &#8722; &#65533;T
-V p dV = R (9.11) 
-V V 
-37 </text>
+Reading: 
+Sec. 6.1-6.2 We need to satisfy at time t: 
+Equilibrium  
+tij + tfB =0 (i =1, 2, 3) in tV (3.1) t ixj 
+tij n t 
+j = f t Sf 
+i (i = 1, 2, 3) on tSf (3.2) 
+ Compatibility 
+ Stress-strain law(s) 
+Principle of virtual displacemen ts 
+ 
+tV tij teij d Vt =  
+tV ui tf B 
+i d Vt +  
+tSf ui|tSf ft Sf 
+i d St 
+f (3.3) 
+teij = 21 
+
+tu
+xi
+j + u
+txj
+i (3.4) 
+If (3.3) holds for any continuous virtual displacemen t (zero on tS), then (3.1) and (3.2) hold and  u
+vice versa.
+Refer to Ex. 4.2 in the textbook.
+  
+10 </text>
         </slide>
         <slide>
           <slideno>2</slideno>
-          <text>&#65533; &#65533; 
-&#65533;&#65533;&#65533;&#65533; &#65533;&#65533;&#65533;&#65533; &#65533; &#65533; &#65533;&#65533; &#65533; 
-&#65533;&#65533;&#65533;MIT 2.094 9. u/p formulation 
-In practice, we use elemen ts that use pressure interpolations per elemen t, not continuous between 
-elemen ts. For example: 
-Then, unless &#957; =0.5 (where Kpp = 0), we can use static condensation on the pressure dof&#8217;s. 
-Use p&#710;equations to eliminate p&#710;from the u&#710;equations. 
-Kuu &#8722; KupK&#8722;1 
-pp Kpu u&#710;= R (9.25) 
-(In practice, &#957; can be 0.499999. . . ) 
-The &#8220;best elemen t&#8221; is the 9/3 elemen t. (9 nodes for displacemen t and 3 pressure dof&#8217;s). 
-p(x, y) = p0 + p1x + p2y (9.26) 
-The inf-sup condition Reading: 
-Sec. 4.5 
-&#9124; &#9121; =&#65533;V 
-Vol qh &#65533; &#183; vh dVol &#9122;&#9122;&#9122;&#9123; &#9125;&#9125;&#9125;&#9126; infsup &#8805; &#946;&gt; 0 (9.27) &#65533;&#65533;&#65533;&#65533; qv h h&#65533; qh&#8712;Qh vh&#8712;Vh 
-for normalization 
-Qh: pressure space. 
-If &#8220;this&#8221; holds, the elemen t is optimal for the displacemen t assumption used (ellipticity must also be 
-satis&#64257;ed). 
+          <text>  
+  
+  
+  
+  
+  
+  MIT 2.094 3. Finite elemen t formulation for solids and structures 
+u(r)= 
+t u(r)= 
+u(r)= 1 1(1 + r) u1 +2 2 
+1 (1 + r) t u1 +2 
+1 1(1 + r) u1 +2 2 (1  r) u2 
+1 
+2 (1  r) t u2 
+(1  r) u2 (3.7) 
+(3.8) 
+(3.9) 
+Suppose we know t11, tV , tSf , tu ... use (3.6). 
+For elemen t 1, 
+te11 = u = B(1) u1 (3.10)  tx u2 
+T t for el. (1) B(1)T 
+tVte11t 11dV [u1 u2] 
+ tV  t11 d tV 
+ (3.11) 
+= tF (1) 
+for el. (1) tF (1)  [u1 u2] 
+ (3.12) 
+ 
+tF(1) 
+=  U1U2U3 (3.13)   0 
+u2 u1 
+where 
+tF1(1) = tF2(1) (3.14) 
+tF2(1) = tF1(1) (3.15) 
+For elemen t 2, similarly, 
+  
+0 = U1 U2U3 
+F (2) (3.16)   t 
+u2 u1
+R.H.S. 
+ (unknown reaction at left) 
+U1 U2 U3  0  (3.17)    tSf tS f
+U T f  1
+Now apply, 
+U T =  
+100  
+(3.18) 
+then, 
+U T = 0 1 0 (3.19) 
+then, 
+U T = 0 0 1 (3.20) 
+12 </text>
+        </slide>
+        <slide>
+          <slideno>1</slideno>
+          <text>  
+   
+ MIT 2.094 3. Finite elemen t formulation for solids and structures 
+Major steps 
+I. Take (3.1) and weigh with ui: 
+tij,j + tfiB ui =0. (3.5a) 
+II. Integrate (3.5a) over volume tV : 
+tij,j + tfiB ui d tV = 0 (3.5b) 
+tV 
+III. Use divergence theorem. Obtain a boundary term of stresses times virtual displacemen ts on tS = 
+tSu  tSf . 
+IV. But, on tSu the ui = 0 and on tSf we have (3.2) to satisfy. 
+Result: (3.3). 
+Example 
+tt e11 dV= 
+ 
+St
+f ui f1 d Sf t Sf t (3.6) 11 t 
+tV 
+One elemen t solution: 
+11 </text>
+        </slide>
+        <slide>
+          <slideno>4</slideno>
+          <text>MIT OpenCourseWare 
+http://ocw.mit.edu 
+2.094 Finite Element Analysis of Solids and Fluids II
+Spring 20 11 
+For information about citing these materials or our Terms of Use, visit: http://ocw.mit.edu/terms .  </text>
+        </slide>
+        <slide>
+          <slideno>3</slideno>
+          <text>MIT 2.094 3. Finite elemen t formulation for solids and structures 
+This gives, 
+  
+ t F (1) 
+0  
++  0 
+t F (2)  
+=   unknown reaction 
+0 
+f t tSf 
+1  tSf   (3.21) 
+We write that as 
+tF = tR 
+  (3.22) 
+tF = fn tU1, tU2, tU3 (3.23) 
+13 </text>
+        </slide>
+      </slides>
+    </lecture>
+    <lecture>
+      <lecture_title>Finite element large deformation / general nonlinear analysis</lecture_title>
+      <lecture_pdf_url>https://ocw.mit.edu/courses/2-094-finite-element-analysis-of-solids-and-fluids-ii-spring-2011/resources/mit2_094s11_lec10/</lecture_pdf_url>
+      <lectureno>10</lectureno>
+      <slides>
+        <slide>
+          <slideno>1</slideno>
+          <text> 
+ 
+ 
+ 
+ MIT 2.094 10. F.E. large deformation/general nonlinear analysis 
+Then we can write 
+t+tF = tF + F (10.9) 
+t+tU = tU + U (10.10) 
+where only tF and tU are known. 
+= tK U, tK = tangent stiness matrix at time t (10.11) F 
+From (10.8), 
+tK U = t+tR  tF (10.12) 
+We use this to obtain an approximation to U . We obtain a more accurate solution for U (i.e. t+tF ) 
+using 
+t+tK(i1)U (i) = t+tR  t+tF (i1) (10.13) 
+t+tU (i) = t+tU (i1) +U(i) (10.14) 
+Also, 
+t+tF (0) = tF (10.15) 
+t+tK(0) = tK (10.16) 
+t+tU (0) = tU (10.17) 
+Iterate for i =1, 2, 3 ... until convergence. Convergence is reached when 
+U(i) &lt;D (10.18) 
+2 
+t+tR t+tF (i1) (10.19)  &lt;F 2 
 Note: 
-in&#64257;mum = largest lower bound
-supremum = least upper bound
-For example, 
-inf {1, 2, 4} =1
-sup {1, 2, 4} =4
-inf {x &#8712; R; 0 &lt;x&lt; 2} =0
-sup {x &#8712; R; 0 &lt;x&lt; 2} =2
-(9.23) rewritten (&#954; = &#8734;, full incomp ressibility). Diagonalize using eigenvalues/eigenvectors. 
-For a mesh of elemen t size h we want as we re&#64257;ne the mesh , h 0 &#946;h &gt; 0 &#8594; 
-39 </text>
+a2 = (ai)2 
+i 
+U (i) = U 
+i=1,2,3.. .
+U (1) in (10.13) is U in (10.12).
+(10.13) is the full Newt on-Rap hson iteration.
+How we could (in principle) calculate tK
+Process 
+Increase the displacemen t tUi by , with no incremen t for all tUj , j = i 
+calculate t+F 
+ the i-th column in tK =( t+F  tF ) / =  tF .tUi 
+42 </text>
+        </slide>
+        <slide>
+          <slideno>3</slideno>
+          <text>MIT 2.094 10. F.E. large deformation/general nonlinear analysis 
+tF = tR (10.23) 
+t+t t+tF = R (10.24) 
+(every time it is in equilibrium) 
+(10.13) and (10.14) give: 
+i = 1, 
+t+tK(0) U (1) = t+tR t+tF (0)  fn(tU ) (10.25)  
+t+tU (1) = t+tU (0) +U(1) (10.26) 
+i = 2, 
+t+tK(1) U (2) = t+tR  t+tF (1) (10.27) 
+t+tU (2) = t+tU (1) +U(2) (10.28) 
+44 </text>
+        </slide>
+        <slide>
+          <slideno>2</slideno>
+          <text> 
+ MIT 2.094 10. F.E. large deformation/general nonlinear analysis 
+So, perform this process for i =1, 2, 3,...,n, where n is the total number of degrees of freedom. 
+Pictorially, 
+ 
+tK =  .. .. .. 
+.. .. ..  
+.. .. ..  
+A general diculty: we cannot simply incremen t Cauchy stresses. 
+t+t referred to area at time t +t  ij 
+ tij referred to area at time t. 
+We dene a new stress measu re, 2nd Piola -Kirchho stress, t+
+0 tSij , where 0 in the leading subscript 
+refers to original conguration. Then, 
+t+t 
+0Sij = 0 tSij + 0Sij (10.20) 
+The strain measu re energy-conjugate to the 2nd P-K stress 0 tSij is the Green-Lagr ange strain 0 tij 
+Then, 
+0 t 
+0 tSij  0 tij dV= R (10.21) 
+0V 
+Also, 
+t+t t+t 0 t+tS dV= R (10.22) 0 ij 0 ij
+0V 
+Example 
+43 </text>
+        </slide>
+        <slide>
+          <slideno>0</slideno>
+          <text>2.094  Finite Elemen t Analysis of Solids and Fluids Fall 08 
+Lecture 10 -F.E. large deformation/general nonlinear analysis 
+Prof. K.J. Bathe MIT OpenCourseWare 
+We developed 
+ 
+tV tij teij d Vt = Rt Reading: 
+Ch. 6 
+(10.1) 
+et ij = 1 
+2  
+ui 
+ xt 
+j + uj 
+ xt 
+i  
+(10.2) 
+ 
+tV tij teij d Vt = Rt (10.3) 
+teij = 1 2  (u
+i) 
+ txj + (uj ) 
+ txi  
+( teij ) (10.4) 
+In FEA: 
+tF = tR (10.5) 
+In linear analysis 
+tF = K tU KU = R (10.6)  
+In general nonlinear analysis, we need to iterate. Assu me the solution is known at time t 
+t 0 t x = x + u (10.7) 
+Hence tF is known. Then we consider 
+t+t t+tF = R (10.8) 
+Consider the loads (applied external loads) to be deformation-independent, e.g. 
+41 </text>
         </slide>
         <slide>
           <slideno>4</slideno>
@@ -933,17 +756,17 @@ For information about citing these materials or our Terms of Use, visit: http://
       <slides>
         <slide>
           <slideno>0</slideno>
-          <text>2.094 &#8212; Finite Elemen t Analysis of Solids and Fluids	 Fall &#8216;08 
+          <text>2.094  Finite Elemen t Analysis of Solids and Fluids	 Fall 08 
 Lecture 4 -Finite element formulation for solids and structures 
 Prof. K.J. Bathe	 MIT OpenCourseWare 
 We considered a general 3D body, Reading: 
 Ch. 4 
 The exact solution of the mathemat ical model must satisfy the conditions: 
-&#8226;	Equilibrium within tV and on tSf ,
+	Equilibrium within tV and on tSf ,
 Compatibility
-&#8226; 
-Stress-strain law(s) &#8226; 
-I. Di&#64256;erential formulation 
+ 
+Stress-strain law(s)  
+I. Dierential formulation 
 II. Variational formulation (Principle of virtual displacemen ts) (or weak formulation) 
 We developed the governing F.E. equations for a sheet or bar 
 We obtained 
@@ -951,7 +774,7 @@ tF tR= (4.1)
 where tF is a function of displacemen ts/stresses/mat erial law; and tR is a function of time. 
 Assume for now linear analysis: Equilibrium within 0V and on 0Sf , linear stress-st rain law and small 
 displacemen ts yields 
-tF = K &#183; tU (4.2) 
+tF = K  tU (4.2) 
 We want to establish, 
 KU (t) = R(t) (4.3) 
 14 </text>
@@ -960,77 +783,169 @@ KU (t) = R(t) (4.3)
           <slideno>1</slideno>
           <text>MIT 2.094	 4. Finite elemen t formulation for solids and structures 
 Consider 
-U&#710;T = &#65533; 
-U1 V1 W1 U2 WN &#65533; 
-(N nodes)	 (4.4) &#183;&#183;&#183; 
-where U&#710;T is a distinct nodal point displacemen t vector. 
-Note: for the momen t &#8220;remove Su &#8221; 
+UT =  
+U1 V1 W1 U2 WN  
+(N nodes)	 (4.4)  
+where UT is a distinct nodal point displacemen t vector. 
+Note: for the momen t remove Su  
 We also say 
-U&#710;T = &#65533; 
-U1 U2 U3 Un &#65533; 
-(n =3N) (4.5) &#183;&#183;&#183; 
+UT =  
+U1 U2 U3 Un  
+(n =3N) (4.5)  
 We now assume 
-&#9121;&#9124;(m) u 
-(m) (m)u = H(m)U&#710;, u = &#9123;	v &#9126; (4.6a) 
+(m) u 
+(m) (m)u = H(m)U, u = 	v  (4.6a) 
 w 
-where H(m) is 3 x n and U&#710;is n x 1. 
-&#65533;(m) = B(m)U&#710; (4.6b) 
+where H(m) is 3 x n and Uis n x 1. 
+(m) = B(m)U (4.6b) 
 where B(m) is 6 x n, and 
-&#65533;(m)T = &#65533; 
-&#65533;xx &#65533;yy &#65533;zz &#947;xy &#947;yz &#947;zx &#65533;
-&#8706;v &#8706;u
-e.g. &#947;xy = + &#8706;x &#8706;y 
+(m)T =  
+xx yy zz xy yz zx 
+v u
+e.g. xy = + x y 
 We also assume 
-u(m) = H(m)U&#710;	 (4.6c) 
-&#65533;(m) = B(m)U&#710;	 (4.6d) 
+u(m) = H(m)U	 (4.6c) 
+(m) = B(m)U	 (4.6d) 
 15 </text>
         </slide>
         <slide>
+          <slideno>4</slideno>
+          <text>MIT 2.094 4. Finite elemen t formulation for solids and structures 
+(1) 
+xx (x) =  
+  1 
+100 1 
+100  
+B(1) 0  
+  
+ U1 
+U2 
+U3   
+(4.20) 
+Elemen t 2 
+u(2)(x) =  
+ 
+(2) 
+xx (x) =  
+ 0 
+0 1  x 
+80 x 
+80  
+  
+H(2) U 
+ 1 
+80 1 
+80  
+  
+B(2) U (4.21) 
+(4.22) 
+Then, 
+K = E 
+100  
+ 1 
+1 
+0 1 
+1 
+0 0 0 0  
+ + 13E 
+240   0 
+0 0 0 1 
+1 0 
+1 
+1  
+ (4.23) 
+where, 
+A   
+=0 
+1 &lt; 
+&lt; E(1) 
+100   AE 
+L  
+E  13 
+3  80 =  13 
+3  
+   
+A E 
+80 
+A &lt; A   
+=80 
+4.333 &lt; 9 (4.24) 
+(4.25) 
+(4.26) 
+18 </text>
+        </slide>
+        <slide>
+          <slideno>5</slideno>
+          <text>MIT OpenCourseWare 
+http://ocw.mit.edu 
+2.094 Finite Element Analysis of Solids and Fluids II
+Spring 20 11 
+For information about citing these materials or our Terms of Use, visit: http://ocw.mit.edu/terms .  </text>
+        </slide>
+        <slide>
+          <slideno>3</slideno>
+          <text>   MIT 2.094 4. Finite elemen t formulation for solids and structures 
+Example 4.5 textbook 
+E = Youngs Modulus
+Mathematical model Plane sections remain plane:
+F.E. model 
+ 
+U1 
+U =  U2  (4.18) 
+U3 
+Elemen t 1 
+
+  U1
+x x u(1)(x)= 1  100 100 0  U2  (4.19) 
+U3 H(1) 
+17 </text>
+        </slide>
+        <slide>
           <slideno>2</slideno>
-          <text>&#65533; &#65533; 
-&#65533; &#65533; &#65533; 
-&#65533; &#65533; &#65533; 
-&#65533;&#65533; &#65533; &#65533; 
-&#65533;&#65533; &#65533; &#65533; 
-&#65533; 
-&#65533; MIT 2.094 4. Finite elemen t formulation for solids and structures 
+          <text>  
+   
+   
+   
+   
+ 
+ MIT 2.094 4. Finite elemen t formulation for solids and structures 
 Principle of Virtual Work: 
 T 
-&#65533;T &#964; dV = U&#710;fB dV
+T  dV = UfB dV
 V V
 (4.7) can be rewritten as 
-&#65533;&#65533; &#65533;&#65533; (m)T 
-&#65533;(m)T &#964; (m)dV (m) = U&#710; f B(m) dV (m) 
+  (m)T 
+(m)T  (m)dV (m) = U f B(m) dV (m) 
 V (m) V (m) m m 
 Substitute (4.6a) to (4.6d). 
-T &#65533;
-U&#710; B(m)T &#964; (m) dV (m) =
+T 
+U B(m)T  (m) dV (m) =
 V (m)
 m 
-U&#710;T &#65533; 
+UT  
 H(m)T fB (m) dV (m) 
 V (m) m 
-&#964; (m) = C(m)&#65533;(m) = C(m)B(m)U&#710;
+ (m) = C(m)(m) = C(m)B(m)U
 Finally, 
-T &#65533; 
-U&#710;&#65533;B(m)T C(m)B(m) dV (m) U&#710;= 
+T  
+UB(m)T C(m)B(m) dV (m) U= 
 V (m) m 
-T &#65533; 
-U&#710;&#65533;H(m)T fB(m) dV (m) 
+T  
+UH(m)T fB(m) dV (m) 
 V (m) m 
 with 
-&#65533;(m)T &#710;T 
+(m)T T 
 B(m)T
 = U
-KU&#710;= RB 
+KU= RB 
 where K is n x n, and RB is n x 1. 
-Direct sti&#64256;ness method: 
+Direct stiness method: 
 K = K(m) 
 m 
 RB = RB (m)
-&#65533;m
+m
 K(m) = B(m)T C(m)B(m) dV (m) 
-&#65533;V (m) 
+V (m) 
 RB (m) = H(m)T fB(m) dV (m)
 V (m)
 (4.7) 
@@ -1046,6 +961,625 @@ V (m)
 (4.17) 
 16 </text>
         </slide>
+      </slides>
+    </lecture>
+    <lecture>
+      <lecture_title>Plates and shells</lecture_title>
+      <lecture_pdf_url>https://ocw.mit.edu/courses/2-094-finite-element-analysis-of-solids-and-fluids-ii-spring-2011/resources/mit2_094s11_lec21/</lecture_pdf_url>
+      <lectureno>21</lectureno>
+      <slides>
+        <slide>
+          <slideno>1</slideno>
+          <text>    
+  
+   MIT 2.094	 21. Plates and shells 
+w u w xz = x + z = x  x	 (21.9) 
+w v w yz = y + z = y  y	 (21.10) 
+  
+xx E 1  0 xx 
+	yy  =   1 0  yy  = C (21.11) 
+xy 1  2 00 1
+2  xy  
+(plane stress) 
+xz = E xz = G	 (21.12) yz 2(1 + ) yz 
+Principle of virtual work for the plate: 
+  1  0 xx 
+ 1 0  yy dzdA+ t 
+2+  E xx  yy xy 1  2 A t 
+2 00 1 
+2 xy	 (21.13)    t 
+2+ 10 xz  G k dzdA = wpdA01xz yz yz t 
+2A A 
+Consider a at elemen t: 
+ w1 
+ 1  u1
+ x   v1 Kb  1  , also Kpl. str. 	 (21.14)   y 	 . .	 .. . . 
+where Kb is 12x12 and Kpl. str. is 8x8. 
+91 </text>
+        </slide>
+        <slide>
+          <slideno>0</slideno>
+          <text>  
+ 2.094  Finite Elemen t Analysis of Solids and Fluids Fall 08 
+Lecture 21 -Plates and shells 
+Prof. K.J. Bathe MIT OpenCourseWare 
+Timoshenko beam theory, and Reissner-Mindlin plate theory
+For plates, and shells, w, x, and y as independent variables.
+w = displacemen t of mid-surface, w(x,y)
+A = area of mid-surface 
+p = load per unit area on mid-surface 
+w = w(x, y) (21.1) 
+w(x, y, z) = w(x, y) 
+The material particles at any z move in the z-direction as the mid-surface. (21.2) 
+u(x, y, z) = xz = x(x, y)z 
+v(x, y, z) = yz = y(x, y)z (21.3) 
+(21.4) 
+xx = u 
+x = z x 
+x 
+yy = v 
+y = z y 
+y (21.5) 
+(21.6) 
+xy = u + v = z x + y (21.7) y x y x 
+  x 
+x  
+xx 
+ = z   (21.8) yyy y 
+xy 
+x + y 
+y x 
+ 
+90 </text>
+        </slide>
+        <slide>
+          <slideno>2</slideno>
+          <text>  
+ 
+  
+ 
+ 
+    
+  MIT 2.094 21. Plates and shells 
+For a at elemen t: 
+ 
+ w1 
+1 
+x 
+1 
+y 
+. . . 
+4 
+y 
+u1 
+v1 
+. . . 
+v4  
+= (21.15)  Kb 0  0 Kpl. str. 
+u = hiui (21.16) 
+v = hivi (21.17) 
+w = hiwi (21.18) 
+x =  hiyi (21.19) 
+y = hixi (21.20) 
+From (21.13) 
+  1  0Et3 10  k 01 dA T 1 0  dA + T Gt (21.21) 12(1  2) 00 1 
+2 A A 
+where k is the shear correction factor. 
+Next, evaluate w , w , x , ...etc. This elemen t, as it is, locks! x y x  
+This displacemen t-based elemen t locks in shear. We need to change the transverse shear interpola
+tions. 
+1 1 yz = (1  r)A + (1+ r)C (21.22) 2 yz 2 yz 
+where 
+w A (21.23) = y  y yz 
+from the w, y displacemen t interpolations. 
+1 1 = (1  s)B + (1+ s)D (21.24) xz 2 xz 2 xz 
+with this mixed interpolation, the elemen t works. Called MITC interpolation (for mixed interpolated-
+tensional comp onents) 
+92 evaluated at A </text>
+        </slide>
+        <slide>
+          <slideno>4</slideno>
+          <text>MIT OpenCourseWare 
+http://ocw.mit.edu 
+2.094 Finite Element Analysis of Solids and Fluids II
+Spring 20 11 
+For information about citing these materials or our Terms of Use, visit: http://ocw.mit.edu/terms .  </text>
+        </slide>
+        <slide>
+          <slideno>3</slideno>
+          <text>  
+ MIT 2.094	 21. Plates and shells 
+Aside: Why not just neglect transverse shears, as in Kirchho plate theory? 
+w	 w  If we do, xz = x  x =0  x = x 
+Therefore we have 2 w in strains, so we need continuity also for  
+ x2 ,  
+w
+x
+ 
+ 
+w = 21 r(1 + r)w1  21 r(1  r)w2 +  
+1  r 2 
+w3 
+w2 and w3 never aect w1 ( w|r=1 = w1).
+But,
+w 1 1 
+r	= 2(1+2r)w1  2(1  2r)w2  2rw3 
+w  w2 and w3 aect r . This results in diculties to develop a good 1
+elemen t based on Kirchho theory. 
+With Reissner-Mindlin theory, we independently interpolate rotations such that this problem does 
+not arise. 
+For at structures, we can superimpose the plate bending and plane stress elemen t stiness. For 
+shells, curved structures, we need to develop/use curved elemen ts, see references. 
+References 
+[1] E. Dvorkin and K.J. Bathe. A Continuum Mechanics Based Four-Node Shell Elemen t for General 
+Nonlinear Analysis. Engineering Computations, 1:7788, 1984. 
+[2] K.J. Bathe and E. Dvorkin. A Four-Node Plate Bending Elemen t Based on Mindlin/Reissner Plate 
+Theory and a Mixed Interpolation. International Journal for Numerical Methods in Engineering, 
+21:367383, 1985. 
+[3] K.J. Bathe, A. Iosilevich and D. Chapelle. An Evaluation of the MITC Shell Elemen ts. Computers 
+&amp; Structures, 75:130, 2000. 
+[4] D.	Chapelle and K.J. Bathe. The Finite Element Analysis of Shells  Fundam entals. Springer, 
+2003. 
+93 </text>
+        </slide>
+      </slides>
+    </lecture>
+    <lecture>
+      <lecture_title>Finite element analysis of Navier-Stokes fluids</lecture_title>
+      <lecture_pdf_url>https://ocw.mit.edu/courses/2-094-finite-element-analysis-of-solids-and-fluids-ii-spring-2011/resources/mit2_094s11_lec16/</lecture_pdf_url>
+      <lectureno>16</lectureno>
+      <slides>
+        <slide>
+          <slideno>2</slideno>
+          <text>    
+ MIT 2.094 16. F.E. analysis of Navier-Stokes uids 
+Variational form  
+vivi,j vj dV + eij ij dV = vifiB dV + viSf fiSf dSf (16.13) 
+V V V Sf 
+p  vdV = 0 (16.14) 
+V 
+F.E. solution  
+We interpolate (x1,x2,x3), vi, vi, , , p, p. Good elemen ts are 
+: linear pressure 
+: biquadratic velocities 
+(Q2,P1), 9/3 elemen t 
+9/4c elemen t 
+Both satisfy the inf-sup condition. 
+So in general, 
+Example: 
+For Sf e.g. 
+nn =0, vt = 0; (16.15) n 
+67 </text>
+        </slide>
+        <slide>
+          <slideno>1</slideno>
+          <text>MIT 2.094 16. F.E. analysis of Navier-Stokes uids 
+cpv |x   
+cpv |x +  
+x (cpv)dx  
++ conduction + etc (16.5) 
+In general 3D, we have an additional term for the left hand side of (16.1): 
+  (cpv) = c p  (v) = c p(  v )  cp (v  )     
+term (A) (16.6) 
+where   v = 0 in the incompressible case. 
+  v = vi,i = div(v) = 0 (16.7) 
+So (16.1) becomes 
+(k,i),i + q B = cp,ivi  (k,i),i +  
+q B  cp,ivi  
+= 0 (16.8) 
+Principle of virtual temperatures is now (use (16.4)) 
+ 
+V ,ik,idV +  
+V  (cp,ivi) dV =  
+V qB dV +  
+Sq  S q S dSq (16.9) 
+Navier-Stokes equations 
+ Dierential form 
+ij,j + fB 
+i = vi,j vj (16.10) 
+with vi,j vj like term (A) in (16.6) = (v  )v in V . 
+ij = p ij + 2eij eij = 1 
+2  vi 
+xj + vj 
+xi  
+(16.11) 
+ Boundary conditions (need be modied for various ow conditions) 
+ij nj = fSf 
+i on Sf (16.12) 
+Mostly used as fn = nn 
+inow conditions). = prescribed, ft = unknown with possibly vn 
+n = vt 
+n = 0 (outow or 
+And vi prescribed on Sv, and Sv  Sf =S and Sv  Sf = . 
+66 </text>
+        </slide>
+        <slide>
+          <slideno>5</slideno>
+          <text>  MIT 2.094 16. F.E. analysis of Navier-Stokes uids 
+1 Pee 
+i =2 1  2 (16.30) 
+For Pee &gt; 2, we have negative i (unreason able). 
+70 </text>
+        </slide>
+        <slide>
+          <slideno>3</slideno>
+          <text>  MIT 2.094 16. F.E. analysis of Navier-Stokes uids 
+and vn is solved for. Actually, we frequently just set p = 0. t 
+Frequently used is the 4-node elemen t with constant pressure 
+It does not strictly satisfy the inf-sup condition. Or use Reading: 
+Sec. 7.4 
+3-node elemen t with a bubble node. 
+Satises inf-sup condition 
+1D case of heat transfer with uid ow, v = constant Reading: 
+Sec. 7.4.3 
+Re = vL Pe = vL  = k (16.16)   cp 
+Dierential equations  
+k = cpv (16.17) 
+|x=0 = L |x=L = R (16.18) 
+In non-dimensional form Reading: 
+p. 683 
+1 (now  and  are non-dimensional) (16.19)  = 
+Pe 
+exp Pe x   L L  1  R  L = exp (Pe)  1 (16.20) 
+68 </text>
+        </slide>
+        <slide>
+          <slideno>6</slideno>
+          <text>MIT OpenCourseWare 
+http://ocw.mit.edu 
+2.094 Finite Element Analysis of Solids and Fluids II
+Spring 20 11 
+For information about citing these materials or our Terms of Use, visit: http://ocw.mit.edu/terms .  </text>
+        </slide>
+        <slide>
+          <slideno>4</slideno>
+          <text>    
+  MIT 2.094 16. F.E. analysis of Navier-Stokes uids 
+ F.E. discretization 
+ = Pe (16.21) 
+ 1 
+0 dx + Pe  1 
+0 dx = 0 + { eect of boundary conditions = 0 here} 
+Using 2-node elemen ts gives (16.22) 
+1 Pe 
+(h)2 (i+1  2i + i1)= 2h (i+1  i1) (16.23) 
+vL Pe = (16.24)  
+Dene 
+h vh Pee = Pe = (16.25)  L  
+Pee Pee 
+1  2 i1 +2i +2  1 i+1 = 0 (16.26) 
+what is happening when Pee is large? Assu me two 2-node elemen ts only. 
+i1 = 0 (16.27) 
+i+1 = 1 (16.28) 
+1 Pee 
+i =2 1  2 (16.29) 
+69 </text>
+        </slide>
+        <slide>
+          <slideno>0</slideno>
+          <text>   
+   2.094  Finite Elemen t Analysis of Solids and Fluids Fall 08 
+Lecture 16 -F.E. analysis of Navier-Stokes uids 
+Prof. K.J. Bathe MIT OpenCourseWare 
+Incompres sible ow with heat transfer 
+Reading: 
+Sec.We recall heat transfer for a solid: 7.1-7.4, 
+Table 7.3 
+Governing dierential equations 
+(k,i),i + q B =0 in V (16.1) 
+is prescribed, k = q S  (16.2)  n S Sq Sq 
+S  Sq =S S  Sq =  (16.3) 
+Principle of virtual temp eratures 
+,ik,idV = qB dV +  S q S dSq (16.4) 
+V V Sq 
+for arbitrary continuous (x1,x2,x3) zero on S 
+For a uid, we use the Eulerian formulation. 
+65 </text>
+        </slide>
+      </slides>
+    </lecture>
+    <lecture>
+      <lecture_title>Total Lagrangian formulation</lecture_title>
+      <lecture_pdf_url>https://ocw.mit.edu/courses/2-094-finite-element-analysis-of-solids-and-fluids-ii-spring-2011/resources/mit2_094s11_lec12/</lecture_pdf_url>
+      <lectureno>12</lectureno>
+      <slides>
+        <slide>
+          <slideno>2</slideno>
+          <text>  
+ 
+   
+       
+   
+  MIT 2.094 12. Total Lagrangian formulation 
+where 0eij is the linear incremen tal strain, 0ij is the nonlinear incremen tal strain, and 
+  
+1  t t  
+0eij = 0ui,j + 0uj,i + 0uk,i 0uk,j + 0uk,i 0uk,j  (12.21) 2    
+initial displ. eect 
+1 
+0ij = 0uk,i 0uk,j (12.22) 2 
+where 
+uk t+t t 
+0uk,j = 0 , uk = uk  uk (12.23) xj 
+Note 
+t+t t  =   = 0 when changing the conguration at t +t (12.24) ij 0 ij 0 ij 
+From (12.17): 
+  tS ij + dV0 ij + 0Sij 0e0 ij 0 
+0V 
+= tS + + tSij + ij dV (12.25) 0 ij 0eij 0Sij 0eij 0 0 ij 0S0 ij 0 
+0V 
+= t+tR (12.26) 
+Linearizatio n 
+  
+t t KU K
+0V  0S0e+ tSij  dV= R 
+0VtS 0eij dV (12.27)  ij ij 0 0 ij 0 t+t 
+0 ij 0 L U 0 NL 0 
+tF0 
+We use, 
+0Sij  0Cijrs 0ers (12.28) 
+We arrive at, with the nite elemen t interpolations, 
+0 tKL + 0 tKNL U = t+tR 0 tF (12.29) 
+where U is the nodal displacemen t incremen t. 
+51 </text>
+        </slide>
+        <slide>
+          <slideno>0</slideno>
+          <text>  
+  
+  
+   
+ 2.094  Finite Elemen t Analysis of Solids and Fluids Fall 08 
+Lecture 12 -Total Lagrangian formulation 
+Prof. K.J. Bathe MIT OpenCourseWare 
+We discussed: 
+t 
+tX =  x
+xi
+j  dt x = tX d0 x,d0 x =  tX 1 dt x (12.1)0 0 0 0 
+tC = tXTtX (12.2)0 0 0 
+d0 x = 0
+tX dt x where 0
+tX =  
+0 tX 1 =  
+t 0xi (12.3)xj 
+The Green-Lagr ange strain: 
+1  1  
+0 t= 0 tXT 
+0 tX  I = 0 tC  I (12.4)2 2 
+Polar decomp osition: 
+1  2  
+0 tX = 0 tR0 tU  0 t=2 0 tU  I (12.5) 
+We see, physically that: 
+where dt+tx and dtxare the same lengths 
+the comp onents of the G-L strain do not  
+change. 
+Note in FEA  0 0 k xi = hk xi  
+k  for an elemen t (12.6) 
+t tk ui = hk ui 
+k
+t 0 t xi = xi + ui  for any particle (12.7) 
+Hence for the elemen t 
+t 0 k tk xi = hk xi + hk ui (12.8) 
+k k 
+= hk 0 xik + t uik (12.9) 
+k 
+= hkt xkk (12.10) 
+k 
+49 </text>
+        </slide>
+        <slide>
+          <slideno>3</slideno>
+          <text> 
+  MIT 2.094 12. Total Lagrangian formulation 
+Left hand side as before but using (k  1) and right hand side is 
+t+t t+t t+t (k1) 0= R 
+0V S  dV (12.30) 0 ij 0 ij 
+gives 
+t+tR  t+
+0 tF (k1) (12.31) 
+In the full N-R iteration, we use 
+t+t (k1) t+t (k1) U (k) t+t t+t (k1) 
+0KL + 0KNL = R  0 F (12.32) 
+52 </text>
+        </slide>
+        <slide>
+          <slideno>1</slideno>
+          <text>  
+ 
+  MIT 2.094 12. Total Lagrangian formulation 
+E.g., k =4 
+2nd Piola-Kir chho stress 
+0 
+0 tS = t 0
+tX t 0
+tXT  comp onents also independent of a rigid body rotation (12.11) 
+Then 
+t 0 t t tSij ij dV= tij eij dV= R (12.12) 0 0 t
+0V tV
+We can use an incremen tal decomp osition of stress/st rain. 
+t+
+0 tS = 0 tS + 0S (12.13) 
+t+tS = tS + 0S (12.14) 0 ij 0 ij ij
+t+t
+ = t+ 0 (12.15) 0 0 
+t+
+0 tij = 0 tij + 0ij (12.16) 
+Assu me the solution is kown at time t, calculate the solution at time t +t. Hence, we apply (12.12) 
+at time t +t: 
+t+t t+t 0 t+tS dV= R (12.17) 0 ij 0 ij
+0V 
+Look at 0 t 
+ij : 
+1   t t t t t=  u + u + uu (12.18a) 0 ij 0 i,j 0 j,i 0 k,i 0 k,j 2 
+t t1 ui uj uk u uuk t k k= + + + (12.18b) 0 ij 2 0x  0x 0x 0x 0x 0xj i i j i j 
+1   
+0 t 
+ij =2 0ui,j + 0uj,i + 0uk,i 0 t uk,j + 0 t uk,i0uk,j (12.18c) 
+We have 
+t+tij  tij = 0ij (12.19) 0 0 
+0ij = 0eij + 0ij (12.20) 
+50 </text>
+        </slide>
+        <slide>
+          <slideno>4</slideno>
+          <text>MIT OpenCourseWare 
+http://ocw.mit.edu 
+2.094 Finite Element Analysis of Solids and Fluids II
+Spring 20 11 
+For information about citing these materials or our Terms of Use, visit: http://ocw.mit.edu/terms .  </text>
+        </slide>
+      </slides>
+    </lecture>
+    <lecture>
+      <lecture_title>Finite element formulation, example, convergence</lecture_title>
+      <lecture_pdf_url>https://ocw.mit.edu/courses/2-094-finite-element-analysis-of-solids-and-fluids-ii-spring-2011/resources/mit2_094s11_lec6/</lecture_pdf_url>
+      <lectureno>6</lectureno>
+      <slides>
+        <slide>
+          <slideno>1</slideno>
+          <text>  
+    
+  
+  MIT 2.094 6. Finite elemen t formulation, example, convergence 
+In practice, 
+ 
+BT CB dV ;  = B  u1 
+. . . 
+u4 
+v1 
+. . . 
+v4  K (6.5) = 
+el V 
+where K is 8x8 and B is 3x8. 
+Assu me we have K (8x8) for el. (2) 
+U1 U2 U3 U4 U5 U11 U18   
+    
+ 
+. . . . . . . . . 
+. . . . . . . . . 
+. . . . . . . . . 
+. . . . . . . . .  
+U1 
+. . . 
+.   . . (6.6) K = 
+assemblage U11 
+. . . 
+. . . 
+U18 
+Consider, 
+RS = HST fS dS; HS = H (6.7) 
+S on surface 
+h1 h2 h3 h4 0000 u(x,y)H = 0000 h1 h2 h3 h4  
+v(x,y) (6.8)  
+ 
+ u1 
+u2 
+. . .  (6.9) u = u4 
+v1 
+. . . 
+v4 
+24 </text>
+        </slide>
+        <slide>
+          <slideno>0</slideno>
+          <text>  
+  
+    2.094  Finite Elemen t Analysis of Solids and Fluids Fall 08 
+Lecture 6 -Finite element formulation, example, convergence 
+Prof. K.J. Bathe MIT OpenCourseWare 
+6.1 Example 
+Reading: 
+Ex. 4.6 in 
+the text 
+t =0.1, E, plane stress 
+(6.1) KU = R; R = RB + Rs + Rc + Rr 
+= K(m); K(m) = B(m)T C(m) B(m) dV (m) (6.2) K 
+V (m) m 
+RB = R(m) (m); R = H(m)T fB(m) dV (m) (6.3) B B 
+V (m) m 
+6.1.1 F.E. model 
+u1 u2 u3 u4 v1 v2 v3 v4 
+    u1   
+(6.4) K 
+el. (2) = . . .  . . . 
+23 </text>
+        </slide>
+        <slide>
+          <slideno>3</slideno>
+          <text> 
+ 
+ 
+  
+   
+   
+  
+  MIT 2.094 6. Finite elemen t formulation, example, convergence 
+h1 = 1 
+4 (1 + x)(1 + y)  1 2 h
+5 
+h2 = 1 4 (1  x)(1 + y)  1 2 h
+5 
+h3 = 1 4 (1  x)(1  y) 
+h
+1 = 1 4 (1 + x)(1  y) 
+Note: (6.14) 
+(6.15) 
+(6.16) 
+(6.17) 
+hi =1 
+We must have i hi = 1 to satisfy the rigid body mode condition. 
+u(x,y)= hiui (6.18) 
+i 
+Assu me all nodal point displacemen ts = u. Then, 
+u(x,y)= hiu = u hi = u (6.19) 
+i i 
+From (6.1), 
+K(m) U = R (6.20) 
+m 
+B(m)T C(m)B(m)dV (m) U = R (6.21) 
+V (m) m 
+where C(m)B(m)U =  (m). (Assu me we calculated U .) 
+B(m)T  (m) dV (m) = R (6.22) 
+V (m) m 
+F (m) = R; F (m) = B(m)T  (m) dV (m) (6.23) 
+V (m) m 
+Two properties 
+I. The sum of the F (m)s at any node is equal to the applied external forces. 
+26 </text>
+        </slide>
+        <slide>
+          <slideno>2</slideno>
+          <text> 
+  
+   MIT 2.094 6. Finite elemen t formulation, example, convergence 
+(6.10) HS = H 
+ y=+1 
+1 
+2 (1 + x) 1 2 (1  x) 0 0 0 0 0 0 
+=  (6.11) 
+0 0 00 1 (1 + x) 1 (1  x)002 2 
+From (6.7); 
+ +1 
+= 
+=  
+  1 (1 + x) 02 1 (1  x) 02 
+0  0 (0.1) dx (6.12) RS 1 (1 + x) p(x)2 1 10 (1  x) thickness 2 
+ 
+0
+0
+p0(0.1)
+p0(0.1)
+(6.13) RS 
+6.1.2 Higher-order elemen ts
+Want h1, h2, h3, h4, h5 
+u(x,y)= 
+i5
+=1 hiui. 
+hi = 1 at node i and 0 at all other nodes. 
+h5 = 1 (1  x2)(1 + y)2 
+25 </text>
+        </slide>
         <slide>
           <slideno>5</slideno>
           <text>MIT OpenCourseWare 
@@ -1056,87 +1590,1309 @@ For information about citing these materials or our Terms of Use, visit: http://
         </slide>
         <slide>
           <slideno>4</slideno>
-          <text>MIT 2.094 4. Finite elemen t formulation for solids and structures 
-&#65533;(1) 
-xx (x) = &#65533; 
-&#65533; &#8722; 1 
-100 1 
-100 &#65533;&#65533; 
-B(1) 0 &#65533; 
-&#65533; &#9121; 
-&#9123; U1 
-U2 
-U3 &#9124; &#9126; 
-(4.20) 
-Elemen t 2 
-u(2)(x) = &#65533; 
-&#65533; 
-&#65533;(2) 
-xx (x) = &#65533; 
-&#65533; 0 
-0 1 &#8722; x 
-80 x 
-80 &#65533; 
-&#65533;&#65533; &#65533; 
-H(2) U 
-&#8722; 1 
-80 1 
-80 &#65533; 
-&#65533;&#65533; &#65533; 
-B(2) U (4.21) 
-(4.22) 
-Then, 
-K = E 
-100 &#9121; 
-&#9123; 1 
-&#8722;1 
-0 &#8722;1 
-1 
-0 0 0 0 &#9124; 
-&#9126; + 13E 
-240 &#9121; &#9123; 0 
-0 0 0 1 
-&#8722;1 0 
-&#8722;1 
-1 &#9124; 
-&#9126; (4.23) 
-where, 
-A &#65533;&#65533; &#65533; 
-&#951;=0 
-1 &lt; 
-&lt; E(1) 
-100 &#8801; &#65533; AE 
-L &#65533; 
-E &#183; 13 
-3 &#183; 80 = &#65533; 13 
-3 &#65533; 
-&#65533; &#65533;&#65533; &#65533; 
-A&#8727; E 
-80 
-A&#8727; &lt; A &#65533;&#65533; &#65533; 
-&#951;=80 
-4.333 &lt; 9 (4.24) 
-(4.25) 
-(4.26) 
-18 </text>
+          <text>MIT 2.094 6. Finite elemen t formulation, example, convergence 
+II. Every elemen t is in equilibrium under its F (m) 
+ 
+U T 
+F (m) = U T 
+B(m)T  (m) d V (m) (6.24) 
+ V (m)  
+ =(m)T 
+= (m)T  (m) d V (m) (6.25) 
+V (m) 
+= 0 (6.26) 
+where UT 
+= virtual nodal point displacemen t. 
+Apply rigid body displacemen t. 
+If we move the elemen t virtually in the rigid body modes, (m) is zero. Therefore the virtual work 
+obtained due to virtual motion of the elemen t is zero. Then the elemen t is in equilibrium under its F (m). 
+27 </text>
+        </slide>
+      </slides>
+    </lecture>
+    <lecture>
+      <lecture_title>Deformation, strain, and stress tensors</lecture_title>
+      <lecture_pdf_url>https://ocw.mit.edu/courses/2-094-finite-element-analysis-of-solids-and-fluids-ii-spring-2011/resources/mit2_094s11_lec11/</lecture_pdf_url>
+      <lectureno>11</lectureno>
+      <slides>
+        <slide>
+          <slideno>2</slideno>
+          <text> 
+  
+   
+  MIT 2.094 11. Deformation, strain and stress tensors 
+1 0 0h1 = 4(1 + x1)(1 + x2) (11.19) 
+. . . 
+t 0 t xi = xi + ui (11.20) 
+4
+= hkt xik , (i =1, 2) (11.21) 
+k=1 
+where txik are the nodal point coordinates at time t (tx11 = 2, tx21 =1.5) 
+Then we obtain 
+tX =1 5+ 0x2 1+ 0x1 (11.22) 0 4 1
+2 (1 + 0x2) 1
+2 (9 + 0x1) 
+At 0x1 =0, 0x2 = 0, 
+ 1 51 
+0 tX  
+0x =0x2=0 =4 1 9 (11.23) 
+i 2 2 
+The Green-Lagrange Strain 
+1   1  
+0 t=2 0 tXT 
+0 tX  I =2 0 tC  I (11.24) 
+t 0 t txi xi + ui ui= = ij + (11.25) 0x 0x 0xj j j 
+We nd that
+1  
+t= t u + t u + t u t u , sum over k =1, 2, 3 (11.26) 0 ij 0 i,j 0 j,i 0 k,i 0 k,j 2 
+where 
+tu
+0 t ui,j = 0 i (11.27) xj 
+47 </text>
+        </slide>
+        <slide>
+          <slideno>1</slideno>
+          <text> 
+  
+ 
+ MIT 2.094	 11. Deformation, strain and stress tensors 
+The stretch of a ber (t): 
+2 t t t 2 d xT d x dst = =	 (11.7) d0xT d0x d0s 
+The length of a ber is 
+0 0 0ds= d x T d x 1 
+2(11.8) 
+   2 d0xTtXT tX d0xt = 0
+0 00 , from (11.5) (11.9) dsds 
+Express 
+0 0 0d x = dsn	 (11.10) 
+0	 0 n = unit vector into direction of d x	 (11.11) 
+t 2 = 0 n T 
+0 tC 0 n	 (11.12)  
+ t = 0 n T 
+0 tC 0 n 1 
+2(11.13) 
+Also, 
+ 
+d x t T   
+d x t  
+=  
+d s t   
+d st  
+cos t, (a  b = ab cos ) (11.14) 
+From (11.5), 
+cos t =  
+d x0 T tXT 
+0   tX0 d x0  
+d ts d st 
+= d s0 n0 T tC0 n0 d s0 
+d ts  d st  
+tX0  tX0  
+(11.15) 
+(11.16) 
+ 0nT 
+0 tC 0ncos t = t t (11.17) 
+Also, 
+0t = det 0 tX (see Ex. 6.5)	 (11.18) 
+Example	 Reading: 
+Ex. 6.6 in 
+the text 
+46 </text>
         </slide>
         <slide>
           <slideno>3</slideno>
-          <text>&#65533; &#65533;&#65533; &#65533; MIT 2.094 4. Finite elemen t formulation for solids and structures 
-Example 4.5 textbook 
-E = Young&#8217;s Modulus
-Mathematical model Plane sections remain plane:
-F.E. model 
-&#9121;&#9124; 
-U1 
-U = &#9123; U2 &#9126; (4.18) 
-U3 
-Elemen t 1 
-&#9121;&#9124;
-&#65533; &#65533; U1
-x x u(1)(x)= 1 &#8722; 100 100 0 &#9123; U2 &#9126; (4.19) 
-U3 H(1) 
-17 </text>
+          <text>  MIT 2.094 11. Deformation, strain and stress tensors 
+Polar decomposition of 
+tX tRtU = 00 0 (11.28) tX 
+is a rotation matrix, such that 0 
+where tR
+tRT 0
+tU 0 
+0tR
+is a symmet ric matrix (stretch) 0 = I (11.29) 
+and 
+Ex. 6.9 textbook 
+ 
+3   4 10
+3 2 tX = 
+Then, 
+2 tC tXTtX tU = = 0 
+ttU = 0 
+0 2
+0 
+0 0
+0 (11.30) 330 1 2 2 2 
+(11.31) 
+(11.32) 1 2I2 
+This shows, by an example, that the comp onents of the Green-Lagr ange strain are independent of a 
+rigid-body rotation. 
+48 </text>
+        </slide>
+        <slide>
+          <slideno>4</slideno>
+          <text>MIT OpenCourseWare 
+http://ocw.mit.edu 
+2.094 Finite Element Analysis of Solids and Fluids II
+Spring 20 11 
+For information about citing these materials or our Terms of Use, visit: http://ocw.mit.edu/terms .  </text>
+        </slide>
+        <slide>
+          <slideno>0</slideno>
+          <text>  2.094  Finite Elemen t Analysis of Solids and Fluids Fall 08 
+Lecture 11 -Deformation, strain and stress tensors 
+Prof. K.J. Bathe MIT OpenCourseWare 
+We stated that we use Reading: 
+Ch. 6 
+tVtij eij dVt = 
+0VtS t0V = tR (11.1) t 0 ij  0 ij d 
+The deformatio n gradient We use txi = 0xi + tui 
+   t x1  t x1  t x1 
+ 0x1  0x2  0x3 
+ t x2  t x2  t x2   tX0 (11.2) = 0 0 0   x x x1 2 3 
+ x t 
+3  x t 
+3  x t 
+3 
+ x0 
+1  x0 
+2  x0 
+3 
+ tdx1  dt x (11.3) tdx = 2 
+tdx3 
+0dx1  
+d0 x 0 (11.4) 
+(11.5) dx2 
+0dx3 
+Implies that 
+dt x = 0 tX d0 x = 
+(0 tX is frequently denoted by 0 tF or simply F , but we use F for 
+force vector) 
+We will also use the right Cauchy-Green deformation tensor 
+tC tXTtX = (11.6) 0 0 0 
+Some applicatio ns 
+45 </text>
+        </slide>
+      </slides>
+    </lecture>
+    <lecture>
+      <lecture_title>Convergence of displacement-based FEM</lecture_title>
+      <lecture_pdf_url>https://ocw.mit.edu/courses/2-094-finite-element-analysis-of-solids-and-fluids-ii-spring-2011/resources/mit2_094s11_lec8/</lecture_pdf_url>
+      <lectureno>8</lectureno>
+      <slides>
+        <slide>
+          <slideno>0</slideno>
+          <text>2.094  Finite Elemen t Analysis of Solids and Fluids	 Fall 08 
+Lecture 8 -Convergence of displacement-based FEM 
+Prof. K.J. Bathe	 MIT OpenCourseWare 
+(A)	 Find 
+u  V such that a(u, v)=(f, v) v  V (Mathemat ical model) (8.1) 
+a(v, v) &gt; 0 v  V, v =0. (8.2) 
+where (8.2) implies that structures are supported properly. E.g. 
+(B) F.E. Problem Find 
+uh  Vh such that a(uh, vh) = (f , vh) vh  Vh (8.3) 
+a(vh, vh) &gt; 0 vh  Vh, 
+Properties eh = u  uh vh = 0 (8.4) 
+(I) a(eh, vh) = 0 vh  Vh (8.5) 
+(II) a(uh, uh)  a(u, u) (8.6) 
+33 </text>
+        </slide>
+        <slide>
+          <slideno>2</slideno>
+          <text>MIT 2.094 8. Convergence of displacemen t-based FEM 
+Pascal triangle (2D) 
+(Ch. 4.3) 
+error in displacemen t  C  4-node elemen t is comp lete to k = 1.  
+9-node elemen t is comp lete to k = 2.  
+hk+1 (8.12) 
+(C is a constant determined by the exact solution, material property. . . ) 
+error in stresses  Chk (8.13)  
+error in strain energy  Ch2k (these C are dierent) (8.14)   
+Hence, 
+E  Eh = Ch2k (roughly equal to) (8.15)  
+By theory, 
+log(E  Eh) = log C +2k log h (8.16) 
+35 </text>
+        </slide>
+        <slide>
+          <slideno>1</slideno>
+          <text>  
+ 
+MIT 2.094 8. Convergence of displacemen t-based FEM 
+(C) Assume Mesh is contained in Mesh 
+h1 h2 
+e.g. Mesh 
+not contained in Mesh 
+h1 h2 
+We assume (C), but need another property (independent of (C)) 
+(III) a(eh, eh)  a(u  vh, u  vh) vh  Vh (8.7) 
+uh minimizes! (Recal l eh = u  uh) 
+Proof: Pick wh  Vh. 
+a(eh + wh, eh + wh)= a(eh, eh)+  0 
+2a(e h, wh) ( ) + awwh, h 
+0 (8.8) 
+Equality holds for (wh = 0) 
+a(eh, eh)  a(eh + wh, eh + wh) (8.9) 
+= a(u  uh + wh, u  uh + wh) (8.10) 
+Take wh = uh  vh. 
+a(eh, eh)  a(u  vh, u  vh) (8.11) 
+Using property (III) and (C), we can say that we will converge monotonically, from below, to a(u, u): 
+34 </text>
+        </slide>
+        <slide>
+          <slideno>3</slideno>
+          <text> MIT 2.094 8. Convergence of displacemen t-based FEM 
+By experiment, we can evaluate log(E  Eh) for dierent mesh es and plot log(E  Eh) vs. log h 
+We need to use graded mesh es if we have high stress gradients. 
+Example Consider an almost incomp ressible material: 
+V = vol. strain (8.17) 
+or 
+  v  very small or zero (8.18) 
+We can see diculties: 
+p = V  = bulk modulus (8.19) 
+As the material becomes incomp ressible ( =0.3 0.4999) 
+  p nite number (8.20) V 0  
+(Small error in V results in huge error on pressure as  , the constant C in (8.15) can be very large 
+locking)  
+36 </text>
+        </slide>
+        <slide>
+          <slideno>4</slideno>
+          <text>MIT OpenCourseWare 
+http://ocw.mit.edu 
+2.094 Finite Element Analysis of Solids and Fluids II
+Spring 20 11 
+For information about citing these materials or our Terms of Use, visit: http://ocw.mit.edu/terms .  </text>
+        </slide>
+      </slides>
+    </lecture>
+    <lecture>
+      <lecture_title>u/p formulation</lecture_title>
+      <lecture_pdf_url>https://ocw.mit.edu/courses/2-094-finite-element-analysis-of-solids-and-fluids-ii-spring-2011/resources/mit2_094s11_lec9/</lecture_pdf_url>
+      <lectureno>9</lectureno>
+      <slides>
+        <slide>
+          <slideno>0</slideno>
+          <text> 
+ 
+ 
+  
+  
+  2.094  Finite Elemen t Analysis of Solids and Fluids Fall 08 
+Lecture 9 -u/p formulation 
+Prof. K.J. Bathe MIT OpenCourseWare 
+We want to solve	 Reading: 
+Sec. 4.4.3 
+I. Equilibrium 
+ij,j + fiB = 0 in Volume (9.1) Sfij nj = fi on Sf 
+II. Comp atibility 
+III. Stress-st rain law 
+Use the principle of virtual displacemen ts 
+T C dV = R	 (9.2) 
+V 
+We recogn ize that if  0.5 
+V 0(V = xx + yy + zz)	 (9.3)  
+E  = 3(1  2)  (9.4) 
+p = V must be accurately comp uted	 (9.5) 
+Solution 
+ij = V ij +2G
+ij	 (9.6) 
+where 
+1 i = jij = Kronecker delta =	 (9.7) 0 i =j 
+Deviatoric strains: 
+V
+ij = ij  3 ij	 (9.8) 
+kk ij = pij +2G
+ij p =  3	(9.9) 
+(9.2) becomes 
+T C dV + V V dV = R (9.10) 
+V V 
+T C dV  T
+V p dV = R (9.11) 
+V V 
+37 </text>
+        </slide>
+        <slide>
+          <slideno>2</slideno>
+          <text>  
+      
+MIT 2.094 9. u/p formulation 
+In practice, we use elemen ts that use pressure interpolations per elemen t, not continuous between 
+elemen ts. For example: 
+Then, unless  =0.5 (where Kpp = 0), we can use static condensation on the pressure dofs. 
+Use pequations to eliminate pfrom the uequations. 
+Kuu  KupK1 
+pp Kpu u= R (9.25) 
+(In practice,  can be 0.499999. . . ) 
+The best elemen t is the 9/3 elemen t. (9 nodes for displacemen t and 3 pressure dofs). 
+p(x, y) = p0 + p1x + p2y (9.26) 
+The inf-sup condition Reading: 
+Sec. 4.5 
+  =V 
+Vol qh   vh dVol   infsup  &gt; 0 (9.27)  qv h h qhQh vhVh 
+for normalization 
+Qh: pressure space. 
+If this holds, the elemen t is optimal for the displacemen t assumption used (ellipticity must also be 
+satised). 
+Note: 
+inmum = largest lower bound
+supremum = least upper bound
+For example, 
+inf {1, 2, 4} =1
+sup {1, 2, 4} =4
+inf {x  R; 0 &lt;x&lt; 2} =0
+sup {x  R; 0 &lt;x&lt; 2} =2
+(9.23) rewritten ( = , full incomp ressibility). Diagonalize using eigenvalues/eigenvectors. 
+For a mesh of elemen t size h we want as we rene the mesh , h 0 h &gt; 0  
+39 </text>
+        </slide>
+        <slide>
+          <slideno>3</slideno>
+          <text>MIT 2.094 9. u/p formulation 
+For 
+ (entry [3,1] in matrix) assume the circled entry is the minimum (inf) of 
+ . 
+Also, all entries in the matrix not shown are zero. 
+Case 1 h =0 
+ 
+ 0 uh|i = 0 (from the bottom equation)  
+uh+0 ph= Rh (from the top equation)   |i |j |i 
+=0 
+ no equation for ph|j 
+spurious pressure! (any pressure satises equation)  
+Case 2 h = small =  
+  uh|i =0  uh|i =0
+   ph|j + uh|i   = Rh|i  
+i
+ph|j = Rh| displ. = 0 as  is small    pressure large  
+The behavior of given mesh when bulk modulus increases: locking, large pressures. See Example 
+4.39 textbook. 
+40 </text>
+        </slide>
+        <slide>
+          <slideno>1</slideno>
+          <text> 
+ = 
+
+ 
+ MIT 2.094 9. u/p formulation 
+We need another equation because we now have another unknown p. 
+p + V = 0 (9.12) 
+p (p + V ) dV = 0 (9.13) 
+ V  
+ 
+V pV + p dV = 0 (9.14) 
+For an elemen t, 
+u = Hu (9.15) 
+ = BDu (9.16) 
+V = BV u (9.17) 
+p = Hpp (9.18) 
+Plane strain (zz 
+4/1 elemen t = 0) Example Reading: 
+Ex. 4.32 in 
+the text 
+V = xx + yy (9.19) 
+  1 
+31 
+3(xx + yy) xx 
+ yy (xx + yy)    (9.20)   xy 
+(xx + yy)1 
+3
+Note: zz = 0 but = 0! zz 
+p = Hpp= [1]{p0} (9.21) 
+p(x,y)= p0 (9.22) 
+We obtain from (9.11) and (9.14) 
+    
+Kuu Kup u R 
+Kpu Kpp p= 0 (9.23) 
+BT
+V
+Kuu = DCBD dV (9.24a) 
+Kup =  BVT Hp dV (9.24b) 
+V 
+Kpu =  HpT BV dV (9.24c) 
+V 
+1 Kpp =  HpT 
+ Hp dV (9.24d) 
+V 
+38 </text>
+        </slide>
+        <slide>
+          <slideno>4</slideno>
+          <text>MIT OpenCourseWare 
+http://ocw.mit.edu 
+2.094 Finite Element Analysis of Solids and Fluids II
+Spring 20 11 
+For information about citing these materials or our Terms of Use, visit: http://ocw.mit.edu/terms .  </text>
+        </slide>
+      </slides>
+    </lecture>
+    <lecture>
+      <lecture_title>Field problems</lecture_title>
+      <lecture_pdf_url>https://ocw.mit.edu/courses/2-094-finite-element-analysis-of-solids-and-fluids-ii-spring-2011/resources/mit2_094s11_lec15/</lecture_pdf_url>
+      <lectureno>15</lectureno>
+      <slides>
+        <slide>
+          <slideno>0</slideno>
+          <text>2.094  Finite Elemen t Analysis of Solids and Fluids Fall 08 
+Lecture 15 -Field problems 
+Prof. K.J. Bathe MIT OpenCourseWare 
+Heat transfer, incomp ressible/inviscid/irrotational ow, seepage ow, etc.	 Reading: 
+Sec. 7.2-7.3 
+Dierential formulation  
+Variational formulation  
+Incremen tal formulation  
+F.E. discretization  
+15.1 Heat transfer 
+Assu me V constant for now: 
+S = S  Sq
+s
+(x,y,z,t) is unkown except |S = pr. In addition, q|Sq is also prescribed. 
+15.1.1 Dieren tial formulation 
+I. Heat ow equilibrium in V and on Sq. 
+II. Constitutive laws qx = k  .x 
+ qy = k	 (15.1) y
+
+qz = k	 (15.2) z 
+III. Comp atibility: temperatures need to be continuous and satisfy the boundary conditions. 
+61 </text>
+        </slide>
+        <slide>
+          <slideno>2</slideno>
+          <text>   
+ 
+  
+  
+   
+ 
+  
+    
+ MIT 2.094 15. Field problems 
+Transform using divergence theorem (see Ex 4.2, 7.1) 
+SqT kdV = qB dV + q S dSq (15.12) 
+V V Sqheat ow 
+ 
+x   
+ =   (15.13)  y   
+ 
+z 
+ 
+k 00 
+k =  0 k 0  (15.14) 
+00 k 
+Convectio n boundary condition 
+q S = he  S (15.15) 
+where e is the given environmental temperature. 
+Radiation 
+q S =   
+(r)4   
+S 4  
+(15.16) 
+=   
+(r)2 +  
+S 2  
+r + S  
+r  S  
+(15.17) 
+= r  S (15.18) 
+where  = (S ) and r is given temperature of source. At time t +t 
+Tt+tk t+tdV = t+t q B dV +  St+t q S dSq (15.19) 
+V V Sq 
+Let t+t = t +  (15.20) 
+or t+t(i) = t+t(i1) +(i) (15.21) 
+with t+t(0) = t (15.22) 
+From (15.19) 
+Tt+t (i1)(i)k dV 
+V 
+= t+t q B dV  Tt+tk(i1) t+t(i1)dV (15.23) 
+V V 
+S(i1) S(i)  St+th(i1) t+te t+t+   + dSq 
+Sq 
+where the S(i) term would be moved to the left-hand side. 
+We considered the convection conditions 
+ St+th  t+te  t+tS  
+dSq (15.24) 
+Sq 
+The radiation conditions would be included similarly. 
+63 </text>
+        </slide>
+        <slide>
+          <slideno>1</slideno>
+          <text>      
+ || 
+  
+  
+    
+ MIT 2.094 15. Field problems 
+Heat ow equilibrium gives 
+      Bk + k + k = q (15.3)x x y y z z 
+where qB is the heat generated per unit volume. Recal l 1D case: 
+unit cross-sect ion 
+dV = dx (1) (15.4)  
+qx  qx+dx + q B dx = 0 (15.5) 
+qx q|x  q|x + x dx + q B dx = 0 (15.6) 
+  B   x kx dx + q dx = 0 (15.7) 
+  Bk = q (15.8)x x 
+We also need to satisfy 
+k  = q S (15.9)n 
+on Sq. 
+15.1.2 Principle of virtua l temp eratures 
+  k + + q B = 0 (15.10)x x  
+(  = 0 and  to be continuous.)S 
+  
+  k + + q B dV = 0 (15.11) 
+V x x  
+62 </text>
+        </slide>
+        <slide>
+          <slideno>4</slideno>
+          <text>MIT OpenCourseWare 
+http://ocw.mit.edu 
+2.094 Finite Element Analysis of Solids and Fluids II
+Spring 20 11 
+For information about citing these materials or our Terms of Use, visit: http://ocw.mit.edu/terms .  </text>
+        </slide>
+        <slide>
+          <slideno>3</slideno>
+          <text>  
+  
+   
+ MIT 2.094 15. Field problems 
+F.E. discretizatio n 
+t+t t+t = H1x4  4x1 for 4-node 2D planar elemen t 
+t+t t+t2x1 = B2x4  4x1 
+t+tS = HSt+t 
+For (15.23) 
+  
+t+t (i1)(i) gives t+t (i1)T k dV =  BT k BdV   (i)        V V 4x2 2x2 2x4 4x1 
+t+t q B dV HTt+t q B dV
+V V 
+Tt+tk(i1) t+t(i1)dV BTt+tk(i1)BdV t+t(i1)    V V 
+known 
+   
+Sq  ST t+th(i1) t+te  t+tS(i1) +S(i) dSq =  
+  
+HST t+th(i1) HS t+te t+t(i1) + (i)  dSq           Sq 4x1 1x4 4x1 4x1 4x1 
+15.2 Inviscid, incompres sible, irrota tiona l ow 
+2D case: vx, vy are velocities in x and y directions. 
+  v =0 
+or vx + vy = 0 (incomp ressible) x y 
+vx vy 
+y  x = 0 (irrotational) 
+Use the potential (x,y), 
+  vx = vy = x y 
+22 + =0 in V  x2 y2 
+(Same as the heat transfer equation with k = 1, qB = 0) 
+64 (15.25) 
+(15.26) 
+(15.27) 
+(15.28) 
+(15.29) 
+(15.30) 
+(15.31) 
+Reading: 
+Sec. 7.3.2 
+(15.32) 
+(15.33) 
+(15.34) 
+(15.35) 
+(15.36) </text>
+        </slide>
+      </slides>
+    </lecture>
+    <lecture>
+      <lecture_title>Slender structures</lecture_title>
+      <lecture_pdf_url>https://ocw.mit.edu/courses/2-094-finite-element-analysis-of-solids-and-fluids-ii-spring-2011/resources/mit2_094s11_lec19/</lecture_pdf_url>
+      <lectureno>19</lectureno>
+      <slides>
+        <slide>
+          <slideno>1</slideno>
+          <text> MIT 2.094 19. Slender structures 
+u2 v2 2u   x 1 t0 s 
+   L 2L 
+Bbeam =   0 (19.8)0 0 0 v 
+y 
+0  1  1 (1  r) 
+y x L 2 u + v 
+1 v(r) = 2(1  r)v2
+1 st
+u(r) = 2(1  r)u2  4 (1  r)2 
+at r = 1, 
+v(1) = v2 
+st u(1) =  2 2 + u2 
+Kinemat ics is 
+1 u(r) = 2(1  r)u2 
+results into xx 
+u 2 1  xx = r  L =  L 
+st u(r,s)=  4 (1  r)2 
+results into xx, xy 
+st xx =  2L 
+u 2 1 xy = s  t =  2(1  r) 
+1 v(r) = 2(1  r)v2 
+results into xy 
+1  xy =  L 
+(19.9) 
+(19.10) 
+(19.11) 
+(19.12) 
+(19.13) 
+(19.14) 
+(19.15) 
+(19.16) 
+(19.17) 
+(19.18) 
+(19.19) 
+82 </text>
+        </slide>
+        <slide>
+          <slideno>0</slideno>
+          <text>  2.094  Finite Elemen t Analysis of Solids and Fluids Fall 08 
+Lecture 19 -Slender structures 
+Prof. K.J. Bathe MIT OpenCourseWare 
+Beam analysis,t 
+L 1 (e.g.t 
+L =1 1 
+100 , 1000 ,  ) Reading: 
+Sec. 5.4, 
+6.5 
+(plane stress) 
+2L0 (19.1) J = 0
+1 t 
+2 
+(1  r)(1 + s) (19.2) h2 = 4 
+1 (1  r)(1  s) (19.3) h3 = 4 
+ =v v3 2
+3 
+2 Beam theory assumptions (Timosh enko beam theory): 
+u 
+u (19.4) 
+(19.5) 
+(19.6) = v2 
+t = u2 + 22 
+t = u2  2 2 
+    u v u v3 3 2 2
+ 1 2 
+L0 1 
+4(1  s)2 
+L0 
+2(1 ) rt(1 + s)4 0 etc (19.7) B = 
+1 
+42(1 ) rt 
+(1 + s)1 
+42(1 ) rt 
+2(1  s)0 
+1 2 
+L1 
+42(1 ) rt
+81 1 
+44 L 1 
+4</text>
+        </slide>
+        <slide>
+          <slideno>2</slideno>
+          <text>  MIT 2.094 19. Slender structures 
+For a pure bending momen t, we want
+1 1
+ Lv2  2(1  r)2 = 0 (19.20) 
+for all r! Impossible (except for v2 = 2 = 0) So, the elemen t has a spurious shear strain!   
+Beam kinematics (Timosh enko, Reissner-Mindlin) 
+dw  = dx   (19.21) 
+1 I = bt3 (19.22) 12 
+Principle of virtual work 
+EI  L 
+0 d 
+dx d 
+dx dx + AS G  L 
+0  dw 
+dx     dw 
+dx    
+dx =  L 
+0 pwdx (19.23) 
+As = kA = kbt (19.24) 
+To calculate k Reading: 
+ 
+A 1 
+2G (a)2dA =  
+AS 1 
+2G  V 
+As 2 
+dAs (19.25) p. 400 
+where a is the actual shear stress: 
+a = 3 
+2  V 
+A   t 
+2 2  y2 
+ t 2  
+(19.26) 
+2 
+and V is the shear force. Reading: 
+Ex. 5.23 
+5 k = (19.27)  6 
+83 </text>
+        </slide>
+        <slide>
+          <slideno>4</slideno>
+          <text>MIT OpenCourseWare 
+http://ocw.mit.edu 
+2.094 Finite Element Analysis of Solids and Fluids II
+Spring 20 11 
+For information about citing these materials or our Terms of Use, visit: http://ocw.mit.edu/terms .  </text>
+        </slide>
+        <slide>
+          <slideno>3</slideno>
+          <text>MIT 2.094 19. Slender structures 
+Now interpolate 
+w(r) = h1w1 + h2w2 (19.28) 
+(r) = h11 + h22 (19.29) 
+Revisit the simple case: 
+1+ r w = w1 (19.30) 2 
+1+ r  = 1 (19.31) 2 
+Shearing strain 
+w1 1+ r  = L  2 1 (19.32) 
+Shear strain is not zero all along the beam. But, at r = 0, we can have the shear strain = 0. 
+w1 
+L  1 
+2 can be zero (19.33) 
+Namel y, 
+w1 
+L  1 
+2 = 0 for 1 = 2 
+L w1 (19.34) 
+84 </text>
+        </slide>
+      </slides>
+    </lecture>
+    <lecture>
+      <lecture_title>Incompressible fluid flow and heat transfer (cont.)</lecture_title>
+      <lecture_pdf_url>https://ocw.mit.edu/courses/2-094-finite-element-analysis-of-solids-and-fluids-ii-spring-2011/resources/mit2_094s11_lec17/</lecture_pdf_url>
+      <lectureno>17</lectureno>
+      <slides>
+        <slide>
+          <slideno>1</slideno>
+          <text>    
+ 
+    
+ 
+   MIT 2.094 17. Incomp ressible uid ow and heat transfer, contd 
+17.3 Basic equations 
+P.V. velocities 
+vivi,j vj dV + ij eij dV = vifiB dV + viSf fiSf dSf (17.1) 
+V V V Sf 
+Continuity 
+pvi,idV = 0 (17.2) 
+V 
+P.V. temp erature 
+cp,ividV + ,ik,idV = qB dV +  S q S dS (17.3) 
+V V V Sq 
+F.E. solution 
+xi = hkx k
+i (17.4) 
+vi = hkvik (17.5) 
+ = hkk (17.6) 
+p = hkpk (17.7) 
+ 
+v
+F (u)= R
+ u =  p  nodal variables (17.8)  
+ 
+17.4 Model problem 
+1D equation, 
+d d2 cpv = k (17.9) dx dx2 
+(v is given, unit cross section) 
+Non-dimensional form (Section 7.4) 
+d d2Pe = (17.10) dx dx2 
+72 </text>
+        </slide>
+        <slide>
+          <slideno>0</slideno>
+          <text>2.094  Finite Elemen t Analysis of Solids and Fluids Fall 08 
+Lecture 17 -Incompressible uid ow and heat transfer, contd 
+Prof. K.J. Bathe MIT OpenCourseWare 
+17.1 Abstract body 
+Reading: 
+Sec. 7.4 
+Fluid Flow Heat transfer 
+Sv,Sf S,Sq 
+Sv  Sf S  Sq = S = S 
+Sv  Sf =0 S  Sq =0 
+17.2 Actual 2D problem (channel ow) 
+71 </text>
+        </slide>
+        <slide>
+          <slideno>4</slideno>
+          <text> 
+ 
+  MIT 2.094	 17. Incomp ressible uid ow and heat transfer, contd 
+17.5 FSI briey
+Lagrangian formulation for the structure/sol id 
+Arbitrary Lagrangian-Eulerian (ALE) formulation Let f be a variable of a particle (e.g. f = ). 
+Consider 1D 
+f f f = + v 
+partic le t x (17.24) 
+where v is the particle velocity. For a mesh point, 
+f = f f + vm	 (17.25) 
+mesh point t x 
+where vm 
+f is the mesh point velocity. Hence, 
+f = f + x (v  vm)	 (17.26) 
+partic le mesh point 
+Use (17.26) in the momen tum and energy equations and use force equilibrium and comp atibility at 
+the FSI boundary to set up the governing F.E. equations. 
+References 
+[1] K.J. Bathe, H. Zhang and M.H. Wang. Finite Elemen t Analysis of Incomp ressible and Comp ressible 
+Fluid Flows with Free Surfaces and Structural Interactions. Computers &amp; Structures, 56:193213, 
+1995. 
+[2] K.J.	Bathe, H. Zhang and S. Ji. Finite Elemen t Analysis of Fluid Flows Fully Coupled with 
+Structural Interactions. Computers &amp; Structures, 72:116, 1999. 
+[3] K.J. Bathe and H. Zhang. Finite Elemen t Developments for General Fluid Flows with Structural 
+Interactions. International Journal for Numerical Methods in Engineering, 60:213232, 2004. 
+75 </text>
+        </slide>
+        <slide>
+          <slideno>5</slideno>
+          <text>MIT OpenCourseWare 
+http://ocw.mit.edu 
+2.094 Finite Element Analysis of Solids and Fluids II
+Spring 20 11 
+For information about citing these materials or our Terms of Use, visit: http://ocw.mit.edu/terms .  </text>
+        </slide>
+        <slide>
+          <slideno>2</slideno>
+          <text>  
+  
+  
+  
+ 
+ MIT 2.094 17. Incomp ressible uid ow and heat transfer, contd 
+vL kPe = ,  = (17.11)  cp 
+ is non-dimensional 
+  L exp Pe 
+Lx  1
+R  L = exp (Pe)  1 (17.12)
+(17.10) in F.E. analysis becomes 
+d dd Pe dV + dV = 0 (17.13) dx dxdxV V 
+Discretized by linear elemen ts: 
+h h = L 
+  ()= 1  i1 + i (17.14) h h 
+For node i:
+Pee Pee
+i1  2 i1 +2i  i+1 +2 i+1 = 0 (17.15) 
+where 
+vh hPee = = Pe (17.16)  L 
+This result is the same as obtained by nite dierences 
+1 (i+1  2i + i1) (17.17)  = 
+i (h)2 
+ = i+1  i1 (17.18) 
+i 2h 
+73 </text>
+        </slide>
+        <slide>
+          <slideno>3</slideno>
+          <text> 
+ 
+  MIT 2.094 17. Incomp ressible uid ow and heat transfer, contd 
+Considered i+1 = 1, i1 = 0. Then 
+i =1  (Pee/2) (17.19) 2 
+Physically unrealistic solution when Pee &gt; 2. For this not to happen, we should rene the mesh a very 
+ne mesh would be required. We use upwinding 
+d = i  i1 (17.20) h dx i 
+The result is 
+(1  Pee) i1 + (2 + Pee) i  i+1 = 0 (17.21) 
+Very stable, e.g. 
+i1 = 0 = 1 (17.22) i+1 =1  i 2 + Pee 
+Unfortunately it is not that accurate. To obtain better accuracy in the interpolation for , use the 
+function 
+exp Pe x 
+L  1 
+exp(Pe)  1 (17.23) 
+The result is Pee dependent: 
+This implies ow-con dition based interpolation. We use such interpolation functionssee references. 
+References 
+[1] K.J. Bathe and H. Zhang. A Flow-Con dition-Based Interpolation Finite Elemen t Procedure for 
+Incomp ressible Fluid Flows. Computers &amp; Structures, 80:12671277, 2002. 
+[2] H. Kohno and K.J. Bathe. A Flow-Con dition-Based Interpolation Finite Elemen t Procedure for 
+Triangular Grids. International Journal for Numerical Methods in Fluids, 51:673699, 2006. 
+74 </text>
+        </slide>
+      </slides>
+    </lecture>
+    <lecture>
+      <lecture_title>Total Lagrangian formulation (cont.)</lecture_title>
+      <lecture_pdf_url>https://ocw.mit.edu/courses/2-094-finite-element-analysis-of-solids-and-fluids-ii-spring-2011/resources/mit2_094s11_lec13/</lecture_pdf_url>
+      <lectureno>13</lectureno>
+      <slides>
+        <slide>
+          <slideno>2</slideno>
+          <text> 
+ 
+  
+   
+  
+  
+ 
+  
+  
+ 
+    
+   
+    
+ MIT 2.094 13. Total Lagrangian formulation, contd 
+t t 
+= u1 + u1 u1 + u2 u2 (13.20a) 0e11 0x1  0x1  0x1 0x1 0x1 
+2 0L cos   0L (13.20b) t +L =u1 
+2 0Lt +L sin  (13.20c) =u2 
+1 1010 u0e11 = 0L   
+  0L +L 1 u cos   1 1010 + 0L 0L 
+tu1 
+0x1  
+  0L +L 1  u 
+= 0 tBLu (13.20e) 
+Hence, 0 101 sin  (13.20d) + 0L 0L 
+tu2 
+x0 
+1 
+0e11 = 0L +L 
+(0L)2  cos   sin  cos  sin  u (13.20f) 
+where the boxed quantity above equals 0 tBL. In small strain but large rotation analysis we assume 
+L  0L, 
+1 
+cos  sin  cos  sin  u (13.20g) 0e11 = 0L 
+1 u1 u1 u2 u2+ (13.21a) 0 0 0 0x x= 011 2     x x1 1 1 1 
+1 = 0 11 2 1 u1 u1 u1 u1 u2 u2 u2 u2+ + + (13.21b) 0 0 0 0 0 0 0 0x x         x x x x x x1 1 1 1 1 1 1 
+u1 u1 u2 u2 = 0 0 + 0 0 (13.21c) x1 x1 x1 x1 
+u1 tS 00 0 u1 u2  11 tS x1 (13.21d) 11= 0 11 0 0 0 0 tS u2   x x1 1 0 11  x1 
+tS0 
+u1 
+0 1 1 010 
+0  x1 = u (13.21e) u2 0L 101  0x1 
+BNL 
+55 0 </text>
+        </slide>
+        <slide>
+          <slideno>1</slideno>
+          <text> 
+ 
+  
+  
+ 
+ MIT 2.094 13. Total Lagrangian formulation, contd 
+tK tBT tB 0 
+0 L = 0 L 0C 0 LdV (13.10) 
+0V 
+T 0 tK = tBtS tBNLdV (13.11) 0 NL 0 NL 0 0 
+0V  
+ matrix 
+T 0 tF = tBtS dV (13.12) 0 0 L 0
+0V  
+vector 
+The iteration (full Newt on-Rap hson) is 
+t+tK(i1) + t+tK(i1) U (i) = t+tR t+tF (i1) (13.13) 0 L 0 NL  0 
+t+tU (i) = t+tU (i1) +U(i) (13.14) 
+Truss elemen t example (p. 545) 
+Here we have to only deal with 0 tS11, 0e11, 011 
+t 
+0e11 = u1 + uk uk (13.15) 0x1 0x1  0x1 
+1 uk uk 
+011 =2 0x1  0x1 (13.16) 
+We are after 
+ 1u1  u1  tB  2  tB0e11 = 0 L  2  = 0 Lu (13.17) u1 
+2u2 
+2
+ui = hku k
+i (13.18) 
+k=1
+2
+t tk ui = hk ui (13.19) 
+k=1 
+54 </text>
+        </slide>
+        <slide>
+          <slideno>0</slideno>
+          <text> 
+ 
+   
+  2.094  Finite Elemen t Analysis of Solids and Fluids Fall 08 
+Lecture 13 -Total Lagrangian formulation, contd 
+Prof. K.J. Bathe MIT OpenCourseWare 
+Example truss elemen t. Recal l: 
+Principle of virtual displacemen ts applied at some time t +t: 
+t+t t+t t+tij t+teij d V = R (13.1) 
+t+tV 
+t+t t+t 0 t+tS V= R (13.2) 0 ij 0 ij
+0V 
+t+
+0 tSij = 0 tSij + 0Sij (13.3) 
+t+
+0 tij = 0 tij + 0ij (13.4) 
+0ij = 0eij + 0ij (13.5) 
+where 0 tSij and 0 tij are known, but 0Sij and 0ij are not. 
+1   
+0eij =2 0ui,j + 0uj,i + 0 t uk,i 0uk,j + 0 t uk,j 0uk,i (13.6) 
+1  
+0ij = 0uk,i 0uk,j (13.7) 2 
+Substitute into (13.2) and linearize to obtain 
+0 0 t+t 00e0C0ers + ij ij dV= 0eij ij dV
+0V ij ijrs dV
+0V 0 tS 0 R 
+0V 0 tS (13.8) 
+F.E. discretizatio n gives 
+0 tKL + 0 tKNL U = t+tR  0 tF (13.9) 
+53 </text>
+        </slide>
+        <slide>
+          <slideno>4</slideno>
+          <text>MIT OpenCourseWare 
+http://ocw.mit.edu 
+2.094 Finite Element Analysis of Solids and Fluids II
+Spring 20 11 
+For information about citing these materials or our Terms of Use, visit: http://ocw.mit.edu/terms .  </text>
+        </slide>
+        <slide>
+          <slideno>3</slideno>
+          <text>   
+  MIT 2.094 13. Total Lagrangian formulation, contd 
+0C = E (13.22) 
+tS= tS (13.23) 0 011 
+Assu me small strains 
+EA tK = 0 0L   cos2  cos  sin   cos2   cos  sin  
+sin2   sin  cos   sin2  
+cos2  sin  cos    = 
+sym sin2  
+tK (13.24) 0 L 
+  
+1 0 10 
+0tP 
+0L  0 1 1 
+0 + 10 1 
+0 10 1 
+tK0 NL 
+When  = 0, 0 tKL doesnt give stiness corresponding to u22, but 0 tKNL does. 
+56 </text>
+        </slide>
+      </slides>
+    </lecture>
+    <lecture>
+      <lecture_title>Large displacement analysis of solids/structures</lecture_title>
+      <lecture_pdf_url>https://ocw.mit.edu/courses/2-094-finite-element-analysis-of-solids-and-fluids-ii-spring-2011/resources/mit2_094s11_lec1/</lecture_pdf_url>
+      <lectureno>1</lectureno>
+      <slides>
+        <slide>
+          <slideno>2</slideno>
+          <text>MIT 2.094 1. Large displacemen t analysis of solids/structures 
+Column problem, statics 
+Not physical 
+tR is in direction of bending momen t Not in 
+equilibrium.  
+1.2.2 Requiremen ts to be fullled by solution at time t 
+I. Equilibrium of stresses (Cauchy stresses, forces per unit area in tV and on tSf ) with the applied 
+body forces tfB and surface tractions tfSf 
+II. Comp atibility 
+III. Stress-st rain law 
+1.2.3 Finite Elemen t Metho d 
+I. Equilibrium condition mean s now 
+ equilibrium at the nodes of the mesh 
+ equilibrium of each nite elemen t 
+II. Comp atibility satised exactly 
+III. Stress-st rain law satised exactly 
+5 </text>
+        </slide>
+        <slide>
+          <slideno>0</slideno>
+          <text>2.094  Finite Elemen t Analysis of Solids and Fluids Fall 08 
+Lecture 1 -Large displacement analysis of solids/structures 
+Prof. K.J. Bathe MIT OpenCourseWare 
+1.1 Project Example 
+Physical problem 
+Reading: 
+Ch. 1 in 
+the text 
+Simple math ematical model 
+analytical solution  
+F.E. solution(s)  
+More complex math ematical model 
+holes included  
+large disp./large strains  
+F.E. solution(s)   
+How many nite elemen ts?  
+We need a good error measu re (especially for FSI) 
+Even more complex math ematical model 
+Thecomp lex mathemat ical modelincludes Fluid 
+Structure Interaction (FSI). 
+You will use ADINA in your projects (and homew ork) for structures and uid ow. 
+3 </text>
+        </slide>
+        <slide>
+          <slideno>1</slideno>
+          <text>MIT 2.094	 1. Large displacemen t analysis of solids/structures 
+1.2 Large Displacemen t analysis 
+Lagrangian formulations: 
+ Total Lagrangian formulation 
+	Updated Lagrangian formulation Reading: 
+Ch. 6 
+1.2.1 Mathema tical model/problem
+Given the original conguration of the body, 
+the support conditions, 
+the applied external loads, 
+the assumed stress-st rain law 
+Calculate the deformations, strains, stresses of the body. 
+Question Is there a unique solution? Yes, for innitesimal small displacemen t/strain. Not necessar ily 
+for large displacemen t/strain. 
+For example: 
+Snap- through problem 
+The same load. Two dierent deformed congurations. 
+4 </text>
+        </slide>
+        <slide>
+          <slideno>3</slideno>
+          <text>MIT 2.094 1. Large displacemen t analysis of solids/structures 
+1.2.4 Notation
+Cauchy stresses (force per unit area at time t):
+tij i, j =1, 2, 3 tij = tji (1.1)
+6 </text>
+        </slide>
+        <slide>
+          <slideno>4</slideno>
+          <text>MIT OpenCourseWare 
+http://ocw.mit.edu 
+2.094 Finite Element Analysis of Solids and Fluids II
+Spring 20 11 
+For information about citing these materials or our Terms of Use, visit: http://ocw.mit.edu/terms .  </text>
+        </slide>
+      </slides>
+    </lecture>
+    <lecture>
+      <lecture_title>Solution of finite element equations</lecture_title>
+      <lecture_pdf_url>https://ocw.mit.edu/courses/2-094-finite-element-analysis-of-solids-and-fluids-ii-spring-2011/resources/mit2_094s11_lec18/</lecture_pdf_url>
+      <lectureno>18</lectureno>
+      <slides>
+        <slide>
+          <slideno>2</slideno>
+          <text>
+     
+   
+   
+  MIT 2.094	 18. Solution of F.E. equations 
+Plasticity 
+	yield criterion 
+ow rule  
+	hardening rule 
+t 
+t	= tt + d (18.16) 
+tt 
+Solution of (18.1) (similarly (18.2) and (18.3)) 
+Newton- Raphson Find U  as the zero of f(U ) 
+t+t t+tR f(U)= (18.17) F 
+ 
+t+t (i1)U U  t+tU (i1) + H.O.T.	 (18.18) ft+t (i1) + = f U U
+where t+tU (i1) is the value we just calculated and an approximation to U . 
+Assu me t+tR is independent of the displacemen ts. 
+ U (i)	(18.19) t+tFt+tR t+tF (i1)0 =   U t+t (i1)U 
+We obtain
+t+tK(i1)U (i) = t+tR  t+tF (i1) (18.20)
+(18.21)  t+tF Ft+tK(i1) = = U t+t (i1) U t+t (i1) U U 
+Physically 
+ t+tF1(i1) 
+t+t (i1)K11 =	 (18.22) u 
+78 </text>
+        </slide>
+        <slide>
+          <slideno>1</slideno>
+          <text>  MIT 2.094 18. Solution of F.E. equations 
+Material law
+tS 
+0 11 = E0 t 
+11 (18.5) 
+In isotropic elasticity: 
+E= E (1  ) , ( =0.3) (18.6) (1 + )(1  2) 
+1  2  1  0L + tu2  
+1  tu2  
+0 t=2 0 tU  I  0 t11 =2 0L  1 =2 1+ 0L  1 (18.7) 
+where 0 tU is the stretch tensor. 
+0tS = 0X t0XT (18.8) 0 11 t 11 11 t 11 t 
+with 
+0L0
+tX11 = , 0 0L = ttL (18.9) 0L + tu 
+2 tL 0L 0L  0 tS11 = 0L tL t11 = tL t11 (18.10) 
+ 2  
+ 0
+tLL t11 = E 21 1+ 0t 
+Lu 1 (18.11) 
+EA  tu2  tu
+tP = 1+  1 1+
+ (18.12)  t11A = 2 0L 0L 
+This is because of the material-law assumption (18.5) (okay for small strains . . . ) 
+Hyperelasticity 
+tW = f(Green-Lagr ange strains, material constants) (18.13) 0 
+t t1 W W
+0 tSij = 0 
+t + 0 
+t (18.14) 2  0 ij 0 ji
+ t t 
+1 S S
+0Cijrs = 0 
+t ij + 0 
+t ij (18.15) 2  0 rs 0 sr 
+77 </text>
+        </slide>
+        <slide>
+          <slideno>4</slideno>
+          <text>MIT 2.094 18. Solution of F.E. equations 
+Beam 
+t 1e.g. L = 100 
+(4-node el.)
+The elemen t does not have curvature we have
+a spurious shear strain 
+(9-node el.) 
+We do not have a shear (better)  
+But, still for thin structures, it has problems 
+like ill-conditioning. 
+We need to use beam elemen ts. For curved structures also spurious mem brane strain can be 
+present. 
+80 </text>
+        </slide>
+        <slide>
+          <slideno>5</slideno>
+          <text>MIT OpenCourseWare 
+http://ocw.mit.edu 
+2.094 Finite Element Analysis of Solids and Fluids II
+Spring 20 11 
+For information about citing these materials or our Terms of Use, visit: http://ocw.mit.edu/terms .  </text>
+        </slide>
+        <slide>
+          <slideno>0</slideno>
+          <text>2.094  Finite Elemen t Analysis of Solids and Fluids Fall 08 
+Lecture 18 -Solution of F.E. equations 
+Prof. K.J. Bathe MIT OpenCourseWare 
+In structures, Reading: 
+Sec. 8.4 
+F (u, p) = R. (18.1) 
+In heat transfer, 
+F ()= Q (18.2) 
+In uid ow, 
+F (v, p, )= R (18.3) 
+In structures/sol ids 
+ 
+F (m)  
+t (m)Tt (m) 0 (m)F = = 0BL 0SdV (18.4) 
+0V (m) m m 
+Elastic materials 
+Example p. 590 textbook 
+76 </text>
+        </slide>
+        <slide>
+          <slideno>3</slideno>
+          <text> MIT 2.094 18. Solution of F.E. equations 
+Picto rially for a single degree of freedom system 
+i = 1; tK u(1) = t+tR  tF (18.23) 
+i = 2; t+tK(1)u(2) = t+tR t+tF (1) (18.24)  
+Convergence Use 
+U(i)2 &lt; (18.25) 
+a2 = (ai)2 (18.26) 
+i 
+But, if incremen tal displacemen ts are small in every iteration, need to also use 
+t+tR  t+tF (i1)2 &lt;R (18.27) 
+18.1 Slender structures 
+(beams, plates, shells) 
+t  1 (18.28) Li 
+79 </text>
         </slide>
       </slides>
     </lecture>
@@ -1147,48 +2903,128 @@ U3 H(1)
       <slides>
         <slide>
           <slideno>1</slideno>
-          <text>&#65533;	 &#65533; 
-&#65533; &#65533;&#65533; &#65533; 
-&#65533; &#65533; MIT 2.094	 7. Isoparamet ric elemen ts 
-&#65533; = Bu&#710;u&#710;T = u1 u2 v4	 (7.7) &#183;&#183;&#183; 
-&#9121;	&#8706;u &#9124;
-&#8706;x
-&#9122;&#9125;&#9122;&#9125;
-&#9122; &#8706;v &#9125; = Bu&#710; (7.8)
-&#9122;	 &#8706;y &#9125; &#9123;&#9126; 
-&#8706;u + &#8706;v 
-&#8706;y	 &#8706;x 
-&#9115;&#9118;&#9121; &#9124;&#9115;&#9118; &#8706; &#8706;x &#8706;y &#8706;
-&#8706;r &#8706;r &#8706;r &#8706;x
-&#9117;&#9120; = &#9123; &#9126;&#9117;&#9120;	 (7.9) 
-&#8706; &#8706;x &#8706;y &#8706;
-&#8706;s &#8706;s &#8706;s &#8706;y
-J &#9115;&#9118; &#9115;&#9118;&#8706; &#8706;
-&#8706;x &#8706;r
-&#9117;&#9120; = J&#8722;1 &#9117;&#9120;	 (7.10) 
-&#8706; &#8706;
-&#8706;y &#8706;s
+          <text>	  
+   
+  MIT 2.094	 7. Isoparamet ric elemen ts 
+ = BuuT = u1 u2 v4	 (7.7)  
+	u 
+x
+
+ v  = Bu (7.8)
+	 y   
+u + v 
+y	 x 
+   x y 
+r r r x
+ =  	 (7.9) 
+ x y 
+s s s y
+J   
+x r
+ = J1 	 (7.10) 
+ 
+y s
 J must be non-singular which ensures that there is unique correspondence between (x,y) and (r,s). 
 Hence, 
-&#65533; 1 &#65533; 1 
+ 1  1 
 K = BT CB t det(J ) dr ds	 (7.11) 
-&#8722;1 &#8722;1 &#65533; &#65533;&#65533; &#65533; 
-dV &#65533; 1 &#65533; 1 
+1 1    
+dV  1  1 
 Also, RB = HT fB t det(J ) dr ds	 (7.12) 
-&#8722;1 &#8722;1 
+1 1 
 Numerical integration (Gauss formulae) (Ch. 5.5) 
-= t BT det(J ij ) &#215; (weight i, j) (7.13) 
-ij K &#8764;ij CBij 
+= t BT det(J ij )  (weight i, j) (7.13) 
+ij K ij CBij 
 2x2 Gauss integration, 
 (i = 1, 2) (7.14) 
 (j = 1, 2) (weight i, j = 1 in this case) (7.15) 
 29 </text>
         </slide>
         <slide>
+          <slideno>3</slideno>
+          <text> MIT 2.094 7. Isoparamet ric elemen ts 
+Convergence Principle of virtual work: Reading: 
+ Sec. 5.5.5, 
+4.3 T C dV = R(u) (7.21) 
+V 
+Find u, solution, in V, vector space (any continuous function that satises boundary conditions), 
+satisfying 
+T C dV = a(u, v) =(f, v) for all v, an elemen t of V. (7.22)    V 
+bilinear form R(v) 
+Example: 
+Finite Elemen t problem Find uh  Vh, where Vh is F.E. vector space such that
+a(uh, vh)=(f, vh) vh  Vh (7.23)
+Size of Vh  # of independent DOFs (here its 12). 
+Note: 
+a(w, w) &gt; 0 for w  V(w = 0)   
+2x (strain energy when imposing w) 
+Also, 
+a(w h, wh) &gt; 0 for wh  Vh (Vh  V, wh = 0) 
+31 </text>
+        </slide>
+        <slide>
+          <slideno>5</slideno>
+          <text>MIT OpenCourseWare 
+http://ocw.mit.edu 
+2.094 Finite Element Analysis of Solids and Fluids II
+Spring 20 11 
+For information about citing these materials or our Terms of Use, visit: http://ocw.mit.edu/terms .  </text>
+        </slide>
+        <slide>
+          <slideno>0</slideno>
+          <text> 
+ 
+ 
+ 2.094  Finite Elemen t Analysis of Solids and Fluids Fall 08 
+Lecture 7 -Isoparametric elements 
+Prof. K.J. Bathe MIT OpenCourseWare 
+Reading: 
+  Sec. 5.1-5.3 We want K = V BT CB dV , RB = V HT fB dV . Unique correspondence (x,y)  (r,s) 
+(r,s) are natural coordinate system or isoparamet ric coordinate system. 
+4
+x = hixi (7.1) 
+i=1 
+4
+y = hiyi (7.2) 
+i=1 
+where 
+1 h1 = (1+ r)(1 + s) (7.3) 4
+1
+h2 = 4(1  r)(1 + s) (7.4) 
+... 
+4
+u(r,s)= hiui (7.5) 
+i=1 
+4
+v(r,s)= hivi (7.6) 
+i=1 
+28 </text>
+        </slide>
+        <slide>
+          <slideno>4</slideno>
+          <text>   MIT 2.094 7. Isoparamet ric elemen ts 
+Property I Dene: eh = u  uh. 
+From (7.22), a(u, vh)=(f, vh) (7.24) 
+From (7.23), a(uh, vh)=(f, vh) (7.25) 
+Hence, 
+a(u  uh, vh) = 0 (7.26) 
+a(eh, vh) = 0 (7.27) 
+(error is orthogonal in that sense to all vh in F.E. space). 
+Property II 
+(7.28) a(uh, uh)  a(u, u) 
+Proof: 
+a(u, u)= a(uh + eh, uh + eh) (7.29) 
+= a(uh, uh)+  0 by Prop. I 
+2a(u h, eh) + a(eh, eh) (7.30) 
+0 
+ a(u, u)  a(uh, uh) (7.31) 
+32 </text>
+        </slide>
+        <slide>
           <slideno>2</slideno>
-          <text>&#65533; 
-&#65533; &#65533; &#65533; 
-&#65533; &#65533; &#65533; &#65533; MIT 2.094 7. Isoparamet ric elemen ts 
+          <text> 
+   
+    MIT 2.094 7. Isoparamet ric elemen ts 
 9-node elemen t 
 9
 x = hixi (7.16) 
@@ -1213,1945 +3049,125 @@ For a rectangular elemen t, 3x3 Gauss integration gives exact K matrix. If the e
 a K matrix which is still accurate enough will be obtained, (if high enough integration is used). 
 30 </text>
         </slide>
+      </slides>
+    </lecture>
+    <lecture>
+      <lecture_title>Finite element formulation of solids and structures</lecture_title>
+      <lecture_pdf_url>https://ocw.mit.edu/courses/2-094-finite-element-analysis-of-solids-and-fluids-ii-spring-2011/resources/mit2_094s11_lec2/</lecture_pdf_url>
+      <lectureno>2</lectureno>
+      <slides>
         <slide>
-          <slideno>4</slideno>
-          <text>&#65533; &#65533;&#65533; &#65533; MIT 2.094 7. Isoparamet ric elemen ts 
-Property I De&#64257;ne: eh = u &#8722; uh. 
-From (7.22), a(u, vh)=(f, vh) (7.24) 
-From (7.23), a(uh, vh)=(f, vh) (7.25) 
+          <slideno>3</slideno>
+          <text>MIT OpenCourseWare 
+http://ocw.mit.edu 
+2.094 Finite Element Analysis of Solids and Fluids II
+Spring 20 11 
+For information about citing these materials or our Terms of Use, visit: http://ocw.mit.edu/terms .  </text>
+        </slide>
+        <slide>
+          <slideno>2</slideno>
+          <text>   
+  
+  
+  
+     
+    MIT 2.094 2. Finite elemen t formulation of solids and structures 
 Hence, 
-a(u &#8722; uh, vh) = 0 (7.26) 
-a(eh, vh) = 0 (7.27) 
-(error is orthogonal in that sense to all vh in F.E. space). 
-Property II 
-(7.28) a(uh, uh) &#8804; a(u, u) 
-Proof: 
-a(u, u)= a(uh + eh, uh + eh) (7.29) 
-= a(uh, uh)+ &#65533;&#65533;&#65533;&#65533;&#65533;&#65533; &#65533;0 by Prop. I 
-2a(u h, eh) + a(eh, eh) (7.30) 
-&#8805;0 
-&#8756; a(u, u) &#8805; a(uh, uh) (7.31) 
-32 </text>
-        </slide>
-        <slide>
-          <slideno>5</slideno>
-          <text>MIT OpenCourseWare 
-http://ocw.mit.edu 
-2.094 Finite Element Analysis of Solids and Fluids II
-Spring 20 11 
-For information about citing these materials or our Terms of Use, visit: http://ocw.mit.edu/terms .  </text>
-        </slide>
-        <slide>
-          <slideno>0</slideno>
-          <text>&#65533; 
-&#65533; 
-&#65533; 
-&#65533; 2.094 &#8212; Finite Elemen t Analysis of Solids and Fluids Fall &#8216;08 
-Lecture 7 -Isoparametric elements 
-Prof. K.J. Bathe MIT OpenCourseWare 
-Reading: 
-&#65533; &#65533; Sec. 5.1-5.3 We want K = V BT CB dV , RB = V HT fB dV . Unique correspondence (x,y) &#8660; (r,s) 
-(r,s) are natural coordinate system or isoparamet ric coordinate system. 
-4
-x = hixi (7.1) 
-i=1 
-4
-y = hiyi (7.2) 
-i=1 
-where 
-1 h1 = (1+ r)(1 + s) (7.3) 4
-1
-h2 = 4(1 &#8722; r)(1 + s) (7.4) 
-... 
-4
-u(r,s)= hiui (7.5) 
-i=1 
-4
-v(r,s)= hivi (7.6) 
-i=1 
-28 </text>
-        </slide>
-        <slide>
-          <slideno>3</slideno>
-          <text>&#65533; MIT 2.094 7. Isoparamet ric elemen ts 
-Convergence Principle of virtual work: Reading: 
-&#65533; Sec. 5.5.5, 
-4.3 &#65533;T C&#65533; dV = R(u) (7.21) 
-V 
-Find u, solution, in V, vector space (any continuous function that satis&#64257;es boundary conditions), 
-satisfying 
-&#65533;T C&#65533; dV = a(u, v) =(f, v) for all v, an elemen t of V. (7.22) &#65533; &#65533;&#65533; &#65533; &#65533;&#65533;&#65533;&#65533;V 
-bilinear form R(v) 
-Example: 
-Finite Elemen t problem Find uh &#8712; Vh, where Vh is F.E. vector space such that
-a(uh, vh)=(f, vh) &#8704;vh &#8712; Vh (7.23)
-Size of Vh &#8658; # of independent DOFs (here it&#8217;s 12). 
-Note: 
-a(w, w) &gt; 0 for w &#8712; V(w = 0)&#65533; &#65533;&#65533; &#65533; &#65533;
-2x (strain energy when imposing w) 
-Also, 
-a(w h, wh) &gt; 0 for wh &#8712; Vh (Vh &#8834; V, wh = 0) &#65533;
-31 </text>
-        </slide>
-      </slides>
-    </lecture>
-    <lecture>
-      <lecture_title>Finite element formulation of solids and structures (cont.)</lecture_title>
-      <lecture_pdf_url>https://ocw.mit.edu/courses/2-094-finite-element-analysis-of-solids-and-fluids-ii-spring-2011/resources/mit2_094s11_lec3/</lecture_pdf_url>
-      <lectureno>3</lectureno>
-      <slides>
-        <slide>
-          <slideno>1</slideno>
-          <text>&#65533; &#65533; 
-&#65533; &#65533; &#65533; 
-&#65533; MIT 2.094 3. Finite elemen t formulation for solids and structures 
-Major steps 
-I. Take (3.1) and weigh with ui: 
-t&#964;ij,j + tfiB ui =0. (3.5a) 
-II. Integrate (3.5a) over volume tV : 
-t&#964;ij,j + tfiB ui d tV = 0 (3.5b) 
+t11,1 + tf1 B u1 d tV = 0 (2.12) 
 tV 
-III. Use divergence theorem. Obtain a boundary term of stresses times virtual displacemen ts on tS = 
-tSu &#8746; tSf . 
-IV. But, on tSu the ui = 0 and on tSf we have (3.2) to satisfy. 
-Result: (3.3). 
-Example 
-t&#964;t e11 dV= 
-&#65533; 
-St
-f ui f1 d Sf t Sf t (3.6) 11 t 
-tV 
-One elemen t solution: 
-11 </text>
-        </slide>
-        <slide>
-          <slideno>3</slideno>
-          <text>MIT 2.094 3. Finite elemen t formulation for solids and structures 
-This gives, 
-&#9121; &#9124; 
-&#65533; t &#710;F (1) 
-0 &#65533; 
-+ &#65533; 0 
-t &#710;F (2) &#65533; 
-= &#9122; &#9123; unknown reaction 
-0 
-f t tSf 
-1 &#183; tSf &#9125; &#9126; (3.21) 
-We write that as 
-tF = tR 
-&#65533; &#65533; (3.22) 
-tF = fn tU1, tU2, tU3 (3.23) 
-13 </text>
-        </slide>
-        <slide>
-          <slideno>0</slideno>
-          <text>&#65533; &#65533; 2.094 &#8212; Finite Elemen t Analysis of Solids and Fluids Fall &#8216;08 
-Lecture 3 -Finite element formulation for solids and structures 
-Prof. K.J. Bathe MIT OpenCourseWare 
-Reading: 
-Sec. 6.1-6.2 We need to satisfy at time t: 
-Equilibrium &#8226; 
-t&#8706;&#964;ij + tfB =0 (i =1, 2, 3) in tV (3.1) t i&#8706;xj 
-t&#964;ij n t 
-j = f t Sf 
-i (i = 1, 2, 3) on tSf (3.2) 
-&#8226; Compatibility 
-&#8226; Stress-strain law(s) 
-Principle of virtual displacemen ts 
-&#65533; 
-tV t&#964;ij teij d Vt = &#65533; 
-tV ui tf B 
-i d Vt + &#65533; 
-tSf ui|tSf ft Sf 
-i d St 
-f (3.3) 
-teij = 21 
-&#8706;&#8706;
-tu
-xi
-j + &#8706;&#8706;u
-txj
-i (3.4) 
-If (3.3) holds for any continuous virtual displacemen t (zero on tS), then (3.1) and (3.2) hold and &#8226; u
-vice versa.
-Refer to Ex. 4.2 in the textbook.
- &#8226; 
-10 </text>
-        </slide>
-        <slide>
-          <slideno>2</slideno>
-          <text>&#65533; &#65533; 
-&#65533; &#65533; 
-&#65533; &#65533; 
-&#65533; &#65533; 
-&#65533; &#65533; 
-&#65533; &#65533; 
-&#65533; &#65533; MIT 2.094 3. Finite elemen t formulation for solids and structures 
-u(r)= 
-t u(r)= 
-u(r)= 1 1(1 + r) u1 +2 2 
-1 (1 + r) t u1 +2 
-1 1(1 + r) u1 +2 2 (1 &#8722; r) u2 
-1 
-2 (1 &#8722; r) t u2 
-(1 &#8722; r) u2 (3.7) 
-(3.8) 
-(3.9) 
-Suppose we know t&#964;11, tV , tSf , tu ... use (3.6). 
-For elemen t 1, 
-te11 = &#8706;u = B(1) u1 (3.10) &#8706; tx u2 
-T t for el. (1) B(1)T 
-tVte11t &#964;11dV&#8722;&#8594; [u1 u2] 
-&#65533; tV &#65533;&#65533; t&#964;11 d tV 
-&#65533; (3.11) 
-= tF (1) 
-for el. (1) tF (1) &#8722;&#8594; [u1 u2] 
-&#9124; (3.12) 
-&#9121; 
-tF&#710;(1) 
-= &#9123; U1U2U3&#9126; (3.13) &#65533;&#65533;&#65533;&#65533; &#65533;&#65533;&#65533;&#65533; 0 
-u2 u1 
-where 
-tF&#710;1(1) = tF2(1) (3.14) 
-tF&#710;2(1) = tF1(1) (3.15) 
-For elemen t 2, similarly, 
-&#9121; &#9124; 
-0 = &#9123;U1 U2U3&#9126; 
-F (2) (3.16) &#65533;&#65533;&#65533;&#65533; &#65533;&#65533;&#65533;&#65533; t &#710;
-u2 u1
-R.H.S. 
-&#9121; &#9124;(unknown reaction at left) 
-U1 U2 U3 &#9123; 0 &#9126; (3.17) &#65533; &#65533;&#65533; &#65533; tSf tS f
-U T f &#183; 1
-Now apply, 
-U T = &#65533; 
-100 &#65533; 
-(3.18) 
-then, 
-U T = 0 1 0 (3.19) 
-then, 
-U T = 0 0 1 (3.20) 
-12 </text>
-        </slide>
-        <slide>
-          <slideno>4</slideno>
-          <text>MIT OpenCourseWare 
-http://ocw.mit.edu 
-2.094 Finite Element Analysis of Solids and Fluids II
-Spring 20 11 
-For information about citing these materials or our Terms of Use, visit: http://ocw.mit.edu/terms .  </text>
-        </slide>
-      </slides>
-    </lecture>
-    <lecture>
-      <lecture_title>Solution of finite element equations</lecture_title>
-      <lecture_pdf_url>https://ocw.mit.edu/courses/2-094-finite-element-analysis-of-solids-and-fluids-ii-spring-2011/resources/mit2_094s11_lec18/</lecture_pdf_url>
-      <lectureno>18</lectureno>
-      <slides>
-        <slide>
-          <slideno>2</slideno>
-          <text>&#65533;
-&#65533; &#65533; &#65533;&#65533;&#65533;&#65533; &#65533; &#65533; 
-&#65533; &#65533; &#65533;&#65533;&#65533;&#65533; 
-&#65533;&#65533;&#65533;&#65533; &#65533; &#65533;&#65533;&#65533;&#65533;&#65533; 
-&#65533; &#65533; MIT 2.094	 18. Solution of F.E. equations 
-Plasticity 
-&#8226;	yield criterion 
-&#64258;ow rule &#8226; 
-&#8226;	hardening rule 
-t 
-t&#964;	= t&#8722;&#916;t&#964; + d&#964; (18.16) 
-t&#8722;&#916;t 
-Solution of (18.1) (similarly (18.2) and (18.3)) 
-Newton- Raphson Find U &#8727; as the zero of f(U &#8727;) 
-t+&#916;t t+&#916;tR f(U&#8727;)= (18.17) F&#8722; 
-&#183; 
-t+&#916;t (i&#8722;1)U U&#8727; &#8722; t+&#916;tU (i&#8722;1) + H.O.T.	 (18.18) &#8706;ft+&#916;t (i&#8722;1) + = f U &#8706;U
-where t+&#916;tU (i&#8722;1) is the value we just calculated and an approximation to U &#8727;. 
-Assu me t+&#916;tR is independent of the displacemen ts. 
-&#183; &#916;U (i)	(18.19) &#8706;t+&#916;tFt+&#916;tR t+&#916;tF (i&#8722;1)0 = &#8722; &#8722; &#8706;U t+&#916;t (i&#8722;1)U 
-We obtain
-t+&#916;tK(i&#8722;1)&#916;U (i) = t+&#916;tR &#8722; t+&#916;tF (i&#8722;1) (18.20)
-(18.21) &#8706; t+&#916;tF &#8706;Ft+&#916;tK(i&#8722;1) = = &#8706;U t+&#916;t (i&#8722;1) &#8706;U t+&#916;t (i&#8722;1) U U 
-Physically 
-&#916; t+&#916;tF1(i&#8722;1) 
-t+&#916;t (i&#8722;1)K11 =	 (18.22) &#916;u 
-78 </text>
-        </slide>
-        <slide>
-          <slideno>5</slideno>
-          <text>MIT OpenCourseWare 
-http://ocw.mit.edu 
-2.094 Finite Element Analysis of Solids and Fluids II
-Spring 20 11 
-For information about citing these materials or our Terms of Use, visit: http://ocw.mit.edu/terms .  </text>
-        </slide>
-        <slide>
-          <slideno>1</slideno>
-          <text>&#65533; &#65533; MIT 2.094 18. Solution of F.E. equations 
-Material law
-tS &#732;
-0 11 = E&#65533;0 t 
-11 (18.5) 
-In isotropic elasticity: 
-E&#732;= E (1 &#8722; &#957;) , (&#957; =0.3) (18.6) (1 + &#957;)(1 &#8722; 2&#957;) 
-1 &#65533;&#65533; &#65533;2 &#65533; 1 &#65533;&#65533; 0L + tu&#65533;2 &#65533; 
-1 &#65533;&#65533; tu&#65533;2 &#65533; 
-0 t&#65533;=2 0 tU &#8722; I &#8658; 0 t&#65533;11 =2 0L &#8722; 1 =2 1+ 0L &#8722; 1 (18.7) 
-where 0 tU is the stretch tensor. 
-0&#961;tS = 0X t&#964;0XT (18.8) 0 11 t 11 11 t 11 t&#961; 
-with 
-0L0
-tX11 = , 0&#961; 0L = t&#961;tL (18.9) 0L + tu 
-&#65533;&#65533;2 tL 0L 0L &#8658; 0 tS11 = 0L tL t&#964;11 = tL t&#964;11 (18.10) 
-&#65533;&#65533; &#65533;2 &#65533; 
-&#8756; 0
-tLL t&#964;11 = E&#732;&#183; 21 1+ 0t 
-Lu&#8722; 1 (18.11) 
-E&#732;A &#65533;&#65533; tu&#65533;2 &#65533;&#65533; tu&#65533;
-tP = 1+ &#8722; 1 1+
- (18.12) &#8658; t&#964;11A = 2 0L 0L 
-This is because of the material-law assumption (18.5) (okay for small strains . . . ) 
-Hyperelasticity 
-tW = f(Green-Lagr ange strains, material constants) (18.13) 0 
-t t1 &#8706;W &#8706;W
-0 tSij = 0 
-t + 0 
-t (18.14) 2 &#8706;&#65533; &#8706;&#65533;0 ij 0 ji
-&#65533; t t &#65533;
-1 &#8706;S &#8706;S
-0Cijrs = 0 
-t ij + 0 
-t ij (18.15) 2 &#8706;&#65533; &#8706;&#65533;0 rs 0 sr 
-77 </text>
-        </slide>
-        <slide>
-          <slideno>0</slideno>
-          <text>2.094 &#8212; Finite Elemen t Analysis of Solids and Fluids Fall &#8216;08 
-Lecture 18 -Solution of F.E. equations 
-Prof. K.J. Bathe MIT OpenCourseWare 
-In structures, Reading: 
-Sec. 8.4 
-F (u, p) = R. (18.1) 
-In heat transfer, 
-F (&#952;)= Q (18.2) 
-In &#64258;uid &#64258;ow, 
-F (v, p, &#952;)= R (18.3) 
-In structures/sol ids 
-&#65533; 
-F (m) &#65533;&#65533; 
-t (m)Tt &#710;(m) 0 (m)F = = 0BL 0SdV (18.4) 
-0V (m) m m 
-Elastic materials 
-Example p. 590 textbook 
-76 </text>
-        </slide>
-        <slide>
-          <slideno>3</slideno>
-          <text>&#65533;&#65533; MIT 2.094 18. Solution of F.E. equations 
-Picto rially for a single degree of freedom system 
-i = 1; tK &#916;u(1) = t+&#916;tR &#8722; tF (18.23) 
-i = 2; t+&#916;tK(1)&#916;u(2) = t+&#916;tR t+&#916;tF (1) (18.24) &#8722; 
-Convergence Use 
-&#65533;&#916;U(i)&#65533;2 &lt;&#65533; (18.25) 
-&#65533;a&#65533;2 = (ai)2 (18.26) 
-i 
-But, if incremen tal displacemen ts are small in every iteration, need to also use 
-&#65533;t+&#916;tR &#8722; t+&#916;tF (i&#8722;1)&#65533;2 &lt;&#65533;R (18.27) 
-18.1 Slender structures 
-(beams, plates, shells) 
-t &#65533; 1 (18.28) Li 
-79 </text>
-        </slide>
-        <slide>
-          <slideno>4</slideno>
-          <text>MIT 2.094 18. Solution of F.E. equations 
-Beam 
-t 1e.g. L = 100 
-(4-node el.)
-The elemen t does not have curvature we have
-a spurious shear strain &#8594;
-(9-node el.) 
-We do not have a shear (better) &#8594; 
-But, still for thin structures, it has problems &#8594;
-like ill-conditioning. 
-We need to use beam elemen ts. For curved structures also spurious mem brane strain can be &#8658;
-present. 
-80 </text>
-        </slide>
-      </slides>
-    </lecture>
-    <lecture>
-      <lecture_title>Beams, plates, and shells</lecture_title>
-      <lecture_pdf_url>https://ocw.mit.edu/courses/2-094-finite-element-analysis-of-solids-and-fluids-ii-spring-2011/resources/mit2_094s11_lec20/</lecture_pdf_url>
-      <lectureno>20</lectureno>
-      <slides>
-        <slide>
-          <slideno>4</slideno>
-          <text>&#65533; MIT 2.094 20. Beams, plates, and shells 
-Plates Reading: 
-Fig. 5.25, 
-p. 421 
-&#9127; 
-&#9130;&#9128; 
-&#9130;&#9129; w = w(x,y) is the transverse displacemen t of the mid-surface 
-v = &#8722;z&#946;y(x,y) (20.31) 
-u = &#8722;z&#946;x(x,y) 
-For any particle in the plate with coordinates (x,y,z), the expressions in (20.31) hold! 
-We use 
-q
-w = hiwi (20.32) &#65533; 
-i=1 
-q
-&#946;x = &#8722; hi&#952;yi (20.33) &#65533; 
-i=1 
-q
-&#946;y =+ hi&#952;xi (20.34) 
-i=1 
-where q equals the number of nodes. Then the elemen t locks in the same way as the displacemen t-based 
-beam elemen t. 
-89 </text>
-        </slide>
-        <slide>
-          <slideno>1</slideno>
-          <text>&#65533; &#65533; 
-&#65533; &#65533; 
-&#65533; &#65533; &#65533; 
-&#65533; MIT 2.094 20. Beams, plates, and shells 
-dw = J&#8722;1Hw,r u&#710; (20.8) 
-= J&#8722;1H&#946;,r &#710; (20.9) dx &#65533; &#65533;&#65533; &#65533; 
-Bw 
-d&#946; u dx &#65533; &#65533;&#65533;&#65533; 
-B&#946; 
-Hence we obtain 
-&#65533;&#65533; 1 &#65533; 1 &#65533; 
-EI B&#946;T B&#946; det(J )dr +(Ak)G (Bw &#8722; H&#946; )T (Bw &#8722; H&#946; )det(J)dr u&#710;
-&#8722;1 &#8722;1 &#65533; 1 
-= HwT p det(J )dr (20.10) 
-&#8722;1 
-Ku&#710;= R (20.11) 
-K is a result of the term inside the bracket in (20.10) and R is a result of the right hand side. 
-For the 2-node elemen t, 
-w1 = &#952;1 = 0 (20.12) 
-w2,&#952;2 = ? (20.13) 
-w2 1+ r &#947; = L &#8722; 2 &#952;2 (20.14) 
-We cannot make &#947; equal to zero for every r (page 404, textbook). Becau se of this, we need to use 
-about 200 elemen ts to get an error of 10%. (Not good!) 
-Recal l almost or fully incomp ressible analysis: Principle of virtual displacemen ts:
-&#65533;&#65533;T C&#65533;&#65533;&#65533;dV + &#65533;v (&#954;&#65533;v )dV = R (20.15) 
-V V 
-u/p formulation 
-&#65533;&#65533;T C&#65533;&#65533;&#65533;dV &#8722; &#65533;vpdV = R (20.16) 
-V V 
-p p + &#65533;v dV = 0 (20.17) &#954;V 
-But now we needed to select wisely the interpolations of u and p. We needed to satisfy the inf-sup 
-condition 
-infsupVol qh&#65533; &#183; vhdVol &#8805; &#946;&gt; 0 (20.18) &#65533;&#65533;&#65533;&#65533; &#65533;&#65533;&#65533;&#65533; 
-qh&#8712;Qh vh&#8712;Vh &#65533;</text>
-        </slide>
-        <slide>
-          <slideno>2</slideno>
-          <text>&#65533; 
-9/4-c MIT 2.094 20. Beams, plates, and shells 
-4/1 elemen t: 
-We can show mathemat ically that this elemen t does not satisfy inf-sup condition. But, we can also 
-show it by giving an example of this elemen t which violates the inf-sup condition. 
-v1 = &#65533;,v2 =0 &#8658; &#65533; &#183; vh for both elemen ts is positive and the same. Now, if I choose pressures as 
-above 
-qh&#65533;vhdVol = 0, hence (20.18) is not satis&#64257;ed! (20.19) 
-Vol 
-9/3 elemen t 
-satis&#64257;es inf-sup 
-satis&#64257;es inf-sup 
-Getting back to beams 
-&#65533; L &#65533; L &#65533;&#65533; 
-EI &#946;&#65533;&#946;dx +(AkG) d
-dxw &#8722; &#946;&#947;AS dx = R (20.20) 
-0 0 
-&#65533; L &#65533;&#65533; 
-&#947;AS &#947; &#8722; &#947;AS dx = 0 (20.21) 
-0 
-where 
-dw &#947; = dx &#8722; &#946;, from displacemen t interpolation (20.22) 
-87 </text>
-        </slide>
-        <slide>
-          <slideno>5</slideno>
-          <text>MIT OpenCourseWare 
-http://ocw.mit.edu 
-2.094 Finite Element Analysis of Solids and Fluids II
-Spring 20 11 
-For information about citing these materials or our Terms of Use, visit: http://ocw.mit.edu/terms .  </text>
-        </slide>
-        <slide>
-          <slideno>0</slideno>
-          <text>2.094 &#8212; Finite Elemen t Analysis of Solids and Fluids Fall &#8216;08 
-Lecture 20 -Beams, plates, and shells 
-Prof. K.J. Bathe MIT OpenCourseWare 
-Timosh enko beam theory 
-The &#64257;ber moves up and rotates and its length does not change. 
-Principle of virtual displacemen t (Linear Analysis) 
-&#65533; L &#65533; L &#65533;&#65533;T &#65533; &#65533;&#65533; L &#65533;&#65533;T dw dw EI &#946;&#65533; &#946;&#65533;dx +(Ak)G dx &#8722; &#946; dx &#8722; &#946; dx = w T pdx (20.1) 
-0 0 0 
-Two-node elemen t: 
-Three-node elemen t: 
-For a q-node elemen t, 
-&#710;u = &#65533; w1 &#183; &#183; &#183; wq &#952;1 &#183; &#183; &#183; &#952;q &#65533;T (20.2) 
-w = Hw &#710;u (20.3) 
-&#946; = H&#946; &#710;u 
-Hw = &#65533; h1 &#183; &#183; &#183; 
-H&#946; = &#65533; 0 &#183; &#183; &#183; hq 0 
-0 h1 &#183; &#183; &#183; 
-&#183; &#183; &#183; 0 
-hq &#65533; 
-&#65533; (20.4) 
-(20.5) 
-(20.6) 
-J = dx 
-dr (20.7) 
-85 </text>
-        </slide>
-        <slide>
-          <slideno>3</slideno>
-          <text>MIT 2.094	 20. Beams, plates, and shells 
-&#947;AS = Assu med shear strain interpolation	 (20.23) 
-2-node elemen t, constant shear assumption. From (20.21),	 Reading: 
-Sec. 4.5.7 
-&#65533; L &#65533;&#65533; &#65533; Ldw &#947;AS&#65533;dx = &#947;AS&#65533;dx	 (20.24) dx &#8722; &#946; &#65533;&#947;AS &#65533;0	 0 
-&#65533; +1 &#65533; 1+ r &#65533; L &#8658;&#8722; 
-&#8722;1 2 &#952;2 &#183; 2 dr + w2 = &#947;AS &#183; L	 (20.25) 
-L 
-&#947;AS = w2 &#8722; 2 &#952;2	(20.26) &#8658; L 
-&#947;AS (shear strain) is equal to the displacemen t-based shear strain at the middle of the beam. 
-Use &#947;AS in (20.20) to obtain a powerful elemen t. For &#8220;our problem&#8221;, 
-&#947;AS = 0 hence w2 = L&#952;2	 (20.27) 2 
-&#65533; L &#65533; 
-EI &#946;&#65533;&#946;&#65533;dx = M&#946;&#65533;	 (20.28) &#8658;	x=L 0 
-&#65533;&#65533; &#65533;2 &#65533; 
-1 EI L&#952;2 = M	 (20.29) &#8658; L &#183; 
-ML ML2 
-&#952;2 = , w2 = (20.30) &#8658; EI 2EI 
-(exact solutions) 
-88 </text>
-        </slide>
-      </slides>
-    </lecture>
-    <lecture>
-      <lecture_title>Finite element formulation, example, convergence</lecture_title>
-      <lecture_pdf_url>https://ocw.mit.edu/courses/2-094-finite-element-analysis-of-solids-and-fluids-ii-spring-2011/resources/mit2_094s11_lec6/</lecture_pdf_url>
-      <lectureno>6</lectureno>
-      <slides>
-        <slide>
-          <slideno>3</slideno>
-          <text>&#65533; 
-&#65533; 
-&#65533; 
-&#65533; &#65533; 
-&#65533; &#65533; &#65533; 
-&#65533; &#65533;&#65533; &#65533; 
-&#65533; &#65533; 
-&#65533; &#65533; MIT 2.094 6. Finite elemen t formulation, example, convergence 
-h1 = 1 
-4 (1 + x)(1 + y) &#8722; 1 2 h
-5 
-h2 = 1 4 (1 &#8722; x)(1 + y) &#8722; 1 2 h
-5 
-h3 = 1 4 (1 &#8722; x)(1 &#8722; y) 
-h
-1 = 1 4 (1 + x)(1 &#8722; y) 
-Note: (6.14) 
-(6.15) 
-(6.16) 
-(6.17) 
-hi =1 
-We must have i hi = 1 to satisfy the rigid body mode condition. 
-u(x,y)= hiui (6.18) 
-i 
-Assu me all nodal point displacemen ts = u&#8727;. Then, 
-u(x,y)= hiu&#8727; = u&#8727; hi = u&#8727; (6.19) 
-i i 
-From (6.1), 
-K(m) U = R (6.20) 
-m 
-B(m)T C(m)B(m)dV (m) U = R (6.21) 
-V (m) m 
-where C(m)B(m)U = &#964; (m). (Assu me we calculated U .) 
-B(m)T &#964; (m) dV (m) = R (6.22) 
-V (m) m 
-F (m) = R; F (m) = B(m)T &#964; (m) dV (m) (6.23) 
-V (m) m 
-Two properties 
-I. The sum of the F (m)&#8217;s at any node is equal to the applied external forces. 
-26 </text>
-        </slide>
-        <slide>
-          <slideno>4</slideno>
-          <text>MIT 2.094 6. Finite elemen t formulation, example, convergence 
-II. Every elemen t is in equilibrium under its F (m) 
-&#65533; 
-&#710;U T 
-F (m) = &#710;U T 
-B(m)T &#964; (m) d V (m) (6.24) 
-&#65533; V (m)&#65533;&#65533; &#65533; 
-&#65533; =&#65533;(m)T 
-= &#65533;(m)T &#964; (m) d V (m) (6.25) 
-V (m) 
-= 0 (6.26) 
-where U&#710;T 
-= virtual nodal point displacemen t. 
-Apply rigid body displacemen t. 
-If we move the elemen t virtually in the rigid body modes, &#65533;(m) is zero. Therefore the virtual work 
-obtained due to virtual motion of the elemen t is zero. Then the elemen t is in equilibrium under its F (m). 
-27 </text>
-        </slide>
-        <slide>
-          <slideno>5</slideno>
-          <text>MIT OpenCourseWare 
-http://ocw.mit.edu 
-2.094 Finite Element Analysis of Solids and Fluids II
-Spring 20 11 
-For information about citing these materials or our Terms of Use, visit: http://ocw.mit.edu/terms .  </text>
-        </slide>
-        <slide>
-          <slideno>0</slideno>
-          <text>&#65533; &#65533; 
-&#65533; &#65533; 
-&#65533;&#65533;&#65533; &#65533; &#65533; &#65533; 2.094 &#8212; Finite Elemen t Analysis of Solids and Fluids Fall &#8216;08 
-Lecture 6 -Finite element formulation, example, convergence 
-Prof. K.J. Bathe MIT OpenCourseWare 
-6.1 Example 
-Reading: 
-Ex. 4.6 in 
-the text 
-t =0.1, E,&#957; plane stress 
-(6.1) KU = R; R = RB + Rs + Rc + Rr 
-= K(m); K(m) = B(m)T C(m) B(m) dV (m) (6.2) K 
-V (m) m 
-RB = R(m) (m); R = H(m)T fB(m) dV (m) (6.3) B B 
-V (m) m 
-6.1.1 F.E. model 
-u1 u2 u3 u4 v1 v2 v3 v4 
-&#9121;&#8595; &#8595; &#8595; &#8595;&#8595;&#8595;&#8595;&#8595;&#9124; u1 &#215;&#215;&#215;&#215;&#215; &#8592; 
-(6.4) K 
-el. (2) =&#9122;&#9122;&#9122;&#9123; . . . &#9125;&#9125;&#9125;&#9126; . . . 
-23 </text>
-        </slide>
-        <slide>
-          <slideno>2</slideno>
-          <text>&#65533;&#65533;&#65533; 
-&#65533; &#65533; 
-&#65533; &#65533;&#65533; &#65533; MIT 2.094 6. Finite elemen t formulation, example, convergence 
-(6.10) HS = H 
-&#9121; &#9124;y=+1 
-1 
-2 (1 + x) 1 2 (1 &#8722; x) 0 0 0 0 0 0 
-=&#9123; &#9126; (6.11) 
-0 0 00 1 (1 + x) 1 (1 &#8722; x)002 2 
-From (6.7); 
-&#65533; +1 
-= 
-= &#9122;&#9122;&#9123; 
-&#9122;&#9122;&#9123; &#9121; &#9124;1 (1 + x) 02 1 (1 &#8722; x) 02 
-0 &#9125;&#9125;&#9126; 0 (0.1) dx (6.12) RS 1 (1 + x) &#8722;p(x)2 &#8722;1 10 (1 &#8722; x) thickness 2 
-&#9124;&#9121; 
-0
-0
-&#8722;p0(0.1)
-&#8722;p0(0.1)
-&#9125;&#9125;&#9126;(6.13) RS 
-6.1.2 Higher-order elemen ts
-Want h1, h2, h3, h4, h5 
-u(x,y)= &#65533;
-i5
-=1 hiui. 
-hi = 1 at node i and 0 at all other nodes. 
-h5 = 1 (1 &#8722; x2)(1 + y)2 
-25 </text>
-        </slide>
-        <slide>
-          <slideno>1</slideno>
-          <text>&#65533;&#65533;&#65533; &#65533; 
-&#65533;&#65533;&#65533;&#65533; &#65533; &#65533; &#65533; 
-&#65533; &#65533;&#65533;&#65533; 
-&#65533; &#65533; MIT 2.094 6. Finite elemen t formulation, example, convergence 
-In practice, 
-&#9118;&#9115; 
-BT CB dV ; &#65533; = B &#9116;&#9116;&#9116;&#9116;&#9116;&#9116;&#9116;&#9116;&#9117; u1 
-. . . 
-u4 
-v1 
-. . . 
-v4 &#9119;&#9119;&#9119;&#9119;&#9119;&#9119;&#9119;&#9119;&#9120; K (6.5) = 
-el V 
-where K is 8x8 and B is 3x8. 
-Assu me we have K (8x8) for el. (2) 
-U1 U2 U3 U4 U5 U11 U18 &#183;&#183;&#183; &#183;&#183;&#183; 
-&#9121;&#8595;&#8595;&#8595;&#8595;&#8595;&#8595; &#8595; &#8595; &#8595; 
-&#215;&#215;&#215;&#215;&#215;&#215;&#215;&#215;&#215; 
-. . . . . . . . . 
-. . . . . . . . . 
-. . . . . . . . . 
-. . . . . . . . . &#9124; 
-U1&#8592; 
-. . . 
-. &#9122;&#9122;&#9122;&#9122;&#9122;&#9122;&#9122;&#9122;&#9122;&#9122;&#9122;&#9122;&#9122;&#9122;&#9123; &#9125;&#9125;&#9125;&#9125;&#9125;&#9125;&#9125;&#9125;&#9125;&#9125;&#9125;&#9125;&#9125;&#9125;&#9126; . . (6.6) K = 
-assemblage U11&#8592; 
-. . . 
-. . . 
-U18&#8592;&#215;&#215;&#215;&#215;&#215;&#215;&#215;&#215;&#215; 
-Consider, 
-RS = HST fS dS; HS = H (6.7) 
-S on surface 
-h1 h2 h3 h4 0000 u(x,y)H = 0000 h1 h2 h3 h4 &#8592; 
-v(x,y) (6.8) &#8592; 
-&#9118;&#9115; 
-&#9116;&#9116;&#9116;&#9116;&#9116;&#9116;&#9116;&#9116;&#9116;&#9116;&#9117; u1 
-u2 
-. . . &#9119;&#9119;&#9119;&#9119;&#9119;&#9119;&#9119;&#9119;&#9119;&#9119;&#9120; (6.9) u = u4 
-v1 
-. . . 
-v4 
-24 </text>
-        </slide>
-      </slides>
-    </lecture>
-    <lecture>
-      <lecture_title>Incompressible fluid flow and heat transfer (cont.)</lecture_title>
-      <lecture_pdf_url>https://ocw.mit.edu/courses/2-094-finite-element-analysis-of-solids-and-fluids-ii-spring-2011/resources/mit2_094s11_lec17/</lecture_pdf_url>
-      <lectureno>17</lectureno>
-      <slides>
-        <slide>
-          <slideno>0</slideno>
-          <text>2.094 &#8212; Finite Elemen t Analysis of Solids and Fluids Fall &#8216;08 
-Lecture 17 -Incompressible &#64258;uid &#64258;ow and heat transfer, cont&#8217;d 
-Prof. K.J. Bathe MIT OpenCourseWare 
-17.1 Abstract body 
-Reading: 
-Sec. 7.4 
-Fluid Flow Heat transfer 
-Sv,Sf S&#952;,Sq 
-Sv &#8746; Sf S&#952; &#8746; Sq = S = S 
-Sv &#8745; Sf =0 S&#952; &#8745; Sq =0 
-17.2 Actual 2D problem (channel &#64258;ow) 
-71 </text>
-        </slide>
-        <slide>
-          <slideno>2</slideno>
-          <text>&#65533; &#65533; 
-&#65533; &#65533; 
-&#65533; &#65533; 
-&#65533; &#65533; 
-&#65533;&#65533;&#65533; 
-&#65533;&#65533;&#65533; MIT 2.094 17. Incomp ressible &#64258;uid &#64258;ow and heat transfer, cont&#8217;d 
-vL kPe = , &#945; = (17.11) &#945; &#961;cp 
-&#952;&#8727; is non-dimensional 
-&#952; &#8722; &#952;L exp Pe 
-Lx &#8722; 1
-&#952;R &#8722; &#952;L = exp (Pe) &#8722; 1 (17.12)
-(17.10) in F.E. analysis becomes 
-d&#952; d&#952;d&#952; &#952;Pe dV + dV = 0 (17.13) dx dxdxV V 
-Discretized by linear elemen ts: 
-h h&#8727; = L 
-&#958; &#958; &#952;(&#958;)= 1 &#8722; &#952;i&#8722;1 + &#952;i (17.14) h&#8727; h&#8727; 
-For node i:
-Pee Pee
-&#8722;&#952;i&#8722;1 &#8722; 2 &#952;i&#8722;1 +2&#952;i &#8722; &#952;i+1 +2 &#952;i+1 = 0 (17.15) 
-where 
-vh hPee = = Pe (17.16) &#945; L 
-This result is the same as obtained by &#64257;nite di&#64256;erences 
-1 (&#952;i+1 &#8722; 2&#952;i + &#952;i&#8722;1) (17.17) &#952;&#65533;&#65533; = 
-i (h&#8727;)2 
-&#952;&#65533; = &#952;i+1 &#8722; &#952;i&#8722;1 (17.18) 
-i 2h&#8727; 
-73 </text>
-        </slide>
-        <slide>
-          <slideno>4</slideno>
-          <text>&#65533;&#65533;&#65533; 
-&#65533;&#65533;&#65533; 
-&#65533;&#65533;&#65533; &#65533;&#65533;&#65533; MIT 2.094	 17. Incomp ressible &#64258;uid &#64258;ow and heat transfer, cont&#8217;d 
-17.5 FSI brie&#64258;y
-Lagrangian formulation for the structure/sol id 
-Arbitrary Lagrangian-Eulerian (ALE) formulation Let f be a variable of a particle (e.g. f = &#952;). 
-Consider 1D 
-f&#729; &#8706;f &#8706;f = + v 
-partic le &#8706;t &#8706;x (17.24) 
-where v is the particle velocity. For a mesh point, 
-f&#8727; = &#8706;f &#8706;f + vm	 (17.25) 
-mesh point &#8706;t &#8706;x 
-where vm 
-f&#729; is the mesh point velocity. Hence, 
-&#8706;f = f&#8727; + &#8706;x (v &#8722; vm)	 (17.26) 
-partic le mesh point 
-Use (17.26) in the momen tum and energy equations and use force equilibrium and comp atibility at 
-the FSI boundary to set up the governing F.E. equations. 
-References 
-[1] K.J. Bathe, H. Zhang and M.H. Wang. &#8220;Finite Elemen t Analysis of Incomp ressible and Comp ressible 
-Fluid Flows with Free Surfaces and Structural Interactions.&#8221; Computers &amp; Structures, 56:193&#8211;213, 
-1995. 
-[2] K.J.	Bathe, H. Zhang and S. Ji. &#8220;Finite Elemen t Analysis of Fluid Flows Fully Coupled with 
-Structural Interactions.&#8221; Computers &amp; Structures, 72:1&#8211;16, 1999. 
-[3] K.J. Bathe and H. Zhang. &#8220;Finite Elemen t Developments for General Fluid Flows with Structural 
-Interactions.&#8221; International Journal for Numerical Methods in Engineering, 60:213&#8211;232, 2004. 
-75 </text>
-        </slide>
-        <slide>
-          <slideno>3</slideno>
-          <text>&#65533;&#65533;&#65533; 
-&#65533; 
-&#65533; &#65533; MIT 2.094 17. Incomp ressible &#64258;uid &#64258;ow and heat transfer, cont&#8217;d 
-Considered &#952;i+1 = 1, &#952;i&#8722;1 = 0. Then 
-&#952;i =1 &#8722; (Pee/2) (17.19) 2 
-Physically unrealistic solution when Pee &gt; 2. For this not to happen, we should re&#64257;ne the mesh &#8212;a very 
-&#64257;ne mesh would be required. We use &#8220;upwinding&#8221; 
-d&#952; = &#952;i &#8722; &#952;i&#8722;1 (17.20) h&#8727; dx i 
-The result is 
-(&#8722;1 &#8722; Pee) &#952;i&#8722;1 + (2 + Pee) &#952;i &#8722; &#952;i+1 = 0 (17.21) 
-Very stable, e.g. 
-&#952;i&#8722;1 = 0 = 1 (17.22) &#952;i+1 =1 &#8658; &#952;i 2 + Pee 
-Unfortunately it is not that accurate. To obtain better accuracy in the interpolation for &#952;, use the 
-function 
-exp Pe x 
-L &#8722; 1 
-exp(Pe) &#8722; 1 (17.23) 
-The result is Pee dependent: 
-This implies &#64258;ow-con dition based interpolation. We use such interpolation functions&#8212;see references. 
-References 
-[1] K.J. Bathe and H. Zhang. &#8220;A Flow-Con dition-Based Interpolation Finite Elemen t Procedure for 
-Incomp ressible Fluid Flows.&#8221; Computers &amp; Structures, 80:1267&#8211;1277, 2002. 
-[2] H. Kohno and K.J. Bathe. &#8220;A Flow-Con dition-Based Interpolation Finite Elemen t Procedure for 
-Triangular Grids.&#8221; International Journal for Numerical Methods in Fluids, 51:673&#8211;699, 2006. 
-74 </text>
-        </slide>
-        <slide>
-          <slideno>5</slideno>
-          <text>MIT OpenCourseWare 
-http://ocw.mit.edu 
-2.094 Finite Element Analysis of Solids and Fluids II
-Spring 20 11 
-For information about citing these materials or our Terms of Use, visit: http://ocw.mit.edu/terms .  </text>
-        </slide>
-        <slide>
-          <slideno>1</slideno>
-          <text>&#65533; &#65533; &#65533; &#65533; 
-&#65533; 
-&#65533; &#65533; &#65533; &#65533; 
-&#65533; 
-&#65533; &#65533; &#65533; MIT 2.094 17. Incomp ressible &#64258;uid &#64258;ow and heat transfer, cont&#8217;d 
-17.3 Basic equations 
-P.V. velocities 
-vi&#961;vi,j vj dV + &#964;ij eij dV = vifiB dV + viSf fiSf dSf (17.1) 
-V V V Sf 
-Continuity 
-pvi,idV = 0 (17.2) 
-V 
-P.V. temp erature 
-&#952;&#961;cp&#952;,ividV + &#952;,ik&#952;,idV = &#952;qB dV + &#952; S q S dS (17.3) 
-V V V Sq 
-F.E. solution 
-xi = hkx k
-i (17.4) 
-vi = hkvik (17.5) 
-&#952; = hk&#952;k (17.6) 
-p = h&#732;kpk (17.7) 
-&#9115;&#9118; 
-v
-F (u)= R
- u = &#9117; p &#9120; nodal variables (17.8) &#8658; 
-&#952; 
-17.4 Model problem 
-1D equation, 
-d&#952; d2&#952; &#961;cpv = k (17.9) dx dx2 
-(v is given, unit cross section) 
-Non-dimensional form (Section 7.4) 
-d&#952; d2&#952;Pe = (17.10) dx dx2 
-72 </text>
-        </slide>
-      </slides>
-    </lecture>
-    <lecture>
-      <lecture_title>Plates and shells</lecture_title>
-      <lecture_pdf_url>https://ocw.mit.edu/courses/2-094-finite-element-analysis-of-solids-and-fluids-ii-spring-2011/resources/mit2_094s11_lec21/</lecture_pdf_url>
-      <lectureno>21</lectureno>
-      <slides>
-        <slide>
-          <slideno>3</slideno>
-          <text>&#65533; &#65533; 
-&#65533; MIT 2.094	 21. Plates and shells 
-Aside: Why not just neglect transverse shears, as in Kirchho&#64256; plate theory? 
-&#8706;w	 &#8706;w &#8226; If we do, &#947;xz = &#8706;x &#8722; &#946;x =0 &#8658; &#946;x = &#8706;x 
-Therefore we have &#8706;2 w in strains, so we need continuity also for &#8226; 
-&#65533;&#65533; &#8706;x2 , &#183;&#183;&#183; 
-&#8706;w
-&#8706;x
-&#183;&#183;&#183; 
-&#8226; 
-w = 21 r(1 + r)w1 &#8722; 21 r(1 &#8722; r)w2 + &#65533; 
-1 &#8722; r 2&#65533; 
-w3 
-w2 and w3 never a&#64256;ect w1 (&#8756; w|r=1 = w1).
-But,
-&#8706;w 1 1 
-&#8706;r	= 2(1+2r)w1 &#8722; 2(1 &#8722; 2r)w2 &#8722; 2rw3 
-&#8706;w &#65533; w2 and w3 a&#64256;ect &#8706;r . This results in di&#64259;culties to develop a good 1&#8658;
-elemen t based on Kirchho&#64256; theory. 
-With Reissner-Mindlin theory, we independently interpolate rotations such that this problem does 
-not arise. 
-For &#64258;at structures, we can superimpose the plate bending and plane stress elemen t sti&#64256;ness. For 
-shells, curved structures, we need to develop/use curved elemen ts, see references. 
-References 
-[1] E. Dvorkin and K.J. Bathe. &#8220;A Continuum Mechanics Based Four-Node Shell Elemen t for General 
-Nonlinear Analysis.&#8221; Engineering Computations, 1:77&#8211;88, 1984. 
-[2] K.J. Bathe and E. Dvorkin. &#8220;A Four-Node Plate Bending Elemen t Based on Mindlin/Reissner Plate 
-Theory and a Mixed Interpolation.&#8221; International Journal for Numerical Methods in Engineering, 
-21:367&#8211;383, 1985. 
-[3] K.J. Bathe, A. Iosilevich and D. Chapelle. &#8220;An Evaluation of the MITC Shell Elemen ts.&#8221; Computers 
-&amp; Structures, 75:1&#8211;30, 2000. 
-[4] D.	Chapelle and K.J. Bathe. The Finite Element Analysis of Shells &#8211; Fundam entals. Springer, 
-2003. 
-93 </text>
-        </slide>
-        <slide>
-          <slideno>2</slideno>
-          <text>&#65533; &#65533; 
-&#65533; 
-&#65533; &#65533; 
-&#65533; 
-&#65533; 
-&#65533; &#65533; &#65533; &#65533; 
-&#65533; &#65533;&#65533;&#65533;&#65533;&#65533; MIT 2.094 21. Plates and shells 
-For a &#64258;at elemen t: 
-&#9118;&#9115; 
-&#9116;&#9116;&#9116;&#9116;&#9116;&#9116;&#9116;&#9116;&#9116;&#9116;&#9116;&#9116;&#9116;&#9116;&#9117; w1 
-&#952;1 
-x 
-&#952;1 
-y 
-. . . 
-&#952;4 
-y 
-u1 
-v1 
-. . . 
-v4 &#9119;&#9119;&#9119;&#9119;&#9119;&#9119;&#9119;&#9119;&#9119;&#9119;&#9119;&#9119;&#9119;&#9119;&#9120; 
-= (21.15) &#183;&#183;&#183; Kb 0 &#8658; 0 Kpl. str. 
-u = hiui (21.16) 
-v = hivi (21.17) 
-w = hiwi (21.18) 
-&#946;x = &#8722; hi&#952;yi (21.19) 
-&#946;y = hi&#952;xi (21.20) 
-From (21.13) 
-&#9124; &#9121; 1 &#957; 0Et3 10 &#183; k 01 &#947;dA &#954;T&#9123;&#957; 1 0 &#9126; &#954;dA + &#947;T Gt (21.21) 12(1 &#8722; &#957;2) 00 1&#8722;&#957; 
-2 A A 
-where k is the shear correction factor. 
-Next, evaluate &#8706;w , &#8706;w , &#8706;&#946;x , ...etc. This elemen t, as it is, locks! &#8706;x &#8706;y &#8706;x &#8658; 
-This displacemen t-based elemen t &#8220;locks in shear&#8221;. We need to change the transverse shear interpola&#173;
-tions. 
-1 1 &#947;yz = (1 &#8722; r)&#947;A + (1+ r)&#947;C (21.22) 2 yz 2 yz 
-where 
-&#8706;w &#947;A (21.23) = &#8706;y &#8722; &#946;y yz 
-from the w, &#946;y displacemen t interpolations. 
-1 1 = (1 &#8722; s)&#947;B + (1+ s)&#947;D (21.24) &#947;xz 2 xz 2 xz 
-with this mixed interpolation, the elemen t works. Called MITC interpolation (for mixed interpolated-
-tensional comp onents) 
-92 evaluated at A </text>
-        </slide>
-        <slide>
-          <slideno>0</slideno>
-          <text>&#65533; &#65533; 
-&#65533;&#65533;&#65533;&#65533; 2.094 &#8212; Finite Elemen t Analysis of Solids and Fluids Fall &#8216;08 
-Lecture 21 -Plates and shells 
-Prof. K.J. Bathe MIT OpenCourseWare 
-Timoshenko beam theory, and Reissner-Mindlin plate theory
-For plates, and shells, w, &#946;x, and &#946;y as independent variables.
-w = displacemen t of mid-surface, w(x,y)
-A = area of mid-surface 
-p = load per unit area on mid-surface 
-w = w(x, y) (21.1) 
-w(x, y, z) = w(x, y) 
-The material particles at &#8220;any z&#8221; move in the z-direction as the mid-surface. (21.2) 
-u(x, y, z) = &#8722;&#946;xz = &#8722;&#946;x(x, y)z 
-v(x, y, z) = &#8722;&#946;yz = &#8722;&#946;y(x, y)z (21.3) 
-(21.4) 
-&#65533;xx = &#8706;u 
-&#8706;x = &#8722;z &#8706;&#946;x 
-&#8706;x 
-&#65533;yy = &#8706;v 
-&#8706;y = &#8722;z &#8706;&#946;y 
-&#8706;y (21.5) 
-(21.6) 
-&#947;xy = &#8706;u + &#8706;v = &#8722;z &#8706;&#946;x + &#8706;&#946;y (21.7) &#8706;y &#8706;x &#8706;y &#8706;x 
-&#9118; &#9115; &#8706;&#946;x 
-&#8706;x &#9118;&#9115; 
-&#65533;xx 
-&#9117;&#9120; = &#8722;z &#9116;&#9116;&#9116;&#9116;&#9116;&#9117; &#9119;&#9119;&#9119;&#9119;&#9119;&#9120; (21.8) &#8706;&#946;y&#65533;yy &#8706;y 
-&#947;xy 
-&#8706;&#946;x + &#8706;&#946;y 
-&#8706;y &#8706;x 
-&#954; 
-90 </text>
-        </slide>
-        <slide>
-          <slideno>1</slideno>
-          <text>&#65533; &#65533; &#65533; &#65533; 
-&#65533; &#65533; 
-&#65533; &#65533; &#65533; MIT 2.094	 21. Plates and shells 
-&#8706;w &#8706;u &#8706;w &#947;xz = &#8706;x + &#8706;z = &#8706;x &#8722; &#946;x	 (21.9) 
-&#8706;w &#8706;v &#8706;w &#947;yz = &#8706;y + &#8706;z = &#8706;y &#8722; &#946;y	 (21.10) 
-&#9115;&#9118;&#9121; &#9124;&#9115;&#9118; 
-&#964;xx E 1 &#957; 0 &#65533;xx 
-&#9117;	&#964;yy &#9120; = &#9123; &#957; 1 0 &#9126;&#9117; &#65533;yy &#9120; = C&#65533; (21.11) 
-&#964;xy 1 &#8722; &#957;2 00 1&#8722;
-2 &#957; &#947;xy &#183; 
-(plane stress) 
-&#964;xz = E &#947;xz = G&#947;	 (21.12) &#964;yz 2(1 + &#957;) &#947;yz 
-Principle of virtual work for the plate: 
-&#9121; &#9124;&#9115;&#9118; 1 &#957; 0 &#65533;xx 
-&#957; 1 0 &#9126;&#9117; &#65533;yy &#9120;dzdA+ t 
-2+&#65533; &#65533; E &#65533;xx &#947;&#9123; &#65533;yy xy 1 &#8722; &#957;2 A &#8722;t 
-2 00 1&#8722;&#957; 
-2 &#947;xy	 (21.13) &#65533; &#65533;&#65533; &#65533; t 
-2+&#65533;&#65533; 10 &#947;xz&#947; &#947; G k dzdA = wpdA01xz yz &#947;yz &#8722;t 
-2A A 
-Consider a &#64258;at elemen t: 
-&#9115;&#9118; w1 &#9115;&#9118;
-&#9116; &#952;1 &#9119; u1
-&#9116; x &#9119; &#9116; v1 &#9119;Kb &#9116; &#952;1 &#9119; , also Kpl. str. &#9117;&#9120;	 (21.14) &#8658; &#9117; y &#9120;	 . .	 .. . . 
-where Kb is 12x12 and Kpl. str. is 8x8. 
-91 </text>
-        </slide>
-        <slide>
-          <slideno>4</slideno>
-          <text>MIT OpenCourseWare 
-http://ocw.mit.edu 
-2.094 Finite Element Analysis of Solids and Fluids II
-Spring 20 11 
-For information about citing these materials or our Terms of Use, visit: http://ocw.mit.edu/terms .  </text>
-        </slide>
-      </slides>
-    </lecture>
-    <lecture>
-      <lecture_title>Total Lagrangian formulation (cont.)</lecture_title>
-      <lecture_pdf_url>https://ocw.mit.edu/courses/2-094-finite-element-analysis-of-solids-and-fluids-ii-spring-2011/resources/mit2_094s11_lec13/</lecture_pdf_url>
-      <lectureno>13</lectureno>
-      <slides>
-        <slide>
-          <slideno>0</slideno>
-          <text>&#65533; 
-&#65533; 
-&#65533; &#65533; &#65533; 
-&#65533; &#65533; 2.094 &#8212; Finite Elemen t Analysis of Solids and Fluids Fall &#8216;08 
-Lecture 13 -Total Lagrangian formulation, cont&#8217;d 
-Prof. K.J. Bathe MIT OpenCourseWare 
-Example truss elemen t. Recal l: 
-Principle of virtual displacemen ts applied at some time t +&#916;t: 
-t+&#916;t t+&#916;t t+&#916;t&#964;ij &#948;t+&#916;teij d V = R (13.1) 
-t+&#916;tV 
-t+&#916;t t+&#916;t 0 t+&#916;tS&#948; &#65533;&#948;V= R (13.2) 0 ij 0 ij
-0V 
-t+&#916;
-0 tSij = 0 tSij + 0Sij (13.3) 
-t+&#916;
-0 t&#65533;ij = 0 t&#65533;ij + 0&#65533;ij (13.4) 
-0&#65533;ij = 0eij + 0&#951;ij (13.5) 
-where 0 tSij and 0 t&#65533;ij are known, but 0Sij and 0&#65533;ij are not. 
-1 &#65533; &#65533; 
-0eij =2 0ui,j + 0uj,i + 0 t uk,i 0uk,j + 0 t uk,j 0uk,i (13.6) 
-1 &#65533;&#65533; 
-0&#951;ij = 0uk,i 0uk,j (13.7) 2 
-Substitute into (13.2) and linearize to obtain 
-0 0 t+&#916;t 0&#948;0e0C0ers + ij &#948;&#951;ij dV= &#948;0eij ij dV
-0V ij ijrs dV
-0V 0 tS 0 R&#8722; 
-0V 0 tS (13.8) 
-F.E. discretizatio n gives 
-0 tKL + 0 tKNL &#916;U = t+&#916;tR &#8722; 0 tF (13.9) 
-53 </text>
-        </slide>
-        <slide>
-          <slideno>1</slideno>
-          <text>&#65533; 
-&#65533; 
-&#65533; &#65533; 
-&#65533; &#65533; 
-&#65533; 
-&#65533; MIT 2.094 13. Total Lagrangian formulation, cont&#8217;d 
-tK tBT tB 0 
-0 L = 0 L 0C 0 LdV (13.10) 
-0V 
-T 0 tK = tBtS tBNLdV (13.11) 0 NL 0 NL 0 0 
-0V &#65533;&#65533;&#65533;&#65533; 
-&#65533; matrix 
-T 0 tF = tBtS&#710; dV (13.12) 0 0 L 0
-0V &#65533;&#65533;&#65533;&#65533; 
-vector 
-The iteration (full Newt on-Rap hson) is 
-t+&#916;tK(i&#8722;1) + t+&#916;tK(i&#8722;1) &#916;U (i) = t+&#916;tR t+&#916;tF (i&#8722;1) (13.13) 0 L 0 NL &#8722; 0 
-t+&#916;tU (i) = t+&#916;tU (i&#8722;1) +&#916;U(i) (13.14) 
-Truss elemen t example (p. 545) 
-Here we have to only deal with 0 tS11, 0e11, 0&#951;11 
-t 
-0e11 = &#8706;u1 + &#8706;uk &#8706;uk (13.15) &#8706;0x1 &#8706;0x1 &#183; &#8706;0x1 
-1 &#8706;uk &#8706;uk 
-0&#951;11 =2 &#8706;0x1 &#183; &#8706;0x1 (13.16) 
-We are after 
-&#9115;&#9118; 1u1 &#9116; u1 &#9119; tB &#9116; 2 &#9119; tB0e11 = 0 L &#9117; 2 &#9120; = 0 Lu&#710; (13.17) u1 
-2u2 
-2
-ui = hku k
-i (13.18) 
-k=1
-2
-t tk ui = hk ui (13.19) 
-k=1 
-54 </text>
-        </slide>
-        <slide>
-          <slideno>3</slideno>
-          <text>&#65533; &#65533;&#65533; &#65533; 
-&#65533;&#65533;&#65533; &#65533; MIT 2.094 13. Total Lagrangian formulation, cont&#8217;d 
-0C = E (13.22) 
-tS&#710;= tS (13.23) 0 011 
-Assu me small strains 
-EA tK = 0 0L &#9121; &#9124; cos2 &#952; cos &#952; sin &#952; &#8722; cos2 &#952; &#8722; cos &#952; sin &#952; 
-sin2 &#952; &#8722; sin &#952; cos &#952; &#8722; sin2 &#952; 
-cos2 &#952; sin &#952; cos &#952; &#9122;&#9122;&#9123; &#9125;&#9125;&#9126; = 
-sym sin2 &#952; 
-tK (13.24) 0 L 
-&#9124; &#9121; 
-1 0 &#8722;10 
-0tP 
-0L &#9122;&#9122;&#9123; 0 1 &#8722;1 
-0 &#9125;&#9125;&#9126;+ &#8722;10 1 
-0 &#8722;10 1 
-tK0 NL 
-When &#952; = 0, 0 tKL doesn&#8217;t give sti&#64256;ness corresponding to u22, but 0 tKNL does. 
-56 </text>
-        </slide>
-        <slide>
-          <slideno>2</slideno>
-          <text>&#65533;&#65533; 
-&#65533;&#65533; 
-&#65533; &#65533; 
-&#65533;&#65533;&#65533;&#65533; &#65533; &#65533; 
-&#65533;&#65533;&#65533;&#65533; &#65533; 
-&#65533; &#65533; 
-&#65533; 
-&#65533; &#65533; 
-&#65533; &#65533; 
-&#65533; 
-&#65533; &#65533; &#65533; &#65533; 
-&#65533;&#65533;&#65533;&#65533; &#65533; &#65533; 
-&#65533; &#65533; &#65533; &#65533; 
-&#65533;&#65533;&#65533;&#65533; MIT 2.094 13. Total Lagrangian formulation, cont&#8217;d 
-t t 
-= &#8706;u1 + &#8706;u1 &#8706;u1 + &#8706;u2 &#8706;u2 (13.20a) 0e11 &#8706;0x1 &#8706; 0x1 &#8706; 0x1 &#8706;0x1 &#8706;0x1 
-2 0L cos &#952; &#8722; 0L (13.20b) t +&#916;L =u1 
-2 0Lt +&#916;L sin &#952; (13.20c) =u2 
-1 &#8722;1010 u&#710;0e11 = 0L &#9118; &#9115; 
-&#9116;&#9116;&#9116;&#9116;&#9116;&#9116;&#9117; &#9119;&#9119;&#9119;&#9119;&#9119;&#9119;&#9120; 0L +&#916;L 1 u&#710; cos &#952; &#8722; 1 &#8722;1010 + &#183;0L 0L 
-&#8706;tu1 
-0&#8706;x1&#9115; &#9118; 
-&#9116;&#9116;&#9116;&#9116;&#9116;&#9116;&#9117; &#9119;&#9119;&#9119;&#9119;&#9119;&#9119;&#9120; 0L +&#916;L 1 &#65533; &#710;u 
-= 0 tBLu&#710; (13.20e) 
-Hence, 0 &#8722;101 sin &#952; (13.20d) + &#183;0L 0L 
-&#8706;tu2 
-&#8706;x0 
-1 
-0e11 = 0L +&#916;L 
-(0L)2 &#8722; cos &#952; &#8722; sin &#952; cos &#952; sin &#952; u&#710; (13.20f) 
-where the boxed quantity above equals 0 tBL. In small strain but large rotation analysis we assume 
-&#916;L &#65533; 0L, 
-1&#65533; 
-&#952;cos&#8722; &#8722; sin &#952; cos &#952; sin &#952; u&#710; (13.20g) 0e11 = 0L 
-1 &#8706;u1 &#8706;u1 &#8706;u2 &#8706;u2+ (13.21a) 0 0 0 0x x= 0&#951;11 2 &#8706; &#8706; &#8706; &#8706; x x1 1 1 1 
-1 &#948;&#951;= 0 11 2 1&#65533; &#8706;&#948;u1 &#8706;u1 &#8706;u1 &#8706;&#948;u1 &#8706;&#948;u2 &#8706;u2 &#8706;u2 &#8706;&#948;u2+ + + (13.21b) 0 0 0 0 0 0 0 0x x &#8706; &#8706; &#8706; &#8706; &#8706; &#8706; &#8706; &#8706; x x x x x x1 1 1 1 1 1 1 
-&#8706;&#948;u1 &#8706;u1 &#8706;&#948;u2 &#8706;u2 = 0 0 + 0 0 (13.21c) &#8706;x1 &#8706;x1 &#8706;x1 &#8706;x1 
-&#8706;u1 tS 00 0 &#8706;&#948;u1 &#8706;&#948;u2 &#8706; 11 tS x1 (13.21d) 11&#948;&#951;= 0 11 0 0 0 0 tS &#8706;u2 &#8706; &#8706; x x1 1 0 11 &#8706; x1 
-tS0 
-&#8706;u1 
-0 1 &#8722;1 010 
-0 &#8706; x1 = u&#710; (13.21e) &#8706;u2 0L &#8722;101 &#8706; 0x1 
-BNL 
-55 0 </text>
-        </slide>
-        <slide>
-          <slideno>4</slideno>
-          <text>MIT OpenCourseWare 
-http://ocw.mit.edu 
-2.094 Finite Element Analysis of Solids and Fluids II
-Spring 20 11 
-For information about citing these materials or our Terms of Use, visit: http://ocw.mit.edu/terms .  </text>
-        </slide>
-      </slides>
-    </lecture>
-    <lecture>
-      <lecture_title>Deformation, strain, and stress tensors</lecture_title>
-      <lecture_pdf_url>https://ocw.mit.edu/courses/2-094-finite-element-analysis-of-solids-and-fluids-ii-spring-2011/resources/mit2_094s11_lec11/</lecture_pdf_url>
-      <lectureno>11</lectureno>
-      <slides>
-        <slide>
-          <slideno>3</slideno>
-          <text>&#65533;&#65533; &#65533;&#65533; MIT 2.094 11. Deformation, strain and stress tensors 
-Polar decomposition of 
-tX tRtU = 00 0 (11.28) tX 
-is a rotation matrix, such that 0 
-where tR
-tRT 0
-tU 0 
-0tR
-is a symmet ric matrix (stretch) 0 = I (11.29) 
-and 
-Ex. 6.9 textbook 
-&#65533; &#8730;
-3 &#65533;&#65533; &#65533; 4 10&#8722;&#8730;
-3 2 tX = 
-Then, 
-&#65533;&#65533;2 tC tXTtX tU = = 0 
-t&#65533;tU = 0 
-0 2
-0 
-0 0
-0 (11.30) 330 1 2 2 2 
-(11.31) 
-(11.32) 1 2I&#8722;2 
-This shows, by an example, that the comp onents of the Green-Lagr ange strain are independent of a 
-rigid-body rotation. 
-48 </text>
-        </slide>
-        <slide>
-          <slideno>2</slideno>
-          <text>&#65533; 
-&#65533; &#65533; 
-&#65533; &#65533; &#65533; 
-&#65533; &#65533; MIT 2.094 11. Deformation, strain and stress tensors 
-1 0 0h1 = 4(1 + x1)(1 + x2) (11.19) 
-. . . 
-t 0 t xi = xi + ui (11.20) 
-4
-= hkt xik , (i =1, 2) (11.21) 
-k=1 
-where txik are the nodal point coordinates at time t (tx11 = 2, tx21 =1.5) 
-Then we obtain 
-tX =1 5+ 0x2 1+ 0x1 (11.22) 0 4 1
-2 (1 + 0x2) 1
-2 (9 + 0x1) 
-At 0x1 =0, 0x2 = 0, 
-&#65533; 1 51 
-0 tX &#65533; 
-0x =0x2=0 =4 1 9 (11.23) 
-i 2 2 
-The Green-Lagrange Strain 
-1 &#65533; &#65533; 1 &#65533;&#65533; 
-0 t&#65533;=2 0 tXT 
-0 tX &#8722; I =2 0 tC &#8722; I (11.24) 
-t 0 t t&#8706;xi &#8706;xi + ui &#8706;ui= = &#948;ij + (11.25) &#8706;0x &#8706;0x &#8706;0xj j j 
-We &#64257;nd that
-1 &#65533; &#65533;
-t&#65533;= t u + t u + t u t u , sum over k =1, 2, 3 (11.26) 0 ij 0 i,j 0 j,i 0 k,i 0 k,j 2 
-where 
-t&#8706;u
-0 t ui,j = 0 i (11.27) &#8706;xj 
-47 </text>
-        </slide>
-        <slide>
-          <slideno>1</slideno>
-          <text>&#65533; &#65533;
-&#65533; &#65533; 
-&#65533; 
-&#65533; &#65533;MIT 2.094	 11. Deformation, strain and stress tensors 
-The stretch of a &#64257;ber (t&#955;): 
-&#65533;&#65533;2 t t t &#65533;&#65533;2 d xT d x dst&#955; = =	 (11.7) d0xT d0x d0s 
-The length of a &#64257;ber is 
-0 0 0ds= d x T d x 1 
-2(11.8) 
-&#65533; &#65533;&#65533; &#65533; &#65533;&#65533;2 d0xTtXT tX d0xt&#955; = 0
-0 00 , from (11.5) (11.9) dsds&#183; 
-Express 
-0 0 0d x = dsn	 (11.10) 
-0	 0 n = unit vector into direction of d x	 (11.11) 
-t&#955; &#65533;2 = 0 n T 
-0 tC 0 n	 (11.12) &#8658; 
-&#8756; t&#955; = 0 n T 
-0 tC 0 n 1 
-2(11.13) 
-Also, 
-&#65533; 
-d &#710;x t &#65533;T &#183; &#65533; 
-d x t &#65533; 
-= &#65533; 
-d &#710;s t &#65533; &#65533; 
-d st &#65533; 
-cos t&#952;, (a &#183; b = &#65533;a&#65533;&#65533;b&#65533; cos &#952;) (11.14) 
-From (11.5), 
-cos t&#952; = &#65533; 
-d &#710;x0 T &#710;tXT 
-0 &#65533; &#65533; tX0 d x0 &#65533; 
-d &#710;ts d st 
-= d &#710;s0 &#710;n0 T tC0 n0 d s0 
-d &#710;ts &#183; d st &#65533; 
-&#710;tX0 &#8801; tX0 &#65533; 
-(11.15) 
-(11.16) 
-&#8756; 0n&#710;T 
-0 tC 0ncos t&#952; = t&#955;&#710; t&#955; (11.17) 
-Also, 
-0&#961;t&#961; = det 0 tX (see Ex. 6.5)	 (11.18) 
-Example	 Reading: 
-Ex. 6.6 in 
-the text 
-46 </text>
-        </slide>
-        <slide>
-          <slideno>0</slideno>
-          <text>&#65533; &#65533; 2.094 &#8212; Finite Elemen t Analysis of Solids and Fluids Fall &#8216;08 
-Lecture 11 -Deformation, strain and stress tensors 
-Prof. K.J. Bathe MIT OpenCourseWare 
-We stated that we use Reading: 
-Ch. 6 
-tVt&#964;ij &#948;eij dVt = 
-0VtS t&#65533;0V = tR (11.1) t 0 ij &#948; 0 ij d 
-The deformatio n gradient We use txi = 0xi + tui 
-&#9121; &#9124; &#8706; t x1 &#8706; t x1 &#8706; t x1 
-&#8706; 0x1 &#8706; 0x2 &#8706; 0x3 
-&#8706; t x2 &#8706; t x2 &#8706; t x2 &#9122;&#9122;&#9122;&#9122;&#9122;&#9122;&#9123; &#9125;&#9125;&#9125;&#9125;&#9125;&#9125;&#9126; tX0 (11.2) = 0 0 0&#8706; &#8706; &#8706; x x x1 2 3 
-&#8706; x t 
-3 &#8706; x t 
-3 &#8706; x t 
-3 
-&#8706; x0 
-1 &#8706; x0 
-2 &#8706; x0 
-3 
-&#9121;&#9124; tdx1 &#9123;&#9126; dt x (11.3) tdx = 2 
-tdx3 
-0dx1 &#9121;&#9124; 
-d0 x&#9123;&#9126; 0 (11.4) 
-(11.5) dx2 
-0dx3 
-Implies that 
-dt x = 0 tX d0 x = 
-(0 tX is frequently denoted by 0 tF or simply F , but we use F for 
-force vector) 
-We will also use the right Cauchy-Green deformation tensor 
-tC tXTtX = (11.6) 0 0 0 
-Some applicatio ns 
-45 </text>
-        </slide>
-        <slide>
-          <slideno>4</slideno>
-          <text>MIT OpenCourseWare 
-http://ocw.mit.edu 
-2.094 Finite Element Analysis of Solids and Fluids II
-Spring 20 11 
-For information about citing these materials or our Terms of Use, visit: http://ocw.mit.edu/terms .  </text>
-        </slide>
-      </slides>
-    </lecture>
-    <lecture>
-      <lecture_title>Finite element large deformation / general nonlinear analysis</lecture_title>
-      <lecture_pdf_url>https://ocw.mit.edu/courses/2-094-finite-element-analysis-of-solids-and-fluids-ii-spring-2011/resources/mit2_094s11_lec10/</lecture_pdf_url>
-      <lectureno>10</lectureno>
-      <slides>
-        <slide>
-          <slideno>1</slideno>
-          <text>&#65533;&#65533;&#65533;&#65533;&#65533;&#65533; 
-&#65533;&#65533;&#65533;&#65533;&#65533;&#65533; 
-&#65533;&#65533; 
-&#65533; 
-&#8226; &#65533;MIT 2.094 10. F.E. large deformation/general nonlinear analysis 
-Then we can write 
-t+&#916;tF = tF + F (10.9) 
-t+&#916;tU = tU + U (10.10) 
-where only tF and tU are known. 
-= tK &#916;U, tK = tangent sti&#64256;ness matrix at time t (10.11) F &#8764;
-From (10.8), 
-tK &#916;U = t+&#916;tR &#8722; tF (10.12) 
-We use this to obtain an approximation to U . We obtain a more accurate solution for U (i.e. t+&#916;tF ) 
-using 
-t+&#916;tK(i&#8722;1)&#916;U (i) = t+&#916;tR &#8722; t+&#916;tF (i&#8722;1) (10.13) 
-t+&#916;tU (i) = t+&#916;tU (i&#8722;1) +&#916;U(i) (10.14) 
-Also, 
-t+&#916;tF (0) = tF (10.15) 
-t+&#916;tK(0) = tK (10.16) 
-t+&#916;tU (0) = tU (10.17) 
-Iterate for i =1, 2, 3 ... until convergence. Convergence is reached when 
-&#916;U(i) &lt;&#65533;D (10.18) 
-2 
-t+&#916;tR t+&#916;tF (i&#8722;1) (10.19) &#8722; &lt;&#65533;F 2 
-Note: 
-&#65533;a&#65533;2 = (ai)2 
-i 
-&#916;U (i) = U 
-i=1,2,3.. .
-&#916;U (1) in (10.13) is &#916;U in (10.12).
-(10.13) is the full Newt on-Rap hson iteration.
-How we could (in principle) calculate tK
-Process 
-Increase the displacemen t tUi by &#65533;, with no incremen t for all tUj , j = i 
-calculate t+&#65533;F&#8226; 
-&#8226; the i-th column in tK =( t+&#65533;F &#8722; tF ) /&#65533; = &#8706; tF .t&#8706;Ui 
-42 </text>
-        </slide>
-        <slide>
-          <slideno>0</slideno>
-          <text>2.094 &#8212; Finite Elemen t Analysis of Solids and Fluids Fall &#8216;08 
-Lecture 10 -F.E. large deformation/general nonlinear analysis 
-Prof. K.J. Bathe MIT OpenCourseWare 
-We developed 
-&#65533; 
-tV t&#964;ij teij d Vt = Rt Reading: 
-Ch. 6 
-(10.1) 
-et ij = 1 
-2 &#65533; 
-&#8706;ui 
-&#8706; xt 
-j + &#8706;uj 
-&#8706; xt 
-i &#65533; 
-(10.2) 
-&#65533; 
-tV t&#964;ij &#948;teij d Vt = Rt (10.3) 
-&#948;teij = 1 2 &#65533; &#8706;(&#948;u
-i) 
-&#8706; txj + &#8706;(&#948;uj ) 
-&#8706; txi &#65533; 
-(&#8801; teij ) (10.4) 
-In FEA: 
-tF = tR (10.5) 
-In linear analysis 
-tF = K tU KU = R (10.6) &#8658; 
-In general nonlinear analysis, we need to iterate. Assu me the solution is known &#8220;at time t&#8221; 
-t 0 t x = x + u (10.7) 
-Hence tF is known. Then we consider 
-t+&#916;t t+&#916;tF = R (10.8) 
-Consider the loads (applied external loads) to be deformation-independent, e.g. 
-41 </text>
-        </slide>
-        <slide>
-          <slideno>2</slideno>
-          <text>&#65533; 
-&#65533; MIT 2.094 10. F.E. large deformation/general nonlinear analysis 
-So, perform this process for i =1, 2, 3,...,n, where n is the total number of degrees of freedom. 
-Pictorially, 
-&#9124;&#9121; 
-tK = &#9122;&#9122;&#9122;&#9123; .. .. .. 
-.. .. .. &#183;&#183;&#183; 
-.. .. .. &#9125;&#9125;&#9125;&#9126; 
-A general di&#64259;culty: we cannot &#8220;simply&#8221; incremen t Cauchy stresses. 
-t+&#916;t&#964; referred to area at time t +&#916;t &#8226; ij 
-&#8226; t&#964;ij referred to area at time t. 
-We de&#64257;ne a new stress measu re, 2nd Piola -Kirchho&#64256; stress, t+&#916;
-0 tSij , where 0 in the leading subscript 
-refers to original con&#64257;guration. Then, 
-t+&#916;t 
-0Sij = 0 tSij + 0Sij (10.20) 
-The strain measu re energy-conjugate to the 2nd P-K stress 0 tSij is the Green-Lagr ange strain 0 t&#65533;ij 
-Then, 
-0 t 
-0 tSij &#948; 0 t&#65533;ij dV= R (10.21) 
-0V 
-Also, 
-t+&#916;t t+&#916;t 0 t+&#916;tS&#948; &#65533;dV= R (10.22) 0 ij 0 ij
-0V 
-Example 
-43 </text>
-        </slide>
-        <slide>
-          <slideno>3</slideno>
-          <text>MIT 2.094 10. F.E. large deformation/general nonlinear analysis 
-tF = tR (10.23) 
-t+&#916;t t+&#916;tF = R (10.24) 
-(every time it is in equilibrium) 
-(10.13) and (10.14) give: 
-i = 1, 
-t+&#916;tK(0) &#916;U (1) = t+&#916;tR t+&#916;tF (0) &#8801; fn(tU ) (10.25) &#8722; 
-t+&#916;tU (1) = t+&#916;tU (0) +&#916;U(1) (10.26) 
-i = 2, 
-t+&#916;tK(1) &#916;U (2) = t+&#916;tR &#8722; t+&#916;tF (1) (10.27) 
-t+&#916;tU (2) = t+&#916;tU (1) +&#916;U(2) (10.28) 
-44 </text>
-        </slide>
-        <slide>
-          <slideno>4</slideno>
-          <text>MIT OpenCourseWare 
-http://ocw.mit.edu 
-2.094 Finite Element Analysis of Solids and Fluids II
-Spring 20 11 
-For information about citing these materials or our Terms of Use, visit: http://ocw.mit.edu/terms .  </text>
-        </slide>
-      </slides>
-    </lecture>
-    <lecture>
-      <lecture_title>Large displacement analysis of solids/structures</lecture_title>
-      <lecture_pdf_url>https://ocw.mit.edu/courses/2-094-finite-element-analysis-of-solids-and-fluids-ii-spring-2011/resources/mit2_094s11_lec1/</lecture_pdf_url>
-      <lectureno>1</lectureno>
-      <slides>
-        <slide>
-          <slideno>0</slideno>
-          <text>2.094 &#8212; Finite Elemen t Analysis of Solids and Fluids Fall &#8216;08 
-Lecture 1 -Large displacement analysis of solids/structures 
-Prof. K.J. Bathe MIT OpenCourseWare 
-1.1 Project Example 
-Physical problem 
-Reading: 
-Ch. 1 in 
-the text 
-&#8220;Simple&#8221; math ematical model 
-analytical solution &#8226; 
-F.E. solution(s) &#8226; 
-More complex math ematical model 
-holes included &#8226; 
-large disp./large strains &#8226; 
-F.E. solution(s) &#8226; &#8658; 
-How many &#64257;nite elemen ts? &#8226; 
-We need a good error measu re (especially for FSI) 
-&#8220;Even more complex&#8221; math ematical model 
-The&#8220;comp lex mathemat ical model&#8221;includes Fluid 
-Structure Interaction (FSI). 
-You will use ADINA in your projects (and homew ork) for structures and &#64258;uid &#64258;ow. 
-3 </text>
-        </slide>
-        <slide>
-          <slideno>1</slideno>
-          <text>MIT 2.094	 1. Large displacemen t analysis of solids/structures 
-1.2 Large Displacemen t analysis 
-Lagrangian formulations: 
-&#8226; Total Lagrangian formulation 
-&#8226;	Updated Lagrangian formulation Reading: 
-Ch. 6 
-1.2.1 Mathema tical model/problem
-Given the original con&#64257;guration of the body, 
-the support conditions, 
-the applied external loads, 
-the assumed stress-st rain law 
-Calculate the deformations, strains, stresses of the body. 
-Question Is there a unique solution? Yes, for in&#64257;nitesimal small displacemen t/strain. Not necessar ily 
-for large displacemen t/strain. 
-For example: 
-Snap- through problem 
-The same load. Two di&#64256;erent deformed con&#64257;gurations. 
-4 </text>
-        </slide>
-        <slide>
-          <slideno>2</slideno>
-          <text>MIT 2.094 1. Large displacemen t analysis of solids/structures 
-Column problem, statics 
-Not physical 
-tR is in &#8220;direction&#8221; of bending momen t Not in 
-equilibrium. &#8658; 
-1.2.2 Requiremen ts to be ful&#64257;lled by solution at time t 
-I. Equilibrium of stresses (Cauchy stresses, forces per unit area in tV and on tSf ) with the applied 
-body forces tfB and surface tractions tfSf 
-II. Comp atibility 
-III. Stress-st rain law 
-1.2.3 Finite Elemen t Metho d 
-I. Equilibrium condition mean s now 
-&#8226; equilibrium at the nodes of the mesh 
-&#8226; equilibrium of each &#64257;nite elemen t 
-II. Comp atibility satis&#64257;ed exactly 
-III. Stress-st rain law satis&#64257;ed exactly 
-5 </text>
-        </slide>
-        <slide>
-          <slideno>3</slideno>
-          <text>MIT 2.094 1. Large displacemen t analysis of solids/structures 
-1.2.4 Notation
-Cauchy stresses (force per unit area at time t):
-t&#964;ij i, j =1, 2, 3 t&#964;ij = t&#964;ji (1.1)
-6 </text>
-        </slide>
-        <slide>
-          <slideno>4</slideno>
-          <text>MIT OpenCourseWare 
-http://ocw.mit.edu 
-2.094 Finite Element Analysis of Solids and Fluids II
-Spring 20 11 
-For information about citing these materials or our Terms of Use, visit: http://ocw.mit.edu/terms .  </text>
-        </slide>
-      </slides>
-    </lecture>
-    <lecture>
-      <lecture_title>Convergence of displacement-based FEM</lecture_title>
-      <lecture_pdf_url>https://ocw.mit.edu/courses/2-094-finite-element-analysis-of-solids-and-fluids-ii-spring-2011/resources/mit2_094s11_lec8/</lecture_pdf_url>
-      <lectureno>8</lectureno>
-      <slides>
-        <slide>
-          <slideno>0</slideno>
-          <text>2.094 &#8212; Finite Elemen t Analysis of Solids and Fluids	 Fall &#8216;08 
-Lecture 8 -Convergence of displacement-based FEM 
-Prof. K.J. Bathe	 MIT OpenCourseWare 
-(A)	 Find 
-u &#8712; V such that a(u, v)=(f, v) &#8704;v &#8712; V (Mathemat ical model) (8.1) 
-a(v, v) &gt; 0 &#8704;v &#8712; V, v =&#65533;0. (8.2) 
-where (8.2) implies that structures are supported properly. E.g. 
-(B) F.E. Problem Find 
-uh &#8712; Vh such that a(uh, vh) = (f , vh) &#8704;vh &#8712; Vh (8.3) 
-a(vh, vh) &gt; 0 &#8704;vh &#8712; Vh, 
-Properties eh = u &#8722; uh vh &#65533;= 0 (8.4) 
-(I) a(eh, vh) = 0 &#8704;vh &#8712; Vh (8.5) 
-(II) a(uh, uh) &#8804; a(u, u) (8.6) 
-33 </text>
-        </slide>
-        <slide>
-          <slideno>2</slideno>
-          <text>MIT 2.094 8. Convergence of displacemen t-based FEM 
-Pascal triangle (2D) 
-(Ch. 4.3) 
-error in displacemen t &#8764; C &#183; 4-node elemen t is comp lete to k = 1. &#8658; 
-9-node elemen t is comp lete to k = 2. &#8658; 
-hk+1 (8.12) 
-(C is a constant determined by the exact solution, material property. . . ) 
-error in stresses &#8764; Chk (8.13) &#183; 
-error in strain energy &#8764; Ch2k (these C are di&#64256;erent) (8.14) &#183; &#8592; 
-Hence, 
-E &#8722; Eh = Ch2k (roughly equal to) (8.15) &#183; 
-By theory, 
-log(E &#8722; Eh) = log C +2k log h (8.16) 
-35 </text>
-        </slide>
-        <slide>
-          <slideno>1</slideno>
-          <text>&#65533;&#65533;&#65533; &#65533;&#65533;&#65533; 
-&#65533;&#65533;&#65533; 
-&#65533;&#65533;&#65533;MIT 2.094 8. Convergence of displacemen t-based FEM 
-(C) Assume Mesh &#8220;is contained in&#8221; Mesh 
-h1 h2 
-e.g. Mesh &#65533;&#65533;&#65533;
-not contained in Mesh 
-h1 h2 
-We assume (C), but need another property (independent of (C)) 
-(III) a(eh, eh) &#8804; a(u &#8722; vh, u &#8722; vh) &#8704;vh &#8712; Vh (8.7) 
-uh minimizes! (Recal l eh = u &#8722; uh) 
-Proof: Pick wh &#8712; Vh. 
-a(eh + wh, eh + wh)= a(eh, eh)+ &#65533;&#65533;&#65533;&#65533;&#65533;&#65533; &#65533;0 
-2a(e h, wh) ( ) + awwh, h&#65533; 
-&#8805;0 (8.8) 
-Equality holds for (wh = 0) 
-a(eh, eh) &#8804; a(eh + wh, eh + wh) (8.9) 
-= a(u &#8722; uh + wh, u &#8722; uh + wh) (8.10) 
-Take wh = uh &#8722; vh. 
-a(eh, eh) &#8804; a(u &#8722; vh, u &#8722; vh) (8.11) 
-Using property (III) and (C), we can say that we will converge monotonically, from below, to a(u, u): 
-34 </text>
-        </slide>
-        <slide>
-          <slideno>3</slideno>
-          <text>&#65533; MIT 2.094 8. Convergence of displacemen t-based FEM 
-By experiment, we can evaluate log(E &#8722; Eh) for di&#64256;erent mesh es and plot log(E &#8722; Eh) vs. log h 
-We need to use graded mesh es if we have high stress gradients. 
-Example Consider an almost incomp ressible material: 
-&#65533;V = vol. strain (8.17) 
+t u1,1t11 dV+ u1 d tV = 0 (2.13) 
+ 11u
+ 1  
+tt
+SS
+uf 
+  
+tV  t 
+tVtf1 B
+Sf ttSte11
+u1 11 f 
+where t11|tSf = tPr. 
+Therefore we have 
+te11 t11 d tV = u1 tf1 B d tV + u S
+1 f tPrtSf (2.14) 
+tV tV 
+From (2.12) to (2.14) we simply used mathemat ics. Hence, if (2.2) and (2.3) are satised, then (2.14) 
+must hold. If (2.14) holds, then also (2.2) and (2.3) hold! 
+Namel y, from (2.14) 
+t  tSf t Bt Sf
+u1,1 t11dV= u1 t11 tS u  u1 t11,1dV= u1 tf1 dV+ u1 tPrtSf (2.15) 
+tV tV tV 
 or 
-&#65533; &#183; v &#8594; very small or zero (8.18) 
-We can &#8220;see&#8221; di&#64259;culties: 
-p = &#8722;&#954;&#65533;V &#954; = bulk modulus (8.19) 
-As the material becomes incomp ressible (&#957; =0.3 0.4999)&#8594; 
-&#954; &#8594;&#8734; p &#64257;nite number (8.20) &#65533;V 0 &#8594;&#8594; 
-(Small error in &#65533;V results in huge error on pressure as &#954; &#8594;&#8734;, the constant C in (8.15) can be very large 
-locking) &#8658; 
-36 </text>
-        </slide>
-        <slide>
-          <slideno>4</slideno>
-          <text>MIT OpenCourseWare 
-http://ocw.mit.edu 
-2.094 Finite Element Analysis of Solids and Fluids II
-Spring 20 11 
-For information about citing these materials or our Terms of Use, visit: http://ocw.mit.edu/terms .  </text>
-        </slide>
-      </slides>
-    </lecture>
-    <lecture>
-      <lecture_title>Total Lagrangian formulation</lecture_title>
-      <lecture_pdf_url>https://ocw.mit.edu/courses/2-094-finite-element-analysis-of-solids-and-fluids-ii-spring-2011/resources/mit2_094s11_lec12/</lecture_pdf_url>
-      <lectureno>12</lectureno>
-      <slides>
-        <slide>
-          <slideno>3</slideno>
-          <text>&#65533; 
-&#65533; &#65533; MIT 2.094 12. Total Lagrangian formulation 
-Left hand side as before but using (k &#8722; 1) and right hand side is 
-t+&#916;t t+&#916;t t+&#916;t (k&#8722;1) 0= R&#8722; 
-0V S&#948; &#65533; dV (12.30) 0 ij 0 ij 
-gives 
-t+&#916;tR &#8722; t+&#916;
-0 tF (k&#8722;1) (12.31) 
-In the full N-R iteration, we use 
-t+&#916;t (k&#8722;1) t+&#916;t (k&#8722;1) &#916;U (k) t+&#916;t t+&#916;t (k&#8722;1) 
-0KL + 0KNL = R &#8722; 0 F (12.32) 
-52 </text>
-        </slide>
-        <slide>
-          <slideno>0</slideno>
-          <text>&#65533; &#65533; 
-&#65533; &#65533; 
-&#65533; &#65533; 
-&#65533; &#65533; &#65533; 
-&#65533; 2.094 &#8212; Finite Elemen t Analysis of Solids and Fluids Fall &#8216;08 
-Lecture 12 -Total Lagrangian formulation 
-Prof. K.J. Bathe MIT OpenCourseWare 
-We discussed: 
-t 
-tX = &#8706;&#8706; x
-xi
-j &#8658; dt x = tX d0 x,d0 x = &#65533; tX &#65533;&#8722;1 dt x (12.1)0 0 0 0 
-tC = tXTtX (12.2)0 0 0 
-d0 x = 0
-tX dt x where 0
-tX = &#65533; 
-0 tX &#65533;&#8722;1 = &#8706; 
-t 0xi (12.3)&#8706;xj 
-The Green-Lagr ange strain: 
-1 &#65533;&#65533; 1 &#65533;&#65533; 
-0 t&#65533;= 0 tXT 
-0 tX &#8722; I = 0 tC &#8722; I (12.4)2 2 
-Polar decomp osition: 
-1 &#65533;&#65533; &#65533;2 &#65533; 
-0 tX = 0 tR0 tU &#8658; 0 t&#65533;=2 0 tU &#8722; I (12.5) 
-We see, physically that: 
-where dt+&#916;tx and dtxare the same lengths 
-the comp onents of the G-L strain do not &#8658; 
-change. 
-Note in FEA &#65533;&#9131; 0 0 k xi = hk xi &#9130;&#9130;&#9132; 
-k &#65533; for an elemen t (12.6) 
-t tk &#9130;&#9130;ui = hk ui &#9133;
-k
-t 0 t xi = xi + ui &#8594; for any particle (12.7) 
-Hence for the elemen t 
-t 0 k tk xi = hk xi + hk ui (12.8) 
-k k 
-= hk 0 xik + t uik (12.9) 
-k 
-= hkt xkk (12.10) 
-k 
-49 </text>
+B t Sf u1 t11,1 + tf1 dV+ u1 tPr  t11 tSf = 0 (2.16) 
+tV 
+Now let u1 = x 1  tx
+L t11,1 + tf1 B , where tL = length of bar. 
+Hence we must have from (2.16) 
+t11,1 + tf1 B = 0 (2.17) 
+and then also 
+tP= t (2.18) r 11 
+9 </text>
         </slide>
         <slide>
           <slideno>1</slideno>
-          <text>&#65533; &#65533; 
-&#65533; 
-&#65533; &#65533; MIT 2.094 12. Total Lagrangian formulation 
-E.g., k =4 
-2nd Piola-Kir chho&#64256; stress 
-0&#961; 
-0 tS = t&#961; 0
-tX t&#964; 0
-tXT &#8594; comp onents also independent of a rigid body rotation (12.11) 
-Then 
-t 0 t t tSij &#948;&#65533;ij dV= t&#964;ij &#948;eij dV= R (12.12) 0 0 t
-0V tV
-We can use an incremen tal decomp osition of stress/st rain. 
-t+&#916;
-0 tS = 0 tS + 0S (12.13) 
-t+&#916;tS = tS + 0S (12.14) 0 ij 0 ij ij
-t+&#916;t
-&#65533; = t&#65533;+ 0&#65533; (12.15) 0 0 
-t+&#916;
-0 t&#65533;ij = 0 t&#65533;ij + 0&#65533;ij (12.16) 
-Assu me the solution is kown at time t, calculate the solution at time t +&#916;t. Hence, we apply (12.12) 
-at time t +&#916;t: 
-t+&#916;t t+&#916;t 0 t+&#916;tS&#948; &#65533;dV= R (12.17) 0 ij 0 ij
-0V 
-Look at &#948;&#65533;0 t 
-ij : 
-1 &#65533; &#65533; t t t t t&#948;&#65533;= &#948; u + u + uu (12.18a) 0 ij 0 i,j 0 j,i 0 k,i 0 k,j 2 
-t t1 &#8706;&#948;ui &#8706;&#948;uj &#8706;&#948;uk &#8706;u &#8706;u&#8706;&#948;uk t k k&#948;&#65533;= + + + (12.18b) 0 ij 2 &#8706;0x &#8706; 0x &#8706;0x&#183; &#8706;0x &#8706;0x&#183; &#8706;0xj i i j i j 
-1 &#65533; &#65533; 
-&#948;&#65533;0 t 
-ij =2 &#948;0ui,j + &#948;0uj,i + &#948;0uk,i 0 t uk,j + 0 t uk,i&#948;0uk,j (12.18c) 
-We have 
-t+&#916;t&#65533;ij &#8722; t&#65533;ij = 0&#65533;ij (12.19) 0 0 
-0&#65533;ij = 0eij + 0&#951;ij (12.20) 
-50 </text>
-        </slide>
-        <slide>
-          <slideno>4</slideno>
-          <text>MIT OpenCourseWare 
-http://ocw.mit.edu 
-2.094 Finite Element Analysis of Solids and Fluids II
-Spring 20 11 
-For information about citing these materials or our Terms of Use, visit: http://ocw.mit.edu/terms .  </text>
-        </slide>
-        <slide>
-          <slideno>2</slideno>
-          <text>&#65533; &#65533; 
-&#65533; 
-&#65533; &#65533; &#65533; 
-&#65533; &#65533; &#65533; &#65533; &#65533;&#65533; &#65533; &#65533; 
-&#65533; &#65533;&#65533; &#65533; 
-&#65533; &#65533; MIT 2.094 12. Total Lagrangian formulation 
-where 0eij is the linear incremen tal strain, 0&#951;ij is the nonlinear incremen tal strain, and 
-&#9115; &#9118; 
-1 &#9116; t t &#9119; 
-0eij = &#9117;0ui,j + 0uj,i + 0uk,i 0uk,j + 0uk,i 0uk,j &#9120; (12.21) 2 &#65533; &#65533;&#65533; &#65533; 
-initial displ. e&#64256;ect 
-1 
-0&#951;ij = 0uk,i 0uk,j (12.22) 2 
+          <text>MIT 2.094 2. Finite elemen t formulation of solids and structures 
+2.1 Principle of Virtua l Work 
+ 
+tV tij teij d tV =  
+tV tfB 
+i ui d tV +  
+tSf tfSf 
+i u Sf 
+i d tSf (2.6) 
 where 
-&#8706;uk t+&#916;t t 
-0uk,j = 0 , uk = uk &#8722; uk (12.23) &#8706;xj 
-Note 
-t+&#916;t t&#948; &#65533; = &#948;&#65533; &#65533; &#948;&#65533;= 0 when changing the con&#64257;guration at t +&#916;t (12.24) ij 0 ij 0 ij 
-From (12.17): 
-&#65533;&#65533;&#65533; &#65533; tS &#948;ij + &#948;&#951;dV0 ij + 0Sij 0e0 ij 0 
-0V 
-= tS + + tSij &#948;&#951;+ ij &#948;&#951;dV (12.25) 0 ij &#948;0eij 0Sij &#948;0eij 0 0 ij 0S0 ij 0 
-0V 
-= t+&#916;tR (12.26) 
-Linearizatio n 
-&#9115; &#9118; 
-t t KU K
-0V &#9116; 0S0e+ tSij &#948;&#951;&#9119;&#9120; dV= R&#8722; 
-0VtS 0eij dV (12.27) &#9117; ij &#948;ij 0 0 ij 0 t+&#916;t 
-0 ij &#948;0 L&#65533;&#65533; U 0 NL 0&#9116; &#9119;
-tF0 
-We use, 
-0Sij &#65533; 0Cijrs 0ers (12.28) 
-We arrive at, with the &#64257;nite elemen t interpolations, 
-0 tKL + 0 tKNL U = t+&#916;tR &#8722;0 tF (12.29) 
-where U is the nodal displacemen t incremen t. 
-51 </text>
-        </slide>
-      </slides>
-    </lecture>
-    <lecture>
-      <lecture_title>Total Lagrangian formulation (cont.)</lecture_title>
-      <lecture_pdf_url>https://ocw.mit.edu/courses/2-094-finite-element-analysis-of-solids-and-fluids-ii-spring-2011/resources/mit2_094s11_lec14/</lecture_pdf_url>
-      <lectureno>14</lectureno>
-      <slides>
-        <slide>
-          <slideno>3</slideno>
-          <text>MIT 2.094	 14. Total Lagrangian formulation, cont&#8217;d 
-&#65533;&#65533;2 tu+ u1 1 tu+ u1 t+&#916;t 1 1&#65533; = +	 (14.20) 033 0 0x1 2 x1 
-&#65533;&#65533;2 u1 tu u1 1 u1 
-0&#65533;33 = t+&#916;
-0 t&#65533;33 &#8722; 0 t&#65533;33 = 0x1 + 0x1
-1 &#183; 0x1 +2 0x1	(14.21) 
-How do we assess the accuracy of an analysis?	 Reading: 
-Sec. 4.3.6 
-&#8226; Mathemat ical model &#8764; u 
-&#8226; F.E. solution &#8764; uh
-Find &#65533;u &#8722; uh&#65533; and &#65533;&#964; &#8722; &#964;h&#65533;.
-References 
-[1] T. Sussman and K. J. Bathe. &#8220;Studies of Finite Elemen t Procedures -on Mesh Selection.&#8221; Computers 
-&amp; Structures, 21:257&#8211;264, 1985. 
-[2] T. Sussman and K. J. Bathe. &#8220;Studies of Finite Elemen t Procedures -Stress Band Plots and the 
-Evaluation of Finite Elemen t Meshes.&#8221; Journal of Engineering Computations, 3:178&#8211;191, 1986. 
-60 </text>
-        </slide>
-        <slide>
-          <slideno>2</slideno>
-          <text>&#65533; &#65533;&#65533; &#65533; 
-&#65533; &#65533; MIT 2.094	 14. Total Lagrangian formulation, cont&#8217;d 
-tP0 tP QL= &#916; Q = &#916;	 (14.10) 0L&#183;&#8658; &#183; 
-tPwhere the boxed term is the sti&#64256;ness. In axial direction, 0L is not very important because usually 
-E 0A tP tP 
-0L &#65533; 0L . But, in vertical direction, 0L is important. 
-&#9121;&#9124; 
-&#8722; cos &#952;
-tF tP &#9122;&#9122;&#8722; sin &#952; &#9125;&#9125;
-0 = &#9123;	cos &#952; &#9126; (14.11) 
-sin &#952; 
-2D/3D (e.g. Table 6.5) 2D: 
-1 &#65533;&#65533; &#65533;2 &#65533;&#65533;2 &#65533; 
-0&#65533;11 = 
-&#65533;0u1,1 + 0 t u1,10u
-&#65533;&#65533;1,1 + 0 t u2,10u2,1&#65533; +2 0u1,1 + 0u2,1 (14.12) 
-0e11	0&#951;11 
-0&#65533;22 =	 (14.13) &#183;&#183;&#183; 
-0&#65533;12 =	 (14.14) &#183;&#183;&#183; 
-(Axisymmet ric) 
-0&#65533;33 = ? (14.15) 
-1 &#65533;&#65533; &#65533;2 &#65533; 
-t&#65533;=2 tU &#8722; I (14.16) 0 0 
-&#9121; &#9124; 
-&#9123; &#215;&#215; 0 
-&#215;&#215; 0 &#9126; 
-0 tU 2 = 00 &#215;	 (14.17) 
-(t&#955;&#8593;
-)2 
-t 0 tds 2&#960;x1 + u1 t&#955; = = 0 0ds 2&#960;x1 (14.18) t 
-=1+ u1 
-0x1 
-&#65533;&#65533; &#65533;2 &#65533; 
-0 t&#65533;33 = 21 1+ 0 tu
-x1 &#8722; 1
-1
-(14.19) &#65533;&#65533;2 tu1 1 tu1= +0x1 2 0x1 
-59 </text>
-        </slide>
-        <slide>
-          <slideno>1</slideno>
-          <text>&#65533; &#65533; &#65533; &#65533; MIT 2.094 14. Total Lagrangian formulation, cont&#8217;d 
-Truss 
-&#916;L &#65533; 1 small strain assumption: 0L 
-0EAtK = 0 0L &#9124; &#9121; cos2 &#952; cos &#952; sin &#952; &#8722; cos2 &#952; &#8722; cos &#952; sin &#952; 
-cos &#952; sin &#952; sin2 &#952; &#8722; sin &#952; cos &#952; &#8722; sin2 &#952; 
-cos2 &#952; sin &#952; cos &#952; &#9122;&#9122;&#9123; &#9125;&#9125;&#9126; = &#8722; cos2 &#952; 
-&#8722; cos &#952; sin &#952; 
-&#9121; &#8722; cos &#952; sin &#952; 
-&#8722; sin2 &#952; (14.6) sin &#952; cos &#952; sin2 &#952; 
-&#9124; 
-1 0 &#8722;1 0 
-0tP 
-0L &#9122;&#9122;&#9123; &#9125;&#9125;&#9126; 0 1 &#8722;1 
-0+ &#8722;1 0 1 
-0 &#8722;1 0 1 
-(notice that the both matrices are symmet ric) 
-&#65533;&#65533; 
-cos &#952; sin &#952; u1 u1 (14.7) = v1 &#8722; sin &#952; cos &#952; v1 
-Corresponding to the u and v displacemen ts we have: 
-0EAtK = (14.8) 0L &#9124; &#9121;&#9124; &#9121; 
-10 &#8722;10 
-0 1 0 &#8722;1 0 
-0 &#9122;&#9122;&#9123; &#9125;&#9125;&#9126;+ tP 
-0L &#9122;&#9122;&#9123; &#9125;&#9125;&#9126;00 0 0 1 &#8722;1 
-0 (14.9) = &#8722;10 10 
-00 &#8722;1 0 1 
-0 00 &#8722;1 0 1 
-58 0 </text>
+teij 
+with ui    
+tSu = 
+= 1 
+2  ui 
+ txj 
+0 + uj 
+ txi  
+(2.7) 
+(2.8) 
+2.2 Example 
+Assu me plane sections remain plane 
+Principle of Virtual Work 
+ 
+tV t11 te11 d tV =  
+t V tfB 
+1 u1 d tV +  
+tSf tPr u Sf 
+1 d tSf (2.9) 
+Derivation of (2.9) 
+t11,1 + tfB 
+1 = 0 by (2.2) 
+ t11,1 + tfB 
+1  
+u1 = 0 
+or Principle of Virtual Displacemen ts (2.10) 
+(2.11) 
+8 </text>
         </slide>
         <slide>
           <slideno>0</slideno>
-          <text>&#65533; 
-&#65533; 
-&#65533; &#65533; &#65533;
-&#65533; &#65533; &#65533; 
-&#65533; &#65533; &#65533; 
-&#65533; &#65533; 2.094 &#8212; Finite Elemen t Analysis of Solids and Fluids Fall &#8216;08 
-Lecture 14 -Total Lagrangian formulation, cont&#8217;d 
-Prof. K.J. Bathe MIT OpenCourseWare 
-Truss elemen t. 2D and 3D solids. 
-t+&#916;t t+&#916;t t+&#916;t&#964;ij &#948;t+&#916;teij d V = R (14.1) 
-t+&#916;tV 
-t+&#916;t t+&#916;t 0 t+&#916;t 
-0Sij &#948; 0&#65533;ij &#948;V= R (14.2) 
-0V &#9168; &#9168;&#65533; linearization
-&#948;ij &#948;V+ tSij &#948;&#951;ij &#948;V= tS ij &#948;V (14.3) 
-0V 0Cijrs 0ers0e0 
-0V 0 00 t+&#916;tR&#8722; 
-0V 0 ij &#948;0e0 
-Note: 
-t&#948; = &#948;&#65533;0eij 0 ij 
-varying with respect to the con&#64257;guration at time t. 
-F.E. discretizatio n 
-0 0 k t tk t+&#916;t t+&#916;tk xi = hk xi xi = hk xi xi = hk xi (14.4a) 
-k k k 
-t tk t+&#916;t t+&#916;tk k ui = hk ui ui = hk ui ui = hkui (14.4b) 
-k k k 
-(14.4) into (14.3) gives 
-0 tKL + 0 tKNL U = t+&#916;tR &#8722;0 tF (14.5) 
-57 </text>
-        </slide>
-        <slide>
-          <slideno>4</slideno>
-          <text>MIT OpenCourseWare 
-http://ocw.mit.edu 
-2.094 Finite Element Analysis of Solids and Fluids II
-Spring 20 11 
-For information about citing these materials or our Terms of Use, visit: http://ocw.mit.edu/terms .  </text>
+          <text>	  
+  2.094  Finite Elemen t Analysis of Solids and Fluids	 Fall 08 
+Lecture 2 -Finite element formulation of solids and structures 
+Prof. K.J. Bathe	 MIT OpenCourseWare 
+Reading: 
+Ch. 1, Sec. Assu me that on tSu the displacemen ts are zero (and tSu is constant). Need to satisfy at time t: 6.1-6.2 
+Equilibrium of Cauchy stresses tij with applied loads  
+tT = t11 t22 t33 t12 t23 t31 (2.1)
+(For i =1, 2, 3)
+tij,j + tfiB = 0in tV (sum over j) (2.2)
+tij t nj = tfiSf on tSf (sum over j) (2.3)
+(e.g. tfiSf = ti1 t n1 + ti2 t n2 + ti3 t n3 )	 (2.4) 
+And: t11 tn1 + t12 tn2 = tf1 Sf 
+	Compatibility The displacemen ts tui need to be continuous and zero on tSu. 
+Stress-Strain law  
+tij = function t uj	 (2.5) 
+7 </text>
         </slide>
       </slides>
     </lecture>
