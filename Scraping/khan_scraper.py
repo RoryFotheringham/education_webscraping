@@ -67,7 +67,7 @@ class Scraper:
                    
                    
     def get_transcript(self, link):
-        return 'transcript'
+        return [Slice('99:99', 'the present moment is eternal')]
                     
     def get_lessons(self, course):
         """Retrieves all lessons, adds them to the course and passes
@@ -88,13 +88,14 @@ class Scraper:
             lesson_card_title = lesson_card.find('a', {'data-test-id':'lesson-card-link'}).text
             lesson_link = lesson_card.find('a', {'data-test-id':'lesson-card-link'})['href']
             
-            contents = lesson_card.find('div', {'class':'_1g8ypdt'})
+            contents = lesson_card.find('ul', {'class':'_37mhyh'})
             article_no = 0
             video_no = 0
             
             slides = Slides()
             videos = Videos()
-            for activity in contents.find_all('div', {'class' : '_u7elqji'}):
+            activities = contents.find_all('li')
+            for activity in activities:
                 
                 is_article = activity.find('span', {'aria-label':'Article'}) # might be useful in future to consider 
                                                                                 # aria-label:Talk-Through
@@ -105,12 +106,21 @@ class Scraper:
                     slides.insert_slide(str(article_no), self.get_text_from_article(article_link))
                     
                 is_talkthrough = activity.find('span', {'aria-label':'Talk-through'})
-                
+
                 if is_talkthrough:
                     video_no += 1
                     activity_title = activity.find('span', {'class':'_14hvi6g8'}).text
                     activity_link = self.base_url + activity.find('a')['href']
                     videos.insert_slide(activity_title, activity_link, self.get_transcript(activity_link))
+                    
+                is_video = activity.find('span', {'aria-label':'Video'})
+                    
+                if is_video:
+                    video_no += 1
+                    activity_title = activity.find('span', {'class':'_14hvi6g8'}).text
+                    activity_link = self.base_url + activity.find('a')['href']
+                    videos.insert_slide(activity_title, activity_link, self.get_transcript(activity_link))
+                    
                     
             
             course.lectures.add_lecture(lesson_card_title, link_join(self.base_url, lesson_link), str(lesson_no), slides, videos)
@@ -167,7 +177,8 @@ class Scraper:
             if link != '/kids':
                 links.append(link)
 
-        print(links)
+        for link in links:
+            self.parse_khan_page(link_join(self.base_url, link))
         
 
 

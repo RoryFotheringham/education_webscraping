@@ -63,7 +63,13 @@ class Videos:
         self.struct = set()  # {(video_title, video_url, transcript), ...}
     
     #def insert_slide(self, video_title, video_url, transcript: [Slice]):
-    def insert_slide(self, video_title, video_url, transcript: list): #changed argument from above because not correct form
+    
+    # PROBLEM WITH VIDEOS
+    # we can't hash a list data type we need to get a different way to 
+    # maybe self.struct can be a list rather than set?
+    # i will investigate ...
+    def insert_slide(self, video_title, video_url, transcript: list):
+                                                                
         # Note: A 'transcript' is an array of Slices
         self.struct.add((video_title, video_url, transcript))
     
@@ -132,25 +138,27 @@ class XMLHandler:
             lectures_xml = []
             for lecture in lectures:
                 lecture_title, lecture_pdf_url, lecture_num, slides, videos = lecture
-                video_title, video_url, transcript = videos
-                lectures_xml.append(
-                    E.lecture(
-                        E.lecture_title(lecture_title),
-                        E.lecture_pdf_url(lecture_pdf_url),
-                        E.lectureno(lecture_num),
-                        E.slides(
-                            *slide_func(slides)
-                        ),
-                        E.videos(
-                            E.video(
-                                E.video_url(video_url),
-                                E.video_title(video_title),
-                                E.transcript(
-                                    *slice_func(transcript)
+                videos = videos.get_info()
+                for video in videos:
+                    video_title, video_url, transcript = video
+                    lectures_xml.append(
+                        E.lecture(
+                            E.lecture_title(lecture_title),
+                            E.lecture_pdf_url(lecture_pdf_url),
+                            E.lectureno(lecture_num),
+                            E.slides(
+                                *slide_func(slides)
+                            ),
+                            E.videos(
+                                E.video(
+                                    E.video_url(video_url),
+                                    E.video_title(video_title),
+                                    E.transcript(
+                                        *slice_func(transcript)
+                                    )
                                 )
                             )
-                        )
-                    ))
+                        ))
             return lectures_xml
 
         # Add course info to XML
