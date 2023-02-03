@@ -76,7 +76,7 @@ class Slice:
     def __init__(self, time, text):
         self.time = time  # e.g: 28:40
         self.text = text  # e.g: So now, that's a picture with name but not details, right?
-    def get_info():
+    def get_info(self):
         return (self.time, self.text)
 
 
