@@ -62,7 +62,8 @@ class Videos:
     def __init__(self):
         self.struct = set()  # {(video_title, video_url, transcript), ...}
     
-    def insert_slide(self, video_title, video_url, transcript: [Slice]):
+    #def insert_slide(self, video_title, video_url, transcript: [Slice]):
+    def insert_slide(self, video_title, video_url, transcript: list): #changed argument from above because not correct form
         # Note: A 'transcript' is an array of Slices
         self.struct.add((video_title, video_url, transcript))
     
