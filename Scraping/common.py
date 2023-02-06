@@ -60,7 +60,7 @@ class Slides:
 class Videos:
     """ Handle the storage of multiple videos """
     def __init__(self):
-        self.struct = set()  # {(video_title, video_url, transcript), ...}
+        self.struct = []  # {(video_title, video_url, transcript), ...}
     
     #def insert_slide(self, video_title, video_url, transcript: [Slice]):
     
@@ -71,7 +71,7 @@ class Videos:
     def insert_slide(self, video_title, video_url, transcript: list):
                                                                 
         # Note: A 'transcript' is an array of Slices
-        self.struct.add((video_title, video_url, transcript))
+        self.struct.append((video_title, video_url, transcript))
     
     def get_info(self):
         return self.struct
@@ -118,11 +118,29 @@ class XMLHandler:
                     continue
             return slides_xml
 
+       
+        
+        def videos_func(videos):
+            if not videos:
+                return []
+            video_xml = []
+            for video_title, video_url, transcript in videos:
+                video_xml.append(
+                E.video(
+                    E.video_url(video_url),
+                    E.video_title(video_title),
+                    E.transcript(
+                        *slice_func(transcript)
+                    ))
+                )
+            return video_xml
+
         def slice_func(transcript):
             if not transcript:
                 return []
             slice_xml = []
-            for time, text in transcript:
+            for slice in transcript:
+                time, text = slice.get_info()
                 slice_xml.append(
                     E.slice(
                         E.time_slice(time),
@@ -130,6 +148,7 @@ class XMLHandler:
                     )
                 )
             return slice_xml
+            
 
         def lecture_func(lectures):
             if not lectures:
@@ -139,26 +158,22 @@ class XMLHandler:
             for lecture in lectures:
                 lecture_title, lecture_pdf_url, lecture_num, slides, videos = lecture
                 videos = videos.get_info()
-                for video in videos:
-                    video_title, video_url, transcript = video
-                    lectures_xml.append(
-                        E.lecture(
-                            E.lecture_title(lecture_title),
-                            E.lecture_pdf_url(lecture_pdf_url),
-                            E.lectureno(lecture_num),
-                            E.slides(
-                                *slide_func(slides)
-                            ),
-                            E.videos(
-                                E.video(
-                                    E.video_url(video_url),
-                                    E.video_title(video_title),
-                                    E.transcript(
-                                        *slice_func(transcript)
-                                    )
+                # for video in videos:
+                #     video_title, video_url, transcript = video
+                lectures_xml.append(
+                    E.lecture(
+                        E.lecture_title(lecture_title),
+                        E.lecture_pdf_url(lecture_pdf_url),
+                        E.lectureno(lecture_num),
+                        E.slides(
+                            *slide_func(slides)
+                        ),
+                        E.videos(
+                            *videos_func(videos)                            
                                 )
                             )
-                        ))
+                        )
+                        
             return lectures_xml
 
         # Add course info to XML
