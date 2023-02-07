@@ -8,6 +8,7 @@ from selenium import webdriver
 from selenium.webdriver.chrome.options import Options
 import time
 import math
+import json
 from common import *
 #from lecture import Lecture, Slide
 
@@ -57,7 +58,15 @@ class Scraper:
                 if not script.string:
                     continue
                 if '__PAGE_SETTINGS__' in script.string[:100]:
-                    content = script.string[:20].strip()
+                    content = str(script.string)
+                    for count, char in enumerate(content):
+                        if char == '{':
+                            content = content[count:]
+                            break
+                        break
+            dicts = content.split('\n')
+
+            dict = json.loads(content)
                     
             return content # currently giving just raw javascript
                                         # so we can handle a string output
@@ -151,7 +160,7 @@ class Scraper:
             print(unit_link)
             print('=============================')
             
-            course = Course(unit_title, link_join(self.base_url, unit_link), 'None', 'None')
+            course = Course(unit_title, link_join(self.base_url, unit_link), ['None'], 'None')
 
             self.get_lessons(course)
             print('got one!')
