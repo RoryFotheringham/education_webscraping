@@ -64,11 +64,33 @@ class Scraper:
                             content = content[count:]
                             break
                         break
-            dicts = content.split('\n')
+            dict = content.split('\n')[2]
+            for count, char in enumerate(dict):
+                if char == '{':
+                    json_str = dict[count:]
+                    break
+            
+        
+            
+            
 
-            dict = json.loads(content)
+            dict = json.loads(json_str[:-1])
+                    # create a 24 sized sliding window searching for string 'translatedPerseusContent'
                     
-            return content # currently giving just raw javascript
+            for key in dict['hydrate']['wbd'].keys():
+                if 'ContentForPath' in key:
+                    temp_key = key
+                    
+            trans_content = dict['hydrate']['wbd'][temp_key]['data']['contentRoute']['listedPathData']['content']['translatedPerseusContent']
+            trans_list = json.loads(trans_content)    
+            
+            text = ''
+            for elem in trans_list:
+                text = text + ' ' + elem['content']
+                
+            text = text.replace('\n', ' ')
+            
+            return text # currently giving just raw javascript
                                         # so we can handle a string output
                                         # ultimately, this method should unpack the JS in 
                                         # content and return that
