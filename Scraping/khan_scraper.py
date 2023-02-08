@@ -1,3 +1,4 @@
+import re
 from urllib import response
 import requests
 import PyPDF2
@@ -10,6 +11,7 @@ import time
 import math
 import json
 from common import *
+from dynamic_transcript import Transcript_getter
 #from lecture import Lecture, Slide
 
 
@@ -43,6 +45,7 @@ class Scraper:
         self.doc_list = []
         self.base_url = 'https://www.khanacademy.org'
         # Call methods
+        self.trans_getter = Transcript_getter()
         self.parse_courses()
 
 
@@ -59,8 +62,8 @@ class Scraper:
                     continue
                 if '__PAGE_SETTINGS__' in script.string[:100]:
                     content = str(script.string)
-                    for count, char in enumerate(content):
-                        if char == '{':
+                    for count, char in enumerate(content):  # the stuff in this loop doesn't work
+                        if char == '{':                     # TODO get rid of this loop safely
                             content = content[count:]
                             break
                         break
@@ -70,12 +73,9 @@ class Scraper:
                     json_str = dict[count:]
                     break
             
-        
-            
-            
 
             dict = json.loads(json_str[:-1])
-                    # create a 24 sized sliding window searching for string 'translatedPerseusContent'
+                    
                     
             for key in dict['hydrate']['wbd'].keys():
                 if 'ContentForPath' in key:
@@ -90,14 +90,13 @@ class Scraper:
                 
             text = text.replace('\n', ' ')
             
-            return text # currently giving just raw javascript
-                                        # so we can handle a string output
-                                        # ultimately, this method should unpack the JS in 
-                                        # content and return that
+            return text 
                 
                    
                    
     def get_transcript(self, link):
+        self.trans_getter.get_transcript(link)
+        
         return [Slice('99:99', 'the present moment is eternal')]
                     
     def get_lessons(self, course):
