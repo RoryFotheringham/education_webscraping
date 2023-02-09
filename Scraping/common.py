@@ -17,32 +17,14 @@ def link_join(link, *args):
     return link
 
 
-class Course:
-    """ Handle the storage of a single course """
-    def __init__(self, course_title, course_url, course_tags, date):
-        self.course_title = course_title
-        self.course_url = course_url
-        self.course_tags = course_tags
-        self.date = date
-        self.lectures = None
-
-    def add_lectures_info(self, lectures):
-        self.lectures = lectures  # single instance of Lectures obj
+class Slice:
+    """ Handle the storage of a single slice in the transcript """
+    def __init__(self, time, text):
+        self.time = time  # e.g: 28:40
+        self.text = text  # e.g: 'So now, that's a picture with name but not details, right?'
 
     def get_info(self):
-        return self.course_title, self.course_url, self.course_tags, self.date, self.lectures
-
-
-class Lectures:
-    """ Handle the storage of multiple lectures """
-    def __init__(self):
-        self.struct = set()  # {(lecture_title, lecture_pdf_url, lecture_num, slides, videos), ...}
-    
-    def add_lecture(self, lecture_title, lecture_pdf_url, lecture_num, slides, videos):
-        self.struct.add((lecture_title, lecture_pdf_url, lecture_num, slides, videos))
-    
-    def get_info(self):
-        return self.struct
+        return (self.time, self.text)
 
 
 class Slides:
@@ -57,33 +39,44 @@ class Slides:
         return self.struct
 
 
-class Videos:
-    """ Handle the storage of multiple videos """
+class Video:
+    """ Handle the storage of single video """
+    def __init__(self, video_title, video_url, transcript: [Slice]):
+        self.video_title = video_title
+        self.video_url = video_url
+        # Note: A 'transcript' is an set of Slices
+        self.transcript = transcript
+    
+    def get_info(self):
+        return (self.video_title, self.video_url, self.transcript)
+
+
+class Course:
+    """ Handle the storage of a single course """
+    def __init__(self, course_title, course_url, course_tags, date, lectures=None):
+        self.course_title = course_title
+        self.course_url = course_url
+        self.course_tags = course_tags
+        self.date = date
+        self.lectures = lectures
+
+    def add_lectures_info(self, lectures):
+        self.lectures = lectures  # single instance of Lectures obj
+
+    def get_info(self):
+        return self.course_title, self.course_url, self.course_tags, self.date, self.lectures
+
+
+class Lectures:
+    """ Handle the storage of multiple lectures """
     def __init__(self):
-        self.struct = []  # {(video_title, video_url, transcript), ...}
+        self.struct = []  # {(lecture_title, lecture_pdf_url, lecture_num, slides, videos), ...}
     
-    #def insert_slide(self, video_title, video_url, transcript: [Slice]):
-    
-    # PROBLEM WITH VIDEOS
-    # we can't hash a list data type we need to get a different way to 
-    # maybe self.struct can be a list rather than set?
-    # i will investigate ...
-    def insert_slide(self, video_title, video_url, transcript: list):
-                                                                
-        # Note: A 'transcript' is an array of Slices
-        self.struct.append((video_title, video_url, transcript))
+    def add_lecture(self, lecture_title, lecture_pdf_url, lecture_num, slides, videos: [Video]):
+        self.struct.append((lecture_title, lecture_pdf_url, lecture_num, slides, videos))
     
     def get_info(self):
         return self.struct
-
-
-class Slice:
-    """ Handle the storage of a single slice in the transcript """
-    def __init__(self, time, text):
-        self.time = time  # e.g: 28:40
-        self.text = text  # e.g: So now, that's a picture with name but not details, right?
-    def get_info(self):
-        return (self.time, self.text)
 
 
 class XMLHandler:
@@ -117,14 +110,15 @@ class XMLHandler:
                 except ValueError:
                     continue
             return slides_xml
-
-       
         
         def videos_func(videos):
             if not videos:
                 return []
             video_xml = []
-            for video_title, video_url, transcript in videos:
+            if not isinstance(videos, list):
+                videos = [videos]
+            for video in videos:
+                video_title, video_url, transcript = video.get_info()
                 video_xml.append(
                 E.video(
                     E.video_url(video_url),
@@ -157,9 +151,6 @@ class XMLHandler:
             lectures_xml = []
             for lecture in lectures:
                 lecture_title, lecture_pdf_url, lecture_num, slides, videos = lecture
-                videos = videos.get_info()
-                # for video in videos:
-                #     video_title, video_url, transcript = video
                 lectures_xml.append(
                     E.lecture(
                         E.lecture_title(lecture_title),

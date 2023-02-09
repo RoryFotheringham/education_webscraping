@@ -8,7 +8,7 @@ from selenium.webdriver.chrome.options import Options
 from selenium.webdriver.chrome.service import Service
 import time
 import math
-from common import Course, Lectures, Slides, Videos, CourseProviders, XMLHandler, link_join
+from common import Course, Lectures, Slides, Video, Slice, CourseProviders, XMLHandler, link_join
 import argparse
 import os
 
@@ -19,7 +19,7 @@ class Scraper:
 
     def __init__(self, num_courses, skip):
         # Initialise variables
-        self.base_url = 'https://ocw.mit.edu/search/?f=Lecture%20Notes'
+        self.base_url = 'https://ocw.mit.edu/search/?f=Lecture%20Videos&f=Lecture%20Notes'
         self.options = Options()
         self.options.add_argument('--headless')
         self.options.add_argument('--disable-gpu')
@@ -116,11 +116,17 @@ class Scraper:
         if not lec_num_to_link:
             return
 
+        # Get for course
+        videos = self.get_single_course_videos(course_link)
+
         # Get content of each lecture (each PDF link for a course)
         lectures = Lectures()
-        for lecture_title, lecture_pdf_url, lecture_num in lec_num_to_link:
+        for i, (lecture_title, lecture_pdf_url, lecture_num) in enumerate(lec_num_to_link):
+            # Get lecture slide content
             slides = self.get_pdf_data(lecture_pdf_url)
-            lectures.add_lecture(lecture_title, lecture_pdf_url, lecture_num, slides, None)
+            # Get video content (assuming in same order as lecture slides)
+            video = videos[i]
+            lectures.add_lecture(lecture_title, lecture_pdf_url, lecture_num, slides, (video))
 
         return lectures
 
@@ -226,6 +232,51 @@ class Scraper:
             lec_num_to_link.add((lecture_title, lecture_note_link, lecture_num))
 
         return lec_num_to_link
+
+    def get_single_course_videos(self, course_link):
+        """ Get data for videos for a lecture """
+        service = Service('\chromedriver_win32\chromedriver.exe')
+        driver = webdriver.Chrome(options=self.options, service=service)
+        course_link = link_join(course_link, 'video_galleries', 'video-lectures')
+        driver.get(course_link)
+        page = driver.page_source
+        soup = BeautifulSoup(page, 'lxml')
+        # If page exists, break out of loop, we have a ready link to use
+        if not self.check_page_exists(soup):  # Sometimes endpoint works, but not what we expect
+            return
+            
+        videos = []
+
+        for video in soup.find_all('a', {'class': 'video-link'}): # e.g https://ocw.mit.edu/courses/18-086-mathematical-methods-for-engineers-ii-spring-2006/video_galleries/video-lectures/
+            video_link = link_join('https://ocw.mit.edu', video.get('href'))
+            video_title = video.find('h5', {'class': 'video-title'}).text.strip('\n')
+            print("\n" + video_title + "\n")
+            video_link, slices = self.get_transcript(video_link)
+            
+            videos.append(Video(video_title, video_link, slices))
+
+        return videos 
+
+    def get_transcript(self, video_page):
+        """ Given a single lecture video link, get the [Slices] """
+        service = Service('\chromedriver_win32\chromedriver.exe')
+        driver = webdriver.Chrome(options=self.options, service=service)
+        driver.get(video_page)
+        page = driver.page_source
+        soup = BeautifulSoup(page, 'lxml')
+
+        # If video is embedded, get the embedded link
+        video_link = video_page
+        # if soup.find('video'):
+        #     video_link = soup.find('video').get('src').split('blob:')[1]
+
+        slices = []
+        for transcript in soup.find_all('div', {'class': 'transcript-line'}):
+            timestamp = transcript.find('span', {'class': 'transcript-timestamp'}).text
+            text = transcript.find('span', {'class': 'transcript-text'}).text
+            slices.append(Slice(timestamp, text))
+
+        return video_link, slices
 
     def get_pdf_data(self, pdf_url):
         """ Scrape textual information from a given lecture (PDF slide URL)
