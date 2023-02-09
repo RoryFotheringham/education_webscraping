@@ -45,7 +45,6 @@ class Scraper:
         self.doc_list = []
         self.base_url = 'https://www.khanacademy.org'
         # Call methods
-        self.trans_getter = Transcript_getter()
         self.parse_courses()
 
 
@@ -62,7 +61,7 @@ class Scraper:
                     continue
                 if '__PAGE_SETTINGS__' in script.string[:100]:
                     content = str(script.string)
-                    for count, char in enumerate(content):  # the stuff in this loop doesn't work
+                    for count, char in enumerate(content):  # the stuff in this loop doesn't work/do anything
                         if char == '{':                     # TODO get rid of this loop safely
                             content = content[count:]
                             break
@@ -94,10 +93,9 @@ class Scraper:
                 
                    
                    
-    def get_transcript(self, link):
-        self.trans_getter.get_transcript(link)
-        
-        return [Slice('99:99', 'the present moment is eternal')]
+    def get_transcript(self, link, trans_getter):
+                
+        return trans_getter.get_transcript(link)
                     
     def get_lessons(self, course):
         """Retrieves all lessons, adds them to the course and passes
@@ -124,9 +122,11 @@ class Scraper:
             
             slides = Slides()
             videos = Videos()
+            trans_getter = Transcript_getter()
+            
             activities = contents.find_all('li')
             for activity in activities:
-                
+                #time.sleep(2)
                 is_article = activity.find('span', {'aria-label':'Article'}) # might be useful in future to consider 
                                                                                 # aria-label:Talk-Through
                 if is_article:
@@ -141,7 +141,7 @@ class Scraper:
                     video_no += 1
                     activity_title = activity.find('span', {'class':'_14hvi6g8'}).text
                     activity_link = self.base_url + activity.find('a')['href']
-                    videos.insert_slide(activity_title, activity_link, self.get_transcript(activity_link))
+                    videos.insert_slide(activity_title, activity_link, self.get_transcript(activity_link, trans_getter))
                     
                 is_video = activity.find('span', {'aria-label':'Video'})
                     
@@ -149,10 +149,10 @@ class Scraper:
                     video_no += 1
                     activity_title = activity.find('span', {'class':'_14hvi6g8'}).text
                     activity_link = self.base_url + activity.find('a')['href']
-                    videos.insert_slide(activity_title, activity_link, self.get_transcript(activity_link))
+                    videos.insert_slide(activity_title, activity_link, self.get_transcript(activity_link, trans_getter))
                     
-                    
-            
+            trans_getter.close()
+            trans_getter.quit()
             course.lectures.add_lecture(lesson_card_title, link_join(self.base_url, lesson_link), str(lesson_no), slides, videos)
     
    
