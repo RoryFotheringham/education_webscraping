@@ -41,7 +41,7 @@ class Slides:
 
 class Video:
     """ Handle the storage of single video """
-    def __init__(self, video_title, video_url, transcript: [Slice]):
+    def __init__(self, video_title, video_url, transcript): # transcript [Slice]
         self.video_title = video_title
         self.video_url = video_url
         # Note: A 'transcript' is an set of Slices
@@ -72,7 +72,7 @@ class Lectures:
     def __init__(self):
         self.struct = []  # {(lecture_title, lecture_pdf_url, lecture_num, slides, videos), ...}
     
-    def add_lecture(self, lecture_title, lecture_pdf_url, lecture_num, slides, videos: [Video]):
+    def add_lecture(self, lecture_title, lecture_pdf_url, lecture_num, slides, videos): #videos [Video]
         self.struct.append((lecture_title, lecture_pdf_url, lecture_num, slides, videos))
     
     def get_info(self):

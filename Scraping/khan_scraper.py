@@ -65,8 +65,10 @@ class Scraper:
                         if char == '{':                     # TODO get rid of this loop safely
                             content = content[count:]
                             break
-                        break
-            dict = content.split('\n')[2]
+                
+            tags = content.split('\n')
+            for tag in tags:
+                if 
             for count, char in enumerate(dict):
                 if char == '{':
                     json_str = dict[count:]
@@ -121,7 +123,7 @@ class Scraper:
             video_no = 0
             
             slides = Slides()
-            videos = Videos()
+            videos = []
             trans_getter = Transcript_getter()
             
             activities = contents.find_all('li')
@@ -141,7 +143,7 @@ class Scraper:
                     video_no += 1
                     activity_title = activity.find('span', {'class':'_14hvi6g8'}).text
                     activity_link = self.base_url + activity.find('a')['href']
-                    videos.insert_slide(activity_title, activity_link, self.get_transcript(activity_link, trans_getter))
+                    videos.append(Video(activity_title, activity_link, self.get_transcript(activity_link, trans_getter)))
                     
                 is_video = activity.find('span', {'aria-label':'Video'})
                     
@@ -149,7 +151,7 @@ class Scraper:
                     video_no += 1
                     activity_title = activity.find('span', {'class':'_14hvi6g8'}).text
                     activity_link = self.base_url + activity.find('a')['href']
-                    videos.insert_slide(activity_title, activity_link, self.get_transcript(activity_link, trans_getter))
+                    videos.append(Video(activity_title, activity_link, self.get_transcript(activity_link, trans_getter)))
                     
             trans_getter.close()
             trans_getter.quit()
