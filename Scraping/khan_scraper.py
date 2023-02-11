@@ -66,31 +66,45 @@ class Scraper:
                             content = content[count:]
                             break
                 
+                
+            dict = ''
             tags = content.split('\n')
             for tag in tags:
-                if 
+                if '__PAGE_SETTINGS__' in tag:
+                    dict = tag
+                    
+            if dict == '':
+                return '' 
+                    
             for count, char in enumerate(dict):
                 if char == '{':
                     json_str = dict[count:]
                     break
             
-
             dict = json.loads(json_str[:-1])
-                    
-                    
-            for key in dict['hydrate']['wbd'].keys():
-                if 'ContentForPath' in key:
-                    temp_key = key
-                    
-            trans_content = dict['hydrate']['wbd'][temp_key]['data']['contentRoute']['listedPathData']['content']['translatedPerseusContent']
-            trans_list = json.loads(trans_content)    
+            temp_key = '' 
+            try:
+                for key in dict['hydrate']['wbd'].keys():
+                    if 'ContentForPath' in key:
+                        temp_key = key
+           
+                if temp_key == '':
+                    return ''
+                                
+                trans_content = dict['hydrate']['wbd'][temp_key]['data']['contentRoute']['listedPathData']['content']['translatedPerseusContent']
             
-            text = ''
-            for elem in trans_list:
-                text = text + ' ' + elem['content']
+                trans_list = json.loads(trans_content)    
+                
+                text = ''
+                for elem in trans_list:
+                    text = text + ' ' + elem['content']
+                    
+            except KeyError:
+                print('key error in article for {}'.format(article_link))
+                return ''
                 
             text = text.replace('\n', ' ')
-            
+            print('got article for {}'.format(article_link))
             return text 
                 
                    
