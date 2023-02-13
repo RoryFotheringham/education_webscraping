@@ -56,21 +56,19 @@ class Scraper:
             content = 'no content!'
             #print(str(soup.find_all('div')))
             scripts = soup.find_all('script')
+           
+            
             for script in scripts:
                 if not script.string:
                     continue
-                if '__PAGE_SETTINGS__' in script.string[:100]:
+                if '__PAGE_SETTINGS__' in script.string:
                     content = str(script.string)
-                    for count, char in enumerate(content):  # the stuff in this loop doesn't work/do anything
-                        if char == '{':                     # TODO get rid of this loop safely
-                            content = content[count:]
-                            break
-                
+            
                 
             dict = ''
-            tags = content.split('\n')
+            tags = content.strip().split('\n')
             for tag in tags:
-                if '__PAGE_SETTINGS__' in tag:
+                if 'window' in tag[:100]:
                     dict = tag
                     
             if dict == '':
