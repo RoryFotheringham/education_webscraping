@@ -17,10 +17,10 @@ class Transcript_getter:
     def __init__(self):
         # start by defining the options 
         options = webdriver.ChromeOptions() 
-        #options.headless = True # it's more scalable to work in headless mode 
+        options.headless = True # it's more scalable to work in headless mode 
         # normally, selenium waits for all resources to download 
         # we don't need it as the page also populated with the running javascript code. 
-        options.page_load_strategy = 'none' 
+        options.page_load_strategy = 'normal' 
         # this returns the path web driver downloaded 
         chrome_path = ChromeDriverManager().install() 
         chrome_service = Service(chrome_path) 
@@ -44,26 +44,33 @@ class Transcript_getter:
         
     def get_transcript(self, abs_url):
         self.driver.get(abs_url)
-        #time.sleep(5)
-        elem = None
-        ignored_exceptions = (NoSuchElementException,StaleElementReferenceException)
-        try:
-            elem = WebDriverWait(self.driver, 60, ignored_exceptions=ignored_exceptions).until(EC.presence_of_element_located(("xpath", "//*[contains(text(), '__PAGE_SETTINGS__')]")))
-        except TimeoutException:
-            print('fetching transcript timed out')
-            return []
+        time.sleep(0)
+        soup = BeautifulSoup(self.driver.page_source, 'lxml')
+        settings = ''
+        for script in soup.find_all('script'):
+            if not script.string:
+                continue
+            if '__PAGE_SETTINGS__' in script.string[:100]:
+                settings = script.string
+                break
             
-        # we should only be allowed to get to this point
-        # if such an element as the one we are looking for exists
-        # and has loaded. 
-        try:
-            scripts = self.driver.find_element("xpath", "//*[contains(text(), '__PAGE_SETTINGS__')]").get_attribute('textContent')
-        except NoSuchElementException:
-            print("still couldn't find the element")
+        if settings == '':
+            time.sleep(10)
+            soup = BeautifulSoup(self.driver.page_source, 'lxml')
+            for script in soup.find_all('script'):
+                if not script.string:
+                    continue
+                if '__PAGE_SETTINGS__' in script.string[:100]:
+                    settings = script.string
+                    break
+                
+        if settings == '':
+            print('problem with {}'.format(abs_url))
+            print('soup: {}\n'.format(soup.source))
             return []
         
         
-        script = scripts.strip().split('\n')[1]
+        script = settings.strip().split('\n')[1]
         
         for count, char in enumerate(script):
             if char == '{':
@@ -71,15 +78,25 @@ class Transcript_getter:
                 break
         
         json_script = json.loads(script[:-1])
-        
-        new_dict = json_script['hydrate']['wbd']
-        
+
+        try:        
+            new_dict = json_script['hydrate']['wbd']
+        except KeyError:
+            return []
+            
+            
+        right_key = ''
         for key in new_dict.keys():
             if 'ContentForPath' in key:
                 right_key = key
                 break
+        if right_key == '':
+            return []
         
-        subtitles = new_dict[right_key]['data']['contentRoute']['listedPathData']['content']['subtitles']
+        try:
+            subtitles = new_dict[right_key]['data']['contentRoute']['listedPathData']['content']['subtitles']
+        except KeyError:
+            return []
         
         transcript = []
         
@@ -90,20 +107,11 @@ class Transcript_getter:
             slice = Slice(time_clean, text)
             transcript.append(slice)
             
-        #self.driver.close()
-        
-        #time.sleep(5)
-        
+        print('got transcript for {}'.format(abs_url))
         return transcript
         
         
         print()
-        # tab = self.driver.find_element(By.ID, 'ka-videoPageTabs-tabbedpanel-tab-1')
-        # #print(tab)
-        # time.sleep(5)
-
-        # self.driver.execute_script('arguments[0].click', tab)
-        # #tab.click()
-        #self.driver.get(abs_url)
+        
         
 

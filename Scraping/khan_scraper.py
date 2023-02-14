@@ -56,39 +56,53 @@ class Scraper:
             content = 'no content!'
             #print(str(soup.find_all('div')))
             scripts = soup.find_all('script')
+           
+            
             for script in scripts:
                 if not script.string:
                     continue
-                if '__PAGE_SETTINGS__' in script.string[:100]:
+                if '__PAGE_SETTINGS__' in script.string:
                     content = str(script.string)
-                    for count, char in enumerate(content):  # the stuff in this loop doesn't work/do anything
-                        if char == '{':                     # TODO get rid of this loop safely
-                            content = content[count:]
-                            break
-                        break
-            dict = content.split('\n')[2]
+            
+                
+            dict = ''
+            tags = content.strip().split('\n')
+            for tag in tags:
+                if 'window' in tag[:100]:
+                    dict = tag
+                    
+            if dict == '':
+                return '' 
+                    
             for count, char in enumerate(dict):
                 if char == '{':
                     json_str = dict[count:]
                     break
             
-
             dict = json.loads(json_str[:-1])
-                    
-                    
-            for key in dict['hydrate']['wbd'].keys():
-                if 'ContentForPath' in key:
-                    temp_key = key
-                    
-            trans_content = dict['hydrate']['wbd'][temp_key]['data']['contentRoute']['listedPathData']['content']['translatedPerseusContent']
-            trans_list = json.loads(trans_content)    
+            temp_key = '' 
+            try:
+                for key in dict['hydrate']['wbd'].keys():
+                    if 'ContentForPath' in key:
+                        temp_key = key
+           
+                if temp_key == '':
+                    return ''
+                                
+                trans_content = dict['hydrate']['wbd'][temp_key]['data']['contentRoute']['listedPathData']['content']['translatedPerseusContent']
             
-            text = ''
-            for elem in trans_list:
-                text = text + ' ' + elem['content']
+                trans_list = json.loads(trans_content)    
+                
+                text = ''
+                for elem in trans_list:
+                    text = text + ' ' + elem['content']
+                    
+            except KeyError:
+                print('key error in article for {}'.format(article_link))
+                return ''
                 
             text = text.replace('\n', ' ')
-            
+            print('got article for {}'.format(article_link))
             return text 
                 
                    
@@ -121,7 +135,7 @@ class Scraper:
             video_no = 0
             
             slides = Slides()
-            videos = Videos()
+            videos = []
             trans_getter = Transcript_getter()
             
             activities = contents.find_all('li')
@@ -141,7 +155,7 @@ class Scraper:
                     video_no += 1
                     activity_title = activity.find('span', {'class':'_14hvi6g8'}).text
                     activity_link = self.base_url + activity.find('a')['href']
-                    videos.insert_slide(activity_title, activity_link, self.get_transcript(activity_link, trans_getter))
+                    videos.append(Video(activity_title, activity_link, self.get_transcript(activity_link, trans_getter)))
                     
                 is_video = activity.find('span', {'aria-label':'Video'})
                     
@@ -149,7 +163,7 @@ class Scraper:
                     video_no += 1
                     activity_title = activity.find('span', {'class':'_14hvi6g8'}).text
                     activity_link = self.base_url + activity.find('a')['href']
-                    videos.insert_slide(activity_title, activity_link, self.get_transcript(activity_link, trans_getter))
+                    videos.append(Video(activity_title, activity_link, self.get_transcript(activity_link, trans_getter)))
                     
             trans_getter.close()
             trans_getter.quit()
