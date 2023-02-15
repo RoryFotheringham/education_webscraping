@@ -1,6 +1,28 @@
 import sqlite3
 import os
 import xml.etree.ElementTree as ET
+from enum import Enum
+
+
+class DatabaseCaller:
+    """ Send queries to the database: https://docs.python.org/2/library/sqlite3.html"""
+    METADATA_DIR = os.path.join("database", "metadata.db")
+    MIT_DIR = "MIT"
+    KHAN_DIR = "KHAN_ACADEMY"
+    class Table(Enum):
+        DOC_METADATA = "doc_metadata"
+        SLIDE_METADATA = "slide_metadata"
+
+    def __init__(self):
+        self.conn_meta = sqlite3.connect(self.METADATA_DIR)
+        self.c = self.conn_meta.cursor()
+        
+    def query(self, query, single_result=False, *args):
+        self.c.execute(query, args)
+        if single_result:
+            print(self.c.fetchone())
+        else:
+            print(self.c.fetchall())
 
 
 class DatabaseHandler:
