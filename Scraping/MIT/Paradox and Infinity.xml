@@ -1,0 +1,2045 @@
+<doc>
+  <source>MIT</source>
+  <date>28/01/2023</date>
+  <course>
+    <course_url>https://ocw.mit.edu/courses/24-118-paradox-and-infinity-spring-2019/</course_url>
+    <course_title>Paradox and Infinity</course_title>
+    <course_tags>
+      <list>Humanities </list>
+      <list>Mathematics </list>
+      <list>Social Science </list>
+    </course_tags>
+  </course>
+  <lectures>
+    <lecture>
+      <lecture_title>The Cantorian Theory of Size (Part II) (PDF)</lecture_title>
+      <lecture_pdf_url>https://ocw.mit.edu/courses/24-118-paradox-and-infinity-spring-2019/resources/mit24_118s19_lecnote2/</lecture_pdf_url>
+      <lectureno>2</lectureno>
+      <slides>
+        <slide>
+          <slideno>0</slideno>
+          <text>The Cantorian Theory of Size (Part II) 
+1 Denitions 
+A is innite: |N|| A| 
+A is countable: |A|| N| 
+2 A Little Lemma 
+No Countable Dierence Principle: |I| = |I  C|, for I innite and C 
+countable. 
+3 Sets with the same size as R 
+Set Also known as Members 
+[0, 1) unit interval (half closed) real numbers larger or equal 
+to 0 but smaller than 1 
+(0, 1) unit interval (open) real numbers larger 
+than 0 but smaller than 1 
+[0, 1] unit interval (closed) real numbers larger or equal 
+to 0 but smaller or equal to 1 
+[0, a] arbitrarily sized interval real numbers larger or equal to 0 
+but smaller or equal to a (a &gt; 0) 
+[0, 1]  [0, 1] unit square pairs of real numbers larger or 
+equal to 0 but smaller or equal to 1 
+[0, 1]      [0, 1]| {z } 
+n times 
+R (N) n-dimensional hypercube 
+real line 
+powerset of N n-tuples of real numbers larger or 
+equal to 0 but smaller or equal to 1 
+real numbers 
+sets of natural numbers 
+1</text>
+        </slide>
+        <slide>
+          <slideno>2</slideno>
+          <text>MIT OpenCourseWare 
+https://ocw.mit.edu/ 
+24.118 Paradox and Infinity 
+Spring 2019 
+For information about citing these materials or our Terms of Use, visit: https://ocw.mit.edu/terms .</text>
+        </slide>
+        <slide>
+          <slideno>1</slideno>
+          <text>4 Summary of Cardinality Comparisons = =|N| 
+|Z| 
+|Q| &lt; |(N)| &lt; 
+|R|
+= =|((N))| &lt; |(((N)))| &lt; . . . =|[0, 1]| 
+| [0, 1]  . . .  [0, 1] || {z } 
+n times 
+2</text>
+        </slide>
+      </slides>
+      <videos/>
+    </lecture>
+    <lecture>
+      <lecture_title>G&#246;del&#8217;s Theorem (Part II) (PDF)</lecture_title>
+      <lecture_pdf_url>https://ocw.mit.edu/courses/24-118-paradox-and-infinity-spring-2019/resources/mit24_118s19_lecnote21/</lecture_pdf_url>
+      <lectureno>21</lectureno>
+      <slides>
+        <slide>
+          <slideno>5</slideno>
+          <text>MIT OpenCourseWare 
+https://ocw.mit.edu/ 
+24.118 Paradox and Infinity 
+Spring 2019 
+For information about citing these materials or our Terms of Use, visit: https://ocw.mit.edu/terms .</text>
+        </slide>
+        <slide>
+          <slideno>0</slideno>
+          <text>G odels Theorem (Part 2) 
+1 The Theorem 
+Let L be a (rich enough) arithmetical language: 
+G odels Incompleteness Theorem (V1) No Turing Machine can do the 
+following: when given a sentence of L as input, it outputs 1 if the 
+sentence is true and 0 if the sentence is false. 
+G odels Incompleteness Theorem (V2) No Turing Machine can: 
+1. run forever, outputting sentences of L; 
+2. eventually output each true sentence of L; and 
+3. never output a false sentence of L. 
+G odels Incompleteness Theorem (V3) No axiomatization of L is both 
+consistent and complete. 
+2 The Crucial Lemma 
+L counts as rich enough if one can prove: 
+Lemma L contains a formula (abbreviated Halt( k)), which is true if and 
+only if the kth Turing Machine halts on input k. 
+Today well verify that our simple language L satises this condition. 
+3 The Language, L 
+Arithmetical Symbol Denotes 
+0 the number zero 
+1 the number one 
++ addition 
+ multiplication 
+ exponentiation 
+1</text>
+        </slide>
+        <slide>
+          <slideno>2</slideno>
+          <text>5 The key idea 
+ The key is to be able to express claims about sequences in L. 
+ We need a formulaabbreviated Seq(c, n, a, i) which is true if and 
+only if c encodes a sequence of length n of which a is the ith member. 
+ With that in place, proving the lemma is totally straightforward. 
+6 Warm Up: Pairs 
+6.1 Coding System 
+ To the pair hn, mi (n, m  N) assign the number 2n  3m . 
+6.2 Implementation in L 
+ Pair(x i, xj , xk) d f xi = (2xj  3xk ) 
+7 Coding Finite Sequiences 
+7.1 Coding System 
+Part 1: 
+ Let cs unique decomposition into primes be 
+e0 e1 e2 ekp  p  p  . . . p0 1 2 k 
+where pi =6 pj whenever i =6 j and ei =6 0. 
+ We say that cs non-trivial exponents are e0, e1, . . . , e k. 
+ Each number can be thought of a code for the set of its non-trivial 
+exponents. 
+[This is only half the job, because sets are unordered.] 
+3</text>
+        </slide>
+        <slide>
+          <slideno>4</slideno>
+          <text>8 G odels Theorem (v3) 
+8.1 Axiomatization 
+ An axiom is a sentence that is taken to require no proof. 
+ A rule of inference is a rule for inferring some sentences from others. 
+ An axiomatization for L is a (Turing Computable) list of axioms and 
+rules of inference for L. 
+8.2 Provability, completeness and consistency 
+For A an axiomatization of L: 
+ A sentence S of L is provable in A if there is a nite sequence of 
+sentences of L such that: 
+ Every member of the sequence is either an axiom of A, or re-
+sults from previous members of the sequence by applying a rule 
+of inference of A. 
+ The last member of the sequence is S. 
+ A is complete if every true sentence of L is provable in A. 
+ A consistent if it is never the case that both a sentence of L and its 
+negation are provable in A. 
+8.3 Proving the Theorem 
+ For reductio : A is a consistent and complete axiomatization of L. 
+ Since L can talk about nite sequences, it can talk about sentences 
+(i.e. nite sequences of symbols) and proof (which are nite sequences 
+of sentences). 
+ One can program a Turing Machine M to output all and only the 
+sentences of L that are provable in A. 
+ If A is consistent and complete, M outputs all and only the true sen-
+tences of L, which contradicts G odels Theorem (v2). 
+5</text>
+        </slide>
+        <slide>
+          <slideno>1</slideno>
+          <text>Logical Symbol Read 
+= . . . is identical to . . . 
+ it is not the case that . . . 
+&amp; it is both the case that . . . and . . . 
+ every number is such that . . . 
+xn (for n  N) it 
+Auxiliary Symbol Meaning 
+( [left parenthesis] 
+) [right parenthesis] 
+4 Abbreviations 
+Abbreviation Read Ocial Notation 
+2 
+3 4 
+. . . two 
+three 
+four 
+. . . (1 + 1) 
+((1 + 1) + 1) 
+(((1 + 1) + 1) + 1) 
+. . . 
+Abbreviation Read Ocial Notation 
+A  B 
+A  B 
+xi 
+!xi A or B 
+if A, then B 
+some number is such that  
+there is exactly one number such that  (A &amp; B) 
+A  B 
+x i  
+xi((x i) &amp; xj ((x j )  xj = xi)) 
+Abbreviation Read Ocial Notation 
+xi &lt; xj 
+xi|xj 
+Prime(x i) xi is smaller than xj 
+xi divides xj 
+xi is prime xk((xj = xi + xk) &amp; (x k = 0)) 
+xk(xk  xi = xj ) 
+(1 &lt; xi) &amp; xj xk((xi = xj  xk)  (xi = xj  xi = xk )) 
+2</text>
+        </slide>
+      </slides>
+      <videos/>
+    </lecture>
+    <lecture>
+      <lecture_title>Omega-Sequence Paradoxes (Part II) (PDF)</lecture_title>
+      <lecture_pdf_url>https://ocw.mit.edu/courses/24-118-paradox-and-infinity-spring-2019/resources/mit24_118s19_lecnote7/</lecture_pdf_url>
+      <lectureno>7</lectureno>
+      <slides>
+        <slide>
+          <slideno>2</slideno>
+          <text>Each person as assigned a red or blue hat, based on the outcome of a 
+coin toss. 
+ Everyone can see the hats of people in front of her, but cannot see her 
+own hat (or the hat of anyone behind her). 
+ At a set time, everyone has to guess the color of her own hat by crying 
+out Red! or Blue!. 
+ People who correctly call out the color of their own hats will be spared. 
+Everyone else will be shot. 
+Problem: Find a strategy that P1, P2, P3, . . . could agree upon in advance 
+and that would guarantee that at most nitely many people are shot. 
+4 The Three Prisoners4 [Paradox Grade: 2] 
+ Three prisoners. Each of them is assigned a red or blue hat, based on 
+the outcome of a coin toss. 
+ Each of them can see the colors of the others hats but has no idea 
+about the color of his own hat. 
+ The prisoners are then taken into separate cells and asked about the 
+color of their hat. They are free to oer an answer or remain silent. 
+ If all three prisoners remain silent, all three will be killed. 
+ If one of them answers incorrectly, all three will be killed. 
+ If at least one prisoner oers an answer, and everyone who oers 
+an answer answers correctly, then all three prisoners will be set 
+free. 
+Problem: Find a strategy that the prisoners could agree upon ahead of time 
+which would guarantee that their chance of survival is above 50%. 
+4I dont know who invented it, but I learned about it thanks to philosopher and 
+computer scientist Rohit Parikh, from the City University of New York. 
+3</text>
+        </slide>
+        <slide>
+          <slideno>3</slideno>
+          <text>Prisoner A Prisoner B Prisoner C Result of following Strategy 
+red red red Everyone answers incorrectly 
+red red blue C answers correctly 
+red blue red B answers correctly 
+red blue blue A answers correctly 
+blue red red A answers correctly 
+blue red blue B answers correctly 
+blue blue red C answers correctly 
+blue blue blue Everyone answers incorrectly 
+Figure 1: The eight possible hat distributions, along with the result of ap-
+plying the suggested strategy. 
+4</text>
+        </slide>
+        <slide>
+          <slideno>0</slideno>
+          <text>Omega-sequence Paradoxes (Part II) 
+1 The Bombers Paradox1 [Paradox Grade: 6] 
+There are innitely many bombs: 
+Bomb When bomb is set to go o 
+B0 12:00pm 
+B1 11:30am 
+B2 11:15am 
+... ... 
+1 Bk hours after 11:00am 2k 
+... ... 
+Should one of the bombs go o, it will instantaneously disable all other 
+bombs. So a bomb goes o if and only if no bombs have gone o before it: 
+(0) B0 goes o  Bn fails to go o (n &gt; 0). 
+(1) B1 goes o  Bn fails to go o (n &gt; 1). 
+(2) B2 goes o  Bn fails to go o (n &gt; 2). 
+. . . 
+(k) Bk goes o  Bn fails to go o (n &gt; k ). 
+(k + 1) Bk+1 goes o  Bn fails to go o (n &gt; k + 1). 
+. . . 
+Will any bombs go o? 
+1This paradox is due to Josh Parsons, who was a fellow at Oxford until shortly before 
+his untimely death in 2017. (It is a version of Bernadetes Paradox.) 
+1</text>
+        </slide>
+        <slide>
+          <slideno>4</slideno>
+          <text>MIT OpenCourseWare 
+https://ocw.mit.edu/ 
+24.118 Paradox and Infinity 
+Spring 2019 
+For information about citing these materials or our Terms of Use, visit: https://ocw.mit.edu/terms .</text>
+        </slide>
+        <slide>
+          <slideno>1</slideno>
+          <text>2 Yablos Paradox2 [Paradox Grade: 8] 
+There are innitely many sentences: 
+Label Sentence 
+S0 For each i &gt; 0, sentence Si is false 
+S1 For each i &gt; 1, sentence Si is false 
+S2 For each i &gt; 2, sentence Si is false 
+... ... 
+Sk For each i &gt; k , sentence Si is false 
+... ... 
+The meanings of our sentences guarantee that each of the following must be 
+true: 
+(0) S0 is true  Sn is false (n &gt; 0). 
+(1) S1 is true  Sn is false (n &gt; 1). 
+(2) S2 is true  Sn is false (n &gt; 2). 
+. . . 
+(k) Sk is true  Sn is false (n &gt; k ). 
+(k + 1) Sk+1 is true  Sn is false (n &gt; k + 1). 
+. . . 
+Which sentences are true and which ones are false? 
+3 Bacons Problem3 [Paradox Grade: 7] 
+ An omega sequence of prisoners: P1, P2, P3, . . .. ( P1 is at the end of the 
+line, in front of her is P2, in front of him is P3, and so forth.) 
+2This paradox was discovered by Steve Yablo, who is a famous philosophy professor 
+at MIT (and was a member of my dissertation committee, many years ago). 
+3This paradox is due to USC philosopher Andrew Bacon. 
+2</text>
+        </slide>
+      </slides>
+      <videos/>
+    </lecture>
+    <lecture>
+      <lecture_title>Banach-Tarski: The Theorem (PDF)</lecture_title>
+      <lecture_pdf_url>https://ocw.mit.edu/courses/24-118-paradox-and-infinity-spring-2019/resources/mit24_118s19_lecnote16/</lecture_pdf_url>
+      <lectureno>16</lectureno>
+      <slides>
+        <slide>
+          <slideno>5</slideno>
+          <text>MIT OpenCourseWare 
+https://ocw.mit.edu/ 
+24.118 Paradox and Infinity 
+Spring 2019 
+For information about citing these materials or our Terms of Use, visit: https://ocw.mit.edu/terms .</text>
+        </slide>
+        <slide>
+          <slideno>0</slideno>
+          <text>Banach-Tarski: The Theorem 
+1 The Theorem 
+Banach-Tarski Theorem It is possible to decompose a ball into a nite 
+number of pieces and reassemble the pieces (without changing their size 
+or shape) so as to get two balls, each of the same size as the original. 
+2 The basic idea 
+U 
+R L 
+D 
+1</text>
+        </slide>
+        <slide>
+          <slideno>4</slideno>
+          <text>So f1 (f2 (fr (. . . ))) does not change the location of the points inter-
+secting its axis of rotation. 
+ So whenever c is such that some such problem point is the endpoint 
+of some Cayley Path, we will have dierent Cayley Paths sharing an 
+endpoint. 
+The good news: 
+ There are only countably many problem points. 
+ One can deal with these points separately, by applying a sophisticated 
+version of the trick we used in Warm-Up Case 2. 
+8 Duplicating the Ball 
+ Use the same procedure as before, but rather than working with points 
+on the surface of the ball, work with the lines that connect the center 
+of the ball with each point. 
+ Wait! What about the center of the ball? 
+9 A region with no volume 
+Some of the Banach-Tarski pieces must be non-measurable must therefore 
+lack denite volumes! 
+5</text>
+        </slide>
+        <slide>
+          <slideno>2</slideno>
+          <text>3 An external coordinate system 
+ The x-axis runs from your right to your left through the center of the 
+ball. 
+ The y-axis runs is orthogonal to the x-axis. It runs from the wall in 
+front of you to the wall in behind of you, through the center of the ball. 
+ The the z-axis is orthogonal to the other two. It runs from the ground 
+to the sky, through the center of the ball. 
+4 A spherical interpretation of the Graph 
+ The center of our graph is interpreted as an arbitrary point c on the 
+surface of our ball. 
+ A step is interpreted as the result of performing a rotation on the 
+sphere, by a certain angle : 
+ An up rotation is a counterclockwise rotation of  degrees about 
+the x axis. (When youre holding the ball in front of you, you 
+perform this rotation by rotating the ball from bottom to top.) 
+ A down rotation is a clockwise rotation of  degrees about the 
+x axis. (When youre holding the ball in front of you, you perform 
+this rotation by rotating the ball from top to bottom.) 
+ A right rotation is a counterclockwise rotation of  degrees 
+about the z axis. (When youre holding the ball in front of you, 
+you perform this rotation by rotating the ball from left to right.) 
+ A left rotation is a clockwise rotation of  degrees about the z 
+axis. (When youre holding the ball in front of you, you perform 
+this rotation by rotating the ball from right to left.) 
+5 The endpoints of Cayley Paths 
+ To each rotation  corresponds a function f, which takes each point p 
+on the surface of the ball to the point on the surface of the ball whose 
+current location (relative to an external reference frame) would come 
+to be occupied by p were rotation  to be performed. 
+3</text>
+        </slide>
+      </slides>
+      <videos/>
+    </lecture>
+    <lecture>
+      <lecture_title>Newcomb&#8217;s Problem (PDF)</lecture_title>
+      <lecture_pdf_url>https://ocw.mit.edu/courses/24-118-paradox-and-infinity-spring-2019/resources/mit24_118s19_lecnote10/</lecture_pdf_url>
+      <lectureno>10</lectureno>
+      <slides>
+        <slide>
+          <slideno>2</slideno>
+          <text>MIT OpenCourseWare 
+https://ocw.mit.edu/ 
+24.118 Paradox and Infinity 
+Spring 2019 
+For information about citing these materials or our Terms of Use, visit: https://ocw.mit.edu/terms .</text>
+        </slide>
+        <slide>
+          <slideno>0</slideno>
+          <text>Newcombs Problem 
+1 The Problem 
+There are two boxes. The transparent box contains $1K; youre not sure what 
+the opaque box contains but its either $0 or $1M. You have two choices: 
+Two-Box Keep both boxes. 
+One-Box Keep the large box; leave the small box behind. 
+The boxes were sealed before you entered the room, and your choice will not 
+cause their contents to change. How should you choose? 
+2 A Predictor 
+The contents of the box were selected by a predictor, who is known to be 
+99% accurate: 
+Prediction Opaque Box Transparent Box 
+One-Box $1M $1K 
+Two-Box $0 $1K 
+As before, the boxes were sealed before you entered the room, and your choice 
+will not cause their contents to change. How should you choose? 
+ Wait! Could there even be such a predictor? 
+3 A Case for One-Boxing 
+ if you one-box, it is almost certain (99%) that the large box will contain 
+a million dollars; 
+ if you two-box, it is almost certain (99%) that the large box will be 
+empty. 
+1</text>
+        </slide>
+        <slide>
+          <slideno>1</slideno>
+          <text>4 A Case for Two-Boxing 
+ If the large box is empty, youll be better o if you two-box than if you 
+one-box. 
+ If the large box is full, youll be better o if you two-box than if you 
+one-box. 
+5 Decision Theory 
+your options + your probabilities + your values  a recommendation 
+Expected Value Maximization Choose an option whose expected value 
+is at least as high as that of any rival option. 
+The expected value of an option A is the weighted average of the value of 
+the outcomes that A might lead to, with weights determined by the proba-
+bility of the relevant state of aairs, given that you choose A. 
+5.1 Formally Speaking. . . 
+EV (A) = v(AS 1)  p(S 1|A) + . . . + v(AS n)  p(S n|A) 
+ S1, S2, . . . S n is any list of (exhaustive and mutually exclusive) states of 
+the world; 
+ v(AS i) is the value of being in a situation in which youve chosen A 
+and Si is the case; 
+ p(S|A) is the probability of S, given that you choose A. 
+2</text>
+        </slide>
+      </slides>
+      <videos/>
+    </lecture>
+    <lecture>
+      <lecture_title>Banach-Tarski: Preliminaries (PDF)</lecture_title>
+      <lecture_pdf_url>https://ocw.mit.edu/courses/24-118-paradox-and-infinity-spring-2019/resources/mit24_118s19_lecnote15/</lecture_pdf_url>
+      <lectureno>15</lectureno>
+      <slides>
+        <slide>
+          <slideno>3</slideno>
+          <text>U 
+R L 
+D 
+R L 
+4</text>
+        </slide>
+        <slide>
+          <slideno>0</slideno>
+          <text>Banach-Tarski: Preliminaries 
+1 The Theorem 
+Banach-Tarski Theorem It is possible to decompose a ball into a nite 
+number of pieces and reassemble the pieces (without changing their size 
+or shape) so as to get two balls, each of the same size as the original. 
+1.1 Warm-Up Case 1: A Line 
+It is possible to decompose [0, ) {1} into two distinct parts, 
+and reassemble the parts (without changing their size or shape) 
+so as to get back [0, ). 
+1 
+ Decompose [0, ) {1} into: (i) {2, 3, 4, . . . } and (ii) everything else. 
+ Translate {2, 3, 4, . . . } one unit to the left. 
+1.2 Warm-Up Case 2: A Circle 
+It is possible to decompose S1 {p} into two distinct parts, and 
+reassemble the parts (without changing their size or shape) so as 
+to get back S1 . 
+p S1 
+ Decompose S1 {p} into: (i) B and (ii) everything else. 
+ Rotate B one unit counter-clockwise. 
+1</text>
+        </slide>
+        <slide>
+          <slideno>4</slideno>
+          <text>MIT OpenCourseWare 
+https://ocw.mit.edu/ 
+24.118 Paradox and Infinity 
+Spring 2019 
+For information about citing these materials or our Terms of Use, visit: https://ocw.mit.edu/terms .</text>
+        </slide>
+      </slides>
+      <videos/>
+    </lecture>
+    <lecture>
+      <lecture_title>Computability: Turing Machines (PDF)</lecture_title>
+      <lecture_pdf_url>https://ocw.mit.edu/courses/24-118-paradox-and-infinity-spring-2019/resources/mit24_118s19_lecnote17/</lecture_pdf_url>
+      <lectureno>17</lectureno>
+      <slides>
+        <slide>
+          <slideno>1</slideno>
+          <text>Software 
+A nite list of command lines: 
+hcurrent stateihcurrent symbolihnew symbolihdirection ihnew statei 
+Think of a command line as encoding the following instruction: 
+If you are in hcurrent statei and your reader sees hcurrent symboli 
+written on the memory tape, replace hcurrent symboli with hnew symboli. 
+Then move one step in direction hdirectioni, and go to hnew statei. 
+Operation 
+Start out in state 0. Then carry out the following procedure, for as
+long as you are able:
+Perform the instruction corresponding to the (rst) command line
+that matches your current state and the symbol on which your
+reader is positioned.
+Repeat.
+If you are unable carry out the procedure, halt.
+4 A Turing Machine  Simulator  
+http://morphett.info/turing/  
+5 Computing  functions  on a Turing Machine  
+Computability:  
+For a
+ computer program to compute f is for it to yield f(n) as output
+whenever it is given n as input.
+Turing Computabiity: 
+M takes n (n  N) as input if it starts out with a tape that contains
+only a sequence of n ones (with the reader positioned at the left-most
+one, if n &gt; 0).
+2</text>
+        </slide>
+        <slide>
+          <slideno>3</slideno>
+          <text>1. Following the instructions is guaranteed to yield a solution to the prob-
+lem, in a nite amount of time. 
+2. The instructions are specied in such a way that carrying them out 
+requires no ingenuity of any kind: they can be followed mechanistically. 
+3. No special resources are required to carry out the instructions: they 
+could in principle be carried out by a machine built from transistors. 
+4. No special physical conditions are required for the computation to suc-
+ceed (no need for faster-than-light travel, special solutions to Einsteins 
+equations, etc). 
+8 Coding Turing Machines as Numbers 
+The Plan 
+Turing Machine  Sequence of symbols  Sequence of numbers  Unique number 
+Sequence of symbols  Sequence of numbers 
+r  0 
+  1 
+l  2 
+Sequence of numbers  Unique number 
+Codes the sequence hn1, n2, . . . , n ki as the number: 
+n1+1 n2+1 nk+1 p  p  . . .  p1 2 k 
+where pi is the ith prime number. 
+(Treat any number that doesnt code a valid sequence of command lines as 
+a code for the empty Turing Machine.) 
+4</text>
+        </slide>
+        <slide>
+          <slideno>0</slideno>
+          <text>Computability: Turing Machines 
+1 The Main Result 
+ Well focus on functions f : N  N. 
+ For a computer program to compute f is for it to yield f(n) as output 
+whenever it is given n as input (n  N). 
+ Theorem: not every function is computable. 
+(And I can give you examples!) 
+2 How Well Get There 
+ Turing Machines are computers of an especially simple sort. 
+ Well see that some functions are not Turing-computable. 
+ But: any function that can be computed using an ordinary computer 
+is also computed by some Turing Machine. 
+3 Turing Machines 
+Hardware 
+Memory tape A long strip of paper, divided into cells: 
+(An assistant is ready to add paper on either end, as needed.) 
+Tape-reader At any given time, the reader is positioned on a cell of the 
+memory tape and is able to perform any of the following functions: 
+ Read the symbol written on the cell 
+ Write a new symbol on the cell 
+ Move one cell to the left 
+ Move one cell to the right 
+1</text>
+        </slide>
+        <slide>
+          <slideno>4</slideno>
+          <text>MIT OpenCourseWare 
+https://ocw.mit.edu/ 
+24.118 Paradox and Infinity 
+Spring 2019 
+For information about citing these materials or our Terms of Use, visit: https://ocw.mit.edu/terms .</text>
+        </slide>
+        <slide>
+          <slideno>2</slideno>
+          <text>M delivers f(n) as output if it halts with a tape that contains only a 
+sequence of f(n) ones (with the reader positioned at the left-most one, 
+if n &gt; 0). 
+ M computes a function f(x) if and only if it delivers f(n) as output 
+whenever it is given n as input. 
+6 The Fundamental Theorem 
+The reason Turing Machines are so valuable is that it is possible to prove the 
+following theorem: 
+Fundamental Theorem of Turing Machines A function from natural num-
+bers to natural numbers is Turing-computable if and only if it can be 
+computed by an ordinary computer, assuming unlimited memory and 
+running time. 
+ One shows that every Turing-computable function is computable by 
+an ordinary computer (given unlimited memory and running time) by 
+showing that one can program an ordinary computer to simulate any 
+given Turing Machine. 
+ One shows that every function computable by an ordinary computer 
+(given unlimited memory and running time) is Turing-computable by 
+showing that one can nd a Turing Machine that simulates any given 
+ordinary computer. 
+7 Church-Turing 
+Computer scientists tend to think that something stronger than the Funda-
+mental Theorem is true: 
+Church-Turing Thesis A function is Turing-computable if and only if it 
+can be computed algorithmically. 
+For a problem to be solvable algorithmically is for it to be possible to 
+specify a nite list of instructions for solving the problem such that: 
+3</text>
+        </slide>
+      </slides>
+      <videos/>
+    </lecture>
+    <lecture>
+      <lecture_title>The Vitali Sets (PDF)</lecture_title>
+      <lecture_pdf_url>https://ocw.mit.edu/courses/24-118-paradox-and-infinity-spring-2019/resources/mit24_118s19_lecnote14/</lecture_pdf_url>
+      <lectureno>14</lectureno>
+      <slides>
+        <slide>
+          <slideno>0</slideno>
+          <text>The Vitali Sets 
+1 Non-Measurable Sets 
+ There are subsets of R that are non-measurable: 
+They cannot be assigned a measure by any extension of , without 
+giving up on Non-Negativity, Countable Additivity, or Uniformity. 
+2 The Axiom of Choice 
+Proving that there are non-measurable sets requires: 
+Axiom of Choice Every set of non-empty, non-overlapping sets has a choice 
+set. 
+(A choice set for set A is a set that contains exactly one member from each 
+member of A.) 
+3 Dening the Vitali Sets 
+3.1 A sketch of the construction 
+ Dene an (uncountable) partition U of [0, 1). 
+ Use the Axiom of Choice to pick a representative from each cell of U. 
+ Use these representatives to dene a (countable) partition C of [0, 1). 
+ A Vitali Set is a cell of C. 
+3.2 Dening U 
+a, b  [0, 1) are in the same cell if and only if a  b  Q. 
+1</text>
+        </slide>
+        <slide>
+          <slideno>2</slideno>
+          <text>4.2 The Proof 
+ Suppose otherwise: (C q) is well-dened for some q  Q[0,1). 
+0  Q[0,1) By Uniformity, (Cq 0 ) = (C q) for any q . 
+ By Non-Negativity, (C q) is either 0, or a positive real number, or . 
+ By Countable Additivity, it cant be any of these: 
+ Suppose (C q) = 0. By Countable Additivity: 
+([0, 1)) = (C q) + (C q0 ) + . . . 
+0 + 0 + 0 + . . .= | {z } 
+once for each integer 
+= 0 
+ Suppose (C q) = r &gt; 0. By Countable Additivity: 
+([0, 1)) = (C q) + (C q0 ) + . . . 
+r + r + r + . . .= | {z } 
+once for each integer 
+=  
+Moral: There is no way of assigning a measure to a Vitali set without giving 
+up on Uniformity, Non-Negativity or Countable Additivity. 
+5 Revising Our Assumptions? 
+ Giving up on Uniformity means changing the subject : the whole point 
+of our enterprise is to nd a way of extending the notion of Lebesgue 
+Measure without giving up on uniformity. 
+ Non-Negativity and Countable Additivity are not actually needed 
+to prove the existence of non-measurable sets. 
+ Some mathematical theories would be seriously weakened by giving up 
+on the Axiom of Choice. 
+3</text>
+        </slide>
+        <slide>
+          <slideno>3</slideno>
+          <text>MIT OpenCourseWare 
+https://ocw.mit.edu/ 
+24.118 Paradox and Infinity 
+Spring 2019 
+For information about citing these materials or our Terms of Use, visit: https://ocw.mit.edu/terms .</text>
+        </slide>
+      </slides>
+      <videos/>
+    </lecture>
+    <lecture>
+      <lecture_title>Time Travel (PDF)</lecture_title>
+      <lecture_pdf_url>https://ocw.mit.edu/courses/24-118-paradox-and-infinity-spring-2019/resources/mit24_118s19_lecnote8/</lecture_pdf_url>
+      <lectureno>8</lectureno>
+      <slides>
+        <slide>
+          <slideno>1</slideno>
+          <text>ordinary time Georgeunhappy Georgehappy1985 
+1955 
+timeline timeline before afterchange change 
+super time 
+Figure 1: A change in Georges timeline. The straight lines represent events 
+as they originally occurred. The jagged line represents events as they occur 
+after the change. 
+3 The Grandfather Paradox 
+You travel back in time to kill your grandfather, who is yet to have any 
+children. You have a loaded gun at point-blank range. 
+ If you succeed, Grandfather will never have any children. So youll 
+never be born, which contradicts the setup of the story. 
+ If you dont succeed, what stops you? 
+Some reasons you might think the Grandfather Paradox is interesting: 
+1. It shows that the concept of time travel is incoherent. 
+2. It raises questions about whether the laws of physics could rule out 
+paradoxical time travel in a principled way, without banning it alto-
+gether. 
+3. It shows that time travel is incompatible with free will. 
+(For what its worth: I think these reasons are all mistaken.) 
+2</text>
+        </slide>
+        <slide>
+          <slideno>0</slideno>
+          <text>Time Travel 
+1 Time Travel 
+Our working denition: to travel in time is for there to be a discrepancy 
+between: 
+1. the start-time and end-time of ones journey, and 
+2. the duration of the journey from the perspective of ones own perspec-
+tive. 
+2 Inconsistent Time Travel Stories 
+For a time travel story to be consistent is for it to never make conicting 
+statements about what the world of the story is like at a given time. 
+ For instance, Back to the Future is an inconsistent time travel story: 
+What were told When were told 
+In 1985, George is unhappy beginning of lm 
+In 1985, George is happy end of lm 
+2.1 Caveat: No Changing Timeline Stories 
+Changing Timeline stories rely on two dierent senses of time: 
+1. an ordinary notion of time, which is used to describes changes within 
+a given timeline; 
+2. a non-ordinary sense of time, which is used to describe changes in 
+the timeline itself. 
+But: is the second sense really intelligible? 
+2.2 Caveat: No World Travel Stories 
+One can make some inconsistent time travel stories consistent by interpreting 
+them as world travel stories. 
+But: that just means that weve changed the subject. 
+1</text>
+        </slide>
+        <slide>
+          <slideno>2</slideno>
+          <text>4 A Toy Model1 
+The particles of our world live on two dimensions and obey the following 
+laws: 
+Law 1 In the absence of collisions, a particles velocity remains constant. 
+Law 2 When two particles collide, they exchange velocities. (There are no 
+collisions involving more than two particles.) 
+4.1 Wormholes 
+Our laws are consistent with wormholes. For instance: 
+A 
+W+ 
+B 
+B 
+W-
+A 
+space time 
+In this diagram, the points represented by W-are identied with the points 
+represented by W+. A jumps to the future when its spacetime trajectory 
+reaches a point at which the wormhole is active; B jumps to the past when 
+its spacetime trajectory reaches a spacetime point at which the wormhole is 
+active. 
+1The model is due to philosophers Frank Arntzenius and Tim Maudlin. 
+3</text>
+        </slide>
+        <slide>
+          <slideno>4</slideno>
+          <text>MIT OpenCourseWare 
+https://ocw.mit.edu/ 
+24.118 Paradox and Infinity 
+Spring 2019 
+For information about citing these materials or our Terms of Use, visit: https://ocw.mit.edu/terms .</text>
+        </slide>
+        <slide>
+          <slideno>3</slideno>
+          <text>4.2 A Toy Version of Grandfathers Paradox 
+b W+ 
+a c 
+mirror A 
+W-b 
+space time 
+Particle A is on a paradoxical path. It travels rightward, passes through 
+spacetime point a and enters the wormhole at spacetime point b, jumping to 
+the past. It exits the wormhole and continues its rightward trajectory until 
+it reaches the mirror at spacetime point c. But what happens next? 
+4.3 An answer to the toy paradox 
+ One does not characterize a world by rst deciding how many particles 
+the world is to contain (and assigning them each a position and velocity 
+at a time), and then using the dynamical laws to calculate the spacetime 
+trajectories of these particles. 
+ Instead, one characterizes a world by rst drawing a family of spacetime 
+trajectories that conform to the dynamical laws and then using the laws 
+to determine how many particles the resulting world must contain. 
+ So: it is a mistake to think that one can characterize a world by stipu-
+lating that it is to contain a single particle traveling as in gure ?? and 
+then ask what happens when the dynamical laws are used to calculate 
+the particles spacetime trajectory. 
+4</text>
+        </slide>
+      </slides>
+      <videos/>
+    </lecture>
+    <lecture>
+      <lecture_title>The Cantorian Theory of Size (Part I) (PDF)</lecture_title>
+      <lecture_pdf_url>https://ocw.mit.edu/courses/24-118-paradox-and-infinity-spring-2019/resources/mit24_118s19_lecnote1/</lecture_pdf_url>
+      <lectureno>1</lectureno>
+      <slides>
+        <slide>
+          <slideno>0</slideno>
+          <text>The Cantorian Theory of Size 
+1 Basic Denitions 
+Cardinality |A| is the size of set A. 
+Bijection Principle |A| = |B| i there is a bijection from A to B. 
+Injection Principle |A|  |B | i there is an injection A to B. 
+2 Extended Denitions 
+Notation How its dened Informal notion 
+|A| = |B| bijection from A to B just as many members in A as in B 
+|A|  |B | injection from A to B at most as many members in A as in B 
+|A| &lt; |B||A|  |B| and |A| 6= |B| fewer members in A than in B 
+|A|  |B | |B|  |A| at least as many members in A as in B 
+|A| &gt; |B||A|  |B | and |A| 6= |B| more members in A than in B 
+3 Properties of  
+Reexivity |A|  |A| 
+Anti-symmetry If |A|  |B | and |B|  |A|, then |A| = |B| 
+Transitivity If |A|  |B | and |B|  |C|, then |A|  | C| 
+Totality For any sets A and B, either |A|  |B | or |B|  |A| 
+One can only prove Totality if one assumes a controversial set-theoretic axiom: the 
+Axiom of Choice. Well come across this axiom again. Stay tuned!</text>
+        </slide>
+        <slide>
+          <slideno>1</slideno>
+          <text>MIT OpenCourseWare 
+https://ocw.mit.edu/ 
+24.118 Paradox and Infinity 
+Spring 2019 
+For information about citing these materials or our Terms of Use, visit: https://ocw.mit.edu/terms .</text>
+        </slide>
+      </slides>
+      <videos/>
+    </lecture>
+    <lecture>
+      <lecture_title>The Ordinals (Part II) (PDF)</lecture_title>
+      <lecture_pdf_url>https://ocw.mit.edu/courses/24-118-paradox-and-infinity-spring-2019/resources/mit24_118s19_lecnote4/</lecture_pdf_url>
+      <lectureno>4</lectureno>
+      <slides>
+        <slide>
+          <slideno>1</slideno>
+          <text>4 Representing Well-Order Types 
+Since every ordinal is a set of ordinals, the elements of an ordinal are always 
+well-ordered by &lt;o. So we may set forth the following: 
+Representation Principle Each ordinal represents the well-order type that 
+it itself instantiates under &lt;o. 
+5 Some Denitions 
+ 0 =  {} 
+ A successor ordinal is an ordinal  such that  = 0 for some . 
+ A limit ordinal is an ordinal that is not a successor ordinal. 
+6 Ordinal Addition 
+The intuitive idea: A well-ordering of type ( + ) is the result of starting 
+with a well-ordering of type  and appending a well-ordering of type  at 
+the end. 
+Formally: 
+ + 0 =  
+ + 0 = ( + )0 
+S  +  = { +  :  &lt; } ( a limit ordinal) 
+ Ordinal addition is associative: ( + ) +  =  + ( + ). 
+ Ordinal addition is not commutative: it is not generally the case that 
+ +  =  + . 
+7 Ordinal Multiplication 
+The intuitive idea: A well-ordering of type (  ) is the result of starting 
+with a well-ordering of type  and replacing each position in the ordering 
+with a well-ordering of type . 
+2</text>
+        </slide>
+        <slide>
+          <slideno>5</slideno>
+          <text>MIT OpenCourseWare 
+https://ocw.mit.edu/ 
+24.118 Paradox and Infinity 
+Spring 2019 
+For information about citing these materials or our Terms of Use, visit: https://ocw.mit.edu/terms .</text>
+        </slide>
+        <slide>
+          <slideno>3</slideno>
+          <text>|| ||9 Some Additional Ordinals 
+ordinal members well-order type represented 
+ {0, 00 , . . . } ||| . . . 
+ + 00 {0, 00 , . . . , } ||| . . . |
+ +  {0, 00 , . . . , ,  + 00 , . . . } ||| . . . ||| . . . 
+ +  +  {0, 00 , . . . , ,  + 00 , . . . ,  + ,  +  + 00 , . . . } ||| . . . ||| . . . ||| . . . 
+   
+= 000 {0, . . . , , . . . ,  + , . . . ,  +  + , . . . . . .} ||| . . . ||| . . . ||| . . . . . .| {z } 
+ times 
+(  ) +  {0, . . . ,   , (  ) + 00 , (  ) + 000 , . . . } ||| . . . ||| . . . ||| . . . . . . ||| . . .| {z } 
+ times 
+(  ) +  +  {0, . . . ,   , (  ) + 00 , . . . (  ) + , (  ) +  + 00 . . . } ||| . . . ||| . . . ||| . . . . . . ||| . . . ||| . . .| {z } 
+ times 
+4
+(  ) + (  ) ||| . . . ||| . . . ||| . . . . . . ||| . . . ||| . . . ||| . . . . . . {0, . . . ,   , . . . (  ) + , . . . , (  ) +  +  . . . . . . } | {z } | {z }    000=  times  times 
+    0000 {0, . . . ,   , . . . (  ) + , . . . , (  ) +  +  . . . . . . ||| . . . ||| . . . . . . ||| . . . ||| . . . . . . ||| . . . ||| . . . . . .| {z } | {z } | {z }(  ) + (  ) . . . (  ) + (  ) +  . . . (  ) + (  ) +  +  . . . . . . }  times  times  times 
+. . . || . . . . . . . . . || . . . . . . . . .     | {z } | {z } 
+0000 {0 . . . ,   , . . .     000 , . . . ,     0000 , . . . . . . }  times  times = | {z } 
+ times 
+ {0, . . . , , . . . ,   000 , . . . ,   0000 , . . . . . . } [see below] 
+: || . . . || . . . || . . . . . . || . . . || . . . . . . || . . . || . . . . . . . . . || . . . || . . . . . . || . . . || . . . . . . . . . || . . . || . . . . . . || . . . || . . . . . . . . . . . . . . . 
+| {z } | {z } | {z } | {z } | {z } | {z } | {z } 
+ times  times  times  times  times  times  times | {z } | {z } | {z } 
+ times  times  times | {z } 
+ times</text>
+        </slide>
+        <slide>
+          <slideno>2</slideno>
+          <text>Formally: 
+  0 = 0 
+  0 = (  ) + S    = {   :  &lt; } ( a limit ordinal) 
+ Ordinal multiplication is associative: (  )   =   (  ). 
+ Ordinal multiplication is not commutative: it is not generally the case 
+that    =   . 
+8 Some Additional Operations 
+ Exponentiation: 
+0 00= 
+0 = ( )  S  = { :  &lt; } ( a limit ordinal) 
+ Tetration: 
+0 = 00 
+0  = ( ) 
+S  = {  :  &lt; } ( a limit ordinal) 
+ And so forth. . . 
+3</text>
+        </slide>
+        <slide>
+          <slideno>0</slideno>
+          <text>The Ordinals (Part II) 
+1 The First Few Ordinals 
+ordinal name of ordinal well-order type represented 
+{}
+{0}
+{0, 00} 
+, 000} {0, 00 
+. 0 
+00 
+000 
+0000 
+. |
+||
+||| 
+. . . . 
+, 000 , 0000{0, 00 , . . . } 
+, 000 , 0000{0, 00 , . . . , } 
+, 000 , 0000{0, 00 , . . . , , 0}
+.  
+0 
+00 
+. ||| . . . 
+||| . . . |
+||| . . . ||
+. . . . . . . 
+2 Constructing the Ordinals 
+Construction Principle At each stage, we introduce a new ordinal, namely: 
+the set of all ordinals that have been introduced at previous stages. 
+Open-Endedness Principle However many stages have occurred, there is 
+always a next stage, that is, a rst stage after every stage considered 
+so far.1 
+3 Ordering the Ordinals 
+The ordinals are well-ordered by the following precedence relation: 
+ &lt; o  df    
+1It is important to interpret the Open-Endedness Principle as entailing that there is 
+no such thing as all stagesand therefore deliver the result that there is no such thing 
+as all ordinals. 
+1</text>
+        </slide>
+        <slide>
+          <slideno>4</slideno>
+          <text>10 A Visualization2 
+Source: https://commons.wikimedia.org/wiki/File:Omega-exp-omega-labeled.svg . 
+File made available on Wikimedia under the Creative Commons CC0 1.0 Universal Public 
+Domain Dedication. Pop-up casket (talk); original by User:Fool [CC0]. 
+52</text>
+        </slide>
+      </slides>
+      <videos/>
+    </lecture>
+    <lecture>
+      <lecture_title>Time Travel and Free Will (PDF)</lecture_title>
+      <lecture_pdf_url>https://ocw.mit.edu/courses/24-118-paradox-and-infinity-spring-2019/resources/mit24_118s19_lecnote9/</lecture_pdf_url>
+      <lectureno>9</lectureno>
+      <slides>
+        <slide>
+          <slideno>2</slideno>
+          <text>Note: There are two dierent conceptions of physical law, 
+1. The laws tell us what will happen, on the basis of what has hap-
+pened. 
+2. The laws tell us what must happen, on the basis of what has 
+happened. 
+time 
+5.2 Back to the Argument 
+ On the second conception of physical lawa law tells us what must 
+happen, on the basis of what has happenedit is indeed the case that 
+the laws make it impossible for Bruno to act otherwise. 
+ On the rst conception of physical lawa law tells us what will happen, 
+on the basis of what has happenedthe laws are silent on whether 
+Bruno could have acted otherwise. 
+(They are simply descriptions of the patterns that, as a matter of fact, 
+characterize our worlds mosaic.) 
+But, what would have happened if Bruno acted dierently? 
+ Dont say that some additional defeater would have appeared and saved 
+Grandfather. 
+(That assumes that aiming just right would have caused the additional 
+defeater to come about and we have been given no reason to think that 
+such a causal structure is in place.) 
+3</text>
+        </slide>
+        <slide>
+          <slideno>3</slideno>
+          <text>If Bruno had managed to aim just right, we would would have ended 
+up in a situation that cannot be accounted for while keeping the rest 
+of the story xed. 
+6 Why the Control Hypothesis is Incorrect 
+ Suppose Susan freely decides to stay in New York. But had she at-
+tempted to leave she would have been prevented from doing so. (Per-
+haps she would have even been prevented from deciding to leave.) 
+ Then Susan acts freely. But the Control Hypothesis entails (incor-
+rectly) that she does not. 
+4</text>
+        </slide>
+        <slide>
+          <slideno>1</slideno>
+          <text>Well assume the Control Hypothesis, and consider a couple of argu-
+ments purporting to show that Bruno fails to act freely because he was 
+not in a position to make a dierent decision about how to take his 
+shot. 
+4 First Argument 
+Argument: We know that, on pain of contradiction, Brunos assassination 
+attempt will fail. So Bruno isnt free to pull the trigger. 
+Reply: It is important to make the following distinction 
+ Whether wewho live in the present dayhave information about 
+Grandfathers future that entails Brunos assassination attempt will 
+fail. 
+ Whether Bruno was in a position to kill Grandfather, regardless of 
+whether wewho live in the present dayhappen to know that things 
+wont actually turn out that way. 
+5 Second Argument 
+Argument: If Bruno were ever on track to kill Grandfather, the laws of 
+physics would intervene to derail him. 
+5.1 Determinism 
+For a system of laws to be determinisitic is for it to entail, on the basis 
+of a full specication of the state of the world at any given time, a full 
+specication of the state of the world at any later time. 
+ Note: Possessing free will is not simply a matter of having a decision-
+making process that is not subject to deterministic laws. 
+2</text>
+        </slide>
+        <slide>
+          <slideno>4</slideno>
+          <text>MIT OpenCourseWare 
+https://ocw.mit.edu/ 
+24.118 Paradox and Infinity 
+Spring 2019 
+For information about citing these materials or our Terms of Use, visit: https://ocw.mit.edu/terms .</text>
+        </slide>
+        <slide>
+          <slideno>0</slideno>
+          <text>Time Travel and Free Will 
+1 The Grandfather Paradox 
+Bruno travels back in time to kill Grandfather, who is yet to have any chil-
+dren. He has a loaded gun at point-blank range. 
+ If Bruno succeeds, Grandfather will never have any children. So Bruno 
+will never be born, which contradicts the setup of the story. 
+ If Bruno doesnt succeed, what stops him? 
+2 What Does the Paradox Show? 
+Some possible answers: 
+1. It shows that the concept of time travel is incoherent. 
+2. It raises questions about whether the laws of physics could rule out 
+paradoxical time travel in a principled way, without banning it alto-
+gether. 
+3. It shows that time travel is incompatible with free will. 
+I think these answers are all mistaken! 
+3 What is Free Will 
+The following hypothesis is meant to capture the idea that someone who acts 
+freely has control over the action she performs: 
+Control Hypothesis An agent acts freely in doing X if and only if: (1) 
+she does X by making a certain decision, and (2) she is in a position 
+to do something other than X by making a dierent decision. 
+ The Control Hypothesis is actually incorrect. But it is a good starting 
+point for elucidating the connection between time travel and free will, 
+so well treat it as our working hypothesis for now. 
+1</text>
+        </slide>
+      </slides>
+      <videos/>
+    </lecture>
+    <lecture>
+      <lecture_title>Ordinals as Blueprints (PDF)</lecture_title>
+      <lecture_pdf_url>https://ocw.mit.edu/courses/24-118-paradox-and-infinity-spring-2019/resources/mit24_118s19_lecnote5/</lecture_pdf_url>
+      <lectureno>5</lectureno>
+      <slides>
+        <slide>
+          <slideno>1</slideno>
+          <text>4 Initial Ordinals 
+ Initial ordinal: an ordinal that precedes all other ordinals of the same 
+cardinality. 
+ An initial ordinal  can be used as proxy for its own cardinality:  = ||. 
+5 The Beth Hierarchy 
+ i (read beth-alpha) is the initial ordinal of cardinality |B|. 
+ So: i = |B|. 
+ i0 = |N| and i00 = |(N)| (so i00 is an uncountable ordinal). 
+Since the beths are ordinals, they can be used to dene sets bigger than 
+anything weve considered so far. For instance: 
+ Bi00 (where i00 = |(N)|) 
+ Bii (where ii = |Bi |) 
+6 The Continuum Hypothesis 
+Continuum Hypothesis There is no set A such that i0 &lt; |A| &lt; i1. 
+Generalized CH There is no set A such that i &lt; |A| &lt; i+1. 
+7 The Burali-Forti Paradox 
+Suppose, for reductio, that  is the set of all ordinals. Then: 
+ Since  consists of every ordinal, it consists of every ordinal thats been 
+introduced so far. But a new ordinal is just the set every ordinal thats 
+been introduced so far. So:  is an ordinal. 
+ If  was itself an ordinal, it would be a member of itself (and therefore 
+have itself as a predecessor). But no ordinal can be its own predecessor. 
+So:  is not an ordinal. 
+So there is no set of all ordinals! 
+2</text>
+        </slide>
+        <slide>
+          <slideno>2</slideno>
+          <text>MIT OpenCourseWare 
+https://ocw.mit.edu/ 
+24.118 Paradox and Infinity 
+Spring 2019 
+For information about citing these materials or our Terms of Use, visit: https://ocw.mit.edu/terms .</text>
+        </slide>
+        <slide>
+          <slideno>0</slideno>
+          <text>Ordinals as Blueprints 
+1 Ordinal Precedence v. Cardinal Precedence 
+We have discussed two dierent precedence relations, &lt;0 and &lt;: 
+ &lt;o is the precedence relation for ordinals. 
+ &lt; o  means that  precedes  in the hierarchy of ordinals. 
+ &lt; is an ordering of set-cardinality. 
+|A| &lt; |B| means that there is an injection from A to B (but no bijec-
+tion). 
+Important:  &lt; o  does not entail || &lt; ||. 
+2 Ordinals as Blueprints for Large Sets 
+ An ordinal can be used as a blueprint for a sequence of applications 
+of the power set and union operations. 
+ The farther up an ordinal is in the hierarchy of ordinals, the longer the 
+sequence, and the greater the cardinality of the end result. 
+Specically, each ordinal  can be used to characterize the set B: 
+ 
+N, if  = 0  
+B = (B ), if  = 0 
+S {B :  &lt; o } if  is a limit ordinal (other than 0) 
+3 Later Ordinals, Bigger Cardinalities 
+ By Cantors Theorem: if  &lt; o , then |B| &lt; |B |. 
+ For instance: 
+ &lt; o (  ) &lt;o  &lt;o. So: |B| &lt; |B| &lt; |B | &lt; |B |. 
+1</text>
+        </slide>
+      </slides>
+      <videos/>
+    </lecture>
+    <lecture>
+      <lecture_title>Non-Computable Functions (Part II) (PDF)</lecture_title>
+      <lecture_pdf_url>https://ocw.mit.edu/courses/24-118-paradox-and-infinity-spring-2019/resources/mit24_118s19_lecnote19/</lecture_pdf_url>
+      <lectureno>19</lectureno>
+      <slides>
+        <slide>
+          <slideno>1</slideno>
+          <text>MBB is impossible: 
+ At Stage 3, it produces as long a sequence of ones as a machine 
+with 2k states could possibly produce. 
+ But (as noted above) MI = 2k. 
+ So at Stage 3, it produces as long a sequence of ones as it itself 
+could possibly produce. 
+ So at Stage 4, it produces a longer string of ones than it itself 
+could possibly produce. 
+ So MH isnt computable after all. 
+3 The Universal Turing Machine 
+There is a Universal Turing Machine , MU , which does the following: 
+ if the mth Turing Machine halts given input n, leaving the tape in 
+conguration p, then MU halts given input hm, ni leaving the tape in 
+conguration p. 
+ if the mth Turing Machine never halts given input n, then MU never 
+halts given input hm, ni. 
+4 The Fundamental Theorem 
+The reason Turing Machines are so valuable is that it is possible to prove the 
+following theorem: 
+Fundamental Theorem of Turing Machines A function from natural num-
+bers to natural numbers is Turing-computable if and only if it can be 
+computed by an ordinary computer, assuming unlimited memory and 
+running time. 
+ One shows that every Turing-computable function is computable by 
+an ordinary computer (given unlimited memory and running time) by 
+showing that one can program an ordinary computer to simulate any 
+given Turing Machine. 
+2</text>
+        </slide>
+        <slide>
+          <slideno>0</slideno>
+          <text>Non-Computable Functions (part 2) 
+1 The Busy Beaver Function 
+( 
+k, if M yields output k on an empty input Productivity( M) = 0, otherwise 
+the productivity of the most productive (one-symbol)  BB(n) = Turing Machine with n states or fewer. 
+2 BB(n) is not Turing-computable 
+ Assume for reductio : Turing Machine MBB computes BB(n). 
+ Construct Turing Machine MI , which behaves as follows on an empty 
+input: 
+Step 1: Print a sequence of k ones, for a certain k (specied below). 
+Result: k. 
+Step 2: Duplicate your string of ones. 
+Result: 2k. 
+Step 3 Apply BB to your string of ones (using MBB). 
+Result: BB(2k). 
+Step 4 Add one to your string of ones. 
+Result: BB(2k) + 1. 
+ Let k = b + c + d 
+b = the number of states used in Step 2 (to duplicate) 
+c = the number of states used in Step 3 (to apply BB) 
+d = the number of states used in Step 4 (to add one) 
+Note: since a Turing Machine can output k using k states, 
+MI = k + b + c + d = 2k 
+1</text>
+        </slide>
+        <slide>
+          <slideno>3</slideno>
+          <text>MIT OpenCourseWare 
+https://ocw.mit.edu/ 
+24.118 Paradox and Infinity 
+Spring 2019 
+For information about citing these materials or our Terms of Use, visit: https://ocw.mit.edu/terms .</text>
+        </slide>
+        <slide>
+          <slideno>2</slideno>
+          <text>One shows that every function computable by an ordinary computer 
+(given unlimited memory and running time) is Turing-computable by 
+showing that one can nd a Turing Machine that simulates any given 
+ordinary computer. 
+5 Church-Turing 
+Computer scientists tend to think that something stronger than the Funda-
+mental Theorem is true: 
+Church-Turing Thesis A function is Turing-computable if and only if it 
+can be computed algorithmically. 
+For a problem to be solvable algorithmically is for it to be possible to 
+specify a nite list of instructions for solving the problem such that: 
+1. Following the instructions is guaranteed to yield a solution to the prob-
+lem, in a nite amount of time. 
+2. The instructions are specied in such a way that carrying them out 
+requires no ingenuity of any kind: they can be followed mechanistically. 
+3. No special resources are required to carry out the instructions: they 
+could in principle be carried out by a machine built from transistors. 
+4. No special physical conditions are required for the computation to suc-
+ceed (no need for faster-than-light travel, special solutions to Einsteins 
+equations, etc). 
+3</text>
+        </slide>
+      </slides>
+      <videos/>
+    </lecture>
+    <lecture>
+      <lecture_title>G&#246;del&#8217;s Theorem (Part I) (PDF)</lecture_title>
+      <lecture_pdf_url>https://ocw.mit.edu/courses/24-118-paradox-and-infinity-spring-2019/resources/mit24_118s19_lecnote20/</lecture_pdf_url>
+      <lectureno>20</lectureno>
+      <slides>
+        <slide>
+          <slideno>0</slideno>
+          <text>G odels Theorem 
+1 The Theorem 
+Let L be a (rich enough) arithmetical language: 
+G odels Incompleteness Theorem (V1) No Turing Machine can do the 
+following: when given a sentence of L as input, it outputs 1 if the 
+sentence is true and 0 if the sentence is false. 
+G odels Incompleteness Theorem (V2) No Turing Machine can: 
+1. run forever, outputting sentences of L; 
+2. eventually output each true sentence of L; and 
+3. never output a false sentence of L. 
+G odels Incompleteness Theorem (V3) No axiomatization of L is both 
+consistent and complete. 
+2 What the Theorem Teaches Us 
+ Mathematically: 
+Arithmetical truth is too complex to be nitely speciable. 
+ Philosophically: Interesting mathematical theories can never be established beyond any 
+possibility of doubt. 
+3 A Simple Arithmetical Language, L 
+ An arithmetical language is a language to talk about the natural 
+numbers and their basic operations (e.g. addition and multiplication). 
+ L is an arithmetical language built from the following symbols:1 
+1With some eort, the exponentiation symbol can be dened using + and , as 
+G odel showed. I include it here because it will make proving the theorem much easier. 
+1</text>
+        </slide>
+        <slide>
+          <slideno>2</slideno>
+          <text>Logical Symbols: 
+Abbreviation Read Ocial Notation 
+A  B 
+A  B 
+xi A or B 
+if A, then B 
+some number is such that it (A &amp; B) 
+A  B 
+x i  
+ Arithmetical Symbols: 
+Abbreviation Read Ocial Notation 
+xi &lt; xj 
+xi|xj 
+Prime(x i) xi is smaller than xj 
+xi divides xj 
+xi is prime xk((xj = xi + xk) &amp; (x k = 0)) 
+xk(xk  xi = xj ) 
+(1 &lt; xi) &amp; xj xk((xi = xj  xk)  (xi = xj  xi = xk )) 
+4 A Rich Enough Language 
+L counts as rich enough if one can prove: 
+Lemma L contains a formula (abbreviated Halt( k)), which is true if and 
+only if the kth Turing Machine halts on input k. 
+(As it turns out, even our simple language L satises this condition!) 
+5 A Proof of G odels Theorem (V1) 
+ Assume for reductio : M decides the truth of sentences of L. 
+ By the Lemma, we can use M s program to construct a Turing Machine 
+MH , which computes the Halting Function. 
+ Since the Halting Function is not Turing-computable, our assumption 
+must be false. 
+Weve proved G odels Thoerem! 
+3</text>
+        </slide>
+        <slide>
+          <slideno>3</slideno>
+          <text>MIT OpenCourseWare 
+https://ocw.mit.edu/ 
+24.118 Paradox and Infinity 
+Spring 2019 
+For information about citing these materials or our Terms of Use, visit: https://ocw.mit.edu/terms .</text>
+        </slide>
+        <slide>
+          <slideno>1</slideno>
+          <text>Arithmetical Symbol 
+0 
+1 
++  
+ Denotes 
+the number zero 
+the number one 
+addition 
+multiplication 
+exponentiation 
+Logical Symbol Read 
+= . . . is identical to . . . 
+ it is not the case that . . . 
+&amp; it is both the case that . . . and . . . 
+ every number is such that . . . 
+xn (for n  N) it 
+Auxiliary Symbol Meaning 
+( [left parenthesis] 
+) [right parenthesis] 
+3.1 Abbreviations 
+An abbreviation is a notational shortcut to make it easier for us to keep 
+track of certain strings of symbols on our ocial list. 
+ Numerals: 
+Abbreviation Read Ocial Notation 
+2 3 4 
+. . . two 
+three 
+four 
+. . . (1 + 1) 
+((1 + 1) + 1) 
+(((1 + 1) + 1) + 1) 
+. . . 
+2</text>
+        </slide>
+      </slides>
+      <videos/>
+    </lecture>
+    <lecture>
+      <lecture_title>Probability, Subjective and Objective (PDF)</lecture_title>
+      <lecture_pdf_url>https://ocw.mit.edu/courses/24-118-paradox-and-infinity-spring-2019/resources/mit24_118s19_lecnote11/</lecture_pdf_url>
+      <lectureno>11</lectureno>
+      <slides>
+        <slide>
+          <slideno>1</slideno>
+          <text>2. update by conditionalization; 
+3. Bayes Law; 
+4. the Principle of Indierence. 
+3.1 Internal Coherence 
+For a credence function to be internally coherent is for it to constitute a 
+probability function. 
+A probability function, p(. . .), is an assignment of real numbers between 
+0 and 1 to propositions that satises the following two coherence conditions: 
+Necessity p(A) = 1 whenever A is a necessary truth 
+Additivity p(A or B) = p(A) + p(B) whenever A and B are incompatible 
+propositions 
+3.2 Update by Conditionalization 
+If S is rational, she will update here credences as follows upon learning 
+that B: 
+new(A) = p old(A|B ) p 
+where pold is the function describing Ss credences before she learned 
+that B, and pnew is the function describing her credences after she 
+learned that B. 
+3.3 Bayes Law 
+p(AB ) = p(A)  p(B|A) 
+3.4 The Principle of Indierence 
+Heres what wed like to have in place: 
+Principle of Indierence Consider a set of propositions and suppose one 
+knows that exactly one of them is true. Suppose, moreover, that one 
+has no more reason to believe any one of them than any other. Then, 
+insofar as one is rational, one should assign equal credence to each 
+proposition in the set. 
+2</text>
+        </slide>
+        <slide>
+          <slideno>2</slideno>
+          <text>Unfortunately, this principle leads to inconsistency as stated. For instance: 
+A factory produces cubes with a side-length l  1. What is the 
+1 
+2]? probability that l  (0, 
+Argument 1 (length): 
+1 2 
+1
+ ]) (l ( = p2  There is just as much reason to think that l  (0, ] as there 
+1 2is to think that l  ( , 1]. 
+1 2 By the Principle of Indierence, p(l  (0, , 1]). 
+ So p(l  (0, 1 2]) = 1 2. 
+Argument 2 (area): 
+1 2 
+1
+ ]) ( ( = pa2  There is just as much reason to think that a  (0, ] as there 
+1 2is to think that a  ( , 1]. 
+1 2 By the Principle of Indierence, p(a  (0, , 1]). 
+1 2]) = 1 2.  So p(a  (0, 
+1 2 1 4
+]. But wait! l  (0, ]  a  (0, 
+4 Objective Probability 
+By the Objective-Subjective Connection, our conclusions about rational sub-
+jective probability deliver tell us that the objective probabilities: 
+1. constitute a probability function; 
+2. update by an analogue of conditionalization; 
+3. satisfy Bayes Law; 
+4. [satisfy a Principle of Indierence?]. 
+3</text>
+        </slide>
+        <slide>
+          <slideno>0</slideno>
+          <text>Probability, Subjective and Objective 
+1 Two Kinds of Probability 
+Subjective Probability A persons subjective probability in p is the degree 
+to which she is condent in p. 
+Example: Joness subjective probability that itll rain tomorrow is 0.3 
+because she is 30% condent that itll rain tomorrow. 
+Objective Probability The objective probability of an event is meant to 
+be a feature of the world that does not depend on the beliefs of any 
+particular subject. 
+Example: the objective probability that a particle of 256Sg will decay 
+in the next 8.9 seconds is 50%. 
+2 How are they related? 
+The Objective-Subjective Connection The objective probability of A 
+at time t is the subjective probability that a perfectly rational agent 
+would assign to A, if she had perfect information about the world at 
+times  t and no information about the world at times &gt; t. 1 
+3 Subjective Probability 
+A credence function for subject S is a function that assigns to each propo-
+sition a real number between 0 and 1, representing Ss degree of conndence 
+in that proposition 
+What does it take for a credence function to be rational? 
+1. internal coherence; 
+1Here I am tacitly presupposing that a perfectly rational agent is always certain about 
+the objective probabilities at t, given full information about how the world is before t. So, 
+in particular, for each complete history of the world up to t, Ht, there is a specication Pt 
+of the objective probabilities at t such that the agent treats Ht and HtPt as equivalent. 
+(This assumption is potentially controversial but adds simplicity to our discussion.) 
+1</text>
+        </slide>
+        <slide>
+          <slideno>4</slideno>
+          <text>MIT OpenCourseWare 
+https://ocw.mit.edu/ 
+24.118 Paradox and Infinity 
+Spring 2019 
+For information about citing these materials or our Terms of Use, visit: https://ocw.mit.edu/terms .</text>
+        </slide>
+      </slides>
+      <videos/>
+    </lecture>
+    <lecture>
+      <lecture_title>Non-Computable Functions (Part I) (PDF)</lecture_title>
+      <lecture_pdf_url>https://ocw.mit.edu/courses/24-118-paradox-and-infinity-spring-2019/resources/mit24_118s19_lecnote18/</lecture_pdf_url>
+      <lectureno>18</lectureno>
+      <slides>
+        <slide>
+          <slideno>5</slideno>
+          <text>MIT OpenCourseWare 
+https://ocw.mit.edu/ 
+24.118 Paradox and Infinity 
+Spring 2019 
+For information about citing these materials or our Terms of Use, visit: https://ocw.mit.edu/terms .</text>
+        </slide>
+        <slide>
+          <slideno>2</slideno>
+          <text>5 The Halting Function 
+( 
+1 if the nth Turning Machine halts when given input m; H(n, m) = 0 otherwise. 
+For instance: H(2310, 0) = 0 and H(2310, 2310) = 1. 
+ H(n) = H(n, n) 
+For instance: H(2310) = 1. 
+6 H(n) is not Turing-computable 
+ Assume for reductio : Turing Machine MH computes H(n). 
+ Construct Turing Machine MI , which behaves as follows on input k: 
+Step 1: Check whether H(k) (using MH ).( 
+If H(k) = 1, go right forever. Step 2: If H(k) = 0, halt. 
+ Informally: What happens when you run MI on input MI ? It gures 
+out whether it itself would halt on input MI . If the answer is yes, it 
+goes o on an innite task; if the answer is no, it immediately halts. 
+ Formally: H(MI ) 1 or 0? 
+ Suppose H(MI ) = 1. Then (by Step 2) MI goes right forever on 
+input MI . So H(MI ) = 0. 
+ Suppose H(MI ) = 0. Then (by Step 2) MI halts on input MI . 
+So H(MI ) = 1. 
+ So MI is impossible. So MH isnt computable after all. 
+3</text>
+        </slide>
+        <slide>
+          <slideno>3</slideno>
+          <text>7 The Busy Beaver Function 
+( 
+k, if M yields output k on an empty input Productivity( M) = 0, otherwise 
+the productivity of the most productive (one-symbol)  BB(n) = Turing Machine with n states or fewer. 
+8 BB(n) is not Turing-computable 
+ Assume for reductio : Turing Machine MBB computes BB(n). 
+ Construct Turing Machine MI , which behaves as follows on an empty 
+input: 
+Step 1: Print a sequence of k ones, for a certain k (specied below). 
+Result: k. 
+Step 2: Duplicate your string of ones. 
+Result: 2k. 
+Step 3 Apply BB to your string of ones (using MBB). 
+Result: BB(2k). 
+Step 4 Add one to your string of ones. 
+Result: BB(2k) + 1. 
+ Let k = b + c + d 
+b = the number of states used in Step 2 (to duplicate) 
+c = the number of states used in Step 3 (to apply BB) 
+d = the number of states used in Step 4 (to add one) 
+Note: since a Turing Machine can output k using k states, 
+MI = k + b + c + d = 2k 
+ MBB is impossible: 
+4</text>
+        </slide>
+        <slide>
+          <slideno>4</slideno>
+          <text>At Stage 3, it produces as long a sequence of ones as a machine 
+with 2k states could possibly produce. 
+ But (as noted above) MI = 2k. 
+ So at Stage 3, it produces as long a sequence of ones as it itself 
+could possibly produce. 
+ So at Stage 4, it produces a longer string of ones than it itself 
+could possibly produce. 
+ So MH isnt computable after all. 
+5</text>
+        </slide>
+        <slide>
+          <slideno>1</slideno>
+          <text>M delivers f(n) as output if it halts with a tape that contains 
+only a sequence of f(n) ones (with the reader positioned at the 
+left-most one, if n &gt; 0). 
+4 Coding Turing Machines as Numbers 
+The Plan 
+Turing Machine  Sequence of symbols  Sequence of numbers  Unique number 
+Sequence of symbols  Sequence of numbers 
+State Symbols: Tape Symbols: Movement Symbols: 
+0  0    0 r  0 1  1 1  1   1 . . . l  2 
+Sequence of numbers  Unique number 
+Codes the sequence hn1, n2, . . . , n ki as the number: 
+n1+1 n2+1 nk+1 p  p  . . .  p1 2 k 
+where pi is the ith prime number. 
+(Treat any number that doesnt code a valid sequence of command lines as 
+a code for the empty Turing Machine.) 
+4.1 An example 
+2310 = 2  3  5  7  11 
+ 
+20+1  30+1  50+1  70+1  110+1 
+ 
+0 0 0 0 0 
+ 
+0 r 0 
+2</text>
+        </slide>
+        <slide>
+          <slideno>0</slideno>
+          <text>Non-Computable Functions 
+1 The Main Result 
+ Well focus on functions f : N  N. 
+ For a computer program to compute f is for it to yield f(n) as output 
+whenever it is given n as input (n  N). 
+ Theorem: not every function is computable. 
+(And I can give you examples!) 
+2 The Overall Plan 
+ Turing Machines are computers of an especially simple sort. 
+ Well see that some functions are not Turing-computable. 
+ But: any function that can be computed using an ordinary computer 
+is also computed by some Turing Machine. 
+3 Computing functions on a Turing Machine 
+ Simplifying Assumptions: 
+ Well focus on one symbol Turing Machines (where the only ad-
+missible symbols are ones and blanks). 
+ Well assume that the tape is only unbounded on the right. 
+ Turing Computabiity: 
+ M computes a function f(x) if and only if it delivers f(n) as 
+output whenever it is given n as input. 
+ M takes n (n  N) as input if it starts out with a tape that 
+contains only a sequence of n ones (with the reader positioned at 
+the left-most one, if n &gt; 0). 
+1</text>
+        </slide>
+      </slides>
+      <videos/>
+    </lecture>
+    <lecture>
+      <lecture_title>Measure Theory (PDF)</lecture_title>
+      <lecture_pdf_url>https://ocw.mit.edu/courses/24-118-paradox-and-infinity-spring-2019/resources/mit24_118s19_lecnote13/</lecture_pdf_url>
+      <lectureno>13</lectureno>
+      <slides>
+        <slide>
+          <slideno>3</slideno>
+          <text>5 The Axiom of Choice 
+It is impossible to prove that there are non-measurable sets without some 
+version of the Axiom of Choice: 
+Axiom of Choice Every set of non-empty, non-overlapping sets has a choice 
+set. 
+(A choice set for set A is a set that contains exactly one member from each 
+member of A.) 
+4</text>
+        </slide>
+        <slide>
+          <slideno>4</slideno>
+          <text>MIT OpenCourseWare 
+https://ocw.mit.edu/ 
+24.118 Paradox and Infinity 
+Spring 2019 
+For information about citing these materials or our Terms of Use, visit: https://ocw.mit.edu/terms .</text>
+        </slide>
+        <slide>
+          <slideno>0</slideno>
+          <text>Measure Theory 
+1 Additive notions of size 
+ the length of two (non-overlapping) line segments placed side by side 
+is the length of the rst plus the length of the second; 
+ the mass of two (non-overlapping) objects taken together is the mass 
+of the rst plus the mass of the second. 
+ The probability that either of two (incompatible) events occur is the 
+probability that the rst occur plus the probability that the second 
+occur; 
+The notion of measure is a very abstract way of thinking about additive 
+notions of size. 
+2 Generalizing the notion of length 
+The standard notion of length: 
+ [a, b] = {x  R : a  x  b} 
+ Length([a, b]) = b  a. 
+2.1 The Borel Sets 
+A Borel Set is a set that you can get to by performing nitely many ap-
+plications of the operations of complementation and countable union on a 
+family of line segments.1 
+ The complementation operation takes each set A to its comple-
+ment, A = R  A. 
+ The countable union operation takes each countable family of setsS A1, A2, A3, . . . to their union, {A1, A2, A3 . . . }. 
+1Formally, the Borel Sets are the members of the smallest set B such that: (i) every 
+line segment is in B, (ii) if a set is in B, then so is its complement, and (iii) if a countable 
+family of sets is in B, then so is its union. 
+1</text>
+        </slide>
+        <slide>
+          <slideno>2</slideno>
+          <text>Standard Coin-Toss Procedure You toss a fair coin once for each natural 
+number. Each time the coin lands Heads you write down a zero, and 
+each time it lands Tails you write down a one. This gives you an innite 
+binary sequence hd1, d2, d3, . . .i, Pick 0.d1d2d3 . . . (in binary notation).3 
+ We get uniformity: 
+0 1 
+ Given certain assumptions about the probabilities of sequences of 
+coin tosses, we get the Lebesgue Measure. 
+Square Root Coin-Toss Procedure As before, but this time you pick  0.d1d2d3 . . . (in binary notation). 
+ We do not get uniformity: 
+0 1 
+4 Non-Measurable Sets 
+ There are subsets of R that are non-measurable: 
+they cannot be assigned a measure by any extension of , unless one 
+gives up on one of Non-Negativity, Countable Additivity and Unifor-
+mity. 
+3Rational numbers have two dierent binary expansions: one ending in 0s and the other 
+ending in 1s. To simplify the present discussion, I assume that the Coin-Toss Procedure 
+is rerun if the output corresponds to a binary expansion ending in 1s. 
+3</text>
+        </slide>
+      </slides>
+      <videos/>
+    </lecture>
+    <lecture>
+      <lecture_title>Omega-Sequence Paradoxes (Part I) (PDF)</lecture_title>
+      <lecture_pdf_url>https://ocw.mit.edu/courses/24-118-paradox-and-infinity-spring-2019/resources/mit24_118s19_lecnote6/</lecture_pdf_url>
+      <lectureno>6</lectureno>
+      <slides>
+        <slide>
+          <slideno>2</slideno>
+          <text>5 The Bombers Paradox4 [Paradox Grade: 6] 
+There are innitely many bombs: 
+Bomb When bomb is set to go o 
+B0 12:00pm 
+B1 11:30am 
+B2 11:15am 
+... ... 
+1 Bk hours after 11:00am 2k 
+... ... 
+Should one of the bombs go o, it will instantaneously disable all other 
+bombs. So a bomb goes o if and only if no bombs have gone o before it: 
+(0) B0 goes o  Bn fails to go o (n &gt; 0). 
+(1) B1 goes o  Bn fails to go o (n &gt; 1). 
+(2) B2 goes o  Bn fails to go o (n &gt; 2). 
+. . . 
+(k) Bk goes o  Bn fails to go o (n &gt; k ). 
+(k + 1) Bk+1 goes o  Bn fails to go o (n &gt; k + 1). 
+. . . 
+Will any bombs go o? 
+4This paradox is due to Josh Parsons, who was a fellow at Oxford until shortly before 
+his untimely death in 2017. (It is a version of Bernadetes Paradox.) 
+3</text>
+        </slide>
+        <slide>
+          <slideno>1</slideno>
+          <text>3 Thomsons Lamp2 [Paradox Grade: 3] 
+You have a lamp with a toggle button: press the button once and the lamp 
+goes on, press it again and the lamp goes o. Heres what happens: 
+Time to midnight Status of lamp shortly thereafter 
+60s o 
+30s on 
+15s o 
+7.5s on 
+... ... 
+60 s o 22n 
+60 s on 22n+1 
+... ... 
+Is the lamp on or o at midnight? 
+ For every time the lamp gets turned o before midnight, there is a later 
+time before midnight when it gets turned on. So the lamp cant be 
+o at midnight. 
+ For every time the lamp gets turned on before midnight, there is a later 
+time before midnight when it gets turned o. So the lamp cant be 
+on at midnight . 
+4 The Demons Game3 [Paradox Grade: 4] 
+P1, P2, P3, . . . take turns answering aye or nay: 
+ If exactly n people say aye (n  N), each person gets $n. 
+ If innitely many people say aye, they all get nothing. 
+It seems rational for Pk to say aye: she cant hurt anyone and might help 
+everyone. But if its rational for Pk its rational for everyone. So nobody gets 
+anything. 
+2Thomsons Lamp was devised by the late James Thomson, who was a professor of 
+philosophy at MIT (and was married to the great philosopher Judith Jarvis Thomson). 
+3I learned about this paradox from philosophers Frank Arntzenius, Adam Elga, and 
+John Hawthorne. 
+2</text>
+        </slide>
+        <slide>
+          <slideno>0</slideno>
+          <text>Omega-sequence Paradoxes 
+1 What is a Paradox? 
+A paradox is an argument that appears to be valid, and goes from seemingly 
+true premises to a seemingly false conclusion. So we must: 
+ learn to live with the conclusion; 
+ learn to live without one of the premises; or 
+ show that the reasoning is invalid. 
+An omega-sequence paradox is a paradox based on an -sequence (||| . . . ) 
+or a reverse -sequence (. . . |||). 
+2 Zenos Paradox1 [Paradox Grade: 2] 
+You wish to walk from point A to point B. In order to do so, you 
+must carry out an -sequence of tasks: 
+Task 1: reach
+Task 2: reach
+Task 3: reach1 
+2
+3 
+4
+7 
+8 mark 
+mark mark 
+... ... 
+2
+n1Task n: reach mark2n 
+7 
+8 3 4 ... 
+1 
+2 ... 
+A B 
+. . . 
+But its impossible to complete innitely many tasks in a nite 
+amount of time. So movement is impossible. 
+1This is a variant of one of several paradoxes attributed to ancient philosopher Zeno 
+of Elea, who lived in the 5th Century BC. 
+1</text>
+        </slide>
+        <slide>
+          <slideno>3</slideno>
+          <text>MIT OpenCourseWare 
+https://ocw.mit.edu/ 
+24.118 Paradox and Infinity 
+Spring 2019 
+For information about citing these materials or our Terms of Use, visit: https://ocw.mit.edu/terms .</text>
+        </slide>
+      </slides>
+      <videos/>
+    </lecture>
+    <lecture>
+      <lecture_title>Countable Additivity (PDF)</lecture_title>
+      <lecture_pdf_url>https://ocw.mit.edu/courses/24-118-paradox-and-infinity-spring-2019/resources/mit24_118s19_lecnote12/</lecture_pdf_url>
+      <lectureno>12</lectureno>
+      <slides>
+        <slide>
+          <slideno>3</slideno>
+          <text>4 The Two-Envelope Paradox 
+ Two envelopes: 
+ one contains $n, for n chosen at random from Z+ . 
+ the other contains 2n. 
+ You are handed one of the envelopes, but dont know which. 
+ Then you are oered the chance to switch. Should you switch? 
+An argument for switching: 
+Say that your envelope contains $k. If k is odd, you should switch. 
+If k is even, theres a 0.5 chance that the other envelope has $2k 
+and a 0.5 chance that the other envelope has $k/2. So: 
+EV (switch) = $k/2  0.5 + $2k  0.5 = 5 /4  $k 
+EV (not switch) = $k 
+5 Broomes Variant of the Paradox 
+ Two envelopes: 
+ Toss a die until it lands One or Two. If the die rst lands One or 
+Two on the kth toss, place 2k1 in the rst envelope. 
+ Place twice that amount in the other envelope. 
+4</text>
+        </slide>
+        <slide>
+          <slideno>2</slideno>
+          <text>p(X) is nitely additive but not countably additive. 
+ p(X) is not well-dened for arbitrary sets of integers.1 
+Also, there is a set S and a partition Ei of Z+ such that: 
+ p(S) = 0 
+ p(S|Ei)  1/2 for each Ei. 
+Example: 
+S = {12 , 22 , 32 , . . . }; Ei be the set of powers of i (whenever i 
+which is not a power of any other positive integer). In other 
+words: 
+S 
+E1 
+E2 
+E3 
+[No E4, since 4 = 22] = 
+= = = {1, 4, 9, 16, 25, . . . }
+{1}
+{2, 4, 8, 16, 32, . . . }
+{3, 9, 27, 81, 243, . . . } 
+E
+5 = 
+. {5, 25, 125, 625, 3125, . . . } 
+. . 
+3.1 Is this really so bad? 
+Yes. There is a sequence of bets BE1 , BE2 , BE3 , BE5 , . . . such that: 
+ you are condent that you ought to take each of the bets, 
+ you are 100% condent that you will lose money if she takes them all. 
+BEi : Suppose God selects a number in Ei. Then youll receive $2 if the 
+selected number is in S and youll be forced to pay $1 if the selected 
+number is not in S. (If the selected number is not in Ei, then the bet 
+is called o and no money exchanges hands.) 
+Problems of this general form are inescapable: they will occur whenever a 
+probability function on a countable set of possibilities fails to be countably 
+additive. 
+ k &lt; 2m+1 1For instance, when X consists of the integers k such that 2m , for some 
+even m. 
+3</text>
+        </slide>
+        <slide>
+          <slideno>4</slideno>
+          <text>MIT OpenCourseWare 
+https://ocw.mit.edu/ 
+24.118 Paradox and Infinity 
+Spring 2019 
+For information about citing these materials or our Terms of Use, visit: https://ocw.mit.edu/terms .</text>
+        </slide>
+        <slide>
+          <slideno>1</slideno>
+          <text>2.1 Innitesimals to the rescue? 
+What if we had an innitesimal value  with the following property? 
+ +  +  + . . . = 1| {z } 
+once for each positive integer 
+Then: 
+p(G 1 or G3 or G5 or . . .) = p(G 1) + p(G 3) + p(G 5) + . . . 
+ +  +  + . . .= | {z } 
+once for each positive integer 
+= 1 
+and 
+p(G 2 or G4 or G6 or . . .) = p(G 2) + p(G 4) + p(G 6) + . . . 
+ +  +  + . . .= | {z } 
+once for each positive integer 
+= 1 
+So, by (nite) Additivity: 
+p(G 1 or G2 or G3 or . . .) = 2 (!) 
+3 For Countable Additivity 
+ X, Y  Z+ 
+ p(X) is the probability that God selects a number in X. 
+ p(X|Y ) is the probability that God selects a number in X given that 
+She selects a number in Y . 
+Here is a natural way of characterizing p(X) and p(X|Y ): 
+|X  Y {1, 2, . . . , n}|p(X|Y ) = d f lim 
+n |Y {1, 2, . . . , n}| 
+p(X) = d f p(X|Z+) 
+2</text>
+        </slide>
+        <slide>
+          <slideno>0</slideno>
+          <text>Countable Additivity 
+1 The Principle of Countable Additivity 
+(Finite) Additivity p(A or B) = p(A) + p(B) 
+whenever A and B are incompatible propositions 
+Countable Additivity p (A1 or A2 or . . .) = p(A 1) + p(A 2) + . . . 
+whenever A1, A2, . . . are countably many propositions with Ai and Aj 
+incompatible for i 6= j. 
+2 Against Countable Additivity 
+ God has selected a positive integer, and that you have no idea which. 
+ For n a positive integer, what credence should you assign to the propo-
+sition, Gn, that God selected n? 
+Countable Additivity entails that your credences should remain undened 
+(unless youre prepared to give dierent answers for dierent choices of n). 
+Proof: suppose otherwise. Then p(Gn) = r, for r  [0, 1]. 
+ Suppose r = 0. By Countable Additivity: 
+p(G 1 or G2 or G3 or . . .) = p(G 1) + p(G 2) + p(G 3) + . . . 
+0 + 0 + 0 + . . .= | {z } 
+once for each integer 
+= 0 
+ Suppose r &gt; 0. By Countable Additivity: 
+p(G 1 or G2 or G3 or . . .) = p(G 1) + p(G 2) + p(G 3) + . . . 
+r + r + r + . . .= | {z } 
+once for each integer 
+=  
+Moral: Countable Additivity entails that there is no way of distributing 
+probability uniformly across a countably innite set of (mutually exclusive 
+and jointly exhaustive) propositions. 
+1</text>
+        </slide>
+      </slides>
+      <videos/>
+    </lecture>
+    <lecture>
+      <lecture_title>The Ordinals (Part I) (PDF)</lecture_title>
+      <lecture_pdf_url>https://ocw.mit.edu/courses/24-118-paradox-and-infinity-spring-2019/resources/mit24_118s19_lecnote3/</lecture_pdf_url>
+      <lectureno>3</lectureno>
+      <slides>
+        <slide>
+          <slideno>2</slideno>
+          <text>MIT OpenCourseWare 
+https://ocw.mit.edu/ 
+24.118 Paradox and Infinity 
+Spring 2019 
+For information about citing these materials or our Terms of Use, visit: https://ocw.mit.edu/terms .</text>
+        </slide>
+        <slide>
+          <slideno>1</slideno>
+          <text>6 The Ordinals 
+ordinal name of ordinal well-order type represented 
+{} 0 
+{0} 00 |
+{0, 00} 000 ||
+{0, 00 , 000} 0000 |||
+. . . . . . 
+{0, 00 , 000 , 0000 , . . . }  ||||| . . . 
+{0, 00 , 000 , 0000 , . . . ,  } 0 ||||| . . . |
+{0, 00 , 000 , 0000 , . . . , , 0} 00 ||||| . . . ||
+. . . . . . . . . 
+7 Constructing the Ordinals 
+Construction Principle At each stage, we introduce a new ordinal, namely: 
+the set of all ordinals that have been introduced at previous stages. 
+Open-Endedness Principle However many stages have occurred, there is 
+always a next stage, that is, a rst stage after every stage considered 
+so far. 
+It is important to interpret the Open-Endedness Principle as entailing that there is 
+no such thing as all stagesand therefore deliver the result that there is no such thing 
+as all ordinals. 
+2</text>
+        </slide>
+        <slide>
+          <slideno>0</slideno>
+          <text>The Ordinals 
+1 How Well Get to the Ordinals 
+Ordering  Total Ordering  Well-Ordering  Well-Order Type  Ordinal 
+2 Orderings 
+Think of x &lt; y as meaning x precedes y. We say that &lt; is an ordering 
+on set A if and only if for any a, b, c  A: 
+Asymmetry If a &lt; b , then not-(b &lt; a). 
+Transitivity If a &lt; b and b &lt; c, then a &lt; c. 
+3 Total Orderings 
+A total ordering &lt; on A is an ordering on A such that for any distinct 
+elements a, b of A: 
+Totality a &lt; b or b &lt; a 
+4 Well-Orderings 
+A well-ordering &lt; of A is a total ordering on A such that: 
+Well-Ordering Every non-empty subset S of A has a &lt;-smallest member. 
+5 Well-order types 
+The orderings &lt;1 and &lt;2 are of the same type if they are isomorphic. 
+Let &lt;1 be an ordering on A and &lt;2 be an ordering on B. Then &lt;1 is isomorphic 
+to &lt;2 if and only if there is a bijection f from A to B such that, for every x and y in A, 
+x &lt; 1 y if and only if f(x) &lt;2 f(y). 
+1</text>
+        </slide>
+      </slides>
+      <videos/>
+    </lecture>
+  </lectures>
+</doc>

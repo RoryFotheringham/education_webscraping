@@ -1,0 +1,2017 @@
+<doc>
+  <source>MIT</source>
+  <date>28/01/2023</date>
+  <course>
+    <course_url>https://ocw.mit.edu/courses/14-126-game-theory-spring-2016/</course_url>
+    <course_title>Game Theory</course_title>
+    <course_tags>
+      <list>Economics </list>
+      <list>Social Science </list>
+      <list>Game Theory</list>
+    </course_tags>
+  </course>
+  <lectures>
+    <lecture>
+      <lecture_title>courses/14-126-game-theory-spring-2016/resources/mit14_126s16_supermodular</lecture_title>
+      <lecture_pdf_url>https://ocw.mit.edu/courses/14-126-game-theory-spring-2016/resources/mit14_126s16_supermodular/</lecture_pdf_url>
+      <lectureno>8</lectureno>
+      <slides>
+        <slide>
+          <slideno>16</slideno>
+          <text>Application: Auction Theory 
+/square6A firms value of winning an item at price p is U(p,t), 
+where t is the firms type. (Losing is normalized to 
+zero.) A bid of p wins with probability F(p). 
+/square6Question: Can we conclude that p(t) is 
+nondecreasing, without knowing F? 
+*
+F( )pt=argmax ( U,p)t(F)p
+p
+argmaxlog ( , Up )tlog() (F)p( ) =+
+p
+/square6Answer: Yes, if log( U (p,t)) is supermodular.   
+17</text>
+        </slide>
+        <slide>
+          <slideno>26</slideno>
+          <text>Proof 
+/square6bk(x
+27 ) is isotone and X is complete, so  limit z of bk(x) exists.  
+/square6By continuity of payoffs, its limit is a fixed point of b, and hence a 
+Nash equilibrium.  
+/square6xn  zn  xn  bnk(x) for some k, and hence xn is deleted during 
+iterated deletion of dominated strategies.</text>
+        </slide>
+        <slide>
+          <slideno>9</slideno>
+          <text>Not Sublattices 
+10</text>
+        </slide>
+        <slide>
+          <slideno>14</slideno>
+          <text>Proof of Monotonicity Theorem 
+/square6[t t, S  (t )  S  (t )  x*(t )  x*(t ), where x*(t )=argmaxxS(t)f(x,t)] 
+/square6  Suppose that f is supermodular
+and that xx*(t),xx*(t),tt.
+/square6  Then, ( xx)S(t),(xx)S(t)
+ So, f (x,t)f(xx,t) and f (x,t)f(xx,t). 
+/square6 If either inequality is strict then their sum contradicts 
+supermodularity:   
+fx(t,fx)( t, ) fx( +&gt; xt, fx)(+ xt, ) .
+15</text>
+        </slide>
+        <slide>
+          <slideno>5</slideno>
+          <text>Supermodularity 
+/square6(X,) is a complete lattice
+6  if for every non-empty subset S, a 
+greatest lower bound inf(S) and a least upper bound sup(S) 
+exist in X.  
+/square6A function f : X/barb2rightR is supermodular  if 
+/square6A function f is submodular  if f is supermodular.  
+/square6If X = R, then any f is supermodular.  () + +, ( )( )( )( )xy X f x f y f x y f x y</text>
+        </slide>
+        <slide>
+          <slideno>13</slideno>
+          <text>Monotonicity Theorem 
+/square6Theorem (
+14 Topkis ). Let f :XR /barb2rightR be a supermodular function 
+and define 
+ If t t and S (t )  S  (t ), then x*(t )  x*(t ).  
+/square6Corollary . Let f :XR /barb2rightR be a supermodular function and 
+suppose S (t) is a sublattice. Then, x* (t ) is a sublattice. 
+/square6Proof of Corollary*( )xtargmax ( f,x).t
+xS t()
+. Trivially, t t,  so S (t )  S (t ) and  x*  (t )  
+x*(t ).</text>
+        </slide>
+        <slide>
+          <slideno>17</slideno>
+          <text>Convergence in Lattices 
+/square6Consider a complete lattice (X, ). 
+/square6Want to define continuity for f : X  R. 
+Consider a topology on X in which 
+/boxshadowdwnFor any sequence (xm)m&gt;0 with xm  xm+1 m,  
+xm  inf { xm : m &gt; 0} = lim xm 
+/boxshadowdwnFor any sequence (xm)m&gt;0 with xm+1  xm m,  
+xm  sup { xm : m &gt; 0} = lim xm 
+/square6 f is continuous if for every monotone (xm),  
+f(lim xm) = lim f(xm).  
+18</text>
+        </slide>
+        <slide>
+          <slideno>6</slideno>
+          <text>Complementarity 
+/square6Complementarity/supermodularity has 
+equivalent characterizations:  
+/boxshadowdwnHigher marginal returns 
+ 
+/boxshadowdwnFor smooth objectives, non-negative 
+mixed second derivatives: 
+7 y  
+x  xy 
+xy    () ( ) ( ) ()f x yf xf yf x y
+2
+0 for 
+ijfijxx</text>
+        </slide>
+        <slide>
+          <slideno>2</slideno>
+          <text>Two Aspects of Complements 
+/square6Constraints  
+/boxshadowdwnActivities are complementary if doing one enables doing the 
+other 
+/boxshadowdwnor at least doesnt prevent doing the other. 
+/square6This condition is described by sets that are sublattices
+3 . 
+/square6Payoffs 
+/boxshadowdwnActivities are complementary if doing one makes it weakly more 
+profitable to do the other 
+/square6This is described by supermodular  payoffs. 
+/boxshadowdwnor at least doesnt change the other from being profitable to 
+being unprofitable 
+/square6This is described by payoffs satisfying a single crossing condition .</text>
+        </slide>
+        <slide>
+          <slideno>1</slideno>
+          <text>Road Map 
+/square6Definitions: lattices, set orders, supermodularity 
+/square6Optimization problems 
+/square6Games with Strategic Complements  
+/boxshadowdwnDominance and equilibrium 
+/boxshadowdwnComparative statics 
+2</text>
+        </slide>
+        <slide>
+          <slideno>7</slideno>
+          <text>Set order 
+/square6Given two subsets S,T X, S is as high as
+8  T, written ST, means   
+[xS &amp; yT]  [x  y  S  &amp;  x  y  T] 
+/square6A function x* is isotone  (or weakly increasing ) if  
+t  t  x*(t)  x*(t) 
+ 
+/square6A set S is a sublattice  if SS.</text>
+        </slide>
+        <slide>
+          <slideno>4</slideno>
+          <text>Lattices 
+/square6Given a partially ordered set
+5  (X,), define 
+/boxshadowdwn The join  
+/boxshadowdwn The meet  
+/square6(X,) is a lattice xy=infzX|zx,zy. {}
+xy=sup zX|zx,zy. {}
+ if it is closed under meet and join: 
+xy X x y () Xx y X ,,
+/square6Example: X = RN  
+xy  if x ,y iii 1 ,...,= N
+( )xy mi= n( ,x);yiii 1=i ,...,N
+( )xy ma= x( ,x);yi 1ii =,...,i N
+/square6X=2S with order given by inclusion; join=union, meet=intersection</text>
+        </slide>
+        <slide>
+          <slideno>10</slideno>
+          <text>Increasing differences 
+/square6Let f :RN/barb2rightR. f is pairwise supermodular  (or has increasing 
+differences) iff  
+/boxshadowdwnfor all nm and x , the restriction f (.,.,x ):R2
+-nm -nm/barb2rightR is 
+supermodular. 
+/square6Lemma: If f has increasing differences and xj  yj for each j, then  
+f(xi,x-i)  f(yi,x-i)  f(xi,y-i)  f(yi,y-i). 
+/square6Proof: 
+f(x x f x y  1,1)(1,1)
+=j&gt;1f(x1,x2,...,xj,yj+1,...,yn)f(x1,x2,...,xj1,yj,...,yn)
+j&gt;1f(y1,x2,...,xj,yj+1,...,yn)f(y1,x2,...,xj1,yj,...,yn)
+=f(y1,x1)f(y1,y1)
+11</text>
+        </slide>
+        <slide>
+          <slideno>23</slideno>
+          <text>Rationalizability &amp; Equilibrium 
+/square6Theorem
+24  (Milgrom &amp; Roberts): The smallest 
+rationalizable strategies for the players are given by 
+ Similarly the largest rationalizable strategies for the 
+players are given by  
+ 
+ Both are Nash equilibrium profiles. 
+ 
+/square6Corollary: there exist pure strategy Nash equilibria z 
+and z s.t. 
+/boxshadowdwnFor each rationalizable x, z  x  z . 
+/boxshadowdwnFor each Nash equilibrium x, z  x  z . =lim ( )k
+kzb x
+=lim ( )k
+kzB x</text>
+        </slide>
+        <slide>
+          <slideno>21</slideno>
+          <text>Linear Cournot Duopoly 
+/square6  
+Inverse demand: P (x)=Ax1x2
+Un(x)=xnP(x)Cn(xn)
+Un
+xm
+/square6Linear Cournot duopoly (but not more general oligopoly) is 
+supermodular if one players strategy set is given the reverse of 
+its usual order.  
+22 =xn</text>
+        </slide>
+        <slide>
+          <slideno>22</slideno>
+          <text>Analysis of Supermodular Games 
+/square6Extremal best response functions 
+ 
+/boxshadowdwnBy Topkiss Theorem, these are isotone functions.  
+/square6Lemma
+23 :  
+/square6Proof .  ()
+()
+ =
+ =( ) max argmax ( , )
+( ) min argmax ( , )nn
+nnnn n nxX
+nn n nxXBx Uxx
+bx Uxx
+[] (xb )nn xxn is strictly dominated by ( b)nxxn []
+If (xb )nn xthen [] , 
+Un(xnbn(x),xn)Un(xn,xn)Un(bn(x),xn)Un(xnbn(x),xn)  &gt; 0 
+Supermodularity + 
+increasing differences</text>
+        </slide>
+        <slide>
+          <slideno>19</slideno>
+          <text>Formulation 
+A supermodular game (N,X,u) 
+/square6N players (infinite is okay) 
+/square6Strategy sets (Xn , n) are complete lattices 
+/boxshadowdwn  
+/square6Payoff functions Un(x) are 
+/boxshadowdwncontinuous 
+/boxshadowdwnsupermodular in own strategy and has increasing 
+differences with others strategies  
+ 
+20 ==min , maxnn n nxX x X
+n()xn,xnXn() xnxnXn ()
+Un(x)+Un(x)Un(xx)+Un(xx)</text>
+        </slide>
+        <slide>
+          <slideno>20</slideno>
+          <text>Differentiated Bertrand Oligopoly 
+/square6Linear/supermodular oligopoly   
+()
+21 Demand: ( ) Qx A= a x+jnbnn xjj
+Profit: ( ) Ux x c=nn (Q )n xn
+Un(bxmn )cn w = hich is increasing in xnxm</text>
+        </slide>
+        <slide>
+          <slideno>29</slideno>
+          <text>Monotone supermodular games 
+/square6G = (N,T,A,u,p) 
+/square6T = TM
+0  T1    Tn ( R ) 
+/square6AK
+i compact sublattice of R  
+/square6ui : A  T  R 
+/boxshadowdwnui(a,.): T  R is measurable 
+/boxshadowdwnui(. ,t): A  R is continuous, bounded, supermodular in ai, has 
+increasing differences in a and in ( ai,t) 
+/square6p(.|ti) is increasing function of tiin the sense of 1st-order 
+stochastic dominance (e.g. p is affiliated). 
+/square6Theorem: There exist BNE s* and s** such that 
+/boxshadowdwnFor each BNE s, s*  s  s**. 
+/boxshadowdwnBoth s* and s** are isotone. 
+ 
+30</text>
+        </slide>
+        <slide>
+          <slideno>18</slideno>
+          <text>Supermodular Games 
+19</text>
+        </slide>
+        <slide>
+          <slideno>24</slideno>
+          <text>Partnership Game 
+/square6Two players; employer (E) and worker (W) 
+/square6E and W provide K and L, resp.   
+ /square6Output: f(K,L) = K L , 0 &lt; ,,+ &lt; 1. 
+/square6Payoffs of E and W:  
+f(K,L)/2  K, f(K,L)/2  L.  
+ 
+25</text>
+        </slide>
+        <slide>
+          <slideno>0</slideno>
+          <text>Supermodularity 
+14. 126 Game Theory 
+Muhamet Yildiz  
+Based on Lectures by Paul Milgrom 
+1</text>
+        </slide>
+        <slide>
+          <slideno>15</slideno>
+          <text>Application: Pricing Decisions 
+/square6A monopolist facing demand D  (p,t) produces at unit cost 
+c.  
+p*(c,t) = argmaxp (p  c )D(p,t) 
+        = argmaxp log(p  c ) + log(D(p,t)) 
+/square6p*(c,t  ) is always isotone in c.  
+/square6*p(c,t  ) is isotone in t if log( D (p,t)) is supermodular in (p,t), 
+/boxshadowdwn i.e. supermodular in (log(p),t),  
+/boxshadowdwni.e. increases in t make demand less elastic:   
+logD(p,t)
+log(p)
+16  nondecreasing in t</text>
+        </slide>
+        <slide>
+          <slideno>25</slideno>
+          <text>26 Rationalizable 
+L K 
+K* L* K L*
+K*K*</text>
+        </slide>
+        <slide>
+          <slideno>27</slideno>
+          <text>Comparative Statics 
+/square6Theorem
+28 . (Milgrom &amp; Roberts) Consider a family of 
+supermodular games with payoffs parameterized by t. 
+Suppose that for all n, x-n, Un(xn,x-n;t) is supermodular in ( xn,t). 
+Then 
+/square6Proof . By Topkiss theorem, bt(x) is isotone in t. Hence, if t &gt;t,  
+ 
+ 
+ and similarly for   .  ( ), ( ) are isotone.zt zt
+
+ 
+ =() ()
+( ) lim ( ) lim ( ) ( )kk
+tt
+kk
+ttkkbx bx
+z t bx bx z t
+z</text>
+        </slide>
+        <slide>
+          <slideno>30</slideno>
+          <text>MIT OpenCourseWare
+https://ocw.mit.edu
+14.126 Game Theory
+Spring 2016
+For information about citing these materials or our Terms of Use, visit: https://ocw.mit.edu/terms .</text>
+        </slide>
+        <slide>
+          <slideno>3</slideno>
+          <text>Example Diamond search model 
+/square6A continuum of players 
+/square6Each i puts effort ai, costing 
+a2
+i/2;  
+/square6Pr i finds a match = aig(a
+4 ), 
+/boxshadowdwn a is average effort of others 
+/square6The payoff from match is . 
+Ui(a) = aig(a)  ai2/2 
+/square6Strategic complementarity: 
+BR(a-i) = g(a ) 
+a BR(a-i) 
+g(a)  &gt; /nonmarkingreturn</text>
+        </slide>
+        <slide>
+          <slideno>28</slideno>
+          <text>Example  partnership game 
+/square6f(K,L) = tKL, 
+29 L K* L* t &gt; t</text>
+        </slide>
+        <slide>
+          <slideno>8</slideno>
+          <text>Sublattices of R2 
+9</text>
+        </slide>
+        <slide>
+          <slideno>12</slideno>
+          <text>Supermodularity in product spaces 
+/square6Let X = X1 X2   Xn, f : X  R.  
+/square6Then, f is supermodular iff  
+/boxshadowdwnFor each i, the restriction of f to Xi is supermodular 
+/boxshadowdwnf has increasing differences. 
+13</text>
+        </slide>
+        <slide>
+          <slideno>11</slideno>
+          <text>Pairwise Supermodular = Supermodular 
+/square6Theorem
+12  (Topkis). Let f :RN/barb2rightR. Then, f is supermodular  if and only if 
+f is pairwise supermodular . 
+/square6Proof: 
+/square6 by definition. 
+/square6 Given x,y,  
+f(xy)f(y)
+=f xi(1y1,...,xiyi,yi+1,...,yn)f(x1y1,...,xi1yi1,yi,...,yn)
+=f(x1y1,...,xi1yi1,xi,yi+1,...,yn)f(x1iy1,...,xi1yi1,xiyi,yi+1,...,yn)
+if(x1,...,xi1,xi,xi+1yi+1,...,xnyn)f(x1,...,xi1,xiyi,xi+1yi+1,...,xnyn)
+=f(x)f(xy)</text>
+        </slide>
+      </slides>
+      <videos/>
+    </lecture>
+    <lecture>
+      <lecture_title>courses/14-126-game-theory-spring-2016/resources/mit14_126s16_extensive</lecture_title>
+      <lecture_pdf_url>https://ocw.mit.edu/courses/14-126-game-theory-spring-2016/resources/mit14_126s16_extensive/</lecture_pdf_url>
+      <lectureno>2</lectureno>
+      <slides>
+        <slide>
+          <slideno>0</slideno>
+          <text>Extensive Form Games
+Mihai Manea
+MIT</text>
+        </slide>
+        <slide>
+          <slideno>10</slideno>
+          <text>Perfect Recall
+No player forgets any information he once had or actions he previously
+chose.
+IIfx002h(x0);x&gt;x0, and the same player imo ves at both xandx0
+(and thus at x00), then there exists x^2h(x)(possibly x^=x) s.t.
+x^&gt;x00and the action taken at xalong the path to x0is the same as
+the action taken at x^along the path to x00.
+Ix0andx00distinguished by information idoes not have, so he cannot
+have had it at h(x)
+Ix0andx00consistent with the same action at h(x)since imust
+remember his action there
+IEquivalently, every node in h2Himust be reached via the same
+sequence of is actions.
+Mihai Manea (MIT) Extensive-Form Games March 2, 2016 11 / 33</text>
+        </slide>
+        <slide>
+          <slideno>3</slideno>
+          <text>Information Partition
+Iinformation partition: a partition of XnZ
+Inode xbelongs to information set h(x)
+Iplayer i(h)2Nmoves at every node xin information set h
+Ii(h)knows that he is at some node of hb ut does not know which one
+Isame player moves at all x2h, otherwise players might disagree on
+whose turn it is
+Ii(x) := i(h(x))
+Mihai Manea (MIT) Extensive-Form Games March 2, 2016 4 / 33</text>
+        </slide>
+        <slide>
+          <slideno>18</slideno>
+          <text>Survivor
+THAI 21
+ITwo players face off in front of 21 ags.
+IPlayers alternate in picking 1, 2, or 3 ags at a time.
+IThe player who successfully grabs the last ag wins.
+Game of luck?
+Mihai Manea (MIT) Extensive-Form Games March 2, 2016 19 / 33</text>
+        </slide>
+        <slide>
+          <slideno>19</slideno>
+          <text>Backward Induction
+IAn extensive form game has perfect information if all information sets
+are singletons.
+ICan solve games with perfect information using backward induction.
+IFinite game! 9 penultimate nodes (successors are terminal nodes).
+IThe player moving at each penultimate node chooses an action that
+maximizes his payoff.
+IPlayers at nodes whose successors are penultimate/terminal choose
+an optimal action given play at penultimate nodes.
+IWork backwards to initial node. . .
+Theorem 2 (Zermelo 1913; Kuhn 1953)
+In a nite extensive form game of perfect information, the outcome(s) of
+backward induction constitutes a pure-strategy Nash equilibrium.
+Mihai Manea (MIT) Extensive-Form Games March 2, 2016 20 / 33</text>
+        </slide>
+        <slide>
+          <slideno>33</slideno>
+          <text>MIT OpenCourseWare
+https://ocw.mit.edu
+14.126 Game Theory
+Spring 2016
+For information about citing these materials or our Terms of Use, visit: https://ocw.mit.edu/terms .</text>
+        </slide>
+        <slide>
+          <slideno>1</slideno>
+          <text>Extensive-Form Games
+IN: nite set of players; nature is player 0 2N
+Itree: order
+of moves
+Ipayoffs for every player at the terminal nodes
+Iinformation partition
+Iactions available at every information set
+Idescription of how actions lead to progress in the tree
+Irandom moves by nature
+Mihai Manea (MIT) Extensive-Form Games March 2, 2016 2 / 33Courtesy of The MIT Press. Used with permission.</text>
+        </slide>
+        <slide>
+          <slideno>24</slideno>
+          <text>Subgame Perfection
+IBackward induction solution is more than a Nash equilibrium.
+IActions are optimal given others playand form an
+equilibriumstarting at anyintermediate node: subgame
+perfection. . . rules out non-credible threats.
+ISubgame perfection extends backward induction to imperfect
+information games.
+IReplace smallest subgames with a Nash equilibrium and iterate on
+the reduced tree (if there are multiple Nash equilibria in a subgame,
+all players expect same play).
+Mihai Manea (MIT) Extensive-Form Games March 2, 2016 25 / 33</text>
+        </slide>
+        <slide>
+          <slideno>26</slideno>
+          <text>False Subgames
+Mihai Manea (MIT) Extensive-Form GamesCourtesy of The MIT Press. Used with permission.
+March 2, 2016 27 / 33</text>
+        </slide>
+        <slide>
+          <slideno>23</slideno>
+          <text>Chess Players and Backward Induction
+Palacios-Huerta and Volij (2009)
+Ichess players and college students behave differently in the
+centipede game.
+IHigher-ranked chess players end the game earlier.
+IAll Grandmasters in the experiment stopped at the rst opportunity.
+IChess players are familiar with backward induction reasoning and
+need less learning to reach the equilibrium.
+IPlaying against non-chess-players, even chess players continue in
+the game longer.
+IIn long games, common knowledge of the ability to do complicated
+inductive reasoning becomes important for the prediction.
+Mihai Manea (MIT) Extensive-Form Games March 2, 2016 24 / 33</text>
+        </slide>
+        <slide>
+          <slideno>6</slideno>
+          <text>Strategic Form
+IThestrategic form representation of the extensive form game is the
+normal form game dened by (N;S;u)
+IA mixed strategy prole is a Nash equilibrium of the extensive form
+game if it constitutes a Nash equilibrium of its strategic form.
+Mihai Manea (MIT) Extensive-Form Games March 2, 2016 7 / 33</text>
+        </slide>
+        <slide>
+          <slideno>22</slideno>
+          <text>Centipede Game
+IPlayer 1 has two piles in front of her: one contains 3 coins, the other
+1.
+IPlayer 1 can either take the larger pile and give the smaller one to
+player 2 (T ) or push both piles across the table to player 2 (C ).
+IEvery time the piles pass across the table, one coin is added to each.
+IPlayers alternate in choosing whether to take the larger pile (T ) or
+trust opponent with bigger piles (C ).
+IThe game lasts 100 rounds.
+Whats the backward induction solution?
+T T T T TC C C C C 1 1 1 2 2 2
+(3;1) (2; 4) (5; 3) (101; 99) (100; 102)(103; 101)
+Mihai Manea (MIT) Extensive-Form Games March 2, 2016 23 / 33</text>
+        </slide>
+        <slide>
+          <slideno>25</slideno>
+          <text>Subgames
+Subgame: part of a game that can be analyzed separately; strategically
+and informationally independent. . . information sets not chopped up.
+Denition 1
+Asubgame Gof an extensive form game Tconsists of a single node x
+andallits successors in T, with the property that if x02Gandx002h(x0)
+then x002G. The information sets, actions and payoffs in the subgame are
+inherited from T.
+Mihai Manea (MIT) Extensive-Form Games March 2, 2016 26 / 33</text>
+        </slide>
+      </slides>
+      <videos/>
+    </lecture>
+    <lecture>
+      <lecture_title>courses/14-126-game-theory-spring-2016/resources/mit14_126s16_globalgames</lecture_title>
+      <lecture_pdf_url>https://ocw.mit.edu/courses/14-126-game-theory-spring-2016/resources/mit14_126s16_globalgames/</lecture_pdf_url>
+      <lectureno>7</lectureno>
+      <slides>
+        <slide>
+          <slideno>2</slideno>
+          <text>A partnership game 
+Invest Not-Invest
+Invest /g84/g15/g84/g3 /g84/g3/g16/g20/g15/g3/g19/g3
+Not-Invest /g19/g15/g84/g16/g20/g3 /g19/g15/g19/g3
+3</text>
+        </slide>
+        <slide>
+          <slideno>5</slideno>
+          <text>/g84 is common knowledge 
+/g19/g3/g31/g3/g84 &lt; 1
+Invest Not-Invest
+Invest /g84/g15/g84/g3 /g84/g3/g16/g20/g15/g3/g19/g3
+Not-Invest /g19/g15/g84/g16/g20/g3 /g19/g15/g19/g3Multiple Equilibria 
+6</text>
+        </slide>
+        <slide>
+          <slideno>3</slideno>
+          <text>/g84 is common knowledge 
+/g84&lt; 0
+Invest Not-Invest
+Invest /g84/g15/g84/g3 /g84/g3/g16/g20/g15/g3/g19/g3
+Not-Invest /g19/g15/g84/g16/g20/g3 /g19/g15/g19/g3/g84/g16/g20/g15/g3/g19
+/g19/g15/g84/g16/g20/g84/g15/g84Invest
+4</text>
+        </slide>
+        <slide>
+          <slideno>22</slideno>
+          <text>MIT OpenCourseWare
+https://ocw.mit.edu
+14.126 Game Theory
+Spring 2016
+For information about citing these materials or our Terms of Use, visit: https://ocw.mit.edu/terms .</text>
+        </slide>
+        <slide>
+          <slideno>14</slideno>
+          <text>Risk-dominance 
+/g132In a 2 x 2 symmetric game,  a strategy is said to be 
+risk dominant iff it is a best reply when the other 
+player plays each strategy wi th equal probabilities.
+Invest Not-Invest
+Invest /g84/g15/g84/g3 /g84/g3/g16/g20/g15/g3/g19/g3 Invest is RD iff
+/g19/g17/g24/g84/g3/g14/g3/g19/g17/g24/g11/g84/g16/g20/g12/g3/g33/g3/g19/g3
+Not-Invest /g19/g15/g84/g16/g20/g3 /g19/g15/g19/g3/g217/g84/g3/g33/g3/g20/g18/g21/g3
+Players play according to risk dominance
+15</text>
+        </slide>
+        <slide>
+          <slideno>11</slideno>
+          <text>Monotone BNE 
+/g132Best response
+Invest iff xi/g116Pr(sj= Not-Invest| xi)
+/g132Assume supp( /g84) = [ a,b] where a&lt; 0 &lt; 1 &lt; b.
+/g132xi&lt; 0 /g159si(xi) = Not Invest
+/g132xi&gt; 1 /g159si(xi) = Invest
+/g132A cutoff xi* s.t.
+/g137xi&lt;xi*/g159si(xi) = Not Invest; xi&gt;xi*/g159si(xi) =  Invest 
+/g132Symmetry: x1* = x2* = x*
+/g132x*=P r ( sj= Not-Invest|x*) = Pr( xj&lt;x*|xi=x*) = 1/2 
+/g132Unique BNE
+12</text>
+        </slide>
+        <slide>
+          <slideno>0</slideno>
+          <text>Global Games 
+14.126 Game Theory
+Muhamet Yildiz
+1</text>
+        </slide>
+        <slide>
+          <slideno>6</slideno>
+          <text>/g84 is common knowledge 
+Not-InvestMultipleInvest
+Equilibria
+/g84/g3
+7</text>
+        </slide>
+        <slide>
+          <slideno>1</slideno>
+          <text>Motivation 
+/g132Multiple equilibria exist in settings with 
+strategic complementarities
+/g137Investment/Development
+/g137Search
+/g137Bank runs
+/g137Currency attacks
+/g132Global Games: introducing a certain type of incomplete information leads to a unique equilibrium prediction. 
+2</text>
+        </slide>
+        <slide>
+          <slideno>17</slideno>
+          <text>Dominance, risk-dominance regions 
+/g132Dominance region 
+Da
+i={(u,v )| ga
+i&gt;0, gb
+i&lt;0}
+/g132Risk-dominance region
+Ra={(u,v )| ga
+1&gt;0,ga
+2&gt;0; gb
+1,gb
+2&gt;0/g159s1+s2&lt; 1}
+18</text>
+        </slide>
+        <slide>
+          <slideno>10</slideno>
+          <text>Payoffs 
+/g132Invest &gt; Not-Invest
+/g132Ui(ai,aj,/g84/g15x) is 
+supermodular.
+/g132Monotone supermodular
+/g132There exist greatest and 
+smallest rationalizablestrategies, which are
+/g137Bayesian Nash Equilibria
+/g137Monotone (isotone)Invest Not-Inv
+Invest /g84/g3 /g84-1
+Not-Inv 0 0
+11</text>
+        </slide>
+        <slide>
+          <slideno>16</slideno>
+          <text>Risk Dominance 
+/g132Suppose that (A,A) and AB(B,B) are NE.
+A u11,v11u12,v /g13212(A,A) is risk dominant if
+(u11-u21)(v-u21,v11v12)
+B21u22,v22 /g190(u22-u12)(v22-v21)
+/g190Affine transformation: ga
+1... 
+/g132(A,A) risk dominant if
+ga 
+1ga
+2&gt;gb 
+1gb
+2
+/g132i is indifferent against sj; 
+(A,A) risk dominant if
+s1+s2&lt; 1AB
+A ga
+1, ga
+2 0,0
+0,0B gb
+1, gb
+2
+17</text>
+        </slide>
+        <slide>
+          <slideno>7</slideno>
+          <text>/g84 is not common knowledge 
+/g132/g84is uniformly distributed over a large interval
+/g132Each player igets a signal
+xi=/g84+/g72/g75i
+/g137(/g751,/g752) is bounded
+/g137Independent of /g84
+/g137iid with continuous F (common knowledge)
+/g137E[/g75i] = 0
+8</text>
+        </slide>
+        <slide>
+          <slideno>19</slideno>
+          <text>Theorem 
+/g132Suppose that
+/g137xis on a continuous curve C /g142/g52
+/g137(u(c),v(c))/g143Rafor each c /g143C
+/g137(u(c),v(c))/g143Dafor some c/g143C.
+/g132Then A is the only rationalizable action at x
+when /g72is small.
+20</text>
+        </slide>
+        <slide>
+          <slideno>12</slideno>
+          <text>Questions 
+/g132What is the smallest BNE?
+/g132What is the largest BNE?
+/g132Which strategies are rationalizable?
+/g132Compute directly.
+13</text>
+        </slide>
+        <slide>
+          <slideno>8</slideno>
+          <text>Recall: Monotone supermodular games 
+/g132G= (N,T,A,u,p)
+/g132T=T0/g117T1/g117/g117Tn(/g142RM)
+/g132AK
+icompact sublattice of R
+/g132ui:A/g117T/g314/g3/g53
+/g137ui(a,.): T/g314/g3/g53/g3/g76/g86/g3/g80/g72/g68/g86/g88/g85/g68/g69/g79/g72
+/g137ui(. ,t): A/g314/g3/g53/g3/g76/g86/g3/g70/g82/g81/g87/g76/g81/g88/g82/g88/g86/g15/g3/g179/g69/g82/g88/g81/g71/g72/g71/g180/g15/g3supermodular in ai,
+has increasing differences in aand in (ai,t)
+/g132p(.|ti)is increasing function of tiin the sense of 1st-order 
+stochastic dominance (e.g. pis affiliated).
+/g132Theorem: There exist BNE s*ands**such that
+/g137For each BNE s,s*/g116s/g116s**.
+/g137Both s*ands**are isotone.
+9 
+9</text>
+        </slide>
+        <slide>
+          <slideno>18</slideno>
+          <text>Model 
+/g132/g52/g3/g142Rmis open; ( u,v) are continuously differentiable 
+functions of /g84w/ bounded derivatives; 
+/g132prior on /g84has a density hwhich is strictly positive, 
+continuously differentiable, bounded.
+/g132Each player iobserves a signal
+xi=/g84+/g72/g75i
+/g137(/g751,/g752) is bounded, 
+/g137Independent of /g84,
+/g137Admits a continuous density
+19</text>
+        </slide>
+        <slide>
+          <slideno>9</slideno>
+          <text>Conditional Beliefs given xi 
+/g84/g3/g32dxi/g72/g75i
+/g132i.e. Pr( /g84/g3/g148/g3/g84/g99/g95xi) = 1- F((xi-/g3/g84/g99)//g72):=G(/g84/g99/g3/g95xi)
+xj/g32dxi+/g72/g11/g75j-/g75i)
+/g132Pr(xj/g3/g148/g3xj/g99/g95xi) = Pr(/g72(/g75j/g75i)/g148/g3xj/g99ix)
+/g132Pr(/g84/g3/g148/g84/g99/g15xj/g148xj/g99/g95xi)=
+/g15161 /g1832({/g84 /g3000/g84/g99(}xj/g99/g3398/g84)//g2013)/g1856/g1833(/g2016|/g1876 /g3036)decreasing in xi
+because integrand decreasing in /g84andG(/g152/g95xi)
+FOSD G(/g152/g95xi/g99) whenever xi/g149/g3xi/g99
+/g99/g132E[/g84|xi] = xi
+10</text>
+        </slide>
+        <slide>
+          <slideno>4</slideno>
+          <text>/g84 is common knowledge 
+/g84&gt; 1
+Invest NotInvest
+Invest /g84/g15/g84/g3 /g84/g3/g16/g20/g15/g3/g19/g3
+NotInvest /g19/g15/g84/g16/g20/g3 /g19/g15/g19/g3/g19/g15/g84/g16/g20 /g19/g15/g19NotInvest
+/g84/g16/g20/g15/g3/g19
+5</text>
+        </slide>
+        <slide>
+          <slideno>20</slideno>
+          <text>Public Information 
+/g132/g84~ N(y,/g872) and /g72/g75i~ N(0,/g862)
+/g132Given xi, 
+/g84~ N(rx2
+i+(1-r)y, /g86r)
+xj~ N(rxi+(1-r)y, /g862(r+1))
+r = /g872/(/g862+/g872)
+/g132(Monotone supermodularity) monotone symmetric NE w/cutoff xc:
+/g132Unique monotone NE (and rati onalizable strategy) if 
+is increasing in xcwhenever zero, i.e., 
+/g86/g21&lt; 2/g83/g874(r+1)rc
+c /g167(1/g16)(x/g16y)/g183rx/g14(1/g16r)y/g32Pr(xc
+j/g100x|x/g32xc
+i )/g32 /g41/g168 /g184/g168 /g184/g169/g86r/g141/g185
+rxc/g14(1/g16r)y/g16Pr(xc|c
+j/g100x xi/g32x)
+21</text>
+        </slide>
+        <slide>
+          <slideno>21</slideno>
+          <text>Courtesy of Stephen Morris and Hyun Song Shin. Used with permission.
+22</text>
+        </slide>
+        <slide>
+          <slideno>13</slideno>
+          <text>/g84 is not common knowledge 
+but the noise is very small 
+It is very likely that
+Not-InvestInvest
+/g84/g3
+1/2
+14</text>
+        </slide>
+        <slide>
+          <slideno>15</slideno>
+          <text>Carlsson &amp; van Damme 
+16</text>
+        </slide>
+      </slides>
+      <videos/>
+    </lecture>
+    <lecture>
+      <lecture_title>courses/14-126-game-theory-spring-2016/resources/mit14_126s16_bayesian</lecture_title>
+      <lecture_pdf_url>https://ocw.mit.edu/courses/14-126-game-theory-spring-2016/resources/mit14_126s16_bayesian/</lecture_pdf_url>
+      <lectureno>1</lectureno>
+      <slides>
+        <slide>
+          <slideno>30</slideno>
+          <text>MIT OpenCourseWare
+https://ocw.mit.edu
+14.126 Game Theory
+Spring 2016
+For information about citing these materials or our Terms of Use, visit: https://ocw.mit.edu/terms .</text>
+        </slide>
+        <slide>
+          <slideno>27</slideno>
+          <text>Comments
+IIn a game of complete information, every rationalizable strategy is
+sensitive to common-knowledge assumptions whenever there are
+multiple rationalizable strategies.
+IICR does not have a proper renement that is upper-hemicontinuous
+with respect to belief hierarchies.
+IICR provides the only robust prediction with respect to higher order
+beliefs. It characterizes the predictions that may be veried by a
+researcher who can observe arbitrarily precise noisy signals about
+arbitrarily high but nite orders of beliefs.
+Mihai Manea (MIT) Bayesian Games June 27, 2016 28 / 30</text>
+        </slide>
+        <slide>
+          <slideno>0</slideno>
+          <text>Bayesian Games
+Mihai Manea
+MIT
+Partly based on lecture notes by Muhamet Yildiz.</text>
+        </slide>
+      </slides>
+      <videos/>
+    </lecture>
+    <lecture>
+      <lecture_title>courses/14-126-game-theory-spring-2016/resources/mit14_126s16_noncoop</lecture_title>
+      <lecture_pdf_url>https://ocw.mit.edu/courses/14-126-game-theory-spring-2016/resources/mit14_126s16_noncoop/</lecture_pdf_url>
+      <lectureno>10</lectureno>
+      <slides>
+        <slide>
+          <slideno>100</slideno>
+          <text>MIT OpenCourseWare
+https://ocw.mit.edu
+14.126 Game Theory
+Spring 2016
+For information about citing these materials or our Terms of Use, visit: https://ocw.mit.edu/terms .</text>
+        </slide>
+      </slides>
+      <videos/>
+    </lecture>
+    <lecture>
+      <lecture_title>courses/14-126-game-theory-spring-2016/resources/mit14_126s16_gametheory</lecture_title>
+      <lecture_pdf_url>https://ocw.mit.edu/courses/14-126-game-theory-spring-2016/resources/mit14_126s16_gametheory/</lecture_pdf_url>
+      <lectureno>0</lectureno>
+      <slides>
+        <slide>
+          <slideno>69</slideno>
+          <text>MIT OpenCourseWare
+https://ocw.mit.edu
+14.126 Game Theory
+Spring 2016
+For information about citing these materials or our Terms of Use, visit: https://ocw.mit.edu/terms .</text>
+        </slide>
+        <slide>
+          <slideno>14</slideno>
+          <text>Keynesian Beauty Contest
+Keynes described the action of rational actors in a market using an
+analogy based on a newspaper contest. Entrants are asked to choose a
+set of 6 faces from photographs that they nd most beautiful. Those who
+picked the most popular face are eligible for a prize.
+Anaive strategy would be to choose the 6 faces that, in the opinion of the
+entrant, are most beautiful. A more sophisticated contest entrant, wishing
+to maximize the chances of winning against naive opponents, would guess
+which faces the majority nds attractive, and then make a selection based
+on this inference.
+This can be carried one step further to account for the fact that other
+entrants would each have their own opinions of what public perceptions of
+beauty are. What does everyone believe about what everyone else
+believes about whom others nd attractive?
+Mihai Manea (MIT) Game Theory February 17, 2016 15 / 69</text>
+        </slide>
+        <slide>
+          <slideno>1</slideno>
+          <text>What is Game Theory?
+Game Theory is the formal study of strategic interaction.
+In a strategic setting the actions of several agents areinterdependent.
+Each agents outcome depends not only on his actions, but also on the
+actions of other agents. How to predict opponents play and respond
+optimally?
+Everything is a game. . .
+Ipoker, chess, soccer, driving, dating, stock market
+Iadvertising, setting prices, entering new markets, building a reputation
+Ibargaining, partnerships, job market search and screening
+Idesigning contracts, auctions, insurance, environmental regulations
+Iinternational relations, trade agreements, electoral campaigns
+Most modern economic research includes game theoretical elements.
+Eleven game theorists have won the economics Nobel Prize so far.
+Mihai Manea (MIT) Game Theory February 17, 2016 2 / 69</text>
+        </slide>
+        <slide>
+          <slideno>19</slideno>
+          <text>The Story of the Unfaithful Wives
+IA village with 100 married couples and a high priest.
+IThe men had to pass a logic exam before being allowed to marry.
+IIt is common knowledge that the high priest is truthful.
+IThe men would gossip about adulterous relationships and each
+knows which of the other wives are unfaithful.
+INo one would ever inform a husband about his cheating wife.
+IThe high priest knows that some wives are unfaithful and decides that
+such immorality should no longer be tolerated.
+Mihai Manea (MIT) Game Theory February 17, 2016 20 / 69</text>
+        </slide>
+        <slide>
+          <slideno>51</slideno>
+          <text>Shapley (1964) Cycling
+L M R
+U0;04;55;4
+M 5;40;0; 4;5
+D4;55;40;0
+Mihai Manea (MIT) Game Theory February 17, 2016 52 / 69</text>
+        </slide>
+        <slide>
+          <slideno>18</slideno>
+          <text>Detour on Common Knowledge
+IIs common knowledge a sensible assumption? What does the
+denition of S100
+ientail?
+IHigher order beliefs, common knowledge of rationality. . .
+IWhy did the strategy of choosing 1 not win in the beauty contest?
+Mihai Manea (MIT) Game Theory February 17, 2016 19 / 69</text>
+        </slide>
+        <slide>
+          <slideno>57</slideno>
+          <text>Existence of Nash Equilibria
+Prove the existence of Nash equilibria in a more general setting.
+IContinuity and compactness assumptions are indispensable, usually
+needed for the existence of solutions to optimization problems.
+IConvexity is usually required for xed-point theorems.
+Need some topology prerequisites. . .
+Mihai Manea (MIT) Game Theory February 17, 2016 58 / 69</text>
+        </slide>
+        <slide>
+          <slideno>46</slideno>
+          <text>Stag Hunt
+Each player can choose to hunt hare by himself or hunt stag with the
+other. Stag offers a higher payoff, but only if players team up.
+S H
+S 9;90;8
+H 8;07;7
+The game has two pure strategy Nash equilibria(S ;S)and (H;H)and
+a mixed strategy Nash equilibrium(7=8S +1=8H;7=8S +1=8H ).
+Mihai Manea (MIT) Game Theory February 17, 2016 47 / 69</text>
+        </slide>
+        <slide>
+          <slideno>49</slideno>
+          <text>Evolutionary Foundations
+ISolution concepts motivated by presuming that players make
+predictions about their opponents play by introspection and
+deduction, using knowledge of their opponents payoffs, rationality. . .
+IAlternatively, assume players extrapolate from past observations of
+play in similar games and best respond to expectations based on
+past observations.
+ICournot (1838) suggested that players take turns setting their outputs
+in the duopoly game, best responding to the opponents last-period
+action.
+ISimultaneous action updating, best responding to average play,
+populations of players anonymously matched (another way to think
+about mixed strategies), etc.
+IIf the process converges to a particular steady state, then the steady
+state is a Nash equilibrium.
+Mihai Manea (MIT) Game Theory February 17, 2016 50 / 69</text>
+        </slide>
+        <slide>
+          <slideno>41</slideno>
+          <text>Remarks
+IThe fact that there is no protable deviation in pure strategies implies
+there is no protable deviation in mixed strategies either.
+IIf in equilibrium a player uses a mixed strategy that places positive
+probability on several pure strategies, he must be indifferent between
+all pure strategies in its support.
+IStrategies that do not survive iterated strict dominance (or are not
+rationalizable) cannot be played with positive probability in a Nash
+equilibrium.
+Mihai Manea (MIT) Game Theory February 17, 2016 42 / 69</text>
+        </slide>
+        <slide>
+          <slideno>20</slideno>
+          <text>Continued Story
+IThe priest convenes all the men at the temple and publicly announces
+that the integrity of the village has been compromisedthere is at
+least one cheating wife.
+IHe also points out that even though no one knows whether his wife is
+faithful, each man has heard about the other unfaithful wives.
+IHe orders that every man certain of his wifes indelity should shoot
+her at midnight.
+I39 silent nights went by and. . . on the 40thshots were heard.
+How many wives were shot? Were all the unfaithful wives murdered? How
+did men learn of the indelity of their wives after 39 nights in which nothing
+happened?
+Mihai Manea (MIT) Game Theory February 17, 2016 21 / 69</text>
+        </slide>
+        <slide>
+          <slideno>2</slideno>
+          <text>Brief History
+ICournot (1838): quantity setting duopoly
+IZermelo (1913): backward induction
+Ivon Neumann (1928), Borel (1938), von Neumann and Morgenstern
+(1944): zero-sum games
+IFlood and Dresher (1950): experiments
+INash (1950): equilibrium
+ISelten (1965): dynamic games
+IHarsanyi (1967): incomplete information
+IAkerlof (1970), Spence (1973): rst applications
+I1980s boom, continuing nowadays: repeated games, bargaining,
+reputation, equilibrium renements, industrial organization, contract
+theory, mechanism/market design
+I1990s: parallel development of behavioral economics
+Imore recently: applications to computer science, political science,
+psychology, evolutionary biology
+Mihai Manea (MIT) Game Theory February 17, 2016 3 / 69</text>
+        </slide>
+        <slide>
+          <slideno>44</slideno>
+          <text>Penalty Kicks
+Chiappori, Levitt, and Groseclose (2002)
+I459 kicks in French and Italian rst leagues
+I162 kickers, 88 goalies
+Mihai Manea (MIT) Game Theory February 17, 2016 45 / 69 Pierre-Andre Chiappori, Steven Levitt, Tim Groseclose, American Economic Association. All
+rights reserved. This content is excluded from our Creative Commons license. For more
+information, see https://ocw.mit.edu/help/faq-fair-use/.</text>
+        </slide>
+        <slide>
+          <slideno>55</slideno>
+          <text>Proof
+Mihai Manea (MIT) Game TheoryCourtesy of John F. Nash, Jr. "Equilibirum Points in N-Person Games." Proceedings of the
+National Academy of Sciences of the United States of America 36 no. 1 (1949): 48-49.
+February 17, 2016 56 / 69</text>
+        </slide>
+        <slide>
+          <slideno>17</slideno>
+          <text>Remarks
+In a nite game, the elimination procedure ends in a nite number of steps,
+soS1is simply the set of strategies left at the nal stage.
+In an innite game, if Sis a compact metric space and uis continuous,
+then one can use Cantors theorem (a decreasing nested sequence of
+non-empty compact sets has nonempty intersection) to show that S1,;.
+Denition assumes that at each iteration all dominated strategies of every
+player are deleted simultaneously. In a nite game, the limit set S1does
+not depend on the particular order in which deletion proceeds.
+Outcome does not change if we eliminate s. dominated mixed strategies at
+every step. A strategy dominated against all pure strategies of the
+opponents iff it is dominated against all their mixed strategies. Eliminating
+mixed strategies for player iat any stage does not affect the set of s.
+dominated pure strategies for any j,iat the next stage.
+Mihai Manea (MIT) Game Theory February 17, 2016 18 / 69</text>
+        </slide>
+        <slide>
+          <slideno>50</slideno>
+          <text>Convergence
+How sensitive is the convergence to the initial state? If convergence
+obtains for all initial strategy proles sufciently close to the steady state,
+we say that the steady state is asymptotically stable.
+Mihai Manea (MIT) Game Theory February 17, 2016 51 / 69Courtesy of The MIT Press. Used with permission.</text>
+        </slide>
+        <slide>
+          <slideno>56</slideno>
+          <text>Kakutani
+A long time ago, the Japanese mathematician Kakutani asked
+me why so many economists had attended the lecture he had
+just given. When I told him that he was famous because of the
+Kakutani xed-point theorem, he replied, What is the Kakutani
+xed-point theorem? (Ken Binmore, Playing for Real, 2007)
+Mihai Manea (MIT) Game Theory February 17, 2016 57 / 69</text>
+        </slide>
+        <slide>
+          <slideno>52</slideno>
+          <text>Remarks
+IEvolutionary processes are myopic and do not offer a compelling
+description of behavior.
+ISuch processes do not provide good predictions for behavior in the
+actual repeated game, if players care about play in future periods and
+realize that their current actions can affect opponents future play.
+Mihai Manea (MIT) Game Theory February 17, 2016 53 / 69</text>
+        </slide>
+        <slide>
+          <slideno>42</slideno>
+          <text>What Are the Assumptions?
+INash equilibria are consistent predictions (or stable conventions)
+of how the game will be played.
+IIf all players expect that a specic Nash equilibrium will arise, then no
+player has incentives to play differently.
+IEach player must have correct conjectures about the strategies of his
+opponents and play a best response to his conjecture.
+IWe interpret mixed strategies as beliefs regarding opponents play,
+not necessarily as deliberate randomization.
+IAssumes knowledge of strategies (beliefs) and rationality.
+Mihai Manea (MIT) Game Theory February 17, 2016 43 / 69</text>
+        </slide>
+        <slide>
+          <slideno>0</slideno>
+          <text>Game Theory
+Mihai Manea
+MIT</text>
+        </slide>
+        <slide>
+          <slideno>12</slideno>
+          <text>Pure Strategies May Be Dominated by Mixed Strategies
+L R
+T3;x0;x
+M 0;x3;x
+B 1;x1;x
+Figure: Bis s. dominated by 1=2T +1=2M .
+Mihai Manea (MIT) Game Theory February 17, 2016 13 / 69</text>
+        </slide>
+        <slide>
+          <slideno>35</slideno>
+          <text>Strategies
+Fix a nite game (N;S;u). To give strategic meaning to information states,
+introduce a strategy prole s: 
+!S:
+Denition 8
+A strategy prole s: 
+!Sisadapted with respect to (
+;(Ii)i2N;(pi)i2N)
+ifsi(!) = si(!0)whenever Ii(!) = Ii(!0):
+Players must choose a constant action at all states in each information set
+since they cannot distinguish states in the same information set.
+Denition 9
+Anepistemic model (
+;(Ii)i2N;(pi)i2N;s)consists of an information
+structure and an adapted strategy prole.
+Mihai Manea (MIT) Game Theory February 17, 2016 36 / 69</text>
+        </slide>
+        <slide>
+          <slideno>43</slideno>
+          <text>Do Soccer Players Flip Coins?
+Penalty kicks
+IKickers strategy space: fL,M,Rg
+IGoalies strategy space: fL,M,Rg
+IWhat are the payoffs?
+IWhats the Nash equilibrium?
+ISimultaneous move game? (125mph, 0.2 seconds reaction time)
+IWhat do players do in reality?
+Mihai Manea (MIT) Game Theory February 17, 2016 44 / 69</text>
+        </slide>
+        <slide>
+          <slideno>7</slideno>
+          <text>Dominated Strategies
+Are there obvious predictions about how a game should be played?
+Mihai Manea (MIT) Game Theory February 17, 2016 8 / 69</text>
+        </slide>
+        <slide>
+          <slideno>32</slideno>
+          <text>Interpretation
+IState!summarizes all the relevant facts about the world. Only one
+of the states is true; all others are hypothetical states needed to
+encode players beliefs.
+IIn state!, player iis informed that the state is in Ii(!)and gets no
+other information.
+ISuch an information structure arises if each player observes a
+state-dependent signal and Ii(!)is the set of states for which player
+is signal is identical to the signal at !.
+Mihai Manea (MIT) Game Theory February 17, 2016 33 / 69</text>
+        </slide>
+        <slide>
+          <slideno>64</slideno>
+          <text>Existence of Nash Equilibrium
+Theorem 9
+Consider a game (N;S;u)such that S iis a convex and compact subset of
+a Euclidean space and that u iis continuous in s and quasi-concave in s i
+for all i2N. Then there exists a pure strategy Nash equilibrium.
+The result implies the existence of pure strategy Nash equilibria in
+generalizations of the Cournot competition game.
+Theorem 9 also implies the existence of mixed strategy Nash equilibria in
+nite games.
+Mihai Manea (MIT) Game Theory February 17, 2016 65 / 69</text>
+        </slide>
+        <slide>
+          <slideno>48</slideno>
+          <text>Epistemic Foundations
+IAumann and Brandenburger (1995): a framework that can be used to
+examine the epistemic foundations of Nash equilibrium.
+IThe primitive of their model is an interactive belief system in which
+there is a possible set of types for each player; each type has
+associated to it a payoff for every action prole, a choice of which
+action to play, and a belief about the types of the other players.
+IIn a 2-player game, if the game being played, the rationality of the
+players, and their conjectures are all mutually known, then the
+conjectures constitute a Nash equilibrium.
+IFor games with more than 2 players, we need to assume additionally
+that players have a common prior and that conjectures are commonly
+known. This ensures that any two players have identical and
+separable (independent) conjectures about other players, consistent
+with a mixed strategy prole.
+Mihai Manea (MIT) Game Theory February 17, 2016 49 / 69</text>
+        </slide>
+        <slide>
+          <slideno>15</slideno>
+          <text>The Beauty Contest and the Stock Market
+It is not a case of choosing those faces that, to the best of ones
+judgment, are really the prettiest, nor even those that average
+opinion genuinely thinks the prettiest. We have reached the third
+degree where we devote our intelligences to anticipating what
+average opinion expects the average opinion to be. And there
+are some, I believe, who practice the fourth, fth and higher
+degrees. (John Maynard Keynes, General Theory of
+Employment, Interest and Money, 1936)
+Keynes suggested that similar behavior is observed in the stock market.
+Shares are not priced based on what people think their fundamental value
+is, but rather on what they think everyone else thinks the value is and what
+they think about these beliefs, and so on.
+Mihai Manea (MIT) Game Theory February 17, 2016 16 / 69</text>
+        </slide>
+        <slide>
+          <slideno>3</slideno>
+          <text>Key Elements of a Game
+IPlayers: Who is interacting?
+IStrategies: What are the options of each player? In what order do
+players act?
+IPayoffs: How do strategies translate into outcomes? What are
+players preferences over possible outcomes?
+IInformation/Beliefs: What do players know/believe about the
+situation and about one another? What actions do they observe
+before making decisions?
+IRationality: How do players think?
+Mihai Manea (MIT) Game Theory February 17, 2016 4 / 69</text>
+        </slide>
+        <slide>
+          <slideno>54</slideno>
+          <text>Nash (1950)
+,!
+Mihai Manea (MIT) Game Theory February 17, 2016 55 / 69</text>
+        </slide>
+        <slide>
+          <slideno>21</slideno>
+          <text>Rationalizability
+ISolution concept introduced independently by Bernheim (1984) and
+Pearce (1984).
+ILike iterated dominance, rationalizability derives restrictions on play
+from common knowledge of payoffs and the fact that players are
+reasonable.
+IDominance: unreasonable to use a strategy that performs worse than
+another (xed) one in every scenario.
+IRationalizability: irrational for a player to choose a strategy that is not
+a best response to some beliefs about opponents strategies.
+Mihai Manea (MIT) Game Theory February 17, 2016 22 / 69</text>
+        </slide>
+        <slide>
+          <slideno>13</slideno>
+          <text>The Beauty Contest
+IPlayers: everyone in the class
+IStrategy space: any number in f1;2;:::; 100g
+IThe person whose number is closest to 2/3of the class average wins
+the game.
+IPayoffs: one randomly selected winner receives $1.
+Why is this game called a beauty contest?
+Mihai Manea (MIT) Game Theory February 17, 2016 14 / 69</text>
+        </slide>
+        <slide>
+          <slideno>37</slideno>
+          <text>Result
+Theorem 4
+For any i2N and s i2Si, siis consistent with common knowledge of
+rationality iff s i2S1
+i.
+Can extend result to allow for payoff uncertainty (adding the hypothesis
+that payoffs are common knowledge at the relevant state).
+Mihai Manea (MIT) Game Theory February 17, 2016 38 / 69</text>
+        </slide>
+      </slides>
+      <videos/>
+    </lecture>
+    <lecture>
+      <lecture_title>courses/14-126-game-theory-spring-2016/resources/mit14_126s16_repeated</lecture_title>
+      <lecture_pdf_url>https://ocw.mit.edu/courses/14-126-game-theory-spring-2016/resources/mit14_126s16_repeated/</lecture_pdf_url>
+      <lectureno>5</lectureno>
+      <slides>
+        <slide>
+          <slideno>47</slideno>
+          <text>MIT OpenCourseWare
+https://ocw.mit.edu
+14.126 Game Theory
+Spring 2016
+For information about citing these materials or our Terms of Use, visit: https://ocw.mit.edu/terms .</text>
+        </slide>
+        <slide>
+          <slideno>1</slideno>
+          <text>Repeated Games with Perfect
+Information
+Mihai Manea (MIT) Repeated Games June 27, 2016 2 / 47</text>
+        </slide>
+        <slide>
+          <slideno>8</slideno>
+          <text>Proof Elements
+IAssume rst that is minmax action prole miis pure.
+IConsider an action prole afor which u(a) =v(or a distribution over
+actions that achieves vusing public randomization).
+IBy full-dimensionality, there exists v0in the feasible individually
+rational set with vi&lt;v0
+i&lt;vifor each i.
+ILetwibev0with"added to each players payoff except for i; for small
+",wiis a feasible payoff.
+Mihai Manea (MIT) Repeated Games June 27, 2016 9 / 47</text>
+        </slide>
+        <slide>
+          <slideno>20</slideno>
+          <text>Generalized Cournot Oligopoly
+Abreu (1986): application of Abreu (1988) to symmetric settings
+Iset of actions: [0;1)
+I9Ms.t. actions above Mare never rational
+Ipayoffs continuous and bounded from above
+IC1:ui(a;:::; a)is quasi-concave and decreases unboundedly in a
+IC2:max ai2Aiui(ai;a:::;a)is decreasing in a
+Strongly symmetric equilibria: equilibria in which all players behave
+identically at every history, including asymmetric histories.
+There is a strongly symmetric equilibrium that is worst for all players.
+There is also a
+strongly symmetric equilibrium that is best for everyone.
+Mihai Manea (MIT) Repeated Games June 27, 2016 21 / 47</text>
+        </slide>
+        <slide>
+          <slideno>12</slideno>
+          <text>Mixed Minmax
+What if minmax strategies are mixed? Punishers may not be indifferent
+between the actions in the support. . . need to provide incentives for mixing
+in phase II.
+Change phase IIIstrategies so that during phase IIjplayer iis indifferent
+among all possible sequences of Trealizations of his prescribed mixed
+action under mj. Make the reward "iof phase IIIjdependent on the history
+of phase IIjplay.
+Mihai Manea (MIT) Repeated Games June 27, 2016 13 / 47</text>
+        </slide>
+        <slide>
+          <slideno>17</slideno>
+          <text>Optimal Penal Codes
+IOptimal penal code fori: SPE giving ilowest possible payoff
+IShowed existence of optimal penal codes for pure-strategy SPEs
+IIf stage game is nite, pure-strategy SPEs may not exist.
+IOptimal penal codes for mixed-strategy SPEs?
+Theorem 4 (Fudenberg and Levine 1983)
+Assume that the stage game is nite. Then the set of SPE strategies and
+payoffs are nonempty and compact. In particular, among all SPEs, there is
+one that is worst for player i.
+Conclusion extends to multistage games with observable actions that have
+a nite set of actions at every stage and are continuous at innity.
+Fudenberg and Levine used "-perfect equilibria of nite-horizon
+truncations.
+Mihai Manea (MIT) Repeated Games June 27, 2016 18 / 47</text>
+        </slide>
+        <slide>
+          <slideno>0</slideno>
+          <text>Repeated Games
+Mihai Manea
+MIT</text>
+        </slide>
+        <slide>
+          <slideno>31</slideno>
+          <text>Set of SE is NotStationary
+A player may want to condition his play in one period on the realization of
+his mixing in a previous period. Correlation across periods can be
+self-sustaining.
+IAssume iandjboth mixed at a previous period.
+IThe signal in that period informs iabout the realization of js mixing.
+IHence it is informative about what jwill do in the current period,
+affecting is current best response.
+ISome third player kmay be unable to infer what jwill do in the current
+period, since he does not know what iplayed in the earlier period.
+IDifferent players can have different beliefs about play at t.
+IStationarity is lost.
+Mihai Manea (MIT) Repeated Games June 27, 2016 32 / 47</text>
+        </slide>
+        <slide>
+          <slideno>24</slideno>
+          <text>Repeated Games with Imperfect
+Public Monitoring
+Mihai Manea (MIT) Repeated Games June 27, 2016 25 / 47</text>
+        </slide>
+      </slides>
+      <videos/>
+    </lecture>
+    <lecture>
+      <lecture_title>courses/14-126-game-theory-spring-2016/resources/mit14_126s16_equilib</lecture_title>
+      <lecture_pdf_url>https://ocw.mit.edu/courses/14-126-game-theory-spring-2016/resources/mit14_126s16_equilib/</lecture_pdf_url>
+      <lectureno>4</lectureno>
+      <slides>
+        <slide>
+          <slideno>12</slideno>
+          <text>Kohlberg and Mertens (1986) Critique
+Strategically neutral changes in game tree affect equilibria.
+Game a:(A;L2)possible in a sequential equilibrium
+Game b:((NA;R1);R2)unique sequential equilibrium strategies. In
+subgame following NA,R1strictly dominates L1. Then 2 chooses R2, and
+1 best responds with (NA;R1).
+Mihai Manea (MIT) Equilibrium RenementsCourtesy of The MIT Press. Used with permission.
+March 30, 2016 13 / 45</text>
+        </slide>
+        <slide>
+          <slideno>40</slideno>
+          <text>Forward Induction and Iterated Weak Dominance
+Iterated strict dominance and rationalizability narrow down the set of
+predictions without pinning down strategies perfectly.
+Iterated weak dominance (IWD) captures some of the force of backward
+and forward induction without assuming that players coordinate on a
+certain equilibrium.
+In games with perfect information, IWD implies backward induction: any
+suboptimal strategy at a penultimate node is weakly dominated. . .
+Mihai Manea (MIT) Equilibrium Renements March 30, 2016 41 / 45</text>
+        </slide>
+        <slide>
+          <slideno>36</slideno>
+          <text>Irrational Strategies for the Receiver
+What if 2 can also pay a milion dollars to 1?
+IIt would be reasonable for both types to deviate.
+IBut 2 would never want to pay a million dollars.
+IAssume 1 cannot expect 2 to play a irrational strategy.
+Mihai Manea (MIT) Equilibrium Renements March 30, 2016 37 / 45</text>
+        </slide>
+        <slide>
+          <slideno>3</slideno>
+          <text>An Example with Imperfect Information
+Figure: (L;A)is a subgame perfect equilibrium. Is it plausible that 2 plays A?
+Mihai Manea (MIT) Equilibrium RenementsCourtesy of The MIT Press. Used with permission.
+March 30, 2016 4 / 45</text>
+        </slide>
+        <slide>
+          <slideno>10</slideno>
+          <text>Sequential Equilibrium Multiplicity
+Theorem 2
+For generic payoff functions, the set of sequential equilibrium outcome
+distributions is nite.
+Set of sequential equilibrium assesments often innite
+IInnitely many belief specications at off-path information sets
+supporting some equilibrium strategies.
+ISet of sequential equilibrium strategies may also be innite. Off-path
+information sets may allow for consistent beliefs that make players
+indifferent between actions. . . many mixed strategies compatible with
+sequential rationality.
+Mihai Manea (MIT) Equilibrium Renements March 30, 2016 11 / 45</text>
+        </slide>
+        <slide>
+          <slideno>25</slideno>
+          <text>Example
+1 chooses between O, which generates payoffs (2;2), or I, which leads to
+T W
+T0,0 3,1
+W 1,3 0,0
+SPE: (OW;T). Reasonable?
+IIf 1 plays I, this suggests he does not intend to follow up with W:O
+yields a payoff of 2, while Wleads to a payoff of at most 1 for player 1.
+IPlayer 2, anticipating that 1 will play T, should play W.
+IIf 1 can convince 2 to play W, he gets the higher payoff from (T;W).
+Mihai Manea (MIT) Equilibrium Renements March 30, 2016 26 / 45</text>
+        </slide>
+        <slide>
+          <slideno>44</slideno>
+          <text>Burning Money and IWD
+1Burning followed by Ds. dominated by not burning and D
+2Any strategy playing Rafter burning weakly dominated by Lafter
+burning
+Isame outcome if 1 does not burn
+Iafter burning, Lis better than Ragainst the only surviving strategy, U
+3Not burning and Ds. dominated by burning and U
+Iburning and Uyields a payoff of 3 for player 1 under surviving
+strategies (2 plays Lafter burning)
+Inot burning and Dgives player 1 at most 1
+4Rafter not burning weakly dominated by Lafter not burning
+Isame outcome if 1 burns
+Iafter not burning, Lis a best response to U
+Only surviving outcome: no burning and (U;L).
+Ben-Porath and Dekel: in any game where a player has a unique best
+outcome that is a strict Nash equilibrium and can signal with a sufciently
+ne grid of burning stakes, she gets her best outcome under IWD.
+Mihai Manea (MIT) Equilibrium Renements March 30, 2016 45 / 45</text>
+        </slide>
+        <slide>
+          <slideno>21</slideno>
+          <text>Properties of Perfect Equilibrium
+Kreps and Wilson (1982): every sequential equilibrium is perfect for
+generic payoffs.
+The set of perfect equilibrium outcomes does not have a closed graph.
+L R
+U 1,1 0,0
+D 0,0 1/n,1/n
+(D;R)is perfect for n&gt;0. In the limit n!1, only ( U;L)is perfect.
+Order-of-limits problem
+IAsn!1, the trembles against which DandRremain best
+responses become smaller and smaller.
+I(D;R)is a reasonable prediction in the limit game if the approximation
+error in describing payoffs is greater than players mistakes.
+Mihai Manea (MIT) Equilibrium Renements March 30, 2016 22 / 45</text>
+        </slide>
+        <slide>
+          <slideno>33</slideno>
+          <text>The Beer-Quiche Game
+IPlayer 1 is wimpy (w ) or surly (s ), with probabilities :1 and:9;
+T=f
+w;sg.
+I1 orders breakfast: M=M(t) =fbeer;quicheg;8t2T.
+IPla
+yer 2 decides whether to ght: A(m) =fF;NFg;8m2M.
+I1 gets utility 1 from having his favorite breakfastbeer if surly, quiche
+if wimpbut a disutility of 2 from ghting.
+IWhen 1 is w, 2s payoff is 1 if he ghts and 0 otherwise; when 1 is s,
+payoffs are reversed.
+Mihai Manea (MIT) Equilibrium RenementsCourtesy of The MIT Press. Used with permission.
+March 30, 2016 34 / 45</text>
+        </slide>
+        <slide>
+          <slideno>23</slideno>
+          <text>Properties of Proper Equilibrium
+Given an extensive-form game, a proper equilibrium of its strategic form is
+automatically subgame-perfect (backward induction argument).
+Kohlberg and Mertens (1986): a proper equilibrium in a normal-form game
+is sequential in every extensive-form game having the given normal form.
+However, not necessarily a trembling-hand perfect equilibrium in the
+agent-normal form of every such game.
+(L;r)is proper in the strategic form but not perfect in the extensive form.
+Mihai Manea (MIT) Equilibrium RenementsCourtesy of The MIT Press. Used with permission.
+March 30, 2016 24 / 45</text>
+        </slide>
+        <slide>
+          <slideno>26</slideno>
+          <text>Forward Induction and Strict Dominance
+Reduced normal form
+T W
+O 2,2 2,2
+IT 0,0 3,1
+IW 1,3 0,0
+(O;T)is a perfect (in fact, proper) equilibrium.
+If we rule out IWbecause it is s. dominated by O, then the only perfect
+equilibrium is (IT;W).
+An equilibrium concept that is not robust to deletion of s. dominated
+strategies is troubling...
+Kohlberg and Mertens (1986): stable equilibria
+Mihai Manea (MIT) Equilibrium Renements March 30, 2016 27 / 45</text>
+        </slide>
+        <slide>
+          <slideno>39</slideno>
+          <text>Banks and Sobel (1987)
+IA type t0isinnitely more likely to choose the out-of-equilibrium
+message mthan tif the set of possible best responses of Rthat
+make t0strictly prefer to deviate to mis a strict superset of the
+responses that make tweakly prefer to deviate.
+IConditional on observing m,Rshould put probability 0 on type t.
+ID1: analogue of intuitive criterion under this elimination procedure
+ID2: allow t0to vary across different best responses of S, requiring
+only that every best response that weakly induces tto deviate would
+strictly induce some t0to deviate
+IUniversal divinity: iteration of D2
+Mihai Manea (MIT) Equilibrium Renements March 30, 2016 40 / 45</text>
+        </slide>
+        <slide>
+          <slideno>35</slideno>
+          <text>Intuitive Criterion in Beer-Quiche
+Quiche equilibrium unreasonable. . . NWBR violated
+IUnreasonable for wimp to deviate to beer: no matter how 2 reacts,
+wimp cannot get more than 2, and he is already getting 3.
+ISeeing beer, 2 should conclude that 1 is surly and not ght, which
+would induce surly type to deviate.
+Forward-induction argument does not rule out the beer equilibrium
+IIn the beer equilibrium, it is unreasonable for surly type to deviate to
+quiche, while reasonable for wimp.
+I2s belief that 1 is wimpy if he orders quiche is reasonable.
+Mihai Manea (MIT) Equilibrium Renements March 30, 2016 36 / 45</text>
+        </slide>
+        <slide>
+          <slideno>2</slideno>
+          <text>An Example with Incomplete Information
+Spences (1974) job market signaling game
+IThe worker knows her ability (productivity) and chooses a level of
+education.
+IEducation is more costly for low ability types.
+IFirm observes the workers education, but not her ability.
+IThe rm decides what wage to offer her.
+In the spirit of subgame perfection, the optimal wage should depend on
+the rms beliefs about the workers ability given the observed education.
+An equilibrium needs to specify contingent actions and beliefs.
+Beliefs should follow Bayes rule on the equilibrium path.
+What about off-path beliefs?
+Mihai Manea (MIT) Equilibrium Renements March 30, 2016 3 / 45</text>
+        </slide>
+        <slide>
+          <slideno>43</slideno>
+          <text>Ben-Porath and Dekel (1992)
+Variation of the battle of the sexes: before game starts, player 1 has the
+option to burn money.
+If 1 decides not to burn money, play standard battle of the sexes
+L R
+U 5,1 0,0
+D 0,0 1,5
+If 1 decides to burn two units of utility, the game is
+L R
+U 3,1 -2,0
+D -2,0 -1,5
+IWD: 1 can ensure his favorite equilibrium without burning
+The mere option of burning money selects player 1s favorite equilibrium.
+Mihai Manea (MIT) Equilibrium Renements March 30, 2016 44 / 45</text>
+        </slide>
+        <slide>
+          <slideno>15</slideno>
+          <text>Other Restrictions on Off-Path Beliefs
+Fudenberg and Tirole (1991): other restrictions on beliefs in multi-stage
+games with incomplete information (all implied by consistency)
+IIf player types are drawn independently by nature, beliefs about
+different players should remain independent after every history.
+IUpdating should be consistent: given a probability-zero history htat
+which strategies call for a positive probability transition to ht+1,beliefs
+atht+1should be given by updating beliefs at htusing Bayes rule.
+INot signaling what you dont know: with independent types, beliefs
+about player is type at the beginning of period t+1 depend only on
+htandis action at t, not on other players actions at t.
+IPlayers i,jshould have the same belief about a third player keven
+after probability zero histories.
+Mihai Manea (MIT) Equilibrium Renements March 30, 2016 16 / 45</text>
+        </slide>
+        <slide>
+          <slideno>42</slideno>
+          <text>Stability and IWD
+IWD captures part of the forward induction notion implicit in stability.
+Stable components contain stable sets of games obtained by removing a
+weakly dominated action.
+Kohlberg and Mertens motivating example
+T W
+O 2,2 2,2
+IT 0,0 3,1
+IW 1,3 0,0
+(IT;W): unique outcome under both IWD and stability
+Mihai Manea (MIT) Equilibrium Renements March 30, 2016 43 / 45</text>
+        </slide>
+        <slide>
+          <slideno>6</slideno>
+          <text>Implications of Sequential Rationality
+Figure: No belief rationalizes A. 2 plays B, 1 optimally chooses R.
+Mihai Manea (MIT) Equilibrium Renements March 30, 2016 7 / 45Courtesy of The MIT Press. Used with permission.</text>
+        </slide>
+        <slide>
+          <slideno>29</slideno>
+          <text>Properties of Stable Equilibria
+Theorem 6
+There exists a stable set that is contained in a connected component of
+the set of Nash equilibria. Generically, each component of the set of Nash
+equilibria leads to a single distribution over outcomes, so there exists a
+stable set that induces a unique outcome distribution. A stable set
+contains a stable set of any game obtained by eliminating a weakly
+dominated strategy and also of any game obtained by deleting a strategy
+that is not a best response to any of the opponents strategy proles in the
+set (NWBR).
+NWBRrobustness to forward induction: knowing that a player would not
+use a particular strategy is consistent with the equilibrium theories from
+the stable set
+Mihai Manea (MIT) Equilibrium Renements March 30, 2016 30 / 45</text>
+        </slide>
+        <slide>
+          <slideno>1</slideno>
+          <text>Sequential Equilibrium
+IIn multi-stage games where payoffs depend on initial moves by
+nature, the only subgame is the original game. . . subgame perfect
+equilibrium = Nash equilibrium
+IPlay starting at an information set can be analyzed as a separate
+subgame if we specify players beliefs about at which node they are.
+IBased on the beliefs, we can test whether continuation strategies
+form a Nash equilibrium.
+ISequential equilibrium (Kreps and Wilson 1982): way to derive
+plausible beliefs at every information set.
+Mihai Manea (MIT) Equilibrium Renements March 30, 2016 2 / 45</text>
+        </slide>
+        <slide>
+          <slideno>0</slideno>
+          <text>Equilibrium Renements
+Mihai Manea
+MIT</text>
+        </slide>
+        <slide>
+          <slideno>13</slideno>
+          <text>Response
+Sensitivity of sequential equilibrium to irrelevant moves is not a
+consequence of consistency, but of sequential rationality. . . problem
+present even for subgame perfect equilibria.
+Kohlberg and Mertens solution: stable equilibria
+ITheory of robustness with respect to any prole of small mistakes,
+solution depending only on the strategic form
+IIf players make mistakes at every information set, are the two
+extensive forms equivalent?
+IGame a: 1 might play either L1orR1by mistake intending to choose A.
+IGame b: if 1 makes the mistake of not playing A, he is still able to
+ensure that R1is more likely than L1. . . why would rst mistake be
+correlated with the second?
+Mihai Manea (MIT) Equilibrium Renements March 30, 2016 14 / 45</text>
+        </slide>
+        <slide>
+          <slideno>30</slideno>
+          <text>Forward Induction in Signaling Games
+INWBR useful to show that some equilibrium components are not
+stable
+ICho and Kreps (1987): equilibrium renement for signaling games
+weaker than stabilitythe intuitive criterioniterated applications of
+NWBR
+IK
+ohlberg and Mertens (1986) motivate their stability concept by
+mathematical properties and robustness with respect to trembles a la
+Seltens perfect equilibrium.
+ICho and Kreps provide a behavioral foundation based on rening the
+set of plausible beliefs in the spirit of Kreps and Wilsons sequential
+equilibrium.
+Mihai Manea (MIT) Equilibrium Renements March 30, 2016 31 / 45</text>
+        </slide>
+        <slide>
+          <slideno>31</slideno>
+          <text>Signaling Games
+ITwo players: sender Sand receiver R
+IT: set of types for S
+Ip(t): probability of type t2T
+ISprivately observes his type t, then sends a message m2M(t)
+IT(m) =ftjm2M(t)g: types that can send message m
+IRobser
+vesmand chooses an action a2A(m)
+IP
+ayoffs uS(t;m;a)anduR(t;m;a)
+Mihai Manea (MIT) Equilibrium Renements March 30, 2016 32 / 45</text>
+        </slide>
+        <slide>
+          <slideno>32</slideno>
+          <text>Intuitive Criterion Idea
+IBehavioral explanation of one aspect of NWBR: robustness to
+replacing the equilibrium path by its expected payoff.
+IPresumes that players are certain about play on the equilibrium path,
+but there is uncertainty off the path.
+IIf we begin with a stable set and delete a strategy in which type t
+sends message musing NWBR, the reduced game should have a
+stable set contained in the original set.
+ISurviving equilibria should assign probability 0 to type tfollowing m.
+Mihai Manea (MIT) Equilibrium Renements March 30, 2016 33 / 45</text>
+        </slide>
+        <slide>
+          <slideno>38</slideno>
+          <text>Discussion
+The equilibrium fails the intuitive criterion if some sender type is getting
+less than any payoff he could possibly get by playing m, assuming he
+could convince the sender that he is not in T~(m)because mdoes not
+make sense for any of those types.
+In the beer-quiche example, the quiche equilibrium fails this criterion.
+Iterated intuitive criterion
+IUse the intuitive criterion as above to rule out pairs (t;m).
+IRule out actions of R, by requiring that Rbest respond to a belief
+about types that have not yet been eliminated given the message.
+IPossibly rule out more pairs (t;m)given surviving strategies. . .
+Mihai Manea (MIT) Equilibrium Renements March 30, 2016 39 / 45</text>
+        </slide>
+        <slide>
+          <slideno>27</slideno>
+          <text>Requirements
+IIterated dominance: every stable set must contain a stable set of any
+game obtained by deleting a s. dominated strategy
+IAdmissibility: no mixed strategy in a stable set assigns positive
+probability to a weakly dominated strategy
+IInvariance to extensive-form representation: stable sets depend only
+on the strategic form
+Stability: necessarily set-valued
+L R
+U 3,2 2,2
+M 1,1 0,0
+D 0,0 1,1
+Both MandDare strictly dominated. Depending on which one is
+eliminated rst, LorRbecomes weakly dominated... both (U;L)and
+(U;R)must be contained in the solution.
+Mihai Manea (MIT) Equilibrium Renements March 30, 2016 28 / 45</text>
+        </slide>
+        <slide>
+          <slideno>14</slideno>
+          <text>Perfect Bayesian Equilibrium
+Perfect Bayesian equilibrium (PBE): original solution concept for
+extensive-form games with imperfect/incomplete information.
+Sequential equilibrium now preferred, but worthwhile to know about PBE
+(used in early/applied research).
+PBE similar to sequential equilibrium with fewer restrictions on beliefs
+IStrategies: sequentially rational
+IBeliefs: derived from Bayes rule wherever applicable
+ISimplest version: no constraints on off-path beliefs
+Mihai Manea (MIT) Equilibrium Renements March 30, 2016 15 / 45</text>
+        </slide>
+        <slide>
+          <slideno>24</slideno>
+          <text>Forward Induction
+Equilibrium: off-path observations interpreted as errors
+Forward induction: players should believe in the rationality of their
+opponents even after observing deviations.
+IWhen a player deviates from equilibrium strategies, the opponent
+should believe that the player expects follow up play that makes the
+deviation reasonable.
+IThe deviation is informative about the players type or, in general
+extensive form games, about his future play.
+Forward induction not an equilibrium concept: in equilibrium, all players
+expect specied strategies to be exactly followed
+An attempt to describe strategic uncertainty. . . no single, rigorous denition
+Mihai Manea (MIT) Equilibrium Renements March 30, 2016 25 / 45</text>
+        </slide>
+        <slide>
+          <slideno>8</slideno>
+          <text>Existence of Sequential Equilibrium
+Theorem 1
+A sequential equilibrium exists for every nite extensive-form game.
+Follows from existence of perfect equilibria, prove later.
+Mihai Manea (MIT) Equilibrium Renements March 30, 2016 9 / 45</text>
+        </slide>
+        <slide>
+          <slideno>19</slideno>
+          <text>Perfection in Extensive-Form Games
+Solution: agent-normal form
+IA different player for every information set h.
+IPlayer hhas the same payoffs as i(h).
+Denition 4
+Aperfect equilibrium for an extensive-form game is a perfect equilibrium of
+its agent-normal form.
+Mihai Manea (MIT) Equilibrium Renements March 30, 2016 20 / 45</text>
+        </slide>
+        <slide>
+          <slideno>45</slideno>
+          <text>MIT OpenCourseWare
+https://ocw.mit.edu
+14.126 Game Theory
+Spring 2016
+For information about citing these materials or our Terms of Use, visit: https://ocw.mit.edu/terms .</text>
+        </slide>
+      </slides>
+      <videos/>
+    </lecture>
+    <lecture>
+      <lecture_title>courses/14-126-game-theory-spring-2016/resources/mit14_126s16_cooperative</lecture_title>
+      <lecture_pdf_url>https://ocw.mit.edu/courses/14-126-game-theory-spring-2016/resources/mit14_126s16_cooperative/</lecture_pdf_url>
+      <lectureno>9</lectureno>
+      <slides>
+        <slide>
+          <slideno>23</slideno>
+          <text>MIT OpenCourseWare
+https://ocw.mit.edu
+14.126 Game Theory
+Spring 2016
+For information about citing these materials or our Terms of Use, visit: https://ocw.mit.edu/terms.</text>
+        </slide>
+      </slides>
+      <videos/>
+    </lecture>
+    <lecture>
+      <lecture_title>courses/14-126-game-theory-spring-2016/resources/mit14_126s16_bargaining</lecture_title>
+      <lecture_pdf_url>https://ocw.mit.edu/courses/14-126-game-theory-spring-2016/resources/mit14_126s16_bargaining/</lecture_pdf_url>
+      <lectureno>3</lectureno>
+      <slides>
+        <slide>
+          <slideno>0</slideno>
+          <text>Single-Deviation Principle and Bargaining
+Mihai Manea
+MIT</text>
+        </slide>
+        <slide>
+          <slideno>11</slideno>
+          <text>Iterated Conditional Dominance
+Denition 3
+In a multi-stage game with observable actions, an action aiisconditionally
+dominated at stage tgiven history htif, in the subgame starting at ht,
+every strategy for player ithat assigns positive probability to aiis strictly
+dominated.
+Proposition 1
+In any multi-stage game with observable actions, every SPE survives the
+iterated elimination of conditionally dominated strategies.
+Mihai Manea (MIT) Single-Deviation Principle and Bargaining March 2, 2016 12 / 37</text>
+        </slide>
+        <slide>
+          <slideno>32</slideno>
+          <text>Equilibrium Existence
+Theorem 5
+An equilibrium exists for the bargaining game.
+The result complements the analysis of Gale (1987), who explores
+properties of equilibria abstracting away from existence issues.
+Mihai Manea (MIT) Single-Deviation Principle and Bargaining March 2, 2016 33 / 37</text>
+        </slide>
+        <slide>
+          <slideno>29</slideno>
+          <text>Interpretations
+IPartial equilibrium approach: predict payoffs for a certain evolution of
+market conditions over time.
+IStubborn beliefs: all players start with identical beliefs about the path
+of matching probabilities and never revise expectations in response to
+their observations. In large markets, a participant may think that his
+personal experience does not reect future trends.
+Mihai Manea (MIT) Single-Deviation Principle and Bargaining March 2, 2016 30 / 37</text>
+        </slide>
+        <slide>
+          <slideno>12</slideno>
+          <text>Equilibrium uniqueness
+Iterated conditional dominance: stationary equilibrium is essentially the
+unique SPE.
+Theorem 2
+The SPE of the alternating-offer bargaining game is unique, except for the
+decision to accept or reject Pareto-inefcient offers.
+Mihai Manea (MIT) Single-Deviation Principle and Bargaining March 2, 2016 13 / 37</text>
+        </slide>
+        <slide>
+          <slideno>37</slideno>
+          <text>MIT OpenCourseWare
+https://ocw.mit.edu
+14.126 Game Theory
+Spring 2016
+For information about citing these materials or our Terms of Use, visit: https://ocw.mit.edu/terms .</text>
+        </slide>
+        <slide>
+          <slideno>28</slideno>
+          <text>The Model with Exogenous Matching Probabilities
+Class of games
+IPlayers from npopulations are present in the market in every period
+t=0;1;:::
+IEvery player of type iis given the opportunity to make an offer to one
+of the players jin period twithexogenous probability pijt.
+IBargaining proceeds as in the benchmark model.
+Agnostic about the market composition at each date. . . vague regarding
+the inows over time, the exact matching procedure, and the information
+structure.
+Equilibrium behavior is independent of the details. . . (pijt)completely
+characterizes the strategic situation.
+Mihai Manea (MIT) Single-Deviation Principle and Bargaining March 2, 2016 29 / 37</text>
+        </slide>
+      </slides>
+      <videos/>
+    </lecture>
+    <lecture>
+      <lecture_title>courses/14-126-game-theory-spring-2016/resources/mit14_126s16_reputation</lecture_title>
+      <lecture_pdf_url>https://ocw.mit.edu/courses/14-126-game-theory-spring-2016/resources/mit14_126s16_reputation/</lecture_pdf_url>
+      <lectureno>6</lectureno>
+      <slides>
+        <slide>
+          <slideno>0</slideno>
+          <text>Reputation
+Mihai Manea
+MIT</text>
+        </slide>
+        <slide>
+          <slideno>8</slideno>
+          <text>MIT OpenCourseWare
+https://ocw.mit.edu
+14.126 Game Theory
+Spring 2016
+For information about citing these materials or our Terms of Use, visit: https://ocw.mit.edu/terms .</text>
+        </slide>
+      </slides>
+      <videos/>
+    </lecture>
+  </lectures>
+</doc>

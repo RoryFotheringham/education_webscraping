@@ -1,0 +1,4155 @@
+<doc>
+  <source>MIT</source>
+  <date>28/01/2023</date>
+  <course>
+    <course_url>https://ocw.mit.edu/courses/cms-611j-creating-video-games-fall-2014/</course_url>
+    <course_title>Creating Video Games</course_title>
+    <course_tags>
+      <list>Engineering </list>
+      <list>Computer Science </list>
+      <list>Media Studies </list>
+    </course_tags>
+  </course>
+  <lectures>
+    <lecture>
+      <lecture_title>          High Level Design Document
+        </lecture_title>
+      <lecture_pdf_url>https://ocw.mit.edu/courses/cms-611j-creating-video-games-fall-2014/resources/mitcms_611jf14_hldd/</lecture_pdf_url>
+      <lectureno>8</lectureno>
+      <slides>
+        <slide>
+          <slideno>1</slideno>
+          <text>MIT OpenCourseWare
+http://ocw.mit.edu
+ 
+CMS.611J / 6.073  Creating Video Games
+Fall 2014
+ 
+For information about citing these materials or our Terms of Use, visit: http://ocw.mit.edu/terms.</text>
+        </slide>
+        <slide>
+          <slideno>0</slideno>
+          <text>Vision:   
+What s the guiding vision of this game?  Innovative gameplay?  Deep, meaningful narrative?  The 
+ability to take down your opponent with a single well timed slice?  Amazing audio?  An interactive 
+story? What is at the core of this project, that you can come back and focus on when design discussions 
+waver and development is stymied?   
+ 
+Team/Responsibility Breakdown: 
+Jobs, hours, responsibilities.   
+Major Gameplay Concepts: 
+What is core to your game, that hasnt already been covered.  A story?  Networking?  Co oper ative 
+play?  PVP?   If you were writing the five markegin points to go on the back of your games box, to 
+advertise it, what would they be? 
+ 
+Thirty Seconds of Gameplay: 
+What am I going to do most in your game?  Is it going to be fun and engaging?  Come back &amp; reread 
+this section: youd be amazed at how often your intended key game play gets cluttered away with and 
+we coulds  
+Risks: 
+Key technical, personnel, scope, time, etc risks.  Whats scariest about the project you want to do?</text>
+        </slide>
+      </slides>
+      <videos/>
+    </lecture>
+    <lecture>
+      <lecture_title>          Paper Prototyping
+        </lecture_title>
+      <lecture_pdf_url>https://ocw.mit.edu/courses/cms-611j-creating-video-games-fall-2014/resources/mitcms_611jf14_paper_prot/</lecture_pdf_url>
+      <lectureno>9</lectureno>
+      <slides>
+        <slide>
+          <slideno>0</slideno>
+          <text>Phillip Philip Tan Paper Prototyping 
+MIT Game Lab 
+1</text>
+        </slide>
+        <slide>
+          <slideno>6</slideno>
+          <text>The computer is the person responsible for making the prototype work. This person moves around the pieces, writes down responses, and generally does everything that a real computer would do. In 
+particular, the computer should not do anything that a real computer wouldnt. Think mechanically, and respond mechanically. 
+The facilitator is the human voice of the design team and the director of the testing session. The facilitator explains the purpose and process of the user study, obtains the users informed consent, and 
+presents the user study tasks one by one. While the user is working on a task, the facilitator tries to elicit verbal feedback from the user, particularly encouraging the user to think aloud by asking probing (but 
+not leading) questions. The facilitator is responsible for keeping everybody disciplined and the user test on the right track. 
+Everybody else in the room (aside from the user) is an observer. The most important rule about being an observer is to keep your mouth shut and watch. Dont offer help to the user
+, even if theyre missing 
+something obvious. Bite your tongue, sit on your hands, and just watch. The observers are the primary note takers, since the computer and the facilitator are usually too busy with their duties. Have a notepad 
+on hand! 
+T eam roles 
+Players 
+Computer or facilitator 
+Observers 
+7</text>
+        </slide>
+        <slide>
+          <slideno>12</slideno>
+          <text>Question: Start with a problem to be solved and an idea to be tested. Make sure its falsifiable - what does a workable solution need to achieve? You can also look at Axiomatic design: establish Axioms - things 
+that you are taking to be true or baseline that need to be fulfilled by any workable design, then think of solutions.&#13; 
+Rapid design: The key point of prototyping is that it has to be rapid. The more iterations a game can undergo, the higher quality it will be, so spending time discussing issues can be a waste of time. There is a 
+great tendency among designers to debate the outcome of something that could be tested in half the time.&#13; 
+Playtest: A full or partial play session to identify strengths and weaknesses in the design. &#13; 
+Keep iterating! 
+Question 
+Rapid design 
+Playtest 
+Revise 
+Repeat 
+Revise: Fortify weaknesses or build upon strengths. Sometimes, changes are small incremental changes incorporated one at a time. Keep and eye out for unexpected play dynamics that cause the game to go 
+in a completely different direction, those might be gold. &#13; 
+Repeat: Play again! Once things seem to be working, grab someone from another prototyping group to playtest. 
+13</text>
+        </slide>
+        <slide>
+          <slideno>1</slideno>
+          <text>Prototypes are much faster to build than finished implementations, so we can evaluate them sooner and get early feedback about the good and bad points of a design. 
+If we have a design decision that is hard to resolve, we can build multiple prototypes embodying the different alternatives  of the decision. 
+A prototype can be changed more easily . Paper is easy to change. You can even change it in the middle of a test. If part of the prototype was a problem for one user, you can scratch it out or replace it before 
+the next user arrives. Paper is more malleable than digital bits in many ways. 
+If the design flaws are serious, a prototype can be thrown away. Its important not to commit strongly to design ideas in the early stages of design. Unfortunately, writing and debugging a lot of code creates a 
+
+psychological sense of commitment which is hard to break. You dont want to throw away something youve worked hard on, so youre tempted to keep some of the code around, even if it really should be 
+scrapped. 
+In fact, this exercise should end up with a prototype that is not immediately useful for your digital project! 
+This is a good mindset to have in early iterations, since it maximizes your creative freedom.
+ 
+Why Prototype? 
+Get feedback 
+earlier, cheaper 
+Experiment with alternatives 
+Easier to change or throw away 
+2</text>
+        </slide>
+        <slide>
+          <slideno>5</slideno>
+          <text>Index cards can be used as cards (shuffling, hidden information, recording options) or for rules &#13; 
+Dice can be tokens, help keep track of stats. Dont use two D10s for large numbers! Use a notepad instead. &#13; 
+I find kindergarten counters more useful than game bits. Theres little assumption about what theyre supposed to be, no worries about returning them back to the games they came from.&#13; 
+Dont get too enamored with the interlocking cubes (or any other particular prototyping tool).&#13; 
+Dont forget to keep a record of your drafts and setups. Use your mobile phone camera during the session, a photocopier or scanner for your project. 
+Big sheets of paper 
+Index cards 
+Dice 
+Post-it glue and notepads 
+Pencils, pens, markers, scissors, tape  
+Game bits, small toys, kindergarten counters 
+Photocopier, mobile phone camera Useful tools 
+6</text>
+        </slide>
+        <slide>
+          <slideno>2</slideno>
+          <text>Find the fun! 
+A series of interesting choices - Sid Meier &#13; 
+Prototyping lies at the heart of good game design. All you have are the fundamental mechanics to keep you engaged, and if these mechanics can sustain the interest of testers, then you know that youre
+onto something.&#13; 
+The main advantage of prototyping is that it forces you to define game mechanics in their purest form.&#13; 
+Focus on the small handful of choices that the player must make to play the prototype.
+Model a system with a few basic rules that creates interesting choices for the player. Always ask a question about your game and make sure its falsifiable. 
+&#13; 
+Physical prototyping does not give insight to everything, e.g. the sensory experience created by a digital game, the feasibility of implementing a digital feature. 
+3</text>
+        </slide>
+        <slide>
+          <slideno>7</slideno>
+          <text>Wizard of Oz 
+Someone plays the 
+computer 
+Very constrained 
+Communication 
+Rules 
+Dont let the player know what the computer is thinking 
+Depth refers to how deeply each feature is actually implemented. Is there a backend behind the prototype thats actually implementing the feature? Low-fidelity in depth may mean limited choices (e.g., you 
+cant print double-sided), canned responses (always prints the same text, not what you actually typed), or lack of robustness and error handling (crashes if the printer is offline). 
+Can be high-fidelity in depth at little cost, since a human being is simulating the backend. 
+8</text>
+        </slide>
+        <slide>
+          <slideno>9</slideno>
+          <text>Not for todays exercise! 
+Predetermined rules 
+Explained before game 
+Loose interpretation and constraints 
+Limited communication 
+Try it for avatar walks around games Live Action 
+10</text>
+        </slide>
+        <slide>
+          <slideno>10</slideno>
+          <text>Hand drawing is fast. You can draw many sketches in the same time it would take to draw one nice picture, let alone implement a game with code.  
+Some of you can draw very nicely. Try to make it look rough and sketchy. 
+Sketchy prototypes focus attention on the issues that matter in early design without distracting anybody with details. You arent bothered with details like font, color, alignment, whitespace, etc.
+ Rough prototypes improve the feedback you get from users. Theyre less likely to nitpick about details that arent relevant at this stage. They wont complain about the color scheme if there isnt one.  
+A hand-sketched design also seems less finished, less set in stone, and more open to suggestions and improvements.  
+Big is good. A
+ paper prototype should be larger than life-size. Fingers are bigger than a mouse pointer.
+ 
+Everyone involved needs to see whats going on during testing.
+ One dark ink. Dont worry too much about color in your prototype. Use a single, dark color for text. 
+You can use color to differentiate between different types (cards, bits) but anything you draw should be monochrome. 
+Keep it rough! 
+Hand-drawn 
+Sketchy 
+Big 
+One dark ink 
+&#13; 
+11</text>
+        </slide>
+        <slide>
+          <slideno>11</slideno>
+          <text>Keep track of your rules! 
+Write rules on cards 
+Rearrange flow control 
+Update cards as you 
+change rules 
+Periodically take photos 
+Simplify, simplify, simplify 
+Game paper prototypes should only represent a subset of your feature set.&#13; 
+While its easy to cram more features into a paper prototype (just sketch/write more) it is usually detrimental to iteration, since it makes it harder to identify which feature caused problems. &#13; 
+Also, feature creep makes playtesting longer because people have more to read or understand before they can play. 
+12</text>
+        </slide>
+        <slide>
+          <slideno>14</slideno>
+          <text>MIT OpenCourseWare 
+http://ocw.mit.edu
+CMS.611J   / 6.073 Creating Video Games  
+Fall 2014
+For information about citing these materials or our Terms of Use, visit: http://ocw.mit.edu/terms.</text>
+        </slide>
+        <slide>
+          <slideno>3</slideno>
+          <text>Get on the same page! 
+Imagine getting in a room with developers who know nothing about the project and you are trying to describe to them the game you have in your head. &#13; 
+If you want to create gameplay that people have never seen before, it may be impossible. A written treatment or design document is good, but when you need to communicate how a complex system works, it 
+cant compare to a prototype that someone can actually play. A physical prototype that they can sit down and play helps them grasp your vision of the game. They have something solid to work from.&#13; 
+Any game design benefits tremendously in its early stages by building a physical prototype. Physically prototyping allows you to build a structure for the game, think through how the various elements interact, and formulate a systemic approach to how the game will function.
+&#13; 
+At a minimum, physical prototyping forces you to think through the design elements and define them . You can always change them down the road, but this gives you a framework to build upon, and that in 
+itself can save you from stumbling around blindly when it comes to preparing and launching a production team.&#13;&#13;&#13;&#13; 
+4</text>
+        </slide>
+        <slide>
+          <slideno>8</slideno>
+          <text>May still be useful for single-player games&#13; 
+NPCs can have different rules from PCs &#13; 
+Hard to get consistent results across tests&#13; 
+Still absolutely necessary for multiplayer games 
+Player vs Player 
+People play together 
+Cooperative/Competitive 
+Symmetric/Asymmetric 
+Very loose 
+Open communication 
+Rule negotiation 
+Facilitator helps to explain rules 
+9</text>
+        </slide>
+        <slide>
+          <slideno>4</slideno>
+          <text>Bring in players! 
+No special skills are required for people to play paper prototypes. Artists, designers, producers, coders, QA leads, audio leads, and even players can help create prototypes and operate them. 
+Unlike a sketch or storyboard, a paper prototype is interactive. You can actually user-test it: give users a task to do and watch how they do it.
+ 
+If you do several prototypes and present them to the same player, people tend to be more ready to criticize and offer problems, which is exactly what you want in the early stages of design.
+ 
+Paper prototypes can reveal many usability problems that are important to find in early stages of design. Fixing these problems may require large changes in design. If users dont understand the metaphor or 
+conceptual model of the interface, for example, the entire interface may need to be scrapped. 
+In some cases, suggestions from players can also be implemented directly into the prototype, allowing testers to be involved in the design process. This can be very useful in co-design . 
+Designers should be cautious and vet each suggestion to see if it fits their vision. Testing is not a replacement for direction.
+ 
+5</text>
+        </slide>
+        <slide>
+          <slideno>13</slideno>
+          <text>Keep changing! 
+Amend, replace, kill 
+Limit/unlimit 
+Player interference 
+Mess with the play order 
+Multiply/divide by 2 
+Core and reconstruct 
+Throw away 
+Kill a Rule 
+Killing a rule is usually a good thing to do in the prototype stage. Identify the core of the game and start by killing every rule that doesn't directly affect the core of the game. &#13; 
+Make a Resource Limited (Or Unlimited) 
+Interacting with Your Friends (multiplayer, or single-player vs NPCs) 
+While it's always fun to win a game, it's occasionally as fun to stop someone else from doing the same or otherwise affect their play.  &#13; 
+Look at the various actions your players are performing in a game. Next, ask yourself, "How could someone else stop that from happening or make it happen even faster?" You can even take it one step further 
+and ask how players could then protect themselves from aggressive moves or solicit help more directly from their opponents.&#13; 
+Allowing players to affect the play of other players is an effective means of introducing a bit of uncertainty even in the most mundane games. It also forces a minor amount of strategy on players who must consider preparing a counter to that attack or a means to ally with another player.  
+&#13; 
+Mess with the Play Order 
+Weve talked about rearranging the order of the rules. Consider allowing players to mess with them too: Mechanics such as "go again" and "skip a turn" in board games are also common. &#13; 
+Use the "Rule of Two" If something seems off but you're not sure what, take one of the game's values and either multiply or divide it by two. Making such a drastic change gives you insight into how the game's values interact with 
+each other and what effects they have on play, and you'll often realize things you never would have seen if you made smaller, incremental changes. 
+&#13; 
+Core and reconstruct 
+The prototype youve created may or may not be very playable. Parts may be out of balance and rules may conflict. Your game may also feel slow or disjointed.  &#13; 
+Many designers panic at this point and throw out everything. They feel that their game is hopeless and the only solution is to start from scratch with a new game idea concept. &#13; 
+Before you take such drastic measures, go back to your just your core game mechanics.&#13; 
+14</text>
+        </slide>
+      </slides>
+      <videos/>
+    </lecture>
+    <lecture>
+      <lecture_title>          Project 4 Introduction
+        </lecture_title>
+      <lecture_pdf_url>https://ocw.mit.edu/courses/cms-611j-creating-video-games-fall-2014/resources/mitcms_611jf14_projctintro/</lecture_pdf_url>
+      <lectureno>11</lectureno>
+      <slides>
+        <slide>
+          <slideno>12</slideno>
+          <text>Timeline &amp; Deliverables
+Wed, 12/10: Project Due
+ Turn in:
+ Digital Game Prototype Builds (1 set of builds per
+team)
+ Individual written postmortem (1 per person)
+ Design Changelog (1 per team)
+ Updated High Level Design Document: (1 per
+team)
+ Focus Test Reports. (4 per team)
+In-Class: Postmortem Presentation (20 minutes per 
+team)
+13
+Fall 2014 CMS.611J/6.073</text>
+        </slide>
+        <slide>
+          <slideno>11</slideno>
+          <text>Sprint Tasklists due weekly
+ Product Backlog due on:
+10/27 &amp; 11/24
+In-class Playtests (can use 2 for Focus Test 
+Reports):
+10/27, 11/5, 11/24
+2-min Presentations in Class:
+10/27, 11/12, 11/26Timeline &amp; Deliverables
+12
+Fall 2014 CMS.611J/6.073</text>
+        </slide>
+        <slide>
+          <slideno>13</slideno>
+          <text>Rehearsal: Mon, 12/8
+Final: Weds, 12/10
+Requirements
+Guest (someone who hasnt played before) will play 
+game live on stage for no more than 10 minutes
+10-15 minute presentation on process
+ Project management
+ Team management
+ Design iteration techniquesPostmortem Presentation
+14
+Fall 2014 CMS.611J/6.073</text>
+        </slide>
+        <slide>
+          <slideno>0</slideno>
+          <text>Write down your GAMEs name on the board
+We will do presentations in order by 
+numberBefore we start!
+1
+Fall 2014 CMS.611J/6.073</text>
+        </slide>
+        <slide>
+          <slideno>4</slideno>
+          <text>Project 4: 
+Small Game Project
+Goals:
+Create a small  but fully functional and 
+well- polished  web browser game for an 
+external client, using the project and team 
+management techniques learnt in this class.
+Use design iteration techniques 
+throughout early prototyping and focus 
+testing to improve your ideas throughout 
+development.
+5Fall 2014 CMS.611J/6.073</text>
+        </slide>
+        <slide>
+          <slideno>8</slideno>
+          <text>Other Requirements
+READ the PROJECT 4 HANDOUT !
+Maximum play length: 10 minutes
+Single or multiplayer game ( no networking!)
+User interface tested for legibility and usability
+Game must  use &amp; play audio for the player
+Polished: Art, audio, mechanics support to create a 
+unified aesthetic
+Give design thought to spectating users
+9
+Fall 2014 CMS.611J/6.073</text>
+        </slide>
+        <slide>
+          <slideno>6</slideno>
+          <text>Mechanics:
+Trade-offs in Decision Making
+Planning for Randomness
+Opportunity Cost
+Future risks (and risk analysis)
+Side-effects
+ Immediate
+ Long-termDesign Constraints
+7
+Fall 2014 CMS.611J/6.073</text>
+        </slide>
+        <slide>
+          <slideno>16</slideno>
+          <text>MIT OpenCourseWare
+http://ocw.mit.edu
+CMS.611J / 6.073 Creating Video Games 
+Fall 2014
+For information about citing these materials or our Terms of Use, visit: http:// ocw.mit.edu/terms .</text>
+        </slide>
+        <slide>
+          <slideno>3</slideno>
+          <text>Presentations
+Rik was wrong! Slides were intended to be required, 
+but were not!
+For Project 3: slides &amp; visuals are recommended to 
+help your presentation stay on topicFeedback
+4
+Fall 2014 CMS.611J/6.073</text>
+        </slide>
+        <slide>
+          <slideno>15</slideno>
+          <text>Read the material for your topic!
+Start Team Formation via the Mailing List
+Did you have 8 people interested in the topic during 
+brainstorming?
+Are you more interested in programming/assets over 
+design? Let the class know!
+Are you more interested in mechanic design over the 
+topic?
+Team Formation will be finalized on Monday, 10/20
+If you are undecided, Rik will put you on a teamBefore Next Class (10/20)
+16
+Fall 2014 CMS.611J/6.073</text>
+        </slide>
+        <slide>
+          <slideno>1</slideno>
+          <text>Today In Class &amp;
+Project 4 Intro
+Rik Eberhardt
+September 29, 2014
+2
+Fall 2014 CMS.611J/6.073</text>
+        </slide>
+        <slide>
+          <slideno>9</slideno>
+          <text>Weds, 10/15:
+Brainstorming in groups based on topics given by 
+client
+Between 10/15 &amp; 10/20
+Read material on the topic you are interested in
+Use mailing list to start forming teams
+Mon, 10/20:
+In class:  
+ Team Formation
+ Brainstorming
+ PitchingTimeline &amp; Deliverables
+10
+Fall 2014 CMS.611J/6.073</text>
+        </slide>
+        <slide>
+          <slideno>10</slideno>
+          <text>Timeline &amp; Deliverables
+Weds, 10/22:
+ Turn-in:
+ High Level Design Doc or Back of Box Copy (1
+per team)
+Mon, 10/27:
+ Turn-in: Product Backlog
+ In Class:
+ 2 minute presentation: the core of your game
+design idea
+ Playtest: Playable version required!
+11
+Fall 2014 CMS.611J/6.073</text>
+        </slide>
+        <slide>
+          <slideno>5</slideno>
+          <text>Small but fully functional and polished?
+Same design scope as previous 2 projects
+8 week project!
+2 weeks to concept &amp; prototype multiple game 
+experiences!
+Remember: iterate on designs
+Design grounded in sources given by clientGoals
+6
+Fall 2014 CMS.611J/6.073</text>
+        </slide>
+        <slide>
+          <slideno>14</slideno>
+          <text>Brainstorming Groups
+Form brainstorming groups based on a topic:
+Cholera
+Early warning w/ Early action
+New Funding Tools for Disaster Preparedness
+Urban Risk Management
+Ebola
+Brainstorm will last for 4x 5-minute sessions
+Change secretaries during the switch
+Change topics at any switch period
+15
+Fall 2014 CMS.611J/6.073</text>
+        </slide>
+        <slide>
+          <slideno>7</slideno>
+          <text>Red Cross staff and volunteers
+Community organizers
+Youth
+univ students, younger students, interns in orgs &amp; 
+govt, etc
+People at risk
+shantytown dwellers, subsistence farmers, fishing 
+communities etcTarget Audiences
+8
+Fall 2014 CMS.611J/6.073</text>
+        </slide>
+        <slide>
+          <slideno>2</slideno>
+          <text>Project 3: Presentations
+Introduce Project 4
+Project 4 Start
+Client (Red Cross / Red Cresent Climate Centre) 
+presents the problem
+BrainstormingToday In CMS.611 J / 6.037
+3
+Fall 2014 CMS.611J/6.073</text>
+        </slide>
+      </slides>
+      <videos/>
+    </lecture>
+    <lecture>
+      <lecture_title>          Team Dynamics
+        </lecture_title>
+      <lecture_pdf_url>https://ocw.mit.edu/courses/cms-611j-creating-video-games-fall-2014/resources/mitcms_611jf14_teamdynamic/</lecture_pdf_url>
+      <lectureno>16</lectureno>
+      <slides>
+        <slide>
+          <slideno>15</slideno>
+          <text>Desire / ability to learn new skills
+Personal Development - career &amp; future needs
+Motivation - (intrinsic) enthusiasm
+Morale / Self -worth - self-awareness of skill
+Desire / ability to take on a task
+Empowerment - control over own work
+Commitment - displays of loyalty to the team
+Trust - between team members
+StressTeam Dynamics</text>
+        </slide>
+        <slide>
+          <slideno>13</slideno>
+          <text>All symptoms - no Triggers
+When does change happen?
+When does the team move from stage to stage?
+How can a team initiate a move intentionally?
+How have you seen changes in your teams?Problems with the model</text>
+        </slide>
+        <slide>
+          <slideno>7</slideno>
+          <text>One model: Tuckman (1965) 
+One model that we use to evaluate teams: 
+ Forming 
+ Norming 
+ Storming 
+ Performing 
+Each phase has items you can identify 
+Used to figure out where you are now</text>
+        </slide>
+        <slide>
+          <slideno>6</slideno>
+          <text>Teams Evolve over Time
+&amp;
+ All small groups evolve over time based on 
+interpersonal relationships and task behaviors 
+ Multiple theories exist to describe, all have common 
+th
+emes: 
+	 getting to know each other 
+	 experiencing conflict (positive &amp; negative) 
+	 roles shift based on knowledge &amp; experience
+&amp;
+	 (consensus, moving forward, decisions happen 
+here)</text>
+        </slide>
+        <slide>
+          <slideno>0</slideno>
+          <text>Today In Class 
+Rik Eberhardt</text>
+        </slide>
+        <slide>
+          <slideno>23</slideno>
+          <text>Tuckman, Bruce (1965). "Developmental sequence in small groups" . 
+Psychological Bulletin 63 (6): 38499. doi:10.1037/h0022100. PMID 
+14314073
+Dorairaj, S., Noble, J., and Malik, P (2008). Understanding Team 
+Dynamics in Distributed Agile Software Development  Agile Processes in 
+Software Engineering and EXtreme Programming: 9Th International 
+Conference , XP 2008, Limerick, Ireland, June 10-14, 2008 : Proceedings 
+(Google eBook), pp 47-61
+OConnor, R., Shuib Basri, L. (2012). The Effect of Team Dynamics on 
+Software Development Process Improvement  International Journal of 
+Human CapItal and InformatIon technology professionals July-September 2012, Vol. 3, No. 3. doi: 10.4018/jhcitp.2012070102References</text>
+        </slide>
+        <slide>
+          <slideno>18</slideno>
+          <text>Working together to 
+Reduce communication time
+Establish/maintain unity/one team
+Done as needed, when needed:
+At the beginning of the project
+Important milestones
+In strike teams
+Video chatCo-located Work</text>
+        </slide>
+        <slide>
+          <slideno>20</slideno>
+          <text>Before the Sprint
+Planning - what are you working on this week?
+During the Sprint
+Daily Standup - what did you do? what is on fire? 
+what is in your way?
+After/End the Sprint
+Sprint Review - what did you do this week?
+Sprint Retrospective - how did you work this week?Agile Meetings</text>
+        </slide>
+        <slide>
+          <slideno>2</slideno>
+          <text>Review
+&amp;
+Agile Processes 
+ Iterative development</text>
+        </slide>
+        <slide>
+          <slideno>1</slideno>
+          <text>Today In CMS.611 / 6.037
+&amp;
+SIT IN YOUR TEAMS 
+Working in Teams Effectively 
+ Agile Review 
+ Team Dynamics 
+ How do distributed agile teams perform? 
+Work in Class</text>
+        </slide>
+        <slide>
+          <slideno>4</slideno>
+          <text>Agile Manifesto
+&amp;
+Manifesto: 
+	 Individuals and interactions over processes and 
+tools 
+	 Working software over comprehensive
+&amp;
+documentation
+&amp;
+	 Customer collaboration over contract negotiation 
+ Responding to change over following a plan 
+Focus today: 
+	 Individuals 
+	 Interactions</text>
+        </slide>
+        <slide>
+          <slideno>16</slideno>
+          <text>What has worked for you so far?How do Distributed Teams
+Perform?</text>
+        </slide>
+        <slide>
+          <slideno>8</slideno>
+          <text>FORMING
+People want to get 
+along/be accepted
+Serious problems usually avoided
+Team learns about challenges &amp; goals
+Not much gets done in 
+this stage</text>
+        </slide>
+        <slide>
+          <slideno>12</slideno>
+          <text>The Model in Practice
+Non-linear
+movement between phases depends on task
+storming
+norming
+performing
+forming
+Image by MIT OpenCourseWare</text>
+        </slide>
+        <slide>
+          <slideno>9</slideno>
+          <text>STORMING
+People able to express
+discontent
+Opinions are challenged 
+Can be contentious, unpleasant
+To advance
+Tolerance &amp; Patience
+Establish lines of trust and open 
+communication
+Create processes!</text>
+        </slide>
+        <slide>
+          <slideno>5</slideno>
+          <text>What is a Team?
+&amp;
+Collection of
+&amp;
+individuals
+&amp;
+Working toward a 
+co
+mmon purpose 
+Shared responsibility 
+f
+or common outcomes</text>
+        </slide>
+        <slide>
+          <slideno>3</slideno>
+          <text>Review
+&amp;
+Agile (Scrum) Processes Based On:
+&amp;
+	 Transparency 
+	&amp;common nomenclature 
+	 Inspection
+&amp;
+ of artifacts (backlog)
+&amp;
+	&amp;during meetings 
+	 Adaptation 
+	&amp;processes change</text>
+        </slide>
+        <slide>
+          <slideno>17</slideno>
+          <text>Actions that help the team identify as a 
+Team, not as a group
+Frequent (social) Team Interactions
+Daily Standup
+Teams separated by time zone &amp; oceans do this!
+Requires some personal sacrifice
+Commitment - showing up to meetings
+Trust - not letting meetings take to longOne Team Mindset</text>
+        </slide>
+        <slide>
+          <slideno>11</slideno>
+          <text>PERFORMING
+Functioning as a unit, efficiently
+Team members are:
+autonomous when they can be
+dissent is expected and addressed
+You might not get this far -thats okay!</text>
+        </slide>
+        <slide>
+          <slideno>10</slideno>
+          <text>Individuals start giving up their own ideas and 
+goals - move towards a team goal
+Team members start taking responsibility
+Rules are establishedNORMING
+Process is being used!BUT: controversial ideas 
+might be unspoken</text>
+        </slide>
+        <slide>
+          <slideno>19</slideno>
+          <text>One person on the team, dedicated to:
+Cultivate team spirit
+Emphasize importance of one team
+Could be your Scrummaster / Producer but:
+Not focused on measured productivity 
+(completing tasks)
+Instead, focused on reading individuals
+One-on-one meetings could work
+Coffee, lunch - social interactionsCoaches</text>
+        </slide>
+        <slide>
+          <slideno>14</slideno>
+          <text>Teams are composed of Individuals
+Each person influenced by:
+Personal Development
+Motivation
+Morale / Self -worth
+Empowerment
+Commitment
+Trust
+StressTeam Dynamics</text>
+        </slide>
+        <slide>
+          <slideno>22</slideno>
+          <text>Schedule your next Sprint Retrospective
+A time period that everyone on the team can 
+attend that is:
+At the end of a Sprint
+Before you start your next Sprint
+Focused on your processes
+Includes time to talk about feelings and interpersonal 
+matters
+Communicate about Communicating!Do this now:</text>
+        </slide>
+        <slide>
+          <slideno>21</slideno>
+          <text>Daily Standup
+let your teammates know youre committed!
+Sprint Retrospectives
+talk about your feelings! (easier to say/hear than 
+write/read)Meet Face to Face!</text>
+        </slide>
+      </slides>
+      <videos/>
+    </lecture>
+    <lecture>
+      <lecture_title>          Quality Assurance
+        </lecture_title>
+      <lecture_pdf_url>https://ocw.mit.edu/courses/cms-611j-creating-video-games-fall-2014/resources/mitcms_611jf14_tech_tes/</lecture_pdf_url>
+      <lectureno>14</lectureno>
+      <slides>
+        <slide>
+          <slideno>3</slideno>
+          <text>who? 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+4 MIT  CMS.611J/6.073  Fall 2014</text>
+        </slide>
+        <slide>
+          <slideno>5</slideno>
+          <text>Technical Testing Basics 
+Technical Standards  (Have them.)  
+ Bug database  
+Build and test before check in  
+Daily builds, daily play throughs  
+Planned feature cuts  
+Code Freezes  (Code Reviews)  
+Asset Freezes  
+ 
+6 MIT  CMS.611J/6.073  Fall 2014</text>
+        </slide>
+        <slide>
+          <slideno>10</slideno>
+          <text>How: User testing 
+Remember the Experimental Method?  Form a 
+hypothesis, create a test for it, gather data, 
+analyze results . 
+This isnt really that different!  
+Have a Question (or a Goal) for each focus test!  
+Develop a method:  Standardize your approach.  
+Introductory Script  
+List of observations to look for  
+Set of questions to ask your testers  
+Review your data, and decide what your team 
+should do about it!  
+ 
+11 MIT  CMS.611J/6.073  Fall 2014</text>
+        </slide>
+        <slide>
+          <slideno>1</slideno>
+          <text>Quality Assurance Testing. 
+Everyone needs it.  How come nobody likes it? 
+ 
+2 MIT  CMS.611J/6.073  Fall 2014</text>
+        </slide>
+        <slide>
+          <slideno>0</slideno>
+          <text>Today 
+Testing Lecture  
+Riot Testing Lecture 
+Break!  
+In Class Work: FOCUS TEST  
+Plan Test  
+Run Test  
+Report Results  
+ 
+MIT  CMS.611J/6.073  Fall 2014  
+1</text>
+        </slide>
+        <slide>
+          <slideno>6</slideno>
+          <text>Advanced Technical 
+Testing 
+Maintain working feature lists  
+Agree how features should work  
+Test newly implemented features as soon as they are 
+done.  
+Checklist testing: methodical testing of all implemented 
+features, all branches, all possible states.  (Regression 
+testing  testing features that havent changed since last 
+checkin  to make sure they are still working)  
+Remember that checklist testing  and strict feature 
+checking - doesnt cover freeform play: getting in the 
+game and just doing stuff to see what happens.  Test 
+that too!  
+ 
+7 MIT  CMS.611J/6.073  Fall 2014</text>
+        </slide>
+        <slide>
+          <slideno>4</slideno>
+          <text>Types of Testing 
+Technical Testing.  
+Looking for 
+defects.  
+Playtesting : 
+You play your 
+game!  
+User testing  
+someone else plays 
+your game  
+Focus Testing  
+User Testing    
+5
+MIT  CMS.611J/6.073  Fall 2014</text>
+        </slide>
+        <slide>
+          <slideno>12</slideno>
+          <text>Data Collection 
+Direct Observation 
+Ask players to talk out loud about what they are 
+doing.  
+Take notes!  
+Surveys  
+Not real time; people forget what they were doing 
+quickly.  
+Interviews  
+People dont like to disappoint you, so they often 
+soft pedal their comments.  
+ 
+13 MIT  CMS.611J/6.073  Fall 2014</text>
+        </slide>
+        <slide>
+          <slideno>15</slideno>
+          <text>MIT OpenCourseWare
+http://ocw.mit.edu
+CMS.611J
+ / 6.073  Creating Video Games
+Fall 2014
+For information about citing these materials or our Terms of Use, visit: http:// ocw.mit.edu/terms .</text>
+        </slide>
+        <slide>
+          <slideno>9</slideno>
+          <text>Test driven design does not 
+mean do what your testers 
+tell you to! 
+ 
+10 MIT  CMS.611J /6.073  Fall 2014</text>
+        </slide>
+        <slide>
+          <slideno>13</slideno>
+          <text>Examples 
+Observer script/survey  
+Focus Test Form  
+ 
+ 
+ 
+14 MIT  CMS.611J/6.073  Fall 2014</text>
+        </slide>
+        <slide>
+          <slideno>2</slideno>
+          <text>any systematic 
+process of checking to 
+see whether a product 
+or service being 
+developed is meeting 
+specified requirements  
+ 
+ in other words 
+Making sure your 
+game does what you 
+want it to do, and 
+does it well.  
+ 
+3 MIT  CMS.611J/6.073  Fall 2014</text>
+        </slide>
+        <slide>
+          <slideno>14</slideno>
+          <text>Focus Test Workshop 
+Prepare for test (15 minutes) 
+Decide on a question, data collection method(s),  
+create any useful paperwork 
+Run Testing (60 minutes) 
+Everyone on your team should get a chance to 
+observe at least one tester, and everyone on your 
+team should play AT LEAST 2 games. 
+Post test discussion (15) followed by quick report 
+to the class on your results: what did you learn, 
+how did it go? 
+ 
+15 MIT  CMS.611J/6.073  Fall 2014</text>
+        </slide>
+        <slide>
+          <slideno>7</slideno>
+          <text>Be Kind To Your 
+Fellow Engineers 
+Write good bugs, not bad. 
+Good bugs include: What happened.  What 
+should have happened.  How to reproduce.  How 
+common &amp; serious the bug is.  Supporting data, 
+like screenshots,  or numbers, is useful.  
+Know the difference between a criticism and a 
+critique.  
+Read Bugs &amp; Bug Reporting for more details.  
+ 
+8 MIT  CMS.611J/6.073  Fall 2014</text>
+        </slide>
+        <slide>
+          <slideno>11</slideno>
+          <text>tl;dr  
+For each test you run:  
+Who are you testing 
+with?  
+What are you testing 
+with?  
+Why are you testing?  
+ 
+  
+12
+MIT  CMS.611J/6.073  Fall 2014</text>
+        </slide>
+        <slide>
+          <slideno>8</slideno>
+          <text>Why: User Testing 
+Engaging game play is 
+hard: Find out how users 
+react to your game.  
+Gauging overall game 
+difficulty/challenge.  
+Test driven design  
+needs testing! 
+Check your User 
+Interface against actual 
+users. 
+  
+9
+MIT  CMS.611J/6.073  Fall 2014</text>
+        </slide>
+      </slides>
+      <videos/>
+    </lecture>
+    <lecture>
+      <lecture_title>          Agile Part II
+        </lecture_title>
+      <lecture_pdf_url>https://ocw.mit.edu/courses/cms-611j-creating-video-games-fall-2014/resources/mitcms_611jf14_agilelec2/</lecture_pdf_url>
+      <lectureno>2</lectureno>
+      <slides>
+        <slide>
+          <slideno>8</slideno>
+          <text>Creating a ScrumBoard 
+TRELLO.COM, 
+SCRUMY.COM 
+9
+MIT  CMS.611 J/6.073 Fall 2014</text>
+        </slide>
+        <slide>
+          <slideno>6</slideno>
+          <text>Epic Stories  Smaller 
+stories 
+As the user I want an improved physics engine so that I 
+can have good, responsive car driving physics  
+What does that mean, anyway?  
+Realistic acceleration?  
+Braking?  
+Friction?  Mass &amp; Momentum?  
+Special effects of sparks crackling off the pavement, smoke 
+pouring out of overworked engines?  
+ This is one of the methods Agile Teams with differently skilled 
+members can use to do better load balancing for their team! 
+7
+MIT  CMS.611 J/6.073 Fall 2014</text>
+        </slide>
+        <slide>
+          <slideno>10</slideno>
+          <text>Pulling it all together  
+There you have it.  Be Agile.  
+11
+MIT  CMS.611 J/6.073 Fall 2014</text>
+        </slide>
+        <slide>
+          <slideno>0</slideno>
+          <text>Today In Class 
+Estimation Lecture  
+Sprint Backlogs &amp; Tasklists    
+Backlog, Tasklist  &amp; Estimation Workshop (45)  
+Good Software Practices with Andrew  
+If theres any time left:  Project Work  
+Due Today:   
+Product Backlog.  
+Running Code (expected milestone, no 
+deliverable)  
+ 
+1
+MIT  CMS.611 J/6.073 Fall 2014</text>
+        </slide>
+        <slide>
+          <slideno>5</slideno>
+          <text>Creating a Sprint Backlog 
+Sprint Tasklist 
+Sprint Backlog 
+Product Backlog 
+ Big Story 
+Story A 
+Task 1 
+ Task 2 
+Story B 
+Task 3 
+ Task 4 
+6
+MIT  CMS.611 J/6.073 Fall 2014</text>
+        </slide>
+        <slide>
+          <slideno>4</slideno>
+          <text>Sprint Backlogs, 
+Tasklists, and Tasks. 
+5
+MIT  CMS.611 J/6.073 Fall 2014</text>
+        </slide>
+        <slide>
+          <slideno>7</slideno>
+          <text>Tasks 
+Tasks are small enough to estimate with better 
+accuracy: tasks should range from 1  8hrs of 
+work, ideally.  
+Tasks (ideally) can be assigned to a single 
+person.  
+By breaking a story into tasks, the team can 
+find hidden dependencies &amp; potential team 
+member overloading before the Sprint gets 
+started.  
+8
+MIT  CMS.611 J/6.073 Fall 2014</text>
+        </slide>
+        <slide>
+          <slideno>2</slideno>
+          <text>Agile Part II 
+3
+MIT  CMS.611 J/6.073 Fall 2014</text>
+        </slide>
+        <slide>
+          <slideno>1</slideno>
+          <text>Be Ready for Wednesday! 
+Due Wednesday:   
+Testable version of your game  
+Sprint Tasklist   (Spreadsheet format)  
+Focus Testing lecture  
+In Class Work:  Creating a Focus Test  
+In Class Work:  Running a Focus Test  
+Genevieve Conley  Guest Lecturer from Riot  
+2
+MIT  CMS.611 J/6.073 Fall 2014 
+MIT  CMS.611J/6.073 Fall 2014</text>
+        </slide>
+        <slide>
+          <slideno>11</slideno>
+          <text>MIT OpenCourseWare
+http://ocw.mit.edu
+CMS.611J / 6.073 Creating Video Games
+Fall 20
+14
+For information about citing these materials or our Terms of Use, visit: http:// ocw.mit.edu/terms .</text>
+        </slide>
+        <slide>
+          <slideno>3</slideno>
+          <text>Word Quiz 
+Team Member  
+Scrum Master  
+Product Owner  
+ 
+ 
+ 
+Product Backlog  
+Sprint Backlog  
+Task List  
+Scrum Board   
+Sprint  
+Sprint Planning  
+Daily Scrum  
+Sprint Review  
+Retrospective  
+ 
+4
+MIT  CMS.611 J/6.073 Fall 2014</text>
+        </slide>
+        <slide>
+          <slideno>9</slideno>
+          <text>Creating Tasklist 
+Create a Sprint Backlog &amp; Tasklist  for the next 
+week.  
+Stop estimating when you run out of time to do 
+work, not when you run out of stories!  
+Ask yourself: is that the project you want to 
+make?  
+Prepare a 2 minute (no visuals) presentation, 
+talking about the process of making your sprint 
+task list.  What did your team learn while doing 
+it? 
+ 
+10
+MIT  CMS.611 J/6.073 Fall 2014</text>
+        </slide>
+      </slides>
+      <videos/>
+    </lecture>
+    <lecture>
+      <lecture_title>          Revision Control
+        </lecture_title>
+      <lecture_pdf_url>https://ocw.mit.edu/courses/cms-611j-creating-video-games-fall-2014/resources/mitcms_611jf14_source_cont/</lecture_pdf_url>
+      <lectureno>15</lectureno>
+      <slides>
+        <slide>
+          <slideno>8</slideno>
+          <text>Operations 
+ 
+ 
+ Copy from server 
+oaka get update pull checkout revert  (down) 
+ Copy changes to server 
+ Check status of local files 
+ Lock files so no one else can change them 
+ Compare different versions of the same file 
+ Merge changes by two different people 
+ 
+9
+Fall 2014 CMS.611J/6.073</text>
+        </slide>
+        <slide>
+          <slideno>7</slideno>
+          <text>Operations 
+ 
+ 
+ Copy from server 
+ Submit changes to server 
+ Check status of local files 
+ Lock files so no one else can change them 
+ Compare different versions of the same file 
+ Merge changes by two different people 
+ 
+8
+Fall 2014 CMS.611J/6.073</text>
+        </slide>
+        <slide>
+          <slideno>1</slideno>
+          <text>TLAs 
+ 
+ RCS - Revision Control System 
+oaka Source Control Management (SCM) 
+oaka Source Control 
+oaka Version Control 
+ cvs - Concurrent Versions System 
+svn - Subversion 
+ p4v - Perforce 
+ git - Git 
+hg - Mercurial 
+ 
+2
+Fall 2014 CMS.611J/6.073</text>
+        </slide>
+        <slide>
+          <slideno>17</slideno>
+          <text>Tips 
+ 
+ 
+ 
+ignore unneeded files 
+odont submit object files! 
+lock binary files 
+18
+Fall 2014 CMS.611J/6.073</text>
+        </slide>
+        <slide>
+          <slideno>3</slideno>
+          <text>What is Revision Control? 
+ 
+ 
+ 
+ 
+ 
+ 
+ You copy files from a central server 
+ You make changes to your local files 
+ You copy files to the central server 
+ Server 
+You Teammate 
+4
+Fall 2014 CMS.611J/6.073</text>
+        </slide>
+        <slide>
+          <slideno>0</slideno>
+          <text>Revision Control 
+(short version) 
+ 
+Andrew Haydn Grant 
+Technical Director 
+MIT Game Lab 
+September 10, 2014 
+1
+Fall 2014 CMS.611J/6.073</text>
+        </slide>
+        <slide>
+          <slideno>2</slideno>
+          <text>What is Revision Control? 
+ 
+ 
+ 
+ 
+ 
+ 
+ You copy files from a central server 
+ You make changes to your local files 
+ You copy files to the central server 
+ Server 
+(repository) 
+You 
+(workspace) 
+3
+Fall 2014 CMS.611J/6.073</text>
+        </slide>
+        <slide>
+          <slideno>5</slideno>
+          <text>What is Revision Control? 
+ 
+ 
+ 
+ 
+ 
+ 
+ Authoritative 
+Server 
+You Teammate Teammate 
+Teammate Teammate Teammate 
+Teammate 
+6
+Fall 2014 CMS.611J/6.073</text>
+        </slide>
+        <slide>
+          <slideno>16</slideno>
+          <text>Dont Break The Build!!! 
+ 
+ 
+ The version of the project in your 
+authoritative server should always build and 
+run. 
+ With 0 errors. 
+ And 0 warnings. 
+ Use a check build 
+ 
+ 
+17
+Fall 2014 CMS.611J/6.073</text>
+        </slide>
+        <slide>
+          <slideno>13</slideno>
+          <text>Operations 
+ 
+ Copy from server 
+ Copy changes to server 
+ Check status of local files 
+ Lock files so no one else can change them 
+ Compare different versions of the same file 
+ Merge changes by two different people 
+omerge and then resolve   
+ 
+14
+Fall 2014 CMS.611J/6.073</text>
+        </slide>
+        <slide>
+          <slideno>10</slideno>
+          <text>Operations 
+ 
+ Copy from server 
+ Copy changes to server 
+ Check status of local files 
+oaka status 
+ Lock files so no one else can change them 
+ Compare different versions of the same file 
+ Merge changes by two different people 
+ 
+11
+Fall 2014 CMS.611J/6.073</text>
+        </slide>
+        <slide>
+          <slideno>12</slideno>
+          <text>Operations 
+ 
+ Copy from server 
+ Copy changes to server 
+ Check status of local files 
+ Lock files so no one else can change them 
+ Compare different versions of the same file 
+oaka diff 
+ Merge changes by two different people 
+ 
+13
+Fall 2014 CMS.611J/6.073</text>
+        </slide>
+        <slide>
+          <slideno>4</slideno>
+          <text>What is Revision Control? 
+ 
+ 
+ 
+ 
+ 
+ 
+ You copy files from a central server 
+ You make changes to your local files 
+ You copy files to the central server 
+ Server 
+You Teammate Teammate 
+Teammate 
+5
+Fall 2014 CMS.611J/6.073</text>
+        </slide>
+        <slide>
+          <slideno>18</slideno>
+          <text>Revision Control 
+ 
+Andrew Haydn Grant 
+Technical Director 
+MIT Game Lab 
+September 10, 2014 
+19
+Fall 2014 CMS.611J/6.073</text>
+        </slide>
+        <slide>
+          <slideno>14</slideno>
+          <text>Remember this? 
+ 
+p4v, svn 
+ 
+Authoritative 
+Server 
+You Teammate 
+Teammate Teammate Teammate 
+Teammate 
+Teammate 
+15
+Fall 2014 CMS.611J/6.073</text>
+        </slide>
+        <slide>
+          <slideno>11</slideno>
+          <text>Operations 
+ 
+ Copy from server 
+ Copy changes to server 
+ Check status of local files 
+ Lock files so no one else can change them 
+oaka lock 
+ Compare different versions of the same file 
+ Merge changes by two different people 
+ 
+12
+Fall 2014 CMS.611J/6.073</text>
+        </slide>
+        <slide>
+          <slideno>9</slideno>
+          <text>Operations 
+ 
+ 
+ Copy from server 
+ Copy changes to server 
+oaka submit commit put push checkin (up) 
+ Check status of local files 
+ Lock files so no one else can change them 
+ Compare different versions of the same file 
+ Merge changes by two different people 
+ 
+10
+Fall 2014 CMS.611J/6.073</text>
+        </slide>
+        <slide>
+          <slideno>19</slideno>
+          <text>MIT OpenCourseWare
+http://ocw.mit.edu
+CMS.611
+J / 6.073  Creating Video Games
+Fall 2014
+For information about citing these materials or our Terms of Use, visit: http:// ocw.mit.edu/terms .</text>
+        </slide>
+        <slide>
+          <slideno>15</slideno>
+          <text>Distributed Source Control 
+ 
+git, hg 
+ 
+ 
+ Not Really 
+Authoritative 
+Server 
+You Teammate 
+Teammate Teammate Teammate 
+Teammate 
+Teammate 
+16
+Fall 2014 CMS.611J/6.073</text>
+        </slide>
+        <slide>
+          <slideno>6</slideno>
+          <text>What is Revision Control? 
+ 
+ 
+ A backup system 
+ A way to share code 
+ 
+ A history of your project 
+ An undo button 
+ 
+ A way to simultaneously edit the same files 
+ 
+7
+Fall 2014 CMS.611J/6.073</text>
+        </slide>
+      </slides>
+      <videos/>
+    </lecture>
+    <lecture>
+      <lecture_title>          Creating Videogames
+        </lecture_title>
+      <lecture_pdf_url>https://ocw.mit.edu/courses/cms-611j-creating-video-games-fall-2014/resources/mitcms_611jf14_sep3inttocou/</lecture_pdf_url>
+      <lectureno>6</lectureno>
+      <slides>
+        <slide>
+          <slideno>12</slideno>
+          <text>1-line version of this class... 
+ 
+Work face-to -face. Test often. 
+Prioritize, integrate &amp; cut features 
+early. Sleep. Avoid 3D &amp; network. 
+Use version control. 
+ 
+13
+Fall 2014 CMS.611J/6.073</text>
+        </slide>
+        <slide>
+          <slideno>6</slideno>
+          <text>This class is run as 2 3-hour workshops 
+Class time will be allotted for work in teams 
+on projects 
+~60 min per session for Projects 1 &amp; 2 
+Up to ~90min per session for Projects 3 &amp; 4 
+Teamwork is the heart  of this course! In Class Expectations 
+7
+Fall 2014 CMS.611J/6.073</text>
+        </slide>
+        <slide>
+          <slideno>7</slideno>
+          <text>Regular attendance is mandatory (MW 1-4p)  
+Grade penalties if you miss more than 3 classes  
+w/o justification 
+Do not be late! 
+Be in this room by 1:10pm! 
+We will lock doors during guest lectures to prevent 
+disruption. Doors will unlock afterwards to allow you 
+to work with your team that day. Attendance &amp; Lateness 
+8
+Fall 2014 CMS.611J/6.073</text>
+        </slide>
+        <slide>
+          <slideno>11</slideno>
+          <text>Team &amp; Project Management 
+We will use tools and methods to manage these 
+problems! 
+Code &amp; Asset Workflows 
+Code Review 
+Product Backlogs &amp; Task Lists 
+Retrospectives 
+Ultimately, however, prior experience in working in 
+these environments is your best solution! 
+12
+Fall 2014 CMS.611J/6.073</text>
+        </slide>
+        <slide>
+          <slideno>8</slideno>
+          <text>Harassment includes offensive verbal comments related 
+to gender, gender identity, sexual orientation, disability, 
+physical appearance, body size, race, religion, sexual 
+images in public spaces, deliberate intimidation, 
+stalking, following, harassing photography or recording, 
+sustained disruption of talks or other events, 
+inappropriate physical contact, and unwelcome sexual 
+attention. 
+If you see something or are a target of harassment, 
+contact any of your instructors or TA in person or via  
+email.  Harassment &amp; Behavior 
+9
+Fall 2014 CMS.611J/6.073</text>
+        </slide>
+        <slide>
+          <slideno>9</slideno>
+          <text>Modern videogames are created by teams of individuals 
+with differing yet complementary skillsets. 
+Programmers 
+Designers 
+QA Testers 
+Artists 
+Sound Designers 
+Composers 
+Community Managers 
+Business Analysts 
+Marketers Creating Videogames? 
+10
+Fall 2014 CMS.611J/6.073</text>
+        </slide>
+        <slide>
+          <slideno>13</slideno>
+          <text>MIT OpenCourseWare
+http://ocw.mit.edu
+CMS.611J / 6.073  Creating Video Games
+Fall 2014
+For information about citing these materials or our Terms of Use, visit: http:// ocw.mit.edu/terms .</text>
+        </slide>
+        <slide>
+          <slideno>5</slideno>
+          <text>Grading Rubric 
+Game Functionality 
+Iterative Design Process 
+Teamwork &amp; Project Management Practices 
+Group Postmortem Presentation 
+Written Postmortem 
+ 
+All but the written postmortems are team-delivered 
+6
+Fall 2014 CMS.611J/6.073</text>
+        </slide>
+        <slide>
+          <slideno>2</slideno>
+          <text>MIT Game Lab 
+http://gamelab.mit.edu 
+ 
+Game Design &amp; Research 
+CMS.300 CMS.301 CMS.608 
+CMS.615 CMS.610 CMS.617 
+UROP   6.UAP   6 
+M.Eng 
+3
+Fall 2014 CMS.611J/6.073</text>
+        </slide>
+        <slide>
+          <slideno>0</slideno>
+          <text>Welcome to CMS.611J  / 6.073 
+Creating 
+Videoga
+mes 
+ 
+September 3, 2014 
+1
+Fall 2014 CMS.611J/6.073</text>
+        </slide>
+        <slide>
+          <slideno>3</slideno>
+          <text>1-line version of this class... 
+ 
+Work face-to -face. Test often. 
+Prioritize, integrate &amp; cut features 
+early. Sleep. Avoid 3D &amp; network. 
+Version control. 
+ 
+4
+Fall 2014 CMS.611J/6.073</text>
+        </slide>
+        <slide>
+          <slideno>10</slideno>
+          <text>This class is designed to give hands-on experience in 
+working on complex projects with large teams. 
+Team size grows from 3 in project 1 to a minimum of 8 
+in project 4 
+Communication becomes important! 
+Bottlenecks form! 
+Quality of code and assets can easily nosedive! Creating Videogames? 
+11
+Fall 2014 CMS.611J/6.073</text>
+        </slide>
+        <slide>
+          <slideno>1</slideno>
+          <text>Comparative Media Studies / 
+Writing 
+http://cmsw.mit.edu 
+critical analysis, collaborative research, and design 
+across a variety of media arts, forms, and practices 
+ 
+2
+Fall 2014 CMS.611J/6.073</text>
+        </slide>
+        <slide>
+          <slideno>4</slideno>
+          <text>4 Game Projects that build to a common theme 
+Meaningful Decision Making 
+Project 1: Planning for Randomness Non-digital 
+Project 2: Planning for Randomness Digital 
+Project 3: Tradeoffs in Decision Making 
+Project 4: Help policy makers understand the need 
+to spend money, time, &amp; resources on disaster 
+preparedness Structure 
+5
+Fall 2014 CMS.611J/6.073</text>
+        </slide>
+      </slides>
+      <videos/>
+    </lecture>
+    <lecture>
+      <lecture_title>          Vision Statements
+        </lecture_title>
+      <lecture_pdf_url>https://ocw.mit.edu/courses/cms-611j-creating-video-games-fall-2014/resources/mitcms_611jf14_vision_state/</lecture_pdf_url>
+      <lectureno>17</lectureno>
+      <slides>
+        <slide>
+          <slideno>0</slideno>
+          <text>Vision Statements 
+CMS611J/6.073 Fall 2014 
+MIT Game Lab  CMS.611J/6.073   Fall 2014  1</text>
+        </slide>
+        <slide>
+          <slideno>1</slideno>
+          <text>Why? 
+ Because its good for you, the team, and the 
+game. 
+ 2 
+MIT Game Lab  CMS.611J/6.073   Fall 2014</text>
+        </slide>
+        <slide>
+          <slideno>3</slideno>
+          <text>Back of box vision 
+statement   
+Write the top 3  4 bullet 
+points that you would put 
+on the back of your 
+games box to sell it to 
+customers.  
+Your teams choice: you can use either one of the 
+above methods.  Download either Back of Box or 
+HLDD to use.    
+If youve played your paper prototype this shouldnt 
+be too hard!  
+High Level Design Doc 
+vision statement. 
+Define in a few sentences 
+your games goal.  
+Write up a 20 second 
+example gameplay, that 
+reflects the players 
+experience in the game. 
+ We have a format for that! 
+ 4 
+MIT Game Lab  CMS.611J/6.073   Fall 2014</text>
+        </slide>
+        <slide>
+          <slideno>5</slideno>
+          <text>MIT OpenCourseWare
+http://ocw.mit.edu
+CMS.611
+J / 6.073  Creating Video Games
+Fall 2014
+For information about citing these materials or our Terms of Use, visit: http:// ocw.mit.edu/terms .</text>
+        </slide>
+        <slide>
+          <slideno>2</slideno>
+          <text>If a vision statement defines the project 
+(and the game) for the team and its 
+clients  
+ 
+What should it include? 
+ 3 
+MIT Game Lab  CMS.611J/6.073   Fall 2014</text>
+        </slide>
+        <slide>
+          <slideno>4</slideno>
+          <text>Your quest 
+As a team 
+Decide which format to use 
+Create your teams vision doc 
+Appoint one of you to upload it 
+Make sure you include all team 
+members names on it! 
+20 minutes.  Go. 
+MIT Game Lab  CMS.611J/6.073   Fall 2014  5</text>
+        </slide>
+      </slides>
+      <videos/>
+    </lecture>
+    <lecture>
+      <lecture_title>          Back of the Box
+        </lecture_title>
+      <lecture_pdf_url>https://ocw.mit.edu/courses/cms-611j-creating-video-games-fall-2014/resources/mitcms_611jf14_back_of_box/</lecture_pdf_url>
+      <lectureno>3</lectureno>
+      <slides>
+        <slide>
+          <slideno>1</slideno>
+          <text>MIT OpenCourseWare
+http://ocw.mit.edu
+ 
+CMS.611J / 6.073  Creating Video Games
+Fall 2014
+ 
+For information about citing these materials or our Terms of Use, visit: http://ocw.mit.edu/terms.</text>
+        </slide>
+        <slide>
+          <slideno>0</slideno>
+          <text>Back of The Box:  
+You are responsible for writing the marketing copy that will go on the back of this game's box.  Come 
+up with 3 - 4 (no more!) exciting 'bullet point items' that describe the heart and soul of this game.  
+Example for the 'Ex Drug Lord Game': 
+ Will you retire to the Cayman Islands or the federal penitentiary? 
+ Rid yourself of old labs and old clients while ridding them of their cash! 
+ Hide your ill gotten gains where only you will find them again! 
+ Avoid cops or bribe them?  The choice is yours! 
+ 
+Team/Responsibility Breakdown: 
+Jobs, hours, responsibilities.   
+ 
+Thirty Seconds of Gameplay: 
+What am I going to do most in your game?  Is it going to be fun and engaging?  Come back &amp; reread 
+this section: youd be amazed at how often your intended key game play gets cluttered away with and 
+we coulds  
+Risks: 
+Key technical, personnel, scope, tim e, etc risks.  Whats scariest about the project you want to do?</text>
+        </slide>
+      </slides>
+      <videos/>
+    </lecture>
+    <lecture>
+      <lecture_title>          Coding Tips
+        </lecture_title>
+      <lecture_pdf_url>https://ocw.mit.edu/courses/cms-611j-creating-video-games-fall-2014/resources/mitcms_611jf14_coding_tips/</lecture_pdf_url>
+      <lectureno>5</lectureno>
+      <slides>
+        <slide>
+          <slideno>26</slideno>
+          <text>Function Names 
+ 
+ 
+ Should be longer than you think 
+ Should be pronouncable 
+ Should look different 
+ Should be spelled correctly 
+ Should include the units of measurement 
+ 
+ Are the primary way you teach other programmers 
+about your API 
+ 
+     
+      
+27</text>
+        </slide>
+        <slide>
+          <slideno>36</slideno>
+          <text>Mysterious Constants 
+ 
+Never use string or numeric constants when you can use a variable 
+ 
+// Bad 
+   if (status == closed) 
+     OR  
+   if (status == 5) 
+ 
+ 
+//  Good 
+  if (status == Status.Closed) 
+ 
+ 
+ 
+37</text>
+        </slide>
+        <slide>
+          <slideno>25</slideno>
+          <text>Variable Names 
+ 
+ 
+ Should be longer than you think 
+ Should be pronouncable 
+ Should look different: ClientRecs  ClientReps 
+ Should be spelled correctly 
+ Should include the units of measurement 
+ Should not be reused 
+ 
+ 
+     
+      
+26</text>
+        </slide>
+        <slide>
+          <slideno>5</slideno>
+          <text>NOT Writing Code 
+ 
+Coding Is Slow 
+othink 
+oimplement 
+odebug 
+ointegrate 
+odebug 
+odebug 
+odebug 
+ 
+6</text>
+        </slide>
+        <slide>
+          <slideno>19</slideno>
+          <text>Code  
+ 
+ 
+ 
+// Did the player get a bulls eye? 
+if ((v0-v1).getLength() &lt; 30) 
+{ 
+ // Yes!  Return the bulls-eye score. 
+ return 50; 
+} 
+ 
+ 
+20</text>
+        </slide>
+        <slide>
+          <slideno>64</slideno>
+          <text>MIT OpenCourseWare
+http://ocw.mit.edu
+ 
+ 
+ 
+ 
+CMS.611J / 6.073 Creating Video Games
+Fall
+ 2014
+ 
+ 
+ 
+ 
+For information about citing these materials or our Terms of Use, visit: http:// ocw.mit.edu/terms .</text>
+        </slide>
+        <slide>
+          <slideno>38</slideno>
+          <text>goto 
+ 
+ 
+ 
+goto isnt ALWAYS evil. 
+Just most of the time. 
+Sometimes, it can make code MORE readable. 
+A convoluted pile of nested IF statements can be really hard to 
+unravel. 
+ 
+ 
+ 
+39</text>
+        </slide>
+        <slide>
+          <slideno>12</slideno>
+          <text>Simplicity 
+ 
+ 
+ Simplicity means easier to read. 
+ Simplicity means fewer bugs. 
+ Simple rarely means fewer characters 
+ Each step is simple.  When there are too many steps to 
+hold in your head, clump them. 
+ Some language functionality is awesome, but still 
+dangerous. 
+ In particular, be wary of write once read never 
+code. 
+       
+13</text>
+        </slide>
+        <slide>
+          <slideno>21</slideno>
+          <text>Shorter Functions 
+ 
+22</text>
+        </slide>
+        <slide>
+          <slideno>29</slideno>
+          <text>Order Of Operations 
+ 
+float y = 35 * x + (int) --fever / 4.0f + x ^ 2 % snarkle++; 
+ 
+ 
+I use parenthesis. 
+ 
+30</text>
+        </slide>
+        <slide>
+          <slideno>34</slideno>
+          <text>Split Up The Math 
+ 
+ 
+ 
+ 
+x = foo + bar --; 
+ 
+vs 
+ 
+x = foo + bar; 
+bar--; 
+ 
+ 
+ 
+ 
+35</text>
+        </slide>
+        <slide>
+          <slideno>48</slideno>
+          <text>Source Control 
+ 
+ 
+Check EVERYTHING into source control 
+Especially 3rd party libs 
+Anyone should be able to do a get and build 
+The build should be one human step. 
+ Check in often 
+ 
+ 
+ 
+ 
+49</text>
+        </slide>
+        <slide>
+          <slideno>0</slideno>
+          <text>Coding Tips 
+ 
+Andrew Haydn Grant 
+Technical Director 
+MIT Game Lab 
+September 22, 2014 
+1</text>
+        </slide>
+        <slide>
+          <slideno>54</slideno>
+          <text>Team Coding 
+ 
+ 
+ 
+55</text>
+        </slide>
+        <slide>
+          <slideno>6</slideno>
+          <text>Coding Is Slow 
+othink 
+oimplement 
+odebug 
+ointegrate 
+odebug 
+odebug 
+odebug 
+Debugging Is Slower 
+ NOT Debugging 
+7</text>
+        </slide>
+        <slide>
+          <slideno>60</slideno>
+          <text>Beware Algorithms 
+  
+Especially ones you create yourself. 
+ 
+Wait, what? 
+  Cool ways of solving problems are one of the reasons that we all learned to 
+program.  An Algorithm, in the textbook sense, is a particularly clever way of 
+solving a problem.  We want to make some of our own. 
+  Okay, but only make one when you need to. 
+  This goes back to performance.  Most algorithms are about solving some 
+problem QUICKLY.  The first step you should take is solving the problem in 
+the simplest, most readable, least bug-prone way possible. 
+  Then run it.  Computers are fast.  This may be good enough.  
+After the simple thing fails, then think about optimizations.  After youve done 
+the easy ones, then consider creating an algorithm.  No, wait, dont!  Look 
+online first.  Its be faster and less bug prone to benefit from some poor 
+shmuck who has solved (and debugged) this problem before. 
+ 
+What is an algorithm?  Okay, there are simple algorithms that only take a few 
+lines of text to explain.  Were not talking about those.  Were talking about 
+something A* or harder, where the code reader has to THINK about why it 
+works. 
+ 
+ 
+ 
+61</text>
+        </slide>
+        <slide>
+          <slideno>42</slideno>
+          <text>Systems 
+ 
+ 
+ 
+Resist the temptation to build a system on day 1. 
+ 
+43</text>
+        </slide>
+        <slide>
+          <slideno>13</slideno>
+          <text>Write Once, Read Never 
+ 
+ 
+ 
+       
+14</text>
+        </slide>
+        <slide>
+          <slideno>1</slideno>
+          <text>Iterate Everything 
+ 
+Experiment, analyze, repeat 
+ Paper prototypes 
+ Digital prototypes 
+ Team communication 
+ Baseball pitches 
+ Scientific Theories 
+ Romantic relationships 
+Lasagna recipes  
+ Coding style 
+ 
+ 
+ 
+ 
+ 
+ 
+2</text>
+        </slide>
+        <slide>
+          <slideno>4</slideno>
+          <text>All Software Sucks 
+Including yours. 
+5</text>
+        </slide>
+        <slide>
+          <slideno>30</slideno>
+          <text>Warnings Are Errors 
+ 
+ 
+ 
+ Warnings are often useful clues about a flaw in your 
+code. 
+ When you let warnings stick around, you wont notice 
+the new one that actually matters. 
+ 
+ 
+ 
+31</text>
+        </slide>
+        <slide>
+          <slideno>50</slideno>
+          <text>Coding Standards 
+ 
+Why? 
+ We like tidy code 
+ It is an objective truth that opening braces belong on the same line as the 
+code 
+ 
+ 
+51</text>
+        </slide>
+        <slide>
+          <slideno>8</slideno>
+          <text>Playtest Your Code 
+I know that man page is clear!  I wrote it. 
+ 
+Your gameplay is harder than you think it is. 
+ Your puzzles are harder than you think that are. 
+ Your instructions arent as clear as you think they are. 
+ Your documentation isnt as clear as you think it is. 
+ Your code is not as comprehensible as you think it is. 
+ 
+ 
+ 
+Its harder to read code than to write it. 
+ 
+9</text>
+        </slide>
+        <slide>
+          <slideno>15</slideno>
+          <text>Comments 
+ 
+ 
+ 
+// Is the enemy off the screen? 
+if (x &lt; 0 || x &gt;= width)  
+{ 
+   // Yes! 
+   return null; 
+} 
+ 
+ 
+ 
+16</text>
+        </slide>
+        <slide>
+          <slideno>39</slideno>
+          <text>Proximity 
+ 
+ 
+Keep related actions together: 
+ 
+Allows reader to mentally clump code. 
+Reduces frequency of stealth code 
+Declare a variable right before you use it, not 30 lines earlier. 
+ 
+Prepare(x); 
+Prepare(y); 
+Calculate(x); 
+Calculate(y); 
+Print(x); 
+Print(y); 
+ 
+ 
+ 
+ 
+40</text>
+        </slide>
+        <slide>
+          <slideno>24</slideno>
+          <text>Variables, not Constants 
+ 
+ 
+ 
+ 
+Present options to game designer 
+A constant you can tweak is only useful IF the tweaker can figure out which 
+constant does what 
+UNITY tips- 
+   Expose constants in the editor so people can play with them 
+      But then make them private if you find a global value that works 
+ 
+ 
+ 
+ 
+ 
+25</text>
+        </slide>
+        <slide>
+          <slideno>55</slideno>
+          <text>Pair Programming 
+ 
+ 
+ Two programmers, one computer 
+ The driver  writes code 
+ The observer or navigator reviews each line of code in real time . 
+ Switch roles frequently! 
+ The driver considers tactical issues, focusing on the current task. 
+ The navigator considers larger issues, acting as a safety net. 
+ 
+ 
+56</text>
+        </slide>
+        <slide>
+          <slideno>51</slideno>
+          <text>Coding Standards 
+ 
+Why? 
+We like tidy code 
+It is an objective truth that opening braces belong on the same line as the 
+code 
+ Uniform code can reduce the sense of MY code 
+ Rules reduce decision fatigue 
+ Encourages code that is easier to read 
+ Encourages code that is easier to debug 
+ 
+ 
+ 
+52</text>
+        </slide>
+        <slide>
+          <slideno>43</slideno>
+          <text>Recursion 
+ 
+ 
+ 
+Recursion is really fun 
+ Recursion is really hard to debug 
+ 
+Never recurse when iterating will work just as well. 
+Never have two functions recursively calling each other. 
+It might be elegant, but you will tear your hair out getting it to 
+work. 
+And you will forever be terrified of changing the code (rightly so) 
+ 
+ 
+ 
+ 
+44</text>
+        </slide>
+        <slide>
+          <slideno>52</slideno>
+          <text>Sources 
+Code Complete by Steve McConnell
+Joel is easy to read in blog-sized chunks.  He talks as much about management and 
+startups as about code.  His writing style is fun and engaging. 
+ 
+Steve has gigantic books that look really daunting.  Ive never read one from cover to 
+cover.  However, thats because he has a lot to say and he says it well. 
+http://www.joelonsoftware.com/ 
+ 
+http://www.stevemcconnell.com/books.htm 
+53</text>
+        </slide>
+        <slide>
+          <slideno>61</slideno>
+          <text>Intelligent Design 
+ 
+ 
+Evolved code vs designed code. 
+   Its stunning, really, how much the code of a long -running prject resembles DNA.  There are huge swathes of it that are useless, 
+or appear to be.  But when you take them out, the program stops working. 
+   Rewriting is dangerous, but only when you are rewriting old, evolved code. 
+       
+ 
+ 
+ 
+62</text>
+        </slide>
+        <slide>
+          <slideno>33</slideno>
+          <text>Split Up The Math 
+ 
+ 
+ 
+ 
+float foo = (x^2 - sqrt( visibility_threshhold - invisibility_factor / ECM_tech )); 
+ 
+vs 
+ 
+float adjusted_invisibility = invisibility_factor / ECM_tech; 
+float visibility = visibility_threshhold - adjusted_invisibility; 
+float foo = x^2 - sqrt(visibility); 
+ 
+ 
+ 
+ 
+ 
+ 
+34</text>
+        </slide>
+        <slide>
+          <slideno>11</slideno>
+          <text>Psychology 
+ 
+ 
+ 
+ 
+Decision Fatigue: 
+The deteriorating quality of decisions made by an 
+individual, after a long session of decision making 
+ 
+12</text>
+        </slide>
+        <slide>
+          <slideno>31</slideno>
+          <text>Backwards Conditionals 
+ 
+if (player_spaceship == null)  {} 
+if (null == player_spaceship) {} 
+ 
+ 
+ 
+ 
+ 
+32</text>
+        </slide>
+        <slide>
+          <slideno>40</slideno>
+          <text>Proximity 
+ 
+ 
+Keep related actions together: 
+ 
+Allows reader to mentally clump code. 
+Reduces frequency of stealth code 
+Declare a variable right before you use it, not 30 lines earlier. 
+ 
+Prepare(x); 
+Calculate(x); 
+Print(x); 
+ 
+Prepare(y); 
+Calculate(y); 
+Print(y); 
+ 
+ 
+ 
+ 
+41</text>
+        </slide>
+        <slide>
+          <slideno>17</slideno>
+          <text>Code  
+ 
+ 
+ 
+if ((x0-x1)*(x0-x1)+(y0-1)*(y0-y1) &lt; 30*30) 
+ return 50; 
+ 
+ 
+ 
+18</text>
+        </slide>
+        <slide>
+          <slideno>22</slideno>
+          <text>Make Wrong Code Look Wrong 
+ 
+ 
+float track_length = angle * radius; 
+ 
+float expected_race_duration = track_length / speed; 
+ 
+ 
+ 
+23</text>
+        </slide>
+        <slide>
+          <slideno>63</slideno>
+          <text>??? 
+ 
+ 
+ 
+But also resist the temptation to cut&amp;paste code everywhere.  Its already a 
+good idea to split your code up into functions just for readablilty. 
+Its also a good idea to put common code in functions to save debugging time. 
+So make it a function call instead of a cut&amp;paste, but wait for AT LEAST the 
+second instance of the code.  I like to wait for the third instance, but at that 
+point Im risking forgetting one of the first two. 
+ 
+ 
+ 
+64</text>
+        </slide>
+        <slide>
+          <slideno>14</slideno>
+          <text>Comments 
+ 
+ Write comments to explain WHY we are doing 
+something. 
+ Write comments to explain WHAT we are doing only 
+when the briefest glance at the code is not enough. 
+ Name variables and functions so that they remove the 
+need for comments. 
+ If an algorithm is long enough that it's easy to lose track 
+of the steps, write an overview of the algorithm in plain 
+language. 
+ When in doubt, add a comment. 
+ 
+ 
+ 
+15</text>
+        </slide>
+        <slide>
+          <slideno>27</slideno>
+          <text>Variable Scope &amp; Names 
+ 
+ 
+void FeedThePigs(int num_truffles) 
+{ 
+ this.numHungryPigs -= num_truffles; 
+ float total_cost = num_truffles * gCostInDollarsPerTruffle; 
+ total_cost += CalculateOverhead(total_cost); 
+ gCash -= total_cost; 
+} 
+ 
+ 
+ 
+28</text>
+        </slide>
+        <slide>
+          <slideno>2</slideno>
+          <text>Quick Review 
+3</text>
+        </slide>
+        <slide>
+          <slideno>32</slideno>
+          <text>Backwards Conditionals 
+ 
+if (player_spaceship == null)  {} 
+if (null == player_spaceship) {} 
+ 
+// Because 
+if (player_spaceship = null)  {} // valid code (in some languages) 
+if (null = player_spaceship)  {} // NOT valid code 
+ 
+//Similarly,  
+if (3 = num_players) {} 
+if (ferdinand = player_name) {} 
+ 
+ 
+ 
+ 
+ 
+33</text>
+        </slide>
+        <slide>
+          <slideno>37</slideno>
+          <text>foo ? bar : baz 
+ 
+38</text>
+        </slide>
+        <slide>
+          <slideno>45</slideno>
+          <text>Address Bugs ASAP 
+ 
+ 
+ Fix bugs before writing new code 
+It will only get harder to fix them 
+You might build on top of the bugs 
+You cannot estimate bug fixes 
+You are always ready to ship 
+Treat warnings as errors 
+ 
+ 
+46</text>
+        </slide>
+        <slide>
+          <slideno>62</slideno>
+          <text>??? 
+ 
+ 
+ 
+ 
+ Keep functions short. 
+ Declare your variables as close as possible to the place where you will use them. 
+ Dont use macros to create your own personal programming language.  
+ Dont use goto.  
+ Dont put closing braces more than one screen away from the matching opening brace.  
+ 
+ 
+ 
+ 
+ 
+63</text>
+        </slide>
+        <slide>
+          <slideno>44</slideno>
+          <text>Optimizing 
+ 
+ 
+Wait. 
+ 
+Only optimize your code if it is actually, observably slow. 
+       
+ 
+45</text>
+        </slide>
+        <slide>
+          <slideno>10</slideno>
+          <text>Psychology 
+ 
+ 
+Millers Law: 
+The number of objects an average human can hold in 
+working memory  is 7  2. 
+ 
+ 
+11</text>
+        </slide>
+        <slide>
+          <slideno>7</slideno>
+          <text>How To Debug Code 
+ 
+ 
+ 
+ 
+ Figure out the problem 
+ Change the code 
+ 
+ 
+ 
+8</text>
+        </slide>
+        <slide>
+          <slideno>47</slideno>
+          <text>Debugging 
+ 
+ 
+ 
+Use a debugger 
+Learn it.  Love it. 
+Talk to a team mate. 
+They probably will have no idea what you are talking about.   
+That doesnt matter. 
+Take a walk. 
+Binary search 
+Perform a test that will cut out as many possibilities as you can. 
+If the bug magically vanishes, you are not done. 
+ But now you have a clue. 
+ 
+ 
+ 
+48</text>
+        </slide>
+        <slide>
+          <slideno>46</slideno>
+          <text>Wont Fix 
+ 
+ 
+Fixing bugs is only important when the value of having the 
+bug fixed exceeds the cost of the fixing it. 
+                 -Joel Spolsky 
+ 
+ 
+47</text>
+        </slide>
+        <slide>
+          <slideno>3</slideno>
+          <text>All Software Sucks 
+But we still use it. 
+4</text>
+        </slide>
+        <slide>
+          <slideno>18</slideno>
+          <text>Code  
+ 
+ 
+ 
+if ((v0-v1).getLength() &lt; 30) 
+ return 50; 
+ 
+ 
+ 
+19</text>
+        </slide>
+        <slide>
+          <slideno>23</slideno>
+          <text>Make Wrong Code Look Wrong 
+ 
+ 
+float cm_track_length = angle_in_degrees * radius_in_inches; 
+ 
+float ms_expected_race_duration = km_track_length / mph_speed; 
+ 
+ 
+ 
+24</text>
+        </slide>
+        <slide>
+          <slideno>41</slideno>
+          <text>KISS 
+ 
+ 
+Keep It Simple, Stupid. 
+Keep It Stupidly Simple. 
+ 
+ 
+Do it the easy way first 
+Then do it the cool/elegant/efficient way WHEN THE EASY WAY FAILS. 
+ And run it by someone else on your team first. 
+ 
+ 
+ 
+42</text>
+        </slide>
+        <slide>
+          <slideno>59</slideno>
+          <text>The Iceberg Secret 
+ 
+ 
+ Very little of your software is visible to the player 
+ People judge software by how it looks 
+ So make sure that it looks about as done as it is 
+ ed;hjsdf;kj 
+ 
+ 
+60</text>
+        </slide>
+        <slide>
+          <slideno>9</slideno>
+          <text>Make It Easier 
+ 
+ Write your code to require as little knowledge as 
+possible. 
+of the project 
+of the function 
+of the computer language 
+of the subject matter 
+ 
+ 
+ 
+10</text>
+        </slide>
+        <slide>
+          <slideno>35</slideno>
+          <text>Booleans 
+ 
+A boolean name should ask a question. 
+That question should be unambiguously answered by TRUE or FALSE. 
+ 
+Booleans 
+   IsHungry 
+   HasFood 
+   WasEaten 
+ 
+ 
+Done   (yay) 
+Status (boo) 
+IsSquare &gt;&gt; Square 
+ 
+ 
+    
+ 
+ 
+36</text>
+        </slide>
+        <slide>
+          <slideno>16</slideno>
+          <text>Code  
+ 
+ 
+ 
+if ((x0-x1)*(x0-x1)+(y0-y1)*(y0-y1) &lt; 900) 
+ return 50; 
+ 
+ 
+ 
+17</text>
+        </slide>
+        <slide>
+          <slideno>28</slideno>
+          <text>Parallel Arrays 
+ 
+ 
+string[] PlayerNames; 
+int[] PlayerCash; 
+Vector2[] PlayerLocation; 
+ 
+AVOID. 
+ 
+Player[] Players; 
+ 
+ 
+29</text>
+        </slide>
+        <slide>
+          <slideno>57</slideno>
+          <text>??? 
+ 
+Slide from BBN presentation-  these things are hard 
+    (in the slow sense) 
+  Synchronizing music to user inputs 
+   
+ 
+ 
+ 
+58</text>
+        </slide>
+        <slide>
+          <slideno>49</slideno>
+          <text>Daily Builds 
+ 
+The checked-in build must never remain broken. 
+Fix it immediately. 
+ Do Check Builds 
+ Have a second, clean checkout of the code on your 
+machine 
+ When you check in, immediately check out and build 
+there! 
+ Daily builds force a code test 
+ Daily deliverables force a project status 
+check 
+ 
+ 
+50</text>
+        </slide>
+        <slide>
+          <slideno>56</slideno>
+          <text>??? 
+ 
+Art 
+   Placeholder art!  Awesome. 
+   Timeboxing 
+   Photoshop pngs: save for web!! 
+   Sprite strips 
+Audio 
+    Can kill your download size. 
+    Compress! 
+    Mono! 
+       mp3 is a pain, but ogg isnt supported everywhere 
+ 
+ 
+ 
+57</text>
+        </slide>
+        <slide>
+          <slideno>53</slideno>
+          <text>Coding Tips 
+ 
+Andrew Haydn Grant 
+Technical Director 
+MIT Game Lab 
+October 2, 2013 
+54</text>
+        </slide>
+        <slide>
+          <slideno>20</slideno>
+          <text>Code  
+ 
+ 
+ 
+ 
+Vector2 offset_from_center = arrow_location - center_of_target; 
+ 
+bool is_bulls_eye = offset_from_center.getLength() &lt; bulls_eye_radius; 
+ 
+if (is_bulls_eye) 
+{ 
+ return bulls_eye_score; 
+} 
+ 
+ 
+21</text>
+        </slide>
+        <slide>
+          <slideno>58</slideno>
+          <text>Late Changes 
+ 
+Trespasser Sorting 
+   
+ 
+ 
+ 
+59</text>
+        </slide>
+      </slides>
+      <videos/>
+    </lecture>
+    <lecture>
+      <lecture_title>          Project 1 Introduction
+        </lecture_title>
+      <lecture_pdf_url>https://ocw.mit.edu/courses/cms-611j-creating-video-games-fall-2014/resources/mitcms_611jf14_project1intr/</lecture_pdf_url>
+      <lectureno>10</lectureno>
+      <slides>
+        <slide>
+          <slideno>7</slideno>
+          <text>Brainstorming 
+ 
+ 
+Planning for Randomness 
+ 
+Brainstorm: 
+Themes 
+Mechanics 
+Concepts 
+ 
+ 
+ 
+ 
+8Fall 2014 CMS.611J/6.073</text>
+        </slide>
+        <slide>
+          <slideno>6</slideno>
+          <text>Brainstorming 
+ 
+ 
+ 
+Form a Group of 6 with people closest to 
+you! 
+ 
+ 
+ 
+ 
+7
+Fall 2014 CMS.611J/6.073</text>
+        </slide>
+        <slide>
+          <slideno>1</slideno>
+          <text>Today In CMS.301 / 6.037 
+ 
+Introduce Project 1 
+Lectures: Brainstorming, Prototyping, and 
+Low Fidelity Prototypes 
+In Class Work: 
+Brainstorming for Project 1 (in small groups) 
+Team Formation 
+Start work on Project 1 
+ 
+ 
+2
+Fall 2014 CMS.611J/6.073</text>
+        </slide>
+        <slide>
+          <slideno>0</slideno>
+          <text>Today In Class &amp; 
+Project 1 Intro 
+ 
+Sara Verrilli 
+ 
+September 8, 2014 
+1
+Fall 2014 CMS.611J/6.073</text>
+        </slide>
+        <slide>
+          <slideno>2</slideno>
+          <text>Project 1:  Low Fidelity 
+Prototyping 
+ 
+Demonstrate a working mechanic via a low-
+fidelity paper prototype to serve as the 
+prototype for a digital game, while tracking 
+and understanding how your game design 
+changes over time.  
+ 
+ 
+3
+Fall 2014 CMS.611J/6.073</text>
+        </slide>
+        <slide>
+          <slideno>9</slideno>
+          <text>MIT OpenCourseWare
+http://ocw.mit.edu
+CMS.611
+J / 6.073  Creating Video Games
+Fall 2014
+For information about citing these materials or our Terms of Use, visit: http:// ocw.mit.edu/terms .</text>
+        </slide>
+        <slide>
+          <slideno>4</slideno>
+          <text>Timeline &amp; Deliverables 
+Mon, 9/8:  In class: Brainstorming, Team formation. 
+Weds, 9/10: in class:  Playtesting (Playable required.)  
+Mon, 9/15: 
+Turn in :  
+Individual written postmortem (1 per person) 
+Changelog (1 per team) 
+Vision document (1 per team) 
+In-class: 
+Presentation: 1-minute pitch of game 
+Demonstration of game 
+ 
+5
+Fall 2014 CMS.611J/6.073</text>
+        </slide>
+        <slide>
+          <slideno>3</slideno>
+          <text>Other goals: 
+ 
+ 
+ 
+Teamwork 
+Brainstorming 
+Working Fast 
+Project 2 
+ 
+ 
+ 
+4
+Fall 2014 CMS.611J/6.073</text>
+        </slide>
+        <slide>
+          <slideno>8</slideno>
+          <text>Team Formation 
+ 
+Split your Group of 6 in two! 
+Each team of 3 choose 1 item from your list 
+We will use this idea for the Prototype 
+Workshop 
+ 
+Goal: Test the Idea through Prototyping 
+If it doesnt work: change it or choose another 
+9
+Fall 2014 CMS.611J/6.073</text>
+        </slide>
+        <slide>
+          <slideno>5</slideno>
+          <text>A bit of Project Management:  
+Design Changelogs 
+ 
+Record date, design changes &amp; reason for 
+change (ie, improve a goal, make game 
+faster, make it possible, make it easier, 
+whatever.) 
+Date  Action  Problems 
+ 
+ 
+ 
+ 
+6Fall 2014 CMS.611J/6.073</text>
+        </slide>
+      </slides>
+      <videos/>
+    </lecture>
+    <lecture>
+      <lecture_title>          A Selection of Indie Games
+        </lecture_title>
+      <lecture_pdf_url>https://ocw.mit.edu/courses/cms-611j-creating-video-games-fall-2014/resources/mitcms_611jf14_aseleofinga/</lecture_pdf_url>
+      <lectureno>1</lectureno>
+      <slides>
+        <slide>
+          <slideno>0</slideno>
+          <text>A Selection Of Indie Games 
+Minecraft 
+		http://www.minecraft .net/ 
+		In beta 
+		Under development since May 10, 2009 
+		Four team members: Lead programmer and designer, composer, artist, additional 
+programmer 
+		Strong iterative design process 
+Every Day The Same Dream 
+		http://www.molleindus tria.org/everydaythesamedream/ever ydaythesamedream.html 
+		Flash game 
+		Made in 6 days for the Experimental Gameplay Project 
+		One programmer / artist / designer 
+(I Fell In Love With) The Majesty Of Colors 		http://www.kongregate .com/games/GregoryW eir/the-majesty-of -colors 
+		Flash game 
+		Made with Flex and FlashDevelop 
+		Drawn out development process (months) 
+		One programmer / artist / designer 
+Spelunky 		http://www.spelunkyworld.com/ 
+		First release December 2008 
+		Made with Game Maker 
+		One programmer / artist / designer 
+		Previously made Aquaria 
+World of Goo 
+		http://www.worldofgoo .com/ 
+		Mostly two team members: Shared roles 
+		2 years of development 
+		Posts on the evolution of the game starting at http://2dboy.com/2009/03 /page/3/ 
+Braid 
+		http://www.braid- game.com/ 
+		Two team members: Programmer / designer and artist 
+		Additional composition too 
+		3 years of development 
+1</text>
+        </slide>
+        <slide>
+          <slideno>2</slideno>
+          <text>Passage 
+		http://hcsoftware.sourceforge.net/passage/ 
+		One team member: programmer /  artist / designer 
+		Designer's  statement  on the game's  intent: http://hcsoftware.sourceforge.net/passage/ 
+statement.html 
+		Short development time 
+ 
+Tag 		https://www.digipen.edu/studentprojects/tag/ 
+		About 18 months of development  time starting f  rom scratch 
+		Seven team members: Four programmers, two artists, one composer (students  from 
+DigiPen) 
+		Interview with t  he team:  http://www.allroundgeek.com/2009/02/interview-with-tagthe-tower-
+of-paint.html 
+ 
+ 
+3</text>
+        </slide>
+        <slide>
+          <slideno>3</slideno>
+          <text>MIT OpenCourseWare
+http://ocw.mit.edu
+ 
+CMS.611J / 6.073  Creating Video Games
+Fall 2014
+ 
+For information about citing these materials or our Terms of Use, visit: http://ocw.mit.edu/terms.</text>
+        </slide>
+        <slide>
+          <slideno>1</slideno>
+          <text>Aquaria 		http://www.bit-blot .com/aquaria/ 
+		3 years of development from concept to release. 2 years of serious development. 
+		Two team members: Programmer and artist (with some shared tasks) 
+		Lead designer went on to make Spelunky 
+Monaco 		http://www.monacoismine.com/ 
+		Still in development 
+		One core team member with industry experience plus some additional art and audio support 
+Blueberry Garden 		http://eriksvedang.com/blueberrygarden/ 
+		Made in a little over a year 
+		Great Gamasutra article on its development: http://www.gamasutra .com/view/f eature/4322/ 
+creating_blueberry_garden.php 
+Crayon Physics 		http://www.kloonigames.com/blog/g ames/crayon 
+		One team member: programmer / artist / designer 
+		Made in 5 days 
+		The commercial version took a year and 8 months to make http://www.crayonphysics.com/ 
+Limbo 
+		http://www.limbogame .org/ 
+		Three years of concept work then 3 more of production work 
+		Eight scaling to sixteen team members 
+		Personally funded then large investors jumped in later 
+Castle Crashers 		http://www.castlecrashers.com/ 
+		Second XBLA game from the studio 
+		Small team of downsized industry veterans 
+		Around three years of development time 
+		Unknown development team size 
+Synaesthete 
+		http://synaesthete.en.softonic.com/ 
+		Bootstrapped from a class project 
+		Built from scratch in C++ and DirectX 
+		Four team members (students from DigiPen) 
+2</text>
+        </slide>
+      </slides>
+      <videos/>
+    </lecture>
+    <lecture>
+      <lecture_title>          Brainstorming
+        </lecture_title>
+      <lecture_pdf_url>https://ocw.mit.edu/courses/cms-611j-creating-video-games-fall-2014/resources/mitcms_611jf14_brainstormin/</lecture_pdf_url>
+      <lectureno>4</lectureno>
+      <slides>
+        <slide>
+          <slideno>5</slideno>
+          <text>BUILD ON IDEAS!
+ 
+two or more things can be combined to 
+yield something greater than the sum total of the individual parts. 
+Synthesis of ideas 
+- great ideas are often generated when disparate ideas are combined 
+- often ideas a
+re built or expanded off of other ideas 
+6</text>
+        </slide>
+        <slide>
+          <slideno>1</slideno>
+          <text>4 PRINCIPLES OF 
+BRAINSTORMING
+ 
+According to Osborn, Alex F . Applied Imagination .
+New York: Charles Scribners Sons. 1957. 
+- 4 primary principles of brainstorming according to Osborne 
+- Advertising Manager 
+- BBDO very large advertising agency - similarities in ad, marketing, and video game design 
+2</text>
+        </slide>
+        <slide>
+          <slideno>7</slideno>
+          <text>Problems Suitable to 
+Brainstorming
+ 
+Clear denition of the aim of the session is 
+essential. 
+ Problems should be simple 
+ Divide complex problems into subdivisions 
+for separate brainstorm sessions 
+ Problems should be clearly and simply articulated 
+- Not all problems are suitable to brainstorming 
+- creative questions, not judgement calls 
+- get married bad example from Osborn pros and cons vs. idea generation 
+8</text>
+        </slide>
+        <slide>
+          <slideno>8</slideno>
+          <text>Responsibilities of the
+Facilitator
+ 
+ Understand and explain the problem and 
+the aim of the brainstorm session&#13; 
+ Facilitate the session, encouraging ideation and discouraging criticism&#13; 
+ Ensure that no voices are lost during the discussion&#13; 
+ Encourage synthesis of ideas 
+- Leader responisbilities 
+- dont like term leader prefer facilitator or borrowing from Quakerism clerk 
+- make sure goals are understood, and that the session runs smoothly - steward to the process more than the goal 
+9</text>
+        </slide>
+        <slide>
+          <slideno>0</slideno>
+          <text>Brainstorming
+Organized Ideation
+ 
+- F orget what you thought you knew about Brainstorming, Osborne people ran away with the idea without practicing it correctly 
+- Video Game design is coordinated creative collaboration involving different skilled workers 
+- Social pressures against being imaginative in a collaborative environment 
+1</text>
+        </slide>
+        <slide>
+          <slideno>3</slideno>
+          <text>FREE-WHEELING
+ 
+The wilder the idea, the better; it is easier to 
+tame down than to think up. 
+- Straightforward 
+- innovation generally starts with pipe-dream or blue moon ideas. 
+- expanding on a simple idea is more difficult than reworking a wild idea to be feasible 
+4</text>
+        </slide>
+        <slide>
+          <slideno>4</slideno>
+          <text>QUANTITY!
+ 
+The greater the number of ideas, the more the 
+likelihood of useful ideas. 
+- The entire goal of brainstorming is not problem solving but idea generation 
+- Therefor, the more ideas that can be generated, the more successful the brainstorm session 
+- Judgement is not applied in a brainstorm session, so all ideas are welcome, nothing is excluded 
+5</text>
+        </slide>
+        <slide>
+          <slideno>10</slideno>
+          <text>MIT OpenCourseWare
+http://ocw.mit.edu
+CMS.611J / 6.073 Creating Video Games
+Fall 2014
+For information about citing these materials or our Terms of Use, visit: http://ocw.mit.edu/terms.</text>
+        </slide>
+        <slide>
+          <slideno>6</slideno>
+          <text>Organization
+ 
+ Casual spirit/atmosphere 
+ Start with a bad or worthless idea 
+ Dont interrupt anyone 
+ Designate a facilitator and secretary 
+ Explain process and principal question at 
+start of session 
+ Write down EVERYTHING! 
+- Casual Picnic 
+- negate social pressures 
+- spirit p. 157 playing 
+- Starting with wild idea encourages free-wheeling - Absolutely no interruptions (social pressure) - Leader (talk more about this coming up) -Clarity of process and goal 
+- Record keeping 
+- Often forget best ideas or important variants that are not written down - Write a little more than just the title of the idea - So you actually remember what the idea actually was 
+7</text>
+        </slide>
+        <slide>
+          <slideno>2</slideno>
+          <text>NO CRITICISM!
+ 
+Adverse judgement
+of ideas must be withheld until later. 
+- Most important rule of a brainstorm session 
+- if this rule is not adhered to it can subvert the entire session 
+- positive v. negative reinforcement  - p. 160 professional shame and fear (not uncommon at MIT) 
+-Why? 
+- inhibition stunts ideation - freedom to explore new territories
+ - s o c i a l 
+p r e s s u r e s / p r o f e s s i o n a l p r e s s u r e s
+ 
+3</text>
+        </slide>
+        <slide>
+          <slideno>9</slideno>
+          <text>Responsibilities of the
+Secretary 
+ Record every idea 
+ Monitor duration of the session 
+ (If possible) Participate in brainstorming 
+Record keeping is vital to ideation  
+ - reportorial 
+ - two secretaries if needed, noting every other idea 
+10</text>
+        </slide>
+      </slides>
+      <videos/>
+    </lecture>
+    <lecture>
+      <lecture_title>          "SNAP!": Warm-up Activity to Elicit Ideas on Open Data 
+        </lecture_title>
+      <lecture_pdf_url>https://ocw.mit.edu/courses/cms-611j-creating-video-games-fall-2014/resources/mitcms_611jf14_snap_for_wb/</lecture_pdf_url>
+      <lectureno>0</lectureno>
+      <slides>
+        <slide>
+          <slideno>1</slideno>
+          <text>Note the evolution from fewer, relatively simpler and more negative concepts in the first one ( Accident, 
+Interest, Premium ) to relatively more nuanced and positive concepts in the second one ( Transfer, 
+Investm ent, Choice). 
+2</text>
+        </slide>
+        <slide>
+          <slideno>0</slideno>
+          <text>1. SNAP!: WARMUP ACTIVITY to elicit ideas on Open Data (13:45 to 14:00) 
+Snap! is a quick game with three aims:
+ 
+-Energ
+ize participants : activate peoples brainpower (crucial for sessions after lunch)
+ 
+-Create a sense of shared identity among participants of the sam e sector (Edu, Gov,
+Org), so as to awaken later the real -world t e ndencies to be selfish towards other 
+sectors 
+-Learn from participants about what concepts they associate with Open Data -we 
+expect p
+eople to invoke words that focus on software and tasks, as opposed to
+challenges (politics, issues with data sharing, emotions) 
+In the Snap! game, players will first form groups by Sector, then go through cycles
+where t h
+ey have to quickly come up with a sequence of words, state those words
+simultaneously with a partner, and try to react faster than the partner if a certain type ofcircumstance emerges. The first cycle is easy and fun, and promotes bonding. Thencomplexity grows until in the third cycle players tend to confront a clogging of ideas thatbuilds their appetite for crystallizing concepts they associate with the topic of the session(i.e. words related to Open Data for Resilience). 
+An additional, short group activity elicits those concepts in word cards (blank papers),allowing 
+the facili tation team to create word clouds that illustrate and show their current 
+state of understanding of the issue. The same activity can be deployed in less than 5minutes at the end of the session, for a quick and fun way to assess whether theparticipants un derstanding of the Open Data issue has evolved in any way as a result of 
+the afternoon activities. The images below depict the word clouds resulting from the use
+of Snap! before and after a participatory activity about micoinsurance at the recent
+Communi ty Based Adaptation Conference in Nepal. 
+1</text>
+        </slide>
+        <slide>
+          <slideno>3</slideno>
+          <text>MIT OpenCourseWare
+http://ocw.mit.edu
+CMS.611J / 6.073 Creating Video Games
+Fall 2014
+For information about citing these materials or our Terms of Use, visit: http://ocw.mit.edu/terms .</text>
+        </slide>
+        <slide>
+          <slideno>2</slideno>
+          <text>SNAP! : Notes for facilitators 
+Materials: 
+	 Slides 5 -7 of the p owerpoint file in Annex A. 
+	 Blank pieces of paper (4 bla nk cards for every three players), to be used in step  h 
+Sequence :
+a)	 Show slide 5. Ask participants to form duos, an d sha ke hands with their new partner. Facilitator
+to recruit a participant as partner to illustrate game sequence 
+b)	 Tell players to accept the unusual rules and tasks of the game as they come along: 	 Each pl 
+ayer has a deck of imaginary cards, with numbers 1 t o 10. Pl ease shuffle your 
+imaginary cards, take the top half of the deck, and swap it with your partners. 
+	 Each player takes the top imaginary card, use body language to indicate that youre about to flip your
+ card, and simultaneously flip it and state the imaginary number with a loud
+voice. For example: [invite partner. Facilitator say 9, partner will likely say a different
+number]. Tell others you heard us: I said 9 and my partner said [number]. If the numbersare different, nothing happens and we flip the next imaginary card in our decks. If thenumbers are the same, the first player to shout SNAP! takes all the imaginary cards played so far, and wins an imaginary point. 
+	 Your goal is to Snap! as many times as possible in about one minute. If you sn ap, keep
+go
+ing and play again. Ready, set, GO! 
+c)	 After about one minute, ask players to stop playing and share some insights about what youobserve (u
+sually a lot of laughter, some people having a hard time snapping). Note that this
+game requires both thinki ng fast, listening actively, and acting when something unusual occurs. 
+d)	 For the second round of Snap!, ask players to seek a new partner, and tell them that in theirdeck of i
+maginary cards they no longer have numbers, they now have names of animals. Any
+animals of their choice. Give them a few seconds to think of the names in their deck while theyshuffle and trade imaginary cards. Ready, set, GO! 
+e)	 After less than a minute ask to stop, and share insights (usually more difficulty in snapping, and
+also mo
+re difficulty coming up with words, even though everybody knows ten or more animals). 
+f)	 For the last round of Snap!, ask participants to pair up again with their original partner. This
+time they
+ will each have to play with a special new deck: formed with word s that they associate
+with the concept of Open Data for Resilience. No more than 3 words in a card. As facilitator you can give implausible examples (such as Hate, or Software Interoperability). Tell playersthat it will be hard, but along the way t hey will discover what they think and what their partner
+thinks about the concept that brings us together. Ready, set, GO! 
+g)	 After about half a minute ask to stop, and share some insights (usually severe difficulty incoming 
+up with words to say, and almost no snapping). 
+h)	 Show slide 6 in powerpoint file form Annex A. Form trios. Give each trio four pieces of blank
+paper . Indicate that we will form a deck of Snap cards about Open Data. In about two minutes, 
+each trio has to come up with text (up to 3 words rela ting to the concept of Open Data ) that 
+they would want to use to play Snap! 
+i)	 After deadline, facilitator invites some trios to share the concepts they have written. Other trioscan sh o 
+ut Snap! if they wrote the same concept in their own cards. Share an y insights on
+patterns that emerge. End by asking participants to say good bye to people with ID -Badges of
+other colours (from now on they will compete across colors). 
+TRANSITION 
+j)	 Ask everybody to form groups by color, and then cluster in sub -group s by se ctor (thus forming 
+Sector Trios, for example the three players that share Blue and .Gov attributes(North+West+South players of same color and sector). Each Sector Trio sits near a computer. 
+k)	 Show slide 7. Indicate that serious play is about to star t, and tha
+ t each Sector Trio will 
+compete with other Trios of the same sector but different color. 
+3</text>
+        </slide>
+      </slides>
+      <videos/>
+    </lecture>
+    <lecture>
+      <lecture_title>          Project Management
+        </lecture_title>
+      <lecture_pdf_url>https://ocw.mit.edu/courses/cms-611j-creating-video-games-fall-2014/resources/mitcms_611jf14_agilelec1/</lecture_pdf_url>
+      <lectureno>12</lectureno>
+      <slides>
+        <slide>
+          <slideno>7</slideno>
+          <text>Ag i l e M a n i f e s t o  
+I n d i v i d u a l s a  n d i  n t e r a c t i o n s o v e r p  r o c e s s e s a  n d t  o o l s 
+Wo r k i n g s o f t w a r e o v e r c o m p r e h e n s i v e d o c u m e n t a t i o n 
+C u s t o m e r c  o l l a b o r a t i o n o v e r c  o n t r a c t n e g o t i a t i o n 
+R e s p o n d i n g t  o c h a n g e o v e r f o l l o w i n g a p  l a n 
+MIT --CMS.611 / 6.073 Fall 2014</text>
+        </slide>
+        <slide>
+          <slideno>4</slideno>
+          <text>In the beginning: Waterfall  
+Concept 
+Design 
+Pre-Production 
+Alpha 
+Beta 
+Shipping/Maintenance 
+MIT --CMS.611 / 6.073 Fall 2014</text>
+        </slide>
+        <slide>
+          <slideno>12</slideno>
+          <text>More Vocabulary! 
+Product Owner 
+Scrum Master 
+Team Member 
+MIT --CMS.611 / 6.073 Fall 2014</text>
+        </slide>
+        <slide>
+          <slideno>22</slideno>
+          <text>MEETINGS AS A FORCE  
+FOR GOOD 
+Timeboxing . 
+Clear Agendas. 
+Involved Participants. 
+MIT --CMS.611 / 6.073 Fall 2014</text>
+        </slide>
+        <slide>
+          <slideno>6</slideno>
+          <text>If your users arent happy 
+Its not a Good Game. 
+So your design changes. 
+And your schedule. 
+And that is a Project Management fail. 
+MIT --CMS.611 / 6.073 Fall 2014</text>
+        </slide>
+        <slide>
+          <slideno>0</slideno>
+          <text>To d ay  s O u t l i n e 
+P r o j e c t M  a n a g e m e n t 
+Br i e f H i s t o r y o f P  r o j e c t M  a n a g e m e n t i n S o f t w a r e 
+I n t r o t o A  g i l e P r o j e c t M  a n a g e m e n t (  S c r u m ) 
+Pr o d u c t B a c k l o g s 
+D o i  t Yo u r s e l f ! 
+A n d a  V e r y Qu i c k P  r e s e n t a t i o n ! 
+M o r e S  c r u m :  M  e e t i n g s 
+D o o  n e y o u r s e l f ! 
+Wo r k o  n yo u r p  r o j e c t s ! 
+MIT --CMS.611 / 6.073 Fall 2014</text>
+        </slide>
+        <slide>
+          <slideno>11</slideno>
+          <text>Anatomy of a Sprint 
+Meetings:  Sprint Planning, Daily Scrum, Sprint 
+Review, Retrospective 
+Artifacts:   Product Backlog, Sprint Backlog, Tasklist , 
+Scrumboard 
+MIT --CMS.611 / 6.073 Fall 2014</text>
+        </slide>
+        <slide>
+          <slideno>27</slideno>
+          <text>MIT OpenCourseWare
+http://ocw.mit.edu
+CMS.611J / 6.073 Creating Video Games
+Fall 2014
+For i
+nformation about citing these materials or our Terms of Use, visit: http:// ocw.mit.edu/terms .</text>
+        </slide>
+        <slide>
+          <slideno>9</slideno>
+          <text>Meet Scrum!  
+Putting project management responsibility on the shoulders 
+of the team since the 1990s! 
+MIT --CMS.611 / 6.073 Fall 2014</text>
+        </slide>
+        <slide>
+          <slideno>26</slideno>
+          <text>Daily Scrum:
+ 
+3 Questions
+ 
+ What did you do yesterday?  (Since our last meeting.)
+ 
+ What will you do today? (Until our next meeting) 
+ What is blocking you? 
+ Timeboxed : 10 Minutes 
+MIT --CMS.611 / 6.073 Fall 2014</text>
+        </slide>
+        <slide>
+          <slideno>18</slideno>
+          <text>User Stories vs. Features  
+As the user, I want cars to 
+go fast so that I feel 
+powerful in game. 
+As the designer, I want a level editor so that I can 
+create level frameworks 
+without depending on the 
+artists or the programmers. 
+The players cars max speed should be at least 
+150 MPH. 
+Level editor. 
+MIT --CMS.611 / 6.073 Fall 2014</text>
+        </slide>
+        <slide>
+          <slideno>21</slideno>
+          <text>Team Meetings 
+Ta l k i n g a b o u t  . Ta l k i n g .
+ 
+Da i l y S c r u m s . S p r i n t P l a n n i n g . S p r i n t R e v i e w . R e t r o s p e c t i v e s
+ 
+MIT --CMS.611 / 6.073 Fall 2014</text>
+        </slide>
+        <slide>
+          <slideno>2</slideno>
+          <text>What is this about?  
+What is project management? 
+A bit of histor y of PM in software development 
+Intro to project management, as practiced in CMS.611 
+MIT --CMS.611 / 6.073 Fall 2014</text>
+        </slide>
+        <slide>
+          <slideno>3</slideno>
+          <text>What is it?
+ 
+Planning , organizing, securing, motivating and controlling the 
+resources to successfully complete a project. 
+Define success! 
+MIT --CMS.611 / 6.073 Fall 2014</text>
+        </slide>
+        <slide>
+          <slideno>5</slideno>
+          <text>Wheres the testing?
+ 
+Its all at the end, when the team cant 
+respond to it usefully. 
+MIT --CMS.611 / 6.073 Fall 2014</text>
+        </slide>
+        <slide>
+          <slideno>15</slideno>
+          <text>Product Backlog  
+An ordered list of everything that might be needed in 
+the product and is the single source of requirements 
+for any changes to be made in the product. 
+Maintained &amp; prioritized by the Product Owner.  
+MIT --CMS.611 / 6.073 Fall 2014</text>
+        </slide>
+        <slide>
+          <slideno>14</slideno>
+          <text>Product Backlogs 
+TECHNIQUE INTRODUCTION: TIME BOXING, USER 
+STORIES 
+MIT --CMS.611 / 6.073 Fall 2014</text>
+        </slide>
+        <slide>
+          <slideno>24</slideno>
+          <text>Sprint Review Meeting
+ 
+Deliverables 
+ Demonstrate working product 
+ Review &amp; evaluate product 
+ Review &amp; update product backlog
+ 
+ Time boxed: 1  2 hours 
+MIT --CMS.611 / 6.073 Fall 2014</text>
+        </slide>
+        <slide>
+          <slideno>10</slideno>
+          <text>How does this work?
+ 
+(With Vocabulary)
+ 
+MIT --CMS.611 / 6.073 Fall 2014</text>
+        </slide>
+        <slide>
+          <slideno>23</slideno>
+          <text>Sprint Planning Meeting
+ 
+qSets the teams goals for this Sprint. 
+qDeliverable: a Sprint Backlog &amp; an Estimated Tasklist 
+for the sprint. 
+qTimeboxed : 1  2 Hours. 
+MIT --CMS.611 / 6.073 Fall 2014</text>
+        </slide>
+        <slide>
+          <slideno>20</slideno>
+          <text>Your Turn.  
+Create a product backlog for P2, using User Stories &amp; 
+Excel (or Google Spreadsheets.) 
+Prioritize your features.  (Some may already be  
+done/implemented: thats OK/.  
+Armed with your Product Backlog &amp; your Vision Statement, prepare a 2 minute (MAXIMUM!) description of your projects goals &amp; most important 
+features.   NOT A PITCH, but a report on the state of 
+your teams preparation to work this weekend. 
+MIT --CMS.611 / 6.073 Fall 2014</text>
+        </slide>
+        <slide>
+          <slideno>13</slideno>
+          <text>Word Soup!  
+Team Member 
+Sprint 
+ Scrum Master 
+Sprint Planning 
+ Product Owner 
+Daily Scrum 
+Sprint Review 
+ Product Backlog 
+Retrospective 
+ Sprint Backlog 
+Task List 
+Scrum Board 
+MIT --CMS.611 / 6.073 Fall 2014</text>
+        </slide>
+        <slide>
+          <slideno>1</slideno>
+          <text>Project Management
+ 
+CMS611/6.073 Fall 2014
+ 
+MIT --CMS.611 / 6.073 Fall 2014</text>
+        </slide>
+        <slide>
+          <slideno>25</slideno>
+          <text>Retrospective Deliverables 
+ Things to keep doing. 
+ Things to stop doing. 
+ New things to try. 
+ Timeboxed : .5 Hour 
+MIT --CMS.611 / 6.073 Fall 2014</text>
+        </slide>
+        <slide>
+          <slideno>16</slideno>
+          <text>Sample backlog
+ 
+Item removed due to copyright restrictions. See image at
+ 
+http:// www.scrum -
+instit
+ute.org /The_S c rum_Product_Backlog.php
+ 
+MIT --CMS.611 / 6.073 Fall 2014</text>
+        </slide>
+        <slide>
+          <slideno>19</slideno>
+          <text>How do you keep meetings 
+short? 
+Time boxing. 
+MIT --CMS.611 / 6.073 Fall 2014</text>
+        </slide>
+        <slide>
+          <slideno>8</slideno>
+          <text>Agile is good, not perfect!  
+Classic Agile assumes interchangeable tasks &amp; developers. 
+Game Teams are not interchangeable! 
+Programmers. 
+Artists. 
+Designers. 
+Audio Specialists. 
+Producers 
+MIT --CMS.611 / 6.073 Fall 2014</text>
+        </slide>
+        <slide>
+          <slideno>17</slideno>
+          <text>What Is a User Story 
+AS THE 
+ User 
+ Designer 
+ Artist 
+I WANT 
+ Describe 
+Something Testable Here 
+SO 
+THAT 
+ Explain 
+Reason Here 
+MIT --CMS.611 / 6.073 Fall 2014</text>
+        </slide>
+      </slides>
+      <videos/>
+    </lecture>
+    <lecture>
+      <lecture_title>          Game Engine Selection
+        </lecture_title>
+      <lecture_pdf_url>https://ocw.mit.edu/courses/cms-611j-creating-video-games-fall-2014/resources/mitcms_611jf14_game_engine/</lecture_pdf_url>
+      <lectureno>7</lectureno>
+      <slides>
+        <slide>
+          <slideno>15</slideno>
+          <text>Primary Selection Criteri a
+ 
+(dealbreakers) 
+Ease of Use 
+ Strongly Typed Programming Language 
+o Compil e-time error detectio n 
+o Free Communication Channel s 
+ Auto-complete code editor 
+ Easier Integratio n 
+16
+Fall 2014 CMS.611J/6.073</text>
+        </slide>
+        <slide>
+          <slideno>24</slideno>
+          <text>Preview
+ 
+ Why Use A Game Engine? 
+ Criteria For Game Engine Selection Dealbreakers
+ 
+o Nice to hav e 
+ Engines 
+o The Good 
+o The Noose s 
+ Final Wor d 
+o How To Learn An Engine 
+o All Software Suck s 
+o Engine Assignment Mechanic 
+25
+Fall 2014 CMS.611J/6.073</text>
+        </slide>
+        <slide>
+          <slideno>2</slideno>
+          <text>Games Are Software+ +
+ 
+ UI must be intuitiv e 
+ User testing 
+ Fun 
+ User testing 
+ Gameplay Difficulty 
+ User testing 
+ Emotional Impact 
+ User Testing 
+3
+Fall 2014 CMS.611J/6.073</text>
+        </slide>
+        <slide>
+          <slideno>6</slideno>
+          <text>NOT Writing Code
+ 
+ Coding Is Slow
+ 
+o think 
+o implement 
+o debug 
+o integrat e 
+o debug 
+o debug 
+o debug 
+7
+Fall 2014 CMS.611J/6.073</text>
+        </slide>
+        <slide>
+          <slideno>35</slideno>
+          <text>Game Engine Selectio n 
+Andrew Haydn Gran t 
+Technical Directo r 
+MIT Game La b 
+September 3, 2014 
+36Fall 2014 CMS.611J/6.073 
+36</text>
+        </slide>
+        <slide>
+          <slideno>33</slideno>
+          <text>All Software Suck s
+ 
+But we still use it . 
+34
+Fall 2014 CMS.611J/6.073</text>
+        </slide>
+        <slide>
+          <slideno>21</slideno>
+          <text>Secondary Selection Criteri a
+ 
+(nice to have) 
+Ease of Use 
+ Asset pipelin e 
+ Source Code Available? 
+ Code IDE ? 
+ World Editor ? 
+ Profiling ? 
+22
+Fall 2014 CMS.611J/6.073</text>
+        </slide>
+        <slide>
+          <slideno>34</slideno>
+          <text>Analysis Assignment
+ 
+	 You can trade game engines . 
+	 Spend no more than 4 hours learning your game engine.
+ 
+o	 If you finish the tutorials, start making an Asteroids or 
+Space Invader s clone. 
+	 Bring your experiences to class Wednesday (Sept 10) 
+o	  and a development machine! 
+35
+Fall 2014 CMS.611J/6.073</text>
+        </slide>
+        <slide>
+          <slideno>7</slideno>
+          <text>NOT Writing Code 
+ Coding Is Slow 
+o think 
+o implement 
+o debug 
+o integrat e 
+o debug 
+ So Write Less Code 
+o Paper Prototyping 
+o Iterative Design &amp; Testing Earl y 
+o Game Engines 
+8
+Fall 2014 CMS.611J/6.073</text>
+        </slide>
+        <slide>
+          <slideno>0</slideno>
+          <text>Game Engine Selectio n 
+Andrew Haydn Gran t 
+Technical Directo r 
+MIT Game La b 
+September 3, 2014 
+1
+Fall 2014 CMS.611J/6.073</text>
+        </slide>
+        <slide>
+          <slideno>8</slideno>
+          <text>Why A Game Engine? 
+	 Time 
+o	 Avoid reinventing the wheel 
+o	 Avoid certain kinds of bugs 
+o	 Define general direction of your
+ 
+architecture
+ 
+	 Inspiration 
+o Use the feature list as a set of possibilities 
+o Use the feature list as a set of limitations
+ 
+9
+Fall 2014 CMS.611J/6.073</text>
+        </slide>
+        <slide>
+          <slideno>10</slideno>
+          <text>Game Engine Selection 
+ Its an important decision 
+ But dont stress about it too much .
+ 
+o No engine is perfect . 
+11
+Fall 2014 CMS.611J/6.073</text>
+        </slide>
+        <slide>
+          <slideno>32</slideno>
+          <text>Learning A Game Engine
+ 
+ Start with a tutoria l 
+ Try something very smal l 
+ Skim the docs 
+ Try something harder 
+33
+Fall 2014 CMS.611J/6.073</text>
+        </slide>
+        <slide>
+          <slideno>30</slideno>
+          <text>Preview
+ 
+ Why Use A Game Engine? 
+ Criteria For Game Engine Selection
+ 
+o Dealbreaker s 
+o Nice to hav e 
+ Engines 
+o The Good 
+o The Nooses 
+ Final Wor d 
+o How To Learn An Engine 
+o All Software Suck s 
+o Engine Assignment Mechani c
+ 
+31
+Fall 2014 CMS.611J/6.073</text>
+        </slide>
+        <slide>
+          <slideno>31</slideno>
+          <text>Nooses 
+ Haxe Flixe l 
+o AS3, Flash pedigree
+ 
+o Flixel Pedigree 
+o Untrie d 
+ Phase r 
+o Education Arcade 
+o Javascript 
+bleah- use Typescript ! 
+o Untrie d 
+32
+Fall 2014 CMS.611J/6.073</text>
+        </slide>
+        <slide>
+          <slideno>14</slideno>
+          <text>Primary Selection Criteri a 
+(dealbreakers) 
+Ease of learnin g 
+ Search engine friendly 
+o Support community ! 
+ Tutorials &amp; Documentation 
+o Support community ! 
+o In-house experts ? 
+ A person knowing the engine is only useful if that person WELCOMES being a teacher . 
+ Learning Curv e 
+15
+Fall 2014 CMS.611J/6.073</text>
+        </slide>
+        <slide>
+          <slideno>18</slideno>
+          <text>Primary Selection Criteri a
+ 
+(dealbreakers) 
+Ease of Use 
+ Source control friendly ? 
+ Debugging? 
+19
+Fall 2014 CMS.611J/6.073</text>
+        </slide>
+        <slide>
+          <slideno>3</slideno>
+          <text>Preview
+ 
+ Why Use A Game Engine? 
+ Criteria For Game Engine Selection
+ 
+o Dealbreaker s 
+o Nice to hav e 
+ Engines 
+o The Good 
+o The Nooses 
+ Final Wor d 
+o How To Learn An Engine 
+o All Software Suck s 
+o Engine Assignment Mechani c
+ 
+4
+Fall 2014 CMS.611J/6.073</text>
+        </slide>
+        <slide>
+          <slideno>13</slideno>
+          <text>Primary Selection Criteri a
+ 
+(dealbreakers) 
+Power:  Can We Build It ? 
+ Fundamentals onl y 
+o Ignore bells &amp; whistles 
+ 3d/2d 
+ Publishing platfor m 
+ Input methods 
+ Other known requirement s 
+14
+Fall 2014 CMS.611J/6.073</text>
+        </slide>
+        <slide>
+          <slideno>19</slideno>
+          <text>Primary Selection Criteri a
+ 
+(dealbreakers) 
+Robust Produc t 
+ Few bugs 
+o Hard to analyze quickl y 
+o Cues : 
+ Strong Communit y 
+ Large Communit y 
+20
+Fall 2014 CMS.611J/6.073</text>
+        </slide>
+        <slide>
+          <slideno>20</slideno>
+          <text>Preview
+ 
+ Why Use A Game Engine? 
+ Criteria For Game Engine Selection 
+o Dealbreaker s 
+o Nice to hav e 
+ Engines 
+o The Good 
+o The Nooses 
+ Final Wor d 
+o How To Learn An Engine 
+o All Software Suck s 
+o Engine Assignment Mechani c
+ 
+21
+Fall 2014 CMS.611J/6.073</text>
+        </slide>
+        <slide>
+          <slideno>12</slideno>
+          <text>Primary Selection Criteri a
+ 
+(dealbreakers) 
+Cost 
+Free 
+vs 
+Painfu l 
+vs 
+Impossible 
+13
+Fall 2014 CMS.611J/6.073</text>
+        </slide>
+        <slide>
+          <slideno>17</slideno>
+          <text>Not Close Enough 
+Java != Javascrip t 
+18
+Fall 2014 CMS.611J/6.073</text>
+        </slide>
+        <slide>
+          <slideno>25</slideno>
+          <text>Why Flixel?
+ 
+	 Free 
+	 Publishes to web in Flas h 
+	 Robus t 
+	 IDE 
+	 All source visible 
+	 Strongly typed language 
+	 Simple object oriented architectur e
+ 
+	 Excellent for 2d sprit e-based 
+Actio n 
+26
+Fall 2014 CMS.611J/6.073</text>
+        </slide>
+        <slide>
+          <slideno>11</slideno>
+          <text>Preview
+ 
+ Why Use A Game Engine? 
+ Criteria For Game Engine Select ion
+ 
+o Dealbreaker s 
+o Nice to hav e 
+ Engines 
+o The Good 
+o The Okay 
+o The Noose s 
+ Final Wor d 
+o How To Learn An Engine 
+o All Software Suck s 
+o Engine Assignment Mechani c
+ 
+12
+Fall 2014 CMS.611J/6.073</text>
+        </slide>
+        <slide>
+          <slideno>27</slideno>
+          <text>Why Not Flixel? 
+ Not so good at heavy GUI wor k 
+ Falling usage 
+o Adobe is insane 
+28
+Fall 2014 CMS.611J/6.073</text>
+        </slide>
+        <slide>
+          <slideno>23</slideno>
+          <text>Criteria I Don't Us e
+ 
+ Scripting Languages 
+ Beautiful Games 
+24
+Fall 2014 CMS.611J/6.073</text>
+        </slide>
+        <slide>
+          <slideno>28</slideno>
+          <text>Why Unity ?
+ 
+	 Free 
+	 Publishes to web 
+	 Excellent Communit y 
+	 Robus t 
+	 IDE 
+	 Excellent Asset Pipeline 
+	 Strongly typed language 
+o	 and two weakly typed ones 
+	 Harder to learn than Flixel, but easier than almost 
+everything els e 
+	 Simple, but unusual component- based architectur e
+ 
+29
+Fall 2014 CMS.611J/6.073</text>
+        </slide>
+        <slide>
+          <slideno>4</slideno>
+          <text>Tinker Toys vs Visio n
+ 
+This is what I WANT . How do I make it with these ? 
+This is what I HAVE. What can I make ? 
+5
+Fall 2014 CMS.611J/6.073</text>
+        </slide>
+        <slide>
+          <slideno>5</slideno>
+          <text>Definition of Hard
+ 
+Actually, I dont care how hard it is. 
+How long will it take?  
+6
+Fall 2014 CMS.611J/6.073</text>
+        </slide>
+        <slide>
+          <slideno>36</slideno>
+          <text>MIT OpenCourseWare
+http://ocw.mit.edu
+CMS
+.611J / 6.073  Creating Video Games
+Fall 2014
+For information about citing these materials or our Terms of Use, visit: http:// ocw.mit.edu/terms .</text>
+        </slide>
+        <slide>
+          <slideno>1</slideno>
+          <text>Games Are Softwar e
+ 
+ UI 
+ Back end 
+ Design/Spec/Customer 
+ Features 
+ Bugs 
+ Task list s 
+ etc. 
+2
+Fall 2014 CMS.611J/6.073</text>
+        </slide>
+        <slide>
+          <slideno>22</slideno>
+          <text>Secondary Selection Criteri a
+ 
+(meh ) 
+Power:  Bells And Whistle s 
+ Rendering Speed 
+ Pathfinding 
+ Physic s 
+ Shader s 
+ Shadow s 
+ Particle System s 
+23
+Fall 2014 CMS.611J/6.073</text>
+        </slide>
+        <slide>
+          <slideno>29</slideno>
+          <text>Why Not Unity ? 
+ 3D 
+ Source Control/Merge 
+ Not so good at heavy GUI work
+ 
+30
+Fall 2014 CMS.611J/6.073</text>
+        </slide>
+        <slide>
+          <slideno>9</slideno>
+          <text>Preview
+ 
+ Why Use A Game Engine? 
+ Criteria For Game Engine Selection
+ 
+o Dealbreaker s 
+o Nice to hav e 
+ Engines 
+o The Good 
+o The Nooses 
+ Final Wor d 
+o How To Learn An Engine 
+o All Software Suck s 
+o Engine Assignment Mechani c
+ 
+10
+Fall 2014 CMS.611J/6.073</text>
+        </slide>
+        <slide>
+          <slideno>16</slideno>
+          <text>Close Enough 
+If you know one, you know the others :
+ 
+ Java 
+ C# 
+ AS3 
+ Haxe 
+Extra bonus : 
+ C++ 
+If you know this, you know all of the above . 
+17
+Fall 2014 CMS.611J/6.073</text>
+        </slide>
+        <slide>
+          <slideno>26</slideno>
+          <text>Learning Curve: Flixel
+ 
+27
+Fall 2014 CMS.611J/6.073</text>
+        </slide>
+      </slides>
+      <videos/>
+    </lecture>
+    <lecture>
+      <lecture_title>          Prototyping Map
+        </lecture_title>
+      <lecture_pdf_url>https://ocw.mit.edu/courses/cms-611j-creating-video-games-fall-2014/resources/mitcms_611jf14_prototmap/</lecture_pdf_url>
+      <lectureno>13</lectureno>
+      <slides>
+        <slide>
+          <slideno>0</slideno>
+          <text>1</text>
+        </slide>
+        <slide>
+          <slideno>2</slideno>
+          <text>MIT OpenCourseWare
+http://ocw.mit.edu
+CMS.611J / 6.073 Creating Video Games
+Fall 2014
+For information about citing these materials or our Terms of Use, visit: http://ocw.mit.edu/terms.</text>
+        </slide>
+        <slide>
+          <slideno>1</slideno>
+          <text>2</text>
+        </slide>
+      </slides>
+      <videos/>
+    </lecture>
+  </lectures>
+</doc>

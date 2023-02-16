@@ -1,0 +1,574 @@
+<doc>
+  <source>MIT</source>
+  <date>28/01/2023</date>
+  <course>
+    <course_url>https://ocw.mit.edu/courses/1-206j-airline-schedule-planning-spring-2003/</course_url>
+    <course_title>Airline Schedule Planning</course_title>
+    <course_tags>
+      <list>Engineering </list>
+      <list>Systems Engineering </list>
+      <list>Social Science </list>
+    </course_tags>
+  </course>
+  <lectures>
+    <lecture>
+      <lecture_title>PPT</lecture_title>
+      <lecture_pdf_url>https://ocw.mit.edu/courses/1-206j-airline-schedule-planning-spring-2003/resources/lec1_rev_2003_schedule_planning_and_networks/</lecture_pdf_url>
+      <lectureno>1</lectureno>
+      <slides/>
+      <videos/>
+    </lecture>
+    <lecture>
+      <lecture_title>Operations Recovery
+Airline Operations - Lecture #1 (PDF)
+Airline Operations - Lecture #2 (PDF)
+Airline Operations - Lecture #3 (PDF)</lecture_title>
+      <lecture_pdf_url>https://ocw.mit.edu/courses/1-206j-airline-schedule-planning-spring-2003/resources/lec11_aop1/</lecture_pdf_url>
+      <lectureno>20-22</lectureno>
+      <slides>
+        <slide>
+          <slideno>26</slideno>
+          <text>Airline Schedule Recovery Problem:
+Assumptions
+At a given time of the day, we assume
+that airline controllers know the state
+of the system:
+/GBELocations and availability of resources
+Aircraft
+Pilot and flight attendant crews
+/GBEPassenger states (i,e., disrupted or not) and
+locations/destinations</text>
+        </slide>
+        <slide>
+          <slideno>37</slideno>
+          <text>Passenger actual itineraries Operations decision #3:
+dont cancel &amp; postpone aircraft B
+S1
+H
+S2delay
+Aircraft A
+Aircraft B</text>
+        </slide>
+        <slide>
+          <slideno>30</slideno>
+          <text>Aircraft actual operations: unexpected delay
+(e.g., aircraft technical problem)
+S1
+H
+S2delay
+Aircraft A
+Aircraft B</text>
+        </slide>
+        <slide>
+          <slideno>36</slideno>
+          <text>Passenger actual itineraries Operations decision #2:
+dont cancel &amp; dont postpone aircraft B
+S1
+H
+S2delay</text>
+        </slide>
+        <slide>
+          <slideno>11</slideno>
+          <text>Banked hub airport
+In US, no schedule restrictions at all but 4
+airports (which ones?)
+Major airlines use to schedule more flightsthan maximum airport hub airport capacity
+When adverse weather conditions happens,flight operations under IFR rules, greaterMiles In Trail (MIT): minimum separation
+distance between two aircraft in terminal
+area
+When volume too high in a sector, flightsare slowed down or delayed on the ground(Ground Delay Program)</text>
+        </slide>
+        <slide>
+          <slideno>0</slideno>
+          <text>Airline Operations
+Lecture #1
+1.206J
+April 23, 2003</text>
+        </slide>
+        <slide>
+          <slideno>4</slideno>
+          <text>Aircraft maintenance checks
+A: roughly once a week -- on average
+approximately every 60 flight hours
+B: once a month -- roughly every 300 to 500flight hours
+C: Entire aircraft check
+/GBENarrow body: once a year;
+Light C Check (3 days)
+Heavy C Check (3 to 5 weeks)
+/GBEWide bodies: every 15 to 18 months;
+Heavy C Checks (2 weeks)</text>
+        </slide>
+        <slide>
+          <slideno>7</slideno>
+          <text>Rule 240 Contract of carriage (AA)
+If your flight is delayed, cancelled or you miss a connecting
+American Airlines flight, due to a schedule irregularity
+/GBEAmerican Airlines must confirm you on their next flight (on which
+space is available) at no additional cost.
+/GBEIf there is an alternate American Airlines flight that will arrive at your
+destination earlier than the alternate you have been offered, you have
+the right to be confirmed on this American Airlines flight at no
+additional cost, even if first class space is all that is available.
+/GBEIf the alternate American Airlines flight is not acceptable to you, you
+have the right to be confirmed on the flight of a different airline at no
+additional cost.
+/GBEIf there is an alternate "different airline" flight that will arrive at yourdestination earlier than any alternate flight you have been offered, youhave the right to be confirmed on this flight at no additional cost, even
+if first class space is all that is available.
+/GBEIf no alternate flight (on American Airlines or a "different airline") isacceptable to you, American Airlines must refund your money - even if
+you have a non-refundable ticket.</text>
+        </slide>
+        <slide>
+          <slideno>33</slideno>
+          <text>Operations decision #3: don t cancel;
+postpone aircraft B
+S1
+H
+S2delay
+Aircraft A
+Aircraft B</text>
+        </slide>
+        <slide>
+          <slideno>21</slideno>
+          <text>Operations Controllers GUI:
+Gantt Chart</text>
+        </slide>
+        <slide>
+          <slideno>35</slideno>
+          <text>Passenger actual itineraries Operations
+decision #1: cancel
+S1
+H
+S2</text>
+        </slide>
+        <slide>
+          <slideno>17</slideno>
+          <text>How Important is Schedule Recovery?
+/G06Estimates of the cost of airline
+disruption range from 2% to 3% ofannual revenues
+/G06Delta reports 8.5 million passengersaffected, $500 million lost per year
+/G06Total industry revenue is over $300billion per year
+/G06Disruption costs range from $5 to $10billion per year</text>
+        </slide>
+        <slide>
+          <slideno>10</slideno>
+          <text>Delay chain
+Arrival delays, especially those that occur early in the
+day, tend to propagate in the network.
+Flight
+6:00 7:00 8:00 9:00 10:00 11:00 12:00ABCD
+Scheduled
+ActualAttendants
+Crew
+AircraftLocal Arrival and Departure Times13:00</text>
+        </slide>
+        <slide>
+          <slideno>31</slideno>
+          <text>Operations decision #1: cancel
+S1
+H
+S2delay
+Aircraft A
+Aircraft B</text>
+        </slide>
+        <slide>
+          <slideno>29</slideno>
+          <text>Passenger itinerary schedule
+S1
+H
+S2</text>
+        </slide>
+        <slide>
+          <slideno>41</slideno>
+          <text>Questions?
+Discussion items?</text>
+        </slide>
+        <slide>
+          <slideno>8</slideno>
+          <text>Schedule disruptions
+Schedule disruptions:
+/GBEAircraft: not on the schedule route
+/GBECrew: violates rules
+/GBEPassenger: canceled flight or missed connection
+Shortages of airline resources:
+/GBEResource schedule dependability
+/GBEAircraft mechanical problem
+/GBECrew unavailability (misconnections)
+Shortages of airport resources:
+/GBEInclement weather: reduction in airport runaway capacity; affect all
+aircraft flying through the airport
+/GBEAirport security
+A dozen of disruptions happen on average every  for
+Continental Airlines</text>
+        </slide>
+        <slide>
+          <slideno>32</slideno>
+          <text>Operations decision #2: don t cancel;
+dont postpone aircraft B
+S1
+H
+S2delay
+Aircraft A
+Aircraft B</text>
+        </slide>
+        <slide>
+          <slideno>2</slideno>
+          <text>Airline planning
+Optimized schedule designs have resulted in
+squeezed schedule with little slacks (i.e., idletime)
+For examples:
+/GBEFAM with TW: less aircraft slacks
+/GBEExtended Crew Pairing Problem: less crew slacks
+Plan is more inclined to be disrupted
+Ongoing research in robust planning: areairlines ready to pay the cost?</text>
+        </slide>
+        <slide>
+          <slideno>6</slideno>
+          <text>Flight regulation
+You need a feasible aircraft and a
+crew to operate a flight
+Airports with slots
+GDP
+Airport curfew (e.g., Orange
+county, SNA)</text>
+        </slide>
+        <slide>
+          <slideno>38</slideno>
+          <text>ARM shortcomings
+What cost to assign to flight cancellations and flight
+delays?
+/GBEObjective coefficients are fixed in the ARM but in actual
+operations they actually depend on the overall solution,
+for example:
+Postponing a flight departure might reduce overhead crew
+cost and passenger delays and or conversely might disruptcrews and increase total passenger delay
+A flight cancellation can benefit the passengers and reduce
+airline operating cost or conversely a flight cancellation canresult in severe overhead costs to the airline
+/GBETesting using actual airline data showing that the
+solution is highly sensitive to the objective coefficients</text>
+        </slide>
+        <slide>
+          <slideno>28</slideno>
+          <text>Aircraft route schedule
+S1
+H
+S2Aircraft A
+Aircraft B</text>
+        </slide>
+        <slide>
+          <slideno>13</slideno>
+          <text>Air Traffic Control System
+Command Center
+Air route traffic control
+centers
+Terminal radar approachcontrol - TRACON
+Air traffic control tower</text>
+        </slide>
+        <slide>
+          <slideno>19</slideno>
+          <text>AOCC
+/G32 /G53/G48/G55/G44/G57/G4C/G52/G51/G56
+/G27/G4C /G55 /G48/G46 /G57 /G52/G55/G26 /G55/G48/G5A /G33 /G4F /G44/G51/G51 /G48/G55/G56
+/G26 /G55/G48/G5A /G26 /G52/G52/G55 /G47 /G4C/G51/G44/G57/G52/G55/G56
+/G27 /G4C/G56/G53 /G44/G57 /G46 /G4B/G48/G55/G56 /G0F /G35/G52 /G58/G57/G48/G55/G56/G0F
+/G2F /G52/G44/G47 /G33/G4F/G44/G51/G51 /G48/G55/G56/G26 /G58/G56 /G57/G52/G50 /G48/G55 /G36 /G48/G55/G59 /G4C /G46/G48 /G26 /G52/G52 /G55 /G47 /G4C/G51/G44/G57/G52/G55/G56
+/G32 /G53/G48/G55/G44/G57/G4C/G52/G51/G44/G4F /G38/G51 /G4C/G57/G32 /G53/G48/G55/G44/G57/G4C/G52/G51/G56 /G50/G44 /G51/G44 /G4A /G48/G55
+/G2F/G44 /G55 /G4A /G48 /G44 /G4C/G55/G46/G55 /G44 /G49/G57 /G2A/G55/G52/G58 /G53
+/G24/G4C/G55 /G57/G55 /G44 /G49/G49 /G4C/G46 /G46/G52/G51 /G57 /G55/G52/G4F /G4A /G55/G52/G58 /G53/G32 /G53/G48/G55/G44/G57/G4C/G52/G51/G56 /G50/G44 /G51/G44 /G4A /G48/G55
+/G36/G50 /G44/G4F/G4F /G44/G4C/G55/G46/G55/G44/G49 /G57 /G4A /G55/G52 /G58 /G53/G26 /G55/G48/G5A /G33 /G4F /G44/G51/G51 /G48/G55/G56
+/G26 /G55/G48/G5A /G26 /G52/G52/G55 /G47 /G4C/G51/G44/G57/G52/G55/G56
+/G27 /G4C/G56/G53 /G44/G57 /G46 /G4B/G48/G55/G56 /G0F /G35/G52 /G58/G57/G48/G55/G56/G0F /G2F/G52/G44 /G47
+/G33/G4F/G44/G51 /G51/G48/G55/G56/G26 /G58/G56 /G57/G52/G50 /G48/G55 /G36 /G48/G55/G59 /G4C /G46/G48 /G26 /G52/G52 /G55 /G47 /G4C/G51/G44/G57/G52/G55/G56/G32 /G53/G48/G55/G44/G57/G4C/G52/G51/G44/G4F /G38/G51 /G4C/G57</text>
+        </slide>
+        <slide>
+          <slideno>40</slideno>
+          <text>Examples conclusion
+Decision #3 is the best decision for passengers
+The ARM would chose either decision #1 or #2 depending on
+the flight delay and cancellation cost coefficients:
+/GBEThe best decision for the passengers will never be
+chosen by ARM
+/GBEPassenger direct operating costs not capture; overnight
+passengers create extra direct costs for the airline (e.g.,
+hotels) and potential lost revenues
+/GBENo passengers are disrupted in decision #3Postpone flights, aircraft A only #2
+Postpone both aircraft A and aircraft B #3Cancel 2 flights, aircraft A #1Description Operational decision</text>
+        </slide>
+        <slide>
+          <slideno>15</slideno>
+          <text>GDP (Cont.)
+Compare Airport Arrival Rate (AAR) to scheduled
+flight demand
+Calculate delay for each arriving flight, FirstScheduled First Served (FSFS)
+Issue Expected Clearance Departure Time (ECDP)
+What are potential problems with this approach?</text>
+        </slide>
+        <slide>
+          <slideno>5</slideno>
+          <text>Pilot work rules
+(FAA regulation Part 135)
+1,200 hours in any calendar year.
+120 hours in any calendar month.
+34 hours in any 7 consecutive days.
+8 hours during any 24 consecutive hours for a flight
+crew consisting of one pilot.
+8 hours between required rest periods for a flightcrew consisting of two pilots qualified under thispart for the operation being conducted.
+9 consecutive hours of rest for less than 8 hours ofscheduled flight time.
+10 consecutive hours of rest for 8 or more but lessthan 9 hours of scheduled flight time.
+11 consecutive hours of rest for 9 or more hours ofscheduled flight time.</text>
+        </slide>
+        <slide>
+          <slideno>14</slideno>
+          <text>Ground Delay Program (GDP)
+When capacity shortage is too large, ATCSCC issue
+a GDP to prevent airborne holding of arriving aircraft.
+(safety, workload, fuel)
+Instead, aircraft are better off waiting on the ground
+Example: Yesterday in BOS: Due to EQUIPMENT, RY
+4R GS OTS/LOW CIGS/VSBY, there is a TrafficManagement Program in effect for traffic arriving
+BOS. This is causing some arriving flights to be
+delayed an average of 1 hour and 3 minutes withsome arriving flights receiving as much as 1 hourand 38 minutes delay.
+How does a GDP work?</text>
+        </slide>
+        <slide>
+          <slideno>18</slideno>
+          <text>How do airlines recover the
+schedule?
+Airline Operations Control Center (AOCC): centrally
+manage operations of aircraft, crews and passengers
+Monitor flight irregularities, implement recovery plans
+Quickly return the schedule to on-time after majordisruptions</text>
+        </slide>
+        <slide>
+          <slideno>25</slideno>
+          <text>Airline Integrated Recovery
+/G83Schedule Recovery Model (SRM)
+/G83Aircraft Recovery Model (ARM)
+/G83Crew Recovery Model (CRM)
+/G83Passenger Flow Model (PFM)
+/G83Journey Management
+/G83Passenger Re-accommodation/G36/G35/G30/G36/G35/G30
+/G24/G24/G35 /G35/G30 /G30 /G26/G26/G35 /G35/G30 /G30 /G33/G33/G29/G30 /G29/G30
+/G33/G44/G56/G33/G44/G56/G56 /G56/G48 /G51 /G4A /G48 /G48/G51 /G4A /G48/G55 /G55/G35 /G48 /G35/G48/G44 /G44/G46 /G46 /G46/G52/G50 /G46/G52/G50/G50 /G50/G52 /G47 /G52/G47/G44 /G44/G57 /G57/G4C /G4C/G52 /G52/G51 /G51</text>
+        </slide>
+        <slide>
+          <slideno>22</slideno>
+          <text>AOCC decisions to recover the
+schedules
+Recovery priority:
+/GBEAircraft &gt; Crews &gt; Passengers
+Decisions:
+/GBEAircraft route swaps with no crew schedule
+disruptions enable to absorb flight delays
+/GBEFlight cancellation:
+Hub-and-spoke schedule enable almost always to
+find cancellation tour with only two flights.
+Especially interesting when 2 flights belong to the
+same planned crew duty
+/GBECall reserve crews</text>
+        </slide>
+        <slide>
+          <slideno>23</slideno>
+          <text>Airline operations recovery:
+challenges
+Airlines plans are sophisticated
+/GBEAircraft, crews and passengers have different route schedules
+/GBEThe objective of planning is to minimize operating costs, which
+result in maximizing resource utilization, leaving very littleslack to recover disruptions
+Following a disruption, choosing the best
+operational decisions are hard because:
+/GBESize of the decision space
+/GBEReal time; If wait too long, solutions might become obsolete
+/GBEComplex restrictions (FAA, contractual)
+/GBEinterdependencies between airline resources and passengers</text>
+        </slide>
+        <slide>
+          <slideno>1</slideno>
+          <text>Outline
+Airline planning complexity
+Schedule disruptions
+Schedule dependability
+CDM Ground Delay Program
+How do airlines recover the schedule?
+Traditional ARM; Model shortcomings
+Interdependency of passengers and
+aircraft operations</text>
+        </slide>
+        <slide>
+          <slideno>39</slideno>
+          <text>The airline operations recovery problem:
+our objective
+Reduce total passenger delay and the number of
+disrupted passengers by deciding on:
+/GBEFlight departure times (or clearance)
+/GBEFlight cancellations if necessary
+while satisfying resource feasibility (crew and
+aircraft restrictions) and controlling actualoperating costs</text>
+        </slide>
+        <slide>
+          <slideno>12</slideno>
+          <text>051015202530354045
+56789 1 0 1 1 1 2 1 3 1 4 1 5 1 6 1 7 1 8 1 9 2 0 2 1 2 2 2 3Number of operations per 15minutesTotal Departures
+Total ArrivalsVFR conditions
+IFR conditions</text>
+        </slide>
+        <slide>
+          <slideno>9</slideno>
+          <text>Schedule dependability</text>
+        </slide>
+        <slide>
+          <slideno>34</slideno>
+          <text>Operations decision #1: cancel
+ Passenger actual itineraries
+S1
+H
+S2Aircraft A
+Aircraft B</text>
+        </slide>
+        <slide>
+          <slideno>24</slideno>
+          <text>Challenges (Cont.)
+Impact of delay depends on the state of the
+complex multi layer plan at a given time:
+/GBE30 minutes flight delay may result in crew disruption, flight
+cancellations and severe passenger disruptions. The effect
+can last for more than a day
+/GBEConversely, a 30 minutes delay might benefit crews and
+passengers as both would have been disrupted had theflight departed on time
+What is the objective?
+/GBECan we assign a cost to one minute of flight delay?
+/GBECan we assign a cost to a flight cancellation?</text>
+        </slide>
+        <slide>
+          <slideno>3</slideno>
+          <text>Feasibility constraints
+Aircraft maintenance checks
+Pilot work rules
+Flights
+Passengers</text>
+        </slide>
+        <slide>
+          <slideno>27</slideno>
+          <text>Airline Recovery Model, ARM
+(G. Yu et al.)
+tt
+ff ff
+fF tT fFf
+t
+ff
+tTf
+tt tt
+ff ff
+ttfF fFdj oj
+00
+ff 0
+0fFoj
+__
+ff
+_fFdjmin d x c z
+st:
+xz1
+xy xy
+xy jxyFlight coverage
+Aircraft balance
+Initial resource at aiOps cost + Cancellatio
+rportsn cost
+ 
+
++
+
++
+
+
+
++  
++=
++= +
++=
++ 
+
+
+
+
+tt
+ffj
+x{ 0 , 1 } ; y0End of the day resource at airports=
+
+Objective is to minimize operating cost
+(flight delay and cancellation costs)</text>
+        </slide>
+        <slide>
+          <slideno>16</slideno>
+          <text>Collaborative Decisions Making (CDM)
+- GDP
+Data exchange between ATCSCC and the
+Airlines Operations Control Centers
+(AOCC): CDM-Net
+Ration by schedule: gives more control to
+airlines to assign flights to slots
+Compression: removes disincentives toproviding schedule updates
+Compression benefit example</text>
+        </slide>
+        <slide>
+          <slideno>20</slideno>
+          <text>Current Practice
+Operations Coordinator
+Delays, Assigns EquipmentPassenger
+ Coordinator
+Fleet 2
+Aircraft
+CoordinatorFleet 2 
+Crew
+CoordinatorFleet 1
+Crew
+Coordinator
+Fleet 1 
+Aircraft
+CoordinatorCant Do It!Shouldnt Do It</text>
+        </slide>
+      </slides>
+      <videos/>
+    </lecture>
+    <lecture>
+      <lecture_title>PPT</lecture_title>
+      <lecture_pdf_url>https://ocw.mit.edu/courses/1-206j-airline-schedule-planning-spring-2003/resources/lec6_fleet_assignment_2003/</lecture_pdf_url>
+      <lectureno>8-11</lectureno>
+      <slides/>
+      <videos/>
+    </lecture>
+    <lecture>
+      <lecture_title>PPT</lecture_title>
+      <lecture_pdf_url>https://ocw.mit.edu/courses/1-206j-airline-schedule-planning-spring-2003/resources/lec7_crew_scheduling_2003/</lecture_pdf_url>
+      <lectureno>14-17</lectureno>
+      <slides/>
+      <videos/>
+    </lecture>
+    <lecture>
+      <lecture_title>PPT</lecture_title>
+      <lecture_pdf_url>https://ocw.mit.edu/courses/1-206j-airline-schedule-planning-spring-2003/resources/lec5_passenger_mix_2003-1/</lecture_pdf_url>
+      <lectureno>7</lectureno>
+      <slides/>
+      <videos/>
+    </lecture>
+    <lecture>
+      <lecture_title>PPT</lecture_title>
+      <lecture_pdf_url>https://ocw.mit.edu/courses/1-206j-airline-schedule-planning-spring-2003/resources/lec14_shan_lan_robust_scheduling/</lecture_pdf_url>
+      <lectureno>23-24</lectureno>
+      <slides/>
+      <videos/>
+    </lecture>
+    <lecture>
+      <lecture_title>PPT</lecture_title>
+      <lecture_pdf_url>https://ocw.mit.edu/courses/1-206j-airline-schedule-planning-spring-2003/resources/lec10_schedule_design_2003/</lecture_pdf_url>
+      <lectureno>19</lectureno>
+      <slides/>
+      <videos/>
+    </lecture>
+    <lecture>
+      <lecture_title>PPT</lecture_title>
+      <lecture_pdf_url>https://ocw.mit.edu/courses/1-206j-airline-schedule-planning-spring-2003/resources/lec2_2003_mcfs1-1/</lecture_pdf_url>
+      <lectureno>2-6</lectureno>
+      <slides/>
+      <videos/>
+    </lecture>
+  </lectures>
+</doc>

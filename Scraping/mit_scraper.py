@@ -125,7 +125,10 @@ class Scraper:
             # Get lecture slide content
             slides = self.get_pdf_data(lecture_pdf_url)
             # Get video content (assuming in same order as lecture slides)
-            video = videos[i]
+            if videos:
+                video = videos[i]
+            else:
+                video = None
             lectures.add_lecture(lecture_title, lecture_pdf_url, lecture_num, slides, (video))
 
         return lectures
@@ -250,7 +253,6 @@ class Scraper:
         for video in soup.find_all('a', {'class': 'video-link'}): # e.g https://ocw.mit.edu/courses/18-086-mathematical-methods-for-engineers-ii-spring-2006/video_galleries/video-lectures/
             video_link = link_join('https://ocw.mit.edu', video.get('href'))
             video_title = video.find('h5', {'class': 'video-title'}).text.strip('\n')
-            print("\n" + video_title + "\n")
             video_link, slices = self.get_transcript(video_link)
             
             videos.append(Video(video_title, video_link, slices))

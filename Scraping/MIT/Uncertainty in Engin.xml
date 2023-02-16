@@ -1,0 +1,1217 @@
+<doc>
+  <source>MIT</source>
+  <date>28/01/2023</date>
+  <course>
+    <course_url>https://ocw.mit.edu/courses/1-010-uncertainty-in-engineering-fall-2008/</course_url>
+    <course_title>Uncertainty in Engineering</course_title>
+    <course_tags>
+      <list>Engineering </list>
+      <list>Mathematics </list>
+      <list>Probability and Statistics </list>
+    </course_tags>
+  </course>
+  <lectures>
+    <lecture>
+      <lecture_title>Events and their probability (PDF)</lecture_title>
+      <lecture_pdf_url>https://ocw.mit.edu/courses/1-010-uncertainty-in-engineering-fall-2008/resources/notes_01/</lecture_pdf_url>
+      <lectureno>1</lectureno>
+      <slides>
+        <slide>
+          <slideno>2</slideno>
+          <text>1. 0  fE  1 
+2. fS = 1 
+3. f(AB) = fA + fB if A and B are m utually exclusive 
+ Properties/axiom s of probability 
+1. 0  P(A)  1 
+2. P(S) = 1 
+3. P(AB) = P(A) + P(B) if A and B are m utually exclusive 
+ Two consequences of  the axiom s of probability theory 
+1. P(A c) = 1  P(A) 
+2. P(AB) = P(A) + P(B)  P(AB), for any two events A and B, 
+ P(AB) = P(A) + P(B) - P(A B) 
+ Conditional Probability 
+Definition: 
+P(A | B) = P(A  B)
+P(B) 
+Therefore, P(A B) can also be obtained as P(A B) = P(B)P(A| B) = P(A) P(B| A) 
+ Total Probability Theorem 
+Let {B 1, B2,..., B n} be a set of m utually exclusive and collectively exhaustive events and let A 
+be any other event. Then the m arginal probability of  A can be obtained as: 
+P(A) =P(A  Bi) =P(Bi)P(A | Bi) 
+i i 
+ Independent events 
+A and B are independent if: 
+P(A|B) = P(A), or equivalently if 
+P(B|A) = P(B), or if 
+P(AB) = P(A) P(B) 
+ Bayes' Theorem</text>
+        </slide>
+        <slide>
+          <slideno>3</slideno>
+          <text>P(A |B) = P(A) P(B | A) 
+P(B) 
+Using Total Probability Theorem , P(B) can be expressed in term s of P(A), P(Ac) = 1  P(A), 
+and the conditional probabilities P(B|A) and P(B|AC): 
+P(B) = P(A)P(B | A) + P(AC)P(B| AC) 
+So Bayes Theorem  can be rewritten as: 
+P(A| B) = P(A) P(B| A) 
+P(A)P(B | A)+ P(AC)P(B | AC)</text>
+        </slide>
+        <slide>
+          <slideno>0</slideno>
+          <text>MIT OpenCourseWare
+ http://ocw.mit.edu 
+1.010 Uncertainty in Engineering
+Fall 2008 
+For information about citing these materials or our Terms of Use, visit: http://ocw.mit.edu/terms.</text>
+        </slide>
+        <slide>
+          <slideno>1</slideno>
+          <text>Brief Notes #1 
+Events and Their Probability 
+ Definitions
+ Experim ent: a set of conditions under which som e variable is observed 
+ Outcom e of an experim ent: the result of the observation (a sam ple point) 
+Sample Space, S : collection of all possible outcom es (sam ple points) of an experim ent 
+Event : a collection of sam ple points 
+ Operations w ith events
+ 1. Complementation Ac 
+Ac
+A 2. Intersection 
+A B AB 
+3. Union 
+AB B A 
+ Properties of events 
+1. Mutual Exclusiveness - intersection of  events is the null set (A iAj = , for all i  j) 
+2. Collective Exhaustiveness (C.E.) - union of events is sam ple space (A 1A2...An = S) 
+3. If the events {A 1, A2, ... , A n} are both m utually exclusive and collectively exhaustive, they   
+form a partition  of the sam ple space, S. 
+ Probability of events 
+ Relative frequency f E and lim it of relative frequency F E of an event E 
+fE = nE
+n
+FE = limfE = lim nE 
+n n n 
+ Properties of relative frequency (the sam e is true for the lim it of relative frequency</text>
+        </slide>
+      </slides>
+      <videos/>
+    </lecture>
+    <lecture>
+      <lecture_title>Random vectors (PDF)</lecture_title>
+      <lecture_pdf_url>https://ocw.mit.edu/courses/1-010-uncertainty-in-engineering-fall-2008/resources/notes_04/</lecture_pdf_url>
+      <lectureno>4</lectureno>
+      <slides>
+        <slide>
+          <slideno>4</slideno>
+          <text>Independent Random Variables 
+X1 and X 2 are independent variables if: 
+FX1,X2 (x1,x 2) = FX1(x1) . FX2 (x2)
+Equivalent conditions for c ontinuous random  vectors are: 
+fX1,X2 (x1,x2) = fX1 (x1) .fX2 (x2) 
+or: 
+f(X1|X2 =x2)(x1) = fX1(x1) 
+and for discrete random  vectors: 
+PX1,X2 (x1,x2) = PX1 (x1) . PX2 (x2) 
+or: 
+P(X1|X2 =x2)(x1) = PX1(x1) 
+Exam ple of continuous joint distribution:  
+joint and m argina l PMF of random  variables X and Y. 
+(Note: X and Y are the random  variables X 1 and X 2 in our notation)</text>
+        </slide>
+        <slide>
+          <slideno>2</slideno>
+          <text>Continuous Random Vectors 
+ Characterization 
+ Joint CDF FX1,X2(x1,x2 ): sam e as for discrete vectors. 
+X1  	Joint Proba bility Density Function (JPDF) of X =, fX ,X(x1,x2): 
+X2  1 2
+This f unctio n is def ined such tha t: 
+fX ,X (x1,x 2)dx 1dx 2 =P[(x1 X1 &lt;x1 +dx 1) (x 2 X2 &lt;x2 +dx 2)]
+1 2 
+Relation ships betw een fX1,X2 and FX1,X2: 
+2FX ,X (x1,x 2)
+fX1,X2(x1,x 2) = 1 2
+x1x2
+x1 x2F ,X2(x1,x2) =fX ,X2(u1,u2)du1du 2
+ X1	   1
+ Marginal distribution of  X1 
+ CDF : FX1(x1) =FX1,X2(x1,) 
+dFX (x1) FX ,X (x1, )
+1 1 2 PDF : fX (x1) = = 
+1
+dx 1 x1 
+1
+=  
+x1  x 
+ du 1 
+ fX1,X (u1,u 2)du 2 2
+ = fX1,X2(x1,u2)du 2
+ Conditional PDF of (X1 | X 2 = x 2) 
+f(X1|X2 =x2 )(x1) = fX1
+f,X2(
+(x
+x1,
+)x 2)
+X2 2 
+ fX1,X2(x1,x2), forfX2(x2) 0</text>
+        </slide>
+        <slide>
+          <slideno>0</slideno>
+          <text>MIT OpenCourseWare
+ http://ocw.mit.edu 
+1.010 Uncertainty in Engineering
+Fall 2008 
+For information about citing these materials or our Terms of Use, visit: http://ocw.mit.edu/terms.</text>
+        </slide>
+        <slide>
+          <slideno>3</slideno>
+          <text>Conditional Distribution 
+	Conditional PMF of (X1 | X 2 = x 2): 
+P(X |X = x )(x1) = P[X1 = x1 |X 2 = x 2] = PX1,X2(x1,x 2) 
+1 2	 2 PX2(x 2) 
+ PX1,X2 (x1,x2) 
+Exam ple of  discre te join t distribu tion: joint PMF of  traffic at rem ote location  
+(X in cars/30 sec. interval) and traffic recorded by som e imperfect traffic counter (Y) 
+(note: X and Y are th e random  variables X 1 and X 2 in our notation). 
+Exam ple of  discre te join t distri bution: marginal  distributions. 
+(a) Marginal P MF of actual traffic X, and (b) m arginal counter response Y.</text>
+        </slide>
+        <slide>
+          <slideno>1</slideno>
+          <text>1.010  - Brief Notes #4 
+Random Vectors 
+A set of 2 or m ore random vari ables constitutes a random  vect or.  For example, a random 
+vector with two com ponents, X = 
+X1 
+, is a function from  the sam ple space of an 
+X2  
+experim ent to the (x 1, x2) plane. 
+	Discrete Random Vectors 
+	Characterization 
+	Joint PMF o f X1 and X2: 
+PX (x) =PX1,X2(x1,x 2) =P[(X 1 =x1) (X 2 =x 2)]
+	Joint CDF of  X1 and X2: 
+FX(x) =FX1,X2 (x1,x 2) =P[(X1 x1) (X2 x2)]
+= PX1,X2 (u1,u 2) 
+u1 x1 u2 x2 
+	Margina l Distribu tion 
+	Marginal P MF of X1: 
+PX1(x1) =P[X1 =x1] =P[(X1 =x1) (X2 =x 2)] =PX1,X2 (x1,x 2) 
+all x2	 all x2 
+	Marginal C DF of X1: 
+FX (x1) =P[X1 x1] =P[(X1 x1) (X2 &lt;)] =FX ,X (x1,) = PX ,X (u,x2)
+1 1 2 1 2 
+allx2 ux1</text>
+        </slide>
+      </slides>
+      <videos/>
+    </lecture>
+    <lecture>
+      <lecture_title>Second-moment characterization of random variables and vectors; second-moment (SM) and first-order second-moment (FOSM) propagation of uncertainty (PDF)</lecture_title>
+      <lecture_pdf_url>https://ocw.mit.edu/courses/1-010-uncertainty-in-engineering-fall-2008/resources/notes_06/</lecture_pdf_url>
+      <lectureno>6</lectureno>
+      <slides>
+        <slide>
+          <slideno>4</slideno>
+          <text>4 
+	First-Order Second-Momen t(FOSM ) Propagation of Uncertain ty for Nonlinear 
+Functions 
+Usually , with knowledge of only the mean value and variance of X, it is impossible to calculate mY 
+and Y 2 . However, a so-called rst-order second-momen t(FOSM) appro ximation can be obtained as 
+follows. 
+Given X  (mX ,2 ) and Y = g(X), a generic nonlinear function of X, nd the mean value and X 
+variance of Y . 
+Replace g(X) by a linear function of X, usually by linear Taylor expansion around mX . This  
+gives the following appro ximation to g(X): 
+(X  mX ) = g(X)  g(mX )+ dg(X)Y dX mX 
+Then appro ximate values for mY and Y 2 are: 
+2 
+2 
+X dg(X)2 = Y dX mY = g(mX ), 
+mX 
+(b) Random Vectors 
+. 
+Second-Momen t Characterizati on. Initial and Central Momen ts.  
+Consider a random vector X with comp onents X1,X2,...,Xn. 
+	Expected value 
+ 
+E[X1] X1 m1 
+E[X]= E   =   =   = m (mean value vector) . . . . . . . . . 
+Xn E[Xn] mn 
+	Expected value of a scalar function of X 
+Let Y = g(X) be a function of X. Then, extending a result given previously for functions of 
+single variables, one nds that E[Y ] may be calculated as:</text>
+        </slide>
+        <slide>
+          <slideno>8</slideno>
+          <text>8 
+ For n = 2: 
+Y = a0 + a1X1 + a2X2 
+E[Y ] = a0 + a1E[X1] + a2E[X2] 
+V ar[Y ] = a2 
+1V ar[X1] + a2 2V ar[X2] + 2a1a2Cov[X1, X2] 
+ For uncorrelate d random variables: 
+V ar[Y ]= n
+a 
+i=1 2 
+i V ar[Xi] 
+Extension to sever al linear functions of sever al variables  
+Let Y be a vector whose comp onents Yi are linear functions of a random vector X. Then, one 
+can write Y = a + BX, where a is a given vector and B is a given matrix. One can show that: 
+mY = a + BmX 
+Y = B X BT 
+ FOSM Propagation of Uncertain ty for Nonlinear Functions of Several Variables 
+Let X  (mX , X ) be a random vector with mean value vector mX and covariance matrix X . 
+Consider a nonlinear function of X, say Y = g(X). In general, mY and Y 2 depend on the entire 
+joint distribution of the vector X. However, simple appro ximations to mY and Y 2 are obtained by 
+linearizing g(X) and then using the exact SM results for linear functions. If linearization is obtained 
+through linear Taylor expansion about mX , then the function that replaces g(X) is: 
+n
+i=1 Xi g(X) g(X)  g(mX )+ (Xi  mi) 
+X=mX 
+where mi is the mean value of Xi. The appro ximate mean and variance of Y are then: 
+mY = g(mX ),</text>
+        </slide>
+        <slide>
+          <slideno>7</slideno>
+          <text>7 
+ SM Propagation of Uncertain ty for Linear Functi ons of Several Variables 
+n
+Let Y = a0 + aiXi = a0 + a1X1 + a2X2 + + anXn be a linear function of the vector X. Using 
+i=1  
+linearit y of expectation, one nds the following importan t results: 
+n n
+E[Y ]= Ea0 + aiXi = a0 + aimi
+i=1 i=1
+n nn
+V ar[Y ]= a2 
+i V ar[Xi]+2 aiaj Cov[Xi,Xj ]
+i=1 i=1 j=i+1</text>
+        </slide>
+        <slide>
+          <slideno>2</slideno>
+          <text>2 
+ Exponential distribution 
+fX (x)= ex ,x  0 
+1 mX =  
+2 2  1 1 2 = 0  x  fX (x)dx =  = m2 
+X X 
+Notation 
+X  (m, 2) indicates that X is a random variable with mean value m and variance 2 . 
+Other measures of location  
+ Mode x= value that maximizes PX or fX 
+ Median x50 = value such that FX (x50)=0.5 
+ Other measures of dispersion 
+Standard deviation  
+X = 2 (same dime nsion as X) X 
+Coecien t of variation  
+VX = X (dimensionless quan tity)
+mX
+ Expectation of a Function of a Random Variable. Initial and Central Momen ts. 
+ Expected value of a function of a random variable 
+Let Y = g(X) be a function of a random variable X. Then the mean value of Y is:</text>
+        </slide>
+        <slide>
+          <slideno>1</slideno>
+          <text>1.010 -Brief Notes # 6 
+Second-Momen t Characterization of Random Variables and Vectors. 
+Second-Momen t(SM) and First-Order Second-Momen t(FOSM) 
+Propagation of Uncertain ty 
+(a) Random Variables 
+. 
+Second-Momen t Characterizati on  
+ Mean (expected value) of a random variable 
+E[X]= mX = xiPX (xi) (discrete case) 
+all xi 
+ 
+= xfX (x)dx (continuous case) 
+ 
+ Varianc e (second central moment) of a random variable 
+2 = V ar[X]= E[(X  mX )2]= (xi  mX )2PX (xi) (discrete case) X
+all xi
+2 =  
+(x  mX )2fX (x)dx (continuous case) X 
+ 
+ Examples 
+Poisson distribution  
+(t)y et 
+PY (y)= ,y =0, 1, 2,... y! 
+mY = t 
+2 = 
+(y  t)2PY (y)= t = mY Y
+y=0
+1</text>
+        </slide>
+        <slide>
+          <slideno>0</slideno>
+          <text>MIT OpenCourseWare
+ http://ocw.mit.edu 
+1.010 Uncertainty in Engineering 
+Fall 2008 
+For information about citing these materials or our Terms of Use, visit: http://ocw.mit.edu.terms.</text>
+        </slide>
+        <slide>
+          <slideno>9</slideno>
+          <text>9 
+2 
+Y = bibj Cov[Xi,Xj ] nn
+i=1 j=1 
+g(X)where bi = Xi X=mX 
+This way of propagating uncertain ty is called FOSM analysis .</text>
+        </slide>
+        <slide>
+          <slideno>3</slideno>
+          <text>3 
+E[Y ]= E[g(X)] =  yfY (y)dy 
+Importan tly, it can be shown that E[Y ] can also be found directly from fX , as: 
+E[Y ]=  g(x)fX (x)dx  
+	Linearity of expectation 
+It follows directly from the above and from linearit y of integration that, for any constan ts a1 
+and a2 and for any functions g1(X) and g2(X): 
+E[a1g1(X)+ a2g2(X)] = a1E[g1(X)] + a2E[g2(X)] 
+	Expectation of some important functions 
+1.	E[Xn]=  xnfX (x)dx  
+(called initial moments ; the mean mX is also the rst initial moment ) 
+2.	E[(X  mX )n]=  (x  mX )nfX (x)dx 
+(called central moments ; the variance 2 is also called the second central moment )X 
+	Consequences of Lineari ty of Expectation. Second-Momen t(SM) Propagation of 
+Uncertain ty for Linear Functions. 
+1.	X 2 = V ar[X]= E[(X  mX )2]= E[X2]  2mX E[X]+ mX 2 = E[X2]  m2 
+X 
+E[X2]= 2 + m2  XX 
+2. Let Y = a + bX, where a and b are constan ts. Using linearit y of expectation, one obtains the 
+following expressions for the mean value and variance of Y : 
+mY = a + bE[X]= a + bmX
+2 = E[(Y  mY )2]= b22
+Y	 X</text>
+        </slide>
+        <slide>
+          <slideno>6</slideno>
+          <text>6 
+Covariance Matrix and Correlation Coecien ts  
+Covarianc e matrix  
+Cov[Xi,Xj ]   
+ X = .. . 
+(i, j =1, 2,...,n) 
+)T ]x = E[(X  m)(X  mx
+-For n = 2: 
+2 Cov[X1,X2]X = 1 
+Cov[X2,X1] 22 
+-X is the matrix equiv alent of 2 
+X
+-X is symmetrical: X =T
+X 
+Corr elation coecient between two variables  
+Cov[Xi,Xj ]ij = ij , i,j =1, 2, . . . , n, 1  ij  1 
+-ij is a measure of linear dependence between two random variables; 
+-ij has values between -1 and 1, and is dimensionless.</text>
+        </slide>
+        <slide>
+          <slideno>5</slideno>
+          <text>5 
+E[Y ]= g(x)fX (x)dx
+Rn
+Again, it is clear that linearit y applies, in the sense that, for any given constan ts a1 and a2 and 
+any given functions g1(X) and g2(X): 
+E[a1g1(X)+ a2g2(X)] = a1E[g1(X)] + a2E[g2(X)] 
+ Expectation of some special functions 
+Initial momen ts  
+1. Order 1: E[Xi]= mi  E[X]= m, i =1, 2,...,n 
+2. Order 2: E[XiXj ]=  xixj fXi ,Xj (xi,xj )dxidxj , i,j =1, 2,...,n   
+3. Order 3: E[XiXj Xk]= ..., i,j,k =1, 2,...,n 
+Central momen ts  
+1. Order 1: E[Xi  mi]=0,i =1, 2,...,n 
+2. Order 2(covarianc e between two variables):
+Cov[Xi,Xj ]= E[(Xi  mi)(Xj  mj )], i,j =1, 2,...,n
+ 
+= (xi  mi)(xj  mj )fXi,Xj (xi,xj )dxidxj 
+  
+Covariance in terms of rst and second initial momen ts  
+Using linearit y of expectation, 
+Cov[Xi,Xj ]= E[(Xi  mi)(Xj  mj )] = E[XiXj  Ximj  miXj + mimj ]
+= E[XiXj ]  mimj
+E[XiXj ]= Cov[Xi,Xj ]+ mimj</text>
+        </slide>
+      </slides>
+      <videos/>
+    </lecture>
+    <lecture>
+      <lecture_title>Random variables: continuous distributions (PDF)</lecture_title>
+      <lecture_pdf_url>https://ocw.mit.edu/courses/1-010-uncertainty-in-engineering-fall-2008/resources/notes_03/</lecture_pdf_url>
+      <lectureno>3</lectureno>
+      <slides>
+        <slide>
+          <slideno>3</slideno>
+          <text>3 
+ Exponential Distribution 
+Let T = time to rst arrival in a Poisson point process 
+FT (t)= P [T  t]=1  P [T &gt;t] 
+=1  P [no occurrence in [0, t]] 
+=1  et 
+fT (t)= et ,t  0 
+PDF and CDF of the exponential distribution .</text>
+        </slide>
+        <slide>
+          <slideno>1</slideno>
+          <text>1.010 -Brief Notes # 3 
+Random Variables: Continuous Distributions 
+Continuous Distributions  
+	Cumulativ e distribution function (CDF)
+FX (x)= P [X  x]
+P [x1 &lt;X  x2]= FX (x2)  FX (x1)
+	Average probab ility densit y in an interval [x1,x2]
+P [x1 &lt;X  x2] FX (x2)  FX (x1)
+= x2  x1 x2  x1 
+	Probabilit y densit y function (PDF) 
+fX (x1) = lim P [x1 &lt;X  x2]= dFX 
+x2x1 x2  x1 dX x1 
+x2 fX (x)dx = P [x1 &lt;X  x2]= FX (x2)  FX (x1)x1 
+ Prop erties of the PDF 
+1. fX (x)  0 
+2.  fX (x)dx =1  
+u3. fX (x)dx = FX (u) 
+1</text>
+        </slide>
+        <slide>
+          <slideno>2</slideno>
+          <text>2 
+Example of PDF and corresp onding CDF of a continuous random variable: steel-yield-stress. 
+(a) Probabilit y densit y function; (b) cumulativ e distribution function. 
+ Examples of continuous probabilit y distributions 
+Uniform distribution  
+
+ 
+ c, where c is constan t, a&lt;x&lt;b fX (x)= 
+0, otherwise. 
+1Then c = ba 
+
+ 
+ 0, x&lt;a 
+xa ,ba a  x  b 
+1, x&gt;b FX (x)= 
+Example of uniform distribution.</text>
+        </slide>
+        <slide>
+          <slideno>0</slideno>
+          <text>MIT OpenCourseWare
+ http://ocw.mit.edu 
+1.010 Uncertainty in Engineering 
+Fall 2008 
+For information about citing these materials or our Terms of Use, visit: http://ocw.mit.edu.terms.</text>
+        </slide>
+      </slides>
+      <videos/>
+    </lecture>
+    <lecture>
+      <lecture_title>Random variables: discrete distributions (PDF)</lecture_title>
+      <lecture_pdf_url>https://ocw.mit.edu/courses/1-010-uncertainty-in-engineering-fall-2008/resources/notes_02/</lecture_pdf_url>
+      <lectureno>2</lectureno>
+      <slides>
+        <slide>
+          <slideno>1</slideno>
+          <text>1.010 -Brief Notes # 2 
+Random Variables: Discrete Distributions 
+Discrete Distributions  
+Probabilit y Mass Function (PMF) 
+PX (x)= P (X = x)= P (O) 
+all O: X(O)=x 
+ Prop erties of PMFs 
+1. 0  PX (x)  1 
+2. PX (x)=1 
+all x 
+Cumulativ e Distribution Function (CDF) 
+FX (x)= P (X  x)= PX (u)
+ux
+ Prop erties of CDFs 
+1. 0  FX (x)  1 
+2. FX ()=0 
+3. FX ()=1 
+4. if x1 &gt;x2, then FX (x1)  FX (x2) 
+Discrete distributions 
+(a) Probabilit y Mass Function PMF 
+(b) Cumulativ e Distribution Function CDF 
+1</text>
+        </slide>
+        <slide>
+          <slideno>3</slideno>
+          <text>3 
+Poisson distri bution  
+Assumptions: 
+1. In a time interval of short duration , the probabilit y of one occurrence is , where 
+ = occurrence rate (expected number of occurrences per unit time). 
+2. The probabilit y of two or more occurrences in  is negligible. 
+3. The occurrences in non-o verlapping intervals are indep endent. 
+Under these conditions, the number of occurrences in each interval of duration  is either 0 
+or 1, with probabilit y p =  of being 1. Let Y = no. of occurrences in [0, t], where t = n. 
+Then Y has binomial distribution with probabi lity mass function 
+PY (y)= n
+y py qny, where p = =  nt 
+As n , 
+PY (y)= (t)y 
+ye
+! t (Poisson PMF)</text>
+        </slide>
+        <slide>
+          <slideno>2</slideno>
+          <text>2 
+ Examples of discrete probabilit y distributions 
+Bernoulli distribution 	 
+1, if an event of interest occurs (succ ess) Y = 0, if the event does not occur (failure) 
+Y is called a Bernoulli or indicator variabl e  
+p, y =1 PY (y)= q =1  p, y =0 
+Geometric distribution  
+Sequence of Bernoulli trials 
+N = number of trials at which rst success occurs 
+N =1, 2, 3,... 
+PN (n)= P (N = n) = (1  p)n1p 
+n n
+FN (n)= PN (i)= (1  p)i1p =1  (1  p)n 
+i=1 i=1 
+Binomial distribution  
+Consider a sequence of Bernoulli trials
+Let M = number of successes in n trials
+M =1, 2, 3,...,n
+n!
+mPM (m)= pqnm , m!(n  m)! 
+n!  
+where = n = binomial coecient mm!(n  m)! 
+where p and q =1  p are the probabili ties of success and failure in individual Bernoulli trials 
+In particular, the probabilit y of no success is: 
+nPM (0) = q= (1  p)n
+PM (0) = 1  pn, if pn &lt;&lt; 1
+and the probabilit y of all successes is:
+nPM (n)= p</text>
+        </slide>
+        <slide>
+          <slideno>0</slideno>
+          <text>MIT OpenCourseWare
+ http://ocw.mit.edu 
+1.010 Uncertainty in Engineering 
+Fall 2008 
+For information about citing these materials or our Terms of Use, visit: http://ocw.mit.edu.terms.</text>
+        </slide>
+      </slides>
+      <videos/>
+    </lecture>
+    <lecture>
+      <lecture_title>Selected distribution models (PDF)</lecture_title>
+      <lecture_pdf_url>https://ocw.mit.edu/courses/1-010-uncertainty-in-engineering-fall-2008/resources/notes_08/</lecture_pdf_url>
+      <lectureno>8</lectureno>
+      <slides>
+        <slide>
+          <slideno>4</slideno>
+          <text>4 
+The Beta Distribution:  
+The Beta distribution is commonly used to describ e random variables with values in a nite interval. 
+The interval may be normalized to be [0, 1]. The Beta densit y can take on a wide variety of shapes. 
+It has the form: 
+fY (y)  ya(1  y)b 
+where a and b are parameters. For a = b = 0, the Beta distribution becomes the uniform distribution. 
+Multiv ariate Normal Distribution:  
+n
+Consider Y = Xi, where the Xi are iid random vectors. 
+i=1 
+As n becom es large, the joint probabilit y densit y of Y approac hes a form of the type: 
+1 
+2 (det )
+n 1 
+2(ym)T 1(ym)fY (y)= e
+(2)2 
+where m and  are the mean vector and covarian ce matrix of Y .</text>
+        </slide>
+        <slide>
+          <slideno>0</slideno>
+          <text>MIT OpenCourseWare
+ http://ocw.mit.edu 
+1.010 Uncertainty in Engineering 
+Fall 2008 
+For information about citing these materials or our Terms of Use, visit: http://ocw.mit.edu.terms.</text>
+        </slide>
+        <slide>
+          <slideno>5</slideno>
+          <text>5 
+Prop erties 
+1. Contours of fY are ellipsoids centered at m. 
+2. If the comp onents of Y are uncorrelated, then they are independen t. 
+3. The vector Z = a + BY , where a is a given vector and B is a given matrix, has jointly normal 
+distribution N(a + B m,B  BT ). 
+Let Y 1 be a partition of Y , with associated partition ed mean vector m1 and covariance Y 2 m2 
+11 12matrix . Then:
+21 22
+4. Y i has jointly normal distribution: N(mi, ii). 
+5. (Y 1Y 2 = y) has normal distribution N(m1 +121(y 1T ). |22 2  m2), 11  1222 12 2</text>
+        </slide>
+        <slide>
+          <slideno>2</slideno>
+          <text>2 
+ The Lognormal Distribution: 
+Let Y Wn, where the Wi are iid , positiv e random variables. Consider: = W1W2  
+X = ln Y = ln Wi
+all i
+For n large, X  N(mln Y ,2 )ln Y
+Y = eX has a lognormal distribution with PDF:
+dx 1 1 1
+2 (ln Y mln Y )2/2 
+ln Y , fY (y)= dy fX [x(y)] = y 
+2ln Y e y  0</text>
+        </slide>
+        <slide>
+          <slideno>1</slideno>
+          <text>1.010 -Brief Notes # 8
+Selected Distribution Models
+ The Normal (Gaussian) Distribution: 
+Let X1,...,Xn be indep endent random variables with common distribution FX (x). The so called 
+central limit theorem establishes that, under mild conditions on FX , the sum Y = X1 + ... + Xn 
+approac hes as n , a limiting distributional form that does not depend on FX . Such a limiting 
+distribution is called the Normal or Gaussian distribution. It has the probabilit y densit y function: 
+1 fY (y)=	1 e 2 (ym)2/2 
+2 
+where	 m = mean value of Y
+ = standard deviati on of Y
+Notice: m = nmX , 2 = nX 2, where mX and X 2 are the mean value and variance of X. 
+ Prop erties of the Normal (Gaussian) Distribution: 
+1. For most distributions FX , convergence to the normal distribution is obtain ed already for n as 
+small as 10. 
+2. Under mild conditions, the distribution of Xi approac hes the normal distribution also for 
+i 
+dependen t and dierently distributed Xi. 
+3. If X1,...,Xn are indep enden t normal variables, then any linear function Y = a0 + aiXi is 
+i 
+also normally distribu ted. 
+1</text>
+        </slide>
+        <slide>
+          <slideno>3</slideno>
+          <text>3 
+If X  N(mX ,X 2), then Y = eX  LN(mY ,Y 2) with mean value and variance given by: 
+
+mY = emX + 21 X 2 
+Y 2 = e2mX +X 2 eX 2  1 
+Conversely, mX and X 2 are found from mY and Y 2 as follows:  
+
+1 mX = 2 ln(mY )  2 ln(Y 2 + m2 
+Y ) 
+X 2 = 2 ln(mY ) + ln(Y 2 + mY 2 ) 
+Prop erty: products and ratios of indep enden t lognormal variables are also lognormally distributed.</text>
+        </slide>
+        <slide>
+          <slideno>6</slideno>
+          <text>6 
+Relationships between Mean and Variance of Normal and Lognormal Distributions 
+If X  N(mX ,X 2), then Y = eX  LN(mY ,Y 2) with mean value and variance given by: 
+
+mY = emX + 21 X 2 
+Y 2 = e2mX +X 2 eX 2  1 
+Conversely, mX and X 2 are found from mY and Y 2 as follows:  
+1 mX = 2 ln(mY )  2 ln(Y 2 + m2 
+Y ) 
+X 2 = 2 ln(mY ) + ln(Y 2 + m2 )Y</text>
+        </slide>
+      </slides>
+      <videos/>
+    </lecture>
+    <lecture>
+      <lecture_title>Conditional second-moment analysis (PDF)</lecture_title>
+      <lecture_pdf_url>https://ocw.mit.edu/courses/1-010-uncertainty-in-engineering-fall-2008/resources/notes_07/</lecture_pdf_url>
+      <lectureno>7</lectureno>
+      <slides>
+        <slide>
+          <slideno>0</slideno>
+          <text>MIT OpenCourseWare
+ http://ocw.mit.edu 
+1.010 Uncertainty in Engineering
+Fall 2008 
+For information about citing these materials or our Terms of Use, visit: http://ocw.mit.edu/terms .</text>
+        </slide>
+        <slide>
+          <slideno>1</slideno>
+          <text>1.010  - Brie f Notes #7 
+Condi tional Second-Mom ent Anal ysis
+ Important r esult f or jointly normally distribute d variables X1 and X2 
+If X1 and X2 are jointly normally distri buted with m ean values m1 and m2, variances 
+12 and 22, and correlation coefficient , then (X1 | X 2 = x 2) is also normally 
+distributed with m ean and variance: 
+ 1 m1|2(x2) = m1 + (x2  m2) 
+2 
+ (1) 
+12
+|2(x2) =2(12) 1 
+ 
+Notice that the conditional v ariance do es not depend on x2. 
+The results i n Eq. 1 hold strictly when X1 and X2 are jo intly normal, but m ay be used 
+in approximation for other distribu tions or when one knows on ly the first t wo
+X1 
+moments of the vector X =. 
+X2 
+ Extension to ma ny observat ions and many predictio ns 
+Let X = X1  , where X1 and X2 are sub-v ectors of X. Suppose X has multivariat e 
+X2  
+normal distribution with mean v alue vector and covariance matrix: 
+m = m1  , and  = 1112  (12 = 21T).
+m2  21 22 
+Then, given X2 = x2, the conditional vector (X1 | X2 = x2) has jointly normal
+distributions with parameters:
+m1|2(x 2) = m1 +12  
+221(x 2  m2)
+
+ (2) 
+ 1 T 
+1|2(x 2) =11 12 22 12 
+Notice again that 1|2 does not depend on x2. 
+As for the s calar case, Eq. 2 may be used in approxim ation when X does not have 
+multivariat e norm al dist ribution or when t he distribution of X is not k nown, except 
+for the mean vector m and covariance matrix .</text>
+        </slide>
+      </slides>
+      <videos/>
+    </lecture>
+    <lecture>
+      <lecture_title>Functions of random variables and vectors (PDF)</lecture_title>
+      <lecture_pdf_url>https://ocw.mit.edu/courses/1-010-uncertainty-in-engineering-fall-2008/resources/notes_05/</lecture_pdf_url>
+      <lectureno>5</lectureno>
+      <slides>
+        <slide>
+          <slideno>5</slideno>
+          <text>5 
+(b) Functi ons of Two or More Random Variables 
+Problem 
+XGiven the JCDF of the random vector , FX,Y (x, y), and a deterministic function Z = g(x, y),Y
+nd the (derived) distribution of the random variable Z.
+General Solution  
+Let Z = {x, y : g(x, y)  z}. Then: 
+FZ (z)= P [Z  z]= P [(x, y)  Z ]= fX,Y (x, y)dxdyZ 
+ Special Cases 
+ Minim um/maxim um functions 
+i.e. Z = Min[X 1,X2,...,Xn] (eg. minim um strength) 
+or Z = Max[X 1,X2,...,Xn] (eg. maxim um load) 
+ Z = Min[X 1,X2,...,Xn]. For n = 2, 
+ 
+FZ (z)= P [Z  z]= fX1,X2 (x1,x2)dx1dx2, with Z shown in gure 
+Z 
+
+=1  dx1 fX1,X2 (x1,x2)dx2 
+zz</text>
+        </slide>
+        <slide>
+          <slideno>7</slideno>
+          <text>7 
+ Simplest case: Y = X1 + X2 
+ 
+FY (y)= P [Y  y]= P [x1 + x2  y]= fX1,X2 (x1,x2)dx1dx2 
+x1+x2y 
+ yx2 
+= dx2 fX1,X2 (x1,x2)dx1 
+  
+ 
+fY (y)= fX1,X2 (y  x2,x2)dx2 
+ 
+If X1 and X2 are indep enden t, then: 
+fY (y)=  fX1 (y  x2)fX2 (x2)dx2 (convolution)  
+ Example: Deriv ation of Gamma distribution 
+Consider Y = X1 + X2, where X1 and X2 are iid exponential , with densit y: 
+ 
+ex ,x  0 fXi = 0, x&lt; 0 
+Then,</text>
+        </slide>
+        <slide>
+          <slideno>8</slideno>
+          <text>8 
+ 
+fY (y)= fX (y  x1)fX (x1)dx1 
+0 
+= 2 yey (Rayleigh or Gamma (2) distribu tion) 
+In general, for any n, the probabilit y densit y of Y = X1 + X2 + ... + Xn, where Xi are 
+iid exponential, is: 
+(y)n1ey 
+fY (y)= (n) ,y  0, where (n) =(n  1)! 
+(Gamma(n) distribution) 
+Note: For n = 1, the Gamma distribution reduces to the exponential distribution.</text>
+        </slide>
+        <slide>
+          <slideno>2</slideno>
+          <text>2 
+If b&lt; 0: 
+Y = y  
+b a,  
+FY (y)=1  FX y  a 
+b 
+fY (y)=  1 fX y  a =1 fX y  a 
+bb |b| b 
+For any b = 0: 
+fY (y)=	1 fX y  a 
+|b| b</text>
+        </slide>
+        <slide>
+          <slideno>6</slideno>
+          <text>6 
+If X1 and X2 are indep enden t: 
+  fX1,X2 (x1,x2)dx2 = [1  FX1 (z)][1  FX2 (z)] dx1z z 
+Therefore, 
+FZ (z)=1  [1  FX1 (z)][1  FX2 (z)] 
+For n iid variables: 
+FZ (z)= P [Z  z]=1  P [(X1 &gt;z)  ...  (Xn &gt;z)] 
+=1  [1  FX (z)]n 
+or, with GX (x)=1  FX (x), 
+GZ (z)= P [Z&gt;z]=[GX (z)]n 
+fZ (z)= dFZ (z)=  dGZ (z)= n[GX (z)]n1fX (z)dz dz 
+ Z = Max[X 1,X2,...,Xn] 
+ 
+FZ (z)= P (Xi  z)= FX  z 
+. . .  
+i z 
+=FXi (z) (if Xis are indep enden t) 
+i 
+=[FX (z)]n and fZ (z)= n[Fx(z)]n1fX (z) (if Xis are iid) 
+Linear transformations  
+Y = aixi 
+i</text>
+        </slide>
+        <slide>
+          <slideno>0</slideno>
+          <text>MIT OpenCourseWare
+ http://ocw.mit.edu 
+1.010 Uncertainty in Engineering 
+Fall 2008 
+For information about citing these materials or our Terms of Use, visit: http://ocw.mit.edu.terms.</text>
+        </slide>
+        <slide>
+          <slideno>3</slideno>
+          <text>3 
+ General monotonic (one-to-one) functions 
+ Monotonic ally increasing functions 
+FY (y)= FX [x(y)]
+dFY (y) dx(y)
+fY (y)= = fX [x(y)]dy dy  
+ Monotonic ally decreasing functions 
+FY (y)=1  FX [x(y)] 
+fY (y)= dx(y) 
+dy fX [x(y)]</text>
+        </slide>
+        <slide>
+          <slideno>4</slideno>
+          <text>4 
+ Examples of Monotonic Transformations 
+Consider an exponential variable X  EX() with cumulativ e distribution function 
+FX (x)=1  ex ,x  0. 
+Exponential, Power and Log Functions 
+ Exponential Functions 
+Supp ose Y = eX ,  x = ln(y),y  0. This is a monotonic increasing function, and 
+FY (y)= FX (x(y)) = 1  eln(y) =1  y . This distribution is known as the (strict) 
+Pareto Distrib ution. 
+Power Functions  
+Supp ose Y = X1/, &gt; 0,x 
+FY (y)= FX (x(y)) = 1  ey . 
+Distribution. 
+ Log Functi ons = ln(y),y  0. This is a monotonic increasing function, and 
+This distrib ution is known as the Weibull (Extreme Type III) 
+Supp ose Y = ln(X),  x = ey ,   y . This is a monotonic decreasing function, and 
+FY (y)=1  FX (x(y)) = eey . This distribution is known as the Gum bell (Extreme Type I) 
+Distribution.</text>
+        </slide>
+        <slide>
+          <slideno>1</slideno>
+          <text>1.010 -Brief Notes # 5 
+Functions of Random Variables and Vectors 
+(a) Functions of One Random Variable 
+Problem 
+Given the CDF of the random variable X, FX (x), and a deterministic function Y = g(x), nd the 
+(deriv ed) distribution of the random variable Y . 
+General Solution  
+Let Y = {x : g(x)  y}. Then: 
+FY (y)= P [Y  y]= P [x  Y ]= fX (x)dxY 
+ Special Cases 
+ Linear Functions 
+Y = g(x) = a + bx 
+If b &gt; 0: 
+X(y) = y  a 
+b ; Y = {x : a + bx  y} =  
+, y  a 
+b  
+  
+FY (y)= P [x  Y ]= FX y  a 
+b 
+fY (y)= dFY (y)= dFX y  a =1 fX y  a 
+dy dy bbb 
+1</text>
+        </slide>
+      </slides>
+      <videos/>
+    </lecture>
+    <lecture>
+      <lecture_title>Point and interval estimation of distribution parameters (PDF)</lecture_title>
+      <lecture_pdf_url>https://ocw.mit.edu/courses/1-010-uncertainty-in-engineering-fall-2008/resources/notes_09/</lecture_pdf_url>
+      <lectureno>9</lectureno>
+      <slides>
+        <slide>
+          <slideno>1</slideno>
+          <text>1.010 -Brief Notes # 9 
+Point and Interval Estim ation of Distribution Parameters 
+(a) Some Common Distributions in Statistics 
+. 
+ Chi-square distri bution 
+Let Z1,Z2,...,Zn be iid standard normal variables. The distribution of 
+n
+2 Z2= n i
+i=1
+is called the Chi-square distribution with n degrees of freedom. 
+E[2 
+n]= n 
+V ar[2 
+n]=2n 
+Probabilit y densit y function of 2 
+n for n =2, 5, 10. 
+t distribution  
+Let Z, Z1,Z2,...,Zn be iid standard normal variables. The distribution of 
+Z tn = 1/2n1 Z2 
+ni 
+i=1 
+is called the Studen ts t distribution with n degrees of freedom. 
+1</text>
+        </slide>
+        <slide>
+          <slideno>0</slideno>
+          <text>MIT OpenCourseWare
+ http://ocw.mit.edu 
+1.010  Uncertainty in Engineering 
+Fall 2008 
+For information about citing these materials or our Terms of Use, visit: http://ocw.mit.edu.terms.</text>
+        </slide>
+        <slide>
+          <slideno>4</slideno>
+          <text>4 
+The rst and second initial momen ts of X are, in general, functions of the unkno wn parameters, 1 and 
+2: 
+1(1,2)= E[X|1,2]= xfX|1 ,2 (x)dx 
+2(1,2)= E[X2|1,2]= x2fX|1,2 (x)dx 
+The sample values of these momen ts are: 
+n1  1 = Xi = X
+n i=1
+n1  2 = Xi 2
+n i=1
+Estimators of 1 and 2 are obtained by solving the equations for 1 and 2:
+1(1, 2)= 1
+2(1, 2)= 2
+This metho d is often simple to apply , but may produce estimators that have higher MSE than other 
+metho ds, e.g. maxim um likeliho od. 
+Example:
+If 1 = m and 2 = 2, then:
+1 = m and 2 = m2 + 2
+1  n n 1 1 = Xi = X and 2 = Xi 2
+n i=1 n i=1
+The estimators mand 2 are obtained by solving:
+m = X 
+n1  m2 + 2 = Xi 2
+n i=1
+which gives: 
+m = X</text>
+        </slide>
+        <slide>
+          <slideno>2</slideno>
+          <text>2 
+E[tn]=0 
+ 
+ n, n&gt; 2 
+V ar[tn]=  n  2 
+,n  2 
+Probabilit y densit y function of tn for n =1, 5, . 
+Note: t= N(0, 1). 
+F distribution  
+Let W1,W2,...,Wm,Z1,Z2,...,Zn be iid standard normal variables. The distribution of 
+m1 W 2
+mi 1 2
+Fm,n = i=1 = mm
+n 1
+ 21 Z2 nn
+ni
+i=1 
+is called the F distribution with m and n degrees of freedom. 
+As n , mFm,n  m 2</text>
+        </slide>
+        <slide>
+          <slideno>3</slideno>
+          <text>3 
+(b) Point Estimation of Distribution Parameters: Objectiv e and Criteria 
+. 
+	Denition of (point) estimator 
+Let  be an unkno wn parameter of the distribution FX of a random variable X, for example the 
+mean m of the variance 2 . Consider a random sample of size n from the statistical population 
+of X, {X1,X2,...,Xn}. An estimator  of  is a function (X 1,X2,...,Xn) that produces a 
+numerical estimate of  for each realization x1,x2,...,xn of X1,X2,...,Xn.  is a random Notice: 
+variable whose distribution depends on . 
+	Desirable properties of estimators 
+1.	Unbiase dness: 
+ is said to be an unbiased estimator of  if, for any given , Esample [|]= . The bias b()
+of  is dened as:
+b()= Esample []  
+|
+2.	Mean Squar ed Error (MSE): 
+The mean squared error of  is the second initial momen t of the estimation error e  = , 
+i.e., 
+MSE()= E[( )2]= b2 ()+ V ar[]	 |
+One would like the mean squared error of an estimator to be as small as possible. 
+(c) Point Estimation of Distribution Parameters: Methods 
+. 
+1.	Metho d of momen ts 
+Supp ose that FX has unkno wn parameters 1,2,...,r. The idea behind the metho d of momen ts is to 
+estimate 1,2,...,r so that r selected characte ristics of the distribution matc h their sample values. The
+characteristics are often taken to be the initial momen ts:
+i = E[Xi],i =1,...,r
+The metho d is describ ed below for the case r = 2.</text>
+        </slide>
+        <slide>
+          <slideno>8</slideno>
+          <text>8 
+2. Based on prior data e.g. a sample of s from other data sets. 
+3. To reect ignor ance, non-informativ e prior. 
+For example, if  is a scalar parameter that can attain values from  to +, 
+then f()d  d (at) and f()  (| sample) i.e. the posterior reects only the likelihood.   
+1If &gt; 0, then one typically takes f(ln )d ln   d ln . In this case, f.ln  ()   
+4. Conjugate prior. There are distribution types such that if f() is of that type, then f()  f()() 
+is also of the same type. Such distribution s are called conju gate distributions. 
+Example:
+Let:
+X  N(m, 2) with 2 known.  = m unkno wn.
+Supp ose: f N(m,2)
+m 
+It can be shown that (m|X1,...,Xn)  densit y of N(X,2/n)
+From f
+m(m| sample), one obtains
+m  f
+m(2/n)+ X2 1 1 n 
+mf Nm =(2/n)+ 2 ,2 = 2 + 2 
+In this case, f N(m,2) is an example of a conjugate prior, since fis also normal, of the type m m 
+N(m,2). 
+2 
+If one writes 2 = , then n has the meaning of equiv alent prior sample size and m has the meaning n
+of equiv alent prior sample average. 
+(d) Appro ximate Condence Intervals for Distribution Parameters
+.
+1. Classic al Appr oach 
+Problem:  is an unkno wn distribution parameter. Dene two sample statistics 1(X1,...,Xn) and
+2(X1,...,Xn) such that:
+P [1(X1,...,Xn) &lt;&lt; 2(X1,...,Xn)] = P 
+where P  is a given probabilit y.</text>
+        </slide>
+        <slide>
+          <slideno>5</slideno>
+          <text>5 
+n1  2 2 = Xi 2  X
+n i=1
+n1  = (X1  X)2
+n i=1
+Notice that 2 is a biased estim ator since its expected value is n  1 2 . For this reason, one typically n 
+uses the modied estimator: 
+n 1  S2 = n  1 i=1 (Xi  X)2 
+which is unbiased. 
+2. Metho d of maxim um likeliho od: 
+Consider again the case r = 2. The likelihood function of 1 and 2 given a sample, L(1,2| sample), is
+dened as:
+L(1,2| sample)  P [sample |1,2]
+Where P is either probabilit y or probabil ity densit y and is regarded for a given sample as a function of
+1 and 2. In the case when X is a continuous variable: 
+n
+P [sample 1,2]= fX (xi1,2) |
+i=1 |
+The maxim um likeliho od estimators (1)ML and (2)ML are the values of 1 and 2 that maximize the 
+likeliho od, i.e., 
+L(1,2| sample) is maxim um for 1 = (1)ML and 2 = (2)ML 
+In many cases, (1)ML and ( 2)ML can be found by imposing the stationar ity conditions: 
+L[(1, 2)| sample] = 0 and L[(1, 2)| sample] = 0 
+1 2 
+or, more frequen tly, the equiv alent conditions in terms of the log-lik eliho od:</text>
+        </slide>
+        <slide>
+          <slideno>6</slideno>
+          <text>6 
+(ln L[(1, 2)| sample]) = 0 and (ln L[(1, 2)| sample]) = 0
+1 2
+	Prop erties of maxim um likeliho od estimators:
+As the sample size n , maxim um likeliho od estimators:
+1. are unbiased; 
+2. have the smallest possible value of MSE. 
+	Example: 
+For X  N(m, 2) with unkno wn parameters m and 2, the maxim um likeliho od estimators of the 
+parameters are: 
+n1	 2 
+mML = Xi = X  N m, n i=1	 n 
+n1	 2 = mML)2 
+ML (Xi  n i=1 
+n1	 2 
+= n i=1 (Xi  X)2  n2
+(n1) 
+Notice that in this case the ML estimators m and 2 are the same as the estimators produced by 
+the metho d of momen ts. This is not true in general. 
+3.	Bayesian estimation 
+The previous two methods of point estimation are based on the classical statistical approac h which 
+assumes that the distribution parameters 1,2,...,r are constan ts but unkno wn. In Bayesian 
+estimation, 1,2,...,r are viewed as uncertain (random variables) and their uncertain ty is quan tied 
+through probabilit y distributions. There are 3 steps in Bayesian estimation: 
+Step 1: Quan tify initial Step 2: Use sample Step 3: Choose a single 
+uncertain ty on  in the information to update value estimate of  
+form of a prior distribution , uncertain ty  posterior 
+f
+ distribution, f</text>
+        </slide>
+        <slide>
+          <slideno>7</slideno>
+          <text>7 
+The various steps are describ ed below in the order 2, 3, 1. 
+Step 2: How to update prior uncertain ty given a sample 
+Recall that for random variables, 
+f|X  f() fX|(x) 
+Here, f= f and f= f|X . Further, using (|X)  fX|(x), one obtains:
+f()  f()(|X)
+
+Step 3: How to choose  
+Two main metho ds: 
+1.	Use some characteristic of f, such as the mean or the mode. The choice is rather arbitrary . Note 
+that the mode corresp onds in a sense to the maxim um likeliho od, applied to the posterior distribution 
+rather than the likeliho od. 
+2.	Decision theoretic approach: (mor e objective and preferable) 
+ by . 
+	Dene a loss function $(|) which is the loss if the estimate is  and the true value is . 
+Calculate the expected posterior loss or Risk of  as: 
+R()= E[$()] =  $()f()d
+ | |
+Choose  such that R() is minim um.  
+ If $(|) is a quadratic function of (i  i), then R() is minim um for  = E[]
+0, if  = 
+	If $(|)= c&gt; 0, if  =  , then  is the mode of f. 
+Step 1: How to select f
+1.	Judgemental ly. This approac h is especially useful in engineering design, where subjectiv e judgemen t 
+is often neccessary . This is how subjectiv e judgemen t is formally incorp orated in the decision process.</text>
+        </slide>
+        <slide>
+          <slideno>9</slideno>
+          <text>9 
+An interval [1(X1,...,Xn), 2(X1,...,Xn)] with the above property is called a condence interval 
+of  at condence level P . 
+A simple metho d to obtain condence intervals is as follows. Consider a point estimation  such that, 
+exactly or in appro ximation,  N(, 2()). If the variance 2() depends on , one replaces 2() 
+with 2(). Then: 
+ 
+)  N(0, 1)
+(
+P [ ( + ( )ZP /2 &lt;&lt;  )ZP /2]= P   
+where Z is the value exceeded with probabilit y  by a standard normal variable. 
+Example: 
+ = m = mean of an exponential distribution. 
+1In this case, = X  Gamma(m, n), where Gamma(m, n) is the distributi on of the sum of n iid n 
+exponential variables, each with mean value m. The mean and variance of Gamma(m, n) are nm 
+and nm2, respectively. Moreo ver, for large n, Gamma(m, n) is close to N(nm, nm2). Therefore, in 
+appro ximation, 
+2mm,X  Nn 
+Using the previous metho d, an appro ximate condence interval for m at condence level P  is 
+X X X n  ZP /2,X + n  ZP /2 
+2. Bayesian Appr oach 
+In Bayesian analysis, intervals [1,2] that contain  with a given probabilit y P  are simply obtained 
+from the condition that: 
+F(2)  F(1)= P  
+where Fis the posterior CDF of .</text>
+        </slide>
+      </slides>
+      <videos/>
+    </lecture>
+  </lectures>
+</doc>

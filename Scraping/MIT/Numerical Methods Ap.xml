@@ -1,0 +1,5656 @@
+<doc>
+  <source>MIT</source>
+  <date>28/01/2023</date>
+  <course>
+    <course_url>https://ocw.mit.edu/courses/10-34-numerical-methods-applied-to-chemical-engineering-fall-2015/</course_url>
+    <course_title>Numerical Methods Applied to Chemical Engineering</course_title>
+    <course_tags>
+      <list>Engineering </list>
+      <list>Computer Science </list>
+      <list>Mathematics </list>
+    </course_tags>
+  </course>
+  <lectures>
+    <lecture>
+      <lecture_title>Probability theory 1 (PDF)</lecture_title>
+      <lecture_pdf_url>https://ocw.mit.edu/courses/10-34-numerical-methods-applied-to-chemical-engineering-fall-2015/resources/mit10_34f15_lec26/</lecture_pdf_url>
+      <lectureno>26</lectureno>
+      <slides>
+        <slide>
+          <slideno>8</slideno>
+          <text>1. The generated numbers are not actually random, but are designed to appear random
+in certain respects, which make them useful for certain applications. If simulations
+involving random numbers become important to your thesis/job, you should study
+the available methods and make sure that you are using a random number generator
+that is appropriate for your application.
+2. Generating good random numbers is computationally expensive. When writing
+computer programs whose main cost involves calls to a random number generator,
+which occurs in Monte Carlo methods described later in this class, one goal is
+to design the algorithm to avoid performing any unnecessary calls to the random
+number generator.
+9</text>
+        </slide>
+        <slide>
+          <slideno>9</slideno>
+          <text>MIT OpenCourseWare
+https://ocw.mit.edu
+10.34 Numerical Methods Applied to Chemical Engineering
+Fall
+ 2015
+For information about citing these materials or our Terms of Use, visit: http
+s://ocw.mit.edu/terms .</text>
+        </slide>
+      </slides>
+      <videos/>
+    </lecture>
+    <lecture>
+      <lecture_title>Summary and review on linear algebra and systems of nonlinear equations (PDF - 1.3MB)</lecture_title>
+      <lecture_pdf_url>https://ocw.mit.edu/courses/10-34-numerical-methods-applied-to-chemical-engineering-fall-2015/resources/mit10_34f15_lec09/</lecture_pdf_url>
+      <lectureno>9</lectureno>
+      <slides>
+        <slide>
+          <slideno>4</slideno>
+          <text>Good Initial Guesses
+Solving nonlinear equations and optimization require 
+good initial guesses
+Where do these come from?
+Nonlinear equations can have multiple roots, optimization problems can have multiple minima.
+How can we nd them all?
+The concepts of continuation, homotopy and bifurcation are useful in this regard. 
+5</text>
+        </slide>
+        <slide>
+          <slideno>0</slideno>
+          <text>10.34: Numerical Methods
+ 
+Applied to
+ 
+Chemical Engineering
+ 
+Lecture 9:
+ 
+Homotopy and bifurcation
+ 
+1</text>
+        </slide>
+        <slide>
+          <slideno>3</slideno>
+          <text>Recap
+4</text>
+        </slide>
+        <slide>
+          <slideno>25</slideno>
+          <text>Bifurcation
+Occasionally, a problem will switch from having 1 solution 
+to having many solutions as a parameter is varied.
+We have seen how this occurs discontinuously with turning points.
+When additional solutions appear continuously, it is termed bifurcation.
+Bifurcations in a homotopy enable nding of multiple solutions to the same nonlinear equation
+Finding bifurcation (and turning) points can be of great physical interest.
+Like turning points, the Jacobian is singular at a bifurcation point:
+26detJ(x)=0</text>
+        </slide>
+        <slide>
+          <slideno>12</slideno>
+          <text>Continuation
+Continuation can be used to generate a sequence of good initial 
+guesses to different problems by varying a parameter by a small amount.
+Examples:
+uid mechanics problems by varying the Reynolds number
+mass transport problems by varying the Peclet number
+multicomponent phase equilibria problems by varying temperature/pressure
+reaction equilibrium problems by varying reaction rates
+13</text>
+        </slide>
+        <slide>
+          <slideno>1</slideno>
+          <text>Recap
+Quasi-Newton-Raphson methods
+2</text>
+        </slide>
+        <slide>
+          <slideno>17</slideno>
+          <text>Homotopy
+Example:
+Find roots of the van der Waals equation of state 
+given: 
+18P=0.1, T=0.5
+T = 0.5;
+P = 0.1;
+vguess = 8 / 3 * T / P;f = @( v ) ( P + 3 ./ v .^ 2 ) .* ( v - 1/ 3 ) - 8 / 3 * T;
+g = @( v ) P .* v - 8 / 3 * T;h = @( v, l ) l * f( v ) + ( 1 - l ) * g( v );
+lambda = [ 0:0.01:1 ];for i = 1:length( lambda )
+        v( i ) = fzero( @( v ) h( v, lambda( i ) ), vguess );    vguess = v( i );    end;</text>
+        </slide>
+        <slide>
+          <slideno>14</slideno>
+          <text>Homotopy
+For small changes in the homotopy parameter, the 
+previous solution will be a good initial guess.
+Newton-Raphson like methods can be expected to converge quickly.
+In practice, the function         is associated with the problem of interest, but the function          is arbitrary.
+It may be difcult to nd a good function      
+Physically based homotopies are usually preferable.
+15f(x)
+g(x)
+g(x)</text>
+        </slide>
+        <slide>
+          <slideno>33</slideno>
+          <text>MIT OpenCourseWare
+httpV://ocw.mit.edu
+10.34 Numerical Methods Applied to Chemical Engineering
+Fall 2015
+For information about citing these materials or our Terms of Use, visit: httpV://ocw.mit.edu/terms .</text>
+        </slide>
+      </slides>
+      <videos/>
+    </lecture>
+    <lecture>
+      <lecture_title>Optimization 1 (PDF)</lecture_title>
+      <lecture_pdf_url>https://ocw.mit.edu/courses/10-34-numerical-methods-applied-to-chemical-engineering-fall-2015/resources/mit10_34f15_lec10/</lecture_pdf_url>
+      <lectureno>10</lectureno>
+      <slides>
+        <slide>
+          <slideno>10</slideno>
+          <text>Unconstrained Optimization
+Solving unconstrained optimization problems is the same 
+as solving the system of nonlinear equations:
+Except, we want to ensure that we only nd the roots associated with local minima in
+If the eigenvalues of the Hessian are positive, we can be sure that         is a minimum.  Why?
+For a minimum, the eigenvalues must be non-negative
+How do we craft an algorithm that only nds minima?
+11g=rf(x)=0
+f(x)
+1f(x+d)= f(x)+g (x)Td+dTH(x)d+...2
+f(x)</text>
+        </slide>
+        <slide>
+          <slideno>5</slideno>
+          <text>Optimization
+Goal: nd
+     is not necessarily unique.  There could be more 
+than one      in      .
+Convexity: a function is convex if the line connecting any two points above the function is also above the function:
+Convex functions have a single, global minimum
+Most algorithms are characterized in terms of their ability to nd the global minimum of convex functions.
+Non-convex function may have global or local minima6x2D:f(x)&lt;f (x)8x2D
+x
+xD
+convex
+non-convex</text>
+        </slide>
+        <slide>
+          <slideno>8</slideno>
+          <text>Optimization
+            is a local minimum of
+if 
+Global minima are also local minima
+If          is convex in      then a local minimum is the 
+global minimum in    .
+If      is a closed set, the problem of nding the minimum is called constrained optimization.
+If      is an open set:     , the problem of nding the minimum is called unconstrained optimization
+9x2D
+9 &gt;0:f (x)&lt;f (x),8x2D\B(x)
+xB D
+f(x) D
+D
+D
+D RN</text>
+        </slide>
+        <slide>
+          <slideno>0</slideno>
+          <text>10.34: Numerical Methods
+ 
+Applied to
+ 
+Chemical Engineering
+ 
+Lecture 10:
+ 
+Unconstrained Optimization
+ 
+Steepest decent
+ 
+1</text>
+        </slide>
+        <slide>
+          <slideno>7</slideno>
+          <text>Optimization
+Examples: linear programs
+Premium and regular ice cream are sold for $5/gallon 
+and $3.5/gallon respectively.
+Premium ice cream is 30% air by volume while regular ice cream is 50% air by volume.
+We can produce X gallons of premium and Y gallons of regular ice cream all at the same cost, $1/gallon.
+What fraction of milk processed should go toward premium versus regular ice cream?
+8</text>
+        </slide>
+        <slide>
+          <slideno>6</slideno>
+          <text>2 1.5 1 0.5 0 0.5 1 1.5 20123456789Optimization
+Examples:
+Find the value of      that minimizes
+Find the value of                 that minimizes
+7x
+f(x)=x2+2x+1
+x2[0,1]
+f(x)=x2+2x+1
+xf(x)</text>
+        </slide>
+        <slide>
+          <slideno>21</slideno>
+          <text>MIT OpenCourseWare
+httpV://ocw.mit.edu
+10.34 Numerical Methods Applied to Chemical Engineering
+Fall 2015
+For information about citing these materials or our Terms of Use, visit: httpV://ocw.mit.edu/terms .</text>
+        </slide>
+        <slide>
+          <slideno>15</slideno>
+          <text>Unconstrained Optimization
+Method of steepest decent:
+Example:
+Contours for the function:
+The choice of       is critical!    
+T oo small and the convergence is slow19f(x)=x2
+1+ 10x22
+iDraw the path given by small i</text>
+        </slide>
+        <slide>
+          <slideno>4</slideno>
+          <text>Optimization
+5
+x1x2f(x1,x2)
+D</text>
+        </slide>
+        <slide>
+          <slideno>1</slideno>
+          <text>Recap
+ 
+ Homotopy and Bifurcation
+ 
+2</text>
+        </slide>
+        <slide>
+          <slideno>16</slideno>
+          <text>Method of steepest decent:
+Example:
+Contours for the function:
+The choice of       is critical!    
+T oo big and convergence is erraticiUnconstrained Optimization
+21f(x)=x2
+1+ 10x22
+Draw the path given by larger i</text>
+        </slide>
+      </slides>
+      <videos/>
+    </lecture>
+    <lecture>
+      <lecture_title>Optimization 2 (PDF - 1.5MB)</lecture_title>
+      <lecture_pdf_url>https://ocw.mit.edu/courses/10-34-numerical-methods-applied-to-chemical-engineering-fall-2015/resources/mit10_34f15_lec11/</lecture_pdf_url>
+      <lectureno>11</lectureno>
+      <slides>
+        <slide>
+          <slideno>15</slideno>
+          <text>Trust-Region Methods
+Both Newton-Raphson and the optimized steepest 
+descent methods assume the objective function can be 
+described locally by a quadratic function.
+That quadratic approximation may be good or bad
+16xi
+xi+1</text>
+        </slide>
+        <slide>
+          <slideno>22</slideno>
+          <text>Method of steepest decent/Newton-Raphson/Trust-Region:
+Example:
+Contours for the function:                     
+0.9 0.92 0.94 0.96 0.98 1 1.02 1.04 1.06 1.08 1.10.90.920.940.960.9811.021.041.061.081.1
+23Unconstrained Optimization
+x1x2g(xi)Tg(xi)i=g(xi)TH(xi)g(xi)logf(x)=( x2
+1+ 10x22)2</text>
+        </slide>
+        <slide>
+          <slideno>16</slideno>
+          <text>Trust-Region Methods
+Both Newton-Raphson and the optimized steepest 
+descent methods assume the objective function can be 
+described locally by a quadratic function.
+That quadratic approximation may be good or bad
+17xi
+xi+1</text>
+        </slide>
+        <slide>
+          <slideno>20</slideno>
+          <text>What is a good value of the trust-region radius?
+MATLAB uses one initially!
+Variations on the trust-region method exist as well.
+MATLAB uses the dog-leg step instead of the optimal 
+steepest descent step:Trust-Region Methods
+Optimal steepest decent
+21RiNewton-Raphson
+Dog-leg step</text>
+        </slide>
+        <slide>
+          <slideno>23</slideno>
+          <text>MIT OpenCourseWare
+httpV://ocw.mit.edu
+10.34 Numerical Methods Applied to Chemical Engineering
+Fall 2015
+For information about citing these materials or our Terms of Use, visit: httpV://ocw.mit.edu/terms .</text>
+        </slide>
+        <slide>
+          <slideno>1</slideno>
+          <text>Recap
+Optimization
+Steepest descent
+2</text>
+        </slide>
+        <slide>
+          <slideno>21</slideno>
+          <text>Method of steepest decent/Newton-Raphson/Trust-Region:
+Example:
+Contours for the function:                     
+1 0.8 0.6 0.4 0.2 0 0.2 0.4 0.6 0.8 110.80.60.40.200.20.40.60.81
+22Unconstrained Optimization
+x1x2g(xi)Tg(xi)i=g(xi)TH(xi)g(xi)logf(x)=( x2
+1+ 10x22)2</text>
+        </slide>
+        <slide>
+          <slideno>13</slideno>
+          <text>Method of steepest decent /Newton-Raphson :
+Example:
+Contours for the function:                     
+1 0.8 0.6 0.4 0.2 0 0.2 0.4 0.6 0.8 110.80.60.40.200.20.40.60.81
+14Unconstrained Optimization
+x1x2logf(x)=x2
+1+ 10x22
+g(xi)Tg(xi)i=g(xi)TH(xi)g(xi)</text>
+        </slide>
+        <slide>
+          <slideno>12</slideno>
+          <text>Method of steepest decent/Newton-Raphson:
+Example:
+Contours for the function:                     
+10 8 6 4 2 0 2 4 6 8 101086420246810
+13Unconstrained Optimization
+f(x)=x2
+1+ 10x22
+x1x2i=0 .015</text>
+        </slide>
+        <slide>
+          <slideno>17</slideno>
+          <text>Trust-Region Methods
+Trust region methods choose between the Newton-
+Raphson direction when the quadratic approximation is 
+good and the steepest decent direction when it is not.
+This choice is based on whether the Newton-Raphson 
+step is too large.
+18Newton-Raphson
+Steepest decent Ri</text>
+        </slide>
+        <slide>
+          <slideno>9</slideno>
+          <text>10Unconstrained Optimization
+Method of steepest decent /conjugate gradient :
+Example:
+Contours for the function:                      in SDf(x)=x2
+1+ 10x22
+10 8 6 4 2 0 2 4 6 8 101086420246810
+x1x2i=0 .01510A=
+0 10
+,b=0</text>
+        </slide>
+        <slide>
+          <slideno>10</slideno>
+          <text>Unconstrained Optimization
+Conjugate gradient method:
+Used to solve linear equations with           iterations
+Requires only the ability to compute the product:
+The actual matrix is never needed.  We only need 
+to compute its action on different vectors,       !
+Only for symmetric, positive denite matrices.
+More sophisticated minimization methods exist for arbitrary matrices.
+Optimization applied to linear equations is the state-of-the-art for solutions of linear equations.
+11O(N)
+Ay</text>
+        </slide>
+        <slide>
+          <slideno>11</slideno>
+          <text>Newton-Raphson
+Finding local minima in unconstrained optimization 
+problems involve solutions of the equation:
+at minima in
+If we begin close enough to a minimum, can we expect the NR method to converge to that minimum?
+Yes! NR is locally convergent.
+Accuracy of the iterates will improve quadratically!
+Newton-Raphson iteration:
+What is the Jacobian of         ?
+12g(x)=rf(x)=0
+g(x)f(x)</text>
+        </slide>
+        <slide>
+          <slideno>0</slideno>
+          <text>10.34: Numerical Methods 
+Applied to 
+Chemical Engineering
+Lecture 11: 
+Unconstrained Optimization
+Newton-Raphson and trust region methods
+1</text>
+        </slide>
+      </slides>
+      <videos/>
+    </lecture>
+    <lecture>
+      <lecture_title>Differential-algebraic equations 2 (PDF - 1.8MB )</lecture_title>
+      <lecture_pdf_url>https://ocw.mit.edu/courses/10-34-numerical-methods-applied-to-chemical-engineering-fall-2015/resources/mit10_34f15_lec18/</lecture_pdf_url>
+      <lectureno>18</lectureno>
+      <slides>
+        <slide>
+          <slideno>1</slideno>
+          <text>Quiz 1 Results
+Mean: 77
+Standard deviation: 12
+205101520
+&lt;50 50-59 60-69 70-79 80-89 &gt;89</text>
+        </slide>
+        <slide>
+          <slideno>11</slideno>
+          <text>12Common in dynamic simulations involving conservation, 
+constraints, or equilibria.
+Conservation of total:
+energy
+mass
+momentum
+particle number
+atomic species
+charge
+Models of reaction networks utilizing the pseudo-steady-state approximation.
+Models of control neglecting controller dynamics.Differential Algebraic Equations</text>
+        </slide>
+        <slide>
+          <slideno>14</slideno>
+          <text>15Problems of the sort: 
+     is called the mass matrix
+Many semi-explicit DAEs can be written in the simplied form:
+where
+     are called the differential states
+     are called the algebraic statesSemi-explicit DAEs
+Mdx
+dt=f(x,t),x(0) = x0
+M
+dx
+dt=f(x,y,t)
+0=g (x,y,t)
+x
+yx(0) = x0
+0=g (x0,y(0) ,t)</text>
+        </slide>
+        <slide>
+          <slideno>0</slideno>
+          <text>10.34: Numerical Methods 
+Applied to 
+Chemical Engineering
+Lecture 18: 
+Differential Algebraic Equations
+1</text>
+        </slide>
+        <slide>
+          <slideno>25</slideno>
+          <text>MIT OpenCourseWare
+httpV://ocw.mit.edu
+10.34 Numerical Methods Applied to Chemical Engineering
+Fall 2015
+For information about citing these materials or our Terms of Use, visit: httpV://ocw.mit.edu/terms .</text>
+        </slide>
+        <slide>
+          <slideno>3</slideno>
+          <text>4Improper integrals:
+Of the sort:
+Can be split into two domains of integration
+The rst integral can be handled with ODE-IVP methods 
+or polynomial interpolation
+The second must be handled separately through either: 
+transformation onto a nite domain
+or substitution of an asymptotic approximation
+This same idea applies to integrable singularities as well.Recap
+Z1
+t0f()d
+Z1
+t0f()d=Ztf
+t0f()d+Z1
+tff()d</text>
+        </slide>
+        <slide>
+          <slideno>2</slideno>
+          <text>Recap
+Numerical integration
+Implicit methods for ODE-IVPs
+3</text>
+        </slide>
+      </slides>
+      <videos/>
+    </lecture>
+    <lecture>
+      <lecture_title>Stochastic chemical kinetics 1 (PDF)</lecture_title>
+      <lecture_pdf_url>https://ocw.mit.edu/courses/10-34-numerical-methods-applied-to-chemical-engineering-fall-2015/resources/mit10_34f15_lec34/</lecture_pdf_url>
+      <lectureno>34</lectureno>
+      <slides>
+        <slide>
+          <slideno>2</slideno>
+          <text>2 Formalization of the Stochastic Problem
+Consider a volume Vcontaining Nchemically reacting species, S1, . . . , S N, and denote
+the number of molecules of each at time tby
+X(t) = (X1(t), . . . , X N(t)).
+These species can undergo Mchemical reactions, R1, . . . , R M. Each reaction Rhas an
+associated stoichiometry vector , which describes the discontinuous change in Xwhen
+the reaction Roccurs. For example, if N= 3, then the reaction
+S1+S2S3 (1)
+has stoichiometry vector = (1,1,1). If this reaction occurs at tand the number of
+molecules immediately before tisX(tdt) = (10 ,10,10), then after the reaction occurs
+we have X(t+dt) = (9 ,9,11). In general, the occurrence of reaction Rat time tchanges
+the state vector according to
+X(t+dt) =X(tdt) +.
+As mentioned previously, we will not simulate reacting systems in enough detail to
+say deterministically when a given reaction will occur. Instead, we assume that these
+reactions occur stochastically, according to some probability distributions. Our goal is to
+understand what these distributions are, and how they can be used to describe the state
+of the system at future times probabilistically. In the following subsections, we present
+some preliminary derivations concerning the probabilities of reaction events. In Sections
+3 and 4, we use these derivations to construct numerical simulation methods.
+2.1 The Number of Possible RReactions
+In order for a reaction Rto occur in V, it is necessary that one molecule of each of the
+reactant species collide with each other at some time. At any given time, it is possible that
+there are many dierent combinations of reactant molecules that could collide and cause
+a reaction. Exactly, how many distinct combinations there are depends on how many of
+each molecule is present, i.e. on X(t). In general, we denote the number of unique groups
+of reactants that could collide to cause reaction Rbyh(X(t)).
+Examples:
+1. Consider the simple bimolecular reaction (1). If there are 2 molecules of S1and
+one molecule of S2, then there are 2 pairs of molecules that can collide to cause a
+reaction. In general,
+h(X(t)) =X1(t)X2(t).
+2. A more interesting case is the reaction
+S1+S1S3. (2)
+In this case
+1h(X(t)) = X1(t)(X1(t)1),2
+3</text>
+        </slide>
+        <slide>
+          <slideno>10</slideno>
+          <text>4.3 Algorithm
+1. Initialize: t=t0,X(t) =n0.
+2. While t &lt; t f:
+(a) Compute the total reaction propensity a(X(t)).
+(b) Sample two random numbers, r1andr2, from the uniform distribution on
+(0,1).
+(c) Determine the next reaction time as =1
+a(X(t))ln/parenleftBig
+1
+r1.
+
+(d) Determine the reaction type as the smallest such that/parenrightBig
+r/summationtext
+2 =1h(X(t))c/a(X(t)).
+(e) Carry out the reaction event determined above:
+Sett:=t+.
+SetX(t) :=X(t) +.
+11</text>
+        </slide>
+        <slide>
+          <slideno>6</slideno>
+          <text>from which it follows that
+P0(,n) =P0(,n)P0(,n). . .P0(,n).
+Using the result for small ,
+P0(,n) =/bracketleftBiggM1
+/summationdisplaych(n)
+=1K
+K/bracketrightBigg
+.
+Since this is true for any suciently large K, it follows that
+Mch(n)P0(,n) = lim/bracketleftBigg
+1
+K/summationdisplay
+=1K/bracketrightBiggK
+,
+= exp/parenleftBiggM
+/summationdisplay
+ch(n)/parenrightBigg
+.
+=1
+Therefore, the probability that no reaction occurs in the interval [ t, t+] depends on all
+of the reaction parameters cand decreases exponentially with the length of the interval
+.
+3 The Master Equation
+The classical approach to modelling the evolution of stochastic reacting systems is to use
+the so-called chemical master equation. The master equation does not describe the change
+inX(t), as the continuum equations would, because this vector varies stochastically.
+Instead, the master equation describes the grand probability function
+P(n, t|n0, t0) =Pr(X(t) =n|X(t0) =n0).
+The master equation takes the form of a dierential equation that describes how this
+probability function changes in time. To derive it, lets suppose that P(n, t|n0, t0) is
+known for all nand attempt to derive an expression for P(n, t+dt|n0, t0). This is done
+by simply summing up the probabilities of the distinct (i.e. mutually exclusive) ways in
+which the system could come to be in state nat time t+dt:
+1. The system was in state nat time tand no reactions occurred during [ t, t+dt],
+2. The system was in the state nat time tand one Rreaction (and only this
+reaction) occurred during [ t, t+dt],
+3. Some sequence of multiple reactions occuring in [ t, t+dt] led to natt+dt.
+As a consequence of the fundamental hypothesis, it was argued in 2.2 that we can ig-
+nore the third possibility in the limit as dt0. Accounting for the other two possibilities,
+7</text>
+        </slide>
+        <slide>
+          <slideno>7</slideno>
+          <text>we have
+M
+P(n, t+dt|n0, t0) =P(n, t|n0, t0)P0(dt,n) +/summationdisplay
+P(n, t|n0, t0)h(n)cdt,
+=1
+=P(n, t|n0, t0)/bracketleftBiggM
+1
+/bracketrightBigg/summationdisplay
+h(n)cdt
+=1
+M
++/summationdisplay
+P(n, t|n0, t0)h(n)cdt.
+=1
+Rearranging gives,
+P(n, t+dt|n0, t0)P(n, t|n0, t0)M
+=/summationdisplay/bracketleftbig
+P(n, t|n0, t0)h(n)cdt=1
+P(n, t|n0, t0)h(n)c,
+which, in the limit as dt0 gives the dierential equation/bracketrightbig
+dP(n, t|n0, t0)M
+=/summationdisplay
+[P(n, t|n0, t0)h(n)cP(n, t|n0, t0)h(n)c].dt=1
+Supposing that, due to a limited number of reactant molecules in a closed system, we know
+that there are only a nite number of possible states of the system n1, . . . ,nQ. Then the
+master equation is actually a system of Qcoupled ODEs, with one ODE describing each
+of the time-varying probabilities
+P(1n, t|n0, t0), . . . , P (nQ, t|n0, t0).
+The solution of the master equation contains complete information about the stochas-
+tic behavior of the system. It describes the entire PDF of X(t) for every time t. Unfortu-
+nately, the master equation is very dicult to solve in general. This is because the master
+equation may involve a huge number of state variables. Note that the state variables of
+the master equation are the probabilities of every possible state of the reacting system.
+As a trivial example, in a system with only one chemical species A, the master equation
+has one ODE for the probabilities of each of the following states:
+there is 1 molecule of A
+there are 2 molecules of A
+there are 3 molecules of A
+...
+there are jmolecules of A
+...
+When there are multiple reacting species, we must account for every possible combination
+of molecule numbers, and the number of ODEs in the master equation easily reaches
+into the billions. Because the master equation ODEs are actually linear in these states
+(and very sparse), it is possible to numerically solve the master equation as an IVP in
+situations where the number of ODEs is surprisingly large. Researchers in Professor
+8</text>
+        </slide>
+        <slide>
+          <slideno>1</slideno>
+          <text>occuring. Reactions occur when two molecules collide with each other in the proper
+orientation and with sucient energy to cause a chemical change. Therefore, a
+correct model should have intervals of time in which no reactions occur, punctuated
+by instantaneous reaction events that change NIin integer increments, according
+to the reaction stoichiometry. From this prospective, it is incorrect to talk about
+a reaction rateat all. Again, if there are very many molecules ( NI1023), then
+reactive collisions will happen very frequently and, insofar as we are only interested
+in the macroscopic average number of these reaction events in a given interval of
+time, it is completely excusable to think in terms of reaction rates and apply the
+continuum approximation.
+3.Reaction events are stochastic. Because the continuum approximation regards re-
+actions as happening continuously with some rate, there is no need to worry about
+when the underlying reaction events occur. However, if we regard reactions as dis-
+crete events, how will we predict when these events will occur? Short of modeling
+the motion of every molecule in our system using Newtons equations of motion,
+we cannot answer this question precisely. We will have to settle for the probability
+that some reaction will occur in a given interval of time. From this prospective, our
+perceived behavior of systems with very few molecules is not deterministic. That
+is, in contrast to what the continuum approximation suggest, the initial condition
+of the system will not fully specify the system at later times. Rather, the state at
+later times depends on what sequence of reaction events occurs, which we can only
+characterize in terms of probabilities. Systems of this type are called stochastic .
+To reiterate, we are concerned with studying (and ultimately simulating) the behavior
+of chemically reacting systems in situations where the continuum equations do not ap-
+ply. In general, this will only happen when one or more reactions depend on a chemical
+species which is present in very small numbers. However, there are other situations in-
+volving unstable or metastable systems which also require a stochastic treatment because
+uctuations in the number of molecules are important. Since the continuum model only
+captures some kind of average behavior, it cannot predict phenomena which depend on
+uctuations.
+1.1 Motivating Example
+A very interesting system related to cell signaling pathways in human immune response
+was studied by researchers in Prof. Charkrabortys lab here at MIT. Their work shows
+that, not only is stochastic simulation warranted for these systems, but also that the
+stochastic model predicts fundamentally dierent behavior than does the continuum ap-
+proximation, and this behavior is crucial to the functioning of the signalling pathway. If
+you are interested, see Artyomov et. al, Purely stochastic binary decisions in cell signaling
+models without underlying deterministic bistabilities , PNAS, 104, 48, 18958-18963, 2007.
+However, note that this is not an isolated application. Since the popularization of the
+stochastic approach in the 1970s, there has been a steady increase in its application and
+today the literature positively abounds with examples.
+2</text>
+        </slide>
+        <slide>
+          <slideno>3</slideno>
+          <text>notthe expected X1(t)X1(t). This is because the reaction requires two distinct S1
+molecules; we cannot use the same molecule twice. You can convince yourself that
+the factor ( X1(t)1) is correct by considering the case where there is only one S1
+molecule in V. In this case, there are zero complete groups of reactants. The factor
+of 1/2 comes from the fact that we do not care about the order of the molecules.
+For two distinct molecules of S1, call them S
+1andS
+1, the pair ( S
+1, S
+1) constitutes
+a single group of reactants, regardless of whether we order them as ( S
+1, S
+1) or as
+(S
+1, S
+1).
+3. Consider the isomerization
+S1S2. (3)
+Isomerizations do not occur due to collisions at all, but rather due to some spon-
+taneous change in the quantum state of the molecule. Nonetheless, if there are
+2 molecules of S1, it is clear that there are 2 groups of reactant molecules. In
+general,
+h(X(t)) =X1(t).
+2.2 The Probability that Reaction ROccurs in [t, t+dt]
+2.2.1 The Fundamental Hypothesis
+Supposing that at least one complete group of Rreactants exists in V, let(t, dt)
+denote the probability that a particular one of these groups will react in the time interval
+[t, t+dt]. The fundamental hypothesis of the stochastic approach to chemical kinetics is
+the following: For each reaction R, there is a constant csuch that
+(t, dt) =cdt.
+In words, the fundamental hypothesis states that, for small enough durations dt, the
+probability that a particular group of Rreactants will react in Vduring the interval
+[t, t+dt] increases linearly with dt. This assumption is well justied for elementary
+unimolecular and bimolecular reactions. In the bimolecular case, one can derive the
+constant cfrom the kinetic theory of gases (which you will study extensively in 10.65
+next semester). The basic assumptions behind this derivation are:
+1. the positions of the molecules in Vare random and uniformly distributed throughout
+V,
+2. the velocities of the molecules in Vare distributed according to the Maxwell-
+Boltzmann distribution.
+Under these assumptions, it is possible to derive the probability of a collision between
+two molecules within a given time interval. The purpose of mentioning this is to point
+out that the stochastic approach to chemical kinetics will be valid for gas phase systems
+in thermal equilibrium, but not necessarily in other settings.
+A consequence of the fundamental hypothesis, which greatly simplies the analysis to
+follow, is that the probability that multiple reaction events, of any kind, occur in [ t, t+dt]
+can be shown to scale as O(dt2). Then, in the limit as dt0, the probability of all
+such situations tends toward zero more rapidly than dt, and becomes dominated by the
+probability of the simpler outcomes where only a single reaction occurs in [ t, t+dt]. For
+this reason, we can always assume in the following derivations that all single reaction
+events in [t, t +dt] are mutually exclusive, because only one reaction can occur. Though
+this is not strictly true, the error in making this assumption will vanish as dt0.
+4</text>
+        </slide>
+        <slide>
+          <slideno>4</slideno>
+          <text>2.2.2 The Probability of an RReaction in [t, t+dt]
+In order to understand how the state of a reacting system X(t) evolves probabilistically,
+we will require the probability that exactly one reaction occurs in Vduring [ t, t+dt], and
+it is an Rreaction. By the simplication that at most one reaction can occur during
+[t, t+dt] this is equivalent (to within O(dt2)) to several other probabilities:
+Pr(exactly 1 rxn occurs in [ t, t+dt] and it is an Rreaction |X(t) =n) (4)
+=Pr(exactly 1 Rrxn occurs in [ t, t+dt]|X(t) =n),
+=Pr(at least 1 Rrxn occurs in [ t, t+dt]|X(t) =n).
+To compute this probability, recall that there are h(X(t)) distinct groups of reactants
+that could possibly react in [ t, t+dt], each with probability cdt. Since we may assume
+that these hpossible reactions are mutually exclusive, then we may sum the individual
+probabilities to get
+Pr(exactly 1 Rrxn occurs in [ t, t+dt]|X(t) =n) =h(n)cdt.
+2.2.3 The Connection with Rate Constants
+In stochastic chemical kinetics, cplays the role of the rate constant kin determinis-
+tic, continuum kinetics equations. For example, for the reaction shown in (1) we have
+h(X(t)) = X1(t)X2(t), so the probability of observing exactly one Rreaction some-
+where in Vduring [ t, t+dt] is
+cX1(t)X2(t)dt,
+which is very reminiscent of the rateexpression in the continuum approximation,
+r(t) =kC1(t)C2(t).
+Of course, for the dimerization reaction (2), these expressions do not agree so well.
+For the purposes of simulating stochastic reacting systems, we will always assume that
+the reaction parameters care known.
+2.3 The Probability Exactly One Reaction Occurs in [t, t+dt]
+From 2.2, we know that the probability that exactly one Rreaction will occur during
+[t, t+dt] is
+ch(X(t))dt.
+Since we need only consider the case where at most one reaction occurs in [ t, t+dt],
+the occurrences of each dierent type of reaction R1, . . . , R Mare mutually exclusive. It
+follows that we can simply sum probabilities to get
+Pr(exactly 1 rxn occurs in [ t, t+dt]|X(t) =n)
+M
+=/summationdisplay
+Pr(exactly 1 Rrxn occurs in [ t, t+dt]|X(t) =n),
+=1
+M
+=
+/summationdisplay
+h(n)cdt
+=1
+5</text>
+        </slide>
+        <slide>
+          <slideno>0</slideno>
+          <text>Stochastic Chemical Kinetics
+Joseph K. Scott
+November 10, 2011
+1 Introduction to Stochastic Chemical Kinetics
+Consider the reaction
+I+ID.
+The conventional kinetic model for the concentration of Iin a closed system is given by
+dCI(t) =kCI(t)CI(t),dt
+where kis the rate constant. The stochastic approach to chemical kinetics is concerned
+with modeling chemical reactions in situations where the assumptions underlying equa-
+tions of this type break down. In order to illustrate this, suppose that the reaction above
+is occuring in a drop of water of volume V, which contains only a very small number, say
+3, of molecules of I. The kinetic equation above encounters the following complications:
+1.The state CIchanges in discrete increments. We can rewrite the equation above in
+terms of the number of molecules of Ias
+dNI k(t) =dt/parenleftbiggNAv
+IV/parenrightbigg
+NI(t)N(t),
+where NAvis Avogadros number. Solving this ODE from some known initial con-
+dition, we are assuming that the number of molecules NIchanges continuously and
+can take any value in R(this is called a continuum assumption ). Surely, if we
+begin solving this equation with NI(t0) = 3, there will come a time tat which
+NI(t) = 2.5. However, in reality this quantity should only take integer values; it
+doesnt make physical sense to have 2 .5 molecules. In cases where we have a very
+large number of molecules, say NI11023, this issue can be easily overlooked
+because a dierence of 0 .5 out of 1023causes very little error in the rate equation.
+However, the problem can become very serious for small numbers of molecules. In
+the worst case, if NI= 2, then only one reaction can occur, after which NI= 0
+and the reaction rate must also be zero. However, the continuum approximation
+predicts a nonzero rate with, for example, NI= 0.5.
+2.Reactions occur as discrete events. The continuum approximation predicts a nonzero
+rate of reaction whenever, NI/negationslash= 0. However, in reality reactions are not always
+1</text>
+        </slide>
+        <slide>
+          <slideno>11</slideno>
+          <text>MIT OpenCourseWare
+https://ocw.mit.edu
+10.34 Numerical Methods Applied to Chemical Engineering
+Fall 20
+15
+For information about citing these materials or our Terms of Use, visit: https
+://ocw.mit.edu/terms .</text>
+        </slide>
+        <slide>
+          <slideno>5</slideno>
+          <text>2.4 The Probability that No Reactions Occur in [t, t+]
+In the stochastic view of chemical kinetics, there are periods of time in which nothing
+happens. That is, molecules diuse around in Vbut, for some period of time, none of
+them collide in a such a way that a reaction occurs. In order to accurately simulate this
+situation, we need some way to characterize when the next reaction will happen. A formal
+way to ask this question is: Given thatX(t) =n,what is the probability that no reactions
+occur in Vwithin the time interval [t, t+]?We denote this probability by P0(,n).
+We consider rst the probability P0(,n), where is small. For small enough , we
+may assume that at most one reaction occurs in Vduring [ t, t+]. It follows that
+P0(,n) = 1Pr(exactly 1 rxn occurs in [ t, t+]|X(t) =n),
+M
+= 1
+/summationdisplay
+h(n)c.
+=1
+In order to calculate P0(,n), we divide [ t, t+] into a large number Kintervals of
+length =/K:
+[t, t+],[t+, t+ 2], . . .,[t+ (K1), t+K].
+Noting that
+P0(,n) =Pr(no rnx occurs in [ t, t+]
+andno rxn occurs in [ t+, t+ 2]
+and
+...
+andno rxn occurs in [ t+ (K1), t+K]|X(t) =n),
+we can expand this probability as
+P0(,n) =Pr(no rnx occurs in [ t, t+]|X(t) =n)
+Pr(no rxn occurs in [ t+, t+ 2]|
+X(t) =nandno rnx occurs in [ t, t+])
+...
+Pr(no rnx occurs in [ t+ (K1), t+K]|
+X(t) =nandno rnx occurs in [ t, t+ (K1)]).
+For any jK, whether or not a reaction occurs in the interval [ t+ (j1), t+j] is
+independent of the fact that no reaction occurred in [ t, t+ (j1)], except for the fact
+that this implies X(t+ (j1)) =X(t). Then
+P0(,n) =Pr(no rnx occurs in [ t, t+])
+Pr(no rnx occurs in [ t+, t+ 2]|X(t+) =n)
+...
+Pr(no rnx occurs in [ t+ (K1), t+K]|
+X(t+ (K1)) =n),
+6</text>
+        </slide>
+        <slide>
+          <slideno>9</slideno>
+          <text>Then,
+Pnext(,n) =a(n)exp ( a(n)).
+For xed n, this is the PDF of the random variable . In order to determine the next
+reaction time for Gillespies algorithm, we would like to sample this PDF. It turns out
+that this can be done by generating a random number r1from the uniform distribution
+on the interval (0 ,1) and computing
+1=a(n)ln/parenleftbigg1.r1/parenrightbigg
+This is an example of the inversion method , which is one of the available methods for
+converting the output of a uniform random number generator to a sample of a desired
+PDF.
+4.2 Determining the Next Reaction Type
+We now need to derive the probability that an Rreaction occurs in [ t+, t++d]
+given that X(t) =nand the next reaction is known to occur in this same interval. As
+usual, we can neglect the possibility of multiple reactions occuring in this time interval,
+so that we are guaranteed that exactly one reaction occurs in [ t+, t++d]. There
+are then Mmutually exclusive possibilities, R1, . . . , R M, each with probability
+h(n)cd,  = 1, . . ., M.
+Clearly, the probability that reaction Roccurs is
+h(n)cd/summationtextM
+=1h(n)cd=h(X(t))c.a(n)
+For xed n, this is the PDF of the random variable , which we need to sample in order
+to determine the next reaction type in Gillespies algorithm. This is done by sampling
+a number r2from the uniform distribution on (0 ,1) and choosing to be the smallest
+integer such that
+1 /summationtext
+=h(n)c
+r2 .a(n)
+In fact, this is another application of the inversion method. In this case it is easy to see
+that the probability of selecting in this way is proportional to the length of the interval
+/bracketleftBigg/summationtext1
+=1h(n)c
+a(n),/summationtext
+=1h(n)c,a(n)/bracketrightBigg
+which is simply
+h(n)c,a(n)
+as desired.
+10</text>
+        </slide>
+        <slide>
+          <slideno>8</slideno>
+          <text>Bartons laboratory have developed methods capable of solving master equations with
+up to 200 million ODEs. Even so, master equations of this size still correspond to very
+simple physical systems. For this reason, most researchers take a Monte Carlo approach,
+which provides less information but is more computationally tractable. We discuss this
+approach in the next section.
+4 Gillespies Algorithm
+The solution of the master equation provides, at each time t, a PDF for the random
+vector X(t). This is a great deal of information, which is why the master equation is so
+dicult to solve. Rather than compute the complete PDF of X(t) for every t, Gillespies
+algorithm computes a sample from this PDF. That is, it computes a single trajectory in
+time. Like the Monte Carlo methods we studied previously, Gillespies algorithm produces
+a dierent result every time it is run. However, if it is run a large number of times for the
+same system, then the frequency of observing a state, say X(t) =n, will be proportional
+to the value of the PDF that results from solving the master equation, P(n, t|n0, t0).
+Because only a sample is computed, a single run of Gillespies algorithm is dramatically
+less expensive that solving the master equation. The down side, however, is that it may
+be necessary to do a huge number of Gillespie simulations in order to obtain an accurate
+description of the complete PDF.
+Beginning from X(t) at some time t, a single step of Gillespies algorithm rst generates
+a random number which represents the time at which the next reaction occurs. Then,
+a random integer is generated which determines which reaction occurs at t+. Once
+these numbers are known, we simply update the time to t+and the state vector to
+X(t+) =X(t) +.
+4.1 Determining the Next Reaction Time
+We require the probability that the next reaction occurs in the innitesimal time interval
+[t+, t++d]. Denote this probability by Pnext(,n)d. This probability can be
+computed by noting that
+Pnext(,n)d=Pr(no rxn occurs in [ t, t+]|X(t) =n)
+Pr(exactly one rxn occurs in [ t+, t++d]|
+X(t) =nandno rxn occurs in [ t, t+]),
+=Pr(no rxn occurs in [ t, t+]|X(t) =n)
+Pr(exactly one rxn occurs in [ t+, t++d]|X(t+) =n),
+=P0(,n)/bracketleftBiggM
+/summationdisplay
+h(n)cd
+=1/bracketrightBigg
+,
+= exp/parenleftBiggM M
+
+/parenrightBigg/bracketleftBigg /bracketrightBigg/summationdisplay
+h(n)c
+=1 /summationdisplay
+h(n)cd .
+=1
+To simplify notation, dene the total reaction propensity :
+M
+a(n)
+/summationdisplay
+h(n)c.
+=1
+9</text>
+        </slide>
+      </slides>
+      <videos/>
+    </lecture>
+    <lecture>
+      <lecture_title>Operator splitting (PDF)</lecture_title>
+      <lecture_pdf_url>https://ocw.mit.edu/courses/10-34-numerical-methods-applied-to-chemical-engineering-fall-2015/resources/mit10_34f15_lec31_1/</lecture_pdf_url>
+      <lectureno>31</lectureno>
+      <slides>
+        <slide>
+          <slideno>1</slideno>
+          <text>Operator Splitting Methods  
+Suppose dy /dt = R + T  
+Simplest: f
+irst integrate dy/dt=T, then s t art from y(tf) 
+and integrate dy/dt=R. Not very accurate.  
+Strang: half -step of T ,  full step R, half step T  
+Second -order accurate, stable.  
+Can be sl
+ow to converge to steady -state sol ution.  
+Balanced: dy /dt = (R+c ) + (T -c) ho w to choose c? 
+Simple Balanced: c=1/2 (R(yn)-T(yn)) 
+Rebalanced: use averages of R and T over their steps 
+to get a  
+higher- order implicit formula.  
+more accurate and more stable.  
+see Speth
+ et al. SIAM J. Numer . Anal. ( 2013)  
+2</text>
+        </slide>
+        <slide>
+          <slideno>2</slideno>
+          <text>Split each timestep into 3 substeps  
+Near Steady State, dY /dt = (Reaction) + (Transport) ~ 0  
+But each term separately is large. Splitting them makes  
+you walk away from true trajectory during substeps . 
+Balanced Splitting drastically reduces this walk -away.  
+Conventional (Strang) Splitting  
+applied to a toy problem.  Poor  
+behavior near steady state.  Our new Balanced 
+Splitting method  
+stays closer to  
+true trajectory.  
+ Speth, Green,  
+MacNamara &amp;  
+Strang  
+SINUM  New  Old 
+3</text>
+        </slide>
+        <slide>
+          <slideno>3</slideno>
+          <text>Balanced Splittings Error Exponentially 
+Goes to Zero as Flame steadies out  
+Strang Splitting:  
+    Constant Splitting Error  
+  Error  
+Time  Smaller t 
+Error  
+Rebalanced Splitting:  
+    Error Vanishes at steady -state  Time  Smaller t 
+4</text>
+        </slide>
+        <slide>
+          <slideno>0</slideno>
+          <text>Numerics: Flames are usually solved 
+using Operator Splitting 
+Many Equations of form  
+  Yn/t = Reactionn (Y) + Transportn [Y] 
+Typical Yn(x,y,z,t) represent mass fraction of nth species. 100 species 
+at 10,000 mesh points = 106 state variables. 
+Seldom possible to provide good enough initial guess for steady -
+state, a n
+d hard to solve Newton steps with &gt;106 unknowns, so 
+usually time -march to steady -state.  
+Time -marching can be very slow if you need small t! 
+Reaction term is local and very stiff. Transport involves gradients 
+(nonlocal aft
+er discretization). 
+Usually Chemistry Split from Transport  
+Chemistry solved in parallel using stiff ODE solver (e.g. DSL48S)  
+Transport solved using specialized PDE techniques  
+1</text>
+        </slide>
+        <slide>
+          <slideno>4</slideno>
+          <text>MIT OpenCourseWare
+https://ocw.mit.edu
+10.34 Numerical Methods Applied to Chemical Engineering
+Fall 2015
+For information about citing these materials or our Terms of Use, visit: https://ocw.mit.edu/terms.</text>
+        </slide>
+      </slides>
+      <videos/>
+    </lecture>
+    <lecture>
+      <lecture_title>Partial differential equations 1 (PDF)</lecture_title>
+      <lecture_pdf_url>https://ocw.mit.edu/courses/10-34-numerical-methods-applied-to-chemical-engineering-fall-2015/resources/mit10_34f15_lec22/</lecture_pdf_url>
+      <lectureno>22</lectureno>
+      <slides>
+        <slide>
+          <slideno>2</slideno>
+          <text>There are many different ways to come up  with  preconditioners A and B  that work well for a particular J ; 
+for some introduction see discussion in Beers textbook.  
+Find ing a good initial guess at c can  also be a big problem.  Sometimes the PDE system is for a steady -
+state solution, and the corr esponding time -dependent PDE is also known. If by the physics any initial 
+guess will eventually lead to the steady -state of interest, one can start from a poor initial guess and 
+time -march toward the solution for a while (using the method of lines discussed below) to refine the 
+initial guess . When the guess gets good enough that || F(c_guess) || &lt; tol, then one switches from time -
+marching to just solving the system of non -linear equations.  
+ 
+ Method of Lines  
+For parabolic PDEs, where the special direction is time, one  popular approach is to discretize the space 
+dimensions (e.g. replace all the spatial derivatives with finite -difference approx imations). For example,  
+the PDE equation  
+c/t = D  
+2c/x2  - v c/x  + r(c) 
+might be replaced by  the finite difference equation 
+dc(m)/dt = D {c( m-1)  2 c(m) + c(m+1)} /( x)2 - v { c(m -1)-c(m) } /x + r(c(m))  
+There will be similar equations for each mesh point xm. This can be compactly written  
+dc/dt = F (c) 
+where c is the vecto r [c(1); c(2); ; c(m); c(m+1); c(M)]. Note every element of this long vector (except 
+maybe some on the boundaries) are time dependent.  
+It one knows all the boundary conditions  at t 0, this is an ODE- IVP, and can be solved that way. This is 
+called The Method of Lines . This is very practical for systems with one spatial di mension , where the 
+number of spatial mesh points M might be as small as 100 . It can even be done for 3 -d problem s, where  
+the number of mesh points  M&gt;106, if an explicit ODE -IVP method can be used, in fact this is how t he 
+best existing  Navier -Stokes reacting -flow solvers work (see papers by J acqueline H. Chen).  
+If one is using Method -of-Lines to time -march to an initial guess, there is no reason that one needs to be 
+time -accurate : all you want to do is to get  to the long -time solution (which will be close to th e steady -
+state solution and so a good initial guess) as quickly as possible. One way to accelerate the time -
+marchin g is to use Implicit Euler with relatively large time steps : 
+Cnew = C old + t * F(C new) 
+3</text>
+        </slide>
+        <slide>
+          <slideno>1</slideno>
+          <text>For problems with significant convection, what happens downwind is very much controlled by what 
+already happened upwind. In that case, it is  much better to use  upwind differencing  than ce ntered -
+differencing. Only if there is real information flow from  downwind should the downwind values affect 
+upwind values in the numerical procedure.   Contrast Fig. 6.7 and Fig. 6.8 in Beers  textbook, to see how 
+important this is for avoiding numerical instabilities.  
+ 
+Methods for solving PDEs  
+One can directly apply all the relaxation methods (collocation, Galerkin, finite differences) much the same as  in ODE- BVPs, converting the PDE into a large system of nonlinear algebraic equations.   
+    F(c)=0 
+This is how most elliptic PDEs are solved.  The main challenge is the huge number of unknowns, and the 
+size of the  corresponding Jacobian matrix.  Using a method that make s a very sparse Jacobian (e.g. using 
+a local basis set) is key. Finding a  sufficiently  good initial guess can also be very challenging.  There are 
+many special methods developed to try to handle these huge systems.   
+Note that the key ste p at each iteration in solving a system of nonlinear equations is to solve the 
+equation  
+J*c = - F 
+Normally we would solve this by Gaussian elimination. However, when J is huge this is not practical, e.g. we may not have enough memory to even store the intermediate matrices (remember the problem of 
+Gaussian fill -in, so even if J is sparse the intermediate m atrices will not be so sparse ). So instead we 
+would like to solve this  equation using direct  methods, which do not require storing any large 
+intermediate  objects. Several methods have been proposed to do this. O ne of the most successful is 
+Conjugate Gradient , where one rewrites the problem as  a minimization  
+min q = (F+J*c)
+T(F+J*c) 
+The Conjugate Gradient method for minimization only requires evaluating J*v not solving J*v=b, and evaluating J*v does not require storing any matrices (you can compute the non -zero elements of J, use 
+them, and delete them).  However, it is an i terative method, so it does not solve this quadratic 
+minimization  problem exactly in one  step like Newton -Raphson would (so at each iteration in solving the 
+PDE problem we are going to do several sub -iterations to solve J* c=-F). Also , if many sub -iterations are 
+required numerical noise can creep in causing problems, so people currently use a fancier version called 
+bicgstab instead of the simple Conjugate Gradient algorithm.  The performance of Conjugate Gradient is 
+dramatically improved if the matrix J is well- conditioned (i.e. cond(J) ~ 1), so people often use 
+preconditioners  A and B to modify the matrix:  
+(A*J*B )*v = -(A *F)         B *v =  c 
+2</text>
+        </slide>
+        <slide>
+          <slideno>0</slideno>
+          <text>Some notes about PDEs  
+-Bill Green Nov. 2015 
+Partial differential equations (PDEs) are all BVPs, with the same issues about specifying boundary 
+conditions etc. Because they  are multi -dimensional, they can be  very CPU intensive to solve, similar to 
+multidimensional integrals.  
+For example, a 3 -d pde (e.g. steady -state Navier Stokes) will typically require a mesh of a t least (100)3 = 
+106 points, so one is  computing at least 106*N variables   unknowns , where the unknowns might be (for a 
+compressible reacting flow)  [, T, v x, vy, vz, y1, y2,  ]  where y i is the mass fraction of species i.  So N variables  
+= N species +5.  As the Reynolds number increases  the mesh density has to increase, so this quick ly becomes 
+unmanageable.  
+Note that while we often can reduce problems to manageable 2-d PDEs taking advantage of symmetry 
+or making approximations, many real -world PDEs have  dimensionality &gt;3 (e.g. the Schroedinger 
+equation, time -dependent Navier -Stokes, etc.). 
+Like ODEs, certain PDEs a re intrinsically  unstable (e.g. because the physical situation is extremely 
+sensitive to small fluctuations) , and those are challenging -to-impossible to solve accurately  using 
+numerical methods , since numerical errors get amplified. One example is detonation, where a small 
+initiation event gets amplified into a strong shock wave. Another is the growth of a tumor  or a bacterial 
+culture , where a mutation  or other small change  in one cell can lead to a complete change in 
+morphology and composition of the system at later times. 
+Another class of PDEs, called  hyperbolic  (see Beers page 276 for the mathematical definiti on) have 
+solutions that are  propagating waves . Any small fluctuation at early times propagates to later times, 
+often with no or very minor da mping. Examples include acoustics and Maxwell s equations. Special 
+methods are needed to model these, to avoid having the undamped numerical errors acc umulate into a 
+lot of noise in the answer.   If hyperbolic problems are solved using nave  numerica l solution methods , 
+one often obtains unphysical oscillations in the numerical solution.  
+In 10.34 we focus primarily on elliptic  and parabolic  PDEs, where the physics (e.g. diffusion, 
+viscosity) dampens both the real fluctuation s, and  the numerical noise  introduced during the solution.  
+The conceptual difference between hyperbolic, parabolic, and elliptic PDEs has to do with the flow of information . If I adjust the value of a state variable at one mesh point , does that adjustment affect the 
+computed value at other points, i.e. does point X know what is happening at point Y? In the case of elliptic  PDEs, each  point  is sensitive to all the others . In hyperbolic PDEs, there  are regions that are not 
+sensitive to each other  at all  (e.g. a supersonic shock wave is propagating so fast that it canno t feel 
+pressure  fluctu ations happening behind it at all , since information about them only moves at the speed 
+of sound ). Parabolic PDEs have all points in the  future sensitive to everything that happened in the past, 
+but not vice -versa.  
+1</text>
+        </slide>
+        <slide>
+          <slideno>3</slideno>
+          <text>However, note that this is still a (huge) system of nonlinear  equations, and so it may need to be solved 
+iteratively using Conjugate Gradient methods rather than Newton -Raphson with Gaussian elimina tion.  
+And solving this systems of equations  also needs an initial guess  which perhaps we could supply using 
+an explicit ODE -IVP solver.  
+4</text>
+        </slide>
+        <slide>
+          <slideno>4</slideno>
+          <text>MIT OpenCourseWare
+https://ocw.mit.edu
+10.34 Numerical Methods Applied to Chemical Engineering
+Fall 2015
+For information about citing these materials or our Terms of Use, visit: https://ocw.mit.edu/terms.</text>
+        </slide>
+      </slides>
+      <videos/>
+    </lecture>
+    <lecture>
+      <lecture_title>Monte Carlo methods 1 (PDF)</lecture_title>
+      <lecture_pdf_url>https://ocw.mit.edu/courses/10-34-numerical-methods-applied-to-chemical-engineering-fall-2015/resources/mit10_34f15_lec32/</lecture_pdf_url>
+      <lectureno>32</lectureno>
+      <slides>
+        <slide>
+          <slideno>1</slideno>
+          <text>Recall: mean converges with number 
+of samples N  
+By Central Limit Theorem of Statistics, as N gets large:  
+ &lt;y&gt;N  &lt;y&gt;true with error decreasing as N-1/2 
+ 2(&lt;y&gt;)  2(y)/N  
+When we do this average by repeating an experiment, 
+we 
+are sampling from a probability distribution pexpt(y). 
+If pexpt(y) is Gaussian (normal distribution) we can 
+generate synthetic data sets by random number 
+generator:  
+ for i=1:N  
+  y(i)=sigma* randn + center;   
+ end 
+2</text>
+        </slide>
+        <slide>
+          <slideno>2</slideno>
+          <text>Two ways to compute &lt;g(y)&gt; 
+Suppose we measure y(i) but what we want to know is the 
+exp
+ected value of g(y). If we are sampling (experimentally 
+or with synthetic data):  
+  &lt;g&gt; = (1/N)  g(yi) 
+This is called a stochastic method, gives different result each 
+time, but as N gets very large it gets accurate.  
+If we know p(y), we could instead compute this integral 
+de
+terministically: 
+  &lt;g&gt; =  g(y) p(y) dy 
+     probably we would do this using quadrature in uniform intervals, or 
+maybe some adaptive meshing technique (e.g. rewrite it as an ODE 
+and use ode45). These methods would give the same numerical value each time we ran it, no randomness involved (but to get the exact result we still need to go to an infinitely dense mesh).  
+3</text>
+        </slide>
+        <slide>
+          <slideno>7</slideno>
+          <text>What is necessary for Metropoliss 
+method to work? 
+The method of proposing new steps must be 
+abl
+e to reach all possible xs (ergodic).  
+The overall transition probability =  
+(probability of proposing step) * (probability of 
+accepting step) 
+       must satisfy detailed balance : 
+w(xi)*(transition probability i  k) = 
+  w(xk)*(transition probability k  i) 
+8</text>
+        </slide>
+        <slide>
+          <slideno>5</slideno>
+          <text>Metropolis Monte -Carlo  
+Often we want to compute integrals of this type (e.g. in 
+sta
+tistical mechanics &amp; quantum mechanics, also in 
+turbulent flow simulations) 
+ 
+ 
+   
+Metropolis et al. (1953) invented a method for 
+sampling from p(x ) just using w( x) 
+When p( x) is sharply peaked and m is large this is much 
+much better than integration techniques based on 
+uniform meshes or uniform distributions.  ()()mf f x p xd x&lt; &gt;= 
+() () / ()mpx wx wxd x = 
+6</text>
+        </slide>
+        <slide>
+          <slideno>8</slideno>
+          <text>MIT OpenCourseWare
+https://ocw.mit.edu
+10.34 Numerical Methods Applied to Chemical Engineering
+Fall 2015
+For information about citing these materials or our Terms of Use, visit: https://ocw.mit.edu/terms.</text>
+        </slide>
+        <slide>
+          <slideno>3</slideno>
+          <text>Any integral can be rewritten this way 
+Integrals are averages:  
+ = &lt;&gt;( )
+ 
+Can rewrite this as:  
+&lt;&gt; =    
+= /(  ) 
+So we can compute any integral stochastically by drawing numbers from 
+p(x)
+, which is a uniform distribution from a to b:  
+ For i=1:N  
+   x = a + (b -a)*rand;  
+   sum_f = sum_f + f(x);  
+ end 
+  mean_f = sum_f / N; 
+4</text>
+        </slide>
+        <slide>
+          <slideno>6</slideno>
+          <text>Metropoliss Method  
+See Beers text pp 353 -356! 
+Giv
+en current xi need a way to propose a new 
+xk (e.g. add a random step x) 
+Metropolis says: accept the step if w( xk)&gt;w(xi) 
+Else 
+  Compute a random number 0&lt;u&lt;1  (u = rand) 
+  Accept the step if u&lt;w( xk)/w(xi). Else set xk=xi.  
+Sum_f  = Sum_f  + f( xk) 
+7</text>
+        </slide>
+        <slide>
+          <slideno>0</slideno>
+          <text>Monte Carlo Integration 
+10.34 Fall 2015 
+1</text>
+        </slide>
+        <slide>
+          <slideno>4</slideno>
+          <text>Scaling for Multi -dimensional integrals 
+Suppose we have to compute an m -dim ensional integral. 
+What way is best?  
+For small m, we can use Simpsons rule, 2m points gives one 
+interval in each dimension. If m=100, need one million 
+function evals .  To make it two intervals in each dimension 
+to gain a sig fig, need 4m points (~1012 if m=100). Curse of 
+Dimensionality! 
+For large m, better to use stochastic method, error scales as N
+-1/2, can use any number of points. So one million points 
+reduces uncertainty by factor of 1,000. Only need 100x as many samples (~10
+8) to gain one more significant figure.  
+But for sharply -peak ed  high -dimensional functions, even 
+108 points may not be enough to have several points in 
+region of the peak.  
+5</text>
+        </slide>
+      </slides>
+      <videos/>
+    </lecture>
+    <lecture>
+      <lecture_title>Models vs. data 3 (PDF)</lecture_title>
+      <lecture_pdf_url>https://ocw.mit.edu/courses/10-34-numerical-methods-applied-to-chemical-engineering-fall-2015/resources/mit10_34f15_lec30/</lecture_pdf_url>
+      <lectureno>30</lectureno>
+      <slides>
+        <slide>
+          <slideno>0</slideno>
+          <text>How Do We Know if Model and 
+Data are really Consistent ? 
+   2() = min ||(yexpt-ymodel())/||2 
+ 
+ are the parameters we are adjusting to fit the data 
+ 
+Uncertainty  = model + expt 
+If min 2 &gt; tolerance it is very likely that the model is 
+inconsistent with the data.  
+USUALLY 2 HAS MANY LOCAL MINIMA  
+Need globally  optimal choice of adjustable parameters   
+to be 100% sure model &amp; data are inconsistent. It just 
+became possible to guarantee global minimum in 2(p) 
+for nonlinear ODE kinetic models:  
+  Singer et al., J. Phys. Chem. A  (2006).  
+1</text>
+        </slide>
+        <slide>
+          <slideno>1</slideno>
+          <text>Example 1: Local optimization suggested model  
+ is wrong, but global optimization finds good fit  
+Optical Density @316 nm  
+Time (s) Best-possible least -squares fit  
+Fits 
+found using 
+conventional least -squares  Experiment: laser -initated oxidation 
+of cyclohexadiene; most of the signal  
+comes from cyclohexadienyl radical  
+(C6H7) in partial equilibrium with  
+two isomers of C6H7OO. For details see 
+Taylor et al. J.Phys.Chem.A (2004), Singer  
+et al. J.Phys.Chem.A  (2006)  
+2</text>
+        </slide>
+        <slide>
+          <slideno>3</slideno>
+          <text>MIT OpenCourseWare
+https://ocw.mit.edu
+10.34 Numerical Methods Applied to Chemical Engineering
+Fall 2015
+For information about citing these materials or our Terms of Use, visit: https://ocw.mit.edu/terms.</text>
+        </slide>
+        <slide>
+          <slideno>2</slideno>
+          <text>Example 2: Global Optimization Proves  
+Model &amp; Data Inconsistent  
+Data 
+Global optimum  
+Local optimum ( 2 = 500)  Optical Density 
+Time (s) Simple least -squares  
+fit: close but not quite 
+right (only 5% chance of being  
+consistent with the data)  The best possible choice of parameters for this particular chemistry model: not much better  
+than the local fit (only 16% chance that data would be this far off if the model were correct).  
+Singer et al.,  J. Phys. Chem. A  (2006)  Conclusion: this chemistry model  
+is not correct. (Could strengthen this conclusion by tightening the  
+error bars)  
+ ACS. All rights reserved. This content is excluded from our Creative Commons
+license. For more information, see https://ocw.mit.edu/help/faq-fair-use/.
+3</text>
+        </slide>
+      </slides>
+      <videos/>
+    </lecture>
+    <lecture>
+      <lecture_title>Models vs. data 1 (PDF)</lecture_title>
+      <lecture_pdf_url>https://ocw.mit.edu/courses/10-34-numerical-methods-applied-to-chemical-engineering-fall-2015/resources/mit10_34f15_lec28/</lecture_pdf_url>
+      <lectureno>28</lectureno>
+      <slides>
+        <slide>
+          <slideno>4</slideno>
+          <text>Probability of observation depends on 
+2; if very improbable we flag a 
+discrepancy  between model &amp; data  
+User must decide tolerance on improbable.  
+For example: If you decide &lt;5% chance is 
+impro
+bable, and you performed 1 2 experiments 
+(each repeated many times to get a good average &lt;y
+k&gt; and estimate of k) and adjusted 2 model 
+parameters, then you can use Matlab  function 
+chi2inv: 
+       chi2max = chi2inv(0.95,12 -2) 
+      in this case case  chi2max =18.3 
+if measured 2 &gt; 18.3 you would say there is a 
+discrepancy between the model and the data 
+5</text>
+        </slide>
+        <slide>
+          <slideno>0</slideno>
+          <text>Models vs. Data  
+10.34 Fall 2015 
+by W.H. Green  
+1</text>
+        </slide>
+        <slide>
+          <slideno>6</slideno>
+          <text>Once we have decided the maximum 
+2 we will tolerate Q, than we have 
+defined a region of indifference in 
+parameter space  
+As far as we can tell from our experiment, any  
+whic
+h gives a good enough fit is OK, we cannot 
+discriminate.  
+To see the range of acceptable parameter values, 
+plot the hypersurface 2()=Q. Any  inside the 
+surface is acceptable.  
+For a model which depends nonlinearly on the paramet
+ers, the shape of the region can be quite 
+convoluted.  
+7</text>
+        </slide>
+        <slide>
+          <slideno>12</slideno>
+          <text>Are the Model &amp; Data Consistent?  
+Often, the measured 2 is greater than the Q you would 
+compute from chi2inv. What do you need to check 
+before you say you have disproved the model?  
+1) Need to be sure you have found the very best possible values of all 
+the parameters. Can have many local minima. Global optimization?  
+2) Need to be sure you have done enough repeats. If N is small 
+probability is non- Gaussian with fat tail.  
+3) 2 is extremely sensitive to estimate of   (or D). Double check if you 
+really believe these values.  
+4) Uncertainties in X and any parameters  you did not adjust might 
+affect 2. Perhaps you can include these uncertainties in . 
+5) Often models are idealizations that do not really match experimental boundary conditions, mixing, etc. Can be tricky to try to 
+rig up a model that really matches your experimental apparatus. 
+6) Be sure that you modeled instrumental function or calibration of 
+your signals carefully.  
+13</text>
+        </slide>
+        <slide>
+          <slideno>14</slideno>
+          <text>MIT OpenCourseWare
+https://ocw.mit.edu
+10.34 Numerical Methods Applied to Chemical Engineering
+Fall 2015
+For information about citing these materials or our Terms of Use, visit: https://ocw.mit.edu/terms.</text>
+        </slide>
+        <slide>
+          <slideno>13</slideno>
+          <text>Experimental Design  
+For linear models, you can compute the covariance of 
+the mo
+del parameters BEFORE you do any 
+experiments. Often you want to design the experiment so you are only sensitive to one or two parameters.  
+Do it! So many people do experiments and then 
+afte
+rwards realize they cannot possibly determine their 
+parameter of interest from the data. 
+Sometimes you can fix the problem by using different knob setti
+ngs X. You can play with this in your model before you 
+do the experiments.  
+Even for nonlinear models you can do this ahead of 
+time, using the Jacobian evaluated at your prior 
+nominal value of . 
+14</text>
+        </slide>
+        <slide>
+          <slideno>7</slideno>
+          <text>Bayesian view  
+p(X,|&lt;y&gt;) = pprior()pprior(X)p(&lt;y&gt;|X,)  
+where prior means we have other prior 
+information about these values, not just what we 
+can infer from this data set. 
+Usually journal readers are not interested in our imprecise knowledge of our knob settings, so we integrate this uncertainty out to get our new improved posterior p( ) that we will report:  
+p()= pprior()  dWX pprior(X)p(&lt;y&gt;|X,)  
+Contours of this new p( ) can also have a very 
+convoluted shape 
+8</text>
+        </slide>
+        <slide>
+          <slideno>9</slideno>
+          <text>Correlation of parameters  
+Often two parameter values are highly 
+corr
+elated, e.g. you can get a good fit if 1 and 2 
+have some relationship e.g. 1+2 = const  or 1/2 
+= const , but very poor fits for other values of 
+(1,2). This information is lost if you just report 
+the values and error bars separately. 
+Sometimes you can change parameters to the 
+appr o
+priate well -determined combination. 
+How to report the correlation of determined paramet
+er values?  
+10</text>
+        </slide>
+        <slide>
+          <slideno>3</slideno>
+          <text>For many experiments dependent on 
+same parameters  
+Each measurement repeated many times with same knob 
+settings xm, then new knob settings; all the knob settings xm(k) are 
+stored in matrix X. The mean measurements are stored in a K -
+vector &lt;y&gt;. If multiple observables { yi, yj, ...} measured in each 
+experiment K&gt;M.  
+ p(&lt;y &gt;|X,)=(2)K/2|C|-1/2 exp( -  2) 
+where  
+ 2 =  (&lt;yk&gt;-fk(xm(k),))Dkz(&lt;yz&gt;-fz(xm(z),))  
+and D = inv (C)       
+Often the covariance is ignored, then Dkz = kzk-2 
+4</text>
+        </slide>
+        <slide>
+          <slideno>11</slideno>
+          <text>A note about Hessian of 2 
+The rigorous formula for the second derivative of 
+2 includes two terms. 
+Almost everyone neglects the second term, which 
+is s
+ensitive to noise in the data, and just uses:  
+    Hlz ~  Jkl Jkz k-2      where Jkl = fk/l 
+Note now the Hessian doesnt really depend on the 
+experimental data (at all for a linear model), 
+you can compute it before the experiment beginssee page 413 in Beers text. His X is the 
+Jacobian of the model w.r.t. to the . 
+12</text>
+        </slide>
+        <slide>
+          <slideno>2</slideno>
+          <text>Start by assuming large number N of 
+repeats of each experiment  
+By central -limit- theor em of statistics, for case 
+with a single observable, a true model, accurate 
+parameters and knob values, and many repeats:  
+ p(&lt;y&gt;|x, ) = (2 )-1/2 -1 exp (-2/2) 
+Where 2 = ({&lt;y&gt; - f(x,)}/)2  
+And estimated variance of the mean  = (&lt;y2&gt;-&lt;y&gt;2)/N2 
+For multiple quantities measured on same expe
+riment need to consider Covariance of data: 
+Covij = { (yi,n - &lt;yi&gt;)(yj,n - &lt;yj&gt;)} / N  
+So we estimate Covariance of the Means (for larg
+e N):  Cij ~ Covij / N 
+ 
+3</text>
+        </slide>
+        <slide>
+          <slideno>1</slideno>
+          <text>Definitions  
+Were comparing experimental Data points yi 
+mesured  with knob settings x to model 
+predictions fi(x,)  where  are the parameters 
+in the model we cannot control 
+2</text>
+        </slide>
+        <slide>
+          <slideno>5</slideno>
+          <text>Origin of chi2inv  
+The probability that a measured data set (with many repeats) would 
+yield a 2&lt;Q is given by:  
+Prob (2&lt;Q) =  dK&lt;y&gt; p(&lt;y &gt;|X,) H(Q-2) 
+where H is the Heaviside function. 
+This K- dimensional multiple integral can be simplified by change of 
+variables to the single integral shown in the Matlab  chi2inv 
+documentation.  
+If M parameters have been adjusted to fit the data it is customary to use K -M degrees of freedom when computing chi2inv (this assumes 
+each parameter adjustment really improved the fit). If no adjustment to fit the data (a pure prediction), M=0.  
+If you select a desired Probability, that choice fixes the value of Q (aka 
+chi2max).  
+6</text>
+        </slide>
+        <slide>
+          <slideno>8</slideno>
+          <text>Simplifying from confidence regions to 
+separate confidence intervals  
+Often people like to report parameter values 
+one at a tim
+e, e.g. if one  is a heat capacity: 
+ Cp(533 K) = 89.3  0.2 J/ mol-K   
+Usually people report the best-fit value as the 
+nomin
+al value and then need to give an 
+estimate of the confidence interval. One way to compute the upper limit of the interval:  
+        
+v,max = max v 
+  s.t. 2()&lt;Q 
+9</text>
+        </slide>
+        <slide>
+          <slideno>10</slideno>
+          <text>Correlation of parameters, page 2  
+Usually what is done is to compute the Hessian of 2() 
+evaluated at bestfit . Diagonalize this matrix; its 
+eigenvectors are the principal components of a hyper-
+ellipsoid that (exactly for a linear model, approximately 
+otherwise) describes the region of indifference.  
+If an eigenvector has large components from more than o
+ne parameter, that means the parameters are 
+correlated. The covariance of the parameters is given 
+by Cjk =  VjiVki/i 
+This can be computed by SVD, often this is more 
+nume
+rically stable, see Numerical Recipes.  
+11</text>
+        </slide>
+      </slides>
+      <videos/>
+    </lecture>
+    <lecture>
+      <lecture_title>Boundary value problems 1 (PDF)</lecture_title>
+      <lecture_pdf_url>https://ocw.mit.edu/courses/10-34-numerical-methods-applied-to-chemical-engineering-fall-2015/resources/mit10_34f15_lec20/</lecture_pdf_url>
+      <lectureno>20</lectureno>
+      <slides>
+        <slide>
+          <slideno>2</slideno>
+          <text>MIT OpenCourseWare
+https://ocw.mit.edu
+10.34 Numerical Methods Applied to Chemical Engineering
+Fall 2015
+For information about citing these materials or our Terms of Use, visit: https://ocw.mit.edu/terms.</text>
+        </slide>
+        <slide>
+          <slideno>1</slideno>
+          <text>Another  version of this flux conservation principle is the Danckwerts  boundar y conditions for flow 
+into a packed -bed catalytic reactor:  
+F*y_feed = - rAD*dy/dz + F*y 
+Where y is the mass fraction of the species of interest, ris the density, A is the cross -sectional area, and 
+F is the mass flow rate (which is conserved across the boundary).  Note that this is approximating that 
+the mas s fraction gradient is very small outside the reactor so we omitted the - rA D*dy_feed/dz term  
+from the left hand side , this approximation may not be very accurate . 
+For an example of using the Danckwerts condition:  if y is a product  absent from the feed , y_feed might 
+be zero but y inside the reactor will be non -zero, so  
+0 = -rA D dy/dz + F *y 
+The analogous flux -balance equations for a multi -dimensional problem, where the boundary is 
+perpendicular to the  z-axis:  
+Vz*y_feed = - D*dy/dz + Vz*y 
+Note that the velocity  in the z direction Vz usually jumps as the flow enters the reactor because the 
+packed bed reduces the free cross -sectional area, and because the temperature increase changes the 
+density.  
+ 
+2</text>
+        </slide>
+        <slide>
+          <slideno>0</slideno>
+          <text>Boundary Condition notes  
+-Bill Green, Fall 2015  
+Typically we need to specify boundary conditions at every boundary in our system, both the edges of the 
+domain, and also where there is a discontinuity in the equations (e.g. you might you different equations 
+inside a catalyst particle than outside it. The discontinuity might just be in parameters (e.g. the rate coefficient and the diffusivity change between inside and outside the catalyst). There are also typically 
+discontinuities when there are phase changes, e.g. at the surface of a puddle.  
+Sometimes there are symmetries that tell you a boundary condition, e.g. dC/dr =0 at r=0 if a problem 
+has cylindrical or spherical symmetry (otherwise there would be a cusp in C(r), which is usually unphysical) . Sometimes one knows the value of a variable on a boundary so Dirichlet boundary 
+condition. Often one assumes that nothing changes after a certain point, i.e. all the derivatives are zero, so von Neumann boundary conditions may be used.  
+When the state variable is a conserved scalar, then one knows that the flux of that scalar approaching the boundary must equal the flux leaving from the other side. T his gives conditions like this for 
+concentrations C  (where D is the diffusivity and v is the flow into the bou ndary).  
+-D dC/dx + v C     on left side of boundary     =     - D dC/dx + v  C    on right hand si de 
+Where the velocity v is positive if it is moving in the +x direction.  
+If the flow velocity is zero or negligible in one of the regions, one of the terms will disappear. Note that dC/dx can jump at an interface, e.g. if D is modeled as being discontinuous across the boundary, usually dC/dx will be discontinuous to match, so that the flux will be continuous.   
+A good example is the energy balance between a solid  impermeable particle and the fluid that 
+surrounds it. The heat transfer coefficient between the bulk of the fluid and the particle is known for many geometries and flow conditions (recall Nusselt numbers), so the energy flux coming in to the particle is:  
+ h(T
+bulk-Tsurface ) 
+This must equal the energy flux at the surface of the particle, looking from the inside. For example for a 
+spherical particle its magnitude is:  
+k*dT/dr  
+Where is the thermal conductivity of the solid. Putting these together, the boundary  condition is  
+h(T bulk-Tsurface ) + Kappa*dT/dr = 0  
+Note that often you would know (e.g. could easily measure) T bulk but would need to compute the 
+unknown T surface  and dT/dr.  
+1</text>
+        </slide>
+      </slides>
+      <videos/>
+    </lecture>
+    <lecture>
+      <lecture_title>Linear algebra 5 (PDF - 1.6MB)</lecture_title>
+      <lecture_pdf_url>https://ocw.mit.edu/courses/10-34-numerical-methods-applied-to-chemical-engineering-fall-2015/resources/mit10_34f15_lec05/</lecture_pdf_url>
+      <lectureno>5</lectureno>
+      <slides>
+        <slide>
+          <slideno>1</slideno>
+          <text>Permutation
+Reordering through use of permutation matrices:
+Consider the operation of swapping two rows.  This 
+can be done through matrix multiplication.
+For example:
+2systems of linear equations 29
+0 5 10 15 20 25 30 35 400
+5
+10
+15
+20
+25
+30
+35
+40
+nz = 505
+0 5 10 15 20 25 30 35 400
+5
+10
+15
+20
+25
+30
+35
+40
+nz = 7800 5 10 15 20 25 30 35 400
+5
+10
+15
+20
+25
+30
+35
+40
+nz = 4900 5 10 15 20 25 30 35 400
+5
+10
+15
+20
+25
+30
+35
+40
+nz = 479original symrcm symamd505 non-zero
+780 non-zero 490 non-zero 479 non-zeroFigure 2.6: The non-zero entires in the
+4242sparse matrix, fidapm05 , from
+Matrix Market are depicted. Below that,
+the non-zero entries in the upper trian-
+gular portion resulting from Gaussian
+elimination are shown for cases in which
+no reordering is performed, the Reverse
+Cuthill-McKee reordering is performed
+and the Approximate Minimum Degree
+reordering is performed. The latter re-
+sults in the least ll-in.
+IfPis the identity matrix, P=I, then PAC
+i=AC
+i. That is, the columns
+ofAare left unchanged by P. Suppose instead that Phas the form
+P=0
+BBBBBB@010. . .0
+100. . .0001. . .0
+...............
+000. . .11
+CCCCCCA.
+It is identical to the identity matrix with the exception of swapping
+rows 1and 2. What is PA? Multiplying any column of AbyPwill
+replicate the column, but with rows 1and2swapped. As this swap is
+the same for each of the columns,
+PA =0
+BBBBBB@A
+R
+2
+AR
+1
+AR
+3
+...
+AR
+N1
+CCCCCCA.
+The product PA swaps the rows of A.
+The matrix P, which is lled with zeros except for a single entry
+of unity in each row and column, is called a permutation matrix.
+Multiplication from the left has the effect of swapping the rows. For
+example, the elementary row operation on a matrix A:(row) i$(row) j,swap row 1 and 2
+identity
+0
+@010
+1000011
+A0@x
+1
+x2
+x31
+A=0
+@x2
+x1
+x31
+A</text>
+        </slide>
+        <slide>
+          <slideno>22</slideno>
+          <text>Eigenvectors
+Example:
+Find the eigenvalues and linearly ind. eigenvectors:
+24001
+A=0
+@000
+0001
+A</text>
+        </slide>
+        <slide>
+          <slideno>8</slideno>
+          <text>9Recap
+Notice that after many cycles, the probability distribution 
+becomes constant.
+In fact there are special distributions such that:
+What are examples of those distributions?
+They are called eigenvectors of the matrix:(AA)P=P
+B=AAAAAA ...AP 0
+Pi</text>
+        </slide>
+        <slide>
+          <slideno>27</slideno>
+          <text>MIT OpenCourseWare
+https://ocw.mit.edu
+10.34 Numerical Methods Applied to Chemical Engineering
+Fall 2015
+For information about citing these materials or our Terms of Use, visit: https://ocw.mit.edu/terms .</text>
+        </slide>
+        <slide>
+          <slideno>4</slideno>
+          <text>Recap
+Gaussian elimination
+Sparse matrices
+Permutation and reordering
+5</text>
+        </slide>
+        <slide>
+          <slideno>20</slideno>
+          <text>Eigenvectors
+Example:
+Find the eigenvalues and linearly ind. eigenvectors:
+Find the eigenvalues and linearly ind. eigenvectors:
+22A=00
+00
+A=0100</text>
+        </slide>
+        <slide>
+          <slideno>0</slideno>
+          <text>10.34: Numerical Methods 
+Applied to 
+Chemical Engineering
+Lecture 5: 
+Eigenvalues and eigenvectors
+1</text>
+        </slide>
+      </slides>
+      <videos/>
+    </lecture>
+    <lecture>
+      <lecture_title>Systems of nonlinear equations 2 (PDF - 1.5MB)</lecture_title>
+      <lecture_pdf_url>https://ocw.mit.edu/courses/10-34-numerical-methods-applied-to-chemical-engineering-fall-2015/resources/mit10_34f15_lec08/</lecture_pdf_url>
+      <lectureno>8</lectureno>
+      <slides>
+        <slide>
+          <slideno>28</slideno>
+          <text>MIT OpenCourseWare
+https://ocw.mit.edu
+10.34 Numerical Methods Applied to Chemical Engineering
+Fall 2015
+For information about citing these materials or our Terms of Use, visit: https://ocw.mit.edu/terms .</text>
+        </slide>
+        <slide>
+          <slideno>12</slideno>
+          <text>Quasi-NR Methods
+ 
+	 There are modications to the Newton-Raphson method 
+that can correct some of these issues. 
+	 The penalty for modifying the Newton-Raphson 
+method is a reduction in the convergence rate.
+ 
+	 Newton-Raphson is based on a linear approximation of the function near the root. Quasi-NR methods reduce the accuracy of that approximation. 
+	 Finite-difference approximation of Jacobian 
+	 Broydens method for approximating inverse Jacobian 
+	 Damped NR-methods 
+14</text>
+        </slide>
+        <slide>
+          <slideno>4</slideno>
+          <text>Recap
+ 
+f(x) 
+x 
+xi+1 = xi -f(xi) 
+f0(xi)
+ 
+6</text>
+        </slide>
+        <slide>
+          <slideno>17</slideno>
+          <text>FD Approximation of Jacobian 
+ Example: 
+ A MATLAB function that does the function evaluation: 
+function f = my_func( x ) 
+f = %Whatever this function does; 
+ A MATLAB function that calculates the Jacobian 
+function J = my_jacobian( x ) 
+J = zeros( length( x ), length( x ) ); 
+for i = 1:length(x) 
+dx = x; eps = 10^-8 * x(i); dx( i ) = dx( i ) + eps; J( :, i ) = ( my_func( dx ) - my_func( x ) ) / eps; 
+end; 
+19</text>
+        </slide>
+        <slide>
+          <slideno>2</slideno>
+          <text>Recap
+ 
+f(x) 
+x 
+xi+1 = xi -f(xi) 
+f0(xi)
+ 
+3</text>
+        </slide>
+        <slide>
+          <slideno>1</slideno>
+          <text>Recap
+ 
+ Solutions of nonlinear equations
+ 
+ The Newton-Raphson method 
+2</text>
+        </slide>
+        <slide>
+          <slideno>24</slideno>
+          <text>Damped NR Method
+ 
+ In many dimensions: 
+xi+1 = xi -J(xi)-1f(xi) 
+ where  = arg min kf 
+xi -J(xi) 1f(xi) 
+kp0&lt;1 
+ Finding the damping factor is as hard as nding the root. 
+ An approximate solution is to use a line search: 
+ 1. Let  =1, this gives the full Newton-Raphson step
+ 
+ 2. Check whether kf(xi+1)kp &lt; kf(xi)kp 
+ 3. If yes, accept xi+1 as the new iterate 
+ 4. If no, replace  with /2 and repeat from 2 
+26</text>
+        </slide>
+        <slide>
+          <slideno>3</slideno>
+          <text>Recap
+ 
+	 Derive the Babylonian method for nding square roots. 
+Apply the Newton-Raphson method to nd the roots of the equation: 
+f(x)=x 2 -S
+ 
+4</text>
+        </slide>
+        <slide>
+          <slideno>11</slideno>
+          <text>Failures of NR Method
+ 
+	 Other problems with Newton-Raphson method: 
+	 The Jacobian may not be easy to calculate analytically.
+ 
+	 What are possible sources for f(x)? 
+	 Inverting the Jacobian many times may be too costly 
+computationally. 
+ What are some options for mitigating this? 
+	 The Newton-Raphson step may not converge to the nearest root to the initial guess. 
+	 overshoot/basins of attraction 
+	 There are modications to the Newton-Raphson method that can correct some of these issues. 
+13</text>
+        </slide>
+        <slide>
+          <slideno>27</slideno>
+          <text>Damped NR Method
+ 
+	 The damped Newton-Raphson method converges 
+quadratically near a root because it behaves like the Newton-Raphson method. 
+	 The damped Newton-Raphson method is globally convergent too (NR is locally convergent), but it converges to either: 
+	 roots 
+	 local minima/maxima 
+	 Other modications to Newton-Raphson are possible which can be used to improve reliability. We will see these in our study of optimization. 
+29</text>
+        </slide>
+        <slide>
+          <slideno>7</slideno>
+          <text>Convergence of NR Method
+ 
+ The Newton-Raphson method converges quadratically.
+ 
+ Proof for the 1-D case: 
+f(xi)  
+ |xi+1 x | =    x
+i  x   
+f0(xi) 
+ Recall that: 
+1 f00(2f(x )=0=f (xi)+f0(xi)(x  -xi)+ xi)(x  -xi) + ...
+ 2 
+ Therefore: 1 f00(xi) )2|xi+1 -x | =    (x
+i -x     + O((x
+i -x )3)2 f0(xi) 
+ When the Newton-Raphson method converges: 
+| 1 f00(x)  
+lim |xi+1 -x     
+i!1 |xi -x|2 2 f0(x)  
+ This holds as long as f0(x ) 69 =0</text>
+        </slide>
+        <slide>
+          <slideno>13</slideno>
+          <text>interpolation of data  
+results of simulations
+  Calculation of Jacobian
+ 
+Analytical calculation of the Jacobian requires an
+analytical formula for f(x).
+For functions of a few dimensions, analytical
+calculations are easy.
+For functions of many dimensions, this can be tediousat best and error prone at worst.
+Often, an analytical formulas for f(x)or a few
+dimensions of f(x)are not available.
+These function values might come from:
+
+ 
+
+ 
+Is there an alternative way to compute the Jacobian?
+15 interpolation of data
+results of simulations</text>
+        </slide>
+        <slide>
+          <slideno>14</slideno>
+          <text>68 10 .34:numerical methods, lecture notes
+Atx=1, the derivative has the value exp(1) . Table ??depicts the
+absolute error in the nite difference approximation computed
+with 16digit accuracy as a functions of e. With perfect arithmetic,
+the absolute error in the approximation should be exp(1) e/2.
+However, beyond e= 10-8, truncation errors in the difference
+exp(1 + e)-exp(1) cause the absolute error in the approximation
+to grow.
+Table 3.2: The absolute error in a nite
+difference approximation to the deriva-
+tive of exp( x) at x= 1.3.4.2 Broydens method
+Evaluating the Jacobian and then solving for the Newton-Raphson
+step can be quite costly for large systems of nonlinear equations. A
+number of alternatives have been developed to aid in faster calculation
+of these quantities at the expense of accuracy. Broydens method draws
+inspiration from the secant method which can be used to nd roots
+of a single nonlinear function via a NR-like algorithmic map without
+direct evaluation of the functions derivative. With this approach the
+derivative at iterate kis approximated using nite differences between
+iterates kand k-1:
+f0(x(k))f(x(k))-f(x(k-1))
+x(k)-x(k-1). (3.42)
+Because f(x(k))is already computed for NR at each iterate, no additional
+function evaluations are required to approximate the derivative. The
+accuracy of this approximation can be quite low, however. The secant
+method algorithmic map is the same as that for the Newton-Raphson
+method but with application of this approximation:
+x(k+1)=x(k)-f(x(k))(x(k)-x(k-1))
+f(x(k))-f(x(k-1)). (3.43)
+For a vector valued function, f(x)2RN, a Taylor expansion at
+x(k-1)2RNabout the point x(k)suggests that the Jacobian approxi-
+mately satises the equation,
+J(x(k))(x(k)-x(k-1))f(x(k))-f(x(k-1)). ( 3.44)
+This nite difference approximation gives just Nequations for the N2
+components of Jacobian and is underdetermined. This can be under-stood geometrically by considering the case where
+N=2. Then, the
+Jacobian describes the orientation of planes tangent to f(x(k)). It takes
+three points to uniquely describe the orientation of a plane. Evaluation
+off(x(k))andf(x(k-1)is insufcient for this task. As a consequence,
+there are numerous matrices that satisfy the underdetermined equation
+forJ(x(k)).f0(x)=f(x+) f(x)+O()          Finite Differences
+ 
+ Finite difference approximation of derivatives: 
+f(x +) f(x)f0(x)= +O() 
+ Accuracy depends on  , but in a non-intuitive way 
+x
+ Example: f(x)=e 
+1+ -e1ef0(1) = e 1   
+e | f 0(1) -exp(1) | 
+10-3 1.36  10-3
+ 
+10-4 1.36  10-4
+ truncation error in 10-5 1.36  10-5
+ 
+approximation of derivative
+ 10-6 1.36  10-6
+ 
+10-7 1.36  10-7
+ 
+10-8 5.10  10-8
+ truncation error in 10-9 2.28  10-7
+ 
+10-10 2.89  10-6
+ calculation of difference 16</text>
+        </slide>
+        <slide>
+          <slideno>9</slideno>
+          <text>Failures of NR Method 
+ Example: 
+ Local minima/maxima, asymptotes: 
+ Overshoot: 
+f(x)  |x|s 
+diverge
+ 
+0 &lt;s&lt;1/2 
+converge 
+1/2 &lt;s&lt;1 
+11</text>
+        </slide>
+        <slide>
+          <slideno>0</slideno>
+          <text>10.34: Numerical Methods
+ 
+Applied to
+ 
+Chemical Engineering
+ 
+Lecture 8:
+ 
+Quasi-Newton-Raphson methods
+ 
+1</text>
+        </slide>
+      </slides>
+      <videos/>
+    </lecture>
+    <lecture>
+      <lecture_title>Linear algebra 4 (PDF - 1.1MB)</lecture_title>
+      <lecture_pdf_url>https://ocw.mit.edu/courses/10-34-numerical-methods-applied-to-chemical-engineering-fall-2015/resources/mit10_34f15_lec04/</lecture_pdf_url>
+      <lectureno>4</lectureno>
+      <slides>
+        <slide>
+          <slideno>2</slideno>
+          <text>Recap
+What is the column space of a matrix?
+What is the null space of a matrix?
+What are the conditions for existence and uniqueness of 
+solutions to linear equations?
+3</text>
+        </slide>
+        <slide>
+          <slideno>24</slideno>
+          <text>Reordering through use of permutation matrices:
+Permutation matrices are sparse too.  How are they 
+stored?
+Example reversing the order of 10 rows:
+Permutation matrices are sparse too.  How are they used?
+P = [ 10 9 8 7 6 5 4 3 2 1 ]
+A = A( P, : )
+2812345678910
+10 987654321old position
+new positionPermutation</text>
+        </slide>
+        <slide>
+          <slideno>0</slideno>
+          <text>10.34: Numerical Methods
+Applied to 
+Chemical Engineering 
+Lecture 4: 
+Gaussian elimination
+Sparse matrices
+1</text>
+        </slide>
+        <slide>
+          <slideno>21</slideno>
+          <text>Permutation
+Reordering through use of permutation matrices:
+Consider the operation of swapping two rows.  This 
+can be done through matrix multiplication.
+For example:
+24systems of linear equations 29
+0 5 10 15 20 25 30 35 400
+5
+10
+15
+20
+25
+30
+35
+40
+nz = 505
+0 5 10 15 20 25 30 35 400
+5
+10
+15
+20
+25
+30
+35
+40
+nz = 7800 5 10 15 20 25 30 35 400
+5
+10
+15
+20
+25
+30
+35
+40
+nz = 4900 5 10 15 20 25 30 35 400
+5
+10
+15
+20
+25
+30
+35
+40
+nz = 479original symrcm symamd505 non-zero
+780 non-zero 490 non-zero 479 non-zeroFigure 2.6: The non-zero entires in the
+4242sparse matrix, fidapm05 , from
+Matrix Market are depicted. Below that,
+the non-zero entries in the upper trian-
+gular portion resulting from Gaussian
+elimination are shown for cases in which
+no reordering is performed, the Reverse
+Cuthill-McKee reordering is performed
+and the Approximate Minimum Degree
+reordering is performed. The latter re-
+sults in the least ll-in.
+IfPis the identity matrix, P=I, then PAC
+i=AC
+i. That is, the columns
+ofAare left unchanged by P. Suppose instead that Phas the form
+P=0
+BBBBBB@010. . .0
+100. . .0001. . .0
+...............
+000. . .11
+CCCCCCA.
+It is identical to the identity matrix with the exception of swapping
+rows 1and 2. What is PA? Multiplying any column of AbyPwill
+replicate the column, but with rows 1and2swapped. As this swap is
+the same for each of the columns,
+PA =0
+BBBBBB@A
+R
+2
+AR
+1
+AR
+3
+...
+AR
+N1
+CCCCCCA.
+The product PA swaps the rows of A.
+The matrix P, which is lled with zeros except for a single entry
+of unity in each row and column, is called a permutation matrix.
+Multiplication from the left has the effect of swapping the rows. For
+example, the elementary row operation on a matrix A:(row) i$(row) j,swap row 1 and 2
+identity
+0
+@010
+1000011
+A0@x1
+x2
+x31
+A=0@x2
+x1
+x31
+A</text>
+        </slide>
+        <slide>
+          <slideno>3</slideno>
+          <text>Easy to Solve Linear Equations
+Diagonal:
+Go row by row
+Triangular:
+Back substitution
+Goal: transform complicated equations into easy ones
+40
+@100
+0200031
+A0@x1
+x2
+x31
+A=0@1231
+A
+0
+@1110210031
+A0@x1
+x2
+x31
+A=0@3331
+A0
+@x1
+x2
+x31
+A=0
+@1111
+A</text>
+        </slide>
+        <slide>
+          <slideno>20</slideno>
+          <text>Fill-in
+Fill-in is reduced by reordering:
+23systems of linear equations 29
+0 5 10 15 20 25 30 35 400
+5
+10
+15
+20
+25
+30
+35
+40
+nz = 505
+0 5 10 15 20 25 30 35 400
+5
+10
+15
+20
+25
+30
+35
+40
+nz = 7800 5 10 15 20 25 30 35 400
+5
+10
+15
+20
+25
+30
+35
+40
+nz = 4900 5 10 15 20 25 30 35 400
+5
+10
+15
+20
+25
+30
+35
+40
+nz = 479original symrcm symamd505 non-zero
+780 non-zero 490 non-zero 479 non-zeroFigure 2.6: The non-zero entires in the
+4242sparse matrix, fidapm05 , from
+Matrix Market are depicted. Below that,
+the non-zero entries in the upper trian-
+gular portion resulting from Gaussian
+elimination are shown for cases in which
+no reordering is performed, the Reverse
+Cuthill-McKee reordering is performed
+and the Approximate Minimum Degree
+reordering is performed. The latter re-
+sults in the least ll-in.
+IfPis the identity matrix, P=I, then PAC
+i=AC
+i. That is, the columns
+ofAare left unchanged by P. Suppose instead that Phas the form
+P=0
+BBBBBB@010. . .0
+100. . .0001. . .0
+...............
+000. . .11
+CCCCCCA.
+It is identical to the identity matrix with the exception of swapping
+rows 1and 2. What is PA? Multiplying any column of AbyPwill
+replicate the column, but with rows 1and2swapped. As this swap is
+the same for each of the columns,
+PA =0
+BBBBBB@A
+R
+2
+AR
+1
+AR
+3
+...
+AR
+N1
+CCCCCCA.
+The product PA swaps the rows of A.
+The matrix P, which is lled with zeros except for a single entry
+of unity in each row and column, is called a permutation matrix.
+Multiplication from the left has the effect of swapping the rows. For
+example, the elementary row operation on a matrix A:(row) i$(row) j,</text>
+        </slide>
+        <slide>
+          <slideno>11</slideno>
+          <text>Sparse Matrices
+Example: a nite volume model of diffusion
+12@c
+@t=Dr2c</text>
+        </slide>
+        <slide>
+          <slideno>25</slideno>
+          <text>0 5 10 15 20 25 300
+5
+10
+15
+20
+25
+30
+nz = 1580 5 10 15 20 25 300
+5
+10
+15
+20
+25
+30
+nz = 158Reordering through use of permutation matrices:
+Example:
+P = symrcm(A);
+figure; spy(A); 
+figure; spy( A( P, P ) ) 
+29Permutation</text>
+        </slide>
+        <slide>
+          <slideno>26</slideno>
+          <text>MIT OpenCourseWare
+https://ocw.mit.edu
+10.34 Numerical Methods Applied to Chemical Engineering
+Fall 2015
+For information about citing these materials or our Terms of Use, visit: https://ocw.mit.edu/terms .</text>
+        </slide>
+        <slide>
+          <slideno>1</slideno>
+          <text>Recap
+Vector spaces
+Linear dependence
+Existence and uniqueness of solutions
+Four fundamental subspaces
+2</text>
+        </slide>
+      </slides>
+      <videos/>
+    </lecture>
+    <lecture>
+      <lecture_title>Monte Carlo methods 2 (PDF)</lecture_title>
+      <lecture_pdf_url>https://ocw.mit.edu/courses/10-34-numerical-methods-applied-to-chemical-engineering-fall-2015/resources/mit10_34f15_lec33/</lecture_pdf_url>
+      <lectureno>33</lectureno>
+      <slides>
+        <slide>
+          <slideno>5</slideno>
+          <text>MIT OpenCourseWare
+https://ocw.mit.edu
+10.34 Numerical Methods Applied to Chemical Engineering
+Fall 2015
+For information about citing these materials or our Terms of Use, visit: https://ocw.mit.edu/terms.</text>
+        </slide>
+        <slide>
+          <slideno>2</slideno>
+          <text>qi qiNN  
+where Nqi is defined as: 
+(|)( |)qi qj i j qi j i
+ji jiNN P q q N P q
+  q 
+ 
+(|)( |)qj i j qi j i
+jiNP q q NP q q
+  
+ 
+We know the values of the conditional probabilities from our acceptance criteria: 
+() /( ) () ( )(|)1ij i
+ijwq wq i fwq wqPq qotherwise 
+j 
+ 
+Looking at one of the other states in our system, q k: 
+ 
+(|) ( |)qi qk i k qi k iNN P q qN P q q   
+ If w(q
+i) &lt; w (qk): 
+()
+()i
+qi qk qi
+kwqNN Nwq  
+ If w(q
+k) &lt; w (qi): 
+()
+()k
+qi qk qi
+iwqNNNwq  
+ When  N
+qi = 0, both of the preceding equations tell us: 
+ 
+constant() ( )qk qi
+kiNN
+wq wq  
+ If we choose this constant to be N, the tota l number of molecules, then weve reached the 
+goal of the Metropolis MC method (as stated approximately half-way down the second 
+page): 
+ 
+()qi
+iNwqN  
+ Notice, there is nothing special about states i, j, or k in this derivation.  Thus, the 
+preceding equation is true for all states i in our system.  Another way to think about the 
+above expression is that there will be no change in the system ( N
+qi = 0) once the 
+ 3</text>
+        </slide>
+        <slide>
+          <slideno>1</slideno>
+          <text>2) Propose a new state q[proposed] = q[k] + q 
+ 
+3) Compute w(q[proposed])  and w(q[k]), 
+If w(q[proposed]) &gt; w (q[k]) then 
+q[k+1] = q[proposed] 
+else if w(q[proposed]) / w(q[k]) &gt; rand 
+q[k+1] = q[proposed] 
+else 
+q[k+1] = q[k] 
+ 
+4) Sum = Sum + B(q[k+1]) 
+ 
+5) &lt;B&gt; = Sum/(No. of random points) 
+ Note: rand is a uniformly-distributed random  number from 0 (zero) to 1 (one).   
+ The goal of the Metropolis MC method is to generate N states of q
+ such that: 
+lim ( )iq
+iNNwqN for all i 
+ where the variable N
+qi represents the number of molecules in state qi and the weighting 
+function w is known.  Two questions that may be on your mind are: 
+ How do we know that the Metropolis MC  method actually ach ieves this goal? 
+ Why do we use the partic ular acceptance criteria: w(q[proposed]) / w(q[k]) &gt; rand? 
+ 
+Discussion:  
+ 
+Suppose we have a state in our system, q i.  If we wanted to calculate the total number of 
+qi states in our system, N qi, we would need to worry about two terms: 
+ (1) The state q
+i moved from another state in our system q ji: 
+ 
+(|)qj i j
+jiNP q q
+  
+ 
+(2) Our system tried to move out of state q i but remained there: 
+ 
+1( |qi j i
+jiNP q
+)q  
+   
+ The P(q
+i|qj) expressions are conditional probabilitie s, which represent the probability of 
+moving to state q i given that we were in state q j.  Summing these two expressions gives 
+us the total number of states  in our system in state q i: 
+ 
+ 2</text>
+        </slide>
+        <slide>
+          <slideno>3</slideno>
+          <text>relative populations of all states (N qi / N) reach their expected probability ( wqi)  a MC 
+way of saying system has reached equilibrium. 
+ Returning to our expressions for  N
+qi: 
+()
+()i
+qi qk qi
+kwqNN Nwq  
+ 
+()
+()k
+qi qk qi
+iwqNNNwq  
+ Imagine N
+qi &gt; 0: 
+()0()i
+qk qi
+kwqNNwq 
+ 
+()
+()i
+qk qi
+kwqNNwq  
+ 
+()
+()qi i
+kqN wq
+wq N
+k 
+ 
+This expression tells us there are mo re m
+olecules in state q k (and less molecules in state 
+qi) than what we would expect based on th e ratio of their pr obabilities.  Thus, N qi is 
+increasing to counter that e ffect.  Similarly, imagine N qi &lt; 0: 
+ 
+()0()i
+qk qi
+kwqNNwq 
+ 
+()
+()i
+qk qi
+kwqNNwq  
+ 
+()
+()qi i
+kqN wq
+wq N
+k 
+ 
+In this case, there are more  molecules  in the s
+tate q i (and less in state q k) than we would 
+expect based on their pr obabilities.  However, Nqi is decreasing to counter this.  Thus, 
+the system is always trying to reach equilibrium.  
+Simple Example with Metropolis MC Method:  
+ 
+Suppose we want to solve following integral using Metropolis Monte Carlo Method:  
+ 4</text>
+        </slide>
+        <slide>
+          <slideno>4</slideno>
+          <text>1
+2
+0(1.5 )xxd x  
+Here, we have f (x) = x2 and weighting function w(x) = 1.5  x . We have to generate 
+random sequence of x  values in (0,1) and accept them on the basis of weighting function. 
+Let us start with x0 = 0.25 (arbitrarily c hosen). Generate N random numbers between 0 
+and 1. For each number x_new, compute (w (x_new)). If ( w(x_new)) &gt; =( w(x(i-1))), then 
+x(i) = x_new, else ( w(x_new)/  w(x(i-1)))&gt;rand, then x(i) = x_new, else x (i) = x(i-1). Sum 
+(f(x(i))) for all i and divide by N to get the va lue of the integral.
+ 5</text>
+        </slide>
+        <slide>
+          <slideno>0</slideno>
+          <text>10.34 Fall 2015 
+Metropolis Monte Carlo Algorithm 
+ 
+The Metropolis Monte Carlo method is  very useful for calculating many-
+dime
+nsional integration. For e.g. in statis tical mechanics in or der to calculate the 
+prosperities of the system you are required to use ensemble average. The ensemble 
+average of any property B is given by: 
+ 
+
+,,
+,NN NN NN
+N
+NN NN
+NBrpwrpd r d p
+B
+wrpd r d p
+
+ 
+ 
+where wN is the statistical weighting function, rN is configuration space (a 3N 
+dimensional vector of spatial coordinates), pN is momentum space (a 3N dimensional 
+vector of momentum). Both the numerators as  well as the denominator have 6N integrals 
+to be computed. We can use Monte Carlo me thod to evaluate these integrals. This 
+consists of simply summing over random poi nts sampled according to the probability 
+distribution. Rewriting the above expression  in terms of the probability distribution P(rN, 
+pN): 
+ 
+ ,,NN NN NNB Br p Pr p d rd p  
+ 
+where P is defined as: 
+ 
+
+,
+,
+,NN
+N NN
+NN NN
+Nwrp
+Pr p
+wrpd r d p
+ 
+ 
+If we had a simple explicit form for P we could try to sample directly from that 
+distribution, and then evaluate B at these poi nts. However, since th e denominator of the 
+expression for P is so difficult to evaluate, instead we would like to use a method that 
+works directly with w. Now let us see how to implement the Metropolis Monte Carlo Method to solve the integral using the we ighting function. Followi ng is the algorithm: 
+ 
+Metropolis Monte Carlo Method:
+ 
+ 
+We have to generate a random sequence q[1], q[2], q[3] of states to solve for the integral. 
+We start with some value for q  and then make moves to different states. For the kth 
+iteration (move), you are at a state q[k] and have a scalar Sum defined, where this scalar 
+holds the value of the integral we are attempting to solve:  
+1) Randomly generate a step q
+ (e.g. using Ndim random numbers from rand 
+function, q(n) =*(2*rand-1), for n=1..Ndim, where  is the maximum 
+allowable displacement in any of the coordinates in successive iterations) 
+ 
+ 1</text>
+        </slide>
+      </slides>
+      <videos/>
+    </lecture>
+    <lecture>
+      <lecture_title>Optimization 3 (PDF - 1.7MB)</lecture_title>
+      <lecture_pdf_url>https://ocw.mit.edu/courses/10-34-numerical-methods-applied-to-chemical-engineering-fall-2015/resources/mit10_34f15_lec12/</lecture_pdf_url>
+      <lectureno>12</lectureno>
+      <slides>
+        <slide>
+          <slideno>11</slideno>
+          <text>Equality Constraints
+ 
+ Method of Lagrange multipliers 
+ minimize: f(x) 
+ subject to: c(x)=0 
+ What are the necessary conditions for dening a minimum? 
+ Taylor expansion of f(x) in some direction with kdk2  1: 
+f(x +d)= f(x)+g (x)T d +... 
+ either g(x)=0 or g(x) ? d at the minimum 
+ For equality constraints, c(x)=0 , and c(x +d)=0 
+ Taylor expansion of c(x) in the same direction: 
+c(x +d)= c(x)+rc (x) d +...)d ?r c(x) 
+ Therefore, g(x)krc(x))g(x)-Arc(x)=0 12</text>
+        </slide>
+        <slide>
+          <slideno>26</slideno>
+          <text>MIT OpenCourseWare
+httpV://ocw.mit.edu
+10.34 Numerical Methods Applied to Chemical Engineering
+Fall 2015
+For information about citing these materials or our Terms of Use, visit: httpV://ocw.mit.edu/terms .</text>
+        </slide>
+        <slide>
+          <slideno>1</slideno>
+          <text>Recap
+ 
+ Unconstrained optimization
+ 
+ Newton-Raphson methods
+ 
+ Trust-region methods 
+2</text>
+        </slide>
+        <slide>
+          <slideno>7</slideno>
+          <text>Constrained Optimization 
+ Problems of the sort: 
+min f(x) arg min f(x) 
+x2D x2D 
+f(x1,x2) 
+D 
+x1 x2 
+8</text>
+        </slide>
+        <slide>
+          <slideno>8</slideno>
+          <text>Constrained Optimization 
+ Examples: 
+T minimize: E(v, x)= 1 mkv k2
+2 +mg x
+ 2  subject to: kx -x0k2 = L 
+9</text>
+        </slide>
+        <slide>
+          <slideno>13</slideno>
+          <text>Equality Constraints
+ 
+ Method of Lagrange multipliers 
+ minimize: f(x) 
+ subject to: c(x)=0 
+ A solution to the equality constrained problem satises:
+ 
+ g(x)-Arc(x)  
+=0 c(x) 
+ For the unknowns: x, A 
+ A is called a Lagrange multiplier 
+ The solution set (x, A) is a critical point of: 
+L(x, A)= f(x)-Ac(x) 
+ called the Lagrangian 14</text>
+        </slide>
+        <slide>
+          <slideno>4</slideno>
+          <text>Constrained Optimization
+ 
+	 Problems of the sort: 
+min f(x) arg min f(x) 
+x2D	 x2D 
+	 The feasible set can be described in terms of two types 
+of constraints: 
+	 Equality constraints: D ={x :c(x)=0 } 
+	 Inequality constraints: D = {x : h(x) &gt; 0} 
+5</text>
+        </slide>
+        <slide>
+          <slideno>6</slideno>
+          <text>Constrained Optimization 
+ Problems of the sort: 
+7 
+f(x1,x2)min
+x2Df(x)arg min
+x2Df(x)</text>
+        </slide>
+        <slide>
+          <slideno>5</slideno>
+          <text>Constrained Optimization 
+ Problems of the sort: 
+min f(x) arg min f(x) 
+x2D x2D 
+f(x1,x2) 
+D 
+x1 x2 
+6</text>
+        </slide>
+        <slide>
+          <slideno>17</slideno>
+          <text>Equality Constraints
+Method of Lagrange multipliers
+minimize:  
+subject to: 
+What are the necessary conditions for dening a minimum?
+Taylor expansion of          in some direction with                 :
+either                  or
+If                          and                   ,
+then          at the minimum belongs to what set of vectors?
+Therefore: 19f(x)
+f(x)
+f(x+d)= f(x)+g (x)Td+...kdk21
+g(x)=0 g(x)?dc(x)=0
+g(x)?d Jc(x)d=0
+g(x)</text>
+        </slide>
+        <slide>
+          <slideno>9</slideno>
+          <text>Constrained Optimization 
+ Examples: 
+T
+ minimize: f(x)=c x 
+ subject to: Ax -b  0 
+x &gt; 0 
+10</text>
+        </slide>
+        <slide>
+          <slideno>16</slideno>
+          <text>Equality Constraints
+Method of Lagrange multipliers
+minimize:  
+subject to: 
+What are the necessary conditions for dening a minimum?
+Taylor expansion of          in some direction with                 :
+either                  or                   at the minimum
+If                          and                   ,
+then          at the minimum belongs to what set of vectors?
+Therefore: 18f(x)
+f(x)
+f(x+d)= f(x)+g (x)Td+...kdk21
+g(x)=0 g(x)?dc(x)=0
+g(x)?d Jc(x)d=0
+g(x)</text>
+        </slide>
+        <slide>
+          <slideno>0</slideno>
+          <text>10.34: Numerical Methods
+ 
+Applied to
+ 
+Chemical Engineering
+ 
+Lecture 12:
+ 
+Constrained Optimization
+ 
+Equality constraints and Lagrange multipliers
+ 
+1</text>
+        </slide>
+        <slide>
+          <slideno>24</slideno>
+          <text>Inequality Constraints
+f = @(x) x(1)^2 + 10 * x(2)^2;
+grad_f = @(x) [ 2*x(1); 20*x(2) ];H_f = @(x) [ 2 0; 0 20 ]; 
+h = @(x) 1 - ( x(1) - 2 )^2 - ( x(2) - 2 )^2;
+grad_h = @(x) [ -2*(x(1)-2); -2*(x(2)-2) ];H_h = @(x) [ -2 0; 0 -2 ];
+phi = @(x,mu) f( x ) - mu * log( h( x ) );
+grad_phi = @(x,mu) grad_f( x ) - mu / h( x ) * grad_h( x );H_phi = @(x,mu) H_f( x ) - mu / h( x ) * H_h( x ) + mu / h( x )^2 * grad_h( x ) * grad_h( x )';
+x = [ 2; 2 ];for mu = [ 1:-0.01:0.01 ]
+        while ( norm( grad_phi( x, mu ) ) &gt; 1e-8 )                x = x - H_phi( x, mu ) \ grad_phi( x, mu );                   end;    end;
+28</text>
+        </slide>
+        <slide>
+          <slideno>15</slideno>
+          <text>Equality Constraints
+ 
+ Method of Lagrange multipliers 
+ minimize: f(x) 
+ subject to: c(x)=0 
+ What are the necessary conditions for dening a minimum? 
+ Taylor expansion of f(x) in some direction with kdk2  1: 
+f(x +d)= f(x)+g (x)T d +... 
+ either g(x)=0 or g(x) ? d at the minimum 
+ For equality constraints, c(x)=0 , and c(x +d)=0 
+ Taylor expansion of c(x) in the same direction: 
+c(x +d)=c(x)+J c(x)d +...
+ 
+ The direction belongs to what set of vectors? 17</text>
+        </slide>
+        <slide>
+          <slideno>10</slideno>
+          <text>Constrained Optimization 
+	 In general: 
+	 minimize: f(x) 
+	 subject to: c(x)=0 
+h(x) &gt; 0 
+	 One approach is to approximate the problem as 
+unconstrained  penalty methods: 
+	 minimize: N	!
+1 2F (x)=f(x)+ 2 kc(x)k22 +X
+H(-hi(x))hi(x)
+i=1	 as  ! 0 
+	 with H(x&gt; 0) = 1,H(x&lt;0) = 0 
+11</text>
+        </slide>
+        <slide>
+          <slideno>2</slideno>
+          <text>Midterm Exam
+ 
+ Expect 3 problems 
+ Comprehensive exam: 
+ Linear algebra 
+ Systems of nonlinear equations 
+ Optimization 
+3</text>
+        </slide>
+        <slide>
+          <slideno>3</slideno>
+          <text>Constrained Optimization 
+ Problems of the sort: 
+min f(x) arg min f(x) 
+x2D x2D 
+f(x1,x2) 
+D 
+x1 x2 
+4</text>
+        </slide>
+      </slides>
+      <videos/>
+    </lecture>
+    <lecture>
+      <lecture_title>Models vs. data 2 (PDF)</lecture_title>
+      <lecture_pdf_url>https://ocw.mit.edu/courses/10-34-numerical-methods-applied-to-chemical-engineering-fall-2015/resources/mit10_34f15_lec29/</lecture_pdf_url>
+      <lectureno>29</lectureno>
+      <slides>
+        <slide>
+          <slideno>1</slideno>
+          <text>receipes in C. If we look up in table, for v = 2 and confidence limit of 0.90, 2 = 
+4.61. Using chi2inv(): 
+chi2inv(p,v)= chi2inv(.90,2) = 4.61. 
+ Now for the desired confidence limit, acceptable region is the region inside the 
+contour corresponding to2 2 2 2
+best best  = +  4.61 = + . 
+ 
+Now, confidence limits on the parameters can be taken as the constant chi)square 
+boundaries. So the parameters  1, 2 are adjusted to get the plot of2 contours. The 
+corresponding limits on the parameters can be taken from the plot by projecting the 
+boundary for (2
+best 4.61+ ) on to the two axes  1, 2. One obtains slightly different 
+uncertainty ranges if one only considers one parameter at a time instead of pairwise, see 
+Fig. 15.6.4 in Numerical Recipes. In cases where the two parameters are strongly 
+correlated yielding a long thin ellipse, it is better to define the model in terms of linear 
+Tcombinations of the parameters new = V, the uncertainties in new will be less 
+correlated. If you want to report  
+ 
+A practical advantage of this approach is that the uncertainties in the parameters do not 
+shrink drastically if 2
+bestis large, agreeing with our intuitive feeling that if the model is 
+suspect, the parameter values obtained should not be well determined. The philosophical 
+interpretation for this case might be that there is some discrepancy between the models 
+and data that is not due to the parameter values. It is the sensitivity of 2with respect to 
+the parameters which suggests these uncertainty bounds. However, the philosophical 
+interpretation for the case 2
+bestclose to 0 is pretty clear. In this case, the interpretation is 
+that 90% of the probability density of ()data
+1 2 P Y  ,  lies within the ellipse, allowing the 
+parameters to take any value. 
+ 
+ 
+Approach #2 : 
+ 
+In this approach, we start by assuming the data and model are true. The approach is based 
+on the consistency test of the model with the data. We accept the parameter values if they 
+keep 2small enough to assume that the model with the parameters is consistent with the 
+data.  
+ 
+ Choose the confidence limit where we would say model and data become 
+inconsistent, say p = 0.99, i.e. we reject any parameter set  which gives a 
+()2so large that if  and the model were true it is very unlikely that we would 
+have observed the experimental data actually observed.  
+ Determine the 2value corresponding to the chosen confidence limit. The 
+2value satisfying this condition can be calculated using chi2inv() function in 
+MATLAB. As 2has  degrees of freedom, we have: 
+2</text>
+        </slide>
+        <slide>
+          <slideno>0</slideno>
+          <text>Summary of Confidence Limits on Estimated Model Parameters 
+ 
+After computing the best)fit values from 2minimization, the model is 
+quantitatively tested for consistency with the data. If the model is consistent with the 
+data, next step is to compute the confidence limits on the model parameters. The 
+following section summarizes the methods which ignores the prior information in finding 
+confidence limits as discussed in the class. 
+  
+There are two reasonable approaches to find the confidence limits on the parameters 
+estimated by minimization of2: 
+ 
+ 
+Approach #1 : 
+ 
+This is given in the book Numerical Recipes in C section 15.6.
+ 
+Refe
+r to page 697 of the book, there is a prescription to calculate the confidence interval 
+in more than one parameter using the confidence ellipses (or ellipsoids in higher 
+dimensions) which can be plotted using the 2
+approx contours in v)dimensions, where v are 
+the number of fitted parameters whose joint confidence interval is to be determined.  
+ 
+The expression for quadratic approximation for 2 is given by: 
+ 
+( ) ( )T 2 2
+best best approx = best +  )  H  )   
+ 
+where  
+ 
+dataN
+i i
+mn 2
+i=1 i m nY Y1H =2   
+   
+ 
+Note: Above expression for hessian is given on page 682 in Numerical Recipe in C with 
+an explanation for dropping the second order derivatives.  
+ 
+Let us consider the case in which we have 2 parameters of interests, so v = 2 and the 
+2
+approx contours are ellipse in 2)D plane of two parameters  1 and  2. Steps to be followed 
+to find the confidence limits: 
+ 
+ Choose a desired confidence limit, let us say p = 0.90. 
+ Determine 2value using the confidence limit. Since 2follows a chi)square 
+distribution with v degrees of freedom, it can be easily calculated using chi2inv() 
+function in MATLAB or looking up in table given on page 697 of Numerical 
+1</text>
+        </slide>
+        <slide>
+          <slideno>3</slideno>
+          <text>MIT OpenCourseWare
+https://ocw.mit.edu
+10.34 Numerical Methods Applied to Chemical Engineering
+Fall 2015
+For information about citing these materials or our Terms of Use, visit: https://ocw.mit.edu/terms.</text>
+        </slide>
+        <slide>
+          <slideno>2</slideno>
+          <text>2
+required = chi2inv(P, ) = chi2inv(0.99, )  
+where  = N distinctdata  ) N adjustedparameters. Ndistinctdata  is the number of Y n(xi)s, it does 
+not included repeated measurements of the same observable at same knob settings. 
+Often  is a large number. 
+ The region 2
+approx &lt; 2
+required  is acceptable and used to determine the limits on the 
+two parameters. The two parameters are varied and the contour plot of 2
+approx is 
+constructed for different values of the parameters.  
+ 
+Again the confidence limits on the parameters are taken by the constant chi)square 
+(2
+required ) boundaries by projecting it on to the axes of the corresponding parameter for 
+which the limits are desired. 
+ 
+If the best fit is not very good, this second approach gives us tighter confidence intervals 
+on the parameter values as compared with Approach 1. It would be wrong to interpret this 
+as a case that parameters have been determined to high precision. The more likely correct 
+philosophical interpretation for this is that the model looks fishy (when fit is not good) 
+and the fishy model can match the data only if the parameters are in this narrow range. 
+3</text>
+        </slide>
+      </slides>
+      <videos/>
+    </lecture>
+    <lecture>
+      <lecture_title>Linear algebra 1 (PDF - 1.7MB)</lecture_title>
+      <lecture_pdf_url>https://ocw.mit.edu/courses/10-34-numerical-methods-applied-to-chemical-engineering-fall-2015/resources/mit10_34f15_lec01/</lecture_pdf_url>
+      <lectureno>1</lectureno>
+      <slides>
+        <slide>
+          <slideno>23</slideno>
+          <text>25Scalars, Vectors and Matrices
+Vectors:
+What mathematical object is the equivalent of an 
+innite dimensional vector?</text>
+        </slide>
+        <slide>
+          <slideno>28</slideno>
+          <text>Matrices:
+Matrix-matrix product:
+Vectors are matrices too:
+ 
+ 
+What is:          ?
+30Scalars, Vectors and Matrices
+x2RNx2RN1
+yT2RNyT2R1N
+yTx</text>
+        </slide>
+        <slide>
+          <slideno>30</slideno>
+          <text>MIT OpenCourseWare
+https://ocw.mit.edu
+10.34 Numerical Methods Applied to Chemical Engineering
+Fall 2015
+For information about citing these materials or our Terms of Use, visit: https://ocw.mit.edu/terms .</text>
+        </slide>
+        <slide>
+          <slideno>5</slideno>
+          <text>Numerical Methods
+Motivation:
+Most real engineering problems do not have an exact 
+solution.  Even if there is an exact solution.  Can it be evaluated exactly?
+Application of computational problem solving methodologies can lead to transformative (as opposed to incremental) engineering solutions.
+Algorithms to solve problems numerically should be:
+clear
+concise
+able to solve the problem robustly
+use realistic amount of resources
+execute in a realistic amount of time 7</text>
+        </slide>
+        <slide>
+          <slideno>25</slideno>
+          <text>Matrices:
+Ordered sets of numbers:
+27Scalars, Vectors and Matrices
+A=0
+BBB
+@ . . . .
+AN1AN2... A NMA
+Set of all real matrices with N rows and M columns, RNM
+Addition: C=A+B)Cij=Aij+Bij
+Multiplication by scalar: C=cA)Cij=cA ij
+Transpose: C=AT)Cij=Aji
+Trace (square matrices): N
+TrA=X
+Aii
+i=1A11 A12 ... A 1M
+A21 A22 ... A 2M
+.... ....1
+CCC</text>
+        </slide>
+        <slide>
+          <slideno>19</slideno>
+          <text>Scalars, Vectors and Matrices
+Vectors:
+-norm:
+Examples of norms: 
+ 
+ 
+ 
+ 
+Families of vectors with the same 
+norm: 1-norm , 2-norm, -norm
+21x=(p
+2/2,p
+2/2)
+kxk1=p
+2
+kxk2=1
+kxk1=p
+2/2kxk1= max
+i|xi|
+x1x2
+kxk1kxk2kxk1kxkp= NX
+i=1|xi|p!1/p</text>
+        </slide>
+        <slide>
+          <slideno>17</slideno>
+          <text>Vectors:
+Ordered sets of numbers:
+Set of all real vectors with dimension N, 
+Addition:
+Multiplication by scalar:
+Transpose:
+19Scalars, Vectors and Matrices
+(x1,x2,...xN)
+RN
+0
+BBB@x1
+x2
+...
+xN1
+CCCA+0
+BBB@y1
+y2
+...
+yN1
+CCCA=0
+BBB@x1+y1
+x2+y2
+...
+xN+yN1
+CCCA
+c(x1x2... xN)=( cx1cx2... c x N)
+x=0
+BBB@x1
+x2
+...
+xN1
+CCCA xT=(x1x2... x N)</text>
+        </slide>
+        <slide>
+          <slideno>2</slideno>
+          <text>Organization
+Resources:
+  website  details on grading, homework 
+policy, and homework submission guidelines.
+Textbook  Beers, Numerical Methods for Chemical
+Engineering.  Notes will be placed on .
+Additional text references are given in the syllabus.
+MATLAB tutorials
+Peers  you are encouraged to discuss the course
+material, programming, 
+and the homework with your
+colleagues.  Be aware of the homework policy outlined
+in the syllabus, however.
+TAs and instructors  we are here to help you, and
+available for meetings, usually within 24 hours.
+4Course 
+Course website</text>
+        </slide>
+        <slide>
+          <slideno>4</slideno>
+          <text>Organization
+Linear algebra
+Solutions of nonlinear equations
+Optimization
+Initial value problems
+Differential-algebraic equations
+Boundary value problems
+Partial differential equations
+Probability theory
+Monte Carlo methods
+Stochastic chemical kinetics
+6</text>
+        </slide>
+        <slide>
+          <slideno>9</slideno>
+          <text>Numerical  Error
+Truncation (cont.):
+Example: 2x10-4 + 1x10-13 = ? with 8 digit accuracy
+Estimate the absolute error in this calculation.
+Estimate the relative error in this calculation.
+Quantifying and minimizing numerical error is a key aspect 
+developing numerical algorithms.  
+Even simple calculations introduce numerical errors.
+Those errors can compound and magnify.  We will see how shortly.
+11</text>
+        </slide>
+        <slide>
+          <slideno>20</slideno>
+          <text>Scalars, Vectors and Matrices
+Vectors:
+-norm:
+Examples of norms: 
+ 
+ 
+ 
+ 
+Families of vectors with the same 
+norm: 1-norm, 2-norm , -normx=(p
+2/2,p
+2/2)
+kxk1=p
+2
+kxk2=1
+kxk1=p
+2/2kxk1= max
+i|xi|
+kxk1kxk2kxk1kxkp= NX
+i=1|xi|p!1/p</text>
+        </slide>
+        <slide>
+          <slideno>3</slideno>
+          <text>Organization
+When to stop:
+The homework for the course should require 9 hours 
+per week on average  perhaps a little more early on if you are not procient with MATLAB.  
+Sometimes you may nd a homework problem is consuming an inordinate amount of time even after you have asked for help.
+If this happens, just turn in what you have completed with a note indicating that you know your solution is incomplete, details about what you think went wrong, and what you think a correct solution would look like.
+5</text>
+        </slide>
+        <slide>
+          <slideno>27</slideno>
+          <text>Matrices:
+Matrix-matrix product:
+Vectors are matrices too:
+xRN N1 2 x2R
+y T2RNyT2R1N
+What is:   y  T   x   ?
+M
+C=AB)Cij=X
+AikBkj
+k=1
+29Scalars, Vectors and Matrices</text>
+        </slide>
+        <slide>
+          <slideno>1</slideno>
+          <text>Organization
+Purposes of the course:
+Ensure that you are aware of the wide range of easily 
+accessible numerical methods that will be useful in your thesis research, at practice school, and in your career.
+Make you condent in your ability to look up and apply additional methods when you need them.
+Help you become familiar with MATLAB, other convenient numerical software, and with simple programming/debugging techniques.
+Give you an understanding of how common numerical algorithms work and why they sometimes produce unexpected results.
+3</text>
+        </slide>
+        <slide>
+          <slideno>24</slideno>
+          <text>26Scalars, Vectors and Matrices
+Vectors:
+What mathematical object is the equivalent of an
+innite dimensional vector?</text>
+        </slide>
+        <slide>
+          <slideno>0</slideno>
+          <text>10.34: Numerical Methods 
+Applied to 
+Chemical Engineering
+Lecture 1: 
+Organization, 
+Numerical Error, 
+Basics of Linear Algebra
+1</text>
+        </slide>
+      </slides>
+      <videos/>
+    </lecture>
+    <lecture>
+      <lecture_title>ODE-IVP and numerical integration 4 (PDF - 1.1MB)</lecture_title>
+      <lecture_pdf_url>https://ocw.mit.edu/courses/10-34-numerical-methods-applied-to-chemical-engineering-fall-2015/resources/mit10_34f15_lec16/</lecture_pdf_url>
+      <lectureno>16</lectureno>
+      <slides>
+        <slide>
+          <slideno>14</slideno>
+          <text>15Consider the denite integral:
+If the discontinuities in        are known, then ODE-IVP solvers can be 
+used in the domain between the discontinuities too! 
+If the discontinuities in        are unknown, then Monte-Carlo methods (discussed later are a better option).
+This approach is efcient with adaptive time stepping methods because an appropriate spacing between points can be chosen when        changes more or less rapidly with
+For multi-dimensional integrals, this approach is not as straightforward, however.Numerical Integration
+Ztf
+f()d
+t0
+f(t)f(t)
+f(t)t</text>
+        </slide>
+        <slide>
+          <slideno>17</slideno>
+          <text>18Multidimensional integration:
+Of the sort:
+For any number of dimensions larger than 3, this is best handled 
+with Monte Carlo methods
+For dimensions less than 3, this integration can be done with polynomial interpolation.
+Fit the function to a polynomial of a prescribed degree within small regions of the domain of integration.
+Sum integrals over the polynomial ts in each t region.
+This fails with higher dimensions because the number of t regions grows exponentially with dimension.
+Example:Numerical Integration
+ZyU
+LZzU
+f(y, z )dydz
+zL y</text>
+        </slide>
+        <slide>
+          <slideno>13</slideno>
+          <text>14Consider the denite integral:
+We can dene a variable:
+which, if         is continuous, satises the differential equation:
+Thus, a denite n be 
+determined using methods for ODE-IVPs to compute:Numerical Integration
+Ztf
+f()d
+t0
+x(t)= f()d
+t0Zt
+dx(t)= f(),x(t0)=0dt
+ integral of a known, continuous function caf(t)
+x(tf)</text>
+        </slide>
+        <slide>
+          <slideno>1</slideno>
+          <text>2Quiz 1 Results
+Mean: 70.6
+Standard deviation: 11.0
+05101520
+&lt;50 50-59 60-69 70-79 80-89 &gt;89</text>
+        </slide>
+        <slide>
+          <slideno>20</slideno>
+          <text>MIT OpenCourseWare
+httpV://ocw.mit.edu
+10.34 Numerical Methods Applied to Chemical Engineering
+Fall 2015
+For information about citing these materials or our Terms of Use, visit: httpV://ocw.mit.edu/terms .</text>
+        </slide>
+        <slide>
+          <slideno>2</slideno>
+          <text>Recap
+Implicit methods for ODE-IVPs
+3</text>
+        </slide>
+        <slide>
+          <slideno>18</slideno>
+          <text>19Improper integrals:
+Of the sort:
+Can be split into two domains of integrationNumerical Integration
+Z1
+f()d
+t0
+Z1 Z1
+f( )d=Ztf
+ f()d+ f()d
+t t t
+0 0 f
+The rst integral can be handled with ODE-IVP methods or 
+polynomial interpolation
+The second must be handled separately through either: 
+transformation onto a nite domain
+or substitution of an asymptotic approximation
+This same idea applies to integrable singularities as well.</text>
+        </slide>
+      </slides>
+      <videos/>
+    </lecture>
+    <lecture>
+      <lecture_title>ODE-IVP and numerical integration 1 (PDF - 1.7MB)</lecture_title>
+      <lecture_pdf_url>https://ocw.mit.edu/courses/10-34-numerical-methods-applied-to-chemical-engineering-fall-2015/resources/mit10_34f15_lec13/</lecture_pdf_url>
+      <lectureno>13</lectureno>
+      <slides>
+        <slide>
+          <slideno>17</slideno>
+          <text>Explicit Methods for IVPs
+Explicit Euler method:
+f = @(x,t) % Does something
+t0 = 0;
+tf = 1;dt = 0.01;
+x0 = % Initial conditiont = [t0:dt:tf]
+x = zeros( length( x0 ), length( t ) );
+x( :, 1 ) = x0;for i = 2:length( t )
+x( :, i ) = x( :, i - 1 ) + dt * f( x( :, i - 1 ), t( i - 1 ) );
+end;
+18</text>
+        </slide>
+        <slide>
+          <slideno>4</slideno>
+          <text>Usually, the solution we are interested in is values of the state 
+vector within some time domain:
+The initial value problem can be rewritten as:
+By convention, the initial time,     , is often set to be zero.
+Since                , can be an arbitrary nonlinear function of the state vector, a closed form, analytical solution rarely exists.
+Numerically, we will solve this equation by nding the state vector at a nite number of points within the time domain.
+We will need to characterize the accuracy and stability of solution methods to these problems.Dynamic Models
+d
+dtx(t)= f(x(t),t)8t2[t0,tf]t2[t0,tf]
+x(t0)=x0
+t2[t0f]
+d
+dtx(t)= f(x(t),t)8t2[t0,tf]
+5</text>
+        </slide>
+        <slide>
+          <slideno>1</slideno>
+          <text>Recap
+Constrained optimization
+Method of Lagrange multipliers
+Interior point methods
+2</text>
+        </slide>
+        <slide>
+          <slideno>21</slideno>
+          <text>MIT OpenCourseWare
+httpV://ocw.mit.edu
+10.34 Numerical Methods Applied to Chemical Engineering
+Fall 2015
+For information about citing these materials or our Terms of Use, visit: httpV://ocw.mit.edu/terms .</text>
+        </slide>
+        <slide>
+          <slideno>3</slideno>
+          <text>Most physical processes are dynamic in nature.  This means 
+that  rst principles models describing those processes can be depicted as differential equations:
+       is often called the state vector and is the set of dynamic variables for which we want to solve. 
+     is time
+       is a time dependent input that we specify
+    is a vector of time independent parameters.
+    is the initial value of the state vector atDynamic Models
+d
+dtx(t)= f(x(t),u(t),t;)
+x(t0)=x0
+x(t)
+x0t
+u(t)
+
+4</text>
+        </slide>
+        <slide>
+          <slideno>5</slideno>
+          <text>Higher order differential equations can always be rewritten as 
+systems of rst order equations 
+Consider the force balance on a driven mass-spring-damper: 
+Let: 
+Then:
+And:Dynamic Models
+md2x
+dt2+bdx
+dt+kx=f(t)
+v=dx
+dt
+dx
+dt=v
+mdv
+dt+bv+kx=f(t)
+6</text>
+        </slide>
+      </slides>
+      <videos/>
+    </lecture>
+    <lecture>
+      <lecture_title>Linear algebra 2 (PDF - 1.4MB)</lecture_title>
+      <lecture_pdf_url>https://ocw.mit.edu/courses/10-34-numerical-methods-applied-to-chemical-engineering-fall-2015/resources/mit10_34f15_lec02/</lecture_pdf_url>
+      <lectureno>2</lectureno>
+      <slides>
+        <slide>
+          <slideno>16</slideno>
+          <text>Scalars,Vectors and Matrices
+ 
+ Matrices: 
+ What are matrices? 
+ They represent transformations! 
+ Examples: y = Ax 
+ 
+11
+ 
+11
+ 18</text>
+        </slide>
+        <slide>
+          <slideno>24</slideno>
+          <text>Scalars,Vectors and Matrices 
+	 Matrices: 
+	 Using matrix norms to estimate numerical error in 
+solution of linear equations:
+ 
+	 Suppose: Ax = b , has exact solution: x = A 1b
+ 
+	 If there is a small error in b , denoted 6b, how
+ 
+much of an error is produced in x ?
+ 
+x + 6x = A-1(b + 6b) 
+6x	 = A-16b 	 Absolute error in x : 
+k5xkp = kA 15bkp kA 1kpk5bkp 
+	 Relative error in x : 
+kbkp = kAxk p kAkpkxkp )kxkp &gt;kbkp 
+kAk pk5xkp	 k5bkpkAkpkA-1kpkxkp	 kbkp 27</text>
+        </slide>
+        <slide>
+          <slideno>18</slideno>
+          <text>Scalars,Vectors and Matrices
+ 
+ Matrices: 
+ Matrices are maps between vector spaces! 
+A 2 RNM 
+RM RN y = Ax 
+x 2 RM y 2 RN 
+21</text>
+        </slide>
+        <slide>
+          <slideno>13</slideno>
+          <text>Scalars,Vectors and Matrices
+ 
+ Matrices: 
+ What are matrices? 
+ They represent transformations! 
+ Examples: y = Ax 
+0  x1/2  
+y = x2/2 
+
+1 
+2
+ 
+0
+1 2 
+15</text>
+        </slide>
+        <slide>
+          <slideno>30</slideno>
+          <text>MIT OpenCourseWare
+httpV://ocw.mit.edu
+10.34 Numerical Methods Applied to Chemical Engineering
+Fall 2015
+For information about citing these materials or our Terms of Use, visit: httpV://ocw.mit.edu/terms .</text>
+        </slide>
+        <slide>
+          <slideno>9</slideno>
+          <text>20 10 .34:numerical methods, lecture notes
+for any i=1 ,2 ,... N. The quantity Mij(A)is called a minor of Aand
+is the determinant of an (N-1)(N-1)matrix that is identical to A
+but with the ith row and the jth column removed:
+.
+This minor is then calculated using the same recursive formula (equa-
+tion 2.28). The recursion is closed by the identity det(c)=c, where
+c2Cis a scalar.
+Consider the 2 2 matrix:
+A=A11A12
+A21A22!
+.
+The determinant is det(A)= A11M11-A12M12, where with the ele-
+ments in red excluded:
+M11= detA11A12
+A21A22!
+= det( A22)=A22,
+and
+M12= detA11A12
+A21A22!
+= det( A21)=A21.
+Therefore, det(A)= A11A22-A12A21.
+The determinant has a simple geometric interpretation that can be
+drawn from the previous example. As shown in gure 2.5, the rows
+of the 22matrix A, correspond to vectors along the vertices of a
+rhombus. The area within the rhombus is equal to the absolute value of
+the determinant. A matrix whose rows are parallel vectors will create
+a rhombus with no area. The determinant is zero and that matrix is
+singular. A similar picture can be imagined for high dimensions. The
+edges of an N-dimensional parallelepiped are given by all possible
+sums of the rows of a square matrix A2CNN. The N-dimensional
+volume within this parallelepiped corresponds to the absolute value
+of the determinant. If the rows are such that the parallelepiped is less
+than N-dimensional, it contains no volume and the determinant is zero.
+Such a matrix is singular.
+Some properties of the determinant include:     
+ 
+ 
+ Scalars,Vectors and Matrices
+ 
+ Matrices: 
+T Dyadic product: A = xy = x  y ) Aij = xiyj 
+ Determinant (square matrices only): 
+N
+det(A)= X
+(-1)i+j Aij Mij (A) 
+j=1Mij(A)=
+... ... A11 A12 A1(j-1) A1(j+1) A1N 
+A21 A22 ... A2(j-1) A2(j+1) ... A2N 
+. . . . . . .
+ . . . . .. .
+. . .. . . .
+ 
+det
+ ... ...
+ A(i-1)1 A(j-1)2 A(i-1)(j-1) A(i-1)(j+1) A(i-1)N 
+... ... A(i+1)1 A(j+1)2 A(i+1)(j-1) A(i+1)(j+1) A(i+1)N 
+. . . . .
+ . .. . . . . . .
+. . .. . . .
+ 1 
+CCCCCCCCCCCCA
+'
+A
+N1 AN2 ... AN(j-1) AN(j+1) ... ANN
+ 
+det(c )= c  
+11 0
+BBBBBBBBBBBB@</text>
+        </slide>
+        <slide>
+          <slideno>0</slideno>
+          <text>10.34: Numerical Methods
+ 
+Applied to
+ 
+Chemical Engineering
+ 
+Lecture 2:
+ 
+More basics of linear algebra
+ 
+Matrix norms,
+ 
+Condition number
+ 
+1</text>
+        </slide>
+        <slide>
+          <slideno>2</slideno>
+          <text>Recap
+ 
+	 Vectors: 
+	 What mathematical object is the equivalent of an 
+innite dimensional vector? 
+3</text>
+        </slide>
+        <slide>
+          <slideno>10</slideno>
+          <text>Scalars,Vectors and Matrices
+ 
+ Matrices: 
+ Determinant (square matrices only): 
+N
+det(A)= X
+(-1)i+j Aij Mij (A) 
+ Properties: j=1 
+ If any row or column is zeros, det(A)=0 
+ If any row or column is multiplied by a 
+det(A
+c 
+1
+A
+c 2
+aA
+c 3
+... A
+cN
+)= adet(A)
+ 
+ Swapping any row or column changes the sign 
+ det(AT )=d e t ( A) 
+det(AB)= d e t (A)d e t ( B)  
+12</text>
+        </slide>
+        <slide>
+          <slideno>21</slideno>
+          <text>Scalars,Vectors and Matrices
+ 
+ Matrices: 
+ Matrices are maps between vector spaces! 
+RN y = Ax 
+y 2 RN A 2 RNN 
+RN x 2 RN 
+ When a square matrix is not invertible, the map is not 
+unique or does not cover the entire vector space.
+ 
+24</text>
+        </slide>
+        <slide>
+          <slideno>8</slideno>
+          <text>Scalars,Vectors and Matrices
+ 
+ Matrices: 
+ Examples: A, B 2 RNN x 2 RN 
+ How many operations to compute:
+ 
+ Ax 
+ AB 
+ ABx 
+ What is x T ABx ? 
+ What is ABxxT ? 
+9</text>
+        </slide>
+        <slide>
+          <slideno>14</slideno>
+          <text>Scalars,Vectors and Matrices 
+ Matrices: 
+ What are matrices? 
+ They represent transformations! 
+ Examples: y = Ax 
+ x2 y = x1 
+ 
+01
+ 
+10
+ 16</text>
+        </slide>
+        <slide>
+          <slideno>1</slideno>
+          <text>Recap
+ 
+ Numerical error 
+ Scalars, vectors, and matrices
+ 
+ Operations 
+ Properties 
+2</text>
+        </slide>
+        <slide>
+          <slideno>22</slideno>
+          <text>Scalars,Vectors and Matrices 
+	 Matrices: 
+	 Matrix norms: A 2 RNM x 2 RM 
+	 Induced norms: kAxk pkAk p = max 
+x kxkp 
+	 Among all vectors in RM, what is the maximum 
+stretch caused by the matrix A ? 
+kyk2 Example: let y = Ax then kAk 2 = max 
+x	 kxk2 
+M
+ What is kAk1 ? kAk1 = max X 
+|Aij |
+i j=1 
+N
+ What is kAk 1 ? kAk1 = max X 
+|Aij |
+j i=1 25</text>
+        </slide>
+        <slide>
+          <slideno>15</slideno>
+          <text>Scalars,Vectors and Matrices 
+ Matrices: 
+ What are matrices? 
+ They represent transformations! 
+ cos x1 -sin x2  
+y = sin x1 + cos x2 
+  Examples: y = Ax 
+ cos  -sin  
+sin  cos  17</text>
+        </slide>
+        <slide>
+          <slideno>6</slideno>
+          <text>Scalars,Vectors and Matrices 
+ Matrices: 
+ Matrix-matrix product: 
+ Vectors are matrices too: 
+x 2 RN x 2 RN1 
+ T T y 2 RN y 2 R1N 
+T What is: y x ? 
+M
+C = AB ) Cij = X 
+AikBkj 
+k=1 
+7</text>
+        </slide>
+        <slide>
+          <slideno>23</slideno>
+          <text>Scalars,Vectors and Matrices 
+ Matrices: 
+ Matrix norms: A 2 RNM x 2 RM B 2 RMO 
+ What is kAk 2 ? kAk 2 = r 
+max Aj (AT A)
+j 
+ Aj (AT A) is an eigenvalue of AT A 
+ Properties: 
+ kAk p &gt; 0, kAk p =0 only if A =0
+ 
+kcAkp = |c|kAk p  
+kAxk p kAkpkxkp  
+kABk p kAkpkBk p  
+ kA + Bkp kAkp + kBk p 
+26</text>
+        </slide>
+        <slide>
+          <slideno>7</slideno>
+          <text>A scalar:   
+yTx=yxScalars,Vectors and Matrices 
+Matrices:
+Matrix-matrix product:
+Vectors are matrices too:
+x 2 RN x 2 RN1 
+T T 2 R1Ny 2 RN y  
+TWhat is: y x ?
+8</text>
+        </slide>
+        <slide>
+          <slideno>5</slideno>
+          <text>Scalars,Vectors and Matrices 
+ Matrices: M
+ Matrix-vector product: y = Ax ) yi = X 
+Aij xj 
+j=1 
+M
+ Matrix-matrix product: C = AB ) Cij = X 
+AikBkj 
+k=1 Properties: 
+ no commutation in general: AB =6BA 
+ association: A(BC)=( AB)C 
+ distribution: A(B +C)=AB +AC 
+ transposition: (AB)T = BT AT 
+ inversion: A-1A = AA-1 = I if 6 det(A) =0 
+6</text>
+        </slide>
+        <slide>
+          <slideno>3</slideno>
+          <text>Scalars,Vectors and Matrices
+ 
+	 Vectors: 
+	 What mathematical object is the equivalent of an 
+innite dimensional vector? 
+	 A function. 
+4</text>
+        </slide>
+        <slide>
+          <slideno>20</slideno>
+          <text>Scalars,Vectors and Matrices
+ 
+ Matrices: 
+ Matrices are maps between vector spaces! 
+RN y = Ax 
+y 2 RN A 2 RNN 
+RN x 2 RN 
+ When a square matrix is not invertible, the map is not 
+unique or does not cover the entire vector space.
+ 
+23</text>
+        </slide>
+        <slide>
+          <slideno>4</slideno>
+          <text>Scalars,Vectors and Matrices
+ 
+ Matrices: 0 A11 A12 ... A1M 1
+ Ordered sets of numbers: A21 A22 ... A2MB CB CA =
+ B
+ C
+A
+ ... .
+ .
+ . ... ...
+@
+
+ 
+AN1 AN2 ... ANM 
+ Set of all real matrices with N rows and M columns, RNM
+ 
+ Addition: C = A + B ) Cij = Aij + Bij 
+ Multiplication by scalar: C = cA ) Cij = cA ij 
+ Transpose: C = AT ) Cij = Aji 
+ Trace (square matrices): N
+Tr A = X 
+Aii 
+i=1 
+5</text>
+        </slide>
+      </slides>
+      <videos/>
+    </lecture>
+    <lecture>
+      <lecture_title>Differential-algebraic equations 3 (PDF - 1.4MB)</lecture_title>
+      <lecture_pdf_url>https://ocw.mit.edu/courses/10-34-numerical-methods-applied-to-chemical-engineering-fall-2015/resources/mit10_34f15_lec19/</lecture_pdf_url>
+      <lectureno>19</lectureno>
+      <slides>
+        <slide>
+          <slideno>1</slideno>
+          <text>Recap
+ 
+ Differential algebraic equations 
+ Semi-explicit 
+ Fully implicit 
+ Simulation via backward difference formulas
+ 
+2</text>
+        </slide>
+        <slide>
+          <slideno>0</slideno>
+          <text>10.34: Numerical Methods
+ 
+Applied to
+ 
+Chemical Engineering
+ 
+Lecture 19:
+ 
+Differential Algebraic Equations
+ 
+1</text>
+        </slide>
+        <slide>
+          <slideno>18</slideno>
+          <text>Simulation of DAE Systems
+ 
+	 Consider DAE example 3: 
+...
+c2	 =c1(t) c1 =  
+c3	 =c2(t)  c2 = 
+c3	 =' 0=c 3(t)-,(t) 
+	 Cant I just solve the set of ODEs found when determining 
+that the DAE system is index-3? 
+19</text>
+        </slide>
+        <slide>
+          <slideno>20</slideno>
+          <text>Simulation of DAE Systems 
+ Consistent initialization of initial value problems: {x (0) , x (0)}
+ 
+ index-0 DAE (ODE-IVP): x = f (x ,t) 
+ 1. x (0) ! x (0) = f (x (0) , 0) 
+ 2. x (0) solve x (0) = f (x (0) , 0) 
+ 3. c (x (0) , x (0)) = 0 solve with x (0) = f (x (0) , 0) 
+ fully implicit DAE: f (x ,x ,t)=0 
+ 2N unknowns for N equations 
+ apparently N degrees of freedom to specify 
+ hidden constraints reduce these degrees 
+ with differential states x and algebraic states y, 
+f (x ,x ,y ,t)=0 {x (0) , x (0) , y (0)} 21</text>
+        </slide>
+        <slide>
+          <slideno>10</slideno>
+          <text>Differential Index
+ 
+	 The differential index of a semi-expicit DAE system is dened as 
+the minimum number of differentiations required to convert the DAE to a system of independent ODEs. 
+dg	 (1)( 0= =g x ,  y , y ,t)dt
+ 
+d2
+dx	 g (2)( =f(x,y,t)	 0= =g x , y , y ,t)dt dt2 
+0=g (x,y,t) 
+solve for: 
+dy =	 s(x, y,t)dt 
+...
+ 
+11</text>
+        </slide>
+        <slide>
+          <slideno>9</slideno>
+          <text>Differential Index
+ 
+	 Consider DAE example 3:
+ 
+c2 =c1(t) (1)
+ 
+c3 =c2(t) (2)
+ 
+0=c 3(t)-,(t) (3)
+ 
+	 How many time derivatives are needed to convert to a 
+system of ODEs? 
+derivative of (3)	 substitute (2) 
+c3	 ='  c2(t)= ' (4) 
+ substitute (1) 
+derivative of (4) c2 =  c1(t)= i (5) 
+ ...derivative of (5) c1	 =  (6) 
+Called an index-3 DAE. 10</text>
+        </slide>
+        <slide>
+          <slideno>25</slideno>
+          <text>MIT OpenCourseWare
+httpV://ocw.mit.edu
+10.34 Numerical Methods Applied to Chemical Engineering
+Fall 2015
+For information about citing these materials or our Terms of Use, visit: httpV://ocw.mit.edu/terms .</text>
+        </slide>
+        <slide>
+          <slideno>19</slideno>
+          <text>Simulation of DAE Systems
+ 
+ In general, index-1 semi-explicit DAEs can be safely handled
+ 
+by certain stiff integrators in MATLAB (ode15s, ode23t)
+ 
+	 For generic DAEs, specic DAE solvers are usually needed (SUNDIALS, DAEPACK) 
+	 Initial conditions for such equations must be prescribed consistently, or numerical errors can occur. 
+	 Consider the pendulum: 
+ Can its initial position be specied arbitrarily? 
+ Can its initial velocity be specied arbitrarily? 
+ Can the initial stiffness be specied arbitrarily? 
+20</text>
+        </slide>
+        <slide>
+          <slideno>13</slideno>
+          <text>Differential Index
+ Example, determine the differential index: 
+c1(t) c2(t) c4(t)
+(
+dc2 Q1=( c1(t)-c2(t))dt V1
+dc4 Q1 Q2 Q1+Q2= c2(t)+ c3(t)- c4(t)dt V2 V2 V2
+c1(t)= {1(t) 
+c3(t)= {2(t) 14 
+c3(t)</text>
+        </slide>
+      </slides>
+      <videos/>
+    </lecture>
+    <lecture>
+      <lecture_title>Systems of nonlinear equations 1 (PDF - 1.6MB)</lecture_title>
+      <lecture_pdf_url>https://ocw.mit.edu/courses/10-34-numerical-methods-applied-to-chemical-engineering-fall-2015/resources/mit10_34f15_lec07/</lecture_pdf_url>
+      <lectureno>7</lectureno>
+      <slides>
+        <slide>
+          <slideno>14</slideno>
+          <text>Systems of Nonlinear Eqns. 
+ Example: 
+ Compute the Jacobian of: 
+
+ x
+2
+1
+22
+
++x
+f(x)=
+21
+x
+22
+x
+15</text>
+        </slide>
+        <slide>
+          <slideno>10</slideno>
+          <text>Systems of Nonlinear Eqns.
+ 
+ Given: f : RN ! RN 
+ Find: x  2 RN :f(x )=0 
+ There could be no solutions 
+ There could be 1 &lt;n&lt;1 locally unique solutions
+ 
+ There could be 1 solutions 
+ A solution, x , is locally unique if there exists a ball of nite 
+radius such that x is the only solution within the ball.
+ 
+ Consider the simple function: 
+ f1(x1,x2)  
+=0f2(x1,x2) 
+11</text>
+        </slide>
+        <slide>
+          <slideno>11</slideno>
+          <text>Systems of Nonlinear Eqns.
+ 
+ f1(x1,x2)  
+x2
+=0f2(x1,x2) 
+f1(
+f2(x1,x2)=0 x1,x2)=0 
+x1 
+12</text>
+        </slide>
+        <slide>
+          <slideno>12</slideno>
+          <text>Systems of Nonlinear Eqns.
+ 
+13  f1(x1,x2) 
+f2(x1,x2)  
+=0 
+f1(x1,x2)=0 
+f2(x1,x2)=0 x1 x2 
+locally unique solution tangent curves, potentially 
+not locally unique</text>
+        </slide>
+        <slide>
+          <slideno>2</slideno>
+          <text>Recap 
+ Iterative solutions to linear equations 
+ Given: x0 
+ Iterate on: xi+1 = Cx i + c 
+ Until converged to solution of: Ax = b 
+ Assume the iterations converge. When should I stop?
+ 
+3</text>
+        </slide>
+        <slide>
+          <slideno>5</slideno>
+          <text>Systems of Nonlinear Eqns. 
+	 Example: van der Waals equation of state 	3  1  8	  P +	 v- = T v2	 3 3 
+	 Given pressure and temperature, 1, 2 or 3 solutions 
+for molar volume possible. 
+	3 1 8 f(v;T)= P+	  -T=0 P,	  v  -v2	 3 3 
+	 In general, nonlinear equations can have any number of 
+solutions. It is impossible to predict beforehand. 
+	 For gas-liquid coexistence, can the pressure and temperature be specied independently? 
+6</text>
+        </slide>
+        <slide>
+          <slideno>1</slideno>
+          <text>Recap
+ 
+ Singular value decomposition 
+ Iterative solutions to linear equations
+ 
+2</text>
+        </slide>
+        <slide>
+          <slideno>15</slideno>
+          <text>Systems of Nonlinear Eqns.
+ 
+17  f1(x1,x2) 
+f2(x1,x2)  
+=0 
+f1(x1,x2)=0 
+f2(x1,x2)=0 x1 x2 
+locally unique solution tangent curves, potentially 
+not locally unique</text>
+        </slide>
+        <slide>
+          <slideno>0</slideno>
+          <text>10.34: Numerical Methods
+ 
+Applied to
+ 
+Chemical Engineering
+ 
+Lecture 7:
+ 
+Solutions of nonlinear equations
+ 
+Newton-Raphson method
+ 
+1</text>
+        </slide>
+        <slide>
+          <slideno>8</slideno>
+          <text>Systems of Nonlinear Eqns.
+ 
+ Example: van der Waals equation of state
+ 
+ Must solve: f(Psat, vG, vL)=0 
+3  1 8 f1(Psat, vG, vL)= Psat + 2 vG - - T=0
+ v 3 3G 
+3  1 8 f2(Psat, vG, vL)= Psat + 2 vL - - T=0
+ v 3 3L 
+Z vL 
+f3(Psat, vG, vL)= (P(v)-Psat)dv=0
+ 
+vG 
+9</text>
+        </slide>
+        <slide>
+          <slideno>4</slideno>
+          <text>Systems of Nonlinear Eqns. 
+ Example: van der Waals equation of state 3  1  8  P + v- = T  v2 3 3 
+T,   P, v are reduced pressure, temperature, and 
+molar volume 
+2 
+P 1 T =.1 1
+T =.9 0
+v 2 1 3 
+vL vG
+ 
+ Given pressure and temperature, there are 1-3 molar 
+volumes that satisfy the equation of state. 5</text>
+        </slide>
+        <slide>
+          <slideno>13</slideno>
+          <text>Systems of Nonlinear Eqns. 
+	 Inverse function theorem: 
+x	 det J(x =0 , 	 If f()=0 and ) 6
+	 then x is a locally unique solution, 
+	 where the Jacobian is: 0 @f1 @f1 @f1 1
+... @x1 @x2 @xN @f2 @f2 @f2 B	... C
+@x1 @x2	 @xNJ(x)=B	 C
+. .	 .B	. C
+.	 . . . B. .	 . . C@	 A
+@fN @fN	 @fN 
+@x1 @x2 ... @xN 
+	 The Jacobian describes the rate of change of a vector 
+function with respect to all of its independent variables. 
+	 If det J(x )=0 , solution may/may not be locally unique 
+	 Most numerical methods can only nd one locally unique 
+solution at a time. 14</text>
+        </slide>
+        <slide>
+          <slideno>26</slideno>
+          <text>MIT OpenCourseWare
+https://ocw.mit.edu
+10.34 Numerical Methods Applied to Chemical Engineering
+Fall 2015
+For information about citing these materials or our Terms of Use, visit: https://ocw.mit.edu/terms .</text>
+        </slide>
+        <slide>
+          <slideno>3</slideno>
+          <text>Systems of Nonlinear Eqns.
+ 
+ Formally: f(x)=0 
+ where: x 2 RN 
+ where: f : RN ! RN 
+ x are called the roots of f(x) 
+ linear equations are represented as f(x)=Ax -b 
+ Common chemical engineering examples include: 
+ Equations of state 
+ Energy balances 
+ Mass balances with nonlinear reactions 
+4</text>
+        </slide>
+        <slide>
+          <slideno>7</slideno>
+          <text>Systems of Nonlinear Eqns.
+ 
+	 Example: van der Waals equation of state 
+	 For gas-liquid coexistence, can the pressure and 
+temperature be specied independently? 
+	 Given the temperature, there are 3 unknowns 
+	 The saturation pressure 
+	 The molar volumes of the gas and liquid 
+	 There are three nonlinear equations to solve: 
+	 Equation of state in gas/liquid 
+	 Maxwell equal area construction 
+	 Must solve: f(Psat, vG, vL)=0 
+8</text>
+        </slide>
+      </slides>
+      <videos/>
+    </lecture>
+    <lecture>
+      <lecture_title>Linear algebra 3 (PDF - 1.3MB)</lecture_title>
+      <lecture_pdf_url>https://ocw.mit.edu/courses/10-34-numerical-methods-applied-to-chemical-engineering-fall-2015/resources/mit10_34f15_lec03/</lecture_pdf_url>
+      <lectureno>3</lectureno>
+      <slides>
+        <slide>
+          <slideno>16</slideno>
+          <text>Four Fundamental Subspaces 
+A 2 RNM
+ 
+ Column space (range space): 
+R(A) = span{A
+1,A2,...,Ac
+M
+c
+c
+}
+ 
+ Null space: 
+N (A)={x 2 RM : Ax =0} 
+ Row space: 
+R(AT ) = span{Ar 
+1,A2r ,...,Ar 
+N } 
+ Left null space: 
+N (AT )={x 2 RN : AT x =0} 
+17</text>
+        </slide>
+        <slide>
+          <slideno>13</slideno>
+          <text>Linear Dependence 
+	 Uniqueness of solutions to: Ax = b 
+	 If we can nd one vector for which: Ax =0, then a
+ 
+unique solution cannot exist.
+ 
+	 Proof: 
+H P Let x = x + x , and AxH =0 while AxP = b
+ 
+H	 H P	 If x 6=0, x = cx + x is another solution. 
+	 Therefore, x cannot be unique. 
+	 Uniqueness of solutions requires the columns of a matrix 
+be linearly independent! 
+ (A1 c A2 c ... AMc )x H =0 only if x H =0 
+	 If a system has more variables than equations, then a 
+unique solution cannot exist. It is under constrained. 
+14</text>
+        </slide>
+        <slide>
+          <slideno>3</slideno>
+          <text>Recap
+ 
+ Matrices: 
+ Matrices are maps between vector spaces! 
+y = Ax 
+0 -21 01 1 
+A = 1 -211 @ A 
+0 1
+ -21 
+4</text>
+        </slide>
+        <slide>
+          <slideno>19</slideno>
+          <text>Existence of Solutions
+ 
+A 2 RNM R(A) = span{A
+1,A2,...,Ac
+M
+c
+c
+}
+ 
+ Solutions to Ax = b exist only if b 2 R(A) 
+ Example: 0 1001 
+ Does a solution exist with A = 000
+@ A 
+000 
+0 1 1 
+ If b = 0 ?@ A 
+0 
+0 0 1 
+ If b = 1 ?@ A 
+0 20</text>
+        </slide>
+        <slide>
+          <slideno>5</slideno>
+          <text>Recap
+ 
+ Matrices: 
+ Matrices are maps between vector spaces! 
+y = Ax 
+TssA = I -ksk2
+2 
+6</text>
+        </slide>
+        <slide>
+          <slideno>12</slideno>
+          <text>Linear Dependence 
+ Example: are the columns of I linearly dependent?
+ 
+1
+A1
+00
+ 0
+@
+ 
+1 +
+ 1A0
+10
+ 0
+@
+ 
+2 +
+ 1A0
+01
+ 0
+@
+ 
+3
+ =
+ 0@
+1A
+ 
+1
+ 2
+=0
+ 
+ 3
+ 
+ Example: are these vectors linearly dependent?
+ 
+0
+1
+A
+ ,
+ 0@
+ -1
+ 
+2
+ 
+-1
+ 1A
+ ,
+ 0@
+ 1
+2
+
+ 0
+ 
+@
+
+ A
+ -1
+ 
+0
+ -1
+ 
+2
+ 
+ In general, if Ax =0has a non-trivial solution, then the 
+vectors
+ (A
+c 
+1
+A
+c 2
+... A
+cM
+)
+ are linearly dependent.
+ 
+13</text>
+        </slide>
+        <slide>
+          <slideno>2</slideno>
+          <text>Recap
+ 
+ Matrices: 
+ Matrices are maps between vector spaces! 
+y = Ax 
+0
+@-2 
+1 
+0 1
+A
+ 1 0
+ 
+A =
+ -2
+ 1
+ 
+1
+ -2
+ 
+3</text>
+        </slide>
+        <slide>
+          <slideno>18</slideno>
+          <text>Existence of Solutions
+ 
+A 2 RNM R(A) = span{A
+1,A2,...,Ac
+M
+c
+c
+}
+ 
+ Solutions to Ax = b exist only if b 2 R(A) 
+ Example: 0 1001 
+ Does a solution exist with A = 000
+@ A 
+000 
+0 1 1 
+ If b = 0 ?@ A 
+0 
+0 0 1 
+ If b = 1 ?@ A 
+0 19</text>
+        </slide>
+        <slide>
+          <slideno>10</slideno>
+          <text>Vector Spaces 
+	 A subspace is a subset of a vector space 
+	 It is still closed under addition and scalar multiplication 
+	 It still contains the null vector 
+	 For example, R2 is a subspace of R3 
+	 Is this a subspace? 
+{y : y = A((3 , 0) + (0, 1)); A1, A2 2 R}
+ 
+M	 The linear combination of a set of vectors: 
+y = X 
+Aixi
+ 
+i=1
+ 
+	 The set of all possible linear combinations of a set of 
+vectors is a subspace: 
+span {x1,x2,...,xM }
+M
+= {y 2 RN : y = X 
+Aixi; Ai 2 R,i=1,...,M }
+i=1 11</text>
+        </slide>
+        <slide>
+          <slideno>17</slideno>
+          <text>Column Space
+ 
+A 2 RNM R(A) = span{A
+1,A2,...,Ac
+M
+c
+c
+}
+ 
+	 The column space of A is a subspace of RN 
+	 Vectors in R(A) are linear combinations of the 
+columns of A 
+	 Existence of solutions: 
+	 Consider: Ax = b 
+MX 
+xiAc = bi
+ 
+i=1
+ 
+	 If x exists, then b is a linear combination of the 
+columns of A. b 2 R(A) 
+	 Converse: if b 2/R(A), then x cannot exist 
+18</text>
+        </slide>
+        <slide>
+          <slideno>1</slideno>
+          <text>Recap
+ 
+ Scalars, vectors, and matrices
+ 
+ Transformations/maps 
+ Determinant 
+ Induced norms 
+ Condition number 
+2</text>
+        </slide>
+        <slide>
+          <slideno>24</slideno>
+          <text>Existence and Uniqueness
+ 
+A 2 RNM
+ 
+ Existence: 
+ For any b in Ax = b 
+ A solution exists only if r =d i mR(A)=N 
+ Uniqueness: 
+ A solution is unique only if dim N (A)=0
+ 
+ Equivalently when r =d i mR(A)=M 
+26</text>
+        </slide>
+        <slide>
+          <slideno>25</slideno>
+          <text>MIT OpenCourseWare
+httpV://ocw.mit.edu
+10.34 Numerical Methods Applied to Chemical Engineering
+Fall 2015
+For information about citing these materials or our Terms of Use, visit: httpV://ocw.mit.edu/terms .</text>
+        </slide>
+        <slide>
+          <slideno>11</slideno>
+          <text>Linear Dependence
+ 
+	 If at least one non-trivial linear combination of a set of 
+vectors is equal to the null vector, the set is said to be linearly dependent. 
+	 The set {x1,x2,...,xM } with xi 2 RN is 
+linearly dependent if there exists at least one Ai =06
+such that: 
+MX 
+Aixi =0 
+i=1 
+	 If M &gt; N, then the set of vectors is always dependent 
+12</text>
+        </slide>
+        <slide>
+          <slideno>7</slideno>
+          <text>Vector Spaces 
+RN is an example of a vector space 
+ A vectors space is a special set of vectors 
+ Properties of a vector space: 
+ closed under addition: 
+x, y 2 S ) x + y 2 S 
+ closed under scalar multiplication: 
+x 2 S ) cx 2 S 
+ contains the null vector: 
+0 2 S 
+ has an additive inverse: 
+x 2 S ) (-x)2 S :x +(-x)=0 
+8</text>
+        </slide>
+        <slide>
+          <slideno>4</slideno>
+          <text>Recap
+ 
+ Matrices: 
+ Matrices are maps between vector spaces! 
+y = Ax 
+0 -2 1 0 1 
+1 -2 1 A = B C
+B
+0 1 -2 C@ A 
+1
+1 1 
+5</text>
+        </slide>
+        <slide>
+          <slideno>14</slideno>
+          <text>Linear Dependence 
+	 The dimension of a subspace is the minimum number of 
+linearly independent vectors required to describe the 
+span:
+ 
+S = span{(1 , 0, 0), (0, 1, 0), (0, 0, 1)}, dim S =3 
+S = span{(1 , 0, 0), (0, 1, 0), (0, 0, 1), (0, 0, 2)}, dim S =3
+ 
+	 Example: can Ax = b have a unique solution? 
+0 
+1401
+ 
+257
+ A	 =B CB
+368C@	 A
+ 
+079 
+15</text>
+        </slide>
+        <slide>
+          <slideno>6</slideno>
+          <text>Existence and Uniqueness 
+ Example: 
+phosphate (P) 
+dirt (D) 
+water (W) 
+washer 
+dryer 
+decanter 
+ mixer 1 
+2 3 
+4 5 
+6 
+7 8 9 
+phosphate (P) 
+dirt (D) 
+water (W) phosphate (P) 
+dirt (D) 
+water (W) phosphate (P) 
+dirt (D) 
+water (W) phosphate (P) 
+dirt (D) 
+water (W) phosphate (P) 
+dirt (D) 
+water (W) 
+phosphate (P) 
+dirt (D) 
+water (W) 
+phosphate (P) 
+dirt (D) 
+water (W) phosphate (P) 
+dirt (D) 
+water (W) 
+Stream 1 carries 1800 kg/hr P, 1200 kg/hr D and 0 kg/hr W 
+Stream 2 carries 0 kg/hr P, 0 kg/hr D and 10000 kg/hr W Stream 3 carries 0 kg/hr D and 50% W into the washer Stream 4 carries 0 kg/hr P Stream 5 carries 0 kg/hr P and 0 kg/hr D Stream 6 carries 0 kg/hr D and 0 kg/hr W Stream 7 carries 0 kg/hr P, 95% of D into the decanter, 5% of W into the decanter Stream 8 carries 0 kg/hr P Stream 9 carries 0 kg/hr P 
+Does a solution exist? Is it unique? 7</text>
+        </slide>
+        <slide>
+          <slideno>15</slideno>
+          <text>Linear Dependence 
+	 The dimension of a subspace is the minimum number of 
+linearly independent vectors required to describe the 
+span:
+ 
+S = span{(1 , 0, 0), (0, 1, 0), (0, 0, 1)}, dim S =3 
+S = span{(1 , 0, 0), (0, 1, 0), (0, 0, 1), (0, 0, 2)}, dim S =3
+ 
+	 Example: can Ax = b have a unique solution? 
+0 
+1401
+ 
+257
+ A	 =B CB
+368C@	 A
+ 
+079 
+16</text>
+        </slide>
+        <slide>
+          <slideno>0</slideno>
+          <text>10.34: Numerical Methods
+ 
+Applied to
+ 
+Chemical Engineering
+ 
+Lecture 3:
+ 
+Existence and uniqueness of solutions
+ 
+Four fundamental subspaces
+ 
+1</text>
+        </slide>
+      </slides>
+      <videos/>
+    </lecture>
+    <lecture>
+      <lecture_title>Stochastic chemical kinetics 2 (PDF)</lecture_title>
+      <lecture_pdf_url>https://ocw.mit.edu/courses/10-34-numerical-methods-applied-to-chemical-engineering-fall-2015/resources/mit10_34f15_lec35/</lecture_pdf_url>
+      <lectureno>35</lectureno>
+      <slides>
+        <slide>
+          <slideno>2</slideno>
+          <text>Metropolis Monte Carlo challenges  
+Selecting step length in each dimension  
+ want it same order of magnitude as the width of 
+the
+ high -w region  
+If too large, very few steps accepted  
+If too small, takes large number of steps to cover 
+the h
+igh-w region.  
+Achieving high accuracy requires very large N  
+ adding one more sig fig requires 100x more 
+sam
+ples than used so far.  
+3</text>
+        </slide>
+        <slide>
+          <slideno>1</slideno>
+          <text>Multidimensional Integrals  
+Many important multidimensional integrals have 
+integrands of this form: p( x)f(x) where p is a 
+probability density.  
+Often an un -nor malized p is known:  
+ p(x) = w(x )/w( x)dx  
+Boltzmann distribution: w( x)=exp(-E(x)/kT) 
+Bayesian analysis of experiments:  
+w(|data ) = pprior() exp(-2(,data )/2) 
+ 
+These are candidates for Metropolis Monte Carlo  
+ 2</text>
+        </slide>
+        <slide>
+          <slideno>0</slideno>
+          <text>Stochastic Methods wrap -up 
+10.34 Dec. 7, 2015 
+1</text>
+        </slide>
+        <slide>
+          <slideno>4</slideno>
+          <text>So usually we cannot compute all the elements 
+of P, and we cannot sample even a small fraction 
+of all the possible states N 
+Common approach: sample from P (t) using 
+Kinetic Monte Carlo (Gillespie algorithm). 
+Each trajectory requires computing 2*(tf-to)/t  
+random numbers.  
+Low-probability states will not be sampled at all. 
+N-1/2 scaling: hard to achieve high precision 
+Decide on which quantities &lt;f&gt; you are trying to 
+comp
+ute before you start  
+Can compute several at same time on the fly.  
+Ma
+y not be able to store all the trajectories.  
+ 5</text>
+        </slide>
+        <slide>
+          <slideno>3</slideno>
+          <text>Master Equations  
+Often we have time-dependent probability of 
+the system being in a discrete state: PN(t). 
+ dP/dt = M * P  P (to)=Po 
+Number of possible states usually enormous  
+e.g. problem 2 catalysis: 100 sites, each could be 
+in
+ any of 4 states:   4100 ~ 1060 distinct states  
+M is even bigger (4100)2  
+Different values of all these Ps at each time 
+step!  
+4</text>
+        </slide>
+        <slide>
+          <slideno>7</slideno>
+          <text>For example, in Problem 2.  
+If the main reaction A+B is very fast, then you will get a 
+lot 
+of trajectories showing this reaction, and can get 
+pretty good sampling statistics.  
+On the other hand, if the coking reaction is slow, you may 
+not sample enough trajectories that show a coking 
+event to be able to reach any conclusions about it. 
+If diffusion is too fast,  t wi ll be very small and it will 
+be very expensive to compute a trajectory.  
+Sometimes people assume diffusion is equilibrated and so 
+cre
+ate a different random distribution of A and B on 
+surface at each time step corresponding to (slow) reactions  
+8</text>
+        </slide>
+        <slide>
+          <slideno>10</slideno>
+          <text>MIT OpenCourseWare
+https://ocw.mit.edu
+10.34 Numerical Methods Applied to Chemical Engineering
+Fall 2015
+For information about citing these materials or our Terms of Use, visit: https
+://ocw.mit.edu/terms.</text>
+        </slide>
+        <slide>
+          <slideno>8</slideno>
+          <text>Molecular Dynamics  
+What is it: Solving motions of atoms or clumps of atoms 
+usin
+g Newtons equations of motion.  
+Usually fitted force fields but can be from DFT  
+Can include quantum effects e.g. by RPMD  
+Typically use Velocity Verl et algorithm to integrate the ODEs 
+(conserves energy to high accuracy)  
+Typically use a thermostat to capture energy fluctuations due 
+to 
+contact with a thermal bath  
+Alternative to Metropolis Monte Carlo for steady -state 
+p
+roperties of molecules 
+Can be used for computing time -depende nt properties (it is 
+a more -or-less exact simulation of what the molecules are 
+really doing).  
+9</text>
+        </slide>
+        <slide>
+          <slideno>5</slideno>
+          <text>What is the initial condition Po? 
+Often have an idea of &lt; N&gt; but not full probability 
+distribution of N. 
+Common approach: assume NA, NB, etc. 
+uncorrelated initially, and use a separate Poisson 
+distribution for each one:  
+ Ppoisson (N) = &lt;N&gt;N exp(-&lt;N&gt;) / N!  
+     Po(NA,NB,) = Ppoisson (NA)*Ppoisson (NB)* 
+    When you start each KMC trajectory, you need to 
+sample from a Poisson distribution for NA, NB, etc.  
+ 
+6</text>
+        </slide>
+        <slide>
+          <slideno>6</slideno>
+          <text>Which processes to include in Kinetic 
+Monte Carlo?  
+Accelerate calculation by making t as lo ng as 
+possible, i.e. omit very fast processes (which 
+will be equilibrated on long time scale).  
+The low -probability processes are not going to 
+b
+e sampled adequately, so consider omitting 
+them completely if it speeds calculation.  
+Adequate sampling: statistical sampling err
+ors ~ sqrt(number of samples with positive 
+result).  
+7</text>
+        </slide>
+        <slide>
+          <slideno>9</slideno>
+          <text>Limitations of Molecular Dynamics  
+For molecules the stretching vibrations are 
+very
+ fast, so need to use very small t 
+This usually limits (tf-to) to nanoseconds  
+So only can determine static quantities which 
+have
+ equilibrated faster than nanoseconds  
+Only can follow dynamic processes which occ
+ur in nanoseconds.  
+Issue with sampling over large number of 
+po
+ssible initial conditions.  
+10</text>
+        </slide>
+      </slides>
+      <videos/>
+    </lecture>
+    <lecture>
+      <lecture_title>Boundary value problems 2 (PDF)</lecture_title>
+      <lecture_pdf_url>https://ocw.mit.edu/courses/10-34-numerical-methods-applied-to-chemical-engineering-fall-2015/resources/mit10_34f15_lec21/</lecture_pdf_url>
+      <lectureno>21</lectureno>
+      <slides>
+        <slide>
+          <slideno>2</slideno>
+          <text>3 
+ 3) Galerkin:    
+ 
+Approximate the solution y(t) as a sum of some basis functions: 
+ 
+             y(t) =  dn n(t) 
+ 
+This converts the problem into computing the N ds. B of the equations come from boundary  
+conditions. In Galerkins method, the N -B additional equations needed to determine the ds are 
+of this form: 
+ 
+ k(t) g(y(t;d),y(t;d),t) = 0  
+ 
+If the integrals can all be evaluated analytically, these integral equations become explicit 
+algebraic equations in the unknowns d, can be solved using fsolve. This can also work if the 
+integrals are evaluated numerically, but it may be necessary to re-evaluate numerical integrals 
+inside each iteration of fsolve, so this can be expensive.  
+Note that in both Collocation and Galerkin method, fsolve and similar programs evaluate the Jacobian of 
+the system of equations, which has N2 elements. This can be very large if N is large. One can simplify the 
+integral evaluations and make the Jacobian sparser (and so easier to evaluate and store) by using a local 
+basis, discussed below. 
+ 
+ 
+4) Finite Differences 
+A different approach is to approximate all the derivatives by finite-difference expressions. A common 
+simple approach is to choose a an evenly spaced set of collocation points {t m} and use centered 
+differences, e.g. approximate y(t m) = (y(t m+)-y(t m-))/(2t). The unknowns you are solving for are {y m}. 
+Note this approach only gives you a set of points, not the values between (though you could 
+interpolate), and it only works if t is small enough that the finite difference closely approximates the 
+derivative, so you need a lot of points. But this usually gives a sparse Jacobian and it is easy to evaluate 
+the residuals.  You can increas e t if you use a high-order finite differencing formula, this add some 
+bands to the Jacobian but it will still be sparse.</text>
+        </slide>
+        <slide>
+          <slideno>4</slideno>
+          <text>MIT OpenCourseWare
+https://ocw.mit.edu
+10.34 Numerical Methods Applied to Chemical Engineering
+Fall 2015
+For information about citing these materials or our Terms of Use, visit: https://ocw.mit.edu/terms.</text>
+        </slide>
+        <slide>
+          <slideno>3</slideno>
+          <text>4 
+ Local Basis Functions 
+  
+It is often beneficial to choose local basis functions,  
+ 
+i.e. choose n(t) so that it is only nonzero is a small range, i.e. n(t)=0 if |t-t n|&gt;X 
+ 
+Use of local basis functions makes g(t) depend only on the small number of basis functions n(t) 
+with t n close to t. This directly makes the Jacobian used in the Collocation metho d very sparse. 
+Also, in the Galerkin method, if k(t) is local, then one only needs to integrate over a small range 
+of ts near t m, and the resulting integral will only depend on a few ds.  So use of a local basis also 
+make the Jacobian used in the Galerkin method sparse.  
+ 
+The most popular Local Basis functions are B-splines, in particular the 1st-order B-splines called 
+tent functions defined this way:  
+ 
+k(t)=(t-t k-1)/(t k-tk-1)    if  t k&gt;t&gt;t k-1     
+k(t)=(t k+1-t)/(t k+1-tk)    if  t k+1&gt;t&gt;t k     
+              For all other t, k(t)=0.  
+With these basis functions, one is trying to do a piecewise linear approximation t the solution y(t). Note 
+that these basis functions have discontinuous first derivatives. In Galerkins method this unsmoothness 
+does nt matter much since one is mostly evaluating integrals. However, it  can cause complications if the 
+boundary conditions involve derivatives, and in the Collocation method one would be well-advised to 
+avoid the discontinuities, e.g. by choosing   {tm} and  {tk} so that t m  tk.</text>
+        </slide>
+        <slide>
+          <slideno>0</slideno>
+          <text>1 
+ Notes on BVP-ODE 
+-Bill Green 
+There are multiple methods for solving systems of ordinary differential equations (ODEs) or differential-
+algebraic equations (DAEs) posed as boundary value problems (BVPs) of the form: 
+g(y(t), y(t), y(t), t) = 0 at all t in the domain 
+plus B boundary conditions that hold only at specific values of t called tx:  
+q(y(tx),y(tx),tx) =  0    where usually tx=t 0 or tx=t f   
+Note that g and q are vector-valued functions, and y is usually a vector also. 
+If g represents a first-order system of differential equations, dim(y) =dim(g)=dim(q). If it is second-order 
+we will need more boundary conditions, dim(q)&gt;dim(g). If it is a DAE we will need fewer.  Just because 
+you have the right number of boundary conditions does not guarantee a unique solution exists: the 
+system of equations may have no solution or multiple solutions.  Usually this can be fixed by changing 
+the boundary conditions. 
+Here are some methods for solving BVP-ODEs: 
+1) Shooting 
+ 
+Recast the ODE-BVP as an ODE-IVP with some unknown initial values, call these Z. Guess those 
+unknown values Z and solve the resulting ODE-IVP. The solution Y will not satisfy all the 
+boundary values Y bc(tf), i.e. there is a deviation  
+residual(Z) = Y(t f,Z)  Y bc(tf)  
+where Y(t f,Z) is the computed value of Y(t f) from the ODE-IVP using the initial values Z. So we can 
+embed that calculation inside a nonlinear equation solver like fsolve, e.g. 
+  Zbest=fsolve(@residual,Zguess) 
+              The advantage of shooting is that there are only a few unknown initial conditions, so fsolve is 
+only solving a few equations with a small Jacobian. The disadvantage is that an ODE-IVP problem must 
+be solved at each iteration of fsolve, and that can be expensive particularly if an implicit ODE solver is 
+used.</text>
+        </slide>
+        <slide>
+          <slideno>1</slideno>
+          <text>2 
+ 2) Collocation: 
+ 
+Approximate the solution y(t) as a sum of some basis functions: 
+                y(t) =  dn n(t) 
+This converts the problem into computing the N ds.  The collocation method writes the N 
+equations required this way: B of the equations come from the boundary conditions. The 
+remaining N-B equations come from choosing N-B points in the domain {t m} and demanding 
+ 
+                g(y(t m;d),y(t m;d),tm) = 0    for these particular {t m} 
+ 
+Note that all the equations depend on the unknown vector d, since y is a function of d. So we 
+could rewrite the equations this way: 
+ 
+        g(d)=0  and q(d)=0 
+ 
+ This is the form for nonlinear equations solvers like fsolve. 
+ 
+Note that the user can choose which basis functions { n(t)} and {t m} which to use; for each 
+choice youll get a different approximate solution y(t). Usually increasing the number of basis 
+functions and collocation points {t m} increases the accuracy of the approximation. However, 
+fsolve or similar programs typically need to evaluate the Jacobian of f(d)=(g(d);q(d)), which has 
+N2 elements. If N is very large this can be expensive and for very large N it is likely that the 
+cond(Jacobian) will be large. One can make the Jacobian matrix sparser by making using a local 
+basis (discussed below), that saves CPU time and might improved the conditioning. 
+ 
+Note that a poorly-conditioned Jacobian means that varying some linear combination of the ds 
+does not change the quality of the solution very much. This implies that there is a better choice 
+of basis functions and/or collocation points {t m}. 
+ 
+The disadvantage of collocation is that typically you need a lot of basis functions and collocation 
+points to achieve high accuracy, so fsolve will need to solve a large system of equations. The 
+advantage is that not much work is required to compute the residuals (no embedded ODE solves 
+or numerical integrations).</text>
+        </slide>
+      </slides>
+      <videos/>
+    </lecture>
+    <lecture>
+      <lecture_title>Linear algebra 6 (PDF - 1.6MB)</lecture_title>
+      <lecture_pdf_url>https://ocw.mit.edu/courses/10-34-numerical-methods-applied-to-chemical-engineering-fall-2015/resources/mit10_34f15_lec06/</lecture_pdf_url>
+      <lectureno>6</lectureno>
+      <slides>
+        <slide>
+          <slideno>15</slideno>
+          <text>Jacobi Iteration
+ 
+ For: Ax = b 
+ Split A into D + R 
+ D is the diagonal elements of A 
+ R is the off-diagonal elements of A
+ 
+ Rewrite the equations as an iterative map: 
+ xi+1 = D 1 (-Rx i + b) 
+ Does Jacobi converge to the right solution x ?
+ 
+ Substitute: b = Ax 
+ Then: xi+1 -x = -D 1R(xi -x)
+ 
+ Take the norm of both sides: kxi+1 -xkp kD-1Rk pkxi -xkp 17</text>
+        </slide>
+        <slide>
+          <slideno>5</slideno>
+          <text>Singular Value Decomposition
+ 
+	 Is there an eigendecomposition for non-square 
+matrices? Yes! 
+	 For: A 2 RNM 
+	 A = UV 
+	 with: U 2 CNN  2 RNM V 2 CMM 
+	 and V = VT 
+  has only diagonal elements which are positive: 
+ =
+ 0 
+B@
+ 11 0 01 
+0 22 0 
+. CA 
+0 0 .
+ . 
+ U and V are called the left and right singular vectors. 7</text>
+        </slide>
+        <slide>
+          <slideno>2</slideno>
+          <text>Recap 
+d2 
+ Find the eigenvalues and eigenfunctions of: dx2 
+d2 
+y =Ay, y(0) = 0 ,y(L)=0dx2 
+3</text>
+        </slide>
+        <slide>
+          <slideno>14</slideno>
+          <text>Jacobi Iteration
+ 
+ For: Ax = b 
+ Split A into D + R 
+ D is the diagonal elements of A 
+ R is the off-diagonal elements of A 
+ Rewrite the equations as an iterative map: 
+ Dx i+1 = -Rx i + b 
+ or xi+1 = D 1 (-Rx i + b) 
+ If the iterations converge, then (D + R)xi = b 
+ We have found the solution (if map converges)! 
+ Jacobi iteration transforms a hard problem, A 1b, into 
+D 1a succession of easy problems, c 
+16</text>
+        </slide>
+        <slide>
+          <slideno>10</slideno>
+          <text>Singular Value Decomposition
+ 
+	 How is singular value decomposition used? 
+	 Least squares solution to: Ax = b 
+ with A 2 RNM x 2 RM b 2 RN 
+ Least squares means nd the vector 
+minimizes: (x)=kAx -bk
+2
+2 x that 
+ where Ax -b = U 
+V x -Ub 
+	 Let y = V x and p = Ub 
+ then (x)=kU(y -p)k
+2
+2
+ =k(y -p)k
+22
+ 
+	 Let r be the number of non-zero singular values 
+(also the rank of A ): r	 N
+ then (x)=X 
+|iiyi -pi|2 + X 
+|pi|2
+ 
+i=1 i=r+1
+ 
+12</text>
+        </slide>
+        <slide>
+          <slideno>7</slideno>
+          <text>Singular Value Decomposition
+ 
+ Properties of the singular value decomposition: A = UV 
+	 Some columns of  are zero. The columns of V 
+corresponding to these span N (A) 
+	 Some columns of  are non-zero. The rows of U 
+corresponding to these span R(A) 
+	 Example: 0 10001 
+A = 0100 [U,S,V] = svd(A) @	 A
+ 
+0010 0	 
+100010	 10010 10001 
+0100U	 = 010  = 0100 V =B C
+@ A@	 AB
+0010C
+001 0010 @	 A 
+0001 
+9</text>
+        </slide>
+        <slide>
+          <slideno>0</slideno>
+          <text>10.34: Numerical Methods
+ 
+Applied to
+ 
+Chemical Engineering
+ 
+Lecture 6:
+ 
+Singular value decomposition
+ 
+Iterative solutions of linear equations
+ 
+1</text>
+        </slide>
+        <slide>
+          <slideno>17</slideno>
+          <text>Gauss-Seidel Iteration
+ 
+	 For: Ax = b 
+	 Split A into L + U 
+	 L is the lower triangular elements of A 
+	 U is the upper triangular elements (no diagonal) 
+	 Rewrite the equations as an iterative map: 
+	 Lx i+1 = -Ux i + b 
+or 	xi+1 = L 1(-Ux i + b)  
+L-1	 A-1b 	 Again, successive calculations of c are easier than 
+	 Does Gauss-Seidel converge? Yes if, kL 1Ukp &lt; 1 
+	 This happens for diagonally dominant and symmetric,
+ 
+positive denite matrices ( Ai &gt; 0 ).
+ 
+19</text>
+        </slide>
+        <slide>
+          <slideno>6</slideno>
+          <text>Singular Value Decomposition
+ 
+ Properties of the singular value decomposition: 
+ U and V are unitary matrices 
+UU = I , VV = I 
+AA =(UV)UV =VV 
+ V are the eigenvectors of AA 
+ 2 are the eigenvalues of AAii 
+AA = UV(UV) = UU 
+ U are the eigenvectors of AA 
+2 are the eigenvalues of AA 
+ii 
+ ii are called the singular values of A. 
+8</text>
+        </slide>
+        <slide>
+          <slideno>11</slideno>
+          <text>Singular Value Decomposition 
+ How is singular value decomposition used? 
+ Least squares solution to: Ax = b 
+ with A 2 RNM x 2 RM b 2 RN 
+ and y = V xp = Ub 
+ Minimizes: r N
+(x)=X 
+|iiyi -pi|2 + X 
+|pi|2 
+i=1 i=r+1 
+ Therefore, yi = pi for 1  i  r
+ii
+  What about yi for r +1 i  M? 
+ Least squares system is underdetermined
+ 
+ Just set: yi =0 for the rest and nd x = Vy 13</text>
+        </slide>
+        <slide>
+          <slideno>13</slideno>
+          <text>Iterative Solutions to Lin. Eqns.
+ Example: solve iteratively 
+ 11  1 
+x = 01 0 
+ 10  01  1
+ split: x + x = 01 00 0 
+ 10  0-1  1
+ rename: xi+1 = xi +01 00 0 
+ 0 -1   1 
+ iterate: xi+1 = xi +0 0 0 
+15</text>
+        </slide>
+        <slide>
+          <slideno>1</slideno>
+          <text>Recap
+ 
+ Eigenvalues 
+ Eigenvectors 
+ Eigendecomposition
+ 
+2</text>
+        </slide>
+        <slide>
+          <slideno>22</slideno>
+          <text>MIT OpenCourseWare
+https://ocw.mit.edu
+10.34 Numerical Methods Applied to Chemical Engineering
+Fall 2015
+For information about citing these materials or our Terms of Use, visit: https://ocw.mit.edu/terms .</text>
+        </slide>
+        <slide>
+          <slideno>9</slideno>
+          <text>SVD compressed with 30 terms
+20 40 60 80 100 120 140 16050
+100
+150
+200
+250SVD compressed with 165 terms
+20 40 60 80 100 120 140 16050
+100
+150
+200
+250  
+  
+  
+   
+     Singular Value Decomposition
+ 
+	 How is singular value decomposition used? 
+	 Example: data compression/matrix approximation 
+	 Left: original bitmap 
+	 Right: compressed bitmap retaining only 50 biggest 
+singular values. All other set equal to zero.
+ 
+11</text>
+        </slide>
+        <slide>
+          <slideno>8</slideno>
+          <text>Singular Value Decomposition
+ 
+ Example: 
+0 
+1001
+ 
+010
+ A =B C
+B
+001C@ A 
+000 
+0 
+10001
+ 
+ =
+ 0 
+BB
+100
+ 
+010
+ 1 
+CC
+0 1001
+ 
+V = 010@ A 
+001
+ B0100 C
+B C
+ U =
+ 0010
+
+ @ A
+ 
+0001
+
+@
+001
+ A
+ 
+000
+ 
+10</text>
+        </slide>
+        <slide>
+          <slideno>21</slideno>
+          <text>Successive Over Relaxation 
+	 When this damping is applied to Jacobi: 
+ The original iterative map: xi+1 = D 1 (-Rx i + b) 
+ Becomes: xi+1 =( 1-!)xi +!D 1(-Rx i +b) 
+	 Matrices that are not diagonally dominant might 
+converge when ! is small enough 
+	 When this dampling is applied to Gauss-Seidel: 
+ The original iterative map: xi+1 = L 1(-Ux i + b) 
+ Becomes: xi+1 =( 1-!)xi +!L 1(-Ux i +b) 
+	 The relaxation parameter acts like an effective 
+increase in the eigenvalues of the matrix. A small enough value can enable convergence. 
+	 Successive over relaxation might be slow, however. 
+23</text>
+        </slide>
+      </slides>
+      <videos/>
+    </lecture>
+    <lecture>
+      <lecture_title>Summary and review on IVP, differential-algebraic equations, and boundary value (PDF - 1.7MB)</lecture_title>
+      <lecture_pdf_url>https://ocw.mit.edu/courses/10-34-numerical-methods-applied-to-chemical-engineering-fall-2015/resources/mit10_34f15_lec25/</lecture_pdf_url>
+      <lectureno>25</lectureno>
+      <slides>
+        <slide>
+          <slideno>10</slideno>
+          <text>11 LWNumerical Solution of PDEs
+Step 1: domain decomposition
+nite element: elements (local basis functions)
+i, j</text>
+        </slide>
+        <slide>
+          <slideno>25</slideno>
+          <text>26Numerical Solution of PDEs
+Example: solve the diffusion equation in 2-D on a square with side = 1. 
+function f = my_func( c, Nx, Ny )
+% Loop over all nodes
+for i = 1:Nx
+for j = 1:Ny
+k = i + ( j - 1 ) * Nx; % Compound index
+% Boundary nodes
+if ( i == 1 )
+f( k ) = c( k );
+elseif ( i == Nx )
+f( k ) = c( k );
+elseif( j == 1 )
+f( k ) = c( k ) - 1;
+elseif( j == Ny )
+f( k ) = c( k );
+% Interior nodeselse
+f( k ) = c( k + 1 ) + c( k - 1 ) + c( k - Nx ) + c( k + Nx ) - 4*c( k );
+end;
+end;
+end;</text>
+        </slide>
+        <slide>
+          <slideno>26</slideno>
+          <text>27Numerical Solution of PDEs
+Example: solve the diffusion equation in 2-D on a square with side = 1. 
+0 0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.9 100.10.20.30.40.50.60.70.80.91
+0.08 seconds to solveh=1/10</text>
+        </slide>
+        <slide>
+          <slideno>21</slideno>
+          <text>22Numerical Solution of PDEs
+Nxy
+NzN
+cl=ci,j,k ,l=?Exercise: write a single index for nite difference nodes in a cubic 
+domain with (Nx, Ny, Nz) nodes in each cartesian direction</text>
+        </slide>
+        <slide>
+          <slideno>13</slideno>
+          <text>14Numerical Solution of PDEs
+Step 2: formulate an equation to be satised at each node/cell</text>
+        </slide>
+        <slide>
+          <slideno>23</slideno>
+          <text>Numerical Solution of PDEs
+Example: solve the diffusion equation in 2-D on a square with side = 1. 
+r2c=0 c=0c=0
+c=0
+c=1
+f(c)=0
+24</text>
+        </slide>
+        <slide>
+          <slideno>0</slideno>
+          <text>10.34: Numerical Methods 
+Applied to 
+Chemical Engineering
+Finite Volume Methods
+Constructing Simulations of PDEs
+1</text>
+        </slide>
+        <slide>
+          <slideno>11</slideno>
+          <text>12Numerical Solution of PDEs
+Step 1: domain decomposition
+Always choose the spacing between nodes/dimensions of cells to match the physics.  
+Never pick a certain number of nodes or cells a priori.  That number is irrelevant.</text>
+        </slide>
+        <slide>
+          <slideno>29</slideno>
+          <text>30Numerical Solution of PDEs
+Example: solve the diffusion equation in 2-D on a square with side = 1. 
+h = 1 / 10; % Spacing between finite difference nodes
+Nx = 1 + 1 / h; % Number of nodes in x-directionNy = Nx; % Number of nodes in y-direction
+% Calculate RHS of Ac = b
+[ Ac, b ] = my_func( zeros( Nx * Ny, 1 ), Nx, Ny );
+% Find solution of linear FD equations using the an iterative method
+% This is gmres (generalized minimum residual).  Other choices include % bicgstab (conjugate gradient), minres (minimum residual), etc.% The requires a function that returns A*c given c.c = gmres( @( c ) my_func( c, Nx, Ny ), b, 100, 1e-6, 100 );</text>
+        </slide>
+        <slide>
+          <slideno>33</slideno>
+          <text>34Numerical Solution of PDEs
+Example: solve the diffusion equation in 2-D on a square with side = 1. 
+1.2 seconds to solve!0 0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.9 100.10.20.30.40.50.60.70.80.91h=1/100</text>
+        </slide>
+        <slide>
+          <slideno>8</slideno>
+          <text>9Numerical Solution of PDEs
+LStep 1: domain decomposition
+nite difference: nodes
+i, j
+W</text>
+        </slide>
+        <slide>
+          <slideno>24</slideno>
+          <text>25Numerical Solution of PDEs
+Example: solve the diffusion equation in 2-D on a square with side = 1. 
+h = 1 / 10; % Spacing between finite difference nodes
+Nx = 1 + 1 / h; % Number of nodes in x-directionNy = Nx; % Number of nodes in y-direction
+c0 = zeros( Nx * Ny, 1 ); % Initial guess for solutionc = fsolve( @( c ) my_func( c, Nx, Ny ), c0 ); % Find root of FD equations</text>
+        </slide>
+        <slide>
+          <slideno>9</slideno>
+          <text>10Numerical Solution of PDEs
+LWStep 1: domain decomposition
+nite volume: cells
+i, j</text>
+        </slide>
+        <slide>
+          <slideno>34</slideno>
+          <text>MIT OpenCourseWare
+https://ocw.mit.edu
+10.34 Numerical Methods Applied to Chemical Engineering
+Fall 201
+5
+For information about citing these materials or our Terms of Use, visit: https://ocw.mit.edu/terms.</text>
+        </slide>
+        <slide>
+          <slideno>12</slideno>
+          <text>13
+19 
+ x-coordinate (cm)cm) (  e t a n i d r o co y-Concentration profile in (x,y)-space. Thin medical implant at x  [1,2] cm.
+  
+0 5 10 15 20 25 3000.511.52
+-202468x 10-4
+x-coordinate (cm)y-coordinate (cm)Close-up of concentration profile in (x,y)-space.
+  
+R = 30, B = 2, N = 300. Semi-infinite boundary condition at x=R and y=B: Dirichlet zero concentration.          0 2 4 6 8 1000.020.040.060.080.1
+-202468x 10-4
+ 
+Figure 6.2 Concentration profile using Dirichlet boundary condition for x = R and y = B . R = 30 
+cm, B = 2 cm, and N = 300.</text>
+        </slide>
+        <slide>
+          <slideno>27</slideno>
+          <text>28Numerical Solution of PDEs
+Example: solve the diffusion equation in 2-D on a square with side = 1. 
+0 0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.9 100.10.20.30.40.50.60.70.80.91h=1/100
+700 seconds to solve!
+Why is it almost 10,000x slower?</text>
+        </slide>
+        <slide>
+          <slideno>16</slideno>
+          <text>17Numerical Solution of PDEs
+Step 3: solve the system of equations formulated at each node/cell for the 
+value of unknown function at each node/cell
+f(c)=0If equations are linear, use linear iterative methods
+If equations are nonlinear, use nonlinear iterative methods</text>
+        </slide>
+        <slide>
+          <slideno>1</slideno>
+          <text>Recap
+von Neumann stability analysis
+Finite volume methods
+2</text>
+        </slide>
+        <slide>
+          <slideno>31</slideno>
+          <text>32Numerical Solution of PDEs
+Example: solve the diffusion equation in 2-D on a square with side = 1. 
+5 seconds to solve!0 0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.9 100.10.20.30.40.50.60.70.80.91h=1/100</text>
+        </slide>
+        <slide>
+          <slideno>17</slideno>
+          <text>18Numerical Solution of PDEs
+Step 3: solve the system of equations formulated at each node/cell for the 
+value of unknown function at each node/cell
+f(c)=0       must be a vector of the unknowns
+       must be a vector of the equationsc
+f</text>
+        </slide>
+        <slide>
+          <slideno>30</slideno>
+          <text>31Numerical Solution of PDEs
+Example: solve the diffusion equation in 2-D on a square with side = 1. 
+0.015 seconds to solve!0 0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.9 100.10.20.30.40.50.60.70.80.91h=1/10</text>
+        </slide>
+        <slide>
+          <slideno>3</slideno>
+          <text>4
+What are each of these terms?
+B (t)= Vb(t)
+R (t)= Vr(t)
+F (t)=X
+Fk(t)=
+k2facesk2X
+A
+k(nk
+facesj)(t)
+the sum of uxes through each face of the volume *
+db
+V= Fk(t)+Vr(t)dt
+We want to solve for         by approximating the reaction and 
+ux terms.  Lets construct low order approximations physically. dB(t)=F(t)+R(t)dtACC IN/OUT GEN/CON
+*
+b(t)X
+k2facesFinite Volume Method
+Conservation within a nite volume:</text>
+        </slide>
+      </slides>
+      <videos/>
+    </lecture>
+  </lectures>
+</doc>

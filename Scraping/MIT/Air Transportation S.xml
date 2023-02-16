@@ -1,0 +1,5315 @@
+<doc>
+  <source>MIT</source>
+  <date>28/01/2023</date>
+  <course>
+    <course_url>https://ocw.mit.edu/courses/16-886-air-transportation-systems-architecting-spring-2004/</course_url>
+    <course_title>Air Transportation Systems Architecting</course_title>
+    <course_tags>
+      <list>Engineering </list>
+      <list>Systems Engineering </list>
+      <list>Social Science </list>
+    </course_tags>
+  </course>
+  <lectures>
+    <lecture>
+      <lecture_title>Technical Considerations for Autonomous Formation Flying Systems (PDF)</lecture_title>
+      <lecture_pdf_url>https://ocw.mit.edu/courses/16-886-air-transportation-systems-architecting-spring-2004/resources/03_formtechspnt/</lecture_pdf_url>
+      <lectureno>LE3</lectureno>
+      <slides>
+        <slide>
+          <slideno>23</slideno>
+          <text>MIT  
+  ICATMIT  
+  ICATConfiguration
+ySymmetric v s Asymmetric
+yVariable
+Formation vs Free Configurations
+yFormation Specific Considerations
+What is the optimal aspect ratio for overall performance
+yAre there special, non-classical control needs?
+yWhat are takeoff and landing considerations
+yIn-flig ht physical hookups</text>
+        </slide>
+        <slide>
+          <slideno>7</slideno>
+          <text>MIT  
+  ICATMIT  
+  ICATCommunications
+yRequirements
+Communicate necessar y information betw een formation elements and
+command node (LAN and Air-Ground)
+Bandwi dth
+Low-Observable?
+Synchronous vs as ynchronous
+yConstra ints
+Spectrum
+Antenna Location
+yTechnologies
+Radio
+UHF, VHF, MMW
+Optical
+Laser
+Protocols</text>
+        </slide>
+        <slide>
+          <slideno>28</slideno>
+          <text>MIT  
+  ICATMIT  
+  ICATWhat are the risk considerations 
+for technology incorporation
+yReadiness
+NASA Technolog y Readiness Levels (TRL)
+yVulnerability  
+High (Ke y Element on Which Concept Based)
+Medium (Performance or Capabilit y Enhancing, Competitive Factor)
+Low (alternatives available)
+yCompetiti ve Risk
+Goes both way s
+yCertification Risk
+yOperational Considerations
+Issues are discovered in field operations 
+Tracking Programs
+Unanticipated uses of technolog y</text>
+        </slide>
+        <slide>
+          <slideno>10</slideno>
+          <text>MIT  
+  ICATMIT  
+  ICATNavigation 
+(relates to Surveilla nce)
+yRequirements
+General Navigation (medium precision)
+Station Keeping (high precision)
+Integrity
+Availabilit y
+yConstra ints
+Existing nav sy stems
+Loss of signal
+yTechnologies
+GPS/Galileo (need Differential)
+Code vs Carrier Phase Approaches
+IRS/GPS
+Sensor Based Approaches for Station Keeping
+Image (Visible, IR)
+Range Finders (Laser, Ultrasonic)</text>
+        </slide>
+        <slide>
+          <slideno>9</slideno>
+          <text>MIT  
+  ICATMIT  
+  ICATGeneric Avionic S ystem
+SoftwareHard wareAntenna
+Sensor
+Databus
+Flight Data RecorderBlack Box
+Input De viceDispla y
+MFDInter face Unit
+Datalink AntennaPower
+Cooling</text>
+        </slide>
+        <slide>
+          <slideno>6</slideno>
+          <text>MIT  
+  ICATMIT  
+  ICATWhat are the Key Technologies for 
+Formation Flight
+yCommunications
+yNavigation
+ySurveillance
+yControl (Station Keeping)
+Intent States
+String Stabilit y
+yVehicle Configurat ion
+Aero/Performance
+Control
+yPropulsion
+yDegree of Autonom y
+yFlight Criticality
+Hardware
+Software
+yLow Observability
+yOthers?</text>
+        </slide>
+        <slide>
+          <slideno>0</slideno>
+          <text>MIT  
+  ICATMIT  
+  ICAT
+Technology Considerations for Advanced 
+Formation Flight Systems
+Prof. R. John Hansman
+MIT International Center for Air Transportation</text>
+        </slide>
+        <slide>
+          <slideno>18</slideno>
+          <text>MIT  
+  ICATMIT  
+  ICATADS-B SURVEILLANCE 
+ENVIRONMENT
+yPotential access to more states (e.g. d ynamic and intent)
+yNeed to assess benefits for conformance monitoring
+A/C
+INTENTCONTROL
+SYSTEMAIRCRA FT
+DYN AMICS
+Position, P(t)
+Velocity, V(t)
+Accel., A(t)PILOT
+INTENT
+Target
+states,
+Guidance
+modeNav.
+accur acy
+e.g. A NPControl
+surface
+inputsA/c
+property
+e.g. weightTrajectory,
+Destination
+Position,
+Baro altitude
+Heading, Speeds
+Roll, ...Target
+statesACTUAL SYSTEM REPRESENT ATION
+TrajectoryADS-B SURVEILL ANCE SYSTEM
+Other useful
+states???</text>
+        </slide>
+        <slide>
+          <slideno>13</slideno>
+          <text>MIT  
+  ICATMIT  
+  ICATSurveillance
+yRequirements
+Observed states of lead elements sufficient to form-up and maintain 
+station keeping either manuall y or by automatic control
+Feed forward states (intent)
+yConstra ints
+Sight Angles
+Installation (w eight, cost, power, etc)
+Cooperative Targets
+yTechnologies
+Automatic Dependant Surveillance Broadcast (ADS-B)
+Image Based S ystems (Vis, IR)
+Radar (X Band, MMW0
+Range Finders (Laser)
+Sensor Fusion S ystems</text>
+        </slide>
+        <slide>
+          <slideno>2</slideno>
+          <text>MIT  
+  ICATMIT  
+  ICATFormation System Concept is Itself 
+a Technology
+yNeeds
+Efficient Transport
+Fuel
+Cost
+Crew, Maintenance
+Operational Access (Noise, Runwa ys)
+Flexibilit y
+Others
+yOpportunit y
+Different design space if use multiple vehicles
+Overcome constraints (eg runwa y width, single departure point)
+Performance
+Fuel efficienc y, crew
+Development of ke y technologies enable formation flight
+Flexibilit y
+Runwa y Throughput</text>
+        </slide>
+        <slide>
+          <slideno>20</slideno>
+          <text>MIT  
+  ICATMIT  
+  ICATAutomation
+yRequirements
+Form up and station keeping ma y need to be automated
+yConstra ints
+Reliabilit y, integrit y
+Certification 
+Failure Modes
+yTechnologies
+Flight Directors
+Autopilots
+Intercept s ystems</text>
+        </slide>
+        <slide>
+          <slideno>1</slideno>
+          <text>MIT  
+  ICATMIT  
+  ICATHow Can Technologies Impact 
+System Concept 
+yNeed ( Technolog y Pull)
+Technologies can fulfill need or requirement
+Technologies can overcome barriers (limitations, constraints, etc.)
+yOpportunit y (Technology  Push)
+Technologies can Create Opportunities
+New Capabilities
+Competitive advantage
+Cost
+Performance
+Maintenance
+Other</text>
+        </slide>
+        <slide>
+          <slideno>21</slideno>
+          <text>MIT  
+  ICATMIT  
+  ICATSoftware
+yRequirements
+High Integrit y Implementation for Formation
+Formation requirement exceeds spe cs for current vehicles (eg 777) 
+yConstra ints
+Failure Modes
+yTechnologies
+DO 178B
+??</text>
+        </slide>
+        <slide>
+          <slideno>27</slideno>
+          <text>MIT  
+  ICATMIT  
+  ICATWhat are the risk considerations 
+for technology incorporation
+yReadiness
+NASA Technolog y Readiness Levels (TRL)
+yVulnerability  
+High (Ke y Element on Which Concept Based)
+Medium (Performance or Capabilit y Enhancing, Competitive Factor)
+Low (alternatives available)
+yCompetiti ve Risk
+Goes both way s
+yCertification Risk
+yOperational Considerations
+Issues are discovered in field operations 
+Tracking Programs
+Unanticipated uses of technolog y</text>
+        </slide>
+        <slide>
+          <slideno>22</slideno>
+          <text>MIT  
+  ICATMIT  
+  ICATAero-Configuration
+yRequirements
+Mission based requirements (y ou will define)
+Formation based requirements
+Special Control Requirements
+yConstra ints
+Stabilit y and Control (CG)
+Formation and non-Formation operation
+yTechnologies
+Conventional approaches modified b y formation considerations
+Asymmetric
+Formation optimal vs single optimal
+Lead - High WL, Low AR &gt;&gt; high vortex
+Trail - Low WS, High AR &gt;&gt; Low drag
+Vortex Tailoring
+Unique configurations or control s ystems</text>
+        </slide>
+        <slide>
+          <slideno>24</slideno>
+          <text>MIT  
+  ICATMIT  
+  ICATPropulsion
+yRequirements
+Take-off, balanced field length &gt;&gt; drives thrust
+Cruise efficienc y
+Response time
+yConstra ints
+Operational in formation and non formation configuration
+yTechnologies
+Unmatched multi engines (shut down in cruise, eg Vo yager)
+Broad operating envelope engines (SFC hit)
+Tow Schemes</text>
+        </slide>
+        <slide>
+          <slideno>25</slideno>
+          <text>MIT  
+  ICATMIT  
+  ICATPropulsion
+Voyager</text>
+        </slide>
+        <slide>
+          <slideno>16</slideno>
+          <text>MIT  
+  ICATMIT  
+  ICATINTENT REPRESENTATION
+IN ATC 
+yIntent formalized in Surv eillance State Vector
+yAccuratel y mimics intent communication &amp; execution in ATC
+
+
+
+
+
+D(t) states, n DestinatioT(t) states, trajectory PlannedC(t) states, target CurrentA(t) states, on AcceleratiV(t) states, Velocity P(t) states, Position
+Traditional dynamic
+states
+Defined intent
+statesSurveillance State
+Vect or, X(t) =
+FMSCurrent
+target state, C(t)
+Destination, D(t)Planned
+trajectory, T(t)MCP
+PILOT</text>
+        </slide>
+        <slide>
+          <slideno>11</slideno>
+          <text>MIT  
+  ICATMIT  
+  ICATGPS
+From http:// www.colorado.Edu/geogr aphy/gcraft /notes/gps/gps_f.html(Courtesy of Peter Dana. Used with permission.)</text>
+        </slide>
+        <slide>
+          <slideno>5</slideno>
+          <text>MIT  
+  ICATMIT  
+  ICATWhat are the Key Technologies for 
+Formation Flight
+yOverall Concept Questions
+Concept of Oper ations?
+How does for m up occur
+Station keeping requirements
+Failure Modes
+Existing elements or  New
+Vehicles
+Control S ystems
+CNS
+OtheryConcept Scale 
+Opportunities/Costs
+Perfor mance gains estimate
+Fuel
+Capacity
+Costs
+Develop ment
+Deployment
+yConcept Technologies Reqs
+Formation design
+Station Keeping
+Com
+Nav
+Surveillance
+Control</text>
+        </slide>
+        <slide>
+          <slideno>26</slideno>
+          <text>MIT  
+  ICATMIT  
+  ICATFormation Transport Example:
+C-47 (DC-3) tow ing CG-4 Cargo Gliders
+http://ww w.atter burybakalarairmus eum.org/CG4A_C47_color_photo.jpgCourtesy of the Atterbury-Bakalar Air Museum. Used with permission.</text>
+        </slide>
+        <slide>
+          <slideno>19</slideno>
+          <text>MIT  
+  ICATMIT  
+  ICATControl
+yRequirements
+Maintain Station Keeping sufficient to achieve formation benefits
+Tolerance to Environmental Disturbances
+String stabilit y
+yConstra ints
+Certification
+Failure modes
+Available states
+yTechnologies
+Performance seeking control
+Multi-Agent Control Architectures
+Distributed Control Approaches
+Leader-Follow er Schemes
+Fault Tolerant S ystems
+Redundanc y Architectures</text>
+        </slide>
+        <slide>
+          <slideno>4</slideno>
+          <text>MIT  
+  ICATMIT  
+  ICATWhat are the Key Technologies for 
+Formation Flight</text>
+        </slide>
+        <slide>
+          <slideno>3</slideno>
+          <text>MIT  
+  ICATMIT  
+  ICATWhat are the Key Technologies for 
+Formation Flight
+yStart w ith Fundamental Abstraction of Sy stem or Concept 
+(many  ways)
+Functional
+Operational
+Concept of Operations 
+Physical
+Component
+Constraint
+Information
+yBased on Abstract view, identif y 
+Technolog y needs
+Key questions
+Potential opportunities
+yUseful to sketch elements to visualize s ystem
+Multiple views</text>
+        </slide>
+        <slide>
+          <slideno>12</slideno>
+          <text>MIT  
+  ICATMIT  
+  ICATInertial Reference Unit
+yIntegrat e accelerat ion from kno wn position and velocit y
+Velocit y
+Position
+yNeed Heading
+Gyros
+Mechanical
+Laser
+yCan get Attitude
+Artificial  Horizon (PFD. HUD)
+yDrift Errors
+IRU unusable in vertical  direction (need baro alt)
+Inflight Correction
+DME
+GPS
+Star Sighting for Space Vehicles
+yMeasurement Give Attitude Also
+y777 Analytical Redundanc y</text>
+        </slide>
+        <slide>
+          <slideno>17</slideno>
+          <text>MIT  
+  ICATMIT  
+  ICATRADAR SURVEILLANCE 
+ENVIRONMENT
+yAllows visualization of different (actual or h ypothetical) 
+surveillance en vironments
+Useful for conformance monit oring anal yses of impact of surveillance
+A/C
+INTENTCONTROL
+SYSTEMAIRCRA FT
+DYN AMICS
+Position, P(t)
+Velocity, V(t)
+Accel., A(t)PILOT
+INTENT
+Target
+states,
+Guidance
+modeNav.
+accur acy
+e.g. A NPControl
+surface
+inputsA/c
+property
+e.g. weightTrajectory,
+Destination
+Position
+Mode C altitudeRADAR SURVEILLA NCE SYSTEMACTUAL SYSTEM REPRESENT ATION</text>
+        </slide>
+        <slide>
+          <slideno>14</slideno>
+          <text>MIT  
+  ICATMIT  
+  ICAT ADS-B
+Bob Hil b
+UPS/Cargo A irline Associ ation
+(Image removed due to copyright considerations.)</text>
+        </slide>
+        <slide>
+          <slideno>15</slideno>
+          <text>MIT  
+  ICATMIT  
+  ICAT RADAR
+yWavelength 
+S Band (10 cm)
+X Band (3 cm)
+Ku Band (1 (cm)
+Millimeter Wave (94 Ghz pass band)
+yRadar Range Equation
+yBeamw idth 
+ = / D
+D = Diameter of Circular Antenna
+Pencil beam vs Fan Beam
+yMechanicall y Steered Antennas
+Scan and Tilt</text>
+        </slide>
+        <slide>
+          <slideno>8</slideno>
+          <text>MIT  
+  ICATMIT  
+  ICAT COMMUNICATION
+yVoice
+VHF (line of sight) 
+118.0-135.0 Mhz
+.025 spacing in US, 0.083 spacing in Europe)
+UHF 
+230-400 Mhz (guess)
+HF (over the horizon)
+Optical (secure)
+yDatalink
+ACARS (VHF) - VDL M ode 2
+VDL Modes 3 and 4  (s plit voice and data) 
+HF Datali nk  (Chi na and Sel cal)
+yGeos ynchronous ( Inmarsatt )
+Antenna Require ments
+yLEO and MEO  Networks
+ySoftware Radios
+yAntenna Requirements</text>
+        </slide>
+      </slides>
+      <videos/>
+    </lecture>
+    <lecture>
+      <lecture_title>NASA / Boeing / UCLA Autonomous Formation Flight Program Overview and Findings (PDF 1 of 2 - 3.4 MB) (PDF 2 of 2 - 2.1 MB) (Courtesy of Greg Larson. Used with permission.)</lecture_title>
+      <lecture_pdf_url>https://ocw.mit.edu/courses/16-886-air-transportation-systems-architecting-spring-2004/resources/02_greg_larson1/</lecture_pdf_url>
+      <lectureno>LE2</lectureno>
+      <slides>
+        <slide>
+          <slideno>18</slideno>
+          <text>AFF Guidance Overview
+ Trajectories defined by great circle 
+path.  IC = lead aircraft initial heading, velocity and alt.
+ Position errors are calculated between 
+AC and prescribed trajectory.
+ Appropriate for small and large 
+formations with prescribed 
+maneuvering.Two Guidance Approaches
+ Reference frame defined by lead 
+aircrafts current velocity vector.
+ Position errors are based on aircraft
+relative position. 
+ Appropriate for tracking arbitrary 
+maneuvering.  Potential Application 
+To Aerial Refueling &amp; Auto-Carrier
+Landing Systems.Leader-Follower Trajectory Tracking
++'Y-'Z
+XfZfYf-'X
+Page 19Autonomous Formation Flight Program
+NAS4-00041 TO-104</text>
+        </slide>
+        <slide>
+          <slideno>12</slideno>
+          <text>F-18 Wing Vortices &amp; Cross Flow Gradient
+3-View, F/A-18E: Mach 0.85, AOA 3deg
+Page 13Autonomous Formation Flight Program
+NAS4-00041 TO-104
+0.00
+-0.25
+-0.50Contours of
+Pressure Coeff (Cp)
+CFD Results: Courtesy of Dave  Stookesberry , Boeing STL.Trailing Aircraft In This Wake Experience
+An Asymmetric, Turbulent Flow Field</text>
+        </slide>
+        <slide>
+          <slideno>9</slideno>
+          <text>Program Approach
+Page 10Autonomous Formation Flight Program
+NAS4-00041 TO-104
+Create the Autonomous Formation Flight Project (AFF)  Using
+two NASA F/A-18 airplanes
+ Phase 0 - Demonstrate Autonomous Station-Keeping
+ Fall of 2000
+ Phase 1 Risk Reduction - Map the Vortex Effects
+ Fall of 2001
+ Phase 1 - Autonomous Formation Flight 
+ Incomplete</text>
+        </slide>
+        <slide>
+          <slideno>6</slideno>
+          <text>Autonomous Formation Flight
+Partners and ResponsibilitiesAutonomous Formation Flight
+Partners and Responsibilities
+Page 7Autonomous Formation Flight Program
+NAS4-00041 TO-104
+UCLA
+Theoretical Research
+- GN&amp;C Design Methodologies
+- GPS Algorithm Development
+- Advanced System Concepts
+NASA DFRC
+- Overall Project Management
+- Flight Safety and Mission Assurance
+- GN&amp;C Design and Analysis
+- Verification and Validation Testing
+- Flight Vehicle Integration
+- Flight Test Operations
+The Boeing Company
+ Operational Concept  GN&amp;C Design and Analysis
+ Aerodynamic Models and Simulations
+ Formation Flight Information System (FFIS) (Integrated GPS &amp; IMU).
+ Formation Flight Computer System (FFCS).
+ Formation Flight Control System Software. Integration with F-18 Flight Control Computer (PSFCC) Systems .Project Has NASA RevCon Status 
+And Is Reported At The
+Congressional Sub-Committee Level</text>
+        </slide>
+        <slide>
+          <slideno>2</slideno>
+          <text>Special Acknowledgements &amp; References To Technical Papers
+Jake Vachon (NASA TM 2003-2107341)
+Ronald Ray (NASA TM 2003-2107341)Kevin Walsh (NASA TM 2003-2107341)
+Kimberly Ennix (NASA TM 2003-2107341)
+Ron Ray (NASA TM 2002 210723)
+Brent Cobleigh (NASA TM 2002 210723)
+Jake Vachon (NASA TM 2002 210723)
+Clint St. John (NASA TM 2002 210723)
+Eugene Lavretsky (AIAA-2002-4757)Glenn Beaver (NASA TM-2002-210728)
+Peter Urschel (NASA TM-2002-210728)
+Curtis E. Hanson (NASA TM-2002-210728, NASA TM-2002-210729)
+Jennifer Hanson (AIAA-2002-3432)
+Jack Ryan (NASA TM-2002-210729)Michael J. Allen (NASA TM-2002-210729)
+Steven R. Jacobson (NASA TM-2002-210729)
+Page 3Autonomous Formation Flight Program
+NAS4-00041 TO-104</text>
+        </slide>
+        <slide>
+          <slideno>4</slideno>
+          <text>Autonomous Formation FlightAutonomous Formation Flight
+Background
+ Many bird species fly in V formation to take advantage of the 
+up-wash field generated by adjacent birds, resulting in less 
+energy expended.
+ Analytical studies and recent AFF flight tests validate these 
+observations.
+AFF Objectives
+ Validate drag reduction concept and prediction tools of a 
+system of aircraft in formation  in the flight environment
+ Develop and evaluate sensor and control methodologies for 
+autonomous close formation flightApproach
+ Flight test autonomous station keeping control laws of pair of F-18 
+aircraft.
+ Validate drag benefits and wing tip vortex behavior using piloted
+flight tests.
+ Develop and validate advanced relative GPS system capable of 10
+cm relative position accuracy.
+ Integrate updated sensors and advanced formation control laws to
+perform autonomous station keeping within the vortex wake of a lead aircraft.
+Benefits
+ Potential commercial fuel savings of $0.5 to 1 million per year per 
+trailing aircraft.
+ Application to UAV Swarming, &amp; Aerial Refueling.
+Page 5Autonomous Formation Flight Program
+NAS4-00041 TO-104</text>
+        </slide>
+        <slide>
+          <slideno>3</slideno>
+          <text>Presentation Outline
+ Project Summary
+ Objectives
+ Theory Experiment Design Phase 0 Flight Test Phase 1 Flight Test Cruise Mission 
+Demonstration
+ Performance Seeking 
+Control
+ Aerial Refueling Concluding Remarks Project Summary
+ Objectives
+ Theory Experiment Design Phase 0 Flight Test Phase 1 Flight Test Cruise Mission 
+Demonstration
+ Performance Seeking 
+Control
+ Aerial Refueling Concluding Remarks
+Test flights began in August and culminated with a drag-reduction demonstration flight in the beginning of December 2001.
+A total of 28 flights were accomplished, and the full test point matrix was accomplished at both M=0.56, 25000 feet, and M=0.86 , 36000 feet.
+415 test points were flown5 Project Pilots were involved in AFF Phase One Risk Reduction
+Page 4Autonomous Formation Flight Program
+NAS4-00041 TO-104</text>
+        </slide>
+        <slide>
+          <slideno>7</slideno>
+          <text>Revolutionary TechnologiesRevolutionary Technologies
+Relative
+Navigation1 s t Close Coupled 
+Differential CarrierPhase GPS-IMU capable of 10 cm relative accuracy.Develop Three Key 
+Technologies:
+Page 8Autonomous Formation Flight Program
+NAS4-00041 TO-104
+Formation
+Control
+ The 1st coordinated formation 
+flight of an auto-pilot controlled aircraft to within sub-meter accuracy.Vortex Induced
+Drag Reduction
+ The 1st operational
+formation drag reduction tests under complete auto-pilot control.</text>
+        </slide>
+        <slide>
+          <slideno>17</slideno>
+          <text>AFF System H/W Couple The Aircraft 
+Through A Wireless LAN
+Page 18Autonomous Formation Flight Program
+NAS4-00041 TO-104
+Trail Aircraft
+Lead Aircraft
+ISMSISMSIndependent
+Safety System
+FFCSFFCSOuter-Loop Guidanceand Control
+AMUXAMUX
+Multiplex / Filter
+PSFCCPSFCC
+Inner-Loop ControlEnvelope Monitoring
+FFIS
+FFISDifferential Carrier Phase GPS &amp; Inter-ship Communication
+Wireless LAN Connection (9 GHz, 2.1 MB/sec)
+PBD
+Cockpit InterfacePilot Interface
+CPB
+CPB</text>
+        </slide>
+        <slide>
+          <slideno>0</slideno>
+          <text>Autonomous Formation Flight
+MIT Course 16.886, Spring 2004
+Air Transportation Systems Architecting
+Greg Larson
+Program Manager
+Boeing Phantom Works
+Gerard Schkolnik
+Program Manager
+NASA DFRC
+Page 1Autonomous Formation Flight Program
+NAS4-00041 TO-104</text>
+        </slide>
+        <slide>
+          <slideno>13</slideno>
+          <text>Page 14Autonomous Formation Flight Program
+NAS4-00041 TO-104
+Vortex Influence on Induced Drag
+*Adapted from: Blake and Mult hopp, AIAA-98-434 3, August 1998Predicted induced drag change using 
+generic horseshoe vortex model*Calculated induced drag change 
+obtained from flight data , with
+similar results at ALL flight conditions!Percent Induced drag change, M=0.56, 25,000 ft, 55 ft N2T
+-40-25-120%
+12
+25
+-0.5 0 0.50.4
+-0.40Vertical Separation (Z), win gspans
+Lateral Separation (Y), wingspans4 -4
+-4
+Lateral Separation (Y), wingspans
+4
+-0.5 00%-4
+-12
+-25
+-500
+-0.40.4Vertical Separation (Z), wingspans
+0.5
+Lateral Separation (Y), wingspans
+4
+-00% -4
+-12
+-25-50
+0
+-0.40.4
+Rapid Drag Increase
+Larger sweet spotFlight Test Theoretical
+Hammer home that this is INDUCED drag!
+The flight results also measure higher drag increases inboard than predicted, but this is also the region where data quality is worse b ecause the points are more difficult to fly. Some of these points
+were very unstable as the vortex seemed to impinge on the tail or other surfaces causing the trailing aircraft to continually wander from  the target position. Higher trim drag effects could
+also contribute to the large drag increases. The line of zero benefit is also located further outboard than predicted. These results i ndicate substantially higher sensitivity to lateral positioning
+inboard of the sweet spot than predicted. Small changes in lateral positioning in this region can result in large changes in benefits (drag increase!). The overall vertical se nsitivity
+is less than predicted; the overall shape of the region of most benefit is more round than oval as predicted for a generic wing. Induced dra g results are similar at all flight
+conditions and separation distances:
+The induced drag change measured at the transport flight condition (not presented) correlated very well to those obtained at the referen ce condition shown above in both shape and magnitude.  This
+is a significant result indicating an accurate model of induced drag change could potentially be used to model drag benefits at other con ditions.</text>
+        </slide>
+        <slide>
+          <slideno>15</slideno>
+          <text>AFF Research AircraftAFF Research Aircraft
+Pre-Production TF-18A (2 Seater)
+Research Modifications
+Instrumentation/Telemetry System
+Independent Separation Measurement System
+Formation Flight Control System &amp; Instrumentation 
+System
+Production Support Flight Control Computers
+Engines Modified with Flight Test Instrumentation 
+Package for Thrust Measurement
+Cockpit Highly Adaptable Research Monitor System
+HUD Video &amp; Hot Microphone System
+NASA 845 Systems Research Aircraft (SRA) NASA 847
+Production F-18A (1 Seater)
+Research Modifications
+ Instrumentation/Telemetry System 
+ Independent Separation Measurement System
+ Formation Flight Control System &amp; Instrumentation 
+System
+ Production Support Flight Control Computers
+ HUD Video &amp; Hot Microphone System
+Two NASA F-18 aircraft were used for this research.  Both aircraft were equipped with instrumentation and telemetry systems as we ll as identical GPS receiver units. The
+Systems Research Aircraft (SRA) was designated as the follower and outfitted with the formation autopilot, consisting of a resear ch computer and specially modified flight control 
+computers.  A NASA chase aircraft acted as the formation lead.  A third NASA chase aircraft was occasionally used for photograph ic documentation of the experiment.
+Page 16Autonomous Formation Flight Program
+NAS4-00041 TO-104</text>
+        </slide>
+        <slide>
+          <slideno>5</slideno>
+          <text>For a transcontinental route,For a transcontinental route,
+per trailing aircraft per yearper trailing aircraft per year
+Primary Project Objective: 
+Demonstrate Drag ReductionPrimary Project Objective: 
+Demonstrate Drag Reduction
+Drag Reduction Through Formation 
+FlightDrag Reduction Through Formation 
+Flight
+'CDi= 35%
+'CD= 10  15%
+'wf= 10  15%
+'CDi= 35%
+'CD= 10  15%
+'wf= 10  15%'$      = 0.5M'CO2= 10M lbs
+'NOx= 0.1M lbs
+'$      = 0.5M'CO2= 10M lbs
+'NOx= 0.1M lbs
+TheoryTheory --
+50% Reduction50% Reduction
+in Induced Dragin Induced Drag
+ExperimentalExperimental --
+Early FEarly F --18 Data18 Data
+Shows 10Shows 10 --15%15%
+Total Drag LossTotal Drag LossSafetySafety
+ReliabilityReliability
+FeasibilityFeasibility
+Ready forReady for
+CommercialCommercial
+ApplicationApplication
+TRL LEVEL 3TRL LEVEL 3TRL LEVEL 7TRL LEVEL 7
+Page 6Autonomous Formation Flight Program
+NAS4-00041 TO-104</text>
+        </slide>
+        <slide>
+          <slideno>8</slideno>
+          <text>AFF Development RoadmapAFF Development Roadmap
+Page 9Autonomous Formation Flight Program
+NAS4-00041 TO-104
+Aero-Vortex Mapping,
+Bandwidth Assessment,
+Differential Carrier Phase
+GPS/INS DemoAero-Vortex Mapping,
+Bandwidth Assessment,
+Differential Carrier Phase
+GPS/INS Demo
+AFF Drag
+Reduction FlightAFF Drag
+Reduction Flight
+AFF Optimal
+Performance
+DemoAFF Optimal
+Performance
+DemoPhase 1
+Phase 2AFF Station
+Keeping
+AFF Station
+KeepingPhase 0
+12/00
+06/01
+07/02
+04/03Demonstrate Functionality 
+of the Differential Carrier Phase
+GPS/INS  Hardware &amp; A/C Telemetry.
+Tests Demonstrate Complete Functionality 
+of the AFF System, Flight Control Avionics, 
+Differential Carrier Phase
+GPS/INS  Hardware and Aircraft TelemetryAutonomous
+Aerial
+RefuelingAutonomous
+Aerial
+RefuelingAFF Transport
+Flt Conditions
+&amp; Ops DemoAFF Transport
+Flt Conditions
+&amp; Ops Demo2000 2001 2002 2003
+Funding: $13M Over 4 Years</text>
+        </slide>
+        <slide>
+          <slideno>16</slideno>
+          <text>Page 17Autonomous Formation Flight Program
+NAS4-00041 TO-104
+NASAs FNASAs F --18s Are Uniquely 18s Are Uniquely 
+Modified Production VersionsModified Production Versions
+Boom &amp; Drogue Refueling
+Fully Instrumented 
+Engines, Inlets, &amp; A/BF-18 A Production 
+Equipped Avionics, Digital 4x FCS, GPS, RLG-IMU.
+AFF Avionics Tied Into F-18 
+A/C Bus Directly
+AFF 2 Mb/s 9GHz Inter-Ship LAN
+NASA-EAFB Flight Test Telemetry</text>
+        </slide>
+        <slide>
+          <slideno>1</slideno>
+          <text>Overview
+Autonomous Formation Flight: NASA RevCo Program
+Boeing is currently engaged with NASA Dryden Flight Research Center on a technically
+ambitious project, Autonomous Formation Flight (AFF).  The projects primary goal is to
+investigate potential benefits of flying aircraft in the aerodynamic wake vortex emanating
+from a lead aircrafts wing tip.  Initial analytic studies predict that a trailing aircraft may
+experience drag reductions of 10% or more by gaining additional lift in the updraft portion ofthe leads wake vortex.  The technical challenge is to be able to find the optimal position
+within the vortex to fly, then hold that position consistently in what is an extremely turbulent
+flow field. We know that pilots have been able to do this in the past, but the task involves a
+very high workload.
+The Autonomous Formation Flight system marries an extremely robust flight control and
+guidance system with a close-coupled GPS/IMU placed on two F-18s. Inter-ship
+communication allows the multiple GPS/IMU systems to share state data and through and
+extended Kalman filter technique, they yield a differential carrier phase solution. They
+resolve the relative position accuracy between the aircraft in formation to less than 10 cm.
+Through shared state data, the guidance systems aboard both F-18s resolve coordinated
+trajectories that permit the aircraft to maintain formation.  The trailing aircraft is thus capableof maintaining its position within the lead aircrafts wing tip vortex with extremely high
+accuracy.
+The implications and applications of this technology are far reaching, not just for fuel
+economy but for other future applications such as aerial refueling, aircraft logistics, air traffic
+control, and carrier landing systems.
+Page 2Autonomous Formation Flight Program
+NAS4-00041 TO-104</text>
+        </slide>
+      </slides>
+      <videos/>
+    </lecture>
+    <lecture>
+      <lecture_title>Human Factors for Formation Flying (PDF) (Courtesy of Missy Cummings. Used with permission.)</lecture_title>
+      <lecture_pdf_url>https://ocw.mit.edu/courses/16-886-air-transportation-systems-architecting-spring-2004/resources/12_humanfactors_rev4/</lecture_pdf_url>
+      <lectureno>LE12</lectureno>
+      <slides>
+        <slide>
+          <slideno>11</slideno>
+          <text>Situation Awareness
+ Knowing what is going on around you both 
+now and in the near-term future
+ Geospatial
+ Temporal
+ System Environmental
+ Mental model
+ Categorization mapping
+ Not the same as workload
+ Automation impact</text>
+        </slide>
+        <slide>
+          <slideno>4</slideno>
+          <text>Spatial Disorientation
+ A false perception of ones position and motion 
+with respect to the earth
+ Sensory illusions
+ Primarily due to tran sition between inside/outside 
+scans
+ Especially prominent in transition between 
+VMC/IMC in formation flying
+ False horizons
+ The leans are most commonly felt when flying 
+formation on the wing in the weather or at night (Wright 
+Patt).</text>
+        </slide>
+        <slide>
+          <slideno>5</slideno>
+          <text>Vigilance Issues
+ Sustained attention
+ Not a human strength
+ Vigilance can deteriorate significantly after 
+30 mins
+ What is the threshold for pilot intervention?
+ False alarms
+ Cost of premature pilot intervention
+ Reaction times could be affected
+ Alerting systems can help
+ Advisories versus warnings</text>
+        </slide>
+        <slide>
+          <slideno>12</slideno>
+          <text>Other Research Areas
+ Relationship of distance/siz e of aircraft to pilot 
+workload/vigilance
+ Ability to respond to problems/failures
+ Trust issues
+ Stress at close ranges
+ Long range missions
+ Both physical and cognitive fatigue
+ Division issues
+ Take the human out of the loop?
+ Ground controller</text>
+        </slide>
+        <slide>
+          <slideno>0</slideno>
+          <text>16.886
+Human Factors for 
+Autonomous Formation Flying
+Mary (Missy) Cummings
+Humans and Automation Division
+Aeronautics &amp; Astronautics</text>
+        </slide>
+        <slide>
+          <slideno>1</slideno>
+          <text>Formation Flight Basics
+ Section v. division differences
+ The tighter the formation, the 
+higher the workload
+ Implications for system 
+management
+ Wingman uses significantly 
+more fuel
+ Formation flights account for 
+14 percent of all midairs
+U.S. Navy photo</text>
+        </slide>
+        <slide>
+          <slideno>2</slideno>
+          <text>Autonomous Formation Flying in 
+Action
+Keeping Position
+ http://www.dfrc.nasa.gov/Gallery/Movie/AFF/HTML/EM-0081-01.html
+Refueling
+ http://www.dfrc.nasa.gov/Gallery/Movie/AAR/HTML/EM-0053-01.html</text>
+        </slide>
+        <slide>
+          <slideno>8</slideno>
+          <text>Signal Detection Theory
+Correct 
+RejectionMissFalse Alarm HitTrue in the World
+Pilot 
+ResponseSignal 
+OccurredSignal Did 
+Not Occur
+Signal 
+Occurred
+Signal Did 
+Not Occur
+d = sensitivity to signal
+B = criterion
+Graph generated at http://p sych.hanover.edu/Krantz/STD/</text>
+        </slide>
+        <slide>
+          <slideno>6</slideno>
+          <text>Previous  Flight Test Results
+ Air Force Flight Test Center, 2 &amp; 3 T-38s 
+ October 2001
+ Pilot workload assessments
+ They found that maintaining the minimum drag 
+formation was a comparable workload to maintaining other types of formations. (not a good thing)
+ The longest duration the pilots could maintain the 
+position operationally was approximately 20-30 minutes.
+ Recall vigilance discussion</text>
+        </slide>
+        <slide>
+          <slideno>9</slideno>
+          <text>Receiver Operating Curves
+Graph generated at http://p sych.hanover.edu/Krantz/STD/</text>
+        </slide>
+        <slide>
+          <slideno>7</slideno>
+          <text>General Research Areas
+ Alerting systems
+P r e d i c t i o n
+ Probabilistic representations Signal detection theory
+ 2D versus 3D displays
+ Is one remarkably better or more confusing than the 
+other?
+ Which one produces more false alarms?
+ Situation awareness
+ How do these design issues impact pilots SA for 
+both AFF alerting system as well as other systems?</text>
+        </slide>
+        <slide>
+          <slideno>3</slideno>
+          <text>Position Issues
+ Wing must stay within 10% of leads wingspan for 30% 
+fuel savings (Proud et al., 1999):
+ Military: C-17: 171, C-141: 160, C-5: 223
+ Commercial:  747: 196, A300: 147
+ Previous flights
+ 2001: 55 (two F/A-18s) (12% savings) 2003: 200 (DC-8/F/A-18) (29% savings)
+ Pilots most sensitive to changes in roll
+ The most significant vortex disturbance when positioned for 
+maximum drag reduction is a strong rolling moment effect (Hansen et al., 2002)
+ Vortex turbulence generally avoided
+ Step up and down</text>
+        </slide>
+        <slide>
+          <slideno>10</slideno>
+          <text>2D Versus 3D Displays
+ Human is supervising, not actively flying
+ Need to know where the system is now and where it is 
+predicted to be at some point in the future.
+ Is one type a better alerting system? 
+ Does one promote SA more than the other?</text>
+        </slide>
+      </slides>
+      <videos/>
+    </lecture>
+    <lecture>
+      <lecture_title>Market for Cargo Operations (PDF 1 of&#160;3 - 2.8 MB) (PDF 2 of 3 - 4.6 MB) (PDF 3 of 3 - 1.3 MB)&#160;(Courtesy of Al Haggerty. Used with permission.)</lecture_title>
+      <lecture_pdf_url>https://ocw.mit.edu/courses/16-886-air-transportation-systems-architecting-spring-2004/resources/08_cargopration1/</lecture_pdf_url>
+      <lectureno>LE8</lectureno>
+      <slides>
+        <slide>
+          <slideno>21</slideno>
+          <text>BARGES-OCEAN, LAKES &amp; 
+RIVER
+BULK CARGO: COAL, SAND,GRAVEL, ORE, OIL,ETC.</text>
+        </slide>
+        <slide>
+          <slideno>11</slideno>
+          <text>ONE-MAN CONTAINER
+HANDLING</text>
+        </slide>
+        <slide>
+          <slideno>36</slideno>
+          <text>THE BUSINESS OF AIR 
+CARGO!
+ECONOMICS JUSTIFY HIGH PRIORITY
+TIME CRITICAL PAYLOADS
+(ELECTRONICS, FLOWERS, BERRIES)
+URGENTPACKAGES, DATA, PARTS
+AIR CARGO MARKET AIDED BY   
+PRESSURE TO REDUCE INVENTORIES
+&amp; CYCLE TIME
+SHORTER TIME TO MARKET</text>
+        </slide>
+        <slide>
+          <slideno>38</slideno>
+          <text>NUMEROUS FREIGHT
+FORWARDERS!</text>
+        </slide>
+        <slide>
+          <slideno>22</slideno>
+          <text>AIR FREIGHT</text>
+        </slide>
+        <slide>
+          <slideno>20</slideno>
+          <text>DEMURRAGE
+AFTER A CONTAINER HAS BEEN 
+DELIVERED TO ITS DESTINATION, THE 
+RECEIPIENT HAS 24 HOURS TO UNLOAD
+DEMURRAGE CHARGES START TO 
+ACCUMULATE AFTER 1 DAY
+CONTAINER SHIPPING COMPANIES 
+TRACK THOUSANDS OF CONTAINERS ALL 
+OVER THE WORLD!</text>
+        </slide>
+        <slide>
+          <slideno>25</slideno>
+          <text>757 CARGO HANDLING
+SYSTEM
+(SIDE-LOADING PALLETS)</text>
+        </slide>
+        <slide>
+          <slideno>8</slideno>
+          <text>EVERGREEN
+CONTAINERSHIP-TAIWAN</text>
+        </slide>
+        <slide>
+          <slideno>26</slideno>
+          <text>EVA 747 FREIGHTER</text>
+        </slide>
+        <slide>
+          <slideno>37</slideno>
+          <text>AIR CARGO CARRIERS
+POLAR AIR CARGO
+ATLAS AIR
+EVERGREEN INTERNATIONAL
+MARTINAIR
+GEMINI AIR CARGO
+AMERIJET INTERNATIONAL
+EMORY AIR FREIGHT
+DHL
+AIRBORNE EXPRESS
+LUFTHANSA CARG0
+UPS
+FEDEX</text>
+        </slide>
+        <slide>
+          <slideno>19</slideno>
+          <text>8X8X20 CONTAINERS AT
+FURNITURE FACTORY</text>
+        </slide>
+        <slide>
+          <slideno>1</slideno>
+          <text>TOTAL CARGO MARKET
+GIANT MARKET CONSISTING OF:
+TRUCKING
+RAIL
+SEABORNE
+AIR CARGO
+AS THE WORLD GETS SMALLER, THE 
+GROSS VOLUME OF FREIGHT HAS 
+INCREASED DRAMATICALLY!</text>
+        </slide>
+        <slide>
+          <slideno>13</slideno>
+          <text>EXPLOSIVE GROWTH IN CONTAINER
+THROUGHPUT LONG BEACH, CA</text>
+        </slide>
+        <slide>
+          <slideno>16</slideno>
+          <text>INTERMODAL CONTAINERS 
+ON TRANS-CONTINENTAL
+RAIL SYSTEM</text>
+        </slide>
+        <slide>
+          <slideno>10</slideno>
+          <text>PORT FACILITIES
+HUGE LOGISTICAL INVESTMENT !!
+AUTOMATION IS KEY; SPEED IN UNLOADING / MINIM-
+IZATON OF LABOR TO REDUCE COSTS</text>
+        </slide>
+        <slide>
+          <slideno>23</slideno>
+          <text>TYPES OF CARGO AIRCRAFT
+FREIGHTERS ( e.g. 747 F, MD-11F, new A-380)
+COMBI AIRCRAFT (e.g. ALITALIA
+MD-11 COMBI CARRIES 200+  PAX
+AND MAIN DECK CARGO AFT)
+.CONVERTIBLE FREIGHTERS (e.g. MD-11CF)
+FREIGHTERS  ARE MANUFACTURED NEW (747-400 ERF ) OR 
+ARE MODS OF OLDER PAX AIRCRAFT ( MD-10)</text>
+        </slide>
+        <slide>
+          <slideno>15</slideno>
+          <text>MAERSK SHIPPING LINE
+INTERMODAL CONTAINER
+Gross Weight :67,200 lbs.  Tare : 8220 lbs.  Payload : 58,980 lbs .</text>
+        </slide>
+        <slide>
+          <slideno>17</slideno>
+          <text>CARGO COMPETITION IS
+INTENSE!
+K -LINE EVERGREEN
+TPL LINE MAERSK SHIPPING</text>
+        </slide>
+        <slide>
+          <slideno>27</slideno>
+          <text>747 FREIGHTER-NOSE
+LOADING</text>
+        </slide>
+        <slide>
+          <slideno>9</slideno>
+          <text>MODERN CONTAINER SHIPS
+BEAM GREATER THAN 110 ft.
+CANT TRANSIT PANAMA CANAL (TOO 
+WIDE !!)
+CREW OF ONLY 13 ( U.S. Destroyer is 360, 
+3200 tons, crew of 360 !!!)
+DIESEL POWERED , 22-23 KNOTS
+AUTOMATED SYSTEMS low labor costs
+OPTIMIZED FOR EFFICIENCY (reduced ton-mile 
+costs!!)</text>
+        </slide>
+        <slide>
+          <slideno>14</slideno>
+          <text>NUMBER &amp; SIZE OF THE U.S . 
+FLAG MERCHANT FLEET
+WORLD FLEET 28,318 SHIPS
+U.S. FLEET 454   (2%)
+CONTAINERSHIPS          90
+ROLL-ON / ROLL-
+OFF SHIPS                       60
+GENERAL CARGO
+SHIPS                              136
+SOURCE :1960- 1997 U.S. DEPT . OF TRANSPORTATI ON, MARITIME ADMINISTRATION,  MERCHANT FLEETS OF TH E WORLD, 20 01</text>
+        </slide>
+        <slide>
+          <slideno>33</slideno>
+          <text>MD-11 CONVERTIBLE 
+FREIGHTER &amp; COMBI
+CONVERTIBLE 
+FREIGHTER
+24hrs. PAX to Freighter
+48 hrs. Freighter to Pax
+MartinAir-HOLLAND
+COMBI
+Alitalia Combi
+Main Deck Cargo + 
+219 Passengers</text>
+        </slide>
+        <slide>
+          <slideno>7</slideno>
+          <text>CONTAINERSHIPS
+CAPACITY :
+UP TO 9000
+CONTAINERS
+SIZE : 950 LENGTH
+UP TO 100,000
+TONS G.W.</text>
+        </slide>
+        <slide>
+          <slideno>12</slideno>
+          <text>HONG KONG-PEARL RIVER
+DELTA- CONTAINERPORT
+MILLIONS OF 20 ft. CONTAINERS
+PASSING THROUGH IN 2002*
+HONG KONG     25.2*
+LONG BEACH   10.6
+NEW YORK         3.3
+OAKLAND          1.6
+(PRCS EXPORTS GREW 
+22% IN 2002 !!)
+SOURCE : NY TIMES 1/26/03</text>
+        </slide>
+        <slide>
+          <slideno>4</slideno>
+          <text>INTERMODAL
+TRANSPORTATION
+ALTHOUGH THERE ARE NUMEROUS 
+TYPES OF EQUIPMENT FOR FREIGHT, 
+SOME  STANDARDIZATION HAS 
+BEEN ACHIEVED IN:
+CONTAINERS
+PALLETS
+AIR FREIGHT CONTAINERS</text>
+        </slide>
+        <slide>
+          <slideno>34</slideno>
+          <text>MD-11 COCKPIT
+6 ACROSS MULTIFUNCTION FLAT PANEL DISPLAYS
+THIS COCKPIT WAS INSTALLED IN THE DC-10 MOD TO
+MD-10 FREIGHTER FOR FEDEX</text>
+        </slide>
+        <slide>
+          <slideno>3</slideno>
+          <text>TYPES OF FREIGHT
+SMALL PACKAGE DELIVERY
+LESS-THAN TRUCKLOAD FREIGHT
+AIRLINE BELLY FREIGHT , e.g. AA, 
+DL, JAL
+PALLETIZED FREIGHT
+CONTAINTERIZED FREIGHT
+BULKCARGO</text>
+        </slide>
+        <slide>
+          <slideno>0</slideno>
+          <text>Commercial Market for 
+Cargo Operations
+Aviation Systems Architecture
+Allen C.Haggerty
+Massachusetts Institute of Technology
+March 2, 2004</text>
+        </slide>
+        <slide>
+          <slideno>31</slideno>
+          <text>A-300 CARGO HANDLING
+SYSTEM
+. TIE-DOWN ATTACHMENTS
+. POWER-DRIVE UNITS
+. REINFORCED STRUCTURE
+. LARGE SIDE ACCESS DOOR                                  
+(LOADING / UNLOADING)
+. CARGO RESTRAINT 
+SYSTEM</text>
+        </slide>
+        <slide>
+          <slideno>18</slideno>
+          <text>DOUBLE-STACKED
+CONTAINERS ON RAIL
+(TRAINS MOVE DAY AND NIGHT !!)</text>
+        </slide>
+        <slide>
+          <slideno>2</slideno>
+          <text>COMMERCIAL CARGO
+OPERATIONS
+. SEA
+. LAND
+. AIR
+. RIVER, LAKES, OCEAN</text>
+        </slide>
+        <slide>
+          <slideno>35</slideno>
+          <text>DC-8F CARGOLINER
+PAX AIRCRAFT CONVERTED TO CARGO ;RE-
+ENGINED WITH TURBO-FANS
+(UPS FLEET)</text>
+        </slide>
+        <slide>
+          <slideno>6</slideno>
+          <text>8X 8 X 40 CONTAINERS</text>
+        </slide>
+        <slide>
+          <slideno>30</slideno>
+          <text>757 &amp; 767 FREIGHTERS
+UPS : 767F
+DHL: 757F</text>
+        </slide>
+        <slide>
+          <slideno>24</slideno>
+          <text>WORLD ECONOMIC GROWTH AND
+INTERNATIONAL AIR FREIGHT
+GROWTH
+GENERALLY GOOD CORRELATION BETWEEN AIR CARGO AND GDP</text>
+        </slide>
+        <slide>
+          <slideno>32</slideno>
+          <text>EVA  MD-11 CARGO 
+FREIGHTER
+630,000 lbs.MTOGW, 192,000 lbs.CARGO, 7200nm.Range</text>
+        </slide>
+        <slide>
+          <slideno>29</slideno>
+          <text>CHINA AIR 747 LOADING
+CONTAINERS</text>
+        </slide>
+        <slide>
+          <slideno>5</slideno>
+          <text>8 X 8X 20 CONTAINERS</text>
+        </slide>
+        <slide>
+          <slideno>28</slideno>
+          <text>747-400 FREIGHTER
+NEW 747-400ER FREIGHTER: 910,000 lbs.
+MTOGW ; APPROX. 8000 n.m. RANGE</text>
+        </slide>
+      </slides>
+      <videos/>
+    </lecture>
+    <lecture>
+      <lecture_title>Military and Commercial Cargo Mission Needs (PDF) (Courtesy of Blaine Rawdon. Used with permission.)</lecture_title>
+      <lecture_pdf_url>https://ocw.mit.edu/courses/16-886-air-transportation-systems-architecting-spring-2004/resources/07mitmiltry_ndco/</lecture_pdf_url>
+      <lectureno>LE7</lectureno>
+      <slides>
+        <slide>
+          <slideno>12</slideno>
+          <text>Supply Chain
+The supply chain refers to all the steps in the transport 
+process in which the goods are out of service 
+So ICC applies to all of the inventory in the supply  chain
+In transit
+Waiting between transport modes
+At the origin being built up
+At the destination being broken down
+In the store until sold
+An alternate definition of supp ly chain may include all the time
+your money is out of service
+Some companies pay for the goods before they are manufactured</text>
+        </slide>
+        <slide>
+          <slideno>21</slideno>
+          <text>Ship Time and Cost Profile
+NYC to Rotterdam  a Direct, Best Case Route
+0 20 40 60 80 100 120 140 160Moving c ontainer from loading ramp to storageConta iner waiting for pickup a fter stuffingLoading c onta iner on road trailerRoad transport to port terminalWaiting for admission to port terminalTransfer from road trailer to stackWaiting in stackUnstackin g and transfer to terminal trailerTransfer/loading onto shipContainership travel t ime (NY-Rotterdam)Tranfer/unloading off s hipTransfer to stackWaiting in stackTranfer from stack to road trailerClearance an d inspectionRoad transport, port terminal to inland de potUnloading c ontainer at inland de potStorage at inland de potMoving c onta iner to c onsignee0 200 400 600 800 1000 1200 1400 1600 1800 2000
+Time (hours)
+Cost ($US)
+HoursCost ($US)
+Origin - New YorkDestination - Rotterdam
+Source: Cost of Operations and T ime for Shipping a 40 Container; in APECs Congestion Points Study , Phase III, Best Practices M anual an d Technical Rep ort, Volume 2 Sea 
+Transport, F eb. 1997, p. 105.
+Move to back- up</text>
+        </slide>
+        <slide>
+          <slideno>18</slideno>
+          <text>Node Number
+Total Distribution Cost is influenced by the number of nodes (por ts, distribution 
+centers, stores, etc)
+Fewer nodes result in more freq uent service and/or larger vehicles
+In the case of ships, fewer por ts means that the cargo must travel far ther on more 
+expensive trucks or  trains
+Number of ports must balance the value of f requent service and  larger vehicles with the 
+increased cost of surface transport
+Casual observati on indicates a te ndency to ward few, ma jor ports
+In the case of airplanes, fewer air ports  means the cargo must travel far ther in slower 
+surface vehicles
+Must balance value of frequen cy of service and vehicle size with slower delivery
+Note that for airliners there are approximately one zillion airports worldwide
+The number for cargo i s much l ess because cost is more important than time
+Route structure design can improve schedule frequen cy by comb ining loads
+In the case of distribution center s, fewer, larger  centers  are more efficient and require 
+less safety stock (lower variab ility), but are farther from their customers
+Cargo transport into distribution centers is typically less expensive that cargo going out
+Packag ing efficie ncy, va riation due to quantity
+The size and/or  number  of nodes may incr ease over  time as traffic increases</text>
+        </slide>
+        <slide>
+          <slideno>2</slideno>
+          <text>General Problem
+Object of the game:  Devise a goods creation and 
+distribution system that creates greater value than it 
+costs
+Measure of merit varies
+Elements of the system include:
+Creation of the goods (manuf acturing, mining, farming)
+Distribution
+Customers</text>
+        </slide>
+        <slide>
+          <slideno>9</slideno>
+          <text>Comments on Cargo Rates
+Rates dec line with range
+Much of indirect operating cost is independent of range
+Cargo handling, sales costs dont depend on range
+So indirect cost per mile  is less at greater ranges
+Ships are much less expens ive than airplanes
+Ships are very efficient:  L/D ~400
+Ships indirect costs are much less than airplanes
+Large c ontainer s, mechanized loading
+Trend curves can be approximated by a simple formula
+Rate = cost/ton-nm + cost/ton
+Cost/nm can be t hought of as DOC
+Fixed cost can be thought of as IOC 
+Scatter in rates due to two factors
+Asymmetrical demand (east versus west for instance)
+Airplane main deck pays full rate, belly cargo rides for ~IOC,</text>
+        </slide>
+        <slide>
+          <slideno>23</slideno>
+          <text>Alternative Supply Chain Architectures
+Factory to Store to Customers
+DCStoresCustomersLoads by store
+~4 weeks
+Store for StoresFactories (n)
+International w/ Foreign DCLoads by product
+Factories (n)DCStoresCustomersLoads by store
+~3 days
+Cross-Dock
+at airportInternational w/ Foreign Cross DockLoads by store~10 wks 
+(0 hrs from 
+order)
+~6 wks (0 hrs from order)</text>
+        </slide>
+        <slide>
+          <slideno>25</slideno>
+          <text>Alternative Supply Chain Architectures
+Offshore Dell Computer Model
+Fridge
+Factories (n)Loads by component
+~3 wks? (5 days from order?)
+Offshore Dell Computer Model~1 week?
+Lower-value inventory</text>
+        </slide>
+        <slide>
+          <slideno>8</slideno>
+          <text>2002 Cargo Rates
+0.000.100.200.300.400.500.600.700.80
+0 1000 2000 3000 4000 5000 6000 7000 8000 9000 10000
+Great Circle Distance ( nm)Air and O cean C argo Rate
+ ($/ton-nm) on G reat Circle Basis
+$0.025/ton-nm + $25/ ton  
+(= $0.025 +  $0.008 p er ton-mile @ 3000 nm)$0.18/ton-nm + $450/ ton 
+(=$0.18 + $0.15 per ton-mile @ 3000 n m)
+Aircraft
+Container Ships</text>
+        </slide>
+        <slide>
+          <slideno>17</slideno>
+          <text>Vehicle Size
+In transport systems, bigger is usually more efficient
+Ships:
+Volume/wetted area; Reynolds number ; Froude number
+Faster and more efficient
+More cargo per  crew
+Airplanes:
+Volume/wetted area; Reynolds number
+More cargo per  crew
+Structur al penalty of large size (w ing bending mostly) is offset by other  
+benefits (compact fuselage)
+Howev er, large size implies lower schedule frequency
+Optimum system must balance transport cost reduction of larger vehicle 
+with reduced inventory of smaller vehicle
+Because airplanes generally carry goods wi th greater  value or  ICC, they will 
+tend to be smaller  than ships
+As world traffic increases, vehicles tend to increase in size</text>
+        </slide>
+        <slide>
+          <slideno>1</slideno>
+          <text>Introduction
+The cargo world attempts to solve a very complex 
+mission (problem)
+This presentation outlines the elements of the problem 
+but does not define a specific mission
+I have been trying to understand this subject for a few 
+years now
+I may only be a few week s ahead of you (if that)! 
+This presentation is non-linear
+Requires integration by the student after the fact
+Military and commercial needs are similar in structure
+Widely different values
+Military values very dependent on situation</text>
+        </slide>
+        <slide>
+          <slideno>6</slideno>
+          <text>Depreciation
+Depreciation is the most powerful and variable factor in ICC
+Depreciation refers to loss of potential value over time
+Depreciation may not be linear at all
+Seasonal variation
+If you get the air condition ers in one month late they may be on the shelves for 10 
+months  very expensive
+Lots of stuff is seasonal!
+Spoilage
+Food is worth l ess than  nothing after it spoils
+Depreciation may pertain to loss of value in the larger system, not just the 
+cargo proper
+Airplane on ground, factor y halted, troops die, etc
+Obsolescence and Hits
+Rapid technical change can cause high depreciation
+Michael Dell says his comp uters depreciate 1%/ week!
+Inability to deliver  a hit pr oduct will result in a loss of sales
+Military version of obsolescenc e and hits per tains to war
+Value of time can be v ery, very great in wartime</text>
+        </slide>
+        <slide>
+          <slideno>33</slideno>
+          <text>Cargo Airplanes
+I suspect that your analysis will show that cargo 
+airplanes have a substantially different mission than 
+passenger airplanes
+In the past, commercial cargo airplanes were derived 
+from airliners to save development cost
+It may be now that the cargo ma rket can support a purpose-built 
+cargo airplane
+Your analysis may show that a low cargo rate is more 
+important than speed
+This requires an emphas is on low DOC and IOC 
+Note that speed is good for productivity and therefore DOC
+What airplane type provides the lowest cargo rate?</text>
+        </slide>
+        <slide>
+          <slideno>3</slideno>
+          <text>General Solution
+Provides overall production/transport architecture to 
+maximize an economic measure
+This optimization results in the need for global 
+distribution of goods
+System seeks a balance betw een production and transport 
+costs:
+Low-cost or expert labor
+Mass production
+Product type consolidation (cars in Detroit, movies in LA)
+Farmland
+Proximity to market
+Good transport system access
+Etc
+Production and distribution are a linked system</text>
+        </slide>
+        <slide>
+          <slideno>14</slideno>
+          <text>Inventory Drivers
+Frequency of service
+More frequent service reduces in ventory at origin and destination
+Reduc es period between asynchronous transport modes
+Reliability of service from a schedule standpoint
+Vehicle may be late
+Vehicle may not be available (full)
+Reliable service permits reduced safety stock
+Uncertain ship availability drives shippers crazy
+Variability of demand
+Predictability of demand
+Supply chain architecture</text>
+        </slide>
+        <slide>
+          <slideno>16</slideno>
+          <text>Predictability of Demand
+Suppliers attempt to match supply to demand at optimum price
+Some ar chitectures force long lead times ( time between or der and delivery)
+This reduces predictability since market or competition may cha nge in the meantime
+Note that lead tim es can be cum ulative
+Many products are the su m of n umerous separate products, som etimes s erial
+Market serves as feedback for production
+Long lag time between pr oduction and ma rket feedback reduc es pr ecision of 
+control
+Very expensive mi stakes
+Exacerbated by seasonal aspect cannot fine-tune over the long run
+Some architectures improve responsiveness despite long supply chains
+Restaurants: generalized, low-value inv entory  held until the last moment when 
+custom product is created
+Dell Computer : same as restaur ant
+Last minute allocation: Mass order  on ship s, allocated to specific r egions or  
+stores just befor e docking according to pr esent demand</text>
+        </slide>
+        <slide>
+          <slideno>29</slideno>
+          <text>More Observations
+It used to be that one went to a store or show to obtain 
+information about goods
+Information now flows for free via Internet
+Often one can find better info on web than in store
+This supports global mail order
+It may be that the best architecture combines more than 
+one system
+Slow and cheap plus fast, responsive and expens ive
+The tweeter has less throw than the bass speaker</text>
+        </slide>
+        <slide>
+          <slideno>28</slideno>
+          <text>Some Observations
+The value of speed comes from:
+Reduc ed time in transit
+The ability to reorganize architecture
+Its not just the long trip that hurts.  Its also the slow 
+feedback loop.
+Between demand and supply
+Seasonal or time-sensitive demand exacerbates this
+Fast transit can tighten the feedback loop
+Fast transit can permit customer to obtain goods from 
+greater distance with acceptable delay
+Global mail-order</text>
+        </slide>
+        <slide>
+          <slideno>30</slideno>
+          <text>How to Determine Cargo Mission Needs
+Examine current production/transport/c ustomer system in a field of 
+interest.
+Evaluate value and ICC of goods, cost of system
+Generate alternative system architectures
+Include production, transport and customer characteristics
+Generate alternative transport vehicles
+Evaluate alternative system architectures
+Primarily against total economic performance
+Consider applications of the architecture beyond your chosen field, 
+especially for the vehicle
+Consider the future
+Consider what competition can do to you
+Choos e the best one
+This defines your mission</text>
+        </slide>
+        <slide>
+          <slideno>13</slideno>
+          <text>Inventory
+Inventory is expensive
+Typically 25% of value per year
+Inventory performs several functions:
+Buffer between a relatively steady production and an intermittent 
+transport
+Safety stock to assure an acceptable level of service 
+(acceptable likelihood of deliv ery)
+A function of system schedule reliability
+Also a function of variability and predictability of demand
+Buffer to connect two asynchronous transport modes
+Buffer to build inventory sufficient for efficient transport
+Between transport modes
+There is room for improvement in reducing inventory
+Perfect knowledge would be a good start</text>
+        </slide>
+        <slide>
+          <slideno>7</slideno>
+          <text>Cost of Transport
+Cost of transport is split into two parts:
+Direct operating cost
+Indirect operating cost
+Direct operating cost pertains to vehicle operation
+Fuel, crew, vehic le deprec iation, maintenance, etc
+Indirect operating cost pertains to other costs
+Sales, cargo handling, adm inistration, profit, etc
+Sum of direct and indirect operating costs is cargo rate</text>
+        </slide>
+        <slide>
+          <slideno>15</slideno>
+          <text>Variability
+Variability in demand influenc es supply  chain architecture
+Variability is roughly proportional to the square root of the quantity 
+involved.  
+Large quantities provide proportionally less variability
+10/100 versus 100/10,000   (10% versus 1%)
+This favors reduced product differentiation, centralized distribution 
+centers
+However :
+Customers prefer differentiated products
+Centralized distribution centers have longer delivery distances
+Architecture must balance quantity, differentiation and distance
+Compare warehouse store with corner hardware store
+Compare mail-order with local store
+Some organizations use different architecture within same system
+High-value goods centralized,  low value goods dispersed</text>
+        </slide>
+        <slide>
+          <slideno>27</slideno>
+          <text>Alternative Supply Chain Architectures
+Foreign Cars, Global Mail Order
+DealerCustomersLoad per customers order Factory
+~1 wk? (~2 wk from order?)
+Foreign Cars Built to Order
+Load per customers order Factory
+Customers
+~1 wk (~1 wk from order)
+Consumer Goods from Manufacturers Inventory</text>
+        </slide>
+        <slide>
+          <slideno>4</slideno>
+          <text>Transport Problem
+The problem pertains to the distribution of non-human 
+objects (not electronic information) 
+Humans are self-loading car go and are a special case not 
+addres sed here
+Chief difference between people and cargo is that peoples time is 
+generally much more valuable than cargos 
+Transoceanic transport:
+Cargo: 99% ship, 1% air  (by weight)
+People: 1% ship, 99% air   (approximately)
+As a result, cargo systems are much different than passenger systems
+Addressing the transport problem in isolation from 
+production, the object is to obtain the lowest total cost of 
+transport</text>
+        </slide>
+        <slide>
+          <slideno>20</slideno>
+          <text>Alternative Supply Chain Architectures
+Factory to Factory
+Factory Factory
+Via ship
+Supply Chain
+~5 wks
+Factory Factory
+Key
+Input/output
+Inventory
+Manufacturing
+Ground transport
+Ocean tran sport
+Air TransportVia air
+Supply Chain
+~1 wk</text>
+        </slide>
+        <slide>
+          <slideno>26</slideno>
+          <text>Alternative Supply Chain Architectures
+Foreign Cars
+DCDealerCustomersLoads by dealer
+FactoryGeneral, speculative load
+2 weeks?
+Car lot for dealers~8 wks?
+Can be 0, 1, or 
+10 weeks from 
+orderForeign Cars w/ DC
+Factory
+DealerCustomersLoad per dealers order
+~6 wks?
+Can be 0 or 8 wks 
+from order
+Foreign Cars w/o DC</text>
+        </slide>
+        <slide>
+          <slideno>34</slideno>
+          <text>Questions?</text>
+        </slide>
+        <slide>
+          <slideno>11</slideno>
+          <text>Total Distribution Cost
+Plot shows relationship between 
+value, ICC, TDC and speed
+For three vehicl e systems
+Y-intercept is cargo rate, slope is 
+proportional to 1/speed
+Note that speed is not vehicle 
+speed alone , but entire supply 
+chain speed.  Very impor tant!
+Line for WIG is speculative
+Fast, intermediate-cost vehicles 
+can provide lower TDC for some 
+types of goods0.000.100.200.300.400.500.600.700.80
+0 5 10 15
+Value per Pound x Inventory Carrying Cost
+($/lb)Total Distribution C ost
+($/ton-nm)Standard Air 
+Cargo
+Ultra-large, 
+land-based 
+WIGShip
+Check out this reference:  B. K. Ra wdon, Z. C. Hoisin gton, Air Vehicl e De sign fo r Mass- Market Cargo Transport, AIAA 2003-0 555, 2003</text>
+        </slide>
+        <slide>
+          <slideno>24</slideno>
+          <text>Alternative Supply Chain Architectures
+Restaurant / Dell Computer Model
+Factories (n)Fridge
+Customers
+~1 week?
+Low-value inventoryRestaurantLoads by ingredient
+~2 wks? (~30 minutes from order)Kitchen
+Fridge
+Factories (n)Loads by component
+~3 wks? (4 days 
+from order?)
+Dell Computer Model~1 week?
+Lower-value inventory</text>
+        </slide>
+        <slide>
+          <slideno>0</slideno>
+          <text>Military and Commercial Cargo 
+Mission Needs
+Presentation to Massachuset ts Institute of Technology
+Subjec t 16.886 Air Transportation System Architecting
+2/26/04
+Blaine K. Rawdon, Boeing Phantom  Works</text>
+        </slide>
+        <slide>
+          <slideno>10</slideno>
+          <text>Total Distribution Cost
+TDC = (cargo rate * tons * nautical miles) + (time * cargo value * ICC)
+so
+TDC/ton-nm = cargo rate + (1/speed  *  cargo value/pound  *  ICC  *  0.2283)
+Where units are $, tons, nautical miles, knots</text>
+        </slide>
+        <slide>
+          <slideno>19</slideno>
+          <text>Supply Chain Speed
+Supply chain speed drives Total Distribution Cost (TDC)
+More important for goods with high value per pound, high 
+deprec iation
+Supply chain speed driven by:
+Vehicle speed
+Supply  chain architecture
+Vehicle size
+Optimum supply chain architecture driven by:
+Vehicle speed, size and cost
+Value and ICC of goods
+Distance between origin and destination</text>
+        </slide>
+        <slide>
+          <slideno>31</slideno>
+          <text>Some Potential Systems of Interest
+Military deployment
+Currently performed with transport and tanker airplanes, ships, 
+dispersed US bases, prepositioned materiel, forward bases and ports, 
+etc
+Transport of food
+Elements to consider:
+Wealthy nor thern hemisphere, poor er southern; of fset seasons
+Perishability, seasonality increase ICC
+Factory to factory
+Serial buildup of lead times
+Car manufacture and delivery
+Current system appears to have large inventories, is seasonal
+Global manufacture may cause serial buildup of lead times
+Design, tooling, components, assembly, delivery
+Leads to over  or under pr oduction, less advanced products</text>
+        </slide>
+        <slide>
+          <slideno>22</slideno>
+          <text>Alternative Supply Chain Architectures
+Factory to Store to Customers
+DCStoresCustomersLoads by store
+Factories (n)Loads by product
+~8 weeks
+Store for Stores~20 wks
+International
+Factories (n)DCStoresCustomersLoads by store Loads by store
+~6 wks
+Domestic
+~3 days
+Cross-D ock</text>
+        </slide>
+        <slide>
+          <slideno>32</slideno>
+          <text>More Potential Systems of Interest
+Manufacture and delivery of consumer products
+Currently a wide mix of system architectures
+What about housing?
+Can you make houses in Chi na and put them up in Kansas?
+What about health services?
+Can you have a roving specialist (or general) hospital?
+Example is Orbis, an eyesight hospital in a DC-10</text>
+        </slide>
+        <slide>
+          <slideno>5</slideno>
+          <text>Total Distribution Cost
+Object of logistics systems is to minimize Total 
+Distribution Cost (TDC)
+TDC is the total cost of transporting goods
+Sum of cost of transport and cost of holding inventory
+Cost of transport is fees paid to carriers (ship, truck, etc)
+Annual cost of inventory is typically a fraction of the 
+value of the inventory
+This fraction is called Inventory Carrying Cost
+Typical fraction is 25%, but depends heavily on actual goods, timing
+Diamonds have low ICC, food has high ICC
+Consists of interest, depreciation, taxes, insurance, losses, 
+warehouses</text>
+        </slide>
+      </slides>
+      <videos/>
+    </lecture>
+    <lecture>
+      <lecture_title>Architecting and Designing Air Transportation Systems (PDF)</lecture_title>
+      <lecture_pdf_url>https://ocw.mit.edu/courses/16-886-air-transportation-systems-architecting-spring-2004/resources/09architecting/</lecture_pdf_url>
+      <lectureno>LE9</lectureno>
+      <slides>
+        <slide>
+          <slideno>3</slideno>
+          <text>Why is architecture important?
+The right architecture can:
+Maximize system robustness
+Maximize system flexibility
+Minimize system complexity
+Enable desirable behavior
+Deter undesirable behavior
+Example(s): 
+An electrical circuit breaker limits the 
+undesirable behavior that would result from a 
+surge in the supply voltage</text>
+        </slide>
+        <slide>
+          <slideno>9</slideno>
+          <text>Chance
+Observing nature and recognizing 
+events 
+Requires pattern recognition skills and lots 
+of luck
+Example(s):
+Discovery of synthetic rubber
+First cave woman to observe that two rocks 
+struck together produces fire</text>
+        </slide>
+        <slide>
+          <slideno>39</slideno>
+          <text>Models
+Models
+Means of communication with clients, builders, 
+and users
+Language of architect
+Important for constructing system and 
+describing and diagnosing its operation
+Can be classified by their roles or content
+Source: The Art of Systems Architecting, Maier &amp; Rechtin</text>
+        </slide>
+        <slide>
+          <slideno>50</slideno>
+          <text>CDIO
+Concept View
+Combination of Purpose and Form Views
+Question(s)
+What functions does the customer want? 
+(now &amp; in the future)
+What functions does the customer need? 
+(now &amp; in the future)</text>
+        </slide>
+        <slide>
+          <slideno>10</slideno>
+          <text>Key question(s) for chance?
+What activity should I be doing to maximize 
+the likelihood of a concept developing?
+Should I be drinking coffee at Starbucks of 
+tinkering in the lab?</text>
+        </slide>
+        <slide>
+          <slideno>5</slideno>
+          <text>Synthesis
+Combining existing systems to satisfy 
+stated needs
+Requires logic and complete (or near 
+complete) knowledge of existing systems 
+Example(s): 
+Designing a mechanism to support a person 
+who wants to cross over a river or stream</text>
+        </slide>
+        <slide>
+          <slideno>41</slideno>
+          <text>Models (3)
+In other words:
+A Model is a representation of something
+A View is a collection of models that share the 
+property that they are relevant to the same 
+concerns for a system stakeholder.
+A Viewpoint is an abstraction of view across 
+many systems.
+Source: The Art of Systems Architecting, Maier &amp; Rechtin</text>
+        </slide>
+        <slide>
+          <slideno>21</slideno>
+          <text>Examples Problem
+How can we reduce the noise impact of 
+aircraft (during approach) on communities 
+near airports without losing capacity?</text>
+        </slide>
+        <slide>
+          <slideno>44</slideno>
+          <text>Integrated Modeling Methodologies
+Meth od Domai n
+Hatley /Pirb hai(H/P) Comp uter-based reactive or event-driven sy stems
+Quantitative quality  function 
+deployment (Q2FD)Systems w ith extensive quant itative performance objectives 
+and understood performanc e models
+Object modeli ng tech nique (OMT) Large-scale, date-intensive softw are sy stems, especially  
+those implemented in mo dern object languages
+ADARTS Large-scale, real-t ime softw are sy stems
+Manufacturing sy stem analy sis (MSA) Intelli gent manufacturing sy stems
+Source: The Art of Systems Architecting, Maier &amp; Rechtin</text>
+        </slide>
+        <slide>
+          <slideno>48</slideno>
+          <text>Integrated Modeling Methodologies
+Quantitative QFD-based approach:
+5. Repeat the process iteratively using the system 
+design parameters as objectives.  At each stage 
+the parameters at the next level up become the 
+objectives at the next level down.
+6. Continue the process of decomposition on as 
+many level as desired.  As detailed designs are 
+developed, their parameter value can flow up 
+the hierarchy to track estimated performance for 
+customer objectives.
+Source: The Art of Systems Architecting, Maier &amp; Rechtin</text>
+        </slide>
+        <slide>
+          <slideno>15</slideno>
+          <text>Complexity
+Complexity is the degree to which the set of 
+possible states of a system exceeds the set 
+of desired states
+Complexity can be measured
+Information required to describe all the 
+components, their interconnections and their 
+interactions
+Number of homogeneous/dissimilar elements, 
+homogeneous/dissimilar interconnections, and 
+ways components are organized</text>
+        </slide>
+        <slide>
+          <slideno>0</slideno>
+          <text>Architecting &amp; Designing 
+Air Transportation Systems
+Prof. John-Paul Clarke
+Massachusetts Institute of Technology
+16.899
+March 4, 2004</text>
+        </slide>
+        <slide>
+          <slideno>20</slideno>
+          <text>Analogy between Entropy and Complexity
+Thermod ynamic domain:
+(Sgenerate d)12  (S2S1) - &gt; 0
+Objectiv e is to minimize entrop y 
+generation or  irreversibilit y
+Limited by physical laws and practical 
+considerations on the rate energy  at 
+which energ y can be extracted 
+Flow systems  are energy  conver sion 
+devices to minimize entrop y generationSystem Engineering domain:
+CgratuitousCactualCessen tial&gt; 0
+Objectiv e is to minimize gratuitous 
+complexit y
+Limited by physical laws and practical 
+considerations on the rate at which 
+information can be shared
+Integrated product teams are the 
+equivalent of  flow s ystems
+
+2
+1
+irrevTQ</text>
+        </slide>
+        <slide>
+          <slideno>26</slideno>
+          <text>Background
+Noise impact determined by 3 components
+Source Characteristics
+Intensity, frequency content, &amp; directivity
+Path Characteristics
+Attenuation, diffraction
+Receiver Characteristics
+Population distribution, time of day</text>
+        </slide>
+        <slide>
+          <slideno>47</slideno>
+          <text>Integrated Modeling Methodologies
+Quantitative QFD-based approach:
+3. Determine the relationships of the parameters 
+and objectives, and the interrelationships 
+among the parameters.  Which affect which?
+4. Set one or more values for each parameter.  
+Multiple values may be set, for example, 
+minimum, nominal, and target.  Additional slots 
+provide tracking form detailed design activities.
+Source: The Art of Systems Architecting, Maier &amp; Rechtin</text>
+        </slide>
+        <slide>
+          <slideno>22</slideno>
+          <text>Motivation
+Noise is an important factor in the siting 
+and operation of airports
+Negative reaction by community to noise from 
+aircraft
+Community agreement required for increase in 
+number of operations, airport expansion or 
+airspace changes
+Lengthy environmental studies required for 
+approval and federal mitigation funding
+Significant reduction in number of new runways 
+built</text>
+        </slide>
+        <slide>
+          <slideno>51</slideno>
+          <text>CDIO
+Design View
+Combination of Behavior and Performance 
+Views
+Question(s)
+What vehicles and systems do you think will 
+fulfill these wants and needs?
+How would these vehicles and systems fit 
+together?
+How well would the system perform?</text>
+        </slide>
+        <slide>
+          <slideno>35</slideno>
+          <text>Noise Benefit (JFK 13L)
+3 decelerating 
+approach has 
+equivalent noise 
+impact to Canarsie 
+approach
+Population impacted 
+by noise greater than 
+60 dBA reduced from 
+252,734 (ILS) to 79,851
+3 decelerating 
+approach can be used 
+in Instrument 
+Meteorological 
+Conditions (IMC)020000400006000080000100000120000140000160000180000
+ILS Approach Canarsie VOR
+ApproachCurved 3
+Decelerating
+ApproachPopulation Impacted by Peak Noise
+ in 10 dBA Ranges60-70
+70-80
+80-90
+90-100
+050000100000150000200000250000300000
+60 70 80 90 100
+Peak Noise (dBA)ILS Approach
+Canarsie VOR
+Approach
+Curved 3 Decelerating
+Approach</text>
+        </slide>
+        <slide>
+          <slideno>31</slideno>
+          <text>ILS Approach
+Glide Slope intercepted 
+from below
+A/C flies along 
+extended centerline for 
+much of approach (final 
+and intermediate 
+segments)
+Low altitude 
+maneuvering
+Localiser
+transmitterRunwayAlt. 300 ftAlt. 1200 ftJoin glide path and
+commence final
+descent
+Outer Marker
+Middle Marker3.9 nm3000 ftAlt. 2500 ftIFIAF
+FAF
+aircraft track
+Glide path transmitter</text>
+        </slide>
+        <slide>
+          <slideno>33</slideno>
+          <text>3 Decelerating Approach
+Single segment
+Aircraft intercepts segment at high alt. &amp; speed
+Aircraft decelerates during descent at idle thrust
+Achieves approach speed at 500-1,000 ft AGL
+Does not require additional displays
+(Image removed due to copyright considerations.)</text>
+        </slide>
+        <slide>
+          <slideno>1</slideno>
+          <text>Regulation
+Corporate
+strategy
+Competition
+Market Data
+Market
+Strategy
+TechnologySystem
+architecture
+needs goalsfunction
++constraintsform
+timing
+operator
+Training
+Outbound 
+marketing 
+strategy, Sales, 
+DistributionManufacturing, 
+Operations,
+Illities*
+Why ?
+Purpos eWhat ?
+Performance
+RequirementsHow ?
+BehaviorWhere?
+StructureWhen?
+Action
+Who?
+Users
+Customer(s)
+can beconceptSystem Architecture Framework
+Source: Craw ley and de Weck
+*Reliability , Servicability , Environmen tal Impact, Upgradeability, F lexibility,etc</text>
+        </slide>
+        <slide>
+          <slideno>4</slideno>
+          <text>How do we determine architecture?
+Synthesis
+Discovery
+Chance</text>
+        </slide>
+        <slide>
+          <slideno>38</slideno>
+          <text>Civil Architecture Analogy
+Building pleases client aesthetically, 
+functionally, financially
+Model Purpose
+Physical scale model Convey look &amp; site placement
+Floor plans Ensure building performs desired 
+functions
+External renderings Convey look of building
+Budgets, schedules Meet clients financial performance 
+objectives
+Construction 
+blueprintsCommunicate design req. and 
+construction criteria  to builders
+Source: The Art of Systems Architecting, Maier &amp; Rechtin</text>
+        </slide>
+        <slide>
+          <slideno>23</slideno>
+          <text>Motivation (2)
+120
+110
+100
+90CV990ACV880-22720
+707-100B-52
+BAC-111
+Normalized to 100,000 Ib thrust
+Noise level are for airplane/engine configurations at time of initial serviceDC9-10DC8-20
+DC8-61 737-100
+727-200
+747-300A310-300
+767-200
+757-200
+737-300767-300
+L-1011
+Year of Initial ServiceNoise Level (EPNdB)
+(1500 ft Sideline)
+747-400
+737-500A321
+A330
+A340737-700
+777A320-100
+MD-11(est.)727-100707-300B
+747-100
+747-200
+A300B2-101737-200
+1950 1960 1970 1980 1990 1995Second Generation Turbofan
+MD-80
+737-400
+MD90-30BAe-146-200DC10-10CaravelleComet 4
+DC10-30First Generation
+ TurbofanTurbojet</text>
+        </slide>
+        <slide>
+          <slideno>12</slideno>
+          <text>How do I know the best architecture?
+Selection process
+Natural selection
+Artificial selection
+Goals and metrics</text>
+        </slide>
+        <slide>
+          <slideno>17</slideno>
+          <text>Complexity
+Complexity can be decomposed
+Essential complexity: minimum level of 
+complexity that is essential to deliver system 
+function
+Gratuitous complexity: additional complexity 
+beyond essential complexity</text>
+        </slide>
+        <slide>
+          <slideno>27</slideno>
+          <text>Background (2)
+Components interdependent
+Thrust &amp; speed determine source 
+characteristics
+Thrust, aerodynamics, &amp; atmospheric 
+conditions determine aircraft performance
+Speed &amp; atmospheric conditions determine 
+maximum thrust available
+Provides opportunities for operational 
+modifications that reduce noise impact</text>
+        </slide>
+        <slide>
+          <slideno>40</slideno>
+          <text>Models (2)
+Terminology (IEEE standard):
+Model: approximation, representation, or 
+idealization of  a real-world system.
+View: representation of a system from the 
+perspective of related concerns or issues
+Viewpoint: template, pattern, or specification for 
+constructing a view
+Source: The Art of Systems Architecting, Maier &amp; Rechtin</text>
+        </slide>
+        <slide>
+          <slideno>46</slideno>
+          <text>Integrated Modeling Methodologies
+Quantitative QFD-based approach:
+1. Identify a set of performance objectives of 
+interest to the client.  Determine appropriate 
+values or ranges for meeting these objectives 
+through competitive analysis.
+2. Identify the set of system-level design 
+parameters that determine the performance for 
+each objective.  Determine satisfaction models 
+that relate the parameters and objectives.
+Source: The Art of Systems Architecting, Maier &amp; Rechtin</text>
+        </slide>
+        <slide>
+          <slideno>24</slideno>
+          <text>Motivation (4)
+Operational procedures can provide 
+significant additional noise reductions
+Thrust management strategies redistribute 
+noise impact during departure and reduce 
+impact during approach 
+Lateral deviations direct aircraft away from 
+populated areas during departure and approach
+Applied only at airports with severe noise 
+restrictions
+Limited in applications because of flight 
+guidance technology limitations</text>
+        </slide>
+        <slide>
+          <slideno>16</slideno>
+          <text>Complexity
+Complexity is subjective
+Influenced by user perception and presentation 
+scheme
+Ex: cruise control system in automobiles
+Low apparent complexity as presented to 
+drivers: knobs, buttons 
+High apparent complexity if you include 
+physical parts such as electromechanical 
+components or logics such as control laws</text>
+        </slide>
+        <slide>
+          <slideno>18</slideno>
+          <text>Architecture and Complexity
+Architecture determines the parts and their 
+interaction (form and function)
+Different architectures have different levels 
+of robustness, flexibility and complexity
+Ex: cruise control system vs. driver as a control 
+and feedback mechanism
+Characteristics of good architecture
+Actual complexity is close to essential 
+complexity
+Enhances system behavior by improving 
+system predictability</text>
+        </slide>
+        <slide>
+          <slideno>2</slideno>
+          <text>What is architecture?
+Logical and physical embodiment of a 
+system
+Mechanism that 
+Shapes the functional and physical boundaries 
+of the system
+Governs the behavior and structure of the 
+system</text>
+        </slide>
+        <slide>
+          <slideno>7</slideno>
+          <text>Discovery
+Using knowledge of existing architecture to 
+discover new architecture
+Requires knowledge of existing systems 
+and pattern recognition, analysis and 
+abstraction skills
+Example(s):
+Man learning how to fly
+Disease and drug pathways</text>
+        </slide>
+        <slide>
+          <slideno>13</slideno>
+          <text>Robustness
+Ability of a system to perform under 
+various operating conditions
+Robustness can be measured
+Range of operating conditions (both internal and 
+external) over which the performance of a 
+system is within an acceptable distance of its 
+peak performance
+Ex: Frequency response of a control system</text>
+        </slide>
+        <slide>
+          <slideno>32</slideno>
+          <text>ILS Approach (JFK 13L)
+Approach Chart Noise Impact
+(Image removed due to copyright considerations.)
+(Courtesy of John-Paul Clarke. Used with permission.)</text>
+        </slide>
+        <slide>
+          <slideno>36</slideno>
+          <text>What is the Product of an Architect? (1)
+Building or system?
+Relationship is indirect: the system is built by 
+the  developer!
+Architect connects
+Problem domain concepts of client AND the 
+solution domain concepts of builders
+System cannot be built unless architect has 
+a mechanism to communicate visions and 
+track construction against it
+Architect provides models of the system!
+Source: The Art of Systems Architecting, Maier &amp; Rechtin</text>
+        </slide>
+        <slide>
+          <slideno>37</slideno>
+          <text>What is the Product of an Architect? (2)
+Individual models are point-in-time 
+representations of a system
+Treat each model as a member of one of several 
+progressions
+Concept
+Satisfactory
+?Detailed, technology-
+specific models=&gt; First models =&gt;
+Source: The Art of Systems Architecting, Maier &amp; Rechtin</text>
+        </slide>
+        <slide>
+          <slideno>53</slideno>
+          <text>CDIO
+Operations View
+Combination of Management View and the 
+Business Case
+Question(s)
+How would you operate the system?
+What physical resources are required?
+What financial resources are required?
+What sociopolitical resources are required?
+Will all stakeholders profit from this deal?</text>
+        </slide>
+        <slide>
+          <slideno>43</slideno>
+          <text>Models (5)
+Integrated modeling method
+A system of representation that links multiple 
+views
+Consists of a set of models for a subset of 
+views and a set of rules or additional models to 
+link the core views
+Most are domain specific
+Source: The Art of Systems Architecting, Maier &amp; Rechtin</text>
+        </slide>
+        <slide>
+          <slideno>49</slideno>
+          <text>Quantitative QFD
+Design 
+Paramet ers
+Interaction 
+Matrix
+Parameters BudgetsCusto mer 
+Object ives Satisf action
+Models
+Design 
+Paramet ers
+Interaction 
+Matrix
+Parameters BudgetsCusto mer 
+Object ives Satisf action
+ModelsSubsystem Allocation 
+And Refinement
+Backward Flow of
+Current Design Status
+Source: The Art of Systems Architecting, Maier &amp; Rechtin</text>
+        </slide>
+        <slide>
+          <slideno>52</slideno>
+          <text>CDIO
+Implementation View
+Combination of Data and Management Views
+Question(s)
+How would you build the system?
+What physical resources are required?
+What financial resources are required?
+What socio-political resources are required?</text>
+        </slide>
+        <slide>
+          <slideno>19</slideno>
+          <text>Analogy between Entropy and Complexity
+Complexity has a lower limit i.e. actual 
+complexity is always greater or equal to 
+essential complexity
+Complexity is a property to engineered 
+systems as entropy is to thermodynamic 
+systems
+These generalities cannot be expressed 
+qualitatively, but their importance can be 
+demonstrated with specific examples</text>
+        </slide>
+        <slide>
+          <slideno>8</slideno>
+          <text>Key question(s) for discovery?
+Is there some analogous system in another 
+domain?
+What are the properties of a given 
+architecture that makes it perform so well 
+(or poorly)?
+Are there similar (or better) ways to perform 
+those functions?</text>
+        </slide>
+        <slide>
+          <slideno>14</slideno>
+          <text>Flexibility
+Flexibility is the means though which we 
+achieve robustness
+Flexibility can be measured
+Number of different modes or states in which 
+system can be successfully operated
+Ease with which the operating mode or state 
+can be changed
+Ex: Humans
+Flexibility leads to complexity</text>
+        </slide>
+        <slide>
+          <slideno>42</slideno>
+          <text>Models (4)
+6 common views
+Should be complete and mostly independent
+System can be projected into any view, possible 
+in many ways
+Performa nceThe systemPurpos e/Objectives Data
+Form
+Manageria lBehavior
+(functional)View Description
+Purpose/Objective What client wants
+Form What th e system  is
+Behavioral or function al What th e system  does
+Performance o bjectives How effectively the system d oes it
+Data The inform ation retained in the 
+system and its inte rrelationship s
+Managerial Process b y which system is  
+constructed and mana ged
+Source: The Art of Systems Architecting, Maier &amp; Rechtin</text>
+        </slide>
+        <slide>
+          <slideno>29</slideno>
+          <text>Critical Components
+Aircraft Performance and Trajectory
+Noise Generated by the Aircraft
+Population Distribution and Density
+Flight Safety and Pilot Acceptance
+Guidance and Navigation Requirements
+Local Atmospheric Conditions</text>
+        </slide>
+        <slide>
+          <slideno>30</slideno>
+          <text>NOISIM
+MODE CONTROL PANEL 
+(MCP)
+COURSE     IAS/MACH HEADING  VERT SPEED     COURSE     ALTITUDE
+3
+6
+10
+17FCSTRK M8.9 NM 0623.7z
+KCOS
+CAGERWENNY
+FLOTSEHSI0619.6zClock MCP Status
+ALT        V/S          HDG          SPD
+5000                       016            180
+NOSE
+LEFT RIGHT
+Gear Status
+Flap StatusUP15
+15
+20
+25
+30Marker 
+BeaconsEADISpeed Altitude
+PULL UP
+GND
+PROX
+MID
+INNEROUTER030
+36GPWS
+Windscreen5300 185
+A/T 
+IDLE 
+ 
+VNAVCMD
+LNAVGS 193 2470
+-200Vertical 
+Speed
+PRECIPWINDSHEARWINDSHEAR
+AHEAD
+CONTROL DISPLAY UNIT
+CAGER 
+ 
+WENNY  
+ 
+WATKI  
+ 
+EKR036 / 16.9 
+ 
+060 / 23.5 
+ 
+076 / 17.435000 / 350 
+ 
+30000 / 300 
+ 
+25000 / 250 
+ 
+20000 / 250
+SPEED BRAKES, THROTTLES,  
+FLAPS, GEARPILOT'S CHAIR CONTROL 
+STICKDISPLAY
+(Courtesy of John-Paul Clarke. Used with permission.)</text>
+        </slide>
+        <slide>
+          <slideno>25</slideno>
+          <text>Motivation (4)
+Advanced flight guidance technologies may 
+be used to improve the applicability and 
+effectiveness of noise abatement 
+procedures
+GPS will be the base of the future primary 
+navigation system in the United States [FAA, 
+1996]
+Flight procedures are being re-examined as part 
+of the transition to satellite navigation
+Area Navigation (RNAV) using position 
+information from the Global Positioning System 
+(GPS) enables flexible trajectories</text>
+        </slide>
+        <slide>
+          <slideno>45</slideno>
+          <text>Integrated Modeling Methodologies
+Quantitative QFD
+Performance objectives are most important to 
+the client
+Performance-centered approach to system 
+specification, decomposition, and synthesis
+Japanese-originated method for visually 
+organizing the decomposition of customer 
+objectives
+Source: The Art of Systems Architecting, Maier &amp; Rechtin</text>
+        </slide>
+        <slide>
+          <slideno>6</slideno>
+          <text>Key question(s) for synthesis?
+What functions do I need to get the job 
+done?
+Is there a way to combine existing systems 
+to do the desired functions without having 
+too many extra functions and too much 
+extra form?
+What rules do I have to apply to do this?</text>
+        </slide>
+        <slide>
+          <slideno>28</slideno>
+          <text>NOISIM
+Methodology for developing noise 
+abatement procedures
+Combines Flight Simulator, Noise Model, 
+and Geographic Information System (GIS)
+Simulates realistic aircraft operation (737-
+200 &amp; 767-300)
+Evaluates critical components 
+simultaneously
+Rapid prototyping and evaluation of noise 
+abatement procedures</text>
+        </slide>
+        <slide>
+          <slideno>34</slideno>
+          <text>3 Decelerating Approach (JFK 13L)
+3 decelerating 
+approach implemented 
+to reduce noise 
+associated with low 
+altitude vectoring
+Lateral trajectory of 
+decelerating approach 
+similar to ILS 
+approach to avoid 
+traffic of other airports
+(Courtesy of John-Paul Clarke. Used with permission.)</text>
+        </slide>
+        <slide>
+          <slideno>11</slideno>
+          <text>Are they mutually exclusive?
+No!
+Most of the processes we use to determine 
+architecture combine the three approaches
+Example(s):
+Chance-&gt;Discovery-&gt;Synthesis
+Synthesis-&gt;Discovery&amp;Chance</text>
+        </slide>
+      </slides>
+      <videos/>
+    </lecture>
+    <lecture>
+      <lecture_title>Economics of Commercial Cargo Operations (PDF)</lecture_title>
+      <lecture_pdf_url>https://ocw.mit.edu/courses/16-886-air-transportation-systems-architecting-spring-2004/resources/06cargo_econmics/</lecture_pdf_url>
+      <lectureno>LE6</lectureno>
+      <slides>
+        <slide>
+          <slideno>18</slideno>
+          <text>MIT  
+  ICATMIT    ICATDC-10-30 H ourly Operating Cost Breakd own,
+Q1 2001
+Crew
+15%
+Fuel/Oil
+34%
+Rentals
+6%Deprec iation
+9%Maintenance
+25%Burden
+9%Other
+1%
+Insurance
+0%Taxes
+1%
+Estimated from data for passenger aircraft</text>
+        </slide>
+        <slide>
+          <slideno>4</slideno>
+          <text>MIT  
+  ICATMIT    ICAT Top U.S. Air Cargo Airlines in 2001 
+Total Freight and Mail (Intl + Domestic)
+Carrier Ton-miles (millions)
+1.Federal Express 7,565
+2.UPS Airlines 4,081
+3.United Airlines 1,919
+4.Northwest Airlines 1,918
+5.American Airlines 1,813
+6.Delta Airlines 1,269
+7.Atlas Air 1,072
+8.Polar Air Cargo 892
+Source: ATA Annual Report 2002</text>
+        </slide>
+        <slide>
+          <slideno>21</slideno>
+          <text>MIT  
+  ICATMIT    ICAT747-400 H ourly Operating Cost Breakd own,
+Q1 2001
+Crew
+24%
+Fuel/Oil
+34%Rentals
+15%Depreciation
+5%Maintenance
+10%Burden
+10%Other
+1%
+Taxes
+1% Insurance
+0%
+Estimated from data for passenger aircraft</text>
+        </slide>
+        <slide>
+          <slideno>13</slideno>
+          <text>MIT  
+  ICATMIT    ICAT
+Load Factors (Domestic Cargo Carriers)
+Ton Load Factor for Scheduled Cargo Service
+5052545658606264
+DHL Fedex UPSTon Load Factor (%)</text>
+        </slide>
+        <slide>
+          <slideno>12</slideno>
+          <text>MIT  
+  ICATMIT    ICAT
+Operating Profit (Domestic Cargo Carriers)
+Operating Profit Margin, Year 2000
+-6-4-202468
+DHL Fedex UPS Passenger MajorsOperating Profit Margin (%)</text>
+        </slide>
+        <slide>
+          <slideno>9</slideno>
+          <text>MIT  
+  ICATMIT    ICAT
+Recent Trends in Air Cargo
+Rapid growth in demand for air cargo
+Intra-Asia is the largest true air freight market
+Even during Asian economic crisis air freight traffic grew
+Forecasts for continued traffic growth at 6% per year
+Falling real yields (revenue per ton-mile)
+Average 2.5% decline in yields (CPI adjusted)
+Growth in international trade has increased trip length, associated 
+with lower tariffs per mile
+Wide-body aircraft have unused belly capacity, viewed by 
+passenger airlines as virtually costless
+Passenger air lines have become pr ice leaders in air  freight
+Regulatory liberalization has spurred price competition
+Lower tariffs further stimulate demand , but  also cause air lines to focus 
+on lowering unit costs</text>
+        </slide>
+        <slide>
+          <slideno>3</slideno>
+          <text>MIT  
+  ICATMIT    ICAT Top Air Cargo Airlines Worldwide in 2000 
+Total Freight and Mail (Intl + Domestic)
+Carrier Ton-miles (millions)
+1.Federal Express 7,466
+2.Lufthansa German Airlines 4,995
+3.Singapore Airlines 4,188
+4.Korean Air 3,873
+5.Air France 3,553
+6.Japan Air Lines 3,226
+7.United Airlines 3,153
+8.KLM Royal Dutch Airlines 2,969
+Source: Aviation and Aerospace Almanac 2002</text>
+        </slide>
+        <slide>
+          <slideno>10</slideno>
+          <text>MIT  
+  ICATMIT    ICAT
+Trends in Air Cargo (contd)
+Integrator expansion
+Integrated express carriers own air and ground assets to handle 
+entire shipment journey
+Fedex and UPS, facing competition and decreasing yields in 
+express documents, expanded to international markets
+With limited international small package growth, carry standard air 
+freight (airport to air port) as filler
+Trying to develop products for higher-yield industrial traffic
+Consolidation of freight forwarders
+Non-integrated carriers receive majority of traffic from freight 
+forwarders  FFshandle retail marketing and pick-up/delivery
+Number of mid-sized freight forwarders has been shrinking, leaving 
+largest operators and niche competitors</text>
+        </slide>
+        <slide>
+          <slideno>8</slideno>
+          <text>MIT  
+  ICATMIT    ICAT
+Constraints on Air Cargo Growth
+Economic recession
+Reduced production, demand for  goods, international trade
+Trade barriers
+Tariffs or protectionism designed to limit free trade
+Aircraft regulations
+Air cargo operators have used older aircraft that are most affected 
+by new regulations on noise, emissions and safety
+For example, noise hush-kits reduce cargo payloads
+Modal competition
+Air freight has tremendous speed advantage for long distances, but 
+is highest-cost option
+Trucks very competitive for short haul (1000 miles, overnight)
+Development of new fast ships for ocean cargo</text>
+        </slide>
+        <slide>
+          <slideno>24</slideno>
+          <text>MIT  
+  ICATMIT    ICAT
+Number of Aircraft (Wide Body)
+Payload more than 140,000 lbs
+747-100 30
+747-200 137
+747-300 4
+747-400 50
+DC-10-30 51
+DC-10-40 3
+MD-10-30 1
+MD-11 77</text>
+        </slide>
+        <slide>
+          <slideno>25</slideno>
+          <text>MIT  
+  ICATMIT    ICAT
+Key Questions
+Where can an air cargo carrier reduce cost?
+If you could automate aircraft operations, which 
+aircraft type would give you the best leverage?
+Is there any specific segment of the air cargo market 
+that is primed for growth?
+How would you grow this market segment?</text>
+        </slide>
+        <slide>
+          <slideno>20</slideno>
+          <text>MIT  
+  ICATMIT    ICAT747-200 H ourly Operating Cost Breakd own,
+Q1 2001
+Crew
+18%
+Fuel/Oil
+34%
+Rentals
+7%Depreciation
+4%Maintenance
+15%Burden
+20%Other
+1%
+Insurance
+0%Taxes
+1%
+Estimated from data for passenger aircraft</text>
+        </slide>
+        <slide>
+          <slideno>14</slideno>
+          <text>MIT  
+  ICATMIT    ICAT727-200 H ourly Operating Cost Breakd own,
+Q1 2001
+Crew
+28%
+Fuel/Oil
+33%Rentals
+1%Depreciation
+10%Maintenance
+14%Burden
+10%Other
+1%
+Taxes
+3%
+Insurance
+0%
+Estimated from data for passenger aircraft</text>
+        </slide>
+        <slide>
+          <slideno>7</slideno>
+          <text>MIT  
+  ICATMIT    ICAT
+Drivers of Air Cargo Growth in 1990s
+Overall economic growth (especially world trade)
+Historically, 2 to 2.5% increase in world trade with each 1% increase 
+in total GDP
+Air freight trade has been growing even faster, due to regional 
+differences in economic growth
+Since 1993, average 7-10% annual growth in world air freight traffic
+Globalization
+Increasingly integrated and interdependent national economies
+Liberalized (free) trade and reduced protectionism
+Lean Inventory Strategies
+Reduced order-cycle times: just in time and make to order
+Less stock on hand to avoid production shutdowns, retail stockouts
+Air freight shortens delivery times to customer</text>
+        </slide>
+        <slide>
+          <slideno>11</slideno>
+          <text>MIT  
+  ICATMIT    ICAT
+Air Cargo Outlook (Source: Al Haggerty)
+Global AIRLINE PAX TRAFFIC forecast to grow @ 
+4.5% per year between 1999 and 2010
+Global AIR FREIGHT forecast to grow @ 6.0% per year 
+between 1999 and 2010
+ASIA-PACIFIC REGION expected to dominate air 
+freight market
+UNIT COSTS declined at an average annual rate of 
+3.0% between 1960 and 1999
+Larger, more efficient freighters are making air freight 
+more competitive</text>
+        </slide>
+        <slide>
+          <slideno>0</slideno>
+          <text>MIT  
+  ICATMIT    ICAT
+Air Cargo Economics
+Prof. John-Paul Clarke
+16.886
+Air Transportation Systems Architecting
+February 24, 2004</text>
+        </slide>
+        <slide>
+          <slideno>22</slideno>
+          <text>MIT  
+  ICATMIT    ICAT
+Number of Aircraft (Narrow Body)
+Payload less than 60,000 lbs
+727-100 215
+727-200 283
+737-200/300 35
+Bae 146 25
+DC-9 104
+Payload between 60,000 &amp; 120,000 lbs (narrow body)
+707-320 55
+757-200 80
+DC-8-50/60 103
+DC-8-70 103</text>
+        </slide>
+        <slide>
+          <slideno>2</slideno>
+          <text>MIT  
+  ICATMIT    ICAT
+Air Cargo Industry
+Air Cargo Categories
+Express/time definite: small packages (less than 100 lb.)
+Heavyweight freight shipments (greater than 100 lb.)
+Mail transport
+Participants:
+All-Cargo Airlines
+Integrated Express Carriers (express/small packages; door to door 
+service)
+Non-integrated Freight Carriers (heavyweight freight shipments; 
+work with freight forwarders, etc.)
+Passenger (Combination) Airlines
+Can carry air freight, express packages and mail in passenger 
+aircraft belly or on combi aircraft
+Also can have dedicated freight aircraft</text>
+        </slide>
+        <slide>
+          <slideno>6</slideno>
+          <text>MIT  
+  ICATMIT    ICAT
+Demand for Air Cargo Services
+Like demand for passenger air travel, demand for air 
+cargo shipment is a derived demand.
+Primary drivers of air cargo demand include:
+Economic growth and trade (especially imports/exports)
+Relative prices of air cargo versus alternatives  ocean, truck, rail
+Difficult to quantify demand/supply accurately:
+No comprehensive sources of data on air cargo traffic and pricing
+Lack of published schedule data (unlike passenger airlines)
+Vertically integrated air cargo operators (like Fedex and UPS) only 
+publish limited schedules for selected flights
+All-cargo carriers tend to operate flexibly based on daily/weekly 
+demands
+Combination carriers provide joint supply of cargo and passenger
+capacity</text>
+        </slide>
+        <slide>
+          <slideno>15</slideno>
+          <text>MIT  
+  ICATMIT    ICAT757-200 H ourly Operating Cost Breakd own,
+Q1 2001
+Crew
+24%
+Fuel/Oil
+28% Rentals
+15%Depreciation
+7%Maintenance
+14%Burden
+9%Other
+1%
+Taxes
+2%
+Insurance
+0%
+Estimated from data for passenger aircraft</text>
+        </slide>
+        <slide>
+          <slideno>16</slideno>
+          <text>MIT  
+  ICATMIT    ICAT767-200 H ourly Operating Cost Breakd own,
+Q1 2001
+Crew
+26%
+Fuel/Oil
+31%Rentals
+3%Depreciation
+7%Maintenance
+18%Burden
+10%Other
+3%
+Taxes
+2%
+Insurance
+0%
+Estimated from data for passenger aircraft</text>
+        </slide>
+        <slide>
+          <slideno>19</slideno>
+          <text>MIT  
+  ICATMIT    ICAT MD-11 Hourly Operating Cost Breakd own,
+Q1 2001
+Crew
+22%
+Fuel/Oil
+34%Rentals
+12%Depreciation
+10%Maintenance
+12%Burden
+7%Other
+1%
+Insurance
+0%Taxes
+2%
+Estimated from data for passenger aircraft</text>
+        </slide>
+        <slide>
+          <slideno>5</slideno>
+          <text>MIT  
+  ICATMIT    ICAT
+Selected Cargo Carriers 2001 (Source: ATA)
+Carrier Number 
+of 
+AircraftAir Cargo 
+Ton-miles  
+(millions)Cargo 
+Revenue 
+($ million)% of 
+Operating 
+Revenue
+FedEx 320 7,609 $ 6,948 45.8 %
+UPS Air 258 4,094 $ 2,624 96.6 %
+United 543 2,390 $    704 4.3 %
+Northwest 440 2,161 $    715 7.5 %
+KLM 132 2,512 $    882 15.5 %</text>
+        </slide>
+        <slide>
+          <slideno>1</slideno>
+          <text>MIT  
+  ICATMIT    ICAT
+Lecture Outline
+Air Cargo Industry
+Types of air cargo and air cargo carriers
+Largest air cargo carriers
+Demand for Air Cargo Services
+Drivers of air cargo growth
+Constraints on growth
+Recent Trends in Air Cargo
+Traffic and tariffs
+Industry structure
+Impacts of recent recession and 9/11
+Breakdown of Cargo Revenue and Cost</text>
+        </slide>
+        <slide>
+          <slideno>17</slideno>
+          <text>MIT  
+  ICATMIT    ICAT767-300 H ourly Operating Cost Breakd own,
+Q1 2001
+Crew
+28%
+Fuel/Oil
+34%Rentals
+13%Deprec iation
+5%Maintenance
+8%Burden
+9%Other
+1%
+Insurance
+0%Taxes
+2%
+Estimated from data for passenger aircraft</text>
+        </slide>
+        <slide>
+          <slideno>23</slideno>
+          <text>MIT  
+  ICATMIT    ICAT
+Number of Aircraft (Wide Body)
+Payload between 70,000 &amp; 140,000 lbs (wide body)
+A300-B4 67
+A300-600 45
+A310-200 41
+767-200 16
+767-300 16
+DC-10-10 40
+MD-10-10 1
+L-1011 11</text>
+        </slide>
+      </slides>
+      <videos/>
+    </lecture>
+    <lecture>
+      <lecture_title>Avionics (PDF 1 of 2-&#160;1.3 MB) (PDF 2 of 2 - 2.2 MB )</lecture_title>
+      <lecture_pdf_url>https://ocw.mit.edu/courses/16-886-air-transportation-systems-architecting-spring-2004/resources/14_avionic_cert1/</lecture_pdf_url>
+      <lectureno>LE14</lectureno>
+      <slides>
+        <slide>
+          <slideno>2</slideno>
+          <text>MIT  
+  ICATMIT  
+  ICAT
+(Courtesy of Boeing Corporation. Used with permission.)</text>
+        </slide>
+        <slide>
+          <slideno>12</slideno>
+          <text>MIT  
+  ICATMIT  
+  ICATCertification
+yAirline Operating Certificate - Part 121
+Procedures
+Training
+Airports
+Aircraft
+Management</text>
+        </slide>
+        <slide>
+          <slideno>13</slideno>
+          <text>MIT  
+  ICATMIT  
+  ICATFederal Aviation Regulations
+y Part 1 -DEFINITIONS AND ABBRE VIATIONS
+y Part 11 - GENER AL RULEM AKING PROCEDURES
+y Part 21 - CERTIFIC ATION PROCE DURES FOR PRO DUC TS AND PARTS
+y Part 23 - AIRWOR THINESS ST ANDARDS: NOR MAL, UTILITY, ACROB ATIC, AND COMMUTER CATEGOR Y 
+AIRPLANES
+y Part 25 - AIRWOR THINESS ST ANDARDS: TRANSPOR T CATEGOR Y AIRPLA NES
+y Part 27 - AIRWOR THINESS ST ANDARDS: NOR MAL CATEGOR Y RO TOR CRAFT
+y Part 29 - AIRWOR THINESS ST ANDARDS: TR ANSPOR T CATEGOR Y RO TORCR AFT
+y Part 31 - AIRWOR THINESS ST ANDARDS: M ANNED FREE B ALLOONS
+y Part 33 - AIRWOR THINESS ST ANDARDS: AIRCRAFT ENGINES
+y Part 34 - FUEL VENTING A ND EXH AUST EMISSION  REQUIREM ENTS FOR T URBINE ENGINE POWERED 
+AIRPLANES
+y Part 35 - AIRWOR THINESS ST ANDARDS: PROPEL LERS
+y Part 36 - NOISE STANDARDS: AIRCRAFT TYPE A ND AIRWOR THINESS CER TIFICA TION
+yhttp://w ww.airweb.faa.go v/Regulatory_and_Guidance_Library/rgWebco
+mponents.nsf/HomeFrame?OpenFrameSet</text>
+        </slide>
+        <slide>
+          <slideno>19</slideno>
+          <text>MIT  
+  ICATMIT  
+  ICAT
+Event Tree Example
+From :  LevesonA reduced event tree for a loss of coolant accident.
+Adapted from: Leveson, Nancy. Safeware: System Safety and 
+Computers. Addison-Wesley, 1995.SucceedsSucceedsSucceeds
+Succeeds
+SucceedsFails
+FailsFails
+Fails
+FailsFails1-P4
+1-P41-P51-P3
+1-P2P4
+P3
+P2P4P5
+P5Available
+Initiating
+Event
+P1P1
+P1 x P5
+P1 x P2P1 x P4
+P1 x P3P1 x P4 x P5
+P1 x P3 x P4Pipe Break1
+Electric
+Power2
+ECCS3
+Fission
+Product
+Removal4
+Containment
+Integrity5</text>
+        </slide>
+        <slide>
+          <slideno>6</slideno>
+          <text>MIT  
+  ICATMIT  
+  ICAT
+(Courtesy of Boeing Corporation. Used with permission.)</text>
+        </slide>
+        <slide>
+          <slideno>14</slideno>
+          <text>MIT  
+  ICATMIT  
+  ICAT
+FAA engineering personnel
+are sometimes consulted at this stepProduct is Evaluated for Marketability
+ and Certifiability
+Company Makes Decision to Proceed
+with DevelopmentPreliminary Design CompletedDescription of the FAA Avionics Certification Process
+This Diagram illustrates the TC or STC approval process.
+Detailed Design CompletedThis is the appropriate time to 
+initiate certification project
+FAA witnesses many of the systems
+tests for certification
+FAA witnesses all of the flight
+and ground tests conducted on aircraft
+for certificationClose consultation with FAA
+engineering personnel is essential
+throughout design process to avoid
+new requirements late in process System Testing Completed
+Installation in Aircraft and Certification
+Testing CompletedIdea for New Avionics
+Product is Born
+FAA ACO Issues Certificate and System
+is Ready for Operational ApprovalCertification Plan is Prepared
+and Submitted to the ACO for Review
+and Approval. Plan will Address the System
+Safety Assessment and the Software
+Aspects of Certification
+Testing Plans and System Safety Assessment
+Prepared and Submitted to the ACO for Review
+and Approval
+Flight Test Plan and Balance of Design approval
+Documents Submitted to ACO for Review and
+Approval</text>
+        </slide>
+        <slide>
+          <slideno>29</slideno>
+          <text>MIT  
+  ICATMIT  
+  ICATWhat are the Key Technologies for 
+Formation Flight
+yCommunications
+yNavigation
+ySurveillance
+yControl (Station Keeping)
+Intent States
+String Stabilit y
+yVehicle Configurat ion
+Aero/Performance
+Control
+yPropulsion
+yDegree of Autonom y
+yFlight Criticality
+Hardware
+Software
+yLow Observabilit y
+yOthers?</text>
+        </slide>
+        <slide>
+          <slideno>26</slideno>
+          <text>MIT  
+  ICATMIT  
+  ICATFAA 8040.4 Safety Analysis 
+Process
+Plan
+ID Hazards
+Analysis
+Risk
+Assessment
+Decision</text>
+        </slide>
+        <slide>
+          <slideno>33</slideno>
+          <text>MIT  
+  ICATMIT  
+  ICAT
+Roll Scale
+HEAD-UP DISPLAY10
+-10 -10AI
+-220
+-700 VS 218 GS1450 B0.6
+00 35 011210
+Airspeed
+Ground Speed
+Pitch Scale
+Flight Path Acceleration Flight Path Vector
+Speed Error TapeWind Vector
+Reference Symbol
+Barometric Altitude
+Vertical SpeedHorizon and 
+Heading Scale</text>
+        </slide>
+        <slide>
+          <slideno>4</slideno>
+          <text>MIT  
+  ICATMIT  
+  ICAT
+(Courtesy of Boeing Corporation. Used with permission.)</text>
+        </slide>
+        <slide>
+          <slideno>25</slideno>
+          <text>MIT  
+  ICATMIT  
+  ICATAdditional Issues
+yConventional v s. New Technologies/Configurations
+yProblem with Soft ware and Complex S ystems
+yEmergent Beha vior
+yAir-Ground Coupling Issues</text>
+        </slide>
+        <slide>
+          <slideno>8</slideno>
+          <text>MIT  
+  ICATMIT  
+  ICAT
+(Courtesy of Boeing Corporation. Used with permission.)</text>
+        </slide>
+        <slide>
+          <slideno>11</slideno>
+          <text>MIT  
+  ICATMIT  
+  ICATCertification
+yComponent Certifi cate of Air worthiness
+Engines
+Propellers
+Parts
+Instruments
+yComponent (Parts &amp; Instruments) Standards
+Technical Service Order (TSO)
+Minimum Operational Performance Specification (MOPS)
+ySoftware Standards
+RTCA DO-178B
+yContinued Air worthiness
+Inspections
+Maintenance</text>
+        </slide>
+        <slide>
+          <slideno>20</slideno>
+          <text>MIT  
+  ICATMIT  
+  ICAT
+Fault Tree and 
+Event Tree Examples
+From :  Leveson Operator
+inattentiveRelief valve 1
+Relief valve 1
+does not openPressure
+too highOpens
+OpensPressure decreases
+Pressure decreases
+ExplosionA fault tree and event tree comparison.
+Fails
+FailsRelief valve 2Explosion
+Pressure
+too high
+Valve
+failureValve
+failure
+Pressure
+monitor
+failureComputer
+output
+too lateComputer
+does not
+issue command
+to open
+valve 1Operator does not know
+to open value 2Relief valve 2
+does not open
+Computer does not
+open valve 1
+Value 1
+position indicator
+falls onOpen indicator
+light falls on
+Adapted from: Leveson, Nancy. Safeware: System Safety and Computers. Addison-Wesley, 1995.</text>
+        </slide>
+        <slide>
+          <slideno>22</slideno>
+          <text>MIT  
+  ICATMIT  
+  ICATReliability Architectures
+yAnal ysis Values often of Questionable Integrit y
+yDrives Failure Mitigation Approaches
+yAvoid Single String Failure
+Cannot guarantee 10E-9
+yRedundancy
+Dual Redundant for Passive Failures
+e.g. Wing Spar
+Triple Redundanc y for Active S ystems
+777 Fl y By Wire
+Sensors
+Processors
+Actuators
+Data Bus
+A320 Reliability  Architecture b y Comparison</text>
+        </slide>
+        <slide>
+          <slideno>17</slideno>
+          <text>MIT  
+  ICATMIT  
+  ICATDescriptive Probabilities
+Probability 
+(per unit of exposure)
+FAR
+Probable
+Improbable
+Extremely 
+ImprobableJAR
+Frequent
+Reasonably
+Probable 
+Remote
+Extremely Remote
+Extremely 
+Improbable1
+10E-3
+10E-5
+10E-7
+10E-9
+What is the correct unit of exposur e : Flight hour, Departure, Failure</text>
+        </slide>
+        <slide>
+          <slideno>27</slideno>
+          <text>MIT  
+  ICATMIT  
+  ICATOperational Reliability
+yMTBF
+Mean Time Between Failure
+yMTBUR
+Mean Time Between Unscheduled Replacement
+yDispatch Reliability
+Conditional Airworthiness
+Minimum Equipment List
+yRelates to Life C ycle Costs</text>
+        </slide>
+        <slide>
+          <slideno>15</slideno>
+          <text>MIT  
+  ICATMIT  
+  ICAT
+yAdvisory  Circular AC 25.1309-1A  
+System Design and Anal ysis
+yFail Safe
+yFail Operational
+yPreliminar y Hazard Analy sis
+yFunctional Hazard Assessment
+yDepth of Anal ysis Flowchart
+Complex S ystem</text>
+        </slide>
+        <slide>
+          <slideno>3</slideno>
+          <text>MIT  
+  ICATMIT  
+  ICAT
+(Courtesy of Boeing Corporation. Used with permission.)</text>
+        </slide>
+        <slide>
+          <slideno>24</slideno>
+          <text>MIT  
+  ICATMIT  
+  ICAT
+S1 S1 S2 S2 S2* Trim Wheels
+pedals
+Grnd spoilers, spe edbrake Grnd spoilers, spe edbrake
+Roll con trol surfaces Roll con trol surfaces
+Spoi lers Spoi lers
+Ailerons AileronsS1
+S1
+S1S2
+S2S1S2 S1
+S1S2
+S2
+S1S2
+S2S1 P1
+P1
+P1
+P1 P1P1
+P1
+P1P2
+P2
+P2P2
+P2
+P2 P2P3
+P3
+P3P3 P3
+P3
+P3P3
+TLURudder
+* Rudder Slats
+Yaw damper
+TrimFlaps
+THS
+Elevator
+ Elevator1FBWFBW --A330/A340 flight control architectureA330/A340 flight control architecture
+23Computer / hydraulic actuator arrangementComputer / hydraulic actuator arrangement</text>
+        </slide>
+        <slide>
+          <slideno>9</slideno>
+          <text>MIT  
+  ICATMIT  
+  ICATCertification
+yCivil 
+Certificate of Airworthiness (i.e. Certification)
+Guarantee to the public that the aircraft is airworth y to some 
+standard
+Operational Approval
+Operating Certificate 
+Equipment
+Procedures
+Training
+yMilitary  
+Procurement
+ySpace 
+Man Rated</text>
+        </slide>
+        <slide>
+          <slideno>5</slideno>
+          <text>MIT  
+  ICATMIT  
+  ICAT
+(Courtesy of Boeing Corporation. Used with permission.)</text>
+        </slide>
+        <slide>
+          <slideno>30</slideno>
+          <text>MIT  
+  ICATMIT  
+  ICATGeneric Avionic S ystem
+SoftwareHard wareAntenna
+Sensor
+Databus
+Flight Data RecorderBlack Box
+Input De viceDispla y
+MFDInter face Unit
+Datalink AntennaPower
+Cooling</text>
+        </slide>
+        <slide>
+          <slideno>28</slideno>
+          <text>MIT  
+  ICATMIT  
+  ICATMaintenance
+yScheduled Maintenance
+Periodic (e.g. Annual)
+On Time (Time Between Overhaul) (TBO)
+Progressive (Inspection Based e.g. Cracks)
+Conditional (Monitoring Based e.g. Engines - ACARS)
+Heav y Maintenance Checks
+yUnscheduled
+Squaw ks = Reported Anomalies
+Logbook Entries (ACARS)
+Line Replacement Units (LRU)
+Airworthiness Directives, Service Difficult y Reports
+yParts In ventory
+Parts Tracking
+Commonalit y
+Glass Cockpits
+F16 Tail</text>
+        </slide>
+        <slide>
+          <slideno>0</slideno>
+          <text>MIT  
+  ICATMIT  
+  ICAT
+Certification and Avionics 
+Prof. R. John Hansman
+MIT International Center for Air Transportation</text>
+        </slide>
+        <slide>
+          <slideno>18</slideno>
+          <text>MIT  
+  ICATMIT  
+  ICATSafe ty Analysis
+yPreliminary Hazard A nalysis
+yFault Tree Analysis
+Top Do wn Se arch - Presumes Ha zards Kno wn
+System Definition
+Fault Tr ee Construction 
+Qualitative Anal ysis
+Quantitative Analy sis
+yEvent Tree Analysis
+Bottom Up Forward Search - Identifies possible outcomes
+yFailure Modes and Effects Analysis
+Probabilistic For ward Search
+Requires Failure Probabilit y Estimates
+Requires Assumed Failures fr om PHA or Historical Data
+Target Level of Safet y</text>
+        </slide>
+        <slide>
+          <slideno>31</slideno>
+          <text>MIT  
+  ICATMIT  
+  ICATAvionics Components
+yBlack Box (LR U)
+yPower (440 AC or 28V DC)
+yCooling
+yDatabus (AIRINC 429, 629, IEEE486,)
+Databus Interface
+yAntenna and or Sensors
+yDisplay  Head
+MFD
+Dedicated Displa y</text>
+        </slide>
+        <slide>
+          <slideno>16</slideno>
+          <text>MIT  
+  ICATMIT  
+  ICATProbability vs. Consequences 
+Probable ImprobableExtremely
+ImprobableCatastrophic 
+Acciden t
+Adverse Effect 
+On
+Occupa nts
+Airplane
+Damage
+Emergency
+Proced ures
+Abnor mal
+Proced ures
+Nuisance
+Normal</text>
+        </slide>
+        <slide>
+          <slideno>32</slideno>
+          <text>MIT  
+  ICATMIT  
+  ICAT Air Data
+yBarometric Altitude
+yAirspeed
+yMach Number
+yVertical Speed
+yTotal Air Temperature (TAT)
+yStatic Air Temperature (SAT)
+yAngle of Attack ( )
+yAngle of Sideslip ( )</text>
+        </slide>
+        <slide>
+          <slideno>7</slideno>
+          <text>MIT  
+  ICATMIT  
+  ICAT
+(Courtesy of Boeing Corporation. Used with permission.)</text>
+        </slide>
+        <slide>
+          <slideno>21</slideno>
+          <text>MIT  
+  ICATMIT  
+  ICATFailure Modes and Effects Analysis
+A
+BCritical
+A
+BFMEA for a system of two amplifiers in parallel.
+Open
+Short
+Other90
+5
+5
+90
+5
+5Open
+Short
+Other1 x 10-3 x 
+ x 5 x 10-5
+5 x 10-5
+5 x 10-5
+5 x 10-51 x 10-3Failure
+probabilityFailure
+mode% Failure
+by modeEffects
+CriticalNoncritical
+Adapted from: Leveson, Nancy. Safeware: System Safety and Computers. Addison-Wesley, 1995.</text>
+        </slide>
+        <slide>
+          <slideno>1</slideno>
+          <text>MIT  
+  ICATMIT  
+  ICATSafety
+ySafety Targets/Standards
+Civil Air Carrier FAR Part 25 FAR Part 121 (J AR) 
+Civil General Av iation FAR Part 23 FAR Part 91
+Militar y Mil Spec
+ySafety Components
+Vehicle Airworthiness
+Training and Operating Procedures
+Maintenance
+Culture
+Qualit y Management Processes
+Incident Reporting
+Accident Inves tigation
+Liabilit y
+yDesign Philosophy
+Fail Safe
+Fail Operational</text>
+        </slide>
+        <slide>
+          <slideno>23</slideno>
+          <text>MIT  
+  ICATMIT  
+  ICATFly-by-wire --A330/A340
+PRIM
+PRIMPRIM
+SEC
+SEC
+Flight Control computers are dual channel 
+one for control and one for monitoring
+Each processor has a different vendor for hardware &amp; software
+software for each processor coded in a different language</text>
+        </slide>
+        <slide>
+          <slideno>10</slideno>
+          <text>MIT  
+  ICATMIT  
+  ICATCertification
+yAircraft Certificate of Air worthiness
+Standard Type Certificate (STC)
+Categories
+Air Carrier
+Normal
+Utility
+Experimental
+Rotorcraft
+LTA
+Others</text>
+        </slide>
+      </slides>
+      <videos/>
+    </lecture>
+    <lecture>
+      <lecture_title>Course Introduction
+Introduction of Formation Flight Project (PDF)</lecture_title>
+      <lecture_pdf_url>https://ocw.mit.edu/courses/16-886-air-transportation-systems-architecting-spring-2004/resources/01_murman_intro/</lecture_pdf_url>
+      <lectureno>LE1</lectureno>
+      <slides>
+        <slide>
+          <slideno>1</slideno>
+          <text>16.886 - Feb 3, 2004
+Course Information
+16.886 Air Transportation Systems Architecting
+Graduate (Spring) H-Level Grad Credit
+Prereq: 16.885 or permission of instructor
+Units: 3-2-7
+Lecture: TR9.30-11 AM      Lab: Wed 3-5 pm
+Faculty:Earll Murman, John-Paul Clarke, John Hansman
+Bob Liebeck, Al Haggerty, Guest lecturers
+Accounts will be set up on workstations</text>
+        </slide>
+        <slide>
+          <slideno>20</slideno>
+          <text>16.886 - Feb 3, 2004
+Variations on the Theme - II*
+Swarm is naturally stable. If an 
+aircraft moves ahead of the flock it 
+takes more power and if it moves 
+aft it takes less
+Stabilit y diminishes at tip. Aircraft Significant ground effect only for 
+small heights above ground.
+Formation effects improve 
+ground effect for larger heights
+more likely to wander
+* King, A and Gopalara thnam, A, I deal Aer odyna mics of Ground-Effe ct and For mation Flight1
+0.8CDiIGECDiOGE
+Single Aircraft
+Gopalarathnam, A. "Ideal Aerodynamics of 
+Formation and Ground-Effect Flight".Formation of 3 Formation of 5 Formation of 250.6
+0.4
+0.2
+0 2 4
+h/b6 8 100.025
+0.02
+0.015CDix/
+0.01
+0.005
+0
+1
+Aircraft No.234
+OGE IGE56789101112</text>
+        </slide>
+        <slide>
+          <slideno>16</slideno>
+          <text>16.886 - Feb 3, 2004
+Aerodynamic Basics of Formation Flying*-V
+More elaborate vortex wake models agree well with simple horseshoe 
+model for two wings and span separations greater than approx 0.25
+Trends are ok even for smaller span separations
+Three rolled up sheet re sults are for three different vertical separations
+Deductions: Want small lateral separations, some vertical separation
+* Hummel, The Use of Aircraft Wa kes to Achieve Power Reductions in Formation Flight, AGARD CP-584, May 1966</text>
+        </slide>
+        <slide>
+          <slideno>3</slideno>
+          <text>16.886 - Feb 3, 2004
+Commercial Drivers
+Globalization trends
+Longer distances between producers and consumers
+Emerging markets, e.g. China, South America, Africa
+Lean manufacturing
+Focus on flow to eliminate waste, e.g. JIT
+Faster response to market demands
+Air freight operators looking for new markets
+Most transoceanic freight shipped by surface
+Gap in capability- middle market
+Ship is inexpens ive but takes 18-30 days
+Air is expens ive but takes only 3-6 days
+Operating economics drive
+Increased capacity per air freighter
+Reduced crew and fuel costs</text>
+        </slide>
+        <slide>
+          <slideno>24</slideno>
+          <text>16.886 - Feb 3, 2004
+Class Deliverables
+The final deliverables for the class will be a written report and 
+accompanying briefing which lays out the feasibility of 
+formation flight for long haul cargo aircraft, candidate system 
+specifications, and gaps in know ledge needed to realize the 
+proposed concept(s). The audien ces for these deliverables are 
+decision makers in industry and government, and the engineering 
+community as represented by an AIAA technical conference.  
+The report should include a one page executive summary, a main 
+body of a length and content suitable  for a conference paper, and 
+appendices as needed for detailed analysis. 
+Examples from past classes on course website</text>
+        </slide>
+        <slide>
+          <slideno>7</slideno>
+          <text>16.886 - Feb 3, 2004
+Summary of Drivers
+Both commercial and military
+Need more weight and volume transported over 
+long distances.
+Mostly intercontinental
+Need block times in days rather than weeks
+Ground transport and handling is important
+Focus on integrated system, not just aircraft
+Need affordable costs
+More expensive than surface but less expensive than 
+current air</text>
+        </slide>
+        <slide>
+          <slideno>23</slideno>
+          <text>16.886 - Feb 3, 2004
+Value Creation Framework
+Value - how various stakeholders find particular 
+worth, utility, benefit, or reward in exchange for 
+their respective contributions to the enterprise.
+Value 
+Identific ationValue 
+Prop ositionValue 
+DeliveryValue Phases
+Enterpris e
+EmployeesCustomer 
+Acquirer
+PartnersShareholder
+Corporation
+SocietySuppliers
+UnionEnd U ser 
+Consumer
+StakeholdersIdentify the 
+stakeholders 
+and their value 
+expectationsDevelop a 
+robust value 
+proposition to 
+meet the 
+expectations Deliver on the 
+promise with 
+good technical 
+and program 
+performance
+Murman et al., Lean Enterprise Value, 2002, Palgrave Macmillan. Reproduced with permission of Palgrave Macmillan. 
+http://www.palgrave.com/products/Catalogue.aspx?is=0333976975</text>
+        </slide>
+        <slide>
+          <slideno>22</slideno>
+          <text>16.886 - Feb 3, 2004
+Class Charge
+The Spring 2004 16.886 class will investigate the possibility of
+exploiting formation flight for significant new capability for 
+long haul commercial and military cargo.  All aspects related to
+system concepts should be explored including, but not limited 
+to, the number and placement of aircraft in a formation, mix of 
+aircraft size and payload/fuel fractions, aircraft and formation
+stability and control, degree of autonomy, concepts for 
+formation rendezvous and dispersal, economic, safety, 
+environmental factors, etc.. The size of the class will determine 
+the number of topics that will be explored in depth.</text>
+        </slide>
+        <slide>
+          <slideno>2</slideno>
+          <text>16.886 - Feb 3, 2004
+Agenda
+Drivers - Commercial and Military Cargo Transport 
+Needs
+Responses - Conventional and Advanced Concepts
+Formation Flight - A Possible Approach
+Basic concepts
+One flight result
+Other considerations
+Plan for the semester
+Questions and responses
+Turn in Student Profile and Preferences at end of class</text>
+        </slide>
+        <slide>
+          <slideno>17</slideno>
+          <text>16.886 - Feb 3, 2004
+Flight Tests*
+Streamwise spacing kept 
+same by flight velocity
+Trail aircraft autopilot 
+used a minimum power 
+approach.
+Aileron angles and 
+measured upwash in 
+symmetry plane used as 
+inputs to autopilot
+Measured energy 
+reductions comparable 
+with theory
+Lots of s catter
+* Hummel, The Use of Aircraft Wa kes to Achieve Power Reductions in Formation Flight, AGARD CP-584, May 1966</text>
+        </slide>
+        <slide>
+          <slideno>0</slideno>
+          <text>16.886 - Feb 3, 2004
+16.886 - Air Transportation Systems Architecting
+Course Introduction
+February 3, 2004
+Prof. Earll Murman(Image removed due to copyright considerations.)</text>
+        </slide>
+        <slide>
+          <slideno>18</slideno>
+          <text>16.886 - Feb 3, 2004
+Variations on the Theme - I*
+ Consider distribution of lift among 
+aircraft such that the total formation 
+induced drag is minimized.
+ Total [induced] drag is minimized 
+with an elliptical distribution of 
+weight across the formation
+ Other interesting results in paper 
+about practical implementation for chevron formation
+ Paper has nice formulation of 
+horseshoe vortex model.
+* Blake and Multhopp, Design, Perfor manc e and Modeling Considerati ons For Close For mation Flight , AIAA 98-43432.5
+2
+2 ship formation
+Aircraft Position within FormationOptimum CL for Minimum Drag (CL,I = 1)
+Solid Line: all    included
+Dashed Line:     only5 ship formation12 ship formation
+1.5
+1
+0.5
+01 2 3 4 5 6 7 8 9 101112Distribution of Lift Within Formation for Minimum Induced Drag,
+= 0.85,   = 0.
+z
+hsst</text>
+        </slide>
+        <slide>
+          <slideno>21</slideno>
+          <text>16.886 - Feb 3, 2004
+Other Formation Flight Considerations
+Aircraft stability and control, roll trim
+Formation influence on aircraft design
+Formation stability and control
+Pilot-autonomous tradeoff
+Communication
+Formation concepts
+Homogeneous or heterogeneous aircraft fleet
+Formation and dispersal
+Finding best solutions with so many parameters
+Formation geometry, number, velocity, altitude, 
+composition
+Operational issues, safety, weather effects,..
+And more.</text>
+        </slide>
+        <slide>
+          <slideno>10</slideno>
+          <text>16.886 - Feb 3, 2004
+Wing In Ground Effect
+Principles - Interference with 
+ground reduces induced drag 
+substantially for very small 
+spacings
+Metrics for Pelican*
+500 foot wing span
+38 fuselage mounted landing 
+gears similar to B-52
+Payload 1,500,000 lbs
+Range
+10,000 nm over water
+6,000 nm over land @ 20,000 ft
+Limitations: Many technology and 
+operational issuesKing, A and Gopalara thnam
+* Barkowski, R, Future Concepts fo r Air Cargo Delivery, AIAA Paper 2003-2629Boeing Phantom Works Pelican 1
+0.8CDiIGECDiOGE
+Single Aircraft
+Gopalarathnam, A. "Ideal Aerodynamics of 
+Formation and Ground-Effect Flight".Formation of 3 Formation of 5 Formation of 250.6
+0.4
+0.2
+0 2 4
+h/b6 8 10
+Courtesy of Boeing Corporation. Used with permission.</text>
+        </slide>
+        <slide>
+          <slideno>9</slideno>
+          <text>16.886 - Feb 3, 2004
+Blended Wing Body
+Principles - Low wetted 
+area, span loading, 
+composites, modular 
+layout
+Metrics for FedEx study*
+TOGW 1,350,000 lb
+Payload 525,000 lb
+Range 5000 nm
+Volume 51,000 ft3
+62 % pay load and 15% 
+DOC advantage over 
+A380
+Limitations - Still a paper 
+airplane. No showstoppers.
+* Barkowski, R, Future Conc epts for Air Cargo Delivery , AIAA Paper 2003-2629.   Also see Wakaya ma, S, Gil more, R,, 
+Brown, D., Design Tra des for a Lar ge Blended- Wing-Body Freighter ,  AIAA Paper 2003-2503
+A380FRangePayload (1000 lbs)Payload/Range Comparison
+BWB B747F DC10Courtesy of Boeing Corporation. Used with permission.</text>
+        </slide>
+        <slide>
+          <slideno>13</slideno>
+          <text>16.886 - Feb 3, 2004
+Aerodynamic Basics of Formation Flying* - II
+Let the average downwash at wing be w 
+Drag reduction  for wing  ; D=Lw 
+V=L0w 
+V
+Power reduction;  N=DV=L0w 
+Relative power reduction;  e=N
+N0=L0w 
+D0V
+For the formation;  N= N
+=1n
+ .   And for all the wings w/o formation flight;  N0= N0
+=1n
+
+Relative power reduction for the formation;  E=N
+N0
+* Hummel, The Use of Aircraft Wa kes to Achieve Power Reductions in Formation Flight, AGARD CP-584, May 1966</text>
+        </slide>
+        <slide>
+          <slideno>12</slideno>
+          <text>16.886 - Feb 3, 2004
+Aerodynamic Basics of Formation Flying* - I
+Consider a formation of 
+different wings with 
+geometric parameters
+b , AR , S, etc
+Formation geometry 
+remains fixed - speed V is 
+the same for all wings.
+Level flight L = W 
+Let subscript 0 be wing 
+isolated, w/o formation
+L 0 = W = L 
+Power  = N 0 = D0 VEach wing flies in th e downwash field of 
+all the other wings, represent ed here as 
+horseshoe vort ices with span  b =
+4b
+* Hummel, The Use of Aircraft Wa kes to Achieve Power Reductions in Formation Flight, AGARD CP-584, May 1966</text>
+        </slide>
+        <slide>
+          <slideno>8</slideno>
+          <text>16.886 - Feb 3, 2004
+Responses to Drivers
+Existing technology 
+More wide body aircraft
+Many converted passenger aircraft
+Larger aircraft - A380
+Advanced technologies
+Blended Wing Body
+Wing in Ground Effect
+Other
+Formation flight
+Image removed due to copyright considerations.
+Courtesy of Boeing Corporation.&#13;
+Used with permission.
+Courtesy of Boeing Corporation.
+Used with permission.Image removed due to
+copyright considerations.
+Courtesy of AeroVehicles, Inc.
+Used with permission.</text>
+        </slide>
+        <slide>
+          <slideno>14</slideno>
+          <text>16.886 - Feb 3, 2004
+Aerodynamic Basics of Formation Flying*-III
+Total power reduction of 
+formation of equal size wings as 
+a function of lateral spacing 
+between the wings.
+No vertical separation between 
+wings.
+Parasite drag as sumed equal to 
+induced drag, i.e. maximum 
+range c onditions
+Total power reduction 10-20% or  
+more based upon simple model.
+Munks stagger  theorem says 
+that total power r eduction does 
+not depend upon streamwise
+spacing of wings.
+* Hummel, The Use of Aircraft Wa kes to Achieve Power Reductions in Formation Flight, AGARD CP-584, May 1966</text>
+        </slide>
+        <slide>
+          <slideno>11</slideno>
+          <text>16.886 - Feb 3, 2004
+Formation Flight - Natures Solution
+Principles
+Favorable aerodynamic interference
+1970 paper by Lissaman and Shollenberger
+Est71% increase in range, 24 % reduction in V for 25 birds
+Modular approach to scaling
+Status
+Aerodynamic theory reasonably well developed
+Flight tests have demonstrated 12-18% less fuel burn 
+for 2 aircraft formations.
+Frequently used for military maneuvers
+Close aircraft spacing increases pilot workload
+Suggest autonomous or semi autonomous system
+Little exploration into long-haul applications and 
+systems issues.(Image removed due to
+copyright considerations.)</text>
+        </slide>
+        <slide>
+          <slideno>19</slideno>
+          <text>16.886 - Feb 3, 2004
+Variations on the Theme - II*
+Considers both formation 
+and ground effects
+Calculated formation shape 
+yielding equal induc ed drag 
+for each aircraft.
+Near the tip of the V the 
+wings are more abreast than 
+near the back
+Agrees with Lissaman
+and Shollenberger
+Not much influence of 
+ground effect on formation 
+geometry
+* King, A and Gopalara thnam, A, I deal Aer odyna mics of Ground-Effe ct and For mation Flight0
+-2
+-4X
+-6
+y/b-8
+-10
+0 5
+In Ground Effect Out of Ground Effect10 15</text>
+        </slide>
+        <slide>
+          <slideno>5</slideno>
+          <text>16.886 - Feb 3, 2004
+Commercial Trends - Contd 
+Allison, et al Expedited Transport Airlines, Final Report for 16.899 
+Air Transportation System Architecting.
+World air cargo and freight to grow at 6.4-6.5% per year for next 10 
+years.
+Total worldwide freight shipping expected to go from 132 to 383 Freight-
+Ton-Kilometers in 20 years.
+Freighter Fleet to grow from 1,775 to 3,078, including retirement of 
+1,228 old freighters, mostly narrow body.
+Long range freighter segment  will be the fastest growing
+Standard shipments take 4-6 days with only 10-15% time in the air. Most 
+the time is ground transport, handling, waiting.
+Top 10 markets will generate 40% of global airfreight in next 10 years: 
+Intra Asia, China Europe, China North America, North America 
+Asia, Europe Asia, North America Europe, Domestic USA
+Lots of good data in this report from last years class.</text>
+        </slide>
+        <slide>
+          <slideno>25</slideno>
+          <text>16.886 - Feb 3, 2004
+Schedule for Semester
+Background Needs Design Technology System TopicsLecture Topics
+February March April May
+Interviews 5/13Project Phase
+Individual - Research
+Oral Present 2/25
+Class - Concepts Formulation
+Class - Prelim Sys Des
+Class - Final Sys DesOral Present 3/17
+Oral Present 4/14
+Oral Present 5/5
+Final Written 5/11</text>
+        </slide>
+        <slide>
+          <slideno>15</slideno>
+          <text>16.886 - Feb 3, 2004
+Aerodynamic Basics of Formation Flying*-IV
+Three different arrangements 
+of 15 wings swept 450with 
+zero spanwise separation 
+All have the same total 
+power reduction
+Distribution of power 
+reduction among the wings is 
+different for the three 
+formations
+Formation A is called a 
+Chevron
+Formations B, C called a V
+This is just one example of 
+the many various formation 
+geometries possible
+* Hummel, The Use of Aircraft Wa kes to Achieve Power Reductions in Formation Flight, AGARD CP-584, May 1966</text>
+        </slide>
+        <slide>
+          <slideno>4</slideno>
+          <text>16.886 - Feb 3, 2004
+Commercial Trends
+Bartowski (FedEx) Future Concepts for Air Cargo 
+Delivery, AIAA Paper 2003-2629
+Freighter fleet expected to double in 20 years
+90% of fleet capacity in wide-body aircraft in 20 
+years leading to 23% grown in payload capacity
+Growth is in the middle market between air and 
+surface for world wide freight market.
+Jiang, et al (MIT ICAT), Market and Infrastructure 
+Analysis of Future Air Cargo Demand in China 
+Air cargo growth through China airports expected to 
+grow at 11.2% per annum for next 20 years. 
+Includes both domestic and import/export.</text>
+        </slide>
+        <slide>
+          <slideno>6</slideno>
+          <text>16.886 - Feb 3, 2004
+Military Drivers
+Threats are global
+Reaction times are shorter
+Trends are towards US basing for security, economic and 
+political factors
+Result is US forces are becoming more expeditionary
+Rumsfelds Transformation goals for Army
+Deploy 1 div ision any where in the world in 5 days
+Deploy 5 div isions any where in the world in 30 days
+Division is 16,000 personnel and all their equipment
+Long range bombers based on continental US require 
+considerable tanker support which is expensive and 
+logistically complicated.
+We need more information on military drivers</text>
+        </slide>
+      </slides>
+      <videos/>
+    </lecture>
+    <lecture>
+      <lecture_title>Managing Risk</lecture_title>
+      <lecture_pdf_url>https://ocw.mit.edu/courses/16-886-air-transportation-systems-architecting-spring-2004/resources/h16rayleopoldbio/</lecture_pdf_url>
+      <lectureno>LE16</lectureno>
+      <slides>
+        <slide>
+          <slideno>1</slideno>
+          <text>Accreditation Commission of The Accreditation Board for Engineering and Technology 
+(ABET).  He has served both on a Defense Science Board study group and on a NASA advisory committee.  He  has been elected to Phi Kappa Phi, Tau Beta Pi,  and Sigma Tau .  
+Ray holds 27 U.S. patents and more than 75 pate nts in other countries.  He is married and 
+has six children.  He is active in Church  and Community activities, having founded a new 
+Cub Scout Pack, and serving as its Committee Chair, in Chandler, Arizona, and recently stimulating the founding of a new Boy Scout Troop and serves on its Committee.  He and his family are avid skiers and adventurers who can be found on the slopes of Big Mountain near Whitefish, Montana in the winter and in nearby Glacier National Park in the summers.</text>
+        </slide>
+        <slide>
+          <slideno>0</slideno>
+          <text>Dr. Raymond J. Leopold 
+The Jerome C. Hunsaker Visiting Professor of Aerospace Systems 
+Department of Aeronautical and Astronautic al Engineering, Massachusetts Institute of 
+Technology 
+ 
+BIOGRAPHY  
+ 
+Dr. Leopold had led the Arizona-based licen sing and technology transfer business for 
+Motorola Corporate Technology when he retired  in 2003.  He had previously served as the 
+Chief Technology Officer (CTO) for the Globa l Telecom Solutions Sector ($6B sales and 
+20,000 people in 2001), and prior to that assi gnment had served as the CTO for the Satellite 
+Communications Group ($1B sales and 3,500 peop le in 1998).  He is one of the three 
+engineers who created the Iridium System, the first realization of global, wireless, personal 
+communications. The Iridium System integrates a packet-switched architecture within its globally deployed constellation of satellites togeth er with the circuit-switched architecture of 
+the public-switched telephone network.  (Tod ay, Iridium Satellite LLC, Loudin County, 
+Virginia, operates the Iridium System.)  He is known throughout the world for having 
+presented keynote addresses and technical papers in many international forums, and for 
+engaging in telecom regulatory activities. He has served for five years on both the Motorola 
+Science Advisory Board and the Motorola Technical Action Council. 
+ 
+Dr. Leopold joined Motorola in 1987 after having spent a career in the U.S. Air Force where 
+he held a variety of technical and techni cal management positions.  He directed the 
+development of communications systems at the Electronics Systems Division in Massachusetts.  He served two tours in the Pent agon, one in the Office of the Secretary of 
+Defense and one on the Air Staff.  He taught for over five years at the U.S. Air Force Academy in Colorado, and worked in research and development for four years at the Air 
+Force Weapons Laboratory in Albuquerque.  He was also an Adjunct Professor of Electrical 
+Engineering at George Washington University, a nd he is currently a Senior Lecturer at MIT 
+and chairs their Industry Advisory Board for the Aero/Astro Department.  He has also 
+lectured at Stanford University. 
+ 
+He earned three degrees in electrical engineering, a bachelors degree from the United States 
+Air Force Academy in 1967, a masters degr ee from North Carolina State University in 
+1968, and a Ph.D. from the University of New Mexico in 1973.  He was also honored with a 
+Doctor of Telecommunications Management Degree from South Dakota of Mines and Technology in 1997.  He has completed Executive Education courses at the Harvard 
+Business School, MIT (Sloan), The University of California (Berkeley), The Center for 
+Creative Leadership, and The Defense Systems Management College.   
+ 
+Ray is an Aviation Week and Space Technology  Laureate for Space (1996) and an inductee 
+in their Hall of Fame at the National Air and Space Museum.  He is a recipient of the IEEE 
+Third Millennium Medal, and a recipient of the American Institute of Aeronautics and 
+Astronautics (AIAA) Biennial Communications  Award for 1998.  He has been named a 
+Fellow  of The Institute of Electrical and Electr onics Engineers (IEEE), and has served on 
+their Committee on Engineering Accreditation Activities.  He was named a Motorola 
+Distinguished Innovator in 1993.  Motorola also conferred their highest technical honor, the Title of Dan Noble Fellow, upon him in 199 5.  He was named a Master Innovator by 
+Motorola in 2001.  He was named a Distingui shed Alumnus of the University of New 
+Mexico School of Engineering in 2003.  He al so served as a member of the Engineering</text>
+        </slide>
+      </slides>
+      <videos/>
+    </lecture>
+    <lecture>
+      <lecture_title>Closing the Business Case (PDF)</lecture_title>
+      <lecture_pdf_url>https://ocw.mit.edu/courses/16-886-air-transportation-systems-architecting-spring-2004/resources/20business_case/</lecture_pdf_url>
+      <lectureno>LE20</lectureno>
+      <slides>
+        <slide>
+          <slideno>19</slideno>
+          <text>Decision tree analysis
+Widely used technique to determine value of 
+investments under uncertainty
+Main steps:
+Determine possible states of nature
+Determine probability of reaching  each state (use conditional 
+probabilities)
+Determine NPV for each end stat e (use constant discount 
+rate)</text>
+        </slide>
+        <slide>
+          <slideno>1</slideno>
+          <text>The top 5 investor questions
+How much will I need to invest?
+How much will I get back?
+When will I get my money back?
+How much is this going to cost me?
+How are you handling risk &amp; uncertainty?</text>
+        </slide>
+        <slide>
+          <slideno>5</slideno>
+          <text>NPV example
+Period Discount Factor Cash Flow Present Value
+0 1 -150,000 -150,000
+1 0.935 -100,000 -93,500
+2 0.873 +300000 +261,000
+Discount rate = 7% NPV = $18,400</text>
+        </slide>
+        <slide>
+          <slideno>15</slideno>
+          <text>Bracketing
+Better that using a high hurdle rate 
+Gives indication of variability in financial performance
+Highly unlikely that all the factors or issues will be all 
+good or all bad at the same time
+Can over estimate best and worst case outcomes
+Best used for analysis with few factors</text>
+        </slide>
+        <slide>
+          <slideno>3</slideno>
+          <text>Net present value (NPV)
+Measure of present value of various cash flows in 
+different periods in the future
+Cash flow in any given period discounted by the 
+value of a dollar today at that point in the future
+Time is money
+A dollar tomorrow is worth less today since if properly 
+invested, a dollar today would be worth more tomorrow
+Rate at which future cash flows are discounted is 
+determined by the discount rate or hurdle rate
+Discount rate is equal to the am ount of interest the investor 
+could earn in a  single time per iod (usually a year) if he/she 
+were to invest in a safer investment</text>
+        </slide>
+        <slide>
+          <slideno>4</slideno>
+          <text>Calculating NPV
+Forecast the cash flows of the project over Its 
+economic life
+Treat investments as negative cash flow
+Determine the appropriate opportunity cost of capital
+Use opportunity cost of capital to discount the future 
+cash flow of the project
+Sum the discounted cash flows to get the net present 
+value (NPV)
+      NPV=C0+C1
+1+r+C2
+1+r()2+K+CT
+1+r()T</text>
+        </slide>
+        <slide>
+          <slideno>22</slideno>
+          <text>Points about decision analysis
+Difficult to apply when multiple sources of uncertainty 
+are present
+Does not resolve problem of choice of discount rate</text>
+        </slide>
+        <slide>
+          <slideno>23</slideno>
+          <text>Possible analysis approaches
+Bottom-up analysis
+Top-down analysis</text>
+        </slide>
+        <slide>
+          <slideno>6</slideno>
+          <text>Points to keep in mind about NPV
+Assumes only one course of action:
+Reasonable assumption if conditions are stable
+No room for managerial flexibility
+Choice of the discount rate is difficult:
+Typically, use a  combination of equilibrium models ( like 
+CAPM) and expert judgment
+Should always perform sensitiv ity analysis on discount rate!</text>
+        </slide>
+        <slide>
+          <slideno>21</slideno>
+          <text>Solving the tree
+Move along the tree from end to the front
+NPV for any state (except for end states) is the 
+weighted sum of the NPV of following state
+Weightings are the probabilities of reaching such 
+states</text>
+        </slide>
+        <slide>
+          <slideno>25</slideno>
+          <text>Top-down analysis
+Determine market penetration (profile of cargo 
+system revenue versus time) based on heuristics or 
+first principles analysis
+Scale existing profile of expenditure versus time for 
+development and production of a closely related 
+system
+Determine costs for which NPV equals zero
+Determine uncertainty in market penetration 
+Determine uncertainty in costs</text>
+        </slide>
+        <slide>
+          <slideno>28</slideno>
+          <text>Summary
+Investment criteria
+NPV
+Risk &amp; uncertainty
+Bracketing (if there are only a few key factors)
+Probabilistic analys is (if detai ls of processes available)
+Decision tree analysis (is there are clear investment options)
+Analysis approaches
+Bottom-up analys is (if details  of processes available)
+Top-down analysis  (if details of processes not available)
+Manage your risks</text>
+        </slide>
+        <slide>
+          <slideno>10</slideno>
+          <text>Average return on book value
+Investment decision based on book rate of return of 
+project relative to book rate of return of entire firm (or 
+some external yardstick)
+Book rate of return given by dividing the average 
+forecasted profits (after depreciation &amp; taxes) by the 
+average book value of the investment
+Average return on book value depends on accounting 
+income (different from cash flow)
+Decision of yardstick is arbitrary</text>
+        </slide>
+        <slide>
+          <slideno>16</slideno>
+          <text>Probabilistic analysis
+Essentially a Monte-Carlo simulation of NPV
+Repetitive NPV analyses using input values selected 
+from probability distributions
+Can become very complex for products with many 
+components &amp; factors
+Requires many assumptions &amp; good understanding 
+of development &amp; manufacturing/production 
+processes</text>
+        </slide>
+        <slide>
+          <slideno>0</slideno>
+          <text>Closing the Business Case
+Prof. John-Paul Clarke
+16.886 Air Transportation Systems Architecting
+April 21, 2004</text>
+        </slide>
+        <slide>
+          <slideno>13</slideno>
+          <text>Dealing with risk &amp; uncertainty
+Artificially high hurdle rate
+Bracketing (upper &amp; lower bounds)
+Probabilistic analysis
+Decision tree analysis</text>
+        </slide>
+        <slide>
+          <slideno>14</slideno>
+          <text>Artificially high hurdle rate
+Simplistic
+Doesnt fully capture range of possibilities
+Not well suited for products with relatively small 
+margins such as aircraft
+Better suited for products with relatively large 
+margins or projects that require small capital outlays</text>
+        </slide>
+        <slide>
+          <slideno>24</slideno>
+          <text>Bottom-up analysis
+Determine costs and timing (profile of expenditure 
+versus time) for each phase of cargo system 
+development and production based on heuristics or 
+first principles analysis
+Determine market penetration (profile of cargo 
+system revenue versus time) based on heuristics or 
+first principles analysis
+Determine uncertainty in all values
+Determine NPV and variability in NPV</text>
+        </slide>
+        <slide>
+          <slideno>11</slideno>
+          <text>Internal rate of return (IRR)
+Investment criterion is rate of return must be greater 
+than the opportunity cost of capital
+Internal rate of return is equal to the discount rate for 
+which the NPV is equal to zero
+IRR solution is not unique
+Multiple rates of return for same project
+IRR doesnt always correlate with NPV
+NPV does not always decrease as discount rate increases      NPV=C0+C1
+1+IRR+C2
+1+IRR()2+K+CT
+1+IRR()T=0</text>
+        </slide>
+        <slide>
+          <slideno>12</slideno>
+          <text>IRR example</text>
+        </slide>
+        <slide>
+          <slideno>8</slideno>
+          <text>Payback example
+Project C0 C1 C2 C3 NPV @ 10% Payback
+A -2,000 +1,000 +1,000 +5,000 3,492 2
+B -2,000 0+2000 +5,000 3,409 2
+C -2,000 +1,000 +1,000 +100,000 74,867 2</text>
+        </slide>
+        <slide>
+          <slideno>2</slideno>
+          <text>Investment criteria
+Net present value
+Payback
+Discounted payback
+Average return on book value
+Internal rate of return</text>
+        </slide>
+        <slide>
+          <slideno>7</slideno>
+          <text>Payback
+Investment decision based on time it takes to 
+recover investment
+No discounting of cash flows
+Gives equal weight to cash flows before cut-off date 
+&amp; no weight to cash flows after cut-off date
+Cannot distinguish between projects with different 
+NPV
+Difficult to decide on appropriate cut-off date</text>
+        </slide>
+        <slide>
+          <slideno>9</slideno>
+          <text>Discounted payback
+Payback criterion modified to account for the time 
+value of money
+Cash flows before cut-off date are discounted
+Surmounts objection that equal weight is given to all 
+flows before cut-off date
+Cash flows after cut-off date still not given any weight</text>
+        </slide>
+        <slide>
+          <slideno>18</slideno>
+          <text>Decision tree example
+Period Option Prob. Cash Flow PV Prob. * PV
+0 Both 100% -150,000 -150,000 -150,000
+1 A 50% +50,000 +46,750 +23,375
+B 50% +100000 +93,500 +46,750
+2 A 50% +50,000 +43,650 +22,825
+B 50% +200,000 +174,600 +87,300
+Discount rate = 7% NPV = $30,250</text>
+        </slide>
+        <slide>
+          <slideno>27</slideno>
+          <text>Managing risk
+Build in flexibility
+Create ability to respond to  changes in produc t requirements 
+space and market
+Plan staged development and introduction
+Develop strategy to evalua te product utility and market 
+situation before full investment is made</text>
+        </slide>
+        <slide>
+          <slideno>17</slideno>
+          <text>Decision tree analysis
+NPV calculation that incorporates different future 
+scenarios based on the likely hood of that scenario 
+occurring
+Cash flow for any given year is the weighted sum of 
+the cash flows for each scenario that could occur in 
+that year
+Weightings are  equal to the probability that a specific 
+scenario will occur</text>
+        </slide>
+        <slide>
+          <slideno>26</slideno>
+          <text>Managing risk
+Hedge investment
+Buy portfolio that is not correlated with the market for the 
+produc t you are developing
+Limit impact of factors outside your control
+Insure against detrimental actions  or inaction of partners, or 
+catastrophic events 
+Change the playing field
+Influence market to either ma ke it more stable overall or 
+more favorable to your product</text>
+        </slide>
+        <slide>
+          <slideno>20</slideno>
+          <text>Decision tree
+High 
+NPV1
+Low
+NPV2High
+High 
+NPV3
+Low
+NPV4LowAlt. 1
+High 
+NPV5
+Low
+NPV6High
+High 
+NPV7
+Low
+NPV8LowAlt. 2Best Alternative
+Decision node
+Chance nodep1
+p2
+p3
+p4p6
+p5
+p7
+p8
+p9
+p10
+p11
+p12</text>
+        </slide>
+      </slides>
+      <videos/>
+    </lecture>
+    <lecture>
+      <lecture_title>MATECON - Method for Rapid Architecture Selection and Conceptual Design (PDF 1 of 2 - 2.4 MB) (PDF 2 of 2 - 2.5 MB) (Courtesy of Hugh McManus. Used with permission.)</lecture_title>
+      <lecture_pdf_url>https://ocw.mit.edu/courses/16-886-air-transportation-systems-architecting-spring-2004/resources/4_mcmanuslactur1/</lecture_pdf_url>
+      <lectureno>LE4</lectureno>
+      <slides>
+        <slide>
+          <slideno>10</slideno>
+          <text>Space Systems, Policy, and Architecture Research Consortium 21 Identify key 
+interactions 
+for modeling 
+that are likely to be (or not be) distinguishers 
+Design Vars
+Perigee
+Apogee
+Delta-V
+Propulsion
+Inclination
+Comm SystemAnt. Gain
+Power system
+Mission Scenario
+Total Impact 
+Attributes 
+Data Lifespan 9 9 9 6 0 0 0 6 9 48 
+Sample Altitude 9 9 0 0 0 0 0 0 9 27 
+Diversity of Latitudes 0 0 0 0 9 0 0 0 9 18 
+Time at Equator 0 6 0 0 9 0 0 0 9 24 
+Latency 3 3 0 0 3 9 9 6 3 36 
+Total 21 27 9 6 21 9 9 12 39 
+Cost 9 9 3 6 6 3 6 6 9 
+Total w/Cost 30 36 12 12 27 12 15 18 48 
+2002 Massachusetts Institute of Technology Scoping- QFDs 
+Sums identify attributes and Design Variables 
+Space Systems, Policy, and Architecture Research Consortium 22 Scoping-Iteration/evolution 
+After GINA exercise 
+module progress 
+10/20/00 10/31/00 1/15/01 1/21/01 
+# sats/swarm 
+# swarms 
+Instrument type 
+# instruments/sat 
+Position control scheme Concept type 
+# sats/swarm 
+Mothership (yes/no) # sats/swarm 
+# subplanes/swarm # suborbits/subplane # sats/swarm 
+# subplanes/swarm # suborbits/subplane 
+2002 Massachusetts Institute of Technology TABLE II. EVOLUTION OF DESIGN VECTOR 
+First Cut After utility 
+characterization and Schedule Crunch 
+Swarm type 
+Swarm or bit 
+Intra-swarm orbit 
+TT&amp;C scheme 
+Ground station 
+Mission lifetime 
+Processing scheme 
+Latitude of interest # swarms p er plane 
+# orbital planes 
+Swarm a ltitude 
+Swarm or ientation 
+Swarm g eometry 
+Separation within swarm Swarm perigee a ltitude 
+Swarm apogee altitude 
+Yaw angle of subplanes 
+Max sat separation 
+Mothership (yes/no) Swarm perigee a ltitude 
+Swarm apogee altitude 
+Yaw angle of subplanes 
+Max sat separation 
+11</text>
+        </slide>
+        <slide>
+          <slideno>6</slideno>
+          <text>2002 Massachusetts Institute of Technology 14
+Space Systems, Policy, and Architecture Research Consortium 13 Scoping 
+Spacecraft 
+Instrument 
+Control 
+Center 
+Physics Model 
+Instrument -&gt; Local Ionosphere 
+Current State 
+Predict Future State 
+User-Specific 
+System Integration User Set 
+User Set User Set 
+User Set Ionospheric characteristics Database 
+Other 
+Data Sources 
+(Various assets) A-TOS 
+scope Ionosphere 
+2002 Massachusetts Institute of Technology Global Ionospheric Model 
+Global Ionospheric Model Hanscom Model Raw, commutated, uncalibrated data 
+Decommutated , calibrated instrument data Scientist 
+Warfighter Space Weather 
+Knowledgeable 
+Go/No-Go green light  
+Space Systems, Policy, and Architecture Research Consortium 
+Attributes 
+ what the decision makers need to 
+consider 
+ ( and/or what the user truly cares about) 
+ Examples: Billable minutes =
+ TPF Pictures = camera performance metrics 
+ Rescue/move satellites =mass moving, grappling capability,timeliness 
+ Could have sub-cartoons for above 
+GINA metrics 
+[Beichman et al, 1999] 
+7</text>
+        </slide>
+        <slide>
+          <slideno>1</slideno>
+          <text>Space Systems, Policy, and Architecture Research Consortium 3  
+ Ideally, many  architectures assessed 
+ Avoids optimized point solutions  that will not support 
+evolution in environment or user needs 
+ Provides a basis to explore technical and policy uncertainties 
+ Provides a way to assess the value of potential  capabilities A process for understanding complex solutions to complex problems 
+2002 Massachusetts Institute of Technology Architecture Trade Space Exploration 
+Model-based high-level assessment of system capability 
+Allows informed upfront  decisions and planning 
+Space Systems, Policy, and Architecture Research Consortium 4  State-of-the-art rapid preliminary design method 
+ Design tools linked both electronically and by co-located 
+humans 
+ Design sessions iterate/converge designs in hours 
+ Requires ready tools, well poised requirements A process creating preliminary designs very fast 
+Allows rapid reality check on chosen architectures 
+Aids transition to detailed design 
+2002 Massachusetts Institute of Technology Integrated Concurrent Engineering 
+2</text>
+        </slide>
+        <slide>
+          <slideno>7</slideno>
+          <text>DATA
+Space Systems, Policy, and Architecture Research Consortium 15 (5) (4) (3) (2) (1)
+1) Data Life Span 
+2) Data Altitude 
+3) Maximum Latitude 
+4) Time Spent at Equator 5) Data Latency 
+kmKm
+2004 2005 
+2002 Massachusetts Institute of Technology XTOS Attributes 
+Space Systems, Policy, and Architecture Research Consortium 16 Utilities 
+ 
+ 
+ 
+Single Attribute 
+Utility function 
+0 1 Good -&gt; 
+Attribute Multi-Attribute 
+Utility analysis 
+0 1 Good -&gt; 
+Expense 
+2002 Massachusetts Institute of Technology What the attributes are WORTH to the decision 
+makers 
+Single Attribute utility maps attribute to utility 
+Multi-attribute utility maps an architecture (as 
+expressed by its attributes) to utility 
+8</text>
+        </slide>
+        <slide>
+          <slideno>12</slideno>
+          <text>13
+Space Systems, Policy, and Architecture Research Consortium 2002 Massachusetts Institute of Technology  25Exploring the  Tradespace
+2300 2400 2500 2600 2700 2800 2900 3000115012001250130013501400Zoom in of the TPF System Trade Space
+Performance (total # of images)Lifecycle Cost ($millions)$0.55M/Image 
+$0.5M/Image 
+$0.45M/Image 
+$0.4M/Image 
+0 500 1000 1500 2000 2500 3000 3500 400080010001200140016001800200022002400TPF System Trade Space
+Performance (total # of images)Lifecycle Cost ($millions)$2M/Image $1M/Image 
+$0.5M/Image 
+$0.25M/Image True Optimal
+Solution
+Taguchi
+SolutionMany good architectures
+at c. $0.5M/ImageEach point is an
+evaluated architectureCadillac
+Chevy TPF: a science 
+imaging system
+Space Systems, Policy, and Architecture Research Consortium 2002 Massachusetts Institute of Technology  26The Pareto Front
+Set of best solutions
+Dominated  solutions are more expensive or less
+capable
+0 500 1000 1500 2000 2500 3000 3500 40008001000120014001600180020002200
+Performance (total # of images)Lifecycle Cost ($M)
+TPF System Trade Space Pareto-Optimal FrontDominated Solutions    
+Non-Dominated Solutions
+$2M/Image $1M/Image 
+$0.5M/Image 
+$0.25M/Image Utility (images)
+Cost ($M)</text>
+        </slide>
+        <slide>
+          <slideno>11</slideno>
+          <text>Mapping Design Vector to Attributes 
+and Utilities - Simulation Models 
+XTOS Simulation Software Flow Chart 
+All variations
+on design
+Orbits 
+Spacecraft 
+Launch Satellite
+vector
+ database Mission 
+Scenario 
+Cost (lifecycle) 
+Utility Mission scenarios with 
+Output acceptable satellites 
+Space Systems, Policy, and Architecture Research Consortium 2002 Massachusetts Institute of Technology 23 
+Space Systems, Policy, and Architecture Research Consortium 24 Availability 
+Probability of 
+Detection # S/C per Cluster 
+. 
+. 
+. Constellation Altitude 
+S/C Bus 
+Launch &amp; 
+Operations Radar Constellation 
+Payload 
+System
+Analysis Antenna Power 
+1 2 3 4 5 6 7 8 9 10 0 10 20 30 40 50 60 70 80 90 100 
+2002 Massachusetts Institute of Technology Techsat  Models 
+Inputs (Design Vector) 
+Key Outputs 
+Lifecycle Cost 
+Revisit Rate 
+Resolution &amp; MDV # Clusters 
+Aperture Diameter MATLAB Models 
+12</text>
+        </slide>
+        <slide>
+          <slideno>2</slideno>
+          <text>Number of Architectures Explored: 50488Number of Architectures Explored: 50488
+Space Systems, Policy, and Architecture Research Consortium 5 User 
+Needs Robust 
+Adaptable Concepts 
+Months, not Years 
+ICE 
+Conceptual 
+Design 
+MATE 
+Architecture 
+Evaluation  Linked method for progressing from vague user needs to 
+conceptual/preliminary design very quickly 
+ MANY architectures, several/many designs considered 
+ 
+adaptable concepts, consideration of policy, risk. 
+2002 Massachusetts Institute of Technology Emerging Capability 
+Understanding the trades allows selection of robust and 
+Space Systems, Policy, and Architecture Research Consortium 6 
+km Km 
+DESIGN VARIABLES: The architectural 
+trade parameters 
+ Orbital Parameters 
+ Apogee altitude (km) 
+ Perigee altitude (km) 
+ Orbit inclination 150-1100 
+150-1100 0, 30, 60, 90 
+ Physical Spacecraft Parameters 
+ Antenna gain 
+ communication architecture 
+ propulsion type 
+ power type 
+ delta_v 
+Total Lifecycle Cost 
+($M2002) a specific 
+architecture 
+Assessment of the utility and cost of a large 
+space of possible system architectures X-TOS 
+ Small low-altitude 
+science mission 
+2002 Massachusetts Institute of Technology What is an Architecture Trade Space? 
+Each point is 
+3</text>
+        </slide>
+        <slide>
+          <slideno>3</slideno>
+          <text>Space Systems, Policy, and Architecture Research Consortium 7  Understand the 
+Mission 
+ Create a list of 
+ Interview the Customer 
+ Create Utility Curves 
+ Develop the design 
+model 
+ Evaluate the potential 
+Architectures Mission
+ Concept Attributes 
+Calculate 
+Utility Develop System 
+Model 
+Estimate 
+Cost 
+Architecture Define Design 
+Vector 
+2002 Massachusetts Institute of Technology Attributes  
+vector and system 
+Trade Space Developing A Trade Space 
+Space Systems, Policy, and Architecture Research Consortium 8 
+Concept 
+ Small low-altitude science 
+mission 
+ Known instruments Attributes 
+ Data Life Span 
+ Data Collection Altitude(s) 
+ Diversity of Latitude(s) 
+ Time Spent at Equator 
+ Data Latency 
+ Number of Vehicles and 
+Mission Design 
+ Apogee Altitude 
+ Perigee Altitude 
+ Orbit Inclination 
+ Antenna Gain 
+ Communications Architecture 
+ Propulsion Type 
+ Power Type 
+ 
+0 0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.9 1 
+150 350 550 750 950 
+Data Collection Altitude (km) Utility 
+2002 Massachusetts Institute of Technology XTOS Tradespace Development 
+Design Vector 
+Manuever Delta-V Capability Define Utility 
+4</text>
+        </slide>
+        <slide>
+          <slideno>9</slideno>
+          <text>XTOS Design Vector 
+ Parameters of the Trade Space  
+Variable: First Order Effect: 
+Orbital Parameters:
+ Apogee altitude (200 to 2000 km) Lifetime, Altitude
+ Perigee altitude (150 to 350 km) Lifetime, Altitude
+ Orbit inclination (0 to 90 degrees) Lifetime, Altitude 
+Latitude Range 
+Time at Equator 
+Physical Spacecraft Parameters:
+ Antenna gain (low/high) Latency
+ Comm Architechture (TDRSS/AFSCN) Latency
+ Propulsion type (Hall / Chemical) Lifetime
+ Power type (fuel / solar) Lifetime
+ Total DV capability (200 to 1000 m/s) Lifetime 
+Space Systems, Policy, and Architecture Research Consortium 2002 Massachusetts Institute of Technology 19 
+Space Systems, Policy, and Architecture Research Consortium 20  
+mothership 
+2002 Massachusetts Institute of Technology ATOS design Vector 
+Geometry of the Multi-vehicle Swarm 
+Swarm Orbit Parameters 
+Mothership / no Number of spacecraft in swarm 
+Geometry of swarm 
+10</text>
+        </slide>
+        <slide>
+          <slideno>4</slideno>
+          <text>Space Systems, Policy, and Architecture Research Consortium 9 Continued 
+Total Lifecycle Cost 
+($M2002) Each point is a 
+specific architecture  Orbit Calculations (STK) 
+ Spacecraft Estimations (SMAD) 
+ Launch Module 
+50488 Architectures Explored  SMAD/NASA mode  Multi-Attribute Utility Theory 
+architectures 
+2002 Massachusetts Institute of Technology System Model 
+Estimate Cost Calculate Utility 
+Pareto front of best  
+Space Systems, Policy, and Architecture Research Consortium 10 
+ 
+   ) 
+2002 Massachusetts Institute of Technology Understanding What Systems Do 
+Transmit Information Collect Information Move Mass (inc. People) Others (Space Station 
+[Beichman et al, 1999] 
+5
+Martin 2000</text>
+        </slide>
+        <slide>
+          <slideno>13</slideno>
+          <text>Multi-Objective SA Exploration of the TPF Trade Space
+Performance (total # imagesLifecycleCost($millions)
+$2M/Image $1M/Image 
+$0.5M/Image 
+$0.25M/Image 
+Space Systems, Policy, and Architecture Research Consortium 27  
+0 500 1000 1500 2000 2500 3000 700 800 900 1000 1100 1200 1300 1400 1500 1600 Pareto Front 
+2002 Massachusetts Institute of Technology Optimization 
+Can look for the Pareto front using advanced 
+optimization techniques 
+Current Solution Path 
+Pareto-Optimal Set   
+Space Systems, Policy, and Architecture Research Consortium 28 
+Designs from traditional process TPF 
+ Terrestrial Planet 
+Finder - a large astronomy system 
+ Design space:Aperturesseparated orconnected, 2-D/3-D, sizes, orbits 
+ 
+2002 Massachusetts Institute of Technology Using the Trade Space to Evaluate 
+Point Designs 
+From Jilla , 2002 Images vs. cost 
+[Beichman  et al, 1999] 
+14</text>
+        </slide>
+        <slide>
+          <slideno>8</slideno>
+          <text>9
+Space Systems, Policy, and Architecture Research Consortium 2002 Massachusetts Institute of Technology  17Single Attribute Utilities
+00.10.20.30.40.50.60.70.80.91
+150 350 550 750 950Data Collection Altitude (km)Utility
+Space Systems, Policy, and Architecture Research Consortium 2002 Massachusetts Institute of Technology  18Multi-Attribute Utility
+Single Attribute Utility Curve for Data 
+Point Altitude
+00.10.20.30.40.50.60.70.80.91
+150 350 550 750 950Altitude (km)
+00.050.10.150.20.250.30.350.40.45
+Lifespan Latitude Latency Equator
+TimeAltitude Weight Factors of each Attribute 
+(k values)        ( )
+=+ = +N
+ii iX U Kk X KU
+11 ) ( 1 ) (
+Total Lifecycle Cost ($M 2002)
+Utility</text>
+        </slide>
+        <slide>
+          <slideno>5</slideno>
+          <text>Space Systems, Policy, and Architecture Research Consortium 11 Stakeholders 
+ 
+ 
+ 
+Enterprise 
+Employees 
+Corporation End Users Consumers Customer 
+Acquirers 
+Shareholders 
+Unions Society Partners 
+Suppliers 
+2002 Massachusetts Institute of Technology Understanding who cares -
+Many interested parties in a complex system 
+Each customer has a set of needs 
+They are different, and can be contradictory 
+Space Systems, Policy, and Architecture Research Consortium 12 ATOS: 
+Multi-vehicle Ionosphere Explorer 
+In Situ 
+Direct Scintillation Sensing
+ Topside Sounding 
+GPS Occultation GPS 
+UV Sensing 
+2002 Massachusetts Institute of Technology Concept Selection: Bounding 
+6</text>
+        </slide>
+        <slide>
+          <slideno>0</slideno>
+          <text>Space Systems, Policy, and Architecture Research Consortium 1 
+Hugh McManus 
+Space Systems, Policy, and Architecture Research Consortium 
+A joint venture of MIT, Stanford, Caltech &amp; the Naval War College 
+for the NRO 
+2002 Massachusetts Institute of Technology Space Systems Architecture 
+Lecture 3 
+Introduction to 
+Tradespace Exploration 
+Metis  Design
+Space Systems, Policy, and Architecture Research Consortium 2  
+ 
+Concept 
+Development System-Level 
+Design Detail 
+Design Testing and Refinement Production 
+Ramp-Up 
+Product Design and 
+Development , 1995 Phases of Most relevant to processes 
+in these phases 
+2002 Massachusetts Institute of Technology Tradespace Exploration 
+A process for understanding complex solutions to 
+complex problems 
+Allows informed upfront  decisions and planning 
+From Ulrich &amp; Eppinger , Product Development 
+1</text>
+        </slide>
+      </slides>
+      <videos/>
+    </lecture>
+  </lectures>
+</doc>
