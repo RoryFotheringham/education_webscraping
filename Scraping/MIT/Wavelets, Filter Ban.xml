@@ -1,0 +1,5073 @@
+<doc>
+  <source>MIT</source>
+  <date>28/01/2023</date>
+  <course>
+    <course_url>https://ocw.mit.edu/courses/18-327-wavelets-filter-banks-and-applications-spring-2003/</course_url>
+    <course_title>Wavelets, Filter Banks and Applications</course_title>
+    <course_tags>
+      <list>Engineering </list>
+      <list>Mathematics </list>
+      <list>Electrical Engineering </list>
+    </course_tags>
+  </course>
+  <lectures>
+    <lecture>
+      <lecture_title>Slides 3 (PDF)</lecture_title>
+      <lecture_pdf_url>https://ocw.mit.edu/courses/18-327-wavelets-filter-banks-and-applications-spring-2003/resources/slides3/</lecture_pdf_url>
+      <lectureno>Filter Banks: Time Domain (Haar example) and Frequency Domain; Conditions for Alias Cancellation and no Distortion</lectureno>
+      <slides>
+        <slide>
+          <slideno>12</slideno>
+          <text>1313 Suppose X( Suppose X( ww) = 1 (input has all frequencies) ) = 1 (input has all frequencies) 
+Then R Then R00((ww) = H) = H00((ww), so that after ), so that after downsampling downsampling we have we have 
+YY00((ww) =) = pp 
+--pp 00 pp ww RR00( + ) ( + )  RR00( )( ) RR00( + ) ( + )ww 
+22ww 
+22 ww 
+22 pp 
+aliasin g aliasin g 
+Goal is to design F Goal is to design F00(z) and F (z) and F11(z) so that the overall (z) so that the overall 
+system is just a simple delay system is just a simple delay --with no with no aliasing aliasing term: term: 
+VV00(z) + V (z) + V11(z) = z (z) = z--ll X(z)X(z)</text>
+        </slide>
+        <slide>
+          <slideno>2</slideno>
+          <text>33 hh11[n] =[n] = ff11[n] =[n] = 
+--11 
+22 11 
+22 
+--11 
+22 11 
+22 
+00 11 --11 00 
+Analysis:Analysis: 
+rr00[n] = (x[n] + x[n [n] = (x[n] + x[n  1])1]) lowpass lowpass filterfilter 
+yy00[n] = r [n] = r00[2n][2n] downsampler downsampler 
+yy00[n] =[n] = (x[2n] + x[2n (x[2n] + x[2n  1])1]) ----------------- -----------------jj 
+Similarly Similarly 
+yy11[n] = (x[2n] [n] = (x[2n]  x[2nx[2n  1])1]) ------------------ ------------------kk 11 
+22 
+11 
+22 
+11 
+22</text>
+        </slide>
+        <slide>
+          <slideno>9</slideno>
+          <text>1010 Perfect Reconstruction Filter Ban ks Perfect Reconstruction Filter Ban ks 
+General two General two--channel filter bank channel filter bank 
+HH00(z)(z) 
+HH11(z)(z) 22 
+22 x[n]x[n] yy00[n][n] 
+yy11[n][n] 
+22 22 rr00[n][n] 
+rr11[n][n] FF00(z)(z) 
+FF11(z)(z) x[n]x[n]^^ vv00[n][n] 
+vv11[n][n] tt11[n][n] tt00[n][n] 
+LL LL 
+zz--transform definition: transform definition: 
+X(z) = X(z) =  x[n]zx[n]z--nn 
+Put z = Put z = eeii ww to get DTFT to get DTFT  
+ 
+n=n=--</text>
+        </slide>
+        <slide>
+          <slideno>5</slideno>
+          <text>66 Similarly Similarly 
+vv11[n] =[n] = 
+1424314243 
+11 
+22 yy11[n/2] n even [n/2] n even 
+11 
+22 --yy11[ ] n odd [ ] n oddn + 1n + 1 
+22 1424314243 
+11 
+22 (y(y00[n/2] + y [n/2] + y11[n/2]) n even [n/2]) n even ^^ So, the reconstructed signal is So, the reconstructed signal is 
+x[n] = v x[n] = v00[n] + v [n] + v11[n][n] 
+== 11 
+22 (y(y00[ ] [ ] --yy11[ ]) n odd [ ]) n oddn + 1n + 1 
+22 n + 1n + 1 
+22</text>
+        </slide>
+        <slide>
+          <slideno>0</slideno>
+          <text>Filter Banks: time domain Filter Banks: time domain 
+((HaarHaar example) and frequency domain; example) and frequency domain; 
+conditions for alias cancellation conditions for alias cancellation 
+and no distortion and no distortion</text>
+        </slide>
+        <slide>
+          <slideno>17</slideno>
+          <text>1818 Normalized Product Filter Normalized Product Filter 
+Define Define 
+P(z) = z P(z) = zll PP00(z)(z) ---------------------------- ----------------------------oo 
+P(P(--z) =z) = --zzll PP00((--z) since z) since ll is odd is odd 
+So we can rewrite Equation So we can rewrite Equation nnasas 
+zz--ll P(z) + z P(z) + z--ll P(P(--z) = 2z z) = 2z--ll 
+i.e. P(z) + P( i.e. P(z) + P(--z) = 2 z) = 2 --------------------------- ---------------------------pp 
+This is the condition on the normalized product filter This is the condition on the normalized product filter 
+for Perfect Reconstruction. for Perfect Reconstruction.</text>
+        </slide>
+        <slide>
+          <slideno>1</slideno>
+          <text>22 Simplest (non Simplest (non--trivial) example of a two channel FIR trivial) example of a two channel FIR 
+perfect reco nstruction filter b ank. perfect reco nstruction filter b ank. 
+hh00[n][n] 
+hh11[n][n] 22 
+22 x[n]x[n] yy00[n][n] 
+yy11[n][n] 22 22 
+AnalysisAnalysis rr00[n][n] 
+rr11[n][n] ff00[n][n] 
+ff11[n][n] x[n]x[n]^^ 
+Synthesis Synthesis vv00[n][n] 
+vv11[n][n] tt11[n][n] tt00[n][n] 
+hh00[n] =[n] = ff00[n] =[n] = 
+00 11 11 
+22 11 
+22 11 
+22 11 
+22 
+--11 00</text>
+        </slide>
+        <slide>
+          <slideno>14</slideno>
+          <text>1515 Compare ter ms in X(z) and X( Compare ter ms in X(z) and X(--z):z): 
+1)1) Condition for no distortion (terms in X (z) amount Condition for no distortion (terms in X (z) amount 
+to a delay) to a delay) 
+FF00(z) H(z) H00(z) + F (z) + F11(z) H(z) H11(z) = 2z (z) = 2z--ll 
+2)2) Condition for alias ca ncellation (no term in X( Condition for alias ca ncellation (no term in X(--z))z)) 
+FF00(z) H(z) H00((--z) + F z) + F11(z) H(z) H11((--z) = 0 z) = 0 
+To satisf y alias cancellation condition, choose To satisf y alias cancellation condition, choose 
+FF00(z) = H (z) = H11((--z)z) 
+FF11(z) =(z) = --HH00((--z)z) -------------- --------------jj 
+-------------- --------------kk 
+---------------------- ----------------------ll</text>
+        </slide>
+        <slide>
+          <slideno>20</slideno>
+          <text>2121 So the Perfect Reconstruction requirement is So the Perfect Reconstruction requirement is 
+PP00(z)(z)  PP00((--z) =z) = (1 + 2z(1 + 2z--11 + z+ z--22)) -- (1(1 2z2z--11 + z+ z--22)) 
+= 2z= 2z--11  ll = 1= 1 
+P(z) = z P(z) = zll PP00(z) = (1 + z)(1 + z (z) = (1 + z)(1 + z--11)) 11 
+22 11 
+22 
+11 
+22 
+22ndnd orderorder 
+zero at zero at 
+z =z = --11 lmlm 
+11 RRee zz 
+Zeros of P(z): Zeros of P(z): 
+1 + z = 0 1 + z = 0 
+1 + z1 + z--11 = 0= 0</text>
+        </slide>
+        <slide>
+          <slideno>18</slideno>
+          <text>1919 Design Process Design Process 
+1.1. Design P(z) to satisf y Equation Design P(z) to satisf y Equation pp. This gives . This gives 
+PP00(z). Note: P(z) is designed to be (z). Note: P(z) is designed to be lowpass lowpass.. 
+2.2. Factor P Factor P00(z) into F (z) into F00(z) H(z) H00(z). Use Eq uations (z). Use Eq uations lltoto 
+find H find H11(z) and F (z) and F11(z).(z). 
+Note: Equation Note: Equation pprequires all even powers of z requires all even powers of z 
+(except z (except z00) to be zero: ) to be zero: 
+ p[n]zp[n]z--nn ++  p[n](p[n](--z)z)--nn = 2= 2 
+ p[n] = p[n] = nn nn 123123 
+1 ; n = 0 1 ; n = 0 
+0 ; all even n (n 0 ; all even n (n  0)0)</text>
+        </slide>
+        <slide>
+          <slideno>13</slideno>
+          <text>1414 VV00(z) = F (z) = F00(z) T(z) T00(z)(z) 
+= F= F00(z) Y(z) Y00(z(z22)) ((upsampling upsampling)) 
+== FF00(z){ H(z){ H00(z) X(z) + H (z) X(z) + H00((--z) X(z) X(--z)}z)} 
+VV11(z) =(z) = FF11(z){ H(z){ H11(z) X(z) + H (z) X(z) + H11((--z) X(z) X(--z)}z)} 
+So we want So we want 
+ {F{F00(z) H(z) H00(z) + F (z) + F11(z) H(z) H11(z) } X(z ) (z) } X(z ) 
++ = + = zz--ll X(z)X(z) 
+ {F{F00(z) H(z) H00((--z) + Fz) + F11(z) H(z) H11((--z) } X(z) } X(--z)z)</text>
+        </slide>
+        <slide>
+          <slideno>8</slideno>
+          <text>99 Perfect reco nstruction means that the synthesis Perfect reco nstruction means that the synthesis 
+bank is the inverse of the analysis b ank. bank is the inverse of the analysis b ank. 
+x = x x = x  LLTT BBT                           T = I= I LL 
+BB ^^ 
+123123 123123 
+WW--11 WW 
+Wavelet transform Wavelet transform 
+matrix matrix   
+ 
+   
+In the In the HaarHaar example, we have t he special cas e example, we have t he special cas e 
+WW11 = W= WTT  orthogonal matrix orthogonal matrix 
+So we have a n So we have a n orthogonal orthogonal filter b ank, where filter b ank, where 
+Synthesis b ank = Transpose of Analysis b ank Synthesis b ank = Transpose of Analysis b ank 
+ff00[n] = h [n] = h00[[--n]n] 
+ff11[n] = h [n] = h11[[--n]n]</text>
+        </slide>
+        <slide>
+          <slideno>15</slideno>
+          <text>1616 What happens in the tim e domain? What happens in the tim e domain? 
+FF00(z) = H (z) = H11((--z) F z) F00((ww) = H) = H11((ww ++ pp)) 
+==  hh11[n] ([n] (--z)z)--nn 
+==  ((--1)1)n n hh11[n] z[n] z--nn 
+So the filter coefficien ts are So the filter coefficien ts are 
+ff00[n] = ( [n] = (--1)1)nn hh11[n] alter nating signs [n] alter nating signs 
+ff11[n] = ( [n] = (--1)1)n+1n+1 hh00[n] rule [n] rule 
+Example Example 
+hh00[n] = { a [n] = { a00, a, a11, a, a22} f } f00[n] = { b [n] = { b00,, --bb11, b, b2 2 }} 
+hh11[n] = { b [n] = { b00, b, b11, b, b22} f } f11[n] = { [n] = {--aa00, a, a11,, --aa22}} nn 
+nn</text>
+        </slide>
+        <slide>
+          <slideno>7</slideno>
+          <text>88 Matrix fo rm Matrix fo rm 
+MMMM == x[x[--1]1] 
+x[0]x[0] 
+x[1]x[1] 
+x[2]x[2] 
+MM 11 
+22 1 01 0 --1 01 0 
+1 0 1 1 1 0 1 1 
+0 1 0 0 1 0 --11 
+0 10 1 --1 11 1 ^^ ^^ ^^ ^^ yy00[0][0] 
+yy00[1][1] 
+MM 
+MM 
+yy11[0][0] 
+yy11[1][1] MMMM MM MM 
+LL LL MM MM 
+LL LL 
+MMMM MM MM 
+MM 
+^^ x = L x = LTT BBTT yy00 
+yy11 ---------------- ----------------mm</text>
+        </slide>
+        <slide>
+          <slideno>11</slideno>
+          <text>1212 Lets see w hy: Lets see w hy: 
+Lowpass Lowpass channel has channel has 
+YY00(z) =(z) = {R{R00(z(z) + R) + R00((--zz)})} ((downsampling downsampling)) 
+== {H{H00(z(z) X (z) X (z) + H) + H00((--zz)X()X(--zz)})} 
+In frequency domain: In frequency domain: 
+X(z)X(z)  X(X(ww) or X( ) or X(eeiiww)) 
+X(X(--z)z)  X(X(ww ++ pp)) 
+X(zX(z))  X( ) X( ) 
+YY00((ww) =) = {H{H00( ) X( ) + H ( ) X( ) + H00( +( + pp)X()X( ++ pp)})} ww 
+22 
+ww 
+22 ww 
+22 ww 
+22 ww 
+22</text>
+        </slide>
+        <slide>
+          <slideno>19</slideno>
+          <text>2020 For odd n, p[n] and For odd n, p[n] and p[n] cancel. p[n] cancel. 
+The odd coefficien ts, p[n], are free to be designed The odd coefficien ts, p[n], are free to be designed 
+according to additional criteria. according to additional criteria. 
+Example: Example: HaarHaar filter bank filter bank 
+HH00(z) =(z) = (1 + z(1 + z--11) H ) H11(z) = (1 (z) = (1  zz--11)) 
+FF00(z) = H (z) = H11((--z) =z) = (1 + z(1 + z--11)) 
+FF11(z) =(z) = --HH00((--z) = (1 z) = (1--zz--11)) 
+PP00(z) = F (z) = F00(z) H(z) H00(z) = (1 + z (z) = (1 + z--11))22 11 
+22 11 
+22 
+11 
+22 
+--11 
+22 
+11 
+22</text>
+        </slide>
+        <slide>
+          <slideno>3</slideno>
+          <text>44 Matrix form Matrix form 
+MMMM 
+== MM 
+yy00[0][0] 
+yy00[1][1] 
+:: 
+M :: 
+yy11[0][0] 
+yy11[1][1] 11 
+22 MM 
+LL 1 1 0 0 1 1 0 0 LL 
+LL 0 0 1 1 0 0 1 1 LL 
+LL --1 1 0 0 1 1 0 0 LL 
+LL 0 00 0 --1 11 1 LL 
+MM :: 
+x[x[--1]1] 
+x[0]x[0] 
+x[1]x[1] 
+x[2]x[2] 
+:: 
+:: 
+------------------- -------------------llyyoo 
+yy11 == LL 
+BB xx</text>
+        </slide>
+        <slide>
+          <slideno>6</slideno>
+          <text>77 i.e.i.e. 
+x[2nx[2n --1] = (y 1] = (y00[n][n]  yy11[n]) = x[2n [n]) = x[2n--1]1] 
+x[2n] = (y x[2n] = (y00[n] + y[n] + y11[n]) = x[2n] [n]) = x[2n] 
+So x[n] = x[n] So x[n] = x[n]  Perfect reconstruction! Perfect reconstruction! 
+In general, we will make all filters ca usal, so we will In general, we will make all filters ca usal, so we will 
+havehave 
+x[n] = x[n x[n] = x[n  nn00]]  PR w ith delay PR w ith delay 11 
+22 ^^ 
+11 
+22 fromfrom jjandand kk 
+^^ 
+^^ 
+^^</text>
+        </slide>
+        <slide>
+          <slideno>4</slideno>
+          <text>55 Synthesis Synthesis 
+yy00[n/2] n even [n/2] n even 
+tt00[n] =[n] = upsampler upsampler 
+0 n odd 0 n odd 
+vv00[n] =[n] = ( t( t00[n + 1] + t [n + 1] + t00[n])[n]) lowpass lowpass filterfilter 
+yy00[n/2] n even [n/2] n even 
+yy00[ ] n odd [ ] n odd 
+1424314243 
+11 
+22 
+1424314243 
+= 11 
+22 
+11 
+22 n + 1n + 1 
+22</text>
+        </slide>
+        <slide>
+          <slideno>10</slideno>
+          <text>1111 Perfect reco nstruction requirement: Perfect reco nstruction requirement: 
+x[n] = x[n x[n] = x[n --ll] (] (ll time delays) time delays) 
+X(z) = z X(z) = z--ll X(z)X(z) 
+HH00(z) and H (z) and H11(z) are normally (z) are normally lowpass lowpass andand highpass highpass,, 
+but not ideal but not ideal ^^ ^^ 
+ Downsampling Downsampling operation in each channel can operation in each channel can 
+produce produce aliasing aliasing 22 22 --pp --pp 00 pp pp ww HH11((ww)) 11 HH00((ww)) HH11((ww))</text>
+        </slide>
+        <slide>
+          <slideno>16</slideno>
+          <text>1717 Product Filter Product Filter 
+Define Define 
+PP00(z) = F (z) = F00(z) H(z) H00(z)(z) 
+Substitute F Substitute F11(z) =(z) = --HH00((--z) , H z) , H11(z) = F (z) = F00((--z)z) 
+in the zero distortion condition (Equation in the zero distortion condition (Equation jj)) 
+FF00(z) H(z) H00(z)(z) --FF00((--z) Hz) H00((--z) = 2z z) = 2z--ll 
+i.e. P i.e. P00(z)(z) --PP00((--z) = 2z z) = 2z--ll 
+Note: Note: ll must be odd since LHS is an odd function. must be odd since LHS is an odd function. ------------------------------ ------------------------------mm 
+---------------------------- ----------------------------nn</text>
+        </slide>
+      </slides>
+      <videos/>
+    </lecture>
+    <lecture>
+      <lecture_title>Slides 6 (PDF)</lecture_title>
+      <lecture_pdf_url>https://ocw.mit.edu/courses/18-327-wavelets-filter-banks-and-applications-spring-2003/resources/slides6/</lecture_pdf_url>
+      <lectureno>MATLAB&#174; Wavelet Toolbox</lectureno>
+      <slides>
+        <slide>
+          <slideno>18</slideno>
+          <text>1919 Global Hard Global Hard ThresholdingThresholding</text>
+        </slide>
+        <slide>
+          <slideno>10</slideno>
+          <text>1111 Reconstruction Error Reconstruction Error ------wrcoefwrcoef</text>
+        </slide>
+        <slide>
+          <slideno>19</slideno>
+          <text>2020 Variable Hard Variable Hard ThresholdingThresholding</text>
+        </slide>
+        <slide>
+          <slideno>4</slideno>
+          <text>55 Frequency Responses of Daub 9/7Frequency Responses of Daub 9/7</text>
+        </slide>
+        <slide>
+          <slideno>9</slideno>
+          <text>1010 Reconstruction Error Reconstruction Error ------upcoefupcoef</text>
+        </slide>
+        <slide>
+          <slideno>0</slideno>
+          <text>Course 18.327 and 1.130Course 18.327 and 1.130 
+Wavelets and Filter BanksWavelets and Filter Banks 
+Matlab Matlab wavelet toolbox.wavelet toolbox.</text>
+        </slide>
+        <slide>
+          <slideno>8</slideno>
+          <text>99 Individually Reconstructed Individually Reconstructed 
+BranchesBranches</text>
+        </slide>
+        <slide>
+          <slideno>3</slideno>
+          <text>44 Complete Set of Daub 9/7 FiltersComplete Set of Daub 9/7 Filters</text>
+        </slide>
+        <slide>
+          <slideno>12</slideno>
+          <text>1313 Matlab Matlab Example 4Example 4 
+1.1. 22--D image analysisD image analysis 
+MATLAB M-file</text>
+        </slide>
+        <slide>
+          <slideno>2</slideno>
+          <text>33 DaubechiesDaubechies 9/7 pair: zeros of 9/7 pair: zeros of 
+HH00 and Fand F00 
+&gt;&gt; example3&gt;&gt; example3
+Zeros of H0(z)Zeros of H0(z)
+ansans == 
+2.0311 + 1.7390i2.0311 + 1.7390i 
+2.0311 2.0311 --1.7390i1.7390i 
+--1.0001 + 0.0001i1.0001 + 0.0001i 
+--1.0001 1.0001 --0.0001i0.0001i 
+--0.9999 + 0.0001i0.9999 + 0.0001i 
+--0.9999 0.9999 --0.0001i0.0001i 
+0.2841 + 0.2432i0.2841 + 0.2432i 
+0.2841 0.2841 --0.2432i0.2432i 
+Zeros of F0(z)Zeros of F0(z) 
+ansans == 
+3.0407          3.0407 
+--1.0010 + 0.0010i1.0010 + 0.0010i 
+--1.0010 1.0010 --0.0010i0.0010i 
+--0.9990 + 0.0010i0.9990 + 0.0010i 
+--0.9990 0.9990 --0.0010i0.0010i 
+0.3289 0.3289</text>
+        </slide>
+        <slide>
+          <slideno>11</slideno>
+          <text>1212 Reconstruction Error Reconstruction Error ------waverecwaverec</text>
+        </slide>
+        <slide>
+          <slideno>1</slideno>
+          <text>22 Matlab Matlab Example 3Example 3 
+1.1. 11--D signal analysisD signal analysis 
+MATLAB M-file</text>
+        </slide>
+        <slide>
+          <slideno>14</slideno>
+          <text>1515 Wavelet DecompositionWavelet Decomposition</text>
+        </slide>
+        <slide>
+          <slideno>7</slideno>
+          <text>88 33--Stage DecompositionStage Decomposition</text>
+        </slide>
+        <slide>
+          <slideno>16</slideno>
+          <text>1717 TwoTwo--Stage DecompositionStage Decomposition</text>
+        </slide>
+        <slide>
+          <slideno>6</slideno>
+          <text>77 33--Stage DecompositionStage Decomposition</text>
+        </slide>
+        <slide>
+          <slideno>15</slideno>
+          <text>1616 Single Stage DecompositionSingle Stage Decomposition</text>
+        </slide>
+        <slide>
+          <slideno>17</slideno>
+          <text>1818 Reconstructed BranchesReconstructed Branches</text>
+        </slide>
+        <slide>
+          <slideno>5</slideno>
+          <text>66 Single Stage DecompositionSingle Stage Decomposition</text>
+        </slide>
+        <slide>
+          <slideno>13</slideno>
+          <text>1414 Original ImageOriginal Image</text>
+        </slide>
+      </slides>
+      <videos/>
+    </lecture>
+    <lecture>
+      <lecture_title>Slides 19 (PDF)</lecture_title>
+      <lecture_pdf_url>https://ocw.mit.edu/courses/18-327-wavelets-filter-banks-and-applications-spring-2003/resources/slides19/</lecture_pdf_url>
+      <lectureno>Numerical Solution of PDEs: Galerkin Approximation; Wavelet Integrals (Projection Coefficients, Moments and Connection Coefficients); Convergence. Subdivision Wavelets for Integral Equations. Compression and Convergence Estimates</lectureno>
+      <slides>
+        <slide>
+          <slideno>21</slideno>
+          <text>2222 
+Solution at Resolution 5 Solution at Resolution 5</text>
+        </slide>
+        <slide>
+          <slideno>14</slideno>
+          <text>1515 Multiscale Multiscale Representation Representation 
+e.g.e.g. 22u/u/xx22 = f= f 
+Expand as Expand as 
+u =u =  cckk(x(x  k) +k) +   ddj,kj,kw(2w(2jj xx--k)k) 
+GalerkinGalerkin gives a system gives a system 
+Ku = fKu = f 
+with typical entries with typical entries 
+KKm,nm,n = 2= 22j2j  w(xw(x  n)w(xn)w(x--m)dxm)dx kk j=0j=0 kk JJ 
+ 
+-- 22 
+xx22</text>
+        </slide>
+        <slide>
+          <slideno>2</slideno>
+          <text>33 Method of weighted residuals: Choose a set of test Method of weighted residuals: Choose a set of test 
+functions, functions, ggnn(x(x), and form a system of equations ), and form a system of equations 
+(one for each n). (one for each n). 
+ ggnn(x)dx(x)dx ==  f(x)gf(x)gnn(x(x)) dxdx 
+One possibility: choose test functions to be One possibility: choose test functions to be DiracDirac 
+delta functions. This is the collocation method. delta functions. This is the collocation method. 
+ggnn(x(x) =) = (x(x  n/2n/2jj) n integer ) n integer 
+  c[k]c[k]j,kj,k(n/2(n/2jj) = f(n/2) = f(n/2jj)) ---------------------------- ---------------------------- 22uuapproxapprox 
+xx22 
+ 
+kk</text>
+        </slide>
+        <slide>
+          <slideno>3</slideno>
+          <text>44 Second possibility: choose test functions to be Second possibility: choose test functions to be 
+scaling functions. scaling functions. 
+ GalerkinGalerkin method if synthesis functions are used method if synthesis functions are used 
+(test functions = trial functions) (test functions = trial functions) 
+ PetrovPetrov--GalerkinGalerkin method if analysis functions are used method if analysis functions are used 
+e.g.e.g. PetrovPetrov--GalerkinGalerkin 
+ggnn(x(x) =) = j,nj,n(x)(x)  VVjj 
+  c[k]c[k]  j,kj,k(x) .(x) . j,nj,n(x)(x) dxdx ==  f(x)f(x)j,nj,n(x)(x) dxdx 
+Note:Note: PetrovPetrov--Galerkin Galerkin Galerkin Galerkin in orthogonal case in orthogonal case ~~ ~~ 
+  ~~ 
+kk -- -- 22 
+xx22 ~~ ----------------</text>
+        </slide>
+        <slide>
+          <slideno>6</slideno>
+          <text>77 Solve aSolve a deconvolution deconvolution problem to find c[k] and problem to find c[k] and 
+then findthen find uuapproxapprox using equation using equation .. 
+Note: we must allow for the fact that the solution may Note: we must allow for the fact that the solution may 
+be nonbe non--unique, i.e. H unique, i.e. H22//xx 22(() may have zeros. ) may have zeros. 
+Familiar example: 3 Familiar example: 3--point finite difference point finite difference 
+operatoroperator 
+hh22//xx 22[n] = {1,[n] = {1, --2, 1}2, 1} 
+HH22//xx 22(z) = 1(z) = 1 2z2z 11 + z+ z 22 = (1= (1  zz 11))22 
+ HH22//xx 22(() has a 2) has a 2ndnd order zero at order zero at  = 0.= 0. 
+Suppose u Suppose u00(x) is a solution. Then u (x) is a solution. Then u00(x) + Ax + B is (x) + Ax + B is 
+also a solution. Need boundary conditions to fix also a solution. Need boundary conditions to fix 
+uuapproxapprox(x(x).).</text>
+        </slide>
+        <slide>
+          <slideno>22</slideno>
+          <text>2323 
+Solution at Resolution 6 Solution at Resolution 6</text>
+        </slide>
+        <slide>
+          <slideno>19</slideno>
+          <text>2020 
+Solution at Resolution 3 Solution at Resolution 3</text>
+        </slide>
+        <slide>
+          <slideno>8</slideno>
+          <text>99 
+Daubechies 6 
+scaling function 
+First derivative 
+of Daubechies 6 
+scaling function</text>
+        </slide>
+        <slide>
+          <slideno>5</slideno>
+          <text>66 (b) Expansion coefficients (b) Expansion coefficients 
+The integrals The integrals  f(x)f(x)j,nj,n(x)dx(x)dx are theare the coefficents coefficents forfor 
+the expansion of f(x) in the expansion of f(x) in VVjj.. 
+ffjj(x(x) =) =  rrjj[k[k]] j,kj,k(x)(x) -------------------------- -------------------------- 
+withwith 
+rrjj[k[k] =] =  f(x)f(x) j,kj,k(x)(x) dxdx -------------------------- -------------------------- 
+So we can write the system of So we can write the system of GalerkinGalerkin equations as equations as 
+a convolution: a convolution: 
+222j2j  c[k]hc[k]h22//xx 22[n[n  k] =k] = rrjj[n[n]] ---------------- ----------------  
+-- ~~ 
+kk 
+ 
+-- ~~ 
+kk</text>
+        </slide>
+        <slide>
+          <slideno>20</slideno>
+          <text>2121 
+Solution at Resolution 4 Solution at Resolution 4</text>
+        </slide>
+        <slide>
+          <slideno>15</slideno>
+          <text>1616 Effect ofEffect of Preconditioner Preconditioner 
+ Multiscale Multiscale equations: (WKW equations: (WKWTT)(Wu) =)(Wu) = WfWf 
+ Preconditioned matrix: Preconditioned matrix: KKprecprec = DWKW= DWKWTTDD 
+ 
+  
+ 
+  
+= 4 1 4 1 4 1 2 1 2 1 1 1 
+D 
+Simple diagonal preconditioner</text>
+        </slide>
+        <slide>
+          <slideno>24</slideno>
+          <text>2525 Convergence Results Convergence Results 
+&gt;&gt;&gt;&gt; helmholtzhelmholtz slope = 5.9936slope = 5.9936</text>
+        </slide>
+        <slide>
+          <slideno>23</slideno>
+          <text>2424 
+Solution at Resolution 7 Solution at Resolution 7</text>
+        </slide>
+        <slide>
+          <slideno>0</slideno>
+          <text>Course 18.327 and 1.130 Course 18.327 and 1.130 
+Wavelets and Filter Banks Wavelets and Filter Banks 
+Numerical solution of Numerical solution of PDEsPDEs:: GalerkinGalerkin 
+approximation; wavelet integrals approximation; wavelet integrals 
+(projection coefficients, moments and (projection coefficients, moments and 
+connection coefficients); convergence connection coefficients); convergence</text>
+        </slide>
+        <slide>
+          <slideno>11</slideno>
+          <text>1212 How to enforce boundary conditions? How to enforce boundary conditions? 
+One ideaOne idea  extrapolate a polynomial: extrapolate a polynomial: 
+u(xu(x) =) =  c[k]c[k]j,kj,k(x(x) =) =  a[a[ll]x]xll 
+RelateRelate c[kc[k] to] to a[a[ll] through moments. Extend ] through moments. Extend c[kc[k]] 
+by extending underlying polynomial. by extending underlying polynomial. 
+Extrapolated polynomial should satisfy boundary Extrapolated polynomial should satisfy boundary 
+constraints: constraints: 
+DirichletDirichlet:: 
+u(xu(x00) =) =    a[a[ll]x]x00 ==  
+Neumann: Neumann: 
+u'(xu'(x00) =) =    a[a[ll]]llxx00 ll--11 ==  ll=0=0 llpp--11 
+ll=0=0 pp--11 Constraint Constraint 
+on a[on a[ll]] kk pp--11 
+ll=0=0</text>
+        </slide>
+        <slide>
+          <slideno>18</slideno>
+          <text>1919 Solution at Resolution 2 Solution at Resolution 2</text>
+        </slide>
+        <slide>
+          <slideno>7</slideno>
+          <text>88 Determination of Connection Coefficients Determination of Connection Coefficients 
+hh22//xx 22[n] =[n] =   (t)(t) (t(t  n)dtn)dt 
+Simple numerical Simple numerical quadrature quadrature will not converge if will not converge if 
+ (t) behaves badly. (t) behaves badly. 
+Instead, use the refinement equation to formulate an Instead, use the refinement equation to formulate an 
+eigenvalue eigenvalue problem.problem. 
+(t) = 2(t) = 2  ff00[k][k](2t(2t  k)k) 
+(t) = 8(t) = 8  ff00[k][k](2t(2t  k)k) 
+(t(t  n) = 2n) = 2  hh00[[ll]](2t(2t  2n2n --ll)) 
+SoSo 
+hh22//xx 22[n] = 8[n] = 8  ff00[k][k]  hh00[[ll]]hh22//xx 22[2n +[2n + ll --k]k]  
+-- ~~  
+ 
+kk 
+~~ 
+ll kk Multiply and Multiply and 
+IntegrateIntegrate 
+ll kk ~~ 678678</text>
+        </slide>
+        <slide>
+          <slideno>13</slideno>
+          <text>1414 Reduction in error as a function of h Reduction in error as a function of h</text>
+        </slide>
+        <slide>
+          <slideno>9</slideno>
+          <text>1010 Reorganize as Reorganize as 
+hh22//xx 22[n] = 8[n] = 8 hh00[m[m  2n](2n]( ff00[m[m  k]k]hh22//xx 22[k])[k]) 
+Matrix form Matrix form 
+hh22//xx 22 = 8 A B= 8 A B hh22//xx 22 eigenvalue eigenvalue problemproblem 
+Need a normalization condition use the moments Need a normalization condition use the moments 
+of the scaling function: of the scaling function: 
+If hIf h00[n] has at least 3 zeros at [n] has at least 3 zeros at , we can write , we can write 
+ 22[k][k](t(t  k) = tk) = t22 ;; 22[k] =[k] =  tt22(t(t  k)dtk)dt 
+Differentiate twice, multiply by Differentiate twice, multiply by (t) and integrate: (t) and integrate: 
+ 22[k][k]hh22//xx 22[[--k] = 2! Normalizing condition k] = 2! Normalizing condition mm kk 
+ ~~ 
+kk -- 
+~~ 
+kk m = 2n +m = 2n +ll</text>
+        </slide>
+        <slide>
+          <slideno>12</slideno>
+          <text>1313 Convergence Convergence 
+Synthesis scaling function: Synthesis scaling function: 
+(x) = 2(x) = 2  ff00[k][k](2x(2x  k)k) 
+We used the shifted and scaled versions, We used the shifted and scaled versions, j,kj,k(x), to(x), to 
+synthesize the solution. If F synthesize the solution. If F00(() has p zeros at ) has p zeros at , then, then 
+we can exactly represent solutions which are degree we can exactly represent solutions which are degree 
+pp  1 polynomials. 1 polynomials. 
+In general, we hope to achieve an approximate solution In general, we hope to achieve an approximate solution 
+that behaves like that behaves like 
+u(xu(x) =) =  c[k]c[k]j,kj,k(x(x) +) + O(hO(hpp)) 
+wherewhere 
+h = = spacing of scaling functions h = = spacing of scaling functions kk 
+kk 
+11 
+22jj</text>
+        </slide>
+        <slide>
+          <slideno>4</slideno>
+          <text>55 Two types of integrals are needed: Two types of integrals are needed: 
+(a)(a) Connection Coefficients Connection Coefficients 
+ j,kj,k(x) .(x) . j,nj,n(x)dx(x)dx = 2= 22j2j  22j/2j/2(2(2jjxx --k)2k)2j/2j/2(2(2jjxx --n)dxn)dx 
+= 2= 22j2j  (())(( + k+ k  n) dn) d 
+= 2= 22j2jhh [n[n  k]k] 
+where hwhere h [n] is defined by [n] is defined by 
+h [n] = h [n] =  (t)(t)(t(t  n)dtn)dt  ~~ 
+-- -- ~~ 22 
+xx22 
+ 
+-- ~~ 
+22//xx 22 
+22//xx 22 
+22//xx 22  
+-- ~~ ----------------- ----------------- 
+connection coefficients connection coefficients</text>
+        </slide>
+        <slide>
+          <slideno>17</slideno>
+          <text>1818 The Problem The Problem 
+1.1. Helmholtz Helmholtz equation: equation: uuxxxx + a u = f+ a u = f 
+ p=6;p=6; % Order of wavelet scheme ( % Order of wavelet scheme (ppminmin =3=3)) 
+ a = 0a = 0 
+ L = 3L = 3; % Period. ; % Period. 
+ nminnmin = 2= 2; % Minimum resolution ; % Minimum resolution 
+ nmaxnmax = 7= 7; % Maximum resolution ; % Maximum resolution</text>
+        </slide>
+        <slide>
+          <slideno>16</slideno>
+          <text>1717 MatlabMatlab ExampleExample 
+Numerical solution of Partial Numerical solution of Partial 
+Differential Equations Differential Equations</text>
+        </slide>
+        <slide>
+          <slideno>1</slideno>
+          <text>22 Numerical Solution of Differential Numerical Solution of Differential Equations Equations 
+leave boundary leave boundary 
+conditions till later conditions till later 
+ 
+ 
+kk Main idea: look for an approximate solution that lies in Main idea: look for an approximate solution that lies in VVjj.. 
+Approximate solution should converge to true Approximate solution should converge to true 
+solution as j solution as j  .. 
+Consider the Poisson equation Consider the Poisson equation 
+= f(x)= f(x) --------------- --------------- 
+Approximate solution: Approximate solution: 
+uuapproxapprox(x(x) =) =  c[k]2c[k]2j/2j/2 (2(2jj xx  k)k) ---------------------- 22 
+xx22 
+14243 14243 
+j,kj,k(x)(x) 
+trial functions trial functions</text>
+        </slide>
+        <slide>
+          <slideno>10</slideno>
+          <text>1111 Formula for the moments of the scaling function Formula for the moments of the scaling function 
+ __ ll(( --k)dk)d 
+Recursive formula Recursive formula 
+00 ==  (()d)d = 1= 1 
+rr ==  ( ) (( ) ( hh00[k]k[k]krr  ii)) 
+ ==  ( )k( )kll--rr  ll 
+kk   
+-- 
+00  
+-- 
+00 11 
+22rr --11 rr 
+ii rr--11 
+i=0i=0 NN 
+k=0k=0 ii 
+00 
+ll 
+kk ll 
+r=0r=0 ll 
+rr rr 
+00</text>
+        </slide>
+      </slides>
+      <videos/>
+    </lecture>
+    <lecture>
+      <lecture_title>Slides 17 (PDF)</lecture_title>
+      <lecture_pdf_url>https://ocw.mit.edu/courses/18-327-wavelets-filter-banks-and-applications-spring-2003/resources/slides17/</lecture_pdf_url>
+      <lectureno>Wavelets and Subdivision: Nonuniform Grids; Multiresolution for Triangular Meshes; Representation and Compression of Surfaces</lectureno>
+      <slides>
+        <slide>
+          <slideno>9</slideno>
+          <text>1010 Equations for the DW T: Equations for the DW T: 
+Analy sis (from analysis wavelet, ref inem ent equati ons) Analy sis (from analysis wavelet, ref inem ent equati ons) 
+ddjj[m[m] = c] = cj+1j+1[m][m] -- hh00[k,m]c[k,m]cj+1j+1[k] predict [k] predict 
+ccjj[k[k] = c] = cj+1j+1[k] +[k] +  hh11[k,m][k,m] ddjj[m[m] update ] update 
+Synthes is (invert the lifting operations) Synthes is (invert the lifting operations) 
+ccj+1j+1[k] =[k] = ccjj[k[k]] -- hh11[k,m]d[k,m]djj[m][m] 
+ccj+1j+1[m] = [m] = ddjj[m[m] +] +  hh00[k,m]c[k,m]cj+1j+1[k][k] 
+e.g.e.g. mma(j,k)a(j,k) jj 
+kkN(j,m ) N(j,m ) jj 
+mma(j,k)a(j,k) jj 
+kkN(j,m ) N(j,m ) jj</text>
+        </slide>
+        <slide>
+          <slideno>12</slideno>
+          <text>1313 Loop SubdivisionLoop SubdivisionS
+8 1 
+8 1 8 3 
+8 3 
+8 5 16 1 
+16 1  
+16 1  
+16 1  16 1  
+16 1 
+Not an interpolating functio n</text>
+        </slide>
+        <slide>
+          <slideno>3</slideno>
+          <text>44 Simple interpolating scaling function: hat functi on Simple interpolating scaling function: hat functi on 
+kk11 
+kk22 
+kk33 kk44 kk55 mm11 
+mm22mm33 mm55 
+mm44 kk j,kj,k((xx)) 
+Scaling functions at level j Scaling functions at level j 
+are all located at vertices in K(j) are all located at vertices in K(j) 
+Refinemen t equat ion Refinemen t equat ion 
+j,kj,k((xx) =) = j+1,kj+1,k((xx) +) +   j+1,mj+1,m((xx)) 
+In general, interpo lating scalin g funct ions will satisfy a In general, interpo lating scalin g funct ions will satisfy a 
+refinement equatio n of the f orm refinement equatio n of the f orm 
+j,kj,k((xx) =) = j+1,kj+1,k((xx) +) +  hh00[k,m][k,m]j+1,mj+1,m((xx)) mm66 
+m=mm=m11 
+mmn(j,k)n(j,k) jj mm66 kk66</text>
+        </slide>
+        <slide>
+          <slideno>2</slideno>
+          <text>33 Notation:Notation: 
+K(j) = all vertices at resolu tion j K(j) = all vertices at resolu tion j
+K(j + 1) = all vertices at resolu tion j + 1 K(j + 1) = all vertices at resolu tion j + 1 
+M(j) = vertices obtained by subd ividing the resol ution M(j) = vertices obtained by subd ividing the resol ution 
+j mesh to produce t he resolut ion j + 1 mesh j mesh to produce t he resolut ion j + 1 mesh 
+SoSo 
+K(j + 1) = K(j) K(j + 1) = K(j) \\ M(j)M(j) 
+Interpo lating propert y means that Interpo lating propert y means that scalin gs scalin gs funct ions funct ions 
+satisf y satisf y 
+1 if1 if xx == xxkk kk  K(j)K(j) 
+0 if0 if xx == xxkk kk K(j)K(j)
+kk  kk 
+xx = position vector of a point on S . = position vector of a point on S .
+{ j,kj,k((xx)) =</text>
+        </slide>
+        <slide>
+          <slideno>10</slideno>
+          <text>1111 Cubic Interp olating Scaling Function Cubic Interp olating Scaling Function 
+(x) =(x) =  hh00[k][k](2x(2x  k)k)
+kk hh00[k] =[k] =</text>
+        </slide>
+        <slide>
+          <slideno>7</slideno>
+          <text>88 Wavelets on Surfaces in R Wavelets on Surfaces in R33 
+Synthesis scaling function Synthesis scaling function 
+j,kj,k((xx) =) = j+1,kj+1,k((xx) +) +  hh00[k,m][k,m] j+1,mj+1,m(x)(x) 
+Linear int erpol ating func tions: Linear int erpol ating func tions: 
+hh00[k,m] = { [k,m] = {  mmn(j,kn(j,k)) kk k1k1 
+k2k2 
+k3k3 k4k4 k5k5 k6k6 
+m1m1 
+m2m2 
+m3m3 m4m4 m5m5 m6m6 
+mmn(j,k)n(j,k) jj 
+n(j,k) = {m n(j,k) = {m11, m, m22, m, m33, m, m44, m, m55, m, m66}}0 other wise 0 other wise jj 
+Synthesis w avelet Synthesis w avelet 
+wwj,mj,m((xx) =) = j+1,mj+1,m((xx)) -- hh11[k,m][k,m] j,kj,k((xx)) 
+kk11 mm 
+kk22kkA(j,m) A(j,m) jj 
+A(j,m) = {k A(j,m) = {k11, k, k22}}</text>
+        </slide>
+        <slide>
+          <slideno>11</slideno>
+          <text>1212 
+Butterfly Subdivision Butterfly Subdivision 
+2 1 
+2 1 
+8 1 8 1 
+16 1  16 1  
+16 1  16 1  
+Also an interpolating functio n</text>
+        </slide>
+        <slide>
+          <slideno>8</slideno>
+          <text>99 What are t he anal ysis funct ions? What are t he anal ysis funct ions? 
+Use alternating signs condit ion to get analysis filters, Use alternating signs condit ion to get analysis filters, 
+e.g. 1D interpolating filter e.g. 1D interpolating filter 
+If FIf F00(z) =(z) = {{--zz33 + 0+ 0zz22 + 9z + 16 + 9z + 9z + 16 + 9z--11 + 0+ 0zz--22  zz--33}}
+then Hthen H11(z) = F(z) = F00((--z) =z) = {z{z33 + 0.z+ 0.z22 --9z + 169z + 16 --9z9z--11 + 0.z+ 0.z--22 + z+ z--33 
+Change signs of all coefficient s except c enter Change signs of all coefficient s except c enter 
+So the ana lysis functions turn out to be So the ana lysis functions turn out to be 
+j,kj,k((xx) =) = j+1,kj+1,k((xx) +) +  hh11[k,m] w [k,m] wj,mj,m((xx) a(j,k)={m:k ) a(j,k)={m:k A(j,m)}A(j,m)} 
+wwj,mj,m(x(x) =) = j+1,mj+1,m((xx)) -- hh00[k,m][k,m]j+1,kj+1,k((xx) N(j,m)={k:m ) N(j,m)={k:m n(j,k)}n(j,k)} 
+Exer cise: verif y that Exer cise: verif y that j,kj,k((xx),), wwj,mj,m((xx),), j,kj,k((xx),), wwj,mj,m((xx)) 
+areare biorth ogonal biorth ogonal .. 66 
+66 
+mma(j,k)a(j,k) ~~ ~~ ~~ jj 
+~~ 
+kkN(j,m ) N(j,m ) ~~ ~~ jj 
+~~ ~~</text>
+        </slide>
+        <slide>
+          <slideno>5</slideno>
+          <text>66 Consider a wavelet of the f orm Consider a wavelet of the f orm 
+wwj,mj,m((xx) =) = j+1,mj+1,m((xx)) --11j,kj,k11((xx)) --22j,kj,k22((xx)) 
+For theFor the zerozerothth momen t to vanish momen t to vanish 
+0 =0 = IIj+1,mj+1,m --11 IIj,kj,k11 --22IIj,kj,k22 
+wherewhere 
+IIj,kj,k ==  j,kj,k((xx)dS)dS kk11 mm 
+kk22 
+ss</text>
+        </slide>
+        <slide>
+          <slideno>4</slideno>
+          <text>55 n(j,k) = vertices in the neigh borhood of vertex k that n(j,k) = vertices in the neigh borhood of vertex k that 
+contribute to the refi nement equation . contribute to the refi nement equation . 
+Becaus e of interpo lating prope rty, Becaus e of interpo lating prope rty, n(j,kn(j,k) can) can 
+only consist of vertic es in M(j). only consist of vertic es in M(j). 
+How to construct th e wavelet? How to construct th e wavelet? 
+Start with Start with 
+wwj,mj,m((xx) =) = j+1,mj+1,m((xx) Wavelets at level j are al l ) Wavelets at level j are al l 
+located at verti ces located at verti ces in M(j) in M(j) 
+Then use t he lifting idea to impose vanishing mom ent. Then use t he lifting idea to impose vanishing mom ent.</text>
+        </slide>
+        <slide>
+          <slideno>13</slideno>
+          <text>1414
+From: Zorin, Sc hroder and Sweld ens, Int erpolating su bdivision for meshes with arbitr ary top ology, 
+proceedings SIGGRA PH 1 996.</text>
+        </slide>
+        <slide>
+          <slideno>6</slideno>
+          <text>77 To satisfy vanishing moment condi tion, choose To satisfy vanishing moment condi tion, choose 
+ii == IIj+1,mj+1,m/2/2IIj,kj,kii i = 1, 2 i = 1, 2 
+So the wavelet equation can b e written as So the wavelet equation can b e written as 
+wwj,mj,m((xx) =) = j+i,mj+i,m((xx)) -- hh11[k,m][k,m] j,kj,k((xx)) 
+withwith 
+A(j,m) = two immediate ne ighbors i n K(j) A(j,m) = two immediate ne ighbors i n K(j) 
+hh11[k,m] = [k,m] = IIj+1,mj+1,m/2/2IIj,kj,k kkA(j,m) A(j,m) jj 
+jj</text>
+        </slide>
+        <slide>
+          <slideno>1</slideno>
+          <text>22 Wavelet s on S urfaces i n R Wavelet s on S urfaces i n R33 
+Construction byConstruction by SchrSchrderder andand SweldensSweldens 
+ uses l ifting uses l ifting 
+ scaling functions are interpo lating in most scaling functions are interpo lating in most 
+strai ghtforward case strai ghtforward case 
+ typically work with triangu lar mesh generated b y typically work with triangu lar mesh generated b y 
+subd ivision subd ivision 
+kk11 
+kk22 
+kk33 kk44 kk55 kk66 
+mm11 
+mm22 
+mm33mm44 mm55 mm66 
+kk K(jK(j) = {k, k ) = {k, k11, k, k22, k, k33, k, k44, k, k55, k, k66, }, }
+M(jM(j) = {m) = {m11, m, m22, m, m33, m, m44, m, m55, m, m66, }, } 
+mesh des cribing surface S mesh des cribing surface S</text>
+        </slide>
+        <slide>
+          <slideno>0</slideno>
+          <text>Cours e 18.3 27 an d 1.13 0 Cours e 18.3 27 an d 1.13 0 
+Wavelets a nd Filter Ban ks Wavelets a nd Filter Ban ks 
+Wavelet s and s ubdivisi on: Wavelet s and s ubdivisi on: nonuniform nonuniform 
+grids;grids; multiresolu tion multiresolu tion for tri angular for tri angular 
+meshes; repres entation and meshes; repres entation and 
+compre ssion of surface s. compre ssion of surface s.</text>
+        </slide>
+      </slides>
+      <videos/>
+    </lecture>
+    <lecture>
+      <lecture_title>Slides 2 (PDF)</lecture_title>
+      <lecture_pdf_url>https://ocw.mit.edu/courses/18-327-wavelets-filter-banks-and-applications-spring-2003/resources/slides2/</lecture_pdf_url>
+      <lectureno>Sampling Rate Change Operations: Upsampling and Downsampling; Fractional Sampling; Interpolation</lectureno>
+      <slides>
+        <slide>
+          <slideno>15</slideno>
+          <text>1616</text>
+        </slide>
+        <slide>
+          <slideno>3</slideno>
+          <text>44As a matrix operation: As a matrix operation:
+MM
+LL1  0  0  1  0  0  LL
+LL0  0  0  0  0  0  LL
+LL0  1  0  0  1  0  LL
+LL0  0  0  0  0  0  LL
+LL0  0  1  0  0  1  LL
+LL0  0  0  0  0  0  LL
+MMMM
+x[0]x[0]
+x[1]x[1]
+x[2]x[2]
+::
+::
+::==MM
+x[0]x[0]
+00
+x[1]x[1]
+00
+x[2]x[2]
+00
+MM</text>
+        </slide>
+        <slide>
+          <slideno>19</slideno>
+          <text>2020</text>
+        </slide>
+        <slide>
+          <slideno>0</slideno>
+          <text>Sampling rate change operations: Sampling rate change operations:
+upsampling upsampling and and downsampling downsampling; ; 
+fractional sampling; interpolation fractional sampling; interpolation</text>
+        </slide>
+        <slide>
+          <slideno>10</slideno>
+          <text>1111Interpolation Interpolation
+Use Use lowpass lowpass filter after filter afterupsampling upsampling
+x[n]x[n]
+LL H(H())y[n]y[n] u[n]u[n]
+X(X())
+ --22 000022
+--22 0000
+LL22 U(U())
+--22
+LLY(Y())
+0022 00</text>
+        </slide>
+        <slide>
+          <slideno>8</slideno>
+          <text>99nn
+0011LL LLx[n]x[n]
+--22--11 2233
+nn
+--22--11 2233 0011LL LLxxss[n][n]
+x[0]x[0]x[2]x[2]
+LL LLnn
+--110011x[x[--2]2]y[n]y[n]22X(X())
+
+--22 0000L
+--00L
+Y(Y())
+--22 00
+2200L
+--2200L --
+  22
+XXss(())
+
+--22 00L
+--L
+22Downsampling Downsampling
+Y(Y()  =  )  =  { X(    ) + X(     + { X(    ) + X(     + )})}y[n]  =  ( y[n]  =  (2) x[n] =  x[2n] 2) x[n] =  x[2n]
+22
+22</text>
+        </slide>
+        <slide>
+          <slideno>1</slideno>
+          <text>22Definition: Definition:Downsampling Downsampling
+MM
+x[0]x[0]
+x[1]x[1]
+x[2]x[2]
+x[3]x[3]
+x[4]x[4]
+MM((2)2)MM
+x[0]x[0]
+x[2]x[2]
+x[4]x[4]
+MM
+&amp;&amp;==
+As a matrix operation: As a matrix operation:
+MM
+LL1  0  0  0  0 1  0  0  0  0 LL
+LL0  0  1  0  0 0  0  1  0  0 LL
+LL0  0  0  0  1 0  0  0  0  1 LL
+MMMM
+x[0]x[0]
+x[1]x[1]
+x[2]x[2]
+x[3]x[3]
+x[4]x[4]
+MM==::
+x[0]x[0]
+x[2]x[2]
+x[4]x[4]
+::
+::</text>
+        </slide>
+        <slide>
+          <slideno>6</slideno>
+          <text>77Upsampling Upsampling
+Upsampling Upsampling by 2by 2
+  22x[n]x[n] y[n]y[n] 001   2             n 1   2             nLL LLx[n]x[n]
+0    1   2    3   4   n 0    1   2    3   4   nLL LLy[n]y[n]11
+y[n]  = y[n]  = 123123
+x[n/2] ; n even x[n/2] ; n even
+0     ; n odd 0     ; n odd
+Y(Y()  =  )  =  x[n/2]e x[n/2]e--iinn
+=  =  x[m]e x[m]e--ii2m2m
+=  X(2 =  X(2))n evenn even
+mm</text>
+        </slide>
+        <slide>
+          <slideno>17</slideno>
+          <text>1818</text>
+        </slide>
+        <slide>
+          <slideno>16</slideno>
+          <text>1717</text>
+        </slide>
+        <slide>
+          <slideno>2</slideno>
+          <text>33Definition: Definition:Upsampling Upsampling
+MM
+x[0]x[0]
+x[1]x[1]
+x[2]x[2]
+MM((2)2)MM
+x[0]x[0]
+00
+x[1]x[1]
+00
+x[2]x[2]
+00
+MM==</text>
+        </slide>
+        <slide>
+          <slideno>14</slideno>
+          <text>1515</text>
+        </slide>
+        <slide>
+          <slideno>13</slideno>
+          <text>1414</text>
+        </slide>
+        <slide>
+          <slideno>5</slideno>
+          <text>66Downsampling Downsampling by Mby M
+  MMx[n]x[n] y[n]y[n]
+11
+MM123123
+1 if m = 1 if m = nMnM
+0 if m 0 if m nMnM
+MMm = m = nMnM
+MMmmMM--11
+MM
+k = 0k = 0k = 0k = 0MM--11
+MMk=0k=0MM--11y[n]    =  x[ y[n]    =  x[MnMn]]
+Y(Y()   =   )   =   x[m]e x[m]e--iim/Mm/M
+= = 11{ { eeii22kmkm} x[m]e } x[m]e--iim/Mm/M;;
+(e(eii22mm))kk==
+=  =  11X(X(+ 2 + 2 kk))MM</text>
+        </slide>
+        <slide>
+          <slideno>4</slideno>
+          <text>55Downsampling Downsampling
+Downsampling Downsampling by 2by 2
+  22x[n]x[n] y[n]y[n] 001   2    3   4   n 1   2    3   4   nLL LLx[n]x[n]
+0    1   2              n 0    1   2              nLL LLy[n]y[n]
+nn
+m evenm even
+mmmm
+22mmy[n]   =  x[2n] y[n]   =  x[2n]
+Y(Y() =  ) =  x[2n]e x[2n]e--iinn
+=  =  x[m]e x[m]e--iim/2m/2
+=  =  {1 + ( {1 + (--1)1)mm} x[m]e } x[m]e--iim/2m/2
+=  =  {{x[m]e x[m]e--iimm+ + x[m]e x[m]ei(   + i(   + )m)m} ; } ; 
+((--1)1)mm= e= e--iimm
+=  =  {X ({X (/2) + X ( /2) + X (/2 + /2 + )})}
+22</text>
+        </slide>
+        <slide>
+          <slideno>9</slideno>
+          <text>1010Upsampling Upsampling
+--110011LL LL
+nnx[n]x[n]
+--1100 33 --22 11 nnLL LLx[x[--1]1] y[n]y[n]x[0]x[0]x[1]x[1]
+22 --33
+y[n]  = y[n]  =123123
+x[n/2] ; n even x[n/2] ; n even
+0    ; n odd 0    ; n oddY(Y())
+ --22 L
+--L11
+22--00
+2200
+22X(X())
+--22 0000L
+--00L
+-- 2211
+
+Y(Y()  =  X(2 )  =  X(2))</text>
+        </slide>
+        <slide>
+          <slideno>11</slideno>
+          <text>1212Fractional Sampling Fractional Sampling
+Consider Consider
+x[n]x[n]
+LL MMy[n]y[n] u[n]u[n]
+Y(Y()  =  )  =  11U (         ) U (         )MM+ 2+ 2kk
+MMMM--11
+k=0k=0
+= MMMM--1111X (           ) X (           )
+k=0k=0+ 2+ 2kk
+MMLL
+What about What aboutx[n]x[n]
+MM LLy[n]y[n] d[n]d[n]
+Y(Y()  =  D( )  =  D(L)L)
+= = X (           ) X (           )11
+MM
+k=0k=0MM--11L + 2L + 2kk
+MM</text>
+        </slide>
+        <slide>
+          <slideno>7</slideno>
+          <text>88Upsampling Upsampling by Lby L
+y[n]  = y[n]  =   LLx[n]x[n] y[n]y[n]
+123123
+x[n/L]  ;  n  =  x[n/L]  ;  n  =  mLmL
+0       ;  n  0       ;  n  mLmL
+Y(Y()  =  )  =  x[n/L] e x[n/L] e--iinn
+=  X(L =  X(L))n=n=mLmL</text>
+        </slide>
+        <slide>
+          <slideno>18</slideno>
+          <text>1919</text>
+        </slide>
+        <slide>
+          <slideno>12</slideno>
+          <text>Basic filters, Basic filters,upsampling upsamplingandand
+downsampling downsampling..</text>
+        </slide>
+      </slides>
+      <videos/>
+    </lecture>
+    <lecture>
+      <lecture_title>Slides 11 (PDF)</lecture_title>
+      <lecture_pdf_url>https://ocw.mit.edu/courses/18-327-wavelets-filter-banks-and-applications-spring-2003/resources/slides11/</lecture_pdf_url>
+      <lectureno>Orthogonal Wavelet Bases: Connection to Orthogonal Filters; Orthogonality in the Frequency Domain. Biorthogonal Wavelet Bases</lectureno>
+      <slides>
+        <slide>
+          <slideno>3</slideno>
+          <text>Orthonormal means 
+j,k(t) , j,l(t) =  2j/2(2jt  k) 2j/2(2jt -l)dt = [k -l] 
+- 
+wj,k(t) , wj,l(t) =  2j/2w(2jt  k) 2j/2w(2jt -l)dt = [k -l] 
+- 
+For orthogonal multiresolution spaces, we have 
+Vj Wj 
+So 
+j,k(t) , wj,l(t) =0 
+4</text>
+        </slide>
+        <slide>
+          <slideno>11</slideno>
+          <text>So orthogonal filters are necessary for orthogonal 
+wavelets. Are they sufficient? 
+Consider the cascade algorithm 
+N
+(i+1)(t) = 2 h0[k](i) (2t  k) 
+k=0 
+If the filters are orthogonal and 
+-(i)(t) (i)(t  n)dt = [n] 
+then 
+-(i + 1)(t) (i+1)(tn)dt = [n] 
+Our initial guess for the iteration was (0)(t) = box on [0,1] 
+which is o
+rthonormal w.r.t. its shifts. By induction, 
+we have (t) (tn)dt = [n] as the limit, provided that 
+- 
+the cascade algorithm converges. 
+12</text>
+        </slide>
+        <slide>
+          <slideno>9</slideno>
+          <text>Similarly, we can represent f(t) in the dual basis 
+~ ~~ ~ f(t) =  ck (t k)+  dj,k 2j/2 w(2j t  k) 
+k j=0 k 
+~
+ck =  f(t) (t  k) dt
+~
+dj,k = 2j/2  f(t) w(2jt  k) dt
+Note: When f0[k] = h0[-k] and f1[k] = h1[-k], we have 
+~ ~(t) = (t)  Vj = Vj 
+~ ~ w(t) = w(t)  Wj =Wj 
+i.e. we have orthogonal wavelets! 
+10</text>
+        </slide>
+        <slide>
+          <slideno>10</slideno>
+          <text>Connection between orthogonal wavelets and 
+orthogonal filters 
+Start with the orthonormality requirement on scaling 
+functions 
+[n] = (t) (t n)dt - 
+And then change scale using the refinement equation: 
+[n] =  2 h0[k](2t k) 2 h0[l](2(t  n)-l) dt 
+- k  l 
+=4  h0[k]  h0[l] () ( + k  2n -l)d/2 
+k l - 
+=2  h0[k]  h0[l] [-k + 2n + l] 
+[n] = 2  h0[k] h0[k 2n] l k 
+k 
+This is the double shift orthogonality condition that 
+we previously encountered for orthogonal filters. 11</text>
+        </slide>
+        <slide>
+          <slideno>2</slideno>
+          <text>v , i  =[v x v y]0 
+1 = vx Inner Product 
+Orthogonal multiresolution spaces: 
+Vj has an orthonormal basis {2 j/2 (2j t  k): - k } 
+j,k(t) 
+Wj has an orthonormal basis {2j/2 w(2j t  k): - k } 
+wj,k(t) 
+3</text>
+        </slide>
+        <slide>
+          <slideno>6</slideno>
+          <text>Biorthogonal Wavelet Bases 
+Two scaling functions and two wavelets:
+Synthesis: 
+(t) =2 f0[k] (2t k) 
+k 
+w(t) = 2 f1[k] (2t  k) 
+k 
+Analysis: 
+~ ~(t)= 2  h0[-k] (2t  k) 
+k ~ ~ w(t) = 2  h1[-k] (2t  k) 
+k 
+7</text>
+        </slide>
+        <slide>
+          <slideno>0</slideno>
+          <text>Course 18.327 and 1.130
+Wavelets and Filter Banks
+Orthogonal wavelet bases: connection
+to orthogonal filters; orthogonality in
+the frequency domain. Biorthogonal
+wavelet bases.</text>
+        </slide>
+        <slide>
+          <slideno>13</slideno>
+          <text>Orthogonality in the Frequency Domain 
+Let 
+a[n] = (t) (t  n)dt 
+- 
+Use Parsevals theorem 
+a[n]=  () () e -in d1 
+2 -  ^ ^ = 2 ()2 1 
+- ^eind 
+Trick: split integral over entire  axis into a sum of 
+integrals over 2 intervals 
+ ^ a[n] = 1 
+2  ( +2k)2 ei( +2k)n d 
+k=- - 
+1 
+2 -    ( + 2k)2 ^ = eind 
+k=- 
+14</text>
+        </slide>
+        <slide>
+          <slideno>16</slideno>
+          <text>Trick: split sum into even and odd 
+1= H0( /2+ 2k)2^(/2 + 2k)2+ 
+k=-
+ ^H0( /2+ (2k + 1))2(/2+  (2k + 1)2 
+k=- 
+^ = H0(/2)2   ( /2 + 2k)2+ 
+k=- 
+H0( /2+ )2  ^( /2+  +2k)2 
+k=- 
+But each of the two infinite sums is equal to 1
+So the discrete time filter H0() must be orthogonal:
+= H0()2 +  H0 ( + )21
+17</text>
+        </slide>
+        <slide>
+          <slideno>4</slideno>
+          <text>5 Projection of an L2 function, f(t), onto Vj: 
+fj(t) =  aj[k] j,k(t) 
+with 
+aj[k] = f(t), j,k(t)  
+Haar example k 
+f(t) 
+fj(t) 
+t 0 1/2j 2/2j 3/2j 4/2j 2j/2aj[0] 
+2j/2aj[1]</text>
+        </slide>
+        <slide>
+          <slideno>7</slideno>
+          <text>/G8d/G8d/G8d /G8d/G8d/G8d/G8d/G8d/G8d/G8d/G8d/G8d/G8d/G8d/G8d/G8d/G8d/G8d
+/G8d/G8d/G8d /G8d/G8d/G8d/G8d/G8d/G8d/G8d/G8d/G8d/G8d/G8d/G8d/G8d/G8d/G8d
+/G49/G49/G49
+/G49/G49/G49 /G66/G66/G66/G66/G66/G66
+/G66/G66/G66/G66/G66/G66
+/G66/G66/G66/G66/G66/G66Two sets of multiresolution spaces: 
+{0} /G8d  V0 /G8d V1 /G8d /G8d Vj /G8d  /G8d L2() 
+~~ ~ {0} /G8d  V0 /G8d V1 /G8d  /G8d Vj /G8d  /G8d L2() 
+Vj+Wj = Vj+1 
+~~ ~ Vj+Wj = Vj+1 
+Spaces are orthogonal w.r.t. each other i.e. 
+~ ~ Vjh Wj h 
+-/G66/G66/G66/G66  k  /G66/G66/G66/G66} Vj Wj 
+V0 has a basis {/G49(t k) :
+~ ~
+V0 has a basis {/G49(tk): -/G66 k /G66}
+W0 has a basis {w(t  k): -/G66 k /G66} 
+~ ~ W0 has a basis {w(t  k): -/G66 k /G66} 
+8</text>
+        </slide>
+        <slide>
+          <slideno>12</slideno>
+          <text>Note: with the alternating flip requirement, which was 
+necessary for the highpass filter in the case of 
+orthogonal filters, we can show that 
+- w(t) w(t  n)dt = [n] 
+and 
+-(t)w(tn)dt = 0 
+13</text>
+        </slide>
+        <slide>
+          <slideno>14</slideno>
+          <text>Take the Discrete Time Fourier Transform of both sides 
+A()  a[n]ein=  ^( +2k)2 
+n k=- 
+If (t  n) are orthonormal, then a[n] = [n]
+ A()=1 
+So the scaling function and it shifts are orthogonal if 
+ ( + 2k)2 = 1 
+Note: if we set   
+k=- ^ 
+= 0, then
+^(2k)2=1 
+k 
+and since ^(0) = 1, we see that 
+^(2k)=0 fork  0 
+15</text>
+        </slide>
+        <slide>
+          <slideno>5</slideno>
+          <text>Projection of f(t) onto Wj: 
+gj(t) =  bj[k]wj,k(t) 
+k 
+with 
+bj[k] = f(t), wj,k(t) 
+6</text>
+        </slide>
+        <slide>
+          <slideno>8</slideno>
+          <text>Bases are orthogonal w.r.t. each other i.e.
+~ (t) ~(tk)dt = [k]  (t)w(tk)dt = 0
+~ ~w(t)  (tk)dt = 0 w(t) w(t  k)dt = [k] 
+Equivalent to perfect reconstruction conditions on filters
+Representation of functions in a biorthogonal basis: 
+f(t) =  ck(t k)+  dj,k 2j/2 w(2jt  k) 
+k j=0 k 
+~ ck =  f(t) (t  k) dt 
+~ dj,k = 2j/2  f(t) w(2jt  k) dt 
+9</text>
+        </slide>
+        <slide>
+          <slideno>15</slideno>
+          <text>Connection between orthogonal wavelets and 
+orthogonal filters (in frequency domain): 
+Start with an orthogonal scaling function: 
+^ 1=  ( +2k)2 
+k=- 
+and then change scale using the refinement equation in 
+the frequency domain: 
+^() = H0(/2)^(/2) 
+^ 1= H0( /2+ k)2 ( /2+ k)2 
+k=- 
+16</text>
+        </slide>
+        <slide>
+          <slideno>1</slideno>
+          <text>2 Orthogonal Wavelets 
+2D Ve ctor Space: 
+Basis vectors are i, j  orthonormal basis 
+y 
+x v x v y v 
+v x and v y are the projections of v onto the x and 
+y axes: 
+v x =  v , i  i 
+v y =  v , j  j</text>
+        </slide>
+      </slides>
+      <videos/>
+    </lecture>
+    <lecture>
+      <lecture_title>Slides 18 (PDF)</lecture_title>
+      <lecture_pdf_url>https://ocw.mit.edu/courses/18-327-wavelets-filter-banks-and-applications-spring-2003/resources/slides18/</lecture_pdf_url>
+      <lectureno>Wavelets and Subdivision (contd.): Nonuniform Grids; Multiresolution for Triangular Meshes; Representation and Compression of Surfaces</lectureno>
+      <slides>
+        <slide>
+          <slideno>1</slideno>
+          <text>l
+ 
+ 
+k0 k1 k2 m0 k-1 k0 k1 m0 
+Interpolating Subdivision Schemes 
+G i v e n a s e t o f d a t a , f i n d f i ters 
+such that: 
+e.g. two point (linear) scheme 
+four point (cubic) scheme 
+Generalizes easily to multip le dimensions, non-uniformly 
+spaced points, boundaries, etc.</text>
+        </slide>
+        <slide>
+          <slideno>5</slideno>
+          <text>Wavelets From Subdivision 
+Similarly, setting 
+produces the refinement equation:</text>
+        </slide>
+        <slide>
+          <slideno>11</slideno>
+          <text>k0 k1 k4 k2 k3 k5 k6 
+Element 
+ Element m1 m2 m3 m4 m5m0 Finite Elements From Subdivision 
+Key difference: subdivision mask is varied so that 
+prediction opera tion is confined within an element 
+Limit functions are finite element shape functions</text>
+        </slide>
+        <slide>
+          <slideno>10</slideno>
+          <text>8 1 
+8 1 8 3 
+8 3 
+8 5 16 1 
+16 1 
+16 1 
+16 1 16 1 
+16 1 Loop Subdivision</text>
+        </slide>
+        <slide>
+          <slideno>8</slideno>
+          <text>, and 
+Wavelets From Subdivision 
+How to improve wavelets using lifting 
+Choose to make the moments zero. 
+Regardless of the choice for 
+are orthogonal to the dual functions 
+from which we obtain an impr oved coarsening strategy: tunable parameters 
+Predict as before as before 
+Then update</text>
+        </slide>
+        <slide>
+          <slideno>4</slideno>
+          <text>details 
+Wavelets From Subdivision 
+Does this fit the wavelet framework? 
+fine approximation 
+coarse approximation 
+If we set , our coarsening/prediction 
+strategy gives 
+So the wavelets are</text>
+        </slide>
+        <slide>
+          <slideno>0</slideno>
+          <text>Simple Linear Interpolation 
+m0 m1 k0 k1 k2 
+Limit Curve 
+k0 k1 k2 k3 k4 
+Element Element 
+Unchanged</text>
+        </slide>
+        <slide>
+          <slideno>2</slideno>
+          <text>Limit curve is an interpolating function Interpolating Subdivision Schemes</text>
+        </slide>
+        <slide>
+          <slideno>3</slideno>
+          <text>k0 k1 k2 k3 k4 
+k0 m0 k1 m1 k2 k0 k1 k2 
+Wavelets From Subdivision 
+Limit curves can be used to interpolate data. 
+On coarse grid 
+On fine grid 
+Suppose that is coarsened by subsampling 
+and remaining data is predicted using subdivision</text>
+        </slide>
+        <slide>
+          <slideno>12</slideno>
+          <text>boundaries 
+Finite Elements From Subdivision 
+Scalar subdivision 
+Finite Element generated 
+from vector subdivision 
+piecewise polynomial, but 
+lacks smoothness at element 
+Smoother vector subdivision schemes also possible</text>
+        </slide>
+        <slide>
+          <slideno>7</slideno>
+          <text>k0 m0 k1 m1 k2 
+~ Wavelets From Subdivision 
+The coarsening strategy is generally less 
+than ideal  some smoothing ( antialiasing) desirable 
+Accomplished by forcing the wavelet to have one or more 
+vanishing moments 
+Larger means smaller coefficients in wavelet series</text>
+        </slide>
+        <slide>
+          <slideno>9</slideno>
+          <text>2 1 
+2 1 
+8 1 8 1 
+16 1 16 1 
+16 1 16 1 Butterfly Subdivision</text>
+        </slide>
+      </slides>
+      <videos/>
+    </lecture>
+    <lecture>
+      <lecture_title>Slides 12 (PDF)</lecture_title>
+      <lecture_pdf_url>https://ocw.mit.edu/courses/18-327-wavelets-filter-banks-and-applications-spring-2003/resources/slides12/</lecture_pdf_url>
+      <lectureno>Mallat Pyramid Algorithm Sec</lectureno>
+      <slides>
+        <slide>
+          <slideno>0</slideno>
+          <text>Course 18.327 and 1.130Course 18.327 and 1.130
+Wavelets and Filter BanksWavelets and Filter Banks
+MallatMallat pyramid algorithmpyramid algorithm</text>
+        </slide>
+        <slide>
+          <slideno>10</slideno>
+          <text>1111
+Filter Bank RepresentationFilter Bank Representation
+22
+22bbjj--11[n][n]2222
+aajj[n][n]
+vv11[n][n]vv00[n][n]
+2h2h00[n][n]~~
+2h2h11[n][n]~~2h2h11[n][n]2h2h00[n][n]
+
+time reversaltime reversalhh00[n]  =  h[n]  =  h00[[--n]n]
+hh11[n]  =  h[n]  =  h11[[--n]n]
+Verify that filter bank implements MRA equations:Verify that filter bank implements MRA equations:
+uu00[n]  =  [n]  =  2 2 hh00[n [n --k]k]aajj[k][k]
+=  =  2 2 hh00[k [k n]n]aajj[k][k]~~~~
+~~
+kk
+kkaajj--11[n][n] uu00[n][n]
+aajj[n][n]
+AnalysisAnalysis SynthesisSynthesis
+uu11[n][n]</text>
+        </slide>
+        <slide>
+          <slideno>11</slideno>
+          <text>1212
+aajj--11[n]  =  u[n]  =  u00[2n]              [2n]              downsample downsample by 2by 2
+=  =  2 2 hh00[k [k 2n]2n]aajj[k][k]
+bbjj--11[n]  =  u[n]  =  u11[2n][2n]
+=  =  2 2 hh11[k [k 2n]2n]aajj[k][k]
+aajj[n]  =  [n]  =  2 2 hh00[n [n --ll]v]v00[[ll] + ] + 2 2 hh11[n [n --ll]v]v11[[ll]]
+vv00[[ll]  =]  =kk
+kk
+ll ll678678aajj--11[[ll/2]     ;  /2]     ;  lleveneven
+0            ;  otherwise0            ;  otherwise
+SoSo
+aajj[n]  =  [n]  =  2 2 hh00[n [n --ll]]aajj--11[[ll/2] + /2] + 2 2 hh11[n [n --ll]]bbjj--11[[ll/2]/2]
+=  =  2 2 hh00[n [n 2k]2k]aajj--11[k] + [k] + 2 2 hh11[n [n 2k]2k]bbjj--11[k][k]llevenevenL
+--1100L
+1122 nnvv00[n][n] aajj--11[0][0]aajj--11[1][1]
+upsampleupsample by 2by 2
+kk kk</text>
+        </slide>
+        <slide>
+          <slideno>5</slideno>
+          <text>66
+How does How does j,kj,k(t) relate to (t) relate to jj--1,k1,k(t), (t), wwjj--1,k1,k(t)?(t)?
+(t)  =  2 (t)  =  2 hh00[[ll]](2t (2t --ll)         refinement equation)         refinement equation
+jj--1,k1,k(t)  =  2(t)  =  2(j(j--1)/21)/2(2(2jj--11tt--k)k)
+=  2=  2(j(j--1)/21)/2. 2 . 2 hh00[[ll]](2(2jjt t 2k2k--ll))
+jj--1,k1,k(t)  =  (t)  =  2 2 hh00[[ll] ] j,2k + j,2k + ll(t)(t)ll=0=0NN
+ll=0=0NN
+ll=0=0NN
+Similarly, using the wavelet equation, we haveSimilarly, using the wavelet equation, we have
+wwjj--1,k1,k(t)  =  (t)  =  2 2 hh11[[ll]]j,2k + j,2k + ll(t)(t)
+ll=0=0NN</text>
+        </slide>
+        <slide>
+          <slideno>7</slideno>
+          <text>88
+SimilarlySimilarly
+bbjj--11[n]   =  [n]   =  f(t) f(t) wwjj--1,n1,n(t) (t) dtdt
+which leads towhich leads to
+bbjj--11[n]  =  [n]  =  2 2 hh11[k [k 2n] 2n] aajj[k][k]
+--
+kk</text>
+        </slide>
+        <slide>
+          <slideno>8</slideno>
+          <text>99
+Multiresolution Multiresolution reconstruction equationreconstruction equation
+Start withStart with
+ffjj(t)  =  (t)  =  ffjj--11(t)  +  (t)  +  ggjj--11(t)(t)
+Multiply by Multiply by j,nj,n(t) and integrate(t) and integrate
+ffjj(t) (t) j,nj,n(t) (t) dt  dt  =  =  ffjj--11(t)(t)j,nj,n(t)(t)dt  dt  ++ggjj--11(t)(t)j,nj,n(t) (t) dtdt
+SoSo
+aajj[n]  =  [n]  =  aajj--11[k] [k] jj--1,k1,k(t) (t) j,nj,n(t) (t) dt dt ++
+bbjj--11[k] [k] wwjj--1,k1,k(t) (t) j,nj,n(t) (t) dtdt
+--
+--
+--
+kk
+--
+kk
+--</text>
+        </slide>
+        <slide>
+          <slideno>9</slideno>
+          <text>1010
+jj--1,k1,k(t) (t) j,nj,n(t) (t) dt  dt  =  =  2 2 hh00[[ll] ] j,2k+j,2k+ll(t)(t)j,nj,n(t) (t) dtdt
+=  =  2 2 hh00[[ll] ] [2k + [2k + ll--n]n]
+=  =  2 h2 h00[n [n 2k]  2k]  ll --
+--
+ll
+SimilarlySimilarly
+wwjj--1,k1,k(t)(t)j,nj,n(t) (t) dt  dt  =  =  2 h2 h11[n [n 2k]2k]
+Result:Result:
+aajj[n]  =  [n]  =  2 2 aajj--11[k]h[k]h00[n [n --2k]  +2k]  +
+2 2 bbjj--11[k]h[k]h11[n [n 2k]2k]
+--
+kk
+kk</text>
+        </slide>
+        <slide>
+          <slideno>3</slideno>
+          <text>44
+plusplus a combination ofa combination of
+w(tw(t--1)1) w(t)w(t) 11 1
+LL1
+LL
+,,,,11 22 00 00 11
+Easy to see because          Easy to see because          (2t)  =  (2t)  =  [[(t)  +  w(t)](t)  +  w(t)]
+(2t (2t 1)  =  1)  =  [[(t)  (t)  --w(t)]w(t)]</text>
+        </slide>
+        <slide>
+          <slideno>6</slideno>
+          <text>77
+Multiresolution Multiresolution decomposition equationsdecomposition equations
+a a jj--11[n]  =  [n]  =  f(t)f(t)jj--1,n1,n(t)  (t)  dtdt
+=  =  2 2 hh00[[ll] ] f(t)f(t)j,2n + j,2n + ll(t) (t) dtdt
+=  =  2 2 hh00[[ll] ] aajj[2n + [2n + ll]]
+SoSo
+aajj--11[n]  =  [n]  =  2 2 hh00[k[k--2n]2n]aajj[k][k]
+Convolution with hConvolution with h00[[--n] followed by n] followed by downsamplingdownsampling
+--
+ll
+--
+ll
+kk</text>
+        </slide>
+        <slide>
+          <slideno>1</slideno>
+          <text>22
+Pyramid Algorithm for Computing Pyramid Algorithm for Computing 
+Wavelet CoefficientsWavelet Coefficients
+Goal:  Given the series expansion for a function Goal:  Given the series expansion for a function ffjj(t) in (t) in VVjj
+ffjj(t)  =  (t)  =  aajj[k][k]j,kj,k(t)(t)
+how do we find the serieshow do we find the series
+ffjj--11(t)  = (t)  = aajj--11[k][k]jj--1,k1,k(t)(t)
+in in VVjj--11and the seriesand the series
+ggjj--11(t)  =  (t)  =  bbjj--11[k][k]wwjj--1,k1,k(t)(t)
+in in WWjj--11such that such that 
+ffjj(t)  =  (t)  =  ffjj--11(t) + (t) + ggjj--11(t)   ?               (t)   ?               kk
+kk
+kk</text>
+        </slide>
+        <slide>
+          <slideno>2</slideno>
+          <text>33
+Example:  suppose that Example:  suppose that (t)  =  box on [0,1].  Then (t)  =  box on [0,1].  Then 
+functions in Vfunctions in V1 1 can be written either as a combination ofcan be written either as a combination of
+(2t)(2t)(2t(2t--1)1)11 11LLLL
+00,, ,,
+00 11
+ororas a combination ofas a combination of
+(t)(t) (t(t--1)1)
+LL11 11
+LL
+,, ,,
+11 00 11 00 22</text>
+        </slide>
+        <slide>
+          <slideno>4</slideno>
+          <text>55
+kkSuppose that f(t) is a function in LSuppose that f(t) is a function in L22(R).  What are the (R).  What are the 
+coefficients, coefficients, aajj[k], of the projection of f(t) on to [k], of the projection of f(t) on to VVjj??
+Call the projection Call the projection ffjj(t),(t),
+ffjj(t)  =  (t)  =  aajj[k][k]j,kj,k(t)(t)
+aajj[k] must minimize the distance between f(t) and [k] must minimize the distance between f(t) and ffjj(t)(t)
+{f(t) {f(t) ffjj(t)}(t)}22dt dt =  0=  0
+2 {f(t) 2 {f(t) --aajj[l][l]j,lj,l(t)} (t)} j,kj,k(t)(t)dt dt =  0=  0
+aajj[k]  =  [k]  =  f(t)f(t)j,kj,k(t)(t)dt  dt  
+aajj[k][k]
+--
+
+--llf(t)f(t)
+ffjj(t)(t)</text>
+        </slide>
+      </slides>
+      <videos/>
+    </lecture>
+    <lecture>
+      <lecture_title>Slides 7 (PDF)</lecture_title>
+      <lecture_pdf_url>https://ocw.mit.edu/courses/18-327-wavelets-filter-banks-and-applications-spring-2003/resources/slides7/</lecture_pdf_url>
+      <lectureno>Orthogonal Filter Banks: Paraunitary Matrices; Orthogonality Condition (Condition O) in the Time Domain, Modulation Domain and Polyphase Domain</lectureno>
+      <slides>
+        <slide>
+          <slideno>13</slideno>
+          <text>1414 The alternating flip construction for HThe alternating flip construction for H11(z) ensures (z) ensures 
+that the remaining conditions are satisfied.that the remaining conditions are satisfied. 
+HH00(z) = H(z) = H0,even0,even (z(z22)  ) --11HH0,odd0,odd(z(z22)) 
+HH11(z) = (z) = --zz--NN HH00((--zz--11)                           ) 
+= = --zz--NN {H{H0,even0,even (z(z--22)  ) --z Hz H0,odd0,odd(z(z--22)})} 
+= = --zz--NN HH0,even0,even (z(z--22)  ) --N+1N+1 HH0,odd0,odd(z(z--22))123123 123123 
+zz--11 HH1,odd1,odd(z(z22)) HH1,even1,even (z(z22)) 
+SoSo 
+HH1,even1,even (z)  (z) ((--N+1)/2N+1)/2 HH0,odd0,odd(z(z--11)) 
+HH1,odd1,odd(z)   (z) --zz((--N+1)/2N+1)/2 HH0,even0,even (z(z--11)) 
+ HH0,even0,even (z) H(z) H1,even1,even (z(z--11) + H) + H0,odd0,odd(z) H(z) H1,odd1,odd(z(z--11)  ) 
+and   and 1,even1,even (z) H(z) H1,even1,even (z(z--11) + H) + H1,odd1,odd(z) H(z) H1,odd1,odd(z(z--11)  ) z+  z+ 
+alternating flipalternating flip 
+z+  z+ 
+z=  z= 
+= = 
+= 0= 0 
+HH = 1  = 1</text>
+        </slide>
+        <slide>
+          <slideno>3</slideno>
+          <text>44 Orthogonal Filter BanksOrthogonal Filter Banks 
+Centered form (PR with no delay):Centered form (PR with no delay): 
+yy00[n][n] 
+&gt;&gt; &gt;&gt; &gt;&gt; 
+&gt;&gt; &gt;&gt; 
+&gt;&gt; &gt;&gt; &gt;&gt; &gt;&gt; &gt;&gt; &gt;&gt; 
+&gt;&gt;x[n]x[n] x[n]x[n] hh00[n][n] 
+hh11[n][n] 22 
+22 22 
+22 hh00[[--n]n] 
+hh11[[--n]n] yy11[n][n] 
+Synthesis bank = transpose of analysis bankSynthesis bank = transpose of analysis bank 
+hh00[n]  [n]  ff00[n] [n]  hh00[[--n] n] anticausalanticausal ++ 
+causal causal</text>
+        </slide>
+        <slide>
+          <slideno>14</slideno>
+          <text>1515 Modulation DomainModulation Domain 
+&gt;&gt; &gt;&gt; 
+&gt;&gt; &gt;&gt; 
+&gt;&gt; 
+&gt;&gt; &gt;&gt; &gt;&gt; &gt;&gt; &gt;&gt; 
+&gt;&gt; &gt;&gt; ++x[n]x[n] 22 
+22 HH00(z)(z) yy00[n][n] 
+yy11[n][n] HH00(z(z--11)) 22 
+22 x[n]x[n] 
+HH11(z(z--11)) HH11(z)(z) 
+PR conditions:PR conditions: 
+HH00(z) H(z) H00(z(z--11)  ) 11(z) H(z) H11(z(z--11)  ) -------------- (10) (10) 
+HH00((--z) Hz) H00(z(z--11) + H) + H11((--z) Hz) H11(z(z--11)  ) ---------------- (11) (11) 
+[H[H00(z(z--11)  ) 11(z(z--11)])] HH00(z)    (z) 00((--z)z) 
+HH11(z)    (z) 11((--z)z) == 
+123123 
+HHmm(z) modulation matrix(z) modulation matrix NoNo 
+distortiondistortion 
+AliasAlias 
+cancellationcancellation 
+2  2 H+  H+ 2 =    2 = 
+0 =   0 = 
+HH HH
+HH00</text>
+        </slide>
+        <slide>
+          <slideno>2</slideno>
+          <text>33 The matrix function H(z) is said to be The matrix function H(z) is said to be paraunitary paraunitary ifif 
+it is unitary for all values of the parameter zit is unitary for all values of the parameter z 
+HHTT(z(z--11)  )  0 0 ---------------------------------- (1)(1) 
+Frequency Domain:Frequency Domain: 
+HHTT((--ww)  ) ww)  ) ww 
+or  or TT((ww)  ) ww) =  ) = 
+Note: we are assuming that h[n] are real.Note: we are assuming that h[n] are real. Paraunitary Paraunitary MatricesMatrices 
+for all z I             =  H(z)  for all z I = H(z) 
+H(H( for all I           =  for all I = 
+H*H* H(H( II</text>
+        </slide>
+        <slide>
+          <slideno>15</slideno>
+          <text>1616 Replace z with Replace z with z in Equations (10) and (11)z in Equations (10) and (11) 
+HH00((--z) Hz) H00((--zz--11)  ) 11((--z) Hz) H11((--zz--11)  ) 
+HH00(z)  (z) 00((--zz--11)  ) 11(z) H(z) H11((--zz--11)   ) 
+HH00(z(z--11)    ) 11(z(z--11)) 
+HH00((--zz--11)   ) 11((--zz--11)) HH00(z)    (z) 00((--z)z) 
+HH11(z)    (z) 11((--z)z) == 2    2 
+0    0 123123 123123 123123 
+HHmm TT(z(z--11)) HHmm(z)(z) 2I2I 
+Condition O:Condition O: 
+HHmm TT(z(z--11)  ) HHmm(z)         (z)  HHmm(z) is (z) is paraunitaryparaunitary H+  H+ 2=  2 = 
+HH H+  H+ 0=  0 = 
+HH
+HHHH
+HH00 
+22
+2I  =   2I =</text>
+        </slide>
+        <slide>
+          <slideno>9</slideno>
+          <text>1010 Also, Equation (6) reduces to Equation (4)Also, Equation (6) reduces to Equation (4) 
+dd[k] = [k] =  hh11[n] h[n] h11[n[n--2k] = 2k] =  ((--1)1)nn hh00[N[N--n] (n] (--1)1)nn--2k2k hh00[N[N--n+2k]n+2k] 
+= =  hh00[[ll] h] h00[[ll + 2k]+ 2k] 
+So, Condition O on the So, Condition O on the lowpass lowpass filter + alternating flipfilter + alternating flip 
+for for highpass highpass filter lead to filter lead to orthogonalityorthogonality nn nn 
+ll</text>
+        </slide>
+        <slide>
+          <slideno>1</slideno>
+          <text>22 Unitary MatricesUnitary Matrices 
+The constant complex matrix A is said to be unitary ifThe constant complex matrix A is said to be unitary if 
+AA A  A 
+example:example: 
+A =A = 11 
+22 1    1 --ii 
+i   i --11 A* =A* = 11 
+22 1     1 
+--i   i --11 
+AA--11 == --11 
+22 --1    1 
+--i    i AA = = A*A*TT == 11 
+22 1    1 --ii 
+i   i --11 
+ AA =  = --11 I=   I = 
+ii 
+ii 
+11 
+AA</text>
+        </slide>
+        <slide>
+          <slideno>12</slideno>
+          <text>1313 Express Condition O as a condition on HExpress Condition O as a condition on H0,even0,even (z),(z), 
+HH0,odd0,odd(z):(z): 
+HH0,even0,even (z)  (z) 0,even0,even (z(z--11)  ) 0,odd0,odd(z) H(z) H0,odd0,odd(z(z--11) = 1 ) = 1 ------------(8)(8) 
+Frequency domain:Frequency domain: 
+HH0,even0,even ((ww))22 +  + HH0,odd0,odd((ww))22 =  = -------------- (9)(9) HH H+  H+ 
+1                    1</text>
+        </slide>
+        <slide>
+          <slideno>5</slideno>
+          <text>66 Time DomainTime Domain 
+Analysis: N = 3 (filter length = 4)Analysis: N = 3 (filter length = 4) 
+MM 
+yy00[0][0] 
+yy00[1][1] 
+yy00[2][2] 
+yy00[3][3] 
+MM 
+yy11[0][0] 
+yy11[1][1] 
+yy11[2][2] 
+yy11[3[3]] 
+MM == hh00[3] h[3] h00[2] h[2] h00[1] h[1] h00[0][0] 
+hh00[3] h[3] h00[2] h[2] h00[1] h[1] h00[0][0] 
+hh00[3] h[3] h00[2] h[2] h00[1] h[1] h00[0][0] 
+hh00[3] h[3] h00[2] h[2] h00[1] h[1] h00[0][0] 
+LL 
+hh11[3] h[3] h11[2] h[2] h11[1] h[1] h11[0][0] 
+hh11[3] h[3] h11[2] h[2] h11[1] h[1] h11[0][0] 
+hh11[3] h[3] h11[2] h[2] h11[1] h[1] h11[0][0] 
+hh11[3] h[3] h11[2] h[2] h11[1] h[1] h11[0][0] MM 
+xx [[--3]3] 
+x [x [--2]2] 
+x [x [--1]1] 
+x [x [--0]0]
+x [1]x [1] 
+x [2]x [2] 
+x [3]x [3] 
+x [4x [4]] 
+x [5]x [5] 
+x [6x [6]]123123 
+WW ----------(2)(2) KK 
+MM KK 
+MM LL</text>
+        </slide>
+        <slide>
+          <slideno>0</slideno>
+          <text>Course 18.327 and 1.130Course 18.327 and 1.130 
+Wavelets and Filter BanksWavelets and Filter Banks 
+Orthogonal Filter Banks; Orthogonal Filter Banks; 
+Paraunitary Paraunitary Matrices;Matrices; 
+Orthogonality Orthogonality Condition (Condition O) Condition (Condition O) 
+in the Time Domain, Modulation in the Time Domain, Modulation 
+Domain and Domain and Polyphase Polyphase DomainDomain</text>
+        </slide>
+        <slide>
+          <slideno>4</slideno>
+          <text>55 What are the conditions on hWhat are the conditions on h00[n], h[n], h11[n], in the[n], in the 
+(i)(i) time domain?time domain? 
+(ii)(ii) polyphasepolyphase domain?domain? 
+(iii)(iii) modulation domain?modulation domain?</text>
+        </slide>
+        <slide>
+          <slideno>6</slideno>
+          <text>77 Synthesis:Synthesis: 
+x[x[--3]3] 
+x[x[--2]2] 
+x[x[--1]1] 
+x[0]x[0] 
+x[1]x[1] 
+x[2]x[2] 
+x[3]x[3] 
+x[4]x[4] 
+x[5]x[5] 
+x[6x[6]] 
+MM == hh00[3][3] 
+hh00[2] [2] 
+hh00[1] h[1] h00[3] [3] 
+hh00[0] h[0] h00[2] [2] 
+hh00[1] h[1] h00[3] [3] 
+hh00[0] h[0] h00[2][2] 
+hh00[1] h[1] h00[3] [3] 
+hh00[0] h[0] h00[2][2] 
+hh00[1][1] 
+hh00[0] [0] MM hh11[3][3] 
+hh11[2][2] 
+hh11[1] h[1] h11[3][3] 
+hh11[0] h[0] h11[2][2] 
+hh11[1] h[1] h11[3][3] 
+hh11[0] h[0] h11[2][2] 
+hh11[1] h[1] h11[3][3] 
+hh11[0] h[0] h11[2][2] 
+hh11[1][1] 
+hh11[0][0] yy0 0 [0][0] 
+yy00 [1][1] 
+yy00 [2][2] 
+yy00 [3][3] 
+MM 
+MM 
+yy11 [0][0] 
+yy11 [1[1]] 
+yy11 [2][2] 
+yy11 [3][3] 
+MM123123 
+WWTT ----------(3)(3) .. .. MM MM MM MM MM</text>
+        </slide>
+        <slide>
+          <slideno>16</slideno>
+          <text>1717 Reverse the order of multiplication:Reverse the order of multiplication: 
+== HH00(z)    (z) 00((--z)z) 
+HH11(z)    (z) 11((--z)z) HH00(z(z--11)    ) 11(z(z--11)) 
+HH00((--zz--11)   ) 11((--zz--11)) 2    2 
+0    0 
+Express Condition O as a condition on HExpress Condition O as a condition on H00(z):(z): 
+HH00(z) H(z) H00(z(z--11)  ) 00((--z) Hz) H00((--zz--11)  ) ------------------------ (12)(12) 
+Frequency Domain:Frequency Domain: 
+HH00((ww))22 +   + HH00((ww + + pp))2 2 = 2       = 2 -------------------------- (13)(13) 
+Again, the remaining conditions are automatically Again, the remaining conditions are automatically 
+satisfied by the alternating flip choice, Hsatisfied by the alternating flip choice, H11(z) = (z) = --zz--NN HH00((--zz--11)) HH
+HHHH
+HH00 
+22 
+H+  H+ 2      =  2 =</text>
+        </slide>
+        <slide>
+          <slideno>10</slideno>
+          <text>1111 Polyphase Polyphase DomainDomain 
+xxeveneven[n][n] xxeveneven[n][n] 
+&gt;&gt; &gt;&gt; 
+&gt;&gt; &gt;&gt; 
+&gt;&gt; 
+&gt;&gt; &gt;&gt; &gt;&gt; &gt;&gt; &gt;&gt; 
+&gt;&gt; &gt;&gt; ++x[n]x[n] 
+zz--11 22 
+22 xxoddodd[n[n--1]1] HHpp(z)(z) yy00[n][n] 
+yy11[n][n] HHpp TT(z(z--11)) xxoddodd[n[n--1]1] 22 
+22 x[nx[n--1]1] 
+zz 
+HHpp(z)  (z) HH0,even0,even (z)     (z) 0,odd0,odd(z)(z) 
+HH11,,eveneven(z)     (z) 11,,oddodd(z)(z) PolyphasePolyphase 
+MatrixMatrix == HH
+HH</text>
+        </slide>
+        <slide>
+          <slideno>17</slideno>
+          <text>1818 Condition O as a constraint on the Condition O as a constraint on the lowpass lowpass filter:filter: 
+ Matrix form:  Matrix form: TT =  = 
+ Coefficient form:  Coefficient form:  h[n]h[nh[n]h[n --2k] = 2k] = dd[k][k] 
+ Polyphase Polyphase form: form: 
+HH0,even0,even (z) H(z) H0,even0,even (z(z--11)  ) 0,odd0,odd(z) H(z) H0,odd0,odd(z(z--11)  ) 
+ Modulation form:  Modulation form: 00(z) H(z) H00(z(z--11) + H) + H00((--z) Hz) H00((--zz--11)  ) 
+Then choose  Then choose 11(z)  (z) --zz--NN HH00((--zz--11)          ) 
+i.e., hi.e., h11[n]  [n] --1)1)nn hh00[N[N--n]n] SummarySummary 
+nn LLLL II 
+= H= H = 1= 1 
+HH 2=  2 = 
+HH =  = ; N odd; N odd 
+(=  (=</text>
+        </slide>
+        <slide>
+          <slideno>8</slideno>
+          <text>99 Good choice for hGood choice for h11[n]:[n]: 
+hh11[n] = ([n] = ( --1)1)nn hh00[N[N--n]       n] ---------------------------- (7)(7) 
+Alternating flipAlternating flip 
+Example: N = 3Example: N = 3 
+hh11[0]       [0] 00[3][3] 
+hh11[1]       [1] --hh00[2][2] 
+hh11[2]       [2] 00[1][1] 
+hh11[3]       [3] --hh00[0][0] 
+With this choice, Equation (5) is automatically satisfied:With this choice, Equation (5) is automatically satisfied: 
+k = k = --1: h1: h00[0]h[0]h00[1] [1] --hh00[1]h[1]h00[0]                                           [0] 
+k =  k = 00[0]h[0]h00[3] [3] --hh00[1]h[1]h00[2] + h[2] + h00[2]h[2]h00[1] [1]  hh00[3]h[3]h00[0]   [0] 
+k =  k = 00[2]h[2]h00[3] [3]  hh00[3]h[3]h00[2]                                          [2] 
+k = k = 2:  2: N odd  ;  N odd ; 
+h=  h= 
+=  = 
+h=  h= 
+=  = 
+= 0= 0 
+0: h0: h = 0 = 0 
+1: h1: h = 0= 0 
+no overlapno overlap</text>
+        </slide>
+        <slide>
+          <slideno>11</slideno>
+          <text>1212 Condition O:Condition O: 
+HHpp TT(z(z--11)  ) pp(z)   (z)  HHpp(z) is (z) is paraunitaryparaunitary 
+HH0,even0,even (z(z--11)  ) 1,even1,even (z(z--11)) 
+HH0,odd0,odd(z(z--11)   ) 1,odd1,odd(z(z--11)) HH0,even0,even (z)  (z) 0,odd0,odd(z)(z) 
+HH1,even1,even (z)  (z) 1,odd1,odd(z)(z) == 1   1 
+0   0 
+Reverse the order of multiplication:Reverse the order of multiplication: 
+HH0,even0,even (z)  (z) 0,odd0,odd(z)(z) 
+HH1,even1,even (z)  (z) 1,odd1,odd(z)(z) HH0,even0,even (z(z--11)  ) 1,even1,even (z(z--11)) 
+HH0,odd0,odd(z(z--11)  ) 1,odd1,odd(z(z--11)) == 1   1 
+0   0 HH I  =  I = 
+HH
+HHHH
+HH00 
+11 
+HH
+HHHH
+HH00 
+11</text>
+        </slide>
+        <slide>
+          <slideno>7</slideno>
+          <text>88 Orthogonality Orthogonality condition (Condition O) iscondition (Condition O) is 
+WWTTW = I = WWW = I = WWTT  W orthogonal matrixW orthogonal matrix 
+Block Form:Block Form: 
+LL 
+BB 
+LLTTL + BL + BTTB = IB = I W =W = 
+LLLLTT LBLBTT 
+BLBLTT BBBBTT I 
+0 == 
+LLLLTT = I  = I   hh00[n] h[n] h00[n [n  2k] =  2k] = dd[k]   [k] ---------------------------- (4)(4)
+nn 
+LBLBTT = 0  = 0   hh00[n] h[n] h11[n [n  2k] =  2k] = ---------------------------- (5(5)) 
+nn 
+BBBBTT = I = I   hh11[n] h[n] h11[n [n  2k] =  2k] = dd[k]   [k] ---------------------------- (6)(6)
+nn 0 
+I 
+0      0</text>
+        </slide>
+      </slides>
+      <videos/>
+    </lecture>
+    <lecture>
+      <lecture_title>Slides 14 (PDF)</lecture_title>
+      <lecture_pdf_url>https://ocw.mit.edu/courses/18-327-wavelets-filter-banks-and-applications-spring-2003/resources/slides14/</lecture_pdf_url>
+      <lectureno>Smoothness of Wavelet Bases: Convergence of the Cascade Algorithm (Condition E); Splines. Bases vs. Frames</lectureno>
+      <slides>
+        <slide>
+          <slideno>4</slideno>
+          <text>5 Splines 
+Splines are scaling functions whose filters only 
+have zeros at  i.e. 
+H0() = ( )p 
+h0[n] = ( ) ; n = 0, 1, , p 
+Consider p = 1 
+(t) = 
+() = e -i/2 1 + e -i 
+2 
+1 
+2p p 
+n 
+1 
+0 1 
+^ sin /2
+/2 binomial 
+coefficients</text>
+        </slide>
+        <slide>
+          <slideno>2</slideno>
+          <text>a(i+1)[n] =
+-{2h0[k](i)(2t -k)}{2h0[](i)(2t + 2n -)}dt 
+k  
+=2 h0[]  h0[k] a(i)[k + 2n -] 
+ k  
+m 
+=2 h0[]  h0[m  2n + ] a(i)[m] 
+ m 
+-r    
+=2 h0[2n  r]  h0[-(r  m)]a(i) [m] 
+r m 
+Filter w ith h0[n] Filter w ith h0[-n] 
+and then downsamp le 
+3</text>
+        </slide>
+        <slide>
+          <slideno>7</slideno>
+          <text>Alternatively, mea
+2  sure smoothness in L2 sense: 
+^ 1 ^ ||(s)(t)||2 = 
+2  
+- -(i)s ()2d (by Plancherel) 
+1 
+=  2s 4psin /22p
+2p d
+ when 2s2p  -1
+1 Note:   d is limiting case 
+- 
+So, (t) has s derivatives in the L2 sense for all 
+s  smax, where 
+Valid for splines smax= p-
+8</text>
+        </slide>
+        <slide>
+          <slideno>1</slideno>
+          <text>Use eigenvalue analysis to study convergence of 
+the casca de algorithm and smoothness of resu lting 
+scaling function. 
+The casc ade algorithm revi sited: 
+(i+1)(t) = 2 h0[k] (i)(2t -k) 
+k 
+Consider th e behavior of the inner products 
+a(i)[n] = 
+-(i)(t) (i)(t + n) dt 
+as i  to understand converg ence. 
+2</text>
+        </slide>
+        <slide>
+          <slideno>3</slideno>
+          <text>In matri x form: 
+a(i+1) = (2) 2 H0H0T a(i) ; H0  Toeplitz 
+matrix 
+T 
+Iterati on converges if the eigenvalues of the transition
+matri x T satisfy 
+  1 
+with only a simple eigenvalue at  = 1. 
+4</text>
+        </slide>
+        <slide>
+          <slideno>10</slideno>
+          <text>What about smoothness (in L2 sense)? 
+wSmo othness is given by 
+smax = p - log2max(TQ) 
+(2)2Q QT here 
+TQ = Transition matrix for Q() 
+Alternatively, look at the transition matrix for H0(), 
+T=(2)2H0H0T 
+T has 2p special eigenvalues due to the zeros at : 
+ = 1, , , , ( )2p-1 1 
+2 
+Disreg ard these eigenvalues and look at the largest 
+non-special eigenvalue, max. Then the smoothness 
+is given by 
+= smax
+max(T) = 4-log2max(T) 1 
+2 
+-smax 11</text>
+        </slide>
+        <slide>
+          <slideno>9</slideno>
+          <text>Then we have 
+ ck (tk) = q(t)  t 
+k  
+=- q()(t -) d 
+=  (  
+i )
+- q()(-)-id . ti 
+i=0 
+i 
+= polynomial of degree . 
+10</text>
+        </slide>
+        <slide>
+          <slideno>8</slideno>
+          <text>Non-spline Scaling Functions 
+In general, we have 
+H0()= ( )p Q()1 + e 
+2 -i 
+so that 
+(t) = p(t)  q(t) 
+  
+pth order ugly 
+spline 
+Notice that the approximation power of (t) comes entirely 
+from p(t): 
+Suppose that we write 
+ ckp(tk) = t 
+k 
+for some  (0    p). 
+9</text>
+        </slide>
+        <slide>
+          <slideno>5</slideno>
+          <text>6 What happens when p = 2 ? 
+H0() = ( )( ) 
+() =  H0(/2j) 
+=  H0(/2j) .  H0(/2j) 
+= 1() . 2() 
+= (e -i/2 )2 
+(t) = 1 + e -i 
+2 1 + e -i 
+2   
+H0()1 H0()2 
+^ 
+  
+j=1
+ 
+j=1 1 
+j=1 2 
+^ ^ 
+sin /2 
+0 1  
+0 1 
+= 
+0 1 2</text>
+        </slide>
+        <slide>
+          <slideno>6</slideno>
+          <text>7 More generally
+() = (e -i/2 )p 
+(t) = box(t)  box(t)    box(t) (p terms) sin /2
+/2 
+0 0 1 2 0 1 2 31 
+p = 1 p = 2 p = 3 p = 4 
+(t) is piecewise polynomial of degree p  1. The 
+derivatives, (s)(t), exist for s  p  1 and they are 
+continuous for s  p  2. 
+e.g. Cubic spline (p = 4) is C2 continuous. 0 1 2 3 4</text>
+        </slide>
+        <slide>
+          <slideno>0</slideno>
+          <text>Smoothness of wavelet bases:
+Convergence of the cascade algorithm
+(Condition E); Splines. Bases vs. frames.</text>
+        </slide>
+      </slides>
+      <videos/>
+    </lecture>
+    <lecture>
+      <lecture_title>Slides 5 (PDF)</lecture_title>
+      <lecture_pdf_url>https://ocw.mit.edu/courses/18-327-wavelets-filter-banks-and-applications-spring-2003/resources/slides5/</lecture_pdf_url>
+      <lectureno>Modulation and Polyphase Representations: Noble Identities; Block Toeplitz Matrices and Block z-transforms; Polyphase Examples</lectureno>
+      <slides>
+        <slide>
+          <slideno>11</slideno>
+          <text>1212Taking block zTaking block z --transform we get:transform we get:
+HHpp(z) =       h(z) =       h00[0]  h[0]  h00[1][1]
+hh11[0]  h[0]  h11[1]      [1]      +  z+  z--11hh00[2]  h[2]  h00[3][3]
+hh11[2]  h[2]  h11[3][3]
+==
+hh11[0] + z[0] + z--11hh11[2]     h[2]     h11[1] + z[1] + z--11hh11[3][3]hh00[0] + z[0] + z--11hh00[2]   [2]   hh00[1] + z[1] + z--11hh00[3][3]
+== HH0,even0,even (z)       H(z)       H0,odd0,odd (z)(z)
+HH1,even1,even (z)       H(z)       H1,odd 1,odd (z)(z)
+This is the polyphase matrix for a 2This is the polyphase matrix for a 2 --channel filter bank.channel filter bank.</text>
+        </slide>
+        <slide>
+          <slideno>18</slideno>
+          <text>1919Polyphase MatrixPolyphase Matrix
+Example: Daubechies 4Example: Daubechies 4 --tap filter tap filter 
+1+1+3              3 + 3              3 + 3                3 3                3 --3              13              1 --33
+4 4 2                42                4 2                    42                    4 2                42                4 22
+{(1 + {(1 + 3 ) + (3 + 3 ) + (3 + 3 ) z3 ) z--1 1 + (3 + (3 --3) z3) z--2 2 + (1 + (1 --3) z3) z--33}}hh00[0] =[0] =
+HH00(z) =(z) =
+HH11(z) = (z) = 11
+4422{(1 {(1 --3) 3) (3 (3 --3) z3) z--11+ (3 + + (3 + 3)z3)z--22(1 + (1 + 3)z3)z--33}}442211hh00[1] =[1] = hh00[2] =[2] = hh00[3] =[3] =</text>
+        </slide>
+        <slide>
+          <slideno>23</slideno>
+          <text>2424AATTB =B =11
+4 4 221 + 1 + 3    1 3    1 --33
+3 + 3 + 3  3  --(3(3--3)3)3 3 --3    1 3    1 --33
+3 + 3 + 3  3  --(1+(1+3)3)11
+4 4 22
+11
+3232==(2 (2 3) + (3) + ( --223)    (3)    ( --2) 2) ((--2)2)
+(6) (6) (6)              ((6)              ( --2 2 3) + (2 3) + (2 3)3)
+=    0=    0
+BBTTA   =    (AA   =    (ATTB)B)TT=  0=  0
+SoSo
+HHppTT(z(z--11)  H)  Hpp(z)  =  I  (z)  =  I  i.e. Hi.e. Hpp(z) is a (z) is a ParaunitaryParaunitary MatrixMatrix</text>
+        </slide>
+        <slide>
+          <slideno>19</slideno>
+          <text>2020Time domain:Time domain:
+hh00[0][0]22+ h+ h00[1][1]22+ h+ h00[2][2]22+ h+ h00[3][3]22=  =  1  1  {(4 + 2{(4 + 2 3) + (12 + 6 3) + (12 + 6 3) +3) +
+(12 (12 6 6 3)  + (4 3)  + (4 2 2 3)}3)}
+= 1= 1
+hh00[0] h[0] h00[2] + h[2] + h00[1] h[1] h00[3]   =   [3]   =   11{(2{(23) + (3) + ( --223)}3)}
+= 0= 0
+i.e. filter is orthogonal to its double shiftsi.e. filter is orthogonal to its double shifts3232
+3232</text>
+        </slide>
+        <slide>
+          <slideno>15</slideno>
+          <text>1616Relationship between Modulation Relationship between Modulation 
+and Polyphase Matricesand Polyphase Matrices
+hh0,even0,even [n] = h[n] = h00[2n][2n]
+HH00(z) = H(z) = H0,even0,even (z(z22) + z) + z--11HH0,odd0,odd(z(z22) ;) ;
+hh0,odd0,odd[n] = h[n] = h00[2n+1][2n+1]
+HH11(z) = H(z) = H1,even1,even (z(z22) + z) + z--11HH1,odd1,odd(z(z22))
+Two more equations by replacing z with Two more equations by replacing z with --z.z.
+So in matrix form:So in matrix form:
+HH00(z)  H(z)  H00((--z)         Hz)         H0,even0,even (z(z22)  H)  H0,odd0,odd(z(z22)     1      1)     1      1
+HH11(z)  H(z)  H11((--z)         Hz)         H1,even1,even (z(z22)  H)  H1,odd1,odd(z(z22)     z)     z--11--zz--11
+123123 123123
+HHmm(z)(z)
+Modulation matrixModulation matrixHHpp(z(z22))
+Polyphase matrixPolyphase matrix==
+1424314243</text>
+        </slide>
+        <slide>
+          <slideno>5</slideno>
+          <text>662. 2. ConsiderConsider
+xx[n]                        u[n]                        y[n] [n]                        u[n]                        y[n] 
+U(z) = H(z) X(z)U(z) = H(z) X(z)
+Y(z) = U(zY(z) = U(z22)                   ()                   ( upsamplingupsampling ))
+= H(z= H(z22) X(z) X(z22)       )       can can upsample upsample firstfirst
+Second Noble Identity:Second Noble Identity:
+  xx[n]                           y[n]       [n]                           y[n]       xx[n]                               y[n][n]                               y[n]H(z)H(z) 22
+ 22 H(z)H(z) 22 H(zH(z22))</text>
+        </slide>
+        <slide>
+          <slideno>12</slideno>
+          <text>1313Similarly, for the synthesis filter bank:Similarly, for the synthesis filter bank:
+FFbb= = ff00[0]  f[0]  f11[0][0]
+ff00[1]  f[1]  f11[1][1]
+ff00[2]  f[2]  f11[2][2]
+ff00[3]  f[3]  f11[3][3]ff00[0]  f[0]  f11[0][0]
+ff00[1]  f[1]  f11[1][1]
+ff00[2]  f[2]  f11[2][2]
+ff00[3]  f[3]  f11[3][3]0        00        0
+0        00        0
+0           00           0
+0           00           0
+MM MMMM MMLLMM MM MM MM
+LL</text>
+        </slide>
+        <slide>
+          <slideno>21</slideno>
+          <text>2222HHpp(z) = A + B z(z) = A + B z--11
+HHppTT(z(z--11) H) Hpp(z)  = (A(z)  = (ATT+ B+ BTTz)(A + z)(A + BzBz--11))
+= (A= (ATTA + BA + BTTB) + B) + AATTBzBz--11+ + BBTTAzAz
+AATTA =A =11
+44221 + 1 + 33
+3 +3 +331 1 --33
+--(3 (3 --3)3)11
+44221 + 1 + 3     3 + 3     3 + 33
+1 1 --3     3     --(3(3--3)3)
+(4 + 2(4 + 23) + (4 3) + (4 --223)   (6 + 43)   (6 + 4 3)   3)   --(6 (6 --443)3)
+(6 + 4(6 + 43) 3) --(6 (6 --443)   (12 + 63)   (12 + 6 3) + (12 3) + (12 --663)3)==11
+3232
+3/43/4
+3/4   3/4   ==</text>
+        </slide>
+        <slide>
+          <slideno>24</slideno>
+          <text>2525Modulation domain:Modulation domain:
+HH00(z)  H(z)  H00(z(z--11)  =  P(z)  =)  =  P(z)  =11
+1616((--zz33+ 9z + 16 + 9z+ 9z + 16 + 9z--11zz--33))
+HH00((--z) Hz) H00((--zz--11) = P() = P( --z)  =z)  =11
+1616(z(z339z + 16 9z + 16 9z9z--11+ z+ z--33))
+SoSo
+HH00(z) H(z) H00(z(z--11)   +  H)   +  H00((--z)  Hz)  H00((--zz--11)  =  2)  =  2
+i.e.i.e.
+|H|H00(()|)|^2^2+  |H+  |H00(( +  +  )|)|^2^2=  2=  2</text>
+        </slide>
+        <slide>
+          <slideno>7</slideno>
+          <text>88xx[n][n]
+zz--11HHeveneven(z(z22))
+HHoddodd(z(z22))22
+22y[n]y[n]
+++
+zz--11HHeveneven(z)(z)
+HHoddodd(z)(z)22
+22y[n]y[n]
+++  xx[n][n]
+PolyphasePolyphase
+FormFormxxeveneven[n][n]
+xxoddodd[n[n--1]1]</text>
+        </slide>
+        <slide>
+          <slideno>4</slideno>
+          <text>55Noble IdentitiesNoble Identities
+1.1.ConsiderConsider
+U(z) = H(zU(z) = H(z22)X(z))X(z)
+Y(z) =  {U(z Y(z) =  {U(z   ) + U() + U( --z z   )}                  ()}                  ( downsamplingdownsampling ))
+=  { H (z) X (z =  { H (z) X (z ) + H(z) X ) + H(z) X ((--zz  )})}
+= H(z) = H(z)  { {XX(z (z ) + X () + X ( --z z )}  )}  can can downsample                                                      downsample                                                      
+first   first   
+First Noble identity:First Noble identity:
+x [n]x [n]x [n]x [n]H(zH(z22)) 22y[n]y[n] u[n]u[n]
+22 H(z)H(z)y[n]y[n]
+y[n]y[n] xx[n][n]H(zH(z22))22</text>
+        </slide>
+        <slide>
+          <slideno>0</slideno>
+          <text>Course 18.327 and 1.130Course 18.327 and 1.130
+Wavelets and Filter BanksWavelets and Filter Banks
+Modulation and Polyphase Modulation and Polyphase 
+Representations: Representations: 
+Noble Identities; Noble Identities; 
+Block Block Toeplitz Toeplitz Matrices Matrices 
+and Block zand Block z --transforms; transforms; 
+Polyphase ExamplesPolyphase Examples</text>
+        </slide>
+        <slide>
+          <slideno>9</slideno>
+          <text>1010FFeveneven(z(z22))
+FFoddodd(z(z22))22
+22y[n]y[n]
+++  xx[n][n]
+FFeveneven(z)(z)
+FFoddodd(z)(z)22
+22y[n]y[n]
+++  xx[n][n]yyeveneven[n][n]
+yyoddodd[n][n]zz--11
+PolyphasePolyphase
+FormFormzz--11</text>
+        </slide>
+        <slide>
+          <slideno>22</slideno>
+          <text>2323BBTTB  =B  =11
+4 4 223 3 --3    3 + 3    3 + 33
+1 1 --3 3 --(1 + (1 + 3)3)11
+4 4 223 3 --3      1 3      1 --33
+3 + 3 + 3  3  --(1 + (1 + 3)3)
+==11
+3232(12 (12 663) + (12 + 63) + (12 + 6 3)   (6 3)   (6 --443) 3) --(6 + 4(6 + 43)3)
+(6 (6 --443) 3) (6 + 4(6 + 43)        (4 3)        (4 --223) + (4 + 23) + (4 + 2 3)3)
+== --3/43/4
+--3/4   3/4   
+AATTA + BA + BTTB  =  IB  =  I</text>
+        </slide>
+        <slide>
+          <slideno>14</slideno>
+          <text>1515Given that the analysis filters are FIR, the Given that the analysis filters are FIR, the 
+requirement for the synthesis filters to be also requirement for the synthesis filters to be also 
+FIR is:FIR is:
+det det HHpp(z)  = z(z)  = z--ll(simple delay)(simple delay)
+because  Hbecause  Hpp--11(z)  must be a polynomial.(z)  must be a polynomial.
+Condition for orthogonality: Condition for orthogonality: FFpp(z) is the transpose (z) is the transpose 
+of Hof Hpp(z), i.e.(z), i.e.
+HHppTT(z(z--11)  H)  Hpp(z)  = I(z)  = I
+i.e. Hi.e. Hpp(z) should be (z) should be paraunitaryparaunitary . .</text>
+        </slide>
+        <slide>
+          <slideno>2</slideno>
+          <text>33FF00(z) = (z) = 11
+??2z2z--llHH11((--z)z)
+FF11(z) =  (z) =  --11
+??2z2z--llHH00((--z)z)678678
+Require these Require these 
+to be FIRto be FIR
+Suppose we choose Suppose we choose ??= 2z = 2z --ll
+ThenThen
+FF00(z) = H(z) = H11((--z)z)
+FF11(z) = (z) = --HH00((--z)z)678678</text>
+        </slide>
+        <slide>
+          <slideno>10</slideno>
+          <text>1111Polyphase MatrixPolyphase Matrix
+Consider the matrix corresponding to the analysis Consider the matrix corresponding to the analysis 
+filter bank in filter bank in interleavedinterleaved form.  This is a block form.  This is a block 
+Toeplitz Toeplitz matrix:matrix:
+HHbb==LL
+LLhh00[3]  h[3]  h00[2][2]
+hh11[3]  h[3]  h11[2][2]hh00[1]  h[1]  h00[0]       0        0  [0]       0        0  
+hh11[1]  h[1]  h11[0]       0        0[0]       0        0LL
+LL
+LL 0        0     h0        0     h00[3]  h[3]  h00[2]    h[2]    h00[1]  h[1]  h00[0][0]
+LL 0        0     h0        0     h11[3]  h[3]  h11[2]    h[2]    h11[1]  h[1]  h11[0][0]LL
+LLLL
+44--tap Exampletap ExampleMM</text>
+        </slide>
+        <slide>
+          <slideno>1</slideno>
+          <text>22Modulation MatrixModulation Matrix
+Matrix form of PR conditions:Matrix form of PR conditions:
+[F[F00(z)  F(z)  F1 1 (z)]     H(z)]     H00(z)  H(z)  H00((--z)       =  [ 2z z)       =  [ 2z ll0 ]0 ]
+HH11(z)  H(z)  H11((--z)z)
+So                             So                             
+[ F[ F00(z)  F(z)  F11(z)]  =   [2z (z)]  =   [2z ll0]  0]  HHmm11(z)(z)
+HHmm11(z)  = (z)  = 11123123
+Modulation matrix,Modulation matrix, HHmm(z)(z)
+??=  =  HH00(z) H(z) H11((--z)  z)  --HH00((--z) Hz) H11(z)   (must be non(z)   (must be non --zero)zero)HH11((--z)  z)  --HH00((--z) z) 
+--HH11(z)     H(z)     H00(z)(z)??</text>
+        </slide>
+        <slide>
+          <slideno>25</slideno>
+          <text>2626-1 -0.8 -0.6 -0.4 -0.2 0 0.2 0.4 0.6 0.8 100.511.522.5Magnitude response of Daubechies 4-tap filter.Frequency response phase
+Angular frequency (normalized by )Magnitude Response of Daubechies 4Magnitude Response of Daubechies 4 --tap filter.tap filter.</text>
+        </slide>
+        <slide>
+          <slideno>16</slideno>
+          <text>1717ButBut
+1      1                 1               1    11      1                 1               1    1
+zz--11--zz--11zz--111   1   --11==
+123123 123123
+FF22
+Delay Matrix   2Delay Matrix   2 --point DFT Matrixpoint DFT MatrixDD22(z)(z)
+FFNN= = 1    1     1      11    1     1      1
+1    1    wwww22      w w NN--11
+1    1    ww2 2 ww44      ww2(N2(N--1)1)
+.      .      ..      .      .
+.      .      ..      .      .
+.      .      ..      .      .
+1    1    wwNN--11ww2(N2(N--1)1)ww(N(N--1)1)22;   w = ;   w = eei                   i                   NN--point DFTpoint DFT
+MatrixMatrixNN
+FFN   N   =   =   1  1  FFNN
+Complex conjugate: replace Complex conjugate: replace wwwith with ww= e= e--iiNN--1122
+NN22</text>
+        </slide>
+        <slide>
+          <slideno>13</slideno>
+          <text>1414Note transpose Note transpose 
+convention for convention for 
+synthesissynthesis
+polyphase matrixpolyphase matrixff00[0]  f[0]  f11[0][0]
+ff00[1]  f[1]  f11[1][1]ff00[2]  f[2]  f11[2][2]
+ff00[3]  f[3]  f11[3][3]+ z+ z--11 FFpp(z)  =(z)  =
+==FF0,even 0,even [z]  F[z]  F1,even 1,even [z][z]
+FF0, odd  0, odd  [z]  F[z]  F1, odd  1, odd  [z][z]
+Perfect reconstruction condition in polyphase domain:Perfect reconstruction condition in polyphase domain:
+FFpp(z)  H(z)  Hpp(z)  = I   (centered form(z)  = I   (centered form ))
+This means that HThis means that Hpp(z) must be invertible for all z on the (z) must be invertible for all z on the 
+unit circle, i.e.unit circle, i.e.
+detdetHHpp((eeii)  )  0 for all frequencies 0 for all frequencies ..</text>
+        </slide>
+        <slide>
+          <slideno>17</slideno>
+          <text>1818So, in generalSo, in general
+HHmm(z) F(z) F--11=     H=     Hpp((zzNN) D) DNN(z)(z)
+N = # of channels in N = # of channels in filterbankfilterbank
+(N = 2 in our example)(N = 2 in our example)NN</text>
+        </slide>
+        <slide>
+          <slideno>6</slideno>
+          <text>77Derivation of Polyphase FormDerivation of Polyphase Form
+1.1.Filtering and Filtering and downsamplingdownsampling ::
+xx[n]                                     y[n][n]                                     y[n]
+22 H(z)H(z)
+H(z)  =  H(z)  =  HHeveneven(z(z22)  +  z)  +  z--11HHoddodd(z(z22); ); hheveneven[n] = h[2n][n] = h[2n]
+hhoddodd[n] =  h[2n+1][n] =  h[2n+1]
+xx[n][n]++HHeveneven(z(z22))
+HHoddodd(z(z22))22y[n]y[n]
+zz--11</text>
+        </slide>
+        <slide>
+          <slideno>26</slideno>
+          <text>2727-1 -0.8 -0.6 -0.4 -0.2 0 0.2 0.4 0.6 0.8 1-4-3-2-101234Phase response of Daubechies 4-tap filter.Frequency response phase
+Angular frequency (normalized by )Phase response of Daubechies 4Phase response of Daubechies 4 --tap filter.tap filter.</text>
+        </slide>
+        <slide>
+          <slideno>3</slideno>
+          <text>44Synthesis modulation matrix:Synthesis modulation matrix:
+Complete the second row of matrix PR conditionsComplete the second row of matrix PR conditions
+by replacing z with by replacing z with z:z:
+FF00(z)   F(z)   F11(z)       H(z)       H00(z)    H(z)    H00((--z)                 zz)                 z--ll00
+FF00((--z)  Fz)  F11((--z)      Hz)      H11(z)    H(z)    H11((--z)                0  z)                0  ((--z) z) --ll
+Synthesis Synthesis 
+modulationmodulation
+matrix, Fmatrix, Fmm(z)(z)123123
+Note the transpose convention in FNote the transpose convention in Fmm(z).(z).=  2=  2</text>
+        </slide>
+        <slide>
+          <slideno>8</slideno>
+          <text>992.2.Upsampling Upsampling and filteringand filtering
+xx[n]                                               y[n][n]                                               y[n]
+F(z) = F(z) = FFeveneven(z(z22) + z) + z--11FFoddodd(z(z22))F(z)F(z) 22
+xx[n][n]++FFeveneven(z(z22))
+FFoddodd(z(z22))22y[n]y[n]
+zz--11</text>
+        </slide>
+        <slide>
+          <slideno>20</slideno>
+          <text>2121Polyphase Domain:Polyphase Domain:
+{(1 + {(1 + 3) + (3 3) + (3 --  3) z3) z--11}}
+{(3 + {(3 + 3) + (1 3) + (1 --3) z3) z--11}}
+{(1 {(1 --3) + (3 + 3) + (3 + 3) z3) z--11}}
+{ { --(3 (3 --3) 3) (1 + (1 + 3) z3) z--11}}11
+44  2211
+44  22
+11
+44  2211
+44  22
+======
+==HH0,even0,even (z)(z)
+HH0,odd0,odd(z)(z)
+HH1,even1,even (z)(z)
+HH1,odd1,odd(z)(z)
+1 + 1 + 3     3 + 3     3 + 3                 3 3                 3 --3         1 3         1 --33
+1 1 --3     3     --(3 (3 --3)               3 + 3)               3 + 3     3     --(1 + (1 + 3) 3) HHpp(z) =(z) =11
+442211
+4422++
+123123 123123
+BB AAzz--11</text>
+        </slide>
+      </slides>
+      <videos/>
+    </lecture>
+    <lecture>
+      <lecture_title>Slides 20 (PDF)</lecture_title>
+      <lecture_pdf_url>https://ocw.mit.edu/courses/18-327-wavelets-filter-banks-and-applications-spring-2003/resources/slides20/</lecture_pdf_url>
+      <lectureno>M-band Wavelets: DFT Filter Banks and Cosine Modulated Filter Banks. Multiwavelets</lectureno>
+      <slides>
+        <slide>
+          <slideno>3</slideno>
+          <text>44e.g.  M  =  3e.g.  M  =  3
+FF00(()H)H00(() + F) + F11(()H)H11(()+F)+F22(()H)H22(()  =  3e)  =  3e--iill
+FF00(()H)H00((+     ) + F+     ) + F11(()H)H11((+     ) + F+     ) + F22(()H)H22((+    ) = 0+    ) = 0
+FF00(()H)H00((+    ) + F+    ) + F11(()H)H11((+     ) + F+     ) + F22(()H)H22((+     ) = 0+     ) = 0
+Cast in matrix form Cast in matrix form 
+[F[F00(()   F)   F11(()   F)   F22(()] )] HHmm(()  =  [3e)  =  [3e--iill0    0]0    0]
+HH00(()   H)   H00((+    )   H+    )   H00((+    )+    )
+HH11(()   )   HH11((+    )   H+    )   H11((+    )+    )
+HH22(()   H)   H22((+    )   H+    )   H22((+    )+    )22
+3322
+3322
+33
+44
+3344
+3344
+33
+22
+33
+HHmm(() =) =22
+33
+22
+3344
+3344
+3344
+33</text>
+        </slide>
+        <slide>
+          <slideno>8</slideno>
+          <text>99Modulation followed by filteringModulation followed by filtering
+MMMMMMMMx[n]x[n]
+MM(w(w22))--nn
+p[n]p[n]p[n]p[n]
+p[n]p[n]p[n]p[n]xx
+xx
+xx
+xx(w)(w)--nn(w(w00))--nn
+((wwMM--11))--nn
+modulationmodulation filteringfilteringFor block DFT,For block DFT,
+p[n]  =  [1, 1, 1,  , 1]p[n]  =  [1, 1, 1,  , 1]
+0             M 0             M 11
+Can generalize by usingCan generalize by using
+other prototype filters. other prototype filters. 
+p[n] is called the prototypep[n] is called the prototype
+filter.filter.
+If wIf wknknis replaced by cis replaced by ck,nk,nfrom DCT  from DCT  CosineCosine --modulatedmodulated
+cck,nk,n= = coscos[(k + [(k + )(n +          )    ]        )(n +          )    ]        Filter BankFilter BankZ-1
+Z-1
+Z-1
+22
+MM ++
+MM11
+22MM
+22</text>
+        </slide>
+        <slide>
+          <slideno>9</slideno>
+          <text>1010Cosine Modulated Filter BankCosine Modulated Filter Bank (from type IV DCT)(from type IV DCT)
+hhkk[n]  =  p[n][n]  =  p[n]coscos[(k + [(k + )(n +          )    ])(n +          )    ]
+p[n] chosen to be symmetric LPF.p[n] chosen to be symmetric LPF.
+Only p[n] needs to be designed.Only p[n] needs to be designed.
+Let L be the length of p[n].Let L be the length of p[n].
+Symmetry:  P[L Symmetry:  P[L 1 1 n]  =  p[n]n]  =  p[n]
+L=2M   L=2M   orthogonalityorthogonality :  p[n]:  p[n]22+ p[n + M]+ p[n + M]22=  1=  1
+L=4M  L=4M  orthogonalityorthogonality : p[n]: p[n]22+p[n+M]+p[n+M]22+p[n+2M]+p[n+2M]22+p[n+3M]+p[n+3M]22= 1= 1
+p[n]p[n + 2M] + p[n+M]p[n p[n]p[n + 2M] + p[n+M]p[n + 3M] = 0+ 3M] = 0
+Genus of the prototype filter.Genus of the prototype filter.22
+MM ++
+MM
+DoubleDouble --shift shift 
+orthogonalityorthogonality   
+in M=2 casein M=2 case11
+22MM
+22
+center it!center it!</text>
+        </slide>
+        <slide>
+          <slideno>5</slideno>
+          <text>66To recover X(z) from XTo recover X(z) from X00(z), X(z), X11(z), X(z), X22(z), (z), 
+X(z)  =  X(z)  =  zzkkXXkk((zzMM) ) 
+Much more freedom than 2 channel caseMuch more freedom than 2 channel case
+e.g. can have e.g. can have orthogonality orthogonality &amp; symmetry&amp; symmetry
+Consider Consider HaarHaar FB (M = 2)FB (M = 2)
+1     11     1
+Then HThen Hpp(z)  =              =  F(z)  =              =  F22(2 pt DFT matrix) (2 pt DFT matrix) 
+1    1    --1    1    k=0k=0MM--11</text>
+        </slide>
+        <slide>
+          <slideno>4</slideno>
+          <text>55Polyphase Polyphase RepresentationRepresentation
+MMMMMMMMX(z)X(z) XX00(z)(z)
+XXMM--11(z)(z)HHpp(z)(z)
+MM
+zz--11zz--11zz--11
+MM MMXX11(z)(z)
+XX22(z)(z)
+YYMM--11(z)(z)YY22(z)(z)YY11(z)(z)YY00(z)(z)
+x[x[MnMn]  ]  XX00(z)  =  x[0] + z(z)  =  x[0] + z--11x[M] + zx[M] + z--22x[2M] + zx[2M] + z--33x[3M] + x[3M] + 
+x[x[MnMn--1]  1]  XX11(z)  =  x[(z)  =  x[ 1] + z1] + z--11x[Mx[M--1] + z1] + z--22x[2Mx[2M--1] + 1] + 
+x[x[MnMn--2]  2]  XX22(z)  =  x[(z)  =  x[ 2] + z2] + z11x[Mx[M--2] + z2] + z--22x[2Mx[2M--2] + 2] + 
+MM</text>
+        </slide>
+        <slide>
+          <slideno>2</slideno>
+          <text>33Perfect ReconstructionPerfect Reconstruction
+FFkk(()   )   X(X(+     )+     )HHkk((+      )  =  e+      )  =  e--iillX(X())
+i.e.      i.e.      X(X(+      ) +      ) FFkk(())HHkk((+      ) =  e+      ) =  e--iillX(X())
+Matching terms on either sideMatching terms on either side
+n = 0        n = 0        FFkk(())HHkk(()  =  Me)  =  Me--iillno distortionno distortion
+n n 0  0  FFkk(())HHkk((+      )  =  0      no +      )  =  0      no aliasingaliasing11
+MM
+MM--11n=0n=022nn
+MM22nn
+MMMM--11
+k=0k=0
+22nn
+MMMM--11
+n=0n=0MM--11
+k=0k=022nn
+MM22nn
+MM
+MM--11
+k=0k=0
+MM--11
+k=0k=011
+MM</text>
+        </slide>
+        <slide>
+          <slideno>1</slideno>
+          <text>22MM--channel Filter channel Filter BBanksanks
+Used in communication e.g. DSLUsed in communication e.g. DSL
+1 Scaling function,   M1 Scaling function,   M --1 wavelets1 wavelets
+HH00(()) MMX(X())
+HH11(()) MM
+HHMM--11(())MMMMFF00(()) MM
+FF11(()) MM
+FFMM--11(()) MMX(X())^^
+((2)(2)(2)X(2)X()  = )  = [X([X()+X()+X(+ + )])]
+((M)(M)(M)X(M)X()  = )  = [[X(X(+      )]+      )] MMMM--11
+n=0n=022nn
+MM11</text>
+        </slide>
+        <slide>
+          <slideno>12</slideno>
+          <text>131311(t)       1    (t)       1     11(2t)       (2t)       0      0      11(2t (2t 1)1)
+
+22(t)       0    (t)       0     2  2  (2t) (2t) 1      1      22(2t (2t 1)1)
+Finite Element Finite Element MultiwaveletsMultiwavelets
+14424431442443satisfy vectorsatisfy vector
+refinement equationrefinement equation
+can also come up with orthogonal can also come up with orthogonal multiwaveletsmultiwavelets ..f=1f=1
+ff=0=0 11(t)(t)
+f=0f=0
+ff=0=0
+f=0f=0
+ff=1=122(t)(t)
+f=0f=0
+ff=0=0==</text>
+        </slide>
+        <slide>
+          <slideno>10</slideno>
+          <text>1111Application to DSLApplication to DSL
+copper wirecopper wire
+ffassign more bits toassign more bits to
+lower frequency bandslower frequency bands
+orthogonal CMFB canorthogonal CMFB can
+undo the overlaps undo the overlaps 
+between channelsbetween channels
+MultiwaveletsMultiwavelets
+Idea:  extend the scalar refinement equationIdea:  extend the scalar refinement equation
+(t)  =  2 (t)  =  2 hh00[k][k](2t (2t k)k)
+into a vector refinement equationinto a vector refinement equationkk
+11(t) (t) 11(2t (2t k)k)
+=  2         H=  2         H00[k][k]
+22(t)                                        (t)                                        2 2 (2t (2t k)k)
+k=0k=0NN--11
+2x22x2</text>
+        </slide>
+        <slide>
+          <slideno>0</slideno>
+          <text>Course 18.327 and 1.130Course 18.327 and 1.130
+Wavelets and Filter BanksWavelets and Filter Banks
+MM--band wavelets: DFT filter banks and band wavelets: DFT filter banks and 
+cosine modulated filter banks.cosine modulated filter banks.
+MultiwaveletsMultiwavelets ..</text>
+        </slide>
+        <slide>
+          <slideno>6</slideno>
+          <text>77MM--pt DFT matrixpt DFT matrix
+1    1     1            11    1     1            1
+1    w    w1    w    w22wwMM--11
+1    w1    w22ww44ww2(M2(M--1)1)
+MM MM
+1   1   wwMM--1  1  ww2(M2(M--1)    1)    ww(M(M--1)(M1)(M --1)1)FFMM== w  =  ew  =  e--ii22
+MM</text>
+        </slide>
+        <slide>
+          <slideno>7</slideno>
+          <text>88Suppose HSuppose Hpp(z)  =  F(z)  =  FMM
+YY00(z)  =  (z)  =  XXnn(z)      =    (z)      =    x[x[--n]  +   n]  +   x[Mx[M--n]  zn]  z--11+ + 
+YY11(z)  =  (z)  =  wwnnXXnn(z)  = (z)  = wwnnxx[[n] +   n] +   wwnn--MMxx[M[M--n]  zn]  z--11+ + 
+YYkk(z)  =  (z)  =  wwknknXXnn(z) = (z) = wwknknxx[[--n]  +    n]  +    wwk(nk(n--M)M)x[Mx[M--n]  zn]  z--11+ + MM--11 MM--11 MM--11
+n=0n=0 n=0n=0 n=0n=0
+MM--11 MM--11 MM--11
+n=0n=0 n=0n=0 n=0n=0
+MMM--11 MM--11
+n=0n=0 n=0n=0
+
+
+
+
+
+
+
+
+DFTDFT DFTDFT
+1424314243 1424314243
+M ptsM pts M ptsM pts
+
+MM--11
+n=0n=0
+
+
+
+
+Terms in zTerms in z--kkare DFT coefficients of are DFT coefficients of kkththblock of data.block of data.
+So filter bank performs a block DFT.So filter bank performs a block DFT.</text>
+        </slide>
+      </slides>
+      <videos/>
+    </lecture>
+    <lecture>
+      <lecture_title>Slides 13 (PDF)</lecture_title>
+      <lecture_pdf_url>https://ocw.mit.edu/courses/18-327-wavelets-filter-banks-and-applications-spring-2003/resources/slides13/</lecture_pdf_url>
+      <lectureno>Accuracy of Wavelet Approximations (Condition A); Vanishing Moments; Polynomial Cancellation in Filter Banks</lectureno>
+      <slides/>
+      <videos/>
+    </lecture>
+    <lecture>
+      <lecture_title>Slides 15 (PDF)</lecture_title>
+      <lecture_pdf_url>https://ocw.mit.edu/courses/18-327-wavelets-filter-banks-and-applications-spring-2003/resources/slides15/</lecture_pdf_url>
+      <lectureno>Signal and Image Processing: Finite Length Signals; Boundary Filters and Boundary Wavelets; Wavelet Compression Algorithms</lectureno>
+      <slides>
+        <slide>
+          <slideno>9</slideno>
+          <text>1010Downsample Downsample a halfa half --point symmetric signalpoint symmetric signal
+xxxxxx
+--3   3   --2  2  --1   0   1    21   0   1    2nothing guaranteednothing guaranteed
+LinearLinear --phase filtersphase filters
+H(H()  =  A()  =  A()e)e--ii
+1)1)halfhalf--point symmetric,             point symmetric,             =  fraction=  fraction
+2)2)wholewhole --point symmetric,         point symmetric,         =  integer=  integer
+Symmetric extension of finiteSymmetric extension of finite --length signallength signal
+X(X()  =  B()  =  B()e)e--ii</text>
+        </slide>
+        <slide>
+          <slideno>5</slideno>
+          <text>66=  [F]=  [F]
+w = w = eeii22
+NN1    1     1     1    1     1     mmmmmmmm 11
+1    w    w1    w    w22wwNN--11
+1    w1    w22ww44ww2(N2(N--1)1)
+oooooooooooooooooooooooo oooooooo
+1   1   wwNN--11[ H ][ H ]H[0]                          H[0]                          
+H[1]                H[1]                
+rrrrrrrr
+H[NH[N--1]1]
+k=0k=1               k=Nk=0k=1               k=N --11LOOOOMOOOONLOOOOMOOOONLOOOOMOOOONLOOOOMOOOONLOOOOMOOOONLOOOOMOOOONLOOOOMOOOONLOOOOMOOOON
+FF
+HF  =  FHF  =  F contains the Fourier coefficientscontains the Fourier coefficients
+H[k]  =  H[k]  =  h[n]eh[n]e--i     ni     n
+h[n h[n --/G22/G22/G22/G22/G22/G22/G22/G22]x[]x[/G22/G22/G22/G22/G22/G22/G22/G22]e]e--i     n  i     n  =  H[k]X[k]=  H[k]X[k]
+If x[If x[/G22/G22/G22/G22/G22/G22/G22/G22]  =  ]  =  eei      i      /G22/G22/G22/G22/G22/G22/G22/G22X[k]  =  X[k]  =  [k [k kk00]]
+H[k]X[k]  =  H[kH[k]X[k]  =  H[k00]X[k]]X[k]22kk
+NN
+nn
+/G22/G22/G22/G22/G22/G22/G22/G2222kk
+NN
+nn
+22kk00
+NN</text>
+        </slide>
+        <slide>
+          <slideno>13</slideno>
+          <text>14140011mmmmmmmmpp--1         1         00 cc00
+001122mmmmmmmm11 cc11
+oooooooo oooooooo oooooooo
+pp--11 ccpp--1100 00 00
+11 11 11 ==
+Using the computed Using the computed iiss, we can extrapolate,, we can extrapolate,
+e.g.  ce.g.  c11=  [=  [0011mmmmmmmmpp--11] ] 11 1 1 1100
+oooooooo
+pp--11
+DCT  idea of symmetric extensionDCT  idea of symmetric extension
+cf.  DFT   X[k]  =  cf.  DFT   X[k]  =  x[n]ex[n]e--i       ni       n22kk
+NN
+nn
+complexcomplex --valued valued Want realWant real --valued results. valued results.</text>
+        </slide>
+        <slide>
+          <slideno>10</slideno>
+          <text>1111The output:The output:
+Y(Y()  =  H()  =  H()X()X())
+W        W     WW        W     W
+W        H      H           W  =  wholeW        H      H           W  =  whole --point symmetrypoint symmetry
+H         H      W           H  =  halfH         H      W           H  =  half --point symmetrypoint symmetry
+H         W     HH         W     H
+The above extensions ensure the continuity of function The above extensions ensure the continuity of function 
+values at boundaries, but not the continuity of values at boundaries, but not the continuity of 
+derivatives at boundaries.derivatives at boundaries.</text>
+        </slide>
+        <slide>
+          <slideno>8</slideno>
+          <text>99Downsampling Downsampling a wholea whole --point symmetric signal with point symmetric signal with 
+even length Neven length N
+at the left boundary:at the left boundary:
+--22 0011 --11 22xx xxstill wholestill whole --point symmetric after point symmetric after 2.2.
+xx xxxxat the right boundary:at the right boundary:
+halfhalf--point symmetric after point symmetric after 2.2.
+NN--11
+oddodd
+E.g.  9/7 filter: wholeE.g.  9/7 filter: whole --point symmetric point symmetric 
+use the above extension for signaluse the above extension for signal NNN/2N/2
+N/2N/2exactlyexactly</text>
+        </slide>
+        <slide>
+          <slideno>0</slideno>
+          <text>Course 18.327 and 1.130Course 18.327 and 1.130
+Wavelets and Filter BanksWavelets and Filter Banks
+Signal and Image Processing: finite Signal and Image Processing: finite 
+length signals; boundary filters and length signals; boundary filters and 
+boundary wavelets; wavelet boundary wavelets; wavelet 
+compression algorithms. compression algorithms.</text>
+        </slide>
+        <slide>
+          <slideno>1</slideno>
+          <text>22FiniteFinite --Length SignalsLength Signals
+x[n]                                        y[n]x[n]                                        y[n] H(H())
+yy--22
+yy--11
+yy00
+yy11
+oooooooo
+yyNN--11
+oooooooo==hh00
+hh11hh00hh--11
+hh22hh11hh00hh--11
+hh11hh00hh--11
+rrrrrrrrrrrrrrrrrrrrrrrrxx--22
+xx--11
+xx00
+xx11
+oooooooo
+xxNN--11
+oooooooo
+LMNLMNLMNLMNLMNLMNLMNLMNunknownunknown
+length Nlength N
+(finite length)(finite length)
+unknownunknown</text>
+        </slide>
+        <slide>
+          <slideno>6</slideno>
+          <text>773)3)Symmetric ExtensionSymmetric Extension
+1)1)Whole point symmetry Whole point symmetry when filter is whole when filter is whole 
+point symmetric.point symmetric.
+2)2)Half point symmetry Half point symmetry when filter is half point when filter is half point 
+symmetric.symmetric.
+e.g.  Whole point symmetry: filter and signale.g.  Whole point symmetry: filter and signal
+hh11xx22+  h+  h00xx11+  h+  h11xx0            0            hh0   0   hh1                            1                            xx22
+hh11xx1  1  ++hh00xx0  0  ++hh11xx1              1              hh1   1   hh0  0  hh1                    1                    xx11
+hh11xx0  0  ++hh00xx1   1   + h+ h11xx2                     2                     hh1  1  hh0  0  hh1            1            xx00
+rrrrrrrr rrrrrrrrrrrrrrrr xx11
+xx22==</text>
+        </slide>
+        <slide>
+          <slideno>11</slideno>
+          <text>12124)4)Polynomial Extrapolation (not useful in image Polynomial Extrapolation (not useful in image 
+processing)processing)
+Useful for PDE with boundary conditions.Useful for PDE with boundary conditions.
+0   1    2   30   1    2   3xx00xx11xx22xx33
+4 coefficients 4 coefficients fits up to 3fits up to 3rdrdorder order 
+polynomials.polynomials.
+a + a + bn bn + cn+ cn22+ dn+ dn33=  x(n)=  x(n)
+1   0   0   0       a          x1   0   0   0       a          x00
+1   1   1   1       b          x1   1   1   1       b          x11
+1   2   21   2   2222233c          xc          x22
+1   3   31   3   3223333d          xd          x33==
+LOMONLOMONLOMONLOMONLOMONLOMONLOMONLOMON
+AA</text>
+        </slide>
+        <slide>
+          <slideno>7</slideno>
+          <text>88e.g.  whole point symmetry e.g.  whole point symmetry filter, filter, 
+halfhalf--point symmetry point symmetry --signal signal 
+==hh11xx22+  h+  h00xx11+  h+  h11xx0               0               hh1   1   hh0  0  hh1                         1                         xx22
+hh11xx1  1  ++hh00xx0  0  ++hh11xx0                       0                       hh1   1   hh0  0  hh1                 1                 xx11
+hh11xx0  0  ++hh00xx0   0   + h+ h11xx1                                1                                hh1  1  hh0  0  hh1        1        xx00
+hh11xx0 0 +  h+  h00xx11+  h+  h11xx2                                   2                                   rrrrrrrr rrrrrrrrrrrrrrrrxx00
+xx11
+xx22
+Half point symmetry       Whole point symmetryHalf point symmetry       Whole point symmetry</text>
+        </slide>
+        <slide>
+          <slideno>4</slideno>
+          <text>55What is the eigenvector for the What is the eigenvector for the circulant circulant matrix?matrix?
+[ 1  [ 1  eeiieei2i2mmmmmmmmeeii(N(N--1)1)] ] TT
+We needWe need
+eeiNiN=  1  =  e=  1  =  ei0i0
+NN=  2=  2k      ,                  k      ,                  =                 =                 
+disdiscrete set of crete set of ss
+For the 0For the 0ththrow,row,
+H[k]  =  H[k]  =  h[n] eh[n] e--i     ni     n22kk
+NN
+NN--11
+n=0n=022kk
+NN</text>
+        </slide>
+        <slide>
+          <slideno>12</slideno>
+          <text>1313Then,                              a                            Then,                              a                            xx00
+xx11=  [1  =  [1  --1  1  1  1  --1]    b   =  [1  1]    b   =  [1  --1  1  1  1  --1]  A1]  A11xx11
+c                                        xc                                        x22
+d                                        xd                                        x33
+PDEPDE
+f(x)  =  f(x)  =  cckk(x (x k)k)
+Assume f(x) has polynomial behavior near boundariesAssume f(x) has polynomial behavior near boundaries
+iixxi  i  ==f(x)  =  f(x)  =  cckk(x (x k)k)
+{{((--k)}  k)}  orthonormalorthonormal
+ii(x (x k)k)xxiidx  dx  =  c=  ckkkk
+pp--11
+i=0i=0
+pp--11
+i=0i=0LOMONLOMONLOMONLOMONLOMONLOMONLOMONLOMON
+ii
+kkkk</text>
+        </slide>
+        <slide>
+          <slideno>2</slideno>
+          <text>33mmmmmmmm mmmmmmmm --22--1   0   1   21   0   1   2 33
+artificial edge resulting artificial edge resulting 
+from zerofrom zero --paddingpadding1)  zero1)  zero --paddingpadding
+nnx[n]x[n]
+filtered by [1, 1]filtered by [1, 1]
+--22--1   0   1   2   31   0   1   2   3mmmmmmmm
+nn--22--1   0   1   2   31   0   1   2   3mmmmmmmm
+nny[n]y[n]
+y[n]y[n]filtered by [1, filtered by [1, --1]1]</text>
+        </slide>
+        <slide>
+          <slideno>3</slideno>
+          <text>442)  Periodic Extension2)  Periodic Extension
+--1   0   1   2       N1   0   1   2       N --1 N1 Nnnx[n]x[n]
+
+ x[N]  =  x[0]x[N]  =  x[0]
+yy00
+yy11
+oooooooo
+yyNN--11hh1   1   hh0   0   hh--1   1   hh--2  2  mmmmmmmmhh22hh11
+hh11hh0    0    hh--1   1   mmmmmmmmhh33hh22
+hh--11hh--2          2          mmmmmmmmhh22hh11hh00oooooooo
+xxNN--22xxNN--11xx00xx11xx22oooooooo
+xxNN--11xx00oooooooo==wrapwrap --aroundaround
+NN--output             output             circulantcirculant matrixmatrix =  H=  H</text>
+        </slide>
+      </slides>
+      <videos/>
+    </lecture>
+    <lecture>
+      <lecture_title>Slides 4 (PDF)</lecture_title>
+      <lecture_pdf_url>https://ocw.mit.edu/courses/18-327-wavelets-filter-banks-and-applications-spring-2003/resources/slides4/</lecture_pdf_url>
+      <lectureno>Filter Banks (contd.): Perfect Reconstruction; Halfband Filters and Possible Factorizations</lectureno>
+      <slides>
+        <slide>
+          <slideno>16</slideno>
+          <text>1717ii.ii.Linear phase factorization  e.g. 2/6, 5/3Linear phase factorization  e.g. 2/6, 5/3
+Symmetric (or Symmetric (or antisymmetricantisymmetric ) filters are desirable for) filters are desirable for
+many applications, such as image processing.  Allmany applications, such as image processing.  All
+frequencies in the signal are delayed by the samefrequencies in the signal are delayed by the same
+amount i.e. there is no phase distortion.amount i.e. there is no phase distortion.
+h[n] linear phase h[n] linear phase A(A()e)ei(i(+ + ))
+real      delays all            0 if symmetricreal      delays all            0 if symmetric
+frequenciesfrequencies
+by by samplessamples
+Linear phase may not necessarily be the best choice for Linear phase may not necessarily be the best choice for 
+audio applications due to audio applications due to preringingpreringing effects. effects. 
+22if if antisymmetricantisymmetric</text>
+        </slide>
+        <slide>
+          <slideno>24</slideno>
+          <text>2525DegreeDegree --2 (p=1): Freq. response2 (p=1): Freq. response</text>
+        </slide>
+        <slide>
+          <slideno>22</slideno>
+          <text>2323MatlabMatlab Example 2Example 2
+1.1.Product filter examplesProduct filter examples</text>
+        </slide>
+        <slide>
+          <slideno>10</slideno>
+          <text>1111p  =  2p  =  2
+PP00(z) has degree 4p (z) has degree 4p 2  =  62  =  6
+PP00(z)  =  (1 + z(z)  =  (1 + z--11))4       4       { (  ) z{ (  ) z--1 1 (   )(        )(   )(        )22}}
+=      (1 + z=      (1 + z--11))44( ( --1 +  4z1 +  4z--11--zz--22))
+=      {=      { --1 + 9z1 + 9z--22+ 16z+ 16z--33+ 9z+ 9z--44zz--66}  }  11
+8811
+0022
+111 1 zz--11
+22
+11
+1616
+11
+1616
+44ththorderorder--11
+1122--33 2 + 2 + 33Possible factorizationsPossible factorizations
+1/8 trivial1/8 trivial
+2/62/6
+3/53/5
+4/4 orthogonal4/4 orthogonal
+((DaubechiesDaubechies --4)4)
+678678
+linear phaselinear phase</text>
+        </slide>
+        <slide>
+          <slideno>19</slideno>
+          <text>2020Special Case:  Orthogonal Filter BanksSpecial Case:  Orthogonal Filter Banks
+Choose HChoose H11(z) so that(z) so that
+HH11(z)  =  (z)  =  --zz--NNHH00((--zz--11)                N odd)                N odd
+Time domainTime domain
+hh11[n]  =  ([n]  =  ( --1)1)nnhh00[N [N n]n]
+FF00(z)  =  H(z)  =  H11((--z)  =  zz)  =  z--NNHH00(z(z11))
+ ff00[n]  =  h[n]  =  h00[N [N n]n]
+FF11(z)  =  (z)  =  --HH00((--z)  =  zz)  =  z--NNHH11(z(z--11))
+ff11[n]  =  h[n]  =  h11[N [N n]n]
+So the synthesis filters, So the synthesis filters, ffkk[n], are just the time[n], are just the time --reversed reversed 
+versions of the analysis filters, versions of the analysis filters, hhkk[n], with a delay.[n], with a delay.</text>
+        </slide>
+        <slide>
+          <slideno>26</slideno>
+          <text>2727DegreeDegree --6 (p=2): Freq. response6 (p=2): Freq. response</text>
+        </slide>
+        <slide>
+          <slideno>8</slideno>
+          <text>99General form of product filter (to be derived later):General form of product filter (to be derived later):
+P(z)  =  2(       )P(z)  =  2(       )pp(        )(        )p  p  (          )(      )(          )(      )kk(       )(       )kk
+PP00(z) =  z(z) =  z--(2p (2p 1) 1) P(z)P(z)
+=  (1 + z=  (1 + z--11))2p           2p           (          )((          )( --1)1)k k z z --(p (p --1) + k1) + k(        )(        )1 + z1 + z
+221 + z1 + z
+22--11p p --11
+k = 0k = 0p + k p + k --11
+kk1 1 --zz
+221 1 zz--11
+22
+11
+2 2 2p2p--11p p --11
+k = 0k = 0p + k p + k --11
+kk1 1 zz--1    2k1    2k
+22123123 14444442444444431444444244444443
+BinomialBinomial
+((splinespline ))
+filterfilterQ(z)Q(z)
+Cancels all odd powersCancels all odd powers
+except zexcept z(2p(2p--1)1)
+PP00(z) has 2p zeros at (z) has 2p zeros at (important for stability of iterated (important for stability of iterated 
+filter bank.)filter bank.)
+Q(z) factor is needed to ensure perfect reconstruction.Q(z) factor is needed to ensure perfect reconstruction.</text>
+        </slide>
+        <slide>
+          <slideno>29</slideno>
+          <text>3030DegreeDegree --14 (p=4): pole14 (p=4): pole --zero plotzero plot</text>
+        </slide>
+        <slide>
+          <slideno>30</slideno>
+          <text>3131DegreeDegree --14 (p=4): Freq. response14 (p=4): Freq. response</text>
+        </slide>
+        <slide>
+          <slideno>4</slideno>
+          <text>55Some possible factorizationsSome possible factorizations
+HH00(z)      (or F(z)      (or F00(z) )                       F(z) )                       F00(z)       (or  H(z)       (or  H00(z) )(z) )
+(a)(a) 1                                                 1                                                 --1/16(1 + z1/16(1 + z--11))44(2 + (2 + 3 3 --zz--11)(2 )(2 --3 3 --zz--11))
+(b)(b) (1 + z(1 + z--11)                                     )                                     --1/8(1 + z1/8(1 + z--11))33(2 + (2 + 3 3 --zz--11)(2 )(2 --3 3 --zz--11))
+(c)(c) (1 + z(1 + z--11))2                                                       2                                                       --1/4(1 + z1/4(1 + z--11))22(2 + (2 + 3 3 --zz--11)(2 )(2 --3 3 --zz--11))
+(d)(d) (1 + z(1 + z--11)(2 + )(2 + 3 3 --zz--11)) --1/8(1 + z1/8(1 + z--11))33(2 (2 --3 3 --zz--11))
+(e)(e) 1/8(1 + z1/8(1 + z--11))3                                                      3                                                      --1/2(1 + z1/2(1 + z--11)(2 + )(2 + 3 3 --zz--11)(2 )(2 --3 3 --zz--11))
+(f)(f) (1 + z(1 + z--11))22(2 + (2 + 3 3 --zz--11) ) (1 + z(1 + z--11))22(2 (2 --3 3 --zz--11))
+(g)(g) 1/16(1 + z1/16(1 + z--11))4                                                     4                                                     --(2 + (2 + 3 3 --zz--11)(2 )(2 --3 3 --zz--11))((3 3 1)1)
+4 4 22--22
+4 (4 (3 3 1)1)</text>
+        </slide>
+        <slide>
+          <slideno>5</slideno>
+          <text>66Case (b)  Case (b)  ----Symmetric filters (linear phase)Symmetric filters (linear phase)
+3rd 3rd 
+orderorder
+--11 22--33 2 + 2 + 33 --11
+filter length = 2                               filter length = filter length = 2                               filter length = 66
+{ 1, 1 }                                           { 1, 1 }                                           //8 8 {{--1, 1, 8, 8, 1, 1, 1, 8, 8, 1, --1}1}</text>
+        </slide>
+        <slide>
+          <slideno>27</slideno>
+          <text>2828DegreeDegree --10 (p=3): pole10 (p=3): pole --zero plotzero plot</text>
+        </slide>
+        <slide>
+          <slideno>17</slideno>
+          <text>1818iii.iii.Orthogonal factorizationOrthogonal factorization
+This leads to a minimum phase filter and a maximum This leads to a minimum phase filter and a maximum 
+phase filter, which may be a better choice for phase filter, which may be a better choice for 
+applications such as audio.  The orthogonal applications such as audio.  The orthogonal 
+factorization leads to the factorization leads to the Daubechies Daubechies family of family of 
+wavelets wavelets a particularly neat and interesting case.a particularly neat and interesting case.
+4/4 factorization:4/4 factorization:
+HH00(z)  =        (1 + z(z)  =        (1 + z--11))22[(2 + [(2 + 3) 3) zz--11]]
+=      {(1 + =      {(1 + 3) + (3 + 3) + (3 + 3)z3)z--11+ (3 + (3 --3)z3)z--22+ (1+ (1--3)z3)z--33}}
+FF00(z)  =          (1 + z(z)  =          (1 + z--11))22[(2 [(2 --3) 3) zz--11]]
+=       z=       z--33(1 + z(1 + z22)[(2 + )[(2 + 3) 3) --z]z]3 3 --11
+4422
+11
+4422
+--22
+4(4(33--1)1)
+33--11
+4422
+= z= z--33HH00(z(z--11))</text>
+        </slide>
+        <slide>
+          <slideno>28</slideno>
+          <text>2929DegreeDegree --10 (p=3): Freq. response10 (p=3): Freq. response</text>
+        </slide>
+        <slide>
+          <slideno>3</slideno>
+          <text>44So PSo P00(z) has zeros at(z) has zeros at
+z  =  z  =  --1  (41  (4ththorder)order)
+z  =  2 z  =  2 3                     Note: 2  +  3                     Note: 2  +  3  =3  =11
+2 2 --33
+44ththorderorder
+zero atzero at
+z = z = --11
+--11ImIm
+PP00(z)(z)
+11ReRe22--33 2 + 2 + 33</text>
+        </slide>
+        <slide>
+          <slideno>15</slideno>
+          <text>1616SoSo
+Y(z)  =  FY(z)  =  F00(z) X(z) (z) X(z) 
+=  X(z) + odd powers     =  X(z) + odd powers     
+y[n]  =         x[n]              y[n]  =         x[n]              ;   n even;   n even
+ff00[k]x[n [k]x[n k] ;   k] ;   n oddn odd
+ff00[n] is an interpolating filter[n] is an interpolating filter
+678678
+k oddk odd
+y[n]y[n]
+--22 0         2          40         2          4 nnx[n]x[n]
+0         2          40         2          4 
+
+--22 nnAnother example: fAnother example: f00[n]  =                [n]  =                
+(ideal (ideal bandlimited bandlimited 
+interpolating filter)  interpolating filter)  sinsin
+nn
+22nn(())</text>
+        </slide>
+        <slide>
+          <slideno>25</slideno>
+          <text>2626DegreeDegree --6 (p=2): pole6 (p=2): pole --zero plotzero plot</text>
+        </slide>
+        <slide>
+          <slideno>0</slideno>
+          <text>Course 18.327 and 1.130Course 18.327 and 1.130
+Wavelets and Filter BanksWavelets and Filter Banks
+Filter Banks (contd.): perfect Filter Banks (contd.): perfect 
+reconstruction; reconstruction; halfband halfband filters and filters and 
+possible factorizations.possible factorizations.</text>
+        </slide>
+        <slide>
+          <slideno>1</slideno>
+          <text>22Product FilterProduct Filter
+Example:  Product filter of degree 6Example:  Product filter of degree 6
+PP00(z)  =         ((z)  =         ( --1 + 9z1 + 9z--2  2  +  16z+  16z--33+  9z+  9z--44--zz--66))
+PP00(z)   (z)   --PP00((--z)  =  2zz)  =  2z--33
+Expect perfect reconstruction with a 3 sample delayExpect perfect reconstruction with a 3 sample delay
+Centered form:Centered form:
+P(z)  =  zP(z)  =  z33PP00(z)  =         ((z)  =         ( --zz33+  9z  +  16  +  9z+  9z  +  16  +  9z--11zz--33))
+P(z)  +  P(P(z)  +  P( --z)  =  2    i.e. even part of P(z)  =  constz)  =  2    i.e. even part of P(z)  =  const
+In the frequency domain:In the frequency domain:
+P(P()  +  P()  +  P( + + )  =  2       )  =  2       Halfband Halfband ConditionCondition11
+1616
+11
+1616</text>
+        </slide>
+        <slide>
+          <slideno>20</slideno>
+          <text>2121Why is the Why is the Daubechies Daubechies factorization orthogonal?factorization orthogonal?
+Consider the centered form of the filter bank:Consider the centered form of the filter bank:
+no delayno delay
+in centeredin centered
+formformHH00[z][z]
+HH11[z][z]22
+22x[n]x[n]yy00[n][n]
+yy11[n][n] 2222 HH00(z(z--11))
+x[n]x[n]
+HH00(z(z--11))
+Analysis bankAnalysis bank
+causal causal onlyonly
+negative powers negative powers 
+of zof zSynthesis bankSynthesis bank
+anticausal anticausal onlyonly
+positive powerspositive powers
+of zof z</text>
+        </slide>
+        <slide>
+          <slideno>21</slideno>
+          <text>2222In matrix form:In matrix form:
+Analysis                               SynthesisAnalysis                               Synthesis
+yyoo
+yy11==LL
+BBxx x     =   Lx     =   LTTBBTTyy00
+yy11123123 123123
+W                                    WW                                    WTT
+SoSo
+x  =  Wx  =  WTTW x  for any xW x  for any x
+WWTTW  =  I  =  WWW  =  I  =  WWTT
+An important fact:  symmetry prevents An important fact:  symmetry prevents orthogonalityorthogonality</text>
+        </slide>
+        <slide>
+          <slideno>18</slideno>
+          <text>1919P(z)  =  zP(z)  =  zllPP00(z)(z)
+=  H=  H00(z) H(z) H00(z(z--11))
+From alias cancellation condition:From alias cancellation condition:
+HH11(z)  =  F(z)  =  F00((--z)  =  z)  =  --zz--33HH00((--zz--11))
+FF11(z)  =  (z)  =  --HH00((--z)  =  zz)  =  z--33HH11(z(z--11)    )</text>
+        </slide>
+        <slide>
+          <slideno>11</slideno>
+          <text>1212p  =  4p  =  4
+PP00(z) has degree 4p (z) has degree 4p 2  =  142  =  14
+88ththorderorder
+--11</text>
+        </slide>
+        <slide>
+          <slideno>23</slideno>
+          <text>2424DegreeDegree --2 (p=1): pole2 (p=1): pole --zero plotzero plot</text>
+        </slide>
+        <slide>
+          <slideno>6</slideno>
+          <text>77--11Case (c) Case (c) ----Symmetric filters (linear phase)Symmetric filters (linear phase)
+22ndnd
+orderorder22ndnd
+orderorder
+--11 22--33 2 + 2 + 33
+filter length = 3                         filter length = 5filter length = 3                         filter length = 5
+{ 1, 2, 1 }                                { 1, 2, 1 }                                { { --1, 2, 6, 2, 1, 2, 6, 2, --1}1}</text>
+        </slide>
+        <slide>
+          <slideno>2</slideno>
+          <text>3322
+0022 P(P())
+Note Note antisymmetryantisymmetry
+about about =  =  /2/2
+P(P() is said to be a ) is said to be a halfband halfband filter.filter.
+How do we factor PHow do we factor P00(z) into H(z) into H00(z) F(z) F00(z)?(z)?
+PP00(z)  =  1(z)  =  1 //16(1 + z16(1 + z--11))44((--1 + 4z1 + 4z--1 1 --zz--22))
+=  =  --11/16(1 + z/16(1 + z--11))44(2 +  (2 +  3 3 zz--11)(2 )(2 --3 3 zz--11) )</text>
+        </slide>
+        <slide>
+          <slideno>13</slideno>
+          <text>1414(b)  8/8 ((b)  8/8 ( Daubechies Daubechies 8)   8)   ----Known in Known in Matlab Matlab as db4as db4
+44thth
+orderorder
+--1144thth
+orderorder
+--11</text>
+        </slide>
+        <slide>
+          <slideno>12</slideno>
+          <text>1313Common factorizations (p = 4):Common factorizations (p = 4):
+(a)  9/7                                                      Kn(a)  9/7                                                      Kn own in own in MatlabMatlab
+as bior4.4as bior4.4
+44thth
+orderorder
+--1144thth
+orderorder
+--11</text>
+        </slide>
+        <slide>
+          <slideno>9</slideno>
+          <text>1010p  =  1p  =  1
+PP00(z) has degree 2 (z) has degree 2 leads to leads to Haar Haar filter bank.filter bank.
+1 + z1 + z--11
+22
+1 1 --zz--1122
+221, 1, 1, 11, 1, 1, 1
+
+ 0, 00, 01 + z1 + z--11
+2222
+1 1 --zz--11221, 11, 111
+00
+FF00(z)  =  1 + z(z)  =  1 + z--11,  H,  H00(z)  =(z)  =
+Synthesis Synthesis lowpass lowpass filter has 1 zero at filter has 1 zero at 
+Leads to cancellation of constant signals in analysisLeads to cancellation of constant signals in analysis
+highpasshighpass channel.channel.
+Additional zeros at Additional zeros at would lead to cancellation of would lead to cancellation of 
+higher order polynomials.higher order polynomials.1 + z1 + z--11
+22</text>
+        </slide>
+        <slide>
+          <slideno>7</slideno>
+          <text>88Case (f) Case (f) ----Orthogonal filters Orthogonal filters 
+(minimum phase/maximum phase)(minimum phase/maximum phase)
+--1122ndnd
+orderorder
+--11 2 + 2 + 3322ndnd
+orderorder
+22--33
+filter length = 4                                  filter lefilter length = 4                                  filter le ngth = 4ngth = 4
+11
+2244
+678678678678
+1+1+3, 3+3, 3+3, 33, 3--3, 13, 1--33
+67867811--3, 33, 3--3, 3+3, 3+3, 1+3, 1+33678678
+11
+4422
+Note that, in this case, one filter is the flip (transpose) Note that, in this case, one filter is the flip (transpose) 
+of the other:     fof the other:     f00[n]  =  h[n]  =  h00[3 [3 --n]n]
+FF00(z)  =  z(z)  =  z--33HH00(z(z--11))</text>
+        </slide>
+        <slide>
+          <slideno>14</slideno>
+          <text>1515Why choose a particular factorization?Why choose a particular factorization?
+Consider the example with p  =  2:Consider the example with p  =  2:
+i.i.One of the factors is One of the factors is halfbandhalfband
+The trivial 1/8 factorization is generally not desirable,The trivial 1/8 factorization is generally not desirable,
+since each factor should have at least one zero at since each factor should have at least one zero at ..
+However, the fact that FHowever, the fact that F00(z) is (z) is halfband halfband is interesting is interesting 
+in itself.in itself.
+V(z)                      X(z)                  V(z)                      X(z)                  Y(z)Y(z)
+Let FLet F00(z) be centered, for convenience.  Then(z) be centered, for convenience.  Then
+FF00(z)  =  1 + odd powers of z(z)  =  1 + odd powers of z
+NowNow
+X(z)  =  V(zX(z)  =  V(z22)  =  even powers of z only)  =  even powers of z only22 FF00(z)(z)</text>
+        </slide>
+      </slides>
+      <videos/>
+    </lecture>
+    <lecture>
+      <lecture_title>Slides 9 (PDF)</lecture_title>
+      <lecture_pdf_url>https://ocw.mit.edu/courses/18-327-wavelets-filter-banks-and-applications-spring-2003/resources/slides9/</lecture_pdf_url>
+      <lectureno>Multiresolution Analysis (MRA): Requirements for MRA; Nested Spaces and Complementary Spaces; Scaling Functions and Wavelets</lectureno>
+      <slides>
+        <slide>
+          <slideno>1</slideno>
+          <text>22Scaling Functions and WaveletsScaling Functions and Wavelets
+Continuous time:Continuous time: (t) Box function(t) Box function
+11
+00 11 tt
+11
+00 1111
+00 tt tt 1/21/2 1/21/2(2t) (2t) ScalingScaling(2t (2t --1)1)
+Scaling + Scaling + 
+ShiftingShifting</text>
+        </slide>
+        <slide>
+          <slideno>18</slideno>
+          <text>1919SoSo
+VV11has a shifthas a shift --invariant basis, {invariant basis, { vv2 2 (2t(2t--k): k): --k k }}
+Can we relate this basis for VCan we relate this basis for V11to the basis for Vto the basis for V00??
+We know thatWe know that
+VV00VV11
+So any function in VSo any function in V00can be written as a combination can be written as a combination 
+of the basic functions for Vof the basic functions for V11..
+In particular, since In particular, since (t)  (t)  VV00, we can write, we can write
+(t) = 2(t) = 2hh00[k] [k] (2t (2t k)k)
+kk
+This is the Refinement Equation (a.k.a. the TwoThis is the Refinement Equation (a.k.a. the Two --
+Scale Difference Equation or the Dilation Equation).Scale Difference Equation or the Dilation Equation).</text>
+        </slide>
+        <slide>
+          <slideno>20</slideno>
+          <text>2121MultiresolutionMultiresolution RepresentationsRepresentations
+... )(2 1 0 02= W W W V L
+Coarse Coarse 
+approximationapproximationLevel 0 detailLevel 0 detailLevel 1 detailLevel 1 detailLevel 2 detailLevel 2 detail
+Finite energy Finite energy 
+functionsfunctions
++ +0V0W1V2V1WFunctions:Functions:
+Images:Images:</text>
+        </slide>
+        <slide>
+          <slideno>4</slideno>
+          <text>55Now consider:Now consider:11
+00 1/21/211
+tt
+11
+001/21/2
+ttww(t)(t)Square waveSquare wave
+of finite length of finite length --
+HaarHaar waveletwavelet
+11
+00 1/21/2 tt(2t)(2t)
+ScaledScaled--(2t (2t 1)1)
+Scaled + shifted Scaled + shifted 
++ sign flipped+ sign flipped
+ww(t)  =(t)  =(2t)  (2t)  --(2t (2t 1)1)</text>
+        </slide>
+        <slide>
+          <slideno>2</slideno>
+          <text>33For this example:For this example:
+(t)  =  (t)  =  (2t)  +  (2t)  +  (2t (2t 1)1)
+More generally:More generally:
+(t)  =  2(t)  =  2 hh00[k][k](2t (2t k)k)
+(t) is called a scaling function(t) is called a scaling function
+The refinement equation couples the representations The refinement equation couples the representations 
+of a continuousof a continuous --time function at two time scales.  The time function at two time scales.  The 
+continuouscontinuous --time function is determined by a discretetime function is determined by a discrete --
+time filter, htime filter, h00[n]!  For the above ([n]!  For the above ( HaarHaar ) example:) example:
+hh00[0]  =  h[0]  =  h00[1]  =       (a [1]  =       (a lowpass lowpass filter)filter)NN
+k=0k=0Refinement equationRefinement equation
+oror
+TwoTwo--scale differencescale difference
+equationequation</text>
+        </slide>
+        <slide>
+          <slideno>14</slideno>
+          <text>1515Emptiness as j Emptiness as j --
+|| || ffjj(t) ||  =  0(t) ||  =  0
+Restated as a condition on the subspaces:Restated as a condition on the subspaces:
+VVjj=  {0}=  {0}
+j j = = --Restated as a condition on the subspaces:Restated as a condition on the subspaces:
+ VVjj=  L=  L2 2 (())
+j j = = --
+limlim
+j j --</text>
+        </slide>
+        <slide>
+          <slideno>5</slideno>
+          <text>66More generally:More generally:
+ww(t)  =  2(t)  =  2 hh11[k] [k] (2t (2t k)            Wavelet equationk)            Wavelet equation
+For the For the Haar Haar wavelet example:wavelet example:
+hh11[0]  =  [0]  =  hh11[1]  =  [1]  =  -- (a (a highpass highpass filter)filter)NN
+k=0k=0</text>
+        </slide>
+        <slide>
+          <slideno>13</slideno>
+          <text>1414Multiresolution Multiresolution AnalysisAnalysis
+--Key ingredients:Key ingredients:
+1.1.A sequence of embedded subspaces:A sequence of embedded subspaces:
+{0} {0} VV--11VV00VV11VVjjVVjj+1+1LL22(())
+LL22(()  =  all functions with finite energy)  =  all functions with finite energy
+= {= {(t):  (t):  (t) (t) 22dt dt &lt; &lt; }         Hilbert}         Hilbert
+Requirements:Requirements:
+Completeness as j Completeness as j .  If .  If (t) belongs to (t) belongs to 
+LL22(() and ) and jj(t) is the portion of (t) is the portion of (t) that lies in (t) that lies in 
+VVjj, then       , then       jj(t)   =   (t)   =   (t) (t) spacespace
+jjlimlim</text>
+        </slide>
+        <slide>
+          <slideno>12</slideno>
+          <text>1313wwjkjk(t) form an (t) form an orthonormal orthonormal basisbasis for Lfor L22(().).
+f(t)  =  f(t)  =  bbjkjkwwjkjk(t)  ;        (t)  ;        wwjkjk(t)  =  2(t)  =  2j/2 j/2 w(2w(2jjt t k)k)
+bbjk   jk   =  =  f(t) f(t) wwjkjk(t) (t) dtdtj,kj,k
+
+--</text>
+        </slide>
+        <slide>
+          <slideno>15</slideno>
+          <text>16162.2.A sequence of complementary subspaces, A sequence of complementary subspaces, WWjj, , 
+such that     such that     VVjj+ + WWjj= = VVjj+1+1
+and               and               VVjjWWj j = {0}       (no overlap)= {0}       (no overlap)
+This is written asThis is written as
+VVjjWWjj=  =  VVjj+1+1(Direct sum)(Direct sum)
+Note: An orthogonal Note: An orthogonal multiresolution multiresolution will have will have WWjj
+orthogonal to orthogonal to VVjj:  :  WWjj??VVjj..
+So So orthogonality orthogonality will ensure that will ensure that VVjjWWjj= {0}= {0}</text>
+        </slide>
+        <slide>
+          <slideno>21</slideno>
+          <text>2222MultiresolutionMultiresolution RepresentationsRepresentations
+Geometry:Geometry:
+Mesh courtesy of Igor Guskov (Caltech)</text>
+        </slide>
+        <slide>
+          <slideno>8</slideno>
+          <text>993.3.Wavelet is orthogonal across scales:Wavelet is orthogonal across scales:
+11
+0011
+ttw(t)w(t)
+001/21/2
+ttw(2t)w(2t)
+ttw(2t w(2t --1)1)
+1/21/2++
+--++
+--
+w(t) w(2t)w(t) w(2t) dt dt =  0 ,    =  0 ,    w(t) w(2t w(t) w(2t 1)1)dt dt =  0=  0
+Reason:  finer scale versions change sign while Reason:  finer scale versions change sign while 
+coarse scale version remains constant.coarse scale version remains constant.++
+--</text>
+        </slide>
+        <slide>
+          <slideno>19</slideno>
+          <text>2020We also know thatWe also know that
+WW0 0 =  V=  V11VV00
+SoSo
+WW00VV11
+This means that any function in WThis means that any function in W00can also be written can also be written 
+as a combination of the basic functions for Vas a combination of the basic functions for V11.  .  
+Since w(t) Since w(t) WW0,0,we can writewe can write
+w(t)  =  2w(t)  =  2 hh11[k] [k] (2t (2t k)k)
+kkWaveletWavelet
+EquationEquation</text>
+        </slide>
+        <slide>
+          <slideno>9</slideno>
+          <text>1010Wavelet BasesWavelet Bases
+Our goal is to use w(t), its scaled versions (dilations) Our goal is to use w(t), its scaled versions (dilations) 
+and their shifts (translates) as building blocks for and their shifts (translates) as building blocks for 
+continuouscontinuous --time functions, f(t).  Specifically, we are time functions, f(t).  Specifically, we are 
+interested in the class of functions for which we can interested in the class of functions for which we can 
+define the inner product:define the inner product:
+&lt;f(t) , g(t)&gt;  =  &lt;f(t) , g(t)&gt;  =  f(t) g*(t)f(t) g*(t) dt   dt   &lt;&lt;
+Such functions f(t) must have finite energy:Such functions f(t) must have finite energy:
+||f(t)||||f(t)||22=  =  f(t)f(t)2 2 dtdt&lt;&lt;
+and they are said to belong to the Hilbert space, Land they are said to belong to the Hilbert space, L22(().).
+--
+
+--</text>
+        </slide>
+        <slide>
+          <slideno>17</slideno>
+          <text>18183.3.A scaling (dilation) law:A scaling (dilation) law:
+If If (t) (t) VVjjthen then (2t) (2t) VVjj+1+1
+4.4.A shift (translation) law:A shift (translation) law:
+If If (t) (t) VVjjthen   then   (t(t--k) k) VVj j k integerk integer
+5.5.VV00has a shifthas a shift --invariant basis, {invariant basis, { (t(t--k) : k) : --k k }}
+WW00has a shifthas a shift --invariant basis, {w(tinvariant basis, {w(t --k) : k) : --k k }}
+We expect that VWe expect that V11=  V=  V00+ W+ W00will have twice as will have twice as 
+many basis functions as Vmany basis functions as V00alone.alone.
+First possibility:  {First possibility:  { (t(t--k) , w(tk) , w(t --k) : k) : --k k }}
+Second possibility:  use the scaling law i.e.Second possibility:  use the scaling law i.e.
+if if (t(t--k)  k)  VV0 0 , then  , then  (2t(2t--k) k) VV11</text>
+        </slide>
+        <slide>
+          <slideno>10</slideno>
+          <text>1111Consider all dilations and translates of the Consider all dilations and translates of the Haar Haar wavelet:wavelet:
+wwjj,k,k(t)  =  2(t)  =  2j/2 j/2 ww(2(2jjt t k)   ;  k)   ;  --j j 
+--k k 
+Normalization factor so that Normalization factor so that ||||wwjj,k,k(t)|| =  1(t)|| =  1
+wwjj,k,k(t) (t) wwJJ,K,K(t) (t) dt  dt  =  =  22j/2j/2ww(2(2jjt t k) . 2k) . 2J/2 J/2 ww(2(2JJt t K)K)dtdt
+==
+=  =  [ j [ j J ] J ] [ k [ k K ]K ]
+1 if j = J and k = K1 if j = J and k = K
+0 otherwise0 otherwise</text>
+        </slide>
+        <slide>
+          <slideno>7</slideno>
+          <text>882.2.Scaling function is orthogonal to wavelet:Scaling function is orthogonal to wavelet:
+11
+00 1/21/211
+tt11
+00 11 tt(t)(t) ww(t)(t)
+++
+--
+(t) w(t)(t) w(t) dt dt =  0=  0
+Reason:  +Reason:  + ve ve and and ve ve areas cancel each other.areas cancel each other.++</text>
+        </slide>
+        <slide>
+          <slideno>3</slideno>
+          <text>44Note: (i) Solution to refinement equation may not Note: (i) Solution to refinement equation may not 
+always exist.  If it doesalways exist.  If it does
+(ii) (ii) (t) has compact support i.e.(t) has compact support i.e.
+(t)  =  0 outside 0 (t)  =  0 outside 0 t t &lt;&lt;N  N  
+(comes from the FIR filter, h(comes from the FIR filter, h00[n])[n])
+(iii) (iii) (t) often has no closed form solution.(t) often has no closed form solution.
+(iv) (iv) (t) is unlikely to be smooth.(t) is unlikely to be smooth.
+Constraint on hConstraint on h00[n]:[n]:
+(t)(t)dt  dt  =  2 =  2 hh00[k] [k] (2t (2t k)k)dtdt
+=  2 =  2 hh00[k] [k] (()d)d
+SoSo
+hh00[k]  =  1     Assumes [k]  =  1     Assumes (t)(t)dt  dt  00NN
+k=0k=0
+NN
+k=0k=0
+NN
+k=0k=0</text>
+        </slide>
+        <slide>
+          <slideno>6</slideno>
+          <text>77Some observations for Some observations for Haar Haar scaling function and waveletscaling function and wavelet
+1.1.Orthogonality Orthogonality of integer shifts (translates):of integer shifts (translates):
+11
+00 2211
+00 tt tt 11 11(t)(t)(t (t --1)1)
+(t) (t) (t (t k)k)dt  dt  ==
+
+11if k = 0if k = 0
+0   otherwise0   otherwise
+=     =     [k][k]
+SimilarlySimilarly
+w(t) w(t w(t) w(t k)k)dt  dt  =  =  [k][k]
+Reason:  no overlapReason:  no overlap</text>
+        </slide>
+        <slide>
+          <slideno>11</slideno>
+          <text>1212MM
+LL
+LL
+LLLL
+LL
+LL11
+vv22
+11
+22
+44tt
+tt
+tt1111
+11 22vv22
+333333
+4444
+22ww--1,k1,k(t)(t)
+ww0,k0,k(t)(t)
+ww1,k1,k(t)(t)</text>
+        </slide>
+        <slide>
+          <slideno>0</slideno>
+          <text>Course 18.327 and 1.130Course 18.327 and 1.130
+Wavelets and Filter BanksWavelets and Filter Banks
+MultiresolutionMultiresolution Analysis (MRA):Analysis (MRA):
+Requirements for MRA; Requirements for MRA; 
+Nested Spaces and Nested Spaces and 
+Complementary Spaces; Complementary Spaces; 
+Scaling Functions and WaveletsScaling Functions and Wavelets</text>
+        </slide>
+        <slide>
+          <slideno>16</slideno>
+          <text>1717We thus haveWe thus have
+VV11=  V=  V00WW00
+VV22=  V=  V11WW11=  V=  V00WW00WW11
+VV3   3   =  V=  V22WW22=  V=  V00WW00WW11WW22
+MM
+VVJJ=  V=  VJJ--11WWJJ--11=  V=  V00WWjj
+MM
+LL22(()  =  V)  =  V00WWjj
+We can also write the recursion for j We can also write the recursion for j &lt; 0&lt; 0
+VV00=  V=  V--11WW--11
+=  V=  V--22WW--22WW--11
+MM
+=  V=  V--kkWWjj
+MM
+=  =  WWjj LL22(()  =  )  =  WWjjJJ--11
+j = 0j = 0
+j = 0j = 0
+j = j = --kk--11
+--11
+j = j = --
+j = j = --</text>
+        </slide>
+      </slides>
+      <videos/>
+    </lecture>
+    <lecture>
+      <lecture_title>Slides 16 (PDF)</lecture_title>
+      <lecture_pdf_url>https://ocw.mit.edu/courses/18-327-wavelets-filter-banks-and-applications-spring-2003/resources/slides16/</lecture_pdf_url>
+      <lectureno>Lifting: Ladder Structure for Filter Banks; Factorization of Polyphase Matrix into Lifting Steps; Lifting Form of Refinement Equation Sec</lectureno>
+      <slides>
+        <slide>
+          <slideno>20</slideno>
+          <text>21 Example: Haar 
+H0(z) = -1) H1(z) = -1) 
+A0(z) = H0,even(z) = 
+B0(z) = H0,odd(z) = 
+A1(z) = B0(z) = = c 
+B1(z) = A0 0 (z) = 0 
+Q1(z) = A0(z) / B0(z) = 1 
+1/ 0 1 1 
+P(z) = 
+0 1 0 
+= 2 1 
+2 1 
+2 1 
+2 1 
+2 1 
+^ 2 
+2 
+2 1 11 
+20 (1 + z (1  z
+(z) % B</text>
+        </slide>
+        <slide>
+          <slideno>10</slideno>
+          <text>11 The new analysis lowpass filter is 
+Hnew(z) =  {1 + (- + z - z 2)} 
+This can be written as 
+Hnew(z) =   (1 + z)(1 + z-1)(-z + 4  z-1) 
+F0(z) =    (1 + z)(1 + z-1) 0 2 (1 + z-2) 
+2 
+20 
+2  
+ 
+ 
+ 
+  5/3 filter 
+bank</text>
+        </slide>
+        <slide>
+          <slideno>21</slideno>
+          <text>^
+H1(z) = 2 
+2 
+^ H1(z) = H1(z) - T(z2)H0(z) 
+1 2 
+2(1  z-1)= 2 - T(z2) 1 (1 + z-1)2 
+i.e. T(z2)=1
+1 010
+ 11 2P(z) = 0 2 - 1 1 0 
+10 1 0 1 1 0 1 
+2= 
+0 2 - 1 0 1
+ 1 0 
+1 1x[2n] 2 y0[n] = 2 (x[2n] + x[2n 1]) + 2 
+1  y1[n] = 2(x[2n] -   2 y0[n]) 
+z-1 2 1 = 2 (x[2n]  x[2n  1])  2 x[2n-1] 22 +</text>
+        </slide>
+        <slide>
+          <slideno>0</slideno>
+          <text>Lifting: ladder structure for filter banks; 
+factorization of polyphase matrix 
+into lifting steps; lifting form of 
+refinement equation</text>
+        </slide>
+        <slide>
+          <slideno>11</slideno>
+          <text>12</text>
+        </slide>
+        <slide>
+          <slideno>19</slideno>
+          <text>20 So 
+c 0 1 0 1 Q2k(z) 1 0 
+0 1 -c2T(z) 1 0 1 Q2k-1(z) 1  1 
+k=m 
+C = P(z) 
+ 2 
+ 2z-1 Q1(z) Q2(z) Q2m-1(z) Q2m(z) 
++ + 
++ 
+c + 
+-c2T(z) 
++ c 
+1</text>
+        </slide>
+        <slide>
+          <slideno>1</slideno>
+          <text>2 Basic idea: 
+ 2 
+H1(z) H0(z)  2 
+ 2 S(z) -
+S(z) + 
+ 2 F1(z) F0(z) 
++ 
+Filter bank is modified by a simple operation that 
+preserves the perfect reconstruction property, 
+regardless of the actual choice for S(z).</text>
+        </slide>
+        <slide>
+          <slideno>6</slideno>
+          <text>7 Example: 
+H0(z) =  F0(z) =  {z +  +  z -1} 
+H1(z) =  {- + z -  z 2}F1(z) =  z-1 
+Scaling functions and wavelets are 2 2 
+2 2 
+ (t) 
+-1 0 1 -1 0 1 1 
+ (t) = 2  (2t)  (t) =   (2t + 1) +  (2t) +   (2t  1) ~ ~ 
+ (2t  1) 
+-1 0 1 
+- (2t) -  (2t  2) -1 0 1 2 
+w(t) = -  (2t) +  ( 2 t1 )-   (2t  2) w(t) = 2  (2t  1) ~ ~ ~ ~</text>
+        </slide>
+        <slide>
+          <slideno>22</slideno>
+          <text>23 Factorization for 9/7 filter bank 
+Q1(z) =  (1+z)   = -1.586134342 
+Q2(z) =  (1+z-1)   = -0.05298011854 
+Q3(z) =  (1+z)   = 0.8829110762 
+Q4(z) =  (1+z -1)   = 0.4435068522 
+c= 1.149604398 c 
+1/c + 
++  2 
+ 2z-1 Q4(z) Q1(z) Q2(z) Q3(z) + 
++</text>
+        </slide>
+        <slide>
+          <slideno>3</slideno>
+          <text>4 So the effective highpass filter is F1(z) + S(z2)F0(z). 
+The lowpass filter is unchanged. To modify the 
+lowpass filter, add a second lifting step, e.g. 
+Consider 
+Fnew(z) = F (z) + S(z2)F0(z) 
+i.e. fnew[ n ]=f[ n ] +  r[k] f0[n  k] 
+where 
+r[k] = F1(z) F0(z)  2 
+ 2 S(z) + T(z) 
++   2 
++ F0(z)+T(z2)F1 (z) 
+ 2 F1 (z)new new 
+1 k 	
+	
+	
+	s[k/2] ; k even 
+0 ; k odd + 
+1 1 
+1</text>
+        </slide>
+        <slide>
+          <slideno>18</slideno>
+          <text>19 So the polyphase matrix is 
+1 0 c 0 Qi(z) 1 
+-T(z) 1 0 1 1 0 
+c 0 1 0 Q2k(z) 1 Q2k-1(z) 1 
+0 1 -c2T(z) 1 1 0 1 0 
+Rewrite each factor as a permutation of columns or rows 
+Q2k(z) 1 Q2k-1 1 1 Q2k( z )01 01 1 0 
+1 0 1 0 0 1 1 0 1 0 Q2k-1(z) 1 C P(z) =  1 
+i=2m 
+				
+P(z) ^ 
+ 1 
+k=m C = 
+= 
+1Q2k(z) 1 0 
+0 1 Q2k-1(z) 1 =</text>
+        </slide>
+        <slide>
+          <slideno>16</slideno>
+          <text>17 Suppose that n is even (n = 2m). 
+We can obtain a valid polyphase matrix of the form 
+c 0 Qi(z) 1 
+0 1 1 0 
+H0,even(z) H0,odd(z) 
+H1,even(z) H1,odd(z) H1(z) gives P. R., but may 
+not be the same as H1(z)  1 
+i=2m 
+c P(z) = ^ c Choice 1 ensures 
+that det P(z) = 1 ^ 
+^ ^ = 
+^</text>
+        </slide>
+        <slide>
+          <slideno>15</slideno>
+          <text>until i = n 
+An(z) = c  gcd (H0,even(z), H0,odd(z)) 
+Bn(z) = 0 
+Matrix form of iteration: 
+Ai(z) Bi(z) = Ai-1(z) Bi-1(z) 0 1 
+1 -Qi(z) 
+After n iterations: 
+n c0 = 0 1   H0,even(z) H0,odd(z) 
+i=1 
+1 -Qi(z) 
+Invert this result to get 
+1 = c 0 Qi(z) 1   H0,even(z) H0,odd(z) 
+i=n 1 0 
+16</text>
+        </slide>
+        <slide>
+          <slideno>2</slideno>
+          <text>3 Advantages: 
+ Leads to faster implementation of DWT 
+ Provides a framework for constructing 
+wavelets on non-uniform grids. 
+What are the effective filters in the modified filter bank? 
+Synthesis bank  
+F1(z) F0(z)  2 
+ 2 S(z2) + + 
+ F0(z)  2 
++ 
+F1(z)+S(z2)F0(z)  2 
+use 2nd Noble 
+identity Fnew(z)1</text>
+        </slide>
+        <slide>
+          <slideno>5</slideno>
+          <text>Lifting for wavelet bases 
+	Lifting construction can be used to build a more 
+complex set of scaling functions and wavelets from an 
+initial biorthogonal set. 
+ e.g. lifting step S(z) gives 
+new(t) =  (t) (f0[n] unchanged) 
+wnew(t) = w(t) -  s[k]  (t  k) 
+k 
+~	 ~ ~  new(t) =  h[ n ]  new(2t-n) +  s[k] wnew( tk )0	k n 
+~ ~ wnew(t) =  h[ n ]  new( 2 tn ) ( h1[n] unchanged)1n 
+6</text>
+        </slide>
+        <slide>
+          <slideno>12</slideno>
+          <text>13  2  2 
+ 2 + x[n] x[n-n0] 
+z-1 z-1 Ladder structure 
+P(s) U(d) 
+-+ 
+U(d) -
+P(s) 
++ s s 
+d d  2 
+P and U may be nonlinear e.g. truncation to integer</text>
+        </slide>
+        <slide>
+          <slideno>13</slideno>
+          <text>14 P(z)  2 
+ 2z-1  2 
+ 2 H1(z) H0(z) 
+ 
+c 
+1/c -
+- 2 
+ 2z-1 S1(z) T1(z) Sn(z) Tn(z) -
+- Factorization of Filter Bank into Lifting 
+Steps (Daubechies &amp; Sweldens) 
+Goal is to perform a change of representation of the form:</text>
+        </slide>
+        <slide>
+          <slideno>8</slideno>
+          <text>9 So the new wavelet is 
+-1 0 1 2 
++ 
+-1 0 1 + 
+-1 0 1 2 
+w(t) - - 
+-  (t) -  (t  1) 
+= 
+-1 0 1 
+2 
+- - 
+wnew(t) 3 
+2 Note: the wavelet will 
+actually have two 
+vanishing moments 
+because of the 
+symmetry constraint. 
+i.e. zeros on unit circle 
+appear in pairs when 
+filter is symmetric.</text>
+        </slide>
+        <slide>
+          <slideno>14</slideno>
+          <text>15 H0,even(z) H0,odd(z) 
+H1,even(z) H1,odd(z) P(z)   = c0 
+0 1 
+c  
+i=n 1 1 0 
+-Ti(z) 1 1- Si(z) 
+0 1 
+Approach: use Euclidean algorithm for greatest common 
+divisor 
+1) Start with 
+A0(z) = H0,even(z) 
+B0(z) = H0,odd(z) 
+2) Then iterate 
+Ai(z) = Bi-1(z) 
+Bi(z) = Ai-1(z) % B i-1(z) 
+remainder operator =Ai-1(z)  Qi(z) Bi-1(z) 
+Ai-1(z) 
+Bi-1(z) (non-unique) quotient</text>
+        </slide>
+        <slide>
+          <slideno>9</slideno>
+          <text>10 What is Fnew(z)? 
+New wavelet equation is 
+wnew(t) = w(t) -   (t) -   (t  1) 
+=2 (2t  1) - {  (2t + 1) +  (2t) +   ( 2 t1 ) } 
+- {   ( 2 t-1 )+  ( 2 t-2 )+  ( 2 t-3 ) } 
+=-   (2t+1)-   (2t)+  (2t-1)-   ( 2 t-2 ) -   (2t-3) 
+So 
+Fnew(z) =  {z- +  z-1 - z-2 -z-3} 
+This can be rewritten as 
+Fnew(z) =  {z-1 + (  z + + z -1)} 1 
+1 2 
+1 2 -(1 + z-2) 
+2 
+F1(z) S(z2) F0(z) 3 
+2</text>
+        </slide>
+        <slide>
+          <slideno>7</slideno>
+          <text>8 Biorthogonality/PR conditions are easy to verify, but 
+what about zeros at  ? 
+F0(z) has double zero at  
+H0(z) has no zeros at   bad 
+i.e. w(t) has no vanishing moments 
+Lifting step to add vanishing moments to the synthesis 
+wavelet: 
+Suppose that the new wavelet has the form 
+wnew(t) = w(t) -   (t) -   (t  1) 
+Goal is to make the zeroth moment vanish 
+ wnew(t)dt =   1  2 -  1 -  1 
+=0w h e n  =  
+-</text>
+        </slide>
+        <slide>
+          <slideno>17</slideno>
+          <text>18 To recover the original highpass filter, H1(z), from H1(z), 
+we introduce one more lifting step ^ 
+ 2 
+ 2 H1(z) H0(z) 
+  2 
+ 2 H1(z) H0(z) 
+^ T(z) 
+-
+H1(z) = H1(z)  T(z2)H0(z) ^</text>
+        </slide>
+      </slides>
+      <videos/>
+    </lecture>
+    <lecture>
+      <lecture_title>Slides 10 (PDF)</lecture_title>
+      <lecture_pdf_url>https://ocw.mit.edu/courses/18-327-wavelets-filter-banks-and-applications-spring-2003/resources/slides10/</lecture_pdf_url>
+      <lectureno>Refinement Equation: Iterative and Recursive Solution Techniques; Infinite Product Formula; Filter Bank Approach for Computing Scaling Functions and Wavelets</lectureno>
+      <slides>
+        <slide>
+          <slideno>1</slideno>
+          <text>22Solution of the Refinement EquationSolution of the Refinement Equation
+(t)  =  2(t)  =  2 hh00[k] [k] (2t(2t--k)k)NN
+k = 0k = 0
+First, note that the solution to this equation may not First, note that the solution to this equation may not 
+always exist!  The existence of the solution will depend always exist!  The existence of the solution will depend 
+on the discreteon the discrete --time filter htime filter h00[k].[k].
+If the solution does exist, it is unlikely that If the solution does exist, it is unlikely that (t) will have(t) will have
+a closed form solution.  The solution is also unlikely to a closed form solution.  The solution is also unlikely to 
+be smooth.  We will see, however, that if hbe smooth.  We will see, however, that if h00[n] is FIR with[n] is FIR with
+hh00[n]  =  0  outside  0 [n]  =  0  outside  0 n n NN
+then  then  (t)  has (t)  has compact supportcompact support ::
+(t)  =  0  outside  0 (t)  =  0  outside  0 &lt; t &lt; N&lt; t &lt; N</text>
+        </slide>
+        <slide>
+          <slideno>2</slideno>
+          <text>33Approach 1Approach 1 Iterate the box functionIterate the box function
+(0)(0)(t)     =  box function on [0 , 1](t)     =  box function on [0 , 1]
+(i + I) (i + I) (t)  =  2(t)  =  2 hh00[k] [k] (i)(i)(2t (2t k)k)
+If the iteration converges, the solution will be givenIf the iteration converges, the solution will be given
+byby
+iiNN
+k = 0k = 0(t)(t)
+0         1        t0         1        t
+limlim(i)(i)(t)(t)
+This is known as the This is known as the cascade algorithmcascade algorithm ..</text>
+        </slide>
+        <slide>
+          <slideno>11</slideno>
+          <text>1212Computation of the Scaling Function and Computation of the Scaling Function and 
+Wavelet Wavelet Filter Bank ApproachFilter Bank Approach
+yy00[n][n]
+xx00[n][n]
+xx11[n][n]
+xx22[n][n]   22HH00(())22HH00(())22HH00(())yy33[n][n]
+YY33(())
+22HH11(())
+22HH11(())
+22HH11(())yy11[n][n]
+YY11(())yy22[n][n]
+YY22(())
+Normalize so that Normalize so that hh00[n]  =  1.[n]  =  1.
+nn</text>
+        </slide>
+        <slide>
+          <slideno>12</slideno>
+          <text>1313i.i.Suppose ySuppose y00[n]  = [n]  = [n]  and  [n]  and  xxkk[n]  =  0.[n]  =  0.
+YY00(()  =  1)  =  1
+YY11(()  =  Y)  =  Y00(2(2) H) H00(()  =  H)  =  H00(())
+YY22(()  =  Y)  =  Y11(2(2) H) H00(()  =  H)  =  H00(2(2)H)H00(())
+YY33(()  =  Y)  =  Y22(2(2) H) H00(()  =  H)  =  H00(4(4) H) H00(2(2) H) H00(())
+After K iterations:After K iterations:
+YYKK(()  =  )  =  HH00(2(2kk))
+What happens to the sampling period?What happens to the sampling period?
+Sampling period at input  =  TSampling period at input  =  T00=  1  (say)=  1  (say)
+Sampling period at output  =  TSampling period at output  =  TKK=  =  KKk=0k=0KK--11</text>
+        </slide>
+        <slide>
+          <slideno>10</slideno>
+          <text>1111SoSo
+(()  =  )  =  HH0 0 ^^ 
+j = 1j = 1
+22jj(  )(  ) Infinite Product FormulaInfinite Product Formula
+SimilarlySimilarly
+w(t)  =  2 w(t)  =  2 hh11[k] [k] (2t (2t k)k)
+leads toleads to
+w(w()  =  H)  =  H1           1           kk
+^^ (  )(  ) (  )(  )^^
+22
+22
+Desirable properties for HDesirable properties for H00(():):
+H(0)  =  1, so that  H(0)  =  1, so that  (0)  =  1(0)  =  1
+H(H() should decay to zero as ) should decay to zero as , , 
+so that     so that     (())22d d &lt; &lt; ^^
+
+^^</text>
+        </slide>
+        <slide>
+          <slideno>6</slideno>
+          <text>77Notice that this is an Notice that this is an eigenvalue eigenvalue problemproblem
+=  A=  A
+where the eigenvector is the vector of scaling function where the eigenvector is the vector of scaling function 
+values at integer points and the values at integer points and the eigenvalue eigenvalue is  is  =  1.=  1.
+Note about normalization:Note about normalization:
+Since (A Since (A --I) I) =  0 has a non=  0 has a non --unique solution,unique solution,
+we must choose an appropriate normalization for we must choose an appropriate normalization for 
+The correct normalization isThe correct normalization is
+(n)  =  1(n)  =  1
+This comes from the fact that we need to satisfy theThis comes from the fact that we need to satisfy the
+partition of unity condition, partition of unity condition, (x(x--n)  =  1.n)  =  1.nn
+nn</text>
+        </slide>
+        <slide>
+          <slideno>20</slideno>
+          <text>2121By RecursionBy Recursion</text>
+        </slide>
+        <slide>
+          <slideno>3</slideno>
+          <text>44Example:  suppose hExample:  suppose h00[k]  =  {[k]  =  { , , , , }}
+(i+1)(i+1)(t)   =  (t)   =  (i)(i)(2t)  +  (2t)  +  (i) (i) (2t (2t 1)  +  1)  +  (i) (i) (2t (2t 2)2)
+Then    Then    
+(0)(0)(t)(t)
+11
+00 11 22tt(0)(0)(t)(t)
+11
+00 11 22 tt 2233
+22112211
+(2)(2)(t)(t)
+11
+00 11 22 tt 2233
+2211
+Converges to the hat function on [0, 2]Converges to the hat function on [0, 2](3)(3)(t)(t)
+11
+00 11 22 tt 2233
+2211</text>
+        </slide>
+        <slide>
+          <slideno>18</slideno>
+          <text>Matlab Matlab Example 6Example 6
+Generation of orthogonal scaling Generation of orthogonal scaling 
+functions and waveletsfunctions and wavelets
+MATLAB M-file
+ MATLAB M-file</text>
+        </slide>
+        <slide>
+          <slideno>24</slideno>
+          <text>2525Dual Daub 9/7 PairDual Daub 9/7 Pair</text>
+        </slide>
+        <slide>
+          <slideno>16</slideno>
+          <text>1717i.e. length {i.e. length { yycc(t)}  =  T(t)}  =  TKK. length  {. length  { yyKK[n]}[n]}
+=                             =                             
+=  N =  N --
+lim  lim  K K 
+length {length {(t)}  =  N(t)}  =  N
+So the scaling function is supported on the interval [0, N]So the scaling function is supported on the interval [0, N]KK
+(2(2KK1) N + 11) N + 1
+22KK
+NN--11
+22KK
+tt 00 NN(t)(t)</text>
+        </slide>
+        <slide>
+          <slideno>21</slideno>
+          <text>2222ComparisonComparison</text>
+        </slide>
+        <slide>
+          <slideno>15</slideno>
+          <text>1616Support of the Scaling FunctionSupport of the Scaling Function
+yykk--11[n][n]
+22v[n]v[n]
+hh00[n][n]yykk[n][n]
+length {v[n]}  =  2 length {v[n]}  =  2 length {length { yykk--11[n]}  [n]}  --11
+Suppose thatSuppose that
+hh00[n]  =  0  for n [n]  =  0  for n &lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;0  and  n  0  and  n  &gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;NN
+length {length { yykk[n]}  =  length {v[n]}  +  length {h[n]}  =  length {v[n]}  +  length {h00[n]} [n]} 11
+=  2 =  2 length {length { yyKK--11[n]}  +  N [n]}  +  N 11
+Solve the recursion with length {ySolve the recursion with length {y00[n]}  =  1[n]}  =  1
+SoSo
+length {length { yykk[n]}  =  (2[n]}  =  (2KK1)N + 1       1)N + 1</text>
+        </slide>
+        <slide>
+          <slideno>17</slideno>
+          <text>1818</text>
+        </slide>
+        <slide>
+          <slideno>0</slideno>
+          <text>Course 18.327 and 1.130Course 18.327 and 1.130
+Wavelets and Filter BanksWavelets and Filter Banks
+Refinement Equation: Iterative and Refinement Equation: Iterative and 
+Recursive Solution Techniques; Recursive Solution Techniques; 
+Infinite Product Formula; Filter Bank Infinite Product Formula; Filter Bank 
+Approach for Computing Scaling Approach for Computing Scaling 
+Functions and WaveletsFunctions and Wavelets</text>
+        </slide>
+        <slide>
+          <slideno>14</slideno>
+          <text>151522KKyyKK[n] converges to the samples of the scaling[n] converges to the samples of the scaling
+function, function, (t), taken at t  =  n/2(t), taken at t  =  n/2KK..
+ii.ii.Suppose ySuppose y00[n]  =  0, x[n]  =  0, x00[n]  =  [n]  =  [n] and all other [n] and all other xxkk[n] = 0[n] = 0
+YYKK(()  =  H)  =  H11(2(2KK--11) ) HH00(2(2kk))
+ThenThen
+YYcc(()  =  Y)  =  YKK((/2/2KK)  =  H)  =  H11(   ) (   ) HH00((/2/2KK--kk))
+=  H=  H11(   ) (   ) HH00(       )(       )
+SoSo
+lim Ylim Ycc(()  =  H)  =  H11((/2) /2) ((/2)  =  w(/2)  =  w( ))
+22KKyyKK[n] converges to the samples of the wavelet,[n] converges to the samples of the wavelet,
+w(t), taken at t  =  n/2w(t), taken at t  =  n/2KK..KK--22
+k=0k=0
+^^
+KK
+22KK--22
+k=0k=0
+
+22KK--11
+j=1j=111
+22
+22jj..
+^^
+KKKK^^ ^^</text>
+        </slide>
+        <slide>
+          <slideno>22</slideno>
+          <text>Matlab Matlab Example 7Example 7
+Generation ofGeneration of biorthogonalbiorthogonal scaling scaling 
+functions and wavelets.functions and wavelets.
+MATLAB M-file</text>
+        </slide>
+        <slide>
+          <slideno>7</slideno>
+          <text>88At half integer points:At half integer points:
+(n/2)  = 2 (n/2)  = 2 hh00[k] [k] (n(n--k)k)
+So, for N  =  3, we haveSo, for N  =  3, we haveNN
+k = 0k = 0
+(1/2)                 h(1/2)                 h00[1]  h[1]  h00[0] [0] (0) (0) 
+(3/2)                 h(3/2)                 h00[3]  h[3]  h00[2]  h[2]  h00[1] h[1] h00[0] [0] (1) (1) 
+(5/2) (5/2) (2)(2)
+(3)(3)=     2=     2
+hh00[3]  h[3]  h00[2][2]</text>
+        </slide>
+        <slide>
+          <slideno>4</slideno>
+          <text>55Approach 2Approach 2 Use recursionUse recursion
+First solve for the values of First solve for the values of (t) at integer values of t.  (t) at integer values of t.  
+Then solve for Then solve for (t) at half integer values, then at quarter (t) at half integer values, then at quarter 
+integer values and so on.integer values and so on.
+This gives us a set of discrete values of the scaling This gives us a set of discrete values of the scaling 
+function at all dyadic points  t  =  n/2function at all dyadic points  t  =  n/2ii..
+At integer points:At integer points:
+(n)  =  2 (n)  =  2 hh00[k] [k] (2n (2n k)   k)   NN
+k = 0k = 0</text>
+        </slide>
+        <slide>
+          <slideno>9</slideno>
+          <text>1010^^22^^i.e.  i.e.  (()  =  H)  =  H00(() .      (   )) .      (   )22
+=  H=  H00(() .  H) .  H0 0 (() .      () .      ())22 44 44^^
+oooooooo
+=           H=           H00(   )       (0)(   )       (0)
+LMNLMNLMNLMNLMNLMNLMNLMN
+j = 1j = 1
+22jjQU`QU`QU`QU`QU`QU`QU`QU`
+^^
+(0)   =       (0)   =       (t)(t)dt  dt  =  1 (Area is normalized to 1) =  1 (Area is normalized to 1) ^^</text>
+        </slide>
+        <slide>
+          <slideno>23</slideno>
+          <text>2424Primary Daub 9/7 PairPrimary Daub 9/7 Pair</text>
+        </slide>
+        <slide>
+          <slideno>13</slideno>
+          <text>1414KK
+11
+22KKKK
+KK^^Treat the output as samples of a continuous timeTreat the output as samples of a continuous time
+signal,signal, yycc(t), with sampling period (t), with sampling period KK::
+yyKK[n]  =[n]  = yycc(n/2(n/2KK))
+YYKK(()  =   )  =   YYcc(2(2KK)     ;   )     ;   --
+Replace 2Replace 2KKwith with ::
+YYcc(()  =  Y)  =  YKK(       )  =  (       )  =  HH00(          )  =  (          )  =  HH00(        )  ;(        )  ;
+--22KK22KK
+SoSo
+lim Ylim Ycc(()  =  )  =  HH00(       )  =  (       )  =  (())KK(t) is chosen to be (t) is chosen to be bandlimitedbandlimited ) ) ((yycc
+/2/2kk
+KK^^KK--11
+k=0k=0/2/2KK--kk /2/2jjKK
+j=1j=1
+kk^^
+KK
+j=1j=1/2/2jj ^^</text>
+        </slide>
+        <slide>
+          <slideno>8</slideno>
+          <text>99Scaling Relation and Wavelet Equation Scaling Relation and Wavelet Equation 
+in Frequency Domainin Frequency Domain
+(t)  =  2 (t)  =  2 hh00[k] [k] (2t (2t k)k)
+kk
+
+
+(t)e(t)e--iittdt    dt    =  2 =  2 hh00[k]     [k]     (2t (2t k) ek) e--iittdtdt
+kk 
+
+=  2 =  2 hh00[k] [k] (()e)eii((+ k)/2 + k)/2 dd
+kk 
+
+=  =  hh00[k]e[k]e--iik/2      k/2      (() e) e--ii/2 /2 dd
+kk</text>
+        </slide>
+        <slide>
+          <slideno>5</slideno>
+          <text>6633
+k = 0k = 0
+33
+k = 0k = 033
+k = 0k = 0
+33
+k = 0k = 0Suppose N = 3Suppose N = 3
+(0)   =  2 (0)   =  2 hh00[k] [k] ((--k)k)
+(1)   =  2 (1)   =  2 hh00[k] [k] (2(2--k)k)
+(2)   =  2 (2)   =  2 hh00[k] [k] (4(4--k)k)
+(3)   =  2 (3)   =  2 hh00[k] [k] (6(6--k)k)
+Using the fact that Using the fact that (n) = 0  for n (n) = 0  for n &lt; 0 and n &gt; N,  we &lt; 0 and n &gt; N,  we 
+can write this in matrix form ascan write this in matrix form as
+(0)                   h(0)                   h00[0]                                         [0]                                         (0)(0)
+(1)                   h(1)                   h00[2]  h[2]  h00[1]  h[1]  h00[0]                     [0]                     (1)(1)
+(2)                             h(2)                             h00[3]  h[3]  h00[2]  h[2]  h00[1]           [1]           (2)(2)
+(3)                                                 h(3)                                                 h00[3]           [3]           (3)(3)=     2=     2</text>
+        </slide>
+        <slide>
+          <slideno>19</slideno>
+          <text>2020By Inverse DWTBy Inverse DWT</text>
+        </slide>
+      </slides>
+      <videos/>
+    </lecture>
+    <lecture>
+      <lecture_title>Slides 8 (PDF)</lecture_title>
+      <lecture_pdf_url>https://ocw.mit.edu/courses/18-327-wavelets-filter-banks-and-applications-spring-2003/resources/slides8/</lecture_pdf_url>
+      <lectureno>Maxflat Filters: Daubechies and Meyer Formulas. Spectral Factorization</lectureno>
+      <slides>
+        <slide>
+          <slideno>15</slideno>
+          <text>1616Algorithm:Algorithm:
+Given the coefficients q[n] of the polynomial Q(z):Given the coefficients q[n] of the polynomial Q(z):
+i.i.Compute the MCompute the M --point DFT of q[n] for a point DFT of q[n] for a 
+sufficiently large M.sufficiently large M.
+Q[k]  =  Q[k]  =  q[n]e             q[n]e             ;    0 ;    0 k k &lt; M&lt; M
+ii.ii.Take the logarithm.Take the logarithm.
+Q[k]  =  Q[k]  =  lnln(Q[k])(Q[k])
+iii.iii.Determine the complex Determine the complex cepstrumcepstrum of q[n] by of q[n] by 
+computing the IDFT.computing the IDFT.
+q[n]q[n] =           =           Q[k] Q[k] eeiinn
+^^
+1 1 
+MM^^MM22nknk ^^M M --11
+k = 0k = 0--iiMM22knkn</text>
+        </slide>
+        <slide>
+          <slideno>8</slideno>
+          <text>99Consider the distribution of the zeros (roots) of P(z).Consider the distribution of the zeros (roots) of P(z).
+Symmetry of p[n]  Symmetry of p[n]  P(z)  =  P(zP(z)  =  P(z--11))
+If zIf z00is a root then so is zis a root then so is z00--11..
+If p[n] are real, then the roots appear in complex, If p[n] are real, then the roots appear in complex, 
+conjugate pairs.conjugate pairs.
+(1 (1 zz00zz--11)(1 )(1 zz00*z*z--11)  =  1 )  =  1 (z(z00+ z+ z00*) z*) z--11+ (z+ (z00zz00*)z*)z--22
+123123 123123
+realreal realreal</text>
+        </slide>
+        <slide>
+          <slideno>16</slideno>
+          <text>1717iv.iv.Find the causal part of q[n].Find the causal part of q[n].
+v.v.Determine the DFT of r[n] by computing the Determine the DFT of r[n] by computing the 
+exponent of the DFT of r[n].exponent of the DFT of r[n].
+R[k]  =  exp (R[k])  =  exp ( R[k]  =  exp (R[k])  =  exp ( r[n]er[n]ei      i      knkn)); 0 ; 0 k k &lt; M&lt; M^^
+r[n]  =r[n]  =
+678678q[0]    ;    n  =  0q[0]    ;    n  =  0
+q[n]        ;    n  &gt;  0q[n]        ;    n  &gt;  0
+0             ;    n  &lt;  00             ;    n  &lt;  0^^^^678678
+^^
+^^
+MM--11
+k = 0k = 0^^MM^^ 22</text>
+        </slide>
+        <slide>
+          <slideno>2</slideno>
+          <text>33Can achieve required flatness at y = 1 by including a Can achieve required flatness at y = 1 by including a 
+term of the form (1 term of the form (1 y)y)ppi.e.i.e.
+P(y) = 2(1 P(y) = 2(1 y)y)ppBBpp(y)(y)
+Where BWhere Bpp(y) is a polynomial of degree p (y) is a polynomial of degree p 1.1.
+How to choose BHow to choose Bpp(y)?(y)?
+Let BLet Bpp(y) be the binomial series expansion for (y) be the binomial series expansion for 
+(1 (1 y)y)--pp, truncated after p terms:, truncated after p terms:
+BBpp(y) = 1 + (y) = 1 + pypy+                 y+                 y22+  +                 y+  +                 ypp--11
+= (1 = (1 y)y)--p p + + O(yO(ypp))
+p(p + 1)p(p + 1)
+222p 2p --22
+p p 11(  (  ))
+&lt;&lt;Higher order termsHigher order terms</text>
+        </slide>
+        <slide>
+          <slideno>3</slideno>
+          <text>44(1 (1 y)y)--11= = yykk
+(1 (1 y)y)--pp= = 
+k = 0k = 0
+
+k = 0k = 0(( ))kk
+||||yy&lt; 1&lt; 1
+ThenThen
+P(y) = 2(1 P(y) = 2(1 y)y)pp[(1[(1--y)y)--pp+ O (+ O ( yypp)])]
+= 2 + = 2 + O(yO(ypp))yykk p + k p + k 11</text>
+        </slide>
+        <slide>
+          <slideno>7</slideno>
+          <text>88Spectral FactorizationSpectral Factorization
+Recall the Recall the halfbandhalfband condition for orthogonal filters:condition for orthogonal filters:
+z domain:z domain:
+HH00(z) H(z) H00(z(z--11)  +  H)  +  H00((--z) Hz) H00((--zz--11)  =  2)  =  2
+Frequency domain:Frequency domain:
+HH00(() ) 2 2 +  +  HH00((+ + ) ) 2 2 =  2=  2
+The product filter for the orthogonal case isThe product filter for the orthogonal case is
+P(z)  =  HP(z)  =  H00(z) H(z) H00(z(z--11))
+P(P() = ) = HH00(())22P(P() ) 00
+p[n]  =  hp[n]  =  h00[n] [n] hh00[[--n]            n]            p[n] = p[p[n] = p[ --n]n]
+The spectral factorization problem is the problem The spectral factorization problem is the problem 
+of finding Hof finding H00(z) once P(z) is known.(z) once P(z) is known.</text>
+        </slide>
+        <slide>
+          <slideno>9</slideno>
+          <text>1010ImIm ImIm
+zz00
+zz0011ReRe ReRe 111/z1/z00zz00
+O O 11
+zz00OO11
+zz00**
+**
+Complex zerosComplex zeros Real zerosReal zeros
+If the zero zIf the zero z00is grouped into the spectral factor His grouped into the spectral factor H00(z), (z), 
+then the zero 1/zthen the zero 1/z0 0 must be grouped into Hmust be grouped into H00(z(z--11).).
+hh00[n]  cannot be symmetric.[n]  cannot be symmetric.</text>
+        </slide>
+        <slide>
+          <slideno>11</slideno>
+          <text>1212Practical Algorithms:Practical Algorithms:
+1.1.Direct Method: compute the roots of P(z) Direct Method: compute the roots of P(z) 
+numerically.numerically.
+2.2.CepstralCepstral Method:Method:
+First factor out the zeros which lie on the unit First factor out the zeros which lie on the unit 
+circlecircle
+P(z)  =  [(1 + zP(z)  =  [(1 + z--11)(1 + z)])(1 + z)]ppQ(z)Q(z)
+Now we need to factor Q(z) into R(z) R(zNow we need to factor Q(z) into R(z) R(z--11) such that) such that
+i.i.R(z) has all its zeros inside the unit circle.R(z) has all its zeros inside the unit circle.
+ii.ii.R(z) is causal.R(z) is causal.</text>
+        </slide>
+        <slide>
+          <slideno>5</slideno>
+          <text>66z domain: z domain: 
+P(z) = 2P(z) = 2 ))((((1 + z1 + z
+221 + z1 + z--11))pp
+22ppp p --11
+k = 0k = 0p + k p + k --11(( )) kk(())1 1 --zz(())1 1 zz--11
+22 22kk kk</text>
+        </slide>
+        <slide>
+          <slideno>13</slideno>
+          <text>1414Example:Example:
+XX55XX55
+XXXX
+R(z) has all its zeros and all its poles inside the unit R(z) has all its zeros and all its poles inside the unit 
+circle, so R(z) has all its singularities inside the unit circle, so R(z) has all its singularities inside the unit 
+circle.  (circle.  ( ln0  =  ln0  =  --,  ,  lnln=  =  .)  .)  ^^R(z)R(z) R(z) = R(z) = lnlnR(z)R(z)^^</text>
+        </slide>
+        <slide>
+          <slideno>17</slideno>
+          <text>1818vi.vi.Determine the DFT of hDetermine the DFT of h00[n], by including half the [n], by including half the 
+zeros at z = zeros at z = --1.1.
+HH00[k]  =  R[k] (1 + e[k]  =  R[k] (1 + ei                    i                    
+vii.vii.Compute the IDFT to get hCompute the IDFT to get h00[n].[n].
+hh00[n]  =      [n]  =      HH00[k] [k] eeiiMM22kk))pp
+11
+MMMM22nknkMM--11
+k = 0k = 0</text>
+        </slide>
+        <slide>
+          <slideno>4</slideno>
+          <text>55(       )(       )p + k p + k --11
+kkyykk
+(      )(      )1 1 --eeii
+22(      )(      )1 1 ee--ii
+22
+1 1 coscos
+22
+(( pp--11
+k=0k=0ThusThus
+PP((ll))(0)  =  0  ;  (0)  =  0  ;  ll= 1, 2, = 1, 2, , p, p--11
+So we haveSo we have
+P(y)  =  2 (1P(y)  =  2 (1 --y)y)pp
+Now letNow let
+y =                                         maintainsy =                                         maintains symmetrysymmetry
+=                                             =                                             
+ThusThus
+P(P()  =  P                            )  =  P                            
+=  2                          =  2                          1 1 coscos
+22))
+)) ((1 + 1 + coscos
+22p p --11
+k = 0k = 0((p + k + 1p + k + 1
+kk))((1 1 coscos))22kk pp</text>
+        </slide>
+        <slide>
+          <slideno>6</slideno>
+          <text>77Meyers ApproachMeyers Approach
+Work with derivative of P(y):Work with derivative of P(y):
+PP(y)  =  (y)  =  --CCyypp--11(1 (1 y)y)pp--11
+SoSo
+P(y)   =  2 P(y)   =  2 --CCyypp--11(1(1--y)y)pp--11d y         (P(0) = 2)d y         (P(0) = 2)
+ThenThen
+P(P()   =  2 )   =  2 --CC
+
+ yy
+00
+))1 + 1 + coscos((
+22pp--11(( ))1 1 coscos
+22pp--11sin sin 
+22dd
+00
+= 2 = 2 --CC(( ))1 1 coscos22
+22pp--11sin sin 
+22dd
+00
+i.e.   P(i.e.   P( )  =  2 )  =  2 C C sinsin2p2p--11d d 
+00</text>
+        </slide>
+        <slide>
+          <slideno>12</slideno>
+          <text>1313Then use logarithms to change multiplication into Then use logarithms to change multiplication into 
+addition:addition:
+Q(z)     =         R(z)      Q(z)     =         R(z)       R(R(zz--11))
+lnlnQ(z)    =     Q(z)    =     lnlnR(z)     +     R(z)     +     lnlnR(zR(z--11) ) 123123 123123 123123
+Q(z)Q(z) R(z)R(z) R(zR(z--11))^^ ^^ ^^
+Take inverse z transforms:Take inverse z transforms:
+q[n]     =      r[n]           +    r[q[n]     =      r[n]           +    r[ --n]n]
+Complex Complex cepstrumcepstrum
+of q[n]of q[n]^^ ^^ ^^</text>
+        </slide>
+        <slide>
+          <slideno>14</slideno>
+          <text>1515All singularities inside the unit circle leads to a causal All singularities inside the unit circle leads to a causal 
+sequence, e.g.sequence, e.g.
+X(z)  =  X(z)  =  11
+11--zzkkzz--11 Pole at z = Pole at z = zzkk
+X(X() =) =11
+11--zzkk??--ii
+If If ||zzkk| &lt; 1,  we can write| &lt; 1,  we can write
+X(X()  =  )  =  ((zzkk))nnee--iinn
+x[n] is causalx[n] is causal
+So r[n] is the causal part of q[n]:So r[n] is the causal part of q[n]:
+n = 0n = 0
+^^ ^^
+r[n]  =r[n]  =
+678678q[0]    ;    n  =  0q[0]    ;    n  =  0
+q[n]        ;    n  &gt;  0q[n]        ;    n  &gt;  0
+0             ;    n  &lt;  00             ;    n  &lt;  0^^^^678678
+^^</text>
+        </slide>
+        <slide>
+          <slideno>0</slideno>
+          <text>Course 18.327 and 1.130Course 18.327 and 1.130
+Wavelets and Filter BanksWavelets and Filter Banks
+MaxflatMaxflat Filters: Filters: DaubechiesDaubechies and and 
+Meyer Formulas.Meyer Formulas.
+Spectral FactorizationSpectral Factorization</text>
+        </slide>
+        <slide>
+          <slideno>1</slideno>
+          <text>22Formulas for the Product FilterFormulas for the Product Filter
+HalfbandHalfband condition:condition:
+P(P() + P() + P(+ + ) = 2) = 2
+Also want P(Also want P( ) to be ) to be lowpasslowpass
+and p[n] to be symmetric.and p[n] to be symmetric.
+DaubechiesDaubechies ApproachApproach
+Design a polynomial, P(y), of degree 2p Design a polynomial, P(y), of degree 2p --1, such that1, such that
+P(0) = 2P(0) = 2
+PP((ll))(0) = 0; (0) = 0; ll= 1, 2, = 1, 2, , p , p --11
+PP((ll))(1) = 0; (1) = 0; ll= 0, 1, = 0, 1, , p , p --11~~~~~~  02P() P(+)
+1 y 02 P(y)~~~</text>
+        </slide>
+        <slide>
+          <slideno>10</slideno>
+          <text>1111DaubechiesDaubechies  choice:  Choose H choice:  Choose H00(z) such that(z) such that
+(i)(i)all its zeros are inside or on the unit circle.all its zeros are inside or on the unit circle.
+(ii)(ii)it is causal.it is causal.
+i.e.  Hi.e.  H00(z) is a minimum phase filter.(z) is a minimum phase filter.
+Example:Example:
+66 33 33
+==
+00..
+P(z)P(z) HH00(z)(z)
+(Minimum phase)(Minimum phase)HH00(z(z--11))
+(Maximum phase)(Maximum phase)</text>
+        </slide>
+      </slides>
+      <videos/>
+    </lecture>
+    <lecture>
+      <lecture_title>Slides 1 (PDF)</lecture_title>
+      <lecture_pdf_url>https://ocw.mit.edu/courses/18-327-wavelets-filter-banks-and-applications-spring-2003/resources/slides1/</lecture_pdf_url>
+      <lectureno>Discrete-time Filters: Convolution; Fourier Transform; Lowpass and Highpass Filters</lectureno>
+      <slides>
+        <slide>
+          <slideno>8</slideno>
+          <text>99Convolution is the result of multiplying polynomials: Convolution is the result of multiplying polynomials:
+( + h[ ( + h[--1]z + h[0] +h[1]z 1]z + h[0] +h[1]z--1 1 + ) ( + x[ + ) ( + x[--1]z + x[0] + 1]z + x[0] + 
+x[1]zx[1]z--11+ )  =  ( + y[ + )  =  ( + y[--1]z + y[0] + y[1]z 1]z + y[0] + y[1]z--11+ )+ )
+Example: Example:
+3     1     3     1     --5    25    2
+2      4   2      4   --11
+--3    3    --1      5   1      5   --22
+12   12   4   4   --20     8    0 20     8    0
+6     2  6     2  --10     4    10     4    0    00    0
+6   14  6   14  --9   9   --17    13  17    13  --22
+
+zz--55zz--44zz--33zz--22zz--11zz0022
+00
+--551111
+2233
+33x[n]x[n]
+00
+--1144
+1122
+22h[n]h[n]
+--2200111313
+2233
+--991414
+4466
+55y[n]y[n]
+--1717</text>
+        </slide>
+        <slide>
+          <slideno>3</slideno>
+          <text>44The general input The general input
+x[n]  =  x[n]  =  x[k] x[k] [n [n k]k]
+will thus produce the output will thus produce the output
+y[n]  = y[n]  = x[k]h[n x[k]h[n--k]             Convolution sum k]             Convolution sum
+k = k = --
+
+k = k = --</text>
+        </slide>
+        <slide>
+          <slideno>12</slideno>
+          <text>1313Frequency Response is Frequency Response is
+H(H()  =  )  =  h[k]eh[k]e--iikk
+=  =  + + ee--ii
+Rewrite as  H( Rewrite as  H()  =  H( )  =  H()  )  eeii(())
+H(H()  =  )  =  coscos(   /2) e (   /2) e--ii/2       /2       ;  ;  --kk</text>
+        </slide>
+        <slide>
+          <slideno>14</slideno>
+          <text>1515Frequency response is Frequency response is
+H(H()  =  )  =  --ee--ii
+= i sin ( = i sin (/2) e/2) e--ii/2/2
+==
+1424314243
+sin (sin (/2) e/2) ei(i(/2  +  /2  +  /2)/2);  ;  --&lt;&lt;00
+sin (sin (/2) /2) eeii((/2  /2  --/2)/2);  0 ;  0 &lt;&lt;</text>
+        </slide>
+        <slide>
+          <slideno>0</slideno>
+          <text>Discrete Discrete--time filters: convolution; time filters: convolution; 
+Fourier transform; Fourier transform; lowpass lowpass and and 
+highpass highpass filters filters</text>
+        </slide>
+        <slide>
+          <slideno>4</slideno>
+          <text>55Discrete time Fourier transform Discrete time Fourier transform
+X(X()  =  )  =  x[n] e x[n] e--iinn
+Inverse Inverse
+x[n]  =              X( x[n]  =              X() ) eeiinndd
+n = n = --
+11
+22
+
+--</text>
+        </slide>
+        <slide>
+          <slideno>7</slideno>
+          <text>88Matrix form: Matrix form:
+==h[0] h[ h[0] h[--1] h[1] h[--2]2]
+h[1] h[0]  h[ h[1] h[0]  h[--1]  h[ 1]  h[--2]2]
+h[2] h[1]  h[0]   h[ h[2] h[1]  h[0]   h[--1] h[1] h[--2]2]
+h[2]  h[1]   h[0]  h[ h[2]  h[1]   h[0]  h[--1]1]
+h[2]   h[1]  h[0] h[2]   h[1]  h[0]OO OO OO
+OO
+OO
+OO
+OOOO
+OO OOMM
+x[x[--2]2]
+x[x[--1]1]
+x [0]x [0]
+x [1]x [1]
+x[2]x[2]
+MMMM
+y[y[--2]2]
+y[y[--1]1]
+y[0]y[0]
+y[1]y[1]
+y[2]y[2]
+MM
+14444424444431444442444443
+Toeplitz Toeplitz matrix matrix</text>
+        </slide>
+        <slide>
+          <slideno>10</slideno>
+          <text>1111Toeplitz ToeplitzMatrix representation: Matrix representation:
+h[0] h[ h[0] h[--1] h[1] h[--2]2]
+h[1] h[0]  h[ h[1] h[0]  h[--1]  h[ 1]  h[--2]2]
+h[2] h[1]  h[0]   h[ h[2] h[1]  h[0]   h[--1] h[1] h[--2]2]
+h[2]  h[1] h[2]  h[1] h[0]  h[ h[0]  h[--1]1]
+h[2]  h[1]   h[0] h[2]  h[1]   h[0]OO OO OO
+OO
+OO
+OO
+OOOO
+OO OOMM
+y[y[--2]2]
+y[y[--1]1]
+y[0]y[0]
+y[1]y[1]
+y[2]y[2]
+MMMM
+x[x[--2]2]
+x[x[--1]1]
+x [0]x [0]
+x [1]x [1]
+x[2]x[2]
+MM==
+Filter is causal if y[n] does not depend on future Filter is causal if y[n] does not depend on future 
+values of x[n]. values of x[n].
+Causal filters have h[n]  =  0 for n Causal filters have h[n]  =  0 for n &lt; 0.&lt; 0.</text>
+        </slide>
+        <slide>
+          <slideno>5</slideno>
+          <text>66Frequency Response Frequency Response
+Suppose that we have the particular input Suppose that we have the particular input
+x[n]  =  x[n]  =  eeiinn
+What is the output? What is the output?  
+y[n]  =  y[n]  =  h[k] x [n h[k] x [n --k]k]
+= = eeiin n h[k] e h[k] e--iik k 
+1424314243eeiinn H(H())eeiinn
+kk
+kk
+H(H())
+Frequency Response Frequency Response</text>
+        </slide>
+        <slide>
+          <slideno>2</slideno>
+          <text>33b)b)the behavior of the system does not change with the behavior of the system does not change with
+time, i.e. a delayed version of any input time, i.e. a delayed version of any input
+xxdd[n]  =  x[n [n]  =  x[n --d]d]
+produces an output with a corresponding delay produces an output with a corresponding delay
+yydd[n]  =  y[n [n]  =  y[n d]d]
+Under these conditions, the system can be Under these conditions, the system can be 
+characterized by its response, h[n], to a unit characterized by its response, h[n], to a unit 
+impulse, impulse, [n], which is applied at time n  =  0, [n], which is applied at time n  =  0, 
+i.e. the particular input i.e. the particular input
+x[n]  =  x[n]  =  [n][n]
+produces the output produces the output
+y[n]  =  h[n] y[n]  =  h[n]11
+LL LLUnit Unit 
+Impulse Impulse
+--22--1   0   1   2   n 1   0   1   2   n
+--22--1   0   1   2   n 1   0   1   2   nLL LLh[h[--2]2]h[h[--1]1]h[0]h[0]
+h[1]h[1]
+h[2]h[2] Impulse Impulse
+Response Response</text>
+        </slide>
+        <slide>
+          <slideno>1</slideno>
+          <text>22  Filter FilterInput Input Output Output
+x[n]x[n] y[n]y[n]
+n denotes the time variable:  {, n denotes the time variable:  {, --2, 2, --1, 0, 1, 2, } 1, 0, 1, 2, }
+x[n] denotes the sequence of input values:  x[n] denotes the sequence of input values:  
+{, x[ {, x[--2], x[2], x[--1], x[0], x[1], x[2], } 1], x[0], x[1], x[2], }
+y[n] denotes the sequence of output values: y[n] denotes the sequence of output values:
+{, y[ {, y[--2], y[2], y[--1], y[0], y[1], y[2], } 1], y[0], y[1], y[2], }
+Assume that Assume that 
+a)a)the principle of superposition holds the principle of superposition holds system is system is 
+linear, i.e. combining any two inputs in the form linear, i.e. combining any two inputs in the form
+AxAx11[n]  +  Bx [n]  +  Bx22[n][n]
+results in an output of the form results in an output of the form
+AyAy11[n]  +  By [n]  +  By22[n] [n]</text>
+        </slide>
+        <slide>
+          <slideno>13</slideno>
+          <text>1414b)b)Highpass Highpass Filter Example Filter Example
+y[n]  =  y[n]  =  x[n]  x[n]  --x[nx[n--1]1]
+Impulse response is Impulse response is
+--nnLL LLh[n]h[n]
+0011</text>
+        </slide>
+        <slide>
+          <slideno>9</slideno>
+          <text>1010Discrete Time Filters Discrete Time Filters(summary) (summary)
+Discrete Time: Discrete Time:
+y[n]  =  y[n]  =  x[k] h [n x[k] h [n--k]k](Convolution) (Convolution)
+Discrete Discrete time Fourier transform time Fourier transform
+X(X()  =  )  =  x[n] e x[n] e--iinn
+Frequency domain representation Frequency domain representation 
+Y(Y()  =  H( )  =  H() ) X(X()     (Convolution theorem) )     (Convolution theorem)  h[n]h[n]x[n]x[n] y[n]y[n]
+kk
+nn</text>
+        </slide>
+        <slide>
+          <slideno>11</slideno>
+          <text>1212Filters Filters
+a)a)Lowpass Lowpass filter example: filter example:
+y[n]  =  y[n]  =  x[n] + x[n] + x [nx [n--1]1]
+Filter representation: Filter representation:
+  h[n]h[n]x[n]x[n] y[n]y[n]y[n]  =  y[n]  =  x[k] h [n x[k] h [n--k]k]
+kk
+Impulse response is Impulse response is
+0011LL LL
+nnh[n]h[n]</text>
+        </slide>
+        <slide>
+          <slideno>6</slideno>
+          <text>77Convolution Theorem Convolution Theorem
+A general input A general input
+x[n]  =            x[n]  =            X(X() ) eeiin n dd
+will thus produce the output will thus produce the output
+y[n]  =            X( y[n]  =            X()  H()  H() ) eeiin n ddY(Y()  =  X( )  =  X() H() H())
+1424314243
+Convolution Convolution
+Convolution of sequences x[n] and h[n] is denoted by Convolution of sequences x[n] and h[n] is denoted by
+h[n] h[n] x[n]  =  x[n]  =  x[k] h[n x[k] h[n --k]  =  y[n]  (say) k]  =  y[n]  (say) 11
+22
+--
+11
+22
+--
+kkY(Y())</text>
+        </slide>
+      </slides>
+      <videos/>
+    </lecture>
+  </lectures>
+</doc>

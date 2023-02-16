@@ -1,0 +1,2601 @@
+<doc>
+  <source>MIT</source>
+  <date>28/01/2023</date>
+  <course>
+    <course_url>https://ocw.mit.edu/courses/mas-836-sensor-technologies-for-interactive-environments-spring-2011/</course_url>
+    <course_title>Sensor Technologies for Interactive Environments</course_title>
+    <course_tags>
+      <list>Engineering </list>
+      <list>Electronics </list>
+      <list>Electrical Engineering </list>
+    </course_tags>
+  </course>
+  <lectures>
+    <lecture>
+      <lecture_title>Introduction; basic sensor-related electronics and signal conditioning</lecture_title>
+      <lecture_pdf_url>https://ocw.mit.edu/courses/mas-836-sensor-technologies-for-interactive-environments-spring-2011/resources/mitmas_836s11_class1elect/</lecture_pdf_url>
+      <lectureno>1</lectureno>
+      <slides>
+        <slide>
+          <slideno>13</slideno>
+          <text>14 JAP 2/04 
+Conferences 
+ Sensors Expo 
+ Big trade show with tutorials and proceedings 
+ IEEE Sensors Conference 
+ Very large new state-of-the-art sensors conference 
+ SPIE 
+ Old standby conference for sensors &amp; applications 
+ Transducers 
+ Emphasizes MEMs, but like IEEE Sensors 
+U I S T 
+ ACM conference on user interface technology 
+ Sensys, IPSN/SPOTS, etc. 
+ Sensor net conferences - not sensors</text>
+        </slide>
+        <slide>
+          <slideno>23</slideno>
+          <text>Use physics and constraints to couple a 
+measured quantity into an unknown 
+ Temperature can infer wind velocity (heat loss) 
+ Displacement can infer: 
+ Pressure (with an elastomer or spring: F = kx) 
+ Volume of fluid in a tank (V = Ah) 
+ Velocity (2 measurements at different times: v = dx/dt) 
+ Temperature (thermometer level)  Angle from vertical (displacement of a bubble) 
+ Measurements are used with a mathematical model 
+to derive other parameters 
+ Estimation and Kalman Filtering, etc. 
+24 JAP 2/04 
+Trading Modality 
+ Sensor modes are intrinsically synaesthetic 
+ Not covered here...</text>
+        </slide>
+        <slide>
+          <slideno>28</slideno>
+          <text>29JAP 2/04
+Signal Conditioning
+conversion, gain, detection, filtering, discrimination...Sensor Interface circuitZout
+VsZin V
+Sensor Interface circuitZoutZinI
+Is
+The connection between a sensor and an interface ci rcuit. In the image on the left, the sensor has 
+voltage output. In the image on the right, the sensor has current output. 
+ Sensors produce different kinds of signals
+ Voltage output or current output
+ Cant necessarily take sensor output and put right 
+into microprocessor ADC or logic input
+ Signal may need:
+ High-to-low impedance buffer, current-to-voltage ZVi = VioZi + Zo Ii = IooZi + Zo Z
+Wants
+High ZiWantsLow Z
+i
+Image by MIT OpenCourseWare.</text>
+        </slide>
+        <slide>
+          <slideno>3</slideno>
+          <text>4 JAP 2/04 
+Goals 
+ Attain a broad familiarity with many different 
+sensors useful in a broad definition of HCI 
+ Develop judgment of what sensors and modalities are 
+appropriate for different applications 
+ Know how to electronically condition the sensor, 
+hook it up to a microcomputer, and process the signal 
+(at least basically) 
+ Have some idea of how/where these sensors were 
+used before 
+ Have a reasonable idea of how different sensors work 
+ Develop a sense for recognizing bad data and an 
+intuition of how to resolve problems</text>
+        </slide>
+        <slide>
+          <slideno>31</slideno>
+          <text>JAP 2/04 
+The Grounded Emitter Switch  
+Time in 
+This circuit inverts Vout vs. Vin 
+Vout can be larger than Vin 
+s circuit can shift logic levels! -&gt; Thi
+RL can be a device 
+- Then the device turns on when Vin goes high 
+Open Collector gates have this output, without RL 
+-They pull Vout to ground when Vin is high
+Transistor can give linear gain when an emitter resistor added 
+- Must be properly biased! 32 Analogous circuits 
+for FETs also</text>
+        </slide>
+        <slide>
+          <slideno>8</slideno>
+          <text>9 JAP 2/04 
+Reference Sources 
+Covers of AIP Handbook of Modern Sensors, Jacob Fraden, Sensors and Signal 
+Conditioning, Ramon Pallas-Areny and John G. Webster, and The Alarm, Sensor, &amp; 
+Security Cookbook, Thomas Petruzzellis, removed due to copyright restrictions.  
+ Jacob Fraden 
+ AIP Handbook of Modern Sensors, &gt;2nd Edition 
+ Ramon Pallas-Areny and John G. Webster 
+ Sensors and Signal Conditioning, 2nd Edition 
+ Thomas Petruzzellis (getting old) 
+ The Alarm, Sensor, &amp; Security Cookbook</text>
+        </slide>
+        <slide>
+          <slideno>22</slideno>
+          <text>23 JAP 2/04 
+Origins 
+ This class is a proper expansion of the pair of 
+lectures on electronics and sensors that I give in 
+MAS863, How to Make (Almost) Anything 
+ Even so, sensors is a vast and general field 
+ Any one lecture here can become least an entire course 
+elsewhere at MIT 
+ You wont become an expert 
+ Although you will be able to wander into a restaurant in 
+sensorland and order a meal from the menu</text>
+        </slide>
+        <slide>
+          <slideno>53</slideno>
+          <text>54 Courtesy of Texas Instruments. Used with permission.
+JAP 2/04 
+Packaged Bridge Amplifiers 
+BurrBrown (TI) XTR106</text>
+        </slide>
+        <slide>
+          <slideno>20</slideno>
+          <text>JAP 2/04 
+Sensing as Commodity 
+ Sensors are now becoming a commodity, and soon can 
+easily be designed into most any device. 
+ Rather than omitting them from a cost/complexity viewpoint, it 
+begins to make more sense to just include them if theres any 
+suspicion that they could be needed. 
+ This causes a shift in how sensors are used  rather than rely on 
+only 1 or 2 sensors made a priori to measure particular quantities, 
+many sensors will be used that dont necessarily exactly measure 
+the quantity of interest (especially as applications will become 
+more general and evolve over time). 
+21</text>
+        </slide>
+        <slide>
+          <slideno>21</slideno>
+          <text>22 JAP 2/04 
+Sensor Networks as Extension of the Nervous System 
+Sensors are becoming ubiquitous and networked  how do they connect to people? Original images  source unknown. All rights reserved. This content is excluded from 
+our Creative Commons license. For more information, see http://ocw.mit.edu/fairuse .</text>
+        </slide>
+        <slide>
+          <slideno>17</slideno>
+          <text>18 JAP 2/04 
+Basic Sources for Electronics 
+Digikey - www.digikey.com 
+Mouser - www.mouser.com 
+Newark 
+Allied 
+Hosfelt Electronics 
+JameCo 
+Mat Electronics 
+JDR 
+All Electronics 
+Radio Shack (mainly online now)</text>
+        </slide>
+        <slide>
+          <slideno>48</slideno>
+          <text>49 JAP 2/04 
+The Wheatstone Bridge  
+ = R4/R1 
+ Bridge Conditioning 
+ Active Bridge Servoing to keep null Differential readout of a resistive sensor 
+R3 = Resistive Sensor 
+Graph of the sensitivity of  a disbalanced 
+bridge as a function of impedance ratio
+from Handbook of Modern Sensors removed 
+due to copyright restrictions. See: page 
+217 on Google Books.  
+ Unknown. All rights reserved. This content is excluded from our Creative 
+Commons license. For more information, see http://ocw.mit.edu/fairuse.</text>
+        </slide>
+        <slide>
+          <slideno>40</slideno>
+          <text>41 JAP 2/04 
+The Inverting Amplifier 
+ Inverts signal, voltage gain varies from zero upward with the ratio of two resistors 
+ Extension to summer is trivial with additional Ris 
+ Input impedance is not infinite: Zin = Ri</text>
+        </slide>
+        <slide>
+          <slideno>50</slideno>
+          <text>JAP 2/04 
+Servoed Resistor Balance 
+ A voltage (or digitally) variable resistor is 
+adjusted in the negative feedback loop of an 
+OpAmp to maintain the bridges null 
+ Feedback works to make R1 +  + R = R 51</text>
+        </slide>
+        <slide>
+          <slideno>38</slideno>
+          <text>39 JAP 2/04 
+The Non-Inverting Amplifier 
+ Like voltage follower, but gives voltage gain 
+ Gain can be adjusted from unity upward via resistor ratio 
+ High-Z input is good for conditioning High-Z sensors</text>
+        </slide>
+        <slide>
+          <slideno>7</slideno>
+          <text>8 JAP 2/04 
+Working Syllabus (cont) 
+ May X  Final Project Presentation</text>
+        </slide>
+        <slide>
+          <slideno>0</slideno>
+          <text>MAS836  Sensor Technologies for  Interactive Envir onments
+Original images  source unknown. All rights reserved. This content is excluded from 
+our Creative Commons license. For more information, see http://ocw.mit.edu/fairuse . 
+Lecture 1  Introduction and Analog Conditioning Electronics, Pt. 1</text>
+        </slide>
+        <slide>
+          <slideno>24</slideno>
+          <text>25 JAP 2/04 
+Active and Passive Sensing 
+ Contact (2,3,4), noncontact (1), and internal (calibration) sensing (5) 
+ An active sensor (4) requires power, &amp; may stimulate environment for a response 
+ Thermistor, FSR, sonar 
+ A passive sensor (1,2,3,5) generates a response directly from the received energy 
+ Photodiode, electrodynamic or piezo microphone 
+ Actuation to aid/enable sensing 
+Source: Fraden, J. Handbook of Modern Sensors. 
+ Springer Science+Business Media, LLC. All 
+rights reserved. This content is excluded from our 
+Creative Commons license. For more information, 
+see http://ocw.mit.edu/fairuse .</text>
+        </slide>
+        <slide>
+          <slideno>43</slideno>
+          <text>JAP 2/04 
+The Simple Differential Amplifier 
+ Subtracts two input signals 
+ Input resistors must be equal, feedb ack and shunt resistors must be equal 
+ Provides voltage gain 
+ The input impedances arent equal, however 
+ The amplifier is unbalanced! 
+ A high-impedance sensor will produce common- mode errors (e.g., the system will be 
+sensitive to the common voltage) 
+ Differential sensors will be more sensitive to induced pickup signals (which tend to be 
+high impedance) 44</text>
+        </slide>
+        <slide>
+          <slideno>54</slideno>
+          <text>MIT OpenCourseWare
+http://ocw.mit.edu 
+MAS.836 Sensor Technologies for Interactive Environments 
+Spring 2011 
+For information about citing these materials or our Terms of Use, visit: http://ocw.mit.edu/terms.</text>
+        </slide>
+        <slide>
+          <slideno>25</slideno>
+          <text>Electronics control the flow of electrons 
+ Voltage is the potential the electrons drop across the 
+circuit 
+ Measured between 2 points, t ypically a test point and ground 
+ Equivalent to the pressure in a pipe 
+ Current is the flux of electrons per unit time (Amperes) 
+ Current is defined as flowing from + to - 
+ Opposite real electron motion! 
+ Equivalent to the dynamic amount of fluid through the pipe 
+ Resistance relates voltage to current 
+ E.g., the width of the pipe 
+V I = R Voltage (Volts) 
+Current (Amperes) 
+Resistance (Ohms) V = IR 
+Resistance turns current into voltage 
+26 JAP 2/04 
+Ohms Law</text>
+        </slide>
+        <slide>
+          <slideno>5</slideno>
+          <text>Session 6: Piezoelectrics and electroactive materials 
+ Intro to ferroelectrics, crystals, PZT, PVDF, electronics, and signal 
+conditioning, electrostrictors and dielectric elastomers 
+ Lab 2 due 
+ Session 7: Electric field and inductive sensing 
+ Capacitive sensing modes and techniques, Hall sensors, 
+magnetostrictive sensors, metal detectors, LVDT's, VR Trackers, 
+Wireless tag sensors 
+ PS2 Due / PS3 Out (Swap Lecture?) 
+ Session 8: Optical sensing 
+ Devices (LDR's, solar cells, photodiodes, APD's, phototubes...), 
+arrays, imagers, focal plane imaging/tracking, occultation, range by 
+intensity of reflection, laser ranging (triangulation, phase slip, TOF) 
+ Lab 3 Due 
+ Session 9: Inertial Systems 
+ Orientation sensors (compasses, ball-cup, bubble levels), gyroscopes, 
+accelerometers, MEMs devices, IM U's, analysis techniques 
+ PS3 Due 6 JAP 2/04 
+Working Syllabus (cont)</text>
+        </slide>
+        <slide>
+          <slideno>42</slideno>
+          <text>43 JAP 2/04 
+Differential Amplifiers 
+ Intro to differential sensors 
+ Pickup coil, piezoelectric, etc. 
+ Comparison to reference (null drift, etc.) 
+ Bend with strain gauges 
+ Simple differential amplifier 
+ Intrinsic impedance imbalance 
+ Brute-force instrumentation amplifier  3-OpAmp differential amplifier w. gain 
+ 2-OpAmp differential amplifier</text>
+        </slide>
+        <slide>
+          <slideno>45</slideno>
+          <text>JAP 2/04 
+The Three-OpAmp Instrumentation Amplifier 
+ Gain is varied by changing only one resistor, R1 
+ No need to re-trim other components for a gain change 
+ Gain at first stages is better for signal/noise  This is the instrumentation amplifier of choice 
+46</text>
+        </slide>
+        <slide>
+          <slideno>26</slideno>
+          <text>27 JAP 2/04 
+Combining Resistors 
+Resistors in Series just add 
+Resistors in Parallel are weighted by their inverse</text>
+        </slide>
+        <slide>
+          <slideno>51</slideno>
+          <text>52 JAP 2/04 
+Servoed Drive of a Split Bridge  
+ Drives a split bridge in feedback to maintain null 
+ Possible when one has full access to the bridge legs</text>
+        </slide>
+        <slide>
+          <slideno>1</slideno>
+          <text>2 JAP 2/04 
+Expectations 
+ This is not has become a Lab class 
+ and does have an important lab component 
+ Class credit (12H) from: 
+ Three or Four problem sets (30%) 
+ Copying not allowed 
+ Credit not available after solutions handed out 
+ Final project (30%) 
+ Lab Performance (30%)  Attendance/Participation/Reading (10%)</text>
+        </slide>
+        <slide>
+          <slideno>44</slideno>
+          <text>JAP 2/04 
+The Basic Instrumentation Amplifier 
+ Buffer each leg of the differential amplifier 
+by a voltage follower 
+ Impedance is now extremely high at both inputs 
+ Impedance can be set by a shunt resistor across inputs 
+T h i s  i s  a balanced instrumentation amplifier 45</text>
+        </slide>
+        <slide>
+          <slideno>47</slideno>
+          <text>JAP 2/04 
+Commercial Instrumentation Amplifiers 
+ Analog Devices AD623 
+ Analog Devices AD AMP01  BurrBrown (TI) INA series (INA2321) 
+ TI TLC271 
+Can be fairly slow, but precise DC properties, low drift, high 
+gain, well matched 48 
+INA2321 500 kHz, 94 dB CMRR, R-R, A sleep 
+Courtesy of Texas Instruments. Used with permission. 
+Courtesy of Analog Devices. Used with permission.</text>
+        </slide>
+        <slide>
+          <slideno>27</slideno>
+          <text>28 JAP 2/04 
+Power and Voltage Dividers 
+ The power dissipated in a circuit is: 
+ P = IV = I2R = V2/R 
+ amps  volts = Watts = 1 Joule/second 
+ Keep below ratings 
+ Dont burn a resistor, blow a transistor, distort a 
+sensor reading 
+ Voltage Divider: 
+Potentiometer</text>
+        </slide>
+        <slide>
+          <slideno>6</slideno>
+          <text>Temperature sensors (thermistors, integrated temperature sensors, 
+thermocouples, RTDs, PIR, pyroelectric), acoustic pickups &amp; 
+techniques, sonar systems, beamformers 
+ Lab 4 Due 
+ Session 11: MacroParticle, chemical, environmental 
+sensors 
+ Smoke detectors, optical scatte ring, smell, chemical and gas 
+sensors and techniques, environment sensing systems (chemical, 
+air, wind, humidity), remote techniques 
+ Project Proposals Due 
+ Session 12: Medical and Radiation Sensing 
+ Basic sensors for medical monitoring (heart rate, ECG, EKG, 
+blood pressure, etc.), radiation detection (Geiger counters, 
+scintillators, drift &amp; proportional chambers, silicon strip detectors, 
+calorimetery) 
+ RF and Microwave Systems 
+ Radar principles, chirped rangefinders, UWB radars, RF location 7 systems, Doppler systems
+JAP 2/04 
+Working Syllabus (cont) 
+  Session 10: Acoustics, thermal sensors</text>
+        </slide>
+        <slide>
+          <slideno>14</slideno>
+          <text>15 JAP 2/04 
+Websites 
+ http://www.sensorsportal.com/ 
+ References, hints, sources 
+ http://www.sensorsmag.com/ Screenshot of SensorsPortal removed 
+due to copyright restrictions. 
+ Sensors Magazine site 
+ Buyers guide, Archive articles 
+ http://www.cs.cmu.edu/~chuck/robotpg/robofaq/10.html 
+ Robotics sites often list sensor vendors, hints 
+ http://www.billbuxton.com/InputSources.html 
+ Bill Buxtons encyclopedia on input devices</text>
+        </slide>
+        <slide>
+          <slideno>41</slideno>
+          <text>42 JAP 2/04 
+he Summing Amplifier T
+ No crosstalk between inputs because of virtual ground</text>
+        </slide>
+        <slide>
+          <slideno>33</slideno>
+          <text>34 JAP 2/04 
+Ideal OpAmp Possibilities 
+ No current flows into the input pins 
+ Ideal behavior dictated by external components and 
+signal sources 
+ Comparator 
+ Get a 1-bit digital trigger from an analog signal 
+ Comparator with Hysteresis 
+ Build in deadband for noise 
+ With negative feedback, current flows through 
+feedback resistor to make V+ equal to V
+ Ignores stability issues, bandwidth, and parasitics...</text>
+        </slide>
+        <slide>
+          <slideno>36</slideno>
+          <text>37 JAP 2/04 
+Negative Feedback 
+ Transimpedance Amplifier 
+ Voltage Follower 
+ Non-Inverting Amplifier 
+ Inverting Amplifier 
+ Inverting Summer</text>
+        </slide>
+        <slide>
+          <slideno>12</slideno>
+          <text>13 JAP 2/04 
+Magazines 
+ Sensors Magazine - Free! 
+ Circuit Cellar - Best EE-hacker magazine out 
+ NASA Tech Briefs - Free! 
+ Test and Measurement - Free! 
+ IEEE Sensors Journal Covers of Sensors Magazine , Circuit Cellar , NASA Tech Briefs , Test and Measurement , 
+and IEEE Sensors Journal removed due to copyright restrictions.</text>
+        </slide>
+        <slide>
+          <slideno>15</slideno>
+          <text>16 JAP 2/04 
+Hacker Websites 
+The following websites offer useful hacking gear, 
+techniques, and ideas: 
+ instructables.com 
+ hackaday.com 
+ diylive.net 
+ diyaudioprojects.com 
+ bunniestudios.com/blog 
+ epanorama.net 
+ hackedgadgets.com 
+ evilmadscientist.com</text>
+        </slide>
+        <slide>
+          <slideno>39</slideno>
+          <text>JAP 2/04 
+The Transimpedance Amplifier 
+ Converts a current into a voltage 
+ Generates a proportional (w. Rf) voltage from an input current 
+ Produces a low-impedance output that can drive a 
+microcomputers A-D converter, for example 40</text>
+        </slide>
+        <slide>
+          <slideno>16</slideno>
+          <text>17 JAP 2/04 
+Some Classic Sensor Module Sources  
+ http://www.parallax.com/ 
+ http://www.sparkfun.com/ 
+ http://www.ramseyelectronics.com/ 
+ http://www.adafruit.com/</text>
+        </slide>
+        <slide>
+          <slideno>49</slideno>
+          <text>50 JA
+Basic Bridge Conditioning with a Diff. Amp P 2/04 
+GI is the gain of the instrumentation amplifier (set by Rg) 
+ As the sensor readings increase (  grows in magnitude), the bridge 
+becomes less sensitive and nonlinear</text>
+        </slide>
+        <slide>
+          <slideno>29</slideno>
+          <text>30 JAP 2/04 
+Transistors 
+IC = hfe iB = iB 
+Is = gm Vgs 
+JFET MOSFET 
+Transconductance Bipolar 
+transistors collector 
+base 
+emitter collector 
+base 
+emitter 
+npn pnp 
+Transistor symbols. 
+Images of TO-5, TO-18, and TO-92 transistor packages, and 
+an ohmmeters view of a transistors terminals h removed due 
+to copyright restrictions. See: Google Books Drawing of Transistor Man from The Art of Electronics 
+(page 64) removed due to copyright restrictions. 
+Thank You, Transistor Man! 
+A low base current (gate 
+voltage) controls a much larger 
+collector (drain) current  Unknown. All rights reserved. This content
+is excluded from our Creative Commons license. 
+For more information, see http://ocw.mit.edu/fairuse .</text>
+        </slide>
+        <slide>
+          <slideno>2</slideno>
+          <text>3 JAP 2/04 
+Projects 
+ Project should demonstrate skill 
+integrating &amp; applying sensors to make a 
+meaningful and understood measurement 
+ Final report required 
+ Justify sensor &amp; design choice, quantify 
+performance 
+ Class presentation in exam week 
+ Short proposal needed 
+ Proposals will be quickly covered in class 
+ We plan these to be due about a month before 
+project presentation</text>
+        </slide>
+        <slide>
+          <slideno>37</slideno>
+          <text>JAP 2/04 
+The Voltage Follower 
+ A unity-gain buffer to enable high-impedance 
+sources to drive low-impedance loads 
+38</text>
+        </slide>
+        <slide>
+          <slideno>9</slideno>
+          <text>JAP 2/04 
+Auxilary References (signals) 
+Covers for Analog Signal Processing, Ram on Pallas-Areny and John G. Webster, The 
+Art of Electronics, Paul Horowitz and Winifield Hill, and Active Filter Cookbook, 
+Don Lancaster, removed due to copyright restrictions. 
+ Ramon Pallas-Areny &amp; John G. Webster 
+ Analog Signal Processing 
+ Paul Horowitz &amp; Winifield Hill 
+ The Art of Electronics 
+ Don Lancaster 
+ Active Filter Cookbook 
+10</text>
+        </slide>
+        <slide>
+          <slideno>32</slideno>
+          <text>33 JAP 2/04 
+The Ideal OpAmp Model  
+Circuit for an ideal OpAmp (operational amplifier.) 
+1.The voltage gain is infinite  Avo = . 
+2.The input resistance is infinite  rin =  . 
+3.The output resistance is zero  ro = 0. 
+4.The bandwith is infinite  BW = . 
+5.There is zero input offset voltage  Eo = 0 if Ein = 0. Eo = Avo Ein 
+Avo =  
+rin =  
+ro = 0 
+BW =  
+Eo = 0 if Ein = 0 EinAvoEin
+rinro
+Noninverting inputInverting input_
++output
+Image  by MIT OpenCourseWare.</text>
+        </slide>
+        <slide>
+          <slideno>4</slideno>
+          <text>Session 1:  Introduction, basic sensor-related electronics &amp; signal 
+conditioning 
+ Op-Amps, biasing, active and passive filters, differential and bridge amplifiers, 
+comparators 
+ Lab 1 Out 
+ Session 2: Electronics continued 
+ Nonlinear circuits, grounding, noise, synchronous detection, simple digital 
+filtering &amp; detection 
+ PS1 Out 
+ Session 3: Electronics continued 
+ (Lab 1 due) - PS1 Due 
+ Session 4: Microcontrollers, Digital Sensor Standards &amp; Networks 
+ Arduino, IEEE 1451, SensorML, ZigBee, wireless sensing, sensor fusion intro 
+ Session 5: Pressure &amp; Force 
+ Force-sensitive resistors , resistive be ndy sensors, resistive strain gauges, 
+silicon pressure sensors, load cells, pressure-through-displacement, fiber optic 
+strain gauges &amp; bend sensors 
+5 JAP 2/04 
+Working Syllabus 
+Note that most classes will involve application discussions</text>
+        </slide>
+        <slide>
+          <slideno>11</slideno>
+          <text>JAP 2/04 
+Good Niche References 
+Covers of Capacitive Sensors: Design and Application, Larry Baxter, Piezoelectric 
+Ceramics: Principles and Applications, AP C International, Modern Inertial Technology: 
+Navigation, Guidance, and Control, An thony Lawrence, and Electronic Distance 
+Measurement: An Introduction, J.M. Rueger, removed due to copyright restrictions. 
+ Larry Baxter 
+ Capacitive Sensors 
+ APC International 
+ Piezoelectric Ceramics: Principles &amp; Applications 
+ Anthony Lawrence 
+ Modern Inertial Technology 
+ J.M. Rueger 
+ Electronic Distance Measurement 12</text>
+        </slide>
+        <slide>
+          <slideno>18</slideno>
+          <text>19 JAP 2/04 
+Todays Assignment 
+Reading Assignment #1 (electronics) 
+ Read Fraden, Chapters 1&amp;2 and Chapter 4 
+ His introduction &amp; signal conditioning sections 
+ If you have Horowitz and Hill, go through 
+Chapters 4 and 7 
+ Op Amps 
+ If you have Pallas-Areny, glance through 
+Chapter 3 
+ Signal conditioning for resistive sensors</text>
+        </slide>
+        <slide>
+          <slideno>35</slideno>
+          <text>JAP 2/04 
+The Schmidt Trigger 
+ Suppresses jitter and spurious triggering from noisy signals 
+ Deadband thresholds, V+ and V-, can be calculated via superposition 
+ Ground VIN, and with Rf T and Ri as a voltage T divider on Vout , calculate the 
+voltage at the OpAmps noninverting pin 
+ Note that this assumes a low-impedance VIN (source impedance sums with Ri) 36 Deadband</text>
+        </slide>
+        <slide>
+          <slideno>34</slideno>
+          <text>JAP 2/04 
+The Comparator 
+ Makes an analog signal into a 1-bit digital signal 
+ Directly drives logic pin on microprocessor 
+ Detects when signal is above threshold 35</text>
+        </slide>
+        <slide>
+          <slideno>10</slideno>
+          <text>11 JAP 2/04 
+Auxilary References 
+Covers of The OpAmp Cookbook, Walt Jung, Intelligent Sensor Systems, John 
+Brignell and Neil White, and Sensors for Mob ile Robots: Theory and Application, H.R. 
+Everett, removed due to copyright restrictions. 
+ Walt Jung 
+ The OpAmp Cookbook 
+ John Brignell &amp; Neil White 
+ Intelligent Sensor Systems 
+ H.R. Everett 
+ Sensors for Mobile Robots</text>
+        </slide>
+        <slide>
+          <slideno>19</slideno>
+          <text>20 JAP 2/04 
+The Age of the Sensor 
+ Interaction revolution underway - possibilities exploding 
+ Small, low-cost sensors easily available to measure nearly 
+everything 
+ Moores Law makes processors capable of meaningfully 
+exploiting the data in real time. 
+ Low barriers to entry - easy to try things 
+ Deaf and blind computers... 
+ We dont really know what will really come after keyboard and mouse  You cant realize your vision for the future of interactivity by buying a 
+card and plugging it in... 
+ Sensors are permeating everything - interactivity everywhere 
+ From toys to automobiles to smart homes 
+ From Burglar alarms to Ubiquitous Computing</text>
+        </slide>
+        <slide>
+          <slideno>52</slideno>
+          <text>53 JAP 2/04 
+Servoed Drive of a Full Bridge 
+ Bridge Servoed to ground opposite legs 
+ Maintain balance, gain set by RG</text>
+        </slide>
+        <slide>
+          <slideno>46</slideno>
+          <text>JAP 2/04 
+An Instrumentation Amplifier with Two OpAmps  
+ Can use when you only have space for a dual OpAmp 
+ Gain change requires two resistors to be adjusted 
+ Common mode sensitivity increases at higher frequency 
+47</text>
+        </slide>
+        <slide>
+          <slideno>30</slideno>
+          <text>JAP 2/04 
+Simple Source and Emitter Followers 
+Source Follower Emitter Follower 
+Vs = Vg + ~1-2V 
+Need Vg around 2 
+volts for most 
+MOSFET s to work Ve = Vb -0.6 V (MPF102) 
+(2N2222) (2N3904) 
+Sensor output &gt; 0.6 V (or need biasing) 
+EF V oltage Gain = RL/(re + RL) ~1 
+EF Output ZEF = Rs/hfe + re 
+SF V oltage Gain = RLgm/(1 + RLgm) ~1 
+SF Output ZSF = 1/gm 
+(ZSF ~1/10 of ZEF for Rs &lt; 50K) 
++ Grounded Emitter Switch 31</text>
+        </slide>
+      </slides>
+      <videos/>
+    </lecture>
+    <lecture>
+      <lecture_title>Pressure, strain and piezoelectrics</lecture_title>
+      <lecture_pdf_url>https://ocw.mit.edu/courses/mas-836-sensor-technologies-for-interactive-environments-spring-2011/resources/mitmas_836s11_cls5pres_sen/</lecture_pdf_url>
+      <lectureno>5</lectureno>
+      <slides>
+        <slide>
+          <slideno>34</slideno>
+          <text>42 JAP 10/96 
+Sensing in the Carpet 
+ Up to 64 PVDF wires are sampled at 60 Hz 
+ MIDI note events generated at every peak  Simple electronics...</text>
+        </slide>
+        <slide>
+          <slideno>3</slideno>
+          <text>4 JAP 2/04 
+Data Glove by Tom Zimmerman (VPL) 
+ Cladding of a Graded Index 
+Optical Fiber is abraded at point 
+where sensitivity is desired 
+ When fiber bent, light leaks out as 
+a function of bend angle 
+ Drop in signal at detector 
+ Patented by Tom Zimmerman (lab 
+alum) at VPL in 1985 &amp; 1990. 
+ Emitter Detector</text>
+        </slide>
+        <slide>
+          <slideno>32</slideno>
+          <text>40JAP 2/04 
+All in Analog(!)</text>
+        </slide>
+        <slide>
+          <slideno>43</slideno>
+          <text>MIT OpenCourseWare
+http://ocw.mit.edu 
+MAS.836 Sensor Technologies for Interactive Environments 
+Spring 2011 
+For information about citing these materials or our Terms of Use, visit: http://ocw.mit.edu/terms.</text>
+        </slide>
+        <slide>
+          <slideno>19</slideno>
+          <text>JAP 2/04 
+Pressure Sensors 
+Hydraulic Load Cell Photos of various pressure sensors 
+removed due to copyright restrictions. 
+Link to UW paper on elevators 
+Many manufacturers: Motorola, MSI, Silicon Designs... 
+ Absolute and Differential (air or fluid) pressure 
+ Back of diaphragm open or closed to the air/medium 26 Loading Surface
+Hydraulic 
+fluid
+Pressure 
+output
+Image  by MIT OpenCourseWare.</text>
+        </slide>
+        <slide>
+          <slideno>40</slideno>
+          <text>JAP 2/04 
+Passive Hydraulic Chopping to Excite PZT at Resonance 
+ Antaki, et al., 1995 
+ Passive hydraulic resonant excitation of piezoceramic 
+stack during heel compression 
+ Big, kludgy shoe 
+ Developed to power artifical organs 
+ Developed order of 0.2  0.7 Watt average power 
+ 2 Watts from simulated jogging 48 
+ James F. Antaki, PhD. All rights reserved. This content is excluded from our Creative Commons license. For more information, see http://ocw.mit.edu/fairuse.</text>
+        </slide>
+        <slide>
+          <slideno>21</slideno>
+          <text>28JAP 2/04
+Force Balance Platform
+ By looking at the dynamic pressure balance on 
+the table, objects on the table can be identified by weight change and tracked by force balance. 
+Ditto for people moving around the floor
+Albrecht Schmidt, et al., Ubicomp 2002
+http://ubicomp.lancs.ac.uk/smart-its/Weight_Table/weight_table.htmlForce F1
+at (0,0)
+Force F3
+at (xmax,ymax)Force F2
+at (xmax,0)
+Force F4
+at (0,ymax)Force Fx
+at (x,y)
+  Fx = F1+ F2+ F3+ F4
+F0x = F01+ F02+ F03+ F04
+x =  xmax (F2- F02 ) + (F3- F03)
+(Fx- F0x )
+y = ymax   (F3- F03 )+ (F4- F04 )
+(Fx- F0x )
+ Albrecht Schmidt.  All rights reserved. This content is excluded from our Creative Commons license. For more information, see http://ocw.mit.edu/fairuse.</text>
+        </slide>
+        <slide>
+          <slideno>35</slideno>
+          <text>43 JAP 2/04 
+Carpet Data Analysis 
+Elapsed Time (sec.)Radius Pressure 
+Elapsed Time (sec) 
+Raw data from carpet wires Data after time clustering 0 1 2 3 4 5 6 7 8 9 0 5 10 15 20 25 30 35 40 45 50 Wire Number 
+Wires along "y" axis Wires along "x" axis Radius Pressure</text>
+        </slide>
+        <slide>
+          <slideno>0</slideno>
+          <text>MAS836  Sensor Technologies for  Interactive Envir onments
+Lectur e 5  Pressure Sensors Pt. 2 and Piezoelectrics
+Original images  source unknown. All rights reserved. This content is excluded from 
+our Creative Commons license. For more information, see http://ocw.mit.edu/fairuse .</text>
+        </slide>
+        <slide>
+          <slideno>25</slideno>
+          <text>t is small and w is big
+33JAP 2/04
+Voltage from Strain
+3-1 mode generally much more responsive than 3-3</text>
+        </slide>
+        <slide>
+          <slideno>5</slideno>
+          <text>6JAP 2/04
+Measurands Shape Tape
+Can pixellate with 
+an array of fibers, 
+with treatment at 
+different locations
+Courtesy of Measurand. Used with permission.</text>
+        </slide>
+        <slide>
+          <slideno>30</slideno>
+          <text>JAP 2/04 
+1995 - Interactive Audio Media 
+-PVDF strip laminated onto balloon surface forms speaker and microphone 
+- Simple electronics enable very simple behavior - All over Media Lab for 10th birthday (60 made) 
+38</text>
+        </slide>
+        <slide>
+          <slideno>38</slideno>
+          <text>Power Harvesting Insoles - 1998
+PVDF Stave 
+Molded into sole 
+Energy from bend 
+Ppeak  10 mW 
+&lt;P&gt;  1 mW 
+Thunder PZT 
+Clamshell Unimorph 
+Under insole
+Pressed by heel
+Ppeak  50 mW 
+&lt;P&gt;  10 mW 
+Raw Power 
+circa 1% efficient 
+Unnoticable 
+Responsive Envir onments Group
+MIT Media Lab
+1998 IEEE W earable Computing Confer ence</text>
+        </slide>
+        <slide>
+          <slideno>1</slideno>
+          <text>2 JAP 2/04 
+Some FSR-Bendy-Sensor Gloves 
+ 
+Immersion s Cyber Glove Laetitia Sonami s Lady s Glove 
+(STEIM, 1997) Mattel s Power Glove 
+1989 Photo courtesy of Tim Deering  on Flickr. CC-BY-NC
+Courtesy of Laetitia Sonami. Used with permission.  Courtesy of CyberGlove. Used 
+with permission.</text>
+        </slide>
+        <slide>
+          <slideno>31</slideno>
+          <text>39 JAP 2/04 
+Balloon Driver/Buffer  
+Transformer output boost, diode-based TR switch, and HP input response</text>
+        </slide>
+        <slide>
+          <slideno>9</slideno>
+          <text>JAP 2/04 
+AXIS - Alignment Transfer By Integrated Strain 
+ Invented by Len Wilk, Draper Lab 
+ US Patent # 4,788,868 (1988) 
+ Output of a strain-measuring loop draped across a beam depends only 
+on the difference between the angles of the ends 
+11 
+Courtesy of Draper Laboratory. Used with permission.</text>
+        </slide>
+        <slide>
+          <slideno>16</slideno>
+          <text>23 JAP 2/04 
+Load Cells 
+ Bond strain gauge to cantilevered beam 
+ Force deflects beam, bends strain gauge, 
+creates signal 
+ Can be quite accurate 
+ Compensate temperature effects 
+20 Ton load cell for truck weight 
+Load Cell assortment from DHS 
+Simple, naked load cell from Ohio State 
+ Unknown. All rights reserved. This content is excluded from our Creative 
+Commons license. For more information, see http://ocw.mit.edu/fairuse.</text>
+        </slide>
+        <slide>
+          <slideno>17</slideno>
+          <text>24
+JAP 2/04
+Silicon Pressure Sensors
+ Piezoresistors diffused onto silicon at R1, R2
+ Boron doping typical
+ Piezoresistors couple into longitudinal &amp; 
+transverse stress
+ Coupling is opposite for each mode
+ R1 and R2 essentially subtract in a half-bridgediaphragmy
+xR1
+R2
+ Springer. All rights reserved. This content is excluded from our Creative 
+Commons license. For more information, see http://ocw.mit.edu/fairuse .</text>
+        </slide>
+        <slide>
+          <slideno>24</slideno>
+          <text>31JAP 2/04
+Piezo Axes under Strain
+Note: Connected 
+here in parallel for power generationPiezo Strain Coefficients:
+d31,d32,d33-&gt; Coulombs/Newton (charge/force)
+Piezo Voltage Coeficients:g
+31,g32,g33-&gt; Electric Field Strength/Pressure
+([V/m]/[N/m2])
+gmn= dmn/Electrodes aluminized, silver inked, carbon (high strain)
+ Unknown. All rights reserved. This content is excluded from our Creative 
+Commons license. For more information, see http://ocw.mit.edu/fairuse.
+Capacitor - charge collection electrodes along 3 axis
+In polling process, material heated, electric field applied along 3, strain along 1</text>
+        </slide>
+        <slide>
+          <slideno>22</slideno>
+          <text>29 JAP 2/04 
+Piezoelectric References 
+ APC International 
+ Piezoelectric Ceramics: Principles &amp; Applications 
+ Websites: 
+ MSI Tutorial, Piezo Systems Tutorial Cover of Piezoelectric 
+Ceramics: Principles and 
+Applications, APC 
+International, removed due to 
+copyright restrictions.</text>
+        </slide>
+        <slide>
+          <slideno>18</slideno>
+          <text>JAP 2/04 
+Motorola MPX Pressure Sensor 
+ Pressure sets up electrical field in non-excited connections 
+(hence voltage) 
+ Analogous to Hall effect 
+ Essentially already a bridge 
+ Everything is on one substrate - simpler T compensation 25 
+i 
+V oltage created when 
+current bends due to spatial R gradient from 
+pressure distrubutionVout 
+ Freescale Semiconductor Inc.  All rights reserved. This content
+is excluded from our Creative Commons license. For more information,
+see http://ocw.mit.edu/fairuse .</text>
+        </slide>
+        <slide>
+          <slideno>23</slideno>
+          <text>30 JAP 2/04 
+Piezoelectrics</text>
+        </slide>
+        <slide>
+          <slideno>7</slideno>
+          <text>8JAP 2/04
+Shape Tape
+Characteristics, S1280CS multiplexed ShapeTape
+(Specifications will vary for other lengths, number of sensors, etc.)
+Dimensions of tape: 1.3 x 13 x 1800 mm nominal
+Dimensions of interface box: 16 x 54 x 168 mm nominalOperating temperature: -20 to 50 deg c
+Sensitive zone: outboard 480 mm contains 16 sensors arranged in 8 pairs
+Sensor length: each sensor integrates curvature over a 60 mm portion of the sensitive zone
+Sensor pair: each pair resolves bend and twist, using calibration constants
+Calibration: Circle, twist, &amp; flat poses yield stored calibration constantsData: x,y,z and orientation at 16 or more points alon g sensitive zone, relative to inboard reference end
+Calibrated Range of each sensor: 40 mm radius bend; 22.8 deg twist
+Safe Bending radius: 20 mm radius
+Spatial sampling limits: each monotonic (single polarity) curve requires two sensor lengths
+Operating range for end of 'U' shape: two elliptical volumes, 160 x 250 mm each.
+Endpoint accuracy within operating range and sampling limits: 1-3%  of length is a reasonable expectation for postional errors; thus, 
+for the first 100 mm of a tape, the error can be expected to be 1-3 mm, and if the tape is 1000 mm long, the error at the tip c an be 
+expected to be 10-30 mm. Endpoint resolution: 0.3 mm rms, x,y,or  z; 0.5 deg, roll, pitch, or yaw
+ Other locations on tape: errors reduce toward inboard reference end, within range and sampling limitsMaximum data acquisition speed: 110 Hz
+Included: Wall mount power supply (60 Hz, 120VAC), serial cable, interface box, and tape
+Courtesy of Measurand. Used with permission.
+http://www.youtube.com/v/ZMZr1jNDVGY&amp;color1= 0xb1b1b1&amp;color2=0xcfcfcf&amp;hl=en_US&amp;feature=p
+layer_embedded&amp;fs=1</text>
+        </slide>
+        <slide>
+          <slideno>28</slideno>
+          <text>36 JAP 2/04 
+Piezo Foil (PVDF) 
+Photos of piezo film sensors removed due 
+to copyright restructions. See: Measurement Specialties .</text>
+        </slide>
+        <slide>
+          <slideno>2</slideno>
+          <text>3 JAP 2/04 
+Data Gloves 
+ Abraded-cladding 
+fiber optic bend 
+sensor in the Data 
+Glove 5DT Data Glove 16 
+Courtesy of 5DT Inc. Used with permission.</text>
+        </slide>
+        <slide>
+          <slideno>4</slideno>
+          <text>5 
+JAP 2/04 
+Measurands Shape Tape 
+Courtesy of Measurand. Used with permission.</text>
+        </slide>
+        <slide>
+          <slideno>27</slideno>
+          <text>35JAP 2/04
+Circuits, etc.
+Some use charge-
+sensitive (integrating or transimpedance) 
+amplifiers - e.g., to 
+approximate steady-
+state pressure
+I tend to use high-impedance amplifiers for piezoelectric elements</text>
+        </slide>
+        <slide>
+          <slideno>36</slideno>
+          <text>44 JAP 2/04 
+Smart Flooring at the MIT Museum 
+Stomping Ground 
+Permanent installation at the MIT Museum, opened 4/30/02 
+Collaboration with John Maeda s A&amp;C Group (graphics)</text>
+        </slide>
+        <slide>
+          <slideno>29</slideno>
+          <text>37 JAP 2/04 
+Applications</text>
+        </slide>
+        <slide>
+          <slideno>8</slideno>
+          <text>9 JAP 2/04 
+Shape Tape Products 
+Courtesy of Measurand. Used with permission.</text>
+        </slide>
+        <slide>
+          <slideno>20</slideno>
+          <text>UW/Intel Wearable Monitoring
+Graph removed due to copyright restrictions. 
+Brunette, W., Lester , J., Rea, A., and Borriello, G. 2005. Some sensor network elements 
+for ubiquitous computing. In Proceedings of the 4th international Symposium on 
+information Processing in Sensor Networks (Los Angeles, California, April 24 -27, 
+2005). Information Processing In Sensor Networks. IEEE Press, Piscataway , NJ, 52.</text>
+        </slide>
+        <slide>
+          <slideno>33</slideno>
+          <text>41 JAP 2/04 
+The Magic Carpet 
+ Foot position, dynamic pressure captured by 4 grid of piezoelectric wire 
+ Pair of orthogonal Doppler radars measure upper body motion 
+ Not currently in the Brain Opera...</text>
+        </slide>
+        <slide>
+          <slideno>13</slideno>
+          <text>16 JAP 2/04 
+Resistive Wire Strain Detection 
+Piezoresistivity l + dl 
+R = ( l/a) 
+Resistance 
+Resistivity 
+Length over cross-
+sectional area 
+Gauge Factor Strain (e = dl/l) 
+ Springer. All rights reserved. This content is excluded from our Creative Commons license.  For more information, see http://ocw.mit.edu/fairuse .2</text>
+        </slide>
+        <slide>
+          <slideno>39</slideno>
+          <text>Application: Batteryless RF Tag
+ Use Piezo-shoes to charge up capacitor after several steps
+ When voltage surpasses 14 volts, activate 5 V regulator 
+ Send 12-bit ID 6-7 times with 310 MHz ASK transmitter 
+ After 3-6 steps, we provide 3 mA for 0.5 sec 
+ Capacitor back in charge mode after dropping below output 
+Responsive Envir onments Gr oup - MIT Media Lab</text>
+        </slide>
+        <slide>
+          <slideno>42</slideno>
+          <text>50 JAP 2/04 
+Driven Pressure Sensor</text>
+        </slide>
+        <slide>
+          <slideno>12</slideno>
+          <text>14 JAP 2/04 
+AXIS Interferometric Readout 
+Results in an arcsecond of 
+deflection per fringe 
+Differential measurement! 
+Bend 
+Courtesy of Draper Laboratory. Used with permission.</text>
+        </slide>
+        <slide>
+          <slideno>26</slideno>
+          <text>34 JAP 2/04 
+Equivalent Circuits 
+High and reactive Impedance! 
+Capacitive Signal Source Fc = 1 
+2RLC</text>
+        </slide>
+        <slide>
+          <slideno>14</slideno>
+          <text>21 JAP 2/04 
+Strain Gauge Patterns 
+Strain Gauges want to be bonded onto a hard surface, so they can be 
+forced into strain when the surface is deflected.  Soft materials wont 
+strain the gauge enough Linear Gauge T-Rosette Double Shear
+Image by MIT OpenCourseWare.</text>
+        </slide>
+        <slide>
+          <slideno>41</slideno>
+          <text>JAP 2/04 
+Dielectric Elastomers under the heel  
+ Electrostatic generator with silicone rubber or flex 
+acrylic elastomer between the plates 
+ Placed under heel 
+ 2-4 mm of squeeze gives 50-100% area strain 
+ 4 kV across them! 
+ Saw 0.8 Watt per shoe (2 Hz pace, 3 mm deflection) 
+ Estimate that 1 Watt is possible with more deflection 
+Ron Pelrine, Roy Kornbluh - SRI International 49 
+Courtesy of SRI International. Used with permission.</text>
+        </slide>
+        <slide>
+          <slideno>6</slideno>
+          <text>7 JAP 2/04 
+How ShapeTape Measures Twist 
+Can also wrap fibers around center? Bend fibers near center of strip 
+Twist fibers near edges 
+Courtesy of Measurand. Used with permission.</text>
+        </slide>
+        <slide>
+          <slideno>37</slideno>
+          <text>JAP 2/04 
+Heel Strike 
+ Force at heel strike and toe off exceeds 100% 
+ Heel can compress by 1 cm  Watts possible? 
+45 0 0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.9 0 20 40 60 80 100 120 
+Time (seconds) ReactionForce(%ofbodyweight)Heel Strike Toe Off 
+100% 
+Body W eight</text>
+        </slide>
+        <slide>
+          <slideno>10</slideno>
+          <text>Helical windings provide measurement of twist
+12 JAP 2/04 
+Three-Angle measurements with twist  
+Note: D must be fairly small to avoid snapping measuring fiber or wire 
+Courtesy of Draper Laboratory. Used with permission.Note:  D must be fairly small to avoid snapping measuring fiber or wire</text>
+        </slide>
+        <slide>
+          <slideno>15</slideno>
+          <text>JAP 2/04 
+Current Work  Diana Youngs wireless bow 
+ Strain gauges on bow for bow bend (in x,y) and twist. 
+ Accelerometers for 3-axis motion  Capacitive transmitters as before for position 
+22 
+ Diana Young. All rights reserved. This content is excluded from our Creative Commons license. For more information, see http://ocw.mit.edu/fairuse .</text>
+        </slide>
+      </slides>
+      <videos/>
+    </lecture>
+    <lecture>
+      <lecture_title>Electronics (cont.)</lecture_title>
+      <lecture_pdf_url>https://ocw.mit.edu/courses/mas-836-sensor-technologies-for-interactive-environments-spring-2011/resources/mitmas_836s11_class2elect/</lecture_pdf_url>
+      <lectureno>2</lectureno>
+      <slides>
+        <slide>
+          <slideno>29</slideno>
+          <text>38 JAP 2/04 
+The Basic Sample-Hold Circuit</text>
+        </slide>
+        <slide>
+          <slideno>32</slideno>
+          <text>42 JAP 2/04 
+Programmable Gain Amplifiers 
+Courtesy of Burr-Brown. Used with permission.</text>
+        </slide>
+        <slide>
+          <slideno>5</slideno>
+          <text>6 JAP 2/04 
+Passive RLC Filters 
+ Resonant parallel RLC bandpass filters 
+ Resonant series RLC notch filters 
+ZLC J  @ f0 
+ZLC J 0 @ f0 Q = 0(L/R) 
+= f0/f3dB Q = 0RC 
+= f0/f3dB 
+ Unknown. All rights reserved. This content is excluded from our Creative 
+Commons license. For more information, see http://ocw.mit.edu/fairuse .</text>
+        </slide>
+        <slide>
+          <slideno>24</slideno>
+          <text>32 JAP 2/04 
+Peak Detector 
+t t Vs 
+Vo 
+Capacitor holds peaks! 
+Need reset switch to continue tracking</text>
+        </slide>
+        <slide>
+          <slideno>2</slideno>
+          <text>3 JAP 2/04 
+Reactive Impedance  
+ The Capacitor 
+ Adds in parallel like resistors add in series 
+ Reciprocal-adds in series like resistors add in parallel 
+ Impedance of capacitor = -j/ C = -j/(2 fC) 
+ Pass AC, block DC 
+ Capacitor current: Ic = CdV/dt 
+ Impedance of inductor = j L = j(2fL) 
+ Block AC, pass DC 
+ Inductor Voltage:  V = LdI/dt 
+ Unknown. All rights reserved. This content
+is excluded from our Creative Commons license.
+For more information, see http://ocw.mit.edu/fairuse .</text>
+        </slide>
+        <slide>
+          <slideno>10</slideno>
+          <text>JAP 2/04 
+Integrator with Reset Switch 
+ Electronic switch in feedback forces output 
+to ground when closed 
+ Discharges capacitor 
+ Resets Integrator! 11</text>
+        </slide>
+        <slide>
+          <slideno>12</slideno>
+          <text>3 JAP 2/04 
+The Band-Select Filter 
+ Cascaded high and low pass filters 
+ Always follow high-pass with low-pass (noise) 
+ Low-Pass cutoff needs to be below high-pass cutoff! 
+ No Q, first-order rolloffs 1</text>
+        </slide>
+        <slide>
+          <slideno>15</slideno>
+          <text>JAP 2/04
+Limitations on Filter Performance
+ Multiple-OpAmp filters can attain higher Qs than single-OpAmp filters
+Faster OpAmp's work better too
+ Accumulated Phase Shifts can cause oscillation! The choice of OpAmp affects how well a given filter will perform
+s work better too
+21OpAmp s Elsevier. All rights reserved. This content is excluded from our Creative 
+Commons license. For more information, see http://ocw.mit.edu/fairuse.</text>
+        </slide>
+        <slide>
+          <slideno>18</slideno>
+          <text>26 JAP 2/04 
+Filters from Hong 
+Linear has come out with a couple really nice switched cap 
+filters that really cuts down on the design time: 
+LTC1564 Tunable low pass filter 10kHz to 150kHz in steps of 
+10kHz, 8 pole roll-off, programmable 1-16 gain, 3-10V operation. 
+LTC1062 parallel 5-pole tunable low pass filter. Absolutely 
+zero DC error because the input and output are connected directly with a wire and the filter damps out the high frequencies.</text>
+        </slide>
+        <slide>
+          <slideno>23</slideno>
+          <text>JAP 2/04 
+Absolute Value Circuit (envelope follower) 
+ A1 and A2 form an absolute value detector 
+ C6 integrates the absolute value to give the envelope 
+ Note that the 748 (and its compensation cap) is long obsolete! 
+31Vin R5
+39 KR4
+39 K
+A2
+748A3
+748R8
+220 K
+R6
+39 K
+R7
+18 K01
+1N91402
+1N914C6
+.05 mF
+C4
+100 mFC3
+100 mF_
++_
++1
+8Envelope out
+Image by MIT OpenCourseWare.</text>
+        </slide>
+        <slide>
+          <slideno>8</slideno>
+          <text>9 JAP 2/04 
+The First-Order Active High Pass Filter  
+ Low impedance drive 
+ Voltage gain via Rf/Ri</text>
+        </slide>
+        <slide>
+          <slideno>21</slideno>
+          <text>Precision Zener
+29 JAP 2/04 
+Basic Diode Circuits  
+Limiters/Clampers 
+Passive Limiter - normal and zener 
+Precision Clamper 
+(servos out 0.6 V drop) 
+Zener Limiters Positive Clamper 
+ Unknown. All rights reserved. This content is excluded 
+from our Creative Commons license. For more information, 
+see http://ocw.mit.edu/fairuse.</text>
+        </slide>
+        <slide>
+          <slideno>14</slideno>
+          <text>18 JAP 2/04 
+Modulars are Analog Computers? 
+Compumedic Analog Computer from 1971 Photo of a Compumedic Analog Computer from 1971 removed due to 
+copyright restrictions. See: Old-Computers.com Museum .</text>
+        </slide>
+        <slide>
+          <slideno>34</slideno>
+          <text>44 JAP 2/04 
+Voltage Controlled Amplifiers 
+VCA output for sinusoidal input and given control voltage 
+Vout = Vin * Vctl (or 0 if Vctl &lt; 0) 
+ Unknown. All rights reserved. This content is excluded from our Creative 
+Commons license. For more information, see http://ocw.mit.edu/fairuse .</text>
+        </slide>
+        <slide>
+          <slideno>20</slideno>
+          <text>The Diode 
+ I/V characteristic, ideal diode, forward drop, 
+28 JAP 2/04 
+Diodes 
+zeners 
+Drops (Vd): 
+Si = 0.6 V 
+Ge = 0.3 V 
+LED = 2.4-3.5 V Schottky = .1-.3 V 
+Vd 
+ Unknown. All rights reserved. This content is excluded 
+from our Creative Commons license. For more information, 
+see http://ocw.mit.edu/fairuse.</text>
+        </slide>
+        <slide>
+          <slideno>28</slideno>
+          <text>37 JAP 2/04 
+Sampling Aids 
+ Aliasing for nonperiodic signals?? 
+ Can miss or miss-sample trasients! 
+ The Pulse-stretcher to the rescue! 
+ Sample/Holds 
+ Analog Multiplexers  Programmable Gain Amplifiers 
+(PGAs) 
+ Voltage-Controlled Amplifiers 
+(VCAs)</text>
+        </slide>
+        <slide>
+          <slideno>0</slideno>
+          <text>MAS836  Sensor Technologies for  Interactive Envir onments
+Original images  source unknown. All rights reserved. This content is excluded from 
+our Creative Commons license. For more information, see http://ocw.mit.edu/fairuse . 
+Lectur e 2  Analog Conditioning Electr onics, Pt. 2</text>
+        </slide>
+        <slide>
+          <slideno>37</slideno>
+          <text>48 JAP 2/04 
+Analog Multipliers (4-Quadrant) 
+4 Quadrant means: 
+Multiplying by 
+negative values 
+(negative voltages) inverts the output. Either input can go negative. 
+VCAs are 2 Quadrant 
+devices  the control 
+input cant go 
+negative, although the signal input can. 
+Courtesy of Analog Devices. Used with permission.</text>
+        </slide>
+        <slide>
+          <slideno>38</slideno>
+          <text>MIT OpenCourseWare
+http://ocw.mit.edu 
+MAS.836 Sensor Technologies for Interactive Environments 
+Spring 2011 
+For information about citing these materials or our Terms of Use, visit: http://ocw.mit.edu/terms.</text>
+        </slide>
+        <slide>
+          <slideno>36</slideno>
+          <text>47 JAP 2/04 
+VCA Arrays 
+Courtesy of Analog Devices. Used with permission.</text>
+        </slide>
+        <slide>
+          <slideno>16</slideno>
+          <text>JAP 2/04 
+Voltage-Controlled Filter 
+ Replace integrator input resistors with 2-quadrant multipliers 
+(voltage-controlled amplifiers, or VCAs) 
+ Need to tune both VCAs together 
+ Results in a wide-range tunable filter! 
+22  Multiplier can be used to tune Q as well  Elsevier. All rights reserved. This content is excluded from our Creative 
+Commons  license. For more information, see http://ocw.mit.edu/fairuse.</text>
+        </slide>
+        <slide>
+          <slideno>9</slideno>
+          <text>10 JAP 2/04 
+The Integrator 
+Saturates at rail!!</text>
+        </slide>
+        <slide>
+          <slideno>13</slideno>
+          <text>JAP 2/04 
+The State Variable Filter 
+ Analog Computer set up to solve a general Second-Order Differential Equation 
+ Exhibits rolloff, damping, and resonance 
+ Simultaneous low-pass, bandpass, high-pass, and notch outputs available 17</text>
+        </slide>
+        <slide>
+          <slideno>31</slideno>
+          <text>41 JAP 2/04 
+Analog Multiplexers 
+Courtesy of Analog Devices. Used with permission.</text>
+        </slide>
+        <slide>
+          <slideno>17</slideno>
+          <text>JAP 2/04 
+Switched-Capacitor Tunable Filters 
+ R is effectively varied 
+proportionally to the On/Off duty cycle 
+ Beware of aliasing (max input 
+frequency is under half the 
+switching frequency) 
+ Not for High Pass filters! 
+Tend to work best for lower-
+frequencies 23  
+Many types of analog switches are 
+available (e.g., ADG from Analog 
+Devices, etc.)  Elsevier Science and Technology. All rights reserved. This 
+content is excluded from our Creative Commons license. For 
+more information, see http://ocw.mit.edu/fairuse . 
+ Elsevier Science and Technology. All rights reserved. This 
+content is excluded from our Creative Commons license. For 
+more information, see http://ocw.mit.edu/fairuse .</text>
+        </slide>
+        <slide>
+          <slideno>11</slideno>
+          <text>12 AP 2/04 J
+The First-Order Active Low Pass Filter 
+f</text>
+        </slide>
+        <slide>
+          <slideno>19</slideno>
+          <text>27 JAP 2/04 
+Biasing 
+ AC Coupling 
+ Biasing noninverting input 
+ Biasing at inverting input</text>
+        </slide>
+        <slide>
+          <slideno>27</slideno>
+          <text>36 JAP 2/04 
+Sampling 
+ Nyquist:  fin &lt; fs/2 
+ Bandlimited (demodulation) sampling 
+ fin &lt; fs/2 
+ Loose absolute phase information 
+ Dont know whether phase moves forward 
+or backward 
+ Quadrature sampling 
+ Bandlimited sampling at t and a quarter-
+period later</text>
+        </slide>
+        <slide>
+          <slideno>22</slideno>
+          <text>30 JAP 2/04 
+Absolute Value Circuits  
+Bottom R is 2/3 top R in A1?  Unknown. All rights reserved. This content is excluded from our Creative 
+Commons license. For more information, see http://ocw.mit.edu/fairuse. 
+ Unknown. All rights reserved. This content is excluded from our Creative 
+Commons license. For more information, see http://ocw.mit.edu/fairuse .</text>
+        </slide>
+        <slide>
+          <slideno>33</slideno>
+          <text>43 JAP 2/04 
+Front end of the OTA  
+OTAs have 
+current outputs 
+ Ictot = ic1 +ic2 = iCTL 
+Increasing +VIN increases ic1, 
+which decreases ic2 (for fixed -VIN) 
+since the sum of ic1 and ic2 must 
+LM13700 Datasheet equal icTOT 
+icTOT is proportional to iCTL, 
+and the voltage across the 
+collector resistors is 
+proportional to icTOT, hence 
+the gain of this circuit is set 
+by icTOT  Unknown. All rights reserved. This content is 
+excluded from our Creative Commons license. For 
+more information, see http://ocw.mit.edu/fairuse . MTU ECE Diff Amp Notes 
+ National Semiconductor. All rights reserved. This content 
+is excluded from our Creative Commons license. For more 
+information, see http://ocw.mit.edu/fairuse .</text>
+        </slide>
+        <slide>
+          <slideno>7</slideno>
+          <text>8 JAP 2/04 
+The Differentiator</text>
+        </slide>
+        <slide>
+          <slideno>26</slideno>
+          <text>35 JAP 2/04 
+Voltage Multipliers, etc. 
+Ref: W ikipedia Transformer for isolation 
+- Diodes dont let 
+capacitors discharge onto 
+source 
+- AC coupling lets 
+each peak sit atop 
+capacitor voltage 
+-Each AC peak 
+increments voltage 
+by half-wave 
+height - V oltage drop at 
+given current 
+increases rapidly 
+(cube) with no. 
+stages, inversely 
+with C, freq Cascaded V illard doubler 
+ Unknown. All rights reserved. This content is excluded from our Creative 
+Commons license. For more information, see http://ocw.mit.edu/fairuse .</text>
+        </slide>
+        <slide>
+          <slideno>6</slideno>
+          <text>7 JAP 2/04 
+Active Filters 
+ The Differentiator 
+ The Active High-Pass Filter  Principle of Feedback Inversion 
+ The Integrator 
+ The Leaky Integrator (LP filter)  Buffered Passive Second-Order Filter  Sallen-Key (or VCVS) LP, HP, BP filters 
+ Single-OpAmp VCVS BP filter</text>
+        </slide>
+        <slide>
+          <slideno>3</slideno>
+          <text>4 JAP 2/04 
+Passive RC Filters 
+ Passive LP Filter:  RC network: f = 1/(2RC) c 
+-3dB = 0.707 
+This image is public domain. 
+This image is public domain. Frequency response of a high-pass filter.  Cambridge University Press. All rights reserved. This content is excluded from 
+our Creative Commons license. For more information, see http://ocw.mit.edu/fairuse . 
+ Passive HP filter:  RC network: fc = 1/(2RC) 
+1.0
+w 3dB =  1
+RCVout
+Vin
+0wVout
+Vin~ w (6dB/octave)
+Image  by MIT OpenCourseWare.</text>
+        </slide>
+        <slide>
+          <slideno>1</slideno>
+          <text>2 JAP 2/04 
+Reading 
+ Horowitz and Hill 
+ Finish Chapter 1, read Chapters 4&amp;5 
+ Fraden 
+ Interface Electronic Circuits Chapter (Chapter 4 
+of second edition)</text>
+        </slide>
+        <slide>
+          <slideno>4</slideno>
+          <text>2/04 JAP 
+Passive RC Filter Rolloff 
+The rest of this figure has been removed due to 
+copyright restrictions. It can be viewed on page 
+38 of The Art of Electronics , P. Horowitz and W. Hill.  
+See: page 38 of The Art of Electronics on Google Books.  
+Bode Plot:
+Freq. Response as a log-log plot
+Rollof f is 6 dB per Octave (2x) 
+20 dB per Decade (10x) 
+ Cambridge University Press. All rights reserved. This 
+content is excluded from our Creative Commons license. 
+For more information, see http://ocw.mit.edu/fairuse . 
+5</text>
+        </slide>
+        <slide>
+          <slideno>30</slideno>
+          <text>JAP 2/04 
+The Sample-Hold (and Track-Hold) 
+ Sample-Hold grabs input signal and holds it upon 
+receipt of a pulse edge 
+ Track-Hold follows the input signal when the gate 
+is high, but holds (latches) it when the gate is low. 
+ Sample hold acquires quickly  can use slow ADC. 39
+ Unknown. All rights reserved. This content is excluded from our Creative 
+Commons license. For more information, see http://ocw.mit.edu/fairuse.</text>
+        </slide>
+        <slide>
+          <slideno>25</slideno>
+          <text>JAP 2/04
+Pulse Stretcher
+C R
+VVs
+V t/RCe
+Vo e-t/RC
+t-Resistor continually (and 
+slowly) bleeds capacitor charg
+-Automatic reset
+-Tune time constant to match siggynal d ynamics ((so ppeaks are 
+34always followed)
+-Enables lazy sampling to catch transients</text>
+        </slide>
+        <slide>
+          <slideno>35</slideno>
+          <text>45 JAP 2/04 
+Voltage-Controlled Amplifiers (VCA) 
+Also AD603 
+Courtesy of Burr-Brown.  Used with permission. Courtesy of Analog Devices. Used with permission.</text>
+        </slide>
+      </slides>
+      <videos/>
+    </lecture>
+    <lecture>
+      <lecture_title>Pressure and force</lecture_title>
+      <lecture_pdf_url>https://ocw.mit.edu/courses/mas-836-sensor-technologies-for-interactive-environments-spring-2011/resources/mitmas_836s11_cls4pres_sen/</lecture_pdf_url>
+      <lectureno>4</lectureno>
+      <slides>
+        <slide>
+          <slideno>2</slideno>
+          <text>4 JAP 2/04 
+Position Encoders 
+ Displacement 
+ Rotary or Linear Potentiometer 
+ Linear encoder 
+ Optical 
+ Magneto-Acoustic 
+ Shaft encoders 
+ Rotary into Linear w. screw 
+(L) Incremental and (R) optical encoding disks. Courtesy of FABRA Inc. Used with permission. Image by MIT OpenCourseWare. Incremental (A) and absolute (B) optical encoding disks. A B</text>
+        </slide>
+        <slide>
+          <slideno>21</slideno>
+          <text>29 JAP 2/04 
+Tekscan Specs 
+Robustness? 
+Courtesy of TekScan. Used with permission.</text>
+        </slide>
+        <slide>
+          <slideno>16</slideno>
+          <text>21 JAP 2/04 
+Conductive Polymers and FSRs 
+ Microphotograph, showing conductive ink and 
+metalization from Interlink FSR  unknown. All rights reserved. This content is excluded from our Creative Commons license. 
+For more information, see http://ocw.mit.edu/fairuse .</text>
+        </slide>
+        <slide>
+          <slideno>14</slideno>
+          <text>19 JAP 2/04 
+Resistive (conductive) Elastomers 
+Early Z-T iles from the University of Limerick 
+McElligott, L., et al, 'ForSe FIElds' - Force Sensors for Interactive Envir onments, in UbiComp 2002 
+ Carbon or silver-loaded silicone rubber 
+ Dynamic range limits, hysteresis, longevity 
+ Commercial conductive rubber from: 
+ Zoflex from Xilor, inc. (rfmicrolink.com) 
+See: Koehly et al, Paper FSRs and Latex/ Fabric Traction Sensors: Methods for the 
+Development of Home-Made Touch Sensors, Proc. Of NIME 06 Image of a freshly made polymer sensor removed due to copyright restrictions. 
+See 'ForSE FIElds ' - Force Sensors For Interactive Environments.</text>
+        </slide>
+        <slide>
+          <slideno>23</slideno>
+          <text>31 JAP 2/04 
+QTC Pressure Sensors 
+ Made by Peratech in the UK 
+ Quantum Tunneling Composites 
+Metal-filled polymers, no direct conductive path 
+ Current flows via quantum tunneling (AC readout w. capacitance?) 
+ More tunneling (hence current) with more pressure  
+ No zero-point deadband, smoother response, more durability (maybe) 
+Many form factors (buttons, cables, etc.) 
+See: QTC  the discovery of a novel material | Practical Physics 
+ Peratech Limited. All rights reserved. This content is excluded from our Creative Commons license. For more information, see http://ocw.mit.edu/fairuse .</text>
+        </slide>
+        <slide>
+          <slideno>0</slideno>
+          <text>MAS836  Sensor Technologies for  Interactive Envir onments 
+ 
+Original images  source unknown. All rights reserved. This content is excluded from 
+our Creative Commons license. For more information, see http://ocw.mit.edu/fairuse . 
+Lectur e 4  Pressure Sensors Pt. 1</text>
+        </slide>
+        <slide>
+          <slideno>13</slideno>
+          <text>18 JAP 2/04 
+Conductive Foam 
+Metalized 
+Photo courtesy of Collin Mel  on Flickr. CC-BY-NC-SA 
+Photo courtesy of Jurvetson on Flickr. CC-BY Unknown. All rights reserved. This content is excluded 
+from our Creative Commons license. For more information , 
+see http://ocw.mit.edu/fairuse . 
+Standard (3D!) 0.1 
+0.00 
+0.06 
+0.04 0.02 
+0 
+0% 10% 20% 30% 40% 50% 60% 70% 0 1 2 3 4 5 6 7 8 9 10 
+% Compression Resistance (ohms/10 cm length)
+Force (Kg/10 cm length) 
+Competitive conductive foam LT conductive foam Wrapped FOF 
+Image  by MIT OpenCourseWare.</text>
+        </slide>
+        <slide>
+          <slideno>11</slideno>
+          <text>16 JAP 2/04 
+GelForce (U. Tokyo  Kamiyama et al) 
+Dual layers resolve both 
+See: YouTube normal and shear forces 
+ Derive pr essur e vector 
+Courtesy of TachiLab.  Used with permission.</text>
+        </slide>
+        <slide>
+          <slideno>22</slideno>
+          <text>30 JAP 2/04 
+Force Imaging 
+They do chair seats and beds too... Car driving over for ce imaging plate 
+Hong T an, Purdue 
+Ken Perlin/NYU make transpar ent interpolating FSRs Courtesy of Hong Tan.  Used with permission. Pressure images by Ken Perlin have been removed due to copyright restrictions.</text>
+        </slide>
+        <slide>
+          <slideno>26</slideno>
+          <text>2/04 JAP 
+Abrams-Gentile (used) Bend Sensor Pairs into differential amp for bidirectional bend sensing 
+b 
+i 
+l 
+Angle [degrees] 
+ Unknown.  All rights reserved. This content is excluded from our Creative Commons license. For more information, 
+see http://ocw.mit.edu/fairuse . 35-80 -60 -40 -20 0 20 40 60-0.5 -0.4 -0.3 -0.2 -0.1 0 0.1 0.2 0.3 0.4 0.5 
+t 
+t Poor r esponse (age or tape?) 
+Better r esponse Right Ankle Bend,  midpt pivot 
+1/4 pt pivo 
+3/4 pt pivo 
+Left Ankle Bend,  midpt pivot 
+1/4 pt pivot 
+3/4 pt pivot 
+B e n d S e n s o r O u t p u t [ u n c a 
+Two pairs of sensors tested 
+Each pair tested around 3 different pivot points 
+Hysteresis from tape?</text>
+        </slide>
+        <slide>
+          <slideno>29</slideno>
+          <text>MIT OpenCourseWare
+http://ocw.mit.edu 
+MAS.836 Sensor Technologies for Interactive Environments 
+Spring 2011 
+For information about citing these materials or our Terms of Use, visit: http://ocw.mit.edu/terms .</text>
+        </slide>
+        <slide>
+          <slideno>5</slideno>
+          <text>10
+2/04 JAP 
+Magneto-Acoustic Linear Encoders 
+ 1 mil per sample, 9 kHz updates 
+
+  Must measure T too! 
+ MTS Sensors Images relating to magnetostriction removed due to copyright restrictions. See: MTS Sensors .</text>
+        </slide>
+        <slide>
+          <slideno>19</slideno>
+          <text>25 JAP 2/04 
+The FSR Potentiometer 
+Force and pressur e 
+R ? Can also inject voltage 
+into W and have 
+transimpedance 
+amplifiers at A and B 
+Position is: 
+(VA-VB)/(VA+VB) 
+and Force becomes: 
+VA+VB 
+atiometric? From Rob Poor Oscillator (+V) VB -
++ -
++VA 
+ Unknown. All rights reserved. This content is excluded from our Creative Commons license. 
+For more information, see http://ocw.mit.edu/fairuse .</text>
+        </slide>
+        <slide>
+          <slideno>1</slideno>
+          <text>2 JAP 2/04 
+Very Basic Digital Noise Reduction 
+ Remove outliers 
+ Average the signals 
+ Summing N signals results in a resolution 
+improvement of a factor  N 
+ Provided that measurements are uncorrelated 
+and exhibit Gaussian statistics 
+ Must not be quantization limited 
+ I.e., you *need* some noise to start with! 
+ Note that this is *not* usually true for pickup, which 
+is from a correlated source! 
+ Pickup noise can add in phase 
+ Linearly!!! 
+ L3 BGO story...</text>
+        </slide>
+        <slide>
+          <slideno>15</slideno>
+          <text>20 JAP 2/04 
+Force Sensitive Resistors 
+ Composite structure 
+ Top, ink, electrodes 
+ Flat, but can be fragile to shear fo rce (delamination) and sensitive to bend Active area Spacer opening 
+Tail Vent Semi-conductor printed 
+on a flexible substrate 
+Adhesive spacer 
+Interdigitating diodes 
+printed on a flexible 
+substrate FSR Construction 
+Image by MIT OpenCourseWare.</text>
+        </slide>
+        <slide>
+          <slideno>28</slideno>
+          <text>38 JAP 2/04 
+Merlin Stretch Sensors 
+http://www .merlinrobotics.co.uk Comer cial str etchy r esistive sensor 
+Courtesy of Merlin Robotics. Used with permission.</text>
+        </slide>
+        <slide>
+          <slideno>24</slideno>
+          <text>JAP 2/04 
+FSR Bendy Sensors 
+Available from the Images Co. (for PowerGlove -made by Abrams-Gentile) 
+High-end versions made by Immersion for their CyberGlove 
+-0.5 resolution, 1 repeatability , 0.6% max nonlinearity , 2-cm min bend radius 
+These only measur e bend in one dimension (expanding the FSR s on surface) 
+-Conduction saturates quickly when contracted 
+-Can measur e bidir ectional bend with 2 FSR s back-to-back (and diff amp) 33 Courtesy of Images SI Inc. Used with permission.</text>
+        </slide>
+        <slide>
+          <slideno>7</slideno>
+          <text>JAP 2/04 
+Membrane Switch 
+A membrane switch being used as a tactile sensor. 
+ Commercial  can be printed and snap-assembled 
+ Made by ALPS among others (switch floor too) 
+ Typically polled in row-column fashion (e.g., drive columns, read rows) 
+12 Multiplexer 
+Output +5V 
+4.7k Spacer 
+Image by MIT OpenCourseWare.</text>
+        </slide>
+        <slide>
+          <slideno>9</slideno>
+          <text>Thunder 1 - with capacitance
+14 JAP 2/04 
+The Buchla Thunder 
+ Thunder 2 Tracks multipoint finger position 
+optically using reflective back of mylar drumhead. 
+ Thunder 1 used capacitance 
+US Patent  5,913,260 - June 15, 1999 Donald F . Buchla 
+System and method for detecting deformation 
+of a membrane 
+Courtesy of Buchla.  Used with permission.</text>
+        </slide>
+        <slide>
+          <slideno>10</slideno>
+          <text>15 JAP 2/04 
+Optical Pressure Sensors 
+ Pressure Profile of deformable 
+dot-matrix fingertip (Hristu, 
+Ferrier &amp; Brockett) 
+Housing Lighting 
+Camera Window Gel Membrane 
+ Unknonwn. All rights reserved. This content is 
+excluded from our Creative Commons license. For 
+more information, see http://ocw.mit.edu/fairuse . 
+Image by MIT OpenCourseWare.</text>
+        </slide>
+        <slide>
+          <slideno>18</slideno>
+          <text>23 JAP 2/04 
+FSR Interface Circuits 
+ Voltage Divider 
+ Very nonlinear; switch 
+characteristic 
+ Only buffer needed 
+ Current Mode 
+ Smoother range but 
+(Less headroom) 
+ Transimpedance amp 
+Voltage Divider 
+Curr ent-to-V oltage 
+ Unknown. All rights reserved. This content is excluded from our Creative 
+Commons license. For more information, see http://ocw.mit.edu/fairuse .</text>
+        </slide>
+        <slide>
+          <slideno>27</slideno>
+          <text>37 JAP 2/04 
+Stretchy FSR strain sensors 
+A novel strain sensor was used which was developed 
+by EMP A, Switzerland [12]. The sensor thread consists 
+of a commercial thermoplastic elastomer (TPE) filled with 
+50wt-% carbon black powder and changes resistivity with 
+length. It is fiber -shaped with a diameter of 0.3mm and 
+has, therefore, the potential to be  fully integrated into textile. 
+In this prototype setup, the sensor was attached with 
+a silicone film (see Fig. 2) which enables a measurement 
+range of 100% strain. The length of the sensor was chosen 
+to be 2cm. Recognizing Upper Body Postures  using Textile Strain Sensors 
+Corinn e Mattm ann, Oliver Amft, Holger Harm s, Gerhard T rster , 
+and Frank Clem ens (ETH Zurich) - Proc. Of ISWC 2007 
+TMS International - breathing belts (resistive) 
+http://www .tmsi.com 
+More on fabric-compatible sensors in Bio Lectur e Courtesy of TMS International.  Used with permission. 
+ ETH Zurich Wearable Computing Lab. All rights reserved. 
+This content is excluded from our Creative Commons license. 
+For more information, see http://ocw.mit.edu/fairuse .</text>
+        </slide>
+        <slide>
+          <slideno>6</slideno>
+          <text>11 JAP 2/04 
+Pressure 
+ Displacement into pressure 
+ E.g., F = -kx, and P = F/A (force per area) 
+ Strain into Force 
+ Strain is defined by s = L/L 
+ Piezoresistivity 
+Expansion (longer) 
+Compr ession (shorter) Applied 
+Force</text>
+        </slide>
+        <slide>
+          <slideno>20</slideno>
+          <text>26 JAP 2/04 
+The FlexiForce (from TekScan) 
+Courtesy of TekScan. Used with permission.</text>
+        </slide>
+        <slide>
+          <slideno>4</slideno>
+          <text>7 JAP 2/04 
+Linear Encoders 
+Optical encoders 
+-Track micro marks 
+-100 nm accuracy! 
+-Film encoders are in 
+cheap printers 
+Screen shot of the webpage for Heidenhain Linear Encoderssealed linear encoders and 
+exposed linear encoders, removed due to copyright restrictions. See: Heidenhain .</text>
+        </slide>
+        <slide>
+          <slideno>25</slideno>
+          <text>34 JAP 2/04 
+Resolution and Calibration T ests (from Stacy Morris 04) 
+Bend Sensor calibration 
+Pin Bendy Sensor with Batteries and 
+bend according to printed protractor 
+FSR calibration 
+Apply known pressure via 
+rubber bumper with materials 
+tester Images removed due to copyright restrictions.</text>
+        </slide>
+        <slide>
+          <slideno>8</slideno>
+          <text>How a MIDI Keyboard Works 
+ 
+Counter 
+Start (On low) 
+Stop (On high) (typically in 
+ASIC or P) +V
+ 
+ Velocity 
+ Measure time difference between key transitions 
+ Aftertouch 
+ FSR underneath keys 
+ FSRs were developed for this purpose (Interlink) 
+ Poly aftertouch has FSR under each key 
+ Mono aftertouch has FSR under key bank Count ~ Velocity</text>
+        </slide>
+        <slide>
+          <slideno>3</slideno>
+          <text>JAP 2/04 
+2 photodetectors 2 emitters Holes at 90  
+and dif ferent r 
+Rotating Disk Rotating Disk One Hole 
+Photodetectors Emitters Quadrature Encoders Determine Direction 
+2 Holes and 1 dual optical sensor 1 hole and 2 single optical sensors 
+One sensor measures I and the other measures Q 
+-&gt; Direction determined by whether I leads Q in time or vice-versa 
+Can be spaced mor e closely , for rapid dir ection determination 
+5</text>
+        </slide>
+        <slide>
+          <slideno>17</slideno>
+          <text>22 JAP 2/04 
+FSR Characteristics 
+ 3-4 decades of sensitivity, 0.01 - 100 
+PSI, hundreds of  to 10 Meg  
+ Depending on device &amp; Manufacturer 
+ --- is part-part repeatability bound 
+ Typically 15% -25% for Interlink 
+ Sensitive to temperature, humidity... 
+ Interlink Electronics. All rights reserved. This content is excluded from our Creative Commons license. For more information, see http://ocw.mit.edu/fairuse .</text>
+        </slide>
+        <slide>
+          <slideno>12</slideno>
+          <text>17 JAP 2/04 
+he Carbon Microphone  Sonic FSR T
+1878 
+ 1929 
+1628 N-1 T ype Carbon Microphone 
+Microphone Characteristics 
+A. Minimum Sensitivity @ 1 kHz with 85 mA(DC) Applied Current: 38 dBmV 
+B. Impedance Range: 15-60 ohms  Unknown.  All rights reserved. This content is 
+excluded from our Creative Commons license. For 
+more information, see http://ocw.mit.edu/fairuse .</text>
+        </slide>
+      </slides>
+      <videos/>
+    </lecture>
+    <lecture>
+      <lecture_title>Electronics (cont.)</lecture_title>
+      <lecture_pdf_url>https://ocw.mit.edu/courses/mas-836-sensor-technologies-for-interactive-environments-spring-2011/resources/mitmas_836s11_class3elect/</lecture_pdf_url>
+      <lectureno>3</lectureno>
+      <slides>
+        <slide>
+          <slideno>1</slideno>
+          <text>Passive LP Filter:  RC network: f = 1/(2RC) JAP 2/04 
+Passive RC Filters 
+c 
+ Passive HP filter:  RC network: fc = 1/(2RC) 
+-3dB = 0.707 
+Correction - To take the magnitude of a complex impedance, add the 
+real and imaginary parts in quadrature 2 
+This image is public domain.
+This image is public domain. Cambridge University Press. All rights 
+reserved. This content is excluded from 
+our Creative Commons license. For more 
+information, see http://ocw.mit.edu/fairuse .
+1.0
+w 3dB =  1
+RCVout
+Vin
+0wVout
+Vin~ w (6dB/octave)
+Frequency response of a high-pass filter.Image by MIT OpenCourseWare.</text>
+        </slide>
+        <slide>
+          <slideno>6</slideno>
+          <text>7 JAP 2/04 
+Log Amplifiers 
+Smoothly 
+limit 
+(compress) 
+the amplitude 
+of a signal 
+Courtesy of Burr-Brown.  Used with permission.</text>
+        </slide>
+        <slide>
+          <slideno>5</slideno>
+          <text>6 JAP 2/04 
+Nonlinear Signal Shaping 
+ Diode Shapers 
+ Log Amps 
+ Companders 
+ Analog Multipliers 
+ Squaring and square-rooting 
+Transdiode Amplitude Compr ession</text>
+        </slide>
+        <slide>
+          <slideno>31</slideno>
+          <text>43 JAP 2/04 
+Voltage Regulators 
+ Series Regulators are simple often 3-terminal devices (in-gnd
+out) that step an input voltage down to a lower (stable) reference 
+voltage 
+ Waste power dissipated = (V)(I) 
+ Keep within device limits to avoid overheating 
+ Maximum V ranges from approx. 100 mV to 3 V , depending on device, 
+currents range from 100 mA to many Amperes 
+ Switched Capacitor Regulators provide limited current w. 
+minimal components, and can boost voltage. 
+ Inductive switching regulators require external inductor and 
+possibly other components, but can raise (boost) or lower (buck) 
+voltage at very high (over 90%) efficiency.  Some regulators can 
+switch from boost to buck to keep running as the battery dies 
+ These regulators transform impedance 
+ Many regulators of all types often include a battery low output 
+ Unknown. All rights reserved. This content is 
+excluded from our Creative Commons license. For 
+more information, see http://ocw.mit.edu/fairuse .</text>
+        </slide>
+        <slide>
+          <slideno>35</slideno>
+          <text>MIT OpenCourseWare
+http://ocw.mit.edu 
+MAS.836 Sensor Technologies for Interactive Environments
+Spring 2011 
+For information about citing these materials or our Terms of Use, visit: http://ocw.mit.edu/terms.</text>
+        </slide>
+        <slide>
+          <slideno>11</slideno>
+          <text>JAP 2/04 
+Analog Multipliers (4-Quadrant) 
+This is a cheap one 
+$5 or so apiece 
+They get much 
+more expensive with more bandwidth and 
+accuracy 
+-Quadrant flips phase w. sign 
+2-Quadrant multiplies |X|Y 
+only changes gain 
+15 4
+Courtesy of Analog Devices. Used with permission.</text>
+        </slide>
+        <slide>
+          <slideno>20</slideno>
+          <text>26 JAP 2/04 
+The Non-Ideal OpAmp (cont.) 
+ Gain-Bandwidth limitations 
+ The more closed-loop gain your circuit needs, the more 
+bandwidth you need in your OpAmp. Output Slew 
+ Speed (slew rate) 
+ Maximum output current (typically Maximum output voltage (+ and -)  20 mA, less for pwr) 
+ Rail-Rail... 
+ Maximum input voltage 
+ Rail-Rail... GOL 
+GCL dB Max closed loop bandwidth at 
+GCL 
+frequency Higher -order rolloffs can make instability at high gains 
+in V/s 
+Op Amp 
+Output Power Rail 
+Maximum Output Can clip unless R-R 
+Can range 
+up to 3 V olts</text>
+        </slide>
+        <slide>
+          <slideno>30</slideno>
+          <text>42 JAP 2/04 
+Many books on the subject 
+ But its often a black art! Cover for Noise Reduction Techniques in Cover for Grounding and Shielding 
+Electronic Systems , Henry W. Ott, Techniques , Ralph Morrison, removed due 
+removed due to copyright restrictions. to copyright restrictions.</text>
+        </slide>
+        <slide>
+          <slideno>3</slideno>
+          <text>2/04 JAP 
+Biasing an entire circuit with a Buffered Voltage
+Bias Buffer 
+AC Coupling 
+Capacitor X11 noninverting 
+stage X10 inverting
+stage
+AC Coupling Capacitor 
+(decouple accumulated 
+offset err ors)
+X10 inverting 
+stage 
+A 60 dB (x1 100) high-
+impedance, AC-
+Coupled amplifier  with 
+bias made fr om a quad 
+OpAmp 4</text>
+        </slide>
+        <slide>
+          <slideno>27</slideno>
+          <text>37 JAP 2/04 
+Ground Loops 
+ Ground loops are caused by running (or daisy
+chaining) the power supply past too many loads 
+ Resistive and inductive components of the wire cause 
+voltages to be dropped as current is pulled 
+ Wire everything directly to the power supply! Images of incorrect and correct grounding from Handbook of 
+Modern Sensors: Physics, Designs, and Applications (page 220) 
+removed due to copyright restrictions. See: Google Books</text>
+        </slide>
+        <slide>
+          <slideno>29</slideno>
+          <text>40 JAP 2/04 
+Mixed Signal Systems 
+ Worship the Star... 
+Jason adds mor e here! Where possible, pour 
+ground and power planes (separate digital &amp; analog 
+ground except at junction), 
+avoid running sensitive 
+analog signals past noisy 
+digital lines. Diagram of power supply di stribution and grounding in a system 
+containing both digital and analog circuits, from  Analog Signal 
+Processing  (page 480) removed due to  copyright restrictions. See: 
+page 480 of Analog signal processing on Google Books.</text>
+        </slide>
+        <slide>
+          <slideno>0</slideno>
+          <text>MAS836  Sensor Technologies for  Interactive Envir onments
+Lectur e 3  Analog Conditioning Electr onics, Pt. 3
+Original images  source unknown. All rights reserved. This content is excluded from 
+our Creative Commons license. For more information, see http://ocw.mit.edu/fairuse .</text>
+        </slide>
+        <slide>
+          <slideno>19</slideno>
+          <text>25 JAP 2/04 
+The Non-Ideal OpAmp 
+Offset voltage and Current 
+- Important for precision DC applications - Can drift with temperature and general mood 
+- High impedance source 
+- Use low offset current amp 
+(also make + and - impedance identical) 
+- Low impedance source 
+- Use low offset voltage amp 
+Finite input resistance (and CM 
+resistance) 
+-Use high-Z (FET or MOSFET) 
+amplifier where this is critical (e.g., 
+high-Z sensor) 
+ Prentice Hall. All rights reserved. This content is excluded 
+from our Creative Commons license. For more information, 
+see http://ocw.mit.edu/fairuse .</text>
+        </slide>
+        <slide>
+          <slideno>13</slideno>
+          <text>2/04 JAP 
+Demodulating with a switch (Walsh Waves)
+Cheaper , and sometimes more accurate than using a multiplier 
+Some analog switches h ave the built-in inverter 
+Can use instrumentation amplifier  (w. passive f ilters on inputs) to subtract on fr om off 
+If P  is fast enough, this can be do ne digitally (dynamic range in sum?) 17</text>
+        </slide>
+        <slide>
+          <slideno>12</slideno>
+          <text>6 JAP 2/04 
+Synchronous Detection 
+f 
+4-Quadrant 
+multipli cation 
+suppresses the carrier - Also called a Lock-in Amplifier 
+- Also a Matched Filter of sorts - Can regenerate carrier with PLL if 
+no connection 
+Tight low-pass filter gives 
+extremely high noise rejection! 1Quadrature 
+demodulation 
+eliminates need to 
+chase phase</text>
+        </slide>
+        <slide>
+          <slideno>21</slideno>
+          <text>30 JA
+Some of Joes Old Favorites (needs updating!) P 2/04 
+* Ancient: 741 
+* Garden variety , out to 200 Khz; not ba d for audio either (LF351, TLO81/2/4, OP482/4 
+* A little better: AD71 1/712/713 
+* Generic, single supply (pulls to ground) LM324 (quad) 
+* Low Power: TLO6x, CMOS: TLC271 series (programmable power), CA3130, CA3140 
+* Low Power , low V, R-R (often CMOS): LPC 661IN (National), MAX494 series, OP491, TLC2274 series 
+* Similar , but a bit faster: OP462 series 
+* Low voltage, R-R, moderate power , good speed: MAX474/475 
+* Good DC performance (low drift): LM308, OP297/497, OP27 
+* Low noise, Stiff drivers (600 Ohm audio lin es), standard in audio: NE5532/5534, TLE2082 series 
+* Low voltage noise: AD743, AD745, AD797 (this one is touchy ...)! 
+* Fast OpAmps: LM318, AD817 (video; nice and stable), AD829 (low noise video) 
+* Dif ferential video amps/drivers (not really OpAm ps): LM733, NE529 (stability woes... very fast and cheap) 
+* Comparators (not really OpAmps either ...): LM31 1, LM339 (quad; single supply), CA3290 (CMOS) 
+* Instrumentation amplifiers (" "): Burr Brown INA  series, AnalogD's AMP01 (low noise), AD623 (low V, R-R) 
+OpAmp V ariants: 
+* Norton Amplifiers (CDA's): e.g., LM3900 
+* Current-Feedback Amplifiers: e.g., National Comlinear series 
+* Programmable Gain Amplifiers (PGA's): e.g., AD8320, OP A675, OP A676 OPA340 3.3V  supply , rail-to-rail input and output 
+LT1792 very low current and voltage noise 
+OPA129 lowest bias current (100fA), but low bandwidth 
+LTC1150 chopper stablized opamp, no ext. clock, pin for pin replacement for 8pin single package opamps</text>
+        </slide>
+        <slide>
+          <slideno>4</slideno>
+          <text>5 JAP 2/04 
+Sampling 
+ Nyquist:  fin &lt; fs/2 
+ Bandlimited (demodulation) sampling 
+ fin &lt; fs/2 
+ Loose absolute phase information 
+ Dont know whether phase moves forward or backward 
+ Quadrature sampling 
+ Bandlimited sampling at t and a quarter-period later 
+ Form the Analytic Signal 
+ I.E., the Quadrature (complex) Amplitude 
+ Can also do this with multipliers and quadrature 
+demodulation 
+ Synchronous undersampling for periodic signals</text>
+        </slide>
+        <slide>
+          <slideno>18</slideno>
+          <text>23 JAP 2/04 
+Noise in Inverting and Noninverting Amplifiers 
+Noise gain, and the problem with capacitive loads at the inverting input 
+Short answer for noise -for high impedance sources, use low in OpAmps 
+-for low impedance sources, use low vn OpAmps Noise gain = noninverting 
+gain via Thevenin Images from The Art of Electronics (page 447) 
+describing noise in non-inverting and inverting amplifiers removed due to copyright restrictions. See: Google Books
+.</text>
+        </slide>
+        <slide>
+          <slideno>28</slideno>
+          <text>JAP 2/04 
+More Ground Loops 
+In order to reduce interference that results from a common impedance, power 
+distribution can be done with separate supply lines for each circuit. 
+The Right Way... 
+38 Power distribution with separated supply lines for each circuit to reduce interface resulting from a common impedanceZs1
+Zs1
+Zs2
+Zs3Power
+supplyCircuit 1 Circuit 2 Circuit 3 Zs2Zs3
+Power
+supply
+Image by MIT OpenCourseWare.</text>
+        </slide>
+        <slide>
+          <slideno>10</slideno>
+          <text>14 2/04 JAP
+The 555 Timer (556 is dual version) 
+One Shot Astable 
+Extremely versatile and cheap (and old!) module 
+Low power version (L555 or 555L) 
+Normal version does hours - 1 microsec 
+Can voltage-control the pulse period (nonlinear) 
+Triggering a monostable from a clock provides a voltage-variable 
+periodic pulse (that can be timed in a microprocessor) V oltage 
+Control PinV oltage 
+Control Pin 
+ Unknown. All rights reserved. This content is excluded from our Creative Commons license. For more information, see http://ocw.mit.edu/fairuse .</text>
+        </slide>
+        <slide>
+          <slideno>33</slideno>
+          <text>46 JAP 2/04 
+Inductive(?) Isolation Amplifier 
+Courtesy of Analog Devices. Used with permission.</text>
+        </slide>
+        <slide>
+          <slideno>16</slideno>
+          <text>20 JAP 2/04 
+Shot Noise 
+ Shot (or Quantization) noise 
+ Rain on the Roof - when each electron does 
+something different 
+ Prevalent where electrons cross a barrier 
+ Diodes, transistors 
+ Not in wires, less in resistors 
+Inoise = 2qIdcf 
+ Proportionally worse with small current 
+ Flat spectrum 
+ Popcorn noise 
+ Periodic spikes in signal 
+ These days, typically a bad component... (char ges acting independently)</text>
+        </slide>
+        <slide>
+          <slideno>17</slideno>
+          <text>21 JAP 2/04 
+Noise Parameters 
+ Sensor impedance will produce Johnson noise 
+ Current and voltage modes 
+ Signal-to-noise (dB) = 10 log10(Vs 2/Vn 2) 
+ Noise figure is ratio (in dB) of the output noise of the real 
+amplifier to the output noise of a zero-noise amplifier 
+(only gain) with a given resistor Rs at the input. 
+ Insensitive parameter for high Rs 
+ Useful for a fixed, given impedance 
+ RF device at 50  or a particular sensor 
+ Equivalent to noise temperature (T of Rs to give noise in ideal 
+amplifier) 
+ Noise adds in quadrature (if sources are uncorrelated!)</text>
+        </slide>
+        <slide>
+          <slideno>9</slideno>
+          <text>12 JAP 2/04 
+Pulse Encoding  
+ The astable multivibrator 
+ VCO (voltage controlled oscillator)
+ PWM (pulse-width modulation)  
+ Voltage-to-Frequency Converters 
+ Using the 555 as a Voltage-to-PW converter 
+How do I make this into a VCO? 
+What kind of waveform(s) does this produce? 
+Courtesy of Unknown. Used with permission.</text>
+        </slide>
+        <slide>
+          <slideno>34</slideno>
+          <text>JAP 2/04 
+Other Isolation Amplifiers 
+Capacitive coupling 
+Optical analog isolation amps 
+- Homebuilt around LDRs 
+- Feedback linearization.. 
+Uses LDR s - can use photodiodes too. 
+Instead of dual receiver coupling, can drive 2 
+identical LEDs and couple each independently 
+47 Optical Isolation 
+(Sealed tube, tape, etc.) 
+R 
+Courtesy of Burr-Brown. Used with permission.</text>
+        </slide>
+        <slide>
+          <slideno>26</slideno>
+          <text>36 JAP 2/04 
+Other Types of Pickup 
+ Lack of Bypass Capacitors 
+ Put them (.1 uF) at the power terminals of 
+every component 
+ Use a groundplane 
+ Microphonics 
+ Jiggling things 
+ Lock it all down 
+ RF detection with nonlinear junctions 
+ Shield, shield, shield 
+ Ionizing radiation 
+ Lead, etc.</text>
+        </slide>
+        <slide>
+          <slideno>7</slideno>
+          <text>Diode Triangle-to-Sine Waveshape r
+Slightly modified P AIA Design</text>
+        </slide>
+        <slide>
+          <slideno>14</slideno>
+          <text>18 JAP 2/04 
+Buy it as the AD630 
+Courtesy of Analog Devices. Used with permission.</text>
+        </slide>
+        <slide>
+          <slideno>25</slideno>
+          <text>35 JAP 2/04 
+Guard Electrodes  
+ On-Board Driven 
+Shields to prevent 
+crosstalk and coupling 
+ Guards should be 
+driven by a low-
+impedance source close 
+to the voltage on the 
+electrodes to be 
+guarded 
+ E.g., a driven shield, or 
+a ground in an inverting 
+op-amp configuration 
+ Elsevier. All rights reserved. This content is excluded from our Creative
+Commons license. For more information, see http://ocw.mit.edu/ fairuse .</text>
+        </slide>
+        <slide>
+          <slideno>32</slideno>
+          <text>45 JAP 2/04 
+Isolation and Protection 
+ Diode Protection for inputs 
+ e.g., from static electricity (ESD), actuator voltage, etc. 
+ Isolation Amplifiers 
+ Inductive 
+ Optical 
+ Capacitive -
++ Rf 
+Vout Vi (e.g., capacitive plate) Clamping Diodes 
+(-.6 &lt; Vi &lt; +.6) 
+Low-value input resistor (e.g., 33 ) 
+Can drop voltage and help protection</text>
+        </slide>
+        <slide>
+          <slideno>8</slideno>
+          <text>11 JAP 2/04 
+Digitization 
+ Can use an analog-digital converter (ADC) 
+ 8-12 bit converters commonly on Computers 
+ Sometimes 16 or 24 bit (Converter from Analog) 
+ For special applications, one can use an ADC chip 
+ Typically talk SPI, I2C, etc. 
+ Many kinds of ADC 
+ Pipeline, Successive Approximation, Flash,  
+ Ari will tell you lots about how these work and their characteristics 
+ For just 1 or 2 bits, you can use comparators 
+ Comparitors often on C chip too 
+ You can also convert an amplitude into a time signal 
+ Only need a logic pin and a timing routine (or internal C timer) 
+ Voltage to pulse-width, voltage to frequency 
+ Can do current too!</text>
+        </slide>
+        <slide>
+          <slideno>24</slideno>
+          <text>34 JAP 2/04 
+Driven Shields 
+ Unknown. All rights reserved. This content is excluded from our Creative Commons license. 
+For more information, see http://ocw.mit.edu/fairuse .</text>
+        </slide>
+        <slide>
+          <slideno>23</slideno>
+          <text>Pickup!!! 
+ Capacitive coupling (high-Z sensors) 
+ Shield, use differential pair cable and perhaps 
+differential front end 
+ Inductive coupling (low-Z sensors) 
+ Use differential pair, shield w. high-permiability 
+material (iron or -metal), reorient components (vector 
+33 JAP 2/04 
+Other Sources of Noise 
+coupling) 
+ Shielded cable 
+ Shielded pair 
+ Ground shield at signal source 
+Corr ect 
+ Unknown. All rights reserved. This content is 
+excluded from our Creative Commons license. For 
+more information, see http://ocw.mit.edu/fairuse .</text>
+        </slide>
+        <slide>
+          <slideno>15</slideno>
+          <text>JAP 2/04 
+Sources of Noise in Electronics 
+ Johnson (or Nyquist) Noise
+ Flat spectrum 
+Vnoise =  4kTR[f]  
+ Independent of current 
+ Comes from the fluxuation-dissipation theorem 
+ Flicker Noise 
+ 1/f spectrum (equal power per decade of frequency) 
+ Increases with current through element  Due to nonidealities (or granularity) in component 
+Flicker noise in different 
+kinds of resistors: Vnoise 10K resistor @ room temp develops 1.3 V over decade in frequency 
+ 
+rms microvolts per volt applied across the resistor,  
+measured over one decade of frequency: 
+Carbon-composition               0.10V to 3.0V
+Carbon-film                           0.05V to 0.3V
+Metal-film                              0.2V to 0.2V
+Wire-wound                           0.01V to 0.2V
+19</text>
+        </slide>
+        <slide>
+          <slideno>2</slideno>
+          <text>3 JAP 2/04 
+Biasing 
+ AC Coupling 
+ Biasing noninverting input 
+ Biasing at inverting input 
+Buffer the voltage divider s output and use it everywhere...</text>
+        </slide>
+        <slide>
+          <slideno>22</slideno>
+          <text>Ari Benbasat on OpAmps
+Here is the low-power op amp I spec'ed out for my thesis and/or future 
+Stack work: 
+"...the Maxim MAX9911 is recommended. It is available in a single SC70 
+package (5mm2) with shutdown, and has a turn on time of 30 us. Typical current draw is 4 uA with a shutdown draw of 1 nA. The gain bandwidth 
+product of 200 kHz is acceptable for most uses."</text>
+        </slide>
+      </slides>
+      <videos/>
+    </lecture>
+  </lectures>
+</doc>

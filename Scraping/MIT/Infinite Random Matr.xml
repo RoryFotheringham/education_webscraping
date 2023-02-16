@@ -1,0 +1,2577 @@
+<doc>
+  <source>MIT</source>
+  <date>28/01/2023</date>
+  <course>
+    <course_url>https://ocw.mit.edu/courses/18-338j-infinite-random-matrix-theory-fall-2004/</course_url>
+    <course_title>Infinite Random Matrix Theory</course_title>
+    <course_tags>
+      <list>Science </list>
+      <list>Physics </list>
+      <list>Mathematics </list>
+    </course_tags>
+  </course>
+  <lectures>
+    <lecture>
+      <lecture_title>Free Cumulants in Free Probability</lecture_title>
+      <lecture_pdf_url>https://ocw.mit.edu/courses/18-338j-infinite-random-matrix-theory-fall-2004/resources/handout6/</lecture_pdf_url>
+      <lectureno>6</lectureno>
+      <slides>
+        <slide>
+          <slideno>9</slideno>
+          <text>/productdisplay 
+/productdisplay 3. If S is the set of upper triangular matrices, then m= n and (AB)upper = upper( BXAT). 
+4. We recall that S is a projection if is linear and for all XRmn ,  . S	 SXS
+5. Jacobian of sym: 
+BXAT + AXBT 
+(AB)symX= 2
+If B= Athen
+det J = ij = (det A)n+1 
+ij 
+Tby considering eigenmatrices E= uiuj for ij. 
+6. Jacobian of upper: 
+Special case: Alower triangular, B upper triangular so that 
+(AB)upperX= BXAT 
+since BXAT is upper triangular. 
+The eigenvalues of Aand B are i =	Aii and j = Bjj respectively, where Aui = iui and Bvi = ivi 
+T(i= 1, . . ., n ). The matrix Mij = viuj for ijis upper triangular since vi and uj are zero below the 
+ith and above the jth component respectively. (The eigenvectors of a triangular matrix are triangular.) j 
+  
+i     for ij . Mij =   
+Since the Mij are a basis for upper triangular matrices BM ijAT = ijMij. We then have 
+n n 
+23det J = ij = (12
+3 . . . n)(1  n1  n2 . . . n)2 3 
+ij 
+n = (A11A2 
+33 . . . Ann)(Bn 
+22A3 
+11Bn1Bn2 . . .B nn).22 33 
+Note that J is singular if an only if Aor B is. 
+7. Jacobian of Toeplitz
+Let X be a Toeplitz matrix. We can dene
+(AToeplitz B)X = Toeplitz( BXAT)
+where Toeplitz averages every diagonal.
+4 Jacobians of Linear Functions, Powers and Inverses 
+The Jacobian of a linear map is just the determinant. This determinant is not always easily computed. The 
+2 dimension of the underlying space of matrices plays a role. For example the Jacobian of Y = 2X is 2n for 
+n(n+1)	 n(n1) 
+2	 2 X Rnn, 2 for upper triangular or symmetric X, 2 for antisymmetric X, and 2n for diagonal 
+X. 
+We will concentrate on general real matrices X and explore the symmetric case and triangular case as 
+well when appropriate.</text>
+        </slide>
+        <slide>
+          <slideno>5</slideno>
+          <text>/radicalbig 
+/bracketleftigg /bracketrightigg 
+/bracketleftigg /bracketrightigg /bracketleftbigg /bracketrightbigg /bracketleftbigg /bracketrightbigg /bracketleftbigg The Jacobian matrix is  1  
+p 0 0 
+   1  s 0 J =  0 1 2   
+r/p r/s 2 ps ps ps   
+so that 1 det J = 4ps 
+Breakdown occurs if p or s is 0. 
+Example 7: Traceless Symmetric = Polar Decomposition ( S = QQT , tr S = 0) 
+The reader will recall the usual denition of polar coordinates. If ( p, s) are Cartesian coordinates, then 
+the angle is  = arctan( s/p) and the radius is r = p2 + s2 . If we take a symmetric traceless 2  2 matrix 
+p s 
+S = , 
+s p 
+and compute its eigenvalue and eigenvector decomposition, we nd that the eigendecomposition is mathe
+matically equivalent to the familiar transformation between Cartesian and polar coordinates. Indeed one of 
+the eigenvectors of S is (cos , sin ), where  = /2. The Jacobian matrix is 
+  
+p2p 
++s
+p2s 
++s2 2 
+J =   
+p s 
+2 p2+s2 p2+s
+The Jacobian is the inverse of the radius. This corresponds to the familiar formula using the more usual 
+notation d xdy/r = drd so that det J = 1/r. Breakdown occurs when r = 0. 
+Example 8: The Symmetric Eigenvalue Problem ( S = QQT ) 
+We compute the Jacobian for the general symmetric eigenvalue and eigenvector decomposition. Let 
+p s cos   sin   1 cos   sin  /bracketrightbiggT 
+S = = . sin  cos   2 sin  cos s r 
+We can compute the eigenvectors and eigenvalues of S directly in MATLAB and compute the Jacobian of 
+the two eigenvalues and the eigenvector angle, but when we tried with the Maple toolbox we found that the symbolic toolbox did not handle arctan very well. Instead we found it easy to compute the Jacobian in the other direction. 
+We write S = QQT , where Q is 2  2 orthogonal and  is diagonal. The Jacobian is 
+  2 sin cos (1  2) cos2  sin 2  
+  J =  2 sin cos (1  2) sin 2  cos2   
+  
+(cos2   sin 2 )(1  2) sin  cos   sin cos  
+so that 
+det J = 1  2 . 
+Breakdown occurs if S is a multiple of the identity. 
+Example 9: Symmetric Congruence ( Y = ATSA)</text>
+        </slide>
+        <slide>
+          <slideno>28</slideno>
+          <text>/parenleftbigg /parenrightbigg 
+/parenleftbigg /parenrightbigg /parenleftbigg /parenrightbigg 
+/summationdisplay 
+/integraltext 
+/summationdisplay 
+/logicalanddisplay 
+/summationtext Of course the sphere and the orthogonal group are special cases of the Stiefel manifold with p= 1 and p= n 
+respectively. 
+We will derive and explain the meaning of the following volume forms on these objects 
+Sphere (HTdq)where H is a so-called Householder transform i=2,...,n 
+Orthogonal Group ( QTdQ) = (QTdQ)
+i&gt;j 
+Stiefel Manifold ( QTdY)
+i&gt;j where QTY = Ip. 
+The concept of volume or surface area is so familiar that the reader might not see the need for a formalism 
+to encode this concept. 
+Here are some examples. 
+x1Example 1: Integration about a circle Let x= . x2 
+/integraldisplay /integraldisplay 2 
+f(x)(x1dx1 + x2dx2) = f(cos ,sin )d 
+xR2 
+0 x=1 
+x1 cos  Algebraic proof: = implies x2 sin  
+/parenleftbigg /parenrightbigg T /parenleftbigg /parenrightbigg /parenleftbigg /parenrightbiggT /parenleftbigg /parenrightbigg 
+2 dx1  sin   sin  x2dx1 + x1dx2 = d= x= d . x1 dx2 cos  cos  
+Geometric Interpretation : Approximate the circle by a polygon with ksides. 
+/parenleftigg /parenrightigg T(i) /integraldisplay 2 
+(x(i)  x(i1))  f(x(i)) x
+(2 
+i) f(cos ,sin )d . x1 0 
+Note that the dot product computes /bardblvi/bardbl. 
+Geometric interpretation of the wrong answer: Why not f(x)dx1?
+x=1
+xR2 
+This is approximated by /parenleftbigg /parenrightbigg T 
+f(x(i))1 v(i) 
+0 
+which is the integral of f over the shadow of the circle on the x-axis. 
+Example 2: Integration over a sphere Given q with /bardblq/bardbl = 1, let H(q) be any n n orthogonal matrix 
+with rst column q. (There are many ways to do this. One way is to construct the Householder reector 
+T I 2vv H(q) = v v , where v= e1  q, and e1 is the rst column of I.) 
+The sphere is an n 1 dimensional surface in n dimensional space. 
+Integration over the sphere is then T
+/integraldisplay n /integraldisplay 
+f(x) (HTdx)i = f(x)dS , 
+xRn xRn 
+x=1 i=2 x=1 
+where d S is the surface volume on the sphere. 
+Consider the familiar sphere n = 3. Approximate the sphere by a polyhedron of parallelograms with k 
+faces. A parallelogram may be algebraically encoded by the two vectors forming edges, into a matrix V(i). 
+We have f(x(vi)) det(H(q)TV) approximates this integral. 
+Example 3: The orthogonal group Let O(n) denote the set of orthogonal n nmatrices. This is an n(n1) 
+2 dimensional set living in Rn . 2</text>
+        </slide>
+        <slide>
+          <slideno>4</slideno>
+          <text>/bracketleftigg /bracketrightigg /bracketleftigg /bracketrightigg /bracketleftigg /bracketrightigg 
+/ne}ationslash
+/bracketleftbigg /bracketrightbigg 
+/bracketleftigg /bracketrightigg /bracketleftbigg /bracketrightbigg so that 
+det J = (det X)4 . 
+Breakdown occurs if X is singular. 
+Example 4: Linear Transformation ( Y = AX + B) 
+  a b 0 0 
+   c  d 0 0  J =    0  0 a b   
+0 0 c d 
+The Jacobian matrix has two copies of the constant matrix A so that det J = det A2 = (det A)2 . Breakdown 
+occurs if A is singular. 
+Example 5: The LU Decomposition ( X = LU) 
+The LU Decomposition computes a lower triangular L with ones on the diagonal and an upper triangular 
+U such that X = LU. 
+For a general 2  2 matrix it takes the form 
+p q 1 0 p q 
+= 
+r s 
+which exists when p = 0. r
+p p psqr 1 0 
+Notice the function of four variables might be written: 
+y1 = p 
+y2 = r/p 
+y3 = q 
+y4 = (ps  qr)/p = det( X)/p 
+The Jacobian matrix is itself lower triangular 
+  1 0 0 0 
+ p1  0 0r
+p2 
+  ,  0  0 1 0       
+J =  
+qr 
+p2 
+so that det J = 1/p. Breakdown occurs when p = 0. 
+Example 6: A Symmetric Decomposition ( S = DMD ) 
+Any symmetric matrix X = p r may be written as r s 
+p 01 r/ps X = DMD where D = . 
+0 s r/ps 1 
+Since X is symmetric, there are three independent variables, and thus the Jacobian matrix is 3  3. The 
+three independent elements in D and M may be thought of as functions of p, r, and s: namely 
+y1 = p 
+y2 = s and 
+y3 = r/ps q
+p r
+p 1  
+and M =</text>
+        </slide>
+        <slide>
+          <slideno>14</slideno>
+          <text>It is fairly messy to write down the exact Jacobian matrix. Fortunately, it is unnecessary to do so. We 
+obtain the LU factorization of the matrix by dening auxiliary variables yi as follows: 
+2 2y1 = x1 + + x2 = rn
+2y2 = x2 + + x2 = r2 sin 2 1 n
+2y3 = x3 + + x2 = r2 sin 2 1 sin 2 2 n
+. . . . . . . . . . . . . . .. . . 
+yn = x2 = r2 sin 2 1 sin 2 2 sin 2 n1 n 
+Dierentiating and expressing the relationship between d yi +dxj for i, j= 1, . . ., n in matrix form we obtain 
+that the Jacobian matrix Jxy from x to yis triangular: 
+   x1 x2 dy1  xn dx1 
+ x2  xn dx2  dy2   2 .  .  =  .  . . . .  .   .   . 
+xn dxn dyn 
+We recognize that we have an upper triangular matrix in front of the vector of Cartesian dierentials and a 
+lower triangular matrix in front of the vector of spherical coordinate dierentials. 
+     1 1 1 x1 dx1 dy1  
+ 1 1 x2 dx2  dy2       
+2 .  .  .  =  .  . . . .  .  .  .   .  
+1 xn dxn dyn 
+Similarly the Jacobian matrix Jspherical y from spherical coordinates to yis triangular 
+     2. r dr dy1 .  . 2rsin 1x1  d1   dy2  . .       .. ..2rsin 1 sin 2x2  d2  =  ..  .  . . . .  . . . .  .   .   . . . .  . . . . . . . . . . . 2rsin 1 sin n1xn1 dn1 dyn 
+Therefore J x r, = J1 
+r,y J xy . 
+The LU (really ( L1U)1) allows us to easily obtain the determinant as the ratio of the triangular 
+determinants. The Jacobian determinant is then 
+(x1, . . . , x n) 2nrn(sin 1)n1(sin 2)n2(sin n1)x1 xn1 = 
+(r, 1, . . . ,  n) 2n x1 xn 
+= r n1(sin 1)n2 (sin n2). 
+In the next section we will introduce wedge products and show that they are a convenient tool for handling curvilinear matrix coordinates.</text>
+        </slide>
+        <slide>
+          <slideno>17</slideno>
+          <text>/bracketleftbigg /bracketrightbigg 
+/bracketleftbigg /bracketrightbigg p q With X = r	 s 
+/bracketleftbigg /bracketrightbigg /bracketleftbigg /bracketrightbigg /bracketleftbigg /bracketrightbigg /bracketleftbigg /bracketrightbigg 
+p q dp dq dp dq p q dY = XdX + dXX = + . r s dr ds dr ds r s 
+Thus 
+dY11 = 2pdp+ qdr + rdq 
+dY21 = rdp+ (p+ s)dr + rds (7) dY12 = qdp+ (p+ s)dq+ qds 
+dY22 = qdr + rdq+ 2sds . 
+If we wedge together all of the elements of Y, we obtain the determinant of the Jacobian: 
+(dY) = 4(p+ s)2(spqr). 
+The reader should compare the notation with that from the previous chapter: 
+p r q s 
+	  
+2p q r 0 Y11 
+ r p + s 0 r  Y21 	  J = 	q 0 p+ s q  Y12 
+0 q r 2s Y 22 
+We conclude that for these examples the notation is of little value. 
+9.2 Square Matrix = Antisymmetric + Upper Triangular 
+Given any matrix M  Rn,n , let 
+A = lower( M)lower( M)T , 
+where lower( M) is the strictly lower triangular part of M. Further let 
+R = upper( M) + lower( M)T , 
+where upper( M) includes the diagonal. We have the decomposition 
+= + R = (antisymmetric) + (upper triangular) . M A 
+Therefore 	  dr11 dr12 da21 dr13 da31 dr1n dan1 
+  da21 dr22 dr23 da32 dr2n dan2 	  	 dM =  da31 da32 dr33 dr3n dan3  . (8)  . . . .  . . .	 .  .	  . . . 
+dan1 dan2 dan3 drnn 
+We can easily see that the daij play no role in the wedge product: 
+(dM) = (lower (d A) + dR) = (dA)(dR). 
+We feel this notation is already somewhat more mechanical than what was needed in the last chapter. 
+Without wedges, we would have concentrated on the n(n + 1)/2 parameters in R and the n(n  1)/2 in 
+lower( A) and would have written a block two by two matrix as in Section 5.2. 
+The reader should think carefully about the following sentence: The realization that the upper d aji s 
+play no role in (d M), is equivalent to the realization that the matrix X12 plays no role in the determinant 
+of the 2 2 block matrix 
+X11 X12 X = . 0 X21</text>
+        </slide>
+        <slide>
+          <slideno>0</slideno>
+          <text>1 18.338J/16.394J: The Mathematics of Innite Random Matrices 
+Essentials of Finite Random Matrix Theory 
+Alan Edelman 
+Handout #6, Tuesday, September 28, 2004 
+This handout provides the essential elements needed to understand nite random matrix theory. A 
+cursory observation should reveal that the tools for innite random matrix theory are quite dierent from 
+the tools for nite random matrix theory. Nonetheless, there are signicantly more published applications 
+that use nite random matrix theory as opposed to innite random matrix theory. Our belief is that many 
+of the results that have been historically derived using nite random matrix theory can be reformulated and 
+answered using innite random matrix theory. In this sense, it is worth recognizing that in many applications 
+it is an integral of a function of the eigenvalues that is more important that the mere distribution of the 
+eigenvalues. For nite random matrix theory, the tools that often come into play when setting up such 
+integrals are the Matrix Jacobians, the Joint Eigenvalue Densities and the Cauchy-Binet theorem. We 
+describe these in subsequent sections. 
+Matrix and Vector Dierentiation 
+In this section, we concern ourselves with the dierentiation of matrices. Dierentiating matrix and vector 
+functions is not signicantly harder than dierentiating scalar functions except that we need notation to 
+keep track of the variables. We titled this section matrix and vector dierentiation, but of course it is the function that we dierentiate. The matrix or vector is just a notational package for the scalar functions 
+involved. In the end, a derivative is nothing more than the linearization of all the involved functions. 
+We nd it useful to think of this linearization both symbolically (for manipulative purposes) as well as 
+numerically (in the sense of small numerical perturbations). The dierential notation idea captures these 
+viewpoints very well. 
+We begin with the familiar product rule for scalars, 
+d(uv) = u(dv) + v(du), 
+from which we can derive that d( x3) = 3x2dx. We refer to d x as a dierential. 
+We all unconsciously interpret the d x symbolically as well as numerically. Sometimes it is nice to 
+conrm on a computer that 
+3(x + )3  x 3x 2 . (1)  
+I do this by taking x to be 1 or 2 or randn(1) and  to be .001 or .0001. 
+The product rule holds for matrices as well: 
+d(UV ) = U(dV ) + (d U)V . 
+In the examples we will see some symbolic and numerical interpretations. 
+Example 1: Y = X3 
+We use the product rule to dierentiate Y (X) = X3 to obtain that 
+d(X3) = X2(dX) + X(dX)X + (dX)X2 .</text>
+        </slide>
+        <slide>
+          <slideno>34</slideno>
+          <text>[2] Y. Zhang. The exact distribution of the Moore-Penrose inverse of X with a density. In P.R. Krishnaiah, 
+editor, Multivariate Analysis VI , pages 633635, New York, 1985. Elsevier. 
+[3] Heinz Neudecker and Shuangzhe Liu. The density of the Moore-Penrose inverse of a random matrix. 
+Multivariate Analysis , 237/238:123126, 1996. 
+[4] Robb J. Muirhead. Aspects of Multivariate Statistical Theory . John Wiley &amp; Sons, New York, 1982.</text>
+        </slide>
+        <slide>
+          <slideno>26</slideno>
+          <text>/summationdisplay 
+/summationdisplay /summationdisplay 
+/integraldisplay /integraldisplay 
+/summationtext 
+/productdisplay 
+/productdisplay 
+/radicaltp If we decompose the surface into parallelopipeds we have 
+vol(Sp)  Pl(F(i))T Pl(V(i)). 
+and /integraldisplay 
+f(x)d(surface)  f(x(i))Pl(F(i))T Pl(V(i)) = f(x(i))det(( F(i))TV(i)). 
+Mathematicians write the continuous limit of the above equation as 
+f(x)d(surface) = f(x)(FTdx). 
+Notice that ( F(x)Tdx) formally computes Pl( F(x)). Indeed 
+  . . .    (F(x)Tdx) = Pl(F(x))T  
+dxi1 . . .dxip .   . . . i1&lt;...&lt;i p 
+III. Generalized dot products algebraically: Linear functions l(x) for x Rn may be written l(x) = fixi, 
+i.e., fTx. 
+The information that species the linear function is exactly the components of f. 
+F  Rn,pSimilarly, consider functions l(V) for V  Rn,p that have the form l(V) = det( FTV), where . 
+The reader should check how much information is needed to know l(V) uniquely. (It is less than 
+all the elements of F.) In fact, if we dene 
+Ei1i2...ip = The npmatrix consisting of columns i1, . . . , i p of the identity, 
+i.e., (E = eye( n);Ei,i2,...,i p = E(:,[i1 . . .ip])) in pseudo-Matlab notation, then knowing l(Ei1,...,i p ) 
+for all i1 &lt; . . . &lt; i p is equivalent to knowing l everywhere. This information is precisely all p p 
+subdeterminants of F, the Plucker coordinates. 
+IV. Generalized dot product geometrically. If F and V  Rn,p we can generalize the familiar fTv = 
+/bardblf/bardbl/bardblv/bardblcos. 
+It becomes p 
+Pl(F)T Pl(V) = det( FTV) = |vol(F) vol( V) cos i . |||
+i=1 
+Here vol( M) denotes the volume of the parallelopiped that is the image of the unit cube under M (Box 
+with edges equal to columns of M). Everyone knows that there is an angle between any two vectors 
+in Rn . Less well known is that there are pprincipal angles between two p-dimensional hyperplanes in 
+Rn . The i are principal angles between the two hyperplanes spanned by F and by V. 
+Easy special case: Suppose FTF = Ip and span( F) = span( V). In other words, the columns of F are 
+an orthonormal basis for the columns of V. In this case 
+det(FTV) = vol( V). 
+Other formulas for vol( V) which we mention for completeness is 
+p 
+vol(V) = i(V), 
+i=1 
+the product of the singular values of V. And 
+/radicalvertex /parenleftbigg /parenrightbigg 2 /radicalvertex/summationdisplay 1. . .p vol(V) = /radicalbt Vi1 . . .ip , 
+i1&lt;...&lt;i p 
+the sum of the ppsubdeterminants squared. In other words vol( V) = /bardblPlucker( V)/bardbl.</text>
+        </slide>
+        <slide>
+          <slideno>19</slideno>
+          <text>/logicalanddisplay /logicalanddisplay 
+/logicalanddisplay /logicalanddisplay 10 Handbook of Jacobians 
+Some Jacobians that come up frequently are listed in this and the following sections. 
+Function
+Y = BXAT
+N 
+= (A B )X 
+Kronecker Product 
+Y = X1 
+inverse 
+Y = X2 
+Y = Xk 
+1Y = 2 (AXB + BT XA) 
+Symmetric Kronecker Sizes 
+X m  n 
+A n  n 
+B m  m 
+X n  n 
+X n  n 
+X n  n 
+X, A,B n  n 
+A, B sym 
+B = AT Jacobian 
+(dY) = (det A)n(det B)m 
+(dY) = (det X)2n(dX) 
+(dY) = Q 
+i,j |i + j |(dX)    Pk1 il n1l(dY) = Q 
+ij   (dX)l=0 j 
+(dY) = Q 
+ij |iMj + j Mi|(dX) 
+(dY) = (det A)n+1(dX) 
+11 Real Case; General Matrices 
+In factorizations that involve a square m  m orthogonal matrix Q, and start from a thin, tall m  n matrix 
+A (m  n always ), HT dQ stands for the wedge product 
+n n 
+HT dQ = qiT dqj . 
+i=1 j=i+1 
+Here H is a stand-in for the rst n columns of Q. If the dierential matrix and the matrix whose transpose 
+we multiply by are one and the same, the wedging is done over all of the columns. For example, 
+n n 
+V T dV = viT dvj, 
+i=1 j=i+1 
+for V an n  n orthogonal matrix. 
+The Jacobian of the last factorization (non-symmetric eigenvalue) is computed only for the positive-
+measure set of matrices with real eigenvalues and with a full set of eigenvectors. 
+Factorization Matrix sizes &amp; properties Parameter count Jacobian 
+A, L, U n  n A = LU n2 = (dA) = 
+L, UT lower triangular n Qni 
+i=1 n(n1) n(n+1) (dL)(dU) ulu + ii 2 2lii = 1, i = 1, n 
+A, R m  n 
+A = QR Q m  m mn = (dA) = 
+n Q
+i=1 
+R upper triangular 
+A, m  n 
+A = UVT U m  m, V n  n mn = (dA) = mi(dR)(HT 
+ii  n(n+1) n(n+1) dQ)` 
+QT r+ Q= In mn qr  2 2 
+n Q Q
+i&lt;j i=1 
+VT V = In 
+A,Q m  n 
+A = QS S n  n mn = (dA) = mn 
+i(2 
+j )i 2 T(d)(HT dU)(V n(n+1) n(n1) dV )` 
+svd UT + n + U = Im mn  2 2 
+(i + j )(dS)(QT dQ)Q
+i&lt;j 
+S positive denite 
+A = XX1 A, X, n  n 2 = (dA) = n`  n(n+1) polar QT Q= In mn  n(n+1) +2 2 
+Q(i j )2(d)(X1dX) 
+i&lt;j `  2n n + n nonsymm eig  diagonal</text>
+        </slide>
+        <slide>
+          <slideno>11</slideno>
+          <text>/productdisplay 
+/parenleftbig	 /parenrightbig 
+/parenleftbigg	 /parenrightbigg 
+/producttext	 /producttext 
+/producttext Gaussian Elimination: 
+Gram-Schmidt: 
+Eigenvalue Decomposition: A= L U 
+ 
+unit lower upper 
+triangular triangular 
+A= Q R 
+ 
+Orthogonal upper 
+triangular 
+A= X  X1   
+ 
+eigenvectors eigenvalues parameter count 
+n(n 1)/2 + n(n+ 1)/2 
+n(n 1)/2 + n(n+ 1)/2 
+(n2  n) + n 
+ 
+eigenvector eigenvalue 
+Each of these factorizations is a change of variables. Somehow the n2 parameters in A are transformed into 
+n2 other parameters, though it may not be immediately obvious what these parameters are (the n(n 1)/2 
+parameters in Qfor example). 
+Our goal is to derive the Jacobians for those matrix factorizations. 
+5.1 Jacobian of Gaussian Elimination ( A = LU) 
+In numerical linear algebra texts it is often observed that the memory used to store A on a computer may 
+be overwritten with the n2 variables in L and U. Graphically the n n matrix A 
+U 
+A = 
+L 
+Indeed the same is true for other factorizations. This is not just a happy coincidence, but deeply related to 
+the fact that n2 parameters ought not need more storage. 
+Theorem 2. If A= LU, the Jacobian of the change of variables is 
+n 
+det J = u n1 u22 n2 . . . u n1,n1 = u ni 
+11 ii 
+i=1 
+Proof 1: Let A= LU, then using 
+dA	= LdU + dL U
+= L(dUU1 + L1dL)U
+= (UT  L) (UT upper I)1dU + (Ilower L)1dL 
+The mapping d U dUU1 only aects the upper triangular part. Similarly d L L1dL for the lower 	 
+triangular. We might think of the map in block format: 
+1 dU dA= UT  L (UT upper I) 
+Ilower L /parenrightbigg /parenleftbigg 
+dL 
+nSince the Jacobian determinants of UT  L is uii and of ( UT  I)1 is ui (and that of I L is 1), we ii 
+have that det J = u ni .	 ii 
+That is the fancy slick proof. Here is the direct proof. It is of value to see both.</text>
+        </slide>
+        <slide>
+          <slideno>25</slideno>
+          <text>/producttext /producttext
+/producttext 
+/parenrightbig 
+/parenleftbigg /parenrightbigg /parenleftbigg /parenrightbigg /parenleftbigg /parenrightbigg 
+/productdisplay p= 2 :  
+  f11 
+. . . 
+fn1 f12 
+. . . 
+f
+n2  
+  Pl   
+  
+ 
+ f11 f12 f13       
+p= 3 :     . . .     Pl      
+   
+fn1 fn2 fn3   
+Pl   f11f22  f21f12 
+.  . .  
+fn1,1fn,2  fn,1fn1,2 
+ f11 f12 f13 
+ f21 f22 f23   f31 f32 f33  .  .  .   fn2,1 fn2,2 fn2,3  
+fn1,1 fn1,2 fn1,3  
+fn,1 fn,2 fn,3 
+ 
+pgeneral : F = (fij)1in   det (fij)i=i1,...,i p 
+1jp j=1,...,p i1&lt;...&lt;i p 
+Denition 2. Let vol(F) denote the volume of the parallelopiped { Fx: 0  xi  1} , i.e., the volume of the 
+parallelopiped with edges equal to the columns of F. 
+pTheorem 4. vol(F) = p i = det( FTF)1/2 = i=1 rii = /bardbl Pl(F)/bardbl , where the i are the singular values i=1 
+of F, and the rii are the diagonal elements of Rin F = Y R, where Y  Rn,p has orthonormal columns and 
+Ris upper triangular. 
+Proof. Let F = UVT , where U  Rn,p and V  Rp,p has orthonormal columns. The matrix  denotes 
+a box with edge sides i so has volume i. The volume is invariant under rotations. The other formulas 
+follow trivially except perhaps the last which follows from the Cauchy-Binet theorem taking A = FT and 
+B= F.  
+Theorem 5. (Cauchy-Binet) Let C= AB be a matrix product of any kind. Let M /parenleftbig i1...ip denote the p pj1...jp 
+minor 
+det(Mikjl )1kp,1lp. 
+In other words, it is the determinant of the submatrix of Mformed from rows i1, . . ., i p and columns j1, . . . , j p. 
+The Cauchy-Binet Theorem states that 
+i1, . . . , i p /summationdisplay i1, . . ., i p j1, . . . , j pC = A B . k1, . . . , k p j1, . . ., j p k1, . . . , k pj1&lt;j2&lt;&lt;jp 
+Notice that when p= 1 this is the familiar formula for matrix multiplication. When all matrices are p p, 
+then the formula states that 
+det C= det Adet B . 
+Corollary 6. Let F  Rn,p have orthonormal columns, i.e., FTF = Ip. Let X  Rn,p. If span(F) = 
+span(X), then vol(X) = det( FTX) = Pl( F)T  Pl(X). 
+Theorem 7. Let F, V  Rn,p be arbitrary. Then 
+p 
+Pl(F)T Pl(V) = det( FTX) = | vol(F) vol( V) cos i , || | 
+i=1 
+where 1, . . .,  p are the principal angles between span (F) and span (V). 
+Remark 1. If Sp is some p-dimensional surface it is convenient for F(i) to be a set of porthonormal tangent 
+vectors on the surface at some point x(i) and V(i) to be any little parallelopiped on the surface.</text>
+        </slide>
+        <slide>
+          <slideno>8</slideno>
+          <text>Also one can directly manipulate the matrix since obviously 
+AB = (AI)(I B) 
+as operators, and det I B = (det B)n and det AI which can be reshued into det I A = (det A)m . 
+Other proofs may be obtained by working with the  LU decomposition of A and B, the SVD of A and 
+B, the QR decomposition, and many others. 
+Mathematical Note : That the operator Y = BXAT can be expressed as a matrix is a consequence of 
+linearity: 
+B(c1X1 + c2X2)AT = c1BX1AT + c2BX2AT 
+i.e. (AB)(c1X1 + c2X2) = c1(AB)X1 + c2(AB)X2 
+It is important to realize that a linear transformation from Rm,n to Rm,n is dened by an element of 
+Rmn,mn , i.e., by the m2n2 entries of an mnmn matrix. The transformation dened by Kronecker products 
+is an m2 + n2 subspace of this m2n2 dimensional space. 
+Some Kronecker product properties: 
+1. (AB)T = AT BT 
+2. (AB)1 = A1 B1 
+, A Rn,n , B Rm,m 3. det(AB) = det( A)m det(B)n 
+4. tr(AB) = tr( A)tr(B) 
+5. AB is orthogonal if A and B are orthogonal 
+6. (AB)(C D) = (AC)(BD) 
+7. If Au = u, and Bv = v, then if X = vuT , then BXAT = X, and also AXTBT = XT . Therefore 
+AB and B A have the same eigenvalues, and transposed eigenvectors. 
+It is easy to see that property 5 holds, since if A and B are orthogonal ( AB)T = AT BT = A1 B1 = 
+(AB)1 . 
+Linear Subspace Kronecker Products 
+Some researchers consider the symmetric Kronecker product sym. In fact it has become clear that one 
+might consider an anti-symmetric, upper-triangular or even a Toeplitz Kronecker product. We formulate a 
+general notion: 
+Denition: Let Sdenote a linear subspace of Rmn and S a projection onto S. If A Rn,n and B Rm,m 
+then we dene ( AB)SX = S(BXAT) for X S. 
+Comments 
+1. If S is the set of symmetric matrices then m = n and 
+BXAT + AXBT 
+(AB)symX = 2 
+2. If S is the set of anti-sym matrices, then m = n 
+BXAT + AXBT 
+(AB)antiX = as well 2
+but this matrix is anti-sym.</text>
+        </slide>
+        <slide>
+          <slideno>31</slideno>
+          <text>/summationtext 
+/integraldisplay /integraldisplay /integraldisplay 
+/integraldisplay /integraldisplay The dot product of two vectors (matrices) X and Y is X Y  tr(XTY) = XijYij. If Qis orthogonal 
+QXQY = X Y.
+If Q= I then the matrices Aij = (Eij  Eji)/
+2 for i &lt; j clearly form an n(n1) dimensional cube 2 
+tangent to O(n) at I, i.e., they form an orthonormal basis for the tangent space. Similarly the n(n1)/2 
+matrices Q(Eij Eji)/
+2 form such a basis at Q. 
+One can form an F whose columns are vec( Q(EijEji)) for i &lt; j. The matrix would be n2 by n(n1)/2. 
+Then FT(dqij)i&lt;j would be the Euclidean volume element. Mathematicians like to throw away the 
+2 so 
+that the volume element is o by the factor 2n(n1)/4 . This does not seem to bother anyone. In non-vec 
+format, this is ( QTdQ). 
+Application 
+Surface Area of Sphere Computation 
+We directly use the formula (d x) = rn1dr(Hdq): 
+2 2 r dr (Hdq)e1
+2x n1 e1
+2 (2) n 
+2 dx = = r 
+r=0 xRn 
+n 
+2 n2 /parenleftig n/parenrightig 2 (Hdq) or ( Hdq)22 A = = = n,(n 
+2 ) 2 
+and An is the surface of the sphere of radius 1. For example, 
+A2 = 2 (circumference of a circle) 
+A3 = 4 (surface area of a sphere in 3d) 
+A4 = 22 
+15.5 The Stiefel Manifold 
+QR Decomposition 
+  x 
+ 0   Let A  Rn,m(m  n). Taking x = ai, we see H1 such that H1A has the form  .  . We can .  .  
+0    1 0 0 x x  
+ 0  x  0   then construct an H2 =  .  so that H2H1A =  . .  . Continuing Hm H1A = . H2 . . 
+0 0 0  .   . .  
+  0   
+ .  R  ..    or A= (H1 Hm)  , where Ris mm upper triangular (with positive diagonals).  0  
+O 
+0 0 
+let Q= the rst m columns of H1 Hm. Then A= QRas desired. 
+The Stiefel Manifold 
+The set of Q Rn,p such that QTQ= Ip is denoted Vp,n and is known as the Stiefel manifold. Considering 
+the Householder construction, H1, , Hp such that. 
+  1 0 
+ . HpHp1 H1Q=  . .  
+0 1</text>
+        </slide>
+        <slide>
+          <slideno>3</slideno>
+          <text>/parenleftig /parenrightig 
+/bracketleftigg /bracketrightigg 
+/bracketleftigg /bracketrightigg 2  2 Example 2: Matrix Cube ( Y = X3)
+2  2 Example 3: Matrix Inverse ( Y = X1)
+2  2 Example 4: Linear Transformation ( Y = AX + B)
+2  2 Example 5: The LU Decomposition ( X = LU)
+2  2 Example 6: A Symmetric Decomposition ( S = DMD )
+2  2 Example 7: Traceless Symmetric = Polar Decomposition ( S = QQT, tr S = 0)
+2  2 Example 8: The Symmetric Eigenvalue Problem ( S = QQT)
+2  2 Example 9: Symmetric Congruence ( Y = ATSA)
+Discussion: 
+Example 1: Matrix Square ( Y = X2) /bracketleftigg /bracketrightigg 
+With X = p q 
+and Y = X2 the Jacobian matrix of interest is 
+r s 
+p r q s 
+	  
+2p q r 0 Y11 
+ r p + s 0 r  Y21 	  J = 	q 0 p+ s q  Y12 
+0 q r 2s Y 22 
+On this rst example we label the columns and rows so that the elements correspond to the denition 
+J = Yij . Later we will omit the labels. We invite readers to compare with Equation (3). We see that Xkl 
+the Jacobian matrix and the dierential contain the same information. We can compute then 
+det J = 4(p+ s)2(sp qr) = 4(tr X)2 det(X). 
+Notice that breakdown occurs if X is singular or has trace zero. 
+Example 2: Matrix Cube ( Y = X3) 
+p q
+With X = and Y = X3
+r s
+ 3p2 + 2qr pq + q(p+ s) 2 rp+ sr qr  
+	    2rp+ sr p2 + 2qr + (p+ s)s r2 rp+ 2sr 	 J =   ,  2pq + qs q2 p(p+ s) + 2qr + s2 pq + 2qs  	  
+qr pq + 2qs r (p+ s) + sr 2qr + 3s2 
+so that 
+2 2det J = 9(sp qr)2(qr + p + s + sp)2 =9(det X)2(tr X2 + (tr X)2)2 . 4
+Breakdown occurs if X is singular or if the eigenvalue ratio is a complex cube root of unity. 
+Example 3: Matrix Inverse ( Y = X1) 
+p q
+With X = and Y = X1
+r s
+ 2	 qs sr qr s
+	  	sr ps 2 rp 1  rJ =   ,det X2   qs q2 ps pq  	  
+2qr pq rp p</text>
+        </slide>
+        <slide>
+          <slideno>10</slideno>
+          <text>/producttext /producttext 
+/summationdisplay 
+/productdisplay /summationdisplay 4.0.1 General Matrices 
+Let Y = X2 then 
+dY = XdX+ dXX or dY = I X+ XT  I 
+Using the Eij as before Equation (5), we see that the eigenvalues of I X+ XT  I are i + j so that 
+det J = 1i,jn(i + j) = 2n det X i&lt;j(i + j)2 . When n = 2, we obtain 4 det X(trX)2 as seen in 
+example 8.2.2. 
+For general powers, Y = Xp, (p= 1,2,3, . . .) 
+p1 
+dY = XkdX Xp1k 
+k=0 
+n jand det J = /parenleftigg p1 
+ikp1k /parenrightigg 
+= p (det X)p1 /productdisplay/bracketleftigg 
+ip  p /bracketrightigg2 
+.j 
+1i,jnk=0 i&lt;j i  j 
+Of course by computing the Jacobian determinant explicitly in terms of the matrix elements, we can obtain 
+an equivalent expression in terms of the elements of X rather than the i. 
+Formally, if we plug in p = 1, we nd that we can compute det J for Y = X1 yielding the answer 
+given after Theorem 8.1. Indeed one can take any scalar function y = f(x) such as xp, ex ,logx,sin x, etc. 
+The correct formula is 
+/bracketleftbigg /bracketrightbigg2 n /bracketleftbigg /bracketrightbigg2 /productdisplay /productdisplay f(i) f(j)det J = det( f(X))/productdisplay f(i) f(j)= f(i) .  i  j i  ji&lt;j i=1 i&lt;j 
+We can prove these using the tools provided by wedge products. 
+Often one thinks that to dene Y = f(X) for matrices, one needs a power series, but this is not so. If 
+X = ZZ1, then we can dene f(X) = Zf()Z1, where f() = diag( f(1), . . . , f (n)). The formula 
+above is correct at any matrix X such that f is dierentiable at the eigenvalues. 
+When X is of low rank, we can consider the Moore-Penrose Inverse of X. The Jacobian was calculated 
+in [2] and [3]. There is a nonsymmetric and symmetric version. 
+Exercise. Compute the Jacobian determinant for 
+Y = X1/2 and Y = X1/2 . 
+Advanced exercise: compute the Jacobian matrix for Y = X1/2 as an inverse of a sum of two Kronecker 
+products. Numerically, a Sylvester equation solver is needed. To obtain the Jacobian matrix for Y = X1/2 
+one can use the chain rule, given the answer to the previous problem. It is interesting that this is as hard as it is. 
+4.0.2 Symmetric Matrices 
+If X is symmetric, we have that det J = (det X)(n+1) for the map Y = X1 . 
+5 Jacobians of Matrix Factorizations (without wedge products) 
+Let A be an n  n matrix. In elementary linear algebra, we learn about Gaussian elimination, Gram-
+Schmidt orthogonalization, and the eigendecomposition. All of these ideas may be written compactly as matrix factorizations, which in turn may be thought of as a change of variables:</text>
+        </slide>
+        <slide>
+          <slideno>21</slideno>
+          <text>The matrix of eigenvectors Qcan be completely determined from knowledge of its rst row q= (q1, . . . , q n) 
+(n 1 parameters) and the eigenvalues on the diagonal of  (another n parameters). Here dq represents 
+integration over the (1 , n) Stiefel manifold. 
+Factorization 
+T = QQT 
+eig Matrix sizes 
+T, Q, n n Parameter count 
+2n 1 = 
+(n 1) + n Matrix properties 
+QT Q= In 
+ diagonal Jacobian 
+n1 
+bi 
+iQ
+=1 (dT) = ( d)(dq) n 
+qi 
+iQ
+=1 
+Proof by MATLAB 
+At a basic level, as we discussed earlier, the Jacobian is the magnication in the volume element that occurs 
+when a matrix is perturbed in every conceivable direction. Hence the theoretical results can be vered using actual MATLAB experiments. Consider the symmetric eigenvalue problem on the third row of the table 
+in Section 12. The function jsymeig.m allows you to enter a real symmetric matrix A and computes the 
+theoretical Jacobian and the numerical answer. You should easily be able to verify that both these answers match. We encourage you to verify the theoretical answers for other factorizations. 
+Once we have the Jacobians computing the eigenvalue densities is fairly straightforward. The densities 
+for the Hermite, Laguerre and Jacobi ensembles is tabulated here as well.</text>
+        </slide>
+        <slide>
+          <slideno>15</slideno>
+          <text>/summationdisplay /summationdisplay /summationdisplay 7 Wedge Products 
+There is a wedge product notation that can facilitate the computation of matrix Jacobians. In point of 
+fact, it is never needed at all. The reader who can follow the derivation of the Jacobian in Section 5 is 
+well equipped to never use wedge products. The notation also expresses the concept of volume on curved surfaces. 
+For advanced readers who truly wish to understand exterior products from a full mathematical viewpoint, 
+this chapter contains the important details. We took some pains to write a readable account of wedge 
+products at the cost of straying way beyond the needs of random matrix theory. 
+The steps to understanding how to use wedge products for practical calculations are very straightforward. 
+1. Learn how to wedge two quantities together. This is usually understood instantly. 
+2. Recognize that the wedge product is a formalism for computing determinants. This is understood 
+instantly as well, and at this point many readers wonder what else is needed. 
+3. Practice wedging the order n2 or mn or some such entries of a matrix together. This requires mastering 
+three good examples. 
+4. Learn the mathematical interpretation of the wedge product of such quantities as the lower triangular 
+part of QTdQ and how this relates to the Jacobian for QR or the symmetric eigendecomposition. We 
+provide a thorough explanation. 
+8 The Mechanics of Wedging 
+The algebra of wedge products is very easy to master. We will wedge together dierentials as illustrated in 
+this example: 
+(2dx + x 2dy + 5dw + 2dz) (ydx  xdy) =
+(2x  x 2
+y)dx  dy + 5y(dw  dx) 5x(dw  dy) 2y(dx  dz) + 2x(dy  dz) 
+Formally the wedge product acts like multiplication except that it follows the anticommutative law 
+(du  dv) = (dv  du) 
+Generally 
+(pdu + qdv) (rdu + sdv) = (ps  qr)(du  dv) 
+It therefore follows that 
+du  du = 0. 
+In general 
+fi(x)dxi  gj(x)dxj = ( fi(x)gj(x) fj(x)gi(x))dxi  dxj = /summationdisplay fi(x) gi(x)dxi  dxj . fj(x) gj(x)
+i&lt;j i&lt;j 
+We can wedge together more than two dierentials. For example 
+2dx  (3dx + 5dy) 7(dx + dy + dz) = 70d x  dy  dz 
+Let us write down concretely the wedge product. 
+Rewriting the two examples above in matrix notation, we have 
+  
+2 y   
+2 3 72  x 
+F =  x  and F =  0 5 7   5 0  
+0 0 7 2 0</text>
+        </slide>
+        <slide>
+          <slideno>7</slideno>
+          <text>/productdisplay 3 Y = BXAT and the Kronecker Product 
+3.1 Jacobian of Y = BXAT (Kronecker Product Approach) 
+There is a nuts and bolts approach to calculate some Jacobian determinants. A good example function is 
+the matrix inverse Y = X1 . We recall from Example 4 of Section 1 that 
+dY = X1dXX1 . 
+In words, the perturbation d X is multiplied on the left and on the right by a xed matrix. When this 
+happens we are in a Kronecker Product situation, and can instantly write down the Jacobian. 
+We provide two denitions of the Kronecker Product for square matrices A Rn,n to B Rm,m . 
+See [1] for a nice discussion of Kronecker products. 
+Operator Denition 
+A B is the operator from X Rm,n to Y  Rm,n where Y = BXAT . We write 
+(A B)X = BXAT . 
+Matrix Denition (Tensor Product) 
+A B is the matrix  a11B . . . a1m2 B  
+A B=   . . . . . .   . (4) 
+am11B . . . am1m2 B 
+The following theorem is important for applications. 
+Theorem 1. det(A B) = (det A)m(det B)n 
+Application : If Y = X1 then d Y = (XT  X1)dX so that 
+det J| = det X2n . | | |
+Notational Note : The correspondence between the operator denition and matrix denition is worth 
+spelling out. It corresponds to the following identity in MATLAB 
+Y = B * X * A
+Y(:) = kron(A,B) * X(:)
+% The second line does not change Y
+Here kron(A,B) is exactly the matrix in Equation (4), and X(:) is the column vector consisting of the 
+columns of X stacked on top of each other. (In computer science this is known as storing an array in 
+column major order.) Many authors write vec(X) , where we use X(:). Concretely, we have that 
+vec(BXAT) = (A B)vec(X) 
+where A B is as in (4). 
+Proofs of Theorem 8.1 : 
+Assume A and B are diagonalizable, with Aui = iui (i = 1, . . ., n ) and Bvi = ivi (i = 1, . . ., m). 
+Let Mij = T . The mn matrices Mij form a basis for Rmn and they are eigenmatrices of our map since viuj 
+BM ijAT = ijMij. The determinant is 
+ij or (det A)m(det B)n . (5) 
+1in
+1jm
+The assumption of diagonalizability is not important.</text>
+        </slide>
+        <slide>
+          <slideno>32</slideno>
+          <text>/logicalanddisplay /logicalanddisplay 
+/integraldisplay so that Q = 1st p columns of H1H2 Hp1Hp.
+Corollary 8. The Stiefel manifold may be specied by (n 1) + (n 2) + = pn 1/2p(p+ 1) + (n p) 
+parameters. You may think of this as the pn arbitrary parameters in an np matrix reduced by the p(p+1)/2 
+conditions that qiTqj = ij for i  j. You might also think of this as 
+dim{Q} = dim{A}  dim{R} 
+ 
+pn p (p + 1)/2 
+It is no coincidence that it is more economical in numerical computations to store the Householder parameters 
+than to compute out the Q. 
+This is the prescription that we would like to follow for the QR decomposition for the n by p matrix A. 
+If Q  Rp,n is orthogonal, let H be an orthogonal p by p matrix such that HTQ is the rst p columns of I. 
+Actually H may be constructed by applying the Householder process to Q. Notice that Q is simply the rst 
+p columns of H. 
+As we proceed with the general case, notice how this generalizes the situation when p = 1. If A = QR, 
+then d A = QdR + dQR and HTdA = HTQdR + HTdQR. Let H = [h1, . . . , h n]. The matrix HTQdR 
+is an n by p upper triangular matrix. While HTdQ is (rectangularly) antisymmetric. ( hThj = 0 implies i 
+hTdhj = hTdhi)i j
+Haar Measure and Volume of the Stiefel Manifold 
+It is evident that the volume element in mn dimensional space decouples into a term due to the upper 
+triangular component and a term due to the orthogonal matrix component. The dierential form 
+m n 
+(HTdQ) = hiTdhj 
+j=1 i=j+1 
+is a natural volume element on the Stiefel manifold. 
+We may dene 
+(S) = ( HTdQ). 
+S 
+This represent the surface area (volume) of the region S on the Stiefel manifold. This measure  is known 
+as Haar measure when m = n. It is invariant under orthogonal rotations. 
+/producttextm 1Exercise. Let m(a)  m(m1)/4 
+i=1 [a  2(i 1)]. Show that the volume of Vm,n is 
+2mmn/2 
+Vol (Vm,n) = m(1n) . 
+2
+Exercise. What is this expression when n = 2? Why is this number twice what you might have thought 
+it would be? 
+Exercise. Let A have independent elements from a standard normal distribution. Prove that Q and R 
+are independent, and that Q is distributed uniformly with respect to Haar measure. How are the elements on 
+the strictly upper triangular part of R distributed. How are the diagonal elements of R distributed? Interpret 
+the QR algorithm in a statistical sense. (This may be explained in further detail in class). 
+Readers who may never have taken a course in advanced measure theory might enjoy a loose general 
+description of Haar measure. If G is any group, then we can dene the map on ordered pairs that sends 
+(g, h) to g1h. If G is also a manifold (or some kind of Hausdor topological space), and if this map is 
+continuous, we have a topological group. An additional assumption one might like is that every g  G has</text>
+        </slide>
+        <slide>
+          <slideno>2</slideno>
+          <text>/bracketleftbigg /bracketrightbigg /bracketleftbigg 
+/integraltext 
+/integraltext 
+/integraldisplay /integraldisplay Often we wish to apply the chain rule to every element of a vector or matrix. 
+2 /bracketrightbigg
+Let X = p q and Y = X2 = p+ qr pq + rs then
+r s pr + rs qs + s2 
+dY = XdX + dXX . (3) 
+2 Matrix Jacobians (getting started) 
+2.1 Denition 
+Let x  Rn and y = y(x)  Rn be a dierentiable function of x. It is well known that the Jacobian matrix 
+ y1 y1 
+ x1  xn /parenleftbigg /parenrightbigg  .  yi  . J =. .  =  . .   xj i,j=1,2,...,n  yn yn 
+x1  xn 
+evaluated at a point x approximates y(x) by a linear function. Intuitively y(x + x)  y(x) + Jx, i.e., J 
+is the matrix that allows us to invoke perturbation theory. The function y may be viewed as performing a 
+change of variables. 
+Furthermore (intuitively) if a little box of n dimensional volume  surrounds x, then it is transformed by 
+y into a parallelopiped of volume det J  around y(x). Therefore the Jacobian det Jis the magnication | | | |
+factor for volumes. 
+If we are integrating some function of y  Rn as in p(y)dy, (where d y = dy1 . . . dyn), then when we 
+change variables from y to x where y = y(x), then the integral becomes p(y(x))|det(yi ) dx. For many xj |
+people this becomes a matter of notation, but one should understand intuitively that the Jacobian tells you 
+how volume elements scale. 
+The determinant is 0 exactly where the change of variables breaks down. It is always instructive to see 
+when this happens. Either there is no  x locally for each  y or there are many as in the example of polar 
+coordinates at the origin. 
+Notation: throughout this book, J denotes the Jacobian matrix. (Sometimes called the derivative or 
+simply the Jacobian in the literature.) We will consistently write det J for the Jacobian determinant (un
+fortunately also called the Jacobian in the literature.) When we say Jacobian, we will be talking about both. 
+2.2 Simple Examples (n=2) 
+We get our feet wet with some simple 2 2 examples. Every reader is familiar with changing scalar variables 
+as in /integraldisplay/integraldisplay 
+f(x)dx = f(y 2)(2y)dy . 
+We want the reader to be just as comfortable when f is a scalar function of a matrix and we change X = Y2: 
+f(X)(dX) = f(Y2)(Jacobian)(d Y). 
+One can compute all of the 2 by 2 Jacobians that follow by hand, but in some cases it can be tedious 
+and hard to get right on the rst try. Code 8.1 in MATLAB takes away the drudgery and gives the right 
+answer. Later we will learn fancy ways to get the answer without too much drudgery and also without the 
+aid of a computer. We now consider the following examples: 
+2  2 Example 1: Matrix Square ( Y = X2)</text>
+        </slide>
+        <slide>
+          <slideno>20</slideno>
+          <text>12 Real Matrices; Symmetric  + Cases 
+Here we gather factorizations that are symmetric or, in the case when this is required, positive denite. All 
+matrices are square m m. 
+A = LL Factorization + Parameter count Matrix properties Jacobian 
+ n(n+1) =(dA) = 
+2Positive denite L lower triangular 2n n Q 
+=1 iln+1i 
+ii n(n+1) (dL) Choleski 2 
+A = LDL  n(n+1) = L lower triangular (dA) = 
+2  lii = 1, i = 1, n n Q 
+=1 idni 
+i (dL)(dD) n(n1) ldl + n D diagonal 2 
+n(n
+2+1) = QT Q = In (dA) = A = QQT 
+ Q 
+i&lt;j |i  j |(d)(QT dQ)eig n(n1)  diagonal + n2 
+13 Real Matrices; Orthogonal Case 
+This is the case of the CS decomposition. Note that the matrices U1 and V1 share p(p
+21) parameters; this 
+is due to the fact that the product of the rst pcolumns of U1 and the rst prows of VT is invariant and 1 
+determined. This is equivalent to saying that we introduce an equivalence relation of the set of pairs ( U1, V1) 
+of orthogonal matrices of size k, by having 
+/parenleftbigg /bracketleftbigg /bracketrightbigg /bracketleftbigg /bracketrightbigg/parenrightbigg Q 0 Q 0 (U1, V1)  U1 , V10 Ij 0 Ij , 
+for any p porthogonal matrix Q. 
+Since it is rather hard to integrate over a manifold of pairs of orthogonal matrices with the equivalence 
+relationship mentioned above, we will use a dierent way of thinking about this splitting of parameters. We 
+k(k1)  p(p1) (having can assume that U1 contains k(k
+21) parameters (a full set) while V1 only contains 2 2 
+the rst pcolumns already determined from the relationship with U1). Alternatively, we could assign a full 
+set of parameters to V1 and think of U1 as having the rst r columns predetermined. In the following we 
+choose to make the former assumption, and think of the undetermined part H of VT as a point in the Stiefel 1 
+manifold Vj,k. 
+Factorization 
+Q = 
+2 3  U10  Ip 0 0  V10 T 4 0 S 5 C 0 U2 0 V20 S C 
+n = k + j, p = k  j 
+CS decomposition Matrix sizes &amp; properties 
+Q n  n 
+U1, V1 k  k 
+U2, V2 j  j 
+QT Q = In 
+U1, V1, U2, V2 orthogonal 
+C = diag(cos( i)), i= 1. . . n 
+S= diag(sin( i)), i= 1. . . n Parameter count 
+U1V1 T has 
+k(k  1) p(p
+2 1) 
+U2, V2 have 
+j(j1) each 2 
+C and S share j Jacobian 
+(dA) = 
+Qsin(j i)sin(i + j )(d) 
+i&lt;j 
+T T T(U1 dU1)(U2 dU2)(HT dH)(V2 dV2) 
+14 Real Matrices; Symmetric Tridiagonal 
+The important factorization of this section is the eigenvalue decomposition of the symmetric tridiagonal.The 
+tridiagonal is dened by its 2 n 1 parameters, n on the diagonal and n 1 on the upper diagonal: 
+  a b n n1 
+ b a b  n1 n1 n2   
+T =   . . . . . . . . .   . 
+   b2 a2 b1  
+b1 a1</text>
+        </slide>
+        <slide>
+          <slideno>29</slideno>
+          <text>/logicalandtext 
+/bracketleftbigg /bracketrightbigg Tangents consist of matrices T such that QTT is anti-symmetric. We can take an orthogonal, but not 
+orthonormal set to consist of matrices Q(Eij  Eji) for i &gt; j ((Eijkl = 1) if i= k and j= l; 0 otherwise). 
+The matrix  FTV roughly amounts to taking twice the triangular part of QTdQ. 
+Let O(m) denote the orthogonal group of m m matrices Q such that QTQ = I. We have seen 
+T(QTdQ) = i&gt;j qi dqj is the natural volume element on O(M). Also, notice that O(n) has two connected 
+components. When m= 2, we may take 
+Q= c s 2(c 2 + s = 1) s c 
+for half of O(2). This gives 
+/parenleftbigg /parenrightbigg /parenleftbigg /parenrightbigg /parenleftbigg /parenrightbigg 
+QTdQ= cos  
+ sin  sin  
+cos   sin d  cos d 
+cos d  sin d = 0 
+d d 
+0 
+in terms of d . Therefore ( QTdQ) = d. 
+15.4 The Sphere 
+Students who have seen any integral on the sphere before probably have worked with traditional spherical 
+coordinates or integrated with respect to something labeled the surface element of the sphere. We mention 
+certain problems with these notations. Before we do, we mention that the sphere is so symmetric and so 
+easy, that these problems never manifest themselves very seriously on the sphere, but they become more 
+serious on more complicated surfaces. 
+The rst problem concerns spherical coordinates: the angles are not symmetric. 
+They do not interchange nicely. Often one wants to preserve the spherical symmetry by writing x= qr, 
+where r = /bardblx/bardbl and q = x//bardblx/bardbl. Of course, q then has n components expressing n 1 parameters. The 
+n quantities d q1, . . . ,dqn are linearly dependent. Indeed dierentiating qTq = 1 we obtain that qTdq = /summationtextn = 0. i=1 qidqi 
+Writing the Jacobian from x to q, r is slightly awkward. One choice is to write the radial and angular 
+parts separately. Since d x= qdr+ dqr, 
+q Tdx= dr and ( I qq T )dx= rdq . 
+We then have that 
+dx= dr (rdq) = r n1dr(dq), 
+where (d q) is the surface element of the sphere. 
+We introduce an explicit formula for the surface element of the sphere. Many readers will wonder why 
+this is necessary. Experience has shown that one can need only set up a notation such as d S for the surface 
+element of the sphere, and most integrals work out just ne. We have two reason for introducing this formula, 
+both pedagogical. The rst is to understand wedge products on a curved space in general. The sphere is one of the nicest curved spaces to begin working with. Our second reason, is that when we work on spaces 
+of orthogonal matrices, both square and rectangular, then it becomes more important to keep track of the 
+correct volume element. The sphere is an important stepping stone for this understanding. 
+We can derive an expression for the surface element on a sphere. We introduce an orthogonal and 
+symmetric matrix H such that Hq= e1 and He1 = q, where e1 is the rst column of the identity. Then 
+ dr 
+r(Hdq)2  r(Hdq)3Hdx= e1dr+ Hdq r=  .  .  .  .  
+r(Hdq)n</text>
+        </slide>
+        <slide>
+          <slideno>23</slideno>
+          <text>Random Matrix Ensembles
+n
+Joint Eigenvalue Distributions: c |  |  V( i )
+i=1 
+ 
+2 
+ 
+2 (n  m+1)  1 H C R 
+H C R 
+C 
+H R A 
+A S ASD TQ AQ 
+HA U AU 
+A S ASD A A TQ AQ 
+U AUH   / 2 
+ 
+2 Decomposition Singular Value Eigenvalue Problem Symmetric GOE Symmetric 
+GUE Hermitian 
+GSE SelfDual 
+Laguerre ensembles Wishart ensembles 
+Jacobi ensembles 1
+ 2 
+MANOVA ensembles 
+a = 
+b = 1 MANOVA real
+ 2 1
+ 2
+ 4
+ 4
+ 4 Hermite ensembles Gaussian ensembles Technical name Traditional name  Invariance 
+b a (QZ) V( ) = e 
+V( 
+V( ) = ) =  a 
+a = (n  m+1)  1 Positive 
+SemiDefinite 
+Positive 1 
+SemiDefinite Eigenvalue Problem e   / 22
+ Generalized Symmetric Wishart complex Wishart quaternion Wishart real 
+MANOVA complex 
+MANOVA quaternion (SVD) (EIG) Field Property 
+ (1)
+ 2(n  m+1)  1 T T 
+H 
+H 
+D X 
+Y Q YQ 
+X 
+Y U YU 
+X S XS 
+Y S YS D 
+4 2 
+1 
+2 
+1 
+4 A = [X Y; conj(Y) conj(X)]; A = (A+A) / 2; A = randn(n) + i * randn(n); A = (A+A) / 2; 
+A = randn(m, n); A = A * A; Type of ensemble 
+Hermite 
+Laguerre Jacobi 1 
+4 
+2 X = randn(n) + i * randn(n); Y = randn(n) + i * randn(n); 
+A = randn(m, n) + i * randn(m, n); A = A * A; 
+1
+ 1  1  2  2X = randn(m, n ) + i * randn(m, n ); Y = randn(m, n ) + i * randn(m, n ); A = (X * X) / (X * X + Y * Y);
+ 2 2 2 1  2 1 1 
+1Y = randn(m, n ) + i * randn(m, n ); Y = randn(m, n ) + i * randn(m, n ); X = randn(m, n ) + i * randn(m, n ); X = randn(m, n ) + i * randn(m, n ); 
+2 2  1 1  2  1 2 1X = [X X ; conj(X ) conj(X )]; Y = [Y Y ; conj(Y ) conj(Y )]; 
+A = (X * X) / (X * X + Y * Y); 1  1
+ 2  2 X = randn(m, n) + i * randn(m, n); Y = randn(m, n) + i * randn(m, n); 
+A = [X Y; conj(Y) conj(X)]; A = A * A;  
+X = randn(m, n ); Y = randn(m, n ); A = (X * X) / (X * X + Y * Y);2 Q XQ 
+U XU 1
+ 1
+ 1
+ 1
+ 1
+ 1 
+A = randn(n); A = (A+A) / 2; MATLAB code Connected Matrix Problem</text>
+        </slide>
+        <slide>
+          <slideno>13</slideno>
+          <text>/bracketleftbigg /bracketrightbigg 
+/parenleftbig /parenrightbig 
+/parenleftbig /parenrightbig 
+/productdisplay 2 
+6 Note: It is straightforward to imagine computing the Jacobian numerically. We can make n(n+1) perturba
+tions to R, say by systematically adding .001 to each entry, and then compute d Avia dA= QRQ(R+dR). 
+Similarly we can make n(n1)/2 perturbation to Qby choosing two distinct columns of Qand multiplying 
+the n2 matrix formed from these columns by a matrix such as 
+cos(.001) sin( .001) . sin(.001) cos( .001) 
+The d Qis the new Qminus the old one. 
+The n2 resulting d As may be squashed into an n2 by n2 matrix whose determinant could be computed 
+numerically, conrming Theorem 3. 
+Note: It is easy to compute the inverse map, i.e., given d Acompute d Qand d R. Numerically we can ask 
+for [Q, R] = qr(A) and [ Q+ dQ, R+ dR] = qr(A+ dA). 
+Mathematically, d A = Q(dRR1 + QTdQ)R so if lower( M) denotes the strictly lower part of M and 
+upper( M) denotes the upper part of M, then 
+dQ = Q lower( QTdAR1)lower( QTdAR1)T 
+and d R = upper( QTdAR1) + lower( QTdAdR1)T R 
+Jacobians for Spherical Coordinates 
+The Jacobian matrix for the transformation between spherical coordinates and Cartesian coordinates has a 
+suciently interesting structure that we include this case as our nal example. The structure is known as a 
+lower Hessenberg structure. 
+We recall that in Rn, we dene spherical coordinates r, 1, 2, . . . ,  n1 by 
+x1 = rcos 1 
+x2 = rsin 1 cos 2 
+x3 = rsin 1 sin 2 cos 3 
+. . . 
+xn1 = rsin 1 sin 2 sin n2 cos n1 
+xn = rsin 1 sin 2 . . .sin n2 sin n1 
+or for j= 1, . . . , n , xj may be written as 
+/bracketleftiggj1 /bracketrightigg 
+xj = r sin i cos j (n = 0). 
+i=1 
+We schematically place an  in the matrix below if xj depends on the variable heading the columns. The 
+dependency structure is then 
+r  1 2 n2 n1   
+ x1 
+ x2 
+.      
+. 
+.    .  .. ..  .    xn2   
+      
+xn1  
+xn  
+Therefore the nonzero structure of the Jacobian matrix is represented by the pattern above. 
+Matrices that are nonzero only in the lower triangular part and on the superdiagonal are referred to as 
+lower Hessenberg matrices.</text>
+        </slide>
+        <slide>
+          <slideno>18</slideno>
+          <text>/parenleftbigg /parenrightbigg 
+/parenleftbigg /parenrightbigg 
+/parenleftig /parenrightig 
+/producttext 
+/productdisplay 9.3 Triangular  Symmetric 
++ Let S = U + UT = . If we consider the map from U to upper( S), it is easy to see that the Jacobian 
+determinant is 2n . 
+(dS) = (diag(d S)) (strictly-upper(d S)) 
+= 2n(diag(d U)) (strictly-upper(d U)) 
+= 2n(dU). 
+9.4 General matrix functions 
+x11 x12 Let Y = Y(X) be a 2 2 matrix, where X = . We have that x21 x22 
+ y11 dx11+ y11 dx12+ y11 dx21+ y11 y12 dx11+ y12 dx12+ y12 dx21+ y12 dx22 x11 dx22 x11 x12 x21 x22 x12 x21 x22 
+dY =   . 
+y21 dx11+ y21 dx12+ y21 dx21+ y21 y22 dx11+ y22 dx12+ y22 dx21+ y22 dx22 x11 dx22 x11 x12 x21 x22 x12 x21 x22 
+The wedge product of all the elements is 
+(dY) = dy11 dy21 dy12 dy22 = det yij dx11 dx21 dx12 dx22 = (det J)(dX). xkl 
+In general, if Y = Y(X) is an n n matrix, then 
+(dY) = (det J)(dX), 
+where det J denotes the Jacobian determinant yij .xkl 
+9.5 Eigenproblem Jacobians 
+Case I: S Symmetric 
+If S  Rn,n is symmetric it may be written 
+S = QQT, QTQ= I, = diag( 1, , n). 
+The columns of Q are the eigenvectors, while the i are the eigenvalues. 
+Dierentiating, 
+dS = dQQT + QdQT + QdQT , 
+QTdSQ = (QTdQ) (QTdQ) + d . 
+TNotice that QTdSQ is a symmetric matrix of dierentials with d i on the diagonal and qi dqj(i j) as 
+the i, jth entry in the upper triangular part. 
+Therefore ( QTdSQ) = i&lt;j |i  j(d)(QTdQ). We have from Example 3 of Section 4 that |
+(QTdSQ) = (dS). In summary 
+(dS) = |i j(d)(QTdQ).|
+i&lt;j
+Many readers will wonder about the meaning of ( QTdQ). We did. We will not discuss this in length here 
+but encourage you to ask us if you are curious.</text>
+        </slide>
+        <slide>
+          <slideno>12</slideno>
+          <text>/braceleftbigg 
+/braceleftbigg 
+/parenleftbigg /parenrightbigg 
+/productdisplay 
+/parenrightbig 
+/producttext lij i &gt; j Proof 2: Let Mij = i j as in the diagram above. Since A= LU, we have that uij 
+i1 /summationdisplay 
+Aij = MikMkj + uij for i j 
+k=1 
+and 
+j1 /summationdisplay 
+Aij = MikMkj + lijujj for i &gt; j . 
+k=1 
+Therefore 
+1 if Aij = i j. (6) Mij ujj if i &gt; j 
+Notice that Aij never depends on Mpq when p &gt; i or q &gt; j. Therefore if we order the variables rst by row 
+and next by column, we see that the Jacobian matrix is lower triangular with diagonal entries given in (6). 
+Remembering that the determinant of a lower triangular matrix is the product of the diagonal entries, the 
+theorem follows.  
+Perhaps it should not have been surprising that the condition that Aadmits a unique LU decomposition 
+may be thought of in terms of the Jacobian. Given a matrix A, let pk denote the determinant of the upper 
+left k by k principal minor. It may be readily veried that u11 . . . u kk = pk and hence the Jacobian is 
+p1p2 . . . p n1. The condition that A admits a unique LU decomposition is well known to be that all the 
+upper-left principal minors of dimension smaller than n are non-singular. Otherwise the matrix may have 
+no LU decomposition. For example, 
+0 1 has no LU factorization. 1 1 
+It may also have many LU decompositions as does the zero matrix when n &gt;1. This degeneracy explains the 
+need for pivoting strategies (i.e., strategies that reorder the matrix rows and/or columns) for solving linear 
+systems of equations even if the computation is done in exact arithmetic. Modern Gaussian elimination 
+software for solving linear systems of equations in nite precision include pivoting strategies designed to avoid being near a matrix with such a degeneracy. 
+Exercise. If Ais symmetric positive denite, it may be factored A= LLT . This is the famous Cholesky 
+decomposition of A. How many independent variables are in A? In L? Prove that the Jacobian of the change 
+of variables is 
+n 
+2n n+1idet J = lii 
+i=1 
+Research Question. It seems that the existence of a nite algorithm for a matrix factorization is linked 
+to a triangular Jacobian matrix. After all, the latter implies only one new variable need be substituted at a 
+time. This is the essential idea of Doolittles or Crouts matrix factorization schemes for LU. 
+5.2 Jacobian of Gram-Schmidt ( A = QR) 
+It is well known that any nonsingular square matrix Amay be factored uniquely into orthogonal times upper 
+triangular, or A= QRwith Rii &gt;0. 
+Theorem 3. Given any dQwith QTdQanti-symmetric, and any dR, we can compute dA= QdR+dQR= 
+Q(dRR1 + QTdQ)R= (RT  Q) /parenleftbig 
+(RT upper I)1dR+ (QTdQ) . The linear maps from (lower QTdQ), dR 
+nto dAthen has determinant ( /producttext
+in 
+=1 rii)( ri = .ii ) /producttextn ni 
+i=1 rii</text>
+        </slide>
+        <slide>
+          <slideno>6</slideno>
+          <text>/bracketleftbigg /bracketrightbigg 
+  
+  Let Y = ATSA, where Y and S are symmetric, but A = a b is arbitrary. The Jacobian matrix is c d 
+ 2 2  a c 2ca 
+   J =  b2 d2 2db   
+ab cd cb + ad 
+and det J = (det A)3 . 
+The cube on the determinant tends to surprise many people. Can you guess what it is for an n  n 
+symmetric matrix ( Y = ATSA)? The answer (det J = (det A)n+1)is in Example 3 of Section 3. 
+%jacobian2by2.m
+%Code 8.1 of Random Eigenvalues by Alan Edelman
+%Experiment: Compute the Jacobian of a 2x2 matrix function
+%Comment: Symbolic tools are not perfect. The author
+% exercised care in choosing the variables.
+syms p q r s a b c d t e1 e2
+X=[p q ; r s]; A=[a b;c d];
+%% Compute Jacobians
+Y=X^2; J=jacobian(Y(:),X(:)), JAC_square =factor(det(J))
+Y=X^3; J=jacobian(Y(:),X(:)), JAC_cube =factor(det(J))
+Y=inv(X); J=jacobian(Y(:),X(:)), JAC_inv =factor(det(J))
+Y=A*X; J=jacobian(Y(:),X(:)), JAC_linear =factor(det(J))
+Y=[p q;r/p det(X)/p]; J=jacobian(Y(:),X(:)), JAC_lu =factor(det(J))
+x=[p s r];y=[sqrt(p) sqrt(s) r/(sqrt(p)*sqrt(s))];
+J=jacobian(y,x), JAC_DMD =factor(det(J))
+x=[p s]; y=[ sqrt(p^2+s^2) atan(s/p)];
+J=jacobian(y,x), JAC_notrace =factor(det(J))
+Q=[cos(t) -sin(t); sin(t) cos(t)];
+D=[e1 0;0 e2];Y=Q*D*Q.;
+y=[Y(1,1) Y(2,2) Y(1,2)]; x=[t e1 e2];
+J=jacobian(y,x), JAC_symeig =simplify(det(J))
+X=[p s;s r]; Y=A.*X*A;
+y=[Y(1,1) Y(2,2) Y(1,2)]; x=[p r s];
+J=jacobian(y,x), JAC_symcong =factor(det(J))
+Code 1</text>
+        </slide>
+        <slide>
+          <slideno>33</slideno>
+          <text>/integraldisplay /integraldisplay 
+/summationdisplay 
+/summationdisplay 
+/braceleftig /bracerightig /summationtext 
+/braceleftig /bracerightig /summationtext 
+/braceleftig /bracerightig /summationtext /parenleftbigg /parenrightbigg 
+/summationtext an open neighborhood whose closure is compact. This is a locally compact topological group. The set of 
+square nonsingular matrices or the set of orthogonal matrices are good examples. A measure (E) is some 
+sort of volume dened on E which may be thought of as nice (measurable) subsets of G. The measure 
+is a Haar measure if (gE) = (E), for every g  G. In the example of orthogonal n by n matrices, the 
+condition that our measure be Haar is that 
+f(Q)(QTdQ) = f(Q0Q)(QTdQ). 
+QS QQ1S0 
+In other words, Haar measure is symmetrical, no matter how we rotate our sets, we get the same answer. 
+The general theorem is that on every locally compact topological group, there exists a Haar measure . 
+16 Exterior Products (The Algebra) 
+Let V be an n-dimensional vector space over R. For p= 0,1, . . ., n we dene the pth exterior product. For 
+p= 0 it is R and for p= 1 it is V. For p= 2, it consists of formal sums of the form 
+ai(ui wi), 
+i 
+where ai  R and ui, wi  V. (We say  ui wedge vi.) Additionally, we require that ( au+ v)  w = 
+a(uw) + (vw), u(bv+ w) = b(uv) + (uw) and uu=0. A consequence of the last relation is that 
+uw = wu which we have referred to previously as the anti-commutative law. We further require that 
+if e1, . . ., e n constitute a basis for V, then ei ej for i &lt; j, constitute a basis for the second exterior product. 
+Proceeding analogously, if the ei form a basis for V we can produce formal sums 
+), c(e1 e2  ep 
+ 
+where  is the multi-index ( 1, . . . ,  p), where 1 &lt; &lt;  p. The expression is multilinear, and the signs  
+change if we transpose any two elements. 
+The table below lists the exterior products of a vector space V = {ciei}. 
+p 
+0 
+1 
+2 
+3 
+. . . 
+p 
+. . . 
+n 
+n+ 1 pth Exterior Product 
+V0 = R 
+V1 = V = {ciei}
+V2 = i&lt;j cijei ej 
+V3 = i&lt;j&lt;k cijkei ej ek 
+. . . 
+Vp = i1&lt;i2&lt;...&lt;i p ci1i2...ip ei1 ei2 . . .eip 
+. . . 
+Vn = {ce1 e2 . . .en}
+Vn+1 = {0} Dimension 
+1 
+n 
+n(n1)/2 
+n(n1)(n2)/6 
+. . . 
+n 
+p 
+. . . 
+1 
+0 
+In this book V = cidxi}, i.e. the 1-forms. Then Vp consists of the p-forms, i.e. the rank p exterior {
+dierential forms. 
+References 
+[1] Charles Van Loan. The ubiquitous Kronecker product. J. Comp. and Applied Math. , 123(200):85100.</text>
+        </slide>
+        <slide>
+          <slideno>16</slideno>
+          <text>/parenleftbig /parenrightbig 
+/logicalanddisplay 
+/parenleftbigg /parenrightbigg 
+/parenleftbigg /parenrightbigg 
+/logicalanddisplay 
+/logicalanddisplay 
+/logicalandtext 
+/logicalandtext 
+/logicalandtext 
+/logicalandtext 
+/logicalandtext 
+/logicalandtext In the rst case, we have computed all 2 2 subdeterminants and in the second case we compute the one 
+3 3 determinant. In general, if F  Rn,p, we compute all n subdeterminants of size p. p 
+If F(x)  Rn,p and d x is the vector (d x1,dx2, . . . ,dxn)T , then we can wedge together the elements of 
+F(x)Tdx. The result is 
+p /parenleftbigg /parenrightbigg 
+(F(x)T dx)i = /summationdisplay 
+Fi1 i2 . . . i p ,1 2 . . . p dxi1  dxip 
+i=1 i1&lt;i2&lt;...&lt;i p 
+i1 i2 . . . i pwhere F denotes the subdeterminant of F obtained by taking rows i1, i2, . . . , i p and 1 2 . . . p 
+i1 i2 . . . i pall p columns. In almost MATLAB notation, F = det( F[i1 i2 . . . i p,:]). In simple 1 2 . . . p 
+English, if we wedge together pdierentials which we can store in the columns of F, then the wedge product 
+computes all ppsubdeterminants. 
+We use the notation p 
+(F(x)Tdx)  (F(x)Tdx)i , 
+i=1 
+i.e., ( ) denotes wedge together all the elements of the vector inside the parentheses. 
+A notational note : We are inventing the ( ) notation. Books such as [4] use only parentheses 
+to indicate the wedge product of the components inside. Unfortunately, we have found that parenthesis 
+notation is ambiguous especially when we want to wedge together the elements of a complicated expression. Once we decided on placing the wedge symbol   somewhere, we experimented with upper/lower left and 
+
+upper/lower right, nally settling on the upper right notation as above. 
+We will extend the ( ) notation from vectors to matrices of dierentials. We will only wedge 
+together the independent elements. For example 
+M  Rmn (dM) = d Mij . 
+1im 
+1jn 
+We use subscripts to indicate which elements to wedge over. For example (d S)
+ij = ij dSij. When 
+unnecessary as in the cases below, we omit the subscripts. 
+S Rnn (dS) = dSij symmetric 
+1ijn 
+A Rnn (dA) = dAij antisymmetric 
+1i&lt;jn 
+  Rnn (d) = dii diagonal 
+1in 
+U  Rnn (dU) = dUij upper triangular 
+1ijn 
+U  Rnn (dU) = dUij strictly upper triangular 
+1i&lt;jn
+etc.
+Denitional note: We have not specied the order. Therefore the wedge product of elements of a matrix is 
+dened up to + or   sign. 
+Notational note: We write (d M1)(dM2) for (dM1) (dM2). 
+9 Jacobians with wedge products 
+9.1 Wedge Notation not useful ( Y = X2) 
+Consider the 2 2 case of Y = X2 as in Example 1 of Section 2.2.</text>
+        </slide>
+        <slide>
+          <slideno>24</slideno>
+          <text>/integraldisplay /integraldisplay 
+/summationtext 
+/integraltext /integraltext 
+/integraltext /integraltext 
+/logicalandtext /summationtext /summationtext 15 Volume and Integration 
+15.1 Integration Using Dierential Forms 
+One nice property of our dierential form notation is that if y = y(x) is some function from (a subset of) 
+Rn to Rn, then the formula for changing the volume element is built into the identity 
+f(y)dy1 . . .dyn = f(y(x))dx1 . . .dxn, 
+y(S) S 
+because as we saw in 9.4 the Jacobian emerges when we write the exterior product of the d ys in terms of 
+the dxs. 
+We will only concern ourselves with integration of n-forms on manifolds of dimension n. In fact, most 
+of our manifolds will be at (subsets of Rn), or surfaces only slightly more complicated than spheres. For 
+example, the Stiefel manifold Vm,n of n by porthogonal matrices Q(QTQ= Im) which we shall introduce 
+shortly. Exterior products will give us the correct volume element for integration. 
+If the xi are Cartesian coordinates in n-dimensional Euclidean space, then (d x)  dx1 dx2 . . .dxn is 
+the correct volume element. For simplicity, this may be written as d x1dx2 . . .dxn so as to correspond to the 
+Lebesgue measure. Let qi be the ith component of a unit vector q Rn . Evidently, n parameters is one too 
+many for specifying points on the sphere. Unless qn = 0, we may use q1 through qn1 as local coordinates 
+on the sphere, and then d qn may be thought of as a linear combination of the d qi for i &lt; n. ( i qidqi = 0 
+because qTq = 1). However, the Cartesian volume element d q1dq2 . . .dqn1 is not correct for integrating 
+functions on the sphere. It is as if we took a map of the Earth and used Latitude and Longitude as Cartesian 
+coordinates, and then tried to make some presumption about the size of Greenland1 . 
+Integration: 
+xS f(x)(dx) or f(dx) and other related expressions will denote the ordinary integral over a region S 
+S R. 
+|| ||2 /2 . Example. Rn exp(x2/2)(dx) = (2 )n/2 and similarly Rn,n exp(xF /2)(dA) = (2 )n 2
+F /summationtext 2 || || ||A||2 = 
+tr(ATA) = i,j aij = Frobenius norm of Asquared. 
+If an object has n parameters, the correct dierential form for the volume element is an n-form. What 
+2about x  Sn1, i.e., {x  Rn : x= 1}? d xi = (dx) = 0. We have xi = 1 xidxi = 0i=1 
+dxn = 1 (x1dx1 + + xn1dx||
+n||
+1). Whatever the correct volume element for a sphere is, it is not (d x). xn 
+As an example, we revisit spherical coordinates in the next section. 
+15.2 Plucker Coordinates and Volume Measurement 
+Let F  Rn,p. We might think of the columns of F as the edges of a parallelopiped. By dening Pl( F) 
+(Plucker( F)), we can obtain simple formulas for volumes. 
+Denition 1. Pl(F) is the vector of ppsubdeterminants of F written in natural order. 
+1I do not think that I have ever seen a map of the Earth that uses Latitude and Longitude as Cartesian coordinates. The 
+most familiar map, the Mercator map, takes a stereographic projection of the Earth onto the (complex) plane, and then takes 
+the image of the entire plane into an innite strip by taking the complex logarithm.</text>
+        </slide>
+        <slide>
+          <slideno>22</slideno>
+          <text>function j = jsymeig(a)
+%JSYMEIG Jacobian for the symmetric eigenvalue problem
+% J = JSYMEIG(A) returns the Numerical and Theoretical Jacobian for
+% the symmmetric eigenvalue problem. The numerical answer is
+% computed by perturbing the symmetric matrix A in the N*(N+1)/2
+% independent directions and computing the change in the
+% eigenvalues and eigenvectos.
+%
+% A is a REAL N x N symmetric matrix
+% Example: Valid Inputs for A are
+% 1) G = randn(5); A = (G + G)
+% 2) G = randn(5,10); A = G * G
+%
+% J is a 1 x 2 row vector
+% J(1) is the theoretical Jacobian computed using the formula in the
+% third row of the table in Section 12 of Handout # 6
+%
+%
+% References:
+% [1] Alan Edelman, Handout 6: Essentials of Finite Random Matrix
+% Theory, Fall 2004, Course Notes 18.338.
+% [2] Alan Edelman, Random Matrix Eigenvalues.
+%
+% Alan Edelman and Raj Rao, Sept. 2004.
+% $Revision: 1.1 $ $Date: 2004/09/28 17:11:18 $
+format long
+[q,e] = eig(a); % Compute eigenvalues and eigenvectors
+e = diag(e);
+epsilon = 1e-7; % Size of perturbation
+n = length(a); % Size of Matrix
+jacmatrix = zeros(n*(n+1)/2);
+k = 0; mask = triu( ones(n),1); mask = logical(mask(:));
+for i = 1:n,
+for j = i:n
+k = k+1;
+E = zeros(n);
+E(i,j) = 1; E(j,i) = 1;
+aa = a + epsilon * E;
+[qq,ee] = eig(aa);
+de= (diag(ee)-e)/epsilon;
+qdq = q*(qq-q)/epsilon; qdq = qdq(:);
+jacmatrix(1:n,k) = de;
+jacmatrix((n+1):end,k) = qdq(mask);
+end
+end
+% Numerical answer
+j = 1/det(jacmatrix);
+% Theoretical answer
+[e1,e2] = meshgrid(e,e);
+z = abs(e1-e2);
+j = abs([j prod( z(mask) ) ]);
+Code 2</text>
+        </slide>
+        <slide>
+          <slideno>30</slideno>
+          <text>Thus
+(dx)= (Hdx)=rn1drn/logicalanddisplay
+i=2(Hdq)i.
+We can conclude that the surface element on the sphere is (d q) =/logicalandtextn
+i=2(Hdq)i.
+v(5)
+1f (5)
+1
+x(5)v(5)2v(17)1
+f
+ (5)2f (17)2
+f (17)1v(17)
+2
+x(17)
+Householder Reectors
+We can explicitly construct an Has described above so as to be the Householder reector. Notice that
+Hserves as a rotating coordinate system. It is critical that H(:,2 :n) is an orthogonal basis of tangents.
+Choose v=e1qthe external angle bisector and
+H=I2vvT
+vTv.
+See Figure 1 which illustrate that His a reection through the internal angle bisector of q+e1.
+Notice that ( Hdq)1= 0 and every other component/summationtextn
+j=1Hijdqj(i/ne}ationslash= 1) may be thought of as a tangent
+on the sphere. H=HT, Hq=e1, He1=q1, H2=I, and His orthogonal.
+  
+v=qe1
+q
+e1q+e1
+plane
+of
+reection
+Figure 1:
+I think many people do not really understand the meaning of ( QTdQ). I like to build a nice cube on
+the surface of the orthogonal group rst. Then we will connect the notations. First of all O(n) is ann(n1)
+2
+dimensional surface in Rn2. At any point Q, tangents have the form QA, where Ais anti-symmetric.</text>
+        </slide>
+        <slide>
+          <slideno>1</slideno>
+          <text>When I introduce undergraduate students to matrix multiplication, I tell them that matrices are like scalars, 
+except that they do not commute. 
+The numerical (or rst order perturbation theory) interpretation applies, but it may seem less familiar 
+at rst. Numerically take X=randn(n) and E=randn(n) for  = .001 say, and then compute 
+(X + E)3  X3 
+ X2E + XEX + EX2 . (2)  
+This is the matrix version of (1). Holding X xed and allowing E to vary, the right-hand side is a linear 
+function of E. There is no simpler form possible. 
+Symbolically (or numerically) one can take d X = Ekl which is the matrix that has a one in element ( k, l) 
+and 0 elsewhere. Then we can write down the matrix of partial derivatives: 
+X3 
+= X2(Ekl) + X(Ekl)X + (Ekl)X2 . xkl 
+As we let k, l vary over all possible indices, we obtain all the information we need to compute the derivative 
+in any general direction E. 
+In general, the directional derivative of Yij(X) in the direction d X is given by (d Y)ij. For a particular 
+matrix X, dY(X) is a matrix of directional derivatives corresponding to a rst order perturbation in the 
+direction E = dX. It is a matrix of linear functions corresponding to the linearization of Y(X) about X. 
+Structured Perturbations 
+We sometimes restrict our E to be a structured perturbation. For example if X is triangular, symmetric, 
+antisymmetric, or even sparse then often we wish to restrict E so that the pattern is maintained in the 
+perturbed matrix as well. An important case occurs when X is orthogonal. We will see in an example below 
+that we will want to restrict E so that XTE is antisymmetric when X is orthogonal. 
+Example 2: y = xTx 
+Here y is a scalar and dot products commute so that d y = 2xTdx. When y = 1, x is on the unit sphere. 
+To stay on the sphere, we need d y = 0 so that xTdx = 0, i.e., the tangent to the sphere is perpendicular to 
+the sphere. Note the two uses of d y. In the rst case it is the change to the squared length of x. In the 
+second case, by setting d y = 0, we nd perturbations to x which to rst order do not change the length at 
+all. Indeed if one computes ( x+dx)T (x+dx) for a small nite d x, one sees that if xT dx = 0 then the length 
+changes only to second order. Geometrically, one can draw a tangent to a circle. The distance to the circle 
+is second order in the distance along the tangent. 
+Example 3: y = xTAx 
+Again y is scalar. We have d y = dxTAx + xTAdx. If A is symmetric then d y = 2xTAdx. 
+Example 4: Y = X1 
+We have that XY = I so that X(dY) + (d X)Y = 0 so that d Y = X1dXX1 . 
+We recommend that the reader compute 1((X + E)1  X1) numerically and verify that it is equal 
+to X1EX1 . 
+In other words, 
+(X + E)1 = X1  X1EX1 + O(2). 
+Example 5: I = QTQ 
+If Q is orthogonal we have that QTdQ+ dQTQ= 0 so that QTdQ is antisymmetric. 
+In general, d( QTQ) = QTdQ+dQTQ, but with no orthogonality condition on Q, there is no anti-symmetry 
+condition on QTdQ. 
+If y is a scalar function of x1, x2, . . . , x n then we have the chain rule 
+y y y dy = d x1 + d x2 + . . . + d xn . x1 x2 xn</text>
+        </slide>
+        <slide>
+          <slideno>27</slideno>
+          <text>/logicalandtext
+/logicalandtext
+/logicalandtext
+/integraldisplay 
+/summationdisplay 
+/logicalanddisplay 1.	Volume measuring function: (Volume element of Integration) 
+We now more explicitly consider V  Rn,p as a parallelopiped generated by its columns. For general 
+F  Rn,p, det(FTV) may be thought of as a skewed volume. 
+pWe now carefully interpret i=1(FTdx)i, where F  Rn,p and d x = (dx1dx2 . . .dxn)T . We remind the /summationtextnreader that ( FTdx)i = j=1 Fjidxj. 
+pBy i=1(FTdx)i we are thinking of the linear map that takes V  Rn,p to the scalar det( FTV). In our 
+mind we imagine the following assumptions 
+	We have some p-dimensional surface Sp in Rn . 
+	At some point P on Sp, the columns of X  Rn,p are tangent to Sp. We think of X as generating a 
+little parallelopiped on the surface of Sp. 
+	We imagine the columns of F are an orthonormal basis for the tangents to Sp at P. 
+pThen i=1(FTdx)i = (FT dx) is a function that replaces parallelopipeds on Sp with its Euclidean  
+volume. 
+Now we can do the calculus thing. Suppose we want to compute 
+I= f(x)d(surface) , 
+Sp 
+the integral of some scalar function f on the surface Sp. 
+We discretize by circumscribing the surface with little parallelopipeds that we specify by using the matrix 
+V(i)  Rn,p. The word circumscribing indicates that the pcolumns of V(i) are tangent (or reasonably close 
+to tangent) at x(i). 
+Let F(i) be an orthonormal basis for the tangents at x(i). Then I is discretized by 
+I f(x(i))det(F(i)T V(i)) 
+i 
+We then use the notation /integraldisplay p /integraldisplay 
+I= f(x) (FTdx)i = f(x)(FT dx) 
+Sp i=1 Sp 
+to indicate this continuous limit. Here f is a function of x. 
+The notation does not require that F be orthonormal or tangent vectors. These conditions guarantee 
+that you get the correct Euclidean volume. Let them go and you obtain some warped or weighted volume. 
+Linear combinations are allowed too. 
+The integral notation does require that you feed in tangent vectors if you discretize. Careful mathematics 
+shows that for the cases we care about, no matter how one discretizes, the limit of small parallelopipeds gives a unique answer. (Analog of no matter how you take small rectangles to compute Riemann integrals, 
+in the limit there is only one unique area under a curve.) 
+15.3 Overview of special surfaces 
+We are very interested in the following three mathematical objects: 
+1.	The sphere = {x: /bardblx/bardbl = 1} in Rn 
+2.	The orthogonal group O(n) of orthogonal matrices Q ( QTQ= I) in Rnn . 
+3.	The Stiefel manifold of tall skinny matrices Y  Rnp with orthogonal columns ( YTY = Ip).</text>
+        </slide>
+      </slides>
+      <videos/>
+    </lecture>
+    <lecture>
+      <lecture_title>The &#8220;Semi-Circular&#8221; Element: Central Limit Theorem for Infinite Random Matrices</lecture_title>
+      <lecture_pdf_url>https://ocw.mit.edu/courses/18-338j-infinite-random-matrix-theory-fall-2004/resources/handout5/</lecture_pdf_url>
+      <lectureno>5</lectureno>
+      <slides>
+        <slide>
+          <slideno>0</slideno>
+          <text>18.338J/16.394J: The Mathematics of Innite Random Matrice s
+Tridiagonal Matrices, Orthogonal Polynomials and the Clas sical
+Random Matrix Ensembles
+Brian Sutton
+Handout #5, Thursday, September 23, 2004
+In class, we saw the connection between the so-called Hermit e matrix and the semi-circular law. There
+is actually a deeper story that connects the classical rando m matrix ensembles to the classical orthogonal
+polynomials studied in classical texts such as [1] and more r ecent monographs such as [2]. We illuminate
+part of this story here. The website www.mathworld.com is an excellent reference for these polynomials and
+will prove handy when completing the exercises.
+In any computational explorations, see if you can spot the in teresting feature in the eigenvectors (either
+the rst or last row/column) of the corresponding tridiagon al matrix.
+1 Roots of orthogonal polynomials
+Any weight function w(x) on an interval [ a, b] (possibly innite) denes a system of orthogonal polynomi als
+n,n= 0,1,2, . . ., satisfying
+/integraldisplayb
+amnw(x)dx=mn. (1)
+The polynomials can be generated easily, because they satis fy a three-term recurrence
+0(x) =/parenleftBig/integraltextb
+aw/parenrightBig1/2
+, (2)
+xn(x) =bnn1(x) +an+1n(x) +bn+1n+1(x). (3)
+(Note that b0is taken to be zero.)
+Perhaps surprisingly, the three-term recurrence can be use d to nd the roots of nas well. Simply form
+the symmetric tridiagonal matrix
+Tn=
+a1b1
+b1a2b2
+b2a3b3
+.........
+bn2an1bn1
+bn1an
+.
+The roots of nare the eigenvalues of Tn!
+Remark 1. The symmetry of Tfollows from two choices which we made. First, in (1),nwas normalized to
+have unit length under the inner product /angbracketleftf, g/angbracketright=/integraltextb
+afgw. Second, (3)was arranged in the form xn=RHS.
+Not all authors follow these conventions.</text>
+        </slide>
+        <slide>
+          <slideno>1</slideno>
+          <text>To see that the eigenvalues are the roots, consider vectors o f the form
+v= (0(x), 1(x), . . . ,  n1(x))T.
+The recurrence (3) implies that ( Tv)i=xi1(x) =xvifori= 1, . . ., n 1, regardless of the value of x.
+Now, if xis a root of n(x), then (3) specializes to
+xn1(x) =bn1n2(x) +ann1x
+i.e.
+xvn=bn1vn1+anvn= (Tv)n.
+Therefore, every root of n(x) is an eigenvalue of Tn.
+2 Hermite polynomials
+Letw(x) =ex2onR. According to mathworld.wolfram.com , the system of polynomials Hndened by
+/integraldisplay
+HmHnw(x)dx=mn2nn!
+satises the recurrence
+H0(x) = 1 (4)
+Hn+1(x) = 2xHn(x)2nHn1(x). (5)
+Let the orthonormal Hermite polynomials be dened by Hn(x) =1
+2n/2
+n!1/4Hn(x), so that
+/integraldisplay
+HmHnw dx=mn,
+and substitute 2n/2(n!)1/21/4Hn(x) for Hn(x) in (5) to nd
+H0(x) =1/4
+xHn(x) =1
+2nHn1(x) +1
+2
+n+ 1Hn+1(x).
+These equations are exactly of the form (1)-(3), so the eigen values of
+1
+2
+0
+1
+1 0
+2
+0
+2 0
+3
+.........n2 0n1n1 0
+
+are the roots of Hn.
+Exericse : Write a MATLAB function that generates this tridiagonal matrix. Use the eigcommand to
+compute its eigenvalues for any choice of n. Histogram the roots of Hnforn= 50,100,250,300,500
+using the histn function. Compare it to the semi-circular law. Does it make a dierence whether the the
+generalized ensemble is real or complex?</text>
+        </slide>
+        <slide>
+          <slideno>2</slideno>
+          <text>3 Laguerre polynomials
+Letw(x) =xexon [0,).
+Exercise : Verify that the Laguerre polynomials dened by
+/integraldisplay
+0L
+mL
+nw dx=mn
+satisfy the recurrence
+L
+0(x) =1/radicalbig
+(+ 1)
+xL
+n(x) =n
++nL
+n1(x) + (+ 1 + 2 n)L
+n(x)
+n+ 1
++n+ 1L
+n+1(x).
+Therefore, the roots of L
+nare given by the eigenvalues of
+
++ 1 
+1+ 1
+
+1+ 1 + 3 
+2+ 2
+0 
+2+ 2 + 5 
+3+ 3
+.........
+n1+n11 + 2n
+.
+Exericse : Write a MATLAB function that generates this tridiagonal matrix. Use the eigcommand to
+compute its eigenvalues for any choice of nand. Histogram the roots of Lnfor dierent values of nand
+musing the histn function. Compare it to the Mar cenko-Pastur distribution for the generalized Laguerre
+Ensemble. Does it make a dierence whether the the generaliz ed ensemble is real or complex? Note:
+=(nm+ 1)/21 where = 1 when the elements are real and = 2 when the elements are complex.
+The parameters mandnare associated with the rows and columns of the Gaussian matr ix used to
+construct the Wishart matrix. Recall that m/n=c.
+4 Jacobi polynomials
+Jacobi polynomials are orthogonal with respect to the weigh tw(x) = (1 x)(1 +x)on the interval
+[1,1].
+Exercise : Verify that the tridiagonal matrix describing the recurre nce is produced by the following MATLAB
+code.</text>
+        </slide>
+        <slide>
+          <slideno>3</slideno>
+          <text>'
+&amp;$
+%function t = trijacobi(n,a,b)
+%TRIJACOBI Returns the tridiagonal matrix of polynomial re currence coefficients
+% TRIJACOBI(N,A,B) returns a tridiagonal matrix whose entr ies correspond
+% to the coefficients describing the recurrence between
+% the Jacobi Polynomials.
+%
+% The eigenvalues of this matrix correspond to the roots of th e N-th
+% Jacobi polynomial with parameters A and B.
+%
+% N, A and B are integers.
+%
+%
+% References:
+% [1] Alan Edelman, Handout 6: Tridiagonal Matrices, Orthog onal
+% Polynomials ans the Classical Random Matrix
+% Ensembles, Fall 2004,
+% Course Notes 18.338.
+% [2] Alan Edelman, Random Matrix Eigenvalues.
+% [3] Gabor Szego, Orthogonal Polynomials, American Mathem atical
+% Society, Providence, 1975. 4th Edition.
+% [4] Eric Weisstein, Jacobi Polynomial." From MathWorld--
+% A Wolfram Web Resource.
+% http://mathworld.wolfram.com/JacobiPolynomial.htm
+%
+% Brian Sutton, Sept. 2004.
+% $Revision: 1.0 $ $Date: 2004/09/23 11:35:18 $
+i = (1:n-1);
+d1 = 2*sqrt(i.*(a+i).*(b+i).*(a+b+i)./(-1+a+b+2*i)./( 1+a+b+2*i))./(a+ ...
+b+2*i);
+d0 = -(a^2-b^2)./(a+b+2*(0:n-1))./(2+a+b+2*(0:n-1)) ;
+t = spdiags([[d1;0] d0 [0;d1]],[-1 0 1],n,n);
+Code 1
+Exericse : Use the eigcommand to compute its eigenvalues for any choice of n. Histogram the roots of Tn
+for dierent values of n,aandbusing the histn function. Compare it to the MANOVA density for the
+MANOVA matrix. Hint: You might have to shift the spectrum for it to line up exactly. Does it make a
+dierence whether the the generalized ensemble is real or co mplex? Note: a=(n1m+ 1)/21 and
+b=(n2m+ 1)/21 where = 1 when the elements are real and = 2 when the elements are
+complex. The parameters m,n1andn2are associated with the rows and columns of the Gaussian matr ices
+used to construct the MANOVA matrix. Recall that m/n1=c1andm/n2=c2.
+References
+[1] G abor Szeg o. Orthogonal Polynomials . American Mathematical Society, Providence, 1975. 4th edi tion.
+[2] Percy Deift. Orthogonal Polynomials and Random Matrices: A Riemann-Hil bert Approach . American
+Mathematical Society, Providence, 1998.</text>
+        </slide>
+      </slides>
+      <videos/>
+    </lecture>
+    <lecture>
+      <lecture_title>Free Cumulants in Free Probability (cont.)</lecture_title>
+      <lecture_pdf_url>https://ocw.mit.edu/courses/18-338j-infinite-random-matrix-theory-fall-2004/resources/handout8/</lecture_pdf_url>
+      <lectureno>7</lectureno>
+      <slides>
+        <slide>
+          <slideno>0</slideno>
+          <text>1 18.338J/16.394J: The Mathematics of Innite Random Matrices 
+Project Ideas 
+Alan Edelman 
+Handout #8, Thursday, September 30, 2004 
+A requirement of this course is that the students experiment with a random matrix problem that is 
+of interest to them. Often these explorations take the shape of a little bit of theory and a little bit of 
+computational experimentation. Some of you might already have some ideas that are relevant to your current research. Regardless, we thought wed put together some ideas for projects. Feel free to adapt them 
+based on your interests; if you want more information about a particular idea, please feel to contact us. 
+Mid-term project presentations are tentatively scheduled for October 28th and November 2nd as indicated 
+on the course calendar. We will provide more details about this in a subsequent email to the class. The 
+basic purpose of this mid-term project is to get your feet wet thinking about a problem that is of interest to you using the tools youve learned about so far or to learn new tools for that purpose. 
+Covariance Matrices in Signal Processing 
+Sample covariance matrices come up in many signal processing applications such as adaptive ltering. Let G be the n  N Gaussian random matrix that weve encountered in class. In signal processing language, 
+the Wishart matrix 
+1 W = GG (1) N 
+is a rectangularly windowed estimator. In adaptive ltering applications, the covariance matrix that comes up can be expressed in terms of the Wishart matrix as A = W
+1 . Weve already seen how the Mar cenko-
+Pastur theorem can be used to characterize the density of the eigenvalues of the Wishart matrix. The density of A can hence be computed using standard Jacobian tricks. 
+A more general covariance matrix estimator is referred to as being exponentially windowed. To see where 
+the windowing comes in, let us rst rewrite the Wishart matrix as 
+W = 1 
+N N  
+i=1 gig H 
+i (2) 
+gi where 
+gi vectors is the i-th column of G. The rectangular windowing comes in from the fact that each of the N 
+is weighted equally by 1 /N in forming W. Hence, the exponentially weighted estimator is simply 
+W = 1 
+N N  
+i=1 Ni gig H 
+i (3) 
+where  &lt; 1 is the weighting factor. 
+In many signal processing publications, the consensus is that, loosely speaking, 
+1E[W1] = (1  )E[W]. (4)  
+The proofs for this involve perturbation theory arguments. We feel that we can get some insight on this 
+problem using random matrix techniques such as the ones youve learned in class. 
+Project Idea : Use random matrix arguments to rederive or verify this proof. Indicate what values of  
+this is valid for. Discuss any convergence issues i.e. what values of n and N is this approximately valid.</text>
+        </slide>
+        <slide>
+          <slideno>1</slideno>
+          <text>2 Stochastic Perturbation Theory 
+Allow us to sincerely atter G. W. (Pete) Stewart by including his words on this subject verbatim from his 
+survey paper on Stochastic Perturbation theory [1] which has been included in the course reader (Random 
+Matrices - II). 
+Let A be a matrix and let F be a matrix valued function of A. Two principal problems of matrix 
+perturbation theory are the following. Given a matrix E, presumed small, 
+1.	Approximate F(A + E), 
+2.	Bound  F(A + E) F(A)  in terms of  E . 
+Here  .  is some norm of interest. 
+The rst problem is usually, but not always, solved by assuming that F is dierentiable at A with 
+derivative F(A). Then 
+ F(A + E) = F(A) + FA(E) + o( E ),	 (5) 
+ so that for E suciently small FA(E) is the required approximation. The problem then reduces to nding 
+tractable expressions for FA(E) which in itself is often a nontrivial task. The second problem may be treated 
+a variety of ways; the basic idea being that the size of the perturbation is used as a bound even thought it 
+is likely to be an overestimate. 
+Stochastic perturbation theory is dierent from this approach because it is, in some sense, intermediate 
+of the other two. We let E be a stochastic matrix and compute expectations of quantities derived from the 
+perturbation expansion. 
+Project Idea : Pete Stewarts paper was published in 1990. The work of Mar cenko and Pastur was 
+rediscovered around that time; hence you will notice that there are no references to their work. An interesting 
+project would be to condense what Pete Stewart has to say and to determine if what we learned in class can 
+strengthen any of the ideas presented in his paper. Thinking of applications of this would be a bonus. 
+3 Other ideas 
+These some other ideas based on the survey papers on the website. If you want any clarication feel free to 
+contact us. 
+	What is the replica method? 
+	What is the connection between statistical physics, spin glasses and random matrices? 
+	What can random matrix theory tell us about real world graphs? 
+	Suppose we were given the moments of the semi-circle (numerically). Could you compute its density 
+using techniques described by what is known as the Classical Moment Problem? 
+	Construct a bijection between the MANOVA matrix and McKays theorem (ask us for the exact 
+relationship). 
+	Derive Jonssons result in a more direct manner using the bipartite graph bijection (possibly). 
+	What is the connection between Jack Polynomials and Free probability. 
+	What aspects of random matrix theory can be useful for principal component analysis? 
+References 
+[1] G. W. Stewart. Stochastic perturbation theory. SIAM Rev. , 32(4):579610, 1990.</text>
+        </slide>
+      </slides>
+      <videos/>
+    </lecture>
+    <lecture>
+      <lecture_title>The Hermite Ensemble: Wigner&#8217;s Semi-Circle Law</lecture_title>
+      <lecture_pdf_url>https://ocw.mit.edu/courses/18-338j-infinite-random-matrix-theory-fall-2004/resources/handout2/</lecture_pdf_url>
+      <lectureno>2</lectureno>
+      <slides>
+        <slide>
+          <slideno>2</slideno>
+          <text>%bellcurve.m
+%Code 1.1 of Random Eigenvalues by Alan Edelman
+%Experiment: Generate random samples from the normal distribution.
+%Observation: Histogram the random samples.
+%Theory: Falls on a bell curve.
+trials=100000; dx=.2;
+v=randn(1,trials);[count,x]=hist(v,[-4:dx:4]);
+hold off, b=bar(x,count/(trials*dx),y); hold on
+x=-4:.01:4;
+plot(x,exp(-x.^2/2)/sqrt(2*pi),LineWidth,2)
+axis([-4 4 0 .45]);
+Code 1 
+3 How Accurate Are Histograms? 
+When playing with Code 1, the reader will happily see that given enough trials the histogram is close to 
+the true bell curve. One can press further and ask how close? Multiple experiments will show that some of 
+the bars may be slightly too high while others slightly too low. There are many experiments which we 
+explore in the exercises to try to understand this more clearly. We will discuss these as the course progresse 
+4 HISTN: Normalized Histogram 
+We can incorporate the ideas discussed above into the following MATLAB code.</text>
+        </slide>
+        <slide>
+          <slideno>0</slideno>
+          <text>1 18.338J/16.394J: The Mathematics of Innite Random Matrices 
+Histogramming 
+Professor Alan Edelman 
+Handout #2, Tuesday, September 14, 2004 
+Random Variables and Probability Densities 
+We assume that the reader is familiar with the most basic of facts concerning continuous random variables 
+or is willing to settle for the following sketchy description. Samples from a (univariate or multivariate) 
+experiment can be histogrammed either in practice or as a thought experiment. Histogramming counts 
+how many samples fall in a certain interval. Underlying is the notion that there is a probability distribution which precisely represents the probability of falling into an interval. 
+If xR is a real random variable with probability density px(t), this means that the probability that x  b may be found in an interval [ a, b] is a px(t)dt. More generally if S is some subset of R, the probability that 
+xS is S p(t)dt. Later on, we may be more careful and talk about sets that are Lebesgue measurable, 
+but this will do for now. 
+The probability density is roughly the picture you would obtain if you collected many random values of x 
+and then histogrammed these values. The only problem is that if you have N samples and your bins have 
+size , then the total area under the boxes is N not 1: 
+Number
+found
+between
+x
+/2
+and
+x+ /2
+ 
+Therefore a normalization must occur for the total area under the boxes to equal to 1 so that the (normalized) histogram and probability densities can line up. 
+Normal distribution 
+The normal distribution with mean 0 and variance 1 (standard normal, Gaussian, bell shaped curve) is 
+the random variable with probability density px(t) = 1
+2 et2/2 . It deserves its special place in probability 
+theory because of the central limit theorem which states that if x1, . . . , x n, . . . are iid random variables (iid 
+= independent and identically distributed) with mean and variance then 
+2 x1 +   + xn n&lt; b  
+= 1
+2  
+ab 
+et /2 dt . lim Prob a &lt; 
+n n</text>
+        </slide>
+        <slide>
+          <slideno>3</slideno>
+          <text>function [h,hn,xspan]=histn(data,x0,binsize,xf);
+%HISTN Normalized Histogram.
+% [H,HN,XSPAN] = HISTN(DATA,X0,BINSIZE,XF) generates the normalized
+% histogram of area 1 from the values in DATA which are binned into
+% equally spaced containers that span the region from X0 to XF
+% with a bin width specified by BINSIZE.
+%
+% X0, BINSIZE and XF are all scalars while DATA is a vector.
+% H, HN and XSPAN are equally sized vectors.
+%
+% References:
+% [1] Alan Edelman, Handout 2: Histogramming,
+% Fall 2004, Course Notes 18.338.
+% [2] Alan Edelman, Random Matrix Eigenvalues.
+%
+% Alan Edelman and Raj Rao, Sept. 2004.
+% $Revision: 1.1 $ $Date: 2004/09/10 17:11:18 $
+xspan=[x0:binsize:xf];
+h=hist(data,xspan); % Generate histogram
+hn=h/(length(data)*binsize); % Normalize histogram to have area 1
+bar(xspan,hn); % Plot histogram
+Code 2 
+We will use this code throughout the remainder of the course to corroborate theoretical predictions with experimental data.</text>
+        </slide>
+        <slide>
+          <slideno>1</slideno>
+          <text>The central limit theorem roughly states that a large collection of identical random variables behaves like 
+the normal distribution. Many investigations into the eigenvalues of random matrices suggest 
+experimentally that this statement holds, i.e., the eigenvalues of matrices whose elements are not normal 
+behave, more or less, like the eigenvalues of normally distributed matrices. 
+It is of value to note that the normal distribution with mean  and variance 2 has 
+1 px(t) = 
+2 e(x)2/22 . 
+2 Univariate Histograms 
+In Figure 2, we plot the normal distribution as well as a histogram obtained from 5000 samples from the normal distribution We see in the second line of the code below that we divide the counts n by the total 
+number times the bin size: 5000*0.2 . This guarantees that the total area of the boxes over the whole line 
+is normalized to 1. 
+-4 -3 -2 -1 0 1 2 3 4 0 0.05 0.1 0.15 0.2 0.25 0.3 0.35 0.4 0.45 
+Figure 1: This gure illustrates the idea that the probability density is a histogram 
+Code 1 is our MATLAB code to obtain this gure. 
+&gt;&gt; a=randn(1,5000);[n,x]=hist(a,[-3:.2:3]);
+&gt;&gt; bar(x,n/(5000*.2));
+&gt;&gt; hold on,plot(x,exp(-x.^2/2)/sqrt(2*pi)),hold off</text>
+        </slide>
+      </slides>
+      <videos/>
+    </lecture>
+    <lecture>
+      <lecture_title>The Laguerre Ensemble: Marcenko-Pastur Theorem</lecture_title>
+      <lecture_pdf_url>https://ocw.mit.edu/courses/18-338j-infinite-random-matrix-theory-fall-2004/resources/handout4/</lecture_pdf_url>
+      <lectureno>3</lectureno>
+      <slides>
+        <slide>
+          <slideno>3</slideno>
+          <text>Rearranging the terms in the above equation we get 
+zm(1 + m) = (1 + m) + cm	 (15) 
+which, with a bit of algebra, can be written as 
+2 m z + m(1 c + z) + 1 = 0 .	 (16) 
+Equation (16) is a polynomial equation in m whose coecients are polynomials in z. We will refer to such 
+polynomials, often derived from canonical equations as Stieltjes (transform) polynomials for the remainder 
+of this paper. 
+As discussed, to obtain the density using (5) we need to rst solve (16) for m in terms of z. Since, from 
+(16), we have a second degree polynomial in m it is indeed possible to analytically solve for its roots and 
+obtain the density. 
+dFB/dx 0.45 
+0.4 
+0.35 
+0.3 
+0.25 
+0.2 
+0.15 
+0.1 
+0.05
+0
+1 0 1 2	 3 4 5 6 7 
+x 
+Figure 1: Level density for BN = (1/N)XXn with c = 2. n
+This level density, sometimes referred to in the literature as the Mar cenko-Pastur distribution, is given 
+by 
+dFB(x) = max 0 , 1 c (x) + (x b)(b+ x)I[ b ,b+]	 (17) dx 2x 
+where b = (1c)2 and I[b ,b+] is the indicator function that is equal to 1 for b &lt; z &lt; b + and 0 elsewhere.  
+1Figure 1 compares the histogram of the eigenvalues of 1000 realizations of the matrix BN = N XXn with n
+N = 100 and n = 200 with the solid line indicating the theoretical density given by (17) for c = n/N = 2. 
+We now consider a modication to the Mar cenko-Pastur theorem that is motivated by the sample covari
+ance matrices that appear often in array processing applications. 
+3.1 The Sample Covariance Matrix 
+In the previous section we used the Mar cenko-Pastur theorem to examine the density of a class of random 
+1	  1/2matrices BN = N XTnXn. Suppose we dened the N n matrix, YN = XnTn , then BN may be written n
+as 1  BN = YNYN.	 (18) N 
+1/2Recall that Tn was assumed to be diagonal and non-negative denite so Tn can be constructed uniquely up 
+to the sign. If YN were to be interpreted as a matrix of observations, then BN written as (18) is reminiscent</text>
+        </slide>
+        <slide>
+          <slideno>11</slideno>
+          <text>[32] Andrei Okounkov and Grigori Olshanski. Asymptotics of Jack polynomials as the number of variables 
+goes to innity. IMRN , 13:641682, 1998. 
+[33] Luc Lapointe and Luc Vinet. A Rodrigues formula for the Jack polynomials and the Macdonald-Stanley 
+conjecture. 
+[34] F. Knop and S. Sahi. A recursion and a combinatorial formula for the Jack polynomials. Invent. Math. , 
+128:922, 1997. 
+[35] Friedrich Knop and Siddhartha Sahi. A recursion and a combinatorial formula for Jack polynomials. 
+Inventiones Mathematicae , 128:922, 1997. 
+[36] Richard P. Stanley. Some combinatorial properties of Jack symmetric functions. Adv. in Math. , 77:76 
+115, 1989. 
+[37] Philip J. Hanlon, Richard P. Stanley, and John R. Stembridge. Some combinatorial aspects of the 
+spectra of normally distributed random matrices. In Hypergeometric functions on domains of positivity, 
+Jack polynomials, and applications (Tampa, FL, 1991) , volume 138 of Contemp. Math. , pages 151174. 
+Amer. Math. Soc., Providence, RI, 1992.</text>
+        </slide>
+        <slide>
+          <slideno>8</slideno>
+          <text>12    the resulting Stieltjes polynomial in (36). For example, when p = 0.6, 1 = 1 and 2 = 3, (36) simplies to 
+2  11 11 3 2 2 2 23c 2 m z +  
+4cz 2 6cz + 6c z m + (3 4z 6c +31 cz + 3c + z )m + c + z  = 0. (37) 5 5 5 
+For c = 0.1, (37) becomes 
+27 2 243 169 99 2 3 m 3 z 2 + 50 z + 2/5z 2 m + 100  50 z + z m  + z = 0 (38) 100 50 
+To determine the density from (38) we need to determine the roots of the polynomial in m and use the 
+inversion formula in (5). Since we do not know the region of support for this density we would conjecture 
+such a region and basically solve the polynomial above for every value of z. Using numerical tools such as 
+the roots command in MATLAB this is not very dicult. 
+Figure 5 shows the excellent agreement between the theoretical density (solid line) obtained from numer
+ically solving (38) and the histogram of the eigenvalues of 1000 realizations of the matrix Cn with n = 100 
+and N = n/c = 1000. Figure 6 shows the behavior of the density for a range of values of c. This gure 
+captures our intuition that as c  0, the eigenvalues of the sample covariance matrix Cn will be increasingly 
+localized about 1 = 1 and 2 = 3. By contrast, capturing this very same analytic behavior using nite 
+RMT is not as straightforward. 
+0 1 2 3 4 5 6 7 8 9 10 0 0.5 1.5 2.5 
+x dF C /dx c=0.2 
+c=0.05 c=0.01 
+Figure 6: The density of Cn with dH() = 0.6( 1) + 0 .4( 3) for dierent values of c 
+Unlike the Wishart matrix, the distribution function (or level density) of nite dimensional covariance 
+matrices, such as the Cn we considered in this example, can only be expressed in terms of zonal or other 
+multivariate orthogonal polynomials that appear frequently in texts such as [19]. Though these polynomials have been studied extensively by multivariate statisticians [24, 25, 26, 27, 28, 29, 30, 31] and more recently by 
+combinatorists [32, 33, 34, 35, 36, 37] the prevailing consensus is that they are unwieldy and not particularly 
+intuitive to work with. This is partly because of their denition as innite series expansions which makes their numerical evaluation a non-trivial task when dealing with matrices of moderate dimensions. More 
+importantly, from an engineering point of view, the Stieltjes transform based approaches allows us to generate 
+plots of the form in Figure 6 with the implicit assumption that the matrix in question is innite and yet, 
+predict the behavior of the eigenvalues for the practical nite matrix counterpart with remarkable accuracy, 
+as Figure 5 corroborates. This is the primary motivation for this courses focus on developing innite random 
+matrix theory. 
+In the lectures that follow we will discuss other techniques that allow us to characterize a very broad 
+class of innite random matrices that cannot be characterized using nite RMT. We will often be intrigued 
+by and speculate on the link between these innite matrix ensembles and their nite matrix counterparts. 
+We encourage you to ask us questions on this or to explore them further.</text>
+        </slide>
+        <slide>
+          <slideno>4</slideno>
+          <text>1 n 
+n X 
+n 
+n N 
+n N n 
+T 1/2 
+n n 
+T 1/2 
+n Xn n 
+N n n 
+n n N 
+n X
+n T 1/2 
+n Xn T 1/2 
+n 
+1 On n N N YN  YN  O
+= = Cn BN 
+Figure 2: The matrices Bn and CN when n &gt; N . 
+of sample covariance matrices that appear in many engineering and statistical applications. However, among 
+other things, it is subtly dierent because of the normalization of the YNYN by the number of rows Nof YN 
+rather than by the number of columns n. Hence, we need to come up with a denition of a sample covariance 
+matrix that mirrors the manner in which it is used in practical applications. 
+With engineering, particularly signal processing applications in mind, we introduce the nN matrix, 
+1/2On = Tn Xn and dene 
+1  Cn = OnOn (19) N 
+to be the sample covariance matrix (SCM). By comparing (18) and (19) while recalling the denitions of YN 
+and On, it is clear that the eigenvalues of Bn are related to the eigenvalues of Cn. For BN of the form in (18), 
+the Mar cenko-Pastur theorem can be used to obtain the canonical equation for mB(z) given by (13). Recall, 
+that by mB(z) we mean the Stieltjes transform associated with the limiting e.d.f. FB(x) of BN as N . 
+There is however, an exact relationship between the non-limiting e.d.f.s FBN (x) and the FCn (x) and hence 
+the corresponding Stieltjes transforms mBN (z) and mCn (z) respectively. We exploit this relationship below 
+to derive the canonical equation for Cn from the canonical equation for BN given in (13). 
+Figure 2 schematically depicts Cn and BN when n &gt; N i.e. when c &gt;1. In this case, Cn, as denoted 
+in the gure, will have nNzero eigenvalues. The other Neigenvalues of Cn will, however, be identically 
+equal to the Neigenvalues of BN. Hence, the e.d.f. of Cn can be exactly expressed in terms of the e.d.f. of 
+BN as 
+n FCn (x) = nNI(0,] + FBN (x) (20) N N 
+= (c1)I(0,] + cFBN (x). (21) 
+Recalling the denition of the Stieltjes transform in (3), this implies that the Stieltjes transform mCn (z) of 
+Cn is related to the Stieltjes transform mBN (z) of BN by the expression 
+mCn (z) =  c1+ cmBN (z). (22) z 
+Similarly, Figure 3 schematically depicts Cn and BN when n &lt; N i.e. c &lt;1. In this case, BN, as denoted 
+in the gure, will have Nnzero eigenvalues. The other neigenvalues of BN will, however, be identically 
+equal to the neigenvalues of Cn. Hence, as before, the e.d.f. of BN can be exactly expressed in terms of the 
+e.d.f. of Cn as 
+N FBN (x) = NnI(0,] + FCn (x) (23) n n 
+1 1 = c1 I(0,] + FCn (x) (24) c 
+Once again, recalling the denition of the Stieltjes transform in (3), this implies that the Stieltjes transform 
+mCn (z) of Cn is related to the Stieltjes transform mBN (z) of BN by the expression 
+1 1 1 mBN (z) =  c1 z + cmCn (z). (25)</text>
+        </slide>
+        <slide>
+          <slideno>2</slideno>
+          <text>3 Stieltjes transform based approach 
+Instead of obtaining the Stieltjes transform directly, the so-called Stieltjes transform approach relies instead 
+on nding a canonical equation that the Stieltjes transform satises. The Mar cenko-Pastur theorem [9] was 
+the rst and remains most famous example of such an approach. We include a statement of its theorem in the form found in literature. We encourage you to write this theorem, as an exericse, in a simpler manner. 
+Theorem 1 (The Mar cenko-Pastur Theorem ). Consider an N N matrix, BN. Assume that 
+1. Xn is an nN matrix such that the matrix elements Xn 
+ij are independent identically distributed (i.i.d.) 
+complex random variables with mean zero and variance 1 i.e. Xn 
+ij] = 0 and E[/bardblXn = 1.ij  C, E[Xn 
+ij/bardbl2] 
+2. n = n(N) with n/N c &gt; 0 . as N  
+3. Tn = diag(1 n, 2 n, . . ., n
+n }converges almost surely in n ) where in R, and the e.d.f. of {1 n, . . ., n
+distribution to a probability distribution function H() as N  .
+14. BN = AN + N XTnXn, where AN is a Hermitian NN matrix for which FAN converges vaguely to An
+almost surely, Abeing a possibly defective (i.e. with discontinuities) nonrandom distribution function. 
+5. Xn, Tn, and AN are independent. 
+Then, almost surely, FBN converges vaguely, almost surely, as N   to a nonrandom d.f. FB whose 
+Stieltjes transform m(z), z C, satises the canonical equation 
+ dH() m(z) = mA z c (10) 1 +  m(z) 
+We now illustrate the use of this theorem with a representative example. This example will help us 
+highlight issues that will be of pedagogical interest throughout this semester. 
+1Suppose AN = 0 i.e. BN = N XTnXn. The Stieltjes transform of AN, by the denition in (3), is then n
+simply 
+1 1 mA(z) = = . (11) 0 z z 
+Hence, using the Mar cenko-Pastur theorem as expressed in (10), the Stieltjes transform m(z) of BN is given 
+by 
+1 . (12) m(z) =  dH()
+z c 1+m(z) 
+Rearranging the terms in this equation and using m instead of m(z) for notational convenience, we get 
+1 dH() z = + c . (13) m 1 + m 
+Equation (13) expresses the dependence between the Stieltjes transform variable m and probability space 
+variable z. Such a dependence, expressed explicitly in terms of dH(), will be referred to throughout this 
+paper as a canonical equation. Equation (13) can also be interpreted as the expression for the functional 
+inverse of m(z). 
+To determine the density of BN by using the inversion formula in (5) we need to rst solve (13) for m(z). 
+In order to obtain an equation in m and z we need to rst know dH() in (13). In theory, dH() could 
+be any density that satises the conditions of the Mar cenko-Pastur theorem. However, as we shall shortly 
+recognize, for an arbitrary distribution, it might not be possible to obtain an analytical or even an easy 
+numerical solution for the density On the other hand, for some specic distributions of dH(), it will indeed 
+be possible to analytically obtain the density We consider one such distribution below. 
+Suppose Tn = I i.e. the diagonal elements of Tn are non-random with d.f. dH() = ( 1). Equation 
+(13) then becomes 
+1 c z = + . (14) m 1 + m</text>
+        </slide>
+        <slide>
+          <slideno>1</slideno>
+          <text>The Stieltjes transform in (3) can also be interpreted as an expectation with respect to the measure 
+FA(x) such that 
+1 mA(z) = EX . (4) zx 
+Since there is a one-to-one correspondence between the probability measure FA(x) and the Stieltjes 
+transform, convergence of the Stieltjes transform can be used to show the convergence of the probability 
+measure FA(x). Once this convergence has been established, the Stieltjes transform can be used to yield 
+the density using the so-called Stieltjes-Perron inversion formula [6] 
+dFA(x) 1 = lim Im mA(x + i). (5) dx  0 
+When studying the limiting distribution of large random matrices, the Stieltjes transform has proved to 
+be particularly relevant because of its correspondence with the matrix resolvent. The trace of the matrix resolvent, M
+A(z), dened as MA(z) = (AN zI)1 can be written as 
+N  1 tr[MA(z)] = (6) zi i=1 
+where i for i = 1, 2, . . . , N are the eigenvalues of AN. For any AN, MA(z) is a non-random quantity. 
+However, when AN is a large random matrix, 
+1 mA(z) = lim tr[MA(z)]. (7) 
+N N 
+The Stieltjes transform and its resolvent form in (7) are intimately linked to the classical moment problem 
+[6]. This connection can be observed by noting that the integral in (3) can be expressed as an analytic 
+multipole series expansion about z = such that 
+  k   k 
+mA(z) = zk+1 dFA(x) =  xdFA(x)  x
+zk+1   
+k=0 k=0 
+ (8) 
+1  MkA 
+= . zk+1 z  
+k=1 
+where MkA = xkdFA(x) is the kth moment of x on the probability measure dFA(x). The analyticity of 
+the Stieltjes transform about z = expressed in (8) is a consequence of our implicit assumption that the 
+region of support for the limiting density dFA(x) is bounded i.e. lim x dFA(x) = 0. 
+Incidentally, the -transform introduced by Tulino and Verd` u in [7] can be expressed in terms of m(z) 
+and permits a series expansion about z = 0. 
+Given the relationship in (7), it is worth noting that the matrix moment MA is simply k 
+MA = lim 1 tr[Ak 
+N] = x kdFA(x). (9) k N N 
+Equation (8), written as a multipole series, suggests that a way of computing the density would be to 
+determine the moments of the random matrix as in (9), and then invert the Stieltjes transform using (5). For the famous semi-circular law, Wigner actually used a moment based approach in [8] to determine the density 
+for the standard Wigner matrix though he did not explicitly invert the Stieltjes transform as we suggested 
+above, As the reader may imagine, such a moment based approach is not particularly useful for more general 
+classes of random matrices. We discuss a more relevant and practically useful Stieltjes transform based 
+approach next.</text>
+        </slide>
+        <slide>
+          <slideno>7</slideno>
+          <text>0.9 
+0.8 
+0.7 
+0.6 
+0.5 
+0.4 
+0.3 
+0.2 dFC/dx 
+0.1 
+0 1 0 1 2 3 4 5 6 
+x 
+Figure 5: The density of Cn with c = n/N = 0.1 and dH() = 0.6( 1) + 0 .4( 3). 
+The Wishart matrix {W(c)}has been studied exhaustively by statisticians and engineers. For innite 
+Wishart matrices, (32) captures the limiting density and the extreme eigenvalues i.e. the region of support. 
+The limiting moments are given by (34). As it was for the asymptotic Wigner matrix, the limiting density of 
+the asymptotic Wishart matrix did not depend on whether the elements of Xn were real or complex. Similarly, 
+as it was for the Gaussian ensembles, the analytical behavior of the nite Wishart matrices did indeed depend 
+on whether the elements were real or complex. Nonetheless, the limiting moment and eigenvalue behavior 
+could be inferred from the behavior of the nite (real or complex) Wishart matrix counterpart. The reader 
+is directed towards some of the representative literature and the references therein on the distribution of 
+the smallest [17], largest [18, 19, 20, 21], sorted [19, 22, 23], unsorted eigenvalues [19, 22, 23], and condition 
+numbers [22, 23] of the Wishart matrix that invoke this link between the nite and innite Wishart matrix 
+ensembles. We will now discuss sample covariance matrices for which the behavior of the limiting density 
+can be best, if not solely, analyzed analytically using the Mar cenko-Pastur theorem. 
+3.3 Additional examples of sample covariance matrices 
+Suppose dH() = p ( 1) + (1 p)( 2) i.e. Tn has an atomic mass of weight p at 1 and another 
+atomic mass of weight (1 p) at 2. The canonical equation in (29) becomes 
+p 1 p m = + (35) 1(1  cmz)z  2(1  cmz)z c  c 
+which upon rearranging yields the Stieltjes polynomial 
+2 21 c 2 m 3 z 22 +  
+212cz + 1cz 2 + 21c 22z + 2cz m 
+2+ 12 + 2cz + p2cz 1z + 1c 22 + z 2z + 21cz p1cz 212 c  
+m 
+(p2 + z p1c + 1c 1 + p2c + p1) = 0. (36) 
+11/2  1/2It can be readily veried that if p = 1 and 1 = 1, then Cn = N Tn XnXnTn is simply the Wishart matrix 
+we discussed above. Though it might not seem so from a cursory look, for p = 1 and 1 = 1, (36) can be 
+shown after some elementary factorization to simplify to (31). Since (36) is a third degree polynomial in m 
+it can conceivably be solved analytically using Cardanos formula. 
+For general c, p, 1 and 2 this is cumbersome and cannot be solved analytically as a function of z and c 
+for arbitrary values of p, 1, and 2. However, for specic values of c, p, 1, and 2 we can numerically solve</text>
+        </slide>
+        <slide>
+          <slideno>6</slideno>
+          <text>123
+   
+   
+  0 0.5 1 1.5 2 2.5 3 3.5 4 0 0.5 1.5 2.5 3.5 dFC/dx c=1 
+c=0.5 
+c=0.1 c=0.01 
+x 
+Figure 4: The density of the (generalized) Wishart matrix {Wn(c)}for dierent values of c. 
+Once again, (31) is a second degree polynomial in m whose coecients are polynomials in z. Hence, as 
+before, (31) can be solved analytically to yield a solution for m in terms of z. The inversion formula in (5) 
+can then be used to obtain the limiting density for Cn. This is simply 
+dFC(x) 1 = max 0 , 1  (x) + (x b)(b+ x)I[ b ,b+] (32) dx c 2xc 
+where, as before, b = (1c)2 . As (32) suggests, the limiting density for Cn depends only on the parameter 
+c. Hence, for the remainder of this paper, we will use the notation {W(c)}to denote the (generalized) Wishart 
+1 matrix ensemble 4 dened as W(c) = N XnXwith c = n/N &gt; 0. n 
+Figure 4 plots the density in (32) for dierent values of c. From (32) the reader may notice that as c 
+i.e. for a xed n as N  , both the largest and the smallest eigenvalue, b+ and b respectively, approach 
+1. This validates our intuition about the behavior of W(c) for a xed n as N  . Additionally, from 
+Figure 4, the reader may notice that the density gets increasingly more symmetrical about x = 1 as the value 
+of c decreases. For c = 0.01, the density is almost perfectly symmetrical about x = 1. The reader may note 
+that with an appropriate scaling and translation, the density of {W(c)}as c 0 could be made to resemble 
+the semi-circular distribution. In fact, in [14] Jonsson used this observation and the correspondence between 
+the distribution in (32) and the generalized -distribution to infer the moments of Wn(c) from the even 
+moments of the Wigner matrix which are incidentally the Catalan numbers denoted by Ck for an integer k. 
+More recently, Dumitriu recognized [15] that these moments could be written in terms of the ( k, r) Narayana 
+numbers [16] dened as 
+Nk,r =1 k k 1 (33) r + 1 r r 
+so that the individual moments may be obtained from the moment generating function 
+k1    k1 
+rMkW (c) = c rNk,r = ck k 1 (34) r r r=0 r=0 
+for which, it may be noted that MkW (1) = Ck = M2S
+k are also the even moments of the standard Wigner 
+matrix. 
+4For notational convenience, when discussing innite (generalized) Wishart matrices we will simply refer to {W (c)} as the 
+Wishart matrix even when the elements of Xn are i.i.d. but not Gaussian. We will occasionally add a subscript such as W1(c) to 
+dierentiate between dierent realizations of the ensemble {W (c)}. When discussing nite Wishart matrices, we will implicitly 
+assume that the elements of Xn are i.i.d. Gaussian. Its use in either manner will be obvious from the context. 0</text>
+        </slide>
+        <slide>
+          <slideno>0</slideno>
+          <text>/ne}ationslash
+ 18.338J/16.394J: The Mathematics of Innite Random Matrices
+The Stieltjes transform based approach 
+Raj Rao 
+Handout #4, Thursday, September 16, 2004. 
+1 The eigenvalue distribution function 
+For an N N matrix AN, the eigenvalue distribution function 1 (e.d.f.) FAN (x) is dened as 
+FAN (x) = Number of eigenvalues of AN x . (1) N 
+As dened, the e.d.f. is right continuous and possibly atomic i.e. with step discontinuities at discrete 
+points. In practical terms, the derivative of (1), referred to as the (eigenvalue) level density, is simply the 
+appropriately normalized histogram of the eigenvalues of AN. The MATLAB code histn we distributed earlier 
+approximates this density. 
+A surprising result in innite RMT is that for some matrix ensembles, the expectation E[FAN (x)] has a 
+well dened i.e. not zero and not innite limit. We drop the notational dependence on N in (1) by dening 
+the limiting e.d.f. as 
+FA(x) = lim E[FAN (x)]. (2) 
+N 
+This limiting e.d.f. 2 is also sometimes referred to in literature as the integrated density of states [2, 3]. Its 
+derivative is referred to as the level density in physics literature [4]. The region of support associated with 
+this limiting density is simply the region where dFA(x) = 0. When discussing the limiting e.d.f. we shall 
+often distinguish between, its atomic and non-atomic components. 
+2 The Stieltjes transform representation 
+One step removed from the e.d.f. is the Stieltjes transform which has proved to be an ecient tool for 
+determining this limiting density. For all non-real z the Stieltjes (or Cauchy) transform of the probability 
+measure FA(x) is given by 
+1 mA(z) = x zdFA(x) Im z /ne}ationslash= 0. (3) 
+The integral above is over the whole 3 or some subset of the real axis since for the matrices of interest, 
+such as the Hermitian or real symmetric matrices, the eigenvalues are real. When we refer to the Stieltjes 
+transform of A in this paper, we are referring to mA(z) dened as in (3) expressed in terms of the limiting 
+density dFA(x) of the random matrix ensemble A. 
+1This is also referred to in literature as the empirical distribution function [1].
+2Unless we state otherwise any reference to an e.d.f. or the level density. in this paper will refer to the corresponding limiting
+e.d.f. or density respectively. 
+3While the Stieltjes integral is over the positive real axis, the Cauchy integral is more general [5] and can include complex 
+contours as well. This distinction is irrelevant for several practical classes of matrices, such as the sample covariance matrices, 
+where all of the eigenvalues are non-negative. Nonetheless, throughout this paper, (3) will be referred to as the Stieltjes 
+transform with the implicit assumption that the integral is over the entire real axis.</text>
+        </slide>
+        <slide>
+          <slideno>9</slideno>
+          <text>4 Exericses 
+1. Veried that Silversteins sample covariance matrix theorem can be inferred directly from the Mar cenko-
+Pastur theorem. Note: You will have to do some substitution tricks to get the parameter c to refer 
+to the same quantity. 
+2. Derive the moments of the Wishart matrix from the observation that as c  0, the density becomes 
+approximately semi-circular. Hint: you will have to make an approximation for the region of support 
+while remembering that for any a &lt; 1, a2 &lt; a. There will also be a shifting and rescaling in this problem 
+to get the terms to match up correctly. Recall that the moments of the Wishart matrix are expressed 
+in terms of the Narayana polynomials in (34). 
+3. Come up with numerical code to compute the theoretical density when dH() has three atomic masses 
+(e.g. dH() = 0.4( 1)+ 0 .4( 3)+ 0 .2( 7)). Plot the limiting density as a function of x for 
+a range of values of c. 
+4. Do the same when there are four atomic masses in dH() (e.g. dH() = 0.3( 1) + 0 .25( 3) + 
+0.25( 7) + 0 .25( 10)) . Verify that the solution obtained matches up with the simulations. 
+Hints: Do all the roots match up? 
+5. What happens if there are atomic masses of negative weight in dH() (e.g. dH() = 0.5( + 1) + 
+0.5( 1)). Does the limiting theoretical density line up with the experimental results? Check the 
+assumptions of the Mar cenko-Pastur theorem! Is this allowed? 
+References 
+[1] Sang II Choi and Jack W. Silverstein. Analysis of the limiting spectral distribution of large dimensional 
+random matrices. volume 54(2), pages 295309. 1995. 
+[2] Boris A. Khoruzenkho, A.M. Khorunzhy, and L.A. Pastur. Asymptotic properties of large random 
+matrices with independent entries. Journal of Mathematical Physics , 37:128, 1996. 
+[3] L. Pastur. A simple approach to global regime of random matrix theory. In Mathematical results in 
+statistical mechanics, Marseilles, 1998, pages 429454. World Sci. Publishing, River Edge, NJ, 1999. 
+[4] Madan Lal Mehta. Random Matrices . Academic Press, Boston, second edition, 1991. 
+[5] M. Abramowitz and I.A. Stegun, editors. Handbook of Mathematical Functions . Dover Publications, 
+New York, 1970. 
+[6] N. I. Akhiezer. The classical moment problem and some related questions in analysis . Hafner Publishing 
+Co., New York, New York, 1965. Translated by N. Kemmer. 
+[7] A. M. Tulino and S. Verd u. Random matrices and wireless communications. Foundations and Trends 
+in Communications and Information Theory , 1(1), June 2004. 
+[8] Eugene P. Wigner. Characteristic vectors of bordered matrices with innite dimensions. Annals of 
+Math. , 62:548564, 1955. 
+[9] V.A. Mar cenko and L.A. Pastur. Distribution of eigenvalues for some sets of random matrices. Math 
+USSR Sbornik , 1:457483, 1967. 
+[10] Jack W. Silverstein. Strong convergence of the empirical distribution of eigenvalues of large dimensional 
+random matrices. Journal of Multivariate Analysis , 55(2):331339, 1995. 
+[11] Z. D. Bai and J. W. Silverstein. On the empirical distribution of eigenvalues of a class of large dimensional 
+random matices. Journal of Multivariate Analysis , 54(2):175192, 1995.</text>
+        </slide>
+        <slide>
+          <slideno>5</slideno>
+          <text>n N n n 
+n n n T 1/2 
+n Xn T 1/2 
+n X
+nN n n 
+n n n 
+n N 
+X
+nN T 1/2 
+n T 1/2 
+n Xn 
+1 1 
+N On n N YN  YN O
+= = 
+Cn BN 
+Figure 3: The matrices Bn and CN when n &lt; N . 
+Multiplying both sides of (25) by c, we get 
+1 c mBN (z) = (1 c) + mCn (z) (26) z 
+which upon rearranging the terms is precisely (22). Equation (22) is an exact expression relating the 
+Stieltjes transforms of Cn and BN for all n and N. As N  , the Mar cenko-Pastur theorem states that 
+mBN (z)mB(z) which implies that the limiting Stieltjes transform mC(z), for Cn can be written in terms 
+of mB(z) using (22) as 
+mC(z) = c1+ c mB(z). (27)  z 
+For our purpose of getting the canonical equation for mC(z) using the canonical equation for mB(z), it 
+is more useful to rearrange the terms in (27) and express mB(z) can be written in terms of mC(z). This 
+relationship is simply 
+1 1 1 mB(z) =  c 1 z + mC(z). (28) c 
+Hence, to obtain the canonical equation for mC(z) we simply have to substitute the expression for mB(z) 
+in (28) into (13). With some fairly straightforward algebra, that we shall omit here, it can be veried that 
+mC(z) is the solution to the canonical equation 
+dH() mC(z) = . (29) {(1 cc z m C(z)}z 
+1/2  1/2Incidentally, (29) was rst derived by Silverstein in [10]. He noted that the eigenvalues of 1 Tn XnXnTnN were the same as those of 1 XnXnTn so that (29) was the canonical equation for this class of matrices as N 
+well. Additionally, in their proof of the Mar cenko-Pastur theorem in [11], Bai and Silverstein dropped the 
+restriction on Tn being diagonal so that Tn could be any matrix whose e.d.f. FTn H. As the reader may 
+appreciate, this broadens the class of matrices for which this theorem may be applied. 
+3.2 The (generalized) Wishart matrix 
+1 Revisiting the previous example, when Tn = I, Cn = N XnX. This matrix Cn is the generalized version of n
+the famous Wishart matrix ensemble rst studied by Wishart in 1928 [12]. In physics literature, the Wishart matrix is also referred to as the Laguerre Ensemble [13]. Strictly speaking, C
+n is referred to as a Wishart 
+matrix only when the elements of Xn are i.i.d. Gaussian random variables. The canonical equation for Cn 
+in (29) becomes 
+1 m= (30) (1 cc z m)z 
+which upon rearranging yields the Stieltjes polynomial 
+2 c z m (1 cz)m+ 1 = 0 . (31)</text>
+        </slide>
+        <slide>
+          <slideno>10</slideno>
+          <text>[12] J. Wishart. The generalized product moment distribution in samples from a normal multivariate pop
+ulation. Biometrika , 20 A:3252, 1928. 
+[13] Ioana Dumitriu and Alan Edelman. Matrix Models for Beta Ensembles. Journal of Mathematical 
+Physics, (11):58305847, November 2002. 
+[14] Dag Jonsson. Some limit theorems for the eigenvalues of a sample covariance matrix. J. of Multivar. 
+Anal., 12:138, 1982. 
+[15] Ioana Dumitriu and Etienne Rassart. Path counting and random matrix theory. Electronic Journal of 
+Combinatorics, 7(7), 2003. R-43. 
+[16] Robert A. Sulanke. Renements of the Narayana numbers. Bull. Inst. Combin. Appl. , 7:6066, 1993. 
+[17] Alan Edelman. The distribution and moments of the smallest eigenvalue of a random matrix of Wishart 
+type. Lin. Alg. Appl. , 159:5580, 1991. 
+[18] T. Sugiyama. On the distribution of the largest latent root of the covariance matrix. Annals of Math. 
+Statistics , 38:11481151, 1967. 
+[19] Robb J. Muirhead. Aspects of Multivariate Statistical Theory . John Wiley &amp; Sons, New York, 1982. 
+[20] Craig A. Tracy and Harold Widom. The Distribution of the Largest Eigenvalue in the Gaussian En
+sembles. In J.F. van Diejen and L.Vinet, editors, Calogero-Moser-Sutherland Models, CRM Series in 
+Mathematical Physics, volume 4, pages 461472. Springer-Verlag, Berlin, 2000. 
+[21] Iain M. Johnstone. On the distribution of the largest eigenvalue in principal components analysis. 
+Annals of Statistics , 29(2):295327, 2001. 
+[22] Alan Edelman. Eigenvalues and condition numbers of random matrices. SIAM J. on Matrix Analysis 
+and Applications , 1988:543560, 1988. 
+[23] Alan Edelman. Eigenvalues and Condition Numbers of Random Matrices . PhD thesis, Massachusetts 
+Institute of Technology, 1989. 
+[24] Henry Jack. A class of symmetric polynomials with a parameter. Proc. R. Soc. Edinburgh , 69:118, 
+1970. 
+[25] Zhimin Yan. Generalized hypergeometric functions and Laguerre polynomials in two variables. Contemp. 
+Math. , 138:239259, 1992. 
+[26] Zhimin Yan. A class of generalized hypergeometric functions in several variables. Canad. J. Math , 
+44:13171338, 1992. 
+[27] P. Bleher and Alexander Its. Semiclassical asymptotics of orthogonal polynomials, Riemann-Hilbert 
+problem, and the universality in the matrix model. Ann. of Math. , 150:185266, 1999. 
+[28] Percy Deift, T. Kriecherbauer, K. McLaughlin, S. Venakides, and Xin Zhou. Uniform asymptotics for 
+polynomials orthogonal with respect to varying exponential weights and applications to universality 
+questions in random matrix theory. Comm. Pure Appl. Math. , 52, 1999. 
+[29] I.G. Macdonald. Symmetric Functions and Hall Polynomials . Oxford Mathematical Monographs. Oxford 
+University Press, 2nd edition, 1998. 
+[30] Kenneth I. Gross and Donald St. P. Richards. Special functions of matrix argument In: algebraic 
+induction, zonal polynomials, and hypergeometric functions. Trans. American Math. Society , 301:781 
+811, 1987. 
+[31] Kenneth I. Gross and Donald St. P. Richards. Total positivity, spherical series, and hypergeometric 
+functions of matrix argument. J. Approx. Theory , 59, no. 2:224246, 1989.</text>
+        </slide>
+      </slides>
+      <videos/>
+    </lecture>
+  </lectures>
+</doc>

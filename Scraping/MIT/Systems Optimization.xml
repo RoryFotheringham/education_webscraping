@@ -1,0 +1,7243 @@
+<doc>
+  <source>MIT</source>
+  <date>28/01/2023</date>
+  <course>
+    <course_url>https://ocw.mit.edu/courses/15-057-systems-optimization-spring-2003/</course_url>
+    <course_title>Systems Optimization</course_title>
+    <course_tags>
+      <list>Engineering </list>
+      <list>Mathematics </list>
+      <list>Systems Engineering </list>
+    </course_tags>
+  </course>
+  <lectures>
+    <lecture>
+      <lecture_title>XLS</lecture_title>
+      <lecture_pdf_url>https://ocw.mit.edu/courses/15-057-systems-optimization-spring-2003/resources/11location/</lecture_pdf_url>
+      <lectureno>11</lectureno>
+      <slides/>
+      <videos/>
+    </lecture>
+    <lecture>
+      <lecture_title>Network Models: Shortest Path &amp; Transshipment (PDF)
+Associated files:
+
+03Ampl_output (TXT)
+03Shortest_path_model (XLS)
+03Singapore_elec_generator_model (XLS)
+03Transportation_data (MDB)
+03Transportation_model (MOD)
+03Transshipment_model (XLS)</lecture_title>
+      <lecture_pdf_url>https://ocw.mit.edu/courses/15-057-systems-optimization-spring-2003/resources/03networks2print/</lecture_pdf_url>
+      <lectureno>3</lectureno>
+      <slides>
+        <slide>
+          <slideno>28</slideno>
+          <text>The Data 
+aAn Access Database called TransportationData.mdb 
+aTables in the database 
+Origins: Supply information 
+Destinations: Demand information Origin Supply 
+Amsterdam 500 
+Antwerp 700 
+The Hague 800 
+Destination Demand 
+Leipzig 400 
+Liege 200 
+Nancy 900 
+Tilburg 500 
+15.057 Spring 03 Vande Vate 29</text>
+        </slide>
+        <slide>
+          <slideno>0</slideno>
+          <text>Network Models II
+Shortest Path 
+Cross Docking 
+Enhance Modeling Skills 
+Modeling with AMPL 
+15.057 Spring 03 Vande Vate 1</text>
+        </slide>
+        <slide>
+          <slideno>44</slideno>
+          <text>Explanation completed 
+awrite table TransOutTable; actually writes 
+the data. 
+aThe output is: 
+a More details available at: 
+a http://www.ampl.com/cm/cs/w hat/ampl/NEW/tables.html origin destination Trans 
+Amsterdam Leipzig 300 
+Amsterdam Liege 200 
+The Hague Leipzig 100 
+The Hague Tilburg 500 
+The Hague Nancy 200 
+Antwerp Nancy 700 
+15.057 Spring 03 Vande Vate 45</text>
+        </slide>
+        <slide>
+          <slideno>33</slideno>
+          <text>Explanation Continued 
+aORIG &lt;- [Origin] says that the values of 
+the field Origin will define the set ORIG of 
+origins 
+asupply~Supply says that the values of the 
+parameter supply should hold the values read from the field Supply in the database 
+aread table OriginTable; reads the data. 
+15.057 Spring 03 Vande Vate 34</text>
+        </slide>
+        <slide>
+          <slideno>2</slideno>
+          <text>Direction 
+aTwo-way 
+streets
+aOne-way 
+streets
+H H 
+6 
+5 3 4 
+2 1 8 
+3 
+3 
+21 
+6 1 4 2 1 
+3 7 
+1 
+15.057 Spring 03 Vande Vate 3</text>
+        </slide>
+        <slide>
+          <slideno>38</slideno>
+          <text>Explanation
+a "D:\Personal\15057\TransportationData.mdb is the 
+path to the database. Alternatively you can create a 
+DSN (data source name) for this file, say TransportData, and use the command DSN=TransportData. 
+a Cost is the name of the table in the database. Alternatively we can use an SQL command like SQL=SELECT * FROM Cost 
+a The : is syntax. What follows is the mapping of the data we read to AMPL objects that will hold it. 
+a The brackets [] around origin and destination mean that 
+these two fields in the database index the data, e.g., 
+120 is the unit transportation cost from Amsterdam to Leipzig. 
+15.057 Spring 03 Vande Vate 39</text>
+        </slide>
+        <slide>
+          <slideno>37</slideno>
+          <text>Reading Cost 
+table CostTable IN "ODBC"
+"D:\Personal\15057\TransportationData.mdb"
+"Cost":
+[origin, destination], cost;
+Explanation: 
+a table is a keyword that says we will read or write data
+a CostTable is a name we made up. No other AMPL 
+model entity can have this name 
+a IN is a key word that says we are reading data. 
+a ODBC says we are using ODBC to read the data 
+15.057 Spring 03 Vande Vate 38</text>
+        </slide>
+        <slide>
+          <slideno>26</slideno>
+          <text>The Transportation Model 
+aset ORIG;
+aset DEST;
+aparam supply {ORIG};
+aparam demand {DEST};
+aparam cost {ORIG, DEST};
+avar Trans {ORIG, DEST} &gt;= 0;
+15.057 Spring 03 Vande Vate 27</text>
+        </slide>
+        <slide>
+          <slideno>9</slideno>
+          <text>Bounds
+aVariables can also have bounds 
+e.g., in the Shortest Path Model: 
+Number of times we use each variable 
+Lower bound: &gt;= 0 
+Upper bound: &lt;= 1 if it is an edge, 0 otherwise 
+15.057 Spring 03 Vande Vate 10</text>
+        </slide>
+        <slide>
+          <slideno>25</slideno>
+          <text>Is this necessary/valuable? 
+aAMPL is very detailed 
+Expect 1 or 2 per team to master 
+Rest to read and understand 
+aBrings out the real issues 
+Practical implementation -- you can oversee 
+Data issues -- the real challenge 
+aValuable tool 
+15.057 Spring 03 Vande Vate 26</text>
+        </slide>
+        <slide>
+          <slideno>15</slideno>
+          <text>And...
+aFlow conservation at the DCs 
+$C$28:$D$28 = 0 
+aSupply and Demand like Autopower 
+aFlow conservation at DCs like Shortest Path 
+15.057 Spring 03 Vande Vate 16</text>
+        </slide>
+        <slide>
+          <slideno>10</slideno>
+          <text>Properties of Network Flows 
+aIf the bounds and RHS are integral, the 
+solution will be integral 
+aIt the costs are integral, the reduced costs 
+and marginal values will be integral 
+aCan be solved very quickly 
+aLimited demands on memory 
+15.057 Spring 03 Vande Vate 11</text>
+        </slide>
+        <slide>
+          <slideno>1</slideno>
+          <text>The Shortest Path Model
+aFind the 
+shortest 
+path from 
+Home to 5 H H 
+6 
+5 3 4 
+2 1 8 
+3 
+3 
+21 
+6 1 4 2 1 
+3 7 
+1 
+15.057 Spring 03 Vande Vate 2</text>
+        </slide>
+        <slide>
+          <slideno>23</slideno>
+          <text>Why AMPL 
+aEstablished in US 
+aVery good book 
+aLower barrier to entry 
+aFree student version 
+aIndustrial strength tool 
+15.057 Spring 03 Vande Vate 24</text>
+        </slide>
+        <slide>
+          <slideno>22</slideno>
+          <text>How they work
+Conceptual Model 
+Data Algebraic Modeling Language 
+AMPL/OPL/GAMS/XPress/... Optimizer 
+CPLEX 
+OSL 
+XPress 
+15.057 Spring 03 Vande Vate 23</text>
+        </slide>
+        <slide>
+          <slideno>41</slideno>
+          <text>Writing Output
+table TransOutTable OUT "ODBC" 
+"D:\Personal\15057\TransportationData.mdb"
+"TransOut":
+{origin in ORIG, destination in DEST: 
+Trans[origin, destination] &gt; 0} 
+-&gt; [origin, destination], Trans[origin,destination]~Trans; 
+write table TransOutTable; 
+Explanation: 
+a table is a keyword that says we will read or write data 
+a TransOutTable is a name we made up. No other AMPL 
+model entity can have this name 
+15.057 Spring 03 Vande Vate 42</text>
+        </slide>
+        <slide>
+          <slideno>43</slideno>
+          <text>More Explanation
+a {origin in ORIG, destination in DEST: 
+Trans[origin, destination] &gt; 0} defines the index set 
+that will control the data to write out. This says to only 
+report on origin-destination pairs where we actually 
+send a positive flow. 
+a -&gt; is syntax. It separates the indexing from the data 
+definition and mapping to fields of the output table. 
+a [origin, destination] indica tes that the records of the 
+output table are indexed by the origin-destination pairs. AMPL will write a new record for each pair. 
+a Trans[origin,destination]~Trans says to create a field called Trans in the table and to populate it with the values of the Trans variable. 
+15.057 Spring 03 Vande Vate 44</text>
+        </slide>
+        <slide>
+          <slideno>29</slideno>
+          <text>The Costs
+aCost: Unit 
+transportation 
+costs origin destination cost 
+Amsterdam Leipzig 120 
+Amsterdam Liege 41 
+Amsterdam Nancy 130 
+Amsterdam Tilburg 59.5 
+Antwerp Leipzig 61 
+Antwerp Liege 100 
+Antwerp Nancy 40 
+Antwerp Tilburg 110 
+The Hague Leipzig 102.5 
+The Hague Liege 122 
+The Hague Nancy 90 
+The Hague Tilburg 42 
+15.057 Spring 03 Vande Vate 30</text>
+        </slide>
+        <slide>
+          <slideno>3</slideno>
+          <text>03ShortestPathModel.xls
+Connectivity 
+From\ToHomeSite 1Site 2Site 3Site 4Site 5 Site 6 Site 7 Distance 
+From\To Home Site 1 Site 2 Site 3 Site 4 Site 5 Site 6 Site 7 
+Home 1 Home 4 7 8 
+Site 1 1 1 1 Site 1 4 6 1 
+Site 2 1 1 1 Site 2 6 1 2 
+Site 3 1 1 1 Site 3 1 1 1 
+Site 4 1 1 1 1 Site 4 7 1 3 2 
+Site 5 1 1 1 Site 5 2 3 3 
+Site 6 1 1 1 Site 6 3 3 
+Site 7 1 1 1 Site 7 8 2 1 
+Route 
+From\ToHomeSite 1Site 2Site 3Site 4Site 5 Site 6 Site 7 Total 
+From Total 
+Distance Home Site 1 Site 2 Site 3 Site 4 Site 5 Site 6 Site 7 Total 
+From 
+Home 0 Home 0 0 0 
+Site  1 0 Site  1 0 0 0 
+Site  2 0 Site  2 0 0 0 
+Site  3 0 Site  3 0 0 0 
+Site  4 0 Site  4 0 0 0 
+Site  5 0 Site  5 0 0 0 
+Site  6 0 Site  6 0 0 0 
+Site  7 0 Site  7 0 0 0 
+Total  To 0 Total  To 0 0 0 
+Total From -
+Total  To 0 
+Net  Required 1 -1 0 Shortest Path Model 
+1 1 
+1 
+0 0 0 0 0 0 
+0 0 0 0 0 0 
+0 0 0 0 0 0 
+0 0 0 0 0 0 
+0 0 0 0 0 0 
+0 0 0 0 0 0 
+0 0 0 0 0 0 
+0 0 0 0 0 0 
+0 0 0 0 0 0 0 0 0 0 0 0 0 
+0 0 0 0 0 0 0 
+0 0 0 0 0 
+15.057 Spring 03 Vande Vate 4</text>
+        </slide>
+        <slide>
+          <slideno>24</slideno>
+          <text>Our Use of AMPL
+aPseudo AMPL to discuss models 
+In class 
+In exams 
+aNeed to be precise about 
+Whats a parameter, variable,  
+Indexing: relationships between variables, 
+data, constraints 
+aChallenges and Project 
+15.057 Spring 03 Vande Vate 25</text>
+        </slide>
+        <slide>
+          <slideno>31</slideno>
+          <text>Reading Data
+table OriginTable IN "ODBC" 
+"D:\Personal\15057\TransportationData.mdb"
+"Origins":
+ORIG &lt;- [Origin], supply~Supply;
+Explanation: 
+table is a keyword that says we will read or write data 
+OriginTable is a name we made up. No other AMPL model 
+entity can have this name 
+IN is a key word that says we are reading data. 
+ODBC says we are using ODBC to read the data 
+15.057 Spring 03 Vande Vate 32</text>
+        </slide>
+        <slide>
+          <slideno>39</slideno>
+          <text>Explanation Continued 
+aWe dont have an &lt;- here, because we 
+are not defining the members of a set. 
+aWe read the values of the field cost in the 
+database into the parameter cost. Note 
+that since these two names are identical, 
+we dont need the ~. 
+aread table CostTable; reads the data. 
+15.057 Spring 03 Vande Vate 40</text>
+        </slide>
+        <slide>
+          <slideno>21</slideno>
+          <text>Modeling with AMPL 
+a Problems with Excel Solver 
+Integration of Model and Data 
+Example: 
+Change the time horizon of our Inventory Model 
+Excel is a limited database tool 
+a Algebraic Modeling Languages 
+Separate the Model from the Data
+Keep the data in databases 
+15.057 Spring 03 Vande Vate 22</text>
+        </slide>
+        <slide>
+          <slideno>30</slideno>
+          <text>AMPLs Output 
+aAMPL reads the model and the data, 
+combines the two and produces (in 
+human readable form)  
+AMPLOutput.txt 
+Produced by the command: 
+expand &gt;AMPLOutput.txt 
+15.057 Spring 03 Vande Vate 31</text>
+        </slide>
+        <slide>
+          <slideno>34</slideno>
+          <text>Reading Data
+table DestinationTable IN "ODBC" 
+"D:\Personal\15057\TransportationData.mdb"
+"Destinations":
+DEST &lt;- [Destination], demand~Demand;
+Explanation: 
+a table is a keyword that says we will read or write data 
+a DestinationTable is a name we made up. No other AMPL 
+model entity can have this name 
+a IN is a key word that says we are reading data. 
+a ODBC says we are using ODBC to read the data 
+15.057 Spring 03 Vande Vate 35</text>
+        </slide>
+        <slide>
+          <slideno>20</slideno>
+          <text>Summary 
+aNetwork Flows 
+Simple Formulation 
+Flow Out (sum across a row) &lt;= Capacity 
+Flow In (sum down a column) &gt;= Demand Flow In - Flow Out = Constant 
+Limited by 
+Homogenous Product Linear Costs etc. 
+Integer Data give Integral Solutions 
+15.057 Spring 03 Vande Vate 21</text>
+        </slide>
+        <slide>
+          <slideno>42</slideno>
+          <text>Explanation 
+a OUT is a key word that says we are writing data. 
+a ODBC says we are using ODBC to write the data 
+a "D:\Personal\15057\TransportationData.mdb is the 
+path to the database. Or you can use DSN= 
+a "TransOut is the name of the table to create. AMPL drops and writes this table. Any data currently in the 
+table is lost. 
+a : is syntax. It separates the description of the 
+destination from the definition of the data and the 
+mapping of the columns 
+15.057 Spring 03 Vande Vate 43</text>
+        </slide>
+        <slide>
+          <slideno>27</slideno>
+          <text>Transportation Model 
+minimize Total_Cost: 
+sum{o in ORIG, d in DEST} 
+cost[o,d]*Trans[o,d]; 
+s.t. Supply {o in ORIG}: 
+sum{d in DEST} Trans[o,d] &lt;= supply[o]; 
+s.t. Demand {d in DEST}: 
+sum{o in ORIG} Trans[o,d] &gt;= demand[d]; 
+15.057 Spring 03 Vande Vate 28 a</text>
+        </slide>
+        <slide>
+          <slideno>5</slideno>
+          <text>A Solver Model
+aThe Objective: Minimize $U$21 
+aThe Variables: $C$13:$J$20 
+aThe Constraints: 
+Only travel on existing edges 
+$C$13:$J$20 &lt;= $C$3:$J$10 
+Number From - Number To = Net Required 
+$C$22:$J$22 = $C$23:$J$23 
+15.057 Spring 03 Vande Vate 6</text>
+        </slide>
+        <slide>
+          <slideno>4</slideno>
+          <text>Challenge 
+aBuild a Solver model
+15.057 Spring 03 Vande Vate 5</text>
+        </slide>
+        <slide>
+          <slideno>17</slideno>
+          <text>Network Flows: Bad News
+aUnderlying Assumptions 
+Single Homogenous Product 
+Linear Costs 
+No conversions or losses 
+... 
+15.057 Spring 03 Vande Vate 18</text>
+        </slide>
+        <slide>
+          <slideno>40</slideno>
+          <text>Running AMPL 
+amodel d:\15057\TransportationModel.mod;
+aoption solver cplex; # use cplex t o solve
+asolve;
+adisplay Trans;
+15.057 Spring 03 Vande Vate 41</text>
+        </slide>
+        <slide>
+          <slideno>12</slideno>
+          <text>A Network Model
+15.057 Spring 03 Vande Vate 
+Unit Shipping C osts Arc Capacities 
+Plant to 
+DC DC 1 DC 2 Costs Plant to DC DC 1 DC 2 
+Plant 1 5.0 $ 5.0 $ Capacities Costs Plant 1 200 200 
+Plant 2 1.0 $ 1.0 $ Flows Flows Plant 2 200 200 
+Plant 3 1.0 $ 0.5 $ Payments Payments Plant 3 200 200 
+DC to 
+Customer DC 1 DC 2 DC to 
+Customer DC 1 DC 2 
+Customer 1 2.0 $ 2.0 $ Customer 1 200 200 
+Customer 2 12.0 $ 12.0 $ Customer 2 200 200 
+Shipments Payments 
+Plant to 
+DC DC 1 DC 2 Total Out Suppl y Plant to DC DC 1 DC 2 Total Out 
+Plant 1 - - - 200 Plant 1 - $ - $ - $ 
+Plant 2 - - - 300 Costs Plant 2 - $ - $ - $ 
+Plant 3 - - - 100 Capacities Plant 3 - $ - $ - $ 
+Total In - - Flows Total In - $ - $ - $ 
+Costs 
+Capacities DC to 
+Customer DC 1 DC 2 Total In Demand DC to 
+Customer DC 1 DC 2 Total Out 
+Payments Customer 1 - - - 400 Customer 1 - $ - $ - $ 
+Customer 2 - - - 180 Customer 2 - $ - $ - $ 
+Total Out - - Total In - $ - $ - $ 
+Net Flow DC 1 DC 2 
+- - Total Shipping C ost - $ Minimum Cost Network Flow Problem 
+Transportation C osts ($ 000/Ton) Transportation C apacities</text>
+        </slide>
+        <slide>
+          <slideno>18</slideno>
+          <text>Homogenous Product 
+15.057 Spring 03 Vande Vate 19 
+Must be able to interchange 
+positions of product anywhere</text>
+        </slide>
+        <slide>
+          <slideno>35</slideno>
+          <text>Explanation
+a "D:\Personal\15057\TransportationData.mdb is the 
+path to the database. Alternatively you can create a 
+DSN (data source name) for this file, say TransportData, and use the command DSN=TransportData. 
+a Destinations is the name of the table in the database. 
+Alternatively we can use an SQL command like 
+SQL=SELECT * FROM Destinations 
+a The : is syntax. What follows is the mapping of the data we read to AMPL objects that will hold it. 
+a The brackets [] around Destination mean that this field in the database indexes the data, e.g., 400 is the 
+demand for Leipzig. 
+15.057 Spring 03 Vande Vate 36</text>
+        </slide>
+        <slide>
+          <slideno>13</slideno>
+          <text>Challenge 
+aBuild a Solver Model
+15.057 Spring 03 Vande Vate 14</text>
+        </slide>
+        <slide>
+          <slideno>14</slideno>
+          <text>A Solver Model
+aObjective: Minimize $K$28 
+aVariables: $C$17:$D$19, $C$23:$D$24
+aConstraints: 
+Do not exceed supply at the plants 
+$E$17:$E$19 &lt;= $F$17:$F$19 
+Meet customer demand 
+$E$23:$E$24 &gt;= $F$23:$F$24 
+Do not exceed shipping capacity 
+$C$17:$D$19 &lt;= $K$6:$L$8 and 
+$C$23:$D$24 &lt;= $K$11:$L$12 
+15.057 Spring 03 Vande Vate 15</text>
+        </slide>
+        <slide>
+          <slideno>8</slideno>
+          <text>Network Flow Problems
+aEach variable appears in at most two constraints 
+At most one constraint as - the variable 
+At most one constraint at + the variable 
+aAssignment 
+Sum across each row = 1 
+Sum down each column = 1 
+aShortest Path 
+Sum across the a row - sum down the col = # 
+15.057 Spring 03 Vande Vate 9</text>
+        </slide>
+        <slide>
+          <slideno>6</slideno>
+          <text>Flow Conservation
+aNumber From - Number To = Net Required 
+a Number of times -Number of =  ? 
+we leave times we enter 
+a+1 at Home (we leave once) 
+a-1 at Site 5 (we arrive once) 
+a0 everywhere else 
+each time we arrive (if ever), we leave 
+15.057 Spring 03 Vande Vate 7</text>
+        </slide>
+        <slide>
+          <slideno>11</slideno>
+          <text>Crossdocking 
+a2 customers 
+aMinimize shipping costs 
+a3 plants 
+a2 distribution centers 
+15.057 Spring 03 Vande Vate 12</text>
+        </slide>
+        <slide>
+          <slideno>36</slideno>
+          <text>Explanation Continued 
+aDEST &lt;- [Destination] says that the 
+values of the field Destination will define 
+the set DEST of destinations 
+ademand~Demand says that the values of 
+the parameter demand should hold the 
+values read from the field Demand in the 
+database 
+15.057 Spring 03 Vande Vate 37</text>
+        </slide>
+        <slide>
+          <slideno>7</slideno>
+          <text>Compare with Assignment Model 
+aAssignment Model 
+Sum across each row = 1 
+Sum down each column = 1 
+Each variable appears in 2 constraints 
+aShortest Path Model 
+Sum across a row - Sum down the column = 0 
+Trips out of a site - Trips into the site 
+Each variable appears in ? constraints 
+15.057 Spring 03 Vande Vate 8</text>
+        </slide>
+        <slide>
+          <slideno>19</slideno>
+          <text>Linear Costs
+aNo Fixed Charges 
+aNo Volume Discounts 
+aNo Economies of Scale 
+15.057 Spring 03 Vande Vate 20</text>
+        </slide>
+        <slide>
+          <slideno>32</slideno>
+          <text>Explanation
+a "D:\Personal\15057\TransportationData.mdb is the 
+path to the database. Alternatively you can create a 
+DSN (data source name) for this file, say TransportData, and use the command DSN=TransportData. 
+a "Origins is the name of the table in the database. 
+Alternatively we can use an SQL command like 
+SQL=SELECT * FROM Origins 
+a The : is syntax. What follows is the mapping of the data we read to AMPL objects that will hold it. 
+a The brackets [] around Origin mean that this field in the database indexes the data, e.g., 500 is the supply for 
+Amsterdam. 
+15.057 Spring 03 Vande Vate 33</text>
+        </slide>
+        <slide>
+          <slideno>16</slideno>
+          <text>Network Flows: Good News
+aLots of applications
+aSimple Models
+aOptimal Solutions Quickly
+aIntegral Data, Integral Answers
+15.057 Spring 03 Vande Vate 17</text>
+        </slide>
+      </slides>
+      <videos/>
+    </lecture>
+    <lecture>
+      <lecture_title>PDF - 1 MB</lecture_title>
+      <lecture_pdf_url>https://ocw.mit.edu/courses/15-057-systems-optimization-spring-2003/resources/08integerprogramming1print/</lecture_pdf_url>
+      <lectureno>8</lectureno>
+      <slides>
+        <slide>
+          <slideno>4</slideno>
+          <text>Branching 
+Coils Upper Branch 
+Coils  1 
+Lower Branch Coils  0 3
+Bands
+1 2 3 4
+15.057 Spring 03 Vande Vate 5
+2 
+1</text>
+        </slide>
+        <slide>
+          <slideno>25</slideno>
+          <text>Binary Switches 
+Variables 
+Yes/No: Lease warehouse or not (Binary)
+Shipments from Warehouses to Sales Districts 
+Constraints: 
+Meet Demand 
+Dont exceed Leased Capacity 
+Yes/No leased Warehouse *Capacity of Warehouse 
+At Warehouse B: Effective Capacity = 0*250 At Warehouse A: Effective Capacity = 1*200 
+Yes/No must be binary 
+15.057 Spring 03 Vande Vate 26</text>
+        </slide>
+        <slide>
+          <slideno>28</slideno>
+          <text>var Open{WAREHOUSES} binary; 
+var Ship{WAREHOUSES, DISTRICTS} &gt;= 0; 
+minimize TotalCost: 
+sum{w in WAREHOUSES} Lease[w]*Open[w] + 
+sum{w in WAREHOUSES, d in DISTRI CTS} TruckCost[w,d]*Ship[w,d]; 
+s.t. MeetDemand{d in DISTRICTS}: 
+sum{w in WAREHOUSES} Ship[w,d] &gt;= Demand[ d]; 
+s.t. ObserveEffectiveCapacity{w in WAREHOUSES}: 
+sum{d in DISTRICTS} Ship[w,d]  &lt;= Capacity[w]*Ope n[w]; 
+15.057 Spring 03 Vande Vate 29</text>
+        </slide>
+        <slide>
+          <slideno>21</slideno>
+          <text>Or Part of a Larger Model 
+s.t. MeetDemand{dc in DCS}: 
+sum of flows into the dc = 
+sum{cust in CUSTOMERS} 
+Demand[cust]*Assign[dc,cust]; 
+15.057 Spring 03 Vande Vate 22</text>
+        </slide>
+        <slide>
+          <slideno>3</slideno>
+          <text>Bands Coils Bands Limit Coils Limit 
+Production Capacity 
+X Node 0: The linear program 
+$50,000*3 + $60,000*0.7 = $192,000 Branch &amp; Bound 
+3
+2
+1
+1 2 3 4
+15.057 Spring 03 Vande Vate 4</text>
+        </slide>
+        <slide>
+          <slideno>18</slideno>
+          <text>Lower Cost?
+Does Single-Sourcing 
+Reduce/Increase 
+distribution cost? 
+15.057 Spring 03 Vande Vate 19</text>
+        </slide>
+        <slide>
+          <slideno>22</slideno>
+          <text>Whats the Problem?
+Size! 
+Thousands of customers 
+Scores of DCs 
+Hundreds of thousands of Integer 
+Variables 
+Most useless! 
+Assign a Customer in ME to a DC in CA?
+15.057 Spring 03 Vande Vate 23</text>
+        </slide>
+        <slide>
+          <slideno>5</slideno>
+          <text>Bounding 
+Coils Upper Branch 
+Coils  1 
+Node 1: Lower Branch Coils  0 $50,000*3= $150,000 3
+X Bands1 2 3 4
+15.057 Spring 03 Vande Vate
+ 6 2 
+1</text>
+        </slide>
+        <slide>
+          <slideno>27</slideno>
+          <text>An AMPL Model
+set WAREHOUSES; 
+param Capacity{WAREHOUSES}; 
+param Lease{WAREHOUSES}; 
+set DISTRICTS; 
+param D emand{DISTRICTS}; 
+param T ruckCost{WAREHOUSES, DISTRICTS};
+15.057 Spring 03 Vande Vate 28</text>
+        </slide>
+        <slide>
+          <slideno>23</slideno>
+          <text>Practical Solution
+Dont naively include all possible assignments
+Only include those: 
+Within a specified distance 
+Among the N closest 
+. 
+15.057 Spring 03 Vande Vate 24</text>
+        </slide>
+        <slide>
+          <slideno>33</slideno>
+          <text>WesternAir
+Western Airlines Hub Selection 
+Mile 1000 
+Distance Matrix 
+AT BO CH DE HO LA NO NY PI SL SF SE 
+AT - 1,037 674 1,398 789 2,182 479 841 687 1,878 2,496 2,618 
+BO 1,037 - 1,005 1,949 1,804 2,979 1,507 222 574 2,343 3,095 2,976 
+CH 674 1,005 - 1,008 1,067 2,054 912 802 452 1,390 2,142 2,013 
+DE 1,398 1,949 1,008 - 1,019 1,059 1,273 1,771 1,411 504 1,235 1,307 
+HO 789 1,804 1,067 1,019 - 1,538 356 1,608 1,313 1,438 1,912 2,274 
+LA 2,182 2,979 2,054 1,059 1,538 - 1,883 2,786 2,426 715 379 1,113 
+NO 479 1,507 912 1,273 356 1,883 - 1,311 1,070 1,738 2,249 2,574 
+NY 841 222 802 1,771 1,608 2,786 1,311 - 368 2,182 2,934 2,815 
+PI 687 574 452 1,411 1,313 2,426 1,070 368 - 1,826 2,578 2,465 
+SL 1,878 2,343 1,390 504 1,438 715 1,738 2,182 1,826 - 752 836 
+SF 2,496 3,095 2,142 1,235 1,912 379 2,249 2,934 2,578 752 - 808 
+SE 2,618 2,976 2,013 1,307 2,274 1,113 2,574 2,815 2,465 836 808 -
+15.057 Spring 03 Vande Vate 34</text>
+        </slide>
+        <slide>
+          <slideno>19</slideno>
+          <text>Modeling Single-Sourcing 
+Vanilla Approach 
+set DCS; 
+set CUSTOMERS; 
+param Capacity{DCS}; 
+param Demand{CUSTOMERS}; 
+param Cost{DCS, CUSTOMERS}; 
+var Assign{DCS, CUSTOMERS} binary;
+minimize TotalCost: 
+sum{dc in DCS, cust in CUSTOMERS} 
+Cost[dc, cust]*Assign[dc, cust] + Other Costs 
+15.057 Spring 03 Vande Vate 20</text>
+        </slide>
+        <slide>
+          <slideno>9</slideno>
+          <text>Coils Lower Branch 
+Coils  1 X Yields $177,143 
+Node 5: Upper Branch Coils  2 Further Nodes 
+3
+Bands
+1 2 3 4
+15.057 Spring 03 Vande Vate 10
+2 
+1</text>
+        </slide>
+        <slide>
+          <slideno>16</slideno>
+          <text>Dealers sourced 
+by multiple 
+ramps Old Ramp Allocation 
+Southern US Old Ramp Allocation 
+Southern US</text>
+        </slide>
+        <slide>
+          <slideno>20</slideno>
+          <text>DC gets all the Demand 
+s.t. SingleSource{cust in CUSTOMERS}: 
+sum{dc in DCS} Assign[dc, cust] = 1; 
+s.t. ObserveCapacity{dc in DCS}: 
+sum{cust in CUSTOMERS} 
+Demand[cust]*Assign[dc,cust] &lt;= 
+Capacity[dc]; 
+15.057 Spring 03 Vande Vate 21</text>
+        </slide>
+        <slide>
+          <slideno>2</slideno>
+          <text>An Integer Program 
+Bands Coils Bands Limit Coils Limit 
+Production Capacity 3
+2
+1
+1 2 3 4
+15.057 Spring 03 Vande Vate 3</text>
+        </slide>
+        <slide>
+          <slideno>11</slideno>
+          <text>Rounding Fails 
+Bands Coils Bands Limit Coils Limit 
+Production Capacity X 
+X LP Solution IP Solution 3
+2
+1
+1 2 3 4
+15.057 Spring 03 Vande Vate 12</text>
+        </slide>
+        <slide>
+          <slideno>34</slideno>
+          <text>Summary 
+Mixed Integer Programming Models 
+Mostly about Binary Variables (Logic) 
+Significantly Harder to solve 
+Significantly More Modeling Power 
+Fixed Costs If-Then Constraints Cardinality Constraints Set Covering Models . 
+15.057 Spring 03 Vande Vate 35</text>
+        </slide>
+        <slide>
+          <slideno>26</slideno>
+          <text>Objective 
+Variable Cost for Trucks 
+$100/truck from Warehouse C to District 1 
+Fixed Costs for Leasing 
+$5,500 if we lease Warehouse C 
+$5,500*Yes/No Lease Warehouse C 
+Careful about combining operational costs 
+and capital costs 
+15.057 Spring 03 Vande Vate 27</text>
+        </slide>
+        <slide>
+          <slideno>31</slideno>
+          <text>Dont Forget 
+S.t. DefineInvest{f in FUNDS}: 
+Invest[f] &gt;= Fraction[f]; 
+Cant put money in fund unless you admit 
+to being invested in it. 
+15.057 Spring 03 Vande Vate 32</text>
+        </slide>
+        <slide>
+          <slideno>17</slideno>
+          <text>Dealers sourced by 
+single ramps New Ramp Allocation 
+Southern US New Ramp Allocation 
+Southern US</text>
+        </slide>
+        <slide>
+          <slideno>7</slideno>
+          <text>Coils Node 3: Lower Branch 
+Bands  2 X Yields $184,000 Further Nodes 
+3
+Bands
+1 2 3 4
+15.057 Spring 03 Vande Vate 8
+2 
+1</text>
+        </slide>
+        <slide>
+          <slideno>14</slideno>
+          <text>Integer Variables 
+Integer: -2, -1, 0, 1, 2, 
+Binary: 0 or 1
+Binary: Yes or No, On or Off
+15.057 Spring 03 Vande Vate 15</text>
+        </slide>
+        <slide>
+          <slideno>15</slideno>
+          <text>Single Sourcing 
+Assign each customer to only one DC 
+Simplifies service network 
+15.057 Spring 03 Vande Vate 16</text>
+        </slide>
+        <slide>
+          <slideno>24</slideno>
+          <text>Fixed Costs Revisited
+25 
+Steco's Warehous e Loc ation M odel 
+Unit Costs Lease 
+Warehouse ($) 1 
+A 7,750$ 170$ $ 70$ 160$ 
+B 4,000$ 150$ $ $ $ 
+C 5,500$ 100$ $ $ $ 
+Decisions Yes/No 1 Total Eff. 
+Cap. Cap. 
+Leas e A 0 0 0 0 0 0 0 200 
+Leas e B 0 0 0 0 0 0 0 250 
+Leas e C 0 0 0 0 0 0 0 300 
+Total TrucksTo 0 
+Demand (Trucks/Mo) 100 90 110 60 
+Lease 
+Cost To 1 o 2 o 3 o 4 Truck 
+$ Total 
+Cost 
+A $ -$ -$ -$ -$ -$ -$ 
+B $ -$ -$ -$ (0) $ (0) $ (0) $ 
+C $ -$ -$ 0$ -$ 0 $ 0 $ 
+Totals -$ -$ -$ 0$ (0) $ 0 $ 0 $ Monthly Trucks From/To Unit Cost/Truck to Sales District 
+4 3 2 
+40
+195 100 10
+240 140 60
+4 3 2 
+0 0 0 
+T T T
+-
+-
+-</text>
+        </slide>
+        <slide>
+          <slideno>30</slideno>
+          <text>Summary 
+var Invest{FUNDS} binary;
+var Fraction{FUNDS} &gt;= 0;
+s.t. MaxHoldings; 
+sum{f in FUNDS} Invest[f] &lt;= 10; 
+s.t. MinHoldings; 
+sum{f in FUNDS} Invest[f] &gt;= 5; 
+s.t. MinimumPercentage{f in FUNDS}: 
+Fraction[f] &gt;= 0.10*Invest[f]; 
+... 
+15.057 Spring 03 Vande Vate 31</text>
+        </slide>
+        <slide>
+          <slideno>32</slideno>
+          <text>Set Covering Models 
+F F F 
+F 
+F F F 
+F 
+F 
+F F 
+F F 
+F F F F 
+F 
+F 
+F F 
+F F 
+F 
+F F FF 
+F F F 
+F 
+F F 
+F 
+F F 
+F 
+F F 
+F 
+F F F 
+F F F 
+F 
+F 
+4 
+New Orleans New Y ork 
+Los Angeles San Francisco Chicago Pittsburgh Boston 
+Houston Atlanta Denver Seattle</text>
+        </slide>
+        <slide>
+          <slideno>10</slideno>
+          <text>15.057 Spring 03 Vande Vate 11 
+The Best Answer 
+Bands Coils Node 6: Lower Branch 
+Bands  1 
+X The best answer yields 
+$60,000*2 + $50,000*1= $170,000 
+Yields $170,000 3 
+1 4 3 2 2
+1</text>
+        </slide>
+        <slide>
+          <slideno>0</slideno>
+          <text>Integer Programming I 
+Modeling with Integer Variables 
+How the Solver Works 
+Complexity 
+15.057 Spring 03 Vande Vate 1</text>
+        </slide>
+        <slide>
+          <slideno>6</slideno>
+          <text>Bounding 
+Coils Node 2: Upper Branch 
+Coils  1 
+Lower Branch Coils  0 X The best answer yields at least 
+$50,000*3= $150,000 
+Yields $188,571 3
+Bands
+1 2 3 4
+15.057 Spring 03 Vande Vate 7
+2 
+1</text>
+        </slide>
+        <slide>
+          <slideno>13</slideno>
+          <text>A Solver Model 
+Steel Cable Company 
+Integer Programming E xample 
+Produc ts 
+Hours/Ton 
+Profit/Ton 
+Produc tion P lan 
+Produc ts 
+Tons Produc ed 
+Maximum Sales Bands Coils 
+3 4 
+$ 50,000 $ 60,000 
+Bands Coils 
+0 0 
+3 2 
+Produc tion C onstraint Hours Used Hours Available 
+0&lt;= 12 
+Profit Summary Bands Coils Total 
+$ - $ - $ -
+15.057 Spring 03 Vande Vate 14</text>
+        </slide>
+        <slide>
+          <slideno>8</slideno>
+          <text>Coils Node 4: Lower Branch 
+Coils  1 X Yields $160,000 Upper Branch Coils  2 Further Nodes 
+3
+Bands
+1 2 3 4
+15.057 Spring 03 Vande Vate 9
+2 
+1</text>
+        </slide>
+        <slide>
+          <slideno>12</slideno>
+          <text>Branch &amp; Bound
+Implicit enumeration 
+An Integer Program with 30 binary variables can 
+require over 1 billion nodes ! 
+Comes with guarantees 
+The answer is no worse than 
+And no better than 
+Typically finds a good answer quickly 
+Spends a long time guaranteeing it 
+15.057 Spring 03 Vande Vate 13</text>
+        </slide>
+        <slide>
+          <slideno>29</slideno>
+          <text>Challenge: Challenge 2 
+Revisited 
+At least 5 funds 
+At most 10 funds 
+At least 10% if any 
+Large 
+Fund  Name T-Bill Value Fund Ratings 
+Large Small Small Emerging High International 
+Growth Value Growth Japan Pacific Europe Markets Government Yield Bonds 
+Fidelity Adv Equity 0.00 7 71 2 6 7 2 0 0 5 0 0 0 
+Fidelity Advisor Gro 0.00 0 48 5 26 7 0 0 11 2 0 0 0 
+Fidelity Equity-Income 0.00 0 60 5 20 0 3 0 0 3 0 9 0 
+Fidelity Equity Income-II 0.00 0 66 4 16 0 2 1 0 6 0 5 0 
+Fidelity Growth/Income 0.00 2 47 0 17 11 3 0 5 2 0 12 0 
+Fidelity Ins Cash Po 0.43 100 0 0 0 0 0 0 0 0 0 0 0 
+Fidelity Investment 0.16 0 0 0 2 0 0 0 0 4 92 1 0 
+Fidelity Intermediat 0.00 13 0 0 0 0 0 0 0 0 83 0 3 
+Fidelity Limited Te r 0.00 5 18 0 0 0 0 4 0 0 45 28 0 
+Fidelity Mortgage Se 0.00 53 0 0 0 0 2 1 3 0 34 7 0 
+Fidelity Retirement 0.25 0 8 35 24 16 1 0 3 11 0 0 0 
+Fidelity Short-Term 0.00 44 0 0 0 0 0 0 0 6 25 23 3 
+Fidelity Value Fund 0.00 0 50 5 31 1 4 0 8 2 0 0 0 
+Fidelity Worldwide F 0.16 0 27 0 14 0 11 0 37 11 0 0 0 
+Totals 1.00 43.00 6.24 8.75 8.52 4.00 1.98 - 6.56 5.13 15.00 0.16 -
+Targets 43 3 3 5 4 10 2 5 10 15 0 0 
+Excess - 3.24 5.75 3.52 - - - 1.56 - - 0.16 0.00 
+ShortFall - - - - - 8.02 2.00 - 4.87 - - -
+Adjusted 43.00 3.00 3.00 5.00 4.00 10.00 2.00 5.00 10.00 15.00 (0.00) (0.00) 
+Deviation 29.29 - 3.24 5.75 3.52 - 8.02 2.00 1.56 4.87 - 0.16 0.00</text>
+        </slide>
+        <slide>
+          <slideno>1</slideno>
+          <text>A Simple Example 
+Steel Cable Company
+Integer Programming E xample
+Market 
+Limit 
+Produc ts Profit/Ton (Tons) Hours/Ton 
+Bands $50,000 3 3 
+Coils $60,000 2 4 
+Total Hours 12 
+15.057 Spring 03 Vande Vate 2</text>
+        </slide>
+      </slides>
+      <videos/>
+    </lecture>
+    <lecture>
+      <lecture_title>Non-Linear Programming (PDF)
+Case Study: Peach State (PDF - 2.8 MB)</lecture_title>
+      <lecture_pdf_url>https://ocw.mit.edu/courses/15-057-systems-optimization-spring-2003/resources/12location/</lecture_pdf_url>
+      <lectureno>12</lectureno>
+      <slides>
+        <slide>
+          <slideno>3</slideno>
+          <text>Rectilinear Distance
+Travel on the streets and avenues
+Distance = 
+number of blocks East-West + 
+number of blocks North-South 
+Manhattan Metric 
+15.057 Spring 03 Vande Vate 4</text>
+        </slide>
+        <slide>
+          <slideno>21</slideno>
+          <text>Iterative Strategy 
+Start somewhere, e.g., 
+x = [ ckxk]/[ck] 
+y = [ ckyk]/[ck] 
+as though dk= 1. 
+Step 1: Calculate values of dk 
+Step 2: Refine values of x and y 
+x = [ ckxk/dk]/[ck/dk] 
+y = [ ckyk/dk]/[ck/dk] 
+Repeat Steps 1 and 2. ... 
+15.057 Spring 03 Vande Vate 22</text>
+        </slide>
+        <slide>
+          <slideno>25</slideno>
+          <text>Moving On 
+Example of Convex Minimization (Non-
+linear) 
+Example of a Heuristic: Not guaranteed to give us the best answer, but works well. 
+15.057 Spring 03 Vande Vate 26</text>
+        </slide>
+        <slide>
+          <slideno>17</slideno>
+          <text>Outline 
+Rectilinear Location Problems 
+Euclidean Location Problems 
+Location - Allocation Problems 
+15.057 Spring 03 Vande Vate 18</text>
+        </slide>
+        <slide>
+          <slideno>12</slideno>
+          <text>Min the Max Contd
+DefineXdist1{c in Customer}: 
+Xdist[c] &gt;= X[c]- Xloc; 
+DefineXdist2{c in Customer}: 
+Xdist[c] &gt;= Xloc-X[c]; 
+DefineYdist1{c in Customer}: 
+Ydist[c] &gt;= Y[c]-Yloc ; 
+DefineYdist2{c in Customer}: 
+Ydist[c] &gt;= Yloc-Y[c];15.057 Spring 03 Vande Vate 13</text>
+        </slide>
+        <slide>
+          <slideno>15</slideno>
+          <text>Mimimize the Maximum Rectilinear DistanceNIMBY Cust. X Y Min Total Xdist Ydist Left? Above? If Left If Right If Above If Below 
+1 990 0 29 -9 11 9 
+2 930 0 29 -9 17 3 
+3 8 6 0 0 28 -8 14 6 
+4 3 9 0 0 23 -3 11 9 
+5 0 6 0 0 20 0 14 6 
+6 4 2 0 0 24 -4 18 2 
+7 4 0 0 0 24 -4 20 0 
+8 2 0 0 0 22 -2 20 0 
+9 0 9 0 0 20 0 11 9 
+10 5 2 0 0 25 -5 18 2 
+Facility 
+Total 
+0 1 2 3 4 5 6 7 8 9 10 
+0 1 2 3 6 7 10 
+X Y 
+5 4 9 8 
+15.057 Spring 03 Vande Vate</text>
+        </slide>
+        <slide>
+          <slideno>0</slideno>
+          <text>Location Problems
+Basic Concepts of Location 
+Last IP modeling tricks 
+Dispel Misconception 
+Introduce NLP 
+First Heuristic 
+15.057 Spring 03 Vande Vate 1</text>
+        </slide>
+        <slide>
+          <slideno>7</slideno>
+          <text>Locate a facility...
+To minimize the max of rectilinear 
+distances 
+Intuition 
+15.057 Spring 03 Vande Vate Where?
+Why?
+8</text>
+        </slide>
+        <slide>
+          <slideno>28</slideno>
+          <text>Assign Customers to Facilities 
+Uncapacitated ( facilities can be any size) 
+Greedy: Assign each customer to closest 
+facility 
+Capacitated 
+Use Optimization: Single-sourcing 
+15.057 Spring 03 Vande Vate 29</text>
+        </slide>
+        <slide>
+          <slideno>27</slideno>
+          <text>Iterative Approach 
+Put the facilities somewhere 
+Step 1: Assign the Customers to the 
+Facilities 
+Step 2: Find the best location for each facility given the assignments (see 
+previous method) 
+Repeat Step 1 and Step 2 . 
+15.057 Spring 03 Vande Vate 28</text>
+        </slide>
+        <slide>
+          <slideno>16</slideno>
+          <text>Disjunctive Constraints 
+One of Two Constraints holds 
+Ydist = TownY  DumpY 
+Ydist = DumpY  TownY 
+Binary Variable Chooses 1 
+Ydist   TownY  DumpY + 20*Left 
+Ydist  DumpY  TownY + 20*(1-Left) 
+Only 1 matters (20 is big) 
+Objective drives the right choice 
+These are hard for the solver 
+15.057 Spring 03 Vande Vate 17</text>
+        </slide>
+        <slide>
+          <slideno>4</slideno>
+          <text>Rectilinear Distance
+5
+4 9 
+15.057 Spring 03 Vande Vate 5</text>
+        </slide>
+        <slide>
+          <slideno>19</slideno>
+          <text>15.057 Spring 03 Vande Vate 20
+What kind of function?
+S1
+S3
+S5
+S7
+S9
+S11
+S13
+S15
+S17
+S19
+S21</text>
+        </slide>
+        <slide>
+          <slideno>23</slideno>
+          <text>Euclidean Location Location 5 45.8 
+4.5 
+45.6 
+4 
+45.43.5 
+3 
+45.2 
+2.5 X 
+Y 
+Distance 
+45 
+2 
+1.5 44.8 
+1 
+44.6 
+0.5 
+0 44.4 
+Distance 
+1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 
+Iteration</text>
+        </slide>
+        <slide>
+          <slideno>10</slideno>
+          <text>Objective 
+Total Distance: 
+sum{c in Customer}(Xdist[c]+Ydist[c]); 
+Maximum Distance? 
+15.057 Spring 03 Vande Vate 11</text>
+        </slide>
+        <slide>
+          <slideno>8</slideno>
+          <text>Models
+Set Customers; 
+Param X{Customer}; 
+Param Y{Customer}; 
+var Xloc &gt;= 0; 
+var Yloc &gt;= 0; 
+var Xdist{Customer}; 
+var Ydist{Customer}; 
+15.057 Spring 03 Vande Vate 9</text>
+        </slide>
+        <slide>
+          <slideno>22</slideno>
+          <text>Solver Model: Not Linear
+Facility
+23 
+50.88679 
+50.35772 
+50.11444 
+49.9801 
+49.90163 
+49.85438 
+49.82525 
+49.80693 
+49.79522 
+49.78763 
+49.78265 
+49.77935 
+49.77714 
+49.77565 
+49.77464 Center of Gravity 
+Better Answer 4.5 4.6 
+4.283971 4.0907 
+4.241999 3.73981 
+4.239085 3.486694 
+4.239961 3.298874 
+4.238616 3.15693 
+4.235342 3.048107 
+4.23113 2.963646 
+4.226679 2.897385 
+4.222382 2.844914 
+4.21843 2.80302 
+4.214899 2.769336 
+4.211803 2.742087 
+4.209121 2.719928 
+15.057 Spring 03 Vande Vate 4.206817 2.701827</text>
+        </slide>
+        <slide>
+          <slideno>9</slideno>
+          <text>Constraints
+DefineXdist1{c in Customer}: 
+Xdist[c] &gt;= X[c]- Xloc; 
+DefineXdist2{c in Customer}: 
+Xdist[c] &gt;= Xloc-X[c]; 
+DefineYdist1{c in Customer}: 
+Ydist[c] &gt;= Y[c]- Yloc; 
+DefineYdist2{c in Customer}: 
+Ydist[c] &gt;= Yloc-Y[c]; 
+15.057 Spring 03 Vande Vate 10</text>
+        </slide>
+        <slide>
+          <slideno>18</slideno>
+          <text>Locating a single facility 
+Distance is not linear 
+Distance is a convex function 
+Local Minimum is a global Minimum
+15.057 Spring 03 Vande Vate 19</text>
+        </slide>
+        <slide>
+          <slideno>20</slideno>
+          <text>Where to Put the Facility 
+Total Cost =  ckdk(x,y) 
+=  ck(xk-x)2 + (yk-y)2 
+Total Cost/ x =  ck (xk -x)/dk(x,y) 
+Total Cost/ x = 0 when 
+x = [ckxk/dk(x,y)]/[ck/dk(x,y)] 
+y = [ ckyk/dk(x,y)]/[ck/dk(x,y)] 
+But dk(x,y) changes with location... 
+15.057 Spring 03 Vande Vate 21</text>
+        </slide>
+        <slide>
+          <slideno>11</slideno>
+          <text>Min the Max!
+Var Xloc; 
+var Yloc; 
+var Xdist{Customer}&gt;= 0; 
+var Ydist{Customer}&gt;= 0; 
+var dmax; 
+min objective: dmax; 
+s.t. DefineMaxDist{c in Custs}: 
+dmax &gt;= Xdist[c] + Ydist[c]; 
+15.057 Spring 03 Vande Vate 12</text>
+        </slide>
+        <slide>
+          <slideno>6</slideno>
+          <text>Minimize the sum of Rectilinear distances to customers 
+Cust. X Y Xdist Ydist If Left If Right If Above If Below 
+1 9 9 9.00 (9.00) (9.00) 9.00 Solver Model 2 9 3 9.00 (9.00) (3.00) 3.00 
+3 8 6 8.00 (8.00) (6.00) 6.00 
+4 3 9 3.00 (3.00) (9.00) 9.00 
+5 0 6 - - (6.00) 6.00 
+6 4 2 4.00 (4.00) (2.00) 2.00 
+7 4 0 4.00 (4.00) - -
+8 2 0 2.00 (2.00) - -
+9 0 9 - - (9.00) 9.00 
+10 5 2 5.00 (5.00) (2.00) 2.00 
+Facility 0 0 
+Total 0 - -
+0 1 2 3 4 5 6 7 8 9 10 
+0 2 3 6 8 9 10 
+X Y 
+1 5 4 7 
+15.057 Spring 03 Vande Vate 7</text>
+        </slide>
+        <slide>
+          <slideno>13</slideno>
+          <text>Mimimize the Maximum Rectilinear Distance 
+Customer X Y Max Total Xdist Ydist If Left If Right If Above If Below 
+1 99 0 0 0 0 9 -9 -9 9 
+2 93 0 0 0 0 9 -9 -3 3Solver Model	 3 86 0 0 0 0 8 -8 -6 6 
+4 39 0 0 0 0 3 -3 -9 9 
+5 06 0 0 0 0 0 0 -6 6 
+6 4 2 0 0 0 0 4 -4 -2 2 
+7 4 0 0 0 0 0 4 -4 0 0 
+8 2 0 0 0 0 0 2 -2 0 0 
+9 0 9 0 0 0 0 0 0 -9 9 
+10 5 2 0 0 0 0 5 -5 -2 2 
+Facility 0 0 
+Total 0 
+0 1 2 3 4 5 6 7 8 9 10 
+0 2 4 7 9 10 
+X Y 
+1 3 6 5 8 
+15.057 Spring 03 Vande Vate 14</text>
+        </slide>
+        <slide>
+          <slideno>24</slideno>
+          <text>Euclidean Location
+Customer X Y d(x,y) 1/d(x,y) d(x,y) 1/d(x,y) d(x,y) 1/d(x,y) d(x,y) 1/d(x,y) d(x,y) 1/d(x,y) 
+1 9 9 6.293648 0.15889 6.807507 0.146897 7.092825 0.140988 7.284426 0.137279 7.427032 0.134643 
+2 9 1 5.762812 0.173526 5.638559 0.17735 5.490459 0.182134 5.371216 0.186178 5.286094 0.189176 
+3 8 10 6.43506 0.155399 6.980594 0.143254 7.301544 0.136957 7.521146 0.132958 7.683943 0.130142 
+4 3 9 4.648656 0.215116 5.074427 0.197067 5.404827 0.18502 5.65083 0.176965 5.83441 0.171397 
+5 0 6 4.712749 0.21219 4.690185 0.213211 4.806559 0.208049 4.928139 0.202916 5.027261 0.198915 
+6 4 2 2.64764 0.377695 2.109897 0.473957 1.75656 0.569294 1.505796 0.664101 1.320854 0.757086 
+7 4 0 4.627094 0.216118 4.100544 0.24387 3.747632 0.266835 3.494881 0.286133 3.30759 0.302335 
+8 3 0 4.838388 0.20668 4.287471 0.233238 3.940653 0.253765 3.70032 0.270247 3.524213 0.283751 
+9 0 9 6.293648 0.15889 6.515646 0.153477 6.757525 0.147983 6.954595 0.14379 7.104936 0.140747 
+10 5 0 4.627094 0.216118 4.152893 0.240796 3.815855 0.262064 3.568757 0.28021 3.385296 0.295395 
+Facility 50.88679 2.090624 2.223116 2.35309 2.480777 2.603587 4.5 4.6 
+4.283971 4.0907 
+4.241999 3.73981 
+4.239085 3.486694 
+4.239961 3.298874 
+4.238616 3.15693 
+4.235342 3.048107 
+4.23113 2.963646 
+4.226679 2.897385 
+4.222382 2.844914 
+4.21843 2.80302 
+4.214899 2.769336 
+4.211803 2.742087 
+4.209121 2.719928 
+4.206817 2.701827 50.35772 
+50.11444 
+49.9801 
+49.90163 
+49.85438 
+49.82525 
+49.80693 
+49.79522 
+49.78763 
+49.78265 
+49.77935 
+49.77714 
+49.77565 
+49.77464 
+4.217658 2.805268 0 1 2 3 4 5 6 7 8 9 10 
+0 2 3 4 6 7 8 9 10 
+X Y 
+1 5 
+15.057 Spring 03 Vande Vate 25</text>
+        </slide>
+        <slide>
+          <slideno>1</slideno>
+          <text>Where to Locate 
+Facilities 
+Rectilinear Location Problems 
+Euclidean Location Problems 
+Location - Allocation Problems 
+15.057 Spring 03 Vande Vate 2</text>
+        </slide>
+        <slide>
+          <slideno>26</slideno>
+          <text>Locating Several Facilities 
+Fixed Number of Facilities to Consider
+Single Sourcing 
+Two Questions: 
+Location: Where 
+Allocation: Whom to serve 
+Each is simple 
+Together they are harder 
+15.057 Spring 03 Vande Vate 27</text>
+        </slide>
+        <slide>
+          <slideno>14</slideno>
+          <text>Challenge #3 
+NIMBY. 
+Maximize the Minimum Distance
+How did you do it?
+15.057 Spring 03 Vande Vate 15</text>
+        </slide>
+        <slide>
+          <slideno>5</slideno>
+          <text>Locate a facility... 
+Where?
+Why?
+To minimize the sum of rectilinear 
+distances 
+Intuition 
+15.057 Spring 03 Vande Vate 6</text>
+        </slide>
+        <slide>
+          <slideno>2</slideno>
+          <text>Basic Intuition 
+On the line, if the objective is to min 
+ 
+The maximum distance traveled 
+The maximum distance left + right 
+The distance traveled 
+there and back to each customer 
+The item-miles traveled 
+0 1 4
+15.057 Spring 03 Vande Vate 3</text>
+        </slide>
+      </slides>
+      <videos/>
+    </lecture>
+    <lecture>
+      <lecture_title>Introduction to LP (PDF)
+Associated files:
+
+04Eastern_steel (MOD)
+04Eastern_steel (XLS)
+04Investment_example (XLS)
+04Oak_products_lp (XLS)
+04Portfolio_data (MDB)
+04Portfolio_model (MOD)
+04Portfolio (XLS)</lecture_title>
+      <lecture_pdf_url>https://ocw.mit.edu/courses/15-057-systems-optimization-spring-2003/resources/04lpintroprint/</lecture_pdf_url>
+      <lectureno>4</lectureno>
+      <slides>
+        <slide>
+          <slideno>33</slideno>
+          <text>Example Data
+Fund R atings 
+Large Large Small Small Emerging High International 
+Fund N ame T-Bill Value Growth Value Growth Japan Pacific Europe Markets Government Yield Bonds Gold 
+Fidelity Adv Equity 7 71 2 6 7 2 0 0 5 0 0 0 0 
+Fidelity Advisor Gro 0 48 5 26 7 0 0 11 2 0 0 0 0 
+Fidelity Equity-Income 0 60 5 20 0 3 0 0 3 0 9 0 0 
+Fidelity Equity Income-II 0 66 4 16 0 2 1 0 6 0 5 0 0 
+Fidelity Growth/Income 2 47 0 17 11 3 0 5 2 0 12 0 0 
+Fidelity Ins Cash Po 100 0 0 0 0 0 0 0 0 0 0 0 0 
+Fidelity Investment 0 0 0 2 0 0 0 0 4 92 1 0 1 
+Fidelity Intermediat 13 0 0 0 0 0 0 0 0 83 0 3 0 
+Fidelity Limited Ter 5 18 0 0 0 0 4 0 0 45 28 0 0 
+Fidelity Mortgage Se 53 0 0 0 0 2 1 3 0 34 7 0 0 
+Fidelity Retirement 0 8 35 24 16 1 0 3 11 0 0 0 0 
+Fidelity Short-Term 44 0 0 0 0 0 0 0 6 25 23 3 0 
+Fidelity Value Fund 0 50 5 31 1 4 0 8 2 0 0 0 0 
+Fidelity Worldwide F 0 27 0 14 0 11 0 37 11 0 0 0 0 
+Targets 43 3 3 5 4 10 2 5 10 15 0 0 0 
+15.057 Spring 03 Vande Vate 34</text>
+        </slide>
+        <slide>
+          <slideno>1</slideno>
+          <text>Hierarchy of Models 
+Network Flows 
+Linear Programs 
+Mixed Integer Linear Programs 
+15.057 Spring 03 Vande Vate 2</text>
+        </slide>
+        <slide>
+          <slideno>35</slideno>
+          <text>Challenge #2 
+Build a linear model to find a best portfolio.
+First build your model in Excel (Use the file 
+Portfolio.xls) 
+Then build your model in AMPL (Use the file Portfolio.mdb) 
+Deliverables 
+Models (Self documenting) 
+Solutions (Self documenting) 
+Due: Beginning of Lecture #7 
+15.057 Spring 03 Vande Vate 36</text>
+        </slide>
+        <slide>
+          <slideno>0</slideno>
+          <text>Linear Programming 
+Hierarchy of Models 
+Define Linear Models 
+Modeling Examples 
+in Excel and AMPL 
+15.057 Spring 03 Vande Vate 1</text>
+        </slide>
+        <slide>
+          <slideno>30</slideno>
+          <text>A Financial Application 
+ Financial Analysis 
+ Define goals 
+ Assess Risk vs. Return 
+ Asset Allocation 
+ Allocate assets among classes of investments 
+ Track and forecast market swings 
+	Fund Selection 
+ No-Load Funds 
+ Established Performance 
+15.057 Spring 03 Vande Vate 31</text>
+        </slide>
+        <slide>
+          <slideno>13</slideno>
+          <text>Why These Limitations! 
+Can anything real be expressed with such 
+limited tools? 
+What do we get for all the effort? 
+15.057 Spring 03 Vande Vate 14</text>
+        </slide>
+        <slide>
+          <slideno>22</slideno>
+          <text>Blending Example 
+Eastern Steel Blending Exam ple (Described in Moore et al. Page 105 and following) 
+Mines 
+1 2 3 4 
+Tons of Ore/Ton of  Alloy 
+Cost/Ton $ 800 $ 400 $ 600 $ 500 
+Lbs of each basic element/Ton of Ore 
+Lbs/Ton Min. Lbs/Ton 
+Basic Element of Alloy of Alloy 
+A 10 3 8 2 0  5 
+B 90 150 75 175 0  100 
+C 45 25 20 37 0  30 
+15.057 Spring 03 Vande Vate 23</text>
+        </slide>
+        <slide>
+          <slideno>26</slideno>
+          <text>A Fixed Income Example 
+Bond 
+Yield 
+Quality 
+Years to Maturity 
+Maximize Yield 
+Conditions: 
+at most 
+at most 
+at most Investment Example 
+A B
+4.30% 2.70% 
+2 2 
+9 15 C D E 
+2.50% 2.20% 4.50% 
+1 1 5 
+4 3 2 
+10 millio n to invest 
+4 million total in C, D, and E 
+1.4 average qual ity 
+5 years average y ears to maturity 
+15.057 Spring 03 Vande Vate 27</text>
+        </slide>
+        <slide>
+          <slideno>25</slideno>
+          <text>Challenge 
+Build a linear model
+15.057 Spring 03 Vande Vate 26</text>
+        </slide>
+        <slide>
+          <slideno>12</slideno>
+          <text>Linear Programs 
+Objective: 
+A linear function of the variables 
+Variables: 
+May be restricted to lie between a lower bound and 
+an upper bound 
+In AMPL 
+var x &gt;= 1, &lt;= 200; 
+Constraints:  
+Linear Function of the variables 	  Constant 
+= 
+15.057 Spring 03 Vande Vate 13</text>
+        </slide>
+        <slide>
+          <slideno>6</slideno>
+          <text>Challenge 
+Build a Solver Model
+15.057 Spring 03 Vande Vate 7</text>
+        </slide>
+        <slide>
+          <slideno>34</slideno>
+          <text>Example
+If we allocate 50% to the two funds
+Fidelity Fidelity Implied Allocation Target 
+Asset Classes Adv Equity Advisor Gro to Asset Classes Allocation Deviation 
+T-Bill 7 3.5 43 39.5 
+Large Value 71 48 59.5 3 56.5 
+Large Growth 2 3.5 3 0.5 
+Small Value 6 6 16 5 11 
+Sma ll Growth 7 7 4 3 
+Japan 2 1 10 9 
+Pacific 0 0 2 2 
+Europe 0 1 5.5 5 0.5 
+Emerging Markets 5 3.5 10 6.5 
+Government 0 0 15 15 
+High Yield 0 0 0 0 
+International Bonds 0 0 0 0 
+Gold 0 0 0 0 
+50% 50% Total 143.5 0 
+5 
+2
+7 
+0 
+0 
+1
+2 
+0 
+0 
+0 
+0 
+15.057 Spring 03 Vande Vate 35</text>
+        </slide>
+        <slide>
+          <slideno>8</slideno>
+          <text>The Model
+Objective: Maximize Profit 
+=SUMPRODUCT(UnitProfit,Production) 
+=$56*Production of Captains + $40*Production of Mates 
+Variables: Production 
+$B$4:$C$4 
+Production of Captains 
+Production of Mates 
+15.057 Spring 03 Vande Vate 9</text>
+        </slide>
+        <slide>
+          <slideno>19</slideno>
+          <text>More Examples
+Illustrate tricks 
+Build experience 
+AMPL Examples 
+15.057 Spring 03 Vande Vate 20</text>
+        </slide>
+        <slide>
+          <slideno>4</slideno>
+          <text>Agenda for LP 
+First Example 
+What is Linear? 
+Several Illustrative Examples 
+Excel and AMPL 
+Revenue Optimization Application 
+Portfolio Optimization 
+15.057 Spring 03 Vande Vate 5</text>
+        </slide>
+        <slide>
+          <slideno>24</slideno>
+          <text>A Fixed Income Example 
+Bond 
+Yield 
+Quality 
+Years to Maturity 
+Maximize Yield 
+Conditions: 
+at most 
+at most 
+at most Investment Example 
+A B
+4.30% 2.70% 
+2 2 
+9 15 C D E 
+2.50% 2.20% 4.50% 
+1 1 5 
+4 3 2 
+10 millio n to invest 
+4 million total in C, D, and E 
+1.4 average qual ity 
+5 years average y ears to maturity 
+15.057 Spring 03 Vande Vate 25</text>
+        </slide>
+        <slide>
+          <slideno>28</slideno>
+          <text>Example: Marketing 
+Segment 1 Total Volume = 
+ Segment 2
+ + 
+0 200 400 600 800 1000 
+0 5 10 15 20 
+Volume Revenue First exposures 
+drive sales 
+Then the 
+novelty fades Segment 1  10 
+Revenue = 60*Segment 1 + 20*Segment 2 
+15.057 Spring 03 Vande Vate 29</text>
+        </slide>
+        <slide>
+          <slideno>15</slideno>
+          <text>My Own Perspective 
+Linear Programming 
+Large portions of most real applications 
+Basis for understanding 
+Background for MIP (Mixed Integer Programming) 
+Everything can be modeled with MIP, but... 
+15.057 Spring 03 Vande Vate 16</text>
+        </slide>
+        <slide>
+          <slideno>18</slideno>
+          <text>Review of Sensitivity Analysis 
+Microsoft Excel 8.0a Sensitivity Report 
+Worksheet: [07OakProduc tsLP.xls]Sheet1 
+Report Created: 12/19/01 4: 52:52 PM 
+Adjustable Cells 
+Final Reduced Objective Allowable Allowable If the unit profit on the 
+Mate were to drop, how 
+much could it drop before 
+we would quit making it? 
+Cell Name Value Cost Coefficient Increase Decrease 
+$B$4 Poduction Q ty. Captain 130 0 56 24 
+$C$4 Poduction Q ty. Mate 60 0 40 16 
+Constraints
+Final Shadow Constraint Allowable Allowable
+Cell Name Value Price R.H. Side Increase Decrease
+$D$6 Long D owels Total Usage 1280 4 1280 40 
+$D$7 Short Dowels Total Usage 1240 0 1600 1E+30 360
+$D$8 Legs  Total Usage 760 6 760 72 40
+$D$9 Heavy Seats Total Usage 130 0 140 1E+30 10
+$D$10 Light Seats Total Usage 60 0 120 1E+30 60
+$D$12 TotalProduc tion 190 0 100 90 1E+30
+16 
+12 
+180</text>
+        </slide>
+        <slide>
+          <slideno>2</slideno>
+          <text>15.057 Spring 03 Vande Vate 3 
+A More Academic View 
+Network Flows 
+Linear Programs 
+Convex Optimization Mixed Integer 
+Linear 
+Programs Non-Convex Optimization</text>
+        </slide>
+        <slide>
+          <slideno>9</slideno>
+          <text>Constraints
+Constraints: 
+TotalUsage &lt;= StartInventory 
+=SUMPRODUCT(LongDowelsPerChair,Production) &lt;= 1280 
+=SUMPRODUCT(ShortDowelsPerChair,Production) &lt;= 1600 
+... 
+TotalProduction &gt;= MinProduction 
+=SUM(Production) &gt;= 100 
+Options 
+Assume Non-negative 
+Assume Linear Model 
+15.057 Spring 03 Vande Vate 10</text>
+        </slide>
+        <slide>
+          <slideno>16</slideno>
+          <text>What do we get for playing? 
+Guarantees! 
+Readily available algorithms that 
+Find a provably best solution 
+Quite fast even for large problems 
+Less compelling generally 
+Sensitivity Analysis (not available with MIP) 
+15.057 Spring 03 Vande Vate 17</text>
+        </slide>
+        <slide>
+          <slideno>3</slideno>
+          <text>The Differences
+Objective 
+Func tion Variables Constraints 
+Network Flows Linear Continuous Special 
+Linear  Forms 
+Linear Programs Linear Continuous Linear  Forms 
+Convex 
+Optimization Convex Continuous Convex 
+Mixed Integer 
+Linear Programs Linear Discete or 
+Continuous Linear  Forms 
+Non-linear 
+Optimization Gener al Continuous Gener al 
+Our Focus: 
+ Linear Programs (LP), 
+ Mixed Integer Linear Programs (MIP)
+Heuristics 4</text>
+        </slide>
+        <slide>
+          <slideno>5</slideno>
+          <text>A First Example 
+Simplified Oak Produc ts Model 
+Chair Style Captain Mate
+Profit/Chair $ 56 $ 40 Profit
+Poduc tion Q ty.
+Chair Component Total Usage Start Inventory End Inv. 0 0 0 
+Long D owels 8 4 0  1280 1280 
+Short Dowels 4 12 0  1600 1600 
+Legs 4 4 0  760 760 
+Heavy Seats 1 0 0  140 140 
+Light Seats 0 1 0  120 120 
+Chairs Min. Produc tion Slack 
+Chair Produc tion 1 1 0  100 -100 
+15.057 Spring 03 Vande Vate 6</text>
+        </slide>
+        <slide>
+          <slideno>10</slideno>
+          <text>Whats a Linear Model 
+What is a linear function? 
+Sum of known constants * variables 
+NOTHING ELSE IS LINEAR Examples: 
+Sum across a row of variables
+Sum down a column of variables
+$56*Production of Captains + $40*Production of Mates
+In Excel 
+SUMPRODUCT(CONSTANTS, VARIABLES) 
+In AMPL 
+sum {index in Index Set}parameter[index]*variable[index] 
+Index Set cannot depend on values of variables
+15.057 Spring 03 Vande Vate 11</text>
+        </slide>
+        <slide>
+          <slideno>11</slideno>
+          <text>A Test
+Variables: x and y 
+Which are linear? 
+x2 + y2 
+(1-sqrt(2))2 x + y/200 
+|x -y| 
+x*y 
+10/x x/10 + y/20 sqrt(x
+2 + y2) 
+15.057 Spring 03 Vande Vate 12</text>
+        </slide>
+        <slide>
+          <slideno>27</slideno>
+          <text>Diseconomies of Scale
+If we are minimizing cost 
+Unit cost increases with volume 
+If we are maximizing profit 
+Unit profit decreases with volume 
+Inherent incentive towards small volumes
+15.057 Spring 03 Vande Vate 28</text>
+        </slide>
+        <slide>
+          <slideno>20</slideno>
+          <text>Blending Example 
+Eastern Steel Blending Exam ple (Described in Moore et al. Page 105 and following) 
+Mines 
+1 2 3 4 
+Tons of Ore/Ton of  Alloy 
+Cost/Ton $ 800 $ 400 $ 600 $ 500 
+Lbs of each basic element/Ton of Ore 
+Lbs/Ton Min. Lbs/Ton 
+Basic Element of Alloy of Alloy 
+A 10 3 8 2 0  5 
+B 90 150 75 175 0  100 
+C 45 25 20 37 0  30 
+15.057 Spring 03 Vande Vate 21</text>
+        </slide>
+        <slide>
+          <slideno>14</slideno>
+          <text>Power of Expression 
+The Marketing Hype: 
+LOTS 
+You will be amazed 
+Call before midnight tonight and get... 
+Experience: 
+Most of Almost Everything 
+All of Almost Nothing 
+15.057 Spring 03 Vande Vate 15</text>
+        </slide>
+        <slide>
+          <slideno>23</slideno>
+          <text>AMPL Model
+set MINES; 
+set ELEMENTS; 
+param MinLbs{ELEMENTS}; 
+param C ostPerTon{MINES}; 
+param LbsPerTon{MINES, ELEMENTS}; 
+var Tons{MINES} &gt;= 0; 
+minimize TotalCost: 
+sum{mine in MINES} CostPerTon[mine]*Tons[mine]; 
+s.t. CompositionConsts {elem in ELEMENTS}: 
+sum{mine in MINES} LbsPerTon[mine, elem]*Tons[mine] 
+&gt;= MinLbs[elem]; 
+s.t. TotalWeight: sum{mine in MINES} Tons[mine] = 1; 
+15.057 Spring 03 Vande Vate 24</text>
+        </slide>
+        <slide>
+          <slideno>29</slideno>
+          <text>What about.
+0 200 400 600 800 1000 
+0 5 10 15 20 
+Volume Revenue 
+15.057 Spring 03 Vande Vate 30</text>
+        </slide>
+        <slide>
+          <slideno>17</slideno>
+          <text>Review of Sensitivity 
+Simplified Oak Products Model 
+Chair Style Captain Mate 
+Profit/Chair 56 $ 40 $ Profit 
+Poduc tion Q ty. 
+Total Usage Start Inventory End Inv. 
+Long D owels 8 4 0  1280 1280 
+Short Dowels 4 12 0  1600 1600 
+Legs 4 4 0  760 760 
+Heavy Seats 1 0 0  140 140 
+Light Seats 0 1 0  120 120 
+Chairs Min. Produc tion Slack 
+Chair Produc tion 1 1 0  100 -100 Chair Component 0 0 0 
+15.057 Spring 03 Vande Vate 18</text>
+        </slide>
+        <slide>
+          <slideno>7</slideno>
+          <text>A First Example 
+Simplified Oak Produc ts Model 
+Chair Style Captain Mate
+Profit/Chair $ 56 $ 40 Profit
+Poduc tion Q ty.
+Chair Component Total Usage Start Inventory End Inv. 0 0 0 
+Long D owels 8 4 0  1280 1280 
+Short Dowels 4 12 0  1600 1600 
+Legs 4 4 0  760 760 
+Heavy Seats 1 0 0  140 140 
+Light Seats 0 1 0  120 120 
+Chairs Min. Produc tion Slack 
+Chair Produc tion 1 1 0  100 -100 
+15.057 Spring 03 Vande Vate 8</text>
+        </slide>
+        <slide>
+          <slideno>21</slideno>
+          <text>Challenge 
+Build a Solver model
+15.057 Spring 03 Vande Vate 22</text>
+        </slide>
+      </slides>
+      <videos/>
+    </lecture>
+    <lecture>
+      <lecture_title>Conflicting Objectives, Robust Optimization (PDF)
+Associated files:
+
+07Media_selection (XLS)
+07Portfolio_solution (XLS)
+07Shift_staffing_model (MOD)
+07Staff_scheduling_data (MDB)
+07Workforce_scheduling (XLS)</lecture_title>
+      <lecture_pdf_url>https://ocw.mit.edu/courses/15-057-systems-optimization-spring-2003/resources/07conflictingobjectives/</lecture_pdf_url>
+      <lectureno>7</lectureno>
+      <slides>
+        <slide>
+          <slideno>11</slideno>
+          <text>Getting to the Frontier 
+Associate a value with Service ($/Time)
+Change this value of Time
+Systematic change using Sensitivity Analysis
+12 Remember the Retail Pricing Model 
+15.057 Spring 03 Vande Vate</text>
+        </slide>
+        <slide>
+          <slideno>19</slideno>
+          <text>Singapore Electric 
+Singapore Electric Generator Produc tion 
+Unit Costs Jan Feb Mar Apr. May 
+Prod. $ 28.00 $ 27.00 $ 27.80 $ 29.00 
+Inventory $ 0.30 $ 0.30 $ 0.30 $ 0.30 
+Prod. Quant. 0 0 0 0 
+Prod. Limits 60 62 64 66 
+Init. Inv. 15 -43 -79 -113 
+Del. Reqmts 58 36 34 59 Minimum 
+Ending Inv. (43) (79) (113) (172) 7 
+Prod. Cost$ - $ - $ - $ -
+Inv. Cost $ (4.20) $ (18.30) $ (28.80) $ (42.75) Total 
+Total Cost $ (4.20) $ (18.30) $ (28.80) $ (42.75) $ (94.05) 
+15.057 Spring 03 Vande Vate 20</text>
+        </slide>
+        <slide>
+          <slideno>9</slideno>
+          <text>Other Examples 
+15.057 Spring 03 Vande Vate 10</text>
+        </slide>
+        <slide>
+          <slideno>26</slideno>
+          <text>Summary 
+Modeling Goals 
+Modeling Conflicting Objectives 
+The Efficient Frontier 
+Modeling Scenarios 
+Complicated models 
+Robust Solutions 
+15.057 Spring 03 Vande Vate 27</text>
+        </slide>
+        <slide>
+          <slideno>12</slideno>
+          <text>Reach vs Frequency 
+Invest in Marketing 
+Radio Ads 
+TV Ads 
+Newspaper Ads 
+Want 
+Reach: Lots of people to see the ads 
+Frequency: People to see the adds lots of times 
+Generally conflicting 
+15.057 Spring 03 Vande Vate 13</text>
+        </slide>
+        <slide>
+          <slideno>8</slideno>
+          <text>Conflicting Objectives 
+Cost vs Service 
+Price vs Quality
+Revenue vs Market Share
+Reach vs Frequency
+Risk vs Return
+...
+15.057 Spring 03 Vande Vate 9</text>
+        </slide>
+        <slide>
+          <slideno>18</slideno>
+          <text>Multiple Scenarios 
+Uncertain Future 
+Make a decision today 
+Live with it tomorrow Example 
+Singapore Electric 
+Production plan against FORECASTED orders 
+Uncertain Economic climate 
+HOT (130%) 1/3 chance 
+Temperate (100%) 1/3 chance 
+Cold (70%) 1/3 chance 
+Allow back-ordering 
+15.057 Spring 03 Vande Vate 19</text>
+        </slide>
+        <slide>
+          <slideno>10</slideno>
+          <text>Undominated Optima
+Current Position 
+Dominating Positions Cost
+Service Level 
+15.057 Spring 03 Vande Vate 11</text>
+        </slide>
+        <slide>
+          <slideno>13</slideno>
+          <text>Example 
+Budget of $500
+100 10 $10 News 2 500 $30 TV 10 100 $15 Radio Frequency Reach Cost Media 
+What are the Frontier Solutions?
+15.057 Spring 03 Vande Vate 14</text>
+        </slide>
+        <slide>
+          <slideno>16</slideno>
+          <text>The Frontier
+Value/$
+$120.00 
+$100.00 
+$80.00 
+$60.00 
+$40.00 
+$20.00 Radio 
+TV 
+News 
+$0.00 
+0 1 2 3 4 5 6 7 8 9 10 
+15.057 Spring 03 Vande Vate F</text>
+        </slide>
+        <slide>
+          <slideno>3</slideno>
+          <text>Formulating the LP
+Scheduling Postal Workers 
+Shift Mon -Tues -Wed -Thurs -Fri -Sat -Sun -
+Fri Sat Sun Mon Tues Wed Thurs 
+Day Demand 
+Mon 1 1 1 1 1 17 
+Tues 1 1 1 1 1 13 
+Wed 1 1 1 1 1 15 
+Thurs 1 1 1 1 1 19 
+Fri 1 1 1 1 1 14 
+Sat 1 1 1 1 1 16 
+Sun 1 1 1 1 1 11 
+15.057 Spring 03 Vande Vate 4</text>
+        </slide>
+        <slide>
+          <slideno>23</slideno>
+          <text>Robust Answers
+Minimum Regret: Max the Min Revenue 
+Regardless of the outcome, we get at least this 
+revenue 
+Idea of the model 
+One set of variables for production 
+Inventory variables for each scenario 
+Cost &amp; Revenue calculations for each scenario 
+New Variable for Minimum Revenue 
+Maximize the Minimum Revenue 
+S.t. Minimum Revenue  Revenue in Each Scenario 
+15.057 Spring 03 Vande Vate 24</text>
+        </slide>
+        <slide>
+          <slideno>4</slideno>
+          <text>Enhancement
+Given Goals: 
+Have the right number of workers each day 
+Cost for exceeding and falling short 
+|Actual Workers  Desired Number| 
+Challenge: Formulate a Linear Model 
+15.057 Spring 03 Vande Vate 5</text>
+        </slide>
+        <slide>
+          <slideno>20</slideno>
+          <text>Allow Back-Ordering 
+Defer demand at a cost of $3/unit/month 
+Challenge: Formulate a linear model 
+15.057 Spring 03 Vande Vate 21</text>
+        </slide>
+        <slide>
+          <slideno>22</slideno>
+          <text>Revised Model
+No constraint on ending inventory 
+Charge $50 for any back orders in May
+Maximize Net Revenue 
+$50 for each item sold  
+Cost  
+Lost Sales ($50 for back orders in May)
+15.057 Spring 03 Vande Vate 23</text>
+        </slide>
+        <slide>
+          <slideno>14</slideno>
+          <text>The Frontier
+6000 
+5000 
+4000 
+TV News 
+Radio Solutions using 
+the full budget Undominated Solutions Frequency
+3000 
+2000 
+1000 
+0 
+0 1000 2000 3000 4000 5000 6000 7000 8000 9000 
+15.057 Spring 03 Vande Vate 15Reach</text>
+        </slide>
+        <slide>
+          <slideno>0</slideno>
+          <text>Modeling Objectives 
+Goal Programming 
+Several Objectives 
+Minimum Regret Models 
+15.057 Spring 03 Vande Vate 1</text>
+        </slide>
+        <slide>
+          <slideno>24</slideno>
+          <text>Best Answers
+Solution Net Rev Jan Feb Mar Apr. 
+Hot $ 5,627 60 62 64 47 
+Temper $ 4,442 51 62 64 -
+Cold $ 3,604 36 62 41 -
+Min Regret $ 2,221 60 62 64 1 
+Solution Hot Temper Cold 
+Hot $ 5,627 $ 2,802 $ 873 
+Temper $ 1,452 $ 4,442 $ 2,513 
+Cold $ (1,534) $ 1,568 $ 3,604 
+Min Regret $ 2,221 $ 4,150 $ 2,221 
+15.057 Spring 03 Vande Vate 25</text>
+        </slide>
+        <slide>
+          <slideno>25</slideno>
+          <text>Unit Revenue $ 50 
+Unit Costs Jan Feb Mar Apr. May 
+Prod. $ 28.00 $ 27.00 $ 27.80 $ 29.00 
+Inventory $ 0.30 $ 0.30 $ 0.30 $ 0.30 
+BackOrder $3.00 $3.00 $3.00 $3.00 
+Minimum Net 
+Prod. Quant. 
+15.057 Spring 03 Vande Vate 26 
+Model (Messy) Scenario 1 Econom ic Climate 80% 
+Inventory 24 57 94 47.981607 
+BackOrder 0 0 0 0 
+Net Inv. 24 57 94 47.981607 
+Prod. Limits 60 62 64 66 
+Init. Inv. 10 24.00 57.00 94.00 
+Del. Reqmts 46 29 27 47 Lost Sales 
+Ending Inv. 24 57 94 48 - $ 
+Prod. Cost 1,680 $ 1,674 $ 1,779 $ 28 $ 
+Inv. Cost 7 $ 17 $ 28 $ 14 $ Total 
+Total Cost 1,687 $ 1,691 $ 1,807 $ 43 $ 5,229 $ 
+Net Rev. 2,221 
+Scenario 2 Econom ic Climate 100% 
+Inventory 12 38 68 9.981607 
+BackOrder 0 0 0 0 
+Net Inv. 12 38 68 9.981607 
+Prod. Limits 60 62 64 66 
+Init. Inv. 10 12.00 38.00 68.00 
+Del. Reqmts 58 36 34 59 Lost Sales 
+Ending Inv. 12 38 68 10 - $ 
+Prod. Cost 1,680 $ 1,674 $ 1,779 $ 28 $ 
+Inv. Cost 4 $ 11 $ 20 $ 3 $ Total 
+Total Cost 1,684 $ 1,685 $ 1,800 $ 31 $ 5,200 $ 
+Net Rev. 4,150 
+Scenario 3 Econom ic Climate 130% 
+Inventory 0 10 30 0 
+BackOrder 5 0 0 46.018393 
+Net Inv. -5 10 30 -46.01839 
+Prod. Limits 60 62 64 66 
+Init. Inv. 10 (5.00) 10.00 30.00 
+Del. Reqmts 75 47 44 77 Lost Sales 
+Ending Inv. (5) 10 30 (46) 4,601.84 
+Prod. Cost 1,680 $ 1,674 $ 1,779 $ 28 $ 
+Inv. Cost 15 $ 3 $ 9 $ 138 $ Total 
+Total Cost 1,695 $ 1,677 $ 1,788 $ 167 $ 5,327 $ 
+Net Rev. 2,221 60 62 64 0.981607 2221. 43892</text>
+        </slide>
+        <slide>
+          <slideno>1</slideno>
+          <text>Workforce Scheduling 
+Some days we will have too many workers
+Excess 
+Only concerned with the largest excess
+Minimize the largest Excess
+15.057 Spring 03 Vande Vate 2</text>
+        </slide>
+        <slide>
+          <slideno>15</slideno>
+          <text>Dollarize 
+Reaching one person worth $1 (normalize) 
+Frequency worth $f per repetition 
+100 10 $10 News 2 500 $30 TV 10 100 $15 Radio Frequency Reach Cost Media 
+$10 + 100f $500 + 2f $100 + 10f Value 
+What happens to the answer as f increases?
+15.057 Spring 03 Vande Vate 16</text>
+        </slide>
+        <slide>
+          <slideno>2</slideno>
+          <text>Challenge 
+Formulate a Solver Model
+15.057 Spring 03 Vande Vate 3</text>
+        </slide>
+        <slide>
+          <slideno>7</slideno>
+          <text>Small Violations
+Can violate policy constraints a little
+Sometimes can violate physical 
+constraints 
+Capacity 
+Raw materials 
+ 
+Handle with deviation from targets
+15.057 Spring 03 Vande Vate 8</text>
+        </slide>
+        <slide>
+          <slideno>6</slideno>
+          <text>Policy vs Physical Consts 
+Physical/Logical Constraints 
+Flow Conservation 
+Capacity 
+... 
+Policy Constraints 
+Meet service levels 
+... 
+15.057 Spring 03 Vande Vate 7</text>
+        </slide>
+        <slide>
+          <slideno>5</slideno>
+          <text>Formulating the LP
+Scheduling Postal Workers 
+Shift Mon -Tues -Wed -Thurs -Fri -Sat -Sun -
+Fri Sat Sun Mon Tues Wed Thurs 
+Day Demand 
+Mon 1 1 1 1 1 17 
+Tues 1 1 1 1 1 13 
+Wed 1 1 1 1 1 15 
+Thurs 1 1 1 1 1 19 
+Fri 1 1 1 1 1 14 
+Sat 1 1 1 1 1 16 
+Sun 1 1 1 1 1 11 
+15.057 Spring 03 Vande Vate 6</text>
+        </slide>
+        <slide>
+          <slideno>21</slideno>
+          <text>With Backordering 
+Singapore Electric Generator Produc tion
+Econom ic Climate 100% Unit Revenue $ 50 
+Unit Costs Jan Feb Mar Apr. May 
+Prod. $ 28.00 $ 27.00 $ 27.80 $ 29.00 
+Inventory $ 0.30 $ 0.30 $ 0.30 $ 0.30 
+BackOrder $3.00 $3.00 $3.00 $3.00 
+Prod. Quant. 31 25 24 48 
+Inventory 0 0 0 7 
+BackOrder 0 0 0 0 
+Net Inv. 0 0 0 7 
+Prod. Limits 60 62 64 66 
+Init. Inv. 10 (17.00) (28.00) (38.00) 
+Del. Reqmts 58 36 34 59 Minimum 
+Ending Inv. (17) (28) (38) (49) 7 
+Prod. Cost $ 868 $ 675 $ 667 $ 1,392 
+Inv. Cost$ - $ - $ - $ 21 Total 
+Total Cost $ 868 $ 675 $ 667 $ 1,413 $ 3,623 
+15.057 Spring 03 Vande Vate Net Rev. 5,727 22</text>
+        </slide>
+        <slide>
+          <slideno>17</slideno>
+          <text>15.057 Spring 03 Vande Vate 18 0 1000 2000 3000 4000 5000 6000 
+0 1000 2000 3000 4000 5000 6000 7000 8000 9000 The Frontier 
+TV News 
+Radio 
+Reach Frequency 
+Solutions using 
+the full budget Undominated Solutions</text>
+        </slide>
+      </slides>
+      <videos/>
+    </lecture>
+    <lecture>
+      <lecture_title>PDF - 1.3 MB</lecture_title>
+      <lecture_pdf_url>https://ocw.mit.edu/courses/15-057-systems-optimization-spring-2003/resources/02assignmentprint/</lecture_pdf_url>
+      <lectureno>2</lectureno>
+      <slides>
+        <slide>
+          <slideno>47</slideno>
+          <text>Summary
+Solver 
+Finds a basic feasible solution 
+Satisfies all the constraints 
+Using these variables there is just one answer 
+Computes reduced costs of non-basic variables 
+one at a time 
+How would increasing the new variable affect cost? 
+Selects an entering variable 
+Increasing this non-basic variable saves money 
+Computes a leaving variable 
+What basic variable first reaches zero? 
+Repeats 
+15.057 Spring 03 Vande Vate 48</text>
+        </slide>
+        <slide>
+          <slideno>20</slideno>
+          <text>First Kind of Network Model
+Sum across row = Const. 
+Sum down column = Const. 
+Each variable in two constraints:
+A row constraint
+A column constraint
+Estimated Assignment Costs 
+Leipzig Nancy Liege Tilburg 
+VP 1 2 3 4 
+Finance  ( F) 24 10 21 11 
+Marketing  ( M) 14 22 10 15 
+Operations  ( O) 15 17 20 19 
+IT  ( I) 19 24 15 10 
+Personnel  ( P) 11 19 14 13 
+Assignments 
+Leipzig Nancy Liege Tilburg 
+VP 1 2 3 4 Plants  A ssigned 
+Finance  ( F) 0 0 0 0 0 
+Marketing  ( M) 0 0 0 0 0 
+Operations  ( O) 0 0 0 0 0 
+IT  ( I) 0 0 0 0 0 
+Personnel  ( P) 0 0 0 0 0 
+VPs  A ssigned 0 0 0 0 
+Cost of Assignments 
+Leipzig Nancy Liege Tilburg 
+VP 1 2 3 4 Total  C ost 
+Finance  ( F) 0 0 0 0 0 
+Marketing  ( M) 0 0 0 0 0 
+Operations  ( O) 0 0 0 0 0 
+IT  ( I) 0 0 0 0 0 
+Personnel  ( P) 0 0 0 0 0 
+Total  C ost 0 0 0 0 0 
+15.057 Spring 03 Vande Vate 21</text>
+        </slide>
+        <slide>
+          <slideno>62</slideno>
+          <text>Value of Resource Sensitivity 
+15.057 Spring 03 Vande Vate 63</text>
+        </slide>
+        <slide>
+          <slideno>51</slideno>
+          <text>Try It!
+Autopow er Transportation M odel 
+Unit Cost 
+From/To Leipzig Nancy Liege Tilburg 
+Amsterdam $ 120.0 $ 130.0 $ 41.0 $ 59.5 
+Antwerp $ 61.0 $ 40.0 $ 100.0 $ 110.0 
+The Hague $ 102.5 $ 90.0 $ 122.0 $ 42.0 
+Shipments 
+From/To Leipzig Nancy Liege Tilburg Total Available 
+Amsterdam - - - - - 500 
+Antwerp - - - - - 700 
+The Hague - - - - - 800 
+Total - - - - -
+Required 400 900 200 500 
+Total Cost 
+From/To Leipzig Nancy Liege Tilburg Total 
+Amsterdam$ - $ - $ - $ - $ -
+Antwerp $ - $ - $ - $ - $ -
+The Hague$ - $ - $ - $ - $ -
+Total $ - $ - $ - $ - $ -
+15.057 Spring 03 Vande Vate 52</text>
+        </slide>
+        <slide>
+          <slideno>27</slideno>
+          <text>Solver Model Contd
+Subject to the Constraints: The constraints 
+that limit the choices of the values of the 
+adjustables. 
+Click on Add 
+Cell Reference is a cell that holds a value 
+calculated from the adjustables 
+Constraint is a cell that holds a value that constraints the Cell Reference. 
+&lt;=, =, =&gt; is the sense of the constraint. Choose 
+one. 15.057 Spring 03 Vande Vate 28</text>
+        </slide>
+        <slide>
+          <slideno>39</slideno>
+          <text>Simple Improvement
+15.057 Spring 03 Vande Vate 40 
+* * 
+* * 
+* * * 
+Belgium Germany Netherlands 
+The Hague Amsterdam 
+Antwerp 
+Nancy Liege Tilburg 
+Leipzig 
+Miles 
+100 50 0 Consider sending product 
+from The Hague to Liege</text>
+        </slide>
+        <slide>
+          <slideno>9</slideno>
+          <text>The Constraints 
+Each VP assigned to one plant 
+Shortcut 
+$F$15:$F$18 = 1 
+$F$15 = 1
+$F$16 = 1
+$F$17 = 1
+$F$18 = 1
+Each plant assigned one VP
+$B$19 = 1
+$C$19 = 1
+$D$19 = 1
+$E$19 = 1
+15.057 Spring 03 Vande Vate Shortcut 
+$B$19:$E$19 = 1 
+10</text>
+        </slide>
+        <slide>
+          <slideno>18</slideno>
+          <text>Review &amp; Terminology
+Objective: Target Cell 
+Equal to: Max or Min 
+Variables: By Changing Cells 
+Constraints: Constraints 
+LHS: Reference Cell - a function of the variables 
+RHS: Constraint - a constant (ideally) 
+Options: 
+Assume Linear Model 
+Assume Non-negative 
+Solve 
+15.057 Spring 03 Vande Vate 19</text>
+        </slide>
+        <slide>
+          <slideno>7</slideno>
+          <text>A Challenge 
+Find best assignments
+15.057 Spring 03 Vande Vate 8</text>
+        </slide>
+        <slide>
+          <slideno>34</slideno>
+          <text>A Basic Feasible Solution
+15.057 Spring 03 Vande Vate 35 
+* * 
+* * 
+* * * 
+Belgium Germany Netherlands 
+The Hague Amsterdam 
+Antwerp 
+Nancy Liege Tilburg 
+Leipzig 
+Miles 
+100 50 0 500 
+800 
+700 500 
+200 400 
+900 500 
+400 
+100 200 
+800 0</text>
+        </slide>
+        <slide>
+          <slideno>19</slideno>
+          <text>What do you think?
+Realistic? 
+Practical? 
+Issues? 
+Questions 
+15.057 Spring 03 Vande Vate 20</text>
+        </slide>
+        <slide>
+          <slideno>73</slideno>
+          <text>Bad Example 
+Autopow er Transportation M odel 
+Unit Cost 
+From/To Leipzig Nancy Liege Tilburg 
+Amsterdam $ 120.0 $ 120.0 $ 120.0 $ -
+Antwerp $ - $ - $ - $120.0 
+The Hague $ 120.0 $ - $ 120.0 $ 120.0 
+Shipments 
+From/To Leipzig Nancy Liege Tilburg Total Available 
+Amsterdam - - - 500 500 500 
+Antwerp 400 100 200 - 700 700 
+The Hague - 800 - - 800 800 
+Total 400 900 200 500 -
+Required 400 900 200 500 
+Total Cost 
+From/To Leipzig Nancy Liege Tilburg Total 
+Amsterdam $ - $ - $ - $ - $ -
+Antwerp $ - $ - $ - $ - $ -
+The Hague $ - $ - $ - $ - $ -
+Total $ - $ - $ - $ - $ -
+15.057 Spring 03 Vande Vate 74</text>
+        </slide>
+        <slide>
+          <slideno>25</slideno>
+          <text>Challenge 
+Find a best answer
+15.057 Spring 03 Vande Vate 26</text>
+        </slide>
+        <slide>
+          <slideno>66</slideno>
+          <text>Internally Consistent 
+Given the Shadow Prices 
+Constraint Shadow Price 
+Amsterdam  -
+Antwerp -67.5 
+The Hague -17.5 
+Leipzig 120 
+Nancy 107.5 
+Liege 41 
+Tilburg 59.5 Example: Antwerp-Tilburg 
+Reduced Cost = Cost - Origin - Dest. 
+118 = 110 -(-67.5) - 59.5 
+= 110 + 8 
+Edge Value Reduced Cost Cost 
+Amsterdam  Leipzig 300 - 120.0 
+Amsterdam  Nancy - 22.5 130.0 
+Amsterdam  Liege 200 - 41.0 
+Amsterdam  Tilburg  - - 59.5 
+Antwerp Lei pzig  - 8.5 61.0 
+Antwerp Nancy 700 - 40.0 
+Antwerp Liege  - 126.5 100.0 
+Antwerp Tilburg  - 118.0 110.0 
+The Hague Lei pzig 100 - 102.5 
+The Hague N ancy 200 - 90.0 
+The Hague Li ege  - 98.5 122.0 
+We can calculate the 
+Reduced Costs 
+15.057 Spring 03 Vande Vate 67</text>
+        </slide>
+        <slide>
+          <slideno>44</slideno>
+          <text>The New Answer
+15.057 Spring 03 Vande Vate 45 
+* * 
+* * 
+* * * 
+Belgium Germany Netherlands 
+The Hague Amsterdam 
+Antwerp 
+Nancy Liege Tilburg 
+Leipzig 
+Miles 
+100 50 0</text>
+        </slide>
+        <slide>
+          <slideno>40</slideno>
+          <text>Conserving Flow
+15.057 Spring 03 Vande Vate 41 
+500 
+800 
+700 500 
+200 * 
+* * * * 
+The Hague Amsterdam 
+Antwerp 
+Liege Tilburg 
+* Nancy</text>
+        </slide>
+        <slide>
+          <slideno>15</slideno>
+          <text>Limits 
+Max time : Limits the time allowed for the 
+solution process in seconds 
+Iterations :Limits the number of interim 
+calculations. (More details to come) 
+15.057 Spring 03 Vande Vate 16</text>
+        </slide>
+        <slide>
+          <slideno>22</slideno>
+          <text>Motor Distribution
+23 
+* * 
+* * 
+* * * 
+Belgium Germany Netherlands 
+The Hague Amsterdam 
+Antwerp 
+Nancy Liege Tilburg 
+Leipzig 
+Miles 
+100 50 0 500 
+800 
+700 500 
+200 400 
+900</text>
+        </slide>
+        <slide>
+          <slideno>53</slideno>
+          <text>Price Sensitivity: Basic Variables 
+Amsterdam 
+If the unit cost 
+from Amsterdam 
+to Liege increases 
+by $10 does the 
+answer change? *The Hague 
+Antwerp 
+Nancy Liege Tilburg Leipzig 
+15.057 Spring 03 Vande Vate 54</text>
+        </slide>
+        <slide>
+          <slideno>38</slideno>
+          <text>How Solver Works
+15.057 Spring 03 Vande Vate 39 
+* * 
+* * 
+* * * 
+Belgium Germany Netherlands 
+The Hague Amsterdam 
+Antwerp 
+Nancy Liege Tilburg 
+Leipzig 
+Miles 
+100 50 0 500 
+800 
+700 500 
+200 400 
+900 500 
+400 
+100 200 
+800 0 Basic Feasible Solution 
+because it is basic AND 
+the basic variables satisfy 
+the bounds (  0)</text>
+        </slide>
+        <slide>
+          <slideno>11</slideno>
+          <text>Additional Constraints...
+Non-negativity 
+The variables cannot be negative 
+Handled separately 
+Integrality 
+The variables should have integral values 
+We can ignore these because this is a 
+network model!!! 
+15.057 Spring 03 Vande Vate 12</text>
+        </slide>
+        <slide>
+          <slideno>52</slideno>
+          <text>Reduced Costs are... 
+The reduced cost of a variable is 
+The rate of change in the objective if we 
+are forced to use some of that variable 
+The reduced costs of basic variables are 0
+15.057 Spring 03 Vande Vate 53</text>
+        </slide>
+        <slide>
+          <slideno>17</slideno>
+          <text>Quality of Solutions 
+Tolerance: For integer problems. Later 
+Convergence : For non-linear problems. Later 
+15.057 Spring 03 Vande Vate 18</text>
+        </slide>
+        <slide>
+          <slideno>68</slideno>
+          <text>Sensitivity Info From Solver 
+15.057 Spring 03 Vande Vate 69</text>
+        </slide>
+        <slide>
+          <slideno>42</slideno>
+          <text>How Much Can We Save?
+15.057 Spring 03 Vande Vate 43 
+700 500 
+200 
+* * 
+* * * * 
+The Hague Amsterdam 
+Antwerp 
+Nancy Liege Tilburg 
+0 
+200 
+100 800 Costs 
+$122 
+$ 
+$162 
+Saves 
+$100 
+$ 
+$190 
+Net Current Flows 
+Red flows increase 
+Green flows decrease 
+How much can we send 
+to Liege? 
+How much do we save? 
+Whats the new answer? 40 
+90 
+$28</text>
+        </slide>
+        <slide>
+          <slideno>8</slideno>
+          <text>Building a Network Model 
+In Excel 
+Tools | Solver... 
+Set Target Cell: $F$28 
+By Changing Cells: $B$15:$E$18 
+15.057 Spring 03 Vande Vate 9</text>
+        </slide>
+        <slide>
+          <slideno>10</slideno>
+          <text>Whats Missing 
+15.057 Spring 03 Vande Vate 11</text>
+        </slide>
+        <slide>
+          <slideno>32</slideno>
+          <text>How the Solver Works 
+Not magic 
+Quick and intuitive 
+Not comprehensive 
+Basic understanding 
+of tool and terms 
+15.057 Spring 03 Vande Vate 33</text>
+        </slide>
+        <slide>
+          <slideno>30</slideno>
+          <text>Whats Missing? 
+15.057 Spring 03 Vande Vate 31</text>
+        </slide>
+        <slide>
+          <slideno>36</slideno>
+          <text>Mathematically*
+z are the basic variables 
+y are the non-basic variables 
+Write the constraints as 
+Ax = Bz + Ny = b 
+Fix the non-basic variables to y* 
+The unique solution for the basic variables 
+x = B-1(b  Ny*) 
+B must be invertible and so square 
+Question: We have 7 constraints (3 ports, 4 
+plants) and only 6 basic variables. How so?
+* For those who care to know 
+15.057 Spring 03 Vande Vate 37</text>
+        </slide>
+        <slide>
+          <slideno>69</slideno>
+          <text>Sensitivity Report: Price 
+Adjustable Cells 
+Final Reduced Objective Allowable Allowable 
+Cell Name Value Cost Coefficient Increase Decrease 
+$C$9 Amsterdam Leipzig 300 - 120 0 17.5
+$D$9 Amsterdam Nancy - 22.5 130 1E+30 22.49999998
+$E$9 Amsterdam Liege 200 - 41 98.49999999 
+$F$9 Amsterdam Tilburg - - 59.5 1E+30 
+$C$10 Antwerp Leipzig - 8.5 60.99999999 1E+30 8.499999988
+$D$10 Antwerp Nancy 700 - 40 8.499999988 1E+30
+$E$10 Antwerp Liege - 126.5 99.99999998 1E+30 126.5
+$F$10 Antwerp Tilburg - 118.0 110 1E+30 
+$C$11 The Hague Lei pzig 100 - 102.5 8.499999988 
+$D$11 The Hague N ancy 200 - 90 22.49999998 8.499999988
+$E$11 The Hague Li ege - 98.5 122 1E+30 98.49999999
+$F$11 The Hague T ilburg 500 - 42 0 59.5
+15.057 Spring 03 Vande Vate 70 41 
+0 
+118 
+0</text>
+        </slide>
+        <slide>
+          <slideno>28</slideno>
+          <text>What are the Constraints?
+Supply Constraints 
+Amsterdam: G9 &lt;= H9 
+Antwerp: G10 &lt;= H10 The Hague: G11 &lt;= H11 
+Demand Constraints 
+Leipzig: C12 =&gt; C13 Nancy: D12 =&gt; D13 Liege: E12 =&gt; E13 Tilburg: F12 =&gt; F13 
+Short cut: 
+G9:G11 &lt;= H9:H11 
+Short cut: C12:F12 =&gt; C13:F13 C12 is the total 
+volume shipped to 
+Leipzig G9 is the total 
+volume shipped 
+from Amsterdam 
+15.057 Spring 03 Vande Vate 29</text>
+        </slide>
+        <slide>
+          <slideno>21</slideno>
+          <text>Influence of Optimization 
+Changes focus of negotiation about 
+assignments 
+from emotion and personal preferences 
+to estimation of cost 
+15.057 Spring 03 Vande Vate 22</text>
+        </slide>
+        <slide>
+          <slideno>12</slideno>
+          <text>Model Components
+Set Target Cell: Objective $F$28 
+The value we want to minimize/maximize
+Equal to: Min 
+Min for Minimize or Max for Maximize 
+By Changing Cells: 
+Variables or Adjustables $B$15:$E$18 
+The values we can change to find the answer 
+Subject to the Constraints . 
+$B$19:$B$18 = 1 
+$F$15:$F$18 = 1 
+15.057 Spring 03 Vande Vate 13</text>
+        </slide>
+        <slide>
+          <slideno>49</slideno>
+          <text>Price Sensitivity 
+Amsterdam 
+At what unit 
+cost would 
+Antwerp to 
+Tilburg be 
+attractive? *The Hague 
+Antwerp 
+Nancy Liege Tilburg Leipzig 
+15.057 Spring 03 Vande Vate 50</text>
+        </slide>
+        <slide>
+          <slideno>2</slideno>
+          <text>Assignment Model
+Autopower Europe 
+Manufactures UPS for major installations 
+Four manufacturing plants 
+Leipzig, Germany 
+Nancy, France Liege, Belgium Tilburg, The Netherlands 
+One VP to audit each plant 
+15.057 Spring 03 Vande Vate 3</text>
+        </slide>
+        <slide>
+          <slideno>55</slideno>
+          <text>Check All Reduced Costs
+Amsterdam 
+The Hague 
+Antwerp 
+Liege Tilburg Leipzig 
+Why only these two? 
+Nancy
+15.057 Spring 03 Vande Vate 56</text>
+        </slide>
+        <slide>
+          <slideno>29</slideno>
+          <text>The Model 
+15.057 Spring 03 Vande Vate 30</text>
+        </slide>
+        <slide>
+          <slideno>26</slideno>
+          <text>Building a Solver Model 
+Tools | Solver 
+Set Target Cell: The cell holding the 
+value you want to minimize (cost) or 
+maximize (revenue) 
+Equal to: Choose Max to maximize or Min 
+to minimize this 
+By Changing Cells: The cells or variables 
+the model is allowed to adjust 
+15.057 Spring 03 Vande Vate 27</text>
+        </slide>
+        <slide>
+          <slideno>46</slideno>
+          <text>An Optimal 
+Basic Feasible Solution
+15.057 Spring 03 Vande Vate 47 
+* * 
+* * 
+* * * 
+Germany Netherlands 
+The Hague Amsterdam 
+Antwerp 
+Nancy Liege Leipzig 
+Miles 
+100 50 0 500 
+800 
+700 500 
+200 400 
+900 Tilburg 
+100 300 
+200 
+700 
+200 500</text>
+        </slide>
+        <slide>
+          <slideno>14</slideno>
+          <text>Options
+15</text>
+        </slide>
+        <slide>
+          <slideno>33</slideno>
+          <text>How the Solver works
+34 
+* * 
+* * 
+* * * 
+Belgium Germany Netherlands 
+The Hague Amsterdam 
+Antwerp 
+Nancy Liege Tilburg 
+Leipzig 
+Miles 
+100 50 0 500 
+800 
+700 500 
+200 400 
+900 A Basic Feasible 
+solution: This choice 
+of variables admits 
+one and only one 
+answer and the answer is non-negative</text>
+        </slide>
+        <slide>
+          <slideno>16</slideno>
+          <text>Precision 
+Controls the precision of solutions. 
+Is 1/3 &lt;= 0.3333? 0.333333? 
+15.057 Spring 03 Vande Vate 17</text>
+        </slide>
+        <slide>
+          <slideno>24</slideno>
+          <text>A Transportation Model 
+Autopow er Transportation M odel 
+Unit Cost 
+From/To Leipzig Nancy Liege Tilburg 
+Amsterdam $ 120.0 $ 130.0 $ 41.0 $ 59.5 
+Antwerp $ 61.0 $ 40.0 $ 100.0 $ 110.0 
+The Hague $ 102.5 $ 90.0 $ 122.0 $ 42.0 
+Shipments 
+From/To Leipzig Nancy Liege Tilburg Total Available 
+Amsterdam - - - - - 500 
+Antwerp - - - - - 700 
+The Hague - - - - - 800 
+Total - - - - -
+Required 400 900 200 500 
+Total Cost 
+From/To Leipzig Nancy Liege Tilburg Total 
+Amsterdam $ - $ - $ - $ - $ -
+Antwerp $ - $ - $ - $ - $ -
+The Hague $ - $ - $ - $ - $ -
+Total $ - $ - $ - $ - $ -</text>
+        </slide>
+        <slide>
+          <slideno>65</slideno>
+          <text>That means...
+We can arbitrarily set the (relative) value of one 
+constraint to 0. (the one we throw away) 
+Set the shadow price or marginal value of 
+supply in Amsterdam to 0, then the shadow 
+price of supply in Antwerp is -$67.5. 
+Why negative? 
+If we had extra supply, where would we want it? Amsterdam or Antwerp? 
+15.057 Spring 03 Vande Vate 66</text>
+        </slide>
+        <slide>
+          <slideno>41</slideno>
+          <text>Conserving Flow
+42 
+500 
+800 
+500 
+200 * 
+* * * * 
+The Hague Amsterdam 
+Antwerp 
+Liege Tilburg 
+$122 
+$100 
+$40 $90 Costs 
+$122 
+$ 
+$162 
+Saves 
+$100 
+$ 
+$190 
+Net 
+Reduced Cost40 
+90 
+$28 
+15.057 Spring 03 Vande Vate Nancy*</text>
+        </slide>
+        <slide>
+          <slideno>56</slideno>
+          <text>Value of Price Sensitivity? 
+15.057 Spring 03 Vande Vate 57</text>
+        </slide>
+        <slide>
+          <slideno>45</slideno>
+          <text>The New Answer
+15.057 Spring 03 Vande Vate 46 
+* * 
+* * * * 
+Germany Netherlands 
+The Hague Amsterdam 
+Antwerp 
+Nancy Liege Tilburg 
+Leipzig 
+Miles 
+100 50 0 What kind of 
+solution is this? 500 
+800 
+700 500 
+400 
+900 200 400 500 
+200 
+600 300</text>
+        </slide>
+        <slide>
+          <slideno>43</slideno>
+          <text>New Answer
+44 
+500 
+800 
+500 
+200 * 
+* * * * 
+The Hague Amsterdam 
+Antwerp 
+Liege Tilburg Costs 
+$122 
+$ 
+$162 
+Saves 
+$100 
+$ 
+$190 
+Net 200 
+0 
+600 
+30040 
+90 
+$28 
+15.057 Spring 03 Vande Vate Nancy*</text>
+        </slide>
+        <slide>
+          <slideno>35</slideno>
+          <text>More Technical Detail
+15.057 Spring 03 Vande Vate 36 
+* * 
+* * 
+* * * 
+Belgium Germany Netherlands 
+The Hague Amsterdam 
+Antwerp 
+Nancy Liege Tilburg 
+Leipzig 
+Miles 
+100 50 0 500 
+800 
+700 500 
+200 400 
+900 500 
+400 
+100 200 
+800 0</text>
+        </slide>
+        <slide>
+          <slideno>48</slideno>
+          <text>Sensitivity Analysis 
+How would the answer change if the 
+data were a little different? 
+Why is this important? 
+Intuitive understanding 
+15.057 Spring 03 Vande Vate 49</text>
+        </slide>
+        <slide>
+          <slideno>60</slideno>
+          <text>Resource Sensitivity 
+Amsterdam 500 
+15.057 Spring 03 Vande Vate 61 What would 
+happen to cost if 
+we moved supply 
+for 1 engine from 
+Amsterdam to 
+Antwerp? Antwerp 
+Nancy 
+900 Liege 200 Tilburg 500 Leipzig 400 The Hague 
+700
+800</text>
+        </slide>
+        <slide>
+          <slideno>70</slideno>
+          <text>Sensitivity Report: Resource 
+Constraints 
+Final Shadow Constraint Allowable Allowable 
+Cell Name Value Price R.H. Side Increase Decrease 
+$G$9 Amsterdam Total 500 - 500 1E+30 
+$G$10 Antwerp Total 700 (67.5) 700 200 
+$G$11 The Hague T otal 800 (17.5) 800 300 
+$C$12 Total Leipzig 400 120.0 400 0 300
+$D$12 Total Nancy 900 107.5 900 0 200
+$E$12 Total Liege 200 41.0 200 0 200
+$F$12 Total Tilburg 500 59.5 500 0 300
+15.057 Spring 03 Vande Vate 71 0 
+0 
+0</text>
+        </slide>
+        <slide>
+          <slideno>50</slideno>
+          <text>Price Sensitivity At what unit cost 
+would Antwerp to 
+Tilburg be 
+attractive? 
+*The Hague Amsterdam 
+Antwerp 
+Liege Tilburg Leipzig
+$110 $42 
+$90$40 Costs: 
+$110 
+$ 
+$200 
+Savings: 
+$42 
+$40 
+$8290 
+Nancy
+The carrier would have to PAY us $8! Net $118
+51</text>
+        </slide>
+        <slide>
+          <slideno>64</slideno>
+          <text>Redundant Constraint 
+Supply 
+Amsterdam 500 
+Antwerp 700 
+The Hague 800 
+Total 2,000 
+Demand 
+Leipzig 400 
+Nancy 900 
+Liege 200 
+Tilburg 500 
+Total 2,000 
+Know shipments from 
+Amsterdam 
+Antwerp 
+And they provide... 
+Leipzig 200 
+Nancy 600 
+Liege 0 
+Tilburg 400 
+15.057 Spring 03 Vande Vate 65</text>
+        </slide>
+        <slide>
+          <slideno>72</slideno>
+          <text>Caveats
+Sensitivity Analysis is pretty nerdy stuff
+Technical difficulties 
+Only meaningful for changes to a single 
+value 
+Only meaningful for small changes 
+Doesnt work for Integer Programming
+Can always just change the values and 
+re-solve, but... 
+15.057 Spring 03 Vande Vate 73</text>
+        </slide>
+        <slide>
+          <slideno>71</slideno>
+          <text>Value
+If our proposal comes up non-basic, 
+reduced cost tells us how much harder 
+we have to work to make it attractive. 
+If we are unsure of prices, price 
+sensitivity can tell us whether it is worth 
+refining our estimates of the values 
+Marginal values can help us target 
+investments in capacity 
+15.057 Spring 03 Vande Vate 72</text>
+        </slide>
+        <slide>
+          <slideno>67</slideno>
+          <text>Summary 
+Solver can tell us at what price a non-basic 
+(inactive) variable will be attractive through 
+the Reduced Cost. 
+Solver can tell us how changes in the price 
+of a basic variable affect the solution 
+Solver can tell us the value of a resource via 
+the Shadow Price or Marginal Value 
+15.057 Spring 03 Vande Vate 68</text>
+        </slide>
+        <slide>
+          <slideno>13</slideno>
+          <text>Excel Model 
+15.057 Spring 03 Vande Vate 14</text>
+        </slide>
+        <slide>
+          <slideno>61</slideno>
+          <text>Resource Sensitivity 
+Whats the value of 
+supply in Antwerp 
+relative to supply in 
+Amsterdam? Amsterdam 
+Antwerp 
+Liege Tilburg Leipzig -1 
++1 
+$40 $90 The Hague 
+$102.5 $120 
+Nancy
+15.057 Spring 03 Vande Vate 62</text>
+        </slide>
+        <slide>
+          <slideno>37</slideno>
+          <text>More Technical Detail
+15.057 Spring 03 Vande Vate 38 
+* * 
+* * 
+* * * 
+Belgium Germany Netherlands 
+The Hague Amsterdam 
+Antwerp 
+Nancy Liege Tilburg 
+Leipzig 
+Miles 
+100 50 0 500 
+800 
+700 500 
+200 400 
+900 500 
+400 
+100 200 
+800 0</text>
+        </slide>
+        <slide>
+          <slideno>4</slideno>
+          <text>Assignment Problem 
+Whos to visit whom? 
+VPs expertise and plants needs 
+Available time and travel requirements 
+Language abilities 
+... 
+15.057 Spring 03 Vande Vate 5</text>
+        </slide>
+        <slide>
+          <slideno>31</slideno>
+          <text>Options 
+15.057 Spring 03 Vande Vate 32</text>
+        </slide>
+        <slide>
+          <slideno>75</slideno>
+          <text>Try It!
+Autopower Transportation Model
+Unit Cost 
+From/To 
+Amsterdam 
+Antwerp 
+The Hague 
+Shipments 
+From/To 
+Amsterdam 
+Antwerp 
+The Hague 
+Total 
+Required 
+Total Cost 
+From/To 
+Amsterdam 
+Antwerp 
+The Hague 
+Total Leipzig Nancy Liege Tilburg 
+$ 120.0 $ 120.0 $ 120.0 $ -
+$ - $ - $ - $120.0 
+$ 120.0 $ - $ 120.0 $ 120.0 
+Leipzig Nancy Liege Tilburg Total Available 
+- - - 500 500 500 
+400 100 200 - 700 700 
+- 800 - - 800 800 
+400 900 200 500 -
+400 900 200 500 
+Leipzig Nancy Liege Tilburg Total 
+$ - $ - $ - $ - $ -
+$ - $ - $ - $ - $ -
+$ - $ - $ - $ - $ -
+$ - $ - $ - $ - $ -
+15.057 Spring 03 Vande Vate 76</text>
+        </slide>
+        <slide>
+          <slideno>63</slideno>
+          <text>A Special Feature 
+We can eliminate any one of the 
+changing the answers! 
+Why? 
+64 constraints in this problem without 
+15.057 Spring 03 Vande Vate</text>
+        </slide>
+        <slide>
+          <slideno>76</slideno>
+          <text>Thursday
+Spreadsheet Models 
+03ShortestPathModel.xls 
+04TransshipmentModel.xls 05SingaporeElectricGeneratorModel.xls 
+Download the free student version of the 
+AMPL/CPLEX 8.0 System from www.ampl.com 
+http://www.ampl.com/cm/c s/what/am pl/DOWNLOADS/cplex71.html#new 
+AMPL Example Model 
+TransportationModel.mod 
+Access Database 
+TransportationData.mdb 
+15.057 Spring 03 Vande Vate 77</text>
+        </slide>
+        <slide>
+          <slideno>23</slideno>
+          <text>Transportation Costs 
+From Origin To Destination 
+Leipzig Nancy Liege Tilburg 
+Amsterdam 
+Antwerp 
+The H ague 120 130 41 59.5 
+61 40 100 110 
+102.5 90 122 42 
+Unit transportation costs from harbors to plants
+Minimize 
+the transportation costs involved in moving 
+the motors from the harbors to the plants
+15.057 Spring 03 Vande Vate 24</text>
+        </slide>
+        <slide>
+          <slideno>54</slideno>
+          <text>Checking Reduced Costs: Example 
+Amsterdam 
+If the unit cost 
+from Amsterdam 
+to Liege increases 
+by $10 does the 
+answer change? *The Hague 
+Antwerp 
+Nancy Liege Tilburg Leipzig 
+Example: Check the 
+reduced cost of 
+Antwerp to Liege $51 = $41 + $10$100 $120 
+$102.5 
+$90 $40 
+15.057 Spring 03 Vande Vate 55</text>
+        </slide>
+        <slide>
+          <slideno>5</slideno>
+          <text>The Challenge 
+Estimate costs (Done - Thoughts?)
+One VP to each plant
+One plant for each VP
+Minimize cost of assignments
+15.057 Spring 03 Vande Vate 6</text>
+        </slide>
+        <slide>
+          <slideno>59</slideno>
+          <text>Infeasible 
+Supply 
+Amsterdam 500 
+Antwerp 700 
+The Hague 800 
+Total 2,000 
+Demand 
+Leipzig 400+1 
+Nancy 900 
+Liege 200 
+Tilburg 500 
+Total 2,000+1 
+15.057 Spring 03 Vande Vate 60</text>
+        </slide>
+        <slide>
+          <slideno>74</slideno>
+          <text>Sensitivity 
+Moving one unit from Liege to Tilburg 
+should save $120 
+Constraints 
+Final Shadow Constraint Allowable Allowable 
+Cell Name Value Price R.H. Side Increase Decrease 
+$C$12 Total Leipzig 400 120 400 0 0
+$D$12 Total Nancy 900 120 900 0 0
+$E$12 Total Liege 200 120 200 0 0 
+$F$12 Total Tilburg 500 - 500 0 500 
+$G$9 Amsterdam Total 500 - 500 1E+30 0
+$G$10 Antwerp Total 700 (120) 700 0 0
+$G$11 The Hague T otal 800 (120) 800 0 0
+Solver says the price is not good for 1 unit
+15.057 Spring 03 Vande Vate 75</text>
+        </slide>
+        <slide>
+          <slideno>6</slideno>
+          <text>01AssignmentModel.xls
+Autoppow er Europe: Assignm ent Mode l 
+Moore et  al. pp224 
+Estimated A ssignm ent Costs 
+Leipzig Nanc y Liege Tilburg 
+VP 1 2 3 4 
+Finance  ( F) 24 10 21 11 
+Marketing  ( M) 14 22 10 15 
+Operations  ( O) 15 17 20 19 
+Personnel  (P) 11 19 14 13 
+Assignm ents 
+Leipzig Nanc y Liege Tilburg 
+VP 1 2 3 4 Plants  A ssigned 
+Financ e (F) 0 
+Marketing ( M) 0 
+Operations  (O) 0 
+Personnel  (P) 0 
+VPs Assigned 0 0 0 0 
+Cost of Assignments 
+Leipzig Nanc y Liege Tilburg 
+VP 1 2 3 4 Total  C ost 
+Finance  ( F) 0 0 0 0 0 
+Marketing  ( M) 0 0 0 0 0 
+Operations  ( O) 0 0 0 0 0 
+Personnel  (P) 0 0 0 0 0 
+Total  C ost 0 0 0 0 0 
+15.057 Spring 03 Vande Vate 7</text>
+        </slide>
+        <slide>
+          <slideno>3</slideno>
+          <text>15.057 Spring 03 Vande Vate 4 
+Autopower, Europe 
+* * * 
+* 
+Belgium Germany Netherlands 
+Nancy Liege Tilburg 
+Leipzig 
+Miles 
+100 50 0 France</text>
+        </slide>
+        <slide>
+          <slideno>57</slideno>
+          <text>Resource Sensitivity 
+How would the objective value change if 
+we had more of a resource 
+Tells us the marginal value of that resource 
+If the optimal solution doesnt use all of 
+the resource, then 
+15.057 Spring 03 Vande Vate 58</text>
+        </slide>
+        <slide>
+          <slideno>1</slideno>
+          <text>Objective 
+Mini Course on Networks 
+Introduction to modeling 
+In Excel and AMPL 
+Intuitive description of solution approach
+Intuitive description of sensitivity analysis
+Intuitive and visual context for covering 
+technical aspects 
+15.057 Spring 03 Vande Vate 2</text>
+        </slide>
+        <slide>
+          <slideno>58</slideno>
+          <text>Resource Sensitivity 
+Amsterdam 500 
+The Hague 
+700 
+Antwerp 
+800 
+What would 
+happen if we 
+needed 1 more 
+engine in Leipzig? Nancy Liege 200 Tilburg 500 Leipzig 400 401 
+900
+15.057 Spring 03 Vande Vate 59</text>
+        </slide>
+        <slide>
+          <slideno>0</slideno>
+          <text>Network Models 
+Assignment 
+Transportation 
+Intro to Modeling/Excel 
+How the Solver Works 
+Sensitivity Analysis 
+15.057 Spring 03 Vande Vate 1</text>
+        </slide>
+      </slides>
+      <videos/>
+    </lecture>
+    <lecture>
+      <lecture_title>Heuristics I (PDF)</lecture_title>
+      <lecture_pdf_url>https://ocw.mit.edu/courses/15-057-systems-optimization-spring-2003/resources/16summary/</lecture_pdf_url>
+      <lectureno>16</lectureno>
+      <slides>
+        <slide>
+          <slideno>6</slideno>
+          <text>Optimization Caveats 
+Toys vs Tools
+Only as good as your data
+Robustness
+Careful with uncertainty
+What is/are the objective(s)
+Users may game the system
+15.057 Spring 03 Vande Vate 7</text>
+        </slide>
+        <slide>
+          <slideno>1</slideno>
+          <text>Our Focus Broadly 
+Application of mathematical analysis to the 
+design and analysis of systems through the 
+intermediary of abstract models . 
+Focus on robust industrial, off-the-shelf tools. 
+Balance between superficial intuition and painful 
+technical detail 
+Objective: Confidence to identify and exploit 
+opportunities for the application of optimization 
+15.057 Spring 03 Vande Vate 2</text>
+        </slide>
+        <slide>
+          <slideno>9</slideno>
+          <text>Other markets
+British physician markets less centralized
+Several mechanisms employed
+Failures indicate whats necessary:
+Stability
+No resident prefers another program that 
+also prefers her 
+15.057 Spring 03 Vande Vate 10</text>
+        </slide>
+        <slide>
+          <slideno>3</slideno>
+          <text>Topics 
+Networks 
+Specially structured problems 
+Introduction to mathematical modeling Intuition behind solution methodology 
+Linear Programming 
+General modeling framework Fundamental solution methodology 
+Integer Programming 
+Powerful industrial tool 
+Modeling is an art 
+15.057 Spring 03 Vande Vate 4</text>
+        </slide>
+        <slide>
+          <slideno>8</slideno>
+          <text>A brief history 
+Resident programs introduced around 
+1900 
+1940s offers being made two years before graduation 
+1945 Agreement on dates 
+Late 40s: Exploding offers, reneging, 
+1951 Centralized Matching Process 
+15.057 Spring 03 Vande Vate 9</text>
+        </slide>
+        <slide>
+          <slideno>7</slideno>
+          <text>A Closing Example 
+Stable Marriages 
+National Resident Matching Program 
+www.nrmp.org 
+Al Roths home page on market design 
+http://www.economics.harvard.edu/~aroth/alroth.html#design 
+Optimization to find a solution that people 
+can live with 
+15.057 Spring 03 Vande Vate 8</text>
+        </slide>
+        <slide>
+          <slideno>10</slideno>
+          <text>Many Objectives 
+Application of optimization to find a 
+solution that addresses everyones 
+preferences or objectives 
+15.057 Spring 03 Vande Vate 11</text>
+        </slide>
+        <slide>
+          <slideno>0</slideno>
+          <text>Intro to Systems Optimization 
+John Vande Vate
+15.057 Spring 03 Vande Vate 1</text>
+        </slide>
+        <slide>
+          <slideno>11</slideno>
+          <text>How to find one answer
+Deferred Acceptance Algorithm of Gale &amp; 
+Shapley 
+Each man proposes to his favorite woman
+Each woman rejects all but her favorite 
+proposal 
+Repeat this process with men proposing to their favorite among those who have not 
+yet rejected them 
+15.057 Spring 03 Vande Vate 12</text>
+        </slide>
+        <slide>
+          <slideno>2</slideno>
+          <text>Toys vs Tools 
+Enough to be dangerous 
+Know the distinction between desk-top 
+and industrial tools 
+Passing familiarity with industrial tools
+15.057 Spring 03 Vande Vate 3</text>
+        </slide>
+        <slide>
+          <slideno>5</slideno>
+          <text>Value of Optimization 
+A way of thinking 
+A personal tool, eg, Excel 
+An industrial tool 
+Raises the level of the debate 
+Automate tedious or complex tasks 
+Facilitate integration 
+Better answers 
+15.057 Spring 03 Vande Vate 6</text>
+        </slide>
+        <slide>
+          <slideno>12</slideno>
+          <text>Actually Two Answers 
+If the men propose, all men will agree this 
+is the best stable answer. The women will 
+agree it is the worst. 
+If the women propose, they will all agree the matching is the best stable answer. 
+The men will agree it is worst. 
+15.057 Spring 03 Vande Vate 13</text>
+        </slide>
+        <slide>
+          <slideno>4</slideno>
+          <text>Course Organization 
+Non-Linear Programming 
+Less robust tools 
+Local optimum vs global optimum 
+More customized solution strategies 
+Heuristics 
+Some off-the-shelf tools, e.g., Genetic Algorithms General trends and strategies Illustrative examples 
+15.057 Spring 03 Vande Vate 5</text>
+        </slide>
+        <slide>
+          <slideno>13</slideno>
+          <text>Re-entrant
+Red Station 
+ Blue Station 
+40 seconds 
+40 seconds 10 seconds 10 seconds 1 per minute 
+1 per minute 
+Priority to the shorter processes 
+15.057 Spring 03 Vande Vate 14</text>
+        </slide>
+      </slides>
+      <videos/>
+    </lecture>
+    <lecture>
+      <lecture_title>Application: Revenue Optimization (PDF)
+Associated files:
+
+05Retail_analysis (XLS)
+05Retail_parametrics (XLS)</lecture_title>
+      <lecture_pdf_url>https://ocw.mit.edu/courses/15-057-systems-optimization-spring-2003/resources/05retailgameprint/</lecture_pdf_url>
+      <lectureno>5</lectureno>
+      <slides>
+        <slide>
+          <slideno>11</slideno>
+          <text>Relative Sales Rates
+Ratio of Sales Rates 
+Item Full Price 10% 20% 40% 
+1 
+2 
+3 
+4 
+5 
+6 
+7 
+8 
+9 
+10 
+11 
+12 
+13 
+14 
+15 1 1.30 - -
+1 1.34 - -
+1 1.39 - -
+1 1.27 - -
+1 1.23 - -
+1 - 1.83 -
+1 - 1.77 -
+1 - 1.83 -
+1 - 1.79 -
+1 - 1.44 -
+1 - - 2.63 
+1 - - 2.94 
+1 - - 3.00 
+1 - - 2.67 
+1 - - 2.81 
+Mean 1 1.31 1.73 2.81 
+Std Dev - 0.06 0.16 0.16 
+12</text>
+        </slide>
+        <slide>
+          <slideno>2</slideno>
+          <text>Sales that week Average weekly 
+sales at current 
+price 
+Projected sales for 
+the season if this 
+rate continues Revenue to date 
+Projected revenues if you continue to 
+sell at this price 
+and at this rate and 
+salvage what remains Remaining Inventory</text>
+        </slide>
+        <slide>
+          <slideno>4</slideno>
+          <text>Retail.xls
+Histories of 15 items 
+Qty on
+Item Week hand Price Sales 
+1 1 2000 60 57 
+2 1943 60 98 
+3 1845 60 55 
+4 1790 60 41 
+5 1749 60 60 
+6 1689 60 39 
+7 1650 54 106 
+8 1544 54 55 
+9 1489 54 64 
+10 1425 54 43 
+11 1382 54 131 
+12 1251 54 112 
+13 1139 54 62 
+14 1077 54 31 
+15 1046 54 80 
+16 966 
+15.057 Spring 03 Vande Vate 5</text>
+        </slide>
+        <slide>
+          <slideno>21</slideno>
+          <text>Lost Salvage Value 
+We Salvage: 
+Revenue Rate over salvage at 20% discount 
+($48 - $25)*1.73*P = 39.79*P 
+Revenue Rate over salvage at 40% discount 
+($36 - $25)*2.81*P = 30.91*P 
+40% is not competitive 
+15.057 Spring 03 Vande Vate 22</text>
+        </slide>
+        <slide>
+          <slideno>12</slideno>
+          <text>What to do with Info? 
+Given initial sales data, how many weeks to sell 
+at each discount? 
+15.057 Spring 03 Vande Vate 13</text>
+        </slide>
+        <slide>
+          <slideno>16</slideno>
+          <text>How Many Prices? 
+Ignore period 1
+At most 2 prices (including salvage)
+Why?
+Two constraints - two basic variables
+15.057 Spring 03 Vande Vate 17</text>
+        </slide>
+        <slide>
+          <slideno>10</slideno>
+          <text>Sales Rates 
+Sales Rates 
+11 
+Item Full Price 10% 20% 40% 
+1 
+2 
+3 
+4 
+5 
+6 
+7 
+8 
+9 
+10 
+11 
+12 
+13 
+14 
+15 
+16 58.33 76.00 - -
+107.67 144.00 - -
+59.33 82.33 - -
+61.17 77.89 - -
+92.50 113.67 - -
+114.14 - 209.40 -
+67.43 - 119.63 -
+53.00 - 96.75 -
+73.71 - 131.88 -
+67.29 - 97.13 -
+100.44 - - 264.25 
+64.11 - - 188.50 
+65.56 - - 196.67 
+61.44 - - 164.00 
+62.33 - - 175.00 
+107.33 113.00 223.33 294.50 
+Mean 75.99 101.15 146.35 213.82 
+Std Dev 20.74 27.06 56.05 52.87</text>
+        </slide>
+        <slide>
+          <slideno>23</slideno>
+          <text>A Parametric Model
+Rescale Sales volumes to units of Initial 
+Weekly Sales (Rate) 
+Initial Inventory becomes 2000/Rate 
+Rescale Revenues by dividing by Initial Weekly Sales 
+Only RHS of Inventory Constraint depends on Rate 
+Use Sensitivity Analysis 
+15.057 Spring 03 Vande Vate 24</text>
+        </slide>
+        <slide>
+          <slideno>7</slideno>
+          <text>Discussion
+What are the trade-offs?
+What information do you need?
+How to estimate that information?
+How to use the estimates?
+15.057 Spring 03 Vande Vate 8</text>
+        </slide>
+        <slide>
+          <slideno>15</slideno>
+          <text>A Model
+Initial  
+Weekly Rate 90 
+Full Price 10% off 20% off 40% off Salvage 
+Price $ 60.00 $ 54.00 $ 48.00 $ 36.00 $ 25.00 
+Sales Lift 1 1.31 1.73 2.81 
+Salvage Total 
+Weeks at 1.00 7.12 6.88 - 15.00 
+Sales 90.00 837.45 1,072.55 - - 2,000.00 
+Salvage Total 
+Revenue Revenue 
+Revenues $ 5,400 $ 45,222 $ 51,482 $ -$ -$ 102,105 
+15.057 Spring 03 Vande Vate 16</text>
+        </slide>
+        <slide>
+          <slideno>28</slideno>
+          <text>15.057 Spring 03 Vande Vate 29
+Parametric Study
+Initial Weekly Rate Initial Inv./Initial Weekly Rate
+ 1.00 2000
+Full Price 10% off 20% off 40% off Salvage
+Price  $   60.00  $   54.00 $   48.00 $36.00 $25.00 
+Sales 1         1.31        1.73     2.81 
+Weeks  of s ales  at each price Total
+        1.00         0.62      13.38      -               15 
+Sales and Salvage in Units of  Weeks at Full Price Total
+          1.00           0.81         23.19            -            -     25.00 
+Revenues/ Initial Weekly Rate Total
+ $        60  $        44 $   1,113 $       -   $       -   $1,217</text>
+        </slide>
+        <slide>
+          <slideno>9</slideno>
+          <text>223 Refining the Estimate
+Qty on 
+Item Week hand Price Sales Average Price 
+Est. Avg. 
+Sales 
+1	 1 2000 $ 60 75 Full Price $ 60 107.3
+2 1925 $ 60 138 10% $ 54 113.0
+3 1787 $ 60 109 20% $ 48 223.3
+4 1678 $ 54 117 40% $ 36
+ X
+5 1561 $ 54
+6 1420 $ 54
+7 1339 $ 48
+8 1035 $ 48
+9 817 $ 48
+10 669 $ 36
+11 370 $ 36
+12 80$ 36
+13 0
+14 0
+15 0
+16 0
+141 
+81 
+304 
+218 
+148 299 
+290 
+80 
+X Sales, not demand! (290 + 299)/2 = 294.5 
+10</text>
+        </slide>
+        <slide>
+          <slideno>22</slideno>
+          <text>Summary 
+Use optimization to improve decision making 
+even under uncertainty 
+Even if it is only as good, it is automatic. 
+Insights into strategy 
+Ignore period 1 
+One Price and salvage 
+Two prices and no salvage 
+15.057 Spring 03 Vande Vate 23</text>
+        </slide>
+        <slide>
+          <slideno>1</slideno>
+          <text>The Situation
+Retailer with 2,000 units in inventory
+Full Retail Price $60
+Discount Options 10%, 20% and 40% off
+Salvage Value of $25 (over 58% off)
+15 week selling season
+No restocking
+15.057 Spring 03 Vande Vate 2</text>
+        </slide>
+        <slide>
+          <slideno>17</slideno>
+          <text>Two Constraints
+P = Average Sales Rate at Full Price 
+x[price] = Weeks we sell at price 
+S = Units we salvage 
+max P*(60x[60] + 54*1.31x[54] + 48*1.73x[48] + 36*2.81x[36] 
+) + 25S 
+s.t. x[60] + x[54] + x[48] + x[36]  15 
+s.t. P*(x[60] + 1.31x[54] + 1.73x[48] + 2.81x[36]) + S = 2000 
+s.t. x[60]  1 (This is a bound. Like x[54]  0) 
+non-negativity 
+15.057 Spring 03 Vande Vate 18</text>
+        </slide>
+        <slide>
+          <slideno>14</slideno>
+          <text>Constraints
+Total Weeks  Weeks in the Season
+Total Sales and Salvage = Initial Inventory
+And?
+15.057 Spring 03 Vande Vate 15</text>
+        </slide>
+        <slide>
+          <slideno>26</slideno>
+          <text>15.057 Spring 03 Vande Vate 27
+Using Sensitivity Analysis
+Strategy: 
+1 week at full price
+14 weeks at 20% off
+Salvage whats left
+Constraints
+Final Shadow Constrai nt Allowable Allowable
+Cell Name Value Price R.H . Side Increase Decrease
+$H$7 Weeks a 15.00     39.87   15 1139.279735 14
+$H$8 Sales i2,000.00  25.00   2000 1E+30 1974.733554
+The basis (strategy) remains the 
+same until we decrease the RHS of 
+the Inventory Constraint by 1974.73What increase in sales rate 
+will decrease the Initial 
+Inventory by 1974.73?</text>
+        </slide>
+        <slide>
+          <slideno>5</slideno>
+          <text>The Challenge
+Devise a discount strategy to earn 
+maximum revenue
+What to do with the data in Retail.xls?
+15.057 Spring 03 Vande Vate</text>
+        </slide>
+        <slide>
+          <slideno>18</slideno>
+          <text>Strategies
+Average Sales at Full Price 
+&lt; 80/wk 20% off &amp; Salvage 
+80-103/wk 10% off &amp; 20% off 
+104-133/wk Full Price &amp; 10% off 
+&gt;133/wk Full Price 
+Where are the greatest errors? 
+Why? 
+15.057 Spring 03 Vande Vate 19</text>
+        </slide>
+        <slide>
+          <slideno>25</slideno>
+          <text>Parametric Study 
+Initial Weekly Rate Initial Inv./Initial Weekly Rate 
+1.00 2000 
+Full Price 10% off 20% off 40% off Salvage 
+Price $ 60.00 $ 54.00 $ 48.00 $36.00 $25.00 
+Sales 1  1.31  1.73  2.81 
+Week s of sales at each price Total 
+1.00  0.62  13.38  - 15 
+Sales and Salvage in Units of Weeks at Full Price Total 
+1.00  0.81  23.19  - - 25.00 
+Revenues/ Initial Weekly Rate Total 
+$  60 $  44 $ 1,113 $ -$ - $1,217 
+15.057 Spring 03 Vande Vate 26</text>
+        </slide>
+        <slide>
+          <slideno>0</slideno>
+          <text>The Retail Game
+Revenue Optimization 
+Statistical Data as Information 
+Fun with Optimization 
+15.057 Spring 03 Vande Vate 1</text>
+        </slide>
+        <slide>
+          <slideno>3</slideno>
+          <text>How to Play 
+15.057 Spring 03 Vande Vate 4</text>
+        </slide>
+        <slide>
+          <slideno>27</slideno>
+          <text>15.057 Spring 03 Vande Vate 28
+When to Switch Strategies
+Current Inventory 2000/Current Rate
+Find New Rate that decreases this by 1974.73
+2000/Current Rate  2000/New Rate = 1974.73New Rate = 2000/(2000/Current  1974.73)
+= 79.16</text>
+        </slide>
+        <slide>
+          <slideno>19</slideno>
+          <text>What about 40% off? 
+Would it ever be wise to discount by 40% 
+15.057 Spring 03 Vande Vate 20</text>
+        </slide>
+        <slide>
+          <slideno>13</slideno>
+          <text>Variables 
+How many weeks to sell at each price
+What about the order?!
+How much to salvage?
+15.057 Spring 03 Vande Vate 14</text>
+        </slide>
+        <slide>
+          <slideno>6</slideno>
+          <text>Competition 
+Select Compete
+Enter the Random Seed: 
+Your first weeks sales at $60
+Implement your strategy for 5 items
+Record your total relative difference
+15.057 Spring 03 Vande Vate 7</text>
+        </slide>
+        <slide>
+          <slideno>8</slideno>
+          <text>Estimating Sales at Discount
+Qty on 
+Est. Avg. 
+Item 
+ Week hand Price Sales Average Price Sales 
+1	 1 2000 $ 60 75 Full Price $ 60 107.3 
+2 1925 $ 60 138 10% $ 54 113.0 
+3 1787 $ 60 109 20% $ 48 223.3 
+4 1678 $ 54 117 40% $ 36 223 
+5 1561 $ 54 141 
+6 1420 $ 54 81 
+7 1339 $ 48 304 
+8 1035 $ 48 218 Why lower sales? 
+9 817 $ 48 148 
+10 669 $ 36 299 
+11 370 $ 36 290 
+12 80$ 36 80 
+13 0 
+14 0 
+15 0 
+916 0</text>
+        </slide>
+        <slide>
+          <slideno>20</slideno>
+          <text>Why Not 40% Off?
+Two Cases: Salvage and No Salvage 
+No Salvage means the lift in sales doesnt 
+help 
+We Salvage: 
+Weekly Revenue Rate at 20% discount 
+$48*1.73*P = 83.04*P 
+Weekly Revenue Rate at 40% discount 
+$36*2.81*P = 101.16*P 
+Something is wrong with this reasoning! 
+15.057 Spring 03 Vande Vate 21</text>
+        </slide>
+        <slide>
+          <slideno>24</slideno>
+          <text>Parametric Model 
+R = Average Sales Rate at Full Price 
+x[price] = Weeks we sell at price 
+S = Units we salvage/R 
+max 60x[60] + 54*1.31x[54] + 48*1.73x[48] + 36*2.81x[36] 
++ 25S 
+s.t. x[60] + x[54] + x[48] + x[36]  15 
+s.t. x[60] + 1.31x[54] + 1.73x[48] + 2.81x[36] + S = 2000/ R 
+s.t. x[60]  1 
+non-negativity 
+15.057 Spring 03 Vande Vate 25</text>
+        </slide>
+      </slides>
+      <videos/>
+    </lecture>
+    <lecture>
+      <lecture_title>Introduction (PDF)</lecture_title>
+      <lecture_pdf_url>https://ocw.mit.edu/courses/15-057-systems-optimization-spring-2003/resources/01introprint/</lecture_pdf_url>
+      <lectureno>1</lectureno>
+      <slides>
+        <slide>
+          <slideno>2</slideno>
+          <text>Who am I?
+John Vande Vate 
+PhD from MIT 
+Professor in School of Industrial &amp; Sys. 
+Eng at Georgia Institute of Technology
+President of TechLogistics , LLC 
+Executive Director of EMIL (Executive 
+Masters in International Logistics) 
+15.057 Spring 03 Vande Vate 3</text>
+        </slide>
+        <slide>
+          <slideno>10</slideno>
+          <text>Grades
+Exam 1 25% 
+Exam 2 (Final) 25% 
+Challenges: 25% 
+Course Project: 25% 
+15.057 Spring 03 Vande Vate 11</text>
+        </slide>
+        <slide>
+          <slideno>4</slideno>
+          <text>Industrial Experience 
+Over 20 years 
+Worked with J.F. Shapiro through grad school 
+Bank of Boston
+International Paper
+Unilever
+
+Independent consulting 
+Ford 
+SmithKline Beecham 
+Wyeth Ayerst L abs 
+RockTenn 
+Burger King
+Milliken
+Sabre
+Scientific Atlanta
+...
+15.057 Spring 03 Vande Vate 5</text>
+        </slide>
+        <slide>
+          <slideno>7</slideno>
+          <text>Course Schedule
+Start with Mini Course on Networks 
+Structured special class 
+Easy to visualize 
+Illustrate General Concepts 
+Solution techniques 
+Sensitivity analysis 
+Intuitive development in higher dimensions 
+Methods in texts are misleading too 
+15.057 Spring 03 Vande Vate 8</text>
+        </slide>
+        <slide>
+          <slideno>6</slideno>
+          <text>Course Organization 
+Tools &amp; Texts Axis 
+Excel Solver &amp; Eppen et al. 
+Familiar medium 
+Firm foundation 
+AMPL &amp; Fourer et al. 
+Industrial standard Real potential 
+15.057 Spring 03 Vande Vate 7</text>
+        </slide>
+        <slide>
+          <slideno>13</slideno>
+          <text>Bring your laptop to class 
+We will do lots of hands-on modeling
+Thursday: 
+01AssignmentModel.xls 
+02TransportationModel.xls 
+15.057 Spring 03 Vande Vate 14</text>
+        </slide>
+        <slide>
+          <slideno>1</slideno>
+          <text>Our Focus Broadly 
+Application of mathematical analysis to 
+the design and analysis of systems 
+through the intermediary of abstract 
+models. 
+15.057 Spring 03 Vande Vate 2</text>
+        </slide>
+        <slide>
+          <slideno>5</slideno>
+          <text>Course Organization 
+Pedagogical Axis 
+Networks 
+Linear Programming 
+Integer Programming 
+Non-Linear Programming 
+Heuristics 
+Increasing complexity 
+Increasing power 
+15.057 Spring 03 Vande Vate 6</text>
+        </slide>
+        <slide>
+          <slideno>8</slideno>
+          <text>Group Work 
+Teams of 4 or 5 
+Every team must include BOTH on-
+campus and off-campus participants
+Teams work on 
+Course Project 
+Challenge Topics 
+15.057 Spring 03 Vande Vate 9</text>
+        </slide>
+        <slide>
+          <slideno>9</slideno>
+          <text>Challenge Topics
+Network Modeling Challenge: 
+Extraterrestrial Optimization 
+LP Modeling Challenge: 
+Financial Optimization 
+IP Modeling Challenge: 
+Smelly Optimization 
+Modeling Challenge IV: TBA 
+15.057 Spring 03 Vande Vate 10</text>
+        </slide>
+        <slide>
+          <slideno>12</slideno>
+          <text>Install Premium Solver
+Must have Solver installed 
+CD that accompanies Moore et al.
+\html\PremiumSolver 
+execute PremSolv.EXE 
+Not absolutely necessary, but 
+recommended. 
+15.057 Spring 03 Vande Vate 13</text>
+        </slide>
+        <slide>
+          <slideno>11</slideno>
+          <text>Install Solver Add-In 
+Tools |Add-Ins 
+Select Solver Add-in 
+May require installing components 
+Method 1 
+With install cd 
+Method 2 
+Copy solver.xla and solver32.dll to 
+..\Microsoft Office\Office\Library\Solver\ 
+15.057 Spring 03 Vande Vate 12</text>
+        </slide>
+        <slide>
+          <slideno>0</slideno>
+          <text>Intro to Systems Optimization 
+John Vande Vate
+15.057 Spring 03 Vande Vate 1</text>
+        </slide>
+        <slide>
+          <slideno>3</slideno>
+          <text>Teaching Experience 
+Georgia Tech 
+ISyE: BS, MS, PhD and Executive 
+Mgmt: Executive 
+MIT 
+This course last year: Everyone got out alive! 
+CMU 
+MBA 
+Shanghai Institute of Mechanical Engineering 
+MBA 
+15.057 Spring 03 Vande Vate 4</text>
+        </slide>
+      </slides>
+      <videos/>
+    </lecture>
+    <lecture>
+      <lecture_title>Case Study: Ford Finished Vehicle Delivery (PDF)</lecture_title>
+      <lecture_pdf_url>https://ocw.mit.edu/courses/15-057-systems-optimization-spring-2003/resources/10integerprogramming2/</lecture_pdf_url>
+      <lectureno>10</lectureno>
+      <slides>
+        <slide>
+          <slideno>3</slideno>
+          <text>Eliminate Excess Variables
+Assign each customer to a DC 
+s.t. AssignCustomers{cust in CUSTOMERS}: 
+sum{dc in DCS} Assign[cust, dc] &lt;= 1; 
+What improvement? 
+15.057 Spring 03 Vande Vate 4</text>
+        </slide>
+        <slide>
+          <slideno>28</slideno>
+          <text>Constraints
+Lambda[2] = 0 unless activity is between 
+BreakPoint[1] and BreakPoint[2] (Region[2]) or 
+BreakPoint[2] and BreakPoint[3] (Region[3]) 
+Lambda[2]  InRegion[2] + InRegion[3]; 
+Minimum 
+Sustainable 
+Level First 
+Break 
+Point Second 
+Break 
+Point Maximum 
+Operating 
+Level InRegion[1] InRegion[2] InRegion[3] Total Cost
+BreakPoint[0] BreakPoint[1] BreakPoint[2] BreakPoint[3] 
+15.057 Spring 03 Vande Vate 29</text>
+        </slide>
+        <slide>
+          <slideno>32</slideno>
+          <text>What we Added
+var InRegion{1..NBreaks} binary; 
+s.t. InOneRegion: 
+sum{b in 1..NBreaks} InRegion[b] &lt;= 1; 
+s.t. EnforceConsecutive{b in 0..NBreaks-1}: 
+Lambda[b] &lt;= InRegion[b] + InRegion[b+1]; 
+s.t. LastLambda: 
+Lambda[NBreaks] &lt;= InRegion[NBreaks]; 
+15.057 Spring 03 Vande Vate 33</text>
+        </slide>
+        <slide>
+          <slideno>29</slideno>
+          <text>And Activity in One Region 
+InRegion[1] + InRegion[2] + InRegion[3]  1
+Why  1?
+If it is in Region[2]:
+Lambda[1]  InRegion[1] + InRegion[2] = 1
+Lambda[2]  InRegion[2] + InRegion[3] = 1
+Other Lambdas are 0 
+15.057 Spring 03 Vande Vate
+ 30</text>
+        </slide>
+        <slide>
+          <slideno>15</slideno>
+          <text>Tighten Bounds
+Function of Continuous Variables &lt;= Limit*Binary 
+Variable 
+Make the Limit as small as possible 
+But not too small 
+Dont eliminate feasible solutions 
+We will see an Example with Ford Finished Vehicle 
+Dist. 
+15.057 Spring 03 Vande Vate 16</text>
+        </slide>
+        <slide>
+          <slideno>1</slideno>
+          <text>Better Models
+Better Formulation can distinguish 
+solvable from not. 
+Often counterintuitive whats better 
+Has led to vastly improved solvers that actually improve your formulation as they 
+solve the problem. 
+15.057 Spring 03 Vande Vate 2</text>
+        </slide>
+        <slide>
+          <slideno>8</slideno>
+          <text>Adapted from Winston pages 473 and following
+Lockbox Example
+15.057 Spring 03 Vande Vate 9 
+City Sea. Chi. NY LA Daily Payments 
+NW 2 5 5 4 325,000 $ 
+N 4 2 4 6 475,000 $ 
+NE 5 5 2 8 300,000 $ 
+SW 4 6 8 2 275,000 $ 
+S 6 6 6 4 385,000 $ 
+SE 8 8 5 5 350,000 $ 
+Oper.Cost 55,000 $ 50,000 $ 60,000 $ 53,000 $ 
+Int. Rate 6.0% 
+City Sea. Chi. NY LA Total Total Float 
+NW 0 0 - $ 
+N 0 0 0 0 - $ 
+NE 0 0 - $ 
+SW 0 0 - $ 
+S 0 0 0 0 - $ 
+SE 0 0 - $ 
+Total 0 0 0 0 Total Float - $ 
+Open? 0 0 0 0 Total Cost to Operate 
+Cost - $ - $ - $ - $ - $ 
+Eff.  C ap. 0 
+Total Cost -Days to Mail from Each Area to Each City Lockbox Model 
+0 0 0 
+0 
+0 0 0 
+0 0 0 
+0 
+0 0 0 
+0 0 0</text>
+        </slide>
+        <slide>
+          <slideno>18</slideno>
+          <text>Non-Linear Costs
+M
+id-RangeCost/Unit 
+High-Range Cost/Unit 
+Total Cost 
+Minimum 
+Sustainable 
+Level 
+LowR angeCost/Unit 
+First 
+Break 
+Point Second 
+Break 
+Point Maximum 
+Operating 
+Level Shutdown Cost Fixed Cost 
+0 Volume of Activity 
+15.057 Spring 03 Vande Vate 19</text>
+        </slide>
+        <slide>
+          <slideno>19</slideno>
+          <text>Modeling Economies of Scale
+Linear Programming 
+Greedy
+Takes the High-Range Unit Cost first!
+Integer Programming 
+Add constraints to ensure first things first 
+Several Strategies 
+15.057 Spring 03 Vande Vate 20</text>
+        </slide>
+        <slide>
+          <slideno>23</slideno>
+          <text>Conclusion
+If the Volume of Activity is a fraction  of 
+the way from one breakpoint to the next, 
+the cost will be that same fraction of the 
+way from the cost at the first breakpoint 
+to the cost at the next 
+If Volume = 10  + 20(1- ) 
+Then Cost = 22  + 27(1- ) 
+15.057 Spring 03 Vande Vate 24</text>
+        </slide>
+        <slide>
+          <slideno>30</slideno>
+          <text>We cant go wrong
+Minimum 
+Sustainable 
+Level 
+LowR angeCost/Unit 
+First 
+Break 
+Point Second 
+Break 
+Point Maximum 
+Operating 
+Level X 
+M
+id-RangeCost/Unit 
+High-Range Cost/Unit 
+0 Volume of Activity
+15.057 Spring 03 Vande Vate 31</text>
+        </slide>
+        <slide>
+          <slideno>22</slideno>
+          <text>Convex Combination 
+Weighted Average Total Cost 
+0 First 
+Break 
+Point Second 
+Break 
+Point 
+10 20 $22 $27 
+What will 
+the cost 
+be? 
+1/5th of the way 
+15.057 Spring 03 Vande Vate 23</text>
+        </slide>
+        <slide>
+          <slideno>20</slideno>
+          <text>Good News!
+AMPL offers syntax to automate this 
+Read Chapter 14 of Fourer for details 
+&lt;&lt;BreakPoint[1], BreakPoint[2]; Slope[1], 
+Slope[2], Slope[3]&gt;&gt; Variable; 
+Slope[1] before BreakPoint[1]
+Slope[2] from BreakPoint[1] to BreakPoint[2]
+Slope[3] after BreakPoint[2]
+Has 0 cost at activity 0
+15.057 Spring 03 Vande Vate 21</text>
+        </slide>
+        <slide>
+          <slideno>16</slideno>
+          <text>New Constraints
+Recall the Single Sourcing Problem
+15.057 Spring 03 Vande Vate 17</text>
+        </slide>
+        <slide>
+          <slideno>0</slideno>
+          <text>Integer Programming II 
+Modeling to Reduce Complexity 
+Capturing Economies of Scale 
+15.057 Spring 03 Vande Vate 1</text>
+        </slide>
+        <slide>
+          <slideno>27</slideno>
+          <text>Role of Integer Variables 
+Total Cost
+Ensure we express Activity as a 
+combination of two consecutive 
+breakpoints 
+var InRegion{1..NBreaks} binary; 
+Minimum 
+Sustainable 
+Level First 
+Break 
+Point Second 
+Break 
+Point Maximum 
+Operating 
+Level InRegion[1] InRegion[2] InRegion[3] 
+0
+15.057 Spring 03 Vande Vate 28</text>
+        </slide>
+        <slide>
+          <slideno>17</slideno>
+          <text>Constraints
+s.t. ObserveCapacity{dc in DCS}: 
+sum{cust in CUSTOMERS} 
+Demand[cust]*Assign[dc,cust] &lt;= Capacity[dc]; 
+Example: x1, x2, x3, x4, x5, x6 binary 
+5x1 + 7x2+ 4x3+ 3x4+4x5+ 6x6  14 
+What constraints can we add? 
+x1 + x2 + x3  2 
+x1 + x2 + x6  2 
+ 
+15.057 Spring 03 Vande Vate 18</text>
+        </slide>
+        <slide>
+          <slideno>5</slideno>
+          <text>Adding Stronger Constraints 
+Formulating Current Constraints Better 
+More constraints are generally better 
+Use parameters carefully 
+Creating new constraints that help 
+Some examples 
+15.057 Spring 03 Vande Vate 6</text>
+        </slide>
+        <slide>
+          <slideno>26</slideno>
+          <text>Does that Do It?
+What can go wrong? Total Cost 
+Minimum 
+Sustainable 
+Level 
+LowR angeCost/Unit 
+First 
+Break 
+Point Second 
+Break 
+Point Maximum 
+Operating 
+Level X 
+M
+id-RangeCost/Unit 
+High-Range Cost/Unit 
+0 Volume of Activity 
+15.057 Spring 03 Vande Vate 27</text>
+        </slide>
+        <slide>
+          <slideno>4</slideno>
+          <text>Add Stronger Constraints 
+Bands Coils Bands Limit Coils Limit 
+Production Capacity Valid Constraint : 
+Cuts off Fractional Answers 
+But not Integral Answers 3
+2
+1
+1 2 3 4
+15.057 Spring 03 Vande Vate 5</text>
+        </slide>
+        <slide>
+          <slideno>13</slideno>
+          <text>Challenge 
+Improve the formulation 
+Steco's Warehous e Loc ation M odel 
+Unit Costs Lease 
+Warehous e ($) 1 
+A ,750 $ 170$ $ 70$ 160$ 
+B ,000 $ 150$ $ $ $ 
+C ,500 $ 100$ $ $ $ 
+Decisions Yes/No 1 Total Eff. 
+Cap. Cap. 
+Lease  A 0 0 0 0 200 
+Lease  B 0 0 0 0 250 
+Lease  C 0 0 0 0 300 
+Total TrucksTo 0 
+Demand (Trucks/Mo) 100 90 110 60 
+Lease 
+Cost To 1 o 2 o 3 o 4 Truc k 
+$ Total 
+Cost 
+A $ -$ -$ -$ -$ -$ -$ 
+B $ -$ -$ -$ (0) $ (0)$ (0)$ 
+C $ -$ -$ 0$ -$ 0 $ 0 $ 
+Totals -$ -$ -$ 0$ (0) $ 0 $ 0 $ Monthly Trucks From/To Unit Cost/Truck to Sales District 
+4 3 2 
+7 40
+4 195 100 10
+5 240 140 60
+4 3 2 
+0 0 0 
+0 0 0 
+0 0 0 
+0 0 0 
+T T T
+-
+-
+-</text>
+        </slide>
+        <slide>
+          <slideno>25</slideno>
+          <text>In AMPL Speak 
+param NBreaks; 
+param B reakPoint{0..NBreaks};
+param C ostAtBreak{0..NBreaks};
+var Lambda{0..NBreaks} &gt;= 0;
+var Activity;
+var Cost;
+s.t. DefineCost:
+Cost = sum{b in 0..NBreaks} CostAtBreak[b]*Lambda[b];
+s.t. DefineActivity:
+Activity = sum{b in 0..NBreaks} BreakPoint[b]*Lambda[b];
+s.t. ConvexCombination:
+1 = sum{b in 0..NBreaks}Lambda[b];
+15.057 Spring 03 Vande Vate 26</text>
+        </slide>
+        <slide>
+          <slideno>6</slideno>
+          <text>More is Better
+X, Y, Z binary 
+Which is better?
+Formulation #1
+X + Y  2Z
+Formulation #2 
+X  Z 
+Y  Z 
+15.057 Spring 03 Vande Vate 7</text>
+        </slide>
+        <slide>
+          <slideno>7</slideno>
+          <text>Add Stronger Constraints 
+Bands Coils Bands Limit Coils Limit 
+Production Capacity Valid Constraint : 
+Cuts off Fractional Answers 
+But not Integral Answers 3
+2
+1
+1 2 3 4
+15.057 Spring 03 Vande Vate 8</text>
+        </slide>
+        <slide>
+          <slideno>21</slideno>
+          <text>Summary 
+To control complexity and get solutions 
+Eliminate unnecessary binary variables 
+Dont aggregate constraints 
+Add strong valid constraints 
+Tighten bounds 
+Integer Programming Models can 
+approximate non-linear objectives
+15.057 Spring 03 Vande Vate 22</text>
+        </slide>
+        <slide>
+          <slideno>31</slideno>
+          <text>AMPL Speak
+param NBreaks; 
+param B reakPoint{0..NBreaks}; 
+param C ostAtBreak{0..NBreaks};
+var Lambda{0..NBreaks} &gt;= 0;
+var Activity;
+var Cost;
+s.t. DefineCost:
+Cost = sum{b in 0..NBreaks} CostAtBreak[b]*Lambda[b];
+s.t. DefineActivity:
+Activity = sum{b in 0..NBreaks} BreakPoint[b]*Lambda[b];
+s.t. ConvexCombination:
+1 = sum{b in 0..NBreaks}Lambda[b];
+15.057 Spring 03 Vande Vate 32</text>
+        </slide>
+        <slide>
+          <slideno>11</slideno>
+          <text>One Step Further 
+Impose Constraints at Lowest Level 
+Some Compromise between 
+Number of Constraints: How hard to solve LPs 
+Number of LPs: How many LPs we must solve. 
+Generally, better to solve fewer LPs. 
+15.057 Spring 03 Vande Vate 12</text>
+        </slide>
+        <slide>
+          <slideno>14</slideno>
+          <text>More Detailed Constraints
+s.t. ShutWarehouse{w in WAREHOUSES}: 
+sum{d in DISTRICTS} Ship[w,d] &lt;= Capacity[w]*Open[w]; 
+s.t. ShutLanes{w in WAREHOUSES, d in DISTRICTS}: 
+Ship[w,d] &lt;= Demand[d]*Open[w]; 
+Trade off between work to solve each LP and 
+number of LPs we have to solve 
+This makes each one harder, but we solve 
+fewer. 
+15.057 Spring 03 Vande Vate 15</text>
+        </slide>
+        <slide>
+          <slideno>24</slideno>
+          <text>Idea
+Express Volume of Activity as a Weighted 
+Average of Breakpoints 
+Express Cost as the same Weighted 
+Average of Costs at the Breaks 
+Activity = Min Level 0 + Break 1 1+ 
+Break 2 2 + Max Level 3 
+Cost = Cost at Min Level 0 + Cost at Break 1 1+ 
+Cost at Break 2 2 + Cost at Max Level 3 
+1 = 0+ 1+ 2+ 3 
+15.057 Spring 03 Vande Vate 25</text>
+        </slide>
+        <slide>
+          <slideno>2</slideno>
+          <text>In Theory...
+Each new binary variable doubles the 
+difficulty of the problem Potential Complexity 
+1E+12 
+9E+11 
+8E+11 
+7E+11 
+6E+11 
+5E+11 
+4E+11 
+3E+11 
+2E+11 
+1E+11 
+0 
+0 5 10 15 20 25 30 35 40 45 
+No. of Binary Variables 3 15.057 Spring 03 Vande Vate</text>
+        </slide>
+        <slide>
+          <slideno>9</slideno>
+          <text>Challenge 
+Improve the formulation 
+City Sea. Chi. NY LA Daily Payments 
+NW 2 5 5 4 325,000 $ 
+N 4 2 4 6 475,000 $ 
+NE 5 5 2 8 300,000 $ 
+SW 4 6 8 2 275,000 $ 
+S 6 6 6 4 385,000 $ 
+SE 8 8 5 5 350,000 $ 
+Oper.Cost 55,000 $ 50,000 $ 60,000 $ 53,000 $ 
+Int. Rate 6.0% 
+City Sea. Chi. NY LA Total Total Float 
+NW 0 0 - $ 
+N 0 0 - $ 
+NE 0 0 - $ 
+SW 0 0 - $ 
+S 0 0 - $ 
+SE 0 0 - $ 
+Total 0 0 0 0 Total Float - $ 
+Open? 0 0 0 0 Total Cost to Operate 
+Cost - $ - $ - $ - $ - $ 
+Eff.  C ap. 0 
+Total Cost -Days to Mail from Each Area to Each City Lockbox Model 
+0 0 0 
+0 0 0 
+0 0 0 
+0 0 0 
+0 0 0 
+0 0 0 
+0 0 0</text>
+        </slide>
+        <slide>
+          <slideno>10</slideno>
+          <text>Conclusion
+Formulation #1 
+Assign[NW, b] +Assign[N, b] + Assign[NE, b] + 
+Assign[SW, b] +Assign[S, b] + Assign[SE, b] 
+ 6*Open[b] 
+Formulation #2 
+Assign[NW,b]  Open[b] 
+Assign[N, b]  Open[b] 
+ 
+Dont aggregate or sum constraints 
+15.057 Spring 03 Vande Vate 11</text>
+        </slide>
+        <slide>
+          <slideno>12</slideno>
+          <text>Adapted from Moore et al  pages 300 and following 
+Steco Revisited 
+13 
+Steco's Warehous e Loc ation M odel 
+Unit Costs Lease 
+Warehouse ($) 1 
+A 7,750$ 170$ $ 70$ 160$ 
+B 4,000$ 150$ $ $ $ 
+C 5,500$ 100$ $ $ $ 
+Decisions Yes/No 1 Total Eff. 
+Cap. Cap. 
+Leas e A 0 0 0 0 0 0 0 200 
+Leas e B 0 0 0 0 0 0 0 250 
+Leas e C 0 0 0 0 0 0 0 300 
+Total TrucksTo 0 
+Demand (Trucks/Mo) 100 90 110 60 
+Lease 
+Cost To 1 o 2 o 3 o 4 Truck 
+$ Total 
+Cost 
+A $ -$ -$ -$ -$ -$ -$ 
+B $ -$ -$ -$ (0) $ (0) $ (0) $ 
+C $ -$ -$ 0$ -$ 0 $ 0 $ 
+Totals -$ -$ -$ 0$ (0) $ 0 $ 0 $ Monthly Trucks From/To Unit Cost/Truck to Sales District 
+4 3 2 
+40
+195 100 10
+240 140 60
+4 3 2 
+0 0 0 
+T T T
+-
+-
+-</text>
+        </slide>
+      </slides>
+      <videos/>
+    </lecture>
+    <lecture>
+      <lecture_title>Production Planning, Workforce Scheduling (PDF)
+Associated file:
+
+06Singapore_scenarios (XLS)</lecture_title>
+      <lecture_pdf_url>https://ocw.mit.edu/courses/15-057-systems-optimization-spring-2003/resources/06productionplanningprint/</lecture_pdf_url>
+      <lectureno>6</lectureno>
+      <slides>
+        <slide>
+          <slideno>12</slideno>
+          <text>Formulating the LP
+Scheduling Postal Workers 
+Shift Mon -Tues -Wed -Thurs -Fri -Sat -Sun -
+Fri Sat Sun Mon Tues Wed Thurs 
+Day Demand 
+Mon 1 1 1 1 1 17 
+Tues 1 1 1 1 1 13 
+Wed 1 1 1 1 1 15 
+Thurs 1 1 1 1 1 19 
+Fri 1 1 1 1 1 14 
+Sat 1 1 1 1 1 16 
+Sun 1 1 1 1 1 11 
+15.057 Spring 03 Vande Vate 13</text>
+        </slide>
+        <slide>
+          <slideno>9</slideno>
+          <text>Another View
+s.t. InitialBalance: 
+Production['Jan'] - EndingInv['Jan'] = 43 
+s.t. MonthlyBalances['Feb']: 
+Production['Feb'] + EndingInv[ 'Jan'] - EndingInv['Feb'] = 36 
+s.t. MonthlyBalances['Mar'] : 
+Production['Mar'] + EndingInv['Feb']  -EndingInv['Mar'] = 34 
+s.t. MonthlyBalances['Apr']: 
+Production['Apr'] + EndingInv['Mar']  -EndingInv['Apr'] = 59 
+s.t. FinalBalance: 
+EndingInv['Apr'] &gt;= 7 
+15.057 Spring 03 Vande Vate 10</text>
+        </slide>
+        <slide>
+          <slideno>3</slideno>
+          <text>Inventory 
+Balancing Your Checkbook 
+Previous Balance + Income - Expenses = New Balance 
+Modeling Dynamic Inventory 
+Starting Inv. + Production - Shipments = Ending Inv.
+15.057 Spring 03 Vande Vate 4</text>
+        </slide>
+        <slide>
+          <slideno>20</slideno>
+          <text>Enhancement 
+Ensure at least 30% of the workers have 
+Sunday off
+Formulate a Solver Model
+15.057 Spring 03 Vande Vate 
+ 21</text>
+        </slide>
+        <slide>
+          <slideno>19</slideno>
+          <text>Minimize the Maximum
+Min Max{XS[Mon], XS[Tues], }
+Min Z
+S.t. Z  XS[Mon]
+S.t. Z  XS[Tues]
+
+S.t. MF + ThM + FT + SW + SuTh  XS[Mon] = 17 
+S.t. MF + TS + FT + SW + SuTh  XS[Tues] = 13 
+. 
+15.057 Spring 03 Vande Vate 20</text>
+        </slide>
+        <slide>
+          <slideno>17</slideno>
+          <text>Challenge 
+Formulate a Solver Model
+15.057 Spring 03 Vande Vate 18</text>
+        </slide>
+        <slide>
+          <slideno>10</slideno>
+          <text>Scheduling Postal Workers 
+Each postal worker works for 5 consecutive 
+days, followed by 2 days off, repeated 
+weekly. 
+Day Tues Wed Thurs Fri Sat Sun 
+Demand 17 13 15 14 16 Mon 
+19 11 
+Minimize the number of postal workers 
+(FTEs) 
+15.057 Spring 03 Vande Vate 11</text>
+        </slide>
+        <slide>
+          <slideno>22</slideno>
+          <text>The linear program
+Minimize 
+ z = MF + TS + WSu + ThM + FT + SW + SuTh 
+subject to MF + ThM + FT + SW + SuTh  17 
+MF + TS + FT + SW + SuTh  13 
+MF + TS + WSu + SW + SuTh  15 
+MF + TS + WSu + ThM + SuTh  19 
+MF + TS + WSu + ThM + FT  14 
+TS + WSu + ThM + FT + SW  16 
+WSu + ThM + FT + SW + SuTh  11 
+.7(MF + TS) - 0.3*(WSu + ThM + FT + SW + SuTh)  0 
+Non-negativity
+15.057 Spring 03 Vande Vate 23</text>
+        </slide>
+        <slide>
+          <slideno>8</slideno>
+          <text>A Network Formulation 
+Singapore Electric Generator Produc tion 
+Unit Costs Dec Jan Feb Mar Apr. May 
+Produc tion $ 28.00 $ 27.00 $ 27.80 $ 29.00 
+Inventory $ 0.30 $ 0.30 $ 0.30 $ 0.30 
+Produc tion Q ty 
+Produc tion Li mits 
+Delivery Reqmts 
+Calc. Ending Inv. 
+Ending Inventory 15 7 
+Produc tion Cost $ - $ - $ - $ -
+Inventory Cost $ 2.25 $ - $ - $ - Total 
+Total Cost $ 2.25 $ - $ - $ - $ 2.25 
+0 0 0 0 
+60 62 64 66 
+58 36 34 59 
+-43 (36) (34) (59) Minimum 
+- - - -
+15.057 Spring 03 Vande Vate 9</text>
+        </slide>
+        <slide>
+          <slideno>14</slideno>
+          <text>The linear program
+Minimize z = MF + TS + WSu + ThM + FT + SW + SuTh 
+subject to MF + ThM + FT + SW + SuTh  17 
+MF + TS + FT + SW + SuTh  13 
+MF + TS + WSu + SW + SuTh  15 
+MF + TS + WSu + ThM + SuTh  19 
+MF + TS + WSu + ThM + FT  14 
+TS + WSu + ThM + FT + SW  16 
+WSu + ThM + FT + SW + SuTh  11 
+Non-negativity 
+15.057 Spring 03 Vande Vate 15</text>
+        </slide>
+        <slide>
+          <slideno>2</slideno>
+          <text>Singapore Electric Generator 
+Singapore Electric Generator Produc tion 
+Unit Costs Jan Feb Mar Apr. May 
+Produc tion $ 28.00 $ 27.00 $ 27.80 $ 29.00 
+Inventory $ 0.30 $ 0.30 $ 0.30 $ 0.30 
+Produc tion Q ty 0 0 0 0 
+Produc tion Li mits 60 62 64 66 
+Beginning Inventory 15 -43 -79 -113 
+Delivery Reqmts 58 36 34 59 Minimum 
+Ending Inventory (43) (79) (113) (172) 7 
+Produc tion Cost $ - $ - $ - $ -
+Inventory Cost $ (4.20) $ (18.30) $ (28.80) $ (42.75) Total 
+Total Cost $ (4.20) $ (18.30) $ (28.80) $ (42.75) $ (94.05) 
+15.057 Spring 03 Vande Vate 3</text>
+        </slide>
+        <slide>
+          <slideno>15</slideno>
+          <text>The Decision Variable 
+Decision 
+Would it be possible to have the variables be 
+the number of workers on each day? 
+Conclusion: sometimes the decision variables 
+incorporate constraints of the problem. 
+Hard to do this well, but worth keeping in mind 
+We will see more of this in integer programming. 
+15.057 Spring 03 Vande Vate 16</text>
+        </slide>
+        <slide>
+          <slideno>11</slideno>
+          <text>Challenge 
+Formulate a Solver Model
+15.057 Spring 03 Vande Vate 12</text>
+        </slide>
+        <slide>
+          <slideno>0</slideno>
+          <text>Production Planning 
+Basic Inventory Model 
+Workforce Scheduling 
+Enhance Modeling Skills
+Dynamic Models
+15.057 Spring 03 Vande Vate 1</text>
+        </slide>
+        <slide>
+          <slideno>7</slideno>
+          <text>A Network Formulation 
+Dec. 
+Inv. Jan. 
+Inv. Feb. 
+Inv. Mar. 
+Inv. Apr. 
+Inv. May 
+Inv. Jan. 
+mfg. Feb. 
+mfg. Mar. 
+mfg. Apr. 
+mfg. 
+Jan. 
+dem. Feb. 
+dem. Mar. 
+dem. Apr. 
+dem. Supply 
+Prod. Limits 
+Demand  req
+Production Variables 
+Inventory 
+Variables 
+Shipment Quantities 
+15.057 Spring 03 Vande Vate 8</text>
+        </slide>
+        <slide>
+          <slideno>18</slideno>
+          <text>Formulating the LP
+Scheduling Postal Workers 
+Shift Mon -Tues -Wed -Thurs -Fri -Sat -Sun -
+Fri Sat Sun Mon Tues Wed Thurs 
+Day Demand 
+Mon 1 1 1 1 1 17 
+Tues 1 1 1 1 1 13 
+Wed 1 1 1 1 1 15 
+Thurs 1 1 1 1 1 19 
+Fri 1 1 1 1 1 14 
+Sat 1 1 1 1 1 16 
+Sun 1 1 1 1 1 11 
+15.057 Spring 03 Vande Vate 19</text>
+        </slide>
+        <slide>
+          <slideno>21</slideno>
+          <text>Formulating the LP
+Scheduling Postal Workers 
+Shift Mon -Tues -Wed -Thurs -Fri -Sat -Sun -
+Fri Sat Sun Mon Tues Wed Thurs 
+Day Demand 
+Mon 1 1 1 1 1 17 
+Tues 1 1 1 1 1 13 
+Wed 1 1 1 1 1 15 
+Thurs 1 1 1 1 1 19 
+Fri 1 1 1 1 1 14 
+Sat 1 1 1 1 1 16 
+Sun 1 1 1 1 1 11 
+15.057 Spring 03 Vande Vate 22</text>
+        </slide>
+        <slide>
+          <slideno>16</slideno>
+          <text>Enhancement
+Some days we will have too many workers
+Excess 
+Only concerned with the largest excess
+Minimize the largest Excess
+15.057 Spring 03 Vande Vate 17</text>
+        </slide>
+        <slide>
+          <slideno>6</slideno>
+          <text>Singapore Electric Generator 
+Singapore Electric Generator Produc tion 
+Unit Costs Jan Feb Mar Apr. May 
+Produc tion $ 28.00 $ 27.00 $ 27.80 $ 29.00 
+Inventory $ 0.30 $ 0.30 $ 0.30 $ 0.30 
+Produc tion Q ty 0 0 0 0 
+Produc tion Limits 60 62 64 66 
+Beginning Inventory 15 -43 -79 -113 
+Delivery Reqmts 58 36 34 59 Minimum 
+Ending Inventory (43) (79) (113) (172) 7 
+Produc tion Cost $ - $ - $ - $ -
+Inventory Cost $ (4.20) $ (18.30) $ (28.80) $ (42.75) Total 
+Total Cost $ (4.20) $ (18.30) $ (28.80) $ (42.75) $ (94.05) 
+15.057 Spring 03 Vande Vate 7</text>
+        </slide>
+        <slide>
+          <slideno>4</slideno>
+          <text>Average Balances 
+Assuming Smooth Cash Flows 
+a Averages (Starting + Ending)/2 
+15.057 Spring 03 Vande Vate 5</text>
+        </slide>
+        <slide>
+          <slideno>1</slideno>
+          <text>Dynamic Inventory Model 
+Modeling Time
+Modeling Inventory
+Unusual Network Example
+15.057 Spring 03 Vande Vate 2</text>
+        </slide>
+        <slide>
+          <slideno>5</slideno>
+          <text>Challenge 
+Formulate a Solver Model
+15.057 Spring 03 Vande Vate 6</text>
+        </slide>
+        <slide>
+          <slideno>13</slideno>
+          <text>Formulating as an LP
+The Objective 
+Total Workers Required 
+Minimize $I$5 
+The decision variables 
+The number of workers assigned to each shift 
+$B$5:$H$5 
+The Constraints 
+Enough workers each day 
+$I$6:$I$12 &gt;= $J$6:$J$12 
+15.057 Spring 03 Vande Vate 14</text>
+        </slide>
+        <slide>
+          <slideno>23</slideno>
+          <text>Summary 
+More LP Modeling
+LPs are more general than Networks
+Modeling Time
+Clever choices of decision variables
+15.057 Spring 03 Vande Vate 24</text>
+        </slide>
+      </slides>
+      <videos/>
+    </lecture>
+    <lecture>
+      <lecture_title>Non-Linear Programming (PDF)</lecture_title>
+      <lecture_pdf_url>https://ocw.mit.edu/courses/15-057-systems-optimization-spring-2003/resources/14variability/</lecture_pdf_url>
+      <lectureno>14</lectureno>
+      <slides>
+        <slide>
+          <slideno>35</slideno>
+          <text>Differences
+Constant Stream of Releases punctuated 
+by Expediting and Curtailing 
+If supplier can see inventory, 
+can anticipate expedited and curtailed orders 
+Have to set a lower bound &gt; 0 to protect 
+against disruptions  safety stock 
+15.057 Spring 03 Vande Vate 36</text>
+        </slide>
+        <slide>
+          <slideno>24</slideno>
+          <text>Trade-offs
+Opportunity
+cost of Cash 
+Balance 
+Transaction 
+costs of 
+investing and
+selling assets
+Cost of 
+holding
+Inventory 
+Supply chain
+costs of 
+expeditingand curtailing
+orders 
+Set the controls, T, t and b to balance these costs 
+15.057 Spring 03 Vande Vate 25</text>
+        </slide>
+        <slide>
+          <slideno>31</slideno>
+          <text>The Total Cost Formula
+hQ/2 + F(   )/Q + h 2/2(  ) + f(  ) 
+EOQ: Transaction Constant that doesnt depend on Q 
+EOQ: Inventory 
+The best Q balances inventory and ordering 
+costs: 
+hQ/2 = F(   )/Q 
+Q2 = 2F(   )/h 
+Q = 2F(  )/h 
+15.057 Spring 03 Vande Vate 32</text>
+        </slide>
+        <slide>
+          <slideno>37</slideno>
+          <text>Example: Inventory
+1000 
+900 
+800 
+700 
+600 
+500 
+400 
+300 
+200 
+100 
+0 
+15.057 Spring 03 Vande Vate 38</text>
+        </slide>
+        <slide>
+          <slideno>5</slideno>
+          <text>Illustration
+Consumer Sales at Retailer 
+1000 
+900 Consumer demandP&amp;G Ord er 800 
+700 
+600 
+500 
+400 
+300 
+200 
+100 
+0 
+1 
+13 
+5 
+7 
+9 
+11 
+13 
+15 
+17 
+19 
+21 
+23 
+25 
+27 
+29 
+31 
+33 
+35 
+37 
+39 
+41 
+P&amp;G's Orders w ith 3M 
+1000 
+6 900 
+800 
+700 
+600 
+500 
+400 
+300 
+10 15.057 Spring 03 Vande Vate 
+4 
+7 
+13 
+16 
+19 
+22 
+28 
+40 200 
+100 
+0 
+25 
+31 
+34 
+37</text>
+        </slide>
+        <slide>
+          <slideno>17</slideno>
+          <text>A Financial Model 
+From Revenues 
+Cash Expenses 
+Cash Acct
+15.057 Spring 03 Vande Vate 18</text>
+        </slide>
+        <slide>
+          <slideno>21</slideno>
+          <text>Controls 
+T 
+b t 
+15.057 Spring 03 Vande Vate 22</text>
+        </slide>
+        <slide>
+          <slideno>3</slideno>
+          <text>Illustration
+Retailer's  Ord ers to Dist ributor 
+1000 
+900 
+800 
+700 
+600 
+500 
+400 
+300 
+200 
+100 
+0 
+Distributor's Orders to P&amp;G 
+1000 
+900 800 
+700 
+600 
+500 
+400 
+300 
+Distributor Order Retailer Order 
+1 
+3 
+5 
+7 
+9 
+11 
+13 
+15 
+17 
+19 
+21 
+23 
+25 
+27 
+29 
+31 
+33 
+35 
+37 
+39 
+41 
+200 
+100 
+0 
+1 
+3 
+5 
+7 
+9 
+11 
+13 
+15 
+17 
+19 
+21 
+23 
+25 
+27 
+29 
+31 
+33 
+35 
+37 
+39 
+41 
+15.057 Spring 03 Vande Vate 4</text>
+        </slide>
+        <slide>
+          <slideno>20</slideno>
+          <text>Controls 
+When Cash 
+balance 
+falls to here Sell assets 
+to bring it 
+to here 
+15.057 Spring 03 Vande Vate 21</text>
+        </slide>
+        <slide>
+          <slideno>27</slideno>
+          <text>Release Variability
+Daily Receipt 
+1400 
+1200 
+1000 
+800 
+600 
+400 
+200  = 367  = 412 68% of time usage is 
+between 0 and 800 
+0
+01-Apr-02 06-Apr-02 11-Apr-02 16-Apr-02 21-Apr-02 26-Apr-02</text>
+        </slide>
+        <slide>
+          <slideno>11</slideno>
+          <text>Release Variability
+Daily Receipt 
+1400 
+1200 
+1000 
+800 
+600 
+400 
+200 
+0 
+01-Apr-02 06-Apr-02 11-Apr-02 16-Apr-02 21-Apr-02 26-Apr-02</text>
+        </slide>
+        <slide>
+          <slideno>7</slideno>
+          <text>Forecasting 
+Poorer forecasts More variability 
+Less reliable supply 
+15.057 Spring 03 Vande Vate 8</text>
+        </slide>
+        <slide>
+          <slideno>4</slideno>
+          <text>Illustration
+Distributors Orders to P&amp;G 
+1000 P&amp;G Ord er Distributor Order 900 
+800 
+700 
+600 
+500 
+400 
+300 
+200 
+100 
+0 
+1 
+3 
+15.057 Spring 03 Vande Vate 
+5 
+7 
+9 
+11 
+13 
+15 
+17 
+19 
+21 
+23 
+25 
+27 
+29 
+31 
+33 
+35 
+37 
+39 
+41 
+P&amp;G's Orders w ith 3M 
+1000 
+5 900 
+800 
+700 
+600 
+500 
+400 
+300 
+40 200 
+100 
+0 
+37 1 
+4 
+7 
+10 
+13 
+16 
+19 
+22 
+28 
+31 25 
+34</text>
+        </slide>
+        <slide>
+          <slideno>2</slideno>
+          <text>Illustration
+Consumer Sales at Retailer 
+1000 
+900 Retailer Order Consumer demand 800 
+700 
+600 
+500 
+400 
+300 
+200 
+100 
+0 
+1 
+3 
+5 
+7 
+9 
+11 
+13 
+15 
+17 
+19 
+21 
+23 
+25 
+27 
+29 
+31 
+33 
+35 
+37 
+39 
+41 
+Retailer's  Ord ers to Dist ributor 
+1000 
+900 
+800 
+700 
+600 
+500 
+400 
+300 
+11 15.057 Spring 03 Vande Vate 
+13 
+15 
+17 
+19 
+21 
+23 
+25 
+27 
+29 200 
+100 
+0 
+1 
+3 
+5 
+7 
+9 
+31 
+33 
+35 
+37 
+39 3 41</text>
+        </slide>
+        <slide>
+          <slideno>34</slideno>
+          <text>Two-sided Version
+If inventory grows too large, curtail 
+shipments 
+Whats too large? 
+How much should we curtail? 
+If expediting is expensive 
+create a positive drift 
+order more than you need curtail shipments when inventory is too high 
+15.057 Spring 03 Vande Vate 35</text>
+        </slide>
+        <slide>
+          <slideno>14</slideno>
+          <text>Expediting 
+Expedited Service 
+Required rate of conveyances
+Lower Capacity 
+Utilized Capacity 
+15.057 Spring 03 Vande Vate 15
+Time</text>
+        </slide>
+        <slide>
+          <slideno>33</slideno>
+          <text>The Total Cost Formula
+hQ/2 + h 2/2r + fr + Fr/Q 
+EOQ: Transaction EOQ: Inventory 
+Constant that doesnt depend on r 
+The best drift rate r =   balances 
+inventory and ordering costs: 
+h2/2r = fr + Fr/Q 
+r2 = h2Q/2(F+fQ) 
+r = h2Q/2(F+fQ )
+15.057 Spring 03 Vande Vate 34</text>
+        </slide>
+        <slide>
+          <slideno>19</slideno>
+          <text>Controls 
+When Cash Invest balance reaches enough 
+to bring it 
+to here 
+here 
+15.057 Spring 03 Vande Vate 20</text>
+        </slide>
+        <slide>
+          <slideno>15</slideno>
+          <text>Ideal Supply Chain 
+Same requirements every day
+No excess capacity
+No inventory 
+No service failures
+Minimum Cost
+15.057 Spring 03 Vande Vate 16</text>
+        </slide>
+        <slide>
+          <slideno>23</slideno>
+          <text>Inventory Analogy 
+Cash Expenses Daily Production reqs.
+From Revenue Constant supplies
+Sell Assets Expedited order
+Invest Excess Curtailed order
+15.057 Spring 03 Vande Vate 24</text>
+        </slide>
+        <slide>
+          <slideno>8</slideno>
+          <text>Causes of Bullwhip Today 
+Product Proliferation/Mass 
+Customization 
+More varieties of products 
+Build-to-Order 
+Prohibits pooling orders to smooth 
+requirements 
+Lean 
+Prevents pooling releases to smooth demand on the supply chain 
+15.057 Spring 03 Vande Vate 9</text>
+        </slide>
+        <slide>
+          <slideno>6</slideno>
+          <text>What Are the Effects? 
+What problems, costs, challenges does 
+this create for the players in the 
+supply chain? 
+What problems does this create for the 
+product in the market place? 
+15.057 Spring 03 Vande Vate 7</text>
+        </slide>
+        <slide>
+          <slideno>30</slideno>
+          <text>EOQ as Special Case 
+Order Q 
+Time between orders is Q/(   ) 
+Order frequency is (   )/Q 
+Average Inventory is Q/2 + 2/2(  ) 
+Average Cost is 
+Expediting Cost: (F+fQ)(   )/Q 
+Inventory Cost: h(Q/2 + 2/2(  )) 
+15.057 Spring 03 Vande Vate 31</text>
+        </slide>
+        <slide>
+          <slideno>25</slideno>
+          <text>The Traditional Model 
+1
+0 1 2 k M    p1 p2 pk 
+q2 qk1-(p1+ q1) 
+q1 1
+A Markov Model
+15.057 Spring 03 Vande Vate
+ 26</text>
+        </slide>
+        <slide>
+          <slideno>0</slideno>
+          <text>Variability 
+The Bull Whip Effect 
+A Vicious Cycle 
+Build-to-Order, Lean, JIT,  
+Managing Variability: A different view of 
+inventory 
+15.057 Spring 03 Vande Vate 1</text>
+        </slide>
+        <slide>
+          <slideno>10</slideno>
+          <text>Why Not Lean? 
+Capacity 
+Changes in requirements create upstream 
+inventory 
+Changes in requirements raise transport 
+costs 
+Reliability 
+Distant suppliers subject to disruption 
+15.057 Spring 03 Vande Vate 11</text>
+        </slide>
+        <slide>
+          <slideno>22</slideno>
+          <text>Trade-offs
+Opportunity cost of Cash Balance 
+Transaction costs of investing and
+selling assets 
+Set the controls, T, t and b to balance these costs 
+15.057 Spring 03 Vande Vate 23</text>
+        </slide>
+        <slide>
+          <slideno>13</slideno>
+          <text>Freight Cost 
+Capacity 
+Utilized Capacity Required rate of conveyances 
+15.057 Spring 03 Vande Vate 14Time</text>
+        </slide>
+        <slide>
+          <slideno>29</slideno>
+          <text>Trade offs
+Expediting disrupts the supply chain 
+Fixed cost F for each time we expedite 
+Variable cost f for each item in the order 
+holding cost h for inventory 
+Larger orders mean less frequent but 
+larger disruptions and more inventory
+15.057 Spring 03 Vande Vate 30</text>
+        </slide>
+        <slide>
+          <slideno>36</slideno>
+          <text>Example: Shipments 
+300 
+250 
+200 
+150 
+100 
+50 
+0 
+1 
+8 
+15 
+22 
+29 
+36 
+43 
+50 
+57 
+64 
+71 
+78 
+85 
+92 
+99 
+106 
+113 
+120 
+127 
+134 
+141 
+148 
+155 
+162 
+169 
+176 
+183 
+190 
+197 
+204 
+211 
+218 
+225 
+232 
+239 
+246 
+15.057 Spring 03 Vande Vate 37</text>
+        </slide>
+        <slide>
+          <slideno>16</slideno>
+          <text>Buffer Inventory with 
+Constant Supply 
+15.057 Spring 03 Vande Vate 17 
+Volume 
+Time Variation in Demand 
+Variation in Buffer</text>
+        </slide>
+        <slide>
+          <slideno>26</slideno>
+          <text>Challenges 
+Data intensive: pis and qis 
+Computationally intensive 
+Alternative 
+Brownian motion 
+Inventory behaves like 
+a rando m wal k 
+Model of a particle in  space 
+Two parameters: mean and variance 
+Advanced calculus methods make it easy to work with 
+15.057 Spring 03 Vande Vate 27</text>
+        </slide>
+        <slide>
+          <slideno>12</slideno>
+          <text>Managing Variability 
+Capacity Buffer 
+Inventory Buffer 
+Time Buffer 
+15.057 Spring 03 Vande Vate 13</text>
+        </slide>
+        <slide>
+          <slideno>32</slideno>
+          <text>Fixed Expediting Quantity 
+Find the best nominal release rate  
+to get the right frequency of expediting 
+15.057 Spring 03 Vande Vate 33</text>
+        </slide>
+        <slide>
+          <slideno>9</slideno>
+          <text>Why Lean (Just-In-Time)? 
+Reduces inventory 
+Capital requirements 
+Etc 
+Reduces handling 
+Direct-to-Line 
+Improves Quality 
+See problems quickly 
+Increases launch speed
+15.057 Spring 03 Vande Vate 10</text>
+        </slide>
+        <slide>
+          <slideno>1</slideno>
+          <text>Example 
+Procter &amp; Gamble: Pampers 
+Smooth consumer demand 
+Fluctuating sales at retail stores 
+Highly variable demand on distributors
+Wild swings in demand on 
+manufacturing 
+Greatest swings in demand on suppliers 
+15.057 Spring 03 Vande Vate 2</text>
+        </slide>
+        <slide>
+          <slideno>18</slideno>
+          <text>A Financial Model 
+From Revenues 
+Cash Expenses 
+Sell Assets 
+Invest 
+Cash Acct
+15.057 Spring 03 Vande Vate 19</text>
+        </slide>
+        <slide>
+          <slideno>28</slideno>
+          <text>The EOQ as a Special Case 
+Average usage rate  
+Variance in usage 2 
+Nominal release rate  &lt;  
+Since we order less than we consume, 
+inventory drifts downward 
+How much should we expedite when it reaches 0? 
+15.057 Spring 03 Vande Vate 29</text>
+        </slide>
+      </slides>
+      <videos/>
+    </lecture>
+    <lecture>
+      <lecture_title>PDF - 1.2 MB</lecture_title>
+      <lecture_pdf_url>https://ocw.mit.edu/courses/15-057-systems-optimization-spring-2003/resources/13nonlinear/</lecture_pdf_url>
+      <lectureno>13</lectureno>
+      <slides>
+        <slide>
+          <slideno>52</slideno>
+          <text>The Idea 
+Balance the risks 
+Look at the last item 
+What did it promise? 
+What risk did it pose? 
+If Promise is greater than the risk?
+If the Risk is greater than the 
+promise? 
+15.057 Spring 03 Vande Vate 53</text>
+        </slide>
+        <slide>
+          <slideno>1</slideno>
+          <text>Hierarchy of Models 
+Network Flows 
+Linear Programs 
+Mixed Integer Linear Programs 
+15.057 Spring 03 Vande Vate 2</text>
+        </slide>
+        <slide>
+          <slideno>27</slideno>
+          <text>Modeling Costs 
+D is the annual demand 
+How many orders do we place? 
+D/Q 
+Transaction cost is A per transaction 
+Total Transaction Cost 
+AD/Q 
+15.057 Spring 03 Vande Vate 28</text>
+        </slide>
+        <slide>
+          <slideno>0</slideno>
+          <text>Non-Linear Optimization 
+Distinguishing Features 
+Common Examples 
+EOQ 
+Balancing Risks 
+Minimizing Risk 
+15.057 Spring 03 Vande Vate 1</text>
+        </slide>
+        <slide>
+          <slideno>47</slideno>
+          <text>Variance 
+Nomal Distributions with Different Variances 
+0.45 
+0.4 
+0.35 
+0.3 
+0.25 
+0.2 
+0.15 
+0.1 
+0.05 Variance 1 
+Variance 9 
+0 
+-10 -8 -6 -4 -2 0 2 4 6 8 10 
+15.057 Spring 03 Vande Vate 48</text>
+        </slide>
+        <slide>
+          <slideno>39</slideno>
+          <text>Empirical vs Theoretical 
+One Perspective: If the die are fair 
+and we roll many many times, 
+empirical should match theoretical. 
+Another Perspective: If the die are 
+reasonably fair, the theoretical is close 
+and saves the trouble of rolling.
+15.057 Spring 03 Vande Vate 40</text>
+        </slide>
+        <slide>
+          <slideno>31</slideno>
+          <text>Value?
+No one can agree on the ordering cost
+Each value of the ordering cost implies
+A value of Q from which we get 
+An inventory investment c*Q/2 
+A number of orders per year: D/Q 
+Trace the balance for each value of 
+ordering costs 
+15.057 Spring 03 Vande Vate 32</text>
+        </slide>
+        <slide>
+          <slideno>8</slideno>
+          <text>Whats Easy 
+Find the minimum of a Convex 
+Set Function over (subject to) a Convex 
+15.057 Spring 03 Vande Vate 9</text>
+        </slide>
+        <slide>
+          <slideno>22</slideno>
+          <text>Steepest Descent 
+If 0 is not a subgradient at x, subgradient 
+indicates where to go 
+Direction of steepest descent 
+Find the best point in that direction 
+line search 
+15.057 Spring 03 Vande Vate 23</text>
+        </slide>
+        <slide>
+          <slideno>18</slideno>
+          <text>Solving f(x) = 0 
+Newtons Method 
+Approximate using gradient 
+f(y) f(x) + (y-x)tHx(y-x) 
+Computing next iterate involves inverting Hx 
+Quasi-Newton Methods 
+Approximate H and update the approximation 
+so we can easily update the inverse 
+(BFGS) Broyden, Fletcher, Goldfarb, Shanno
+15.057 Spring 03 Vande Vate 19</text>
+        </slide>
+        <slide>
+          <slideno>30</slideno>
+          <text>Key Assumptions? 
+Known constant rate of demand 
+15.057 Spring 03 Vande Vate 31</text>
+        </slide>
+        <slide>
+          <slideno>25</slideno>
+          <text>The Idea 
+Increase the order size until the 
+incremental cost of holding the last item 
+equals the incremental savings in ordering 
+costs 
+If the costs exceed the savings? 
+If the savings exceed the costs? 
+15.057 Spring 03 Vande Vate 26</text>
+        </slide>
+        <slide>
+          <slideno>58</slideno>
+          <text>Constrained Optimization 
+Feasible Direction techniques
+Eliminating constraints 
+Implicit Function 
+Penalty Methods 
+Duality 
+15.057 Spring 03 Vande Vate 59</text>
+        </slide>
+        <slide>
+          <slideno>60</slideno>
+          <text>Constrained Optimization 
+Penalty Methods 
+Move constraints to objective with penalties 
+or barriers 
+As solution approaches the constraint the penalty 
+increases 
+Example: 
+min f(x) =&gt; min f(x) + t/(3x - x2) 
+s.t. x2  3x 
+as x2 approaches 3x, penalty increases rapidly 
+15.057 Spring 03 Vande Vate 61</text>
+        </slide>
+        <slide>
+          <slideno>11</slideno>
+          <text>Academic Questions 
+Is a linear function convex or concave? 
+Do the feasible solutions of a linear 
+program form a convex set? 
+program form a convex set? 
+12 Do the feasible solutions of an integer 
+15.057 Spring 03 Vande Vate</text>
+        </slide>
+        <slide>
+          <slideno>48</slideno>
+          <text>Std. Deviation
+Variance is measured in units squared 
+Think sum of squared errors 
+Standard Deviation is the square root
+Its measured in the same units as the 
+random variable 
+The two rise and fall together 
+Coefficient of Variation 
+Standard Deviation/Mean 
+Spread relative to the Average 
+15.057 Spring 03 Vande Vate 49</text>
+        </slide>
+        <slide>
+          <slideno>26</slideno>
+          <text>Modeling Costs 
+Q is the order quantity 
+Average inventory level is 
+Q/2 
+h*c is the Inv. Cost. in $/unit/year 
+Total Inventory Cost 
+h*c*Q/2 
+Last item contributes what to inventory 
+cost? 
+h*c/2 
+15.057 Spring 03 Vande Vate 27</text>
+        </slide>
+        <slide>
+          <slideno>35</slideno>
+          <text>Variability 
+Some events are inherently variable 
+When customers arrive
+How many customers arrive
+Transit times
+Daily usage 
+Stock Prices
+...
+Hard to predict exactly 
+Dice Lotteries 
+15.057 Spring 03 Vande Vate 36</text>
+        </slide>
+        <slide>
+          <slideno>43</slideno>
+          <text>Continuous Distribution 
+Standard Normal Distribution 
+0.45 
+0.4 
+0.35 
+0.3 
+0.25 
+0.2 
+0.15 
+0.1 
+0.05 Probability the random variable 
+is greater than 2 is the area under the curve above 2 
+0 
+-10 -8 -6 -4 -2 0 2 4 6 8 10 
+15.057 Spring 03 Vande Vate 44</text>
+        </slide>
+        <slide>
+          <slideno>38</slideno>
+          <text>Theoretical vs Empirical 
+Empirical Distribution 
+Based on observations 
+Value 2 3 4 5 6 7 8 9 10 11 12 
+Number of Outcomes 1 2 1 5 3 9 8 3 3 1 -
+Fraction of Outcomes 0.03 0.06 0.03 0.14 0.08 0.25 0.22 0.08 0.08 0.03 -
+Theoretical Distribution 
+Based on a model 
+Value 2 3 4 5 6 7 8 9 10 11 12 
+Fraction of Outcomes 0.03 0.06 0.08 0.11 0.14 0.17 0.14 0.11 0.08 0.06 0.03 
+15.057 Spring 03 Vande Vate 39</text>
+        </slide>
+        <slide>
+          <slideno>45</slideno>
+          <text>Summary Stats 
+The Mean 
+Weights each outcome by its 
+probability 
+AKA 
+Expected Value 
+Average 
+May not even be possible 
+Example: 
+Win $1 on Heads, nothing on Tails 
+15.057 Spring 03 Vande Vate 46</text>
+        </slide>
+        <slide>
+          <slideno>4</slideno>
+          <text>Convexity 
+The Distinguishing Feature
+Separates Hard from Easy
+Convex Combination 
+Weighted Average 
+Non-negative weights 
+Weights sum to 1 
+15.057 Spring 03 Vande Vate 5</text>
+        </slide>
+        <slide>
+          <slideno>2</slideno>
+          <text>15.057 Spring 03 Vande Vate 3 
+A More Academic View 
+Network Flows 
+Linear Programs 
+Convex Optimization Mixed Integer 
+Linear 
+Programs Non-Convex Optimization</text>
+        </slide>
+        <slide>
+          <slideno>37</slideno>
+          <text>Distribution 
+The values of a random variable and their 
+frequencies 
+Example: Rolling 2 Fair Die 
+34 
+33 43 44 
+32 42 52 53 54 
+22 23 24 25 35 45 55 
+21 31 41 51 61 62 63 64 65 
+11 12 13 14 15 16 26 36 46 56 66 
+Number  of  Outcomes 1 2 3 4 5 6 5 4 3 2 1 
+Fraction of Outcomes 0.028 0.056 0.083 0.111 0.139 0.167 0.139 0.111 0.083 0.056 0.028 
+Value 2 3 4 5 6 7 8 9 10 11 12 
+15.057 Spring 03 Vande Vate 38</text>
+        </slide>
+        <slide>
+          <slideno>42</slideno>
+          <text>Probability 
+Discrete: Whats the probability we roll a 
+12 with two fair die: 
+1/36 
+Continuous: Whats the probability the 
+temperature will be exactly 72.00o F 
+tomorrow at noon EST? 
+Zero! 
+Events: Whats the probability that the temperature will be at least 72
+o F 
+tomorrow at noon EST? 
+15.057 Spring 03 Vande Vate 43</text>
+        </slide>
+        <slide>
+          <slideno>23</slideno>
+          <text>Examples 
+EOQ Model 
+Balancing Risk 
+Minimizing Risk 
+15.057 Spring 03 Vande Vate 24</text>
+        </slide>
+        <slide>
+          <slideno>16</slideno>
+          <text>Convex Optimization 
+Unconstrained Optimization 
+If the partial derivatives exist (smooth) 
+find a point where the gradient is 0 
+Otherwise (not smooth) 
+find point where 0 is a subgradient 
+15.057 Spring 03 Vande Vate 17</text>
+        </slide>
+        <slide>
+          <slideno>7</slideno>
+          <text>Convex Set
+A set S is CONVEX if every convex 
+combination of points in S is also in S 
+The set of points above a convex function
+Conve x Fun ction 
+800 
+700 
+600 
+500 
+400 
+300 
+200 
+100 
+0 
+0 5 10 15 20 25 30 
+15.057 Spring 03 Vande Vate 8</text>
+        </slide>
+        <slide>
+          <slideno>49</slideno>
+          <text>Balancing Risk 
+Basic Insight 
+Bet on the outcome of a variable process 
+Choose a value 
+You pay $0.5/unit for the amount your bet 
+exceeds the outcome 
+You earn the smaller of your value and the 
+outcome 
+Question: What value do you choose? 
+15.057 Spring 03 Vande Vate 50</text>
+        </slide>
+        <slide>
+          <slideno>51</slideno>
+          <text>The Distribution
+Distribution 
+0.45 
+0.4 
+0.35 
+0.3 
+0.25 
+0.2 
+0.15 
+0.1 
+0.05 
+Mean 
+Std. Dev. 1 5 
+0 
+0 2 4 6 8 10 12 
+15.057 Spring 03 Vande Vate 52</text>
+        </slide>
+        <slide>
+          <slideno>12</slideno>
+          <text>Ugly - Hard
+Cost 
+Volume15.057 Spring 03 Vande Vate 13</text>
+        </slide>
+        <slide>
+          <slideno>28</slideno>
+          <text>Total Cost 
+Total Cost = h*cQ/2 + AD/Q
+Total Cost 
+120 
+100 
+80 
+60 
+40 
+20 What kind of function? 
+0 
+0 10 20 30 40 50 60 70 
+Order Quantity 
+15.057 Spring 03 Vande Vate 29</text>
+        </slide>
+        <slide>
+          <slideno>33</slideno>
+          <text>The Tradeoff Benchmark
+EOQ Trade off 
+$3,000 
+$2,500 
+$2,000 
+$1,500 
+$1,000 
+$500 
+Inventory Investm ent 
+Where are you? 
+Where can you be? 
+But wait! What prevents getting there? 
+$0 
+0 50 100 150 200 250 300 
+Orders Per Year 
+15.057 Spring 03 Vande Vate 34</text>
+        </slide>
+        <slide>
+          <slideno>32</slideno>
+          <text>The EOQ Trade off
+Known values 
+Annual Demand D 
+Product value c Inventory carrying percentage h 
+Unknown transaction cost A 
+For each value of A 
+Calculate Q = 2AD/(h*c) 
+Calculate Inventory Investment cQ/2 Calculate Annual Orders D/Q 
+15.057 Spring 03 Vande Vate 33</text>
+        </slide>
+        <slide>
+          <slideno>54</slideno>
+          <text>Balancing Risk and Reward 
+Expected Revenue 
+$1*Probability Outcome is greater 
+than our choice 
+Expected Risk 
+$0.5*Probability Outcome is smaller 
+than our choice 
+How are probabilities Related? 
+15.057 Spring 03 Vande Vate 55</text>
+        </slide>
+        <slide>
+          <slideno>5</slideno>
+          <text>Convex Functions 
+The 
+function 
+lies 
+below 
+the line Convex Function 
+800
+700
+600
+500
+400
+300
+200
+100
+0 Examples? 
+Convex 
+combinations of the 
+values 
+0 5 10 15 20 25 30
+15.057 Spring 03 Vande Vate 6</text>
+        </slide>
+        <slide>
+          <slideno>59</slideno>
+          <text>Feasible Directions
+Unconstrained OptimizationX 
+Start at a point: x0 
+Identify an^ improving direction: d
+FeasibleFind a best ^ solution in direction d: x + d 
+Feasible
+Repeat 
+A Feasible direction: one you can move in
+A Feasible solution: dont move too far. 
+Typically for Convex feasible region 
+15.057 Spring 03 Vande Vate 60</text>
+        </slide>
+        <slide>
+          <slideno>61</slideno>
+          <text>Relatively reliable tools for 
+Quadratic objective 
+Linear constraints 
+Continuous variables 
+15.057 Spring 03 Vande Vate 62</text>
+        </slide>
+        <slide>
+          <slideno>24</slideno>
+          <text>EOQ
+How large should each order be
+Trade-off 
+Cost of Inventory (known) 
+Cost of transactions (what?) 
+Larger orders 
+Higher Inventory Cost Lower Ordering Costs 
+15.057 Spring 03 Vande Vate 25</text>
+        </slide>
+        <slide>
+          <slideno>41</slideno>
+          <text>Continuous vs Discrete 
+Discrete 
+Value of dice 
+Number of units sold 
+ 
+Continuous 
+Essentially, if we measure it, its discrete 
+Theoretical convenience 
+15.057 Spring 03 Vande Vate 42</text>
+        </slide>
+        <slide>
+          <slideno>56</slideno>
+          <text>Balance
+Expected Revenue 
+$1*(1- Probability Outcome is smaller than our 
+choice) 
+Expected Risk 
+$0.5*Probability Outcome i s smaller than our choice 
+Set these equal 
+1*(1-P) = 0.5*P
+1 = 1.5*P
+2/3 = P = 
+Probability Outcome is smaller than our choice
+15.057 Spring 03 Vande Vate 57</text>
+        </slide>
+        <slide>
+          <slideno>50</slideno>
+          <text>Similar to...
+Anything you are familiar with?
+15.057 Spring 03 Vande Vate 51</text>
+        </slide>
+        <slide>
+          <slideno>40</slideno>
+          <text>Empirical vs Theoretical 
+The Empirical Distribution is flawed 
+because it relies on limited 
+observations 
+The Theoretical Distribution is 
+flawed because it necessarily 
+ignores details about reality 
+Exactitude? Its random. 
+15.057 Spring 03 Vande Vate 41</text>
+        </slide>
+        <slide>
+          <slideno>17</slideno>
+          <text>Unconstrained Convex 
+Optimization 
+Smooth 
+Find a point where the Gradient is 0 
+Find a solution to  f(x) = 0 
+Analytically (when possible) 
+Iteratively otherwise 
+15.057 Spring 03 Vande Vate 18</text>
+        </slide>
+        <slide>
+          <slideno>34</slideno>
+          <text>Balancing Risks 
+15.057 Spring 03 Vande Vate 35</text>
+        </slide>
+        <slide>
+          <slideno>15</slideno>
+          <text>Agenda
+Convex Optimization 
+Unconstrained Optimization 
+Constrained Optimization 
+Non-Convex Optimization 
+Convexification Heuristics 
+15.057 Spring 03 Vande Vate 16</text>
+        </slide>
+        <slide>
+          <slideno>10</slideno>
+          <text>Whats Easy 
+Find the maximum of a Concave 
+Set. Function over (subject to) a Convex 
+15.057 Spring 03 Vande Vate 11</text>
+        </slide>
+        <slide>
+          <slideno>14</slideno>
+          <text>Review
+Convex Optimization 
+Convex (min) or Concave (max) objective 
+Convex feasible region 
+Non-Convex Optimization 
+Stochastic Optimization 
+Incorporates Randomness 
+15.057 Spring 03 Vande Vate 15</text>
+        </slide>
+        <slide>
+          <slideno>3</slideno>
+          <text>15.057 Spring 03 Vande Vate 4 
+A More Academic View 
+Networks &amp; Linear Models 
+Convex Optimization Integer Models 
+Non-Convex Optimization</text>
+        </slide>
+        <slide>
+          <slideno>19</slideno>
+          <text>Line Search
+Newton/Quasi-Newton Methods yield 
+direction to next iterate 
+1-dimensional search in this direction
+Several methods 
+15.057 Spring 03 Vande Vate 20</text>
+        </slide>
+        <slide>
+          <slideno>46</slideno>
+          <text>Summary Stats 
+The Variance 
+Measures spread about the mean 
+How unpredictable is the thing
+Nomal Distributions with Different Variances 
+0.45 
+0.4 
+0.35 
+0.3 
+0.25 Which would you rather manage? 
+0.2 
+0.15 
+0.1 
+Variance 1 
+Variance 9 
+0.05 
+0 
+-10 -8 -6 -4 -2 0 2 4 6 8 10 
+15.057 Spring 03 Vande Vate 47</text>
+        </slide>
+        <slide>
+          <slideno>36</slideno>
+          <text>Random Variables 
+Examples 
+Outcome of rolling a dice 
+Closing Stock price 
+Daily usage 
+Time between customer arrivals Transit time 
+Seasonal Demand 
+15.057 Spring 03 Vande Vate 37</text>
+        </slide>
+        <slide>
+          <slideno>44</slideno>
+          <text>Total Probability 
+Empirical, Theoretical, Continuous, 
+Discrete,  
+Probability is between 0 and 1
+Total Probability (over all possible 
+outcomes) is 1
+15.057 Spring 03 Vande Vate
+ 45</text>
+        </slide>
+        <slide>
+          <slideno>53</slideno>
+          <text>Measuring Risk and Return 
+Revenue from the last item 
+$1 if the Outcome is greater,$0 otherwise 
+Expected Revenue 
+$1*Probability Outcome is greater than our choice 
+Risk posed by last item 
+$0.5 if the Outcome is smaller, $0 otherwise 
+Expected Risk 
+$0.5*Probability Outcome is smaller than our choice 
+15.057 Spring 03 Vande Vate 54</text>
+        </slide>
+        <slide>
+          <slideno>57</slideno>
+          <text>Making the Choice 
+Distribution 
+0.45 
+0.4 
+0.35 
+0.3 
+0.25 
+0.2 
+0.15 
+0.1 
+0.05 
+Prob. Outcome is smaller 
+Our choice 
+2/3 Cumulative 
+Probability 
+0 
+0 2 4 6 8 10 12 
+15.057 Spring 03 Vande Vate 58</text>
+        </slide>
+        <slide>
+          <slideno>6</slideno>
+          <text>Whats Easy 
+Find the minimum of a Convex Function
+A local minimum is a global minimum 
+15.057 Spring 03 Vande Vate 7</text>
+        </slide>
+        <slide>
+          <slideno>29</slideno>
+          <text>Incremental Savings 
+What does the last item save? 
+Savings of Last Item 
+AD/(Q-1) - AD/Q 
+[ADQ - AD(Q-1)]/[Q(Q-1)] ~ AD/Q2 
+Order up to the point that extra carrying 
+costs match incremental savings 
+h*c/2 = AD/Q2 
+Q2 = 2AD/(h*c) 
+Q =  2AD/(h*c) 
+15.057 Spring 03 Vande Vate 30</text>
+        </slide>
+        <slide>
+          <slideno>20</slideno>
+          <text>Unconstrained Convex 
+Optimization 
+Non-smooth 
+Subgradient Optimization 
+Find a point where 0 is a subgradient 
+15.057 Spring 03 Vande Vate 21</text>
+        </slide>
+        <slide>
+          <slideno>62</slideno>
+          <text>Summary 
+Easy Problems 
+Convex Minimization 
+Concave Maximization 
+Unconstrained Optimization 
+Local gradient information 
+Constrained problems 
+Tricks for reducing to unconstrained or simply 
+constrained problems 
+NLP tools practical only for smaller problems
+15.057 Spring 03 Vande Vate 63</text>
+        </slide>
+        <slide>
+          <slideno>55</slideno>
+          <text>Risk &amp; Reward
+Distributio
+n 
+0 0.05 0.1 0.15 0.2 0.35 0.4 0.45 
+Prob. Outcome is smaller 
+Prob. Outcome is larger Our choice 
+How are they 
+related? 
+0 2 4 6 8 10 12
+15.057 Spring 03 Vande Vate 56</text>
+        </slide>
+        <slide>
+          <slideno>13</slideno>
+          <text>Integer Programming is Hard 
+Bands Coils Bands Limit Coils Limit 
+Production Capacity Why? 3
+2
+1
+1 2 3 4
+15.057 Spring 03 Vande Vate 14</text>
+        </slide>
+        <slide>
+          <slideno>9</slideno>
+          <text>Concave Function 
+Concave F unction 
+The 
+function 
+lies 
+ABOVE 
+the line 
+0 50 100 150 200 250 Examples? 
+5 10 15 20 25 30
+15.057 Spring 03 Vande Vate 10</text>
+        </slide>
+        <slide>
+          <slideno>21</slideno>
+          <text>15.057 Spring 03 Vande Vate 22 
+Whats a Subgradient 
+f(y) = f(x) - 2(y-x) 
+x 
+a 0 is a subgradient if and only if ... 1 x  -2 f(y) = f(x) + (y-x) 
+Like a gradient 
+f(y)  f(x) +x(y-x) f(x) is a minimum point</text>
+        </slide>
+      </slides>
+      <videos/>
+    </lecture>
+    <lecture>
+      <lecture_title>IP Modeling (PDF)
+Associated file:
+
+09Lockbox (XLS)</lecture_title>
+      <lecture_pdf_url>https://ocw.mit.edu/courses/15-057-systems-optimization-spring-2003/resources/09integerprogramming2print/</lecture_pdf_url>
+      <lectureno>9</lectureno>
+      <slides>
+        <slide>
+          <slideno>3</slideno>
+          <text>Eliminate Excess Variables
+Assign each customer to a DC 
+s.t. AssignCustomers{cust in CUSTOMERS}: 
+sum{dc in DCS} Assign[cust, dc] &lt;= 1; 
+What improvement? 
+15.057 Spring 03 Vande Vate 4</text>
+        </slide>
+        <slide>
+          <slideno>28</slideno>
+          <text>Constraints
+Lambda[2] = 0 unless activity is between 
+BreakPoint[1] and BreakPoint[2] (Region[2]) or 
+BreakPoint[2] and BreakPoint[3] (Region[3]) 
+Lambda[2]  InRegion[2] + InRegion[3]; 
+Minimum 
+Sustainable 
+Level First 
+Break 
+Point Second 
+Break 
+Point Maximum 
+Operating 
+Level InRegion[1] InRegion[2] InRegion[3] Total Cost
+BreakPoint[0] BreakPoint[1] BreakPoint[2] BreakPoint[3] 
+15.057 Spring 03 Vande Vate 29</text>
+        </slide>
+        <slide>
+          <slideno>32</slideno>
+          <text>What we Added
+var InRegion{1..NBreaks} binary; 
+s.t. InOneRegion: 
+sum{b in 1..NBreaks} InRegion[b] &lt;= 1; 
+s.t. EnforceConsecutive{b in 0..NBreaks-1}: 
+Lambda[b] &lt;= InRegion[b] + InRegion[b+1]; 
+s.t. LastLambda: 
+Lambda[NBreaks] &lt;= InRegion[NBreaks]; 
+15.057 Spring 03 Vande Vate 33</text>
+        </slide>
+        <slide>
+          <slideno>29</slideno>
+          <text>And Activity in One Region 
+InRegion[1] + InRegion[2] + InRegion[3]  1
+Why  1?
+If it is in Region[2]:
+Lambda[1]  InRegion[1] + InRegion[2] = 1
+Lambda[2]  InRegion[2] + InRegion[3] = 1
+Other Lambdas are 0 
+15.057 Spring 03 Vande Vate
+ 30</text>
+        </slide>
+        <slide>
+          <slideno>15</slideno>
+          <text>Tighten Bounds
+Function of Continuous Variables &lt;= Limit*Binary 
+Variable 
+Make the Limit as small as possible 
+But not too small 
+Dont eliminate feasible solutions 
+We will see an Example with Ford Finished Vehicle 
+Dist. 
+15.057 Spring 03 Vande Vate 16</text>
+        </slide>
+        <slide>
+          <slideno>12</slideno>
+          <text>Steco Revisited
+13 
+Steco's Warehous e Loc ation M odel 
+Unit Costs Lease 
+Warehouse ($) 1 
+A 7,750$ 170$ $ 70$ 160$ 
+B 4,000$ 150$ $ $ $ 
+C 5,500$ 100$ $ $ $ 
+Decisions Yes/No 1 Total Eff. 
+Cap. Cap. 
+Leas e A 0 0 0 0 0 0 0 200 
+Leas e B 0 0 0 0 0 0 0 250 
+Leas e C 0 0 0 0 0 0 0 300 
+Total TrucksTo 0 
+Demand (Trucks/Mo) 100 90 110 60 
+Lease 
+Cost To 1 o 2 o 3 o 4 Truck 
+$ Total 
+Cost 
+A $ -$ -$ -$ -$ -$ -$ 
+B $ -$ -$ -$ (0) $ (0) $ (0) $ 
+C $ -$ -$ 0$ -$ 0 $ 0 $ 
+Totals -$ -$ -$ 0$ (0) $ 0 $ 0 $ Monthly Trucks From/To Unit Cost/Truck to Sales District 
+4 3 2 
+40
+195 100 10
+240 140 60
+4 3 2 
+0 0 0 
+T T T
+-
+-
+-</text>
+        </slide>
+        <slide>
+          <slideno>1</slideno>
+          <text>Better Models
+Better Formulation can distinguish 
+solvable from not. 
+Often counterintuitive whats better 
+Has led to vastly improved solvers that actually improve your formulation as they 
+solve the problem. 
+15.057 Spring 03 Vande Vate 2</text>
+        </slide>
+        <slide>
+          <slideno>18</slideno>
+          <text>Non-Linear Costs
+M
+id-RangeCost/Unit 
+High-Range Cost/Unit 
+Total Cost 
+Minimum 
+Sustainable 
+Level 
+LowR angeCost/Unit 
+First 
+Break 
+Point Second 
+Break 
+Point Maximum 
+Operating 
+Level Shutdown Cost Fixed Cost 
+0 Volume of Activity 
+15.057 Spring 03 Vande Vate 19</text>
+        </slide>
+        <slide>
+          <slideno>19</slideno>
+          <text>Modeling Economies of Scale
+Linear Programming 
+Greedy
+Takes the High-Range Unit Cost first!
+Integer Programming 
+Add constraints to ensure first things first 
+Several Strategies 
+15.057 Spring 03 Vande Vate 20</text>
+        </slide>
+        <slide>
+          <slideno>23</slideno>
+          <text>Conclusion
+If the Volume of Activity is a fraction  of 
+the way from one breakpoint to the next, 
+the cost will be that same fraction of the 
+way from the cost at the first breakpoint 
+to the cost at the next 
+If Volume = 10  + 20(1- ) 
+Then Cost = 22  + 27(1- ) 
+15.057 Spring 03 Vande Vate 24</text>
+        </slide>
+        <slide>
+          <slideno>30</slideno>
+          <text>We cant go wrong
+Minimum 
+Sustainable 
+Level 
+LowR angeCost/Unit 
+First 
+Break 
+Point Second 
+Break 
+Point Maximum 
+Operating 
+Level X 
+M
+id-RangeCost/Unit 
+High-Range Cost/Unit 
+0 Volume of Activity
+15.057 Spring 03 Vande Vate 31</text>
+        </slide>
+        <slide>
+          <slideno>22</slideno>
+          <text>Convex Combination 
+Weighted Average Total Cost 
+0 First 
+Break 
+Point Second 
+Break 
+Point 
+10 20 $22 $27 
+What will 
+the cost 
+be? 
+1/5th of the way 
+15.057 Spring 03 Vande Vate 23</text>
+        </slide>
+        <slide>
+          <slideno>27</slideno>
+          <text>Role of Integer Variables 
+Total Cost
+Ensure we express Activity as a 
+combination of two consecutive 
+breakpoints 
+var InRegion{1..NBreaks} binary; 
+Minimum 
+Sustainable 
+Level First 
+Break 
+Point Second 
+Break 
+Point Maximum 
+Operating 
+Level InRegion[1] InRegion[2] InRegion[3] 
+0
+15.057 Spring 03 Vande Vate 28</text>
+        </slide>
+        <slide>
+          <slideno>0</slideno>
+          <text>Integer Programming II 
+Modeling to Reduce Complexity 
+Capturing Economies of Scale 
+15.057 Spring 03 Vande Vate 1</text>
+        </slide>
+        <slide>
+          <slideno>17</slideno>
+          <text>Constraints
+s.t. ObserveCapacity{dc in DCS}: 
+sum{cust in CUSTOMERS} 
+Demand[cust]*Assign[dc,cust] &lt;= Capacity[dc]; 
+Example: x1, x2, x3, x4, x5, x6 binary 
+5x1 + 7x2+ 4x3+ 3x4+4x5+ 6x6  14 
+What constraints can we add? 
+x1 + x2 + x3  2 
+x1 + x2 + x6  2 
+ 
+15.057 Spring 03 Vande Vate 18</text>
+        </slide>
+        <slide>
+          <slideno>5</slideno>
+          <text>Adding Stronger Constraints 
+Formulating Current Constraints Better 
+More constraints are generally better 
+Use parameters carefully 
+Creating new constraints that help 
+Some examples 
+15.057 Spring 03 Vande Vate 6</text>
+        </slide>
+        <slide>
+          <slideno>26</slideno>
+          <text>Does that Do It?
+What can go wrong? Total Cost 
+Minimum 
+Sustainable 
+Level 
+LowR angeCost/Unit 
+First 
+Break 
+Point Second 
+Break 
+Point Maximum 
+Operating 
+Level X 
+M
+id-RangeCost/Unit 
+High-Range Cost/Unit 
+0 Volume of Activity 
+15.057 Spring 03 Vande Vate 27</text>
+        </slide>
+        <slide>
+          <slideno>4</slideno>
+          <text>Add Stronger Constraints 
+Bands Coils Bands Limit Coils Limit 
+Production Capacity Valid Constraint : 
+Cuts off Fractional Answers 
+But not Integral Answers 3
+2
+1
+1 2 3 4
+15.057 Spring 03 Vande Vate 5</text>
+        </slide>
+        <slide>
+          <slideno>13</slideno>
+          <text>Challenge 
+Improve the formulation 
+Steco's Warehous e Loc ation M odel 
+Unit Costs Lease 
+Warehous e ($) 1 
+A ,750 $ 170$ $ 70$ 160$ 
+B ,000 $ 150$ $ $ $ 
+C ,500 $ 100$ $ $ $ 
+Decisions Yes/No 1 Total Eff. 
+Cap. Cap. 
+Lease  A 0 0 0 0 200 
+Lease  B 0 0 0 0 250 
+Lease  C 0 0 0 0 300 
+Total TrucksTo 0 
+Demand (Trucks/Mo) 100 90 110 60 
+Lease 
+Cost To 1 o 2 o 3 o 4 Truc k 
+$ Total 
+Cost 
+A $ -$ -$ -$ -$ -$ -$ 
+B $ -$ -$ -$ (0) $ (0)$ (0)$ 
+C $ -$ -$ 0$ -$ 0 $ 0 $ 
+Totals -$ -$ -$ 0$ (0) $ 0 $ 0 $ Monthly Trucks From/To Unit Cost/Truck to Sales District 
+4 3 2 
+7 40
+4 195 100 10
+5 240 140 60
+4 3 2 
+0 0 0 
+0 0 0 
+0 0 0 
+0 0 0 
+T T T
+-
+-
+-</text>
+        </slide>
+        <slide>
+          <slideno>25</slideno>
+          <text>In AMPL Speak 
+param NBreaks; 
+param B reakPoint{0..NBreaks};
+param C ostAtBreak{0..NBreaks};
+var Lambda{0..NBreaks} &gt;= 0;
+var Activity;
+var Cost;
+s.t. DefineCost:
+Cost = sum{b in 0..NBreaks} CostAtBreak[b]*Lambda[b];
+s.t. DefineActivity:
+Activity = sum{b in 0..NBreaks} BreakPoint[b]*Lambda[b];
+s.t. ConvexCombination:
+1 = sum{b in 0..NBreaks}Lambda[b];
+15.057 Spring 03 Vande Vate 26</text>
+        </slide>
+        <slide>
+          <slideno>6</slideno>
+          <text>More is Better
+X, Y, Z binary 
+Which is better?
+Formulation #1
+X + Y  2Z
+Formulation #2 
+X  Z 
+Y  Z 
+15.057 Spring 03 Vande Vate 7</text>
+        </slide>
+        <slide>
+          <slideno>7</slideno>
+          <text>Add Stronger Constraints 
+Bands Coils Bands Limit Coils Limit 
+Production Capacity Valid Constraint : 
+Cuts off Fractional Answers 
+But not Integral Answers 3
+2
+1
+1 2 3 4
+15.057 Spring 03 Vande Vate 8</text>
+        </slide>
+        <slide>
+          <slideno>21</slideno>
+          <text>Summary 
+To control complexity and get solutions 
+Eliminate unnecessary binary variables 
+Dont aggregate constraints 
+Add strong valid constraints 
+Tighten bounds 
+Integer Programming Models can 
+approximate non-linear objectives
+15.057 Spring 03 Vande Vate 22</text>
+        </slide>
+        <slide>
+          <slideno>31</slideno>
+          <text>AMPL Speak
+param NBreaks; 
+param B reakPoint{0..NBreaks}; 
+param C ostAtBreak{0..NBreaks};
+var Lambda{0..NBreaks} &gt;= 0;
+var Activity;
+var Cost;
+s.t. DefineCost:
+Cost = sum{b in 0..NBreaks} CostAtBreak[b]*Lambda[b];
+s.t. DefineActivity:
+Activity = sum{b in 0..NBreaks} BreakPoint[b]*Lambda[b];
+s.t. ConvexCombination:
+1 = sum{b in 0..NBreaks}Lambda[b];
+15.057 Spring 03 Vande Vate 32</text>
+        </slide>
+        <slide>
+          <slideno>11</slideno>
+          <text>One Step Further 
+Impose Constraints at Lowest Level 
+Some Compromise between 
+Number of Constraints: How hard to solve LPs 
+Number of LPs: How many LPs we must solve. 
+Generally, better to solve fewer LPs. 
+15.057 Spring 03 Vande Vate 12</text>
+        </slide>
+        <slide>
+          <slideno>14</slideno>
+          <text>More Detailed Constraints
+s.t. ShutWarehouse{w in WAREHOUSES}: 
+sum{d in DISTRICTS} Ship[w,d] &lt;= Capacity[w]*Open[w]; 
+s.t. ShutLanes{w in WAREHOUSES, d in DISTRICTS}: 
+Ship[w,d] &lt;= Demand[d]*Open[w]; 
+Trade off between work to solve each LP and 
+number of LPs we have to solve 
+This makes each one harder, but we solve 
+fewer. 
+15.057 Spring 03 Vande Vate 15</text>
+        </slide>
+        <slide>
+          <slideno>8</slideno>
+          <text>Lockbox Example
+15.057 Spring 03 Vande Vate 9 
+City Sea. Chi. NY LA Daily Payments 
+NW 2 5 5 4 325,000 $ 
+N 4 2 4 6 475,000 $ 
+NE 5 5 2 8 300,000 $ 
+SW 4 6 8 2 275,000 $ 
+S 6 6 6 4 385,000 $ 
+SE 8 8 5 5 350,000 $ 
+Oper.Cost 55,000 $ 50,000 $ 60,000 $ 53,000 $ 
+Int. Rate 6.0% 
+City Sea. Chi. NY LA Total Total Float 
+NW 0 0 - $ 
+N 0 0 0 0 - $ 
+NE 0 0 - $ 
+SW 0 0 - $ 
+S 0 0 0 0 - $ 
+SE 0 0 - $ 
+Total 0 0 0 0 Total Float - $ 
+Open? 0 0 0 0 Total Cost to Operate 
+Cost - $ - $ - $ - $ - $ 
+Eff.  C ap. 0 
+Total Cost -Days to Mail from Each Area to Each City Lockbox Model 
+0 0 0 
+0 
+0 0 0 
+0 0 0 
+0 
+0 0 0 
+0 0 0</text>
+        </slide>
+        <slide>
+          <slideno>24</slideno>
+          <text>Idea
+Express Volume of Activity as a Weighted 
+Average of Breakpoints 
+Express Cost as the same Weighted 
+Average of Costs at the Breaks 
+Activity = Min Level 0 + Break 1 1+ 
+Break 2 2 + Max Level 3 
+Cost = Cost at Min Level 0 + Cost at Break 1 1+ 
+Cost at Break 2 2 + Cost at Max Level 3 
+1 = 0+ 1+ 2+ 3 
+15.057 Spring 03 Vande Vate 25</text>
+        </slide>
+        <slide>
+          <slideno>2</slideno>
+          <text>In Theory...
+Each new binary variable doubles the 
+difficulty of the problem Potential Complexity 
+1E+12 
+9E+11 
+8E+11 
+7E+11 
+6E+11 
+5E+11 
+4E+11 
+3E+11 
+2E+11 
+1E+11 
+0 
+0 5 10 15 20 25 30 35 40 45 
+No. of Binary Variables 3 15.057 Spring 03 Vande Vate</text>
+        </slide>
+        <slide>
+          <slideno>16</slideno>
+          <text>New Constraints
+Recall the Single Sourcing Problem</text>
+        </slide>
+        <slide>
+          <slideno>20</slideno>
+          <text>Good News!
+AMPL offers syntax to automate this 
+Read Chapter 17 of Fourer for details 
+&lt;&lt;BreakPoint[1], BreakPoint[2]; Slope[1], 
+Slope[2], Slope[3]&gt;&gt; Variable; 
+Slope[1] before BreakPoint[1]
+Slope[2] from BreakPoint[1] to BreakPoint[2]
+Slope[3] after BreakPoint[2]
+Has 0 cost at activity 0
+15.057 Spring 03 Vande Vate 21</text>
+        </slide>
+        <slide>
+          <slideno>9</slideno>
+          <text>Challenge 
+Improve the formulation 
+City Sea. Chi. NY LA Daily Payments 
+NW 2 5 5 4 325,000 $ 
+N 4 2 4 6 475,000 $ 
+NE 5 5 2 8 300,000 $ 
+SW 4 6 8 2 275,000 $ 
+S 6 6 6 4 385,000 $ 
+SE 8 8 5 5 350,000 $ 
+Oper.Cost 55,000 $ 50,000 $ 60,000 $ 53,000 $ 
+Int. Rate 6.0% 
+City Sea. Chi. NY LA Total Total Float 
+NW 0 0 - $ 
+N 0 0 - $ 
+NE 0 0 - $ 
+SW 0 0 - $ 
+S 0 0 - $ 
+SE 0 0 - $ 
+Total 0 0 0 0 Total Float - $ 
+Open? 0 0 0 0 Total Cost to Operate 
+Cost - $ - $ - $ - $ - $ 
+Eff.  C ap. 0 
+Total Cost -Days to Mail from Each Area to Each City Lockbox Model 
+0 0 0 
+0 0 0 
+0 0 0 
+0 0 0 
+0 0 0 
+0 0 0 
+0 0 0</text>
+        </slide>
+        <slide>
+          <slideno>10</slideno>
+          <text>Conclusion
+Formulation #1 
+Assign[NW, b] +Assign[N, b] + Assign[NE, b] + 
+Assign[SW, b] +Assign[S, b] + Assign[SE, b] 
+ 6*Open[b] 
+Formulation #2 
+Assign[NW,b]  Open[b] 
+Assign[N, b]  Open[b] 
+ 
+Dont aggregate or sum constraints 
+15.057 Spring 03 Vande Vate 11</text>
+        </slide>
+      </slides>
+      <videos/>
+    </lecture>
+  </lectures>
+</doc>
