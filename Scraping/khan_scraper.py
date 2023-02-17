@@ -194,13 +194,17 @@ class Scraper:
             print(unit_title)
             print(unit_link)
             print('=============================')
+            handler = XMLHandler()
+            final_name = handler.clean_name('{}.xml'.format(unit_title[:20]))
+            if os.path.exists('./Scraping/KHAN_ACADEMY/{}'.format(final_name)):
+                continue
             
             course = Course(unit_title, link_join(self.base_url, unit_link), ['None'], 'None')
 
             self.get_lessons(course)
             print('got one!')
 
-            handler = XMLHandler()
+            
             handler.build_and_store_xml(CourseProviders(2), course)
             
             # docno = 0
