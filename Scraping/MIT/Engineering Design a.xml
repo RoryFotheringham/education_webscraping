@@ -1,0 +1,1680 @@
+<doc>
+  <source>MIT</source>
+  <date>28/01/2023</date>
+  <course>
+    <course_url>https://ocw.mit.edu/courses/16-810-engineering-design-and-rapid-prototyping-january-iap-2007/</course_url>
+    <course_title>Engineering Design and Rapid Prototyping</course_title>
+    <course_tags>
+      <list>Engineering </list>
+      <list>Mechanical Engineering </list>
+      <list>Systems Engineering </list>
+    </course_tags>
+  </course>
+  <lectures>
+    <lecture>
+      <lecture_title>L1: Introduction to Design (de Weck) (PDF)
+Team Presentations
+MITSET (PDF)
+VDS (PDF)</lecture_title>
+      <lecture_pdf_url>https://ocw.mit.edu/courses/16-810-engineering-design-and-rapid-prototyping-january-iap-2007/resources/l1a_intro/</lecture_pdf_url>
+      <lectureno>1</lectureno>
+      <slides>
+        <slide>
+          <slideno>17</slideno>
+          <text>16.810 18
+Product Development - Design
+Development
+of Swiss F/A-18 Low Drag
+Pylon (LDP) 1994-1996Improved time-to-climb
+Performance of F/A-18 in
+Air-to-Air configuration by ~ 20%
+design to create, fashion, execute ,
+or construct according to plan
+Merriam-Webster</text>
+        </slide>
+        <slide>
+          <slideno>3</slideno>
+          <text>16.810 4
+Outline
+Organization of 16.810
+Motivation, Learning Objectives, Activities
+(Re-) Introduction to Design
+Examples, Requirements, Design Processes 
+(Waterfall vs. Spiral), Basic Steps
+Design Challenge - Team Assignments
+Previous Years (2004, 2005)
+This Year: MITSET (30 min), VDS (30 min)
+Deliverables Checklist, Team Assignments
+Facilities Tour</text>
+        </slide>
+        <slide>
+          <slideno>34</slideno>
+          <text>16.810 35
+Optimization  2004 &amp; 2005
+Manual Iteration
+Design loops    
+(Spiral method)
+Software
+Formal software 
+Matlab/Excel (Tradeoff Plots)
+CLEndplate HeightObjective Function Value
+CLEndplate HeightObjective Function Value</text>
+        </slide>
+        <slide>
+          <slideno>12</slideno>
+          <text>16.810 13
+Course Concept</text>
+        </slide>
+        <slide>
+          <slideno>10</slideno>
+          <text>16.810 11
+Leads to       Course Objective
+Develop a holistic view and initial 
+competency in engineering design by  
+applying a combination of human creativity 
+and modern computational tools to the 
+synthesis of a simple component or system.</text>
+        </slide>
+        <slide>
+          <slideno>15</slideno>
+          <text>16.810 16
+Grading
+Letter Grading A-F
+Composition
+Design Deliverables* 70%
+Requirements Document, Sketch, CAD Model &amp; 
+Analysis, Test &amp; Mfg Report, Final Review Slides
+Final Product 20%
+Requirements Compliance
+Quality
+Active Class Participation 10%
+Attendance, Ask Questions, Contribute Suggestions, Fill in Surveys*see checklist</text>
+        </slide>
+        <slide>
+          <slideno>8</slideno>
+          <text>16.810 9
+A good understanding of 
+engineering science 
+fundamentals
+Mathematics (including statistics)
+Physical and life sciences
+Information technology (far more than 
+computer literacy)
+A good understanding of design 
+and manufacturing processes (i.e. 
+understands engineering)
+A multi-disciplinary, systems perspective
+A basic understanding of the context in which engineering is practiced
+Economics (including busines s 
+practice)
+History
+The environment
+Customer and societal needsGood communication skills
+Written
+Oral
+Graphic
+Listening
+High ethical standards
+An ability to think both critically and creatively - independently and cooperatively
+Flexibility. The ability and self-confidence to adapt to rapid or major change
+Curiosity and a desire to learn for life
+A profound understanding of the importance of teamwork.
+This is a list, begun in 1994, of basic durable attributes 
+into which can be mapped sp ecific skills reflecting the
+diversity of the overall engineering environment in which
+we in professional practice operate.  
+This current version of the list can be viewed on the Boeing
+web site as a basic message to those seeking advice from
+the company on the topic.  Its contents are also included
+for  the most part in ABET EC 2000.Boeing List of Boeing List of Desired Attributes of an EngineerDesired Attributes of an Engineer</text>
+        </slide>
+        <slide>
+          <slideno>27</slideno>
+          <text>16.810 28
+Boeing (sample) parts
+A/C structural assembly
+2 decks
+3 frames
+Keel
+Loft included to show 
+interface/stayout zone to A/C
+All Boeing parts in Catiafile format
+Files imported into 
+SolidWorks by 
+converting to IGES 
+format
+Loft
+FWD Decks
+Aft DecksFramesKeel
+(Loft not shown)Hierarchy II: Assembly Level
+Nacelle</text>
+        </slide>
+        <slide>
+          <slideno>29</slideno>
+          <text>16.810 30
+Design Challenge and
+Team Assignments</text>
+        </slide>
+        <slide>
+          <slideno>22</slideno>
+          <text>16.810 23
+Stage Gate PD Process 
+ReleasePlanning
+Concept 
+Design
+System-Level 
+Design
+Detailed 
+Design
+Integration &amp; 
+TestReviews
+Within-Phase
+Iterations
+(planned)Cross-Phase
+Iterations
+(unplanned)
+Refs: Robert Cooper, Winning at New 
+Products 3rded., 2001.</text>
+        </slide>
+        <slide>
+          <slideno>35</slideno>
+          <text>16.810 36
+Learning from Mistakes
+-1.7 1.15Carrying out a full lifecycle creates 
+memorable learning experiences
+Dont prevent students from making mistakes
+Example: bi-wing configuration
+Excerpt from Student Reflective Memo:
+I learned the value of cons tantly checking simulations 
+against reality ..  My rear -wing design used a biplane 
+setup, due to a huge ov ersight, the wings were 
+actually arranged in an incorrect orientation which 
+incurred a large drop in down force.  . This experience 
+taught me a great lesson  a lways triple check your 
+assumptions against your de sign.  I spent hours and 
+hours optimizing a design that was never constructed , 
+simply because I was told to assume that the down force bonus would be experienced .  I never bothered to 
+verify this myself, and th is disconnection had dire 
+consequences.</text>
+        </slide>
+        <slide>
+          <slideno>38</slideno>
+          <text>16.810 39
+Facilities Tour</text>
+        </slide>
+        <slide>
+          <slideno>13</slideno>
+          <text>16.810 14
+Course Flow Diagram (2007)
+CAD Introduction
+FEM/Solid Mechanics
+Avionics Prototyping
+CAM ManufacturingHand sketching
+Initial CAD design
+FEM analysis
+Optimization
+Revise CAD design
+AssemblyParts FabricationProblem statement
+Final ReviewTestLearning/Review Deliverables
+(A) Requirements 
+and Interface 
+Document
+(B) Hand Sketch
+(D) Manufacturing 
+and Tes t Report 
+with Cost Estimate(C) Solidworks CAD 
+Model, Performance 
+Analysis Design Intro  / Sketch
+Fabrication, 
+Assembly, Testing
+(E) CDR Package+ Guest Lectures</text>
+        </slide>
+        <slide>
+          <slideno>26</slideno>
+          <text>16.810 27
+deck components
+Ribbed-bulkheads
+Approximate dimensions
+250mm x 350mm x 30mm
+Wall thickness = 2.54mm
+decksHierarchy I: Parts Level
+framesframe components
+Ribbed-bulkheads
+Approximate dimensions
+430mm x 150mm x 25.4mm
+Wall thickness = 2mm
+keel
+Ribbed-bulkhead
+Approximate dimensions
+430mm x 660mm x 25.4mm
+Wall thickness = 2.54mm
+keel</text>
+        </slide>
+        <slide>
+          <slideno>40</slideno>
+          <text>16.810 41
+Next Steps
+Form a Team
+Pick MITSET or VDS
+Pick a component/subsystem
+Give your team a distinctive name
+Study the following
+16.810 documents: schedule, deliverables checklist, project 
+description, Register on WEBSIS if not already done
+Get username and passwd on AA-Design LAN
+Complete Attendance Sheet
+Prepare for Thursdays lecture:
+Look at CAD/CAE/CAM manual (Sample Part)
+Go through step-by-step
+Signup for a machine shop slot for Waterjet Manufacturing (OMAX)</text>
+        </slide>
+        <slide>
+          <slideno>6</slideno>
+          <text>16.810 7
+History of this Course
+December 2002 Undergraduate Survey in Aero/Astro Department.
+Students expressed wish for CAD/CAE/CAM experience. 
+April 4, 2003 Submission of proposal to  Teaching and Education
+Enhancement  Progra m  (MIT Class Funds")
+May 6, 2003 Award Letter received from Dean for Undergraduate 
+Education ($17.5k)
+June 5, 2003 Kickoff Meeting
+Sept 18, 2003 Approved by the AA undergra duate committee  (6 units)
+Fall 2003 Preparation
+Jan 5, 2004 First Class (Topic: Bicycle Frame Design) 
+Fall 2004 Preparation
+Jan 4, 2005 Second Class (Topic: Race Car Wing Design)
+Jan 2007 Third Class Focus on helping student projects
+see: http://ocw.mit.edu</text>
+        </slide>
+        <slide>
+          <slideno>16</slideno>
+          <text>16.810 17
+(Re-)Introduction to
+Design</text>
+        </slide>
+        <slide>
+          <slideno>18</slideno>
+          <text>16.810 19
+Design and Objective Space
+Performance
+Time-of-Flight
+DistanceDesign Variables
+Fixed Parameters
+- air density 
+- properties of balsa woodWing Area
+Aspect RatioDihedral Angle
+Ca. 90ft5.35 sec31.5 [in2]
+6.2
+0 [deg]
+Remember Unified ?
+Balsa GliderDesign SpaceObjective Space
+Cost
+Assembly Time
+Material Cost
+$ 4.5087 min</text>
+        </slide>
+        <slide>
+          <slideno>1</slideno>
+          <text>16.810 2
+Happy New Year 2007 !
+We wont be designing White Knight or SpaceShipOne this IAP, but ...
+You will learn about the design process and fundamental 
+building blocks of any complex (aerospace) system</text>
+        </slide>
+        <slide>
+          <slideno>5</slideno>
+          <text>16.810 6
+Expectations
+6 unit course (3-3-0)  7+1 sessions
+TR1-5 in 33-218 , must attend all sessions or 
+get permission of instructors to be absent
+This is for-credit, no formal problem sets, 
+but expect a set of deliverables (see   -list)
+Have fun, but also take it seriously
+The course is a 3rdyear prototype itself and 
+we are hoping for your feedback &amp; 
+contributions
+Officially register under 16.810 (Jan 2007) on 
+WEBSIS</text>
+        </slide>
+        <slide>
+          <slideno>14</slideno>
+          <text>16.810 15
+Learning Objectives
+At the end of this class yo u should be able to 
+(1) Carry out a systematic design process from conception through
+design/implementation/verification of a simple component or system.
+(2) Quantify the predictive accuracy of CAE versus actual test results.
+(3) Explain the relative improvement that computer optimization can
+yield relative to an initial, manual solution.
+(4) Discuss the complementary capabilities and limitations of the
+human mind and  the digital computer ( synthesis versus analysis).</text>
+        </slide>
+        <slide>
+          <slideno>25</slideno>
+          <text>16.810 26
+Number of phases (often a superficial difference)
+Phase exit criteria (and degree of formality)
+Requirement enforcement
+Reviews
+Prototyping
+Testing and Validation
+Timing for committing capital
+Degree of customer selling and interference
+Degree of explicit/implicit iteration (waterfall or not)
+Timing of supplier involvementKey Differences in PDPs</text>
+        </slide>
+        <slide>
+          <slideno>32</slideno>
+          <text>16.810 33
+Project Description  IAP 2005
+maximize [ F= L3 *D5 *W]
+Where:
+L = measured downforce (negative lift) at specified speed [N] 
+D = measured drag at  specified speed [N] 
+W = total weight of the assembly (not including test fixture) [N] 
+The nominal speed is 60 mph</text>
+        </slide>
+        <slide>
+          <slideno>33</slideno>
+          <text>16.810 34
+Project Deliverables  IAP 2005
+ Phase 1 
+Phase 2  
+Problem Statement Hand Sketch Initial CAD  CAE (FEA) CAE (CFD) 
+Design Optimization 
+Weight vs Wing Segment Angle
+45 Degrees
+11.11.21.31.41.51.61.71.81.92
+0 20 40 60 80 100 A ngle (from vertical)Weight (kg)
+Chord vs Cl: Optimal
+Max Possible 
+Chord
+Chosen 
+Operating
+PointMax Possible Cl
+0.20.250.30.350.40.450.50.550.6
+0.9 1.1 1.3 1.5 1.7 1.9 2.1 2.3
+Clchord (m)
+Performance: Expected vs Measured
+0102030405060
+weight drag lift
+parameterpoundsexpected
+measured
+Prototype Testing and Validation</text>
+        </slide>
+        <slide>
+          <slideno>7</slideno>
+          <text>16.810 8
+A 2001 survey of undergraduate students 
+(Aero/Astro)  in conjunction with new Dept. head 
+search
+-There is a perceived lack of understanding and training in 
+modern design methods using state-of-the-art CAD/CAE/CAM 
+technology and design optimization. 
+-Individual students have suggested the addition of a short and
+intense course of rapid protot yping, combined with design 
+optimization.Needs  from students</text>
+        </slide>
+        <slide>
+          <slideno>4</slideno>
+          <text>16.810 5
+Organization of 16.810</text>
+        </slide>
+        <slide>
+          <slideno>30</slideno>
+          <text>16.810 31
+Project Description  IAP 2004
+FixedFixedLaser displacement 
+sensors
+1
+2
+1F
+2F3FMassManufacturing 
+cost
+Applied loadsMeasured 
+displacement
+s
+Forbidden 
+zoneConfiguration
+Model Bicycle Frame on 2-D plate
+Material: Al 6061-T6 
+Thickness 
+Scale ca. 1:5</text>
+        </slide>
+        <slide>
+          <slideno>31</slideno>
+          <text>16.810 32
+Project Deliverables  IAP 2004</text>
+        </slide>
+        <slide>
+          <slideno>23</slideno>
+          <text>16.810 24
+Spiral PD Process
+PlanningDetailed 
+Design
+Integration 
+&amp; Test
+System-Level 
+Design
+Concept 
+DesignCost
+(Cumulative Effort)Reviews
+Release
+Rapid Prototyping
+Is typically associatedWith this process</text>
+        </slide>
+        <slide>
+          <slideno>39</slideno>
+          <text>16.810 40
+Facilities Tour
+* Software to be used:
+-X f o i l -O m a x
+- Solidworks - Matlab 
+-C o s m o s  
+- Altium* Design Studio (33-218)
+- 14 networked CAD/CAE workstations 
+that are used for complex systems design 
+and optimization. * Machine Shop
+-Water Jet cutter, Wing cutter
+* Wind Tunnel
+-Subsonic aerodynamic testing
+MIT Wright Brothers
+Wind Tunnel, see
+http://web.mit.edu/
+aeroastro/www/labs/WBWT/</text>
+        </slide>
+        <slide>
+          <slideno>37</slideno>
+          <text>16.810 38
+Team Presentations (30 min each)
+MIT Space Elevator Team (MITSET)
+Vehicle Design Summit (VDS)NASA Centennial Challenge
+Power Beaming
+Assisted Human Power Vehicle (AHPV)
+Image: VDS 1.0  Summer 2006</text>
+        </slide>
+        <slide>
+          <slideno>0</slideno>
+          <text>16.810 16.810 
+Engineering Design and Rapid PrototypingEngineering Design and Rapid Prototyping
+Instructor(s)
+Introduction to Design
+January 9, 2007Prof. Olivier de Weck
+Teaching
+Assistants:Anas Alfaris
+Nii ArmarLecture 1</text>
+        </slide>
+        <slide>
+          <slideno>24</slideno>
+          <text>16.810 25
+Basic Trade-offs in Product Development
+Performance
+Schedule Risk
+Cost
+Ref: Maier, Rechtin, The Ar t of Systems ArchitectingPerformance - ability to do primary mission
+Cost - development, operation life cycle cost
+Schedule - time to first unit, production rate
+Risk - of technical and or financial failure</text>
+        </slide>
+        <slide>
+          <slideno>2</slideno>
+          <text>16.810 3
+Quote
+The scientist seeks to understand what is; the engineer seeks to create what never was
+-Von Karman</text>
+        </slide>
+        <slide>
+          <slideno>19</slideno>
+          <text>16.810 20
+Basic Design Steps
+flying wing monoplane
+biplane delta dart
+3. Perform Design1. Define Requirements
+2. Create/Choose Concept
+6. Test Prototype5. Build Prototype4. Analyze System
+7. Accept Final Design</text>
+        </slide>
+        <slide>
+          <slideno>20</slideno>
+          <text>16.810 21
+Typical Design Phases
+Requirements
+Definition
+Conceptual 
+DesignConceptual
+baselines
+Preliminary 
+DesignSelected
+baseline
+Detailed  
+DesignProduction
+baseline
+Production
+and support General arrangement and performance
+ Representative configurations
+ General internal layout
+Systems specifications
+Detailed subsystems
+Internal arrangements
+Process design
+Sophisticated Analysis
+Problem Decomposition
+Multidisciplinary optimization</text>
+        </slide>
+        <slide>
+          <slideno>21</slideno>
+          <text>16.810 22
+Phased vs. Spiral PD Processes
+Phased, Staged, or Waterfall PD Process
+(dominant for over 30 years)
+Product 
+PlanningProduct
+LaunchProduct 
+DefinitionSystem-
+Level
+DesignDetail
+DesignIntegrate
+and Test
+Spiral PD Process
+(primarily used in software development)
+Product Planning Product
+LaunchDefine, Design, Build, Test, Integrate
+Define, Design, Build, Test, Integrate
+Define, Design, Build, Test, Integrate
+Process Design Questions:
+How many spirals should be planned?
+Which phases should be in each spiral?
+When to conduct gate reviews?</text>
+        </slide>
+        <slide>
+          <slideno>9</slideno>
+          <text>16.810 10
+ Determine quickly how things work
+ Determine what customers want
+ Create a concept
+ Use abstractions/math models to improve a concept
+ Build or create a prototypeprototype version
+ Quantitatively and robustly testrobustly test a prototype to improve
+concept and to predict
+ Determine whether customer value and enterprise 
+value are aligned (business sense)
+ Communicate all of the above to various audiences
+Much of this requires domain-specific knowledge and experience
+Several require systems thinking and statistical thinking
+All require teamwork, leadership, and societal awarenessAn engineer should be able to ...
+Slide from Prof.  Chris Magee</text>
+        </slide>
+        <slide>
+          <slideno>11</slideno>
+          <text>16.810 12
+Mind Map
+16.810Competency -c a n  n o t
+only talk about it or
+do calculations, butactually carry out theprocess end-to-end
+Human Creativity and
+Computational Tools :
+design is a constant inter-
+play of synthesis and analysis Holistic View -o f  t h e
+whole. Think about:
+- requirements,
+design, manufacturing,testing, cost ...
+Engineering Design 
+- what you will likelydo after MIT
+Components / Systems :
+part of all aerospace systems,But must be easy to implement in a short timeRapid Prototyping -
+a hot concept inindustry today.</text>
+        </slide>
+        <slide>
+          <slideno>36</slideno>
+          <text>16.810 37
+IAP 2007 Challenge
+Focused on Student-Driven Teams
+VDS Vehicle Design Summit
+MITSET Space Elevator Team
+Define/pick the current baseline configuration
+Create a performance model of the baseline configuration
+VDS: miles-per-gallon [mpg]
+MITSET: time-to-climb [sec]
+Pick 4-5 most critical compone nts and subsystems based on 
+performance sensitivity
+IAP 2007
+assign 2-3 students per component/subsystem in the 1stsession of IAP
+design/redesign those com ponents during weeks 2-3
+manufacture and reintegrate during week 4
+CDR at the end of IAP 2007  look at performance improvement</text>
+        </slide>
+        <slide>
+          <slideno>28</slideno>
+          <text>16.810 29
+Product Complexity
+Screwdriver (B&amp;D) 3 1
+Roller Blades (Bauer) 30 2
+Inkjet Printer (HP) 300 3
+Copy Machine (Xerox) 2,000 4
+Automobile (GM) 10,000 5
+Airliner (Boeing) 100,000 6How many levels in drawing tree?Assume 7-tree
+log(# )#log(7)partslevels =  
+~ #parts #levels
+simple
+complex</text>
+        </slide>
+      </slides>
+      <videos/>
+    </lecture>
+    <lecture>
+      <lecture_title>L3: CAD Mechanical Modeling (de Weck) (PDF)
+Computer Aided Engineering (CAE) (de Weck) (PDF)
+Solidworks&#174; Tutorial</lecture_title>
+      <lecture_pdf_url>https://ocw.mit.edu/courses/16-810-engineering-design-and-rapid-prototyping-january-iap-2007/resources/l3a_cad/</lecture_pdf_url>
+      <lectureno>3</lectureno>
+      <slides>
+        <slide>
+          <slideno>27</slideno>
+          <text>16.810 28
+(1) Parametric Equation vs.  Nonparametric Equation
+(2) Various curves
+-H e r m i t eC u r v e
+-B e z i e r  C u r v e
+-B - S p l i n e  C u r v e
+- NURBS (Nonuniform Rational B-Spline) Curve
+(3) Surfaces
+- Bilinear surface
+- Bicubic surface
+- Bezier surface
+- B-Spline surface
+- NURBS surfaceSummary</text>
+        </slide>
+        <slide>
+          <slideno>25</slideno>
+          <text>16.810 26
+NURBS (Nonuniform Rational B-Spline) Curve
+,
+0
+,
+0()
+()
+()n
+ii i k
+i
+n
+ii k
+ihN u
+u
+hN u=
+==
+P
+P ,
+0B-spline : ( ) ( )n
+ii k
+iuN u
+== PP
+: Position vector of the th control point
+: Homogeneous coordinatei
+ii
+hP
+* If all the homogeneous coordinates ( hi) are 1, the denominator becomes 1
+,
+0If 0 , then ( ) 1.n
+ii ik
+ihi h N u
+== =
+* B-spline curve is a special case of NURBS.
+* Bezier curve is a special case of B-spline curve.</text>
+        </slide>
+        <slide>
+          <slideno>19</slideno>
+          <text>16.810 20
+u(1, 1)
+(0 )u=START (5,1)
+(1 )u=END0
+1
+0
+1(0)
+(1)
+: Geometric coefficient matrix(0)
+(1)
+
+=
+P P
+P P
+P P
+P PEffect of tangent vectors on the 
+curves shape
+
+
+
+
+
+11
+51
+11
+1- 1
+
+
+
+
+11
+51
+555- 5
+
+
+
+
+11
+51
+13 1313 -13Is this what you really wanted?
+
+
+
+
+
+11
+51
+222- 2Geometric coefficient matrix 
+controls the shape of the curve
+
+
+
+
+
+11
+51
+4040
+/00/4dy dy du
+dx dx du= ==</text>
+        </slide>
+        <slide>
+          <slideno>10</slideno>
+          <text>16.810 11
+Vector versus Raster Graphics
+Raster Graphics
+Grid of pixels
+No relationships between 
+pixels
+Resolution, e.g. 72 dpi (dots per inch)
+Each pixel has color, e.g. 8-bit image has 256 colors.bmp -r a w  d a t a  f o r m a t</text>
+        </slide>
+        <slide>
+          <slideno>2</slideno>
+          <text>16.810 3
+Course Concept
+today last time</text>
+        </slide>
+        <slide>
+          <slideno>21</slideno>
+          <text>16.810 22
+Bezier Curve
+- The curve passes through the first and last vertex of the polygon.
+-The tangent vector at the starting point of the curve has the same 
+direction as the first segment of the polygon.
+-The nth derivative of the curve at the starting or ending point is 
+determined by the first or last ( n+1) vertices.Properties</text>
+        </slide>
+        <slide>
+          <slideno>18</slideno>
+          <text>16.810 19
+Hermite Curves
+23
+01 2 3 () ( 0 1 ) uu u uu=+ + +  Pa a aa
+Instead of algebraic coefficients, lets use the position vectors and the 
+tangent vectors at the two end points!
+0P
+1P
+(0 )u=START
+(1 )u=END0P
+1Pu00
+10 1 2 3
+01
+11 2Position vector at starting point: (0)
+Position vector at end point:       (1)
+Tangent vector at starting point:  (0)
+Tangent vector at end point:       (1) 2 3==
+==+++
+==
+== + +PP a
+PP aaaa
+PP a
+PP a a3a
+No algebraic coefficients
+00 1 1,, ,: PP PP Geometric coefficients
+The curves shape change can be intuitively anticipated from 
+changes in these values0
+1
+2 3 2 3 23 23
+0
+1() [ 1 3 2 3 2 2 ] u u u u u uuu uu
+
+= +   +  + 
+P
+P
+PP
+PBlending functions
+: Hermit curve</text>
+        </slide>
+        <slide>
+          <slideno>0</slideno>
+          <text>16.810 16.810 
+Engineering Design and Rapid PrototypingEngineering Design and Rapid Prototyping
+Instructor(s)
+Computer Aided Design (CAD)
+January 16, 2007Prof. Olivier de WeckLecture 3a</text>
+        </slide>
+        <slide>
+          <slideno>9</slideno>
+          <text>16.810 10
+Boeing (sample) parts
+A/C structural assembly
+2 decks
+3 frames
+Keel
+Loft included to show 
+interface/stayout zone to A/C
+All Boeing parts in Catiafile format
+Files imported into 
+SolidWorks by 
+converting to IGES 
+format
+Loft
+FWD Decks
+Aft DecksFramesKee
+l
+(Loft not shown)Example CAD A/C Assembly
+Nacelle</text>
+        </slide>
+        <slide>
+          <slideno>26</slideno>
+          <text>16.810 27
+Advantages of NURBS Curve over B-Spline Curve
+(1) More versatile modification capacity
+- Homogeneous coordinate hi, which B-spline does not have, can change.
+- Increasing hiof a control point Drawing the curve toward the control point.
+(2) NURBS can exactly represent the conic curves - circles, ellipses, parabolas, and
+hyperbolas  (B-spline can only approximate these curves)
+(3) Curves, such as conic curves, Bezi er curves, and B-spline curves can be 
+converted to their corresponding NURBS representations.</text>
+        </slide>
+        <slide>
+          <slideno>11</slideno>
+          <text>16.810 12
+Vector Graphics
+Object Oriented
+relationship between 
+pixels captured
+describes both (anchor/control) points and lines between them
+Easier scaling &amp; editing.emf format
+CAD Systems use
+vector graphics
+Most common interface file:
+IGES</text>
+        </slide>
+        <slide>
+          <slideno>6</slideno>
+          <text>16.810 7
+Brief History of CAD
+1957 PRONTO (Dr. Hanratty)  first commercial numerical-
+control programming system
+1960 SKETCHPAD (MIT Lincoln Labs)
+Early 1960s industrial developments
+General Motors  DAC (Design Automated by Computer)
+McDonnell Douglas  CADD
+Early technological developments
+Vector-display technology
+Light-pens for input
+Patterns of lines rendering (first 2D only)
+1967 Dr. Jason R Lemon founds SDRC in Cincinnati 
+1979 Boeing, General Electric and NIST develop IGES (Initial Graphic Exchange Standards), e.g. for transfer of 
+NURBS curves
+Since 1981: numerous commercial programs
+Source: http://mbinfo.mbdesign.net/CAD-History.htm</text>
+        </slide>
+        <slide>
+          <slideno>13</slideno>
+          <text>16.810 14
+Some CAD-Theory
+(1) Parametric Curve Equation vs.
+Nonparametric Curve Equation
+(2) Various curves (some mathematics ! )
+-H e r m i t eC u r v e
+-B e z i e r  C u r v e
+-B - S p l i n e  C u r v e
+- NURBS (Nonuniform Rational B-Spline) Curves
+Applications: CAD, FEM, Design OptimizationGeometrical representation</text>
+        </slide>
+        <slide>
+          <slideno>17</slideno>
+          <text>16.810 18
+Hermite Curves
+* Most of the equations for curves used in CAD software are of degree 3 , because 
+two curves of degree 3 guarantees 2nd derivative continuity at the connection point
+The two curves appear to be one.
+* Use of a higher degree causes small oscillations in curves and requires heavy 
+computation.
+23
+01 2 3() [() () () ]
+(0 1)ux u y u z u
+uu u u=
+=+ + +  P
+aa a a* Simplest parametric  equation of degree 3
+0123,,, :aaaa Algebraic vector coefficients
+The curves shape change cannot be intuitively anticipated 
+from changes in these valuesu
+(0 )u=START
+(1 )u=END</text>
+        </slide>
+        <slide>
+          <slideno>22</slideno>
+          <text>16.810 23
+(1) For complicated shape representation, higher degree Bezier curves are
+needed. 
+Oscillation in curve occurs, and computational burden increases.Two Drawbacks of Bezier curve
+(2) Any one control point of the curve affects the shape of the entire curve.
+Modifying the shape of a curve locally is difficult.
+(Global modification property)
+Desirable properties :
+1. Ability to represent complicated shape with low order of the curve
+2. Ability to modify a curves shape locally
+B-spline curve!</text>
+        </slide>
+        <slide>
+          <slideno>7</slideno>
+          <text>16.810 8
+Major Benefits of CAD
+Productivity (=Speed) Increase
+Automation of repeated tasks
+Doesnt necessarily in crease creativity!
+Insert standard parts (e.g . fasteners) from database
+Supports Changeability
+Dont have to redo entire  drawing with each change
+EO  Engineering Orders
+Keep track of previous design iterations
+Communication
+With other teams/engineers, e.g. manufacturing, suppliers
+With other applications (CAE/FEM, CAM)
+Marketing, realistic product rendering
+Accurate, high quality drawings
+Caution: CAD Systems produce errors with hidden lines etc
+Some limited Analysis
+Mass Properties (Mass, Inertia)
+Collisions between parts, clearances</text>
+        </slide>
+        <slide>
+          <slideno>1</slideno>
+          <text>16.810 2
+Plan for Today
+CAD Lecture (ca. 50 min)
+CAD History, Background
+Some theory on geometrical representation
+FEM Lecture (ca. 50 min)
+Motivation for Structural Analysis
+FEM Background
+Break
+Start creating your own CAD models (ca. 2 hrs)
+Work in teams of two
+Follow User Manual step-by-step, sample part
+Then start on your own team projects
+Use hand sketch (deliverable B) as starting point</text>
+        </slide>
+        <slide>
+          <slideno>14</slideno>
+          <text>16.810 15
+Curve Equations
+Two types of equations for curve representation
+(1) Parametric equation
+x, y, z coordinates are rela ted by a parametric variable
+(2) Nonparametric equation
+x, y, z coordinates ar e related by a function
+Parametric equation
+cos , sin (0 2 ) xR yR  == Example: Circle (2-D)
+Nonparametric equation
+22 20 xyR+=
+22yR x= (Implicit nonparametric form)
+(Explicit nonparametric form)(  or  )u</text>
+        </slide>
+        <slide>
+          <slideno>5</slideno>
+          <text>16.810 6
+Basic Elements of a CAD System
+Input Devices
+Human DesignerComputer
+CAD Software
+DatabaseOutput Devices
+Hard Disk
+Network
+Printer
+PlotterKeyboard
+Mouse
+CAD keyboard
+Templates
+Space BallRef: menzelus.comMain System</text>
+        </slide>
+        <slide>
+          <slideno>4</slideno>
+          <text>16.810 5
+What is CAD?
+Computer Aided Design (CAD)
+A set of methods and tools to assist product 
+designers in
+Creating a geometrical representa tion of the artifacts they 
+are designing
+Dimensioning, Tolerancing
+Configuration Management (Changes)
+Archiving
+Exchanging part and assembly information between teams, 
+organizations
+Feeding subsequent design steps 
+Analysis (CAE)
+Manufacturing (CAM)
+by means of a computer system.</text>
+        </slide>
+        <slide>
+          <slideno>16</slideno>
+          <text>16.810 17
+Parametric Equations 
+Advantages over nonparametric forms
+1. Parametric equations usually offer more degrees of freedom for 
+controlling the shape of curves and surfaces than do nonparametric forms.
+e.g. Cubic curve
+32Nonparametric curve: ya x b x c x d=++ +32
+32Parametric curve:   
+                               xau bu cu d
+ye u f u g xh=++ +
+=++ +
+3. Transformation can be performed directly on parametric equations
+e.g. Translation in x-dir.
+32
+000 Nonparametric curve: ( ) ( ) ( ) ya xx b xx c xx d=++  +32
+0
+32Parametric curve:   
+                               xau bu cu d x
+ye u f u g xh=++ + +
+=++ +/
+/dy dy du
+dx dx du=2. Parametric forms readily handle infinite slopes
+/ 0 indicates /dx du dy dx = =</text>
+        </slide>
+        <slide>
+          <slideno>12</slideno>
+          <text>16.810 13
+Major CAD Software Products
+AutoCAD (Autodesk) mainly for PC
+Pro Engineer (PTC)
+SolidWorks (Dassault Systems)
+CATIA (IBM/Dassault Systems)
+Unigraphics (UGS)
+I-DEAS (SDRC)</text>
+        </slide>
+        <slide>
+          <slideno>3</slideno>
+          <text>16.810 4
+Course Flow Diagram (2007)
+CAD Introduction
+FEM/Solid Mechanics
+Avionics Prototyping
+CAM ManufacturingHand sketching
+Initial CAD design
+FEM analysis
+Optimization
+Revise CAD design
+AssemblyParts FabricationProblem statement
+Final ReviewTestLearning/Review Deliverables
+(A) Requirements 
+and Interface 
+Document
+(B) Hand Sketch
+(D) Manufacturing 
+and Tes t Report 
+with Cost Estimate(C) Solidworks CAD 
+Model, Performance 
+Analysis Design Intro  / Sketch
+Fabrication, 
+Assembly, Testing
+(E) CDR Package+ Guest Lectures</text>
+        </slide>
+        <slide>
+          <slideno>23</slideno>
+          <text>16.810 24
+B-Spline Curve
+,
+0
+,1 1 ,1
+,
+11
+1
+,1() ()
+where
+: Position vector of the th control point
+( ) () ( ) ()()
+1()0o t h e r w i s en
+ik i
+i
+i
+ii k i k i k
+ik
+ik i ik i
+ii
+iuN u
+i
+ut N u t u N uNutt t t
+tu tNu=
++ + 
++ + +
++=
+=+
+=
+ PP
+P
+k: order of the B-spline curve 
+n+1: number of control points00
+1
+2iik
+ti k k i n
+nk ni nk&lt; 
+= +  
++ &lt;+
+(Nonperiodic knots)* Developed by  Cox and Boor (1972)
+The order of curve is independent of the number 
+of control points!</text>
+        </slide>
+        <slide>
+          <slideno>28</slideno>
+          <text>16.810 29
+SolidWorks
+SolidWorks
+Most popular CAD system in education
+Will be used for this project
+Do Self-Introduction via 16.810 User 
+Manual
+See also
+http://www.solidworks.com   (Student Section)</text>
+        </slide>
+        <slide>
+          <slideno>20</slideno>
+          <text>16.810 21
+Bezier Curve
+* In case of Hermite curve, it is not easy to predict curve shape caused by 
+changes in the magnitude of the tangent vectors,01 and  PP
+0!() ( 1 ) , w h e r e!( )!n
+in i
+i
+inn nuu uii in i
+= = =     PP
+:iPPosition vector of the i th vertex (control vertices)* Bezier Curve can control curve shape more easily using several control 
+points (Bezier 1960)
+Control vertices
+Control polygon
+n=3
+0P1P 2P
+3P* Order of the curve: n* Number of vertices: n+1
+(No of control points)
+* Number of segments: n
+* The order of Bezier curve is determ ined by the number of control points.
+n control points Order of Bezier curve: n-1</text>
+        </slide>
+        <slide>
+          <slideno>8</slideno>
+          <text>16.810 9
+Generic CAD Process
+Start
+Settings Units, Grid (snap), 
+Construct Basic 
+Solids
+Boolean Operations
+(add, subtract, )
+Annotations
+Dimensioning
+VerificationCreate lines, radii, part
+contours, chamfers
+Add cutouts &amp; holesEngineering Sketch
+dim3D 2D
+extrude, rotate
+CAD file
+Drawing (dxf)
+IGES fileOutput-
+=
+x.x</text>
+        </slide>
+        <slide>
+          <slideno>15</slideno>
+          <text>16.810 16
+Curve Equations
+Two types of curve equations
+(1) Parametric equation
+() : 2 - D, (, ): 3 - D yf x zf x y= = (2) Nonparametric equationP o i n t  o n  2 - D  c u r v e :   [() () ] xu yu =p
+P o i n t  o n  3 - D  s u r f a c e :   [() () () ] xu yuz u =p
+: parametric variable and independent variableu
+Which is better for CAD/CAE? : Parametric equation
+cos , sin (0 2 ) xR yR  = = 
+22 20 xyR+=
+22yR x=
+It also is good for 
+calculating the points at a certain interval along a curve</text>
+        </slide>
+        <slide>
+          <slideno>24</slideno>
+          <text>16.810 25
+B-Spline Curve
+Example
+Order ( k) = 3 (first derivatives are continuous)
+No of control points ( n+1) = 6
+(1) The order of the curve is independent of the number  of control points (contrary to 
+Bezier curves)
+- User can select the curves order and  number of control points separately.
+- It can represent very complicated shape with low order
+(2) Modifying the shape of a curve locally is easy. (contrary to Bezier curve) 
+- Each curve segment is affected by k (order) control points. (local modification property)Advantages</text>
+        </slide>
+      </slides>
+      <videos/>
+    </lecture>
+    <lecture>
+      <lecture_title>L6: Manufacturing and Testing (de Weck) (PDF 1) (PDF 2)</lecture_title>
+      <lecture_pdf_url>https://ocw.mit.edu/courses/16-810-engineering-design-and-rapid-prototyping-january-iap-2007/resources/l6a_optimize/</lecture_pdf_url>
+      <lectureno>6</lectureno>
+      <slides>
+        <slide>
+          <slideno>19</slideno>
+          <text>16.810 20
+Gradient-based Methods
+f(x)
+xStart
+Check gradient
+Move
+Check gradient
+Gradient=0
+No active constraintsStop!
+You do not know this function before optimization
+Optimum solution (x*)
+(Termination criterion: Gradient=0)</text>
+        </slide>
+        <slide>
+          <slideno>12</slideno>
+          <text>16.810 13
+Multiobjective &amp; Multidisciplinary Shape Optimization
+Objective function
+1. Drag coefficient,    2. Amplitude of backscattered wave
+Analysis
+1. Computational Fluid Dynamics Analysis
+2. Computational Electromagnetic Wave 
+Field Analysis
+Obtain Pareto Front
+Raino A.E. Makinen et al., Multidisciplinary shape optimiz ation in aerodynamics and electromagnetics using genetic 
+algorithms, International Journal for Numeri cal Methods in Fluids, Vol. 30, pp. 149-159, 1999Shape Optimization</text>
+        </slide>
+        <slide>
+          <slideno>5</slideno>
+          <text>16.810 6
+Improve Design Computer SimulationSTART
+Converge ?
+YN
+ENDOptimization Procedure
+Minimize ( )
+Subject to ( ) 0
+() 0f
+g
+h
+=x
+x
+x
+Change xDetermine an initial design (x0)
+Does your design meet a 
+termination criterion?Evaluate f(x), g(x), h(x)</text>
+        </slide>
+        <slide>
+          <slideno>26</slideno>
+          <text>16.810 27
+Design Freedom
+Volume is the same.
+1 bar
+2.50 mm
+=
+2 bars
+0.80 mm
+=
+17 bars
+0.63 mm
+=</text>
+        </slide>
+        <slide>
+          <slideno>27</slideno>
+          <text>16.810 28
+Design Freedom
+1 bar
+2.50 mm
+=
+2 bars
+0.80 mm
+=
+17 bars
+0.63 mm
+=
+More design freedom
+(Better performance)
+More complex
+(More difficult to optimize)</text>
+        </slide>
+        <slide>
+          <slideno>1</slideno>
+          <text>16.810 2
+What Is Design Optimization?
+Selecting the best design within the available means
+1. What is our criterion for best design?
+2. What are the available means?
+3. How do we describe different designs?Objective function
+Constraints
+(design requirements)
+Design Variables</text>
+        </slide>
+        <slide>
+          <slideno>15</slideno>
+          <text>16.810 16
+H
+L
+HDongJak Bridge in Seoul, KoreaTopology Optimization</text>
+        </slide>
+        <slide>
+          <slideno>13</slideno>
+          <text>16.810 14
+Design variables (x) 
+x :  density of each cellCellsTopology Optimization
+minimize ( )
+subject to ( ) 0
+() 0f
+g
+h
+=x
+x
+x
+f(x) : compliance
+g(x) : mass
+Number of design variables (ndv) 
+ndv =  27</text>
+        </slide>
+        <slide>
+          <slideno>9</slideno>
+          <text>16.810 10
+-S h a p e   
+Topology 
+- Optimize cross sectionsare given
+Size Optimization</text>
+        </slide>
+        <slide>
+          <slideno>8</slideno>
+          <text>16.810 9
+f(x) : compliance
+g(x) : massDesign variables (x) 
+x :  thickness of each beamBeamsSize Optimization
+minimize ( )
+subject to ( ) 0
+() 0f
+g
+h
+=x
+x
+x
+Number of design variables (ndv) 
+ndv =  5</text>
+        </slide>
+        <slide>
+          <slideno>6</slideno>
+          <text>16.810 7
+Structural Optimization
+-S i z e  O p t i m i z a t i o n
+- Shape Optimization
+- Topology OptimizationSelecting the best structural design</text>
+        </slide>
+        <slide>
+          <slideno>31</slideno>
+          <text>16.810 32
+Developed and maintained by Dmitri Tcherniak , Ole Sigmund , 
+Thomas A. Poulsen and Thomas Buhl . 
+Features:
+1.2-D
+2.Rectangular design domain 
+3.1000 design variables (1000 square elements)
+4. Objective function: compliance (F)
+5. Constraint: volumeWeb-based topology optimization program</text>
+        </slide>
+        <slide>
+          <slideno>20</slideno>
+          <text>16.810 21
+Gradient-based Methods</text>
+        </slide>
+        <slide>
+          <slideno>14</slideno>
+          <text>16.810 15
+Bridge problem
+1 ) ( 0, ) (,
+  
+
+
+xM d x to Subjectd z F Minimize
+oi i
+
+Mass constraints: 35%Obj = 4.16 105
+Obj = 3.29 105
+Obj = 2.88 105
+Obj = 2.73 105
+Distributed 
+loadingTopology Optimization</text>
+        </slide>
+        <slide>
+          <slideno>30</slideno>
+          <text>16.810 31
+Web-based topology optimization program
+http://www.topopt.dtu.dk</text>
+        </slide>
+        <slide>
+          <slideno>10</slideno>
+          <text>16.810 11
+Design variables (x) 
+x :  control points of the B-spline
+(position of each control point)B-splineShape Optimization
+minimize ( )
+subject to ( ) 0
+() 0f
+g
+h
+=x
+x
+xHermite, Bezier, B-spline, NURBS, etc.
+f(x) : compliance
+g(x) : mass
+Number of design variables (ndv) 
+ndv =  8</text>
+        </slide>
+        <slide>
+          <slideno>25</slideno>
+          <text>16.810 26
+MSC. Visual Nastran FEA
+Elements of lowest stress are removed gradually.
+Optimization results
+Optimization results illustrationTopology Optimization Software</text>
+        </slide>
+        <slide>
+          <slideno>33</slideno>
+          <text>16.810 34
+Web-based topology optimization program
+No numerical results are obtained.
+Optimum layout is obtained.</text>
+        </slide>
+        <slide>
+          <slideno>0</slideno>
+          <text>16.810 16.810 
+Engineering Design and Rapid PrototypingEngineering Design and Rapid Prototyping
+Instructor(s)
+Design Optimization
+-Structural Design Optimization -
+January 25, 2007Prof. Olivier de WeckLecture 6a</text>
+        </slide>
+        <slide>
+          <slideno>17</slideno>
+          <text>16.810 18
+Optimum solution (x*)f(x)
+xf(x): displacement
+x: design variableOptimum Solution
+ Graphical Representation</text>
+        </slide>
+        <slide>
+          <slideno>4</slideno>
+          <text>16.810 5
+f(x) :  Objective function to be minimized
+g(x) :  Inequality constraints
+h(x):  Equality constraints
+x :  Design variablesMinimize ( )
+() 0
+() 0f
+Subject to g
+h
+=x
+x
+xOptimization Statement</text>
+        </slide>
+        <slide>
+          <slideno>7</slideno>
+          <text>16.810 8
+minimize ( )
+subject to ( ) 0
+() 0f
+g
+h
+=x
+x
+x
+BCs are given Loads are given
+1. To make the structure strong  
+e.g. Minimize displacement at the tip
+2. Total mass MCMin.  f (x)
+g(x) 0Structural Optimization</text>
+        </slide>
+        <slide>
+          <slideno>16</slideno>
+          <text>16.810 17
+What determines the type of structural optimization?
+Type of the design variable(How to describe the design?)Structural Optimization</text>
+        </slide>
+        <slide>
+          <slideno>22</slideno>
+          <text>16.810 23
+Heuristics Often Incorporate Randomization
+3 Most Common Heuristic Techniques
+Genetic Algorithms
+Simulated Annealing
+Tabu SearchHeuristic Methods</text>
+        </slide>
+        <slide>
+          <slideno>23</slideno>
+          <text>16.810 24
+Optimization Software
+- iSIGHT
+-D O T
+-Matlab (fmincon)
+-Optimization Toolbox
+-Excel Solver</text>
+        </slide>
+        <slide>
+          <slideno>29</slideno>
+          <text>16.810 30
+P. Y. Papalambros, Principles of optima l design, Cambridge University Press, 2000
+O. de Weck and K. Willcox, Multidisciplinary Sy stem Design Optimization, MIT lecture note, 2003
+M. O. Bendsoe and N. Kikuchi, Generating opti mal topologies in structural design using a 
+homogenization method, comp. Meth. Appl. Mech. Engng, Vol. 71, pp. 197-224, 1988
+Raino A.E. Makinen et al., Multidisciplinary shape optimization in aerodynamics and 
+electromagnetics using genetic algorithms, Internat ional Journal for Numerical Methods in Fluids, 
+Vol. 30, pp. 149-159, 1999
+Il Yong Kim and Byung Man Kwak, Design sp ace optimization using a numerical design 
+continuation method, International Journal for Numerical Methods in Engineering, Vol. 53, Issue 8, 
+pp. 1979-2002, March 20, 2002.References</text>
+        </slide>
+        <slide>
+          <slideno>18</slideno>
+          <text>16.810 19
+Optimization Methods
+Gradient-based methods
+Heuristic methods</text>
+        </slide>
+        <slide>
+          <slideno>11</slideno>
+          <text>16.810 12
+Fillet problem Hook problem Arm problem
+Shape Optimization</text>
+        </slide>
+        <slide>
+          <slideno>34</slideno>
+          <text>16.810 35
+Web-based topology optimization program
+Absolute magnitude of load does not affect optimum solution
+P
+ 2P 3P</text>
+        </slide>
+        <slide>
+          <slideno>21</slideno>
+          <text>16.810 22
+Global optimum vs. Local optimum
+f(x)
+xTermination criterion: Gradient=0
+No active constraintsLocal optimum
+Global optimumLocal optimum</text>
+        </slide>
+        <slide>
+          <slideno>2</slideno>
+          <text>16.810 3
+Minimize ( )
+Subject to ( ) 0
+() 0f
+g
+h
+=x
+x
+xOptimization Statement</text>
+        </slide>
+        <slide>
+          <slideno>28</slideno>
+          <text>16.810 29
+Cost versus Performance
+0123456789
+0 0.5 1 1.5 2 2.5 3Cost [$]
+Displacement [mm]
+1 bar2 bars17 bars</text>
+        </slide>
+        <slide>
+          <slideno>24</slideno>
+          <text>16.810 25
+Topology Optimization Software
+ANSYS
+Design domainStatic Topology Optimization
+Dynamic Topology Optimization
+Electromagnetic Topology Optimization
+Subproblem Approximation Method
+First Order Method</text>
+        </slide>
+        <slide>
+          <slideno>32</slideno>
+          <text>16.810 33
+Web-based topology optimization program
+Objective function
+-Compliance (F )
+Constraint
+-Volume
+Design variables
+- Density of each design cell</text>
+        </slide>
+        <slide>
+          <slideno>3</slideno>
+          <text>16.810 4
+Design Variables
+For computational design optimization,
+Objective function and cons traints must be expressed 
+as a function of design variables (or design vector X)
+Objective function: ( ) fx Constraints: ( ), ( ) ghxx
+Cost = f(design)
+Lift = f(design)
+Drag = f(design)
+Mass = f(design)What is f for each case?</text>
+        </slide>
+      </slides>
+      <videos/>
+    </lecture>
+  </lectures>
+</doc>

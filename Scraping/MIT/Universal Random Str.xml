@@ -1,0 +1,886 @@
+<doc>
+  <source>MIT</source>
+  <date>28/01/2023</date>
+  <course>
+    <course_url>https://ocw.mit.edu/courses/18-177-universal-random-structures-in-2d-fall-2015/</course_url>
+    <course_title>Universal Random Structures in 2D</course_title>
+    <course_tags>
+      <list>Mathematics </list>
+      <list>Probability and Statistics </list>
+      <list>Topology and Geometry </list>
+    </course_tags>
+  </course>
+  <lectures>
+    <lecture>
+      <lecture_title>courses/18-177-universal-random-structures-in-2d-fall-2015/resources/mit18_177f15_lecnotes</lecture_title>
+      <lecture_pdf_url>https://ocw.mit.edu/courses/18-177-universal-random-structures-in-2d-fall-2015/resources/mit18_177f15_lecnotes/</lecture_pdf_url>
+      <lectureno>0</lectureno>
+      <slides>
+        <slide>
+          <slideno>13</slideno>
+          <text>7.2 Interior ow lines
+ 
+It is similarly possible to make sense of ow lines of eih(z)/ starting from interior points 
+of a planar domain. 
+7.3 Counterow lines and space-lling SLE 
+The tree and dual tree of ow lines have an interface that can be described as a 
+space-lling curve. 
+7.4 Time reversal symmetries 
+Imaginary geometry can be used to prove several basic facts about SLE, including time 
+reversal symmetry for several forms of SLE with &lt; 4 and SLE! with ' &gt; 4. 
+8 Conformal welding and the quantum zipper 
+8.1 Welding simple quantum wedges 
+One can conformally weld two quantum wedges to each other to obtain a new thicker 
+quantum wedge. The rst version of this story (which applies to two wedges of a 
+particular thickness) was described in [She10] 
+8.2 Welding more general quantum wedges 
+Additional welding constructions are described in [DMS14 ]. These allow one to weld 
+together two wedges of weights W1 and W2 to produce a new wedge of weight W1 + W2. 
+One can also weld the left and right sides of a single quantum wedge to each other, to 
+produce a quantum cone. 
+9 Mating trees and the peanosphere 
+9.1 Moores theorem and topological tree mating 
+There is a simple way to see that gluing two continuum random trees produces a 
+topological sphere decorated by a space-lling path [DMS14]. 
+14</text>
+        </slide>
+        <slide>
+          <slideno>5</slideno>
+          <text>where Bt is standard Brownian motion and  is a xed real constant. The interesting 
+question is how to extend this denition beyond times at which Xt reaches zero. One 
+approach is to have the process jump up by f each time it hits 0, and take a limit as 
+f  0. Another is to dene the square of the process Bessel process (which turns out to 
+t more neatly into the framework of some general theorems in SDE theory, and allows 
+us to show that the process is adapted to the Brownian motion). A simple application 
+of It os formula allows us to check which power of Xt (depending on ) is a martingale, 
+and also to prove that summing independnet 1 and 2 Bessel processes produces a 
+1 + 2 Bessel process. 
+1.3 Brownian excursions, meanders, and bridges 
+One may dene a Brownian excursion indexed by [0, 1] by conditioning a Brownian 
+motion, started at f, to end in [0,f], and then taking the f  0 limit. Brownian motion 
+conditioned to stay in a cone (starting from the apex) is explained in [Shi85 ] along with 
+the relationship to Bessel processes. 
+1.4 Stable L evy processes 
+We recall Lampertis classic work on continuous state branching processes [Lam67 ] and 
+textbooks on L evy processes by Sato, by Bertoin and by Barndo-Nielson, Mikosch, 
+and Resnick [Sat99, Ber96, BNMR01] 
+1.5 Ranges of stable subordinators 
+The range of a stable subordinator is a random closed subset of R+. it can be understood 
+as the zero set of a Bessel process. If we condition the endpoints of the Bessel process to 
+be zero at 1, we can also dene a random closed subset of [0, 1]. These random sets can 
+be characterized by renewal and scale invariance properties, which are similar to the 
+properties we will later use to characterize conformal loop ensembles (the complement 
+of the union of the interiors of these loops will turn out to be a random subset of R2). 
+2 Random trees 
+2.1 Galton-Watson trees 
+Galton-Watson trees and their scaling limits are described by Duquesne and Le Gall 
+in [DLG05 ]. See also [LGLJ98 , DLG06 , DLG09 ]. One of the interesting features of 
+6</text>
+        </slide>
+        <slide>
+          <slideno>16</slideno>
+          <text>[BN11] N Berestycki and JR Norris. Lectures on schrammloewner evolution. 2011. 
+[BNMR01] Ole E. Barndor-Nielsen, Thomas Mikosch, and Sidney I. Resnick, editors. 
+L evy processes. Birkh auser Boston Inc., Boston, MA, 2001. Theory and 
+applications. 
+[Car06] J. Cardy. Lectures on Stochastic Loewner Evolution and other growth 
+processes in two dimensions, March 2006. 
+[CK13] N. Curien and I. Kortchemski. Random stable looptrees. ArXiv e-prints, 
+April 2013. 
+[CL12] N. Curien and J.-F. Le Gall. The Brownian plane. ArXiv e-prints, April 
+2012. 
+[Cor12] Ivan Corwin. The Kardar-Parisi-Zhang equation and universality class. 
+Random Matrices Theory Appl., 1(1):1130001, 76, 2012. 1106.1596. 
+[CQ11] I. Corwin and J. Quastel. Renormalization xed point of the KPZ univer
+sality class. ArXiv e-prints, March 2011. 
+[CS] D. Chelkak and S. Smirnov. Universality in the 2D Ising model and 
+conformal invariance of fermionic observables. Invent. Math. 
+[CV81] Robert Cori and Bernard Vauquelin. Planar maps are well labeled trees. 
+Canad. J. Math., 33(5):10231042, 1981. 
+[DFMS97] Philippe Di Francesco, Pierre Mathieu, and David S en echal. Conformal 
+eld theory . Graduate Texts in Contemporary Physics. Springer-Verlag, 
+New York, 1997. 
+[DLG05] Thomas Duquesne and Jean-Fran cois Le Gall. Probabilistic and fractal 
+aspects of L evy trees. Probab. Theory Related Fields, 131(4):553603, 2005. 
+[DLG06] Thomas Duquesne and Jean-Fran cois Le Gall. The Hausdor measure of 
+stable trees. ALEA Lat. Am. J. Probab. Math. Stat., 1:393415, 2006. 
+[DLG09] Thomas Duquesne and Jean-Fran cois Le Gall. On the re-rooting invariance 
+property of L evy trees. Electron. Commun. Probab., 14:317326, 2009. 
+[DMS14] B. Duplantier, J. Miller, and S. Sheeld. Liouville quantum gravity as a 
+mating of trees. ArXiv e-prints, September 2014. 
+[DRSV14a]	 Bertrand Duplantier, R emi Rhodes, Scott Sheeld, and Vincent Vargas. 
+Critical gaussian multiplicative chaos: Convergence of the derivative mar
+tingale. The Annals of Probability, 42(5):17691808, 09 2014. 
+17</text>
+        </slide>
+        <slide>
+          <slideno>21</slideno>
+          <text>[Pol81] A. M. Polyakov. Quantum geometry of bosonic strings. Phys. Lett. B, 
+103(3):207210, 1981. 
+[Pol08] A. M. Polyakov. From Quarks to Strings. ArXiv e-prints , November 2008. 
+[PW98] James Gary Propp and David Bruce Wilson. How to get a perfectly random 
+sample from a generic markov chain and generate a random spanning tree 
+of a directed graph. Journal of Algorithms , 27(2):170217, 1998. 
+[RV08] R. Rhodes and V. Vargas. KPZ formula for log-innitely divisible multi-
+fractal random measures. ArXiv e-prints:0807.1036, 2008. To appear in 
+ESAIM P&amp;S. 
+[RV14] R emi Rhodes and Vincent Vargas. Gaussian multiplicative chaos and 
+applications: a review. Probab. Surv., 11:315392, 2014. 1305.6221. 
+[RY99] Daniel Revuz and Marc Yor. Continuous martingales and Brownian motion, 
+volume 293 of Grundlehren der Mathematischen Wissenschaften [Funda
+mental Principles of Mathematical Sciences]. Springer-Verlag, Berlin, third 
+edition, 1999. 
+[Sat99] Ken-iti Sato. L evy processes and innitely divisible distributions, volume 68 
+of Cambridge Studies in Advanced Mathematics. Cambridge University 
+Press, Cambridge, 1999. Translated from the 1990 Japanese original, 
+Revised by the author. 
+[Sch99] Gilles Schaeer. Random sampling of large planar maps and convex 
+polyhedra. In Annual ACM Symposium on Theory of Computing (Atlanta, 
+GA, 1999), pages 760769 (electronic). ACM, New York, 1999. 
+[Sch00] Oded Schramm. Scaling limits of loop-erased random walks and uniform 
+spanning trees. Israel J. Math. , 118:221288, 2000. math/9904022. 
+[She07] Scott Sheeld. Gaussian free elds for mathematicians. Probab. Theory 
+Related Fields , 139(3-4):521541, 2007. math/0312099. 
+[She09] Scott Sheeld. Exploration trees and conformal loop ensembles. 
+Math. J., 147(1):79129, 2009. math/0609167. Duke 
+[She10] S. Sheeld. Conformal weldings of random surfaces: SLE and the quantum 
+gravity zipper. ArXiv e-prints, December 2010. 
+[She11] S. Sheeld. Quantum gravity and inventory accumulation. ArXiv e-prints, 
+August 2011. 
+[Shi85] Michio Shimura. Excursions in a cone for two-dimensional Brownian motion. 
+J. Math. Kyoto Univ., 25(3):433443, 1985. 
+22</text>
+        </slide>
+        <slide>
+          <slideno>7</slideno>
+          <text>induce a topology on the Schwartz space; continuous linear functionals on the Schwartz 
+space are called tempered distributions. The space of tempered distributions is the 
+smallest space which includes the bounded continuous functions and is closed under 
+both dierentiation and the Fourier transform. 
+In the exposition on Gaussian free elds, we will often nd it convenient to limit attention 
+to compactly supported test functions (instead of test functions in the Schwartz space) 
+as this will allow us to more easily isolate the eects of boundary conditions. 
+3.2 Gaussian free elds 
+Gaussian Hilbert spaces are introduced in [Jan97 ]. Surveys of the Gaussian free eld 
+can be found in [She07, Ber]. 
+3.3 Fractional Gaussian elds and log correlated free elds 
+The GFF can be generalized in several ways. See the survey articles [DRSV14b , 
+LSSW14 ] for more on fractional Gaussian elds and log correlated Gaussian elds in 
+general d-dimensional spaces. These are obtained by applying powers of the Laplacian 
+to white noise. The Gaussian free eld can be understood as the restriction to two 
+dimensions of log correlated elds dened in higher dimensions. 
+3.4 Dimer models and uniform spanning trees 
+The UST height function is arguably the simplest discrete analog of the GFF. See 
+Kenyons scaling limit proof [Ken00b , Ken01 ], which makes use of the equivalent 
+formulation of the model in terms of dimers. 
+4 Random curves and loop ensembles 
+4.1 Schramm-Loewner evolution: basic denitions and phases 
+Much of the work on Schramm-Loewner evolution is pregured in the physics literature 
+on conformal eld theory [DFMS97 ]. Schramms original paper [Sch00 ] has been followed 
+by many excellent survey articles and textbooks [Wer03 , KN04 , Car06 , Law09 , BN11 ]. 
+The so-called natural parameterization is described in [LS11, LR12, LZ13]. 
+8</text>
+        </slide>
+        <slide>
+          <slideno>11</slideno>
+          <text>5.9	 KPZ (Knizhnik-Polyakov-Zamolodchikov) scaling relations 
+A relationship between scaling dimensions was discovered by Knizhnik, Polyakov, and 
+Zamolodchikov in [KPZ88 ]. In a recent memoir [Pol08 ] Polyakov explains how the 
+discover of this relationship cemented the belief that the discrete planar map models 
+were (in some sense) equivalent to Liouville quantum gravity. See [DS11 ] and the 
+references therein. See the Hausdor variant in [RV08]. 
+See the derivation of the d = 26 value for the bosonic string by Lovelace in 1971 in 
+[Lov71]. 
+5.10 Quantum wedges, cones, spheres and disks 
+There are natural ways to dene quantum surfaces using Bessel process excursions. 
+There are some natural probability measures on the space of innite volume surfaces. 
+There are also some natural innite measures on the space of nite volume surfaces. 
+See the introduction to [DMS14]. 
+6 Random growth trajectories 
+6.1	 Eden model and rst passage percolation 
+There are a number of natural growth trajectories. The Eden model, introduced by 
+Edein in 1961 [Ede61 ], is the simplest to describe. Here, every edge has an exponential 
+clock, and when it rings the edge is added to the growing edge cluster (if it is incident 
+to the existing cluster). A generalization of this story known as rst-passage percolation 
+was introduced by Hammersley and Welsh in 1965 [HW65]. 
+6.2	 Diusion limited aggregation and the dieelectric break
+down model 
+Diusion limited aggregation, as introduced by Witten and Sander in 1981 [WJS81 , 
+WS83 ], is a model for growth in which new particle locations on the boundary are 
+chosen from harmonic measure instead of uniform measure. See early conjectures in 
+[Mea86] and the theorem of Kesten [Kes87]. 
+12</text>
+        </slide>
+        <slide>
+          <slideno>14</slideno>
+          <text>9.2 Matings from complex dynamics
+ 
+The idea of topologically mating Julia sets is given an overview in [Mil04 , Mil06 ] and 
+the references therein. 
+9.3 Matings of correlated continuum random trees 
+The peanosphere theorem is proved in [DMS14]. 
+9.4 Matings of trees of disks 
+The tree of disk analog of the peanosphere theorem is also proved in [DMS14]. 
+9.5 Relation to discrete bijections 
+The tree mating construction has discrete analogs in the planar maps decorated by FK 
+models, uniform spanning trees, and bipolar orientations, as detailed in the various 
+bijections described in Section 5. 
+10 Quantum Loewner evolution 
+10.1 Reshuing in discrete examples 
+Discrete and continuum analogs of the quantum Loewner evolution are introduced in 
+[MS13b]. We begin with an account of the discrete models. 
+The recurrence of random walk on the innite tree decorated map is a special case of 
+the result in [GGN13]. 
+DLA and the Eden model (and more generally DBM) can be dened on random planar 
+maps. They are related, respectively, to loop erased random walk and a Bernoulli 
+percolation interface via a certain reshuing construction. 
+In the case of the Eden model, some relevant work on exploring triangulations by Angel 
+and Schramm appears in [Ang03, AS03] 
+10.2 Dening QLE 
+This reshuing has a continuum analog that can be shown to converge (at least 
+subsequentially) [MS13b]. 
+15</text>
+        </slide>
+        <slide>
+          <slideno>3</slideno>
+          <text>Preface 
+The goals of this book are very simple. We will 
+1. introduce a few fundamental random objects, and 
+2. explain how they are related to one another. 
+The fundamental random objects include processes, trees, distributions (a.k.a. general
+ized functions), curves, loop ensembles, surfaces, and growth trajectories. 
+All of these objects are in some sense universal. That is, they arise as macrosopic limits 
+of many dierent kinds of random systems, which may have very dierent microscopic 
+behavior. This usage of the term universal comes from statistical physics. Physicists 
+tell us that many phenomena (such as phase transitions) are surprisingly similar from 
+one material to another. Physical systems  and mathematical models  that look 
+very dierent on the microscopic level (dierent atoms, molecules, etc.) are declared to 
+belong the same universality class if they behave the same way in some macroscopic 
+limit. The convergence of general random walks to Brownian motion (under only a 
+mild second moment condition) is an example of mathematical universality. We will 
+encounter many other examples during the course of this book, some proven and some 
+conjectural. 
+The random objects introduced in this book are also all in some sense canonical. 
+Many fundamental objects in mathematics are singled out by special symmetries. For 
+example, in a universe full of roughly round-ish shapes, the sphere stands out; it is 
+uniquely determined by rotational invariance, equidistance of points from a center, 
+etc. Similarly, among all random variables taking values in the space of continuous 
+paths, Brownian motion is (up to multiplicative constant) the only one with reection 
+invariance, stationarity, and independence of increments. It has a strong claim to be 
+the canonical continuous random path. This book will survey objects that can claim 
+with equal justication to be the canonical random planar tree, the canonical random 
+non-self-crossing curve, the canonical random surface, and so forth. 
+Among the various symmetries that make these objects special, many involve some 
+sort of conformal invariance . Recall that the Riemann uniformization theorem implies 
+the existence of a conformal map between any two sphere-homeomorphic surfaces; 
+when the sphere is replaced by a multi-handled torus or a disk with holes, the space 
+of conformal equivalence classes (a.k.a. the moduli space) remains nite dimensional. 
+This remarkable fact is a peculiar feature of two dimensions and seems to be a large 
+part of what makes the two dimensional theory interesting. In the 1980s and 1990s a 
+branch of physics called conformal eld theory , motivated by both string theory and 
+two dimensional statistical mechanics, began to discover and explore some surprisingly 
+far reaching consequences of conformal symmetry assumptions in physical models. 
+4</text>
+        </slide>
+        <slide>
+          <slideno>20</slideno>
+          <text>[Mil04] John Milnor. Pasting together Julia sets: a worked out example of mating. 
+Experiment. Math., 13(1):5592, 2004. 
+[Mil06] John Milnor. Dynamics in one complex variable, volume 160 of Annals 
+of Mathematics Studies. Princeton University Press, Princeton, NJ, third 
+edition, 2006. 
+[Mil10] J. Miller. Universality for SLE(4). ArXiv e-prints, October 2010. 
+[MM06] Jean-Fran cois Marckert and Abdelkader Mokkadem. Limit of normalized 
+quadrangulations: the Brownian map. Ann. Probab., 34(6):21442202, 
+2006. 
+[MP10] Peter M orters and Yuval Peres. Brownian motion. Cambridge Series in 
+Statistical and Probabilistic Mathematics. Cambridge University Press, 
+Cambridge, 2010. With an appendix by Oded Schramm and Wendelin 
+Werner. 
+[MS12a] J. Miller and S. Sheeld. Imaginary Geometry I: Interacting SLEs. ArXiv 
+e-prints, January 2012. 
+[MS12b] J. Miller and S. Sheeld. Imaginary geometry II: reversibility 
+SLE(1; 2) for   (0, 4). ArXiv e-prints, January 2012. of 
+[MS12c] J. Miller and S. Sheeld. Imaginary geometry III: reversibility of SLE for 
+  (4, 8). ArXiv e-prints, January 2012. 
+[MS13a] J. Miller and S. Sheeld. Imaginary geometry IV: interior rays, whole-plane 
+reversibility, and space-lling trees. ArXiv e-prints, February 2013. 
+[MS13b] J. Miller and S. Sheeld. Quantum Loewner Evolution. ArXiv e-prints, 
+December 2013. 
+[MS15a] J. Miller and S. Sheeld. An axiomatic characterization of the Brownian 
+map. ArXiv e-prints, June 2015. 
+[MS15b] J. Miller and S. Sheeld. Liouville quantum gravity and the Brownian 
+map I: The QLE(8/3,0) metric. ArXiv e-prints, July 2015. 
+[MS15c] Jason Miller and Scott Sheeld. Liouville quantum gravity and the Brown
+ian map II: geodesics and continuity of the embedding. 2015. In preparation. 
+[MS15d] Jason Miller and Scott Sheeld. Liouville quantum gravity and the Brow
+nian map III: the conformal structure is determined. 2015. In preparation. 
+[Mul67] R. C. Mullin. On the enumeration of tree-rooted maps. Canad. J. Math., 
+19:174183, 1967. 
+21</text>
+        </slide>
+        <slide>
+          <slideno>12</slideno>
+          <text>6.3 KPZ (Kardar-Parisi-Zhang) growth
+ 
+The KPZ growth model is the logarithm of the stochastic heat equation with geometric 
+noise. It was introduced in a slightly dierent form, and without a rigorous construction, 
+Karder, Parisi, and Zhang in [KPZ86 ]. It does not itself describe the conjectural scaling 
+limit of Eden model uctuations; rather, it describes what amounts to a sort of o 
+critical variant, which is believed to converge to a xed point as a certain parameter 
+tends to zero. These models can be viewed as interesting in their right, or interesting 
+as approximations to the (still conjectural) KPZ xed point, which is in turn the 
+conjectural scaling limit of Eden model uctuations. The xed point conjecture is 
+described by Corwin and Quastel in [CQ11]. See also Corwins survey article [Cor12]. 
+6.4 Hastings-Levitov 
+The Hastings-Levitov model was designed as an approximation of what should be 
+a continuum DLA theory. The hope was that one could prove the existence of an 
+isotropic scaling limits of this model, and that would be easier than establishing the 
+analogous result for (an isotropic form of) ordinary DLA. While this goal has not yet 
+been achieved, there has been some recent progress in understanding Hastings-Levitov; 
+see, e.g., [JVST12]. 
+6.5 Internal DLA 
+Internal DLA is a growth model introduced by Meakin and Deuthch in 1986 [MD86 ]. 
+Internal DLA growth seems to be much smoother than Eden model, with logarithmic 
+uctuations [LBG92 , JLS12 , JLS13 , AG13b , AG13a ]. Unlike ordinary (external) DLA 
+and most of the other growth models presented in this section, uctuations of internal 
+DLA on the grid have a well understood scaling limit, which can be described by a 
+variant of the Gaussian free eld [JLS+14]. 
+7 Imaginary geometry 
+7.1 Flow lines starting from the boundary 
+The results in this section are detailed in a series of imaginary geometry papers by the 
+current authors [MS12a , MS12b , MS12c , MS13a ]. The idea is to try to dene ow lines 
+of eih(z)/ where &gt; 0 is a xed parameter and h is an instance of the Gaussian free 
+eld. We begin by discussing paths that originate at the boundary, and are related to 
+forms of chordal SLE. 
+13</text>
+        </slide>
+        <slide>
+          <slideno>19</slideno>
+          <text>[LG14] J.-F. Le Gall. The Brownian map: a universal limit for random planar 
+maps. In XVIIth International Congress on Mathematical Physics, pages 
+420428. World Sci. Publ., Hackensack, NJ, 2014. 
+[LGLJ98] Jean-Francois Le Gall and Yves Le Jan. Branching processes in L evy 
+processes: the exploration process. Ann. Probab., 26(1):213252, 1998. 
+[LGM+12] Jean-Fran cois Le Gall, Gr egory Miermont, et al. Scaling limits of random 
+trees and planar maps. Probability and statistical physics in two and more 
+dimensions, 15:155211, 2012. 
+[Lov71] C Lovelace. Pomeron form factors and dual regge cuts. Physics Letters B, 
+34(6):500506, 1971. 
+[LR12] G. F. Lawler and M. A. Rezaei. Minkowski content and natural parame
+terization for the Schramm-Loewner evolution. ArXiv e-prints, November 
+2012. 
+[LS11] Gregory F. Lawler and Scott Sheeld. A natural parametrization for 
+the Schramm-Loewner evolution. Ann. Probab., 39(5):18961937, 2011. 
+0906.3804. 
+[LSSW14] Asad Lodhia, Scott Sheeld, Xin Sun, and Samuel S Watson. Fractional 
+gaussian elds: a survey. arXiv preprint arXiv:1407.5598, 2014. 
+[LSW03] Gregory Lawler, Oded Schramm, and Wendelin Werner. Conformal restric
+tion: the chordal case. J. Amer. Math. Soc., 16(4):917955 (electronic), 
+2003. math/0209343. 
+[LSW04] Gregory F. Lawler, Oded Schramm, and Wendelin Werner. Conformal 
+invariance of planar loop-erased random walks and uniform spanning trees. 
+Ann. Probab., 32(1B):939995, 2004. math/0112234. 
+[LZ13] Gregory F. Lawler and Wang Zhou. SLE curves and natural parametrization. 
+Ann. Probab., 41(3A):15561584, 2013. 1006.4936. 
+[MD86] Paul Meakin and JM Deutch. The formation of surfaces by diusion limited 
+annihilation. The Journal of chemical physics, 85:2320, 1986. 
+[Mea86] Paul Meakin. Universality, nonuniversality, and the eects of anisotropy 
+on diusion-limited aggregation. Physical Review A, 33(5):3371, 1986. 
+[Mer94] Russell Merris. Laplacian matrices of graphs: a survey. Linear algebra and 
+its applications, 197:143176, 1994. 
+[Mie13] Gr egory Miermont. The Brownian map is the scaling limit of uniform 
+random plane quadrangulations. Acta Math., 210(2):319401, 2013. 
+20</text>
+        </slide>
+        <slide>
+          <slideno>23</slideno>
+          <text>MIT OpenCourseWare
+http://ocw.mit.edu
+18.177 Universal Random Structures in 2D
+Fall 2015
+For information about citing these materials or our Terms of Use, visit: http://ocw.mit.edu/terms .</text>
+        </slide>
+        <slide>
+          <slideno>9</slideno>
+          <text>5 Random surfaces 
+5.1 Planar maps 
+A planar map is a planar map together with an embedding in the plane (dened 
+up to topological equivalence). Enumeration work was done by Tutte in the 1960s 
+[Tut62, Tut68]. 
+5.2 Decorated surfaces and Laplacian determinants 
+The Laplacian determinant and its inverse are related to partition functions for the 
+GFF and UST models in surprisingly simple ways. See Kenyons work on scaling limits 
+of determinant Laplacians on grids [Ken00a ] and the broad survey by Merris [Mer94 ] 
+which describes Kirchhos matrix tree theorem, among other things. 
+Given any nite connected graph (V, E) the Laplacian on the graph can be dened as 
+a linear operator  from RV itself. Its matrix is given by 
+Mi,j =
+  
+ 
+
+ 1 i= j, (vi,vj )  E 
+0 i= j, (vi,vj )  E .
+ 
+deg(vi) i = j. 
+Let R  RV be the set of functions with mean zero. Then  : R  R is invertible, 
+and Kirchhos matrix tree theorem states that if  is the determinant of this invertible 
+operator on R then  is the number of spanning trees of V . The quantity  is also the 
+product of all of the non-zero eigenvalues of the matrix M. 
+ 
+ The DGFF partition function can be be written
+tx2/2dt = t1/2, we nd that quantity is R(2)|V 1|/2e(f,f )/2df. Expanding
+ 
+1over eigenbases, and using the fact the e2
+1/2 . 
+5.3 Mullin-Bernardi bijection 
+There is a very simple bijection between discrete lattice walks in Z2 starting and ending + 
+at zero and rooted planar maps with distinguished spanning trees. See [Mul67 , Ber07 ] 
+as well as the exposition in [She11]. 
+5.4 Cori-Vaquelin-Schaeer bijection 
+The Cori-Vaquelin-Schaeer bijection gives a way to bijectively count undecorated planar 
+maps [CV81 , JS98, Sch99 ]. Every quadrangulation with a root can be decorated by a 
+10</text>
+        </slide>
+        <slide>
+          <slideno>4</slideno>
+          <text>Mathematicians have more recently expanded these ideas further, building in particular 
+on the introduction of the so-called Schramm-Loewner evolution in 1999. 
+The focus of this text is on the mathematics, and in particular on a few of the most 
+fundamental discrete and continuum mathematical objects in one and two dimensions. 
+However we will provide some cursory discussion of the motivating problems that link 
+them to physics and to other elds. 
+The rst half of this book introduces both discrete and continuum analogs of several uni
+versal random objects: processes, trees, distributions, curves, loop ensembles, surfaces, 
+and growth trajectories. The second half explores the intricate and often surprising 
+relationships between these objects. To put this another way, the rst half of the book 
+introduces a certain cast of characters, and the second half explores the drama that 
+takes place when these characters interact. 
+This book is intended as a broad introductory overview of this eld and as such it 
+covers a good deal of material. With additional detail, each individual chapter could be 
+(and in many cases already has been) expanded into an entire book of its own. We do 
+not provide fully detailed proofs of every result cited in this text. However, we aim to 
+provide enough rigor and detail to enable the reader to appreciate the overall narrative 
+and to begin further research in this eld. 
+Acknowledgments. J.M.s work was partially supported by DMS-1204894 and S.S.s 
+work was partially supported by DMS-1209044, a fellowship from the Simons Foundation, 
+and EPSRC grants EP/L018896/1 and EP/I03372X/1. S.S. presented this material 
+as a graduate topics course at MIT in Fall 2015 and would like to thank the students 
+there for feedback and support. 
+1 Random processes 
+1.1 Brownian motion 
+We recall the basic construction, It os formula, martingale representation theorem, local 
+martingales, and quadratic variation. More detailed accounts of this material can be 
+found in basic probability texts like [Dur10 ], the book on Brownian motion by Morters 
+and Peres [MP10], and the stochastic calculus texts [KS91, RY99]. 
+1.2 Bessel processes 
+An introduction to Bessel process can be founded for example in [RY99 , Chapter 11]. 
+The idea is to construct a solution to the stochastic dierential equation 
+  1 X1dXt = dBt + t dt,2 
+5</text>
+        </slide>
+        <slide>
+          <slideno>0</slideno>
+          <text>Universal randomness in 2D
+ 
+Jason Miller and Scott Sheeld 
+Abstract 
+We begin by reviewing one-dimensional random objects that are universal in 
+the sense that they arise in many contexts  in particular as scaling limits of large 
+families of discrete models  and canonical in the sense that they are uniquely 
+characterized by scale invariance and other natural symmetries. Examples include 
+Brownian motion, Bessel processes, stable L evy processes and ranges of stable 
+subordinators. 
+We then introduce several universal and canonical random objects that are 
+(at least in some sense) two dimensional or planar, along with discrete analogs of 
+these objects. These include trees, distributions, curves, loop ensembles, surfaces, 
+and growth trajectories. Keywords include continuum random tree, stable L evy 
+tree, stable looptree, Gaussian free eld, Schramm-Loewner evolution, percolation, 
+uniform spanning tree, loop-erased random walk, Ising model, FK cluster model, 
+conformal loop ensemble, Brownian loop soup, random planar map, Liouville 
+quantum gravity, Brownian map, Brownian snake, diusion limited aggregation, 
+rst passage percolation, and dielectric breakdown model. 
+Finally, we discuss the intricate and surprising relationships between these 
+universal objects. We explain how to use generalized functions to construct 
+curves and vice versa; conformally weld a pair of surfaces to produce a surface 
+decorated by a simple curve; topologically and conformally mate pairs of trees to 
+obtain surfaces decorated by non-simple curves; and reshue these constructions 
+to describe random growth trajectories on random surfaces. We present both 
+discrete and continuum analogs of these relationships. Keywords include imaginary 
+geometry, quantum zipper, peanosphere, and quantum Loewner evolution. 
+1</text>
+        </slide>
+        <slide>
+          <slideno>1</slideno>
+          <text>Contents
+ 
+1 Random processes 5
+ 
+1.1 Brownian motion . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 5
+ 
+1.2 Bessel processes .. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 5
+ 
+1.3 Brownian excursions, meanders, and bridges . . . . . . . . . . . . . . . 6
+ 
+1.4 Stable L evy processes . . . . . . . . . . . . . . . . . . . . . . . . . . . . 6
+ 
+1.5 Ranges of stable sub ordinators . . . . . . . . . . . . . . . . . . . . . . . 6
+ 
+2 Random trees 6
+ 
+2.1 Galton-Watson trees . . . . . . . . . . . . . . . . . . . . . . . . . . . . 6
+ 
+2.2 Aldouss continuum random tree . . . . . . . . . . . . . . . . . . . . . . 7
+ 
+2.3 L evy trees and stable looptrees . . . . . . . . . . . . . . . . . . . . . . 7
+ 
+2.4 Brownian snakes . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 7
+ 
+3 Random generalized functions 7
+ 
+3.1 Tempered distributions and Fourier transforms . . . . . . . . . . . . . . 7
+ 
+3.2 Gaussian free elds . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 8
+ 
+3.3 Fractional Gaussian elds and log correlated free elds . . . . . . . . . 8
+ 
+3.4 Dimer models and uniform spanning trees . . . . . . . . . . . . . . . . 8
+ 
+4 Random curves and loop ensembles 8
+ 
+4.1 Schramm-Loewner evolution: basic denitions and phases . . . . . . . . 8
+ 
+4.2 Loop erased random walk and uniform spanning tree . . . . . . . . . . 9
+ 
+4.3 Critical percolation interfaces . . . . . . . . . . . . . . . . . . . . . . . 9
+ 
+4.4 Gaussian free eld level lines . . . . . . . . . . . . . . . . . . . . . . . . 9
+ 
+4.5 Ising, Potts, and FK-cluster models . . . . . . . . . . . . . . . . . . . . 9
+ 
+4.6 Bipolar orientations . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 9
+ 
+4.7 Restriction measures, self-avoiding walk, and loop soups . . . . . . . . . 9
+ 
+4.8 Conformal loop ensembles . . . . . . . . . . . . . . . . . . . . . . . . . 9
+ 
+5 Random surfaces 10
+ 
+5.1 Planar maps . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 10
+ 
+5.2 Decorated surfaces and Laplacian determinants . . . . . . . . . . . . . 10
+ 
+5.3 Mullin-Bernardi bijection . . . . . . . . . . . . . . . . . . . . . . . . . . 10
+ 
+5.4 Cori-Vaquelin-Schaeer bijection . . . . . . . . . . . . . . . . . . . . . . 10
+ 
+5.5 Hamburger-cheeseburger bijection . . . . . . . . . . . . . . . . . . . . . 11
+ 
+5.6 Bipolar bijection . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 11
+ 
+5.7 Brownian map . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 11
+ 
+5.8 Liouville quantum gravity . . . . . . . . . . . . . . . . . . . . . . . . . 11
+ 
+5.9 KPZ (Knizhnik-Polyakov-Zamolodchikov)scaling relations . . . . . . . 12
+ 
+5.10 Quantum wedges, cones, spheresand disks . . . . . . . . . . . . . . . . 12
+ 
+2</text>
+        </slide>
+        <slide>
+          <slideno>15</slideno>
+          <text>i 10.3 QLE and the Brownian map
+ 
+This continuum exploration introduced in [MS13b ] can be used to prove the equivalence 
+of 8/3-Liouville quantum gravity and the Brownian map. This is accomplished in a 
+series of papers [MS15b, MS15c, MS15d]. 
+It remains an open problem to endow -LQG with a metric space structure for general 
+. A famous calculation of Watabiki describes what can be conjectured to be the 
+Hausdor dimension of general -LQG surfaces [Wat93]. 
+References 
+[AG13a]	 Amine Asselah and Alexandre Gaudilli` ere. From logarithmic to subdiusive 
+polynomial uctuations for internal DLA and related growth models. Ann. 
+Probab., 41(3A):11151159, 2013. 1009.2838. 
+[AG13b]	 Amine Asselah and Alexandre Gaudilli` ere. Sublogarithmic uctuations for 
+internal DLA. Ann. Probab., 41(3A):11601179, 2013. 1011.4592. 
+[Ald91a]	 David Aldous. The continuum random tree. I. Ann. Probab., 19(1):128, 
+1991. 
+[Ald91b]	 David Aldous. The continuum random tree. II. An overview. In Stochastic 
+analysis (Durham, 1990), volume 167 of London Math. Soc. Lecture Note 
+Ser., pages 2370. Cambridge Univ. Press, Cambridge, 1991. 
+[Ald93]	 David Aldous. The continuum random tree. III. Ann. Probab., 21(1):248 
+289, 1993. 
+[Ang03]	 O. Angel. Growth and percolation on the uniform innite planar triangula
+tion. Geom. Funct. Anal., 13(5):935974, 2003. math/0208123. 
+[AS03]	 Omer Angel and Oded Schramm. Uniform innite planar triangulations. 
+Comm. Math. Phys., 241(2-3):191213, 2003. math/0207153. 
+[Ber]	 Nathana el Berestycki. Introduction to the gaussian free eld and liouville 
+quantum gravity. 
+[Ber96]	 Jean Bertoin. L evy processes, volume 121 of Cambridge Tracts in Mathe
+matics. Cambridge University Press, Cambridge, 1996. 
+[Ber07]	 Olivier Bernardi. Bijective counting of tree-rooted maps and shues of 
+parenthesis systems. Electron. J. Combin. , 14(1):Research Paper 9, 36 pp. 
+(electronic), 2007. math/0601684. 
+16</text>
+        </slide>
+        <slide>
+          <slideno>18</slideno>
+          <text>[JVST12] Fredrik Johansson Viklund, Alan Sola, and Amanda Turner. Scaling limits 
+of anisotropic Hastings-Levitov clusters. volume 48, pages 235257, 2012. 
+0908.0086. 
+[Kah85] J-P Kahane. Le chaos multiplicatif. Comptes rendus de lAcad emie des 
+sciences. S erie 1, Math ematique, 301(6):329332, 1985. 
+[Ken00a] Richard Kenyon. The asymptotic determinant of the discrete laplacian. 
+Acta Mathematica, 185(2):239286, 2000. 
+[Ken00b] Richard Kenyon. Conformal invariance of domino tiling. 
+28(2):759795, 2000. Ann. Probab. , 
+[Ken01] R. Kenyon. Dominos and the Gaussian free eld. Annals of Probability, 
+29:11281137, 2001. 
+[Kes87] Harry Kesten. Hitting probabilities of random walks on Zd . 
+Process. Appl., 25(2):165184, 1987. Stochastic 
+[KN04] Wouter Kager and Bernard Nienhuis. A guide to stochastic l owner evolution 
+and its applications. Journal of statistical physics, 115(5-6):11491229, 
+2004. 
+[KPZ86] Mehran Kardar, Giorgio Parisi, and Yi-Cheng Zhang. Dynamic scaling of 
+growing interfaces. Phys. Rev. Lett., 56:889892, Mar 1986. 
+[KPZ88] V. G. Knizhnik, A. M. Polyakov, and A. B. Zamolodchikov. Fractal 
+structure of 2D-quantum gravity. Modern Phys. Lett. A, 3(8):819826, 
+1988. 
+[KS91] Ioannis Karatzas and Steven E. Shreve. Brownian motion and stochastic 
+calculus, volume 113 of Graduate Texts in Mathematics. Springer-Verlag, 
+New York, second edition, 1991. 
+[Lam67] John Lamperti. Continuous state branching processes. Bull. Amer. Math. 
+Soc., 73:382386, 1967. 
+[Law09] G. Lawler. Conformal invariance and 2D statistical physics. Bull. AMS, 
+46:2554, 2009. 
+[LBG92] Gregory F. Lawler, Maury Bramson, and David Grieath. Internal diusion 
+limited aggregation. Ann. Probab., 20(4):21172140, 1992. 
+[Le 14] J.-F. Le Gall. Random geometry on the sphere. ArXiv e-prints, March 
+2014. 
+[LG13] Jean-Fran cois Le Gall. Uniqueness and universality of the Brownian map. 
+Ann. Probab., 41(4):28802960, 2013. 1105.4842. 
+19</text>
+        </slide>
+        <slide>
+          <slideno>2</slideno>
+          <text>6 Random growth trajectories 12
+ 
+6.1 Eden model and rst passage percolation . . . . . . . . . . . . . . . . . 12
+ 
+6.2 Diusion limited aggregation and the dieelectric breakdown model . . . 12
+ 
+6.3 KPZ (Kardar-Parisi-Zhang) growth . . . . . . . . . . . . . . . . . . . . 13
+ 
+6.4 Hastings-Levitov . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 13
+ 
+6.5 Internal DLA . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 13
+ 
+7 Imaginary geometry 13
+ 
+7.1 Flow lines starting from the boundary . . . . . . . . . . . . . . . . . . 13
+ 
+7.2 Interior ow lines . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 14
+ 
+7.3 Counterow lines and space-lling SLE . . . . . . . . . . . . . . . . . . 14
+ 
+7.4 Time reversal symmetries . . . . . . . . . . . . . . . . . . . . . . . . . 14
+ 
+8 Conformal welding and the quantum zipper 14
+ 
+8.1 Welding simple quantum wedges . . . . . . . . . . . . . . . . . . . . . . 14
+ 
+8.2 Welding more general quantum wedges . . . . . . . . . . . . . . . . . . 14
+ 
+9 Mating trees and the peanosphere 14
+ 
+9.1 Moores theorem and topological tree mating . . . . . . . . . . . . . . . 14
+ 
+9.2 Matings from complex dynamics . . . . . . . . . . . . . . . . . . . . . . 15
+ 
+9.3 Matings of correlated continuum random trees . . . . . . . . . . . . . . 15
+ 
+9.4 Matings of trees of disks . . . . . . . . . . . . . . . . . . . . . . . . . . 15
+ 
+9.5 Relation to discrete bijections . . . . . . . . . . . . . . . . . . . . . . . 15
+ 
+10 Quantum Loewner evolution 15
+ 
+10.1 Reshuing in discrete examples . . . . . . . . . . . . . . . . . . . . . . 15
+ 
+10.2 Dening QLE . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 15
+ 
+10.3 QLE and the Brownian map . . . . . . . . . . . . . . . . . . . . . . . . 16
+ 
+3</text>
+        </slide>
+        <slide>
+          <slideno>8</slideno>
+          <text>4.2 Loop erased random walk and uniform spanning tree
+ 
+See Wilsons algorithm [Wil96 , PW98 ] and the original UST/LERW convergence paper 
+[LSW04]. 
+4.3 Critical percolation interfaces 
+Percolation interface scaling limits are tractable thanks to a fundamental discovery by 
+Stanislav Smirnov [Smi01]. 
+4.4 Gaussian free eld level lines 
+See [SS05, SS09, SS13] and the universality theorem in [Mil10]. 
+4.5 Ising, Potts, and FK-cluster models 
+Some of these next simplest after percolation models are also tractable [CS] 
+4.6 Bipolar orientations 
+This is another simple model conjectured to scale to SLE 12. The conjecture is easy to 
+state, but the motivation behind the conjecture will not be explained until the sections 
+on imaginary geometry and the peanosphere. 
+4.7 Restriction measures, self-avoiding walk, and loop soups 
+The relationship between SLE 8/3 and Brownian motion is especially beautiful and has 
+an especially beautiful history. See the account in the early work by Lawler, Schramm, 
+and Werner [LSW03]. 
+4.8 Conformal loop ensembles 
+Given that the discrete interfaces that scale to SLE have loop ensemble variants, 
+one would expect there to be a natural loop ensemble variant of SLE itself. See the 
+introduction in [She09, SW12]. 
+9</text>
+        </slide>
+        <slide>
+          <slideno>10</slideno>
+          <text>directed breadth rst spanning tree spannign all of the edges. When multiple incoming 
+edges come into the same vertex, each outgoing edge is connected to only one of them 
+in this tree namely, the next one over in clockwise ordering. 
+5.5 Hamburger-cheeseburger bijection 
+There is a generalization of the Mullin-Bernardi bijection in which the rooted planar 
+map comes with an arbitrary distinguished edge subset, instead of a distinguished 
+spanning tree [She11]. 
+5.6 Bipolar bijection 
+The scaling limit of the pair of trees can be easily described in this case, as it can in 
+each of the other cases described above. 
+5.7 Brownian map 
+The idea behind the Cori-Vaquelin-Schaeer bijection can be used to dene a continuum 
+random metric space [MM06 , LG13 , Mie13 , LG14 ], which has a natural innite volume 
+analog [CL12 ]. See Le Galls ICM notes [Le 14] or the survey by Miermont and Le 
+Gall [LGM+12]. An axiomatic characterization of the Brownian map in terms of it 
+symmetries appears in [MS15a]. 
+5.8 Liouville quantum gravity 
+Polaykov conceived of a random surface model based on an action closely related to the 
+Gaussian free eld [Pol81]. If h is an instance of the Gaussian free eld, one attempts 
+to dene a meausre of the form eh(z)dz, which in turn encodes the volume form of a 
+random surface after a conformal map back to a xed parameter space (say, a disk in the 
+plane). The rigorous construction of this random measure was given by Hegh-Krohn in  
+1971 [HK71 ], for the range   [0, 2), and the full range [0, 2) was treated by Kahane 
+(who used the term multiplicative chaos) in 1985 [Kah85 ], see also the survey [RV14 ]. 
+The construction of the measure as a measure-valued function on the space of instances 
+h of the GFF was done in [DS11 ]. The case  = 2 is dierent but one can make sense 
+of the measure by dierent means [DRSV14a, DRSV14c]. 
+11</text>
+        </slide>
+        <slide>
+          <slideno>22</slideno>
+          <text>[Smi01] Stanislav Smirnov. Critical percolation in the plane: conformal invariance, 
+Cardys formula, scaling limits. C. R. Acad. Sci. Paris S er. I Math., 
+333(3):239244, 2001. 
+[SS05] Oded Schramm and Scott Sheeld. Harmonic explorer and its convergence 
+to SLE 4. Ann. Probab., 33(6):21272148, 2005. 
+[SS09] Oded Schramm and Scott Sheeld. Contour lines of the two-dimensional 
+discrete Gaussian free eld. Acta Math., 202(1):21137, 2009. 
+[SS13] Oded Schramm and Scott Sheeld. A contour line of the continuum 
+Gaussian free eld. Probab. Theory Related Fields, 157(1-2):4780, 2013. 
+1008.2447. 
+[SW12] Scott Sheeld and Wendelin Werner. Conformal loop ensembles: the 
+Markovian characterization and the loop-soup construction. Ann. of Math. 
+(2), 176(3):18271917, 2012. 1006.2374. 
+[Tut62] W. T. Tutte. A census of planar triangulations. Canad. J. Math., 14:2138, 
+1962. 
+[Tut68] W. T. Tutte. On the enumeration of planar maps. Bull. Amer. Math. Soc., 
+74:6474, 1968. 
+[Wat93] Yoshiyuki Watabiki. Analytic study of fractal structure of quantized 
+surface in two-dimensional quantum gravity. Progr. Theoret. Phys. Suppl. , 
+(114):117, 1993. Quantum gravity (Kyoto, 1992). 
+[Wer03] Wendelin Werner. Random planar curves and schramm-loewner evolutions. 
+arXiv preprint math/0303354, 2003. 
+[Wil96] David Bruce Wilson. Generating random spanning trees fmore quickly 
+than the cover time. In Proceedings of the twenty-eighth annual ACM 
+symposium on Theory of computing, pages 296303. ACM, 1996. 
+[WJS81] TA Witten Jr and Leonard M Sander. Diusion-limited aggregation, a 
+kinetic critical phenomenon. Physical review letters, 47(19):1400, 1981. 
+[WS83] T. A. Witten and L. M. Sander. Diusion-limited aggregation. Phys. Rev. 
+B (3), 27(9):56865697, 1983. 
+Department of Mathematics 
+Massachusetts Institute of Technology 
+Cambridge, MA, USA 
+23</text>
+        </slide>
+        <slide>
+          <slideno>6</slideno>
+          <text>Galton-Watson trees is the phase transition: when the expected number of children is 
+less than one, the tree is easily seen to be nite almost surely. (The expected number of 
+children at level k decays exponentially in k.) When the expected number of children 
+is greater than one, the tree has a positive probability of being innite. 
+When the expected number of children is equal to 1, one may observe ospring sets of 
+vertices one at a time, exploring tree boundary in a clockwise way, so that the number 
+of live vertices is a martingale. This martingale is closely related to the contour function 
+of the tree (but not exactly the same; see L evy tree story below). 
+2.2 Aldouss continuum random tree 
+The continuum random tree was introduced in a series of papers by Aldous in 1991 
+[Ald91a , Ald91b , Ald93 ]. It can be understood as a scaling limit of Galton-Watson 
+trees. 
+2.3 L evy trees and stable looptrees 
+There are some very simple analogs of the CRT in which stable L evy excursions play 
+the role of the Brownian excursion [DLG05 ]. These can also be understood as scaling 
+limits of Galton-Watson trees, when the number of children has a power law tail (nite 
+mean but innite variance). 
+There is a closely related construction in which each of the countably many big branch 
+points is replaced with a loop; the resulting tree of loops called a looptree. See the 
+work by Curien and Korchemski on stable looptrees [CK13 ], as well as the exposition in 
+[DMS14]. 
+2.4 Brownian snakes 
+A Brownian snake is essentially a Brownian motion indexed by a CRT. It will play a role 
+later in the construction of a certain canonical random surface called the Brownian map, 
+but it was actually studied independently before its relationship to random surfaces 
+was discovered [DLG05]. 
+3 Random generalized functions 
+3.1 Tempered distributions and Fourier transforms 
+The Schwartz space on Rd is the space of C functions  such that for any multi-indices 
+ and  in which each of the seminorms sup D(x)x is bounded. These seminorms 
+7</text>
+        </slide>
+        <slide>
+          <slideno>17</slideno>
+          <text>[DRSV14b]	 Bertrand Duplantier, R emi Rhodes, Scott Sheeld, and Vincent Vargas. 
+Log-correlated gaussian elds: an overview. arXiv preprint arXiv:1407.5605, 
+2014. 
+[DRSV14c]	 Bertrand Duplantier, R emi Rhodes, Scott Sheeld, and Vincent Vargas. 
+Renormalization of Critical Gaussian Multiplicative Chaos and KPZ Rela
+tion. Comm. Math. Phys., 330(1):283330, 2014. 
+[DS11] Bertrand Duplantier and Scott Sheeld. Liouville quantum gravity and 
+KPZ. Invent. Math., 185(2):333393, 2011. 0808.1560. 
+[Dur10] Rick Durrett. Probability: theory and examples. Cambridge Series in 
+Statistical and Probabilistic Mathematics. Cambridge University Press, 
+Cambridge, fourth edition, 2010. 
+[Ede61] Murray Eden. A two-dimensional growth process. In Proc. 4th Berkeley 
+Sympos. Math. Statist. and Prob., Vol. IV, pages 223239. Univ. California 
+Press, Berkeley, Calif., 1961. 
+[GGN13] Ori Gurel-Gurevich and Asaf Nachmias. Recurrence of planar graph limits. 
+Ann. of Math. (2), 177(2):761781, 2013. 1206.0707. 
+[HK71] Raphael Hegh-Krohn. A general class of quantum elds without cut-os 
+in two space-time dimensions. Communications in Mathematical Physics, 
+21(3):244255, 1971. 
+[HW65] J. M. Hammersley and D. J. A. Welsh. First-passage percolation, sub-
+additive processes, stochastic networks, and generalized renewal theory. 
+In Proc. Internat. Res. Semin., Statist. Lab., Univ. California, Berkeley, 
+Calif, pages 61110. Springer-Verlag, New York, 1965. 
+[Jan97] Svante Janson. Gaussian Hilbert spaces , volume 129 of Cambridge Tracts 
+in Mathematics. Cambridge University Press, Cambridge, 1997. 
+[JLS12] David Jerison, Lionel Levine, and Scott Sheeld. Logarithmic uctuations 
+for internal DLA. J. Amer. Math. Soc., 25(1):271301, 2012. 1010.2483. 
+[JLS13] David Jerison, Lionel Levine, and Scott Sheeld. Internal dla in higher 
+dimensions. Electron. J. Probab, 18(98):114, 2013. 
+[JLS+14] David Jerison, Lionel Levine, Scott Sheeld, et al. Internal dla and the 
+gaussian free eld. Duke Mathematical Journal, 163(2):267308, 2014. 
+[JS98] Benjamin Jacquard and Gilles Schaeer. A bijective census of nonseparable 
+planar maps. J. Combin. Theory Ser. A, 83(1):120, 1998. 
+18</text>
+        </slide>
+      </slides>
+      <videos/>
+    </lecture>
+  </lectures>
+</doc>

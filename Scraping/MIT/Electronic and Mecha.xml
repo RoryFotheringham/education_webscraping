@@ -1,0 +1,3416 @@
+<doc>
+  <source>MIT</source>
+  <date>28/01/2023</date>
+  <course>
+    <course_url>https://ocw.mit.edu/courses/3-225-electronic-and-mechanical-properties-of-materials-fall-2007/</course_url>
+    <course_title>Electronic and Mechanical Properties of Materials</course_title>
+    <course_tags>
+      <list>Engineering </list>
+      <list>Science </list>
+      <list>Physics </list>
+    </course_tags>
+  </course>
+  <lectures>
+    <lecture>
+      <lecture_title>Micro to macro: conductivity</lecture_title>
+      <lecture_pdf_url>https://ocw.mit.edu/courses/3-225-electronic-and-mechanical-properties-of-materials-fall-2007/resources/lecture_1/</lecture_pdf_url>
+      <lectureno>14</lectureno>
+      <slides>
+        <slide>
+          <slideno>3</slideno>
+          <text>Remove geometry of material 
+V 
+I 
+W 
+L 
+V=IR=IR/L R=L/( A) J=E 
+In general, 
+EJ 
+E
+
+Isotropic material
+ r ~r
+J
+=
+
+
+Anisotropic material E JAll material info 
+xy xz 
+
+yy yz 
+yz zz 
+
+
+ 
+ J
+ E
+x x 
+In cubi c material,
+J
+ E
+ =
+
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+y
+ 
+
+
+xx 
+xy 
+xz  
+
+
+E
+y 
+z J
+z</text>
+        </slide>
+        <slide>
+          <slideno>13</slideno>
+          <text>Example: Conductivity Engineering
+ Objective: increase strength of Cu but keep conductivity high
+= ne2 = e Scattering length 
+m m connects scattering time 
+l = v to microstructure 
+Dislocation
+(edge)
+e-
+l decreases,  decreases,  decreases</text>
+        </slide>
+        <slide>
+          <slideno>8</slideno>
+          <text>Mobility in Free-Electron Theory
+Between collisions with the latti ce atoms, each electron experiences 
+a force from the electric field given by F = -eE 
+and therefore an acceleration given by a = F/m = -eE/m 
+Theory assumes that the energy picked up from the electric field 
+by the electron between collisions is delivered to the lattice 
+in each collision, so acceleration must start again. 
+t vD 
+If the average time between collisions is , the average velocity is 
+Dv=(eE/m) =v= e 
+D Em</text>
+        </slide>
+        <slide>
+          <slideno>9</slideno>
+          <text>Predicting conductivity using Drude 
+ntheor y from the per iodic table (# valence e- and the cr ystal structure) 
+ntheor y=AVZm/A, 
+where AV is 6.023x1023 atoms/mole 
+m is the density 
+Z is the number of electrons per atom 
+A is the atom ic weight 
+For metals, ntheory~1022 cm-3 
+If we ass ume that this is correct, we can extract  Element Zn (1022/cm3) rs(A)ors/a0
+Li (78 K)
+Na (5 K)
+K (5 K)
+Rb (5 K)
+Cs (5 K)Cu
+Ag
+Au
+Be
+Mg
+CaSr
+Ba1
+1
+1
+1
+11
+1
+1
+12
+2
+22
+2
+2
+2
+2
+22
+3
+33
+3
+4
+4
+5
+52.65
+1.40
+1.15
+0.91
+8.47
+5.86
+5.90
+5.5624.7
+8.61
+4.613.55
+3.15
+17.0
+16.5
+13.2
+9.27
+8.65
+18.1
+11.515.4
+10.5
+14.8
+13.2
+14.1
+16.5Nb
+Fe
+Mn (a)
+Zn
+CdHg (78 K)
+Al
+InGa
+Tl
+Sn
+Pb
+Bi
+Sb4.70
+2.08
+2.57
+2.75
+2.981.41
+1.60
+1.59
+1.630.99
+1.41
+1.731.89
+1.96
+1.12
+1.13
+1.22
+1.371.40
+1.10
+1.271.16
+1.31
+1.17
+1.22
+1.19
+1.131.72
+3.93
+4.86
+5.20
+5.622.67
+3.02
+3.01
+3.071.87
+2.66
+3.273.57
+3.71
+2.12
+2.14
+2.30
+2.592.65
+2.07
+2.412.19
+2.48
+2.22
+2.30
+2.25
+2.143.25
+Table by MIT OpenCourseWare.</text>
+        </slide>
+        <slide>
+          <slideno>0</slideno>
+          <text>3.225  Electrical,Optical, and 
+Magnetic Properties of Materials
+	Professor Eugene Fitzgerald 
+	Purpose: connect atoms and structure to 
+properties 
+	Semi-historical context 
+ What was understood first from the micro to 
+the macro? 
+ What was missing to explain other materials?</text>
+        </slide>
+        <slide>
+          <slideno>6</slideno>
+          <text>Hydrodynamic representation of e- motion
+p=momentum=mv 
+dp t () =pt() +Ft() +F ()t +... dt  1 2 
+Response (ma ) Drag Driving Force Restoring Force... 
+dp t () pt() eEdt  
+Add a drag term, i.e. the electron s have many collisions during drift 
+1/represents a viscosity in mechanical terms</text>
+        </slide>
+        <slide>
+          <slideno>4</slideno>
+          <text>Microscopic Origin: Can we predict Conductivity of 
+Metals?
+	Drude model: Sea of electrons 
+	all electrons are bound to ion atom cores except valence 
+electrons 
+ ignore cores
+electron gas
+J=E=-nev, by definit ion of flux through a cross-section 
+n=number of electrons per volume 
+v=velocity of the carriers due to electric field--&gt; drift velocity 
+Therefore, 
+=-nev/E and we define v=- E 
+ is mobility, since the electric field creates a force on the electron F=-eE 
+ = ne</text>
+        </slide>
+        <slide>
+          <slideno>7</slideno>
+          <text>In steady state, 
+dp t () = 0dt 
+t 
+pt() = p (1 e  ) 
+p=eE  
+p 
+t -eE 
+ 
+If the environment has a lot of collisions, 
+mvavg=-eE  vavg=-eE /m 
+Now we have Ohms law = ne2 
+m = e 
+m</text>
+        </slide>
+        <slide>
+          <slideno>5</slideno>
+          <text>Does this microscopic pictur e of metals give us Ohms 
+Law?
+F=-eE 
+F=ma 
+m(dv/dt)=-eE E 
+v,J,,I 
+v=-(eE/m)t t 
+J=E=-nev=ne2Et/m E 
+=ne2t/m 
+tConstant E gives ever-increasing J 
+No, Ohms law can not be only from electric force on electron!</text>
+        </slide>
+        <slide>
+          <slideno>12</slideno>
+          <text>Additivity of Resistivity 
+In metals &amp; alloys, the various contributions to the scattering of free
+electrons, and therefore to resistivit y, are approximately additive, i.e.,
+1 =  i 
+ i 
+(ohm-m) dislocations 
+solute atoms 
+2x10-8 
+lattice vibrations 
+Temperature (K) Cu Cu-1%Sn Cu-1%Sn, deformed 
+100 200 300 0</text>
+        </slide>
+        <slide>
+          <slideno>1</slideno>
+          <text>Origin of Conduction 
+Range of Resistivity 
+Why? Electrical Resistivity (ohm-m) Electrical Conductivity (S/m) Log
+-8
+-8
+-910-7
+-7-6
+-6-5
+-5-4
+-4-3
+-3-2
+-2-1
+-10 0
+11
+22
+33
+44
+55
+66
+77
+88
+9
+101112131415
+16-11
+-12-13-14-15
+-16intercalated graphite
+graphite (in-plane)
+graphite (out of plane)
+polyacetylene (doped)
+TTF-TCNQ
+polyacetylene (undoped)
+Bakelite
+polypyrrole
+Lucite (PMMA)
+polyvinyl chloride
+polyethylene, tefloncopper, silver iron
+stainless steel, metallic glass
+YBa
+2Cu3O7 (ab plane)
+YBa2Cu3O7 (c-axis)
+Fe3O4
+Al2O3
+mica
+silica
+diamondsilicon (doped)
+ZnO (doped)
+seawater
+germanium
+silicon
+lnSb
+water
+AgCl
+ZnO (undoped)
+NaCl
+Figure by MIT OpenCourseWare.</text>
+        </slide>
+        <slide>
+          <slideno>11</slideno>
+          <text>Thermal Velocity 
+	So far we have discussed drift velocity vD and scattering time 
+ related to the applied electric field 
+	Thermal velocity vth is much greater than vD 
+x 
+1 mvth 2 = 3 kT 2 2 x 
+x 
+L=vDt 
+3kT vth	= m 
+Thermal velocity is much greater than drift velocity</text>
+        </slide>
+        <slide>
+          <slideno>14</slideno>
+          <text>Example: Conductivity Engineering
+	Can increase strengt h with second phase particles 
+	As long as distance between second phase&lt; l, conductivity marginally 
+effected 
+L 
+S L+S L 
+  +L +L 
++ 
+Sn Cu X	 Cu
+S	dislocation 
+microstructure 
+  
+L L&gt;l 
+Dislocation motion inhibited by second
+Material not strengthened, conductivity decreases phase; material strengthened; 
+conductivity about the same</text>
+        </slide>
+        <slide>
+          <slideno>2</slideno>
+          <text>Response of material to applied potential 
+I 
+I V=f(I) 
+Linear,Rectification, OhmicNon-linear, Non-OhmicV
+ R
+V 
+e-
+V=IR 
+Metals sho w Ohmic behavior 
+Microscopic origin?</text>
+        </slide>
+        <slide>
+          <slideno>10</slideno>
+          <text>Extracting Typical  for Metals
+ ~10-14 sec for metals 
+in Drude model Element 77 K 273 K 373 K
+Li
+Na
+K 
+Rb 
+Cs Cu
+Ag
+Au
+Be
+Mg
+CaSr
+Ba7.3
+17
+18
+14
+8.6
+21
+20
+12
+2.16.7
+1.4
+0.66
+3.2
+2.4 0.492.4
+0.71
+6.5
+0.84
+0.911.7
+1.1
+0.570.0720.273.2
+4.1
+2.8
+2.12.7
+4.0
+3.0
+0.420.51
+1.1
+2.20.44
+0.19
+0.24
+0.56
+0.80
+0.17
+0.220.38
+0.23
+0.140.0230.055Nb
+FeZn
+Cd
+Hg
+Al
+InGa
+Tl
+SnPbBiSb0.88
+1.9
+2.8
+2.1
+0.330.27
+0.74
+1.5
+0.14
+0.34
+0.55
+0.25
+0.15
+0.150.0990.0160.0360.61
+Drude relaxation times in units of 10-14 second
+Table by MIT OpenCourseWare.</text>
+        </slide>
+        <slide>
+          <slideno>15</slideno>
+          <text>Example: Conductivity Engineering
+	Scaling of Si CMOS includ es conductivity engineering 
+	One example: as devi ces shri nk 
+	vertical field increases 
+	 decreases due to increased scattering at SiO2/Si interface 
+	increased doping in channel need fo r electrostatic integrity: ionized 
+impurity scattering 
+	SiO2&lt;impurity if scaling continues properly 
+Evert 
+Ionized impurities 
+(dopants) S D G 
+SiO2</text>
+        </slide>
+      </slides>
+      <videos/>
+    </lecture>
+    <lecture>
+      <lecture_title>Metals and insulators</lecture_title>
+      <lecture_pdf_url>https://ocw.mit.edu/courses/3-225-electronic-and-mechanical-properties-of-materials-fall-2007/resources/lecture_6/</lecture_pdf_url>
+      <lectureno>19</lectureno>
+      <slides>
+        <slide>
+          <slideno>4</slideno>
+          <text>Higher Dimensions (2 and 3-D) 
+1-D: E(kx); 2-D: E(kx,ky); 3-D: E(kx,ky,kz) 
+Fermi Surface 
+/a /a 
+1-D First zone 
+0 
+Zone center /a /a 
+/a 
+/a kx ky 
+0 E 
+2-D First zone 
+/a 0 /a 
+3-D 
+1999 E.A. Fitzgerald 
+Zone center 
+5</text>
+        </slide>
+        <slide>
+          <slideno>5</slideno>
+          <text>Metals and Insulators
+ Covalent bonds, weak U seen by e-, with EF
+being in mid-band area: free e-, metallic
+	Covalent or slightly ionic bonds, weak U to 
+medium U, with EF near band edge
+EF in or near kT of band edge: semimetal
+EF in gap: semiconductor
+	More ionic bonds, large U, EF in very large 
+gap, insulator 
+1999 E.A. Fitzgerald 6</text>
+        </slide>
+        <slide>
+          <slideno>6</slideno>
+          <text>Insulators 
+	Very large band gaps=no conduction electrons at 
+reasonable temperatures 
+	All electrons are bound 
+	Optical properties of insulators are derived from 
+the electric field being able to temporarily move 
+electrons: polarization 
+	We will return to the interaction of E-field with 
+bound electrons in Dielectrics Section 
+1999 E.A. Fitzgerald 7</text>
+        </slide>
+        <slide>
+          <slideno>0</slideno>
+          <text>Trends in III-V and II-VI Compounds
+Larger atoms, weaker bon ds, smaller U, smaller Eg, higher  , more costly! 
+1
+ 1999 E.A. Fitzgerald AlAsGaP
+AlSb
+GaAs (D)
+InP(D)
+GaSb (D)
+InAs (D)Si
+Ge
+0.65 0.64 0.63 0.62 0.61 0.60 0.59 0.58 0.57 0.56 0.55 0.5400.20.40.8
+0.61.01.21.41.61.82.02.22.42.6
+6.2003.1002.0671.5501.2401.0330.8850.7750.6890.6200.5630.5170.477
+InSb (D)
+Wavelength (microns)
+Lattice constant (nm)Energy gap (eV)AlP
+Indirect band gap
+Direct band gap (D)Energy Gap and Lattice Constants
+Figure by MIT OpenCourseWare.</text>
+        </slide>
+        <slide>
+          <slideno>1</slideno>
+          <text>Properties of non-free e -
+	Electrons near the diffraction condition are not 
+approximated as free 
+	Their properties can still be viewed as free e- if an 
+effective mass m* is used	2 2h kE = * h2 k 2 2mecE = 
+* h2 
+m	= ec 2 E 
+k 2 
+h2 k 2 
+E = * 2m 
+2mev 
+*	h2 
+m	= ev 2 E 
+k 2 Note: These 
+electrons have 
+negative mass! 
+/a /a 
+2 
+1999 E.A. Fitzgerald</text>
+        </slide>
+        <slide>
+          <slideno>2</slideno>
+          <text>1-D Crystal Metals and Insulators
+ How do band gaps affect properties of materials? 
+ Only electrons near EF participate in properties 
+ If EF is in the middle of the band, free e- and metallic behavior 
+ If EF is near the band gap, changes in materials properties may occur 
+	Need to find out where EF is! 
+Where kF=/a if we 
+N = 2kFL = 2L want to see how many
+	 a electrons are in first 
+band 
+1999 E.A. Fitzgerald /a /a EF with 2e- per unit cell 
+EF with 1e- per unit cell Note: L/a is the number of unit 
+cells in the 1-D crystal; therefore, 
+the number of electrons per unit 
+cell, which depends on n and the 
+crystal structure, determine where 
+EF is with respect to the band gap 
+/2a 3</text>
+        </slide>
+        <slide>
+          <slideno>3</slideno>
+          <text>1-D Crystal Metals and Insulators
+ 2e-per unit cell: EF at band edge: 2 possibilities 
+ Band gap &gt;&gt; kT: electrons at band max can not accept 
+energy from electric fields; no conduction, insulating 
+behavior 
+ Band gap near kT: some thermal fluctuations large 
+enough to allow population of second band; carriers are 
+there, but less than for free e-, semimetal 
+ 1e-per unit cell: EF in middle of band: free e-, metallic 
+Note: crystal structure (number of atoms per primitive cell) and 
+valence (number of conduction electrons per atom), combined 
+with band gap size, determine the electronic properties 
+1999 E.A. Fitzgerald 4</text>
+        </slide>
+      </slides>
+      <videos/>
+    </lecture>
+    <lecture>
+      <lecture_title>Bloch model, band gaps</lecture_title>
+      <lecture_pdf_url>https://ocw.mit.edu/courses/3-225-electronic-and-mechanical-properties-of-materials-fall-2007/resources/lecture_5/</lecture_pdf_url>
+      <lectureno>18</lectureno>
+      <slides>
+        <slide>
+          <slideno>8</slideno>
+          <text>Extended-Zone Scheme 
+ Bands form, separated by band gaps 
+ Note redundancy: no need for defining k outside +- /a region 
+E 
+Band 2
+Band gap EgBand 1
+k/a -/a 0 2/a 2/a 
+9
+1999 E.A. Fitzgerald</text>
+        </slide>
+        <slide>
+          <slideno>0</slideno>
+          <text>Remaining Issues
+	Electron wave picture has fixed so me thermal/elect rical properties and 
+electron velocity issues 
+	Still can not explain: 
+	Hall coefficients 
+	Colors of metals 
+	Insulat ors, Semiconductors 
+	Can not ignore the ions (i.e. everyt hing else but the valence elect rons 
+that we have been dealing with so far) any longer! 
+	Whatever we modify, can not change the electron wave picture that is 
+now working well for many materials properties 
+	HOW DO THE VALENCE ELECTRON WAVES INTERACT 
+WITH THE IONS AND THEIR POTENTIALS? 
+1999 E.A. Fitzgerald 1</text>
+        </slide>
+        <slide>
+          <slideno>11</slideno>
+          <text>126
+5
+4
+3
+2
+1
+-1
+-2
+-3
+-4
+-5
+-6
+-7
+-8
+-9
+-10
+-11
+-12
+-130Energy in eV0.36eV
+1.01eV
+0.29eV
+ 2p(1
+21
+21
+2)a [111] [100]k = 0k = 2p(100)ak =2.0eV1.1eV
+3.8eVGe
+0.9eVEk3.5eV5.4eVReal Band 
+Structures
+	Ge: Very close to GaAs, 
+except conduction band 
+minimum is in &lt;111&gt; 
+direction, not at k=0 
+	Indirect Band Gap 
+1999 E.A. Fitzgerald Figure by MIT OpenCourseWare.</text>
+        </slide>
+        <slide>
+          <slideno>6</slideno>
+          <text>Nearly-Free Electron Model (still 1-D crystal)
+states
+h2k 2 p2 Away from k=n /a,
+m m E 2 2 == E 
+k=2/L Quasi-continuous k m kE m k 
+dk dE 
+= = 
+2 2 
+h h 
+Eg=2U Diffraction, 
+k=n/a free electron curve 
+Near k=n/a, 
+band gaps form, strong 
+interactio n of e- with 
+U on ions 
+k/a -/a 0 
+k=2/a=G=reciprocal lattice vector 
+7 
+1999 E.A. Fitzgerald</text>
+        </slide>
+        <slide>
+          <slideno>5</slideno>
+          <text>Nearly-Free Electron Model
+	Assume electrons with wave vect ors (ks) far from diffraction 
+condition are still free and look lik e traveling waves and see ion 
+potenti al, U, as a weak background potenti al 
+	Electrons near diffraction conditio n have only two possible solutions 
+	electron densities between ions, E=Efree-U 
+	electron densities on ions, E= Efree+U 
+	Exact solution using H =E shows that E near diffraction conditions 
+is also parabolic in k, E~k2 
+1999 E.A. Fitzgerald 6</text>
+        </slide>
+        <slide>
+          <slideno>12</slideno>
+          <text>Trends in III-V and II-VI Compounds
+13
+ Lattice Constant (A)Lattice Constant (A)1999 E.A. Fitzgerald AlAsGaP
+AlSb
+GaAs (D)
+InP(D)
+GaSb (D)
+InAs (D)Si
+Ge
+0.65 0.64 0.63 0.62 0.61 0.60 0.59 0.58 0.57 0.56 0.55 0.5400.20.40.8
+0.61.01.21.41.61.82.02.22.42.6
+6.2003.1002.0671.5501.2401.0330.8850.7750.6890.6200.5630.5170.477
+InSb (D)
+Wavelength (microns)
+Lattice constant (nm)Energy gap (eV)AlP
+Indirect band gap
+Direct band gap (D)Energy Gap and Lattice Constants
+Figure by MIT OpenCourseWare.</text>
+        </slide>
+        <slide>
+          <slideno>10</slideno>
+          <text>Real Band Structures 
+ GaAs: Very close to what we have de rived in the nearly free electron model 
+ Conduction band minimum at k=0: Direct Band Gap 
+11 
+1999 E.A. Fitzgerald 2.0
+1.0
+-1.0
+-2.0
+-4.0-3.0E, eV
+Conduction 
+band
+Valence 
+band[111] (0,0,0) [100]k
+Figure by MIT OpenCourseWare.</text>
+        </slide>
+        <slide>
+          <slideno>4</slideno>
+          <text>Diffraction Picture of the Origin of Band Gaps
+Probability Density=probability/volume of finding electron=| |2
+2 2 
+ = 4sin xa a 
+2 2  = 4cos x a
+s a 
+a 
+Only two  solutions for a diffracted wave Electron density on atoms Electron density off atoms No other solutions possible at this  wavelength: no free traveling wave 
+1999 E.A. Fitzgerald 5</text>
+        </slide>
+        <slide>
+          <slideno>3</slideno>
+          <text>Diffraction Picture of the Origin of Band Gaps 
+ Start with 1-D crystal again 
+~a Take lowest order, n=1, and 
+consider an incident valence1-D electron moving to the right a  i x aki = ;i = e 
+d=a, a n= 2d sin sin=1  i x aReflecte d wave to left: ko = ;o = e a 
+n= 2a 2k = ki  ko = a 2k =  Total wave for electrons with diffracted wavelengths: 
+n =i ok = a s =i +o = 2cos x a 
+a =i o = i2sin x 4 a1999 E.A. Fitzgerald</text>
+        </slide>
+        <slide>
+          <slideno>9</slideno>
+          <text>Reduced-Zone Scheme 
+ Only show k=+- /a since all solutions represented there
+/a /a 
+1999 E.A. Fitzgerald 10</text>
+        </slide>
+        <slide>
+          <slideno>7</slideno>
+          <text>Consequences of Diffraction on E vs. k curves
+At k=/a, there must be also a k=- /a wave, since there is absolut e 
+diffraction at this k Standing wave at 
+ True for every k=n /a diffraction 
+ condition Creates a parabola at every nG 
+E 
+k=-/a in 
+reference 
+parabola k=/a in 
+reference 
+parabola 
+2/a -/a 0 /a 2/a k
+8 G 2/a -/a 0 
+1999 E.A. Fitzgerald</text>
+        </slide>
+        <slide>
+          <slideno>1</slideno>
+          <text>Improvements? What are ion cores doing... 
+	Scattering idea seems to work 
+	any effect of crystal (periodic) lattice? 
+	Diffraction 
+	proves periodicity of lattice 
+	proves electrons are waves 
+	proves strong interacti on between  crystal and electrons (leads to 
+band structures=semiconductors and insulators)
+	useful charact erization technique 
+	Course: bias toward crystalline mate rials: many applications: materials 
+related to either end of spectru m (atomic/molecular or crystalline) 
+Point defects, Polymers, Bands; properties of many 
+atoms, molecules  Si solids with or without extended defects localized extended 
+Diffraction is a useful characterization in all these materials 2 
+1999 E.A. Fitzgerald</text>
+        </slide>
+        <slide>
+          <slideno>2</slideno>
+          <text>Electrons in a Periodic Potential
+	Rigorous path: H =E 
+	We already know effect: DeBroglie and electron 
+diffraction 
+	Unit cells in crystal lattice are 10-8 cm in size 
+	Electron waves in solid are =h/p~10-8 cm in size 
+	Certain wavelengths of valence electrons will diffract! 
+1999 E.A. Fitzgerald 3</text>
+        </slide>
+      </slides>
+      <videos/>
+    </lecture>
+    <lecture>
+      <lecture_title>Electromagnetic waves in materials</lecture_title>
+      <lecture_pdf_url>https://ocw.mit.edu/courses/3-225-electronic-and-mechanical-properties-of-materials-fall-2007/resources/lecture_2/</lecture_pdf_url>
+      <lectureno>15</lectureno>
+      <slides>
+        <slide>
+          <slideno>4</slideno>
+          <text>Complex Representation of Waves
+sin(kx- t), cos(kx- t), and e-i(kx- t) are all waves 
+e -i(kx- t) is the complex one and is the most general 
+imaginary 
+A iAsin  
+Acos  real  
+e i=cos +isin</text>
+        </slide>
+        <slide>
+          <slideno>7</slideno>
+          <text>Response of light to interaction with 
+material
+ Need Max wells equations 
+ from experiments: Gauss, Faraday, Amperes laws 
+ second term in Amperes is from the unification 
+ electro magnetic waves! 
+SI Units (MKS) Gaussian Units (CGS) 
+r r 
+ D =  D = 4 
+r r 
+ B = 0  B = 0 
+r 
+ xE r 
+= B r 
+ xE r 
+= 1 
+c 
+ B
+t t r r r 4 r 1  Drr  D  xH = J + xH = J + c c  t rr r  t r rrr D = E + 4P 
+D = 0 E + P =E rr r 
+rr rr B = H + 4M 
+B = 0 H + 0 M =H 
+=  r 0;=  r 0</text>
+        </slide>
+        <slide>
+          <slideno>12</slideno>
+          <text>Success and Failure of Free e- Picture
+ Success K/=thermal conduct./electrical conduct.~CT 
+ Metal conductivity 12 
+ Wiedmann-Franz law	 T v 2 m 	Hall effect valence=1 = 3 cvvtherm
+E  3 2 3kbT
+  Skin Depth cv = = nkb ;vtherm = 
+ Examples of Failure	= 1  3 nkb  3kbT = 3 nkb 2T 
+ Insulators, Semiconductors	3  2  m  2 m 
+ Hall effect valence&gt;1	 ne2
+=  Thermoelectric effect	 m 
+	Colors of metals  3  kb 2
+Therefore : = 2 
+ e 
+ T
+Luck: cvreal=cvclass/100; ~C! 
+vreal2=vclass2*100</text>
+        </slide>
+        <slide>
+          <slideno>8</slideno>
+          <text>Waves in Materials 
+	Non-magnetic material,  = 0 
+	Polariz ation non-existent or swamped by free electrons, 
+P=0 r 
+ xE r 
+= B For a typical wave,
+ t
+E = E ei(k  r t ) = E eik  re it = E(r)e it r 0	 0 rr  E xB = 0 J + 0 0  2 E(r) = i0E(r) 0 0 2 E(r) t 
+r  2 E(r) =  
+22  ( )E(r) Wave Equationr  xB c  x( xE) =  t i
+ ( ) = 1+  0 
+ 2 E = [ 0 J + 0 0  E ] t	  t E(r) = E0eik  r 
+ 2  2 E = 0 E + 0 0  2 E 
+ t  t 2 k 2 = 2  ( )c  c v = = k  ( )</text>
+        </slide>
+        <slide>
+          <slideno>3</slideno>
+          <text>What if &gt;&gt;1? 
+When will J = E break down ? It depends on electrons undergoing many 
+collisions, on the average a collision time  apart. As long as there are many 
+collisions per cycle of the AC field (&lt;&lt; 1), the AC  will be  the DC . 
+x x x x xx x x xx x x xxxxxx x x x 
+But consider the other limit: &gt;&gt;1. 
+Now there will  be many cycles of the field betwee n collisions . In this li mit, the 
+electrons will behave more like electron s in vacuum, and the relation between J 
+and E will be different x x</text>
+        </slide>
+        <slide>
+          <slideno>6</slideno>
+          <text>Response of e- to AC Electric Fields
+	Low frequency ( &lt;&lt;1/ ) 
+	electron has many collisions befor e 
+direction change
+	Ohms Law: J follows E,  real 
+	High frequency ( &gt;&gt;1/ ) 
+	electron has nearly 1 collision or less 
+when direction is changed
+	J imaginary and 90 degrees out of phase 
+with E,  is imaginary
+Qualitatively: 
+&lt;&lt;1, electrons in phase, re-irradiate, Ei=Er+Et, reflection 
+&gt;&gt;1, electrons out of phase, elect rons too slow, less inte raction, trans mission =r0 r=1 
+ 1014 sec,= c,= 3x1010 cm / sec  1014 Hz 5000 x108 cm 
+E-fields with frequencies greater than visible light frequency expected to be 
+beyond influence of free electrons</text>
+        </slide>
+        <slide>
+          <slideno>10</slideno>
+          <text>Waves in Materials
+  0k = ( ) = i c c  0  0  0 
+ 1+ i   0 =  
++ i k =  
+2   0  2 0 c2 2 0c2 c  
+For a wave E = E0ei(kzt ) Let k=kreal+kimaginary=kr+iki 
+E = E0 ei[ krzt ] e ki z 
+The skin depth can be defined by 
+2 c21 2o
+= =
+ =
+  ki o oo</text>
+        </slide>
+        <slide>
+          <slideno>1</slideno>
+          <text>Experimental Hall Results on Metals
+	Valence=1 metals look like 
+free-electron Drude metals 
+	Valence=2 and 3, 
+magnitude and sign 
+suggest problems Metal Valence -1/RHnec
+Li
+Na
+K
+Rb
+Cs Cu
+Ag
+Au
+Be
+Mg
+InAl1
+1
+1
+1
+11
+1
+1
+2
+2
+331.2
+1.1
+1.0
+0.9
+1.5
+1.3
+1.5
+0.2
+-0.4
+-0.3
+0.30.8
+Hall coefficients of selected elements in moderate to high fields*
+* These are roughly the limiting values assumed by R n as the field becomes 
+very large (of order 104 G), and the temperature very low, in carefully 
+prepared specimens. The data are quoted in the form n 0:n. Where n 0 is the 
+density for which the Drude form (1.21) agrees with the measured 
+Ru:n0 = -1/RHec. Evidently the alkali metals obey the Drude result 
+reasonably well, the noble metals (Cu. Ag, Au) less well, and the remaining entries, not at all.
+Table by MIT OpenCourseWare.</text>
+        </slide>
+        <slide>
+          <slideno>13</slideno>
+          <text>Wiedmann-Franz Success
+Thermoelectric Effect
+Exposed Failure when 
+cand v2 are not bothv 
+in property 
+E = QT 
+3 
+cv  2 nkb nkbThermopower Q is Q = = = 3ne 3ne 2e 
+Thermopower is about 100 times too large!
+Elementk
+(watt cm-K)k
+(watt cm-K)k s T
+(watt-ohm K2)k s T
+(watt-ohm K2)
+Li 
+Na
+K 
+Rb
+CuAg
+Au
+Be
+Mg0.71
+1.38
+1.0
+0.6
+3.854.18
+3.1
+2.3
+2.381.5
+0.52
+0.80
+1.131.0
+0.88
+0.50.64
+0.38
+0.09
+0.182.12
+2.23
+2.42
+2.20
+2.31
+2.32
+2.36
+2.142.14
+2.90
+2.61
+2.282.49
+2.58
+2.752.48
+2.64
+3.53
+2.57Nb
+Fe
+Zn
+CdAl
+In
+Tl
+Sn
+Pb
+Bi
+Sb2.22 x 10
+8
+3.82
+4.17
+3.1
+1.7
+2.301.5
+0.54
+0.73
+1.11.0
+0.80
+0.450.60
+0.35
+0.08
+0.170.73
+2.29
+2.38
+2.36
+2.42
+2.192.25
+2.78
+2.88
+2.30
+2.60
+2.752.54
+2.53
+3.35
+2.692.43 x 10
+8273K 373K
+Experimental thermal conductivities and Lorenz numbers of selected metals
+Table by MIT OpenCourseWare.</text>
+        </slide>
+        <slide>
+          <slideno>5</slideno>
+          <text>Response of e- to AC Electric Fields 
+ Momentum represented in the complex plane 
+real imaginary 
+p 
+p ( &lt;&lt;1/ ) p ( &gt;&gt;1/ ) 
+Instead of a complex momentum, we can go back to macroscopic 
+and create a complex J and  
+ i  nep0 ne2 
+J (t) = J0e J0 = nev = m = 1 E0 
+m(  i )
+ 
+=  0,= ne2 
+1 i 0 m</text>
+        </slide>
+        <slide>
+          <slideno>9</slideno>
+          <text>Waves in Materials 
+ Waves  slow down in materials (depends on ()) 
+ Wavelength decreases (depends on ()) 
+ Frequency dependence in () 
+() = 1+ i= 1+ i0 
+00(1 i) 
+i2
+() = 1+ p 
+2
+ i 
+2 
+2 
+p = ne Plasma Frequency
+0 m 
+For &gt;&gt;&gt;1, () goes to 1 
+For an excellent conductor ( 0 large), ignore 1, look at case for &lt;&lt;1 
+i2 i2
+()  p 
+2  p 
+ i</text>
+        </slide>
+        <slide>
+          <slideno>2</slideno>
+          <text>Response of free e- to AC Electric 
+Fields
+ Microscopic picture 
+E = Eeit 
+Z O 
+e-
+B=0 in conductor, 
+dp(t) p(t) it rr rr =  eE0 e and F(E) &gt;&gt; F(B)dt  
+try p(t) = p0eit 
+ ip0 = p0  eE0
+ 
+ eE &gt;&gt;1/ , p out of phase with E 
+p = 0 eE0 01  i p0 = i , p  0 
+&lt;&lt;1/ , p in phase with E 
+p0 =eE0</text>
+        </slide>
+        <slide>
+          <slideno>0</slideno>
+          <text>Determining n and : The Hall Effect
+Vx, Ex 
+---------+ + + + + + + + + + + 
+Ey I, Jx 
+BzF r 
+= qE r 
++ qv r  B r 
+In steady state, 
+Fy =evDBz EY = vDBZ = EH , the Hall Field 
+Fy =eEy Since vD=-Jx/en, 
+1EH = J xBZ = RHJ XBZne 
+1RH = = ne ne</text>
+        </slide>
+        <slide>
+          <slideno>11</slideno>
+          <text>Waves in Materials 
+For a material with any 0, look at case for &gt;&gt;1 
+2 &lt;p,  is negative, k=ki, wave reflected
+()= 12
+  p 
+ 
+&gt;p,  is positive, k=kr, wave propagates 
+R 
+ 
+p</text>
+        </slide>
+      </slides>
+      <videos/>
+    </lecture>
+    <lecture>
+      <lecture_title>Optical fiber properties</lecture_title>
+      <lecture_pdf_url>https://ocw.mit.edu/courses/3-225-electronic-and-mechanical-properties-of-materials-fall-2007/resources/lecture_11/</lecture_pdf_url>
+      <lectureno>24</lectureno>
+      <slides>
+        <slide>
+          <slideno>0</slideno>
+          <text>Orientational Polarizability
+	No restoring force: analogous to conductivity
+H C +q
+O HO O	 
++ p=0	 -q -p 
+For a group of many molecules at some temperature: 
+ U pE cos 
+f = ekbT = e	kbT 
+Analogous to conductivity, the 
+molecules collide after a certain After averaging over the polarization of the 
+time t, giving: ensemble molecules (valid for low E-fields): 
+2 
+ DC ~3kp
+bT 1 i 
+o= DC 
+1999 E.A. Fitzgerald 1</text>
+        </slide>
+        <slide>
+          <slideno>10</slideno>
+          <text>Ferroelectrics 
+	Each unit cell a dipole! 
+	Very large Ps (saturat ed polarization, P(E=0) 
+	No iron invol ved; F erro since hy sterisis loop analogous to magnetic 
+materials 
+Two equal-energy atom positions Can flip cell polariza tion by applying E large enough reverse E-fie ld to get over 
+barrie r 
+P 
+Ps 
+E 
+Ec Enormal dielectric 
+R	R 
+o 
+1999 E.A. Fitzgerald 11</text>
+        </slide>
+        <slide>
+          <slideno>4</slideno>
+          <text>Characteristics of Optical Fiber
+ Snells La w 
+1 
+n1 Boundary conditions f or E-M wave gives 
+Snells Law: 
+n2 n1 sin1 = n2 sin2 
+Refraction 2 
+Internal Reflection: 1=90 
+n2 n1 1 
+2 2 =c = sin1 n1 
+n2 
+Glass/air, =42c
+1999 E.A. Fitzgerald 5</text>
+        </slide>
+        <slide>
+          <slideno>8</slideno>
+          <text>Characteristics of Optical Fiber
+1999 E.A. Fitzgerald 9 0.7-8
+-6
+-4
+-2
+-0
+2
+0.8 0.9 1.1 1.2 1.3 1.4 1.0
+Wavelength (mm)Pluse spreading (ns/km)
+Narrow Width 
+Laser Dl = 0.1nmLaser Dl = 3nmLED Dl = 30nm
+Figure by MIT OpenCourseWare.</text>
+        </slide>
+        <slide>
+          <slideno>5</slideno>
+          <text>Characteristics of Optical Fiber
+ Attenuation 
+	Absorption 
+	OH- dominant,  SiO2 tetrahedral mode 
+	Scattering 
+	Raleigh scattering (density fluctuations) R~const./4 (&lt;0.8 m 
+not very useful!) 
+Dispersion 
+	material dispersion (see slide i13) 
+x 
+	modal dispersion Light source always has  
+parts of pulse with different l propagate at 
+different speeds 
+Black wave arrives later than red wave 
+y n1 
+n2Solution: grade index 
+6 
+1999 E.A. Fitzgerald n</text>
+        </slide>
+        <slide>
+          <slideno>7</slideno>
+          <text>Characteristics of Optical Fiber
+8
+1999 E.A. Fitzgerald Image removed due to copyright restrictions.
+Please see any diagram of the typical optical attenuation curve, such as
+http://www.nikhef.nl/~nooren/dispersie3_files/image010.jpg</text>
+        </slide>
+        <slide>
+          <slideno>9</slideno>
+          <text>Ferroelectrics 
+	Confused atom structure creates metastable relative positions of 
+positive and negative ions 
+1999 E.A. Fitzgerald 10 Barium titanate (BaTiO3)
+Titanium (Ti4+) Barium (Ba2+)
+Oxygen (O2-)
+Figure by MIT OpenCourseWare.</text>
+        </slide>
+        <slide>
+          <slideno>6</slideno>
+          <text>Characteristics of Optical Fiber
+7 
+1999 E.A. Fitzgerald 3000 BC 1000 AD 1964 1974 1988106
+105
+104
+103
+100
+10
+1
+0.1Egyptian
+Venetian
+Bohemian
+Window GlassOptical loss dB/km
+Figure by MIT OpenCourseWare.</text>
+        </slide>
+        <slide>
+          <slideno>1</slideno>
+          <text>Dielectric Loss 
+ For convenience, imagine a low density of molecules in the gas phase 
+ C-M can be ignored for simplicity 
+ There w ill be only electronic and orientational polarizability 
+= 1++ = n2 + N DC 
+r e o 3 o (1 i ) 
+N
+&lt;&lt; 1, ,  r = so = n2 +	DC
+o
+23	 so
+ n = n2 + so 
+r 1 i 
+We can write this in terms of a real 
+and imaginary dielectric constant if 
+we choose:
+n2 
+ = '+ i '' r  '= n2 + so  
+2 n2
+2 ;  ''=	 so  
+2 n2
+2  -2 0 +2 
+1+ 1+ log 
+Water molecule:  =9.5x10-11 sec,  ~1010 
+microwave oven, transmission of E-M waves
+1999 E.A. Fitzgerald  ,  
+ e+ i 
+ e 
+2</text>
+        </slide>
+        <slide>
+          <slideno>3</slideno>
+          <text>Dispersion
+ Dispersion can be defined a couple of ways (same, just different way) 
+ when the group velocity ceases to be equal to the phase velocity 
+ when the dielectric constant has a frequency dependence (i.e. when d /d not 0) 
+ Dispersion-free =	ck
+
+r
+Dispersion	 c  v == == vp k kg 
+r 
+ c  v == = vp k r () kg 
+k
+1999 E.A. Fitzgerald 4</text>
+        </slide>
+        <slide>
+          <slideno>2</slideno>
+          <text>Dielectric Constant vs. Frequency 
+ Completely general  due to the localized charge in materials 
+  
+1/ T oe 1 n2 o 
+i 
+e molecules 
+ions 
+electrons 
+Dispersion-free regions, vg=vp
+1999 E.A. Fitzgerald 3</text>
+        </slide>
+      </slides>
+      <videos/>
+    </lecture>
+    <lecture>
+      <lecture_title>Doping and conductivity</lecture_title>
+      <lecture_pdf_url>https://ocw.mit.edu/courses/3-225-electronic-and-mechanical-properties-of-materials-fall-2007/resources/lecture_8/</lecture_pdf_url>
+      <lectureno>21</lectureno>
+      <slides>
+        <slide>
+          <slideno>4</slideno>
+          <text>Contrasting Semiconductor and Metal 
+Conductivity
+ne2
+= m 
+ Semiconductors 
+ changes in n(T) can dominate over  
+ as T increases, conductivity increases 
+Metals 
+ n fixed 
+ as T increases,  decreases, and conductivity decreases 
+1999 E.A. Fitzgerald 5</text>
+        </slide>
+        <slide>
+          <slideno>1</slideno>
+          <text>Hydrogenic Model
+	For hydrogenic donors or acceptors, we can think of the electron or hole, 
+respectively, as an orbiting electron around a net fixed charge 
+	We can estimate the energy to free th e carrier into the conduction band or 
+valence band by using a modified expression for the energy of an electron in 
+the H atom 
+me4 13.6En = 222 = 2 (in eV)8hn no 
+2 4 e =e2 *4 * me r me 1 13.6 m 1 En = 82h2n2 82h2n2 2 = n2 m 2 
+o	 o r 
+Thus, for the ground state n=1, we can see already that since is on the order 
+of 10, the binding energy of the carrier to the center is &lt;0.1eV 
+Expect that many carriers are then thermalize at room T Experiment: 
+B acceptor in Si: .046 eV 
+P donor in Si: 0.044 eV 
+As donor in Si: 0.049 
+1999 E.A. Fitzgerald 2</text>
+        </slide>
+        <slide>
+          <slideno>8</slideno>
+          <text>Other Recombination Pathways 
+	Deep levels in semiconductors act as carrier traps and/or enhanced 
+recombination sites 
+Ec 
+Recombination through deep level Edeep 
+E Ev 
+x 
+Barrier to capture carrier is Eg/2 
+Since the probability of the carrier transition is ~e-E/kT, trapping a carrier with a deep state is 
+very probable 
+A trapped carrier can then help attract anothe r carrier, increasing recombination through the 
+deep state 
+ 1 1 =  1+ 
+int rinsic deep 
+1999 E.A. Fitzgerald 9</text>
+        </slide>
+        <slide>
+          <slideno>0</slideno>
+          <text>Extrinsic Semiconductors 
+ Adding correct impurities can lead to controlled domination of one carrier type 
+ n-type is dominated by electrons 
+ p-type if dominated by holes 
+ Adding other impurities can degrade electrical properties 
+Impurities with close electronic Impurities with very different 
+structure to host electronic structure to host 
+isoelectronic hydrogenic 
+x 
+x x x 
+Ge 
+Si Px 
+x x x 
+x 
+x x x 
+Au 
+Si deep level 
+-+ 
+Ec Ec EcED EDEEP 
+Ev Ev Ev 1 
+1999 E.A. Fitzgerald</text>
+        </slide>
+        <slide>
+          <slideno>6</slideno>
+          <text>Example: Electron Mobility in Ge
+1999 E.A. Fitzgerald 7 ~T-3/2 if phonon dominated 
+(T-1/2 from vth, T-1 from x-section  106
+105
+104
+(1017)(1015)(1013)T-3/2
+103
+10 30 100 30033
+3Ge
+Tme,cm2/volt-s
+At higher doping, the 
+ionized donors are the 
+dominate scattering 
+mechanism
+
+
+Figure by MIT OpenCourseWare.</text>
+        </slide>
+        <slide>
+          <slideno>3</slideno>
+          <text>Expected Temperature Behavior of Doped 
+Material (Example:n-type)
+ 3 regimes 
+Eg/2kbln(n) 
+Eb/kb 
+Intrinsic Extrinsic 
+Freeze-out 
+1/T
+1999 E.A. Fitzgerald 4</text>
+        </slide>
+        <slide>
+          <slideno>9</slideno>
+          <text>Recombination and Generation (Ec to Ev) 
+ Generation 
+ intrinsic: photon-induced or thermally induced, G=#carriers/vol.-sec 
+ extrinsic:deep levels due to traps
+Go is the equilibrium generation rate 
+ Recombination 
+ intrinsic: across band gap, R=# carriers/vol.-sec 
+ extrinsic: deep levels due to traps 
+Ro is the equilibrium recombination rate, which is balanced by Go 
+Non-equilibrium  intrinsic reco mbination Non-equilibrium  extrinsic reco mbination 
+n-type material R =p ; h = po R =p = 1 
+h Ro hh hvthNt 
+Where po is the equil ibrium  minority carrier con centration Where h is the capture cross section for 
+holes and Nt is the concentration of 
+p-type material n n recombination cent ers 
+oR = ; e = 
+e Ro R =n e = 1 
+evthNt e Where no is the equil ibrium  minority carrier con centration 10 
+1999 E.A. Fitzgerald</text>
+        </slide>
+        <slide>
+          <slideno>7</slideno>
+          <text>Other Interpretation of  
+ Minority carriers in semiconductors 
+ can think of  as the time to recombination: recombination time 
+ does not affect Drude model in any way 
+, l Ec 
+Recombination event: electron disappear s 
+E Ev 
+x 
+Imagine p-type material, so there are many more holes than electrons 
+holes=majority carrier 
+electrons=minority carrier 
+ is referred to in this context as the minority carrier lifetime
+1999 E.A. Fitzgerald 8</text>
+        </slide>
+        <slide>
+          <slideno>5</slideno>
+          <text>General Interpretation of  
+ Metals and majority carriers in semiconductors 
+  is the scattering length 
+ Phonons (lattice vibrations), impurities, dislocations, 
+and grain boundaries can decrease 
+1 1 1 1 1
+= + +++ ...
+phonon impur disl gb 
+i = li = 1 
+where  is the cross-section of the scatterer, N is thevth vthiNi number of scattere rs per volume, and l is the average 
+liiNi = 1 distance before collisions 
+The mechanism that will tend to dominate th e scattering will be the mechanism with the 
+shortest l (most numerous), unless there is  a large difference in the cross-sections 
+Example: Si transistor, phonon dominates even though impur gets worse with scaling 
+1999 E.A. Fitzgerald 6</text>
+        </slide>
+      </slides>
+      <videos/>
+    </lecture>
+    <lecture>
+      <lecture_title>Semiconductors</lecture_title>
+      <lecture_pdf_url>https://ocw.mit.edu/courses/3-225-electronic-and-mechanical-properties-of-materials-fall-2007/resources/lecture_7/</lecture_pdf_url>
+      <lectureno>20</lectureno>
+      <slides>
+        <slide>
+          <slideno>2</slideno>
+          <text>Semiconductors: Photon Absorption 
+When Elight=h&gt;Eg, an electron can be promoted 
+from the valence band to the conduction band
+E
+E=h 
+Creates a hole in the valence band Ec near band gap 
+k 
+Ev near band gap 
+Note: Most absorption near the band gap since the density of states is highest there3 
+1999 E.A. Fitzgerald</text>
+        </slide>
+        <slide>
+          <slideno>6</slideno>
+          <text>Density of Thermally Promoted of Carriers 
+Number of electrons per n = f (E)g(E)dEvolume in conduction 
+band Ec 
+Density of electron states per volume per dE 
+Fraction of states occupied at a particular temperature 
+1 (EEF ) 
+f (E) =(E EF ) e kbT 
+when (E  EF )&gt;&gt; kbT 
+be kT +1 
+eg (E) = 1 
+ 2m 
+2* 
+ 23 
+(E  Eg )1
+2 n = 1
+2  2m 
+2 e * 
+23 
+ekE
+bF
+T 
+(E  Eg ) 1
+2 
+ek  
+bE
+T dE c 22 h  2 h  Eg 
+3 
+ 1 2 
+2 x   me *kbT  kE
+bF
+T  
+kbE
+Tg 
+Since  
+0 xe dx = 2 , then n = 2 
+ 
+2h2  ee 
+NCEF Eg 
+n = NCe kbT 
+7 
+1999 E.A. Fitzgerald</text>
+        </slide>
+        <slide>
+          <slideno>8</slideno>
+          <text>Thermal Promotion 
+	Because electron-hole pairs are generated, the Fermi level is 
+approximately in the middle of the band gap 
+	The law of mass action describes the electron and hole populations, 
+since the total number of electron  states is fixed in the system 
+E 3  m *  n = p gives E = g + kT ln h F	 b *2	 4  me  
+Since me* and mh* are close and in the ln term, the 
+Fermi level sits about in the center of the band gap
+3 E 
+4 p or n = ni = 2 kbT 
+2  2 (me * mv * )3 
+e2kbTg 
+ 2h 
+1999 E.A. Fitzgerald 9</text>
+        </slide>
+        <slide>
+          <slideno>11</slideno>
+          <text>Extrinsic Semiconductors 
+ Adding correct impurities can lead to controlled domination of one carrier type 
+ n-type is dominated by electrons 
+ p-type if dominated by holes 
+ Adding other impurities can degrade electrical properties 
+Impurities with close electronic Impurities with very different 
+structure to host electronic structure to host 
+isoelectronic hydrogenic 
+x 
+x x x 
+Ge 
+Si Px 
+x x x 
+x 
+x x x 
+Au 
+Si deep level 
+-+ 
+Ec Ec EcED EDEEP 
+Ev Ev Ev 12 
+1999 E.A. Fitzgerald</text>
+        </slide>
+        <slide>
+          <slideno>1</slideno>
+          <text>Insulators 
+	Very large band gaps=no conduction electrons at 
+reasonable temperatures 
+	All electrons are bound 
+	Optical properties of insulators are derived from 
+the electric field being able to temporarily move 
+electrons: polarization 
+	We will return to the interaction of E-field with 
+bound electrons in Dielectrics Section 
+1999 E.A. Fitzgerald 2</text>
+        </slide>
+        <slide>
+          <slideno>4</slideno>
+          <text>Conductivity of Semiconductors 
+ Need to include both electrons and holes in the conducti vity expression 
+ne2e pe2h
+= nee + peh = * + * me mh 
+p is analogous to n for holes, and so are  and m*
+Note that in both photon stimulated promotion as well as thermal
+promotion, an equal number of holes and electrons are produced, i.e. n=p
+1999 E.A. Fitzgerald 5</text>
+        </slide>
+        <slide>
+          <slideno>5</slideno>
+          <text>Thermal Promotion of Carriers 
+	We have already developed how electrons are promoted in energy with T: 
+Fermi-Dirac distribution 
+	Just need to fold this into picture with a band-gap 
+1999 E.A. Fitzgerald 
+E F f(E) 
+1 
+E gc(E)~E1/2 in 3-D 
+Eg 
+gv(E)	Despite gap, at non-zero 
+temperatures, there is some 
+possibility of carriers getting 
+into the conduction band (and 
+creating holes in the valence 
+band) 
+g(E) 6</text>
+        </slide>
+        <slide>
+          <slideno>7</slideno>
+          <text>Density of Thermally Promoted of Carriers
+	A similar deri vation can be done for holes,  except the density of states 
+for holes is used 
+	Even though we know that n=p, we w ill derive a separate expression 
+anyway since it will be usef ul in deriving other expressions 
+3 
+hgv (E) = 1
+2  2m 
+2* 
+ 2 
+( E)1
+2	0 
+p =	 fh (E)gv (E)dE, where fh = 1 f (E)2	 h   
+3 
+2 mh *kbT  
+kE
+bTF 
+p = 2 2  e 
+ 2h 
+EF 
+p = Nve kbT 
+1999 E.A. Fitzgerald 8</text>
+        </slide>
+        <slide>
+          <slideno>10</slideno>
+          <text>Intrinsic Semiconductors 
+ Conductivity at any temperature is determined mostly by the size of the band gap 
+ All intrinsic semiconductors are insulating at very low temperatures 
+Recall: = nee + peh = ne2e + pe2h 
+* * me mh 
+ Eg This can be a 
+measurement 
+for Eg 
+For Si, Eg=1.1eV, and let e and h be approximately equal at 1000cm2/V-sec (very good Si!) 
+int = nie(e +h ) e2kbT 
+~1010cm-3*1.602x10-19*1000cm2/V-sec=1.6x10-6 S/m, or a resistivity  of about 106 ohm-m max 
+One important note: No matter how pure Si is, the material will always be a poor 
+insulator at room T 
+As more analog wireless applications are brought on Si, this is a major issue for 
+system-on-chip applications 
+E-M waves lose strength since e- are responding to wave: loss and low Q 
+resonant circuits 
+1999 E.A. Fitzgerald 11</text>
+        </slide>
+        <slide>
+          <slideno>0</slideno>
+          <text>Metals and Insulators
+ Covalent bonds, weak U seen by e-, with EF
+being in mid-band area: free e-, metallic
+	Covalent or slightly ionic bonds, weak U to 
+medium U, with EF near band edge
+EF in or near kT of band edge: semimetal
+EF in gap: semiconductor
+	More ionic bonds, large U, EF in very large 
+gap, insulator 
+1999 E.A. Fitzgerald 1</text>
+        </slide>
+        <slide>
+          <slideno>9</slideno>
+          <text>Law of Mass Action for Carrier Promotion
+2 b ni 2 = np = 4 kbT 
+2  3 
+(me * mh * )3 
+e  
+kbE
+Tg 
+; ni 2 = NC NV e  
+kE
+Tg 
+ 2h  
+Note that re-arranging the right equation leads to an expression similar to a 
+chemical reaction, where Eg is the barrier 
+NCNV is the density of the reactants, and n and p are the products 
+Eg[NC NV ][n]+ [ p] 
+[n][ p] Eg [n ]2 
+kbT i 
+[NC NV ]= e =[NC NV ] 
+Thus, a method of changing the el ectron or hole population without increasing the population of the 
+other carrier will lead to a domin ant carrie r type in the materia l 
+Photon absorption and thermal excita tion produce only pairs of carriers: intrinsic semiconductor 
+Increasing one car rier concentration without the other can only be achi eved with impurities, also called 
+doping: extrinsic semiconductors 
+10 
+1999 E.A. Fitzgerald</text>
+        </slide>
+        <slide>
+          <slideno>3</slideno>
+          <text>Holes and Electrons
+	Instead of tracking electrons in valence ba nd, more convenient to track vacancies of 
+electrons, or holes 
+	Also removes problem with negative electron ma ss: since hole ener gy increases as holes 
+sink, the mass of  the hole is positive as long as it has a positive charge 
+	Both carrier s at the band edge can be thought of as classical free carriers like the Drude 
+model had, as we shall see 
+Decreasing electron energy 
+Decreasing hole energy 
+Decreasing electron energy 
+1999 E.A. Fitzgerald 4</text>
+        </slide>
+      </slides>
+      <videos/>
+    </lecture>
+    <lecture>
+      <lecture_title>Wave-particle duality</lecture_title>
+      <lecture_pdf_url>https://ocw.mit.edu/courses/3-225-electronic-and-mechanical-properties-of-materials-fall-2007/resources/lecture_3/</lecture_pdf_url>
+      <lectureno>16</lectureno>
+      <slides>
+        <slide>
+          <slideno>5</slideno>
+          <text>Light is Quantized: Planck 
+Now that N(  ), the number of E-M waves expected in  +d , has been 
+determined simply by boundary conditions, the energy of a wave must be 
+determined for deriving  ( ) 
+8 2 L3
+N() E 8 kT
+()=  wave c3 kT 
+= 2 
+ = volume L3 c3 
+The classical assumption was used, i.e. Ewave=kbT 
+This results in a  ( ) that goes as  2 
+At higher frequencies, blackbody radiation de viates substantially from this dependence
+1999 E.A. Fitzgerald 6</text>
+        </slide>
+        <slide>
+          <slideno>6</slideno>
+          <text>1999 E.A. Fitzgerald 7 00500200400600800
+1000 1500 2000
+l (nm)u(l) (kJ/nm))T = 5500K
+T = 5000K
+T = 4500K
+T = 4000K
+WavelengthIntensityClassical theory
+T = 3500KMissing higher frequencies 
+Low  OK: E=kbT 
+At high , E goes to zero 
+(i.e. no waves up there!) 
+Figure by MIT OpenCourseWare.</text>
+        </slide>
+        <slide>
+          <slideno>18</slideno>
+          <text>Imaging Defects in TEM utilizing Diffraction
+	The change in  of the planes around a defect changes the Bragg condition 
+	Aperture after sample can be used to filter out beams deflected by defect 
+planes: defect contrast
+1999 E.A. Fitzgerald 19 Image removed due to copyright restrictions.
+Please see any explanation of detecting dislocations via TEM, such as
+http://www.uni-saarland.de/fak8/wwm/research/dip_welsch/ecci-defect-scheme_e.png</text>
+        </slide>
+        <slide>
+          <slideno>0</slideno>
+          <text>Wave-particle Duality: Electrons are not just particles
+ Compton, Planck, Einstein 
+ light (xrays) can be particle-like 
+ DeBroglie 
+ matter can act like it has a wave-nature 
+ Schrodinger, Born 
+ Unification of wave-particle duality, Schrodinger 
+Equation 
+1999 E.A. Fitzgerald 1</text>
+        </slide>
+        <slide>
+          <slideno>9</slideno>
+          <text>Light is Quantized: Planck
+ Lessons from Planck Blackbody 
+ waves which are confined with boundary conditions 
+have only certain  available: quantized 
+ E=nh, and therefore E-M waves must come in chunks 
+of energy: photon E=h . Energy is therefore quantized 
+as well 
+ Quantized energy can affect properties in non-classical 
+situations; classical effects still hold in other situations
+1999 E.A. Fitzgerald 10</text>
+        </slide>
+        <slide>
+          <slideno>1</slideno>
+          <text>Light has momentum: Compton 
+ No way for xray to change  after interacting classically 
+ Experimentall y: Compton Shift in  
+ Photons are particle-like: transfer momentum 
+e-xray  
+graphite I 
+ detector 
+ 
+h= (1  cos) =c (1  cos)mco 
+1999 E.A. Fitzgerald 2</text>
+        </slide>
+        <slide>
+          <slideno>17</slideno>
+          <text>DeBroglie: Matter is Wave 
+Modern TEM Modern SEM
+1999 E.A. Fitzgerald 18 
+Image removed due to copyright restrictions.
+Please see any schematic of a scanning electron microscope, such as
+http://commons.wikimedia.org/wiki/Image:MicroscopesOverview.jpg
+Courtesy of Uwe Falke.
+Image from Wikimedia Commons, http://commons.wikimedia.org</text>
+        </slide>
+        <slide>
+          <slideno>19</slideno>
+          <text>Imaging Defects and Man-made Epitaxial Structures in 
+TEM utilizing Diffraction
+Si0. 5Ge0. 5/Ge superlattice 
+(each layer ~100A) 
+Si0.25Ge0.75 
+Si1-xGex Layers 
+(each layer about 3000A) 
+1999 E.A. Fitzgerald 39 
+20</text>
+        </slide>
+        <slide>
+          <slideno>13</slideno>
+          <text>Diffraction
+	Incoming  must be on the order of the lattice constant a or so ( &lt;~ 
+few tenths of a nanometers) 
+	x-rays will work (later, show electr ons are waves also and they can be 
+used for diffraction also) 
+	x-rays generated by core e-transitions in atoms 
+ distinct energies: E=hc/ ; E~ 10keV or so (core e- binding 
+14 energies) 
+Cu 
+ 
+ 
+single-crystal 
+diffraction n=2dsin Cooled Cu 
+target e-Therm ionic 
+emission 
+sample 
+detector Collimator crystal (decreas es spread in  and ) 
+sample detector 
+double crystal, 
+double axis diffraction 
+Add a channel crystal (also 
+called analyzer crystal) after the 
+sample and it is  called triple axis 
+diffraction 
+1999 E.A. Fitzgerald</text>
+        </slide>
+        <slide>
+          <slideno>11</slideno>
+          <text>Light is always quantized: Photoelectric 
+effect (Einstein)
+E 
+EF E Ein=h 
+vacuum 
+Evac=Ein-E 
+Emax=Ein-E=h-hc 
+x Ein=h! 
+Strange consequence of Compton plus E=h : light has momentum but no mass 
+= hc = h since E = cp for a photonE p 
+1999 E.A. Fitzgerald 12</text>
+        </slide>
+        <slide>
+          <slideno>2</slideno>
+          <text>Light is Quantized: Planck
+ Blackbody radiation: energy density at a given (or ) should be predictable 
+ Missing higher frequencies! (ultra-violet catastrophe) 
+hollow cube, 
+meta l walls L L 
+()d=energy per volume being emitted in +d 
+()dN() Ewave
+d
+= volume 
+N() is the number density, i.e. number of waves  in +d(#/frequency)
+Heat to T 
+Finding N( ): Inside box, metal walls are perf ect reflectors for the E-M waves 
+Ei =Eoiei(tkz); Er =Eorei(t+kz) Perfect reflection, Eoi=-Eor 
+it ikz ikz itEtot =Eoie [e e ]=2iEoie sin kz 
+1999 E.A. Fitzgerald 3</text>
+        </slide>
+        <slide>
+          <slideno>8</slideno>
+          <text>Light is Quantized: Planck 
+If P(E) were to decrease at higher E, than  ( ) would not have  2 dependence at higher  P(E) will decrease at higher E if E is a function of  
+Experimental fit to data suggests that E is a linear function in  , therefore E=nh  where h 
+is some constant 
+  nh 
+ nh e kbT Note: the integrals need to be 
+0 kT h removed in the average and
+E = b 
+nh= h replaced with sums since the 1 e  
+kT ekT  1 spacing of energies becomes b b 
+0 kbT greater as E increases 
+ 8 2 h h determined by an experimental fit and()= c3 h equals 
+e kbT  1 
+At small h  /kbT, eh /kT~1+h /kbT and  ( )~kbT 
+At large h /kbT, ~h e-h /kT which goes to 0 at high E 
+1999 E.A. Fitzgerald 9</text>
+        </slide>
+        <slide>
+          <slideno>16</slideno>
+          <text>DeBroglie: Matter is Wave
+Proof electron was wave by transmission and beackscattered experiments, almost simultaneously 
+Diffraction Transmission 
+Spots 
+Backscattered 
+film 
+1999 E.A. Fitzgerald 17</text>
+        </slide>
+        <slide>
+          <slideno>7</slideno>
+          <text>Light is Quantized: Planck 
+Classical E=kbT comes from assumption that Boltzmann distribution determines 
+number of waves at a particular E for a given T 
+Since N() can not the problem with (), it must be E 
+E must be a function of in order to have the experimental data work out 
+Origin of E=kbT 
+E 
+Boltzmann distribution is P' ()E =Ae kbT 
+PE	 A = Normalized distribution is ()=
+P' ()E dE =1; 1 
+kT0	 b 
+Average energy of particles/waves with this distribution: 
+ 
+	() EP E dE 
+= =if P(E) is normalized = ()=kbT E	0 EP EdE 
+P(E)dE 0 
+0 
+1999 E.A. Fitzgerald 8</text>
+        </slide>
+        <slide>
+          <slideno>12</slideno>
+          <text>DeBroglie: Matter is Wave
+ His PhD thesis! 
+ =h/p also for matter 
+ To verify, need very light matter (p small) so  is large enough 
+ Need small periodic structure on scale of  to see if wave is there (diffraction) 
+ Solution:electron diffraction from a crystal 
+N=2dsin
+For small , ~/d, so  must be on order of 
+d in order to measure easily 
+1999 E.A. Fitzgerald 13 dqqq q
+d sin q d sin q
+Figure by MIT OpenCourseWare.</text>
+        </slide>
+        <slide>
+          <slideno>15</slideno>
+          <text>Example: Heavily B-diffused Si 
+ B diffusion from borosilicate glass 
+ creates p++ Si used  in micromachining 
+161999 E.A. Fitzgerald  gradients created in B concen tration and misfit dislocati ons 
+Si 
+Si:B 
+Graded 
+region Si:B 
+Graded Si:B 
+Si</text>
+        </slide>
+        <slide>
+          <slideno>4</slideno>
+          <text>Light is Quantized: Planck
+nz  (nx,ny,nz) 1 state (i.e. 1 wavelength or frequency) in 
+(c/2L)3 volume in n-space 
+ny 
+2 possible wave polarizations for each state 
+c/2L nx (Note also that postive octant is only active one 
+since n is positive: shows as 1/8 factor below) 
+Using the assumption that  &gt;&gt;c/2L, 
+14 3 
+83 8L3 3N = = 
+1  c  33c3 
+2  2L  
+N()= dN 8L3 2
+= d c3 
+1999 E.A. Fitzgerald 5</text>
+        </slide>
+        <slide>
+          <slideno>14</slideno>
+          <text>Example of Diffraction from Thin Film of 
+Different Lattice Constant
+	InGaAs on GaAs deposited by mol ecular beam epitaxy (MBE) 
+	Can determine lattice constant (In concentration) and film thickness 
+from interference fri nges 
+1999 E.A. Fitzgerald 
+In0.05Ga0.95As GaAs 
+Interference fringes 
+from optical effect X-ray 
+intensity InxGa1-xAs 
+GaAs 
+15</text>
+        </slide>
+        <slide>
+          <slideno>10</slideno>
+          <text>Light is always quantized: Photoelectric 
+effect (Einstein)
+	Planck (and ot hers) really doubted fit,  and didnt initially believe h was 
+a universal constant 
+ Photoelectric effect shows that E=h even outside the box 
+I,E, 
+metal Maximum 
+block	electron Emax=h(-c) 
+energy, 
+Emax 
+!e-
+c	 
+For light with &lt;c, no matter what the intensity, no e
+ -
+1999 E.A. Fitzgerald 11</text>
+        </slide>
+        <slide>
+          <slideno>3</slideno>
+          <text>Light is Quantized: Planck
+Real{E }= 2E sint sin kz Standing Wavestot oi 
+E-field in side meta l wall 
+is zero (due to high 0 L 
+conductivity) 
+Therefore, sinkz must equal zero at z=0 and z=L 
+sin kL = 0; kL =n; k = 
+Ln Also, since k=2 /, n = 2  L or = 2 
+nL 
+Note that the w avelength for E-M 2L waves is quantized classically just by In 3-D, = 
+nx 2 + n2 
+y + nz 2	applying a confining boundary 
+condition 
+c nx 2 + ny 2 + nz 2 cn r 
+= = n r = nxi + ny j + nzk 
+2L 2L 
+1999 E.A. Fitzgerald 4</text>
+        </slide>
+      </slides>
+      <videos/>
+    </lecture>
+    <lecture>
+      <lecture_title>Dielectrics and polarization</lecture_title>
+      <lecture_pdf_url>https://ocw.mit.edu/courses/3-225-electronic-and-mechanical-properties-of-materials-fall-2007/resources/lecture_10/</lecture_pdf_url>
+      <lectureno>23</lectureno>
+      <slides>
+        <slide>
+          <slideno>18</slideno>
+          <text>Orientational Polarizability
+	No restoring force: analogous to conductivity
+H C +q
+O HO O	 
++ p=0	 -q -p 
+For a group of many molecules at some temperature: 
+ U pE cos 
+f = ekbT = e	kbT 
+Analogous to conductivity, the 
+molecules collide after a certain After averaging over the polarization of the 
+time t, giving: ensemble molecules (valid for low E-fields): 
+2 
+ DC ~3kp
+bT 1 i 
+o= DC 
+19 
+1999 E.A. Fitzgerald</text>
+        </slide>
+        <slide>
+          <slideno>4</slideno>
+          <text>Origin of Polarization
+	We are interested in the true dipoles creating polarization in materials (not 
+surface effect) 
+	As with the free electrons, what is the response of these various dipole 
+mechanisms to various E-field frequencies? 
+	When do we have to worry about controlling 
+	molecular polarization (molecule may have non-uniform electron density) 
+	ionic polarization (E-field may distort i on positions and temporarily create dipoles) 
+	electronic polarization (bound electrons ar ound ion cores could distort and lead to 
+polarization) 
+	Except for the electronic polarization, we  might expect the other mechanisms 
+to operate at lower frequencies, since the units are much more massive 
+	What are the applications that use wave s in materials for frequencies below the 
+visible? 
+1999 E.A. Fitzgerald 5</text>
+        </slide>
+        <slide>
+          <slideno>8</slideno>
+          <text>Microscopic Frequency Response of 
+Materials
+	Bound charge can create dipole through charge displacement 
+	Hydrodynamic equation (Newtonian representation) will now have a 
+restoring force 
+	Review of dipole physics: 
+- + d r 
++q-q 
+Dipole moment: p r = qd r
+p r 
+Applied E-field rotates dipole to align with field: 
+Torque r = pr xE r 
+rPotential Energy U = p r  E r 
+= p r E cos 
+1999 E.A. Fitzgerald 9</text>
+        </slide>
+        <slide>
+          <slideno>13</slideno>
+          <text>Electronic Polarizability 
+eE r = o 
+o 
+m2  K 
+ 
+ mZi  
+eE Ko If no Clausius-Mosotti, ro = m(2 2 ); oe = mZi oe N NZ e2
+p = qd =Zier; p = poeit r = 1+ e = 1+ 2 i 
+2 = n2
+o om( oe ) 
+po = m( Z 
+2 ie 
+ 2 2 ) Eo =eEo r o 
+= Zie2 
+em(2 2 )oe 2 
+&gt;&gt;oe , e = 0 1+ NZie 
+m(2 ) 
+&lt;&lt;oe , e = Zie2
+2 o oe 
+moe 1 
+oe 
+1999 E.A. Fitzgerald 14</text>
+        </slide>
+        <slide>
+          <slideno>6</slideno>
+          <text>Wave Eqn. With Insulating Material and 
+Polarization
+r
+r B
+xE = t 
+rr D r 
+nonmag rr (oE r 
++P r)insulating r E r 
+J + xB =J + xB = xH =   t t t r rrr 
+(D =0 E +P =E) 
+2 E =00r 2 E 
+2 = 
+2 r 2 E 
+2t c t 
+E =E ei(krt ) =E eikreit =E(r)eit 
+0 0 
+2E(r)2 E(r) = r 
+2c 
+c2 
+2 So polarization slows down the
+2 =k velocity of the wave in the
+r material c optical ck  k
+= 
+ n r 
+1999 E.A. Fitzgerald 7</text>
+        </slide>
+        <slide>
+          <slideno>10</slideno>
+          <text>Microscopic Frequency Response of 
+Materials
+	We now need to derive a new relationshi p between the dielectric constant and 
+the polarizability 
+D = r oEext = oEext + P 
+P = r oEext  oEext 
+ 2 + r Eloc = Eext  
+ 3  
+Plugging into P=N  Eloc: 
+( r + 2)
+ r oEext  oEext = N Eext3 
+( r  1) o = N( r + 2)3
+ 1 N 
+Clausius-Mosotti Relation: r == Where v is the volume  per dipole (1/ N) 
++ 23 3r o o 
+Macro Micro 11 
+1999 E.A. Fitzgerald</text>
+        </slide>
+        <slide>
+          <slideno>12</slideno>
+          <text>Classical Model for Electronic Polarizability
+ Electron shell around atom is attached to nucleus via springs 
++ 
+E r + 
+E r 
+p r K K 
+r Zi electrons, 
+mass Zim 
+Zim&amp;r&amp; =Kr  ZieEloc , assume r = roeit 
+1999 E.A. Fitzgerald 13</text>
+        </slide>
+        <slide>
+          <slideno>16</slideno>
+          <text>Ionic Polarizability
+- + Eloc 
++ -
+p 
+u+ u-2 coupled differential eqns 
+1 for + ions 
+1 for - ions 
+w = u+ u , w&amp;&amp; = u&amp;&amp;+ u&amp;&amp; 
+1M = 1 1+M + M  
+Mw&amp;&amp; =2Kw + eEloc 
+Ionic materials always have ionic and 
+electronic polarization, s o: Eloc = Eoeit , w = woeit 
+eE 2Ko 
+2 22 wo = M ( ), oi = M 
+tot =i +e =+ + + M ( e
+oi 2 2 ) po = ewo = oi iEo 
+2 
+i = M (oie 
+2 2 ) 
+1999 E.A. Fitzgerald 17</text>
+        </slide>
+        <slide>
+          <slideno>2</slideno>
+          <text>The Capacitor
+ The air-gap can store energy! 
+ If we can move charge temporarily with out current flow, can store even more 
+ Bound charge around ion cores in a material can lead to dielectric properties 
+3 T
+ch
+G
+(o
+wo kinds of charge can create plate 
+arge: 
+surface charge 
+dipole polarization in the volume 
+auss law can not tell the difference 
+nly depends on charge per unit area) 
+Image from Wikimedia Commons, http://commons.wikimedia.org
+1999 E.A. Fitzgerald</text>
+        </slide>
+        <slide>
+          <slideno>9</slideno>
+          <text>Microscopic Frequency Response of 
+Materials
+ For a material with many dipoles: 
+P r 
+= Np r = NE r 
+( p r =E r 
+) 
+(polarization=(#/vol)*dipole polarization) 
+=polarizabilityr 
+P 
+= r , so = N 
+ Eo 
+p r =E r 
+Actually works well only for low d ensity of dipoles, i.e. g ases: little screening 
+For solids where there can be a high density: local fiel d
+For a spherical volume inside (theory of local field), r rr PEloc = Eext + 3o Eext 
+Eloc 
+1999 E.A. Fitzgerald 10</text>
+        </slide>
+        <slide>
+          <slideno>7</slideno>
+          <text>Compare Optical (index of refraction) 
+and Electrical Measurements of 
+Materi al Optical , n2 Electrical,  
+diamond 5.66 5.68 Only electrical polariztion 
+NaCl 2.25 5.9 Electrical and ionic pol ariztion 
+H2O 1.77 80.4 Electrical, ionic, and 
+molecular polariztion 
+Polarization that is active depends on material and frequency
+1999 E.A. Fitzgerald 8</text>
+        </slide>
+        <slide>
+          <slideno>1</slideno>
+          <text>The Capacitor 
++ + ++ + + 
+------
+I=0 always 
+in capacitor 
+t 
+d/2 d/2 +V 
+  E = o 
+d 
+2 
+E = dx =t = Q 
+E   Ad o o ot 2 
+d 
+2 
+V = Edx = Qd 
+AV d o 
+2 
+Q Qd= V = C Ao 
+oA 2C = 
+1999 E.A. Fitzgerald d</text>
+        </slide>
+        <slide>
+          <slideno>15</slideno>
+          <text>Ionic Polarizability 
+ Problem reduces  to one similar to the electronic polarizability 
+ Critical frequency will be less than electronic since ions  are more massive 
+ The restoring force between ion positions is the interatomic potential 
+E(R) 
+Parabolic at bottom near Ro 
+k(R  Ro )2 
+2 
+E = k(R  Ro )R 
+- + Nucleii repulsion 
+F E 
+= = 
+Ro 
+R 
+Electron bondi ng in between ions 
+F = kx ij = Cijklkl 
+1999 E.A. Fitzgerald 16</text>
+        </slide>
+        <slide>
+          <slideno>5</slideno>
+          <text>Courtesy of the Opensource Handbook of Nanoscience and Nanotechnology,
+http://en.wikibooks.org/wiki/Nanotechnology
+In communications, many E-M waves travel in insulating materials: 
+What is the response of the material ( r) to these waves? Application for different E-M Frequencies
+1999 E.A. Fitzgerald 6</text>
+        </slide>
+        <slide>
+          <slideno>14</slideno>
+          <text>QM Electronic Polarizability 
+ At the atomic electron level, QM expected: electron waves 
+ QM gives same answer qualitatively 
+ QM exact answer very difficult: many-bodied problem 
+2 E1 e ()= e f10 ; 10 = E1 E0 
+m 2 2 hE0 10 
+f10 is the oscillator strength of the transition ( 1 couples to o by E-field) 
+For an atom with multiple electrons in multiple levels: e ()= e2 
+ 2 fj 0 
+2; j 0 = Ej E0 
+mj0 j10  h 
+1999 E.A. Fitzgerald 15</text>
+        </slide>
+        <slide>
+          <slideno>3</slideno>
+          <text>Material Polarization
++ + + + + + 
++ 
+------+ + 
++ 
+++ ----
+-
+--
+-
+E  AroC = E d 
+E'= P 
+D = E + P =E P is the Polarization o D is the Electric flux density or the Dielectric
+=ro displacement 
+P  is the dielectric or electric susceptibility
+= 1+= 1+r  Eo 
+All detail of materi al response is in r and therefore P 
+1999 E.A. Fitzgerald 4</text>
+        </slide>
+        <slide>
+          <slideno>17</slideno>
+          <text>Ionic Polarizability 
+ Usually Clausius-Mosotti necessary due to high density of dipoles 
+r 1 = Ntot = 1 
++ + + e 
+22 
+2 ) 
+r + 2 3o 3ov  M (oi   
+By convention, things are abbreviated by using s and : 
+2
+s 1 1  e r
+&lt;&lt;oi , s + 2 = 3ov + + + M (oi 2 )
+&gt;&gt;oi ,  1 = n 
+22 1 = 1 [+ + ]
+ + 2 n + 23ov s 
+r = + 
+2 s , T 2 =oi 2 
+ + 2 
+
+1 s + 2 
+T 2
+T n2= 
+18 
+1999 E.A. Fitzgerald</text>
+        </slide>
+        <slide>
+          <slideno>0</slideno>
+          <text>Dielectric and Optical Properties 
+	As with conductivity, we  will start with macroscopic property and 
+connect to the microscopic 
+	All aspects of free electrons have b een covered: only bound electrons left 
+	Capacitance, Optical properti es --&gt; ,n --&gt; molecules and atoms 
+Review of capacitance and connecti on to dielectric constant 
+First, no material in capacit or 
+to V Q = CV 
+dq dV 
+C	 dt = i = C dt Vo 
+i 
+V
+V	o 
+t1 
+1999 E.A. Fitzgerald</text>
+        </slide>
+        <slide>
+          <slideno>11</slideno>
+          <text>Different Types of Polarizability 
+Highest natural frequenc y	Light est ma ss  Atomic or electronic, e 
+ Displacement or ionic, i 
+ Orientational or dipolar, o Lowest natural f requency	 Heavi est ma ss 
+=e +i +o 
+As with free e-, we want to look at  the time dependence of the E-field: E = Eeit 
+o 
+2 xm x m 2 = eE  Kx t t Restoring Force 
+Response Drag Drivi ng 
+Force m&amp;x&amp; =eE  Kx 
+itx = xeo 
+m(2)xo =eEo  Kxo So lighter mass will have a 
+eEo eEo higher critical frequencyx =	 = o	 2 2 2 K  m( o )m	 
+ m 
+K
+= 12 o m1999 E.A. Fitzgerald</text>
+        </slide>
+      </slides>
+      <videos/>
+    </lecture>
+    <lecture>
+      <lecture_title>Fermi-Dirac, energy levels</lecture_title>
+      <lecture_pdf_url>https://ocw.mit.edu/courses/3-225-electronic-and-mechanical-properties-of-materials-fall-2007/resources/lecture_4/</lecture_pdf_url>
+      <lectureno>17</lectureno>
+      <slides>
+        <slide>
+          <slideno>7</slideno>
+          <text>Effect of Temperature (T&gt;0): Coupled electronic-thermal 
+properties in conductors (i.e. cv) 
+	Electrons at the Fermi surface are able to increase energy: responsible for 
+properties
+	Fermi-Dirac distribution 
+	NOT Bolltzmann distribution, in which any number of particles can occupy 
+each energy state/level
+Originates from:
+EF 
+...N possible configurations 
+T=0 T&gt;0 If E-EF/kbTis 
+large (i.e. far from ( E EF ) 
+f = ( EE 1 
+F )	EF) than f = e kbT 
+be kT +1 
+1999 E.A. Fitzgerald 8</text>
+        </slide>
+        <slide>
+          <slideno>0</slideno>
+          <text>Consequence of Electrons as Waves on 
+Free Electron Model
+	Boundary conditions will produce quantized energies for 
+all free electrons in the material 
+	Two electrons with same spin can not occupy same 
+electron energy (Pauli exclusion principle) 
+Imagine 1-D crystal for now 
+Traveling wave picture	 Standing wave picture 
+ei(kx-t) 
+e-i(kx+t) 
+ei(kx-t)+ e-i(kx+t) =e-it(eikx+ e-ikx) 
+= e-it(2coskx) 
+Since material is usually big and elec tron small, traveling wave picture used
+1999 E.A. Fitzgerald 1</text>
+        </slide>
+        <slide>
+          <slideno>8</slideno>
+          <text>Fermi-Dirac Distribution: the Fermi Surface 
+when T&gt;0
+f(E) 
+1 T=0 
+T&gt;0 0.5 kbT kbT fBoltz 
+Boltzmann-like tail, for 
+the larger E-EF values 
+~EF E 
+All these e- not 
+perturbed by T 
+Heat capacity of metal (which is ~ h eat capacity of free e- in a metal): U=total energy of 
+cv =  U  U ~ E N ~ kbT [g(EF ) kbT ] ~ g(EF )(kbT )2 electrons in system 
+T v 
+cv = 
+ 
+ U
+T 
+v = 2  g(EF )  kb 2T Right dependence, very close to exact derivation 
+1999 E.A. Fitzgerald 9</text>
+        </slide>
+        <slide>
+          <slideno>2</slideno>
+          <text>Representation of E,k for 1-D Material
+h2k 2 p2 
+states E ==
+electrons 2m 2m
+E 
+k k=2/L Quasi-continuous k m kE m k 
+dk dE 
+= = 
+2 2 
+h h 
+En 
+En-1 En+1 m=+1/2,-1/2 All e- in box accounted for 
+EF 
+kF kF 
+Total number of electrons=N=2*2kF*L/2 
+1999 E.A. Fitzgerald 3</text>
+        </slide>
+        <slide>
+          <slideno>3</slideno>
+          <text>Representation of E,k for 1-D Material
+h2 k 2 2mEE = ;k = 2m h 
+dN dk 12 m 2mE 1
+2g(E) = == dk dEL h2k h 2 = LkN F  m k 
+dk dE 2h = 
+g(E)=density of states=number of electrons per energy per length
+N 2k 2 2mEF n n == F = L  h or kF = 2 
+n=is the number of electrons per unit length, and is 
+determined by the crystal structure and valence 
+The electron density, n, determines the energy and velocity of 
+the highest occupied electron state at T=0 
+1999 E.A. Fitzgerald 4</text>
+        </slide>
+        <slide>
+          <slideno>9</slideno>
+          <text>Heat Capacity (cv) of electrons in Metal 
+	Rough derivation shows cv~const. x T , thereby giving correct 
+dependence 
+	New heat capacity is about 100 times less than the classical 
+expectation 
+v b Exact derivation: c = 
+32 
+ k 2T  g(EF ) 
+3 nkcvclass = 2 b 
+= 3 EF ~ 100@ RT cvquant 2 
+ kbT 
+nkb 2 kbT 
+2  EF  
+1999 E.A. Fitzgerald 10</text>
+        </slide>
+        <slide>
+          <slideno>5</slideno>
+          <text>Representation of E,k for 3-D Material
+kx 2 + ky 2 + kz 2) 
+2m 
+2 g(E) = m 
+2 h
+kF =(32n
+kx ky kz 
+(kx,ky,kz) 
+2/L (2hE = 
+)3 Fermi Surface or Fermi Sphere kF 
+3 mE 
+1 
+vF = hkF E = h2kF 2 
+TF = EF 
+mF 2m kB 
+1999 E.A. Fitzgerald 6</text>
+        </slide>
+        <slide>
+          <slideno>1</slideno>
+          <text>Consequence of Electrons as Waves on 
+Free Electron Model
+Traveling wave picture Standing wave picture 
+0 L0 
+L (x) =(x + L) 
+eikx = eik ( x+ L) 
+1 = eikL 
+2nk = L 
+Just having a boundary condition means that k and E are quasi-continuous, 
+i.e. for large L, they appear  continuous but are discrete 
+1999 E.A. Fitzgerald 2</text>
+        </slide>
+        <slide>
+          <slideno>4</slideno>
+          <text>Representation of E,k for 2-D Material
+E(kx,ky) 
+kx ky m kkE y x 
+2 ) ( 2 2 2 + = h 
+1999 E.A. Fitzgerald 5</text>
+        </slide>
+        <slide>
+          <slideno>6</slideno>
+          <text>So how have material properties changed?
+	The Fermi velocity is much higher than 
+kT even at T=0!  Pauli Exclusion raises 
+the energy of the electrons since only 2 
+e- allowed in each level 
+	Only electrons near Fermi surface can 
+interact, i.e. absorb energy and 
+contribute to properties 
+TF~104K (Troom~102K), 
+EF~100Eclass, vF2~100vclass 2 
+1999 E.A. Fitzgerald 7 Element rs /ao TF kF eF nF
+Li 
+Na
+K 
+Rb
+CuCs
+Ag
+Au
+Be
+Mg3.25
+3.93
+4.86
+5.20
+5.62
+2.67
+3.023.01
+3.071.87
+2.66
+3.27
+3.57
+3.71
+2.12
+2.14
+2.30
+2.592.65
+2.07
+2.142.252.302.222.482.412.193.24
+2.12 2.46 0.75
+0.700.860.813.77 0.92 1.07
+1.85 2.15
+1.59
+7.00
+5.495.53
+5.3214.3
+7.08
+4.69
+3.93
+3.64
+11.1
+10.9
+9.477.477.13
+11.7
+10.4
+8.63
+8.15
+10.2
+9.47
+9.90
+10.9 12.711.511.011.89.4610.012.1
+1.701.611.581.641.461.511.66NbCa
+Sr
+Ba
+Fe
+Mn
+Zn
+CdHg
+Al
+Ga
+In
+Tl
+Sn
+Pb
+Bi
+Sb4.74 eV
+1.84
+8.16
+6.386.42
+6.1816.6
+8.23
+5.44
+4.57
+4.23
+13.0
+12.7
+11.0
+8.68
+8.29
+13.65.51 x 10
+4 K
+0.65
+1.36
+1.201.21
+1.181.94
+1.36
+1.11
+1.02
+0.98
+1.71
+1.70
+1.58
+1.401.37
+1.75
+1.961.871.831.901.691.741.920.75
+1.57
+1.391.40
+1.372.25
+1.58
+1.28
+1.18
+1.13
+1.98
+1.96
+1.83
+1.621.58
+2.031.12 x 10
+8 cm-11.29 x 108 cm/sec
+Fermi energies, fermi temperatures, fermi waves vectors, and fermi velocities for representative metals*
+* The table entries are calculated from the values of rs / a0 given in Table 1.1 using m = 9.11 x 10-28 grams.
+Table by MIT OpenCourseWare.</text>
+        </slide>
+      </slides>
+      <videos/>
+    </lecture>
+    <lecture>
+      <lecture_title>Magnetic materials</lecture_title>
+      <lecture_pdf_url>https://ocw.mit.edu/courses/3-225-electronic-and-mechanical-properties-of-materials-fall-2007/resources/lecture_12/</lecture_pdf_url>
+      <lectureno>25</lectureno>
+      <slides>
+        <slide>
+          <slideno>3</slideno>
+          <text>Maxwell and Magnetic Materials
+	Amperes law  H  dl = I = 0 
+	For a permanent magnet, there is no real current 
+flow; if we use B, there is a need for a fictitious 
+current (magnetization current) 
+	Magnetic material inserted inside inductor 
+increases inductance 
+ B = BA ~4MA = 4HA = 4 4 In A 
+ c  
+N B () 2	 Materi al Type 4 2L = = n lAI c Paramagnetic +10-5-10-4 
+L increased by ~  due to 
+magnetic material Diam agnetic -10-8-10-5 
+Ferro magnetic +105 
+1999 E.A. Fitzgerald 4</text>
+        </slide>
+        <slide>
+          <slideno>12</slideno>
+          <text>Effect of De-localized electrons on Magnetic 
+Properties
+ Pauli Paramagnetism 
+ dues to the reaction of free e- to magnetic field 
+E =g0 BH =g0BSE(H=0) 
+M =B (n+n) (n+ is the density of free electrons parallel to the H field) 
+g+()= 1 g(E +BH ) E For exact solution, need E gE g+()= 1
+2 () 
+E =g0BH 2 to expand about Ef for n+ 
+g()E 1 ()E(H=0)= gE g()= 1 g(E B and n- E H )2 2 
+Only e- near Fermi surface matter: 
+E =g0 BH 
+n () (+n)=n g EF  
+2 E 
+Note: Pauli paramagnetism has no T 
+n g() E H dependence, whereas C urie paramagnetism has 
+F B 1/T dependence 13M = () =()1999 E.A. Fitzgerald B 2 Hg EF , B 2 g EF</text>
+        </slide>
+        <slide>
+          <slideno>1</slideno>
+          <text>The Inductor
+4 1  E B = J + c c  t 
+4 4 BdS = B  dl =  J  dS = I c c 
+4B = In c 
+N = n  length = nl 
+N BN (BA)4 2L = = = n lAI I c 
+Insert magnetic material
+Magnetic dipoles in materia l can line-up in magnetic field 
+B = H + 4 H = H + 4 M 
+B magnetic induction 
+ M  magnetic susceptibilityM =H = = 1+ 4 H magnetic field strength (applied field) H M magnetization 
+B = 4M + 1 B =H 2 
+1999 E.A. Fitzgerald</text>
+        </slide>
+        <slide>
+          <slideno>13</slideno>
+          <text>Effect of De-localized electrons on Magnetic 
+Properties
+ Landau paramagnetism 
+ Effect of bands/Fermi surface on Pauli paramagnet ism 
+ F=qvxB for orbits 
+ orbit not completed under normal circumstances 
+ however, average effect is not zero Land = 1 Pauli3 
+1999 E.A. Fitzgerald 14</text>
+        </slide>
+        <slide>
+          <slideno>6</slideno>
+          <text>Total Energy Change for Bound Electron in 
+Magnetic Field
+ Simple addition of energies if spin-orbital coupling did not exist 
+rr 
+E =  H =B (LZ + g0 SZ )H =TH 
+But spin-orbit coupling changes things such that: T B (LZ + g0 SZ )=BJZ 
+QM definitions: T = gBJZ 
+L = hLZ = hml 31  S(S +1) L(L +1)
+S = hSZ = hms g = 2 + 2  J (J +1) 
+rr rrJ = L + S E = T  H = gBJ  H = gBJZH 
+J = hJZ 
+1999 E.A. Fitzgerald 7</text>
+        </slide>
+        <slide>
+          <slideno>17</slideno>
+          <text>Domains in Ferromagnetic Materials
+B 
+M N 
+S SNSN 
+NSNS 
+Magnetic doma in Domain wal l or boundary Flux closure 
+Magnetic energy No external field 
+= 1  B2dV 8 
+1999 E.A. Fitzgerald 18</text>
+        </slide>
+        <slide>
+          <slideno>4</slideno>
+          <text>Microscopic Source of Magnetization 
+ No monopoles 
+ magnet ic dipol e comes from moving or spinning electrons 
+Orbital Angular Momentum
+A  is the magnetic dipole moment 
+rr 
+Energy = E = H =H cos 
+I 
+e-
+L 
+What is ? For =0, E =H BI since energy ~ LI 2 and for 1loop L =B 
+I 
+B =H dS ~ HA 
+H =BI = HAI and = IA 
+I =e  A =r2 
+c 2 
+=  e r2 
+2c 5 
+1999 E.A. Fitzgerald</text>
+        </slide>
+        <slide>
+          <slideno>9</slideno>
+          <text>Atoms with Partially Filled Shells
+ J not zero 
+ Need Hunds rules from QM 
+ Fill levels with same ms to maximize spin 
+ maximize L (first e- goes in largest l) 
+ J=|L-S| for n&lt;=(2l+1), J=|L+S| for n&gt;(2l+1) 
+ Conventional notation: (2S +1) XJ L 0 1 2 3 4 5 6 
+X S P D F G H I 
+ J=0 when L and S are not zero is a special case 
+ 2nd order effect--&gt; perturbation theory 
+ Partially filled shells give atoms paramagnetic behavior 
+E = gBHJZ 
+(+10-2-10-3&gt;10-9 eV for diamagnetic component) 
+1999 E.A. Fitzgerald 10</text>
+        </slide>
+        <slide>
+          <slideno>7</slideno>
+          <text>Total Energy Change for Bound Electron in 
+Magnetic Field
+ Kinetic energy from Lorentz force has not been included 
+r Lorentz for circular orbit 
+Energy change = p2 
+= e2
+2 (r r  H r )(r r  H r )2m 8mc
+For the plane perpendicular to H and assuming circular orbit:
+e 2 2 e 2 2 2Energy change = 8mc 2
+2 rH = 8mc 2
+2 (x + y )H Hr c e pH r  = 2 
+ETOT = gBHJZ + e2
+2 H 2 (x2 + y2 )8mc 
+Numbers: BHfor for 
+H=10-4 Gauss H=10-4 Gauss 
+=10-4 eV =10-9 eV 
+The Lorentz effect is minimal with respect to magnetic moment interaction, if it exists
+1999 E.A. Fitzgerald 8</text>
+        </slide>
+        <slide>
+          <slideno>14</slideno>
+          <text>Ferromagnetism 
+	Most important but not common among element s 
+	Net magnetization exi sts without an applied magnetic fiel d 
+	To get ~104-105 as we see in ferromagne tism, most moments in 
+material must be aligned!
+	There must be a missing dri ving force 
+1	rr rr 4NOT dipole-dipole interaction: too small Edipole = 3 [1 2  3(1  r)( 2  r)] ~ 10 eV r 
+Spin Hamiltonian and Exchange
+H spin =  JijSiS j Jij  exchange constant 
+Assuming spin is dominating magnetization,
+H = 1 S r(R r) S r(R r 
+')J (R r 
+ R r 
+') gBH S(R r)
+rr	 r2 R,R'	 R 
+1999 E.A. Fitzgerald 15</text>
+        </slide>
+        <slide>
+          <slideno>0</slideno>
+          <text>Magnetic Materials 
+ The inductor 
+B = LI (Q =CV) 
+1 B B = L I 
+E = (CGS) t t 
+EdSc 
+=t 
+1 ( BdS )= 1  VEMF =N 
+ 
+tB =L 
+ I
+t  c t  c tB 
+I V
+B  magnetic flux density V = L (recall I =C for the capacitor)
+t t 
+EdS =E dl (Green' s Theorem) I
+Power =VI = LI
+V =E dl =1 B (explicit Faraday' s Law) t 
+c t Energy =Power dt =LIdI = 1LI 2 = 1 NBI 2 2 
+ 12 capacitor CV  
+ 2  
+1999 E.A. Fitzgerald 1</text>
+        </slide>
+        <slide>
+          <slideno>16</slideno>
+          <text>Ferromagnetism 
+M () ( T TC T ) 0.33-0.37 M () ( T TC T ) 1.3-1.4 
+H B=H+4 M 
+normal paramagnet Br, Ms 
+Hc Irreversible boundary di splace ment Domain rotation 
+reversible boundary displac ement 
+TC T
+Easy induction, softer 
+Magentic anisotropy 
+hardness of loop dependent on crystal direction 
+comes from spin interacting with bonding 
+17 
+1999 E.A. Fitzgerald</text>
+        </slide>
+        <slide>
+          <slideno>11</slideno>
+          <text>Temperature Dependence of Paramagnetism
+	Temperature dependence determined by thermal energy vs. magnetic 
+alignment energy (same derivation as for molecular polarizability in the case 
+of electric dipoles) 
+U pE cos U H cos 
+f = k Tbe = e k Tb for electric dipoles; f = k Tbe = e k Tb for magnetic dipoles; 
+Z = 
+  
+  
+fd Z fd
+ 
+For low H fields and/or low T, 
+Z = k T H 
+b3 2 = k T J H 
+b B 
+3 22 
+M = V N 
+k T J H 
+b B 
+3 22 
+=
+ V N 
+k T J 
+b B 
+3 22 
+QM = 3 1 
+V N 
+k T g J J 
+b B (22 1)+ 
+ T 1 Curies Law 
+12 
+1999 E.A. Fitzgerald</text>
+        </slide>
+        <slide>
+          <slideno>2</slideno>
+          <text>H and B
+	H has the possibility of switching dire ctions when leaving the material; 
+B is always continuous 
+3 
+1999 E.A. Fitzgerald p 
+q H B 
+At p: At q:B H 
+M=0 M M 
+M H B</text>
+        </slide>
+        <slide>
+          <slideno>5</slideno>
+          <text>Microscopic Source of Magnetization
+ Classical mechanics gives or bital angular momentum as: 
+L r 
+= r r  p r = mr2
+L = e LQM = eh LZ = BLZ Example for l=1:
+2mc 2mc +BH  eh B =  0 2mc  E(H=0)
+LZ = ml =l,...,0,...l -BH
+Spin Moment s 
++(1/2) Bg0H 
+eQ.M . eh
+s = S = g0 Sz =g0BSZ
+mc 2mc E(H=0)
+SZ = mS = 1 g0 = 2 for electron spin -(1/2)Bg0H 
+2 
+1999 E.A. Fitzgerald 6</text>
+        </slide>
+        <slide>
+          <slideno>10</slideno>
+          <text>11 
+1999 E.A. Fitzgerald d-shell (l = 2)
+f-shell (l = 2)n
+n1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14lx = 2, 1, 0, -1, -2,
+-1, -2, -2, lz = 3, 2, 1, 0,SL = |Slx| J
+J=|L-S|
+J=L+SSymbol
+S L = |Slz| J1/2 2
+13/2
+2
+5/2
+2
+3/2
+1
+1/203
+32
+0
+2
+3
+3
+203/2
+23/2
+0
+5/2
+4
+9/2
+4
+5/202D3/2
+3F2
+5D4
+5D4
+3F44F9/2
+2D5/21S46S5/24F3/2Sc
+Ti
+V
+Cr
+Mn
+FeCo
+Ni
+Cu
+Zn
+Ce
+Pr
+Nd
+Pm
+Sm
+EuGd
+Tb
+Dy
+Ho
+Er
+Tm
+YbJ=|L-S|
+J=L+S1/2 3
+13/2
+2
+5/2
+3
+7/2
+3
+5/225
+66
+5
+3
+0
+3
+565/2
+49/2
+4
+5/2
+0
+7/2
+6
+15/282F5/2
+3H4
+5I4
+7F6
+7F68S7/1
+6H15/2
+5I8
+3/2 6 15/24I15/1
+1 5 63H6
+1/2 3 7/22F7/2
+0 0 01S06H5/14I9/2
+Figure by MIT OpenCourseWare.</text>
+        </slide>
+        <slide>
+          <slideno>15</slideno>
+          <text>Exchange 
+E~-JS1S2 
+J negative, E~+S1S2--&gt; Energy if 
+J positive, E~-S1S2--&gt; Energy if 
+Fe, Ni, Co ---&gt; J positive! 
+Other elements J is negative 
+Rule of Thumb: 
+r interatomi c distance &gt; 1.5 2ra 2(atomic radius) 
+J is a function of distance! 
+1999 E.A. Fitzgerald 16</text>
+        </slide>
+        <slide>
+          <slideno>8</slideno>
+          <text>Atoms with Filled Shells
+	J=0 (L=0, S=0) 2 
+	Only Lorentz contribution E = e 
+2 H 2 (x2 + y2 )8mc 	Leads to diamagnetis m 
+Need to sum over all e- in atom: 
+2 
+Eatom = 12 e
+mc2 H 2 
+32  
+i ri 2 (for a spherical shells) 
+N 2 E
+= -V H 2 
+ 1 E M  M	= =  
+ V H H  
+2
+=  e2
+2 N ri 2 = e2
+2 N r Zi6	mcV i 6mc V 
+e2 N 2
+=  r Zi ~ -10-5 
+6mc2 V 
+1999 E.A. Fitzgerald 9</text>
+        </slide>
+      </slides>
+      <videos/>
+    </lecture>
+    <lecture>
+      <lecture_title>p-n junctions</lecture_title>
+      <lecture_pdf_url>https://ocw.mit.edu/courses/3-225-electronic-and-mechanical-properties-of-materials-fall-2007/resources/lecture_9/</lecture_pdf_url>
+      <lectureno>22</lectureno>
+      <slides>
+        <slide>
+          <slideno>1</slideno>
+          <text>Joining p and n
+p n 
+EcEF 
+Ev 
+Carriers flow under driving force of diffusion until EF is flat 
+-
+---++ + + 
+Holes diffuse 
+Electrons diffuse 
+1999 E.A. Fitzgerald 2</text>
+        </slide>
+        <slide>
+          <slideno>8</slideno>
+          <text>Quantum Wells
+EC 
+EV 
+L n=1 n=2 n=3h 
+If we approximate well as having infinite potential boundaries: 
+k = n for standing waves in the potential wellL 
+h2k 2 h2n2 We can modify electronic
+E = 2m * = 8m *L2 transitions through quantum wells 
+1999 E.A. Fitzgerald 9</text>
+        </slide>
+        <slide>
+          <slideno>7</slideno>
+          <text>Other means to create internal potentials: 
+Heterojunctions
+	Different semiconductor materials have different band gaps and electron 
+affinity/work functions 
+	Internal fields from doping p-n must be superimposed on these effects: 
+Poisson Solver (dE/dx=V= /) 
+Vacuum level 
+2	1 
+Eg2 Eg1	EF SubstratePotentia l barrie rs for holes 
+and electrons can be created 
+inside the materialThin film s 
+1999 E.A. Fitzgerald 8</text>
+        </slide>
+        <slide>
+          <slideno>4</slideno>
+          <text>What is the built-in voltage Vbi? 
+p n n p 
+eVbi nn E
+EFc 
+pp eVbi 
+Epn v 
+eVbi=EFn-EFp 
+EFp =kbT ln p 
+ = kbT ln Na 
+ EFn =kbT ln pn  = kbT ln ni 2 
+ 
+ NV   NV   NV   NV Nd  
+kbT  NaNd Vbi = ln 2  
+e  ni  
+We can also re-write these to show that eVbi is the barrier to minority carrier injection: 
+eVbi eVbi 
+pn = ppe kbT np = nne kbT 
+1999 E.A. Fitzgerald 5</text>
+        </slide>
+        <slide>
+          <slideno>0</slideno>
+          <text>The p-n Junction (The Diode) 
+ Derivation of ideal diode equation covered in the SMA Device Course 
+ Development here introduces th e fundamental materials concepts 
+p-type material in equilibrium n-type material in equilibrium 
+p~Nn~Nda 
+n~ni2/Na p~ni2/Nd 
+EF =kbT ln 
+NN
+Va  EF = Eg + kbT ln
+ 
+NN
+Cd 
+ 
+ 
+EEcc EF 
+EFE Ev v 
+What happens when you join these together? 
+1999 E.A. Fitzgerald 1</text>
+        </slide>
+        <slide>
+          <slideno>5</slideno>
+          <text>Qualitative Effect of Bias
+	Applying a potential to the ends of a diode does NOT increase current through 
+drift 
+	The applied voltage upsets the steady-state balance between drift and 
+diffusion, which can unleash the flow of diffusion current 
+	Minority carrier device 
+np 
+n eVbi	 nE +eVaEFc 
+-eVa pp eVbi 
+Ep	 v n 
+e(Vbi Va )	 e(V V )bi	 a 
+kbT	 kTnp	= nne pn = ppe b 
+1999 E.A. Fitzgerald 6</text>
+        </slide>
+        <slide>
+          <slideno>6</slideno>
+          <text>Qualitative Effect of Bias
+	Forward bias (+ to p, - to n) decreases depletion region, increases diffusion 
+current exponentially 
+	Reverse bias (- to p, + to n) increases depletion region, and no current flows 
+ideally 
+Forward Bias	 Reverse Bias 
+np	
+ppnp 
+eVbi-e|Va| nn
+Ec
+ nn eVbi+e|Va| 
+EF 
+Ecpp eVbi-e|Va| 
+EF 
+Ev eVbi+e|Va| 
+pn Ev 
+pn 
+Va	 I+	 -
+V=f(I) 
+2 2  qVa  qVa  Rectification, Linear, 
+J = q
+ D
+Lee 
+Nni
+a + D
+Lhh 
+Nni
+d 
+e kbT 1 = J e kbT 1 Non-linear, Non-Ohmic Ohmic 
+o 
+V   
+Di kbT Dii 7
+i = q	Li = 
+1999 E.A. Fitzgerald	 V=IR</text>
+        </slide>
+        <slide>
+          <slideno>3</slideno>
+          <text>E =(x)dx
+
+V = E(x)dx 
+4 -
+---++ + + -
+---
+++ + + 
+W: depletion or s pace charge width Metallurgical junction 
+ 
+E 
+V 
+Vbi pa nd xNxN = xp xn 
+) ( 2 
+a d a d bior 
+p N NN N 
+e V x + = 
+
+) ( 2 
+a d d a bior 
+n N NN N 
+e V x + = 
+
+a d d a bior 
+NN N N 
+e VW + = 
+2
+1999 E.A. Fitzgerald</text>
+        </slide>
+        <slide>
+          <slideno>2</slideno>
+          <text>-
+---++ + + 
+Holes diffuse 
+Electrons diffuse ++ + + -
+---
+-
+---++ + + -
+---
+++ + + 
+E 
+An electric field forms due to the fixe d nuclei in the lattice from the dopants
+Therefore, a steady-state balance is achieved where diffusive 
+flux of the carriers is balanced by the drift flux
+1999 E.A. Fitzgerald 3</text>
+        </slide>
+      </slides>
+      <videos/>
+    </lecture>
+  </lectures>
+</doc>

@@ -1,0 +1,4770 @@
+<doc>
+  <source>MIT</source>
+  <date>28/01/2023</date>
+  <course>
+    <course_url>https://ocw.mit.edu/courses/20-020-introduction-to-biological-engineering-design-spring-2009/</course_url>
+    <course_title>Introduction to Biological Engineering Design</course_title>
+    <course_tags>
+      <list>Engineering </list>
+      <list>Biological Engineering </list>
+      <list>Synthetic Biology</list>
+    </course_tags>
+  </course>
+  <lectures>
+    <lecture>
+      <lecture_title>          Analog_digitalcurves.jpg
+        </lecture_title>
+      <lecture_pdf_url>https://ocw.mit.edu/courses/20-020-introduction-to-biological-engineering-design-spring-2009/resources/analog_digitalcurves/</lecture_pdf_url>
+      <lectureno>2</lectureno>
+      <slides/>
+      <videos/>
+    </lecture>
+    <lecture>
+      <lecture_title>          sensing.jpg
+        </lecture_title>
+      <lecture_pdf_url>https://ocw.mit.edu/courses/20-020-introduction-to-biological-engineering-design-spring-2009/resources/sensing/</lecture_pdf_url>
+      <lectureno>55</lectureno>
+      <slides/>
+      <videos/>
+    </lecture>
+    <lecture>
+      <lecture_title>          thresholds.gif
+        </lecture_title>
+      <lecture_pdf_url>https://ocw.mit.edu/courses/20-020-introduction-to-biological-engineering-design-spring-2009/resources/thresholds/</lecture_pdf_url>
+      <lectureno>66</lectureno>
+      <slides/>
+      <videos/>
+    </lecture>
+    <lecture>
+      <lecture_title>          MIT20_020s09_lec2_wk2_stus.pdf
+        </lecture_title>
+      <lecture_pdf_url>https://ocw.mit.edu/courses/20-020-introduction-to-biological-engineering-design-spring-2009/resources/mit20_020s09_lec2_wk2_stus/</lecture_pdf_url>
+      <lectureno>41</lectureno>
+      <slides>
+        <slide>
+          <slideno>1</slideno>
+          <text>DD: Biologys not too com plicated f or me! (maybe a type of overconfident/under 
+informed/arrogant voice, 
+Maybe have DD imagine himself and bacterial bu bbles at next years com petition, in his 
+mind they travel from the lab to what DD pict ures the next jamboree to be like: show 
+Stata center (image below)  then a great audito rium where DD is dressed in a suit and tie 
+answering the question from the front of th e hall, maybe with the goals on a powerpoint 
+slide behind DD and bacterial bubble at the podium to reinforce question/goals both 
+verbally and visually. Text here  is for  hall if its n eeded DD, in overly professional voice: 
+The goals of this com petition are to enable  systematic engineering of bio logy, prom ote 
+open and transparent developm ent of tools fo r engineering biology, and help construct a 
+society that can productively apply biological technology.  
+(As Dude is voicing the goals, he co uld ch eck th em off as a ccomplished  with a smug 
+smile of ach ievement .) 
+DD ( out of dreammaybe with bacterial balloon popping ): OK, Ive got a lot of work 
+ahead of m e.  If were not going to use m y bubbl e idea, what else is possible? 
+SS: Maybe a better question would be what isnt possible. 
+DD: Ok, so first off: W hat should our standa rd, interchangeable part be?  Actually, w hat 
+parts exist? Do we have to m ake those? 
+SS: Youll probably need m ore than one but the Registry of Standard Biological Parts is a 
+great resource with lots of pa rts already designed. And if we  make parts of our own, we 
+should add them  to the Registry in case other team s can use them  too.  
+DD: ( surprised ) And help the other team s? What kind of competition is that?  (then it 
+makes sense ) Or is that how so m any team s got cool  projects going last year? : Pleasant 
+smelling bacteria ( note on smells: the project made  bacteria smell like bananas or 
+wintergreen ), a bacterial night-light, a DNA drug  delivery system . I heard one team  even 
+made up bac terial freeze tag! To beat t hose, we should get started right now! 
+SS: Alright well le ts brainsto rm for a little wh ile before I have to get back to work. How 
+does that sound? 
+DD: Great! Can you show m e this Registry?  Maybe we can find som e good parts to use! 
+SS: Good idea, Dude. Lets start there. ( show the computer screen  of the registry main 
+page and fade out, maybe faded voices, for in stance wow! I like that, could we use 
+that? or more basic like Sally saying, This is where youll be able to search)</text>
+        </slide>
+        <slide>
+          <slideno>0</slideno>
+          <text>20.020  Week 2 Studio 
+iGEM v4 Script 
+Sally is just working in her lab when DD comes running in waving a piece of paper. 
+SS: Dude! No running in the laboratory. 
+DD: Sorry Sally, but h ave you heard about this  competition ? Its called iGEM and I think 
+my bacterial bubble could totally win this year. 
+SS: I thought you were done  with bacterial bubbles. (an imagination bubble from SS with 
+the bacterial balloon floating up in  it so that people know what  DDs idea is, incase they 
+havent read the comic book) What do you know about iGEM? 
+DD: Uh, not m uch, except that theres going to be a bunch of losers  and m e. 
+SS: I dont think you understand the nature of this com petitio n.  iGEM, the Internation al 
+Genetically Engineered Machine Co mpetiti on, is  a way to get young scien tists and 
+engineers working together to engineer biological system s.  
+DD: W orking togethe r? Wheres the com petitive spirit in that?  The Dude  works alone .  
+That way, the Dude ge ts all th e cred it. 
+SS: You need to be a mem ber of a t eam to join iGEM, and you need a professor to lead 
+it. 
+DD: But I heard it was a student com petition? 
+SS: Well, yes.  The co mpetition s tarted in 200 4 based on an undergrad uate class 
+developed at MIT in 2003 for their short wi nter session, and it continues to be an 
+undergraduate experience. But not without guid ance and support.  Last year there were 
+more than thirty team s who com peted, from  all over the world. 
+(Maybe one frame from the 2006 Jamboree t hat could be based on a photograph on the 
+wiki? Or maybe integ rate a still o f the aerial sh ot below? Eg 
+http://www.igem2006.com/meet.htm ) 
+DD: So thats  my com petition?  Thats a lot of people. 
+SS: A lot of people, all asking the sam e question. Can sim ple biological system s be 
+built from  standard, in terchangeable parts a nd op erate in livin g cells ? Or is biology 
+simply too com plicated to be engineer ed in this w ay?  What do you think?</text>
+        </slide>
+        <slide>
+          <slideno>2</slideno>
+          <text>http://jamesmuspratt.com/images/338.jpg</text>
+        </slide>
+        <slide>
+          <slideno>3</slideno>
+          <text>MIT OpenCourseWare 
+http://ocw.mit.edu 
+20.020  Introduction to Biological Engineering Design 
+Spring 2009 
+For information about citing these materials or our Terms of Use, visit: http://ocw.mit.edu/terms .</text>
+        </slide>
+      </slides>
+      <videos/>
+    </lecture>
+    <lecture>
+      <lecture_title>          BBa_J45200.jpg
+        </lecture_title>
+      <lecture_pdf_url>https://ocw.mit.edu/courses/20-020-introduction-to-biological-engineering-design-spring-2009/resources/bba_j45200-1/</lecture_pdf_url>
+      <lectureno>6</lectureno>
+      <slides/>
+      <videos/>
+    </lecture>
+    <lecture>
+      <lecture_title>          MIT20_020S09_lec3_wk3_st6w.pdf
+        </lecture_title>
+      <lecture_pdf_url>https://ocw.mit.edu/courses/20-020-introduction-to-biological-engineering-design-spring-2009/resources/mit20_020s09_lec3_wk3_st6w/</lecture_pdf_url>
+      <lectureno>48</lectureno>
+      <slides>
+        <slide>
+          <slideno>1</slideno>
+          <text>Process Redesign
+ 
+Issues 
+	 Semiconductor / 
+Electronics Fabrication 
+	 Chemical/Pharmaceutic 
+al Manufacturing 
+	 Coal-based Energy 
+Generation 
+	 Construction Solutions 
+ New synthesis methods 
+ Different raw materials 
+ Friendlier power 
+generation</text>
+        </slide>
+        <slide>
+          <slideno>4</slideno>
+          <text>Trash Disposal
+ 
+Issues 
+	 High cost of recycling / 
+waste removal 
+	 Recycling sorting / 
+confusion 
+	 Certain non-disposable 
+items 
+	 Containment Solutions 
+	 Recycling awareness
+ 
+	 Less wasteful 
+packaging / movement 
+away from unfriendly 
+products 
+	 New and easier 
+recycling methods</text>
+        </slide>
+        <slide>
+          <slideno>2</slideno>
+          <text>Product Redesign
+ 
+Issues Solutions 
+ Non-degradable plastics  Development of newer
+ 
+/ compounds friendlier compounds
+ 
+ Toxic chemicals /  Chemical removal /
+ 
+pesticides / emissions cleanup systems
+ 
+Photo of plastic in various stages of degradation 
+removed due to copyright restrictions.</text>
+        </slide>
+        <slide>
+          <slideno>3</slideno>
+          <text>Mitigating Existing Trash
+ 
+Issues 
+	 Landfill methane 
+generation 
+	 Oil Spills 
+	 Ocean Trash 
+	 Space Trash 
+	 Organic Waste 
+	 General Littering 
+	 Nuclear Waste 
+	 Chemical Pollutants 
+(fertilizers, runoff, etc.) Solutions 
+	 Waste conversion into 
+usable products / 
+energy 
+	 Waste tagging for easy 
+cleanup 
+	 Waste breakdown</text>
+        </slide>
+        <slide>
+          <slideno>0</slideno>
+          <text>Waste Problems 
+Anonymous students SJ, CL, and JN Image of trash pile 
+removed due to copyright restrictions.</text>
+        </slide>
+        <slide>
+          <slideno>5</slideno>
+          <text>MIT OpenCourseWare
+http://ocw.mit.edu 
+20.020 Introduction to Biological Engineering Design 
+Spring 2009 
+For information about citing these materials or our Terms of Use, visit: http://ocw.mit.edu/terms .</text>
+        </slide>
+      </slides>
+      <videos/>
+    </lecture>
+    <lecture>
+      <lecture_title>          Thresholds_vertical.jpg
+        </lecture_title>
+      <lecture_pdf_url>https://ocw.mit.edu/courses/20-020-introduction-to-biological-engineering-design-spring-2009/resources/thresholds_vertical/</lecture_pdf_url>
+      <lectureno>65</lectureno>
+      <slides/>
+      <videos/>
+    </lecture>
+    <lecture>
+      <lecture_title>courses/20-020-introduction-to-biological-engineering-design-spring-2009/resources/mit20_020s09_lec3_wk3_st6w</lecture_title>
+      <lecture_pdf_url>https://ocw.mit.edu/courses/20-020-introduction-to-biological-engineering-design-spring-2009/resources/mit20_020s09_lec3_wk3_st6w/</lecture_pdf_url>
+      <lectureno>12</lectureno>
+      <slides>
+        <slide>
+          <slideno>1</slideno>
+          <text>Process Redesign
+ 
+Issues 
+	 Semiconductor / 
+Electronics Fabrication 
+	 Chemical/Pharmaceutic 
+al Manufacturing 
+	 Coal-based Energy 
+Generation 
+	 Construction Solutions 
+ New synthesis methods 
+ Different raw materials 
+ Friendlier power 
+generation</text>
+        </slide>
+        <slide>
+          <slideno>4</slideno>
+          <text>Trash Disposal
+ 
+Issues 
+	 High cost of recycling / 
+waste removal 
+	 Recycling sorting / 
+confusion 
+	 Certain non-disposable 
+items 
+	 Containment Solutions 
+	 Recycling awareness
+ 
+	 Less wasteful 
+packaging / movement 
+away from unfriendly 
+products 
+	 New and easier 
+recycling methods</text>
+        </slide>
+        <slide>
+          <slideno>2</slideno>
+          <text>Product Redesign
+ 
+Issues Solutions 
+ Non-degradable plastics  Development of newer
+ 
+/ compounds friendlier compounds
+ 
+ Toxic chemicals /  Chemical removal /
+ 
+pesticides / emissions cleanup systems
+ 
+Photo of plastic in various stages of degradation 
+removed due to copyright restrictions.</text>
+        </slide>
+        <slide>
+          <slideno>3</slideno>
+          <text>Mitigating Existing Trash
+ 
+Issues 
+	 Landfill methane 
+generation 
+	 Oil Spills 
+	 Ocean Trash 
+	 Space Trash 
+	 Organic Waste 
+	 General Littering 
+	 Nuclear Waste 
+	 Chemical Pollutants 
+(fertilizers, runoff, etc.) Solutions 
+	 Waste conversion into 
+usable products / 
+energy 
+	 Waste tagging for easy 
+cleanup 
+	 Waste breakdown</text>
+        </slide>
+        <slide>
+          <slideno>0</slideno>
+          <text>Waste Problems 
+Anonymous students SJ, CL, and JN Image of trash pile 
+removed due to copyright restrictions.</text>
+        </slide>
+        <slide>
+          <slideno>5</slideno>
+          <text>MIT OpenCourseWare
+http://ocw.mit.edu 
+20.020 Introduction to Biological Engineering Design 
+Spring 2009 
+For information about citing these materials or our Terms of Use, visit: http://ocw.mit.edu/terms .</text>
+        </slide>
+      </slides>
+      <videos/>
+    </lecture>
+    <lecture>
+      <lecture_title>          Abstraction_redrawn.jpg
+        </lecture_title>
+      <lecture_pdf_url>https://ocw.mit.edu/courses/20-020-introduction-to-biological-engineering-design-spring-2009/resources/abstraction_redrawn-1/</lecture_pdf_url>
+      <lectureno>1</lectureno>
+      <slides/>
+      <videos/>
+    </lecture>
+    <lecture>
+      <lecture_title>          Lego2.jpg
+        </lecture_title>
+      <lecture_pdf_url>https://ocw.mit.edu/courses/20-020-introduction-to-biological-engineering-design-spring-2009/resources/lego2/</lecture_pdf_url>
+      <lectureno>30</lectureno>
+      <slides/>
+      <videos/>
+    </lecture>
+    <lecture>
+      <lecture_title>          Brokensoap.jpg
+        </lecture_title>
+      <lecture_pdf_url>https://ocw.mit.edu/courses/20-020-introduction-to-biological-engineering-design-spring-2009/resources/brokensoap/</lecture_pdf_url>
+      <lectureno>11</lectureno>
+      <slides/>
+      <videos/>
+    </lecture>
+    <lecture>
+      <lecture_title>          BendFreq.jpg
+        </lecture_title>
+      <lecture_pdf_url>https://ocw.mit.edu/courses/20-020-introduction-to-biological-engineering-design-spring-2009/resources/bendfreq-1/</lecture_pdf_url>
+      <lectureno>8</lectureno>
+      <slides/>
+      <videos/>
+    </lecture>
+    <lecture>
+      <lecture_title>          biobricks.jpg
+        </lecture_title>
+      <lecture_pdf_url>https://ocw.mit.edu/courses/20-020-introduction-to-biological-engineering-design-spring-2009/resources/biobricks-1/</lecture_pdf_url>
+      <lectureno>10</lectureno>
+      <slides/>
+      <videos/>
+    </lecture>
+    <lecture>
+      <lecture_title>          Fetch_UID.jpeg
+        </lecture_title>
+      <lecture_pdf_url>https://ocw.mit.edu/courses/20-020-introduction-to-biological-engineering-design-spring-2009/resources/fetch_uid/</lecture_pdf_url>
+      <lectureno>21</lectureno>
+      <slides/>
+      <videos/>
+    </lecture>
+    <lecture>
+      <lecture_title>          MIT20_020S09_lec1_wk1_orntn.pdf
+        </lecture_title>
+      <lecture_pdf_url>https://ocw.mit.edu/courses/20-020-introduction-to-biological-engineering-design-spring-2009/resources/mit20_020s09_lec1_wk1_orntn/</lecture_pdf_url>
+      <lectureno>39</lectureno>
+      <slides>
+        <slide>
+          <slideno>24</slideno>
+          <text>Wednesdays 
+2-5 3 ideas 
+presentation</text>
+        </slide>
+        <slide>
+          <slideno>10</slideno>
+          <text>Postcards &amp; snapshots so far
+ 
+genome re-
+ 
+engineering 
+ 
+DNA based 
+memory 
+Courtesy of the authors. License: Creative Commons attribution.</text>
+        </slide>
+        <slide>
+          <slideno>28</slideno>
+          <text></text>
+        </slide>
+        <slide>
+          <slideno>12</slideno>
+          <text>Postcards &amp; snapshots so far
+ 
+genome re-
+ 
+engineering
+ 
+DNA based 
+memory 
+logic 
+engineering 
+circuit 
+engineering</text>
+        </slide>
+        <slide>
+          <slideno>21</slideno>
+          <text>Tuesdays/Thursdays
+ 
+Start with challenge/puzzle/activity 
+Follow-up with group discussion 
+Occasional homework</text>
+        </slide>
+        <slide>
+          <slideno>9</slideno>
+          <text>Postcards &amp; snapshots so far
+ 
+genome re-
+engineering 
+Science 310, no. 5475 (October 7, 2005): 77-80.</text>
+        </slide>
+        <slide>
+          <slideno>30</slideno>
+          <text>the end</text>
+        </slide>
+        <slide>
+          <slideno>16</slideno>
+          <text>Postcards &amp; snapshots so far
+ 
+genome re-
+ 
+engineering
+ 
+DNA based 
+memory 
+logic 
+engineering 
+circuit 
+engineering 
+system 
+engineering 
+biomaterials
+ 
+engineering
+ Courtesy of Paul W. K. Rothemund. Used with permission.</text>
+        </slide>
+        <slide>
+          <slideno>29</slideno>
+          <text>any ???s
+ 
+Lets get building!!!</text>
+        </slide>
+        <slide>
+          <slideno>14</slideno>
+          <text>Postcards &amp; snapshots so far
+ 
+genome re-
+ 
+engineering
+ 
+DNA based 
+memory 
+logic 
+engineering 
+circuit 
+engineering 
+system 
+engineering 
+Courtesy of Christopher A. Voigt. Used with permission.</text>
+        </slide>
+        <slide>
+          <slideno>6</slideno>
+          <text>Whats new: Application of
+ 
+engineering principles to biology
+ 
+Courtesy of Vincent Rouilly. Used with permission.</text>
+        </slide>
+        <slide>
+          <slideno>23</slideno>
+          <text>Wednesdays 
+2-5</text>
+        </slide>
+        <slide>
+          <slideno>22</slideno>
+          <text>How can biology be made easier to engineer? 
+What are the consequences of success? 
+How has nature solved physical challenges? 
+In what ways does nature innovate?</text>
+        </slide>
+        <slide>
+          <slideno>18</slideno>
+          <text>What youll work on
+ 
+1. design a plausible and compelling synthetic biological system
+ 
+2. develop a detailed design plan and construction roadmap 
+3. evaluate ownership, commercial, ethical aspects of the project
+ 
+Courtesy of Justin Lo. Used with permission.</text>
+        </slide>
+        <slide>
+          <slideno>26</slideno>
+          <text>Project 
+ 3 ideas presentation
+ 
+ Tech spec review 
+ Final presentation 
+60%, team grades</text>
+        </slide>
+        <slide>
+          <slideno>31</slideno>
+          <text>MIT OpenCourseWare
+http://ocw.mit.edu 
+20.020 Introduction to Biological Engineering Design 
+Spring 2009 
+For information about citing these materials or our Terms of Use, visit: http://ocw.mit.edu/terms .</text>
+        </slide>
+        <slide>
+          <slideno>19</slideno>
+          <text>What youll learn (I think)</text>
+        </slide>
+        <slide>
+          <slideno>13</slideno>
+          <text>Postcards &amp; snapshots so far
+ 
+genome re-
+ 
+engineering
+ 
+DNA based 
+memory 
+logic 
+engineering 
+circuit 
+engineering 
+ Source: Nature Biotechnology 21 (2003): 796-802.</text>
+        </slide>
+        <slide>
+          <slideno>1</slideno>
+          <text>2020: Futurists 
+Freeman Dyson writes: 
+"Biotechnology will become as domesticated as computer
+games and children and housewives will create their new
+animal and plant species at home.  
+Photo of Freeman Dyson 
+ 
+removed due to copyright restrictions. 
+ 
+Quack? Genius?</text>
+        </slide>
+        <slide>
+          <slideno>15</slideno>
+          <text>Postcards &amp; snapshots so far
+ 
+genome re-
+ 
+engineering
+ 
+DNA based 
+memory 
+logic 
+engineering Image removed due to copyright restrictions. 
+See: http://www.technologyreview.com/tr35/Profile.aspx?TRID=601 
+circuit 
+engineering 
+system 
+engineering</text>
+        </slide>
+        <slide>
+          <slideno>20</slideno>
+          <text></text>
+        </slide>
+        <slide>
+          <slideno>5</slideno>
+          <text>a scientist clad in white 
+spools threads of DNA onto a 
+glass rod. He is about to treat 
+it with enzymes, then insert it 
+into E. coli, endowing the 
+microbe with powers nature 
+never gave it.  
+Image removed due to copyright restrictions. 
+Page image from McAuliffe, K., and S. McAuliffe. "The Gene Trust." Omni Magazine, February, 1980.</text>
+        </slide>
+        <slide>
+          <slideno>11</slideno>
+          <text>Postcards &amp; snapshots so far
+ 
+genome re-
+ 
+engineering
+ 
+DNA based 
+memory 
+logic 
+engineering</text>
+        </slide>
+        <slide>
+          <slideno>2</slideno>
+          <text>2020: Futurists 
+Freeman Dyson writes: 
+"Biotechnology will become as domesticated as computer
+games and children and housewives will create their new
+animal and plant species at home. 
+Photo of Freeman Dyson 
+removed due to copyright restrictions. 
+Quack? Genius? 
+MIT Human Ecology Design team
+ 
+Courtesy of Mitchell Joachim. Used with permission. See http://www.archinode.com/bienal.html.</text>
+        </slide>
+        <slide>
+          <slideno>8</slideno>
+          <text>Postcards &amp; snapshots so far
+ 
+genome re-
+engineering 
+Science 319, no. 5867 (Feb 29, 2008): 1215-20.</text>
+        </slide>
+        <slide>
+          <slideno>7</slideno>
+          <text>Postcards &amp; snapshots so far
+ 
+genome re-
+ 
+engineering 
+ 
+Images removed due to copyright restrictions.
+ 
+See Chan, L. Y., S. Kosuri, and D. Endy. "Refactoring bacteriophage T7."
+ 
+Mol Syst Biol 1 (2005): 0018. PMCID: PMC1681472.
+ 
+http://www.ncbi.nlm.nih.gov/pmc/articles/PMC1681472/</text>
+        </slide>
+        <slide>
+          <slideno>0</slideno>
+          <text>Courtesy of Justin Lo. Used with permission. 
+Natalie Kuldell
+ 
+February 3rd, 2009</text>
+        </slide>
+        <slide>
+          <slideno>3</slideno>
+          <text>2020: Historians
+ 
+Image removed due to copyright restrictions.
+ 
+Cover of Omni Magazine, Feburary 1980.
+ See http://www.physics.emory.edu/~weeks/sea/omni/800204.htm</text>
+        </slide>
+        <slide>
+          <slideno>17</slideno>
+          <text>Postcards &amp; snapshots so far
+ 
+genome re-
+ 
+engineering
+ 
+DNA based 
+memory 
+logic 
+engineering 
+circuit 
+engineering 
+system 
+Courtesy of the League of Imaginary Scientists. Used with permission. engineering 
+biomaterials
+ 
+engineering</text>
+        </slide>
+        <slide>
+          <slideno>25</slideno>
+          <text>Wednesdays 
+2-5 
+Tech spec
+review</text>
+        </slide>
+        <slide>
+          <slideno>4</slideno>
+          <text>a sophisticated 
+computer at your 
+fingertips  
+20 lb 
+16K RAM 
+Built in thermal 
+printer 
+Operating system 
+and BASIC language 
+in ROM Image removed due to copyright restrictions. 
+Advertisement from same Omni Magazine issue (1980) 
+for the Hewlett-Packard HP-85 "personal-professional" computer. See http://oldcomputers.net/ads/80s/hp-85.jpg</text>
+        </slide>
+        <slide>
+          <slideno>27</slideno>
+          <text>Project 
+ 3 ideas presentation 
+ Tech spec review 
+ Final presentation 
+60%, team grades Personal Design Portfolio
+ 25%, individual grades 
+Project Development Ntbk 
+10%, team grades 
+Instructor Leverage
+ 5%, individual grades</text>
+        </slide>
+      </slides>
+      <videos/>
+    </lecture>
+    <lecture>
+      <lecture_title>          TensionalStress.jpg
+        </lecture_title>
+      <lecture_pdf_url>https://ocw.mit.edu/courses/20-020-introduction-to-biological-engineering-design-spring-2009/resources/tensionalstress/</lecture_pdf_url>
+      <lectureno>62</lectureno>
+      <slides/>
+      <videos/>
+    </lecture>
+    <lecture>
+      <lecture_title>courses/20-020-introduction-to-biological-engineering-design-spring-2009/resources/mit20_020s09_lec12_wk12_tt</lecture_title>
+      <lecture_pdf_url>https://ocw.mit.edu/courses/20-020-introduction-to-biological-engineering-design-spring-2009/resources/mit20_020s09_lec12_wk12_tt/</lecture_pdf_url>
+      <lectureno>4</lectureno>
+      <slides>
+        <slide>
+          <slideno>2</slideno>
+          <text>Structuring your talk 
+Designing your slides 
+Speaking tips 
+But all these tips are useless if you dont know 
+what you want to say</text>
+        </slide>
+        <slide>
+          <slideno>6</slideno>
+          <text>Structuring your talk 
+Designing your slides
+ 
+Speaking tips</text>
+        </slide>
+        <slide>
+          <slideno>23</slideno>
+          <text>MIT OpenCourseWare
+http://ocw.mit.edu 
+20.020 Introduction to Biological Engineering Design 
+Spring 2009 
+For information about citing these materials or our Terms of Use, visit: http://ocw.mit.edu/terms .</text>
+        </slide>
+        <slide>
+          <slideno>16</slideno>
+          <text>Structuring your talk
+ 
+Designing your slides
+ 
+Speaking tips</text>
+        </slide>
+        <slide>
+          <slideno>18</slideno>
+          <text>Structuring your talk
+ 
+Designing your slides
+ 
+Speaking tips 
+1. Speak to your audience 
+2. Remind them early and often
+ 
+W</text>
+        </slide>
+        <slide>
+          <slideno>7</slideno>
+          <text>Audience, Audience, Audience 
+Your slides are for ?. 
+helping you to remember what to say 
+1. Fourscoreandtwentyyearsa 
+go 
+2. Itwasthebestoftimesitwasth 
+eworstoftimes 
+3. Callmeishmael</text>
+        </slide>
+        <slide>
+          <slideno>15</slideno>
+          <text>Structuring your talk 
+Designing your slides 
+Speaking tips</text>
+        </slide>
+        <slide>
+          <slideno>21</slideno>
+          <text>Structuringyourtalk
+Designingyourslides
+Speakingtips
+Courtesy of Justin Lo. Used with permission.</text>
+        </slide>
+        <slide>
+          <slideno>13</slideno>
+          <text>Yuck 
+Courtesy Elsevier, Inc., http://www.sciencedirect.com. Used with permission. 
+ 
+Source: Colman-Lerner, A., T. E. Chin and R. Brent. "Yeast Cbk1 and
+ 
+Mob2 Activate Daughter-Specific Genetic Programs to Induce Asymmetric
+ 
+Cell Fates." Cell 107, no. 6 (2001): 739-750.</text>
+        </slide>
+        <slide>
+          <slideno>20</slideno>
+          <text>Structuring your talk 
+Designing your slides 
+Speaking tips 
+Courtesy of Justin Lo. Used with permission.</text>
+        </slide>
+        <slide>
+          <slideno>11</slideno>
+          <text>Audience, Audience, Audience 
+Your slides are for your audience 
+Memorable openings come 
+from a variety of sources 
+Figure by MIT OpenCourseWare. 
+Book cover image courtesy of 
+freeparking on Flickr. Dont annoy 
+your audience 
+with small 
+font!</text>
+        </slide>
+        <slide>
+          <slideno>9</slideno>
+          <text>Audience, Audience, Audience
+ 
+Your slides are for your audience 
+The most famous 
+opening lines are from 
+diverse sources Audience will read 
+including the Gettysburg or listen, not both 
+Address, A Tale of Two 
+Cities and Moby Dick. Famous openings 	 Title tells what but 
+not so what</text>
+        </slide>
+        <slide>
+          <slideno>0</slideno>
+          <text>Making your good
+ 
+presentations even better
+ 
+20.020 (S09)
+ 
+Thursday April 30th</text>
+        </slide>
+        <slide>
+          <slideno>14</slideno>
+          <text>Better
+ 
+Gene Protein 
+Location Log 
+phase Stationary 
+phase 
+CTS1 Cell wall Daughter Daughter 
+ASH1 Nucleus Mother and 
+Daughter Daughter 
+DSE1 Cytoplasm Daughter Daughter 
+Cell (2001) 107:739</text>
+        </slide>
+        <slide>
+          <slideno>1</slideno>
+          <text>Audience, Audience, Audience
+ 
+According to Drew, your audience has 3 types
+ 
+Images removed due to copyright restrictions. Box of Nerds candy, promotional logo for TV series "Lost," and a sleeping cat.</text>
+        </slide>
+        <slide>
+          <slideno>3</slideno>
+          <text>Structuring your talk 
+Designing your slides 
+Speaking tips 
+But all these tips are useless if you dont know 
+what you want to say</text>
+        </slide>
+        <slide>
+          <slideno>19</slideno>
+          <text>Structuring your talk
+ 
+Designing your slides
+ 
+Speaking tips 
+1. Speak to your audience 
+2. Remind them early and often 
+3. Show that you care 
+before: practice, check animations, 
+make backup, anticipate questions 
+during: stand/converse/stop (early!)</text>
+        </slide>
+        <slide>
+          <slideno>5</slideno>
+          <text>Structuring your talk 
+Designing your slides 
+Speaking tips</text>
+        </slide>
+        <slide>
+          <slideno>22</slideno>
+          <text>the end</text>
+        </slide>
+        <slide>
+          <slideno>12</slideno>
+          <text>Audience, Audience, Audience 
+Your slides are for your audience 
+Memorable openings come 
+from a variety of sources 
+Figure by MIT OpenCourseWare. Other annoyances: 
+hard to read colors 
+&gt;1 idea/slide 
+more data than possible 
+to discuss</text>
+        </slide>
+        <slide>
+          <slideno>17</slideno>
+          <text>Structuring your talk
+ 
+Designing your slides
+ 
+Speaking tips 
+1. Speak to your audience 
+Who are they? What do they know?
+ 
+What do they want to know?</text>
+        </slide>
+        <slide>
+          <slideno>8</slideno>
+          <text>Audience, Audience, Audience 
+Your slides are for your audience 
+Title: conveys information 
+Body  a written report!</text>
+        </slide>
+        <slide>
+          <slideno>4</slideno>
+          <text>The secret formula for all talks
+ 
+1. Tell what tell
+ 
+2. Tell why tell 
+3. Tell 
+4. Tell what told</text>
+        </slide>
+        <slide>
+          <slideno>10</slideno>
+          <text>Audience, Audience, Audience 
+Your slides are for your audience 
+Memorable openings come 
+from a variety of sources 
+Book cover image courtesy of 
+freeparking on Flickr. 
+Figure by MIT OpenCourseWare. Dont annoy your audience with 
+small font!</text>
+        </slide>
+      </slides>
+      <videos/>
+    </lecture>
+    <lecture>
+      <lecture_title>courses/20-020-introduction-to-biological-engineering-design-spring-2009/resources/mit20_020s09_lec3_wk3_st4h</lecture_title>
+      <lecture_pdf_url>https://ocw.mit.edu/courses/20-020-introduction-to-biological-engineering-design-spring-2009/resources/mit20_020s09_lec3_wk3_st4h/</lecture_pdf_url>
+      <lectureno>10</lectureno>
+      <slides>
+        <slide>
+          <slideno>5</slideno>
+          <text>Drug Mail 
+Problem: 
+How to target and 
+deliver drugs, 
+enzymes, etc to 
+specific, long-lived 
+cells. 
+Solutions: 
+Develop a 
+delivery 
+mechanism with 
+the use of 
+receptor-studded 
+vesicles</text>
+        </slide>
+        <slide>
+          <slideno>2</slideno>
+          <text>Is it all in your head? 
+Problem: 
+Anorexia causes a 
+skewed perception 
+of ones self and 
+can lead to 
+physical self-
+destruction. 
+Solutions: 
+Alter pathways in the 
+brain 
+Seek out potential 
+chemical imbalances 
+(treatments similar to 
+depression) 
+Dual approach: social 
+and biological 
+treatments</text>
+        </slide>
+        <slide>
+          <slideno>4</slideno>
+          <text>Hunting For a Cure 
+Problem: 
+Huntington s 
+Disease causes 
+mental and 
+physical 
+deterioration and 
+usually has a late 
+onset. 
+Solutions: 
+Increase genetic 
+testing and counseling 
+Genetic manipulation 
+(including epigenetic 
+silencing and control 
+of nucleotide 
+repetition)</text>
+        </slide>
+        <slide>
+          <slideno>3</slideno>
+          <text>Forget Me Not 
+Problem: 
+Memory loss 
+associated with 
+diseases such as 
+Alzheimer s and 
+senile dementia. 
+Solutions: 
+Reduce chemical 
+imbalances (change diet) 
+Target neurotransmitters 
+and their brain pathways 
+(Ach) 
+Genetic screening to 
+prevent/slow the onset of 
+memory loss 
+Target proteins in the brain</text>
+        </slide>
+        <slide>
+          <slideno>1</slideno>
+          <text>Work Like an Ant 
+Problem: 
+Sleep is a waste of 
+time and reduces 
+productivity 
+Potential Applications: 
+military, college 
+students, etc. 
+Solution: 
+Control sleep 
+cycles 
+Long-term 
+alterations 
+(genetic 
+modifications) 
+ Continuous 
+chemical 
+treatments</text>
+        </slide>
+        <slide>
+          <slideno>0</slideno>
+          <text>Bettering the Human 
+Condition 
+A Neurobiological Approach 
+Anonymous students PF, CN, and DZ</text>
+        </slide>
+        <slide>
+          <slideno>6</slideno>
+          <text>MIT OpenCourseWare
+http://ocw.mit.edu 
+20.020 Introduction to Biological Engineering Design 
+Spring 2009 
+For information about citing these materials or our Terms of Use, visit: http://ocw.mit.edu/terms .</text>
+        </slide>
+      </slides>
+      <videos/>
+    </lecture>
+    <lecture>
+      <lecture_title>          iGEM_storyboard_4.jpg
+        </lecture_title>
+      <lecture_pdf_url>https://ocw.mit.edu/courses/20-020-introduction-to-biological-engineering-design-spring-2009/resources/igem_storyboard_4/</lecture_pdf_url>
+      <lectureno>25</lectureno>
+      <slides/>
+      <videos/>
+    </lecture>
+    <lecture>
+      <lecture_title>courses/20-020-introduction-to-biological-engineering-design-spring-2009/resources/mit20_020s09_lec3_wk3_clk</lecture_title>
+      <lecture_pdf_url>https://ocw.mit.edu/courses/20-020-introduction-to-biological-engineering-design-spring-2009/resources/mit20_020s09_lec3_wk3_clk/</lecture_pdf_url>
+      <lectureno>6</lectureno>
+      <slides>
+        <slide>
+          <slideno>10</slideno>
+          <text>And a 3: circadian rhythms 
+Oscillation of alertness, sleep, hormone 
+ 
+production, body temperature and organ function
+ 
+Electronics: van der Pol oscillator L = inductor 
+C = capacitor 
+V = vacuum tube 
+containing a tetrode 
+I = voltage supply 
+Courtesy Elsevier, Inc., http://www.sciencedirect.com. Used with permission.</text>
+        </slide>
+        <slide>
+          <slideno>8</slideno>
+          <text>And a 2: bud scar counting 
+http://organelleview .lsi.umich.edu/orgview2/ 
+Courtesy of Anuj Kumar. Used with permission.</text>
+        </slide>
+        <slide>
+          <slideno>9</slideno>
+          <text>And a 2: bud scar counting 
+Image removed due to copyright restrictions. 
+See Fig. 3 in Powell, C. D., et al. "Chitin Scar Breaks in Aged 
+Saccharomyces Cerevisiae." Microbiology 149 (2003): 3129-3137 
+Image removed due to copyright restrictions.
+ 
+See Fig. 1 in Cabib, E. et al. "Role of Small g Proteins
+ 
+in Yeast Cell Polarization and Wall Biosynthesis."
+ Ann Rev Biochem 67 (July 1998): 307-333.</text>
+        </slide>
+        <slide>
+          <slideno>6</slideno>
+          <text>Counting Cell Divisions with Telomere Repeats
+ 
+Cell type Telomerase Telomere length 
+Normal Somatic OFF shortens 
+Cancerous  ON forever stable 
+Chromosomal DNA 
+Telomerase 
+Figure by MIT OpenCourseWare.</text>
+        </slide>
+        <slide>
+          <slideno>7</slideno>
+          <text>Astragaloside IV , 
+found in minute 
+traces in Astragalus Membranaceus 
+extract, is known to turn this gene on and 'activate' telomerase. 
+Courtesy of Terraternal. Used with permission.</text>
+        </slide>
+        <slide>
+          <slideno>15</slideno>
+          <text>MIT OpenCourseWare
+http://ocw.mit.edu 
+20.020 Introduction to Biological Engineering Design 
+Spring 2009 
+For information about citing these materials or our Terms of Use, visit: http://ocw.mit.edu/terms .</text>
+        </slide>
+        <slide>
+          <slideno>5</slideno>
+          <text>Counting Cell Divisions with Telomere Repeats
+ 
+Cell type Telomerase Telomere length
+ 
+Normal Somatic OFF  shortens
+ 
+Chromosomal DNA 
+Figure by MIT OpenCourseWare. 
+See Science Daily, Feb. 16, 2009. 
+ 
+"Shortening Telomeres Linked to Aging in Population Studies, But Original Telomere Length Varies Between Individuals."</text>
+        </slide>
+        <slide>
+          <slideno>4</slideno>
+          <text>Diagram removed due to copyright restrictions. 
+See Fig. 5.18 in Cooper, G. M. The Cell: A Molecular Approach. 2nd edition. 
+http://www.ncbi.nlm.nih.gov/bookshelf/br.fcgi?book=cooper&amp;part=A772&amp;rendertype=figure&amp;id=A795</text>
+        </slide>
+        <slide>
+          <slideno>11</slideno>
+          <text>And a 3: circadian rhythms 
+Oscillation of alertness, sleep, hormone 
+ 
+production, body temperature and organ function
+ 
+Hydraulic Model Negative feedback loop
+ 
+&gt;&gt;water flows into B 
+then through T1 into A 
+and out through T4 
+&gt;&gt;level of A connected 
+to T3 and T2 which 
+drain A as level rises 
+Courtesy Elsevier, Inc., http://www.sciencedirect.com. Used with permission.</text>
+        </slide>
+        <slide>
+          <slideno>13</slideno>
+          <text>and a 1, and a 2, and a 3 
+Courtesy of Terraternal. Used with permission. 
+Courtesy Elsevier, Inc., http://www.sciencedirect.com. Used with permission. 
+Diagram removed due to copyright restrictions. 
+See Fig. 4.19 in Cooper, G. M. 
+The Cell: A Molecular Approach . 2nd ed.
+http://www.ncbi.nlm.nih.gov/bookshelf/br.fcgi?
+book=cooper&amp;part=A635&amp;rendertype=figure&amp;id=A635
+Yeast bud scar photo removed due to copyright restrictions.</text>
+        </slide>
+        <slide>
+          <slideno>14</slideno>
+          <text>the end</text>
+        </slide>
+        <slide>
+          <slideno>0</slideno>
+          <text>and a 1, and a 2
+ 
+Examples of counting and clock-
+ 
+keeping in biology
+ 
+N Kuldell for 20.020(S09)
+ 
+02.19.09</text>
+        </slide>
+        <slide>
+          <slideno>3</slideno>
+          <text>Diagram removed due to copyright restrictions. 
+See Fig. 5.18 in Cooper, G. M. The Cell: A Molecular Approach. 2nd edition. 
+http://www.ncbi.nlm.nih.gov/bookshelf/br.fcgi?book=cooper&amp;part=A772&amp;rendertype=figure&amp;id=A795</text>
+        </slide>
+        <slide>
+          <slideno>2</slideno>
+          <text>And a 1: telomeres
+ 
+Source: Bolzer, A., G. Kreth, I. Solovei, D. Koehler, K. Saracoglu, et al. " Three-Dimensional Maps of All Chromosomes in Human 
+Male Fibroblast Nuclei and Prometaphase Rosettes." PLoS Biol 3, no. 5 (2005): e157.
+DOI:10.1371/journal.pbio.0030157. Courtesy of the authors. 
+Diagram removed due to copyright restrictions. 
+See Fig. 4.19 in Cooper, G. M. 
+The Cell: A Molecular Approach. 2nd ed.
+http://www.ncbi.nlm.nih.gov/bookshelf/br.fcgi?
+book=cooper&amp;part=A635&amp;rendertype=figure&amp;id=A635
+(TTAGGG)n 
+Image: Wikipedia: DNA_replication_en.svg (public domain).</text>
+        </slide>
+        <slide>
+          <slideno>1</slideno>
+          <text>And a 1: telomeres 
+ 
+Source: Bolzer, A., G. Kreth, I. Solovei, D. Koehler, K. Saracoglu, et al. " Three-Dimensional Maps of All Chromosomes in Human 
+Male Fibroblast Nuclei and Prometaphase Rosettes." PLoS Biol 3, no. 5 (2005): e157.
+DOI:10.1371/journal.pbio.0030157. Courtesy of the authors. 
+Diagram removed due to copyright restrictions. 
+See Fig. 4.19 in Cooper, G. M. 
+The Cell: A Molecular Approach . 2nd ed.
+http://www.ncbi.nlm.nih.gov/bookshelf/br.fcgi?
+book=cooper&amp;part=A635&amp;rendertype=figure&amp;id=A635 
+(TTAGGG)n 
+Image: US DOE Human Genome Project.</text>
+        </slide>
+        <slide>
+          <slideno>12</slideno>
+          <text>And a 3: circadian rhythms 
+Oscillation of alertness, sleep, hormone 
+ 
+production, body temperature and organ function
+ 
+Molecular clocks: transcriptional-translational feedback 
+&gt;&gt;RNA  is made 
+&gt;&gt;turns protein 
+ 
+production on
+ 
+&gt;&gt;protein turns of f 
+RNA production 
+&gt;&gt;absence of RNA turns of f protein 
+Courtesy Elsevier, Inc., http://www.sciencedirect.com. Used with permission. production</text>
+        </slide>
+      </slides>
+      <videos/>
+    </lecture>
+    <lecture>
+      <lecture_title>          MIT20_020S09_lec3_wk3_st2g.pdf
+        </lecture_title>
+      <lecture_pdf_url>https://ocw.mit.edu/courses/20-020-introduction-to-biological-engineering-design-spring-2009/resources/mit20_020s09_lec3_wk3_st2g/</lecture_pdf_url>
+      <lectureno>44</lectureno>
+      <slides>
+        <slide>
+          <slideno>4</slideno>
+          <text>More Effective Pesticides 
+Crops can be engineered to defend 
+themselves against pests 
+Problem: Evolution of both plant and 
+pest can lead to complications</text>
+        </slide>
+        <slide>
+          <slideno>2</slideno>
+          <text>Dont have a cow!
+ 
+Problem 
+ Solutions to food shortages focus on plant 
+crops. Why cant we find a way to produce 
+portions of meat for consumption? 
+Solution 
+ If we can make cells grow in a Petri dish,
+we should be able to make larger tissues 
+grow. 
+ Meat without the farm.</text>
+        </slide>
+        <slide>
+          <slideno>1</slideno>
+          <text>Spare parts 
+Problem 
+ It is often difficult to obtain a viable transplant. 
+Solution 
+ Generate organs in the laboratory 
+ Using patient s cells lowers the likelihood of
+ 
+rejection
+ 
+ Not reliant on chance 
+ Want to mimic natural organs</text>
+        </slide>
+        <slide>
+          <slideno>5</slideno>
+          <text>Solution: 
+To counter evolutionary changes 
+Create way to track changes in pest 
+population, alter crop/pesticide accordingly 
+Study interaction between plant and pest, 
+alter plant to resist 
+Harvest genes from most resistant plant and 
+generate a new fields worth of seeds 
+ Process is time-consuming, speed up process?</text>
+        </slide>
+        <slide>
+          <slideno>3</slideno>
+          <text>Crop Modification
+ 
+Problem: Growing better and more resilient 
+crops. 
+Solutions: 
+ Identifying salt and drought tolerance genes and
+pathways found in xerophytes, resurrection plants, 
+and halophytes. 
+ Producing crops with greater nutritional content
+(golden rice). 
+ Addressing environmental concerns of introducing
+new plants to a region.</text>
+        </slide>
+        <slide>
+          <slideno>0</slideno>
+          <text>Growing, Growing, Grown
+ 
+Ryan Alexander, Janice O'Brien, and anonymous student EC.</text>
+        </slide>
+        <slide>
+          <slideno>6</slideno>
+          <text>MIT OpenCourseWare
+http://ocw.mit.edu 
+20.020 Introduction to Biological Engineering Design 
+Spring 2009 
+For information about citing these materials or our Terms of Use, visit: http://ocw.mit.edu/terms .</text>
+        </slide>
+      </slides>
+      <videos/>
+    </lecture>
+    <lecture>
+      <lecture_title>          Abstraction_redrawn.gif
+        </lecture_title>
+      <lecture_pdf_url>https://ocw.mit.edu/courses/20-020-introduction-to-biological-engineering-design-spring-2009/resources/abstraction_redrawn/</lecture_pdf_url>
+      <lectureno>0</lectureno>
+      <slides/>
+      <videos/>
+    </lecture>
+    <lecture>
+      <lecture_title>          iGEM_storyboard_1.jpg
+        </lecture_title>
+      <lecture_pdf_url>https://ocw.mit.edu/courses/20-020-introduction-to-biological-engineering-design-spring-2009/resources/igem_storyboard_1/</lecture_pdf_url>
+      <lectureno>22</lectureno>
+      <slides/>
+      <videos/>
+    </lecture>
+    <lecture>
+      <lecture_title>          ShearStress.jpg
+        </lecture_title>
+      <lecture_pdf_url>https://ocw.mit.edu/courses/20-020-introduction-to-biological-engineering-design-spring-2009/resources/shearstress/</lecture_pdf_url>
+      <lectureno>56</lectureno>
+      <slides/>
+      <videos/>
+    </lecture>
+    <lecture>
+      <lecture_title>courses/20-020-introduction-to-biological-engineering-design-spring-2009/resources/mit20_020s09_lec3_wk3_st1i</lecture_title>
+      <lecture_pdf_url>https://ocw.mit.edu/courses/20-020-introduction-to-biological-engineering-design-spring-2009/resources/mit20_020s09_lec3_wk3_st1i/</lecture_pdf_url>
+      <lectureno>7</lectureno>
+      <slides>
+        <slide>
+          <slideno>3</slideno>
+          <text>Recent Diseases in our World 
+Recently (January), 
+115 people have died 
+of Avian Flu 
+2007: A business man 
+flying from US to 
+various countries in 
+Europe as a TB carrier 
+was detained. A fellow 
+passenger was 
+affected. Image removed due to 
+copyright restrictions.</text>
+        </slide>
+        <slide>
+          <slideno>13</slideno>
+          <text>Save the good viruses, save the world!</text>
+        </slide>
+        <slide>
+          <slideno>4</slideno>
+          <text>Problems with I.D. 
+The infectious disease 
+itself and mutation 
+Resources (and lack 
+thereof) 
+Environment (climate and 
+ecology) 
+Time 
+Lack of understanding 
+Ethical constraints on 
+research Image removed due to 
+copyright restrictions.</text>
+        </slide>
+        <slide>
+          <slideno>5</slideno>
+          <text>Ways we have been tackling the 
+problems: 
+Vaccines 
+Antibiotics 
+Pharmaceutical drugs 
+Not developed for all 
+Resistant strains (e.g. 
+penicillin resistance) 
+Allergies to antibiotics 
+Painful Side effects, 
+allergies, also 
+resistance</text>
+        </slide>
+        <slide>
+          <slideno>2</slideno>
+          <text>Top 10 Most common diseases 
+that kill 
+1. Ischemic heart disease 
+2. Cerebrovascular disease 
+3. *Lower Respiratory 
+infections 
+4. *HIV/AIDS 
+5. Chronic Obstructive 
+Pulmonary Disease 
+6. Perinatal conditions 
+7. *Diarrheal diseases 
+8. *Tuberculosis 
+9. *Malaria 
+10.Trachea, bronchus, 
+lung cancers Image removed due to 
+copyright restrictions.</text>
+        </slide>
+        <slide>
+          <slideno>1</slideno>
+          <text>Definition of Infectious Diseases: 
+Are caused by 
+microorganisms such 
+as bacteria, viruses, 
+and fungi 
+Can be transmitted 
+human-human and 
+human-animal 
+Most affect third 
+world countries</text>
+        </slide>
+        <slide>
+          <slideno>8</slideno>
+          <text>Engineer Viruses 
+Engineer 
+Bacteriophages 
+(bacteria-specific 
+viruses) to attack 
+target bacteria Image removed due to 
+copyright restrictions.</text>
+        </slide>
+        <slide>
+          <slideno>10</slideno>
+          <text>Detect Virus infection mode 
+And design compound 
+to inhibit different 
+areas of the viruss 
+infection</text>
+        </slide>
+        <slide>
+          <slideno>9</slideno>
+          <text>Boost Immunity 
+Vitamin-C producing 
+bacteria that live in 
+your small intestine 
+(symbiotic 
+relationship)</text>
+        </slide>
+        <slide>
+          <slideno>6</slideno>
+          <text>Proposed Solutions:</text>
+        </slide>
+        <slide>
+          <slideno>14</slideno>
+          <text>MIT OpenCourseWare
+http://ocw.mit.edu 
+20.020 Introduction to Biological Engineering Design 
+Spring 2009 
+For information about citing these materials or our Terms of Use, visit: http://ocw.mit.edu/terms .</text>
+        </slide>
+        <slide>
+          <slideno>0</slideno>
+          <text>Catch me if you can! 
+By anonymous students</text>
+        </slide>
+        <slide>
+          <slideno>11</slideno>
+          <text>Connect Hospitals to Researchers 
+When patient comes in 
+with new virus, a 
+sophisticated screening 
+system will be able to 
+identify protein coat and 
+infection mode, a vaccine 
+can be developed from the 
+blueprint, and this 
+information can be 
+transferred to other 
+hospitals.</text>
+        </slide>
+        <slide>
+          <slideno>12</slideno>
+          <text>New innovative solutions! (that 
+you create!)</text>
+        </slide>
+        <slide>
+          <slideno>7</slideno>
+          <text>Bioengineer Bacteria 
+Engineer bacteria to 
+attack disease 
+microbes (like was 
+seen in the IGEM 
+project) 
+Attack!! Image removed due to 
+copyright restrictions.</text>
+        </slide>
+      </slides>
+      <videos/>
+    </lecture>
+    <lecture>
+      <lecture_title>          NOTlogic.gif
+        </lecture_title>
+      <lecture_pdf_url>https://ocw.mit.edu/courses/20-020-introduction-to-biological-engineering-design-spring-2009/resources/notlogic/</lecture_pdf_url>
+      <lectureno>51</lectureno>
+      <slides/>
+      <videos/>
+    </lecture>
+    <lecture>
+      <lecture_title>          eau_d_coli.jpg
+        </lecture_title>
+      <lecture_pdf_url>https://ocw.mit.edu/courses/20-020-introduction-to-biological-engineering-design-spring-2009/resources/eau_d_coli/</lecture_pdf_url>
+      <lectureno>16</lectureno>
+      <slides/>
+      <videos/>
+    </lecture>
+    <lecture>
+      <lecture_title>          NOTlogic.jpg
+        </lecture_title>
+      <lecture_pdf_url>https://ocw.mit.edu/courses/20-020-introduction-to-biological-engineering-design-spring-2009/resources/notlogic-1/</lecture_pdf_url>
+      <lectureno>52</lectureno>
+      <slides/>
+      <videos/>
+    </lecture>
+    <lecture>
+      <lecture_title>          EauDcoli_abstraction.gif
+        </lecture_title>
+      <lecture_pdf_url>https://ocw.mit.edu/courses/20-020-introduction-to-biological-engineering-design-spring-2009/resources/eaudcoli_abstraction-1/</lecture_pdf_url>
+      <lectureno>17</lectureno>
+      <slides/>
+      <videos/>
+    </lecture>
+    <lecture>
+      <lecture_title>          Lac_operon1.gif
+        </lecture_title>
+      <lecture_pdf_url>https://ocw.mit.edu/courses/20-020-introduction-to-biological-engineering-design-spring-2009/resources/lac_operon1-1/</lecture_pdf_url>
+      <lectureno>27</lectureno>
+      <slides/>
+      <videos/>
+    </lecture>
+    <lecture>
+      <lecture_title>          RomaForum_endy.jpg
+        </lecture_title>
+      <lecture_pdf_url>https://ocw.mit.edu/courses/20-020-introduction-to-biological-engineering-design-spring-2009/resources/romaforum_endy/</lecture_pdf_url>
+      <lectureno>54</lectureno>
+      <slides/>
+      <videos/>
+    </lecture>
+    <lecture>
+      <lecture_title>          Arsen_Devlevel.jpg
+        </lecture_title>
+      <lecture_pdf_url>https://ocw.mit.edu/courses/20-020-introduction-to-biological-engineering-design-spring-2009/resources/arsen_devlevel/</lecture_pdf_url>
+      <lectureno>4</lectureno>
+      <slides/>
+      <videos/>
+    </lecture>
+    <lecture>
+      <lecture_title>          Lac_operon1.jpg
+        </lecture_title>
+      <lecture_pdf_url>https://ocw.mit.edu/courses/20-020-introduction-to-biological-engineering-design-spring-2009/resources/lac_operon1/</lecture_pdf_url>
+      <lectureno>28</lectureno>
+      <slides/>
+      <videos/>
+    </lecture>
+    <lecture>
+      <lecture_title>          EauDcoli_abstraction.jpg
+        </lecture_title>
+      <lecture_pdf_url>https://ocw.mit.edu/courses/20-020-introduction-to-biological-engineering-design-spring-2009/resources/eaudcoli_abstraction/</lecture_pdf_url>
+      <lectureno>18</lectureno>
+      <slides/>
+      <videos/>
+    </lecture>
+    <lecture>
+      <lecture_title>          MIT20_020S09_lec3_wk3_clk.pdf
+        </lecture_title>
+      <lecture_pdf_url>https://ocw.mit.edu/courses/20-020-introduction-to-biological-engineering-design-spring-2009/resources/mit20_020s09_lec3_wk3_clk/</lecture_pdf_url>
+      <lectureno>42</lectureno>
+      <slides>
+        <slide>
+          <slideno>10</slideno>
+          <text>And a 3: circadian rhythms 
+Oscillation of alertness, sleep, hormone 
+ 
+production, body temperature and organ function
+ 
+Electronics: van der Pol oscillator L = inductor 
+C = capacitor 
+V = vacuum tube 
+containing a tetrode 
+I = voltage supply 
+Courtesy Elsevier, Inc., http://www.sciencedirect.com. Used with permission.</text>
+        </slide>
+        <slide>
+          <slideno>8</slideno>
+          <text>And a 2: bud scar counting 
+http://organelleview .lsi.umich.edu/orgview2/ 
+Courtesy of Anuj Kumar. Used with permission.</text>
+        </slide>
+        <slide>
+          <slideno>9</slideno>
+          <text>And a 2: bud scar counting 
+Image removed due to copyright restrictions. 
+See Fig. 3 in Powell, C. D., et al. "Chitin Scar Breaks in Aged 
+Saccharomyces Cerevisiae." Microbiology 149 (2003): 3129-3137 
+Image removed due to copyright restrictions.
+ 
+See Fig. 1 in Cabib, E. et al. "Role of Small g Proteins
+ 
+in Yeast Cell Polarization and Wall Biosynthesis."
+ Ann Rev Biochem 67 (July 1998): 307-333.</text>
+        </slide>
+        <slide>
+          <slideno>6</slideno>
+          <text>Counting Cell Divisions with Telomere Repeats
+ 
+Cell type Telomerase Telomere length 
+Normal Somatic OFF shortens 
+Cancerous  ON forever stable 
+Chromosomal DNA 
+Telomerase 
+Figure by MIT OpenCourseWare.</text>
+        </slide>
+        <slide>
+          <slideno>7</slideno>
+          <text>Astragaloside IV , 
+found in minute 
+traces in Astragalus Membranaceus 
+extract, is known to turn this gene on and 'activate' telomerase. 
+Courtesy of Terraternal. Used with permission.</text>
+        </slide>
+        <slide>
+          <slideno>15</slideno>
+          <text>MIT OpenCourseWare
+http://ocw.mit.edu 
+20.020 Introduction to Biological Engineering Design 
+Spring 2009 
+For information about citing these materials or our Terms of Use, visit: http://ocw.mit.edu/terms .</text>
+        </slide>
+        <slide>
+          <slideno>5</slideno>
+          <text>Counting Cell Divisions with Telomere Repeats
+ 
+Cell type Telomerase Telomere length
+ 
+Normal Somatic OFF  shortens
+ 
+Chromosomal DNA 
+Figure by MIT OpenCourseWare. 
+See Science Daily, Feb. 16, 2009. 
+ 
+"Shortening Telomeres Linked to Aging in Population Studies, But Original Telomere Length Varies Between Individuals."</text>
+        </slide>
+        <slide>
+          <slideno>4</slideno>
+          <text>Diagram removed due to copyright restrictions. 
+See Fig. 5.18 in Cooper, G. M. The Cell: A Molecular Approach. 2nd edition. 
+http://www.ncbi.nlm.nih.gov/bookshelf/br.fcgi?book=cooper&amp;part=A772&amp;rendertype=figure&amp;id=A795</text>
+        </slide>
+        <slide>
+          <slideno>11</slideno>
+          <text>And a 3: circadian rhythms 
+Oscillation of alertness, sleep, hormone 
+ 
+production, body temperature and organ function
+ 
+Hydraulic Model Negative feedback loop
+ 
+&gt;&gt;water flows into B 
+then through T1 into A 
+and out through T4 
+&gt;&gt;level of A connected 
+to T3 and T2 which 
+drain A as level rises 
+Courtesy Elsevier, Inc., http://www.sciencedirect.com. Used with permission.</text>
+        </slide>
+        <slide>
+          <slideno>13</slideno>
+          <text>and a 1, and a 2, and a 3 
+Courtesy of Terraternal. Used with permission. 
+Courtesy Elsevier, Inc., http://www.sciencedirect.com. Used with permission. 
+Diagram removed due to copyright restrictions. 
+See Fig. 4.19 in Cooper, G. M. 
+The Cell: A Molecular Approach . 2nd ed.
+http://www.ncbi.nlm.nih.gov/bookshelf/br.fcgi?
+book=cooper&amp;part=A635&amp;rendertype=figure&amp;id=A635
+Yeast bud scar photo removed due to copyright restrictions.</text>
+        </slide>
+        <slide>
+          <slideno>14</slideno>
+          <text>the end</text>
+        </slide>
+        <slide>
+          <slideno>0</slideno>
+          <text>and a 1, and a 2
+ 
+Examples of counting and clock-
+ 
+keeping in biology
+ 
+N Kuldell for 20.020(S09)
+ 
+02.19.09</text>
+        </slide>
+        <slide>
+          <slideno>3</slideno>
+          <text>Diagram removed due to copyright restrictions. 
+See Fig. 5.18 in Cooper, G. M. The Cell: A Molecular Approach. 2nd edition. 
+http://www.ncbi.nlm.nih.gov/bookshelf/br.fcgi?book=cooper&amp;part=A772&amp;rendertype=figure&amp;id=A795</text>
+        </slide>
+        <slide>
+          <slideno>2</slideno>
+          <text>And a 1: telomeres
+ 
+Source: Bolzer, A., G. Kreth, I. Solovei, D. Koehler, K. Saracoglu, et al. " Three-Dimensional Maps of All Chromosomes in Human 
+Male Fibroblast Nuclei and Prometaphase Rosettes." PLoS Biol 3, no. 5 (2005): e157.
+DOI:10.1371/journal.pbio.0030157. Courtesy of the authors. 
+Diagram removed due to copyright restrictions. 
+See Fig. 4.19 in Cooper, G. M. 
+The Cell: A Molecular Approach. 2nd ed.
+http://www.ncbi.nlm.nih.gov/bookshelf/br.fcgi?
+book=cooper&amp;part=A635&amp;rendertype=figure&amp;id=A635
+(TTAGGG)n 
+Image: Wikipedia: DNA_replication_en.svg (public domain).</text>
+        </slide>
+        <slide>
+          <slideno>1</slideno>
+          <text>And a 1: telomeres 
+ 
+Source: Bolzer, A., G. Kreth, I. Solovei, D. Koehler, K. Saracoglu, et al. " Three-Dimensional Maps of All Chromosomes in Human 
+Male Fibroblast Nuclei and Prometaphase Rosettes." PLoS Biol 3, no. 5 (2005): e157.
+DOI:10.1371/journal.pbio.0030157. Courtesy of the authors. 
+Diagram removed due to copyright restrictions. 
+See Fig. 4.19 in Cooper, G. M. 
+The Cell: A Molecular Approach . 2nd ed.
+http://www.ncbi.nlm.nih.gov/bookshelf/br.fcgi?
+book=cooper&amp;part=A635&amp;rendertype=figure&amp;id=A635 
+(TTAGGG)n 
+Image: US DOE Human Genome Project.</text>
+        </slide>
+        <slide>
+          <slideno>12</slideno>
+          <text>And a 3: circadian rhythms 
+Oscillation of alertness, sleep, hormone 
+ 
+production, body temperature and organ function
+ 
+Molecular clocks: transcriptional-translational feedback 
+&gt;&gt;RNA  is made 
+&gt;&gt;turns protein 
+ 
+production on
+ 
+&gt;&gt;protein turns of f 
+RNA production 
+&gt;&gt;absence of RNA turns of f protein 
+Courtesy Elsevier, Inc., http://www.sciencedirect.com. Used with permission. production</text>
+        </slide>
+      </slides>
+      <videos/>
+    </lecture>
+    <lecture>
+      <lecture_title>          iGEM_storyboard_3.jpg
+        </lecture_title>
+      <lecture_pdf_url>https://ocw.mit.edu/courses/20-020-introduction-to-biological-engineering-design-spring-2009/resources/igem_storyboard_3/</lecture_pdf_url>
+      <lectureno>24</lectureno>
+      <slides/>
+      <videos/>
+    </lecture>
+    <lecture>
+      <lecture_title>          MIT20_020S09_lec1_rvw1_sns.pdf
+        </lecture_title>
+      <lecture_pdf_url>https://ocw.mit.edu/courses/20-020-introduction-to-biological-engineering-design-spring-2009/resources/mit20_020s09_lec1_rvw1_sns/</lecture_pdf_url>
+      <lectureno>36</lectureno>
+      <slides>
+        <slide>
+          <slideno>2</slideno>
+          <text>Cell-Cell Communication 
+ 
+natural context: Cuttlesh and Vibrio harveyi
+ 
+Cuttlefish: master of camouflage 
+Images removed due to copyright restrictions.
+ 
+See video at http://video.nytimes.com/video/2008/02/13/science/1194817111131/cuttlefish-camouflage.html 
+ 
+The New York Times. "Cuttlefish Camouflage." 
+ 
+During the day they lie
+buried in the bottom of the ocean; at night they swimand hunt for food. 
+Courtesy of Richard Ling  on Flickr.</text>
+        </slide>
+        <slide>
+          <slideno>8</slideno>
+          <text>Sensing and Signaling Cascades 
+ 
+iGEM context: chimeric receptor
+ 
+Courtesy of DKFZ/Univ. Heidelberg/iGEM Team Heidelberg. Used with permission.</text>
+        </slide>
+        <slide>
+          <slideno>6</slideno>
+          <text>Sensing and Signaling Cascades 
+ 
+natural context: TCS 2 component signaling
+ 
+TCS 
+SHK sensor kinase 
+RR response regulator 
+Plant Physiol. (1998) 1 17: 723 
+Courtesy of and (c) 1998 the American Society of Plant Biologists. Used with permission. Stimulus
+ 
+Activates SHK 
+ 
+Transfers to RR P
+ 
+Output</text>
+        </slide>
+        <slide>
+          <slideno>7</slideno>
+          <text>Sensing and Signaling Cascades 
+ 
+natural context: TCS 2 component signaling
+ 
+Stimulus 
+Diagram removed due to copyright restrictions."Scheme of Protein-protein Interactions 
+During Chemotactic Signal Transduction in Bacteria." Fig. 1 in Bren, A., and M. Eisenbach. "
+How Signals Are Heard during Bacterial Chemotaxis: Protein-Protein Interactions in Activates SHKSensory Signal Propagation." J Bacteriol 182, no. 24 (2000): 6865-6873.  
+Transfers to RR P
+Output
+ 
+CCW , default, tumble 
+TCS CW, signal, swim 
+SHK sensor kinase 
+RR response regulator 
+J Bacteriol. (2000)182: 6865</text>
+        </slide>
+        <slide>
+          <slideno>9</slideno>
+          <text>MIT OpenCourseWare
+http://ocw.mit.edu 
+20.020 Introduction to Biological Engineering Design 
+Spring 2009 
+For information about citing these materials or our Terms of Use, visit: http://ocw.mit.edu/terms .</text>
+        </slide>
+        <slide>
+          <slideno>3</slideno>
+          <text>Cell-Cell Communication 
+ 
+natural context: Cuttlesh and Vibrio harveyi
+ 
+Few cells: 
+ 
+Autoinducers dif fuse 
+ 
+away
+ 
+More cells: 
+Image removed due to copyright restrictions. Autoinducers initiate 
+signaling, transcription 	See Figure 4 in Schauder, S., and B. L. Bassler. "The Languages of Bacteria." 
+Genes &amp; Dev 15: (2001) 1468-1480. 
+Photo from B. Bassler , Fig from: 
+Genes &amp; Dev .  2001. 15: 1468-1480 
+Courtesy of Bonnie Bassler. Used with permission. doi: 10.1 101/gad.899601</text>
+        </slide>
+        <slide>
+          <slideno>4</slideno>
+          <text>Cell-Cell Communication 
+ 
+iGEM context: prey pathogen, predator killer
+ 
+Prey Cell HO OH
+LuxS= enzyme that produces B autoinducer 2 (AI2)dif fuses O O 
+through the media HO CH3 
+OHO 
+Al-2 
+Figure by MIT OpenCourseWare. Predator Cell 
+LuxP , LuxQ = receptor that 
+binds (AI2)induces 
+chemotaxis.how? 
+Courtesy of DKFZ/Univ. Heidelberg/iGEM Team Heidelberg. Used with permission.</text>
+        </slide>
+        <slide>
+          <slideno>1</slideno>
+          <text>Heidelburg iGEM 2008:
+ 
+ecolicense to kill
+ 
+Part 1: Sensing 
+Courtesy of DKFZ/Univ. Heidelberg/iGEM Team Heidelberg. Used with permission. 
+Background information</text>
+        </slide>
+        <slide>
+          <slideno>5</slideno>
+          <text>Sensing and Signaling Cascades 
+ 
+natural context: TCS 2 component signaling
+ 
+Stimulus 
+Image removed due to copyright restrictions. 
+See Figure 4 in Schauder, S., and B. L. Bassler. "The Languages of Bacteria." Genes &amp; Dev 15: (2001) 1468-1480. P Activates SHK 
+Transfers to RR 
+Output 
+TCS 
+SHK sensor histidine kinase 
+RR response regulator</text>
+        </slide>
+        <slide>
+          <slideno>0</slideno>
+          <text>Cell-Cell Communication, 
+ 
+Sensing and Chemotaxis
+ 
+N Kuldell for 20.020
+ 
+Spring 2009</text>
+        </slide>
+      </slides>
+      <videos/>
+    </lecture>
+    <lecture>
+      <lecture_title>          biobricks.gif
+        </lecture_title>
+      <lecture_pdf_url>https://ocw.mit.edu/courses/20-020-introduction-to-biological-engineering-design-spring-2009/resources/biobricks/</lecture_pdf_url>
+      <lectureno>9</lectureno>
+      <slides/>
+      <videos/>
+    </lecture>
+    <lecture>
+      <lecture_title>          MIT20_020S09_lec3_wk3_st1i.pdf
+        </lecture_title>
+      <lecture_pdf_url>https://ocw.mit.edu/courses/20-020-introduction-to-biological-engineering-design-spring-2009/resources/mit20_020s09_lec3_wk3_st1i/</lecture_pdf_url>
+      <lectureno>43</lectureno>
+      <slides>
+        <slide>
+          <slideno>3</slideno>
+          <text>Recent Diseases in our World 
+Recently (January), 
+115 people have died 
+of Avian Flu 
+2007: A business man 
+flying from US to 
+various countries in 
+Europe as a TB carrier 
+was detained. A fellow 
+passenger was 
+affected. Image removed due to 
+copyright restrictions.</text>
+        </slide>
+        <slide>
+          <slideno>13</slideno>
+          <text>Save the good viruses, save the world!</text>
+        </slide>
+        <slide>
+          <slideno>4</slideno>
+          <text>Problems with I.D. 
+The infectious disease 
+itself and mutation 
+Resources (and lack 
+thereof) 
+Environment (climate and 
+ecology) 
+Time 
+Lack of understanding 
+Ethical constraints on 
+research Image removed due to 
+copyright restrictions.</text>
+        </slide>
+        <slide>
+          <slideno>5</slideno>
+          <text>Ways we have been tackling the 
+problems: 
+Vaccines 
+Antibiotics 
+Pharmaceutical drugs 
+Not developed for all 
+Resistant strains (e.g. 
+penicillin resistance) 
+Allergies to antibiotics 
+Painful Side effects, 
+allergies, also 
+resistance</text>
+        </slide>
+        <slide>
+          <slideno>2</slideno>
+          <text>Top 10 Most common diseases 
+that kill 
+1. Ischemic heart disease 
+2. Cerebrovascular disease 
+3. *Lower Respiratory 
+infections 
+4. *HIV/AIDS 
+5. Chronic Obstructive 
+Pulmonary Disease 
+6. Perinatal conditions 
+7. *Diarrheal diseases 
+8. *Tuberculosis 
+9. *Malaria 
+10.Trachea, bronchus, 
+lung cancers Image removed due to 
+copyright restrictions.</text>
+        </slide>
+        <slide>
+          <slideno>1</slideno>
+          <text>Definition of Infectious Diseases: 
+Are caused by 
+microorganisms such 
+as bacteria, viruses, 
+and fungi 
+Can be transmitted 
+human-human and 
+human-animal 
+Most affect third 
+world countries</text>
+        </slide>
+        <slide>
+          <slideno>8</slideno>
+          <text>Engineer Viruses 
+Engineer 
+Bacteriophages 
+(bacteria-specific 
+viruses) to attack 
+target bacteria Image removed due to 
+copyright restrictions.</text>
+        </slide>
+        <slide>
+          <slideno>10</slideno>
+          <text>Detect Virus infection mode 
+And design compound 
+to inhibit different 
+areas of the viruss 
+infection</text>
+        </slide>
+        <slide>
+          <slideno>9</slideno>
+          <text>Boost Immunity 
+Vitamin-C producing 
+bacteria that live in 
+your small intestine 
+(symbiotic 
+relationship)</text>
+        </slide>
+        <slide>
+          <slideno>6</slideno>
+          <text>Proposed Solutions:</text>
+        </slide>
+        <slide>
+          <slideno>14</slideno>
+          <text>MIT OpenCourseWare
+http://ocw.mit.edu 
+20.020 Introduction to Biological Engineering Design 
+Spring 2009 
+For information about citing these materials or our Terms of Use, visit: http://ocw.mit.edu/terms .</text>
+        </slide>
+        <slide>
+          <slideno>0</slideno>
+          <text>Catch me if you can! 
+By anonymous students</text>
+        </slide>
+        <slide>
+          <slideno>11</slideno>
+          <text>Connect Hospitals to Researchers 
+When patient comes in 
+with new virus, a 
+sophisticated screening 
+system will be able to 
+identify protein coat and 
+infection mode, a vaccine 
+can be developed from the 
+blueprint, and this 
+information can be 
+transferred to other 
+hospitals.</text>
+        </slide>
+        <slide>
+          <slideno>12</slideno>
+          <text>New innovative solutions! (that 
+you create!)</text>
+        </slide>
+        <slide>
+          <slideno>7</slideno>
+          <text>Bioengineer Bacteria 
+Engineer bacteria to 
+attack disease 
+microbes (like was 
+seen in the IGEM 
+project) 
+Attack!! Image removed due to 
+copyright restrictions.</text>
+        </slide>
+      </slides>
+      <videos/>
+    </lecture>
+    <lecture>
+      <lecture_title>          iGEM_storyboard_2.jpg
+        </lecture_title>
+      <lecture_pdf_url>https://ocw.mit.edu/courses/20-020-introduction-to-biological-engineering-design-spring-2009/resources/igem_storyboard_2/</lecture_pdf_url>
+      <lectureno>23</lectureno>
+      <slides/>
+      <videos/>
+    </lecture>
+    <lecture>
+      <lecture_title>courses/20-020-introduction-to-biological-engineering-design-spring-2009/resources/mit20_020s09_lec3_wk3_st2g</lecture_title>
+      <lecture_pdf_url>https://ocw.mit.edu/courses/20-020-introduction-to-biological-engineering-design-spring-2009/resources/mit20_020s09_lec3_wk3_st2g/</lecture_pdf_url>
+      <lectureno>8</lectureno>
+      <slides>
+        <slide>
+          <slideno>4</slideno>
+          <text>More Effective Pesticides 
+Crops can be engineered to defend 
+themselves against pests 
+Problem: Evolution of both plant and 
+pest can lead to complications</text>
+        </slide>
+        <slide>
+          <slideno>2</slideno>
+          <text>Dont have a cow!
+ 
+Problem 
+ Solutions to food shortages focus on plant 
+crops. Why cant we find a way to produce 
+portions of meat for consumption? 
+Solution 
+ If we can make cells grow in a Petri dish,
+we should be able to make larger tissues 
+grow. 
+ Meat without the farm.</text>
+        </slide>
+        <slide>
+          <slideno>1</slideno>
+          <text>Spare parts 
+Problem 
+ It is often difficult to obtain a viable transplant. 
+Solution 
+ Generate organs in the laboratory 
+ Using patient s cells lowers the likelihood of
+ 
+rejection
+ 
+ Not reliant on chance 
+ Want to mimic natural organs</text>
+        </slide>
+        <slide>
+          <slideno>5</slideno>
+          <text>Solution: 
+To counter evolutionary changes 
+Create way to track changes in pest 
+population, alter crop/pesticide accordingly 
+Study interaction between plant and pest, 
+alter plant to resist 
+Harvest genes from most resistant plant and 
+generate a new fields worth of seeds 
+ Process is time-consuming, speed up process?</text>
+        </slide>
+        <slide>
+          <slideno>3</slideno>
+          <text>Crop Modification
+ 
+Problem: Growing better and more resilient 
+crops. 
+Solutions: 
+ Identifying salt and drought tolerance genes and
+pathways found in xerophytes, resurrection plants, 
+and halophytes. 
+ Producing crops with greater nutritional content
+(golden rice). 
+ Addressing environmental concerns of introducing
+new plants to a region.</text>
+        </slide>
+        <slide>
+          <slideno>0</slideno>
+          <text>Growing, Growing, Grown
+ 
+Ryan Alexander, Janice O'Brien, and anonymous student EC.</text>
+        </slide>
+        <slide>
+          <slideno>6</slideno>
+          <text>MIT OpenCourseWare
+http://ocw.mit.edu 
+20.020 Introduction to Biological Engineering Design 
+Spring 2009 
+For information about citing these materials or our Terms of Use, visit: http://ocw.mit.edu/terms .</text>
+        </slide>
+      </slides>
+      <videos/>
+    </lecture>
+    <lecture>
+      <lecture_title>          TetRgene.gif
+        </lecture_title>
+      <lecture_pdf_url>https://ocw.mit.edu/courses/20-020-introduction-to-biological-engineering-design-spring-2009/resources/tetrgene-1/</lecture_pdf_url>
+      <lectureno>63</lectureno>
+      <slides/>
+      <videos/>
+    </lecture>
+    <lecture>
+      <lecture_title>          soapstress.gif
+        </lecture_title>
+      <lecture_pdf_url>https://ocw.mit.edu/courses/20-020-introduction-to-biological-engineering-design-spring-2009/resources/soapstress/</lecture_pdf_url>
+      <lectureno>59</lectureno>
+      <slides/>
+      <videos/>
+    </lecture>
+    <lecture>
+      <lecture_title>          Coliform.jpg
+        </lecture_title>
+      <lecture_pdf_url>https://ocw.mit.edu/courses/20-020-introduction-to-biological-engineering-design-spring-2009/resources/coliform/</lecture_pdf_url>
+      <lectureno>14</lectureno>
+      <slides/>
+      <videos/>
+    </lecture>
+    <lecture>
+      <lecture_title>          StationaryBananas.gif
+        </lecture_title>
+      <lecture_pdf_url>https://ocw.mit.edu/courses/20-020-introduction-to-biological-engineering-design-spring-2009/resources/stationarybananas/</lecture_pdf_url>
+      <lectureno>60</lectureno>
+      <slides/>
+      <videos/>
+    </lecture>
+    <lecture>
+      <lecture_title>          BendFreq.gif
+        </lecture_title>
+      <lecture_pdf_url>https://ocw.mit.edu/courses/20-020-introduction-to-biological-engineering-design-spring-2009/resources/bendfreq/</lecture_pdf_url>
+      <lectureno>7</lectureno>
+      <slides/>
+      <videos/>
+    </lecture>
+    <lecture>
+      <lecture_title>courses/20-020-introduction-to-biological-engineering-design-spring-2009/resources/mit20_020s09_lec1_rvw2_phg</lecture_title>
+      <lecture_pdf_url>https://ocw.mit.edu/courses/20-020-introduction-to-biological-engineering-design-spring-2009/resources/mit20_020s09_lec1_rvw2_phg/</lecture_pdf_url>
+      <lectureno>1</lectureno>
+      <slides>
+        <slide>
+          <slideno>17</slideno>
+          <text>Temperate bacteriophage lambda
+ 
+INFECT 
+REPLICA TE RELEASE 
+Some great ??s the Heidelberg team asked: 
+Can we infect prey from lysogen (=predator)? 
+Can we keep lysogen from lysing itself? 
+Can we monitor lysis and lysogeny? 
+ASSEMBLE Image courtesy of Gary Kaiser. Used with permission.</text>
+        </slide>
+        <slide>
+          <slideno>4</slideno>
+          <text>Temperate bacteriophage lambda
+ 
+INFECT 
+lytic
+REPLICA TE RELEASE 
+ASSEMBLE Image courtesy of Gary Kaiser. Used with permission. 
+See http://escience.ws/b572/L17/L17.htm</text>
+        </slide>
+        <slide>
+          <slideno>8</slideno>
+          <text>Temperate bacteriophage lambda
+ 
+INFECT 
+REPLICA TE RELEASE 
+Some great ??s the Heidelberg team asked: 
+Can we infect prey from lysogen (=predator)? 
+Can we keep lysogen from lysing itself? 
+Can we monitor lysis and lysogeny? 
+ASSEMBLE Image courtesy of Gary Kaiser. Used with permission.</text>
+        </slide>
+        <slide>
+          <slideno>13</slideno>
+          <text>Temperate bacteriophage lambda
+ 
+INFECT 
+REPLICA TE RELEASE 
+Some great ??s the Heidelberg team asked: 
+Can we infect prey from lysogen (=predator)? 
+Can we keep lysogen from lysing itself? 
+Can we monitor lysis and lysogeny? 
+ASSEMBLE
+ 
+Image courtesy of Gary Kaiser. Used with permission.</text>
+        </slide>
+        <slide>
+          <slideno>14</slideno>
+          <text>Genetically programmed bi-stable switch
+ 
+natural context: epigenetic regulation
+ 
+Diagram removed due to copyright restrictions.
+ lacI
+.
+
+ 
+"Design of ." Fig. 1A and B in Atsumi, S., and J. W. Little. 
+ 
+"Regulatory Circuit Design and Evolution Using Phage " 
+ 
+Genes &amp; Dev 18 (2004): 2086-2094.
+ lysogeny 
+http://dx.doi.org/10.1101/gad.1226004 
+lysis</text>
+        </slide>
+        <slide>
+          <slideno>23</slideno>
+          <text>Predator cell
+ 
+stable lysogen that infects by conjugation
+ 
++ CamR 
++ GFP to follow process</text>
+        </slide>
+        <slide>
+          <slideno>6</slideno>
+          <text>Temperate bacteriophage lambda
+ 
+INFECT 
+REPLICA TE RELEASE 
+Some great ??s 
+What guides lytic/lysogenic decision? 
+What keeps lysogen stable? 
+What triggers lysogen to lytic cycle? 
+ASSEMBLE Image courtesy of Gary Kaiser. Used with permission.</text>
+        </slide>
+        <slide>
+          <slideno>15</slideno>
+          <text>Genetically programmed bi-stable switch
+ 
+iGEM context: ip and hold in one state
+ 
+lysogeny 
+promoter RBS cI ORF transcriptional 
+terminator 
+Diagram removed due to copyright restrictions. 
+"Design of Lambda lacI." Fig. 1B in Atsumi, S., and J. W. Little. "Regulatory Circuit Design and Evolution using Phage Lambda." Genes &amp; Dev 18 (2004): 2086-2094. http://dx.doi.org/10.1101/gad.1226004</text>
+        </slide>
+        <slide>
+          <slideno>10</slideno>
+          <text>Genetically programmed infection
+ 
+iGEM context: phage infection via conjugation
+ 
+Courtesy of AJC1  on Flickr. 	 http://escience.ws/
+b572/L18/L18.htm 
+Courtesy of Stan Metzenberg. 
+Used with permission. 
+Courtesy of DKFZ/Univ. Heidelberg/iGEM Team Heidelberg. Used with permission.</text>
+        </slide>
+        <slide>
+          <slideno>20</slideno>
+          <text>Fluorescence vs &#13;bioluminescence
+ 
+Courtesy of Steven Haddock. Used with permission. Source: Haddock, S.H.D.; McDougall, C.M.; Case, J.F. 
+"The Bioluminescence Web Page", (created 1997; updated 2007; accessed Fall 2007). 
+http://www .lifesci.ucsb.edu/~biolum/chem/ 
+Image removed due to copyright restrictions. See Figure 4 in 
+Schauder, S., and B. L. Bassler. " The Languages of Bacteria." 
+Genes &amp; Dev 15: (2001) 1468-1480 . 
+Green fluorescent protein (GFP), 
+courtesy of RCSB Protein Data Bank.</text>
+        </slide>
+        <slide>
+          <slideno>3</slideno>
+          <text>Transduction by bacteriophage
+ 
+Bacteriophage: viruses
+that infect bacteria 
+Protein coat 
+ 
+encapsulates
+ 
+nucleic acids
+ 
+Image of bacteriophage removed due to copyright restrictions. 
+See Phage Biotechnology website, http://www.phagebiotech.com. 
+REPLICA TE RELEASE INFECT 
+ASSEMBLE</text>
+        </slide>
+        <slide>
+          <slideno>2</slideno>
+          <text>DNA transfer
+ natural context: 3 mechanisms
+ 
+Courtesy of Fan Sozzi-Guo. Used with permission.</text>
+        </slide>
+        <slide>
+          <slideno>16</slideno>
+          <text>Temperate bacteriophage lambda
+ 
+INFECT 
+REPLICA TE RELEASE 
+Some great ??s the Heidelberg team asked: 
+Can we infect prey from lysogen (=predator)? 
+Can we keep lysogen from lysing itself? 
+Can we monitor lysis and lysogeny? 
+ASSEMBLE Image courtesy of Gary Kaiser. Used with permission.</text>
+        </slide>
+        <slide>
+          <slideno>7</slideno>
+          <text>Temperate bacteriophage lambda
+ 
+INFECT 
+REPLICA TE RELEASE 
+Some great ??s the Heidelberg team asked: 
+Can we infect prey from lysogen (=predator)? 
+Can we keep lysogen from lysing itself? 
+Can we monitor lysis and lysogeny? 
+ASSEMBLE Image courtesy of Gary Kaiser. Used with permission.</text>
+        </slide>
+        <slide>
+          <slideno>9</slideno>
+          <text>Genetically programmed infection
+ 
+iGEM context: phage infection via conjugation
+ 
+Courtesy of Fan Sozzi-Guo. Used with permission.</text>
+        </slide>
+        <slide>
+          <slideno>21</slideno>
+          <text>One last thing about uorescence
+ 
+Green fluorescent protein (GFP), 
+courtesy of RCSB Protein Data Bank. 
+Image removed due to copyright restrictions.
+Agar plate of fluorescent bacteria colonies, forming 
+a beach scene, from lab of Roger Tsien, UCSD.
+http://www.tsienlab.ucsd.edu/HTML/Images/IMAGE
+%20-%20PLATE%20-%20Beach.jpg
+Image removed due to copyright restrictions.
+ 
+Figure 1 in Patterson, G., R. N. Day, and D. Piston.
+ 
+"Fluorescent Protein Spectra." Journal of Cell Science
+ 
+114 (2001): 837-838.
+ 
+High resolution PDF poster available at 
+ 
+http://jcs.biologists.org/cgi/data/114/5/837/DC1/1</text>
+        </slide>
+        <slide>
+          <slideno>19</slideno>
+          <text>Fluorescence vs &#13;bioluminescence
+ 
+Courtesy of Steven Haddock. Used with permission. Source: Haddock, S.H.D.; McDougall, C.M.; Case, J.F. 
+"The Bioluminescence Web Page", (created 1997; updated 2007; accessed Fall 2007). 
+http://www .lifesci.ucsb.edu/~biolum/chem/ 
+Image removed due to copyright restrictions. See Figure 4 in 
+Schauder, S., and B. L. Bassler. " The Languages of Bacteria ." 
+Genes &amp; Dev 15: (2001) 1468-1480 . 
+Green fluorescent protein (GFP), 
+courtesy of RCSB Protein Data Bank.</text>
+        </slide>
+        <slide>
+          <slideno>24</slideno>
+          <text>MIT OpenCourseWare
+http://ocw.mit.edu 
+20.020 Introduction to Biological Engineering Design 
+Spring 2009 
+For information about citing these materials or our Terms of Use, visit: http://ocw.mit.edu/terms .</text>
+        </slide>
+        <slide>
+          <slideno>1</slideno>
+          <text>Heidelburg iGEM 2008:
+ 
+ecolicense to kill
+ 
+Part 2: DNA  transfer , genetically 
+ 
+programmed self-assembly and parts
+ 
+Courtesy of DKFZ/Univ. Heidelberg/iGEM Team Heidelberg. Used with permission. 
+Background information</text>
+        </slide>
+        <slide>
+          <slideno>12</slideno>
+          <text>Genetically programmed infection
+ 
+iGEM context: phage infection via conjugation
+ 
+What parts are needed 
+Pilus.  F 
+Origin for transfer oriT 
+Selectable marker CamR 
+F oriT CamR 
+Part is a genetically-encoded,
+human dened function I714030 
+Courtesy of DKFZ/Univ. Heidelberg/iGEM Team Heidelberg. Used with permission.</text>
+        </slide>
+        <slide>
+          <slideno>5</slideno>
+          <text>Temperate bacteriophage lambda
+ 
+INFECT 
+lytic
+REPLICA TE RELEASE 
+lysogenic
+ASSEMBLE 
+Image courtesy of Gary Kaiser. Used with permission.</text>
+        </slide>
+        <slide>
+          <slideno>22</slideno>
+          <text>Genetically programmed infection
+ 
+iGEM context: phage infection via conjugation
+ 
+What parts are needed
+ 
+Pilus.  F 
+Origin for transfer oriT 
+Selectable marker CamR 
+Stable lysogen  cI 
+Moniter GFP 
+F oriT CamR 
+Courtesy of DKFZ/Univ. Heidelberg/iGEM Team Heidelberg. Used with permission.</text>
+        </slide>
+        <slide>
+          <slideno>18</slideno>
+          <text>Fluorescence vs &#13;bioluminescence
+ 
+Courtesy of Bonnie Bassler. Used with permission. 
+Image removed due to copyright restrictions. See Figure 4 in 
+ 
+Schauder, S., and B. L. Bassler. " The Languages of Bacteria ." 
+ 
+Genes &amp; Dev 15 (2001): 1468-1480.
+ . 
+Green fluorescent protein (GFP), 
+courtesy of RCSB Protein Data Bank.</text>
+        </slide>
+        <slide>
+          <slideno>11</slideno>
+          <text>Genetically programmed infection
+ 
+iGEM context: phage infection via conjugation
+ 
+What parts are needed 
+Pilus.  F 
+Origin for transfer oriT 
+Selectable marker CamR 
+Model predicts: 10 killer cells kill 
+10^9 prey cells in silico F oriT CamR 
+Part is a genetically-encoded,
+human dened function 
+Courtesy of DKFZ/Univ. Heidelberg/iGEM Team Heidelberg. Used with permission.</text>
+        </slide>
+        <slide>
+          <slideno>0</slideno>
+          <text>Lambda phage killing: 
+ 
+infection and parts
+ 
+N Kuldell for 20.020
+ 
+Spring 2009</text>
+        </slide>
+      </slides>
+      <videos/>
+    </lecture>
+    <lecture>
+      <lecture_title>          Coliform.gif
+        </lecture_title>
+      <lecture_pdf_url>https://ocw.mit.edu/courses/20-020-introduction-to-biological-engineering-design-spring-2009/resources/coliform-1/</lecture_pdf_url>
+      <lectureno>13</lectureno>
+      <slides/>
+      <videos/>
+    </lecture>
+    <lecture>
+      <lecture_title>courses/20-020-introduction-to-biological-engineering-design-spring-2009/resources/mit20_020s09_lec1_rvw1_sns</lecture_title>
+      <lecture_pdf_url>https://ocw.mit.edu/courses/20-020-introduction-to-biological-engineering-design-spring-2009/resources/mit20_020s09_lec1_rvw1_sns/</lecture_pdf_url>
+      <lectureno>0</lectureno>
+      <slides>
+        <slide>
+          <slideno>2</slideno>
+          <text>Cell-Cell Communication 
+ 
+natural context: Cuttlesh and Vibrio harveyi
+ 
+Cuttlefish: master of camouflage 
+Images removed due to copyright restrictions.
+ 
+See video at http://video.nytimes.com/video/2008/02/13/science/1194817111131/cuttlefish-camouflage.html 
+ 
+The New York Times. "Cuttlefish Camouflage." 
+ 
+During the day they lie
+buried in the bottom of the ocean; at night they swimand hunt for food. 
+Courtesy of Richard Ling  on Flickr.</text>
+        </slide>
+        <slide>
+          <slideno>8</slideno>
+          <text>Sensing and Signaling Cascades 
+ 
+iGEM context: chimeric receptor
+ 
+Courtesy of DKFZ/Univ. Heidelberg/iGEM Team Heidelberg. Used with permission.</text>
+        </slide>
+        <slide>
+          <slideno>6</slideno>
+          <text>Sensing and Signaling Cascades 
+ 
+natural context: TCS 2 component signaling
+ 
+TCS 
+SHK sensor kinase 
+RR response regulator 
+Plant Physiol. (1998) 1 17: 723 
+Courtesy of and (c) 1998 the American Society of Plant Biologists. Used with permission. Stimulus
+ 
+Activates SHK 
+ 
+Transfers to RR P
+ 
+Output</text>
+        </slide>
+        <slide>
+          <slideno>7</slideno>
+          <text>Sensing and Signaling Cascades 
+ 
+natural context: TCS 2 component signaling
+ 
+Stimulus 
+Diagram removed due to copyright restrictions."Scheme of Protein-protein Interactions 
+During Chemotactic Signal Transduction in Bacteria." Fig. 1 in Bren, A., and M. Eisenbach. "
+How Signals Are Heard during Bacterial Chemotaxis: Protein-Protein Interactions in Activates SHKSensory Signal Propagation." J Bacteriol 182, no. 24 (2000): 6865-6873.  
+Transfers to RR P
+Output
+ 
+CCW , default, tumble 
+TCS CW, signal, swim 
+SHK sensor kinase 
+RR response regulator 
+J Bacteriol. (2000)182: 6865</text>
+        </slide>
+        <slide>
+          <slideno>9</slideno>
+          <text>MIT OpenCourseWare
+http://ocw.mit.edu 
+20.020 Introduction to Biological Engineering Design 
+Spring 2009 
+For information about citing these materials or our Terms of Use, visit: http://ocw.mit.edu/terms .</text>
+        </slide>
+        <slide>
+          <slideno>3</slideno>
+          <text>Cell-Cell Communication 
+ 
+natural context: Cuttlesh and Vibrio harveyi
+ 
+Few cells: 
+ 
+Autoinducers dif fuse 
+ 
+away
+ 
+More cells: 
+Image removed due to copyright restrictions. Autoinducers initiate 
+signaling, transcription 	See Figure 4 in Schauder, S., and B. L. Bassler. "The Languages of Bacteria." 
+Genes &amp; Dev 15: (2001) 1468-1480. 
+Photo from B. Bassler , Fig from: 
+Genes &amp; Dev .  2001. 15: 1468-1480 
+Courtesy of Bonnie Bassler. Used with permission. doi: 10.1 101/gad.899601</text>
+        </slide>
+        <slide>
+          <slideno>4</slideno>
+          <text>Cell-Cell Communication 
+ 
+iGEM context: prey pathogen, predator killer
+ 
+Prey Cell HO OH
+LuxS= enzyme that produces B autoinducer 2 (AI2)dif fuses O O 
+through the media HO CH3 
+OHO 
+Al-2 
+Figure by MIT OpenCourseWare. Predator Cell 
+LuxP , LuxQ = receptor that 
+binds (AI2)induces 
+chemotaxis.how? 
+Courtesy of DKFZ/Univ. Heidelberg/iGEM Team Heidelberg. Used with permission.</text>
+        </slide>
+        <slide>
+          <slideno>1</slideno>
+          <text>Heidelburg iGEM 2008:
+ 
+ecolicense to kill
+ 
+Part 1: Sensing 
+Courtesy of DKFZ/Univ. Heidelberg/iGEM Team Heidelberg. Used with permission. 
+Background information</text>
+        </slide>
+        <slide>
+          <slideno>5</slideno>
+          <text>Sensing and Signaling Cascades 
+ 
+natural context: TCS 2 component signaling
+ 
+Stimulus 
+Image removed due to copyright restrictions. 
+See Figure 4 in Schauder, S., and B. L. Bassler. "The Languages of Bacteria." Genes &amp; Dev 15: (2001) 1468-1480. P Activates SHK 
+Transfers to RR 
+Output 
+TCS 
+SHK sensor histidine kinase 
+RR response regulator</text>
+        </slide>
+        <slide>
+          <slideno>0</slideno>
+          <text>Cell-Cell Communication, 
+ 
+Sensing and Chemotaxis
+ 
+N Kuldell for 20.020
+ 
+Spring 2009</text>
+        </slide>
+      </slides>
+      <videos/>
+    </lecture>
+    <lecture>
+      <lecture_title>          MIT20_020S09_lec1_rvw3_coli.pdf
+        </lecture_title>
+      <lecture_pdf_url>https://ocw.mit.edu/courses/20-020-introduction-to-biological-engineering-design-spring-2009/resources/mit20_020s09_lec1_rvw3_coli/</lecture_pdf_url>
+      <lectureno>38</lectureno>
+      <slides>
+        <slide>
+          <slideno>9</slideno>
+          <text>System level description: growth regulation
+ 
+Input 
+e.g. 
+stationary 
+growth OFF 
+ON WGD 
+BGD saGD 
+iaGD 
+OsmY  is a promoter that is only active during stationary phase</text>
+        </slide>
+        <slide>
+          <slideno>4</slideno>
+          <text>System level description: precursor production
+ 
+Input 
+e.g. cell 
+growth Output 
+e.g. 
+smell Black box functions WGD 
+BGD 
+saGD 
+iaGD and 
+WGD: Wintergreen Generating Device 
+BGD: Banana Generating Device 
+saGD: salicylic acid Gen Dev
+ iaGD: isoamyl alcohol Gen Dev</text>
+        </slide>
+        <slide>
+          <slideno>13</slideno>
+          <text>System level test: gas
+ 
+chromatographs
+ 
+E. coli 	E. coli + precursor (SA) + 
+WGD 
+O O 
+OH methyl salicylate 
+MW = 152
+ no meth yl salicylate   
+[no peak at 9.1 
+minutes] 
+Courtesy of the 2006 MIT iGEM Team. Used with permission.</text>
+        </slide>
+        <slide>
+          <slideno>2</slideno>
+          <text>System level description: scent production
+ 
+Input 
+e.g. precursor Output 
+e.g. 
+smell Black box functions WGD 
+BGD 
+WGD: Wintergreen Generating Device 
+BGD: Banana Generating Device</text>
+        </slide>
+        <slide>
+          <slideno>14</slideno>
+          <text>System level test: uninformed
+ 
+experimental subjects??
+ 
+Courtesy of the 2006 MIT iGEM Team. Used with permission.</text>
+        </slide>
+        <slide>
+          <slideno>3</slideno>
+          <text>System level description: scent production
+ 
+Input 
+e.g. precursor Output 
+e.g. 
+smell Black box functions WGD 
+BGD 
+WGD: Wintergreen Generating Device 
+BGD: Banana Generating Device</text>
+        </slide>
+        <slide>
+          <slideno>6</slideno>
+          <text>System level description: growth regulation
+ 
+Input 
+e.g. cell WGD saGD 
+BGD iaGD Output
+growth e.g. 
+smell 
+cell 
+density 
+time lag log stationary</text>
+        </slide>
+        <slide>
+          <slideno>10</slideno>
+          <text>System level description: growth regulation
+ 
+Input 
+e.g. 
+stationary 
+growth OFF 
+ON WGD 
+BGD saGD 
+iaGD 
+Stationary phase Log phase 
+OsmY 1 0 
+OsmY+ inverter 0 1</text>
+        </slide>
+        <slide>
+          <slideno>12</slideno>
+          <text>System level description: Chassis modication
+ 
+Input 
+e.g. 
+stationary 
+growth OFF 
+ON WGD 
+BGD saGD 
+iaGD 
+eliminate 
+natural 
+indole production</text>
+        </slide>
+        <slide>
+          <slideno>11</slideno>
+          <text>System level description: growth regulation
+ 
+Input 
+e.g. 
+stationary 
+growth OFF 
+ON WGD 
+BGD saGD 
+iaGD 
+Courtesy of the 2006 MIT iGEM Team. Used with permission.</text>
+        </slide>
+        <slide>
+          <slideno>15</slideno>
+          <text>MIT OpenCourseWare
+http://ocw.mit.edu 
+20.020 Introduction to Biological Engineering Design 
+Spring 2009 
+For information about citing these materials or our Terms of Use, visit: http://ocw.mit.edu/terms .</text>
+        </slide>
+        <slide>
+          <slideno>1</slideno>
+          <text>System level description: initial planning
+ 
+Input 
+e.g. precursor Black box functions 
+WGD Output 
+e.g. 
+smell 
+BGD and 
+WGD: Wintergreen Generating Device 
+BGD: Banana Generating Device</text>
+        </slide>
+        <slide>
+          <slideno>7</slideno>
+          <text>System level description: growth regulation
+ 
+Input 
+e.g. log 
+growth ON 
+OFF WGD 
+BGD saGD 
+iaGD 
+cell 
+density 
+time lag log stationary 
+wintergreen
+smell</text>
+        </slide>
+        <slide>
+          <slideno>0</slideno>
+          <text>Eau dcoli
+ 
+N Kuldell for 20.020
+ 
+Spring 2009</text>
+        </slide>
+        <slide>
+          <slideno>5</slideno>
+          <text>System level description: precursor production
+ 
+Input 
+e.g. cell 
+growth Output 
+e.g. 
+smell Black box functions WGD 
+BGD saGD 
+iaGD 
+WGD: Wintergreen Generating Device 
+BGD: Banana Generating Device 
+saGD: salicylic acid Gen Dev
+ iaGD: isoamyl alcohol Gen Dev</text>
+        </slide>
+        <slide>
+          <slideno>8</slideno>
+          <text>System level description: growth regulation
+ 
+Input 
+e.g. 
+stationary 
+growth OFF 
+ON WGD 
+BGD saGD 
+iaGD 
+cell 
+density 
+time lag log stationary banana 
+smell</text>
+        </slide>
+      </slides>
+      <videos/>
+    </lecture>
+    <lecture>
+      <lecture_title>          StationaryBananascopy.jpg
+        </lecture_title>
+      <lecture_pdf_url>https://ocw.mit.edu/courses/20-020-introduction-to-biological-engineering-design-spring-2009/resources/stationarybananascopy/</lecture_pdf_url>
+      <lectureno>61</lectureno>
+      <slides/>
+      <videos/>
+    </lecture>
+    <lecture>
+      <lecture_title>          smiths_classic_wiring.jpg
+        </lecture_title>
+      <lecture_pdf_url>https://ocw.mit.edu/courses/20-020-introduction-to-biological-engineering-design-spring-2009/resources/smiths_classic_wiring/</lecture_pdf_url>
+      <lectureno>58</lectureno>
+      <slides/>
+      <videos/>
+    </lecture>
+    <lecture>
+      <lecture_title>          Legophoresis.gif
+        </lecture_title>
+      <lecture_pdf_url>https://ocw.mit.edu/courses/20-020-introduction-to-biological-engineering-design-spring-2009/resources/legophoresis/</lecture_pdf_url>
+      <lectureno>33</lectureno>
+      <slides/>
+      <videos/>
+    </lecture>
+    <lecture>
+      <lecture_title>          Lego3.jpg
+        </lecture_title>
+      <lecture_pdf_url>https://ocw.mit.edu/courses/20-020-introduction-to-biological-engineering-design-spring-2009/resources/lego3/</lecture_pdf_url>
+      <lectureno>31</lectureno>
+      <slides/>
+      <videos/>
+    </lecture>
+    <lecture>
+      <lecture_title>          NOTdigitaltransfercurve.gif
+        </lecture_title>
+      <lecture_pdf_url>https://ocw.mit.edu/courses/20-020-introduction-to-biological-engineering-design-spring-2009/resources/notdigitaltransfercurve-1/</lecture_pdf_url>
+      <lectureno>49</lectureno>
+      <slides/>
+      <videos/>
+    </lecture>
+    <lecture>
+      <lecture_title>          Ecolibrator_TimingDiagram.gif
+        </lecture_title>
+      <lecture_pdf_url>https://ocw.mit.edu/courses/20-020-introduction-to-biological-engineering-design-spring-2009/resources/ecolibrator_timingdiagram/</lecture_pdf_url>
+      <lectureno>19</lectureno>
+      <slides/>
+      <videos/>
+    </lecture>
+    <lecture>
+      <lecture_title>          MIT20_020S09_lec3_wk3_st5d.pdf
+        </lecture_title>
+      <lecture_pdf_url>https://ocw.mit.edu/courses/20-020-introduction-to-biological-engineering-design-spring-2009/resources/mit20_020s09_lec3_wk3_st5d/</lecture_pdf_url>
+      <lectureno>47</lectureno>
+      <slides>
+        <slide>
+          <slideno>4</slideno>
+          <text>CancerCancer
+Problem:Problem:
+Toavoidchemotherapy.PeoplediefromtheToavoidchemotherapy.Peoplediefromthe
+treatmentratherthantheactualdisease.treatmentratherthantheactualdisease.
+Solution:Solution:
+LookingforamedicationthatdoesnotbringabouttheLookingforamedicationthatdoesnotbringaboutthe
+sideeffectsofcurrentchemotherapy.Lookingatthesideeffectsofcurrentchemotherapy.Lookingatthe
+signalingpathwaysandlookforanyabnormaluseofasignalingpathwaysandlookforanyabnormaluseofa
+singularpathway.Mappingthepathway,andthensingularpathway.Mappingthepathway,andthen
+turningitoff.turningitoff.</text>
+        </slide>
+        <slide>
+          <slideno>3</slideno>
+          <text>HepatitisCHepatitisC
+Problem:Problem:
+Aviraldiseasethatdestroystheliver.Aviraldiseasethatdestroystheliver.
+Solution:Solution:
+DestroytheproteinthatmakesupthevirusandthenDestroytheproteinthatmakesupthevirusandthen
+theviralinfectionwouldnotkilloffthelivercells.theviralinfectionwouldnotkilloffthelivercells.
+Comingupwithavaccine.Comingupwithavaccine.</text>
+        </slide>
+        <slide>
+          <slideno>0</slideno>
+          <text>CHRONICDISEASES
+Samira Daswani and anonymous students 
+PF, MK, NM, and CN</text>
+        </slide>
+        <slide>
+          <slideno>5</slideno>
+          <text>MIT OpenCourseWare
+http://ocw.mit.edu 
+20.020 Introduction to Biological Engineering Design 
+Spring 2009 
+For information about citing these materials or our Terms of Use, visit: http://ocw.mit.edu/terms .</text>
+        </slide>
+        <slide>
+          <slideno>1</slideno>
+          <text>DiabetesDiabetes
+PPrroobblelemm::
+JJuuvveenniilleeddiiaabbeetteessTTyyppee1,1,bbuuttaallssooTTyyppee22ddiiaabbeetteess..
+IIttiissddiiffffiiccuullttttoobbootthhddeetteeccttaannddiinnjjeeccttiinnssuulliinniinn
+cchhiillddrreenn..
+PPoossssibiblelessooluluttioionnss::
+DDeetteeccttiinnggbbllooooddssuuggaarrlleevveellssiinnaaccoonnvveenniieennttwwaayyss
+aannddiinnjjeeccttiinnggiinnssuulliinniinncchhiillddrreenn,,ssootthhaattiittiisslleessssooff
+aahhiinnddrraanncceettootthheeiirrlliivveess..</text>
+        </slide>
+        <slide>
+          <slideno>2</slideno>
+          <text>OrganFailureOrganFailure
+Problem:Problem:
+WWhenfixingoneorgan,youaresimultaneouslyhenfixingoneorgan,youaresimultaneously
+affectingotherorgans.affectingotherorgans.
+Solution:Solution:
+Artificialimmunesystem.IndependentmedicationArtificialimmunesystem.Independentmedication
+thatdoesnotdependontheimmunesystem.thatdoesnotdependontheimmunesystem.
+ReleasingReleasing iinterferonsnterferons toprotectcellsofothertoprotectcellsofother
+organs.organs.</text>
+        </slide>
+      </slides>
+      <videos/>
+    </lecture>
+    <lecture>
+      <lecture_title>          MIT20_020S09_lec12_wk12_tt.pdf
+        </lecture_title>
+      <lecture_pdf_url>https://ocw.mit.edu/courses/20-020-introduction-to-biological-engineering-design-spring-2009/resources/mit20_020s09_lec12_wk12_tt/</lecture_pdf_url>
+      <lectureno>40</lectureno>
+      <slides>
+        <slide>
+          <slideno>2</slideno>
+          <text>Structuring your talk 
+Designing your slides 
+Speaking tips 
+But all these tips are useless if you dont know 
+what you want to say</text>
+        </slide>
+        <slide>
+          <slideno>6</slideno>
+          <text>Structuring your talk 
+Designing your slides
+ 
+Speaking tips</text>
+        </slide>
+        <slide>
+          <slideno>23</slideno>
+          <text>MIT OpenCourseWare
+http://ocw.mit.edu 
+20.020 Introduction to Biological Engineering Design 
+Spring 2009 
+For information about citing these materials or our Terms of Use, visit: http://ocw.mit.edu/terms .</text>
+        </slide>
+        <slide>
+          <slideno>16</slideno>
+          <text>Structuring your talk
+ 
+Designing your slides
+ 
+Speaking tips</text>
+        </slide>
+        <slide>
+          <slideno>18</slideno>
+          <text>Structuring your talk
+ 
+Designing your slides
+ 
+Speaking tips 
+1. Speak to your audience 
+2. Remind them early and often
+ 
+W</text>
+        </slide>
+        <slide>
+          <slideno>7</slideno>
+          <text>Audience, Audience, Audience 
+Your slides are for ?. 
+helping you to remember what to say 
+1. Fourscoreandtwentyyearsa 
+go 
+2. Itwasthebestoftimesitwasth 
+eworstoftimes 
+3. Callmeishmael</text>
+        </slide>
+        <slide>
+          <slideno>15</slideno>
+          <text>Structuring your talk 
+Designing your slides 
+Speaking tips</text>
+        </slide>
+        <slide>
+          <slideno>21</slideno>
+          <text>Structuringyourtalk
+Designingyourslides
+Speakingtips
+Courtesy of Justin Lo. Used with permission.</text>
+        </slide>
+        <slide>
+          <slideno>13</slideno>
+          <text>Yuck 
+Courtesy Elsevier, Inc., http://www.sciencedirect.com. Used with permission. 
+ 
+Source: Colman-Lerner, A., T. E. Chin and R. Brent. "Yeast Cbk1 and
+ 
+Mob2 Activate Daughter-Specific Genetic Programs to Induce Asymmetric
+ 
+Cell Fates." Cell 107, no. 6 (2001): 739-750.</text>
+        </slide>
+        <slide>
+          <slideno>20</slideno>
+          <text>Structuring your talk 
+Designing your slides 
+Speaking tips 
+Courtesy of Justin Lo. Used with permission.</text>
+        </slide>
+        <slide>
+          <slideno>11</slideno>
+          <text>Audience, Audience, Audience 
+Your slides are for your audience 
+Memorable openings come 
+from a variety of sources 
+Figure by MIT OpenCourseWare. 
+Book cover image courtesy of 
+freeparking on Flickr. Dont annoy 
+your audience 
+with small 
+font!</text>
+        </slide>
+        <slide>
+          <slideno>9</slideno>
+          <text>Audience, Audience, Audience
+ 
+Your slides are for your audience 
+The most famous 
+opening lines are from 
+diverse sources Audience will read 
+including the Gettysburg or listen, not both 
+Address, A Tale of Two 
+Cities and Moby Dick. Famous openings 	 Title tells what but 
+not so what</text>
+        </slide>
+        <slide>
+          <slideno>0</slideno>
+          <text>Making your good
+ 
+presentations even better
+ 
+20.020 (S09)
+ 
+Thursday April 30th</text>
+        </slide>
+        <slide>
+          <slideno>14</slideno>
+          <text>Better
+ 
+Gene Protein 
+Location Log 
+phase Stationary 
+phase 
+CTS1 Cell wall Daughter Daughter 
+ASH1 Nucleus Mother and 
+Daughter Daughter 
+DSE1 Cytoplasm Daughter Daughter 
+Cell (2001) 107:739</text>
+        </slide>
+        <slide>
+          <slideno>1</slideno>
+          <text>Audience, Audience, Audience
+ 
+According to Drew, your audience has 3 types
+ 
+Images removed due to copyright restrictions. Box of Nerds candy, promotional logo for TV series "Lost," and a sleeping cat.</text>
+        </slide>
+        <slide>
+          <slideno>3</slideno>
+          <text>Structuring your talk 
+Designing your slides 
+Speaking tips 
+But all these tips are useless if you dont know 
+what you want to say</text>
+        </slide>
+        <slide>
+          <slideno>19</slideno>
+          <text>Structuring your talk
+ 
+Designing your slides
+ 
+Speaking tips 
+1. Speak to your audience 
+2. Remind them early and often 
+3. Show that you care 
+before: practice, check animations, 
+make backup, anticipate questions 
+during: stand/converse/stop (early!)</text>
+        </slide>
+        <slide>
+          <slideno>5</slideno>
+          <text>Structuring your talk 
+Designing your slides 
+Speaking tips</text>
+        </slide>
+        <slide>
+          <slideno>22</slideno>
+          <text>the end</text>
+        </slide>
+        <slide>
+          <slideno>12</slideno>
+          <text>Audience, Audience, Audience 
+Your slides are for your audience 
+Memorable openings come 
+from a variety of sources 
+Figure by MIT OpenCourseWare. Other annoyances: 
+hard to read colors 
+&gt;1 idea/slide 
+more data than possible 
+to discuss</text>
+        </slide>
+        <slide>
+          <slideno>17</slideno>
+          <text>Structuring your talk
+ 
+Designing your slides
+ 
+Speaking tips 
+1. Speak to your audience 
+Who are they? What do they know?
+ 
+What do they want to know?</text>
+        </slide>
+        <slide>
+          <slideno>8</slideno>
+          <text>Audience, Audience, Audience 
+Your slides are for your audience 
+Title: conveys information 
+Body  a written report!</text>
+        </slide>
+        <slide>
+          <slideno>4</slideno>
+          <text>The secret formula for all talks
+ 
+1. Tell what tell
+ 
+2. Tell why tell 
+3. Tell 
+4. Tell what told</text>
+        </slide>
+        <slide>
+          <slideno>10</slideno>
+          <text>Audience, Audience, Audience 
+Your slides are for your audience 
+Memorable openings come 
+from a variety of sources 
+Book cover image courtesy of 
+freeparking on Flickr. 
+Figure by MIT OpenCourseWare. Dont annoy your audience with 
+small font!</text>
+        </slide>
+      </slides>
+      <videos/>
+    </lecture>
+    <lecture>
+      <lecture_title>          Lego1.jpg
+        </lecture_title>
+      <lecture_pdf_url>https://ocw.mit.edu/courses/20-020-introduction-to-biological-engineering-design-spring-2009/resources/lego1/</lecture_pdf_url>
+      <lectureno>29</lectureno>
+      <slides/>
+      <videos/>
+    </lecture>
+    <lecture>
+      <lecture_title>          Legophoresis.jpg
+        </lecture_title>
+      <lecture_pdf_url>https://ocw.mit.edu/courses/20-020-introduction-to-biological-engineering-design-spring-2009/resources/legophoresis-1/</lecture_pdf_url>
+      <lectureno>34</lectureno>
+      <slides/>
+      <videos/>
+    </lecture>
+    <lecture>
+      <lecture_title>          MIT20_020S09_lec3_wk3_st3f.pdf
+        </lecture_title>
+      <lecture_pdf_url>https://ocw.mit.edu/courses/20-020-introduction-to-biological-engineering-design-spring-2009/resources/mit20_020s09_lec3_wk3_st3f/</lecture_pdf_url>
+      <lectureno>45</lectureno>
+      <slides>
+        <slide>
+          <slideno>5</slideno>
+          <text>MIT OpenCourseWare
+http://ocw.mit.edu 
+20.020 Introduction to Biological Engineering Design 
+Spring 2009 
+For information about citing these materials or our Terms of Use, visit: http://ocw.mit.edu/terms .</text>
+        </slide>
+        <slide>
+          <slideno>4</slideno>
+          <text>Engineering
+Whichorganisms
+Whichpathways
+WhattypesofDNAtechnologytouse
+Level/completenessofgeneticmodification
+Completegenomereengineering
+Smallmodifications/transgenics</text>
+        </slide>
+        <slide>
+          <slideno>3</slideno>
+          <text>Issues
+Whichisthemostimportantgoal/canwe
+achieveboth
+Emissions
+EnergyIndependence
+Cost/Efficiency
+Wanttomaximizeoutputvs.input
+Hastobesufficientlybetterthancurrentoptions
+tojustifylikelyincreaseincosts</text>
+        </slide>
+        <slide>
+          <slideno>0</slideno>
+          <text>BiologicallyEngineeredBiofuels
+by Ragheb El Khaja and Abi Jain</text>
+        </slide>
+        <slide>
+          <slideno>1</slideno>
+          <text>Problems
+Lackofrenewableenergysources
+Risinggreenhousegasemissionsandglobal
+warming</text>
+        </slide>
+        <slide>
+          <slideno>2</slideno>
+          <text>Proposedsolutions
+Canusegeneticallyengineeredalgae,bacteria,or
+plants
+Producevarioustypesoffuelssuchas
+Biodiesel
+Ethanol
+Jetfuels
+Hydrogen
+Otherhydrocarbonsthatcanbemoreeasilyblended
+intoexistingfuelsthanethanolandothercurrentoptions</text>
+        </slide>
+      </slides>
+      <videos/>
+    </lecture>
+    <lecture>
+      <lecture_title>          lytic_phage.jpg
+        </lecture_title>
+      <lecture_pdf_url>https://ocw.mit.edu/courses/20-020-introduction-to-biological-engineering-design-spring-2009/resources/lytic_phage/</lecture_pdf_url>
+      <lectureno>35</lectureno>
+      <slides/>
+      <videos/>
+    </lecture>
+    <lecture>
+      <lecture_title>          Lego4.jpg
+        </lecture_title>
+      <lecture_pdf_url>https://ocw.mit.edu/courses/20-020-introduction-to-biological-engineering-design-spring-2009/resources/lego4/</lecture_pdf_url>
+      <lectureno>32</lectureno>
+      <slides/>
+      <videos/>
+    </lecture>
+    <lecture>
+      <lecture_title>          TetRgene.jpg
+        </lecture_title>
+      <lecture_pdf_url>https://ocw.mit.edu/courses/20-020-introduction-to-biological-engineering-design-spring-2009/resources/tetrgene/</lecture_pdf_url>
+      <lectureno>64</lectureno>
+      <slides/>
+      <videos/>
+    </lecture>
+    <lecture>
+      <lecture_title>          MIT20_020S09_lec1_rvw2_phg.pdf
+        </lecture_title>
+      <lecture_pdf_url>https://ocw.mit.edu/courses/20-020-introduction-to-biological-engineering-design-spring-2009/resources/mit20_020s09_lec1_rvw2_phg/</lecture_pdf_url>
+      <lectureno>37</lectureno>
+      <slides>
+        <slide>
+          <slideno>17</slideno>
+          <text>Temperate bacteriophage lambda
+ 
+INFECT 
+REPLICA TE RELEASE 
+Some great ??s the Heidelberg team asked: 
+Can we infect prey from lysogen (=predator)? 
+Can we keep lysogen from lysing itself? 
+Can we monitor lysis and lysogeny? 
+ASSEMBLE Image courtesy of Gary Kaiser. Used with permission.</text>
+        </slide>
+        <slide>
+          <slideno>4</slideno>
+          <text>Temperate bacteriophage lambda
+ 
+INFECT 
+lytic
+REPLICA TE RELEASE 
+ASSEMBLE Image courtesy of Gary Kaiser. Used with permission. 
+See http://escience.ws/b572/L17/L17.htm</text>
+        </slide>
+        <slide>
+          <slideno>8</slideno>
+          <text>Temperate bacteriophage lambda
+ 
+INFECT 
+REPLICA TE RELEASE 
+Some great ??s the Heidelberg team asked: 
+Can we infect prey from lysogen (=predator)? 
+Can we keep lysogen from lysing itself? 
+Can we monitor lysis and lysogeny? 
+ASSEMBLE Image courtesy of Gary Kaiser. Used with permission.</text>
+        </slide>
+        <slide>
+          <slideno>13</slideno>
+          <text>Temperate bacteriophage lambda
+ 
+INFECT 
+REPLICA TE RELEASE 
+Some great ??s the Heidelberg team asked: 
+Can we infect prey from lysogen (=predator)? 
+Can we keep lysogen from lysing itself? 
+Can we monitor lysis and lysogeny? 
+ASSEMBLE
+ 
+Image courtesy of Gary Kaiser. Used with permission.</text>
+        </slide>
+        <slide>
+          <slideno>14</slideno>
+          <text>Genetically programmed bi-stable switch
+ 
+natural context: epigenetic regulation
+ 
+Diagram removed due to copyright restrictions.
+ lacI
+.
+
+ 
+"Design of ." Fig. 1A and B in Atsumi, S., and J. W. Little. 
+ 
+"Regulatory Circuit Design and Evolution Using Phage " 
+ 
+Genes &amp; Dev 18 (2004): 2086-2094.
+ lysogeny 
+http://dx.doi.org/10.1101/gad.1226004 
+lysis</text>
+        </slide>
+        <slide>
+          <slideno>23</slideno>
+          <text>Predator cell
+ 
+stable lysogen that infects by conjugation
+ 
++ CamR 
++ GFP to follow process</text>
+        </slide>
+        <slide>
+          <slideno>6</slideno>
+          <text>Temperate bacteriophage lambda
+ 
+INFECT 
+REPLICA TE RELEASE 
+Some great ??s 
+What guides lytic/lysogenic decision? 
+What keeps lysogen stable? 
+What triggers lysogen to lytic cycle? 
+ASSEMBLE Image courtesy of Gary Kaiser. Used with permission.</text>
+        </slide>
+        <slide>
+          <slideno>15</slideno>
+          <text>Genetically programmed bi-stable switch
+ 
+iGEM context: ip and hold in one state
+ 
+lysogeny 
+promoter RBS cI ORF transcriptional 
+terminator 
+Diagram removed due to copyright restrictions. 
+"Design of Lambda lacI." Fig. 1B in Atsumi, S., and J. W. Little. "Regulatory Circuit Design and Evolution using Phage Lambda." Genes &amp; Dev 18 (2004): 2086-2094. http://dx.doi.org/10.1101/gad.1226004</text>
+        </slide>
+        <slide>
+          <slideno>10</slideno>
+          <text>Genetically programmed infection
+ 
+iGEM context: phage infection via conjugation
+ 
+Courtesy of AJC1  on Flickr. 	 http://escience.ws/
+b572/L18/L18.htm 
+Courtesy of Stan Metzenberg. 
+Used with permission. 
+Courtesy of DKFZ/Univ. Heidelberg/iGEM Team Heidelberg. Used with permission.</text>
+        </slide>
+        <slide>
+          <slideno>20</slideno>
+          <text>Fluorescence vs &#13;bioluminescence
+ 
+Courtesy of Steven Haddock. Used with permission. Source: Haddock, S.H.D.; McDougall, C.M.; Case, J.F. 
+"The Bioluminescence Web Page", (created 1997; updated 2007; accessed Fall 2007). 
+http://www .lifesci.ucsb.edu/~biolum/chem/ 
+Image removed due to copyright restrictions. See Figure 4 in 
+Schauder, S., and B. L. Bassler. " The Languages of Bacteria." 
+Genes &amp; Dev 15: (2001) 1468-1480 . 
+Green fluorescent protein (GFP), 
+courtesy of RCSB Protein Data Bank.</text>
+        </slide>
+        <slide>
+          <slideno>3</slideno>
+          <text>Transduction by bacteriophage
+ 
+Bacteriophage: viruses
+that infect bacteria 
+Protein coat 
+ 
+encapsulates
+ 
+nucleic acids
+ 
+Image of bacteriophage removed due to copyright restrictions. 
+See Phage Biotechnology website, http://www.phagebiotech.com. 
+REPLICA TE RELEASE INFECT 
+ASSEMBLE</text>
+        </slide>
+        <slide>
+          <slideno>2</slideno>
+          <text>DNA transfer
+ natural context: 3 mechanisms
+ 
+Courtesy of Fan Sozzi-Guo. Used with permission.</text>
+        </slide>
+        <slide>
+          <slideno>16</slideno>
+          <text>Temperate bacteriophage lambda
+ 
+INFECT 
+REPLICA TE RELEASE 
+Some great ??s the Heidelberg team asked: 
+Can we infect prey from lysogen (=predator)? 
+Can we keep lysogen from lysing itself? 
+Can we monitor lysis and lysogeny? 
+ASSEMBLE Image courtesy of Gary Kaiser. Used with permission.</text>
+        </slide>
+        <slide>
+          <slideno>7</slideno>
+          <text>Temperate bacteriophage lambda
+ 
+INFECT 
+REPLICA TE RELEASE 
+Some great ??s the Heidelberg team asked: 
+Can we infect prey from lysogen (=predator)? 
+Can we keep lysogen from lysing itself? 
+Can we monitor lysis and lysogeny? 
+ASSEMBLE Image courtesy of Gary Kaiser. Used with permission.</text>
+        </slide>
+        <slide>
+          <slideno>9</slideno>
+          <text>Genetically programmed infection
+ 
+iGEM context: phage infection via conjugation
+ 
+Courtesy of Fan Sozzi-Guo. Used with permission.</text>
+        </slide>
+        <slide>
+          <slideno>21</slideno>
+          <text>One last thing about uorescence
+ 
+Green fluorescent protein (GFP), 
+courtesy of RCSB Protein Data Bank. 
+Image removed due to copyright restrictions.
+Agar plate of fluorescent bacteria colonies, forming 
+a beach scene, from lab of Roger Tsien, UCSD.
+http://www.tsienlab.ucsd.edu/HTML/Images/IMAGE
+%20-%20PLATE%20-%20Beach.jpg
+Image removed due to copyright restrictions.
+ 
+Figure 1 in Patterson, G., R. N. Day, and D. Piston.
+ 
+"Fluorescent Protein Spectra." Journal of Cell Science
+ 
+114 (2001): 837-838.
+ 
+High resolution PDF poster available at 
+ 
+http://jcs.biologists.org/cgi/data/114/5/837/DC1/1</text>
+        </slide>
+        <slide>
+          <slideno>19</slideno>
+          <text>Fluorescence vs &#13;bioluminescence
+ 
+Courtesy of Steven Haddock. Used with permission. Source: Haddock, S.H.D.; McDougall, C.M.; Case, J.F. 
+"The Bioluminescence Web Page", (created 1997; updated 2007; accessed Fall 2007). 
+http://www .lifesci.ucsb.edu/~biolum/chem/ 
+Image removed due to copyright restrictions. See Figure 4 in 
+Schauder, S., and B. L. Bassler. " The Languages of Bacteria ." 
+Genes &amp; Dev 15: (2001) 1468-1480 . 
+Green fluorescent protein (GFP), 
+courtesy of RCSB Protein Data Bank.</text>
+        </slide>
+        <slide>
+          <slideno>24</slideno>
+          <text>MIT OpenCourseWare
+http://ocw.mit.edu 
+20.020 Introduction to Biological Engineering Design 
+Spring 2009 
+For information about citing these materials or our Terms of Use, visit: http://ocw.mit.edu/terms .</text>
+        </slide>
+        <slide>
+          <slideno>1</slideno>
+          <text>Heidelburg iGEM 2008:
+ 
+ecolicense to kill
+ 
+Part 2: DNA  transfer , genetically 
+ 
+programmed self-assembly and parts
+ 
+Courtesy of DKFZ/Univ. Heidelberg/iGEM Team Heidelberg. Used with permission. 
+Background information</text>
+        </slide>
+        <slide>
+          <slideno>12</slideno>
+          <text>Genetically programmed infection
+ 
+iGEM context: phage infection via conjugation
+ 
+What parts are needed 
+Pilus.  F 
+Origin for transfer oriT 
+Selectable marker CamR 
+F oriT CamR 
+Part is a genetically-encoded,
+human dened function I714030 
+Courtesy of DKFZ/Univ. Heidelberg/iGEM Team Heidelberg. Used with permission.</text>
+        </slide>
+        <slide>
+          <slideno>5</slideno>
+          <text>Temperate bacteriophage lambda
+ 
+INFECT 
+lytic
+REPLICA TE RELEASE 
+lysogenic
+ASSEMBLE 
+Image courtesy of Gary Kaiser. Used with permission.</text>
+        </slide>
+        <slide>
+          <slideno>22</slideno>
+          <text>Genetically programmed infection
+ 
+iGEM context: phage infection via conjugation
+ 
+What parts are needed
+ 
+Pilus.  F 
+Origin for transfer oriT 
+Selectable marker CamR 
+Stable lysogen  cI 
+Moniter GFP 
+F oriT CamR 
+Courtesy of DKFZ/Univ. Heidelberg/iGEM Team Heidelberg. Used with permission.</text>
+        </slide>
+        <slide>
+          <slideno>18</slideno>
+          <text>Fluorescence vs &#13;bioluminescence
+ 
+Courtesy of Bonnie Bassler. Used with permission. 
+Image removed due to copyright restrictions. See Figure 4 in 
+ 
+Schauder, S., and B. L. Bassler. " The Languages of Bacteria ." 
+ 
+Genes &amp; Dev 15 (2001): 1468-1480.
+ . 
+Green fluorescent protein (GFP), 
+courtesy of RCSB Protein Data Bank.</text>
+        </slide>
+        <slide>
+          <slideno>11</slideno>
+          <text>Genetically programmed infection
+ 
+iGEM context: phage infection via conjugation
+ 
+What parts are needed 
+Pilus.  F 
+Origin for transfer oriT 
+Selectable marker CamR 
+Model predicts: 10 killer cells kill 
+10^9 prey cells in silico F oriT CamR 
+Part is a genetically-encoded,
+human dened function 
+Courtesy of DKFZ/Univ. Heidelberg/iGEM Team Heidelberg. Used with permission.</text>
+        </slide>
+        <slide>
+          <slideno>0</slideno>
+          <text>Lambda phage killing: 
+ 
+infection and parts
+ 
+N Kuldell for 20.020
+ 
+Spring 2009</text>
+        </slide>
+      </slides>
+      <videos/>
+    </lecture>
+    <lecture>
+      <lecture_title>          NOTdigitaltransfercurve.jpg
+        </lecture_title>
+      <lecture_pdf_url>https://ocw.mit.edu/courses/20-020-introduction-to-biological-engineering-design-spring-2009/resources/notdigitaltransfercurve/</lecture_pdf_url>
+      <lectureno>50</lectureno>
+      <slides/>
+      <videos/>
+    </lecture>
+    <lecture>
+      <lecture_title>          BBa_J45200.gif
+        </lecture_title>
+      <lecture_pdf_url>https://ocw.mit.edu/courses/20-020-introduction-to-biological-engineering-design-spring-2009/resources/bba_j45200/</lecture_pdf_url>
+      <lectureno>5</lectureno>
+      <slides/>
+      <videos/>
+    </lecture>
+    <lecture>
+      <lecture_title>          MIT20_020S09_lec3_wk3_st4h.pdf
+        </lecture_title>
+      <lecture_pdf_url>https://ocw.mit.edu/courses/20-020-introduction-to-biological-engineering-design-spring-2009/resources/mit20_020s09_lec3_wk3_st4h/</lecture_pdf_url>
+      <lectureno>46</lectureno>
+      <slides>
+        <slide>
+          <slideno>5</slideno>
+          <text>Drug Mail 
+Problem: 
+How to target and 
+deliver drugs, 
+enzymes, etc to 
+specific, long-lived 
+cells. 
+Solutions: 
+Develop a 
+delivery 
+mechanism with 
+the use of 
+receptor-studded 
+vesicles</text>
+        </slide>
+        <slide>
+          <slideno>2</slideno>
+          <text>Is it all in your head? 
+Problem: 
+Anorexia causes a 
+skewed perception 
+of ones self and 
+can lead to 
+physical self-
+destruction. 
+Solutions: 
+Alter pathways in the 
+brain 
+Seek out potential 
+chemical imbalances 
+(treatments similar to 
+depression) 
+Dual approach: social 
+and biological 
+treatments</text>
+        </slide>
+        <slide>
+          <slideno>4</slideno>
+          <text>Hunting For a Cure 
+Problem: 
+Huntington s 
+Disease causes 
+mental and 
+physical 
+deterioration and 
+usually has a late 
+onset. 
+Solutions: 
+Increase genetic 
+testing and counseling 
+Genetic manipulation 
+(including epigenetic 
+silencing and control 
+of nucleotide 
+repetition)</text>
+        </slide>
+        <slide>
+          <slideno>3</slideno>
+          <text>Forget Me Not 
+Problem: 
+Memory loss 
+associated with 
+diseases such as 
+Alzheimer s and 
+senile dementia. 
+Solutions: 
+Reduce chemical 
+imbalances (change diet) 
+Target neurotransmitters 
+and their brain pathways 
+(Ach) 
+Genetic screening to 
+prevent/slow the onset of 
+memory loss 
+Target proteins in the brain</text>
+        </slide>
+        <slide>
+          <slideno>1</slideno>
+          <text>Work Like an Ant 
+Problem: 
+Sleep is a waste of 
+time and reduces 
+productivity 
+Potential Applications: 
+military, college 
+students, etc. 
+Solution: 
+Control sleep 
+cycles 
+Long-term 
+alterations 
+(genetic 
+modifications) 
+ Continuous 
+chemical 
+treatments</text>
+        </slide>
+        <slide>
+          <slideno>0</slideno>
+          <text>Bettering the Human 
+Condition 
+A Neurobiological Approach 
+Anonymous students PF, CN, and DZ</text>
+        </slide>
+        <slide>
+          <slideno>6</slideno>
+          <text>MIT OpenCourseWare
+http://ocw.mit.edu 
+20.020 Introduction to Biological Engineering Design 
+Spring 2009 
+For information about citing these materials or our Terms of Use, visit: http://ocw.mit.edu/terms .</text>
+        </slide>
+      </slides>
+      <videos/>
+    </lecture>
+    <lecture>
+      <lecture_title>courses/20-020-introduction-to-biological-engineering-design-spring-2009/resources/mit20_020s09_lec2_wk2_stus</lecture_title>
+      <lecture_pdf_url>https://ocw.mit.edu/courses/20-020-introduction-to-biological-engineering-design-spring-2009/resources/mit20_020s09_lec2_wk2_stus/</lecture_pdf_url>
+      <lectureno>5</lectureno>
+      <slides>
+        <slide>
+          <slideno>1</slideno>
+          <text>DD: Biologys not too com plicated f or me! (maybe a type of overconfident/under 
+informed/arrogant voice, 
+Maybe have DD imagine himself and bacterial bu bbles at next years com petition, in his 
+mind they travel from the lab to what DD pict ures the next jamboree to be like: show 
+Stata center (image below)  then a great audito rium where DD is dressed in a suit and tie 
+answering the question from the front of th e hall, maybe with the goals on a powerpoint 
+slide behind DD and bacterial bubble at the podium to reinforce question/goals both 
+verbally and visually. Text here  is for  hall if its n eeded DD, in overly professional voice: 
+The goals of this com petition are to enable  systematic engineering of bio logy, prom ote 
+open and transparent developm ent of tools fo r engineering biology, and help construct a 
+society that can productively apply biological technology.  
+(As Dude is voicing the goals, he co uld ch eck th em off as a ccomplished  with a smug 
+smile of ach ievement .) 
+DD ( out of dreammaybe with bacterial balloon popping ): OK, Ive got a lot of work 
+ahead of m e.  If were not going to use m y bubbl e idea, what else is possible? 
+SS: Maybe a better question would be what isnt possible. 
+DD: Ok, so first off: W hat should our standa rd, interchangeable part be?  Actually, w hat 
+parts exist? Do we have to m ake those? 
+SS: Youll probably need m ore than one but the Registry of Standard Biological Parts is a 
+great resource with lots of pa rts already designed. And if we  make parts of our own, we 
+should add them  to the Registry in case other team s can use them  too.  
+DD: ( surprised ) And help the other team s? What kind of competition is that?  (then it 
+makes sense ) Or is that how so m any team s got cool  projects going last year? : Pleasant 
+smelling bacteria ( note on smells: the project made  bacteria smell like bananas or 
+wintergreen ), a bacterial night-light, a DNA drug  delivery system . I heard one team  even 
+made up bac terial freeze tag! To beat t hose, we should get started right now! 
+SS: Alright well le ts brainsto rm for a little wh ile before I have to get back to work. How 
+does that sound? 
+DD: Great! Can you show m e this Registry?  Maybe we can find som e good parts to use! 
+SS: Good idea, Dude. Lets start there. ( show the computer screen  of the registry main 
+page and fade out, maybe faded voices, for in stance wow! I like that, could we use 
+that? or more basic like Sally saying, This is where youll be able to search)</text>
+        </slide>
+        <slide>
+          <slideno>0</slideno>
+          <text>20.020  Week 2 Studio 
+iGEM v4 Script 
+Sally is just working in her lab when DD comes running in waving a piece of paper. 
+SS: Dude! No running in the laboratory. 
+DD: Sorry Sally, but h ave you heard about this  competition ? Its called iGEM and I think 
+my bacterial bubble could totally win this year. 
+SS: I thought you were done  with bacterial bubbles. (an imagination bubble from SS with 
+the bacterial balloon floating up in  it so that people know what  DDs idea is, incase they 
+havent read the comic book) What do you know about iGEM? 
+DD: Uh, not m uch, except that theres going to be a bunch of losers  and m e. 
+SS: I dont think you understand the nature of this com petitio n.  iGEM, the Internation al 
+Genetically Engineered Machine Co mpetiti on, is  a way to get young scien tists and 
+engineers working together to engineer biological system s.  
+DD: W orking togethe r? Wheres the com petitive spirit in that?  The Dude  works alone .  
+That way, the Dude ge ts all th e cred it. 
+SS: You need to be a mem ber of a t eam to join iGEM, and you need a professor to lead 
+it. 
+DD: But I heard it was a student com petition? 
+SS: Well, yes.  The co mpetition s tarted in 200 4 based on an undergrad uate class 
+developed at MIT in 2003 for their short wi nter session, and it continues to be an 
+undergraduate experience. But not without guid ance and support.  Last year there were 
+more than thirty team s who com peted, from  all over the world. 
+(Maybe one frame from the 2006 Jamboree t hat could be based on a photograph on the 
+wiki? Or maybe integ rate a still o f the aerial sh ot below? Eg 
+http://www.igem2006.com/meet.htm ) 
+DD: So thats  my com petition?  Thats a lot of people. 
+SS: A lot of people, all asking the sam e question. Can sim ple biological system s be 
+built from  standard, in terchangeable parts a nd op erate in livin g cells ? Or is biology 
+simply too com plicated to be engineer ed in this w ay?  What do you think?</text>
+        </slide>
+        <slide>
+          <slideno>2</slideno>
+          <text>http://jamesmuspratt.com/images/338.jpg</text>
+        </slide>
+        <slide>
+          <slideno>3</slideno>
+          <text>MIT OpenCourseWare 
+http://ocw.mit.edu 
+20.020  Introduction to Biological Engineering Design 
+Spring 2009 
+For information about citing these materials or our Terms of Use, visit: http://ocw.mit.edu/terms .</text>
+        </slide>
+      </slides>
+      <videos/>
+    </lecture>
+    <lecture>
+      <lecture_title>courses/20-020-introduction-to-biological-engineering-design-spring-2009/resources/mit20_020s09_lec3_wk3_st5d</lecture_title>
+      <lecture_pdf_url>https://ocw.mit.edu/courses/20-020-introduction-to-biological-engineering-design-spring-2009/resources/mit20_020s09_lec3_wk3_st5d/</lecture_pdf_url>
+      <lectureno>11</lectureno>
+      <slides>
+        <slide>
+          <slideno>4</slideno>
+          <text>CancerCancer
+Problem:Problem:
+Toavoidchemotherapy.PeoplediefromtheToavoidchemotherapy.Peoplediefromthe
+treatmentratherthantheactualdisease.treatmentratherthantheactualdisease.
+Solution:Solution:
+LookingforamedicationthatdoesnotbringabouttheLookingforamedicationthatdoesnotbringaboutthe
+sideeffectsofcurrentchemotherapy.Lookingatthesideeffectsofcurrentchemotherapy.Lookingatthe
+signalingpathwaysandlookforanyabnormaluseofasignalingpathwaysandlookforanyabnormaluseofa
+singularpathway.Mappingthepathway,andthensingularpathway.Mappingthepathway,andthen
+turningitoff.turningitoff.</text>
+        </slide>
+        <slide>
+          <slideno>3</slideno>
+          <text>HepatitisCHepatitisC
+Problem:Problem:
+Aviraldiseasethatdestroystheliver.Aviraldiseasethatdestroystheliver.
+Solution:Solution:
+DestroytheproteinthatmakesupthevirusandthenDestroytheproteinthatmakesupthevirusandthen
+theviralinfectionwouldnotkilloffthelivercells.theviralinfectionwouldnotkilloffthelivercells.
+Comingupwithavaccine.Comingupwithavaccine.</text>
+        </slide>
+        <slide>
+          <slideno>0</slideno>
+          <text>CHRONICDISEASES
+Samira Daswani and anonymous students 
+PF, MK, NM, and CN</text>
+        </slide>
+        <slide>
+          <slideno>5</slideno>
+          <text>MIT OpenCourseWare
+http://ocw.mit.edu 
+20.020 Introduction to Biological Engineering Design 
+Spring 2009 
+For information about citing these materials or our Terms of Use, visit: http://ocw.mit.edu/terms .</text>
+        </slide>
+        <slide>
+          <slideno>1</slideno>
+          <text>DiabetesDiabetes
+PPrroobblelemm::
+JJuuvveenniilleeddiiaabbeetteessTTyyppee1,1,bbuuttaallssooTTyyppee22ddiiaabbeetteess..
+IIttiissddiiffffiiccuullttttoobbootthhddeetteeccttaannddiinnjjeeccttiinnssuulliinniinn
+cchhiillddrreenn..
+PPoossssibiblelessooluluttioionnss::
+DDeetteeccttiinnggbbllooooddssuuggaarrlleevveellssiinnaaccoonnvveenniieennttwwaayyss
+aannddiinnjjeeccttiinnggiinnssuulliinniinncchhiillddrreenn,,ssootthhaattiittiisslleessssooff
+aahhiinnddrraanncceettootthheeiirrlliivveess..</text>
+        </slide>
+        <slide>
+          <slideno>2</slideno>
+          <text>OrganFailureOrganFailure
+Problem:Problem:
+WWhenfixingoneorgan,youaresimultaneouslyhenfixingoneorgan,youaresimultaneously
+affectingotherorgans.affectingotherorgans.
+Solution:Solution:
+Artificialimmunesystem.IndependentmedicationArtificialimmunesystem.Independentmedication
+thatdoesnotdependontheimmunesystem.thatdoesnotdependontheimmunesystem.
+ReleasingReleasing iinterferonsnterferons toprotectcellsofothertoprotectcellsofother
+organs.organs.</text>
+        </slide>
+      </slides>
+      <videos/>
+    </lecture>
+    <lecture>
+      <lecture_title>courses/20-020-introduction-to-biological-engineering-design-spring-2009/resources/mit20_020s09_lec1_wk1_orntn</lecture_title>
+      <lecture_pdf_url>https://ocw.mit.edu/courses/20-020-introduction-to-biological-engineering-design-spring-2009/resources/mit20_020s09_lec1_wk1_orntn/</lecture_pdf_url>
+      <lectureno>3</lectureno>
+      <slides>
+        <slide>
+          <slideno>24</slideno>
+          <text>Wednesdays 
+2-5 3 ideas 
+presentation</text>
+        </slide>
+        <slide>
+          <slideno>10</slideno>
+          <text>Postcards &amp; snapshots so far
+ 
+genome re-
+ 
+engineering 
+ 
+DNA based 
+memory 
+Courtesy of the authors. License: Creative Commons attribution.</text>
+        </slide>
+        <slide>
+          <slideno>28</slideno>
+          <text></text>
+        </slide>
+        <slide>
+          <slideno>12</slideno>
+          <text>Postcards &amp; snapshots so far
+ 
+genome re-
+ 
+engineering
+ 
+DNA based 
+memory 
+logic 
+engineering 
+circuit 
+engineering</text>
+        </slide>
+        <slide>
+          <slideno>21</slideno>
+          <text>Tuesdays/Thursdays
+ 
+Start with challenge/puzzle/activity 
+Follow-up with group discussion 
+Occasional homework</text>
+        </slide>
+        <slide>
+          <slideno>9</slideno>
+          <text>Postcards &amp; snapshots so far
+ 
+genome re-
+engineering 
+Science 310, no. 5475 (October 7, 2005): 77-80.</text>
+        </slide>
+        <slide>
+          <slideno>30</slideno>
+          <text>the end</text>
+        </slide>
+        <slide>
+          <slideno>16</slideno>
+          <text>Postcards &amp; snapshots so far
+ 
+genome re-
+ 
+engineering
+ 
+DNA based 
+memory 
+logic 
+engineering 
+circuit 
+engineering 
+system 
+engineering 
+biomaterials
+ 
+engineering
+ Courtesy of Paul W. K. Rothemund. Used with permission.</text>
+        </slide>
+        <slide>
+          <slideno>29</slideno>
+          <text>any ???s
+ 
+Lets get building!!!</text>
+        </slide>
+        <slide>
+          <slideno>14</slideno>
+          <text>Postcards &amp; snapshots so far
+ 
+genome re-
+ 
+engineering
+ 
+DNA based 
+memory 
+logic 
+engineering 
+circuit 
+engineering 
+system 
+engineering 
+Courtesy of Christopher A. Voigt. Used with permission.</text>
+        </slide>
+        <slide>
+          <slideno>6</slideno>
+          <text>Whats new: Application of
+ 
+engineering principles to biology
+ 
+Courtesy of Vincent Rouilly. Used with permission.</text>
+        </slide>
+        <slide>
+          <slideno>23</slideno>
+          <text>Wednesdays 
+2-5</text>
+        </slide>
+        <slide>
+          <slideno>22</slideno>
+          <text>How can biology be made easier to engineer? 
+What are the consequences of success? 
+How has nature solved physical challenges? 
+In what ways does nature innovate?</text>
+        </slide>
+        <slide>
+          <slideno>18</slideno>
+          <text>What youll work on
+ 
+1. design a plausible and compelling synthetic biological system
+ 
+2. develop a detailed design plan and construction roadmap 
+3. evaluate ownership, commercial, ethical aspects of the project
+ 
+Courtesy of Justin Lo. Used with permission.</text>
+        </slide>
+        <slide>
+          <slideno>26</slideno>
+          <text>Project 
+ 3 ideas presentation
+ 
+ Tech spec review 
+ Final presentation 
+60%, team grades</text>
+        </slide>
+        <slide>
+          <slideno>31</slideno>
+          <text>MIT OpenCourseWare
+http://ocw.mit.edu 
+20.020 Introduction to Biological Engineering Design 
+Spring 2009 
+For information about citing these materials or our Terms of Use, visit: http://ocw.mit.edu/terms .</text>
+        </slide>
+        <slide>
+          <slideno>19</slideno>
+          <text>What youll learn (I think)</text>
+        </slide>
+        <slide>
+          <slideno>13</slideno>
+          <text>Postcards &amp; snapshots so far
+ 
+genome re-
+ 
+engineering
+ 
+DNA based 
+memory 
+logic 
+engineering 
+circuit 
+engineering 
+ Source: Nature Biotechnology 21 (2003): 796-802.</text>
+        </slide>
+        <slide>
+          <slideno>1</slideno>
+          <text>2020: Futurists 
+Freeman Dyson writes: 
+"Biotechnology will become as domesticated as computer
+games and children and housewives will create their new
+animal and plant species at home.  
+Photo of Freeman Dyson 
+ 
+removed due to copyright restrictions. 
+ 
+Quack? Genius?</text>
+        </slide>
+        <slide>
+          <slideno>15</slideno>
+          <text>Postcards &amp; snapshots so far
+ 
+genome re-
+ 
+engineering
+ 
+DNA based 
+memory 
+logic 
+engineering Image removed due to copyright restrictions. 
+See: http://www.technologyreview.com/tr35/Profile.aspx?TRID=601 
+circuit 
+engineering 
+system 
+engineering</text>
+        </slide>
+        <slide>
+          <slideno>20</slideno>
+          <text></text>
+        </slide>
+        <slide>
+          <slideno>5</slideno>
+          <text>a scientist clad in white 
+spools threads of DNA onto a 
+glass rod. He is about to treat 
+it with enzymes, then insert it 
+into E. coli, endowing the 
+microbe with powers nature 
+never gave it.  
+Image removed due to copyright restrictions. 
+Page image from McAuliffe, K., and S. McAuliffe. "The Gene Trust." Omni Magazine, February, 1980.</text>
+        </slide>
+        <slide>
+          <slideno>11</slideno>
+          <text>Postcards &amp; snapshots so far
+ 
+genome re-
+ 
+engineering
+ 
+DNA based 
+memory 
+logic 
+engineering</text>
+        </slide>
+        <slide>
+          <slideno>2</slideno>
+          <text>2020: Futurists 
+Freeman Dyson writes: 
+"Biotechnology will become as domesticated as computer
+games and children and housewives will create their new
+animal and plant species at home. 
+Photo of Freeman Dyson 
+removed due to copyright restrictions. 
+Quack? Genius? 
+MIT Human Ecology Design team
+ 
+Courtesy of Mitchell Joachim. Used with permission. See http://www.archinode.com/bienal.html.</text>
+        </slide>
+        <slide>
+          <slideno>8</slideno>
+          <text>Postcards &amp; snapshots so far
+ 
+genome re-
+engineering 
+Science 319, no. 5867 (Feb 29, 2008): 1215-20.</text>
+        </slide>
+        <slide>
+          <slideno>7</slideno>
+          <text>Postcards &amp; snapshots so far
+ 
+genome re-
+ 
+engineering 
+ 
+Images removed due to copyright restrictions.
+ 
+See Chan, L. Y., S. Kosuri, and D. Endy. "Refactoring bacteriophage T7."
+ 
+Mol Syst Biol 1 (2005): 0018. PMCID: PMC1681472.
+ 
+http://www.ncbi.nlm.nih.gov/pmc/articles/PMC1681472/</text>
+        </slide>
+        <slide>
+          <slideno>0</slideno>
+          <text>Courtesy of Justin Lo. Used with permission. 
+Natalie Kuldell
+ 
+February 3rd, 2009</text>
+        </slide>
+        <slide>
+          <slideno>3</slideno>
+          <text>2020: Historians
+ 
+Image removed due to copyright restrictions.
+ 
+Cover of Omni Magazine, Feburary 1980.
+ See http://www.physics.emory.edu/~weeks/sea/omni/800204.htm</text>
+        </slide>
+        <slide>
+          <slideno>17</slideno>
+          <text>Postcards &amp; snapshots so far
+ 
+genome re-
+ 
+engineering
+ 
+DNA based 
+memory 
+logic 
+engineering 
+circuit 
+engineering 
+system 
+Courtesy of the League of Imaginary Scientists. Used with permission. engineering 
+biomaterials
+ 
+engineering</text>
+        </slide>
+        <slide>
+          <slideno>25</slideno>
+          <text>Wednesdays 
+2-5 
+Tech spec
+review</text>
+        </slide>
+        <slide>
+          <slideno>4</slideno>
+          <text>a sophisticated 
+computer at your 
+fingertips  
+20 lb 
+16K RAM 
+Built in thermal 
+printer 
+Operating system 
+and BASIC language 
+in ROM Image removed due to copyright restrictions. 
+Advertisement from same Omni Magazine issue (1980) 
+for the Hewlett-Packard HP-85 "personal-professional" computer. See http://oldcomputers.net/ads/80s/hp-85.jpg</text>
+        </slide>
+        <slide>
+          <slideno>27</slideno>
+          <text>Project 
+ 3 ideas presentation 
+ Tech spec review 
+ Final presentation 
+60%, team grades Personal Design Portfolio
+ 25%, individual grades 
+Project Development Ntbk 
+10%, team grades 
+Instructor Leverage
+ 5%, individual grades</text>
+        </slide>
+      </slides>
+      <videos/>
+    </lecture>
+    <lecture>
+      <lecture_title>          Intro1EcolibratorMovie.gif
+        </lecture_title>
+      <lecture_pdf_url>https://ocw.mit.edu/courses/20-020-introduction-to-biological-engineering-design-spring-2009/resources/intro1ecolibratormovie/</lecture_pdf_url>
+      <lectureno>26</lectureno>
+      <slides/>
+      <videos/>
+    </lecture>
+    <lecture>
+      <lecture_title>          Arsen_Dev_level.gif
+        </lecture_title>
+      <lecture_pdf_url>https://ocw.mit.edu/courses/20-020-introduction-to-biological-engineering-design-spring-2009/resources/arsen_dev_level/</lecture_pdf_url>
+      <lectureno>3</lectureno>
+      <slides/>
+      <videos/>
+    </lecture>
+    <lecture>
+      <lecture_title>courses/20-020-introduction-to-biological-engineering-design-spring-2009/resources/mit20_020s09_lec1_rvw3_coli</lecture_title>
+      <lecture_pdf_url>https://ocw.mit.edu/courses/20-020-introduction-to-biological-engineering-design-spring-2009/resources/mit20_020s09_lec1_rvw3_coli/</lecture_pdf_url>
+      <lectureno>2</lectureno>
+      <slides>
+        <slide>
+          <slideno>9</slideno>
+          <text>System level description: growth regulation
+ 
+Input 
+e.g. 
+stationary 
+growth OFF 
+ON WGD 
+BGD saGD 
+iaGD 
+OsmY  is a promoter that is only active during stationary phase</text>
+        </slide>
+        <slide>
+          <slideno>4</slideno>
+          <text>System level description: precursor production
+ 
+Input 
+e.g. cell 
+growth Output 
+e.g. 
+smell Black box functions WGD 
+BGD 
+saGD 
+iaGD and 
+WGD: Wintergreen Generating Device 
+BGD: Banana Generating Device 
+saGD: salicylic acid Gen Dev
+ iaGD: isoamyl alcohol Gen Dev</text>
+        </slide>
+        <slide>
+          <slideno>13</slideno>
+          <text>System level test: gas
+ 
+chromatographs
+ 
+E. coli 	E. coli + precursor (SA) + 
+WGD 
+O O 
+OH methyl salicylate 
+MW = 152
+ no meth yl salicylate   
+[no peak at 9.1 
+minutes] 
+Courtesy of the 2006 MIT iGEM Team. Used with permission.</text>
+        </slide>
+        <slide>
+          <slideno>2</slideno>
+          <text>System level description: scent production
+ 
+Input 
+e.g. precursor Output 
+e.g. 
+smell Black box functions WGD 
+BGD 
+WGD: Wintergreen Generating Device 
+BGD: Banana Generating Device</text>
+        </slide>
+        <slide>
+          <slideno>14</slideno>
+          <text>System level test: uninformed
+ 
+experimental subjects??
+ 
+Courtesy of the 2006 MIT iGEM Team. Used with permission.</text>
+        </slide>
+        <slide>
+          <slideno>3</slideno>
+          <text>System level description: scent production
+ 
+Input 
+e.g. precursor Output 
+e.g. 
+smell Black box functions WGD 
+BGD 
+WGD: Wintergreen Generating Device 
+BGD: Banana Generating Device</text>
+        </slide>
+        <slide>
+          <slideno>6</slideno>
+          <text>System level description: growth regulation
+ 
+Input 
+e.g. cell WGD saGD 
+BGD iaGD Output
+growth e.g. 
+smell 
+cell 
+density 
+time lag log stationary</text>
+        </slide>
+        <slide>
+          <slideno>10</slideno>
+          <text>System level description: growth regulation
+ 
+Input 
+e.g. 
+stationary 
+growth OFF 
+ON WGD 
+BGD saGD 
+iaGD 
+Stationary phase Log phase 
+OsmY 1 0 
+OsmY+ inverter 0 1</text>
+        </slide>
+        <slide>
+          <slideno>12</slideno>
+          <text>System level description: Chassis modication
+ 
+Input 
+e.g. 
+stationary 
+growth OFF 
+ON WGD 
+BGD saGD 
+iaGD 
+eliminate 
+natural 
+indole production</text>
+        </slide>
+        <slide>
+          <slideno>11</slideno>
+          <text>System level description: growth regulation
+ 
+Input 
+e.g. 
+stationary 
+growth OFF 
+ON WGD 
+BGD saGD 
+iaGD 
+Courtesy of the 2006 MIT iGEM Team. Used with permission.</text>
+        </slide>
+        <slide>
+          <slideno>15</slideno>
+          <text>MIT OpenCourseWare
+http://ocw.mit.edu 
+20.020 Introduction to Biological Engineering Design 
+Spring 2009 
+For information about citing these materials or our Terms of Use, visit: http://ocw.mit.edu/terms .</text>
+        </slide>
+        <slide>
+          <slideno>1</slideno>
+          <text>System level description: initial planning
+ 
+Input 
+e.g. precursor Black box functions 
+WGD Output 
+e.g. 
+smell 
+BGD and 
+WGD: Wintergreen Generating Device 
+BGD: Banana Generating Device</text>
+        </slide>
+        <slide>
+          <slideno>7</slideno>
+          <text>System level description: growth regulation
+ 
+Input 
+e.g. log 
+growth ON 
+OFF WGD 
+BGD saGD 
+iaGD 
+cell 
+density 
+time lag log stationary 
+wintergreen
+smell</text>
+        </slide>
+        <slide>
+          <slideno>0</slideno>
+          <text>Eau dcoli
+ 
+N Kuldell for 20.020
+ 
+Spring 2009</text>
+        </slide>
+        <slide>
+          <slideno>5</slideno>
+          <text>System level description: precursor production
+ 
+Input 
+e.g. cell 
+growth Output 
+e.g. 
+smell Black box functions WGD 
+BGD saGD 
+iaGD 
+WGD: Wintergreen Generating Device 
+BGD: Banana Generating Device 
+saGD: salicylic acid Gen Dev
+ iaGD: isoamyl alcohol Gen Dev</text>
+        </slide>
+        <slide>
+          <slideno>8</slideno>
+          <text>System level description: growth regulation
+ 
+Input 
+e.g. 
+stationary 
+growth OFF 
+ON WGD 
+BGD saGD 
+iaGD 
+cell 
+density 
+time lag log stationary banana 
+smell</text>
+        </slide>
+      </slides>
+      <videos/>
+    </lecture>
+    <lecture>
+      <lecture_title>          smiths_classic_wiring.gif
+        </lecture_title>
+      <lecture_pdf_url>https://ocw.mit.edu/courses/20-020-introduction-to-biological-engineering-design-spring-2009/resources/smiths_classic_wiring-1/</lecture_pdf_url>
+      <lectureno>57</lectureno>
+      <slides/>
+      <videos/>
+    </lecture>
+    <lecture>
+      <lecture_title>          Brokensoapcopy.jpg
+        </lecture_title>
+      <lecture_pdf_url>https://ocw.mit.edu/courses/20-020-introduction-to-biological-engineering-design-spring-2009/resources/brokensoapcopy/</lecture_pdf_url>
+      <lectureno>12</lectureno>
+      <slides/>
+      <videos/>
+    </lecture>
+    <lecture>
+      <lecture_title>          CompressionalStress.jpg
+        </lecture_title>
+      <lecture_pdf_url>https://ocw.mit.edu/courses/20-020-introduction-to-biological-engineering-design-spring-2009/resources/compressionalstress/</lecture_pdf_url>
+      <lectureno>15</lectureno>
+      <slides/>
+      <videos/>
+    </lecture>
+    <lecture>
+      <lecture_title>          Overall_MIT2006_Fullsystem.jpg
+        </lecture_title>
+      <lecture_pdf_url>https://ocw.mit.edu/courses/20-020-introduction-to-biological-engineering-design-spring-2009/resources/overall_mit2006_fullsystem/</lecture_pdf_url>
+      <lectureno>53</lectureno>
+      <slides/>
+      <videos/>
+    </lecture>
+    <lecture>
+      <lecture_title>courses/20-020-introduction-to-biological-engineering-design-spring-2009/resources/mit20_020s09_lec3_wk3_st3f</lecture_title>
+      <lecture_pdf_url>https://ocw.mit.edu/courses/20-020-introduction-to-biological-engineering-design-spring-2009/resources/mit20_020s09_lec3_wk3_st3f/</lecture_pdf_url>
+      <lectureno>9</lectureno>
+      <slides>
+        <slide>
+          <slideno>5</slideno>
+          <text>MIT OpenCourseWare
+http://ocw.mit.edu 
+20.020 Introduction to Biological Engineering Design 
+Spring 2009 
+For information about citing these materials or our Terms of Use, visit: http://ocw.mit.edu/terms .</text>
+        </slide>
+        <slide>
+          <slideno>4</slideno>
+          <text>Engineering
+Whichorganisms
+Whichpathways
+WhattypesofDNAtechnologytouse
+Level/completenessofgeneticmodification
+Completegenomereengineering
+Smallmodifications/transgenics</text>
+        </slide>
+        <slide>
+          <slideno>3</slideno>
+          <text>Issues
+Whichisthemostimportantgoal/canwe
+achieveboth
+Emissions
+EnergyIndependence
+Cost/Efficiency
+Wanttomaximizeoutputvs.input
+Hastobesufficientlybetterthancurrentoptions
+tojustifylikelyincreaseincosts</text>
+        </slide>
+        <slide>
+          <slideno>0</slideno>
+          <text>BiologicallyEngineeredBiofuels
+by Ragheb El Khaja and Abi Jain</text>
+        </slide>
+        <slide>
+          <slideno>1</slideno>
+          <text>Problems
+Lackofrenewableenergysources
+Risinggreenhousegasemissionsandglobal
+warming</text>
+        </slide>
+        <slide>
+          <slideno>2</slideno>
+          <text>Proposedsolutions
+Canusegeneticallyengineeredalgae,bacteria,or
+plants
+Producevarioustypesoffuelssuchas
+Biodiesel
+Ethanol
+Jetfuels
+Hydrogen
+Otherhydrocarbonsthatcanbemoreeasilyblended
+intoexistingfuelsthanethanolandothercurrentoptions</text>
+        </slide>
+      </slides>
+      <videos/>
+    </lecture>
+    <lecture>
+      <lecture_title>          Ecolibrator_TimingDiagram.jpg
+        </lecture_title>
+      <lecture_pdf_url>https://ocw.mit.edu/courses/20-020-introduction-to-biological-engineering-design-spring-2009/resources/ecolibrator_timingdiagram-1/</lecture_pdf_url>
+      <lectureno>20</lectureno>
+      <slides/>
+      <videos/>
+    </lecture>
+  </lectures>
+</doc>

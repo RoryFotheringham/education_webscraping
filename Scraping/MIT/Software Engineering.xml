@@ -1,0 +1,1563 @@
+<doc>
+  <source>MIT</source>
+  <date>28/01/2023</date>
+  <course>
+    <course_url>https://ocw.mit.edu/courses/16-355j-software-engineering-concepts-fall-2005/</course_url>
+    <course_title>Software Engineering Concepts</course_title>
+    <course_tags>
+      <list>Engineering </list>
+      <list>Computer Science </list>
+      <list>Systems Engineering </list>
+    </course_tags>
+  </course>
+  <lectures>
+    <lecture>
+      <lecture_title>Metrics and Reliability Assessment (PDF)</lecture_title>
+      <lecture_pdf_url>https://ocw.mit.edu/courses/16-355j-software-engineering-concepts-fall-2005/resources/cnotes7/</lecture_pdf_url>
+      <lectureno>7</lectureno>
+      <slides>
+        <slide>
+          <slideno>0</slideno>
+          <text>Software Metrics 
+1. 
+Lord Kelvin, a physicist 
+2. 
+George Miller, a psychologist</text>
+        </slide>
+        <slide>
+          <slideno>10</slideno>
+          <text>Estimating Failure Rates 
+Input-Domain  Models: Estimate program reliability 
+using test cases sampled from input domain. 
+Partition input domain into equivalence classes, 
+each of which usually associated with a program path. 
+Estimate conditional probability that program correct 
+for all possible inputs given it is correct for a specified set of inputs. 
+Assumes outcome of test case given information about behavior for other points close to test point. 
+Reliability Growth Models: Try to determine future 
+time between failures.</text>
+        </slide>
+        <slide>
+          <slideno>9</slideno>
+          <text>Bug Counting using Dynamic Measurement (2) 
+What does an estimate of remaining errors mean? 
+Interested in performance of program, not in how 
+many bugs it contains. 
+Most requirements written in terms of operational 
+reliability, not number of bugs. 
+Alternative is to estimate failure rates or future interfailure times.</text>
+        </slide>
+      </slides>
+      <videos/>
+    </lecture>
+    <lecture>
+      <lecture_title>Design (PDF)</lecture_title>
+      <lecture_pdf_url>https://ocw.mit.edu/courses/16-355j-software-engineering-concepts-fall-2005/resources/cnotes4/</lecture_pdf_url>
+      <lectureno>4</lectureno>
+      <slides>
+        <slide>
+          <slideno>9</slideno>
+          <text>Copyright c Nancy Leveson, Sept. 1999Abstract Data Types 
+Defines a class of objects completely characterized by
+operations available on those objects.
+Really just programmer-defined data type 
+Built-in types work same way
+Allows extending the type system
+Pascal, Clu, Alphard, Ada
+Want language to protect from foolish uses of types
+(strong typing or automatic type conversion)
+Criteria: 
+1. 	Data type definition must include definitions of all
+operations applicable to objects of the type.
+2. 	User of ADT need not know how objects of type
+are represented in storage
+3. 	User of ADT may manipulate objects only through
+defined operations and not by direct manipulation
+of storage representation.</text>
+        </slide>
+        <slide>
+          <slideno>0</slideno>
+          <text>c . 
+Outline: Software Design 
+Goals
+History of software design ideas
+Design principles
+Design methods
+Life belt or leg iron? (Budgen) 
+Copyright Nancy Leveson, Sept. 1999</text>
+        </slide>
+        <slide>
+          <slideno>10</slideno>
+          <text>c Copyright Nancy Leveson, Sept. 1999System Structure 
+DeRemer and Kron (1976): 
+Structuring a large set of modules to form a system is an 
+essentially distinct and different intellectual activity from that of constructing the individual modules (programming in the large, MILs) 
+Activity of producing detailed designs and implementations is programming in the small. 
+Modularization 
+Want to minimize, order, and make explicit the connections 
+between modules. 
+Combining modularity with hierarchical abstraction turned 
+out to be a very powerful combination (part-whole and 
+refinement abstractions)</text>
+        </slide>
+      </slides>
+      <videos/>
+    </lecture>
+    <lecture>
+      <lecture_title>Introducing The Problem (PDF)</lecture_title>
+      <lecture_pdf_url>https://ocw.mit.edu/courses/16-355j-software-engineering-concepts-fall-2005/resources/cnotes1/</lecture_pdf_url>
+      <lectureno>1</lectureno>
+      <slides>
+        <slide>
+          <slideno>0</slideno>
+          <text>16.355 
+Software Engineering Concept s 
+Prof. Nancy Leveson 
+Fall 2005</text>
+        </slide>
+        <slide>
+          <slideno>13</slideno>
+          <text>Is software engineering more difficult than 
+hardware engineering? 
+Why or why not?</text>
+        </slide>
+        <slide>
+          <slideno>14</slideno>
+          <text>Why is software engineering hard? 
+"Curse of flexibility" 
+Organized complexity 
+Intangibility 
+Lack of historical usage information Large discrete state spaces 
+Copyright c 
+Nancy Leveson, Sept. 1999</text>
+        </slide>
+        <slide>
+          <slideno>15</slideno>
+          <text>The Computer Revolution 
+Design separated from physical representation; 
+design became a completely abstract concept. 
+General Special 
+Purpose + Software = Purpose 
+Machine Machine 
+Machines that were physically impossible or impractical to build become feasible. 
+Design can be changed without retooling or manufacturing. 
+Emphasis on steps to be achieved without worryin g 
+about how steps will be realized physically. 
+c 
+Copyright Nancy Leveson, Sept. 1999</text>
+        </slide>
+        <slide>
+          <slideno>6</slideno>
+          <text>Have you ever been on a project where the 
+software was never finished or used? 
+What were some of the problems? 
+c Copyright Nancy Leveson, Sept. 1999</text>
+        </slide>
+        <slide>
+          <slideno>5</slideno>
+          <text>And Yet More 
+Of completed projects, 2/3 experience schedule 
+delays and cost overruns (Capers Jones) 
+[bad estimates?]
+2/3 of completed projects experience low reliability
+and quality problems in first year of deployment 
+(Jones). 
+Software errors in fielded systems typically range from 0.5 to 3.0 occurrences per 1000 lines of code 
+Bell Labs survey). 
+Civilian software: at least 100 English words 
+produced for every source code statement. 
+Military: about 400 words (Capers Jones) 
+c Copyright Nancy Leveson, Sept. 1999</text>
+        </slide>
+        <slide>
+          <slideno>7</slideno>
+          <text>Death March Projects 
+Feature (scope) creep 
+Thrashing 
+Integration problems 
+Overwriting source code 
+Constant reestimation 
+Redesign and rewriting during test 
+No documentation of design decision s 
+Etc. 
+Copyright c Nancy Leveson, Sept. 1999</text>
+        </slide>
+        <slide>
+          <slideno>16</slideno>
+          <text>The Curse of Flexibility 
+"Software is the resting place of afterthoughts." 
+No physical constraints 
+To enforce discipline on design, construction 
+and modification 
+To control complexity 
+So flexible that start working with it before fully 
+understanding what need to do 
+The untrained can get partial success.
+"Scaling up is hard to do"
+And  they looked upon the software and saw that it
+was good. But they just had to add one other feature ...  
+Copyright c 
+Nancy Leveson, Sept. 1999</text>
+        </slide>
+        <slide>
+          <slideno>10</slideno>
+          <text>Understanding the Problem (2)
+Software Maintenance: 
+20% error correction 
+20% adaptation 
+60% enhancements 
+Most fielded software errors stem 
+from requirements not code 
+c Copyright Nancy Leveson, Sept. 1999</text>
+        </slide>
+        <slide>
+          <slideno>4</slideno>
+          <text>More "Data" (Myths?) 
+After surveying 8,000 IT projects, Standish Group 
+reported about 30% of all projects were cancelled. 
+Average cancelled project in U.S. is about a year behind schedule and has consumed 200% of 
+expected budget (Capers Jones). 
+Work on cancelled projects comprises about 15% 
+of total U.S. software efforts, amounting to as muc h 
+much as $14 billion in 1993 dollars (Capers Jones ). 
+c
+Copyright
+ Nancy Leveson, Sept. 1999</text>
+        </slide>
+        <slide>
+          <slideno>17</slideno>
+          <text>What is Complexity? 
+The underlying factor is intellectual manageability 
+1. 	A "simple" system has a small number of unknowns in its 
+interactions within the system and with its environment. 
+2. 	A system becomes intellectually unmanageable when the 
+level of interactions reaches the point where they cannot 
+be thoroughly 
+planned
+understood
+anticipated
+guarded against
+c 
+Copyright Nancy Leveson, Sept. 1999</text>
+        </slide>
+      </slides>
+      <videos/>
+    </lecture>
+    <lecture>
+      <lecture_title>Requirements and Specification (PDF)</lecture_title>
+      <lecture_pdf_url>https://ocw.mit.edu/courses/16-355j-software-engineering-concepts-fall-2005/resources/cnotes3/</lecture_pdf_url>
+      <lectureno>3</lectureno>
+      <slides>
+        <slide>
+          <slideno>25</slideno>
+          <text>Level1 Safety Constraints and Requirements 
+SC5: The system must not disrupt the pilot and ATC operations 
+during critical phases of flight nor disrupt aircraft operation . 
+[H3]
+SC5.1: The pilot of a TCASequipped aircraft must have the 
+option to switch to the TrafficAdvisory mode where traffic 
+advisories are displayed but display of resolution advisorie s 
+is prohibited [2.37]
+Assumption: This feature will be used only during final 
+approach to parallel runways when two aircraft are projected to come close to each other and TCAS would call for an evasive maneuver 
+[6.17]</text>
+        </slide>
+        <slide>
+          <slideno>10</slideno>
+          <text>Abstract Model Specifications 
+Build an abstract model of required software behavior using 
+mathematically defined (perhaps using axioms) types (e.g., sets, relations). 
+Define operations by showing effects of that operation on the model. 
+Specification includes: 
+Model
+Invariant properties of model
+For each operation:
+name
+parameters
+return values
+Pre and post conditions on the operations 
+c Copyright Nancy Leveson, Sept. 1999</text>
+        </slide>
+        <slide>
+          <slideno>32</slideno>
+          <text>Control Mode 
+ACS Mode (2)
+= Detumble (Mode 1) 
+The purpose of detumble mode is to  minimize the magnitude of body momuntum vector in the XZ plane. 
+As soon as the magnitude falls below a threshold,e software should transition to spinup mode. The mode 
+delay provides hysteresis in the mode transitions to prevent the software from jumping between modes too rapidly.
+In detumble mode, the wheel actuator shall be controlled such that the wheel maintains the velocity it had upon
+entering the mode, and the magnetic moment along the Y axis shall be controlled to minimize the angular velocity
+about the X and Z axes.
+OR 
+Control Mode 
+State Values Spinup Detumble Wait 
+Ground Control 
+Time since entered wait &gt;= 10 sec 
+Time since entered detumble &lt; 100 sec 
+xz momentum error &gt; xz momentum error threshold 
+Time since entered spinup &gt;= 100 sec 
+Paddles instate deployed 
+Optical system instate tracking 
+Time since entered ground control &gt;= 10 sec T 
+T T 
+T T 
+T 
+T 
+T F 
+T T T 
+T T 
+F 
+F 
+T 
+.</text>
+        </slide>
+        <slide>
+          <slideno>24</slideno>
+          <text>Level 1: System Limitations 
+L5: TCAS provides no protection against aircraft with 
+nonoperational or nonMode C transponders [FTA37 0]</text>
+        </slide>
+        <slide>
+          <slideno>34</slideno>
+          <text>Requirements Analysis 
+Model Execution, Animation, and Visualization 
+Completeness 
+State Machine Hazard Analysis (backwards reachability ) 
+Human Task Analysis 
+Test Coverage Analysis and Test Case Generation 
+Automatic code generation</text>
+        </slide>
+        <slide>
+          <slideno>36</slideno>
+          <text>Summary 
+Integrate design rationale and safety information into 
+specification and its structure 
+Capture domain knowledge (reusable architectures) 
+Provides traceability from highlevel requirements to 
+detailed design and code. 
+Blackbox models at Level 3 
+Executable and analyzable 
+e.g., completeness, robustness, mode confusion, hazard 
+analysis, test case generation, code generation 
+Specification acts as an executable prototype 
+Can interface with system simulation 
+Visualization tools 
+Interface to contractors</text>
+        </slide>
+        <slide>
+          <slideno>35</slideno>
+          <text>Does It Work? 
+It is being used for aerospace and automotive systems. 
+Have found important errors in requirements 
+Very complex systems modeled 
+Level 3 models used to maintain TCAS II for past 10 year s 
+All suggested changes and upgrades first modeled 
+and evaluated through simulation.</text>
+        </slide>
+        <slide>
+          <slideno>9</slideno>
+          <text>InputOutput Assertions 
+S {P} Q 
+If S holds before execution of S, then Q holds afterward . 
+Examples: n 
+1. sum = 0 { for i=1 to n do sum:=sum+a(i) } sum = a 
+j=1 j 
+2. proc search(A,n,x) int; 
+pre 
+post n 0 
+(result = 0 
+(result = i 
+i {1,...,i1} : A[i] = x) {1,...,n} : A[i] = x)i 
+1 i n A[i] = x 
+Copyright c Nancy Leveson, Sept. 1999</text>
+        </slide>
+        <slide>
+          <slideno>26</slideno>
+          <text>SC7: TCAS must not create near misses (result in a hazardous 
+level of vertical separation that would not have occurred 
+had the aircraft not carried TCAS) [H1]
+SC7.1: Crossing maneuvers must be avoided if possible. 
+[2.36, 2.38, 2.48, 2.49.2] 
+SC7.2: The reversal of a displayed advisory must be extremely 
+rare [2.51, 2.56.3, 2.65.3, 2.66] 
+SC7.3: TCAS must not reverse an advisory if the pilot will have 
+insufficient time to respond to the RA before the closest poin t 
+of approach (four seconds or less) or if own and intruder aircraft are separated by less then 200 feet vertically when ten seconds or less remain to closest point of approach [
+2.52]</text>
+        </slide>
+        <slide>
+          <slideno>23</slideno>
+          <text>TCAS displays a resolution advisory that the pilot does not follow. 
+Pilot does not execute RA at all.
+Crew does not perceive RA alarm. 
+&lt;Inadequate alarm design&gt; 1.4 to 1.14 2.74, 2.7 6 
+&lt;Crew is preoccupied&gt;
+&lt;Crew does not believe RA is correct.&gt; OP.1
+... 
+Pilot executes the RA but inadequately
+&lt;Pilot stops before RA is removed&gt; OP.10 
+&lt;Pilot continues beyond point RA is removed&gt; 
+&lt;Pilot delays execution beyond time allowed&gt;   OP.4 
+OP.10</text>
+        </slide>
+        <slide>
+          <slideno>31</slideno>
+          <text>SpecTRM Model of HETE Attitude Control System
+Orbit Day 
+Orbit Night 
+Ground Command MODES CONTROL Paddles 
+Detumble 
+Deploy Paddles Reorient 
+Deploy Wheel 
+Acquire 
+Orbit Day
+Orbit Night
+Ground CommandTorque Elevation Angle Azimuth Angle 
+Bias Magnetic Fields (X,Y,Z) 
+Orbit Deployed 
+Not deployed 
+Unknown 
+Unknown Not tracking Tracking Optical System 
+Unknown Night Day Unknown Not deployed Deployed Wheel 
+Wheel Momentum Coils 
+Deploy PaddlesPaddlesCONTROL
+MODESSun 
+Sensors Magnetometers 
+AcquireDeploy WheelReorientDetumble
+Spinup Wait HETE ACS 
+Ops Mission</text>
+        </slide>
+        <slide>
+          <slideno>29</slideno>
+          <text>SpecTRMRL 
+Combined requirements specification and modeling languag e 
+A state machine with a domainspecific notation on top of it. 
+Includes a task modeling language 
+Can add other notations and visualizations of state machine 
+Enforces or includes most of completeness criteria 
+Supports specifying systems in terms of modes
+Control modes
+Operational modes
+Supervisory modes
+Display modes</text>
+        </slide>
+        <slide>
+          <slideno>28</slideno>
+          <text>Level 3 Specification (modeling) language goals 
+Specify allocation of functionality to components
+Readable and reviewable
+Minimize semantic distance 
+Minimal: blackbox behavior only (transfer function) 
+Easy to learn 
+Unambiguous and simple semantics 
+Visualization tools 
+Complete (can specify everything need to specify Analyzable (formal, mathematical foundation) 
+Executable (acts as a prototype) 
+Animation and simulation 
+Tools to check completeness, consistency, nondeterminism 
+Includes human (operator) procedures and analysis 
+Extensible (e.g., connecting to MATLAB, Simulink) 
+API, built on Eclipse</text>
+        </slide>
+        <slide>
+          <slideno>0</slideno>
+          <text>Requirements Specification: 
+A structured document that sets out the services 
+the system is expected to provide.
+Should be precise so that it can act as a contract between the system procurer and software developer. 
+Needs to be understandable by both. 
+Describes what the system will do but not how it will 
+do it (objectives but not how objectives will be achieved. 
+Design Specification: 
+An abstract description of the software that serves as a 
+basis for (or describes) detailed design and implementatio n 
+Describes how the requirements will be achieved. 
+Primary readers will be software designers and 
+implementers rather than users or management.
+Goals and constraints specified in requirements document should be traceable to the design specification (and from 
+there to the code.</text>
+        </slide>
+        <slide>
+          <slideno>27</slideno>
+          <text>Example Level2 System Design for TCAS
+ReversalProvidesMoreSeparation m301 SENSE REVERSALS 
+2.51 	 In most encounter situations, the resolution advisory sense will be 
+maintained for the duration of an encounter with a threat aircraft. 
+[ SC7. 2 ]
+However, under certain circumstances, it may be necessary for 
+that sense to be reversed. For example, a conflict between two TCASequipped aircraft will, with very high probability, result in selection of complementary advisory senses because of the coordination protocol between the two aircraft. However, if coordination communications between the two aircraft are disrupted at a critical time of sense selection, both aircraft may choose their advisories independently. 
+[ FTA130 0 ]
+This could possibly result in selection of incompatible senses. 
+[ FTA39 5 ]
+2.51.1 [Information about how incompatibilities are handled]</text>
+        </slide>
+        <slide>
+          <slideno>33</slideno>
+          <text>Output Command 
+Name
+Destination: 
+Acceptable Values: 
+Units: 
+Granularity: 
+Exception Handling: 
+Hazardous Values: 
+Timing Behavior: 
+Initiation Delay: 
+Completion Deadline: Output Capacity Assumptions: 
+Load:
+Min time between outputs:
+Max time between outputs:
+Hazardous timing behavior: ExceptionHandling: 
+Feedback Information: 
+Variables: 
+Values: 
+Relationship: 
+Min. time (latency): 
+Max. time: 
+Exception Handling: 
+Reversed By: 
+Comments: 
+References: 
+DEFINITION 
+= ...</text>
+        </slide>
+        <slide>
+          <slideno>30</slideno>
+          <text>Measured Variable 2 Measured Variable 1 
+Device Supervisor Controlled Control Input 
+Display Output Control 
+Command 
+Measured Variable 
+(Feedback) Sensor Environment 
+CONTROL INFERRED SYSTEM OPERATING MODES Controller 
+MODES DISPLAY INFERRED SYSTEM STATE SUPERVISORY 
+MODE 
+MODES</text>
+        </slide>
+      </slides>
+      <videos/>
+    </lecture>
+    <lecture>
+      <lecture_title>Design (cont.) (PDF)</lecture_title>
+      <lecture_pdf_url>https://ocw.mit.edu/courses/16-355j-software-engineering-concepts-fall-2005/resources/cnotes5/</lecture_pdf_url>
+      <lectureno>5</lectureno>
+      <slides>
+        <slide>
+          <slideno>10</slideno>
+          <text>Copyright c Nancy Leveson, Sept. 1999 
+Design Methods 
+Set of guidelines, heuristics, and procedures on how to go 
+about designing a system. 
+Usually offer a notation to express result of design process. 
+Trying to provide a systematic means for organizing the 
+design process and its products. 
+Design method may be based on: 
+Functional decomposition
+Data flow
+Data structures
+Control flow 
+Objects
+Vary in degree of prescriptiveness</text>
+        </slide>
+        <slide>
+          <slideno>0</slideno>
+          <text>Copyright c Nancy Leveson, Sept. 1999 
+1980s: 
+OO design: 	added inheritance, multiple inheritance, and 
+polymorphism to ADT. 
+In process added complexity and increased 
+some types of connectivity. 
+Lots of claimed advantages -- so far empirical 
+evaluation is not supporting them well. 
+1990s: 
+Architecture 
+Patterns 
+Frameworks 
+Kits 
+etc.</text>
+        </slide>
+        <slide>
+          <slideno>9</slideno>
+          <text>Copyright c Nancy Leveson, Sept. 1999 
+General Software Design Concepts (5) 
+Modularity (cont.) 
+Sample things to modularize and encapsulate: 
+abstract data types 
+algorithms (e.g., sort) input and output formats processing sequence machine dependencies (e.g., character codes) policies (e.g., when and how to do garbage collection) external interfaces (hardware and software) 
+Benefits: 
+Allows understanding each part of a system separately 
+Aids in modifying system May confine search for a malfunction to a single module.</text>
+        </slide>
+      </slides>
+      <videos/>
+    </lecture>
+    <lecture>
+      <lecture_title>COTS and Reuse (PDF)</lecture_title>
+      <lecture_pdf_url>https://ocw.mit.edu/courses/16-355j-software-engineering-concepts-fall-2005/resources/cnotes6/</lecture_pdf_url>
+      <lectureno>6</lectureno>
+      <slides>
+        <slide>
+          <slideno>0</slideno>
+          <text>Copyright c Nancy Leveson, Sept. 1999Reuse 
+(Assume have source code, not a commercial product)
+Ariane 5, Therac-25, British ATC, ...
+Expectation:
+Significantly lower development costs and time. Amortize 
+costs among all users or uses. 
+Assumptions:
+Will be reused enough to recoup extra costs
+Can easily and cheaply integrate components into a new environment (interoperability).</text>
+        </slide>
+        <slide>
+          <slideno>9</slideno>
+          <text>Your experiences and comments:
+..</text>
+        </slide>
+      </slides>
+      <videos/>
+    </lecture>
+    <lecture>
+      <lecture_title>Building Confidence (Testing, Analysis, QA, Reviews) (PDF)</lecture_title>
+      <lecture_pdf_url>https://ocw.mit.edu/courses/16-355j-software-engineering-concepts-fall-2005/resources/cnotes8/</lecture_pdf_url>
+      <lectureno>8</lectureno>
+      <slides>
+        <slide>
+          <slideno>0</slideno>
+          <text>What is Testing? 
+c Copyright Nancy Leveson, Sept. 1999</text>
+        </slide>
+        <slide>
+          <slideno>10</slideno>
+          <text>Static Analysis (cont) 
+Event sequence checking 
+Compare event sequences in program with 
+specification of legal sequences 
+Symbolic execution 
+A := X + 5 B = 2 * (X + 5)
+B := 2 * A
+if 2 * (X + 5) &gt; 0 
+If B&gt;0 then C := |B|  1 then |2 * (X + 5)|  1else C := |B| + 1 
+else |2 * (X + 5)| + 1 
+Formal verification 
+Use theorem proving methods to show equivalence o f 
+code and a formal specification of required behavior.</text>
+        </slide>
+      </slides>
+      <videos/>
+    </lecture>
+    <lecture>
+      <lecture_title>Selecting a Programming Language (PDF)</lecture_title>
+      <lecture_pdf_url>https://ocw.mit.edu/courses/16-355j-software-engineering-concepts-fall-2005/resources/cnotes9/</lecture_pdf_url>
+      <lectureno>9</lectureno>
+      <slides>
+        <slide>
+          <slideno>0</slideno>
+          <text>Copyright c Nancy Leveson, Sept. 1999 
+Programming Languages 
+As difficult to discuss rationally as religion or politics. 
+Prone to extreme statements devoid of data. 
+Examples: 
+"It is practically impossible to teach good programming to 
+students that have had a prior exposure to BASIC; as 
+potential programmers they are mentally mutilated beyond hope of regeneration." (Dijkstra) 
+"The use of COBOL cripples the mind; its teaching should, 
+therefore, be regarded as a criminal offence." (Dijkstra) 
+Like anything else, decision making should be a rational 
+process based on the priorities and features of the project.</text>
+        </slide>
+        <slide>
+          <slideno>10</slideno>
+          <text>Copyright c Nancy Leveson, Sept. 1999 
+Green: Program Comprehension 
+Cites experiments ("atheoretical" ) that evaluate only current 
+programming practice. 
+More interesting question: Can we elucidate underlying psychological principles to allow generalization of results to other classes of information structure in programming? 
+Hypothesis 1: If one language is better than another, it 
+is always better, whatever the context. 
+Hypothesis 2: Every notation highlights some type of 
+information at the expense of others; the better notation 
+for a given task is theone that highlights the information 
+that given task needs. 
+More generally, the comprehensibility of a notation may depend on the number and complexity of mental operations required to extract needed information.</text>
+        </slide>
+        <slide>
+          <slideno>9</slideno>
+          <text>Copyright c Nancy Leveson, Sept. 1999 
+Green: Design and Use of PLs 
+"Clarifying the psychological processes of using programming
+languages will, I believe, clarify the requirements of language
+design and of environmental support."
+Some examples of structured programming hypotheses: 
+Control structures should be hierarchical. Thus they should 
+be nested, rather than allowed to have arbitrary branching. 
+In this way, successive layers of detail can be added. 
+The comprehensibility of hierarchically constructed programs will be easier, since they can be understoof by a reverse 
+process -- understand the outer layer, then the inner layers, etc. 
+These programs will be easy to modify because the 
+inter-relations between parts will be simple. 
+Have accepted these hypotheses but have never been validated.</text>
+        </slide>
+      </slides>
+      <videos/>
+    </lecture>
+    <lecture>
+      <lecture_title>Team Organization and People Management (PDF)</lecture_title>
+      <lecture_pdf_url>https://ocw.mit.edu/courses/16-355j-software-engineering-concepts-fall-2005/resources/cnotes10/</lecture_pdf_url>
+      <lectureno>10</lectureno>
+      <slides>
+        <slide>
+          <slideno>0</slideno>
+          <text>Copyright c 
+Nancy Leveson, Sept. 1999 
+A Model of Team Development 
+Stage 1: Forming 
+Stage 2: Storming 
+Stage 3: Norming 
+Stage 4: Performing 
+Frequently an iterative process, phases often overlap</text>
+        </slide>
+        <slide>
+          <slideno>10</slideno>
+          <text>Copyright c Nancy Leveson, Sept. 1999 
+Thinking (T) and Feeling (F) 
+T:	Usually prefer impersonal choice when making decisions 
+Objective, principles, follow laws and policies Usually hides feelings; may be thought of as cold or 
+unemotional (not necessarily true, just able to cover up) 
+F:	Personal basis and experience used when making decisions Subjective, extenuating circumstances Persuasive, social values 
+Often expressive of emotions</text>
+        </slide>
+        <slide>
+          <slideno>9</slideno>
+          <text>Copyright c Nancy Leveson, Sept. 1999 
+Intuition (N) and Sensation (S) 
+(Differences place widest gulf between people) 
+N:	Innovative, likes metaphor, futurist 
+Head may seem to be in the clouds, but able to 
+take very complex ideas and see them as a whole. 
+Usually entrepreneurial, ingenious 
+S:	Wants facts and data, believes in experience
+Usually observant about details
+Realistic, practical, down-to-earth</text>
+        </slide>
+      </slides>
+      <videos/>
+    </lecture>
+    <lecture>
+      <lecture_title>Software and System Safety (PDF)</lecture_title>
+      <lecture_pdf_url>https://ocw.mit.edu/courses/16-355j-software-engineering-concepts-fall-2005/resources/cnotes11/</lecture_pdf_url>
+      <lectureno>11</lectureno>
+      <slides>
+        <slide>
+          <slideno>47</slideno>
+          <text>STPA  Step 3:  Identify potential inadequate control actions that
+could lead to hazardous process state
+4.  A correct control action is stopped too soonprovided too late (at the wrong time)3.  A potentially correct or inadequate control action is2.  An incorrect or unsafe control action is provided.1.  A required control action is not providedIn general:
+3.  The pilot applies the RA but too late to avoid the NMAC2.  The pilot incorrectly executes the TCAS resolution advisory.by TCAS (does not respond to the RA)Pilot:
+1.  The pilot does not follow the resolution advisory provided
+4.  The pilot stops the RA maneuver too soon.
+    
+For the NMAC hazard:
+1.  The aircraft are on a near collision course and TCAS does 
+not provide an RATCAS:
+2.  The aircraft are in close proximity and TCAS provides an
+RA that degrades vertical separation
+3.  The aircraft are on a near collision course and TCAS provides
+an RA too late to avoid an NMAC
+4.  TCAS removes an RA too soon.
+                     ccc
+c</text>
+        </slide>
+        <slide>
+          <slideno>33</slideno>
+          <text>Performance Audits Manufacturing Maintenance Congress and Legislatures 
+Legislation 
+Company Congress and Legislatures 
+Legislation 
+Legal penalties Certification Standards Regulations Government Reports 
+Lobbying 
+Hearings and open meetings 
+Accidents 
+Case Law Legal penalties Certification Standards 
+Problem reports Incident Reports Risk Assessments Status Reports 
+Test reports 
+Test Requirements Standards 
+Review Results Safety Constraints 
+Implementation Hazard Analyses 
+Progress Reports Safety Standards Hazard Analyses 
+Progress Reports 
+Design, Work Instructions Change requests 
+Audit reports Regulations Insurance Companies, Courts User Associations, Unions, Industry Associations, Government Regulatory Agencies 
+Management Management 
+Management Project Government Regulatory Agencies 
+Industry Associations, 
+User Associations, Unions, 
+Documentation 
+and assurance 
+and Evolution SYSTEM OPERATIONS 
+Insurance Companies, Courts 
+Physical Actuator(s) SYSTEM DEVELOPMENT 
+Accidents and incidents Government Reports Lobbying 
+Hearings and open meetings 
+Accidents 
+Whistleblowers Change reports Maintenance Reports Operations reports Accident and incident reports 
+Change Requests Incidents Problem Reports Hardware replacements Software revisions Hazard Analyses Operating Process Case Law 
+SafetyRelated Changes 
+Operating Assumptions 
+Operating Procedures 
+Revised 
+operating procedures Whistleblowers Change reports Certification Info. 
+Procedures safety reports 
+work logs 
+inspections Hazard Analyses 
+Documentation 
+Design Rationale Company 
+Resources Standards Safety Policy Operations Reports 
+Management Operations Resources Standards Safety Policy 
+audits Manufacturing 
+Management Safety 
+Reports 
+Work Policy, stds. 
+Process Controller 
+Sensor(s) Human Controller(s) 
+Automated</text>
+        </slide>
+        <slide>
+          <slideno>36</slideno>
+          <text>cc         Safety and Human Mental Models      
+Explains developer errors
+May have incorrect model of 
+required system or software behavior
+development process
+physical laws
+etc.
+Also explains most human/computer interaction problems 
+Pilots and others are not understanding the automation 
+What did it just do?
+Why did it do that?
+What will it do next?
+How did it get us into this state?
+How do I get it to do what I want?
+Why wont it let us do that? 
+What caused the failure? 
+What can we do so it does not 
+happen again? 
+Or dont get feedback to update mental models or disbelieve it cc               
+Validating and Using the Model 
+Can it explain (model) accidents that have already occurred? 
+Is it useful?
+In accident and mishap investigation
+In preventing accidents
+Hazard analysis
+Designing for safety
+Is it better for these purposes than the chainofevents model?</text>
+        </slide>
+        <slide>
+          <slideno>49</slideno>
+          <text>INPUTS FROM OWN AIRCRAFT cc          
+Radio Altitude 
+Radio Altitude Status Aircraft Altitude Limit      
+Barometric Altitude Config Climb Inhibit 
+Barometric Altimeter Status Own MOde S address 
+Air Status Altitude Climb Inhibit 
+Altitude Rate Increase Climb Inhibit Discrete 
+Prox Traffic Display Traffic Display Permitted 
+Classification 
+Current RA Level Current RA Sense Other Aircraft (1..30) Model 
+Reversal Crossing StatusStatus 
+RA Strength Altitude Reporting 
+Sensivity Level On 
+Fault Detected System Start 
+1 TCAS 
+RA Sense Own Aircraft Model 
+Increase Climb Inhibit Climb Inhibit 
+Descent Inhibit Increase Descent Inhibit 
+Altitude Layer 
+NonCrossing 
+IntCrossing 
+OwnCross 
+Unknown Descend Climb None 
+None 
+Unknown Unknown Lost No Yes On ground 
+Airborne 
+Unknown 
+Proximate Traffic 
+Threat 
+Unknown Other Traffic 
+Potential Threat 
+2 
+Unknown 3 
+4 
+5 6 
+7 Not Inhibited Inhibited 
+Unknown 
+Layer 1 
+Layer 2 
+Layer 3 
+Layer 4 
+Unknown VSL 0 
+VSL 500 
+VSL 1000 
+VSL 2000 
+Increase 2500 Nominal 1500 
+Unknown Not Selected 
+Reversed 
+Not Reversed None Not Inhibited 
+Climb 
+Descend 
+None 
+VSL 0 
+VSL 500 VSL 1000 
+VSL 2000 
+Unknown Inhibited 
+Unknown 
+Unknown Unknown Not Inhibited 
+Inhibited Inhibited 
+Unknown Not Inhibited 
+Other Bearing 
+Other Bearing Valid 
+Other Altitude 
+Other Altitude Valid Range 
+Mode S Address 
+Sensitivity Level 
+Equippage 
+INPUTS FROM OTHER AIRCRAFT 
+cc            
+Measured      
+Disturbance s 
+Displays Controls Process 
+inputs 
+Controlled 
+Process 
+Actuators Sensors 
+Model of 
+outputs Process 
+Controlled variables 
+Model of 
+Process Model of 
+Automation Model of 
+Process Interfaces Automated Controller Human Supervisor 
+(Controller) 
+variables</text>
+        </slide>
+        <slide>
+          <slideno>46</slideno>
+          <text>cc           STPA  Step1: Identify hazards and translate into highlevel      
+requirements and constraints on behavior 
+TCAS Hazards 
+1. A near midair collision (NMAC) 
+(a pair of controlled aircraft violate minimum separation 
+standards) 
+2. A controlled maneuver into the ground 
+3. Loss of control of aircraft 
+4. Interference with other safetyrelated aircraft systems 
+5. Interference with groundbased ATC system 
+6. Interference with ATC safetyrelated advisory 
+Operating 
+Aural Alerts 
+Displays Pilot Aural Alerts Displays 
+Radar Advisories 
+Radio 
+PilotAdvisories Controller Air Traffic 
+FAA 
+Mode STPA  Step 2: Define basic control structure 
+Aircraft Aircraft 
+Aircraft Information Own and Other Aircraft Information Own and Other 
+TCAS Operating 
+Mode TCAS 
+Ops Airline Mgmt. Ops Airline 
+Flight Data 
+Processor Mgmt. Ops ATC Local 
+Mgmt. cc           n</text>
+        </slide>
+        <slide>
+          <slideno>40</slideno>
+          <text>DEVELOPMENT                                             
+            
+                                              
+                                     
+                                                                                                                                                   
+                                     
+
+    
+         Titan 4/Centaur/Milstar OPERATIONS
+LMA
+Analex DenverEngineering
+IV&amp;V of flight software
+Honeywell
+Aerospace
+development and testMonitor softwareLMA Quality 
+Flight Control SoftwareSoftware Design 
+and Development
+IMS softwareLMA System
+Assurance         
+           c
+operations management)(Responsible for groundThird Space Launch 
+Squadron (3SLS)of LMA contract)(Responsible for administration Center Launch Directorate (SMC)Space and Missile Systems
+oversee the processcontract administration
+software surveillanceManagement CommandDefense Contractc
+verify designAnalexClevelandIV&amp;V
+Analexconstruction of flight control system)(Responsible for design andPrime Contractor (LMA)
+System test of INULMA FAST Lab
+Titan/Centaur/Milstar(CCAS)Ground Operations</text>
+        </slide>
+        <slide>
+          <slideno>42</slideno>
+          <text>r s t u w
+Modeling Behavioral Dynamicsy z { | } ~
+ }  }       u  
+u  uz         ~ 
+ }   ~  y 
+ r
+u    }    |  ~  ~    
+  
+    }  
+  
+w            ~ 
+w }   z  } ~ 
+z ~ y z { | } ~c 
+ { }   } }  ~   }  }   
+tz ~    ~  
+r z ~ {   r  ~ }  
+ }    ~ } {  z    ~ 
+
+r    } {   ~ }  }   ~     } ~ }   }    
+
+
+   
+}  ~   
+w }  }   } 
+r z ~ {   
+r  ~ } 
+ }  z   }  }  ~ 
+     ~        ~ }
+ 
+}  ~    }  ~   }  }   
+y 
+ r t{       } t   }  }  
+wz    
+ }   ~  c }  ~   }  }   
+  ~    
+  
+    }  y } ~  } } 
+uz         ~   y 
+ r
+w }  }   } 
+    }    ~   |
+ }     ~  
+ }   ~  w    }   }    ~   |
+    
+  ~      ~    
+       |   ~ } 
+ z    ~ 
+  ~   
+r  ~ } 
+z    
+  ~     } {   ~ } 
+ }  ~   }  }   
+
+ }  ~   }  }   
+r      |  ~ } 
+    }   }
+ }    |  ~ }  ~   }  }   
+y } ~  } }         ~ 
+ }   ~          }
+
+wz      }  ~
+ }   ~    }  
+  ~   } {
+s  }
+t       }
+
+w   }  
+u}  ~  
+u { } 
+
+w   }  
+u}  ~  
+u { } 
+
+
+w   }  
+u}  ~  
+u { } 
+
+
+w   }  
+u}  ~  
+u { } 
+
+w   }  
+u}  ~  
+u { } 
+uz         ~ 
+
+  ~      ~         ~ } 
+    }   } 
+ 
+}  ~       
+w}      t    ~  } 
+ }  ~   }  }   
+ z    }  ~u   ~ }     }w} 
+      } 
+       ~     y 
+ r
+ }   z   } 
+t       }
+  } 
+
+u   }    |  ~
+ z    ~  
+s      | z    ~  
+ }</text>
+        </slide>
+        <slide>
+          <slideno>39</slideno>
+          <text>c c                 
+ARIANE 5 LAUNCHER 
+Diagnostic and 
+flight information Nozzlecommand 
+command 
+Horizontal velocity Main engine 
+Horizontalvelocity Main engine 
+Nozzle OBC 
+SRI 
+Backup SRI Booster 
+Nozzles 
+platform Strapdown inertial Executes flight program; 
+Controls nozzles of solid boosters and Vulcain cryogenic engine 
+Measures attitude of 
+launcher and its movements in space 
+Measures attitude of 
+launcher and its movements in space; Takes over if SRI unable to send guidance info B 
+D C 
+C A 
+SRI (Inertial Reference System): 
+SRI Safety Constraint Violated: The SRI must continue to send guidance 
+information as long as it can get the necessary information from the strapdown 
+inertial platform. 
+Unsafe Behavior: At 36.75 seconds after H0, SRI detects an internal error and 
+turns itself off (as it was designed to do) after putting diagnostic information on 
+the bus (D). 
+Control Algorithm: Calculates the Horizontal Bias (an internal alignment variable 
+used as an indicator of alignment precision over time) using the horizontal velocity input from the strapdown inertial platform (C). Conversion from a 64bit 
+floating point value to a 16bit signed integer leads to an unhandled overflow 
+exception while calculating the horizontal bias. Algorithm reused from Ariane 4 
+where horizontal bias variable does not get large enough to cause an overflow. 
+Process Model: Does not match Ariane 5 (based on Ariane 4 trajectory data);
+Assumes smaller horizontal velocity values than possible on Ariane 5.
+Backup SRI (Inertial Reference System): 
+SRI Safety Constraint Violated: The backup SRI must continue to send guidance 
+information as long as it can get the necessary information from the strapdown 
+inertial platform. 
+Unsafe Behavior: At 36.75 seconds after H0, backup SRI detects an internal error 
+and turns itself off (as it was designed to do). 
+Control Algorithm: Calculates the Horizontal Bias (an internal alignment variable 
+used as an indicator of alignment precision over time) using the horizontal 
+velocity input from the strapdown inertial platform (C). Conversion from a 64bit 
+floating point value to a 16bit signed integer leads to an unhandled overflow 
+exception while calculating the horizontal bias. Algorithm reused from Ariane 4 
+where horizontal bias variable does not get large enough to cause an overflow. 
+Because the algorithm was the same in both SRI computers, the overflow 
+results in the same behavior, i.e., shutting itself off. 
+Process Model: Does not match Ariane 5 (based on Ariane 4 trajectory data);
+Assumes smaller horizontal velocity values than possible on Ariane 5.</text>
+        </slide>
+        <slide>
+          <slideno>11</slideno>
+          <text>0 1 3 5 7 7 9 : ; &lt; 1
+Usability Analysis
+Other Human Factors
+Evaluation
+(workload, situation
+awareness, etc.)
+Performance MonitoringTask Allocation Principles 
+Training RequirementsOperator Goals and&gt; ? A B C E F ? A G H J L MOperator Task and Responsibilities&gt; N O N P Q R F Q N ? G A M
+U
+C V B WU X Y U
+Q [ V \ ?X ]
+P V N W N V A F BX
+R _X
+A Q A P
+JX
+F Q C V A F Q \ V C E V P QX
+_ Q]
+V PX ]a
+? Q C F P Q N P ? A G b ? A N P V C C V P ?X
+A bc _ Q]
+V P ?X
+A N
+V A F P]
+V ? A ? A GHazard List
+Simulation/Experiments
+Change Analysis
+Incident and accident analysisPeriodic audits
+Performance MonitoringChange AnalysisPeriodic auditsPreliminary Hazard Analysis
+System Hazard Analysis
+Safety Verification
+Operational AnalysisOperational AnalysisOperator Task AnalysisPreliminary Task Analysis 
+Fault Tree Analysis
+Safety Requirements and
+Constraints
+Completeness/Consistency
+Analysis
+State Machine Hazard 
+Analysis
+Deviation Analysis (FMECA)
+Mode Confusion AnalysisHuman Error AnalysisTiming and other analyses
+Safety Testing
+Software FTASimulation and AnimationSystemV A F F Q N ? G A BX
+A N P]
+V ? A P N
+X
+_ Q]
+V P ?X
+A V C]
+Q d E ?]
+Q R Q A P N
+e Q A Q]
+V P Q N O N P Q R V A Ff
+Q]
+? g ? B V P ?X
+A
+V A FX
+_ Q]
+V PX ]
+R V A E V C N
+F ? N _ C V O N b P]
+V ? A ? A G R V P Q]
+? V C N b
+BX
+R _X
+A Q A P N b BX
+A P] X
+C N V A F
+h
+Q N ? G A V A F BX
+A N P]
+E B P
+Q A \ ?] X
+A R Q A P V C V N N E R _ P ?X
+A N
+L F Q A P ? g O N O N P Q R GX
+V C N V A FcG Q A Q]
+V P Q N O N P Q R F Q N ? G A
+j
+C CX
+B V P Q P V N W N V A FSystem SafetyEngineeringHuman FactorsA HumanCentered, SafetyDriven Design Process
+k 3 l 3 n : o q s u v w x</text>
+        </slide>
+        <slide>
+          <slideno>43</slideno>
+          <text>cc                
+A (Partial) System Dynamics Model 
+of the Columbia Accident  
+ 
+   
+  
+Budget
+cuts
+Budget cuts
+directed toward
+safety
+Safety 
+System Rate of 
+safety safety increase 
+effortsPriority of
+safety programs 
+ 
+    
+ 
+    
+  
+
+    
+      
+  
+       Complacency
+External
+Rate of increasePressure in complacency
+Performance
+Pressure
+  Expectations Perceived 
+safety Risk  
+  
+  
+       
+  
+Launch Rate Success 
+Success Rate 
+Accident Rate</text>
+        </slide>
+        <slide>
+          <slideno>35</slideno>
+          <text>cc               Process Models 
+Measured 
+Model of (Controller) Human Supervisor Automated Controller 
+Interfaces Process Model of Model of Sensors 
+Actuators Process Controlled inputs Process 
+Controls 
+Displays DisturbancesAutomation Process Model of variables 
+Controlled Process 
+outputs 
+variables 
+Process models must contain: 
+Required relationship among process variables 
+Current state (values of process variables) The ways the process can change state cc               
+Relationship between Safety and Process Model 
+Accidents occur when the models do not match the process and 
+incorrect control commands are given (or correct ones not given) 
+How do they become inconsistent?
+Wrong from beginning
+e.g. uncontrolled disturbances
+unhandled process states 
+inadvertently commanding system into a hazardous state 
+unhandled or incorrectly handled system component failures 
+[Note these are related to what we called system accidents] 
+Missing or incorrect feedback and not updated correctly 
+Time lags not accounted for 
+Explains most softwarerelated accidents</text>
+        </slide>
+        <slide>
+          <slideno>31</slideno>
+          <text>c c  cc                 
+A Systems Theory Model of Accidents 
+Safety is an emergent system property. 
+Accidents arise from interactions among 
+People 
+Societal and organizational structures 
+Engineering activities 
+Physical system components 
+that violate the constraints on safe component 
+behavior and interactions. 
+Not simply chains of events or linear causality, 
+but more complex types of causal connections. 
+Need to include the entire sociotechnical system</text>
+        </slide>
+        <slide>
+          <slideno>51</slideno>
+          <text>STPA results more comprehensiveTopdown (vs. bottomup like FMECA)
+Includes HAZOP model but more generalcaused by deviations in system variablesHAZOP guidewords based on model of accidents beingGeneral model of inadequate control 
+Compared with TCAS II Fault Tree (MITRE)Not physical structure (HAZOP) but control (functional) structur eConcrete model (not just in head)Handles dysfunctional interactions, software, management, etc.Guidance in doing analysis (vs. FTA)Considers more than just component failures and failure eventsComparisons with Traditional HA Techniques
+    
+           cc</text>
+        </slide>
+        <slide>
+          <slideno>44</slideno>
+          <text>Coordination flaws1. Identify 
+Mental model flaws
+Change those factors if possibleDynamic processes in effect that led to changesChanges to static safety control structure over time2. Model dynamic aspects of accident:Steps in a STAMP analysis:
+Examines interrelationships rather than linear causeeffect chains
+Looks at the processes behind the events
+Includes entire socioeconomic systemIncludes behavioral dynamics (changes over time)
+Want to not just react to accidents and impose controls 
+for a while, but understand why controls drift toward ineffectiveness over time andContext in which decisions made3. Create the overall explanation for the accident
+STAMP vs. Traditional Accident Models
+Detect the drift before accidents occurSystem hazards
+System safety constraints and requirementsControl structure in place to enforce constraints
+Control flaws (e.g., missing feedback loops)Inadequate control actions and decisions
+                    c
+cc
+c</text>
+        </slide>
+        <slide>
+          <slideno>38</slideno>
+          <text>c c                
+ARIANE 5 LAUNCHER 
+Diagnostic and 
+flight information 
+Horizontal velocity command 
+commandMain engine 
+Horizontalvelocity Main engine 
+Nozzle OBC 
+SRI 
+Backup SRI Booster 
+Nozzles 
+platform Strapdown inertial Nozzle 
+Executes flight program; 
+Controls nozzles of solid boosters and Vulcain cryogenic engine 
+Measures attitude of 
+launcher and its movements in space 
+Measures attitude of 
+launcher and its movements in space; Takes over if SRI unable to send guidance info A 
+B 
+D C 
+C 
+Ariane 5: A rapid change in attitude and high aerodynamic loads stemming from a 
+high angle of attack create aerodynamic forces that cause the launcher 
+to disintegrate at 39 seconds after command for main engine ignition (H0). 
+Nozzles:	 Full nozzle deflections of solid boosters and main engine lead to angle 
+of attack of more than 20 degrees. 
+SelfDestruct System: Triggered (as designed) by boosters separating from main 
+stage at altitude of 4 km and 1 km from launch pad. 
+OBC (OnBoard Computer) 
+OBC Safety Constraint Violated: Commands from the OBC to the nozzles must not 
+result in the launcher operating outside its safe envelope. 
+Unsafe Behavior: Control command sent to booster nozzles and later to main engine 
+nozzle to make a large correction for an attitude deviation that had not occurred. 
+Process Model: Model of the current launch attitude is incorrect, i.e., it contains 
+an attitude deviation that had not occurred. Results in incorrect commands being sent to nozzles. 
+Feedback: Diagnostic information received from SRI 
+Interface Model: Incomplete or incorrect (not enough information in accident report 
+to determine which)  does not include the diagnostic information from the 
+SRI that is available on the databus. 
+Control Algorithm Flaw: Interprets diagnostic information from SRI as flight data and 
+uses it for flight control calculations. With both SRI and backup SRI shut down 
+and therefore no possibility of getting correct guidance and attitude information, 
+loss was inevitable.</text>
+        </slide>
+        <slide>
+          <slideno>45</slideno>
+          <text>STAMPBased Hazard Analysis (STPA)
+executable and analyzableAssists in designing safety into system from the beginningdesign, development, manufacturing, and operationsUsed to eliminate, reduce, and control hazards in system
+Not just afterthefact analysisviolated.
+Can use a concrete model of control (SpecTRMRL) that isregulatory authoritiesIncludes software, operators, system accidents, management, 
+        
+Provides information about how safety constraints could beRisk AssessmentSafety Metrics and Performance AuditingHazard AnalysisUsing STAMP to Prevent Accidents
+                    c
+cc
+c</text>
+        </slide>
+        <slide>
+          <slideno>50</slideno>
+          <text>inadequate control actions
+Design of control algorithm (process) does not enforce constraints
+Process models inconsistent, incomplete, or incorrect (lack of linkup)
+Communication flaw Flaw(s) in creation or updating process 
+Inadequate or missing feedback
+Not provided in system design 
+Inadequate sensor operation (incorrect or no information provided)
+Time lags and measurement inaccuracies not accounted for
+Inadequate coordination among controllers and decisionmakers
+(boundary and overlap areas)STPA  Step 4b:  Examine control loop for potential to cause
+Inadequate Execution of Control Action
+Communication flaw
+Time lagInadequate "actuator" operationInadequate Control Actions (enforcement of constraints) 
+        
+e.g. operational proceduresUse information to design protection against changes:over time.
+E.g., specified procedures ==&gt; effective procedures
+controls over changes and maintenance activitiesUse system dynamics models?STPA  Step4c:  Consider how designed controls could degrade
+management feedback channels to detect unsafe changesauditing procedures and performance metrics
+                     ccc
+c</text>
+        </slide>
+        <slide>
+          <slideno>18</slideno>
+          <text>c                         
+   
+FTA and Software 
+Appropriate for qualitative analyses, not quantitative ones 
+System fault trees helpful in identifying potentially hazardous 
+software behavior.
+Can use to refine system design constraints.
+FTA can be used to verify code. 
+Identifies any paths from inputs to hazardous outputs or
+provides some assurance they dont exist.
+Not looking for failures but incorrect paths (functions)
+                
+  
+not open 
+valve 1 too high Pressure 
+fails on Position 
+Indicator Valve 1 
+too late Light fails 
+on Open
+Indicator failure Computer does 
+failure Valve 
+inattentive Operator 
+open valve 2 not know to Operator does 
+Failure Sensor does not open Relief valve 2 
+Computer 
+        
+Fault Tree Example 
+or or 
+and and 
+or 
+open valve 1 command to does not issueComputer
+output c 
+does not open 
+Valve Explosion 
+Relief valve 1</text>
+        </slide>
+        <slide>
+          <slideno>0</slideno>
+          <text>c . 
+Software System Safety
+Nancy G. Leveson 
+MIT Aero/Astro Dept. 
+Copyright by the author, November 2004.</text>
+        </slide>
+        <slide>
+          <slideno>48</slideno>
+          <text>Eliminate from design or control or mitigate in 
+design or operationsSTPA  Step 4:  Determine how potentially hazardous control
+Guided by set of generic control loop flaws
+Where human or organization involved must evaluate:
+Behaviorshaping mechanisms (influences)Context in which decisions madeStep 4a:  Augment control structure with process models for each
+control component
+Step 4b:  For each of inadequate control actions, examine parts of
+control loop to see if could cause it.actions could occur.
+Can use a concrete model in SpecTRMRL
+    
+In general:    
+Step 4c:  Consider how designed controls could degrade over timeAssists with communication and completeness of analysis
+Provides a continuous simulation and analysis environment
+to evaluate impact of faults and effectiveness of mitigation
+features.
+                     ccc
+c</text>
+        </slide>
+        <slide>
+          <slideno>17</slideno>
+          <text>c                         
+   
+Hazard Causal Analysis 
+Used to refine the highlevel safety constraints into more 
+detailed constraints. 
+Requires some type of model (even if only in head of analyst) 
+Almost always involves some type of search through the 
+system design (model) for states or conditions that could lead to system hazards. 
+Topdown 
+Bottomup Forward Backward                         
+   
+c 
+Forward vs. Backward Search 
+States Initiating Final 
+Events Initiating 
+nonhazard nonhazard nonhazard 
+X 
+Z Y W 
+D C B A Final 
+HAZARD HAZARD 
+nonhazard nonhazard nonhazard 
+X 
+Z Y W 
+D C B A States Events 
+Forward Search Backward Search</text>
+        </slide>
+      </slides>
+      <videos/>
+    </lecture>
+    <lecture>
+      <lecture_title>Process and Life Cycle Models (PDF)</lecture_title>
+      <lecture_pdf_url>https://ocw.mit.edu/courses/16-355j-software-engineering-concepts-fall-2005/resources/cnotes2/</lecture_pdf_url>
+      <lectureno>2</lectureno>
+      <slides>
+        <slide>
+          <slideno>0</slideno>
+          <text>Waterfall Model
+"Big Bang" testing, "stubs", daily build and smoke test Documentdriven process Deliverables  baselines Feasibility 
+V&amp;V Study 
+Requirements 
+Design 
+Coding 
+"A Rational Design Process and How to Fake It" V&amp;V 
+V&amp;V 
+V&amp;V Test 
+V&amp;V</text>
+        </slide>
+      </slides>
+      <videos/>
+    </lecture>
+  </lectures>
+</doc>

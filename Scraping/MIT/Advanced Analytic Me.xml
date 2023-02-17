@@ -1,0 +1,2947 @@
+<doc>
+  <source>MIT</source>
+  <date>28/01/2023</date>
+  <course>
+    <course_url>https://ocw.mit.edu/courses/18-305-advanced-analytic-methods-in-science-and-engineering-fall-2004/</course_url>
+    <course_title>Advanced Analytic Methods in Science and Engineering</course_title>
+    <course_tags>
+      <list>Mathematics </list>
+      <list>Applied Mathematics </list>
+      <list>Differential Equations </list>
+    </course_tags>
+  </course>
+  <lectures>
+    <lecture>
+      <lecture_title>Complex Analysis (PDF)</lecture_title>
+      <lecture_pdf_url>https://ocw.mit.edu/courses/18-305-advanced-analytic-methods-in-science-and-engineering-fall-2004/resources/second1/</lecture_pdf_url>
+      <lectureno>2</lectureno>
+      <slides>
+        <slide>
+          <slideno>1</slideno>
+          <text>Complex Analysis 
+z : rcos O +isin O. (2.1) 
+The Eulers formula says 
+eiO : cos O +isin O. (2.2) 
+Incidentally, (2.2) shows that, when O is real, cos O and sin O are the real part and the imaginary part 
+of eiO, respectively. For example, the complex num Some useful special cases of (2.2) are 
+eiZ : ?1, 
+which wraps up . In particular, 
+e2iZ eiZ: 1, : ?1, 
+which relate the transcendental numbers e, Z and i . 
+By (2.2) we have 
+z : reiO . (2.3) 
+This is known as the polar form of z. We call r the absolute value of z, which is also expressed as 
+P z P, and O the argument of z. 
+The argument of z is defined modulo an integral multiple of 2Z , as is obvious geometrically. 
+Indeed, the polar form (2.3) can be written as 
+z : reiO+2nZ . (2.4) 
+The polar form is particularly convenient to use for carrying out the operations of multiplication or 
+division of complex numbers. Let 
+z1 : r1eiO1, z2 : r2eiO2, 
+then 
+z1z2 : r1r2eiO1+O2 , z1/z2 : r1/r2eiO1?O2 . 
+These operations are more cumbersome to carry out if we express the complex numbers with the Cartesian form. 
+Needless to say, using the polar form to do multiplication and division of more factors of 
+complex numbers is even more laborsaving. In particular, we have 
+zn : rneinO : rncos nO + isin nO. 
+What about the power function za, where a is a number which is not an integer? We have 
+a : raeiOaei2nZaza : reiO+2nZ . n : 0, 1, 2, `, 
+which shows that za has infinitely many values. Exceptions occur when a is a rational number. 
+/
+1Consider for example z1 2. Setting a : 1/2 and z : 1 in the expression above, we get 
+1/2 : einZ : 1, n even, 
+: ?1, n odd, 
+which is the familiar result that the square-root of unity is 1. More generally, 
+zn/m : rn/meinO/mei2Zkn/ m , k : 0, 1, 6 6 6, m ? 1, 
+where n and m are integers with no common factors. 
+B Analytic Functions 
+A complex-value function f z is said to be analytic in a region R in the complex z -plane if the 
+limit 
+=flim # 
+=z0 =z 
+exists for every point z in R, where 
+=f : fz + =z ? fz. 
+The limit above, if it exists, is called the derivative of fz. The function f z is said to be analytic 
+at z0 if it has a derivative in a neighborhood of z0. 
+While (2.5) resembles the definition of the derivative of a function of a real variable x 
+=ffrx : lim , 
+=x0 =x 
+there is actually a substantive difference between them. The point is that =z has both a real part and 
+ 2</text>
+        </slide>
+        <slide>
+          <slideno>5</slideno>
+          <text>Complex Analysis 
+r 
+k 
+c 6H P 
+Figure 2.3. 
+And if c encloses z0, we may deform the contour into the circle CR without crossing any 
+singularity of the integrand, where CR is the circle the center of which is z0 and the radius of which is 
+R. 
+Now if z is on CR, 
+|z ? z0|: R, 
+and hence 
+z ? z0 : eiOR. 
+From this polar form of z ? z0, we get 
+dz : ieiORdO. 
+Thus we have 
+In : Rni 
+?1 X2Z 
+ei1?nOdO. 
+0 
+The integral above is easily calculated. Indeed, we have 
+eX2Z i1?nOdO : 2Z, n : 1, 
+0 
+: 0, n  1. 
+Thus we conclude that, if z0 is inside the closed counterclockwise contour c , we have 
+In : 2Zi, n : 1, 
+: 0, n  1. (2.17) 
+From (2.17), we find that if the only singularity fz has in the region enclosed by the closed coutour 
+c is located at z0, and if fz is approximately 
+a?1/z ? z0 
+as z is near z 0, we have 
+X fzdz : 2Zia?1. (2.26) 
+c 
+This is known as the Cauchy residue theorem. Eq. (2.26) is actually true as long as fz has an 
+isolated singularity at z0.  See the textbook for a more complete discussion.) The coefficient a?1 is 
+known to be the residue of fz at z0, which we shall denote as Res z0. If the contour is clockwise, 
+the integral will be equal to the negative of 2Z i times the residue. 
+This formula is one of the most useful formulae in complex analysis. It tells us that the value of 
+an integral over a closed contour can be obtained by simply evaluating the residue of its integrand. 
+If the contour c encloses more than one singularities of fz, we replace the right side of (2.26) by 
+the sum of residues of fz at these singularities. 
+Before we close this section, let us show how to evaluate efficiently the residue of fz at z0 
+where the function has a pole of the first order, which is called a simple pole. If the singularity of fz 
+ 6</text>
+        </slide>
+        <slide>
+          <slideno>8</slideno>
+          <text>Complex Analysis
+function single-valued.
+7. Show that the Taylor series (2.20) is convergent inside the circle with center at z0 and with the 
+radius equal to P z0 ? z1 P, where z1 is the singularity of fz nearest to z 0.
+Hint: Estimate the magnitude of fnz0 with the use of the Cauchy integral formula.
+8. Let fz and gz be analytic in a region R , and let z0 be an interior point of R. If fz : gz has 
+at least one root in any neighborhood of z0, no matter how small this neighborhood is, prove 
+that fz : gz in R. 
+Hint: Let Gz  fz ? gz and consider the Taylor series expansion of Gz around z0. Show 
+that, unless this series vanishes identically, it cannot vanish at z if z is sufficiently close to z0 but 
+not equal to z0. 
+dx 9. Let In : X 0 K 
+1 + xn . 
+a. Prove that In : Z . What is In in the limit n  K? nsinZ/n 
+b. Show that, as n  K, the limit of the integral In is equal to the limit of the integrand 
+1 + xn?1 integrated over 0, K. 
+10. Evaluate the following integrals making use of branch cuts: 
+a.
+ln2x dx.
+XK 
+01 + x2
+Ans. Z3/8.
+b. 
+X11 x3 dx. 
+01 + x21 ? x
+Z cosZ/8
+Ans. Z ? 21/4 . 
+11. Let z0 be an isolated singularity of fz, and let z be a point in the neighborhood of z0. Show 
+that 
+fzrfz : X fzr dzr ?X dzr , 
+CR zr ? z CK zr ? z 
+where CR and CK are counterclockwise circles the centers of which are at z0 and the radii of 
+which are R and K, respectively. Also, R is sufficiently large so that z is inside CR, and K is 
+sufficiently small so that z is outside CK . Derive the Laurent series expansion of fz from the 
+equation above and discuss the region where the series is convergent. 
+12. Find the Fourier coefficient an for the following functions. What is the value of the Fourier 
+series at O : Z? 
+a. eO . 
+Ans. a n : ?1neZ ? e?Z . The value of the series at O : Z is 1 eZ + e?Z.2Z 1 ? in 2 
+b.1 
+a + bcos O . 
+Ans. an : 2Z?1n a ? a2 ? b2 n ; 0, a?n : an. The value of the 
+. n 
+O : Z a ? b?1Fourier series at is / bn a2 ? b2 
+13. Find the Fourier transform of the following functions: 
+a. e?PxP .
+Ans. 2
+1 + k2. . 
+b. 1 + x2?2.
+Z1 +P k P e?PkP
+Ans. 2. 
+ 9</text>
+        </slide>
+        <slide>
+          <slideno>7</slideno>
+          <text>Complex Analysis
+satisfied by the real part and the imaginary part of fz.
+2. Prove that 
+2Z : 5 ? 1. d. X11 x3 cos 5 4 01 + x21 ? x . 
+Z cosZ/8Ans. Z ? 21/4 . 
+Hint: Let eZi/5  c + is, then 
+c + is5 : ?1.
+Equate the imaginary parts of the two sides of this equation.
+3. Evaluate the following integrals with contour integration: 
+a. 
+dx XK 
+?K x2 + 1x ? 2ix ? 3ix ? 4i .
+Ans. ? iZ
+60 . 
+b.
+1 ? cos 2x dx.
+ XK 
+?K x2 
+Ans. 2Z . 
+c.
+sin3x dx.
+XK 
+?K x3 
+Ans. 3Z /4. 
+d. 
+X2Z 1 dO a ; b ; 0. 
+0 a + b cos O2 
+/2Ans. 2Z a/a2 ? b23. 
+e.
+x sin x dx.
+ XK 
+?K x2 ? 4Z2
+Ans. Z .
+4. Explain why the integral of (2.35) is not equal to the imaginary part of X eziz dz. c 
+5. Evaluate the integral 
+sin x dx.XK 
+?K x + i 
+Explain why it is not fruitful to evaluate the integral 
+J : XK eix dx. 
+?K x + i 
+Ans. Z e .
+.1 + 1 + z2
+6. Consider f z : log 2 
+a. Find all possible branch points of this function.
+Ans. 0, i, K.
+b. If we define 1 + z2 Pz:0 : 1, 
+show that the origin is not a branch point of this function. Draw a set of branch cuts to make the 
+ 8</text>
+        </slide>
+        <slide>
+          <slideno>4</slideno>
+          <text>Complex Analysis 
+o ' o 
+' P P 
+r r 
+Figure 2.2. 
+The contours c1 and c 2 in (2.14) are open contours. We shall extend (2.14) to closed contours. 
+Let c and cr be closed contours of the same sense of direction, i.e., either both counterclockwise or 
+both clockwise, and that there are no singularities of fz between c and cr. We choose a point z0on c 
+and think of the closed contour c as a contour joining the point z0 to itself. Let us draw a line joining 
+rz0 to a point z0 on cr, forming a bridge between c and cr. Then we may think of cr as another contour 
+joining z0 to itself. This is because cr can be considered to be the contour which begins at z0, crosses 
+the bridge to z0 r , and follows cr to return to z0 r , then crosses the bridge in the reverse direction to 
+finally come back to z0. As the bridge is crossed twice in opposite directions, the two contour 
+integrals associated with the contour of the bridge cancel each other. Therefore, cr can also be 
+considered as a closed contour joining z0 to itself, and by (2.14) have 
+X fzdz : X fzdz. (2.15) 
+c cr 
+Equation (2.15) says that the contour c can be deformed into cr provided that fz is analytic in the 
+region lying between c and cr . 
+Let us go from z0 to z 1 along contour c 1 in Fig. 2-1, then go from z1 back to z 0 along ?c2, which 
+is c2 in the reverse direction. The contour c : c1 ? c2 is a closed contour. Thus (2.14) can be written 
+as 
+X fzdz : 0 (2.16) 
+c 
+provided that fz is analytic in a region R and c is a closed contour c inside R. Equation (2.16) is the 
+important Cauchy integral theorem. 
+Next we consider the integral 
+dz In : X 
+c z ? z0n , 
+where c is a closed contour in the counterclockwise direction and n is a positive integer. The 
+integrand blows up at z : z0, and is said to have a singularity at z0. More generally, if a single-value 
+function f z is not analytic at point z0, then we say that fz has a singularity at z0. 
+If c does not enclose z0, I vanishes by Cauchys integral theorem. 
+ 5</text>
+        </slide>
+        <slide>
+          <slideno>6</slideno>
+          <text>Complex Analysis 
+at z0 is a simple pole, 
+fz : za
+??1 z0 + a0 + a1z ? z0+6 6 6. 
+Thus the residue of fzat z0 is equal to 
+Resz0 : lim z ? z0fz. (2.27) zz0 
+D Evaluation of Real Integrals 
+The Cauchy residue theorem provides us with a tool to evaluate a number of real integrals, the 
+integrands of which are functions of a real variable and the integration is over real values of the 
+variable. Some of these integrations are difficult to carry out in closed form with the methods 
+provided by calculus. We shall show that, by going into the never-never land of the complex plane, 
+sometimes we can find the closed forms of these integrals. 
+As an example, let us consider the integral 
+dx I : XK 
+1 + x2 . (2.28) 
+?K 
+This integral can be evaluated exactly. We have 
+KI : tan?1x|?K : Z. 
+We shall reproduce this result by using the Cauchy residue theorem. We regard this integral as a 
+contour integral over the real axis of the complex plane. But we cannot as yet apply the Cauchy 
+residue theorem to it, as the real axis is not a closed contour. Let us think of the real axis as the 
+contour from ?R to R along the real axis, in the limit as R approaches infinity. We add to this contour 
+the counterclockwise semicircle in the upper half-plane with the origin as the center and R the 
+radius, and get a closed contour which we shall call c. As we shall see, the integral over the 
+semicircle vanishes in the limit of R  K. Thus the integral of (2.28) is equal to the integral over c . 
+Since c is a closed contour we may apply the Cauchy residue theorem to the integral. The only 
+singularity of the integrand enclosed by c is z : i. Thus we get 
+I : 2ZiResi : 2Zi 1 : Z,2i 
+which is the correct result. 
+To finish the argument let us show that the contribution of the semicircle is zero in the limit 
+R  K. If z is a point on the semicircle, 
+z : eiOR, 0  O  Z. 
+When R is very large, the integrand 1/ 1 + z2is approximately equal to 1/ z2, the magnitude of which 
+is 1/R2. We also have 
+dz : ieiORdO. (2.29) 
+Thus we have 
+uXZdz RidO X 
+CR 1 + z20 R2e2iO , 
+where CR is the semicircle in the upper-half plane. In the limit R  K, the integral above vanishes. 
+We may also close the contour of the integral in (2.28) by adding to it the semicircle in the lower 
+half-plane in the clockwise direction. The only singularity enclosed by this contour is the one at 
+z : ?i. Thus we have 
+I : ?2Zi Res?i : ?2Zi 1 : Z,?2i 
+which is the same answer. Note that the minus sign above is due to the fact that the closed contour is clockwise. 
+One of the first things we do in applying the Cauchy residue theorem is to make sure that the 
+contour is a closed one. If the contour is not closed, try to close it if possible. The second step is to 
+locate the singularities of the integrand enclosed by the contour, and calculate the residues of the 
+integrand at each of the singularities. 
+Many more examples are given in the textbook.
+Homework Problems
+1. Prove that the limit of (2.5) is the same for any =z if the Cauchy-Riemann equations are 
+ 7</text>
+        </slide>
+        <slide>
+          <slideno>0</slideno>
+          <text>Complex Analysis 
+Lecture 2 
+Complex Analysis 
+A Complex Numbers and Complex Variables 
+In this chapter we give a short discussion of complex numbers and the theory of a function of a 
+complex variable. 
+Before we get to complex numbers, let us first say a few words about real numbers. 
+All real numbers have meanings in the real world. Ever since the beginning of civilization, 
+people have found great use of real positive integers such as 2 and 30, which came up in, as an 
+example, the sentence my neighbor has two pigs, and I have thirty chickens. The concept of 
+negative real integers, say ?5, is a bit more difficult, but found its use when a person owed another 
+person five ounces of silver. It was also natural to extend the concept of integers to numbers which 
+are not integers. For example, when six persons share equally a melon, the number describing the 
+fraction of melon each of them has is not an integer but the rational number 1/6. The need for other real numbers was found as mathematicians pondered the length of the circumference of a perfectly 
+circular hole with unit radius. This length is a real number which can be expressed neither as an integer nor as a ratio of two integers. This real number is denoted as Z, and is called an irrational 
+number. Another example of irrational number is e. 
+Each of the real numbers, be it integral, rational or irrational, can be geometrically represented 
+by a point on an infinite line, and vice versa.. 
+When we add, subtract, multiply or divide two real numbers, the outcome is always a real 
+numbers. Thus the root of the linear equation 
+ax + b : c, 
+with a, b and c real numbers, is always a real number. This means that if we restrict ourselves to 
+making linear algebraic operations of real numbers, the result that comes out is invariably found as a 
+real number. Thus the real numbers form a complete system under linear algebraic operations. 
+But as soon as we get to non-linear operations, the system of real numbers becomes inadequate 
+by itself. For example, the roots of 
+x2 : ?1 
+cannot be expressed as a real number, and we must use our imagination denoting a root as i. As 
+we all know, the number i is the imaginary number. While we have gotten to be comfortable with the 
+number i ever since our high school days, Gauss once remarked that the  true metaphysics of i was 
+hard. 
+The number 
+F : a + ib, 
+where a and b are real numbers, is called a complex number. The numbers a and b are called the 
+real part and the imaginary part of F, respectively. While complex numbers do not have direct 
+meanings in the real world, we shall see that, as we allow ourselves wander into the never-never land 
+of complex numbers, we find powerful ways to deal with real problems. 
+The complex variable z is denoted by 
+z : x + iy, 
+where x and y are real variables and 
+i2 : ?1. 
+The complex conjugate of z will be denoted as 
+zD : x ? iy. 
+The variable z can be represented geometrically by the point x, y in the Cartesian two-dimensional 
+plane. In complex analysis, this two-dimensional plane is called the complex plane. The x axis is 
+called the real axis, and the y axis in this plane is called the imaginary axis. Let r and O be the polar 
+coordinates, i.e., 
+x : r cos O, y : r sin O r  0, 
+where O can be chosen to be between 0 and 2Z . 
+In the the polar coordinates, z is
+ 1</text>
+        </slide>
+        <slide>
+          <slideno>2</slideno>
+          <text>Complex Analysis 
+an imaginary part, i.e., = z : =x +i=y. Therefore, if fz is to have a derivative, the limit of (2.5) is 
+required to exist for any =x and = y, as long as both of them go to zero. There is no restriction, for 
+example, on the ratio of =y/=x, which may take any value. This is a strong condition on the function 
+fz. 
+A strong condition has strong consequences. Let 
+fz : ux, y +ivx, y, 
+where u and v are the real and the imaginary part of fz. Then the expression in (2.5) is 
+lim =u +i=v , (2.6) 
+=z0 =x +i=y 
+where 
+=u : ux + =x, y + =y ? ux, y, 
+and similarly for = v. We first consider the limit of (2.6) with = z real, i.e., = z : =x. Then the 
+limit of (2.6) is equal to 
+lim =u +i=v : ux +ivx, (2.7) 
+=x0 =x yfixed 
+where ux, for example, is the partial derivative of u with respect to x . Next we consider the limit 
+(2.6) with = z purely imaginary, i.e., = z : i=y. We have 
+uy +ivylim =u +i=v : i . (2.8) 
+=y0 i=y xfixed 
+If fz has a derivative, the expressions of (2.7) and (2.8) are the same by definition. This requires 
+that 
+ux : vy, uy : ?vx. (2.9) 
+The equations in (2.9) are known as the Cauchy-Riemann equations which the real part and the 
+imaginary part of an analytic function must satisfy. 
+While we have only required that the limit of (2.5) is the same with = z either real or imaginary, it 
+is straightforward to prove that this limit is the same for any complex = z when the Cauchy-Riemann 
+equations are obeyed. 
+Problem for the Reader: 
+Is the function f z : zzD analytic? 
+Answer 
+For this function, 
+ux, y : x2 +y2, vx, y : 0. 
+We have 
+ux : 2x, uy : 2y, vx : vy : 0. 
+Thus the Cauchy-Riemann equations are not satisfied except at the origin, which is a point but not a 
+region. Since the derivative of the function exists for no region of z, it is not analytic anywhere. 
+Next we give a few examples of functions which are analytic. The power function zn with n an 
+integer is analytic. While this may appear obvious to many of you, let us give it a proof. We have, by 
+using the binomial expansion, 
+z + =zn ? zn 
+: lim nzn?1=z +6 6 6 , lim 
+=z0 =z =z0 =z 
+where the terms unexhibited are at least as small as the square of =z. The limit above exists for all 
+=z and is equal to nzn?1, the way we remember it from calculus. Thus the derivative of the power 
+function zn exists for all values of z, and this function is analytic for all values of z, or an entire 
+function of z. 
+Since the power function zn is analytic, so is the linear superposition of a finite number of power 
+functions. And so is an absolutely convergent sum of power functions. Conversely, a function 
+analytic at a point z0 always has a convergent Taylor series expansion around z 0 (homework problem 
+7). 
+C The Cauchy Integral Theorem 
+The contour integral 
+ 3</text>
+        </slide>
+        <slide>
+          <slideno>3</slideno>
+          <text>Complex Analysis 
+I : X fzdz 
+c 
+where c is a contour in the complex plane, is defined to be 
+X u + ivdx + idy : X udx ? vdy + i X udy + vdx. # 
+c c c 
+We note that the two integrals on the right side of (2.12) are line integrals in the two-dimensional 
+plane. 
+An example of a line integral is the work done by a force. As we know, if A and B are two points 
+in the x ? y plane, the work done in moving a particle from A to B along a path c against the force 
+F : Mx, y i + Nx, y j 
+is equal to the line integral 
+X Mdx + Ndy. 
+c 
+F V 
+F : ?4V, We also recall that if is a conservative force, i.e., if there exists a potential such that 
+then the work done is independent of the path. To say this more precisely, let the potential V exist in 
+a region R in the two-dimensional plane, then 
+X Mdx + Ndy : X Mdx + Ndy, 
+c1 c2 
+provided that c1 and c 2 are two curves with the same endpoints and both lie inside R. 
+If the potential V exists, we have 
+P 0 P 1r1 
+r2 
+Figure 2.1. 
+M : ?Vx, N : ?Vy, 
+and hence 
+My : Nx. (2.13) 
+The converse is indeed also true: if (2.13) holds in a region R , then the force is the gradient of a 
+potential. 
+cNow for the first line integral in (2.12), M is u and N is ?v. Thus the condition (2.13) for this line 
+integral is the second Cauchy-Riemann equations. For the second line integral in (2.12), M is v and N 
+is u . Thus the condition (2.13) for this line integral is the first Cauchy-Riemann equations. The 
+contour integral I in (2.12) is therefore path independent if fz is analytic. More precisely, let c1 and 
+2 be two curves, both join the lower endpoint z0 to the upper endpoint z1 in the complex z -plane, 
+and both lie inside the region R where fz is analytic. Then we have 
+X fzdz : X fzdz. (2.14) 
+c1 c2 
+Equation (2.14) tells us that we may deform the contour c1 to the contour c 2, where c1 and c 2 have 
+the same endpoints, provided that fz is analytic in the region lying between c1 and c 2. 
+ 4</text>
+        </slide>
+      </slides>
+      <videos/>
+    </lecture>
+    <lecture>
+      <lecture_title>Singular Points of&#160;Ordinary Differential Equations (PDF)</lecture_title>
+      <lecture_pdf_url>https://ocw.mit.edu/courses/18-305-advanced-analytic-methods-in-science-and-engineering-fall-2004/resources/sixth1/</lecture_pdf_url>
+      <lectureno>6</lectureno>
+      <slides>
+        <slide>
+          <slideno>1</slideno>
+          <text>Singular Points of Ordinary Differential Equations 
+where &lt;z is the Gamma function defined by 
+&lt;z XK 
+e?ttz?1dt. (6.11) 
+0 
+Thus we have 
+&lt;2/3 a3m : 
+a32mm!&lt;m + 2/3 a0. (6.12) 
+Problem for the Reader: 
+Express a3m+1 in terms of a3m?2. 
+Answer 
+Setting n : 3m + 1 in (6.7), we get 
+3m?1+1 a3m+1 : 32 m + 1 
+3 m . (6.13) 
+Problem for the Reader: 
+Express a3m+1 in terms of a1. 
+Answer 
+We may derive from (6.13) and (6.10) that 
+a3m+1 : a1&lt;4/3 . (6.14) 32mm!&lt;m + 4/3 
+Thus the general solution of the Airy equation is 
+yx : C1y1x + C2y2x, 
+where 
+m + 2 , (6.15) y1x :&gt; x3m 
+32mm!&lt; 3 m 
+and 
+m + 4 , (6.16) y2 x :&gt; x3m+1 
+32mm!&lt; 3 m 
+with 
+C1 a0&lt;2/3 and C 2 a1&lt;4/3. 
+If x is small, taking a few terms of (6.15) and (6.16) gives a good numerical approximation of the 
+solution of the Airy equation. 
+But (6.15) and (6.16) are more useful than that. Indeed, the series can be used for any finite value 
+of x, not just for small x. This is because the series is convergent even for large x. 
+Homeworks due next Monday; 
+Problems 1,2,3 and 4 of Chapter 6 in the textbook. 
+ 2</text>
+        </slide>
+        <slide>
+          <slideno>0</slideno>
+          <text>Singular Points of Ordinary Differential Equations 
+Lecture 6 
+Singular Points of Ordinary Differential 
+Equations 
+In the last chapter, we applied the method of separation of variables to various PDEs and found 
+a number of transcendental equations. Two of them are 
+d2y ? xy : 0 Airy eq. dx2 
+and 
+x2 d2y + x dy + x2 ? p2y : 0. Bessel eq. dx2 dx 
+These equations cannot be solved in closed forms. 
+As one handles real problems in the real world, one commonly encounters equations which 
+cannot be solved in closed forms. In such cases its helpful if one is able to find approximate 
+solutions for them. In this chapter, well mainly focus on making approximations for equations 
+which cannot be solved in closed form. 
+A Taylor Series Solutions 
+We will first consider the Airy equation 
+yrr ? xy : 0. (6.1) 
+Consider the initial value problem in which the values y0 and yr0 of the solution of this equation 
+are given. 
+Lets express the solution in the Maclaurin series 
+yx : &gt; anxn (6.4) 
+where the summation ostensibly covers all positive and negative n, but with the understanding that 
+aa?n : 0, n : 1, 2, `. 
+Thus (6.4) is indeed a Maclaurin series. 
+We set n : 3m in (6.7); we get 
+3m?1 a3m : 32mm ? 1  . (6.8) 
+3 
+Note that we have taken care to write 
+3m ? 1 : 3m ? 1/3, 
+making the coefficient of m inside the parenthesis unity. As we shall see, this makes it convenient to 
+express a3m in terms of Gamma functions. 
+Problem for the Reader: 
+Keep applying (6.8), each time reducing m by unity, until you succeed in expressing a3m in terms 
+of a0. 
+Answer 
+Since there is a factor 32 in the denominator of (6.8), we get an additional factor 32 in the 
+denominator each time we apply (6.8). Thus, applying (6.8) m times, we get a factor 32m in the 
+denominator. Similarly, the factor m in the denominator of (6.8) generates, as we apply (6.8) 
+1successively, the factors mm ? 1m ? 2`, and similarly for the factor  m ? 3  in the denominator 
+of (6.8). Thus we get 
+a
+ .0a3m : (6.9) 132mmm ? 1 66 61m ? 3 m ? 4  66 6 2 
+3 3 
+The expression (6.9) can be written in a more compact form. First of all, we note that 
+mm ? 1 66 61 : m!. 
+And, by (A.2) in this chapters Appendix 
+&lt;m + a + 1m + am + a ? 1` 1 + a :&lt;1 + a , (6.10) 
+ 1</text>
+        </slide>
+      </slides>
+      <videos/>
+    </lecture>
+    <lecture>
+      <lecture_title>Turning Point (PDF)</lecture_title>
+      <lecture_pdf_url>https://ocw.mit.edu/courses/18-305-advanced-analytic-methods-in-science-and-engineering-fall-2004/resources/eleven/</lecture_pdf_url>
+      <lectureno>11</lectureno>
+      <slides>
+        <slide>
+          <slideno>0</slideno>
+          <text>The WKB Approximation 
+Lecture Eleven Turning Point 
+As we have mentioned, the WKB approximation is useful in problems of wave propagation. In 
+this section we demonstrate this by applying it to the wave equation which governs the quantum 
+mechanical behavior of a particle. 
+Consider the time-independent Schrodinger equation of one spatial dimension discussed at the 
+end of Chapter 5. We will write this equation in the form 
+d2` + R2E ? Vx` : 0, (7.50) dx2 
+R 2m m 
+R where is equal to divided by the Planck constant, with the mass of the particle. We shall consider as a very large number. 
+As we have mentioned, | `|2 is the probability density of the particle, E is the energy of the 
+particle, and V x is the potential. We note that E ? V is equal to the kinetic energy of the particle. 
+In the region where 
+E ; Vx, 
+the kinetic energy of the particle is positive. Comparing with (7.1), we identify px with 
+R E ? Vx . 
+The WKB solutions are 
+p?1/2ei X pdx and p?1/2e ?i X pdx . (7.51) 
+These solutions are oscillatory as a function of x. 
+In the region where 
+E 9 Vx, 
+the kinetic energy of the particle is negative, and the momentum of the particle is imaginary. In classical mechanics, this region is inaccessible to the particle. The WKB solutions are 
+X Ndx ?X Ndx N?1/2e and N?1/2e , (7.52) 
+where 
+N : R Vx ? E . 
+The first solution above is exponentially increasing as x increases, and the second solution above is 
+exponentially decreasing as x increases. Since a particle is rarely observed in the classically 
+inaccessible region, we require the solution to be the one which decreases more and more as x goes 
+deeper and deeper into the classically inaccessble region. 
+Let there be a point x0 at which 
+E ? Vx0 : 0. 
+Note that the point x0 is the point at which the momentum of the particle vanishes. By (7.4), the 
+WKB approximation fails at x0. Indeed, (7.4) is not satisfied in a small neighborhood around x 0, and 
+the WKB approximation fails in this small neighborhood. 
+Let us study the behavior of the wavefunction near x0. We shall assume that the derivative of 
+Vx at x0 is different from zero, hence E ? Vx is negative at one side of x0 and positive at the other 
+side of x0. The point x0 is the dividing point between a classically accessible region and a classically 
+inaccessible region. In classical mechanics, the particle cannot move into the region where its kinetic 
+energy is negative, and must turn back as it arrives at x0. That is why the point x0 is called a turning 
+point of the equation. As we may expect, the qualitative behavior of the quantum wavefunction goes 
+through a transition near x0. More precisely, the WKB solution changes from an oscillatory behavior 
+from one side of x0 to an exponential behavior at the other side of x0. However, we cannot continue 
+the solution from one side of x0 to the other side of x0 with the WKB approximation alone. This is 
+because the WKB solutions fail in a small neighborhood around x0. 
+Fortunately, another approximation is available when x is close to x0, where we may make the 
+approximation 
+E ? Vx u ?Fx ? x0, 
+with F equal to Vrx0. This approximation is valid for 
+|x ? x0|  1. (7.53) 
+ 1</text>
+        </slide>
+        <slide>
+          <slideno>2</slideno>
+          <text>The WKB Approximation 
+process here. The result is that the solution in the neighborhood of the turning point x0 is given by 
+Z2`x : Ai[. (7.62) 1/3?
+We use (7.62) to continue the solution to negative values of [. By (7.60), the solution (7.62) as [ is 
+negative and large is 
+2
+3 4./2 +Z 2 sin ?[3
+`x u (7.63) 1/3 /4? ?[1
+We find the WKB solution in the region x 9x0 by matching it with the solution (7.63). The 
+matching is done in the overlapping region (7.56b). We find that the WKB solution valid for x 9x0 
+is 
+x0 pxrdxr+ZX x 4 . 2 sin 
+(7.64) 
+px 
+With (7.57), (7.62) and (7.64), we have an approximate solution of the Schrodinger equation 
+x F ;
+X x1 x pxrr+Z 
+4 
+px , covering all values of , when the equation has one turning point with 0. 
+2 sin dx
+(7.68) 
+which holds in the region x ;x1. 
+ 3</text>
+        </slide>
+        <slide>
+          <slideno>1</slideno>
+          <text>The WKB Approximation 
+Therefore, in the region of (7.53), the Schrodinger equation is approximately equal to 
+d2` ? FR2x ? x0` : 0, (7.54) dx2
+which is related to the Air equation
+d2u ? [u : 0
+d[2 
+by a linear transformation of the independent variable. Thus the Schrodinger equation in the 
+region near the turning point is approximately a linear superposition of the solutions of the Airy 
+functions. The constants of superposition are determined by the conditions imposed on the solution. 
+By (7.4), the WKB approximation is valid in the region 
+ ??2/3, 
+ ??|x ? x0| (7.55) 
+where 
+2 : |F|R2. 
+By (7.53) and (7.55), there are two overlapping regions in which both the WKB solutions and the 
+Airy function solutions are good approximations of the solution of (7.50). The first overlapping 
+region is 
+?2/3, 1  x ? x0 (7.56a) # 
+where x is to the right of x0, and the second overlapping region is # 
+/31  x0 ? x  ??2, (7.56b) # 
+where x is to the left of x0. The existence of such overlapping regions is crucial, as it enables us to 
+join the WKB solutions from one side of the turning point to the other side of the turning point, 
+using the Airy functions to interpolate through the region in which the WKB approximation fails. 
+We first demonstrate how this is done when (7.50) has only one turning point. We shall assume 
+that F is positive. In such a case, the kinetic energy of the particle is negative in the region x ; x0. In 
+classical mechanics, this is the region inaccessible to the particle. Thus we require the solution ` of 
+the Schrodinger equation to vanish rapidly as x increases in this region. The WKB solution satisfying 
+this requirement is 
+?Xx 
+Nxrdxr 
+.x0` WKBx : e (7.57) 
+Nx 
+We may choose the solution to be a constant times the right side of (7.57), but this affects only the 
+overall normalization of the wavefunction and we will leave it the way it is. The WKB solution fails 
+as we continue it to the neighborhood of the turning point x0. When x is close to x 0, we approximate 
+(7.50) by (7.54). The two independent solutions of (7.54) are the Airy functions denoted by Ai[ 
+and Bi[, where 
+/[ : ?2 3x ? x0. (7.58) 
+/
+?Note that a region of x with width unity corresponds to a region of [ with the width ?2 3. Since 
+2/3 is a very large number, this region of [ is a very large region. When we study the function in the 
+variable [, it is like studying the function with a magnifier. Therefore, the small region in x given by 
+(7.54), in which the Airy function solution is valid, is a large region in [ . 
+As we will discuss in the next chapter, the asymptotic form of Ai[ when the magnitude of [ is 
+large is given by 
+2
+3 4 Ai[ i e?2
+Z[3
+[/2
+1/3
+/4 , [  K, (7.59) 2 
+/2 +Zsin ?[3
+Z?[1, [  ?K. (7.60) /4 
+Since Ai[ vanishes exponentially when [ is large and positive, it satisfies the requirement we 
+impose on the wavefunction. Thus the wavefunction in the neighborhood of the turning point x0 is 
+`x : cAi[, (7.61) 
+where c is a constant. To determine c, we match the solution (7.61) with the solution (7.57) in the 
+overlapping region (7.56a) on the right side of x0. We will not give the details of the matching 
+ 2</text>
+        </slide>
+      </slides>
+      <videos/>
+    </lecture>
+    <lecture>
+      <lecture_title>Regular Singular Points of Ordinary Differential Equations (PDF)</lecture_title>
+      <lecture_pdf_url>https://ocw.mit.edu/courses/18-305-advanced-analytic-methods-in-science-and-engineering-fall-2004/resources/seven1/</lecture_pdf_url>
+      <lectureno>7</lectureno>
+      <slides>
+        <slide>
+          <slideno>0</slideno>
+          <text>Singular Points of Ordinary Differential Equations 
+Lecture 7 Regular Singular Points of Ordinary 
+Differential Equations 
+Let us consider the Bessel equation 
+x2 d2y + x dy ? p2y : ?x2y. (6.22) dx2 dx 
+Let us seek the solution of the Bessel equation which is some kind of expansion around the point 
+x : 0. 
+When x2 is much smaller than p2, we make the approximation of neglecting x2y as it is much 
+smaller than p2y. In this approximation we set the right-side of (6.22) to zero. We note that the 
+resulting ODE is equidimensional. Thus the solution of the resulting equation is of the form xs . 
+Substituting this solution into the differential equation, we get 
+ss ? 1 + s ? p2 : 0, 
+or 
+s : p, or ? p. (6.23) 
+Thus the approximate solutions are 
+yx u xp or x?p, (6.24) 
+which are good approximations when x is small. 
+Let us seek an improvement of the approximate solutions of (6.24). 
+We express y as 
+yx :&gt; anxn+s . (6.26) 
+As before, we shall understand that 
+a?1 : a?2 : ` : 0. 
+We shall require that 
+a0  0. 
+This means that a0xs is by assumption the first non-vanishing term in the series solution of the 
+Bessel equation. The series in (6.26) is called the Frobenius series. We shall show that, as we 
+substitute (6.26) into the Bessel equation, we determine the index s as well as the coefficients an, 
+n : 1, 2 6 6 6. The values of the coefficients an, n : 1, 2 6 6 6, depend on the value of s as well as a0. 
+There are two possible values of s, and hence we obtain, except in some special cases, two Frobenius 
+series solution of the Bessel equation. The general solution of the Bessel equation is a linear 
+superposition of these two solutions. This method is known as that of Frobenius. 
+Problem for the Reader:
+Find the recurrence formula for the Bessel equation.
+Answer
+Determining the dimensions of the terms in the equation will help to reduce the chore of 
+calculation. This is because as we apply two operators of the same dimension to a Frobenius series, the two resulting series can be added together without re-assigning the index of summation, as both 
+operators change the power of x
+n+s by the same amount. Thus it will save both space and labor if we 
+handle the operators with the same dimension at the same time. 
+The only term in the Bessel operator  x2D2 + xD + x2 ? p2 of dimension 2 is x2. We have 
+x2y :&gt; anxn+s+2 :&gt; an?2xn+s . 
+n n 
+The rest of the terms in the Bessel operator are of dimension zero, and we will take care of all of 
+them at the same step. We have 
+x2D2 + xD ? p2y : &gt;n + sn + s ? 1 + n + s ? p2 anxn+s?2. 
+Thus the recurrence formula for the Bessel equation is 
+n + s + pn + s ? pan : ?an?2. (6.27) 
+ 1</text>
+        </slide>
+        <slide>
+          <slideno>1</slideno>
+          <text>Singular Points of Ordinary Differential Equations 
+We note that there are only two coefficients in (6.27): an and an?2 . This is because there are only 
+two different dimensions for the operators in the Bessel equation. 
+To obtain the solution of the Bessel equation, we first set n :0 in (6.27). Since a?2 is zero and 
+since a0  0, we get 
+s +ps ? p :0. (6.28) 
+Equation (6.28) is called the indicial equation. It determines the index s to be either s1 or s 2. We get 
+s1 :p, s2 :?p, 
+in agreement with (6.23). Without loss of generality, we may assume that Re p  0, and hence 
+Re s1  Re s2. 
+Next we write (6.27) as 
+an :? an?2, n ;0. (6.29) n +s +pn +s ? p 
+Problem for the Reader:
+Solve the recurrence formula (6.29).
+aAnswer
+Let us set n :2m in (6.29). We get
+2m :? a2
+p m?1 .
+4m +s+m +s?p 2 2 
+aBy applying the above recurrence formula m times, we get with the help of (6.10) that
+2m :?1ma0&lt;1 +s/2 +p/2&lt;1 +s/2 ? p/2
+. (6.30) 4m&lt;m +s/2 +p/2 + 1&lt;m +s/2 ? p/2 + 1 
+The right-side of (6.30) depends on s , with the two values of s determined from the indicial 
+equation (6.28) given by (6.23). 
+Problem for the reader: 
+Find a solution of the Bessel equation. 
+Answer 
+Setting s :p in (6.30), we get 
+a2m :?1m &lt;1 +pa0 . (6.31) 4m&lt;m +p +1&lt;m +1 
+Thus one of the solutions of the Bessel equation is 
+22m+px 
+(6.32) Jpx :&gt; ?1m 
+&lt;m +p +1&lt;m +1 , 
+n*0 
+where the immaterial constant multiple a0&lt;1 +p has been ignored. The function J px is known to 
+be the Bessel function of order p. 
+We may get a second solution of the Bessel equation by choosing s in (6.30) to be the other 
+index ?p. But there is a slightly easier way. The Bessel equation is unchanged as we replace p by ?p. 
+Thus another solution of the Bessel equation is obtained by replacing p in (6.32) by ?p. The solution 
+obtained is J?px. 
+By (6.29), the ratio a n/an?2 vanishes like 1/ n2 as n K. Thus the series (6.32) converges for all 
+values of x. Therefore, the series is not only useful as an approximate series when x is small. It is 
+meaningful even if x is not small. However, when x is large, it is inefficient to calculate the values of 
+the Bessel function J px with the series (6.32). Also, the series hardly tells us anything about the 
+qualitative behavior of the Bessel function for large values of x. To get a hold on the behavior of the 
+Bessel function for large values of x, it is a good idea to obtain its expansion in the variable x?1, 
+rather than the variable x. 
+yConsider now the general second-order linear homogeneous differential equation 
+rr+cxyr+dxy :0. (6.38) 
+If cx and dx are both analytic at x0, x0 is called an ordinary point of (6.38). And if either c x or 
+dx or both have a singularity at x0, x0 is called a singular point of (6.38). 
+If x0 is an ordinary point of (6.38), we may obtain the two independent solutions of (6.38) by 
+seeking them in the form of a Taylor series expanded around x0: 
+ 2</text>
+        </slide>
+        <slide>
+          <slideno>2</slideno>
+          <text>Singular Points of Ordinary Differential Equations 
+yx :&gt; anx ? x0n , a?1 :a?2 :` :0. 
+aThe coefficients an, n :2, 3 6 6 6 , are determined from the recurrence formula obtained by plugging 
+the series into the differential equation. These coefficients are dependent on a0 and a 1, which are 
+arbitrary constants. We get two independent solutions, the first being obtained with the choice of 
+0 :1 and a 1 :0, and the second one being obtained with the choice of a0 :0 and a 1 :1. 
+Let x0 be a singular point of (6.38). There are two kinds of singular points. If x0 is a singular 
+point of (6.38) with x ? x0cxand x ? x02dxboth analytic at x0, then x 0 is called a regular 
+singular point of (6.38). 
+The Bessel equation (6.22) takes the form 
+1 ? p2 
+y :0. yrr+1 xyr+ x2 
+Comparing with (6.38), we find that the coefficient cxand dxfor the Bessel equation are x?1 and 
+1 ? p2/x2, respectively. The point x :0 is a regular singular point of the Bessel equation, as cx 
+has a simple pole and d xhas a double pole at this point. 
+Retuning to (6.38). We may obtain the solutions of (6.38) expanded around a regular singular 
+point x0 in the same way we obtained the solutions of the Bessel equation expanded around x :0. 
+More precisely, we seek these solutions in the form of the Frobenius series 
+n+syx :&gt; anx ? x0, (6.39) 
+n 
+with 
+a?1 :a?2 :` :0. 
+The series is convergent at least up to the next singular point of (6.38). 
+Finally, if either x ? x0cxor (x ? x02dxor both are not analytic at x0, then x 0 is called an 
+irregular singular point of (6.38). 
+ 3</text>
+        </slide>
+      </slides>
+      <videos/>
+    </lecture>
+    <lecture>
+      <lecture_title>Irregular Singular Points of Ordinary Differential Equations (PDF)</lecture_title>
+      <lecture_pdf_url>https://ocw.mit.edu/courses/18-305-advanced-analytic-methods-in-science-and-engineering-fall-2004/resources/eight1/</lecture_pdf_url>
+      <lectureno>8</lectureno>
+      <slides>
+        <slide>
+          <slideno>2</slideno>
+          <text>Singular Points of Ordinary Differential Equations 
+to vanish. There is, in eq. (6.60), a term in the coefficient of Y which is a fourth-order pole at the 
+point of expansion x 0 :0. Thus we require 
+2 +1 :0, 
+or A1 
+A1 : i. 
+Let us choose the root 
+A1 :i. 
+Then (6.60) becomes 
+ d2 ? 2i d + 2i Y :0. dx2 x2 dx x3 
+One of the solutions can be obtained by inspection. We get 
+Yx :x. 
+This result can also be obtained if we go through the grind to obtain the recurrence formula 
+n +s ? 1n +s ? 2an?1 :2in +s ? 1an. 
+From the recurrence formula with n :0, we get 
+as :1.
+Thus the recurrence formula is
+nn ? 1an?1 :2inan.
+Setting n :1, we obtain from the recurrence formula that
+1 :0,
+and hence a2 :a3 :6 6 6 :0. Therefore, the series solution for Y xterminates after one term.
+Thus we have obtained the closed form expression of one of the independent solutions of (6.57) as 
+iy1x :xexp .x 
+Taking the complex conjugate y1x, we get the second independent solution of (6.57) as 
+? iy2x :xexp .x 
+Problem for the Reader:
+Find the series solution of the Bessel equation
+yrr+x?1yr+1 ? p2/x2y :0 (6.61) 
+which is useful for very large values of x. 
+Answer 
+We may read off the rank at infinity from the Bessel equation (6.61) directly, without changing 
+the independent variable from x to t. 
+As x goes to infinity, the coefficient of y goes to a constant, or x0. Therefore, according to this 
+coefficient, 
+2k ? 2 :0, 
+or 
+k :1.
+The coefficient of yris x?1. Thus, according to this coefficient,
+k ? 1 :?1,
+or
+k :0.
+The rank of the Bessel equation at x0 :K is the greater of the two, and is unity.
+Thus we put
+yx :expA1xYx 
+where 
+Yx :&gt; anx?n?s , a0 :1, a?1 :a?2 :` :0. 
+The Bessel equation becomes 
+D2 +2A1D +x?1D +A1 2 +1 +A1/x ? p2/x2Y :0. 
+ 3</text>
+        </slide>
+        <slide>
+          <slideno>3</slideno>
+          <text>Singular Points of Ordinary Differential Equations 
+We require the sum of the most divergent terms in the coefficient of Y in the equation above vanish. 
+As x K, the coefficient of Y in the equation above is A1 2 +1. Thus we get 
+A1 : i. 
+This determines the two roots of A1. 
+Take the root 
+A1 :i. 
+Then the equation for Y becomes 
+Yrr+2i +x?1Yr+i/x ? p2/x2Y :0. 
+We have 
+D2 +x?1D ? p2/x2Yx :&gt;n +sn +s +1 ? n +s ? p2 anx?n?s?2, 
+and 
+2iD +i/xYx :&gt;?2in +s +ianx?n?s?1. 
+Thus we have 
+2in +s ? 1/2an :n +s ? 12 ? p2 an?1. 
+Setting n :0, we get 
+s :1/2. 
+For n  0, the recurrence formula is 
+n +p ? 1/2n ? p ? 1/2 an : 2in an?1. (6.62) 
+aThus we have 
+1 &lt;n +p +1/2&lt;n ? p +1/2 
+n : 2inn!&lt;p +1/2&lt;?p +1/2 a0. 
+Therefore, one of the series solution for the Bessel equation for very large values of x is 
+y1x :x?1/2expix &gt; 1 &lt;n +p +1/2&lt;n ? p +1/2 . #2ixn &lt;p +1/2&lt;?p +1/2n! 
+The other series solution for the Bessel equation for very large values of x is 
+K 
+y2x :x?1/2exp?ix &gt; 1 &lt;n +p +1/2&lt;n ? p +1/2 . (6.64) ?2ixn &lt;p +1/2&lt;?p +1/2n! 
+n:0 
+Equations (6.63) and (6.64) give the solutions of the Bessel equation useful when P x P is large. 
+This is to be compared with the series solution (6.32) useful when P x P is small. Since Jpx is a 
+solution of the Bessel equation, it must be a linear superposition of y1 and y 2. Thus we have 
+Jpx :cy1x +c7y2x.
+The coefficient c cannot be determined with the present analysis, but we will be able to show in
+Thusc : e?iZ1/4+p/2 
+2Z . Chapter 8 that 
+Jpx u Z2 x cosx ? Z/4 ? pZ/2, x ;;1. 
+The series (6.63) and (6.64) differ from the series (6.32) in one important aspect: the former are 
+divergent for all values of x! This can be seen from (6.62), which shows that, when n is very large, 
+the ratio an/an?1 goes to infinity. 
+That these series are divergent does not imply that they are not useful for the purpose of 
+approximation. Indeed, they are called asymptotic series and give very good approximations to the 
+solutions when x is large if the number of terms is chosen appropriately. 
+The classic example of an asymptotic series is 
+e?t Ix :XK 
+dt, x N 0. (6.65) 
+01 +tx 
+We have 
+ 4</text>
+        </slide>
+        <slide>
+          <slideno>1</slideno>
+          <text>Singular Points of Ordinary Differential Equations 
+Ak?1 A1Fx : Ak + x ? x0k?1 +` x ? x0 x ? x0k 
+and 
+sYx :&gt; anx ? x0n+, a0  0, a?1 :a?2 :` :0 (6.46) 
+is a Frobenius series. 
+As a general remark, if we wish to find the behavior of the solution of (6.38) at very large values 
+of x, we make the change of variable 
+x : 1.t 
+When x is very large, t is very small. Indeed, x :K corresponds to t :0. By making an expansion of 
+the solution around t :0 in the way we just outlined, we obtain an expansion around x :K. 
+Keeping a few terms of this expansion is often a good approximation of the solution at very large 
+values of x. 
+The change of the independent variable from x to t is done with 
+d 
+dx : d 
+d 1 
+t  :?t2 d 
+dt , 
+and 
+d2 
+dx2 :t2 d 
+dt t2 d 
+dt :t4 d2 
+dt2 +2t3 d 
+dt . 
+Thus (6.38) becomes 
+d2y 
+dt2 + 2t ? c 1 
+t 
+t2  dy 
+dt + d 1 
+t 
+t4  y :0. (6.54) 
+We call x :K an ordinary point, a regular singular point, or an irregular singular point of rank k of 
+eq. (6.38), respectively, if t :0 is an ordinary point, a regular singular point, or an irregular singular 
+point of rank k of (6.54), respectively. In particular, we see from (6.54) that the infinity is an 
+irregular singular point of rank k if either d x blows up like x2k?2 or cx blows up like xk?1 as x goes 
+to infinity. 
+If the infinity is an irregular singular point of rank k , then the solution of (6.38) for very large x is 
+of the form 
+yx :expAkxk +Ak?1xk?1 +` +A1xYx, (6.55) 
+where 
+Yx :&gt; anx?n?s , a0  0, a?1 :a?2 :` :0, (6.56) 
+which is easily deduced from (6.45) and (6.46) by identifying x ? x0 with t , or 1/x. Note that the 
+terms in the series (6.56) are in decreasing powers of x, and hence the series is a useful 
+approximation for x large. 
+Problem for the Reader: 
+Find the series solution of 
+yrr+x?4y :0 (6.57) 
+which is useful for very small values of x. 
+Answer 
+The point x :0 is an irregular singular point with rank 1. Thus the series solution near the origin 
+is of the form 
+A1y :exp Yx, (6.58) x 
+with 
+sYx :&gt; anxn+, a0  0, a?1 :a?2 :` :0. (6.59) 
+We substitute (6.58) into (6.57). We get 
+2 +1 d2Y ? 2A1 dY + 2A1 A1+ Y :0. (6.60) dx2 x2 dx x3 x4 
+The value of A1 is determined by requiring the most divergent term in the coefficient of Y in (6.60) 
+ 2</text>
+        </slide>
+        <slide>
+          <slideno>4</slideno>
+          <text>Singular Points of Ordinary Differential Equations 
+Thus we expect I0 : XK 
+e?tdt : 1. 
+0 
+Ix u1, 
+when x is small. 
+To seek an approximation better than this, we approximate the factor  1 + tx?1 in the integrand 
+of Itby 
+n 1 u1 ?tx + t2x2 + `+ ?tx.1 + tx 
+Using this approximation for the integrand of Ix, we get 
+Ix uXK 
+e?t1 ?tx + t2x2 + `+ ?txn dt 
+0 
+n: 1 ?x + 2!x2 + `+ n!?x. (6.66) 
+The first term of this series is unity, an approximation we have already obtained. However, we note 
+that the series in (6.66) diverges for all values of x as we let n  K. 
+Nevertheless, (6.66) is a useful formula for approximation, as we shall prove. We have 
+n+11 : 1 ?tx + t2x2 + 6 6 6+?txn + ?
+1 tx
++ 
+tx ,1 + tx 
+which is exact. Thus we have 
+Ix : XK 
+e?t1 ?tx + t2x2 + `+ ?txn dt + Rn, (6.67) 
+0 
+where 
+n+1 
+e?t ?txRn : XK 
+dt. 
+0 1 + tx 
+Equation (6.67) is exact. This is to be compared with (6.66), which is obtained by dropping Rn. 
+How big is the term dropped? We have 
+PRn PXK 
+e?ttxn+1dt : xn+1n + 1!. 
+0 
+Let x : 0.1. Then the sum of the first five terms of (6.66), which is of the order of unity, differs from 
+the exact value by R4, which is estimated to be about one tenth of one percent. We may improve this 
+approximation somewhat by taking more terms. But as the series eventually diverges, it is obviously 
+not a great idea to be too enthused and take a large number of terms in (6.66). Where do we stop? 
+Very roughly, we should stop when the upper bound of Rn no longer goes down as we increase n by 
+unity. For x : 0.1, this happens when n : 10. 
+If x : 0.01, and if we take one hundred terms in the series (6.57), the error is as small as 10?. 
+Homework Problems due Wed next week ( Oct 13, 04) 
+Chapter 6, problem8. 
+Chapter 7, problem 1 and 2. 
+ 5 
+42</text>
+        </slide>
+        <slide>
+          <slideno>0</slideno>
+          <text>Singular Points of Ordinary Differential Equations 
+Lecture Eight 
+Irregular Singular Points of Ordinary 
+Differential Equations 
+Solutions expanded around an irregular singular point are distinctive in one aspect: they are 
+usually in the form of an exponential function times a Frobenius series. Due to the factor of the 
+exponential function, a solution near an irregular singular point behaves very differently from that 
+near a regular singular point. It may blow up exponentially, or vanish exponentially, or oscillate wildly. 
+Let us start with the discussion of irregular singular points with the simpler case of the first-order 
+linear and homogeneous equation 
+yr+pxy :0. (6.40) 
+As we know, the solution of (6.40) is 
+yx :ce?Px , (6.42) 
+where 
+Px :X pxdx 
+with c a constant. If px has a pole of order  k +1 at x :0 and hence has the Laurent series 
+expansion 
+px : bk+1 +` +b
+x 1 +a0 +a1x2 +`, xk+1 
+find the solution of (6.40). 
+Answer 
+We have 
+Px :? bk+1 +` +b1ln x. kxk 
+Thus the solution of (6.40) is of the form 
+bk+1 +` exp x?b1 Mx,kxk 
+where Mx is a Maclaurin series. Note that x?b1 Mx is a Frobenius series. 
+If px has a pole of order k +1 at x0 instead of at the origin, and if we are interested in the 
+behavior of the solution near x0, then we make the change of variable 
+X :x ? x0.
+The solution near x0 is given by the one given above with x replaced by X.
+We are now ready to discuss the second-order linear homogeneous differential equations (6.38)
+with an irregular singular point. 
+Let x0 be an irregular singular point of (6.38). If 
+x ? x0k+1cx :c0 +c1x ? x0 +` 
+and 
+x ? x02k+2dx :d0 +d1x ? x0 +`, 
+are both convergent Taylor series, and if at least one of c0 and d 0 are not zero, then x 0 is called an 
+irregular singular point of rank k . If the order of the pole of cx and that of dx at x0 are k1 +1 
+and 2k2 +2 respectively, with k 1 not equal to k 2, then the rank k is equal to the greater of k1 and 
+k2. 
+Note that if k :0, then x0 is a regular singular point of (6.38). 
+We mention that, if x0 is an irregular singular point of rank k , where k is a positive integer, then 
+the solutions of (6.38) are of the form 
+yx :expFxYx, (6.45) 
+where 
+ 1</text>
+        </slide>
+      </slides>
+      <videos/>
+    </lecture>
+    <lecture>
+      <lecture_title>Method of Stationary Phase (PDF)</lecture_title>
+      <lecture_pdf_url>https://ocw.mit.edu/courses/18-305-advanced-analytic-methods-in-science-and-engineering-fall-2004/resources/thirteen/</lecture_pdf_url>
+      <lectureno>13</lectureno>
+      <slides>
+        <slide>
+          <slideno>1</slideno>
+          <text>Asymptotic Expansions of Integrals 
+(8.34), considered as a function of t, is of the scale of unity, and is not a rapidly varying function. 
+This is like looking at a photograph with tiny structures through a magnifier, and the small-scale 
+variations become variations of normal scales. The factor 1/ R multiplying the integral in (8.34) is due 
+to that fact that dx is smaller than dt by a multiplicative factor R . The region of integration with t the 
+integration variable is very large, and is from 0 to bR . Yet as we integrate from t : 0 to t : 2Zn, 
+where n is any integer, we get exactly zero. This is because both the real part and the imaginary part 
+of the function eit are positive half of the time and negative half of the time, and the contributions of 
+the waves integrated over a complete cycle of width 2Z exactly cancel one another. Thus the region 
+of uncancelled contributions in the t-variable is the region near the endpoint t : Rb with a width less 
+than 2Z . If we put down the magnifier, we see that the uncancelled region in the x -variable is a 
+region near the endpoint x : b with a width of the order of 1/ R. That is why the integral of (8.33) is 
+of the order of 1/ R. 
+Now let us change the lower limit of integration from zero to a, and consider the integral 
+Xb 
+eiRxdx, 
+a 
+It is clear that uncancelled contributions to the integral come from two small regions with widths of 
+the order of 1/ R near the endpoints. The integral above can be exactly calculated. We have 
+eiRb ? eiRaXb 
+eiRxdx : iR . (8.35) 
+a 
+Note that eiRb and eiRa are the values of the integrand at the endpoints b and a, respectively. 
+ 2</text>
+        </slide>
+        <slide>
+          <slideno>0</slideno>
+          <text>Asymptotic Expansions of Integrals 
+Lecture Thirteen: Method of Stationary Phase
+In 1911, E. Rutherford performed an experiment in which F -particles were made to pass through 
+a thin metal foil. He measured the F -particles emerging from the foil at an angle, and found that the 
+rate for such events, while being very low, is much higher than what had been expected. More 
+precise experiments performed later showed that, with the scattering angle at 90 degrees, the rate of 
+such events is 1 event out of 8000 events. While such an event is rare, it is at least by a factor 1010 
+more frequent than what had been predicted by J. J. Thomsons atomic model. Rutherford concluded 
+that this means that an atom has a nucleus which is much, much smaller than even the tiny atom. His 
+discovery ushered in the nuclear age. Scientists have since found that if we imagine an atom to be of 
+the size of the Earth we live on, then in proportion the nucleus would be not much bigger than a 
+campus gymnasium. Rutherfords experiment illustrates that it is not enough to know that an event is 
+rare. We must also know how rare it is. 
+While the scattering of F-particles from the atoms in the metal foil obeys the laws of quantum 
+mechanics, the phenomenon Rutherford observed falls within a general pattern of wave interference. 
+3Consider, for example, a monochromatic wave with the amplitude eik6x3 passing through two slits in a 
+a 
+b s wall, arriving at a point on a screen behind the wall. We illustrate this in the figure below. 
+Figure 8.5. 
+The phase of the ray arriving at the screen passing through the first slit is different from that 
+passing through the second slit, as the lengths of the two ray paths designated by AS and BS are 
+different. The amplitude of the wave at the wall is equal to the sum of the amplitudes of the two rays, 
+which interfere with each other. 
+If there are more than two slits, then there will be more rays interfering with one another. When 
+we add up a large number of waves with the same frequency but different phases, the interference of 
+the waves tends to cancel out one another. This is especially so as the frequency becomes very high. 
+To see this, let us consider the example of the integral 
+Xb 
+eiRxdx. 
+0 
+This integral is a superposition of waves of the same wave number R but with a phase dependent on 
+x. The magnitude of a wave is equal to unity when 0 9 x 9 b, and zero otherwise. 
+eWe easily carry out the integration and get
+iRb ? 1
+ Xb 
+eiRxdx : iR . (8.33) 
+0 
+As we see from (8.33), this integral vanishes like 1/R when R is large. Since the absolute value of the 
+integrand for 0 9 x 9 b is unity, there are cancellations among the waves. 
+To understand how the cancellations come about, we observe that eiRx is a rapidly varying 
+function of x when R is large. Indeed, as x varies by the small amount 1/R, the phase of eiRx varies by 
+the amount unity. Let us change the scale of the integration variable and define 
+t : Rx. 
+As x varies by the small amount 1/R, t varies by the amount unity. The integral in (8.33) becomes 
+IR : 1 XbR 
+eitdt. (8.34) R 0 
+While the integrand of (8.24), considered as a function of x, is of the scale of 1/R, the integrand of 
+ 1</text>
+        </slide>
+      </slides>
+      <videos/>
+    </lecture>
+    <lecture>
+      <lecture_title>Asymptotic Expansions of Integrals (PDF)</lecture_title>
+      <lecture_pdf_url>https://ocw.mit.edu/courses/18-305-advanced-analytic-methods-in-science-and-engineering-fall-2004/resources/fourfive/</lecture_pdf_url>
+      <lectureno>14-15</lectureno>
+      <slides>
+        <slide>
+          <slideno>0</slideno>
+          <text>Asymptotic Expansions of Integrals 
+Lectures Fourteen and Fifteen
+In the last lecture, we discuss the method of stationary phase which is applicable to the integral 
+(8.36). 
+If the integral (8.36) has neither points of stationary phase nor contributions from the endpoints, the 
+method of stationary phase fails. As an example, consider calculating the asymptotic form of 
+e?iRx IR : XK dx, R ;; 1. ?K 1 + x2 
+/The function I R is the Fourier transform of 1 + x2?1 2. Identifying ux with ?x, we see that, since 
+urx : ?1  0, this integral has no points of stationary phase. Nor does this integral have finite 
+endpoints. Therefore, the method of stationary phase is not useful for the problem. In order to find 
+the asymptotic form of this integral, we must use the saddle point method whcih will be presetly 
+discussed. 
+D The Saddle Point Method 
+The Laplace method enables us to deal with the integral of the form of (8.8), where the coefficient of 
+R in the exponent is real. The method of stationary phase enables us to deal with the integral of the 
+form of (8.36), where the coefficient of R in the exponent is purely imaginary. 
+In this section, we shall deal with integrals of the form 
+IR : X eiRfzhzdz, (8.52) 
+c 
+where c is a contour in the complex z -plane and where fz and hz are analytic functions of z. This 
+problem is interesting in its own right but, as we have mentioned, it may also help us to evaluate the 
+asymptotic form of integrals of the form (8.36) in which there are neither finite endpoints nor points 
+of staionary phase. 
+Let 
+fz : ux, y + ivx, y, 
+then the exponential function in (8.52) is equal to 
+eiRfz : eiRux,ye?Rvx,y . 
+ 1</text>
+        </slide>
+        <slide>
+          <slideno>4</slideno>
+          <text>Asymptotic Expansions of Integrals 
+result obtained with the use of (8.39). Thus, by deforming the contour of integration, we succeed in 
+verifying (8.48) with the application of the Laplace method. 
+A D 
+C C 
+D B 
+E E 
+F F 
+x y 
+0 1 1 
+u=
+0 0v= 
+u=0 1 1 
+' ' 
+' ' u=0 
+1 1 u=0 
+v = 1 v = v = u = u = 1 
+v = v = 1 u = 
+u = 1 u = 1 u = u = u = 1 
+Figure 8.8. 
+We note that it will not be fruitful to deform the contour from the real axis to the curve ACDEFB. 
+For if we do this, we will find that on the curve AC, v is minimum not at A but at C. Thus the 
+dominant contributions to the integral over AC come from the point C, where the integrand is of 
+the order of eR. This large term is cancelled by an equally large term with the opposite sign coming 
+from the integral over CD. Also, while the contour DE passes through the saddle point z : 0, this 
+contour is one of the steepest ascent and the contributions of this contour come not from the saddle point z : 0 but from the endpoints D and E. Indeed, the integral over each of the segments of the 
+curve ACDEFB has a very large leading term. These terms cancel one another and it is extremely 
+difficult to determine what remains after such extensive cancellations. Therefore, as we start from an endpoint of the contour and try to deform the contour to a level curve 
+of u, be sure to go in the direction v increases, not the other way around. 
+It is possible to deform the contour into a sum of curves all of which are level curves of u. Instead of 
+taking the contour ACDEFB to go from A to B, we may go from A to C on the level curve of u as 
+before, but instead of making a turn at C, we follow this level curve all the way to infinity. We then change over at infinity to the line x : y, and go from one infinite end of this straightline to another 
+infinite end of this straightline. Then we change over at infinity to the level curve on which F and B 
+lie to arrive at B. In this way u is a constant on each of the segments of the contours. 
+Applying the Laplace method to each of the contours, we may obtain not only the leading term but also the next leading terms. To do this, we merely have to keep more terms in the expansions of the 
+integrand around the points of contribution and carry out the integration. 
+ 5</text>
+        </slide>
+        <slide>
+          <slideno>3</slideno>
+          <text>Asymptotic Expansions of Integrals 
+form 
+x : xy, 
+provided that uxx0, y0  0. Thus, unless both u x and uy vanish, there can only be one level curve 
+passing through the point x0, y0. But at the point z0 at which frz0 : 0, both u x and uy vanish, and 
+there is no reason why two level curves of u cannot intersect at z0. Indeed, we see in the example 
+above that two level curves of u do intersect at the origin. Also, two level curves of v in this example 
+also intersect at the origin. 
+We have learned in calculus that if the derivative of a function of a real variable x vanishes at x0, 
+then it has an extremum at x0 provided that its second derivative does not vanish. This is quite 
+different for ux, y and vx, y, which are functions of two variables. Near the point z0 at which the 
+derivative of fz vanishes, we have 
+fz ? fz0 p frrz0z ? z02/2. 
+Therefore, if frrz0  0, the behavior of fz near z 0 is the same as the function z2 near the origin. 
+Problem for the Reader: 
+Let vx, y : 2xy, the imaginary part of z2. What is the behavior of v on the line x : y and the line 
+x : ?y? What does v look like near x : y : 0? 
+Answer 
+The line x : y is a level curve of u. On this line v:2x2, and is minimum at the origin. 
+The line x : ?y is also a level curve of u. On this line v : ?2x2, and is maximum at the origin. 
+eIf we consider v x, y as a function of x and y in a three-dimensional space, it resembles the surface 
+of a saddle near the point x : y : 0, where the line x : y is in the front-back direction of the saddle, 
+and the line x : ?y is in the sidewise direction of the saddle. The function v x, y is neither 
+absolutely maximum nor absolutely minimum at the origin. Thus the origin is a saddle point of v. 
+Similarly, the origin is a saddle point of u : x2 ? y2. 
+If u and v are the real part and the imaginary part of an analytic function the derivative of which 
+vanishes at z0, then z 0 is a saddle point of u and that of v. 
+By definition, the value of a function v x, y does not vary on any of its level curves. Thus it varies 
+most rapidly in the direction orthogonal to its level curve. Since the level curves of u intersect those 
+of v orthogonally, v varies most rapidly on a level curve of u, and u varies most rapidly on a level 
+curve of v. 
+As a consequence, the function e?Rv varies most rapidly on a level curve of u. Now we have seen that 
+there are two level curves of u passing through the point z0. We have also seen that the function 
+vx, y is minimum on one of these curves, and maximum on the other curve. Thus the function 
+?Rvz decreases most rapidly as one leaves z0 on the former curve. This curve is called the path of 
+steepest descent. Similarly, e?Rvz increases most rapidly as one leaves z0 on the latter curve, which 
+is called the path of steepest ascent. 
+Consider now the integral in the general form of (8.52). If c is a level curve of ux, y, the phase of 
+the exponential function of (8.52) is a constant and can be taken outside of the integral. Also, the 
+magnitude e?Rvx,y varies most rapidly on c . Thus the integral is of the form of (8.8), and the 
+dominant contributions come from the point at which v is minimum. It is therefore a good idea to 
+deform the contour of the integral of (8.52) into a level curve of u, for then the asymptotic form of 
+the integral can be obtained with the Laplace method. 
+Take the example of (8.47), in which f z : z2. We cannot easily go from ?1 to 1 on a curve of 
+constant u. Let us therefore take the path ACDEFB in the figure. Along the path AC, the phase 
+ux, y is a constant and v x, y is minimum at the endpoint A. Thus the dominant contribution to the 
+integral along AC is given by a small neighborhood of width 1/ R near the endpoint A, and can be 
+calculated by the Laplace method. The result is the same as we have obtained by using the formula 
+(8.39) and keeping only the contribution from the endpoint A. The contour CD is not a level curve of 
+u. Instead, it is a level curve of v, on which v : 1. The integrand on CD is as small as e?R, hence the 
+integral over CD will be neglected. Next we consider the contour DE. This contour is a path of 
+steepest descent with the saddle point at the origin. Thus we may again use the Laplace method to evaluate the contribution of the origin, and the answer is the same as that calculated with the use of 
+(8.45). The contribution of the contour EF, which is not a level curve of u, will be neglected as the 
+integrand is exponentially small on this contour. The dominant contribution of the contour FB, which is a level curve of u, comes from the point B. Applying the Laplace method gives us the same 
+ 4</text>
+        </slide>
+        <slide>
+          <slideno>2</slideno>
+          <text>Asymptotic Expansions of Integrals 
+A D 
+C C 
+D B 
+E E 
+F F 
+x y 
+0 1 1 
+u=
+0 0v= 
+u=0 1 1 
+' ' 
+' ' u=0 
+1 1 u=0 
+v = 1 v = v = u = u = 1 
+v = v = 1 u = 
+u = 1 u = 1 u = u = u = 1 
+Figure 8.8. 
+Question for the Reader: 
+Do the level curves of u and those of v intersect orthogonally? 
+Answer 
+Yes, as we can see from Fig. 8.8, the level curves of u generally intersect orthogonally with those of 
+v. 
+But there is one notable exception. There are two level curves of u and two level curves of v 
+intersecting at the origin. The level curves of u and those of v do not intersect orthogonally at the 
+origin. Instead, the two level curves of u intersect orthogonally at the origin. So do the two level 
+curves of v. We note also that the derivative of fzvanishes at the origin, which is where the 
+aforementioned unsual behavior occurs. 
+As a general rule, if u and v are harmonic conjugates of each other the level curves of u and those of 
+v intersect orthogonally, . To see this, we express the infinitesimal variation of ux, yas 
+du : uxdx + uydy. 
+Now on a level curve of u, the value of u does not vary. Therefore we have 
+uxdx + uydy : 0, 
+where dx and dy are the variations of x and y between two neighboring points on the level curve of u. 
+3This says that 4u is perpendicular to the tangent vector of the level curve of u. 
+3Similarly, 4 v is perpendicular to the tangent vector of the level curve of v. 
+Now 
+3 34u 64v : uxvx + uyvy : 0, 
+where the last step is obtained with the use of the Cauchy-Riemann equations (2.9). Therefore, at the 
+point a level curve of u and a level curve of v intersect, the tangent vectors of these two curves are 
+othogonal to each other. 
+But there are exceptions. The points of exception are the points at which the derivative of fz 
+3 3vanishes. At each of such points, all of the partial derivatives of u and v vanish. Thus both 4 u and 4v 
+3 3are null vectors at such a point and neither possess a direction. While the scalar product of 4u and 4v 
+remain to vanish at a zero of fr, it is due to the vanishing of the gradient vectors, and not due to the 
+orthogonality of the gradient vectors. Note also that two level curves of u generally do not intersect. Let a level curve be given by 
+ux, y : c. 
+And let x0, y0be a point on this curve. Now by the implicit function theorem, the equation above 
+has a unique solution in a neighborhood of x0, y0with the form 
+y : yx, 
+provided that uyx0, y0  0. Similarly, it has a unique solution in a neighborhood of x0, y0with the 
+ 3</text>
+        </slide>
+        <slide>
+          <slideno>1</slideno>
+          <text>uAsymptotic Expansions of Integrals 
+We see that the coefficient of R in the exponent above has both a real part and an imaginary part. 
+In section 8B, we have treated the case in which u is zero. And in Section 8C, we have treated the 
+case in which v is zero. We now treat the case with neither u nor v equal to zero. 
+The magnitude of the integrand is sharply peaked around the point z0 at which v is minimum. But if 
+r is not equal to zero, the integrand also oscillates rapidly in the neighborhood of z0, and the 
+resulting cancellation wipes out entirely the contribution of z0. 
+Let us deform, by Cauchys integral theorem, the contour c into another contour cr. If u happens to 
+be a constant on the contour cr, then 
+IR : eiRa X e?Rvhzdz, c 
+where a is the value of u on cr. Thus there is no cancellation due to the rapid changes of the phase 
+factor of the integrand and the dominant contribution to the integral comes from the point z0 on cr at 
+which v is minimum. The asymptotic form of the integral can be obtained with the use of Laplaces 
+method. 
+The point z0 may be an endpoint of cr. In such a case, we may obtain the leading term of the integral 
+by expanding the integrand around the endpoint and carry out the integration over an exponential 
+function. 
+The point z0 may also be an interior point of cr. We shall argue that, if z0 is an interior point of cr, all 
+partial derivatives of u and v must vanish at z0. 
+We begin by observing that, since v is minimum at z0 along the curve cr, the variation of v in the 
+tangential direction of cr vanishes at z0. Also, since u is constant on cr, the variation of u in the 
+tangential direction of cr is zero. The latter means that, by the Cauchy-Riemann equation, the 
+variation of v in the direction orthogonal to the tangential direction of of cr is zero. Thus both partial 
+derivatives of v vanish at z0. By the Cauchy-Riemann equations, so do the two partial derivatives of 
+u at z0. Indeed, 
+frz0 : 0. 
+The point z0 is known to be a saddle point for the integral (8.52), as we shall explain further below. 
+Since, along the contour c, v is minimum at z0 and u is stationary, the dominant contribution to the 
+integral over c comes from the saddle point z0. The asymptotic form of the integral can be obtained 
+by expanding the integrand around z0 and carrying out the Gaussian integrals. 
+As we deform the contour, we may encounter singularities of the integrand. The Cauchy integral 
+theorem is then no more applicable and we may not deform the contour beyond the singularity. Thus 
+the singularity may contribute a dominant contribution to the integral. 
+In summary, for the integral of the general form (8.52), the possible points of contribution are the 
+singular points, the endpoints, and the saddle points. 
+There may be more than one saddle points or singular points in the problem. Not all of them 
+contribute to the asymptotic form of the integral. We must decide what contour to deform to and 
+which saddle points or singular points are relevant. We shall show how to do this below. Doing this will require a little understanding of complex analysis. Here well add to our previous 
+discussions on this topic. 
+A curve on which u is a constant is called a level curve of u. A curve on which v is a constant is 
+called a level curve of v. We shall show that, with certain notable exceptions, the level curves of u 
+intersect orthogonally with the level curves of v. 
+Problem for the Reader: 
+Consider in the complex plane the function 
+fz : z2 : x + iy2. 
+Draw the level curves of u as well as those of v for this function. 
+Answer 
+We have 
+ux, y : x2 ? y2, and vx, y : 2xy. 
+We draw the level curves of u and the level curves of v :constant in the figure below. 
+ 2</text>
+        </slide>
+      </slides>
+      <videos/>
+    </lecture>
+    <lecture>
+      <lecture_title>The WKB Approximation (PDF)</lecture_title>
+      <lecture_pdf_url>https://ocw.mit.edu/courses/18-305-advanced-analytic-methods-in-science-and-engineering-fall-2004/resources/nineten/</lecture_pdf_url>
+      <lectureno>9-10</lectureno>
+      <slides>
+        <slide>
+          <slideno>4</slideno>
+          <text>The WKB Approximation 
+when x is near x 0, Px goes to zero like x ? x0n , then v 1x blows up like 
+x ? x0?1?3n/2 , (7.43) 
+/while v0x blows up like x ? x0?n2. Thus (7.42) requires 
+|x ? x0|  R1/1
+1+n . (7.44) 
+Aside from a multiplicative constant, (7.44) is the same condition as (7.15). 
+We may find all higher-order terms of the solution from (7.39). This is done by gathering all the 
+terms in (7.39) proportional to Km and setting the sum to zero. We get 
+rrvm r+ Pr vm :  i vm?1. (7.45) 2P 2P 
+Thus 
+vmx :  
+2i X dx d2 
+vm?1x. (7.46) 
+Px Px dx2 
+From (7.46), we obtain the mth-order term of the perturbation series once the m ? 1th-order term of 
+the perturbation series been found. Thus we obtain all vm by succesive iteration. 
+If Px has no zero, all vm are finite. When K is sufficiently small, we have 
+|Kvm|  |vm?1|. (7.47) 
+Thus the WKB approximation is justified to higher orders. Here we like to give the reader a 
+reminder: the WKB approximation has been justified to higher orders only if px is of the form 
+(7.5), or N x is of the form of (7.19), and neither of them vanish. I feel obligated to say it as I have 
+seen the WKB approximations being too liberally applied. 
+We may show that, if Px vanishes at x0, and is given by (7.14) near x 0, the condition (7.47) is 
+satisfied provided that x is sufficiently far away from x0 so that (7.15) is satisfied. (See homework 
+problem 3.) 
+Similarly, to obtain successive approximations to the WKB solutions of (7.16), we put 
+X Nxdx y  e v . (7.48) 
+Then we have 
+r 
+vr+ Nv :@ 21 
+Nvrr . (7.49) 2N
+We may use (7.49) to obtain successive approximations of the WKB solutions. 
+Homework due next Monday (Oct 18, 04) : 
+Chapter 7, 4a, 5b, 7b. 
+ 5</text>
+        </slide>
+        <slide>
+          <slideno>0</slideno>
+          <text>The WKB Approximation 
+Lectures Nine and Ten The WKB 
+Approximation 
+The WKB method is a powerful tool to obtain solutions for many physical problems. It is 
+generally applicable to problems of wave propagation in which the frequency of the wave is very 
+high or, equivalently, the wavelength of the wave is very short. The WKB solutions are approximate 
+solutions, but sometimes they are surprisingly accurate. In this chapter well discuss this method, which is applicable to linear equations only. 
+A The Zeroth and the First-Order WKB 
+We consider the second-order differential equation 
+yrr + p2y : 0. (7.1) 
+If p is a constant, the two independent solutions of (7.1) are exp ipx, waves with wave number p 
+travelling in opposite directions of the x-axis. 
+If p is a function of x, it appears reasonable that the solutions are two waves with the phase 
+ X pxdx. Thus we may surmise that the independent solutions of (7.1) are 
+i X pxdx e , (7.2) 
+which are the zeroth-order WKB solutions. 
+Let us see if these solutions satisfy (7.1). We have 
+i X pxdx i X pxdx d2 + p2 e : ipre  0. 7.3 dx2 
+Therefore, the WKB solutions (7.2) do not satisfy (7.1) unless pr: 0, or p is independent of x. 
+While we get a negative answer, (7.3) suggests that exp i X pxdx are good approximate 
+solutions of (7.1) provided that ipr is negligible, or, more precisely, if 
+|pr|  p2, 
+the left-side of this inequality being a term inside the parenthesis of (7.3). The inequality above can be written as 
+d 1  1. (7.4) pdx 
+This condition is satisfied if px is of the form 
+px  RPx, (7.5) 
+where R is a large constant, i.e., 
+R ;; 1, (7.6) 
+and Px is of the order of unity. Indeed, if px is given by (7.5), the inequality (7.4) is
+1 d 1
+ 1. (7.7) R dx Px 
+Clearly, (7.7) is satisfied if R ;; 1, provided that x is not near a zero of Px. 
+We note that the phases of the solutions exp i X pxdx are functions of x, but the magnitudes 
+of these approximate solutions are independent of x. Let us remember that, in Chapter 1, we have 
+shown that if y1 and y 2 are two independent solutions of (7.1), then the Wronskian 
+r rWx  y1y2 ? y1y2 is independent of x. Now the Wronskian of exp i X pxdx and exp?i X pxdx 
+is easily shown to be equal to 2ip x, not a constant unless px is a constant. This suggests that these 
+approximate solutions still leave something to be desired. Because the Wronskian of the 
+approximate solutions miss by a factor p x, let us try to fix it by adding an additional factor 1 / px 
+to each of the approximate solutions. The resulting approximate solutions are 
+i X pxdx yWKB x : 1 e . (7.8) 
+px 
+which includes both the zeroth order and the first order terms of the WKB approximations. 
+ 1</text>
+        </slide>
+        <slide>
+          <slideno>1</slideno>
+          <text>The WKB Approximation 
+The magnitude of these solutions varies with x like 1 / px . The Wronskian of yWKB x is now 
+exactly a constant. (See homework problem 1.) It is therefore tempting to surmise that, under the 
+i X pxdx condition (7.4) or equivalently, (7.7), y WKB x are even better approximations than e . 
+To see if this is true, we put 
+i X pxdx y  e v , 7.9
+and substitute this expression of y into (7.1). We get
+D ipD ipv +p2v :0.
+or
+2ip d
+ d2 
+dx iprv :0. dx2 
+We shall write the equation above as 
+vr+ pr 
+v :  2i
+p v. (7.10) 2p 
+By (7.5), (7.10) can be written as 
+vr+ Pr v : K i vrr , (7.11) 2P 2P 
+where 
+L 1/R 
+is a small number. In the first-order approximation, we ignore the right side of (7.11) and we get 
+vr+ Pr v u 0, (7.12) 2P 
+which gives 
+vx u .1 (7.13) 
+Px 
+Thus (7.9) and (7.13) give, aside from an immaterial overall constant, the WKB solutions (7.8). 
+We have mentioned that if Px has a zero at x0, the inequality (7.10) does not hold at x0. To see 
+how far away from x0 it must be for the WKB approximation to hold, let Px near x 0 be 
+approximately given by 
+Px u ax ? x0n , x u x0. (7.14) 
+Then (7.7) requires 
+|x ? x0|  n 
+Ra 1/n+1 . (7.15) 
+Eq. (7.15) tells us how far away from x0 it must be for the WKB approximate solutions to be valid. 
+If Px vanishes in the way given by (7.14), we say that Px has an nth-order zero at x0. Not all 
+zeroes of Px are of finite order, and an example of Px having a zero of infinite order is given by 
+homework problem 6. The range of validity of the WKB solutions of homework problem 6 is given 
+in homework problem 5b. 
+As we have mentioned, the WKB approximation is useful for describing the propagation of waves 
+with very high frequencies or, equivalently, very small wavelengths. As an example, consider the 
+problem of determining the shadow cast on a wall by a point light source in front of a screen. To 
+obtain the exact solution of this problem, one solves the wave equation and make the solution satisfy 
+the boundary conditions imposed by the presence of the screen, which is a difficult boundary-value 
+problem. On the other hand, the shadow on the wall is very accurately determined simply by drawing straight lines from the light source to the edges of the screen. This is because when the wavelength of light is very small compared to the dimensions of the screen, the WKB approximation 
+can be used to justify the results obtained with the use of geometric optics. footnote As another example, we know that Newtonian mechanics is an approximation of quantum mechanics. However, 
+the behavior of atoms obeying the rules of wave mechanics is drastically different from that of 
+particles obeying the rules of Newtonian mechanics. How does one reconcile these two sets of rules? 
+The answer again lies in the WKB approximation, in which the Schrodinger equation is reduced to 
+the Hamilton-Jacobi equation satisfied by the classical action of Newtonian mechanics. 
+The WKB approximation can also be used to solve problems in which the functional behavior is 
+ 2</text>
+        </slide>
+        <slide>
+          <slideno>3</slideno>
+          <text>The WKB Approximation 
+For x 90, we have, comparing with (7.16), 
+/2N :?x1. 
+Thus the WKB solutions are 
+?1/4e2|x|3/2/3|x| . (7.22) 
+We conclude immediately that, when x is large and negative, one of these solutions is an 
+exponentially increasing function of x and the other is an exponentially decreasing function of x. 
+When x is positive, we have, comparing with (7.1), 
+/2p :x1. 
+Thus the WKB solutions are 
+x?1/4ei2x3/2/3, (7.23) 
+both being oscillatory functions of x. 
+C Higher-order WKB Approximation 
+We shall in this section find the higher-order terms of the WKB approximation. 
+For this purpose let us return to eq. (7.11). Since this equation has a small parameter K and is 
+linear, it is straightforward to use it to derive successive corrections to the WKB approximations. We 
+put 
+v :v0 + Lv1 +K2v2 +6 6 6, (7.38) 
+where vn, n :0, 1 6 6 6 ., are independent of K. The series in (7.38) is called a perturbation series 
+which is expected to be useful when K is small. We substitute (7.38) into (7.11) and get 
+r+ Pr v0 + Lv1 +K2v2 +`  v0 + Lv1 +K2v2 +`2P 
+rr: iKv0 + +Lv1 +K2v2 +6 6 6 . (7.39) 2P 
+In the lowest-order approximation we set K in (7.39) to zero and get 
+r+ Pr v0 v0 :0. 2P 
+This equation gives 
+v0x : 1, 
+Px 
+which is, aside from an immaterial constant multiple, (7.13). 
+Setting to zero the sum of terms in (7.39) which are proportional to K , we get 
+vrr 
+1 r+ Prx i 1v1 :  . (7.40) 2Px 2Px Px 
+Solving this first-order linear equation, we find that 
+rr 
+2 1 1v1x :  i X dt. # 
+Px Pt Pt 
+Now we are ready to give a justification of the WKB method, which is approximating the solution of 
+(7.1) by truncating the series of (7.38). Strictly speaking, truncating a series is justified if we succeed 
+in proving that the sum of terms neglected is much less than the sum of terms kept. But proving this 
+is sometimes difficult to do. We shall be content with proving that the n +1th term in the series is 
+much less than the nth term if K is sufficiently small. Thus we will accept the WKB solutions (7.5) 
+are good first-order approximations if 
+|Kv1|  |v0|. (7.42) 
+Since K is small, (7.42) is satisfied provided that v1x/v0xdoes not blow up, which is true unless 
+Pxhappens to vanish. 
+If Pxvanishes at x0, the differential equation (7.1) is said to have a turning point at x0. At a 
+turning point of the differential equation, both v 0xand v 1xblow up, and the WKB approximation 
+fails. 
+How far away from the turning point it must be in order for the WKB approximation to work? If, 
+ 4</text>
+        </slide>
+        <slide>
+          <slideno>2</slideno>
+          <text>The WKB Approximation 
+rapidly growing or rapidly decaying other than rapidly oscillatory, an example being the problems of 
+boundary layer which we will discuss in Chapter 9. Consider the equation 
+yrr? N2y :0. (7.16) 
+The WKB solutions are given by 
+yWKB x : 1 e X Nxdx . (7.17) 
+Nx 
+These solutions are good approximations of the solutions of (7.16) if 
+d 
+dx 1 
+Nx  1. (7.18) 
+The counterpart of (7.5) is 
+Nx :RNx, (7.19) 
+where R  1 and N x is of order unity. As before, if N is in the form (7.19), the inequality (7.18) is 
+always satisfied unless x is near a zero of Nx. 
+The WKB approximation can be justified under other conditions. For example, it is easy to 
+verify that (7.4) is satisfied if px is of the form 
+px :PKx, K  1, (7.20) 
+where we have a small parameter K rather than a large parameter R . If we make the change of 
+variable 
+X :Kx, 
+then (7.1) becomes 
+d2y +R2P2Xy :0, dX2 
+where the large parameter R :K?1 appears. 
+Sometimes the large parameter R is not explicitly exhibited. As an example, consider the 
+problem of solving the Airy equation yrr? xy :0 when x is very large. In this problem, x inherently 
+contains a large parameter. Indeed, let x be of the order of ?, with ? 1. We may put 
+dx  ?X, 
+where X is of the order of unity. Then the Airy equation is 
+2 ? ?3X y :0. dX2 
+Comparing with (7.16), we have, if X is positive, 
+/2NX :RX1, 
+where R  ?3/2 is the large paramater. 
+We also note that the integral X pdx is dimensionless and hence does not change with a change of 
+the scale of the independent variable. In the example of the Airy equation, we have 
+/ / X RX1 2dX :X x1 2dx. 
+Indeed, since the dimension of the wavelength is that of length, same as that of x, the leftside of (7.4) 
+is dimensionless. Thus (7.4) can be expressed either with the variable X or with the variable x, as 
+d 1 : d 1 
+dX RX1/2 dx x1/2 . 
+B Solutions Near an Irregular Singular Point 
+We will now apply the WKB method to obtain the asymptotic solutions near an irregular 
+singular point of a second-order linear homogeneous equation. While we have already given a 
+method in the preceding section to obtain these solutions, it applies only when the rank of the 
+singular point is an integer. In addition, the use of the WKB method makes it very easy to obtain the 
+leading terms of the asymptotic series. 
+yTo start, we consider the leading asymptotic terms for the solutions of the equation 
+rr+xy :0. (7.21) 
+ 3</text>
+        </slide>
+      </slides>
+      <videos/>
+    </lecture>
+    <lecture>
+      <lecture_title>Interior Turning Points (PDF)</lecture_title>
+      <lecture_pdf_url>https://ocw.mit.edu/courses/18-305-advanced-analytic-methods-in-science-and-engineering-fall-2004/resources/eighten/</lecture_pdf_url>
+      <lectureno>18</lectureno>
+      <slides>
+        <slide>
+          <slideno>1</slideno>
+          <text>Boundary Layers and Singular Perturbation 
+region x 9 0 is increasing with x . Thus there is no boundary layer at the lower endpoint x : ?1. The 
+x : x : 
+K . boundary layer is at the turning point 0. The width of the boundary layer near 0 is of the 
+order of 
+Note that, on either side of the origin, the rapidly varying solution is always the small solution, 
+and the slowly varying solution is always the large solution. 
+The slowly varying solution is given by 
+r2tan xys ? ys p 0, 
+or 
+ysx : c x . 
+x : ?sin 
+Let us start with the small solution, which is the rapidly varying solution, at 1. After we 
+continue this solution to the region 0 9 x 9 1, it becomes the slowly varying solution given by 
+a yout : 3 sin x 
+sin 1 , 
+where the boundary condition y 1 : 3 has been taken into account. Since this silution is O1 in the 
+region x ; 0, it is exponentially small in the region x 9 0. 
+When x is small and positive, we have 
+yx out sin 1 . ax u 3 
+/2This solution is a good approximation outside of the boundary layer near the origin of the width K1. 
+aK1/ /Since yout 2 is of the order of K1 4, we expect the value of the solution inside the boundary layer to 
+/be of the order of K1 4, which is small. 
+Next we start with the rapidly varying solution at x : 1 and continue it to the region ? 1 9 x 9 0, 
+where it becomes the slowly varying solution given by 
+b yout : ? sin x/ sin 1 . 
+When x is small and negative, we have 
+b yout u?x/ sin 1 . 
+For x ; 0, this solution is exponentially small and can be ignored. 
+Let us find the solution
+2 
+K yinx inside the boundary layer near x : 0. By (9.49) and (9.50), we 
+have X : x and 
+2K c1D?322/x + c2D?3/ x yinx : e?x/2 K 2 ? 2 K . 
+As X  K, we have 
+/4K?1/4yinx  c227x .
+a
+Matching with y out in the region x ; 0, we get 
+c2 u 31 K1/4. 27/2sin 1 
+As X  ?K, we have 
+/4K?1/4yinx  c127?x . 
+Matching with yout bx, we get 
+1 K1/4c1 u 27/2sin 1 . 
+Thus 
+22/2K 1 K1/4 D?3
+4 X when is of the order of unity, as expected. x /2 K x + 3D?3/ yinx : e?x
+27/2sin 1 2 ? 2 K , 
+/which is of the order of K1
+ 2</text>
+        </slide>
+        <slide>
+          <slideno>0</slideno>
+          <text>Boundary Layers and Singular Perturbation 
+Lecture 18 
+Interior Turning Points 
+In this lecture well examine some examples in which there is a turning point inside the interval 
+where (9.13) holds. This is to say that the turning point is an interior point. 
+This is a good time to make a subtle elaboration on how to continue a solution through a turning 
+points. We shall put, without loss of generality, the turning point at the origin. 
+Lets first consider the case in which F ; 0. The rapidly varying solution is increasing for x 9 0 
+and is decreasing for x ; 0. Let us start with the rapidly varying solution (9.24), at the lower 
+endpoint x : ?1 and continue this solution to the right. Before we reach the origin, indeed at a 
+join it with y 2x which, by the second asymptotic form of (9.52), is K distance away from the origin, (9.24) fails to be a good approximation. To continue this solution 
+through the origin, we must 
+x K 
+x x  rapidly varying when is negative and is with a magnitude much larger than . As we continue this 
+solution to positive values of , it turns into the slowly varying solution when K 
+F ; , as can be 
+verified with the use of the first asymptotic formula of (9.52). We mention that, for 0, it is not 
+meaningful to start with the slowly varying solution at x : ?1 and continue it to the right. To see 
+this, consider the solution near x : ?1 which is a sum of a slowly varying solution and a rapidly 
+varying solution. Let the latter being very small compared to the former at x : ?1. As we continue 
+this solution to the right, the rapidly solution grows exponentially and may become comparable to or 
+even larger than the slowly varying solution. This says that if we start at x : ?1, it is difficult to 
+distinguish a slowly varying solution with the sum of a slowly varying solution and a rapidly varying 
+solution. 
+Similarly, in order to obtain the second independent solution of the differential equation, we start 
+with the rapidly varying solution at the upper endpoint x : 1 and continue it to the left. Inside the 
+boundary layer, it is equal to y 1x, as we can seen from the first asymptotic formula of (9.51). As 
+we continue this solution to the region x 9 0, it turns into the slowly varying solution, as we can see 
+from the second asymptotic formula of (9.51). 
+To repeat, if F is positive, the rapidly varying solution decreases exponentially as one leaves the 
+origin in either direction. Therefore, if a rapidly varying solution and a slowly varying solution are of 
+the same order of magnitude at x : 0, then the former is much smaller than the latter as one leaves 
+the origin. We shall call the former the small solution, and the latter the large solution. It is 
+meaningful to take a small solution at one side of the turning point and continue it across the turning 
+point. The small solution turns into the large solution at the other side of the turning point. But it is 
+not meaningful to start with the large solution and continue it across the turning point. 
+If F 9 0, the rapidly varying solution is increasing in the region x ; 0 and decreasing in the 
+region x 9 0. Thus the rapidly varying solution is the large solution and the slowly varying solution 
+is the small solution. As before, we must start with the small solution and continue it across the 
+turning. Thus we start with the slowly varying solution at an endpoint and continue it across the 
+origin. This solution turns into the rapidly varying solution as one crosses the origin. 
+We shall give a couple of examples to illustrate how to use this concept of small solution and 
+large solution to solve a boundary layer problem with an interior turing point. It is also possible to 
+use this concept to solve boundary layer problems with two or more turning points. (See homework 
+problem 12.) 
+KyProblem for the Reader: 
+Solve 
+rr + 2tan xyr ? y : 0, ? 1 9 x 9 1, 
+with 
+y?1 : 1, and y1 : 3. 
+Answer 
+We have 
+ax ; 0, x ; 0; ax 9 0, x 9 0. 
+We see that the rapidly varying solution in the region x ; 0 is decreasing with x . This means that 
+there is no boundary layer at the upper endpoint x : 1. Also, the rapidly varying solution in the 
+ 1</text>
+        </slide>
+      </slides>
+      <videos/>
+    </lecture>
+    <lecture>
+      <lecture_title>The Differential Operator (PDF)</lecture_title>
+      <lecture_pdf_url>https://ocw.mit.edu/courses/18-305-advanced-analytic-methods-in-science-and-engineering-fall-2004/resources/first1/</lecture_pdf_url>
+      <lectureno>1</lectureno>
+      <slides>
+        <slide>
+          <slideno>2</slideno>
+          <text>(2n + 1)i
+mn = e 100 .
+Thus the complementary solution of the present example is 
+= c1e m1 x +   + c100e m100 x
+Y . (1.20) 
+Step two: We nd one particular solution of the ODE. We have
+1 1 1
+yP = cosh x = (e x + e x). D100 + 1 D100 + 1 2
+Making use of (1.2), we have
+1 1 1
+yP = (e x + e x) = cosh x . (1.21)1 + 1 2 2
+The most general solution is
+y = yP + Y . (1.22) 
+5</text>
+        </slide>
+        <slide>
+          <slideno>1</slideno>
+          <text>P (x)( x y(x) = e 0 e P (x  )q(x )dx + c). 
+where
+P (x)  x p(x )dx . (1.13).
+0 
+The solution has one arbitrary constant. 
+Problem for the reader:
+Find a particular solution of the following dierential equation:
+x(D100 + 1)y = e . 
+Answer: 
+There is more than one way to nd a particular solution of this equation, 
+but we advocate doing it in the following way. We treat D as if it were a number 
+and get 
+1 x yP = D100 + 1 e , 
+where yP is a particular solution of the dierential equation. By using (1.2) 
+with m = 1 , we get 
+1 1 x yP = e x = e . 1100 + 1 2
+Example 2
+Find the general solution of
+y(100) + y = cosh x.
+Answer
+Step one: we solve the corresponding homogeneous equation
+Y (100) + Y = 0 . 
+Try 
+Y = e mx , 
+then m must satisfy 
+m 100 = 1. (1.19) 
+Equation (1.19) is a polynomial equation which has one hundred roots, which 
+we will denote as mn , n = 1,   100, with 
+4</text>
+        </slide>
+      </slides>
+      <videos/>
+    </lecture>
+    <lecture>
+      <lecture_title>First-Order Partial Differential Equations (PDF)</lecture_title>
+      <lecture_pdf_url>https://ocw.mit.edu/courses/18-305-advanced-analytic-methods-in-science-and-engineering-fall-2004/resources/third1/</lecture_pdf_url>
+      <lectureno>3</lectureno>
+      <slides>
+        <slide>
+          <slideno>1</slideno>
+          <text>First-Order Partial Differential Equations 
+the case of the first-order ODE discussed above. Clearly, this initial point does not have to be on the 
+y axis. 
+If the values of ux, y on the y axis between a 1  y  a2 are given, then the values of ux, y are 
+known in the strip of the x-y plane with a 1  y  a2. 
+If the values of ux, y are given on a curve, then the values of ux, y are known in a strip 
+obtained by sweeping the curve horizontally. 
+But if the curve intercepts a horizontal line at two points, then there is a problem. For there can 
+be no continuous solution unless the values assigned for u at these two points happen to be equal. 
+The situation gets worse if the curve on which the initial data is assigned is a horizontal line. In 
+such a case, the initial data is in conflict with the PDE unless all initial values on this horizontal line 
+are equal to the same constant. In such a case, the value of the solution at any point not on the 
+horizontal line remains unknown. 
+While this example is admittedly trivial, the solution of many first-order PDEs can be obtained 
+by slightly generalizing what weve just done. 
+B Linear Homogeneous PDEs 
+Consider the PDE 
+ax, yuxx, y +bx, yuyx, y : 0, (3.3) 
+which is linear and homogeneous. 
+Let 
+=ux, y  ux + =x, y + =y ? ux, y 
+be the variation of u as the coordinates are varied by =x, =y. By the Taylor expansion, 
+=u : ux =x +uy =y, 
+where the higher order terms, negligible as =x and =y become infinitesimal, are ignored. 
+Question to the Reader: 
+What values should we choose for = x and =y in order for = u to vanish? 
+Answer 
+If u is a solution of (3.3), we have, if a  0, 
+ux : ? b a uy. 
+Thus 
+=u : ? b a =x + =yu
+y. 
+Therefore, = u vanishes if 
+=y : b a =x, (3.4a) 
+or 
+dx 
+ax, y : dy 
+bx, y . (3.4b) 
+Therefore, u x, y is constant on a curve the slope of which is dictated by (3.4b). We may rewrite 
+(3.4b) as 
+dy ax, y 
+dx : bx, y . 
+This equation does not depend on u. It is self-contained and can be solved on its own, regardless of 
+what u is. We call the solutions of (3.4b) the characteristic curves of the PDE (3.3). 
+If a vanishes at some points in the region of interest, there is the difficulty of 1/ a blowing up at 
+these points. However, if b  0 at these points, we may express uy by ?aux/b and get (3.4b). 
+If both a and b vanish at a point, then the slope of the charateristic curve may be ill-defined at 
+this point. If such is the case, there may be more than one characteristic curves passing through this 
+point. 
+Problem for the Reader:
+Find the characteristic curves of the PDE
+ut ? ux : 0. 
+In particular, find the characteristic curve which passes through the point x0, t0. 
+Answer 
+ 2</text>
+        </slide>
+        <slide>
+          <slideno>2</slideno>
+          <text>First-Order Partial Differential Equations 
+The equation for the characteristic curves is 
+dt : ? dx ,1 1 
+the solutions of which are 
+a : x + t, (3.5) 
+where a is a constant which differs from one characteristic curve to another. In other words, each 
+curve is designated by a value of a. Thus the characteristic curves are a family of curves of one 
+parameter. 
+Conversely, we may easily find the parameter a associated with the characteristic curve passing 
+through a point (x , t). For example, the parameter associated with the characteristic curve passing 
+through  2. 3 is, by (3.5), 
+a : 2 + 3 : 5. 
+More generally, the parameter a for the characteristic curve passing through x0, t0 is given by 
+a : x0 + t0. 
+Problem for the Reader:
+Find the analytic form of the general solution of the PDE
+ut ? ux : 0. 
+Answer 
+Since the values of u are the same on a characteristic curve, its value at x, t depends only on the 
+value a associated with the characteristic on which the point x, t lies. The value a at the point x, t 
+is equal to  x + t. Thus we have 
+ux, t : Fx + t (3.6) 
+where F is an arbitrary function. 
+Problem for the Reader: 
+If the initial values of u x, t are given by ux, 0 : fx, find ux, t. 
+Answer 
+The solution can be expressed in two forms. We may express it in the analytic form by setting 
+t : 0 in (3.6). We get 
+fx : Fx. (3.7) 
+Thus 
+ux, t : fx + t, 
+which is a wave travelling to the left with the uniform velocity unity. 
+The solution may also be described graphically by assigning a value of u for each characteristic 
+line in the figure on the right. For example, the value of u on the characteristic passing through the 
+origin is f0. 
+The analytic solution is simpler to use for the wave equation given above. Indeed, it is simpler to 
+use for equations in the form of (3.3). But the graphical solutions are preferable for some of the more 
+complicated first-order PDEs not in the form of (3.3). 
+Problem for the Reader: 
+uFind the characteristic curves of the PDE 
+x + x + yuy : 0, (3.8) 
+and draw some of these characteristic curves in the xy-plane. 
+Answer 
+The characteristics curves of the PDE (3.8) satisfy 
+dx : dy 
+1 x + y 
+or 
+dy : x + y.dx 
+This is a linear and inhomogeneous ODE of the first order with the complementary solution ex. A 
+ 3</text>
+        </slide>
+        <slide>
+          <slideno>3</slideno>
+          <text>First-Order Partial Differential Equations 
+particular solution is 
+yPx : 1 
+D ? 1 x : ?1 + D + D2 + 6 6 6x : ?x ? 1. 
+Thus the characteristic curves are given by 
+y : cex ? x ? 1, (3.9) 
+or 
+e?xx + y + 1 : c. (3.10) 
+The characteristic curves for c : 0, 1, ?1 are drawn in the figure below. 
+0 1 2 3 0 1 2 3 y 
+ 2 
+3 2 1 3 2 1 
+c = 1, u = ec = 0, u = e c = 1, u = 1 
+x 
+Figure 3.1. 
+Problem for the Reader: 
+If ux, y of (3.8) satisfies the initial condition 
+u0, y : e?y, (3.11) 
+state the values of ux, y on the characteristic curves drawn above. 
+Answer 
+The coordinates of the intercepts of the characteristic curves (3.10) of c : 0, 1, ?1 at the y axis 
+are y : ?1, 0, ?2, respectively. According to (3.11), the values of u at these three points are e, 1, e2 
+as indicated in the figure above. 
+We may obtain u x, y in an analytic form. As the value of u depends only on the characteristic 
+curve it is on, and as each characteristic curve is defined by the parameter c , u depends only on c ; we 
+have 
+ux, y : Fc : Fe?xx + y + 1. 
+The function F is determined from the initial condition (3.11). We have 
+e?y : Fy + 1, 
+or 
+Fy : e1?y. 
+Thus we have 
+ux, y : exp1 ? e?xx + y + 1. (3.12) 
+The solution (3.12) can be viewed geometrically as a surface in the three-dimensional xyu space. 
+Non-linear first-order ODE can also be solved in a closed form. These and numerous other 
+examples are discussed in the textbook. 
+ 4</text>
+        </slide>
+        <slide>
+          <slideno>0</slideno>
+          <text>First-Order Partial Differential Equations 
+Lecture 3 
+First-Order Partial Differential Equations 
+Text book: Advanced Analytic Methods in Continuum Mathematics, by Hung Cheng (LuBan 
+Press, 25 West St. 5th Fl., Boston, MA 02111, USA). 
+In this lecture and the next two lectures, well briefly review partial differential equations 
+(PDEs). As PDEs are much more difficult to solve than ODEs, we shall start with the simplest of 
+PDEs, those of the first order. 
+The good thing about a first-order PDE is this: it can always be solved in a closed form. This is 
+true whether the PDE is linear or non-linear, and in the former case, whether it is homogeneous or inhomogeneous. 
+Having made such a strong statement about the first-order PDE, we must add that the solutions 
+of the first-order PDE are expressed by the solutions of a system of ODE, which may not be exactly 
+solvable. But since ODE is so much simpler to solve than PDE, we consider a PDE solved if its 
+solution can be expressed as those of an ODE. 
+We shall start by making a comparison of the solution of a first-order ODE with those of a 
+first-order PDE. 
+A Trivial Example 
+Let us consider the ODE 
+dux 
+dx : 0. 
+The answer is, trivially, 
+ux : c, 
+an arbitrary constant. The solution of the ODE is unique if an initial condition is imposed. For 
+example, if we require 
+u0 : 1, 
+then we have 
+ux : 1. 
+In contrast, let us consider the PDE 
+uxx, y : 0, (3.1) 
+where 
+ux  /
+/u
+x . 
+The solution of (3.1) is, again trivially, 
+ux, y : fy. (3.2) 
+Let us describe what this obvious result means in some detail. Eq. (3.2) says that ux, y is a function 
+of y only, and is independent of x. Therefore, if the value of ux, y at an initial point on the y -axis, 
+say 0, a, is equal to b, i.e., 
+u0, a : b, 
+then ux, y is equal to b on the entire line y : a, i.e., 
+ux, a : b. 
+We call the line y : a a characteristic curve of the PDE (3.1). It is remarkable that u on this 
+characteristic curve is independent of the value of u anywhere else. To find the value of u on this 
+characteristic curve, we only need the value of u at a point on this characteristic curve, just as with 
+ 1</text>
+        </slide>
+      </slides>
+      <videos/>
+    </lecture>
+    <lecture>
+      <lecture_title>The Laplace Method (PDF)</lecture_title>
+      <lecture_pdf_url>https://ocw.mit.edu/courses/18-305-advanced-analytic-methods-in-science-and-engineering-fall-2004/resources/twelve/</lecture_pdf_url>
+      <lectureno>12</lectureno>
+      <slides>
+        <slide>
+          <slideno>1</slideno>
+          <text>Asymptotic Expansions of Integrals 
+This produces the answer (8.10) up to a multiplicative constant. We express this estimate as x : IR / R . dominant contributions. Since the integrand at 0 is equal to unity, is of the order of 1
+IR : O 1/ R . 
+For certain problems such an estimate is already adequate for the purpose. If so, we are spared the 
+chore of a tedious calculation. The factor missing in the estimate is the multiplicative constant Z , 
+which is the value of the Gaussian integral. 
+Homework problems in Chapter 8 due Nov 1,04:
+Problem 2 (The integrals are given on p. 218);
+Problem 3;
+Find also the entire asymptotic series of each of the integrals in Problem 3.
+ 2</text>
+        </slide>
+        <slide>
+          <slideno>0</slideno>
+          <text>Asymptotic Expansions of Integrals 
+Lecture 12 
+The Laplace Method 
+We begin with integrals of the form 
+IR : Xb
+e?Rvxhxdx, (8.8) 
+a 
+where vx and hx are independent of the parameter R . The variable of integration x is real. We 
+shall show how to find the asymptotic form of IR as R  K. 
+We note that the integrand in the integral above is maximum when v is minimum. Indeed, let x0 
+be the point inside the interval a, b at which vx is minimum. Then the integrand at x0 is 
+exponentially larger than that at any other points in the region of integration. As a result, to evaluate 
+the integral of (8.8) approximately, it is crucial to approximate vx and hx accurately near x . This 
+also means that we need not be concerned with the integrand away from x0. This is because the 
+dominant contribution to the integral comes from a very small region near x0. 
+Problem for the Reader: 
+Find the leading asymptotic term of the integral 
+K 
+IR : X 
+0 exp?R sinh2xdx, R  1. (8.9) 
+Answer 
+Comparing (8.9) with (8.8), we make the identification 
+vx : sinh2x, 
+and 
+hx : 1. 
+The function sinh2x is always positive, and is minimum at x : 0. Thus it suffices to represent sinh2x 
+accurately near the origin, where 
+sinh2x u x2. 
+We therefore have 
+IR u XK 
+e?Rx2 dx. 
+?K 
+Let 
+[  R x, 
+and 
+: d[/ R . dx 
+With this change of variable the exponent is independent of R. Then we have 
+IR u 
+R 1 XK 
+e?[2 d[ : Z
+R . (8.10) 
+?K 
+In the above, we have made use of the fact that the Gaussian integral XK e?[2 d[ is equal to Z , as is ?K 
+given in Appendix A of this chapter. 
+If one makes a small mistake in an approximation, the answer one gets can be far off the mark. 
+Thus it is often useful to have a quick answer. We shall show how to get a rough estimate of the 
+asymptotic form of the integral IR without going through a great deal of calculations performed. 
+The integrand of IR drops by a factor of e when 
+Rx2 : 1, 
+or 
+x : 1/ R . 
+/ R 
+/ R 
+x / R . 
+IR x : Thus 1 is roughly the width of the region which gives the dominant contributions to the integral. 
+The width 1 of the region of dominant contribution is the same factor relating dx with dt . We 
+shall say that the scale of is 1
+The integral is roughly equal to its integrand at 0 times the width of the region of 
+ 1</text>
+        </slide>
+      </slides>
+      <videos/>
+    </lecture>
+    <lecture>
+      <lecture_title>Boundary Layers and Singular Perturbation (PDF)</lecture_title>
+      <lecture_pdf_url>https://ocw.mit.edu/courses/18-305-advanced-analytic-methods-in-science-and-engineering-fall-2004/resources/sixseven/</lecture_pdf_url>
+      <lectureno>16-17</lectureno>
+      <slides>
+        <slide>
+          <slideno>2</slideno>
+          <text>Boundary Layers and Singular Perturbation 
+homework problem 1.) However, we gain more insights to this problem by starting afresh. 
+Let us set K : 0. Then (9.13) becomes 
+axyr+ bxy : 0. 
+This equation is readily solved and we get 
+ysx : exp ?X bx dx . (9.15) ax 
+The fact is that eq. (9.13) is of the second order, and has two independent solutions. But the 
+approximate equation we obtain is of the first order, and has only one independent solution. Thus the 
+approximate method we use yields only one of the independent solutions. This is to say that we lose one of the independent solutions as we set K in the differential equation to zero. It is impossible to 
+satisfy the two boundary conditions of (9.14) with only one solution. 
+How do we find the missing solution approximately? To get some insight into the answer, let us 
+go to the much simpler case in which a and b are constants. Then the general solution of (9.13) is 
+equal to 
+c1er1x + c2er2x , 
+where c1 and c 2 are arbitrary constants and r 1 and r 2 are the roots of the quadratic equation 
+Kr2 + ar + b : 0. 
+This quadratic equation can be solved easily. But if we set K in this quadratic equation to zero, we get 
+only one root 
+r u ?b/a, 
+which gives the solution 
+e?bx/a . 
+The solution is equal to the one denoted by ysx in (9.15) with a x and bx replaced by the 
+constants a and b, respectively. The other root of the quadratic equation is obtained by solving the 
+equation exactly. When K is very small, this root is approximately given by 
+? a/K. 
+This root tells us that the second solution of the differential equation is approximately 
+e?ax/K 
+y. 
+We see that this solution is a rapidly varying function of x. Indeed, it is a rapidly decreasing function 
+of x if a is positive, and a rapidly increasing function of x if a is negative. 
+That the missing solution is a rapidly varying function of x also explains why it is not always 
+legitimate to drop the yrr term in (9.13). Let us denote the rapidly varying solution by yrx. Then 
+r r x is of the order of K?1 times yrx, and y r rrx is of the order of K?2 times yrx. Therefore, the 
+term Kyr rrx is bigger than y rx by a large multiple of K?1. Again, while it is true that Ky, say, is 
+always much smaller than y , it is not always true that Kyrr is much smaller than y . 
+rOn the other hand, y s rr and ys are both of the same order of magnitude as ys. Thus it is justified to 
+treat Kyrr as a small perturbation term. Thus we write (9.13) as 
+rrx, axys r x + bxysx : ?Kys (9.16) 
+and seek the solution y sx in the perturbation series 
+ysx : y
+s 0x + Ky
+s 1x +6 6 6. 
+Substituting this series into (9.16), we easily find that ys 0x is given by (9.15), and that 
+ax d 
+dx2 ys n?1x, n : 1, 2 6 6 6. (9.17) ydx 
+snx + bxy
+snx : ? d2 
+Thus ys nx, n : 1, 2, 6 6 6, satisfies a first-order ODE with the inhomogeneous term equal to the 
+0negative of the second-order derivative of ys n?1x. Once ys is found, we may then solve (9.17) 
+1with n : 1 and obtain y s . Similarly, all y
+snx, n : 2, 3, 6 6 6, can be obtained by successive 
+iteration. 
+We remark that, by treating Kys " as a small perturbation, we have implicitly assumed that the 
+solution is slowly varying. Since all terms in the perturbation series so obtained are slowly varying, 
+the assumption is justified and the method of regular perturbation produces succesive 
+ 3</text>
+        </slide>
+        <slide>
+          <slideno>6</slideno>
+          <text>Boundary Layers and Singular Perturbation 
+We shall scale the variable x ? x0 by 
+x ? x0 : K 
+|F| X. (9.46) 
+Then (9.44) becomes 
+? signF d2Y (9.47) + G 
+|F| 2 ? X2 Y :0,4 
+where 
+signF :F/|F|. 
+We note that, with the independent variable scaled this way, the resulting equation (9.47) is 
+independent of the small parameter K . As a result, the solution of (9.47) varies by an amount O1 dX2 
+the order ofX O1 X 
+x ? x0 K F 
+K x0.
+x :x0 
+,
+, when varies by an amount . Thus we say that the scale of is unity. By (9.46), the scale of 
+is . ( We have made the implicit assumption that is of the order of unity.) Therefore,
+there is a boundary layer with width near the turning point 
+There is a way to see directly from (9.13) that the width of the boundary layer near is of
+K . Let us choose x0 :0 for convenience and write eq. (9.13) near the turning point as 
+Kyrr+Fxyr+Gy u 0. 
+To determine the scale of x, we make the change of variable 
+x :JX. 
+Then we have 
+K d2 
+dX y +Gy :0. J2 dX2 y +FXd 
+We see that if we choose 
+J : K , 
+the differential equation above is independent of the small parameter K . Thus both solutions 
+expressed as functions of X are independent of K. This means that the scale of X for these solutions is 
+unity, or the scale of x for these solutions is K as concluded earlier. 
+Equation (9.47) is a parabolic cylinder equation, which is usually written in the generic form 
+d2` +T +1/2 ? z2/4` :0. (9.48) dz2 
+One of the solutions of eq. (9.48) is the parabolic cylinder function denoted by DTz. Since equation 
+(9.48) is unchanged with the replacement of z ?z, DT?z also satisfies equation (9.48). In 
+addition, (9.48) is unchanged if we make the replacements z iz as well as T ?T ? 1. Thus 
+D?T?1iz and D?T?1?iz are also solutions of eq. (9.48). 
+We shall choose the two independent solutions of y near the turning point to be 
+y1 :e?Fx2/4KDT |F| x (9.49) 
+K 
+and 
+y2 :e?Fx2/4KDT ? |F| x (9.50) 
+K 
+where 
+G ? signF +1T : |F| 2. 
+The asymptotic forms of the parabolic cylinder function are given by 
+DTX u XTe?X2/4 , X K, 
+2Z |X|?T?1eX2/4, u X ?K. &lt;?T 
+We shall replace the parabolic cylinder functions in (9.49) and (9.50) by these asymptotic forms 
+when |X| is large. 
+ 7</text>
+        </slide>
+        <slide>
+          <slideno>3</slideno>
+          <text>Boundary Layers and Singular Perturbation 
+approximations of the slowly varying solution. On the other hand, this method cannot produce the 
+rapidly varying solution. Clearly, if the solution is rapidly varying, it is not justified to treat Kyrr as a 
+small perturbation term. 
+To find successive approximations of the rapidly varying solution, we note that, when a xand 
+bxare constants, the rapidly varying function is exp ?ax/K. Thus we surmise that, when axand 
+bxdepend on x , the rapidly varying solution is approximately exp ?K?1 X axdx . Therefore, we 
+shall put 
+yrx : exp ?K?1 X axdx vx. (9.18) 
+With the rapidly varying behavior of yrxtaken up by the exponential factor, we expect vxto be 
+slowly varying. Substituting (9.18) into (9.13), we get 
+v : Kvrr avr+ ar ? b . (9.19) 
+Treating the term Kvrr as a small perturbation we may solve (9.19) with regular perturbation. We put 
+vx : v0x+ Kv1x+666, (9.20) 
+and get 
+X bx v0x : a1 
+x exp dx (9.21) ax 
+as well as 
+d2 ad vn + ar ? bvn : dx2 vn?1. (9.22) dx 
+Note that, just like (9.17) for ys n, (9.22) is a first-order differential equation for v n and can be solved 
+in a closed form. Thus we may obtain all vn by successive iteration. We note that this prodecure 
+yields us only the solution which is in the form of (9.18), where v is slowly varying. Hence it does 
+not yield ys. 
+If yrxis rapidly decreasing, we expect that it is appreciable only in a small neighborhood near 
+the lower endpoint x : 0, and drops to very small values as x gets away from the origin. The graph 
+for the solution (9.23) has a bump near x : 0. The solution is said to have a boundary layer near the 
+lower endpoint. 
+Similarly, if yrxis rapidly increasing, we expect it to be appreciable only near the upper 
+endpoint x : 1. 
+In a specific calculation, we may, instead of pluggin in a and b into the formulae given above, 
+obtain both y out and yinxdirectly from (9.13). First of all, the differential equation for y out is 
+obtained by neglecting the term Kyrr in (9.13). The resulting equation is of the first-order and can be 
+solved in a closed form. The multiplicative constant in this solution can be fixed with the boundary condition at the endpoint where y
+rxis negligible. The equation for y in can be obtained by treating 
+the functions a and b as constants. 
+Problem for the Reader:
+Solve approximately the equation
+Kyrr + 1 + xyr+ y : 0, 0 9 x 9 1, 
+with the boundary conditions 
+y0 : y1 : 1. 
+Answer 
+We have 
+ax : 1 + x ; 0, 
+thus yrxis rapidly decreasing and there is a boundary layer near x : 0 with a width of order K . 
+For x outside of the boundary layer, we have 
+r1 + xyout + yout : 0. 
+Thus we get 
+ 4</text>
+        </slide>
+        <slide>
+          <slideno>8</slideno>
+          <text>Boundary Layers and Singular Perturbation 
+2y1y 
+Figure 9.3. 
+In the region x ; 0, y2 is the rapidly varying solution and y 1 the slowly varying solution. And in 
+the region x 9 0, y1 is the rapidly varying solution and y 2 is the slowly varying solution. 
+In the next three sections, we shall show how to match these approximate solutions valid inside 
+the neighborhood of the turning point with the approximate solutions valid outside of the 
+neighborhood of the turning point. 
+D Turning Point at an Endpoint 
+KyProblem for the Reader: 
+Solve approximately 
+rr + 2xyr+ 1 + 3x3y : 0, 0 9 x 9 1, K  1, 
+with the boundary conditions 
+y0 : 0, y1 : 1. 
+Answer 
+Since ax : 2x  0, the rapidly varying solution is a decreasing function of x. There is a 
+boundary layer at x : 0. Since x : 0 is also a turning point, the width of the boundary layer near 
+x : K . 
+yr x  0 is 
+The solution is negligible outside of the boundary layer. Thus, when K , the solution is 
+equal to yout which satisfies 
+r2xyout + 1 + 3x3yout : 0. 
+This equation yields 
+youtx : x 1 e?x3/2, 
+where we have made use of the boundary condition at x : 1. 
+22/x : 
+2K c1D?1
+x Inside the boundary layer near 0, we have 
+These solutions are good approximations if 99 1. x + c2D?1/ x yinx : e?x/2 K 2 ? 2 K . 
+There are two arbitrary constants, c1 and c 2. We determine one of these constants by matching 
+yinx with y outx in the overlapping region where both approximations are valid. The parabolic 
+cylinder function solution is valid when x 99 1, while by (7.18), the WKB solutions are valid when 
+P d K P99 1, xdx 
+or 
+x K . 
+K x 
+x  K ;; 
+Thus the overlapping region is 
+99 99 1. 
+When we have 
+/4x?1/2yinx u c22K1. 
+ 9</text>
+        </slide>
+        <slide>
+          <slideno>5</slideno>
+          <text>Boundary Layers and Singular Perturbation 
+we have made in the preceding section fail in the neighborhood of x0. Borrowing the terminology in 
+quantum mechanics, we shall call x0 a turning point of eq. (9.13). 
+To obtain approximate solutions near a turning point, we approximate ax and bx in (9.13) by 
+algebraic functions of x, and solve the resulting equation exactly. This is the same approach as the 
+one used to handle the turning point of the wave equation discussed in Chapter 7. The only 
+difference is that the approximate solutions for (9.13) near a turning point are parabolic cylinder functions rather than Airy functions, as we shall show. 
+It will be convenient get rid of the yr term in (9.13). Let us write (9.13) as 
+aD + K Dy + b K y : 0. 
+This tells us that, to eliminate the yr term, we put 
+r
+y : ? Xx 
+exp axdxr Yx. (9.42) 2K 
+This is because, as we move the exponential factor to the left of D, we make the replacement 
+D  D ? 2a 
+K . 
+Thus eq. (9.13) becomes 
+D + aD ? aY + b K Y : 0, 2K 2K 
+or 
+D2Y + 2bx ? arx ? a2x Y : 0. (9.43) 2K 4K2 
+Since 1/4K2 is very large, we see that an alternative way to solve eq. (9.43) is to use the WKB 
+method, approximating Nx in (7.16) by 
+a2 + 2Ka r ? 2b P a P ar ? 2b 
+4K2 p 2K + 2 P a P . 
+The WKB approximation is valid provided that ax does not vanish. This approximation yields 
+for Y two WKB solutions, one of them a rapidly increasing function of x, while the other a rapidly 
+decreasing function of x. To obtain the solutions of (9.13), we multiply these two WKB solutions by 
+the exponential factor of (9.42), getting the slowly varying solution ys and the rapidly varying 
+solution yr. (See homework problem 1). 
+xThe WKB approximation fails at a turning point. Let x0 be a turning point. We shall assume that 
+0 is a simple zero of ax. Then we have, near x : x0, 
+ax u Fx ? x0 
+and 
+bx u G. 
+By (7.18), the WKB approximation holds only if 
+P x ? x0 P;; 
+Fortunately, when K . 
+x is close to x 0, or more precisely 
+P x ? x0 P99 1, 
+eq. (9.43) is approximately 
+d2Y + 2G ? FF2x ? x02 
+? Y u 0, (9.44) 2K 4K2dx2 
+which we will be able to solve in a closed form. 
+x x 0
+? Fx ? x02 
+4K . 
+x x 0 y Y Before we show how to do this, we first note that, when is near , we have 
+Thus, for close to , the solution is related to by ? X exp rxax 
+x0 dxr 
+2K p exp 
+y u e?Fx?x02/4KY. (9.45) 
+We here take note that, if F is positive, the factor multiplying Y in (9.45) drops exponentially as 
+|x ? x0| increases; on the other hand, if F is negative, this factor grows exponentially as | x ? x0| 
+increases. 
+ 6</text>
+        </slide>
+        <slide>
+          <slideno>7</slideno>
+          <text>Boundary Layers and Singular Perturbation 
+The qualitative behaviors of y1 and y 2 depend on the sign of F. This is because the exponential 
+factor in (9.49) and (9.50) are either growing exponentially or vanishing exponentially as | X| 
+becomes large, depending on the sign of F. Thus there are two separate cases to discuss. 
+Case of F ; 0
+For F ; 0, we have
+G
+T : F ? 1. 
+Also, the exponential function vanishes as | X| increases. Thus we have
+y1  X?1+G/Fe?X2/2,
+X  K, 
+ 2Z |X|?G/F , X  ?K (9.51) &lt;1 ? G/F 
+and 
+2Z X?G/F , X  K y2x  &lt;1 ? G/F 
+ P X P?1+G/F e?X2/2, X  ?K. (9.52) 
+The behaviors of these two functions are schematically illustrated below: 
+2y1y 
+a &lt; 0 a &gt; 0 a &lt; 0 a &gt; 0 
+Figure 9.2. 
+In the region x ; 0, y1 is the rapidly varying function, and y 2 is the slowly varying solution, 
+while in the region x 9 0, y1 is the slowly varying solution and y 2 is the rapidly varying solution. The 
+role of y1 interchanges with that of y2 as one crosses the turning point. 
+Case of F 9 0
+We have
+GT : ? F . 
+Also, the exponential function blows up as P X P becomes large. Thus
+y1  X?G/F ,
+ X  K, 
+&lt;G2
+/Z
+F |X|?1+G/FeX2/2, X  ?K, (9.53) 
+and 
+y2 &lt;G2
+/Z
+F X?1+G/FeX2/2, X  K, 
+?G/F |X| , X  ?K. (9.54) 
+We illustrate in the figure below the behaviors of y1 and y 2 for F 9 0. 
+ 8</text>
+        </slide>
+        <slide>
+          <slideno>0</slideno>
+          <text>Boundary Layers and Singular Perturbation 
+Lectures 16 and 17 
+Boundary Layers and Singular Perturbation 
+A Regular Perturbation 
+In some physical problems, the solution is dependent on a parameter K . When the parameter K is 
+very small, it is natural to expect that the solution not be very different from the one with K set to 
+zero. Consider for example the motion of a harmonic oscillator of unit mass with the spring constant 
+equal to  1 +Ke?t. The equation of motion for this problem is 
+x6 +1 +Ke?tx :0, (9.1) 
+with 
+x0, K :1, x%0, K :0, (9.2) 
+where xt, K is the displacement of the harmonic oscillator and x %is the time derivative of x. 
+Equation (9.1) can be solved in a closed form and the exact solution is a Bessel function. But if K 
+is very small, the spring constant is approximately equal to unity at all times t ;0, and to the 
+lowest-order of approximation, we expect that we may ignore its small deviation from unity. Thus 
+we have 
+xt, K u xt, 0 :cos t. (9.3) 
+To find the small correction due to the small deviation of the spring constant from unity, one may anticipate that, since the deviation is of the order of K, this small correction is of the order of K as 
+well. Indeed, since all terms in (9.1) are analytic functions of K, we will try to see if there is a 
+solution in the form of a Taylor series of K: 
+xt, K u x
+0t +Kx1t +` +Knxnt +`, (9.4) 
+where xnt is independent of K. Substituting (9.4) into (9.1) and (9.2), we get 
+d2 +1 x0t +Kx1t +` +Ke?tx0t +Kx1t +` :0, (9.5) dt2 
+x00 +Kx10 +` :1, (9.6) 
+and 
+x%00 +Kx%10 +` :0. (9.7) 
+Setting K in the equations above to zero, we get 
+x60 +x0 :0, 
+with 
+x00 :1, and x%00 :0. 
+The solution x 0t is just xt, 0 given by (9.3). 
+Setting to zero the coefficient of K on the leftside of (9.5), we get 
+x61 +x1 :?e?t cos t. (9.8) 
+Similarly, we get from (9.6) and (9.7) that 
+x10 :0. (9.9) 
+x%10 :0. (9.10) 
+The solution of (9.8) satisfying (9.9) and (9.10) is 
+5 cos t ? 3 sin t +e?t 2 sin t 
+5 ? cos t . x1t : 1
+5 
+Since both x 1t and x 0t are O1 at all times and since K is very small, we have 
+|Kx1t| |x0t| 
+at all times, except when t is near the points where x0t happens to vanish. 
+One may further obtain the nth-order correction x nt from (9.5)(9.7). We shall find that xnt is 
+O1 at all times. Thus 
+ 1</text>
+        </slide>
+        <slide>
+          <slideno>4</slideno>
+          <text>e
+uBoundary Layers and Singular Perturbation 
+cyoutx : 1 + x . 
+The constant c is determined from the boundary condition at x : 1 and we have 
+2youtx : 1 + x . 
+In particular, 
+yout0 : 2. 
+To obtain y inx near x : 0, we make the approximation 
+ax u a0 : 1. 
+Thus 
+rr Kyin + yin u 0. 
+Therefore we have 
+/Kyinx : 2 + cre?x. 
+The boundary condition 
+y0 : 1 
+requires that 
+cr: ?1. 
+Thus 
+/Kyinx : 2 ? e?x. 
+We also find that 
+yuniform : 2 ? e?x/K .1 + x 
+The solution is plotted in the figure below. We see that it is given by 2/ 1 + x almost everywhere. 
+But the function 2/ 1 + x does not satisfy the boundary condition at x : 0. Thus the rapidly varying 
+solution y r kicks in near the point x : 0 and the solution y goes through a rapid transition inside the 
+boundary layer. 
+0 1 1 2 
+x e e l i
+ni l i
+0.2 0.4 0.6 0.8 0.8 1.2 1.4 1.6 1.8 y(x) = 0.1 = 0.01 xact souton 
+form souton 
+Figure 9.1. 
+C Turning Points 
+In the preceding section, we assume that ax is of the same sign throughout the interval in which 
+the differential equation (9.13) holds. The solutions yrx and ysx, given by (9.24) and (9.15) 
+respectively, are good approximations of the two independent solutions of the differential equation. 
+But if x0 is a simple zero of ax, the function a x changes sign at x0, and the approximations 
+ 5</text>
+        </slide>
+        <slide>
+          <slideno>1</slideno>
+          <text>Boundary Layers and Singular Perturbation 
+|Knxnt| |Kn?1xn?1t|. 
+The inequalities above indicate that keeping more and more terms in the series of (9.4) makes the 
+approximate solution better and better. 
+The series (9.4) is a perturbation series, and the method given above in obtaining a perturbation 
+series is called that of regular perturbation. 
+B Boundary Layer Theory 
+It may be surprising, but not all problems with a small parameter can be solved by regular 
+perturbation. Let us start the discussion with a simple example. 
+Consider the solution of the differential equation 
+K dy + y : 0 (9.11) dx 
+with the initial condition 
+y0 : 1. 
+If we set K in the differential equation above to zero, we get 
+yx : 0. 
+But this approximate solution does not satisfy the initial condition. 
+In order to understand why this is so, we solve this differential equation in a closed form. We 
+find that 
+/Kyx : e?x. 
+This solution of the differential equation satisfies the initial condition for all values of K not equal to 
+zero. But if we set K to zero, the solution above vanishes, and the initial condition is not satisfied. 
+Indeed, considered as a function of K, the solution of the differential equation has an essential 
+singularity at K : 0. It is therefore no wonder that it does not have a Maclaurin series expansion. 
+As a comparison, consider the solution of the equation 
+dy + Ky : 0 (9.12) dx 
+with the same initial condition. The exact solution is 
+yx : e?Kx . 
+The approximate solution obtained by setting K in the differential equation to zero is 
+yx : 1 
+which is a good approximation of the exact solution when K x is very small. 
+What makes the method of regular perturbation applicable for one but not for the other? The 
+answer lies in the fact that if we set K to zero, eq. (9.12) remains a first-order differential equation, 
+while eq. (9.11) turns into an algebraic equation. Indeed, while it is always true that the magnitude of 
+Ky is small compared to that of y, it is not always true that the magnitude of Kyr is small compared to 
+that of y. This is because, if yx is a rapidly varying function of x, the magnitude of the derivative of 
+yx is much larger than y x. In such a case, K yrx may be of the same order of magnitude as yx. 
+/Indeed, we may easily verify that this is true for the function y x : e?xK, the solution of (9.11). 
+We encounter similar difficulties with boundary layer problems in fluid mechanics. Let us 
+consider the second-order differential equation 
+Kyrrx + axyrx + bxyx : 0, (9.13) 
+which generally cannot be solved in a closed form. We shall choose the interval in which (9.13) holds to be 0, 1 . Typically, we require that the solution satisfies the boundary conditions: 
+y0 : A, y1 : B. (9.14) 
+The parameter K is very small, while A and B are O1. Note that the small parameter K is the 
+coefficient of yrr . 
+This problem is a simplified model of the boundary layer problem in fluid mechanics. As we 
+know, the highest-order term in the Navier-Stokes equation in fluid mechanics is equal to T 42v3, 
+where v3 is the velocity of the fluid and T is the kinematic viscosity. The kinematic viscosity is often a 
+small parameter, and the order of the Navier-Stokes equation decreases if we ignore the viscosity. 
+Equation (9.13) can be solved with good accuracy with the use of the WKB method. (See 
+ 2</text>
+        </slide>
+        <slide>
+          <slideno>9</slideno>
+          <text>K . 
+This is an indication that this region is indeed the overlapping region in which both approximations Boundary Layers and Singular Perturbation 
+Also, when x  1, we have 
+/2youtx u x?1. 
+/We note that both y inx and youtx are equal to a constant times x?1 2 in the region 1  x  
+hold. Joining yinx with y out in this region, we get 
+/4 
+cc2 : 2K?1. 
+From the boundary condition at x : 0, we get 
+1 : ?c2. 
+Thus we have 
+yinx : e?x2/2K2K?1?D?1/2 2 K x + D?1/2 ? 2 K x/4 . 
+y0 yx 
+. As a final observation, we note that out is infinite. But as we continue out into the region of 
+the boundary layer, it turns into 
+e?x2/2K2K?1/4D?1/2 ? 2 K x 
+/At x : 0, the expression above is equal to  2K?1 4D?1/20, which is a large number but is not 
+infinity. 
+ 10</text>
+        </slide>
+      </slides>
+      <videos/>
+    </lecture>
+    <lecture>
+      <lecture_title>Separation of Variables (PDF)</lecture_title>
+      <lecture_pdf_url>https://ocw.mit.edu/courses/18-305-advanced-analytic-methods-in-science-and-engineering-fall-2004/resources/fifth1/</lecture_pdf_url>
+      <lectureno>5</lectureno>
+      <slides>
+        <slide>
+          <slideno>0</slideno>
+          <text>Separation of Variables 
+Lecture 5 
+Separation of Variables 
+Unlike first-order partial differential equations, solvable second-order partial differential 
+equations are much more limited in number. Many such second-order partial differential equations 
+are solved with the method of separation of variables. In particular, the method of separation of 
+variables can be used to solve all the partial differential equations discussed in the preceding chapter, 
+which are linear, homogeneous, and of constant-coefficient. The method of separation of variables may also be useful for a number of linear partial differential equations with non-constant 
+coefficients; well give an example of this at the end of the chapter. 
+We use a superposition of such solutions, in the form (4.39), to satisfy the initial condition 
+(4.37). 
+In this chapter, we shall discuss the method of separation of variables and demonstrate this 
+method with several PDEs examples. 
+A The Laplace Equation 
+We shall start again with the Laplace equation in two spatial dimensions: 
+uxx +uyy :0, (5.1) 
+which holds inside the unit dis 
+x2 +y2 91. (5.2) 
+Let us adopt the polar coordinates r and O. We shall require that, on the boundary of this disk, u r, O 
+satisfies the condition 
+u1, O :gO, (5.3) 
+where 
+O :tan?1 y 
+x , (5.4) 
+and 
+r  x2 +y2 . (5.5) 
+This is a boundary-value problem for the Laplace equation. 
+Note that, because the geometry of this problem is cylindrically symmetrical, it is more 
+convenient to use as the independent variables the polar coordinates r and O instead of the Cartesian 
+variables x and y . 
+We shall find the solution of the Laplace equation in the form 
+u :Rr&gt;O, (5.15) 
+which is a product of a function of r and a function of O. 
+Problem for the Reader: 
+Substitute (5.15) into (5.14) and divide the resulting equation by Rr&gt;O/r2.
+Answer:
+The eigenvalues are
+n2, n :0, 1, 2` 
+and the eigenfunctions are 
+e&gt; :inO 
+and
+Rnr :rn or r?n , n ;0,
+R0r :1 or ln r. (5.25) 
+Any solution of the form RnreinO satisfies the Laplace equation. Since the Laplace equation is 
+linear, a linear superposition of them also satisfies the Laplace equation. We shall use a linear superposition of these solutions to fulfill the boundary condition (5.3). 
+We mention that not all solutions found above are always employed to satisfy the boundary 
+condition. For the Laplace equation (5.1) which holds inside the unit disk r 91, the solutions r
+?n and 
+ln r must be excluded. This is because they blow up at r :0. Therefore we put 
+ 1</text>
+        </slide>
+        <slide>
+          <slideno>1</slideno>
+          <text>Separation of Variables 
+K 
+ur, O : A0 +&gt; An cos nO + Bn sin nOrn .	 (5.26) 
+1 
+Next we turn to the wave equation in two spatial dimensions. This equation is satisfied by the 
+displacement of the surface of a circular drum, which well study in this section. The surface of the 
+drum has circular symmetry, therefore, for the vibration of the drum surface, the spatial variables we 
+shall use are the polar coordinates r and O. The equation is 
+/2u 
+/t2 ? /2u 
+/r2 ? 1 r /u 
+/r ? 1 
+r2 /2u 
+/2O : 0, 
+where 
+u : ur, O, t, 
+a function of three variables. 
+The PDE is of second order in each of the independent variables. We note that, in this equation, 
+the sign of the coefficient of utt is opposite to that of urr. Therefore, the PDE is hyperbolic between 
+the variables t and r . Similarly, it is hyperbolic between t and O. Thus we impose two initial 
+conditions at t : 0 : 
+ur, O, 0 : fr, O, (5.32) 
+and 
+utr, O, 0 : gr, O. (5.33) 
+The PDE is elliptic in the spatial variables, thus we impose the boundary condition 
+u1, O, t : 0, (5.34) 
+which is well-posed. 
+The conditions above are physically meaningful as well. Equation (5.34) says that the 
+circumference of the drum is kept fixed at all times, and (5.32) and (5.33) give the initial 
+displacement and the initial velocity of the surface of the drum. We expect from experience that a 
+unique solution of the wave equation will result under these conditions. It is satisfying that such a set 
+of conditions on the solution makes the problem well-posed. 
+Problem for the Reader:
+Apply the method of separation of variables to the wave equation by putting
+u : TtRr&gt;O, (5.35) 
+and obtain the equations for T t, Rr and &gt;O. 
+Answer:
+We get
+ur, O, t :	&gt; eicnmtanmeinO + bnme?inO + e?icnmtcnmeinO + dnme?inOJncmnr.
+n,m
+where
+J
+ncnm : 0.
+This solution satisfies the wave equation as well as the boundary condition (5.34). And the
+coefficients amn, bmn, cmn and d mn are so chosen that the initial conditions (5.32) and (5.33) are 
+satisfied. 
+More detailed discussions and examples can be found in the text book. 
+ 2</text>
+        </slide>
+      </slides>
+      <videos/>
+    </lecture>
+    <lecture>
+      <lecture_title>Second-Order Partial Differential Equations&#160;(PDF)</lecture_title>
+      <lecture_pdf_url>https://ocw.mit.edu/courses/18-305-advanced-analytic-methods-in-science-and-engineering-fall-2004/resources/fourth1/</lecture_pdf_url>
+      <lectureno>4</lectureno>
+      <slides>
+        <slide>
+          <slideno>1</slideno>
+          <text>Second-Order Partial Differential Equations 
+not unique. 
+There are also other kinds of boundary conditions. For example, we may specify the value of u at 
+one of the boundary points, and the value of ur at the other boundary point. As an example, let 
+ur0 : 1 and u1 : 0. Then the solution of the boundary-value problem exists and is unique, and 
+is given by ux : x ? 1. 
+Let us return to the two-dimensional Laplace equation (4.1) with the boundary conditions (4.2) 
+and (4.3), which specify the values of u at the boundary of the upper-half plane. To obtain the 
+solution to this boundary-value problem, we focus on the x-dependence of ux, y on x and denote the 
+Fourier integral of u in the x variable by  e?ikxux, ydx. k, y  XK 
+(4.4) 
+?K 
+This Fourier transform exists because uK, y : 0. Instead of solving for u x, y, we shall solve for  k, y. Once k, y is found, we immediately obtain u x, y with the use of the Fourier inversion 
+formula. 
+Problem for the Reader: Substitute (4.5) into (4.1), obtain an ODE for k, y and solve this equation. Use the boundary conditions to determine k, y. 
+Answer 
+Since D operating on eikx is equal to ik, where D  // 
+x , we get ?k2 + /2 k, y : 0. (4.6) /y2 
+We see that the PDE becomes an ODE, which is easily solved. This is the advantage of expressing u 
+as a Fourier integral. Solving the ODE, we have  k, y : Akeky + Bke?ky. (4.7) 
+The boundary value condition (4.2) forbids the solution to blow up as y  K. Thus we may eliminate 
+one of the constants in the solution (4.7). The condition (4.3) enables us to find that 
+dk eikx?|k|y*fk, (4.12) ux, y : XK 
+?K 2Z 
+which satisfies both the Laplace equation (4.1) and the boundary conditions (4.2) and (4.3). In the 
+above, *fk is the Fourier transform of fx. 
+The factor e?|k|y provides a convergent factor for the Fourier integral in (4.12) when y is non-zero. 
+Thus the integral in (4.12) converges nicely as one leaves the x-axis, where the values of u are given, 
+into the x-y plane, where y non-zero. The boundary-value problem of the Laplace equation is 
+therefore called well-posed. It is also the kind of problem that people naturally ask themselves, an 
+example being what is the static electric potential inside Benjamin Franklins silver pint can? 
+As we recall, for the first-order PDE (2.15), all values of u on a characteristic curve are 
+determined once an initial value on this curve is given. For the Laplace equation, one needs the 
+values of u at all points of the boundary to determine the value ux, y at any point in the interior 
+region. Trivially, no value of the solution at any interior point is known if the value of u is given only 
+at one point. 
+Problem for the Reader: 
+If fx : 1 + 1 
+x2 , find ux, y. 
+Answer 
+dk eikx?|k|yZe?|k|ux, y : XK 
+?K 2Z . 
+The integral above can be easily integrated out and we get 
+1 + yux, y : x2 + 1 + y2. 
+We next consider the initial-value problem of the Laplace equation. More precisely, let u 
+satisfying the initial conditions 
+ux, 0 : fx, 
+and 
+ 2</text>
+        </slide>
+        <slide>
+          <slideno>2</slideno>
+          <text>Second-Order Partial Differential Equations 
+uyx, 0 : gx. 
+We also require that 
+uK, y : 0. 
+The last condition ensures that ux, y, considered as a function of x, has a Fourier transform. 
+As before, we think of the upper-half plane as an infinite square in the upper-half plane. In the 
+problem we shall treat, two conditions are given on the lower horizontal boundary of the square, one 
+condition is given to each of the two vertical boundary lines, but no condition is imposed on the 
+upper horizontal boundary line. Therefore, this is, more precisely, an initial-value problem with 
+respect to the y variable and a boundary-value problem with respect to the x variable. 
+Problem for the Reader: 
+Solve the Laplace equation (4.1) with the initial conditions given above. 
+Answer 
+dk eikx *fk cosh ky + g*k .sinh ky (4.17) ux, y : XK 
+k 
+Since both cosh ky and sinh ky blow up exponentially as a function of k as k goes to infinity, it is ?K 2Z 
+impossible for the integral in (4.17) to converge for all values of y unless both *fk and g*k vanish 
+more rapidly than an exponential function as | k| goes to infinity. 
+We call the initial-value problem of the Laplace equation not well-posed. 
+B The Wave Equation 
+Consider the wave equation 
+` xx ? ` tt : 0. (4.24) 
+The wave equation describes many physical phenomena, a notable example being the propagation of the electromagnetic wave in the vacuum. 
+Problem for the Reader: 
+Let 
+u : x + t, v : x ? t. (4.25) 
+Express the wave equation (4.24) with the independent variables u and v. 
+Answer 
+/2` : 0. /u/v 
+From the equation above, we see that the solution of the wave equation is a sum of an arbitrary function of u and an arbitrary function of v: 
+`x, t : fu + gv : fx + t + gx ? t. (4.26) 
+We note from (4.26) that the solution of the second-order wave equation has two arbitrary functions. 
+This is to be compared with that of a first-order PDE of two independent variables, which generally has one arbitrary function. We also note that fx + t is a wave travelling to the left with unit velocity, 
+and gx ? t is a wave travelling to the right with unit velocity. 
+Problem for the Reader: 
+Let ` satisfy the following initial conditions on the x-axis: 
+`x, 0 : ax, ` tx, 0 : bx. (4.27) 
+Find `x, t. 
+Answer 
+It is straightforward to show from (4.26) and (4.27) that 
+`x, t : ax + t + ax ? t + 1 Xx+t 
+bxrdxr . (4.29) 2 2 x?t 
+Obviously, we may also impose the Cauchy data on other lines or curves, not just the x-axis. 
+See the textbook for more detailed explanations, more examples, as well as the treatment of 
+other partial differential equations. 
+ 3</text>
+        </slide>
+        <slide>
+          <slideno>0</slideno>
+          <text>Second-Order Partial Differential Equations 
+Lecture 4 
+Second-Order Partial Differential Equations 
+In this lecture and in the next, well briefly review second-order PDEs. Well begin with one of 
+the simplest of such PDEs: the Laplace equation. 
+A The Laplace Equation 
+The Laplace equation appears in many branches of physical sciences, two of which being 
+electrostatics and fluid mechanics. 
+Let the Laplace equation hold in the upper-half plane in a two dimensional space: 
+/2/
+/x2
+2 + /y2 u : 0, y ; 0. (4.1) 
+Needless to say, there are (infinitely) many solutions to this equation, corresponding to (infinitely) 
+many different physical situations in the realms of static electricity or incompressible and irrotational 
+fluid flow. In order for the solution of this equation to be unique, we need to impose some conditions 
+on u. 
+Consider the square in the upper-half plane with the x-axis between ? R to R being its lower 
+horizontal boundary. We will think of the upper-half plane as this square in the limit R  K. We 
+require that the value of u is equal to zero at all sides of the square except the lower horizontal side. 
+In the limit R  K, this means that 
+lim rK ux, y : 0, (4.2) 
+where 
+r : x2 + y2 . 
+In addition, we require that, on the the lower horizontal side of the square which is the x-axis, 
+ux, 0 : fx. (4.3) 
+Equations (4.2) and (4.3) constitute a set of boundary conditions for u. More precisely, the values of 
+u on three sides of the square are required to be zero, while those on the fourth side are given by fx. 
+Equation (4.1) together with these boundary conditions for u is a boundary-value problem. 
+It may help our perspective if we compare this with the much simpler problem of the Laplace 
+equation in the one-dimensional space, which is 
+d2 ux : 0. dx2 
+Being of the second order, the equation gives the solution 
+ux : ax + b, 
+which has two arbitrary constants. To determine the constants a and b, two conditions on u are 
+required. 
+We may choose these two conditions to be at the same point of x. For example, we may choose 
+the two conditions to be the value of u and the value of ur at x : 0, and the problem is to find the 
+solution for x ; 0. Such a problem is called an initial-value problem, and the solution is uniquely 
+given by u : u0 + ur0x. 
+Alternately, let the range of x for the equation be 0, 1. Then we may choose these two 
+conditions to be the values of u at the endpoints, say u0 : 1 and u1 : 2, which are conditions 
+imposed at two different points.This is called a boundary-value problem. The solution of this 
+problem is uniquely given by u : x + 1. 
+Let us see what happens if, in a boundary-value problem, we specify the values of ur instead of 
+those of u. We see immediately that there is a difficulty. For, if u is a solution of urr : 0, ur is a 
+constant. Therefore, there is no solution satisfying these boundary conditions unless the two values 
+of ur specified at the endpoints are equal. But there is another difficulty if the specified values of ur 
+at the two endpoints are equal. This is because if u is a solution of this boundary-value problem, so is 
+u + c, where c is an arbitrary constant (why?). Thus the solution of such a boundary-value problem is 
+ 1</text>
+        </slide>
+      </slides>
+      <videos/>
+    </lecture>
+  </lectures>
+</doc>

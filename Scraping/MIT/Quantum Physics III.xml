@@ -1,0 +1,2921 @@
+<doc>
+  <source>MIT</source>
+  <date>28/01/2023</date>
+  <course>
+    <course_url>https://ocw.mit.edu/courses/8-06-quantum-physics-iii-spring-2018/</course_url>
+    <course_title>Quantum Physics III</course_title>
+    <course_tags>
+      <list>Science </list>
+      <list>Physics </list>
+      <list>Theoretical Physics </list>
+    </course_tags>
+  </course>
+  <lectures>
+    <lecture>
+      <lecture_title>courses/8-06-quantum-physics-iii-spring-2018/resources/mit8_06s18ch3</lecture_title>
+      <lecture_pdf_url>https://ocw.mit.edu/courses/8-06-quantum-physics-iii-spring-2018/resources/mit8_06s18ch3/</lecture_pdf_url>
+      <lectureno>2</lectureno>
+      <slides>
+        <slide>
+          <slideno>21</slideno>
+          <text>MIT OpenCourseWare  
+https://ocw.mit.edu 
+8.06 Quantum Physics III 
+Spring 2018  
+For information about citing these materials or our Terms of Use, visit: https://ocw.mit.edu/terms</text>
+        </slide>
+      </slides>
+      <videos/>
+    </lecture>
+    <lecture>
+      <lecture_title>courses/8-06-quantum-physics-iii-spring-2018/resources/mit8_06s18ch8</lecture_title>
+      <lecture_pdf_url>https://ocw.mit.edu/courses/8-06-quantum-physics-iii-spring-2018/resources/mit8_06s18ch8/</lecture_pdf_url>
+      <lectureno>6</lectureno>
+      <slides>
+        <slide>
+          <slideno>21</slideno>
+          <text>MIT OpenCourseWare  
+https://ocw.mit.edu 
+8.06 Quantum Physics III 
+Spring 2018  
+For information about citing these materials or our Terms of Use, visit: https://ocw.mit.edu/terms</text>
+        </slide>
+      </slides>
+      <videos/>
+    </lecture>
+    <lecture>
+      <lecture_title>courses/8-06-quantum-physics-iii-spring-2018/resources/mit8_06s18ch1</lecture_title>
+      <lecture_pdf_url>https://ocw.mit.edu/courses/8-06-quantum-physics-iii-spring-2018/resources/mit8_06s18ch1/</lecture_pdf_url>
+      <lectureno>0</lectureno>
+      <slides>
+        <slide>
+          <slideno>16</slideno>
+          <text>1.2. DEGENERATE PERTURBATION THEORY 17
+Our notation distinguishes the states in VNfrom those in Vbecause the former have two
+labels and the latter have only one.
+We now consider the evolution of the degenerate eigenstates as we turn on the pertur-
+bation. Again we assume that the states vary continuously in and thus write:
+|n(0);k/an}backeti}ht  |n;k/an}backeti}ht=|n(0);k/an}backeti}ht+|n(1);k/an}backeti}ht+2|n(2);k/an}backeti}ht+O(3),
+E(0)
+nEn,k() =E(0)
+n+E(1)
+n,k+2E(2)
+n,k+O(3).(1.2.17)
+These equations hold for k= 1,...,N. Note that for each value of kthe energy corrections
+might be dierent and thats why the energy corrections carry the labelk. Our goal is to
+nd the state corrections |n(p);k/an}backeti}htand the energy corrections E(p)
+n,kforp1 and for each k.
+As before we demand that |n(p);k/an}backeti}htforp1 has no component along |n(0);k/an}backeti}ht, i.e.
+/an}backetle{tn(0);k|n(p);k/an}backeti}ht= 0 for p1 (1.2.18)
+Note, however, that |n(p);k/an}backeti}htmay have components along |n(0);/an}backeti}htwith/ne}ationslash=k. So|n(0);k/an}backeti}ht
+may and in fact will have a component in VN.
+The perturbed eigenstates must satisfy
+H()|n;k/an}backeti}ht=En,k()|n;k/an}backeti}ht, (1.2.19)
+and substituting the perturbative expansions above we obta in equations completely analo-
+gous to the ones in Eq.(1.1.13)
+0: (H0E(0)
+n)|n(0);k/an}backeti}ht= 0, (1.2.20)
+1: (H0E(0)
+n)|n(1);k/an}backeti}ht= (E(1)
+n,kH)|n(0);k/an}backeti}ht, (1.2.21)
+2: (H0E(0)
+n)|n(2);k/an}backeti}ht= (E(1)
+n,kH)|n(1);k/an}backeti}ht+E(2)
+n,k|n(0);k/an}backeti}ht,(1.2.22)
+.........
+In the following we will discuss a solution to rst order for t he case in which the de-
+generacy in VNis completely broken to rst order in perturbation theory; t hat is, the rst
+order corrections to the energies split the Nstates completely. Our solution will proceed
+in three steps:
+1. Hit the O() equation with /an}backetle{tn(0);|to learn that Hmust be diagonal in the chosen
+basis for VNand to determine the rst-order energy shifts.
+2. Use the O() equation to calculate the components of |n(1);k/an}backeti}htinV.
+3. Hit the O(2) equation with /an}backetle{tn(0);|to determine the second order energy correction
+E(2)
+n,kand the component of |n(1);k/an}backeti}htinVN.</text>
+        </slide>
+        <slide>
+          <slideno>24</slideno>
+          <text>MIT OpenCourseWare  
+https://ocw.mit.edu 
+8.06 Quantum Physics III 
+Spring 2018  
+For information about citing these materials or our Terms of Use, visit: https://ocw.mit.edu/terms</text>
+        </slide>
+        <slide>
+          <slideno>15</slideno>
+          <text>16 CHAPTER 1. TIME INDEPENDENT PERTURBATION THEORY
+perturbation theory. Happily, this is not really true. The e igenvectors of H(0)are in fact
+ambiguous , precisely due to the degeneracy. The eigenvectors of H(0)are actually the span
+of the two vectors listed in (1.2.4). The perturbation selec ted a particular combination
+of these eigenvectors. This particular combination is the o ne that we should use even for
+= 0. The lesson is that to get states that vary continuously as is turned on we must
+choose the basis in the degenerate subspace of H(0)carefully. We will call that carefully
+selected basis the good basis.
+1.2.2 Systematic Analysis
+Again, we are looking at the perturbed Hamiltonian
+H() =H(0)+H, (1.2.9)
+whereH(0)has known eigenvectors and eigenvalues. We will focus this t ime on a degenerate
+subspace of eigenvectors of dimension N &gt;1, that is, a space with Nlinearly independent
+eigenstates of the same energy. In the basis of eigenstates, H(0)is a diagonal matrix that
+contains a string of N &gt;1 identical entries:
+H(0)= diag{E(0)
+1,E(0)
+2,..., E(0)
+n,... ,E(0)
+n/bracehtipupleft/bracehtipdownright/bracehtipdownleft/bracehtipupright
+N, ...}. (1.2.10)
+In the degenerate subspace we choose a collection of Northonormal eigenstates
+|n(0);1/an}backeti}ht,|n(0);2/an}backeti}ht, ...,|n(0);N/an}backeti}ht. (1.2.11)
+Accordingly, we have
+/an}backetle{tn(0);p|n(0);l/an}backeti}ht=p,l, (1.2.12)
+H(0)|n(0);k/an}backeti}ht=E(0)
+n|n(0);k/an}backeti}ht. (1.2.13)
+This set of vectors span a degenerate subspace of dimension Nthat we will call VN
+VNspan{|n(0);k/an}backeti}ht,k= 1, ...N}. (1.2.14)
+The total state space of the theory, denoted by His written as a direct sum:
+H=VNV , (1.2.15)
+whereVis spanned by those eigenstates of H(0)that are not in VN. We denote by |p(0)/an}backeti}ht
+withpZa basis for V. That basis may include both degenerate and non degenerate
+states. Together with the states in VNwe have an orthonormal basis for the whole state
+space:
+/an}backetle{tp(0)|q(0)/an}backeti}ht=pq,/an}backetle{tp(0)|n(0);k/an}backeti}ht= 0. (1.2.16)</text>
+        </slide>
+        <slide>
+          <slideno>1</slideno>
+          <text>2 CHAPTER 1. TIME INDEPENDENT PERTURBATION THEORY
+for example, of an atom in an external magnetic eld that can b e varied continuously. In
+that case we can view as the parameter that allows us to turn on the perturbation by
+letting/ne}ationslash= 0. The parameter is also useful in organizing the perturbation analysis, as w e
+will see below.
+We spoke of a Hamiltonian that diers slightly from H(0). In order to use perturbation
+theory we need Hto be a small perturbation of the Hamiltonian H(0). We will have to
+deal with themeaning of small. At rstsight we may imagine th at small means that, viewed
+as matrices, the largest entries in Hare smaller than the largest entries in H(0). While
+this is necessary, more is needed, as we will see in our analys is. An additional advantage of
+usingis that by taking it to be suciently small we can surely make Hsmall.
+We assume that the Hamiltonian H(0)is understood, namely, we know the eigenstates
+andeigenvalues of H(0). Wewant toknowtheeigenstates andeigenvalues of H(). Onemay
+beable to calculate those exactly, but this is seldom a reali stic possibility. Diagonalizing H
+is seldom useful, since HandHdonot generally commuteandtherefore Heigenstates are
+not eigenstates of H(). In perturbation theory the key assumption is that the eige nvalues
+and eigenvectors of H() can be found as series expansions in powers of . We hope, of
+course, that there are some values of for which the series converges, or at least gives useful
+information.
+Figure 1.1: The energy eigenvalues of H() asvaries from zero to one. On the = 0 vertical
+axis theH(0)eigenstates are represented by heavy dots. By the time = 1 the dots have shifted.
+In Figure 1.1 we illustrate some of the phenomena that we may s ee in the spectrum
+of a system with Hamiltonian H(). We show how the energies of the various states may
+change as the parameter is increased from zero. The two lowest energy eigenstates ar e
+non-degenerate and their energies can go up and down as varies. Next up in energy we
+have two degenerate states of H(0)(the Hamiltonian as = 0). The perturbation splits the</text>
+        </slide>
+        <slide>
+          <slideno>20</slideno>
+          <text>1.2. DEGENERATE PERTURBATION THEORY 21
+1.2.3 Degeneracy lifted at second order
+We now investigate the case when the degeneracy is completel y unbroken to rst order.
+The situation and the setup is similar to the one we just consi dered: we have a degenerate
+subspace VNof dimension Nand the rest of the space is called V. This time, however, we
+will assume that the degeneracy of H(0)is not broken to rst order in the perturbation H.
+Concretely, this means that on the VNbasis|n(0);k/an}backeti}htwithk= 1,...,N, we have
+/an}backetle{tn(0);|H|n(0);k/an}backeti}ht=E(1)
+n,k. (1.2.42)
+The rst order energy correction is the same, and equal to E(1)
+n, for all basis states in VN.
+You should compare with (1.2.24), where the energy had an ext ra subscript to distinguish
+its various possible values.
+Because the degeneracy is not broken to rst order we do not kn ow at this point what
+is the good basis in VN. We will consider here the case when the degeneracy is comple tely
+lifted to second order. We express our ignorance about good b asis vectors by stating that
+we are searching for the right linear combinations:
+|(0)/an}backeti}ht=N/summationdisplay
+k=1|n(0);k/an}backeti}hta(0)
+k. (1.2.43)
+For some values of the constants a(0)
+kwithk= 1,...,Nthe state |(0)/an}backeti}htwill be good. We
+can think of a(0)as the column vector representation of |(0)/an}backeti}htinVN. We have written
+just one state, |(0)/an}backeti}ht, even though we are expecting to nd Ngood states to span the
+degenerate subspace. We therefore adjust the notation to re ect this. We introduce a new
+indexI= 1,...,Nand write
+|(0)
+I/an}backeti}ht=N/summationdisplay
+k=1|n(0);k/an}backeti}hta(0)
+Ik, I= 1,...,N. (1.2.44)
+The indexInow labels the dierent good states and their dierent vector r epresentations
+a(0)
+I. Our most immediate goal is to nd those vectors a(0)
+Iand thus the good basis. To
+do so we will have to consider second order energy correction s. The states |(0)
+I/an}backeti}htform an
+orthonormal basis in VNif the coecients a(0)
+Isatisfy
+/an}backetle{t(0)
+J|(0)
+I/an}backeti}ht=IJ/summationdisplay
+k(a(0)
+Jk)a(0)
+Ik=IJ. (1.2.45)
+We set up the perturbation theory as usual
+|I/an}backeti}ht=|(0)
+I/an}backeti}ht+|(1)
+I/an}backeti}ht+2|(2)
+I/an}backeti}ht+... ,
+EnI() =E(0)
+n+E(1)
+n+2E(2)
+nI+3E(3)
+nI+... .(1.2.46)</text>
+        </slide>
+        <slide>
+          <slideno>19</slideno>
+          <text>20 CHAPTER 1. TIME INDEPENDENT PERTURBATION THEORY
+The piece in Vvector drops out for our case of interest:
+/an}backetle{tn(0);|H|n(1);k/an}backeti}ht/vextendsingle/vextendsingle/vextendsingle
+VN=E(1)
+n,/an}backetle{tn(0);|n(1);k/an}backeti}ht/vextendsingle/vextendsingle/vextendsingle
+VN. (1.2.35)
+Back into equation (1.2.33) we now get
+/summationdisplay
+pHn,pHp,nk
+E(0)
+pE(0)
+n+/parenleftBig
+E(1)
+n,kE(1)
+n,/parenrightBig
+/an}backetle{tn(0);|n(1);k/an}backeti}ht/vextendsingle/vextendsingle/vextendsingle
+VN+E(2)
+n,kk,= 0.(1.2.36)
+Setting=kwe can determine the second correction to the energies:
+E(2)
+n,k=/summationdisplay
+p|Hp,nk|2
+E(0)
+pE(0)
+n. (1.2.37)
+Fork/ne}ationslash=we get
+/summationdisplay
+pHn,pHp,nk
+E(0)
+pE(0)
+n+/parenleftBig
+E(1)
+n,kE(1)
+n,/parenrightBig
+/an}backetle{tn(0);|n(1);k/an}backeti}ht/vextendsingle/vextendsingle/vextendsingle
+VN= 0. (1.2.38)
+Had we not included the piece of |n(1);k/an}backeti}htalong the degenerate subspace we would have
+had an inconsistency, since there is no reason why the rst te rm on the left-hand side must
+be zero. Now the above equation just xes the components of |n(1);k/an}backeti}htin the degenerate
+subspace as long asE(1)
+n,k/ne}ationslash=E(1)
+n,:
+/an}backetle{tn(0);|n(1);k/an}backeti}ht/vextendsingle/vextendsingle/vextendsingle
+VN=1
+E(1)
+n,kE(1)
+n,/summationdisplay
+pHn,pHp,nk
+E(0)
+pE(0)
+n, k/ne}ationslash=. (1.2.39)
+We thus have
+|n(1);k/an}backeti}ht/vextendsingle/vextendsingle/vextendsingle
+VN=/summationdisplay
+/negationslash=k|n(0);/an}backeti}ht1
+E(1)
+n,kE(1)
+n,/summationdisplay
+pHn,pHp,nk
+E(0)
+pE(0)
+n. (1.2.40)
+It may seem that this extra piece, found by using the O(2) equation, is higher order than
+it should in the perturbation: its numerator contains two po wers ofH. But this expression
+also has a curious energy denominator, E(1)
+n,kE(1)
+n,, in which each term has a power of H.
+All in all, the correction to the state is properly rst order inH.
+Summarizing our result we have
+Degenerate perturbation theory with degeneracies lifted a tO():
+|n;k/an}backeti}ht=|n(0);k/an}backeti}ht/parenleftBig/summationdisplay
+pHp,nk
+E(0)
+pE(0)
+n|p(0)/an}backeti}ht+/summationdisplay
+/negationslash=k|n(0);/an}backeti}ht
+E(1)
+n,kE(1)
+n,/summationdisplay
+pHn,pHp,nk
+E(0)
+pE(0)
+n/parenrightBig
++O(2)
+En,k() =E(0)
+n+Hnk,nk2/summationdisplay
+pHnk,pHp,nk
+E(0)
+pE(0)
+n+O(3), E(1)
+n,k=Hnk,nk.
+(1.2.41)</text>
+        </slide>
+        <slide>
+          <slideno>4</slideno>
+          <text>1.1. NONDEGENERATE PERTURBATION THEORY 5
+Multiplying out we get a series in with coecients -independent vectors in the state
+space of the theory. If this is to vanish for all values of those coecients must be zero.
+Collecting the coecients for each power of we
+0: (H(0)E(0)
+n)|n(0)/an}backeti}ht= 0,
+1: (H(0)E(0)
+n)|n(1)/an}backeti}ht= (E(1)
+nH)|n(0)/an}backeti}ht,
+2: (H(0)E(0)
+n)|n(2)/an}backeti}ht= (E(1)
+nH)|n(1)/an}backeti}ht+E(2)
+n|n(0)/an}backeti}ht,
+3: (H(0)E(0)
+n)|n(3)/an}backeti}ht= (E(1)
+nH)|n(2)/an}backeti}ht+E(2)
+n|n(1)/an}backeti}ht+E(3)
+n|n(0)/an}backeti}ht,
+.........
+k: (H(0)E(0)
+n)|n(k)/an}backeti}ht= (E(1)
+nH)|n(k1)/an}backeti}ht+E(2)
+n|n(k2)/an}backeti}ht+...+E(k)
+n|n(0)/an}backeti}ht.
+(1.1.13)
+Each equation is the condition that the coecient multiplyi ng the power of indicated to
+the left vanishes. That power is reected as the sum of supers cripts on each term, counting
+Hashavingsuperscriptone. Thisgives asimpleconsistency c heck onourequations. These
+are equations for the kets |n(1)/an}backeti}ht,|n(2)/an}backeti}ht,...as well as the energy corrections E(1)
+n,E(2)
+n,....
+Noteagain that doesnotenter intotheequations, andthusthekets andenerg ycorrections
+areindependent.
+The rst equation, corresponding to 0, is satised by construction. The second equa-
+tion, corresponding to 1, should allow us to solve for the rst correction |n(1)/an}backeti}htto the state
+and the rst correction E(1)
+nto the energy. Once these are known, the equation corre-
+sponding to 2involves only the unknowns |n(2)/an}backeti}htandE(2)
+n, and should determine them. At
+each stage each equation has only two unknowns: a state corre ction|n(k)/an}backeti}htand an energy
+correctionE(k)
+n.
+A useful choice. We now claim that without loss of generality we can assume tha t all the
+state corrections |nk/an}backeti}ht, withk1 contain no vector along |n(0)/an}backeti}ht. Explicitly:
+0 =/an}backetle{tn(0)|n(1)/an}backeti}ht=/an}backetle{tn(0)|n(2)/an}backeti}ht=/an}backetle{tn(0)|n(3)/an}backeti}ht=... . (1.1.14)
+To show this we explain how we can manipulate a solution that d oes not have this
+property into one that does. Suppose you have solution in whi ch the state corrections |n(k)/an}backeti}ht
+have components along |n(0)/an}backeti}ht:
+|n(k)/an}backeti}ht=|n(k)/an}backeti}htak|n(0)/an}backeti}ht, k1, (1.1.15)
+with some constants akand with |n(k)/an}backeti}htorthogonal to |n(0)/an}backeti}ht. Then the solution for the full</text>
+        </slide>
+        <slide>
+          <slideno>3</slideno>
+          <text>4 CHAPTER 1. TIME INDEPENDENT PERTURBATION THEORY
+where
+|n/an}backeti}ht=0=|n(0)/an}backeti}ht,andEn(= 0) =E(0)
+n. (1.1.5)
+As we said, the solution is assumed to take the form of a regula r power series expansion
+in. To make this clear consider a function f() such that its derivatives to all orders exist
+for= 0. In that case we have a Taylor expansion
+f() =/summationdisplay
+n=01
+n!f(n)(0)n=f(0)+f(0)+1
+2f(0)2+1
+3!f(0)3+(1.1.6)
+Theexpansionis apowerseries in , withcoecients f(0),f(0),etc, that are independent
+and reect the value of the function and its derivatives at = 0.
+For our problem we note the values of |n/an}backeti}htandEn() for= 0 (1.1.5) and write:
+|n/an}backeti}ht=|n(0)/an}backeti}ht+|n(1)/an}backeti}ht+2|n(2)/an}backeti}ht+3|n(3)/an}backeti}ht+... ,
+En() =E(0)
+n+E(1)
+n+2E(2)
+n+3E(3)
+n+...(1.1.7)
+The superscripts on the states and energies denote the power ofthat accompanies them
+in the above expressions. The above equations are a natural a ssumption; they state that
+the perturbed states and energies, being functions of , admit a Taylor expansion around
+= 0. Our aim is to calculate the states
+|n(1)/an}backeti}ht,|n(2)/an}backeti}ht,|n(3)/an}backeti}ht,... (1.1.8)
+and the energies
+E(1)
+n, E(2)
+n, E(3)
+n, ... (1.1.9)
+Note that all these states and energies are, by denition, independent. Here |n(1)/an}backeti}htis the
+leading correction to the state |n(0)/an}backeti}htas we turn on , andE(1)
+nis the leading correction to
+the energy as we turn on . We will notimpose the requirement that |n/an}backeti}htis normalized. It
+suces that |n/an}backeti}htis normalizable, which it will be for suciently small pertu rbations. For
+= 1 we would nd the solution for H(1) =H(0)+Hin the form
+|n/an}backeti}ht  |n/an}backeti}ht1=|n(0)/an}backeti}ht+|n(1)/an}backeti}ht+|n(2)/an}backeti}ht+|n(3)/an}backeti}ht+... ,
+EnEn(1) =E(0)
+n+E(1)
+n+E(2)
+n+E(3)
+n+...(1.1.10)
+Substituting the ansatz (1.1.7) into the Schr odinger equa tion (1.1.4) we will nd the
+conditions for such solution to exist:
+/parenleftbig
+H(0)+HEn()/parenrightbig
+|n/an}backeti}ht= 0, (1.1.11)
+which more explicitly takes the form
+/parenleftBig
+(H(0)E(0)
+n)(E(1)
+nH)2E(2)
+n3E(3)
+n...kE(k)
+n+.../parenrightBig
+/parenleftBig
+|n(0)/an}backeti}ht+|n(1)/an}backeti}ht+2|n(2)/an}backeti}ht+3|n(3)/an}backeti}ht+...+k|n(k)/an}backeti}ht+.../parenrightBig
+= 0.(1.1.12)</text>
+        </slide>
+        <slide>
+          <slideno>11</slideno>
+          <text>12 CHAPTER 1. TIME INDEPENDENT PERTURBATION THEORY
+z 0.9 1.2 1.5
+f(z) 1.34536 1.56205 1.80278
+f8(z) 1.33939 1.47946 1.20297
+f14(z) 1.33939 1.67280 4.82288
+f20(z) 1.34490 1.36568 -18.4895
+f30(z) 1.34545 2.23047 641.772
+Table 1.1:f(z)
+1+z2=/summationtext
+iciziandfn(z) =/summationtextn
+i=0cizi.
+1.1.2 Example: Anharmonic oscillator
+Consider the simple harmonic oscillator
+H(0)=p2
+2m+1
+2m2x2. (1.1.48)
+We want to explore the eect of a perturbation proportional to x4. This has the eect
+of changing the original quadratic potential for a more comp licated potential that includes
+a quartic term. To do analysis in a clear way, we must consider units. Using the constants
+/planckover2pi1,m,of the harmonic oscillator a length scale dcan be uniquely build:
+d2=/planckover2pi1
+m. (1.1.49)
+The unit-free coordinate  x/dthen has a simple expression in terms of creation and annihi-
+lation operators:
+x=/radicalbigg
+/planckover2pi1
+2m(a+a) =d1
+2(a+a)x
+d=1
+2(a+a). (1.1.50)
+It follows that an  x4perturbation with units of energy takes the form
+H=/planckover2pi1x4
+d4=m23
+/planckover2pi1x4=1
+4/planckover2pi1(a+a)4. (1.1.51)
+Using the unit-free parameter , the perturbed Hamiltonian will therefore be
+H() =H(0)+m23
+/planckover2pi1x4=H(0)+1
+4/planckover2pi1(a+a)4. (1.1.52)
+We will identify the states |k(0)/an}backeti}htofH(0)with the number eigenstates |k/an}backeti}ht,k= 0,1,...,of
+the harmonic oscillator. Recall that
+E(0)
+k=/planckover2pi1(k+1
+2),|k/an}backeti}ht=(a)k
+
+k!|0/an}backeti}ht. (1.1.53)</text>
+        </slide>
+        <slide>
+          <slideno>12</slideno>
+          <text>1.1. NONDEGENERATE PERTURBATION THEORY 13
+The Hamiltonian H() denes an anharmonic oscillator. In a classical anharmoni c oscil-
+lator the frequency of oscillation depends on the amplitude of oscillation. In the quantum
+harmonic oscillator all levels are equally spaced. The freq uencies associated with transi-
+tions between various levels are therefore integer multipl es (i.e.harmonics) of the basic
+frequency associated to a transition between the rst excit ed state and the ground state.
+In the quantum anharmonic oscillator the spacing between th e energy levels is not uniform.
+First the simplest question: What is the rst-order correct ionE(1)
+0to the energy of the
+ground state? For this, following (1.1.21) we simply calcul ate the expectation value of the
+perturbation on the ground state:
+E(1)
+0=/an}backetle{t0|1
+4/planckover2pi1(a+a)4|0/an}backeti}ht=1
+4/planckover2pi1/an}backetle{t0|(a+a)4|0/an}backeti}ht=3
+4/planckover2pi1, (1.1.54)
+where we used
+/an}backetle{t0|(a+a)4|0/an}backeti}ht= 3, (1.1.55)
+as you should verify. It follows that the corrected energy is
+E0() =E(0)
+0+E(1)
+0+O(2) =1
+2/planckover2pi1+3
+4/planckover2pi1+O(2) =1
+2/planckover2pi1/parenleftbig
+1+3
+2+O(2)/parenrightbig
+(1.1.56)
+We note that the energy of the ground state increases with &gt;0. This is reasonable as the
+quartic term in the modied potential squeezes the ground st ate. How about second order
+correction to the ground state energy? For this we use (1.1.3 6) takingn= 0:
+E(2)
+0=/summationdisplay
+k/negationslash=0|Hk0|2
+E(0)
+kE(0)
+0. (1.1.57)
+The sum is over all k1 such that Hk0is non-vanishing. Here
+Hk0=1
+4/planckover2pi1/an}backetle{tk|(a+a)4|0/an}backeti}ht. (1.1.58)
+We consider ( a+a)4|0/an}backeti}htwhich corresponds, up to constants to acting on the ground st ate
+wavefunction 0withx4. This should give an even wavefunction. So ( a+ a)4|0/an}backeti}htmust
+be a superposition of |0/an}backeti}ht,|2/an}backeti}ht, and|4/an}backeti}ht. We cannot get states with higher number because
+there are at most four creation operators acting on the vacuu m. A short calculation (do
+it!) conrms that
+(a+a)4|0/an}backeti}ht= 3|0/an}backeti}ht+6
+2|2/an}backeti}ht+
+4!|4/an}backeti}ht. (1.1.59)
+This immediately gives
+H00=3
+4/planckover2pi1, H 20=3
+2
+2/planckover2pi1, H 40=
+6
+2/planckover2pi1, (1.1.60)
+the rst of which we had already determined and is not needed f or the second order com-
+putation. Back in (1.1.57) we have
+E(2)
+0=|H20|2
+2/planckover2pi1|H40|2
+4/planckover2pi1=(/planckover2pi1)2
+2/planckover2pi19
+2(/planckover2pi1)2
+4/planckover2pi13
+2=/parenleftbig9
+4+3
+8/parenrightbig
+/planckover2pi1=21
+8/planckover2pi1.(1.1.61)</text>
+        </slide>
+        <slide>
+          <slideno>0</slideno>
+          <text>Chapter 1
+Perturbation theory
+c/ciclecoytB. Zwiebach
+It is often the case that the Hamiltonian of a system diers sli ghtly from a Hamiltonian
+that is well studied and completely understood. This is a sit uation where perturbation the-
+ory can be useful. Perturbation theory allows us to make stat ements about the Hamiltonian
+of the system using what we know about the well studied Hamilt onian.
+The well studied Hamiltonian could be the that of the simple h armonic oscillator in one,
+two, or three dimensions. In a diatomic molecule, for exampl e, the potential that controls
+the vibrations is not exactly quadratic; it has extra terms t hat make the vibrations slightly
+anharmonic. Inthatsituation theextratermsinthepotenti al represent perturbationsof the
+Hamiltonian. The hydrogen atom Hamiltonian is also a well un derstood system. If we place
+the atom inside a weak external magnetic eld or electric el d, the situation is described by
+adding some small terms to the hydrogen Hamiltonian. Simila rly, the interaction between
+the magnetic moments of the proton and the electron can be inc orporated by modifying the
+original hydrogen atom Hamiltonian. The interaction betwe en two neutral hydrogen atoms
+at a distance, leading to the van der Waals force can be studie d in perturbation theory by
+thinking of the two atoms as electric dipoles.
+The Hamiltonian of interest is written as the understood, or iginal Hamiltonian H(0),
+plus a perturbation H:
+H(0)+H. (1.0.1)
+SinceH(0)is Hermitian and the sum must be a Hermitian Hamiltonian, the perturbation
+operatorHmust also be Hermitian. It is convenient to introduce a unit- free constant
+[0,1] and to consider, instead, a -dependent Hamiltonian H() that takes the form
+H() =H(0)+H. (1.0.2)
+When= 1 we have the Hamiltonian of interest, but allows us to consider a family of
+Hamiltonians that interpolate from H(0), whenis equal to zero, to the Hamiltonian of
+interest for equal to one. In many cases perturbations can be turned on and o; think,
+1</text>
+        </slide>
+        <slide>
+          <slideno>14</slideno>
+          <text>1.2. DEGENERATE PERTURBATION THEORY 15
+1.2.1 Degenerate toy model
+Consider an example with two-by-two matrices. The unpertur bed matrix H(0)will be set
+equal to the identity matrix:
+H(0)=/parenleftbigg1 0
+0 1/parenrightbigg
+. (1.2.1)
+We have a degeneracy here as the two eigenvalues are identica l (and equal to one). The
+perturbation matrix His chosen to be o diagonal:
+H=/parenleftbigg0 1
+1 0/parenrightbigg
+. (1.2.2)
+We then have
+H() =H(0)+H=/parenleftbigg1
+1/parenrightbigg
+. (1.2.3)
+Using labels n= 1,2 the unperturbed eigenstates can be taken to be
+|1(0)/an}backeti}ht=/parenleftbigg1
+0/parenrightbigg
+,|2(0)/an}backeti}ht=/parenleftbigg0
+1/parenrightbigg
+, E(0)
+1=E(0)
+2= 1, (1.2.4)
+with the corresponding eigenvalues indicated as well. To r st order in , the eigenvalues
+predicted from non-degenerate perturbation theory (1.1.3 7) areEn() =E(0)
+n+Hnn.
+This gives
+E1() =E(0)
+1+H11= 1+0 = 1 ?
+E1() =E(0)
+2+H22= 1+0 = 1 ?(1.2.5)
+The eigenvalues are unperturbed to rst order in since the matrix His o-diagonal.
+These answers, however, are wrong. We can compute the exact e igenvalues of H() and
+they are 1 . There is also a problem with the state corrections. Equatio n (1.1.37) states
+that
+|n/an}backeti}ht=|n(0)/an}backeti}ht/summationdisplay
+k/negationslash=nHkn
+E(0)
+kE(0)
+n|k(0)/an}backeti}ht. (1.2.6)
+but this time, with E(0)
+1=E(0)
+2the denominator is zero, and the Hmatrix element is also
+zero, giving us an ambiguous result.
+So what can we do? A direct calculation shows that
+H() has eigenvectors1
+2/parenleftbigg1
+1/parenrightbigg
+with eigenvalue = 1+ , (1.2.7)
+and1
+2/parenleftbigg1
+1/parenrightbigg
+with eigenvalue = 1 . (1.2.8)
+You may think the eigenvectors jump from those of H(0)indicated in (1.2.4) to those of
+H() as soon as becomes nonzero. Such discontinuity is totally against the spirit of</text>
+        </slide>
+        <slide>
+          <slideno>10</slideno>
+          <text>1.1. NONDEGENERATE PERTURBATION THEORY 11
+In this simple example there is no need to use perturbation th eory since the eigenvalues,
+E+andE, can be calculated exactly as functions of 
+E() =1
+2(E(0)
+1+E(0)
+2)1
+2(E(0)
+1E(0)
+2)/radicaltp/radicalvertex/radicalvertex/radicalbt1+/bracketleftBigg
+|V|
+1
+2(E(0)
+1E(0)
+2)/bracketrightBigg2
+.(1.1.45)
+The perturbative expansion of the energies is obtained by Ta ylor expansion of the square
+Figure 1.3: The Taylor expansion of the function f(z) =
+1+z2aboutz= 0 has a radius of
+convergence equal to one.
+root in powers of . To perform this expansion we need the result
+f(z)/radicalbig
+1+z2= 1+z2
+2z4
+8+z6
+6+5
+128z8+O(z10). (1.1.46)
+The function f(z) exhibits branch cuts at z=i(see Figure 1.3), thus the expansion
+off(z) aroundz= 0 has radius of convergence equal to one: the series converg es for|z|&lt;1
+and diverges for |z|&gt;1. Table 1 shows f(z) evaluated for z= 0.9,1.2,and 1.5. The various
+approximations to the full series are shown.
+For our expansion of (1.1.45), convergence for |z|&lt;1 implies convergence when
+|||V|
+1
+2|E(0)
+1E(0)
+2|&lt;1 = |V|&lt;1
+2|E(0)
+1E(0)
+2|. (1.1.47)
+For|V|&gt;1
+2|E(0)
+1E(0)
+2|the perturbation series does not converge. We learn that for
+convergence the perturbation must be small compared with energy dierences inH(0). It
+is not sucient that the magnitude of the matrix elements of Hbe small compared to
+those inH(0), energy dierences matter. This result leads us to expect com plications when
+energy dierences go to zero and H(0)has degeneracies.</text>
+        </slide>
+        <slide>
+          <slideno>23</slideno>
+          <text>24 CHAPTER 1. TIME INDEPENDENT PERTURBATION THEORY
+This is an eigenvalue equation that tells us that the energy c orrectionsE(2)
+nIare the eigen-
+values ofM(2)and the vectors a(0)
+Iare the associated normalized eigenvectors. These
+determine, via (1.2.44), our orthonormal basis of good zero th order states. If His known,
+the matrix M(2)is computable and Hermitian and can therefore be diagonaliz ed.
+We will leave the computation of the component of |(1)
+I/an}backeti}hton the degenerate subspace.
+That can be done if the degeneracy is completely broken to qua dratic order (the eigenvalues
+ofM(2)are all dierent). Still, it takes some eort and one must use th e order3equation.
+Our results so far are
+|I/an}backeti}ht=|(0)
+I/an}backeti}ht+/parenleftBig/summationdisplay
+p|p(0)/an}backeti}htHpI
+E(0)
+nE(0)
+p+/summationdisplay
+J/negationslash=I|(0)
+J/an}backeti}hta(1)
+I,J/parenrightBig
++O(2),
+EIn() =E(0)
+n+E(1)
+n+2E(2)
+In+3E(3)
+In+...O(3).(1.2.63)
+Here thea(1)
+I,Jare still unknown coecients that determine the component o f the rst cor-
+rection to the states along the degenerate subspace. If you f ollowed the discussion, all other
+symbols in the above equations have been dened and are compu table given H.
+The answer for the coecients a(1)
+I,Jturns out to be
+a(1)
+I,J=1
+E(2)
+nIE(2)
+nJ/bracketleftBigg/summationdisplay
+p,qHJpHpqHqI
+(E(0)
+pE(0)
+n)(E(0)
+qE(0)
+n)E(1)
+n/summationdisplay
+pHJpHpI/parenleftbig
+E(0)
+pE(0)
+n/parenrightbig2/bracketrightBigg
+.(1.2.64)
+The third order corrections to the energy are
+E(3)
+In=/summationdisplay
+p,qHIpHpqHqI
+(E(0)
+pE(0)
+n)(E(0)
+qE(0)
+n)E(1)
+n/summationdisplay
+p|HpI|2
+/parenleftbig
+E(0)
+pE(0)
+n/parenrightbig2. (1.2.65)</text>
+        </slide>
+        <slide>
+          <slideno>13</slideno>
+          <text>14 CHAPTER 1. TIME INDEPENDENT PERTURBATION THEORY
+Therefor the corrected ground state energy to quadratic ord er is
+E(0)
+0+E(1)
+0+2E(2)
+0=1
+2/planckover2pi1/parenleftbig
+1+3
+221
+42/parenrightbig
+. (1.1.62)
+The computation can be carried to higher order, as rst done b y Bender and Wu (Phys.
+Rev.184(1969)1231). They nd that1
+E0() =1
+2/planckover2pi1/parenleftbig
+1+3
+221
+42+333
+8330885
+644+916731
+128565518401
+5126+O(7)/parenrightbig
+(1.1.63)
+As it turnsout thecoecients keep growingandtheseries doe snot converge forany nonzero
+; the radius of convergence is actually zero! This does not me an the series is not useful.
+It is an asymptotic expansion. This means that for a given sma ll value ofthe magnitude
+of successive terms generally decrease until, at some point , they start growing again. A
+good approximation to the desired answer is obtained by incl uding only the part of the sum
+where the terms are decreasing.
+Exercise 3. Calculate the rst order correction E(1)
+nto the energy for the state |n/an}backeti}htof
+numbern. Exhibit the anharmonicity of the oscillator by using this r esult to nd, to rst
+order in, the energy separation  En() =En()En1() between levels.
+Let us now nd the rst order correction to the ground-state w avefunction. Using
+(1.1.34) with n= 0 we have
+|0(1)/an}backeti}ht=/summationdisplay
+k/negationslash=0Hk0
+E(0)
+kE(0)
+0|k/an}backeti}ht. (1.1.64)
+We then nd
+|0(1)/an}backeti}ht=H20
+2/planckover2pi1|2/an}backeti}htH40
+4/planckover2pi1|4/an}backeti}ht=3
+4
+2|2/an}backeti}ht1
+16
+4!|4/an}backeti}ht
+=3
+4aa|0/an}backeti}ht1
+16aaaa|0/an}backeti}ht.(1.1.65)
+This means that to rst order the ground state of the perturbe d oscillator is
+|0/an}backeti}ht=|0/an}backeti}ht/parenleftBig
+3
+4aa|0/an}backeti}ht+1
+16aaaa|0/an}backeti}ht/parenrightBig
++O(2). (1.1.66)
+1.2 Degenerate perturbation theory
+If the spectrum of H(0)has degenerate states, as shown in Figure 1.1, tracking the e volution
+of those states as becomes nonzero presents new challenges. We rst show that n aive
+extrapolation of our results for a non-degenerate state do n ot work. We will also be able to
+appreciate the basic diculty.
+1Bender and Wus results, in eqns. (2.12) of their paper must a ll be multiplied by a factor of 2, as they
+takeA0= 1/2.</text>
+        </slide>
+        <slide>
+          <slideno>6</slideno>
+          <text>1.1. NONDEGENERATE PERTURBATION THEORY 7
+Recalling our orthogonality assumption, we have /an}backetle{tn(0)|n(1)/an}backeti}ht= 0 and the term with E(1)
+n
+drops out. We get
+E(2)
+n=/an}backetle{tn(0)|H|n(1)/an}backeti}ht, (1.1.23)
+which states that the second correction to the energy is dete rmined if we have the rst
+correction |n(1)/an}backeti}htto the state. Note that this expression is not explicit enoug h to make it
+manifest that E(2)
+nis real. This and the earlier result for the rst correction t o the energy
+have a simple generalization. Acting with /an}backetle{tn(0)|on the last equation of (1.1.13) we get
+0 =/an}backetle{tn(0)|/parenleftBig
+(E(1)
+nH)|n(k1)/an}backeti}ht+E(2)
+n|n(k2)/an}backeti}ht+...+E(k)
+n|n(0)/an}backeti}ht/parenrightBig
+.(1.1.24)
+Using the orthogonality of |n(0)/an}backeti}htand all the state corrections, we have
+0 =/an}backetle{tn(0)|H)|nk1/an}backeti}ht+E(k)
+n, (1.1.25)
+and therefore we have
+E(k)
+n=/an}backetle{tn(0)|H|n(k1)/an}backeti}ht. (1.1.26)
+At any stage of the recursive solution, the energy at a xed or der is known if the state
+correction is known to previous order. So it is time to calcul ate the corrections to the
+states!
+Let us solve for therstcorrection |n(1)/an}backeti}htto thestate. Thisstate must besomeparticular
+superposition of the original energy eigenstates |k(0)/an}backeti}ht. For this we look at the equation
+(H(0)E(0)
+n)|n(1)/an}backeti}ht= (E(1)
+nH)|n(0)/an}backeti}ht. (1.1.27)
+This is a vector equation: the left-hand side vector set equa l to the right-hand side vector.
+As in any vector equation, we can check it using a basis set of v ectors. Forming the inner
+product of each and every basis vector with both the left-han d side and the right-hand side,
+we must get equal numbers. We already acted on the above equat ion with /an}backetle{tn(0)|to gure
+outE(1)
+n. The remaining information in this equation can be obtained by acting with all
+the states /an}backetle{tk(0)|withk/ne}ationslash=n:
+/an}backetle{tk(0)|(H(0)E(0)
+n)|n(1)/an}backeti}ht=/an}backetle{tk(0)|(E(1)
+nH)|n(0)/an}backeti}ht. (1.1.28)
+On the left-hand side we can let H(0)act on the bra. On the right-hand side we note that
+withk/ne}ationslash=nthe term with E(1)
+nvanishes
+(E(0)
+kE(0)
+n)/an}backetle{tk(0)|n(1)/an}backeti}ht=/an}backetle{tk(0)|H|n(0)/an}backeti}ht. (1.1.29)
+To simplify notation we dene the matrix elements of Hin the original basis
+Hmn /an}backetle{tm(0)|H|n(0)/an}backeti}ht. (1.1.30)</text>
+        </slide>
+        <slide>
+          <slideno>9</slideno>
+          <text>10 CHAPTER 1. TIME INDEPENDENT PERTURBATION THEORY
+Figure 1.2: The second order corrections to the energy of the state |n(0)/an}backeti}htreceives negative contri-
+butions from the higher energy states and positive contributions f rom the lower energy states. We
+have, eectively, a repulsion preventing the state |n(0)/an}backeti}htfrom approaching the neighboring states.
+Exercise 2. The state |n/an}backeti}htis not normalized. Use (1.1.37) to calculate to order 2the
+quantityZn() dened by
+1
+Zn()/an}backetle{tn|n/an}backeti}ht. (1.1.42)
+What is the probability that the state |n/an}backeti}htwill be observed to be along its unperturbed
+version|n(0)/an}backeti}ht?
+1.1.1 Validity of the perturbation expansion
+We now return to a question we did not address: What do we mean w hen we say that
+His small? We have said that Hmust be small compared to the original Hamiltonian
+H(0), but it is not clear what this means, as both expressions are o perators. For some
+insight into this matter consider an example where H(0)is a two-by-two diagonal matrix
+with non-degenerate eigenvalues
+H(0)=/parenleftBigg
+E(0)
+10
+0E(0)
+2/parenrightBigg
+. (1.1.43)
+The perturbation, called V, only has o-diagonal elements so that
+H() =H(0)+V/parenleftBigg
+E(0)
+1V
+VE(0)
+2/parenrightBigg
+. (1.1.44)</text>
+        </slide>
+        <slide>
+          <slideno>22</slideno>
+          <text>1.2. DEGENERATE PERTURBATION THEORY 23
+This gives the piece of |(1)
+I/an}backeti}htinVin terms of the unknown zeroth order eigenstates.
+We have now extracted all the information from the order equation. We look now
+at the order 2equation, which contains the second order corrections to th e energy and
+therefore should help us determine the zeroth order good sta tes. We hit that equation with
+/an}backetle{tn(0);|and we get
+0 =/an}backetle{tn(0);|(E(1)
+nH)|(1)
+I/an}backeti}ht/vextendsingle/vextendsingle/vextendsingleV+/an}backetle{tn(0);|(E(1)
+nH)|(1)
+I/an}backeti}ht/vextendsingle/vextendsingle/vextendsingle
+VN+E(2)
+nIa(0)
+I.(1.2.55)
+Happily, the second term, involving the components of |(1)
+I/an}backeti}htalongVN, vanishes because
+of the by now familiar property (1.2.28) adapted to this case . The piece with E(1)
+non the
+rst term also vanishes. We are thus left with
+0 =/an}backetle{tn(0);|H|(1)
+I/an}backeti}ht/vextendsingle/vextendsingle/vextendsingleV+E(2)
+nIa(0)
+I. (1.2.56)
+Introducing a resolution of the identity to the immediate ri ght ofH, only the basis states
+inVcontribute and we get
+0 =/summationdisplay
+p/an}backetle{tn(0);|H|p(0)/an}backeti}ht/an}backetle{tp(0)|(1)
+I/an}backeti}ht+E(2)
+nIa(0)
+I, (1.2.57)
+where there is no need to copy the |Vanymore. Using the result in (1.2.54) we now get
+0 =/summationdisplay
+pHnl,p1
+E(0)
+pE(0)
+nN/summationdisplay
+k=1Hp,nka(0)
+Ik+N/summationdisplay
+k=1E(2)
+nIka(0)
+Ik(1.2.58)
+Reordering sums and multiplying by minus one we get
+N/summationdisplay
+k=1/parenleftBigg
+/summationdisplay
+pHnl,pHp,nk
+E(0)
+pE(0)
+nE(2)
+nIk/parenrightBigg
+a(0)
+Ik= 0. (1.2.59)
+To understand better this equation we dene the NNHermitian matrix M(2)
+M(2)
+,k /summationdisplay
+pHn,pHp,nk
+E(0)
+pE(0)
+n. (1.2.60)
+The equation then becomes
+N/summationdisplay
+k=1/parenleftBig
+M(2)
+,kE(2)
+nIk/parenrightBig
+a(0)
+Ik= 0. (1.2.61)
+Recalling that the Kronecker delta is the matrix representa tion of the identity, we have
+/parenleftBig
+M(2)E(2)
+nI1/parenrightBig
+a(0)
+I= 0. (1.2.62)</text>
+        </slide>
+        <slide>
+          <slideno>5</slideno>
+          <text>6 CHAPTER 1. TIME INDEPENDENT PERTURBATION THEORY
+corrected state is
+|n/an}backeti}ht=|n(0)/an}backeti}ht+/parenleftbig
+|n(1)/an}backeti}hta1|n(0)/an}backeti}ht/parenrightbig
++2/parenleftbig
+|n(2)/an}backeti}hta2|n(0)/an}backeti}ht/parenrightbig
++...
+=/parenleftbig
+1a1a22.../parenrightbig
+|n(0)/an}backeti}ht+|n(1)/an}backeti}ht+2|n(2)/an}backeti}ht+...(1.1.16)
+Since this is an eigenstate of the Hamiltonian H(), it will still be an eigenstate if we change
+its normalization by dividing it by any function of . Dividing by the coecient of |n(0)/an}backeti}ht
+we have the physically identical solution |n/an}backeti}ht
+given by
+|n/an}backeti}ht
+=|n(0)/an}backeti}ht+1/parenleftbig
+1a1a22.../parenrightbig/bracketleftbig
+|n(1)/an}backeti}ht+2|n(2)/an}backeti}ht+.../bracketrightbig
+(1.1.17)
+We can expand the denominator so that we get
+|n/an}backeti}ht
+=|n(0)/an}backeti}ht+|n(1)/an}backeti}ht+2/parenleftbig
+|n(2)/an}backeti}ht+a1|n(1)/an}backeti}ht/parenrightbig
++... (1.1.18)
+The explicit expressions do not matter, the key point, actua lly visible in (1.1.17), is that
+we have a physically identical solution of the same equation in which the state corrections
+are all orthogonal to |n(0)/an}backeti}ht. This shows that we can impose the conditions (1.1.14) witho ut
+loss of generality.
+Solving the equations. Let us nally begin solving equations (1.1.13). For this we n ote
+that the Schrodinger equation for the ket |n(0)/an}backeti}htimplies that for the bra we have
+/an}backetle{tn(0)|(H(0)E(0)
+n) = 0. (1.1.19)
+This means that acting with /an}backetle{tn(0)|on the left-hand side of any of the equations in (1.1.13)
+will give zero. Consistency requires that acting with /an}backetle{tn(0)|on the right-hand side of any of
+the equations in (1.1.13) also give zero, and presumably som e interesting information. For
+the-equation this gives:
+0 =/an}backetle{tn(0)|(E(1)
+nH)|n(0)/an}backeti}ht. (1.1.20)
+Since|n(0)/an}backeti}htis normalized and E(1)
+nis a number, this means that
+E(1)
+n=/an}backetle{tn(0)|H|n(0)/an}backeti}ht. (1.1.21)
+This is the most famous result in perturbation theory: the rst correction to the en ergy of
+an energy eigenstate is simply the expectation value of the c orrection to the Hamiltonian
+in theuncorrected state. You need not know the correction to the state to determ ine the
+rst correction to the energy! Note that the hermicity of Himplies the required reality of
+the energy correction.
+We can actually ndsomeinteresting formulae (but not yet fu lly explicit!) forthehigher
+energy corrections. For the 2equation, acting with /an}backetle{tn(0)|on the right-hand side gives
+0 =/an}backetle{tn(0)|/parenleftBig
+(E(1)
+nH)|n(1)/an}backeti}ht+E(2)
+n|n(0)/an}backeti}ht/parenrightBig
+. (1.1.22)</text>
+        </slide>
+        <slide>
+          <slideno>21</slideno>
+          <text>22 CHAPTER 1. TIME INDEPENDENT PERTURBATION THEORY
+Note that in the energy expansion we have accounted for the de generacy to zeroth and rst
+order: the index Irst appears in the second-order corrections to the energy. Using the
+Schr odinger equation
+H()|I/an}backeti}ht=EnI()|I/an}backeti}ht, (1.2.47)
+gives the by now familiar equations, of which we list the rst four:
+0: (H(0)E(0)
+n)|(0)
+I/an}backeti}ht= 0,
+1: (H(0)E(0)
+n)|(1)
+I/an}backeti}ht= (E(1)
+nH)|(0)
+I/an}backeti}ht,
+2: (H(0)E(0)
+n)|(2)
+I/an}backeti}ht= (E(1)
+nH)|(1)
+I/an}backeti}ht+E(2)
+nI|(0)
+I/an}backeti}ht,
+3: (H(0)E(0)
+n)|(3)
+I/an}backeti}ht= (E(1)
+nH)|(2)
+I/an}backeti}ht+E(2)
+nI|(1)
+I/an}backeti}ht+E(3)
+nI|(0)
+I/an}backeti}ht.(1.2.48)
+The zero-th order equation is trivially satised. For the or derequation the overlap with
+/an}backetle{tn(0);|works out automatically, without giving any new informatio n. Indeed, the left-hand
+side vanishes and we thus get
+0 =/an}backetle{tn(0);|(E(1)
+nH)|(0)
+I/an}backeti}ht. (1.2.49)
+Since/an}backetle{tn(0);|is aHeigenstate with eigenvalue E(1)
+n, up to a vector in V(see (1.2.34)),
+the above right-hand side vanishes. Acting on the order equation with /an}backetle{tp(0)|gives useful
+information:
+(E(0)
+pE(0)
+n)/an}backetle{tp(0)|(1)
+I/an}backeti}ht=/an}backetle{tp(0)|(E(1)
+nH)|(0)
+I/an}backeti}ht=/an}backetle{tp(0)|H|(0)
+I/an}backeti}ht,(1.2.50)
+using the orthogonality of VandVN. Letting
+HpI /an}backetle{tp(0)|H|(0)
+I/an}backeti}ht, (1.2.51)
+we then have
+/an}backetle{tp(0)|(1)
+I/an}backeti}ht=HpI
+E(0)
+pE(0)
+n. (1.2.52)
+Since the ket |(0)
+I/an}backeti}htis still undetermined, it makes sense to write this informat ion about
+|(1)
+I/an}backeti}htin terms of the unknown a(0)
+Icoecients. We have
+HpIN/summationdisplay
+k=1/an}backetle{tp(0)|H|n(0);k/an}backeti}hta(0)
+Ik=N/summationdisplay
+k=1Hp,nka(0)
+Ik, (1.2.53)
+Back into (1.2.52) we get
+/an}backetle{tp(0)|(1)
+I/an}backeti}ht=1
+E(0)
+pE(0)
+nN/summationdisplay
+k=1Hp,nka(0)
+Ik. (1.2.54)</text>
+        </slide>
+        <slide>
+          <slideno>8</slideno>
+          <text>1.1. NONDEGENERATE PERTURBATION THEORY 9
+Remarks:
+1. The rst order corrected energy of the (non-degenerate) g round state overstates the
+true exact ground state energy. To see this consider the rst order corrected ground
+state energy E(0)
+0+E(1)
+0. Writing this in terms of expectation values, with |0(0)/an}backeti}ht
+denoting the unperturbed ground state, we have
+E(0)
+0+E(1)
+0=/an}backetle{t0(0)|H(0)|0(0)/an}backeti}ht+/an}backetle{t0(0)|H|0(0)/an}backeti}ht
+=/an}backetle{t0(0)|(H(0)+H)|0(0)/an}backeti}ht
+=/an}backetle{t0(0)|H()|0(0)/an}backeti}ht.(1.1.38)
+By the variational principle, the expectation value of the H amiltonian on an arbitrary
+(normalized) state is larger than the ground state energy E0(), therefore
+E(0)
+0+E(1)
+0=/an}backetle{t0(0)|H()|0(0)/an}backeti}ht E0(), (1.1.39)
+which is what we wanted to prove. Given this overestimate at  rst order, the second
+order correction to the ground state energy is always negati ve. Indeed,
+2/summationdisplay
+k/negationslash=0|Hk0|2
+E(0)
+kE(0)
+0, (1.1.40)
+and each term is negative because the unperturbedexcited st ate energies E(0)
+k(k/ne}ationslash= 0)
+exceed the unperturbed ground state energy E(0)
+0.
+2. The second order correction to the energy of the |n(0)/an}backeti}hteigenstate exhibits level repul-
+sion: the levels with k &gt; npush the state down and the levels with k &lt; npush the
+state up. Indeed,
+2/summationdisplay
+k/negationslash=n|Hkn|2
+E(0)
+kE(0)
+n=2/summationdisplay
+k&gt;n|Hkn|2
+E(0)
+kE(0)
+n+2/summationdisplay
+k&lt;n|Hkn|2
+E(0)
+nE(0)
+k.(1.1.41)
+The rst term gives the negative contribution from the highe r energy states and the
+second term gives the contribution from the lower energy sta tes (see Figure 1.2).
+The systematics of solving the equations is now apparent. Fo r each equation we take
+inner products with all states in the state space. That gives the full content of the equation.
+We rst take the inner product with /an}backetle{tn(0)|, as this makes the left-hand side equal to zero
+and is thus simpler. Then we take the inner product with /an}backetle{tk(0)|with allk/ne}ationslash=nand that
+gives the remainder of the information that is contained in t he equation.
+Exercise 1. Calculate |n(2)/an}backeti}htandE(3)
+n.</text>
+        </slide>
+        <slide>
+          <slideno>2</slideno>
+          <text>1.1. NONDEGENERATE PERTURBATION THEORY 3
+two levels, and that happens generically. In the gure, the p erturbation splits the levels to
+rst order in , as shown by the dierent slopes of the two curves that meet at = 0. In
+other words, viewed as power series in the energies of the two states have dierent linear
+terms in. The last level shown corresponds to four degenerate states . The perturbation
+to rst order in splits the states into a group of three states and a fourth. To second order
+inthe three states split further. A single Hamiltonian can exh ibit behavior like this, with
+many possible variations.
+To analyze the evolution of states and energies as functions ofwe have two possible
+cases: (i) we are following a non-degenerate state or, ( ii) we are following a collection of
+degenerate states. The challenges are quite dierent and the refore we must analyze them
+separately. Clearly both situations can occur for a single H amiltonian, depending on the
+spectrum of H(0). To follow a non-degenerate state we use non-degenerate perturbation
+theory. To follow a set of degenerate states we use degenerate perturbation theory . Since
+Hamiltonians H(0)generally have both non-degenerate and degenerate states w e need to
+consider both types of perturbation theory. We begin with no n-degenerate perturbation
+theory.
+1.1 Nondegenerate perturbation theory
+We begin by describing the original Hamiltonian H(0). We assume this Hamiltonian has a
+discrete spectrum with an orthonormal basis |k(0)/an}backeti}htof energy eigenstates, where kZis a
+label that ranges over a possibly innite set of values:
+H(0)|k(0)/an}backeti}ht=E(0)
+k|k(0)/an}backeti}ht,/an}backetle{tk(0)|l(0)/an}backeti}ht=kl. (1.1.1)
+We will let k= 0 denote the ground state and we order the states so that the e nergies
+generally increase as the value of the label increases, so th at
+E(0)
+0E(0)
+1E(0)
+2E(0)
+3... (1.1.2)
+The equal signs are needed because some states may be degener ate.
+In this section we focus on a non-degenerate state |n(0)/an}backeti}htwith xedn. This means that
+|n(0)/an}backeti}htis a single state that is separated by some nite energy from a ll the states with more
+energy and from all the states with less energy. In other word s the following must be part
+of the sequence of inequalities in (1.1.2)
+...E(0)
+n1&lt; E(0)
+n&lt; E(0)
+n+1... (1.1.3)
+If the chosen state is the ground state, we have instead E(0)
+0&lt; E(0)
+1.
+As the perturbation is turned on by making dierent from zero, the energy eigenstate
+|n(0)/an}backeti}htofH(0)will evolve into some energy eigenstate |n/an}backeti}htofH() with energy En():
+H()|n/an}backeti}ht=En()|n/an}backeti}ht, (1.1.4)</text>
+        </slide>
+        <slide>
+          <slideno>7</slideno>
+          <text>8 CHAPTER 1. TIME INDEPENDENT PERTURBATION THEORY
+Note that the Hermiticity of Himplies that
+Hnm= (Hmn). (1.1.31)
+With this notation, equation (1.1.29) gives
+/an}backetle{tk(0)|n(1)/an}backeti}ht=Hkn
+E(0)
+kE(0)
+n, k/ne}ationslash=n. (1.1.32)
+Since we now know the overlap of |n(1)/an}backeti}htwith all basis states, this means that the state has
+been determined. Indeed we can use the completeness of the ba sis to write
+|n(1)/an}backeti}ht=/summationdisplay
+k|k(0)/an}backeti}ht/an}backetle{tk(0)|n(1)/an}backeti}ht=/summationdisplay
+k/negationslash=n|k(0)/an}backeti}ht/an}backetle{tk(0)|n(1)/an}backeti}ht, (1.1.33)
+since the term with k=ndoes not contribute because of the orthogonality assumptio n.
+Using the overlaps (1.1.32) we now get
+|n(1)/an}backeti}ht=/summationdisplay
+k/negationslash=n|k(0)/an}backeti}htHkn
+E(0)
+kE(0)
+n. (1.1.34)
+This shows that the rstcorrection |n(1)/an}backeti}htcan have components along all basis states, except
+|n(0)/an}backeti}ht. The component along a state |k(0)/an}backeti}htvanishes if the perturbation Hdoes not couple
+|n(0)/an}backeti}htto|k(0)/an}backeti}ht, namely, if Hknvanishes. Note that the assumption of non-degeneracy is
+needed here. We are summing over all states |k(0)/an}backeti}htthat are not |n(0)/an}backeti}htand if any such state
+has the same H(0)energy as |n(0)/an}backeti}htthe energy denominator will vanish causing trouble!
+Now that we have the rst order correction to the states we can compute the second
+ordercorrection to the energy. Using (1.1.23) we have
+E(2)
+n=/an}backetle{tn(0)|H|n(1)/an}backeti}ht=/summationdisplay
+k/negationslash=n/an}backetle{tn(0)|H|k(0)/an}backeti}htHkn
+E(0)
+kE(0)
+n. (1.1.35)
+In the last numerator we have /an}backetle{tn(0)|H|k(0)/an}backeti}ht=Hnk= (Hkn)and therefore
+E(2)
+n=/summationdisplay
+k/negationslash=n|Hkn|2
+E(0)
+kE(0)
+n. (1.1.36)
+This is the second-order energy correction. This explicit f ormula makes the reality of E(2)
+n
+manifest.
+In summary, going back to (1.1.7), we have that the states and energies for H() =
+H(0)+Hare, to this order,
+|n/an}backeti}ht=|n(0)/an}backeti}ht/summationdisplay
+k/negationslash=nHkn
+E(0)
+kE(0)
+n|k(0)/an}backeti}ht+O(2),
+En() =E(0)
+n+Hnn2/summationdisplay
+k/negationslash=n|Hkn|2
+E(0)
+kE(0)
+n+O(3),(1.1.37)</text>
+        </slide>
+        <slide>
+          <slideno>17</slideno>
+          <text>18 CHAPTER 1. TIME INDEPENDENT PERTURBATION THEORY
+Step 1.Recalling that /an}backetle{tn(0);|(H(0)E(0)
+n) = 0, as we hit the O() equation with /an}backetle{tn(0);|
+the left-hand side vanishes and we nd
+/an}backetle{tn(0);|(E(1)
+n,kH)|n(0);k/an}backeti}ht= 0. (1.2.23)
+Since the basis states in VNare orthonormal, this implies that
+/an}backetle{tn(0);|H|n(0);k/an}backeti}ht=E(1)
+n,k,k. (1.2.24)
+This equation holds for all k,= 1,...,N. Remarkably, this equation is telling us that the
+basis|n(0);k/an}backeti}htmust be chosen to make the matrix Hdiagonal in the subspace VN! This
+is required in order to get the perturbation theory going. Se ttingequal tokwe read the
+values of the rst order energy shifts
+E(1)
+n,k=/an}backetle{tn(0);k|H|n(0);k/an}backeti}ht=Hnk,nk, (1.2.25)
+where the last equality is a denition. The energies to rst o rder are then
+En,k() =E(0)
+n+Hnk,nk. (1.2.26)
+A few remarks:
+1. The above result for the rst order energy shifts is true always, even if the degeneracy
+is not lifted. The degeneracy is lifted when
+E(1)
+n,k/ne}ationslash=E(1)
+n,,wheneverk/ne}ationslash=, (1.2.27)
+for all values of k,= 1,...,N. This assumption will be used in the later steps. If
+the degeneracy is lifted, the basis states |n(0);k/an}backeti}htthat make Hdiagonal in VNare
+called good states or a good basis. This means that they a re the basis states in
+VNthat get deformed continuously as becomes non-zero. If the degeneracy is not
+lifted to rst order the determination of the good basis has t o be attempted to second
+order.
+2. The perturbation His diagonalized in the subspace VN. The perturbation His
+notdiagonal on the whole space H, only within the block representing VNisHa
+diagonal matrix. Alternatively we can see this via theactio n ofHon the basis states.
+Introducing a resolution of the identity, we have
+H|n(0);/an}backeti}ht=/summationdisplay
+q|n(0);q/an}backeti}ht/an}backetle{tn(0);q|H|n(0);/an}backeti}ht+/summationdisplay
+p|p(0)/an}backeti}ht/an}backetle{tp(0)|H|n(0);/an}backeti}ht
+=/summationdisplay
+qE(1)
+n,,q|n(0);q/an}backeti}ht+/summationdisplay
+p|p(0)/an}backeti}ht/an}backetle{tp(0)|H|n(0);/an}backeti}ht
+=E(1)
+n,|n(0);/an}backeti}ht+/summationdisplay
+p|p(0)/an}backeti}ht/an}backetle{tp(0)|H|n(0);/an}backeti}ht.(1.2.28)
+This shows that the states |n(0);/an}backeti}htarealmostHeigenstates with eigenvalues equal
+to the rst order energy corrections. The failure is an extra state along V.</text>
+        </slide>
+      </slides>
+      <videos/>
+    </lecture>
+    <lecture>
+      <lecture_title>courses/8-06-quantum-physics-iii-spring-2018/resources/mit8_06s18ch7</lecture_title>
+      <lecture_pdf_url>https://ocw.mit.edu/courses/8-06-quantum-physics-iii-spring-2018/resources/mit8_06s18ch7/</lecture_pdf_url>
+      <lectureno>5</lectureno>
+      <slides>
+        <slide>
+          <slideno>18</slideno>
+          <text>MIT OpenCourseWare  
+https://ocw.mit.edu 
+8.06 Quantum Physics III 
+Spring 2018  
+For information about citing these materials or our Terms of Use, visit: https://ocw.mit.edu/terms</text>
+        </slide>
+      </slides>
+      <videos/>
+    </lecture>
+    <lecture>
+      <lecture_title>courses/8-06-quantum-physics-iii-spring-2018/resources/mit8_06s18ch6</lecture_title>
+      <lecture_pdf_url>https://ocw.mit.edu/courses/8-06-quantum-physics-iii-spring-2018/resources/mit8_06s18ch6/</lecture_pdf_url>
+      <lectureno>4</lectureno>
+      <slides>
+        <slide>
+          <slideno>16</slideno>
+          <text>This is a dierent Hamiltonian each time we change the positions R of the nuclei. The associated 
+Schr odinger equation for the electrons is 
+" # n~2 X 2 (i) (i) r + VeN (R, r)+ Vee(r) (r)= E(i)(R)(r) . (6.10)ri R e R2m i=1 
+The wavefunction for the electrons, as expected, is a function of the position of the electrons r, which 
+appears as the argument of the wavefunction. Since the wavefunction depends on the nuclear positions, 
+this dependence is included as a subscript. Finally, the superscript i labels the various wavefunctions 
+(i)that may appear as solutions of this equation. The associated energies Ee (R) depend on the nuclear 
+(i)positions and the label i. If we calculated all the R (r) we would have a full basis of electronic 
+congurations and we could write an ansatz for the full wavefunction of the molecule: 
+X 
+(R, r)= (i)(R)(i)(r) , (6.11)R 
+i 
+where the (i) are the unknowns. Substitution into the full Schr odinger equation 
+H(R, r)= E(R, r) , (6.12) 
+gives an innite set of coupled dierential equations for (i)(R). This is too dicult, so we try to 
+make do with a single term: 
+(R, r)= (R) R(r) , (6.13) 
+where we would generally use for R(r) the ground state wavefunction for the electrons in the frozen 
+nuclear potential. If we have this wavefunction for all R, as we now assume, we also know the value 
+Ee(R) of the associated energy. 
+We will do a variational analysis. For this we will compute the expectation value h|H|i using 
+(R, r)= (R)R(r). We will then utilize the known R(r) to integrate the electronic dependence in 
+the expectation value 
+Z Z 
+hHi = d Rdr   (R, r)H (R, r)= dRdr   (R)R (r)H (R)R(r) 
+(6.14) Z 
+= d R   (R)He (R) , 
+thus discovering the eective Hamiltonian He for the nuclear degrees of freedom. We begin the 
+calculation by rewriting the original Hamiltonian: 
+NX P2 
+H = HN + He , HN = + VNN (R) . (6.15)2M=1 
+17</text>
+        </slide>
+        <slide>
+          <slideno>20</slideno>
+          <text>Since hHei' Ee(R) the full potential is 
+Ee(R)+ VNN (R) 
+ (6.41)| {z }
+2e
+R 
+Experimentally we have R =1.06= 2.8 eV. A and E 
+Ansatz is not very accurate, for small R wavefunction becomes ground state of Hydrogen atom not 
+ground state of Helium, as it should. 
+21</text>
+        </slide>
+        <slide>
+          <slideno>0</slideno>
+          <text>Chapter 6: Adiabatic approximation 
+B. Zwiebach 
+June 2, 2017 
+Contents 
+1 Introduction 1 
+1.1 AdiabaticapproximationinClassicalMechanics . . . . . . . . . . . . . . . . . . . . . . 1 
+1.2 Quantummechanicssystems . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 4 
+2 Adiabatic Evolution 5 
+3 Systematic approach 7 
+4 Landau-Zener transitions 9 
+5 Berrys phase 12 
+6 Molecules and Born-Oppenheimer 15 
+6.1 Born-Oppenheimerapproximation . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 16 
+6.2 Followingthedirectroute . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 19 
+6.3 The H2+ ion. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 20 
+1 Introduction 
+1.1 Adiabatic approximation in Classical Mechanics 
+Lets go back to classical mechanics, with a harmonic oscillator performing motion but with (t) not 
+constant. The hamiltonian of the system would be 
+2p1 2H(x, p, (t))= + m2(t)x (1.1)2m 2 
+where x and p are going to be functions of time. 
+In general 
+dH H H H = x+ p+ . (1.2)dt x p t 
+Hamiltons equation of motion read 
+H H =  =   (1.3) x , p . p x 
+1</text>
+        </slide>
+        <slide>
+          <slideno>15</slideno>
+          <text>The restoring force is determined by k, and it is due to the electron system, with no reference to the 
+mass M. Since k has units of energy over length-square, we must have 
+~2Energyk =  . (6.3)4 L2 ma
+But k = M2, with  the frequency of nuclear oscillations so we have 
+r ~2 ~2 ~2 
+2  m m M2    ~  . (6.4)4 2 4 2 ma M m a M ma
+We thus nd that the nuclear vibrational energies are 
+r m Evibration  Eelectron . (6.5)M 
+There are also rotations and their energy Erot is even smaller, as they involve essentially no distortion 
+of the molecule 
+L2 ~2`(` + 1) m ~ m Erot = '  2 = (6.6) Erotation ' Eelectron2I Ma2 M ma M 
+Therefore we have the following hierarchy of energies 
+r m m Eelectron : Evibration : Erotation = 1 : : . (6.7)M M 
+6.1 Born-Oppenheimer approximation 
+Consider a molecule with N nuclei and n electrons. The Hamiltonian takes the form 
+N nX P2 X 2pH =  + VNN (R)+ i + VeN (R, r)+ Vee(r) , (6.8)2M 2m =1 i=1 
+where M with  =1, . . . , N are the nuclear masses and 
+P, R : nuclei canonical variables VNN : nuclei-nuclei interaction 
+pi, ri : electron canonical variables Vee : electron-electron interaction 
+R  (R1, . . . , RN ) VeN : electron-nuclei interaction 
+r  (r1, . . . , rn) 
+The wavefunction (R, r) for the molecule is, in position space, a function of all the nuclear positions 
+and all the electron positions. 
+In the limit when M/m  the nuclear skeleton may be considered xed, making the positions 
+R are xed. The electrons then move under the eect of the nuclear potential VeN (R, r) with xed R, 
+and the electron-electron Coulomb repulsion. The relevant Hamiltonian He for the electrons is then 
+nX p2 
+He(p, r; R)= i + VeN (R, r)+ Vee(r) . (6.9)2m i=1 
+16</text>
+        </slide>
+        <slide>
+          <slideno>21</slideno>
+          <text>MIT OpenCourseWare 
+https://ocw.mit.edu 
+8.06 Quantum Physics III 
+Spring 2018 
+For information about citing these materials or our Terms of Use, visit: https://ocw.mit.edu/terms</text>
+        </slide>
+      </slides>
+      <videos/>
+    </lecture>
+    <lecture>
+      <lecture_title>courses/8-06-quantum-physics-iii-spring-2018/resources/mit8_06s18ch4</lecture_title>
+      <lecture_pdf_url>https://ocw.mit.edu/courses/8-06-quantum-physics-iii-spring-2018/resources/mit8_06s18ch4/</lecture_pdf_url>
+      <lectureno>3</lectureno>
+      <slides>
+        <slide>
+          <slideno>38</slideno>
+          <text>MIT OpenCourseWare  
+https://ocw.mit.edu 
+8.06 Quantum Physics III 
+Spring 2018  
+For information about citing these materials or our Terms of Use, visit: https://ocw.mit.edu/terms</text>
+        </slide>
+      </slides>
+      <videos/>
+    </lecture>
+    <lecture>
+      <lecture_title>courses/8-06-quantum-physics-iii-spring-2018/resources/mit8_06s18ch2</lecture_title>
+      <lecture_pdf_url>https://ocw.mit.edu/courses/8-06-quantum-physics-iii-spring-2018/resources/mit8_06s18ch2/</lecture_pdf_url>
+      <lectureno>1</lectureno>
+      <slides>
+        <slide>
+          <slideno>3</slideno>
+          <text>28 CHAPTER 2. HYDROGEN ATOM FINE STRUCTURE
+2. For each xed value of , the states have increasing Nas we move up in energy. The
+numberNis the number of nodes in the solution of the radial equation, thats why
+it is the degree of the polynomial in rthat features in the wavefunction (2.1.11).
+3. The analysis of H(0)so far ignored electron spin. Since the electron is a spin one -
+half particle there is an extra degeneracy: each of the H(0)eigenstates is really two
+degenerate states, one with the electron spin up and the othe r with the electron spin
+down. These states are degenerate because H(0)has no spin dependence.
+4. We will have to supplement H(0)with terms that correspond to corrections that arise
+from relativity and from the spin of the electron. This will b e the main subject of
+the following analysis. It will determine the ne-structure of the hydrogen atom. The
+corrections will break much of the degeneracy of the spectru m.
+5. In order to understand better the spectrum and the propert ies of the Hydrogen atom
+one can apply an electric eld, leading to the Starkeect or a magnetic eld, leading
+to theZeeman eect. These external elds are represented by extra terms in the
+hydrogen atom Hamiltonian.
+Let us now discuss two dierent choices of basis states for the hydrogen atom, both of
+which include the electron spin properly.
+Recall that, in general, for a multiplet of angular momentum j, we have states ( j,mj),
+withmjrunning from jtojin integer steps. All states in the multiplet are J2eigenstates
+with eigenvalue /planckover2pi12j(j+1) and, for each state, /planckover2pi1mjis the eigenvalue of Jz.
+Because the electron has spin one half, its states are labele d as
+(s,ms),withs=1
+2, ms=1
+2. (2.1.13)
+In the hydrogen atom the angular momentum can take dierent values, but the spin of
+the electron is always one-half. As a result, the label sis often omitted, and we usually only
+record the value of ms. For hydrogen basis states we thus have quantum numbers n,,m ,
+andms. To avoid confusion, we have added the subscript to m, thus emphasizing that
+this is the azimuthal quantum number for orbital angular mom entum. Since we are not
+combiningtheelectronspintoitsorbitalangularmomentum , thestatesformtheuncoupled
+basis:
+Uncoupled basis quantum numbers: ( n,,m ,ms). (2.1.14)
+The states are completely specied by these quantum numbers . As we let those quantum
+numbers run over all possible values we obtain an orthonorma l basis of states.
+It is often useful to use an alternative basis where the state s are eigenstates of J2andJz,
+where the total angular momentum Jis obtained by adding the orbital angular momentum
+Lto the spin angular momentum S:
+J=L+S. (2.1.15)</text>
+        </slide>
+        <slide>
+          <slideno>13</slideno>
+          <text>38 CHAPTER 2. HYDROGEN ATOM FINE STRUCTURE
+To evaluate (2.4.31), we rst do a Taylor expansion of the pot ential that enters the integral
+about the point u= 0:
+V(r+u) =V(r)+/summationdisplay
+iiV/vextendsingle/vextendsingle/vextendsingle
+rui+1
+2/summationdisplay
+i,jijV/vextendsingle/vextendsingle/vextendsingle
+ruiuj+... (2.4.30)
+All derivatives here are evaluated at the center of the elect ron. Plugging back into the
+integral (2.4.31) and dropping the subscript electron we have
+/tildewideV(r) =/integraldisplay
+d3u0(u)/parenleftBig
+V(r)+/summationdisplay
+iiV/vextendsingle/vextendsingle/vextendsingle
+rui+1
+2/summationdisplay
+i,jijV/vextendsingle/vextendsingle/vextendsingle
+ruiuj+.../parenrightBig
+.(2.4.31)
+Allrdependent functions can be taken out of the integrals. Recal ling that the integral of
+0over volume is one, we get
+V(r) =V(r) +/summationdisplay
+iiV/vextendsingle/vextendsingle/vextendsingle
+r/integraldisplay
+d3u0(u)i+1
+2/summationdisplay
+i,jijV/vextendsingle/vextendsingle/vextendsingle
+r/integraldisplay
+d3u0(u)uiuj+...(2.4.32)
+Due to spherical symmetry the rst integral vanishes and the second takes the form
+/integraldisplay
+d3u0(u)uiuj=1
+3ij/integraldisplay
+d3u0(u)u2. (2.4.33)
+Indeed the integral must vanish for i/ne}ationslash=jand must take equal values for i=j= 1,2,3.
+Sinceu2=u2
+1+u2
+2+u2
+3, the result follows. Using this we get
+V(r) =V(r) +1
+2/summationdisplay
+iiiV/vextendsingle/vextendsingle/vextendsingle
+r1
+3/integraldisplay
+d3uf(u)2+...
+=V(r) +1
+62V/integraldisplay
+d3u0(u)u2+... .(2.4.34)
+The second term represents the correction Vto the potential energy:
+V=1
+62V/integraldisplay
+d3u0(u)u2. (2.4.35)
+To get an estimate, let us assume that the charge is distribut ed uniformly over a sphere of
+radiusu0. This means that 0(u) is a constant for u&lt;u0
+0(u) =3
+4u3
+0
+
+1, u&lt;u 0,
+0, u&gt;u 0.(2.4.36)
+The integral one must evaluate then gives
+/integraldisplay
+d3u0(u)u2=/integraldisplayu0
+04u2duu2
+4
+3u3
+0=3
+u3
+0/integraldisplayu0
+0u4du=3
+5u2
+0. (2.4.37)</text>
+        </slide>
+        <slide>
+          <slideno>17</slideno>
+          <text>42 CHAPTER 2. HYDROGEN ATOM FINE STRUCTURE
+Working out the constants in terms of E(0)
+nand rest energies we get
+E(1)
+njmj;spin-orbit=(E(0)
+n)2
+mc2n/bracketleftbig
+j(j+1)(+1)3
+4/bracketrightbig
+/parenleftbig
++1
+2/parenrightbig
+(+1), /ne}ationslash= 0. (2.4.56)
+SinceLvanishes identically acting on any = 0 state, it is physically reasonable, as we will
+do, to assume that the spin-orbit correction vanishes for = 0 states. On the other hand
+the limit of the above formula as 0, while somewhat ambiguous, is nonzero. We set
+j=+1
+2(the other possibility j=1
+2does not apply for = 0) and then take the limit
+as0. Indeed,
+E(1)
+njmj;spin-orbit/vextendsingle/vextendsingle/vextendsingle
+j=+1
+2=(E(0)
+n)2
+mc2n/bracketleftbig
+(+1
+2)(+3
+2)(+1)3
+4/bracketrightbig
+/parenleftbig
++1
+2/parenrightbig
+(+1)
+=(E(0)
+n)2
+mc2n/parenleftbig
++1
+2/parenrightbig
+(+1),(2.4.57)
+and now taking the limit:
+lim
+0E(1)
+njmj;spin-orbit/vextendsingle/vextendsingle/vextendsingle
+j=+1
+2=(E(0)
+n)2
+mc2(2n) =4mc21
+2n3. (2.4.58)
+We see that this limit is in fact identical to the Darwin shift (2.4.24) of the nSstates. This
+is a bit surprising and will play a technical role below.
+2.4.4 Combining results
+For/ne}ationslash= 0 states we can add the energy shifts from spin-orbit and fro m the relativistic
+correction, both of them expressed as expectation values in the coupled basis. The result,
+thereforewillgivetheshiftsofthecoupledstates. Collec ting ourresults(2.4.46) and(2.4.56)
+we have
+/angbracketleftBig
+njmj/vextendsingle/vextendsingle/vextendsingleHrel+Hspin-orbit/vextendsingle/vextendsingle/vextendsinglenjmj/angbracketrightBig
+=(E(0)
+n)2
+2mc2/braceleftBigg
+34n/parenleftbig
++1
+2/parenrightbig+2n/bracketleftbig
+j(j+1)(+1)3
+4/bracketrightbig
+/parenleftbig
++1
+2/parenrightbig
+(+1)/bracerightBigg
+=(E(0)
+n)2
+2mc2/braceleftBigg
+3+2n/bracketleftBigg
+j(j+1)3(+1)3
+4
+/parenleftbig
++1
+2/parenrightbig
+(+1)/bracketrightBigg/bracerightBigg
+.(2.4.59)
+These are the ne structure energy shifts for all states in th e spectrum of hydrogen. The
+states in a coupled multiplet are characterized by ,jandmjand each multiplet as a whole
+is shifted according to the above formula. The degeneracy wi thin the multiplet is unbroken
+because the formula has no mjdependence. This formula, as written, hides some additiona l
+degeneracies. We uncover those next.</text>
+        </slide>
+        <slide>
+          <slideno>0</slideno>
+          <text>Chapter 2
+Fine Structure
+c/ciclecoytB. Zwiebach
+2.1 Review of hydrogen atom
+The hydrogen atom Hamiltonian is by now familiar to you. You h ave found the bound state
+spectrum in more than one way and learned about the large dege neracy that exists for all
+states except the ground state. We will call the hydrogen ato m Hamiltonian H(0)and it is
+given by
+H(0)=p2
+2me2
+r. (2.1.1)
+We take this to be the known Hamiltonian, meaning that we kn ow its spectrum. This
+Hamiltonian is supplemented with corrections that can be st udied in perturbation theory.
+That study is the subject of this chapter. We begin, however, with some review and
+comments.
+The massminH(0)is the reduced mass of the electron and proton, which we can
+accurately set equal to the mass of the electron. If one wishe s to consider the case of an an
+electron bound to a nucleus with Zprotons one lets e2Ze2inH(0). The Bohr radius is
+the length scale build from /planckover2pi1,m, ande2
+a0/planckover2pi12
+me253pm. (2.1.2)
+The energy levels are enumerated using a principal quantum number n, an integer that
+must be greater or equal to one:
+En=e2
+2a01
+n2, n= 1,2,... . (2.1.3)
+Note thatH(0)is a non-relativistic Hamiltonian: the speed of light does n ot enter in it,
+and the kinetic term is that of Newtonian mechanics. The ener gy scale relevant to the
+25</text>
+        </slide>
+        <slide>
+          <slideno>26</slideno>
+          <text>MIT OpenCourseWare  
+https://ocw.mit.edu 
+8.06 Quantum Physics III 
+Spring 2018  
+For information about citing these materials or our Terms of Use, visit: https://ocw.mit.edu/terms</text>
+        </slide>
+        <slide>
+          <slideno>10</slideno>
+          <text>2.4. FINE STRUCTURE OF HYDROGEN 35
+The rst correction is the relativistic energy correction a nticipated earlier. The second is
+the spin-orbit coupling, and the third is the Darwincorrection, that as we shall see aects
+only= 0 states.
+Recall that the energy scale for H(0)eigenstates is 2mc2. We will now see that all the
+above energy corrections are of order 4mc2thus smaller by a factor of 21
+19000than the
+zeroth-order energies. This suggests that for the hydrogen atom, the role of the unit-free
+parameterof perturbation theory is taken by the ne structure constan t:2. Of
+course, in reality we cannot adjust the value of 2nor we can take it to zero.
+For the relativistic correction, recalling that pmc, we indeed have
+Hrel.=p4
+8m3c2 4mc2. (2.3.15)
+For spin-orbit we rst rewrite the term, using
+1
+rdV
+dr=1
+rd
+dr/parenleftbigg
+e2
+r/parenrightbigg
+=e2
+r3, (2.3.16)
+so that
+Hspin-orbit =e2
+2m2c21
+r3SL. (2.3.17)
+For an estimate we set SL/planckover2pi12,ra0, and recall that a0=/planckover2pi1
+mc1
+:
+Hspin-orbit e2
+m2c2/planckover2pi12
+a3
+0=/planckover2pi1c
+m2c2/planckover2pi12
+a3
+0=/parenleftBig/planckover2pi1
+mca0/parenrightBig3
+mc2=4mc2. (2.3.18)
+We can evaluate the Darwin term using V=e2/r:
+HDarwin=e2/planckover2pi12
+8m2c22/parenleftbigg1
+r/parenrightbigg
+=e2/planckover2pi12
+8m2c2(4(r)) =
+2e2/planckover2pi12
+m2c2(r). (2.3.19)
+To estimate this correction note that, due to the function the the integral in the expecta-
+tion value will introduce a factor |(0)|2a3
+0. We will therefore have
+HDarwine2/planckover2pi12
+m2c2a3
+04mc2, (2.3.20)
+as this is exactly the same combination of constants that we h ad for spin orbit above.
+2.4 Fine structure of hydrogen
+The ne structure of hydrogen is the spectrum of the atom once one takes into account the
+corrections indicated in (2.3.14). After the partial simpl ications considered above we have
+H=p2
+2m+V
+/bracehtipupleft/bracehtipdownright/bracehtipdownleft/bracehtipupright
+H(0)p4
+8m3c2/bracehtipupleft/bracehtipdownright/bracehtipdownleft/bracehtipupright
+Hrel.+e2
+2m2c2SL
+r3/bracehtipupleft/bracehtipdownright/bracehtipdownleft/bracehtipupright
+Hspin-orbit+
+2e2/planckover2pi12
+m2c2(r)
+/bracehtipupleft/bracehtipdownright/bracehtipdownleft/bracehtipupright
+HDarwin. (2.4.21)</text>
+        </slide>
+        <slide>
+          <slideno>15</slideno>
+          <text>40 CHAPTER 2. HYDROGEN ATOM FINE STRUCTURE
+The problem has been reduced to the computation of the expect ation value of V(r) and
+V2(r) in thenmstate. The expectation value of V(r) is obtained from the virial theorem
+that states that /an}backetle{tV/an}backeti}ht= 2E(0)
+n. ForV2(r) we have
+/an}backetle{tV2/an}backeti}ht=e4/angbracketleftBig1
+r2/angbracketrightBig
+=e41
+a2
+0n3/parenleftbig
++1
+2/parenrightbig=/parenleftbigge2
+2a01
+n2/parenrightbigg24n
++1
+2= (E(0)
+n)24n
++1
+2.(2.4.45)
+Back into (2.4.44) we nd
+E(1)
+n,mms;rel=(E(0)
+n)2
+2mc2/bracketleftBig4n
++1
+23/bracketrightBig
+=1
+84(mc2)
+n4/bracketleftBig4n
++1
+23/bracketrightBig
+.(2.4.46)
+The complete degeneracy of multiplets for a given nhas been broken. That degeneracy
+ofH(0)was explained by the conserved Runge-Lenz vector. It is clea r that the relativistic
+correction has broken that symmetry.
+We have computed the above correction using the uncoupled ba sis
+E(1)
+n,mms;rel=/an}backetle{tnmm s|Hrel|nmm s/an}backeti}ht=f(n,). (2.4.47)
+Here we added the extra equality to emphasize that the matrix elements depend only on n
+and. We have already seen that in the full degenerate subspace wi th principal quantum
+numbernthe matrix for Hrelis diagonal in the uncoupled basis. But now we see that in
+each degenerate subspace of xed nand,Hrelis in fact a multiple of the identitymatrix,
+since the matrix elements are independent of mandms(theLzandSz) eigenvalues. A
+matrix equal to a multiple of the identity is invariant under any orthonormal change of
+basis. For any 1
+2multiplet, the resulting jmultiplets provide an alternative orthonormal
+basis. The invariance of a matrix proportional to the identi ty implies that
+E(1)
+njmj,rel=/an}backetle{tnjmj|Hrel|njmj/an}backeti}ht=f(n,). (2.4.48)
+withthesamefunction f(n,)as in(2.4.47), andtheperturbationisdiagonal inthiscou pled
+basis too. This is clear anyway because the perturbation com mutes with L2,J2andJzand
+and any two degenerate states in the coupled basis dier eithe r in,jorjz.
+The preservation of the matrix elements can also be argued mo re explicitly. Indeed,
+any state in the coupled basis is a superposition of orthonor mal uncoupled basis states with
+constant coecients ci:
+|njmj/an}backeti}ht=/summationdisplay
+ici|nmi
+mi
+s/an}backeti}ht,with/summationdisplay
+i|ci|2= 1, (2.4.49)
+because the state on the left-hand side must also have unit no rm. Therefore, using the</text>
+        </slide>
+        <slide>
+          <slideno>8</slideno>
+          <text>2.3. THE DIRAC EQUATION 33
+This equation is a bit reminiscent of the equation LL=i/planckover2pi1L, for angular momentum.
+Back in the Pauli Hamiltonian (2.2.14), leaving identity ma trices implicit, and setting
+q=e, we nd
+HPauli=1
+2m/parenleftBig
+p+e
+cA/parenrightBig2
++i
+2mi/planckover2pi1q
+cBe(x)
+=1
+2m/parenleftBig
+p+e
+cA/parenrightBig2
++e/planckover2pi1
+2mcBe(x).(2.2.20)
+The second term in this expanded Pauli Hamiltonian gives the coupling of the electron spin
+to the magnetic eld and agrees precisely with the expected c oupling (2.2.5). We thus see
+that the Pauli equation predicts the g= 2 value in the electron magnetic moment.
+2.3 The Dirac equation
+While the Pauli equation incorporates correctly the coupli ng of the electron spin to electro-
+magnetic elds, it is not a relativistic equation. As discov ered by Dirac, to include relativity
+one has to work with matrices and the Pauli spinor must be upgr aded to a four-component
+spinor. The analysis begins with the familiar relation betw een relativistic energies and
+momenta
+E2p2c2=m2c4E=/radicalbig
+p2c2+m2c4 (2.3.1)
+This suggests that a relativistic Hamiltonian for a free par ticle could take the form
+H=/radicalbig
+p2c2+m2c4, (2.3.2)
+with associated Schr odinger equation
+i/planckover2pi1
+t=/radicalbig
+p2c2+m2c4. (2.3.3)
+It is not clear how to treat the square root so, at least for sma ll velocities pmc, the
+Hamiltonian can be expanded:
+H=mc2/radicalbigg
+1+p2
+m2c2=mc2/bracketleftBigg
+1+p2
+2m2c21
+8/parenleftbiggp2
+m2c2/parenrightbigg2
++.../bracketrightBigg
+=mc2+p2
+2m1
+8p4
+m3c2+...(2.3.4)
+Ifweignoretheconstantrestmass,thersttermisthefamil iarnon-relativisticHamiltonian,
+and the next term is the rst nontrivial relativistic correc tion. For small momenta we will
+treat that term as a perturbation.
+More elegantly, Dirac wanted to nd a Hamiltonian linear in m omenta and without
+square roots. This would be possible if one could write the re lativistic energy as the square
+of a linear function of the momentum:
+c2p2+m2c4= (cp+mc2)2= (c1p1+c2p2+c3p3+mc2)2.(2.3.5)</text>
+        </slide>
+        <slide>
+          <slideno>16</slideno>
+          <text>2.4. FINE STRUCTURE OF HYDROGEN 41
+diagonal nature of the matrix elements in the uncoupled basi s we get, as claimed
+/an}backetle{tnjmj|Hrel|njmj/an}backeti}ht=/summationdisplay
+i,kc
+ick/an}backetle{tnmi
+mi
+s|Hrel|nmk
+mk
+s/an}backeti}ht
+=/summationdisplay
+i|ci|2/an}backetle{tnmi
+mi
+s|Hrel|nmi
+mi
+s/an}backeti}ht
+=/summationdisplay
+i|ci|2f(n,) =f(n,).(2.4.50)
+2.4.3 Spin orbit coupling
+The spin-orbit contribution to the Hamiltonian is
+Hspin-orbit =e2
+2m2c21
+r3SL. (2.4.51)
+Note thatHspin-orbit commutes with L2because L2commutes with any Liand any Si.
+Moreover,Hspin-orbit commutes with J2and withJzsince, in fact, [ Ji,SL] = 0 for
+anyi;SLis a scalar operator for J. It follows that Hspin-orbitis diagonal in the level
+ndegenerate subspace in the coupled basis |njmj/an}backeti}ht. In fact, as we will see, the matrix
+elements are m-independent. This is a nontrivial consequence of Hspin-orbitbeing a scalar
+underJ. To compute the matrix elements we recall that J=S+Land
+E(1)
+njmj;spin-orbit=e2
+2m2c2/angbracketleftBig
+njmj/vextendsingle/vextendsingle/vextendsingle1
+r3SL/vextendsingle/vextendsingle/vextendsinglenjmj/angbracketrightBig
+=e2
+2m2c2/planckover2pi12
+2/bracketleftbig
+j(j+1)(+1)3
+4/bracketrightbig/angbracketleftBig
+njmj/vextendsingle/vextendsingle/vextendsingle1
+r3/vextendsingle/vextendsingle/vextendsinglenjmj/angbracketrightBig
+.(2.4.52)
+We need the expectation value of 1 /r3in these states. It is known that
+/angbracketleftBig
+nm/vextendsingle/vextendsingle/vextendsingle1
+r3/vextendsingle/vextendsingle/vextendsinglenm/angbracketrightBig
+=1
+n3a3
+0/parenleftbig
++1
+2/parenrightbig
+(+1). (2.4.53)
+Because ofthe mindependenceof this expectation value(andits obvious msindependence)
+the operator 1 /r3is a multiple of the identity matrix in each 1
+2multiplet. It follows that
+it is the same multiple of the identity in the coupled basis de scription. Therefore
+/angbracketleftBig
+njmj/vextendsingle/vextendsingle/vextendsingle1
+r3/vextendsingle/vextendsingle/vextendsinglenjmj/angbracketrightBig
+=1
+n3a3
+0/parenleftbig
++1
+2/parenrightbig
+(+1). (2.4.54)
+Using this in (2.4.52)
+E(1)
+njmj;spin-orbit=e2/planckover2pi12
+4m2c2/bracketleftbig
+j(j+1)(+1)3
+4/bracketrightbig
+n3a3
+0/parenleftbig
++1
+2/parenrightbig
+(+1). (2.4.55)</text>
+        </slide>
+        <slide>
+          <slideno>11</slideno>
+          <text>36 CHAPTER 2. HYDROGEN ATOM FINE STRUCTURE
+We will study each of these terms separately and then combine our results to give the ne
+structure of hydrogen. There are further smaller correctio ns that we will not examine here,
+such as hyperne splitting and Lamb eect.
+2.4.1 Darwin correction
+Let us now evaluate the Darwin correction. Since this intera ction has a delta function
+at the origin, the rst order correction to the energy vanish es unless the wavefunction is
+non-zero at the origin. This can only happen for nSstates. There is no need to use the
+apparatus of degenerate perturbation theory. Indeed, for  xednthere are two orthogonal
+= 0 states, one with electron spin up and one with electron spi n down. While these states
+are degenerate, the Darwin perturbation commutes with spin and is therefore diagonal in
+the two-dimensional subspace. There is no need to include th e spin in the calculation and
+we have
+E(1)
+n00,Darwin=/an}backetle{tn00|HDarwin|n00/an}backeti}ht=
+2e2/planckover2pi12
+m2c2|n00(0)|2. (2.4.22)
+As is shown in the homework, the radial equation can be used to determine the value of the
+nSwavefunctions at the origin. You will nd that
+|n00(0)|2=1
+n3a3
+0. (2.4.23)
+As a result
+E(1)
+n00,Darwin=e2/planckover2pi12
+2m2c21
+a3
+0n3=4(mc2)1
+2n3. (2.4.24)
+This completes the evaluation of the Darwin correction
+The Darwin term in the Hamiltonian arises from the eliminati on of one of the two two-
+component spinors in the Dirac equation. As we will show now s uch a correction would arise
+from a nonlocal correction to the potential energy term. It i s as if the electron had grown
+from point-like to a ball with radius of order its Compton wav elength/planckover2pi1
+mec. The potential
+energy due to the eld of the proton must then be calculated by integrating the varying
+electric potential over the charge distribution of the elec tron. While a simple estimate of
+this nonlocal potential energy doesreproducetheDarwin co rrection rather closely, onemust
+not reach the conclusion that the electron is no longer a poin t particle. Still the fact remains
+that in a relativistic treatment of an electron, its Compton wavelength is relevant and is
+physically the shortest distance an electron can be localiz ed.
+The potential energy V(r) of the electron, as a point particle, is the product of the
+electron charge ( e) times the electric potential ( r) created by the proton:
+V(r) = (e)(r) = (e)e
+r. (2.4.25)
+Let us call/tildewideV(r) the potential energy when the electron is a charge distribu tion centered
+at a point rwith|r|=r(see Figure 2.1). This energy is obtained by integration ove r the</text>
+        </slide>
+        <slide>
+          <slideno>12</slideno>
+          <text>2.4. FINE STRUCTURE OF HYDROGEN 37
+Figure 2.1: A Darwin type correction to the energy arises if the electron charg e is smeared over a
+region of size comparable to its Compton wavelength. Here the cent er of the spherically symmetric
+electron cloud is at Pand the proton is at the origin. The vector uis radial relative to the center
+of the electron.
+electron distribution. Using the vector uto dene position relative to the center Pof the
+electron, and letting (u) denote the position dependent charge density, we have
+/tildewideV(r) =/integraldisplay
+electrond3u(u)(r+u), (2.4.26)
+where, as shown in the Figure, r+uis the position of the integration point, measured
+relative to the proton at the origin. It is convenient to writ e the charge density in terms of
+a normalized function 0:
+(u) =e0(u)/integraldisplay
+electrond3u0(u) = 1, (2.4.27)
+which guarantees that the integral of over the electron is indeed ( e). Recalling that
+e(r+u) =V(r+u) we now rewrite (2.4.26) as
+/tildewideV(r) =/integraldisplay
+electrond3u0(u)V(r+u). (2.4.28)
+This equation has a clear interpretation: the potential ene rgy is obtained as a weighted
+integral of potential due to the proton over the extended ele ctron. If the electron charge
+would be perfectly localized, 0(u) =(u) andV(r) would just be equal to V(r). We will
+assume that the distribution of charge is spherically symme tric, so that
+0(u) =0(u). (2.4.29)</text>
+        </slide>
+        <slide>
+          <slideno>20</slideno>
+          <text>2.5. ZEEMAN EFFECT 45
+For the record, the total energy of the hydrogen states is the zeroth contribution plus
+the ne structure contribution. Together they give
+Enjmj=e2
+2a01
+n2/bracketleftBig
+1+2
+n2/parenleftBign
+j+1
+23
+4/parenrightBig/bracketrightBig
+. (2.4.65)
+This is the ne structure of hydrogen! There are, of course,  ner corrections. The so-
+called Lamb shift, for example, breaks the degeneracy betwe en 2S1/2and 2P1/2and is of
+order5. There is also hyperne splitting, which arises from the cou pling of the magnetic
+moment of the proton to the magnetic moment of the electron. S uch coupling leads to a
+splitting that is a factor me/mpsmaller than ne structure.
+2.5 Zeeman eect
+In remarkable experiment done in 1896, the Dutch physicist P ieter Zeeman (1865-1943)
+discovered that atomic spectral lines are split in the prese nce of an external magnetic eld.
+For this work Zeeman was awarded the Nobel Prize in 1902. The p roper understanding of
+this phenomenon had to wait for Quantum Mechanics.
+The splitting of atomic energy levels by a constant, uniform , external magnetic eld, the
+Zeeman eect , has been used as a tool to measure inaccessible magnetic el ds. In observing
+the solar spectrum, a single atomic line, as seen from light e merging from outside a sunspot,
+splits into various lines inside the sunspot. We have learne d that magnetic elds inside a
+sunspot typically reach 3 ,000 gauss. Sunspots are a bit darker and have lower temperatu re
+than the rest of the solar surface. They can last from hours to months, and their magnetic
+energy can turn into powerful solar ares.
+The external magnetic eld interacts with the total magneti c moment of the electron.
+The electron has magnetic moment due to its orbital angular m omentum and one due to
+its spin
+=e
+2mcL,s=e
+mcS, (2.5.1)
+where we included the g= 2 factor in the spin contribution. The Zeeman Hamiltonian i s
+thus given by
+HZeeman=(+s)B=e
+2mc(L+2S)B. (2.5.2)
+Conventionally, we align the magnetic eld with the positiv ezaxis so that B=Bzand
+thus get
+HZeeman=eB
+2mc(Lz+2Sz). (2.5.3)
+When we consider the Zeeman eect on Hydrogen we must not forge t ne structure.
+The full Hamiltonian to be considered is
+H=H(0)+Hfs+HZeeman. (2.5.4)</text>
+        </slide>
+        <slide>
+          <slideno>18</slideno>
+          <text>2.4. FINE STRUCTURE OF HYDROGEN 43
+Intheaboveformulatherearetwocases toconsiderforany xedvalueofj: themultiplet
+can have=j1
+2or the multiplet can have =j+1
+2. We will now see something rather
+surprising. In both of these cases the shift is the same, mean ing that the shift is in fact 
+independent! It just depends on j. Callf(j,) the term in brackets above
+f(j,)j(j+1)3(+1)3
+4
+/parenleftbig
++1
+2/parenrightbig
+(+1). (2.4.60)
+The evaluation of this expression in both cases gives the sam e result:
+f(j,)/vextendsingle/vextendsingle/vextendsingle
+=j1
+2=j(j+1)3(j1
+2)(j+1
+2)3
+4/parenleftbig
+j1
+2/parenrightbig
+j/parenleftbig
+j+1
+2/parenrightbig =2j2+j
+j/parenleftbig
+j1
+2/parenrightbig/parenleftbig
+j+1
+2/parenrightbig=2/parenleftbig
+j+1
+2/parenrightbig,
+f(j,)/vextendsingle/vextendsingle/vextendsingle
+=j+1
+2=j(j+1)3(j+1
+2)(j+3
+2)3
+4/parenleftbig
+j+1
+2/parenrightbig
+(j+1)/parenleftbig
+j+3
+2/parenrightbig=2j25j3/parenleftbig
+j+1
+2/parenrightbig
+(j+1)/parenleftbig
+j+3
+2/parenrightbig=2/parenleftbig
+j+1
+2/parenrightbig.
+(2.4.61)
+We can therefore replace in (2.4.59) the result of our evalua tion, which we label as ne
+structure (fs) shifts:
+E(1)
+nj,mj;fs=(E(0)
+n)2
+2mc2/bracketleftBig4n
+j+1
+23/bracketrightBig
+=4(mc2)1
+2n4/bracketleftBign
+j+1
+23
+4/bracketrightBig
+.(2.4.62)
+More briey we can write
+E(1)
+nj,mj;ne=4mc2Sn,j,withSn,j1
+2n4/bracketleftBign
+j+1
+23
+4/bracketrightBig
+.(2.4.63)
+Let us consider a few remarks:
+1. The dependence on jand absence of dependence on in the energy shifts could be
+anticipated from the Dirac equation. The rotation generato r that commutes with the
+Dirac Hamiltonian is J=L+S, which simultaneously rotates position, momenta, and
+spin states. Neither LnorSare separately conserved. With Ja symmetry, states are
+expected to be labelled by energy and jand must be mjindependent.
+2. The formula (2.4.63) works for nSstates! For these = 0 states we were supposed
+to add the relativistic correction and the Darwin correctio n, since their spin-orbit
+correction is zero. But we noticed that the limit 0 of the spin-orbit correction
+reproduces the Darwin term. Whether or not this is a meaningf ul coincidence, it
+means the sum performed above gives the right answer for 0.
+3. Whilealargeamount ofthedegeneracy of H(0)hasbeenbroken, forxed n, multiplets
+with the same value of j, regardless of , remain degenerate. The states in each j
+multiplet do not split.</text>
+        </slide>
+        <slide>
+          <slideno>19</slideno>
+          <text>44 CHAPTER 2. HYDROGEN ATOM FINE STRUCTURE
+4. SinceSn,j&gt;0 all energy shifts are down. Indeed
+n
+j+1
+2n
+jmax+1
+2=n
+max+1
+2+1
+2=n
+n= 1n
+j+1
+23
+41
+4.(2.4.64)
+5. For a given xed n, states with lower values of jget pushed further down. As n
+increases splittings fall o like n3.
+A table of values of Sn,jis given here below
+n j S n,j
+11
+21
+8
+21
+25
+128
+3
+21
+128
+31
+21
+72
+3
+21
+216
+5
+21
+648
+The energy diagram for states up to n= 3 is given here (not to scale)
+S P D
+= 0 = 1 = 2
+............
+n= 3
+3D5/23P3/2 3D3/2
+3S1/2 3P1/2
+n= 2
+2P3/2
+2S1/2 2P1/2
+n= 1
+1S1/2Fine Structure Spectrum</text>
+        </slide>
+        <slide>
+          <slideno>24</slideno>
+          <text>2.5. ZEEMAN EFFECT 49
+Actually H(0)is simple because the Zeeman Hamiltonian commutes with the z ero-th order
+hydrogen Hamiltonian/bracketleftbigLz+2Sz, H(0)/bracketrightbig
+= 0. (2.5.24)
+We can thus nd eigenstates of both simultaneously. Those ar e in fact the uncoupled basis
+states! We have
+H(0)|nmms/an}backeti}ht=E(0)
+n|nmms/an}backeti}ht
+(Lz+2Sz)|nmms/an}backeti}ht=/planckover2pi1(m+2ms)|nmms/an}backeti}ht.(2.5.25)
+and therefore the uncoupled basis states are the exactenergy eigenstates of H(0)and have
+energies
+Enmms=E(0)
+n+e/planckover2pi1
+2mcB(m+2ms). (2.5.26)
+Some of the degeneracy of H(0)has been removed, but some remains. For a xed principal
+quantum number nthere are degeneracies among 1
+2states and degeneracies among such
+multiplets with anddierent. This is illustrated in Figure 2.2.
+Figure 2.2: Illustrating the degeneraciesremainingfor = 0 and= 1after the inclusion ofZeeman
+term in the Hamiltonian. Accounting for the spin of the electron ther e two degenerate states in the
+= 1 multiplet 1 1
+2and each of the two states in the = 0 multiplet 0 1
+2is degenerate with a
+state in the = 1 multiplet.
+The problem now is to compute the corrections due to Hfson the non-degenerate and
+on the degenerate subspaces of H(0). The non-degenerate cases are straightforward, but
+the degenerate cases could involve diagonalization. We mus t therefore consider the matrix
+elements
+/an}backetle{tnm
+m
+s|Hfs|nmms/an}backeti}ht, (2.5.27)
+with the condition
+m
++2m
+s=m+2ms, (2.5.28)</text>
+        </slide>
+        <slide>
+          <slideno>9</slideno>
+          <text>34 CHAPTER 2. HYDROGEN ATOM FINE STRUCTURE
+Expanding the right-hand side and equating coecients one  nds that the following must
+hold
+2
+1=2
+2=2
+3=2= 1,
+ij+ji={i,j}= 0, i/ne}ationslash=j,
+i+i={i,}= 0.(2.3.6)
+Therelations on thesecond andthirdlines implythat s ands cant benumbers, because
+theywouldhavetobezero. Itturnsoutthat sandsarefour-by-fourhermitianmatrices:
+=/parenleftbigg0
+0/parenrightbigg
+, =/parenleftbigg10
+01/parenrightbigg
+. (2.3.7)
+Using (2.3.5), the Dirac Hamiltonian is simply the linear fu nction of momentum that is the
+square root of c2p2+m2c4. We thus have
+HDirac=cp+mc2. (2.3.8)
+The Dirac equation is
+i/planckover2pi1
+t=/parenleftbig
+cp+mc2/parenrightbig
+, (2.3.9)
+where  is a Dirac spinor, a four-component column vector tha t can be thought to be
+composed by two two-component Pauli spinors and:
+ =/parenleftbigg
+/parenrightbigg
+, =/parenleftbigg1
+2/parenrightbigg
+, =/parenleftbigg1
+2/parenrightbigg
+. (2.3.10)
+The coupling to electromagnetic elds is done as before
+i/planckover2pi1
+t=/bracketleftBig
+c/parenleftBig
+p+e
+cA/parenrightBig
++mc2+V(r)/bracketrightBig
+, (2.3.11)
+where the coupling of the electron to the scalar potential ( r) is included via
+V(r) =e(r) =e2
+r. (2.3.12)
+ThegreatadvantageoftheDiracequation(2.3.11) isthatth ecorrectionstothehydrogen
+Hamiltonian H(0)can be derived systematically by nding the appropriate Ham iltonianH
+that acts on the Pauli spinor . The analysis, can be done with A= 0, since the stationary
+proton creates no vector potential. The result of the analys is shows that
+H=E, (2.3.13)
+where:
+H=p2
+2m+V
+/bracehtipupleft/bracehtipdownright/bracehtipdownleft/bracehtipupright
+H(0)p4
+8m3c2/bracehtipupleft/bracehtipdownright/bracehtipdownleft/bracehtipupright
+Hrel.+1
+2m2c21
+rdV
+drSL
+/bracehtipupleft/bracehtipdownright/bracehtipdownleft/bracehtipupright
+Hspin-orbit+/planckover2pi12
+8m2c22V
+/bracehtipupleft/bracehtipdownright/bracehtipdownleft/bracehtipupright
+HDarwin.(2.3.14)</text>
+        </slide>
+        <slide>
+          <slideno>2</slideno>
+          <text>2.1. REVIEW OF HYDROGEN ATOM 27
+S P D F
+= 0= 1= 2= 3
+...............
+n= 4
+N= 3N= 2N= 1N= 0
+n= 3
+N= 2N= 1N= 0
+n= 2
+N= 1N= 0
+n= 1
+N= 0
+The table features the commonly used notation where capital letters are used to denote
+the various values of the orbital angular momentum . If we have Ldenote the generic
+capital letter for angular momentum we have L() where
+L(= 0) =S, L(= 1) =P, L(= 2) =D, L(= 3) =F,... . (2.1.10)
+Thus, for example, an Sstate is a state with = 0, aPstate is a state with = 1, and a
+Dstate is a state with = 2.
+Any hydrogen eigenstate specied by the three quantum numbe rsn,,m, because, as it
+follows from (2.1.9), the value of Nis then xed. The wavefunction takes the form
+n,,m(x) =A/parenleftbiggr
+a0/parenrightbigg
+/parenleftbigg
+Polynomial inr
+a0of degreeN/parenrightbigg
+er
+na0Y,m(,),(2.1.11)
+whereAis a normalization constant and N=n(+1). If you look at the wavefunction,
+the value of ncan be read from the exponential factor. The value of can be read from
+the radial prefactor, or from the spherical harmonic. The va lue ofmcan be read from
+the spherical harmonic. For the ground state n= 1,= 0 andm= 0. The normalized
+wavefunction is
+1,0,0(r) =1/radicalbig
+a3
+0er
+a0. (2.1.12)
+Comments:
+1. There are n2degenerate states at any energy level with principal quantu m number
+n. This degeneracy explained by the existence of a conserved q uantum Runge-Lenz
+vector. For a given nthe states with various s correspond, in the semiclassical
+picture, to orbits of dierent eccentricity but the same semi -major axis. The orbit
+with= 0 is the most eccentric one and the orbit with maximum =n1 is the
+most circular one.</text>
+        </slide>
+        <slide>
+          <slideno>21</slideno>
+          <text>46 CHAPTER 2. HYDROGEN ATOM FINE STRUCTURE
+Recall that in ne structure, there is an internal magnetic  eldBintassociated with spin-
+orbit coupling. This is the magnetic eld seen by the electro n as it goes around the proton.
+We have therefore two extreme possibilities concerning the external magnetic eld Bof the
+Zeeman eect:
+(1) Weak-eld Zeeman eect: BBint. In this case the Zeeman eect is small compared
+with ne structure eects. Accordingly, the original Hamilt onianH(0)together with
+the ne structure Hamiltonian Hfsare thought as the known Hamiltonian H(0), and
+the Zeeman Hamiltonian is the perturbation:
+H=H(0)+Hfs/bracehtipupleft/bracehtipdownright/bracehtipdownleft/bracehtipupright
+H(0)+HZeeman. (2.5.5)
+(2) Strong-eld Zeeman eect: BBint. In this case the Zeeman eect is much larger
+than ne structure eects. Accordingly, the original Hamilt onianH(0)together with
+the Zeeman Hamiltonian are thought as the known Hamiltoni anH(0)and the ne
+structure Hamiltonian Hfsis viewed as the perturbation:
+H=H(0)+HZeeman/bracehtipupleft/bracehtipdownright/bracehtipdownleft/bracehtipupright
+H(0)+Hfs. (2.5.6)
+You may thing that H(0)+HZeemandoes not qualify as known, but happily, as we
+will conrm soon, this is actually a very simple Hamiltonian .
+When the Zeeman magnetic eld is neither weak nor strong, we m ust take the sum
+of the Zeeman and ne structure Hamiltonians as the perturba tion. No simplication is
+possible and one must diagonalize the perturbation.
+Weak-eld Zeeman eect. The approximate eigenstates of H(0)are the coupled states
+|njmj/an}backeti}htthat exhibit ne structure corrections and whose energies a re a function of nandj,
+as shown in the Fine Structure diagram. Degeneracies in this spectrum occur for dierent
+values ofand dierent values of mj.
+To gure out the eect of the Zeeman interaction on this spectr um we consider the
+matrix elements:
+/an}backetle{tnjmj|HZeeman|njm
+j/an}backeti}ht. (2.5.7)
+SinceHZeemanLz+ 2Szwe see that HZeemancommutes with L2and with Jz. The
+matrix element thus vanishes unless =andm
+j=mjand the Zeeman perturbation is
+diagonal in the degenerate ne structure eigenspaces. The e nergy corrections are therefore
+E(1)
+njmj=e/planckover2pi1
+2mcB/an}backetle{tnjmj|(Lz+2Sz)|njmj/an}backeti}ht1
+/planckover2pi1, (2.5.8)
+where we multiplied and divided by /planckover2pi1to make the units of the result manifest. The result
+of the evaluation of the matrix element will show a remarkabl e feature: a linear dependence</text>
+        </slide>
+        <slide>
+          <slideno>1</slideno>
+          <text>26 CHAPTER 2. HYDROGEN ATOM FINE STRUCTURE
+bound state spectrum can be better appreciated using the spe ed of light to consider both
+the ne structure constant and the rest energy of the electro n. The ne structure constant
+is given by
+e2
+/planckover2pi1c1
+137, (2.1.4)
+and the rest energy of the electron is mc2. Then,
+e2
+a0=me4
+/planckover2pi12=m2/planckover2pi12c2
+/planckover2pi12=2mc2. (2.1.5)
+This states that the energy scale of hydrogen bound states is a factor of 2smaller than
+the rest energy of the electron, that is, about 19000 times sm aller. We can thus rewrite the
+possible energies as:
+En=1
+22mc21
+n2. (2.1.6)
+The typical momentum in the hydrogen atom is
+p/planckover2pi1
+a0=me2
+/planckover2pi1=e2
+/planckover2pi1cmcp(mc), (2.1.7)
+which, written as pm(c) says that the typical velocity is vc, which is low enough
+that the non-relativistic approximation is fairly accurat e. Finally, we note that
+a0=/planckover2pi12
+m/planckover2pi1c=/planckover2pi1
+mc1
+=
+, (2.1.8)
+which says that the Bohr radius is over a hundred times bigger than the (reduced) Compton
+wavelength of the electron.
+The degeneracy of the hydrogen atom spectrum is completely q uantied by the relation
+n=N++1. (2.1.9)
+HereN0 is the degree of a polynomial in rthat appears in a wavefunction where the
+leading dependence on rnear the origin is factored out. The quantum number 0 is the
+angular momentum of the state. For each xed n, you can see that the number ranges
+from zero to n1. And for each xed the eigenvalue of Lzism/planckover2pi1withmranging from
+up to:
+n= 1,2, ...  = 0,1, ... , n1
+m=, ... , # of states with energy En=n1/summationdisplay
+=0(2+1) =n2
+The states of hydrogen are shown in this energy diagram, whic h is not drawn to scale,</text>
+        </slide>
+        <slide>
+          <slideno>7</slideno>
+          <text>32 CHAPTER 2. HYDROGEN ATOM FINE STRUCTURE
+So far, this is all just rewriting with no change in physics. B ut new things happen when we
+the particle is charged and we couple it to external electrom agnetic elds. The quantum
+mechanical rule is that this inclusion can be taken care with the replacement
+ppq
+cA. (2.2.12)
+Hereqis the charge of the particle and Ais the external vector potential, a function
+of position that becomes an operator A(x) since position is an operator. In addition, if
+there is a electromagnetic scalar potential  it contribute s an additional term q(x) to the
+Hamiltonian.
+With the replacement (2.2.12) applied to the Hamiltonian (2 .2.11), and the inclusion of
+the coupling to the scalar potential, we get the Pauli Hamiltonian :
+HPauli=1
+2m()()+q(x). (2.2.13)
+This time, using the identity (2.2.9), the second term survi ves
+HPauli=1
+2m[()1+i()] +q(x). (2.2.14)
+We have /ne}ationslash=0because the various ido not commute. Note that the replacement
+(2.2.12) applied to the original Hamiltonian (2.2.8) would not have given us the term.
+To evaluate that term we use
+()k=ijkij=1
+2ijk[i,j]. (2.2.15)
+The commutator here is
+[i, j] =/bracketleftBig
+piq
+cAi, pjq
+cAj/bracketrightBig
+. (2.2.16)
+As usual, the pcomponents can be thought of as derivatives acting on the spa tially de-
+pendent components of A. Moreover, the Ais being only functions of position, commute
+among themselves and we have
+[i, j] =/planckover2pi1
+iq
+c(iAjjAi) =i/planckover2pi1q
+c(iAjjAi). (2.2.17)
+Therefore, back in (2.2.16)
+()k=1
+2ijki/planckover2pi1q
+c(iAjjAi) =i/planckover2pi1q
+cijkiAj=i/planckover2pi1q
+c(A)k,(2.2.18)
+leading to the elegant result:
+=i/planckover2pi1q
+cB. (2.2.19)</text>
+        </slide>
+        <slide>
+          <slideno>25</slideno>
+          <text>50 CHAPTER 2. HYDROGEN ATOM FINE STRUCTURE
+needed for the two states in the matrix element to belong to a d egenerate subspace. Since
+L2commutes with Hfsthe matrix elements vanish unless =and therefore it suces to
+consider the matrix elements
+/an}backetle{tnm
+m
+s|Hfs|nmms/an}backeti}ht, (2.5.29)
+still with condition (2.5.28). Ignoring = 0 states, we have to re-examine the relativistic
+correction and spin orbit. The relativistic correction was computed in the uncoupled basis
+and one can use the result because the states are unchanged an d the perturbation was
+shown to be diagonal in this basis. For spin-orbit the calcul ation was done in the coupled
+basis because spin-orbit is not diagonal in the original H(0)degenerate spaces using the
+uncoupled basis. But happily, it turns out that spin-orbit i s diagonal in the more limited
+degenerate subspaces obtained after the Zeeman eect is incl uded. All these matters are
+explored in the homework.</text>
+        </slide>
+        <slide>
+          <slideno>5</slideno>
+          <text>30 CHAPTER 2. HYDROGEN ATOM FINE STRUCTURE
+S P D
+= 0= 1 = 2
+............
+n= 44S1
+2
+n= 33S1
+2 3P3
+23D3
+2
+(2) (6) 3 P1
+2(10) 3D5
+2
+n= 22S1
+2 2P3
+2
+(2) (6) 2 P1
+2
+n= 11S1
+2
+(2)
+The number of states is indicated in parenthesis.
+2.2 The Pauli equation
+In the hydrogen atom the spin-orbit coupling arises because the electron is moving in the
+electric eld of the proton. Since the electron is moving rel ative to the frame where we have
+a static electric eld, the electron also sees a magnetic el dB. The spin-orbit coupling is
+the coupling Bof that magnetic eld to the magnetic dipole moment of the electron.
+We have discussed before, in the context of the Stern-Gerlac h experiment, the value of
+the magnetic dipole moment of the electron. Recall the logic we used. In Gaussian units,
+the classical magnetic moment of a planar current loop is giv en by=I
+ca, whereIis the
+current and ais the area vector associated with the loop. From this one qui ckly derives
+that for a uniformly rotating particle with charge qand massmthe magnetic moment is
+=q
+2mcL, (2.2.1)
+whereLis the angular momentum due to the rotation. For an elementar y particle, this
+motivates the following relation between the spin angular m omentum operator Sand the
+magnetic moment
+=gq
+2mcS (2.2.2)
+wheregis a factor that is added to parameterize our ignorance; afte r all there is no reason
+why the classically motivated formula for the magnetic dipo le should hold in the quantum
+domain of spin. As it turns out, for an electron one has g= 2. Sinceq=efor an electron,</text>
+        </slide>
+        <slide>
+          <slideno>4</slideno>
+          <text>2.1. REVIEW OF HYDROGEN ATOM 29
+When we form swe are tensoring a a full multiplet to an smultiplet (here, of course,
+s= 1/2). All states in sare eigenstates of L2and eigenstates of S2, soandsare good
+(constant) quantum numbers for all jmultiplets that arise in the tensor product. Each j
+multiplet has states with quantum numbers ( j,mj).
+The coupled basis is one where states are organized into jmultiplets. While states are
+no longer LznorSzeigenstates they are still L2eigenstates, thus the quantum number
+survives. The coupled basis quantum numbers are therefore
+Coupled basis quantum numbers: ( n,,j,m j). (2.1.16)
+The (m,ms) quantum numbers of the uncoupled basis have been traded for (j,mj) quan-
+tum numbers and we have kept the n,quantum numbers. The coupled states are linear
+combinations of uncoupled states that involve dierent valu es ofmandms, those combi-
+nations that yield the same value of mj=m+ms.
+To nd the list of coupled basis states we must tensor eachmultiplet in the hydrogen
+atom spectrum with the spin doublet1
+2. The rules of addition of angular momentum imply
+that we nd two jmultiplets:
+1
+2= (j=+1
+2)(j=1
+2). (2.1.17)
+For= 0, we only obtain a j= 1/2 multiplet. We use the notation Ljfor the coupled
+multiplets, with L=S,P,D,F for= 0,1,2,and 3 (see (2.1.10). The change of basis is
+summarized by the replacements
+1
+2L()j=+1
+2L()j=1
+2(2.1.18)
+or more explicitly,
+01
+2S1
+2
+11
+2P3
+2P1
+2
+21
+2D5
+2D3
+2
+31
+2F7
+2F5
+2(2.1.19)
+Thus, by the time we combine with electron spin, each = 0 state gives one j=1
+2multiplet,
+each= 1 state gives j=3
+2andj=1
+2multiplets, each = 2 state gives j=5
+2andj=3
+2
+multiplets, and so on. For hydrogen, the principal quantum n umber is placed ahead to
+denote the coupled multiplets by
+Coupled basis notation for multiplets: nLj (2.1.20)
+Using this notation for coupled basis multiplets the diagra m of hydrogen atom energy
+eigenstates becomes:</text>
+        </slide>
+        <slide>
+          <slideno>23</slideno>
+          <text>48 CHAPTER 2. HYDROGEN ATOM FINE STRUCTURE
+This is sometimes called the projection lemma: the matrix el ements of a vector operator V
+are those of the conventional projection of VontoJ. Recall that the projection of a vector
+valong the vector jis (vj)j/j2.
+Let us now return to the question of interest; the computatio n of the the expectation
+value ofSzin (2.5.20). Since Sis a vector operator under Jwe can use (2.5.15). Specializing
+to thez-component
+/an}backetle{tnjmj|Sz|njmj/an}backeti}ht=/planckover2pi1mj/an}backetle{tnjmj|SJ|njmj/an}backeti}ht
+/planckover2pi12j(j+1). (2.5.17)
+We already see the appearance of the predicted /planckover2pi1mjfactor. The matrix element in the
+numerator is still to be calculated but it will introduce no mjdependence. In fact SJis a
+scalar operator (it commutes with all Ji) and therefore it is diagonal in mj. But even more
+is true; the expectation value of a scalar operator is in fact independent of mj! We will not
+show this here, but will just conrm it by direct computation . SinceL=JSwe have
+SJ=1
+2/parenleftbigJ2+S2L2/parenrightbig
+, (2.5.18)
+and therefore
+/an}backetle{tnjmj|Sz|njmj/an}backeti}ht=/planckover2pi1mj
+2j(j+1)/parenleftbig
+j(j+1)(+1)+3
+4/parenrightbig
+.(2.5.19)
+Indeed, no further mjdependence has appeared. Back now to (2.5.20) we get
+/an}backetle{tnjmj|(Lz+2Sz)|njmj/an}backeti}ht=/planckover2pi1mj/parenleftBig
+1+j(j+1)(+1)+3
+4
+2j(j+1)/parenrightBig
+. (2.5.20)
+The constant of proportionality in parenthesis is called th eLande g-factor gJ():
+gJ()1+j(j+1)(+1)+3
+4
+2j(j+1)(2.5.21)
+We nally have for the Zeeman energy shifts in (2.5.8)
+E(1)
+njmj=e/planckover2pi1
+2mcBgJ()mj. (2.5.22)
+Here the Bohr magnetone/planckover2pi1
+2mc5.79109eV/gauss. This is our nal result for the weak-
+eld Zeeman energy corrections to the ne structure energy l evels. Since all degeneracies
+withinjmultiplets are broken and jmultiplets with dierent split dierently due to the
+dependence of gJ(), the weak-eld Zeeman eect removes all degeneracies!
+Strong-eld Zeeman eect. We mentioned earlier that when the Zeeman eect is larger
+than the nestructure corrections we must take the original hydrogen Hamiltonian together
+with the Zeeman Hamiltonian to form the known Hamiltonian H(0):
+H(0)=H(0)+e
+2mc(Lz+2Sz)B. (2.5.23)</text>
+        </slide>
+        <slide>
+          <slideno>14</slideno>
+          <text>2.4. FINE STRUCTURE OF HYDROGEN 39
+Therefore,
+V=1
+10u2
+02V . (2.4.38)
+If we choose the radius u0of the charge distribution to be the Compton wavelength/planckover2pi1
+mcof
+the electron we get,
+V=/planckover2pi12
+10m2c22V . (2.4.39)
+Comparing with (2.3.14) we see that, up to a small correction (1
+8as opposed to1
+10), this
+is the Darwin energy shift. The agreement is surprisingly go od for what is, admittedly, a
+heuristic argument.
+2.4.2 Relativistic correction
+We now turn to the relativistic correction. The energy shift s of the hydrogen states can
+be analyzed among the degenerate states with principal quan tum number n. We write
+tentatively for the corrections
+E(1)
+n,mms;rel=1
+8m3c2/an}backetle{tnmms|p2p2|nm/an}backeti}ht. (2.4.40)
+We can use this formula because the uncoupled basis of states at xednis good: the
+perturbation is diagonal in this basis. This is checked usin g Remark 3 in section 1.2.2. This
+is clear because the perturbing operator p2p2commutes with L2, withLz, and with Sz.
+The rst operator guarantees that that the matrix for the per turbation is diagonal in , the
+second guarantees that the perturbation is diagonal in m, and the third guarantees, rather
+trivially, that the perturbation is diagonal in ms.
+To evaluate the matrix element we use the Hermiticity of p2to move one of the factors
+into the bra
+E(1)
+n,mms;rel=1
+8m3c2/an}backetle{tp2nm|p2nm/an}backeti}ht, (2.4.41)
+where in the right-hand side we evaluated the trivial expect ation value for the spin degrees
+of freedom. To simplify the evaluation we use the Schr oding er equation, which tells us that
+/parenleftBigp2
+2m+V/parenrightBig
+nm=E(0)
+nnmp2nm= 2m(E(0)
+nV)nm.(2.4.42)
+Using this both for the bra and the ket:
+E(1)
+n,mms;rel=1
+2mc2/angbracketleftBig
+(E(0)
+nV)nm/vextendsingle/vextendsingle/vextendsingle(E(0)
+nV)nm/angbracketrightBig
+. (2.4.43)
+The operator E(0)
+nVis also Hermitian and can be moved from the bra to the ket, givi ng
+E(1)
+n,mms;rel=1
+2mc2/angbracketleftBig
+nm/vextendsingle/vextendsingle/vextendsingle((E(0)
+n)22VE(0)
+n+V2)/vextendsingle/vextendsingle/vextendsinglenm/angbracketrightBig
+=1
+2mc2/bracketleftBig
+(E(0)
+n)22En/an}backetle{tV/an}backeti}htnm+/an}backetle{tV2/an}backeti}htnm/bracketrightBig
+.(2.4.44)</text>
+        </slide>
+        <slide>
+          <slideno>22</slideno>
+          <text>2.5. ZEEMAN EFFECT 47
+E(1)/planckover2pi1mjon the azimuthal quantum numbers. The states in each jmultiplet split into
+equally separated energy levels! We will try to understand t his result as a property of
+matrix elements of vector operators. First, however, note t hatLz+ 2Sz=Jz+Szand
+therefore the matrix element of interest in the above equati on satises
+/an}backetle{tnjmj|(Lz+2Sz)|njmj/an}backeti}ht=/planckover2pi1m+/an}backetle{tnjmj|Sz|njmj/an}backeti}ht. (2.5.9)
+It follows that we only need to concern ourselves with Szmatrix elements.
+Lets talk about vector operators. The operator Vis said to be a vector operator
+under an angular momentum operator Jif the following commutator holds for all values of
+i,j= 1,2,3:/bracketleftbigJi,Vj/bracketrightbig
+=i/planckover2pi1ijkVk. (2.5.10)
+Itfollows fromthefamiliar Jcommutators that Jisavector operatorunder J. Additionally,
+ifVis a vector operator it has a standard commutation relation w ithJ2that can be quickly
+conrmed:
+[J2,V] = 2i/planckover2pi1/parenleftbigVJi/planckover2pi1V/parenrightbig
+. (2.5.11)
+IfVis chosen to be Jthe left-hand side vanishes by the standard property of J2and the
+right-hand side vanishes because the Jcommutation relations can bewritten as JJ=i/planckover2pi1J.
+Finally, by repeated use of the above identities you will sho w (homework) that the following
+formula holds
+1
+(2i/planckover2pi1)2/bracketleftBig
+J2,[J2,V]/bracketrightBig
+= (VJ)J1
+2/parenleftbigJ2V+VJ2/parenrightbig
+. (2.5.12)
+Consider ( J2,Jz) eigenstates |k;jmj/an}backeti}htwherekstands for other quantum number that bear
+no relation to angular momentum. The matrix elements of the l eft-hand side of (2.5.12) on
+such eigenstates is necessarily zero:
+/an}backetle{tk;jm
+j|/bracketleftBig
+J2,[J2,V]/bracketrightBig
+|k;jmj/an}backeti}ht= 0, (2.5.13)
+as can be seen by expanding the outer commutator and noticing thatJ2gives the same
+eigenvalue when acting on the bra and on the ket. Therefore th e matrix elements of the
+right-hand side gives
+/an}backetle{tk;jm
+j|(VJ)J|k;jmj/an}backeti}ht=/planckover2pi12j(j+1)/an}backetle{tk;jm
+j|V|k;jmj/an}backeti}ht, (2.5.14)
+which implies that
+/an}backetle{tk;jm
+j|V|k;jmj/an}backeti}ht=/an}backetle{tk;jm
+j|(VJ)J|k;jmj/an}backeti}ht
+/planckover2pi12j(j+1). (2.5.15)
+This is the main identity we wanted to establish. Using the le ss explicit notation /an}backetle{t/an}backeti}htfor
+the matrix elements we have found that
+/an}backetle{tV/an}backeti}ht=/an}backetle{t(VJ)J/an}backeti}ht
+/an}backetle{tJ2/an}backeti}ht. (2.5.16)</text>
+        </slide>
+        <slide>
+          <slideno>6</slideno>
+          <text>2.2. THE PAULI EQUATION 31
+we have
+= 2e
+2mecS=2e/planckover2pi1
+2mecS
+/planckover2pi1=2e/planckover2pi1
+2mec1
+2=e/planckover2pi1
+2mec.(2.2.3)
+For numerical applications we note that the Bohr magneton Bis dened by
+B=e/planckover2pi1
+2mec9.2741021erg
+gauss= 5.79109eV
+gauss. (2.2.4)
+(for SI values use Tesla = 104gauss). The coupling of an electron to an external magnetic
+eld is therefore represented by a Hamiltonian HBgiven by
+HB=B=e/planckover2pi1
+2mecB. (2.2.5)
+Our goal now is to show that this coupling, and its associated prediction of g= 2, arises
+naturally from the non-relativistic Pauli equation for an e lectron.
+Consider rst the time-independent Schr odinger equation for a free particle:
+p2
+2m=E. (2.2.6)
+Since a spin one-half particle has two degrees of freedom, us ually assembled into a column
+vector, the expected equation for a free spin one-half particle is
+p2
+2m=Ewith=/parenleftbigg1
+2/parenrightbigg
+. (2.2.7)
+One sometimes calls a Pauli spinor. Note theres an implicit two-by-two identit y matrix
+122in the Hamiltonian
+H=p2
+2m122. (2.2.8)
+We canrewritethis Hamiltonian using Pauli matrices if we recall the ident ity
+(a)(b) =ab122+i(ab), (2.2.9)
+valid for arbitrary vector operators aandb. Taking a=b=p, withpthe momentum
+operator, and recognizing that pp=0, we have
+(p)(p) =p2122. (2.2.10)
+This means that the Hamiltonian (2.2.8) can be rewritten as
+H=1
+2m(p)(p). (2.2.11)</text>
+        </slide>
+      </slides>
+      <videos/>
+    </lecture>
+  </lectures>
+</doc>

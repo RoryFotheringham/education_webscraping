@@ -1,0 +1,3365 @@
+<doc>
+  <source>MIT</source>
+  <date>28/01/2023</date>
+  <course>
+    <course_url>https://ocw.mit.edu/courses/6-092-introduction-to-programming-in-java-january-iap-2010/</course_url>
+    <course_title>Introduction to Programming in Java</course_title>
+    <course_tags>
+      <list>Engineering </list>
+      <list>Computer Science </list>
+      <list>Software Design and Engineering </list>
+    </course_tags>
+  </course>
+  <lectures>
+    <lecture>
+      <lecture_title>Loops and arrays</lecture_title>
+      <lecture_pdf_url>https://ocw.mit.edu/courses/6-092-introduction-to-programming-in-java-january-iap-2010/resources/mit6_092iap10_lec03/</lecture_pdf_url>
+      <lectureno>3</lectureno>
+      <slides>
+        <slide>
+          <slideno>14</slideno>
+          <text>Rule #4: Do n ot duplicate tests 
+if (basePay &lt; 8.0) { 
+... 
+} else if (hours &gt; 60) { 
+... 
+} else if (basePay &gt;= 8.0 &amp;&amp; hours &lt;= 60) { 
+... 
+}</text>
+        </slide>
+        <slide>
+          <slideno>11</slideno>
+          <text>Rule #2: Use indentation 
+public static void main (String[] arguments) { 
+int x = 5;
+x = x * x;
+if (x &gt; 20) {
+System.out.println(x +  is greater than 20.);
+}
+double y = 3.4; 
+} 
+Have a demo with no indentation 
+Ctrl-shift-F to auto-format the file</text>
+        </slide>
+        <slide>
+          <slideno>9</slideno>
+          <text>Good programm ing style
+The goal  of good s tyle is to make your
+code mor e readabl e.
+By you and by others .</text>
+        </slide>
+        <slide>
+          <slideno>19</slideno>
+          <text>Loops 
+static v oid main (String[] arguments) { 
+System.out.println(Rule #1); 
+System.out.println(Rule #2); 
+System.out.println(Rule #3); 
+} 
+What if you want to do i t for 200 Rules?</text>
+        </slide>
+        <slide>
+          <slideno>39</slideno>
+          <text>String array s
+A side note
+public s tatic void main (String[] arguments){ 
+System.out.println(arguments.length); 
+System.out.println(arguments[0]); 
+System.out.println(arguments[1]); 
+}</text>
+        </slide>
+        <slide>
+          <slideno>40</slideno>
+          <text>Combining Loops and Arrays</text>
+        </slide>
+        <slide>
+          <slideno>23</slideno>
+          <text>The for operat or
+for (initialization;condition;update){ 
+statements 
+}</text>
+        </slide>
+        <slide>
+          <slideno>5</slideno>
+          <text>class WeeklyPay { 
+public static void pay(double basePay, int hours) { 
+if (basePay &lt; 8.0 ) {
+System.out.println("You must be paid at least $8.00/hour");
+} else if (hours &gt; 60) {
+System.out.println("You can't work more than 60 hours a week");
+} else {
+int overtimeHours = 0;
+if (hours &gt; 40) {
+overtimeHours = hou rs -40; 
+hours = 40; 
+}
+double pay = basePay * hours;
+pay += overtimeHours * basePay * 1.5;
+System.out.println("Pay this employee $" + pay); 
+}
+} 
+public static void main(String[] arguments) { 
+pay(7.5, 35);
+pay(8.2, 47);
+pay(10.0, 73); 
+}
+}</text>
+        </slide>
+        <slide>
+          <slideno>10</slideno>
+          <text>Rule #1: use good ( meaningful) names
+String a1;
+int a2;
+double b; // BAD!!
+String firstName; // GOOD
+String lastName; // GOOD
+int temperature; // GOOD</text>
+        </slide>
+        <slide>
+          <slideno>12</slideno>
+          <text>Rule #3: Use whitespaces 
+Put whitespaces in complex expressions: 
+// BAD!!
+double cel=fahr*42.0/(13.0-7.0); 
+// GOOD
+double cel = fahr * 42.0 / (13.0 -7.0);</text>
+        </slide>
+        <slide>
+          <slideno>15</slideno>
+          <text>Rule #4: Do n ot duplicate tests 
+if (basePay &lt; 8.0) { 
+... 
+} else if (hours &gt; 60) { 
+... 
+} else if (basePay &gt;= 8.0 &amp;&amp; hours &lt;= 60){ 
+... 
+} 
+BAD</text>
+        </slide>
+        <slide>
+          <slideno>3</slideno>
+          <text>Frequent  Issues (II)
+Return values: if you de clare that the method is not void, 
+then it has to return something! 
+public st atic int pay(double basePay, int hours) { 
+if (basePay &lt; 8.0)   return -1; 
+else if (hours &gt; 60) return -1; 
+else { 
+int salary = 0;
+...
+return salary
+} 
+}</text>
+        </slide>
+        <slide>
+          <slideno>35</slideno>
+          <text>Array Initialization
+Curly braces can be used to initialize an array. 
+It can ONLY be us ed when you declare the 
+variable. 
+int[] values  = { 12, 24, -23, 47 };</text>
+        </slide>
+        <slide>
+          <slideno>26</slideno>
+          <text>r Branching S tatement s
+continue skips the current  iteration of a loop 
+and proceeds directly to the next  iteration 
+fo (int i=0; i&lt;100; i++) { 
+if(i == 50) 
+continue; 
+System.out.println(Rule # + i); 
+}</text>
+        </slide>
+        <slide>
+          <slideno>36</slideno>
+          <text>Quiz time!
+Is there an er ror in this code? 
+int[] values  = {1, 2.5, 3, 3.5 , 4};</text>
+        </slide>
+        <slide>
+          <slideno>13</slideno>
+          <text>Rule #3: Use whitespaces 
+Put blank lines to improve readability: 
+public static void main (String[] arguments) {
+int x = 5;
+x = x * x;
+if (x &gt; 20) {
+System.out.println(x +  is &gt; 20.); 
+} 
+double y = 3.4; 
+}</text>
+        </slide>
+        <slide>
+          <slideno>22</slideno>
+          <text>The while operat or 
+int i= 0; 
+while(i &lt; 3) { 
+System.out.println(Rule # + i); 
+i = i+1; 
+} 
+Count carefully 
+Make sure that your loop has a chance to finish.</text>
+        </slide>
+        <slide>
+          <slideno>6</slideno>
+          <text>What we hav e learned so far
+ Variables  &amp; types 
+ Operat ors 
+ Type conv ersions &amp; casting
+ Methods &amp; paramet ers 
+ If statement</text>
+        </slide>
+        <slide>
+          <slideno>31</slideno>
+          <text>Arrays
+Example: doubl e [ ]
+5.0 2.44 9.01 1.0 -9.9 .. 
+0123 .. n-1</text>
+        </slide>
+        <slide>
+          <slideno>30</slideno>
+          <text>Arrays
+..
+0123 .. n-1</text>
+        </slide>
+        <slide>
+          <slideno>44</slideno>
+          <text>Assignment  3 
+A group of friends participate in the Boston 
+Marathon.
+Find the best performer.
+Find the second-best performer.</text>
+        </slide>
+        <slide>
+          <slideno>45</slideno>
+          <text>MIT OpenCourseWare
+http://ocw.mit.edu 
+6.092 Introduction to Programming in Java 
+January (IAP) 2010 
+For information about citing these materials or our Terms of Use, visit: http://ocw.mit.edu/terms.</text>
+        </slide>
+        <slide>
+          <slideno>20</slideno>
+          <text>Loops 
+Loop operators allow to loop through a block 
+of code. 
+There are several loop oper ators in Java.</text>
+        </slide>
+        <slide>
+          <slideno>18</slideno>
+          <text>oops Loops</text>
+        </slide>
+        <slide>
+          <slideno>27</slideno>
+          <text>Embedded loops 
+for (int i = 0; i &lt; 3; i++) { 
+for (int j = 2; j &lt; 4; j++) { 
+System.out.println (i +   + j); 
+} 
+} 
+Scope of the variable defined i n the initialization: 
+respective for block</text>
+        </slide>
+        <slide>
+          <slideno>34</slideno>
+          <text>Arrays
+To create an array of a given size, use the operator new : 
+int[] values = new int[5]; 
+or you may use a v ariable to specify the size: 
+int size = 12; 
+int[] values = new int[size];</text>
+        </slide>
+        <slide>
+          <slideno>4</slideno>
+          <text>Frequent  Issues (III)
+Don't c reate dupl icate variables with the same 
+name 
+public static int pay(double basePay, int hours) {
+int salary = 0; // OK 
+ 
+int salary = 0; // salary already defined!! 
+ 
+double salary = 0; //salary already defined!! 
+ 
+}</text>
+        </slide>
+        <slide>
+          <slideno>37</slideno>
+          <text>Accessi ng Arrays
+To access the elements of an array, use the []operator: 
+values[i ndex] 
+Example: 
+int[] values  = { 12, 24, -23, 47 }; 
+values[3 ] = 18;     // {12,24 ,-23,18} 
+int x = values[1] + 3; // {12,24,-23,18}</text>
+        </slide>
+        <slide>
+          <slideno>0</slideno>
+          <text>6.092:  Intro to Java
+3: Loops, Arrays</text>
+        </slide>
+        <slide>
+          <slideno>8</slideno>
+          <text>Good Pr ogramming Style</text>
+        </slide>
+        <slide>
+          <slideno>16</slideno>
+          <text>Rule #4: Do n ot duplicate tests
+if (basePay &lt; 8.0) { 
+... 
+} else if (hours &gt; 60) {
+...
+} else { 
+... 
+}</text>
+        </slide>
+        <slide>
+          <slideno>33</slideno>
+          <text>Arrays 
+An array is defined using TYPE[]. 
+Arrays are just another type. 
+int[] values; // array of int 
+int[][] values; // int[] is a type</text>
+        </slide>
+        <slide>
+          <slideno>38</slideno>
+          <text>The lengt h variable
+Each array has a length variable built-in that 
+contains the length of the array. 
+int[] values = new int[12];
+int size =      values.length; // 12
+int[] values2 = {1,2,3,4,5}
+int size2 =     values2.length; // 5</text>
+        </slide>
+        <slide>
+          <slideno>1</slideno>
+          <text>Assignment  2
+Foo Cor poration needs  a program to calculate 
+how muc h to pay their employees. 
+1. Pay = hours worked x base pay 
+2. Hour s over 40 get pai d 1.5 the bas e pay 
+3. The bas e pay mus t be no l ess than $8.00 
+4. The number of hours mus t be no mor e than 60</text>
+        </slide>
+        <slide>
+          <slideno>29</slideno>
+          <text>Arrays
+An array is an indexed list of values. 
+You can make an arr ay of any type 
+int, doubl e, String, etc.. 
+All elements  of an array must have the same type.</text>
+        </slide>
+        <slide>
+          <slideno>41</slideno>
+          <text>Looping through an array 
+Example 1: 
+int[] values = new int[5]; 
+for (int i=0;  i&lt;values.length; i++) { 
+values[i ] = i; 
+int y = values[i] * values[i]; 
+System.o ut.println(y); 
+}</text>
+        </slide>
+        <slide>
+          <slideno>24</slideno>
+          <text>The for operat or 
+for (inti = 0; i &lt;3; i=i+1) { 
+System.out.println(Rule # + i); 
+} 
+Note: i = i+1 may be replaced by i++</text>
+        </slide>
+        <slide>
+          <slideno>2</slideno>
+          <text>Frequent  Issues (I)
+The signatur e of the main method cannot be 
+modi fied. 
+public s tatic void main(String[] arguments) { 
+... 
+}</text>
+        </slide>
+        <slide>
+          <slideno>43</slideno>
+          <text>Summary for today
+1. Programmin g Style
+2. Loops 
+3. Arrays</text>
+        </slide>
+        <slide>
+          <slideno>28</slideno>
+          <text>Arrays</text>
+        </slide>
+        <slide>
+          <slideno>21</slideno>
+          <text>The while operat or 
+while (condition ) {
+statements 
+}</text>
+        </slide>
+        <slide>
+          <slideno>25</slideno>
+          <text>S
+}Branching S tatement s 
+break terminates a for or while loop 
+break; 
+ystem.out.println(Rule # + i); for (int i=0; i&lt;100; i++) { 
+if(i == 50)</text>
+        </slide>
+        <slide>
+          <slideno>7</slideno>
+          <text>Today s Topics 
+ Good programm ing style
+ Loops 
+ Arrays</text>
+        </slide>
+        <slide>
+          <slideno>17</slideno>
+          <text>Good programm ing style (summ ary)
+Use good names  for variables and methods 
+Use indentati on 
+Add whitespaces 
+Don't dupl icate tests</text>
+        </slide>
+        <slide>
+          <slideno>32</slideno>
+          <text>Arrays 
+The index starts at zero and ends at length-1. 
+Example: 
+int[] values = new int[5]; 
+values[0 ] = 12; // CORRECT 
+values[4 ] = 12; // CORRECT 
+values[5 ] = 12; // WRONG!! compiles but 
+// throws an Exception 
+// at run-time 
+Have a dem o with runtime exception</text>
+        </slide>
+        <slide>
+          <slideno>42</slideno>
+          <text>Looping through an ar ray 
+Example 2: 
+int[] values = new int[5];
+int i = 0;
+while (i &lt; values.length) {
+values[i ] = i; 
+int y = values[i] * values[i]; 
+System.o ut.println(y); 
+i++;
+}</text>
+        </slide>
+      </slides>
+      <videos/>
+    </lecture>
+    <lecture>
+      <lecture_title>Access control, class scope, packages, Java API</lecture_title>
+      <lecture_pdf_url>https://ocw.mit.edu/courses/6-092-introduction-to-programming-in-java-january-iap-2010/resources/mit6_092iap10_lec05/</lecture_pdf_url>
+      <lectureno>5</lectureno>
+      <slides>
+        <slide>
+          <slideno>4</slideno>
+          <text></text>
+        </slide>
+        <slide>
+          <slideno>19</slideno>
+          <text>public class ScopeReview { 
+var3 = var1; private int var3; 
+void scopeMethod( int var1) { 
+String var2;
+if (var1&gt; 0) {
+var2 = "above 0" ;
+} else {
+var2 = "less than or equal to 0" ; 
+} 
+System.out.println(var2); 
+} 
+}</text>
+        </slide>
+        <slide>
+          <slideno>8</slideno>
+          <text></text>
+        </slide>
+        <slide>
+          <slideno>18</slideno>
+          <text>public class ScopeReview { 
+private int var3; 
+void scopeMethod( int var1) { 
+var3 = var1; 
+String var2;
+if (var1&gt;0) {
+var2 = "above 0";
+} else {
+var2 = "less than or equ al to 0"; 
+} 
+System. out.println(var2); 
+} 
+}</text>
+        </slide>
+        <slide>
+          <slideno>10</slideno>
+          <text></text>
+        </slide>
+        <slide>
+          <slideno>1</slideno>
+          <text></text>
+        </slide>
+        <slide>
+          <slideno>29</slideno>
+          <text>package adult; 
+import parenttools.Baby; 
+import parenttools.BabyFood ; 
+public class Parent {
+ public static void main(String[] args) { 
+Baby baby = new Baby(); 
+baby.feed(new BabyFood());
+ } 
+}</text>
+        </slide>
+        <slide>
+          <slideno>34</slideno>
+          <text>Java API
+Java includes lo ts of pac kages/classes 
+Reuse classes t o avoid e xtra wor k 
+http://ja va.sun.com/ja vase/6/docs/api/</text>
+        </slide>
+        <slide>
+          <slideno>31</slideno>
+          <text>Combine similar functionality 
+ org.boston.libraries.Librar y 
+ org.boston.libraries.Book 
+ Separat e similar names 
+ shopping.Lis t 
+ packing.Li st</text>
+        </slide>
+        <slide>
+          <slideno>43</slideno>
+          <text>public static void main(String[] argum ents){ 
+HashMap &lt;String, String &gt; strings = new HashM ap&lt;String , String&gt;(); 
+strings .put("Evan", "email1@mit.edu "); 
+strings .put("Eugene" , "email2@mit.edu "); 
+strings .put("Adam ", "email3@mit.edu ); 
+System.out.printl n(strings .size());
+strings .remove("Evan");
+System.out.pri ntln(s trings.get( "Eugene" ));
+for (String s : strings .keySet()) { 
+System.out.printl n(s);
+}
+for (String s : strings .values()) {
+System.out.printl n(s);
+}
+for (Map.Entry&lt;String, String &gt; pairs : strings .entrySet()) {
+System.out.printl n(pairs ); 
+} 
+}</text>
+        </slide>
+        <slide>
+          <slideno>35</slideno>
+          <text>Arrays with it ems 
+Creat e the arra y bigger than y ou need 
+Track the ne xt available slot 
+Book[] books = new Book[1 0]; 
+int nextInde x = 0; 
+books[ne xtInde x] = b; 
+nextInde x = ne xtInde x + 1;</text>
+        </slide>
+        <slide>
+          <slideno>12</slideno>
+          <text></text>
+        </slide>
+        <slide>
+          <slideno>45</slideno>
+          <text></text>
+        </slide>
+        <slide>
+          <slideno>24</slideno>
+          <text>public class Baby { 
+int servings ; 
+void feed(int servings) { 
+this.servings = 
+this.servings + servings;
+}
+void poop() {
+System. out.println( "All better!" ); 
+servings = 0; 
+} 
+}</text>
+        </slide>
+        <slide>
+          <slideno>3</slideno>
+          <text></text>
+        </slide>
+        <slide>
+          <slideno>14</slideno>
+          <text></text>
+        </slide>
+        <slide>
+          <slideno>5</slideno>
+          <text></text>
+        </slide>
+        <slide>
+          <slideno>27</slideno>
+          <text></text>
+        </slide>
+        <slide>
+          <slideno>28</slideno>
+          <text>package parenttools; 
+public class BabyFood { 
+} 
+package parenttools;
+public class Baby { 
+}</text>
+        </slide>
+        <slide>
+          <slideno>32</slideno>
+          <text>Special P ackages
+All classes see classe s in the same pac kage 
+(no impor t needed) 
+All classes see classes in ja va.lang 
+Example: ja va.lang.String; ja va.lang.Sy stem</text>
+        </slide>
+        <slide>
+          <slideno>25</slideno>
+          <text></text>
+        </slide>
+        <slide>
+          <slideno>44</slideno>
+          <text>Warnings
+Using T reeSet/T reeMap? 
+Read about Comparable interface 
+Using HashSe t/HashMap? 
+Read about equals , hashCode  methods 
+Note: This only matters fo r classes y ou build, not for 
+java built-in types.</text>
+        </slide>
+        <slide>
+          <slideno>41</slideno>
+          <text>import java.util.TreeSet; 
+class SetEx ample { 
+public static void main (String [] argum ents){ 
+TreeSet&lt;String &gt; strings = new TreeSet&lt;String &gt;(); 
+strings.add("Evan" ); 
+strings.add("Eugene" ); 
+strings.add("Adam" ); 
+System.out.printl n(strings.size());
+System.out.printl n(strings.first());
+System.out.printl n(strings.last());
+strings.remove("Eugene" ); 
+for (String s : strings){ 
+System.out.println(s); 
+} 
+} 
+}</text>
+        </slide>
+        <slide>
+          <slideno>16</slideno>
+          <text></text>
+        </slide>
+        <slide>
+          <slideno>37</slideno>
+          <text>ArrayList
+Modifiable list 
+Internally im plement ed with arra ys 
+Features 
+Get/put it ems b y inde x 
+Add it ems 
+Delete items 
+Loop o ver all it ems</text>
+        </slide>
+        <slide>
+          <slideno>7</slideno>
+          <text></text>
+        </slide>
+        <slide>
+          <slideno>38</slideno>
+          <text>Array  ArrayList
+Book[] books = 
+     new Book[10]; 
+int nextIndex = 0; 
+books[nextIndex] = b; 
+nextIndex += 1; ArrayList&lt;Book&gt; books 
+= new ArrayList&lt;Book&gt;(); 
+books.add(b);</text>
+        </slide>
+        <slide>
+          <slideno>47</slideno>
+          <text>MIT OpenCourseWare
+http://ocw.mit.edu 
+6.092 Introduction to Programming in Java 
+January (IAP) 2010 
+For information about citing these materials or our Terms of Use, visit: http://ocw.mit.edu/terms.</text>
+        </slide>
+        <slide>
+          <slideno>20</slideno>
+          <text></text>
+        </slide>
+        <slide>
+          <slideno>40</slideno>
+          <text>Sets 
+Like an Arra yList, but 
+Only one c opy of each objec t, and 
+No arra y inde x 
+Features 
+Add objects t o the se t 
+Remove objects from the set 
+Is an object in the se t? 
+TreeSet : Sor ted (lowest to highest) 
+HashSe t: Unorder ed (pseudo-random)</text>
+        </slide>
+        <slide>
+          <slideno>11</slideno>
+          <text>public class Malicious { 
+public static void main(String[] args) { 
+maliciousMethod (new CreditCard()); 
+} 
+static void maliciousMethod(CreditCard card) 
+{ 
+card.expenses = 0; 
+System. out.println(card. cardNumber ); 
+} 
+}</text>
+        </slide>
+        <slide>
+          <slideno>22</slideno>
+          <text></text>
+        </slide>
+        <slide>
+          <slideno>42</slideno>
+          <text>Maps 
+Stores a ( key, value) pair of objects
+Look up the key, get bac k the value
+Example: A ddress Book 
+ Map from names t o email addr esses 
+TreeMap: Sor ted (low est to highest) 
+HashMap: Unorder ed (pseudo-random)</text>
+        </slide>
+        <slide>
+          <slideno>17</slideno>
+          <text>public class ScopeReview { 
+var2 = "above 0" ;
+} else {
+var2 = "less than or equal to 0" ; 
+} 
+System. out.println(var2); void scopeMethod( int var1) {
+String var2;
+if (var1&gt;0) {
+} 
+}</text>
+        </slide>
+        <slide>
+          <slideno>9</slideno>
+          <text></text>
+        </slide>
+        <slide>
+          <slideno>39</slideno>
+          <text>import java.util.ArrayList;
+class ArrayListExam ple {
+public static void main (String [] argum ents){
+ArrayList&lt;String&gt; strings = new ArrayList&lt;String &gt;();
+strings.add("Evan" );
+strings.add("Eugene" );
+strings.add("Adam" );
+System.out.printl n(strings.size());
+System.out.printl n(strings.get(0));
+System.out.printl n(strings.get(1));
+strings.set(0, "Goodb ye");
+strings.remove(1);
+  
+   
+ 
+for (String s : strings){ 
+System.out.println(s); 
+} 
+} 
+}</text>
+        </slide>
+        <slide>
+          <slideno>0</slideno>
+          <text></text>
+        </slide>
+        <slide>
+          <slideno>33</slideno>
+          <text></text>
+        </slide>
+        <slide>
+          <slideno>23</slideno>
+          <text>public class Baby { 
+int servings ; 
+void feed(int servings) { 
+servings = servings + servings; 
+} 
+void poop() { 
+System. out.println( "All better!" ); 
+servings = 0; 
+} 
+}</text>
+        </slide>
+        <slide>
+          <slideno>2</slideno>
+          <text></text>
+        </slide>
+        <slide>
+          <slideno>13</slideno>
+          <text></text>
+        </slide>
+        <slide>
+          <slideno>21</slideno>
+          <text>public class Baby { 
+int servings ; 
+void feed(int servings) { 
+servings = servings + servings; 
+} 
+void poop() { 
+System. out.println( "All better!" ); 
+servings = 0; 
+} 
+}</text>
+        </slide>
+        <slide>
+          <slideno>36</slideno>
+          <text>Arrays with it ems 
+Creat e the arra y bigger than y ou need 
+Track the ne xt available slot 
+Book[] books = new Book[1 0]; 
+int nextInde x = 0; 
+books[ne xtInde x] = b; 
+nextInde x = ne xtInde x + 1;</text>
+        </slide>
+        <slide>
+          <slideno>46</slideno>
+          <text></text>
+        </slide>
+        <slide>
+          <slideno>15</slideno>
+          <text></text>
+        </slide>
+        <slide>
+          <slideno>6</slideno>
+          <text></text>
+        </slide>
+        <slide>
+          <slideno>30</slideno>
+          <text>Eclipse Demo</text>
+        </slide>
+        <slide>
+          <slideno>26</slideno>
+          <text>Packages 
+ Each class belongs t o a pac kage 
+	Classes in the same pac kage ser ve a similar 
+purpose 
+ Packages ar e just dir ectories 
+ Classes in other pac kages need t o be impor ted</text>
+        </slide>
+      </slides>
+      <videos/>
+    </lecture>
+    <lecture>
+      <lecture_title>Objects and classes</lecture_title>
+      <lecture_pdf_url>https://ocw.mit.edu/courses/6-092-introduction-to-programming-in-java-january-iap-2010/resources/mit6_092iap10_lec04/</lecture_pdf_url>
+      <lectureno>4</lectureno>
+      <slides>
+        <slide>
+          <slideno>47</slideno>
+          <text>Primitiv es vs References
+ Primitiv e types ar e basic ja va types 
+ int, long , double, boolean, char , short, b yte, floa t 
+ The actual values are stored in the v ariable 
+ Reference types ar e arr ays and objects 
+ String , int[], Baby ,</text>
+        </slide>
+        <slide>
+          <slideno>63</slideno>
+          <text>static example
+	Keep track of the number of babies tha t have 
+been made. 
+public class Baby {
+int numBabiesMade = 0;
+Baby() {
+numBabiesMade += 1;
+}
+}</text>
+        </slide>
+        <slide>
+          <slideno>34</slideno>
+          <text>Baby Siblings? 
+public class Baby {
+String name; 
+double weight = 5.0; 
+boolean isMale; 
+int numPoops = 0;
+Baby[] siblings; 
+}</text>
+        </slide>
+        <slide>
+          <slideno>44</slideno>
+          <text>Accessing fields
+ Object. FIELDNAME 
+Baby shiloh = new Baby(Shiloh Jolie-Pitt,
+true) 
+System.out.println(shiloh.name); 
+System.out.println(shiloh.numPoops);</text>
+        </slide>
+        <slide>
+          <slideno>55</slideno>
+          <text>References
+Baby mybaby = new Baby(davy, true)
+mybaby.name = david 
+mybaby s 
+location name =  david 
+Ismale = true</text>
+        </slide>
+        <slide>
+          <slideno>16</slideno>
+          <text>Why use class es? 
+ Why not just primitiv es? 
+// little baby alex 
+String nameAlex;
+double weightAlex;
+// little baby david 
+String nameDavid;
+double weightDavid;</text>
+        </slide>
+        <slide>
+          <slideno>45</slideno>
+          <text>Calling Methods
+ Object. METHODNAME ([AR GUME NTS]) 
+Baby shiloh = new Baby(Shiloh Jolie-Pitt,
+true) 
+shiloh.sayHi(); // Hi, my name is ... 
+shiloh.eat(1);</text>
+        </slide>
+        <slide>
+          <slideno>33</slideno>
+          <text>Baby Siblings? 
+public class Baby {
+String name; 
+double weight = 5.0; 
+boolean isMale; 
+int numPoops = 0;
+XXXXX YYYYY; 
+}</text>
+        </slide>
+        <slide>
+          <slideno>4</slideno>
+          <text>Popular Issues 1
+ Array Inde x vs Array Value 
+int[] values = {99, 100, 101};
+System.out.println(values[ 0] ); // 99
+Values
+ 99 100 101 
+Inde xes 0 1 2</text>
+        </slide>
+        <slide>
+          <slideno>65</slideno>
+          <text>static method
+public class Baby { 
+static void cry(Baby thebaby) { 
+System.out.println (thebaby.name + cries); 
+} 
+} 
+Or 
+public class Baby { 
+void cry() { 
+System.out.println (name + cries); 
+} 
+}</text>
+        </slide>
+        <slide>
+          <slideno>10</slideno>
+          <text>Debug ging Not es 2
+ Forma tting 
+ Ctrl-shift-f is your friend 
+for (int i = 0; i &lt; vals.length; i++) { 
+if (vals[i] &lt; vals[minIdx]) {
+minIdx=i;} 
+return minIdx;}
+ Is ther e a bug?  Who know s!  Hard to read</text>
+        </slide>
+        <slide>
+          <slideno>52</slideno>
+          <text>References
+ The object s location is c alled a reference
+ == compar es the r eferences 
+Baby shiloh1 = new Baby(shiloh ); 
+Baby shiloh2 = new Baby(shiloh ); 
+Does shiloh1 == shiloh2 ? 
+no</text>
+        </slide>
+        <slide>
+          <slideno>27</slideno>
+          <text>Class - overview
+ClassBaby myBaby = new Baby(); Instance</text>
+        </slide>
+        <slide>
+          <slideno>9</slideno>
+          <text>Debug ging Not es 1
+	Use S ystem.out.prin tln throughout your code 
+to see wha t its doing 
+for ( int i=0; i&lt; vals.length; i++) { 
+if ( vals[i] &lt; minVal) { 
+System.out. println(cur min:  + minVal); 
+System.out. println(new min:  + vals[i]); 
+minVal = vals[i]; 
+}
+}</text>
+        </slide>
+        <slide>
+          <slideno>20</slideno>
+          <text>Why use class es?
+Name 
+Weight 
+Sex 
+ 496 
+more 
+Babies Name 
+Weight 
+Sex 
+ Name 
+Weight 
+Sex 
+ Name 
+Weight 
+Sex 
+ 
+Baby1 Baby2 Baby3 Baby4</text>
+        </slide>
+        <slide>
+          <slideno>68</slideno>
+          <text>Assignmen t 4
+ Modeling Book and Libr aries
+ class Book {} 
+ class Libr ary{} 
+ Book s can be 
+ Borr owed 
+ Returned 
+ Library 
+ Keeps track of book s 
+ Hint: use Book[]</text>
+        </slide>
+        <slide>
+          <slideno>0</slideno>
+          <text>Lectur e 4
+Classes and Objects</text>
+        </slide>
+        <slide>
+          <slideno>22</slideno>
+          <text>Why use class es?
+Baby1 Baby2 Baby3 Baby4 496 mor e 
+Babies  Nurse1 Nurse2 Nurse3 Nurse4 Mor e nur ses 
+Nursery</text>
+        </slide>
+        <slide>
+          <slideno>11</slideno>
+          <text>Todays Topics
+Object orien ted programming
+Defining Classes
+Using Classes
+References vs Values
+Static types and methods</text>
+        </slide>
+        <slide>
+          <slideno>31</slideno>
+          <text>Baby fields
+public class Baby { 
+TYPE var_name ;
+TYPE var_name = some_value ;
+}</text>
+        </slide>
+        <slide>
+          <slideno>24</slideno>
+          <text>Why use class es?
+Nurse 
+[]
+ER
+[] 
+Baby
+Nursery
+Hospit al</text>
+        </slide>
+        <slide>
+          <slideno>53</slideno>
+          <text>References
+Baby shiloh1 = new Baby(shiloh );
+Baby shiloh2 = new Baby(shiloh );
+Name= shiloh 
+Name= shiloh reference reference 
+shiloh1 shiloh2</text>
+        </slide>
+        <slide>
+          <slideno>30</slideno>
+          <text>Note
+	Class names ar e Capit alized 
+	1 Class = 1 file 
+	Having a main method means the class can 
+be run</text>
+        </slide>
+        <slide>
+          <slideno>54</slideno>
+          <text>References
+Baby mybaby = new Baby(davy, true)
+mybaby.name = david 
+mybaby s 
+location name =  davy 
+ismale = true</text>
+        </slide>
+        <slide>
+          <slideno>61</slideno>
+          <text>static
+ Applies t o fields and me thods 
+ Means the field/me thod 
+ Is defined f or the class declar ation, 
+ Is not unique for each ins tance</text>
+        </slide>
+        <slide>
+          <slideno>28</slideno>
+          <text>Lets declar e a baby!
+public class Baby {
+}</text>
+        </slide>
+        <slide>
+          <slideno>49</slideno>
+          <text>How ja va stores objects
+ Objects ar e too big t o fit in a v ariable 
+ Stored somewher e else 
+ Variable s tores a number that loc ates the object 
+Object</text>
+        </slide>
+        <slide>
+          <slideno>58</slideno>
+          <text>References
+ using [ ] or 
+ Follows the r eference t o the object 
+ May modify the object, but never the r eference 
+ Imagine 
+ Following dir ections to a house 
+ Moving the furnitur e around 
+ Analogous t o 
+ Following the r eference t o an object 
+ Changing fields in the object</text>
+        </slide>
+        <slide>
+          <slideno>64</slideno>
+          <text>static field
+	Keep track of the number of babies tha t have 
+been made. 
+public class Baby {
+static int numBabiesMade = 0;
+Baby() {
+numBabiesMade += 1;
+}
+}</text>
+        </slide>
+        <slide>
+          <slideno>36</slideno>
+          <text>Cons truct ors
+public class CLASSNAM E{ 
+CLASSNAME ( ) { 
+} 
+CLASSNAME ([ARGUMENTS]) { 
+} 
+} 
+CLASSNAME obj1 = new CLASSNAME(); 
+CLASSNAME obj2 = new CLASSNAME([ARGUMENTS])</text>
+        </slide>
+        <slide>
+          <slideno>56</slideno>
+          <text>References
+ Using = upda tes the r eference.
+baby1 = baby2 
+baby2 
+location 
+baby1 
+object baby2 
+object baby2 
+location 
+baby1 baby2</text>
+        </slide>
+        <slide>
+          <slideno>62</slideno>
+          <text>static
+public class Baby {
+static int numBabiesMade = 0; 
+}
+Baby.numBabiesMade = 100; 
+Baby b1 = new Baby();
+Baby b2 = new Baby(); 
+Baby.numBabiesMade = 2; 
+Wha t is 
+b1.numBabiesMade ? 
+b2.numBabiesMade ?</text>
+        </slide>
+        <slide>
+          <slideno>19</slideno>
+          <text>Why use class es?
+Name 
+Weight 
+Sex 
+ 
+Baby1</text>
+        </slide>
+        <slide>
+          <slideno>42</slideno>
+          <text>Using classes</text>
+        </slide>
+        <slide>
+          <slideno>13</slideno>
+          <text>Object orien ted pr ogramming
+ Represen t the real world
+Baby</text>
+        </slide>
+        <slide>
+          <slideno>39</slideno>
+          <text>Baby methods 
+public c lass Baby { 
+String name = Slim Shady; 
+... 
+void sayHi() { 
+System.out.println( 
+Hi, my name is..  + name); 
+}
+}</text>
+        </slide>
+        <slide>
+          <slideno>43</slideno>
+          <text>Classes and Ins tances
+// class Definition 
+public class Baby {} 
+// class Instances
+Baby shiloh = new Baby(Shiloh Jolie-Pitt , true);
+Baby knox = new Baby(Knox Jolie-Pitt , true);</text>
+        </slide>
+        <slide>
+          <slideno>59</slideno>
+          <text>Methods and references
+void doSomething(int x, int[] ys, Baby b) { 
+x = 99;
+ys[0] = 99;
+b.name = 99; 
+}
+...
+int i= 0;
+int[] j = {0};
+Baby k = new Baby(50, true);
+doSomething(i, j, k);
+i=? j=? k=?</text>
+        </slide>
+        <slide>
+          <slideno>5</slideno>
+          <text>Popular Issues 2
+ Curly br aces {  } after if/else, for/while 
+for(int i= 0; i&lt; 5; i++) 
+System.out.println( Hi); 
+System.out.println(Bye); 
+ Wha t does this prin t?</text>
+        </slide>
+        <slide>
+          <slideno>48</slideno>
+          <text>How ja va stores primitiv es
+	Variables ar e like fixed siz e cups 
+	Primitiv es ar e small enough tha t the y jus t fit 
+into the cup 
+int	 double char boolean</text>
+        </slide>
+        <slide>
+          <slideno>69</slideno>
+          <text>MIT OpenCourseWare
+http://ocw.mit.edu 
+6.092 Introduction to Programming in Java 
+January (IAP) 2010 
+For information about citing these materials or our Terms of Use, visit: http://ocw.mit.edu/terms.</text>
+        </slide>
+        <slide>
+          <slideno>1</slideno>
+          <text>Review</text>
+        </slide>
+        <slide>
+          <slideno>8</slideno>
+          <text>Popular Issues 5
+Defining a me thod inside a method 
+public static void main(String[] arguments) {
+public static void foobar () { 
+} 
+}</text>
+        </slide>
+        <slide>
+          <slideno>15</slideno>
+          <text>Object Orien ted Pr ogramming
+ Objects gr oup t ogether 
+ Primitiv es (in t, double, char, etc..) 
+ Objects (String , etc) 
+Baby 
+String name 
+boolean isMale 
+double weight
+double decibels 
+int numPoops</text>
+        </slide>
+        <slide>
+          <slideno>51</slideno>
+          <text>References
+ The object s location is c alled a reference
+ == compar es the r eferences 
+Baby shiloh1 = new Baby(shiloh ); 
+Baby shiloh2 = new Baby(shiloh ); 
+Does shiloh1 == shiloh2 ?</text>
+        </slide>
+        <slide>
+          <slideno>18</slideno>
+          <text>Why use class es? 
+ Why not just primitiv es? 
+// little baby alex 
+String nameAlex;
+double weightAlex;
+// little baby david 
+String nameDavid;
+double weightDavid;
+// little baby david 
+String nameDavid2;
+double weightDavid2;
+David2? 
+Terrible 
+500 Babies? That Suck s!</text>
+        </slide>
+        <slide>
+          <slideno>60</slideno>
+          <text>static types and methods</text>
+        </slide>
+        <slide>
+          <slideno>3</slideno>
+          <text>Solutions 2
+public static int getSecondMinIndex( int[] values) {
+int secondIdx = -1; 
+int minIdx= getMinIndex(values); 
+for(int i=0; i&lt;values.length; i++) {
+if (i == minIdx)
+continue ;
+if (secondIdx == -1 || 
+values[i] &lt; values[secondIdx])
+secondIdx = i;
+}
+return secondIdx;
+} 
+ Wha t happens if v alues = {0}?  values = {0, 0}?  values = {0,1}?</text>
+        </slide>
+        <slide>
+          <slideno>46</slideno>
+          <text>References vs Values</text>
+        </slide>
+        <slide>
+          <slideno>6</slideno>
+          <text>Popular Issues 3
+ Variable initializ ation 
+int getMinValue( int[] vals) {
+int min = 0;
+for (int i = 0; i &lt; vals.length; i++) {
+if (vals[i] &lt; min) {
+min = vals[i]
+}
+}
+}
+Problem?  Wha t if vals = {1,2,3} ? 
+ Set min = Integer.MAX_VALUE or vals[0]</text>
+        </slide>
+        <slide>
+          <slideno>14</slideno>
+          <text>Object orien ted pr ogramming
+ Represen t the real world
+Baby 
+Name
+Sex
+Weight
+Decibels
+# poop s so far</text>
+        </slide>
+        <slide>
+          <slideno>26</slideno>
+          <text>Class - overview
+public class Baby {
+String name; 
+boolean isMale; 
+double weight; 
+double decibels; 
+int numPoops = 0; Class 
+Definition void poop() { 
+numPoops += 1; 
+System.out.println( Dear mother,  + 
+I have pooped. Ready the diaper. );
+} 
+}</text>
+        </slide>
+        <slide>
+          <slideno>29</slideno>
+          <text>Lets declar e a baby!
+public class Baby {
+fields 
+methods 
+}</text>
+        </slide>
+        <slide>
+          <slideno>50</slideno>
+          <text>How ja va stores objects
+ Objects ar e too big t o fit in a v ariable 
+ Stored somewher e else 
+ Variable s tores a number that loc ates the object 
+Object Object Object 
+Object Object Object Object s 
+location</text>
+        </slide>
+        <slide>
+          <slideno>37</slideno>
+          <text>Cons truct ors
+ Cons truct or name == the class name 
+ No return type  never returns an ything
+ Usually initializ e fields 
+ All classes need a t leas t one c onstruct or
+ If you dont writ e one, de faults t o 
+CLASSNAME () {
+}</text>
+        </slide>
+        <slide>
+          <slideno>66</slideno>
+          <text>static not es
+	Non-s tatic methods c an reference static 
+methods, but not the other w ay around 
+	Why? 
+public class Baby {
+String name = DMX;
+static v oid whoami() {
+System.out.println(name);
+}
+}</text>
+        </slide>
+        <slide>
+          <slideno>57</slideno>
+          <text>References
+ Using = upda tes the r eference.
+baby1 = baby2 
+baby2 
+location 
+baby1 
+object baby2 
+object
+baby1 baby2</text>
+        </slide>
+        <slide>
+          <slideno>40</slideno>
+          <text>Baby methods
+public c lass Baby { 
+String weight = 5.0; 
+void eat(double foodWei ght) { 
+if (foodWeight &gt;= 0 &amp;&amp; 
+foodWeight &lt; weight) { 
+weight = weight + foodWeight; 
+} 
+} 
+}</text>
+        </slide>
+        <slide>
+          <slideno>17</slideno>
+          <text>Why use class es? 
+ Why not just primitiv es? 
+// little baby alex 
+String nameAlex;
+double weightAlex;
+// little baby david 
+String nameDavid;
+double weightDavid;
+// little baby david 
+String nameDavid2;
+double weightDavid2;
+David2? 
+Terrible</text>
+        </slide>
+        <slide>
+          <slideno>21</slideno>
+          <text>Why use class es?
+Baby1 Baby2 Baby3 Baby4 496 mor e 
+Babies  
+Nursery</text>
+        </slide>
+        <slide>
+          <slideno>67</slideno>
+          <text>main
+ Why is main static? 
+public static void main(String[] arguments) {
+}</text>
+        </slide>
+        <slide>
+          <slideno>12</slideno>
+          <text>Todays Topics
+Object orien ted programming
+Defining Classes
+Using Classes
+References vs Values
+Static types and methods</text>
+        </slide>
+        <slide>
+          <slideno>32</slideno>
+          <text>Baby fields 
+public class Baby {
+String name; 
+double weight = 5.0; 
+boolean isMale; 
+int numPoops = 0; 
+}</text>
+        </slide>
+        <slide>
+          <slideno>7</slideno>
+          <text>Popular Issues 4
+ Variable Initializ ation  secondMinInde x
+int minIdx = getMin(vals)
+int secondIdx = 0;
+for (int i = 0; i &lt; vals.length; i++) {
+if (i == minIdx) continue ;
+if (vals[i] &lt; vals[secondIdx])
+secondIdx = i;
+}
+ Wha t if v als = {0, 1, 2}? 
+ See solutions</text>
+        </slide>
+        <slide>
+          <slideno>23</slideno>
+          <text>Why use class es?
+Baby Nurse [] 
+[] 
+Nursery</text>
+        </slide>
+        <slide>
+          <slideno>41</slideno>
+          <text>Baby class
+public c lass Baby { 
+String name; 
+double weight = 5.0; 
+boolean isMale; 
+int numPoops = 0; 
+Baby[] siblings; 
+void sayHi() {} 
+void eat(double foodWeight) {}
+}</text>
+        </slide>
+        <slide>
+          <slideno>35</slideno>
+          <text>Ok, le ts mak e this bab y!
+Baby ourBaby = new Baby();
+But wha t about it s name? it s sex?</text>
+        </slide>
+        <slide>
+          <slideno>2</slideno>
+          <text>Solutions 1
+public static int getMinIndex(int[] values) {
+int minValue = Integer.MAX_VALUE;
+int minIndex = -1; 
+for(int i=0; i&lt;values.length; i++)
+if (values[i] &lt; minValue) {
+minValue = values[i];
+minIndex = i; 
+} 
+return minIndex; 
+}</text>
+        </slide>
+        <slide>
+          <slideno>25</slideno>
+          <text>Defining classes</text>
+        </slide>
+        <slide>
+          <slideno>38</slideno>
+          <text>Baby c onstruct or
+public class Baby { 
+String name; 
+boolean isMale; 
+Baby(String myname, boolean maleBaby){ 
+name = myname; 
+isMale = maleBaby; 
+} 
+}</text>
+        </slide>
+      </slides>
+      <videos/>
+    </lecture>
+    <lecture>
+      <lecture_title>More types, methods, conditionals</lecture_title>
+      <lecture_pdf_url>https://ocw.mit.edu/courses/6-092-introduction-to-programming-in-java-january-iap-2010/resources/mit6_092iap10_lec02/</lecture_pdf_url>
+      <lectureno>2</lectureno>
+      <slides>
+        <slide>
+          <slideno>21</slideno>
+          <text>class Square2 { 
+public static void printSquare (int x){ 
+System .out.println (x*x); 
+} 
+public static void main (String [] arguments ){ 
+printSquare ("hello "); 
+printSquare (5.5); 
+} 
+} 
+What s wrong here?</text>
+        </slide>
+        <slide>
+          <slideno>30</slideno>
+          <text>class Scope { 
+public static void main (String [] arguments ){ 
+int x = 5; 
+if (x == 5){ 
+int x = 6;
+int y = 72;
+System .out.println ("x = " + x + " y = " + y);
+} 
+System .out.println ("x = " + x + " y = " + y); 
+} 
+}</text>
+        </slide>
+        <slide>
+          <slideno>45</slideno>
+          <text>Conversion by method 
+int to String: 
+String five = 5; // ERROR!
+String five = Integer.toString (5);
+String five =  + 5; // five = 5
+String to int: 
+int foo = 18; // ERROR! 
+int foo = Integer.parseInt (18);</text>
+        </slide>
+        <slide>
+          <slideno>6</slideno>
+          <text>finalPosition = finalPosition + 
+initialVelocity * fallingTime; 
+finalPosition = finalPosition + initialPosition; 
+OR 
+finalPosition += initialVelocity * fallingTime; 
+finalPosition += initialPosition;</text>
+        </slide>
+        <slide>
+          <slideno>23</slideno>
+          <text>Multiple Parameters
+[] NAME (TYPE NAME , TYPE NAME ) { 
+STATEMENTS 
+} 
+To call: 
+NAME(arg1, arg2 );</text>
+        </slide>
+        <slide>
+          <slideno>43</slideno>
+          <text>Assignment: FooCorporation 
+Method to print pay based on base pay and
+hours worked 
+Overtime: More than 40 hours, paid 1.5 times 
+base pay 
+Minimum Wage: $8.00/hour 
+Maximum Work: 60 hours a week</text>
+        </slide>
+        <slide>
+          <slideno>28</slideno>
+          <text>Variable Scope 
+Variables live in the block ({}) where they 
+are defined (scope ) 
+Method parameters are  like defining a 
+new variable in the method</text>
+        </slide>
+        <slide>
+          <slideno>3</slideno>
+          <text>Variables 
+Named location that stores a value
+Example : 
+String a = a;
+String b = letter b;
+a = letter a;
+String c = a +  and  + b;</text>
+        </slide>
+        <slide>
+          <slideno>15</slideno>
+          <text>Adding Methods 
+public static void NAME () { 
+STATEMENTS 
+}
+To call a method:
+NAME();</text>
+        </slide>
+        <slide>
+          <slideno>46</slideno>
+          <text>Comparison operators 
+Do NOT call == on doubles! EVER.
+double a = Math.cos (Math.PI / 2); 
+double b = 0.0; 
+a = 6.123233995736766E-17
+a == b will return FALSE!</text>
+        </slide>
+        <slide>
+          <slideno>42</slideno>
+          <text>Questions?</text>
+        </slide>
+        <slide>
+          <slideno>36</slideno>
+          <text>Comparison operators 
+x &gt; y: x is greater than y 
+x &lt; y: x is less than y 
+x &gt;= y: x is greater than or equal to x 
+x &lt;= y: x is less than  or equal to y 
+x == y: x equals y 
+( equality: ==, assignment: =  )</text>
+        </slide>
+        <slide>
+          <slideno>33</slideno>
+          <text>Outline
+Lecture 1 Review
+More types 
+Methods 
+Conditionals</text>
+        </slide>
+        <slide>
+          <slideno>4</slideno>
+          <text>Operators 
+Symbols that perform simple computations
+Assignment: = 
+Addition: + 
+Subtraction: 
+Multiplication: * 
+Division: /</text>
+        </slide>
+        <slide>
+          <slideno>13</slideno>
+          <text>Outline
+Lecture 1 Review
+More types 
+Methods 
+Conditionals</text>
+        </slide>
+        <slide>
+          <slideno>7</slideno>
+          <text>Questions from last lecture?</text>
+        </slide>
+        <slide>
+          <slideno>5</slideno>
+          <text>class GravityCalculator { 
+public static void main(String[] args) { 
+double gravity = -9.81; 
+double initialVelocity = 0.0; 
+double fallingTime = 10.0; 
+double initialPosition = 0.0; 
+double finalPosition = .5 * gravity * fallingTime * 
+fallingTime ;
+finalPosition = finalPosition +
+initialVelocity * fallingTime; 
+finalPosition = finalPosition + initialPosition; 
+System .out.println( "An object's position after " + 
+fallingTime + " seconds is " + 
+finalPosition +  m." ); 
+} 
+}</text>
+        </slide>
+        <slide>
+          <slideno>18</slideno>
+          <text>public static void main (String [] arguments ){ 
+System .out.println ("Line 1" ); 
+threeLines (); 
+System .out.println ("Line 2" ); public static void threeLines () {
+newLine (); newLine (); newLine ();
+}
+class NewLine { 
+public static void 
+""newLine () { 
+System .out.println (); 
+} 
+} 
+}</text>
+        </slide>
+        <slide>
+          <slideno>35</slideno>
+          <text>public static void test(int x){ 
+if (x &gt; 5){ 
+System .out.println (x + " is &gt; 5" ); 
+} 
+} 
+public static void main (String [] arguments ){ 
+test(6); 
+test(5); 
+test(4); 
+}</text>
+        </slide>
+        <slide>
+          <slideno>16</slideno>
+          <text>class NewLine { 
+public static void newLine () {
+System .out.println ("");
+}
+public static void threeLines () {
+newLine (); newLine (); newLine ();
+}
+public static void main (String [] arguments ){ 
+System .out.println ("Line 1" ); 
+threeLines (); 
+System .out.println ("Line 2" ); 
+} 
+}</text>
+        </slide>
+        <slide>
+          <slideno>44</slideno>
+          <text>Reminder
+Write your own code 
+Homework due tomorrow (Wednesday) 
+3pm on Stellar.</text>
+        </slide>
+        <slide>
+          <slideno>17</slideno>
+          <text>class NewLine { 
+public static void newLine () {
+System .out.println ("");
+}
+public static void main (String [] arguments ){ 
+System .out.println ("Line 1" ); 
+threeLines (); 
+System .out.println ("Line 2" ); public static void threeLines () {
+newLine (); newLine (); newLine ();
+}
+} 
+}</text>
+        </slide>
+        <slide>
+          <slideno>8</slideno>
+          <text>Outline
+Lecture 1 Review
+More types 
+Methods 
+Conditionals</text>
+        </slide>
+        <slide>
+          <slideno>47</slideno>
+          <text>MIT OpenCourseWare
+http://ocw.mit.edu 
+6.092 Introduction to Programming in Java 
+January (IAP) 2010 
+For information about citing these materials or our Terms of Use, visit: http://ocw.mit.edu/terms.</text>
+        </slide>
+        <slide>
+          <slideno>12</slideno>
+          <text>Conversion by casting 
+inta = 2;    // a = 2
+double a = 2;  // a = 2.0 (Implicit)
+int a = 18.7;      // ERROR
+int a = (int)18.7;      // a = 18
+double a = 2/3; // a = 0.0
+double a = (double)2/3; // a = 0.6666</text>
+        </slide>
+        <slide>
+          <slideno>40</slideno>
+          <text>else if 
+if (CONDITION ) { 
+STATEM ENTS 
+} else if ( CONDITION ) { 
+STATEM ENTS 
+} else if ( CONDITION ) { 
+STATEMENTS 
+} else { 
+STATEM ENTS 
+}</text>
+        </slide>
+        <slide>
+          <slideno>1</slideno>
+          <text>Outline
+Lecture 1 Review
+More types 
+Methods 
+Conditionals</text>
+        </slide>
+        <slide>
+          <slideno>27</slideno>
+          <text>class Square4 { 
+public static double square (double x){ 
+return x*x; 
+} 
+public static void main (String [] arguments ){ 
+System .out.println (square (5)); 
+System .out.println (square (2)); 
+} 
+}</text>
+        </slide>
+        <slide>
+          <slideno>24</slideno>
+          <text>class Multiply { 
+public static void times (double a, double b){ 
+System .out.println (a * b); 
+} 
+public static void main (String [] arguments ){ 
+times (2, 2); 
+times (3, 4); 
+} 
+}</text>
+        </slide>
+        <slide>
+          <slideno>34</slideno>
+          <text>if statement 
+if (CONDITION ) { 
+STATEMENTS 
+}</text>
+        </slide>
+        <slide>
+          <slideno>20</slideno>
+          <text>class Square { 
+public static void printSquare (int x){ 
+System .out.println (x*x); 
+} 
+public static void main (String [] arguments ){ 
+int value = 2; 
+printSquare (value ); 
+printSquare (3); 
+printSquare (value* 2); 
+} 
+}</text>
+        </slide>
+        <slide>
+          <slideno>22</slideno>
+          <text>class Square3 { 
+public static void printSquare (double x){ 
+System .out.println (x*x); 
+} 
+public static void main (String [] arguments ){ 
+printSquare (5); 
+} 
+} 
+What s wrong here?</text>
+        </slide>
+        <slide>
+          <slideno>25</slideno>
+          <text>Return Values 
+public static TYPE NAME () { 
+STATEMENTS 
+return EXPRESSION; 
+} 
+void means no type</text>
+        </slide>
+        <slide>
+          <slideno>26</slideno>
+          <text>class Square3 { 
+public static void printSquare (double x){ 
+System .out.println (x*x); 
+} 
+public static void main (String [] arguments ){ 
+printSquare (5); 
+} 
+}</text>
+        </slide>
+        <slide>
+          <slideno>32</slideno>
+          <text>Mathematical Functions
+Math.sin(x)
+Math.cos(Math.PI / 2)
+Math.pow(2, 3)
+Math.log(Math.log(x + y))</text>
+        </slide>
+        <slide>
+          <slideno>37</slideno>
+          <text>Boolean operators
+&amp;&amp;: logical AND 
+||: logical OR 
+if ( x &gt; 6 &amp;&amp; x &lt; 9) { if (x &gt; 6) { 
+ if (x &lt; 9) { 
+} 
+} 
+}</text>
+        </slide>
+        <slide>
+          <slideno>38</slideno>
+          <text>else 
+if (CONDITION ) { 
+STATEMENTS 
+} else { 
+STATEMENTS 
+}</text>
+        </slide>
+        <slide>
+          <slideno>39</slideno>
+          <text>public static void test(int x){ 
+if (x &gt; 5){ 
+System .out.println (x + " is &gt; 5" ); 
+} else { 
+System .out.println (x + " is not &gt; 5" ); 
+} 
+} 
+public static void main (String [] arguments ){ 
+test(6); 
+test(5); 
+test(4); 
+}</text>
+        </slide>
+        <slide>
+          <slideno>19</slideno>
+          <text>Parameters
+public static void NAME (TYPE NAME ) { 
+STATEMENTS 
+} 
+To call: 
+NAME( EXPRESSION );</text>
+        </slide>
+        <slide>
+          <slideno>2</slideno>
+          <text>Types 
+Kinds of values that can be stored and 
+manipulated. 
+boolean : Truth value ( true or false ).
+int: Integer (0, 1, -47).
+double : Real number (3.14, 1.0, -2.1).
+String : Text (hello, example).</text>
+        </slide>
+        <slide>
+          <slideno>14</slideno>
+          <text>Methods
+{ 
+} public static void main (String [] arguments ) 
+System .out.println (hi);</text>
+        </slide>
+        <slide>
+          <slideno>31</slideno>
+          <text>Methods: Building Blocks 
+Big programs are built out of small methods 
+Methods can be individually  developed, tested and 
+reused 
+User of method does not nee d to know how it works
+In Computer Science, this is called abstraction</text>
+        </slide>
+        <slide>
+          <slideno>29</slideno>
+          <text>class SquareChange { 
+public static void printSquare (int x){ 
+System .out.println ("printSquare x = " + x); 
+x = x * x; 
+System .out.println ("printSquare x = " + x); 
+} 
+public static void main (String [] arguments ){ 
+int x = 5; 
+System .out.println ("main x = " + x); 
+printSquare (x); 
+System .out.println ("main x = " + x); 
+} 
+}</text>
+        </slide>
+        <slide>
+          <slideno>41</slideno>
+          <text>public static void test(int x){ 
+if (x &gt; 5){ 
+System .out.println (x + " is &gt; 5" ); 
+} else if (x == 5){ 
+System .out.println (x + " equals 5"); 
+} else { 
+System .out.println (x + " is &lt; 5" ); 
+} 
+} 
+public static void main (String [] arguments ){ 
+test(6); 
+test(5); 
+test(4); 
+}</text>
+        </slide>
+        <slide>
+          <slideno>9</slideno>
+          <text>Division 
+Division (/) operates differently on 
+integers and on doubles! 
+Example: 
+double a = 5.0/2.0; // a = 2.5 
+intb = 4/2; // b = 2 
+int c = 5/2; // c = 2 
+double d = 5/2; // d = 2.0</text>
+        </slide>
+        <slide>
+          <slideno>10</slideno>
+          <text>Order of Operations 
+Precedence like math, left to right
+Right hand side of = evaluated first
+Parenthesis increase precedence
+double x = 3 / 2 + 1; // x = 2.0 
+double y = 3 / (2 + 1); // y = 1.0</text>
+        </slide>
+        <slide>
+          <slideno>0</slideno>
+          <text>6.092:  Intro to Java
+2: More types, Methods , 
+Conditionals</text>
+        </slide>
+        <slide>
+          <slideno>11</slideno>
+          <text>Mismatched Types 
+Java verifies that types always match:
+String five = 5; // ERROR! 
+test.java.2: incompatible types 
+found: int 
+required: java.lang.String 
+String five = 5;</text>
+        </slide>
+      </slides>
+      <videos/>
+    </lecture>
+    <lecture>
+      <lecture_title>Inheritance, exceptions, file I/O</lecture_title>
+      <lecture_pdf_url>https://ocw.mit.edu/courses/6-092-introduction-to-programming-in-java-january-iap-2010/resources/mit6_092iap10_lec07/</lecture_pdf_url>
+      <lectureno>7</lectureno>
+      <slides>
+        <slide>
+          <slideno>54</slideno>
+          <text>FileR eader
+ FileR eader takes a t ext file 
+ converts it in to a char acter stream 
+ FileR eader(P ATH T O FILE); 
+ Use this + BufferedReader to read files! 
+FileReader fr = new FileReader(readme.txt); 
+BufferedReader br = new BufferedReader(fr);</text>
+        </slide>
+        <slide>
+          <slideno>33</slideno>
+          <text>Catching it
+ Wha t it does 
+ try to run some c ode tha t ma y thr ow an e xception 
+ Tell Java wha t to do if it sees the e xception (catch ) 
+try {
+get(-1);
+} catch (ArrayOutOfBoundsException err) { 
+System.out.println(oh dear!); 
+}</text>
+        </slide>
+        <slide>
+          <slideno>37</slideno>
+          <text>Rethrowing it
+get doBad main</text>
+        </slide>
+        <slide>
+          <slideno>34</slideno>
+          <text>Rethrowing it
+	Maybe you dont w ant to deal with the 
+Exception 
+	Tell Java that your me thod thr ows it t oo 
+void doBad() throws ArrayOutOfBoundsException { 
+get(-1); 
+}</text>
+        </slide>
+        <slide>
+          <slideno>49</slideno>
+          <text>The Full Pictur e
+Hard driv e Netw ork 
+100101010101000101 ... InputStr eam
+System.in 
+O k  a y   a w  e  InputStr eamR eader
+Okay awesome, c ool\n   BufferedReader</text>
+        </slide>
+        <slide>
+          <slideno>9</slideno>
+          <text>Very Very Basic Inherit ance
+ Making a Game 
+public class Dude {
+public String name;
+public int hp = 100
+public int mp = 0;
+public void sayName() {
+System.out.println(name);
+}
+public void punchFace(Dude target) {
+target.hp -= 10;
+}
+}</text>
+        </slide>
+        <slide>
+          <slideno>56</slideno>
+          <text>Mor e about I/O 
+ http://ja va.sun.c om/docs/book s/tut orial/ essen tial/io/</text>
+        </slide>
+        <slide>
+          <slideno>36</slideno>
+          <text>Rethrowing it
+doBad main</text>
+        </slide>
+        <slide>
+          <slideno>29</slideno>
+          <text>How do exceptions happen?
+ Java doesnt know wha t to do, so it 
+ Creates an Ex ception object 
+ Includes some useful in forma tion 
+ throws the Ex ception 
+ You can cr eate and thr ow Ex ceptions t oo!</text>
+        </slide>
+        <slide>
+          <slideno>35</slideno>
+          <text>Rethrowing it
+main</text>
+        </slide>
+        <slide>
+          <slideno>30</slideno>
+          <text>public class Exception
+ Exception is a class 
+ Just inherit fr om it! 
+public class MyException extends Exception
+{ 
+} 
+ Or use e xisting ones 
+ http://rymden.nu/ exceptions. html</text>
+        </slide>
+        <slide>
+          <slideno>20</slideno>
+          <text>You can only inherit fr om one class
+Dude 
+Thie f Elf 
+Bad Elf</text>
+        </slide>
+        <slide>
+          <slideno>42</slideno>
+          <text>Rethrowing it
+doBad main 
+Exception</text>
+        </slide>
+        <slide>
+          <slideno>44</slideno>
+          <text>Rethrowing it
+main Exception</text>
+        </slide>
+        <slide>
+          <slideno>14</slideno>
+          <text>Buy Inherit ance!
+ Wizard can use ev erything* the Dude has!
+wizard1.hp += 1; 
+ Wizard can do ev erything* Dude c an do! 
+wizard1.punchFace(dude1); 
+ You can use a Wiz ard like a Dude t oo! 
+dude1.punchface(wizard1); 
+*except f or private fields and methods</text>
+        </slide>
+        <slide>
+          <slideno>57</slideno>
+          <text>Assignment
+ Magic Squar es 
+ Read tw o files 
+ Check that all r ows and c olumns sum t o 15
+2 7 6 
+9 5 1 
+4 3 8 15 
+15 
+15 
+15 15 15 15 15
+Figure by MIT OpenCourseWare.</text>
+        </slide>
+        <slide>
+          <slideno>40</slideno>
+          <text>Rethrowing it
+get doBad main 
+Exception</text>
+        </slide>
+        <slide>
+          <slideno>13</slideno>
+          <text>Buy Inherit ance!
+ Wizard is a subclass of Dude 
+public class Wizard extends Dude { 
+}</text>
+        </slide>
+        <slide>
+          <slideno>16</slideno>
+          <text>Inheriting fr om inherit ed classes 
+ Wha t about a Grand Wizard? 
+public class GrandWizard extends Wizard { 
+public void sayName() { 
+System.out.println(Grand wizard + name) 
+}
+} 
+grandWizard1.name = Flash
+grandWizard1.sayName();
+((Dude)grandWizard1).sayName();</text>
+        </slide>
+        <slide>
+          <slideno>27</slideno>
+          <text>Wha t is an Ex ception?
+	Event tha t occur s when some thing 
+une xpect ed happens 
+	null.someMe thod() ; 
+	(new in t[1])[1] = 0; 
+	int i = string ;</text>
+        </slide>
+        <slide>
+          <slideno>3</slideno>
+          <text>BigRig
+class BigRig implements ICar { 
+int getNumWheels() { 
+return 18; 
+} 
+}</text>
+        </slide>
+        <slide>
+          <slideno>17</slideno>
+          <text>How does Ja va do tha t?
+ Wha t Java does when it sees 
+grandWizard1.punchF ace(dude1) 
+1. Look f or punchFace() in the Gr andWiz ard class 
+2. Its not ther e! Does GrandWiz ard have a par ent? 
+3. Look f or punchFace() in Wiz ard class 
+4. Its not ther e! Does Wiz ard have a par ent? 
+5. Look f or punchFace() in Dude class 
+6. Found it!  Call punchFace() 
+7. Deduct hp fr om dude1</text>
+        </slide>
+        <slide>
+          <slideno>31</slideno>
+          <text>Warn Ja va about the Ex ception 
+public Object get(int index) throws 
+ArrayOutOfBoundsException { 
+If (index &lt; 0 || index &gt;= size())
+throw new 
+ArrayOutOfBoundsException(+index); 
+} 
+	throws tells Ja va that get may thr ow the 
+ArrayOutOfBoundsEx ception 
+	throw actually thr ows the Ex ception (sorry)</text>
+        </slide>
+        <slide>
+          <slideno>55</slideno>
+          <text>FileR eader Code
+import java.io.BufferedReader;
+import java.io.FileReader;
+import java.io.IOException; 
+public class ReadFile { 
+public static void main(String[] args) throws IOException{
+// Path names are relative to project directory (Eclipse Quirk )
+FileReader fr = new FileReader("./src/readme");
+BufferedReader br = new BufferedReader(fr);
+String line = null;
+while ((line = br.readLine()) != null) {
+System.out.println(line);
+}
+br.close();
+}
+}</text>
+        </slide>
+        <slide>
+          <slideno>15</slideno>
+          <text>Buy Inherit ance!
+ Now augmen t a Wizard 
+public class Wizard extends Dude { 
+ArrayList&lt;Spell&gt; spells; 
+public class cast(String spell) { 
+// cool stuff here
+...
+mp -= 10;
+}
+}</text>
+        </slide>
+        <slide>
+          <slideno>41</slideno>
+          <text>Rethrowing it
+doBad main 
+Exception</text>
+        </slide>
+        <slide>
+          <slideno>23</slideno>
+          <text>Inherit ance Summary 
+	class A extends B {} == A is a subclass of B
+	A has all the fields and methods tha t B has
+	A can add it s own fields and me thods 
+	A can only ha ve 1 par ent 
+	A can replace a par ents method by r e-
+implemen ting it 
+	If A doesnt implemen t something Ja va 
+sear ches ances tors</text>
+        </slide>
+        <slide>
+          <slideno>43</slideno>
+          <text>Rethrowing it
+main Exception</text>
+        </slide>
+        <slide>
+          <slideno>47</slideno>
+          <text>I/O</text>
+        </slide>
+        <slide>
+          <slideno>38</slideno>
+          <text>Rethrowing it
+get doBad main</text>
+        </slide>
+        <slide>
+          <slideno>12</slideno>
+          <text>Inherit ance?
+ Now cr eate a Wizard 
+Dont Act Now! 
+You dont ha ve to Cop y &amp; P aste!</text>
+        </slide>
+        <slide>
+          <slideno>2</slideno>
+          <text>Interfaces?  Interfaces!
+ Its a con tract! 
+ If you mus t implemen t ALL the methods
+ All fields are final (cannot be chang ed)
+public interface ICar {
+boolean isCar = true;
+int getNumWheels();
+}</text>
+        </slide>
+        <slide>
+          <slideno>39</slideno>
+          <text>Rethrowing it
+get doBad main 
+Exception</text>
+        </slide>
+        <slide>
+          <slideno>7</slideno>
+          <text>Inherit ance
+Exceptions
+I/O</text>
+        </slide>
+        <slide>
+          <slideno>58</slideno>
+          <text>MIT OpenCourseWare
+http://ocw.mit.edu 
+6.092 Introduction to Programming in Java 
+January (IAP) 2010 
+For information about citing these materials or our Terms of Use, visit: http://ocw.mit.edu/terms.</text>
+        </slide>
+        <slide>
+          <slideno>19</slideno>
+          <text>Wha ts going on?
+Parent of 
+Wizard, Elf..
+Subclass 
+of Dude
+Subclass of 
+Wizard
+Dude 
+Wizard Thie f Elf 
+Grand 
+Wizard</text>
+        </slide>
+        <slide>
+          <slideno>26</slideno>
+          <text>Exceptions
+ NullP ointerEx ception 
+ ArrayInde xOutOfBoundsEx ception
+ ClassCas tException 
+ RuntimeEx ception</text>
+        </slide>
+        <slide>
+          <slideno>1</slideno>
+          <text>Review</text>
+        </slide>
+        <slide>
+          <slideno>32</slideno>
+          <text>Catching an Ex ception
+	Java now expects c ode tha t calls get to deal 
+with the e xception by 
+	Catching it 
+	Rethrowing it</text>
+        </slide>
+        <slide>
+          <slideno>52</slideno>
+          <text>BufferedReader
+	BufferedReader buffers a char acter stream so 
+you can read line by line 
+	String readLine() 
+new BufferedReader( 
+new InputStreamReader(System.in));</text>
+        </slide>
+        <slide>
+          <slideno>25</slideno>
+          <text>Exceptions</text>
+        </slide>
+        <slide>
+          <slideno>5</slideno>
+          <text>An Ov al Sprit e
+public class Oval implements Sprite { 
+private int width, height; 
+private Color color; 
+public Oval(int width, int height, Color color) { 
+// set the fields ... 
+} 
+public void draw(Graphics surface, int x, int y) { 
+surface.setColor(color);
+surface.fillOval(x, y, width, height); 
+surface.drawOval(x, y, width, height); 
+} 
+... 
+}</text>
+        </slide>
+        <slide>
+          <slideno>45</slideno>
+          <text>What it no one c atches it?
+ If you ran 
+public static void main(String[] args) throws Exception { 
+doBad(); 
+} 
+ Java will prin t that err or messag e you see 
+Exception in thread "main" 
+java.lang.ArrayIndexOutOfBoundsException: -1
+at YourClass.get(YourClass.java:50)
+at YourClass.doBad(YourClass.java:11)
+at YourClass.main(YourClass.java:10)</text>
+        </slide>
+        <slide>
+          <slideno>53</slideno>
+          <text>User Input
+InputStreamReader ir = new 
+InputStreamReader(System.in); 
+BufferedReader br = new Buffere dReader(i r); 
+br.readLine();</text>
+        </slide>
+        <slide>
+          <slideno>24</slideno>
+          <text>So much mor e to learn!
+ http://ja va.sun.co m/do cs/bo oks/tut orial/ja va/IandI /subclasses.h tml
+ http://home.c ogeco.ca/~v e3ll/ja tutor5.h tm 
+ http:// en.wikipedia.or g/wiki/Inherit ance_(comput er_science) 
+ http://www.google.com</text>
+        </slide>
+        <slide>
+          <slideno>4</slideno>
+          <text>That Homew ork!
+ Bouncer draws a Sprit e that 
+ Mov es ar ound 
+ Bounces in a bo x 
+ A Sprit e is an in terface 
+ You can draw anything 
+ Mov er 
+ Keeps upda ting the c oordina tes of a Sprit e</text>
+        </slide>
+        <slide>
+          <slideno>10</slideno>
+          <text>Inherit ance..
+ Now cr eate a Wizard 
+public class Wizard { 
+// ugh, gotta copy and paste 
+// Dudes stuff 
+}</text>
+        </slide>
+        <slide>
+          <slideno>0</slideno>
+          <text>Lectur e 7
+Review
+Exceptions
+IO</text>
+        </slide>
+        <slide>
+          <slideno>8</slideno>
+          <text>Inherit ance</text>
+        </slide>
+        <slide>
+          <slideno>21</slideno>
+          <text>You can only inherit fr om one class
+Dude 
+Thie f Elf 
+Bad Elf</text>
+        </slide>
+        <slide>
+          <slideno>18</slideno>
+          <text>How does Ja va do tha t? pt2
+ Wha t Java does when it sees 
+((Dude)grandWizard1).sayName() 
+1. Cast to Dude tells Ja va to start looking in Dude 
+2. Look f or sayName() in Dude class 
+3. Found it!  Call sayName()</text>
+        </slide>
+        <slide>
+          <slideno>51</slideno>
+          <text>InputStr eamR eader
+	Reader is a class f or char acter streams 
+	Read one char acter aft er another using read() 
+	InputStr eamR eader takes an InputStr eam and 
+converts byt es to char acters 
+	Still inc onvenien t 
+	Can only read a char acter at a time 
+new InputStreamReader(stream)</text>
+        </slide>
+        <slide>
+          <slideno>11</slideno>
+          <text>Inherit ance?
+ Now cr eate a Wizard 
+But W ait! 
+A Wiz ard does and has e verything a 
+Dude does and has!</text>
+        </slide>
+        <slide>
+          <slideno>22</slideno>
+          <text>You can only inherit fr om one class
+Wha t if Thie f and Elf both implemen t
+public void sneakUp() 
+If the y implemen ted differently, 
+which sneakUp() does BadElf call? 
+Java Doesnt K now!!
+Dude 
+Thie f Elf 
+Bad Elf</text>
+        </slide>
+        <slide>
+          <slideno>50</slideno>
+          <text>InputStr eam
+ InputStr eam is a s tream of b ytes 
+ Read one b yte after another using read() 
+ A byt e is jus t a number 
+ Data on y our har d driv e is stored in b ytes 
+ Bytes can be in terpr eted as char acters, number s.. 
+InputStream stream = System.in;</text>
+        </slide>
+        <slide>
+          <slideno>6</slideno>
+          <text>A Mo ver tha t doesnt bounce
+public clas s StraightMover { 
+private int x, y, xDirection, yDirection;
+private Sprite sprite; 
+public StraightMover(int startX, int startY, Sprite sprite) { 
+x = startX; 
+y = startY; 
+this.sprite = sprite; 
+} 
+public void setMovementVector(int xIncrement, int yIncrement) { 
+xDirection = xIncrement; 
+yDirection = yIncrement; 
+} 
+public void draw(Graphics graphics) {
+sprite.draw(graphics, x, y);
+x += xDirection;
+y += yDirection;
+} 
+}</text>
+        </slide>
+        <slide>
+          <slideno>48</slideno>
+          <text>Weve seen Output
+System.out .println(some string);</text>
+        </slide>
+        <slide>
+          <slideno>46</slideno>
+          <text>Mor e Info?
+ http://ja va.sun.c om/docs/book s/tut orial/ essen tial/exceptions
+ http:// en.wikipedia.or g/wiki/Ex ceptions</text>
+        </slide>
+        <slide>
+          <slideno>28</slideno>
+          <text>Why use an Ex ception? 
+	To tell the c ode using y our method tha t 
+something wen t wrong 
+Exception in thread "main" 
+java.lang.ArrayIndexOutOfBoundsException: 5
+at RuntimeException.main(RuntimeException.java:8) 
+Accessed inde x 5, which isnt in the arr ay
+The method tha t called it w as main
+	Debugging and under standing control flow</text>
+        </slide>
+      </slides>
+      <videos/>
+    </lecture>
+    <lecture>
+      <lecture_title>Types, variables, operators</lecture_title>
+      <lecture_pdf_url>https://ocw.mit.edu/courses/6-092-introduction-to-programming-in-java-january-iap-2010/resources/mit6_092iap10_lec01/</lecture_pdf_url>
+      <lectureno>1</lectureno>
+      <slides>
+        <slide>
+          <slideno>17</slideno>
+          <text>Operators&#13; 
+Symbols that perform simple computations&#13;
+Assignment: =&#13; 
+Addition: +&#13; 
+Subtraction: -&#13; 
+Multiplication: *&#13; 
+Division: /</text>
+        </slide>
+        <slide>
+          <slideno>13</slideno>
+          <text>Variables&#13; 
+Named location that stores a value of one 
+particular type.&#13; 
+Form: 
+TYPE NAME;&#13; 
+Example:&#13; 
+&#13;String foo;</text>
+        </slide>
+        <slide>
+          <slideno>20</slideno>
+          <text>class DoMath2 {&#13; 
+public static void main(String[] arguments ){&#13; 
+double score = 1.0 + 2.0 * 3.0;&#13; 
+System.out.println (score);&#13; 
+double copy = score;&#13; 
+copy = copy / 2.0;&#13; 
+System.out.println (copy);&#13; 
+System.out.println (score);&#13; 
+}&#13; 
+}</text>
+        </slide>
+        <slide>
+          <slideno>3</slideno>
+          <text>The Computer&#13;
+Central 
+Processing Unit 
+(CPU) 
+Input/Output 
+(IO) Devices Memory</text>
+        </slide>
+        <slide>
+          <slideno>5</slideno>
+          <text>Programming Languages&#13; 
+	Easier to understand than CPU 
+instructions&#13; 
+	Needs to be translated for the CPU to 
+understand it</text>
+        </slide>
+        <slide>
+          <slideno>22</slideno>
+          <text>Assignment: GravityCalculator &#13;
+Compute the position of a falling object:&#13; 
+x(t) = 0.5  at2 + vit + xi</text>
+        </slide>
+        <slide>
+          <slideno>8</slideno>
+          <text>First Program&#13; 
+class Hello {&#13; 
+public static void main(String[] arguments) {&#13; 
+// Program execution begins here &#13;
+ System .out.println ("Hello world." );&#13; 
+}&#13; 
+}</text>
+        </slide>
+        <slide>
+          <slideno>1</slideno>
+          <text>Goal&#13; 
+Learn enough Java to do something
+useful&#13; 
+Examples:&#13; 
+ Simulate a natural/engineering process&#13;
+ Manipulate PDFs&#13; 
+ Draw pretty graphics</text>
+        </slide>
+        <slide>
+          <slideno>9</slideno>
+          <text>Program Structure&#13; 
+class CLASSNAME {&#13; 
+public static void main(String[] arguments) {&#13; 
+STATEMENTS&#13; 
+}&#13; 
+}</text>
+        </slide>
+        <slide>
+          <slideno>15</slideno>
+          <text>Assignment&#13; 
+Can be combined with a variable 
+declaration.&#13; 
+Example:&#13; 
+&#13;double badPi  = 3.14;&#13; 
+&#13;boolean isJanuary  = true;</text>
+        </slide>
+        <slide>
+          <slideno>19</slideno>
+          <text>class DoMath {&#13; 
+public static void main(String[] arguments ){&#13; 
+double score = 1.0 + 2.0 * 3.0;&#13; 
+System.out.println (score);&#13; 
+score = score / 2.0;&#13; 
+System.out.println (score);&#13; 
+}&#13; 
+}</text>
+        </slide>
+        <slide>
+          <slideno>23</slideno>
+          <text>MIT OpenCourseWare
+http://ocw.mit.edu 
+6.092 Introduction to Programming in Java 
+January (IAP) 2010 
+For information about citing these materials or our Terms of Use, visit: http://ocw.mit.edu/terms.</text>
+        </slide>
+        <slide>
+          <slideno>16</slideno>
+          <text>class Hello3 {&#13; 
+public static void main(String[] arguments ){&#13; 
+String foo = "IAP 6.092";&#13; 
+System.out.println (foo);&#13; 
+foo = "Something else" ;&#13; 
+System.out.println (foo);&#13; 
+}&#13; 
+}</text>
+        </slide>
+        <slide>
+          <slideno>12</slideno>
+          <text>Types&#13; 
+Kinds of values that can be stored and 
+manipulated.&#13; 
+boolean : Truth value (true or false).&#13;
+int: Integer (0, 1, -47).&#13;
+double : Real number (3.14, 1.0, -2.1).&#13;
+String: Text (hello, example).</text>
+        </slide>
+        <slide>
+          <slideno>0</slideno>
+          <text>6.092:  Introduction to Java  
+1: Types, Variables, Operators</text>
+        </slide>
+        <slide>
+          <slideno>2</slideno>
+          <text>Assignments&#13; 
+ View and submit via Stellar&#13; 
+ Due at 3 PM the next day (24 hours)&#13; 
+ Collaborate with others&#13; 
+ Write your own code&#13; 
+ Must submit rst assignment&#13; 
+Must submit a reasonable attempt for 6/7
+assignments to pass</text>
+        </slide>
+        <slide>
+          <slideno>11</slideno>
+          <text>Second Program&#13; 
+class Hello2 {&#13; 
+public static void main(String[] arguments ){&#13; 
+System.out.println ("Hello world." ); // Print once&#13; 
+System.out.println ("Line number 2" ); // Again!&#13; 
+}&#13; 
+}</text>
+        </slide>
+        <slide>
+          <slideno>4</slideno>
+          <text>CPU Instructions&#13; 
+z = x + y&#13;	 Read location x&#13; 
+Read location y&#13; 
+Add&#13; Write to location z</text>
+        </slide>
+        <slide>
+          <slideno>7</slideno>
+          <text>Compiling Java&#13;
+Source Code 
+(.java) Byte Code 
+(.class)javac java</text>
+        </slide>
+        <slide>
+          <slideno>10</slideno>
+          <text>Output&#13;
+System.out.println(some String) outputs to
+the console&#13; 
+Example:&#13; 
+&#13;System.out.println(output );</text>
+        </slide>
+        <slide>
+          <slideno>18</slideno>
+          <text>Order of Operations&#13; 
+Follows standard math rules:&#13; 
+1. Parentheses&#13; 
+2. Multiplication and division&#13; 
+3. Addition and subtraction</text>
+        </slide>
+        <slide>
+          <slideno>21</slideno>
+          <text>String Concatenation (+)&#13; 
+String text = "hello" + " world";&#13; 
+text = text + " number " + 5;&#13; 
+// text = "hello world number 5"</text>
+        </slide>
+        <slide>
+          <slideno>6</slideno>
+          <text>Java&#13; 
+ Most popular language&#13; 
+ Runs on a virtual machine (JVM)&#13; 
+ More complex than some (eg. Python)&#13;
+ Simpler than others (eg. C++)</text>
+        </slide>
+        <slide>
+          <slideno>14</slideno>
+          <text>Assignment&#13; 
+Use = to give variables a value.&#13;
+Example:&#13; 
+&#13;String foo;&#13; 
+&#13;foo = IAP 6.092;</text>
+        </slide>
+      </slides>
+      <videos/>
+    </lecture>
+    <lecture>
+      <lecture_title>Design, debugging, interfaces</lecture_title>
+      <lecture_pdf_url>https://ocw.mit.edu/courses/6-092-introduction-to-programming-in-java-january-iap-2010/resources/mit6_092iap10_lec06/</lecture_pdf_url>
+      <lectureno>6</lectureno>
+      <slides>
+        <slide>
+          <slideno>27</slideno>
+          <text>Tools: Eclipse Warnings&#13; 
+Warnings: may not be a mistake, but it
+likely is.&#13; 
+Suggestion: always x all warnings&#13; 
+Extra checks: FindBugs  and related tools&#13;
+Unit testing: JUnit makes testing easier</text>
+        </slide>
+        <slide>
+          <slideno>4</slideno>
+          <text>public class DrawGraphics {&#13; 
+BouncingBox  box;  // a eld or  member  variable &#13; 
+public DrawGraphics () {&#13;
+ box = new BouncingBox (200, 50, Color .RED);&#13; 
+}&#13; 
+public void draw(Graphics surface) {&#13;
+ surface .drawLine (50, 50, 250, 250);&#13;
+box.draw(surface);&#13;
+}&#13; 
+}</text>
+        </slide>
+        <slide>
+          <slideno>2</slideno>
+          <text>Assignment 5: main()&#13;
+Programs start at a main() method, but
+many classes can have main()&#13; 
+public class SimpleDraw {&#13;
+ /* ... stuff ... */ &#13; 
+public static void main(String args[]) {&#13; 
+SimpleDraw  content = new SimpleDraw (new DrawGraphics());&#13;
+ /* ... more stuff ... */ &#13; 
+}&#13; 
+}</text>
+        </slide>
+        <slide>
+          <slideno>17</slideno>
+          <text>Pseudocode : Interval Testing&#13;
+Example:&#13; 
+&#13;Is a number within the interval [ x, y)?&#13; 
+If number &lt; x return false&#13; 
+If number &gt; y return false&#13; Return true</text>
+        </slide>
+        <slide>
+          <slideno>28</slideno>
+          <text>Assertions&#13;Verify that code does what you expect&#13;If true: nothing happens&#13;If false: program crashes with error&#13;Disabled by default (enable with ea)&#13;assert difference &gt;= 0;</text>
+        </slide>
+        <slide>
+          <slideno>47</slideno>
+          <text>Using Interfaces&#13; 
+Can only access stuff in the interface.&#13;
+Drawable d = new BouncingBox ();&#13;
+d.setMovementVector(1, 1);&#13; 
+The method setMovementVector(int , int) 
+is undened for the type Drawable</text>
+        </slide>
+        <slide>
+          <slideno>15</slideno>
+          <text>Step 1: Dont Make Mistakes&#13; 
+Dont introduce errors in the rst place&#13; 
+	Reuse: nd existing code that does
+what you want&#13; 
+	Design: think before you code&#13; 
+	Best Practices: Recommended 
+procedures/techniques to avoid
+common problems</text>
+        </slide>
+        <slide>
+          <slideno>5</slideno>
+          <text>public class DrawGraphics {&#13; 
+BouncingBox  box;&#13; 
+public DrawGraphics () {  // constructor &#13; 
+box = new BouncingBox (200, 50, Color .RED);&#13; 
+}&#13; 
+public void draw(Graphics surface) {&#13;
+ surface .drawLine (50, 50, 250, 250);&#13;
+box.draw(surface);&#13;
+}&#13; 
+}</text>
+        </slide>
+        <slide>
+          <slideno>9</slideno>
+          <text>What is a good program?&#13; 
+Correct / no errors&#13; 
+Easy to understand&#13; 
+Easy to modify / extend&#13; 
+Good performance (speed)</text>
+        </slide>
+        <slide>
+          <slideno>20</slideno>
+          <text>Step 2: Find Mistakes Early&#13; 
+Easier to x errors the earlier you nd
+them&#13; 
+ Test your design&#13; 
+ Tools: detect potential errors&#13; 
+ Test your implementation&#13; 
+ Check your work: assertions</text>
+        </slide>
+        <slide>
+          <slideno>22</slideno>
+          <text>Intervals: Important Cases&#13; 
+Below the lower bound&#13; 
+Equal to the lower bound&#13; 
+Within the interval&#13; 
+Equal to the upper bound&#13; 
+Above the upper bound</text>
+        </slide>
+        <slide>
+          <slideno>30</slideno>
+          <text>Step 3: Reproduce the Error&#13; 
+ Figure out how to repeat the error&#13; 
+ Create a minimal test case&#13; 
+Go back to a working version, and
+introduce changes one at a time until
+the error comes back&#13; 
+Eliminate extra stuff that isnt used</text>
+        </slide>
+        <slide>
+          <slideno>18</slideno>
+          <text>Design&#13;
+Visual design for objects, or how a
+program works&#13; 
+Dont worry about specic notation, just
+do something that makes sense for you&#13; 
+Scrap paper is useful</text>
+        </slide>
+        <slide>
+          <slideno>44</slideno>
+          <text>Interfaces: Drawable &#13; 
+import java.awt.Graphics;&#13; 
+interface Drawable {&#13; 
+void draw(Graphics surface);&#13;
+ void setColor(Color color);&#13; 
+}</text>
+        </slide>
+        <slide>
+          <slideno>41</slideno>
+          <text>public class DrawGraphics {&#13; 
+ArrayList&lt;BouncingBox &gt; boxes = new ArrayList&lt;BouncingBox &gt;();&#13; 
+ArrayList&lt;Flower&gt; owers = new ArrayList&lt;Flower&gt;();&#13; 
+ArrayList&lt;Car&gt; cars = new ArrayList&lt;Car&gt;();&#13; 
+public void draw(Graphics surface) {&#13;
+for (BouncingBox box : boxes) {&#13;
+box.draw(surface);&#13;
+}&#13;
+for (Flower ower : owers) {&#13;
+ower.draw(surface);&#13;
+}&#13;
+for (Car car : cars) {&#13;
+car.draw(surface);&#13; 
+}&#13; 
+}&#13; 
+}</text>
+        </slide>
+        <slide>
+          <slideno>50</slideno>
+          <text>MIT OpenCourseWare
+http://ocw.mit.edu 
+6.092 Introduction to Programming in Java 
+January (IAP) 2010 
+For information about citing these materials or our Terms of Use, visit: http://ocw.mit.edu/terms.</text>
+        </slide>
+        <slide>
+          <slideno>34</slideno>
+          <text>Why Use Methods?&#13; 
+Write and test code once, use it multiple
+times: avoid duplication&#13; 
+Eg. Library.addBook ()</text>
+        </slide>
+        <slide>
+          <slideno>1</slideno>
+          <text>Assignment 5: main()&#13; 
+Programs start at a main() method, but
+many classes can have main()&#13; 
+public class SimpleDraw {&#13; 
+/* ... stuff ... */ &#13; 
+public static void main(String args[]) {&#13; 
+SimpleDraw content = new SimpleDraw (new DrawGraphics ());&#13; 
+/* ... more stuff ... */ &#13; 
+}&#13; 
+}</text>
+        </slide>
+        <slide>
+          <slideno>24</slideno>
+          <text>Pseudocode : Interval Testing&#13;
+Is a number within the interval [ x, y)?&#13; 
+If number &lt; x return false&#13; 
+If number &gt; y return false&#13; 
+Return true</text>
+        </slide>
+        <slide>
+          <slideno>32</slideno>
+          <text>Step 5: Collect Information&#13; 
+If x is the problem, how can you verify?
+Need  information about what is going 
+on inside the program&#13; 
+System.out.println() is very powerful&#13; 
+Eclipse debugger can help</text>
+        </slide>
+        <slide>
+          <slideno>16</slideno>
+          <text>Design: Pseudocode&#13; 
+A high-level, understandable description
+of what a program is supposed to do&#13;
+Dont worry about the details, worry about
+the structure</text>
+        </slide>
+        <slide>
+          <slideno>49</slideno>
+          <text>Assignment: More graphics&#13; 
+Start a new project: code has changed.</text>
+        </slide>
+        <slide>
+          <slideno>29</slideno>
+          <text>void printDif ferenceFromFastest(int[] marathonT imes) {&#13; 
+int fastestT ime = ndMinimum (marathonT imes);&#13; 
+for (int time : marathonT imes) {&#13;
+int difference = time - fastestT ime;&#13;
+assert difference &gt;= 0;&#13;
+System.out.println ("Difference: " + difference);&#13;
+}&#13; 
+}</text>
+        </slide>
+        <slide>
+          <slideno>3</slideno>
+          <text>public class DrawGraphics {&#13; 
+BouncingBox box;&#13; 
+public DrawGraphics () {&#13; 
+box = new BouncingBox (200, 50, Color .RED);&#13; 
+}&#13; 
+public void draw(Graphics surface) {&#13;
+surface.drawLine (50, 50, 250, 250);&#13;
+box.draw(surface);&#13;
+}&#13; 
+}</text>
+        </slide>
+        <slide>
+          <slideno>48</slideno>
+          <text>Casting&#13; 
+If you know that a variable holds a
+specic type, you can use a cast:&#13; 
+Drawable d = new BouncingBox ();&#13; 
+BouncingBox  box = (BouncingBox ) d;&#13; 
+box.setMovementVector(1, 1);</text>
+        </slide>
+        <slide>
+          <slideno>39</slideno>
+          <text>Interface Example: Drawing&#13; 
+public class BouncingBox {&#13; 
+public void draw(Graphics surface) {&#13; 
+//  code to draw the box &#13;
+ }&#13; 
+}&#13; 
+//  draw boxes &#13; 
+for (BouncingBox box : boxes) {&#13; 
+box.draw(surface);&#13; 
+}</text>
+        </slide>
+        <slide>
+          <slideno>12</slideno>
+          <text>Good Class Design&#13; 
+Good classes: easy to understand and use&#13; 
+	Make elds and methods private by default&#13;
+	Only make methods public if you need to&#13; 
+	If you need access to a eld, create a
+method:&#13; 
+public int getBar() { return bar; }</text>
+        </slide>
+        <slide>
+          <slideno>19</slideno>
+          <text>SimpleDraw 
+DrawGraphics 
+ArrayList 
+BouncingBox BouncingBox BouncingBox</text>
+        </slide>
+        <slide>
+          <slideno>10</slideno>
+          <text>Consistency&#13; 
+Writing code in a consistent way makes it
+easier to write and understand&#13; 
+Programming style guides: dene rules
+about how to do things&#13; 
+Java has some widely accepted
+standard style guidelines</text>
+        </slide>
+        <slide>
+          <slideno>21</slideno>
+          <text>Testing: Important Inputs&#13; 
+Want to check all paths through the 
+program.&#13; 
+Think about one example for each path&#13;
+Example:&#13; 
+&#13;Is a number within the interval [ x, y)?</text>
+        </slide>
+        <slide>
+          <slideno>8</slideno>
+          <text>Outline&#13; 
+Good program design&#13; 
+Debugging&#13; 
+Interfaces</text>
+        </slide>
+        <slide>
+          <slideno>6</slideno>
+          <text>public class DrawGraphics {&#13; 
+public void draw(Graphics surface) {&#13; 
+surface.drawLine (50, 50, 250, 250);&#13; 
+box.draw(surface);&#13; 
+surface.llRect (150, 100, 25, 40);&#13; 
+surface.llOval (40, 40, 25, 10);&#13; surface.setColor (Color .YELLOW);&#13; 
+surface.drawString ("Mr. And Mrs. Smith" , 200, 10);&#13; 
+}&#13; 
+}</text>
+        </slide>
+        <slide>
+          <slideno>0</slideno>
+          <text>6.092:  Introduction to Java  
+6: Design, Debugging,
+Interfaces</text>
+        </slide>
+        <slide>
+          <slideno>37</slideno>
+          <text>Implementation / Interface&#13;
+Library 
+Book[] books; 
+int numBooks; 
+String address; 
+void addBook(Book b) {
+ books[numBooks] = b;
+ numBooks++; 
+} Library 
+void addBook(Book b);</text>
+        </slide>
+        <slide>
+          <slideno>38</slideno>
+          <text>Java Interfaces&#13; 
+Manipulate objects, without knowing how
+they work&#13; 
+Useful when you have similar but not
+identical objects&#13; 
+Useful when you want to use code written
+by others</text>
+        </slide>
+        <slide>
+          <slideno>14</slideno>
+          <text>Step 1: Dont Make Mistakes&#13; 
+Dont introduce errors in the rst place</text>
+        </slide>
+        <slide>
+          <slideno>46</slideno>
+          <text>Interface Notes&#13; 
+Only have methods (mostly true)&#13; 
+Do not provide code, only the denition
+(called signatures )&#13; 
+A class can implement any number of
+interface</text>
+        </slide>
+        <slide>
+          <slideno>26</slideno>
+          <text>Pseudocode : Interval Testing&#13;
+Is a number within the interval [ x, y)?&#13; 
+Is 5 in the interval [3, 5)?&#13; 
+If number &lt; x return false&#13; 
+If number &gt;= y return false&#13; Return true</text>
+        </slide>
+        <slide>
+          <slideno>45</slideno>
+          <text>Implementing Interfaces&#13; 
+Implementations provide complete
+methods:&#13; 
+import java.awt.Graphics;&#13; 
+class Flower implements Drawable {&#13; 
+// ... other stuff ...&#13; 
+public void draw(Graphics surface) {&#13; 
+// ... code to draw a ower here ...&#13; 
+}&#13; 
+}</text>
+        </slide>
+        <slide>
+          <slideno>7</slideno>
+          <text>public class DrawGraphics {&#13; 
+ArrayList&lt;BouncingBox &gt; boxes = new ArrayList&lt;BouncingBox &gt;();&#13;
+ public DrawGraphics () {&#13;
+boxes.add(new BouncingBox (200, 50, Color .RED));&#13;
+boxes.add(new BouncingBox (10, 10, Color .BLUE));&#13;
+boxes.add(new BouncingBox (100, 100, Color .GREEN));&#13;
+boxes.get(0).setMovementV ector(1, 0);&#13;
+boxes.get(1).setMovementV ector(-3, -2);&#13;
+boxes.get(2).setMovementV ector(1, 1);&#13;
+}&#13;
+    public void draw(Graphics surface) {&#13; 
+for (BouncingBox box : boxes) {&#13; 
+box.draw(surface);&#13; 
+}&#13; 
+}&#13; 
+}</text>
+        </slide>
+        <slide>
+          <slideno>35</slideno>
+          <text>Why Use Methods?&#13;
+Use it without understanding how it works: 
+encapsulation / information hiding&#13;
+Eg. How does System.out.println() work?</text>
+        </slide>
+        <slide>
+          <slideno>23</slideno>
+          <text>Intervals: Important Cases&#13; 
+What if lower bound &gt; upper bound?&#13; 
+What if lower bound == upper bound?&#13; 
+(hard to get right!)</text>
+        </slide>
+        <slide>
+          <slideno>25</slideno>
+          <text>Pseudocode : Interval Testing&#13;
+Is a number within the interval [ x, y)?&#13; 
+Is 5 in the interval [3, 5)?&#13; 
+If number &lt; x return false&#13; 
+If number &gt; y return false&#13; Return true</text>
+        </slide>
+        <slide>
+          <slideno>40</slideno>
+          <text>Interface Example: Drawing&#13; 
+public class Flower {&#13; 
+public void draw(Graphics surface) {&#13; 
+//  code to draw a ower &#13;
+ }&#13; 
+}&#13; 
+//  draw owers &#13; 
+for (Flower ower : owers) {&#13; 
+ower.draw(surface);&#13; 
+}</text>
+        </slide>
+        <slide>
+          <slideno>42</slideno>
+          <text>public class DrawGraphics {&#13; 
+ArrayList&lt;Drawable &gt; shapes = new ArrayList&lt;Drawable &gt;();&#13; 
+ArrayList&lt;Flower&gt; owers = new ArrayList&lt;Flower&gt;();&#13;
+ArrayList&lt;Car&gt; cars = new ArrayList&lt;Car&gt;();&#13;
+public void draw(Graphics surface) {&#13;
+for (Drawable  shape : shapes ){&#13;
+shape .draw(surface);&#13;
+}&#13;
+for (Flower ower : owers) {&#13; 
+ower.draw(surface);&#13;
+}&#13;
+for (Car car : cars) {&#13;
+car.draw(surface);&#13;
+}&#13;
+}&#13; 
+}</text>
+        </slide>
+        <slide>
+          <slideno>33</slideno>
+          <text>Step 6: Examine Data&#13; 
+Examine your data&#13; 
+Is your hypothesis correct?&#13; 
+Fix the error, or generate a new
+hypothesis</text>
+        </slide>
+        <slide>
+          <slideno>11</slideno>
+          <text>Naming&#13; 
+Variables: Nouns, lowercase rst letter, capitals
+separating words&#13; 
+&#13;x, shape, highScore , leName &#13; 
+Methods: Verbs, lowercase rst letter&#13;
+&#13;getSize(), draw(), drawWithColor ()&#13;
+Classes: Nouns, uppercase rst letter&#13;
+&#13;Shape, WebPage , EmailAddress</text>
+        </slide>
+        <slide>
+          <slideno>13</slideno>
+          <text>Debugging&#13; 
+The process of nding and correcting an
+error in a program&#13; 
+A fundamental skill in programming</text>
+        </slide>
+        <slide>
+          <slideno>31</slideno>
+          <text>Step 4: Generate Hypothesis&#13;
+What is going wrong?&#13;
+What might be causing the error?&#13;
+Question your assumptions:  x cant be 
+possible: What if it is, due to something
+else?</text>
+        </slide>
+        <slide>
+          <slideno>43</slideno>
+          <text>Interfaces&#13;
+Set of classes that share methods&#13; 
+Declare an interface with the common 
+methods&#13; 
+Can use the interface, without knowing an
+objects specic type</text>
+        </slide>
+        <slide>
+          <slideno>36</slideno>
+          <text>Why Use Objects?&#13;
+Objects combine a related set of variables
+and methods&#13; 
+Provide a simple interface&#13; 
+(encapsulation again)</text>
+        </slide>
+      </slides>
+      <videos/>
+    </lecture>
+  </lectures>
+</doc>

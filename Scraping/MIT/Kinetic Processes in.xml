@@ -1,0 +1,1395 @@
+<doc>
+  <source>MIT</source>
+  <date>28/01/2023</date>
+  <course>
+    <course_url>https://ocw.mit.edu/courses/3-21-kinetic-processes-in-materials-spring-2006/</course_url>
+    <course_title>Kinetic Processes in Materials</course_title>
+    <course_tags>
+      <list>Engineering </list>
+      <list>Science </list>
+      <list>Physics </list>
+    </course_tags>
+  </course>
+  <lectures>
+    <lecture>
+      <lecture_title>Driving Forces and Fluxes for Diffusion; Self-Diffusion and Interdiffusion (PDF)</lecture_title>
+      <lecture_pdf_url>https://ocw.mit.edu/courses/3-21-kinetic-processes-in-materials-spring-2006/resources/ls3/</lecture_pdf_url>
+      <lectureno>L3</lectureno>
+      <slides>
+        <slide>
+          <slideno>0</slideno>
+          <text>Massachusetts Institute of Technology 
+Department of Materials Science and Engineering 
+77 Massachusetts Avenue, Cambridge MA 02139-4307 
+3.21 Kinetics of MaterialsSpring 2006 
+February 17, 2006 
+Lecture 3: Driving Forces and Fluxes for Diffusion. Self-Diffusion and Interdiffusion. 
+References 
+1.	Balluf, Allen, and Carter, Kinetics of Materials , Section 3.1. 
+2.	Poirier and Geiger, Transport Phenomena in Materials Processing , 1994, pp. 185189 and 281282 
+on heat conduction, and 417434 on diffusion. 
+Key Concepts 
+	Ficks rst law: J/vector= Dc . This is an empirical law and it is consistent with the theory of linear 
+irreversible thermodynamics. 
+	Ficks second law: c =   J/vector. This is a consequence of the conservation of matter. Note that if the t 
+diffusivity varies with c , the resulting differential equation is nonlinear. 
+	Self-diffusion in a chemically pure material can be measured by using a radioisotope that is easily 
+tracked. The application of force-ux equations for the two isotopes yields a Ficks law-type expres
+sion for the radiotracer, KoM Eq. 3.4. 
+	Self-diffusion in a homogeneous alloy (uniform composition) can also be measured by using a radioisotope of one of the species. The application of force-ux equations for the various species present 
+yields a Ficks law-type expression for the radiotracer, KoM Eq. 3.5. 
+	Self-diffusion in crystalline materials and in many alloy crystals occurs by the vacancy mechanism. 
+	Interdiffusion occurs in an alloy with composition gradients. The motion of each species in a labora
+tory frame xed to the crystal follows Ficks rst law, with a proportionality constant known as the 
+intrinsic diffusivity . The intrinsic diffusivities and the self-diffusivities are related by KoM Eq. 3.13 
+and the relation involves a thermodynamic factor. Nonideality can either accelerate or retard interdif
+fusion kinetics, relative to kinetics measured in the absence of a chemical concentration gradient. 
+	Interdiffusion involves diffusion in a concentration gradient and the intrinsic diffusivities are not nec
+essarily equal. This gives rise to a set of phenomena known as the Kirkendall effect . The interdiffusion 
+can be described in a volume-xed (laboratory) reference frame by a single diffusion coefcient known as the interdiffusivity which is related to the intrinsic diffusivities by the Darken equation , 
+KoM Eq. 3.26. 
+	The equations of heat conduction are of identical form to Ficks laws: J/vectorQ = k T and T =  J/vectorQ t 
+Simple Exercise 
+The diffusivity of boron in germanium obeys an Arrhenius law in the form D = D  exp[Q / (R T )], 
+with D  = 5. 1  104 m2 s1 and Q = 357 kJ mol1. Calculate D at 800 C. At what temperature will the 
+diffusivity be one order of magnitude smaller?</text>
+        </slide>
+      </slides>
+      <videos/>
+    </lecture>
+    <lecture>
+      <lecture_title>Introduction: Fields and Gradients; Fluxes; Continuity Equation (PDF)</lecture_title>
+      <lecture_pdf_url>https://ocw.mit.edu/courses/3-21-kinetic-processes-in-materials-spring-2006/resources/ls1/</lecture_pdf_url>
+      <lectureno>L1</lectureno>
+      <slides>
+        <slide>
+          <slideno>0</slideno>
+          <text>Massachusetts Institute of Technology 
+Department of Materials Science and Engineering 
+77 Massachusetts Avenue, Cambridge MA 02139-4307 
+3.21 Kinetics of MaterialsSpring 2006 
+February 8, 2006 
+Lecture 1: Fields and gradients; uxes; continuity equation 
+References 
+1.	Balluf, Allen, and Carter, Kinetics of Materials , Chapter 1. 
+2.	Hildebrand, F. B., Advanced Calculus for Applications , Prentice-Hall, (1976). QA303.H642, or other 
+applied math book of your choice. 
+Key Concepts 
+	Thermodynamics is precise about equilibrium states, but real materials are rarely at equilibrium. 
+	The concept of local equilibrium is applicable to real materials on a micro-scale. 
+	The rates of approach to equilibrium in real materials are found experimentally to depend on gradients 
+of thermodynamic potentials. 
+	A scalar eld associates a physical quantity with positione.g., a composition eld c(/vectorx). 
+	The gradient of a scalar eld is a vector that quanties how rapidly the eld changes with position. 
+	The ux of a substance quanties the rate at which that substance ows through a unit area. The ux 
+is a vector that is parallel to the local direction of the ow. 
+	The rate of accumulation of a the density of an extensive quantity is minus the divergence of the ux 
+of that quantity, plus the rate of production of the substance. 
+	For conserved quantities like the number of moles of a component in a solution there are no sources 
+or sinks and hence no production of the substance. For non-conserved quantities like entropy there 
+can be production of the quantity during the course of a spontaneous process. 
+	Numerous kinetic processes are described by systems of linear equations relating uxes and driving forces. Methods from linear algebra are often used to simplify the description by using coordinates 
+parallel to crystal axes, or by nding principal axes. Matrix eigenvalues, eigenvectors, and similarity 
+transformations are useful tools for describing coupled kinetic processes. 
+Related Exercises in Kinetics of Materials 
+Review Exercises 1.11.4, pp. 1619.</text>
+        </slide>
+      </slides>
+      <videos/>
+    </lecture>
+    <lecture>
+      <lecture_title>Diffusion Resulting from Discrete Jumps (PDF)</lecture_title>
+      <lecture_pdf_url>https://ocw.mit.edu/courses/3-21-kinetic-processes-in-materials-spring-2006/resources/ls11/</lecture_pdf_url>
+      <lectureno>L11</lectureno>
+      <slides>
+        <slide>
+          <slideno>0</slideno>
+          <text>Massachusetts Institute of Technology 
+Department of Materials Science and Engineering 
+77 Massachusetts Avenue, Cambridge MA 02139-4307 
+3.21 Kinetics of MaterialsSpring 2006 
+March 8, 2006 
+Lecture 11: Diffusion Resulting from Discrete Jumps. 
+References 
+1.	Balluf, Allen, and Carter, Kinetics of Materials , Section 7.2 
+Key Concepts 
+	If a particle moves by a series of displacements, each of which is independent of the one preceding it, 
+the particle moves by a random walk . In crystals, random walks are conned to specic sites in the 
+crystal, jumps are conned to a specic set of directions, and jumps have specic jump lengths. The 
+mean square displacement in a random walk is given by R2 = Nr2 and the double-sum term in 
+KoM Eq. 7.31 vanishes. 
+	KoM Section 7.2.2 presents a random-walk model for diffusion on a one-dimensional lattice that 
+provides an elegant way to connect microscopic jumping processes to macroscopic diffusion by con
+sidering the probability distribution arising from diffusion from a point source. This approach leads to 
+the important relation in one dimension D =  r2/2 and in three dimensions the analogous relation 
+is D =  r2/6. 
+	In many important diffusion processes diffusion is not a random walk because successive jumps do not 
+occur at random. Self-diffusion in a crystal by the vacancy mechanism is an example of a correlated 
+jumping process; diffusion of a dilute interstitial component in a crystal is uncorrelated when the 
+interstitial jumps are conned to the (mostly unoccupied) interstitial sites. 
+	The degree of nonrandom jumping is quantied by the double-sum term in KoM Eq. 7.31, leading of 
+the denition of the correlation coefcient f in Eq. 7.49: 
+N 1 N j2 f = 1 +  | r /vectori|/vector ri+j|cos i,i+j	 (1) N r2 j=1 i=1 
+f = 1 for a random walk. For nonrandom jumping, f is often less than one but in some cases may be 
+greater than one. For perfectly correlated jumping the diffusing species simply jumps back and forth between the same two sites and f = 0. 
+	The mean square displacement in a correlated jumping process is given by R2 = Nr2f, and the 
+relation between the diffusivity and the jump rate for diffusion in three dimensions becomes D = 
+r2f/6. 
+Related Exercises in Kinetics of Materials 
+Review Exercises 7.37.6, pp. 160161.</text>
+        </slide>
+      </slides>
+      <videos/>
+    </lecture>
+    <lecture>
+      <lecture_title>Short-Circuit Diffusion in Crystals (PDF)</lecture_title>
+      <lecture_pdf_url>https://ocw.mit.edu/courses/3-21-kinetic-processes-in-materials-spring-2006/resources/ls15/</lecture_pdf_url>
+      <lectureno>L15</lectureno>
+      <slides>
+        <slide>
+          <slideno>0</slideno>
+          <text>Massachusetts Institute of Technology 
+Department of Materials Science and Engineering 
+77 Massachusetts Avenue, Cambridge MA 02139-4307 
+3.21 Kinetics of MaterialsSpring 2006 
+March 20, 2006 
+Lecture 15: Short-Circuit Diffusion in Crystals. 
+References 
+1.	Balluf, Allen, and Carter, Kinetics of Materials , Chapter 9. 
+Key Concepts 
+	Line and planar defects in crystals are often regions in which some atoms are not fully coordinated and 
+thus not as closely packed as in a perfect crystal. If such open regions are connected over signicant 
+distances, then the regions form channels or conduits through which species can diffuse rapidly 
+compared to a crystal that is free of line and planar defects. These high-diffusivity paths are said to 
+be diffusion short circuits. 
+	Grain boundaries are interfaces along which two misoriented crystals abut. Low-angle grain bound
+aries have small misorientations (less than about 10), and their structure can be modeled using pe
+riodic arrays of dislocations. Tilt boundaries have the crystal misorientation axis in the plane of the 
+boundary, and consist of arrays of edge dislocations. Twist boundaries have the crystal misorientation 
+axis perpendicular to the plane of the grain boundary, and consist of arrays of screw dislocations. 
+Most grain boundaries are mixedthat is, they have some tilt and some twist character. 
+	In a crystal with imperfections, bulk crystal diffusion will occur in parallel with short-circuit 
+diffusion and in some regimes of behavior more than one mechanism may contribute to signicant 
+transport. The total amount of material transported by diffusion for a given diffusion path depends 
+on both the magnitude of the diffusivity and the effective cross section of the particular path. In 
+metal and ceramic surfaces and along solid-solid interfaces diffusion occurs in a thin slab of thickness 
+ 1 nm]; along dislocations in metal and ionic crystals diffusion occurs in a cylindrical pipe of 
+diameter  1 nm]. 
+S &gt;  DB 	   	In f.c.c. metals the self-diffusivities generally follow D  DD(undissoc )&gt; DD(dissoc)&gt; 
+DXL and the activation energies vary as ES &lt; EB  ED(undissoc ) &lt; ED(dissoc ) &lt; EXL (see 
+KoM Fig. 9.1). 
+	Factors inuencing the contribution of grain boundary diffusion to total diffusivity include grain 
+boundary structure (see KoM Fig. 9.2), grain size and temperature (see KoM Figs. 9.49.5), and 
+whether or not the grain boundaries are stationary or moving (see KoM Fig. 9.6). 
+	A solution to a two-dimensional diffusion problem due to Fisher gives insight to the A, B, and C 
+regimes of behavior for a solute source placed initially on the surface of a polycrystal (see KoM 
+Section 9.2.2). 
+	Computer simulations indicate that the mechanisms of grain boundary diffusion involve point imper
+fections (vacancies and interstitials), much like diffusion in bulk crystals (see KoM Fig. 9.9). 
+Related Exercises in Kinetics of Materials 
+Review Exercises 9.19.5, pp. 225227.</text>
+        </slide>
+      </slides>
+      <videos/>
+    </lecture>
+    <lecture>
+      <lecture_title>Surface Evolution Due to Capillary Forces (PDF)</lecture_title>
+      <lecture_pdf_url>https://ocw.mit.edu/courses/3-21-kinetic-processes-in-materials-spring-2006/resources/ls17/</lecture_pdf_url>
+      <lectureno>L17</lectureno>
+      <slides>
+        <slide>
+          <slideno>0</slideno>
+          <text>Massachusetts Institute of Technology 
+Department of Materials Science and Engineering 
+77 Massachusetts Avenue, Cambridge MA 02139-4307 
+3.21 Kinetics of MaterialsSpring 2006 
+March 24, 2006 
+Lecture 17: Surface Evolution Due to Capillary Forces. 
+References 
+1.	Balluf, Allen, and Carter, Kinetics of Materials , Section 14.1. 
+Key Concepts 
+	If an initially planar isotropic surface of a material is roughened with parallel grooves, its surface 
+area and hence total surface free energy will increase. The roughened surface experiences a capillary 
+driving force (i.e., a diffusion potential) equal to (K1 + K2)   such that curved regions of the 
+surface tend to move toward their center of curvature . The equations governing the smoothing kinetics 
+depend on the transport mechanism that is active. 
+	When transport occurs by surface diffusion, the surface ux is proportional to the gradient of curvature 
+along the surface (approximately the third derivative of the surface height prole h(x,t)with respect 
+to x). The rate of change of height is equal to the divergence of the ux, and thus to the fourth 
+derivative of h(x,t) with respect to x. The resulting evolution equation (see KoM Eq. 14.10) can 
+be solved using separation of variables. For sinusoidal groove shapes the amplitude of the grooves 
+decays as exp[t/4](see KoM Eq. 14.13). 
+	When surfaces evolve by transport through the vapor, the surface moves by a process of evaporation 
+and/or condensation. The normal velocity of the surface is proportional to the vapor ux, and matter in 
+the solid is not conserved. The ux in the vapor is proportional to the difference between the ambient 
+pressure and the vapor pressure in local equilibrium with a surface element with curvature (see KoM 
+Eq. 14.14). In this case the local velocity of the interface is proportional to local curvature and when 
+the surface is gently curved (i.e., small slope approximation) the resulting evolution equation has the 
+form of Ficks second law ( KoM Eq. 14.20). KoM pp. 342343 shows how the resulting equation 
+can be applied to grain boundary grooving at the junction of a grain boundary with a the surface of a 
+polycrystal (see KoM Fig. 14.9 for a great micrograph!). 
+	The morphological stability of a cylindrical body with respect to breakup into a row of droplets is 
+a famous problem solved by Lord Rayleigh in 1878. This is often called the Rayleigh instability . 
+It is not difcult to write the equation for the surface area of a cylinder that has a sinusoidal axial 
+2z perturbation of its radius with the form R(z,t) = Rcyl(t)+(t)cos  . The resulting analysis shows 
+that there is a critical wavelength equal to 2Rcyl below which the area of the cylinder is increased, 
+and above which it is decreased. The cylinder is stable with respect to short-wavelength perturbations, 
+and unstable with respect to long-wavelength perturbations. 
+	KoM Sections 14.1.3 and 14.1.4 develop expressions for the time evolution of the amplitude of sinu
+soidal perturbations of a cylinder for the vapor transport and surface diffusion mechanisms, respec
+tively. The results of the surface diffusion case are particularly interesting in that there is a kinetic 
+wavelength at which the breakup of an unstable cylinder will occur the fastest (see KoM Fig. 14.5). 
+Related Exercises in Kinetics of Materials 
+Review Exercises 14.114.3, pp. 354359.</text>
+        </slide>
+      </slides>
+      <videos/>
+    </lecture>
+    <lecture>
+      <lecture_title>Diffusional Growth (PDF)</lecture_title>
+      <lecture_pdf_url>https://ocw.mit.edu/courses/3-21-kinetic-processes-in-materials-spring-2006/resources/ls26/</lecture_pdf_url>
+      <lectureno>L26</lectureno>
+      <slides>
+        <slide>
+          <slideno>0</slideno>
+          <text>Massachusetts Institute of Technology 
+Department of Materials Science and Engineering 
+77 Massachusetts Avenue, Cambridge MA 02139-4307 
+3.21 Kinetics of MaterialsSpring 2006 
+April 28, 2006 
+Lecture 26: Diffusional Growth. 
+References 
+1.	Balluf, Allen, and Carter, Kinetics of Materials , Chapter 20. 
+Key Concepts 
+	Heat conduction-limited melting of a pure substance serves to illustrate basic principles of formulation 
+of a moving-boundary problem in which the system consists of two or more phases separated by 
+a moving interface. Differential equations govern transport within each phase, and the boundary 
+conditions are applied at the borders of the system and at the interphase boundary. Differences in the 
+diffusional uxes on each side of the interface result in interface motion, described by an equation 
+known as the Stefan condition. 
+	For heat conduction-limited growth the Stefan condition relates the rate at which heat is delivered to 
+the boundary to the latent heat required for a given rate of melting (see KoM Eqs. 20.34). For one-
+dimensional heat ow and equal densities in the liquid and solid phases, the temperature prole in 
+each phase has an error-function form (see KoM Eq. 20.5) and the boundary condition at the moving 
+interface requires that the interface advances parabolically in time . The temperature proles in the 
+liquid and solid and the parabolic rate constant are given by KoM Eqs. 20.810, respectively. 
+	Diffusion-limited growth in one dimension is described in an analogous way to heat conduction-
+limited growth. In this case the usual approach is to assume equilibrium at the interface and use the 
+equilibrium diagram at the growth temperature to specify the boundary conditions to the diffusion 
+eld in each phase. The Stefan condition arises because the concentration on each side of the inter
+face is different, and accumulation of solute at the interface is required for interface motion (see KoM 
+Eq. 20.11). Making reasonable simplifying assumptions, the solution to the layer growth problem il
+lustrated in KoM Fig. 20.2 parallels that for heat conduction-limited melting, and the interface motion 
+is again parabolic in time (see KoM Eqs. 20.1821) 
+	Modeling of alloy solidication is considerably more complex because it requires simultaneously 
+solving differential equations for heat ow and mass diffusion, subject to two interface Stefan condi
+tions. 
+	Growth resulting after nucleation from supersaturated solution often involves three-dimensional evo
+lution of spherical particles. For diffusion controlled-growth the growth kinetics are again parabolic 
+in time (KoM Eq. 20.40) with the rate constant  R given by the solution to the rather messy expression 
+in KoM Eq. 20.45. The spatial dependence of c can then be calculated from the function c()in KoM 
+Eqs. 20.43, and c(r)can be calculated at a given time from the scaling relation   r/(4 Dt)1/2 . 
+Related Exercises in Kinetics of Materials 
+Review Exercises 20.2 and 20.4, pp. 526527.</text>
+        </slide>
+      </slides>
+      <videos/>
+    </lecture>
+    <lecture>
+      <lecture_title>Spinodal Decomposition Kinetics (PDF)</lecture_title>
+      <lecture_pdf_url>https://ocw.mit.edu/courses/3-21-kinetic-processes-in-materials-spring-2006/resources/ls23/</lecture_pdf_url>
+      <lectureno>L23</lectureno>
+      <slides>
+        <slide>
+          <slideno>0</slideno>
+          <text>Massachusetts Institute of Technology 
+Department of Materials Science and Engineering 
+77 Massachusetts Avenue, Cambridge MA 02139-4307 
+3.21 Kinetics of MaterialsSpring 2006 
+April 21, 2006 
+Lecture 23: Spinodal Decomposition Kinetics. 
+References 
+1.	Balluf, Allen, and Carter, Kinetics of Materials , Chapter 18. 
+2.	Mathematica notebook for Lecture 23, which extends the notebook for Lecture 22 to include treatment 
+of kinetics. 
+Key Concepts 
+	The amplication factor R() in the linear theory of spinodal decomposition determines the growth 
+or dissolution rate of composition uctuations, as c  c= exp[ R()t] cos(x). Substitution of this 
+solution into the CahnHilliard equation gives the expression 
+ R() = Mc f + 2Kc2 
+2	(1) 
+The non-trivial zero of this fourth order polynomial in  gives the critical wavenumber crit, and the 
+maximum in the function gives the kinetic wavenumber max that receives maximum amplication. 
+max sets the length scale of the resulting microstructure, to a good approximation, resulting in the 
+relations: 
+	  f fcrit = 2Kc max = 4Kc crit = 
+2max (2) 
+	The characteristic time for the development of a spinodal microstructure can be estimated from 
+1/R(max ). 
+	The temperature dependence of spinodal decomposition arises primarily from that of Mc, which obeys 
+ an Arrhenius law, and from that of f, which varies linearly with temperature in the BraggWilliams 
+(regular solution) model. The theory is easily shown to give these trends: (1) max decreases with 
+ increasing undercooling below the spinodal temperature at which f= 0; (2) the rate of spinodal 
+decomposition goes through a maximum as the decomposition temperature decreases. On a time 
+temperaturetransformation diagram, the transformation exhibits  C-curve kinetics. See the Mathe
+matica notebook for todays lecture, and KoM Exercise 18.4. 
+	Non-linear effects in spinodal decomposition include the approach to equilibrium compositions of the 
+phases, the approach to equilibrium volume fractions of the phases, and coarsening of the microstruc
+ture. In order to capture the phase compositions and volume fractions, the composition dependence 
+ of fmust be included. Coarsening of the microstructure arises from interactions between growing 
+waves with different wavelengths and wave vectors. Cahns 1968 paper on these topics is instructive. 
+Related Exercises in Kinetics of Materials 
+Review Exercises 18.24, pp. 454458.</text>
+        </slide>
+      </slides>
+      <videos/>
+    </lecture>
+    <lecture>
+      <lecture_title>Atomic Models for Diffusivities - I (PDF)</lecture_title>
+      <lecture_pdf_url>https://ocw.mit.edu/courses/3-21-kinetic-processes-in-materials-spring-2006/resources/ls13/</lecture_pdf_url>
+      <lectureno>L13</lectureno>
+      <slides>
+        <slide>
+          <slideno>0</slideno>
+          <text>Massachusetts Institute of Technology 
+Department of Materials Science and Engineering 
+77 Massachusetts Avenue, Cambridge MA 02139-4307 
+3.21 Kinetics of MaterialsSpring 2006 
+March 15, 2006 
+Lecture 13: Atomic Models for Diffusivities. 
+References 
+1.	Balluf, Allen, and Carter, Kinetics of Materials , Section 8.2. 
+2.	Allen and Thomas, The Structure of Materials , Section 5.1.6, Point Imperfections in Ionic Crystals. 
+Key Concepts 
+	The relation D = r2f/6 can be applied to various diffusion processes and the resulting expressions 
+enable a more complete understanding of the dependence of D on temperature and other factors. 
+	The diffusivity of solute atoms by interstitial jumps in the b.c.c. structure is uncorrelated and the 
+resulting expression for D takes the form DI = (a2/6) exp(Sm/K)exp[Hm/(kT)]. 
+	The vacancy diffusivity in the f.c.c. structure is uncorrelated and when the vacancies make nearest-
+neighbor jumps the expression for D takes the form DV = a2 exp(Sm
+V /(kT)].V /K)exp[Hm 
+	The self-diffusivity of a tracer atom in the f.c.c. structure by the vacancy mechanism involves jumps 
+that can only occur when the tracer exchanges places with a neighboring vacancy. Thus, the vacancy 
+f fconcentration which at equilibrium is given by XV = exp( SV /K)exp[HV /(kT)] must enter the 
+desired expression for D. In addition, while the vacancy jumps will be uncorrelated, the tracer atom 
+jumps will be correlated so the resulting expression for D takes the form D = fa2 exp[(Sm + 
+f	 fSV )/K]exp[(Hm + HV )/(kT)]. Detailed analysis of the correlated jumping of the tracer atoms V 
+leads to the approximate expression f  (z  1)/(z + 1), where z is the coordination number for the 
+crystal structure in which the tracers are jumping. A more complete analysis indicates that f  0.78 
+in f.c.c. crystals. 
+	The expressions for D written above all obey an Arrhenius law of the form D = D exp[E/(kT)]. 
+Depending on the mechanism of diffusion, the activation energy E may have contributions from both 
+defect migration and formation processes. 
+	The isotope effect refers to the small effect of mass of the diffusing species on diffusivity in tracer 
+diffusion processes. For species of masses m1 and m2, D1/ D2 = m2/m1. 
+	Complexities of solute-atom diffusion by the vacancy mechanism in binary alloys can be appreciated with the three-frequency model for jumping, in which the vacancy jump rates may differ depending 
+on whether the exchange is with the solute atom, a near-neighbor to the solute atom, or a more distant neighbor to the solute atom. 
+Related Exercises in Kinetics of Materials 
+Review Exercises 8.128.15, pp. 199201. V</text>
+        </slide>
+      </slides>
+      <videos/>
+    </lecture>
+    <lecture>
+      <lecture_title>Nucleation (PDF)</lecture_title>
+      <lecture_pdf_url>https://ocw.mit.edu/courses/3-21-kinetic-processes-in-materials-spring-2006/resources/ls24/</lecture_pdf_url>
+      <lectureno>L24</lectureno>
+      <slides>
+        <slide>
+          <slideno>0</slideno>
+          <text>Massachusetts Institute of Technology 
+Department of Materials Science and Engineering 
+77 Massachusetts Avenue, Cambridge MA 02139-4307 
+3.21 Kinetics of MaterialsSpring 2006 
+April 24, 2006 
+Lecture 24: Nucleation. 
+References 
+1.	Balluf, Allen, and Carter, Kinetics of Materials , Chapter 19. 
+Key Concepts 
+	Nucleation is the process by which a metastable system initiates a discontinuous phase transformation. 
+Nucleation requires localized uctuations that are sufciently large so that free energy decreases from 
+the chemical driving force are large enough to offset those from creation of interphase boundary area 
+and all other terms that resist the transformation (e.g., elastic strain energy). 
+	The main focus of nucleation theory is the prediction of the steady-state nucleation rate which results 
+once the system has formed an equilibrium distribution of uctuations, some of which eventually 
+grow to exceed a critical size at which point they can grow spontaneously. In a supersaturated solu
+tion, steady-state nucleation will be achieved during the period before the systems supersaturation 
+is appreciably changed. Growth and coarsening processes determine the subsequent evolution of the 
+equilibrium phases and their microstructure. 
+	The chemical driving force for nucleation gB in solutions can be determined from free energy 
+vs. composition diagrams. For transformations at constant composition the curve-to-curve construc
+tion is used; for transformations involving a change of composition, the curve-to-curve construction 
+is used. 
+	When nucleation occurs with equal probability at all sites in a transforming system, it is said to be homogeneous nucleation . If nucleation occurs preferentially at special sites, it is heterogeneous 
+nucleation. 
+	The free energy change of transforming a small volume from phase  to phase  in the absence of 
+elastic strain energy will have the form 
+GN = Gbulk + Ginterfacial = N(    ) + N2/3 	 (1) N N 
+and the size Nc of the critical nucleus is found from the condition GN /N = 0. 
+	The steady-state nucleation rate is given by KoM Eq. 19.17 as J = Z cN exp[Gc/(kT)]. For 
+practically detectable nucleation rates in materials, the nucleation barrier Gc must be less than ap
+proximately 76kT (see KoM Section 19.1.7). 
+	In solids, elastic strain energy contributes to the nucleation barrier in a complex and often non-intuitive 
+way. Depending on conditions, the elastic strain energy associated with a nucleus may be a function 
+of the nucleus shape, making the calculation of the minimum-energy barrier one of minimizing GN 
+with respect to several variables that describe particle size and shape (see KoM Section 19.1.3). 
+Related Exercises in Kinetics of Materials 
+Review Exercises 19.13, pp. 485489.</text>
+        </slide>
+      </slides>
+      <videos/>
+    </lecture>
+    <lecture>
+      <lecture_title>Solutions to the Diffusion Equation - II (PDF)</lecture_title>
+      <lecture_pdf_url>https://ocw.mit.edu/courses/3-21-kinetic-processes-in-materials-spring-2006/resources/ls8/</lecture_pdf_url>
+      <lectureno>L8</lectureno>
+      <slides>
+        <slide>
+          <slideno>0</slideno>
+          <text>Massachusetts Institute of Technology 
+Department of Materials Science and Engineering 
+77 Massachusetts Avenue, Cambridge MA 02139-4307 
+3.21 Kinetics of MaterialsSpring 2006 
+March 1, 2006 
+Lecture 8: Solutions to the Diffusion EquationII. 
+References 
+1.	Balluf, Allen, and Carter, Kinetics of Materials , Sections 5.15.2.4. 
+Key Concepts 
+	Steady-state diffusion is by denition time-independent. In some diffusion problems, the steady 
+state is approached after diffusion has taken place for sufciently long times. Solutions to the diffu
+sion equation in the steady state are generally obtained by integration over the spatial variables, and 
+boundary conditions are used to determine integration constants. 
+	Standard methods of obtaining closed-form time-dependent solutions to the diffusion equation for 
+constant diffusivity include superposition of point sources, separation of variables, and Laplace trans
+forms. 
+	The general form for the diffusion from a point source in a system diffusion in d dimensions is 
+nd r/vectorc(/vector r,t) = (4Dt)d/2 e/vector r/(4Dt)(see KoM Table 5.1). 
+	The thin-lm solution to the diffusion equation is a simple adaptation of the point-source solution 
+in one dimension that describes the diffusion from a thin source of material at the surface of a semi-
+innite body (see KoM Eq. 5.18). 
+	A distribution of point sources can be used to derive the error-function solution for one-dimensional 
+interdiffusion in two semi-innite bodies (see KoM Section 5.2.2). This serves as a prototype for 
+solutions to more complex problems where the initial source has a nite geometry. 
+	Superposition of image sources provides a convenient method to solve some problems in semi-
+innite systems where there is a zero-ux plane at the surface. A thin-lm that is located at a nite 
+depth below a surface (e.g., a dopant introduced by ion implantation) is a good example. 
+	Separation of variables is very useful technique for solving diffusion problems in nite geometries. In 
+this method, solutions are sought that can be expressed as products of functions in a single variable: 
+e.g., for one-dimensional diffusion, solutions of the form c(x,t) = X(x)T(t). Substitution of this 
+relation into the diffusion equation yields separate differential equations for the functions X(x) and 
+T(t), and in generally this method leads to a solution that is an innite series. Under favorable 
+conditions (e.g., long diffusion times), only one or just a few of the terms in the series provide a good 
+approximation of the exact solution. 
+Related Exercises in Kinetics of Materials 
+Review Exercises 5.15.11, pp. 114126.</text>
+        </slide>
+      </slides>
+      <videos/>
+    </lecture>
+    <lecture>
+      <lecture_title>Particle Coarsening (PDF)</lecture_title>
+      <lecture_pdf_url>https://ocw.mit.edu/courses/3-21-kinetic-processes-in-materials-spring-2006/resources/ls18/</lecture_pdf_url>
+      <lectureno>L18</lectureno>
+      <slides>
+        <slide>
+          <slideno>0</slideno>
+          <text>Massachusetts Institute of Technology 
+Department of Materials Science and Engineering 
+77 Massachusetts Avenue, Cambridge MA 02139-4307 
+3.21 Kinetics of MaterialsSpring 2006 
+April 3, 2006 
+Lecture 18: Particle Coarsening. 
+References 
+1.	Balluf, Allen, and Carter, Kinetics of Materials , Sections 15.1 and C.4. 
+Key Concepts 
+	The GibbsThomson equation relates changes in equilibrium values of chemical potential to interface 
+curvature. In two-phase systems a consequence of the GibbsThomson equation is that solubilities 
+(i.e., tie-line compositions) characteristic of equilibrium in a system with planar interfaces will differ 
+from those in a system consisting of small spherical particles embedded in a matrix. 
+	In a two-phase system consisting of spherical particles of phase  in a matrix of phase , concentration 
+gradients will arise in the matrix phase if the  particles are not all exactly the same size. The resulting 
+gradients lead to dissolution of the small -phase particles and growth of larger nearby particles. 
+	A theory for the volume-diffusion controlled coarsening of a distribution of particles in a matrix 
+can be formulated in the limit of zero volume fraction of the particle phase by using the mean-eld 
+approximation . Each particle is sufciently far from its neighbors that it can assumed to be interacting 
+with a matrix whose far-eld concentration is c (see KoM Fig. 15.2). An analysis of the resulting 
+diffusion eld, using the GibbsThomson relation as a boundary condition, gives the growth rate of a particle of size R: 
+ceq () dR 2 D2 1 1  
+= 	 (1) dt kT R R R 
+This equation predicts that a particles fate is determined by how its size compares to the mean size 
+R: particles smaller than the mean size dissolve, while those larger than the mean size grow. 
+	Prediction of the evolution of the particle size distribution function f(R,t)is possible from the expres
+sions of ux and accumulation of particle density (see KoM Eqs. 15.15 and 15.16). Several important 
+results follow from this analysis, including: (1) the cube of the mean particle size R varies linearly 
+with coarsening time; (2) a steady-state normalized particle size distribution function f(R/R,t)is 
+predicted to be approached asymptotically with sufciently long coarsening time. 
+	One deciency of the mean-eld theory is the lack of consideration of local particleparticle interac
+tions which become increasingly important as the particle volume fraction takes becomes signicant. 
+Detailed analyses show that the rate constant for the t1/3-law is an increasing function of particle 
+volume fraction. Another deciency is ignoring the possibility of coherency stresses which can lead to many interesting phenomena such as rafting and inverse coarsening (see KoM pp. 372373). 
+Related Exercises in Kinetics of Materials 
+Review Exercises 15.115.2, pp. 384.</text>
+        </slide>
+      </slides>
+      <videos/>
+    </lecture>
+    <lecture>
+      <lecture_title>The Diffusion Equation (PDF)</lecture_title>
+      <lecture_pdf_url>https://ocw.mit.edu/courses/3-21-kinetic-processes-in-materials-spring-2006/resources/ls6/</lecture_pdf_url>
+      <lectureno>L6</lectureno>
+      <slides>
+        <slide>
+          <slideno>0</slideno>
+          <text>Massachusetts Institute of Technology 
+Department of Materials Science and Engineering 
+77 Massachusetts Avenue, Cambridge MA 02139-4307 
+3.21 Kinetics of MaterialsSpring 2006 
+February 24, 2006 
+Lecture 6: The Diffusion Equation. 
+References 
+1.	Balluf, Allen, and Carter, Kinetics of Materials , Sections 4.14.1.2, 4.2. 
+Key Concepts 
+Ficks second law applies locally in an evolving concentration eld: c =  J/vector= = t 	  (Dc)
+D2 D c + c (c)2 . 
+	The divergence theorem provides a more global relation for the accumulation within a volume V 
+/vector /vector  bounded by a surface V : N = 
+V (  J)dV = 
+V J(/vector r,t)n dA t  
+	Ficks second law is a second-order partial differential equation. To obtain solutions, one needs two 
+boundary conditions and one initial condition . 
+	The equations for conductive heat transport are essentially the same as those for mass transport, giving 
+the relation T = (T)for the evolution of the temperature eld.  is the thermal diffusivity .t   
+	When Ficks second law is linearized (by expanding D(c) about the average concentration c), it 
+takes the simple form c = D02c, where D0 = D(c) is constant. When this approximation is t 
+valid, solutions to simpler problems can be superposed to obtain solutions to more complex problems. 
+c 	In one-dimensional diffusion when D = D(c), t is proportional to the curvature of the c(x)prole. 
+ x When a physical situation permits scaling by the transformation  = x, t = 2t, Ficks second law  
+is transformed to an ordinary differential equation in the variable  x/
+4Dt. 
+	Scaling permits a solution for the interdiffusion between two semi-innite solids, each with initially 
+uniform concentration, for concentration-independent D in terms of a tabulated error function , having 
+the form c(x,t) = A+ Berf(x/
+4Dt). 
+	The principle of superposition of solutions permits derivation of the diffusion eld arising from an 
+initial point source of diffusant. For one-dimensional diffusion this solution takes the form c(x,t) = 
+ nd ex2/(4Dt), where nd is the source strength . 4Dt 
+Related Exercises in Kinetics of Materials 
+Review Exercise 5.5, pp. 118.</text>
+        </slide>
+      </slides>
+      <videos/>
+    </lecture>
+    <lecture>
+      <lecture_title>Diverse Short Topics: Anisotropic Surfaces, Diffusional Creep, and Sintering (PDF)</lecture_title>
+      <lecture_pdf_url>https://ocw.mit.edu/courses/3-21-kinetic-processes-in-materials-spring-2006/resources/ls20/</lecture_pdf_url>
+      <lectureno>L20</lectureno>
+      <slides>
+        <slide>
+          <slideno>0</slideno>
+          <text>Massachusetts Institute of Technology 
+Department of Materials Science and Engineering 
+77 Massachusetts Avenue, Cambridge MA 02139-4307 
+3.21 Kinetics of MaterialsSpring 2006 
+April 7, 2006 
+Lecture 20: Diverse Short Topics: Anisotropic Surfaces, Diffusional Creep, and Sintering. 
+References 
+1.	Balluf, Allen, and Carter, Kinetics of Materials , Sections 14.2, 16.1, 16.3 and C.3. 
+Key Concepts 
+	Anisotropic interfaces have orientation-dependent excess free energies per unit area, i.e.,  is a func
+tion of the inclination of the interface specied by its unit normal, n. 
+	From a polar plot of (n), the Wulff construction gives the equilibrium shape of a body with anisotropic 
+surfaces. (The equilibrium shape is a sphere when  is isotropic). 
+	Anisotropic surfaces with orientations that are not in the equilibrium shape may be unstable with 
+respect to faceting into two or three low-energy orientations, producing what is sometimes called a 
+hill-and-valley structure (see KoM Fig. 14.9). 
+	The morphologies of growing or dissolving particles with anisotropic interfaces can be determined by anisotropy of the particle interface growth velocity, and this can lead to nonequilibrium particle shapes 
+(i.e., ones that do not minimize total surface energy). Growing particles tend to retain orientations 
+corresponding to the slowest growth directions, while dissolving particles tend to retain orientations 
+corresponding to the fastest growth directions (see KoM Figs. 14.11 and 14.12, respectively). 
+	Diffusional creep involves time-dependent deformation of a crystalline body under the inuence of 
+applied mechanical forces. Many creep processes involve contributions to the diffusion potential from 
+both capillarity and mechanical forces (arising from gradients of curvature and gradients of hydrostatic 
+pressure in the simplest cases). Kinetic models for the creep rate in simple structures like a wire with 
+a bamboo structure can be developed for different diffusion paths such as volume, surface, and 
+grain-boundary diffusion. 
+	Sintering is the process by which powder particles join together so as to eliminate excess surface free energy. Densication in sintering occurs when the centers of mass of adjacent particles move together 
+and it requires removal of material from the grain boundary at the particle/particle interfaces by either 
+grain-boundary diffusion, volume diffusion, or both. Sintering is a common manufacturing process 
+used to form many small near net-shape parts. It is often desirable to process such parts to full 
+density thus necessitating elimination of porosity from the sintered part during processing. 
+Related Exercises in Kinetics of Materials 
+Review Exercise 14.4, pp. 359360.</text>
+        </slide>
+      </slides>
+      <videos/>
+    </lecture>
+    <lecture>
+      <lecture_title>Activated Jump Processes (PDF)</lecture_title>
+      <lecture_pdf_url>https://ocw.mit.edu/courses/3-21-kinetic-processes-in-materials-spring-2006/resources/ls10/</lecture_pdf_url>
+      <lectureno>L10</lectureno>
+      <slides>
+        <slide>
+          <slideno>0</slideno>
+          <text>Massachusetts Institute of Technology 
+Department of Materials Science and Engineering 
+77 Massachusetts Avenue, Cambridge MA 02139-4307 
+3.21 Kinetics of MaterialsSpring 2006 
+March 6, 2006 
+Lecture 10: Activated Jump Processes. 
+References 
+1.	Balluf, Allen, and Carter, Kinetics of Materials , Sections 7.17.1.2 and 7.2 
+Key Concepts 
+	Diffusing particles in a solid move between neighboring positions of minimum energy, making what 
+are called jumps . This is a cooperative process involving not only the jumping particle but also the 
+surrounding oneshence, the process is many-bodied and difcult to describe in detail. 
+	In KoM we describe three models for thermally activated jumps of of an interstitial species in a 
+crystal, with gradually increasing complexity: a one-particle model in which the diffusing species 
+sit in a square-well potential, a one-particle model in which the potential is harmonic, and a many-
+particle model with a harmonic potential. The resulting relations for the interstitial jump frequency 
+	 , Eqs. 7.9, 7.13, and 7.25 all have the form  =  exp[Gm/(kT)]. The jump rate is equal to 
+the product of an attempt frequency and a Boltzmann-Arrhenius exponential factor containing a migration activation free energy. 
+	Diffusion of a particle involves a series of discrete jumps /vector ri and the total displacement of a given 
+particle is a sum over all the individual jump vectors. The spreading of a distribution of jumping 
+particles is quantied by the mean-square displacement R2(N ) in KoM Eq. 7.31. Equation 7.31 is 
+completely general. 
+	The relation between the mean square displacement and the diffusivity can be obtained from the second moment of the concentration distribution from a point source (see KoM Section 7.2.1). In 
+three dimensions, isotropic diffusion for a time  obeys the relation R
+2(N ) = 6D. 
+	If a particle moves by a series of displacements, each of which is independent of the one preceding it, 
+the particle moves by a random walk . In crystals, random walks are conned to specic sites in the 
+crystal, and jumps are conned to a specic set of directions. 
+	KoM Section 7.2.2 presents a random-walk model for diffusion on a one-dimensional lattice that 
+provides an elegant way to connect microscopic jumping processes to macroscopic diffusion by con
+sidering the probability distribution arising from a point source in one dimensional random walks. 
+This approach leads to the important relation in one dimension D = r2/2 and in three dimensions 
+the analogous relation is D = r2/6. 
+	In many important diffusion processes diffusion is not a random walk because successive jumps do 
+not occur at random. The degree of nonrandom jumping is quantied by the correlation coefcient f 
+dened in KoM Eq. 7.49. f = 1 for a random walk. For diffusion in three dimensions, D = r2f/6. 
+Related Exercises in Kinetics of Materials 
+Review Exercises 7.1; 7.37.6, pp. 159161.</text>
+        </slide>
+      </slides>
+      <videos/>
+    </lecture>
+    <lecture>
+      <lecture_title>Solutions to the Diffusion Equation - III (PDF)</lecture_title>
+      <lecture_pdf_url>https://ocw.mit.edu/courses/3-21-kinetic-processes-in-materials-spring-2006/resources/ls9/</lecture_pdf_url>
+      <lectureno>L9</lectureno>
+      <slides>
+        <slide>
+          <slideno>0</slideno>
+          <text>Massachusetts Institute of Technology 
+Department of Materials Science and Engineering 
+77 Massachusetts Avenue, Cambridge MA 02139-4307 
+3.21 Kinetics of MaterialsSpring 2006 
+March 3, 2006 
+Lecture 9: Solutions to the Diffusion EquationIII. 
+References 
+1.	Balluf, Allen, and Carter, Kinetics of Materials , Sections 5.2.45.2.6. 
+Key Concepts 
+ 	Separation of variables is very useful technique for solving diffusion problems in periodic or nite 
+geometries . In this method, solutions are sought that can be expressed as products of functions in a 
+single variable: e.g., for one-dimensional diffusion, solutions of the form c(x, t) = X(x)T(t). 
+	Substitution of this relation into the diffusion equation yields separate differential equations for the 
+functions X(x) and T(t), and the solutions of most interest are to the equations dT = DT and dt
+d2X
+= X, where  is a positive constant. dx2 
+The spatial part of the solution takes the form X(x) = Asin(
+x) + B cos(
+x). X(x) must  
+satisfy boundary conditions to the particular problem being solved. For diffusion out of a slab with 
+n22 c(0, t) = 0 and c(L, t) = 0 this leads to eigenvalues n = L2 , where n is an integer. The general 
+solution for the eigenfunctions X(x)is then of the form Xn(x) = an sin(nx/L )for these b.c.s. 
+	The time dependent part of the solution takes the form T(t) = T exp(Dt) and  is the same 
+n exp(n22Dt/L2). constant required for the spatial part of the solution, so Tn(t) = T
+ Because n in the above equations can take on any integer values, the general form of the solution 
+is the innite series c(x, t)An sin(nx/L )exp(n
+constants A(n)in this expression are evaluated from the initial conditions and are seen in this problem  22Dt/L2). The Xn(x)Tn(t) = = n=1 n=1 
+to be the Fourier sine series representation of the initial condition c(x, 0) on the interval x = (0, L). 
+For different geometries, the initial and boundary conditions may require a full Fourier series (sine 
+and cosine terms) in the solution. 
+	The method of Laplace transforms is most useful when a problem has time-dependent or prescribed-
+ux boundary conditions. The Laplace transform of a function f(x, t) is dened as L[f(x, t)] = 
+ptf(x, t)dt. The Laplace transform thus transforms f from the (x, t)domain to the f(x, p) =  
+0 e
+(x, p)domain. 
+	The general method of solving the diffusion equation by Laplace transforms involves transforming 
+the diffusion equation, transforming the initial and boundary conditions, nding the solution to the 
+transformed equations in the (x, p)domain, and nally back-transforming the solution to the (x, t)do-
+main. The last step, usually the most challenging, is generally accomplished with the aid of tabulated 
+Laplace transforms (see KoM Table 5.3). 
+Related Exercises in Kinetics of Materials 
+Review Exercises 5.105.13, pp. 124129.</text>
+        </slide>
+      </slides>
+      <videos/>
+    </lecture>
+    <lecture>
+      <lecture_title>Spinodal Decomposition and Continuous Ordering (PDF)</lecture_title>
+      <lecture_pdf_url>https://ocw.mit.edu/courses/3-21-kinetic-processes-in-materials-spring-2006/resources/ls22/</lecture_pdf_url>
+      <lectureno>L22</lectureno>
+      <slides>
+        <slide>
+          <slideno>0</slideno>
+          <text>Massachusetts Institute of Technology 
+Department of Materials Science and Engineering 
+77 Massachusetts Avenue, Cambridge MA 02139-4307 
+3.21 Kinetics of MaterialsSpring 2006 
+April 19, 2006 
+Lecture 22: Spinodal Decomposition and Continuous Ordering. 
+References 
+1.	Balluf, Allen, and Carter, Kinetics of Materials , Chapter 18. 
+Key Concepts 
+	The interdiffusion ux in a binary alloy in the volume-xed frame is given by KoM Eq. 18.9 as 
+M 2F JV = M(B  A) =   cB = DcB	 (1) B N X2 
+B 
+and thus inside the spinodal D &lt; 0 and the usual form of Ficks second law is ill-posed . The condition 
+D &lt; 0 leads to uphill diffusion , consistent with separation of an initially uniform solution into two 
+bulk phases with different compositions. 
+	During continuous phase separation on a very ne scale, signicant free energy is dissipated by the 
+formation of concentration gradients in the system. This gradient energy modies the diffusion po
+tential for transformations. The free energy becomes a functional of the order parameter eld ( r) 
+and the local diffusion potential is given by KoM Eq. 18.22: 
+fhom 
+( r) =  2K2 (2)  
+	For conserved order parameters, the modied diffusion potential leads to the evolution equation 
+known as the CahnHilliard equation, KoM Eq. 18.25: 
+cB 2fhom 
+= M 2 cB  2Kc4 cB	 (3) t c2 
+B 
+When gradient-energy effects can be ignored, this is equivalent to Ficks second law. 
+	For non-conserved order parameters, the modied diffusion potential leads to the evolution equation 
+known as the AllenCahn equation, KoM Eq. 18.26: 
+ fhom  
+= M  2K2	 (4) t  
+	The solution to the CahnHilliard equation for a one-dimensional system takes the simple form c  
+c = exp[ R()t] cos(x)where  = 2/ is the wavenumber and R()is the amplication factor . 
+The initial stage of spinodal decomposition thus involves growth of composition modulations when 
+R() &gt; 0. The model gives simple expressions for the thermodynamic and kinetic wave-numbers, 
+crit and max (see KoM Fig. 18.9).</text>
+        </slide>
+        <slide>
+          <slideno>1</slideno>
+          <text>For crystalline systems undergoing spinodal decomposition, the lattice constant is generally a function 
+of the composition of the solution and this can give rise to signicant coherency strain energy that 
+adds and additional term to the diffusion potential and thus to the CahnHilliard equation. Two effects are commonly observed: rst, the region of spinodal decomposition lies within the coherent spinodal 
+ dened by f+ 2a2Y = 0, where ac = (1/a)da/dc B and Y is an elastic modulus that in anisotropic c 
+crystals depends on orientation of the composition wave (i.e., its wave vector); second, when Y is anisotropic, there will be specic directions in the crystal along which growth of composition waves 
+is favored (in cubic crystals it is usually along &lt; 100 &gt; directions). 
+	The microstructure of spinodally decomposed materials consists of spatially periodic composition 
+modulations (see KoM Figs. 18.4 and 18.13). In crystalline materials the microstructure generally 
+shows crystallographic alignment. Periodic variations of composition give rise to satellite reec
+tions in diffraction patterns, allowing easy measurement of the decomposition wavelength by small-
+angle scattering experiments. 
+	The microstructure of continuously ordered materials consists of interconnected antiphase boundaries which coarsen rapidly (see KoM Fig. 18.5) with a R
+2  t law (the same law as for grain growth). 
+	Stationary solutions to the AllenCahn equation give the equilibrium structure and energy of diffuse antiphase boundaries. Non-stationary solutions give ordering kinetics and allow modeling antiphase 
+boundary motion by interface tracking methods. 
+	Interface tracking methods are the basic approach to the phase-eld approach to modeling a great 
+variety of phase transformation phenomena via coupled Cahn-Hilliard and AllenCahn evolution 
+equations. 
+Related Exercises in Kinetics of Materials 
+Review Exercises 18.24, pp. 454458.</text>
+        </slide>
+      </slides>
+      <videos/>
+    </lecture>
+    <lecture>
+      <lecture_title>Interdiffusion; Effects of Electrical Potential, Capillarity, and Stress on Diffusion Potential (PDF)</lecture_title>
+      <lecture_pdf_url>https://ocw.mit.edu/courses/3-21-kinetic-processes-in-materials-spring-2006/resources/ls4/</lecture_pdf_url>
+      <lectureno>L4</lectureno>
+      <slides>
+        <slide>
+          <slideno>0</slideno>
+          <text>Massachusetts Institute of Technology 
+Department of Materials Science and Engineering 
+77 Massachusetts Avenue, Cambridge MA 02139-4307 
+3.21 Kinetics of MaterialsSpring 2006 
+February 21, 2006 
+Lecture 4: Interdiffusion. Effects of electical potential, capillarity, and stress on diffusion potential. 
+References 
+1.	Balluf, Allen, and Carter, Kinetics of Materials , Sections 3.23.5. 
+Key Concepts 
+	Interdiffusion may be conveniently described in a crystal frame ( C-frame ) attached to an inert marker 
+placed inside the diffusion zone, or in a volume-xed frame ( V-frame , also known as a laboratory 
+frame). 
+	In the C-frame description of interdiffusion in a two-component system, Ficks law is expressed for 
+each component and each component has its own intrinsic diffusivity . In general the uxes of each 
+component are not equal in the C-frame. 
+	The intrinsic diffusivity of a component diffusing in a concentration gradient is related to that compo-
+nents self-diffusivity by an appropriate thermodynamic factor (see KoM Eq. 3.13). 
+	In the V -frame description of interdiffusion in a two-component system Ficks law is expressed in 
+terms of a single diffusivity known as the interdiffusivity . 
+	When two interdiffusing species have the same atomic volumes, the interdiffusivity and the intrinsic 
+diffusivities are related by D = X1D2 + X2D1 (KoM Eq. 3.26). 
+	In general, the intrinsic diffusivities and the interdiffusivity are all functions of concentration. 
+	The Kirkendall effect refers to a set of phenomena that arise when interdiffusing species move at 
+different rates. In a substitutional alloy this requires vacancy creation and destruction. These processes 
+can take place quite efciently provided the material contains sufcient numbers of vacancy sources 
+and sinks. However, it is not unusual to nd Kirkendall porosity on one side of the interdiffusion zone. 
+	The mobility Mi that relates the diffusive ux of i to its chemical potential gradient is always posi
+tive. Diffusivities are usually positive also, but not always. For instance, inside the spinodal where 
+2G/c2 &lt; 0, D &lt; 0. 
+	The diffusion potential i for species i can have terms arising from concentration gradients (inter
+diffusion), gradients in electrical potential (e.g., ionic conduction and electromigration), thermal gra
+dients, capillarity (e.g., surface smoothing), and stress (e.g., diffusional creep). KoM Section 3.5.4 
+summarizes the various diffusion potentials that well encounter in 3.21. 
+Related Exercises in Kinetics of Materials 
+Review Exercises 3.13.8 and 3.10, pp. 6875.</text>
+        </slide>
+      </slides>
+      <videos/>
+    </lecture>
+    <lecture>
+      <lecture_title>General Features of Phase Transformations (PDF)</lecture_title>
+      <lecture_pdf_url>https://ocw.mit.edu/courses/3-21-kinetic-processes-in-materials-spring-2006/resources/ls21/</lecture_pdf_url>
+      <lectureno>L21</lectureno>
+      <slides>
+        <slide>
+          <slideno>0</slideno>
+          <text>Massachusetts Institute of Technology 
+Department of Materials Science and Engineering 
+77 Massachusetts Avenue, Cambridge MA 02139-4307 
+3.21 Kinetics of MaterialsSpring 2006 
+April 12, 2006 
+Lecture 21: General Features of Phase Transformations. 
+References 
+1.	Balluf, Allen, and Carter, Kinetics of Materials , Chapter 17. 
+Key Concepts 
+	Phase transformations occur in systems at points where free energy functions or their derivatives with 
+respect to intensive variables exhibit singularities. Sometimes transformations are characterized by 
+denoting them as rst-order, second-order, etc. according to the level of derivative of free energy 
+that rst shows a discontinuity. Thus, melting of a single-component crystalline substance would be 
+rst-order because it would be accompanied by discontinuous changes in volume and entropy. 
+	Phase transformations can also be categorized as being either continuous or discontinuous. Con
+tinuous phase transformations occur in systems that are thermodynamically unstable , such that the 
+transformation can occur without surmounting any activation-energy barrier. Continuous transfor
+mations occur uniformly throughout a transforming system. Discontinuous transformations occur 
+from systems that are thermodynamically metastable , such that the transformation begins a discrete 
+nucleation sites and evolves by outward growth of the nuclei of the new phase. 
+	The state of a thermodynamic system can be specied by dening order parameters such as concentra
+tion and magnetization. Conserved order parameters specify conserved quantities such as composi
+tion variables. Nonconserved order parameters specify quantities such as degree of antiferromagnetic 
+order that are not conserved. 
+	The two important categories of continuous transformations in materials are: spinodal decomposition , 
+in which an unstable, nearly homogeneous solution phase-separates into two phases with the same 
+structure but different compositions; and continuous ordering in which an unstable homogeneous 
+solution phase transforms into a closely-related structure of lower symmetry. 
+	Models for continuous transformation kinetics can be developed by deriving appropriate equations 
+for the evolution of the order parameters. The CahnHilliard equation describes the evolution of 
+conserved variables. The AllenCahn equation describes the evolution of nonconserved variables. 
+	Because spinodal decomposition and continuous ordering develop gradually from innitesimal uc
+tuations (remember, the initial homogeneous state is unstable), diffuse interfaces develop in the early 
+stages of the transformations. 
+	A key aspect of the theories of continuous transformation is the free energy of an inhomogeneous 
+system expressed as the free energy functional in KoM Eq. 18.13 in terms of the spatial dependence 
+of the order parameter : 
+f(,) = fhom() +K||2	(1) 
+Related Exercises in Kinetics of Materials 
+None in Chapter 17!</text>
+        </slide>
+      </slides>
+      <videos/>
+    </lecture>
+    <lecture>
+      <lecture_title>Kinetics of Nucleation and Growth Transformations (PDF)</lecture_title>
+      <lecture_pdf_url>https://ocw.mit.edu/courses/3-21-kinetic-processes-in-materials-spring-2006/resources/ls28/</lecture_pdf_url>
+      <lectureno>L28</lectureno>
+      <slides>
+        <slide>
+          <slideno>0</slideno>
+          <text>Massachusetts Institute of Technology 
+Department of Materials Science and Engineering 
+77 Massachusetts Avenue, Cambridge MA 02139-4307 
+3.21 Kinetics of MaterialsSpring 2006 
+May 15, 2006 
+Lecture 28 : Kinetics of Nucleation and Growth Transformations. 
+References 
+1.	Balluf, Allen, and Carter, Kinetics of Materials , Chapter 21. 
+Key Concepts 
+	The theory of the kinetics of transformations that proceed by nucleation and growth aims to model 
+the fraction transformed, given the nucleation rate and the growth rate. 
+	If nucleation occurs at random locations with a uniform nucleation probability at any untransformed 
+site, an approach based on the Poisson probability law may be used to solve many problems. This ap
+proach is applicable to phase transformations that do not involve a composition change, such as recrys
+tallization, some rst-order order-disorder transitions, and devitrication (crystallization) of glasses. 
+The approach is not applicable to precipitation kinetics, because the nonuniform solute concentration 
+in the untransformed matrix invalidates the assumption of uniform nucleation probability. 
+	The Poisson probability law states that if  is the mean rate at which events occur, then the probability 
+that exactly k events occur in time t is 
+p(k) = e t (t)k	
+(1) k! 
+t . We will use the fact that the probability of exactly zero events occur is equal to e
+	A particular point in a sample gets transformed by nucleation at a nearby point at an earlier time if the 
+nucleated particle grows sufciently to consume the previously untransformed point. 
+x at time  will cause transformation at a point  	A particle nucleating at the point  x  at time t if it grows 
+to size R and satises the condition 
+ x  R(t, ) | x |	 (2) 
+This condition denes the time cone of points at which if prior nucleation had occurred, the point  
+would be transformed. The space of the time cone has dimensionality d+1where d is the dimension
+ality of the system and the additional dimension is time. 
+	If the volume fraction transformed is , the untransformed volume fraction is given by 
+1 = e /angbracketleftN/angbracketrightc	(3) 
+where Nc is the number of nucleation events in the time cone. For time dependent nucleation rate 
+J(t)and isotropic growth rates R(t)the number of nucleation events in the time cone for a three-
+dimensional system is 
+4 t 
+   Nc = J(t )[R(t, t )]3 dt	 (4) 3 0 x</text>
+        </slide>
+        <slide>
+          <slideno>1</slideno>
+          <text>For constant J and R, Nc = JBt/(d+1), where B is the appropriate area of the base of the time 
+cone for the dimensionality d (see KoM Eq. 21.10). 
+	For constant nucleation and growth rates Jand R, in three dimensions the untransformed fraction is 
+given by 
+(/3)J R3t4	(5) 1   = e
+A plot of 1   vs. t has a sigmoidal shape (see KoM Fig. 21.2).
+	The time-cone method is well-suited to studying transformation kinetics in systems with nite ge
+ometries. KoM Section 21.1.2 treats the transformation kinetics near the edge of a thin semi-innite 
+plate. Near the edge of the plate, the time cone is truncated, leading to slower transformation kinetics. 
+Related Exercises in Kinetics of Materials 
+Review Exercises 21.12, pp. 540542.</text>
+        </slide>
+      </slides>
+      <videos/>
+    </lecture>
+    <lecture>
+      <lecture_title>Solutions to the Diffusion Equation - I (PDF)</lecture_title>
+      <lecture_pdf_url>https://ocw.mit.edu/courses/3-21-kinetic-processes-in-materials-spring-2006/resources/ls7/</lecture_pdf_url>
+      <lectureno>L7</lectureno>
+      <slides>
+        <slide>
+          <slideno>0</slideno>
+          <text>Massachusetts Institute of Technology 
+Department of Materials Science and Engineering 
+77 Massachusetts Avenue, Cambridge MA 02139-4307 
+3.21 Kinetics of MaterialsSpring 2006 
+February 27, 2006 
+Lecture 7: Solutions to the Diffusion EquationI. 
+References 
+1.	Balluf, Allen, and Carter, Kinetics of Materials , Sections 4.34.5. 
+Key Concepts 
+	When the diffusivity D is concentration-dependent, the diffusion equation is nonlinear and closed-
+form solutions to practical problems dont exist. The BoltzmannMatano method is a graphical one 
+for using a measured c(x) prole from a diffusion-couple experiment to determine D(c), using the 
+Lc1	 crelation D(c1) = 21 
+ 
+dx 
+R x(c)dc after setting the position x = 0 such that 
+cR x dc = 0.dc cc1 
+	Examination of asymmetry in an interdiffusion prole c(x) gives useful information about trends in 
+the concentration dependence of D(c): D will be larger on the side with the shallower c(x) prole, 
+and D will be smaller on the side with the steeper c(x)prole (see KoM Exercise 4.2). 
+	When D is time dependent (e.g., when temperature changes occur during a diffusional process), a 
+t   simple approach using a time-weighted diffusivity dened by D = 
+0 D(t )dt allows Ficks second 
+law to be transformed into the alternate linear form c = 2 c. Familiar solution methods to solving D the diffusion equation such as error functions and point sources can be readily adapted to cases where 
+D is time dependent. 
+	In crystals and other anisotropic materials, D is generally anisotropic. Because D relates two vectors, 
+D is a second-rank tensor quantity. Note however that symmetry considerations dictate that for cubic 
+crystals, D is isotropic . 
+	The mathematical description of anisotropic diffusion depends on the choice of coordinate axes. Fre
+quently, the most convenient choice is parallel to high-symmetry crystal axes. 
+	When anisotropic diffusion is described in special coordinate axes termed principal axes , the diffu
+sivity tensor is diagonal, and diffusive uxes along each principal axes are effectively uncoupled. 
+	Given a diffusivity tensor, nding its eigensystem (eigenvalues and eigenvectors) determines its prin
+cipal axes and the prinicipal values of the diffusivity tensor along the diagonal in the principal axis 
+coordinates. 
+	Crystal symmetry dictates the form of the diffusivity tensor in the crystal axis system, i.e., where the 
+non-zero terms will be, and which non-zero terms must be equal. 
+	A scaling transformation, KoM Eq. 4.64, permits solutions for isotropic D to be readily adapted to 
+cases in which D is anisotropic (see KoM Exercise 5.9). 
+Related Exercises in Kinetics of Materials 
+Review Exercises 4.14.8, pp. 9197.</text>
+        </slide>
+      </slides>
+      <videos/>
+    </lecture>
+    <lecture>
+      <lecture_title>Grain Growth (PDF)</lecture_title>
+      <lecture_pdf_url>https://ocw.mit.edu/courses/3-21-kinetic-processes-in-materials-spring-2006/resources/ls19/</lecture_pdf_url>
+      <lectureno>L19</lectureno>
+      <slides>
+        <slide>
+          <slideno>0</slideno>
+          <text>Massachusetts Institute of Technology 
+Department of Materials Science and Engineering 
+77 Massachusetts Avenue, Cambridge MA 02139-4307 
+3.21 Kinetics of MaterialsSpring 2006 
+April 5, 2006 
+Lecture 19: Grain Growth. 
+References 
+1.	Balluf, Allen, and Carter, Kinetics of Materials , Sections 15.2 and 13.3.5. 
+Key Concepts 
+	Grain growth in a polycrystal is a capillarity-driven process with the driving force equal to (K1 + 
+K2) =  (this is the reduction in excess interfacial free energy per unit volume swept out by the 
+grain boundary as it moves). Grain boundaries (and other single-phase interfaces) migrate toward 
+their center of curvature. 
+	Three-dimensional polycrystals have grains that occupy volumes, grain boundaries that are two-
+dimensional imperfections at which two grains abut, grain edges which are one-dimensional imper
+fections along which three grain boundaries meet, and grain corners which are point imperfections at 
+which four grain edges meet. 
+	Models for two-dimensional grain growth such as would occur in a thin polycrystalline lm can be 
+developed starting with the assumption that the local interfacial velocity is linearly proportional to 
+driving force. For a grain entirely embedded within a second grain (no grain-boundary junctions), 
+this leads to the law dA/dt = constant, where A is the instantaneous area of the shrinking grain. 
+A circular grain will disappear with a parabolic growth law. A multiply-connected network of 
+polygonal grains in two dimensions follows the law dA/dt = constant (N  6), where N the number 
+of sides of a particular grain. This famous nding of von Neumanns is known as the  N  6 rule. 
+	There is no simple analog to the N  6 rule for grain growth in three dimensions. A vast number 
+of experimental studies and computer simulations shows that grain growth kinetics in pure polycrys
+talline materials follows a parabolic growth law in which the square of the average grain size varies 
+linearly with time. 
+	In impure materials, grain-boundary migration can be strongly inuenced by impurities. Impurity 
+drag and solute drag effects may arise if the impurity or solute species segregates to grain boundaries. 
+This leads to nonlinear velocitydriving force relations for boundary motion. At low driving forces, 
+boundaries move slowly and the segregant has time to diffuse along with the boundary as it moves 
+(this is called extrinsic motion). At sufciently high driving forces, the boundary can break free of the 
+solute and enable the boundary to move with a higher mobility (called intrinsic motion). 
+	In polycrystals containing a dispersion of second-phase particles, grain boundaries can act to pin 
+grain boundaries because particles that reside on grain boundaries eliminate an amount of grain bound
+ary area equal to the grain boundary particles cross section. An energy barrier must be overcome for the boundary to break free of the particle. Fine-particle dispersions are sometimes used in polycrystals in order to stabilize very ne-grain structures against grain growth. 
+Related Exercises in Kinetics of Materials 
+Review Exercises 15.315.4, pp. 384386.</text>
+        </slide>
+      </slides>
+      <videos/>
+    </lecture>
+    <lecture>
+      <lecture_title>Irreversible Thermodynamics (PDF)</lecture_title>
+      <lecture_pdf_url>https://ocw.mit.edu/courses/3-21-kinetic-processes-in-materials-spring-2006/resources/ls2/</lecture_pdf_url>
+      <lectureno>L2</lectureno>
+      <slides>
+        <slide>
+          <slideno>0</slideno>
+          <text>Massachusetts Institute of Technology 
+Department of Materials Science and Engineering 
+77 Massachusetts Avenue, Cambridge MA 02139-4307 
+3.21 Kinetics of MaterialsSpring 2006 
+February 13, 2006 
+Lecture 2: Irreversible thermodynamics: entropy production; conjugate driving forces and uxes; basic 
+postulates; linear irreversible thermodynamics; the diffusion potential; Onsagers symmetry principle. 
+References 
+1.	Balluf, Allen, and Carter, Kinetics of Materials , Chapter 2. 
+2.	Christian, J.W., Phase Transformations in Metals and AlloysPart I , Pergamon Press, 1975, Chapter 
+on Irreversible Thermodynamics. 
+Key Concepts 
+	The local entropy production can be expressed as a sum of terms, each of which is a product of a ux 
+and a conjugate force (see KoM Eq. 2.15). 
+	Familiar empirical laws are linear relationships between uxes and their conjugate forces: Fouriers 
+law of heat conduction, Ficks law for diffusion, and Ohms law for electrical conduction (see KoM 
+Table 2.1). 
+	The basic postulate of irreversible thermodynamics is that, near equilibrium, the local entropy pro
+duction is non-negative (see KoM Eq. 2.16). 
+	When more than one force is active, each force will generally cause a ux of its corresponding quan
+tity. There are both direct couplings between forces and conjugate uxes, and cross terms that may 
+also contribute to uxes. 
+	When several forces are active and a system is near equilibrlum, the ux of a given quantity is postulated to be linearly related to all of the forces (see KoM Eqs. 2.2021). 
+	The potential which appears in the total conjugate force acting on a component in a material is called 
+the diffusion potential ,  (see KoM Eqs. 2.4041). 
+	According to Onsagers symmetry principle, the matrix of coupling coefcients L in the system of 
+linear equations J = L X is postulated to be symmetric, that is, L = L. 
+Related Exercises in Kinetics of Materials 
+Review Exercises 2.12.4, pp. 3638.</text>
+        </slide>
+      </slides>
+      <videos/>
+    </lecture>
+    <lecture>
+      <lecture_title>Heterogeneous Nucleation (PDF)</lecture_title>
+      <lecture_pdf_url>https://ocw.mit.edu/courses/3-21-kinetic-processes-in-materials-spring-2006/resources/ls25/</lecture_pdf_url>
+      <lectureno>L25</lectureno>
+      <slides>
+        <slide>
+          <slideno>0</slideno>
+          <text>Massachusetts Institute of Technology 
+Department of Materials Science and Engineering 
+77 Massachusetts Avenue, Cambridge MA 02139-4307 
+3.21 Kinetics of MaterialsSpring 2006 
+April 26, 2006 
+Lecture 25: Heterogeneous Nucleation. 
+References 
+1.	Balluf, Allen, and Carter, Kinetics of Materials , Section 19.2. 
+Key Concepts 
+	In heterogeneous nucleation, special sites in a material can effectively catalyze the nucleation process 
+by reducing the critical free energy of nucleation Gc. Heterogeneous nucleation is always in kinetic 
+competition with homogeneous nucleation, and the mechanism with the faster rate determines which will prevail. 
+	The steady-state nucleation rate is given by J = Z cN exp[Gc/(kT )]. While the lower value 
+of Gc favors heterogeneous nucleation, the value of N (the number of potential nucleation sites) is 
+generally far larger for homogeneous nucleation. By using the expression for the steady-state nucleation rate, regimes of temperature, supersaturation, relative interfacial energies, and microstructure in 
+which one nucleation mechanism or the the other dominates. 
+	In polycrystalline microstructures, possible heterogeneous nucleation sites include grain boundaries, 
+edges and corners. When a small particle forms on one of these crystal imperfections, part of the 
+imperfection is eliminated and the associated free-energy decrease lowers Gc. 
+	The relative values of Gc for heterogeneous and homogeneous nucleation on grain boundaries are 
+easily worked out for incoherent nuclei (no strain-energy term) with isotropic interfacial free ener-
+2 gies. Youngs equation ,  = cos  determines the equilibrium dihedral angle at the junction 
+of the / grain boundary and the / interfaces that enclose a lenticular particle. The resulting 
+nucleation barrier for heterogeneous nucleation on the boundary is given by KoM Eq. 19.43, GB = 
+2R3 gB + 2R2 (23cos  +cos3 ). The ratio of the barriers for heterogeneous boundary 3 
+nucleation to homogenous nucleation in the bulk is thus GcB/GH = (2 3cos  + cos3 )/2 and c
+thus simply dependent on the relative values of  and  .
+	A simple geometrical model for an isotropic grain structure (e.g., cube-shaped grains) shows that the 
+number of potential grain boundary nucleation sites per unit volume is nB = n(/L), where n is the 
+number of sites per unit volume in the polycrystal,  is the grain boundary thickness, and L is the 
+grain size. With this assumption, the ratio of steady-state nucleation rates is given by KoM Eq. 19.47 
+as J B/J H = (/L)exp[ (GB  GH)/(kT )].c c 
+	This analysis of heterogeneous grain boundary nucleation shows that grain boundary nucleation is 
+favored over homogeneous nucleation at small grain sizes, large values of cos , and small under
+coolings (i.e., small values of GH). Similar analyses can be carried out to consider kinetics of c 
+heterogeneous nucleation on grain edges and corners. 
+Related Exercises in Kinetics of Materials 
+Review Exercises 19.79, pp. 491495. c</text>
+        </slide>
+      </slides>
+      <videos/>
+    </lecture>
+    <lecture>
+      <lecture_title>Diffusion in Crystals (PDF)</lecture_title>
+      <lecture_pdf_url>https://ocw.mit.edu/courses/3-21-kinetic-processes-in-materials-spring-2006/resources/ls12/</lecture_pdf_url>
+      <lectureno>L12</lectureno>
+      <slides>
+        <slide>
+          <slideno>0</slideno>
+          <text>Massachusetts Institute of Technology 
+Department of Materials Science and Engineering 
+77 Massachusetts Avenue, Cambridge MA 02139-4307 
+3.21 Kinetics of MaterialsSpring 2006 
+March 10, 2006 
+Lecture 12: Diffusion in Crystals.  
+1.	Balluf, Allen, and Carter, Kinetics of Materials , Section 8.18.2.1 
+Key Concepts 
+	An understanding of atomistic and molecular mechanisms of diffusion enables a more thorough ap
+preciation for the ways in which a materials structure inuences the rates at which macroscopic 
+processes such as phase transfomations, diffusional creep, and sintering occur. 
+	Most of the diffusion mechanisms in crystalline materials depend on crystal imperfections such as 
+point defects (vacancies and interstitials), line defects (dislocations), and planar defects (grain bound
+aries and surfaces). As a result, transport kinetics are often strongly inuenced by microstructure. 
+	Within a given piece of material several diffusion mechanisms can be operative, at different rates. 
+It is not unusual for the dominant mechanism (i.e., the one with the fastest transport kinetics) to be 
+different in different temperature or pressure ranges. 
+	Fundamental mechanisms for diffusion in crystals include the ring mechanism , the vacancy mecha
+nism , the interstitialcy mechanism , and the interstitial mechanism . 
+	The ring mechanism involves cooperative exchange of a group of neighboring atoms without the aid 
+of vacancies or interstitials (see KoM Fig. 8.1). There is no experimental evidence that this mechanism 
+contributes signicantly to diffusion in any material. 
+	The vacancy mechanism involves the exchange of an atom with a neighboring vacant site (see KoM 
+Figs. 8.2 and 8.3). Self-diffusion and substitutional solute-atom transport typically occurs by this 
+mechanism. 
+	The interstitialcy mechanism involves the cooperative motion of an atom with a neighboring intersti
+tial atom (see KoM Fig. 8.4). Self-interstitials of varying geometries are known to exist in crystalline 
+materials (see KoM Fig. 8.5), and frequently have the form of a split dumbell as depicted in KoM 
+Fig. 8.6. Although the energy of formation for interstitial defects in metals is typically very large, 
+once present these defects move with very low activation energies. Such defects are often in materials 
+that have been heavily irradiated with energetic particles. 
+	Interstitial components in a crystal are typically smaller than the other components, and the interstitials 
+are generally conned to more open sites in the crystal (e.g., octahedral and tetrahedral sites in 
+f.c.c. and h.c.p. crystals). Such interstitials may diffuse with realatively low activation energy by direct 
+jumps between interstitial sites (see KoM Fig. 8.7). 
+Related Exercises in Kinetics of Materials 
+Review Exercises 8.18.8, pp. 191197. References</text>
+        </slide>
+      </slides>
+      <videos/>
+    </lecture>
+    <lecture>
+      <lecture_title>Diffusion in Noncrystalline Materials (PDF)</lecture_title>
+      <lecture_pdf_url>https://ocw.mit.edu/courses/3-21-kinetic-processes-in-materials-spring-2006/resources/ls16/</lecture_pdf_url>
+      <lectureno>L16</lectureno>
+      <slides>
+        <slide>
+          <slideno>0</slideno>
+          <text>Massachusetts Institute of Technology 
+Department of Materials Science and Engineering 
+77 Massachusetts Avenue, Cambridge MA 02139-4307 
+3.21 Kinetics of MaterialsSpring 2006 
+March 22, 2006 
+Lecture 16: Diffusion in Noncrystalline Materials. 
+References 
+1.	Balluf, Allen, and Carter, Kinetics of Materials , Chapter 10. 
+Key Concepts 
+	The kinetic theory of gases can be analyzed to yield an expression for the tracer self-diffusivity which 
+will be proportional to T3/2 and have an inverse dependence on pressure. 
+	A reasonable model for the structure of a simple liquid (e.g., monatomic) is the dense random packed 
+hard-sphere model. Such structures possess a distribution of free volume . On a local scale the free 
+volume in a liquid is in a constant state of change and the material behaves like a uid. 
+	Glasses are essentially similar to liquids in that they possess a distribution of free volume but the 
+structure is effectively frozen-in and the material behaves like a rigid solid. The change from liquid 
+to glass occurs rather abruptly at the glass transition temperature . 
+	Metallic glasses can be produced from special alloy compositions by rapid cooling to avoid crystal
+lization. Diffusion in metallic glasses has been extensively studied and differs in important ways from 
+diffusion in metal crystals, indicating that self-diffusion must occur by a cooperative mechanism such 
+as a ring mechanism, or more likely a chain-like motion of a group of atoms. 
+	Diffusion of small interstitial species in metallic glasses (e.g., hydrogen diffusion in Pd 80Si20) is 
+strongly dependent on the interstitial concentration. This nding is consistent with the fact that the 
+metallic glass structure contains a distribution of interstitial sites with different free volume and con
+sequently a distribution of energies when the sites are occupied by interstitials (see KoM Fig. 10.5). 
+	In oxide glasses such as SiO 2 the diffusivity of alkali species introduced as network modiers increases 
+with increasing concentration because such species break the random network of covalent bonds with 
+bonds having more ionic character. At high modier concentrations the modier ions tend to cluster 
+and form percolating channels that act as high-diffusivity paths in the structure. 
+	Long-chain polymer molecules in dilute solution adopt self-avoiding random walk conformations and 
+diffuse by Brownian motion . D varies with molecular weight N as N1/2 or as N3/5 depending on 
+the nature of the polymersolvent interaction. 
+	Long-chain polymer melts have signicant entanglements and diffuse by a reptation (slithering) 
+2process in which D varies as N . 
+Related Exercises in Kinetics of Materials 
+None in Chapter 10!</text>
+        </slide>
+      </slides>
+      <videos/>
+    </lecture>
+    <lecture>
+      <lecture_title>Effects of Capillarity and Stress on Diffusion (PDF)</lecture_title>
+      <lecture_pdf_url>https://ocw.mit.edu/courses/3-21-kinetic-processes-in-materials-spring-2006/resources/ls5/</lecture_pdf_url>
+      <lectureno>L5</lectureno>
+      <slides>
+        <slide>
+          <slideno>0</slideno>
+          <text>Massachusetts Institute of Technology 
+Department of Materials Science and Engineering 
+77 Massachusetts Avenue, Cambridge MA 02139-4307 
+3.21 Kinetics of MaterialsSpring 2006 
+February 22, 2006 
+Lecture 5: Effects of Capillarity and Stress on Diffusion. 
+References 
+1.	Balluf, Allen, and Carter, Kinetics of Materials , Sections 3.43.5. 
+Key Concepts 
+	Capillarity refers broadly to phenomena arising from the fact that surfaces and interfaces possess 
+an excess free energy per unit area  (numerically equal to surface tension for uids). A capillary 
+driving force arises from the tendency of surfaces and interfaces to make adjustments of position and 
+orientation so as to minimize the total interfacial free energy. 
+	When  is isotropic, a corrugated surface with linear parallel grooves will spontaneously tend to 
+smooth so as to reduce the surface area and total surface free energy. 
+	When a curved surface moves normal to itself, the area change per volume swept out by the interface 
+is A/V = (K1 + K2), where K1 + K2   is the sum of the principal curvatures. The product 
+(K1 +K2)is the driving force for capillarity-induced interfacial motion, equal to the energy change 
+per unit volume swept out by the interface as it moves. 
+ 	The diffusion potential for a species i at a curved surface is S = i + i.i 
+	KoM Fig. 3.7 illustrates the variation of chemical at the surface of an undulating surface and the 
+direction of the resulting diffusion uxes. As shown in the text, the local equilibrium concentration of 
+vacancies depends on surface curvature (see Eq. 3.74) and the resulting uxes determine the rate of 
+surface smoothing. 
+	Stresses in solids can affect diffusion in a variety of ways, including via the mobility, its effect on 
+diffusion potential, and via inuencing the boundary conditions for diffusion. 
+	Even a uniform state of stress may break symmetry and cause jumps in certain directions in the material to be favored and modify the mobility (see KoM Eq. 3.78). 
+	For a crystal in a state of hydrostatic stress a mistting solute atom with an excess atomic volume 
+1 will require work against pressure when it moves and causes a concentration change. This work 
+is dw = P1dc1 and the resulting diffusion potential is 1 = 1 +  1P. 
+	In an alloy crystal in a state of nonuniform stress the solute concentration eld will also be nonuniform 
+at equilibrium in order to make the diffusion potential uniform. KoM Fig. 3.8 illustrates an edge 
+dislocation and its hydrostatic stress eld is given by Eq. 3.80. Such defects are common in real 
+crystals and their interactions with solute atoms has profound effects on mechanical behavior. 
+Related Exercises in Kinetics of Materials 
+Review Exercise 3.8, pp. 7273.</text>
+        </slide>
+      </slides>
+      <videos/>
+    </lecture>
+    <lecture>
+      <lecture_title>Morphological Stability of Moving Interfaces (PDF)</lecture_title>
+      <lecture_pdf_url>https://ocw.mit.edu/courses/3-21-kinetic-processes-in-materials-spring-2006/resources/ls27/</lecture_pdf_url>
+      <lectureno>L27</lectureno>
+      <slides>
+        <slide>
+          <slideno>0</slideno>
+          <text>Massachusetts Institute of Technology 
+Department of Materials Science and Engineering 
+77 Massachusetts Avenue, Cambridge MA 02139-4307 
+3.21 Kinetics of MaterialsSpring 2006 
+May 1, 2006 
+Lecture 27: Morphological Stability of Moving Interfaces. 
+References 
+1.	Balluf, Allen, and Carter, Kinetics of Materials , Chapter 20. 
+2.	Mathematica notebook for Lecture 27 
+Key Concepts 
+	Perturbation methods can be applied to investigate the morphological stability of particles growing by 
+heat ow and by diffusion. Capillarity acts to make simple interface shapes (e.g., planar and spherical 
+shapes) stable. Both thermal gradients and concentration gradients can act to destabilize the simple 
+shapes, possibly leading to cellular or dendritic growth morphologies. 
+	Solidication of a single-component liquid is stable if the liquid is everywhere above its melting temperature (see KoM Fig. 20.10). If the liquid is undercooled, the solid/liquid interface is unstable 
+because a small protuberance causes the thermal gradient in the liquid to become steeper, amplifying 
+the growth of the protuberance (see KoM Fig. 20.11). 
+	Diffusion-limited growth in an alloy during precipitation is analogous to solidication of an undercooled melt, in that a protuberance on the precipitate/matrix interface locally steepens the concentra
+tion gradient in he matrix ahead of the protuberance, tending to amplify its growth. 
+	In alloy solidication, when the composition of the solid differs from that in the liquid (the usual case), 
+solute rejection into the liquid ahead of the interface may lead to constitutional supercooling of the 
+liquid. Melts become constitutionally supercooled when the thermal gradient in the liquid is relatively shallow, and the solute spike in the liquid results in liquid compositions that are undercooled by 
+virtue of their solute enrichment (see KoM Figs. 20.4 and 20.12). 
+	The stability of a spherical precipitate growing by volume diffusion-control has been modeled by 
+Mullins and Sekerka using the perturbation method. Spherical harmonic functions are used to describe 
+shape distortions of a sphere ( KoM Eq. 20.58; also see Mathematica notebook for this lecture). The 
+effect of interface curvature on equilibrium concentration at the boundary (GibbsThomson effect) is 
+included ( KoM Eq. 20.61), thus introducing the stabilizing inuence of capillarity into the analysis. 
+A solution to Laplaces equation (invariant-eld approximation) is used to derive an expression for 
+the diffusion eld in the matrix that is in equilibrium with the perturbed sphere, KoM Eq. 20.69). The 
+expression for the rate of change of the amplitude of the perturbations is given by KoM Eq. 20.73, 
+and this provides the condition for morphological stability in terms of the wavelength n of the 
+perturbation, the instantaneous size of the growing particle, the concentration gradient G ahead of the 
+interface, and the capillary stabilizing forces included in the term . The analysis indicates that for 
+sufciently large particles there will always be a shape instability (see KoM Eq. 20.77). In practice, 
+such instabilities are rarely observed in solid/solid precipitation. 
+Related Exercises in Kinetics of Materials 
+Review Exercise 20.8, pp. 529531.</text>
+        </slide>
+      </slides>
+      <videos/>
+    </lecture>
+    <lecture>
+      <lecture_title>Atomic Models for Diffusivities - II (PDF)</lecture_title>
+      <lecture_pdf_url>https://ocw.mit.edu/courses/3-21-kinetic-processes-in-materials-spring-2006/resources/ls14/</lecture_pdf_url>
+      <lectureno>L14</lectureno>
+      <slides>
+        <slide>
+          <slideno>0</slideno>
+          <text>Massachusetts Institute of Technology 
+Department of Materials Science and Engineering 
+77 Massachusetts Avenue, Cambridge MA 02139-4307 
+3.21 Kinetics of MaterialsSpring 2006 
+ March 17, 2006 
+Lecture 14: Atomic Models for DiffusivitiesII. 
+References 
+1.	Balluf, Allen, and Carter, Kinetics of Materials , Section 8.2. 
+Key Concepts 
+	Point defects in ionic crystals generally have an associated local charge. A unit cell in a perfect crystal 
+has zero net charge. The charge associated with a point defect is equal to the net charge in a unit cell 
+containing the defect. Thus, a cation vacancy (a vacancy on site normally occupied by a cation) has 
+a net negative charge, and an anion interstitial has a net negative charge. The Kroger-Vink notation is 
+used to specify the type of imperfection, its site in the crystal, and its effective charge. 
+	Normally ionic crystals are charge-neutral and thus the populations of positively charged defects is 
+constrained by that of negatively charged defects. 
+	Intrinsic defects in ionic crystals include anion and cation defects associated with the pure material. 
+A Frenkel defect consists of nearby vacancyinterstitial pairs, e.g. in LiF a cation Frenkel defect would 
+consist of V 
+Li and Li 
+i. A Schottky defect consists of nearby charge-compensating anion vacancycation 
+vacancy pairs, e.g. in ZrO 2 a Schottky defect would consist of V 
+O.Zr and two V 
+	Extrinsic defects in ionic materials arise from impurity ions and may be accommodated interstitially 
+or substitutionally as dictated by their relative energies. Isovalent ions are generally accommodated 
+substitutionally and have zero net charge. Aliovalent ions may be accommodated either substitution
+ally or interstitially depending on ion size, charge, and other considerations. Introduction of aliovalent 
+impurities into an ionic crystal often leads to the formation of additional charge-compensating defects 
+such as vacancies. 
+	Equilibrium concentrations of point defects in ionic crystals may be calculated by knowing values for 
+equilibrium constants for formation of intrinsic defects as well as by accounting for the constraints 
+imposed by charge neutrality. When impurities are present a material might have mainly intrinsic 
+defect populations at high temperatures, and defects dominated by extrinsic defects associated with 
+impurities at low temperatures (see KoM pp. 179180). 
+	The diffusivities in ionic crystals can be modeled using the relation D = r2f/6 using analogous 
+methods to those for metallic materials. In impure ionic crystals, this can lead to changes in activation 
+energies for diffusion depending on whether the point defects involved in the diffusion are in the 
+intrinsic or extrinsic regime (see KoM Fig. 8.13). 
+	When cations can exist in multiple oxidation states (e.g., in transition metals), ionic materials may 
+have defects that lead to nonstoichiometry and associated point and electronic (i.e., electrons and 
+holes) defects. In nonstoichiometric oxides this can lead to regimes in which the cation diffusivity can 
+be oxygen partial-pressure dependent (see KoM Fig. 8.15). 
+Related Exercises in Kinetics of Materials 
+Review Exercises 8.158.19, pp. 201205.</text>
+        </slide>
+      </slides>
+      <videos/>
+    </lecture>
+  </lectures>
+</doc>

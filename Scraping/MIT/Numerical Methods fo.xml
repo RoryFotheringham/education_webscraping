@@ -1,0 +1,1663 @@
+<doc>
+  <source>MIT</source>
+  <date>28/01/2023</date>
+  <course>
+    <course_url>https://ocw.mit.edu/courses/16-920j-numerical-methods-for-partial-differential-equations-sma-5212-spring-2003/</course_url>
+    <course_title>Numerical Methods for Partial Differential Equations (SMA 5212)</course_title>
+    <course_tags>
+      <list>Mathematics </list>
+      <list>Applied Mathematics </list>
+      <list>Differential Equations</list>
+    </course_tags>
+  </course>
+  <lectures>
+    <lecture>
+      <lecture_title>PDF - 1.0 MB</lecture_title>
+      <lecture_pdf_url>https://ocw.mit.edu/courses/16-920j-numerical-methods-for-partial-differential-equations-sma-5212-spring-2003/resources/lec6_notes/</lecture_pdf_url>
+      <lectureno>Solution Methods: Iterative Techniques (PDF)</lectureno>
+      <slides/>
+      <videos/>
+    </lecture>
+    <lecture>
+      <lecture_title>PDF - 1.6 MB</lecture_title>
+      <lecture_pdf_url>https://ocw.mit.edu/courses/16-920j-numerical-methods-for-partial-differential-equations-sma-5212-spring-2003/resources/lecs18_19_notes/</lecture_pdf_url>
+      <lectureno>FEM for the Poisson Problem in IR2 (PDF)</lectureno>
+      <slides/>
+      <videos/>
+    </lecture>
+    <lecture>
+      <lecture_title>(PDF)</lecture_title>
+      <lecture_pdf_url>https://ocw.mit.edu/courses/16-920j-numerical-methods-for-partial-differential-equations-sma-5212-spring-2003/resources/lec21_notes/</lecture_pdf_url>
+      <lectureno>Numerical Methods for PDEs, Integral Equation Methods, Lecture 2:&#160;Numerical Quadrature&#160;(PDF)</lectureno>
+      <slides/>
+      <videos/>
+    </lecture>
+    <lecture>
+      <lecture_title>(PDF)</lecture_title>
+      <lecture_pdf_url>https://ocw.mit.edu/courses/16-920j-numerical-methods-for-partial-differential-equations-sma-5212-spring-2003/resources/lec5_notes/</lecture_pdf_url>
+      <lectureno>Finite Differences: Parabolic Problems (PDF)</lectureno>
+      <slides>
+        <slide>
+          <slideno>0</slideno>
+          <text>16.920J/SMA 5212 
+ 
+ 
+ 
+ 
+Numerical Methods for Partial Differential Equations 
+ 
+ 
+ 
+ 
+Lecture 5 
+ 
+ 
+ 
+ 
+ 
+Finite Differences: Parabolic Problems 
+ 
+ 
+ 
+ 
+ 
+B. C. Khoo 
+ 
+ 
+ 
+ 
+Thanks to Franklin Tan 
+ 
+ 
+ 
+ 
+ 
+19 February 2003</text>
+        </slide>
+        <slide>
+          <slideno>21</slideno>
+          <text>16.920J/SMA 5212 Numerical Methods for PDEs 
+22 EXAMPLE 3 
+Euler-Forward Time Discretization:  Stability Analysis 
+ 
+Analyze the stability of the explicit Euler-forward time discretization 
+ 
+ 1n nduuu
+dtt+= 
+ 
+as applied to the modal equation 
+ 
+ duudt= 
+ 
+1
+1Substituting  where 
+into the modal equation, we obtain (1)0n n
+n nduuuh htdt
+u hu+
++=+ =
++= 
+ 
+Slide 35 
+ 
+EXAMPLE 3 
+Euler-Forward Time Discretization:  Stability Analysis 
+ 
+Making use of the shift operator S 
+ 
+1(1) (1)[(1)]0n n n n nc hcSc hcShc   ++=+=+= 
+ 
+ 
+ 
+Therefore()1
+andn nhh
+c
+=+
+= 
+ 
+The Euler-forward time discretization scheme is stable if 
+ 
+ 11h+&lt; 
+ 
+or bounded by  1s.t. 1 in the -plane. h h    = &lt;  
+ 
+Slide 36 
+ characteristic polynomial</text>
+        </slide>
+        <slide>
+          <slideno>20</slideno>
+          <text>16.920J/SMA 5212 Numerical Methods for PDEs 
+21 STABILITY ANALYSIS 
+Some Important Characteristics Deduced 
+ 
+A few features worth considering:
+1.Stability analysis of time discretization scheme can be carried out for
+all the different modes .
+2.If the stability criterion for the time discretization scheme is j
+valid for
+all modes, then the overall solution is stable (since it is a linear
+combination of all the modes).
+3.When there is more than one root , then one of them is the principal
+root which represents 
+()
+0an approximation to the physical behaviour. 
+The principal root is recognized by the fact that it tends towards one
+as 0, i.e. lim 1.  (The other roots are spurious, which
+affect the stability hh h
+ 
+ =
+but not the accuracy of the scheme.) 
+ 
+Slide 33 
+ 
+STABILITY ANALYSIS 
+Some Important Characteristics Deduced 
+ 
+14.By comparing the power series solution of the principal root to ,
+one can determine the order of accuracy of the time discretization
+scheme.  In this example of leapfrog time discretization,
+1he
+h
+=+() ()1
+22 22 44 2
+22
+1
+2211.1 221 .2 2!
+1 ...2
+and compared to
+1 ...2!
+is identical up to the second order of .  Hence, the above scheme
+is said to be second-order accurate.hh h h h
+hh
+heh
+h  
+
+
+
++=++ +
+=+++
+=+++ 
+ 
+Slide 34</text>
+        </slide>
+        <slide>
+          <slideno>19</slideno>
+          <text>16.920J/SMA 5212 Numerical Methods for PDEs 
+20 One may note that j is always real and negative, thereby satisfying 
+the criterion for stability of the space discretization of a parabolic 
+PDE, keeping time continuous. 
+ 
+Slide 31 
+ 
+EXAMPLE 2 
+Leapfrog Time Discretization:  Absolute Stability Diagram for  
+ 
+As applied to the 1-D Parabolic PDE, the absolute stability diagram for  is 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+In this case, 1 and 2 start out being on the unit circle (h = t = 0).  However, the 
+spurious root (refer to following slide) leaves the unit circle as h starts increasing.  
+Therefore, the spurious root causes the leapfrog time discretization scheme to be 
+unstable, irrespective of how small h = t is, although it does not affect the accuracy.  
+The leapfrog time discretization for the 1-D Diffusion Equation is unstable. 
+ 
+Slide 32 
+ 
+ 
+Im( ) 
+Re( ) Unit circle 
+1 with h 
+increasing 2 with h 
+increasing Region of 
+Instability 
+Region of 
+Stability 2 at h = t = 0 1 at h = t = 0</text>
+        </slide>
+      </slides>
+      <videos/>
+    </lecture>
+    <lecture>
+      <lecture_title>PDF -&#160;2.4 MB</lecture_title>
+      <lecture_pdf_url>https://ocw.mit.edu/courses/16-920j-numerical-methods-for-partial-differential-equations-sma-5212-spring-2003/resources/lecs8_9_10_notes/</lecture_pdf_url>
+      <lectureno>Finite Difference Discretization of Hyperbolic Equations: Linear Problems (PDF - 1.7 MB)</lectureno>
+      <slides/>
+      <videos/>
+    </lecture>
+    <lecture>
+      <lecture_title>PDF - 1.0 MB</lecture_title>
+      <lecture_pdf_url>https://ocw.mit.edu/courses/16-920j-numerical-methods-for-partial-differential-equations-sma-5212-spring-2003/resources/lec4_notes/</lecture_pdf_url>
+      <lectureno>Finite Difference Discretization of Elliptic Equations: FD Formulas and Multidimensional Problems (PDF)</lectureno>
+      <slides/>
+      <videos/>
+    </lecture>
+    <lecture>
+      <lecture_title>PDF - 1.4 MB</lecture_title>
+      <lecture_pdf_url>https://ocw.mit.edu/courses/16-920j-numerical-methods-for-partial-differential-equations-sma-5212-spring-2003/resources/lec11_notes/</lecture_pdf_url>
+      <lectureno>Hyperbolic Equations: Scalar One-Dimensional Conservation Laws (PDF)</lectureno>
+      <slides/>
+      <videos/>
+    </lecture>
+    <lecture>
+      <lecture_title>(PDF)</lecture_title>
+      <lecture_pdf_url>https://ocw.mit.edu/courses/16-920j-numerical-methods-for-partial-differential-equations-sma-5212-spring-2003/resources/lec7_notes/</lecture_pdf_url>
+      <lectureno>Iterative Methods: Multigrid Techniques (PDF)</lectureno>
+      <slides/>
+      <videos/>
+    </lecture>
+    <lecture>
+      <lecture_title>PDF - 1.4 MB</lecture_title>
+      <lecture_pdf_url>https://ocw.mit.edu/courses/16-920j-numerical-methods-for-partial-differential-equations-sma-5212-spring-2003/resources/lec12_notes/</lecture_pdf_url>
+      <lectureno>Numerical Schemes for Scalar One-Dimensional Conservation Laws (PDF)</lectureno>
+      <slides>
+        <slide>
+          <slideno>20</slideno>
+          <text>0 0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.9 1-0.200.20.40.60.811.2BEAM-WARMING
+0 0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.9 1-0.200.20.40.60.811.2BEAM-&#13;
+WARMING1,#
+0 0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.9 1-0.200.20.40.60.811.2FROMM
+0 0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.9 1-0.200.20.40.60.811.2FROMM1,
+0 0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.9 1-0.200.20.40.60.811.2TVD - MINMOD 
+0 0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.9 1-0.200.20.40.60.811.2TVD - MINMOD 1,V
+0 0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.9 1-0.200.20.40.60.811.2TVD - VAN LEER
+0 0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.9 1-0.200.20.40.60.811.2TVD - VAN LEER1,V
+0 0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.9 1-0.200.20.40.60.811.2TVD - SUPERBEE 
+0 0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.9 1-0.200.20.40.60.811.2TVD - SUPERBEE C</text>
+        </slide>
+      </slides>
+      <videos/>
+    </lecture>
+    <lecture>
+      <lecture_title>PDF - 1.2 MB</lecture_title>
+      <lecture_pdf_url>https://ocw.mit.edu/courses/16-920j-numerical-methods-for-partial-differential-equations-sma-5212-spring-2003/resources/lecs13_14_notes/</lecture_pdf_url>
+      <lectureno>Finite Element Methods for Elliptic Problems; Variational Formulation: The Poisson Problem (PDF)</lectureno>
+      <slides/>
+      <videos/>
+    </lecture>
+    <lecture>
+      <lecture_title>(PDF)</lecture_title>
+      <lecture_pdf_url>https://ocw.mit.edu/courses/16-920j-numerical-methods-for-partial-differential-equations-sma-5212-spring-2003/resources/lec22_notes/</lecture_pdf_url>
+      <lectureno>Numerical Methods for PDEs, Integral Equation Methods, Lecture 3:&#160;Discretization Convergence Theory&#160;(PDF)</lectureno>
+      <slides/>
+      <videos/>
+    </lecture>
+    <lecture>
+      <lecture_title>PDF - 2.5 MB</lecture_title>
+      <lecture_pdf_url>https://ocw.mit.edu/courses/16-920j-numerical-methods-for-partial-differential-equations-sma-5212-spring-2003/resources/lecs16_17_notes/</lecture_pdf_url>
+      <lectureno>Discretization of the Poisson Problem in IR1: Theory and Implementation (PDF - 1.9 MB)</lectureno>
+      <slides/>
+      <videos/>
+    </lecture>
+    <lecture>
+      <lecture_title>PDF - 1.6 MB</lecture_title>
+      <lecture_pdf_url>https://ocw.mit.edu/courses/16-920j-numerical-methods-for-partial-differential-equations-sma-5212-spring-2003/resources/lecs2and3_notes/</lecture_pdf_url>
+      <lectureno>Finite Difference Discretization of Elliptic Equations: 1D Problem (PDF)</lectureno>
+      <slides/>
+      <videos/>
+    </lecture>
+    <lecture>
+      <lecture_title>(PDF)</lecture_title>
+      <lecture_pdf_url>https://ocw.mit.edu/courses/16-920j-numerical-methods-for-partial-differential-equations-sma-5212-spring-2003/resources/lec24_notes/</lecture_pdf_url>
+      <lectureno>Numerical Methods for PDEs, Integral Equation Methods, Lecture 4:&#160;Formulating Boundary Integral Equations&#160;(PDF)</lectureno>
+      <slides>
+        <slide>
+          <slideno>3</slideno>
+          <text>3.1.2 Care Evaluating Integrals
+Slide 8
+On a smooth surface:
+lim
+x
+n/vectorx/integraldisplay
+1
+/bardbl/vectorx/vectorx/prime/bardbl(/vectorx/prime)d/prime
+=2(/vectorx/prime)+/integraldisplay
+
+n/vectorx1
+/bardbl/vectorx/vectorx/prime/bardbl(/vectorx/prime)d/prime
+3.1.3 Neumann Problem 2nd Kind!Slide 9
+u(/vectorx)
+n/vectorx=2(/vectorx/prime)+/integraldisplay
+
+n/vectorx1
+/bardbl/vectorx/vectorx/prime/bardbl(/vectorx/prime)d/prime
+3.1.4 Radiation ConditionSlide 10
+lim/bardbl/vectorx/bardblu(/vectorx)=/integraldisplay
+1
+/bardbl/vectorx/vectorx/prime/bardbl(/vectorx/prime)d/primeO(/bardbl/vectorx/bardbl1)
+Unless
+/integraldisplay
+(/vectorx/prime)d/prime=0
+Then
+lim/bardbl/vectorx/bardblu(/vectorx)O(/bardbl/vectorx/bardbl2)
+3.2 Double Layer Potential
+Slide 11
+Consider
+u(/vectorx)=/integraldisplay
+
+n/vectorx/prime1
+/bardbl/vectorx/vectorx/prime/bardbl(/vectorx/prime)d/prime
+u(/vectorx)automatically satises 2u=0on.
+Must now enforce boundary conditions
+3</text>
+        </slide>
+        <slide>
+          <slideno>0</slideno>
+          <text>Numerical Methods for PDEs
+Integral Equation Methods, Lecture 4
+Formulating Boundary Integral Equations
+Notes by Suvranu De and J. White
+April 30, 2003</text>
+        </slide>
+        <slide>
+          <slideno>1</slideno>
+          <text>1 Outline
+Slide 1
+Laplace Problems
+Exterior Radiation Condition
+Greens functionAnsatz or Indirect Approach
+Single and Double Layer Potentials
+First and Second Kind EquationsGreens Theorem Approach
+First and Second Kind Equations
+23 - D L a p l a c e P r o b l e m s
+2.1 Dierential Equation
+Slide 2
+Laplaces equation in 3-D
+2u(/vectorx)=2u(/vectorx)
+x2+2u(/vectorx)
+y2+2u(/vectorx)
+z2=0
+where
+/vectorx=x, y, z
+andis bounded by .
+2.2 Boundary Conditions
+Slide 3
+Dirichlet Condition
+u(/vectorx)=u(/vectorx)/vectorx
+OR
+Neumann Condition
+u(/vectorx)
+n/vectorx=u(/vectorx)
+n/vectorx/vectorx
+PLUS
+A Radiation Condition
+2.2.1 Radiation ConditionSlide 4
+The Radiation Condition
+lim/bardbl/vectorx/bardblu(/vectorx)0
+not specic enough! Need
+lim/bardbl/vectorx/bardblu(/vectorx)O(/bardbl/vectorx/bardbl1)
+1</text>
+        </slide>
+        <slide>
+          <slideno>2</slideno>
+          <text>OR
+lim/bardbl/vectorx/bardblu(/vectorx)O(/bardbl/vectorx/bardbl2)
+2.3 Greens FunctionSlide 5
+Laplaces Equation Greens Function
+2G(/vectorx)=4 (/vectorx)
+(/vectorx)impulse in 3-D
+Dened by its behavior in an integral
+/integraldisplay
+(/vectorx/prime)f(/vectorx/prime)d/prime=f(0)
+Not too hard to show
+G(/vectorx)=1
+/bardbl/vectorx/bardbl
+3 Ansatz (Indirect) Formulations
+3.1 Single Layer Potential
+Slide 6
+Consider
+u(/vectorx)=/integraldisplay
+1
+/bardbl/vectorx/vectorx/prime/bardbl(/vectorx/prime)d/prime
+u(/vectorx)automatically satises 2u=0on.
+Must now enforce boundary conditions
+3.1.1 Boundary Conditions
+Slide 7
+Dirichlet Problem
+u(/vectorx)=/integraldisplay
+1
+/bardbl/vectorx/vectorx/prime/bardbl(/vectorx/prime)d/prime/vectorx
+Neumann Problem
+u(/vectorx)
+n/vectorx=
+n/vectorx/integraldisplay
+1
+/bardbl/vectorx/vectorx/prime/bardbl(/vectorx/prime)d/prime/vectorx
+2</text>
+        </slide>
+        <slide>
+          <slideno>4</slideno>
+          <text>3.2.1 Boundary Conditions
+Slide 12
+Dirichlet Problem
+u(/vectorx)=/integraldisplay
+
+n/vectorx/prime1
+/bardbl/vectorx/vectorx/prime/bardbl(/vectorx/prime)d/prime/vectorx
+Neumann Problem
+u(/vectorx)
+n/vectorx=
+n/vectorx/integraldisplay
+
+n/vectorx/prime1
+/bardbl/vectorx/vectorx/prime/bardbl(/vectorx/prime)d/prime/vectorx
+Neumann Problem generates Hypersingular Integral
+3.2.2 Dirichlet Problem 2nd Kind!Slide 13
+u(/vectorx)
+n/vectorx=2(/vectorx/prime)+/integraldisplay
+
+n/vectorx/prime1
+/bardbl/vectorx/vectorx/prime/bardbl(/vectorx/prime)d/prime
+3.2.3 Radiation ConditionSlide 14
+lim/bardbl/vectorx/bardblu(/vectorx)=/integraldisplay
+
+n/vectorx/prime1
+/bardbl/vectorx/vectorx/prime/bardbl(/vectorx/prime)d/primeO(/bardbl/vectorx/bardbl2)
+Add Extra Term to slow decay
+u(/vectorx)=/integraldisplay
+
+n/vectorx/prime1
+/bardbl/vectorx/vectorx/prime/bardbl(/vectorx/prime)d/prime+G(/vectorx)/vectorx/owner
+4 Greens Theorem Approach
+4.1 Greens Second Identity
+Slide 15
+/integraldisplay
+/bracketleftbig
+u2ww2u/bracketrightbig
+d=/integraldisplay
+/bracketleftbigg
+wu
+nuw
+nd/bracketrightbigg
+Now let w=1
+/bardbl/vectorx/vectorx/prime/bardbl
+2u(/vectorx)=/integraldisplay
+/bracketleftbigg1
+/bardbl/vectorx/vectorx/prime/bardblu
+nu
+n/vectorx/prime1
+/bardbl/vectorx/vectorx/prime/bardbld/bracketrightbigg
+Easy to implement any boundary conditions!
+4</text>
+        </slide>
+      </slides>
+      <videos/>
+    </lecture>
+    <lecture>
+      <lecture_title>(PDF)</lecture_title>
+      <lecture_pdf_url>https://ocw.mit.edu/courses/16-920j-numerical-methods-for-partial-differential-equations-sma-5212-spring-2003/resources/lec20_notes/</lecture_pdf_url>
+      <lectureno>Numerical Methods for PDEs, Integral Equation Methods, Lecture 1:&#160;Discretization of Boundary Integral&#160;Equations&#160;(PDF - 1.0 MB)</lectureno>
+      <slides>
+        <slide>
+          <slideno>15</slideno>
+          <text>approach to minimizing R(x)is to make it orthogonal to a collection of test
+functions, which may or may not be related to the basis functions. As noted
+on the bottom of the slide, enforcing orthogonality in this case means ensuring
+that the integral of the product of R(x)and(x)over the surface is zero.
+15</text>
+        </slide>
+        <slide>
+          <slideno>3</slideno>
+          <text>whereq, the net charge on one of the plates, is given by the surface normal of
+the potential integrated over one plate and scaled by a dielectric permittivity.
+4.2 Drag Force in a Microresonator
+Slide 5
+Resonator Discretized Str u
+Computed Forces
+Bottom ViewComputed Forces
+Top View
+Note 3 Example 2: Drag force in a MEMS device
+The example in the slide is a microresonator,it is a structure that can be madeto vibrate using electrostatic forces. The changing character of those vibra-tions can be used to sense rotation. The particulars of how the microresonator
+operates is not directly relevant to our discussion of integral equations, except
+for one point. In order to determine how much energy is needed to keep themicroresonator vibrating, it is necessary to determine the uid drag force on
+comb structures shown in the bottom part of theslide. The uid is the air sur-
+roundingthe structure,andat the micron-scaleofthese devices, airsatises the
+incompressible Stokes equation,
+
+2u(x)=p(x) (1)
+u(x)=0
+whereuistheuidvelocityand pisthepressure.Byspecifyingthecombvelocity,
+and then computing the surface pressure and the normal derivative of velocity,onecandeterminethenetdragforceonthecomb. Onceagain,thisisaproblem
+in which the known quantities and the quantities of interest are on the surface.
+3</text>
+        </slide>
+        <slide>
+          <slideno>1</slideno>
+          <text>1 Outline for this Module
+Slide 1
+Overview of Integral Equation Methods
+Important for many exterior problems
+(Fluids, Electromagnetics, Acoustics)Quadrature and Cubature for computing integrals
+One and Two dimensional basics
+Dealing with Singularities1
+stand 2ndKind Integral Equations
+Collocation, Galerkin and Nystrom theory
+Alternative Integral Formulations
+Ansatz approach and Greens theorem
+Fast SolversFast Multipole and FFT-based methods.
+2 Outline
+Slide 2
+Integral Equation Methods
+Exterior versus interior problems
+Start with using point sourcesStandard Solution Methods
+Collocation Method
+Galerkin MethodSome issues in 3D
+Singular integrals
+3 Interior Vs Exterior Problems
+Slide 3
+Interior Exterior
+Temperature 
+known on surfac e20T=
+inside20T=
+outside
+Temperature 
+known on surfa c
+"Temperature in a tank" "Ice cube in a bath"
+What is the heat ow?
+Heat ow = Thermalconductivity/integraltext
+surfaceT
+n
+Note 1 Why use integral equation methods?
+For both of the heat conduction examples in the above gure, the temperature,
+T, is a function of the spatial coordinate, x, and satises 2T(x)=0.I nb o t h
+1</text>
+        </slide>
+        <slide>
+          <slideno>23</slideno>
+          <text>9.2.2 Centroid CollocationSlide 28
+Put collocation points at panel centroids
+()
+1
+,1
+i
+in
+cj
+j c
+ijpanel jxd S
+xx
+A
+= =/g166 /g179
+/g9/g12/g12/g12/g10/g12/g12/g12 /g11
+()
+()1 1,1 1, 1
+,1 ,
+ncn
+nn n ncx AA
+AA x
+/g170/g186 /g170/g186 /g170/g186/g171/g187/g171/g187 /g171/g187/g171/g187/g171/g187 /g171/g187 =/g171/g187/g171/g187 /g171/g187/g171/g187/g171/g187 /g171/g187/g171/g187 /g171/g187 /g171/g187  /g172/g188 /g172/g188/g172/g188/g22/g22
+/g23/g25 /g23 /g23 /g23
+/g23/g25 /g23 /g23 /g23
+/g22/g22
+icxCollocation
+point
+Note 26
+After one has decide on a basis with which to approximately represent the
+surface charge density, the next step is to develop a system of equations from
+whichtodeterminethebasisweights,denotedintheslideaboveasthe is. The
+most commonly used approach to forming such a system is to use collocation,
+though Galerkin methods are also quite widely used. Recall that in collocation,
+the basis function weights are determined by insuring the the integral equationis exactly satised at a collection of collocation points. For panel methods,
+the most common choice for the position of the collocation points are the panel
+centroids, as shown in the cube diagram in the above slide.The equation in the top right of the above slide relates the potential at collo-
+cation pointx
+cito the weights for the panel-based basis functions. To see how
+the equation was derived, consider evaluting the potential at the ithcollocation
+point using the original integral equation
+(xci)=/integraldisplay
+surface1
+/bardblxcix/prime/bardbl(x/prime)dS/prime, (10)
+where is the know potential on the problem surface and is the unknown
+charge density. Substituting the approximate representation for ,
+(x)n/summationdisplay
+j=1jj(x)
+into the integral equation results in
+(xci)=/integraldisplay
+surfaceG(xci,x/prime)n/summationdisplay
+j=1jj(x/prime)dS/prime, (11)
+whereG(x,x/prime)1
+/bardblxx/prime/bardblis used to simplify the formula. Exploiting the fact
+thatj(x)=1ifxis on panelj, and zero otherwise, results in the formula at
+the top right of the slide.
+23</text>
+        </slide>
+        <slide>
+          <slideno>20</slideno>
+          <text>orthogonality condition, and nunknowns, one for each basis function weight.
+Also, the system does not have the potential explicitly as the right hand side.
+Instead, the ithright- hand side entry is the average of the product of the
+potential and the ithbasis function.
+8.3.10 Galerkin for Piecewise Constant BasesSlide 25
+2xnx
+1l
+2lnl
+() ( )
+1
+,,
+ii jn
+j
+j line line line
+i ijx dS G x x dSdS
+b A
+= = /g166 /g179/g179 /g179
+/g9/g12/g10/g12/g11 /g9/g12/g12/g12/g10/g12/g12/g12 /g11
+
+A
+1,1 A1,n
+.........
+.........
+An,1 An,n
+
+
+1
+...
+...
+n
+=
+b
+1
+...
+...
+bn
+
+Note 23
+In the above slide, a specic Galerkin algorithm is described using the same
+example basis introduced above, constant charge density on nstraight sections
+or lines. Once again, we will think of the problem as having been restated tobe on a polygon instead of the original circle.
+In the Galerkin method, the charge densities on each of the straight lines are
+selected so that the resulting line averaged potential matches the line averagedgiven potential. As the equations on this slide make clear, the matrix element
+A
+i,jis the average potential over line i, scaled by the length of linei, due to a
+unit charge density along line j.
+As with the collocation method, the matrix Ais dense because the the charge
+on linejcontributes to the averaged potentials everywhere. Also note that if
+linejis far away from line i,t h e n
+Ai,jlength (linej)length (linei)G(xti,xtj) (9)
+Exercise 6 Suppose we are using piecewise constant centroid collocation
+to solve a 2-D Laplace problem, so G(x,y,x/prime,y/prime)=l o g/radicalbig
+(xx/prime)2+(yy/prime)2.
+Roughlyhowfarapartdolinesections iandjhavetobefor(9)tobeaccurateto
+within one percent? Assume line jhas length of one. Does your answer depend
+on the orientationof line j? Does your answer depend on the orientationof line
+i? (Youranswershouldbedierentthantheansweryougaveforthecollocation
+method. Do you see why?)
+20</text>
+        </slide>
+        <slide>
+          <slideno>13</slideno>
+          <text>assumethechargedensityisaconstantoneachsub-arc. Suchanapproachisnot
+commonly used. Instead the geometry is usually approximated along with the
+charge density. In this example case, shown in the center right of the slide, the
+sub-arcsofthecirclearereplacedwithstraightsections,thusformingapolygon.The charge density is assumed constant on each edge of the polygon.The result
+is a piecewise constant representation of the charge density on a polygon.
+8.3.2 Geometric Approximation is Not New
+Slide 17
+Piecewis e Straight surface basis 
+Functions approximate the circleTriangles for 2-D F
+approximate the circ
+() ( ) ( )
+1,n
+ii
+i approx
+surfacexG x x x d S 
+=  = /g166 /g179
+Note 15
+The idea that both the geometry and the unknown charge density has been ap-
+proximatedisnotactuallyanewissue. Asshowninthegureintheaboveslide,
+if FEM methods are used to solve an interior problem, and triangular elements
+are used, then the circle is approximated to exactly the same degree as whenstraightsectionsreplacethesub-arcsforthesurfaceintegralequation. Asshown
+at the bottom of the above slide, we can substitute the basis function represen-
+tation into the integral equation, but then we should also note that the integralis now over the approximated geometry. It is common, but not mathematically
+justied, to ignore the errors generated by the geometry approximation. We
+will also ignore the error in the geometric approximation, and justify ourselvesby assuming that there are no circles, but only polygons, as then there is no
+geometric approximation.
+8.3.3 Piecewise Constant Straight Sections Example
+Slide 18
+1) Pick a set of n Poin t
+surface1x
+2) Define a new surface 
+connecting points with n
+()i 3) Define 1if  is i xx l =
+()i otherwise,  0 x =2xnx
+1l
+2lnl
+13</text>
+        </slide>
+        <slide>
+          <slideno>5</slideno>
+          <text>is determining how long signals take to get from the output of a logical gate
+to the input of the next gate. To compute that delay, one must determine the
+capacitance on each of the wires given in the slide picture. To do so requires
+computing charges given electrostatic potentials as noted above.
+5 What is common about these problems?
+Slide 8
+Exterior Problems
+MEMS device - uid (air) creates drag
+Package - Exterior elds create coupling
+Signal Line - Exterior elds.
+Quantities of interest are on surface
+MEMS device - Just want surface traction forcePackage - Just want coupling between conductors
+Signal Line - Just want surface charge.
+Exterior problem is linear and space-invariant
+MEMS device - Exterior Stokes ow equation (linear)Package - Maxwells equations in free space (linear)
+Signal line - Laplaces equation in free spce (linear)
+But problems are geometrically very complex
+6 Exterior Problems
+6.1 Why not use FDM / FEM?
+Slide 9
+2-D Heat Flow Example
+0 at T=
+But, mus t
+truncate t
+meshSurface
+OnlyneedT
+nonthesurface,but Tiscomputedeverywhere.
+Musttruncatethemesh, T()=0becomes T(R)=0.
+Note 6 Heat conduction in 2D
+In this slide above, we consider a two dimensional exterior heat conduction
+probleminwhichthetemperatureisknownontheedges,orsurface,ofasquare.
+Here, the quantity of interest might be the total heat ow out of the square.
+The temperature Tsatises
+2T(x)=0x (3)
+5</text>
+        </slide>
+        <slide>
+          <slideno>16</slideno>
+          <text>8.3.5 Residual Minimization Using Test Functions
+Slide 20
+/integraltext
+i(x)R(x)dS=0
+
+/integraldisplay
+i(x)(x)dS/integraldisplay/integraldisplay
+approx
+surfacei(x)G(x,x/prime)n/summationdisplay
+j=1jj(x/prime)dS/primedS=0
+Wewillgeneratedierentmethodsbychoosingthe 1,..., n
+Collocation : i(x)=(xxti)(pointmatching)
+Galerkin Method : i(x)=i(x)(basis=test)
+Weighted Residual Method : i(x)=1 if  i(x)/negationslash=0(averages)
+Note 18
+As noted in the equation on the top of the above slide, by substituting the
+denition of the residual into the orthogonality equation given in the previousslide, it is possible to generate nequations, one for each test function. The
+generated equation has two integrals. The rst is a surface integral of the
+product of the given potential with the test function. The second integral isa double integral over the surface. The integrand of the double integral is
+a product of the test function, the Greens function, and the charge density
+representation.
+Asnotedintheslide,andaswewilldescribeinmoredetailbelow,threedierent
+numerical techniques can be derived by altering the test functions.
+8.3.6 CollocationSlide 21
+Collocation: i(x)=(xxti)(pointmatching)
+/integraltext
+(xxti)R(x)dS=R(xti)=0
+
+/summationtextn
+j=1jAi,j/bracehtipdownleft
+ /bracehtipupright/bracehtipupleft
+ /bracehtipdownright/integraldisplay
+approx
+surfaceG(xti,x/prime)j(x/prime)dS/prime= ( xti)
+
+A1,1  A1,n
+.........
+.........
+A
+n,1  An,n
+
+1
+...
+...
+n
+=
+(xt1)
+...
+...
+(xtn)
+
+Note 19 Collocation
+The collocationmethod, described in the aboveslide, uses shifted impulse func-
+tions as test functions, i(x)=(xxi). Impulse functions, as called delta
+16</text>
+        </slide>
+        <slide>
+          <slideno>4</slideno>
+          <text>4.3 Electromagnetic Coupling in a Package
+Slide 6
+Picture Thanks to Coventor.
+Note 4 Example 3: Electromagnetic coupling in a package
+In the 40 lead electronic package pictured in the slide, it is important to de-
+termine the extent to which signals on dierent package leads interact. To
+determine the magnetic interaction between signal currents owing on dierentwires, one must solve
+
+2H(x)=J(x) (2)
+J(x)=0
+whereHis the magnetic eld and Jis the signal current density. By specifying
+the current, and then computing the magnetic eld at the surfaces of the leads,
+one can determine the magnetic interaction. Again, this is a problem in which
+the known quantities and the quantities of interest are on the surface.
+4.4 Capacitance of Microprocessor Signal Lines
+Slide 7
+Note 5 Example 4: Capacitance of microprocessor signal lines
+Thislastexampleintheaboveslideisapictureofthewiringonamicroprocessor
+integratedcircuit. Atypicalmicroprocessorhasmillions ofwires,soweareonly
+looking at a small piece of a processor. The critical problem in this example
+4</text>
+        </slide>
+        <slide>
+          <slideno>8</slideno>
+          <text>8 Laplaces Equation in 2D
+8.1 Simple idea
+Slide 11
+22
+22+ = 0   out suu
+xy
+Surface
+()00,xy
+22
+22+ = 0   outside uu
+xy
+Problem Solved is given on surfaceu
+() ()()22
+00 Let  logux x y y= + 
+Does not match boundary conditions!
+Note 8 Simple idea for solving Laplaces equation in 2D
+Here is a simple idea for computing the solution of Laplaces equation outside
+the square. Simply let
+u(x,y)=log/radicalbig
+(xx0)2+(yy0)2
+wherex0,y0is a point inside the square. Clearly such a uwill satisfy 2u=0
+outsidethesquare,but umaynotmatchtheboundaryconditions. Byadjusting
+, it is possible to make sure to match the boundary condition at at least one
+point.
+Exercise 2 Suppose the potential on the surface of the square is a constant.
+Can you match that constant potential everywhere on the perimeter of thesquare by judiciously selecting .
+8.1.1 "More points"
+Slide 12
+22
+22+ = 0   ou tuu
+xy
+
+()11,xy()22,xy is given on surfaceu
+(),nnxy
+Letu=/summationtextn
+i=1ilog/parenleftBig/radicalbig
+(xxi)2+(yyi)2/parenrightBig
+=/summationtextn
+i=1iG(xxi,yyi)
+Pick theis to match the boundary conditions!
+8</text>
+        </slide>
+        <slide>
+          <slideno>22</slideno>
+          <text>()1  if  is on jxx =
+()0 o t h e r w i s ejx =
+Discretize Surface into 
+Panels
+Panel j() ()/g441Basis Functi oRepresent n
+ii
+ixx 
+=/g166
+Note 25
+Consider solving the integral on the top of the above slide where the surface is
+thesurfaceofthecube showninthelowerleft-handcorner. The rststep, aswehave mentioned in previous lectures, is to develop a basis in which to represent
+the surface charge density .
+The cube pictured in the slide has had its surface divided into panels, and
+a basis is derived from the panels. In particular, one can associate a basis
+function
+jwith each panel jby assigning j(x)the value one when xis a
+point on panel j,a n ds e t t i n g j(x)=0otherwise. If is approximated by
+a weighted combination of these basis functions, then the approximation is a
+piecewise constant representation of the charge density on the surface of thecube.
+A few aspects of this basis set should be noted.
+The basis functions are orthogonal, that is if i/negationslash=j,
+/integraldisplay
+
+j(x)i(x)dx=0.
+These basis functions are normalized with respect to l,n o tl2.T h a ti s ,
+/bardbl/bardbl=1but
+/bardblj/bardbl2
+2=/integraldisplay
+i(x)i(x)dx=panel area.
+Finally, many papers in the literature on solving integral equations refer to
+panel methods. The name is derived from the idea of breaking a surface intoat panels.
+In the application area of analyzing ocean wave forces on ship hulls, panel
+methods are commonly used. However, it is not possible to represent a curved
+hull with quadrilateral at panels. Researchers in the area often create a best
+t panelled surface in which there are gaps between the edges of the panels.Such a discretization technique is often referred to as using leaky panels, a
+very compelling image.
+22</text>
+        </slide>
+        <slide>
+          <slideno>6</slideno>
+          <text>T(x)givenx 
+lim/bardblx/bardblT(x)=0
+where is the innite domain outside the square and is the region formed by
+the edges of the square.
+Using nite-element or nite-dierence methods to solve this problem requires
+introducing an additional approximation beyond discretization error. It is notpossible to discretize all of , as it is innite, and therefore the domain must be
+truncated with an articial nite boundary. In the slide,the articial boundary
+is a large ellipse on which we assume the temperature is zero. Clearly, as theradiusoftheellipseincreases,thetruncatedproblemmoreaccuratelyrepresents
+thedomainproblem,butthenumberofunknownsinthediscretizationincreases.
+6</text>
+        </slide>
+        <slide>
+          <slideno>7</slideno>
+          <text>7 Laplaces Equation
+7.1 Greens FunctionSlide 10
+In 2D
+Ifu=log/parenleftBig/radicalbig
+(xx0)2+(yy0)2/parenrightBig
+then2u
+x2+2u
+y2=0 (x,y)/negationslash=(x0,y0)
+In 3D
+Ifu=1
+ 
+(xx0)2+(yy0)2+(zz0)2
+then2u
+x2+2u
+y2+2u
+z2=0 (x,y,z )/negationslash=(x0,y0,z0)
+Proof: Just dierentiate and see!
+Note 7 Greens function for Laplaces equation
+In the next few slides, we will use an informal semi-numerical approach to
+deriving the integral form of Laplaces equation. We do this inpart because
+such a derivation lends insight to the subsequent numerical procedures.To start, recall from basic physics that the potential due to a point charge is
+related only to the distance between the point charge and the evaluation point.
+In 2-D the potential is givenby the log of the distance, and in 3-D the potentialis inversely proportion to the distance. The precise formulas are given on the
+slide. A little more formally, direct dierentiation reveals that
+u(x,y)=l o g/radicalbig
+(xx0)2+(yy0)2 (4)
+satises the 2-D Laplaces equation everywhere except x=x0,y=y0and
+u(x,y,z )=1
+/radicalbig
+(xx0)2+(yy0)2+(zz0)2(5)
+satises the 3-D Laplaces equation everywhere except x=x0,y=y0,z=z0.
+These functions are sometimes referred to as Greens functions for Laplaces
+equation.
+Exercise 1 Show by direct dierentiation that the functions in (4) and (5)
+satisfy 2u=0, in the appropriate dimension almost everywhere.
+7</text>
+        </slide>
+        <slide>
+          <slideno>14</slideno>
+          <text>(x)=/integraldisplay
+approx
+surfaceG(x,x/prime)n/summationdisplay
+i=1ii(x/prime)dS/prime=n/summationdisplay
+i=1i/integraldisplay
+line l iG(x,x/prime)dS/prime
+How do we determine the is?
+Note 16
+Intheaboveslide,wecompletethedescriptionofusingconstantchargedensities
+on straight sections as the basis. If we substitute this example basis functioninto the integral equation, as is done at the bottom of the slide, the result is to
+replace the original integration of the product of the Greens function and the
+density with a weighted sum of integrals over straight lines of just the Greensfunction. The next step is then to develop an approach for determining the
+weights, denoted here by 
+is.
+8.3.4 Residual Denition and MinimizationSlide 19
+R(x)= (x)/integraldisplay
+approx
+surfaceG(x,x/prime)n/summationdisplay
+i=1ii(x/prime)dS/prime
+We pick the is to makeR(x)small
+General Approach: Pick a set of test functions 1,...,nand forceR(x)to be
+orthogonal to the set
+/integraldisplay
+i(x)R(x)dS=0 f o ra l li
+Note 17
+One way of assessing the accuracy of the basis function based approximation
+of the charge density is to examine how well the approximation satises the
+integral equation. To be more precise, we dene the residual associated withthe integralequation and an approximate solution at the top of the above slide.
+Note thatR(x)is just the dierence between the given potential on the surface
+and the potential produced by the approximated chargedensity. Note also that
+the equation is now over the approximate geometry and therefore xandx
+/primeare
+both on the approximated surface.If the representation satises the integral equation exactly, then the residual
+R(x)will be zero for all xand the approximate solution is equal to the exact
+solution (provided the integral equation has a unique exact solution, more onthis later). However this will usually not be possible, and instead we will try
+to pick the basis function weights, the 
+is, to somehow minimize R(x).O n e
+14</text>
+        </slide>
+        <slide>
+          <slideno>25</slideno>
+          <text>point quadrature is like treating the panel as if it were a point charge at the
+panels centroid, where the point charges strength is equal to the panel area.
+If the collocation point is close to the panel, then a single point quadrature
+will be insuciently accurate. Instead, a more accurate four point quadraturescheme would be to break the panel into four subpanels, and then treat each of
+the subpanels as point charges at their respective centers. This simple idea is
+shown in the gure at the bottom of the above slide. This four point scheme is
+equivalent to/integraldisplay
+panel j1
+/bardblxcix/prime/bardbldS/prime4/summationdisplay
+j=10.25Area
+/bardblxcixpoint j/bardbl.
+If the panel is a unit square in the x-y plane whose center is at the coordinate
+system origin, then the four xpoint js are (x,y,z )=( 0.25,0.25,0),(x,y,z )=
+(0.25,0.25,0),(x,y,z )=(0.25,0.25,0),a n d (x,y,z )=( 0.25,0.25,0).
+9.2.4 Calculating "Self Term"
+Slide 30
+Panel iicxCollocation
+point
+,
+0iiii
+ccPanel AreaA
+xx
+/g9/g12/g10/g12/g11One point 
+quadrature
+Approximation
+xyz
+,   is an integrable si n1
+iii
+paneli cxxAd S =/g179,1
+iii
+pa cnelixxA dS
+=/g179
+Note 28
+The diagonal terms Ai,ican not be computed using the quadrature approxima-
+tiongivenonthepreviousslide. Toseethis, considerthegureatthetopleftof
+the above slide, where a panel has been shifted and rotated into the x-y plane,
+and the collocation point is the center of the panel. The integral that must be
+computed is given on the right side of the top of the above slide.
+As shownin the middle of the slide, using a single point quadraturescheme willfail, because the distance between the point charge approximation to the panel
+and the collocation point will be zero. Therefore, the single point formula will
+require computing the reciprocal of zero, which is innite. The problem is thatthe integrand in /integraldisplay
+panel i1
+/bardblxcix/prime/bardbldS/prime(12)
+is singular. That is, the integrand approaches innity at a point x/primewhich is in
+the domain of integration. What is not so obvious is that (12) is an integrable
+25</text>
+        </slide>
+        <slide>
+          <slideno>2</slideno>
+          <text>problemsT(x)isgivenonthesurface,denedby ,andthereforebothproblems
+are Dirichlet problems. For the temperature in a tank problem, the problem
+domain, is the interior of the cube, and for the ice cube in a bath problem,
+the problem domain is the innitely extending region exterior to the cube. Forsuchanexteriorproblem,oneneedsanadditionalboundaryconditiontospecify
+whathappens suciently farawayfromthe cube. Typically,itis assumedthere
+are no heat sources exterior to the cube and therefore
+lim
+/bardblx/bardblT(x)0.
+For the cube problem, we might only be interested in the net heat ow from
+the surface. That ow is given by an integral over the cube surface of the
+normal derivative of temperature, scaled by a thermal conductivity. It might
+seeminecienttousethenite-elementornite-dierencemethodsdiscussedin
+previous sections to solve this problem, as such methods will need to computethe temperature everywhere in . Indeed, it is possible to write an integral
+equation which relates the temperature on the surface directly to its surface
+normal, as we shall see shortly.In the four examples below, we try to demonstrate that it is quite common
+in applications to have exterior problems where the known quantities and the
+quantities of interest are all on the surface.
+4E x a m p l e s
+4.1 Computation of Capacitance
+Slide 4
+v+
+-20    Outs i =
+ is given  on S potential
+What is the capacitance?
+Capacitance = Dielectric Permittivity/integraltext
+n
+Note 2 Example 1: Capacitance problem
+In the example in the slide, the yellow plates form a parallel-plate capacitor
+with an applied voltage V. In this 3-D electrostatics problem, the electrostatic
+potential satises 2(x)=0in the region exterior to the plates, and the
+potential is known on the surface of the plates. In addition, far from the plates,
+0. What is of interest is the capacitance, C, which satises
+q=CV
+2</text>
+        </slide>
+        <slide>
+          <slideno>11</slideno>
+          <text>8.2 Integral Formulation
+8.2.1 Limiting Argument
+Slide 15
+Want to smear point charges to the surface
+Results in an integral equation
+(x)=/integraldisplay
+surfaceG(x,x/prime)(x/prime)dS/prime
+H o wd ow es o l v et h ei n t e g r a le q u a t i o n ?
+Note 12 Single layer potential
+The oscillating potential produced by the point charge method is due to the
+rapid change in potential as the separation between evaluation point and point
+chargeshrinks. If the point chargescould be smeared out, so that the produced
+potential did not rise to innity with decreasing separation, then the resultingcomputed potential would not have the oscillation noted on the previous slide.
+Inaddition,itmakesthemostsensetosmearthepointchargesontothesurface,
+as then the charge density and the known potential have the same associatedgeometry. The result is the integral equation given on the bottom of the above
+slide,wherenowtheunknownisacharge densityonthesurfaceandthepotential
+due to that chargedensity is given by the well-knownsuperposition integral. In
+the case of two or three dimensional Laplace problems, G(x,x
+/prime)can be written
+asG(xx/prime), asthe potentialis onlya function of distance to the chargedensity
+and not a function of absolute position. For such a Greens function,
+(x)=/integraldisplay
+surfaceG(xx/prime)(x/prime)dS/prime,
+which one may recognize from system theory as a convolution. This connection
+is quite precise. A space-invariant system has an impulse response, which isusually referredto as a Greens function. The output, in this case the potential,
+is a convolution of the impulse response with the input, in this case the charge
+density. Such an integral form of the potential is referred to as a single layer
+potential.
+Note 13 Types of integral equations
+Thesinglelayerpotentialisanexampleofaclassofintegralequationsknownas
+"Fredholm integral equation of the First Kind". A Fredholm integral equation
+11</text>
+        </slide>
+        <slide>
+          <slideno>17</slideno>
+          <text>functions, havea siftingpropertywhen integratedwith a smooth function f(x),
+/integraldisplay
+f(x)(xxi)dx=f(xi).
+Impulse functions are also referred to as generalized functions, and they are
+specied only by their behaviorwhen integratedwith a smoothfunction. In the
+case of the impulse function, one can think of the function as being zero except
+for a very narrow interval around xi, and then being so large in that narrow
+interval that/integraltext
+(xxi)dx=1.
+As the summation equation in the middle of the above slide indicates, testing
+with impulse functions is equivalent to insisting that R(xi)=0,o ri nw o r d s ,
+that the potential produced by the approximated charge density should match
+the given potential at ntest points. That the potentials match at the test
+points gives rise to the methods name, the point where the potential is exactly
+matched is co-located with a set of test points.
+Thennmatrix equation at the bottom of the above slide has as its right-
+handsidethe potentialsatthe testpoints. The unknownsarethe basisfunction
+weights. The jthmatrix element for the ithrow is the potential produced at
+test pointxiby a charge density equal to basis function j.
+8.3.7 Centroid Collocation for Piecewise Constant BasesSlide 22
+() ( ) ()
+1,
+iin
+tjt j
+japprox
+surfacexG x x x d S 
+=  = /g166/g1792xnx1l
+2lnl
+Collocation point in 
+line center1tx
+
+A1,1 A1,n
+.........
+.........
+A
+n,1 An,n
+
+1
+...
+...
+
+n
+=
+(xt1)
+...
+...
+(x
+t1)
+(xti)=/summationtextn
+j=1j/integraldisplay
+linejG(xti,x/prime)dS/prime
+/bracehtipupleft
+ /bracehtipdownright/bracehtipdownleft
+ /bracehtipupright
+Ai,j
+Note 20
+In the above slide, a specic collocation algorithm is described. First, the basis
+being used is the constant charge density on nstraight sections or lines, as de-
+scribedabove. Notethatthereforethegeometryisbeingapproximated. Second,
+the collocation points being selected are the centroids of the basis functions, in
+this case just the center of each straight line. Note that the collocation point ison the approximated geometry, not the original geometry. So, one can think of
+the problem as having been restated to be on a polygon instead of the original
+circle. One could also have selected the collocation points on the original circle,but then the replacement interpretation does not hold.
+17</text>
+        </slide>
+        <slide>
+          <slideno>26</slideno>
+          <text>singularity. Therefore, even though the integrand approaches innity at some
+point, the area under the curve is nite.
+9.2.5 Calculating "Self Term"
+Tricks of the TradeSlide 31
+Panel iicxCollocation
+point
+,1
+iii
+pa cnelixxAd S 
+=/g179
+ xyz
+Disk  of radius R 
+surrounding 
+collocation point
+,11
+iiccii
+disk restof panelAd S d S
+xx xx  =+/g179/g179
+Disk Integral has 
+singularity but has 
+analytic formulaIntegrate in two 
+pieces
+2
+00121
+iR
+dkcisdS rdrd Rr xx
+==
+/g179/g179 /g179
+Note 29
+In the above slide, we both show that
+/integraldisplay
+panel i1
+/bardblxcix/prime/bardbldS/prime
+is integrable, and also give an idea about how to compute the integral.
+As shown in the slide, rst rotate and shift the coordinate system so that thepanel is in the x-y plane at z=0, and so that the collocation point (or equiv-
+alently the panel centroid) is at the origin. In this new coordinate system, the
+integral can be written as
+A
+i,i=/integraldisplay
+panel (rs)i1
+/bardblx/prime/bardbldS/prime
+where the notation panel (rs)is used to indicate that the integral is over the
+rotated and shifted panel.On the top left of the above slide, a circular disk of radius Rand center at the
+collocation point is inscribed in the rotated panel. In the equations that follow
+the gure, it is noted that the panel integral can be recast as the sum of anintegral over the disk plus an integral over the rest of the panel. The integrand
+in the integralover the rest of the panel is no longer singular, but the integrand
+in the integral over the disk is still singular.
+The integral over the disk can be computed analytically by using a change of
+variables. After rotating and shifting the panel, the disk is in the x-y plane andits center, equal to the collocation point, is at zero. Therefore,
+/integraldisplay
+disk1
+/bardblxcix/prime/bardbldS/prime=/integraldisplay
+disk1
+/bardblx/prime/bardbldS/prime=/integraldisplayR
+0/integraldisplay2
+01
+rrdrd
+26</text>
+        </slide>
+        <slide>
+          <slideno>27</slideno>
+          <text>wherer=/radicalbig
+x2+y2,rsin =xandrcos =y. As given in the bottom of the
+above slide, the integral over the disk is 2R.
+9.2.6 Calculating "Self Term"
+Other Tricks of the TradeSlide 32
+Panel iicxCollocation
+point
+Integrand is singul,1
+iii
+paneli cxxAd S =
+/g179
+/g9/g12/g10/g12/g11
+xyz
+1. If panel is a at polygon, analytical formulas exist.
+2. Curved panels can be handled with projection.
+10 Summary
+Slide 33
+Integral Equation Methods
+Exterior versus interior problemsStart with using point sources
+Standard Solution Methods
+Collocation MethodGalerkin Method
+Integrals for 3D Problems
+Singular Integrals
+Wewillexaminecomputingintegralsnexttime,andthenexamineintegralequa-
+tion convergence theory.
+27</text>
+        </slide>
+        <slide>
+          <slideno>12</slideno>
+          <text>of the Second Kind results when the unknown charge density exists not only
+under the integral sign but also outside it. An example of such an equation is
+(x)=(x)+/integraldisplay
+surfaceK(xx/prime)(x/prime)dS/prime,
+Fredholm integral equations, in which the domain of integration is xed, usu-
+ally arise out of boundary value problems. Initial value problems typically give
+rise to the so-called Volterra integral equations, where the domain of integra-
+tion depends on the output of interest. For example, consider the initial value
+problem
+dx(t)
+dt=tx(t);t[0,T],T&gt; 0.
+x(t=0 )=x0
+The "solution" of this equation is the following Volterra integral equation:
+x(t)=x0+/integraldisplayt
+0x()d
+8.3 Basis Function Approach
+8.3.1 Basic IdeaSlide 16
+() ()/g441Basis FunctionsRepresent n
+ii
+ixx 
+==/g166
+The basis functions are on the surfa cExample Basis
+Represent circle with straight lines
+Assume  is constant along each line 
+Can be used to approximate the density
+May also approximate the geometry.
+Note 14 Numerical solution of the single layer potential
+As we have studied extensively in the nite-element section of the course, oneapproach to numerically computing solutions to partial dierential equations is
+to represent the solution approximately as a weighted sum of basis functions.
+Then, the original problem is replaced with the problem of determining the
+basis function weights. In nite-element methods, the basis functions exist ina volume, for integral equations they typically exist on a surface. For 2-D
+problems that means the basis functions are restricted to curves and in 3-D the
+basic functions are on physical surfaces.Asanexample, considerthecircleintheslideabove. Onecouldtrytorepresent
+the charge density on the circle by breaking the circle into nsub-arcs, and then
+12</text>
+        </slide>
+        <slide>
+          <slideno>24</slideno>
+          <text>The system of equations from which to determine the basis function weights is
+given in the lower right corner of the slide. The right hand side of the system
+is the vector of known potentials at the collocation points. The i,jth element
+of the matrix Ais the potential produced at collocation point idue to a unit
+charge density on panel j. The vector of s are the unknown panel charge
+densities.
+Exercise 7 Determine a scaling of the s (i=cii) such that the scaled
+matrix Ahas the property
+Ai,j1
+/bardblxcixcj/bardbl
+when /bardblxcixcj/bardblis much larger than a panel diameter.
+9.2.3Calculating Matrix Elements
+Slide 29
+Panel jicxCollocation
+point
+,1
+iij
+pa cnel jxxAd S 
+=/g179
+,
+ijc centrj
+idi
+oPanel Are a
+xxA
+One point 
+quadrature
+Approximation
+xyz
+t4
+,
+1in0.25*
+ijcoij
+jpAr a
+xxAe
+= /g166
+Four point 
+quadrature
+Approximation
+Note 27
+In order to calculate the matrix entries for the system of equations described in
+the previous slide, recallthat Ai,jis the potential produced at collocationpoint
+idue to a unit charge density on panel j. The formula for Ai,jis given on the
+top right side of the above slide.
+The gure on the left of the above slide is a diagram of how one typically
+computes the panel integral given on the top right. First, consider a shift and
+rotatation of the coordinate system so that the panel lies in the xyplane
+atz=0, with the panels center at x=0,y=0. The gure in the top left
+shows the panel in the shifted and rotated coordinate system. Note that the
+collocation point must also be placed in the new coordinate system.
+If paneljis reasonably well seperated from collocation point i, it is possible to
+approximate the integral given in the top right by a single point quadrature.
+More specically, one could approximates the integral of1
+/bardblxcix/prime/bardblby a product
+of1
+/bardblxcixcentroidj/bardbland the panel area. As show in the middle gure, a single
+24</text>
+        </slide>
+        <slide>
+          <slideno>9</slideno>
+          <text>Note 9 ...contd
+To construct a potential that satises Laplaces equation and matches the
+boundary conditions at more points, let ube represented by the potential due
+to a sum ofnweighted point charges in the squares interior. As shown in the
+slide, we can think of the potential due to a sum of charges as a sum of Greens
+functions. Of course, we have to determine the weights on the npoint charges,
+and the weight on the ithcharge is denoted hereby i.
+8.1.2 "More points equations"
+Slide 13
+()11,xy()22,xy
+(),nnxy()11,ttxy
+Source Strengths selec
+to give correct poten t
+testtestpoints.
+() ( )
+() ( )()
+()11 11 1 1111
+11,, ,
+,, ,
+nn nn n ntt t n t n t t
+ntt t n t n t tGx xy y Gx xy y x y
+Gx xy y Gx xy y x y
+/g170/g186 /g170 /g186   /g170/g186/g171/g187 /g171 /g187/g171/g187/g171/g187 /g171 /g187/g171/g187 = /g171/g187 /g171 /g187/g171/g187/g171/g187 /g171 /g187/g171/g187/g171/g187 /g171 /g187 /g171/g187    /g172/g188/g172/g188 /g172 /g188/g22/g22
+/g23/g25 /g23 /g23 /g23
+/g23/g25 /g23 /g23 /g23
+/g22/g22
+Note 10 ...contd
+To determine a system of nequations for the nis,consider selecting a set of
+ntest points, as shown in the slide above. Then, by superposition, for each test
+pointxti,yti,
+u(xti,yti)=n/summationdisplay
+i=1ilog/radicalbig
+(xtix0)2+(ytiy0)2=n/summationdisplay
+i=1iG(xtix0,ytiy0).
+(6)
+Writing an equation like (6) for each test point yields the matrix equation on
+the slide.The matrixAin the slide has some properties worth noting:
+Ai sd e n s e ,t h a ti s A
+i,jnever equals zero. This is because every charge
+contributes to every potential.
+If the test points and the charge points are ordered so that the ithtest
+point is nearest the ithcharge, thenAi,iwill be larger than Ai,jfor allj.
+Item 2 above seems to suggest that Ais diagonally dominant, but this is not
+thecase. Diagonaldominancerequiresthat theabsolute sumoftheo-diagonal
+entries is smaller than the magnitude of the diagonal. The matrix above easily
+violates that condition.
+9</text>
+        </slide>
+        <slide>
+          <slideno>18</slideno>
+          <text>In collocation, or point- matching, the charge densities on each of the straight
+lines are selected so that the resulting potential at the line centers matches the
+given potential. As the equations on this slide make clear, the matrix element
+Ai,jis the potential at the center of line idue to a unit charge density along
+linej.
+It should be noted that the matrix Ais dense, the charge on line jcontributes
+to the potentialeverywhere. Also note that if line jis far awayfromline i,t h e n
+Ai,jlength (linej)G(xti,xtj) (7)
+Exercise 4 Suppose we are using piecewise constant centroid collocation
+to solve a 2-D Laplace problem, so G(x,y,x/prime,y/prime)=l o g/radicalbig
+(xx/prime)2+(yy/prime)2.
+Roughlyhowfarapartdolinesections iandjhavetobefor(7)tobeaccurateto
+within one percent? Assume line jhas length of one. Does your answer depend
+on the orientationof line j? Does your answer depend on the orientationof line
+i? (You shouldansweryesto one ofthese and no to the other,do yousee why?)
+8.3.8 Centroid Collocation Generates Nonsymmetric A
+Slide 23
+(xti)=/summationtextn
+j=1jAi,j/bracehtipdownleft
+ /bracehtipupright/bracehtipupleft
+ /bracehtipdownright/integraldisplay
+linejG(xti,x/prime)dS/prime
+1l2l1tx
+2tx
+A1,2=/integraltext
+line 2G(xt1,x/prime)dS/prime/negationslash=/integraltext
+line 1G(xt2,x/prime)dS/prime=A2,1
+Note 21
+Consider the two line sections, l1andl2given in the above slide. For Laplace
+problems,G(x,x/prime)=G(x/prime,x), and this suggests a symmetry in the underlying
+integralequationwhichisnotrepresentedinthecollocationdiscretization. This
+asymmetry is shownon the slide above by noting that A1,2/negationslash=A2,1.T h a ti s ,t h e
+potential at the center of l2due to a unit charge density on l1is not equal to
+the potential at the center of l1due to a unit charge on l2.
+It is possible to scale the variables to improve the symmetry, consider a changeof variables
+
+i=ilength (linej).
+18</text>
+        </slide>
+        <slide>
+          <slideno>0</slideno>
+          <text>Numerical Methods for PDEs
+Integral Equation Methods, Lecture 1
+Discretization of Boundary Integral Equations
+Notes by Suvranu De and J. White
+April 23, 2003</text>
+        </slide>
+        <slide>
+          <slideno>21</slideno>
+          <text>9 Laplaces Equation in 3D
+9.1 Electrostatics Example
+9.1.1 Dirichlet ProblemSlide 26
+v+
+-20    Outs i =
+ is given  on S potential
+First kind integral equation for charge:
+(x)/bracehtipupleft
+/bracehtipdownright/bracehtipdownleft
+/bracehtipupright
+Potential=/integraldisplay
+surface1
+||xx/prime||/bracehtipupleft
+/bracehtipdownright/bracehtipdownleft
+/bracehtipupright
+Green/primesf u n c t i o n(x/prime)/bracehtipupleft
+/bracehtipdownright/bracehtipdownleft
+/bracehtipupright
+Charge densitydS/prime
+Note 24
+Intheaboveslide,wegiveatypicalapplicationexample,determiningthecharge
+density on the surface of conducting plates given an applied voltage. As noted
+next to the parallel plate gure in the above slide, in the domain exterior to
+the plates the potential, , satises Laplaces equation, and the potential is
+given on the surface of the two plates. In this particular example, the top plate
+potential is =0.5Vand the bottom plate potential is =0.5V,w h e r eV
+is the voltage noted in the gure. As mentioned in previous lectures, it is also
+important to note that
+lim|x|(x)=0.
+That is, far away from the plates the potential decays to zero.
+For this exterior Dirichlet problem, one can write an integral equation thatrelates the surface chargedensity on the plates to the potential on the plates.
+This integral equation, given at the bottom of the above slide, is often referred
+to by physicists as the superposition integral. In the integral equation, xis any
+point on the plate surfaces and the surface being integrated over is the union
+of the top and bottom plate surfaces. Note that the integration surface is not aconnected domain, but this presents no diculties.
+9.2 Basis Function Approach
+9.2.1 Piecewise Constant BasisSlide 27
+Integral Equation : (x)=/integraltext
+surface1
+||xx/prime||(x/prime)dS/prime
+21</text>
+        </slide>
+        <slide>
+          <slideno>19</slideno>
+          <text>In this changeof variables,the unknowns iarenowthe net line chargesrather
+than the line charge densities. In this new system, A=,w h e r et h ee l e m e n t s
+of the matrix Aare given by
+Ai,j=1
+length (linej)/integraldisplay
+line jG(xti,x/prime)dS/prime.
+Under the change of variables, if line jis far away from line i,t h e n
+Ai,jG(xti,xtj)Aj,i. (8)
+In other words, the elements of Acorresponding to distant terms are approxi-
+mately symmetric.
+Exercise 5 Give an example which shows that the scaled entries of Acan be
+far from symmetric. Assume we are using piecewise constant straight sections
+with centroid collocation and the 2-D Laplaces equation Greens function.
+8.3.9 GalerkinSlide 24
+Galerkin: i(x)=i(x)(test=basis)
+()() () () () ( ) ( )
+1,0n
+ii i j j
+j approx
+surfacex R x dS x x dS x G x x x dSdS   
+=  =  = /g166 /g179/g179/g179 /g179
+() () ( ) () ( )
+1
+,,n
+iji j
+j approx approx approx
+surface surfacesurface
+ij ixx d S G x x xx d S d S
+A b  
+=  = /g166 /g179/g179 /g179
+/g9/g12/g12/g12/g10/g12/g12/g12/g11 /g9/g12/g12/g12/g12/g12/g12 /g12/g10/g12/g12/g12/g12/g12/g12 /g12/g11
+
+A1,1  A1,n
+.........
+.........
+A
+n,1  An,n
+
+1
+...
+...
+n
+=
+b1
+...
+...
+bn
+
+IfG(x, x/prime)=G(x/prime,x)then Ai,j=Aj,iA is symmetric
+Note 22 Galerkin method
+In the slide above, we give the equations for the Galerkin method, in which the
+test functions are equal to the basis functions. In particular, one generates n
+equations for the basis function weights by insisting that R(x)is orthogonal to
+each of the basis functions. Enforcing orthogonality corresponds to setting
+/integraldisplay
+(x)R(x)dS=0
+and substituting the denition of R(x)into the orthogonality condition yields
+the equation in the center of the above slide.
+Note that the Galerkin method yields a system of nequations, one for each
+19</text>
+        </slide>
+        <slide>
+          <slideno>10</slideno>
+          <text>Exercise 3 Determine a set of test points and charge locations for the 2-D
+squareproblemthatgeneratesan Amatrixwherethemagnitudeofthediagonals
+are bigger than the absolute value of the o-diagonals, but the magnitude of
+the diagonal is smaller than the absolute sum of the o-diagonals.
+8.1.3Computational Results
+Slide 14
+R=10rCircle with Charges
+ r=9.5
+n=20 n=40Potentials on the Circle
+Note 11 results
+It is possible to construct a numericalscheme for solving exterior Laplace prob-
+lems by adding progressivelymore point charges so as to match more boundary
+conditions. In the slide above, we show an example of using such a method to
+compute the potential exterior to a circle of radius 10, where the potential onthe circle is given to be unity. In the example, charges are placed uniformly
+on a circle of radius 9.5, and test points are placed uniformly on the radius 10
+circle. If 20 point charges are placed in a circle of radius 9.5, then the potentialproduced will be exactly one only at the 20 test points on the radius 10 circle.
+The potential produced by the twenty point charges on the radius 10 circle is
+plotted in the lower left corner of the slide above. As might be expected, the
+potential produced on the radius 10 circle is exactly one at the 20 test points,
+but then oscillates between 1 and 1.2 on the radius 10 circle. If 40 charges andtest points are used, the situation improves. The potential on the circle still
+oscillates, as shown in the lower right hand corner, but now the amplitude is
+only between 1 and 1.004.
+10</text>
+        </slide>
+      </slides>
+      <videos/>
+    </lecture>
+    <lecture>
+      <lecture_title>PDF - 1.0 MB</lecture_title>
+      <lecture_pdf_url>https://ocw.mit.edu/courses/16-920j-numerical-methods-for-partial-differential-equations-sma-5212-spring-2003/resources/lec1_notes/</lecture_pdf_url>
+      <lectureno>Numerical Methods for Partial Differential Equations (PDF)</lectureno>
+      <slides/>
+      <videos/>
+    </lecture>
+    <lecture>
+      <lecture_title>PDF - 1.5 MB</lecture_title>
+      <lecture_pdf_url>https://ocw.mit.edu/courses/16-920j-numerical-methods-for-partial-differential-equations-sma-5212-spring-2003/resources/lec15_notes/</lecture_pdf_url>
+      <lectureno>Discretization of the Poisson Problem in IR1: Formulation (PDF)</lectureno>
+      <slides/>
+      <videos/>
+    </lecture>
+  </lectures>
+</doc>

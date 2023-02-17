@@ -10,7 +10,8 @@ class DatabaseCaller:
     MIT_DIR = "MIT"
     KHAN_DIR = "KHAN_ACADEMY"
     class Table(Enum):
-        DOC_METADATA = "doc_metadata"
+        COURSE_METADATA = "course_metadata"
+        LECTURE_METADATA = "lecture_metadata"
         SLIDE_METADATA = "slide_metadata"
 
     def __init__(self):
@@ -34,19 +35,24 @@ class DatabaseHandler:
     def __init__(self):
         self.conn_meta = sqlite3.connect(self.METADATA_DIR)
         self.c = self.conn_meta.cursor()
-        self.setup_doc_db()
+        self.setup_course_db()
+        self.setup_lecture_db()
         self.setup_slide_db()
-        # Keep track of DOC ID (lecture id) and SLIDE ID (slide id)
+        # Keep track of DOC ID (lecture id) and Course ID
         self.doc_id = -1
+        self.course_id = 0
+
+    def setup_course_db(self):
+        self.c.execute('''CREATE TABLE IF NOT EXISTS course_metadata
+             (course_id int unique, source text, course_title text, course_url text, course_tag0 text, course_tag1 text, course_tag2 text)''')
     
-    def setup_doc_db(self):
-        self.c.execute('''CREATE TABLE IF NOT EXISTS doc_metadata
-             (doc_id int unique, source text, course_title text, course_url text, course_tag0 text, course_tag1 text, course_tag2 text, 
-             lecture_title text, lecture_num int, lecture_pdf_url text)''')
+    def setup_lecture_db(self):
+        self.c.execute('''CREATE TABLE IF NOT EXISTS lecture_metadata
+             (doc_id int unique, course_id int, lecture_title text, lecture_num int, lecture_pdf_url text)''')
 
     def setup_slide_db(self):
         self.c.execute('''CREATE TABLE IF NOT EXISTS slide_metadata
-             (doc_id int, slide_id int, slide_num int, slide_text text)''')
+             (doc_id int, slide_id int, slide_text text)''')
 
     def fill_db(self):
         # Go through MIT files first
@@ -54,21 +60,28 @@ class DatabaseHandler:
         for f in os.listdir(self.MIT_DIR):
             print("{}\n".format(f))
             self.index_xml(os.path.join(self.MIT_DIR, f))
+            self.course_id += 1
         print("\n========= KHAN ACADEMY ===========\n")
         for f in os.listdir(self.KHAN_DIR):
             print("{}\n".format(f))
             self.index_xml(os.path.join(self.KHAN_DIR, f))
+            self.course_id += 1
 
-    def add_doc_metadata(self, doc_id, source, course_title, course_url,
-     course_tag0, course_tag1, course_tag2, lecture_title, lecture_num, lecture_pdf_url):
-        query = ("INSERT OR REPLACE INTO doc_metadata VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)")
-        self.c.execute(query, [doc_id, source, course_title, course_url,
-     course_tag0, course_tag1, course_tag2, lecture_title, lecture_num, lecture_pdf_url])
+    def add_course_metadata(self, course_id, source, course_title, course_url,
+     course_tag0, course_tag1, course_tag2):
+        query = ("INSERT OR REPLACE INTO course_metadata VALUES (?, ?, ?, ?, ?, ?, ?)")
+        self.c.execute(query, [course_id, source, course_title, course_url,
+     course_tag0, course_tag1, course_tag2])
         self.conn_meta.commit()
 
-    def add_page_metadata(self, doc_id, slide_id, slide_num, slide_text):
-        query = ("INSERT INTO slide_metadata VALUES (?, ?, ?, ?)")
-        self.c.execute(query, [doc_id, slide_id, slide_num, slide_text])
+    def add_lecture_metadata(self, doc_id, course_id, lecture_title, lecture_num, lecture_pdf_url):
+        query = ("INSERT OR REPLACE INTO lecture_metadata VALUES (?, ?, ?, ?, ?)")
+        self.c.execute(query, [doc_id, course_id, lecture_title, lecture_num, lecture_pdf_url])
+        self.conn_meta.commit()
+
+    def add_page_metadata(self, doc_id, slide_id, slide_text):
+        query = ("INSERT INTO slide_metadata VALUES (?, ?, ?)")
+        self.c.execute(query, [doc_id, slide_id, slide_text])
         self.conn_meta.commit()
 
     def index_xml(self, filein):
@@ -84,13 +97,12 @@ class DatabaseHandler:
                 continue
             elif elem.tag == "course":
                 course = None
-                course_title, course_url, course_tag0, course_tag1, course_tag2 = self.course_info(elem)
+                self.course_info(elem, source)
                 continue
             elif elem.tag == "lectures":
-                self.indexLectureElem(elem, source, date, course, course_title, 
-                 course_url, course_tag0, course_tag1, course_tag2)
+                self.indexLectureElem(elem)
 
-    def course_info(self, root):
+    def course_info(self, root, source):
         course_title, course_url, course_tag0, course_tag1, course_tag2 = None,None,None,None,None
 
         for elem in root:
@@ -106,10 +118,11 @@ class DatabaseHandler:
                         course_tag1 = el.text
                     elif i == 2:
                         course_tag2 = el.text
-        return course_title, course_url, course_tag0, course_tag1, course_tag2
+        
+        self.add_course_metadata(self.course_id, source, course_title, course_url,
+                 course_tag0, course_tag1, course_tag2)
 
-    def indexLectureElem(self, root, source, date, course, course_title,
-     course_url, course_tag0, course_tag1, course_tag2):
+    def indexLectureElem(self, root):
         lecture_no = -1
         lecture_title, lecture_pdf_url = None,None
         for lecture_elem in root:
@@ -124,8 +137,7 @@ class DatabaseHandler:
                     lecture_no += 1
                     self.doc_id += 1
                     # lecture_no = int(elem.text)
-                    self.add_doc_metadata(self.doc_id, source, course_title, course_url,
-                 course_tag0, course_tag1, course_tag2, lecture_title, lecture_no, lecture_pdf_url)
+                    self.add_lecture_metadata(self.doc_id, self.course_id, lecture_title, lecture_no, lecture_pdf_url)
 
                 if elem.tag != "slides":
                     continue
@@ -138,7 +150,7 @@ class DatabaseHandler:
                                     slide_no = int(sl.text)
                                 if sl.tag == 'text':
                                     slide_text = sl.text
-                                    self.add_page_metadata(self.doc_id, slide_no, slide_no, slide_text)
+                                    self.add_page_metadata(self.doc_id, slide_no, slide_text)
                         
 
 
