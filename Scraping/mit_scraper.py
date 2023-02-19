@@ -290,7 +290,10 @@ class Scraper:
         # Requests URL and get response object
         if (not pdf_url) or (pdf_url == ""):
             return Slides()
-        response = requests.get(pdf_url)
+        try:
+            response = requests.get(pdf_url)
+        except:
+            return Slides()
         soup = BeautifulSoup(response.text, 'lxml')
         # Find all hyperlinks present on webpage
         link = soup.find('a', {'class': 'download-file'})
