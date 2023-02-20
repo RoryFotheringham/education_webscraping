@@ -1,0 +1,2040 @@
+<doc>
+  <source>MIT</source>
+  <date>28/01/2023</date>
+  <course>
+    <course_url>https://ocw.mit.edu/courses/2-717j-optical-engineering-spring-2002/</course_url>
+    <course_title>Optical Engineering</course_title>
+    <course_tags>
+      <list>Engineering </list>
+      <list>Science </list>
+      <list>Physics </list>
+    </course_tags>
+  </course>
+  <lectures>
+    <lecture>
+      <lecture_title>Information Theory: Entropy, Mutual Information (PDF)</lecture_title>
+      <lecture_pdf_url>https://ocw.mit.edu/courses/2-717j-optical-engineering-spring-2002/resources/invintro/</lecture_pdf_url>
+      <lectureno>19</lectureno>
+      <slides>
+        <slide>
+          <slideno>6</slideno>
+          <text>MIT 2.717
+Intro to Inverse Problems p-7Forward problem
+hardware
+channelphysical
+attributes
+(measurement)object
+field
+propagation detection
+object measurement
+The Forward Problem answers the following question:
+ Predict the measurement given the object attributes</text>
+        </slide>
+        <slide>
+          <slideno>4</slideno>
+          <text>MIT 2.717
+Intro to Inverse Problems p-5Imaging channels
+PhysicsPhysics
+AlgorithmsAlgorithmsHumansHumans
+HumanoidsHumanoids
+Information generatorsInformation generators
+Wave sourcesWave sources
+Wave scatterersWave scatterers
+ImagingImaging
+CommunicationCommunication
+StorageStorageProcessing elementsProcessing elements UsersUsers
+GOAL:GOAL: Maximize Maximize informationinformation flowflow</text>
+        </slide>
+        <slide>
+          <slideno>7</slideno>
+          <text>MIT 2.717
+Intro to Inverse Problems p-8Inverse problem
+hardware
+channelphysical
+attributes
+(measurement)object
+field
+propagation detection
+object
+representationmeasurement
+The Inverse Problem answers the following question:
+ Form an object representation given the measurement</text>
+        </slide>
+        <slide>
+          <slideno>13</slideno>
+          <text>MIT 2.717
+Intro to Inverse Problems p-14Resolution: a toy problem
+x
+Two point-sources
+(object)Two point-detectors
+(measurement)
+Finite-NA imaging system
+Classical viewA~
+B~A
+Bx</text>
+        </slide>
+        <slide>
+          <slideno>2</slideno>
+          <text>MIT 2.717
+Intro to Inverse Problems p-3How are images formed
+H a r d w a r e
+ elements that operate directly on the physical entity
+ e.g. lenses, gratings, prisms, etc. operate on the optical field
+ e.g. coils, metal shields, etc. operate on the magnetic field
+S o f t w a r e
+ algorithms that transform representations
+ e.g. a radio telescope measures the Fourier transform of the source 
+(representation #1); inverse Fourier transforming leads to a representation in the native object coordinates (representation #2); further processing such as iterative and nonlinear algorithms lead to a cleaner representation (#3).
+ e.g. a stereo pair measures two aspects of a scene (representation 
+#1); a triangulation algorithm converts that to a binocular image with depth information (representation #2).</text>
+        </slide>
+        <slide>
+          <slideno>9</slideno>
+          <text>MIT 2.717
+Intro to Inverse Problems p-10Optical Inversion: coherent
+()yxf, () ( ) ( )2
+coh dd , , ,   = yxy yx x hyxf yxINonlinear problemNonlinear problem
+object
+amplitudeintensity measurement at the output plane
+Note: I could make the problem linear if I could measure
+amplitudes directly (e.g. at radio frequencies)</text>
+        </slide>
+        <slide>
+          <slideno>3</slideno>
+          <text>MIT 2.717
+Intro to Inverse Problems p-4Who does what
+ In optics, 
+ standard hardware elements (lenses, mirrors, prisms) perform a 
+limited class of operations (albeit very useful ones); these operations are
+ linear in field amplitude for coherent systems
+ linear in intensity for incoherent systems a complicated mix for partially coherent systems
+ holograms and diffractive optical elements in general perform a 
+more general class of operations, but with the same linearity constraints as above
+ nonlinear, iterative, etc. operations are best done with software 
+components (people have used hardware for these purposes but it tends to be power inefficient, expensive, bulky, unreliable  hence these systems seldom make it to real life applications)</text>
+        </slide>
+        <slide>
+          <slideno>12</slideno>
+          <text>MIT 2.717
+Intro to Inverse Problems p-13Singularity and ill-posedness
+Under the finite-dimensional object assumption, the linear inverse problem
+is converted from an integral equation to a matrix equation
+() ( ) ( ) yxy yx xhyxf yxg d d ,  , ,   = 
+ f g  H=
+ If the matrix His rectangular, the problem may be overconstrained or 
+underconstrained
+ If the matrix H is square and has det( H)=0, the problem is singular ; it 
+can only be solved partially by giving up on some object dimensions (i.e.leaving them indeterminate)
+ If the matrix His square and det( H) is non-zero but small, the 
+problem may be ill-posed
+or unstable : it is extremely sensitive to errors 
+in the measurement f</text>
+        </slide>
+        <slide>
+          <slideno>15</slideno>
+          <text>MIT 2.717
+Intro to Inverse Problems p-16Ill-posedness in two-point inversion
+
+
+
+=11
+ssH
+()21 det s=H
+
+
+
+
+
+=
+11
+11
+21
+ss
+sH</text>
+        </slide>
+        <slide>
+          <slideno>10</slideno>
+          <text>MIT 2.717
+Intro to Inverse Problems p-11Optical Inversion: incoherent
+()yxI ,obj () ( )( )   = yxy yx x hyxI yx I dd , , ,incoh obj measLinear problemLinear problem
+object
+intensityintensity measurement at the output plane</text>
+        </slide>
+        <slide>
+          <slideno>8</slideno>
+          <text>MIT 2.717
+Intro to Inverse Problems p-9Optical Inversion
+amplitude object
+(dark A on bright
+background)free space
+(Fresnel)
+propagationfree space
+(Fresnel)
+propagationfree space
+(Fresnel)
+propagation
+lens lensarray of point-wise
+sensors (camera)
+amplitude
+representationarray of
+intensity
+measurements</text>
+        </slide>
+        <slide>
+          <slideno>11</slideno>
+          <text>MIT 2.717
+Intro to Inverse Problems p-12Dimensional mismatch
+ The object is a continuous function (amplitude or intensity) 
+assuming quantum mechanical effects are at sub-nanometer scales, i.e.
+much smaller than the scales of interest (100nm or more)
+ i.e. the object dimension is uncountably infinite
+ The measurement is discrete, therefore countable and finite
+ To be able to create a 1-1 object representation from the 
+measurement, I would need to create a 1-1 map from a finite set of integers to the set of real numbers. This is of course impossible
+ the inverse problem is inherently ill-posed
+ We can resolve this difficulty by relaxing the 1-1 requirement
+ therefore, we declare ourselves satisfied if we sample
+the object 
+with sufficient density (Nyquist theorem)
+ implicitly, we have assumed that the object lives in a finite-
+dimensional space, although it looks like a continuous function</text>
+        </slide>
+        <slide>
+          <slideno>0</slideno>
+          <text>MIT 2.717
+Intro to Inverse Problems p-1Introduction to Inverse Problems
+ What is an image ? Attributes and Representations 
+ Forward vsInverse
+ Optical Imaging as Inverse Problem
+ Incoherent and Coherent limits
+ Dimensional mismatch: continuous vsdiscrete
+ Singular vsill-posed
+ Ill-posedness: a 22 example</text>
+        </slide>
+        <slide>
+          <slideno>5</slideno>
+          <text>MIT 2.717
+Intro to Inverse Problems p-6Generalized (cognitive) representations
+Situation of
+interestYES/YES/
+/NO/NOencoded into
+a sceneoptical system produces a (geometrically
+similar) image
+YES/YES/
+/NO/NOcognitive
+processinganswerClassical inverse problem viewClassical inverse problem view --pointpoint
+Situation of
+interestYES/YES/
+/NO/NOencoded into
+a sceneoptical system produces an information-rich
+light intensity pattern
+otherother
+functionsfunctionsanswerNonNon --imaging or generalized sensor viewimaging or generalized sensor view --pointpoint
+Advantages: - optimum resource allocation
+- better reliability
+- adaptive, attentive operation
+if necessary (requires resource reallocation)e.g. is there a tanke.g. is there a tank
+in the scene?in the scene?</text>
+        </slide>
+        <slide>
+          <slideno>14</slideno>
+          <text>MIT 2.717
+Intro to Inverse Problems p-15
+Cross-leaking power
+A~B~ssB A BB A A
+J sJ IsJ J I
++ =+ =</text>
+        </slide>
+        <slide>
+          <slideno>1</slideno>
+          <text>MIT 2.717
+Intro to Inverse Problems p-2Basic premises
+ What you see or imprint on photographic film is a very narrow 
+interpretation of the word image
+I m a g e is a representation of a physical object having certain attributes
+ Examples of attributes
+ Optical image: absorption, emission, scatter, color wrt light Acoustic image: absorption, scatter wrt sound
+ Thermal image: temperature (black-body radiation)
+ Magnetic resonance image: oscillation in response to radio-
+frequency EM field
+ Representation: a transformation upon a matrix of attribute values
+ Digital image (e.g. on a computer file)
+ Analog image (e.g. on your retina)</text>
+        </slide>
+      </slides>
+      <videos/>
+    </lecture>
+    <lecture>
+      <lecture_title>Convolutions, Sampling, Fourier Transforms
+Information-Theoretic View of Inverse Problems (PDF)</lecture_title>
+      <lecture_pdf_url>https://ocw.mit.edu/courses/2-717j-optical-engineering-spring-2002/resources/imgq/</lecture_pdf_url>
+      <lectureno>21</lectureno>
+      <slides>
+        <slide>
+          <slideno>23</slideno>
+          <text>Confocal microscope
+Small pinhole: 
+Intensity object 
+beam 
+splitter pi virtual slice 
+detector nhole Depth resolution 
+Light efficiency 
+Large pinhole: 
+Depth resolution 
+Light efficiency 
+MIT 2.717 
+Image quality metrics p-24</text>
+        </slide>
+        <slide>
+          <slideno>11</slideno>
+          <text>Formal definition of cross-entropy (7)
+()F Entropy ()G Entropy ( ), 
+( )| ( )| 
+( ), C G F Entropy Joint 
+G F Entropy Cond. F G Entropy Cond. 
+G F 
+MIT 2.717 
+Image quality metrics p-12</text>
+        </slide>
+        <slide>
+          <slideno>18</slideno>
+          <text>IMI for two-point resolution problem
++ =
+1 1
+ 
+
+1 s s () H  =
+2det 1 H =
+
+  s  = 1 1  2 s s 
+1  s 1
+ 
+H 1 = 
+
+2  1 1 s
+ s 
+2( 1 ) 2( 1 )1 ln 
+
+
+1 ln + 
+1
+2
+
+ 1 +( G F ) s sC + + =, 2
+ 2
+ 2
+ 
+MIT 2.717 
+Image quality metrics p-19</text>
+        </slide>
+        <slide>
+          <slideno>15</slideno>
+          <text>Mutual information &amp; 
+degrees of freedom 
+n 
+n-1 
+1 
+0 2
+ 
+2 
+n 2 
+1n 2 
+2 2 
+1... ... rank of 
+measurement 
+mutual 
+ 
+=  
+ 
+ 
+ + = n 
+k k 
+1 2 2 
+2 1C   
+2
+ H 
+2 
+MIT 2.717 1 ln information As noise increases 
+ one rank of is lost whenever 
+overcomes a new eigenvalue 
+ the remaining ranks lose precision 
+Image quality metrics p-16</text>
+        </slide>
+        <slide>
+          <slideno>22</slideno>
+          <text>IMI for rectangular matrices (3)
+object 
+channel 
+g Hf hardware physical 
+attributes 
+(measurement) 
+field 
+propagation detection 
+under/over determined 
+n1
++ k
+2
+
+
+
+singular values
+of H
+1 ln = 
+
+C 2
+k=1
+MIT 2.717 
+Image quality metrics p-23</text>
+        </slide>
+        <slide>
+          <slideno>10</slideno>
+          <text>Formal definition of cross-entropy (6)
+uncertainty added due to noise 
+representation by 
+Seth Lloyd, 2.100 Entropy Cond. (G F )| 
+Entropy ()F ( ), C G F Entropy ()G 
+information information 
+contained contained 
+in the object in the measurement 
+Entropy Cond. (F G ) cross-entropy | 
+(aka mutual information) 
+information eliminated due to noise 
+MIT 2.717 
+Image quality metrics p-11</text>
+        </slide>
+        <slide>
+          <slideno>25</slideno>
+          <text>Depth resolution
+vs. noise &amp; pinhole size
+units: Rayleigh distance 
+MIT 2.717 
+Image quality metrics p-26</text>
+        </slide>
+        <slide>
+          <slideno>28</slideno>
+          <text>Receiver Operator Characteristic
+Target detection task 
+Example: medical diagnosis, 
+ H0 (null hypothesis) = 
+no tumor 
+H 1  =  t u m o r 
+TP = true positive ( i.e. correct 
+identification of tumor) 
+FP = false positive ( aka false 
+alarm) 
+MIT 2.717 
+Image quality metrics p-29</text>
+        </slide>
+        <slide>
+          <slideno>8</slideno>
+          <text>Formal definition of cross-entropy (4)
+Conditional Entropy
+Conditional Entropy
+log2[how many are the possible states of a combined variable 
+given the actual state of one of the two variables?] 
+Entropy Cond. ( Y | X )  =  y x p ) log x y p )
+ ( , ( |2 
+states states 
+X x Y y  
+object Entropy Cond. E.g. ( G | F )= ? 
+hardware 
+channel physical 
+attributes 
+(measurement) 
+field 
+propagation detection g Hf 
+MIT 2.717 
+Image quality metrics p-9</text>
+        </slide>
+        <slide>
+          <slideno>2</slideno>
+          <text>Mutual information (cross-entropy)
+object 
+channel 
+g Hf hardware physical 
+attributes 
+(measurement) 
+field 
+propagation detection 
+2
+1 ln =  
+n1
+ 
+ eigenvalues 
+kC 
++ of H 2
+ 2
+k=1
+MIT 2.717 
+Image quality metrics p-3</text>
+        </slide>
+        <slide>
+          <slideno>1</slideno>
+          <text>Linear inversion model
+object 
+channel 
+g Hf hardware physical 
+attributes 
+(measurement) 
+field 
+propagation detection 
+inversion problem: 
+determine f, given the measurement g = H f 
+noise-to-signal ratio (NSR) = 1 power) signal (average variance) (noise =2 
+=2 
+normalizing signal power to 1 
+MIT 2.717 
+Image quality metrics p-2</text>
+        </slide>
+        <slide>
+          <slideno>24</slideno>
+          <text>Depth resolution vs. noise
+point sources, 
+Object structure: mutually
+incoherent
+optical axis 
+sampling distance 
+Imaging method 
+correspondence intensity 
+measurements 
+CFM 
+object	scanning 
+direction 
+NA=0.2 
+MIT 2.717 
+Image quality metrics p-25</text>
+        </slide>
+        <slide>
+          <slideno>13</slideno>
+          <text>Entropy &amp; Differential Entropy
+	Discrete objects (can take values among a discrete set of states) 
+	definition of entropy
+()log2 x p
+ Entropy =  x p	 ()k k 
+k 
+	unit: 1 bit (=entropy value of a YES/NO question with 50% 
+uncertainty) 
+	Continuous objects (can take values from among a continuum) 
+	definition of differential entropy
+()ln x p
+ Entropy Diff. =  x p ()dx  
+()X 
+	unit: 1 nat (=diff. entropy value of a significant digit in the representation of a random number, divided by ln10) 
+MIT 2.717 
+Image quality metrics p-14</text>
+        </slide>
+        <slide>
+          <slideno>21</slideno>
+          <text>IMI for rectangular matrices (2)
+HT 
+H = square matrix 
+ T 1Trecall pseudo-inverse f =(H H )H g 
+inversion operation associated with rank of 
+Ts eigenvalue (H H ) alues singular v ()
+H
+MIT 2.717 
+Image quality metrics p-22</text>
+        </slide>
+        <slide>
+          <slideno>27</slideno>
+          <text>Other image quality metrics
+Mean Square Error (MSQ) between object and image	Mean Square Error (MSQ) 
+2( f )of result  
+ 
+E f  f  
+k =
+= 
+ 
+
+k k 
+inversion object
+samples
+ e.g. pseudoinverse minimizes MSQ in an overdetermined problem 
+ obvious problem: most of the time, we dont know what f is! 
+	more when we deal with Wiener filters and regularization 
+	Receiver Operator ChaReceiver Operator Cha rracteacterriisstictic
+	measures the performance of a cognitive system (human or 
+computer program) in a detection or estimation task based on the image data 
+MIT 2.717 
+Image quality metrics p-28</text>
+        </slide>
+        <slide>
+          <slideno>7</slideno>
+          <text>Formal definition of cross-entropy (3)
+Joint Entropy
+Joint Entropy
+log2[how many are the possible states of a combined variable 
+obtained from the Cartesian product of two variables?] 
+Entropy Joint ( Y X )  =  y x p )log y x p )
+ , ( , ( ,2 
+states states 
+X x Y y  
+,object Entropy Joint E.g. ( G F )= ? 
+hardware 
+channel physical 
+attributes 
+(measurement) 
+field 
+propagation detection g Hf 
+MIT 2.717 
+Image quality metrics p-8</text>
+        </slide>
+        <slide>
+          <slideno>16</slideno>
+          <text>Example: two-point resolution
+Finite-NA imaging system, unit magnification
+Two point-sources Two point-detectors
+~ 
+A gA fA A (object) (measurement) 
+intensities 
+x measured ~ B gB fB B 
+Classical view 
+noiseless
+x AgBgintensities intensity
+emitted @detector
+plane
+MIT 2.717 
+Image quality metrics p-17</text>
+        </slide>
+        <slide>
+          <slideno>9</slideno>
+          <text>Formal definition of cross-entropy (5)
+object 
+hardware 
+channel physical 
+attributes 
+(measurement) 
+field 
+propagation detection g Hf 
+adds uncertainty to the measurement wrt the object Noise adds uncertainty
+ eliminates informationeliminates information from the measurement wrt object
+MIT 2.717 
+Image quality metrics p-10</text>
+        </slide>
+        <slide>
+          <slideno>14</slideno>
+          <text>Image Mutual Information (IMI)
+object 
+channel 
+g Hf hardware physical 
+attributes 
+(measurement) 
+field 
+propagation detection 
+Assumptions: (a) Fhas Gaussian statistics 
+(b) white additive Gaussian noise (waGn) 
+i.e. g=Hf+w 
+where Wis a Gaussian random vector with diagonal 
+correlation matrix 
+Then
+ C
+ G F
+,
+(
+)
+=
+n1 
+ +  1 ln  
+
+2 
+2 
+k k of s eigenvalue : H 
+=2 1k 
+MIT 2.717 
+Image quality metrics p-15</text>
+        </slide>
+        <slide>
+          <slideno>6</slideno>
+          <text>Formal definition of cross-entropy (2)
+ Fair coin: p(H)=1/2; p(T)=1/2
+bit 1
+1Entropy =  2 1 1 1
+log 2  2 log2 = 2
+2
+ Unfair coin: p(H)=1/4; p(T)=3/4
+1Entropy =  4 1 3log 4  4 log2 3
+= bits 81 . 02
+4
+Maximum entropyMaximum entropy   Maximum uncertainty
+Maximum uncertainty
+MIT 2.717 
+Image quality metrics p-7</text>
+        </slide>
+        <slide>
+          <slideno>20</slideno>
+          <text>IMI for rectangular matrices (1)
+H
+ = = 
+H 
+underdeterminedunderdetermined overdeterminedoverdetermined
+(more unknowns than (more measurements 
+measurements) than unknowns) 
+eigenvalues cannot be computed, but instead 
+we compute the singular valuessingular values of the 
+rectangular matrix 
+MIT 2.717 
+Image quality metrics p-21</text>
+        </slide>
+        <slide>
+          <slideno>5</slideno>
+          <text>Formal definition of cross-entropy (1)
+EntropyEntropy in thermodynamics (discrete systems): 
+log2[how many are the possible states of the system?] 
+E.g. two-state system: fair coin, outcome=heads (H) or tails (T) 
+Entropy=log22=1 
+Unfair coin: seems more reasonable to weigh the two states
+according to their frequencies of occurence ( i.e., probabilities)
+) Entropy  =  p( log state p( state)
+2 
+states 
+MIT 2.717 
+Image quality metrics p-6</text>
+        </slide>
+        <slide>
+          <slideno>0</slideno>
+          <text>Image Quality Metrics
+ Image quality metrics 
+ Mutual information (cross-entropy) metric 
+ Intuitive definition 
+ Rigorous definition using entropy
+ Example: two-point resolution problem 
+ Example: confocal microscopy
+ Square error metric 
+ Receiver Operator Characteristic (ROC)
+ Heterodyne detection 
+MIT 2.717 
+Image quality metrics p-1</text>
+        </slide>
+        <slide>
+          <slideno>19</slideno>
+          <text>IMI vs source separation 
+( ) 2 1SNR  = 
+s 0
+s 1MIT 2.717 
+Image quality metrics p-20</text>
+        </slide>
+        <slide>
+          <slideno>12</slideno>
+          <text>Formal definition of cross-entropy (8)
+FF GG
+informationinformation
+sourcesource
+(object)(object)informationinformation
+receiverreceiver
+(measurement)(measurement)
+Corruption source (Noise)Corruption source (Noise)Physical ChannelPhysical Channel
+(transform)(transform)
+, |
+ C( G F ) = Entropy( F )  Entropy Cond. ( G F ) 
+| = Entropy( G )  Entropy Cond. ( F G ) 
+, = Entropy( F ) + Entropy( G )  Entropy Joint ( G F ) 
+MIT 2.717 
+Image quality metrics p-13</text>
+        </slide>
+        <slide>
+          <slideno>26</slideno>
+          <text>IMI summary
+	It quantifies the number of possible states of the object that the 
+imaging system can successfully discern; this includes 
+	the rank of the system, i.e. the number of object dimensions that 
+the system can map 
+	the precision available at each rank, i.e. how many significant 
+digits can be reliably measured at each available dimension 
+	An alternative interpretation of IMI is the game of 20 questions: how 
+many questions about the object can be answered reliably based on the 
+image information? 
+	IMI is intricately linked to image exploitation for applications, e.g. 
+medical diagnosis, target detection &amp; identification, etc. 
+	Unfortunately, it can be computed in closed form only for additive 
+Gaussian statistics of both object and image; other more realistic models are usually intractable 
+MIT 2.717 
+Image quality metrics p-27</text>
+        </slide>
+        <slide>
+          <slideno>3</slideno>
+          <text>The significance of eigenvalues
+n 
+n-1 
+1 
+0 2
+ 
+2 2 2 2 (aka 
+is worth)  
+=  
+ 
+ 
+ + = n 
+k k 
+1 2 2 
+2 1C   
+... ... rank of 
+measurement how many 
+dimensions 
+the measurement 1 ln 
+n n1 2 1
+eigenvalues of H
+MIT 2.717 
+Image quality metrics p-4</text>
+        </slide>
+        <slide>
+          <slideno>17</slideno>
+          <text>Cross-leaking power 
+A ~ B ~ ssB A B B A A 
+f sf g sf f g 
++ = + = 
+()x s 2sinc= 
+MIT 2.717 
+Image quality metrics p-18</text>
+        </slide>
+        <slide>
+          <slideno>4</slideno>
+          <text>Precision of measurement
+2 
+k 
+ 
+2
+ n1 1 ln +  
+2 2 2 
+t t 1 
+noise floor 
+
+
+
+ C
+&lt;
+&lt;
+2
+
+k 1= = =
+2 2 
++ 
+ 
+ 
+ +t1 ln 
+this term 2 
+t 
+2
+  2 
+t 1 
+2 +  
+ 
+1 ln
++ +
+ 
+
+1 ln
++  2
++
+... ... 
+precision 
+of (t-2)th measurement 1
+E.g. 0.5470839348 
+these digits worthless 
+if  10-5 
+MIT 2.717 
+Image quality metrics p-5 this term
+0</text>
+        </slide>
+      </slides>
+      <videos/>
+    </lecture>
+    <lecture>
+      <lecture_title>PDF - 1.3 MB</lecture_title>
+      <lecture_pdf_url>https://ocw.mit.edu/courses/2-717j-optical-engineering-spring-2002/resources/wk1_b/</lecture_pdf_url>
+      <lectureno>1</lectureno>
+      <slides>
+        <slide>
+          <slideno>2</slideno>
+          <text>The van Cittert-Zernike theorem
+Image credits: 
+Very Large Array (VLA) hubble.nasa.gov 
+radio www.nrao.edu 
+waves 
++ 
+Fourier 
+Cross-Correlation 
+transform image Galaxy, ~100 million
+light-years away
+optical image MIT 2.717J 
+wk1-b p-3</text>
+        </slide>
+        <slide>
+          <slideno>7</slideno>
+          <text>What you have to do
+	4 homeworks (1/week for the first 4 weeks) 
+	3 Projects: 
+	Project 1: a simple calculation of intensity statistics from a model 
+in Goodman (~2 weeks, 1-page report) 
+	Project 2: study one out of several topics in the application of 
+coherence theory and the van Cittert-Zernicke theorem from Goodman (~4 weeks, lecture-style presentation) 
+	Project 3: a more elaborate calculation of information capacity of imaging channels based on prior work by Barbastathis &amp; Neifeld (~4 weeks, conference-style presentation) 
+	Alternative projects ok 
+	No quizzes or final exam 
+MIT 2.717J
+wk1-b p-8</text>
+        </slide>
+        <slide>
+          <slideno>3</slideno>
+          <text>Optical coherence tomography
+Coronary artery 
+Image credits: 
+www.lightlabimaging.com 
+Intestinal polyps 
+MIT 2.717J Esophagus 
+wk1-b p-4</text>
+        </slide>
+        <slide>
+          <slideno>8</slideno>
+          <text>Administrative
+ Broadcast list will be setup soon 
+	Instructors coordinates 
+George Barbastathis 
+ Please do not phone-call 
+ Office hours TBA 
+ Class meets 
+ Mondays 1-3pm (main coverage of the material) 
+ Wednesdays 2-3pm (examples and discussion) 
+ presentations only : Wednesdays 7pm-??, pizza served 
+MIT 2.717J
+wk1-b p-9</text>
+        </slide>
+        <slide>
+          <slideno>11</slideno>
+          <text>The 4F system with FP aperture
+1f 1f 2f 2f 
+ 
+ 
+ 
+  r y x circ f f 1 
+( ) G ,1 x 
+      v u 
+( )
+1 G 1
+
+ f 1 y 
+2 2    h   
+, g x( , ) ,
+f 1 f 1 R g 1 y x
+ f
+
+
+object plane Fourier plane: aperture-limited Image plane: blurred 
+MIT 2.717J (i.e. low-pass filtered) 
+wk1-b p-12</text>
+        </slide>
+        <slide>
+          <slideno>5</slideno>
+          <text>You can take this class if
+	You took one of the following classes at MIT 
+	2.996/2.997 during the academic years 97-98 and 99-00 
+	2.717 during fall 00 
+ 2.710 during fall 01
+OR
+	You have taken a class elsewhere that covered Geometrical Optics, 
+Diffraction, and Fourier Optics 
+	Some background in probability &amp; statistics is helpful but not 
+necessary 
+MIT 2.717J
+wk1-b p-6</text>
+        </slide>
+        <slide>
+          <slideno>16</slideno>
+          <text>Aberrations: geometrical
+Paraxial 
+Non-paraxial rays 
+overfocus (Gaussian) 
+image point 
+Spherical aberration 
+ Origin of aberrations: nonlinearity of Snells law ( n sin=const., whereas linear 
+relationship would have been n=const.) 
+ Aberrations cause practical systems to perform worse than diffraction-limited 
+ Aberrations are best dealt with using optical design software (Code V, Oslo, 
+Zemax); optimized systems usually resolve ~3-5  (~1.5-2.5m in the visible) 
+MIT 2.717J
+wk1-b p-17</text>
+        </slide>
+        <slide>
+          <slideno>6</slideno>
+          <text>Syllabus (summary)
+	Review of Fourier Optics, probability &amp; statistics 4 weeks 
+	Light statistics and theory of coherence 2 weeks 
+	The van Cittert-Zernicke theorem and applications of statistical optics 
+to imaging 3 weeks 
+	Basic concepts of inverse problems (ill-posedness, regularization) and 
+examples (Radon transform and its inversion) 2 weeks 
+	Information-theoretic characterization of imaging channels 2 weeks 
+Textbooks: 
+	J. W. Goodman, Statistical Optics , Wiley. 
+	M. Bertero and P. Boccacci, Introduction to Inverse Problems in 
+Imaging , IoP publishing. 
+MIT 2.717J
+wk1-b p-7</text>
+        </slide>
+        <slide>
+          <slideno>13</slideno>
+          <text>Coherent vs incoherent imaging
+field in 
+optical 
+system Coherent field out 
+intensity in Incoherent intensity out 
+optical 
+system 
+MIT 2.717J
+wk1-b p-14</text>
+        </slide>
+        <slide>
+          <slideno>15</slideno>
+          <text>Coherent vs incoherent imaging 
+1f 1f 2f 2f 
+2a 
+~()
+u H ()u H 
+1 1 
+u u 
+a u 2u 2uc c u = c f 1 
+Coherent illumination Incoherent illumination 
+MIT 2.717J
+wk1-b p-16
+c</text>
+        </slide>
+        <slide>
+          <slideno>0</slideno>
+          <text>MIT 2.717J
+wk1-b p-1
+Welcome to ... 
+2.717J/MAS.857J 
+Optical Engineering</text>
+        </slide>
+        <slide>
+          <slideno>9</slideno>
+          <text>The 4F system
+1f 1f 2f 2f 
+f 1    ff 1 y 
+
+   
+ x y( , ) G 1 
+ 
+
+
+
+g
+1 x g 1 y x f 1, f 1 ,f 2 2object plane 
+Fourier plane Image plane 
+MIT 2.717J
+wk1-b p-10</text>
+        </slide>
+        <slide>
+          <slideno>17</slideno>
+          <text>Aberrations: wave
+,
+ Aberration-free impulse response h n diffractio (y x ) 
+limited 
+Aberrations introduce additional phase delay to the impulse response 
+i aberration (y x ),, , h aberrated (y x )=h n diffractio (y x )e 
+limited 
+c2u ()~ 
+1 
+c2u u (
+) u H unaberrated 
+diffraction 
+limited
+aberrated Effect of aberrations 
+on the MTF 
+MIT 2.717J
+wk1-b p-18</text>
+        </slide>
+        <slide>
+          <slideno>4</slideno>
+          <text>Inverse Radon transform
+(aka Filtered Backprojection) 
+The hardware 
+The principle 
+Magnetic Resonance Imaging (MRI) 
+Image credits: 
+www.cis.rit.edu/htbooks/mri/
+www.ge.com
+MIT 2.717J The image 
+wk1-b p-5</text>
+        </slide>
+        <slide>
+          <slideno>10</slideno>
+          <text>The 4F system
+1f 1f 2f 2f 
+f 1 
+( )v u G ,1 x 
+    
+y x 
+v u 
+sin sin 
+= = 
+   ff 1 y 
+
+   
+ x y( , ) G 1 
+ 
+
+
+
+g
+1 x g 1 y x f 1, f 1 ,f 2 2object plane 
+Fourier plane Image plane 
+MIT 2.717J
+wk1-b p-11</text>
+        </slide>
+        <slide>
+          <slideno>12</slideno>
+          <text>The 4F system with FP aperture
+Transfer function: Impulse response:
+circular aperture Airy function
+  R r 
+ 
+circ r
+
+
+
+
+jinc
+ 
+
+ R
+f
+2 
+MIT 2.717J
+wk1-b p-13</text>
+        </slide>
+        <slide>
+          <slideno>1</slideno>
+          <text>This class is about
+	Statistical Optics 
+	models of random optical fields, their propagation and statistical 
+properties ( i.e. coherence) 
+	imaging methods based on statistical properties of light: coherence 
+imaging, coherence tomography 
+	Inverse Problems 
+	to what degree can a light source be determined by measurements 
+of the light fields that the source generates? 
+	how much information is transmitted through an imaging system? (related issues: what does _resolution_ really mean? what is the space-bandwidth product?) 
+MIT 2.717J
+wk1-b p-2</text>
+        </slide>
+        <slide>
+          <slideno>14</slideno>
+          <text>Coherent vs incoherent imaging
+Coherent impulse response y x h , )
+(field in  field out) ( 
+, ( ,
+ Coherent transfer function H (v u )= FT{ y x h )} 
+(FT of field in  FT of field out) 
+~ 2Incoherent impulse response y x h )= ( , ( ,y x h )
+(intensity in  intensity out)
+~ ~
+Incoherent transfer function H (v u )= FT{ y x h )} , ( , 
+(FT of intensity in  FT of intensity out) = H (v u ) H (v u ) , , 
+~ H (v u ) (MTF) Function Transfer Modulation : ,
+~
+H (v u ) (OTF) Function Transfer Optical : , 
+MIT 2.717J
+wk1-b p-15</text>
+        </slide>
+      </slides>
+      <videos/>
+    </lecture>
+    <lecture>
+      <lecture_title>PDF - 1.4 MB</lecture_title>
+      <lecture_pdf_url>https://ocw.mit.edu/courses/2-717j-optical-engineering-spring-2002/resources/wk2_a/</lecture_pdf_url>
+      <lectureno>2</lectureno>
+      <slides>
+        <slide>
+          <slideno>32</slideno>
+          <text>Resolution
+?x 
+How far can two distinct point objects be
+before their images cease to be distinguishable?
+MIT 2.71/2.710 
+Review Lecture p-38</text>
+        </slide>
+        <slide>
+          <slideno>10</slideno>
+          <text>The concept of a monochromatic 
+ray
+direction of 
+energy propagation: 
+light ray z 
+ t=t 
+(advanced) 
+wavefronts 
+In homogeneous media,
+light propagates in rectilinear paths
+MIT 2.71/2.710 
+Review Lecture p-11</text>
+        </slide>
+        <slide>
+          <slideno>19</slideno>
+          <text>Model for a thin lens
+at 2nd FP 
+f point image 
+focal length 
+plane wave (or parallel ray bundle); 
+object at infinity 
+MIT 2.71/2.710 
+Review Lecture p-20</text>
+        </slide>
+        <slide>
+          <slideno>24</slideno>
+          <text>Imaging condition: ray-tracing
+2nd FP 
+1st FP object (virtual) chiefray thin lens (+) 
+image 
+ The ray bundle emanating from the system is divergent; the virtual 
+image is located at the intersection of the backwards-extended rays 
+ The virtual image is erect and is magnified 
+ When using a negative lens, the image is always virtual, erect, and 
+demagnified 
+MIT 2.71/2.710 
+Review Lecture p-26</text>
+        </slide>
+        <slide>
+          <slideno>11</slideno>
+          <text>The concept of a polychromatic ray
+t=0 z
+(frozen)
+energy from 
+pretty much 
+all wavelengths 
+propagates along 
+the ray
+wavefronts 
+In homogeneous media,
+light propagates in rectilinear paths
+MIT 2.71/2.710 
+Review Lecture p-12</text>
+        </slide>
+        <slide>
+          <slideno>5</slideno>
+          <text>Light in matter
+light in vacuum 
+light in matter 
+Speed c=3108 m/sec Speed c/n 
+n : refractive index 
+(or index of refraction) 
+Absorption coefficient 0 Absorption coefficient  
+energy decay coefficient, 
+after distance L : e2L 
+E.g. vacuum n=1, air n  1; 
+glass n1.5; glass fiber has  0.25dB/km=0.0288/km
+MIT 2.71/2.710 
+Review Lecture p-6</text>
+        </slide>
+        <slide>
+          <slideno>18</slideno>
+          <text>Model for a thin lens
+1st FP at 1st FP 
+f point object 
+focal length 
+plane wave (or parallel ray bundle); 
+image at infinity 
+MIT 2.71/2.710 
+Review Lecture p-19</text>
+        </slide>
+        <slide>
+          <slideno>13</slideno>
+          <text>The law of reflection
+P P 
+O O a) 
+instead of P 
+b) Alternative path POP is 
+longer than POP 
+c) Therefore, light follows the  
+   
+symmetric path POP. 
+P  
+mirror Consider virtual source P
+MIT 2.71/2.710 
+Review Lecture p-14</text>
+        </slide>
+        <slide>
+          <slideno>36</slideno>
+          <text>Wave nature of light
+ Diffraction
+broadening of 
+point images 
+diffraction grating 
+ Inteference 
+??
+? Fabry-Perot interferometer Interference filter 
+Michelson interferometer (or dielectric mirror) 
+ Polarization: polaroids, dichroics, liquid crystals, ...
+MIT 2.71/2.710 
+Review Lecture p-42</text>
+        </slide>
+        <slide>
+          <slideno>1</slideno>
+          <text>What is light?
+	Light is a form of electromagnetic energy  detected through its 
+effects, e.g. heating of illuminated objects, conversion of light to 
+current, mechanical pressure (Maxwell force) etc. 
+	Light energy is conveyed through particles: photons 
+	ballistic behavior, e.g. shadows 
+	Light energy is conveyed through waves 
+	wave behavior, e.g. interference, diffraction 
+	Quantum mechanics reconciles the two points of view, through the 
+wave/particle duality assertion 
+MIT 2.71/2.710 
+Review Lecture p-2</text>
+        </slide>
+        <slide>
+          <slideno>4</slideno>
+          <text>Wave/particle duality for light
+Photon=elementary light particle
+Mass=0 
+Speed c=3 108 m/sec 
+Energy E= h 
+h=Plancks constant c= 
+Dispersion relation
+=6.6262 10-34 J sec 
+(holds in vacuum only)
+=frequency (sec-1) 
+=wavelength (m) 
+MIT 2.71/2.710 
+Review Lecture p-5</text>
+        </slide>
+        <slide>
+          <slideno>39</slideno>
+          <text>Fresnel diffraction formulae
+x 
+y 
+z x 
+y 
+) , (out y x g  ( ) g ,in y x 
+2 2( x  x ) +( y  y ) 
+
+
+
+
+
+y x d d 1 
+ 
+ 
+x 
+y 
+z x 
+y 
+outG ( ) G ,in v u z ( , ) g out (
+ 
+z y x , ;
+ )
+ 2 i  = exp i 
+g y x expinz i   z 
+,(v u ) 
+G out , ;( z v u )
+= exp i
+G in
+{ (- exp i u z ) }z ( v u ) 2 22  + v , 
+MIT 2.71/2.710 
+Review Lecture p-45</text>
+        </slide>
+        <slide>
+          <slideno>14</slideno>
+          <text>The law of refraction
+ 
+  
+n n  reflected 
+refracted 
+incident 
+   = sin sin n n Snells Law of Refraction 
+MIT 2.71/2.710 
+Review Lecture p-15</text>
+        </slide>
+        <slide>
+          <slideno>27</slideno>
+          <text>The human eye
+Remote object (unaccommodated eye) 
+Near object (accommodated eye) 
+MIT 2.71/2.710 
+Review Lecture p-29</text>
+        </slide>
+        <slide>
+          <slideno>12</slideno>
+          <text>Fermat principle
+light 
+ray 
+ 
+P P 
+ is chosen to minimize this 
+z y x n ) dl path integral, compared to ( , , alternative paths 
+(aka minimum path principle)
+Consequences: law of reflection, law of refraction
+MIT 2.71/2.710 
+Review Lecture p-13</text>
+        </slide>
+        <slide>
+          <slideno>9</slideno>
+          <text>The concept of a monochromatic 
+ray
+direction of 
+energy propagation: 
+light ray z 
+ t=0 
+(frozen) 
+wavefronts 
+In homogeneous media,
+light propagates in rectilinear paths
+MIT 2.71/2.710 
+Review Lecture p-10</text>
+        </slide>
+        <slide>
+          <slideno>31</slideno>
+          <text>Numerical Aperture
+n 
+ medium of 
+refr. index 
+Numerical Aperture 
+: half-angle subtended by (NA) = n sin 
+the imaging system from 
+an axial object Speed (f/#)=1/2(NA) 
+pronounced f-number, e.g. 
+f/8 means (f/#)=8. 
+MIT 2.71/2.710 
+Review Lecture p-37</text>
+        </slide>
+        <slide>
+          <slideno>0</slideno>
+          <text>Optics Overview
+MIT 2.71/2.710 
+Review Lecture p-1</text>
+        </slide>
+        <slide>
+          <slideno>2</slideno>
+          <text>Particle properties of light
+Photon=elementary light particle
+Mass=0 
+Speed c=3 108 m/sec 
+According to Special Relativity, a massAccording to Special Relativity, a mass --less particle travelling
+less particle travelling
+at light speed can still carry momentum!
+at light speed can still carry momentum!
+relates the dual particle &amp; wave Energy E= h 
+nature of light; 
+h=Plancks constant  is the temporal oscillation=6.6262 10-34 J sec frequency of the light waves 
+MIT 2.71/2.710 
+Review Lecture p-3</text>
+        </slide>
+        <slide>
+          <slideno>29</slideno>
+          <text>The pinhole camera
+object image opaque 
+screen 
+pinhole 
+ The pinhole camera blocks all but one ray per object point from reaching the 
+image space  an image is formed ( i.e., each point in image space corresponds to 
+a single point from the object space). 
+ Unfortunately, most of the light is wasted in this instrument. 
+ Besides, light diffracts if it has to go through small pinholes as we will see later; 
+diffraction introduces undesirable artifacts in the image. 
+MIT 2.71/2.710 
+Review Lecture p-35</text>
+        </slide>
+        <slide>
+          <slideno>28</slideno>
+          <text>The photographic camera
+Film 
+or ) 
+detector array (CCD or CMOS) digital imaging meniscus 
+lens 
+or (nowadays
+zoom lens 
+MIT 2.71/2.710 
+Review Lecture p-31</text>
+        </slide>
+        <slide>
+          <slideno>23</slideno>
+          <text>Imaging condition: ray-tracing
+2nd FP 
+1st FP 
+object chiefray thin lens (+) 
+s s ox 
+ix image 
+i o 
+Lateral Angular EnergyLens Law magnification magnification conservation 
+1 1 1M
+s
+s x
+x o i  = 
+o i M
+s
+s i = 
+o M Mx +
+= = = f s s o 
+MIT 2.71/2.710 
+Review Lecture p-25 x a a 
+i
+1</text>
+        </slide>
+        <slide>
+          <slideno>40</slideno>
+          <text>1 Fresnel diffraction 
+as a linear, shift-invariant system
+2x + y 2 
+z 
+
+
+Thin transparency y x h = 1 
+) ( , i 
+
+ exp i z 
+ 2 ) exp(y x t , z i  output 
+amplitude 
+( ) 
+( ) ) , ( , ) , ( 
+1 2 
+g g 
+= = 
+y x t y x y x ( ) 
+) , ( ) , ( , 
+2 3 
+g g 
+ = =   
+y x h y x y x impulse response 
+convolution g y x , 
+Fourier Fourier 
+transform transform 
+( 
+) ( ) G ,2 
+ 
+ ) , ( ) , ( ) , ( 
+2 3 
+G G 
+= = 
+multiplication plane wave 
+spectrumv u transfer function 
+v u H v u v u 
+exp{ ( u ) }z( v u ) 2 + 2H = exp i 2 i v z , 
+MIT 2.71/2.710 
+Review Lecture p-46</text>
+        </slide>
+        <slide>
+          <slideno>30</slideno>
+          <text>Field of View (FoV)
+ 
+FoV=angle that the chief ray from an object can subtend 
+towards the imaging system 
+MIT 2.71/2.710 
+Review Lecture p-36</text>
+        </slide>
+        <slide>
+          <slideno>34</slideno>
+          <text>Point-Spread Function
+Light distribution (rotationally 
+near the Gaussian = PSF symmetric 
+(geometric) focus wrt optical axis) 
+Point source 
+(ideal) NA ~  x 
+22 . 1 
+2z ~ NA2 
+The finite extent of the PSF causes blur in the image 
+MIT 2.71/2.710 
+Review Lecture p-40</text>
+        </slide>
+        <slide>
+          <slideno>26</slideno>
+          <text>Lens-based imaging
+ Human eye 
+ Photographic camera
+ Magnifier 
+M i c r o s c o p e 
+ Telescope 
+MIT 2.71/2.710 
+Review Lecture p-28</text>
+        </slide>
+        <slide>
+          <slideno>17</slideno>
+          <text>Imaging a point source
+point 
+source 
+point 
+image 
+Lens
+MIT 2.71/2.710 
+Review Lecture p-18</text>
+        </slide>
+        <slide>
+          <slideno>7</slideno>
+          <text>Overview of light sources
+non-Laser 
+Thermal: polychromatic, 
+spatially incoherent 
+(e.g. light bulb)
+Gas discharge: monochromatic, 
+spatially incoherent 
+(e.g. Na lamp) 
+Light emitting diodes (LEDs):
+monochromatic, spatially incoherent Laser 
+Continuous wave (or cw):
+strictly monochromatic, spatially coherent 
+(e.g. HeNe, Ar+, laser diodes) 
+Pulsed: quasi-monochromatic, 
+spatially coherent 
+(e.g. Q-switched, mode-locked)
+~nsec ~psec to few fsec 
+pulse duration 
+mono/poly-chromatic = single/multi color
+MIT 2.71/2.710 
+Review Lecture p-8</text>
+        </slide>
+        <slide>
+          <slideno>25</slideno>
+          <text>Tilted object:
+the Scheimpflug condition
+The object plane and the image plane
+intersect at the plane of the thin lens.
+MIT 2.71/2.710 
+Review Lecture p-27</text>
+        </slide>
+        <slide>
+          <slideno>15</slideno>
+          <text>Optical waveguide
+TIR 
+TIR nnn n
+=1.51 =1.5105 =1.51 1.00 
+ Planar version: integrated optics 
+ Cylindrically symmetric version: fiber optics 
+ Permit the creation of light chips and light cables, respectively, where 
+light is guided around with few restrictions 
+ Materials research has yielded glasses with very low losses (&lt;0.25dB/km) 
+ Basis for optical telecommunications and some imaging (e.g. endoscopes) 
+and sensing (e.g. pressure) systems 
+MIT 2.71/2.710 
+Review Lecture p-16</text>
+        </slide>
+        <slide>
+          <slideno>8</slideno>
+          <text>Monochromatic, spatially coherent 
+1/ 
+ ,  well defined 
+description light 
+ nice, regular sinusoid 
+ stabilized HeNe laser 
+good approximation 
+ most other cw lasers 
+rough approximation 
+ pulsed lasers &amp; non-
+laser sources need 
+more complicated 
+Incoherent: random, irregular waveform
+MIT 2.71/2.710 
+Review Lecture p-9</text>
+        </slide>
+        <slide>
+          <slideno>22</slideno>
+          <text>Imaging condition: ray-tracing
+2nd FP 
+1st FP 
+object (real) 
+chiefray thin lens (+) 
+image 
+ Image point is located at the common intersection of all rays which 
+emanate from the corresponding object point 
+ The two rays passing through the two focal points and the chief ray 
+can be ray-traced directly 
+ The real image is inverted and can be magnified or demagnified 
+MIT 2.71/2.710 
+Review Lecture p-24</text>
+        </slide>
+        <slide>
+          <slideno>35</slideno>
+          <text>Diffraction limited resolution
+object 
+spacing 
+) ) 
+x 
+lateral coordinate at image plane (arbitrary unitslight intensity (arbitrary units
+Point objects just x 22 . 1  Rayleigh resolution 
+resolvable when (NA) criterion 
+MIT 2.71/2.710 
+Review Lecture p-41</text>
+        </slide>
+        <slide>
+          <slideno>33</slideno>
+          <text>Factors limiting resolution in an 
+imaging system
+Intricately related; assessment of image 
+quality depends on the degree that the inverse  Diffraction
+ Aberrations
+problem is solvable (i.e. its condition ) 
+2.717 sp02 for details N o i s e 
+ electronic noise (thermal, Poisson) in cameras 
+ multiplicative noise in photographic film 
+ stray light 
+ speckle noise (coherent imaging systems only) 
+ Sampling at the image plane 
+ camera pixel size 
+ photographic film grain size 
+MIT 2.71/2.710 
+Review Lecture p-39</text>
+        </slide>
+        <slide>
+          <slideno>3</slideno>
+          <text>Wave properties of light
+1/ 
+angular frequency : wavelength 
+(spatial period) 
+k=2/ 
+wavenumber 
+: temporal 
+frequency 
+=2 
+E: electric 
+field 
+MIT 2.71/2.710 
+Review Lecture p-4</text>
+        </slide>
+        <slide>
+          <slideno>20</slideno>
+          <text>Huygens principle
+optical 
+MIT 2.71/2.710 Each point on the wavefront 
+acts as a secondary light source 
+emitting a spherical wave 
+The wavefront after a short 
+propagation distance is the 
+result of superimposing all 
+these spherical wavelets 
+wavefronts 
+Review Lecture p-22</text>
+        </slide>
+        <slide>
+          <slideno>6</slideno>
+          <text>Materials classification
+	Dielectrics 
+	typically electrical isolators (e.g. glass, plastics) 
+	low absorption coefficient 
+	arbitrary refractive index 
+	Metals 
+	conductivity  large absorption coefficient 
+	Lots of exceptions and special cases (e.g. artificial dielectrics) 
+	Absorption and refractive index are related through the Kramers 
+Kronig relationship (imposed by causality ) 
+absorption 
+ 
+refractive index 
+MIT 2.71/2.710 
+Review Lecture p-7</text>
+        </slide>
+        <slide>
+          <slideno>16</slideno>
+          <text>Refraction at a spherical surface
+point 
+source 
+MIT 2.71/2.710 
+Review Lecture p-17</text>
+        </slide>
+        <slide>
+          <slideno>21</slideno>
+          <text>Why imaging systems are needed
+	Each point in an object scatters the incident illumination into a spherical wave, 
+according to the Huygens principle. 
+	A few microns away from the object surface, the rays emanating from all 
+object points become entangled, delocalizing object details. 
+	To relocalize object details, a method must be found to reassign (focus) all 
+the rays that emanated from a single point object into another point in space 
+(the image.) 
+	The latter function is the topic of the discipline of Optical Imaging. 
+MIT 2.71/2.710 
+Review Lecture p-23</text>
+        </slide>
+        <slide>
+          <slideno>37</slideno>
+          <text>Diffraction grating
+incident Grating spatial frequency: 1/  plane Angular separation between diffracted orders :    1/ wave  m=1 
+  
+m=3 
+m=2 
+m=1 
+m=2 
+m=3 m=0 straight-through order or DC term 
+Condition for constructive interference: 
+=    m m integer) ( 2 2 
+
+  sin= m  
+MIT 2.71/2.710 diffraction order 
+Review Lecture p-43</text>
+        </slide>
+        <slide>
+          <slideno>38</slideno>
+          <text>Grating dispersion
+Anomalous 
+(or negative) 
+dispersion 
+polychromatic
+(white)
+light
+Glass prism: 
+normal dispersion 
+MIT 2.71/2.710 
+Review Lecture p-44</text>
+        </slide>
+      </slides>
+      <videos/>
+    </lecture>
+    <lecture>
+      <lecture_title>PDF - 2.4 MB</lecture_title>
+      <lecture_pdf_url>https://ocw.mit.edu/courses/2-717j-optical-engineering-spring-2002/resources/soapps/</lecture_pdf_url>
+      <lectureno>16</lectureno>
+      <slides>
+        <slide>
+          <slideno>15</slideno>
+          <text>MIT 2.717
+Apps of Stat Optics p-16What does the RSI measure?
+Input field Folding prism
+at Arm 1Folding prism
+at Arm 2 ( =90o)Arms 1 &amp; 2
+combined
+at camera planeInput fieldArm 2
+Arm 1To CameraSpecial case :
+=90o</text>
+        </slide>
+        <slide>
+          <slideno>4</slideno>
+          <text>VLA images
+The center of the Milky Way 
+from www.aoc.nrao.edu 
+MIT 2.717 
+Apps of Stat Optics p-5</text>
+        </slide>
+        <slide>
+          <slideno>0</slideno>
+          <text>Applications of Statistical Optics
+ Radio Astronomy 
+ Michelson Stellar Interferometry 
+ Rotational Shear Interferometer (RSI)
+ Optical Coherence Tomography (OCT)
+MIT 2.717 
+Apps of Stat Optics p-1</text>
+        </slide>
+        <slide>
+          <slideno>16</slideno>
+          <text>Intensity on the RSI Sensor Plane
+The field on arm 1 is: 
+Ex y )= E x c o s 2 + ys i n 2 , xs i n 2  yc o s 2 )  
+The field on arm 2 is: 
+2 ( , o( 1 ( , o( 
+Ex y )= E x c o s 2  ys i n 2 , xs i n 2  yc o s 2 ) 
+2Ix y )= E1 + E2
+2
+s( , 
+2 * = + + E E 2 + E E *E1 E2 1 12
+=+ I2 +
+ I1 
+x= 2 ys i n 2, y=  2xs i n 2, x= 2xc o s 2 + x y y  2xc o s 2, (   , = = 2/ c)o o 
++* 
+by David J. Brady, Duke University MIT 2.717 
+Apps of Stat Optics p-17 www.fitzpatrick.duke.edu/disp/</text>
+        </slide>
+        <slide>
+          <slideno>14</slideno>
+          <text>The Rotational Shear Interferometer
+folding mirror 
+folding mirror beam splitter 
+dither 
+translation 
+stage sensor array 
+input aperture 
+rotating object 
+by David J. Brady, Duke University MIT 2.717 
+Apps of Stat Optics p-15 www.fitzpatrick.duke.edu/disp/</text>
+        </slide>
+        <slide>
+          <slideno>17</slideno>
+          <text>Coherence imaging using the RSI
+Coherence imaging using the RSI
+,, ,)]+ dc 
+Interference on CCDRe[(x ,  y x y j k l i 
+) ,,, , ( v y x y x S j i l k   
+0),, , (  =   j i l k y x y x J 
+ 
+ ) , , , ( q y x    Re[(x ,  y x y ,, j , )]+ dci 0
+4-D Fourier transform relationship 
+[ , ' , ' , ' ]  z y x S 
+by David J. Brady, Duke UniversityMIT 2.717 
+Apps of Stat Optics p-18 www.fitzpatrick.duke.edu/disp/</text>
+        </slide>
+        <slide>
+          <slideno>12</slideno>
+          <text>Mobile RSI
+(University of Illinois and 
+Distant Focus Corporation 
+by David J. Brady, Duke University MIT 2.717 
+Apps of Stat Optics p-13 www.fitzpatrick.duke.edu/disp/</text>
+        </slide>
+        <slide>
+          <slideno>10</slideno>
+          <text>Experimental RSI implementation (University of Illinois)
+cooling fan shutter l
+) camera 
+platform linear bearings mirror ti t flex stages 
+long-travel platform (2Princeton Instruments camera 
+Aerotech stage 
+by David J. Brady, Duke University MIT 2.717 
+Apps of Stat Optics p-11 www.fitzpatrick.duke.edu/disp/</text>
+        </slide>
+        <slide>
+          <slideno>13</slideno>
+          <text>EXPERIMENTAL RESULTS: 3EXPERIMENTAL RESULTS: 3 --D
+D
+2-D spatial / 1-D spectral RSI reconstruction
+Experimental Setup
+Color Composite Image Red (590-650 nm) 
+by David J. Brady, Duke University 
+www.fitzpatrick.duke.edu/disp/ 
+Green (520-570 nm) Blue (430-500 nm)
+MIT 2.717 
+Apps of Stat Optics p-14</text>
+        </slide>
+        <slide>
+          <slideno>3</slideno>
+          <text>VLA images
+from www.aoc.nrao.edu 
+This is a radar image of Mars, made with the Goldstone-VLA radar system 
+in 1988. Red areas are areas of high radar reflectivity. The south polar ice 
+cap, at the bottom of the image, is the area of highest reflectivity. The other 
+areas of high reflectivity are associated with the giant shield volcanoes of the 
+Tharsis ridge. The dark area to the West of the Tharsis ridge showed no 
+MIT 2.717 detectable radar echoes, and thus was dubbed the "Stealth" region. 
+Apps of Stat Optics p-4</text>
+        </slide>
+        <slide>
+          <slideno>2</slideno>
+          <text>VLA images
+These four images are combined radio-optical 
+images of a large solar flare that occurred on 
+17 June 1989. The red-orange background 
+images are optical images (H-Alpha) and the 
+superimposed contours show radio emission 
+as seen with the VLA at a wavelength of 4.9 
+GHz. The four images are from four different 
+times during the event, showing the 
+progression toward maximum radio emission 
+(bottom right). This soft X-ray flare was 
+accompanied by a coronal mass ejection. 
+The two H alpha ribbons correspond to the 
+"footpoints" of an arcade of magnetic loops 
+which arch NE/SW. The magnetic field is 
+strongest toward the NW, where prominent 
+sunspots appear dark in H alpha. Early in the 
+event, the magnetically stronger footpoint 
+emits radio waves first (a), followed by 
+from www.aoc.nrao.edu magnetically conjugate footpoints to the SW 
+(b). The entire magnetic arch connecting the 
+MIT 2.717 two footpoints then emits (c,d). 
+Apps of Stat Optics p-3</text>
+        </slide>
+        <slide>
+          <slideno>5</slideno>
+          <text>VLA images
+from www.aoc.nrao.edu 
+The galaxy M81 is a spiral galaxy about 11 million light-years from Earth. It is about 
+50,000 light-years across. This VLA image was made using data taken during three of 
+the VLA's four standard configurations for a total of more than 60 hours of observing 
+time. The spiral structure is clearly shown in this image, which shows the relative 
+intensity of emission from neutral atomic hydrogen gas. In this pseudocolor image, 
+red indicates strong radio emission and blue weaker emission. MIT 2.717 
+Apps of Stat Optics p-6</text>
+        </slide>
+        <slide>
+          <slideno>11</slideno>
+          <text>Close-up view of the Interferometer Section of the RSI
+mirror 
+mirror 
+support shutter 
+input 
+aperture 
+magnetic 
+90 
+mirror 
+flexure 
+stage 90 dither 
+beamsplitter 
+coupling 
+shearing 
+by David J. Brady, Duke University MIT 2.717 
+Apps of Stat Optics p-12 www.fitzpatrick.duke.edu/disp/</text>
+        </slide>
+        <slide>
+          <slideno>7</slideno>
+          <text>Michelson Stellar Interferometer
+ Optical version of the van Cittert-Zernicke theorem 
+ Since multiplication cannot be performed directly, it is done through interference 
+(Youngs interferometer) 
+ Extreme requirements on mechanical and thermal stability (better than /100 
+between the two arms) 
+ Alternative: intensity interferometer (or Hanbury Brown  Twiss interferometer) 
+MIT 2.717 from www.physics.usyd.edu.au/astron/susi 
+Apps of Stat Optics p-8</text>
+        </slide>
+        <slide>
+          <slideno>6</slideno>
+          <text>from www.aoc.nrao.edu
+MIT 2.717 
+Apps of Stat Optics p-7 
+This pair of images illustrates the need to study celestial objects at different 
+wavelengths in order to get "the whole picture" of what is happening with those 
+objects. At left, you see a visible-light image of the M81 Group of galaxies. 
+This image largely shows light coming from stars in the galaxies. At right, a 
+radio image, made with the VLA, shows the hydrogen gas, including streamers 
+of gas connecting the galaxies. From the radio image, it becomes apparent that 
+this is an interacting group of galaxies, not isolated objects.</text>
+        </slide>
+        <slide>
+          <slideno>8</slideno>
+          <text>Hanbury Brown  Twiss 
+interferometer
+from www.physics.usyd.edu.au/astron/susi
+MIT 2.717 
+Apps of Stat Optics p-9</text>
+        </slide>
+        <slide>
+          <slideno>18</slideno>
+          <text>Mutual IntensityExample RSI Images
+2 point
+sources
+Experimental 
+by David J. Brady, Duke University MIT 2.717 
+Apps of Stat Optics p-19 www.fitzpatrick.duke.edu/disp/</text>
+        </slide>
+        <slide>
+          <slideno>1</slideno>
+          <text>Radio Telescope 
+(Very Large Array, VLA)
+ 27 Antennae (parabolic dishes, 
+diameter 25m, weight 230t each) 
+ Y radius ranges between 
+1km and 36km 
+ wavelengths 90cm  7mm 
+ resolution 200-1.5arcsec in 
+smallest configuration; 6 to 0.05 
+arcsec in largest configuration 
+ signals are multiplied and 
+correlated at central station to obtain (x,y). 
+ van Cittert-Zernicke theorem www.nrao.edu is used to invert the observations and obtain the source I( ,), 
+e.g. a constellation of galaxies 
+MIT 2.717 
+Apps of Stat Optics p-2</text>
+        </slide>
+        <slide>
+          <slideno>9</slideno>
+          <text>The Rotational Shear Interferometer
+folding mirror 
+folding mirror beam splitter 
+dither 
+translation 
+stage sensor array 
+input aperture 
+rotating object 
+by David J. Brady, Duke University MIT 2.717 
+Apps of Stat Optics p-10 www.fitzpatrick.duke.edu/disp/</text>
+        </slide>
+      </slides>
+      <videos/>
+    </lecture>
+  </lectures>
+</doc>

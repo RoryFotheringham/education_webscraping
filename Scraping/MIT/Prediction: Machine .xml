@@ -1,0 +1,2550 @@
+<doc>
+  <source>MIT</source>
+  <date>28/01/2023</date>
+  <course>
+    <course_url>https://ocw.mit.edu/courses/15-097-prediction-machine-learning-and-statistics-spring-2012/</course_url>
+    <course_title>Prediction: Machine Learning and Statistics</course_title>
+    <course_tags>
+      <list>Engineering </list>
+      <list>Computer Science </list>
+      <list>Artificial Intelligence </list>
+    </course_tags>
+  </course>
+  <lectures>
+    <lecture>
+      <lecture_title>Boosting (PDF)</lecture_title>
+      <lecture_pdf_url>https://ocw.mit.edu/courses/15-097-prediction-machine-learning-and-statistics-spring-2012/resources/mit15_097s12_lec10/</lecture_pdf_url>
+      <lectureno>10</lectureno>
+      <slides>
+        <slide>
+          <slideno>13</slideno>
+          <text>MIT OpenCourseWare
+http://ocw.mit.edu
+15.097 Prediction: Machine Learning and Statistics
+Spring 2012
+For information about citing these materials or our Terms of Use, visit: http://ocw.mit.edu/terms .</text>
+        </slide>
+      </slides>
+      <videos/>
+    </lecture>
+    <lecture>
+      <lecture_title>Inference (PDF)</lecture_title>
+      <lecture_pdf_url>https://ocw.mit.edu/courses/15-097-prediction-machine-learning-and-statistics-spring-2012/resources/mit15_097s12_lec04/</lecture_pdf_url>
+      <lectureno>4</lectureno>
+      <slides>
+        <slide>
+          <slideno>5</slideno>
+          <text>MIT OpenCourseWare
+http://ocw.mit.edu
+15.097 Prediction: Machine Learning and Statistics
+Spring 2012
+For information about citing these materials or our Terms of Use, visit: http://ocw.mit.edu/terms .</text>
+        </slide>
+        <slide>
+          <slideno>1</slideno>
+          <text>It turns out that the f that minimizes the above error is the conditional expec
+tation! 
+Draw a picture
+ 
+Proposition. 
+f  (x) = Ey[y|x]. 
+Proof. Consider each x separately. For each x theres a marginal distribution on 
+y. In other words, look at Ey[(y  f(x))2|x] for each x. So, pick an x. For this 
+x, dene y to be Ey[y|x]. Now, 
+Ey[(y  f(x))2|x] 
+= Ey[(y  y + y  f(x))2|x] 
+= Ey[(y  y)2|x] + Ey[(y  f(x))2|x] + 2E y[(y  y)(y  f(x))|x] 
+= Ey[(y  y)2|x] + (y  f(x))2 + 2(y  f(x))E y[(y  y)|x] 
+= Ey[(y  y)2|x] + (y  f(x))2 
+where the last step follows from the denition of y. 
+So how do we pick f(x)? Well, we cant do anything about the rst term, it 
+doesnt depend on f(x). The best choice of f(x) minimizes the second term, 
+which happens at f(x) = y, where remember y = Ey[y|x]. 
+So we know for each x what to choose in order to minimize Ey[(y  f(x))2|x]. 
+To complete the argument, note that: 
+Ex,y[(y  f(x))2] = Ex[Ey[(y  f(x))2|x]] 
+and we have found the minima of the inside term for each x.  
+Note that if were interested instead in the absolute loss Ex,y[|y  f(x)|], it 
+is possible to show that the best predictor is the conditional median, that is, 
+f(x) = median[y|x]. 
+2</text>
+        </slide>
+        <slide>
+          <slideno>4</slideno>
+          <text>Question: Intuitively, what happens to the second term if fS ts the data per
+fectly every time (overtting)? 
+Question: Intuitively, what happens to the last two terms if fS is a at line 
+every time? 
+The bottom line: In order to predict well, you need to strike a balance between 
+bias and variance. 
+	 The variance term controls wiggliness, so youll want to choose simple func
+tions that cant yield predictions that are too varied. 
+	 The bias term controls how close the average model prediction is close to 
+the truth, y. Youll need to pay attention to the data in order to reduce the 
+bias term. 
+	 Since you cant calculate either the bias or the variance term, what we 
+usually do is just impose some structure into the functions were tting 
+with, so the class of functions we are working with is small (e.g., low degree 
+polynomials). We then try to t the data well using those functions. Hope
+fully this strikes the right balance of wiggliness (variance) and capturing the 
+mean of the data (bias). 
+	 One thing we like to do is make assumptions on the distribution D, or 
+at least on the class of functions that might be able to t well. Those 
+assumptions each lead to a dierent algorithm (i.e. model). How well the 
+algorithm works or not depends on how true the assumption is. 
+	 Even when were not working with least squares error, we hope a similar 
+idea holds (and will work on proving that later in the course). Well use 
+the same type of idea, where we impose some structure, and hope it reduces 
+wiggliness and will still give accurate predictions. 
+Go back to the other notes! 
+5</text>
+        </slide>
+        <slide>
+          <slideno>3</slideno>
+          <text>The rst term is the variance of y around its mean. We dont have control over 
+that when we choose fS. This term is zero if y is deterministically related to x. 
+Lets look at the second term: 
+ES(y  fS(x))2
+ 
+ 
+ = ES(y  f(x) + f(x)  fS(x))2
+ 
+ 
+ = ES(y  f(x))2 + ES(f(x)  fS(x))2 + 2ES[(y  f(x))(f (x)  fS(x))] 
+  The last term is zero, since (y  f(x)) is a constant, and f(x) is the mean of 
+ fS(x) with respect to S. Also the rst term isnt random. Its (y  f(x))2 . 
+Putting things together, what we have is this (reversing some terms): 
+Ey,S[(y  fS(x))2] = Ey(y  y)2 + ES(f(x)  fS(x))2 + (y  f(x))2 . 
+In this expression, the second term is the variance of our estimator around its 
+mean. It controls how our predictions vary around its average prediction. The 
+third term is the bias squared, where the bias is the dierence between the av
+erage prediction and the true conditional mean. 
+Weve just proved the following: 
+Theorem. 
+For each xed x, Ey,S[(y  fS(x))2] = vary|x(y) + varS(fS(x)) + bias(fS(x))2 . 
+So 
+Ex,y,S[(y  fS(x))2] = Ex[var y|x(y) + varS(fS(x)) + bias(fS(x))2]. 
+That is the bias-variance decomposition. 
+The Bias-Variance tradeo: want to choose fS to balance between reducing the 
+second and third terms in order to make the lowest MSE. We cant just minimize 
+one or the other, it needs to be a balance. Sometimes, if you are willing to inject 
+some bias, this can allow you to substantially reduce the variance. E.g., modeling 
+with lower degree polynomials, rather than higher degree polynomials. 
+4</text>
+        </slide>
+        <slide>
+          <slideno>0</slideno>
+          <text>Bias/Variance Tradeo
+ 
+A parameter is some quantity about a distribution that we would like to know. 
+Well estimate the parameter  using an estimator . The bias of estimator for 
+parameter  is dened as: 
+ Bias( ,) := E()  , where the expectation is with respect to the distribution 
+that is constructed from. 
+An estimator whose bias is 0 is called unbiased. Contrast bias with: 
+ Var() = E( E())2 . 
+Of course, wed like an estimator with low bias and low variance.
+ 
+A little bit of decision theory 
+(The following is based on notes of David McAllester.) 
+Lets say our data come from some distribution D on X Y, where Y  R. 
+Usually we dont know D (we instead only have data) but for the moment, lets 
+say we know it. We want to learn a function f : X Y. 
+Then if we could choose any f we want, what would we choose? Maybe wed 
+choose f to minimize the least squares error: 
+Ex,yD[(y  f(x))2]. 
+1
+ Low bias
+Low varianceLow bias
+High varianceHigh bias
+Low varianceHigh bias
+High variance
+Image by MIT OpenCourseWare.</text>
+        </slide>
+        <slide>
+          <slideno>2</slideno>
+          <text>Back to Bias/Variance Decomposition 
+Lets think about a situation where we created our function f using data S. Why 
+would we do that of course? 
+We have training set S = (x1,y1),..., (xm,ym), where each example is drawn iid 
+from D. We want to use S to learn a function fS : X Y. 
+We want to know what the error of fS is on average. In other words, we want to 
+know what Ex,y,S[(yfS(x))2] is. That will help us gure out how to minimize it. 
+This is going to be a neat result - its going to decompose into bias and variance 
+terms! 
+First, lets consider some learning algorithm (which produced fS) and its ex
+pected prediction error: 
+Ex,y,S[(y  fS(x))2]. 
+Remember that the estimator fS is random, since it depends on the randomly 
+drawn training data. Here, the expectation is taken with respect to a new ran
+domly drawn point x, y  D and training data S  Dm . 
+Let us dene the mean prediction of the algorithm at point x to be: 
+f(x) = ES[fS(x)]. 
+In other words, to get this value, wed get innitely many training sets, run the 
+learning algorithm on all of them to get innite predictions fS(x) for each x. 
+ Then for each x wed average the predictions to get f(x). 
+We can now decompose the error, at a xed x, as follows: 
+Ey,S[(y  fS(x))2] 
+= Ey,S[(y  y + y  fS(x))2] 
+= Ey(y  y)2 + ES(y  fS(x))2 + 2Ey,S[(y  y)(y  fS(x))]. 
+The third term here is zero, since Ey,S[(yy)(yfS(x))] = Ey(yy)ES(yfS(x)), 
+and the rst part of that is Ey(y  y) = 0. 
+3</text>
+        </slide>
+      </slides>
+      <videos/>
+    </lecture>
+    <lecture>
+      <lecture_title>k-nearest neighbors (PDF)</lecture_title>
+      <lecture_pdf_url>https://ocw.mit.edu/courses/15-097-prediction-machine-learning-and-statistics-spring-2012/resources/mit15_097s12_lec06/</lecture_pdf_url>
+      <lectureno>6</lectureno>
+      <slides>
+        <slide>
+          <slideno>5</slideno>
+          <text>MIT OpenCourseWare
+http://ocw.mit.edu
+15.097 Prediction: Machine Learning and Statistics
+Spring 2012
+ 
+  For information about citing these materials or our Terms of Use, visit: http://ocw.mit.edu/terms .</text>
+        </slide>
+        <slide>
+          <slideno>1</slideno>
+          <text>2/17/12 
+K-Nearest Neighbors 
+ Classify using the majority vote of the k 
+closest training points 
+X X X 
+(a) 1-nearest neighbor (b) 2-nearest neighbor (c) 3-nearest neighbor 
+K-Nearest Neighbors 
+	 K-NN algorithm does not explicitly compute decision 
+boundaries. The boundaries between distinct classes form a 
+subset of the V oronoi diagram of the training data.  
+  
+ Each line segment is equidistant to neighboring points.  
+2 Image by MIT OpenCourseWare.</text>
+        </slide>
+        <slide>
+          <slideno>3</slideno>
+          <text>2/17/12 
+Pros/Cons to K-NN 
+Pros: 
+	 Simple and powerful. No need for tuning complex parameters to 
+build a model. 
+	 No training involved (lazy). New training examples can be added easily. 
+Pros/Cons to K-NN 
+Cons: 
+	 Expensive and slow:  O(md), m= # examples, d= # dimensions 
+ To determine the nearest neighbor of a new point x, must 
+compute the distance to all m training examples. Runtime 
+performance is slow, but can be improved. 
+ Pre-sort training examples into fast data structures 
+ Compute only an approximate distance 
+ Remove redundant data (condensing) 
+4</text>
+        </slide>
+        <slide>
+          <slideno>0</slideno>
+          <text>2/17/12 
+K-NN 
+15.097 MIT, Spring 2012, Cynthia Rudin 
+Credit: Seyda Ertekin 
+K-Nearest Neighbors 
+	 Amongst the simplest of all machine learning 
+algorithms. No eXplicit training or model.  
+	 Can be used both for classifcaton and 
+regression.  
+	 Use XIs K-Nearest Neighbors to vote on what XIs label should be. 
+1</text>
+        </slide>
+        <slide>
+          <slideno>2</slideno>
+          <text>2/17/12 
+K-Nearest Neighbors
+ 
+	 For regression : the value for the test eXample 
+becomes the (weighted) average of the values 
+of the K neighbors. 
+Making K-NN More Powerful 
+	 A good value for K can be determined by considering a range of K 
+values. 
+	 K too small: well model the noise 
+	 K too large: neighbors include too many points from other classes 
+	 There are problems when there is a spread of distances among the K
+NN. Use a distance-based voting scheme, where closer neighbors have 
+more inuence. 
+	 The distance measure has to be meaningful  attributes should be scaled 
+	 Eg. Income varies 10,000-1,000,000 while height varies 1.5-1.8 meters 
+3</text>
+        </slide>
+      </slides>
+      <videos/>
+    </lecture>
+    <lecture>
+      <lecture_title>Decision trees (PDF)</lecture_title>
+      <lecture_pdf_url>https://ocw.mit.edu/courses/15-097-prediction-machine-learning-and-statistics-spring-2012/resources/mit15_097s12_lec08/</lecture_pdf_url>
+      <lectureno>8</lectureno>
+      <slides>
+        <slide>
+          <slideno>2</slideno>
+          <text>What we need is a formula to compute \information." Before we do that, here's
+another example. Let's say we pick one of them (Patrons). Maybe then we'll
+pick Hungry next, because it has a lot of \information":
+We'll build up to the derivation of C4.5. Origins: Hunt 1962, ID3 of Quinlan
+1979 (600 lines of Pascal), C4 (Quinlan 1987). C4.5 is 9000 lines of C (Quinlan
+1993). We start with some basic information theory.
+3X1,X3,X4,X6,X8,X12
+X2,X5,X7,X9,X10,X11+:
+Full Some None- :
++:
+- :
++:
+- :+:
+- :+:
+- :+:
+- :Patrons?
+X7,X11X1,X3,X6,X8 X4,X12
+X2,X5,X9,X10
+X1,X3,X4,X6,X8,X12
+X2,X5,X7,X9,X10,X11+:
+Burger French- :
+Type?
+X1X5X6X10X3,X12X7,X9Italian
++:
+- :+:
+- :X4,X8
+X2,X11Thai(a)
+(b)
+Image by MIT OpenCourseWare, adapted from Russell and Norvig,
+Artificial Intelligence: A Modern Approach, Prentice Hall, 2009.
+X1,X3,X4,X6,X8,X12
+X2,X5,X7,X9,X10,X11+:
+Full Some None- :
++:
+- :+:
+- :+:
+- :Patrons?
+Yes NoX7,X11
++:
+- :X1,X3,X6,X8 X4,X12
+X2,X5,X9,X10
+X5,X9+:
+- :X4,X12
+X2,X10(c)
+Hungry?
+YesNo
+Image by MIT OpenCourseWare, adapted from Russell and Norvig,
+Artificial Intelligence: A Modern Approach, Prentice Hall, 2009.</text>
+        </slide>
+        <slide>
+          <slideno>16</slideno>
+          <text>MIT OpenCourseWare
+http://ocw.mit.edu
+15.097 Prediction: Machine Learning and Statistics
+Spring 2012
+For information about citing these materials or our Terms of Use, visit: http://ocw.mit.edu/terms .</text>
+        </slide>
+      </slides>
+      <videos/>
+    </lecture>
+    <lecture>
+      <lecture_title>Rule mining and the Apriori algorithm (PDF)</lecture_title>
+      <lecture_pdf_url>https://ocw.mit.edu/courses/15-097-prediction-machine-learning-and-statistics-spring-2012/resources/mit15_097s12_lec01/</lecture_pdf_url>
+      <lectureno>1</lectureno>
+      <slides>
+        <slide>
+          <slideno>5</slideno>
+          <text>MIT OpenCourseWare
+http://ocw.mit.edu
+15.097 Prediction: Machine Learning and Statistics
+Spring 2012
+For information about citing these materials or our Terms of Use, visit: http://ocw.mit.edu/terms .</text>
+        </slide>
+      </slides>
+      <videos/>
+    </lecture>
+    <lecture>
+      <lecture_title>Support vector machines (PDF)</lecture_title>
+      <lecture_pdf_url>https://ocw.mit.edu/courses/15-097-prediction-machine-learning-and-statistics-spring-2012/resources/mit15_097s12_lec12/</lecture_pdf_url>
+      <lectureno>12</lectureno>
+      <slides>
+        <slide>
+          <slideno>13</slideno>
+          <text>MIT OpenCourseWare
+http://ocw.mit.edu
+15.097 Prediction: Machine Learning and Statistics
+Spring 2012
+For information about citing these materials or our Terms of Use, visit: http://ocw.mit.edu/terms .</text>
+        </slide>
+      </slides>
+      <videos/>
+    </lecture>
+    <lecture>
+      <lecture_title>Kernels (PDF)</lecture_title>
+      <lecture_pdf_url>https://ocw.mit.edu/courses/15-097-prediction-machine-learning-and-statistics-spring-2012/resources/mit15_097s12_lec13/</lecture_pdf_url>
+      <lectureno>13</lectureno>
+      <slides>
+        <slide>
+          <slideno>0</slideno>
+          <text>Kernels
+MIT 15.097 Course Notes
+Cynthia Rudin
+Credits: Bartlett, Sch olkopf and Smola, Cristianini and Shawe-Taylor
+The kernel trick that I'm going to show you applies much more broadly than
+SVM, but we'll use it for SVM's.
+Warning: This lecture is technical. Try to get the basic idea even if you don't
+catch all the details.
+Basic idea: If you can't separate positives from negatives in a low-dimensional
+space using a hyperplane, then map everything to a higher dimensional space
+where you can separate them.
+The picture looks like this but it's going to be a little confusing at this point:
+or it might look like this:
+1f
+oooo
+xxxxX
+f(o)
+f(o)
+f(o)f(o)
+f(x)f(x)f(x)f(x)F
+Image by MIT OpenCourseWare.</text>
+        </slide>
+        <slide>
+          <slideno>20</slideno>
+          <text>MIT OpenCourseWare
+http://ocw.mit.edu
+15.097 Prediction: Machine Learning and Statistics
+Spring 2012
+For information about citing these materials or our Terms of Use, visit: http://ocw.mit.edu/terms .</text>
+        </slide>
+        <slide>
+          <slideno>5</slideno>
+          <text>SVMs with these kinds of fancy kernels are among the most powerful ML algo-
+rithms currently (a lot of people say the most powerful).
+But the solution to the optimization problem is still a simple linear combination,
+even if the feature space is very high dimensional.
+How do I evaluate f(x) for a test example xthen?
+If we're going to replace xT
+ixkeverywhere with some function of xiandxkthat is
+hopefully an inner product from some other space (a kernel), we need to ensure
+that it really is an inner product. More generally, we'd like to know how to
+construct functions that are guaranteed to be inner products in some space. We
+need to know some functional analysis to do that.
+6 mlpy Developers. All rights reserved. This content is excluded from our Creative
+Commons license. For more information, see http://ocw.mit.edu/fairuse.</text>
+        </slide>
+      </slides>
+      <videos/>
+    </lecture>
+    <lecture>
+      <lecture_title>Statistical learning theory (PDF)</lecture_title>
+      <lecture_pdf_url>https://ocw.mit.edu/courses/15-097-prediction-machine-learning-and-statistics-spring-2012/resources/mit15_097s12_lec14/</lecture_pdf_url>
+      <lectureno>14</lectureno>
+      <slides>
+        <slide>
+          <slideno>31</slideno>
+          <text>MIT OpenCourseWare
+http://ocw.mit.edu
+15.097 Prediction: Machine Learning and Statistics
+Spring 2012
+For information about citing these materials or our Terms of Use, visit: http://ocw.mit.edu/terms .</text>
+        </slide>
+        <slide>
+          <slideno>0</slideno>
+          <text>Introduction to Statistical Learning Theory
+MIT 15.097 Course Notes
+Cynthia Rudin
+Credit: A large part of this lecture was taken from an introduction to learning
+theory of Bousquet, Boucheron, Lugosi
+Now we are going to study, in a probabilistic framework, the properties of learning
+algorithms. At the beginning of the semester, I told you that it was important
+for our models to be \simple" in order to be able to generalize, or learn from
+data. I didn't really say that precisely before, but in this lecture I will.
+Generalization = Data + Knowledge
+Finite data cannot replace knowledge. Knowledge allows you to choose a simpler
+set of models.
+Perhaps surprisingly, there is no one universal right way to measure simplicity or
+complexity of a set of models - simplicity is not an absolute notion. But we'll give
+several precise ways to measure this. And we'll precisely show how our ability
+to learn depends on the simplicity of the models. So we'll make concrete (via
+proof) this philosophical argument that learning somehow needs simplicity.
+In classical statistics, the number of parameters in the model is the usual mea-
+sure of complexity. Here we'll use other complexity measures, namely the Growth
+Function and VC dimension (which is a beautiful combinatorial quantity), cov-
+ering number (the one I usually use), and Rademacher average.
+Assumptions
+Training and test data are drawn iid from the same distribution. If there's no
+relationship between training and test, there's no way to learn of course. (That's
+like trying to predict rain in Africa next week using data about horse-kicks in
+the Prussian war) so we have to make some assumption.
+1</text>
+        </slide>
+      </slides>
+      <videos/>
+    </lecture>
+    <lecture>
+      <lecture_title>Bayesian analysis (PDF - 1.2MB)</lecture_title>
+      <lecture_pdf_url>https://ocw.mit.edu/courses/15-097-prediction-machine-learning-and-statistics-spring-2012/resources/mit15_097s12_lec15/</lecture_pdf_url>
+      <lectureno>15</lectureno>
+      <slides>
+        <slide>
+          <slideno>4</slideno>
+          <text>2.2 Maximum a posteriori (MAP) estimation 
+The MAP estimate is a pointwise estimate with a Bayesian avor. Rather 
+than nding  that maximizes the likelihood function, p(y|), we nd  that 
+maximizes the posterior, p(|y). The distinction is between the  under which 
+the data are most likely, and the most likely  given the data. 
+We dont have to worry about evaluating the partition function p(y| ' )p( ' )d ' 
+because it is constant with respect to . Again it is generally more convenient 
+to work with the logarithm. 
+p(y|)p()MAP  arg max p(|y) = arg max 
+  p(y| ' )p( ' )d ' 
+= arg max p(y|)p() = arg max (log p(y|) + log p()) . (6) 
+  
+When the prior is uniform, the MAP estimate is identical to the ML estimate 
+because the log p() is constant. 
+One might ask what would be a bad choice for a prior. We will see later that 
+reasonable choices of the prior are those that do not assign zero probability to 
+the true value of . If we have such a prior, the MAP estimate is consistent, 
+which we will discuss in more detail later. Some other properties of the MAP 
+estimate are illustrated in the next example. 
+Coin Flip Example Part 3. We again return to the coin ip example. 
+Suppose we model  using a Beta prior (we will see later why this is a good 
+idea):   Beta(, ). The Beta distribution is: 
+Beta( ; , ) = 1 1(1  )1 , (7)B(, ) 
+where B(, ) is the beta function, and is constant with respect to : 
+ 1 
+B(, ) = t1(1  t)1dt. (8) 
+0 
+The quantities  and  are parameters of the prior which we are free to set 
+according to our prior belief about . By varying  and , we can encode 
+a wide range of possible beliefs, as is shown in this gure taken from the 
+Wikipedia article on the Beta distribution: 
+5
+ R
+R</text>
+        </slide>
+        <slide>
+          <slideno>28</slideno>
+          <text>In each iteration of the Gibbs sampler, we sequentially update each compo
+nent of t . We could do that updating in any order, it does not have to be 
+1,...,d. 
+The Gibbs sampler is a special case of Metropolis-Hastings where the pro
+posal distribution is taken to be the conditional posterior distribution. In 
+fact, it is easy to show (but notationally extremely cumbersome) that when 
+we use these conditional posterior distributions as proposal distributions in 
+Metropolis-Hastings, the probability of accepting any proposed move is 1, 
+hence in the Gibbs sampler we accept every move. 
+6.4 Practical considerations 
+Now that we have seen the general idea of MCMC algorithms and some theory 
+behind them, let us dive into some details. 
+6.4.1 Proposal distributions 
+To guarantee existence of a stationary distribution, all that is required (with 
+rare exceptions) is for the proposal distribution J(, ) to be such that there is 
+a positive probability of eventually reaching any state from any other state. 
+A typical proposal distribution is a random walk J(,  ' ) = N (, 2) for some 
+2 . There are several important features of proposal distributions that work 
+well in practice. First, we must be able to sample from it eciently. Second, 
+we must be able to compute the ratio (,  ' ) in an ecient way. Third, the 
+jumps should not be too large or we will reject them frequently and the chain 
+will not move quickly. Fourth, the jumps should not be too small or it will 
+take a long time to explore the whole space. The balance between too small 
+and too large is the subject of hundreds of papers on adaptive MCMC, 
+but there is really no good way to know which proposal distribution to use. 
+In practice, we often try several proposal distributions to see which is most 
+appropriate, for example, by adjusting 2 in the above proposal distribution. 
+6.4.2 On reaching the stationary distribution 
+Unfortunately, it is impossible to know how many iterations it will take to 
+reach the stationary distribution, or even to be certain when we have arrived. 
+29</text>
+        </slide>
+        <slide>
+          <slideno>1</slideno>
+          <text>observing them.
+ 
+Our end goal is the conditional density function over , given the observed 
+data, which we denote as p(|y). We call this the posterior distribution, and 
+it informs us which parameters are likely given the observed data. 
+We, the modeler, specify the likelihood function (as a function of y and ) 
+and the prior (we completely specify this) using our knowledge of the system 
+at hand. We then use these quantities, together with the data, to compute 
+the posterior. The likelihood, prior, and posterior are all related via Bayes 
+rule: 
+p(y|)p() p(y|)p()p(|y) = =  , (1) p(y) p(y|')p(')d' 
+where the second step uses the law of total probability. Unfortunately the 
+integral in the denominator, called the partition function, is often intractable. 
+This is what makes Bayesian analysis dicult, and the remainder of the notes 
+will essentially be methods for avoiding that integral. 
+Coin Flip Example Part 1. Suppose we have been given data from a se
+ries of m coin ips, and we are not sure if the coin is fair or not. We might 
+assume that the data were generated by a sequence of independent draws 
+from a Bernoulli distribution, parameterized by , which is the probability of 
+ipping Heads. 
+But whats the value of ? That is, which Bernoulli distribution generated 
+these data? 
+We could estimate  as the proportion of the ips that are Heads. We will 
+see shortly that this is a principled Bayesian approach. Let yi = 1 if ip i mwas Heads, and yi = 0 otherwise. Let mH =i=1 yi be the number of heads 
+in m tosses. Then the likelihood model is 
+p(y|) = mH (1  )mm H . (2) 
+1.1 A note on the Bayesian approach 
+The problem formulation we have just described has historically been a source 
+of much controversy in statistics. There are generally two subelds of statis
+2</text>
+        </slide>
+        <slide>
+          <slideno>26</slideno>
+          <text>6.2.3 Convergence of Metropolis-Hastings 
+Because the proposal distribution and (t1,) depend only on the cur
+rent state, the sequence 0,1 ,... forms a Markov chain. What makes the 
+Metropolis-Hastings algorithm special is the following theorem, which shows 
+that if we simulate the chain long enough, we will simulate draws from the 
+posterior. 
+Theorem 5. If J(,  ' ) is such that that the Markov chain 0,1 ,... produced 
+by the Metropolis-Hastings algorithm has a unique stationary distribution, 
+then the stationary distribution is p(|y). 
+Proof. We will use the fact given in (23) that if the posterior p(|y) satises 
+the detailed balance equation, then it is the stationary distribution. Thus we 
+wish to show: 
+K(,  ' )p(|y) = K( ' ,)p( '|y), for all ,  ' . 
+where the transition kernel comes from Metropolis-Hastings: 
+K(,  ' ) = (probability of proposing  ' ) 
+(probability of accepting  ' given it was proposed) 
+= J(,  ' )(,  ' ). 
+To show that the detailed balance equation holds, take any  and  ' , and 
+without loss of generality, suppose that  is less than or equal to 1 for the 
+transition  to  ' , which means 
+J(,  ' )p(|y)  J( ' ,)p( '|y), 
+so that 
+J( ' ,)p( '|y)(,  ' ) = ,J(,  ' )p(|y) 
+and ( ' ,) = 1. Now lets plug: 
+K(,  ' )p(|y) =J(,  ' )(,  ' )p(|y) 
+J( ' ,)p( '|y) =J(,  ' )p(|y) J(, ')p(|y) 
+=J( ' ,)p( '|y) (cancel terms) 
+=J( ' ,)( ' ,)p( '|y) (1 in disguise) 
+=K( ' ,)p( '|y). 
+And thats the detailed balance equation. 
+27</text>
+        </slide>
+        <slide>
+          <slideno>35</slideno>
+          <text>We are now ready to specify the 
+number of chains and compile the 
+model. We use multiple chains from 
+multiple initial conditions to test 
+convergence; it is usually sucient 
+to use 2 chains. We input 2 chains 
+and press compile in the model 
+specication window. Then, model 
+compiled appears along the bot
+tom. If we did not specify one of 
+the variables (for instance, if we had 
+mistakenly left beta out of the data 
+list) then it will give an error when 
+we try to compile. 
+Finally, we specify the initial parameter values for each chain, each as an R 
+list. Here we will start one chain from  = 1, and the other from  = 0. 
+list(theta=0) 
+list(theta=1) 
+For the rst initial value we high
+light the word list, and click 
+load inits in the model speci
+cation. The number scroll to the 
+right of the load inits  button 
+indicates that we are loading the 
+initial values for chain 1. When 
+we do this, it says on the bottom 
+of the screen initial values 
+loaded and chain initialized 
+but another chain , referring to 
+the fact that chain 2 still has not 
+been initialized. 
+Screenshots  OpenBUGS. Some rights reserved; the OpenBUGS software is available under the GNU
+General Public License. This content is excluded from our Creative Commons license. For more information,see http://ocw.mit.edu/fairuse.
+36</text>
+        </slide>
+        <slide>
+          <slideno>7</slideno>
+          <text>are the dependent variables. We will use a likelihood model under which yi 
+depends linearly on xi, and the yis are all independent. Specically, we 
+model 
+yi  T xi + E, 
+where   Jd are the parameters we are interested in, and E represents noise. 
+We will assume that the noise is distributed normally with zero mean and 
+some known variance 2: E  N (0,2). This, together with our assumption of 
+independence, allows us to express the likelihood function for the observations 
+y = {y1,...,ym}: 
+m m m m 
+p(y|x, ) = p(yi|xi,) = N (yi; T xi,2) 
+i=1 i=1 
+m   m
+=  1 exp 1(yi  T xi)2,22 
+i=1 22 
+where the rst line follows from independence. As usual, it is more convenient 
+to work with the log-likelihood: 
+m  m 
+R() = log  1 exp 1(yi  T xi)2
+22 
+i=1 22 
+mm 
+=  m log(22)  1(yi  T xi)2 . 2 22 
+i=1 
+The ML estimate is 
+mm 
+ML  arg max R() = arg max  1(yi  T xi)2 (10) 
+  22 
+i=1 
+mm 
+= arg min (yi  T xi)2 . (11) 
+ i=1 
+The ML estimate is equivalent to ordinary least squares! 
+Now let us try the MAP estimate. We saw in our coin toss example that the 
+MAP estimate acts as a regularized ML estimate. For probabilistic regression, 
+we will use a multivariate normal prior (we will see later why this is a good 
+idea) with mean 0. The covariance matrix will be diagonal, it is I (the 
+8</text>
+        </slide>
+        <slide>
+          <slideno>11</slideno>
+          <text>Prior Posterior ConjugateLikelihood Hyper- Hyper-Prior params params 
+Bernoulli Beta ,   + m yi,  + m  m yi i=1 i=1 
+m m mBinomial Beta ,   + yi,  + mi  yi i=1 i=1 i=1 
+mPoisson Gamma ,   + i=1 yi,  + m
+ 
+m
+Geometric Beta ,   + m,  + i=1 yi 
+Uniform on [0,] Pareto xs, k max{max yi,xs}, k + m
+ 
+m
+Exponential Gamma ,   + m,  + i=1 yi 
+Normal       1 0 1 m 1 m 1 munknown mean Normal 0, 2 + yi/ + , +0 2 2 i=1 2 22 2
+0 0 0 known variance 2 
+We will now discuss a few of these conjugate prior relationships to try to gain 
+additional insight. For Bernoulli-Beta, we saw that the prior hyperparame
+ters can be interpreted as starting the tossing with a certain number of Heads 
+and Tails on the record. The posterior hyperparameters then simply add the 
+observed number of heads (mH ) to the prior hyperparameter for number of 
+Heads (), and the observed number of tails (m  mH ) to the prior hyperpa
+rameter for number of tails (). 
+For Binomial-Beta, we now have m Binomial experiments, each of which 
+consists of a certain number of coin tosses (mi) and a certain number of 
+Heads (yi). As before, the rst prior hyperparameter corresponds to number 
+of hallucinated Heads, and in the posterior we combine the prior hyper-
+parameter  with the total number of observed Heads across all Binomial 
+trials. Similarly, for the second posterior hyperparameter, we compute the 
+total number of Tails observed across all Binomial trials and combine it with 
+the corresponding prior hyperparameter (). 
+In the Uniform-Pareto example, the data come from a uniform distribution 
+on [0,], but we dont know . We choose a prior for  that is a Pareto 
+distribution with prior hyperparameters xs and k. Here, xs and k can be in
+terpreted as beginning the experiment with k observations, whose maximum 
+value is xs (so we believe  is at least xs). In the posterior, we replace the 
+maximum value xs with the new maximum value max{max yi,xs} including 
+12
+ P P
+P P
+P
+P
+P
+PP</text>
+        </slide>
+        <slide>
+          <slideno>21</slideno>
+          <text>In addition to the graph structure, we use plates to denote repeated, inde
+pendent draws from the same distribution. The plates are like the for loops 
+in the pseudocode of how the data is generated in the text description above. 
+Coin Flip Example Part 7. Even simple models like the coin ip model 
+can be represented graphically. The coin ip model is: 
+5.3 Inference in hierarchical models 
+Hierarchical models are useful because they allow us to model interactions 
+between the observed variables (in this case the words in each document) 
+through the use of latent (or hidden) variables. 
+What are the latent variables for LDA?
+ 
+Despite introducing a larger number of latent variables than we have observed 
+variables, because of their additional structure hierarchical models are gen
+erally not as prone to overtting as you might expect. 
+We are interested in infering the posterior distribution for the latent vari
+ables. Let Z = {zi,j}i=1,...,m,j =1,...,n i ,  = {i}i=1,...,m ,  = {k}k=1,...,K , and 
+W = {wi,j}i=1,...,m,j =1,...,n i . Then, by Bayes rule, ignoring the constant de
+nominator, we can express the posterior as: 
+p(Z, , |w, , )  p(w|Z, , , , )p(Z, , |, ) (21) 
+We will look at each of these pieces and show that they have a compact 
+22</text>
+        </slide>
+        <slide>
+          <slideno>22</slideno>
+          <text>analytical form.
+ 
+p(w|Z, , , , ) = p(wi,j|Z, , , , ) By iid assumption 
+i=1 j=1 nm imm 
+= p(wi,j|zi,j,) By conditional independence 
+i=1 j=1 nm imm 
+mni
+= Multinomial(w i,j; zi,j ) By denition. 
+i=1 j=1 
+Also, 
+p(Z, , |, ) = p(Z, |)p(| ) 
+by conditional independence. Again considering each term, by the denition 
+of conditional probability: 
+p(Z, |) = p(Z|, )p(|), m 
+where m 
+m m m mmni mni
+p(Z|, ) = p(Z|) = p(zi,j|i) = Multinomial(z i,j; i), 
+i=i j=1 i=i j =1 
+by conditional independence, iid, and denition as before. Further, 
+m mm m
+p(|) = p(i|) = Dirichlet(i; ), 
+i=1 i=1 
+and 
+m mK K
+p(| ) = p(k|) = Dirichlet(k; ). 
+k=1 k=1 
+Plugging all of these pieces back into (21), we obtain 
+m m m mmni mni
+p(Z, , |w, , )  Multinomial(w i,j; zi,j ) Multinomial(z i,j; i) 
+i=1 j=1 i=i j=1 
+m mm K
+Dirichlet(i; ) Dirichlet(k; ). (22) 
+i=1 k=1 
+23</text>
+        </slide>
+        <slide>
+          <slideno>40</slideno>
+          <text>list(t = c(94.3, 15.7, 62.9, 126, 5.24, 31.4, 1.05, 1.05, 2.1, 10.5), 
+x = c( 5, 1, 5, 14, 3, 19, 1, 1, 4, 22)) 
+We will allow OpenBUGS to generate the initial values for us randomly. We 
+simulate two chains exactly as in the coin ip example, and easily recover the 
+posterior densities for the failure rates for each pump. In the following gure 
+we show some of the posterior distributions: 
+41</text>
+        </slide>
+        <slide>
+          <slideno>18</slideno>
+          <text>Coin Flip Example Part 6. Suppose that the coin ip data truly came from 
+a biased coin with a 3/4 probability of Heads, but we restrict the likelihood 
+model to only include coins with probability in the interval [0, 1/2]: 
+p(y|) = mH (1  )mm H ,   [0, 1/2]. 
+This time we will use a uniform prior, p() = 2,  [0, 1/2]. The posterior 
+distribution is then 
+mH (1  )mm H 2 p(|y) = . 1/2  'mH (1   ' )mm H 2d ' 
+0 
+The partition function is an incomplete Beta integral, which has no closed 
+form but can easily be solved numerically. In the following gure, we draw 
+samples iid from the true distribution (3/4 probability of Heads) and show 
+how the posterior becomes increasingly concentrated around  = 0.5, the 
+closest likelihood function to the true generating distribution. 
+5 Hierarchical modeling 
+Hierarchical models are a powerful application of Bayesian analysis. They al
+low us to reason about knowledge at multiple levels of abstraction. Basically, 
+19
+ R</text>
+        </slide>
+        <slide>
+          <slideno>19</slideno>
+          <text>the prior parameters at the lower level come from the same distribution at 
+the higher level, and there is a prior at that level, and so on. This is best 
+explained by example, so we will develop a hierarchical model for topic mod
+eling, an important information retrieval problem. 
+5.1 Topic models 
+Suppose we have been given a collection of m documents and we wish to 
+determine how the documents are related. For example, if the documents 
+are all news articles, the article Patriots game canceled due to hurricane 
+is related to the article New York Giants lose superbowl because they are 
+both about football. The article Patriots game canceled due to hurricane 
+is also related to the article Record snowfall in May because they are both 
+about the weather. We will now develop a hierarchical model for nding topic 
+relationships between documents in an unsupervised setting. The method is 
+called Latent Dirichlet Allocation (LDA) and it was developed by David Blei, 
+Andrew Ng, and Michael Jordan. 
+5.1.1 LDA formulation 
+The model has several components. The data are m documents, with docu
+ment i consisting of ni words. Each word in the document will be associated 
+with one of K topics. We let zi,j denote the topic of word j in document i. 
+We model zi,j  Multinomial( i), where i  JK describes the topic mixture 
+of document i. 
+For each topic, we dene a multinomial distribution over all possible words. 
+For example, given the topic is Sports, the probability of having the word 
+football might be high; if the topic were Weather, the probability of hav
+ing the word football might be lower. Other words, like the will have a 
+high probability regardless of the topic. If words are chosen from a set of W 
+possible words, then we let k  JW be the multinomial parameter over words 
+for topic k. Word j of document i, denoted wi,j, will be generated by the dis
+tribution over words corresponding to the topic zi,j: wi,j  Multinomial( zi,j ). 
+Finally, we give prior distributions for the parameters i and k. The multi
+nomial distribution is a generalization of the binomial distribution, and its 
+20</text>
+        </slide>
+        <slide>
+          <slideno>27</slideno>
+          <text>We have now proven that the Metropolis-Hastings algorithm simulations will 
+eventually draw from the posterior distribution. However, there are a number 
+of important questions to be addressed. What proposal distribution should 
+we use? How many iterations will it take for the chain to be suciently close 
+to the stationary distribution? How will we know when the chain has reached 
+its stationary distribution? We will discuss these important issues after we 
+introduce the Gibbs sampler. 
+6.3 Gibbs Sampler 
+The Gibbs sampler is a very powerful MCMC sampling technique for the spe
+cial situation when we have access to conditional distributions. It is a special 
+case of the Metropolis-Hastings algorithm that is typically much faster, but 
+can only be used in special cases. 
+Let us express   Jd as  = [1,...,d]. Suppose that although we are not 
+able to draw directly from p(|y) because of the normalization integral, we 
+are able to draw samples from the conditional distribution 
+p(j|1,...,j1,j+1,...,d,y). 
+In fact, it is often the case in hierarchical models that their structure al
+lows us to determine analytically these conditional posterior distributions. 
+This can be done for LDA, and the derivation is quite lengthy but can 
+be found on the Wikipedia article for LDA. The Gibbs sampler updates 
+the posterior variables 1,2,...,d one at a time. At each step, all of 
+them are held constant in their current state except for one (j), which is 
+then updated by drawing from its (known) conditional posterior distribu
+tion, p(j|1,...,j1,j+1,...,d,y). We then hold it in its state and move 
+on to the next variable to update it similarly. When we do this iterative up
+dating for long enough, we eventually simulate draws from the full posterior. 
+The full algorithm is: 
+Step 1.	 Initialize 0 = [10,...,0]. Set t = 1. d
+Step 2.	 For j  {1,...,d}, sample t from p(j|1t ,...,t ,t1 ,...,t1 ,y).j	 j1j+1 d 
+Step 3.	 Until stationary distribution and the desired number of draws are reached, 
+increment t  t + 1 and return to Step 2. 
+28</text>
+        </slide>
+        <slide>
+          <slideno>2</slideno>
+          <text>tics: frequentist (or classical) statistics, and Bayesian statistics. Although 
+many of the techniques overlap, there is a fundamental dierence in phi
+losophy. In the frequentist approach,  is an unknown, but deterministic 
+quantity. The goal in frequentist statistics might then be to determine the 
+range of values for  that is supported by the data (called a condence in
+terval). When  is viewed as a deterministic quantity, it is nonsensical to 
+talk about its probability distribution. One of the greatest statisticians of 
+our time, Fisher, wrote that Bayesian statistics is founded upon an error, 
+and must be wholly rejected. Another of the great frequentists, Neyman, 
+wrote that, the whole theory would look nicer if it were built from the start 
+without reference to Bayesianism and priors. Nevertheless, recent advances 
+in theory and particularly in computation have shown Bayesian statistics to 
+be very useful for many applications. Machine learning is concerned mainly 
+with prediction ability. A lot of the methods we discussed do not worry about 
+exactly what the underlying distribution is - as long as we can predict, we are 
+happy, regardless of whether we even have a meaningful estimate for p(y|). 
+2 Point estimates 
+Rather than estimate the entire distribution p(|y), sometimes it is sucient 
+to nd a single good value for . We call this a point estimate. For the sake 
+of completeness, we will briey discuss two widely used point estimates, the 
+maximum likelihood (ML) estimate and the maximum a posteriori (MAP) 
+estimate. 
+2.1 Maximum likelihood estimation 
+The ML estimate for  is denoted ML and is the value for  under which the 
+data are most likely: 
+ML  arg max p(y|). (3) 
+ 
+As a practical matter, when computing the maximum likelihood estimate it 
+is often easier to work with the log-likelihood, R() := log p(y|). Because the 
+logarithm is monotonic, it does not aect the argmax: 
+ML  arg max R(). (4) 
+ 
+3</text>
+        </slide>
+        <slide>
+          <slideno>30</slideno>
+          <text>which we can easily compute. This formula and a uniform random number 
+generator for the proposal distribution are all that is required to implement 
+the Metropolis-Hastings algorithm. 
+Consider the specic case of m = 25, mH = 6, and  =  = 5. The following 
+three gures show the time sequence of proposals  for chains with r = 0.01, 
+r = 0.1, and r = 1 respectively, with the colors indicating whether each 
+proposed  was accepted or not, and time along the x-axis. In this rst 
+gure we see that with r = 0.01, the step sizes are too small and after 2000 
+proposals we have not reached the stationary distribution. 
+In the next gure, with r = 1 the steps are too large and we reject most of 
+the proposals. This leads to a small number of accepted draws after 2000 
+proposals. 
+31</text>
+        </slide>
+        <slide>
+          <slideno>3</slideno>
+          <text>The ML estimator is very popular and has been used all the way back to 
+Laplace. It has a number of nice properties, one of which is that it is a 
+consistent estimator. Lets explain what that means. 
+Denition 1 (Convergence in Probability) . A sequence of random variables 
+X1,X2,... is said to converge in probability to a random variable X if, E&gt; 0, 
+lim 1 (|Xn  X|  E) = 0. 
+n 
+PWe denote this convergence as Xn   X. 
+Denition 2 (Consistent estimators). Suppose the data y1,...,ym were gen
+erated by a probability distribution p(y|0). An estimator is consistent if 
+Pit converges in probability to the true value:   0 as m  . 
+We said that maximum likelihood is consistent. This means that if the distri
+bution that generated the data belongs to the family dened by our likelihood 
+model, maximum likelihood is guaranteed to nd the correct distribution, as 
+m goes to innity. In proving consistency, we do not get nite sample guar
+antees like with statistical learning theory; and data are always nite. 
+Coin Flip Example Part 2. Returning to the coin ip example, equation 
+(2), the log-likelihood is 
+R() = mH log  + (m  mH ) log(1  ). 
+We can maximize this by dierentiating and setting to zero, and doing a few 
+lines of algebra: 
+dR()
+   =
+ m
+H  m  mH 
+ 1     
+ 0 =
+ d
+mH (1  ML) = (m  mH )ML 
+mH  MLmH =	 mML  MLmH mH ML = .	 (5) m 
+(It turns out not to be dicult to verify that this is indeed a maximum). 
+In this case, the maximum likelihood estimate is exactly what we intuitively 
+thought we should do: estimate  as the observed proportion of Heads. 
+4</text>
+        </slide>
+        <slide>
+          <slideno>24</slideno>
+          <text>conditions that will be satised by all of the chains we are interested in, 
+the sequence of state distributions 0(),1(),... will converge to a unique 
+distribution () which we call the stationary distribution , or equilibrium dis
+tribution or steady-state distribution. 
+We dene the transition kernel to be the probability of transitioning from 
+state  to state  ' : K(,  ' ) = p( '|). We then have the following important 
+fact. 
+Fact: if the distribution () satises the detailed balance equation : 
+K(,  ' )() = K( ' ,)( ' ), for all ,  ' , (23) 
+then () is the stationary distribution. The interpretation of the detailed 
+balance equation is that the amount of mass transitioning from  ' to  is the 
+same as the amount of mass transition back from  to  ' . For a stationary 
+distribution, we cannot have mass going from state to state. 
+6.2 Metropolis-Hastings algorithm 
+The goal in MCMC is to construct a Markov Chain whose stationary dis
+tribution is the posterior p(|y). We now present the Metropolis-Hastings 
+algorithm. In addition to the distributions we have already used (likelihood 
+and prior), we will need a proposal distribution (or jumping distribution) 
+J(,  ' ) which will propose a new state  ' given the current state . 
+There are many options when choosing a proposal distribution which we will 
+discuss later. The proposal distribution will yield a random walk over the 
+parameter space, proposing steps    ' . We accept or reject each step 
+depending on the relative posterior probabilities for  and  ' . When we run 
+the random walk for long enough, the accepted values will simulate draws 
+from the posterior. 
+6.2.1 Some intuition into the Metropolis-Hastings algorithm 
+Suppose we are considering the transition    ' . If p( '|y) is larger than 
+p(|y), then for every accepted draw of , we should have at least as many 
+accepted draws of  ' and so we should always accept the transition    ' . 
+25</text>
+        </slide>
+        <slide>
+          <slideno>9</slideno>
+          <text>because ym+1 and y are conditionally independent given  by assumption. 
+We saw earlier that the posterior can be obtained in principle from the prior 
+and the likelihood using Bayes rule, but that there is an integral in the 
+denominator which often makes this intractable. One approach to circum
+venting the integral is to use conjugate priors. 
+The appropriate likelihood function (Binomial, Gaussian, Poisson, Bernoulli,...) 
+is typically clear from the data. However, there is a great deal of exibility 
+when choosing the prior distribution. The key notion is that if we choose 
+the right prior for a particular likelihood function, then we can compute 
+the posterior without worrying about the integrating. We will formalize the 
+notion of conjugate priors and then see why they are useful. 
+Denition 3 (Conjugate Prior). Let F be a family of likelihood functions 
+and P a family of prior distributions. P is a conjugate prior to F if for 
+any likelihood function f  F and for any prior distribution p  P, the 
+ corresponding posterior distribution p satises p  P. 
+It is easy to nd the posterior when using conjugate priors because we know 
+it must belong to the same family of distributions as the prior. 
+Coin Flip Example Part 4. In our previous part of coin ip example, we 
+were very wise to use a Beta prior for  because the Beta distribution is the 
+conjugate prior to the Bernoulli distribution. Let us see what happens when 
+we compute the posterior using (2) for the likelihood and (7) for the prior: 
+p(y|)p() mH (1  )mm H 1(1  )1 
+p(|y) = = 1 p(y| ' )p( ' )d ' (normalization)0 
+mH +1(1  )mm H +1 
+= .1 'mH +1(1  ')mm H +1d' 
+0 
+We can recognize the denominator as a Beta function from the denition in 
+(8): 
+1 p(|y) = mH +1(1  )mm H +1 ,B(mH + , m  mH + ) 
+and we recognize this as being a Beta distribution: 
+p(|y)  Beta (mH + , m  mH + ) . (14) 
+10
+ R
+R</text>
+        </slide>
+        <slide>
+          <slideno>37</slideno>
+          <text>tool for now. 
+To simulate the chains, we go Model 
+-&gt; Update . This opens the update 
+tool which we use to run the simu
+lations. We simply enter the desired
+ 
+number of draws (we choose 10,000),
+ 
+and the amount of thinning (we en
+ter 10, meaning keep only one out
+ 
+of every 10 draws). The refresh
+ 
+entry refers to how often it will re
+fresh the iteration count during
+ 
+the simulation and is not very im
+portant. When we have entered
+ 
+in the desired parameters, we press
+ 
+update. The iteration count in
+creases from 0 to 10,000, and nally
+ 
+at the bottom of the screen it reports
+ 
+10000 updates took 5 s.
+ 
+To view the results, we close the update tool and return to the sample monitor 
+tool (Inference -&gt; Samples). Here there are a few useful quantities to look 
+at. 
+We type in theta as the
+ 
+node we are interested in.
+ 
+We set 501 in the beg
+ 
+entrybox to specify that we
+ 
+will begin inference at in
+teration 501, thus ignoring
+ 
+the rst 500 iterations as
+ 
+burn-in. The buttons we are
+ 
+most interested in are den
+sity, coda, trace, history, and
+ 
+accept. 
+Screenshots  OpenBUGS. Some rights reserved; the OpenBUGS software is available under the GNU
+General Public License. This content is excluded from our Creative Commons license. For more information,see http://ocw.mit.edu/fairuse.
+38</text>
+        </slide>
+        <slide>
+          <slideno>0</slideno>
+          <text>15.097: Probabilistic Modeling and Bayesian Analysis
+ 
+Ben Letham and Cynthia Rudin 
+Credits: Bayesian Data Analysis by Gelman, Carlin, Stern, and Rubin 
+1 Introduction and Notation 
+Up to this point, most of the machine learning tools we discussed (SVM, 
+Boosting, Decision Trees,...) do not make any assumption about how the 
+data were generated. For the remainder of the course, we will make distri
+butional assumptions, that the underlying distribution is one of a set. Given 
+data, our goal then becomes to determine which probability distribution gen
+erated the data. 
+We are given m data points y1,...,ym, each of arbitrary dimension. Let 
+y = {y1,...,ym} denote the full set of data. Thus y is a random variable, 
+whose probability density function would in probability theory typically be 
+denoted as fy({y1,...,ym}). We will use a standard (in Bayesian analysis) 
+shorthand notation for probability density functions, and denote the proba
+bility density function of the random variable y as simply p(y). 
+We will assume that the data were generated from a probability distribution 
+that is described by some parameters  (not necessarily scalar). We treat  
+as a random variable. We will use the shorthand notation p(y|) to represent 
+the family of conditional density functions over y, parameterized by the ran
+dom variable . We call this family p(y|) a likelihood function or likelihood 
+model for the data y, as it tells us how likely the data y are given the model 
+specied by any value of . 
+We specify a prior distribution over , denoted p(). This distribution rep
+resents any knowledge we have about how the data are generated prior to 
+1</text>
+        </slide>
+        <slide>
+          <slideno>33</slideno>
+          <text>7.1 OpenBUGS example 1: Coin ip example
+ 
+By this point it should come as no surprise that our rst example will be the 
+coin ip example. 
+When you rst open OpenBUGS, 
+you will be greeted with a screen 
+that looks something like this. 
+File -&gt; New will open what is es
+sentially a blank text le. There are 
+three items that must be specied to 
+do simulations in OpenBUGS: The 
+model, the data, and initial condi
+tions. All of these are to be specied 
+in this text le. 
+Specifying the model in OpenBUGS is very natural, and uses two main sym
+bols: &lt;- means deterministic assignment, as in R, and  means distribu
+tional assignment. OpenBUGS includes many dierent distributions, a full 
+list of how to specify them is at: 
+http://mathstat.helsinki./openbugs/Manuals/ModelSpecication.html#ContentsAI 
+We specify the coin ip model as: 
+model{
+Y  dbin(theta,m)
+ 
+theta  dbeta(alpha,beta)
+ 
+Screenshots  OpenBUGS. Some rights reserved; the OpenBUGS software is available under the GNU
+General Public License. This content is excluded from our Creative Commons license. For more information,
+see http://ocw.mit.edu/fairuse . .
+34</text>
+        </slide>
+        <slide>
+          <slideno>41</slideno>
+          <text>MIT OpenCourseWare
+http://ocw.mit.edu
+15.097 Prediction: Machine Learning and Statistics
+Spring 2012
+For information about citing these materials or our Terms of Use, visit: http://ocw.mit.edu/terms .</text>
+        </slide>
+        <slide>
+          <slideno>20</slideno>
+          <text>conjugate prior is a generalization of the beta distribution: the Dirichlet 
+distribution. Thus we model the data with the following generative model: 
+1. For document	 i = 1,...,m, choose the documents topic distribution 
+i  Dirichlet(), where   JK is the prior hyperparameter. 
+2. For	 topic k = 1,...,K , choose the topics word distribution k  
+Dirichlet(), where   JW is the prior hyperparameter. 
+3. For document i = 1,...,m: 
+For word j = 1,...,ni: 
+Choose the topic for this word zi,j  Multinomial( i). 
+Choose the word wi,j  Multinomial( zi,j ). 
+5.2 Graphical representation 
+Hierarchical models are illustrated with a node for every variable and arcs 
+between nodes to indicate the dependence between variables. Heres the one 
+for LDA: 
+Graphs representing hierarchical models must be acyclic. For any node x, 
+we dene Parents(x) as the set of all nodes with arcs to x. The hierarchical 
+model consists of, for every node x, the distribution p(x|Parents(x)). Dene 
+Descendants(x) as all nodes that can be reached from x and Non-descendants( x) 
+as all other nodes. Because the graph is acyclic and the distribution for each 
+node depends only on its parents, given Parents(x), x is conditionally inde
+pendent from Non-descendants(x). This is a powerful fact about hierarchical 
+models that is important for doing inference. In the graph for LDA, this 
+means that, for example, zi,j is independent of , given i. 
+21</text>
+        </slide>
+        <slide>
+          <slideno>25</slideno>
+          <text>If p( '|y) is less than p(|y), then for every accepted draw , we should have 
+p(|y)on average accepted draws of  ' . We thus accept the transition with p(|y)
+ 
+p(|y)
+probability . Thus for any transition, we accept the transition with p(|y) 
+probability   p( '|y)min , 1.	 (24) p(|y) 
+6.2.2 Steps of the algorithm 
+We now give the steps of the Metropolis-Hastings algorithm. 
+Step 1. Choose a starting point 0 . Set t = 1. 
+Step 2. Draw  from the proposal distribution J(t1 , ). The proposed move 
+for time t is to move from t1 to  . 
+Step 3. Compute the following: 
+ 	  p(|y)J(,t1)(t1,  ) := min	 , 1p(t1|y)J(t1,) 	  p(y|)p()J(,t1)= min	 , 1 (25) p(y|t1)p(t1)J(t1,)
+Well explain this more soon. The fact that we can compute ratios of 
+posterior probabilities without having to worry about the normalization 
+integral is the key to Monte Carlo methods. 
+Step 4. With probability (t1,), accept the move t1   by setting t = 
+ and incrementing t  t + 1. Otherwise, discard  and stay at t1 . 
+Step 5.	 Until stationary distribution and the desired number of draws are reached, 
+return to Step 2. 
+Equation (25) reduces to what we developed intuition for in (24) when the 
+proposal distribution is symmetric: J(,  ' ) = J( ' ,). We will see in the 
+next theorem that the extra factors in (25) are necessary for the posterior to 
+be the stationary distribution. 
+26</text>
+        </slide>
+        <slide>
+          <slideno>32</slideno>
+          <text>histogram of the resulting draws, along with the analytical posterior. The 
+running time to generate the MCMC draws was less than a second, and they 
+are a reasonable approximation to the posterior. 
+7 MCMC with OpenBUGS 
+There is a great deal of art to MCMC simulation, and a large body of 
+research on the right way to do the simulations. OpenBUGS is a nice 
+software package that has built-in years of research in MCMC and can draw 
+posterior samples in a fairly automated way. It is great for doing Bayesian 
+analysis without having to get your hands too dirty with MCMC details. 
+Here we demonstrate OpenBUGS using two examples. 
+OpenBUGS is old and is infrequently updated, but is still functional and 
+powerful. The graphical interface version of OpenBugs is available only as 
+a Windows executable, but for Linux and Mac users, we had no diculties 
+running the Windows executable with Wine. 
+33</text>
+        </slide>
+        <slide>
+          <slideno>39</slideno>
+          <text>7.2 OpenBUGS example 2: estimating pump failure rates 
+The following example is from the OpenBUGS manual, and can be found at: 
+http://www.openbugs.info/Examples/Pumps.html 
+This example is a hierarchical model for pump failure. There are 10 pumps, 
+pump i being in operation for a certain amount of time ti and having had a 
+certain number of failures xi. We wish to estimate the failure rate for each 
+pump, and we will do so with a Bayesian hierarchical model. We suspect that 
+the failure rates are related for all of the pumps, so we include a common prior. 
+We give exibility to the prior by sampling it from a diuse distribution. The 
+generative model for the observed number of pump failures is then: 
+1. Choose the rst prior hyperparameter   Exponential(1). 
+2. Choose the second prior hyperparameter   Gamma(0.1, 1.0). 
+3. For pump i = 1,..., 10:
+ 
+Choose this pumps failure rate i  Gamma(, ).
+ 
+Choose the number of failures xi  Poisson( iti).
+ 
+We input this model into OpenBUGS as 
+model{
+alpha  dexp(1)
+ 
+beta  dgamma(0.1, 1.0)
+ 
+for (i in 1 : 10) {
+theta[i]  dgamma(alpha, beta)
+ 
+lambda[i] &lt;- theta[i]*t[i]
+ 
+x[i]  dpois(lambda[i])
+ 
+}
+}
+ 
+Notice in the above that OpenBUGS does not allow mathematical operations 
+inside of calls to distributions like dpois(theta[i]*t[i]), so we had to use 
+a deterministic relationship to specify the new variable lambda[i]. The data 
+to be specied are t and x, and we do this with an R list: 
+40</text>
+        </slide>
+        <slide>
+          <slideno>23</slideno>
+          <text>For any given Z, , , w, , and , we can easily evaluate (22). (All the nor
+malizations are known so its easy.) We will see in the next section that this 
+is sucient to be able to simulate draws from the posterior. 
+Even using conjugate priors, in general it will not be possible to recover 
+the posterior analytically for hierarchical models of any complexity. We will 
+rely on (among a few other options) sampling methods like the Monte Carlo 
+Markov Chains (MCMC) that we discuss in the next section. What the 
+statistics community call Bayesian hierarchical models are in the machine 
+learning community often treated as a special case of Bayesian graphical 
+models (specically, directed acyclic graphs). There is at least one entire 
+course at MIT on inference in Bayesian graphical models (6.438). 
+6 Markov Chain Monte Carlo sampling 
+As we have seen with hierarchical models, even with conjugate priors we are 
+unable to express the posterior analytically. The reason Bayesian statistics 
+is so widely used is because of the development of computational methods 
+for simulating draws from the posterior distribution. Even though we are 
+unable to express the posterior analytically, with a large enough sample of 
+simulated draws we can compute statistics of the posterior with arbitrary 
+precision. This approach is called Monte Carlo simulation. We will describe 
+the two most commonly used Monte Carlo methods, which both fall under the 
+umbrella of Markov Chain Monte Carlo (MCMC) methods: the Metropolis-
+Hastings algorithm, and Gibbs sampling. 
+6.1 Markov chains 
+The results from MCMC depend on some key results from the theory of 
+Markov chains. We will not do a thorough review of Markov Chains and will 
+rather present the necessary results as fact. A continuous state Markov chain 
+is a sequence 0,1 ,... with t  Jd that satises the Markov property : 
+p(t|t1,...,1) = p(t|t1). 
+We will be interested in the (unconditioned) probability distribution over 
+states at time t, which we denote as t() := Pr(t = ). Under some 
+24</text>
+        </slide>
+        <slide>
+          <slideno>5</slideno>
+          <text>The MAP estimate for  we can get from the formula for computing MAP 
+in (6), plugging in the formula for the likelihood we found in part 2, and the 
+denition of the Beta distribution for the prior (7): 
+MAP  arg max (log p(y|) + log p()) 
+ 
+= arg max (mH log  + (m  mH ) log(1  ) 
+ 
++(  1) log  + (  1) log(1  )  log B(, )) . 
+Dierentiating and setting to zero at MAP, 
+mH m  mH   1   1  +  = 0  1    1   MAP MAP MAP MAP 
+mH +   1MAP = . (9) m +   1 +   1 
+This is a very nice result illustrating some interesting properties of the MAP 
+estimate. In particular, comparing the MAP estimate in (9) to the ML esti
+mate in (5) which was mH ML = , m 
+we see that the MAP estimate is equivalent to the ML estimate of a data set 
+with   1 additional Heads and   1 additional Tails. When we specify, 
+for example, a prior of  = 7 and  = 3, it is literally as if we had begun the 
+6
+  Krishnavedala on Wikipedia. CC BY-SA. This content is excluded from our Creative
+Commons license. For more information, see http://ocw.mit.edu/fairuse.</text>
+        </slide>
+        <slide>
+          <slideno>34</slideno>
+          <text>} 
+Here dbin and dbeta are the binomial and beta distributions respectively. 
+Notice that in the model we do not specify the constants m, , and . 
+To load the model into OpenBUGS,
+ 
+we rst enter it into the text en
+try space in OpenBUGS. Then from
+ 
+the Model menu, we go Model
+ 
+-&gt; Specification. This opens the
+ 
+model specication window, seen to
+ 
+the right. To set the model as the
+ 
+current working model, we highlight
+ 
+the word model that we typed
+ 
+in, as in the image on the right,
+ 
+and while it is highlighted we select
+ 
+check model. When we do this,
+ 
+the text model is syntatically 
+correct appears along the bottom. 
+We then specify the data, including all constants. Data is specied in Open-
+BUGS as an R list. Here, for 10 Heads out of 40 ips and priors  =  = 5, 
+we write: 
+list(Y=10,m=40,alpha=5,beta=5) 
+To load the data into OpenBUGS, 
+we rst type the data list into the 
+text entry space in OpenBUGS. We 
+then highlight the word list, as 
+in the image on the right, and 
+while it is highlighted we click load 
+data in the model specication 
+window. When we do this, data 
+loaded  appears along the bottom 
+of the screen. 
+Screenshots  OpenBUGS. Some rights reserved; the OpenBUGS software is available under the GNU
+General Public License. This content is excluded from our Creative Commons license. For more information,see http://ocw.mit.edu/fairuse.
+35</text>
+        </slide>
+        <slide>
+          <slideno>31</slideno>
+          <text>The chain with r = 0.1 is the happy medium, where we rapidly reach the 
+stationary distribution, and accept most of the samples. 
+To compare this to the analytic distribution that we obtained in (14), namely 
+p(|y)  Beta (mH + , m  mH + ) . 
+we run a chain with r = 0.1 until we have collected 25,000 accepted draws. We 
+then discard the initial 200 samples (burn-in) and keep one out of every 100 
+samples from what remains (thinning). The next gure shows a normalized 
+32</text>
+        </slide>
+        <slide>
+          <slideno>17</slideno>
+          <text>Lets plug back into (19). By supposition, p() &gt; 0 (and the prior doesnt 
+change as m  ).Thus as m  , (19) obeys 
+mm p(|y) p() p(yi|)log = log + log  , p(|y) p() p(yi|)i=1 
+and 
+p(|y) p(|y)log   implies  0 which implies p(|y)  0. p(|y) p(|y) 
+This holds for every   , thus p(|y)  1. 
+Again, this theorem tells us that the posterior eventually becomes concen
+trated on the value  .  corresponds to the likelihood model that is closest 
+in the KL sense to the true generating distribution q(). If q() = p(| 0) for 
+some 0  , then  = 0 is the unique minimizer of (18) because p(|) is 
+closest to p(| 0) when  = 0. The theorem tells us that the posterior will 
+become concentrated around the true value. This is only the case if in the 
+prior, p() &gt; 0, which shows the importance of choosing a prior that assigns 
+non-zero probability to every plausible value of . 
+We now present the continuous version of Theorem 3, but the proof is quite 
+technical and is omitted. 
+Theorem 4 (Posterior consistency in continuous parameter space). If  
+is a compact set,  is dened as in (18), A is a neighborhood of  , and 
+p( A) &gt; 0, then p(  A|y)  1 as m  . 
+These theorems show that asymptotically, the choice of the prior does not 
+matter as long as it assigns non-zero probability to every   . They also 
+show that if the data were generated by a member of the family of likelihood 
+models, we will converge to the correct likelihood model. If not, then we will 
+converge to the model that is closest in the KL sense. 
+We give these theorems along with a word of caution. These are asymptotic 
+results that tell us absolutely nothing about the sort of m we encounter in 
+practical applications. For small sample sizes, poor choices of the prior or 
+likelihood model can yield poor results and we must be cautious. 
+18
+ 6=</text>
+        </slide>
+        <slide>
+          <slideno>10</slideno>
+          <text>As with the MAP estimate, we can see the interplay between the data yi and 
+the prior parameters  and  in forming the posterior. As before, the exact 
+choice of  and  does not matter asymptotically, the data overwhelm the 
+prior. 
+If we knew that the Beta distribution is the conjugate prior to the Bernoulli, 
+we could have gured out the same thing faster by recognizing that 
+p(|y)  p(y|)p() = mH +1(1  )mm H +1 , (15) 
+and then realizing that by the denition of a conjugate prior, the posterior 
+must be a Beta distribution. There is exactly one Beta distribution that 
+satises (15): the one that is normalized correctly, and that is equation (14). 
+The parameters of the prior distribution ( and  in the case of the Beta 
+prior) are called prior hyperparameters . We choose them to best represent 
+our beliefs about the distribution of . The parameters of the posterior dis
+tribution (mH +  and m  mH + ) are called posterior hyperparameters . 
+Any time a likelihood model is used together with its conjugate prior, we 
+know the posterior is from the same family of the prior, and moreover we have 
+an explicit formula for the posterior hyperparameters. A table summarizing 
+some of the useful conjugate prior relationships follows. There are many more 
+conjugate prior relationships that are not shown in the following table but 
+that can be found in reference books on Bayesian statistics1 . 
+1Bayesian Data Analysis by Gelman, Carlin, Stern, and Rubin is an excellent choice. 
+11</text>
+        </slide>
+        <slide>
+          <slideno>6</slideno>
+          <text>coin tossing experiment with 6 Heads and 2 Tails on the record. If we truly 
+believed before we started ipping coins that the probability of Heads was 
+around 6/8, then this is a good idea. This can be very useful in reducing the 
+variance of the estimate for small samples. 
+For example, suppose the data contain only one coin ip, a Heads. The ML 
+estimate will be ML = 1, which predicts that we will never ip tails! How
+ever, we, the modeler, suspect that the coin is probably fair, and can assign 
+ =  = 3 (or some other number with  = ), and we get MAP = 3/5. 
+Question How would you set  and  for the coin toss under a strong prior 
+belief vs. a weak prior belief that the probability of Heads was 1/8? 
+For large samples it is easy to see for the coin ipping that the eect of the 
+prior goes to zero: 
+  lim MAP = lim ML = true. Why? 
+m m 
+Recall what know about regularization in machine learning - that data plus 
+knowledge implies generalization. The prior is the knowledge part. One 
+could interpret the MAP estimate as a regularized version of the ML estimate, 
+or a version with shrinkage. 
+Example 1. (Rare Events) The MAP estimate is particularly useful when 
+dealing with rare events. Suppose we are trying to estimate the probabil
+ity that a given credit card transaction is fraudulent. Perhaps we monitor 
+transactions for a day, and there are no fraudulent transactions. The ML 
+estimate tells us that the probability of credit card fraud is zero. The MAP 
+estimate would allow us to incorporate our prior knowledge that there is some 
+probability of fraud, we just havent seen it yet. 
+2.3 Point estimation and probabilistic linear regression 
+We will now apply point estimation to a slightly more interesting problem, 
+linear regression, and on the way will discover some very elegant connections 
+between some of the machine learning algorithms we have already seen and 
+our new probabilistic approach. Suppose now that we have m data points 
+(x1,y1),..., (xm,ym), where xi  Jd are the independent variables and yi  J 
+7</text>
+        </slide>
+        <slide>
+          <slideno>38</slideno>
+          <text>Pressing density produces the 
+MCMC estimte of the posterior den
+sity, what we are most interested in. 
+It species that the density was cre
+ated using 19,000 samples (10,000 
+for each chain minus 500 burn-in). 
+Pressing trace shows the values
+ 
+for the last 200 draws for each chain,
+ 
+so we can verify that the chains are
+ 
+stationary and that they are similar
+ 
+as a check of convergence. This im
+age is shown on the right. Pressing
+ 
+history provides a similar plot,
+ 
+with all 10,000 iterations instead of
+ 
+only the last 200. Pressing coda
+ 
+dumps the values at each iteration
+ 
+to a text le which you can then load
+ 
+into R for further analysis.
+ 
+Pressing accept shows the acceptance rate vs. iteration number, which is 
+the following gure. 
+OpenBUGS is smart enough to notice the Binomial-Beta conjugacy and uses 
+a Gibbs sampler, hence the acceptance rate is uniformly 1. 
+39</text>
+        </slide>
+        <slide>
+          <slideno>36</slideno>
+          <text>To initialize chain 2, we simply fol
+low the same procedure with the sec
+ond list, and with the number scroll 
+set to 2. At the bottom of the screen 
+it then says model initialized. 
+Alternatively, instead of loading intial values for both chains, we could have 
+pressed the button gen inits in the model specication window, which 
+generates random initial values for both chains. 
+We may now close the model specication window. 
+OpenBUGS will only store whatever results we tell it to. Before simulating 
+the chains, we must tell OpenBUGS to store the values of theta that it 
+simulates. 
+To specify which variables
+ 
+to store, go Inference -&gt;
+ 
+Samples. Here we set
+ 
+nodes, which is the Open-
+BUGS term for stored vari
+ables. To tell it to store
+ 
+theta, we type theta into
+ 
+the node entry box, and
+ 
+press set below. The
+ 
+other entry boxes will be
+ 
+used for things like burn-in
+ 
+and thinning, which we will 
+worry about later. 
+Now we are ready to simulate the chains! We may close the sample monitor 
+Screenshots  OpenBUGS. Some rights reserved; the OpenBUGS software is available under the GNU
+General Public License. This content is excluded from our Creative Commons license. For more information,see http://ocw.mit.edu/fairuse.
+37</text>
+        </slide>
+      </slides>
+      <videos/>
+    </lecture>
+    <lecture>
+      <lecture_title>Clustering (PDF)</lecture_title>
+      <lecture_pdf_url>https://ocw.mit.edu/courses/15-097-prediction-machine-learning-and-statistics-spring-2012/resources/mit15_097s12_lec05/</lecture_pdf_url>
+      <lectureno>5</lectureno>
+      <slides>
+        <slide>
+          <slideno>0</slideno>
+          <text>Clustering 
+MIT 15.097 Course Notes  
+Cynthia Rudin and S eyda Ertekin  
+Credit: Dasgupta, Hastie, Tibshirani, Friedman 
+Clustering (a.k.a. data segmentation) Lets segment a collection of examples 
+into clusters so that objects within a cluster are more closely related to one 
+another than objects assigned to dierent clusters. We want to assign each ex
+ample xi to a cluster k  {1, ...., K}. 
+The K-Means algorithm is a very popular way to do this. It assumes points lie 
+in Euclidean space. 
+nInput : Finite set {x }m i 1=1, xi  R 
+Output : z1, ..., zK cluster centers 
+Goal: Minimize  
+cost(z 1, ..., zK ) := min Ixi  zkI2
+2. 
+k i 
+The choice of the squared norm is fortuitous, it really helps simplify the math! 
+nIf were given points {zk}k, they can induce a Voronoi p artition of R : they 
+break the space into cells where each cell corresponds to one of the zks. That 
+is, each cell contains the region of space whose nearest representative is zk. 
+Draw a picture  
+We can look at the examples in each of these regions of space, which are the 
+clusters. Specically, 
+Ck := {xi : the closest representative to xi is zk}. 
+Lets compute the cost another way. Before, we summed over examples, and 
+then picked the right representative zk for each example. This time, well sum 
+over clusters, and look at all the examples in that cluster: 
+  
+cost(z 1, ..., zK ) = Ixi  zkI22. 
+k {i:x iC k} 
+1</text>
+        </slide>
+        <slide>
+          <slideno>4</slideno>
+          <text>Example of how K-Means could converge to the wrong thing  
+How might you make K-Means more likely to converge to the optimal?  
+How might you choose K?  (Why cant you measure test error?)  
+Other ways to evaluate clusters (cluster validation) 
+There are loads of cluster validity measures, alternatives to the cost. Draw a picture 
+	 Davies-Baldwin Index - looks at average intracluster distance (within-cluster 
+distance) to the centroid (want it to be small), and intercluster distances 
+between centroids (want it to be large). 
+	 Dunn Index - looks pairwise at minimal intercluster distance (want it to be 
+large) and maximal intracluster distance (want it to be small). 
+Example: Microarray data. Have 6830 genes (rows) and 64 patients (columns). 
+The color of each box is a measurement of the expression level of a gene. The 
+expression level of a gene is basically how much of its special protein it is pro
+ducing. The physical chip itself doesnt actually measure protein levels, but a 
+proxy for them (which is RNA, which sticks to the DNA on the chip). If the 
+color is green, it means low expression levels, if the color is red, it means higher 
+expression levels. Each patient is represented by a vector, which is the expression 
+level of their genes. Its a column vector with values given in color: 
+5</text>
+        </slide>
+        <slide>
+          <slideno>8</slideno>
+          <text>MIT OpenCourseWare
+http://ocw.mit.edu
+15.097  Prediction: Machine Learning and Statistics
+Spring 2012
+ 
+  For information about citing these materials or our Terms of Use, visit: http://ocw.mit.edu/terms .</text>
+        </slide>
+        <slide>
+          <slideno>3</slideno>
+          <text>The K-Means Algorithm 
+Choose the value of K before you start. 
+nInitialize centers z1, ..., zK  R and clusters C1, ..., CK in any way. 
+Repeat until there is no further change in cost: 
+for each k: Ck  {x i : the closest representative is zk}
+for each k: zk = mean( Ck) 
+This is simple enough, and takes O(Km ) time per iteration. 
+PPT demo  
+Of course, it doesnt always converge to the optimal solution. 
+But does the cost converge? 
+Lemma 3. During the course of the K-Means algorithm, the cost monotonically 
+decreases. 
+(t) (t) (t) (t)Proof. Let z1 , ..., zK , C1 , ..., CK denote the centers and clusters at the start of 
+the tth iterate of K-Means. The rst step of the iteration assigns each data point 
+to its closest center, therefore, the cluster assignment is better: 
+(t+1) (t+1) (t) (t) (t) (t) (t) (t)cost(C1 , ..., CK , z1 , ..., zK )  cost(C1 , ..., CK , z1 , ..., zK ). 
+On the second step, each cluster is re-centered at its mean, so the representatives 
+are better. By Lemma 1, 
+(t+1) (t+1) (t+1) (t+1) (t+1) (t+1) (t) (t)cost(C1 , ..., CK , z1 , ..., zK )  cost(C1 , ..., CK , z1 , ..., zK ). 
+ 
+So does the cost converge?  
+4</text>
+        </slide>
+        <slide>
+          <slideno>6</slideno>
+          <text>Its pretty good at keeping the same cancers in the same cluster. The two breast 
+cancers in the 2nd cluster were actually melanomas that metastasized. 
+Generally we cluster genes, not patients. Would really like to get something like 
+this in practice: 
+Courtesy of the Rockefeller University Press. Used with permission.
+Figure 7 from Rumfelt, Lynn, et al. "Lineage Specification and Plasticity in CD19- Early B
+cell Precursors. " Journal of Experimental Medicine 203 (2006): 675-87.
+where each row is a gene, and the columns are dierent immune cell types. 
+A major issue with K-means: as K changes, cluster membership can change 
+arbitrarily. A solution is Hierarchical Clustering. 
+	 clusters at the next level of the hierarchy are created by merging clusters at 
+the next lowest level. 
+	 lowest level: each cluster has 1 example 
+	 highest level: theres only 1 cluster, containing all of the data. 
+7</text>
+        </slide>
+        <slide>
+          <slideno>5</slideno>
+          <text>source unknown. All rights reserved. This content is excluded from our Creative 
+Commons license. For more information, see http://ocw.mit.edu/fairuse.
+Each patient (column) has some type of cancer. Want to cluster patients to see 
+whether patients with the same types of cancers cluster together. So each cluster 
+center is an average patient expression level vector for some type of cancer. 
+Its also a column vector 
+Hm, theres no kink in this gure. Compare K = 3 solution with true clusters:  
+6  Sum of Squares (104)
+Number of Clusters K224
+4 6 8 10202226
+1618
+3 5 0 0 0 0
+2 0 0 2 6 2
+2 0 7 0 0 0
+1 7 6 2 9 1
+7 2 0 0 0 0
+0 0 0 0 0 0Melanoma NSCLC Ovarian Prostate Renal UnknownBreast CNS Colon K562 Leukemia MCF7
+1
+2
+3
+1
+2
+3ClusterCluster
+Images by MIT OpenCourseWare, adapted from Hastie et al., The Elements of Statistical Learning,
+Springer, 2009.</text>
+        </slide>
+        <slide>
+          <slideno>7</slideno>
+          <text>Application Slides  
+8  LEUKEMIALEUKEMIA
+LEUKEMIALEUKEMIALEUKEMIA
+LEUKEMIA
+K562B-reproK562A-reproBREASTBREASTBREASTBREASTBREAST
+BREAST
+MELANOMAMELANOMAMELANOMAMELANOMAMELANOMAMELANOMAMELANOMAMELANOMA
+RENALRENALRENALRENALRENALRENALRENALRENALRENAL
+NSCLCNSCLCNSCLCNSCLCNSCLCNSCLCNSCLCNSCLCNSCLC
+OVARIANOVARIANOVARIAN
+UNKNOWNOVARIANOVARIANOVARIAN
+PROSTATEPROSTATECNSCNS
+CNSCNSCNSCOLONCOLONCOLONCOLONCOLONCOLONCOLON
+MCF7A-reproMCF7D-repro
+BREAST
+Image by MIT OpenCourseWare, adapted from Hastie et al., The Elements of 
+Statistical Learning, Springer, 2009.</text>
+        </slide>
+      </slides>
+      <videos/>
+    </lecture>
+    <lecture>
+      <lecture_title>Logistic regression (PDF)</lecture_title>
+      <lecture_pdf_url>https://ocw.mit.edu/courses/15-097-prediction-machine-learning-and-statistics-spring-2012/resources/mit15_097s12_lec09/</lecture_pdf_url>
+      <lectureno>9</lectureno>
+      <slides>
+        <slide>
+          <slideno>4</slideno>
+          <text>MIT OpenCourseWare
+http://ocw.mit.edu
+15.097 Prediction: Machine Learning and Statistics
+Spring 2012
+For information about citing these materials or our Terms of Use, visit: http://ocw.mit.edu/terms .</text>
+        </slide>
+      </slides>
+      <videos/>
+    </lecture>
+    <lecture>
+      <lecture_title>Na&#239;ve Bayes (PDF)</lecture_title>
+      <lecture_pdf_url>https://ocw.mit.edu/courses/15-097-prediction-machine-learning-and-statistics-spring-2012/resources/mit15_097s12_lec07/</lecture_pdf_url>
+      <lectureno>7</lectureno>
+      <slides>
+        <slide>
+          <slideno>4</slideno>
+          <text>MIT OpenCourseWare
+http://ocw.mit.edu
+15.097 Prediction: Machine Learning and Statistics
+Spring 2012
+For information about citing these materials or our Terms of Use, visit: http://ocw.mit.edu/terms .</text>
+        </slide>
+      </slides>
+      <videos/>
+    </lecture>
+    <lecture>
+      <lecture_title>R for machine learning (PDF)</lecture_title>
+      <lecture_pdf_url>https://ocw.mit.edu/courses/15-097-prediction-machine-learning-and-statistics-spring-2012/resources/mit15_097s12_lec02/</lecture_pdf_url>
+      <lectureno>2</lectureno>
+      <slides>
+        <slide>
+          <slideno>4</slideno>
+          <text>&gt; norm_vec &lt;- rnorm(n=10, mean=5, sd=2)
+ 
+&gt; exp_vec &lt;- rexp(n=100, rate=3)
+ 
+&gt; pois_vec &lt;- rpois(n=50, lambda=6)
+ 
+&gt; unif_vec &lt;- runif(n=20, min=1, max=9)
+ 
+&gt; bin_vec &lt;- rbinom(n=20, size=1000, prob=0.7)
+ 
+Suppose you have a vector v of numbers. To randomly sample, say, 25 of the numbers, use the sample function: 
+&gt; sample(v, size=25, replace=FALSE) 
+If you want to sample with replacement, set the replace argument to TRUE. 
+If you want to generate the same random vector each time you call one of the random functions listed above, 
+pick a seed for the random number generator using set.seed, for example set.seed(100). 
+3.3 Analyzing data 
+To compute the mean, variance, standard deviation, minimum, maximum, and sum of a set of numbers, use mean, 
+var, sd, min, max,a n d sum. There are also rowSum and colSum to nd the row and column sums for a matrix. 
+To nd the component-wise absolute value and square root of a set of numbers, use abs and sqrt. Correlation 
+and covariance for two vectors are computed with cor and cov respectively. 
+Like other programming languages, you can write if statements, and for and while loops. For instance, here 
+is a simple loop that prints out even numbers between 1 and 10 (%% is the modulo operation): 
+&gt; for (i in 1:10){ 
++ i f( i% %2= =0 ) { 
++ cat(paste(i, "is even.\n", sep=" ")) # use paste to concatenate strings 
++ } 
++} 
+The 1:10 part of the for loop can be specied as a vector. For instance, if you wanted to loop over indices 1, 2, 
+3, 5, 6, and 7, you could type for (i in c(1:3,5:7)). 
+To pick out the indices of elements in a vector that satisfy a certain property, use which, for example: 
+&gt; which(v &gt;= 0) # indices of nonnegative elements of v 
+&gt; v[which(v &gt;= 0)] # nonnegative elements of v 
+3.4 Plotting data 
+We use the Habermans Survival data (read into data frame dataset) to demonstrate plotting functions. Each 
+row of data represents a patient who had surgery for breast cancer. The three features are: the age of the patient 
+at the time of surgery, the year of the surgery, and the number of positive axillary nodes detected. Here we plot: 
+1. Scatterplot of the rst and third features, 
+2. Histogram of the second feature, 
+3. Boxplot of the rst feature. 
+To put all three plots in a 1  3m a t r i x , u s e par(mfrow=c(1,3)). To put each plot in its own window, use 
+win.graph() to create new windows. 
+&gt; plot(dataset[,1], dataset[,3], main="Scatterplot", xlab="Age", ylab="Number of Nodes", pch=20)
+ 
+&gt; hist(dataset[,2], main="Histogram", xlab="Year", ylab="Count")
+ 
+&gt; boxplot(dataset[,1], main="Boxplot", xlab="Age")
+ 
+5</text>
+        </slide>
+        <slide>
+          <slideno>3</slideno>
+          <text>&gt; matrix20 &lt;- matrix(v, nrow=4, ncol=5, byrow=TRUE) 
+&gt; colnames(matrix20) &lt;- c("Col1","Col2","Col3","Col4","Col5") 
+&gt; rownames(matrix20) &lt;- c("Row1","Row2","Row3","Row4") 
+You can type colnames(matrix20)/ rownames(matrix20) at any point to see the column/row names for matrix20. 
+To access a particular element in a vector or matrix, index it by number or by name with square braces: 
+&gt; v[3] # third element of v 
+&gt; matrix20[,"Col2"] # second column of matrix20 
+&gt; matrix20["Row4",] # fourth row of matrix20 
+&gt; matrix20["Row3","Col1"] # element in third row and first column of matrix20 
+&gt; matrix20[3,1] # element in third row and first column of matrix20 
+You can nd the length of a vector or number of rows or columns in a matrix using length, nrow, and ncol. 
+&gt; length(v1) 
+&gt; nrow(matrix20) 
+&gt; ncol(matrix20) 
+Since you will be working with external datasets, you will need functions to read in data tables from text les. 
+For instance, suppose you wanted to read in the Habermans Survival dataset (from the UCI Repository). Use 
+the read.table function: 
+dataset &lt;- read.table("C:\\Datasets\\haberman.csv", header=FALSE, sep=",") 
+The rst argument is the location (full path) of the le. If the rst row of data contains column names, then the 
+second argument should be header = TRUE, and otherwise it is header = FALSE. The third argument contains 
+the delimiter. If the data are separated by spaces or tabs, then the argument is s e p="" and s e p="\t" 
+respectively. The default delimiter (if you do not include this argument at all) is white space (one or more 
+spaces, tabs, etc.). Alternatively, you can use setwd to change directory and use only the le name in the 
+read.table function. If the delimiter is a comma, you can also use read.csv and leave o the sep argument: 
+dataset &lt;- read.csv("C:\\Datasets\\haberman.csv", header=FALSE) 
+Use write.table to write a table to a le. Type ?write.table to see details about this function. If you need to 
+write text to a le, use the cat function. 
+A note about matrices versus data frames: A data frame is similar to a matrix, except it can also include 
+non-numeric attributes. For example, there may be a column of characters. Some functions require the data 
+passed in to be in the form of a data frame, which would be stated in the documentation. You can always coerce 
+a matrix into a data frame using as.data.frame. See Section 3.6 for an example. 
+A note about factors: A factor is essentially a vector of categorical variables, encoded using integers. For 
+instance, if each example in our dataset has a binary class attribute, say 0 or 1, then that attribute can be 
+represented as a factor. Certain functions require one of their arguments to be a factor. Use as.factor to encode 
+a vector as a factor. See Sections 4.5 and 4.9 for examples. 
+3.2 Sampling from probability distributions 
+There are a number of functions for sampling from probability distributions. For example, the following commands 
+generate random vectors of the user-specied length n from distributions (normal, exponential, poisson, uniform, 
+binomial) with user-specied parameters. There are other distributions as well. 
+4</text>
+        </slide>
+        <slide>
+          <slideno>2</slideno>
+          <text>You are encouraged to download your own datasets from the UCI site or other sources, and to use R to study the 
+data. Note that for all except the Housing and Mushroom datasets, there is an additional class attribute column 
+that is not included in the column counts. Also note that if you download the Mushroom dataset from the UCI 
+site, it has 22 categorical features; in our version, these have been transformed into 119 binary features. 
+3 Basic Functions 
+In this section, we cover how to create data tables, and analyze and plot data. We demonstrate by example how 
+to use various functions. To see the value(s) of any variable, vector, or matrix at any time, simply enter its name 
+in the command line; you are encouraged to do this often until you feel comfortable with how each data structure 
+is being stored. To see all the objects in your workspace, type ls(). Also note that the arrow operator &lt;-sets 
+the left-hand side equal to the right-hand side, and that a comment begins with #. 
+3.1 Creating data 
+To create a variable x and set it equal to 1, type x&lt; -1. Now suppose we want to generate the vector [1, 2, 3, 4, 5], 
+and call the vector v. There are a couple dierent ways to accomplish this: 
+&gt;v&lt; -1 : 5 
+&gt; v &lt;- c(1,2,3,4,5) # c can be used to concatenate multiple vectors 
+&gt; v &lt;- seq(from=1,to=5,by=1) 
+These can be row vectors or column vectors. To generate a vector v0 of six zeros, use either of the following. 
+Clearly the second choice is better if you are generating a long vector. 
+&gt; v0 &lt;- c(0,0,0,0,0,0) 
+&gt; v0 &lt;- seq(from=0,to=0,length.out=6) 
+We can combine vectors into matrices using cbind and rbind. For instance, if v1, v2, v3,a n d v4 are vectors of 
+the same length, we can combine them into matrices, using them either as columns or as rows: 
+&gt; v1 &lt;- c(1,2,3,4,5) 
+&gt; v2 &lt;- c(6,7,8,9,10) 
+&gt; v3 &lt;- c(11,12,13,14,15) 
+&gt; v4 &lt;- c(16,17,18,19,20) 
+&gt; cbind(v1,v2,v3,v4) 
+&gt; rbind(v1,v2,v3,v4) 
+Another way to create the second matrix is to use the matrix function to reshape a vector into a matrix of the 
+right dimensions. 
+&gt; v &lt;- seq(from=1,to=20,by=1) 
+&gt; matrix(v, nrow=4, ncol=5) 
+Notice that this is not exactly rightwe need to specify that we want to ll in the matrix by row. 
+&gt; matrix(v, nrow=4, ncol=5, byrow=TRUE) 
+It is often helpful to name the columns and rows of a matrix using colnames and rownames. In the following, 
+rst we save the matrix as matrix20, and then we name the columns and rows. 
+3</text>
+        </slide>
+        <slide>
+          <slideno>6</slideno>
+          <text>4.1 Prediction 
+For most of the following algorithms (as well as linear regression), we would in practice rst generate the model 
+using training data, and then predict values for test data. To make predictions, we use the predict function. To 
+see documentation, go to the help page for the algorithm, and then scroll through the Contents menu on the left 
+side to nd the corresponding predict function. Or simply type ?predict.name ,w h e r e name is the function 
+corresponding to the algorithm. Typically, the rst argument is the variable in which you saved the model, and 
+the second argument is a matrix or data frame of test data. Note that when you call the function, you can just 
+type predict instead of predict.name . For instance, if we were to predict for the linear regression model above, 
+and x1 
+test and x2 
+test are vectors containing test data, we can use the command 
+&gt; predicted_values &lt;- predict(lm_model, newdata=as.data.frame(cbind(x1_test, x2_test))) 
+4.2 Apriori 
+To run the Apriori algorithm, rst install the arules package and load it. See Section 1.2 for installing and 
+loading new packages. Here is an example of how to run the Apriori algorithm using the Mushroom dataset. 
+Note that the dataset must be a binary incidence matrix; the column names should correspond to the items 
+that make up the transactions. The following commands print out a summary of the results and a list of the 
+generated rules. 
+&gt; dataset &lt;- read.csv("C:\\Datasets\\mushroom.csv", header = TRUE)
+ 
+&gt; mushroom_rules &lt;- apriori(as.matrix(dataset), parameter = list(supp = 0.8, conf = 0.9))
+ 
+&gt; summary(mushroom_rules)
+ 
+&gt; inspect(mushroom_rules)
+ 
+You can modify the parameter settings depending on your desired support and condence thresholds. 
+4.3 Logistic Regression 
+You do not need to install an extra package for logistic regression. Using the same notation as in Section 3.6, the 
+command is: 
+&gt; glm_mod &lt;-glm(y  x1+x2, family=binomial(link="logit"), data=as.data.frame(cbind(y,x1,x2))) 
+4.4 K-Means Clustering 
+You do not need an extra package. If X is the data matrix and m is the number of clusters, then the command is: 
+&gt; kmeans_model &lt;- kmeans(x=X, centers=m) 
+4.5 k-Nearest Neighbor Classication 
+Install and load the class package. Let X 
+train and X 
+test be matrices of the training and test data respectively, 
+and labels be a binary vector of class attributes for the training examples. For k equal to K, the command is: 
+&gt; knn_model &lt;- knn(train=X_train, test=X_test, cl=as.factor(labels), k=K) 
+Then knn 
+model is a factor vector of class attributes for the test set. 
+7</text>
+        </slide>
+        <slide>
+          <slideno>7</slideno>
+          <text>4.6 Nave Bayes 
+Install and load the e1071 package. Using the same notation as in Section 3.6, the command is: 
+&gt; nB_model &lt;- naiveBayes(y  x1 + x2, data=as.data.frame(cbind(y,x1,x2))) 
+4.7 Decision Trees (CART) 
+CART is implemented in the rpart package. Again using the formula, the command is
+ 
+&gt; cart_model &lt;- rpart(y  x1 + x2, data=as.data.frame(cbind(y,x1,x2)), method="class")
+ 
+You can use plot.rpart and text.rpart to plot the decision tree.
+ 
+4.8 AdaBoost 
+There are a number of dierent boosting functions in R. We show here one implementation that uses decision 
+trees as base classiers. Thus the rpart package should be loaded. Also, the boosting function ada is in the ada 
+package. Let X be the matrix of features, and labels be a vector of 0-1 class labels. The command is 
+&gt; boost_model &lt;- ada(x=X, y=labels) 
+4.9 Support Vector Machines (SVM) 
+The SVM algorithm is in the e1071 package. Let X be the matrix of features, and labels be a vector of 0-1 class 
+labels. Let the regularization parameter be C. Use the following commands to generate the SVM model and view 
+details: 
+&gt; svm_model &lt;- svm(x=X, y=as.factor(labels), kernel ="radial", cost=C) 
+&gt; summary(svm_model) 
+There are a variety of parameters such as the kernel type and value of the C parameter, so check the documentation 
+on how to alter them. 
+8</text>
+        </slide>
+        <slide>
+          <slideno>8</slideno>
+          <text>MIT OpenCourseWare
+http://ocw.mit.edu
+15.097 Prediction: Machine Learning and Statistics
+Spring 2012
+For information about citing these materials or our Terms of Use, visit: http://ocw.mit.edu/terms .</text>
+        </slide>
+        <slide>
+          <slideno>5</slideno>
+          <text>Scatterplot Histogram Boxplot 0 1 0 2 0 3 0 4 0 5 0 Number of Nodes
+Count 
+0 1 02 03 04 05 06 0 
+30 40 50 60 70 80 
+30 40 50 60 70 80 58 60 62 64 66 68 
+Age Year Age 
+Figure 1: Plotting examples. 
+The pch argument in the plot function can be varied to change the marker. Use points and lines to add extra 
+points and lines to an existing plot. You can save the plots in a number of dierent formats; make sure the plot 
+window is on top, and go to File then Save as. 
+3.5 Formulas 
+Certain functions have a formula as one of their arguments. Usually this is a way to express the form of a 
+model. Here is a simple example. Suppose you have a response variable y and independent variables x1, x2,a n d 
+x3.T o e x p r e s s t h a t y depends linearly on x1, x2,a n d x3, you would use the formula y  x 1+x 2+x 3 ,w h e r e 
+y, x1, x2,a n d x3 are also column names in your data matrix. See Section 3.6 for an example. Type ?formula 
+for details on how to capture nonlinear models. 
+3.6 Linear regression 
+One of the most common modeling approaches in statistical learning is linear regression. In R, use the lm function 
+to generate these models. The general form of a linear regression model is 
+Y = 0 + 1X1 + 2X2 + + kXk + , 
+where  is normally distributed with mean 0 and some variance 2 . 
+Let y be a vector of dependent variables, and x1 and x2 be vectors of independent variables. We want to nd 
+the coecients of the linear regression model Y = 0 + 1X1 + 2X2 + . The following commands generate the 
+linear regression model and give a summary of it. 
+&gt; lm_model &lt;- lm(y  x1 + x2, data=as.data.frame(cbind(y,x1,x2))) 
+&gt; summary(lm_model) 
+The vector of coecients for the model is contained in lm model$coefficients. 
+4 Machine Learning Algorithms 
+We give the functions corresponding to the algorithms covered in class. Look over the documentation for 
+each function on your own as only the most basic details are given in this tutorial. 
+6</text>
+        </slide>
+        <slide>
+          <slideno>1</slideno>
+          <text>e1071. To install this package, click Packages in the top menu, then Install package(s)... When asked to 
+select a CRAN mirror, choose a location close to you, such as Canada (ON). Finally select e1071. To load 
+the package, type library(e1071) at the command prompt. Note that you need to install a package only 
+once, but that if you want to use it, you need to load it each time you start R. 
+1.3 Running code 
+You could use R by simply typing everything at the command prompt, but this does not easily allow you to save, 
+repeat, or share your code. Instead, go to File in the top menu and click on New script. This opens up a new 
+window that you can save as a .R le. To execute the code you type into this window, highlight the lines you 
+wish to run, and press Ctrl-R on a PC or Command-Enter on a Mac. If you want to run an entire script, make 
+sure the script window is on top of all others, go to Edit, and click Run all. Any lines that are run appear in 
+red at the command prompt. 
+1 . 4 H e l pi nR 
+The functions in R are generally well-documented. To nd documentation for a particular function, type ? 
+followed directly by the function name at the command prompt. For example, if you need help on the sum 
+function, type ?sum. The help window that pops up typically contains details on both the input and output for 
+the function of interest. If you are getting errors or unexpected output, it is likely that your input is 
+insucient or invalid, so use the documentation to gure out the proper way to call the function. 
+If you want to run a certain algorithm but do not know the name of the function in R, doing a Google search 
+of R plus the algorithm name usually brings up information on which function to use. 
+2 Datasets 
+When you test any machine learning algorithm, you should use a variety of datasets. R conveniently comes with 
+its own datasets, and you can view a list of their names by typing data() at the command prompt. For instance, 
+you may see a dataset called cars. Load the data by typing data(cars), and view the data by typing cars. 
+Another useful source of available data is the UCI Machine Learning Repository, which contains a couple 
+hundred datasets, mostly from a variety of real applications in science and business. The repository is located at 
+http://archive.ics.uci.edu/ml/datasets.html . These data are often used by machine learning researchers 
+to develop and compare algorithms. We have downloaded a number of datasets for your use, and you can nd 
+the text les  . These include: 
+Name Rows Cols Data 
+Iris 150 4 Real 
+Wine 178 13 Integer, Real 
+Habermans Survival 306 3 Integer 
+Housing 506 14 Categorical, Integer, Real 
+Blood Transfusion Service Center 748 4 Integer 
+Car Evaluation 1728 6 Categorical 
+Mushroom 8124 119 Binary 
+Pen-based Recognition of Handwritten Digits 10992 16 Integer 
+2 in the Datasets section</text>
+        </slide>
+        <slide>
+          <slideno>0</slideno>
+          <text>R for Machine Learning 
+Allison Chang 
+1 Introduction 
+It is common for todays scientic and business industries to collect large amounts of data, and the ability to 
+analyze the data and learn from it is critical to making informed decisions. Familiarity with software such as R 
+allows users to visualize data, run statistical tests, and apply machine learning algorithms. Even if you already 
+know other software, there are still good reasons to learn R: 
+1.	 R is free. If your future employer does not already have R installed, you can always download it for free, 
+unlike other proprietary software packages that require expensive licenses. No matter where you travel, you 
+can have access to R on your computer. 
+2.	 R gives you access to cutting-edge technology. Top researchers develop statistical learning methods 
+in R, and new algorithms are constantly added to the list of packages you can download. 
+3.	 R is a useful skill. Employers that value analytics recognize R as useful and important. If for no other 
+reason, learning R is worthwhile to help boost your resume. 
+Note that R is a programming language, and there is no intuitive graphical user interface with buttons you can 
+click to run dierent methods. However, with some practice, this kind of environment makes it easy to quickly 
+code scripts and functions for various statistical purposes. To get the most out of this tutorial, follow the examples 
+by typing them out in R on your own computer. A line that begins with &gt; is input at the command prompt. We 
+do not include the output in most cases, but you should try out the commands yourself and see what happens. 
+If you type something at the command line and decide not to execute, press the down arrow to clear the line; 
+pressing the up arrow gives you the previous executed command. 
+1.1 Getting Started 
+The R Project website is http://www.r-project.org/ . In the menu on the left, click on CRAN under Download, 
+Packages. Choose a location close to you. At MIT, you can go with University of Toronto under Canada. This 
+leads you to instructions on how to download R for Linux, Mac, or Windows. 
+Once you open R, to gure out your current directory, type getwd(). To change directory, use setwd (note 
+that the C: notation is for Windows and would be dierent on a Mac): 
+&gt;	 setwd("C:\\Datasets") 
+1.2 Installing and loading packages 
+Functions in R are grouped into packages, a number of which are automatically loaded when you start R. These 
+include base, utils, graphics, and stats. Many of the most essential and frequently used functions come 
+in these packages. However, you may need to download additional packages to obtain other useful functions. For 
+example, an important classication method called Support Vector Machines is contained in a package called 
+1</text>
+        </slide>
+      </slides>
+      <videos/>
+    </lecture>
+    <lecture>
+      <lecture_title>Convex optimization (PDF)</lecture_title>
+      <lecture_pdf_url>https://ocw.mit.edu/courses/15-097-prediction-machine-learning-and-statistics-spring-2012/resources/mit15_097s12_lec11/</lecture_pdf_url>
+      <lectureno>11</lectureno>
+      <slides>
+        <slide>
+          <slideno>4</slideno>
+          <text>min L(x, , )  min P (x) . 
+x x"    "    
+ p D(, ) 
+ 
+The lemma shows that given any dual feasible (, ), the dual objective D(, ) 
+provides a lower bound on the optimal value p of the primal problem. 
+Since the dual problem is max, D(, ), the dual problem can be seen as a 
+search for the tightest possible lower bound on p . This gives rise to a property 
+of any primal and dual optimization problem pairs known as weak duality : 
+Lemma 2. For any pair of primal and dual problems, d p . 
+Rewritten, 
+max min L(x, , )  min max L(x, , ). 
+,:i0,i x x ,:i0,i 
+Intuitively, this makes sense: on the left, whatever the ,  player does, the x 
+player gets to react to bring the value down. On the right, whatever the x player 
+does, the ,  player reacts to bring the value up. And of course the player who 
+plays last has the advantage. 
+Prove it? (Hint: place your hand over the leftmost max to see it.) 
+, 
+For some primal/dual optimization problems, an even stronger result holds, 
+known as strong duality . 
+Lemma 3 (Strong Duality). For any pair of primal and dual problems which 
+satisfy certain technical conditions called constraint qualications , then d = p . 
+A number of dierent constraint qualications exist, of which the most com
+monly invoked is Slaters condition : a primal/dual problem pair satisfy Slaters 
+condition if there exists some feasible primal solution x for which all inequality 
+constraints are strictly satised (i.e. gi(x) &lt; 0,i = 1 ...,m ). In practice, nearly 
+all convex problems satisfy some type of constraint qualication, and hence the 
+primal and dual problem have the same optimal value. 
+5</text>
+        </slide>
+        <slide>
+          <slideno>1</slideno>
+          <text>but for   0 the penalty is in the right direction (we are penalized for con
+straints being dissatised, and u is a lower bound on 1[gi(x)&gt;0] ). 
+Similarly, u is a lower bound for   1[u  no matter what the sign of  is. 
+For each constraint i, replacing   1[u0] by u, where   0 in the objective, 
+and similarly replacing the   1[u  term by u, gives the Lagrangian 
+m pm m 
+L(x, , ) = f(x) + igi(x) + ihi(x). (2) 
+i=1 i=1 
+We refer to x  Rn as the primal variables of the Lagrangian. The second ar
+gument of the Lagrangian is a vector   Rm . The third is a vector   Rp. 
+Elements of  and  are collectively known as the dual variables of the La
+grangian, or Lagrange multipliers . 
+If we take the maximum of L with respect to  and , where i  0, we recover 
+OPT. Lets show this. 
+For a particular x, lets say the constraints are satised. So gi(x)  0, and 
+to make the term igi(x) as high as it can be, we set i = 0 i. Also, since 
+hi(x) = 0 i, the is can be anything and it wont change L. To summarize, 
+if the constraints are satised, the value of max, L is just f(x), which is the 
+same as the value of P . 
+2
+ 6=0]
+6=0]</text>
+        </slide>
+        <slide>
+          <slideno>6</slideno>
+          <text>One interesting consequence of strong duality is next: 
+Lemma 3 (Complementary Slackness) . If strong duality holds, then i  gi(x ) = 
+0 for each i = 1 ...,m . 
+Proof. Suppose that strong duality holds. 
+ p = d 	 =  D(  ,   ) 
+= min L(x,   ,   ) 
+x 
+  L(x ,   ,   ) 
+  max L(x , , ) 
+,;i0,i 
+ =  P (x  ) = f(x  ) = p . 
+The second last inequality is just from (1). This means that all the inequalities 
+are actually equalities. In particular, 
+m	 pm m  L(x ,   ,   ) = f(x  ) + i  gi(x  ) + i  hi(x  ) = f(x  ). 
+i	 i 
+So, 
+m	 pm m 
+i  gi(x  ) + i  hi(x  ) = 0. 
+i i 
+ Since x is primal feasible, each hi(x ) = 0, so the second terms are all 0. 
+ Since i s are dual feasible,  0, and since x is primal feasible, gi(x ) i 
+0.
+ 
+So each i  gi(x )  0, which means they are all 0.
+ 
+i  gi(x  ) = 0 i = 1, . . . , m. 
+We can rewrite complementary slackness this way: 
+i  &gt; 0 = gi(x  ) = 0 (active constraints) 
+gi(x  ) &lt; 0 =   = 0.i 
+In the case of support vector machines (SVMs), active constraints are known as 
+support vectors. 
+7</text>
+        </slide>
+        <slide>
+          <slideno>8</slideno>
+          <text>MIT OpenCourseWare
+http://ocw.mit.edu
+15.097 Prediction: Machine Learning and Statistics
+Spring 2012
+For information about citing these materials or our Terms of Use, visit: http://ocw.mit.edu/terms .</text>
+        </slide>
+        <slide>
+          <slideno>2</slideno>
+          <text>If any constraint is not satised, then we can make L(x, , ) innite by ddling 
+with i or i, and then again the value of max, L is the same as the value of P . 
+How?
+ 
+So we have formally: 
+P (x) = max L(x, , ). 
+,;i0,i 
+Remember that we want to minimize P (x). This problem is the primal problem . 
+Specically, the primal problem is: 
+  
+min 
+x max 
+,:i0,i L(x, , ) = min 
+x P (x). (3) 
+In the equation above, the function P : Rn  R is called the primal objective .
+ 
+We say that a point x  Rn is primal feasible if gi(x)  0,i = 1,...,m and
+ 
+hi(x) = 0,i = 1,...,p . The vector x  Rn denotes the solution of (3), and 
+ p = P (x ) denotes the optimal value of the primal objective. 
+It turns out that P (x) is a convex function of x. Why is that? First, f(x) 
+is convex. Each of the gi(x)s are convex functions in x, and since the is are 
+constrained to be nonnegative, then igi(x) is convex in x for each i. Similarly, 
+each ihi(x) is convex in x (regardless of the sign of i) since hi(x) is linear. 
+Since the sum of convex functions is always convex, L is convex for each  and 
+. Finally, the maximum of a collection of convex functions is again a convex 
+function, so we can conclude that P (x) = max, L(, , x) is a convex function 
+of x. 
+By switching the order of the minimization and maximization above, we obtain 
+an entirely dierent optimization problem. 
+3</text>
+        </slide>
+        <slide>
+          <slideno>3</slideno>
+          <text>The dual problem is: 
+  
+max min L(x, , ) = max D(, ). (4),:i0,i x ,:i0,i 
+Function D : Rm  Rp  R is called the dual objective . 
+We say that (, ) are dual feasible if i  0,i = 1 ...,m . 
+Denote ( , )  Rm  Rp as the solution of (4), and d =  D( , ) denote 
+the optimal value of the dual objective. 
+The dual objective D(, ), is a concave function of  and . The dual objec
+tive is:   m pm m 
+D(, ) = min L(x, , ) = min f(x) + igi(x) + ihi(x). 
+x x
+i=1 i=1 
+For any xed value of x, the quantity inside the brackets is an ane function 
+of  and , and hence, concave. The f(x) is just a constant as far as  and 
+ are concerned. Since the minimum of a collection of concave functions is also 
+concave, we can conclude that D(, ) is a concave function of  and . 
+Interpreting the Dual Problem 
+We make the following observation: 
+Lemma 1. If (, ) are dual feasible, then D(, )  p 
+Proof. Because of the lower bounds we made, namely 
+igi(x)    1[gi(x)0] 
+ihi(x)    1[hi(x  
+we have, when  and  are dual feasible, 
+L(x, , )  P (x) for all x. 
+Taking the min x of both sides: 
+4
+ )6=0]</text>
+        </slide>
+        <slide>
+          <slideno>0</slideno>
+          <text>Convex Optimization Overview
+ 
+MIT 15.097 Course Notes
+ 
+Cynthia Rudin
+ 
+Credit: Boyd, Ng and Knowles 
+Thanks: Ashia Wilson 
+We want to solve dierentiable convex optimization problems of this form, which 
+we call OPT: 
+minimize	 f(x) 
+xRn 
+subject to	 gi(x)  0, i = 1, . . . , m, 
+hi(x) = 0, i = 1 . . . , p, 
+where x  Rn is the optimization variable , f : Rn  R, gi : Rn  R are dier
+entiable convex functions , and hi : Rn  R are ane functions . 
+Recall that a function g : G  R is convex if G is a convex set, and for any 
+x, z  G and   [0, 1], we have g(x+(1)z)  g(x)+(1 )g(z). A function 
+Tg is concave if g is convex. An ane function has the form h(x) = a x + b for 
+some a  Rn,b  R. (Ane functions are both convex and concave.) 
+We could rewrite the OPT with the constraints in the objective: 
+min P (x) where 
+x 
+m	 pm m (1) 
+P (x) :=f(x) +  1[gi(x)&gt;0] +  1[hi(x) =0]. 
+i=1 i=1 
+But this is hard to optimize because it is non-dierentiable and not even contin
+uous. Why dont we replace   1[u0] with something nicer? A line u seems 
+like a dumb choice... 
+1</text>
+        </slide>
+        <slide>
+          <slideno>5</slideno>
+          <text>KKT Conditions
+ 
+For an unconstrained convex optimization problem, we know we are at the global 
+minimum if the gradient is zero. The KKT conditions are the equivalent condi
+tions for the global minimum of a constrained convex optimization problem. 
+If strong duality holds and (x ,  , ) is optimal, then x  minimizes L(x,  , ) 
+giving us the rst KKT condition, Lagrangian stationarity : 
+m m 
+   xL(x,   ,   )|x  = xf(x)| x  + i xgi(x)| x  + i xhi(x)| x  = 0 
+i i 
+We can interpret this condition by saying that the gradient of the objective 
+function and constraint function must be parallel (and opposite). This concept 
+is illustrated for a simple 2D optimization problem with one inequality constraint 
+below. 
+The curves are contours of f, and the line is the constraint boundary. At x , the 
+gradient of f and gradient of the constraint must be parallel and opposing so 
+that we couldnt move along the constraint boundary in order to get an improved 
+objective value. 
+6</text>
+        </slide>
+        <slide>
+          <slideno>7</slideno>
+          <text>We can now characterize the optimal conditions for a primal dual optimization 
+pair: 
+Theorem 1 Suppose that x  Rn ,  Rm, and  Rp satisfy the following 
+conditions: 
+ (Primal feasibility) gi(x )  0,i = 1, ..., m and hi(x ) = 0,i = 1, ..., p. 
+ (Dual feasibility)  0,i = 1, . . . , m. i 
+ (Complementary Slackness) i  gi(x ) = 0,i = 1, . . . , m. 
+ (Lagrangian stationary) xL(x ,  , ) = 0. 
+Then x is primal optimal and ( , ) are dual optimal. Furthermore, if strong 
+duality holds, then any primal optimal x and dual optimal ( , ) must satisfy 
+all these conditions. 
+These conditions are known as the Karush-Kuhn-Tucker (KKT) conditions.1 
+1Incidentally, the KKT theorem has an interesting history. The result was originally derived by Karush in 
+his 1939 masters thesis but did not catch any attention until it was rediscovered in 1950 by two mathematicians 
+Kuhn and Tucker. A variant of essentially the same result was also derived by John in 1948. 
+8 r</text>
+        </slide>
+      </slides>
+      <videos/>
+    </lecture>
+    <lecture>
+      <lecture_title>Fundamentals of learning (PDF)</lecture_title>
+      <lecture_pdf_url>https://ocw.mit.edu/courses/15-097-prediction-machine-learning-and-statistics-spring-2012/resources/mit15_097s12_lec03/</lecture_pdf_url>
+      <lectureno>3</lectureno>
+      <slides>
+        <slide>
+          <slideno>3</slideno>
+          <text>Illustration
+ 
+In one of the gures in the illustration, f: 
+ was overtted to the data 
+ modeled the noise 
+ memorized the examples, but didnt give us much other useful information 
+ doesnt generalize, i.e., predict. We didnt learn anything! 
+Computational Learning Theory , a.k.a. Statistical Learning Theory, a.k.a., 
+learning theory, and in particular, Vapniks Structural Risk Minimization 
+(SRM) addresses generalization. Heres SRMs classic picture: 
+Which is harder to check for, overtting or undertting?
+ 
+4</text>
+        </slide>
+        <slide>
+          <slideno>7</slideno>
+          <text>MIT OpenCourseWare
+http://ocw.mit.edu
+15.097 Prediction: Machine Learning and Statistics
+Spring 2012
+For information about citing these materials or our Terms of Use, visit: http://ocw.mit.edu/terms .</text>
+        </slide>
+        <slide>
+          <slideno>1</slideno>
+          <text>Input: {(xi,yi)}m
+i=1, xi  X ,yi  R 
+	 Output: f : X  R 
+	 predicting an individuals income, predict house prices, predict stock 
+prices, predict test scores 
+5. Ranking (later)	 - in between classication and regression. Search engines 
+use ranking methods 
+6. Density Estimation - predict conditional probabilities 
+{(xi,yi)}mi=1, xi  X ,yi  {1, 1} 
+	 Output: f : X  [0, 1] as close to P (y = 1|x) as possible. 
+	 estimate probability of failure, probability to default on loan 
+Rule mining and clustering are unsupervised methods (no ground truth), 
+and classication, ranking, and density estimation are supervised methods 
+(there is ground truth). In all of these problems, we do not assume we know the 
+distribution that the data are drawn from! 
+Training and Testing (in-sample and out-of-sample) for supervised learning 
+Training : training data are input, and model f is the output. 
+{(xi,yi)}m
+i=1 = Algorithm = f. 
+Testing : You want to predict y for a new x, where (x, y) comes from the same 
+distribution as {(xi,yi)}m 
+i=1. 
+That is, (x, y)  D(X , Y) and each (xi,yi)  D(X , Y). 
+Compute f(x) and compare it to y. How well does f(x) match y? Measure 
+goodness of f using a loss function R : Y  Y  R: 
+Rtest(f) = E(x,y)DR(f(x), y) 
+= R(f(x), y)dD(x, y). 
+(x,y)D 
+2</text>
+        </slide>
+        <slide>
+          <slideno>4</slideno>
+          <text>Computational learning theory addresses how to construct probabilistic guaran
+tees on the true risk. In order to do this, it quanties the class of simple models. 
+Bias/Variance Tradeo is related to learning theory (actually, bias is related to 
+learning theory). 
+Inference Notes - Bias/Variance Tradeo
+ 
+5</text>
+        </slide>
+        <slide>
+          <slideno>5</slideno>
+          <text>Regularized Learning Expression
+ 
+Structural Risk Minimization says that we need some bias in order to learn/generalize 
+(avoid overtting). Bias can take many forms: 
+   simple models f(x) =jx(j) where II2 =2 &lt;C j 2 jj 
+ prior in Bayesian statistics 
+ connectivity of neurons in the brain 
+Regularized Learning Expression: 
+m 
+R(f(xi),yi) + CRreg(f) 
+i 
+This expression is kind of omnipresent. This form captures many algorithms: 
+SVM, boosting, ridge regression, LASSO, and logistic regression. 
+In the regularized learning expression, the loss R(f(xi),yi) could be: 
+ least squares loss (f(xi)  yi)2 
+ misclassication error 1[yi f(xi))] = 1[yif(xi)0] 
+  Note that minimizing 1[yif(xi)0] is computationally hard. i 
+  y if(xi) logistic loss log21 + e = logistic regression 
+6
+ 6=sign(
+ Source unknown. All rights reserved. This content is excluded from our Creative
+Commons license. For more information, see http://ocw.mit.edu/fairuse.</text>
+        </slide>
+        <slide>
+          <slideno>0</slideno>
+          <text>Fundamentals of Learning
+ 
+MIT 15.097 Course Notes
+ 
+Cynthia Rudin
+ 
+Important Problems in Data Mining 
+1. Finding patterns (correlations) in large datasets
+ 
+-e.g. (Diapers  Beer). Use Apriori!
+ 
+2. Clustering	 - grouping data into clusters that belong together - objects 
+within a cluster are more similar to each other than to those in other clusters. 
+	 Kmeans, Kmedians 
+	 Input: {xi}m
+i=1,xi  X  Rn 
+	 Output: f : X  {1,...,K } (K clusters) 
+	 clustering consumers for market research, clustering genes into families, 
+image segmentation (medical imaging) 
+3. Classication 
+	 Input: {(xi,yi)}m examples, instances with labels, observations i=1 
+	 xi  X ,yi  {1, 1} binary 
+	 Output: f : X  R and use sign(f) to classify. 
+	 automatic handwriting recognition, speech recognition, biometrics, doc
+ument classication 
+	 LeNet 
+4. Regression 
+1</text>
+        </slide>
+        <slide>
+          <slideno>2</slideno>
+          <text>Rtest is also called the true risk or the test error. 
+Can we calculate Rtest? 
+We want Rtest to be small, to indicate that f(x) would be a good predictor (es
+timator) of y. 
+For instance 
+R(f(x),y ) = (f(x)  y)2 least squares loss, or 
+R(f(x),y ) = 1[sign( f(x)) (mis)classication error =y] 
+Which problems might these loss functions correspond to?
+ 
+How can we ensure Rtest(f) is small? 
+Look at how well f performs (on average) on {(xi,yi)}i. 
+mm1 Rtrain(f) = R(f(xi),yi). m i=1 
+Rtrain is also called the empirical risk or training error . For example, 
+mm1 Rtrain(f) = =y i]. 1[sign( f(xi)) m i=1 
+(How many handwritten digits did f classify incorrectly?) 
+Say our algorithm constructs f so that Rtrain(f) is small. If Rtrain(f) is small, 
+hopefully Rtest(f) is too. 
+We would like a guarantee on how close Rtrain is to Rtest . When would it be close 
+to Rtest? 
+ If m is large. 
+ If f is simple. 
+3</text>
+        </slide>
+        <slide>
+          <slideno>6</slideno>
+          <text>hinge loss max(0, 1  yif(xi)) = SVM
+ 
+y if(xi) 
+  exponential loss e = AdaBoost 
+In the regularized learning expression, we dene a couple of options for Rreg(f). 
+Usually f is linear, f(x) = j jx(j). We choose Rreg(f) to be either: 
+II22 = j j 2 = ridge regression, SVM 
+II 1 = |j| =	 LASSO, approximately AdaBoost j 
+7
+ P
+P
+P</text>
+        </slide>
+      </slides>
+      <videos/>
+    </lecture>
+  </lectures>
+</doc>

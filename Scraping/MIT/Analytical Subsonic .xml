@@ -1,0 +1,1934 @@
+<doc>
+  <source>MIT</source>
+  <date>28/01/2023</date>
+  <course>
+    <course_url>https://ocw.mit.edu/courses/16-121-analytical-subsonic-aerodynamics-fall-2017/</course_url>
+    <course_title>Analytical Subsonic Aerodynamics</course_title>
+    <course_tags>
+      <list>Engineering </list>
+      <list>Aerospace Engineering </list>
+      <list>Aerodynamics</list>
+    </course_tags>
+  </course>
+  <lectures>
+    <lecture>
+      <lecture_title>Thin Wing Theory (PDF)</lecture_title>
+      <lecture_pdf_url>https://ocw.mit.edu/courses/16-121-analytical-subsonic-aerodynamics-fall-2017/resources/mit16_121f17_lec15/</lecture_pdf_url>
+      <lectureno>15</lectureno>
+      <slides>
+        <slide>
+          <slideno>5</slideno>
+          <text>MIT OpenCourseWare https://ocw.mit.edu/ 
+16.121 Analytical Subsonic Aerodynamics 
+Fall 2017 
+For information about citing these materials or our Terms of Use, visit: https://oc w.mit.edu/terms .</text>
+        </slide>
+        <slide>
+          <slideno>2</slideno>
+          <text>Substituting, we obtain: 
+0 0(1 M 2) +  = 0ixx izz 
+p 
+0 + 0  0,for x2 + z2 
+ix iz 
+The remaning boundary conditions belong to the inner region and are to be obtained by matching. 
+We assume: 
+i = U  
+i 
+0(x,z)+ i 1(x,z) + 2i 2(x,z) + ...  
+z = z/ 
+The stretching enables us to focus on the ow in the immediate neighborhood of the airfoil in the 
+limit of   0 since the airfoil shape then remains independent of  and the width of the inner region 
+becomes of order unity. 
+The zeroth-order inner term is that of a parallel ow, that is: 
+i 
+0 = x 
+(Both inner and outer ow must be parallel in the limit   0.) 
+Examining the W-velocity component in the inner region, we may write: 
+1   i i i iW =  =  = U  (x,z)+  (x,z)z z 1z 2z 
+Since Q must vanish in the limit of zero , i 1 must be independent of z. Hence, let: 
+1 i = g1(x) 
+g1(x) may be different above and below the airfoil 
+We now write: 
+i = U  
+x + g1(x)+ 2i 
+2(x,z)+ ...  
+Substituting the above equation into the governing equation and boundary conditions, we obtain: 
+i = 02zz 
+d f u i2z = for z = f u(x)dx 
+d f l  i 2
+z = for z = fl (x)dx 
+The the solution must be linear in z, 
+d f u i2 = z + g2u (x) , z  f udx 
+d  i fl2 = z + g2l (x) , z  f ldx 
+3</text>
+        </slide>
+        <slide>
+          <slideno>3</slideno>
+          <text>The inner solution cannot give vanishing disturbances at innity since the boundary condition be -
+longs to the outer region. We need to match the inner and outer solutions. 
+We will employ the asymptotic matching principle to complete the required matching. From 
+i above we note that Wi is independent of z to lowest order. Thus, in the outer limit at z =  , 
+we have: 
+1 d f uWi 0 i= z(x,) =   dx 
+and 
+0W 0 = 1z 
+Equating the inner limit ( z = 0+), we obtain: 
+d f u 0 (x,0+) = 1z dx 
+d  0 fl (x,0) = 1z dx 
+Matching the potential, we nd: 
+0g1u (x) = 1(x,0+) 
+To determine g2 it is necessary to include higher order terms in the outer solution. 
+First, we write the two-term outer ow in inner variables, 
+  
+0 = U x + 0
+1(x,z)+ ... 
+Taking the three term inner expansion of this: 
+  
+0 = U x + 01(x,0+)+ 2z0(x,0+)+ ...1z 
+Rewriting the above equation in outer variables: 
+ 0 0 0 = U x + 1(x,0+)+ z (x,0+)+ ...1z 
+The three-term inner expansion, expressed in outer variables, reads: 
+ d f u  
+i = U x + g1u (x)+ z + 2g2u (x)+ ... dx 
+Now equate the two-term outer expansion of the three term inner expansion: 
+ d f u  
+i = U x + g1u (x)+ z + ... dx 
+To the three term inner expansion of the two-term outer expansion leads to: 
+g1u = i 0(x,0+) 
+d f u0
+1z (x,0+) = dx 
+And Cp takes the following form: 
+0Cp = 21x (x,0) 
+4</text>
+        </slide>
+        <slide>
+          <slideno>4</slideno>
+          <text>"+"  upper surface 
+"-"  lower surface 
+5</text>
+        </slide>
+        <slide>
+          <slideno>0</slideno>
+          <text>16.121 ANALYTICAL SUBSONIC AERODYNAMICS , M ASSACHUSETTS INSTITUTE OF TECHNOLOGY 
+Thin Wing Theory 
+Objective: 
+ Derive the equations of motion governing the subsonic ow around thin wings 
+ Use matched asymptotic expansions 
+ Physical insight increase 
+ Contrast airfoil with slender body of revolution 
+Assumptions: 
+ Steady ow 
+ Inviscid ow 
+ Irrotational ow 
+ Adiabatic uid 
+ Ideal gas 
+ Constant specic heats 
+ Wing is in the x,y-plane 
+Notation: 
+ = Thickness ratio 
+ = Angle of attack 
+ = A measure of the amount of camber 
+g(x) = Thickness distribution along the chord 
+h(x) = Camber distribution along the chord 
+g and h  are both smooth 
+ g 0 and h 0 are of order of unity everywhere 
+ &lt;&lt; 1, &lt;&lt; 1, &lt;&lt; 1 
+zu = f u(x) = g u(x)+ h u(x) x 
+zl = f l (x) = g u (x) + h u(x) x 
+1</text>
+        </slide>
+        <slide>
+          <slideno>1</slideno>
+          <text>= Small dimensionless quantity measuring maximum cross wise extension of the airfoil 
+We will treat two dimensional ow. Extension to three dimensions is straightforward. We week the 
+leading terms in a series expansion in  of . We have shown the governing equations to be: 
+2 2(a2  x )xx + (a2  z )zz  2x z xz = 0 
+  1 2 2 2 2a = a  +  U2 
+ 2 x z  
+2 h   1 i/( 1)  
+2 2Cp = 1  + z U 2  1xM22a2   
+The boundary conditions are: 
+ A) Q = U i ,(x,z)   
+B) Flow is tangent to the airfoil surface 
+d f uz /x =  ,z =  f udx 
+d f lz /x =  ,z =  f ldx 
+C) Pressure is continuous at the trailing edge - Kutt-Jovkowsky condition 
+Assume in outer expansion: h i 
+0 = U 0(x,z)+ 0
+1(x,z) + ... 
+Since the airow in the limit of   0 collapses to a line parallel to the free stream, the zeroth order 
+term must represent parallel undisturbed ow. Thus, 
+0 0 = x 
+2</text>
+        </slide>
+      </slides>
+      <videos/>
+    </lecture>
+    <lecture>
+      <lecture_title>Perturbation Methods / Overview (PDF)</lecture_title>
+      <lecture_pdf_url>https://ocw.mit.edu/courses/16-121-analytical-subsonic-aerodynamics-fall-2017/resources/mit16_121f17_lec12-14/</lecture_pdf_url>
+      <lectureno>12&#8212;14</lectureno>
+      <slides>
+        <slide>
+          <slideno>3</slideno>
+          <text>Inability to satisfy initial or boundary conditions in the limit 
+Consider: 
+d2x dx  + + x = 0,x(0) = 0,x(1) = 1 dt2 dt 
+Substitute: 
+x(t;) = x0(t)+ x1(t)+ ... 
+Obtain: 
+dx0 + x0 = 0 dt 
+dx1 d2x0+ x1 =  dt dt2 
+Obtain (solving order by order): 
+x0(t) = c1et 
+tx1(t) = c1tet + c2te 
+x(t;) = c1et + (c 1tet + c2et ) + ... 
+c1 and c 2 are arbitrary constants 
+Problems! 
+x(0) = 0 implies c 1 = 0 from zeroth-order solution. 
+Since only one arbitrary constant is available to choose at zeroth order, it is not possible to sat -
+isfy both boundary conditions. 
+The characteristic equation of: 
+d2x dx  + + x = 0 dt2 dt 
+is 
+4</text>
+        </slide>
+        <slide>
+          <slideno>4</slideno>
+          <text>s2 + s + 1 = 0 
+Hence 
+p
+1 1 4 S1,2 = 2 
+Therefore, the exact solution is 
+x(t;) = c1es1t + c2es2t 
+Expanding square root to obtain: 
+1 s1   + ...  
+s2  1+ ... 
+And asymptotically 
+x(t;) = c1e  t +... + c2et+... 
+c1e  t +... is the fast, inner solution; boundary solution 
+c2et+... is the slow, outer solution 
+4 P OINCARE -LIGHTHILL METHOD : M ETHOD OF STRAINED 
+COORDINATES 
+ Represent the independent variable as a nonuniform series in powers of the small param-
+eter,  
+Consider 
+dx (t + ) + x = 0,x(1) = 1 dt 
+Recall problems generated by applying regular perturbation methods. 
+Lighthill suggested: 
+t = s + t1(s)+ 2t2(s) + ... 
+The "stretching" functions t1(s),t2(s),...,tn (s) are to be determined. Now determine d 
+dt : 
+d d ds 1 d 1 d = = dt1 dt ds dt dt/ds ds (1+  ds + ...) ds 
+5</text>
+        </slide>
+        <slide>
+          <slideno>7</slideno>
+          <text>MIT OpenCourseWare https://ocw.mit.edu/ 
+16.121 Analytical Subsonic Aerodynamics 
+Fall 2017 
+For information about citing these materials or our Terms of Use, visit: https://oc w.mit.edu/terms .</text>
+        </slide>
+        <slide>
+          <slideno>0</slideno>
+          <text>16.121 ANALYTICAL SUBSONIC AERODYNAMICS, MASSACHUSETTS INSTITUTE OF TECHNOLOGY 
+Perturbation Methods / Overview 
+1 O VERVIEW 
+1. Regular/straight perturbation method 
+a) Systematically generates approximations order by order 
+b) Proceeds to higher degree of approximations by generating corrections of higher-
+order in the expansion parameter,  
+c) Breaks down when higher-order perturbation solutions fail (less accuracy) in a do-main of interest: nonuniformity of the perturbation expansion 
+2. Types of nonuniformities 
+a) Secular - nonuniformity occurs as t   
+b) Singular - nonuniformity occurs as t  0 
+c) Boundary layer - systems, resulting in a loss of boundary conditions 
+2 S ECULAR NONUNIFORMITY 
+Approximations break down (inaccurate) for large values of t. 
+Example: 
+dx + x = 0,x(0) = 1,0 &lt;  &lt;&lt; 1 dt 
+Apply regular perturbation theory and obtain: 
+1</text>
+        </slide>
+        <slide>
+          <slideno>2</slideno>
+          <text>Consider: 
+dx (t + ) + x = 0,x(1) = 1 dt 
+Substitute: 
+x(t;) = x0(t)+ x1(t)+ ... 
+Obtain: 
+dx0 t + x0 = 0 dt 
+dx1 dx0 t + x1 =  dt dt 
+dxn dxn1 t + xn =  dt dt 
+Zeroth order solution: 
+1 x0(t) = t 
+First order solution: 
+1 1 x1(t) =  tt2 
+Hence to O() 
+1 1 1 x(t;) = + (  )t tt2 
+Problems! 
+x0(t) is singular at t = 0 
+x1(t) is more singular at t = 0 
+x1(t) is better than x0(t) for large values of t 
+Exact solution: 
+1 +  x(t;) = t +  
+Expanding above for large values of t: 
+1+   x(t;) = (1 + ...) t t 
+B. Boundary-layer type 
+3</text>
+        </slide>
+        <slide>
+          <slideno>6</slideno>
+          <text>or 
+x0 c2 x1(s) =  (t1 + 1) + s s 
+And x0 = 1/s to satisfy the boundary conditions. Thus, unless t1 = 1, x1(s) will be more singular 
+than x0(s). With t1 = 1, we have 
+t = s + t1(s)+ ... = s   
+so 
+t = s   
+or 
+s = t +  
+Hence, substituting 
+c1 c1 x(t;)  | s(t) = s t +  
+c1 = arbitrary constant 
+Note the uniformity condition at the rst order led to the correct change of variables and the 
+exact solution. This procedure can be applied at each order as required. 
+7</text>
+        </slide>
+        <slide>
+          <slideno>5</slideno>
+          <text>Can write 
+x(s : ) = x0(s)+ x1(s)+ ... 
+Substitute and re-write transformed governing equation: 
+d dt1[s + t1(s)+ ...+ ] [ x0(s)+ x1(s)+ ...]+ (1+  + ...)[x0(s)+ x1(s)+ ...] ds ds 
+Equating like powers of 1 to rst order: 
+sx0 0+ x0 = 0 
+0 0 0sx1 + x1 = [(t1 + 1)x0 + t1x0] 
+dxn 0x n ds 
+Zeroth order solution 
+c1 x0(s) = s 
+c1 = arbitrary constant 
+Note x0(s) is singular at s = 0 
+x(s : ) is uniform as  0, provided x1(s) is no more singular than x0(s). That is, as s  0, x1(s) 
+1cannot be singular like s , &gt; 1. This means that higher-order perturbation solutions are no 
+more singular than lower-order ones. Hence, 
+x0t1 0+ (t1 + 1)x0 0= 0 
+Solving for t1(s) we have 
+t1 = 1 
+and 
+0 0 0sx1 + x1 = [( t1 + 1)x0 + t1x0] 
+Takes the form 
+d d (sx1) =  [x0(t1 + 1)]ds ds 
+Integrating 
+sx1 = x0(t1 + 1)+ c2 
+6</text>
+        </slide>
+        <slide>
+          <slideno>1</slideno>
+          <text>x(t;) = x0(t)+ x1(t)+ ... 
+dx0 = 0 dt 
+dx1 = x0dt 
+d xn = xn1dt 
+Solve recursively 
+2t2 ntn 
+x(t;) = 1 t +  ...+ (1)n + ... 2! n! 
+For a complete, convergent, summable innite series we may write: 
+tx(t;) = e 
+Which is the exact solution to the above problem. If summation is not possible (general term 
+cannot be determined), we truncate series and write: 
+n n X X 
+ix(t;) = xi (t) = (1)i iti 
+i !0 i =0 
+Problems! 
+So long as t = O(1) or less 
+2t2 
+x(t;) = 1  t +  ... 2! 
+Is a good approximation. But for t  O(1), accuracy begrades as n increases. Hence x(t;) =  
+x0(t)+x(t)+... is secularly nonuniform [it breaks down for large values of t]. Use multiple time 
+scales method to solve this problem. 
+3 S INGULAR PERTURBATION 
+A. Lighthill type 
+ Higher order perturbation terms are more singular than lower order perturbation terms. 
+2</text>
+        </slide>
+      </slides>
+      <videos/>
+    </lecture>
+    <lecture>
+      <lecture_title>Bodies of Revolution: Slender Body Theory (PDF)</lecture_title>
+      <lecture_pdf_url>https://ocw.mit.edu/courses/16-121-analytical-subsonic-aerodynamics-fall-2017/resources/mit16_121f17_lec7-9/</lecture_pdf_url>
+      <lectureno>7&#8212;9</lectureno>
+      <slides>
+        <slide>
+          <slideno>0</slideno>
+          <text>16.121 ANALYTICAL SUBSONIC AERODYNAMICS, MASSACHUSETTS INSTITUTE OF TECHNOLOGY 
+Bodies of Revolution: Slender Body Theory 
+1 C OORDINATES 
+We will use cylindrical cordinates, x, r ,  
+2 V ELOCITY COMPONENTS (x, r , ) 
+ u1 = U+ u = x 
+ v = r 
+1</text>
+        </slide>
+        <slide>
+          <slideno>6</slideno>
+          <text>MIT OpenCourseWare https://ocw.mit.edu/ 
+16.121 Analytical Subsonic Aerodynamics 
+Fall 2017 
+For information about citing these materials or our Terms of Use, visit: https://oc w.mit.edu/terms .</text>
+        </slide>
+        <slide>
+          <slideno>3</slideno>
+          <text>Const ant  =p
+x2 + r 2 
+This is a source of nite strength. For a source at the position x =  on the x-axis, we write: 
+A (x,r ) =  p
+(x  )2 + r 2 
+Superposition is correct! 
+ A0 A1 A2(x,r ) = p + p + p + ... 
+x2 + r 2(x  1)2 + r 2(x  2)2 + r 2 
+For a source distribution, we have: 
+Z l f ()(x,r ) =  p d 
+0 (x  )2 + r 2) 
+How is f () determined? 
+7 S UBSONIC SOLUTION 
+Let: m2  (1 M 2) &gt; 0 
+1 2 1 1  2 + + = 0 m2 r 2 m2 r r x2 
+Transform as follows: 
+0r = mr 
+Substitute: 
+2 1  2 + + = 0 r 02 r 0 r 0 x2 
+Solutions: 
+A (x,r ) =  p
+(x  )2 + m2r 2) 
+Z l f ()(x,r ) =  p d 
+0 (x  )2 + m2r 2) 
+4</text>
+        </slide>
+        <slide>
+          <slideno>1</slideno>
+          <text>1   = r  
+3 C ONTINUITY EQUATION 
+ 1  1  (u1)+ + ( ) = 0 x r ur r  
+4 L INEARIZED PERTURBATION POTENTIAL EQUATION 
+2 2 1  1 2 (1 M 2) + + + = 0 x2 r 2 r r r 2 2 
+5 B OUNDARY CONDITIONS 
+Velocity gradients near axis are very large. Continuity equation yields: 
+1  u (vr )  r r x 
+or 
+ u (vr )  r r x 
+Where u is NOT innite. Hence, for r  0, near the axis: x 
+ (vr )  0 r 
+vr = a0(x) 
+We may use a power series expansion: 
+vr = a0 + a1r + a2r 2 + ... 
+or 
+a0 vr = + a1 + a2r + ... r 
+The correct statement of the boundary condition on the axis is: 
+dR  v  
+= d x U + u R 
+Multiply by R: 
+2</text>
+        </slide>
+        <slide>
+          <slideno>4</slideno>
+          <text>8 F( X), S( X), R( X) RELATION 
+For a line source, we let A be the volume of uid sent out per unit time per unit length of the 
+line source. Recall the line source: 
+A (x,r ) = p
+(x2 + r 2) 
+For a distribution of sources, we write: 
+A(x) f (x)(x,r ) = p = p
+(x2 + r 2) ( x2 + r 2) 
+At a distance r , the ow is distributed uniformly over a cylindrical surface with a circumference 
+of 2r . Hence, at any x: 
+f (x)  v = = 2r r 
+At the surface of the slender body: 
+  v dR = U+ uR dx 
+or 
+  v dR = U R dx 
+Therefore: 
+dR vR = U dx 
+Substituting: 
+f (x) dR = U2R dx 
+dR f (x) = 2UR dx 
+Any any x: 
+S(x) = R2 
+Therefore: 
+S0(x) = 2R dR 
+dx 
+5</text>
+        </slide>
+        <slide>
+          <slideno>5</slideno>
+          <text>Hence: 
+f (x) = US0(x) 
+6</text>
+        </slide>
+        <slide>
+          <slideno>2</slideno>
+          <text>dR v (vr )0 R = R = dx U+ u U 
+For irrotational ow: 
+u u = r x 
+Substituting for u : 
+0u a0 0 0= + a1 + a2r + ... r r 
+an 0a = n x 
+Integrating: 
+u = a0 0 log (r )+ a1 0 r + ... 
+And the "linearized" pressure coefcient reduces to: 
+  22u v Cp =   U U 
+ h 2 22   1  2u u v 2   
+Cp = 1 M2 + + + 1  1 M22  U U 2 U2 U 2     
+Axially symmetric ow: 
+ No variation with  
+ Conditions are the same in every meridian plane 
+  = 0 
+2 1  2 + + (1 M 2) = 0 r 2 r r x2 
+6 I NCOMPRESSIBLE SOLUTION 
+M= 0 
+2 1  2 + + = 0 r 2 r r x2 
+This is Laplaces Equation and has the basic solution: 
+3</text>
+        </slide>
+      </slides>
+      <videos/>
+    </lecture>
+    <lecture>
+      <lecture_title>Linear Subsonic Flow (PDF - 2.7MB)</lecture_title>
+      <lecture_pdf_url>https://ocw.mit.edu/courses/16-121-analytical-subsonic-aerodynamics-fall-2017/resources/mit16_121f17_lec05/</lecture_pdf_url>
+      <lectureno>5</lectureno>
+      <slides>
+        <slide>
+          <slideno>0</slideno>
+          <text>16.121 ANALYTICAL SUBSONIC AERODYNAMICS , M ASSACHUSETTS INSTITUTE OF TECHNOLOGY 
+Linearized Subsonic Flow 
+We desire to solve 
+(1 M2)xx + y y + zz = 0 (1.1)  
+0 &lt; M&lt; 1 (1.2) 
+(1 M2)  0 (1.3)  
+In two dimensions, we have 
+(1  M2)xx + y y = 0 (1.4)  
+ y v0= U (1.5) x BODY 
+u0 0, x, y   (1.6) 
+v0 0, x, y   (1.7) 
+Now let q 
+ = 1 M2 (1.8)  
+and transform independent coordinates as follows: 
+ = x (1.9) 
+ = y (1.10) 
+And likewise, the dependent perturbation velocity potential 
+e(,) = (x, y) (1.11) 
+This series of transformations lead to the following 
+    = 1 = 0 = 0 =  (1.12) x y x y 
+ 1 e 1 h e  e  i 1 e 1 x = = = + = = e (1.13) x  x   x  x    
+1 xx = e (1.14)  
+1</text>
+        </slide>
+        <slide>
+          <slideno>3</slideno>
+          <text>MIT OpenCourseWare https://ocw.mit.edu/ 
+16.121 Analytical Subsonic Aerodynamics 
+Fall 2017 
+For information about citing these materials or our Terms of Use, visit: https://oc w.mit.edu/terms .</text>
+        </slide>
+        <slide>
+          <slideno>1</slideno>
+          <text>eh  e  ei  e  1  1      y = = = + = = e (1.15) y  y   y  y  
+y y = e (1.16) 
+Our transformed governing equation becomes 
+ 1  
+2 e + e = 0 (1.17)  
+or 
+e + e = 0 (1.18) 
+Our analysis drives us to the following question: 
+HOW CAN WE EXPLOIT INCOMPRESSIBLE RESULTS TO ACCOUNT FOR COMPRESSIBILITY EFFECTS ? 
+Compare the forms 
+xx + y y = 0, M= 0 (1.19) 
+e + e = 0,  &gt; 0 (1.20) 
+Consider the boundary condition on the airfoil surface. 
+y = f (x), airfoil shape in x, y (1.21) 
+ = q(), airfoil shape in ,  (1.22) 
+Our boundary condition may be expressed as follows: 
+d f  1 e e 
+U= = = (1.23) dx y  y  
+(x, y) space 
+Similarly in (, ) space 
+dq e 
+U= (1.24) d  
+(,) space 
+Therefore, 
+d f dq U= U (1.25) dx d 
+or 
+d f dq = (1.26) dx d 
+Conclusions 
+(a) The shape of the airfoil in x, y space is the same in ,  space. 
+(b) e,, implies that the compressible ow over an airfoil in x, y space is related to an incom-
+pressible ow in , space over the same airfoil. 
+Now, lets return to the pressure coefcient: 
+0 u cp = 2 U 
+1  = 2 (1.27) U x 
+2 1 e 
+=  U   
+2</text>
+        </slide>
+        <slide>
+          <slideno>2</slideno>
+          <text>Let the incompressible pressure coefcient be 
+0 eu 1  e cp0  2 = 2 U U  (1.28) 
+Therefore, substituting 
+1 cp = cp0 (1.29) 
+cp0 cp = q 
+1 M2 (1.30) 
+This is the Prandtl-Glauert rule. It is a similarity rule that relates incompressible ow over a given 
+two-dimensional prole to subsonic compressible ow over the same prole. From above results, it can be shown that 
+c
+L0 cL = q (1.31) 
+1 M2  
+CM0CM = q (1.32) 
+1 M2  
+0 ue u = q (1.33) 
+1 M2  
+What does it mean? 
+3</text>
+        </slide>
+      </slides>
+      <videos/>
+    </lecture>
+    <lecture>
+      <lecture_title>Slender Body Theory (PDF)</lecture_title>
+      <lecture_pdf_url>https://ocw.mit.edu/courses/16-121-analytical-subsonic-aerodynamics-fall-2017/resources/mit16_121f17_lec10/</lecture_pdf_url>
+      <lectureno>10</lectureno>
+      <slides>
+        <slide>
+          <slideno>2</slideno>
+          <text>Or 
+2f 0(x) = 00y + 11y + 0 f 0y y   00x 0y + ... 
+For our assumed asymptotic sequence n , we balance the leading term with no contradiction, 
+i.e., the distinguished limit: 
+0() =  
+Hence 
+ 0 = f 0(x) (x,0;M)y 
+Balancing the next order of terms: 
+21 = 0 =  
+And 
+0  11y + 0 + 0y y  2
+00x 0y 
+0  2  21y + 2 f 0y y 0x 0y 
+0  1y (x,0;M)+ f 0y y (x,0;M) 0y (x,0;M)0y (x,0;M) 
+1y (x,0;M) =  1(x,0;M) = [0x 0,y  f 0y y ](x,0,M)y 
+There is no contradiction since 1 is determined from 0. This means that our perturbation 
+solution yields a linearized boundary condition at the body surface at each order of n . 
+The conservation equations take the following form: 
+2 2a = a (  1)U 2  0x + O(2) 
+(M 2  1) 0xx  0y y = 0 
+And for  1: 
+(M 2  1) 1xx  1y y = M 2 [(  1)M 2  2]0x 0xx  2M 2 0y 0xy 
+3</text>
+        </slide>
+        <slide>
+          <slideno>3</slideno>
+          <text>The above zeroth order equation, 0, is the basis of slender body theory. The Prandtl-Glauert 
+rule is shown by re-scaling the x-coordinate: 
+For M&lt; 1: 
+x  = q 
+1 M2  
+0 + 0y y = 0 
+P  P 2 Cp =  2 0x  q 0 1 PU 2 
+2  1 M2 
+Note we have assumed: 
+q 
+1 M 2 &gt;&gt;  
+M &lt;&lt; 1 
+Where: 
+q 
+M 2  1    Transonic ow 
+M  1  Hypersonic ow 
+4</text>
+        </slide>
+        <slide>
+          <slideno>4</slideno>
+          <text>MIT OpenCourseWare https://ocw.mit.edu/ 
+16.121 Analytical Subsonic Aerodynamics 
+Fall 2017 
+For information about citing these materials or our Terms of Use, visit: https://oc w.mit.edu/terms .</text>
+        </slide>
+        <slide>
+          <slideno>1</slideno>
+          <text>Where 
+a = speed of sound  = specic heat ratio 
+The subscript  denotes conditions far from the airfoil body. The boundary condition on the 
+body surface may be expressed as: 
+y [x,f (x)] d f =  = f 0(x)x [x,f (x)] dx 
+And far from the body 
+(x, y)  Ux,as|x|   
+Consider the limiting case   0, holding M xed. Assume an asymptotic expansion for the 
+velocity potential of the following form: 
+(x, y;,M)  U[x + 0() 0(x, y;M)+ 1() 1(x, y;M)+ ...] 
+What does the rst term on the right-hand side represent? Is the term correct? Why? Why not? 
+Consider the surface boundary condition. First, we expand y [x,f (x)] in a Taylor series about 
+(x,0): 
+y (x,f (x))  y (x,0)+ f (x)y y (x,0)+ ... 
+Substituting and taking the derivative with respect to y: 
+y (x,f (x))  U[00y (x,0;M)+ 11y (x,0;M)+ ...]+Uf (x)[00y y (x,0;M)+ ...] 
+Thus: 
+y (x,f (x))  U[00y (x,0;M)+ 11y (x,0;M)+ 0 f (x)0y y (x,0;M)+ ...] 
+We may also calculate  x (x,f (x)): 
+x (x,f (x))  U(1+ 00x (x,0;M)+ ...) 
+The surface boundary condition takes the following form: 
+y (x,f (x)) U[00y (x,0;M)+ 11y (x,0;M)+ 0 f (x)0y y (x,0;M)+ ...] 
+ x (x, f (x)) U[1+ 00x (x,0;M)+ ...] 
+ (00y + 11y + 0 f 0y y )(1 00x )+ ... 
+ 00y + 11y + 0 f 0y y  2
+00x 0y + ... 
+2</text>
+        </slide>
+        <slide>
+          <slideno>0</slideno>
+          <text>16.121 ANALYTICAL SUBSONIC AERODYNAMICS, MASSACHUSETTS INSTITUTE OF TECHNOLOGY 
+Slender Body Theory 
+Lets take another look at the Prandtl-Glauert rule. We shall rely more on regular perturbation 
+methods and boundary conditions. Our ow eld is: 
+Assume inviscid, irrotational, compressible ow of an ideal, perfect gas over a slender body,  &lt;&lt; 1. We have: 
+~ ~ ~ Q =  = 
+xi  yj 
+The equations for conservation of mass and linear momentum are: 
+(a2  2)xx  2x y xy + (a2  2)y y = 0x y 
+2 2a 1 a 1 U 2+ (2 
+x + 2 
+y ) = +  1 2   1 2 
+1</text>
+        </slide>
+      </slides>
+      <videos/>
+    </lecture>
+    <lecture>
+      <lecture_title>Seminar in Perturbation Methods (PDF)</lecture_title>
+      <lecture_pdf_url>https://ocw.mit.edu/courses/16-121-analytical-subsonic-aerodynamics-fall-2017/resources/mit16_121f17_lec02/</lecture_pdf_url>
+      <lectureno>2</lectureno>
+      <slides>
+        <slide>
+          <slideno>4</slideno>
+          <text>variables for large time are of order unity, they need not be rescaled or stretched. The independent 
+variables must be stretched: 
+ = 2t (4.1) 
+To rescale the distance we note that for large time, i.e. inside the inner region, the outer solution may be approximated by their asymptotic expansions. This means that outside the "shock" everything is constant and our interest should be directed toward the shock interior. Hence as t   or   , we 
+center the inner distance coordinate with the shock and stretch it by  to make the shock thickness 
+on the inner scale to be order unity. Hence 
+p 
+q 
+ = (x  t) =  2X (4.2) 
+Substituting equations (4.1) and (4.2) into Navier-Stokes equations one obtains a redundant system of equations to rst order in . The redundancy is a result of stretching the x-coordinate as to make 
+the inner equations inviscid to rst order. Expanding the inner dependent variables in a power series in   e.g. 
+i i i  = 0 + i 
+1 + 2 2 + ... (4.3) 
+and substituting equations (4.1), (4.2), and (4.3) into the Navier-Stokes equations, we obtain 
+1 1i i i i  + ( + 1)  =  (4.4) 2  2  
+(Viscous dissipation - no dispersion) 
+Equation (4.4) is Burgerss equation. 
+The boundary conditions for equation (4.4) is obtained by matching the inner and outer solutions: 
+( i )o = ( o )i (4.5) 
+The inner solution is re-expressed in outer variables and re-expanded in  for xed x and t, the result 
+ought to be the same as if the outer solution were put in inner variables and re-expanded for xed  
+and . We obtain as initial conditions for  
+i : 
+( 
+i (,0) = 0,  &gt; 0 (4.6) 
+ i (,0) = 1,  &lt; 0 
+Hence on the inner scale we have an initial value problem. First we transform  i : 
+i 2   =  (4.7) ( + 1)  
+Combining equations (4.4), (4.6), and (4.7) and integrating over , we nd 
+1  =  (4.8) 2 
+( 
+(,0) = exp(( + 1)/2),  &lt; 0 (4.9) 
+(,0) = 1,   0 
+Equation (4.8) is the heat equation. Solution can be obtained by disturbing heat sources along the 
+-axis. See Moran (1966). The inner solution when matched to the outer solution shows that the asymptotic matching principle is satised (as opposed to the limit matching principle). 
+5</text>
+        </slide>
+        <slide>
+          <slideno>6</slideno>
+          <text>MIT OpenCourseWare https://ocw.mit.edu/ 
+16.121 Analytical Subsonic Aerodynamics 
+Fall 2017 
+For information about citing these materials or our Terms of Use, visit: https://oc w.mit.edu/terms .</text>
+        </slide>
+        <slide>
+          <slideno>0</slideno>
+          <text>16.121 ANALYTICAL SUBSONIC AERODYNAMICS , M ASSACHUSETTS INSTITUTE OF TECHNOLOGY 
+Seminar in Perturbation Methods: 
+Formation of Shock Waves 
+1 R EFERENCES 
+Moran and Shen (1996), JFM, Vol. 25, pp. 705-718. 
+Mason (1968), Phys. Fluids, Vol. II, pp. 2524-2532. Moran (1965), Cornell University thesis. 
+2 B ACKGROUND AND INTRODUCTION 
+In the absense of friction and heat conduction (small gradients in velocity and temperature are as-
+sumed), an isentropic disturbance will propagate without change in shape. The particle velocity under these conditions is governed by the wave equation: 
+
+2u 
+t2 2u2= a1 x2 (2.1) 
+whose solution may be expressed as: 
+u(x,t) = F (x  a1t) +G(x + a1t) (2.2) 
+The wave propagates at the local speed of sound a1, where a1 is a constant. 
+An acoustic wave of nite amplitude will propagate with shape being distorted in the process. The theoretical description is expressed in terms of non-linear equations. The wave speed for acoustic waves of nite amplitude is 
+  + 1 c = a
+1  u (2.3) 2 
+n h   1 io + 1 2 c = a11  1 (2.4)   1 1 
+Thus, the regions of higher condensation, (  ) &gt; 1, tend to overtake those of lower condensation. 1 
+This non-linear steepening effect resulting from the convective terms of the equations of motion is 
+1</text>
+        </slide>
+        <slide>
+          <slideno>1</slideno>
+          <text>eventually balanced by the diffusive terms. The diffusive terms become important as the velocity and 
+temperature gradients become larger (steepening effect). When complete balance is obtained, the wave is then "stationary" and propagates without further distortion. 
+Thus, for acoustic waves of nite amplitude one may anticipate two time scales. Physically the time 
+scales would correspond to (a) the time in which the non-linear convective terms determine the na-ture of the wave propagation and (b) the time in which the diffusive terms are of the same order as the non-linear convective terms. 
+3 T HE LINEARIZED SOLUTION 
+We shall discuss the formation of weak plane shock waves by impulsive motion of a piston as treated by Moran and Shen (JFM, 1966). In this problem we also have two time scales. After the piston is set in motion the wave propagation is governed by the viscous diffusive terms resulting from the steep gradients in ow initially. This part of the wave propagation constitutes a time scale. The second time scale is characterized by the non-linear convective terms balancing the viscous diffusive terms, the initial gradients being smaller on this scale. 
+Using a continuum ow formulation Moran and Shen consider the phenomenon for time large com-
+pared with the mean time spent by a gas molecule between collisions. Denoting the piston Mach number by  the linearized Navier-Stokes equations may be shown to be valid up to time of the order 
+of 1/
+2 mean free times after the piston is set in motion. At large times the solution may be shown 
+to be governed by Burgerss equation. Boundary conditions for the large time solution are obtained by applying the matching principle of the method of inner and outer expansions. In their analysis Moran and Shen assumed  to be small; the gas is viscous and heat conducting. 
+The basic equations and non-dimensionalization are: 
+    =  q 
+RT0  ,  = 0(1+ ) (3.1) 
+  p = p0 (1 + p), T = T0  (1+ T ) (3.2) 
+where ( ) denotes a dimensional variable, R is the gas constant.  is a perturbation parameter, 
+dened so that  = 1 on the piston.  is proportional to the piston Mach number. ( ) 0 enotes the 
+undisturbed value of the variable. 
+The viscosity is given by 
+   = 0(1+ ) (3.3) 
+The dimensionless independent variables x and t are given by 
+n qo 
+   x = 0/0 RT0  x (3.4) 
+n o 
+   t = 0/0 RT0  t (3.5) 
+The exact Navier-Stokes conservation equations in a one dimensional unsteady ow may be written: 
+t + x + ( )x = 0 (3.6) 
+h i 
+t + px  xx +  t + x  ( x )x + 2 x = 0 (3.7) 
+2</text>
+        </slide>
+        <slide>
+          <slideno>3</slideno>
+          <text>The linearized solution indicate a shock-like behavior at large times, i.e. the ow properties eventu -
+ally exhibit a smooth transition between differing constant values. Also, the center of the transition 
+propagates at the speed of sound (local) and the Pankine-Hugoniot relations are satised. 
+Let qpX = (x  t)/ 2 (3.23) 
+The asymptotic behavior of the linearized solution may be written: 
+ h p i 
+ o(x,t) ~ 1erfc X / t + o(t 21 )  2 
+1o (x,t) ~ p  o (x,t)+ o(t 21 ) (3.24) 
+ (1)To(x,t) ~ p  o(x,t)+ o(t 1
+2 ) 
+oWe also note that the relation between  ,o ,andT o is the same as that obtained by solving the prop -
+agation of isentropic, innitesemal amplitude wave problem (the one-dimensional wave equation). 
+p
+From equation (3.24) we note that the width of the transition zones grows in time like t. The width 
+of a weak shock in steady ow, in the above notation, is of order of 1/. Physically, we expect the solu -
+tion of the piston problem to yield a steady (convective and diffusive terms enter to the same order)p
+travelling shock as t   . This suggests that the linearized solution will break down when t = o 1 
+ 
+or t = o( 1
+2 ). A more formal argument leading to the above result is given in Moran (1966). 
+4 T HE SOLUTION AT LARGE TIMES 
+We now dene an "inner region" where t is of the same order or greater than 1/2. In the inner 
+regions the "inner variables" and their derivatives are of order unity in the limit   0. Since the outer 
+4</text>
+        </slide>
+        <slide>
+          <slideno>5</slideno>
+          <text>The composite solution is given by 
+( 
+c =  i +  o  ( i )o 
+c i (4.10) 
+ =   o /(o )i 
+p  1exp [( + 1)/2(  1( + 1))]er f c[/ 2]4 ui (,) = 1+ p (4.11) 
+er f c[(  1( + 1))/ 2]2 
+6</text>
+        </slide>
+        <slide>
+          <slideno>2</slideno>
+          <text>h i h i 2 2 2Tt +(1)x  Tt +Tx +(1)px (1)  (Tx )x + Tx +(1) = 0 (3.8) Txx + x x  
+p =  + T + T (3.9) 
+where 
+ = specic heat ratio 
+ = Prandtl number (based on the longitudinal viscosity) 
+The initial conditions for the piston problem are: 
+ =  = p = T = 0, x &gt; 0, t = 0 (3.10) 
+For an impermeable and adiabatic piston, the boundary conditions are (at the piston) 
+ = 1, Tx = 0, x = t, t &gt; 0 (3.11) 
+At innity, the damping conditions are imposed 
+,,T  0, t &gt; 0, x   (3.12) 
+The linearized solution is obtained by letting   . As expected from the physics of the problem, by 
+letting    the non-linear convective terms are lost and the rst order viscous diffusive terms are 
+retained. Our equation system reduces to the following linear set of equations: 
+oo
+t +  = 0 (3.13)x 
+o o o t + p   = 0 (3.14)x xx 
+o  To + (  1)  To = 0 (3.15)t x xx 
+op = o + To (3.16) 
+The initial conditions and boundary conditions reduce to: 
+o  = o = To = 0, x &gt; 0, t = 0 (3.17) 
+o  = 1, To = 0, x = 0, t &gt; 0 (3.18)x 
+o  ,o ,To  0, t &gt; 0, x   (3.19) 
+In equations (3.13) to (3.19), the superscript o denotes the linearized solution or outer variables. 
+We solve for the linearized dependent variables by using Laplace transforms: 
+Z  
+o(x,s) st  = e  o(x,t)dt (3.20) 
+0 
+The general formulae for the asymptotic behavior of the solution (real world) are 
+ h ip p 
+ o(x,t) ~ erfc ( x  t)/ 2t + o(t 21 )  21 
+1o (x,t) ~ p  o (x,t)+ o(t 1
+2 ) (3.21) 
+ (1)To(x,t) ~ p  o(x,t)+ o(t 21 ) 
+  1   1+ (3.22) 
+3</text>
+        </slide>
+      </slides>
+      <videos/>
+    </lecture>
+    <lecture>
+      <lecture_title>Singular Perturbation Methods; Formation of Shock Waves (PDF)</lecture_title>
+      <lecture_pdf_url>https://ocw.mit.edu/courses/16-121-analytical-subsonic-aerodynamics-fall-2017/resources/mit16_121f17_lec03/</lecture_pdf_url>
+      <lectureno>3</lectureno>
+      <slides>
+        <slide>
+          <slideno>1</slideno>
+          <text>Non-dimensionalization: p  =  RT 0 (0.5) 
+   = 0(1+ ) (0.6) 
+  p = p0(1+ p) (0.7) 
+T = T0  (1+ T ) (0.8) 
+   = 0(1+ ) (0.9) 
+   
+ 0 x = q  
+x (0.10) 
+  
+0 RT0  
+    
+t = 0 t (0.11)   0 RT0  
+( )  dimensional variable 
+R  gas constant 
+( )0  undisturbed value 
+Navier-Stokes Equations 
+t + x + ( )x = 0 (0.12) 
+h i 
+t + px  xx +  t + x  ( x )x + 2 x = 0 (0.13) 
+h i h i 2  +2 2Tt +(1)x  Txx + Tt +Tx +(1)px (1)  (Tx )x Tx +(1) = 0 (0.14) x x  
+p =  + T + T (0.15) 
+ = specic heat ratio 
+ = Prandtl number 
+Initial conditions 
+ =  = p = T = 0; x &gt; 0,t = 0 
+Boundary conditions (at piston) 
+ = 1,Tx = 0; x = t,t &gt; 0 
+At innity, damping conditions 
+,,T  0,t &gt; 0,x   
+Expansion: 
+o o 2 o  = 0 + 1 o +  2 + ... (0.16) 
+Linearized solutions,   0 (small times) ("outer region") 
+oo
+t +  = 0 (0.17) x 
+o o o t + p   = 0 (0.18) x xx 
+oTo + (  1)   To = 0 (0.19) t x xx  
+op = o + To (0.20) 
+Initial and boundary conditions 
+o  = o = To = 0,x &gt; 0,t = 0 
+2</text>
+        </slide>
+        <slide>
+          <slideno>4</slideno>
+          <text>MIT OpenCourseWare https://ocw.mit.edu/ 
+16.121 Analytical Subsonic Aerodynamics 
+Fall 2017 
+For information about citing these materials or our Terms of Use, visit: https://oc w.mit.edu/terms .</text>
+        </slide>
+        <slide>
+          <slideno>0</slideno>
+          <text>16.121 ANALYTICAL SUBSONIC AERODYNAMICS , M ASSACHUSETTS INSTITUTE OF TECHNOLOGY 
+Singular Perturbation Methods 
+Formation of Shock Waves 
+Plane waves (small amplitude) in the absence of dissipation propagate without change in shape: 
+2 2u u 
+t2 = a12 
+x2 (0.1) 
+u(x,t) = F (x  a1t) +G(x + a1t) (0.2) 
+u = particle velocity 
+a1 = local speed of sound 
+For nite amplitude plane waves, with dissipation 
+c = a1   + 1 u 2 (0.3) 
+n 
+c = a1 1 h   1 + 1 2 
+  1 1 io 
+ 1 (0.4) 
+c = wave speed 
+Regions of higher condensation,  
+1 &gt; 1, overtake those of lower condensation. 
+ Produces steeping effect 
+ Non-linear convective terms &lt;&gt; diffusive terms 
+ Wave becomes "stationary" 
+Two time scales: 
+(A) Viscous diffusive terms balance steep gradients generated by piston initially 
+(B) Non-linear convective terms balance viscous diffusive terms 
+Model: 
+Continuum ow formulation (Navier-Stokes) 
+ = piston mach number,   1 
+Boundary conditions for large time: matching principle of inner and outer expansions 
+Gas is viscous and heat conducting 
+1</text>
+        </slide>
+        <slide>
+          <slideno>2</slideno>
+          <text>o  = 1,To = 0,x = 0,t &gt; 0x 
+o  ,o ,To  0;t &gt; 0,x   
+Using Laplace transforms: Z  
+o(x,s) = est  o(x,t)dt (0.21) 
+0 
+h q i1 p 1  o(x,t)  erfc ( x  t)/ 2 t + o(t2 )2 (0.22) 
+1  1 o(x,t)  p o (x,t)+ o(t2 )(0.23) 
+(  1)  1 T o (x,t)  p o(x,t)+ o(t2 ) (0.24) 
+  1   1+  (0.25) 
+Transformed ( x,t) qpX = (x  t)/ 2 (0.26) 
+ 1  X  1  o (x,t)  erfc p+ o(t2 )2 t (0.27) 
+1  1 o(x,t)  p o (x,t)+ o(t2 )(0.28) 
+  1  1 T o (x,t)  p o (x,t)+ o(t2 ) (0.29) 
+3</text>
+        </slide>
+        <slide>
+          <slideno>3</slideno>
+          <text>SOLUTION AT LARGE TIMES ("INNER REGION ") 
+Re-scale t: 
+ = 2t (0.30) 
+    p
+(Linearized, outer solution breaks down when t = o 1 or t = o 1) 2 
+Now require a shock thickness, on the inner scale, to be order unity: 
+p q 
+ = (x  t) =  2X (0.31) 
+Expansion 
+i i i  = 0 + 1 i + 2 2 + ... (0.32) 
+Substitute into Navier-Stokes equations, and obtain Burgers equation: 
+1 1i i i i  + ( + 1)  =  (0.33) 2  2 
+Boundary conditions (matching principle): 
+( i )o = ( o )i (0.34) 
+Initial conditions 
+ i (,0) = 0, &gt; 0 (0.35) 
+ i (,0) = 1, &lt; 0 (0.36) 
+Thus on the inner scale (large times) we have an initial value problem. 
+Consider the transformation 
+2   i =  (0.37) ( + 1)  
+Burgers equation becomes: 
+1  =  (0.38) 2 
+(Heat conduction equation) 
+( + 1)(,0) = exp( ), &lt; 0 (0.39) 2 
+(,0) = 1, &gt; 0 (0.40) 
+Match inner and outer solutions using the asymptotic matching principle (not the limit matching 
+principle). 
+cComposite solution,  
+c  =  i +  o  ( i )o (0.41) 
+c i  =   o /(o )i (0.42) 
+4</text>
+        </slide>
+      </slides>
+      <videos/>
+    </lecture>
+    <lecture>
+      <lecture_title>Similarity Rules (PDF)</lecture_title>
+      <lecture_pdf_url>https://ocw.mit.edu/courses/16-121-analytical-subsonic-aerodynamics-fall-2017/resources/mit16_121f17_lec06/</lecture_pdf_url>
+      <lectureno>6</lectureno>
+      <slides>
+        <slide>
+          <slideno>2</slideno>
+          <text>And let f1 = f2 (f is the same in both ows) which means both airfoils are of the same family. 
+The boundary condition along the airfoil in (, ): 
+    2  = U2T2 f 0 
+2 c=0 
+The pressure coefcient may be written 
+   2  1 2  2Cp1 =  =  A U1 xy=0 U2  =0 
+Likewise: 
+ 2  2Cp2 =  U2  =0 
+Therefore: 
+Cp1 = ACp2 
+A1A = A2 
+Two airfoils of the same family of shapes characterized by the thickness ratios T 1 and T 2 have 
+pressure distributions given by coefcients Cp1 and Cp2. If the mach numbers of the ows are 
+M1 and M2, respectively, then Cp1 = Cp2 provided: 
+v u u 1  M2 
+t 1T1 = A T21  M22 
+A1A = A2 
+Or, formally: 
+ Cp T = f n qA A 1 M2 
+Recall A is a constant. 
+3</text>
+        </slide>
+        <slide>
+          <slideno>1</slideno>
+          <text>Now consider a second ow: 
+2 = 2(,) 
+Assume: 
+U11(x, y) = A 2(,) 
+U2
+1M2  1/2 U1 11(x, y) = A 2(x, y)U21M 2
+2 
+Where 
+A = constant, to be determined 
+And 
+ = x 1M2  1/2 
+2 =1 y1M2 
+2 
+Hence, equation governing 2(,) becomes 
+22 22(1 M 2 
+2) + = 0 2 2 
+Recall: 
+1(x, y) is a solution corresponding to M1 
+2(,) is a solution corresponding to M2 
+The boundary condition along the airfoil prole may be written: 
+   1M2  1/2  1 U1 1  2 
+xy=0 = AU21M2  =02  x= U1T1 f 0 
+1 c 
+Now let: 
+v u u 1  M2 
+t 1T1 = A T21  M2 2 
+2</text>
+        </slide>
+        <slide>
+          <slideno>3</slideno>
+          <text>4</text>
+        </slide>
+        <slide>
+          <slideno>5</slideno>
+          <text>MIT OpenCourseWare https://ocw.mit.edu/ 
+16.121 Analytical Subsonic Aerodynamics 
+Fall 2017 
+For information about citing these materials or our Terms of Use, visit: https://oc w.mit.edu/terms .</text>
+        </slide>
+        <slide>
+          <slideno>0</slideno>
+          <text>16.121 ANALYTICAL SUBSONIC AERODYNAMICS, MASSACHUSETTS INSTITUTE OF TECHNOLOGY 
+Similarity Rules 
+Consider the linearized equation for the perturbation equation 1(x, y) in plane, steady ow: 
+21 21(1 M 2) + = 0 x2 y2 
+Now, consider two separate ows with their mach numbers M1 and M2. 
+0 &lt; M1 &lt; 1 
+0 &lt; M2 &lt; 1 
+M1 6= M2 
+Also: 
+V1 = Free stream velocity 
+c = Airfoil chord 
+T1 = Thickness ratio = t1/c    x xy = t1 f1 = T1c f1 c c 
+y = Airfoil shape/boundary 
+or  y = T1 f1 x 
+c c 
+The boundary condition on the airfoil surface may be written 
+      1  d y x = U1 = U1T1 f 0 
+yy=0 dx Bod y 1 c 
+From lecture notes, the linearized pressure coefcient may be written 
+ 2   1Cp1 =  U1 xy=0 
+1</text>
+        </slide>
+        <slide>
+          <slideno>4</slideno>
+          <text>5</text>
+        </slide>
+      </slides>
+      <videos/>
+    </lecture>
+    <lecture>
+      <lecture_title>Non-linear, Unsteady Transonic Flows (PDF)</lecture_title>
+      <lecture_pdf_url>https://ocw.mit.edu/courses/16-121-analytical-subsonic-aerodynamics-fall-2017/resources/mit16_121f17_lec16/</lecture_pdf_url>
+      <lectureno>16</lectureno>
+      <slides>
+        <slide>
+          <slideno>6</slideno>
+          <text>MIT OpenCourseWare https://ocw.mit.edu/ 
+16.121 Analytical Subsonic Aerodynamics 
+Fall 2017 
+For information about citing these materials or our Terms of Use, visit: https://oc w.mit.edu/terms .</text>
+        </slide>
+        <slide>
+          <slideno>0</slideno>
+          <text>16.121 ANALYTICAL SUBSONIC AERODYNAMICS, MASSACHUSETTS INSTITUTE OF TECHNOLOGY 
+Non-linear, Unsteady Transonic Flows 
+1 S OURCES 
+Ashley and Landahl: Aerodynamics of wings and bodies 
+Bisplinghoff and Ashley: Principles of aeroelasticity Dowell, et al.: A modern course in aeroelasticity Landahl: Unsteady transonic ow 
+2 A SSUMPTIONS 
+ 2-Dimensional 
+ Inviscid 
+ Small disturbances (MCL  body surface) 
+ Shock waves are straight 
+ Mach number near unity 
+ Continuous pressure across the wake 
+ No jump in normal velocity across the wake 
+ Kutta condition (P vanishes at LE) 
+1</text>
+        </slide>
+        <slide>
+          <slideno>4</slideno>
+          <text>&lt;&lt;  c (5.3)  &lt;&lt; m c 
+This restriction allows us to express the perturbation velocity potential as: 
+(x,z, t) = (x,z) +  (x,z,t) (5.4) 
+Where (x,z) and its derivatives are much greater than  (x,z,t) and its derivatives. The above 
+formulation is valid for small unsteady perturbations. 
+Within the above restrictions, equation (4.7) becomes: 
+h  i 
+1 M2  M2( + 1) x xx + zz = 0 (5.5) 
+h  i 
+1 M2  M2( + 1) x  xx  M2( + 1) xxx (5.6) 
++  t  2M2 zz  M2(  1) xx xt  M2 tt = 0 
+Where we set M= M, why? 
+Note that equation (5.5) is non-linear and steady. It is used to simulate thickness, camber, and 
+mean angle of attack. 
+Note that equation (5.6) is linear and unsteady. It is strongly coupled to equation (5.5). 
+6 M ETHODS OF SOLUTION 
+(a) Numerical simulation 
+(b) Hodograph plane 
+2-D, steady, shock-less  Tricomi equation 
+(c) Parametric differentiation 
+(d) Variational methods 
+(e) Weighted residues 
+(f) Local linearization 
+(g) Ray tracing 
+(h) Kernel Function (including Greens function) 
+5</text>
+        </slide>
+        <slide>
+          <slideno>5</slideno>
+          <text>(i) Integral methods 
+(j) Matched asymptotic expansions 
+Similarity rules 
+6</text>
+        </slide>
+        <slide>
+          <slideno>2</slideno>
+          <text>= Perturbation velocity potential; ( x,z,T ) 
+ x,z = Spatial coordinates 
+  = Airfoil thickness ratio; t/c 
+ m = Mean angle of attack 
+  = Amplitude of unsteady motion 
+  = Frequency of unsteady motion 
+  = c 
+U 
+ B = Instantaneous airfoil position; B (x,z,t) 
+4 S HOCK EXCURSION AMPLITUDE 
+  i  xs  h d 
+m c c 
+4.1 GOVERNING EQUATIONS 
+Bernoullis equation 
+1 Dp 
+ DT     Q21 2 Q2 
+=  + + Q 5 a2 T 2 T z (4.1) 
+Speed of sound 
+h i12 2 2a= a  (  1) T + X + Z U 2 
+2 (4.2) 
+Conservation of mass 
+1 Dp = 5 Q = 52  (4.3)  DT 
+Combine eqns. (4.1), (4.2), and (4.3) to obtain: 
+(a2  2 
+X )X X + (a2  2 
+Z )Z Z  T T  2( Z X X Z + X X T + Z ZT ) = 0 (4.4) 
+Assume velocity eld may be expressed as the sum of a uniform stream and perturbation upon 
+A Uniform stream 
+(X , Z ,T ) = U
+[x + 0(X , Z ,T )+ ...] (4.5) 
+Combine equations (4.4) and (4.5) to obtain: 
+3</text>
+        </slide>
+        <slide>
+          <slideno>3</slideno>
+          <text>M21 h i 
+0 0 0 0 0 02 021 M 2 X X + Z Z  2 X T  a2 T T = M 2( + 1)x + X X X U       1 2 0 02 02 0 0 
+T +   +  X + Z X X + Z Z 2 Uh i 
+0 02 0+ (  1) Z Z X + Z 
+h  1  i 
+0 0 0 0 0 0 0+ 2 1+   X X Z Z + X X T + Z ZT U 
+(4.6) 
+Neglecting products of small terms and retaining "Transonic Terms", we obtain: 
+h  M2 i M21 0 0 0 0 01 M 2  (  1)T  M 2( + 1)X X X + Z Z  2 X T  a2 T T = 0 (4.7) U U  
+Now introduce nondimensional variables: 
+X Z x = z = c c (4.8) 0U t = T  = c c 
+Equation (4.7) in nondimensional form becomes: 
+h  i 
+1 M2  M 2(  1) t  M 2( + 1) x xx + zz  2M 2 xt  M 2 tt = 0 (4.9)  
+5 B OUNDARY CONDITIONS 
+B(x,z,t) = 0  Instantaneous airfoil position 
+(1+ x )Bx +zBZ p  Fluid velocity normal to the airfoil 
+B2+B2 
+x z 
+Btp  Velocity of airfoil normal to itself 
+B2+B2 
+x z 
+The airfoil tangency condition may be expressed as: 
+DB = Bt + (1+ x )Bx + ZBZ = 0 (5.1) Dt 
+For a thin airfoil,  x &lt;&lt; 1; therefore, we may write: 
+Bt + Bx + zBz = 0 (5.2) 
+Insert the following restrictions: 
+4</text>
+        </slide>
+        <slide>
+          <slideno>1</slideno>
+          <text>Far-eld conditions 
+ Small shock excurion amplitude 
+Figure 2.1: Assumptions diagram 
+3 U NSTEADY PERTURBATIONS 
+Figure 3.1: Perturbation positions 
+Symbols 
+ Q = Magnitude of velocity vector 
+ Q = Velocity vector 
+ a = speed of sound 
+ T = Time 
+ U= Free-stream velocity 
+  = Density 
+  = Full velocity potential; ( x,z,T ) 
+2</text>
+        </slide>
+      </slides>
+      <videos/>
+    </lecture>
+    <lecture>
+      <lecture_title>Higher Approximations: Slope of the Lift and Moment About Mid-chord (PDF)</lecture_title>
+      <lecture_pdf_url>https://ocw.mit.edu/courses/16-121-analytical-subsonic-aerodynamics-fall-2017/resources/mit16_121f17_lec11/</lecture_pdf_url>
+      <lectureno>11</lectureno>
+      <slides>
+        <slide>
+          <slideno>3</slideno>
+          <text>MIT OpenCourseWare https://ocw.mit.edu/ 
+16.121 Analytical Subsonic Aerodynamics 
+Fall 2017 
+For information about citing these materials or our Terms of Use, visit: https://oc w.mit.edu/terms .</text>
+        </slide>
+        <slide>
+          <slideno>2</slideno>
+          <text>Ratio of Lift Curve Slopes and Moment Coefficients for 
+Compressible and Incompressible Flows 
+(dC l /d  ) / (dC l /d  )i
+M  =0.05 =0.10 =.015 =.020 
+0.10 
+0.20 
+0.30 
+0.40 
+0.50 
+0.60 
+0.70 
+0.80 
+0.90 1.0050 
+1.0206 
+1.0483 
+1.0911 
+1.1547 
+1.2500 
+1.4005 
+1.6667 
+2.2942 1.0053 
+1.0217 
+1.0511 
+1.0972 
+1.1672 
+1.2760 
+1.4600 
+1.8407 
+1.3327 1.0056 
+1.0228 
+1.0539 
+1.1032 
+1.1799 
+1.2337 
+1.5259 
+2.0524 
+4.9304 1.0058 
+1.0238 
+1.0566 
+1.1095 
+1.1926 
+1.3312 
+1.5957 
+2.2901 
+6.9355 1.0060 
+1.0248 
+1.0592 
+1.1152 
+1.2052 
+1.3594 
+1.6677 
+2.5455 
+9.2308 
+3</text>
+        </slide>
+        <slide>
+          <slideno>1</slideno>
+          <text>dCl dCl  1 / = + [(  1)+ ( 2  1)]d d M= 0 1+  4 
+1  1 + ( )2[ ( 2  1)(+ 4)2 
+16 1+  3 
++ 1(3 log 4)(8(+ 2)2 
+8 
++ ( 2  1)[2 + 2(+ 2)(3+ 8)])] 
+Where: 
+Cl = Section lift coefcient 
+ = Angle of attack 
+2 2)1  = (1 M 
+ = ( + 1)( 2  1) 
+ = Thickness ratio 
+The above result is valid up to the third approximation, i.e. 0, 1, 2 results are included. 
+The radio for the moment coefcient about the mid-chord is given by: 
+21  2  1 Cm1/2 /(Cm1/2)M= 0 =  32  [16(+ 2)2 
+1 2 
++ ( 2  1)[2 + 12(+ 2)2] 
+ [8(+ 2)2 + ( 2  1)[2 
++ 2(+ 2)(3+ 8]]log  ] 
+Note as the thickness ratio   0, then the lift slope increases with free stream mach number as 
+)1/2 = (1  M2 . For small but nite thickness ratios, the lift slope increases at a faster rate than . 
+This rate of increase is also a function of . 
+Note the 2log  in the expression for the ratio for the moment coefcient, suggesting singular per -
+turbation methodology. 
+/dClComputed results for dCl are shown in the following table. d d M= 0 
+2</text>
+        </slide>
+        <slide>
+          <slideno>0</slideno>
+          <text>16.121 F17 A NALYTICAL SUBSONIC AERODYNAMICS , M ASSACHUSETTS INSTITUTE OF TECHNOLOGY 
+Higher approximations: 
+Slope of the lift and moment about mid-chord 
+1 R EFERENCES 
+Kaplan, C.: "Two dimensional subsonic compressible ow past elliptic cylinders." NACA TR No. 724. 
+(1938). 
+Garrick, I.E. and Kaplan, C.: "On the ow of a compressible uid by the hodograph method. I. Uni-
+cation and extension of present day results." NACA ACR I4C24. (1941). 
+Kaplan, C.: "The ow of a compressible uid past a curved surface." NACA ARR 3KD2. (1945). 
+2 L ESSON NOTES 
+Here we quote the result of Kaplan for an elliptic cylinder at an angle of attack. The circulation about 
+the elliptic cylinder is so adjusted that the rear extremity of the major axis of the ellipse is a stagnation point. 
+Figure 2.1: Stagnation point 
+The ratio of the slopes of the lift curve are: 
+1</text>
+        </slide>
+      </slides>
+      <videos/>
+    </lecture>
+    <lecture>
+      <lecture_title>Singular Perturbation Method (PDF)</lecture_title>
+      <lecture_pdf_url>https://ocw.mit.edu/courses/16-121-analytical-subsonic-aerodynamics-fall-2017/resources/mit16_121f17_lec01/</lecture_pdf_url>
+      <lectureno>1</lectureno>
+      <slides>
+        <slide>
+          <slideno>2</slideno>
+          <text>A0
+0 = constant, to be determined 
+Consider an inner solution (small times). In order to see in inner scale, we will magnify the region 
+of interest. 
+ ix = x 
+t  
+ t = , magnication of t  
+Substitute and obtain 
+d2 i ix dx i+ + x = 02 dt 
+ dxi  
+= 1 dt 
+dtt=0 
+x0(0) = 0 
+Consider an inner expansion of the form: 
+Xi i nx = x (t)en 
+Substitute and obtain: 
+d2 i ix dx0 0+ = 02 dt dt 
+i id2x dxi n n+ = x 
+dt 2 n1, n &gt; 0 
+dt 
+[Question: why not t = t /2 or t = t /3?] 
+iWe obtain x0 as 
+x0 i = 1 et 
+Now lets determine A0
+0. Assume an overlap region exists where the inner and outer solutions are 
+valid. The overlap region exists in t , we seek that region in which 
+ t = () 
+lim() = 0 
+0 
+and  ()lim =  
+0  
+We select p
+() =  
+hence h  ()i h i 
+lim xi = lim x0 (())00  0 
+or 
+i 0x0() = x0(0) 
+The above two equations illustrate the limit matching principle: the outer limit of the inner expan-
+sion = the inner limit of the outer expansion. 
+Apply the limit matching principle [LMP]: 
+i i 0x0() = x = 10 
+0 0ix0(0) = x = A0 
+0 0 
+3</text>
+        </slide>
+        <slide>
+          <slideno>3</slideno>
+          <text>i 0 0ix = x0 0 
+A0 
+0 = 1 
+cThe composite solution that is uniformly valid to order  over the whole region is dened as x0. 
+c 0 i 0ix0 ~x0 + x0  x0  (0.1) 
+t  t~e+ 1 e 1 (0.2) 
+t  t t  t / ~e e= e e (0.3) 
+i 0To continue the analysis to compute x1 and x1, we will need the asymptotic matching principle 
+[AMP]: 
+The m-term outer expansion of [the n-term inner expansion] = the n-term inner expansion of [the 
+m-term outer expansion] 
+One may show that a composite solution that is uniformly valid to order 2 over the whole region is: 
+c i0 t t  x ~xi + x0  x = (1+ 2)(e  et /) t  (et / + e ) 
+4</text>
+        </slide>
+        <slide>
+          <slideno>4</slideno>
+          <text>MIT OpenCourseWare https://ocw.mit.edu/ 
+16.121 Analytical Subsonic Aerodynamics 
+Fall 2017 
+For information about citing these materials or our Terms of Use, visit: https://oc w.mit.edu/terms .</text>
+        </slide>
+        <slide>
+          <slideno>0</slideno>
+          <text>16.121 ANALYTICAL SUBSONIC AERODYNAMICS , M ASSACHUSETTS INSTITUTE OF TECHNOLOGY 
+Singular Perturbation Method 
+What formal analytical methods do we apply to solve "boundary layer" problems? 
+What formal analytical methods do we apply to solve differential equations where in the limit of a 
+small parameter vanishing, one or more highest-order derivative terms drop out? 
+What formal analytical methods do we apply to solve problems where competing physical mech-
+anisms vary over time? 
+To "answer" the above questions, we introduce the singular perturbation method. In applying the 
+singular perturbation method (SPM), one should 1. focus on competing physical mechanisms, 2. identify a small parameter, and/or 3. observe that the governing differential equation degenerates in the limit of a small parameter vanishing. 
+Consider the mass-string-damper system shown in the gure below. 
+m = body mass, constant 
+d = viscous damping constant 
+k = spring constant 
+I = applied impulse, at t = 0 
+t = time 
+x = displacement 
+Governing equation and boundary conditions: 
+d2x dx m + d + kx = 0 dt2dt 
+x(0) = 0 
+ dx I u(0) = = dtt=0 m 
+The completing physical mechanisms are: 
+1</text>
+        </slide>
+        <slide>
+          <slideno>1</slideno>
+          <text>1. Acceleration/convective forces 
+2. Damping forces 
+3. Spring constant based forces 
+Exact solution: s    I mk  2t  e 1tx = e 1  4 d d2 
+s   d mk 1,2 =  1 1  4 2m d2 
+For large I and small m, the competing forces are acceleration forces and damping forces in the ini -
+tial stages (small times). 
+For large times, after the mass has reached its maximum deviation, the competing forces are damp-
+ing and spring constant. 
+Solutions valid for small times are called inner solutions. 
+Solutions valid for small times are called outer solutions. 
+Note for the mass-spring-damper problem: 
+h iI2 (d /m)tInner solution: x = 1  e d 
+I0 (k /d)tOuter solution: x = e d 
+We now apply SPM to solve the above problem. First, introduce dimensionless variables: 
+k d  t = t x = x d I 
+Substitute and obtain: 
+d2x dx 
+  + + x = 0 dt2 dt 
+  dx 1 
+dt  t=0  
+x  (0) = 0 
+mk  = &lt;&lt; 1 d2 
+Consider an outer expansion of the form: 
+X 0 0 nx = x = xn 
+Substitute and equate terms of like powers of : 
+0dx0 
+00 = 0 + x dt  
+0 d20dx xn 0 n1+ x = ndt  dt2 
+0The solution for x0 is: 
+0 t  x0 = A0
+0e 
+2</text>
+        </slide>
+      </slides>
+      <videos/>
+    </lecture>
+    <lecture>
+      <lecture_title>Fundamental of Fluid Mechanics (PDF - 3.2MB)</lecture_title>
+      <lecture_pdf_url>https://ocw.mit.edu/courses/16-121-analytical-subsonic-aerodynamics-fall-2017/resources/mit16_121f17_lec04/</lecture_pdf_url>
+      <lectureno>4</lectureno>
+      <slides>
+        <slide>
+          <slideno>0</slideno>
+          <text>16.121 ANALYTICAL SUBSONIC AERODYNAMICS , M ASSACHUSETTS INSTITUTE OF TECHNOLOGY 
+Fundamentals of Fluid Mechanics 
+1 F UNDAMENTALS OF FLUID MECHANICS 
+1.1 ASSUMPTIONS 
+1. Fluid is a continuum 
+2. Fluid is inviscid 
+3. Fluid is adiabatic 
+4. Fluid is a perfect gas 
+5. Fluid is a constant-density uid 
+6. Discontinuities (shocks, waves, vortex sheets) are treated as separate and serve as boundaries 
+for continuous portions of the ow 
+1.2 NOTATION 
+0 p = pressure (static) V = control volume 
+0 0  = density S = surface surrounding V 
+T = temperature (absolute)  = impermeable body 
+Q = velocity vector of uid particles n = normal directed into the uid 
+Q = Ui +Vj +W R = gas constant k 
+F = body force per unit mass cp = specic heat at constant pressure 
+F =  cv = specic heat at constant volume 
+ = potential of the force eld  = cp /cv 
+Gravity eld: F = gk;  = g z e = internal energy per unit mass 
+h = enthalpy per unit mass; h = e + ps = entropy per unit mass  
+1.3 CONTINUITY EQUATION 
+ +( Q) = 0 t 
+D + Q = 0 Dt    dV 0+ (Qn)ds0= 0 
+V 0 t S0+V h  i 
++( Q) dV 0= 0 
+V 0 t 
+1</text>
+        </slide>
+        <slide>
+          <slideno>1</slideno>
+          <text>1.4 CONSERVATION OF MOMENTUM 
+DQ p= F  Dt  
+ X  Fi = (Q)dV 0+ Q(Qn)ds0 
+V 0 t S0+V i 
+1.5 CONSERVATION OF THERMODYNAMIC ENERGY 
+h iD Q2  (pQ) e + =  + F QDt 2  
+h iD Q2 p h + = + F QDt 2 t 
+1.6 EQUATION OF STATE 
+p = RT (thermally perfect gas) 
+cp ,cv = constants (calorically perfect gas) 
+2 P RESSURE DISTRIBUTION AND COMPRESSIBILITY 
+2.1 ASSUMPTIONS 
+1. Steady ow 
+2. Inviscid uid 
+3. No discontinuities (shocks) 
+4. Perfect gas 
+5. One-dimensional motion 
+6. Adiabatic ow 
+7. F  0 
+8. Isentropic 
+2.2 NOTATION 
+( ) 0 = stagnation conditions, Q = 0 
+( )= free stream conditions, Q = uc = uc 
+( ) = conditions on body surface (airfoil) 
+Q = u0i + u0 j + k 
+0u = u+ u 
+2</text>
+        </slide>
+        <slide>
+          <slideno>6</slideno>
+          <text>5 S MALL PERTURBATION THEORY 
+We will consider a slender body immersed in a uniform ow, viz., 
+in the uniform ow: 
+Q = Ui 
+in the perturbed ow: 
+Q = ui + v j + wk 
+0 0 0 Q = (U+ u )i + vj + wk 
+Q =  
+Now dene a perturbation velocity potential, ( x, y,z), where 
+0  u = x 
+0  v = y 
+0  w = z 
+ (x, y,z) = Ux + (x, y,z) 
+Using the notation in eqn(*): 
+0   u = U+ w = = U+ x x 
+0   v = v = = y y 
+0   w = w = = z z 
+2 xx = = xx x2 
+2 y y = = y y y2 
+2 zz = = zz z2 
+2 xy = = xy xy 
+2 yz = = yz yz 
+7</text>
+        </slide>
+        <slide>
+          <slideno>5</slideno>
+          <text>since, p = p(),  = 0 
+ Q  1 1+ Q2 +  p = 0 t 2  
+or   1 Z p + Q2 + = 0 t 2  
+therefore Z  1 dp + Q2 + = f (t)t 2  
+Absorb f (t) into  and obtain Z  1 dp + Q2 + = constant t 2  
+Differentiate above equation with respect to time, t: 
+2  Q 21  +Q  + a = 0 t2 t  t 
+Expressing the continuity equation in terms of : 
+1 p 1+2 + Q  = 0  t  
+Linear momentum equation rewritten yields 
+1 1 1 1 n Q o 
+Q   = Q  p = Q   (Q )Q a2  a2 t 
+Combining the above three equations yields: 
+1 
+a2 2 
+t2 + 2 Q  a2 Q 
+t = 2  h i1 Q  (Q  )Q a2 
+since u i =  , the above equation may be written: xi 
+ 
+ 1  2u 2 
+a2 x2  
++ 1  2v 2 
+a2 y2  
++ 1 2w 2 
+a2 z2 uv  2 a2 2 
+xy v w  2 a2 2 
+yz uw  2 a2 2 
+xz = 
+1 
+a2 2 
+t2 u + 2 a2 2 
+xt v + 2 a2 2 
+yt w + 2 a2 2 
+zt 
+where 
+   u = v = w = x y z 
+For steady ow of a calorically perfect gas: 
+h0 = constant 
+Q2 
+cpT + = cpT02 
+  12 2a = a0  (2 
+x + 2 
+y + 2 
+z )2 
+Equation * is the potential-ow equation. 
+6</text>
+        </slide>
+        <slide>
+          <slideno>4</slideno>
+          <text>Example Problem - Illustration 
+Consider the dynamics of an incompressible uid ow with constant. 
+Equation of incompressibility: 
+Dp   = + ui = 0 Dt t xi 
+Equation of continuity: 
+ui = 0 xi 
+Introduce dimensionless variables: 
+0 ui 0  0 p 0 xi 0 tU u = ,  = , p = x = , t = i iU 0 0U 2, L L 
+U ,0,L  reference quantities 
+3.2 LINEAR MOMENTUM 
+ 0 0 
+0   0  0 p  L  2 0  + u 0 u =  0+ Fi + 0 0 u t xi xi U 2 UL xxi 
+ a 
+0 0 0  0  u + u = 0  = 00  0 0t x x  a 
+U  inertia forces Froude no: F =pgravity force 
+UL  inertia force gL 
+Reynolds no: Re =  viscous force 
+F and Re must be the same for both ows. This is sufcient for dynamic similarity along with similar 
+boundary geometry. 
+U ,0,L may be different for both ows. 
+4 E QUATIONS GOVERNING IRROTATIONAL FLOWS OF A HOMENTROPIC GAS 
+For this class of ows the simplication is through the introduction of the velocity potential, , where 
+Q =  
+or 
+ ui = xi 
+and the vorticity is zero:  =  Q =  = 0 where  is the vorticity vector. 
+The unsteady Bernoulli equation may be written, for this class of ows: 
+ Q  1 1+ Q2 Qx =  pt 2  
+5</text>
+        </slide>
+        <slide>
+          <slideno>3</slideno>
+          <text>2.6 OTHER USEFUL FORMS , EXPRESSIONS 
+Q2 = 2cp (T0  T ) 
+p0 a02 =  = RT 0 0 
+    Q2 2cp T 2 T = 1 = 1 
+a2 R   10 T0 T0 
+T   1  Q  2 
+= 1 T0 2 a0 
+h  Q  2i  p   1 1 = 1 p0 2 a0 
+h  2i 1   1  Q = 1 1 
+0 2 a0 
+  12 2 Q2a = a0  2 
+2.7 PRESSURE , VELOCITY RELATIONS IN ISENTROPIC FLOW 
+With some effort, one may show: 
+h  Q2 i  p   1 1 = 1+ M 21 p 2 u2  
+Expanding the right-hand side: 
+    2   3   4 p  Q2  Q2 (2 ) Q2 (2 )(3  2) Q2 
+= 1+ 1 M 2 + 1 M 4 + 1 M 6 + 1 M 8 +... p 2 u 28 u 2 48 u 2 384 u 2 
+Obtain an expression for 
+p  p cp = 1 u2 
+2  
+Let 
+V Q = u+ V,  1 U 
+Find c p and discuss its limitations. 
+3 S IMILARITY OF FLOWS 
+3.1 REQUIREMENTS FOR SIMILARITY OF FLOWS 
+1. Similarity in boundary geometry 
+Boundary of one ow can be made to coincide with that of another if its linear dimensions are multiplied by a constant 
+2. Dynamic constraint Dependent variables of one ow are proportional to those of another at the corresponding points. 
+4</text>
+        </slide>
+        <slide>
+          <slideno>10</slideno>
+          <text>8 C ROCCO S THEOREM 
+Consider the motion of a uid element. The uid element may both translate and rotate. 
+Let: 
+v = translational velocity 
+w = rotational velocity 
+ = angular velocity 
+where 1 w =  v 2 
+ v  vorticity 
+Combine Eulers equation, rst and second laws of thermodynamics: 
+v  + (v )= pt 
+pT s = h  vp = h   
+h = h0  2v
+2 
+We obtain: 
+T s = h0  v  (  v)+ v 
+t n 
+Croccos Theorem 
+For steady ow, we obtain 
+T s = h0  v  ( v) 
+or 
+v  ( v) = h0  T s 
+For two-dimensional, steady ows:   1 s h02w = T  v n n 
+Vorticity = rates of change of entropy and stagnation enthalpy normal to the streamlines 
+Flow over a supersonic blunt body: 
+11</text>
+        </slide>
+        <slide>
+          <slideno>9</slideno>
+          <text>7 L INEARIZED PRESSURE COEFFICIENT 
+Lets revisit the pressure coefcient, c p : 
+p  p cp  1 
+2 U 2  
+where p is the pressure (local, static) at the location or point of interest in the ow eld. Note that cp 
+is dimensionless. 
+Since, 
+1 1 p  U 2 U 2 = U 2 = p = pM 2 
+2 2 p 2 a22 
+then h i2 p cp =  1 M2 p  
+for an inviscid, adiabatic, isentropic, steady ow and 
+0 0 0 Q = (U+ u )i + vj + wk 
+We show that 
+h + 1 Q2 = h+ 1 U 2 
+2 2 
+which for a calorically perfect gas leads directly to 
+T   1 U 2 Q2 
+= T 2 a2  
+  1 0 = 1 [2u U+ u 02 + v 02 + w 02]2a2  
+Isentropic ow conditions lead to: h T i  p 1 = p T 
+h 0 02 i  p   1  2u u02 + v02 + w 1 = 1 M2 + p 2  U U 2  
+In the case of small velocity perturbations, 
+0u  1 U 
+ u0  2 n 1 U 
+ 0  2v n 1 U 
+ 0  2w n 1 U 
+Using the binomial expansion, we show that 
+ 0 02  p  u u02 + v02 + w = 1  M22 + + ... p 2  U U 2  
+therefore: 02u cp =  U 
+Discuss the limitations implied in the above expression for c p . 
+10</text>
+        </slide>
+        <slide>
+          <slideno>11</slideno>
+          <text>For this ow, 
+h0 = constant 
+h0 = 0 h 
+s 6= 0 (why?) n 
+12</text>
+        </slide>
+        <slide>
+          <slideno>2</slideno>
+          <text>2.3 ENERGY EQUATIONS 
+ph = e +  
+h i 
+d h + 1 Q2 = 0 2 
+(Heat content plus kinetic energy is constant) 
+2.4 PERFECT GAS RELATIONS 
+p = RT 
+pV = RT 
+1 V   
+Can show, without effort: 
+V  = constant 
+ 1   
+p = constant  
+p a2 =  ,a = speed of sound  
+r   
+Q = 2cp T0  T 
+h i h   1 iT pT0  T = T01 = T01  
+T0 p0 
+n h   1 io 1p  2Q = 2cpT01 p0 
+2.5 MACH NUMBER 
+Q2 2cp (T0  T ) 2c p (T0  T )
+M2 = = = a2 p RT  
+  2cp  T0 2  T0M2 =  1 =  1 (cp  cv ) T (  1) T 
+h iT0   1 = 1+ M2 = (,M)T 2 
+  p0  T0  1 1 = =  p T 
+1 0  T0  
+ 1
+1 1 = =   T 
+3</text>
+        </slide>
+        <slide>
+          <slideno>12</slideno>
+          <text>MIT OpenCourseWare https://ocw.mit.edu/ 
+16.121 Analytical Subsonic Aerodynamics 
+Fall 2017 
+For information about citing these materials or our Terms of Use, visit: https://oc w.mit.edu/terms .</text>
+        </slide>
+        <slide>
+          <slideno>7</slideno>
+          <text>2 xz = = xz xz 
+Substituting  = Ux +  and multiplying eqn(*) by a2 we obtain the perturbation equation or per -
+turbation velocity potential equation, for steady ow: 
+[a2(U+x )2]xx +[a2( y )2]y y +[a2(z )2]zz 2(U+x )y xy 2(U+x )z xz 2 y z yz = 0 
+Note a2 may be expressed as: 
+2 2   1 0 02 + v 02 + w 02) a = a (2u U + u 2 
+  12 2a = a (2 xU+ (x )2 + (y )2 + (z )2)2 
+Also, note that eqn(**) is exact! It is also non-linear. 
+5.1 PERTURBATIONS 
+Assume the perturbations are small, viz., 
+0 0 0 u v w  1;  1;  1 U U U 
+In the limit of small perturbations, we may neglect the terms containing squares of the perturbation 
+velocities in comparison to those containing rst powers. Eqn(**) with a2 substituted becomes 
+x x y z(1M 2)xx +y y +zz = M 2(+1) xx +M 2(1) ( y y +zz )+2M 2 xy +2M 2 xz U U U U 
+Note that each term on the right-hand side is non-linear. Each term on the right-hand side contains a perturbation velocity (
+x ,y , or  z ). Hence, we may neglect the right-hand side in comparison to 
+the left-hand side. We obtain 
+(1 M 2)xx + y y + zz = 0 
+5.2 QUESTIONS 
+1. What is the equation where M 1? 
+2. What is the equation where M 1? 
+6 B OUNDARY CONDITIONS 
+1. The body surface is a stream line. (inviscid, irrotational ows) 
+2. Flow velocity must be tangent to body surface 
+3. Velocity vector has to be orthogonal to the unit normal of the body surface 
+8</text>
+        </slide>
+        <slide>
+          <slideno>8</slideno>
+          <text>The body surface is described by f (x, y,z) 
+f (x, y,z) = 0 
+Boundary condition is expressed as 
+Q  f (x, y,z) = 0 
+or 
+f ui = 0 xi 
+Introducing the perturbation velocities 
+0 u = U+ u 
+0 v = v 
+0 w = w 
+Substituting, 
+0 f f 0  f (U+ u ) + v + w = 0 x y z 
+0 Since u  U, we may write: 
+f 0 f 0 f U+ v + w = 0 x y z 
+This equation must be satised on the surface of the body. Consider the two-dimensional case: 
+0 w = 0 
+f = 0 z 
+We obtain: 0 v f /x d y =  = U f /y dx 
+1 Therefore Uu 
+ is the slope of the body (approximately) the slope of the streamline. Recall that 
+ 0  d y u = = Uy dx BODY 
+Now for thin bodies, a small angle of attack, yBODY  0: this suggests an expansion of v 0 (x, y) in a 
+powers of y: 
+0  0 0  v v (x, y) = v (x,0) + y + ... yy=0 
+ 0  d y  v(x, y) = v (x,0) = U dx BODY 
+For three-dimensional planar ows 
+f = 0 z 
+and the boundary condition becomes 
+ 0  y v (x,0,z) = U x BODY 
+at innity: 
+0 u  0 
+0 v  0 
+0 w  0 
+0 0 0 or w ,v , and w are nite. 
+9</text>
+        </slide>
+      </slides>
+      <videos/>
+    </lecture>
+  </lectures>
+</doc>
