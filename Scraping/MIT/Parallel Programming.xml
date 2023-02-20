@@ -1,0 +1,4977 @@
+<doc>
+  <source>MIT</source>
+  <date>28/01/2023</date>
+  <course>
+    <course_url>https://ocw.mit.edu/courses/12-950-parallel-programming-for-multicore-machines-using-openmp-and-mpi-january-iap-2010/</course_url>
+    <course_title>Parallel Programming for Multicore Machines Using OpenMP and MPI</course_title>
+    <course_tags>
+      <list>Engineering </list>
+      <list>Computer Science </list>
+      <list>Software Design and Engineering</list>
+    </course_tags>
+  </course>
+  <lectures>
+    <lecture>
+      <lecture_title>Parallel computing and openMP</lecture_title>
+      <lecture_pdf_url>https://ocw.mit.edu/courses/12-950-parallel-programming-for-multicore-machines-using-openmp-and-mpi-january-iap-2010/resources/mit12_950iap10_lec1/</lecture_pdf_url>
+      <lectureno>1</lectureno>
+      <slides>
+        <slide>
+          <slideno>67</slideno>
+          <text>OpenMP Performance issues 
+Even when running using only one thread performance can be 
+lower than the scalar code. 
+Several performance problems to consider 
+Parallelization Runt ime
+ thread management costs  load imbalance 
+  startup costs synchronization costs 
+ creation &amp; destruction  excessive barriers 
+ small loo p overhead  false sharing 
+ additional code costs  processor affinity 
+Parallel Prog ramming for Mul ticore Machines Using Ope nMP and MPI</text>
+        </slide>
+        <slide>
+          <slideno>20</slideno>
+          <text>Parallel Directive
+Most basic of all directives, it imp lies the creation of a
+team of extra threads to execute the structured block:
+!$OMP PARALLEL [clauses]
+!some Fortran structured block
+!$OMP END PARALLEL
+#pragma omp parallel [clauses]
+{
+/* some C/C++ structured block 
+*/
+}
+Structured block: 
+Implicit barrier at the end 
+Whole block executed in parallel 
+Master thread fork s slaves, and 
+participates in parallel computation 
+At the end of the region, slaves go 
+to sleep, spin or are destroyed 
+Parallel Prog ramming for Mul ticore Machines Using Ope nMP and MPI</text>
+        </slide>
+        <slide>
+          <slideno>0</slideno>
+          <text>12.950
+Parallel Progra mming 
+for 
+Multicore Machines 
+Using 
+OpenMP and MPI 
+Dr. C . Evangelinos 
+MIT/EAPS 
+Parallel Prog ramming for Mul ticore Machines Using Ope nMP and MPI</text>
+        </slide>
+        <slide>
+          <slideno>27</slideno>
+          <text>Parallel Programming for Multicore Machines Using OpenMP and MPIFIRSTPRIVATE clause
+FIRSTPRIVATE is a variation on PRIVATE with the value 
+of the variable on each thread initialized by the value of the 
+variable outside the parallel region
+This solves one of the two       program problem
+      real Aproblems seen before but the       A = 10.0
+final value is still undefined, C$OMP PARALLEL FIRSTPRIVATE(A)
+could be 10.0      A = A + LOG(A)
+C$OMP END PARALLEL
+      print *, A
+      end
+This can be corrected in the case of DO/for or SECTION 
+worksharing constructs through use of the LASTPRIVATE 
+clause and for SINGLE through the COPYPRIVATE clauseLook at problem-firstprivate.f</text>
+        </slide>
+        <slide>
+          <slideno>44</slideno>
+          <text>Synchronization Examples 
+	A case combining MASTER, CRITICAL and 
+BARRIER. (look at barrier.f90) 
+!$OMP PARALLEL SHARED(L) PRIVATE(nthreads,tnumber)
+nthreads = OMP_GET_NUM_THREADS()
+tnumber = OMP_GET_THREAD_NUM()
+!$OMP MASTER
+PRINT *, ' Enter a value for L'
+READ(5,*) L
+!$OMP END MASTER
+!$OMP BARRIER
+!$OMP CRITICAL
+PRINT *, ' My thread number =',tnumber
+PRINT *, ' Value of L =',L
+!$OMP END CRITICAL
+!$OMP END PARALLEL
+Parallel Prog ramming for Mul ticore Machines Using Ope nMP and MPI</text>
+        </slide>
+        <slide>
+          <slideno>40</slideno>
+          <text>Synchronization
+	Explicit synchronization is sometimes necessary in OpenMP programs. 
+There's several constructs &amp; directives handling it: 
+	CRITICAL: Mutual Exclusion 
+ !$OMP CRITICAL [name]/!$OMP END CRITICAL [name] 
+ #pragma omp critical [name] 
+	ATOMIC: Atomic Update 
+ !$OMP ATOMIC, #pra gma omp atomic 
+	BARRIER: Barrier Synchronization 
+ !$OMP BARRIER, #pra gma omp barrier 
+	MASTER: Master Section 
+ !$OMP MASTER/!$OMP END MASTER 
+ #pragma omp master 
+Parallel Prog ramming for Mul ticore Machines Using Ope nMP and MPI</text>
+        </slide>
+        <slide>
+          <slideno>59</slideno>
+          <text>THREADPRIVATE flow
+Parallel Prog ramming for Mul ticore Machines Using Ope nMP and MPI thread 0
+thread 0
+thread 0thread 1 thread M
+thread 0 thread 1 thread M
+thread 0 thread 1 thread Mc = ?
+c = o c = 1 c = M
+c = oc = o
+thread 0
+a = oc = 1 c = M
+c = o c = o c = oShared memory
+Shared memory
+Shared memory
+Shared memory
+Shared memory
+Shared memoryserial region
+serial region
+serial regionparallel reg. 1
+parallel reg. 2
+parallel reg. 3COPYING
+Figure by MIT OpenCourseWare.</text>
+        </slide>
+        <slide>
+          <slideno>18</slideno>
+          <text>Static and Dynamic Extent
+	Directives apply to the structured block that follows: 
+	Structured block: 
+ 1 point of entry, 1 point of exit 
+ Illegal to branch out of block,  only exit(), stop allowed 
+	For Fortran: next line or marked with an !$OMP END 
+	For C/C++: next line or enclosed in {} 
+	Lexical scope forms the static extent. 
+	Any function/subroutine calls within a block give rise to a dynamic extent that 
+the directive also applies to. 
+	Dynamic extent includes static extent + statements in call tree 
+	The called code can contain further OpenMP directives 
+ A directive in a dynamic but not a static extent is called orphan(ed) 
+Parallel Prog ramming for Mul ticore Machines Using Ope nMP and MPI</text>
+        </slide>
+        <slide>
+          <slideno>43</slideno>
+          <text>edATOMIC
+ Optimiz ation of mutual exclusion for atomic updates 
+ Not structured, applies to immediately following statement 
+ At the heart of reduction operations (look at density.f90) 
+!$OMP ATOMIC 
+GRID_MASS(BIN(I)) = GRID_MASS(BIN(I)) + PARTICLE_MASS(I) 
+!$OMP ATOMIC 
+GRID_N(BIN(I))   = G RID_N(BIN(I)) + 1 
+ Enables fast implementation on som e HW 
+ In all other cases critical sections are actually us 
+C$OMP PARALLEL #pragma omp parallel 
+.. {
+C$OMP ATOMIC
+..
+A(i) = A(i) - vlocal #pragma omp atomic
+.. A(i) -= vlocal
+C$OMP END PARALLEL
+..
+}
+Parallel Prog ramming for Mul ticore Machines Using Ope nMP and MPI</text>
+        </slide>
+        <slide>
+          <slideno>73</slideno>
+          <text>Cluster/DM Extensions
+	OpenMP extensions to distributed memory machines 
+using software shared memory (usually page-based 
+coherence) or some other mechanism 
+	Intel Cluster OpenMP (commercial enhancement of Rice's 
+Treadmarks SDSM package) 
+	Omni/SCASH combination 
+	Good for a limited set of problems that exhibit very good 
+spatial locality (so that fetching a memory page of 4KB 
+does not result in a lot of wasted traffic). Otherwise the 
+scalability is very limited  only memory expansion. 
+	Lots of research alternatives 
+Parallel Prog ramming for Mul ticore Machines Using Ope nMP and MPI</text>
+        </slide>
+        <slide>
+          <slideno>35</slideno>
+          <text>MASTER
+	Only the master thread executes the section 
+	The rest of the threads proceed to continue execution from 
+the end of the master section 
+	There is no ba rrier at the end of the master section 
+	Same as SINGLE NOWAIT but only for master thread 
+C$OMP PARALLEL
+..
+C$OMP MASTER
+print*, "Init"
+C$OMP END MASTER
+..
+C$OMP END PARALLEL
+#pragma omp parallel
+{
+..
+#pragma omp master
+printf("Init\n");
+..
+}
+Not really a synchronization construct!
+Parallel Prog ramming for Mul ticore Machines Using Ope nMP and MPI</text>
+        </slide>
+        <slide>
+          <slideno>29</slideno>
+          <text>Worksharing constructs 
+	Worksharing constructs allow us to distribute 
+different work to threads in a parallel region: 
+Iterative worksharing: 
+!$OMP DO
+DO i=1,N
+! some fortran work
+ENDDO
+!$OMP END DO
+!$OMP WORKSHARE
+FORALL (i=1,N)
+! some Fortran 90/95 work 
+!$OMP END WORKSHARE 
+Non-iterative w orksharing: 
+!$OMP SECTIONS 
+!$OMP SECTION 
+! some fortran work
+!$OMP SECTION
+! some other fortran work
+!$OMP END SECTIONS
+Serial work by any processor: 
+!$OMP SINGLE
+!some serial work
+!$OMP END SINGLE
+Iterative worksharing: 
+#pragma omp for
+for (i=0; i&lt;N; i++) {
+/* some C/C++ work */
+}
+Non-iterative worksharing: 
+#pragma omp sections
+{
+#pragma omp section
+{
+/* some C/C++ work */
+}
+#pragma omp section
+{
+/* some other C/C++ work */
+}
+}
+Serial work by any p rocessor: 
+#pragma omp single
+{
+/* some serial work */
+}
+Parallel Prog ramming for Mul ticore Machines Using Ope nMP and MPI</text>
+        </slide>
+        <slide>
+          <slideno>54</slideno>
+          <text>Parallelizing an existing application
+	The really nice feature of OpenMP is that it allows for 
+incremental parallelization of a code. You can start 
+from the most expensive (time-wise) routine and work 
+your way down to less important subroutines with a 
+valid parallel program at any stage in the process. 
+	A few basic steps when starting from scratch: 
+1)Get a baseline result (some form of output) that you consider 
+correct from your default set of compiler optimization flags. 
+2)Test for better performance using more aggressive compiler 
+flags testing for correctness to within some tolerance. Set a new 
+baseline result based on your final set of flags. 
+Parallel Prog ramming for Mul ticore Machines Using Ope nMP and MPI</text>
+        </slide>
+        <slide>
+          <slideno>10</slideno>
+          <text>OpenMP programming model 
+	The OpenMP standard provides an API for shared memory 
+programming using the fork-join model. 
+	Multiple threads within the same address spa ce 
+	Code parallelization can be incremental 
+	Supports bot h coarse and fine level parallelization 
+	Fortran, C, C++ support 
+Parallel Prog ramming for Mul ticore Machines Using Ope nMP and MPI F
+O
+R
+KJ
+O
+I
+NParallel region
+F
+O
+R
+KJ
+O
+I
+NMaster thread{Parallel region{
+Figure by MIT OpenCourseWare.</text>
+        </slide>
+        <slide>
+          <slideno>64</slideno>
+          <text>ORDERED clause
+	Enforces sequential order in a part of a parallel loop: 
+	Requires the ordered clause to the DO/for construct 
+	No more than one ordered directive can be executed 
+per iteration 
+!$OMP PARALLEL DEFAULT(SHARED) &amp;
+!$OMP&amp; PRIVATE(I,J)
+!$OMP DO SCHEDULE(DYNAMIC,4) &amp;
+!$OMP&amp; ORDERED
+DO I=1,N	 Look at ordered.f90 
+DO J=1,M
+Z(I) = Z(I) + X(I,J)*Y(J,I)
+END DO
+!$OMP ORDERED
+IF(I&lt;21) THEN
+PRINT *, 'Z(',I,') =',Z(I)
+END IF
+!$OMP END ORDERED
+END DO
+!$OMP END DO
+!$OMP END PARALLEL
+Parallel Prog ramming for Mul ticore Machines Using Ope nMP and MPI</text>
+        </slide>
+        <slide>
+          <slideno>55</slideno>
+          <text>Preparing for parallelization 
+3)Profile your code: use the -p/-pg flags and prof/gprof or some 
+of the more capable tools such as Sun Studio's Performance 
+Analyzer. Locate the most costly parts of your code. 
+4)At this point you can opt for either a potentially better 
+performing and scaling top-level whole program 
+parallelization that tries to address more coarse grained parallel 
+work or go for the easier solution of the incremental loop level 
+parallelization. 
+5)If you choose the former you need to study the algorithm and 
+try and understand where it offers opportunities for data 
+parallelism. 
+6)For the latter do the same analysis at the hottest loop level. 
+Parallel Prog ramming for Mul ticore Machines Using Ope nMP and MPI</text>
+        </slide>
+        <slide>
+          <slideno>58</slideno>
+          <text>THREADPRIVATE example
+integer iam, nthr
+real rnumber
+common /identify/ iam, nthr
+common /work/ rnumber
+!$OMP THREADPRIVATE(/identify/ &amp;
+!$OMP&amp; , /work/)
+!$OMP PARALLEL
+!$ iam = omp_get_thread_num()
+!$ nthr = omp_get_num_threads()
+!$OMP END PARALLEL
+CALL DO_SERIAL_WORK
+!OMP PARALLEL COPYIN(work)
+print *, ia m, nthr, rnumber
+call DO_PARALLEL_WORK
+!OMP END PARALLEL
+subroutine DO_PARALLEL_WORK
+integer i, iam, nthr
+real rnumber
+common /identify/ iam, nthr
+common /work/ rnumber
+!$OMP THREADPRIVATE(/identify/ &amp;
+!$OMP&amp; , /work/)
+!$OMP DO
+DO i=1,nthr
+print *, rnumber, iam
+ENDDO
+!$OMP END DO
+end
+Look at threadprivate.f90
+Parallel Prog ramming for Mul ticore Machines Using Ope nMP and MPI</text>
+        </slide>
+        <slide>
+          <slideno>7</slideno>
+          <text>Outline
+ Fundamentals of Shared Memory Programming 
+ Basic OpenMP concepts, PARALLEL directive 
+ Data scoping rules 
+ Basic OpenMP constructs/directives/calls 
+ Examples 
+ Parallelizing an existing code using OpenMP 
+ More advanced OpenMP directives &amp; functions 
+ OpenMP Per formance and Correctness issues 
+Parallel Prog ramming for Mul ticore Machines Using Ope nMP and MPI</text>
+        </slide>
+        <slide>
+          <slideno>4</slideno>
+          <text>Syllabus cont. 
+ Day 2 (Parallel Computing and MPI Pt2Pt): 
+ OpenMP 3.0 e nhancements 
+ Fundamentals of Distributed Memory Programming 
+ MPI concepts 
+ Blocking Point to Point Communications 
+ Day 3 (More Pt2Pt &amp; Collective communications): 
+ Paired and Nonblocking Point to Point Communications 
+ Other Point to Point routines 
+ Collective Communications: One-with-All 
+ Collective Communications: All-with-All 
+Parallel Prog ramming for Mul ticore Machines Using Ope nMP and MPI</text>
+        </slide>
+        <slide>
+          <slideno>74</slideno>
+          <text>Summary
+	OpenMP provides a portable high performance path towards 
+parallelization -allowing for incremental parallelization and 
+both coarse and fine grained parallelism targeting m oderate 
+numbers of processors. 
+	Using w orksharing constructs one can describe parallelism in 
+a very compact manner. 
+	Care needs to be taken with the data scope attributes to avoid 
+bugs as well as performance issues 
+	Programming in a coarse-grained, SPMD format is the key to 
+high OpenMP  performance. 
+	Ideal for automatic load balancing 
+Parallel Prog ramming for Mul ticore Machines Using Ope nMP and MPI</text>
+        </slide>
+        <slide>
+          <slideno>17</slideno>
+          <text>Conditional Compilation 
+_OPE NMP ma cro defined by the compiler 
+Conditional compilatio n of OpenMP library calls 
+Enclose within: 
+#ifdef _OPENMP
+/* C/C++ (or Fortran code) calling OpenMP runtime lib */
+whoami = omp_get_thread_num() + 1;
+#endif
+Precede by !$/C$/c$/*$ in Fortran: 
+!$ whoami = omp_get_thread_num() + &amp;
+!$ &amp; 1
+Fixed form formating rules apply 
+Parallel Prog ramming for Mul ticore Machines Using Ope nMP and MPI</text>
+        </slide>
+        <slide>
+          <slideno>34</slideno>
+          <text>SECTION &amp; SINGLE clauses
+	The SECTION construct has the following clauses: 
+	Data scope attribute clauses (lowercase for C/C++) 
+	PRIVATE (list), FIRSTPRIVATE (list), LASTPRIVATE (list) 
+	REDUCTION (operator: list) 
+	COPYIN (list) 
+	NOWAIT (at the !$OMP END SECTION for Fortran) 
+	The SINGLE construct has the following clauses: 
+	Data scope attribute clauses (lowercase for C/C++) 
+	PRIVATE (list), FIRSTPRIVATE (list) 
+	NOWAIT (at the !$OMP END SINGLE for Fortran) 
+	COPYPRIVATE(list) (at the !$OMP END SINGLE for Fortran, cannot 
+coexist with NOWAIT) 
+Parallel Prog ramming for Mul ticore Machines Using Ope nMP and MPI</text>
+        </slide>
+        <slide>
+          <slideno>33</slideno>
+          <text>SECTIONS &amp; SINGLE constructs
+C$OMP PARALLEL PRIVATE(mytid) 
+mytid = omp_get_thread_num()  
+if (mytid .eq. 0) then 
+call foo
+endif
+if (mytid .eq. 1) then
+call bar
+endif
+C$OMP END PARALLEL
+The SINGLE construct allows code 
+that is serial in nature to be executed 
+inside a parallel region. The thread executing the code will be the 
+first to reach the directive in the code. It doesn't have to be the 
+master thread. All other threads proceed to the end of the 
+structured block where there is an implicit synchronization. C$OMP PARALLEL
+C$OMP SECTIONS
+call foo
+C$OMP SECTION
+call bar
+C$OMP END PARALLEL
+Parallel Prog ramming for Mul ticore Machines Using Ope nMP and MPI 
+Figures by MIT OpenCourseWare.</text>
+        </slide>
+        <slide>
+          <slideno>75</slideno>
+          <text>Further information
+ The OpenMP AR B http://www.openmp.org 
+ The OpenMP users group http://www.compunity.org 
+ The Sun compilers 
+http://developers.sun.com/sunstudio 
+ OpenMP and the GNU compilers 
+http://gcc.gnu.org/projects/gomp 
+ The Intel compilers 
+http://www.intel.com/software/products/compilers
+ A lot more information on the class Stellar website 
+Parallel Prog ramming for Mul ticore Machines Using Ope nMP and MPI</text>
+        </slide>
+        <slide>
+          <slideno>13</slideno>
+          <text>Directives
+	Directives are additions to the source code that can be ignored by the compiler: 
+	Appearing as comments (OpenMP Fortran) 
+	Appearing as preprocessor macros (OpenMP C/C++) 
+	Hence a serial and a parallel program can share the same source code - the 
+serial compiler simply overlooks the parallel code additions 
+	Addition of a directive does not break the serial code 
+	However the wrong directive or combination of directives can give rise 
+to parallel bugs! 
+	Easier code maintenance, more compact code 
+	New serial code enhancements outside parallel regions will not break the 
+parallel program. 
+Parallel Prog ramming for Mul ticore Machines Using Ope nMP and MPI</text>
+        </slide>
+        <slide>
+          <slideno>24</slideno>
+          <text>Default Data Sharing Attributes 
+	Threads share global variables 
+	Fortran: COMMON blocks, SAVE variables, MODULE 
+variables 
+	C: File scope variables, static, storage on the heap 
+	Stack (automatic) variables are private: 
+	Automatic variables in a structured block 
+	Local variables in subroutines called from parallel 
+	Local pointers pointing to heap storage 
+	Loop index variables are by default private 
+	Defaults can be changed with the DEFAULT clause 
+	Default cannot be private in C/C++ 
+Parallel Prog ramming for Mul ticore Machines Using Ope nMP and MPI</text>
+        </slide>
+        <slide>
+          <slideno>16</slideno>
+          <text>Basics of Directives
+ Composed of: sentinel construct [clauses] 
+ Fortran fixed form: C$OMP, c$OMP, *$OMP, !$OMP 
+ Fortran free form: !$OMP 
+ Standard Fortran continuation characters allowed 
+C$OMP parallel default(none) shared(a,b) private(c,d)
+C$OMP&amp; reduction(a,+)
+ C/C++: #pragma omp 
+ Preprocessor macros allowed after #pragma omp 
+ Continuation accomplished with \ 
+#pragma omp parallel default(none) shared(a,b) \
+reduction(a,+)
+ Clause order is immaterial 
+Parallel Prog ramming for Mul ticore Machines Using Ope nMP and MPI</text>
+        </slide>
+        <slide>
+          <slideno>72</slideno>
+          <text>Other compilers and too ls 
+ Research compilers  Tools 
+ Omni 
+ OdinMP /OdinMP2 
+ OMPI 
+ OpenUH 
+ Intone 
+ Nanos M ercuri um  Intel Thread 
+Chec ker (free  for 
+personal use ) 
+ Sun Studio Thre ad 
+Analyzer (free ) 
+ Sun Studio 
+Performa nce 
+Analyzer (free ) 
+Parallel Prog ramming for Mul ticore Machines Using Ope nMP and MPI</text>
+        </slide>
+        <slide>
+          <slideno>70</slideno>
+          <text>OpenMP on Linux platforms 
+	Sun Studio compilers: suncc/CC and su nf77/f90/f95 
+ -xopenmp, -xopenmp=noopt 
+ Autoscoping extensions! DEFAULT(__AUTO) 
+ Free (without support) use 
+	Intel compilers: icc/icpc and ifort 
+ -openmp -openmp_report[0,1,2] 
+ Try KMP_SCHEDULE=static,balanced 
+ Can be used with a free personal license. 
+	GNU C/C++ and Fortran version 4.3 (and di stro backports) 
+ -fopenmp 
+Parallel Prog ramming for Mul ticore Machines Using Ope nMP and MPI</text>
+        </slide>
+        <slide>
+          <slideno>36</slideno>
+          <text>Use of NOWAIT
+	Implicit synchronizations at the 
+end of worksharing constructs, 
+even in the absence of an ! 
+$OMP END directive. 
+	Sometimes unnecessary - user 
+can specify no synchronization 
+using NOWAIT judiciously. 
+	Similar care needs to be taken 
+when using shared variables 
+inside a loop on both RHS &amp; 
+LHS. !$OMP DO 
+DO i=1, N
+A(i) = log(B(i))
+ENDDO
+!$OMP END DO NOWAIT
+!$OMP DO
+DO i=1, M
+C(i) = EXP(D(i))
+ENDDO
+!$OMP END DO NOWAIT
+!$OMP DO
+DO i=1, M
+D(i) = C(i)/D(i)
+ENDDO
+!$OMP END DO
+$!OMP DO
+DO i=1, N
+B(i) = 1.0*i+ 0.5
+A(i) = A(i)*B(i)
+ENDDO
+$!OMP END DO
+Parallel Prog ramming for Mul ticore Machines Using Ope nMP and MPI</text>
+        </slide>
+        <slide>
+          <slideno>9</slideno>
+          <text>Shared Memory Programming
+ Under the assumption of a single address space one uses multiple control 
+streams (threads, processes) to operate on both private and shared data. 
+ Shared data: synchronization, communication, work 
+ In shared arena/mmaped file (multiple processes) 
+ In the heap of the process address space (multiple threads) 
+Process 
+address 
+space Thread 
+Private 
+stack Thread 
+Private 
+stack Heap 
+Single 
+process 
+space Process 
+Private 
+stack Private 
+heap Process 
+Private 
+stack Private 
+heap Shared 
+memory 
+arena 
+Parallel Prog ramming for Mul ticore Machines Using Ope nMP and MPI</text>
+        </slide>
+        <slide>
+          <slideno>2</slideno>
+          <text>Parallel Programming for Multicore Machines Using OpenMP and MPIStarHPC
+A VMware Player/VirtualBox image with OpenMPI 
+and the GNU and Sun compilers for OpenMP for 
+development alongside Eclipse PTP and SunStudio 
+12/Netbeans for an IDE. Link to download the virtual 
+machine will appear on the class website.
+http://web.mit.edu/star/hpc/  contains detailed 
+instructions on using the Virtual Machines.
+E-mail star@mit.edu  for support and troubleshooting.</text>
+        </slide>
+        <slide>
+          <slideno>53</slideno>
+          <text>MD pos/vel/acc integration
+!$omp  parallel do 
+!$omp&amp; default(shared) 
+!$omp&amp; private(i,j) 
+do i = 1,np 
+do j = 1,nd 
+pos(j,i) = pos(j,i) + vel(j,i)*dt + 0.5*dt*dt*a(j,i) 
+vel(j,i) = vel(j,i) + 0.5*dt*(f(j,i)*rmass + a(j,i)) 
+a(j,i) = f(j,i)*rmass 
+enddo 
+enddo 
+!$omp  end parallel do 
+Parallel Prog ramming for Mul ticore Machines Using Ope nMP and MPI</text>
+        </slide>
+        <slide>
+          <slideno>71</slideno>
+          <text>OpenMP on Linux 
+IA32/IA64/AMD64 (commercial)
+ Compilers 
+ Portland Group compilers (PGI) with debugger 
+ Absoft Fortran compiler 
+ Pathscale compilers 
+ Lahey/Fujitsu Fortran compiler 
+ Debuggers 
+ Totalview 
+ Allinea DDT 
+Parallel Prog ramming for Mul ticore Machines Using Ope nMP and MPI</text>
+        </slide>
+        <slide>
+          <slideno>61</slideno>
+          <text>STATIC
+Parallel Prog ramming for Mul ticore Machines Using Ope nMP and MPI chunk = 150 chunk = 250 chunk = 300 default0
+0
+00
+1
+1
+11 2
+22
+00
+50
+100
+150
+200
+250
+300
+350
+400
+450
+500
+550
+600I
+t
+e
+r
+a
+t
+i
+o
+n 
+Sp
+a
+ce
+Figure by MIT OpenCourseWare.</text>
+        </slide>
+        <slide>
+          <slideno>30</slideno>
+          <text>DO/for construct
+C$OMP PARALLEL PRIVATE(mytid,many,ntill,i)	 C$OMP PARALLEL
+C$OMP DO
+mytid = omp_get_thread_num()	do i=1,N
+many = N/omp_get_num_threads() write(6,*) foo
+enddo
+ntill = (mytid+1)*many -1 C$OMP END DO
+C$OMP END PARALLEL
+do i=mytid*many, ntill 
+write(6,*) foo
+enddo
+C$OMP END PARALLEL
+C/C++ for loops  need to be 
+in canonical shape: 
+initialization 
+comparison test (ord er) 
+increment of loop i ndex 
+loop l imits are invariant 
+increment is invariant 
+Parallel Prog ramming for Mul ticore Machines Using Ope nMP and MPI 
+Figure by MIT OpenCourseWare.</text>
+        </slide>
+        <slide>
+          <slideno>23</slideno>
+          <text>5 Example of IF clause
+Program ompif 
+integer N read (5,*) N 
+Look  at omp if.f90 LookLook  at omp if.f90 at omp if.f90
+!$OMP PARALLEL IF(N &gt; 1000)
+write(6,*) "Here I am running"
+!$OMP END PARALLEL
+END
+To run with 3 threads:
+% setenv OMP_NUM_THREADS 3
+% ./a.out
+Here I am running
+% ./a.out
+Here I am running
+Here I am running
+To run with 9 threads:
+% setenv OMP_NUM_THREADS 9
+%./a.out
+5
+Here I am running
+% ./a.out
+1000000
+Here I am running
+Here I am running
+Here I am running
+Here I am running
+Here I am running
+Here I am running
+Here I am running
+Here I am running
+Here I am running
+Parallel Prog ramming for Mul ticore Machines Using Ope nMP and MPI Here I am running
+1000000</text>
+        </slide>
+        <slide>
+          <slideno>21</slideno>
+          <text>Parallel Directive Example
+PROGRAM PARALLEL 
+IMPLICIT NONE Look  at h ello_omp .f90 
+!$OMP PARALLEL
+write (6,*) "hello world!"
+!$OMP END PARALLEL 
+END PROGRAM PARALLEL 
+To run on a system: 
+% setenv OMP_NUM_THREADS 4
+% sunf90 -xopenmp hello_omp.f90
+%./a.out
+hello world!
+hello world!
+hello world!
+hello world!
+Parallel Prog ramming for Mul ticore Machines Using Ope nMP and MPI</text>
+        </slide>
+        <slide>
+          <slideno>3</slideno>
+          <text>Course Syllabus
+ Day 1 (Parallel Computing and OpenMP): 
+ Fundamentals of Shared Memory Programming 
+ Basic OpenMP concepts, PARALLEL directive 
+ Data scoping rules 
+ Basic OpenMP constructs/directives/calls 
+ Examples 
+ Parallelizing an existing code using O penMP 
+ More advanced OpenMP directives &amp; functions 
+ OpenMP Performance issues 
+Parallel Prog ramming for Mul ticore Machines Using Ope nMP and MPI</text>
+        </slide>
+        <slide>
+          <slideno>8</slideno>
+          <text>Acknowledgments
+ The OpenMP AR B 
+ Tim Mattson (Intel) &amp; Rudolf Eigenmann (Purdue) 
+ Miguel Hermanss (UP M adrid) 
+ Ruud van der Pas (Sun Micro) 
+ NERSC, LLNL 
+Parallel Prog ramming for Mul ticore Machines Using Ope nMP and MPI</text>
+        </slide>
+        <slide>
+          <slideno>5</slideno>
+          <text>Syllabus cont. 
+ Day 4 (advanced MPI-1): 
+ Collective Communications: All-with-All 
+ Derived Datatypes 
+ Groups, Contexts and C ommunicators 
+ Topologies 
+ Language Binding issues 
+ The Runtime and Environment Management 
+ The MPI profiling interface and tracing 
+Parallel Prog ramming for Mul ticore Machines Using Ope nMP and MPI</text>
+        </slide>
+        <slide>
+          <slideno>41</slideno>
+          <text>BARRIER
+	Barrier Synchronization 
+	Threads wait until a ll threads reach this point 
+	Implicit barrier at the end of each parallel region 
+	Costly operation, to be used judiciously 
+	Be careful not to cause deadlock: 
+	No barrier inside of CRITICAL, 
+MASTER, SECTIONS, SINGLE!
+C$OMP PARALLEL #pragma omp parallel 
+.. {
+C$OMP BARRIER ..
+.. #pragma omp barrier
+C$OMP END PARALLEL ..
+}
+Parallel Prog ramming for Mul ticore Machines Using Ope nMP and MPI</text>
+        </slide>
+        <slide>
+          <slideno>42</slideno>
+          <text>CRITICAL
+	Can be named (strongly suggested) 
+	these names have a global scope and must not conflict with 
+subroutine or common block names 
+	They ensure that only one thread at a time is in the critical section. 
+The rest wait at the beginning of the section, or proceed after 
+finishing their work. 
+	Essentially serializes work - beware of the drop in performance 
+and use when necessary! 
+C$OMP PARALLEL	 #pragma omp parallel 
+.. {
+..
+ C$OMP CRITICAL(mult)
+A(i) = A(i) * vlocal #pragma omp critical(mult)
+C$OMP END CRITICAL(mult) A(i) *= vlocal
+..
+ ..
+C$OMP END PARALLEL }
+Parallel Prog ramming for Mul ticore Machines Using Ope nMP and MPI</text>
+        </slide>
+        <slide>
+          <slideno>48</slideno>
+          <text>Example Programs 
+ Solution of Helmholtz eqn via Jacobi iterations (look at file jacobi.f) 
+	Four parallel loops: 
+	One for initialization 
+	One for copying the previous state 
+	One for evaluating the pointwise residual, updating the solution  and 
+computing the RMS residual 
+	One for evaluating the error 
+ Molecular dynamics calculation (look at file md.f) 
+	Two parallel loops: 
+	Force and energy calculations for every particle pair 
+ Two subroutine/function calls in the lexical extent 
+	Time update of positions, velocities and accelerations 
+Parallel Prog ramming for Mul ticore Machines Using Ope nMP and MPI</text>
+        </slide>
+        <slide>
+          <slideno>25</slideno>
+          <text>DEFAULT example
+iwork = 1000 subroutine foo(ido, iwork, np)
+common /stuff/ a(iwork) integer ido, iwork, np
+C$OMP PARALLEL PRIVATE(np, ieach) common /input/ A(iwork)
+np = omp_get_num_threads() real temp(ido)
+ieach = iwork/np DO i = 1, ido
+call foo(ieach, iwork, np) temp(i) = A((np-1)*ido+i)
+C$OMP END PARALLEL write(6,*) temp(i)
+ENDDO 
+iwork = 1000
+common /stuff/ a(iwork)
+C$OMP PARALLEL DEFAULT(PRIVATE) SHARED(a, iwork)
+np = omp_get_num_threads() 
+ieach = iwork/np
+call foo(ieach, iwork, np)
+C$OMP END PARALLEL
+DEFAULT(NONE) serves as a way of forcing the user to
+specify the data attribute for each variable to avoid bugs.
+Parallel Prog ramming for Mul ticore Machines Using Ope nMP and MPI</text>
+        </slide>
+        <slide>
+          <slideno>76</slideno>
+          <text>MIT OpenCourseWare
+http://ocw.mit.edu 
+12.950  Parallel Programming for Multicore Machines Using OpenMP and MPI 
+IAP 2010 
+For information about citing these materials or our Terms of Use, visit: http://ocw.mit.edu/terms.</text>
+        </slide>
+        <slide>
+          <slideno>19</slideno>
+          <text>Orphan directives 
+Dynamic 
+extent 
+includes 
+static 
+extent Static or lexical 
+extent of parallel 
+region 
+C$OMP PARALLEL
+call foo(q)
+C$OMP END PARALLEL
+call foo(q)
+call bar
+Subroutine foo(a)
+real b, c
+b = 1.0
+Orph an 
+directive 
+C$OMP DO PRIVATE(b,c)
+DO i=1,1000
++
+c = log(real(i)+b)
+b = c
+a = c
+ENDDO
+return
+end
+Different compilation un it One compilation unit 
+Parallel Prog ramming for Mul ticore Machines Using Ope nMP and MPI</text>
+        </slide>
+        <slide>
+          <slideno>47</slideno>
+          <text>OpenMP Runtime
+	Library calls: 
+ omp_set_num_threads, omp_get_num_threads 
+ omp_get_max_threads, omp_get_num_procs 
+ omp_get_thread_num 
+ omp_set_dynamic, omp_get_dynamic 
+ omp_set_nested, omp_get_nested 
+ omp_in_parallel 
+ Environment variables: 
+ OMP_NUM_THREADS (see NUM_THREADS clause) 
+ OMP_DYNAMIC 
+ OMP_NESTED 
+Parallel Prog ramming for Mul ticore Machines Using Ope nMP and MPI</text>
+        </slide>
+        <slide>
+          <slideno>38</slideno>
+          <text>Combined Worksharing Directives
+	For convenience combinations of PARALLEL with 
+DO/for, SECTIONS a nd WO RKSHA RE are allowed, 
+with reasonable combinations of allowed clauses 
+	NOWAIT does not make sense in this case 
+	!$OMP PAR ALLEL DO 
+	#pragma omp parallel for 
+	!$OMP PAR ALLEL SECTIONS 
+	#pragma omp parallel sections 
+	!$OMP PAR ALLEL WORKSHARE 
+Parallel Prog ramming for Mul ticore Machines Using Ope nMP and MPI</text>
+        </slide>
+        <slide>
+          <slideno>69</slideno>
+          <text>Sequential Equivalence 
+	Using a subset of OpenMP produce parallel code that gives 
+the same results with the serial code. 
+	Only temporary and loop variables are private 
+	Updates of shared variables are protected 
+	Strong Sequential Equivalence: bitwise identical results 
+	Sequential ordered updates of variables 
+ Serialization of reduction op erations ( ordered loops) 
+	Weak Sequential Equivalence: equivalent to within floating 
+point math nuances 
+	Sequential (critical section) updates 
+Parallel Prog ramming for Mul ticore Machines Using Ope nMP and MPI</text>
+        </slide>
+        <slide>
+          <slideno>1</slideno>
+          <text>Parallel Programming for Multicore Machines Using OpenMP and MPICourse basics
+Web site: http://stellar.mit.edu/S/course/12/ia10/12.950/
+https://wikis.mit.edu/confluence/display/12DOT950ia10/Home
+Homeworks: One per day, incremental, finally due Feb 1.
+Discussion on homework problems during next class
+Grade: A/B/C etc.
+Textbook: none!  But suggested books on Web site.
+Look at a lot of other support material on the Web site, including 
+instructions about virtual machines.
+Please sign up  with your name, Athena e-mail (if existing) and 
+whether you want to be a listener or not. You can change this 
+before the end of the course.</text>
+        </slide>
+        <slide>
+          <slideno>66</slideno>
+          <text>lock A PI
+ omp_init_lock, omp_destroy_lock 
+ omp_set_lock, omp_unset_lock, omp_test_lock 
+ omp_init_nest_lock, omp_destroy_nest_lock 
+ omp_set_nest_lock, omp_unset_nest_lock, 
+omp_test_nest_lock 
+timing API 
+ omp_get_wtim e 
+ omp_get_wtick 
+Parallel Prog ramming for Mul ticore Machines Using Ope nMP and MPI</text>
+        </slide>
+        <slide>
+          <slideno>37</slideno>
+          <text>LASTPRIVATE clause
+	LASTPRIVATE(variable) will m ake sure that what 
+would have been the last value of the private variable 
+if the loop had been executed sequentially gets 
+assigned to the variable outside the scope 
+	Look at the sequence of problem-*.f files in the hom ework. 
+program problem
+real A(4)
+DO I=1,4
+A(I) = 10.0
+ENDDO
+C$OMP PARALLEL FIRSTPRIVATE(A)
+C$OMP DO LASTPRIVATE(A)
+DO I=1,4
+A(I) = A(I) + LOG(A(I))
+ENDDO
+C$OMP END DO
+print *, "region result is ", A
+C$OMP END PARALLEL
+print *, "result is ", A
+end
+program problem
+real A(4)
+DO I=1,4
+A(I) = 10.0
+ENDDO
+C$OMP PARALLEL DO FIRSTPRIVATE(A) C$ 
+&amp;LASTPRIVATE(A)
+DO I=1,4
+A(I) = A(I) + LOG(A(I))
+ENDDO
+C$OMP END PARALLEL DO
+print *, "result is ", A
+end
+Parallel Prog ramming for Mul ticore Machines Using Ope nMP and MPI</text>
+        </slide>
+        <slide>
+          <slideno>12</slideno>
+          <text>OpenMP history
+	During the early multiprocessor days: vendor specific 
+	Early standardization efforts: PCF, ANSI X3H5 
+	SGI/Cray merger gave impetus to new efforts 
+	OpenMP: Open Multi Processing 
+	ARB (Architecture Review Board): 
+	Software/hardware vendors, ISVs &amp; DOE/ASCI 
+	Evolving standard: currently common at 3.0, some compilers still 
+implement just Fortran 1.1, C /C++ 1.0. Most Fortran 2.0 or 2.5 
+however. Version 3.0 support is becoming more common. 
+	JOMP for Java (academic project) 
+	OpenMP uses compiler directives &amp; library routines 
+Parallel Prog ramming for Mul ticore Machines Using Ope nMP and MPI</text>
+        </slide>
+        <slide>
+          <slideno>60</slideno>
+          <text>SCHEDULE
+	The user has finer control over the distribution of loop iterations onto threads 
+in the DO/for construct: 
+	SCHEDULE(static[,chunk]) 
+	Distribute work evenly or in chunk size units 
+	SCHEDULE(dynamic[,chunk]) 
+	Distribute work on available threads in chunk sizes. 
+	SCHEDULE(guided[,chunk]) 
+	Variation of dynamic starting from large chunks and exponentially 
+going down to chunk size. 
+	SCHEDULE(runtime) 
+ The environment variable OMP_SCHEDULE which is one of 
+static,dynamic, guided or an appropriate pair, say "static,500" 
+Parallel Prog ramming for Mul ticore Machines Using Ope nMP and MPI</text>
+        </slide>
+        <slide>
+          <slideno>63</slideno>
+          <text>GUIDED
+Parallel Prog ramming for Mul ticore Machines Using Ope nMP and MPI 1 2 3 6 7 8 9 10 11 12 4 5
+Pieces of work2048 iter.
+512 iter.
+256 iter.
+256 iter.1024 iter.
+Figure by MIT OpenCourseWare.</text>
+        </slide>
+        <slide>
+          <slideno>65</slideno>
+          <text>FLUSH directive
+	At th e heart of BARRIER, it enforces a consistent 
+view of memory. 
+	!$OMP FL USH [(list)] 
+	#pragma omp flush [(list)] 
+	Restrictions on the use of flush in C/C++, same 
+restrictions applying to barrier. 
+if (x != 0) if (x != 0)
+#pragma omp flush {
+#pragma omp flash
+}
+Parallel Prog ramming for Mul ticore Machines Using Ope nMP and MPI</text>
+        </slide>
+        <slide>
+          <slideno>50</slideno>
+          <text>Jacobi main loop
+!$omp do p rivate(resid) reduction(+:error) 
+do j = 2,m-1 
+do i = 2,n-1 
+* Evaluate residual 
+resid = (ax*(uold(i-1,j) + uold(i+1,j)) 
+&amp;    + ay*(uold(i,j-1) + uold(i,j+1)) 
+&amp;     + b * uo ld(i,j) - f(i,j))/b 
+* Update solution 
+u(i,j) = uold(i,j) - omega * resid 
+* Accumula te residual error 
+error = error + resid*resid 
+end do 
+enddo 
+!$omp enddo nowait 
+Parallel Prog ramming for Mul ticore Machines Using Ope nMP and MPI</text>
+        </slide>
+        <slide>
+          <slideno>52</slideno>
+          <text>MD force and energy calculation
+!$omp  parallel do 
+!$omp&amp; default(shared) 
+!$omp&amp; private(i,j,k,rij,d) 
+!$omp&amp; reduction(+ : pot, kin) 
+do i=1,np 
+! compute potential energy 
+! and forces 
+f(1:nd,i) = 0.0 
+do j=1,np 
+if (i .ne. j) then 
+call dist(nd,box, &amp; 
+&amp; pos(1,i),pos(1,j),rij,d) 
+! attribute half of the potential 
+! energy to p article 'j' pot = pot + 0.5*v(d) 
+do k=1,nd 
+f(k,i) = f(k,i) - &amp; 
+&amp;   rij(k)*dv(d)/d 
+enddo 
+endif 
+enddo 
+! compute  kinetic energy 
+kin = kin + &amp; 
+&amp; dotr 8(nd,vel(1,i),vel(1,i)) 
+enddo 
+!$omp  end pa rallel do 
+kin = kin*0.5*mass 
+Parallel Prog ramming for Mul ticore Machines Using Ope nMP and MPI</text>
+        </slide>
+        <slide>
+          <slideno>26</slideno>
+          <text>PRIVATE clause
+	A private variable is uninitialized upon entry to the parallel region 
+	There is no storage association with the variable outside the region 
+	However at the end of the parallel region the outside variable's 
+value cannot be defined on the basis of its prior to the parallel 
+region value. 
+	The example to the right contains 
+Look at problem-private.f 
+many problems:	program problem
+real A
+	The value of A is uninitialized A = 10.0 
+C$OMP PARALLEL PRIVATE(A)
+A = A + LOG(A)
+ 	The value of A is undefined 
+C$OMP END PARALLEL
+print *, A
+end
+Parallel Prog ramming for Mul ticore Machines Using Ope nMP and MPI</text>
+        </slide>
+        <slide>
+          <slideno>56</slideno>
+          <text>Parallelizing
+8) One can try and use the diagnostic information that the 
+autoparallelizing engines of most compilers emit to aid in faster 
+identifying the low hanging fruit for the fine level loop 
+parallelization. 
+9) Once you have a functional parallel program test first for 
+correctness vs. the baseline solution and then for speed and scaling 
+at various processor counts. Debug if necessary. 
+10)You then proceed to optimize the code by hoisting and fusing 
+parallel regions so as to get as few as possible, ideally only one for 
+the whole code through the use of SINGLE &amp; MASTER. Move 
+code to subroutines with orphaned directives  and privatize as 
+many variables as possible. Iterate with (9). 
+Parallel Prog ramming for Mul ticore Machines Using Ope nMP and MPI</text>
+        </slide>
+        <slide>
+          <slideno>14</slideno>
+          <text>OpenMP Library and Environment
+	Aside from directives, OpenMP runtime library: 
+	Execution environment routines: 
+	Who am I? How many of us are there? How are we 
+running? 
+	Lock routines 
+	Timing routines 
+	Environment variables are another, easy way to modify the parallel 
+program's behavior from the command line, before execution. 
+	Nested parallelism is allowed 
+	A dynamic change in the number of threads is allowed before a 
+parallel region is entered 
+Parallel Prog ramming for Mul ticore Machines Using Ope nMP and MPI</text>
+        </slide>
+        <slide>
+          <slideno>11</slideno>
+          <text>OpenMP conceptual overview
+	Threads read and w rite shared variables 
+	No need for explicit communications with messages 
+	Use synchronization to protect against race conditions 
+	Shared variable scope attributes help minimize the
+necessary syn chronization
+	No sense to try and run in parallel loops with loop-carried 
+dependencies 
+	Threads use their own private variables to do w ork that does 
+not need to be globally visible outside the parallel region 
+	No support for proper parallel I/O 
+Parallel Prog ramming for Mul ticore Machines Using Ope nMP and MPI</text>
+        </slide>
+        <slide>
+          <slideno>49</slideno>
+          <text>Jacobi initialization
+!$omp parallel do private(xx,yy ) 
+do j = 1,m 
+do i = 1,n 
+xx = - 1.0 + dx* dble(i-1)  ! -1 &lt;x&lt; 1 
+yy = - 1.0 + dy* dble(j-1)  ! -1 &lt;y&lt; 1 
+u(i,j) = 0.0 
+f(i,j) = -alpha *(1.0-xx*xx)*(1.0-yy*yy) 
+&amp;  -2.0*(1.0-xx*xx)-2.0*(1.0-yy*yy) 
+enddo 
+enddo 
+!$omp end parallel do 
+Parallel Prog ramming for Mul ticore Machines Using Ope nMP and MPI</text>
+        </slide>
+        <slide>
+          <slideno>46</slideno>
+          <text>Critical trouble
+PROGRAM CRITICAL 
+INTEGER:: L,I 
+INTEGER:: nthreads, OMP_GET_NUM_THREADS 
+L=10 
+!$OMP PARALLEL SHARED(L) PRIVATE(nthreads,I) 
+!$OMP MASTER 
+nthreads = OMP_GET_NUM_THREADS() 
+PRINT *, "Number of threads:",nthreads 
+!$OMP END MASTER 
+!$OMP CRITICAL(adder) 
+CALL ADD_ONE(L) 
+!$OMP END CRITICAL(adder) 
+!$OMP END PARALLEL 
+PRINT *, "The final value of L is", L 
+END PROGRAM CRITICAL SUBROUTINE ADD_ONE(I) 
+IMPLICIT NONE 
+INTEGER, INTENT(INOUT):: I 
+INTEGER:: J 
+J= I 
+!$OMP MASTER 
+OPEN(UNIT=26,FORM='FORMATTED',FILE='junk') 
+DO I=1,40000 
+WRITE(26,*) "Hi Mom!"
+END DO
+CLOSE(26)
+!$OMP END MASTER 
+J = J + 1 
+I = J 
+END SUBROUTINE ADD_ONE 
+Parallel Prog ramming for Mul ticore Machines Using Ope nMP and MPI</text>
+        </slide>
+        <slide>
+          <slideno>39</slideno>
+          <text>Allowed Combinations
+Clause PARALLEL DO/fo 
+r SECTIONSSINGLE WORKSHAR 
+E PARALLEL 
+DO/for PARALLEL 
+SECTIONS PARALLEL 
+WORKSHARE 
+IF OK OK OK OK 
+PRIVATE OK OK OK OK OK OK OK 
+SHARED OK OK OK OK OK 
+DEFAULT OK OK OK OK 
+FIRSTPRIVATE OK OK OK OK OK OK OK 
+LASTPRIVATE OK OK OK OK 
+REDUCTION OK OK OK OK OK OK 
+COPYIN OK OK OK OK 
+SCHEDULE OK OK 
+ORDERED OK OK 
+NOWAIT OK OK OK OK 
+Parallel Prog ramming for Mul ticore Machines Using Ope nMP and MPI</text>
+        </slide>
+        <slide>
+          <slideno>28</slideno>
+          <text>REDUCTION clause
+	It enables reduction binary operations (arithmetic, logical and intrinsic 
+procedures like MAX) in an optimal manner (as they require atomic updates). 
+	Scalar variables are initialized to relevant values and at the end of the loop the 
+value of the variable before the parallel execution is also included in the 
+reduction. 
+!$OMP PARALLEL DEFAULT(PRIVATE) REDUCTION(+:I) &amp;
+!$ &amp; REDUCTION(*:J) REDUCTION(MAX:K)
+tnumber=OMP_GET_THREAD_NUM()
+I = I + tnumber
+J = J * tnumber Look  at reduction.f90 
+K = MAX(K,tnumber) 
+!$OMP END PARALLEL 
+PRINT *, " I=",I," J=", J," K=",K 
+Parallel Prog ramming for Mul ticore Machines Using Ope nMP and MPI</text>
+        </slide>
+        <slide>
+          <slideno>22</slideno>
+          <text>Parallel Directive Clauses
+ Control clauses: 
+ IF (scalar_logical_expression) 
+ Conditional parallel execution (is there enough work to do?) 
+ NUMTHREADS(scalar_logical_expression) 
+ Hardcodes the num ber of threads (useful for sections) 
+ Overrides runtime library call, environment variable 
+ Data sharing attribute clauses (lowercase for C/C++) 
+ PRIVATE (list), SHARED (list) 
+ DEFAULT (PRIVATE | SHARED | NONE) 
+ FIRSTPRIVATE (list) 
+ REDUCTION (operator: list) 
+ COPYIN (list) 
+Parallel Prog ramming for Mul ticore Machines Using Ope nMP and MPI</text>
+        </slide>
+        <slide>
+          <slideno>6</slideno>
+          <text>Syllabus cont.
+ Day 5 (more MPI-1 &amp; Parallel Programming): 
+ Hybrid MPI+OpenMP  programming 
+ MPI Performance Tuning &amp; Portable Performance 
+ Performance concepts and Scalability 
+ Different modes of parallelism 
+ Parallelizing an existing code using M PI 
+ Using 3rd party libraries or writing your own library 
+Parallel Prog ramming for Mul ticore Machines Using Ope nMP and MPI</text>
+        </slide>
+        <slide>
+          <slideno>51</slideno>
+          <text>Jacobi error
+!$omp parallel do private(xx,yy ,temp) reduction(+:error) 
+do j = 1,m 
+do i = 1,n 
+xx = - 1.0d0 + d x * dble(i-1) 
+yy = - 1.0d0 + d y * dble(j-1) 
+temp = u(i,j) -(1.0-xx*xx)*(1.0-yy*yy) 
+error = error + temp*temp 
+enddo
+enddo
+!$omp end parallel do
+error = sqrt(error)/dble(n*m)
+Parallel Prog ramming for Mul ticore Machines Using Ope nMP and MPI</text>
+        </slide>
+        <slide>
+          <slideno>57</slideno>
+          <text>THREADPRIVATE &amp; friends
+	$OMP THREADPRIVATE(list) 
+	#pragma omp threadprivate(list) 
+	Makes global data private to a thread 
+	Fortran: COMMON blocks, module or save variables 
+	C: File scope and static variables 
+	Different from making them PRIVATE 
+	with PRIVATE global scope is lost 
+	THREADPRIVATE preserves global scope within each thread 
+	Threadprivate variables can be initialized using CO PYIN 
+	After a SINGLE construct the value of a threadprivate or private 
+variable can be broadcast to all threads using the COPYPRIVATE 
+clause. 
+Parallel Prog ramming for Mul ticore Machines Using Ope nMP and MPI</text>
+        </slide>
+        <slide>
+          <slideno>15</slideno>
+          <text>Nested and D ynamic Parallelism 
+	By default, the original number of forked 
+threads is used throughout 
+	If omp_set_dynamic() is used or 
+OMP_DYNAMIC is TRUE, this number 
+can be reset. 
+	Nested parallel constructs are run serialized 
+unless omp_set_nested() is used or 
+OMP_NESTED is TRUE. 
+	Implementations are not required to 
+implement either: Use functions 
+omp_get_dynamic/omp_get_nested 
+Parallel Prog ramming for Mul ticore Machines Using Ope nMP and MPI</text>
+        </slide>
+        <slide>
+          <slideno>45</slideno>
+          <text>use of CRITICAL
+	Look at the following pi ece of code. 
+	The correct result should be 10+ num ber of threads. 
+	Without a critical directive it has a problem in that updates to 
+L are not controlled and a race condition develops. 
+	If you try to fix things by usi ng an atomic directive to control 
+the actual update to L inside the function, the reading of  the 
+inout argument is still not controlled. 
+	To correct the problem place the subroutine call inside a 
+critical section. 
+	Look at critical.f90, critical-atomic.f90 and critical-fixed.f90 
+Parallel Prog ramming for Mul ticore Machines Using Ope nMP and MPI</text>
+        </slide>
+        <slide>
+          <slideno>31</slideno>
+          <text>DO/for clauses
+ The DO/for construct has the following clauses: 
+ Data scope attribute clauses (lowercase for C/C++) 
+ PRIVATE (list), SHARED (list) 
+ FIRSTPRIVATE (list), LASTPRIVATE (list) 
+ REDUCTION (ope rator: list) 
+ COPYIN (list) 
+ Execution control clauses 
+ SCHEDULE (type, chunk) 
+ ORDERED 
+ NOWAIT (at the !$OMP END DO for Fortran) 
+Parallel Prog ramming for Mul ticore Machines Using Ope nMP and MPI</text>
+        </slide>
+        <slide>
+          <slideno>32</slideno>
+          <text>WORKSHARE construct
+ Added in OpenMP 2.0 to cover F90/F95 
+ Works on a rray not ation ope rations, forall &amp; where statements 
+&amp; constructs and transformational array intrinsics like
+matmul, dot_product, cshift etc.
+ Can only include ATOMIC and C RITICAL directives 
+ Private variables cannot be modified inside the block 
+ Applies only to lexical scope 
+ No function/subroutine calls inside the block 
+ There is an implicit barrier 
+!$OMP WORKSHARE
+after every array statement A = B + 1.0
+FORALL (i=1:100:2) B = A-1.5
+WHERE (A .NE. 1.5) A = B
+!$OMP END WORKSHARE NOWAIT
+Parallel Prog ramming for Mul ticore Machines Using Ope nMP and MPI</text>
+        </slide>
+        <slide>
+          <slideno>68</slideno>
+          <text>OpenMP bugs
+Race conditions 
+	Different results at different 
+times due to: 
+ unprivitized variables 
+	unprotected updates 
+	unfinished updates 
+real a, tmp
+a = 0.0
+C$OMP PARALLEL 
+C$OMP DO REDUCTION(+:a)
+do i=1, n
+tmp = sin(0.1*i)
+a = a + tmp
+b(i) = tmp
+enddo
+C$OMP END DO NOWAIT
+print *, b(1)
+C$OMP END PARALLEL DO
+print *, a
+Deadlocks
+	Not all threads enter a barrier 
+	A thread never releases a lock 
+	Two threads get the same 
+nested locks in different 
+succession 
+Consistency
+	private variables mask global 
+variables 
+Parallel Prog ramming for Mul ticore Machines Using Ope nMP and MPI</text>
+        </slide>
+        <slide>
+          <slideno>62</slideno>
+          <text>DYNAMIC
+Parallel Prog ramming for Mul ticore Machines Using Ope nMP and MPI thread 0 thread 1 thread 2
+Parallel region1
+12
+23
+36
+67
+78
+89
+910
+1011
+1112
+124
+45
+5Exceution
+Pieces of work
+Figure by MIT OpenCourseWare.</text>
+        </slide>
+      </slides>
+      <videos/>
+    </lecture>
+    <lecture>
+      <lecture_title>More MPI-1 and parallel programming</lecture_title>
+      <lecture_pdf_url>https://ocw.mit.edu/courses/12-950-parallel-programming-for-multicore-machines-using-openmp-and-mpi-january-iap-2010/resources/mit12_950iap10_lec5/</lecture_pdf_url>
+      <lectureno>5</lectureno>
+      <slides>
+        <slide>
+          <slideno>15</slideno>
+          <text>So when to do it?
+	Codes where MPI scaling suffers when OpenMP 
+does not for small # of procs 
+	If both scale bad but f or different reasons it may still 
+be beneficial to go hybrid as one may compensate for 
+the other one's deficiencies (improbable but possible) 
+	Severe load imbalance might become less 
+important for a hybrid code. 
+	If oversubscription and dynamic increase of threads 
+are allowed, load imbalance handled for large SMPs. 
+	Algorithm has finite scalability for MPI 
+ParallelProgra mmingfor MulticoreMach inesUsing OpenMPandMPI</text>
+        </slide>
+        <slide>
+          <slideno>23</slideno>
+          <text>Savings in communications
+src:Hitachi&amp;LRZ/RRZE 
+ParallelProgra mmingfor MulticoreMach inesUsing OpenMPandMPI
+0%20%40%60%80%100%Timings for the Computation and
+Communication PartTime [seconds]
+0.000000.020000.040000.060000.080000.100000.12000Ratio of Computation and Communication
+CommunicationHybrid
+10KPure mpi
+10KHybrid
+40KPure mpi
+40KHybrid 40K
+8 Nodes=64 ProcsPure mpi 40K
+64 Procs
+Computation
+Figure by MIT OpenCourseWare.</text>
+        </slide>
+        <slide>
+          <slideno>25</slideno>
+          <text>Common Master-only Problems
+ Idle (and/or sleeping) cpus 
+ Utilizing the full inter-node bandwidth 
+ Less but larger inter-node messages 
+ Contrast with the saturation problem for MPI 
+ Both are unde sirable scenarios 
+ Fine grain OpenMP problems 
+ False sharing 
+ Synchronization (that also causes cache flushes) 
+ On the other hand: minimize programming effort 
+ParallelProgra mmingfor MulticoreMach inesUsing OpenMPandMPI</text>
+        </slide>
+        <slide>
+          <slideno>56</slideno>
+          <text>Multilevel Parallelism
+	MLP: OpenMP inside processes, Unix System V 
+shared memory between processes 
+	Developed by NASA (NAS) and SGI for the 
+Origin series of DSM machines, works on Altix 
+HLRS
+ParallelProgra mmingfor MulticoreMach inesUsing OpenMPandMPI
+Courtesy of Rolf Rabenseifner, HLRS, University of Stuttgart. Used with permission.</text>
+        </slide>
+        <slide>
+          <slideno>71</slideno>
+          <text>Major modes of parallelism
+ Master-worker (or task-farming) 
+ Embarrassingly parallel 
+ Domain decomposition 
+ Array distribution 
+ Particle/Sp ace distribution 
+ Pipelined dataflows 
+ Concurrent workflow execution 
+ Weakly coupled interdisciplinary models 
+ParallelProgra mmingfor MulticoreMach inesUsing OpenMPandMPI</text>
+        </slide>
+        <slide>
+          <slideno>48</slideno>
+          <text>Multi-threaded parallel libraries
+	Master-only paradigm only the drudgery of the 
+OpenMP code moves inside the library 
+	Example: MPI code calling multithreaded 
+LAPA CK/BLAS lib rary on each process 
+	Useful provided there is enough w ork to go a round 
+	Allows the use of fast direct solvers 
+	Hybrid code with  master-only segment calling 
+multithreaded library. Problems when other 
+multithreaded parts call serial version of library. 
+ParallelProgra mmingfor MulticoreMach inesUsing OpenMPandMPI</text>
+        </slide>
+        <slide>
+          <slideno>11</slideno>
+          <text>Motivations (cont)
+	MPI scaling issues: 
+	Collective communication sc alability issues 
+	Load imbalance with larger # of processes 
+	Increasing contention for network resources: 
+	Sharing of  interface, network link bandwidth limit 
+	Latency becomes less predictable 
+	For constant problem size (weak scaling) message 
+sizes get smaller: 
+	More latency dependence 
+	Less efficient use of the network 
+ParallelProgra mmingfor MulticoreMach inesUsing OpenMPandMPI</text>
+        </slide>
+        <slide>
+          <slideno>81</slideno>
+          <text>Parallelizing an Existing Application
+	Study and understand the inherent parallelism in your algorithm  
+you need to employ it to the maximum. 
+	Profile your code to find expensive parts 
+	Try to parallelize at as coarse a level as possible 
+	Among natural (for your algorithm) decompositions choose the 
+decomposition that is the best compromise: 
+	For little communication ove rhead 
+	For load balance 
+	For requiring as little change to the code as possible 
+	Code up, test and either tune or try another parallelization 
+approach if too slow. 
+	Use 3rd party libraries! 
+ParallelProgra mmingfor MulticoreMach inesUsing OpenMPandMPI</text>
+        </slide>
+        <slide>
+          <slideno>78</slideno>
+          <text>Pipelined Dataflows 
+src:LLNL 
+	Like a processor pipeline, only at the 
+level of individual CPUs or machines 
+	There is a corresponding pipeline 
+start-up and wind-down cost. The 
+longer the pipeline, the higher the 
+cost, the more the parallelism. 
+	For N&gt;2(P-1) slices &amp; P pipeline stages 
+	floor((N-2(P-1))/P)+2(P-1) total stages 
+	Each stage can be parallel in itself 
+ParallelProgra mmingfor MulticoreMach inesUsing OpenMPandMPI
+Filter 1
+Filter 2
+Filter 3p1
+p2
+p3
+Time
+Figure by MIT OpenCourseWare.</text>
+        </slide>
+        <slide>
+          <slideno>54</slideno>
+          <text>Advantages
+	OpenMP (or in some cases Pthr ead) code 
+transfers over cleanly. 
+	Minimal coding effort, maximum reuse 
+	Certainly allows memory scaling of codes 
+	A lot of ground for enhanced performance 
+	But still for a limited family of codes: 
+	SPMD-like OpenMP  codes would perform the best 
+	Would also be the easiest for MPI+OpenMP 
+ParallelProgra mmingfor MulticoreMach inesUsing OpenMPandMPI</text>
+        </slide>
+        <slide>
+          <slideno>26</slideno>
+          <text>Beyond master only
+	If the MPI implementation is thread-safe for use 
+by multiple threads at the same time , all threads 
+can partake in message passing 
+	Otherwise less restrictive variants of master-only 
+for portable &amp; correct code- call MPI_* from: 
+	Within MASTER regions: same as Master-only with 
+quite poss ibly less fork-join overhead, explicit barrier 
+	Within SINGLE regions: dangerous, implicit barrier, 
+	Within CRITICAL regions: sa fe for all to partake
+ParallelProgra mmingfor MulticoreMach inesUsing OpenMPandMPI</text>
+        </slide>
+        <slide>
+          <slideno>68</slideno>
+          <text>Programming in Parallel 
+	Decompose a problem into parts that can be solved 
+concurrently. 
+	If no communication is needed, then problem is EP
+(Embarrassingly Parallel)! :-)
+	The decomposition can be in terms of mapping to data 
+structures, mapping to physical entities (regions of space), 
+mapping to different tasks. 
+	Algorithms and de compositions ne ed to be compatible, 
+requiring as little communication ov erhead as possible. Use 
+smart partitioners! 
+	Best serial algorithm is not be st parallel one! 
+	Think Gauss Seidel vs. Jacobi 
+ParallelProgra mmingfor MulticoreMach inesUsing OpenMPandMPI</text>
+        </slide>
+        <slide>
+          <slideno>7</slideno>
+          <text>Why care?
+	You have a threaded code and you'd prefer to 
+have some code reuse scaling up to the cluster 
+	The MPI code has scalability problems due to 
+communications scaling as O(P2) and cutting P 
+by half or even to O(P) is seen as helping 
+	It appears as a more efficient way to exchange 
+information between processes on the same node 
+	For algorithms with two-level load-balancing, the 
+inner level may be easier to do with  threads 
+ParallelProgra mmingfor MulticoreMach inesUsing OpenMPandMPI</text>
+        </slide>
+        <slide>
+          <slideno>14</slideno>
+          <text>Basic shared memory options
+	OpenMP 
+	Evolving standard
+	Easier to use 
+	Can be combined with 
+autoparallelization 
+	Restricted flexibility 
+	Designed for HPC
+	Easier to combine with 
+3rd party code 	Pthreads 
+ POSIX Standard 
+ Cumbersome to use
+ But full flexibility 
+	Heavyweight 
+ Designed for systems 
+apps and not HPC
+	But on L inux s ystems 
+at least, it lies below 
+the OpenMP layer. 
+ParallelProgra mmingfor MulticoreMach inesUsing OpenMPandMPI</text>
+        </slide>
+        <slide>
+          <slideno>43</slideno>
+          <text>The Rabenseifner tests
+src:HLRS 
+ParallelProgra mmingfor MulticoreMach inesUsing OpenMPandMPI
+Courtesy of Rolf Rabenseifner, HLRS, University of Stuttgart. Used with permission.</text>
+        </slide>
+        <slide>
+          <slideno>39</slideno>
+          <text>NAS Parallel Benchmarks
+ParallelProgra mmingfor MulticoreMach inesUsing OpenMPandMPI
+cg ft lu mg00.20.40.60.811.21.41.6
+1 2 4 8 16 32
+Benchmarks
+ -   LU and MG : MPI is better. LU outperforms -   FT : MPI+OpenMP is better
+ -   CG: MPI better for few nodes and worse for more nodes4-way WH2 nodes - Class  AOverall comparison: BenchmarksMPI / MPI+OpenMP
+Figure by MIT OpenCourseWare.src: Franck Cappello &amp; Daniel Etiemble @lri.fr</text>
+        </slide>
+        <slide>
+          <slideno>4</slideno>
+          <text>Questions
+ What is Hybrid Programming? 
+ Why would we care about it? 
+ How do we do it? 
+ When do we attempt it? 
+ Is it not delivering the performance promised? 
+ Alternatives 
+ParallelProgra mmingfor MulticoreMach inesUsing OpenMPandMPI</text>
+        </slide>
+        <slide>
+          <slideno>63</slideno>
+          <text>Weak Scaling SWp Example
+src:SandiaNationalLab
+ParallelProgra mmingfor MulticoreMach inesUsing OpenMPandMPI
+0.6
+0.5
+0.4
+0.3
+0.2
+0.1
+100101102103104
+Number of PEsRun Time Per Iteration (Sec)
+Parallel Sn Neutronics (provided by LANL)ASCI PurpleOrange MtnGreen Pac TR13,800 Cells/PE S6, P2, 12 Group
+Figure by MIT OpenCourseWare.</text>
+        </slide>
+        <slide>
+          <slideno>58</slideno>
+          <text>Summary cont.
+	Master-only paradigm useful only on certain 
+platforms including Myrinet clusters 
+ Internally multi-threaded MPI library use ful 
+	Other platforms need extra optimizations to 
+saturate inter-node bandwidth 
+	Master-only with single-threaded MPI suffers 
+from idle processors during communications 
+	Difficult to load-balance, hide communication 
+with computation. 
+ParallelProgra mmingfor MulticoreMach inesUsing OpenMPandMPI</text>
+        </slide>
+        <slide>
+          <slideno>35</slideno>
+          <text>Deciding for hybrid
+	There is an obvious way to have two-level // 
+ Single level parallel codes can be converted to dual
+level but usually the performance is not any better
+	The resulting code should not be a nightmare to 
+code and maintain 
+	Master-only usually clean but not always performing 
+	Pthread code can be very ugly to upkeep 
+	Early investigations at least should show that it is 
+simila r in performance to an all-MPI code 
+ParallelProgra mmingfor MulticoreMach inesUsing OpenMPandMPI</text>
+        </slide>
+        <slide>
+          <slideno>36</slideno>
+          <text>Tests for hybrid
+	Test small scale OpenMP (2 or 4 processor) vs. 
+all MPI to see difference in performance. 
+	We cannot expect OpenMP to scale well beyond a 
+small number of processors, but if it doesn't scale 
+even for that many it's probably not worth it. 
+	Test the network to see whether one set of MPI 
+processes can saturate the bandwidth between 
+two nodes 
+	Master-only allows for cleaner code usually. 
+ParallelProgra mmingfor MulticoreMach inesUsing OpenMPandMPI</text>
+        </slide>
+        <slide>
+          <slideno>57</slideno>
+          <text>Summary
+ Hybrid programming merges the shared and the 
+distributed memory programming paradigms 
+	Potentialy superior on dual-cpu SMP clusters 
+	Care in coding to avoid performance pitfalls 
+	MPI-2 added support for mixing threads and MPI 
+	Easiest to use OpenMP when for master-comms 
+	Alternatives hiding the message exchange from 
+the user exist but have performance issues 
+ParallelProgra mmingfor MulticoreMach inesUsing OpenMPandMPI</text>
+        </slide>
+        <slide>
+          <slideno>49</slideno>
+          <text>SDSM
+	Software Distributed Shared Memory: 
+	A user-level runtime system that creates the illusion 
+of a shared memory syst em on a  set of distributed 
+memory machines . 
+	aka VDSM or SVM (V for Virtual), constrast with 
+HDSM (Hardware - aka simply as DSM, cc-NUMA 
+etc.) as is the case of most modern Unix servers (IBM 
+Regatta &amp; Squadron, SGI Altix, HP Superdome, Sun 
+Sunfire etc) and m ultiprocessor AMD Opteron 
+servers. 
+ParallelProgra mmingfor MulticoreMach inesUsing OpenMPandMPI</text>
+        </slide>
+        <slide>
+          <slideno>47</slideno>
+          <text>Alternatives
+	So coding hybrid codes involves: 
+1)More complicated, two-level logic 
+2)Further opportunities for bugs with sloppy c oding 
+3)Unexpected performance pitfalls 
+4)Extra performance variation pl atform to platform 
+	What alternatives are there for clusters? 
+ MPI + multithreaded parallel libraries 
+ Scalable OpenMP: If one cares the most about ( 1) &amp; 
+(2) and one already has an OpenMP code available 
+ParallelProgra mmingfor MulticoreMach inesUsing OpenMPandMPI</text>
+        </slide>
+        <slide>
+          <slideno>55</slideno>
+          <text>Current SDSM Options
+	Last few versions of the Intel compilers include 
+this capability from an evolved version of 
+Threadmarks from Rice. 
+	Additional SHAREABLE directive for across-node 
+memory consistency 
+	Compile with -cluster-openmp (&amp; -clomp-* options) 
+	Omni-SCASH (with Score) 
+	Part of a complete cluster environment with MPI, 
+distributed C++ libraries and checkpointing. 
+ParallelProgra mmingfor MulticoreMach inesUsing OpenMPandMPI</text>
+        </slide>
+        <slide>
+          <slideno>18</slideno>
+          <text>Writing hybrid code
+	From a sequential code, 
+	first parallelize with MPI 
+	and then add O penMP (at the same or different level) 
+	From an MPI code add OpenMP 
+	From an OpenMP code, think of a higher level 
+parallelization strategy (as if it were sequential) 
+	Consider different combinations of OpenMP 
+threads per MPI task and test various OpenMP 
+scheduling options 
+ParallelProgra mmingfor MulticoreMach inesUsing OpenMPandMPI</text>
+        </slide>
+        <slide>
+          <slideno>6</slideno>
+          <text>Hybrid Programming
+	So, on a cluster of N SMP nodes, each having M 
+processors can we combine the two paradigms? 
+	Shared memory for calculations within the node 
+	1 proc ess, M threads per node 
+	P processes, M/P threads per node 
+	M*N t hreads, implicitly communicating w hen out side the node 
+	Distributed memory for problems spread ove r many nodes. 
+	This can be done explicitly (directed by t he user) or 
+implicitly (handled behind the scenes by a runtime library). 
+ParallelProgra mmingfor MulticoreMach inesUsing OpenMPandMPI</text>
+        </slide>
+        <slide>
+          <slideno>40</slideno>
+          <text>Which approach is faster?
+src:HLRS ParallelProgra mmingfor MulticoreMach inesUsing OpenMPandMPI Courtesy of Rolf Rabenseifner, HLRS, University of Stuttgart. Used with permission. Courtesy of Rolf Rabenseifner, HLRS, University of Stuttgart. Used with permission.</text>
+        </slide>
+        <slide>
+          <slideno>1</slideno>
+          <text>Final day agenda
+	Hybrid MPI+OpenMP programming 
+	MPI Performance Tuning &amp; Portable 
+Performance 
+	Performance concepts and Scalability 
+	Different modes of parallelism 
+	Parallelizing an existing code using MPI 
+	Using 3rd party libraries or writing your own 
+library 
+ParallelProgra mmingfor MulticoreMach inesUsing OpenMPandMPI</text>
+        </slide>
+        <slide>
+          <slideno>51</slideno>
+          <text>How it usually works
+DSMRunt ime ..processes.. 
+..memories.. ..servers.. cachem iss 
+Local copyof memorypage Remotememorypage
+containingcachel ine containing cachel ine
+ParallelProgra mmingfor MulticoreMach inesUsing OpenMPandMPI</text>
+        </slide>
+        <slide>
+          <slideno>73</slideno>
+          <text>Advanced Task Farming
+	Search algorithms: 
+	e.g. Interval solvers
+	Recursive M-W 
+	Master is also W orker 
+	Master Slave with two 
+Masters: Input/Output. 
+	Reduces the load on 
+the coordinating 
+(input) Master. 
+ParallelProgra mmingfor MulticoreMach inesUsing OpenMPandMPI
+OW W W WI
+Figure by MIT OpenCourseWare.</text>
+        </slide>
+        <slide>
+          <slideno>13</slideno>
+          <text>Pros and Cons
+	Memory savings 
+	Better load balancing 
+opportunities 
+	Less (larger?) off-node 
+MPI messages 
+	Scaling opportunities 
+	N/M processes 
+	Hardware speeds 	Performance varies 
+ Optimization is harder
+	MPI communication may 
+not be threaded 
+	Thread woes: false 
+sharing, etc. 
+	Extra synchronization 
+introduced with OpenMP 
+	Fork/Join &amp; barrier 
+ParallelProgra mmingfor MulticoreMach inesUsing OpenMPandMPI</text>
+        </slide>
+        <slide>
+          <slideno>67</slideno>
+          <text>Portable Performance
+	Unfortunately, in practice a contradiction in terms! 
+	Architecture/MPI implementation dependent 
+	Sometimes problem size dependent! 
+	So a very well tuned code may (preferably und er the cover) 
+employ different routines/algorithms for different machines 
+and even problem sizes. Hide complexity with libraries. 
+	A well tuned code on the other hand can be expected to be 
+reasonably performing in a portable manner. 
+	Employing 3rd party libraries makes this more of the library 
+provider's problem and less of yours. 
+ParallelProgra mmingfor MulticoreMach inesUsing OpenMPandMPI</text>
+        </slide>
+        <slide>
+          <slideno>8</slideno>
+          <text>Why copy on an SMP/ccNUMA?
+Shared memorya rena 
+Distributedmemoryprogr amming
+inlogicallysharedmemory process process send/receive 
+arrays 
+Writeenvelope 
+(andarray) Readenvelope 
+(andarray) thread thread 
+Sharedmemorypr ogrammingin
+logicallysharedmemory read/write 
+cachelines 
+	Usually fast message exchange in an SMP system 
+makes use of a shared memory area which 
+processes can access to read/write data 
+	Sometimes memory protection is overridden 
+using a memory bypass... (kernel copy mode) 
+ParallelProgra mmingfor MulticoreMach inesUsing OpenMPandMPI</text>
+        </slide>
+        <slide>
+          <slideno>60</slideno>
+          <text>--------------------------------
+-----  -------  -------  -------There's no free lunch!
+f =1f =0.5,0.9,0.99,0.999,0.9999 par ser
+speedup
+N f = .50 f = .90 f = .99
+par par par
+10 1.82 5.26 9.17
+100 1.98 9.17 50.25 
+1000 1.99 90.99
+10000 1.99 9.91 
+9.91 
+99.02 
+src:LLNL src:rgb@ phy.duke .edu T (N) N T (N) N2 
+pover pover
+Small problem size:
+2D Grid Calculations 85 seconds 85%
+Serial fraction 15 seconds 15%
+Larger problem size:
+2D Grid Calculations 680 seconds 
+97.84%
+Serial fraction 15 seconds 
+2.16%
+ParallelProgra mmingfor MulticoreMach inesUsing OpenMPandMPI
+Courtesy of Robert G. Brown, Duke University. Used with permission.
+Courtesy of Lawrence Livermore National Laboratory. Used with permission.</text>
+        </slide>
+        <slide>
+          <slideno>3</slideno>
+          <text>Acknowledgements
+	Lorna Smith, Mark Bull (EPCC) 
+	Rolf Rabenseifner, Mathias Muller (HLRS) 
+	Yun He and Chris Ding (LBNL) 
+	The IBM, LLNL, NERSC, NCAR, NCSA, SDSC 
+and PSC documentation and training teams. 
+	The MPI Forum 
+	I try to attribute all graphs; please forgive any 
+mistakes or omissions. 
+ParallelProgra mmingfor MulticoreMach inesUsing OpenMPandMPI</text>
+        </slide>
+        <slide>
+          <slideno>83</slideno>
+          <text>Linear Algebra
+ Dense Linear Algebra: 
+ ScaLAPACK/PBLAS &amp; BLACS (on M PI) 
+ PLAPACK/sB BL AS 
+ Sparse Linear Algebra: 
+ Direct algorithms: 
+ CAPS, MFACT 
+ WSMP, SuperLU_DIST, PSPACES, MP_SOLVE, MUMPS 
+ Iterative algorithms 
+ PARPRE 
+ PIM, PSPARSLIB, A ztec, Blocksolve, 
+ Eigensolvers 
+ PARPACK, SYISDA 
+ParallelProgra mmingfor MulticoreMach inesUsing OpenMPandMPI</text>
+        </slide>
+        <slide>
+          <slideno>0</slideno>
+          <text>12.950 wrapup
+ParallelProgra mming:
+MPIwithOpe nMP,
+MPItuning,
+parallelizationc oncepts 
+andlibra ries
+ParallelProgra mmingfor MulticoreMach inesUsing OpenMPandMPI</text>
+        </slide>
+        <slide>
+          <slideno>52</slideno>
+          <text>Disadvantages
+	Depending on how relaxed the cache coherence 
+protocol is (and the locality of memory accesses), 
+SDSM systems may suffer from much elevated 
+amounts of network traffic 
+	Many research SDSM systems have experimented 
+with various t ricks (and coherence protocol 
+variations) to help minimize this. 
+	In general the remote access is triggered by a 
+page miss (which is costly to begin with ) 
+ParallelProgra mmingfor MulticoreMach inesUsing OpenMPandMPI</text>
+        </slide>
+        <slide>
+          <slideno>82</slideno>
+          <text>Parallel Libraries 
+	Vendor, ISV or research/community codes 
+	Many times free! 
+	They contain a lot of domain expertise 
+	There is usu ally good documentation &amp; support 
+	They offer a higher level programming abstraction 
+	Cleaner, easier to understand, debug &amp;  maintain code 
+	The performance issues are moved to the library 
+	Changes in algorithms often possible internally, without 
+changing the API. 
+	Bottom line: USE  THEM if you can! 
+ParallelProgra mmingfor MulticoreMach inesUsing OpenMPandMPI</text>
+        </slide>
+        <slide>
+          <slideno>24</slideno>
+          <text>Working with master-only
+	MPI communications outside parallel regions is 
+always safe. 
+	High thread startup-winddown overhead 
+	Master region on the other hand needs a barrier: 
+#pragma omp barrier /* this may not  be necessary */ 
+#pragma omp master /* other threads idle waiting for the master */ 
+MPI_Send(...) 
+#pragma omp barrier /* needed to ensure other threads can modify 
+the send buffe r */ 
+ParallelProgra mmingfor MulticoreMach inesUsing OpenMPandMPI</text>
+        </slide>
+        <slide>
+          <slideno>2</slideno>
+          <text>Combining MPI with OpenMP
+HybridP rogra mming:
+Combining
+MPIwithOpe nMP
+ParallelProgra mmingfor MulticoreMach inesUsing OpenMPandMPI</text>
+        </slide>
+        <slide>
+          <slideno>86</slideno>
+          <text>MIT OpenCourseWare
+http://ocw.mit.edu 
+12.950  Parallel Programming for Multicore Machines Using OpenMP and MPI 
+IAP 2010 
+For information about citing these materials or our Terms of Use, visit: http://ocw.mit.edu/terms.</text>
+        </slide>
+        <slide>
+          <slideno>30</slideno>
+          <text>Thread reservation
+	Easier way to overlap communication with 
+computation 
+	Either reserve the master (funnelled) or several 
+threads for communication 
+	Worksharing directives break down  need to 
+distribute the work among the remaining threads 
+manually 
+	If the ratio of Tcomm/Tcomp doesn't match the 
+distribution of thread roles end up with idle time 
+ParallelProgra mmingfor MulticoreMach inesUsing OpenMPandMPI</text>
+        </slide>
+        <slide>
+          <slideno>79</slideno>
+          <text>Concurrent Workflow Execution
+	Traditional distributed computing 
+with tighter coupling and loops 
+	Ideal type of Grid Computing 
+applications. Example from: 
+ the Sloan Galaxy Cluster Finder 
+	Parallelism depends on the width 
+of the workflow, coupled with any pipelined dataflow parallelism. 
+	Multiple data dependencies 
+ParallelProgra mmingfor MulticoreMach inesUsing OpenMPandMPI
+getCataloggetGalaxiesgetClustersbcgCoalescegetCoresBufferbcg Searchbrg SearchgetTargetRegion getBufferRegionSDSS
+buffer(1).fittarget(1).fit
+brg(1).par
+cores(1).par
+coresBuffer(1).fit
+clusters(1).fitparameters.par
+clusters(2).fit
+galcatalog(2).fit
+galcatalog.fit catalog.fit= =200000
+150 6
+Figure by MIT OpenCourseWare.
+src: Sloan Digital Sky Survey (SDSS)</text>
+        </slide>
+        <slide>
+          <slideno>66</slideno>
+          <text>Performance Tuning
+ Time your code, as a function of processors, problem 
+ Important to decide on w eak vs. strong s caling 
+ See at what np bottleneck starts appearing 
+ Use profiling/tracing tools for that np and over 
+ Look a t the graphical picture and find hot spots 
+ Look for time spent idling (load imbalance) 
+ Look for too many small message exchanges 
+ Look for obvious collective subroutine patterns 
+ Look for too many messages to/from one process at a time 
+ Look a t time spent in routines and find culprits 
+ Try applying the rules (routine, code, algorithm changes) 
+ Iterate 
+ParallelProgra mmingfor MulticoreMach inesUsing OpenMPandMPI</text>
+        </slide>
+        <slide>
+          <slideno>27</slideno>
+          <text>MPI-2 support
+ MPI-2 Initialization for threaded MPI processes 
+ MPI_Init_thread(argc, argv, required, provided)
+ Test for r equired, check value in provided 
+ MPI_THREAD_SINGLE: one user thread 
+ MPI_THREAD_FUNNELED: master-only 
+ MPI_THREAD_SERIALIZED: serialized MPI calls 
+ MPI_THREAD_MULTIPLE: many concurrent calls. 
+ Use instead of MPI_Ini t() from  the main thread 
+ Match with MPI_Finalize() from the same thread 
+ Provided depends on how  library us ed, runt ime args etc. 
+ParallelProgra mmingfor MulticoreMach inesUsing OpenMPandMPI</text>
+        </slide>
+        <slide>
+          <slideno>65</slideno>
+          <text>Performance Rules
+However, even in the absence of a detailed or even a 
+rudimentary performance model we can still come up w ith 
+important rules of thumb! 
+1. Minimize the ratio of communication to computation 
+2. Between lots of small messages and one large one choose the 
+latter (less overhead, message aggregation) 
+3. (At least) for anything more than a few processors collective 
+communications should be a gain. 
+4. Avoid synchronizations (explicit &amp; implicit) 
+5. Balance the work (load balance) 
+6. Overlap communication with computation 
+7. Perform redundant work if it's cheaper! 
+ParallelProgra mmingfor MulticoreMach inesUsing OpenMPandMPI</text>
+        </slide>
+        <slide>
+          <slideno>61</slideno>
+          <text>Parallel Scaling &amp; Efficiency
+	Two kinds of Scaling: 
+	Strong: fixed problem size 
+	SSp=Ts/Tp,calculatedsometimesas 
+ SSp(P) =Tp(1)/ Tp(P) or SSp(P)=(Ts(PN)/PN)/Tp(P) 
+	Ideallyscaleslinearly,sometimessuperlinearly 
+	ParallelEfficiency: E = S/P (expressedasa%) 
+	Weak: problemsizeW thatscaleswith P so astokeep 
+the effectiveproblemsizeperprocessorconstant 
+	SWp(P)=Tp(PW,P)/T(W)s,calculatedsometimes as 
+SWp(P)=Tp(PW,P)/T(W,Q)p.Shouldbecloseto1.E= 1/S 
+ParallelProgra mmingfor MulticoreMach inesUsing OpenMPandMPI</text>
+        </slide>
+        <slide>
+          <slideno>17</slideno>
+          <text>A multitude of options
+ParallelProgra mmingfor MulticoreMach inesUsing OpenMPandMPI
+Pure MPI
+one MPI processon each CPU
+MasteronlyMPI only outsideof parallel regions Multiple/only     appl. threads     inside of MPIFunneled MPI onlyon master-threadMultiple more thanone thread maycommunicate
+Multiple with fullload balancingMultiple &amp; Reservedreserved threads forcommunicationFunneled with fullload balancingFunneled &amp; reservedreserved thread forcommunicationHybrid MPI+OpenMPMPI: inter-node communicationOpenMP: inside of each SMP nodeParallel programming modelson hybrid platforms
+Overlapping Comm. + Comp.
+MPI communication by one or a few threads
+while other threads are computingNo overlap of Comm. + Comp.
+MPI only outside of parallel regions
+of the numerical application codeOpenMP: only
+distributed virtualshared memory
+Figure by MIT OpenCourseWare.src: HLRS</text>
+        </slide>
+        <slide>
+          <slideno>42</slideno>
+          <text>Tuning Opportunities
+	Speed up MPI routines: 
+	Threads m ay copy non-contiguous da ta into 
+contiguous b uffers (instead of derived datatypes) 
+	Use multiple threads communicating to utilize inter
+node bandwidth 
+	Better still employ m ulti-threaded MPI library. 
+	Otherwise use only hardware that can saturate
+network with 1 thread
+	For throughput use idling CPUs for niced apps 
+ParallelProgra mmingfor MulticoreMach inesUsing OpenMPandMPI</text>
+        </slide>
+        <slide>
+          <slideno>20</slideno>
+          <text>Matrix-vector multiplication
+src:IBM
+ParallelProgra mmingfor MulticoreMach inesUsing OpenMPandMPI
+11
+22
+3
+34
+4*
+domain decomposition for distributed-memory 
+version (n_loc = ncols/num_ncdes)
+Figure by MIT OpenCourseWare.</text>
+        </slide>
+        <slide>
+          <slideno>84</slideno>
+          <text>Other Libraries
+ Multi Solvers 
+ PETSc 
+ Mesh &amp; Graph partition ers: 
+ CHACO, Jostle, (Par)Metis, PARTY, Scotch 
+ FFTs, random number generators 
+ FFTW, UHFFT, SPRNG 
+ Dynamic Load Balancers 
+ Zoltan, DRAMA 
+ Coupling libraries 
+ MpCCI, MCT 
+ParallelProgra mmingfor MulticoreMach inesUsing OpenMPandMPI</text>
+        </slide>
+        <slide>
+          <slideno>46</slideno>
+          <text>ce107@ computer.org ParallelProgra mmingfor MulticoreMach inesUsing OpenMPandMPI
+src:HLRS
+Courtesy of Rolf Rabenseifner, HLRS, University of Stuttgart. Used with permission.</text>
+        </slide>
+        <slide>
+          <slideno>69</slideno>
+          <text>Problem Statement
+ParallelProgra mmingfor MulticoreMach inesUsing OpenMPandMPI
+Flow around a cylinder:
+Numerical simulation using FV , FE or FD
+Data structure: A(1:M, 1:N)
+Solve: (A+B+C)x=b
+Figure by MIT OpenCourseWare.</text>
+        </slide>
+        <slide>
+          <slideno>74</slideno>
+          <text>Embarrassingly Parallel (EP)
+ A misnomer: Pleasantly Parallel is better name 
+ That is you wish yo u had an EP application! :-) 
+ Very loosely coupled independent su btasks, r equiring 
+minimal (infrequent) point-to-point communications
+ Mon te Carlo calculations, parameter searches etc.
+ Usually implemented as M-W, with the master also
+possibly doubling up as a worker due to low load
+ Negligible serial fraction, great scalability 
+ Great for slow interconnects, unbalanced systems
+ParallelProgra mmingfor MulticoreMach inesUsing OpenMPandMPI</text>
+        </slide>
+        <slide>
+          <slideno>85</slideno>
+          <text>Your own library!
+	You can try and hide the functionality of your parallel 
+solver behind a library interface 
+	You may have to use your own communicator 
+	You should assume that MPI gets initia lized outside 
+the library 
+	You should provide a clean API and a data structure 
+definition to interface with 
+	You cannot make too many assumptions about the 
+code that will c all your library. If you do, document 
+them well so that you and other remember them! 
+ParallelProgra mmingfor MulticoreMach inesUsing OpenMPandMPI</text>
+        </slide>
+        <slide>
+          <slideno>77</slideno>
+          <text>Particle/Space decomposition
+	N-body problems in statistical mechanics, 
+astrophysics, molecular dynamics etc. 
+ N particle trajectories evolving coupled with each 
+other with long and/or short range interactions.
+	Direct algorithm is O(N2), for load balance distribute 
+particles to proc essors as evenly as possible. 
+	Algorithms employing particle aggregation (hierarchical 
+tree structures) are O(N log(N)) or O(N) 
+	Decomposition is then based on space partitions; some 
+may be empty at any gi ven time. 
+ParallelProgra mmingfor MulticoreMach inesUsing OpenMPandMPI</text>
+        </slide>
+        <slide>
+          <slideno>38</slideno>
+          <text>Extending scalability
+PatWorleyORNL 
+T42L26gr id 
+128longitude 
+64 latitude 
+26 vertical 
+MPIlatitudeonly
+decomposition 
+ParallelProgra mmingfor MulticoreMach inesUsing OpenMPandMPI
+1 2 4 8 16 32 64 128 2560510152025303540Simulation years per day
+Processors
+pcols=128, MPI-onlyp690 cluster (32-way Turbo node, 1.3 GHz processor)
+pcols=16, MPI-only
+pcols=16, MPI-only, load bal. pcols=16, hybrid, load bal.
+pcols=16, hybrid, load bal., upd. dycore
+pcols=16, hybrid, load bal., upd. dycore and clmPerformance evolution of NCAR community atmospheric model
+CAM2.0, EUL dynamical core, T42L26
+Figure by MIT OpenCourseWare.</text>
+        </slide>
+        <slide>
+          <slideno>32</slideno>
+          <text>Overlapping Challenges
+ an application problem 
+ separation of local or halo-based code (hard) 
+ a programming problem 
+ thread-ranks-based vs. OpenMP work-sharing 
+ Beware of race conditions 
+ a load balancing problem, 
+ if only som e threads communicate / compute 
+ no ideal solution  alternatively avoid it and try: 
+ SPMD-model &amp; MPI_THREAD_MU LTIPLE 
+ParallelProgra mmingfor MulticoreMach inesUsing OpenMPandMPI</text>
+        </slide>
+        <slide>
+          <slideno>72</slideno>
+          <text>Master-Worker or (Slave :-)
+Master 
+Wor ker Wor ker Worker  One master coordinates work, 
+many workers execute it. 
+ Worker is in a loop, w aiting for a 
+ Also known as task new task, executing it and then
+farming sending the result to master.
+ Automatic load  Master is in a loop, sending tasks 
+balance to the workers, receiving results
+ Loosely coupled and op erating on them, adjusting 
+calculations the queue of tasks c ontinously.
+ Easy implementation  Master notifies termination. 
+ParallelProgra mmingfor MulticoreMach inesUsing OpenMPandMPI</text>
+        </slide>
+        <slide>
+          <slideno>31</slideno>
+          <text>Static work scheduling
+#pragmaompparallelprivate (i,mythread,numthreads,myrange,mylow)
+{ 
+mythread= omp_get_thread_num(); 
+numthreads=omp_get_num_threads(); 
+if(mythread&lt; Nreserved) { 
+/*communicationwork*/ 
+}else{
+myrange=(highlow+1)/(numthreadsNreserved);
+extras =(highlow+1)%(numthreadsNreserved);
+if(mythreadNreserved&lt;extras) {
+myrange++; 
+mylow=low + (mythreadNreserved)*myrange; 
+}else {
+mylow=low + (mythreadNreserved)*myrange+extras; 
+} 
+for(i=mylow;i&lt;mylow+ myrange;i++) 
+{/*computationalwork*/ }
+}
+ParallelProgra mmingfor MulticoreMach inesUsing OpenMPandMPI</text>
+        </slide>
+        <slide>
+          <slideno>22</slideno>
+          <text>Example use
+	Make sure you propagate OMP_NUM_THREADS 
+to all your processes (via mpirun/mpiexec or dotfile) 
+ Or use OMP_SET_NUM_THREADS or hardcode them 
+	For production do not oversubscribe a node: 
+	(# of MPI procs per node) x (# of OpenMP threads pe r 
+MPI proc) &lt;= (number of processors in a node). 
+	For fat SMP nodes bot h numbers above are likely to be 
+&gt; 1 and you m ay want to leave a processor free to handle 
+O/S tasks. 
+ParallelProgra mmingfor MulticoreMach inesUsing OpenMPandMPI</text>
+        </slide>
+        <slide>
+          <slideno>70</slideno>
+          <text>Major Options
+ParallelProgra mmingfor MulticoreMach inesUsing OpenMPandMPI
+Work decomposition
+Data decomposition
+Domain decomposition(A+B+C)x = b
+calc A
+A(1:200, 1:50)
+A(1:200, 51:100)
+A(1:200, 101:150)
+A(1:200, 151:200)calc B
+calc C
+calc bFlow around a cylinder:
+Numerical simulation using 
+FV , FE or FD
+Data structure: A(1:M, 1:N)
+Solve: (A+B+C)x=b
+Figure by MIT OpenCourseWare.</text>
+        </slide>
+        <slide>
+          <slideno>19</slideno>
+          <text>Master-only hybrid code
+	Most obvious strategy is Master-only: 
+	Take an MPI code and pa rallelize using OpenMP the 
+code in between MPI calls: 
+	Usually done  at a fine (loop) l evel  the easiest approa ch 
+	Better still if done  at a SPMD level with fewer parallel 
+regions and synchroni zation poi nts 
+	We assume that the potential for parallelism within each 
+MPI proc ess is substantial: 
+	Large computational work in loops 
+	Natural two-level domain decomposition can be extracted 
+	Little communication/synchronization between threads needed 
+ParallelProgra mmingfor MulticoreMach inesUsing OpenMPandMPI</text>
+        </slide>
+        <slide>
+          <slideno>45</slideno>
+          <text>Myrinet clusters for Master-only cont
+src:HLRS 
+ParallelProgra mmingfor MulticoreMach inesUsing OpenMPandMPI Courtesy of Rolf Rabenseifner, HLRS, University of Stuttgart. Used with permission.New Text</text>
+        </slide>
+        <slide>
+          <slideno>28</slideno>
+          <text>Single vs. Funnelled vs. Serialized
+!$OMPPARALLELDO 
+doi=1,1000 
+a(i)=b(i) 
+end d o 
+!$OMPENDPARALLEL DO 
+call MPI_RECV(b,...) 
+!$OMPPARALLEL 
+!$OMPDO 
+doi=1,1000 
+c(i)=b(i) 
+enddo 
+!$OMPENDDONOWAIT 
+!dom orework
+!$OMPENDPARALLEL !$OMPPARALLEL 
+!$OMPDO 
+doi=1,1000 
+a(i)=b(i) 
+enddo 
+!$OMPEND DO 
+!$OMPMASTER 
+callMPI_RECV(b,...) 
+!$OMPEND MASTER 
+!$OMPBARRIER 
+!$OMPDO 
+doi=1,1000 
+c(i)=b(i) 
+enddo 
+!$OMPEND DO NOWAIT 
+!do m orework
+!$OMPEND PARALLEL !$OMPPARALLEL 
+!$OMPDO 
+doi=1,1000 
+a(i)=b(i) 
+end d o 
+!$OMPENDDO 
+!$OMPSINGLE 
+callMPI_RECV(b,...) 
+!$OMPENDSINGLE 
+!$OMPDO 
+doi=1,1000 
+c(i)=b(i) 
+enddo 
+!$OMPENDDONOWAIT 
+! domorework 
+!$OMPENDPARALLEL 
+ParallelProgra mmingfor MulticoreMach inesUsing OpenMPandMPI</text>
+        </slide>
+        <slide>
+          <slideno>37</slideno>
+          <text>Performance issues
+	Can be a success story: 
+	MM5 weather forecasting m ode 
+	332MHz IBM  SP Silver (PPC604e ) node s: 
+ Very imbalanced, slow network for the processors 
+	64 MPI proc s: 1755 secs (494 c omm secs) 
+	16(x4) M PI procs:1505 secs (281 c omm secs) 
+	Very frequently however hybrid ends up being 
+slower than pure MPI for the same number of 
+processors. Easy to be discouraged by following 
+the literature. 
+ParallelProgra mmingfor MulticoreMach inesUsing OpenMPandMPI</text>
+        </slide>
+        <slide>
+          <slideno>21</slideno>
+          <text>Matrix-vector multiplication cont.
+src:IBM
+ParallelProgra mmingfor MulticoreMach inesUsing OpenMPandMPI</text>
+        </slide>
+        <slide>
+          <slideno>50</slideno>
+          <text>Enhanced OpenMP runtimes
+ Enhanced OpenMP runtime, usually built on top 
+of some distributed shared memory library that: 
+	detects accesses to memory at remote nodes and
+	behind the scenes fetches a local copy of  that
+memory location.
+	Handles all cache-coherence issues 
+ Essentially replaces user-level message passing with 
+remote gets and puts of variables, usually at a large
+granularity (most commonly memory page level). 
+ParallelProgra mmingfor MulticoreMach inesUsing OpenMPandMPI</text>
+        </slide>
+        <slide>
+          <slideno>44</slideno>
+          <text>Myrinet clusters for Master-only
+src:HLRS 
+ParallelProgra mmingfor MulticoreMach inesUsing OpenMPandMPI Courtesy of Rolf Rabenseifner, HLRS, University of Stuttgart. Used with permission.</text>
+        </slide>
+        <slide>
+          <slideno>12</slideno>
+          <text>Basic concept
+src:EPCC 
+ParallelProgra mmingfor MulticoreMach inesUsing OpenMPandMPI
+2D Array
+MPI
+Process 0 Process 1 Process 2 Process 3
+Thread 0
+Thread 1
+Thread 2Thread 0
+Thread 1
+Thread 2Thread 0
+Thread 1
+Thread 2Thread 0
+Thread 1
+Thread 2OpenMP OpenMP OpenMP OpenMP
+Figure by MIT OpenCourseWare.</text>
+        </slide>
+        <slide>
+          <slideno>76</slideno>
+          <text>Array Distribution
+src:Netlib 
+2x2 process grid point of view 5x5 matrix partitioned in 2 x2 blocks11 12 15 13 14
+21 22 25 23 24
+51 52 55 53 54
+31 32 35 33 34
+41 42 45 43 4411 12 13 14 15
+21 22 23 24 25
+31 32 33 34 35
+41 42 43 44 45
+51 52 53 54 550
+01
+1	Given say, Ax=b 
+	The arrays in the code 
+are distributed among the processes/threads 
+as a block (better 
+locality) or cyclically 
+(better load-balance) 
+	Or block-cyclic 
+	Owner computes... src:LLNL
+ParallelProgra mmingfor MulticoreMach inesUsing OpenMPandMPI
+Figure by MIT OpenCourseWare.Courtesy of Lawrence Livermore National Laboratory. Used with permission.</text>
+        </slide>
+        <slide>
+          <slideno>80</slideno>
+          <text>Interdisciplinary Models
+ Multiple physical/biological/chemical processes
+	working in different domains, 
+evolving in distinct timescales, 
+	Each process can be internally 
+parallelized. 
+	Component  approach 
+	Load balancing issues 	weakly  interacting with 
+each other (through 
+fields, fluxes etc.) 
+every n ( 1) common 
+timesteps. 
+	1 or 2-way interactions 
+ParallelProgra mmingfor MulticoreMach inesUsing OpenMPandMPI
+Plants Herbivores Carnivores Scavengers Decomposers
+Hydrology
+model
+Ocean model
+Land/Surface modelTimeFrom p5 to p1
+p1 p2 p3 p4 p5Atmospheric model
+Figure by MIT OpenCourseWare.src: LLNL</text>
+        </slide>
+        <slide>
+          <slideno>5</slideno>
+          <text>Recap
+	Distributed memory programming: 
+	Distinct processes, explicitly partaking in the pairwise 
+and collective exchange of control and data messages 
+(implicit synchronization) 
+	No way to directly access the variables in the memory 
+of another process 
+	Shared memory programming: 
+	Multiple threads or processes sharing da ta in the 
+same address sp ace/shared memory arena and 
+explicity synchronizing w hen needed 
+ParallelProgra mmingfor MulticoreMach inesUsing OpenMPandMPI</text>
+        </slide>
+        <slide>
+          <slideno>62</slideno>
+          <text>Parallel Efficiency ESp Example
+ParallelProgra mmingfor MulticoreMach inesUsing OpenMPandMPI
+100
+90
+80
+70
+60
+50
+40
+30
+20
+10
+0
+1 2 4 8 16 32 64 128 256
+ProcessorsParallel Efficiency (%)CplantTflops
+Molecular dynamics problem (LJ liquid)
+Figure by MIT OpenCourseWare.src: Sandia National Lab</text>
+        </slide>
+        <slide>
+          <slideno>75</slideno>
+          <text>Domain Decomposition
+	Distribute data 
+structures to 
+load balance, 
+minimize 
+comm volume 
+and number of 
+neighbors. 
+	Local problem 
++global update 
+(CourtesyDr.ValmordeAlmeida,OakRidgeNationalLaboratory)
+ParallelProgra mmingfor MulticoreMach inesUsing OpenMPandMPI
+Courtesy of Valmor de Almeida, Oak Ridge National Laboratory. Used with permission.</text>
+        </slide>
+        <slide>
+          <slideno>9</slideno>
+          <text>Topology mapping &amp; network saturation
+	Fitting application 
+topology onto 
+hardware topology 
+	Topologies for most 
+MPI implementations 
+do not provide useful 
+re-mapping 
+	Wanted: Minimizing 
+communications o ver 
+slower links 
+src:HLRS 
+ If many (or even more than one) processes need to 
+communicate over the slower link network is saturated 
+ParallelProgra mmingfor MulticoreMach inesUsing OpenMPandMPI
+0 1 2 3 4 5 6 7
+8 9 10 11 12 13 14 15
+x 14 Round-robin
+0 1 2 3 4 5 6 7
+8 9 10 11 12 13 14 15
+x 8 Sequential
+0 1 2 3 4 5 6 7
+8 9 10 11 12 13 14 15
+x 2
+Slow inter-node linkOptimal ?
+Figure by MIT OpenCourseWare.</text>
+        </slide>
+        <slide>
+          <slideno>29</slideno>
+          <text>Overlapping computation with
+communication
+!$OMPPARALLEL 
+!$OMPDO 
+doi=1,1000 
+a(i)=b(i) 
+end d o 
+!$OMPENDDONOWAIT 
+!$OMPSINGLE 
+call MPI_RECV(d,...) 
+!$OMPENDSINGLENOWAIT 
+!$OMPDO SCHEDULE(GUIDED,n) 
+doi=1,1000
+c(i)=b(i)
+enddo 
+! synchronizeattheend 
+!$OMPENDDO 
+! domoreworkthat involves arrayd 
+!$OMPENDPARALLEL 	Designate main or first 
+thread to reach the 
+communication point as the 
+MPI thread. 
+	Dynamic or guided schedule 
+	Other solution: Spread work 
+that has no dependency on 
+communications among 
+threads statically 
+ParallelProgra mmingfor MulticoreMach inesUsing OpenMPandMPI</text>
+        </slide>
+        <slide>
+          <slideno>16</slideno>
+          <text>When to do it cont.
+	If the algorithm is by design fine-grained, a two-
+level design can relegate the coarse grain to MPI 
+	Replicated data are a bottleneck to solving larger 
+problems (replication reduced within the node) 
+	Existing OpenMP code can be easily extended to 
+MPI at the outermost loop level. (Rare IMHO) 
+	MPI implementation issues: 
+	Restricted # of  processes in each node for fast comms 
+	Slow intra-node MPI performance 
+ParallelProgra mmingfor MulticoreMach inesUsing OpenMPandMPI</text>
+        </slide>
+        <slide>
+          <slideno>33</slideno>
+          <text>MPI_THREAD_MULTIPLE details
+	Make sure that different threads communicating 
+are using different communicators or clearly 
+different tags (as the source process would 
+always be the same). 
+	When using collective operations make sure that 
+on any given communicator all thr eads call the 
+MPI routines in the same order. 
+	Bi-directional exchanges are unlikely to benefit 
+much from this model. 
+ParallelProgra mmingfor MulticoreMach inesUsing OpenMPandMPI</text>
+        </slide>
+        <slide>
+          <slideno>10</slideno>
+          <text>Motivations
+	Multicore machines abound: 
+	Seems far more natural to share memory between 
+cores on the same chip avoiding message passing. 
+	Waste of system resources: 
+	Even with Domain Decomposition so me memory gets 
+replicated (plus M PI system buffer memory) 
+	Memory bandwidth waste from extra copies 
+	Cache pollution from message passing 
+	O/S overhead managing processes (heavyweight)
+ParallelProgra mmingfor MulticoreMach inesUsing OpenMPandMPI</text>
+        </slide>
+        <slide>
+          <slideno>41</slideno>
+          <text>No panacea (perfect solution)
+	MPI only problems  MPI-OpenMP problems 
+	Topology m apping  Sleeping threads (master
+ Unnecessary intra-node only)
+communication  OpenMP overhead
+ 	Network link saturation Thread for k/join 
+	Cache flushing on 
+synchroni zation 
+	Worse spatial locality 
+	Utilizing the full inter-node 
+bandwidth 
+ParallelProgra mmingfor MulticoreMach inesUsing OpenMPandMPI</text>
+        </slide>
+        <slide>
+          <slideno>64</slideno>
+          <text>MPI Performance Modelin g
+	Ideally one would like a complete performance model. 
+	Basic performance model for Pt2Pt comms: 
+	T = latency + message_size/bandwidth 
+	In fact multiple ranges (buffered, synchronous, other) 
+	In fact multiple latencies and bandwidth 
+	More complicated models: logP, logGP,C^3 etc. 
+	Even more involved models for collective comms 
+	Non-blocking comms and ov erlap of communication w ith 
+computation further complicates models 
+	Given a model, one uses the machine and runtime parameters 
+to get an estimated wallclock time. 
+ParallelProgra mmingfor MulticoreMach inesUsing OpenMPandMPI</text>
+        </slide>
+        <slide>
+          <slideno>53</slideno>
+          <text>Disadvantages (cont)
+	If the code does not walk through memory 
+sequentially  then whole memory pages (4KB or 
+more) are fetched for a few cachelines' worth of 
+useful data. Essentially like wasted prefetching. 
+	Cache-coherence performance problems are much 
+worse for SDSM systems: False sharing... 
+	Generic cache-coherence in hardware is much slower. 
+	Need code with each thread working on a distinctly 
+unique part of the dataset for performance. Even then, 
+dataset boun daries should be at page boundaries. 
+ParallelProgra mmingfor MulticoreMach inesUsing OpenMPandMPI</text>
+        </slide>
+        <slide>
+          <slideno>34</slideno>
+          <text>Halo exchanges
+src:EPCC
+ParallelProgrammingforMulticoreMachinesUsingOpenMPandMPI
+Figure by MIT OpenCourseWare.0 4
+1 5
+2 6
+3 78 12
+9 13
+10 14
+11 15process = 0 process = 2
+process = 3 process = 1
+Message passing
+Read / Write</text>
+        </slide>
+        <slide>
+          <slideno>59</slideno>
+          <text>Amdahl's Law
+Serialtime on 1proc:Ts= Tser +Tpar
+ParalleltimeonPprocs:Tp =Tser+Tpar/P+ Tpover(P)
+Paralleloverhead:
+Tpover(P)= Tover(P)+Tcomm(P) +Tsync(P) 
+Paralleltimeon1proc: Tp(1) =Ts +Tover(1) 
+Bestcasescenario: Tpover(P)= 0 
+Speedup, Sp =Ts/Tp,serialfraction fser =Tser/Ts 
+then Sp= {fser+[1fser] /P}1 so Sp  1/fser 
+ParallelProgra mmingfor MulticoreMach inesUsing OpenMPandMPI</text>
+        </slide>
+      </slides>
+      <videos/>
+    </lecture>
+    <lecture>
+      <lecture_title>Parallel computing and MPI Pt2Pt</lecture_title>
+      <lecture_pdf_url>https://ocw.mit.edu/courses/12-950-parallel-programming-for-multicore-machines-using-openmp-and-mpi-january-iap-2010/resources/mit12_950iap10_lec2/</lecture_pdf_url>
+      <lectureno>2</lectureno>
+      <slides>
+        <slide>
+          <slideno>19</slideno>
+          <text>Com municator size
+ MPI_Comm_size(MPI_Comm comm, int *size) 
+ MPI_COMM_SIZE(comm, size, ier) 
+ all arguments are integers, henceforth not repeated 
+ Returns the size of the communicator set. 
+Parallel Prog ramming for Mul ticore Machines Using Ope nMP and MPI
+Figure by MIT OpenCourseWare.</text>
+        </slide>
+        <slide>
+          <slideno>10</slideno>
+          <text>Distributed M emory Programming
+	Multiple independent control streams (processes in 
+general) operating on separate data and coordinating by 
+communicating data and information. 
+	Most common communication method: Message Passing 
+	Multiple Program Multiple Data (MPMD) (eg. master-slave) 
+ Single Program Multiple Data (SPMD) (eg. data parallel) 
+Parallel Prog ramming for Mul ticore Machines Using Ope nMP and MPI
+data data data data
+Communication networksubprogramsubprogramsubprogramsubprogramDistributed memory
+Parallel processors
+Figure by MIT OpenCourseWare.</text>
+        </slide>
+        <slide>
+          <slideno>2</slideno>
+          <text>OpenMP 3.0
+ In draft form since October 2007, finalized in 2008. 
+ Support for tasking 
+ Addition of loop collapse directive 
+ Enhanced loop schedules SCHEDULE(AUTO) 
+ Improved nested parallelism support 
+ Autoscoping: DEFAULT(AUTO) 
+Parallel Prog ramming for Mul ticore Machines Using Ope nMP and MPI</text>
+        </slide>
+        <slide>
+          <slideno>6</slideno>
+          <text>Better nested parallelism
+ Loop collapsing 
+#pragma omp collapse(2) 
+for (i= 0; i &lt; N; ++i) 
+for (j= 0;j &lt;M; ++j)
+do_work();
+	More routines to set and discover the nested parallel 
+structure and control the nesting environment 
+	Per task internal control variables controlling nested 
+parallelism. 
+Parallel Prog ramming for Mul ticore Machines Using Ope nMP and MPI</text>
+        </slide>
+        <slide>
+          <slideno>28</slideno>
+          <text>MPI blockin g standard send
+	MPI_Send(void *buf, int cnt, MPI_Datatype type, int dest, int 
+tag, MPI_Comm comm) 
+	MPI_SEND(buf, cnt, type, dest, tag, comm, ier) 
+	buf is an array of variable type in Fortran... 
+	buf is the starting address of the array 
+	cnt is its length 
+	type is its MPI datatype 
+	comm is the communicator context 
+	int is the rank of the destination process in comm 
+	tag is an extra distinguishing number, like a note 
+Parallel Prog ramming for Mul ticore Machines Using Ope nMP and MPI</text>
+        </slide>
+        <slide>
+          <slideno>25</slideno>
+          <text>Messages
+	The purpose is the "exchange" of information, much 
+the mail system. Thus every message (document) has: 
+	A sender address (rank, like 
+a bus iness ad dress) 
+	A message location (starting 
+address, like the document's 
+location) 
+	A message datatype (what is 
+being se nt) 
+	A message size (how big is 
+it in datatype units) 
+	A message tag 	A destination address (rank, 
+like another business 
+address) 
+	A destination location (that 
+cabinet in the office of so-
+and-so) 
+	Compatible datatype and 
+size combo in order to fit 
+	Matching tag 
+Parallel Prog ramming for Mul ticore Machines Using Ope nMP and MPI</text>
+        </slide>
+        <slide>
+          <slideno>27</slideno>
+          <text>Point to Point messages
+Synchronous vs. Asynchronous 
+Parallel Prog ramming for Mul ticore Machines Using Ope nMP and MPI
+Figure by MIT OpenCourseWare.
+OkBeep
+Figure by MIT OpenCourseWare.</text>
+        </slide>
+        <slide>
+          <slideno>33</slideno>
+          <text>Issues with MPI_Recv
+	Upon completion of the call the message is stored in the target 
+array and can safely be used 
+	However if buf had the wrong datatype/size combination the 
+message was probably either truncated or padded with garbage. 
+	Message envelope information (source, tag along with 
+information that can give the size using MPI_Get_count) is 
+stored in the MPI_Status (structure/integer array) 
+	Along with error code can be used for debugging purposes 
+	MPI_ANY_SOURCE and MP I_ANY_TAG are wildcards for 
+matching receives (less work) 
+	Fortran status is int array of size MPI_STATUS_SIZE 
+Parallel Prog ramming for Mul ticore Machines Using Ope nMP and MPI</text>
+        </slide>
+        <slide>
+          <slideno>34</slideno>
+          <text>Message passing restrictions 
+	Order is preserved. For a given channel (sender, receiver, 
+communicator) message order is enforced: 
+	If P sends to Q, messages sa and sb in that order, that is the 
+order they will be received at B, even if sa is a medium 
+message sent with MPI_Bsend and sb is a small message sent 
+with MPI_Send. Messages do not overtake each other. 
+	If the corresponding receives ra and rb match both messages 
+(same tag) again the receives are done in order of arrival. 
+	This is actually a performance
+drawback for MPI but
+helps avoid major
+programming errors.
+Parallel Prog ramming for Mul ticore Machines Using Ope nMP and MPI
+Figure by MIT OpenCourseWare.</text>
+        </slide>
+        <slide>
+          <slideno>29</slideno>
+          <text>Other blockin g sends
+	MPI_Ssend: Synchronous se nd 
+	The sender notifies the receiver; after the matching receive is 
+posted the receiver acks back and the sender sends the message. 
+	MPI_Bsend: Buffered (asynchronous) send 
+	The sender notifies the receiver and the message is either 
+buffered on the sender side or the receiver side according to 
+size until a matching receive forces a network transfer or a 
+local copy respectively. 
+	MPI_Rsend: Ready send 
+	The receiver is notified and the data starts getting sent
+immediately following that. Use at your own peril!
+Parallel Prog ramming for Mul ticore Machines Using Ope nMP and MPI</text>
+        </slide>
+        <slide>
+          <slideno>4</slideno>
+          <text>A linked list with tasks
+#pragma omp parallel 
+{ 
+#pragma omp single private(p) 
+{
+p = listhead ;
+while (p) {
+#pragma omp task 
+process (p) 
+p=ne xt (p) ; 
+} 
+} 
+} 
+Parallel Prog ramming for Mul ticore Machines Using Ope nMP and MPI</text>
+        </slide>
+        <slide>
+          <slideno>16</slideno>
+          <text>Minimal MPI subset
+	There is a minimal subset of MPI that allows users to write 
+functional parallel programs without learning all hundreds of MPI 
+functions and going through hoops: 
+	MPI_Init()/MPI_Finalize()/MPI_Abort() 
+	MPI_COMM_WORLD 
+	MPI_Comm_size()/MPI_Com m_rank() 
+	MPI_Send()/MPI_Re cv() 
+	MPI_Isend()/MPI_Irecv()/MPI_Wait() 
+	You might be able actually to stick to the 6 functions in red if your 
+message sizes are small enough 
+	For performance as well as code compactness reasons you will 
+need to at least use collective comms. 
+Parallel Prog ramming for Mul ticore Machines Using Ope nMP and MPI</text>
+        </slide>
+        <slide>
+          <slideno>20</slideno>
+          <text>Process rank
+	MPI_Comm_rank(MPI_Comm comm, int *rank) 
+	MPI_COMM_RANK(comm, rank, ier) 
+	Returns the rank of the process in the communicator 
+	If communicators A and B are different and the 
+process belongs to both of them, its rank in one of them is unrelated to its rank in the other 
+	Its value is between 0 and (size-1) 
+Parallel Prog ramming for Mul ticore Machines Using Ope nMP and MPI myrank=0 myrank=1 myrank=2 myrank=
+(size-1)
+Communication network
+CALL MPI_COMM_RANK(MPI_COMM_WORLD,myrank, ierror)
+Figure by MIT OpenCourseWare.</text>
+        </slide>
+        <slide>
+          <slideno>23</slideno>
+          <text>Communications
+	So far we have not explicitly exchanged any information between 
+processes. 
+	Communications can be between two processes (point to point) or 
+between a group of processes (collective) 
+	Communications involve arrays of data organized as MPI 
+datatypes: 
+	Datatypes can be predefined with a mapping to hos t langua ge basic 
+datatypes 
+	They can also be user-defined, as structures of ba sic or ot her user-
+defined datatypes 
+	User defined datatypes hide the complexity of the data exchange and 
+leave it to the MPI library to opt imize it 
+Parallel Prog ramming for Mul ticore Machines Using Ope nMP and MPI</text>
+        </slide>
+        <slide>
+          <slideno>11</slideno>
+          <text>SPMD &amp; MPMD
+	SPMD can be considered a 
+special case of MPMD 
+	MPMD can be implemented 
+as a SPMD program which 
+depending on so me criterion 
+executes the relevant 
+constituent code 
+switch (myid) {
+case 0:
+run_prog1();
+breaksw;
+case 1:
+run_prog2();
+breaksw;}
+	All data is private to each 
+process. Some of it however 
+may map to the same 
+physical variables as the 
+corresponding pr ivate data 
+in other processes (eg. 
+shadow cells, boundary 
+data): 
+	Communication is
+required to enforce
+consistency
+	Communication can be 
+direct or collective 
+Parallel Prog ramming for Mul ticore Machines Using Ope nMP and MPI</text>
+        </slide>
+        <slide>
+          <slideno>0</slideno>
+          <text>12.950
+Parallel P rogramming
+for Multicore M achines
+using OpenMP and MPI
+Dr. C. Evangelinos, MIT
+Parallel Prog ramming for Mul ticore Machines Using Ope nMP and MPI</text>
+        </slide>
+        <slide>
+          <slideno>1</slideno>
+          <text>Course Syllabus
+ Day 2 (OpenMP wrapup and MPI Pt2Pt): 
+ EC2 cluster and V mware image demo 
+ Homework discussion 
+ OpenMP 3.0 e nhancements 
+ Fundamentals of Distributed Memory Programming 
+ MPI concepts 
+ Blocking Point to Point Communications 
+Parallel Prog ramming for Mul ticore Machines Using Ope nMP and MPI</text>
+        </slide>
+        <slide>
+          <slideno>7</slideno>
+          <text>MPI
+Distributed Memory
+Programming
+using
+MPI
+Parallel Prog ramming for Mul ticore Machines Using Ope nMP and MPI</text>
+        </slide>
+        <slide>
+          <slideno>12</slideno>
+          <text>MPI: Message Passing Interface
+	A standard API for message passing communication and process 
+information lookup, registration, grouping and creation of new 
+message datatypes. 
+	Point to point comms: ([non]bl ocking, [a]synchronous ) 
+	Collective comms: one-many, m any-one , many-m any 
+	Code parallelization cannot be incremental 
+	Supports coarse level parallelism and parallel I/O 
+	Fortran 77 and C support, C++/Fortran90 in MPI-2 
+	Very large API (128), MPI-2 document adds quite a lot (152). 
+Most users do not use but a fraction of it. 
+	Performance oriented standard. 
+Parallel Prog ramming for Mul ticore Machines Using Ope nMP and MPI</text>
+        </slide>
+        <slide>
+          <slideno>14</slideno>
+          <text>The Genealogy of MPI
+Parallel Prog ramming for Mul ticore Machines Using Ope nMP and MPI
+MPI
+EUITCGMSG
+p4
+NXExpress
+ZipcodeCMMDPVM
+ChameleonPARMACSParallel LibrarlesParallel Applications
+Parallel LanguagesThe Message Passing Interface Standard
+Figure by MIT OpenCourseWare.</text>
+        </slide>
+        <slide>
+          <slideno>3</slideno>
+          <text>Tasking
+	Most major new enhancement to OpenMP, allows for 
+expressing irregular parallelism. 
+	Similar to Cilc (MIT) and other vendor (C#, TBB) efforts 
+ Spawn a new task and run it or queue it for running
+#pragma omp task [clauses]
+C$OMP TASK [CLAUSES]
+C$OMP END TASK
+	The clauses are if, untied, default, private, firstprivate and 
+shared. 
+Parallel Prog ramming for Mul ticore Machines Using Ope nMP and MPI</text>
+        </slide>
+        <slide>
+          <slideno>26</slideno>
+          <text>Point to Point Comms
+	Blocking comms: Block until completed (send stuff on your own) 
+	Non-blocking comms: Return without waiting for completion (give 
+them to someone else) 
+	Forms of Sends: 
+	Synchronous : message gets sent only when it is know n that  someone is 
+already w aiting at the other end (think fax) 
+	Buffered: message gets sent and if someone is waiting for it so be it; 
+otherwise it gets saved in a temporary buffer until someone retrieves it. 
+(think mail) 
+	Ready: Like synchronous, only there is no a ck that there is a matching 
+receive at the other end, just a progra mmer's assumption! (Use it with 
+extreme care) 
+Parallel Prog ramming for Mul ticore Machines Using Ope nMP and MPI</text>
+        </slide>
+        <slide>
+          <slideno>31</slideno>
+          <text>Blocking send performance
+	Synchronous sends of fer the highest asymptotic data rate 
+(AKA bandwidth) but the startup cost (latency) is very high, 
+and they run the risk of deadlock. 
+	Buffered sends offer the lowest latency but: 
+	suffer from buffer management complications 
+	have bandwidth problems because of the extra copies and 
+system calls 
+	Ready sends sho uld offer the best of both worlds but are so 
+prone to cause trouble they are to be avoided! 
+	Standard sends are usually the ones that are most carefully 
+optimized by t he implementors. For large message sizes they 
+can always de adlock. 
+Parallel Prog ramming for Mul ticore Machines Using Ope nMP and MPI</text>
+        </slide>
+        <slide>
+          <slideno>9</slideno>
+          <text>Shared Memory Programming 
+ Under the assumption of a single address space one uses multiple control 
+streams (threads, processes) to operate on both private and shared data. 
+ Shared data: synchronization, communication, work 
+ In shared arena/mmaped file (multiple processes) 
+ In the heap of the process address space (multiple threads) 
+Process 
+address 
+space Thread 
+Private 
+stack Thread 
+Private 
+stack Heap 
+Single 
+process 
+space Process 
+Private 
+stack Private 
+heap Process 
+Private 
+stack Private 
+heap Shared 
+memory 
+arena 
+Parallel Prog ramming for Mul ticore Machines Using Ope nMP and MPI</text>
+        </slide>
+        <slide>
+          <slideno>36</slideno>
+          <text>MIT OpenCourseWare
+http://ocw.mit.edu 
+12.950  Parallel Programming for Multicore Machines Using OpenMP and MPI 
+IAP 2010 
+For information about citing these materials or our Terms of Use, visit: http://ocw.mit.edu/terms.</text>
+        </slide>
+        <slide>
+          <slideno>8</slideno>
+          <text>Acknowledgments
+ MPI Forum 
+ Joel Malard, Alan Simpson (EPCC) 
+ Rolf Rabenseifner, Traugott Streicher (HLRS) 
+ The MPICH team at ANL 
+ The LAM/MPI team at Indiana University 
+Parallel Prog ramming for Mul ticore Machines Using Ope nMP and MPI</text>
+        </slide>
+        <slide>
+          <slideno>15</slideno>
+          <text>MPI Basics
+	mpi.h and mpif.h include files for C/C++ and Fortran 
+error = MPI_Xxxxx(argument, ...);
+call mpi_xxxxx(argument, ..., error)
+	Notice that all routines have to return an error value 
+	mpi module for Fortran90 
+	MPI_ namespace reserved for MPI 
+	MPI:: namespace for C++ 
+	In C/C++ (in)out arguments passed as pointers 
+	Always start with MP I_Init() and end with MPI_Finalize() (or 
+MPI_Abort()).Both calls need to be made by a ll processes 
+Parallel Prog ramming for Mul ticore Machines Using Ope nMP and MPI</text>
+        </slide>
+        <slide>
+          <slideno>18</slideno>
+          <text>Communicators and handles
+	A communicator is an ordered set of processes, that remains 
+constant from its creation until its destruction 
+	All MPI processes form the MPI_COMM_W ORLD 
+communicator 
+	Users can create their own (subset) communicators 
+	MPI_COMM_WORLD gets created at the very beginning and 
+is a handle defined in the include files 
+	handles are predefined constants in the include files, that are 
+of integer type for Fortran and spe cial typedefs for C/C++ 
+	Handles describe MPI objects and datatypes 
+Parallel Prog ramming for Mul ticore Machines Using Ope nMP and MPI</text>
+        </slide>
+        <slide>
+          <slideno>32</slideno>
+          <text>MPI blocking receive
+	Irrespective of the send employed, there is one  blocking 
+receive operation on t he other end 
+	MPI_Recv(void *buf, int cnt, MPI_Datatype type, int src, int 
+tag, MPI_Comm comm, MPI_Status *stat) 
+	MPI_RECV(buf, cnt, type, src, tag, comm, stat, ier) 
+	buf is the starting address of the target array 
+	cnt is its length, type is its MPI datatype 
+	comm is the communicator context 
+	src is the rank of the source process in comm 
+	tag needs to match along with src and comm 
+Parallel Prog ramming for Mul ticore Machines Using Ope nMP and MPI</text>
+        </slide>
+        <slide>
+          <slideno>30</slideno>
+          <text>Things to consider
+	Depending on the MPI implementation, MPI_Send may behave as 
+either MPI_Ssend or MPI_Bsend. 
+	Usually buf fered for small messages, synchronous  for larger one s. 
+Very small messages may piggypa ck on t he initial notification sent 
+to the receiver. The switchove r point can be tunable (see 
+P4_SOCKBUFSIZE for M PICH) 
+	For buffered sends it uses an internal system buffer 
+	MPI_Bsend may use a system buffer but cannot be guaranteed to 
+work without a user-specified buffer setup using 
+	MPI_Buffer_attach(void *buf fer, int size) 
+	MPI_Ssend can lead to deadlocks 
+Parallel Prog ramming for Mul ticore Machines Using Ope nMP and MPI</text>
+        </slide>
+        <slide>
+          <slideno>21</slideno>
+          <text>Exiting 
+	For a graceful exit all processes need to call last: 
+	MPI_Finalize() 
+	MPI_FINALIZE(ierror) 
+	If a process catches an error that cannot be corrected, a user 
+can call: 
+	MPI_Abort(MPI_Comm comm, int errorcode) 
+	MPI_ABORT(comm, errorcode, ier) 
+	This will make a best attempt to abort all other tasks in the 
+communicator set. Currently works only for 
+MPI_COMM_WORLD. The errorcode is usually the return 
+value of the parallel executable. 
+Parallel Prog ramming for Mul ticore Machines Using Ope nMP and MPI</text>
+        </slide>
+        <slide>
+          <slideno>22</slideno>
+          <text>The usual " hello world"
+IMPLICIT NONE
+INCLUDE "mpif.h"
+INTEGER ierror, rank, size
+CALL MPI_INIT(ierror)
+CALL MPI_COMM_RANK(MPI_COMM_WORLD, rank,
+ierror) 
+CALL MPI_COMM_SIZE(MPI_COMM_WORLD, size, ierror) 
+IF (rank .EQ. 0) THEN 
+WRITE(*,*) 'I am process', rank, ' out of', size,
+&amp;  ': Hello world!'
+ELSE
+WRITE(*,*) 'I am process', rank, ' out of', size
+END IF
+CALL MPI_FINALIZE(ierror)
+END
+Parallel Prog ramming for Mul ticore Machines Using Ope nMP and MPI</text>
+        </slide>
+        <slide>
+          <slideno>5</slideno>
+          <text>taskwait
+ #pragma omp taskwait 
+ C$OMP TASK WAIT 
+ Wait for all tasks spawned by the current task (children) 
+ Partial synchronization compared to a barrier. 
+Parallel Prog ramming for Mul ticore Machines Using Ope nMP and MPI</text>
+        </slide>
+        <slide>
+          <slideno>35</slideno>
+          <text>Ping-Pong
+	Test send-receive pairs in the simplest of scenarios: 
+	A pair of processes exchanging messages back and forth. 
+	Use double precision utility function MPI_Wtime to get
+wallclock time in seconds as a benchmark
+	The variations of the benchmark allow us to measure latency, 
+the time for a very small message to be exchanged, as well as 
+bandwidth, the rate at which a very large message gets sent out. 
+if (myrank == 0) { 
+MPI_Send(..,1,..) ; 
+MPI_Recv(..,1,..); 
+} else { 
+MPI_Recv(..,0,..); 
+MPI_Send(..,0,..) ; 
+} 
+Parallel Prog ramming for Mul ticore Machines Using Ope nMP and MPI
+rank=0 rank=1
+LoopSend (dest=1)
+Recv (source=0)
+Send (dest=0)
+Recv (source=1)
+Figure by MIT OpenCourseWare.</text>
+        </slide>
+        <slide>
+          <slideno>13</slideno>
+          <text>MPI history
+	Many m essage passing libraries in the past: 
+	TCGMSG, P4, PARMACS, EXPRESS, NX, MPL, PVM 
+	Vendor specific, research code, application driven 
+	1992-94 t he Message Passing Forum defines a standard for  message 
+passing (targeting M PPs) 
+	Evolving standards proc ess: 
+	1994: MPI 1.0: Basic comms, Fortran 77 &amp; C bindings 
+	1995: MPI 1.1: errata and clarifications 
+	1997: MPI 2.0: single-sided comms, I/O, process creation, Fortran 90 and 
+C++ bi ndings, further clarifications, many other things. Includes MPI-1.2. 
+	2008: MPI 1.3,  2.1: combine 1.3 and 2.0, corrections &amp; clarrifications 
+	2009: MPI 2.2: corrections &amp; clarrifications 
+	MPI 3.0 standardization in progress. 
+Parallel Prog ramming for Mul ticore Machines Using Ope nMP and MPI</text>
+        </slide>
+        <slide>
+          <slideno>24</slideno>
+          <text>n
+IONMPI Basic Datatypes
+MPI Datatypes for C C datatypes MPI Datatypes for FortraFortran datatypes 
+MPI_CHAR signed char 
+MPI_SHORT signed short 
+MPI_INT signed int MPI_INTEGER INTEGER 
+MPI_LONG signed long 
+MPI_UNSIGNED_CHAR unsigned char 
+MPI_UNSIGNED_SHORTunsigned short 
+MPI_UNSIGNED_INT unsigned int 
+MPI_UNSIGNED_LONG unsigned long 
+MPI_FLOAT float MPI_REAL REAL 
+MPI_DOUBLE double MPI_DOUBLE_PRECISDOUBLE PRECISION 
+MPI_LONG_DOUBLE long double 
+MPI_CHAR CHARACTER(1) 
+MPI_LOGICAL LOGICAL 
+MPI_COMPLEX COMPLEX 
+MPI_BYTE MPI_BYTE 
+MPI_PACKED MPI_PACKED 
+Parallel Prog ramming for Mul ticore Machines Using Ope nMP and MPI</text>
+        </slide>
+        <slide>
+          <slideno>17</slideno>
+          <text>Initialization
+ int MPI_Init(int *argc, char ***argv) 
+ MPI_INIT(ier), integer ier 
+ Called before any other MPI call. Only 
+ MPI_Initialized(int *flag) 
+ MPI_INITIALIZED(flag, ierror), logical flag
+is allowed before it.
+ It initializes the MPI environment for the process. 
+Parallel Prog ramming for Mul ticore Machines Using Ope nMP and MPI</text>
+        </slide>
+      </slides>
+      <videos/>
+    </lecture>
+    <lecture>
+      <lecture_title>Advanced MPI-1</lecture_title>
+      <lecture_pdf_url>https://ocw.mit.edu/courses/12-950-parallel-programming-for-multicore-machines-using-openmp-and-mpi-january-iap-2010/resources/mit12_950iap10_lec4/</lecture_pdf_url>
+      <lectureno>4</lectureno>
+      <slides>
+        <slide>
+          <slideno>37</slideno>
+          <text>Further Fortran issues 
+Basic vs. Extended Fortran Support 
+Strong typing in F90 a problem with choice args 
+A scalar should not be passed instead of a vector. 
+Extra work to code with KIND numerical types 
+MPI_IRECV(buf(a:b:c), ...) 
+Fortran derived datatypes r equire MPI equivalents 
+Problems with input arguments that are copied... 
+e.g. MPI_Recv with a buffer that was passed to the parent subroutine 
+as a section or an assumed shape array argument that is associated 
+with such a section. 
+Parallel Prog ramming for Mul ticore Machines Using Ope nMP and MPI</text>
+        </slide>
+        <slide>
+          <slideno>35</slideno>
+          <text>More functions
+	MPI_Graph_neighbors_count(MPI_Comm comm, int 
+rank, int *nneighbors) 
+	MPI_Graph_neighbors(MPI_Comm comm, int rank, 
+int maxneighbors, int *neighbors) 
+	Used in that order to get the neighbors of a process in 
+a graph. 
+Parallel Prog ramming for Mul ticore Machines Using Ope nMP and MPI</text>
+        </slide>
+        <slide>
+          <slideno>0</slideno>
+          <text>Today's agenda 
+ Homework discussion 
+ Collective Communications: All- with-All 
+ Derived Datatypes 
+ Groups, Contexts and Communicators 
+ Topologies 
+ Language Binding issues 
+ The Runtime and Environment Management 
+ The MPI profiling interface and tracing 
+Parallel Prog ramming for Mul ticore Machines Using Ope nMP and MPI</text>
+        </slide>
+        <slide>
+          <slideno>29</slideno>
+          <text>A cartesian topology
+Parallel Prog ramming for Mul ticore Machines Using Ope nMP and MPI
+0
+(0,0)3
+(1,0)6
+(2,0)9
+(3,0)
+10
+(3,1)7
+(2,1)4
+(1,1)1
+(0,1)
+2
+(0,2)5
+(1,2)8
+(2,2)11
+(3,2)Ranks and Cartesian process coordinates
+Figure by MIT OpenCourseWare.</text>
+        </slide>
+        <slide>
+          <slideno>7</slideno>
+          <text>A derived datatype
+Parallel Prog ramming for Mul ticore Machines Using Ope nMP and MPI
+0 4 8 12 16 20 24Example:
+derived datatype handle
+basic datatype
+MPI_CHAR
+MPI_INT
+MPI_INTMPI_DOUBLEdisplacement
+0
+4MPI_CHAR 1
+8
+16c d 10 30 3.11d-33
+A derived datatype describes the memory
+layout of, e.g., structures, common blocks,subarrays, some variables in the memory 
+Figure by MIT OpenCourseWare.</text>
+        </slide>
+        <slide>
+          <slideno>41</slideno>
+          <text>Error Handling
+	Environment Error handling routines: 
+	MPI_Errhandler_create(MPI_Handler_function *function, 
+MPI_Errhandler *errhandler) 
+	MPI_Errhandler_set(MPI_Comm comm, MPI_Errhandler 
+errhandler) 
+	MPI_Errhandler_get(MPI_Comm comm, MPI_Errhandler 
+*errhandler) 
+	MPI_Errhandler_free(MPI_Errhandler *errhandler) 
+	MPI_Error_string(int errorcode, char *string, int
+*resultlen)
+	MPI_Error_class(int errorcode, int *errorclass) 
+Parallel Prog ramming for Mul ticore Machines Using Ope nMP and MPI</text>
+        </slide>
+        <slide>
+          <slideno>17</slideno>
+          <text>Creating &amp; destroying datatypes
+	MPI_Type_commit(MPI_Datatype *datatype) 
+	You can now go ahead and use the datatype in any
+communication operation that makes sense.
+	A datatype may specify overlapping entries. The use of such a 
+datatype in a receive operation is erroneous. (This is erroneous 
+even if the actual message received is short enough not to write 
+any entry more than once.) 
+	MPI_Type_free(MPI_Datatype *datatype) 
+	Freeing a datatype does not affect any other datatype that was 
+built from the freed datatype. The system behaves as if input 
+datatype arguments to derived datatype constructors are passed 
+by value. Any communication operations using this datatype 
+that are still pending will complete fine. 
+Parallel Prog ramming for Mul ticore Machines Using Ope nMP and MPI</text>
+        </slide>
+        <slide>
+          <slideno>6</slideno>
+          <text>,...,(typeN,dispN)}basic datatype 0 displacement of datatype 0
+displacement of datatype 1
+displacement of datatype n-1basic datatype 1basic datatype n-1... ...What is a Derived D atatype? 
+	A general datatype is an opaque object specifying: 
+	A sequence of basic datatypes 
+	A sequence of integer (byte) displacements 
+	Type signature: 
+	{type1, type2, ..., typeN} 
+	Type map: 
+	{(type1,disp1), (type2,disp2) 
+	The displacements are not required to be positive, distinct, or 
+in increasing order. Therefore, the order of items need not 
+coincide with their order in store, and an item may appear 
+more than once. 
+Parallel Prog ramming for Mul ticore Machines Using Ope nMP and MPI
+Figure by MIT OpenCourseWare.</text>
+        </slide>
+        <slide>
+          <slideno>46</slideno>
+          <text>MPE (from MPICH/MPICH2)
+ Set of utility routines, including graphics 
+ Graphical viewing of traces with (n)upshot, jumpshot 
+ Compile with -mpe=mpitrace to enable basic tracing 
+ A message printed to stdout at every entry and exit 
+ Compile with -mpe=mpilog to enable logging 
+ ALOG, CLOG, CLOG2, UTE, SLOG and SLOG2 format 
+ Converters between formats (eg. Clog2slog2) 
+ SLOG2 is the newest and most scalable 
+ Jumpshot-4 is needed for looking at SLOG2 files 
+Parallel Prog ramming for Mul ticore Machines Using Ope nMP and MPI</text>
+        </slide>
+        <slide>
+          <slideno>33</slideno>
+          <text>Cartesian shift
+	MPI_Cart_shift(MPI_Comm comm, int direction, int disp, int 
+*rank_source, int *rank_dest) 
+ MPI_PROC_NULL for shifts at non-periodic boundaries 
+Parallel Prog ramming for Mul ticore Machines Using Ope nMP and MPI
+0 3 6 9
+(0,0) (1,0) (2,0) (3,0)
+1 4 7 10
+(0,1) (1,1) (2,1) (3,1)
+2 5 8 11
+(0,2) (1,2) (2,2) (3,2)
+Figure by MIT OpenCourseWare.</text>
+        </slide>
+        <slide>
+          <slideno>4</slideno>
+          <text>x yzAlternative decomposition 
+Parallel Prog ramming for Mul ticore Machines Using Ope nMP and MPI
+Figure by MIT OpenCourseWare.</text>
+        </slide>
+        <slide>
+          <slideno>40</slideno>
+          <text>Exceptions
+	Use exceptions and MPI return codes! 
+	Default error handler: MPI_ERRORS_ARE_FATAL 
+	The handler, when called, causes the program to abort on all 
+executing processes. This has the same effect as if 
+MPI_ABORT was called by the process that invoked the 
+handler. 
+	Alternative: MPI_ERRORS_RETURN 
+	The handler has no effect other than returning the error code to 
+the user. Put checks for the error codes in your source! 
+	MPICH provides two more: 
+ MPE_Errors_call_dbx_i n_xterm, MPE_Signals_call_debugge r 
+Parallel Prog ramming for Mul ticore Machines Using Ope nMP and MPI</text>
+        </slide>
+        <slide>
+          <slideno>8</slideno>
+          <text>More details
+	Basic (predefined) MPI datatypes are in fact defined in the same 
+way, based on base language datatypes 
+	(User) derived datatypes can be defined in terms of basic as well as 
+other defined datatypes. 
+	This level of recursive definition can be repeated to construct very 
+complicated datatypes 
+	Just like basic datatypes, defined datatypes can be used as 
+arguments to communication routines. 
+	An efficient implementation of communication events when 
+working with such complicated datatypes is left to the 
+implementation 
+	May use optimizations know n to work on a rchitecture 
+Parallel Prog ramming for Mul ticore Machines Using Ope nMP and MPI</text>
+        </slide>
+        <slide>
+          <slideno>18</slideno>
+          <text>Creating equivalent types
+	Create types: 
+	CALL MPI_TYPE_CONTIGUOUS( 2, MPI_REAL, type2, ...) 
+	CALL MPI_TYPE_CONTIGUOUS( 4, MPI_REAL, type4, ...) 
+	CALL MPI_TYPE_CONTIGUOUS( 2, type2, type22, ...) 
+	With  proper care, any of the above can be used to 
+accomplish the same end. Which is to be used is a 
+matter of programming clarity and performance. 
+While in principle complex types composed of 
+complex types should not be slower, implementations 
+may not really manage the indirection well. 
+Parallel Prog ramming for Mul ticore Machines Using Ope nMP and MPI</text>
+        </slide>
+        <slide>
+          <slideno>27</slideno>
+          <text>Inter-Communicators
+	So far all communications have been between 
+processes belonging to the same communicator. 
+	MPI allows for communications between different 
+communicators. 
+	They can only be Pt2Pt and no t collective 
+	They require the generation of inter-communicator objects. 
+	For more look at the material on the Web and the standard. 
+Parallel Prog ramming for Mul ticore Machines Using Ope nMP and MPI</text>
+        </slide>
+        <slide>
+          <slideno>32</slideno>
+          <text>Cartesian rank/coordinate functions
+	MPI_Cart_rank(MPI_Comm comm, int *coords, int *rank); 
+out of range values get shifted (periodic topos) 
+	MPI_Cart_coords(MPI_Comm comm, int rank, int maxdims, 
+int *coords) 
+Parallel Prog ramming for Mul ticore Machines Using Ope nMP and MPI
+0
+(0,0)3
+(1,0)6
+(2,0)9
+(3,0)
+10
+(3,1)7
+(2,1)4
+(1,1)1
+(0,1)
+2
+(0,2)5
+(1,2)8
+(2,2)11
+(3,2)MPI_Cart_coords
+MPI_Cart_rank
+Figure by MIT OpenCourseWare.</text>
+        </slide>
+        <slide>
+          <slideno>36</slideno>
+          <text>Fortran binding issues
+call MPI_GET_ADDRESS(buf,bufaddr, ierror) ditto... 
+call MPI_TYPE_CREATE_STRUCT(1,1, bufaddr,MPI_REAL,type,ierror)   ditto... 
+call MPI_TYPE_COMMIT(type,ierror)  ditto... 
+val_old = buf register = buf 
+val_old = register 
+call MPI_RECV(MPI_BOTTOM,1,type,...)  ditto... 
+val_new = buf val_new = register 
+call MPI_IRECV(buf,..req) call MPI_IRECV(buf,..req)  call 
+MPI_IRECV(buf,..req) 
+register = buf  b1 = buf 
+call MPI_WAIT(req,..)  call MPI_WAIT(req,..)   call MPI_WAIT(req,..) 
+b1 = buf b1 = register 
+Parallel Prog ramming for Mul ticore Machines Using Ope nMP and MPI</text>
+        </slide>
+        <slide>
+          <slideno>44</slideno>
+          <text>XMPI
+	Works with LA M/MPI, could work with other 
+implementations. 
+	A GUI for launching MP I parallel programs, monitoring them 
+in real time and also do pos t-mortem analysis on t hem. 
+	Uses the slower "daemon" mode of LAM, provides individual 
+message detail and has multiple views. The daemon m ode 
+allows cmdline tracing tools mpimsg and mpitask to be more 
+informative 
+	Very easy to use  but non-daemon m ode is required for 
+performance tuning. L aunch with -ton and collect tracefile 
+with lamtrace 
+Parallel Prog ramming for Mul ticore Machines Using Ope nMP and MPI</text>
+        </slide>
+        <slide>
+          <slideno>21</slideno>
+          <text>Counting example
+ The other process receives 
+CALL MPI_RECV(a, 2, Type2, 0, 0, comm, stat, ierr) 
+CALL MPI_GET_COUNT(stat, Type2, i, ierr)  !i=1 
+CALL MPI_GET_ELEMENTS(stat, Type2, i, ierr) !i=2 
+CALL MPI_RECV(a, 2, Type2, 0, 0, comm, stat, ierr) 
+CALL MPI_GET_COUNT(stat, Type2, i, ierr) 
+! returns i=MPI_UNDEFINED 
+CALL MPI_GET_ELEMENTS(stat, Type2, i, ierr) !i=3 
+Parallel Prog ramming for Mul ticore Machines Using Ope nMP and MPI</text>
+        </slide>
+        <slide>
+          <slideno>12</slideno>
+          <text>More about vector types
+	Type before described as 
+	MPI_Type_vector(2, 3, 5, o ldtype, newtype) 
+	MPI_Type_contiguous(n, oldtype, newtype) same as: 
+	MPI_Type_vector(n, 1, 1, o ldtype, newtype) 
+	MPI_Type_vector(1, n, k, o ldtype, newtype) for any k 
+	MPI_Type_hvector() requires stride to be in bytes, instead of 
+oldtype units. Type is MPI_Aint. 
+	MPI_Type_indexed(int count, int *array_of_blocklen, int 
+*array_of_displacements, MPI_Datatype oldtype, 
+MPI_Datatype *newtype); MPI_Type_hindexed() 
+	For vectors with variably sized blocks, variable strides 
+Parallel Prog ramming for Mul ticore Machines Using Ope nMP and MPI</text>
+        </slide>
+        <slide>
+          <slideno>24</slideno>
+          <text>Group Constructors
+	MPI_Comm_group(MPI_Comm comm, MPI_Group *group) 
+	MPI_Group_union(MPI_Group group1, MPI_Group group2, MPI_Group *newgroup) 
+	MPI_Group_intersection(MPI_Group group1, MPI_Group group2, MPI_Group 
+*newgroup) 
+	MPI_Group_difference(MPI_Group group1, MPI_Group group2, MPI_Group 
+*newgroup) 
+	MPI_Group_incl(MPI_Group group, int n, int *ranks, MPI_Group *newgroup) 
+	MPI_Group_excl(MPI_Group group, int n, int *ranks, MPI_Group *newgroup) 
+	MPI_Group_range_incl(MPI_Group group, int n, int ranges[][3], MPI_Group 
+*newgroup) 
+	MPI_Group_range_excl(MPI_Group group, int n, int ranges[][3], MPI_Group 
+*newgroup) 
+Parallel Prog ramming for Mul ticore Machines Using Ope nMP and MPI</text>
+        </slide>
+        <slide>
+          <slideno>2</slideno>
+          <text>How it would work for matvec
+Parallel Prog ramming for Mul ticore Machines Using Ope nMP and MPI
+1Rank=0
+2
+3
+4
+5
+611Rank=1COMM
+12
+13
+14
+15
+1621Rank=2
+22
+23
+24
+25
+26
+33
+3639
+42
+45
+48
+recvbuf
+recvbufrecvbufSendbuf Sendbuf
+op
+33 36
+3942
+45
+48recvcounts(0)
+recvcounts(1)
+recvcounts(2)
+MPI Reduce Scatter=
+A X Y
+Figure by MIT OpenCourseWare.</text>
+        </slide>
+        <slide>
+          <slideno>45</slideno>
+          <text>XMPI in action
+Parallel Prog ramming for Mul ticore Machines Using Ope nMP and MPI 
+Green: Represents the length of time a process runs outside of MPI. 
+Red: Represents the length of time a process is blocked, waiting for 
+communication to finish before the process resumes execution. 
+Yellow: Represents a process's overhead time inside MPI (for example, time 
+spent doing message packing).</text>
+        </slide>
+        <slide>
+          <slideno>20</slideno>
+          <text>Counting
+	MPI_Get_elements(MPI_Status *status, MPI_Datatype datatype, 
+int *count) 
+	MPI_Get_count(MPI_Status *status, MPI_Datatype datatype, int 
+*count) 
+ Define a derived datatype 
+CALL MPI_TYPE_CONTIGUOUS(2, M PI_REAL, Type2, ierr) 
+CALL MPI_TYPE_COMMIT(Type2, ierr) 
+ One processors sends consecutively: 
+CALL MPI_SEND(a, 2, MPI_REAL, 1, 0, comm, ierr) 
+CALL MPI_SEND(a, 3, MPI_REAL, 1, 0, comm, ierr) 
+Parallel Prog ramming for Mul ticore Machines Using Ope nMP and MPI</text>
+        </slide>
+        <slide>
+          <slideno>13</slideno>
+          <text>Datatype construction: Structure
+Parallel Prog ramming for Mul ticore Machines Using Ope nMP and MPI
+Struct buff_layout
+MPI_Type_struct(2, array_of_blocklengths,
+      array_of _displacements, array_of_types,
+                                             &amp;buff_datatype);     
+MPI_Type_commit(&amp;buff_datatype);     
+&amp;buffer = the start
+      address of the datathe datatype handle
+describes the data layoutCompiler{ int        i_val[3];
+  double d_val[5];
+} buffer;
+doubleMPI_Send(&amp;buffer , 1, buff_datatype, ...)array_of_types[0]=MPI_INT;
+array_of_blocklengths[0]=3;array_of_displacements[0]=0;array_of_types[1]=MPI_DOUBLE;array_of_blocklengths[1]=5;array_of_displacements[1]=...;
+int
+Figure by MIT OpenCourseWare.</text>
+        </slide>
+        <slide>
+          <slideno>43</slideno>
+          <text>MPI Profiling &amp; Performance Tools
+ An extremely wide choice of tools: 
+ Research codes: 
+ AIMS  (NASA Ames) 
+ (sv)Pablo (UIUC) 
+ Paradyn/Dyninst (University of Wisconsin) 
+ TAU (University of Oregon) 
+ XMPI (Indiana University) 
+ MPE/Jumpshot (ANL) 
+ Paragraph/MPICL 
+ FPMPI 
+ Also lightweight statistics tools: mpiP, ipm 
+ Commercial tools (VT, speedshop, Intel Trace A/C, VAMPIR) 
+Parallel Prog ramming for Mul ticore Machines Using Ope nMP and MPI</text>
+        </slide>
+        <slide>
+          <slideno>50</slideno>
+          <text>MIT OpenCourseWare
+http://ocw.mit.edu 
+12.950  Parallel Programming for Multicore Machines Using OpenMP and MPI 
+IAP 2010 
+For information about citing these materials or our Terms of Use, visit: http://ocw.mit.edu/terms.</text>
+        </slide>
+        <slide>
+          <slideno>49</slideno>
+          <text>Even more Jumpshot
+Parallel Prog ramming for Mul ticore Machines Using Ope nMP and MPI</text>
+        </slide>
+        <slide>
+          <slideno>25</slideno>
+          <text>More group functions
+	MPI_Group_free(MPI_Group *group) 
+	MPI_Group_size(MPI_Group group, int *size) 
+	MPI_Group_rank(MPI_Group group, int *rank) 
+	MPI_Group_translate_ranks (MPI_Group group1, int n, int 
+*ranks1, MPI_Group group2, int *ranks2) 
+	MPI_Group_compare(MPI_Group group1,MPI_Group group2, int 
+*result) 
+	MPI_IDENT results if the group members and group order is 
+exactly the same in both groups. This happens for instance if 
+group1 and group2 are the same handle. MPI_SIMILAR results if 
+the group members are the same but the order is different. 
+MPI_UNEQUAL results otherwise. 
+Parallel Prog ramming for Mul ticore Machines Using Ope nMP and MPI</text>
+        </slide>
+        <slide>
+          <slideno>48</slideno>
+          <text>l Prog ramming for Mul ticore Machines Using Ope nMP and MPI ce107@ comMore Jumpshot
+Paralle</text>
+        </slide>
+        <slide>
+          <slideno>47</slideno>
+          <text>Parallel Prog ramming for Mul ticore Machines Using Ope nMP and MPIJumpshot</text>
+        </slide>
+        <slide>
+          <slideno>42</slideno>
+          <text>The MPI Profiling Interface
+	The MPI standard takes great pains to offer a specification for 
+a useful profiling interface that does has minimum overhead 
+and high flexibility. 
+	All MPI calls have a shifted name of PMPI_... instead of 
+MPI_... 
+	A profiling library can write it's own MP I_... call, calling the 
+corresponding PMPI_... call to actually do the message 
+passing. 
+	This provides a way to trace as well as profile in terms of cost 
+in time a parallel program's execution for performance or 
+debugging reasons. 
+Parallel Prog ramming for Mul ticore Machines Using Ope nMP and MPI</text>
+        </slide>
+        <slide>
+          <slideno>28</slideno>
+          <text>Virtual Topologies
+	Employing the information cached in communicators 
+we can map an (intra-)communicator's processes to an 
+underlying topology (cartesian or graph) that better 
+reflects the communication requirements of our 
+algorithm. 
+	This has possible performance advantages: The 
+process to hardware mapping could be thus more 
+optimal. In practice this is rare. 
+	The notational power of this approach however allows
+ code to be far more readable and maintainable. 
+Parallel Prog ramming for Mul ticore Machines Using Ope nMP and MPI</text>
+        </slide>
+        <slide>
+          <slideno>10</slideno>
+          <text>Datatype construction: Contiguous
+	MPI_Type_contiguous(int count, MPI_Datatype 
+oldtype, MPI_Datatype *newtype) 
+	The simplest possible derived datatype 
+	Concatenation of count copies of oldtype variables 
+	Call with 2, MPI_DOUBLE_PRECISION to get your 
+own MPI_DOUBLE_COMPLEX in Fortran if absent. 
+Parallel Prog ramming for Mul ticore Machines Using Ope nMP and MPI
+oldtype
+newtype
+Figure by MIT OpenCourseWare.</text>
+        </slide>
+        <slide>
+          <slideno>34</slideno>
+          <text>Cartesian subspaces
+Parallel Prog ramming for Mul ticore Machines Using Ope nMP and MPI
+0
+(0,0)0
+(0) 3
+(1,0)1
+(1)2
+(2)3
+(3)
+0
+(0)1
+(1)2
+(2)3
+(3)
+0
+(0)1
+(1)2
+(2)3
+(3)6
+(2,0)9
+(3,0)
+10
+(3,1)7
+(2,1)4
+(1,1)1
+(0,1)
+2
+(0,2)
+MPI_Cart_sub(comm_cart, remain_dims, comm_sub, ierror)Rank and Cartesian process coordinates in comm_sub
+5
+(1,2)8
+(2,2)11
+(3,2)
+(true, false)
+Figure by MIT OpenCourseWare.</text>
+        </slide>
+        <slide>
+          <slideno>15</slideno>
+          <text>Address, size and exte nt 
+	MPI_Address(void* location, MPI_Aint *address) 
+	MPI_BOTTOM for the start of the address spa ce 
+	Use MPI_Address to get absolute addresses for your 
+constituent parts and calculate the correct displacement, with 
+the gaps the the compiler requires 
+	MPI_Type_lb/ub() &amp; MPI_LB/UB for endbounds 
+	MPI_Type_extent(MPI_Datatype datatype, MPI_Aint 
+*extent) 
+ Will calculate the proper extent in bytes of the datatype 
+	MPI_Type_size(MPI_Datatype datatype, int *size) 
+	Will calculate the proper size in bytes ("useful" part that gets 
+communicated) of the datatype. 
+Parallel Prog ramming for Mul ticore Machines Using Ope nMP and MPI</text>
+        </slide>
+        <slide>
+          <slideno>38</slideno>
+          <text>The MPI runtime
+	Provides for process placement, execution &amp;  handling 
+	Handles signals (SIGKILL, SIGSUSP, SIGUSR1/2) 
+	Usually collects stdout and stderr, may propagate stdin 
+	May propagate environment variables 
+	May provide support for debugging, profiling, tracing 
+	May interface with a queuing sy stem for better process 
+placement 
+	MPI-2 specifies (but doesn't require) standardized mpirun 
+clone: mpiexec. Others: poe, mpprun, prun... 
+	Command line arguments and/or environment variables allow 
+for different behavior/performance 
+Parallel Prog ramming for Mul ticore Machines Using Ope nMP and MPI</text>
+        </slide>
+        <slide>
+          <slideno>26</slideno>
+          <text>Communicator Functions
+	MPI_Comm_dup(MPI_Comm comm, MPI_Comm 
+*newcomm) 
+	MPI_Comm_create(MPI_Comm comm, MPI_Group group, 
+MPI_Comm *newcomm) 
+	MPI_Comm_split(MPI_Comm comm, int color, int key, 
+MPI_Comm *newcomm) 
+	MPI_Comm_compare(MPI_Comm comm1,MPI_Comm 
+comm2, int *result) 
+	MPI_Comm_free(MPI_Comm *comm) 
+	And the MPI_Comm_size,MPI_Comm_rank w e have already 
+met. 
+Parallel Prog ramming for Mul ticore Machines Using Ope nMP and MPI</text>
+        </slide>
+        <slide>
+          <slideno>14</slideno>
+          <text>Alignment, gaps and addresses 
+	MPI_Type_struct(int count, int *array_of_blocklengths, 
+MPI_Aint *array_of_displacements, MPI_Datatype 
+*array_of_oldtypes, MPI_Datatype *newtype); 
+	Alignment restrictions m ay require the presence of gaps in 
+your structure. 
+	count=2, array_of_blocklenghts=[3,5], 
+array_of_types=[MPI_INT,MPI_DOUBLE] 
+	What about array_of_displacements ? [0,addr1-addr0] 
+Parallel Prog ramming for Mul ticore Machines Using Ope nMP and MPI
+oldtypes
+newtypeMPI_INT MPI_DOUBLE
+addr_0 addr_1
+block 0 block 1 holes, if double needs an
+8 byte alignment
+in_d_val in_i_valin_buf_datatype
+out_buf_datatype
+out_d_val out_i_val
+Figure by MIT OpenCourseWare.</text>
+        </slide>
+        <slide>
+          <slideno>23</slideno>
+          <text>Groups, Contexts, Communicators
+	Group: An ordered set of processes, each associated with a 
+rank (within a continuous range). Part of a communicator. 
+	Predefined: MPI_GROUP_EM PTY,MPI_GROUP_NULL 
+	Context: A property of a communicator that partitions the 
+communication space. Not externally visible. 
+	Contexts allow Pt2Pt and collective calls not to interfere 
+with each other; same with calls belonging to different 
+communicators. 
+	Communicator: Group+C ontext+cached info 
+ Predefined: MPI_COMM_WORLD,MPI_COMM_S ELF 
+	Intra- and Inter-communicators 
+Parallel Prog ramming for Mul ticore Machines Using Ope nMP and MPI</text>
+        </slide>
+        <slide>
+          <slideno>1</slideno>
+          <text>Reduce -Scatter 
+MPI_Reduce_scatter(void *sendbuf, void *recvbuff, int *revcnt, 
+MPI_Datatype type, MPI_Op op, MPI_Comm comm) 
+MPI_REDUCE_SCATTER(sendbuf, recvbuf, recvcnt, type, op, 
+comm, ier) 
+Can be considered as a 
+MPI_Reduce(sendbuf, tmpbuf, cnt, type, op, root, comm);
+MPI_Scatterv(tmpbuf, recvcnt, displs, type, recvbuff, 
+recvcnt[myid], type, root, comm);
+where cnt is the total sum of the recvcnt values and displs[k] is 
+the sum of the recvcnt for up to processor k-1. 
+Implementations may use a more optimal approach 
+Parallel Prog ramming for Mul ticore Machines Using Ope nMP and MPI</text>
+        </slide>
+        <slide>
+          <slideno>5</slideno>
+          <text>Why Derived D atatypes?
+	So far all MPI operations seen operate on 1D arrays of predefined 
+datatypes. 
+	Multidimensional arrays (linearly stored in memory) can be sent as 
+the equivalent 1D array 
+	Contiguous  sections of arrays need to be copied (implicitly in 
+Fortran 90/ 95) to one big chunk t o sent over 
+	Edges, vertices etc. of 2D/3D arrays need to be sent separately or 
+packed to a sent buffe r on the sent side and unpa cked from the 
+receive buffer on the receive side, at the progr ammer's effort 
+	Strided data needs to be packed/sent/received/unpa cked as above . 
+	Message aggregation: int &amp; double in same message 
+Parallel Prog ramming for Mul ticore Machines Using Ope nMP and MPI</text>
+        </slide>
+        <slide>
+          <slideno>3</slideno>
+          <text>3DFFT
+Parallel Prog ramming for Mul ticore Machines Using Ope nMP and MPI
+Figure by MIT OpenCourseWare.</text>
+        </slide>
+        <slide>
+          <slideno>31</slideno>
+          <text>Ranks in cartesian communicators
+Parallel Prog ramming for Mul ticore Machines Using Ope nMP and MPI
+0
+(0,0)6 5 4 7
+10 9 8 11
+2 1 0 33
+(1,0)6
+(2,0)9
+(3,0)
+10
+(3,1)7
+(2,1)4
+(1,1)1
+(0,1)
+2
+(0,2)5
+(1,2)8
+(2,2)11
+(3,2)Ranks and Cartesian process coordinates in comm_cart
+Ranks in comm and comm_cart may differ, if recorder = 1 or .TRUE.
+This reordering can allow MPI to optimize communications
+Figure by MIT OpenCourseWare.</text>
+        </slide>
+        <slide>
+          <slideno>30</slideno>
+          <text>Cartesian topology calls
+	MPI_Cart_create(MPI_Comm comm_old, int ndims, int 
+*dims, int *periods, int reorder, MPI_Comm *comm_cart) 
+ Extra processes get MPI_COMM_NULL for comm_cart 
+	MPI_Dims_create(int nn odes, int ndims, int *dims) 
+	If ndims(k) is set, this is a constraint 
+	For graphs, MPI_Graph_create(), same rules 
+	MPI_Topo_test(MPI_Comm comm, int *status) 
+ Returns MPI_CART, MPI_GRAPH, MPI_UNDEFINED 
+	MPI_Cartdim_get, MPI_Cart_get etc. for cartesian topologies 
+	MPI_Graphdim_get, MPI_Graph_get etc. for graphs 
+Parallel Prog ramming for Mul ticore Machines Using Ope nMP and MPI</text>
+        </slide>
+        <slide>
+          <slideno>22</slideno>
+          <text>Datatyping array sections
+REAL a(100,100 ,100), e(9,9,9) ! e=a(1:17:2, 3:11, 2: 10) 
+CALL MPI_TYPE_VECTOR( 9, 1,  2, M PI_REAL, oneslice, 
+ierr) 
+CALL MPI_TYPE_HVECTOR(9, 1, 100*sizeofreal, oneslice, 
+twoslice, ierr) 
+CALL MPI_TYPE_HVECTOR( 9, 1, 100*100*sizeofreal, 
+twoslice, 1, threeslice, ierr) 
+CALL MPI_TYPE_COMMIT( threeslice, ierr) 
+CALL MPI_SENDRECV(a(1,3,2), 1, threeslice, myrank, 0, e, 
+9*9*9, MPI_REAL, myrank, 0, MPI_COMM_WORLD, 
+status, ierr) 
+Parallel Prog ramming for Mul ticore Machines Using Ope nMP and MPI</text>
+        </slide>
+        <slide>
+          <slideno>9</slideno>
+          <text>Size and Extent
+	Size: length of "useful" part == data to be transferred 
+	Extent: the span from the first byte to the last byte 
+occupied by entries in this datatype, rounded up to 
+satisfy alignment requirements. 
+	Alignment is architecture/language/compiler specific 
+Parallel Prog ramming for Mul ticore Machines Using Ope nMP and MPI
+oldtype
+newtype
+size : = 6* size(oldtype)
+extent : = 8* extent(oldtype)
+better visualization of newtype:
+Figure by MIT OpenCourseWare.</text>
+        </slide>
+        <slide>
+          <slideno>39</slideno>
+          <text>MPI environment
+	Initialize, Finalize and Abort functionality 
+	Error (exception) handling 
+	Other inquiry functions: 
+ double MPI_Wtime(void), doub le MPI_Wtick(void) 
+	MPI_WTIME_IS_GLOBAL 
+ MPI_Get_processor_name(char *name, int *resultlen) 
+	MPI communicator inquiry (size, rank) for 
+MPI_COMM_WORLD 
+Parallel Prog ramming for Mul ticore Machines Using Ope nMP and MPI</text>
+        </slide>
+        <slide>
+          <slideno>19</slideno>
+          <text>Matching sends &amp; receives
+ Sends: 
+ CALL MPI_SEND( a, 4, M PI_REAL, ...) 
+ CALL MPI_SEND( a, 2, type2, ...) 
+ CALL MPI_SEND( a, 1, type22, ...) 
+ CALL MPI_SEND( a, 1, type4, ...) 
+ Receives: 
+ CALL MPI_RE CV( a, 4, M PI_RE AL, ...) 
+ CALL MPI_RE CV( a, 2, type2, ...) 
+ CALL MPI_RE CV( a, 1, type22, ...) 
+ CALL MPI_RE CV( a, 1, type4, ...) 
+ Each of the sends matches any of the receives. 
+Parallel Prog ramming for Mul ticore Machines Using Ope nMP and MPI</text>
+        </slide>
+        <slide>
+          <slideno>11</slideno>
+          <text>Datatype construction: Vector
+	MPI_Type_vector(int count, int blocklength, int stride, 
+MPI_Datatype oldtype, MPI_Datatype *newtype) 
+	Concatenation of count copies of blocks of oldtype variables 
+of size blocklength positioned stride blocks apart. Strides 
+(displacements) can be negative. 
+Parallel Prog ramming for Mul ticore Machines Using Ope nMP and MPI
+oldtype
+newtypeholes, that should not be transferred
+blocklength = 3 element per block
+stride = 5 (element stride between blocks)
+count = 2 blocks
+Figure by MIT OpenCourseWare.</text>
+        </slide>
+        <slide>
+          <slideno>16</slideno>
+          <text>Correct usage of addresses (std)
+	Successively declared variables in C or Fortran are not 
+necessarily stored at contiguous l ocations. Thus, c are must be 
+exercised that displacements do no t cross from one variable to 
+another. Also, in machines with a segmented address sp ace, 
+pointers arithmetic has some peculiar properties. Thus, t he use 
+of pointer addresses sho uld instead be replaced by t he use of 
+absolute addresses, ie. displacements relative to the start 
+address MP I_BOTTOM. 
+	Variables belong to the same sequential storage if they belong 
+to the same array, to the same COMMON block in Fortran, or 
+to the same structure in C. Beware of unions! Look up the 
+rules in the standard! 
+Parallel Prog ramming for Mul ticore Machines Using Ope nMP and MPI</text>
+        </slide>
+      </slides>
+      <videos/>
+    </lecture>
+    <lecture>
+      <lecture_title>More Pt2Pt and collective communications</lecture_title>
+      <lecture_pdf_url>https://ocw.mit.edu/courses/12-950-parallel-programming-for-multicore-machines-using-openmp-and-mpi-january-iap-2010/resources/mit12_950iap10_lec3/</lecture_pdf_url>
+      <lectureno>3</lectureno>
+      <slides>
+        <slide>
+          <slideno>24</slideno>
+          <text>Scatter
+	MPI_Scatter(void *se ndbuf, int sendcnt, MPI_Datatype 
+sendtype, void *recvbuf, int recvcnt, MPI_Datatype recvtype, 
+int root, MPI_Comm comm) 
+	Make sure recvbuf is large enough on a ll procs, sendbuf 
+matter only on r oot 
+	MPI_Scatterv has additional arguments for variable sendcnt, 
+and input stride 
+Parallel Programming for Multicore Machines Using OpenMP and MPI
+Before
+scatter
+After
+scatter
+e.g., root = 1A B C D
+A B C D EEA B C D E
+Figure by MIT OpenCourseWare.</text>
+        </slide>
+        <slide>
+          <slideno>2</slideno>
+          <text>Parallel Programming for Multicore Machines Using OpenMP and MPILatency Examples
+y-axis intercept is zero message latency
+Note the difference between Gigabit Ethernet, IPoIB, 
+DDR Infiniband and Shared Memory (same and 
+different socket) performance</text>
+        </slide>
+        <slide>
+          <slideno>11</slideno>
+          <text>Nonblocking Synchronous Send
+	For example, an MPI_Issend() works like using an 
+unattended fax machine. You set up the fax to be sent, 
+go away but need to come and check if all's been sent. 
+Parallel Prog ramming for Mul ticore Machines Using Ope nMP and MPI
+OkBeep
+Non blocking synchronous send
+Figure by MIT OpenCourseWare.</text>
+        </slide>
+        <slide>
+          <slideno>20</slideno>
+          <text>Collective Comms
+	Collective communications involve a group of processes, 
+namely all processes in a communicator 
+	All processes call the routine which is blocking and has no 
+tag; assumed to be implementor optimized! 
+	Any receive buffers all have to be the same size and be 
+distinct from send buffers (Fortran semantics) 
+	Operations can be one-to-all, all-to-one and all-to-all in nature 
+and combinations thereof. 
+	They can involve data exchange and combination as well as 
+reduction ope rations 
+	Many routines have a "vector" variant MPI_xxxxv 
+Parallel Prog ramming for Mul ticore Machines Using Ope nMP and MPI</text>
+        </slide>
+        <slide>
+          <slideno>25</slideno>
+          <text>Gather to all
+	MPI_Allgather(void *sendbuf, int sendcnt, 
+MPI_Datatype sendtype, void *recvbuf, int recvcnt, 
+MPI_Datatype recvtype, MPI_Comm comm) 
+	Make sure recvbuf is large enough on all procs 
+	MPI_Allgatherv has additional arguments for variable 
+recvcnt, and output stride 
+	Can be thought of as an MPI_Gather followed by an 
+MPI_Bcast, with an unspecified root process 
+Parallel Prog ramming for Mul ticore Machines Using Ope nMP and MPI</text>
+        </slide>
+        <slide>
+          <slideno>16</slideno>
+          <text>Probing
+IF (rank.EQ.0) THEN
+CALL MPI_SEND(i, 1, M PI_INTEGER, 2, 0, comm, ierr)
+ELSE IF(rank.EQ.1) THEN
+CALL MPI_SEND(x, 1, M PI_REAL, 2, 0, com m, ierr)
+ELSE ! rank.EQ.2
+DO i=1, 2 
+CALL MPI_PROBE(MPI_ANY_SOURCE, 0,  comm, status, ierr) 
+IF (status(MPI_SOURCE) = 0) THEN 
+100 CALL MPI_RECV(i, 1, MPI_INTEGER, 0, 0, status, ierr) 
+ELSE 
+200 CALL MPI_RECV(x, 1, MPI_REAL, 1, 0, status, ierr) 
+END IF 
+END DO 
+END IF 
+Parallel Prog ramming for Mul ticore Machines Using Ope nMP and MPI</text>
+        </slide>
+        <slide>
+          <slideno>14</slideno>
+          <text>All, some and any
+	Suppose one has a large number of outstanding nonblocking 
+calls to wait or test for. MPI provides us with special 
+shorthand routines for this case: 
+	MPI_Waitall/MPI_Testall deal with arrays of requests and 
+statuses as their arguments. They test for all pending 
+communication requests. 
+	Ditto for MPI_Waitsome/MPI_Testsome but they also mark the 
+locations of successful operations in another index array. They 
+return after some time at least one completion on pending 
+requests (usually more). 
+	Finally MPI_Waitany/MPI_Testany will test for all the pending 
+requests and return if they come across one that is completed or 
+if none are completed. 
+Parallel Prog ramming for Mul ticore Machines Using Ope nMP and MPI</text>
+        </slide>
+        <slide>
+          <slideno>17</slideno>
+          <text>Persistent Communications
+	In the case of very regular communications (say inside a 
+loop), som e communication overhead can be avoided by 
+setting up a  persistent communication request ("half" channel 
+or port). There is no binding of receiver to sender! 
+	MPI_Send_init(buf, count, datatype, dest, tag, comm, request) 
+sets up persistent sends. The request is inactive and 
+corresponds t o an Isend(). Corresponding initialization calls 
+for Bsend, S send and Rsend exist. 
+	MPI_Recv_init(buf, count, datatype, source, tag, comm, 
+request) sets up persistent receives. The request is inactive and 
+corresponds t o an Irecv(). 
+Parallel Prog ramming for Mul ticore Machines Using Ope nMP and MPI</text>
+        </slide>
+        <slide>
+          <slideno>5</slideno>
+          <text>Bidirectional Exchange
+	Consider the cases where two processes are exchanging 
+messages concurrently or a process is sending a message 
+while receiving another. 
+	There are two routines that provide an opt imized deadlock 
+free macro for this operation: 
+	MPI_Sendrecv(int *sendbuf, int sendcnt, MPI_Datatype 
+sendtype, int dest, int sendtag, void *recvbuf, int recvcnt, 
+MPI_Datatype recvtype, int src, int recvtag, M PI_Comm 
+comm, MPI_Status *stat) 
+	MPI_Sendrecv_replace does not use the recvbuf, recvcnt and 
+recvtype arguments as the source array gets overwritten (like 
+a swap) 
+Parallel Prog ramming for Mul ticore Machines Using Ope nMP and MPI</text>
+        </slide>
+        <slide>
+          <slideno>9</slideno>
+          <text>Deadlock avoidan ce
+	If the nonblocking sends or receives are called back-
+to-back with MPI_Wait we basically retrieve the 
+blocking behavior as MPI_Wait is a blocking call. 
+	To avoid deadlock we need to interlace nonblocking sends with 
+blocking receives, or nonblocking receives with blocking 
+sends; the nonblocking calls always precede the blocking ones. 
+Using both nonblocking calls may land us in trouble again 
+unless we reverse the order of Wait calls, or interlace the order 
+of send and receive calls (even #P). 
+Parallel Prog ramming for Mul ticore Machines Using Ope nMP and MPI
+Figure by MIT OpenCourseWare.</text>
+        </slide>
+        <slide>
+          <slideno>31</slideno>
+          <text>Matrix transpose
+ Consider the simplest case of 1 element per proc. 
+ Transpose accomplished with 1 call. 
+ Othewise use derived datatypes or pack/unpack 
+Parallel Prog ramming for Mul ticore Machines Using Ope nMP and MPI
+A0 B0 C0 D0 E0 F0
+A1 B1 C1 D1 E1 F1
+A2 B2 C2 D2 E2 F2
+A3 B3 C3 D3 E3 F3
+A4 B4 C4 D4 E4 F4
+A5 B5 C5 D5 E5 F5DataSend Buffer Receive Buffer
+ProcessorA0 A1 A2 A3 A4 A5
+B0 B1 B2 B3 B4 B5
+C0 C1 C2 C3 C4 C5
+D0 D1 D2 D3 D4 D5
+E0 E1 E2 E3 E4 E5
+F0 F1 F2 F3 F4 F5Data
+Processor
+Figure by MIT OpenCourseWare.</text>
+        </slide>
+        <slide>
+          <slideno>39</slideno>
+          <text>MIT OpenCourseWare
+http://ocw.mit.edu 
+12.950  Parallel Programming for Multicore Machines Using OpenMP and MPI 
+IAP 2010 
+For information about citing these materials or our Terms of Use, visit: http://ocw.mit.edu/terms.</text>
+        </slide>
+        <slide>
+          <slideno>32</slideno>
+          <text>Global Reduct ions
+	An efficient way to perform an associative binary operation 
+on a set of data spread over processes in a communicator 
+	Operation can have an MP I defined handle: 
+	MPI_MAX, MPI_MIN, MPI_MAXLOC, MPI_MINLOC 
+	MPI_SUM, MPI_PROD 
+	MPI_LAND, MPI_BAND, MPI_LOR, MPI_BOR,
+MPI_LXOR, MPI_BXOR
+operating on datatypes that make sense 
+	MPI_MAXLOC and MP I_MINLOC require special 
+datatypes, already predefined (note the Fortran ones and for 
+more information look up the standard). 
+Parallel Prog ramming for Mul ticore Machines Using Ope nMP and MPI</text>
+        </slide>
+        <slide>
+          <slideno>34</slideno>
+          <text>Reduce
+	MPI_Reduce(void *sendbuf, void *recvbuff, int cnt, 
+MPI_Datatype type, MPI_Op op, int root, MPI_Comm 
+comm) 
+	MPI_REDUCE(sendbuf, recvbuf, cnt, type, op, root, comm, 
+ier) 
+Parallel Prog ramming for Mul ticore Machines Using Ope nMP and MPI
+Figure by MIT OpenCourseWare.Before MPI_REDUCE
+After MPI_REDUCE
+root = 1def ghi jkl mno abc
+def ghi jkl mno abcinbuf
+result
+aodogojomo o o o</text>
+        </slide>
+        <slide>
+          <slideno>18</slideno>
+          <text>Persistent Communications (cont)
+	To activate a persistent send or receive pass the request handle 
+to MPI_Start(request). 
+	For multiple persistent communications e mploy 
+MPI_Startall(count, array_of_requests). This processes 
+request handles in some arbitrary order. 
+	To complete the communication, MPI_Wait()/Test() and 
+friends a re needed. Once they return, the request handle is 
+once again inactive but allocated. To deallocate it 
+MPI_Request_free() is needed. Make sure it operates on an 
+inactive request handle. 
+	Persistent sends c an be matched with blocking or non-
+blocking receives and vi ce-versa for the receives. 
+Parallel Prog ramming for Mul ticore Machines Using Ope nMP and MPI</text>
+        </slide>
+        <slide>
+          <slideno>7</slideno>
+          <text>MPI nonblocking standard send
+	MPI_Isend(void *buf, int cnt, MPI_Datatype type, int dest, int 
+tag, MPI_Comm comm, MPI_Request *req) 
+	MPI_ISEND(buf, cnt, type, dest, tag, comm, req, ierr) 
+	MPI_Wait(MPI_Request *req, MPI_Status *st at) 
+	MPI_WAIT(req, stat, ier) 
+	Call MPI_Isend, st ore the request handle, do so me work to 
+keep busy a nd then call MPI_Wait with the handle to 
+complete the send. 
+	MPI_Isend pr oduces the request handle, MPI_Wait consumes 
+it. 
+	The status ha ndle is not actually used 
+Parallel Prog ramming for Mul ticore Machines Using Ope nMP and MPI</text>
+        </slide>
+        <slide>
+          <slideno>12</slideno>
+          <text>Implementing nonblockin g comms
+	The actual communication in the case of the nonblocking calls 
+can take place at any gi ven time between the call to the 
+MPI_Isend/Irecv ope ration and the corresponding MP I_Wait. 
+Fortran 90 i ssues! 
+	The moment it actually happens is implementation dependent 
+and in many cases it is coded to take place mostly within 
+MPI_Wait. 
+	On systems with "intelligent" network interfaces it is possible 
+for communications to be truly taking pl ace concurrently with 
+the computational work the sending pr ocess is performing, 
+thus allowing for computation to "hide" communication; 
+otherwise nonblocking calls just help avoid deadlock without 
+helping performance. 
+Parallel Prog ramming for Mul ticore Machines Using Ope nMP and MPI</text>
+        </slide>
+        <slide>
+          <slideno>21</slideno>
+          <text>Synchronization
+ MPI_Barrier(MPI_Comm comm) 
+ MPI_BARRIER(comm, ier) 
+ Forces synchronization for: 
+ timing purposes 
+ non-parallel I/O purposes 
+ debugging 
+ Costly for large numbers of 
+processes, try to avoid. 
+Parallel Prog ramming for Mul ticore Machines Using Ope nMP and MPI
+??
+?? All here?
+Figure by MIT OpenCourseWare.</text>
+        </slide>
+        <slide>
+          <slideno>30</slideno>
+          <text>All to All Personalized Comm
+	MPI_Alltoall(void *sendbuf, int sendcnt, MPI_Datatype 
+sendtype, void *recvbuf, int recvcnt, MPI_Datatype recvtype, 
+MPI_Comm comm) 
+	Everybody se nds som ething di fferent to everyone else, like a 
+scatter/gather for all. If what was getting sent was the same it 
+would be like a bcast/gather for all. 
+	This is the most stressful communication pattern for a 
+communication network as it floods it with messages: P*(P-1) 
+for P procs for certain direct implementations. 
+	MPI_Alltoallv has additional arguments for variable sendcnt 
+and recvcnt, and input and output strides 
+	Other MPI-2 variants, at the heart of matrix transpose! 
+Parallel Prog ramming for Mul ticore Machines Using Ope nMP and MPI</text>
+        </slide>
+        <slide>
+          <slideno>27</slideno>
+          <text>Differences in scattering 
+ Non-contiguous parts, irregularly spaced apart, 
+all end at the head of the receive buffers. 
+Parallel Prog ramming for Mul ticore Machines Using Ope nMP and MPI
+Proc. 0Proc. 0
+Proc. 1
+Proc. 2
+Proc. 3Proc. 0
+MPI_Scatter MPI_ScattervProc. 0
+Proc. 2
+Proc. 3Proc. 1
+Figure by MIT OpenCourseWare.</text>
+        </slide>
+        <slide>
+          <slideno>36</slideno>
+          <text>Reduce - Scatter
+	MPI_Reduce_scatter(void *sendbuf, void *recvbuff, int 
+*revcnt, MPI_Datatype type, MPI_Op op, M PI_Comm 
+comm) 
+	MPI_REDUCE_SCATTER(sendbuf, recvbuf, recvcnt, type, 
+op, comm, ier) 
+	Can be considered as a 
+MPI_Reduce(sendbuf, tmpbuf, cnt, type, op, root, comm);
+MPI_Scatterv(tmpbuf, recvcnt, displs, type, recvbuff,
+recvcnt[myid], type, root, comm);
+where cnt is the total sum of the recvcnt values and displs[k] 
+is the sum of the recvcnt for up to processor k-1. 
+	Implementations m ay use  a more optimal approach 
+Parallel Prog ramming for Mul ticore Machines Using Ope nMP and MPI</text>
+        </slide>
+        <slide>
+          <slideno>35</slideno>
+          <text>Reduce  to all
+	MPI_Allreduce(void *sendbuf, void *recvbuff, int cnt, 
+MPI_Datatype type, MPI_Op op, M PI_Comm comm) 
+	MPI_ALLREDUCE(sendbuf, recvbuf, cnt, type, op, comm, 
+ier) 
+Parallel Prog ramming for Mul ticore Machines Using Ope nMP and MPI
+Figure by MIT OpenCourseWare.Before MPI_ALLREDUCE
+After MPI_ALLREDUCEdef ghi jkl mno abc
+def ghi jkl mno abcinbuf
+result
+aodogojomo o o o</text>
+        </slide>
+        <slide>
+          <slideno>15</slideno>
+          <text>Other comms routin es &amp; handles
+	MPI_Probe/MPI_IProbe will check for a message awaiting to 
+be received but  will not actually receive it - one needs to call 
+MPI_Recv/MPI_Irecv for that. 
+	MPI_Cancel(MPI_Request *req) will mark a pending send or 
+receive for cancellation. One still needs to call MPI_Wait or 
+MPI_Test or MPI_Request_free to free the request handle. 
+The message may still be delivered at that time! MPICH 
+based implementations be ware! 
+	MPI_Test_cancelled 
+	MPI_Send_init, MPI_Recv_init and M PI_Start, MPI_Startall: 
+Persistent comms 
+	MPI_PROC_NULL, MPI_REQUEST_NULL 
+Parallel Prog ramming for Mul ticore Machines Using Ope nMP and MPI</text>
+        </slide>
+        <slide>
+          <slideno>13</slideno>
+          <text>Testing instead of Waiting
+	MPI_Test(MPI_Request *req, int *flag, MPI_Status *st at) 
+	MPI_TEST(req,flag,stat,ier), logical flag 
+	Instead of calling the blocking M PI_Wait call MPI_Test; if 
+flag is true, the message has been received with more 
+information in stat and ier. Otherwise the routine returns and 
+can be called after a while to test for message reception again. 
+	On systems where one can have real overlap of 
+communication w ith computation MP I_Test allows finer 
+control over communication completion times. 
+Parallel Prog ramming for Mul ticore Machines Using Ope nMP and MPI</text>
+        </slide>
+        <slide>
+          <slideno>4</slideno>
+          <text>Deadlock around the ring
+	Consider a ring communication scenario where everyone talks 
+to one's neighbour to the right around a circle. If synchronous 
+blocking communicatios are used (MPI_Ssend or MPI_Send 
+for large messages) the messages never get delivered as 
+everybody needs to send before receiving! 
+Parallel Prog ramming for Mul ticore Machines Using Ope nMP and MPI 
+Figure by MIT OpenCourseWare.</text>
+        </slide>
+        <slide>
+          <slideno>22</slideno>
+          <text>Broadc ast
+	MPI_Bcast(void *buf, int cnt, MPI_Datatype type, int 
+root, MPI_Comm comm) 
+	MPI_BCAST(buf, cnt, type, root, comm, ier) 
+	root has to be the same on all procs, can be nonzero 
+Parallel Prog ramming for Mul ticore Machines Using Ope nMP and MPI
+b e d
+b e d b e d b e d b e d b e dBefore
+bcast
+After
+bcast
+e.g., root = 1
+Figure by MIT OpenCourseWare.</text>
+        </slide>
+        <slide>
+          <slideno>26</slideno>
+          <text>Vector Variants
+Parallel Prog ramming for Mul ticore Machines Using Ope nMP and MPI
+100
+100 99 98180
+100180
+100180
+100180
+100180
+100180Stride [1]
+Stride [1]At rootAt root
+All processAll process
+100 99 98rbuf
+Sendbufoffset = 0;
+for  (i=0;  i&lt;gsize;  ++i)  {       displs[i] = offset;
+       offset += stride [i];
+       scounts [i] = 100 - i;}
+Figure by MIT OpenCourseWare.</text>
+        </slide>
+        <slide>
+          <slideno>28</slideno>
+          <text>Binary trees
+Parallel Prog ramming for Mul ticore Machines Using Ope nMP and MPI
+1 4 8 2 3 5 7
+4*p
+2*p 2*p
+p p p p6Step 0
+Step 1
+Step 2
+Step 31
+1 2
+1 2 4 3
+1 4 8 2 3 5 7 6Step 0
+Step 1
+Step 2
+Step 31
+1 2
+1 2 4 3Broadcast
+Scatter
+Figure by MIT OpenCourseWare.</text>
+        </slide>
+        <slide>
+          <slideno>0</slideno>
+          <text>Today's agenda
+ Homework discussion 
+ Bandwidth and latency in theory and in practice 
+ Paired and Nonblocking Pt2Pt Communications 
+ Other Point to Poin t routines 
+ Collective Communications: One-with-All 
+ Collective Communications: All- with-All 
+Parallel Prog ramming for Mul ticore Machines Using Ope nMP and MPI</text>
+        </slide>
+        <slide>
+          <slideno>23</slideno>
+          <text>Gather
+	MPI_Gather(void *sendbuf, int sendcnt, MPI_Datatype 
+sendtype, void *recvbuf, int recvcnt, MPI_Datatype recvtype, 
+int root, MPI_Comm comm) 
+	Make sure recvbuf is large enough on r oot where it matters, 
+elsewhere it is ignored 
+	MPI_Gatherv has additional arguments for variable recvcnt, 
+and output stride 
+Parallel Prog ramming for Mul ticore Machines Using Ope nMP and MPI
+Before
+gather
+After
+gather
+e.g., root = 1AA
+BB
+CC
+DD E
+A B C D E
+E
+Figure by MIT OpenCourseWare.</text>
+        </slide>
+        <slide>
+          <slideno>33</slideno>
+          <text>User defined binary ops
+	MPI provides for user defined binary operations for the 
+reduction routines: 
+	MPI_Op_create(MPI_User_function *function, int commute, 
+MPI_Op *op) 
+	MPI_OP_CREATE(function, commute, op, ierr), external 
+function, logical commute 
+	If commute is true, then the operation is assumed to be 
+commutative. Otherwise only the required associativity rule 
+applies. 
+	The function (non-MPI) needs to be of the form: 
+	typedef void MPI_User_function (void *invec, void *inoutvec, 
+int *len, MPI_Datatype  *type) 
+Parallel Prog ramming for Mul ticore Machines Using Ope nMP and MPI</text>
+        </slide>
+        <slide>
+          <slideno>19</slideno>
+          <text>Wildcards &amp; Constants
+	MPI_PROC_NULL: operations specifying this do not 
+actually execute. Useful for not treating boundary 
+cases separately to keep code cleaner. 
+	MPI_REQUEST_NULL: The value of a null handle, 
+after it is released by the MPI_Wait()/Test() family of 
+calls or by MPI_Request_free() 
+	MPI_ANY_SOU RCE: Wild  card for source 
+	MPI_ANY_TAG: Wild card for tag 
+	MPI_UNDEFINED: Any undefined return value 
+Parallel Prog ramming for Mul ticore Machines Using Ope nMP and MPI</text>
+        </slide>
+        <slide>
+          <slideno>3</slideno>
+          <text>Parallel Programming for Multicore Machines Using OpenMP and MPIBandwidth Examples
+Plot of the effective bandwidth Bw =L/T =2L/RTTef c
+Note cache effects, noise.</text>
+        </slide>
+        <slide>
+          <slideno>37</slideno>
+          <text>Prefix operations 
+	MPI_Scan(void *sendbuf, void *recvbuf, int cnt, 
+MPI_Datatype type, MPI_Op op, M PI_Comm comm) 
+	MPI_SCAN(sendbuf, recvbuf, cnt, type, op, c omm, ier) 
+	The scan is inclusive: result on proc P includes its data 
+Parallel Prog ramming for Mul ticore Machines Using Ope nMP and MPI
+Figure by MIT OpenCourseWare.Before MPI_SCAN
+After MPI_SCANd e g g h i j k l m n o a b c
+d e f g h i j k l m n o a b cinbuf
+result
+aodogojom ao o o o
+aod aodog aodogoj
+Done in parallel</text>
+        </slide>
+        <slide>
+          <slideno>38</slideno>
+          <text>Parallel Programming for Multicore Machines Using OpenMP and MPIPrefix operations in action
+MPI_Scan
+Computes the partial reduction (scan) of input data in 
+a communicator
+count=1;
+MPI_Scan(send,recv,count,MPI_INT,MPI_PROD,
+MPI_COMM_WORLD)
+1 2 3 4
+1 2 6 24task 0 task 1 task 2 task 3sendbuf (before)
+recvbuf (after)
+Figure by MIT OpenCourseWare.</text>
+        </slide>
+        <slide>
+          <slideno>6</slideno>
+          <text>Nonblocking communications
+	The situation can be rectified by u sing nonblocking 
+communication routines that return immediately, without 
+making su re that the data has been safely taken care of. 
+	That way after the send the receive can be posted and the 
+deadlock is avoided 
+	But beware: Until such a time that the communication is 
+successfully completed, no pointer input arguments to the 
+routines may be modified as they wrong da ta/parameters 
+will be used when the communication does take place. 
+	This is unlike the situation with the blocking comms where
+ upon  return from the call, one is free to reuse the args. 
+	MPI_Ixxxx instead of MPI_xxxx for the names 
+Parallel Prog ramming for Mul ticore Machines Using Ope nMP and MPI</text>
+        </slide>
+        <slide>
+          <slideno>10</slideno>
+          <text>Other nonblockin g sends
+	For each blocking se nd, a nonblocking equivalent: 
+	MPI_Issend: nonblocking synchronous send 
+	MPI_Ibsend: nonblocking asynchronous send 
+	MPI_Irsend: nonblocking ready send 
+	Take care not to confuse nonblocking send w ith asynchronous 
+send although the terminology has been used interchangeably 
+in the past! 
+	A successful blocking asynchronous send returns very quickly 
+and the send buffer can be reused. 
+	Any nonblocking call returns immediately and the buffer 
+cannot be tampered with until the corresponding blocking 
+MPI_Wait call has returned! 
+Parallel Prog ramming for Mul ticore Machines Using Ope nMP and MPI</text>
+        </slide>
+        <slide>
+          <slideno>29</slideno>
+          <text>Parallel Programming for Multicore Machines Using OpenMP and MPITree Variants
+Sequential tree
+Root process to 
+all others in 
+(n-1) steps 
+for n processes
+Binary tree
+All processes 
+(apart from root) 
+receive and send 
+to at most 2 
+others. Use
+2log2(n+1)-
+1.50.5 steps 
+for n processesChain
+Message passed 
+in a chain to all 
+others in 
+(n-1) steps 
+for n processes
+Binomail tree
+In each step a 
+process with 
+data sends to its 
+half-the-
+remaining-size 
+neighbor. Use
+log2(n-1)+1  
+steps 
+for n processes0
+1
+A234 5 67
+Figure by MIT OpenCourseWare.
+C0
+1
+2 34
+5 6
+7
+Figure by MIT OpenCourseWare.B0
+1
+2
+3 3 4567
+Figure by MIT OpenCourseWare.
+D0
+12
+3 34
+56
+7
+Figure by MIT OpenCourseWare.</text>
+        </slide>
+        <slide>
+          <slideno>1</slideno>
+          <text>A bit of theory
+	Let zero-message latency be l and asymptotic 
+bandwidth be BW: 
+	Then most simplistic (w/o contention) linear model for the 
+time to communicate message of size L is T  = l + L/BW c
+	In fact the model should be piecewise linear to distinguish 
+between (small,) eager and rendezvous pr otocols. 
+	Moreover, the BW that should be used is independent of L. 
+	Cost of m emory copies can be a factor in BW . 
+	For small enough L, cache effects increase BW 
+	For very large L, TLB misses decrease BW 
+Parallel Prog ramming for Mul ticore Machines Using Ope nMP and MPI</text>
+        </slide>
+        <slide>
+          <slideno>8</slideno>
+          <text>MPI nonblockin g receive
+	MPI_Irecv(void *buf, int cnt, MPI_Datatype type, int src, int 
+tag, MPI_Comm comm, MPI_Request *req) 
+	MPI_IRECV(buf, cnt, type, src, tag, comm, req, ier) 
+	MPI_Wait(MPI_Request *req, MPI_Status *st at) 
+	MPI_WAIT(req, stat, ier) 
+	Call MPI_Irecv, store the request handle, do som e work to 
+keep busy a nd then call MPI_Wait with the handle to 
+complete the receive. 
+	MPI_Irecv produces the request handle, MPI_Wait consumes 
+it. 
+	In this case the status handle is actually use d. 
+Parallel Prog ramming for Mul ticore Machines Using Ope nMP and MPI</text>
+        </slide>
+      </slides>
+      <videos/>
+    </lecture>
+  </lectures>
+</doc>

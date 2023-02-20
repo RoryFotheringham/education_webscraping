@@ -1,0 +1,2366 @@
+<doc>
+  <source>MIT</source>
+  <date>28/01/2023</date>
+  <course>
+    <course_url>https://ocw.mit.edu/courses/6-186-mobile-autonomous-systems-laboratory-january-iap-2005/</course_url>
+    <course_title>Mobile Autonomous Systems Laboratory</course_title>
+    <course_tags>
+      <list>Engineering </list>
+      <list>Computer Science </list>
+      <list>Artificial Intelligence </list>
+    </course_tags>
+  </course>
+  <lectures>
+    <lecture>
+      <lecture_title>Control
+Motors/PWM/H-bridge
+Simple Feedback (low-level control): Example: Korea-era smart bomb, Bang-bang control, Proportional control
+State Machine (high-level control): Abstract definition and examples, Used for control of robot (6.004-style maze example, Brooks-style subsumption architecture), In Java&#174;&#160;with threading: Leverage info covered in previous lecture, Full example, make code available</lecture_title>
+      <lecture_pdf_url>https://ocw.mit.edu/courses/6-186-mobile-autonomous-systems-laboratory-january-iap-2005/resources/control/</lecture_pdf_url>
+      <lectureno>5</lectureno>
+      <slides>
+        <slide>
+          <slideno>4</slideno>
+          <text>Key objective is to compose behaviors 
+so as to achieve the desired goal</text>
+        </slide>
+        <slide>
+          <slideno>68</slideno>
+          <text>Problem: How do we make 
+our robots go in a nice straight line?
+ Need to couple drive motors
+ Use low-level PID controllers 
+to set motor velocity and a 
+high-level PID controller to 
+couple the motors
+ Use one high-level PID 
+controller which uses 
+odometry or even image 
+processing to estimate error</text>
+        </slide>
+        <slide>
+          <slideno>45</slideno>
+          <text>Finite State Machines offer another 
+Turn 
+To 
+Open alternative for combining behaviors 
+Fwd 
+Until 
+Obs 
+Can also fold closed loop feedback 
+into the behaviors themselves</text>
+        </slide>
+        <slide>
+          <slideno>3</slideno>
+          <text>Basic primitive 
+of a control system is a behavior 
+Behaviors should be well-defined, 
+self-contained, and independently testable 
+Turn right 90  Go forward until reach obstacle
+Capture a ball Explore playing field</text>
+        </slide>
+        <slide>
+          <slideno>6</slideno>
+          <text>Model-Plan-Act Approach
+1. Use sensor data to create model of the world 
+2. Use model to form a sequence of behaviors 
+which will achieve the desired goal 
+3. Execute the plan 
+Model 
+Actuators Sensors 
+Plan
+Act 
+Environment</text>
+        </slide>
+        <slide>
+          <slideno>39</slideno>
+          <text>Finite State Machines offer another 
+TurnR 
+(45) alternative for combining behaviors 
+Fwd 
+(1ft) No Obstacle 
+Obstacle 
+Within 2ft No 
+Obstacle Obstacle 
+Within 2ft 
+Closed loop finite state machines use 
+sensor data as feedback to make 
+state transitions</text>
+        </slide>
+        <slide>
+          <slideno>23</slideno>
+          <text>Layering simple behaviors can create 
+much more complex emergent behavior 
+Infrared 
+S Motors 
+Left motor speed inversely proportional to left IR range 
+Right motor speed inversely proportional to right IR range 
+If both IR &lt; threshold stop and turn right 120 degrees Subsumption 
+Cruise Avoid</text>
+        </slide>
+        <slide>
+          <slideno>25</slideno>
+          <text>Layering simple behaviors can create 
+much more complex emergent behavior 
+Escape ll 
+Infrared Bump Camera 
+S S S 
+Cruise Avoid Track Ba
+Motors 
+The track ball behavior adjusts the 
+motor differential to steer the robot towards the ball</text>
+        </slide>
+        <slide>
+          <slideno>65</slideno>
+          <text>Choosing and tuning 
+a controller 
+Controller MotorDesired 
+Velocity 
+(Vdes) Actual 
+Velocity 
+(Vact)Adjusted 
+Voltage (X) 
+ Use the simplest controller which 
+achieves the desired result
+ Tuning PID constants is very tricky, 
+especially for integral constants 
+ Consult the literature for more 
+controller tips and techniques</text>
+        </slide>
+        <slide>
+          <slideno>15</slideno>
+          <text>Finding a mousehole 
+using model-plan-act approach 
+Decompose world into convex cells 
+Trajectory within any cell is free of obstacles</text>
+        </slide>
+        <slide>
+          <slideno>57</slideno>
+          <text>Outline
+ High-level control system paradigms
+ Model-Plan-Act Approach 
+ Behavioral Approach 
+ Finite State Machine Approach 
+ Low-level control loops 
+ PID controller for motor velocity 
+ PID controller for robot drive system</text>
+        </slide>
+        <slide>
+          <slideno>62</slideno>
+          <text>Step response 
+with proportional-derivative controller 
+Time (sec) VelocitydtK V X D P des ) () (  + = 
+ 
+counteracts proportional 
+term slowing adjustment 
+  Controller MotorDesired 
+Velocity 
+(Vdes) Actual 
+Velocity 
+(Vact)Adjusted 
+Voltage (X) 
+t de t e K 
+When approaching desired 
+velocity quickly, de/dt term 
+Faster rise time Reduces overshoot</text>
+        </slide>
+        <slide>
+          <slideno>36</slideno>
+          <text>Finite State Machines offer another 
+TurnR 
+(90) alternative for combining behaviors 
+Fwd 
+(2ft) 
+Fwd 
+(2ft) Each state is just a behavior and we 
+can easily link them together to create 
+an open loop control system</text>
+        </slide>
+        <slide>
+          <slideno>53</slideno>
+          <text>Multi-threaded 
+Obstacle 
+Sensors 
+Thread Image 
+Compute 
+Thread 
+Controller 
+FSM finite state machine control systems 
+Camera Short IR 
++ Bump 
+Drive Motors</text>
+        </slide>
+        <slide>
+          <slideno>29</slideno>
+          <text>Advantages and disadvantages 
+of the behavioral approach 
+ Advantages 
+ Incremental development is very natural 
+ Modularity makes experimentation easier
+ Cleanly handles dynamic environments 
+ Disadvantages 
+ Difficult to judge what robot will actually do
+ No performance or completeness guarantees 
+ Debugging can be very difficult</text>
+        </slide>
+        <slide>
+          <slideno>69</slideno>
+          <text>Problem: How do we make 
+our robots go in a nice straight line?
+Need to couple drive motors
+ Use low-level PID controllers to 
+set motor velocity and a high-
+level PID controller to couple 
+the motors
+error 
+angle 
+ Use one high-level PID 
+controller which uses odometry 
+or even image processing to 
+estimate error</text>
+        </slide>
+        <slide>
+          <slideno>13</slideno>
+          <text>Finding a mousehole
+using model-plan-act approach 
+Given the global map, 
+the goal is to find the mousehole</text>
+        </slide>
+        <slide>
+          <slideno>7</slideno>
+          <text>Exploring the playing field 
+using model-plan-act approach 
+Red dot is the mobile robot 
+while the blue line is the mousehole</text>
+        </slide>
+        <slide>
+          <slideno>34</slideno>
+          <text>Finite State Machines offer another 
+TurnR 
+(90) alternative for combining behaviors 
+Fwd 
+(2ft) 
+Fwd 
+(2ft) can easily link them together to create Each state is just a behavior and we 
+an open loop control system</text>
+        </slide>
+        <slide>
+          <slideno>41</slideno>
+          <text>Finite State Machines offer another 
+TurnR 
+(45) alternative for combining behaviors 
+Fwd 
+(1ft) No Obstacle 
+Obstacle 
+Within 2ft No 
+Obstacle Obstacle 
+Within 2ft 
+Closed loop finite state machines use 
+sensor data as feedback to make 
+state transitions</text>
+        </slide>
+        <slide>
+          <slideno>17</slideno>
+          <text>Finding a mousehole 
+using model-plan-act approach 
+Use an algorithm (such as the A* 
+algorithm) to find shortest path to goal</text>
+        </slide>
+        <slide>
+          <slideno>19</slideno>
+          <text>Advantages and disadvantages 
+of the model-plan-act approach
+ Advantages 
+ Global knowledge in the model enables optimization
+ Can make provable guarantees about the plan 
+ Disadvantages 
+ Must implement all functional units before any testing 
+ Computationally intensive 
+ Requires very good sensor data for accurate models 
+ Models are inherently an approximation 
+ Works poorly in dynamic environments</text>
+        </slide>
+        <slide>
+          <slideno>51</slideno>
+          <text>Improve FSM control system by replacing 
+a state with a better implementation 
+What about integrating camera code into wander 
+behavior so robot is always looking for red balls?
+ Image processing is 
+time consuming so 
+might not check for 
+obstacles until too late
+ Not checking camera 
+when rotating
+ Wander behavior 
+begins to become 
+monolithic
+ball = false 
+turn both motors on 
+while ( !timeout and !ball ) 
+capture and process image 
+if ( red ball ) ball = true 
+read IR sensor if ( IR &lt; thresh ) 
+stop motors rotate 90 degrees turn both motors on 
+endif 
+endwhile</text>
+        </slide>
+        <slide>
+          <slideno>64</slideno>
+          <text>Step response 
+with PID controller 
+Time (sec) Velocity 
+dtK K V X 
+D I P des 
+) ( ) ( ) ( 
+ + + = 
+ Controller MotorDesired 
+Velocity 
+(Vdes) Actual 
+Velocity 
+(Vact)Adjusted 
+Voltage (X) 
+t de dt t e t e K</text>
+        </slide>
+        <slide>
+          <slideno>9</slideno>
+          <text>Exploring the playing field 
+using model-plan-act approach 
+Robot moves to midpoint of 
+unexplored boundary</text>
+        </slide>
+        <slide>
+          <slideno>11</slideno>
+          <text>Exploring the playing field 
+using model-plan-act approach 
+Robot continues to explore 
+the playing field</text>
+        </slide>
+        <slide>
+          <slideno>0</slideno>
+          <text>Control for Mobile Robots 
+Christopher Batten 
+Maslab IAP Robotics Course 
+January 7, 2005</text>
+        </slide>
+        <slide>
+          <slideno>55</slideno>
+          <text>Mapping
+ThreadSensor
+Stalk
+ThreadObstacle 
+Sensors
+ThreadImage
+Compute
+Thread
+Controller
+FSMMulti-threaded 
+finite state machine control systems
+Drive MotorsCameraShort IR 
++ Bump
+Stalk 
+ServoStalk
+Sensors</text>
+        </slide>
+        <slide>
+          <slideno>47</slideno>
+          <text>Simple finite state machine 
+to locate red balls
+Scan
+360Wander
+(20sec)
+Fwd
+(1ft)Align
+BallTurnR
+StopNo BallsFound
+Ball
+Lost 
+BallBall 
+&lt; 1ft
+Ball 
+&gt; 1ft
+Obstacle &lt; 2ft</text>
+        </slide>
+        <slide>
+          <slideno>10</slideno>
+          <text>Exploring the playing field 
+using model-plan-act approach 
+Robot performs a second sensor scan and 
+must align the new data with the global map</text>
+        </slide>
+        <slide>
+          <slideno>67</slideno>
+          <text>Problem: How do we make 
+our robots go in a nice straight line?
+Trajectory Motor Velocities vs Time 
+With an independent PID controller for each motor,              
+setting motors to same velocity results in a straight trajectory 
+but not necessarily straight ahead !</text>
+        </slide>
+        <slide>
+          <slideno>16</slideno>
+          <text>Finding a mousehole 
+using model-plan-act approach 
+Connect cell edge midpoints and centroids to 
+get graph of all possible paths</text>
+        </slide>
+        <slide>
+          <slideno>49</slideno>
+          <text>Obstacle &lt; 2ftTo debug a FSM control system 
+verify behaviors and state transitions 
+Scan 
+360 Wander 
+(20sec) 
+Fwd 
+(1ft) Align 
+Ball TurnR 
+Stop No Balls Found 
+Ball 
+Lost 
+Ball Ball 
+&lt; 1ft 
+Ball 
+&gt; 1ftIndependently 
+verify Align 
+Ball and Fwd 
+behaviors</text>
+        </slide>
+        <slide>
+          <slideno>1</slideno>
+          <text>Building a control system for 
+a mobile robot can be very challenging 
+Mobile robots are very complex and involve 
+many interacting components
+Mechanical Electrical Software 
+Your control system must integrate these components 
+so that your robot can achieve the desired goal</text>
+        </slide>
+        <slide>
+          <slideno>44</slideno>
+          <text>as parameterized 
+functions 
+ 
+statement handles state transitions 
+ 
+statement executes 
+behaviors associated 
+with each state 
+ 
+variables Implementing a 
+FSM in Java // State transitions 
+switch ( state ) { 
+case States.Fwd_1 : 
+if ( distanceToObstacle() &lt; 2 ) 
+state = TurnR_45; 
+break; 
+case States.TurnR_45 : 
+if ( distanceToObstacle() &gt;= 2 ) 
+state = Fwd_1; 
+break; 
+} 
+// State outputs 
+switch ( state ) { 
+case States.Fwd_1 : 
+moveFoward(1); break; 
+case States.TurnR_45 : 
+turnRight(45); break; 
+} Implement behaviors 
+First switch 
+Second switch 
+Use enums for state</text>
+        </slide>
+        <slide>
+          <slideno>48</slideno>
+          <text>Obstacle &lt; 2ftTo debug a FSM control system 
+verify behaviors and state transitions 
+Scan 
+360 Wander 
+(20sec) 
+Fwd 
+(1ft) Align 
+Ball TurnR 
+Stop No Balls Found 
+Ball 
+Lost 
+Ball Ball 
+&lt; 1ft 
+Ball 
+&gt; 1ft What if robot 
+has trouble 
+correctly 
+approaching 
+the ball?</text>
+        </slide>
+        <slide>
+          <slideno>61</slideno>
+          <text>Step response 
+with proportional controller 
+Time (sec) Velocity ( )act des P des V V K V X   + = 
+ 
+ 
+ 
+ Controller MotorDesired 
+Velocity 
+(Vdes) Actual 
+Velocity 
+(Vact)Adjusted 
+Voltage (X) 
+Big error big = big adj 
+Faster rise time 
+Overshoot Stead-state offset</text>
+        </slide>
+        <slide>
+          <slideno>66</slideno>
+          <text>Problem: How do we make 
+our robots go in a nice straight line?
+Trajectory Motor Velocities vs Time 
+Model differential drive with slight motor mismatch 
+With an open loop controller, setti ng motors to same velocity 
+results in a less than straight trajectory</text>
+        </slide>
+        <slide>
+          <slideno>32</slideno>
+          <text>Finite State Machines offer another 
+alternative for combining behaviors
+Fwd behavior moves robot 
+straight forward a given distance Fwd 
+(dist) 
+TurnR 
+(deg) TurnR behavior turns robot to the 
+right a given number of degrees</text>
+        </slide>
+        <slide>
+          <slideno>2</slideno>
+          <text>Building a control system for 
+a mobile robot can be very challenging 
+Just as you must carefully design your 
+robot chassis you must carefully design
+your robot control system
+ How will you debug and test your robot? 
+ What are the performance requirements? 
+ Can you easily improve aspects of your robot?
+ Can you easily integrate new functionality?</text>
+        </slide>
+        <slide>
+          <slideno>30</slideno>
+          <text>Model-plan-act fuses sensor data, 
+while behavioral fuses behaviors
+Model
+Plan
+Act 
+Environment 
+Model-Plan-Act
+(Fixed Plan of Behaviors)
+Behavioral 
+(Layered Behaviors) Environment Behavior C 
+Behavior B 
+Behavior A</text>
+        </slide>
+        <slide>
+          <slideno>37</slideno>
+          <text>Finite State Machines offer another 
+TurnR 
+(90) alternative for combining behaviors 
+Fwd 
+(2ft) 
+Fwd 
+(2ft) Since the Maslab playing field is 
+unknown, open loop control systems 
+have no hope of success!</text>
+        </slide>
+        <slide>
+          <slideno>43</slideno>
+          <text>Implementing a 
+FSM in Java 
+TurnR 
+(45) Fwd 
+(1ft) No Obstacle 
+Obstacle 
+Within 2ft // State transitions 
+switch ( state ) { 
+case States.Fwd_1 : 
+if ( distanceToObstacle() &lt; 2 ) 
+state = TurnR_45; 
+break; 
+case States.TurnR_45 : 
+if ( distanceToObstacle() &gt;= 2 ) 
+state = Fwd_1; 
+break; 
+} 
+// State outputs 
+switch ( state ) { 
+case States.Fwd_1 : 
+moveFoward(1); break; 
+case States.TurnR_45 : 
+turnRight(45); break; 
+} Obstacle 
+Within 2ft</text>
+        </slide>
+        <slide>
+          <slideno>58</slideno>
+          <text>Problem: How do we set 
+a motor to a given velocity? 
+Open Loop Controller 
+ 
+some kind of relationship 
+between velocity and voltage 
+ 
+drive surface could result in 
+incorrect velocity 
+MotorVelocity 
+To Volts Desired 
+Velocity Actual 
+Velocity Use trial and error to create 
+Changing supply voltage or</text>
+        </slide>
+        <slide>
+          <slideno>28</slideno>
+          <text>Layering simple behaviors can create 
+much more complex emergent behavior 
+Escape ll ll Track Goal 
+Infrared Bump Camera Ball 
+S S S S 
+S Ball 
+Gate 
+Cruise Avoid Track BaHold BaSwitch 
+Motors 
+All behaviors are always running in parallel and an 
+arbiter is responsible for picking which behavior can 
+access the actuators</text>
+        </slide>
+        <slide>
+          <slideno>24</slideno>
+          <text>Layering simple behaviors can create 
+much more complex emergent behavior 
+Escape 
+Infrared Bump 
+S S 
+Motors 
+Escape behavior stops motors, 
+backs up a few inches, and turns right 90 degrees Cruise Avoid</text>
+        </slide>
+        <slide>
+          <slideno>60</slideno>
+          <text>Step response 
+with no controller 
+Time (sec) Velocity  
+ 
+several differential equations 
+  MotorVelocity 
+To Volts Desired 
+Velocity Actual 
+Velocity 
+Naive velocity to volts 
+Model motor with 
+Slow rise time 
+Stead-state offset</text>
+        </slide>
+        <slide>
+          <slideno>56</slideno>
+          <text>FSMs in Maslab
+for your Maslab robotic control system Finite state machines can combine the 
+model-plan-act and behavioral 
+approaches and are a good starting point</text>
+        </slide>
+        <slide>
+          <slideno>52</slideno>
+          <text>Multi-threaded 
+Obstacle 
+Sensors 
+Thread Image 
+Compute 
+Thread 
+Controller 
+FSM finite state machine control systems 
+Camera Short IR 
++ Bump 
+Drive Motors</text>
+        </slide>
+        <slide>
+          <slideno>46</slideno>
+          <text>Simple finite state machine 
+to locate red balls 
+Scan 
+360 Wander 
+(20sec) 
+Fwd 
+(1ft) Align 
+Ball TurnR 
+Stop No Balls Found 
+Ball 
+Lost 
+Ball Ball 
+&lt; 1ft 
+Ball 
+&gt; 1ft</text>
+        </slide>
+        <slide>
+          <slideno>5</slideno>
+          <text>Outline
+ High-level control system paradigms
+ Model-Plan-Act Approach 
+ Behavioral Approach 
+ Finite State Machine Approach 
+ Low-level control loops 
+ PID controller for motor velocity 
+ PID controller for robot drive system</text>
+        </slide>
+        <slide>
+          <slideno>31</slideno>
+          <text>Model-plan-act fuses sensor data, 
+while behavioral fuses behaviors
+Environment Model
+Plan
+Act 
+Environment 
+Model-Plan-Act 
+(Sensor Fusion) (Behavior Fusion) Behavior C 
+Behavior B 
+Behavior A 
+Behavioral</text>
+        </slide>
+        <slide>
+          <slideno>50</slideno>
+          <text>Obstacle &lt; 2ftImprove FSM control system by replacing 
+a state with a better implementation 
+Scan 
+360 Wander 
+(20sec) 
+Fwd 
+(1ft) Align 
+Ball TurnR 
+Stop No Balls Found 
+Ball 
+Lost 
+Ball Ball 
+&lt; 1ft 
+Ball 
+&gt; 1ftCould replace 
+random wander with 
+one which is biased 
+towards unexplored 
+regions</text>
+        </slide>
+        <slide>
+          <slideno>40</slideno>
+          <text>Finite State Machines offer another 
+TurnR 
+(45) alternative for combining behaviors 
+Fwd 
+(1ft) No Obstacle 
+Obstacle 
+Within 2ft No 
+Obstacle Obstacle 
+Within 2ft 
+Closed loop finite state machines use 
+sensor data as feedback to make 
+state transitions</text>
+        </slide>
+        <slide>
+          <slideno>33</slideno>
+          <text>Finite State Machines offer another 
+TurnR 
+(90) alternative for combining behaviors 
+Fwd 
+(2ft) 
+Fwd 
+(2ft) can easily link them together to create Each state is just a behavior and we 
+an open loop control system</text>
+        </slide>
+        <slide>
+          <slideno>14</slideno>
+          <text>Finding a mousehole 
+using model-plan-act approach 
+Transform world into configuration space 
+by convolving robot with all obstacles</text>
+        </slide>
+        <slide>
+          <slideno>22</slideno>
+          <text>Layering simple behaviors can create 
+much more complex emergent behavior 
+Motors 
+Cruise behavior simply moves robot forward Cruise</text>
+        </slide>
+        <slide>
+          <slideno>35</slideno>
+          <text>Finite State Machines offer another 
+TurnR 
+(90) alternative for combining behaviors 
+Fwd 
+(2ft) 
+Fwd 
+(2ft) can easily link them together to create Each state is just a behavior and we 
+an open loop control system</text>
+        </slide>
+        <slide>
+          <slideno>38</slideno>
+          <text>Finite State Machines offer another 
+TurnR 
+(45) alternative for combining behaviors 
+Fwd 
+(1ft) 
+Closed loop finite state machines use 
+sensor data as feedback to make 
+state transitions No Obstacle 
+Obstacle 
+Within 2ft No 
+Obstacle Obstacle 
+Within 2ft</text>
+        </slide>
+        <slide>
+          <slideno>20</slideno>
+          <text>Behavioral Approach
+Sensors Actuators 
+As in simple biological systems, 
+behaviors directly couple sensors and actuators
+Higher level behaviors are layered 
+on top of lower level behaviors
+Environment Behavior C 
+Behavior B 
+Behavior A</text>
+        </slide>
+        <slide>
+          <slideno>18</slideno>
+          <text>Finding a mousehole 
+using model-plan-act approach 
+The choice of cell decomposition can 
+greatly influence results</text>
+        </slide>
+        <slide>
+          <slideno>12</slideno>
+          <text>Exploring the playing field 
+using model-plan-act approach 
+Robot must recognize when it starts to 
+see areas which it has already explored</text>
+        </slide>
+        <slide>
+          <slideno>21</slideno>
+          <text>To illustrate the behavioral approach 
+we will consider a simple mobile robot
+Ball Gate
+Bump Switches
+Infrared Rangefinders
+Ball Detector Switch
+Camera</text>
+        </slide>
+        <slide>
+          <slideno>70</slideno>
+          <text>Take Away Points
+ Integrating feedback into your control system 
+closes the loop and is essential for creating 
+robust robots 
+ Simple finite state machines make a solid 
+starting point for your Maslab control systems 
+ Spend time this weekend designing behaviors 
+and deciding how you will integrate these 
+behaviors to create your control system</text>
+        </slide>
+        <slide>
+          <slideno>42</slideno>
+          <text>Finite State Machines offer another 
+TurnR 
+(45) alternative for combining behaviors 
+Fwd 
+(1ft) No Obstacle 
+Obstacle 
+Within 2ft No 
+Obstacle Obstacle 
+Within 2ft 
+Closed loop finite state machines use 
+sensor data as feedback to make 
+state transitions</text>
+        </slide>
+        <slide>
+          <slideno>63</slideno>
+          <text>Step response 
+with proportional-integral controller 
+Time (sec) Velocity  + = dt K K V X I P des ) ( ) ( 
+ 
+accumulated error 
+ 
+Controller MotorDesired 
+Velocity 
+(Vdes) Actual 
+Velocity 
+(Vact)Adjusted 
+Voltage (X) 
+t e t e 
+Integral term eliminates 
+Increases overshoot</text>
+        </slide>
+        <slide>
+          <slideno>26</slideno>
+          <text>Layering simple behaviors can create 
+much more complex emergent behavior 
+Escape ll ll 
+Infrared Bump Camera Ball 
+S S S Ball 
+Gate 
+Cruise Avoid Track BaHold BaSwitch 
+Motors 
+Hold ball behavior simply closes ball gate 
+when ball switch is depressed</text>
+        </slide>
+        <slide>
+          <slideno>59</slideno>
+          <text>Problem: How do we set 
+Controller a motor to a given velocity? 
+Closed Loop Controller 
+ 
+voltage sent to the motor so 
+that the actual velocity equals 
+the desired velocity 
+ 
+measure actual velocity 
+Motor Desired 
+Velocity Actual 
+VelocityAdjusted 
+Voltage Feedback is used to adjust the 
+Can use an optical encoder to</text>
+        </slide>
+        <slide>
+          <slideno>27</slideno>
+          <text>Layering simple behaviors can create 
+much more complex emergent behavior 
+Escape ll ll Track Goal 
+Infrared Bump Camera Ball 
+S S S S 
+S Ball 
+Gate 
+Cruise Avoid Track BaHold BaSwitch 
+Motors 
+The track goal behavior opens the ball gate and 
+adjusts the motor differential to steer the robot 
+towards the goal</text>
+        </slide>
+        <slide>
+          <slideno>8</slideno>
+          <text>Exploring the playing field 
+using model-plan-act approach 
+Robot uses sensors to create local map of the 
+world and identify unexplored areas</text>
+        </slide>
+        <slide>
+          <slideno>54</slideno>
+          <text>Multi-threaded 
+Sensor 
+Stalk 
+Thread Obstacle 
+Sensors 
+Thread Image 
+Compute 
+Thread 
+Controller 
+FSM finite state machine control systems 
+Drive Motors Camera Short IR 
++ Bump 
+Stalk 
+Servo Stalk 
+Sensors</text>
+        </slide>
+      </slides>
+      <videos/>
+    </lecture>
+    <lecture>
+      <lecture_title>Mechanical
+Sensors and Cables</lecture_title>
+      <lecture_pdf_url>https://ocw.mit.edu/courses/6-186-mobile-autonomous-systems-laboratory-january-iap-2005/resources/mechanical/</lecture_pdf_url>
+      <lectureno>2</lectureno>
+      <slides>
+        <slide>
+          <slideno>25</slideno>
+          <text>Simple Rotating Gripper</text>
+        </slide>
+        <slide>
+          <slideno>19</slideno>
+          <text>Tools
+ Shear / Brake 
+ Cuts thin materials only (1/16 sheet aluminum 
+and polycarbonate)
+ Use stop (in back) for repeated cuts
+ Makes right-angle bends in metal
+ Use to make L-brackets</text>
+        </slide>
+        <slide>
+          <slideno>1</slideno>
+          <text>Agenda
+ The Maslab Workshop
+ Raw Materials 
+ Other Materials
+ Fasteners 
+ Tools 
+ Safety &amp; Maintenance
+ Mechanical issues
+ Motors 
+ Techniques 
+ Design Principles
+ Other resources</text>
+        </slide>
+        <slide>
+          <slideno>22</slideno>
+          <text>Maintenance
+ Be nice to your labmates 
+ Bring tools back as soon as you are done 
+ Put bolts into correct bin, or the mix bin to be 
+sorted later. Just not into the wrong bin 
+ Drill bits have nice racks. Use them! 
+ Again, be nice to the benches! Take care 
+when soldering, use scrap under workpiece
+when drilling</text>
+        </slide>
+        <slide>
+          <slideno>10</slideno>
+          <text>Other materials
+ Wooden dowels 
+ Hollow metal tubing 
+ Springs 
+ PVC pipe 
+ Foam pipe insulation 
+ Gears 
+ Others</text>
+        </slide>
+        <slide>
+          <slideno>17</slideno>
+          <text>Tools
+ Hacksaws, wood saw
+ Cut wood, PVC, cardboard
+ Pipe cutter (small red gadget)
+ Cuts brass tubing  turn and tighten gradually 
+ Rotary cutting tool 
+ Quick, but inaccurate</text>
+        </slide>
+        <slide>
+          <slideno>12</slideno>
+          <text>Fasteners
+ Use the bolts! We have plenty
+at top, bottom)
+ Washers protect softer materials like wood (one each 
+ Many -20 bolts, but also from #10-#2
+ Try to pick most appropriate size. Sometimes longer 
+bolts can eliminate need for additional pieces 
+ For loose but permanent connection, tighten 2 nuts 
+against each other</text>
+        </slide>
+        <slide>
+          <slideno>0</slideno>
+          <text>Mechanical Issues 
+January 4th, 2005
+Aaron Sokoloski</text>
+        </slide>
+        <slide>
+          <slideno>8</slideno>
+          <text>Raw Materials
+ Polycarbonate (1/8, 1/4) 
+ Looks really cool 
+ Not too hard to machine, unless it gets hot 
+and softens 
+ 1/8 can be sheared and hand punched 
+ 1/4 can be cut using scroll saw and drilled 
+ Good for mounting gears</text>
+        </slide>
+        <slide>
+          <slideno>2</slideno>
+          <text>The Maslab Workshop
+ Goal: Be able to build a 
+simple robot with the tools and materials provided in the Maslab Workshop</text>
+        </slide>
+        <slide>
+          <slideno>14</slideno>
+          <text>Fasteners
+ Wood glue  best with wood screws for 
+permanent joints. 
+ Make a solid piece out of multiple pieces 
+ When glue dries, stronger than the wood 
+around it. Dry time is long, though 
+ Superglue  quick and dirty, or use with 
+other fasteners for permanence</text>
+        </slide>
+        <slide>
+          <slideno>3</slideno>
+          <text>Raw Materials
+ Pegboard 
+ Hardboard 
+ Baltic Birch Plywood 
+ Sheet Aluminum 
+ Polycarbonate 
+ Prototyping Foam</text>
+        </slide>
+        <slide>
+          <slideno>15</slideno>
+          <text>Fasteners
+ If youre not sure how well a joint will work, 
+use scrap and test it 
+ Testing mechanical parts is a good idea in 
+general, just like software 
+ Design for assembly and re-assembly</text>
+        </slide>
+        <slide>
+          <slideno>29</slideno>
+          <text>Design Principles
+ Sometimes a mechanical solution can 
+save software design time 
+ Compensate for lack of precision 
+mechanically</text>
+        </slide>
+        <slide>
+          <slideno>16</slideno>
+          <text>Tools
+ Scroll Saw
+ Thin (1/4) wood and polycarbonate only 
+ Makes curved cuts 
+ Dont force the blade in any direction, medium 
+pressure will cut
+ No metal allowed!</text>
+        </slide>
+        <slide>
+          <slideno>7</slideno>
+          <text>Raw Materials
+ Sheet Aluminum (1/16) 
+ Great for smaller structural 
+members like L-brackets
+ Bending can increase strength
+ Easy holes with hand punch
+ Quick cuts on shear</text>
+        </slide>
+        <slide>
+          <slideno>26</slideno>
+          <text>Techniques: Mounting IR and Servos
+IR range finder Servomotor</text>
+        </slide>
+        <slide>
+          <slideno>30</slideno>
+          <text>Other Mechanical Engineering Resources
+ Central machine shop
+ Basement of Building 38 
+ All kinds of metal and plastic stock
+ Edgerton Shop 
+ Across Vassar Street
+ Training required, safety lecture</text>
+        </slide>
+        <slide>
+          <slideno>27</slideno>
+          <text>Techniques: Metal bending
+To bend without the brake, make guide cuts using 
+snips 
+(and holes along bend line for wide pieces)
+This makes it bend where you want it to</text>
+        </slide>
+        <slide>
+          <slideno>11</slideno>
+          <text>Fasteners
+ Bolts and machine screws 
+ sizes from  down 
+ Wood screws
+ Glue (hot glue, superglue, wood glue) 
+ Tape</text>
+        </slide>
+        <slide>
+          <slideno>28</slideno>
+          <text>Design Principles
+ Rule of 3-5 
+(Saint Venants principle)
+ Applies to shafts (rotary and 
+linear motion) wheel hubs, 
+others
+ Anytime something should 
+move and it gets stuck, or 
+should be stuck and moves, 
+check this rule</text>
+        </slide>
+        <slide>
+          <slideno>13</slideno>
+          <text>Fasteners
+ Bolts continued 
+ Bolts are great for 
+temporary fasteners, as 
+well as permanent ones 
+ Use lock washers to 
+prevent loosening from vibrations  teeth bite into 
+surface of material and nut</text>
+        </slide>
+        <slide>
+          <slideno>9</slideno>
+          <text>Raw Materials
+ Prototyping foam (2 blue foam)
+ Large sheets available 
+ Good for bulky parts 
+ Cuts easily with hot knife 
+ Also can be sculpted with hot knife for 
+interesting / irregular shapes</text>
+        </slide>
+        <slide>
+          <slideno>23</slideno>
+          <text>Motors
+	Be careful of side loading, 
+axial loading 
+	Use appropriate motors  
+servos have a limited range 
+of motion, and cannot bear 
+the load of metal motors 
+	Extra high speed and extra 
+high torque motors available 
+ Servos can be modified for 
+larger range of motion</text>
+        </slide>
+        <slide>
+          <slideno>24</slideno>
+          <text>Techniques
+ Many possibilities with wood and bolts</text>
+        </slide>
+        <slide>
+          <slideno>31</slideno>
+          <text>Parts Resources
+ Mcmaster.com
+ Raw materials, fasteners, and almost infinitely more 
+ Sdp-si.com 
+ Gears, shafts, bearings, pulleys, chains
+ Allelectronics.com 
+ Surplus  limited selection, but cheap 
+ Browse and order interesting parts ahead of time, 
+even if youre not sure youll use them</text>
+        </slide>
+        <slide>
+          <slideno>5</slideno>
+          <text>Raw Materials
+ Hardboard (1/4 thick)
+ Pegboard, without the holes 
+ Better for intermediate designs (cheap!)
+ Hardboard used during development can be 
+replaced with better quality plywood for final 
+version</text>
+        </slide>
+        <slide>
+          <slideno>21</slideno>
+          <text>Safety
+ Wear goggles when in shop area 
+ You may not be using a dangerous tool, but 
+someone else might 
+ If youre unsure about a tools use, ask! 
+ Use fan when soldering 
+ Be nice to the benches</text>
+        </slide>
+        <slide>
+          <slideno>20</slideno>
+          <text>Tools
+ Punch 
+ Use the centerpunch 
+(pointy thing) and hammer 
+to make dents where you 
+want holes 
+ Punch tip will be easier to position</text>
+        </slide>
+        <slide>
+          <slideno>18</slideno>
+          <text>Tools
+ Mitre saw
+ More accurate wood cuts, any angle 
+ Use clamps for best result
+ Drill press 
+ Wood, plastic, metal (carefully) 
+ Clamp small or light pieces 
+ Punch is preferable for sheet metal  if you have to
+drill, make sure the piece will not cut you if it binds 
+ Make sure to use harder drill bits for metal</text>
+        </slide>
+        <slide>
+          <slideno>4</slideno>
+          <text>Raw Materials 
+ Pegboard (1/4 thick) 
+ Great for initial testing  
+already has  holes on 1 
+inch spacing 
+ Useful in some specific 
+applications, generally limited 
+ Can be cut with anything sharper than a butter knife</text>
+        </slide>
+        <slide>
+          <slideno>6</slideno>
+          <text>Raw Materials
+ Baltic Birch Plywood (1/4, 3/8)
+ The good stuff  strong, looks nice 
+ A bit slower to cut 
+ Pre-drill holes for wood screws to avoid 
+cracking</text>
+        </slide>
+      </slides>
+      <videos/>
+    </lecture>
+    <lecture>
+      <lecture_title>Mapping
+Coordinate frames (image-&gt;robot-&gt;world), Image formation, ranging (image-&gt;robot, relative orientation), Odometry (robot-&gt;world, absolute orientation), Correspondence problem (we&#8217;ve solved it for you), Modeling uncertainty, Dealing with ambiguity, Possible algorithm</lecture_title>
+      <lecture_pdf_url>https://ocw.mit.edu/courses/6-186-mobile-autonomous-systems-laboratory-january-iap-2005/resources/mapping/</lecture_pdf_url>
+      <lectureno>4</lectureno>
+      <slides>
+        <slide>
+          <slideno>5</slideno>
+          <text>Data Association
+The problem of recognizing that an object 
+you see now is the same one you saw 
+before
+Hard for simple features (points, lines)
+Easy for high-fidelity features (barcodes, 
+bunker hill monuments)
+With perfect data association, most 
+mapping problems become easy</text>
+        </slide>
+        <slide>
+          <slideno>11</slideno>
+          <text>Simple Kalman Filter
+-5 -4 -3 -2 -1 0 1 2 3 4 500.050.10.150.20.250.30.350.40.450.5
+A
+B
+both
+2 2 21 1 1
+B A
+
++=
+2 22 2
+B AAB BA
+
+
+
+
+
+++=Answer: algebra (and a 
+little calculus)!
+Compute mean by 
+finding maxima of the log 
+probability of the product 
+PAPB.
+Variance is messy; 
+consider case when 
+PA=PB=N(0,1)
+Try deriving these 
+equations at home!</text>
+        </slide>
+        <slide>
+          <slideno>33</slideno>
+          <text>Topological Maps
+Try to estimate how locations are 
+related
+Theres an easy (straight) path 
+between feature 1 and 2
+Easy to build, easy to plan paths
+Only a partial representation of 
+the world
+Resulting paths are suboptimalKitchen
+DenDining
+Foyer
+Bedroom Bath</text>
+        </slide>
+        <slide>
+          <slideno>19</slideno>
+          <text>Kalman Filters and Multi-Gaussians
+We use a Kalman filter to estimate the 
+whole state vector jointly .
+State vector has N elements.
+We dont have a scalar variance 2, we 
+have NxN covariance matrix .
+Element (i,j) tells us how the uncertainties in 
+feature i and j are related.x = [ xrxyxtf1xf1yf2xf2yfnxfny]T</text>
+        </slide>
+        <slide>
+          <slideno>40</slideno>
+          <text>Data Association: Bar Codes
+Trivial!
+The Bar Codes have unique IDs; 
+read the ID.</text>
+        </slide>
+        <slide>
+          <slideno>43</slideno>
+          <text>Data Association: Tick Marks
+Find a rotation that aligns the most tick marks
+Gives you data association for matched ticks
+Gives you rigid body transform for the robot!
+Rotation+Translation</text>
+        </slide>
+        <slide>
+          <slideno>18</slideno>
+          <text>Correlation/Covariance
+In multidimensional Gaussian 
+problems, equal-probability 
+contours are ellipsoids.
+Shoe size doesnt affect 
+grades:
+P(grade,shoesize)=P(gr ade)P(shoesize)
+Studying helps grades:
+P(grade,studytime) !=P(gr ade)P(studytime)
+We must consider P(x,y) jointly, 
+respecting the correlation!
+If I tell you the grade, you learn 
+something about study time.
+Exam score
+Time spent studying
+Shoe Size</text>
+        </slide>
+        <slide>
+          <slideno>0</slideno>
+          <text>Mapping and Navigation
+January 6th, 2005
+Edwin Olson</text>
+        </slide>
+        <slide>
+          <slideno>12</slideno>
+          <text>Kalman Filter Example
+We now think Jill is 
+at:
+x=0.66
+2=0.66
+-5 -4 -3 -2 -1 0 1 2 3 4 500.050.10.150.20.250.30.350.40.450.5
+A
+B
+both</text>
+        </slide>
+        <slide>
+          <slideno>17</slideno>
+          <text>State Correlation/Covariance
+We observe features relative to the robots 
+current position
+Therefore, feature location estimates covary (or 
+correlate) with robot pose.
+Why do we care?
+We need to track covariance so we can correctly 
+propagate new information:
+Re-observing one feature gives us information about 
+robot position, and therefore also all other features.</text>
+        </slide>
+        <slide>
+          <slideno>4</slideno>
+          <text>What is an Observation?
+Where do we get 
+observations from?
+Camera
+Range/bearing to ticks and 
+landmarks
+Corners detected from 
+camera, range finders
+For now, lets assume we 
+get these observations plus 
+some noise estimate.robotuncertainty ellipse
+wmaximum likelihood 
+westimate
+an observation</text>
+        </slide>
+        <slide>
+          <slideno>47</slideno>
+          <text>Course Announcements
+Gyros:
+Forgot to mention that your first gyro costs 
+ZERO sensor points.
+Gyro mounting issues: axis of rotation
+Lab checkoffs
+Only a couple checkoffs yesterday</text>
+        </slide>
+        <slide>
+          <slideno>46</slideno>
+          <text>Debugging map-building algorithms
+You cant debug what you cant see.
+Produce a visualization of the map!
+Metrical map: easy to draw
+Topologic al map: draw the graph (using graphviz/dot?)
+Display the graph via BotClient
+Write movement/sensor observations to a file to test 
+mapping independently (and off-line)</text>
+        </slide>
+        <slide>
+          <slideno>9</slideno>
+          <text>Bayesian Estimation
+Represent unknowns with 
+probability densities
+Often, we assume the 
+densities are Gaussian
+Or we represent arbitrary 
+densities with particles
+We wont cover this today-5 -4 -3 -2 -1 0 1 2 3 4 500.050.10.150.20.250.30.350.4Normal Distribution
+2/2) (
+221)(
+
+=xe xP
+-2.5 -2 -1.5 -1 -0.5 0 0.5 1 1.5 2-1-0.8-0.6-0.4-0.200.20.40.60.81</text>
+        </slide>
+        <slide>
+          <slideno>42</slideno>
+          <text>Data Association: Tick Marks
+Ideal situation:
+Lots of tick marks, randomly arranged
+Good position estimates on all tick marks
+Then we search for a rigid-body-
+transformation that best aligns the points.</text>
+        </slide>
+        <slide>
+          <slideno>15</slideno>
+          <text>Kalman Filter
+Now Jill steps forward 
+one step
+We think one of Jills 
+steps is about 1 meter,
+2=0.5
+We estimate her position:
+x=xbefore+xchange
+2=  before2+ chan ge2
+Uncertainty increases -5 -4 -3 -2 -1 0 1 2 3 4 500.050.10.150.20.250.30.350.40.450.5
+Before
+After</text>
+        </slide>
+        <slide>
+          <slideno>25</slideno>
+          <text>Kalman Filter: Properties
+In the limit, features become highly correlated
+Because observing one feature gives information 
+about other features
+Kalman filter computes the posterior pose , but 
+notthe posterior trajectory .
+If you want to know the path that the robot traveled, 
+you have to make an extra backwards pass.</text>
+        </slide>
+        <slide>
+          <slideno>38</slideno>
+          <text>Attack Plan
+Motivation: why build a map?
+Terminology, basic concepts
+Mapping approaches
+Metrical
+State Estimation
+Occupancy Grids
+Topological
+Data Association
+Hints and Tips</text>
+        </slide>
+        <slide>
+          <slideno>29</slideno>
+          <text>Attack Plan
+Motivation: why build a map?
+Terminology, basic concepts
+Mapping approaches
+Metrical
+State Estimation
+Occupancy Grids
+Topological
+Data Association
+Hints and Tips</text>
+        </slide>
+        <slide>
+          <slideno>23</slideno>
+          <text>EKF Jacobians
+
+
+
+
+==++=+ ++=+ ++=
+=
+1 11 1
+''') sin() ( ') cos() ( '
+yyxxwuw wuyyw wuxx
+fd dd d
+
+
+
+r f yr f xr f r f
+yy dxxdyy xx d
+==+=2/12 2]) () [(
+10 0 0001 0 0000 1 0000) cos( 1000) sin( 01
+dd
+uu
+A
+=
+0 00 01 0) cos( ) sin() sin( ) cos(
+
+
+dd
+uu
+W
+=22
+00
+
+
+wwdQ=</text>
+        </slide>
+        <slide>
+          <slideno>3</slideno>
+          <text>What is a feature?
+An object/structure in 
+the environment that 
+we will represent in 
+our map
+Something that we 
+can observe multiple 
+times, from different 
+locationsBunker Hill Monument
+(Image co urtesy of H. Oestreich and stock.xchn g)</text>
+        </slide>
+        <slide>
+          <slideno>27</slideno>
+          <text>Kalman Filters Nemesis
+With N features, update 
+time is O(N2)!
+For Maslab, N is small. 
+Who cares?
+In the real world, N can 
+be 106.
+Current research: lower-
+cost mapping methods</text>
+        </slide>
+        <slide>
+          <slideno>13</slideno>
+          <text>Kalman Filter: Properties
+You incorporate sensor observations one at a 
+time.
+Each successive observation is the same 
+amount of work (in terms of CPU).
+Yet, the final estimate is the global optimal 
+solution.
+The Kalman Filter is an optimal, 
+recursive estimator.</text>
+        </slide>
+        <slide>
+          <slideno>16</slideno>
+          <text>State Vector
+Were going to estimate robot location and 
+orientation (xr, xy, xt), and feature locations (fnx, 
+fny).
+We could try to estimate each of these variables 
+independently
+But theyre correlated!x = [ xrxyxtf1xf1yf2xf2yfnxfny]T</text>
+        </slide>
+        <slide>
+          <slideno>37</slideno>
+          <text>Topological Maps: Planning
+Graph is easy to do 
+process!
+If were lost, go to 
+nearest landmark.
+Nodes form a highway
+Can find nearest goal, 
+find areas of high ball 
+density
+A* Search1
+2GG2
+13
+14
+35
+1
+6
+2GG
+7
+11.60.81.0
+2.3
+0.71.7
+1.9 1.0</text>
+        </slide>
+        <slide>
+          <slideno>20</slideno>
+          <text>Kalman Filters and Multi-Gaussians
+Kalman equations tell us how to 
+incorporate observations
+Propagating effects due to correlation
+Kalman equations tell us how to add new 
+uncertainty due to robot moving
+We choose a Gaussian noise model for this 
+too.</text>
+        </slide>
+        <slide>
+          <slideno>45</slideno>
+          <text>Using the exploration round
+Contest day:
+1. During exploration round, build a map.
+2. Write map to a file.
+3. During scoring round, reload the map.
+4. Score lots of points.
+Use two separate applications for explore/score 
+rounds.
+Saving state to a file will ease testing:
+ You can test your scoring code without having to re-
+explore
+ You can hand-tweak the state file to create new test 
+conditions or troubleshoot.</text>
+        </slide>
+        <slide>
+          <slideno>36</slideno>
+          <text>Topological Map-Building Algorithm
+Until exploration round ends:
+Explore until we find a previously unseen 
+barcode
+Travel to the barcode
+Perform a 360 degree scan, noting the 
+barcodes, balls, and goals which are visible.
+Build a tree
+Nodes = barcode features
+Edges connect features which are adjacent
+Edge weight is distance</text>
+        </slide>
+        <slide>
+          <slideno>22</slideno>
+          <text>EKF Update Equations
+Time update:
+x=f(x,u,0)
+P=APAT+WQWT
+Observation
+K=PHT(HPHT + VRVT)-1
+x=x+K(z-h(x,0))
+P=(I-KH)P
+P is your covariance matrix
+They look scary, but once you compute your 
+Jacobians, it just works! 
+A=df/dx W=df/dw H=dh/dx V=dh/dv
+Staff can help (Its easy except for  the atan!)
+
+
+
+++=+ ++=+ ++=
+=
+
+
+
+wuw wuyyw wuxx
+fd dd d
+') sin() ( ') cos() ( '
+
+
+
+
++ =++=
+=
+
+ vx xxyy zv yy xx z
+h
+r f r fd r f r f d
+) , (2 arctan]) () [(2/12 2</text>
+        </slide>
+        <slide>
+          <slideno>44</slideno>
+          <text>Attack Plan
+Motivation: why build a map?
+Terminology, basic concepts
+Mapping approaches
+Metrical
+State Estimation
+Occupancy Grids
+Topological
+Data Association
+Hints and Tips</text>
+        </slide>
+        <slide>
+          <slideno>26</slideno>
+          <text>Kalman Filter: a movie</text>
+        </slide>
+        <slide>
+          <slideno>34</slideno>
+          <text>Topological Maps
+Much easier than this metrical map stuff.
+Dont even try to keep track of where
+features are. Only worry about 
+connectivity.</text>
+        </slide>
+        <slide>
+          <slideno>2</slideno>
+          <text>Attack Plan
+Motivation: why build a map?
+Terminology, basic concepts
+Mapping approaches
+Metrical
+State Estimation
+Occupancy Grids
+Topological
+Data Association
+Hints and Tips</text>
+        </slide>
+        <slide>
+          <slideno>41</slideno>
+          <text>Data Association: Tick Marks
+The blue tick marks can be 
+used as features too.
+You only need to reobserve
+the same feature twice to 
+benefit!
+If you can track them over 
+short intervals, you can use 
+them to improve your dead-
+reckoning.</text>
+        </slide>
+        <slide>
+          <slideno>24</slideno>
+          <text>EKF Jacobians
+
+
+
+
++ =++=
+=
+
+ vx xxyy zv yy xx z
+h
+r f r fd r f r f d
+) , (2 arctan]) () [(2/12 2
+2)/(1/(1x ydd+=
+
+22
+00
+
+
+vv T dVRV=
+x x y x x yy x y x
+d dd d dddd dd dd dd
+H/ / 1 / // / 0 / /
+2 2
+
+
+  
+=</text>
+        </slide>
+        <slide>
+          <slideno>6</slideno>
+          <text>Attack Plan
+Motivation: why build a map?
+Terminology, basic concepts
+Mapping approaches
+Metrical
+State Estimation
+Occupancy Grids
+Topological
+Data Association
+Hints and Tips</text>
+        </slide>
+        <slide>
+          <slideno>21</slideno>
+          <text>System Equations (EKF)
+Consider range/bearing measurements, 
+differentially driven robot
+Let xk=f(xk-1,uk-1, wk-1)    u=control inputs, w=noise
+Let zk=h(xk,vk) v=nois e
+
+
+
+
+++=+ ++=+ ++=
+=
+
+
+
+wuw wuyyw wuxx
+fd dd d
+') sin() ( ') cos() ( '
+
+
+
+
++ =++=
+=
+
+ vx xxyy zv yy xx z
+h
+r f r fd r f r f d
+) , (2 arctan]) () [(2/12 2</text>
+        </slide>
+        <slide>
+          <slideno>30</slideno>
+          <text>Occupancy Grids
+Another way of 
+mapping:
+Divide the world into a 
+grid
+Each grid records 
+whether theres 
+something there or not
+Use current robot 
+position estimate to fill 
+in squares according 
+to sensor observations</text>
+        </slide>
+        <slide>
+          <slideno>39</slideno>
+          <text>Data Association
+If we cant tell when were reobserving a 
+feature, we dont learn anything!
+We need to observe the same feature twice to 
+generate a constraint</text>
+        </slide>
+        <slide>
+          <slideno>14</slideno>
+          <text>Kalman Filter: Properties
+Observations always reduce the 
+uncertainty.</text>
+        </slide>
+        <slide>
+          <slideno>1</slideno>
+          <text>Why build a map?
+Time!
+Playing field is big, robot is slow
+Driving around perimeter takes a minute!
+Scoring takes time often ~20 seconds 
+to line up to a mouse hole.
+Exploration round gives advantage to 
+robots that can map</text>
+        </slide>
+        <slide>
+          <slideno>10</slideno>
+          <text>Bayesian Data Fusion
+Example: Estimating where 
+Jill is standing:
+Alice says: x=2
+We think 2=2; she wears 
+thick glasses
+Bob says: x=0
+We think 2=1; hes pretty 
+reliable
+How do we combine these 
+measurements?-5 -4 -3 -2 -1 0 1 2 3 4 500.050.10.150.20.250.30.350.4
+A
+B</text>
+        </slide>
+        <slide>
+          <slideno>48</slideno>
+          <text>Todays Lab Activities
+No structured activities today
+Work towards tomorrows check-off:
+1.Robot placed in playfield
+2.Find and approach a red ball.
+3.Stop.
+Keep it simple!
+Random walks are fine!
+Status messages must be displayed on OrcPad or 
+BotClient</text>
+        </slide>
+        <slide>
+          <slideno>32</slideno>
+          <text>Attack Plan
+Motivation: why build a map?
+Terminology, basic concepts
+Mapping approaches
+Metrical
+State Estimation
+Occupancy Grids
+Topological
+Data Association
+Hints and Tips</text>
+        </slide>
+        <slide>
+          <slideno>7</slideno>
+          <text>Metrical Maps
+Try to estimate actual 
+locations of features and 
+robot
+The robot is at (5,3) and 
+feature 1 is at (2,2)
+Both occupancy grid and 
+discrete feature approaches.
+Relatively hard to build
+Much more complete 
+representation of the worldDen
+BathFoyerBedroomKitchen Dining</text>
+        </slide>
+        <slide>
+          <slideno>28</slideno>
+          <text>Non-Bayesian Map Building</text>
+        </slide>
+        <slide>
+          <slideno>31</slideno>
+          <text>Occupancy Grids
+Easy to generate, hard to maintain accuracy
+Basically impossible to undo mistakes
+Occupancy grid resolution limited by the 
+robots position uncertainty
+Keep dead-reckoning error as small as possible
+When too much error has accumulated, save the 
+map and start over. Use older maps for reference?</text>
+        </slide>
+        <slide>
+          <slideno>35</slideno>
+          <text>Topological Map Example
+1
+2GG2
+13
+14
+35
+1
+6
+2GG
+7
+11.60.81.0
+2.3
+0.71.7
+1.9 1.0
+21345
+76
+Note that the way we draw (where we draw the 
+nodes) does not contain information.</text>
+        </slide>
+        <slide>
+          <slideno>8</slideno>
+          <text>Metrical Maps
+State Estimation
+Estimate discrete quantities: If we fit a line to the 
+wall, what are its parameters y=mx+b?
+Often use probabilistic machinery, Kalman filters
+Occupancy Grid
+Discretize the world. I dont know what a wall is, but 
+grids 43, 44, and 45 are impassable.</text>
+        </slide>
+      </slides>
+      <videos/>
+    </lecture>
+    <lecture>
+      <lecture_title>Overview
+Welcome, Staff, Logistics, Course Policies/Philosophy, Contest Preview: The Game, The Kit
+Orc API and maslab.jar, OrcPad, PegBot, Soldering Tutorial</lecture_title>
+      <lecture_pdf_url>https://ocw.mit.edu/courses/6-186-mobile-autonomous-systems-laboratory-january-iap-2005/resources/overview/</lecture_pdf_url>
+      <lectureno>1</lectureno>
+      <slides>
+        <slide>
+          <slideno>0</slideno>
+          <text>Welcome to MASLab!
+First Lecture 
+January 3, 2005</text>
+        </slide>
+        <slide>
+          <slideno>32</slideno>
+          <text>Surface Mount
+http://www.geocities.com/vk3em/smtguide/websmt.html
+To see this image, go to:
+Image removed due to copyright considerations.</text>
+        </slide>
+        <slide>
+          <slideno>26</slideno>
+          <text>Example
+import maslab.orc.*; 
+import maslab.util.*; 
+import java.io.*; 
+public class hello
+{
+public static void main(String[] args) 
+{
+Orc o;
+try {
+o=new Orc(); 
+} catch (IOException ex) { 
+System.out.println("Could not create orc!"); 
+return; 
+} 
+o.lcdConsoleHome(); 
+o.lcdConsoleWrite("Hello, world\n\n"); 
+o.lcdConsoleWrite("Press a key..."); 
+o.padButtonsGet(); 
+}
+}</text>
+        </slide>
+        <slide>
+          <slideno>29</slideno>
+          <text>Diagrams
+http://www.epemag.wimborne.co.uk/solderpix.htm
+To see this image, go to:
+Image removed due to copyright considerations.</text>
+        </slide>
+      </slides>
+      <videos/>
+    </lecture>
+    <lecture>
+      <lecture_title>Software Engineering
+On MIT Server and your robot (make, Ant, CVS), Design Principles, Threading in Java&#174;&#160;(more mechanics than theory), Pitfalls
+Vision
+Quick Review: Colors (HSV, Maslab colors, this year), Blue line (motivation), Determining color (thresholds on HSV, hysteresis, region support), See the tutorial!
+Feature Detection: Methods (Template matching, Region growing, Clustering), Maslab features (What they are, Why they&#8217;re useful) How to locate them (corner detector, symbol decoder): Possible algorithm, Describe feature detection lab</lecture_title>
+      <lecture_pdf_url>https://ocw.mit.edu/courses/6-186-mobile-autonomous-systems-laboratory-january-iap-2005/resources/software/</lecture_pdf_url>
+      <lectureno>3</lectureno>
+      <slides>
+        <slide>
+          <slideno>0</slideno>
+          <text>Maslab Software 
+Engineering
+January 5th, 2005 
+Yuran Lu</text>
+        </slide>
+      </slides>
+      <videos/>
+    </lecture>
+    <lecture>
+      <lecture_title>Advanced Vision
+Clustering, Hough Transform, Stereo and Optical Flow, Statistical Models, Dealing with Noise, Performance
+Advanced Control
+PID, Kalman, Whatever you want (maybe some high-level stuff?)
+Activity: Mapping activity, purely software activity</lecture_title>
+      <lecture_pdf_url>https://ocw.mit.edu/courses/6-186-mobile-autonomous-systems-laboratory-january-iap-2005/resources/morevision/</lecture_pdf_url>
+      <lectureno>6</lectureno>
+      <slides>
+        <slide>
+          <slideno>20</slideno>
+          <text>Edge Detection
+Need to choose a good value for threshold
+ Too smallgets lots of noise, fat edges 
+ Too big lose sections of edge 
+What do you do with an edge? 
+ Extract lines for a map? 
+ Use to separate regions?</text>
+        </slide>
+        <slide>
+          <slideno>26</slideno>
+          <text>EM Algorithm
+Key question: what is k? 
+ Need to know how many objects 
+Convergence criteria for random values?
+ Pick good guesses for centers</text>
+        </slide>
+        <slide>
+          <slideno>19</slideno>
+          <text>Edge Detection
+More sophisticated filters work better 
+(Laplacian of Gaussian , for example) 
+50 
+100 
+150 
+200 
+50 100 150 200 250 300</text>
+        </slide>
+        <slide>
+          <slideno>11</slideno>
+          <text>Stereo Vision
+For Maslab, the problem is simpler can 
+easily identify objects and compute 
+horizontal disparity. 
+To convert disparity to distance, calibrate the trig. 
+Use two cameras  or mount a camera on 
+a movable platform or move your robot</text>
+        </slide>
+        <slide>
+          <slideno>21</slideno>
+          <text>Optical Flow
+Look at changes between successive 
+images 
+ identify moving objects
+ identify robot motion (flow will radiate out 
+from direction of motion) 
+For each point on image, set total 
+derivative of brightness change to zero: 
+ 0 = u*Ex + v*Ey + Et</text>
+        </slide>
+        <slide>
+          <slideno>10</slideno>
+          <text>Stereo Vision</text>
+        </slide>
+        <slide>
+          <slideno>0</slideno>
+          <text>Advanced Vision
+January 10, 2005</text>
+        </slide>
+        <slide>
+          <slideno>28</slideno>
+          <text>Reminders
+No lecture tomorrow 
+Design Review Wednesday
+Check Point Two: Friday 
+If you haven t completed check point one, 
+you finish it today!</text>
+        </slide>
+        <slide>
+          <slideno>4</slideno>
+          <text>Stereo Vision
+What s the angle? 
+ X 
+Perspective projection 
+equation tells us Z
+x
+ x/f = X/Z 
+f is focal length, x is f
+pixel location 
+center of projectiontan(f ) = X/Z = x/f</text>
+        </slide>
+        <slide>
+          <slideno>22</slideno>
+          <text>Optical flow</text>
+        </slide>
+        <slide>
+          <slideno>13</slideno>
+          <text>Rigid Body Motion
+If we only know angles, the problem is 
+quite hard: 
+1 12 2 3 
+3 
+Assume distances to objects are known.</text>
+        </slide>
+        <slide>
+          <slideno>12</slideno>
+          <text>Rigid Body Motion
+Going from data association to motion
+Given 
+ a starting x1,y1, ?1 
+ a set of objects visible in both images
+What is x2, y2, and ?2? 
+position one position two</text>
+        </slide>
+        <slide>
+          <slideno>18</slideno>
+          <text>300Edge Detection
+50
+100
+150
+200
+200
+50 100 150 200 250 
+50 
+100 
+150 
+50 100 150 200 250 300</text>
+        </slide>
+        <slide>
+          <slideno>7</slideno>
+          <text>Stereo Vision
+Still have a problem: unless the object is 
+really close, the change might be small 
+Left Image 
+Left Eye Right Eye Right Image</text>
+        </slide>
+        <slide>
+          <slideno>25</slideno>
+          <text>EM Algorithm
+Assume there are k red objects 
+Randomly choose object locations x k, yk
+Loop: 
+ Assign each pixel to nearest xk, yk 
+ Recenter x k, yk at center of all pixels 
+associated with it</text>
+        </slide>
+        <slide>
+          <slideno>3</slideno>
+          <text>Stereo Vision
+Use the image to find the angle to the 
+object, then apply some trig: 
+Left Image 
+angle -side -angle gives 
+Right Image you a unique triangle</text>
+        </slide>
+        <slide>
+          <slideno>23</slideno>
+          <text>Optical Flow
+Computationally expensive and requires 
+very fast frame rates  or very slow robots 
+Idea from optical flow: looking at change between frames can help segment an 
+image (only edges will move).</text>
+        </slide>
+        <slide>
+          <slideno>15</slideno>
+          <text>Rigid Body Motion
+Apply the math for a rotation: 
+x1i = cos(?)*x 2i + sin(?)*y 2i + x0 
+y1i = cos(?)*y 2i -sin(?)*x 2i + y0 
+Solve for x0, y0, and ? with least squares:
+S (x1i -cos(?)*x 2i -sin(?)*y 2i -x0)^2 + 
+(y1i -cos(?) *y 2i + sin(?)*x 2i -y0 )^2 
+Need at least two objects to solve</text>
+        </slide>
+        <slide>
+          <slideno>24</slideno>
+          <text>EM Algorithm
+Given an image with k objects 
+How can we find their locations?</text>
+        </slide>
+        <slide>
+          <slideno>6</slideno>
+          <text>Stereo Vision
+Difference 
+metric = Sum 
+of (L i  Ri)^2 
+Search horizontally for best match 
+(least 
+difference) 
+1 6 1 6 5 5 5 5 6 5 7 5 6 5 5 5 5 6</text>
+        </slide>
+        <slide>
+          <slideno>17</slideno>
+          <text>Edge Detection 
+Edges are places of large change 
+Scan the image with little computational 
+molecules or a kernel  
+0 0 1 
+1 
+-1 -1</text>
+        </slide>
+        <slide>
+          <slideno>27</slideno>
+          <text>Performance Note
+ Faster access:
+bufferedImage = 
+ImageUtil.convertImage (bufferedImage , 
+BufferedImage .INT_RGB); 
+ DataBufferInt intBuffer = (DataBufferInt ) 
+bufferedImage. getRaster ().getDataBuffer (); 
+ int[] b = dataBufferInt.getData ();
+ Need to keep track of where pixels are: 
+ offset = (y*width + x) 
+ (b[offset] &gt;&gt; 16) &amp; 0xFF = red or hue 
+ (b[offset] &gt;&gt; 8) &amp; 0xFF = green or saturation
+ b[offset] &amp; 0xFF = blue or value</text>
+        </slide>
+        <slide>
+          <slideno>16</slideno>
+          <text>Rigid Body Motion
+Advantages 
+ Relies on the world, not on odometry 
+ Can use many or few associations
+Disadvantage 
+ Can take time to compute</text>
+        </slide>
+        <slide>
+          <slideno>1</slideno>
+          <text>Agenda
+ Hodge Podge of Vision Stuff
+Stereo Vision 
+Rigid body motion 
+Edge Detection 
+Optical Flow 
+EM Algorithm to locate objects 
+ May not be directly applicable, but we ve tried to 
+make it relevant.</text>
+        </slide>
+        <slide>
+          <slideno>2</slideno>
+          <text>Stereo Vision
+We can judge distance based on the how 
+much the object s position changes. 
+Left Image 
+Left Eye Right Eye Right Image</text>
+        </slide>
+        <slide>
+          <slideno>8</slideno>
+          <text>Stereo Vision
+ And many regions 
+will be the same in 
+both pictures, even if 
+the object has 
+Left Image moved. 
+ We need to apply 
+stereo only to 
+interesting  regions. 
+Right Image</text>
+        </slide>
+        <slide>
+          <slideno>5</slideno>
+          <text>Stereo Vision
+But in a complex image, objects may be 
+hard to identify  
+Try to match regions instead (block correlation)</text>
+        </slide>
+        <slide>
+          <slideno>14</slideno>
+          <text>Rigid Body Motion
+If angles and distances are known, we can 
+construct triangles: 
+distance between 
+objects should be 
+the same from both positions</text>
+        </slide>
+        <slide>
+          <slideno>9</slideno>
+          <text>Stereo Vision
+Uniform regions are not 
+interesting 
+Patterned regions are interesting 
+Let the interest operator 
+be the lowest eigenvalue 
+of a matrix passed over the region. 5 4 5 5 5 5 5 5 5 
+lowest eigenvalue = 0 
+5 4 5 1 5 5 5 2 8 
+lowest eigenvalue = 2.5</text>
+        </slide>
+      </slides>
+      <videos/>
+    </lecture>
+  </lectures>
+</doc>

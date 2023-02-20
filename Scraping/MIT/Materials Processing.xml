@@ -1,0 +1,2151 @@
+<doc>
+  <source>MIT</source>
+  <date>28/01/2023</date>
+  <course>
+    <course_url>https://ocw.mit.edu/courses/3-044-materials-processing-spring-2013/</course_url>
+    <course_title>Materials Processing</course_title>
+    <course_tags>
+      <list>Engineering </list>
+      <list>Materials Science and Engineering </list>
+      <list>Transport Processes </list>
+    </course_tags>
+  </course>
+  <lectures>
+    <lecture>
+      <lecture_title>Blow molding, compressive forming
+Introduction to powder processing
+Sintering, slurry processing</lecture_title>
+      <lecture_pdf_url>https://ocw.mit.edu/courses/3-044-materials-processing-spring-2013/resources/mit3_044s13_lec20/</lecture_pdf_url>
+      <lectureno>20</lectureno>
+      <slides>
+        <slide>
+          <slideno>2</slideno>
+          <text>3.044 MATERIALS PROCESSING 3
+Consolidation (Sintering)
+Mechanics of powder compaction are complex but well modeled:
+Driving Force
+2P=Papplied+ Pr i
+capillary
+pressure/bracehtipupleft/bracehtipdownright/bracehtipdownleft/bracehtipuprightinternally/bracehtipupleft/bracehtipdownright/bracehtipdownleft/bracehtipupright
+trapped
+gas pressure
+Sintering: Papp0, if sintering in a vacuum Pi=0
+Pressing: Papp/negationslash=0
+uniaxialfast, but very limited in shapes
+isostatic, HIP (hot isostatic pressing) very good for closing small pores
+expensive, limited in shape
+Uses of Powder Production
+(1) ceramics processing
+(2) powder metallurgy(3) thermoset polymers(4) pharmaceuticals</text>
+        </slide>
+        <slide>
+          <slideno>0</slideno>
+          <text>3.044 MATERIALS PROCESSING
+LECTURE 20
+Non-Newtonian Rheology
+=m
+Newtonian Flow (m 1) is desirable for ow stability against necking and void-
+ing/cavitation
+S of a rw eh a v et a l k e da b o u tnet tension . However, many processing operations are
+innet compression:
+extrusion
+rolling/bracerightbigg
+continuous
+injection molding
+forging/bracerightbigg
+batch
+What about ow stability?
+more forgiving, less concerned about min compression
+m&gt;0.5 tension
+m&gt;0.2 compression
+faster processing is possible
+Date : May 7th, 2012.
+1</text>
+        </slide>
+        <slide>
+          <slideno>3</slideno>
+          <text>MIT OpenCourseWare
+http://ocw.mit.edu
+3.044 Materials Processing
+Spring 2013
+For information about citing these materials or our Terms of Use, visit: http://ocw.mit.edu/terms .</text>
+        </slide>
+        <slide>
+          <slideno>1</slideno>
+          <text>2 LECTURE 20
+But we cant completely ignore m, there are some instabilities:
+barrelling (but it doesnt really matter)
+recrystallization
+cracksopvoids/bracerightbigg
+en on directions of tension
+How to process high Tmmaterials?
+e.g. Refractory metals (W, Ta, Mo), Tm= 30004000C, ceramics Al 2O3
+Casting: too hot
+hard to melt
+what material do you use as a mold?
+must withstand the heat and not react
+containerless process, powder
+Viscous shape forming: need a solid block of material to begin with
+Powder Processing and Consolidation: volume reducing and forging
+Spray atomization and other containerless processes
+mostly for metals (few ceramics)
+Wet chemical processing
+e.g. Bayer process to make alumina
+clean powders, distributed sizes</text>
+        </slide>
+      </slides>
+      <videos/>
+    </lecture>
+    <lecture>
+      <lecture_title>Navier-Stokes equation
+Reynolds number</lecture_title>
+      <lecture_pdf_url>https://ocw.mit.edu/courses/3-044-materials-processing-spring-2013/resources/mit3_044s13_lec16/</lecture_pdf_url>
+      <lectureno>16</lectureno>
+      <slides>
+        <slide>
+          <slideno>2</slideno>
+          <text>3.044 MATERIALS PROCESSING 3
+Pvx(r)= R2 2
+4Lr
+P R/parenleftbig /parenrightbig
+rx=2L
+Kinetic Force:
+Fk=/integraldisplay
+dA
+Fk=
+What if Flow is Turbulent?
+Plug Flow:PR2
+Cannot solved explicitly for vx(r)
+Generalized Drag Force:
+Fk= fA
+friction/bracehtipupleft/bracehtipdownright/bracehtipdownleft/bracehtipupright
+factor char. area of m
+Laminar: fL=16A=2Re/bracehtipupleft/bracehtipdownright/bracehtipdownleft/bracehtipupright
+omentum transfer char. kinetic/bracehtipupleft/bracehtipdownright/bracehtipdownleft/bracehtipupright
+energy of ow
+RL KE of ow =1v2
+2 avgK</text>
+        </slide>
+        <slide>
+          <slideno>3</slideno>
+          <text>4 LECTURE 16
+H o wd oy o uu s eF k?
+(PP)R21 2 =fAK
+Provides a relationship between  Pandvavg
+Summary:
+If Laminar: Fkcan be calculated exactly
+vx(r)rxFx=/integraltext
+dA
+If Turbulent: Use empirical ffrom experiment or simulation
+f=f(Re, Geometry)
+Flow Past Objects:
+Fk=F/bracehtipupleftfriction/bracehtipdownright/bracehtipdownleft+F
+shear griping
+sides/bracehtipupright /bracehtipupleftform/bracehtipdownright/bracehtipdownleft
+dynamic pressure
+of impinging/bracehtipupright
+ow
+Fk=(fAK)friction+(fAK)form</text>
+        </slide>
+        <slide>
+          <slideno>6</slideno>
+          <text>MIT OpenCourseWare
+http://ocw.mit.edu
+3.044 Materials Processing
+Spring 2013
+For information about citing these materials or our Terms of Use, visit: http://ocw.mit.edu/terms .</text>
+        </slide>
+        <slide>
+          <slideno>5</slideno>
+          <text>6 LECTURE 16
+Summary:
+Fk=F/bracehtipupleft/bracehtipdownright/bracehtipdownleft/bracehtipuprightfric+Fform
+laminar
+term/bracehtipupleft/bracehtipdownright/bracehtipdownleft
+turbulen/bracehtipupright
+t
+term
+whereffricis a function of the Reynolds Number
+andfformis a function of Geometry</text>
+        </slide>
+        <slide>
+          <slideno>4</slideno>
+          <text>3.044 MATERIALS PROCESSING 5
+Solve for: (fAK)friction
+Laminar: Solve exactly with Stokes Law
+24ffric=Re
+A=d2
+4
+1K=2v2
+Fk, fric=3vd
+Turbulent: negligible
+Solve for: (fAK)form
+Laminar: Fform0
+Turbulent:
+f/approxorequal form0.44
+A=d2
+4
+1K=2v2
+Fform=fformd2v2
+8</text>
+        </slide>
+        <slide>
+          <slideno>0</slideno>
+          <text>3.044 MATERIALS PROCESSING
+LECTURE 16
+Navier-Stokes Equation (1-D):
+vx
+t=2vx
+y21
+P
+x+Fx
+
+vx
+t
+Inertial Forcekg m
+s21
+m3=2vx
+y2
+Viscous ForceP
+x
+Pressure Force+Fx
+Body ForceN
+m3/bracehtipupleft /bracehtipdownright/bracehtipdownleft /bracehtipupright /bracehtipupleft /bracehtipdownright/bracehtipdownleft /bracehtipupright /bracehtipupleft/bracehtipdownright/bracehtipdownleft/bracehtipupright/bracehtipupleft/bracehtipdownright/bracehtipdownleft/bracehtipupright
+Simplest Case:
+vx2vx=ty2
+Non-Dimensional Length:
+xX=V,whereL=L A
+yY=L
+Non-Dimensional Time:
+V0=tL
+Date : April 11th, 2012.
+1</text>
+        </slide>
+        <slide>
+          <slideno>1</slideno>
+          <text>2 LECTURE 16
+Velocity:
+vxVx=v0
+vxvxv0vxv20Vxvxv= = = =0Vx
+t  t LL V xL
+2v 2x V2xv0 V x=v0=y2y2L2Y2
+v2
+0Vxv02Vx=LL2Y2
+Vx=/parenleftbigg
+Lv 0/parenrightbigg2Vx
+Y2
+Lv 0inertial forceReynolds Number: Re = =viscous force
+Flow in a Tube:
+Geometry Critical Re
+channel 1000
+tube 2100
+1 free surface (e.g. falling lm) 20
+Belo
+wRecrit: denitely laminar
+AboveRecrit: might be turbulent, needs perturbation</text>
+        </slide>
+      </slides>
+      <videos/>
+    </lecture>
+    <lecture>
+      <lecture_title>What is materials processing?
+Course overview
+Heat conduction equation</lecture_title>
+      <lecture_pdf_url>https://ocw.mit.edu/courses/3-044-materials-processing-spring-2013/resources/mit3_044s13_lec01/</lecture_pdf_url>
+      <lectureno>1</lectureno>
+      <slides>
+        <slide>
+          <slideno>1</slideno>
+          <text>2 LECTURE 1 
+: J
+ 
+q heat ux J = W 
+2m s ms : J WFouriers Law: q = kVT, k  thermal conductivity m K :J KVT  temperature gradient m 
+Compare: 
+Fouriers Law Ficks 1st Law 
+ q = kVT J = DVc 
+Why does heat behave this way? 
+Energy minimization  Entropy maximization 
+Heat Conduction Equation:
+ 
+First think in 1-D 
+Heat balance in a small element: 
+heat in heat out (+ heat generation) = heat accumulationh ut n h ut n h ut n h ut n 
+A  qin A  qout H chemical reaction, resistance V  T 
+H Aqin  Aqout = V T</text>
+        </slide>
+        <slide>
+          <slideno>2</slideno>
+          <text>3 3.044 MATERIALS PROCESSING 
+H qin  qout = x T 
+H q|x  q|x+x = x T 
+T T H k x |x  x |x+x = x T 
+H k T T 
+T = x ( x |x+x  x |x) 
+k T = ( )x x 
+= k (T 
+x ) 
+x 
+H 2T = k T x2 
+How does H relate to T? 
+where cp is heat capacity H = Tcp  and  is density 
+H T = cpt t 
+2T T k = cpx2 t 
+k 2T T = cp	 x2 t 
+2T T  = x2 t 
+T 2T =  t x2 
+ is the Thermal Diusivity 
+:	J Wk m K    = :	Jkg K m3  J cpkg
+ 	 2k	m = cps</text>
+        </slide>
+        <slide>
+          <slideno>4</slideno>
+          <text>MIT OpenCourseWare
+http://ocw.mit.edu
+3.044 Materials Processing
+Spring 2013
+For information about citing these materials or our Terms of Use, visit: http://ocw.mit.edu/terms .</text>
+        </slide>
+        <slide>
+          <slideno>3</slideno>
+          <text>4 LECTURE 1 
+The values of k, cp and  for any material can be looked up in tables and do not 
+need to be experimentally determined. Therefore  is a materials property. 
+Compare: 
+Heat Conduction Equation 
+T 
+t = hutn 2T 
+x2 
+ Ficks 2nd Law 
+c 
+t = Dhutn 2c 
+x2 
+ 
+thermal diusivity diusivity
+ 
+Topic
+ for Future  Discussion: 
+In 3-D ... 
+T cp = V kVT t 
+T = V2T t 
+** assuming k is constant with respect to the derivative
+ h
+m2
+si h
+m2
+si</text>
+        </slide>
+        <slide>
+          <slideno>0</slideno>
+          <text>3.044 MATERIALS PROCESSING 
+LECTURE 1 
+What is Materials Processing? 
+- A way to make materials useful: desired chemistry, shape, microstructure 
+- A way to give materials the desired properties 
+What Processes are included in copper production? 
+grinding  colloid / suspension  rening / reducing  casting  electrolysis 
+ melting  casting  rolling (hot)  drawing 
+What thermodynamic variables do we have to work with? 
+T P (or ) C (composition) 
+heat 
+heat transfer beat (move matter) 
+solid mechanics 
+uid mechanics mix 
+chemical reaction 
+phase transformation 
+diusion 
+Topics Covered in this Class 
+Part I: Heat transfer
+ 
+Part II: Fluid ow
+ 
+Part III: Combine all 3
+ 
+Heat Conduction: Heat ows down the temperature gradient 
+Date : February 8th, 2012. 
+1</text>
+        </slide>
+      </slides>
+      <videos/>
+    </lecture>
+    <lecture>
+      <lecture_title>More on Newtonian and non-Newtonian flow</lecture_title>
+      <lecture_pdf_url>https://ocw.mit.edu/courses/3-044-materials-processing-spring-2013/resources/mit3_044s13_lec19/</lecture_pdf_url>
+      <lectureno>19</lectureno>
+      <slides>
+        <slide>
+          <slideno>3</slideno>
+          <text>MIT OpenCourseWare
+http://ocw.mit.edu
+3.044 Materials Processing
+Spring 2013
+For information about citing these materials or our Terms of Use, visit: http://ocw.mit.edu/terms .</text>
+        </slide>
+        <slide>
+          <slideno>1</slideno>
+          <text>2 LECTURE 19
+Force Balance: i h
+1
+diAm
+0,iexp/parenleftBig
+i1
+=dm/parenrightBig
+hAm
+0,hexp/parenleftBig
+h
+/integraldisplaym
+1/parenrightBig
+A
+0m
+0,iexp/parenleftBig
+i
+m/parenrightBig
+di=/integraldisplayfracture
+0A1
+m
+0,hexp/parenleftBighdm/parenrightBig
+h
+Afracture=mln/parenleftBigg
+1/parenleftbigg
+0,i1
+A0,h/parenrightbigg
+m/parenrightBigg
+wheremis a material property: strain rate sensitivity
+where/parenleftbiggA0,i
+A0,h/parenrightbigg 1
+m
+is the size of inhomogeneity
+if = 1 no roughness, no perturbation
+if&lt;1 (0.99) there is 1% area uctuation
+Newtonian Flow is stable: resists necking, voiding, etc.
+Non-Newtonian ow is unstable
+ShapeforminginnettensionmuststriveforNewtonian conditions(m&lt;0 .5)</text>
+        </slide>
+        <slide>
+          <slideno>2</slideno>
+          <text>3.044 MATERIALS PROCESSING 3
+Bottle Production
+glass blowing 1500
+plastic / polymers 1940-1960
+bottles1980
+monolithic bottle 2000
+superplastic forming 1990, metals 2000, now: ceramics
+Deformation Mechanism Map</text>
+        </slide>
+        <slide>
+          <slideno>0</slideno>
+          <text>3.044 MATERIALS PROCESSING
+LECTURE 19
+AtT&lt;T mis it uid ow?
+Generalized Flow Law:
+=m
+atm= 1 Newtonian
+atm&lt;1/bracehtipupleft/bracehtipdownright/bracehtipdownleftNon-Newtonian
+usually for solids
+Homogeneous vs. Inhomogeneous/bracehtipupright
+Area:
+Date : April 30th, 2012.
+1</text>
+        </slide>
+      </slides>
+      <videos/>
+    </lecture>
+    <lecture>
+      <lecture_title>Introduction to steel making
+Steel fluid flow analysis
+Steel solidification analysis</lecture_title>
+      <lecture_pdf_url>https://ocw.mit.edu/courses/3-044-materials-processing-spring-2013/resources/mit3_044s13_lec22/</lecture_pdf_url>
+      <lectureno>22</lectureno>
+      <slides>
+        <slide>
+          <slideno>1</slideno>
+          <text>2 LECTURE 22
+lowpotential particles agglomerate in suspension aggregates settle 
+larger voids, irregular structure in sintered body
+settling lower velocity settling spend more time going over the repulsive
+hillless occulation, more uniform settling
+slip casting highter velocity settling spend less time going over the re-
+pulsive hill and enter the occulation minimum more occulation, less uniform
+settling
+Add Macromolecules
+U=HTS
+adsorbed macromolecules add entropic repulsion eects
+Vacuum/Vapor Deposition Processes
+semiconductor devices, integrated circuits, MEMS, etc.
+coatings for decoration (furniture, sports equipment, faucetry) or abrasion resis-
+tance (cutting/machining, tooling, blades)</text>
+        </slide>
+        <slide>
+          <slideno>3</slideno>
+          <text>4 LECTURE 22
+5. MBE - molecular beam epitaxy
+6. plasma enhanced deposition
+PVD Energy Diagram:
+no chemical reaction: the deposition rate is as fast as atoms are supplied
+geometry dominated, source limited
+stsupplied ux,Jmol
+m2s
+ds=JdtVm,w h e r eV mis molar volume, geometry factor
+e.g.Evaporation
+PeJ=P
+2MwRT
+wherePeis equilibrium vapor pressure, Pis pressure 0 (vacuum), and
+Mwis molecular weight
+Next time: CVD</text>
+        </slide>
+        <slide>
+          <slideno>2</slideno>
+          <text>3.044 MATERIALS PROCESSING 3
+Two main classes of processes
+PVD CVD
+physical vapor deposition chemical vapor deposition
+vacuum process (low pressure) vapor process (high pressure)
+solid or liquid source gas source
+no chemical reaction, just adsorption chemical reactions occur
+geometry dominated uid ow and diusion dominated
+PVD
+1. sputtering
+2. e-beam
+3. evaporation
+4. pulsed laser deposition</text>
+        </slide>
+        <slide>
+          <slideno>0</slideno>
+          <text>3.044 MATERIALS PROCESSING
+LECTURE 22
+Slip Casting
+highpotential well separated particles in suspension uniform packing
+when settled sinters to a regular structure with uniform grains
+Date : May 14th, 2012.
+1</text>
+        </slide>
+        <slide>
+          <slideno>4</slideno>
+          <text>MIT OpenCourseWare
+http://ocw.mit.edu
+3.044 Materials Processing
+Spring 2013
+For information about citing these materials or our Terms of Use, visit: http://ocw.mit.edu/terms .</text>
+        </slide>
+      </slides>
+      <videos/>
+    </lecture>
+    <lecture>
+      <lecture_title>Comparing heat transfer processes
+Three important cases</lecture_title>
+      <lecture_pdf_url>https://ocw.mit.edu/courses/3-044-materials-processing-spring-2013/resources/mit3_044s13_lec03/</lecture_pdf_url>
+      <lectureno>3</lectureno>
+      <slides>
+        <slide>
+          <slideno>6</slideno>
+          <text>MIT OpenCourseWare
+http://ocw.mit.edu
+3.044 Materials Processing
+Spring 2013
+For information about citing these materials or our Terms of Use, visit: http://ocw.mit.edu/terms .</text>
+        </slide>
+      </slides>
+      <videos/>
+    </lecture>
+    <lecture>
+      <lecture_title>Introduction to solidification
+Stefan condition, simplifying thermal profile
+Solidification in a thick mold</lecture_title>
+      <lecture_pdf_url>https://ocw.mit.edu/courses/3-044-materials-processing-spring-2013/resources/mit3_044s13_lec08/</lecture_pdf_url>
+      <lectureno>8</lectureno>
+      <slides>
+        <slide>
+          <slideno>0</slideno>
+          <text>3.044 MATERIALS PROCESSING
+LECTURE 8
+Radiation:
+Tk=x/bracketleftbig
+T4
+surfT4
+source/bracketrightbig
+LM=kT3
+surf
+T=t2T
+q=(T4
+surfT4
+source)
+Very few analytical solutions, some charts
+Date : March 5th, 2012.
+1</text>
+        </slide>
+        <slide>
+          <slideno>3</slideno>
+          <text>4 LECTURE 8
+Tqout=ksx/vextendsingle/vextendsingle/vextendsingle/vextendsingle
+x=s,s
+Fusion: Hf/bracketleftbiggkJ
+kg/bracketrightbigg
+In time tthe interface moved sVolume transformed = As
+/parenleftbiggTklx/parenrightbigg
+A
+/bracehtipupleft /bracehtipdownright/bracehtipdownleftT+/parenleftbigg
+ks
+in/bracehtipuprightx/parenrightbigg
+A
+/bracehtipupleft /bracehtipdownright/bracehtipdownleft /bracehtipupright
+outHf/parenleftbiggs
+t/parenrightbigg
+A
+/bracehtipupleft /bracehtipdownright/bracehtipdownleft /bracehtipupright
+Heat of Fusion=0
+swheret=s= interface velocityt
+=kT
+sx/vextendsingle/vextendsingle
+sklT
+x/vextendsingle/vextendsingle
+l
+Hf
+k=T
+Hf/bracketleftbigg
+x/vextendsingle/vextendsingle/vextendsingle/vextendsingle
+sT
+x/vextendsingle/vextendsingle/vextendsingle/vextendsingle
+l/bracketrightbigg
+(within factor of two)</text>
+        </slide>
+        <slide>
+          <slideno>4</slideno>
+          <text>MIT OpenCourseWare
+http://ocw.mit.edu
+3.044 Materials Processing
+Spring 2013
+For information about citing these materials or our Terms of Use, visit: http://ocw.mit.edu/terms .</text>
+        </slide>
+        <slide>
+          <slideno>1</slideno>
+          <text>2 LECTURE 8
+CVD: Chemical Vapor Deposition
+At steady state the thermocouple outputs a temperature reading TTC
+TC is heated by gas (convection)
+in/bracehtipdownleft /bracehtipupright/bracehtipupleft /bracehtipdownright
+h(TTf)A=out/bracehtipdownleft /bracehtipupright/bracehtipupleft
+(T4
+surfT4
+source)A
+/bracehtipdownright
+TTC=Tf(T4
+hsurfT4
+source)
+TTC/negationslash=Tf
+Tf1000C,T wall500C,
+W=0.1,h= 100m2K
+TTC830C,T200C
+Conclusions:
+1. Objects that see cold surroundings are colder than you think
+2. If an object sees a hot source it can be unexpectedly hot3. In vacuum indicates no convection radiation must be important
+Topics Covered So Far:
+Heat Beat Mix
+heat transfer solid mechanics diusion
+uid mechanics phase transition</text>
+        </slide>
+        <slide>
+          <slideno>2</slideno>
+          <text>3.044 MATERIALS PROCESSING 3
+Next step is to discuss heat transfer combinedwith diusion and phase transformations
+Solidication: Heat transfer plus phase transition, single component solidication
+What are the B.C at the solid/liquid interface?
+1.T=Tm
+2.heat balance:
+qin/bracehtipdownleft/bracehtipupright/bracehtipupleft /bracehtipdownright
+ksT
+x/vextendsingle/vextendsingle/vextendsingle/vextendsingle
+s=qout/bracehtipdownleft/bracehtipupright/bracehtipupleft /bracehtipdownright
+klT
+s/vextendsingle/vextendsingle/vextendsingle/vextendsingle
+l
+3.heat of fusion
+Look closely:
+Tqin=klx/vextendsingle/vextendsingle/vextendsingle/vextendsingle
+x=s,l</text>
+        </slide>
+      </slides>
+      <videos/>
+    </lecture>
+    <lecture>
+      <lecture_title>Friction welding
+Introduction to radiation
+Black bodies, emissivity &amp; radiation M number</lecture_title>
+      <lecture_pdf_url>https://ocw.mit.edu/courses/3-044-materials-processing-spring-2013/resources/mit3_044s13_lec07/</lecture_pdf_url>
+      <lectureno>7</lectureno>
+      <slides>
+        <slide>
+          <slideno>5</slideno>
+          <text>MIT OpenCourseWare
+http://ocw.mit.edu
+3.044 Materials Processing
+Spring 2013
+For information about citing these materials or our Terms of Use, visit: http://ocw.mit.edu/terms .</text>
+        </slide>
+        <slide>
+          <slideno>3</slideno>
+          <text>4 LECTURE 7
+In a cavity:
+qe=qe,b=T4
+What kind of boundary condition can we write?
+Net ux at the object:
+qnet=qemittedqradincoming
+=qe,bqrad
+=/parenleftbig
+T4
+surfqrad
+=/parenrightbig
+/parenleftbig
+T4
+surfT4
+source
+=/parenrightbig
+/parenleftbig
+T4
+surfT4
+source/parenrightbig
+Summary:
+Tqcond=kx
+qconv=h(TTf)
+qnet=/parenleftbig
+T4
+surfT4
+source
+T4: rapid onset, importan/parenrightbig
+t at high T and irrelevant at low T
+T4
+objT4
+furnace: if the object is much colder than the furnace then you can assume T4
+obj0</text>
+        </slide>
+        <slide>
+          <slideno>2</slideno>
+          <text>3.044 MATERIALS PROCESSING 3
+Is there a real blackbody?: Sort of... there are cavities
+Light is emitted but cannot be lost:
+At p emission
+qe=wallqe,b
+At Q reection
+qQ=wallwallqe,b=( 1wall)wallqe,b
+At R reection #2
+qR=wall(wallwallqe,b)
+At S reection #3
+qS=wallwallwallwallqe,b
+After n reections
+qn=n
+wallwallqe,b
+Total
+qe=( 1+2
+wall+wall+...)wallqe,b
+1= 1wallqe,bwall
+wall= q1e,bwall
+wall=qe,bwall
+=qe,b</text>
+        </slide>
+        <slide>
+          <slideno>1</slideno>
+          <text>2 LECTURE 7
+Governing Equation:
+T=t2T
+hLBir=R, where h = 10-20, L =k,a n dk=3 52
+=smallno gradient in the solid ALONG r
+Solution:
+TTf1=TmTfer2/parenleftbigg
+fz
+2+t/parenrightbigg /parenleftbigg+zerf2
+t/parenrightbigg
+Radiative Heat Transfer
+In equilibrium: energy absorbed = energy emitted qrad=qe
+ABlack Body is an idealized solid that
+1. absorbs everything: b=1
+2. emits light perfectly (Planck, Stefan-Boltzman): qe,b=T4
+is the Stefan-Boltzman constant = 5.669 x 108W
+m2K4
+Blackbody in equilibrium: qrad,b=qe,b
+Most solids and liquids are not black but gray: qe=qe,b
+= emissivity: a unitless fraction of blackbody emmitted ux
+Another important note: =, for gray bodies emissivity = absorptivity</text>
+        </slide>
+        <slide>
+          <slideno>4</slideno>
+          <text>3.044 MATERIALS PROCESSING 5
+To compare convection and conduction use: The Bi number
+To compare conduction and radiation use:
+kT=(T4
+x surfT4
+source)
+M=L
+kT3
+surf
+If M&gt;10, then radiation is fast, conduction is rate limiting
+If M&lt;0.1, then conduction is fast (no gradients)</text>
+        </slide>
+        <slide>
+          <slideno>0</slideno>
+          <text>3.044 MATERIALS PROCESSING
+LECTURE 7
+Ex. 4:Friction Welding geometry not always obvious without some calculations
+Problem Statement: Locally need to melt and join, not much heat away from the
+joint or heat aected zone (HAZ)
+Geometry:
+Boundary Conditions:
+T@z=0,symmetry: =0z
+T@r=0,symmetry: =0r
+@t=0,inz:T=Tm
+@r=R=3 c m: qconv=h(TTf)
+WwhereTf=2 5C,andh=1 020m2K
+@z=:T=Tf
+Date : February 29th, 2012.
+1</text>
+        </slide>
+      </slides>
+      <videos/>
+    </lecture>
+    <lecture>
+      <lecture_title>Binary solidification, no diffusion in the solid
+Solute balance, partition coefficient</lecture_title>
+      <lecture_pdf_url>https://ocw.mit.edu/courses/3-044-materials-processing-spring-2013/resources/mit3_044s13_lec10/</lecture_pdf_url>
+      <lectureno>10</lectureno>
+      <slides>
+        <slide>
+          <slideno>1</slideno>
+          <text>2 LECTURE 10
+3.Thick casting in cooled mold
+dss/l interface:k=dtT
+Hf/parenleftbiggT
+x/vextendsingle/vextendsingle/vextendsingle/vextendsingle
+xT,wx/vextendsingle/vextendsingle/vextendsingle/vextendsingle
+l/parenrightbigg
+h e r e 0x/vextendsingle/vextendsingle/vextendsingle/vextendsingle
+l
+solidx=ERF2st
+T=T0
+AT0
+s(t)=2st
+Vtf/parenleftbigg
+A/parenrightbigg2
+2e (TmERF=T0)cp,s
+Hf Read o chart
+4.Growing single crystal silicon
+no T gradients in solid or liquid
+inert atmosphere: h1020W
+m2K</text>
+        </slide>
+        <slide>
+          <slideno>3</slideno>
+          <text>MIT OpenCourseWare
+http://ocw.mit.edu
+3.044 Materials Processing
+Spring 2013
+For information about citing these materials or our Terms of Use, visit: http://ocw.mit.edu/terms .</text>
+        </slide>
+        <slide>
+          <slideno>2</slideno>
+          <text>3.044 MATERIALS PROCESSING 3
+dsv= pulling velocity =k=dtHf/parenleftbiggT
+z/vextendsingle/vextendsingle/vextendsingle/vextendsingle
+sT
+z/vextendsingle/vextendsingle/vextendsingle/vextendsingle
+l/parenrightbigg
+,w h e r eT0z/vextendsingle/vextendsingle/vextendsingle/vextendsingle
+l
+Assume steady state:
+qcond
+/bracehtipdownleftin/bracehtipupright/bracehtipupleft /bracehtipdownright/parenleftbigg
+kTqcond
+out
+Az/vextendsingle/vextendsingle/vextendsingle/vextendsingle
+1
+in/parenrightbigg
+/bracehtipdownleft /bracehtipupright/bracehtipupleft /bracehtipdownright/parenleftbigg
+kTq
+Az/vextendsingle/vextendsingle/vextendsingle/vextendsingle
+1
+out/parenrightbigg conv
++qv
+inqv
+out/bracehtipdownleft /bracehtipupright/bracehtipupleft
+(h(TTf)A2/bracehtipdownright
+)=0
+Solve for qv
+inandqv
+out:
+energyinmass in=Hintime time
+mw=Vol
+Vol=A1v
+qv
+in=A1vHin
+qv
+out=A1vHout
+H=cpT
+Solve Heat Balance:
+TT0 v=EXPTfT0/parenleftBigg
+/parenleftBigg
+2/radicalbigg
+2(v2)2h+zRk/parenrightBigg /parenrightBigg</text>
+        </slide>
+        <slide>
+          <slideno>0</slideno>
+          <text>3.044 MATERIALS PROCESSING
+LECTURE 10
+1.Casting: Thick mold, mold conduction limiting: s
+ttf/parenleftbigV2
+A/parenrightbig
+2.Die Casting: Thin cooled mold, interface limiting: st
+Date : March 12th, 2012.
+1</text>
+        </slide>
+      </slides>
+      <videos/>
+    </lecture>
+    <lecture>
+      <lecture_title>Steel solidification continued
+Steel factory design
+A bit about electronics manufacturing</lecture_title>
+      <lecture_pdf_url>https://ocw.mit.edu/courses/3-044-materials-processing-spring-2013/resources/mit3_044s13_lec23/</lecture_pdf_url>
+      <lectureno>23</lectureno>
+      <slides>
+        <slide>
+          <slideno>2</slideno>
+          <text>3.044 MATERIALS PROCESSING 3
+Solution: solve with geometry</text>
+        </slide>
+        <slide>
+          <slideno>1</slideno>
+          <text>2 LECTURE 23
+Mass Conservation/Balance:
+Ficks Second Law:c =Dt/parenleftbigg2c2c+x2c+y2/parenrightbigg
+Vx
+Boundary Conditions:
+1.atx=0,c=ci;2.aty=0,c=0; 3.cy=Ly,dc=0dy
+Assume Steady-State:
+4cic=ysin/parenleftbigg
+2Ly/parenrightbigg
+exp/parenleftbiggDx
+4VL2
+x/parenrightbigg
+s MwJt |y=0=Mw
+rhoDc
+y/vextendsingle/vextendsingle/vextendsingle/vextendsingle
+y=0
+s 2ciD=tLyMw
+exp/parenleftbigg
+2Dx
+4VL2
+x/parenrightbigg</text>
+        </slide>
+        <slide>
+          <slideno>3</slideno>
+          <text>MIT OpenCourseWare
+http://ocw.mit.edu
+3.044 Materials Processing
+Spring 2013
+For information about citing these materials or our Terms of Use, visit: http://ocw.mit.edu/terms .</text>
+        </slide>
+        <slide>
+          <slideno>0</slideno>
+          <text>3.044 MATERIALS PROCESSING
+LECTURE 23
+CVD:
+hot reactive gas reacts with surface of substrate and creates a thin layer of reaction
+productused in electronics
+Ficks First Law: /vectorJ=Dc/bracehtipupleft/bracehtipdownright/bracehtipdownleft+cV
+Fickian/bracehtipupright/bracehtipupleft/bracehtipdownright/bracehtipdownleft/bracehtipupright
+Drift
+Date : May 16th, 2012.
+1</text>
+        </slide>
+      </slides>
+      <videos/>
+    </lecture>
+    <lecture>
+      <lecture_title>Pilkington glass process&#8211;fluid flow
+Pilkington glass process&#8211;heat transfer
+Drag force</lecture_title>
+      <lecture_pdf_url>https://ocw.mit.edu/courses/3-044-materials-processing-spring-2013/resources/mit3_044s13_lec15/</lecture_pdf_url>
+      <lectureno>15</lectureno>
+      <slides>
+        <slide>
+          <slideno>0</slideno>
+          <text>3.044 MATERIALS PROCESSING
+LECTURE 15
+Pilkington Sheet Glass Process
+Pour molten glass on a liquid, let it settle/atten and then let it cool
+higherthan glass glass= 2500kg
+m3
+liquid temperature between Trigid550Ca n dTworking900C
+immiscible
+Answer: Liquid Metal
+Sn (tin)Sn= 7000kg
+m3
+The velocity of the sheet is determined by economic input:
+need 750 tonnes/day to compete with block casting and grinding
+mVsheet=1 0min
+Date : April 9th, 2012.
+1</text>
+        </slide>
+        <slide>
+          <slideno>4</slideno>
+          <text>3.044 MATERIALS PROCESSING 5
+=1
+t1530sec
+Summary of Fluid Flow
+v 
+=t2Fv+P
+
+vx2vx=ty2+Fx
+1P
+x
+Navier-Stokes Equation: solve this with boundary conditions laminar ow
+Fluids can transfer momentum to solids</text>
+        </slide>
+        <slide>
+          <slideno>6</slideno>
+          <text>MIT OpenCourseWare
+http://ocw.mit.edu
+3.044 Materials Processing
+Spring 2013
+For information about citing these materials or our Terms of Use, visit: http://ocw.mit.edu/terms .</text>
+        </slide>
+        <slide>
+          <slideno>1</slideno>
+          <text>2 LECTURE 15
+T w oP h y s i c a lG o a l s
+1) Fluid Flow at, stable lm, level glass
+2) Heat Transfer cool to 550C from 900C
+Fluid Flow:
+kgglass= 2500m3
+glass=1 02Pas
+kgSn= 7000m3
+Sn=3103Pas</text>
+        </slide>
+        <slide>
+          <slideno>5</slideno>
+          <text>6 LECTURE 15
+Fluid Flow in a Pipe:
+Pipe:
+PVx=R4L/parenleftbig2r2/parenrightbig
+At the wall:
+Vyx=zr/vextendsingle/vextendsingle/vextendsingle/vextendsingle
+r=R
+Stress on the Inner Pipe Wall:
+P0=P2R=R
+4L 2L
+Kinetic Force: (drag force, total force exerted by the uid on the solid)
+Fk=/integraldisplay
+dA
+A
+PR=2L2RL
+Fk=PR2</text>
+        </slide>
+        <slide>
+          <slideno>3</slideno>
+          <text>4 LECTURE 15
+Heat Transfer:
+WVapor/glass interface: h=1 0m2K
+WGlass:k=1.7,L=0.007mmK
+hLBi: =0.04k
+Bi is Low!conduction is rapid
+in glass and convection is slow
+WTin:k=3 5mK
+Compare the resistances of glass and Sn:
+resistance of Sn is low Sn is a great heat sink
+H o wl o n gd o e si tt a k et oc o o l ?</text>
+        </slide>
+        <slide>
+          <slideno>2</slideno>
+          <text>3.044 MATERIALS PROCESSING 3
+How long does it take to remove the transient? How long does it take to
+g e tt os t e a d y - s t a t e ?
+In Diusion:
+t=
+dimensionless/bracehtipupleft/bracehtipdownright/bracehtipdownleft/bracehtipupright
+time=1L2
+kinematic
+viscosity
+=/bracehtipdownleft/bracehtipupright/bracehtipupleft/bracehtipdownrightt
+L2
+L2
+tss=/parenleftBig
+
+/parenrightBig
+For glass:
+L=0.007m, =1 02 kgPas,= 2500m3
+tss=0.0001s
+For tin:
+kgL=0.007m, =3103Pas,= 7000m3
+mtss= 114s,V sheet=1 0min
+Length of travel to achieve steady state: 20m</text>
+        </slide>
+      </slides>
+      <videos/>
+    </lecture>
+    <lecture>
+      <lecture_title>1D fluid flow with body forces
+Flow through plates
+Chart of all math in 3.044
+Introduction to glass production</lecture_title>
+      <lecture_pdf_url>https://ocw.mit.edu/courses/3-044-materials-processing-spring-2013/resources/mit3_044s13_lec14/</lecture_pdf_url>
+      <lectureno>14</lectureno>
+      <slides>
+        <slide>
+          <slideno>2</slideno>
+          <text>3.044 MATERIALS PROCESSING 3
+Maximum velocity occurs at y=0 :
+gsinVmax= L2
+2
+Average velocity:
+Vavg=/integraltextLVxdy0 gsin/integraltext= L2
+Ldy3
+0
+2Vavg=Vmax3
+Net Flow Rate:
+Q=VavgA
+whereAis the cross-sectional area of ow
+Pressure Driven Flow:
+Force Balance:
+Fnet=(P1P2)DW</text>
+        </slide>
+        <slide>
+          <slideno>6</slideno>
+          <text>MIT OpenCourseWare
+http://ocw.mit.edu
+3.044 Materials Processing
+Spring 2013
+For information about citing these materials or our Terms of Use, visit: http://ocw.mit.edu/terms .</text>
+        </slide>
+        <slide>
+          <slideno>5</slideno>
+          <text>6 LECTURE 14
+Plate Glass
+1500-1600 modied glass blowing
+1700 cast large blocks + grinding + polishing
+1930 continuous rolling + grinding + polishing ( 25%)
+1970 Pilkington Process: pour molten glass onto a liquidmold
+need liquid with special properties</text>
+        </slide>
+        <slide>
+          <slideno>3</slideno>
+          <text>4 LECTURE 14
+Force Per Volume:
+(P1P2)D WFp= 
+(DWL)
+PFp=L
+Full Equation for Flow:
+Vx2VxFxP=+ +t y2 L
+1-D Fluid Flow Equation:
+Vx2VxFx1P=+t y2x
+Assume Body Force is Zero:
+=0
+Vx2VxFx1P=+t y2/bracehtipdownleft/bracehtipupright/bracehtipupleft/bracehtipdownright
+x
+Steady State:
+2Vx1 P=y2L
+Boundary Conditions:
+@y=0,Vx=0
+@y=D,Vx=0
+Pressurized Flow Between Horizontal Plates:
+PVx=8L/parenleftbig
+D24y2/parenrightbig</text>
+        </slide>
+        <slide>
+          <slideno>0</slideno>
+          <text>3.044 MATERIALS PROCESSING
+LECTURE 14
+1-D Fluid Flow
+Newtons Law of Viscosity: yx=Vx
+y
+(Vx)Momentum Balance:2Vx=t+Fxy2
+Assume Incompressible:Vx2Vx=ty2+Fx
+
+Lets Explore Body Force: e.g. gravity
+no gravity for horizontal ow, more relevant for inclined ow
+Falling Film:
+gx=|g|sin
+gx=gsin
+Body Force:
+Fx=gsin
+Date : April 4th, 2012.
+1</text>
+        </slide>
+        <slide>
+          <slideno>4</slideno>
+          <text>3.044 MATERIALS PROCESSING 5
+Pressurized Flow In a Tube:
+PVz=4L/parenleftbig
+R2r2/parenrightbig
+VzV=/integraltextR2rdr2
+0 PR
+avg /integraltext =R2rdr8L
+0
+Summary and Comparison:
+Chemical HeatFluid FlowDiusion Conduction
+Conservedmoles of solute joules of energy kgmof momentums Quantity
+Localc (cp)T ()VDensity of It
+Ficks 1st: Fourier: Newton:/bracketleftbig /bracketrightbig /bracketleftbig /bracketrightbig /bracketleftbig /bracketrightbig Flux (1-D)=Dcmolq=kTJ=Vxkgj2 2 yx 2xm s xm s yms
+Conservationc T (V x) =P= (j)+G c p=(q)+q yx+Fx t x t x t Lx Equation (1-D)
+Diusionc=D2c T=2Tq Vx=2VxFxP1+G + +t x2 t x2cp t y2  x Equation (1-D)
+2 2 2m k m mDiusivity D = =s cp s  s
+/parenleftBig /parenrightBig /parenleftbig /parenrightbigTFlux (3-D) j=DC q =kT =V+V
+Diusionc T q V FP=D2c+G=2T+ =2V+t t cp t   Equation (3-D)</text>
+        </slide>
+        <slide>
+          <slideno>1</slideno>
+          <text>2 LECTURE 14
+Steady State Flow Eq.
+Vx0=Vx=tFx+y
+Vx0=Vx=t+gsiny
+Solve:
+2Vxg=y2sin
+/integraldisplay
+d/parenleftbiggVx
+y/parenrightbigg
+=/integraldisplay
+gsindy/integraldisplay
+dVx=/integraldisplay/parenleftBiggsiny+A/parenrightBig
+dy
+gVx=2siny2+Ay+B
+Boundary Conditions:
+Vx@y=0,=0yyx=0
+@y=L,Vx=0
+Plug in B.C:
+Vx g=y/vextendsingle/vextendsingle/vextendsingle/vextendsingle
+y=0/parenleftBig
+sin/parenrightBig
+0+A=0A=0
+gVx|y=L=sinL2+0(y)+B=02gB=sinL2
+2
+gsinVx= L2/parenleftbig2y2/parenrightbig</text>
+        </slide>
+      </slides>
+      <videos/>
+    </lecture>
+    <lecture>
+      <lecture_title>Zone refining
+Solidification with finite diffusion in liquid
+Unstable solidification fronts
+Engineering binary alloy microstructures</lecture_title>
+      <lecture_pdf_url>https://ocw.mit.edu/courses/3-044-materials-processing-spring-2013/resources/mit3_044s13_lec11/</lecture_pdf_url>
+      <lectureno>11</lectureno>
+      <slides>
+        <slide>
+          <slideno>0</slideno>
+          <text>3.044 MATERIALS PROCESSING
+LECTURE 11
+Solidication of Multicomponent Liquids
+single component system: single Tm
+multicomponent system: solidify over a range of T
+Date : March 19th, 2012.
+1</text>
+        </slide>
+        <slide>
+          <slideno>3</slideno>
+          <text>4 LECTURE 11</text>
+        </slide>
+        <slide>
+          <slideno>6</slideno>
+          <text>MIT OpenCourseWare
+http://ocw.mit.edu
+3.044 Materials Processing
+Spring 2013
+For information about citing these materials or our Terms of Use, visit: http://ocw.mit.edu/terms .</text>
+        </slide>
+        <slide>
+          <slideno>5</slideno>
+          <text>6 LECTURE 11
+from phase diagram, k describes the width of a 2-phase eld
+k is a materials constant if and only if the solidus and liquidus are lines
+rst solid to form is of composition cs,1
+cs,1=kc0
+c
+s=cs,1=kc0
+Solve: Non-Equilibrium Lever Rule
+cS=kc0(1fs)(k1)or(kcl=c0f1)
+l
+The Non-Equilibrium Lever Rule applies to stirred liquids, rapid
+diusion in liquid, slow solid diusion</text>
+        </slide>
+        <slide>
+          <slideno>4</slideno>
+          <text>3.044 MATERIALS PROCESSING 5
+Solute Balance:
+(clc
+s)dfs=fldcl
+(clcs)dfs=( 1fs)dcl
+dfs dcl=1fs clc
+s
+B.C.@fs=0: cl=c0&amp;c
+s=cs,1
+Dene k:partition coecient
+csk=cl</text>
+        </slide>
+        <slide>
+          <slideno>1</slideno>
+          <text>2 LECTURE 11
+1.Assume: equilibrium solidication (rapid diusion in both liquid and solid)</text>
+        </slide>
+        <slide>
+          <slideno>2</slideno>
+          <text>3.044 MATERIALS PROCESSING 3
+Key Lesson: phase transformations push solute around
+Conservation of Solute: Lever Rule: c0=fscs+flcl
+2.More realistic assumption: diusion is fast in liquid and non-existent in
+solid</text>
+        </slide>
+      </slides>
+      <videos/>
+    </lecture>
+    <lecture>
+      <lecture_title>Newtonian flow
+Introduction to non-Newtonian
+Solid state shape forming</lecture_title>
+      <lecture_pdf_url>https://ocw.mit.edu/courses/3-044-materials-processing-spring-2013/resources/mit3_044s13_lec18/</lecture_pdf_url>
+      <lectureno>18</lectureno>
+      <slides>
+        <slide>
+          <slideno>3</slideno>
+          <text>4 LECTURE 18
+mis dened as strain rate sensitivity
+when m = 1, Newtonian uid like
+when m&lt;1, non-Newtonian
+Stability of Tensile Flow:
+Will necking to failure occur? How far will it stretch?
+iAi=hAh
+
+stress geometry
+relates to strain</text>
+        </slide>
+        <slide>
+          <slideno>2</slideno>
+          <text>3.044 MATERIALS PROCESSING 3
+Solid State Shape Forming:
+Hot solid material: must be high enough temperature to have viscous (uid like)
+ow, but not so high that it melts
+Newtons law of viscosity Creep
+for small angles: x
+yx
+y
+xy=vx
+y=
+t=
+t/parenleftBig
+x
+y/parenrightBig
+=
+y(vx)
+=vx
+y
+In conclusion: Newtons law of viscosity for uids is same as the creep law
+for solids except for a factor of and the negative sign dierence between solid and
+uid mechanics
+xy=</text>
+        </slide>
+        <slide>
+          <slideno>5</slideno>
+          <text>MIT OpenCourseWare
+http://ocw.mit.edu
+3.044 Materials Processing
+Spring 2013
+For information about citing these materials or our Terms of Use, visit: http://ocw.mit.edu/terms .</text>
+        </slide>
+        <slide>
+          <slideno>1</slideno>
+          <text>2 LECTURE 18
+Can this process be continuous?
+Conservation of Volume:
+m3
+(0.25)(1)(1.3) =( 0.0005)(1)(V out)s
+mVout= 650m=2 5min hr
+Such a high velocity is dangerous and requires an extremely long factory
+Therefore: Theonlypathtofullycontinuousstripproductionistocasteventhinner
+strip casting
+How do you maintain throughput?
+parallelize multi-strand casting (requires hugecapital investment)
+New processes: mini-mills
+record thin casting 2mm
+s=2
+t</text>
+        </slide>
+        <slide>
+          <slideno>4</slideno>
+          <text>3.044 MATERIALS PROCESSING 5
+General Power-Law Equation:
+=m
+/epsilon1m
+iAi=/epsilon1mhAh
+Volume Conserved:
+V0=V
+A0L0=AL
+True Strain:
+/epsilon1=l n/parenleftbiggL
+L0/parenrightbigg
+/epsilon1=l n/parenleftbiggA0
+A/parenrightbigg
+A=A0exp(/epsilon1)
+/epsilon1miA0,iexp(/epsilon1)=/epsilon1mhA0,hexp(/epsilon1)
+/epsilon1i/parenleftBig1
+Am
+0,iexp/parenleftBig
+/epsilon1i
+m/parenrightBig/parenrightBig
+=/epsilon1h/parenleftBig
+A1
+m
+0,hexp/parenleftBig/epsilon1h
+m/parenrightBig/parenrightBig
+d/epsilon1i1
+Adt/parenleftBig
+m
+0,iexp/parenleftBig
+/epsilon1i
+m/parenrightBig/parenrightBig
+=d/epsilon1h
+dt/parenleftBig
+A1
+m
+0,hexp/parenleftBig
+/epsilon1h
+m
+1/parenrightBig/parenrightBig
+d/epsilon1iAm
+0,ie/epsilon1i
+m=d/epsilon1iA1 /epsilon1
+m
+0,heh
+m</text>
+        </slide>
+        <slide>
+          <slideno>0</slideno>
+          <text>3.044 MATERIALS PROCESSING
+LECTURE 18
+Results from last time:
+Fluid Flow
+the force of gravity is enough to deliver the metal into the mold
+turbulent ow well mixed (good), but more aggressive on solid tube (bad)
+Heat Transfer
+solidication takes 13min,17m
+Date : April 25th, 2012.
+1</text>
+        </slide>
+      </slides>
+      <videos/>
+    </lecture>
+    <lecture>
+      <lecture_title>Colloid processing
+Slurry settling / casting</lecture_title>
+      <lecture_pdf_url>https://ocw.mit.edu/courses/3-044-materials-processing-spring-2013/resources/mit3_044s13_lec21/</lecture_pdf_url>
+      <lectureno>21</lectureno>
+      <slides>
+        <slide>
+          <slideno>4</slideno>
+          <text>3.044 MATERIALS PROCESSING 5
+AaVan der Waals attract: UA= ,w h e r eA ais the Hanaker Constant12h
+Powder Packing from Slurry:
+A) Driven by gravity (acceleration)
+slurry settling
+centrifugal casting
+B) Driven by uid removal
+tape casting (electronics)</text>
+        </slide>
+        <slide>
+          <slideno>6</slideno>
+          <text>MIT OpenCourseWare
+http://ocw.mit.edu
+3.044 Materials Processing
+Spring 2013
+For information about citing these materials or our Terms of Use, visit: http://ocw.mit.edu/terms .</text>
+        </slide>
+        <slide>
+          <slideno>0</slideno>
+          <text>3.044 MATERIALS PROCESSING
+LECTURE 21
+Powder Consolidation: often easier than making the shape
+
+Slurry/Colloid Processing:
+suspend particles in a uid
+use uid ow to make shapes
+remove uid
+sinter
+Aqueous Solutions:
+H2OH+OH
+[H2O] k/bracehtipupleft/bracehtipdownright/bracehtipdownleft=
+1014/bracketleftbig
+H+/bracketrightbig/bracketleftbig
+OH/bracketrightbig
+/bracehtipupright
+/bracketleftbig
+H+/bracketrightbig
+= [OH] = 107
+pH =log/bracketleftbig
+H+/bracketrightbig
+Date : May 9th, 2012.
+1</text>
+        </slide>
+        <slide>
+          <slideno>1</slideno>
+          <text>2 LECTURE 21
+x=sexp/parenleftbigg
+x0/parenrightbiggxD=/bracketleftbigg
+r0RT/bracketrightbigg
+/summationtext
+iniz2
+iF2
+rdielectric constant
+0permativity of free space = 9 1012 C
+Jm
+R gas constant (per mole)
+T temperature
+niconcentration of ions present
+zicharge fo ions present
+F Faradays constant = 9 .7104C
+mol
+For H 2O+
+For Water 0.01M HNO 3
+r=8 0 r=8 0
+T= 300K T= 300K
+nH+=1 07nH+=1 02
+zH+=1 zH+=1
+nOH=1 07nOH=1 02
+nOH=- 1 nOH=- 1</text>
+        </slide>
+        <slide>
+          <slideno>3</slideno>
+          <text>4 LECTURE 21
+Particle Interactions in Suspension</text>
+        </slide>
+        <slide>
+          <slideno>5</slideno>
+          <text>6 LECTURE 21
+slip casting</text>
+        </slide>
+        <slide>
+          <slideno>2</slideno>
+          <text>3.044 MATERIALS PROCESSING 3
+Fluid Flow:
+induced during processing
+suspended particle always moves by Brownian motion</text>
+        </slide>
+      </slides>
+      <videos/>
+    </lecture>
+    <lecture>
+      <lecture_title>Heat conduction equation review</lecture_title>
+      <lecture_pdf_url>https://ocw.mit.edu/courses/3-044-materials-processing-spring-2013/resources/mit3_044s13_lec02/</lecture_pdf_url>
+      <lectureno>2</lectureno>
+      <slides>
+        <slide>
+          <slideno>1</slideno>
+          <text>2 
+LECTURE 2 
+Taking k out of the derivative assumes that k  = f(x) and k= f(T ), 
+because T = f(x). 
+Is this assumption valid? 
+For most materials for most small working T ranges (&lt; factor of 2) is usually 
+negligible. 
+Simplify the conduction equation: 
+What we have done so far: 
+T cp = V  k VT t 
+T =  V2 T t 
+3D to 1D 
+T 2T =  t x2 
+Assumption 1: Steady State 
+unchanging temperature with time (T prole), Steady State Conduction: heat is owing, but at constant rates everywhere 
+T = V2T = 0 t 
+V2T = 0 Laplace Equation 
+1-D Sheet and Bar 
+2T = 0 x2</text>
+        </slide>
+        <slide>
+          <slideno>7</slideno>
+          <text>MIT OpenCourseWare
+http://ocw.mit.edu
+3.044 Materials Processing
+Spring 2013
+For information about citing these materials or our Terms of Use, visit: http://ocw.mit.edu/terms .</text>
+        </slide>
+        <slide>
+          <slideno>0</slideno>
+          <text>3.044 MATERIALS PROCESSING 
+LECTURE 2 
+Recap: Conduction Equation 
+3D: cp T = V  k VT = k V2 Tt
+ 
+T  k T = k T 2
+ 1D: cp = t x x t2 
+in our derivation last time we stated... 
+H x = qin  qout 
+    T 
+= q|
+x  q|x+x      
+ 
+ 
+ 
+T
+ T
+ k
+ +k
+ =
+x
+ x
+x+x x 
+T
+ 
+ xx+x T
+ 
+x
+    
+    
+ 
+  
+= k
+x
+T 
+x = k x 
+2T = k assumes k independent of x, T t2 
+Is it possible that the value of k is dierent at x and x + x? 
+Date : February 13th, 2012. 
+1</text>
+        </slide>
+      </slides>
+      <videos/>
+    </lecture>
+    <lecture>
+      <lecture_title>Glass fibers &amp; thermal spray industrial processes
+Analyzing thermal spray coatings</lecture_title>
+      <lecture_pdf_url>https://ocw.mit.edu/courses/3-044-materials-processing-spring-2013/resources/mit3_044s13_lec05/</lecture_pdf_url>
+      <lectureno>5</lectureno>
+      <slides>
+        <slide>
+          <slideno>3</slideno>
+          <text>4
+LECTURE 5
+hLGoverning Equation: Bi=k=hR
+k3h= 500
+R= use larges particle which takes the longest to melt = 50 m
+k=1 6W
+mK
+Bi104&lt;0.1Newtonian Equation
+TTf
+T0Tf=e x p/parenleftbigg
+htcpL/parenrightbigg
+T=Tm,Ni= 1700K
+Tf= 3000K
+T0= 300K
+h= 500
+kg= 8500m3
+kJcp=0.5kgK
+R=5 0m3
+Solve for t c:tc=0.18s
+recall: v = 100mbsdistance travelled efore melting = 18m
+How to decrease t and therefore decrease distance travelled?
+- preheat the powder T0
+- better plasma? Tf
+- smaller R plausible but costs a lot of money
+-changematerial
+- change h but h is already pretty large
+Arc Melter to increase plasma temperature:</text>
+        </slide>
+        <slide>
+          <slideno>0</slideno>
+          <text>3.044 MATERIALS PROCESSING
+LECTURE 5
+General Heat Conduction Solutions:
+T=kT, T(x,t)t
+Trick one: steady state 2T=0,T(x)
+Trick two: low Biot numberT=h(Ts tTf),T(t)
+Transient:
+- semi-innite
+- innite series: book, analytical- graphical solutions- computers, numerical, nite elements
+Example 1: Continuous glass ber production
+Problem Statement: need to cool from T= 1200K to T= 800K in 2ms
+Date : February 22nd, 2012.
+1</text>
+        </slide>
+        <slide>
+          <slideno>2</slideno>
+          <text>3.044 MATERIALS PROCESSING 3
+kJcp=0.12kgK
+h101000
+T0= 1200K
+Tf= 300K
+T750K
+Solve for h (the only changable variable): h260W
+m2K
+- oil bath w/ stando/air gap
+-big fans
+- other gases
+Example 2: Thermal Spray Coatings / Plasma Spray
+Specic Example:
+oxyacetylene torch: T= 2700C
+powder: Ni alloy MAR-M200, r=250m
+Problem Statement: need a particle to melt in ight (T =Tm,@r=0 )
+Geometry: assume spherical particle
+Boundary Conditions:
+1.@r= 0 implicit symmetry condition:T=0r
+q=h(T T)2.@r=Rconvection into ambient air:f
+Tf= 2700C,h500W
+m2K</text>
+        </slide>
+        <slide>
+          <slideno>4</slideno>
+          <text>MIT OpenCourseWare
+http://ocw.mit.edu
+3.044 Materials Processing
+Spring 2013
+For information about citing these materials or our Terms of Use, visit: http://ocw.mit.edu/terms .</text>
+        </slide>
+        <slide>
+          <slideno>1</slideno>
+          <text>2
+LECTURE 5
+Geometry/Coordinates: long cylinder of 10 m diameter with a moving reference
+frame
+Boundary Conditions:
+1.T 0= 1200K
+2.@r=Rconvection into ambient air: q=h(TTf)
+3.@r= 0 implicit symmetry condition:T=0r
+hLGoverning Equation: Bi=k
+volL=R2l=surface area 2rl=R=2.5m2
+k= thermal conductivity of glass = 1. 7W
+mK
+his dependent on the uid into which you draw the ber into: h=1 01000
+(10Bi=1000)(2.5 x106)
+1.7(101000)(106)&lt;&lt;0.1Newtonian Cooling
+TTf h=e x pT0Tf/parenleftbigg
+tcpL/parenrightbigg
+RL==2.5m2
+kg= 2500m3</text>
+        </slide>
+      </slides>
+      <videos/>
+    </lecture>
+    <lecture>
+      <lecture_title>Introduction to fluid flow
+Momentum conservation
+Flow between parallel plates
+Fluid free surface boundary condition</lecture_title>
+      <lecture_pdf_url>https://ocw.mit.edu/courses/3-044-materials-processing-spring-2013/resources/mit3_044s13_lec13/</lecture_pdf_url>
+      <lectureno>13</lectureno>
+      <slides>
+        <slide>
+          <slideno>4</slideno>
+          <text>3.044 MATERIALS PROCESSING 5
+Diusivity of Momentum is also known as Kinematic Viscosity
+=
+PaUnits:s
+kgN=sm3
+m3m2kg=m2
+s
+Momentum diuses through a owing uid
+At steady state:
+vx=t2vx
+=0y2
+2vx=0y2
+Boundary Conditions:
+@y=0,v=v0
+@y=L, v=0
+Solve:
+vx y
+vvx=v00yL=A+B</text>
+        </slide>
+        <slide>
+          <slideno>2</slideno>
+          <text>3.044 MATERIALS PROCESSING 3
+Dierentially small element:
+Newtons Law of ViscosityV:yx=xy
+only applies to simple uids, Newtonian uids
+Well return to non-Newtonian uids later
+Compare:
+1. yx=Vx2. q=ykT3. j=xDc
+x
+Whats Dierent?
+q =kT VS. =v
+v/bracehtipupleft/bracehtipdownright/bracehtipdownleft/bracehtipupright
+ector grad/bracehtipupleft/bracehtipdownright/bracehtipdownleft/bracehtipupright
+scalar 2nd rank/bracehtipupleft/bracehtipdownright/bracehtipdownleft/bracehtipupright
+tensor grad/bracehtipupleft/bracehtipdownright/bracehtipdownleft/bracehtipupright
+vector
+Stressis equivalent to a Flux of Momentum:
+Stress Momentum Flux
+FmvA
+Nkg kgmkgsUnits: = Units: =2 2 2 2 m m s ms ms
+Momentum Balance (1-D):</text>
+        </slide>
+        <slide>
+          <slideno>3</slideno>
+          <text>4 LECTURE 13
+momentum in
+Ayx|y/bracehtipupleft/bracehtipdownright/bracehtipdownleft/bracehtipupright
+N
+m2m2momentum out
+Ayx|y+y/bracehtipupleft/bracehtipdownright/bracehtipdownleft/bracehtipupright
+Nmomentum generated
++
+22mmFxV/bracehtipupleft/bracehtipdownright/bracehtipdownleft/bracehtipupright
+Nmomentum accumulated
+=
+33mmV(vx)
+t/bracehtipupleft/bracehtipdownright/bracehtipdownleft/bracehtipupright
+m3kg m
+3m2s
+Divide through by V=Ay
+yx|yyx|y+y (vx)+Fx=y t
+Plug in Newtons Law of Viscosity
+v
+y/parenleftBigg
+x
+y/vextendsingle/vextendsingle/vextendsingle/vextendsingle
+y+yvx
+y/vextendsingle/vextendsingle/vextendsingle/vextendsingle
+y/parenrightBigg
++Fx=(vx)
+t
+vxyy+Fx=(vx)
+t
+1-D Fluid Flow Equation
+2vx (vx)+Fx=y2 t
+Assumeis constant
+2vxy2+Fx=vx
+t
+vx=t/parenleftbigg
+/parenrightbigg2vx
+y2+Fx
+
+Compare:
+vx1.t=/parenleftbigg
+/parenrightbigg
+/bracehtipupleft/bracehtipdownright/bracehtipdownleft2vx
+diusivity of m/bracehtipupright
+omentumy2+Fx
+
+2.c 2c=Dt
+diusivit/bracehtipupleft/bracehtipdownright/bracehtipdownleft/bracehtipupright
+yx2
+3.T 2T=t
+thermal/bracehtipupleft/bracehtipdownright/bracehtipdownleft/bracehtipupright
+diusivityx2</text>
+        </slide>
+        <slide>
+          <slideno>5</slideno>
+          <text>6 LECTURE 13
+In order to solve simply:
+Use diusion or conduction solutions and compare vxtocorT</text>
+        </slide>
+        <slide>
+          <slideno>6</slideno>
+          <text>MIT OpenCourseWare
+http://ocw.mit.edu
+3.044 Materials Processing
+Spring 2013
+For information about citing these materials or our Terms of Use, visit: http://ocw.mit.edu/terms .</text>
+        </slide>
+        <slide>
+          <slideno>0</slideno>
+          <text>3.044 MATERIALS PROCESSING
+LECTURE 13
+T ,P c
+heat transfer solid mech., uid ow diusion, phase trans.
+Mission for the next part of the course:
+Focus on uid ow, How does uid ow relate to solid mechanics?
+How do we connect all three categories?
+Fluid Flow Terminology
+free ow - against low resistance medium (air)
+VS.
+conned ow - against a solid boundary/bracerightBigg
+incompressible ow - e.g. water, most melted/liquid matter Does pressure
+compressible ow - e.g. gases, polymer melts (mildly)/bracerightBigg
+change density?
+laminar ow - very uniform motion, low velocity
+turbulent ow - chaotic motion, high velocity
+
+
+VS.
+Fluid Flow is the diusion ofmomentum
+Date : April 2nd, 2012.
+1</text>
+        </slide>
+        <slide>
+          <slideno>1</slideno>
+          <text>2 LECTURE 13
+1-D Flow:
+Two at plates:
+In steady-state constant v-prole:
+Must be applying a constant Force:
+driving force
+F=A
+N/parenleftbiggV0
+L/parenrightbigg
+m/bracehtipupleft/bracehtipdownright/bracehtipdownleft/bracehtipupright
+2=Pa N/bracehtipupleft
+s
+2m(1
+s/bracehtipdownright/bracehtipdownleft
+)=P/bracehtipupright
+asresulting velocity prole</text>
+        </slide>
+      </slides>
+      <videos/>
+    </lecture>
+    <lecture>
+      <lecture_title>Hot rolling steel
+2D analysis, superposition &amp; friction welding setup</lecture_title>
+      <lecture_pdf_url>https://ocw.mit.edu/courses/3-044-materials-processing-spring-2013/resources/mit3_044s13_lec06/</lecture_pdf_url>
+      <lectureno>6</lectureno>
+      <slides>
+        <slide>
+          <slideno>3</slideno>
+          <text>4 LECTURE 6
+Problem Statement: Howlongdoesittaketoheatto900Cin2dimensions?
+Solution: tw h e n=0 .1@x=0a n dy=0
+(x,t)= f(F0,x)
+(y,t)=f(F0,y)
+(x,y,t)= ( x,t)(y,t )
+By Symmetry:
+F0,x=F0,y
+(x,t)= ( y,t)=
+0.1=0.32
+F0=4
+t3hrs</text>
+        </slide>
+        <slide>
+          <slideno>0</slideno>
+          <text>3.044 MATERIALS PROCESSING
+LECTURE 6
+Ex. 1:glass ber (ceramic)
+Ex. 2:plasma spray (ceramic and metal)
+Ex. 3:hot rolling steel slabs (metal)
+look at iron-carbon (steel) phase diagram, red hot is about 900 1000C,
+need to heat into gamma eld to make it soft and eliminate ceramic carbide phase
+Problem Statement: How long in furnace to heat the block to 900C
+Geometry: rectangular, long on z, long on y, Lx= 12.5cm
+1-D slab, half-thickness Lx= 12.5cm
+Boundary Conditions:
+1.T 0=2 5C
+2.@ x = 0 symmetry:T=0x
+3.@x=Lxconvection: qconv=h(TTf),h= 100Wandm2Tf= 1000KC
+hLGoverning Equation: Bi=k
+h= 100,L =0.125m,k=3 5W
+mK100Bi=0.125
+35=0.36must deal with both conduction and convection
+Date : February 27th, 2012.
+1</text>
+        </slide>
+        <slide>
+          <slideno>4</slideno>
+          <text>MIT OpenCourseWare
+http://ocw.mit.edu
+3.044 Materials Processing
+Spring 2013
+For information about citing these materials or our Terms of Use, visit: http://ocw.mit.edu/terms .</text>
+        </slide>
+        <slide>
+          <slideno>1</slideno>
+          <text>2 LECTURE 6
+T
+t=2T
+x2With B.C @ x = Lx:kT=h(TxTf)
+TG r a p hf o rs h e e t@x=0 :Tf=f(FTi0)Tf
+T= 900,T f= 1000,T i=2 50=0.1 target
+tFrom Graph: F08=L2,L=0.125m, =k 35=cp7700/bracketleftbigkg0m3/bracketrightbig
+.8/bracketleftBig
+kJ
+kg K/bracketrightBig
+Solution: t=2 2,000s6h o u r s
+THow to decrease time?:Tf=f(k, cTip, ,t ,L x,h)Tf
+1. thinner L constrained by casting
+2.higherh(uid)moltenmetal,salt
+3. hotter Tfhigh energy, doesnt drastically change time
+4.preheatTivertical integration, combine casting and rolling temperatures suchthat steel is still hot from casting as it goes through hot rolling process
+Solution: increaseTito 500C
+=0.2,F 056,
+t4h r s
+Ex. 3b: Multidimensional</text>
+        </slide>
+        <slide>
+          <slideno>2</slideno>
+          <text>3.044 MATERIALS PROCESSING 3
+Geometry: zl o n g
+TGoverning Equation:=x2T=/parenleftbigg2T2T+x2y2/parenrightbigg
+Superposition Principle:
+If there is only 1 dimensionless temperature for all dimensions (all dimensions
+share the same boundary conditions), then
+(x,y,t)= ( x,t)(y,t )
+x(x,t)= erf2
+t
+y(y,t)=erf2
+t
+Full Solution:
+x(x,y,t)=e r f2
+terfy
+2
+t
+In 3 dimensions:
+(x,y,z,t) = erf X erf Y erf Z</text>
+        </slide>
+      </slides>
+      <videos/>
+    </lecture>
+    <lecture>
+      <lecture_title>Sand casting, lost foam, &amp; cooled molds
+Interface resistance-limited solidification
+Single crystal production
+Introduction to binary solidification</lecture_title>
+      <lecture_pdf_url>https://ocw.mit.edu/courses/3-044-materials-processing-spring-2013/resources/mit3_044s13_lec09/</lecture_pdf_url>
+      <lectureno>9</lectureno>
+      <slides>
+        <slide>
+          <slideno>0</slideno>
+          <text>3.044 MATERIALS PROCESSING 
+LECTURE 9 
+Example 1: Casting into low conductivity molds 
+Greatly simplied if: 
+1. Mold is thick  can neglect air  semi-innite geometry  erf 
+gradients are 2. Mold controls heat loss  Tmold increases  kmold decreases  in mold 
+3. Superheating is negligible  liquid poured at Tm 
+Date : April 2nd, 2012. 
+1</text>
+        </slide>
+        <slide>
+          <slideno>1</slideno>
+          <text>2
+sqgen=HfsAt
+Tqout=kmx
+qout=qgen
+T(x,t)Tm x=e r fT0Tm)/parenleftbigg
+2mt/parenrightbigg
+T(x,t)=(T0Tm)e r f/parenleftbiggx
+2+mt/parenrightbigg
+Tm
+T 1=(x/vextendsingle/vextendsingle/vextendsingle/vextendsinglet
+0
+x=0Tm)mtex2
+4mt
+kmT T=x/vextendsingle/vextendsingle/vextendsingle
+0Tm
+/vextendsingle
+x=0mt
+T=x/vextendsingle/vextendsingle/vextendsingle/vextendsingle
+x=0/radicalBigg
+kmmcp,m
+t(T0Tm)
+=sHfds
+dt
+dsT0=Tm
+dtsHf/parenleftbiggkmmcp,m
+t/parenrightbigg1
+2
+2(T 0s=Tm)k
+sHf/parenleftbigg
+mmcp,m
+t/parenrightbigg1
+2
++A
+Boundary Condition: @t =0 ,s=0
+2(T 0s=Tm)k
+sHf/parenleftbigg
+mmcp,m
+t/parenrightbigg1
+2LECTURE</text>
+        </slide>
+        <slide>
+          <slideno>2</slideno>
+          <text>3.044 MATERIALS PROCESSING 3
+Boundary Condition: @s =L,t=tf
+tfL2
+VLA
+Vtf/parenleftbigg
+A/parenrightbigg2
+Chvorinovs Rule
+Example 2: Thin castings / Cold molds / Highly conductive molds
+out/bracehtipdownleft /bracehtipupright/bracehtipupleftin
+h(TmTmold/bracehtipdownright
+)=/bracehtipdownleft/bracehtipupright/bracehtipupleft
+dssHf/bracehtipdownright
+dt/integraldisplay
+ds=/integraldisplayh(TmTmold)dtsHf</text>
+        </slide>
+        <slide>
+          <slideno>3</slideno>
+          <text>4
+s=h(TmTmold)t+AsHf
+Boundary Condition: @t =0 ,s=0
+A=0
+hs=(TmTmold)tsHf
+Typical Values:
+gAl :s=2.7kJ,H f=1 0cm3,T m= 660Cmol
+Mold :Tmold=2 5C
+sTime to Solidify : tf= 200 1cmm  1s,mmsub-sLECTURE</text>
+        </slide>
+        <slide>
+          <slideno>4</slideno>
+          <text>MIT OpenCourseWare
+http://ocw.mit.edu
+3.044 Materials Processing
+Spring 2013
+For information about citing these materials or our Terms of Use, visit: http://ocw.mit.edu/terms .</text>
+        </slide>
+      </slides>
+      <videos/>
+    </lecture>
+    <lecture>
+      <lecture_title>Biot number
+Newtonian heating / cooling
+Transient solutions and dimensionless variables</lecture_title>
+      <lecture_pdf_url>https://ocw.mit.edu/courses/3-044-materials-processing-spring-2013/resources/mit3_044s13_lec04/</lecture_pdf_url>
+      <lectureno>4</lectureno>
+      <slides>
+        <slide>
+          <slideno>5</slideno>
+          <text>MIT OpenCourseWare
+http://ocw.mit.edu
+3.044 Materials Processing
+Spring 2013
+For information about citing these materials or our Terms of Use, visit: http://ocw.mit.edu/terms .</text>
+        </slide>
+        <slide>
+          <slideno>0</slideno>
+          <text>3.044 MATERIALS PROCESSING 
+LECTURE 4 
+General Heat Conduction Solutions: 
+T = kT, T(x, t)t 
+Trick one: steady state 2T =0,T(x)
+ 
+Trick two: low Biot number T = h(Ts Tf),T(t)
+t 
+Low Biot Number Solutions: Newtonian Heating / Cooling 
+Global Heat Balance: 
+qconv = qlost 
+T Ah(T Tf)= cp Vt   T hA = t T Tf cpV 
+hA ln(T Tf)= t + C cp V 
+@t =0,T = Ts 
+ln(Ts Tf)= C 
+Date : February 21st, 2012. 
+1</text>
+        </slide>
+        <slide>
+          <slideno>4</slideno>
+          <text>5 3.044 MATERIALS PROCESSING</text>
+        </slide>
+        <slide>
+          <slideno>1</slideno>
+          <text>2 LECTURE 4 
+  T  Tf hA ln = t Ts  Tfcp V 
+hA T  Tf tcp V= e Ts  Tf 
+Transient Heat Conduction: depends on position and time
+ 
+T =  2 T t 
+You should know: 
+1) Some common solutions for simple geometries 
+2) Where to nd solutions 
+3) How to build up complex solutions using simple solutions 
+Semi-Innite Solid 
+- constant T1 at surface
+ 
+- initially T0 everywhere
+ 
+T  T0 x =e r f c  T1  T0 2 t</text>
+        </slide>
+      </slides>
+      <videos/>
+    </lecture>
+  </lectures>
+</doc>
