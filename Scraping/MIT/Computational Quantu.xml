@@ -1,0 +1,1950 @@
+<doc>
+  <source>MIT</source>
+  <date>28/01/2023</date>
+  <course>
+    <course_url>https://ocw.mit.edu/courses/10-675j-computational-quantum-mechanics-of-molecular-and-extended-systems-fall-2004/</course_url>
+    <course_title>Computational Quantum Mechanics of Molecular and Extended Systems</course_title>
+    <course_tags>
+      <list>Engineering </list>
+      <list>Science </list>
+      <list>Physics </list>
+    </course_tags>
+  </course>
+  <lectures>
+    <lecture>
+      <lecture_title>Car-Parrinello Molecular Dynamics - Method (PDF)</lecture_title>
+      <lecture_pdf_url>https://ocw.mit.edu/courses/10-675j-computational-quantum-mechanics-of-molecular-and-extended-systems-fall-2004/resources/lec16/</lecture_pdf_url>
+      <lectureno>16</lectureno>
+      <slides>
+        <slide>
+          <slideno>0</slideno>
+          <text>10.675 LECTURE 16 
+RICK RAJTER 
+1.Today 
+MD and CarParrinellow
+Summary of Localized BS vs NonLocalizedMD
+Simulated Annealing
+CPMD
+2.Localized:Advantages 
+Can treat only one moleculeIntegration is expensiveCan incorporate exchange
+No correlation methods
+Can or dont have to use pseudopotentials
+3.Localized:Disadvantages 
+Cant use HF forces (expensive otherwise)FFT (nite fourier transform) is harderMore doesnt lead to better results
+BSSE issue
+4.Nonlocalized:Advantages 
+Use HF forces (cheap)
+Easier IntegrationFFT easyNo Exchange terms
+No Correlation Methods
+More accurate w/more computationBSSE is not an issue
+5.Nonlocalized:Disadvantages 
+Must treat empty spaceMust use pseudo potentials
+Date : Fall 2004. 
+1</text>
+        </slide>
+        <slide>
+          <slideno>2</slideno>
+          <text>3
+i 
+1 
+2 10.675 LECTURE 16
+11.Misc 
+i=E+ 
+pipp 
+ REelec
+MIRI=
+Think of Characteristic frequencies of 
+ and R
+ :wij(2(ji))
+j i Band Gap
+ 0.1 fs
+ 1010T H z
+= 300au forEg= 2.24eV
+R, 4000cm1100T H zEnough to practically prevent change
+Method VERY problematic for metals.
+CP Irony: No one actually used it for its designed purpose! BUT, heavily used
+for computing the dynamics of systems for which QM is needed to describe well.</text>
+        </slide>
+        <slide>
+          <slideno>1</slideno>
+          <text>2 RICK RAJTER
+6.MD  Molecular Dynamics 
+Integrate numerically Newtons equations of motion along a trajectory.
+1) Choose system and initial temperature and positions
+2) Computer other forces
+3) Integrate Newtons equations of motion using nite dierences and storeimportant properties4) Analyze important properties
+7.Integration Methods 
+Velocity VerletLeapGearChoice of t is of extreme importance.
+Velocity Verlet Algorhythm x
+k+1(tt) = xk(t) + vx(t)t +fk(t)(t)2 
+2k 
+vk+1(t+ t) = vk(t) +fk(t+t )+f k(t)t2k 
+EelecVpotential, Tnuclear 
+8.Simulated Annealing 
+Typically want 1fs for t
+Start out with high temperature and then cool slowly by decreasing T.
+Designed by Kirpatrick, Gelati, Vecchi (Science 220 671 1983)
+Optimizing highly nonlinear complicated functions.
+Essentially, anneal slowly and thus lower the system to minimums.
+9.CPMD 
+CP is the methodMD is the method
+10.Lagrangian Formulation of Mechanics 
+L=T( qs) V(qs) Where T is KE,  qs are velocity, V is potential, qs are
+positionLagranges equations of motion
+d L
+dt(L
+qi ) qi = 0
+Combined with simulated annealing
+L=i1/2 idr|ki2(which is a CP trick to add the ctitious mass.)
++1MR2|
+i2 I E{ki}{RI}
++  ij(dr 
+ki(r)k(r) ij)
+The last term ensure orthogonality.
+Solve for  ks and Rs simultaneously using simulated annealing.
+Main Issue: This approach assume BO approximation always
+ No exchange between ctitious and nuclear DOF</text>
+        </slide>
+      </slides>
+      <videos/>
+    </lecture>
+    <lecture>
+      <lecture_title>Electronic Spin, Spin Orbitals, Molecular Orbital Theory, Valence Bond Theory (PDF)</lecture_title>
+      <lecture_pdf_url>https://ocw.mit.edu/courses/10-675j-computational-quantum-mechanics-of-molecular-and-extended-systems-fall-2004/resources/lec2/</lecture_pdf_url>
+      <lectureno>2</lectureno>
+      <slides>
+        <slide>
+          <slideno>2</slideno>
+          <text>3 10.675 LECTURE 2 
+12.Combined Spin and Spatial Functions 
+Now that we have the electronic and spatial wave functions, we combine to get a
+complete trial wave function for helium.
+1(  1 2) =
+2(1)(2) [ (1)(2)(1)(2)]
+Note that (1)(1)dr =(2)(2)dr = 1 from the overlap integral
+S=abd( r)
+13.Hydrogen Gas 
+Valence bond theory, so valence bond wave function.
+Choose a trial wave function (Heiter and London).
+ =
+a(1) b(2) or b(1) a(2)
+So, we need to create an overall antisymmetric wave function of both electronic
+and spatial wave functions.
+1 1 = [ a(1) b(2) + b(1) a(2)]
+2(( x 2)( x 1)) 
+2 + 2S2 x1)( x 2)(
+which is overall antisymmetric (both spatially and electronically).
+14.Hydrogen Hamiltonian 
+The complete Hamiltonian is as follows.
+12 2 1 1 1 1 1H= +21 
+212 
+r 1 Ra
+r 2   r 1 r 2 
+r 2 Ra
+r 1   Rb Rb
+Where  rdenotes electron position vector, Rdenotes nucleus position vector.
+15.Perturbation Theory 
+Summary on pg 68 of S&amp;ODissociation Energy
+H
+2 System
+Calculated De = 3.15 eV Re=0.87 A
+Experimental De = 4.75 Re = 0.741 A
+Major approximations
+Form of the trial wavefunction
+BO approximation
+Perturbation Theory (how we solve it)
+16.Molecular Orbital Approach 
+Trial Wave Function
+1 1 = [( a+b)(1)(a+b)(2)]
+2((1)(2)(1)(2)) 
+2 + 2S2 
+The spatial orbital section is symmetric, and the electronic orbitals areantisymmetric. A symmetric function times a antisymmetric function leads to an
+overall anti symmetric function.This is essentially a linear combination of spatial orbitals (1) and (2).</text>
+        </slide>
+        <slide>
+          <slideno>0</slideno>
+          <text>10.675 LECTURE 2 
+RICK RAJTER 
+1.Last Lecture Review 
+ Many Body PE surface.
+Schrodingers Equation (SE)  
+# Dimensions 
+2.Important Concepts 
+ Many Body PE surface.
+ Schrodingers Equation.# Dimensions
+ 
+3.Many Body SE 
+1N
+2NM
+ Zk 2 
+i +N N
+r ivecr j r i Rk i i&lt;j1H=
+i i j
+3N  6 Degrees of Freedom (DOF) in NonLinear Case3N  5 DOF for linear.Each Molecule moves in the directions, hence 3N. In nonlinear, substract 3rotation and 3 translation (6). In linear, substract 3 translation and 2 rotation(5).
+4.Today 
+ QM and Atomic Orbitals
+Permutation Pijand Pauli Principle  
+ Spin Orbitals
+ Valence band theory and molecular
+5.Born Oppenheimer approximation 
+Theory that the electrons relax far faster than the protons. Thus, we can
+decouple nuclearnuclear interaction terms from the electron terms.
+Date : Fall 2004. 
+1</text>
+        </slide>
+        <slide>
+          <slideno>3</slideno>
+          <text>4 RICK RAJTER 
+If we multiply out the spatial terms, we get the following.
+a(1) a(2) + b(1) b(2) + a(1) a(2) + b(1) a(2)
+The rst two terms are ionic because both electrons are centered on 1 atom.
+The 2nd two terms are covalent, as the electrons are shared. Unfortunately, if
+we maintain this balance, this implies that ioniccovalent characteristics shouldoccur 50/50. This is obviously not the case. Thus, a fudge factor can be used to
+reduce the ionic content of the wave function. Then we can solve variationally.Typically, is set to 0.26.</text>
+        </slide>
+        <slide>
+          <slideno>1</slideno>
+          <text>2 RICK RAJTER 
+6.Hydrogen Atom 
+Hi(r) =Eii(r)
+H Hamiltonian
+i Atomic orbital
+r position vector
+We can solve for the hydrogen wave function explicitly
+nlm( r) = (,  ) RnlYlm
+NOTE: the solution neglects or doesnt include the eects of spin.
+7.Spin 
+Electrons have an intrinsic spin +/1 or. This spin is a consequence of the SE2 
+in its relativistic formulation, i.e. the Dirac equation. Thus, degeneracy of the
+atomic orbitals exists.
+Letbe the spin coordinate. 
+x= ( r, ).
+ = Total wave functions of the many body N electron system= (x 
+1,  x 3...  x2,  x N)
+8.Pauli Principle 
+ must be anti symmetric with respect to exchange.
+Pij Permutation operator, which exchanges electron i with j.
+x2,  x 1,  x2,  P12(x  1,  x 3) = (x  2,  x 3) =(x  1,  x 3)
+9.Helium Atom 
+x) where  r,  Introduce spin orbital concept ( x = ( )
+The ground state wave function is the lowest state.
+0 =( x 2) which is our trial wavefunction. x1)(
+10.Slater Determinant 
+0 =( x 2) Not antisymmetric, so its a poor trial wave function. Try x1)(
+this instead.
+10 =
+2 (( x 2) ( x 1)) x1)( x 2)(
+Which is antisymmetric AND coupled.
+A more convenient format is a slater determinant.
+1( x 2) x1)(
+( x 2) x1)( =
+2
+11.Spatial Functions 
+(r1)(r 2) abbreviate as (1)(2)
+Spin Function or.
+(1)(2) and (1)(2) are symmetric
+(1)(2) and (1)(2) violates indistinguishability. Implies we have an
+independent measure of spins.</text>
+        </slide>
+      </slides>
+      <videos/>
+    </lecture>
+    <lecture>
+      <lecture_title>G1, G2 (cont.), Comparison, NCSA Teams, Projects (PDF)</lecture_title>
+      <lecture_pdf_url>https://ocw.mit.edu/courses/10-675j-computational-quantum-mechanics-of-molecular-and-extended-systems-fall-2004/resources/lec13/</lecture_pdf_url>
+      <lectureno>13</lectureno>
+      <slides>
+        <slide>
+          <slideno>0</slideno>
+          <text>10.675 LECTURE 13 
+RICK RAJTER 
+1.Today 
+ project description and literature search
+CI revisited 
+ partial CI, CID, CISD, MP
+ CoupledCluster, CCD, CCSD, QCISD
+ G1, G2, G3 and comparisons
+2.Concepts 
+CI
+Size Consistent 
+ Variationality
+3.CI vs DFT 
+Extremely expensive and can only take into account a few atomsDFT: Cost of a HF, but includes correlationHowever, DFT has no systematic way of getting more accurate with computationresources. Meaning, there is no way to know if we are more or less accurate.
+CI, recall that with a large enough basis set, gives the exact, nonrelativistic
+energies.
+ CrrCrsrso=Coo+ar a o+ +a&lt;b,r&lt;s ab ab
+ HartreeFock determinants single excitations of HF determinants.
+CI size consistent variational (method is equally accurate for systems with
+dierent number of electrons.DFT/HF also has these properties
+4.CI Problems 
+Scales wtih N!, where N is the # of basis sets.
+Partial CI terminates the full CI series
+CID
+ conguration interaction doublets
+CrsrsCID=  o+a&lt;b,r&lt;s ab ab
+Can include singlets, CISD, but they do not contribute much to the correlation.GID, GISD are the key words.
+Date : Fall 2004. 
+1</text>
+        </slide>
+        <slide>
+          <slideno>2</slideno>
+          <text>10.675 LECTURE 13 3 
+Outline for G1
+I Optimize geometry (restriced HF/631G*)
+II Use equilibrium geometries from I, optimize again w/MP2/631G*
+III Perform MP4 SDTQ, 631G** on valence electrons only
+IV incorporate eects of better basis sets for diuse sp functions
+E(t) = E(MP 4/6311 + G )E(MP 4/6311G )
+V Correct for additional polarization functions on nonH atoms
+E(sd f) =E(MP 4/6311G (2d f))E(MP 4/6311G )
+VI Correct for additional correlation eects
+E(QCI ) =E(QCISD (+))/631G   E(MP 4/6311G )
+VII E(combined) = E(MP4/6311G**) +  E(t) +  E(2df) +  E (QCI)VIII HLC (higher order correlation)
+E (HLC) = 5.95 N 0.19 N
+N&gt; N in millihartrees
+Numbers were chosen, so that Eeis exact for H atom and H2.
+Ec=Ecombined + E (HLC )
+IX Calc Frequencies at HF/631G* and scaled by 0.893  ZPE zero point energy
+XEo=Ee+ (ZPE )
+also calculate Ho
+f, etc
+rxn,Ho
+10.G2 
+I.Additional basis set correction
+II.Correction to GI for a third d function to nonH, p function to H.
+2E[MP 2/6311 + G(3d f, 2d]E[MP 2/6311 + G(2d f, p)]
+III correction to atomization energies of 55 molecules w/well establishedexperimental values.</text>
+        </slide>
+        <slide>
+          <slideno>1</slideno>
+          <text>2 RICK RAJTER 
+5.CID 
+HCID=CIDCIDsubtract EoCID
+Eois the HF energy.
+ECorr(H Eo)CID= (CID Eo)CID=  CID CID
+Multiply by  and intergrate.
+HrsECorra &lt; b, r &lt; sCrso abdr=CID  ab   
+tuCrstuo)rsMult by tu
+cdand integratecdHodr+a&lt;b,r&lt;s ab cd (H Eab
+=CtuEcorr
+cd cd
+Can use these equations to nd ECorr
+CID (similarly w/CISD)
+Variational and NOT size consistent
+A and B in separate cells vs ABCalculate as separation goes to
+
+Ecorr&lt; Ecorr+Ecorr
+A
+ |AB| |B|
+A||Bdouble excitations in both
+A B double excitations of the entire system., but not double excitations of A
+AND B together.Extreme Case, XL system (innite)
+ECorr
+CID per atom  0.
+6.MP 
+are size consistent 
+Not variational 
+ convergence slow with respect to terms in perturbation.
+7.Coupled Cluster Method Approximations 
+Ignore singlet/triplet/etc excitations from CI wavefunction
+cc rsrsr&lt;s&lt;t&lt;u rsturstu=  o+a &lt; b, r &lt; scab o ab+a&lt;b&lt;c&lt;d cabcd abcd
+One can show that higher order coecients
+CrstuCrs
+ab Ctu
+abcd cd
+where * means the summation of the products of the doublets
+rscc=exp( )o, =r&lt;s
+raabaa a&lt;bcaba
+s
+Where the terms on the right are the creation/annihilation operatorsCCD
+ coupled clusters w/doublets
+8.CCSD 
+There is a way to incorporate single excitations 
+size consistent 
+not variational
+QCISD is quadratic conguration, similar to coupled cluster methodsCCSD
+ seen as the gold standard from the chemists community.
+Tolerance of 1 Kcal/mole, which is the best well get.
+9.G1,G2 methods 
+G1, G2 methods  composite method for computing energies and enthalpies of
+moleculesNEED 1) Geometry Equilibrium 2) Total Electronic Energy 3) HarmonicFrequencies</text>
+        </slide>
+      </slides>
+      <videos/>
+    </lecture>
+    <lecture>
+      <lecture_title>Correlation, CI, MP Perturbation Theories (PDF)</lecture_title>
+      <lecture_pdf_url>https://ocw.mit.edu/courses/10-675j-computational-quantum-mechanics-of-molecular-and-extended-systems-fall-2004/resources/lec9/</lecture_pdf_url>
+      <lectureno>9</lectureno>
+      <slides>
+        <slide>
+          <slideno>1</slideno>
+          <text>2 RICK RAJTER 
+ Nonrelativistic
+5.HF Approximations 
+1  No correlation
+2 BO approximation3  Incomplete Basis Set4 Non Relativistic
+6.Correlation II 
+Ecorr=oEHFo= exact nonrelativistic energy of the system EHF=
+HartreeFock energy in the basis set limit Ecorr= is essentially the correlation or
+error of the hartreefock energy.
+7.Experimental Comparisons 
+HF generally overestimates the vibrational frequencies by 10%  heuristic rule.
+We can correct via scale factor, which is typically set to 0.84.
+HF geometries are generally pretty good to within 0.01 
+A
+HF typically not very good with bond energies.
+Molecule pieces 6 31G  Experimental
+H3CCH 3 H3C CH 3 69 97
+HOOH OH  OH 0 55
+F2 F F 33 38
+Lack of correlation is killing HF
+Dipole moments are often incorrect
+Some molecules will not bond when they should.
+8.Correction 
+Conguration Interaction (CI)
+{i(x)} complete set basis functions then any function (x i) described by
+iaii(xi) coecients. What about (x 1, x2) =iai(x2)i(xi)
+=i jbijj(x2)i(x1)
+ must have proper antisymmetric behavior (x 1, x2) =(x 2, x1)
+bij=bji
+(x 1, x2) =i jbiji(x1)j(x2)j(x1)i(x2)
+Can expand (x 1, x2) in terms of determinants formed from a complete set of
+1variable functions.
+New variational problem, nd the coecients. If the basis set is complete, then
+the lowest eigenvalue of  is the exact nonrelativistic solution.
+CI is extremely costly.
+9.Perturbation Theory 
+Hi= (H o+V)i=ii
+Where V is the perturbation or correction to the HF hamiltonian V V NN 1V=i i&lt;k rij i(jiki)
+EooWe know that Hoi=i i</text>
+        </slide>
+        <slide>
+          <slideno>2</slideno>
+          <text>3 10.675 LECTURE 9 
+Now we perform a Taylor Series expansion.
+i=Eio+E1 +2E2 +...i i
+i= o
+i+1 +22 
+i i
+Plugin and solve. rsrs =coo+racrr+a&lt;b,r&lt;scab ab +...a a
+Which are the ground, singlet, and doublet states...
+(H+V)(o+11 +2i2) = (Ei+E1 +2Ei2)(o+1 ...)
+i i o i i i
+equate coecients of 
+= 0 Hoo=Eioo
+i i
+= 1 Ho1 +Vo=Eio1 +E1o
+i i i i i
+= 2 Ho2 +V1 =Eio2 +E11 +E2o
+i i i i i i i</text>
+        </slide>
+        <slide>
+          <slideno>0</slideno>
+          <text>10.675 LECTURE 9 
+RICK RAJTER 
+1.Today
+Finish basis sets
+ 
+zeta basis set 
+BSSE 
+ explanation of test of basis sets
+ correlation (CI and MP)
+2.Basis Sets 
+rnZeta = ((2)n+1/2 n1eaoYl(, )[(2n)!]1/2 )r
+Zetas CCPV*Z, AUCCCPV*Z
+AUG diuse functions 
+* variable... D double, T triple, Q quadruple, 5 quintuple.
+double means use 2 gaussians to describe each setp
+ polarization
+cc correlation consistent (electrons optimized) to reproduce atoms energies
+(CISD).
+3.Basis Set Superposition Error  BSSE 
+localized LCAO
+2 atoms A and B... Individually, they are an incomplete system (which we will
+say is a combination of the two).
+incompleteness if compensated in the molecule due to the other molecule. The
+isolated incomplete basis sets complete/help each other.
+The problem: Bond energy over predicted due to change in completeness from A
++B
+ AB independent of method.
+Basis Set Limit: extrapolation to the max # of basis sets to still minimize energy.
+Solution, use both incomplete orbitals on each atom (named Counter Poise
+Correction).
+Include the basis function, but no nuclei of the other molecule. This
+overcompensates arbitrarily.
+Try bigger basis sets to conrm if average is 1/2
+4.Correlation 
+ Correction beyond mean eld approximation exchange is a correction to the mean eld
+ HF exchange HF correlation
+Date : Fall 2004. 
+1</text>
+        </slide>
+      </slides>
+      <videos/>
+    </lecture>
+    <lecture>
+      <lecture_title>Solution of Hartree-Fock Equations, Variational Principle, Mean Field Theory (PDF)</lecture_title>
+      <lecture_pdf_url>https://ocw.mit.edu/courses/10-675j-computational-quantum-mechanics-of-molecular-and-extended-systems-fall-2004/resources/lec6/</lecture_pdf_url>
+      <lectureno>6</lectureno>
+      <slides>
+        <slide>
+          <slideno>2</slideno>
+          <text>10.675 LECTURE 6 3
+EcN1= &lt; a|h|a &gt;+1/2 &lt; ab||ab &gt;anec anec bnec
+Ionization potential = EN1 EN
+c o  = &lt; c h c &gt;1/2 &lt; ac||ac &gt;1/2 &lt; cb||cb &gt; a b| |
+= &lt; c h c &gt; &lt; cb||cb &gt;=c b| |
+Electron Anity = EA=EN EN+1=r= the energy of the system with ano r
+additional electron in the virtual levels.
+This is the frozen orbital approximation.
+ r 
+ 
+ 
+ 
+  a</text>
+        </slide>
+        <slide>
+          <slideno>1</slideno>
+          <text>| |
+ 
+ | |
+
+   2 RICK RAJTER
+&lt; |&gt;&lt;  =&lt;
+ &lt;|
+  2
+|&gt;= 1 = |&gt;&lt;&gt;= &lt;|&gt; &lt;| 
+|  
+| |
+and
+ 2|H&gt;= &lt; &lt; |&gt;&lt;H&gt;&lt;&gt;=| 
+H|&gt;P E|&lt;&gt;2| |
+P |  
+E| &lt;|&gt;|
+ E[] =&lt;|=P | 
+&lt; |&gt;|&lt;&gt;2|=P E|C|2 
+ Eo| | |C|2 
+Use variational principle to derive HF equations given the determinant
+|o&gt;= 1, 23, ... N&gt;
+Eo=&lt;|
+oH||Psio&gt;=Eo[{}]
+ |
+Minimize with respect to s functions w/constraint of s being orthonormal.
+xda(1) b(1) = [a|b] =ab
+5.Lagrange Method of Undetermined Multipliers 
+NNL[{}] =Eo[{}]a=1 b=1ab([a|b] ab) 
+Where abare the undetermined multipliers.
+L= 0ab
+L= 0a
+vary: a a+a
+L= 0E o NNab[a b] = 0a b|
+[a|b] = [ ab] + [ ab]N| |
+Eo=a=q([ a|h|a] + [ ah  a]
++1
+b([ aa|bb] + [ aabb] + [ aabb] + [ aabb])2a
++1
+b([ abba] + [ ab||
+ba] + [ ab|
+ba] + [ ab|
+ba])2Na|  ||
+=a= [ a|h|a] +a b([ achia|bb] [ab|ba])+ the complex
+conjugate terms.N   L= 0 =1[a|1|a] + [ aa|bb] [ ab|ba]|aba[a=b]+ab |
+the complex conjugate terms.N 
+L=a=1dx a(1)[h(1))a(1)+N
+b=1(Jb(1)Kb(1) a(1) Nbab(1)] = 0b=1
++Complex conjugate terms.
+6.Continued... 
+N[h(1) + Jb(1) Kb(1)] a(1) =Nab(1)b b
+Canonical Form via unitary transformation to diaganolize f|a&gt;= a&gt;|
+Canonical HF equations. a=&lt;  a|f|a&gt;=&lt;  ah+b(Jb Kb)a&gt;
+=&lt; a h a &gt; +b&lt; ab ab| &lt; ab ba &gt;|
+=&lt; a||
+h||
+a &gt;+&lt; ab|||
+ab &gt; where|a &gt;s are occupied spin orbitalsb
+r=&lt; r h|r &gt;+ &lt; rb||rb &gt; where r &gt;s are virtual spin orbitalsbNN|N|Na=a&lt; a|h|a &gt;+ &lt; ab||ab &gt;a a bN NEoa&lt; a|h|a &gt;+1/2 &lt; ab||ab &gt;= aa
+because of the coecients on the double summation.
+Example: aincludes interactions with all other orbitals, as does b, so they are
+being double counted in SCF.
+7.Significance of orbital energies (Koopmans Thereom) 
+EN= &lt; a|h|a &gt;+1/2 &lt; ab||ab &gt;o a a b
+when you take out one electron</text>
+        </slide>
+        <slide>
+          <slideno>0</slideno>
+          <text>10.675 LECTURE 6 
+RICK RAJTER 
+1.Today 
+ Variational Principle
+ Derive HF (HartreeFock) Equations
+ Interpretation of Solutions to HF equations
+2.Variational Principle 
+Idea: The closer our guess of Cis of  trial, the lower our energy.
+ trial function
+E[] = &lt;|   |H&gt;
+Functional Denition : maps functions to numbers
+3.Functional Variation 
+  +  vary   
+substitute in and solve
+ ] =&lt; H| + E[ +   +| &gt;
+expand this via linear rst order term.
+E[ +   |H&gt;+&lt;|&gt;+ higher order terms.
+  ] = E[]+ &lt; |  |H 
+E[ +    ] = E[] + E
+Trying to approach the true solution such that H|&gt;=E&gt; E = 0| 
+Normally, E will always be a min, so we dont have to worry about local/global
+max solutions.
+There exists and innite number of solutions.
+H|&gt;=E&gt;| 
+= 0,1,2...
+Eo E1 E2...
+H is hermitianH=H
+, and Es are real
+s are orthonormal.
+&lt; |&gt;=
+|H&gt;=E
+ &lt;| 
+4.Expansion 
+Expand trial wave function  in terms of the eigenstates .
+ &gt;=C|&gt;
+| |
+&gt;= |&gt;&lt;&gt;| 
+| = C&lt;&lt;| 
+Date : Fall 2004. 
+1</text>
+        </slide>
+      </slides>
+      <videos/>
+    </lecture>
+    <lecture>
+      <lecture_title>Computing Reaction Rate Constants (PDF)</lecture_title>
+      <lecture_pdf_url>https://ocw.mit.edu/courses/10-675j-computational-quantum-mechanics-of-molecular-and-extended-systems-fall-2004/resources/lec21/</lecture_pdf_url>
+      <lectureno>21</lectureno>
+      <slides>
+        <slide>
+          <slideno>0</slideno>
+          <text>10.675 LECTURE 21 
+RICK RAJTER 
+1.Today 
+Rate Constants
+TPS 
+ Commitor Probability Distribution
+ Transition Path Harvesting
+ChandlerBennet Formalism for Rate Constants 
+ ExamplesMolden
+ 
+2.TPS 
+Many Pathways
+Find a saddle point, drop from each side
+Approach
+ Postulate q
+ Compute probability distribution
+ If successful, compute D
+ If not, go back to postulating a new q
+Pick any pathway that connects A to B in time .
+Pick another via a monte carlo pathway in space.
+ Shooting  Take a point along the path and perturb the momentum.
+pi  pi +pio
+Date : Fall 2004. 
+1</text>
+        </slide>
+        <slide>
+          <slideno>1</slideno>
+          <text>2 RICK RAJTER 
+Run it forward and backward to A and B within time 
+Shifting  Take a path and shift it by  xand run again.
+Stochastic MD to create phase space.
+ZAB=K+AB
+ZAHow does one choose ? Its determined by the method you use, and its usually 
+1ps.
+It generally needs to be greater than the relaxation time.
+3.ChandlerBennett Formalism 
+x(t) is a point in phase space (r,p) along a trajectory x at time th
+a(x(t)) = 1 if system is in A, 0 if its not in A
+hb(x(t)) = 1 if system is in B, 0 if its not in B
+ha(x(0)) hb(x(t)) k(t) =ha(x(t)) 
+Related to the rate at which system goes to B
+trxne KA 
+r1xn=kA B +KB A  
+Since system is almost always in A or always in B, ha+hb 1
+
+trxn For barriers &lt; K bT, k(t) reaches a plateau because e1
+KA B =ha(x(0)) hb(x(t))  
+ha(x(0))  
+K(t) = (t)P(x()) =(t)P(L) Where L is the length, P(L) is the probability
+v(t) =hb(x())AB 
+KbT P(L) = eG 
+Recall from TST
+G 
+KTST =KbT eKbT
+h 
+KbT K=kbT eG 
+h 
+If G G
+q 
+then =h v(t)kbT 
+so, can pick any q, and if you calculate v(t), can back out real reaction rate.
+Compute v(t) from harvesting TP trajectories
+go from A to B hbAB 
+So, need to (in practice) get to a constant slope very quickly</text>
+        </slide>
+      </slides>
+      <videos/>
+    </lecture>
+    <lecture>
+      <lecture_title>Solution of H-F Equations (cont.), Meaning of Eigenvalues, Basis Sets Introduction (PDF)</lecture_title>
+      <lecture_pdf_url>https://ocw.mit.edu/courses/10-675j-computational-quantum-mechanics-of-molecular-and-extended-systems-fall-2004/resources/lec7/</lecture_pdf_url>
+      <lectureno>7</lectureno>
+      <slides>
+        <slide>
+          <slideno>2</slideno>
+          <text>3 10.675 LECTURE 7 
+9) Calculate a newPfromC
+10) Converged? Yes, done. No, goto step 5.</text>
+        </slide>
+        <slide>
+          <slideno>0</slideno>
+          <text>10.675 LECTURE 7 
+RICK RAJTER 
+1.Today 
+ Meaning of HF Eigenvalues (Koopmans Thereom).
+ Restricted HF (Roothan Equations).
+Basis Sets 
+ Orthoganalization
+ SCF procedure
+2.Error Evaluation 
+Reminder, as are positive, rs are negative.
+ = true energy  approximation
+Approximation Energy Energy 
+Frozen Orbitals (shell shifts) a r
+No electron correlation (repulsion) a + r
+No Geometry Relaxation (sp3 to sp2) a r 
+Note, the errors in the no electron correlation cancel out.
+3.Restricted (closedshell paired electrons) 
+HF: The Roothan Equations.
+i( r)()Integrate out the degrees of freedom. (x) =j( r)()
+f( x) = ii( x) j( r)(1) =jj( r)(1) x)i( x) = f(
+solve for spin 
+[dwq(w1)f(x)(w1)]j( r) =ji( r)
+x1) =h( r)N 
+dx2 x2)r1(1 P12)2( Plugin f(1( x2)NN/2 +N/2 c 1 
+c c c
+f( r1)j( r) =h( r1)j( r1) +N/2 dw1dw2dr2(w1) 
+1(r2)(w2)r1i(r2)(w2)alpha (w1)j(r1)+C 12 
+Exchange termsCancel out orthogonal terms.
+f(1) = h(1) +N/2[2Ja(1) Ka(1)]a
+fj( r1) =jj( r1)
+Meaning only spatial orbitals are left after integrating.
+Date : Fall 2004. 
+1</text>
+        </slide>
+        <slide>
+          <slideno>1</slideno>
+          <text>2 RICK RAJTER 
+4.Basis Set 
+Functions are not necessarily orthonormal.ki=1 Cmu
+i= 1,2,3,4, ...k
+Where  iis the spatial vector, and is the trial expansion.
+5.Roothan Equations 
+FC=SC
+Where is the diagonal set.
+2Density Matrix ( r) = 2N/2 |1( r)
+= 2N/2  C  r)a
+Co(r)|
+r(
+ a  vo
+=2(N/2 CCnu)( r) 
+( r)a
+=P( r) r)
+ (
+Pis the density matrix P F (P)  
+fCi=iCvii
+Multiply by * and integrate. 
+dr1 f= dr 1    Cvi 
+The rst term ( dr1 f) is the FFock matrix. The second term
+
+(dr1 
+) is the Soverlap matrix.
+6.Solving Roothan Equations 
+Solve self consistently through basis set orthogonalization.
+dr 
+(r)(r) =S
+
+We want a transformation matrix Xthat will orthogonalize S such that
+= 
+= 1,2,3,4, ...k
+dr (r)(r) =
+dr[x  
+(r)][ (r)] = x 
+=  
+  ...
+ X+SX= 1 with many possible choices of X
+     
+X=S1/2 S1/2SS1/2 =S1/2S1/2 =S0 = 1
+ 
+  FC=SC letC=XCFXC =SXC
+   
+Multiply by X soFXFXthen FC =C
+Transform to real Cs.
+7.SCF  Self Consistent Field Procedure 
+1) Specify System: Nuclear positions (  rks), Atomic #s (Z ks), # electrons N,
+basis set ( )
+2) Calculate S,H=dr h, and (,  )
+  3) Diaganolize S X =S1/2 
+
+4) Guess P(density matrix)
+5) Calculate F(fock matrix)
+ 6)F =XFX
+ 7) Diagonalize F Cand
+ 
+8)C=XC</text>
+        </slide>
+      </slides>
+      <videos/>
+    </lecture>
+    <lecture>
+      <lecture_title>Mathematical Underpinnings, Dirac Notation, G03 Calculations (PDF)</lecture_title>
+      <lecture_pdf_url>https://ocw.mit.edu/courses/10-675j-computational-quantum-mechanics-of-molecular-and-extended-systems-fall-2004/resources/lec4/</lecture_pdf_url>
+      <lectureno>4</lectureno>
+      <slides>
+        <slide>
+          <slideno>2</slideno>
+          <text>10.675 LECTURE 4 3
+6.Details 
+Eelec=Vnucleous=E(x) meaning the energy of the electron is dependent on theo
+potential of the nuclei.
+x= 3N = (R1x, R1y, R1z, R2x, R2y, ...)
+In the geometry optimization, we want to minimize such that
+dE/dx = 0or &lt; ATOL .
+txk+1) =Ek+ gk ( x k) + 1/2(  x k)Tk( x k) expand Ek+1( xk+1  x k+1  x k+1 
+Where: k is the step
+tgkare the gradient forces
+kis the Hessian Matrix.
+  SCF gives us Eo, g. Then, update kand its inverse Hk
+dEk+1 = gk+1gk+k(xk+1 xk) = 0dxk+1 
+Pstep size to move atoms to next position.
+Pk= 
+xk+1 vecx k=1 gk=Hk gk k 
+7.updating k
+Method 
+  steepest descent.
+1 0 0 0 . .
+0 1 0 0 . . 
+ 0 0 1 0 . .
+0 0 0 1 ..
+......
+......=c
+c=1 or = 1
+Newtons Method calculated explicitly (great for transition states)
+HkHk1 Hk1 gT   gkk Hk1 
+T Hk1 gk gk</text>
+        </slide>
+        <slide>
+          <slideno>0</slideno>
+          <text>10.675 LECTURE 4 
+RICK RAJTER 
+1.Today
+Dirac Notation
+ 
+ Exploring PES
+ Algorhythms for Geometry Optimization
+ Zero Point Energies and Stat Mech.
+2.Concepts 
+minima and transition states.
+3.PES  Potential Energy Surface 
+C2H6).
+ Example: Rotation of carboncarbon bond in ethane (
+In general, one can look at Eoas a function of any parameter. In this example, we
+will use orientation.
+3N  6 degrees of freedom.
+Date : Fall 2004. 
+1</text>
+        </slide>
+        <slide>
+          <slideno>1</slideno>
+          <text>2 RICK RAJTER
+BO approximation (atoms are xed, nuclei mass is innite).
+4.Method 
+Hmethodi=ii i
+Hmethod=12NZk +Vmethod
+i r1K 1 2 
+Where V1varies depending on the method we are using.
+Examples of Methods: Molecular obital vs Density functional theory.
+VmethodN (rj)dimethod+VCmethod=iNj=2 r ir j rj+Vi
+d Where(rj)rjis the mean eld term.j=2 r ir j 
+Vimethodexchange term (pauli exchange)
+VCmethodcorrelation term.i  Use a trial basis set  i= cijgjN 
+iHmethodSOLVE Eo=1 
+i id r+ Nuc  Nuc terms.
+5.Solving 
+Need to nd cijs which minimize Eo. Heres the detailed method.
+1) Choose molecule nuclear positions + num of electrons
+2) Choose method3) Choose basis set
+4) Choose initial guess for c
+
+ijs
+5) Solve Eigenvalue equation for new cijs
+6) Is Eold Enew&lt; ATOL?
+7) If no, return to step 4 with new cijs
+7b) If yes, calculate the forces on the nuclei
+8) Is the force &lt; forceATOL? If yes, nished.
+9) If not, update geometry, goto step 4.</text>
+        </slide>
+      </slides>
+      <videos/>
+    </lecture>
+    <lecture>
+      <lecture_title>Exploring Complex Free Energy Landscapes - Reactivity (PDF)</lecture_title>
+      <lecture_pdf_url>https://ocw.mit.edu/courses/10-675j-computational-quantum-mechanics-of-molecular-and-extended-systems-fall-2004/resources/lec20/</lecture_pdf_url>
+      <lectureno>20</lectureno>
+      <slides>
+        <slide>
+          <slideno>1</slideno>
+          <text>2 RICK RAJTER 
+KAB=KbT
+heG
+KbT
+ps (picosecond) time scales in CPMD
+What size G can be overcome in 1 ps at room T?
+KbT= 0.6 Kcal/mole
+KbT 1012s1 = 6x1012s1eG
+G 1.1 kcal/mole
+Can we used information on ps time scales to somehow compute  G
+3.Sampling 
+ForEKS, large. Large eVs for ps energies
+but, for quantities related to free energy, sigmas are an order of magnitude lower.Discretize the curveand small 1.1 kcal/mole variation in each space/region
+4.Thermodynamic Integration 
+H1  H2 Free energy state function can integrate on nonphysical pathway.
+H= (1 )H 1 +H2 Where H1 Hamiltonian of state 1, H2 is the Hamiltonian of
+state 2.
+ 0 to 1.
+ 1  
+ 
+HF=F2  F1 = d0 And F is obviously the free energy in this case.
+Even this approach can only compute small variations accurately.
+5.Blue Moon Ensemble 
+Constrained DynamicsCompute rare events
+ Carter et al. Chem Phys Lett. 156 (1989, 472)
+ Sprik and Ciccotti JCP, 109 (1998) 7737
+dF=Z1/2(f+kTG) 
+dq Z1/2q
+Z, G Mass weighted matrices
+f Lagrange multiplier on force constraint
+If q is a simple distance constraint,dF=fq dq</text>
+        </slide>
+        <slide>
+          <slideno>2</slideno>
+          <text>3 10.675 LECTURE 20 
+Perform at various q
+Most useful with ps timescale
+ BUT... how do you know youve chosen the right q?
+q can be any constraint.
+6.Transition Path Sampling (TPS) 
+Throwing enough ropes over mountains in the dark
+Idea is to try many paths over the potential energy surface.
+A B in many dierent ways.
+
+Transition path ensemble. Ensemble of all paths of temp, pressure, etc of interestthat go from A to B in time 
+Z
+AB() is the partition function
+ZAB() =KbTZA
+7.Comitter Probability Distribution 
+One of the tools of TPSAllows us to test q
+1) Choose a point within the trans state ensemble
+2) Sample from MaxwellBoltzmann distribution n,  vwhere n is # of trajectories
+3) Propagate system forward in time4) Compute P
+b the probability that the system goes to B</text>
+        </slide>
+        <slide>
+          <slideno>0</slideno>
+          <text>10.675 LECTURE 20 
+RICK RAJTER 
+1.Today 
+ Exploring Complex Free Energy Landscapes
+Course Notes 
+ Simple vs Complex Free Energy Landscapeds
+ PS Time Scales, and what they can do.
+ Thermodynamic Integration
+ Blue Moon Ensemble (Constrained Dynamics)
+ Transition Path Sampling
+ Examples
+2.
+Simple System 
+KAB, A B
+Date : Fall 2004. 
+1</text>
+        </slide>
+      </slides>
+      <videos/>
+    </lecture>
+    <lecture>
+      <lecture_title>Introduction, Textbook and Notes, Many Body Schr&#246;dinger Equation, Density Functional Theory, Examples and Inspiration (PDF)</lecture_title>
+      <lecture_pdf_url>https://ocw.mit.edu/courses/10-675j-computational-quantum-mechanics-of-molecular-and-extended-systems-fall-2004/resources/lec1/</lecture_pdf_url>
+      <lectureno>1</lectureno>
+      <slides>
+        <slide>
+          <slideno>2</slideno>
+          <text>3 10.675 LECTURE 1 
+8.Solving 
+Many dierent ways of going about it
+Single particle equations, solve through self consistent eld (SCF) Mean Field
+Theory.
+Molecular orbital theory.  HartreeFock Methods.
+Density Functional Theory (DFT).
+In all approaches, there are no adjustable parameters.
+9.Demos/Examples 
+Gaussian Code Intro  Gaussview Display
+Catalyst Design, paper
+ Steam Reforming Catalyst. Science, 20 March, 1998,
+Vol 279, 1913.
+CH
+4 +H2O+Ni CO + 3H 2 +Ni
+  
+Problem: Ni catalyst cokes, ie carbon deposits on the surface.
+A) 2CO  C(S) +CO2
+B)CH4  C(S) +H2
+Coking Deactivates the process.
+GOAL: Investigate the coking reactions with/without Au. Want to hinder
+nucleation of C
+(s).
+Objective: Have the catalyst slective for reaction A over B.
+Choose the model surface (Ni 111 plane)
+Investigate surface reaction
+CH
+4  CH3 +Hrate limiting step.
+Add gold, how will it eect this rxn?
+Compare with Experiment... which it all worked with almost NO coking.</text>
+        </slide>
+        <slide>
+          <slideno>0</slideno>
+          <text>10.675 LECTURE 1 
+RICK RAJTER 
+1.Today
+Motivation
+ 
+Course Overview 
+2.Misc
+Books. Jensen  DFT. Szabo Modern Quantum Chemistry.
+ 
+ Grading. Homework 30%, Participation 20%, Final Project 50%.
+Check out Gaussian Site http://www.gaussian.com/ as well as CPMD
+http://www.cpmd.org/ for information on software we will be using in the course.
+3.Intro Concepts 
+ Model electrons quantum mechanically (QM) while using classical mechanics
+(CM) for the nuclei.
+ In todays research, 50 atom QM simulations is the high end.
+ Goal: Solve for nuclear/electron interactions.
+ Option 1: Nuclei with an electron cloud in a cluster model isolated system.
+ Option 2: Physics approach  periodic structure in 3D.
+4.Setup 
+ BornOppenheimer (BO) Approximation... Important! Also called the
+adiabatic approximation. Essentially, the nuclei are far heavier and less mobilethan electrons. Thus, we can decouple the motions of the electrons from that ofthe nuclei and solve independently.
+ Because of BO approximation, we treat nuclei as point charges of zero volume.
+ Typically, this means were working in a 3N6 dimensional space, where N 
+# of Nuclei in our system.
+Date : Fall 2004. 
+1</text>
+        </slide>
+        <slide>
+          <slideno>1</slideno>
+          <text>2 RICK RAJTER 
+ 
+We are trying to determine the potential energy surfaces.
+5.Notation 
+Introducing the timeindependent Schr odinger Equation (SE).
+Hi =Eii 
+Where H is the Hamiltonian for the system, and Eis are the Eigenvalues.
+6.Hydrogen 
+The Hamiltonian is as follows.
+22  i =Eii2me 2i  e
+r
+2 
+2 =qe40 
+From now on, and for the rest of these lectures, we will be using atomic units to
+stop us from writing out all the miscellaneous constants each and every time.
+ length bohr ao =2 = 0.52918 2 Ame 
+ energy hartree Eh =e2 = 27.21eV
+1 eV = 23.06 Kcal/mol
+The SE thus becomes
+1 1 i =Eii22i  r
+7.Many Body Schr odinger Equation  No spin 
+1N
+2NM 
+i=1 i=1 N NZk Zk 
+ R j r i  Rk i=1 j&lt;i ri  2 i H= +  
+k=1 
+First term is electron KE, second term elec/nuc interaction, last term is elec/elec
+interactions. Nuc/Nuc terms are ignored for the time being.
+N Electrons
+
+M Nuclei
+The electron/electron interaction term is the hardest part as ri andrj are not
+separable.</text>
+        </slide>
+      </slides>
+      <videos/>
+    </lecture>
+    <lecture>
+      <lecture_title>Gaussian Basis Sets (PDF)</lecture_title>
+      <lecture_pdf_url>https://ocw.mit.edu/courses/10-675j-computational-quantum-mechanics-of-molecular-and-extended-systems-fall-2004/resources/lec8/</lecture_pdf_url>
+      <lectureno>8</lectureno>
+      <slides>
+        <slide>
+          <slideno>0</slideno>
+          <text>10.675 LECTURE 8 
+RICK RAJTER 
+1.Today 
+Basis Sets
+ Linear combination of atomic orbitals (LCAO)
+contraction 
+ split valence
+ polarization functions
+diuse functions 
+ basis set super position error (BSSE)
+2.Basis Sets 
+2 types: local and nonlocal.
+Localized basis sets (what gaussian uses)
+Nonlocalized basis sets (plane waves)
+frequencies are much less sensitive to basis sets than the energy
+Zero point energy is a destabilizer.
+3NkT Rotational2
+3NkT Vibrational2
+LCAO choose a basis set for each atom and sum them for the molecular 
+basis set.
+rExample, Slater orbitals. f(x, y, z )er= ((2)n+1/2 n1eao[(2n)!]1/2 )r
+ Numerical
+ Gaussians
+s:cer2 
+p:cxer2 ...(3 total) x,y,z
+d:cx2er2 ...(6 total) xx, yy, zz, xy, yz, xz
+Examples of Basis Sets
+Minimal basis set  fewest # of functions needed to treat all electrons.
+H1 Li2 C3.
+3.STO3G (Slater Type Orbital) 
+3 Gaussians  Good description, but pain to integrate.ki==1 C
+=Slater=pdp  gp 
+dpare the coecients. gpare the gaussians. Each gaussian is a primitive
+functions. dps are xed, a contraction of the basis set.
+Coecients, dps, and s in gps determined ahead of time by tting to atomic
+data.
+Date : Fall 2004. 
+1</text>
+        </slide>
+        <slide>
+          <slideno>1</slideno>
+          <text>2 RICK RAJTER 
+slaterfunction slaterexpansionnl= ( )2drnl nl
+minimize nl i=C pdp  gpfor H atom.
+STO3Gs almost never used as its HIGHLY INADEQUATE.
+Why? Too small, no robust to chem changing environments, and they dont treat
+anisotropy.
+Solution? Better to express orbitals as summation of diuse and contracted
+functions.
+4.321G, 631G split valence basis set. 
+K KKGform
+Kgaussian for each inner shell (nonvalence)
+K contracted gaussians for each valence orbital
+K diuse gaussians for each valence orbitalkk k 
+dnlk  gl(n, k, r) nl=k=1 
+coecients are found by minimization of the total hartreefock energy of the
+atoms.
+So optimized for hartreefock, but still is no anisotropy taken into account.
+5.Polarization Functions (631G* and 631G**) 
+Polarization functions are important for polar moleculesThey allow for nonuniform displacement of charge around nucleousinclude functions of higher angular momentums + p = hybrid sp orbitalterm used to strike a balance between ratio of s and p.
+Examples 631G* and 631G***
+ add 6 d Gaussians to each heavy atom (ie nonhydrogen)
+** 2nd star means p functions to hydrogen and helium. Optimized to HF
+energy.6311B **
+ designed for correlation coecients found by minimizing atomic
+MP2 energies.
+6.Diffuse Functions (321+G*, 631+G*, 321++G*, 631++G*) 
+Previous basis sets designed for systems w/relatively tight bound electrons (ie not
+anions) + means adding additional s and p functions optimized for depronated
+hydrides (Li
+ andBeH).
+K KKK
+++, 2nd plus means adding diuse functions to H, 1st plus means diuse
+functions on nonH atoms.
+K
+ is the diuse functions, K is more diuse.
+Note: Absolute energies are far from conserved, binding energies are much closer
+to convergence.
+631++ G** is still not big enough. Additional functions (typically higher order
+angular momentum functions)
+631++G(3df,3pd) adds higher orbital angular momentums.</text>
+        </slide>
+      </slides>
+      <videos/>
+    </lecture>
+    <lecture>
+      <lecture_title>Coupled-Cluster Theories, QCISD, G1, G2 (PDF)</lecture_title>
+      <lecture_pdf_url>https://ocw.mit.edu/courses/10-675j-computational-quantum-mechanics-of-molecular-and-extended-systems-fall-2004/resources/lec12/</lecture_pdf_url>
+      <lectureno>12</lectureno>
+      <slides>
+        <slide>
+          <slideno>0</slideno>
+          <text>V10.675 LECTURE 12 
+RICK RAJTER 
+1.Today
+LSD
+ 
+Functionals 
+Correlation Methods 
+ CI, Partial CI
+ G1, G2, G3
+ Coupled Cluster, CCD, CCSD, QCISD
+2.LSD  Local Spin DFT 
+Thomas Fermi is too hard to correct wave function, as TTF[] would completely
+change it.
+LSD  Electrons can be unpaired here, as opposed to ground state paired methods.
+
+,  densities of the , spins, either +/ 1/2.
+In the following derivations, is means either the orspin.
+2)1 
+2[, ] =n 
+( 
+b(r))drdr+J[+] +Exc[, ] + v(r)( E
+)dr+eb(r) e
+Where b(r) is the magnetic eld.
+setns to 1 for the lowest KS orbitals w/normalization.
+Solve 2 KS equations
+1 
+2
+1 
+2 2 +Veff)rho ( =
+ 2 +Veff)rho (
+For q=
+= 1,2,3,4 ... N
+(r)dr+Exc[,] =V(r) +eff which are the coupling terms.rr  | |
+same for Veff, substitute and solve for and 
+NOW, all we need is an accurate Exc[]
+3.Functionals 
+LSDA  Local Spin Density Approximation.
+choose form of Exand Ecfrom that of a homogenous electron gas  
+Ex[, ] =Ex[,0] + Ex[0,  ]  
+Exonlydependsonthesamespings 
+=1 
+21 1 1
+1
+for the spin compensated case, 
+,0] + Ex[0,  =
+1 
+2[ ] =Ex[ ] = 2E x[,0] Ex, 22 2 2
+Ex[]
+For the case when spins are not compensated.
+Ex[, ]=1Ex[2]+1Ex[2]
+Date : Fall 2004. 2 2
+1</text>
+        </slide>
+        <slide>
+          <slideno>1</slideno>
+          <text>2 RICK RAJTER 
+Recall Slater Ex[] = Cx4/3dr
+4/3 +4/3)dr LSDA ELSDA[, ] = 21/3Cx( x 
+Can take functional derivatives of ELSD
+x
+Vosko, Wilk, and Nasair parameterized a form for Ecfrom monte carlo data from
+a homogenous electron gas.
+EV WNlocal thus developed.C
+Perdew and Zunger developed another correlation functional taking into account
+self interaction Epz
+c
+Errors as high as 30100 Kcal/mole. Local functional worked better than we
+might expect due to cancelation of errors.
+Elocalgive Ecabout 2x to high. Elocalgives Exabout 10% too low.c x
+Ex10 Ecand thus the errors cancel.
+4.Corrections to local density approximation 
+ELSD[, ] = dr xc(, )xc
+ELSD[, ] = dr  f(, ), xc
+Where CGA means the generalized gradient approximation.Beckes correction to E
+LSD
+2 
+ELSD x drEB=x  
+ x
+4/3 
+x 1+6xosinh1(x) 
+x=||
+4/3
+
+is t to exact HF exchange energies of 6 noble gas atoms from He to Ne.
+Becke chose = 0.0042
+Other functionals: BLYP, PW91, PB (exchange and correlation)
+5.Adiabatic Correction Method 
+Incorporation of the exact exchange. 1Exc=0 Uxc()d  = 0 no interaction = 1 full interaction.
+Eexact+C1ULSDAExc=Cox xc
+ULSDA=Uxc[, ]drxc
+Find coecients by tting eg atomization energies of small moleculesB3LYPB represents the type of exchange3 represents the number of parameters usedLYP is the correlation method used.
+6.DFT 
+ incorporation of the electron exchange at the cost of a HF calculation.
+ BUT, no a priori rule for knowing what function is more accurate than another.
+ No method for getting more and more accurate correlation.</text>
+        </slide>
+      </slides>
+      <videos/>
+    </lecture>
+    <lecture>
+      <lecture_title>Car-Parrinello Molecular Dynamics - Applications (PDF)</lecture_title>
+      <lecture_pdf_url>https://ocw.mit.edu/courses/10-675j-computational-quantum-mechanics-of-molecular-and-extended-systems-fall-2004/resources/lec18/</lecture_pdf_url>
+      <lectureno>18</lectureno>
+      <slides>
+        <slide>
+          <slideno>0</slideno>
+          <text>10.675 LECTURE 18 
+RICK RAJTER 
+1. Objective For Final Presentation
+Objective: What will you accomplish if you succeed.
+ 
+ Motivation: Experimental and Computational Aspects 
+ Test: Compare with experimental and theory results 
+ Methodology and Validation: Known from literature, and compare to known 
+methods 
+Results  
+Conclusions  
+Date : Fall 2004. 
+1</text>
+        </slide>
+      </slides>
+      <videos/>
+    </lecture>
+    <lecture>
+      <lecture_title>DFT: Solution of Kohn-Sham Equations and Exchange-Correlation Functionals (PDF)</lecture_title>
+      <lecture_pdf_url>https://ocw.mit.edu/courses/10-675j-computational-quantum-mechanics-of-molecular-and-extended-systems-fall-2004/resources/lec11/</lecture_pdf_url>
+      <lectureno>11</lectureno>
+      <slides>
+        <slide>
+          <slideno>0</slideno>
+          <text>10.675 LECTURE 11 
+RICK RAJTER 
+1.Today 
+ 2nd HohenbergKohn Thereom
+ Kinetic Energy
+Thomas Fermi 
+KohnSham Orbitals 
+ Spin DFT
+Gradient Corrected NonLocal Functionals 
+2.2nd Thereom 
+Variational principle as applied to DFT, for trial density T(r)
+such that T(r)dr=Nelectrons
+Eo Ev[T(r)]
+Ev[] = v(r)(r)dr+F[]
+where v(r) are the nucelec interactions, F[] is the electron KE + elecelec
+interactions
+F[] = (T+U)dr
+Where T = KE, U = elecelec
+Ev[T] = T(T+U+V)Tdr &gt; E o[]
+2(r) =|(r)|
+So far, all weve dealt with is the ground state energy... Only HF can deal with
+excited states.
+E[] = T[] + N[] + U[] + (Nuc/Nuc)
+T is KE, N is Nucelec, U is elecelec.
+T[] is the Thomas fermi theory
+ choose the form of T[] to be that of a gas of
+free homogenous electrons.
+1 2for no potential (particle in a box)  =v1/3 eikr, kx=lx nx
+TT F[] = Cf(r)5/3dr  
+3Cf=10 (32)2/3
+local functional.
+E[] = T[] + N[] + J[] + X[] + C
+[]
+J is the mean eld coulombic interaction term, X is exchange, C is correlation.
+It doesnt work well, using local functionals is disastorous. T
+T F[]
+ No covalent bonding ever occurs in this model, Teller thereom... because
+bonding for the most part is determined by changes in T.
+Similarly, Dirac developed a local functional for electron exchange.
+X[] = Cx4/3(r)dr
+3 
+)1/3Cx=4(3 
+Date : Fall 2004. 
+1</text>
+        </slide>
+        <slide>
+          <slideno>1</slideno>
+          <text>2 RICK RAJTER 
+Xtheory, is similar but additional 3/2 constant
+3.KohnSham Orbitals 
+N 2T=p(1)(
+21i)pdrpnp 
+(r) =pnp 
+p(1) p(1)dr
+Rigorously, for any interacting systems. contains  # of terms
+Clever idea from KS  choose a noninteracting reference system.
+ns1 for the lowest n orbitals, all other ns= 0, still fermions cant occupy the
+p p 
+same orbitalN p(1)(11TS=p=1  
+22)p(1)drN(r) =p 
+p(1) p(1)dr
+E[] = TS[] + N[] + J+X+C + (T Tx)
+LetC=C +T TS
+LetExc exchange correlation functional, Exc=X+CNE[] =p=1 |Psi 1 
+p 22p+J+Exc+v(r)(r)dr
+KohnSham orbitals are auxilliary, needed to solved but they dont really have a
+physical meaning.If there exists a noninteracting reference state w/density (r)
+How can we calculate 
+ps. Analogous to HF equations.Ndene [s] =E[] Npqq p p q p
+where pqis the lagrange multiplier, set d = 0
+1 J[][ 22 +Veff]r=Npqqwhere Veff=v(r) + +Exc [] 
+R q  
+12 +v(r) +(r)dr+Vxc(r)]p=pp [ 2|rr |
+Choose a basis expansion for KS orbitals  Veffsolve iteratively.N 1   (r)(r ) +Exc[] E=pp 2 |rr  vxc(r)(r)dr
+DFT is highly dependent|
+on having an accurate Excfunctional.</text>
+        </slide>
+      </slides>
+      <videos/>
+    </lecture>
+    <lecture>
+      <lecture_title>The Plane-wave Pseudopotential Method (PWPP) (PDF)</lecture_title>
+      <lecture_pdf_url>https://ocw.mit.edu/courses/10-675j-computational-quantum-mechanics-of-molecular-and-extended-systems-fall-2004/resources/lec14/</lecture_pdf_url>
+      <lectureno>14</lectureno>
+      <slides>
+        <slide>
+          <slideno>2</slideno>
+          <text>10.675 LECTURE 14 3 
+1Where do we stop? Choose an energy criteria and set of ks Ek=2(k+g)2 &lt; E cut
+6.Advantages of method 
+Syntax easier, no *s, +s etc etc
+Can methodically increase accuracy of your basis setBSSE is not an issue
+7.Disadvantages 
+Must treat empty spaceMany plane waves needed (costly)Amorphous systems need to be large enough such that there is no periodicinteraction.
+8.Misc 
+For insulators and semiconductors, on the k point is used. The gamma point.Another problem
+ plane waves dont describe huge variations in (r) well
+Solution  introduce pseudo potentials
+o(r) =kwk n|nk(r)2 where w is the weighting function|
+In metals, small #s of ks are chose on a mesh that physicists have developed.
+Metals  k points used.
+9.Pseudopotentials 
+ treat only valence electrons explicitly
+can describe variations in</text>
+        </slide>
+        <slide>
+          <slideno>1</slideno>
+          <text>2 RICK RAJTER 
+Every reverse of sign from neighboring atoms (1 links to 2, 2 links to 3, 3 links
+back to 1) is a node. Nodes are higher in energy from the band splitting.
+N atoms, 1 huge ring.
+Lowest energy is all wave functions of the same sign
+Highest energy is an alternating arrangement of wave functions.
+Each energy in between (combinations of + and s) creates a continuum of levels
+between the highest and lowest energy.
+with 10
+20 is a virtual continuum of levels.
+ 
+3.Notation 
+The wave functions  ks are spaced a distance apart.
+k=neiknanwhich is the generalized phase relationship
+k is the index or momentum vector.
+This results from the translational symmetry of the system.
+Unique values of |k| &lt;+/ are in the rst brillioun zone.a
+E(k) E(k) from 0 to /aand DOS (# of states between E and E + dE)
+4.Physics approach. 
+Blochs Thereom. Given the Hamiltonian H = R +V(r) where
+V(r)=V(r+R)=V(r) for all R in a periodic lattice.
+
+nk(r) =eikrunk(r) where unk(r) =unk(r+R)
+k is the quantum # that characterized the translational symmetry of the system
+Periodic lattice. 1cm3 1022 atoms 1017 on the surface.
+105  106 surface/volume ratio.
+5.reciprocal lattice 
+k spaceThe set of all wave vectors g that yield plane waves w/the periodicity of a given
+lattice is its reciprocal lattice.
+eig(r+R) =eigreigR=1 
+Reciprocal lattice holds this equations
+Expand hnk(r) in a basis set of plane waves w/periodicity of lattice
+cn(q)eigr=eikr kenk(r) =gnk(r)qcn(q)eigr</text>
+        </slide>
+        <slide>
+          <slideno>0</slideno>
+          <text>10.675 LECTURE 14 
+RICK RAJTER 
+1.Today 
+Introduction to Plane Wave Pseudo Potential Methods
+ Electronic Structure of Extended Systems
+Blochs Thereom 
+Plane Wave Basis Set 
+ Implementation of DFT Pseudo potentials
+2.MOT 
+Molecular Orbital Theory
+ 1D conguration of Hatoms
+Atoms 1 and 2
+1 wave function centered around atom 1
+2 wave function centered around atom 2
+Bonding  A=  1 +  2 
+AntiBonding  B=  1  2 
+The bonding state is energetically favorable in the band splitting that occurs.
+Move on to 3 atoms in a ring (1D line)
+3 energy congurations (2 unique)
+Lowest, 
+1 +  2 +  3
+Highest  1 +  2  3 AND  1  2  3
+Date : Fall 2004. 
+1</text>
+        </slide>
+      </slides>
+      <videos/>
+    </lecture>
+    <lecture>
+      <lecture_title>Hartree-Fock Theory, Matrix Manipulations (PDF)</lecture_title>
+      <lecture_pdf_url>https://ocw.mit.edu/courses/10-675j-computational-quantum-mechanics-of-molecular-and-extended-systems-fall-2004/resources/lec3/</lecture_pdf_url>
+      <lectureno>3</lectureno>
+      <slides>
+        <slide>
+          <slideno>2</slideno>
+          <text>10.675 LECTURE 3 3 
+ Zk 1HHf=
+21i2  
+r i Rk+r 1  r 2k
+1 1where is often writtenr1r2 r12 
+N Zk 2Eo= d a( ]a(x 1) x1 x1)[
+21i 
+r i Rk a k
+N  1 N1x1d a(1)+ d  x 2 
+b(2) a(1) b(2)2 r12 
+N  1 N1x1d a(1)+ d  x 2 
+b(2) a(2) b(1)2 r12 
+Term 1 is the energy of a single electron. Term 2 is the coulomb interaction
+between electron 1 and 2. Term 3 is the exchange energy term.
+ The exchange energy term is a result of using the slater determinant, which
+deals with the exchange of electrons. This is a correction to the mean eld term.
+ To note, when a=b, the last terms cancel out.
+7.Symbolic Notation 
+The above was a complete mess, to simplify well use the following notation.
+ ZkThe single electron term h(1) =12 
+2 1  r1k 
+The coloumb term: Jb(1) a(1) = [d b(2)r1b(2)] a(1) x2 
+12 
+The exchange term: Kb(1) a(1) = [ d b(2)r1a(2)] b(1) x2 
+12 
+Condense further to symbolic notation.
+Eo=a&lt; a|h|a &gt;+1 &lt; ab||ab &gt;2 ab
+And this is equivalent to the entire mess is the previous section.Lets expand the last term just to be clear.
+1 &lt; ab||ab &gt; =1 [aa|bb] [ab |ba]2 ab 2 ab  In usage, this would appear as [h(1) + Jb(1) Kb(1)] a(1) = aa(1)b=a
+and the term in brackets is called the fock operator.
+8.Basis Sets 
+|1( r)2dr2 =1(r 1)dr1 which is probability of nding electrons. i
+1(r 1)d|
+r1 = 1 over all space.
+A basis set is a set of functions introduced to t s, but its not a rigorousbasis set as solved analytically.
+( r) = caua(r)a
+where cais a complex number and ua(r) is the basis. Together, they form vectors.
+d ru  r)ub( r) =abwhen orthnormal
+ca=drUa( r)( r)a(
+9.Dirac Notation 
+ r)a( r) =&lt;a|b&gt;=&lt; a b &gt; where : &lt; a is called the bra and b &gt;isa( | | |
+called the ket
+H is a linear operator.
+H(C
+a|a &gt;+Cbb &gt;) = CaH a &gt; +CbH b &gt;
+ | | |</text>
+        </slide>
+        <slide>
+          <slideno>3</slideno>
+          <text>4 RICK RAJTER 
+ 
+ 
+aH 
+bdr=&lt; a|H |b &gt;
+H is hermitian meaning H=H 
+&lt; a|H|b &gt;=&lt; b|Ha &gt; 
+&lt; a|Hb &gt;=&lt; Ha|b &gt;
+&lt; a|b &gt; a is the complex conjugate. H11 H12 ... 
+The bras, kets dene a matrix Hab=&lt; a|H |b &gt;=H21 
+...H22 
+......
+... 
+10.Hermitian Details 
+Important properties
+ Eigenfunctions are orthonormal
+ Eigenvalues are real
+ All observables are eigenvalues of hermitian operators
+ dp() =| &lt; U |&gt;|2d= probability of getting .
+ dp( r) =| &lt;  r|&gt;|2</text>
+        </slide>
+        <slide>
+          <slideno>0</slideno>
+          <text>10.675 LECTURE 3 
+RICK RAJTER 
+1.Today 
+ Hartree Theory and Self Consistent Solutions
+Slater Determinant 
+ HartreeFock Theory
+Reminder, Tuesdays Evening Class 78:30 rm 1115
+2.Concepts 
+NM  Mean Field Theory  Self Consistent Solutions
+3.Quick Review 
+H0 =Ei0 for the ground state system. The full hamiltonian is below.
+N N1N
+21 Zkecri Rk+v2 
+i H=ri r ji i j i i&lt;j
+The diculty arises in the last term, because its not separable.
+4.Hartree Theory 1928 
+Trial Wave Function 1(x 1)2(x 2)
+Go from a many bodied problem to a single electron problem.
+
+j electron density of j.
+j( r) =  r)j( r)
+j(
+Sooo...
+N N N
+r i r j r i r ji i&lt;j j=2 | | 
+and that is the Mean Field Term.1 1(x 1)2(x 2)
+1N
+2NM
+ Zk 2 
+i +N
+r i Rkr i r jj=2 | | (r i)HHartree
+1 = dri
+i i j
+HHartree+HHartree...+HHartreeSummed up from for each electron.1 2 N
+HarThus, we solve H1 Har(1) = 1Har(1)1 1 
+Example
+Date : Fall 2004. 
+1</text>
+        </slide>
+        <slide>
+          <slideno>1</slideno>
+          <text>2 RICK RAJTER 
+Initially
+1(1)2(2)3(3)
+ 
+1(1)2(2)3(3)
+ 
+ 
+2(2)3(3)1(1) 
+ 
+ 
+2(2) 
+1(1) 
+3(3)
+ 
+1 (1) 
+3(3)2(2) 
+ 
+1 (1) 
+3(3)2 (2) 
+ 
+Convergence !
+The major problem left to deal with is the fact that 1(x 1)2(x 2) is symmetric in
+regards to exchange of electron positions. Thus, we need to make it
+antisymmetric by converting via a slater determinant.
+5.Slater Determinant 
+1(x  1, x2) =
+2[i(x 1)i(x 2) i(x 2)i(x 1)]
+1=
+2i(x 1)i(x 2)
+j(x 1)j(x 2)
+The above is known as a Slater determinant.
+Now, we want to expand this relationship for an Nelectron system.
+i(1) j(1) k(1)
+i(2) j(2) k(2)
+. . .
+. . .. . .
+
+i(N)j(N)k(N)1(x  1x 2x 3...x N) =
+N
+with each spin being orthonormal!
+x)i  
+i( xdx =ij
+6.Hartree + Slater Determinant 
+HHfo=Eo
+Reorganizing via multiplying each side by   
+HHfox1d  Eo=  d  x 2 o</text>
+        </slide>
+      </slides>
+      <videos/>
+    </lecture>
+    <lecture>
+      <lecture_title>Design of Selective, Sulfur Resistant, Oxidation Automotive Catalysts (Presented by Course Teaching Assistant) (PDF)</lecture_title>
+      <lecture_pdf_url>https://ocw.mit.edu/courses/10-675j-computational-quantum-mechanics-of-molecular-and-extended-systems-fall-2004/resources/lec24/</lecture_pdf_url>
+      <lectureno>24</lectureno>
+      <slides>
+        <slide>
+          <slideno>0</slideno>
+          <text>10.675 LECTURE 24
+RICK RAJTER 
+1. Today 
+Surface Phase Diagram 
+V,W interaction parameters 
+E(p) where p=1 is occupied, p=0 is unoccupied 
+E(p) = Vo + wipi + wijpipj + ijk pipjpk
+Where the w terms are the energetics between the set occupancies.
+MC simulators to get convergence with NN energetic interactions.
+NEB  Nudged Elastic Band
+Change electronic Structure
+ alloys strains 
+ 
+additives  
+ steps 
+Weighted Dband analysis 
+Date : Fall 2004. 
+1</text>
+        </slide>
+      </slides>
+      <videos/>
+    </lecture>
+    <lecture>
+      <lecture_title>Embedding, Reaction Field Methods, Solvation, Combined QM/MM (PDF)</lecture_title>
+      <lecture_pdf_url>https://ocw.mit.edu/courses/10-675j-computational-quantum-mechanics-of-molecular-and-extended-systems-fall-2004/resources/lec19/</lecture_pdf_url>
+      <lectureno>19</lectureno>
+      <slides>
+        <slide>
+          <slideno>0</slideno>
+          <text>3 10.675 LECTURE 19 
+RICK RAJTER 
+1.Today 
+Continuum Solvation 
+ Onsager
+PCM 
+ Embedding, ONIOM
+ QM/MM
+2.Solvation 
+Looking at the dichloryl ethane in the gas phase (trans vs gauche positions)
+In the gas phase, we take the trans conguration as 0 energy, but the gauche
+conguration as 1 kcal/mole.
+In a solvent, both energies are essentially the same due to the solvents high
+dielectric constant.
+What is E
+elec,solv(solvation energy)?
+Eelec,solvEelec,liq Eelec,gas=
+Onsagers reactions eld method (JACS b8 (1936) 1486)Essentially, the solvation sphere is embedded within a system of liquid ofdielectric value 
+H
+rf=Ho+H1 where H1 is the perturbation of the solvent
+This is all done with gas phase calculations (HF DFT, etc)
+a=3Vm o 4N
+H1 =Rwhere R is the reaction eld
+R=g
+2(1)g=(2+1) a3 
+o 
+3.Polarized Continuum Method  PCM 
+Jacabo Tomasi and coworkers
+1) Choose R
+2) Solve SCF Problem w/H
+R=g 3) Compute  
+ifR(3) R(1) then done
+Date : Fall 2004. 
+1</text>
+        </slide>
+        <slide>
+          <slideno>2</slideno>
+          <text>3 10.675 LECTURE 19 
+But, cannot treat breaking and formation of bonds. QM only for small systems
+Solution, combine the 2.
+E(s) = EQM(I) +EMM(o) + E(I O) interaction term using mm  EMM(I O)
+EMM(I O) +EMM(O) =EMM(s) EMM(I)
+ E(s) = EQM(I) +EMM(s) EMM(I)
+Now, let
+E(s) = EQM(c)+ EMM(O)+EMM(I O) EMM(I O) EQM(L) EQM(I L)
+butEMM(s) = EMM(C) +EMM(O) +EMM(I O) EMM(L) EMM(IL)
+E(s) = EQM(C) +EMM(s) EMM(C) + 
+ = EMM(L) EQM(L) + EM(I L) EQM(I L)
+IfEMM EQM 
+=0
+5.QM/MM 
+Type of method, double link atom
+QM is in a certain region, the rest is standard MM.</text>
+        </slide>
+        <slide>
+          <slideno>1</slideno>
+          <text>2 RICK RAJTER 
+ E(gauchetrans) for 1,2 dichloroethane (STP)
+Medium HF MP 2 experimental
+gas 1 1.96 1.64 1.20
+organicsolvent 4.3 0.83 0.54 0.69
+pureliquid 10.1 0.49 0.26 0.31
+acetonitrile 35.9 0.30 0.09 0.15
+Assume solute has gas phase dipole moment but no charge. its just polarizable.
+Cavity is polarizable w/charge distribution on surface of the cavity
+Treat the solute as a continuum charge distribution ( r) in a cavity w/arbitrary
+shape.Describe polarization of innite dielectric by the creation of surfaces w/density( s)
+v(r) electrostatic potential
+v
+(r) +v(r) are from solute and surface respectively
+Sole2v(r) = 0 and match the boundary conditions via v(s) =v(s)+ 
+(v(s) =(v(s) 
+n )s n)s+ 
+(s) =[(1) ]E(s)n=vWhere E(s)nis the electric eld produced by the4
+solute.
+H=H
+o+vSolve this self consistently
+4.Embedding of Clusters (Sauer &amp; coworkers) 
+Faujisite = 144 AtomsZSM5 = 288 Atoms
+proton anity vs cluster size
+NumShells
+1PA(HF )/STO  36)
+388.2HF(Mixed/Embedded )
+298.0
+2 381.0 299.4
+3 363 299.6
+4 391 299.2</text>
+        </slide>
+      </slides>
+      <videos/>
+    </lecture>
+    <lecture>
+      <lecture_title>Running the Car-Parrinello Code (PDF)</lecture_title>
+      <lecture_pdf_url>https://ocw.mit.edu/courses/10-675j-computational-quantum-mechanics-of-molecular-and-extended-systems-fall-2004/resources/lec17/</lecture_pdf_url>
+      <lectureno>17</lectureno>
+      <slides>
+        <slide>
+          <slideno>0</slideno>
+          <text>10.675 LECTURE 17 
+RICK RAJTER 
+1.Today 
+Running CarParrinello Code
+MD/CP Eqs
+MD trajectories
+CP input, output, results
+2.CarParrinello 
+Initially, used to optimize the wave function and move nuclei at the same time.Uses a variety of solver algorhythms like velocity verlet
+CP equations use a ctitious mass, that is the trick.
+In MD, there is a period of time, called equilibration time, where the system isin a nonphysical state due to the initial input coordinate and velocity guesses putin by the user.After that, the system is equilibrated and useful measurements can then be taken
+on the system.
+ 
+Bobservable =1 (t)dtt t 
+Date : Fall 2004. 
+1</text>
+        </slide>
+      </slides>
+      <videos/>
+    </lecture>
+    <lecture>
+      <lecture_title>Density Functional Theory (DFT) - Introduction (PDF)</lecture_title>
+      <lecture_pdf_url>https://ocw.mit.edu/courses/10-675j-computational-quantum-mechanics-of-molecular-and-extended-systems-fall-2004/resources/lec10/</lecture_pdf_url>
+      <lectureno>10</lectureno>
+      <slides>
+        <slide>
+          <slideno>0</slideno>
+          <text>10.675 LECTURE 10 
+RICK RAJTER 
+1.Today 
+ MP2, 3, 4
+DFT Intro 
+DFT Theorems 
+DFT Functionals 
+2.Methods 
+CarParrinello Molecular Dynamics  Works using plane waves.CI, can only be used for small systems because it scales as N!
+kt RT Transition State Theory Ka =h eG 
+3.Perturbation Theory 
+Perturbation needs normalization
+oidr= 1 
+ i 
+
+ion = 0 n= 1,2,3, ...i 
+Eo = i oHoo
+i dri 
+E1= oVo
+i dri i 
+E2= oV1
+i dri i 
+let 
+i = Co 
+n m 
+But we know (E i  Ho)1= (V E1o
+i ) from rst order expansion of 1
+i i i 
+Substitute into and multiply by o 
+m 
+ m(Eio  Ho)Co =dro 
+m(V Ei)o  dro 
+ n m  i  
+Eo 
+m(Eio  C
+n)o =dro Vo
+i  Ei o odr =dro 
+nn n m mi 
+form=nor terms = 0
+Solve for CnsR o
+n V oi C=n o
+iEEo
+n 
+Use to calculate rst, second order calculations.
+Ei 2= ioVRidr= ioV Co drnn n
+o
+n oi on dr V (drV V )= i o 
+o
+iEE
+2o
+n R P 
+io 
+Eon ( V dr)= o
+iEo
+n 
+Now, we plug in V.
+1Ei = 
+o(N N
+rirj   Ji  Ki)odr First order correctiono      
+=1
+b(Jab  Kab) b(Jab  Kab)2a  a 
+1=Eo +E1=a a  2a b(Jab  Kab) =EHF 
+o o 
+Where the coecient of1
+2is to eliminate double counting.
+Date : Fall 2004. 
+1</text>
+        </slide>
+        <slide>
+          <slideno>2</slideno>
+          <text>3 10.675 LECTURE 10
+From variational principle, we know that  =  unless v(r) v(r) = constant or
+0.Assume its not true for .
+E[H] = H &lt;H
+E &lt; E+ (v(r) v(r))(r )dr
+Do the same for E
+E &lt; E + (v (r) v(r))(r )dr
+Which results in E+E &lt; E+E and that cant happen.
+So, we cant get the same from 2 dierent external potentials.</text>
+        </slide>
+        <slide>
+          <slideno>1</slideno>
+          <text>2 RICK RAJTER
+This Means that the 2nd order term is actually a rst order correction.
+1rs   (  o i j&lt;i r12abdridrj)2
+E2= b &lt; ao a +b  r  s a r r&lt;s 
+MP2, 2nd order comes from double excitations.
+4.MP vs. HF comparisons 
+How does it stack up? Gaussian can do up to MP5
+Relative Timing on methylamonium with (631G* Basis Set)
+HF 1.0 (reference state)
+MP2 1.5
+MP3 3.6
+MP4 5.8
+So, less than an order of magnitude dierence in time scale.
+Why is it not more expensive? Hartree mean eld is essentially double counting,
+which MP eliminates.
+5.Bond Energy Comparisons  Ethylene 631G** Basis Set 
+(CH 2=H2C) + 2H 2= 2CH 4
+Method CalculatedEnergies RXNEnergyHF
+78.03884 64
+MP278.31682 60.9
+MP378.33998 62.4
+MP478.344 61.3
+MP578.35306 59.7
+All energies are in hartrees. Experimental zero point corrected energy is 57.2
+hartree.
+Need to subtract o zero point energy data from bond vibrations.
+CO hartree theory completely messes up the dipole moment, even predicts the
+opposite sign!
+6.Density Functional Theory  DFT 
+In hartree theory, we have minimized the energy functional E[] = if ( r) is the
+external potential (nuclei), it denes the hamiltonian for an N electron system.
+Question, can we express E in terms of ( r) such that E=E[]?
+First Thereom. (HohenbergKohn, 1964)
+v( r), and thus the many body ground state (no excited states) is determined
+uniquely by ( r) for an Nelectron nondegenerate system (within a trivial
+additive constant).
+If we know (r) of the ground state, then we know v(r) and ground state energy,
+as well as all other measurable properties.
+The proof is in the pudding... or in the rst section of the paper.
+Essentially, its not possible to give 2 dierent v(r)s for the same potential well.
+v(r)
+ (r) uniquely
+v(r) (r) (r)
+v(r)  (r)</text>
+        </slide>
+      </slides>
+      <videos/>
+    </lecture>
+  </lectures>
+</doc>

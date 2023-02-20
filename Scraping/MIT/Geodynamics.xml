@@ -1,0 +1,4781 @@
+<doc>
+  <source>MIT</source>
+  <date>28/01/2023</date>
+  <course>
+    <course_url>https://ocw.mit.edu/courses/12-520-geodynamics-fall-2006/</course_url>
+    <course_title>Geodynamics</course_title>
+    <course_tags>
+      <list>Science </list>
+      <list>Earth Science </list>
+      <list>Geophysics </list>
+    </course_tags>
+  </course>
+  <lectures>
+    <lecture>
+      <lecture_title>Different Representations of Stress (PDF)</lecture_title>
+      <lecture_pdf_url>https://ocw.mit.edu/courses/12-520-geodynamics-fall-2006/resources/lecture3/</lecture_pdf_url>
+      <lectureno>3</lectureno>
+      <slides>
+        <slide>
+          <slideno>1</slideno>
+          <text>Require the traction  to be parallel to the normal vector by writing iT
+ 
+i in T=  
+ 
+in which  represents one of the three principle stresses. 
+ 
+b. Combine the above equations: 
+ 
+i j jin n=  
+0 ) (=j ij ij n  
+0
+321
+33 32 3123 22 2113 12 11
+=
+
+
+
+
+
+
+
+
+
+nnn         
+ 
+ 
+In the middle equation,ij is the Kronecker delta.   It equals 0 if i j and equals 1 if i=j. 
+ 
+c. Solve: 
+ 
+The matrix equation has a solution if  
+ 
+0
+33 32 3123 22 2113 12 11
+=
+
+         
+ 
+ 
+where the double bars indicate the determinant.  This results in a third-degree equation in 
+ 
+ 
+03 22
+13= + + + I I I    
+ 
+where 
+ 
+33 32 3123 22 2113 12 11
+333 3223 22
+33 3113 11
+22 2112 11
+233 22 11 1
+        
+  
+  
+=+ + = ++=
+III
+ 
+ 
+ a. Begin with Cauchys formula: 
+ 
+j ji in T=</text>
+        </slide>
+        <slide>
+          <slideno>0</slideno>
+          <text>Lecture 3:  Different Re presentations of Stress 
+ 
+The stress tensor can be represented in differe nt ways to highlight pa rticular features or 
+aid in solving geodynamic problems.  This lect ure explores how to represent the stress 
+tensor in terms of principle stresses and isotropic and deviat oric stresses. Representing 
+the stress tensor in terms of principle stresses makes visualizing the state of stress easier 
+because it reduces the stress tensor to only three numbers.  It also makes some 
+calculations easier.   Representing the stress te nsor in terms of isotropic and deviatoric 
+stresses is helpful in determining the type of faulting produced by certain stresses. 
+ 
+1. Principle Stresses and Principle Axes 
+ 
+The stress tensor is a matrix that specifies  the tractions on three mutually perpendicular 
+faces of an infinitesimal cube. 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+In general, these tractions are both parallel  and perpendicular to the normal vectors of 
+the faces.  At a certain orienta tion of the faces, however, the tractions are only parallel to 
+the normal vectors.  The directions of these normal vectors are called principle directions 
+and the stresses are called principle stresses.  Calculating the prin ciple directions and 
+stresses requires using eigenvalues. 
+ dx3
+dx2t11t13
+t12t23
+t22
+t21t33
+t32 t31
+dx1x3
+x2
+x1
+Figure by MIT  OCW.Figure 3.1</text>
+        </slide>
+        <slide>
+          <slideno>2</slideno>
+          <text>2. Isotropic and Deviatoric Stress 
+ 
+The stress tensor can be divide d into two parts:  isotropic stress and deviatoric stress.  
+The isotropic stress is defined as  0
+ij
+ 
+ij kk ij31 0=  
+ 
+It rep resents the m ean norm al stress or pr essure.  Subtracting the m ean norm al stress 
+from  the stress tenso r produces the d eviato ric stress  d
+ij
+ 
+0
+ij ijd
+ij=  
+ 
+The deviatoric stress represents the part of the stress that di ffers from  a hydrostatic state.</text>
+        </slide>
+      </slides>
+      <videos/>
+    </lecture>
+    <lecture>
+      <lecture_title>Course Overview (PDF)</lecture_title>
+      <lecture_pdf_url>https://ocw.mit.edu/courses/12-520-geodynamics-fall-2006/resources/lec1/</lecture_pdf_url>
+      <lectureno>1</lectureno>
+      <slides>
+        <slide>
+          <slideno>5</slideno>
+          <text>12.520 Lecture notes #1  6 
+ 
+Another digression:  An am azing result from  rock m echanics, "Byerlee' s law," is that f s  
+is essentially independent of rock type! 
+ 
+ 
+ 
+Fig. 1_6  
+ 
+ 
+Now,  back to the sand pile.  Adm onton' s law tells us that any tim e the shear traction on a 
+plane reaches a value of f s n, the sand pile will f ail.  The com plication is that we no</text>
+        </slide>
+        <slide>
+          <slideno>7</slideno>
+          <text>12.520 Lecture notes #1  8 
+ 
+Fig. 1_7  
+ 
+Case 1:  W ater at rest:  W hat are the relations am ong com ponents?  
+Case 2:  A cube at the corner of the table:  W hat are the relations am ong com ponents?</text>
+        </slide>
+        <slide>
+          <slideno>3</slideno>
+          <text>12.520 Lecture notes #1  4 
+3)  Expensive houses were built on top of the terrace. 
+4)  Lawns were watered lavishly. 
+5)  Landslides started wrecking the expensive houses. 
+ 
+ 
+       
+Fig. 1_3  
+ 
+We will exam ine the "continuum  mechanics" of this situation &amp; com e up with som e 
+"expert opinion" about responsibility.  W e need to do two things:  first, understand how 
+sand responds to "internal forces," then understand how to describe these forces. 
+ 
+Assertion:  Sand pile behavior, as a first approxim ation, is governed by friction .  So are 
+earthquake faults.   
+(reading:  T &amp; S, pp 351-353) 
+ 
+ Consider an experim ent to m easure the fric tional behavior of sand.  One approach would 
+be to place som e sand between a block &amp; a table, subjecting the block to a downward 
+force F and a horizontal force V (in T&amp;S notati on).  If the block has area A, there is a 
+ normal traction   n = F/A 
+ and a shear traction    = V/A</text>
+        </slide>
+        <slide>
+          <slideno>4</slideno>
+          <text>12.520 Lecture notes #1  5 
+ 
+Fig. 1_4  
+ 
+ 
+Adm onton' s law (to sum marize a lot of experim ents) states that the shear force needed to 
+cause sliding is related to the norm al force pressing the block down as  
+V = f s F 
+or, in term s of tractions  
+ = fs n 
+Digression:  One very sensitive way of  measuring f s  (developed at MIT) is to use an 
+inclined plane &amp; vary the inclination angle .  Suppose this is done &amp; loading is carried 
+out by varying the # of bricks squeezing the sand.  How will  depend on the # of bricks?  
+ 
+ 
+ 
+Fig. 1_5</text>
+        </slide>
+        <slide>
+          <slideno>2</slideno>
+          <text>12.520 Lecture notes #1  3 
+Logical contradiction between mathematical process of taking limits &amp; physical 
+breakdown of continuum description at small scales ignored.  (Assume - fields varying slowly enough that math defined before description falls apart.) 
+ 
+At core:  Newton's 2nd Law:         F  = m a, or F -ma = 0. 
+ for this course, a = 0 =&gt; the governing equation is F = 0! 
+   Applies not just to particles, entire bodies, but to regions within bodies. 
+   Free-body diagram - cut open body (thought experiment), examine forces of 
+interaction between surfaces. 
+ 
+Description of forces acting in the continuum -  For taking limits, etc, forces/unit area 
+make sense.  Consider tractions  T:  Force/unit area on faces (vector quantities). 
+ 
+Units:  SI - Pascal (Pa); 1 Pa = 1 N/m 2 
+ cgs:  dyne/cm 2 
+ "geophysics": bar ( 1 atmosphere): 1 bar = 10 6 dynes/cm 2 = 0.1 MPa 
+A general description of the tractions acting on planes of arbitrary orientation requires:
+   stress - forces of interaction (2nd rank tensor) 
+    Newton's 2nd &gt;  ij,j + fi = 0. 
+   strain &amp; rotation  - kinematics of motion &amp; deformation  (2nd rank  
+   tensors) 
+   rheology (constitutive law) - relationship between stress &amp; strain 
+   solids - elastic, plastic, brittle 
+   fluids - viscous, ideal 
+   other - e.g., Silly putty, paint,  
+ 
+We will quantify these quantities soon, but first a digression to a concrete example to 
+bring things into focus.  When I moved to southern CA ~ 1980, I was impressed by press coverage of a set of law suits pending against various governments (state &amp; local).  The question to be settled was who was responsible for an expensive housing development "sliding into the ocean."  Briefly, the sequence of events was: 
+1) "Nature" deposited a terrace (mainly sand) beside the ocean. 
+2)  The highway department made a road cut into the base of the sea cliff to put in a 
+coastal highway.</text>
+        </slide>
+        <slide>
+          <slideno>1</slideno>
+          <text>12.520 Lecture notes #1  2 
+ 
+Breakdown at sm all V (e.g., gas) 
+ 
+Fig. 1_2  
+ 
+ 
+Ignore fine structure.  Assum e: 
+  Continuity :  com pletely fills space (no pores or voids) and has properties 
+describable by continuous functions.  [Scale dependent.  E.g., sand will be treated as a 
+continuum ] 
+  Homogeneity  - identical properties at all points   [Scale dependent.] 
+  Isotropy  - properties sam e in all directions.  [Often not true. e.g., schist] 
+Behavior describable in term s of partial differential equations subject to boundary 
+conditions.  All functions will be "well be haved," except at a finite # of surfaces.</text>
+        </slide>
+        <slide>
+          <slideno>6</slideno>
+          <text>12.520 Lecture notes #1  7 
+longer have a brick &amp; a bench to work with  what we need is a m athem atical 
+description of norm al and shear tractions on arbitrary planes in a continuum .  We start 
+out with a special description of the tractions on a surface oriented with the coordinate 
+system , then will go on to generalize. 
+ 
+It is useful to break tractions into their com ponent parts (norm al &amp; shear): 
+Define ij as force/unit area acting on face with norm al ni in direction n j. 
+Consider now a sm all parallelepiped with faces in the co-ordinate planes and dim ensions 
+dx1, dx 2, and dx 3. The tractions on the three faces can be resolved into their Cartesian 
+components, one norm al and two tangential to the face on which the traction acts: 
+ 
+T(1)i=(11,12,13)
+T(2)i=(21,22,23)
+T(3)i=(31,32,33) 
+where  T denotes the traction on the face norm al to the axis x1, and so on. The nine 
+components of the tractions form  a (1)i
+33 matrix 
+ 
+ij=111213
+212223
+313233
+
+
+
+ 
+where for each com ponent the first subscript denotes the co-ordinate axis to which the 
+surface is norm al, and the second subscript denotes the direction in which the com ponent 
+acts. For exam ple, 23denotes the com ponent acting on the face norm al to in the 
+direction of . x2
+x3</text>
+        </slide>
+        <slide>
+          <slideno>0</slideno>
+          <text>12.520 Lecture notes #1  1 
+12.520:  Geodynamics 
+(Continuum  mechanics applied to geological problem s) 
+Lecture 1 
+ 
+Handouts - Course description &amp; reserve list 
+  Instructor background 
+  Student background 
+   Scheduling 
+Mechanics :  the study of the m otion of m atter and the forces that cause such m otion.  
+Based on concepts of tim e, space, force, energy, m atter. 
+Applications to point m asses, solid bodies fam iliar from  introductory physics. 
+Continuum mechanics  - mechanics of parts of "bodies." 
+ 
+Continuum  - define values of fields (e.g., density) as functions of position, i.e., at points. 
+Exam ple : density (P)=
+Vn0lim Mn
+Vn 
+  V i &gt; Sequence of volum es converging on P 
+  M i  &gt; Mass enclosed by V i  
+ 
+ 
+Fig. 1_1</text>
+        </slide>
+      </slides>
+      <videos/>
+    </lecture>
+    <lecture>
+      <lecture_title>Fluids (PDF)</lecture_title>
+      <lecture_pdf_url>https://ocw.mit.edu/courses/12-520-geodynamics-fall-2006/resources/lecture21/</lecture_pdf_url>
+      <lectureno>21</lectureno>
+      <slides>
+        <slide>
+          <slideno>0</slideno>
+          <text>X2 
+X1 u1 . 12.520  Lecture Notes 21 
+Fluids 
+Fluids  no m emory of s hape  flow under applied tractions, body forces, stop flowing 
+(dont reverse flow) when driving forces rem oved. 
+Newtons concept of viscosity  subject fluid to shearing 
+Figure 21.1 
+Figure by MIT OCW. 
+12 =u1 
+x2 
+where  is shear viscosity.</text>
+        </slide>
+        <slide>
+          <slideno>1</slideno>
+          <text>Substance  (Pa sec) at 20o C Poise (10 Pa  sec) 
+air 2 105 2 104 
+water 103 102 
+glycerine 1 10 
+ice ( 0o C) 1013 1014 
+glass 1017 1018 
+Earth 1019 1021 1020 1022 
+Physical cause  gasses  (v ertical) motion of particle s with different horizontal 
+velocitie s. 
+	Fluids  elas tic resistance to dis tortio n of atom ic cages as atom s and molecules 
+slide by. 
+Figure 21.2 
+Figure by MIT OCW. 
+	Solids  diffusion of defects in the lattice (vacancies or  interstitials ); motion of 
+disloc ation s in la ttice str ucture.</text>
+        </slide>
+      </slides>
+      <videos/>
+    </lecture>
+    <lecture>
+      <lecture_title>Plates (cont.) (PDF)</lecture_title>
+      <lecture_pdf_url>https://ocw.mit.edu/courses/12-520-geodynamics-fall-2006/resources/lecture20/</lecture_pdf_url>
+      <lectureno>20</lectureno>
+      <slides>
+        <slide>
+          <slideno>0</slideno>
+          <text>Va 
+w 
+c 
+m 
+h x 
+{ 12.520  Lecture Notes 20 
+Plates (continued) 
+Response to a line load (e .g. volcanic chain under water) 
+Figure 20.1 
+Figure by MIT OCW. 
+Dd4w +()gw =0at x 0 
+dx4 m w V0 at x =0 
+Solution to hom ogeneous equation 
+w =ex /(C1cos x +C2 sin x ) +ex /(C3cos x +C4 sin x )
+ 
+ 4D 1/4 
+with = is flexural p arameter. 
+(m w )g 
+Invoke symm etry, boundedness. Determ ine solution only for x 0. 
+dw =0 at x = 0 C3 =C4
+dx
+w 0 x  C1 =C2 =0</text>
+        </slide>
+        <slide>
+          <slideno>3</slideno>
+          <text>V03 
+x / x w = e cos 
+4D  
+V03 
+w0 = 
+4D 
+0 
+w x/ 
+x0/ 
+w0 wb 
+xb/ 
+Figure 20.4Figure by MIT  OCW . 
+x0 =  
+2  , xb = 3 
+4  , wb = 0.067 w0 
+h ; 35km unbroken 
+h ; 50km broken 
+Thickness o f broken lith osphere is a bout 1.5 tim es thickness of the unbroken lithosph ere.</text>
+        </slide>
+        <slide>
+          <slideno>1</slideno>
+          <text>w =C3ex /(cos x +sin x )
+
+Now to evaluate C3 , go back to the end load prob lem (or orig inal def inition ) 
+dM dw =V +P 
+dx dx 
+C3 depends on V0. 
+d3w 1 V=
+dx32 D 
+1 d3w 4DC3V0 =D = 
+32 dx3 
+x=0 
+V0 is negative load, half supported by each side. 
+w = V03 
+ex /(cos x +sin x )
+8D 
+V03
+w0 = 
+8D 
+w =w0ex /(cos x +sin x )
+
+0 
+w x/ 
+x0/ 
+w0 wb 
+xb/ 
+Figure 20.2 
+Figure by MIT OCW.</text>
+        </slide>
+        <slide>
+          <slideno>6</slideno>
+          <text>Fourier Se ries t(x)  t(k) 
+Apply load tc = t0 cos kx 
+Get displacem ent  D  w = w0 cos kx 
+t0w0 =m 1+ Dk4 
+c cg 
+g = g0 cos kx 
+g0 : c (tc  ekHw0) 
+where H is crustal thickness and w0 depends on k and D. 
+g(k) g(x)
+Compareg(x) with data.</text>
+        </slide>
+        <slide>
+          <slideno>4</slideno>
+          <text>-M0 -V0 x0 x wb 
+xb Bending at a trench. 
+Figure 20.5 
+Figure by MIT OCW. 
+w =ex /(C3cos x +C4 sin x )
+
+M02 
+C4 =
+2D 
+2 
+C3 =(V0+M0 ) (entire V0supported)
+2D
+w =2ex / M0 sin x +(V0+M0)cos x 2D   
+Observables  -- x0, xb , wb 
+tan x0 =1+V0/ M0 
+tan xb =12M0/ V0 
+ xb x0 = 
+4</text>
+        </slide>
+        <slide>
+          <slideno>5</slideno>
+          <text>Load 
+Crust 
+Stiff 
+Floppy "Airy" root wb =2exb / 
+M0 sin xb +(V0+M0)cos xb 
+2D   
+2 M0 [( xb x0 )/]x0/ sin ((xb x0)/ )wb = e e
+2D cos(x0/ ) 
+Plates Summary: 
+Successes  m oats and rises ubiquitous . Elastic flexure seem s to apply. 
+Problem s:  
+ Geophysical m easurem ents of w are difficult. 
+ Reference level? 
+ Other sources of topography. 
+Alternative approach  use gravity 
+Consider sam e observed topography 
+Figure 20.6 
+Figure by MIT OCW.</text>
+        </slide>
+        <slide>
+          <slideno>2</slideno>
+          <text>V0/2 
+x = 0 x0 3 =tan1(1) = 
+ 4 
+xb =sin1(0) =
+ 
+wb =w0e =0.0432 w0 
+x ; 3o ; 300km 
+= 314 km ; 100km 
+ 
+Suppose plate is fractured. 
+Figure 20.3 
+Figure by MIT OCW. 
+Same equation. Different boundary c onditions  different profile. 
+d2wM =0at x =0 =0 
+dx2</text>
+        </slide>
+      </slides>
+      <videos/>
+    </lecture>
+    <lecture>
+      <lecture_title>Fluids (cont.) (PDF)</lecture_title>
+      <lecture_pdf_url>https://ocw.mit.edu/courses/12-520-geodynamics-fall-2006/resources/lecture22/</lecture_pdf_url>
+      <lectureno>22</lectureno>
+      <slides>
+        <slide>
+          <slideno>0</slideno>
+          <text>12.520 Lecture Notes 22 
+ 
+ 
+Fluids (continued) 
+Material D erivative 
+Laws of physics  conservation of mass, conservation of energy, etc. 
+Express in reference fram e of m aterial, e.g. rod 
+Figure 22.1 
+Steady state:   T=T0x/L;T
+t=0 
+Lagrangian frame:   cpT
+t=k2T+A 
+Eulerian frame  material is moving. There would be a T
+tfor the above rod moving 
+through. 
+Marching band example. 
+Need to account for non physical change due to motion.  
+Above example: T
+t=vT
+x where vT
+xis advection term. 
+ 
+  1Figure by MIT OCW.x
+LT = 0 T = T0</text>
+        </slide>
+      </slides>
+      <videos/>
+    </lecture>
+    <lecture>
+      <lecture_title>Special Cases (PDF)</lecture_title>
+      <lecture_pdf_url>https://ocw.mit.edu/courses/12-520-geodynamics-fall-2006/resources/lecture15/</lecture_pdf_url>
+      <lectureno>15</lectureno>
+      <slides>
+        <slide>
+          <slideno>4</slideno>
+          <text>=2 = (1 )1 E 
+23 = 
+E 
+=1 +2 += (2  4)= 2(1  2)3 E E 
+ VNow to conserve mass, ==
+ V 
+New lithostat: 
+=(+)g(h+h) +ghzz 
+= (1 +)g(1 + 2)hgh
+E 
+2 = (+ )gh
+E
+ 2(1 ) gh
+zz = 
+ E 
+Use 
+= 0.25 
+E= 100 GPa = 1 Mbar 
+h= 100 km 
+3= 3M g / m= 3g / c m3 
+zz = 2(1 ) gh ; 5%
+ E</text>
+        </slide>
+        <slide>
+          <slideno>3</slideno>
+          <text>=gz (lithostatic) zz 
+=gz +xx xx 
+=gz +yy yy 
+The non-lithostatic (as opposed to deviatoric) stress: 
+' = 0  zz ' =plane stress xx xx ' =yy  yy 
+Assume for simplicity =yy =xx 
+= (1 ) compression for compression e11 = e22 E 
+2 e33 =  extension for compression 
+E 
+dilation = (2  4) =
+E  
+Look at the change in lithos tatic pressure at a depth h h+h= h(1  2)
+E
+gh  (+)g(h+h) 
+Plane stress , 1 =2 = 
+l l h 3 
+2 
+1 
+Figure 15.2 
+Figure by MIT OCW.</text>
+        </slide>
+        <slide>
+          <slideno>2</slideno>
+          <text>Note: 
+ Plate stress  Plane strain 
+E  E 
+1 2 
+   
+1  
+2 
++ 2   
+Plane stress : (e.g., 33 = 0) 
+
+22 11 
+Figure 15.1 
+Figure by MIT OCW. 
+1 e11 = (11 22)
+E
+1 e22 = 
+E(22 11) 
+e
+33 =
+E(11 +22)
+Tectonic Stress  Often plane stress is useful (3D 2D). 
+Assume mostly in plate stress 
+ Assume</text>
+        </slide>
+      </slides>
+      <videos/>
+    </lecture>
+    <lecture>
+      <lecture_title>Plates (cont.) (PDF)</lecture_title>
+      <lecture_pdf_url>https://ocw.mit.edu/courses/12-520-geodynamics-fall-2006/resources/lecture19/</lecture_pdf_url>
+      <lectureno>19</lectureno>
+      <slides>
+        <slide>
+          <slideno>1</slideno>
+          <text>d 4 wD +mgw = t0cg cos kx when P = 0 
+dx4 
+k 4 Dw0 cos kx +mgw0 cos kx = t0cg cos kx 
+t0w0 =  Dk 4 
+m 1+
+cg
+c 
+1/ 4  DCall 2  flexural wavelength
+cg  l
+4For  ? l , (lk)= 1, w0 ; t0 ; isostacy 
+m 1c 
+For  = l , w0 ; 0 uncompensated 
+x t L 
+Figure 19.2 
+Figure by MIT OCW. 
+ c 2nx  t(x) =tcos 2nx +ts sin n L nL  
+n=0
+c s s c
+Find t, t     Assume D, calculate w, wn n n n 
+Synthesize w(x), compare to observations.</text>
+        </slide>
+        <slide>
+          <slideno>0</slideno>
+          <text>12.520 Lecture Notes 19 
+Plates (continued) 
+d 4 w d 2wFlexural equation: D + P +gw = q(x)
+dx4 dx2 
+Eh3 
+where D = .212(1 )
+h Tt 
+w c 
+m 
+Figure 19.1 
+Figure by MIT OCW. 
+T = T0 cos kx = T0 cos 2x 
+ 
+Harmonic load 
+t = t0 cos kx , w = w0 cos kx , t0 = T0  w0</text>
+        </slide>
+        <slide>
+          <slideno>2</slideno>
+          <text>Plate subject to an end load 
+L 
+x y 
+Figure 19.3 
+Figure by MIT OCW. 
+dVShear force: =q
+dx 
+Since q = 0, V = const. = Va 
+Bending moment:  
+dM	 dw =V +P 
+dx	 dx
+dM
+Since P = 0, =V  M =V x +const 0 a t x = L 
+dx a 
+M =V(x L)a 
+Displacement: 
+d 4 w	 d 3w =0 =const 
+dx3dx4</text>
+        </slide>
+        <slide>
+          <slideno>3</slideno>
+          <text>But M =D d 2 w 
+dx2 =0 , dM 
+dx =D d 3w 
+dx3 =Va 
+d 3w 
+dx3 =Va 
+D 
+d 2 w 
+dx2 =Va 
+D (x L) 
+Subject to w, dw 
+dx =0 a t x = 0 
+Vx2 
+w = a (L  x )     cubic displacement 
+2D 3
+Figure 19.4 L Va 
+W h x y 
+Figure by MIT OCW. 
+2w = Va x(L  x )
+2D 3
+Assumption xy = xx</text>
+        </slide>
+        <slide>
+          <slideno>4</slideno>
+          <text>E= xx xx1 2 
+d 2 
+=yw 
+xx dx2 
+d 2 wM =D 
+dx2 
+= yMxx 
+D 
+max = E h 1 6VaL 6Va 
+ L V L = =  xx 2 ah21 2 D h h 
+= Va = 1 h max 
+xy h 6 L xx</text>
+        </slide>
+      </slides>
+      <videos/>
+    </lecture>
+    <lecture>
+      <lecture_title>Strain (PDF)</lecture_title>
+      <lecture_pdf_url>https://ocw.mit.edu/courses/12-520-geodynamics-fall-2006/resources/lecture7/</lecture_pdf_url>
+      <lectureno>7</lectureno>
+      <slides>
+        <slide>
+          <slideno>3</slideno>
+          <text>c. Elongation and Com pression 
+ 
+Consider the following figure: 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Since both dx and du are in the x 2 direction, the first part  of the strain tensor ij is given 
+by  
+ 
+   21
+22
+22
+22
+22xu
+xu
+xu
+=
+
+
+
++=  
+ 
+Consequently, ij i=j can be thought of as a measure of elongation in the direction i.  It is 
+equal to a change in length per unit length of a material.  Fo r example, if a metal rod of 
+length l is stretched to a new length l+l, the elongation ij is equal toll. 
+  
+ 
+  
+l + Dll Dl
+ x3
+x2dx2
+P P' Q' Q
+dx2 + du2
+Figure by MIT  OCW.
+Figure by MIT OCW.Figure 7.3
+Figure 7.4</text>
+        </slide>
+        <slide>
+          <slideno>2</slideno>
+          <text>Two expressions for  can be written in term s of
+ji
+xu
+: 
+ 
+
+tantan
+1212
+==
+xuxu
+ 
+ 
+Because ro tations in infinites imal strain ar e small, the equatio ns can be ap proxim ated 
+using a sm all-ang le iden tity: 
+ 
+
+==
+1212
+xuxu
+ 
+ 
+These equations can be com bined to give a single expression for : 
+ 
+
+
+
+
+=
+12
+21
+21
+xu
+xu  
+ 
+This expression can be generali zed to represent any rotation: 
+ 
+ij
+ij
+jiwxu
+xu=
+
+
+
+=21  
+ 
+The strain tensor can be rewritten to explic itly in clude th e above expression: 
+ij ijij
+ji
+ij
+ji
+ji
+wxu
+xu
+xu
+xu
+xu
+                                          21
+21
++ =
+
+
+
++
+
+
+
++=
+ 
+ 
+In this form, the second part of the strain tensor wij represents only rigid-body rotations.  
+It is anti-symmetric.  The first part ij represents elongation, comp ression, and shear.  It 
+is symmetric.</text>
+        </slide>
+        <slide>
+          <slideno>0</slideno>
+          <text>Lecture 7 :  Strain 
+ 
+Lectures 5 explored faults and brittle defor mation across a failure plane.  The next set of 
+lectures deals with ductile deform ation:  stretching, com pressing, and twisting m aterials 
+into different shapes without breaking them .  Thi s lecture and lecture 9 treat the 
+mathem atical descr iption  of ductile d eformation c alled str ain.  Lecture s 11 and 12 
+describe the relationship be tween strain and stress.  
+ 
+1. Finite S train and Inf initesimal Strain  
+ 
+Finite strain is characterized by big changes in the shape of a body.  Infinitesim al strain 
+is characterized by sm aller change s.  The next couple of lectur es trea t infinites imal strain 
+only becaus e the sm all changes in sh ape cause sq uared and h igher-ord er term s in the 
+strain equation to be very sm all.  These term s are neglig ible and m ake the strain equation 
+simpler. 
+ 
+2. Infinitesimal Strain 
+ 
+Definition
+ 
+Stress is a second-order tensor that provide s a relationship between a norm al vector and 
+a traction vector.  Strain is  also a second-order tensor that provides a relationship 
+between two vectors:  a position vector dx i and a displacem ent vecto r dui.  Consider the 
+following picture: 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ x2xidxidui
+uiPP'QQ'
+x1x3
+Figure by MIT  OCW.
+Figure 5.1Figure 7.1</text>
+        </slide>
+        <slide>
+          <slideno>1</slideno>
+          <text>The matrix equation is written: 
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+=
+
+
+
+321
+33
+23
+1332
+22
+1231
+21
+11
+321
+dxdxdx
+xu
+xu
+xuxu
+xu
+xuxu
+xu
+xu
+dududu
+ 
+ 
+The nine-term matrix is the strain tensor. 
+ 
+Interpreting the Strain Tensor
+ 
+The strain tensor looks complicated.  What it means in terms of stre tching, twisting, and 
+rotating a body is not obvious.  A few simple examples, however, help illustrate what its 
+components mean in terms of different kinds of deformation. 
+ 
+a. Translations 
+ 
+In the case of rigid-body translations,  du equals zero.  The strain tensor has no sensitivity 
+to them.   
+ 
+b. Rotations 
+ 
+Consider the following figure: 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+  
+ 
+ 
+ 
+ 
+ 
+ 
+  
+    
+Assuming that the deformation is continuous, du  is related to dx  by the equation: 
+ 
+3 , 2 , 1    3
+32
+21
+1=++= i dxxudxxudxxudui i i
+i  
+a
+aQ1'
+Q2'Q2Q1
+Px2
+x1
+Figure by MIT  OCW.Figure 7.2</text>
+        </slide>
+        <slide>
+          <slideno>4</slideno>
+          <text>d. Shear 
+ 
+Consider the following picture: 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Just as in the case of rigid- body rotation, two ex pressions for  can written in terms 
+of
+ji
+xu
+using small-angle approximations: 
+ 
+  
+= == =
+tantan
+3223
+xuxu
+ 
+ 
+These equations can be combined to give a single expression for : 
+ 
+23
+32
+23
+21  =
+
+
+
++=xu
+xu 
+ 
+Consequently, while ij i=j is a measure of elongation, ij ij is a measure of shear.    aa
+P Q2Q1
+x2x3
+P Q2Q1
+x2x3
+Q2'Q1'
+Figure by MIT  OCW.Figure 7.5</text>
+        </slide>
+      </slides>
+      <videos/>
+    </lecture>
+    <lecture>
+      <lecture_title>The Stream Function and Postglacial Rebound (PDF)</lecture_title>
+      <lecture_pdf_url>https://ocw.mit.edu/courses/12-520-geodynamics-fall-2006/resources/lecture25/</lecture_pdf_url>
+      <lectureno>25</lectureno>
+      <slides>
+        <slide>
+          <slideno>2</slideno>
+          <text>Disadvantage: Loss of physical insight. 
+ 
+Physical Interpretation of Stream F unction 
+Consider triangle APB. 
+ 
+                                               x3                                            
+                                                                                               B 
+                                                                                                          
+                                                                        s            x3            v1 
+                                                                                               
+                                                        A              x1                P 
+                                                                             v3                                                                                             
+                                                                                                    x1 
+ 
+For incom pressible fluid,  
+ fl uxAP + flux BP + flux AB = 0 
+ v3x1+v1x3+fluxAB = 0 
+ fluxAB = v3x1v1x3=
+x1x1+
+x3x3= 
+ or d  =B
+AB
+ A
+Difference in  repres ents the flux crossing the curve. 
+ 
+Solution of biharmonic 
+Polynom ials (e.g., for Conette flow, =v0x32
+2h) 
+Separation of variables: 
+ = X(x)Z(z) 
+ 4=0X''''Z+2X''Z''+XZ''''=0</text>
+        </slide>
+        <slide>
+          <slideno>4</slideno>
+          <text>Postglacial  Rebound   
+ 
+Decay  of Boundary Undulations (1/2 space, uniform ) 
+ 
+Figure 25.1 
+ 
+ Assum e uniform 
+ Subtract out lithostatic pressure P=pgx3 
+ Assum eguniform  
+ Use stream  function  
+ v1=
+x3v3=
+x1 
+4=0 
+Solution : = A+Bkx3() expkx3()+C+Dkx3()exp kx3() sinkx1 
+Boundary conditions :  
+at x 3 = 0  (mathem atical, not physical) 
+ 33=g
+13=0=v1
+x3+v3
+x1
+
+ 
+at x 3 , must be bounded Figure by MIT OCW.X3X1
+t = t0 cos (kx1)k =2p
+l</text>
+        </slide>
+        <slide>
+          <slideno>6</slideno>
+          <text>:5000  yr
+:3000  km
+
+:1021 Pa
+Note: stream function  
+ exp(kx3)=exp(2x3
+) 
+ Falls of f to 
+ 1/e   at x3:
+2 
+ Senses to fairly great depth 
+  postglacial rebound doesnt reveal the de tails of  mantle viscosity structure, 
+ but only the gross structure. 
+ 
+Note: Behavior at Hudson Bay and Boston different: 
+ 
+                         Hudson Bay                        Boston  
+ 
+ 
+ 
+ 
+                        Continuous  uplift             Subsidence, then uplift t t
+ 
+Is this consistent with uniform  1/2 s pace? 
+ =4
+g 
+ 
+Decom pose into Fourier com ponents 
+ 
+                                                                                ? 
+ 
+Details depend on geometry of ice load and elastic support of load. 
+ 
+Suppose we require faster  relaxation for short  than for long .</text>
+        </slide>
+        <slide>
+          <slideno>3</slideno>
+          <text>X''''
+X+2X''
+XZ''
+Z+Z''''
+Z=0 
+Harm onic =sin2x
+Z(z) 
+Solution : =[(A+Bz)exp(2z
+)+(C+Dz)exp(2z
+)]sin(2x
+) 
+Physical bo undary cond itions :    Tn=0      T=0 
+ 
+                               x3                                                                x3'
+ 
+                                                                              x1'
+                                                                               
+                                                                                        x1   
+ 
+In coordinates, at x1', x3' x3=(x1): 
+ 3'3'=0 
+ 3'1'=1'3'=0 
+Have solutio n to biha rmonic in term s of  -- easily applied at x3 = 0. x1, x3
+ 
+Need to take physical ( ) boundary co nditions and  x1', x3'
+1. rotate to  space x1, x3
+2. Taylors series expansion 
+3. subtract out hydrosta tic reference state 
+Result ( to first orde r in /) 
+=?? 0
+?? 0
+00 g
+
+
+
+ 
+4. solve biharmonic.</text>
+        </slide>
+        <slide>
+          <slideno>7</slideno>
+          <text>elastic litho sphere  
+ 
+                                                                low viscosity asthenosphere 
+ 
+              depth                                          higher viscosity m esosphere 
+ 
+ 
+ 
+How to get solution ? What are the bo undary cond itions ?</text>
+        </slide>
+      </slides>
+      <videos/>
+    </lecture>
+    <lecture>
+      <lecture_title>Tectonic Stress (PDF)</lecture_title>
+      <lecture_pdf_url>https://ocw.mit.edu/courses/12-520-geodynamics-fall-2006/resources/lec4/</lecture_pdf_url>
+      <lectureno>4</lectureno>
+      <slides>
+        <slide>
+          <slideno>2</slideno>
+          <text>Examples: Tibet, Southern Ca lifornia Transverse Ranges. 
+Sources of tectonic stress are of great interest  to geodynamics, particular ly if variations in 
+stress can be interpreted in terms of interesting processes. Recall, from equilibrium, 
+ij , j + fi = 0 
+If we can ignore body forces, then, for example, 
+ xx xz= x  z 
+Fig. 4_2 
+Example: 
+Stress transition near  back-arc basin 
+Fig. 4_3</text>
+        </slide>
+        <slide>
+          <slideno>1</slideno>
+          <text>This can be done by integrating the normal traction as a function of depth to determine 
+the total normal force (per unit length into the picture) acting on each of the two vertical 
+faces of the pill box: 
+Moho 
+Flength = ndyx 
+surface 
+The normal traction exerted by th e continent on the pill box is  everywhere greater than 
+the normal traction exerted by the oceanic structure on the pill box. The total force on the 
+pill box is just the area shaded with hor izontal hatchure in the figure below. 
+Fig. 4_1 
+4) Since our assumptions have led to an unbalanced force on the pillbox that would lead 
+to an infinite acceleration as  the thickness of the pill box shrinks, something must be 
+wrong with our assumption. So we need to modify our model to decrease the magnitude of the normal traction exerted by the continent, increase the normal traction exerted by 
+the oceanic structure, or both. 
+5a) If we "fix" our problem in the contin ent, we require a non lithostatic horizontal 
+extension. 
+5b) If we "fix" our problem in the oceanic region, we require a nonlithostatic horizontal 
+compression. 
+5c) Of course, another solution would be to have horizontal compression in the continent, with even more horizontal compression in the oceanic area. 
+Note: Isostasy and lithostatic stress cannot exist simultaneously! Areas of thickened crust tend to have a state of stress that is more extensional than nearby regions of thin 
+crust.</text>
+        </slide>
+        <slide>
+          <slideno>0</slideno>
+          <text>12.520 Lecture Notes #4 
+Assertion: most of the stress tensor in the Earth is close to "lithostatic," 
+ij~ -gd ij, 
+where  is the average density of the overburden, g is gravitational acceleration, and d is 
+the depth of the point  under consideration. 
+Consider the following table of the lithostati c pressure at variou s points of interest: 
+depth 
+(km) Pa bars 
+ocean ridge crest 2.5 25 MPa 250 
+abyssal plain 4 40 MPa 400 
+deep sea trench 12 120 MPa 1.2 kbar 
+base of crust 30 1 GPa 10 kbar 
+transition zone 600 20 GPa 200 kbar 
+Core-mantle bndry 2900 140 GPa 1.4 Mbar 
+Center of Earth 6400 360 GPa 3.6 Mbar 
+Assertion: Typical "tectonic"  stresses have magnitudes in  the range 0.3 - 300 MPa (3-
+3,000 bars). 
+Conclusion: In considering t ectonic problems, it is usuall y useful to subtract some 
+isotropic reference state of stress. There ar e 2 common choices - the lithostatic stress, 
+which leaves the nonlithostatic stress tensor, and the pressure field, which leaves the 
+deviatoric stress field. But since we need to  know the actual stress tensor in order to 
+calculate the pressure, which requires knowing the solution to the problem in advance, it 
+is most common to use the lithostatic stress field as the reference. 
+In order to place these comments in context, let's look at the situat ion described in T&amp;S 
+problem 2-6, where a continent is in isostati c equilibrium with an ocean. To address the 
+possible state of (nonlithostatic) stress in th e region, we will follow an  iterative approach. 
+The "algorithm" can go as follows: 
+1) Assuming lithostatic stress, calculate the horizontal normal stress as a function of 
+depth beneath both the continental and the oceanic structures. 
+2) Evaluate the "reasonableness" of th is assumption by making a free body diagram by 
+isolating a (thin) vertical "pill box" of material at the continent-ocean boundary and 
+calculating the total forces acting on its sides, given this assumption.</text>
+        </slide>
+        <slide>
+          <slideno>4</slideno>
+          <text>Other techniques  direction only 
+Cheap or free! 
+	Borehole breakout  relies on stress con centration around drill holes; spalling of 
+borehole walls 
+Fig. 4_6 
+Changes in stress direction 
+Example  subduction zone  
+Fig. 4_7 
+dev &lt; 0 Fore-arc: Compression   xx 
+dev &gt; 0 Back-arc: Extension     xx 
+ mantle flow required 
+  xx + xzEquilibrium: = 0x z</text>
+        </slide>
+        <slide>
+          <slideno>6</slideno>
+          <text>Fig. 4_10 
+Note: Angle of 1to fault plane depends on fault properties.</text>
+        </slide>
+        <slide>
+          <slideno>3</slideno>
+          <text>Measurements: 
+ Flat jack  null measurement 
+Fig. 4_4 
+Given T across cut n 
+Fig. 4_5 
+Related techniques  overcoring 
+Hydrofracture 
+Problems  Near surface heterogeneity 
+Difficult to do remotely 
+Only gives present-day stress</text>
+        </slide>
+        <slide>
+          <slideno>5</slideno>
+          <text>{Outer rise  extension near surface due to bending (discussed later)} 
+Other examples of change  in stress orientation: 
+US  Mid continent  E-W Compression 
+Basin and range  E-W extension 
+California  rotation of dev. Stress near faults 
+Earthquake focal mechanisms 
+Fig. 4_8 
+Types of faults 
+Fig. 4_9</text>
+        </slide>
+      </slides>
+      <videos/>
+    </lecture>
+    <lecture>
+      <lecture_title>The Rayleigh - Taylor Instability (PDF)
+Additional File: RTmovie.avi (AVI - 6.8 MB)</lecture_title>
+      <lecture_pdf_url>https://ocw.mit.edu/courses/12-520-geodynamics-fall-2006/resources/lecture24/</lecture_pdf_url>
+      <lectureno>24</lectureno>
+      <slides>
+        <slide>
+          <slideno>4</slideno>
+          <text></text>
+        </slide>
+        <slide>
+          <slideno>16</slideno>
+          <text>Growth of Boundary Undulations 
+ salt domes 
+ diapirs 
+ continental delamination 
+X3 
+ = 0u, u 
+l, l 
+= 02x1 
+ X1 
+cos coskx 
+Figure 24.18 
+Figure by MIT OCW. 
+General problem: topography on an interface 
+2=0 cos kx1 k = 
+ 
+ t/(1) If &lt;l topography decays as 0 e.u 
+(2) If &gt;l topography grows.u
+t/
+Initially =0 e. 
+Eventually many wavelengths inter act, problem is no longer simple. 
+Characteristic time  depends on , u, l, thickness of layers,</text>
+        </slide>
+        <slide>
+          <slideno>8</slideno>
+          <text></text>
+        </slide>
+        <slide>
+          <slideno>10</slideno>
+          <text></text>
+        </slide>
+        <slide>
+          <slideno>1</slideno>
+          <text></text>
+        </slide>
+        <slide>
+          <slideno>12</slideno>
+          <text></text>
+        </slide>
+        <slide>
+          <slideno>3</slideno>
+          <text></text>
+        </slide>
+        <slide>
+          <slideno>14</slideno>
+          <text></text>
+        </slide>
+        <slide>
+          <slideno>5</slideno>
+          <text></text>
+        </slide>
+        <slide>
+          <slideno>0</slideno>
+          <text>12.520 Lecture Notes 24 
+Rayleigh - Taylor Instability</text>
+        </slide>
+        <slide>
+          <slideno>7</slideno>
+          <text></text>
+        </slide>
+        <slide>
+          <slideno>9</slideno>
+          <text></text>
+        </slide>
+        <slide>
+          <slideno>17</slideno>
+          <text>Figure 24.19. Subsidence due to glaciation and the subsequent postglacial 
+rebound. Ice Sheet Before glaciation 
+Subsidence caused by glaciation 
+Surface after melting of the ice sheet but prior to postglacial rebound 
+Full rebound 
+Figure 24.19 
+Figure by MIT OCW. 
+ Weight of ice causes viscous flow in the mantle. 
+ After melting of ice, the surface rebounds  postglacial rebound. 
+ Different regions have different be haviors (e.g., Boston is now sinking).</text>
+        </slide>
+        <slide>
+          <slideno>11</slideno>
+          <text></text>
+        </slide>
+        <slide>
+          <slideno>2</slideno>
+          <text></text>
+        </slide>
+        <slide>
+          <slideno>13</slideno>
+          <text></text>
+        </slide>
+        <slide>
+          <slideno>15</slideno>
+          <text></text>
+        </slide>
+        <slide>
+          <slideno>6</slideno>
+          <text></text>
+        </slide>
+        <slide>
+          <slideno>18</slideno>
+          <text>X3 
+X1 
+m  = 0 Air coskx 
+Figure 24.20 
+Figure by MIT OCW. 
+Problem: how to reconcile physical boundary co nditions with mathematical description?</text>
+        </slide>
+      </slides>
+      <videos/>
+    </lecture>
+    <lecture>
+      <lecture_title>Elasticity (PDF)</lecture_title>
+      <lecture_pdf_url>https://ocw.mit.edu/courses/12-520-geodynamics-fall-2006/resources/lecture12/</lecture_pdf_url>
+      <lectureno>12</lectureno>
+      <slides>
+        <slide>
+          <slideno>4</slideno>
+          <text>steel: ; 0.3 0.33 
+seismically measured 
+vp = +2 
+ vs =  
+
+  compare vp , vs    discriminate rock types 
+3. Simple shear 
+12 =21 = 
+12 = 2e12 = 2Ge12 
+where G is shear modulus. 
+Note: Among , , K, , E, G only two are independent.</text>
+        </slide>
+        <slide>
+          <slideno>3</slideno>
+          <text>= pij ij 
+= pii ii = 3ekk + 2eii 
+=3p = (3+ 2)eii 
+ p VP=  K 
+eVii 
+where K =+ 2/ 3 is bulk modulus. 
+2. Uniaxial stress 
+11 = T
+other = 0
+ij 
+2e1 = T  T 
+2+ 3
+T 
+e E (sometimes Y )
+1
+where E =(2+ 3)  is Youngs modulus 
++
+ Hooks law: 
+eT = Ee
+22 = e33 
+    This is called Poissons ratio. 
+e11 e11 
+ 2e22 = 11  = 
+2+ 3 2(+) 
+= e11 + e22 + e33 = e11(1  2) 
+1
+fluid:  0   
+2 
+most material: = 0.2  0.3
+1
+= =    It is Poisson solid. 
+4</text>
+        </slide>
+        <slide>
+          <slideno>2</slideno>
+          <text>= cosij ij 
+whereij is the angle of primed to original. 
+xi ' =xjij 
+x=x ' i jij 
+xi ' =xj= ij xj xi ' 
+Tensors: 
+a. 0th order (scalar)  quantity dependent only on position 
+b. 1st order (31 components)    Ai ' =Aj ij 
+c. 2nd order (32 = 9 components)   Aij ' =isjkAsk 
+d. 3rd order (33 = 27 components)   Aijk ' =is  Ajtkp stp 
+e. 4th order (34 = 81 components)   A' =is   Astpq ijkl jtkp lq 
+Conventional moduli: 
+1. Hydrostatic comp. 
+Figure 12.2 
+Figure by MIT OCW.</text>
+        </slide>
+        <slide>
+          <slideno>0</slideno>
+          <text>12.520 Lecture Notes 12 
+Elasticity 
+So far: 
+Stress  angle of repose vs accretionary wedge 
+Strain reaction to stress but how? 
+Constitutive relations 
+ij = kl ij () ij () ; ij = kl
+For example,  
+Elasticity 
+Isotropic 
+Anisotropic 
+Viscous flow 
+Isotropic 
+Anisotropic 
+Power law creep 
+Viscoelasticity 
+Trade offs: 
+simplicity  realism 
+constant variable 
+isotropic anisotropic 
+elastic, viscous viscoelastic 
+history history dependent 
+independent</text>
+        </slide>
+        <slide>
+          <slideno>1</slideno>
+          <text>Tensors 
+Most physical quantities that are important in continuum mechanics like temperature, 
+force, and stress can be represented by a tensor.  Temperature can be specified by stating 
+a single numerical value called a scalar and is called a zeroth-orde r tensor.  A force, 
+however, must be specified by stating both a ma gnitude and direction.  It is an example of 
+a first-order tensor.  Specifying a stress is even more complicated and requires stating a 
+magnitude and two directionsthe direction of  a force vector and the direction of the 
+normal vector to the plane on which the fo rce acts.  Stresses are represented by second-
+order tensors. 
+Tensors are quantities independ ent of coordinate system. 
+x3 P 
+x3 ' 
+x2 ' 
+x1 '   
+  
+  x1 x2 x3 
+x2 ' 
+x3 ' 
+x1 ' x2 
+x1 11 12 13 
+21 22 23 
+31 32 33 Direction Cosines Coordinate System 
+Figure 12.1 
+Figure by MIT OCW.</text>
+        </slide>
+      </slides>
+      <videos/>
+    </lecture>
+    <lecture>
+      <lecture_title>Dislocation in Elastic Halfspace Model of the Earthquake Cycle (PDF)</lecture_title>
+      <lecture_pdf_url>https://ocw.mit.edu/courses/12-520-geodynamics-fall-2006/resources/lecture16/</lecture_pdf_url>
+      <lectureno>16</lectureno>
+      <slides>
+        <slide>
+          <slideno>3</slideno>
+          <text>b* 2 1 3 
+4 
+5 9 
+6 7 8 
+1 2 3 
+4 
+5 9 
+8 7 6 10 
+10 
+Figure 16.6 Side view of an edge dislocation in a cubic lattice. 
+Figure by MIT OCW. 
+Dislocation motion helps crystals  deform (dont all have to slip at one time). Also helps 
+Earth deform! 
+C 
+D 
+E 
+A S B 
+Figure 16.7 A dislocation. 
+Figure by MIT OCW.</text>
+        </slide>
+        <slide>
+          <slideno>4</slideno>
+          <text>E C 
+A b 
+b B 
+E 
+E E 
+S S S S B 
+A C 
+Figure 16.8 Upper group: Slip by propagati on of an edge dislocation EE. Lower 
+group: Slip by propagation of  a screw dislocation SS. 
+Figure by MIT OCW.</text>
+        </slide>
+        <slide>
+          <slideno>0</slideno>
+          <text>12.520 Lecture Notes 16 
+Dislocation in Elastic Halfspa ce Model of the Earthquake Cycle 
+Interseismic: Slip below depth D 
+X/D 5 
+y X/D 
+0 
+3 
+Strain Displacement -15 -10 -5 10 15 
+-3 xy 
+Figure 16.1 
+Figure by MIT OCW. 
+Coseismic: Region above D catches up 
+5 
+0 
+X/D 3 y X/D 
+-3 -15 -10 -5 10 15 xy 
+Figure 16.2 
+Figure by MIT OCW.</text>
+        </slide>
+        <slide>
+          <slideno>1</slideno>
+          <text>1 2 
+D 
+Dislocation 
+axis 
+S/2 S/2 Surface 
+fault x3 
+x2 
+x1 Fault 
+displacement S Displacements from Ear thquakes, Fault Slip, etc 
+Consider a strike-slip fault with displacement S, independent of depth  A screw 
+dislocation  i.e., a slip discontinuity. Original ring (dashed) b ecomes helix (solid). 
+Figure 16.3. Section across a mathematical model of a transcurrent fault.  
+Dislocations are used to describe defects in  crystals, as well as fault motions. A crystal 
+disrupted by a screw dislocation is shown in the figure below. Figure by MIT OCW.</text>
+        </slide>
+        <slide>
+          <slideno>5</slideno>
+          <text>00 1 2 Displacement (meters) 
+2 4 6 
+Distance from fault (km) NE 8 10 
+Figure 16.9 Displacement as a function of distance from a transcurrent fault. 
+Figure by MIT OCW.</text>
+        </slide>
+        <slide>
+          <slideno>2</slideno>
+          <text>7 
+6 
+5 
+4 3 2 1 b* 8 9 
+10 
+Figure by MIT OCW. 
+Figure 16.4. A screw dislocation in a cubic lattice constitu tes a deformation that is 
+out of the plane of atoms illustrated. The two atoms denotes by solid circles are 
+essentially part of a second plane. The Burgers circuit indicated by the numbered 
+steps naturally moves into this second plane. Therefore in order to close the 
+circuit the Burgers vector b* must be perp endicular to the plane of atoms shown.  
+Types: 
+Screw Edge 
+Figure 16.5 
+Figure by MIT OCW.</text>
+        </slide>
+      </slides>
+      <videos/>
+    </lecture>
+    <lecture>
+      <lecture_title>Mohr&#8217;s Circle for Strain (PDF)</lecture_title>
+      <lecture_pdf_url>https://ocw.mit.edu/courses/12-520-geodynamics-fall-2006/resources/lecture9/</lecture_pdf_url>
+      <lectureno>9</lectureno>
+      <slides>
+        <slide>
+          <slideno>1</slideno>
+          <text>derivation of this equation. Since the c oordinate system is rotated about the x3 axis, the 
+transformation matrix is 
+ cos sin	0 
+0= 
+ sin cos  
+ 0 0 1   
+The equations for the normal strain and shear strain on the x1' plane in the new coordinate 
+system are 
+ ' =11 +22 +11 22 2 cos   12 2 sin  +11 
+ 2 2 
+22' =11 +22 +11 22 2 cos   12 2 sin   2 2 
+1112' = ( 22 ) 2 sin   12 2 cos  + 2 
+The derivation for these equations follows the derivation for the Moh rs circle equations 
+of stress in Lecture 5.</text>
+        </slide>
+        <slide>
+          <slideno>0</slideno>
+          <text>12.520 Lecture Notes 9 
+Mohrs Circle for Strain 
+Lecture 5 explained a simple and convenient way to find the stress on an arbitrary plane 
+given the stress tensor  ij. The technique involved writing equations for how the shear 
+stress and normal stress on the x 1plane vary when the coordinate system is rotated to x i ' . 
+These equations plotted as M ohrs circle in stress space (  , ) and gave the tractions on 
+plane x ' at angle  to the most compressive principle stress. 1
+Since strain is a second-order tensor like stress, the same technique can be applied.  
+Equations for the normal strain and shear strain on a plane at angle  to the most 
+compressive principle strain may be derived in the same way the equations for stress 
+were derived. Consider the followi ng transformation of coordinates: 
+ x2 
+x2 ' x1 ' 
+x1 
+Figure 9.1 
+Figure by MIT OCW. 
+The strain tensor  in the x i coordinate system is transformed to the strain tensor  in 
+the x i ' coordinate system by the equation 
+T ' =    
+where the double underbars denote second-rank tensors,  represents the transformation 
+matrix, and the superscript T denotes the transpose of matrix . See Lecture 5 for the</text>
+        </slide>
+      </slides>
+      <videos/>
+    </lecture>
+    <lecture>
+      <lecture_title>Stress (PDF)</lecture_title>
+      <lecture_pdf_url>https://ocw.mit.edu/courses/12-520-geodynamics-fall-2006/resources/lecture2/</lecture_pdf_url>
+      <lectureno>2</lectureno>
+      <slides>
+        <slide>
+          <slideno>3</slideno>
+          <text>Definition  
+ 
+Consider the free body in the picture below.   Call the bounding surface S, the volume V, 
+and a cutting plane th rough the body C.  The normal to plane C is .  P is a point on C 
+and is surrounded by a small volume of C called C.  Part 1 of the body exerts internal 
+forces on Part 2 and gives rise to a force on C called f. )(^
+n
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ x3
+Part 1Part 2
+CP
+x2
+x1o
+Figure 2.3
+x3
+x2
+x1oPart 1P
+DCDfiniFigure by MIT OCW.
+Figure by MIT  OCW.Figure 2.4</text>
+        </slide>
+        <slide>
+          <slideno>5</slideno>
+          <text>Definition
+ 
+ Tensors  
+ 
+Most physical quantities that are im portant in continuum  mechanics like tem perature, 
+force, and stress can b e represen ted b y a tens or.  Tem perature can be specified by stating 
+a single numerical value called a scalar and is called a zero th-order tensor.  A force, 
+however, must be specified by stating both a m agnitude and direction.  It is an exam ple 
+of a first-order tensor.  S pecifying a stress is  even  more com plicated and requires s tating 
+a magnitude and two directionsthe direction of a force vector and the direction of the 
+norm al vector to the plane on which the for ce acts.  Stresses are repres ented by secon d-
+order tensors.   
+ 
+ The Stress T ensor 
+ 
+Representin g a force in three dim ensions re quires three num bers, each referenced to a 
+coordinate axis.  Representi ng the state of stress in thr ee dim ensions requires nine 
+numbers, each referenced to a coordinate  axis and a plane perpendicu lar to the 
+coordinate axes.  To understand what each of the nine num bers m eans, it is helpful to 
+visualize an infinitesim ally sm all cube in  a continuous m edium, oriented in a 3D 
+coordinate system . 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+The coordinate system has axes x 1, x2, x3 normal to the faces of the cube.  The faces of 
+the cube are defined by unit normal vectors 3 2 1, ,x x x)))that are positive when pointing out 
+from the cube. 
+ x3
+x2
+x1x3
+x2
+x1
+Figure by MIT OCW.Figure 2.6</text>
+        </slide>
+        <slide>
+          <slideno>2</slideno>
+          <text>Adm ontons Law  
+ 
+Adm ontons law relates a norm al force a nd a tan gential force by a proportionality 
+constan t called the coefficient of static friction fs: 
+ 
+normal s gential Ff F  =tan   
+ 
+Dividing both sides of the equation by the area A over which the forces ac t leads to 
+Adm ontons law in te rms of  traction s: 
+ 
+n sf   =  
+   
+ 
+ 
+ 
+  
+As shown in the picture, Admontons law expresses a failure criterion.  When the 
+tangential force is larger than the product of the normal force and fs, the block in the 
+picture will slide down the incline.  This failu re criterion will help solve the problem of 
+houses sliding into the ocean in Southern  California.  The problem in Southern 
+California, though, is more difficult than the block problem because it is unclear which 
+plane below the house has n and   that will cause failure.   
+ 
+The rest of this lecture and the next one will address this difficulty.  It will explore how 
+to completely represent the state of stress below the house at any point, how to find the 
+traction on an arbitrary plane below the house,  and how to evaluate which one of those 
+planes will fail.   
+ 
+3. Tractions at a point Figure by MIT  OCW.
+Motivation  
+ Tractions at a point are difficult to conceptu alize because the area at  a point over which a 
+force acts is infinitesimal.  Despite this difficulty, the concept of  point tractions is 
+extremely important because it allows one to  find the traction on an arbitrary plane.   
+ 
+ 
+    snn1
+t
+Figure 2.2</text>
+        </slide>
+        <slide>
+          <slideno>4</slideno>
+          <text>The Cauchy stress principle stat es that as the area around P shrinks to zero, the following 
+limit holds 
+ 
+)(
+0limn
+CTCf=
+  
+ 
+T(n) is called the traction or stre ss vector at point P.  The is a reminder that this stress 
+vector is defined only for a particul ar plane through P with normal vector .   )(n
+)(n
+ 
+ Newtons Laws and the Traction at a Point  
+ 
+Newtons third law says that the force exerte d by Part 2 of the body on Part 1 is equal 
+and opposite to the force exerted by Part 1 on Part 2.  What about the point traction  
+ T(-n) exerted by Part 1 on Part 2? 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Applying Newtons second law to both parts of the body and the body as a whole reveals 
+that  T(-n) is equal to T(n).  For a complete treatment of the problem see pages 50-51 in 
+Continuum Mechanics for Engineers  by Mase and Mase. 
+4. The Complete Representation of Stress at a Point 
+ 
+Motivation
+ 
+The last section provided the fi rst step toward finding the st ress on an arbitrary plane in 
+continuous media.  The next step is describing the stress tens or.  The stress tensor is a 
+representation of stress on three mutually perpendicular planes  in a coordination system.  
+It specifies the comple te state of stress. Part 1Part 2
+nT(n)
+-n
+T(-n)x3
+x2
+x1o
+Figure by MIT OCW.Figure 2.5</text>
+        </slide>
+        <slide>
+          <slideno>6</slideno>
+          <text>If there are uniform forces act ing on each of the faces of th e cube, then traction vectors 
+can be defined on each face.  Let the tractions on faces 3 2 1, ,x x x))) be called 
+respectively.  These tractions are no t necessarily normal to the faces. 3 2 1, ,T T T
+ 
+ 
+ 
+Tractions are each defined by three componentsone normal traction and two 
+shear tractions.  These components are labeled with two subscripts, as in 3 2 1, ,T T T
+ij.  The first 
+subscript i denotes the face of the cube  on which the traction acts and the second 
+subscript j denotes the direct ion of the traction.     
+ 
+    
+ 
+ 
+ 
+ 
+  
+ 
+ 
+  
+ 
+  
+ 
+  Figure by MIT  OCW.x3
+x2
+x1x3
+x2
+T1T2T3
+x1
+Figure 2.7</text>
+        </slide>
+        <slide>
+          <slideno>1</slideno>
+          <text>Since tractions are vectors, they can be d ecomposed into normal and tangential vector 
+components.   n and   denote the magnitude of these components. 
+ 
+gentialnormal nnormal gential
+TTT T T
+tantan
+rrr rr
+==+ =
+  
+ 
+Notes on the Orientation of Surfaces  
+ 
+Traction depends on the area of the surface over which it acts.  Since area often changes 
+with the orientation of th e surface, the values of n and   do not behave like vector 
+components when the surface orientation changes.  Consider the following figure: 
+ 
+ 
+ 
+  
+   
+ 
+ 
+  
+ 
+  
+ 
+ 
+LL/cosqW
+A'Fn'
+Fs'
+qq = 30o
+L'sn
+'ss
+ 
+ 
+Compare how the normal and tangential forces ch ange with the orientation of the surface 
+with how the normal and tangent ial tractions change:    
+ 
+ 
+   
+cos sincos2
+ = =
+WWn 
+ 
+sincos
+ = =
+W FW F
+tn
+rr
+The decomposition of tractions into normal and shear components is useful in writing 
+Admontons Law in terms of tractions.  This  new form of Admontons law is the link 
+between stress and failure across a plane. 
+  Figure by MIT 
+OCW.Figure 2.1</text>
+        </slide>
+        <slide>
+          <slideno>0</slideno>
+          <text>Lecture 2 :  Stress 
+ 
+Geophysicists study phenom ena such as seism icity, plate tectonics, a nd the slow flow of 
+rocks and minerals called creep.  One way they study these phenom ena is by 
+investigating the deformation and flow of  Earth m aterials.  T he scien ce of the 
+defor mation and flow of m aterials is called rheology.   
+The funda mental concepts of rheology ar e stress and strain.  Stress is a dym anic 
+quantity that expresses the m agnitude of fo rces acting with in or at the surface of 
+continuous m edia and strain is a kin ematic quantity that expresses deform ation of the 
+media.  This lectu re introduces the b asic concepts of stress.  It explains how to 
+completely describ e an objects s tate of st ress in a 3D coordinate system  and how to 
+change the coordinate system  for convenience.  It also de scribes how to find the stress 
+on an arbitrary plane within an object and how  to determ ine if  the stress o n that p lane 
+will cau se the objec t to b reak.  
+ 
+1. ForcesSurface Forces and Body Forces 
+ 
+Surface forces are d ifferent from  body forces.  For exam ple, consider pu shing a rock off 
+the edge of a cliff.  Pushing the rock involves a surface force that acts on an area 
+bounding part of the rock.  Dropping it off the cliff involves gravity, a body force that 
+acts throughout the volu me of the rock and depends on its m ass. 
+ 
+2. Tractions 
+ 
+Motiva tion 
+ 
+If you push a balloon with your foot, it wi ll slide across the ground.  If you push a 
+balloon with the sam e force using a needle, it will pop.  The difference results from  the 
+fact that a n eedle and a foot apply fo rce ove r a different surface area of the balloon.  T he 
+needle applies force over a very sm all ar ea and produces a large traction.  The foot 
+applies force over a m uch bigger area and produces a sm aller traction.      
+ 
+Definition  
+ 
+A surface force that acts uniform ly over plan ar surface of area A results in a traction Fv
+Tv
+of magnitude  
+AFTvv
+=  
+The traction is a vector that  has the sam e direction as Fv
+and has units of pressure.  In SI 
+units, tractions are m easured in Pascals (Pa).  
+ 
+Pa
+mN
+smmkg
+AFT = == =2 2 2rr</text>
+        </slide>
+        <slide>
+          <slideno>8</slideno>
+          <text>Figures and Definitions 
+ 
+Consider the tetrahedron below.   The point O is the origin and the apices are labeled A, 
+B, and C.   
+  
+ 
+ 
+   
+5. The Cauchy Tetrahedron and Tr action on Arbitrary Planes 
+ 
+Application
+ 
+This section shows that the tr action vector at a point on an arbitrarily oriented plane can 
+be found if at that point are known. 3 2 1, ,T T T
+ 
+Argument
+Apply Newtons second law to a free body in the shape of a tetr ahedron and let the 
+height of the tetrahed ron shrink to zero.   
+ 
+ 
+  
+ 
+ 
+    
+x3
+x2
+x1n
+B
+AC
+N
+DSh
+o
+Figure by MIT  OCW.  
+ 
+The relevant quantities are defined as follows:  
+  = density 
+iFv= body force per unit mass in the i direction Figure 2.9</text>
+        </slide>
+        <slide>
+          <slideno>9</slideno>
+          <text>Divide both sides by S. 
+ 
+() () () a h n n n T h Fr r
+
+
+=    + 
+
+    31
+31
+3 31 2 21 1 111
+1  
+ 
+Allow h to approach zero in such a way th at the surfaces and volum e of the tetrahedron 
+approach zero while the surfaces preserve th eir orientation.  The body force and the mass 
+both approach zero. 
+ 
+3 31 2 21 1 111n n n T    =  
+ 
+Performing the same force balance in the other two coordinate di rections leads to 
+expressions for the three traction components on an arbitrary plane. 
+ 
+3 33 2 23 1 13 33 32 2 22 1 12 23 31 2 21 1 11 1
+n n n Tn n n Tn n n T
+      
++ + =+ + =+ + =
+ 
+ 
+The set of these three equations  is called Cauchys formula.  
+iar = acceleration in the i direction 
+ h  = height of the tetrahedron, measured to ABC 
+S = area of the oblique surface ABC 
+iTr
+ = the component of the traction vector on the oblique surface in the i direction 
+ 
+The mass of the tetrahedron is S h 31.  The area of a face perpendicular to  isix S ni. 
+ Force Balance  
+ 
+Consider the force balance in the i=1 direction.  Overbars de note values averaged over a 
+surface or volume. 
+1 1 a m Frv
+=  
+() () () a S h S n S n S n S T S h Fr r
+
+
+=    + 
+
+          31
+31
+3 31 2 21 1 111
+1</text>
+        </slide>
+        <slide>
+          <slideno>10</slideno>
+          <text>Different Notations 
+ 
+1. A general equation for the explicit expressions above is given by: 
+
+==3
+1jj ji i n T  
+ 
+2. Summation notation is a wa y of writing summations w ithout the summation sign 
+.  To use it, simply drop the  and sum over repeated indi ces.  The equation in 
+summation notation is given by: 
+ 
+j ji in T=  
+ 
+3. The equation in matrix form is given by 
+ 
+
+
+
+
+
+
+
+
+=
+
+
+
+321
+33 23 1332 22 1231 21 11
+321
+nnn
+TTT</text>
+        </slide>
+        <slide>
+          <slideno>7</slideno>
+          <text>In vector notation, the tractions on th e faces of the cube are written: 
+ 
+33 32 31323 22 21213 12 111
+, ,, ,, ,
+      
+===
+TTT
+ 
+ 
+In matrix notation, th e tractions are written: 
+ 
+
+
+
+
+=
+33 32 3123 22 2113 12 11
+      
+ij  
+ 
+This matrix is generally referred to as the stress tensor.  It is the complete representation 
+of stress at a point. 
+ 
+ Features of the Stress Tensor  
+ 
+The stress tensor is a symmetric tensor, meaning thatji ij = .  As a result, the entire 
+tensor may be specified with only six numbers instead of nine. For a proof, see Chapter 
+3.4 in Continuum Mechanics for Engineers  by Mase and Mase. 
+ 
+  
+ dx3
+dx2t11t13
+t12t23
+t22
+t21t33
+t32 t31
+dx1x3
+x2
+x1
+Figure by MIT OCW.Figure 2.8</text>
+        </slide>
+      </slides>
+      <videos/>
+    </lecture>
+    <lecture>
+      <lecture_title>Measuring Strain (PDF)</lecture_title>
+      <lecture_pdf_url>https://ocw.mit.edu/courses/12-520-geodynamics-fall-2006/resources/lecture8/</lecture_pdf_url>
+      <lectureno>8</lectureno>
+      <slides>
+        <slide>
+          <slideno>3</slideno>
+          <text>Weak 
+Weak Compression 
+Tension Strong Veins 
+Figure 8.6 
+Figure by MIT  OCW. 
+This picture shows how veins form waves under compression and boudins under tension.</text>
+        </slide>
+        <slide>
+          <slideno>2</slideno>
+          <text>Synopsis of Measuring Techniques  
+ 
+ Angle Distance Height Orientation 
+Leveling   Yes  
+Triangulation Yes    
+Trilateration Yes Yes   
+VLBI Yes Yes Yes Yes 
+GPS Yes Yes Yes Yes 
+ 
+For a more complete treatment of these t echniques with examples, see pages 94-107 in 
+Geodynamics  by Turcotte and Schubert. 
+ 
+2. Indirect Measurement of Strain 
+ 
+In addition to using the techniques listed above, strain can sometimes be measured indirectly by observing the ch ange in shape of objects that  naturally have a certain 
+geometry.  For example, a geologist may comp are the deformed shape of fossils, pebbles, 
+or veins in an outcrop to their undeformed shape to determine the presence of tension, shear, or compression.   
+  
+ 
+ 
+  
+ 
+  UndeformedDeformed
+    
+ 
+ 
+ 
+Figure 8.5
+ 
+This picture shows how deformed fossils and pebbles can be used to infer the strain in the host 
+rock.   
+ 
+ 
+   Figure by MIT  OCW.</text>
+        </slide>
+        <slide>
+          <slideno>0</slideno>
+          <text>Lecture 8: Measuring Strain  
+The last lecture explained the basic ideas about strain and introduced the strain tensor.  
+This lecture explores a few different ways to measure stra in and explains how strain, like 
+stress, can be represented graphically using Mohrs circle. 
+1. Measuring Techniques 
+a. Leveling 
+Leveling uses a level telescope and two measuri ng sticks to measure the vertical distance 
+between two points. 
+( ) 
+Benchmark Telescope 
+levelLeveling 
+Figure 8.1 
+Figure by MIT OCW. 
+b. Triangulation 
+Triangulation uses a telescope mounted on a protractor to measure the angle between 
+two points. 
+Benchmark 
+Protractor  
+Telescope Triangulation 
+Figure 8.2 
+Figure by MIT OCW.</text>
+        </slide>
+        <slide>
+          <slideno>1</slideno>
+          <text>c. Trilateration 
+Trilateration uses a laser m ounted on a protractor to measure the distance to two objects 
+and the angle between them. 
+l1 l2 
+2li ti Corner 
+Cubes 
+Laser = cTrilateration 
+Figure 8.3 
+Figure by MIT OCW. 
+d. Very Long Baseline Interferometry (VLB I) and the Global Positioning System (GPS) 
+VBLI and GPS measure the location of objects on the Earths surface by using antennae 
+to read signals from space.  In VBLI, this si gnal comes from quasars.  In GPS, the signal 
+comes from a satellite. 
+Quaser 
+x= c t VLBI 
+GPS (Global Positioning System) 
+Figure 8.4 
+Figure by MIT OCW.</text>
+        </slide>
+      </slides>
+      <videos/>
+    </lecture>
+    <lecture>
+      <lecture_title>Plates (PDF)</lecture_title>
+      <lecture_pdf_url>https://ocw.mit.edu/courses/12-520-geodynamics-fall-2006/resources/lecture18/</lecture_pdf_url>
+      <lectureno>18</lectureno>
+      <slides>
+        <slide>
+          <slideno>5</slideno>
+          <text>d 
+R 
+ l +d
+dw dw 
+dx 
+dx = 
+Figure 18.7 
+Figure by MIT OCW. 
+Then, substituting 
+w h /2d 2
+M = 
+(1 E 
+) dx2 
+h  
+/2 y2 d y
+2 
+Eh3 d 2 wM = 212(1) dx2 
+or 
+d 2 w DM =D =
+dx2 R
+Eh3 
+where D  (flexural rigidity)212(1)
+Substituting  
+d 4 w d 2 wD = q(x)  P
+dx4 dx2
+This equation is called plate equation.</text>
+        </slide>
+        <slide>
+          <slideno>2</slideno>
+          <text>To derive plate equations  consider the following figures: 
+M 
+V q Surface Loads 
+End Loads Moments 
+Shear Forces 
+Figure 18.3 
+Figure by MIT OCW. 
+x x 
+w 
+P P 
+V M q(x) 
+M+dM x+dx 
+w+dw 
+V+dV 
+Figure 18.4 
+Figure by MIT OCW.</text>
+        </slide>
+        <slide>
+          <slideno>1</slideno>
+          <text>y 
+x h 
+Neutral surface Main Feature 
+Fibers compressed 
+Fibers extended z 
+}} 
+Figure 18.2 
+Figure by MIT OCW. 
+Fiber stresses large compare to  tractions applied to surfaces. 
+Neutral surface  smooth and centered 
+Kirchoffs assumption  approximate, but useful. 
+ = = = 0 yy yx yz 
+h h xx , zz linearly through  
+2  y  
+2 
+or 
+every straight line originally perpendicular to neutral  
+plane remains straight and perpendicular 
+More accurate formulations lead to nonlinear coupled equations, not so lvable analytically.</text>
+        </slide>
+        <slide>
+          <slideno>3</slideno>
+          <text>V  shear force / unit length 
+P  horizontal force / unit length 
+M  moment / unit length 
+q  force / unit area 
+Force balance  vertical 
+dVqdx +dV =0  =q
+dx 
+Torque balance (+ counterclockwise) 
+dM Pdw Vdx =0 
+dM dw =V +P 
+dx dx 
+Next  relate M to w . 
+y 
+M 
+h/2 
+/2 o 
+-h
+Figure 18.5 
+Figure by MIT OCW.</text>
+        </slide>
+        <slide>
+          <slideno>4</slideno>
+          <text>h /2
+M = ydy xx 
+h /2 
+For plane stress, 
+E= e xx 2 xx(1 ) 
+Bending the plate causes fiber strains 
+e =l = y 
+xx lR 
+ 
+ R 
+y 
+l  l 
+R 
+l = -y = -y 
+Figure 18.6 
+Figure by MIT OCW. 
+Now  let l get small 
+d 2 
+ =yw 
+xx dx2</text>
+        </slide>
+      </slides>
+      <videos/>
+    </lecture>
+    <lecture>
+      <lecture_title>Stress and Strain from a Screw Dislocation (PDF)</lecture_title>
+      <lecture_pdf_url>https://ocw.mit.edu/courses/12-520-geodynamics-fall-2006/resources/lecture17/</lecture_pdf_url>
+      <lectureno>17</lectureno>
+      <slides>
+        <slide>
+          <slideno>0</slideno>
+          <text>12.520 Lecture Notes 17 
+Stress and strain from a screw dislocation 
+D 
+Dislocation axis 
+S/2 S/2 Surface 
+fault x3 
+x2 
+x1 Fault 
+displacement S 
+Figure 17.1 
+Figure by MIT OCW. 
+Need to get traction = 0 at surface. First consider medium. 
+Assume: 
+u=u=01 3 
+S u= 2 2 
+u =0  no compression, only shear 
+Symmetry  cylindrical coordinates, r, , z 
+with z parallel to x2 axis; u =u=0 r</text>
+        </slide>
+        <slide>
+          <slideno>4</slideno>
+          <text>St. Venants principle 
+Elastostatics  if boundary  tractions on a part S1 of the boundary of S are replaced by 
+statically equivalent traction dist, effects on stress dist are negligible at pts whose 
+distance from S1 is large compare to size of S. 
+Usual context  long beam under end load (non-uniform) 
+See's average end load 
+Figure 17.5 
+Figure by MIT OCW. 
+Apply to loading 1/2 space 
+Figure 17.6 
+Pt source approximates in seismology.</text>
+        </slide>
+        <slide>
+          <slideno>3</slideno>
+          <text>Aside  slip discontinuity objectionable? 
+ along x1 = 0a s x3  0  12 
+(stress singularity at tip of fault) 
+Alternative model  
+0Apply uniform  12 
+Cut 0  x3  D,s e t  12 = 0 
+x1 u2 = S 
+
+ 1+ x12 
+ 1/ 2 
+ 
+2 
+ D2  D  
+ 
+00 1 2 
+2 6 
+4 6 8 ( ) 
+( ) 3.5 
+10 Displacement meters
+Distance from fault km NE 
+Figure 17.4 
+Figure by MIT OCW. 
+Virtually indistinguishable!</text>
+        </slide>
+        <slide>
+          <slideno>2</slideno>
+          <text>Shear strain at surface: 
+ D 
+r 
+x1 x3 
+Surface 2D 
+Figure 17.3 
+Figure by MIT OCW. 
+2 2r = x12 + x3
+S
+From each dislocation  z= 
+2r 
+Rotating strain tensor 
+= z cos= x3 
+12 z r 
+At surface 
+  x 2D  x3 SD D 
+2 212 = 
+2S 
+
+ 
+x12 + 3 
+x3 +
+(2D  x3 )2 + x12 
+= 
+( D2 + x1) 
+xwhere 
+3 is actual dislocation 2x12 + x3 
+2D  x3 is image dislocation 
+2(2D  x3 )2 + x1 
+Displacement 
+x1 S  
+Du2 = dx1 =1 2 tan1 x1  
+12 2  D</text>
+        </slide>
+        <slide>
+          <slideno>1</slideno>
+          <text>SzSolution is z = u = 
+r  2r 
+We can get ij by coordinate transformation. 
+How to get traction on surface? 
+Trick  image dislocation 
+x3 
+x1 D Image dislocation 2D 
+Actual dislocation Surface 
+Figure 17.2 
+Figure by MIT OCW. 
+Solution for matched image dislocation is whole space gives i3= 0 on surface of  
+space!</text>
+        </slide>
+      </slides>
+      <videos/>
+    </lecture>
+    <lecture>
+      <lecture_title>Navier Stokes Equation (PDF)</lecture_title>
+      <lecture_pdf_url>https://ocw.mit.edu/courses/12-520-geodynamics-fall-2006/resources/lecture23/</lecture_pdf_url>
+      <lectureno>23</lectureno>
+      <slides>
+        <slide>
+          <slideno>2</slideno>
+          <text>2. Re = 10 vi = 0  (steady)    vj vi  0 
+t x j 
+Asymmetry; eddies in wade.     
+Figure 23.2 
+Figure by MIT OCW. 
+The figure below is experimental. 
+2 
+1 
+1 2 3 4 5 6 7 CD 
+10-1 10-1 10
+10 
+10 
+Figure 23.3. Variation of drag coefficient with Reynolds number for circular 
+cylinder. CYLINDER 
+10 10 10 10 10 10
+Re 
+Figure 23.3 
+Figure by MIT OCW.</text>
+        </slide>
+        <slide>
+          <slideno>0</slideno>
+          <text>12.520 Lecture Notes 23 
+Navier-Stokes Equation   dimensional form 
+Dvip + 2vi + fi =
+xi xjx Dtj 
+Assume:  
+ Characteristic velocity v0 
+Characteristic length  L 
+Characteristic stress v0/ L 
+Characteristic time v0/ L 
+Choose non-dimensional variables 
+v ' = v / v x ' = x / Lp ' = Lpt ' = v0 t0 v0 L 
+or 
+L
+v = v ' v0 x = x ' Lp =v0 p ' t ' = t ' 
+L v0 
+ 1  f ' = L2 
+f = v0  = 
+x L x ' v0 tL t ' 
+Substitute into Navier-Stokes equation 
+ 1 v0 p ' 1 v02vi ' 1+ + v0fi ' =v0 v0 Dvi ' 
+LL xi ' L2 xj 'x ' L2 L Dt ' j 
+or 
+p ' 2v' i
+xi ' + i + fi ' =v0 L Dv'
+x 'x '  Dt '
+j j</text>
+        </slide>
+      </slides>
+      <videos/>
+    </lecture>
+    <lecture>
+      <lecture_title>Stress Variations in the Crust (PDF)</lecture_title>
+      <lecture_pdf_url>https://ocw.mit.edu/courses/12-520-geodynamics-fall-2006/resources/lec6/</lecture_pdf_url>
+      <lectureno>6</lectureno>
+      <slides>
+        <slide>
+          <slideno>6</slideno>
+          <text>Fig. 6_11 
+ 
+So, if  Byerle e's law is correc t, and if  the st ress in the lithosph ere is no t too far from 
+lithostatic, the shear stress on faults should be  ~5 kbar at 15 km  depth and about 250 kbar 
+at 700 km  depth. 
+ 
+ 
+ 
+Fig. 6_12 
+ 
+How can we test this p rediction ? 
+ Model stresses associated with hol ding up m ountains (e.g., H imalayas &gt; 1.5 kbar) 
+ Stress drops associated w ith earthquakes (u sually ~ 3- 300 bars, very rarely &gt; 1 kbar) 
+ Work available from  convection (dynam ic "engine," &lt;~1 kbar 
+ Heat flow in fault zones (frictional heating rate ~ v =&gt;  ~ 100 bars</text>
+        </slide>
+        <slide>
+          <slideno>8</slideno>
+          <text>contacts, then the m icroscopic shear traction need ed to caus e failu re is /fA, and the 
+macroscopic shear traction is = . 
+ 
+If pore fluid pressure is n ow introduce d, the pore fluid will su pport som e of the 
+macroscopic norm al stress, leading to a decr ease to the normal stress at the grain 
+contacts. 
+ 
+ 
+ 
+ 
+Fig. 6_14 
+ 
+Adding pore fluid pressure e ffectively "stretch es" the n axis, giving, effectively, a low er 
+coefficient o f friction (ex cept th at angles no longer work out!)</text>
+        </slide>
+        <slide>
+          <slideno>1</slideno>
+          <text>How to get quantitative graphs?  Make assum ption!  
+ 
+Zoback et al exam ple. 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Fig. 6_4 
+ 
+Assum e cconstant. fault=c0. 
+Given ,c0,r get. 
+Question: In far field, 12=cF.  
+On fault 12=c0. 
+12
+x1&gt;0 -- How can this be? 
+ 
+Another approach: Assum e c0, find rgiven . 
+ 
+ 
+ 
+Fig. 6_5</text>
+        </slide>
+        <slide>
+          <slideno>4</slideno>
+          <text>Fig. 6_9 
+ 
+The coefficients of friction, , for a wide variety  of rocks, are com parable, in the ran ge 
+0.6  0.9. The only rocks with low coefficients of  friction are clays, which are not stable 
+at the h igh pressures and  temperatures characte ristic of fault zones at depths of ~ 10 km 
+where earth quakes nucleate.</text>
+        </slide>
+        <slide>
+          <slideno>10</slideno>
+          <text>Fig. 6_17</text>
+        </slide>
+        <slide>
+          <slideno>7</slideno>
+          <text>Big discrepancies here - a frontier region of geodynam ics. 
+ 
+Important factor - the role of pore fluid pressure  in faults. 
+Empirical results : For a pore fl uid pressure p, the Navier-Cou lomb failure law becom es: 
+ || = |+p| + S0 
+(Note that b ecause com pressiv e pressure is  positive, while com pressive norm al stres s  is 
+negativ e, the pressure decreas es the amp litude of the "effective norm al stress" | +p|.) 
+Graphically: 
+ 
+ 
+ 
+Fig. 6_13 
+ 
+A qualita tive explana tion of the ef fect of pore f luid pressu re is tha t the th e fluid helps  to 
+"support" som e of the norm al stress that is ot herwise carried by solid  grains. Consider a 
+simple model of a continuu m made up of dry sand. Let f A represent the f raction of a 
+surface area that is m ade up of  solid grain con tacts. Then for a m acroscopic norm al stress 
+, the average  (microscopic) norm al stress at the solid grain contacts is /fA, since the 
+pore space in between can support no norm al tractions. (Of course, in places the actual 
+value will b e much larger than the averag e value.) If Adm onton' s law applies to the</text>
+        </slide>
+        <slide>
+          <slideno>3</slideno>
+          <text>Question: 
+ What are im plica tion f or stress direction in fault zone?  
+ Is low in fault zone consistent with large outside?  
+ 
+ 
+ 
+Fig. 6_8 
+ 
+ 
+Stress Rotation, after Z oback et al, 1987 
+ 
+The principal stress directions are observed to rotate in the vic inity of  the S an Andreas 
+fault (SAF). In the far-field (e.g., Nevada), th e maximum compressive stress is oriented at 
+an angle to the fault trace  ~ 55. But in the near fi eld, this angle, now called , is clo se 
+to 85. (Note that this is th e sam e as the angle between the lea st com pressive stre ss and  
+the norm al to the fault plane, the angle conve ntionally used in Mohr  circle analysis.) 
+ 
+Assum e that in the far-field stress has I = -68 MPa, II (assum ed vertical  and lithosta tic) 
+= -136 MPa, and III = -204 MPa. (What style o f faulting would this cau se?) 
+ 
+Assum e that the f ault ha s streng th C 0, so that 12 becom es smaller appro aching th e fault. 
+(How could this happen, given Newton' s second law?). 
+ 
+Also assum e that the nor mal stress ac ross the f ault m aintains its f ar-field value (22 in the 
+coordinate system  fixed to the fault, as shown in the diagram ). Assum e that c remains 
+the sam e. (Does this agre e with the style of faulting and the folding near the SAF? ) 
+ 
+Then, from  a Mohr' s circle construction, it is  straightforward to obt ain a relation betw een 
+ and .</text>
+        </slide>
+        <slide>
+          <slideno>2</slideno>
+          <text>Pore fluid p ressure mo del of fault w eakening 
+ 
+ 
+ 
+ 
+Fig. 6_6 
+ 
+ 
+Fault zone highly perm eable 
+ 
+Darcy flow  heat flow 
+Perm eability   conductivity 
+pT  
+ 
+Given source of water 
+High perm eability high p 
+ 
+ 
+ 
+ 
+ 
+Fig. 6_7</text>
+        </slide>
+        <slide>
+          <slideno>5</slideno>
+          <text>data from  Byerlee, Pageoph , 116, 1978 
+Fig. 6_10 
+ 
+Note: the Na vier-Cou lomb f ailure law, | | = || + 0, is also s ometimes written 
+ || = || + S 0. 
+For rocks, S 0 ~ 0.1 - 4 kbars (10 - 400 MPa). How doe s this "breaking strength com pare 
+with the "f rictiona l stres s?" 
+Plot stress p redicted for the in itiation  of faulting as a function of depth, assum ing that  is 
+the lithos tatic stre ss. (Re call that the "l ithostatic stress gradient ~ 1 kbar/3 km .)</text>
+        </slide>
+        <slide>
+          <slideno>9</slideno>
+          <text>Fig. 6_15 
+ 
+ 
+An altern ative explanation for deep earthqu akes is that the failure envelope bends over at 
+large n. 
+ 
+ 
+Fig. 6_16 
+ 
+ 
+Finally, let' s consider a m edium  that is anis otropic  perhaps one which has a preexisting 
+fracture at an angle  to the le ast principal str ess. (For  a preexisting fracture, the strength 
+S0 = 0.) Then if the double angle 2  is within the region show n, the rock will f ail alon g 
+the preexisting fracture.</text>
+        </slide>
+        <slide>
+          <slideno>0</slideno>
+          <text>12.520 Lecture Notes 6 
+ 
+Possible ca use of w eak faults 
+ 
+ Preexis ting f racture 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Fig. 6_1 
+ 
+ Clay low   
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Fig. 6_2 
+ 
+ 
+ Pore fluid 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Fig. 6_3</text>
+        </slide>
+      </slides>
+      <videos/>
+    </lecture>
+    <lecture>
+      <lecture_title>Simple Example: Uniaxial Strain (PDF)</lecture_title>
+      <lecture_pdf_url>https://ocw.mit.edu/courses/12-520-geodynamics-fall-2006/resources/lecture14/</lecture_pdf_url>
+      <lectureno>14</lectureno>
+      <slides>
+        <slide>
+          <slideno>1</slideno>
+          <text>22=33=11
+3;0.1kbar/km  deviatoric stress 
+ 
+ 0.27 0 0
+00.09 0
+00 0.09
+
+
+
+
+
+=0.15 0 0
+00.15 0
+00 0.15
+
+
+
+
+
++0.12 0 0
+00.06 0
+00 0.06
+
+
+
+
+
+ 
+ 
+Unloading: 
+Assum e initially litho static     
+  11=22=33=gd 
+ 
+00 0
+02
+3gd 0
+00 2
+3gd
+
+
+
+
+
+
+
+
+
+
+
+=4
+900
+02
+90
+00 2
+9
+
+
+
+
+
+
+
+
+
+
+
+gd+4
+900
+04
+90
+00 4
+9
+
+
+
+
+
+
+
+
+
+
+
+gd 
+  thrust fau lts 
+       popups 
+       give directi on of compressional stress 
+ 
+Assum e 2&lt;3 tectonic s tress 
+Type of faulting: (com pression negative)  
+ 
+     x1 
+ 
+        
+      x3 (E-W ) 
+ 
+x2 (N-S)</text>
+        </slide>
+        <slide>
+          <slideno>3</slideno>
+          <text>4
+900
+02
+90
+002
+9
+
+
+
+
+
+
+
+
+
+
+
+gd1
+200
+01
+20
+00 0
+
+
+
+
+
+
+
+
+
+
+
+ 
+ 
+Normal faulting occu rs if  
+ 
+ 4
+9gd+
+2&lt;2
+9gd
+2&lt;2
+9gd
+2
+3gd&lt;</text>
+        </slide>
+      </slides>
+      <videos/>
+    </lecture>
+    <lecture>
+      <lecture_title>Flow in Porous Media (PDF)</lecture_title>
+      <lecture_pdf_url>https://ocw.mit.edu/courses/12-520-geodynamics-fall-2006/resources/lecture27/</lecture_pdf_url>
+      <lectureno>27</lectureno>
+      <slides>
+        <slide>
+          <slideno>4</slideno>
+          <text>y
+h(x)"Phreatic surface"
+Land surface
+u(x)
+x
+ 
+Figure 27.4 
+ 
+ 
+ 
+ hhydraulic head 
+ 
+ u Darcy velocity 
+ 
+ 
+Dupuit approximation: 
+ dp
+dx=gh
+x 
+ 
+For 
+   h
+x=1  flow is one-dimensional. 
+Darcys law:  
+ u=kg
+h
+x 
+ 
+Conservation of mass: Assume no input 
+ 
+Flux   
+  Q=u(x)h(x)=kg
+hdh
+dx=const. 
+ phreatic surface is a parabola 
+ 
+For    at x = 0 h=h0
+  h=h022Qx
+kg
+
+1/2
+ 
+ Figure by MIT OCW.</text>
+        </slide>
+        <slide>
+          <slideno>1</slideno>
+          <text>db
+Figure 27.1. An idealized model of a porous medium. 
+Circular tubes of diameter d form a cubical matrix with dimensions b.
+ 
+Figure 27.1 
+ 
+ 
+  =121
+4
+2
+
+2
+b
+b3=3
+42
+b2 
+ 
+Consider 
+ dp
+dx  (one direction only) 
+In each p ipe (along x), 
+  u=2
+32dp
+dx  [Poiseuille flow] 
+Darcy veloc ity: 
+  v=41
+4u
+2
+
+2
+b2=2
+4b2u=
+3u 
+ 
+  v=b22
+72dp
+dx 
+   k=1
+72b22 
+ Figure by MIT OCW.</text>
+        </slide>
+        <slide>
+          <slideno>5</slideno>
+          <text>Suppose we have a porous dam  of width w. The relation betw een Q, and   is: h0h1
+  Q=kg
+2wh02h12( ) 
+or 
+  Q=kg
+2wh0h1() h0+h1() 
+ 
+ 
+ 
+         Impermeable Layer
+Figure 27.5. Unconfined flow through a porous dam. The Dupuit parabola AC is the solution
+if (h0-h1)/h0&lt;&lt;1. The actual phreatic surface AB lies above the Dupuit parabola resulting in a 
+seepage face BC.Dw
+CB
+Seepage faceDupuit ParabolaPhreatic Surface
+A
+h1h0
+Ey
+x
+ Figure 27.5 
+Figure by MIT OCW.</text>
+        </slide>
+        <slide>
+          <slideno>2</slideno>
+          <text>Large b  large v?     
+  b2=3
+42
+ 
+Large   large v?     
+  k=
+1284
+b2 
+ 
+Com pare to cubes separated along faces (channel flow) 
+ 
+ 
+ 
+                                      Figure 27.2 
+  
+2
+31623b
+bb
+==  
+ 
+Again, 
+ dp
+dxdirected along one edge 
+  u=1
+2dp
+dxZ2(/2)2( ) 
+  u=1
+2dp
+dxZ3
+32Z
+2
+
+
+/2/2
+=52
+24dp
+dx db
+Figure by MIT OCW.</text>
+        </slide>
+        <slide>
+          <slideno>3</slideno>
+          <text>Darcy veloc ity: 
+  v=2b
+b2u=5
+123
+bdp
+dx=5
+324b23
+dp
+dx 
+ 
+  k=5b23
+324 
+ 
+k is different depending on . 
+ 
+  k=135
+3243
+b 
+ 
+Clearly, po rosity distr ibution is im portan t. 
+ 
+ 
+ 
+                                           
+ 
+Figure 27.3 
+ 
+Also -- more easily measured than figured out theoretically  more complicated 
+geometries  numerical simulation. 
+ 
+Consider Lawn Sprinkler example  flow in unconfined aquifer. 
+  
+ 
+ 
+ Figure by MIT OCW.</text>
+        </slide>
+      </slides>
+      <videos/>
+    </lecture>
+    <lecture>
+      <lecture_title>Changing Coordinate Systems and Mohr&#8217;s Circle (PDF)</lecture_title>
+      <lecture_pdf_url>https://ocw.mit.edu/courses/12-520-geodynamics-fall-2006/resources/lecture5/</lecture_pdf_url>
+      <lectureno>5</lectureno>
+      <slides>
+        <slide>
+          <slideno>3</slideno>
+          <text>c. Transform the normal vector nj to nl and substitute into the previous equation : 
+ 
+'l lj jn n=  
+' ' 'l lj ij ki l kln n   =  
+ 
+d. Cancel the nl term on each side and group the s: 
+ 
+ij jl ki kl ='  
+ 
+Note that changing the position of the last  term changes the order of its 
+subscripts. 
+ 
+ In vector notation, the equation is 
+ 
+T    ='  
+ 
+ where the double underbars denote sec ond-rank tensors and the superscript T  
+denotes the transpose of matrix . 
+ 
+2. Mohrs Circle 
+ 
+Motivation
+ 
+Lecture II explained that an object resting on a slope will slide down when the shear 
+traction on the slope is greater than or equal to the product of the normal traction and the 
+coefficient of friction. 
+ 
+n sf =  
+ 
+On a shallow slope, n is large and the object will not  slide.  On a steep slow,  is large 
+and the object will slide.  For any plane with normal , we can calculate if the plane will 
+fail if the stress tensor n
+ij at the interface between the obj ect and the slope is known.  
+Calculate n and ,  as follows: 
+ 
+n T Tn Tn T
+n
+Notation Tensor  and Vector 
+  = ==
+r rrr
+
+                 
+i i ii i nj ij i
+n T Tn Tn T
+ ===
+Notatio n Summation 
+ 
+ 
+ 
+This method is straightforward but cumbersome .  A different approach involves rotating 
+the coordinate system such that x 1 is along .  In this case  n n and  are much easier to 
+derive: 
+ 
+1211
+''
+  
+==n</text>
+        </slide>
+        <slide>
+          <slideno>4</slideno>
+          <text>Deriving Mohrs Circle
+ 
+Mohrs circle may be derived in two or th ree dimensions.  This lecture explains the 
+derivation in two dimensions because it is more  straightforward and the results are easier 
+to graph and understand.  The derivation assumes that x 1, x2, and x 3 are principle 
+directions.  
+ 
+Consider the following figure in which the x i coordinate system is rotated clockwise 
+about the x 3 axis to x i: 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+  
+ 
+  
+The rotation matrix is: 
+ 
+
+
+
+ 
+=
+
+
+
+
+=
+1 0 00 cos sin0 sin cos
+33 32 3123 22 2113 12 11
+  
+      
+ij  
+ 
+ 
+The stress tensor in the x i coordinate system is transformed to 'in the x i coordinate 
+system by the following equation: 
+ 
+T    ='  x2x1 q
+x2''x1
+f11
+f22
+f21
+Figure by MIT  OCW.Figure 5.3</text>
+        </slide>
+        <slide>
+          <slideno>6</slideno>
+          <text>Interpreting Mohrs circle
+ 
+Mohrs circle plots in stress space.  Admontons law may also  be plotted in stress space 
+as a line with slope fs.  When this line and Mohrs circle intersect, the criterion for failure 
+across a plane is met.   
+ 
+Consider a common experiment in rock mechanics in which scientists apply a uniaxial 
+stress 2 to a cylindrical sample confined by a uniform stress 1.   
+  
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+  
+ 
+Admontons law and the Mohrs circle that represents the state of stress are plotted 
+below.  The Mohrs circle plots on the negative n axis because these notes follow the 
+convention that compressive stresses are negative.  1 plots farther to the right because s2
+s1x2
+x1
+x3
+s1
+Figure by MIT  OCW.
+of the convention that 1 is greater than 2, and 2 is greater than 3.  The line that 
+represents Admontons law crosses the  axis at o, the shear strength of the rock. Figure 5.5</text>
+        </slide>
+        <slide>
+          <slideno>8</slideno>
+          <text>fs  
+0.0 45 
+0.6 30 
+1.0 23 
+ sflim 0 
+  
+Since most rocks have a coefficient of fric tion of about 0.6, the normal vector to the 
+failure plane is typically 30 from the direction of the least compressive stress.  Another 
+way of saying this is that the failure plane is 30 from the direction of the most 
+compressive stress.   
+ 
+  
+Faulting
+ 
+Faults are large-scale failure planes.  Sin ce failure planes are normal to the  plane 
+containing the least compressive and the most  compressive stresses and are typically at 
+30from the direction of the most compressive stress, different styles of faulting can be 
+used to infer the directions of 1, 2, and 3. 
+ 
+The following diagram shows the deviatoric stresses associated w ith thrust faults, 
+normal faults, and strike-slip faults.  The pictures assume that x 2 is vertical and that x 1 
+and x 3 lie in the plane of the surface of the Earth. 
+ 
+  
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+  The above picture shows that  the coefficient of fricti on determines the slope of 
+Admontons law, and the slope of Admontons law determines 2.  Consequently, 
+predicting the failure plane of  a rock only requires knowing the direction of the most 
+compressive stress 2, the direction of the least compressive stress 1, and the coefficient 
+of friction fs.  The table below lists the angle between 1 and the normal vector to the 
+failure plane for different values of fs.</text>
+        </slide>
+        <slide>
+          <slideno>0</slideno>
+          <text>Lecture 5:  Changing Coordinate  System s and Mohrs Circle 
+ 
+Lecture 2 ex plained that tem perature is a zeroth -order tensor, force is  a first-order tensor, 
+and stress is a second-order tens or.   The order of  a tensor  is called its rank and is 
+defined by its law of transfor mation under a chan ge of coordinates.  This lecture explains 
+the transform ation laws for first- and second-or der tensors, and uses these laws to derive 
+a convenient representation of stress called Mohrs circle. 
+ 
+1. Transform ing Tensors into Di fferent Coordinate System s 
+ 
+Changing coordinate system s
+ 
+In order to transform  a tensor into a di fferent coordinate sy stem, one m ust first 
+understand how to transfor m the coordinate syst em itself.  Consider the following figure: 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ x3
+x3 P'
+x2'
+x1'x2
+x1f23
+f12f11
+ 
+ 
+ 
+If and represent unit vectors that are the axes  of two coordinate systems with the 
+same origin, they are related by the equation 'ixjx
+ 
+j ij ix x '=  
+where ij is the cosine of the angle between the primed axis and the unprimed axis .  
+For example, 'ixjx
+12 is the cosine of the angle between and .   '1x2x ji represents a 9-
+component matrix called the transformation ma trix.  Unlike the stre ss tensor, it is not 
+symmetric ( ij  ji). 
+ Figure by MIT  OCW.Figure 5.1</text>
+        </slide>
+        <slide>
+          <slideno>9</slideno>
+          <text>Figure by MIT OCW.
+Figure 5.8</text>
+        </slide>
+        <slide>
+          <slideno>2</slideno>
+          <text>The explic it transf ormation equation s are 
+ 
+2 1 22 1 1
+30cos 120cos'60cos30cos'
+x x xx x x
+ + = + = 
+ 
+Since and are both unit length, these equations are easy to verif y from  the pictu re. 'ixjx
+ 
+First-order tensors
+ 
+First-order tensors or vect ors have two com ponents in  2D coordinates and three 
+components in 3D coordinates.  They tr ansform  according to th e sam e laws as 
+coordinate axes becaus e coordinate axes are them selves vecto rs.   
+ 
+If uj is a vec tor in the coordinate system and ujx i is a vecto r in the coordinate system , 
+then the following equations descri be their transform ation:    'ix
+ 
+''
+jji ijij i
+u uu u
+
+==
+ 
+ 
+Note that ij is positive if the angle is measured counterclockwise from to .  It is 
+negativ e if the angle is m easured clockwise.  'ixjx
+ 
+Second-order tensors
+ 
+The transform ation law for second-order te nsors like stress and strain is m ore 
+complicated  than the tra nsformation law  for first-order tensors.  It m ay be derived as 
+follows: 
+ 
+a. Begin with the vector tr ansfor mation of traction Ti to Tk: 
+ 
+iki k T T ='                    
+ 
+b. Rewrite Tk and Ti using Cauchys form ulas: 
+ 
+jij i l kl k n T n T   = =   and  '''  
+ 
+Substitu te Cauchys f ormulas into the orig inal transf ormation equation : 
+ 
+jij ki l kl n n   =''</text>
+        </slide>
+        <slide>
+          <slideno>1</slideno>
+          <text>= 33 32 3123 22 2113 12 11
+      
+ij  
+ 
+In matix equations, the transformation law is written 
+ 
+
+
+
+
+
+
+
+
+=
+
+
+
+
+321
+33 32 3123 22 2113 12 11
+321
+'''
+xxx
+xxx
+      
+ 
+ 
+The inverse transformation law is written  
+ 
+' j ji ix x=  
+ 
+ Example of coordinate transformations  
+ 
+Consider the following transformation of coordinates: 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+The transformation matrix is  
+ 
+
+
+
+
+  
+=
+0 0 00 30 1200 60 30ij  
+ x2
+x1
+x3, x3x2'
+x1
+30o'
+'
+Figure by MIT OCW.Figure 5.2</text>
+        </slide>
+        <slide>
+          <slideno>7</slideno>
+          <text>As the uniaxial stress 2 is increased, the Mohrs circle becomes larger.  When the circle 
+intersects the line of Admontons la w, the rock breaks.  The angle 2 at which the circle 
+intersects the line is twice the angle between 1 and the normal vector to the failure 
+plane. Figure by MIT OCW.
+Figure by MIT OCW.snt
+s2s1s0|t| =|f ssn|+|s0|
+snt
+s2s12qf = tan-1fsFigure 5.6
+Figure 5.7</text>
+        </slide>
+        <slide>
+          <slideno>5</slideno>
+          <text>+  +
+=
+
+
+
+
+
+
+
+ 
+=
+
+
+
+
+
+
+
+
+
+
+
+ 
+=
+332
+222
+11 22 1122 112
+222
+113322 1122 11332211
+0 00 cos sin cos sin ) (0 cos sin ) ( sin cos
+'1 0 00 cos sin0 sin cos
+0 00 cos sin0 sin cos
+'1 0 00 cos sin0 sin cos
+0 00 00 0
+1 0 00 cos sin0 sin cos
+'
+              
+  
+      
+  
+
+  
+
+ 
+ 
+Use the double-angle identities for sine and cosine to simplify the expressions for the 
+normal stress 11 and the shear stress 12 become in the new coordinate system: 
+ 
+          
+2 sin2'2 cos2 2'sin 2 1 1 cos 2 2 coscos sin 2 2 sin
+22 11
+1222 11 22 11
+112 2
+= =++= = =  ==
+n 
+ The expression for the normal stress and shear stress can be shown graphically in shear 
+space: 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+  
+ 
+ 2q
+s2
+tt
+s1snAllowable tractions
+Figure by MIT  OCW.  This figure is called Mohrs circle.  Figure 5.4</text>
+        </slide>
+      </slides>
+      <videos/>
+    </lecture>
+    <lecture>
+      <lecture_title>Time Dependent Porous Flow (PDF)</lecture_title>
+      <lecture_pdf_url>https://ocw.mit.edu/courses/12-520-geodynamics-fall-2006/resources/lecture28/</lecture_pdf_url>
+      <lectureno>28</lectureno>
+      <slides>
+        <slide>
+          <slideno>3</slideno>
+          <text>Linearize around    h=h0+h1
+ 
+  h'
+t=kgh0
+2h'
+x'2   diffusion equation 
+exponential growth or decay 
+ 
+[Note: Dupuit app roxim ation breaks down for large interface perturb ation.] 
+ 
+Suppose h'=coskx,  k=2/=wavenumber 
+  2h'
+x2=k2coskx 
+  
+t=gh0
+k2 where K  is perm eability . 
+Exponential growth or decay! 
+  =
+gh01
+k2 
+How does this com pare to Rayleign-Taylor?</text>
+        </slide>
+        <slide>
+          <slideno>1</slideno>
+          <text>x(hh
+x)=
+x[(h0+h')
+x(h0+h')] 
+  =
+x[(h0+h')h'
+x] 
+  h02h'
+x2 
+ 
+This gives the f amiliar dif fusion equation 
+  h'
+t=kgh0
+2h'
+x2 
+ 
+  kgh0
+  equivalent to K in  heat flow equation 
+equivalent to  =/ in fluid   space 
+[note inverse relationship of fluid viscosity !] 
+ 
+Consider the sudden lowering of water in a river channel next to  a saturated bank. 
+  h(x+,0)=h0                 h(0,t)=h1h(,t)=h0
+ 
+ 
+ 
+Solution is like the so lution to the he at flow equation for plate cooling, or the m omentum 
+equation for crew shell: 
+Set 
+  f=h
+h0     
+  f(0)=h1
+h0 
+ 
+  =(
+kgh0t)1/2x
+2 
+ 
+  f()=f(0)erfc() 
+ 
+Finally, b ack to the tank  dem o</text>
+        </slide>
+        <slide>
+          <slideno>0</slideno>
+          <text>12.520 Lecture Notes 28 
+ 
+ 
+Time Dependent Porous Flow 
+ 
+Assum e 1-D flow through an unconfined aquifer. 
+ 
+ 
+ 
+Flux in       Qin=u(x,t)h(x,t)
+Flux out     Qout=u(x+x,t)h(x+x,t)
+  QoutQin
+x(uh)xh
+t 
+ 
+But m edium is porous, w ith porosity . For a given Q,the sm aller ,the larger   h/t 
+  QoutQin=[h(t+t,x)h(t,x)]th
+txt 
+ 
+Mass conservation 
+  h
+t+
+x(uh)=0 
+Darcys law (Dupuit approx) 
+ u=kg
+h
+x 
+Com bining 
+  h
+t=kg
+
+x(hh
+x)   (Boussinesq Equation) 
+This is a nonlinear diffusion equatio n. W e can simplify it by assum ing  
+ 
+  h=h0+h'           h'=h0</text>
+        </slide>
+      </slides>
+      <videos/>
+    </lecture>
+    <lecture>
+      <lecture_title>Finite Strain - Motivation (PDF)</lecture_title>
+      <lecture_pdf_url>https://ocw.mit.edu/courses/12-520-geodynamics-fall-2006/resources/lec10/</lecture_pdf_url>
+      <lectureno>10</lectureno>
+      <slides>
+        <slide>
+          <slideno>1</slideno>
+          <text>Life becomes complicated.  In particular, it' s important to know whether one is coming or 
+going: 
+ Reference frame : 
+Consider a medium undergoing motion &amp; deform ation, with the displacement a (vector) 
+function of position. 
+x3 B 
+x2 a 
+b u A 
+x1 
+Fig. 10_2 
+bj = f(a i) 
+or 
+bj = bj(ai) 
+Since the mapping a i &lt;&gt; b j is one-to-one, we could also say 
+aj= aj(bi). 
+It turns out (consider the tele phone book example in cl ass) that the description of strain 
+depends on whether the reference frame is: 
+Lagrangian  fixed to particles (the "a" frame) 
+ui = bi(aj) - ai 
+Example:  elasticity -- the partic les return to where they started</text>
+        </slide>
+        <slide>
+          <slideno>3</slideno>
+          <text>sin a = 2E 12/[(1 + E 11) (1 + E 22)]1/2 
+These quantities go to the infinitesimal values when E ij &lt;&lt; 1. 
+Because e ij  Eij, the principal values &amp; principal directions of the Lagrangian and 
+Eulerian strain tensors differ.  We will discuss these later. 
+Consider two particles initially separated by dai (note: not just a function of strain tensor) 
+which undergo a displacement uj, and are then separated by dxi. 
+Lagrangian : 
+ui  
+dxi = dai + daj = 
+ij + ui  
+dajaj aj 
+This can be written, including the finite strain tensor, 
+ uj uu  ui uj us u  
+daj s s sdxi = ij + 1  ui +
+ai +  + 1   
+ 2  aj ai aj  2  aj ai ai aj   
+=[ij + ij +ij ]daj 
+ij  Lagrangian rotation tensor 
+if Eij = 0  rotation alone 
+Similarly, for the Eulerian  case: 
+1  ui uj us us =  +ij 2  bj bi bi bj  
+dai =[ij + eij +ij ]dxj 
+for small deformation:  ij rotation needed to bring a fiber dai into position. 
+For large deformation: no easy way to sepa rate into pure rotation and pure shearthe 
+two are intimately connected. 
+THIS IS OF UTMOST IMPORTANCE IN PROBLEMS LIKE THE DEVELOPMENT OF ROCK FABRIC . 
+ALSOR EGIONAL TECTONICS .</text>
+        </slide>
+        <slide>
+          <slideno>2</slideno>
+          <text>Eulerian  fixed to space (the "b" frame) 
+ui = bi -ai(bj) 
+Example:  fluid mechanics, geology -- no idea where the particles started or where 
+they will end up; no stable frame fixed to the materials. 
+Finite strain depends on whether the reference frame is fixed to the particle or to "space:" 
+Lagrangian strain: E ij = (ui/aj + uj/ai + ul/ai ul/aj)/2 
+Eulerian strain:  e ij = (ui/bj + uj/bi -ul/bi ul/bj)/2 
+When strain is small, the 3rd term is small 2, and both strains converg e to the infinitesmal 
+value. Physical interpretation: 
+diagonal elements - e.g., el ongation, given by ds = (1 + E 1) ds0. 
+ds 
+ds 
+x x2 
+1 o 
+da1 db1 
+Fig. 10_3 
+For the Lagrangian system, E 1 = (1 + 2E 11)1/2 -1 
+off diagonal &gt;change in angles of coordinate axes: 
+x x 2 
+1 x x 2 
+1 da' 
+da db' 
+db  
+ = /2   
+Fig. 10_4</text>
+        </slide>
+        <slide>
+          <slideno>5</slideno>
+          <text>Examples 
+x ' = kx 
+y ' = y 
+Fig. 10_6 
+x ' = k1x 
+y ' = k2 y 
+Fig. 10_7 
+x ' = kx 
+1 y ' = ky 
+Fig. 10_8 
+x ' = x + 2sy 
+y ' = y 
+Fig. 10_9</text>
+        </slide>
+        <slide>
+          <slideno>6</slideno>
+          <text>Fig. 10_10 
+Unstrained Strained 
+x = 1 
+h2 (dx ' by ') x ' = ax + by 
+y = 1 
+h2 (cx '+ ay ') h2 = ad  bc y ' = cx + dy 
+Principal Axes A, B 
+ Roots of 
+R4  (a2 + b2 + c2 + d 2 )R2 + h4 = 0 
+tan 2= 2(ab + cd ) 
+a2 + c2  b2  d 2 tan 2' = 2(ac + bd ) 
+a2 + b2  c2  d 2 
+No Length Change 
+tan=[(1  B2 )/ ( A2  1)]1/ 2 
+tan' = B( A2  1)1/ 2 
+A(1  B2 )1/ 2 
+relative to reciprocal axis relative to principal axis 
+ Maximum Shear 
+tan 2= b2 + d 2  a2  c2 
+2(ab + cd ) tan ' = ( B / A) 
+relative to coord. axis relative to principal axis 
+Principal axis of infinitesimal 
+strain 
+0 = + ' 
+2</text>
+        </slide>
+        <slide>
+          <slideno>0</slideno>
+          <text>12.520 Lecture Notes #10 
+Finite Strain 
+The "paradox" of finite strain and prefe rred orientation  pure vs. simple shear 
+Suppose: 1) Anisotropy de velops as mineral grains grow such that they are 
+preferentially oriented with the "easy slip" direction facilitating deformation. 
+2) New grain growth is determined  by the state of stress.  (What else 
+would a mineral grain "know" about?) 
+3) The state of stress for pure shea r and simple shear are identical  pure 
+and simple shear stress differ only by a ro tation of 45 in coordinate system. 
+4) In pure shear there is only one s lip direction, whereas in pure shear, 2 
+systems could be active. 
+Paradox: If the stress state is the same, how do es the rock "know" to  have 1 preferred 
+orientation in simple shear, but not in pure shear? 
+Fig. 10_1 
+Up to now, we have considered  infinitesimal strain, where e ij = (ui/xj + uj/xi)/2 &lt;&lt;1. 
+For the kinds of deformations common in stru ctural geology, as well as for the deforming 
+telephone book example shown in class, this condition of "infinitesimal" deformation no 
+longer holds.</text>
+        </slide>
+        <slide>
+          <slideno>4</slideno>
+          <text>Consider homogeneous strain 
+Fig. 10_5 
+This holds if 
+1 r mE= 2(lm 
+Rrl
+i Rj )  Eij ( Ri )ij ij 
+
+Define Ri  x, y ri  x ', y ' 
+In general 
+x ' = ax + by 
+y ' = cx + dy 
+a2 + c2 1 ab + cd 0
+1 
+E= 2 
+ ab + cd b2 + d 2 10 
+ij 
+ 0 0 0   
+1
+2= constant 
+~~&amp;Rr linearly related</text>
+        </slide>
+      </slides>
+      <videos/>
+    </lecture>
+    <lecture>
+      <lecture_title>Corner Flow (PDF)</lecture_title>
+      <lecture_pdf_url>https://ocw.mit.edu/courses/12-520-geodynamics-fall-2006/resources/lecture26/</lecture_pdf_url>
+      <lectureno>26</lectureno>
+      <slides>
+        <slide>
+          <slideno>1</slideno>
+          <text>()
+()
+20
+ 
+ = 
+= =%
+%v
+
+
+ 
+ 
+Next  define stream function 
+% by =%%v  
+Automatically satisfies  0  =%v
+ Then2= = % %   
+ 
+For our purposes, consider 2-D flow only 
+ ()0, 0,=
+%  
+          r, , z 
+Must solve scalar equation 
+  ()220  = 
+    Biharmonic equation [Recall Airy stress function] 40 = 
+ 
+To help in guessing solution, recall 
+22
+2
+22 21
+2
+12
+1
+11=
+=
+= +
+= + + 
+ =+ 
+  = + +   r
+r
+rr
+r
+r
+rvr
+vr
+vpr
+v vprr
+vv v
+rr r
+rrr r r z
+
+
+
+
+
+
+
+
+
+  
+ 
+Lets try solutions 
+ () () =Rr   
+We will want solutions with  independent of  rv r
+ Try ()= Rrr  
+       =r   
+Plugging in 42
+4220+ +  =dd
+dd, 
+        or  '''' 2 '' 0+ +  =
+Solution:</text>
+        </slide>
+        <slide>
+          <slideno>5</slideno>
+          <text>()
+()0
+2
+22
+0
+2sin sin      2sin sin
+cos
+1      cos2= 
+=+ + 
+=
+=
+l
+flow f b
+bb
+bb b
+l
+grav b
+bTP P r d r
+vl
+T ghr dr
+ghl
+b   
+
+ 
+ 
+ FlowUnstable
+GravityTorque
+0 90o63o
+qbStable
+Ridge problem 
+                                                              v 
+                                                                                     v 
+ 
+                                                                                    
+ 
+ 
+By symmetry, at ,2=  , 0=v 0=r  
+Let =r   
+'=rv  ()'' = + rr  
+= v  ()''' ' =  +pr 
+40 =  
+sin cos sin cos = + + +AB C D     
+ 
+0=  00= =vB  2= () 02 0 =+ = vA C   
+ == +rvv A D   00==r D  
+ =Av, ()2=Cv    
+ 
+2cos sin2=  rvv           4cos =rv
+r  
+ 
+2sin2= vv                        4s i n=vpr 
+ 
+ 
+ Figure by MIT OCW.</text>
+        </slide>
+        <slide>
+          <slideno>4</slideno>
+          <text>This flow tends to lift slab  
+Resisted by
+1) gravity
+2) resistance to squeezing material out of wedge [not well posed for 
+wedge  needs  work] 
+Consider gravity  torque balance Figure by MIT OCW.
+lqb
+Dr
+h
+Figure by MIT OCW.</text>
+        </slide>
+        <slide>
+          <slideno>3</slideno>
+          <text>Pressure   no direct equation 
+ 
+ But  equilibrium ,0=ij j  
+ 10
+120 + =
+ ++=r
+r
+rp
+rr
+p
+rr r
+
+
+
+ 
+ 
+Back-arc 
+ ()
+22sin sin sin 20sin+ = &lt;bb b
+bbvpr   
+ 
+22sin 2
+sinbb
+bbv
+r  
+  at surface 2
+22sin 2
+sinb
+bbv
+r 
+  on slab 
+ 
+Fore-arc 
+ () sin sin20sin
+=&gt;+f
+ffvpr  
+ 
+sin 2
+sin+f
+f fv
+r 
+ at surface and on slab 
+ 
+ excess pressure in fore-arc 
+ suction in back-arc  tendency to lift  slab (and also modify surface topography) 
+ 
+ 
+ 
+ 100
+100100
+200200
+50
+5050
+Figure 26.4 Shear stresses in bars caused by the flow in figure 26.3200
+Figure by MIT OCW.</text>
+        </slide>
+        <slide>
+          <slideno>6</slideno>
+          <text>Note:  at 2= , 2=rvv   (related to gradient in stream function) 
+ 
+ 
+                                                                   upwelling zone wider than 
+                                                                              horizontal flow zone 
+ 
+ 
+                                                                   zone of magma generation 
+                                                                              wider than depth from 
+                                                                              which melt segregates</text>
+        </slide>
+        <slide>
+          <slideno>2</slideno>
+          <text>sin cos sin cos = + + +AB C D     
+ 
+Now  match boundary conditions 
+ ( )( ) ' cos sin sin cos cos sin= =  + + + 
+= rvA B C D
+v       
+ 
+Slab problem  
+ Break into 2 regions 
+  
+Back-arc region Fore-arc region 
+0=  0==vB  
+0==+rvA D 0=  0=v  
+=rvv  
+0s i n s i n c o s== + +BB B B vA C D =B  B      
+() (  cos sin cos cos sin=
+=+ + + r
+BB B B B Bvv
+AC D )B     =F  0=v  
+=rvv  
+ 
+Need to solve 3 equations, 3 unknowns 
+ 
+Solutions 
+ 
+Back-arc 
+ () ( )
+22sin sin sin
+sin=bb b b
+bbrv      
+ 
+Fore-arc 
+ () ( ) sin sin
+sin + =+ff
+ffrv  
+ 
+ 
+ 
+Stresses   
+ 0,=rv
+r 10+=r v v
+rr
+ =  r
+rp
+p
+ 
+Back-arc 
+ ( )
+22cos sin cos 2
+sin =bb b
+r
+bbv
+r     
+Fore-arc 
+ () cos cos2
+sin+
+=+f
+r
+ffv
+r   
+ Figure 26.3 Stream lines for flow within the mantle. Motion is with respect to the plate behind 
+the island arc and is driven by the motion of the other plate and of the sinking slab. Thermal 
+convection outside the slab is neglected, and the lithosphere is 50 km thick.
+Figure by MIT OCW.</text>
+        </slide>
+        <slide>
+          <slideno>0</slideno>
+          <text>Course 12.520, Geodynamics 
+Prof. Brad Hager 
+Lecture 26: Corner Flow 
+ 
+ 
+ 
+Why arent subducted slabs cu rled over or vertical? 
+ 
+What is the flow pattern  beneath oceanic ridges? 
+ 
+Does constant thickness basaltic crust make sense? 
+ 
+ 
+ 
+ 
+ 
+ 
+Figure 26.1 
+ 
+Corner flow models:   
+  
+Batchelor  Introduction to fluid mechanics 
+McKenzie  GJRAS 18, 1-32, 1969 
+Stevenson &amp; Turner, Nature, 270, 334-336, 1977 
+Tovish et al, JGR 83, 5892, 1978 
+McAdoo, JGR, 87, 8684, 1982 
+ 
+Slab model: 
+ 
+ 
+ 
+Stokes equation 
+20
+0= +  =%vU
+v p 
+Use vorticity 
+ = v%  
+Take curl of Stokes equation (heading toward 4th order equation) 
+  ()20=   +      vU  p
+Recall  () 0,   =  () 0   =%A
+Assume  constant 
+Recall  ()2=       %%vv vV = 0
+q = 0
+q qq = 0, vq = 0, vr = -v
+vq = 0, vr = vplate
+r
+Assume     plates 
+uniform h 
+Figure by MIT OCW.</text>
+        </slide>
+      </slides>
+      <videos/>
+    </lecture>
+    <lecture>
+      <lecture_title>More Special Cases of Elasticity (PDF)</lecture_title>
+      <lecture_pdf_url>https://ocw.mit.edu/courses/12-520-geodynamics-fall-2006/resources/lecture13/</lecture_pdf_url>
+      <lectureno>13</lectureno>
+      <slides>
+        <slide>
+          <slideno>1</slideno>
+          <text>2) () (1) (1
+xy
+zyxx yy zzxx yy yyyy xx xx
+EEE
+=+===
+ 
+ 
+Application  
+ 
+Plane stress is useful because it often m odels the tecton ic stress in the lithosphere.  Under 
+the conditions of plane stress, the total stress tensor is a co mbination of lithostatic stress 
+and non-lithostatic plane stress: 
+ 
+Lithostatic stress Non-lithostatic stress Total stress 
+gzzz=  0=zz  gzzz=  
+gzxx=  xx zz=  xx zz gz +=  
+gzyy=  yy yy=  yy yy gz +=  
+ 
+Assum ing for sim plicity  that xx = yy = , the elasticity eq uations b ecome: 
+ 
+EEE
+zzyyxx
+
+2) 1() 1(
+===
+ 
+ 
+The cubica l dila tion  of the plate is given by  
+ 
+Eii)21(2==  
+ 
+ 
+2. Plane Strain 
+ 
+Deriving the elas ticity eq uations for the case of  plane strain is very sim ilar to deriving 
+them  for plane stress.</text>
+        </slide>
+        <slide>
+          <slideno>0</slideno>
+          <text>12.520 Lecture Notes 13 
+ 
+ 
+More Speci al Cas es of Elasticit y 
+ 
+Lecture 11 d efined the c onstitu tive equation f or elasticity and explain ed how to reduc e 
+the num ber of term s using Lam  parameters.  It  also exam ined how to apply the elasticity 
+equation s in the spec ial cases of  unia xial stress and uniaxial strain.  This lecture explains 
+how to apply the elasticity equations in tw o more special cas es:  plan e stress and plane 
+strain. 
+ 
+1. Plane Stres s 
+ 
+Mathem atics
+ 
+Plane stress exists when only one principle stress is zero. 
+ 
+Figure 13.1 
+Figure by MIT OCW. 
+ 
+ 
+The stress tensor for the plane st ress in the picture is given by 
+ 
+
+
+
+
+=
+0 0 000
+yy xyxy xx
+ij  
+  
+ 
+Substituting these values into the elasticity equations derived in the previous lectures 
+yields: 
+ txx
+tyy</text>
+        </slide>
+        <slide>
+          <slideno>2</slideno>
+          <text>Figure 13.2 
+Figure by MIT OCW. 
+  
+ 
+The strain tensor for th e state of strain in th e picture is given by  
+ 
+
+
+
+
+=
+0 0 000
+yy xyxy xx
+ij  
+  
+ 
+Substituting these values into the elasticity equations yields: 
+ 
+) () 2 () 2 (
+yy xx zzyy xx yyyy xx xx
+GG
+      
++ =+ + =++=
+ 
+ exx
+eyy</text>
+        </slide>
+      </slides>
+      <videos/>
+    </lecture>
+    <lecture>
+      <lecture_title>Introduction to Constitutive Equations and Elasticity (PDF)</lecture_title>
+      <lecture_pdf_url>https://ocw.mit.edu/courses/12-520-geodynamics-fall-2006/resources/lecture11/</lecture_pdf_url>
+      <lectureno>11</lectureno>
+      <slides>
+        <slide>
+          <slideno>1</slideno>
+          <text>Mathem atics
+ 
+Previous lectures explained that second-order tensors prov ide a relationshi p between two 
+first-order tensors.  Lecture V, for exam ple, explained that stress is  a second-order tensor 
+that rela tes the norm al vector of  a plane to the traction v ector on tha t plane.  Constitu tive 
+equations relate two second-or der tensors by using a fourth-order tensor.  The general 
+form of the equation for elasticity, for exam ple, is given by 
+ 
+kl ijkl ijc =  
+ 
+where cijkl is the fourth-order el astic modulus tensor.  It has 81 com ponents. 
+ 
+There are too m any components of the elastic m odulus tensor to work with easily.  
+However, it can be reduced to fewer com ponents using argum ents of symm etry and 
+energy.  The fact that the stress and strain  tensors are symm etric reduces the num ber of 
+components to 36.  This num ber can be furt her reduced to 21 by considering constraints 
+on strain energy.  For a full treatm ent of th e strain energy argum ent, see pages 56-58 in 
+Rheology of the Earth  by Ranalli.  L astly, by ass uming the mater ial is isotropic, the 
+elastic m odulus tensor can be reduced to  
+ 
+( )jk il jl ik kl ij ijklc    + + =  
+   
+where  and  are called Lam  param eters.  Using this form of the elastic m odulus 
+tensor, the c onstitu tive equation f or elasticity is w ritten: 
+ 
+ij ij kk ij    2+ =  
+ 
+Equations for the norm al stresses are written: 
+ 
+( )
+()
+()3 2 1 33 2 1 23 2 1 1
+222
+            
+++ + =+ ++ =+ + + =
+ 
+ 
+The equatio ns for the sh ear stress es are written : 
+ 
+23 2313 1312 12
+222
+   
+===
+ 
+ 
+The constitu tive equ ation for elasticity can  also b e written in term s of stress: 
+ 
+kkij ij
+ij  
+)3 2( 2 + =</text>
+        </slide>
+        <slide>
+          <slideno>2</slideno>
+          <text>Equations f or the norm al stra ins ar e written: 
+ 
+3 2 1 33 2 1 23 2 1 1
+111
+   
+E E EE E EE E E
++  = + =  =
+ 
+ 
+ 
+E is Youngs m odulus a nd  is Poissons ratio. In term s of the Lam  param eters, 
+Youngs m odulus and P oissons ratio are given by: 
+ 
+) (2)2 3(
+ 
++=++=E
+ 
+  
+The equatio ns for the sh ear strains are written: 
+ 
+
+222
+32
+3213
+1312
+12
+===
+ 
+ 
+2. Exam ples of Elastic Beh avior 
+ 
+This section describ es a few sim ple exam ples of elasticity and dem onstrates how to 
+reduce the L am para meters to conven tional and more m anageable m oduli. 
+ 
+a.  Hydrostatic com pression 
+ 
+In hydrostatic com pression, all shear stresses are zero and all norm al stresses are equal: 
+ 
+ij ij p  =</text>
+        </slide>
+        <slide>
+          <slideno>4</slideno>
+          <text>c.  U niaxia l strain 
+ 
+In uniax ial strain, the on ly nonzero strain is a nor mal strain: 
+ 
+011
+==
+ij other  
+ 
+ 
+Under these conditions, the elasticity e quation in term s of strain becom es 
+ 
+( )
+    
+= =+ =
+33 2211 2 
+ 
+These equations can be com bined to give  a relationship betw een only the stresses: 
+ 
+()11 11 33 221 2  =+= =  
+ 
+This equatio n is helpf ul for dete rmining how sedim entationa process that 
+approxim ates uniaxial strainaffects the state of stres s in th e lithosph ere. 
+Consider the following picture: 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ t11
+t11= rght22 t22t33
+t33Final Surface
+Sedimentsh
+Initial Surface
+Figure 11. 2
+Figure by MIT OCW.</text>
+        </slide>
+        <slide>
+          <slideno>3</slideno>
+          <text>Substitu ting this exp ression into th e constitu tive equation f or elasticity yie lds: 
+kkij ij kk ij ij
+pp
+    
+)2 3( 32
++ = + = =
+ 
+ 
+This equatio n can be rew ritten in  term s of volume change because kk equals cub ic 
+dilation: 
+ 
+  
+32)2 3( 3
++=+ = 
+pVVVVp
+ 
+ 
+The right-hand side of the bo ttom equation is called the bul k modulus and is denoted by 
+K. 
+ 
+KpVV=  
+ 
+b.  Uniaxial stress 
+ 
+In uniaxial stress, the only non zero stress is a norm al stress: 
+0 other 11
+==
+ijT
+
+ 
+ 
+Under these conditions, the elasticity equa tion written in term s of stress becom es 
+ 
+T T)3 2(211 +=  
+ 
+The Lam  param eters can be grouped into  a single term  called Youngs Modulus E so 
+that the equation can be written  as a sim ple proportionality: 
+ 
+ 
+E TT
+=++=) ()3 2(
+ 
+ 
+This equation is called H ookes Law.</text>
+        </slide>
+        <slide>
+          <slideno>5</slideno>
+          <text>If a load of sedim ent with density  is deposited in a colum n h meters th ick, the s tress at 
+the base of the colum n 11 is given by: 
+ 
+gh  =11  
+ 
+The two horizontal stresses perpendi cular to the colum n are given by  
+ 
+()gh pgh 
+  =+= =1 233 22  
+ 
+The deviato ric stresses  iare found by subtracting the pressure p from  each of the 
+stresses i=1,2,3 : 
+ 
+) 1(3)21()11
+3(1' ') 1(3) 2( 2
+11
+3'11
+3)1 1(31
+31
+3 21 1
+ 
+   
+     
+=+ = = =+  ==+ =  = =
+gh ghghgh ghgh pghgh gh gh pijij
+ 
+ 
+The above form ulas show that while the ver tical stress is com pressive, the horizontal 
+stresses are tensional.</text>
+        </slide>
+        <slide>
+          <slideno>0</slideno>
+          <text>Lecture 11:  Introduction to Consti tutive Equations and Elasticity 
+ 
+Previous lectures developed the concepts a nd mathematics of stress and strain.  The 
+equations developed in these lectures such  as Cauchys formula and Newtons second 
+law were derived from laws of physics and ar e valid for all continuous media.  The next 
+couple of lectures explain the relationships between stress and strain.  These 
+relationships are called constitutive equations and apply to only specific idealized 
+materials.  For example, constitutive equa tions characterize the behavior of viscous 
+fluids and perfectly elastic solids. 
+ 
+1. Elasticity 
+ 
+Introduction
+ 
+Elasticity is an important phenomenon in Ea rth Science because rocks behave elastically 
+at conditions prevalent in most of the upper lithosphere:  low temperature and pressure.  
+Elastic behavior means that a rock deforms instantly under the appli cation of a load and 
+that the strain is linearly proportional to st ress.  Once the load is removed, all of the 
+strain is recovered.  These characteristics of elastic behavior are shown graphically 
+below. 
+ 
+ 
+  
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ t o ot0e
+t1es
+ 
+ 
+  
+   The picture on the left shows strain as a function of time for an elastic body under a constant 
+stress applied at t 0.  The picture on the right shows that strain is linearly proportional to stress in 
+an elastic body.    
+ Figure 11.1
+Figure by MIT OCW.</text>
+        </slide>
+      </slides>
+      <videos/>
+    </lecture>
+  </lectures>
+</doc>

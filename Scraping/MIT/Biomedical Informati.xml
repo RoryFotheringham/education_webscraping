@@ -1,0 +1,2586 @@
+<doc>
+  <source>MIT</source>
+  <date>28/01/2023</date>
+  <course>
+    <course_url>https://ocw.mit.edu/courses/20-453j-biomedical-information-technology-fall-2008/</course_url>
+    <course_title>Biomedical Information Technology</course_title>
+    <course_tags>
+      <list>Engineering </list>
+      <list>Computer Science </list>
+      <list>Biological Engineering </list>
+    </course_tags>
+  </course>
+  <lectures>
+    <lecture>
+      <lecture_title>courses/20-453j-biomedical-information-technology-fall-2008/resources/intro</lecture_title>
+      <lecture_pdf_url>https://ocw.mit.edu/courses/20-453j-biomedical-information-technology-fall-2008/resources/intro/</lecture_pdf_url>
+      <lectureno>0</lectureno>
+      <slides>
+        <slide>
+          <slideno>31</slideno>
+          <text>cfdewey 2008 2.771J   20.453J   HST. 958J  SMA5304  Fall 2008Biomedical
+Information
+Technology
+The CytoSolve computational network
+Composite Model</text>
+        </slide>
+        <slide>
+          <slideno>33</slideno>
+          <text>cfdewey 2008 2.771J   20.453J   HST. 958J  SMA5304  Fall 2008Biomedical
+Information
+Technology
+Predicting drug efficacy by modeling
+Current technology
+Future technology
+Ecamples
+Revolutionizing the drug discovery pipeline
+New paradigms
+New challenges with multiple drugs
+Integration issues and opportunitiesGrand Challenges (1 week: CFD)</text>
+        </slide>
+        <slide>
+          <slideno>7</slideno>
+          <text>cfdewey 2008 2.771J   20.453J   HST. 958J  SMA5304  Fall 2008Biomedical
+Information
+Technolog y
+Reading and Homework
+Read the primary papers for each session before
+the session.
+Use the secondary papers and any other material you 
+can find to expand you understanding and answer 
+homework.
+All homework is due at the beginning of the 
+assigned class.  We take no prisoners. Primarily 
+electronic submission.
+Tutorials can be run from your own computers.
+Download Cell Designer:     
+http://www.celldesigner.org/</text>
+        </slide>
+        <slide>
+          <slideno>24</slideno>
+          <text>cfdewey 2008 2.771J   20.453J   HST. 958J  SMA5304  Fall 2008Biomedical
+Information
+Technology
+An example 
+Fluorescence Activated Cell Sorting (FACS)
+Illustrate the semantics issues
+Give an example of how to express semantics
+Show how XML can be used in the description</text>
+        </slide>
+        <slide>
+          <slideno>8</slideno>
+          <text>2.771J   20.453J   HST. 958J  SMA5304  Fall 2008 cfdewey 2008Biomedical
+Information
+Technology
+Original work
+There are three forms of student creativity that are 
+recorded in this class.  First, each student must show 
+mastery of the materials in the homework problems. 
+Second, we have tutorials in which each student should achieve a high level of competence.  We do not test this formally except to observe the ability of each student to perform the stated exercise.  Third, we have individual 
+projects.  You must make sure that your original work and 
+creativity are apparent in the final presentation.  Just 
+reading from a review article is far short of our standard.  In all three cases, If a student consults with others or uses published materials, this must be recorded and fairly described.  Plagiarism will not be tolerated.</text>
+        </slide>
+        <slide>
+          <slideno>14</slideno>
+          <text>cfdewey 2008 2.771J   20.453J   HST. 958J  SMA5304  Fall 2008Biomedical
+Information
+Technology
+Methodology
+Set the intellectual context
+Define the scientific and engineering challenge
+Design a solution
+Implement the solution
+Examine the consequences
+The scientific methodThe scientific method</text>
+        </slide>
+        <slide>
+          <slideno>11</slideno>
+          <text>2.771J   20.453J   HST. 958J  SMA5304  Fall 2008 cfdewey 2008Biomedical
+Information
+Technology
+Active areas of modern biology
+Biological discovery
+How to knock out specific proteins
+How to modify the genome
+How to use stem cells appropriately
+Mechanisms of cells, tissues and organs
+Predictive molecular dependencies
+Designable living biological constructs
+Direct intervention in disease states
+Genetically-aware personal healthcare
+What-if scenarios for medical treatment
+Personal genome for genetically-aware therapy</text>
+        </slide>
+        <slide>
+          <slideno>21</slideno>
+          <text>cfdewey 2008 2.771J   20.453J   HST. 958J  SMA5304  Fall 2008Biomedical
+Information
+Technology
+Types and characteristics of biological and medical 
+data
+Distributed data systems 
+The  life cycle of scientific data
+Current challenges
+Examples from liver fibrosis 
+Gel Electrophoresis
+Microarrays
+FACS and other methods
+Creating biological pathways
+Designing new experiments
+Integrating information from the literatureScope of Applications (1 week: HY)</text>
+        </slide>
+        <slide>
+          <slideno>1</slideno>
+          <text>2.771J   20.453J   HST.9 58J SMA5304     Spring 2008
+Lecture  4 September 2008
+Introduction
+Biomedical
+Information
+Technology</text>
+        </slide>
+        <slide>
+          <slideno>29</slideno>
+          <text>cfdewey 2008 2.771J   20.453J   HST. 958J  SMA5304  Fall 2008ImagBiomedical
+Information
+Technology
+RDF  a step beyond XML
+Lexical triples
+Can be used to describe       
+relationships
+Used to express the data  in 
+an OWL repositoryXML used to transmit 
+information stored in an OWL 
+repository
+es: W3C</text>
+        </slide>
+        <slide>
+          <slideno>22</slideno>
+          <text>cfdewey 2008 2.771J   20.453J   HST. 958J  SMA5304  Fall 2008Biomedical
+Information
+Technology
+Fluorescence Activated Cell Sorter (FACS)
+(Flow cytometry)
+Quantitative, multiple 
+parameter analysis of large numbers of individual cells
+Cell surface markers
+Intracellular proteins
+Ca++ mobilization 
+12 colors and 15 parameters
+Sorting: 60,000 cell/second
+Ref.: Jianmin Chen, MIT
+Figure by MIT OpenCourseWareUltrasonic nozzle 
+vibrator
+LaserCell stained with:
+Anti-A + Anti-B 
+antibodyAnti-A antibody
+Anti-B antibody
+UnstainedFluorescence
+A  B+ and 
+A  B  cells+_
+_A  B+ cells_
+A  B  cells_
+A  B  
+cells__A  B  
+cells__
+A  B  
+cells++A  B  
+cells++_ +Computer Screen
+Anti-A antibody 
+fluorescenceAnti-B antibody 
+fluorescence
++Deflection plates</text>
+        </slide>
+        <slide>
+          <slideno>6</slideno>
+          <text>cfdewey 2008 2.771J   20.453J   HST. 958J  SMA5304  Fall 2008Biomedical
+Information
+Technology
+The Syllabus
+Introduction (1 Week)
+The course in outline
+Term papers
+Scope of Applications (1 Week)
+Biological and medical data
+Basic Technologies (4 Weeks)
+Storing and querying biomedical data
+Relational databases, querying methods
+XML data
+Ontologies (2 Weeks)
+What they are and how th ey can be exploited
+Biological Pathways (1.5 Week)
+Quantitative descriptions of biology
+Data Integration   (1.5 Weeks)
+Discussion of several large integration projects
+Student Presentations and Summary (2 Weeks)</text>
+        </slide>
+        <slide>
+          <slideno>0</slideno>
+          <text>MIT OpenCourseWare 
+tp://ocw.mit.edu
+.453J / 2.771J / HST.958J Biomedical Information Technology
+ll 2008
+r information about citing these materials or our Terms of Use, visit: http://ocw.mit.edu/terms. ht
+ 
+ 
+ 
+20
+Fa
+Fo</text>
+        </slide>
+        <slide>
+          <slideno>10</slideno>
+          <text>cfdewey 2008 2.771J   20.453J   HST. 958J  SMA5304  Fall 2008Biomedical
+Information
+Technology
+Medicine is an information science 
+and a healing art
+Our objective is to create information 
+systems that serve the development of 
+biology and medicine.  In the end, we 
+want to make this information available 
+in human treatment of disease and the 
+enhancement of life.</text>
+        </slide>
+        <slide>
+          <slideno>32</slideno>
+          <text>cfdewey 2008 2.771J   20.453J   HST. 958J  SMA5304  Fall 2008Biomedical
+Information
+Technology
+SWAN
+An advanced architecture for sharing data
+Application to Alzheimer disease
+Generalization 
+Workflow and useability
+Building a distributed biological pathway systemBiological and medical data integration
+(1 week: TC &amp; CFD)</text>
+        </slide>
+        <slide>
+          <slideno>19</slideno>
+          <text>cfdewey 2008 2.771J   20.453J   HST. 958J  SMA5304  Fall 2008Biomedical
+Information
+Technology
+Systems
+Knowledge
+Pathways &amp; Models
+Data 
+Normalization
+Experimental
+Curated &amp; DerivedClinical
+Applied
+Use Cases
+Drug Trials
+Standards
+Interoperability
+Data Integrity
+CurationPlatform
+Knowledge
+RepresentationInterface
+Semantic Web
+Access &amp; Query 
+Creation &amp; SharingThe biomedical information platform</text>
+        </slide>
+        <slide>
+          <slideno>3</slideno>
+          <text>cfdewey 2008 2.771J   20.453J   HST. 958J  SMA5304  Fall 2008Biomedical
+Information
+Technology
+Meet the staff
+Biomedical
+Information
+Technology
+Instructors:
+Forbes Dewey MIT
+Sourav Bhowmick NTU
+Hanry Yu NUS
+Teaching Assistants:
+Huey Eng Chua NTU
+Boon Soo Seah NTU
+Baracah Yankama MIT</text>
+        </slide>
+        <slide>
+          <slideno>20</slideno>
+          <text>cfdewey 2008 2.771J   20.453J   HST. 958J  SMA5304  Fall 2008Biomedical
+Information
+Technology
+The Syllabus</text>
+        </slide>
+        <slide>
+          <slideno>23</slideno>
+          <text>cfdewey 2008 2.771J   20.453J   HST. 958J  SMA5304  Fall 2008Biomedical
+I
+T
+nformation
+echnology
+All you ever wanted to know about databases
+Relational model
+Database schema
+Query methods using SQL
+Trees and graphs
+XML
+Schema for XML relations
+Querying XML
+Data integration without semanticsIntegrating biomedical data (4 weeks: SSB)</text>
+        </slide>
+        <slide>
+          <slideno>30</slideno>
+          <text>cfdewey 2008 2.771J   20.453J   HST. 958J  SMA5304  Fall 2008Biomedical
+Information
+Technology
+Modeling and computing biological pathways
+SBML, CellML, MML
+Cell Designer
+Cytosolve
+Biological pathway databases
+Molecular network comparisonsBiological pathways (2 weeks: CFD &amp; SSB)</text>
+        </slide>
+        <slide>
+          <slideno>16</slideno>
+          <text>cfdewey 2008 2.771J   20.453J   HST. 958J  SMA5304  Fall 2008Biomedical
+Information
+Technology
+Semantics and ontologies
+Semantics:
+The science of meanings . . 
+for communication and interchange 
+of scientific information
+Ontology: 
+A specification of a conceptualization
+Tim Gruber, Stanford, circa 1993</text>
+        </slide>
+        <slide>
+          <slideno>34</slideno>
+          <text>cfdewey 2008 2.771J   20.453J   HST. 958J  SMA5304  Fall 2008Biomedical
+Information
+Technology
+A new paradigm in drug toxicity and efficacyA new paradigm in drug toxicity and efficacyModeling as the preclinical accelerator 
+In Vitro
+Animal
+HumanCross Prediction
+Cross PredictionCross Prediction
+Imaging Data 
+In vitro
+AnimalHumanX</text>
+        </slide>
+        <slide>
+          <slideno>26</slideno>
+          <text>cfdewey 2008 2.771J   20.453J   HST. 958J  SMA5304  Fall 2008Biomedical
+Information
+Technology
+FACS IOD (Expanded Portion)</text>
+        </slide>
+        <slide>
+          <slideno>25</slideno>
+          <text>cfdewey 2008 2.771J   20.453J   HST. 958J  SMA5304  Fall 2008Biomedical
+Information
+Technology
+FACS IOD</text>
+        </slide>
+        <slide>
+          <slideno>17</slideno>
+          <text>cfdewey 2008 2.771J   20.453J   HST. 958J  SMA5304  Fall 2008Biomedical
+Information
+Technology
+The big impediment . . . sematics
+What does the word  sample mean?
+( Quiz:  Football = ? )
+How can one establish meaning with certainty?
+Use ontologies to define objects and concepts
+How can meanings be compared and 
+combined?
+Use the Web Ontology language . . OWL
+How can one create a  collisionless schema?
+Find a good example from a related field</text>
+        </slide>
+        <slide>
+          <slideno>15</slideno>
+          <text>cfdewey 2008 2.771J   20.453J   HST. 958J  SMA5304  Fall 2008Biomedical
+Information
+Technology
+Keys to biomedical computing standards
+Semantics
+Investigators can agree on meaning
+Ontologies for standardizing meaning
+Curation of ontologies  the LSID identifier
+Schema
+Share schema and concepts  Ontologies
+Scaleability
+The ability to scale to larger problems in the future
+Standard tools
+Common ontologies and schema for sharing data   
+Reusable software!!!</text>
+        </slide>
+        <slide>
+          <slideno>35</slideno>
+          <text>cfdewey 2008 2.771J   20.453J   HST. 958J  SMA5304  Fall 2008Biomedical
+Information
+Technology
+Computational and Systems Biology</text>
+        </slide>
+        <slide>
+          <slideno>4</slideno>
+          <text>cfdewey 2008 2.771J   20.453J   HST. 958J  SMA5304  Fall 2008Biomedical
+Information
+Technology
+The Syllabus
+Introduction (1 Week) 
+The course in outline
+Term papers
+Scope of Applications (1 Week)
+Biological and medical data
+Basic Technologies (4 Weeks)
+Storing and querying biomedical data
+Relational databases, querying methods
+XML data
+Ontologies (2 Weeks)
+What they are and how th ey can be exploited
+Biological Pathways (1.5 Week)
+Quantitative descriptions of biology
+Data Integration   (1.5 Weeks)
+Discussion of several large integration projects
+Student Presentations and Summary (2 Weeks)</text>
+        </slide>
+        <slide>
+          <slideno>18</slideno>
+          <text>cfdewey 2008 2.771J   20.453J   HST. 958J  SMA5304  Fall 2008Biomedical
+Information
+Technology
+The biomedical information platform
+Clinical
+Complexity
+Computational
+ComplexityBiological
+Complexity
+Systems
+Complexity</text>
+        </slide>
+        <slide>
+          <slideno>9</slideno>
+          <text>2.771J   20.453J   HST. 958J  SMA5304  Fall 2008 cfdewey 2008Biomedical
+Information
+Technology
+Term paper instructions
+Each student in the course is required to Each student in the course is required to 
+present a term project that illustrates the use of present a term project that illustrates the use of 
+the course material in a real information the course material in a real information 
+technology case in biology or medicine.  The technology case in biology or medicine.  The 
+actual content of the case can vary depending actual content of the case can vary depending 
+upon the studentupon the student s interests and existing skills.  s interests and existing skills.  
+Projects can range from general studies of a Projects can range from general studies of a 
+class of problems class of problems and the recommendation of a the recommendation of a 
+solution to a detailed implementation in running solution to a detailed implementation in running 
+software. software.</text>
+        </slide>
+        <slide>
+          <slideno>12</slideno>
+          <text>2.771J   20.453J   HST. 958J  SMA5304  Fall 2008 cfdewey 2008Biomedical
+Information
+Technology
+Information technology in modern biology
+Biological discovery
+Queryable archives for high-throughput proteomics
+Processing algorithms to understand data
+Search for new relationships between known facts
+Mechanisms of cells, tissues and organs
+Predictive models for interactions between proteins
+Predictive models for molecular ensembles
+Toxicity and dose predictions in drug development
+Genetically-aware personal healthcare
+Predictive response to pharmeceuticals
+Better control and prevention of chronic diseases 
+(Alzheimers disease, obesity, AIDS, and diabetes)</text>
+        </slide>
+        <slide>
+          <slideno>2</slideno>
+          <text>cfdewey 2008 2.771J   20.453J   HST. 958J  SMA5304  Fall 2008Biomedical
+Information
+Technology
+Welcome to the class
+Information  the class web site
+Who to contact 
+The schedule and homework issues
+Objectives and methodology
+The information-driven scientific method
+Ontologies and semantics for biomedical 
+information
+Term paper instructions</text>
+        </slide>
+        <slide>
+          <slideno>27</slideno>
+          <text>2.771J   20.453J   HST. 958J  SMA5304  Fall 2008 cfdewey 2008Biomedical
+Information
+Technology
+XML schema
+&lt;simpleType name="Beam_Splitter_Simple_Type"&gt;
+&lt;restriction base="dicom:Bd_64_Type"&gt;
+&lt;enumeration value="Mirror"/&gt;
+&lt;enumeration value="Dic hroic_Reflect_Low"/&gt;
+&lt;enumeration value="Dic hroic_Reflect_High"/&gt;
+&lt;enumeration value="Block_All"/&gt;
+&lt;enumeration va lue="Other"/&gt;
+&lt;/restriction&gt;
+&lt;/simpleType&gt;
+&lt;!--xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx--&gt;
+&lt;complexType name="Beam_Splitter_Type"&gt;
+&lt;sequence&gt;
+&lt;element name="Beam_Splitter" type=" filters:Beam_Splitter_Simple_Type"/&gt;
+&lt;element name="Low_Cut_Off_1" type="filters:Wavelength_Type" minOccurs="0"/&gt;
+&lt;element name="High_Cut_Off_1" type="f ilters:Wavelength_Type" minOccurs="0"/&gt;
+&lt;element name="Low_Cut_Off_2" type="filters:Wavelength_Type" minOccurs="0"/&gt;
+&lt;element name="High_Cut_Off_2" type="f ilters:Wavelength_Type" minOccurs="0"/&gt;
+&lt;element name="Low_Cut_Off_3" type="filters:Wavelength_Type" minOccurs="0"/&gt;
+&lt;element name="High_Cut_Off_3" type="f ilters:Wavelength_Type" minOccurs="0"/&gt;
+&lt;element name="Description" type=" dicom:Bd_64_Type" minOccurs="0"/&gt;
+&lt;element name="Item_General_Info" type="item:Item_General_Info_Type" minOccurs="0"/&gt;
+&lt;/sequence&gt;&lt;attribute name="Prefix" type="uni ts:Prefixes_Type" fixed="nano"/&gt;
+&lt;attribute name="Unit" type="units:Si_Unit_Name_Type" fixed="meter"/&gt;
+&lt;/complexType&gt;</text>
+        </slide>
+        <slide>
+          <slideno>13</slideno>
+          <text>2.771J   20.453J   HST. 958J  SMA5304  Fall 2008 cfdewey 2008Biomedical
+Information
+Technology
+Objectives
+Introduce the subject of bioinformatics
+Demonstrate the current state of the art
+Teach new methods to approach the field
+Provide design experience through a project
+Develop practical applications to biological and 
+medical problems</text>
+        </slide>
+        <slide>
+          <slideno>28</slideno>
+          <text>2.771J   20.453J   HST. 958J  SMA5304  Fall 2008 cfdewey 2008Biomedical
+Information
+Technology
+Definition and application of ontologies
+Standards (OWL, RDF)
+Examples and usage
+Unique identifiers (LSID)
+Database approach to ontology storage 
+Querying ontologies with SPARQL
+Integrating ontologies and XML query processing
+Role of ontologies in systems biology
+Creating relational databases from ontologies
+OWLdb
+Ontology-based queryingOntologies in Biology (2 Weeks: SSB &amp; CFD)</text>
+        </slide>
+        <slide>
+          <slideno>5</slideno>
+          <text>cfdewey 2008 2.771J   20.453J   HST. 958J  SMA5304  Fall 2008Biomedical
+Information
+Technology
+The Syllabus
+Introduction (1 Week)
+The course in outline
+Term papers
+Scope of Applications (1 Week)
+Biological and medical data
+Basic Technologies (4 Weeks)
+Storing and querying biomedical data
+Relational databases, querying methods
+XML data
+Ontologies (2 Weeks)
+What they are and how th ey can be exploited
+Biological Pathways (1.5 Week)
+Quantitative descriptions of biology
+Data Integration   (1.5 Weeks)
+Discussion of several large integration projects
+Student Presentations and Summary (2 Weeks)</text>
+        </slide>
+      </slides>
+      <videos/>
+    </lecture>
+    <lecture>
+      <lecture_title>courses/20-453j-biomedical-information-technology-fall-2008/resources/1021_db_ontology</lecture_title>
+      <lecture_pdf_url>https://ocw.mit.edu/courses/20-453j-biomedical-information-technology-fall-2008/resources/1021_db_ontology/</lecture_pdf_url>
+      <lectureno>2</lectureno>
+      <slides>
+        <slide>
+          <slideno>5</slideno>
+          <text>cfdewey 2008 2.771J   20.453J   HST. 958J  SMA5304  Fall 2008Biomedical
+Information
+Technology
+OWL  Web Ontology Language
+An expressive and uniform way of defining meaning for 
+terms used to transmit data and relationships
+Can be used for many key purposes
+Guarantee that two definitions are the same
+Discover that two terms are synonymous
+Encode complete object descriptions
+Define unambiguous database schema
+Comes in multiple flavors
+OWL Lite  OWL DL  OWL Full
+http://www.w3.org/TR/2004/REChttp://www.w3.org/TR/2004/REC --owlowl--featuresfeatures --20040210/#s2.120040210/#s2.1</text>
+        </slide>
+        <slide>
+          <slideno>23</slideno>
+          <text>cfdewey 2008 2.771J   20.453J   HST. 958J  SMA5304  Fall 2008Biomedical
+Information
+Technology
+Key Components
+UniModels
+Registry LSID
+Interface UniModels Ontology
+Nomenclature UniModels / SBO / UniPROT RDF
+Editor Protege/SBMLEditor
+Parser Jena
+Reasoner Jena/OWLdb
+Storage Oracle / MySQL / PostgresSQL / Sesame
+Query SPARQL / SQL / D2RQ / SeRQL</text>
+        </slide>
+        <slide>
+          <slideno>2</slideno>
+          <text>cfdewey 2008 2.771J   20.453J   HST. 958J  SMA5304  Fall 2008Biomedical
+Information
+Technology
+Heres our agenda
+Review of database technology
+History
+What is their role?
+What do they do well?
+What do they do poorly?
+Ontologies
+Why are they desirable?
+What are their advantages?What are their weaknesses?
+Relationship between DB and Ontologies
+Exploiting the combination - OWLdb</text>
+        </slide>
+        <slide>
+          <slideno>3</slideno>
+          <text>cfdewey 2008 2.771J   20.453J   HST. 958J  SMA5304  Fall 2008Biomedical
+Information
+Technology
+Review of relational database technology
+Started in mid-80s
+Composed of tables with rows and columns
+Minimal language to construct and query them: 
+SQL
+Generally fixed and unchanged relationships
+Java-based interface JDBC a real 
+breakthrough; common interface for all 
+flavors.  Can write programs!!!
+Databases dont talk to each other
+Stove-piping, warehousing, federation
+Updates, security, reliability, performance</text>
+        </slide>
+        <slide>
+          <slideno>8</slideno>
+          <text>cfdewey 2008 2.771J   20.453J   HST. 958J  SMA5304  Fall 2008Biomedical
+Information
+Technology
+OWL  Web Ontology Language (3)
+RDF Schema Features:
+rdfs:subPropertyOf
+http://www.w3.org/TR/2004/REChttp://www.w3.org/TR/2004/REC --owlowl--featuresfeatures --20040210/#s2.120040210/#s2.1rdfs:subPropertyOf : Property hierarchies may be 
+created by making one or more statements that a 
+property is a subproperty of one or more other properties. For example, hasSibling may be stated to be a subproperty of hasRelative. From this a reasoner can 
+deduce that if an individual is related to another by the 
+hasSibling property, then it is also related to the other bythe hasRelative property.
+One of 54 base language constructs</text>
+        </slide>
+        <slide>
+          <slideno>4</slideno>
+          <text>cfdewey 2008 2.771J   20.453J   HST. 958J  SMA5304  Fall 2008Biomedical
+Information
+Technology
+OWL Ontologies
+Describe meaning
+OWL is a language (set of relationships) that 
+can be extended with additional definitions
+OWL is written in RDF, is machine-readable,    
+and can be parsed and combined
+Representing databases as ontologies
+Can represent a database schema by an 
+ontology
+Will discuss state-of-the art programs to do the 
+conversion
+If we can convert, can have the best of both 
+environments</text>
+        </slide>
+        <slide>
+          <slideno>14</slideno>
+          <text>2.771J   20.453J   HST. 958J  SMA5304  Fall 2008Biomedical
+Information
+Technology
+Options for Ontology Merging &amp; Aligning
+Kim, Jaehong, Minsu Jang, Young-Guk Ha, J oo-Chan Sohn, and Sang Jo Lee. MoA: 
+OWL Ontology Merging and Alignment Tool for the Semantic Web. 18thConference on 
+IAAI, Bari Italy, 2005.
+API Shell Ontomo Editor
+Query Interface
+Aligned 
+Ontology
+Bossam Inference EngineApplication User Expert
+View Update
+MoA Engine
+Semantic 
+Bridge
+Merged S
+UserMergerh
+Ontologyell
+SB
+Generator
+O1 O2
+Source Ontologies
+Architecture of MoA system.
+Figure by MIT OpenCourseWare, after Kim et al, 2005.cfdewey 2008</text>
+        </slide>
+        <slide>
+          <slideno>19</slideno>
+          <text>cfdewey 2008 2.771J   20.453J   HST. 958J  SMA5304  Fall 2008Biomedical
+Information
+Technology
+Integration - Ontology
+UniProt
+BioModelsUniModels
+External Ontologies Internal Ontologies</text>
+        </slide>
+        <slide>
+          <slideno>20</slideno>
+          <text>cfdewey 2008 2.771J   20.453J   HST. 958J  SMA5304  Fall 2008Biomedical
+Information
+Technology
+The Species Link
+UniProt BioModels
+ProteinModel
+ProteinProteinProtein Protein 
+TableTable</text>
+        </slide>
+        <slide>
+          <slideno>13</slideno>
+          <text>cfdewey 2008 2.771J   20.453J   HST. 958J  SMA5304  Fall 2008Biomedical
+Information
+Technology
+http://www4.wiwiss.fu-berlin.de/bizer/D2RQ/
+More on D2RQ
+Courtesy of Prof. Dr. Christian Bizer. Used with permission.</text>
+        </slide>
+        <slide>
+          <slideno>0</slideno>
+          <text>MIT OpenCourseWare 
+tp://ocw.mit.edu
+.453J / 2.771J / HST.958J Biomedical Information Technology
+ll 2008
+r information about citing these materials or our Terms of Use, visit: http://ocw.mit.edu/terms. ht
+ 
+ 
+ 
+20
+Fa
+Fo</text>
+        </slide>
+        <slide>
+          <slideno>11</slideno>
+          <text>cfdewey 2008 2.771J   20.453J   HST. 958J  SMA5304  Fall 2008Biomedical
+Information
+Technology
+Our approach to creating and merging databases
+Create ontologies from database schema
+Edit and maintain the ontologies
+Utilize merged &amp; aligned ontologies
+Create on-the-fly databases from ontologies
+Model scientific processes - use cases
+Allow for interoperability</text>
+        </slide>
+        <slide>
+          <slideno>6</slideno>
+          <text>cfdewey 2008 2.771J   20.453J   HST. 958J  SMA5304  Fall 2008Biomedical
+Information
+Technology
+Owl Structure
+Classes
+Properties
+Types
+Meta-Data
+Owl is written in RDF</text>
+        </slide>
+        <slide>
+          <slideno>22</slideno>
+          <text>cfdewey 2008 2.771J   20.453J   HST. 958J  SMA5304  Fall 2008Biomedical
+Information
+Technology
+Architecture
+BioModels.BioModels.
+NetNet
+UniProtUniProt
+SBO/BioSBO/Bio
+PAXPAX
+UniProtUniProt
+RDFRDF
+UniModel
+MetaOntology
+in OWL
+(Handcrafted )
++ inference 
+rules
+OWL
+db
+UniModel
+UniProt + BioModel
+DB
+(MySQL etc.)
+SQLSQL
+SPARQLSPARQL
+Front EndFront End
++ + 
+Contextualiz ation Contextualiz ation
++ Use Case + Use Case
+UniModel
+MetaOntology
+in OWL
+(Handcrafted )
++ inference 
+rules
+OWL
+db</text>
+        </slide>
+        <slide>
+          <slideno>10</slideno>
+          <text>cfdewey 2008 2.771J   20.453J   HST. 958J  SMA5304  Fall 2008Biomedical
+Information
+Technology
+XML Schema Datatypes used in OWL 
+http://www.w3.org/2001/XMLSchema#name
+xsd:string , xsd:boolean , xsd:decimal , xsd:float , 
+xsd:double , xsd:dateTime , xsd:time , xsd:date , 
+xsd:gYearMonth , xsd:gYear , xsd:gMonthDay , 
+xsd:gDay , xsd:gMonth , xsd:hexBinary , 
+xsd:base64Binary , xsd:anyURI , xsd:normalizedString , 
+xsd:token , xsd:language , xsd:NMTOKEN , xsd:Name , 
+xsd:NCName , xsd:integer , xsd:nonPositiveInteger , 
+xsd:negativeInteger , xsd:long , xsd:int , xsd:short , 
+xsd:byte , xsd:nonNegativeInteger , xsd:unsignedLong , 
+xsd:unsignedInt , xsd:unsignedShort , xsd:unsignedByte
+and xsd:positiveInteger</text>
+        </slide>
+        <slide>
+          <slideno>7</slideno>
+          <text>cfdewey 2008 2.771J   20.453J   HST. 958J  SMA5304  Fall 2008Biomedical
+Information
+Technology
+OWL  Web Ontology Language (2)
+RDF Schema Features:
+Class (Thing, Nothing)
+rdfs:subClassOf
+rdf:Property
+rdfs:subPropertyOf
+rdfs:domain
+rdfs:range
+Individual
+http://www.w3.org/TR/2004/REChttp://www.w3.org/TR/2004/REC --owlowl--featuresfeatures --20040210/#s2.120040210/#s2.1(In)Equalitiy:
+equivalentClass
+equivalentProperty
+sameAs
+differentFrom
+AllDifferent
+distinc tMembers
+Property Characteristics:
+Property Restrictions:
+Restricted Cardinality:
+Header Information:
+Class Axioms:
+Arbitrary CardinalityClass Intersection:
+Versioning:
+Annotation Properties:
+Datatypes:
+Boolean Combinations:
+Filler Information</text>
+        </slide>
+        <slide>
+          <slideno>18</slideno>
+          <text>cfdewey 2008 2.771J   20.453J   HST. 958J  SMA5304  Fall 2008Biomedical
+Information
+Technology
+OWLdb: A new paradigm for creating databases
+. . . . Courtesy of Kurt StiehlXML
+File
+From Stiehl, Kurt R.  Development of Dynamic Database Structures Using OWL Ontologies . MIT BSME Thesis, June 2007.</text>
+        </slide>
+        <slide>
+          <slideno>24</slideno>
+          <text>cfdewey 2008 2.771J   20.453J   HST. 958J  SMA5304  Fall 2008Biomedical
+Information
+Technology
+Computational and Systems Biology</text>
+        </slide>
+        <slide>
+          <slideno>16</slideno>
+          <text>cfdewey 2008 2.771J   20.453J   HST. 958J  SMA5304  Fall 2008Biomedical
+Information
+Technology
+Options for Ontology Merging &amp; Aligning
+Proceedings of the Internatio nal Workshop for Foundations of Models for Information 
+Integration (FMII-2001), Viterbo, Italy, September 2001.Figure by MIT OpenCourseWare.Linguistic
+ProcessingLattice
+ExplorationLinguistic
+Processing
+FCA-MergeK1
+K2
+R2R1
+Onew
+O2O1
+D
+B {K}
+Ontology Merging Method
+D: set of natural language documents     K: formal context     O: ontology     R: set of relation names
+B {K}: concept lattice of K</text>
+        </slide>
+        <slide>
+          <slideno>21</slideno>
+          <text>cfdewey 2008 2.771J   20.453J   HST. 958J  SMA5304  Fall 2008Biomedical
+Information
+Technology
+The OWLdb design
+Ontology 1Ontology 1Merge and alignMerge and align
+ontologiesontologies
+Ontology nOntology n
+OWLdbOWLdbQueryQuery
+ontologyontology
+JDBCJDBC
+SQLSQL Databases</text>
+        </slide>
+        <slide>
+          <slideno>15</slideno>
+          <text>cfdewey 2008 2.771J   20.453J   HST. 958J  SMA5304  Fall 2008Biomedical
+Information
+Technology
+Options for Ontology Merging &amp; Aligning (2)
+Lam, H.Y.K. et al.  Using Web Onto logy Language to Integrate Heterogeneous 
+Databases in the Neurosciences. AMIA Annual Symposium Proc . 2006, 464-468.
+[PubMed Central OpenAccess article .]</text>
+        </slide>
+        <slide>
+          <slideno>17</slideno>
+          <text>cfdewey 2008 2.771J   20.453J   HST. 958J  SMA5304  Fall 2008Biomedical
+Information
+Technology
+Options for Ontology Merging &amp; Aligning</text>
+        </slide>
+        <slide>
+          <slideno>1</slideno>
+          <text>2.771J   20.453J   HST.9 58J SMA5304     Fall 2008
+Lecture  21 October 2008
+Creating Databases from Ontologies
+Biomedical
+Information
+Technology
+C. Forbes Dewey, Jr.
+Massachusetts Institute of Technology
+Cambridge, MA USA</text>
+        </slide>
+        <slide>
+          <slideno>9</slideno>
+          <text>cfdewey 2008 2.771J   20.453J   HST. 958J  SMA5304  Fall 2008Biomedical
+Information
+Technology
+OWL  Web Ontology Language (2)
+RDF Schema Features:
+Class (Thing, Nothing)
+rdfs:subClassOf
+rdf:Property
+rdfs:subPropertyOf
+rdfs:domain
+rdfs:range
+Individual
+http://www.w3.org/TR/2004/REChttp://www.w3.org/TR/2004/REC --owlowl--featuresfeatures --20040210/#s2.120040210/#s2.1(In)Equalitiy:
+equivalentClass
+equivalentProperty
+sameAs
+differentFrom
+AllDifferent
+distinc tMembers
+Property Characteristics:
+Property Restrictions:
+Restricted Cardinality:
+Header Information:
+Class Axioms:
+Arbitrary CardinalityClass Intersection:
+Versioning:
+Annotation Properties:
+Datatypes:
+Boolean Combinations:
+Filler Information</text>
+        </slide>
+        <slide>
+          <slideno>12</slideno>
+          <text>cfdewey 2008 2.771J   20.453J   HST. 958J  SMA5304  Fall 2008Biomedical
+Information
+Technology
+Creating ontologies from database schema
+D2RQ is a declarative language to describe 
+mappings between relational database 
+schemata and OWL/RDFS ontologies.
+http://www4.wiwiss.fu-berlin.de/bizer/D2RQ/
+Courtesy of Prof. Dr. Christian Bizer. Used with permission.</text>
+        </slide>
+      </slides>
+      <videos/>
+    </lecture>
+    <lecture>
+      <lecture_title>courses/20-453j-biomedical-information-technology-fall-2008/resources/1104_molec_nw</lecture_title>
+      <lecture_pdf_url>https://ocw.mit.edu/courses/20-453j-biomedical-information-technology-fall-2008/resources/1104_molec_nw/</lecture_pdf_url>
+      <lectureno>3</lectureno>
+      <slides>
+        <slide>
+          <slideno>68</slideno>
+          <text>Functional Conservation
+For 64% of the conserved paths, the 
+matched paths in the fly network conserved 
+one or more functions of the yeast query 
+pathways
+SMA5304: Biomedical Information Technology</text>
+        </slide>
+        <slide>
+          <slideno>50</slideno>
+          <text>Conserved Network 
+Regions
+SMA5304: Biomedical Information Technology
+Orange oval  YeastGreen rectangle  Worm
+Blue hexagon - Fly
+Courtesy of National Academy of Sciences, U. S. A. Used with permission.
+Source: Sharan, R., et al. " Conserved Patterns of Protein Interaction in
+Multiple Species." PNAS  102, no. 6 (February 8, 2005): 1974-1979.
+Copyright (c) 2005 National Academy of Sciences, U.S.A.</text>
+        </slide>
+        <slide>
+          <slideno>60</slideno>
+          <text>Example of Alignment
+SMA5304: Biomedical Information Technology
+Image source: Figure 1b in Shlomi, T., et al. "QPa th: A Method for Querying Pathways in a Protein-
+protein Interaction Network." BMC Bioinformatics 7 (2006): 199.</text>
+        </slide>
+        <slide>
+          <slideno>66</slideno>
+          <text>Is the Insertion and Deletion 
+Flexibility Really Required?
+SMA5304: Biomedical Information Technology
+Most conserved paths 
+between the yeast and the fly required more than one insertion and 
+deletion 
+Source: Figure 2 in Shlomi, T., et al. "QPath: A Method for Querying Pathways 
+in a P rotein-protein Interaction Network." BMC Bioinformatics 7 (2006): 199.</text>
+        </slide>
+        <slide>
+          <slideno>27</slideno>
+          <text>Gaps and Mismatches
+Why?
+Overcome noisy PPI data as well as evolutionary variations
+Gap
+Occurs when a protein interaction in  one path skips over a protein in 
+the other
+Mismatch
+Occurs when two proteins at the same position in the alignment do 
+not share sequence homology
+Neither gaps nor mismatches may occur consecutively
+SMA5304: Biomedical Information Technology</text>
+        </slide>
+        <slide>
+          <slideno>24</slideno>
+          <text>Overview
+B. P. Kelley et al . Pathblast: a tool for alignment of protein interaction networks.
+PNAS. ,  2003 .
+M. Chen, R. Hofestaedt. PathAligner: Metabolic Path way Retrieval and Alignment.
+Applied Bioinformatics , 3(4), 241252, 2004.
+R. Sharan, S. Suthram,  R. M. Kelley et al. Conserved patterns of protein interaction 
+in multiple species. PNAS , 102, pp. 1974-1979, 2005.
+R. Y. Pinter, O. Rokh lenko, E. Yeger-Lotem, and M. Ziv-Ukelson. Alignment of 
+metabolic pathways. Bioinformatics, 21(16):34018, 2005.
+M Koyuturk, Y Kim et al. Pairwise Alignment of Protein Interaction Networks . 
+Journal of Comp Biology, 13(2), 2006.
+J. Flannick, A. Novak, B.S. Srinivasan et al. Grmlin: General and robust alignment 
+of multiple large interaction networks. Genome Research , 2006.
+Dutkowsky, J., Tiuryn, J.: Identication of functional modules from conserved 
+ancestral protein-protein interactions. Bioinformatics, 2007.
+N Przulj. Biological Network Comparison with  Graphlet Degree Distribution.
+Bioinformatics, 23, e177-e183, 2007.
+M. Kalaev, V. Bafna, R. Sharan. Fast and Accurate Alignm ent of Multiple Protein 
+Networks. In Proc. of ACM RECOMB , 2008.
+SMA5304: Biomedical Information Technology</text>
+        </slide>
+        <slide>
+          <slideno>37</slideno>
+          <text>Relation between seemingly 
+unrelated processes
+SMA5304: Biomedical I
+Courtesy of National Academy o f Sciences, U. S. A. Used with permission. 
+onserved Pathways Within Bacteria and Yeast
+ork alignment." PNAS 100, no. 20 (September Source: Kelley, Brian P., et al. "C
+20,
+c) 2003 National Academy of Sciences, U.S.A.
+nformation Technology as Revealed by Global Protein N etw 
+ 2003): 11304-11309. Copyright (</text>
+        </slide>
+        <slide>
+          <slideno>65</slideno>
+          <text>Best Matching Pathways 
+in Fly
+SMA5304: Biomedical Information Technology
+Source: Figure 3 in Shlomi, T., et al. "QPath: A Method for Querying Pathways in a Protein-protein 
+Interaction Network." BMC Bioinformatics 7 (2006): 199.</text>
+        </slide>
+        <slide>
+          <slideno>59</slideno>
+          <text>Path Query Problem
+Output
+A set of best matching pathways P = (p1,,pk)in G, 
+where a good match is measured in two respects
+Each node in the matched pathway and its 
+corresponding node in the query are similar with 
+respect to the given scoring function H.
+The reliability of edges in the matched pathway 
+is high
+SMA5304: Biomedical Information Technology</text>
+        </slide>
+        <slide>
+          <slideno>15</slideno>
+          <text>Network &amp; Sequence 
+Comparison
+Sequence Comparison
+Computational searches for 
+motifs and systematic characterization of global properties arose relatively late in the history of 
+sequence analysis. 
+Local sequence alignment 
+can be solved efficientlyNetwork Comparison
+Occurred early in the field of network comparison.
+Analogous problem of identifying conserved protein modules is computationally hard
+SMA5304: Biomedical Information Technology</text>
+        </slide>
+        <slide>
+          <slideno>62</slideno>
+          <text>Evaluation of QPath
+Modified QPath algorithm is used to search the 
+network for pathways that have high interaction 
+scores
+Limited to pathways consisting of 6 proteins
+Allow for (up to 3) insertions and deletions.
+Identified a set of 271 non-redundant pathways 
+whose scores exceeded those of 99% of 
+randomly chosen pathways
+SMA5304: Biomedical Information Technology</text>
+        </slide>
+        <slide>
+          <slideno>63</slideno>
+          <text>Quality Assessment of 
+the Pathways
+Functional enrichment 
+Representing the tendency of the pathway's 
+proteins to have coherent GO functions
+Expression coherency
+measuring the similarity in  expression profiles of 
+the pathway's coding genes across different experimental conditions
+SMA5304: Biomedical Information Technology</text>
+        </slide>
+        <slide>
+          <slideno>13</slideno>
+          <text>Network &amp; Sequence 
+Comparison
+SMA5304: Biomedical Information Technology
+Courtesy of Roded Shara n. Used with permission.</text>
+        </slide>
+        <slide>
+          <slideno>56</slideno>
+          <text>Overview
+T. Shlomi, D. Segal, E. Ruppin, and R. Sharan. QPath: A 
+Method for Querying Pathways in a Protein-Protein 
+Interaction Network. BMC Bioinformatics, 7(199), 2006.
+B. Dost, T. Shlomi, N. Gupta et al. QNet: A Tool for Querying 
+Protein Interaction Networks. In Proc. of ACM RECOMB , 
+2007.
+Y. Tian, R. C. McEachin, C. Santos et al. SAGA: A subgraph
+matching tool for biological graphs. Bioinformatics , 2006. 
+SMA5304: Biomedical Information Technology</text>
+        </slide>
+        <slide>
+          <slideno>58</slideno>
+          <text>Path Query Problem
+Input
+a target network, represented as an undirected 
+weighted graph G(V,E) with a weight function on 
+the edges w : EER
+a path query Q = (q1,,qk).
+Additionally, a scoring function H : QV is given. 
+SMA5304: Biomedical Information Technology</text>
+        </slide>
+        <slide>
+          <slideno>38</slideno>
+          <text>Yeast vs Yeast
+Search for paralogous pathways
+Constructing a GAG merging the yeast protein 
+interaction network with an identical copy of itself
+Only direct edge permitted
+Proteins were not allowed to pair with themselves or 
+their network neighbors
+Obtain 300 highest scoring pathway alignments of 
+length 4(level of significance p &lt;= 0.0001 )
+SMA5304: Biomedical Information Technology</text>
+        </slide>
+        <slide>
+          <slideno>1</slideno>
+          <text>Image: Dewey Lab, MIT.</text>
+        </slide>
+        <slide>
+          <slideno>23</slideno>
+          <text>Protein Similarity
+SMA5304: Biomedical Information Technology
+Mouse
+ Rat
+Rat_gene_1
+ Rat_gene_2
+ Mouse_gene_1
+ Mouse_gene_2
+Orthologous proteins 
+Two proteins from different 
+species that diverged after a 
+speciation event
+Paralogous proteins T w o  
+proteins from the same 
+species that diverged after a 
+duplication eventHomologous proteins  Two proteins that have 
+common ancestry
+Detected by sequence similarity
+Proteins can be from same or different species</text>
+        </slide>
+        <slide>
+          <slideno>28</slideno>
+          <text>Global Alignment Graph
+SMA5304: Biomedical Information Technology
+A path through this 
+represents a conserved 
+pathway between the two networks
+Courtesy of National Academy of Sciences, U. S. A. Used with permission. 
+Source: Kelley, Brian P., et al. "Conserved Pathways Within Bacteria and Yeast
+ as Revealed by Global Protein Network Alignment." PNAS 100, no. 20 (September 20,
+ 2003): 11304-11309. Copyright (c) 2003 National Academy of Sciences, U.S.A.</text>
+        </slide>
+        <slide>
+          <slideno>10</slideno>
+          <text>Answer To
+SMA5304: Biomedical Information Technology
+Why proteins, protein interactions and groups of 
+interactions are likely to have equivalent functions across species?
+Based on these similarities, can we predict new functional information about proteins and interactions that are poorly characterized?
+What do these relationships tell us about the evolution of proteins, networks and whole species?</text>
+        </slide>
+        <slide>
+          <slideno>51</slideno>
+          <text>SMA5304: Biomedical Information Technology
+Conserved links 
+between different biological processes
+Regions group 
+together clusters that share 15% overlap with 
+at least one other 
+cluster in the group 
+and are all enriched for 
+the same GO cellular 
+processSquare box:
+Network regions
+Largest number of conserved clusters
+Courtesy of National Academy of Sciences, U. S. A. Used with permission.
+Source: Sharan, R., et al. " Conserved Patterns of Protein Interaction in Multiple Species."
+PNAS 102, no. 6 (February 8, 2005): 1974-1979. Copyright (c) 2005 National Academy of Sciences, U.S.A.</text>
+        </slide>
+        <slide>
+          <slideno>61</slideno>
+          <text>Evaluation of Pathway 
+Queries
+Queried the yeast network with the yeast 
+filamentous growth MAPK cascade .
+SMA5304: Biomedical Information Technology
+Image source: Figure 6 (supplemental material) in Shlomi, T., et al. "QPath: A Method for Querying 
+Pathways in a Protein-protein I nteraction Network." BMC Bioinformatics 7 (2006): 199.</text>
+        </slide>
+        <slide>
+          <slideno>48</slideno>
+          <text>Multiple Alignment 
+(Sharan et al, 2005)
+Three-way alignment of the proteinprotein 
+interaction networks
+Caenorhabditis elegans
+Drosophila melanogaster
+Saccharomyces cerevisiae. 
+Protein interaction data were obtained from the 
+Database of Interacting Proteins 
+14,319 interactions among 4,389 proteins in yeast
+3,926 interactions among 2,718 proteins in worm
+20,720 interactions among 7,038 proteins in fly
+SMA5304: Biomedical Information Technology</text>
+        </slide>
+        <slide>
+          <slideno>33</slideno>
+          <text>Alignment Algorithm
+G is generally not acyclic
+First construct a sufficient number ( 5L!) of 
+directed acyclic subgraphs
+Use the dynamic programming method to 
+compute the highest-scoring paths for each.
+Can be done in linear time 
+SMA5304: Biomedical Information Technology</text>
+        </slide>
+        <slide>
+          <slideno>11</slideno>
+          <text>Answer To
+SMA5304: Biomedical Information Technology
+Given that systematic screens for protein 
+interactions may report large numbers of false-
+positive measurements, which interactions 
+represent true binding events?</text>
+        </slide>
+        <slide>
+          <slideno>21</slideno>
+          <text>Usefulness
+Compute functional orthologs
+Proteins which perform the same function across 
+species
+Separating true protein-protein interactions from 
+false positives
+Organizing large-scale interaction data into 
+models of cellular signaling and regulatory 
+machinery
+Identify novel modules by detecting unusual conserved subnetworks
+SMA5304: Biomedical Information Technology</text>
+        </slide>
+        <slide>
+          <slideno>57</slideno>
+          <text>QPath
+Goal
+Querying linear pathways within a given network
+QPath
+Searches for matching pathways composed of distinct
+proteins that are similar to the query proteins in their 
+sequence and interaction patterns
+SMA5304: Biomedical Information Technology</text>
+        </slide>
+        <slide>
+          <slideno>40</slideno>
+          <text>Pathway Queries
+Query a single protein network with specific 
+pathways of interest
+Similar to using BLAST to query a sequence 
+database with a short nucleotide or amino acid 
+sequence query
+Query Yeast network with a MAPK pathway
+associated with filamentation response
+SMA5304: Biomedical Information Technology</text>
+        </slide>
+        <slide>
+          <slideno>69</slideno>
+          <text>Conclusions
+Very young field!
+Advanced computational methodology 
+Scaling multiple network alignment
+Association of network features with diseases
+SMA5304: Biomedical Information Technology</text>
+        </slide>
+        <slide>
+          <slideno>67</slideno>
+          <text>Is the Insertion and Deletion 
+Flexibility Really Required?
+SMA5304: Biomedical Information Technology
+Functionally enriched 
+paths are strongly depended on Ins/Del
+Source: Figure 2 in Shlomi, T., et al. "QPath: A Method for Querying Pathways 
+in a P rotein-protein Interaction Network." BMC Bioinformatics 7 (2006): 199.</text>
+        </slide>
+        <slide>
+          <slideno>32</slideno>
+          <text>Alignment Algorithm
+The highest-scoring path of length l = 2L 
+ending in vertex v will have score
+SMA5304: Biomedical Information Technology
+Base Case</text>
+        </slide>
+        <slide>
+          <slideno>0</slideno>
+          <text>MIT OpenCourseWare 
+tp://ocw.mit.edu
+.453J / 2.771J / HST.958J Biomedical Information Technology
+ll 2008
+r information about citing these materials or our Terms of Use, visit: http://ocw.mit.edu/terms. ht
+ 
+ 
+ 
+20
+Fa
+Fo</text>
+        </slide>
+        <slide>
+          <slideno>25</slideno>
+          <text>PathBlast
+Implements a scoring function and search 
+algorithm to find high probability pathway 
+alignments between two protein interaction 
+networks
+SMA5304: Biomedical Information Technology</text>
+        </slide>
+        <slide>
+          <slideno>3</slideno>
+          <text>Evolution in Biology
+Mutations and rearrangement in genomic DNA 
+Changes in protein structures, abundances, and 
+modification states
+Variation at the protein level
+Impact proteins interaction with one another, with DNA, and with small molecules
+Affects signaling, regulatory, and metabolic networks
+Changes in network organization
+Affects cellular function, tissue-level responses, behavior and morphology of whole organisms
+SMA5304: Biomedical Information Technology</text>
+        </slide>
+        <slide>
+          <slideno>29</slideno>
+          <text>Similarity Between 
+Proteins
+In order to build the global alignment graph, similarity 
+between proteins need to be measured
+Using BLAST
+Quantifies the similarity
+Assigns it a p-value 
+probability of observing such similarity at random
+E-value or Expectation value
+number of different sequence pairs  with score equivalent or better 
+than this hits score that are expec ted to result by a random search
+Unalignable proteins are assigned max E-value of 5
+SMA5304: Biomedical Information Technology</text>
+        </slide>
+        <slide>
+          <slideno>31</slideno>
+          <text>Alignment Algorithm
+Identify the highest-scoring pathway alignment 
+P* of fixed length L(Lvertices and L -1edges). 
+If G is directed and acyclic , 
+linear time (in the number of edges) 
+using dynamic programming 
+SMA5304: Biomedical Information Technology</text>
+        </slide>
+        <slide>
+          <slideno>19</slideno>
+          <text>Network Alignment 
+Problem
+SMA5304: Biomedical Information Technology</text>
+        </slide>
+        <slide>
+          <slideno>43</slideno>
+          <text>Graphical Display
+SMA5304: Biomedical I Anformation Technology
+Short pathway queries are 
+capable of identifying both known 
+and potentially novel paralogous
+pathways
+Image courtesy of Brian P. Kelle y. Source: Kelley, B. P., et al PathBLAST: A Tool for Alignment of Protein I nteraction Network s.Nucleic 
+Acids Res 32, web server issue, (July 1, 2004): W83- W88.  the authors, published by Oxford University Press under open access.</text>
+        </slide>
+        <slide>
+          <slideno>36</slideno>
+          <text>Comparison between Yeast and 
+Bacteria GAGs to the corresponding randomized networks
+SMA5304: Biomedical Information Technology
+Direct interaction was rare
+Gaps and Mismatch allowed to find much 
+larger regions that were conserved
+Courtesy of National Academy of Sciences, U. S. A. Used with permission. 
+Source: Kelley, Brian P., et al. "Conserved Pathways Within Bacteria and Yeast
+ as Revealed by Global Protein Network Alignment." PNAS 100, no. 20 (September 20,
+ 2003): 11304-11309. Copyright (c) 2003 National Academy of Sciences, U.S.A.</text>
+        </slide>
+        <slide>
+          <slideno>20</slideno>
+          <text>Usefulness
+Functional Annotation
+Assign roles to unknown proteins
+Annotation transfer
+Assigns to a protein of unknown function the 
+annotation of a protein to which it is aligned
+Landmark extension
+If a protein of unknown function appears as part of an alignment together with a landmark protein of 
+known function, we can label the protein with a similar annotation
+SMA5304: Biomedical Information Technology</text>
+        </slide>
+        <slide>
+          <slideno>45</slideno>
+          <text>Summary
+Single pathways in 
+bacteria frequently correspond to multiple pathways in yeast
+Yeast has undergone or more whole-genome duplications relative to 
+bacteria
+SMA5304: Biomedical Information Technology
+A single bacterial RNA helicase (deaD) occupies the same 
+pathway position, and perhaps func tional role, as three different 
+helicases in yeast (Dbp2, Mak5, and Has1).
+Courtesy of National Academy of Sciences, U. S. A. Used with permission. 
+Source: Kelley, Brian P., et al. "Conserved Pathways Within Bacteria and Yeast
+ as Revealed by Global Protein Network Alignment." PNAS 100, no. 20 (September 20,
+ 2003): 11304-11309. Copyright (c) 2003 National Academy of Sciences, U.S.A.</text>
+        </slide>
+        <slide>
+          <slideno>70</slideno>
+          <text>References Used
+T. Shlomi, D. Segal, E. Ruppin, and R. Sharan. QPath: A Method for 
+Querying Pathways in a Protein-Protein Interaction Network. BMC 
+Bioinformatics , 7(199), 2006.
+B. P. Kelley et al . Pathblast: a tool for alignment of protein 
+interaction networks. PNAS. ,  2003 .
+R. Sharan, S. Suthram, R. M. Kelley et al. Conserved patterns of 
+protein interaction in multiple species. PNAS, 102, pp. 1974-1979, 
+2005.
+Roded Sharan, Trey Ideker. Modeling Cellular Machinery 
+Through Biological Network Comparison . Nature 
+Biotechnology, 24(4), April 2006.
+SMA5304: Biomedical Information Technology</text>
+        </slide>
+        <slide>
+          <slideno>5</slideno>
+          <text>Metrics for Evolutionary 
+Change
+Gene and protein sequences
+Why?
+Fundamental level of biological variation
+Readily available through automated sequence 
+technology
+Network of protein interactions as metric?
+SMA5304: Biomedical Information Technology</text>
+        </slide>
+        <slide>
+          <slideno>4</slideno>
+          <text>Example
+SMA5304: Biomedical Information Technology
+Mouse
+ Rat
+Rat_gene_1
+ Rat_gene_2
+ Mouse_gene_1
+ Mouse_gene_2
+A gene that diverged 
+after speciation to 
+mouse and rat gene
+Duplicated to 
+two different 
+genes</text>
+        </slide>
+        <slide>
+          <slideno>52</slideno>
+          <text>Conserved Network 
+Regions
+SMA5304: Biomedical Information Technology
+Orange oval  YeastGreen rectangle  Worm
+Blue hexagon - Fly
+Courtesy of National Academy of Sciences, U. S. A. Used with permission.
+Source: Sharan, R., et al. " Conserved Patterns of Protein Interaction in
+Multiple Species." PNAS 102, no. 6 (February 8, 2005): 1974-1979.
+ Copyright (c) 2005 National Academy of Sciences, U.S.A.</text>
+        </slide>
+        <slide>
+          <slideno>2</slideno>
+          <text>SMA5304: Biomedical Information Technology</text>
+        </slide>
+        <slide>
+          <slideno>53</slideno>
+          <text>Prediction of Protein 
+Functions
+SMA5304: Biomedical Information Technology
+Better than sequence-
+based methods (accuracy is 37-53%)
+Two-hybrid tests of predicted interactions 
+yielded a success rate in the range of 40-52%Courtesy of National Academy of Sciences, U. S. A. Used with permission.
+Source: Sharan, R., et al. " Conserved Patterns of Protein Interaction in Multiple Species."
+PNAS 102, no. 6 (February 8, 2005): 1974-1979. Copyright (c) 2005 National Academy of Sciences, U.S.A.</text>
+        </slide>
+        <slide>
+          <slideno>34</slideno>
+          <text>Experiments
+Yeast (S. cerevisiae) vs. Bacteria (H. pylori)
+Orthologous pathways between the networks of two species.
+Yeast vs. Yeast
+Paralogous pathways within the network of a single species, by 
+aligning the yeast PPI network versus itself.
+Yeast vs. Yeast
+Interrogating the protein network with pathway queries, by aligning 
+the yeast PPI network versus simple pathways.
+SMA5304: Biomedical Information Technology</text>
+        </slide>
+        <slide>
+          <slideno>14</slideno>
+          <text>Network &amp; Sequence 
+Comparison
+Sequence Comparison
+Sequence alignment 
+methods were proposed long before large sequence databases were widely available. Network Comparison
+Large network and interaction databases have been available from the late 1990s onwards, three to four years before the first 
+network comparisons were 
+performed.
+SMA5304: Biomedical Information Technology</text>
+        </slide>
+        <slide>
+          <slideno>54</slideno>
+          <text>Prediction of Proteins 
+Interaction
+SMA CSB Program
+Prediction accuracy was highly significantCourtesy of National Academy of Sciences, U. S. A. Used with permission.
+Source: Sharan, R., et al. " Conserved Patterns of Protein Interaction in Multiple Species."
+PNAS 102, no. 6 (February 8, 2005): 1974-1979. Copyright (c) 2005 National Academy of Sciences, U.S.A.</text>
+        </slide>
+        <slide>
+          <slideno>9</slideno>
+          <text>Molecular Network 
+Comparison
+SMA5304: Biomedical Information Technology
+Process of contrasting two or more interaction 
+networks, representing different species, conditions, interaction types or time points.</text>
+        </slide>
+        <slide>
+          <slideno>64</slideno>
+          <text>Functional Significance
+SMA5304: Biomedical Information Technology
+Source: Table 1 in Shlomi, T., et al. "QPath: A Method for Q uerying Pathways in a Protein-protein 
+Interaction Network." BMC Bioinformatics 7 (2006): 199.</text>
+        </slide>
+        <slide>
+          <slideno>55</slideno>
+          <text>55</text>
+        </slide>
+        <slide>
+          <slideno>18</slideno>
+          <text>Protein-Protein 
+Interaction Network 
+(PPI)
+SMA5304: Biomedical Information Technology</text>
+        </slide>
+        <slide>
+          <slideno>7</slideno>
+          <text>Why?
+SMA5304: Biomedical Information Technology
+Increased complexity (function) is not explained 
+simply by variations in gene (or protein) count
+Exponential growth in data
+Mass spectrometry
+Genome-wide-chromatin immunoprecipation
+Yeast two-hybrid assays
+Combinatorial reverse genetic screens
+Literature mining</text>
+        </slide>
+        <slide>
+          <slideno>47</slideno>
+          <text>Limitations
+Proteins may occur more than once in an identified 
+matched pathway
+biologically implausible
+The algorithm provides limited support for identifying non-
+exact pathway matches
+supporting no more than a single cons ecutive deletion of proteins 
+from the query pathway 
+no more than a single consecutive insertion of proteins to the 
+matched pathway
+The running time of the algorithm involves a factorial 
+function of the pathway length
+SMA5304: Biomedical Information Technology</text>
+        </slide>
+        <slide>
+          <slideno>16</slideno>
+          <text>Network &amp; Sequence 
+Comparison
+Sequence Comparison
+Integrating biological 
+sequences data types (nucleotides or amino acids) has not posed a major problem.Network Comparison
+Integrating different data types of molecular networks is a challenging problem
+SMA5304: Biomedical Information Technology</text>
+        </slide>
+        <slide>
+          <slideno>44</slideno>
+          <text>Summary
+Pathways from a well 
+studied network is used to 
+shed light on their aligned 
+counterparts from a less 
+well characterized ones
+HP0609 is adjacent to 
+HP0610 and HP0289 , 
+which localize to the 
+bacterial outer 
+membrane, and opposite 
+yeast Nup1 , which 
+localizes to the nuclear 
+pore. 
+SMA5304: Biomedical Information Technology
+HP0609 is also
+membrane-specific and that the 
+bacterial pathway shares homology 
+with the yeast nuclear pore complexCourtesy of National Academy of Sciences, U. S. A. Used with permission. 
+Source: Kelley, Brian P., et al. "Conserved Pathways Within Bacteria and Yeast
+ as Revealed by Global Protein Network Alignment." PNAS 100, no. 20 (September 20,
+ 2003): 11304-11309. Copyright (c) 2003 National Academy of Sciences, U.S.A.</text>
+        </slide>
+        <slide>
+          <slideno>49</slideno>
+          <text>Experimental Results
+Protein sequences obtained from
+Saccharomyces Genome Database
+WormBase
+FlyBase
+Combined with the protein interaction data to generate a 
+network alignment
+9,011 protein similarity groups
+49,688 conserved interacti ons for the three networks
+183protein clusters and 240paths conserved at a 
+significance level of P &lt; 0.01
+SMA5304: Biomedical Information Technology</text>
+        </slide>
+        <slide>
+          <slideno>42</slideno>
+          <text>SMA5304: Biomedical Information Technology
+Query: Ste20-Act1-Myo1</text>
+        </slide>
+        <slide>
+          <slideno>41</slideno>
+          <text>Querying Yeast 
+Network
+SMA5304: Biomedical Information Technology
+Two other well known pathways
+low and high-osmolarity response 
+pathways
+Courtesy of National Academy of Sciences, U. S. A. Used with permission. 
+Source: Kelley, Brian P., et al. "Conserved Pathways Within Bacteria and Yeast
+ as Revealed by Global Protein Network Alignment." PNAS 100, no. 20 (September 20,
+ 2003): 11304-11309.  Copyright (c) 2003 National Academy of Sciences, U.S.A.</text>
+        </slide>
+        <slide>
+          <slideno>30</slideno>
+          <text>Log Probability Score
+SMA5304: Biomedical Information Technology
+Probability of true 
+homology within the protein 
+pair represented by v in P
+Probability that the protein-
+protein interaction 
+represented by e is real (not false positive error) 
+Expected values of p(v) 
+over all vertices and 
+edges in G
+Expected values of q(e) 
+over all vertices and edges in G</text>
+        </slide>
+        <slide>
+          <slideno>22</slideno>
+          <text>Core Problems
+SMA5304: Biomedical Information Technology
+A scoring framework that captures the 
+knowledge about module evolution
+Identify high scoring alignments (conserved functional modules) from among exponentially large set of possible alignments</text>
+        </slide>
+        <slide>
+          <slideno>46</slideno>
+          <text>Summary
+Proteins within high-
+scoring pathway alignments did not necessarily pair with their best sequence matches in other pathway
+Bcpand Tsa1 are 
+functional orthologs 
+despite weak sequence 
+similarity
+SMA5304: Biomedical Information Technology
+Best match for bcp is Dot5and not Tsa1
+Best match for Tsa1is TsaA
+Courtesy of National Academy of Sciences, U. S. A . Used with permission. 
+s Within Bacteria and Yeast
+PNAS 100, no. 20 (September 20,
+Academy of Sciences, U.S.A.Source: Kelley, Brian P., et al. "Conserved Pathway
+ as Revealed by Global Protein Network Alignment." 
+ 2003): 11304-11309. Copyright (c) 2003 National</text>
+        </slide>
+        <slide>
+          <slideno>8</slideno>
+          <text>Questions in evolutionary 
+and comparative biology
+SMA5304: Biomedical Information Technology
+Given that protein sequences and structures are 
+conserved in and among species, are networks of protein interactions conserved as well?
+Is there some minimal set of interaction 
+pathways required for all species?
+Can we measure evolutionary distance at the 
+level of network connectivity rather than at the level of DNA or protein sequence?</text>
+        </slide>
+        <slide>
+          <slideno>6</slideno>
+          <text>Protein-Protein Interaction
+Often, proteins interact with other proteins to perform
+their functions
+Backbone of molecular activity within the cell 
+Cell can be understood as a complex network of interacting proteins
+SMA5304: Biomedical Information TechnologyImage removed due to copyright restrictions.&#13;
+See: "MAPK/ERK in Growth and Differentiation."&#13;
+http://focosi.altervista.org/mapkmap2.html .</text>
+        </slide>
+        <slide>
+          <slideno>35</slideno>
+          <text>Comparison between Yeast and 
+Bacteria GAGs to the corresponding randomized networks
+SMA5304: Biomedical Information Technology
+Graph size and best pathway-
+alignment scores were significantly 
+larger for the real aligned networks
+Both species indeed share 
+conserved interaction pathways
+Courtesy of National Academy of Sciences, U. S. A. Used with permission. 
+Source: Kelley, Brian P., et al. "Conserved Pathways Within Bacteria and Yeast
+ as Revealed by Global Protein Network Alignment." PNAS 100, no. 20 (September 20,
+ 2003): 11304-11309. Copyright (c) 2003 National Academy of Sciences, U.S.A.</text>
+        </slide>
+        <slide>
+          <slideno>39</slideno>
+          <text>Courtesy of National Academy of Sciences, U. S. A. Used with permission. 
+Source: Kelley, Brian P., et al. "Conserved Pathways Within Bacteria and Yeast
+ as Revealed by Global Protein Network Alignment." PNAS 100, no. 20 (September 20,
+ 2003): 11304-11309. Copyright (c) 2003 National Academy of Sciences, U.S.A.
+Paralogous Pathways
+SMA5304: Biomedical Information Technology
+Both have DNA binding activity, they act in two 
+distinct processes
+Msh2/3/6 is involved in mismatch repair during 
+meiosis and vegetative growthMsh4/5 facilitates crossing over during 
+homologous recombination and is specific to 
+meiosis</text>
+        </slide>
+        <slide>
+          <slideno>17</slideno>
+          <text>17</text>
+        </slide>
+        <slide>
+          <slideno>26</slideno>
+          <text>Pathway Alignment
+Consists of two paths one from each network ( N1 
+and N2 )
+Proteins in the first path pair with putative 
+homologs occurring in the same order in the 
+second path
+A homologous protein pair may not occur more than 
+once per pathway alignment
+May include nonhomologous proteins
+Using gaps and mismatches
+SMA5304: Biomedical Information Technology</text>
+        </slide>
+        <slide>
+          <slideno>12</slideno>
+          <text>Types of Network 
+Comparison
+Network alignment
+process of globally comparing two networks, identifying regions 
+of similarity and dissimilarity
+Network integration
+process of combining several networks, encompassing interactions of different types over the same set of elements, to study their interrelations.
+Network querying
+a given network is searched for subnetworks that are similar to 
+a subnetwork query of interest
+SMA5304: Biomedical Information Technology</text>
+        </slide>
+      </slides>
+      <videos/>
+    </lecture>
+    <lecture>
+      <lecture_title>courses/20-453j-biomedical-information-technology-fall-2008/resources/0909_hyu</lecture_title>
+      <lecture_pdf_url>https://ocw.mit.edu/courses/20-453j-biomedical-information-technology-fall-2008/resources/0909_hyu/</lecture_pdf_url>
+      <lectureno>1</lectureno>
+      <slides>
+        <slide>
+          <slideno>29</slideno>
+          <text>Hanry Yu 2008 2.771J   20.453J   HST. 958J  SMA5304  Fall 2008Biomedical
+Information
+Technology
+Cell Systems Biology Approach
+Courtesy of BioSeek, Inc. Used with permission.</text>
+        </slide>
+        <slide>
+          <slideno>1</slideno>
+          <text>2.771J   20.453J   HST.9 58J SMA5304     Spring 2008
+Lecture  9 September 2008, by Hanry Yu
+Gaps in Bio-Medical Data and 
+Applications
+Biomedical
+Information
+Technology</text>
+        </slide>
+        <slide>
+          <slideno>39</slideno>
+          <text>Hanry Yu 2008 2.771J   20.453J   HST. 958J  SMA5304  Fall 2008Biomedical
+Information
+Technology
+Functional Modules vs Molecular Networks
+Photomicrograph images of 
+cells removed due to copyright restrictions.
+See Nikon Small World 
+(http://nikonsmallworld.com)Diagram of myosin molecule 
+structure removed due to copyright restrictions.
+Image co urtesy of Elsevier, Inc., http://www.sciencedirect.com . 
+Used wi th pe rmi ssion. Sou rce: Apic, G ., et al . FEBS Lett ers 579 no.  
+8 ( 2005 ):  187 2- 187 7.Diagrams of head / neck / 
+tail structure for Myosin I, Myosin II, and Myosin V. 
+(from Alberts et al, 
+Molecular Biology of the Cell) removed due to copryight restrictions.Figure by MIT 
+OpenCourseWare.</text>
+        </slide>
+        <slide>
+          <slideno>12</slideno>
+          <text>Hanry Yu 2008 2.771J   20.453J   HST. 958J  SMA5304  Fall 2008Biomedical
+Information
+Technology
+Nuclear medicine imaging technique
+Patients given injection of very  small amount of tracer (e.g. fluorine 18  radio active version 
+of glucose. Can be used to image brain where glucose is  the main source of energy)
+PET scanner used to detect emis sion from the injected tracer
+2D and 3D images of the scanned area is created by the computer
+Can be used for:
+Early detection and monitoring of cancer
+Can reveal changes in metabolism and how organs and tissues are working
+Can show if (and where) cancer is spreading to other parts of the body
+Neurological disease
+Can provide biochemical functi on information of the brain
+Assessment of cardiovascular disease
+Can be used to assess blo od flow to the heart and how the heart is functioning
+Limitations:
+Can give false results if  chemical balances with in body are not normal.
+Resolution of structure s of the body may not be as clear  compared with CT and MRI scans 
+although information gained fr om PET scan is much more.PET image of human brainPET image of human brain
+Courtesy of Jens Courtesy of Jens LangnerLangner. . http://en.wikipedia.org/wiki/Image:PEThttp://en.wikipedia.org/wiki/Image:PET--image.jpgimage.jpg
+Image Data - PET</text>
+        </slide>
+        <slide>
+          <slideno>3</slideno>
+          <text>Hanry Yu 2008 2.771J   20.453J   HST. 958J  SMA5304  Fall 2008Biomedical
+Information
+Technology
+Molecular Networks and Medical Practice
+Photomicrograph images of 
+cells removed due to copyright restrictions.
+See Nikon Small World 
+(http://nikonsmallworld.com)Diagram of myosin molecule 
+structure removed due to copyright restrictions.
+Image courtesy of Elsevier, Inc., http://www.sciencedirect.com . 
+Used with permission. Source: Apic, G., et al. FEBS Letters 579 no. 
+8 (2005): 1872-1877.Diagrams of head / neck / 
+tail structure for Myosin I, Myosin II, and Myosin V. 
+(from Alberts et al, 
+Molecular Biology of the Cell) removed due to copryight restrictions.Figure by MIT 
+OpenCourseWare.</text>
+        </slide>
+        <slide>
+          <slideno>17</slideno>
+          <text>Hanry Yu 2008 2.771J   20.453J   HST. 958J  SMA5304  Fall 2008Biomedical
+Information
+Technology
+What are Biological Data? 
+Chemical Molecules (DNA, RNA, 
+Carbohydrates, Proteins, Lipids): Identities &amp; 
+Interactions
+Pathways and networks
+~25000 genes, 100-200 pathways and a 
+fraction relevant to diseases per cell type(Bauch A. et al., Immune Review 2006, 
+210: 187-207)
+Phenotypes ( in vitro and in vivo )
+Meso-cale mechanistic studies</text>
+        </slide>
+        <slide>
+          <slideno>20</slideno>
+          <text>Hanry Yu 2008 2.771J   20.453J   HST. 958J  SMA5304  Fall 2008Biomedical
+Information
+Technology
+Molecular Signals and Metabolism via molecular 
+interactions ( nucleic acids, proteins , carbohydrates, lipids )Conformations and Interactions
+Image removed due to copyright restrictions.
+Figure 6-10 in Silverthorn, D. Human Physiology. 2nd ed. Prentice-Hall, 2000.
+http://cwx.prenhall.com/bookbind/pubbooks/silverthorn2/medialib/Image_Bank/CH06/FG06_10.jpg</text>
+        </slide>
+        <slide>
+          <slideno>24</slideno>
+          <text>Hanry Yu 2008 2.771J   20.453J   HST. 958J  SMA5304  Fall 2008Biomedical
+Information
+Technology
+Network Formation
+Image removed due to copyright restrictions.
+Chart of the major signaling pathways  relevant to cancer in human cells
+Figure 23-31 in Alberts, B., et al. Molecular Biology of the Cell . 4thedition.  New York, 
+NY: Garland Science, 2002.
+Viewable at the NCBI Bookshelf 
+http://www.ncbi.nlm.nih.gov/books/bv.f cgi?highlight=23-31&amp;rid=mboc4.figgrp.4327</text>
+        </slide>
+        <slide>
+          <slideno>9</slideno>
+          <text>Hanry Yu 2008 2.771J   20.453J   HST. 958J  SMA5304  Fall 2008Biomedical
+Information
+Technology
+Types of Medical Data
+Images
+Computed tomography (CT) scan
+Magnetic resonance imaging (MRI) scan
+Positron emission tomography (PET) scan
+Ultrasound imaging etc
+Recorded signals
+Blood pressure
+Electrocardiogram (ECG) etc
+Numerical measurements
+Temperature
+Laboratory results etc
+Textual description
+Medical symptoms or signs description
+Treatment plan
+Prognosis etc</text>
+        </slide>
+        <slide>
+          <slideno>26</slideno>
+          <text>Hanry Yu 2008 2.771J   20.453J   HST. 958J  SMA5304  Fall 2008Biomedical
+Information
+Technology
+Network Dimensions
+Image removed due to copyright restrictions.
+A representation of all of the known metabolic reactions involving small molecules in a yeast cell.
+Figure 2-89 in Alberts, B., et al. Molecular Biology of the Cell . 4thedition.  New York, NY: Garland 
+Science, 2002. [From Jeong, H., et al. Nature 411 (2001): 41-42]
+Viewable at the NCBI Bookshelf 
+http://www.ncbi.nlm.nih.gov/books/bv.f cgi?highlight=2-89&amp;rid=mboc4.figgrp.321</text>
+        </slide>
+        <slide>
+          <slideno>30</slideno>
+          <text>Hanry Yu 2008 2.771J   20.453J   HST. 958J  SMA5304  Fall 2008Biomedical
+Information
+Technology
+High Content Screening (HCS)
+High content screening combines automate d microscopy with image analysis to 
+capture multiple parameters of individual ce lls, to allow rapid, large scale and highly 
+parallel biological research and drug discovery. (Neumann, Held et al. 2006) (Neumann, Held et al. 2006) 
+Liquid handling Liquid handling systemsystemAutomated Automated microscopymicroscopySingle cell Single cell analysisanalysisAdvanced statistics Advanced statistics for chemical profilingfor chemical profiling
+Courtesy of Jan Ellenberg. Used with permission.</text>
+        </slide>
+        <slide>
+          <slideno>32</slideno>
+          <text>Hanry Yu 2008 2.771J   20.453J   HST. 958J  SMA5304  Fall 2008Biomedical
+Information
+Technology
+Advantages of HCS
+Combination of modern cell biology , with all its 
+molecular tools
+High-throughput and high efficiency using automated 
+system
+Obtain knowledge on multiple parameters in an 
+individual experiment to give us rich information at 
+single cell level
+Spatial and temporal information of the cells with their 
+neighbors and environment</text>
+        </slide>
+        <slide>
+          <slideno>37</slideno>
+          <text>Hanry Yu 2008 2.771J   20.453J   HST. 958J  SMA5304  Fall 2008Biomedical
+Information
+Technology
+The CAR analogy
+Images removed due to copyright restrictions. Two diagrams of model car assembly,
+ from DuraTrax "Delphi" Assembly and Operation Manual, http://manuals.hobbico.com/dtx/dtxc0012-manual.pdf.</text>
+        </slide>
+        <slide>
+          <slideno>16</slideno>
+          <text>Hanry Yu 2008 2.771J   20.453J   HST. 958J  SMA5304  Fall 2008Biomedical
+Information
+Technology
+Lifecycle of Current Clinical Research
+Source: Kahn, Source: Kahn, M.GM.G. Integrating Electronic Health Records and Clinical Trials . Integrating Electronic Health Records and Clinical Trials An Examination of Pragmatic Issues.An Examination of Pragmatic Issues.
+http://www.esihttp://www.esi--bethesda.com/ncrrworkshops/clinicalResearch/pdf/MichaelKahnPaperbethesda.com/ncrrworkshops/clinicalResearch/pdf/MichaelKahnPaper.pdf.pdf
+??
+Courtesy of Michael G. Kahn MD, PhD.
+Used with permission.</text>
+        </slide>
+        <slide>
+          <slideno>27</slideno>
+          <text>Hanry Yu 2008 2.771J   20.453J   HST. 958J  SMA5304  Fall 2008Biomedical
+Information
+Technology
+ Importance of Biological 
+Pathways
+Association with phenotypes and diseases
+Drug discovery
+Bauch, A., and G. Superti-Furga. "Charting protein complexes, signaling pathways, and 
+networks in the immune system."  Immunological Reviews 210, no. 1 (20 06): 187-207.Image removed due to copyright restrictions. 
+See Table 1 in: Bauch, A., and G. Super ti-Furga. "Charting Protein Complexes, 
+Signaling Pathways, and Networ ks in the Immune System." Immunological 
+Reviews  210, no. 1 (2006): 187-207.</text>
+        </slide>
+        <slide>
+          <slideno>22</slideno>
+          <text>Hanry Yu 2008 2.771J   20.453J   HST. 958J  SMA5304  Fall 2008Biomedical
+Information
+Technology
+Pathway: e.g. Glycolysis Regulation
+Image removed due to copyright restrictions.&#13;
+See http://www.biocarta.com/pathfiles/h_GLYCOLYSISPATHWAY.asp.</text>
+        </slide>
+        <slide>
+          <slideno>40</slideno>
+          <text>Hanry Yu 2008 2.771J   20.453J   HST. 958J  SMA5304  Fall 2008Biomedical
+Information
+Technology
+Meso-scale studies: a functional module or step of a 
+larger process is typically defined by a group of 
+chemical reactions or molecular networks.
+Link Molecular Networks to Physiology/Pathology
+Improve understanding of HOW things work
+Drug development
+Regenerative medicine
+Unique opportunities for computational approach to 
+handle the complexity of constructing Operations Manual or Repairs Manual.Fill Gaps in Bio-Medical Data</text>
+        </slide>
+        <slide>
+          <slideno>31</slideno>
+          <text>Hanry Yu 2008 2.771J   20.453J   HST. 958J  SMA5304  Fall 2008Biomedical
+Information
+Technology
+Quantitative, multiple 
+parameter analysis of large numbers of individual cells
+Cell surface markers
+Intracellular proteins
+Ca++ mobilization 
+12 colors and 15 parameters
+Sorting: 60,000 cell/second
+Ref.: Jianmin Chen, MITFluorescence Activated Cell Sorter 
+(FACS) (Flow cytometry)
+Figure by MIT OpenCourseWareUltrasonic nozzle 
+vibrator
+LaserCell stained with:
+Anti-A + Anti-B 
+antibodyAnti-A antibody
+Anti-B antibody
+Unstained
+Fluor
+esce
+nc
+e
+A  B+ and 
+A  B  cells+_
+_A  B+ cells_
+A  B  cells_
+A  B  
+cells__A  B  
+cells__
+A  B  
+cells++A  B  
+cells++_ +Computer Screen
+Anti-A antibody 
+fluorescenceAnti-B antibody 
+fluorescence+Deflection plates</text>
+        </slide>
+        <slide>
+          <slideno>41</slideno>
+          <text>Hanry Yu 2008 2.771J   20.453J   HST. 958J  SMA5304  Fall 2008Biomedical
+Information
+Technology
+Things to Ponder
+Phenotypic ProcessesPhenotypic Processes
+Functional Modules or Steps?Functional Modules or Steps?Functional Modules or Steps?
+Molecular networksMolecular networksMedical PracticesMedical Practices</text>
+        </slide>
+        <slide>
+          <slideno>25</slideno>
+          <text>Hanry Yu 2008 2.771J   20.453J   HST. 958J  SMA5304  Fall 2008Biomedical
+Information
+Technology
+Pathways and Networks
+Image removed due to copyright restrictions.
+Glycolysis and the citr ic acid cycle provide 
+the precursors needed to synthesize many 
+important biological molecules.
+Figure 2-87 in Alberts, B., et al. Molecular 
+Biology of the Cell . 4thedition.  New York, NY: 
+Garland Science, 2002.
+Viewable at the NCBI Bookshelf 
+http://www.ncbi.nlm.nih.gov/books/bv.fcgi?hi
+ghlight=2-87&amp;rid=mboc4.figgrp.318Image removed due to copyright restrictions.
+Glycolysis and the citric  acid cycle are at the 
+center of metabolism.
+Figure 2-88 in Alberts, B., et al. Molecular 
+Biology of the Cell . 4thedition.  New York, NY: 
+Garland Science, 2002.
+Viewable at the NCBI Bookshelf 
+http://www.ncbi.nlm.nih.gov/books/bv.fcgi?hi
+ghlight=2-88&amp;rid=mboc4.figgrp.320</text>
+        </slide>
+        <slide>
+          <slideno>19</slideno>
+          <text>Hanry Yu 2008 2.771J   20.453J   HST. 958J  SMA5304  Fall 2008Biomedical
+Information
+Technology
+nucleic acids, proteins, carbohydrates, lipidsChemical Molecules
+Anchoring of integral proteins to the plasma membrane
+Figure 3-36 in Lodish, H., et al. Molecular Cell Biology. 4thedition. 
+New York, NY: W. H. Freeman, 2000.
+Viewable at the NCBI Bookshelf 
+http://www.ncbi.nlm.nih.gov/b ooks/bv.fcgi?rid=mcb.figgrp.618Images removed due to copyright restrictions.
+Diagram of phospholipid bilayer, containing retinal pigment.
+Molecule structure image, highlighting smal
+l domain and 
+large domain.</text>
+        </slide>
+        <slide>
+          <slideno>4</slideno>
+          <text>Hanry Yu 2008 2.771J   20.453J   HST. 958J  SMA5304  Fall 2008Biomedical
+Information
+Technology
+What are Medical Data?
+Documentation about indivi dual patients illness and 
+medical care
+Includes:
+Medical history
+All medical events and problems experienced by patient
+Clinical findings
+Symptoms: reported by patients (subjective)
+Signs: detected by physician during physical examination 
+(objective)
+Laboratory test results
+Diagnoses 
+Process of identifying disease by its signs, symptoms and laboratory test results</text>
+        </slide>
+        <slide>
+          <slideno>36</slideno>
+          <text>Hanry Yu 2008 2.771J   20.453J   HST. 958J  SMA5304  Fall 2008Biomedical
+Information
+Technology
+Medical Data: physiologic and pathologic phenotypes
+Biological Data: molecular parts and interaction maps
+Lack meso-scale functional modules or steps to 
+construct Operations Manuals at cell/tissue/systems 
+levels; and
+Repairs ManualsGaps in Bio-Medical Data</text>
+        </slide>
+        <slide>
+          <slideno>7</slideno>
+          <text>Hanry Yu 2008 2.771J   20.453J   HST. 958J  SMA5304  Fall 2008Biomedical
+Information
+Technology
+Purposes of Medical Data
+Supports patient care
+Basis of historical record
+Communication among care providers
+Allergic conditions
+Treatment plan for chronic diseases  (e.g. high blood pressure, diabetes)
+Anticipate future  health problems
+Supports medical/clinical research
+Assists in screening of patient  groups for clinical trials
+Patients profile can be matched wi th clinical trial requirements
+Electronic health record systems can per form match and prompt doctors of 
+suitable candidates during patients  visit  improve recruitment rate
+Electronic health record systems can systemically generate hypotheses for 
+research based on patients information
+Mechanisms and causes of diseases
+Formulation of possible treatments
+Assists in studying the efficacy  of drugs and medical equipment</text>
+        </slide>
+        <slide>
+          <slideno>28</slideno>
+          <text>Hanry Yu 2008 2.771J   20.453J   HST. 958J  SMA5304  Fall 2008Biomedical
+Information
+Technology
+Drug Discovery Approaches
+Image removed due to copyright restrictions. 
+See Fig. 1 in: Butcher, E. C. "C an Cell Systems Biology Rescue Drug 
+Discovery?" Nature Reviews Drug Discovery  4, (June 2005): 461-467.</text>
+        </slide>
+        <slide>
+          <slideno>0</slideno>
+          <text>MIT OpenCourseWare 
+http://ocw.mit.edu
+20.453J / 2.771J / HST.958J Biomedical Information Technology
+Fall 2008
+ 
+ 
+For information about citing these materials or our Terms of Use, visit: http://ocw.mit.edu/terms .</text>
+        </slide>
+        <slide>
+          <slideno>18</slideno>
+          <text>Hanry Yu 20082.771J   20.453J   HST. 958J  SMA5304  Fall  2008Biomedical
+Information
+Technology
+Biological Data
+Image removed due to copyright restrictions.
+See Fig. 5 in: Bauch, A., and G. Superti-Furga. "Charting Protein Complexes, Signaling Pathways,
+and Networks in the Immune System." Immunological Reviews  210, no. 1 (2006): 187-207.</text>
+        </slide>
+        <slide>
+          <slideno>15</slideno>
+          <text>Hanry Yu 2008 2.771J   20.453J   HST. 958J  SMA5304  Fall 2008Biomedical
+Information
+Technology
+Characteristics of Medical Data
+Medical data = single instance of  observation (signs, symptoms, 
+clinical findings) or description of diagnosis, therapy or prognosis
+Defined by:
+Patient
+Parameter being observed
+Description of parameter
+Numerical value
+Textual description
+Graphical image
+Device used (when applicable)
+Device setting ( when applicable)
+Time of observation
+Medical data = collection of medical dataExample:Example:Peter Tan has a fever of 38.1Peter Tan has a fever of 38.1 C C on 20on 20thth
+May 2008 at May 2008 at 5.30pm5.30pm
+Patient:Patient:Peter TanPeter Tan
+Parameter:Parameter:Body temperatureBody temperature
+Description:Description:38.138.1C C 
+Time:Time:2020ththMay 2008, May 2008, 5.30pm5.30pm</text>
+        </slide>
+        <slide>
+          <slideno>5</slideno>
+          <text>Hanry Yu 2008 2.771J   20.453J   HST. 958J  SMA5304  Fall 2008Biomedical
+Information
+Technology
+Therapies
+Description of application of treatment to effect a cure
+Treatment includes:
+Medication, dosage and dosing schedule
+Care regime, e.g. diet, exercise, etc. 
+Prognosis 
+Duration of disease
+Chances of complications
+Probable outcomes
+Prospects for recovery
+Recovery period
+Survival rates
+Death ratesWhat are Medical Data?</text>
+        </slide>
+        <slide>
+          <slideno>14</slideno>
+          <text>Hanry Yu 2008 2.771J   20.453J   HST. 958J  SMA5304  Fall 2008Biomedical
+Information
+Technology
+Records the electrical acti vity of the heart over time
+Measured by an array of electrod es placed on the body surface
+American Heart Association requires the ECG s ignal to consist of 3 individual leads, 
+each recording 10 bits per sample, and 500 samples per second
+Some ECG signals, may require 12 leads , 11 bits per second, 1000 samples per 
+second, and last 24 hours
+This ECG record requires 1.36 gigabytes of storage when converted to digital 
+formatECGECG
+Activation of the Activation of the atria(chambersatria(chambersof of 
+the heart that the heart that receive blood)receive blood)Depolarization of Depolarization of the ventriclethe ventricleRepolarizationRepolarization(or recovery) of (or recovery) of the ventriclesthe ventricles
+PR
+Q
+STRecorded Signals - ECG
+Figure by MIT OpenCourseWare, after Lynch, 1985.
+Source: Clifford, G. F. Azuaje, and P. McSharry. The Physiological Basis of 
+the Electrocardiogram. Advanced Methods and Tools for ECG Data Analysis . 
+Norwood, MA: Artech House, 2006. Courtesy of Artech House. Used with 
+permission.  Artech House, 2006.</text>
+        </slide>
+        <slide>
+          <slideno>13</slideno>
+          <text>Hanry Yu 2008 2.771J   20.453J   HST. 958J  SMA5304  Fall 2008Biomedical
+Information
+Technology
+Combination of PET with CT and MRI
+CT and MRI scan provides anatomic information 
+PET scan provides metabolic information 
+Image size of MRI scans depend on:
+Number of slices (for 3D reconstruction)
+Resolution of scanner
+Area scanned
+Other important information:
+Device type
+Device settingsScans showing lung cancer (bright spot in the chest). 
+Scans showing lung cancer (bright spot in the chest). 
+Left: CT scan; Center: PET scan; Right: combined CTLeft: CT scan; Center: PET scan; Right: combined CT--PET scanPET scan
+Source: Mayo Clinic. http://www.mayoclinic.org/pet/
+Source: Mayo Clinic. http://www.mayoclinic.org/pet/Lung cancerLung cancerCT scanCT scanPET scanPET scanCTCT--PET scanPET scanImage Data  Multi-Modal 
+Imaging
+Image removed due to copyright restrictions.&#13;
+See http://www.mayoclinic.org/pet/.</text>
+        </slide>
+        <slide>
+          <slideno>23</slideno>
+          <text>Hanry Yu 2008 2.771J   20.453J   HST. 958J  SMA5304  Fall 2008Biomedical
+Information
+Technology
+Pathway Interactions
+Image removed due to copyright restrictions.
+Five parallel intracellu lar signaling pathways
+Figure 15-61 in Alberts, B., et al. Molecular Biology of the Cell . 4thedition.  
+New York, NY: Garland Science, 2002.
+Viewable at the NCBI Bookshelf 
+http://www.ncbi.nlm.nih.gov/books/bv.fcgi?rid=mboc4.figgrp.2866</text>
+        </slide>
+        <slide>
+          <slideno>2</slideno>
+          <text>Hanry Yu 2008 2.771J   20.453J   HST. 958J  SMA5304  Fall 2008Biomedical
+Information
+Technology
+Types and characteristics of biological and medical 
+data (today)
+Medial Data
+Biological Data
+Current challenges: fill in the gaps
+Examples from liver fibrosis Research (on Thursday)Scope of Applications (1 week: 
+HY)</text>
+        </slide>
+        <slide>
+          <slideno>10</slideno>
+          <text>Hanry Yu 2008 2.771J   20.453J   HST. 958J  SMA5304  Fall 2008Biomedical
+Information
+Technology
+Image Data - CT scan
+Diagnostic procedure that takes a detailed cross-sectional x-ray picture of a 
+"slice" of the body 
+X-ray machine rotates around the patien t and takes pictures from many angles
+Computer combines the pict ures into a very detail ed cross-sectional image 
+Show the shape, size and the exact location of organs and tissues in any "slice" of the body 
+Good spatial resolution
+Able to distinguish 2 struct ures which are very near each  other as separate entities
+Image size of CT scans depend on:
+Number of slices
+Resolution of scanner
+Area scanned 
+Other important information:
+Device type
+Device settings
+CT scan of Fibrosing Mediastinitis CT scan of Fibrosing Mediastinitis 
+Source: The FM Foundation. http://www.mrsnewengland2007.com/FMSource: The FM Foundation. http://www.mrsnewengland2007.com/FM--MedicalMedical--Information.htmlInformation.htm
+Courtesy of The FM Foundation.
+Used with permission.</text>
+        </slide>
+        <slide>
+          <slideno>42</slideno>
+          <text>Hanry Yu 2008 2.771J   20.453J   HST. 958J  SMA5304  Fall 2008Biomedical
+Information
+Technology
+Next lecture: example in liver fibrosis
+Image removed due to copyright restrictions.
+Photo of liver with fibrosis.</text>
+        </slide>
+        <slide>
+          <slideno>6</slideno>
+          <text>Hanry Yu 2008 2.771J   20.453J   HST. 958J  SMA5304  Fall 2008Biomedical
+Information
+Technology
+Questions Medical Data Can Answer
+What is the patients medical history?
+What are the symptoms?
+What are the examination findings?
+What are the changes in symptoms and signs over time? 
+Progression of chronic diseases
+Provides information for prescribing treatment
+What are the changes in physiological function over 
+time?
+What were previous treatment given?
+What was the rationale for treatment?</text>
+        </slide>
+        <slide>
+          <slideno>11</slideno>
+          <text>Hanry Yu 2008 2.771J   20.453J   HST. 958J  SMA5304  Fall 2008Biomedical
+Information
+Technology
+Image Data - MRI scan
+Diagnostic procedure that us es magnetic/radio waves to affect the bodys atoms
+Radio waves force nuclei (usually hydrogen  body  consists mainly of water) into different 
+position
+When they restore their position, radio waves are emitted
+Scanner picks up signals and a computer uses the sign al to compose the image
+Image formed is based on location  and strength of the signals
+Used to visualize structur e and function of the body
+Provides detailed images of body in any plane
+Provides much greater contrast between soft tissues than CT scan
+Useful for brain, musculoskeletal, cardiovascular and cancer imaging
+Contrast agents sometimes used to enhance appearance of  blood vessels, tum ors or inflammation.
+Image size of MRI scans depend on:
+Number of slices (for 3D reconstruction)
+Resolution of scanner
+Area scanned 
+Other important information:
+Device type
+Device settingsAnimated MRI images of a human headAnimated MRI images of a human head
+Source: Source: DawyneDawyneReed. http://Reed. http://en.wikipedia.org/wiki/Image:Structural.gifen.wikipedia.org/wiki/Image:Structural.gifImage Data - MRI
+Image removed due to copyright restrictions. &#13;
+See http://en.wikipedia.org/wiki/File:Structural.gif.</text>
+        </slide>
+        <slide>
+          <slideno>21</slideno>
+          <text>Hanry Yu 2008 2.771J   20.453J   HST. 958J  SMA5304  Fall 2008Biomedical
+Information
+Technology
+Phosphorylation
+Image removed due to copyright restrictions.
+The two branches of the in ositol phospholipid pathway.
+Figure 15-36 in Alberts, B., et al. Molecular Biology of the Cell . 4thedition.  
+New York, NY: Garland Science, 2002.
+Viewable at the NCBI Bookshelf 
+http://www.ncbi.nlm.nih.gov/books/bv.fcgi?rid=mboc4.figgrp.2812</text>
+        </slide>
+        <slide>
+          <slideno>35</slideno>
+          <text>Hanry Yu 2008 2.771J   20.453J   HST. 958J  SMA5304  Fall 2008Biomedical
+Information
+Technology
+Cell Systems Biology Approach
+1.1.Tissue Biology/Tissue Biology/
+EngineeringEngineering2. Meso2. Meso --scalescale
+UnderstandingUnderstanding
+Courtesy of BioSeek, Inc. Used with permission.</text>
+        </slide>
+        <slide>
+          <slideno>8</slideno>
+          <text>Hanry Yu 2008 2.771J   20.453J   HST. 958J  SMA5304  Fall 2008Biomedical
+Information
+Technology
+Purposes of Medical Data
+Allows surveillance of epidemic 
+and bio-terrorism
+Epidemic: SARS, avian flu etc
+Bio-terrorism: anthrax, smallpox 
+etc
+Electronic medical record 
+systems allows real-time 
+nationwide surveillance.
+Provides legal record
+The System Architecture of NationThe System Architecture of Nation--Wide Hospital Emergency Wide Hospital Emergency 
+DepartmentDepartment--based based SyndromicSyndromicSurveillance System (EDSurveillance System (ED--SSSSSS) in ) in 
+Taiwan, established in 2003.Taiwan, established in 2003.
+Source: Wu, Source: Wu, TT--SSJ., et al, 2008. J., et al, 2008. Establishing a nationwide emergency departmentEstablishing a nationwide emergency department --based based 
+syndromicsyndromic surveillance system for better public health responses in Taiwasurveillance system for better public health responses in Taiwa n. n. BMC Public HealthBMC Public Health
+8 (2008): 18. http://8 (2008): 18. http:// www.pubmedcentral.nih.gov/articlerender.fcgi?artidwww.pubmedcentral.nih.gov/articlerender.fcgi?artid =2249581=2249581
+Detect outbreakDetect outbreakFormulate plan and policies Formulate plan and policies to handle outbreakto handle outbreak
+Image courtesy of Wu, T-S J., et al.</text>
+        </slide>
+        <slide>
+          <slideno>33</slideno>
+          <text>Hanry Yu 2008 2.771J   20.453J   HST. 958J  SMA5304  Fall 2008Biomedical
+Information
+Technology
+Genome wide gene functional study , e.g. genome-wide 
+RNAi approach (Pelkmans et al. 2005, Sonnichsen et al. 2005); 
+Proteome sub-cellular localization (Huh et al. 2003); 
+Protein-protein interaction, chemical profiling and drug 
+screening (Perlman et al. 2004, Mitchison 2005, Abraham et al. 2004). Applications of HCS</text>
+        </slide>
+        <slide>
+          <slideno>34</slideno>
+          <text>Hanry Yu 2008 2.771J   20.453J   HST. 958J  SMA5304  Fall 2008Biomedical
+Information
+Technology
+Systems Biology for Drug Discovery
+Target ID and validation
+Side effects
+Molecular mechanisms for toxicity
+Images courtesy of Elsevier, Inc., http://www.sciencedirect.com . Used with 
+permission. Source: Apic, G., et al. FEBS Letters 579 no. 8 (2005): 1872-1877.</text>
+        </slide>
+        <slide>
+          <slideno>38</slideno>
+          <text>Hanry Yu 2008 2.771J   20.453J   HST. 958J  SMA5304  Fall 2008Biomedical
+Information
+Technology
+The airplane analogy
+Understand how an airplane work:
+Observe how an airplane flying phenotype:
+Take the plane apart into individual parts
+Record the interaction maps
+What is the missing information? Why it is difficult to 
+construct an airplane operations manual from the description of the parts and their interaction maps?
+Meso-scale studies: functional modules or steps that 
+are small enough to be readily described by parts; and 
+yet large enough to link with other modules to understand how the whole plane works: engine, steering, fuel, navigation systems etc.</text>
+        </slide>
+      </slides>
+      <videos/>
+    </lecture>
+  </lectures>
+</doc>

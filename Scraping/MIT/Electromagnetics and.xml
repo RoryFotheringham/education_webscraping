@@ -1,0 +1,4356 @@
+<doc>
+  <source>MIT</source>
+  <date>28/01/2023</date>
+  <course>
+    <course_url>https://ocw.mit.edu/courses/6-013-electromagnetics-and-applications-spring-2009/</course_url>
+    <course_title>Electromagnetics and Applications</course_title>
+    <course_tags>
+      <list>Engineering </list>
+      <list>Science </list>
+      <list>Physics </list>
+    </course_tags>
+  </course>
+  <lectures>
+    <lecture>
+      <lecture_title>TE at planar boundary, TM by duality, Brewster&#8217;s angle</lecture_title>
+      <lecture_pdf_url>https://ocw.mit.edu/courses/6-013-electromagnetics-and-applications-spring-2009/resources/mit6_013s09_lec10/</lecture_pdf_url>
+      <lectureno>L10</lectureno>
+      <slides>
+        <slide>
+          <slideno>2</slideno>
+          <text>L10-3 IMPOSE BOUNDARY CONDITIONS 
+are continuous at x = 0: // // andE H 
++ =i// r// t// i// r// t// E + E  = E , and H H H for all y,z. 
+Therefore: 
++ + 
+= 
+ = = =  = = x o i x o r 
+tx t t 
+o 
+o o jk x - j(k sin )z jk x - j(k sin )z 
+o o 
++jk x - j(k sin )z 
+o 
+ti r t t z i r i t yE e y E e   
+yTE e  
+sin kksin ksin ksin k   ,  (Snell sin k 
+   += o o 's Law) 
+E(1 + ) = E T 1 T 0 
+Similarly: 
++      +   
+=  
+       =   =      i 
+t x z x z 
+tx tz jk x jk z jk x jk z o oi ii i 
++jk x - jk z o t t 
+o o o ti i ti i t i E E zcos e zcos e   
+TE zcos e  
+E E TE cos cos cos cos 1 T cos 0 
+0</text>
+        </slide>
+        <slide>
+          <slideno>1</slideno>
+          <text>L10-2TE WAVE H AT A BOUNDARY
+jk x jk zn =+ I cident: E xziyEoe
+Eo +jk x jk z                      H = (xsin+ii zcos)e xz
+ii
+Eo jk x jk zReflected: H = ( xsin +zcosii ) xzr ei
+TE +jk x - jk zTransmitted: H =o tzt (xsin+ttzcos) e tx
+t
+TE Wave
+x
+ii
+t,z
+ y
+t,tHiEi
+i
+HtErki
+Hri</text>
+        </slide>
+        <slide>
+          <slideno>4</slideno>
+          <text>SOLVE TM BOUNDARY EQUATIONS
+TM Wave 
+x 
+i i 
+t z y , 
+t,t iE
+iH
+tHrE
+ik
+rH
+tE
+Option A: 	 Repeat method for TE (wri te field expressions with unknown  
+ and T; impose boundary conditions; solv e for  and T) 
+Option B :	  Use duality to  map TE solution to  TM case 
+L10-5</text>
+        </slide>
+        <slide>
+          <slideno>7</slideno>
+          <text>L10-8 TE AND TM WAVE REFLECTIONS 
+ ||2 
+0 90oTM TE 1 
+Brewsters angle B   
+0 90o TE 
+TM -1 
+1  ||2 
+0 90oTM TE 1 
+Brewsters angle B Critical 
+angle 
+No re flection 
+at B High power
+laser beam 
+Brewsters angle
+laser window Ocean wave Horizontally
+polarized glasses
+cut glare</text>
+        </slide>
+        <slide>
+          <slideno>8</slideno>
+          <text>MIT OpenCourseWare 
+http://ocw.mit.edu 
+6.013 Electromagnetics and Applications 
+Spring 2009 
+For information about citing these materials or our Terms of Use, visit: http://ocw.mit.edu/terms .</text>
+        </slide>
+        <slide>
+          <slideno>5</slideno>
+          <text>L10-6 DUALITY OF MAXWELLS EQUATIONS 
+H EE H t t 
+E HH E t t 
+E 0 H 0 
+H 0 E 0   =   =   
+  =   =   
+ =   = 
+ =   = i i 
+i i E H 
+H E  
+ 
+  Our original 
+equations : Become these: By making these 
+substitutions to 
+our TE solution: 
+Under what circumstances does the solution to the resulting 
+set o f equations sa tisfy M axwells Equations? 
+They ARE Max wells Equations, just reordered, so the 
+solution to  the first set works if   and . Are they valid?</text>
+        </slide>
+      </slides>
+      <videos/>
+    </lecture>
+    <lecture>
+      <lecture_title>Radiation by current elements, Hertzian dipole, near and far fields; Biot-Savart</lecture_title>
+      <lecture_pdf_url>https://ocw.mit.edu/courses/6-013-electromagnetics-and-applications-spring-2009/resources/mit6_013s09_lec18/</lecture_pdf_url>
+      <lectureno>L18</lectureno>
+      <slides>
+        <slide>
+          <slideno>7</slideno>
+          <text>L18-8ANTENNA GAIN OVER ISOTROPIC
+()()()()
+()jk|s i n Iod |2Pr 2 oe f f / 2,, | Er ,, | / 2 o o 4r 3G,    = = =s i n2 2P4AAr22P4 r o 2kI d / 4 r2
+12oeff
+Example:  What maximum E 
+[V/m] is produced at 10 km by a 
+short dipole radiating PA= 1 kW?
+Solution:  
+|(Er,, ) |2
+=Pr(, ,)2o
+(1.5sin2)P=A
+4r2
+  |E(r,,)23|=(1.5sin)10o/2108=30 mv/mG() for isotropic radiatorz
+
+x0.75 1.0Half-power 
+point
+B
+1.5S() |E|2sin2
+Go= 1.5   
+(Max. gain)</text>
+        </slide>
+        <slide>
+          <slideno>1</slideno>
+          <text>L18-2()() oJ jkrAep=q pq dV4rq
+Vqpq
+I( ) djkr          (rcos sin) o epq
+4rpq
+ddWhere:    Jzqq=J  for  -&lt;&lt;z22
+And provided that d &lt;&lt; r
+(so r can come outside the integral) 
++q(t)
+I(t)
+y
+x
+-q(t)V
+Ac[m2]z
+d
+z
+y
+x
+I(t)rr
+HERTZIAN DIPOLE RADIATOR
+z
+rr rsin
+A1Hd= = etr 2oors i nArr ArsinA</text>
+        </slide>
+        <slide>
+          <slideno>9</slideno>
+          <text>MIT OpenCourseWare 
+http://ocw.mit.edu 
+6.013 Electromagnetics and Applications 
+Spring 2009 
+For information about citing these materials or our Terms of Use, visit: http://ocw.mit.edu/terms .</text>
+        </slide>
+        <slide>
+          <slideno>4</slideno>
+          <text>L18-5POWER RADIATED BY HERTZIAN DIPOLE
+G() for isotropic radiatorz
+
+x0.75 1.0Half-power 
+point
+B
+1.5S() |E|2sin211S(ee {EH*2 1t)=R{S}=R } = r |Eo|22 2 o
+2
+okId         =r sin22  [W/m ]24r
+3-dB antenna beamwidth B
+2Pd S2
+Rr=r s i n d00
+2kId  2 Id= sin d  =  kId     395  []o W413 o
+ 0 2 2</text>
+        </slide>
+        <slide>
+          <slideno>5</slideno>
+          <text>L18-6SHORT DIPOLE ANTENNAS
+jkI(z)E'  o jkr '
+ff'es i n'4r'
+() ()
+()Wire TEM line 
+open-circuited,     
+so current is a 
+truncated sinusoid 
+triangle.
+d2 ' jk d2EE= r ' , ' d z   =  o sin jkr 'ff 'I z eff d zd2 4r d2 '
+jk d2 jk     sinoeIjkrz d z     sin I d  ejkr
+ 4roe   4rf fd2
+Has same far fields as does a Hertzian dipole, except I d Iodeffz z
+Id/2
+0(z)
+d/2r
+
+I I o o
+I(z)deffd/2r'
+^rrz
+rz
+o</text>
+        </slide>
+        <slide>
+          <slideno>6</slideno>
+          <text>L18-7[]2 2Poo Idef
+T= kIf
+12odeff 395  W
+21 2 2PT2d     = I R     Radiation resistance R  = oe f fohms2o rr 2I()o
+jX
+Radiation resistance Rr+
+V
+-IoFor a triangular current distribution,
+center fed, deffd/2.
+Short dipole antenna example:AM radio at 1 MHz has = 300 m.  
+Car antenna 2m long has:
+2ii377 3.14 12R0r=  .02 ohms3300
+jX can similarly be found by measuring or computing SANTENNA RADIATION RESISTANCE
+into an      
+antenna; it results from net electric or magnetic energy in the near field.3=</text>
+        </slide>
+        <slide>
+          <slideno>2</slideno>
+          <text>L18-3A1 jkIdHe jkr== 1+ sino 4r  j k r
+() ()HE=jo
+kIdojkr11  11 =+j e2 r cos+1++ 
+4r j k r 2  j k r 
+jkrjkr
+Far field:  r &gt;&gt; Near field:  r &lt;&lt; 
+2
+2
+jkIdHe jkrff s i n4r
+jkIdEe  ojkrff sin4rHe Idjkrnf s i n
+4r2SOLVING FOR HERZIAN DIPOLE FIELDS
+(yields Biot-Savart law)
+IdEjoejkr
+nf3(r2 c o s+s i n )
+4kr
+Js i n (rr' ) J(rr' )H( r,t)=xdv.     Since  J sin=J ,    H( r,t) = dvV'4| rr ' |2|rr'| V'4| rr ' |32 sin
+
+ 
+x</text>
+        </slide>
+        <slide>
+          <slideno>3</slideno>
+          <text>L18-4Far field: r &gt;&gt;       (radiation)Near field:  r &lt;&lt;       (quasistatic)2
+2
+jkIdHe jkrff s i n4rjkIdE  o jkrff esi n4rjIdEeojkr nf (r2cos+sin )
+4kr3
+H Id jkrnf esin
+4r2
+zEL sin
+
+LxNEAR AND FAR FIELDS OF HERTZIAN DIPOLE
+E=ffoHffr   ( U P W )
+(o
+o =  = 377 )o</text>
+        </slide>
+      </slides>
+      <videos/>
+    </lecture>
+    <lecture>
+      <lecture_title>Foundations, forces and fields, Gauss&#8217;s and Ampere&#8217;s laws ( &#8747;) for static fields</lecture_title>
+      <lecture_pdf_url>https://ocw.mit.edu/courses/6-013-electromagnetics-and-applications-spring-2009/resources/mit6_013s09_lec01/</lecture_pdf_url>
+      <lectureno>L1</lectureno>
+      <slides>
+        <slide>
+          <slideno>1</slideno>
+          <text>o 
+Charge [Coulombs] WHAT ARE E AND H? 
+Lorentz Force Law: 
+( + v  H )  [Ne wtons] f = qE 
+410-7 
+Velocity [m /s] 
+EM fields were invented to explain forces 
+FindE by setting v = 0 and measuring f 
+FindH by setting v = 0, E = 0, and measuring f 
+(requires 2 f measurements using 2 v tests) 
+L1-2</text>
+        </slide>
+        <slide>
+          <slideno>4</slideno>
+          <text>EXAMPLE: CYLINDRICAL CHARGE
+Example 2. Cylinder of radius R, charge density o 
+Cylindrical symmetry precludes  and z components for E 
+Solution: 
+wSD  nda = xV  dv (Gauss) 
+oR2 
+r &gt; R Er(2rL) = o(R2L)  Er= 2r [V/m]L E 
+r &lt; R Er(2rL) = o(r2L)  Er = or [V/m]2 
+ r Er
+R  r 
+ 1/r Surface area = 2 rL 
+r 0R 
+L1-5</text>
+        </slide>
+        <slide>
+          <slideno>2</slideno>
+          <text>L1-3 INTEGRAL MAXWELLS EQUATIONS 
+Graphical Equations: 
+ = 
+ = 
+ =   
+  
+ 
+ 
+=  +     
+ 
+  
+   w x 
+w 
+v 
+v S V 
+S 
+A c 
+A A c D nda  dv 
+0 
+B t Bnda 
+ Ed 
+J D s nda 
+  Hds nda nda t 
+ 
+D 
+0 
+B 
+E 
+B 
+H 
+DJ Gauss 
+Gauss 
+Faraday 
+Ampere 
+= =  D E,  B H Constitu tive relations 0 (statics) 
+0 (statics)</text>
+        </slide>
+        <slide>
+          <slideno>6</slideno>
+          <text>0 rR
+Example 5. Hollow current Jz: 
+Hollow cylinders H 
+J also have zero H 
+  1/r r for r &lt; RRo 
+o 0 r z Ro R 
+L1-7
+RoRH
+1/r 
+0 rJ
+RorExample 5.  Hollow current Jz:
+Hollow cylinders 
+also have zero H for r &lt; R
+o
+zCYLINDRICAL CURRENT J[A/m2]
+Example 4. Uniform current Jz for r &lt; R: 
+0 
+LH vH  A J nda  
+t A nda  ds =  +  D   
+c 
+J r r &gt; R: 2r H = I = JR2  H = I/2r [A/m] 
+R r &lt; R: 2r H = Jr2  H = Jr/2  [A/m ] z 
+ H 
+ 1/r Example 4.  Uniform current Jzfor r &lt; R:</text>
+        </slide>
+        <slide>
+          <slideno>5</slideno>
+          <text>L1-6 HOLLOW SPHERICAL CHARGE 
+Example 3: 
+Hollow sphere of inner radius Ro, charge density o 
+S VD nda  dv Q  =  =   w x 
+r &gt; R Er(4r2) = Q  Er = [V/m] 
+r &lt; Ro Er(4r2) = 0  Er = 0 [V/m] 2 Q 
+4r 
+Surface = 4 r2 (Gausss Law) Spherical symmetry precludes  and  components for E 
+r  1/r2 
+R0 Er Solution: 
+Ro Hollow cylinders also have zero E  
+R r Ro E</text>
+        </slide>
+        <slide>
+          <slideno>8</slideno>
+          <text>MIT OpenCourseWare 
+http://ocw.mit.edu 
+6.013 Electromagnetics and Applications 
+Spring 2009 
+For information about citing these materials or our Terms of Use, visit: http://ocw.mit.edu/terms .</text>
+        </slide>
+        <slide>
+          <slideno>0</slideno>
+          <text>6.013  Content: 
+Fundamentals and Applications
+Fields, media, and boundaries 
+Circuits 
+Motors, generators, and MEMS 
+Limits to computation speed 
+Microwave communications and radar 
+Wireless communications and waves 
+Optical devices and communications 
+Acoustics 
+Prerequisites: Handouts: 
+6.003  or 6.02+6.007 Administration sheet, Equations 
+[6.002+8.02+18.02] Subject outline, lecture notes 
+Appendices B-E Prob. set 1, Objectives &amp; Outcomes 
+L1-1</text>
+        </slide>
+        <slide>
+          <slideno>3</slideno>
+          <text>r 
+1/r2r
+L1-4 EXAMPLE: SPHERICAL CHARGE 
+Example I. Sphere of radius R, charge density o 
+S VD nda  dv Q  =  =   w x 
+r &gt; R Er(4r2) = Q  Er = [V/m] 
+r &lt; R Er(4r2) = o( )  Er = [V/m]34 r3   2 Q 
+4r 
+or 
+3  
+ (Gausss Law) Spherical symmetry precludes  and  components for E 
+rR0 E Solution: 
+Equivalently, r &gt; R  Er = 
+ 
+R r 
+Surface = 4 r2 E 
+3 
+23 o 
+ R 
+r</text>
+        </slide>
+      </slides>
+      <videos/>
+    </lecture>
+    <lecture>
+      <lecture_title>Magnetic pressure, rotary wire and reluctance motors, forces on materials</lecture_title>
+      <lecture_pdf_url>https://ocw.mit.edu/courses/6-013-electromagnetics-and-applications-spring-2009/resources/mit6_013s09_lec06/</lecture_pdf_url>
+      <lectureno>L6</lectureno>
+      <slides>
+        <slide>
+          <slideno>5</slideno>
+          <text>L6-6-POLE RELUCTANCE MOTOR
+Winding Excitation Plan:
+First excite windings A and B,   
+pulling pole 1 into pole B. 
+Pole area A = constant, temporarily.
+When = /3, excite B and C.
+When = 2/3, excite C and A. 
+Repeating this cycle results in 
+nearly constant clockwise torque.
+To go counter-clockwise, excite BC, then AB, then CA.
+Torque:
+Only one pole is being pulled in her e; the other excited winding has 
+either one rotor pole fully in, or one entering and one leaving that 
+cancel.  Many pole  combinations are used (more poles, more torque).A
+B1
+4
+ 2
+ CA B
+C</text>
+        </slide>
+        <slide>
+          <slideno>0</slideno>
+          <text>L6-1MAGNETIC FORCES ON FLAT SURFACES
+Lorentz Force Law:
+W I1
+I2 sF [N/m]
+F [N/m] = Nqv 11ooH2=I1H1 2
+vHd=sCAwJd a=I21 2 H2W
+F=zo1I I2/ 2W  [N/m]
+Currents exert no net force on themselves
+Total H method:
+vHd=s aCAwJd =
+Let I12 = I  = I = HoW
+F1o [N/m] = I 1&lt;H&gt;
+H=  zzI1oo = oI1I2/ 2W  [N/m]2
+1P = F/W = zH22
+oo  [N/m ]
+2
+"Magnetic pressure"0 for C1
+I  for C2z
+yxIW C1
+H
+C2s &lt;&lt; W
+conductor
+&lt;H&gt; = Ho/2
+magnetic pressureI1
+HoH0=z
+J
+y
+F1cfq m=vN
+oH []</text>
+        </slide>
+        <slide>
+          <slideno>3</slideno>
+          <text>L6-4RELUCTANCE MOTOR FIELDS
+2-Pole Reluctance Motor:
+() o 4B0=  BBgap    H  Hgap&lt; &lt;Hgap  [  &gt;  ~ 1 0 ]o
+J=da NI =vvHds=Hgap+Hds2bHAc c gap
+   (if  Hvds&lt;&lt;2bHc gap)
+NITherefore H gap   [A /m]2b 
+ rotor
+statorgap 
+b
+
+D
+I N turns
++  V  -T
+N turns
+I+ V -
+
+rotor
+stator Dds
+Area A</text>
+        </slide>
+        <slide>
+          <slideno>8</slideno>
+          <text>MIT OpenCourseWare 
+http://ocw.mit.edu 
+6.013 Electromagnetics and Applications 
+Spring 2009 
+For information about citing these materials or our Terms of Use, visit: http://ocw.mit.edu/terms .</text>
+        </slide>
+        <slide>
+          <slideno>2</slideno>
+          <text>L6-3MOTOR BACK VOLTAGE
+Force     on electron inside moving wire:
+Open-circuit wire:
+Open-circuit voltage:( ) feee=+E v  oH=0
+=Eve  oH  i n s i d e
+=EW =eo vH W   [ V ]
+Force balanceevoHH-e
+veEe
++
+- HW
+v,f,xfe
+Mechanical power output, N turns:
+Pm= T = NIAoH  [W]   
+I   = (V - )/R
+= 2Nv oHW = 2N roHW = NA oH
+Pm= N(V - NA oH)AoH/R = K12K2 
+R I
++ +
+V 
+- -PpPm()
+0 p  
+maxmotor
+generatormax= V/NA oH
+= 2p
+p= V/2</text>
+        </slide>
+        <slide>
+          <slideno>4</slideno>
+          <text>L6-5RELUCTANCE MOTOR TORQUE
+
+ rotor
+statorgap 
+b
+
+D
+N turns
+I+ V -T
+Set V = d /dt = 0:
+We power coil until overlap is maxi mum, then coast until it is zero=  NBda   =   N oHAgap gapA
+      = N2oIAgap/2b   (Agap= RD )
+   = LI         L =   N2oRD/2b
+112 2
+wm = LI    =   22 LFields:
+NIHgap=2b
+Magnetic Flux Linkage :
+dwm 2-dL1 22bT    = -    =  -   =   I2
+22   [], =N Hd2 d 2 NRDog a pRD
+o
+1      = oH2 dV
+gap2bD R  =  Wolume
+gap    [Nm]  Torque2d 
+Magnetic pressure = Energy density [J/m3= N/m2]</text>
+        </slide>
+        <slide>
+          <slideno>6</slideno>
+          <text>L6-7ELECTRIC AND MAGNETIC PRESSURE
+Electric and magnetic pressures equal the field energy densities, J/m3
+Both field types only pull along their length, and only push laterally
+The net pressure is the difference between two sides of any boundary
+= 
+= Area 
+A
+Area BElectric pressure Pe=                [N/m2] or [J/m2]1||22oE
+Force fe= BPe
+Force fe= APe= 
+= Area A
+Area BMagnetic pressure Pm=                [N/m2] or [J/m2]1||22oH Force fm= APm
+= Force fm= BPmArea A
+Force f
+m= APm</text>
+        </slide>
+        <slide>
+          <slideno>7</slideno>
+          <text>L6-8FORCES ON NEUTRAL MATTER
+Kelvin polarization force density:
+Kelvin magnetization force density:x
+zy+++++++&gt; o
+-------+
+-
++
+-+
+V-
+fx/2
+fx/2dEIf E=0 = E, then:
+Field gradiants E  E is curved
+Curved E pulls electric dipoles 
+into stronger field regions for &gt;o
+If H = 0 = B, then:
+Field gradiants H  H is curved &gt; o
+fx2
+fx1 o
+&gt; o
+Induced current loopB
+B1B2I
+Curved H pulls current loops into stronger field regions for  &gt; 
+o
+B1&gt; B2</text>
+        </slide>
+        <slide>
+          <slideno>1</slideno>
+          <text>L6-2ROTARY WIRE MOTOR
+Single wire loop spinning in uniform H:
+Axial forces from wires at ends cancelF [Nm-1]=IoH
+T=vr F ds = r2WI oH z  [Nm]c
+T = IA oH z   (A is loop area, N = 1 turn)
+T = NIAoH z   for N-turn coil fN S
+Wr
+IT,
+Hds
+Torque = f( ):
+T[Nm] With commutator
+NIoH()A
+0  2 
+Commutators:
+Switch currents to maximize torque
+Can have N coils and 2N brushesC
+
+spring-loaded
+carbon brushesz</text>
+        </slide>
+      </slides>
+      <videos/>
+    </lecture>
+    <lecture>
+      <lecture_title>Poynting theorem derivation (time), UPW example (we, wm, S(t))</lecture_title>
+      <lecture_pdf_url>https://ocw.mit.edu/courses/6-013-electromagnetics-and-applications-spring-2009/resources/mit6_013s09_lec04/</lecture_pdf_url>
+      <lectureno>L4</lectureno>
+      <slides>
+        <slide>
+          <slideno>6</slideno>
+          <text>UPW REFLECTED BY PERFECT CONDUCTOR
+L4-7E=xE+c o s (tk z )+x Ec o s (t +k z )
+   = 0  at  z = 0 (perfect conductor)
+  =EE+
+=   E x 2E+sintsinkz  
++              (recall: cos cos= 2sin isin )
+22
+We[J/m3] = 2 E2 sin2t  sin2kzPerfectE = 0 every half cycle ( t = 0, , etc.) Conductor
+(Where does the energy go?) t = /2t = -/2
+t = 0
+z
+z = 0x
+EStanding waves , oscillate without movingForward plus 
+reflected wave
+(Solving for unknown reflection)
+Never any Wehere</text>
+        </slide>
+        <slide>
+          <slideno>0</slideno>
+          <text>L4-1REVIEW OF UPW BASICS
+Ex=Eoc o s ( tk z )
+EHy=oc o s ( tk z )oExample :  x -polarized UPW traveling in +z direction
+1c3== x 1 08m / s
+ooE(z)=xEjkz
+oe
+EH(z)=yoejkz
+o
+EH:  z direction of propagation
+z
+yHz(, 0)x
+Ez(, 0)
+2=k
+wavelengthdirection of propagation
+c =f2 =(rads/ s) 2 f    k(rads/m) = =     =o
+co0</text>
+        </slide>
+        <slide>
+          <slideno>2</slideno>
+          <text>POYNTING THEOREM
+L4-3()BDPoyntings Theorem: EH  = H   E   E  Jtt
+B=H     D=E
+()d1 22 d1EH  = H  E E3()J  ( W / m )dt2 dt 2
+Stored magnetic Stored electric Power density
+energy density, energy density, dissipated/m3, 
+Wm WeWdPoynting 
+vector,     
+S [W/m2]
+Energy is conserved!
+volts amps watts
+=
+mm m2 Poynting Vector SE= H  ( W / m2)E
+HSd1 2 d | H | d BNote : |H| =|H| =H  idt2 dt dt</text>
+        </slide>
+        <slide>
+          <slideno>1</slideno>
+          <text>L4-2HOW DO WAVES CONVEY 
+POWER, ENERGY?
+But  EH Recall:
+This is   Poyntings Theorem What does it mean?E [V/m] i J [A/m23]=Pd [W/m ]
+Manipulate Amperes law  to  get  E J
+() ()BD HE   E  H=H( )E( J+  )tt 
+Vector Identity
+()BD  3 EH  = H  EJ  E  ( W / m )tt For symmetry, computeBH(  E= )tDE(  H=J+ )t</text>
+        </slide>
+        <slide>
+          <slideno>8</slideno>
+          <text>MIT OpenCourseWare 
+http://ocw.mit.edu 
+6.013 Electromagnetics and Applications 
+Spring 2009 
+For information about citing these materials or our Terms of Use, visit: http://ocw.mit.edu/terms .</text>
+        </slide>
+        <slide>
+          <slideno>7</slideno>
+          <text>L4-8STANDING WAVE EXAMPLE - CONTINUED
+EEH=y [+cos( tkz) ycos(t+kz)]oo
+E2
+=zs+i n 2 k zs i n 2to2EH=y+cos tcoskzo(Its in the H field!)
+E2
+S=E H=z 4+costsintcoskzsinkzoE=x [E+cos( tkz)+E cos(t+kz)]
+EE+= 
+1S0= = R e()EH
+2Note
+=  0 when t = /2, 3/2, etc.)
+t = 0
+z = 0t = 
+Sy
+H
+zt = /2W[322E21
+moJ / m]  =  + 2 2 2cost cos kz = 2 E c
++o st cos kz2o
+2</text>
+        </slide>
+        <slide>
+          <slideno>5</slideno>
+          <text>L4-6COMPLEX NOTATION  POYNTING VECTOR
+Defining a meaningful      and rela ting it to      is not obvious.
+Lets work backwards to find the time average        and thenS S
+Thus, we can define andS
+1SR= e(EH
+2) SE=  HS
+Recall: E=+E =+jt=  + rijE        H HrjHi      e cos t jsin tS(t)=E H=ReEejtRe Hejt
+ 
+=[E cos( t) ri E sin(t)][H  rcos( t) Hisin( t)]
+()()
+()1 S(t) =E + 2rrH EiHi
+1 1               = R E 
+2e H    [R=+ { ( E j E ) ( Her i rj Hi) } ]
+2
+S(by definition</text>
+        </slide>
+      </slides>
+      <videos/>
+    </lecture>
+    <lecture>
+      <lecture_title>Static &#934; and fields, Laplace&#8217;s equation, separation of variables (x,y,z); inhomogeneous materials</lecture_title>
+      <lecture_pdf_url>https://ocw.mit.edu/courses/6-013-electromagnetics-and-applications-spring-2009/resources/mit6_013s09_lec07/</lecture_pdf_url>
+      <lectureno>L7</lectureno>
+      <slides>
+        <slide>
+          <slideno>3</slideno>
+          <text>SEPARATION OF VARIABLES
+Static charge-free regions obey Laplaces equation:
+Electric potential 2(r) =0 
+; Magnetic potential 2(r) =0 
+Assume (x,y) = X(x)Y(y)  
+2 2 2 2 
+2   dX dY = + =Y(y) +X(x) =0
+x2 y2 dx2 dy2
+2 21dX =1dY =k2 "separation consta nt" Xdx 2 Y dy 2 
+Solutions: 
+2dX 2=kX X (x) =Acos(kx) +Bsin(kx)
+dx2
+For k2 &gt; 0;2 
+(swap x,ydY 2 = +Dsinh( ky) =kY  Y (y)C cosh(ky)dy2 
+If k2 &lt; 0) 
+ or: Y(y) = C' eky  + D' e-ky  (equivalent to a bove) 
+L7-4</text>
+        </slide>
+        <slide>
+          <slideno>4</slideno>
+          <text>SEPARATION OF VARIABLES
+Solution to Laplaces equation when k2 = 0: 
+(x,y) = X(x)Y(y)  
+(x,y) = (Ax + B)(Cy + D) 
+Example, Cartesian coordinates: 
+{ = (Ax +B)(Cy+D) = 0 at x =0 for all y}  B = 0 Given (x,y) o 
+=0 (x,y) 
+0 y 
+xLx 2 2 0 Xdx Y dy =  = 
+Ly 2 21d X 1 d Y 
+2 
+2 
+2 dx 
+2 dX 0=  X(x) = Ax + B 
+dY 0  Y(y) = Cy  + D  dy  
+= 
+{ = (Ax +B)(Cy+D) = 0 at y =0 for all x}  D = 0 
+{ = o at x=Lx, y=Ly}  AC = o/LxLy  = xyo/LxLy 
+ is matched at all 4 boundaries 
+L7-5</text>
+        </slide>
+        <slide>
+          <slideno>6</slideno>
+          <text>L7-7  +    = =  = =     
+   o 3 o o 
+p o o 
+o o xJ(1 ) ( )J d LP ( )E ( )   [C/m ] dx L INHOMOGENEOUS MATERIALS 
+Governing Equations: 
+o f p J E
+ D E E P D P = = = +  =  = 
+Non-uniform Conductivity (x) (e.g., doping gradients 
+in pn junctions): Assume o [S/m ] x1 L = 
++ 
+ x 
+0 
+I [A] J [A/m2] L 
+o 
+o xJ(1 )J L E x  [V/m ] + 
+= =   
+ +   =  = = =     
+   o 3 o 
+f 
+o o xJ(1 ) J d LD E  [C/m ] dx L Note: Non-unif orm 
+conductors have free 
+charge dens ity f and 
+polarizat ion charge 
+dens ity p throughout.</text>
+        </slide>
+        <slide>
+          <slideno>5</slideno>
+          <text>CIRCULAR COORDINATES 
+Separation of Laplaces equation: 
+Only in cartesian, cylindrical, spherical, and elliptical coordinates 
+Circular coordinates: 
+2 r2 (r,) 1  (r  ) + 1
+2 ( ) =0  = 2rr r r  
+rd dR 1d2 2 x 
+R(r) ()  (r ) = ( 2) =m =  Rdr dr  d 
+Solutions (pick the one matching boundary condition):
+(r, ) (A + +Dlnr)                             f or m2 = 0  = B )(C 
+(r, ) (Asinm +  m +Dr m)             f or m2 = Bcosm )(Cr &gt; 0 
+ = (r, ) [Asinhm  +Dsin( 2+ Bcoshm )[Ccos(mlnr) mlnr)]  for m  &lt; 0 
+Example  conducting cylinder (m = 0): V volts 
+r(r,) = C+D  ln r = V[2-(lnr/ln R)](r R); (r,) = V (r &lt; R)
+0
+R E(r) == (r   + 1  )= V  [V/m] (r &gt;  R) r r  rlnR =  
+L7-6</text>
+        </slide>
+        <slide>
+          <slideno>7</slideno>
+          <text>L7-8 INHOMOGENEOUS PERMITTIVITY 
+Governing Equations: 
+o f p J E  D E E P D P = = = +  =  = 
+Example, Non-uniform Permittivity (x): 
+Assume: o x(1 )  [F/m ] L= + 
+Non-uniform dielectrics have polarization charge density p throughout . 
+x 
+0 
+L +V 
+0 volts o o o 
+o D D ED E f(x)  E x x(1 ) (1 )L L =   = = =   + + 
+o 
+x o o L L 
+0 0 E VV E dx dx E Lln2 [V] E =  [V/m ] x L ln2 1 L = = =  
++   
+V Therefore : E x   [V/m ] xLln2(1 )L = 
++ 
+  = = =  = + = 
++ 1 
+p o o 2 2 d x VP (D- E)  E (V/Lln2) (1 )dx L xLln2(1 )L Note: Non-uniform E(x) (x)</text>
+        </slide>
+        <slide>
+          <slideno>8</slideno>
+          <text>MIT OpenCourseWare 
+http://ocw.mit.edu 
+6.013 Electromagnetics and Applications 
+Spring 2009 
+For information about citing these materials or our Terms of Use, visit: http://ocw.mit.edu/terms .</text>
+        </slide>
+        <slide>
+          <slideno>2</slideno>
+          <text>L7-3 SOLVING FOR STATIC FIELDS 
+Approaches when given ,  on boundaries : q q 
+p V pq Use dv,
+ E4r  
+= =   
+q qp pq 2 V pq  E r dv 
+4r  
+= 
+ 
+q p q 
+p q2 V p q J(r -r ) 
+H dv 
+4| r -r |  
+= 
+ Approaches when given , J: 
+z 
+y x 
+dVq rpq 
+Vq rq rp p 
+Superpos ition 
+integrals 
+Biot-Savart Law 
+Use Laplaces Equation. Derivation: 
+2 BElectric : E = = 0 (statics) E = .  =0 E = 0  =0 t         i 
+. 2 DMagneti c : H = = 0 (statics; J = 0) H =  H = 0 = 0 t         i</text>
+        </slide>
+        <slide>
+          <slideno>0</slideno>
+          <text>Estimating Static Fields
+Examples 
+of point 
+and line 	Images of lightning rod, power line co rona, and 0.1 micron 
+field integrated circuits removed d ue to copyrigh t restrictions.
+emission
+=bEdz  
+ab a	i r1 (spherical case), or ln r (cy lindrical case) 
+E 
+||2	 L EEr 
+ r  r ||Er1 
+R R Surfac e area = 2rLSurfac e = 4 r2  
+Spherical geom etry  Cylindrical geom etry 
+L7-1</text>
+        </slide>
+      </slides>
+      <videos/>
+    </lecture>
+    <lecture>
+      <lecture_title>TEM resonators, we(t), wm(t), Q, &#8710;&#969;, examples; |V(z,f)|</lecture_title>
+      <lecture_pdf_url>https://ocw.mit.edu/courses/6-013-electromagnetics-and-applications-spring-2009/resources/mit6_013s09_lec15/</lecture_pdf_url>
+      <lectureno>L15</lectureno>
+      <slides>
+        <slide>
+          <slideno>5</slideno>
+          <text>L15-6LUMPED LOSSES IN TEM RESONATORS
+Perturbation Technique:
+Wantz=0-1  Ra&lt;&lt; Zo(Zan&lt;&lt; 1)
+Want (z=D/2)1                           Rb&gt;&gt; Zo(Zbn&gt;&gt; 1)
+Want Rc&gt;&gt; |-jZosin k|                 Rc&gt; ~Zo(if 2/&lt;&lt; 1)Find Pdusing unperturbed v or i
+Need (v/vo) &lt;&lt; 1, (i/io) &lt;&lt; 1, o
+Loss Computation Examples:
+ 
+ 22
+d  z =0 a d o
+c
+22
+dz =d/2 d o od
+b11P   | I |  R              P   |V sink |22 R
+11P  |V |               P   |(V /Z )sink |  R2R 2Calculation of Q:
+a
+dc
+bUse unperturbed V , II= (Vo/Zo)cos( z/D)acd
+b Zo,c i
+D
+z = D0v+
+-Iz=0V(z)
+When is a perturbation too large?
+a
+cboT
+dwQP=
+n
+nZ1
+Z1
++</text>
+        </slide>
+        <slide>
+          <slideno>3</slideno>
+          <text>L15-4ENERGY IN TEM RESONATORS
+Electric Energy Density We = Cv2/2 [J/m]:
+Magnetic Energy Density Wm = Li2/2 :
+Total Electric and Magnetic Energies weand wm:v(t,z) = Vosin nts i nknz
+We(t,z)  
+0 Dz1v(z,t)i(t,z)
+21
+0zWe(z,t)
+Wm(t,z)D
+* &lt;  &gt; signifies time average of .=
+=   22 2
+0n n
+2
+on n1CV (sin t )(sin k z)   [J/m]2
+1CV (1 cos 2 t)(1 cos 2k z) 02
+=
+=
+=+  +o
+nn
+o2
+22 o
+nn
+o
+2
+o
+nn
+oV cos t  cosk zZ
+V1L cos t  cos k z   [J/m]2Z
+V1L ( 1c o s 2 t ) ( 1c o s 2 k z )2Zi(t,z) 
+Wm(t,z)
+= = + 
+ == = 2
+2 o
+eo n m n
+o2
+22 o
+em o o
+oV 11W CV (1 cos2k z)    W L (1 cos2k z)44 Z
+V LOver n  we have w w  because CV L  (recall Z )4Z C</text>
+        </slide>
+        <slide>
+          <slideno>4</slideno>
+          <text>L15-5TEM RESONATOR LOSS AND Q
+Distributed Losses:
+Example of Q Calculation (n =1):() ()
+()
+()=+
+=
+=
++
+=
+
+
+d22
+diss
+D
+dd iss 0
+2 D 22
+oo n n 0
+D 22 2
+on n 0
+2
+2o
+ooP( t , z )i Rv G [ w a t t s / m ]
+P[ W ]    P d z
+        V Z cos t cos k z Rdz
+      V sin t sin k z Gdz   (for          )
+GDV RD    P V Z  +    [watts]44R (ohms m-1)
+G (Siemens m-1)
+= =
+==
+=o
+2
+Te o
+2
+o
+d
+oc(n 1)D
+1w2 w C V D4
+V RDP4ZCzGzRzLz
+iv = V0cos t
+z
+d
+-v(z) R 0
+DZo,c v+ == = =  =2
+oT o o
+IL
+dwc C Z Z C(L/C)1QQPR D R D R D LC</text>
+        </slide>
+        <slide>
+          <slideno>0</slideno>
+          <text>L15-1Voltages and Currents:
+v(t,z) = V+cos(t - kz) + V-cos(t + kz)
+Boundary conditions: v( t,z) = 0 at z = 0    V-= -V+
+v(t,z) =       V+ [cos( t - kz) - cos( t + kz)]   =  2V+sin t sin kz *
+i(t,z)  =        [cos( t - kz) + cos( t + kz)]  =  2 cos tc o s  k z*TEM RESONATORS
+*c o s-c o s= -2 sin[(+ )/2] sin [(-)/2]
+cos+c o s = 2 cos[(+ )/2] cos [( -)/2]i 0
+Dv+
+-Zo, cz
+Resonant Frequencies n:
+2V+sin(t) sin(kD) = 0    
+knD=  n,    n = 0, 1, 2,
+knD=  (n/c)D = n
+n= nc/D = 2c/nnn/2 = D0Dz1v(z,t)i(t,z)
++
+oV
+Z
++
+oV
+Z</text>
+        </slide>
+        <slide>
+          <slideno>7</slideno>
+          <text>L15-8COUPLED TEM RESONATORS
+Resonator equivalent circuit
+VThReqCeqLeq+
+-RTh
+-+Zo,cZo,ci
+v+-
+D
+R ohms m-1|V(z)|
+= = =
+= =
+= = = =
+  Th
+Th
+Theq o
+Ie q
+eq eq
+eq d;ext I
+no
+d;int E
+eq
+o
+eqo
+L
+oR 2 [r/s]QQ L
+c1    D LC
+R P QZ( )RP Q
+R- R at    (  = )R+ R
+Imperfect coupling if QEQI
+Zo,cZo,ci
+v+-
+D|V(z)|
+
+Zo,c
+Lossless 
+bandpass filterIf both lines are Zoand 1= 2,
+Then QI= QEperfect coupling        
+and perfect match at oLossless bandpass filter3 
+Eqn
+3 
+Unk</text>
+        </slide>
+        <slide>
+          <slideno>2</slideno>
+          <text>L15-3ANOTHER TEM RESONANCE
+D =  /4,  3/4,  5/4,
+D = (n/4)(2n - 1)  [n = 1,2,3,]
+n= 4D/(2n - 1) 
+1= 4D
+2= 4D/3
+3= 4D/5
+4= 4D/7Quarter-Wave Resonator:
+0zv(z,t)i(t,z)1
+2i
+Dv+
+-Zo, c</text>
+        </slide>
+        <slide>
+          <slideno>6</slideno>
+          <text>L15-7COUPLED TEM RESONATORS
+Example: computation of Q:
+Pd()
+o1
+1/2
+ResonanceVThReqCeqLeq+
+-RTh
+-+Zo,cZo,ci
+v+-
+D
+R ohms m-1|V(z)|
+= = =
+
+= 
+=oT
+int,ext,or loaded
+d:int,ext,or loaded
+2
+o
+oT e
+2
+2o
+d;ext ext
+o
+2
+oo
+d;int int
+owQ =  P
+C|V | c        w 2&lt;w &gt; 2DD8
+D Vs i n ( ) ()DPQ2Z 2
+VZRDP       Q =4Z R DVo
+Example, perfect coupling:
+Qint= Q ext=3
+2
+oRD
+2Z
+= = =oo
+LIeq
+eqR 2 R2= [ r / s ]QQ L L</text>
+        </slide>
+        <slide>
+          <slideno>8</slideno>
+          <text>MIT OpenCourseWare 
+http://ocw.mit.edu 
+6.013 Electromagnetics and Applications 
+Spring 2009 
+For information about citing these materials or our Terms of Use, visit: http://ocw.mit.edu/terms .</text>
+        </slide>
+        <slide>
+          <slideno>1</slideno>
+          <text>L15-2DC Resonance ( = 0):
+Current flows in loop,
+Voltages are zero
+we= 0,   wm0  [J]
+nn/2 = d,  n = 0,1,2, 
+n= 2d/n          n= nc/d = 2c/n
+0=  o= 0
+1= 2d1= c/d
+2= d2= 2c/d
+3= 2d/33= 3c/d Open-Circuit Resonator:
+0z2v(z,t)
+i(t,z)Resonant Frequencies n:
+i
+dv+
+-Zo, c2zd 0v(z,t)i(t,z)i 0
+v+
+-Zo, cz
+dn
+nn nc          dd2 = =
+n= dn= dMORE TEM RESONANCES</text>
+        </slide>
+      </slides>
+      <videos/>
+    </lecture>
+    <lecture>
+      <lecture_title>Electromagnetic fields in media, uniaxial media, quarter-wave plate</lecture_title>
+      <lecture_pdf_url>https://ocw.mit.edu/courses/6-013-electromagnetics-and-applications-spring-2009/resources/mit6_013s09_lec08/</lecture_pdf_url>
+      <lectureno>L8</lectureno>
+      <slides>
+        <slide>
+          <slideno>5</slideno>
+          <text>L8-6 WAVES IN UNIAXIAL MEDIA 
+f E j B D 0 
+H j D B 0  =    = = 
+ =   = i 
+i Derive wave equation: 
+( ) ( ) 2 2E E E j H E   =   =  =  i 
+ =iE0 Can show    (can als o test final solution) 
+Therefore: 
+[ ]   + + + + +  = 
+     
+  
+  2 2 2 
+2 
+x y z2 2 2 xE yE zE E 0    
+x y z 
+Assume =  0 (assume UPW in z direction) 
+Yields 3 decoupled equations (x,y,z components) Assume:  
+=  
+   
+  
+  
+   e 00 
+0 0 
+0 0 = = D E=
+= = 0,  = o</text>
+        </slide>
+        <slide>
+          <slideno>4</slideno>
+          <text>MAKING ANISOTROPIC MATERIALS
+eff 
+eff AC d  = 
+ = d/2 
+d + 
+-V+Q 
+-Q A [m2] 
+oo A 
+Uniaxial Medium 
+x = y = o ordinary 
+z = e extraordinary 
+o &gt; e z 
+x y 
+o &lt; e Atom or molecule ( ) 
+eff A2C d 
+2  
+  ( ) o 
+eff o AC d2 
+2  
+  &gt;&gt; o   
+C = Q/V A 
+L8-5</text>
+        </slide>
+        <slide>
+          <slideno>0</slideno>
+          <text>WAVES IN MEDIA
+Radio Communications 
+SatelliteIonosphere 
+(plasma) 
+Refraction, moist or dense air 
+Reflection Blue sky, red sunset Troposca tter 
+Cloud, Rain 
+Optical Fibers Optoelectronics on chips 
+ 
+Devices 
+Linear Circular 
+polarization 
+L8-1</text>
+        </slide>
+        <slide>
+          <slideno>2</slideno>
+          <text>TYPES OF MEDIA
+Properties are function of: Designation: 
+Field direction Anisotropic D =  =  E, B H 
+Position Inhomogeneous 
+Time:  f(t) Stationary 
+ f(history) Amnesic 
+Frequency Dispersive 
+E or H Non-linear 
+Temperature Temperature dependent 
+Pressure Compressive 
+L8-3</text>
+        </slide>
+        <slide>
+          <slideno>1</slideno>
+          <text>-
+-
+-
+-
+--
+-
+-
+-
+-+ 
++ 
++ 
++ 
++ P 
+p WAVES IN MEDIA  Constitutive Relations 
+Vacuum: D =oEi D = fE 
+f =free charge dens ity +
++
+Dielectric D = = E E +P+
+Materials: o+
+ E = + +
+i o f p 
+polarization charge dens ity 
+iP = p 
+P = Polarization Vector 
+Magnetic 
+Materials: 
+( )  = 
+= 
+= = + 
+= i 
+o 
+o B0 
+B H in vacuum 
+B H H M B 
+M Magnetization Vector + e 
+ e B + 
++ e 
+e 
+L8-2</text>
+        </slide>
+        <slide>
+          <slideno>8</slideno>
+          <text>MIT OpenCourseWare 
+http://ocw.mit.edu 
+6.013 Electromagnetics and Applications 
+Spring 2009 
+For information about citing these materials or our Terms of Use, visit: http://ocw.mit.edu/terms .</text>
+        </slide>
+        <slide>
+          <slideno>3</slideno>
+          <text>L8-4 ANISOTROPIC DIELECTRICS 
+x x y z xx xy xz 
+y x y z yx yy yz 
+z x y z zx zy zz D E 
+D E E E 
+D E E E 
+D E E E =  
+=  + + 
+=  + + 
+=  + + 
+x 
+y 
+z 0 0 
+Let 0 0 
+0 0    
+ =   
+    
+x,y,z are principal axes EY 
+0 EX Dy = yEy 
+Dx = xEx y 
+x D 
+E 
+ x y z Note:  When , D // E  iff  E // x,y, or z   
+Real , Lossless medium</text>
+        </slide>
+      </slides>
+      <videos/>
+    </lecture>
+    <lecture>
+      <lecture_title>RLC resonators, series, parallel, &#969;o, &#8710;&#969;, &#945;, QL, QI, QE, coupling</lecture_title>
+      <lecture_pdf_url>https://ocw.mit.edu/courses/6-013-electromagnetics-and-applications-spring-2009/resources/mit6_013s09_lec14/</lecture_pdf_url>
+      <lectureno>L14</lectureno>
+      <slides>
+        <slide>
+          <slideno>0</slideno>
+          <text>L14-1RLC RESONATORS
+Resonators trap energy:
+R
+L
+CI
+Series RLC resonatorG
+CLV
++
+-
+Parallel RLC resonatorAlso:
+terminated 
+TEM lines,
+waveguides 
+Circuit equations, series resonator:
+I di 1L  + Ri + i dt = 0    j L I  + R I  +  = 0dt C j C 
+2
+1,2 2 1 R1 R 1s = -   j  - ( )    Note: s  = s *     ' =  for R 02L LC 2L LC
+
+2
+ii2 (-b b -4ac )Let j  = s ; recall:  as + bs + c = 0      s  = 2a *= 0  (js1)(js2) = 0*
+2 R1(j)+ ( j)+ ILL C
+ R- tj't 2L
+e o i(t) = R { I e } e</text>
+        </slide>
+        <slide>
+          <slideno>6</slideno>
+          <text>L14-7EXAMPLE #2  BAND-STOP FILTER
+Filter specifications:
+Far from othe load is matched (signal goes to amplifier R)
+At oreflect all incident power; let = -1 (short circuit) 
+o= 5 106
+= 5  104(rejected band, notch filter) Q = 100
+Zo= 100-ohm line
+Filter solution:
+Lossless series resonators look like short circuits at o
+R = Zo= 100  ||2= 0 at far from o
+= 1/o= (5x106)-1
+QL=         /RL(series)      = RLQL= 50x100 = 5000
+L =                 = (5x106)-1 x 5000 = 10-3[Hy]
+C =                   = (5x106)-1/5000 = 4 x 10-11[F]RL
+CVThZo
+Zo
+LC
+L/C
+LC / L/CLC L/CL/C</text>
+        </slide>
+        <slide>
+          <slideno>5</slideno>
+          <text>L14-6EXAMPLE #1  CELL PHONE FILTER
+Bandpass filter specifications:
+VThZo
+Zo
+CL+
+-RLooks like a short circuit far from o
+Ato: reflect 1/9 of the incident power and let &lt; 0
+o= 5 109and = 5  107
+Zo= 100-ohm line
+Filter solution:
+Parallel resonators look like short circuits far from o
+||2= 1/9 and &lt; 0   = -1/3 at o.                          R = 50 
+= 1/o= (5x109)-1
+QL= R/        (parallel)  = R/QL= 33/100 = 0.33 (R = R // Zo)
+L =                  = (5x109)-1 x 0.33 = 6.67 x 10-12[Hy]
+C =                  = (5x109)-1/0.33 = 6 x 10-10[F]Small, hard to 
+build, use TEM?o1ZZ1+=
+LC
+L/C L/C
+LC / L/CLC L/C</text>
+        </slide>
+        <slide>
+          <slideno>7</slideno>
+          <text>MIT OpenCourseWare 
+http://ocw.mit.edu 
+6.013 Electromagnetics and Applications 
+Spring 2009 
+For information about citing these materials or our Terms of Use, visit: http://ocw.mit.edu/terms .</text>
+        </slide>
+        <slide>
+          <slideno>3</slideno>
+          <text>L14-4RESONATOR Q
+General derivation of Q (all resonators):
+Pd()
+o1
+1/2wTwToe-t/Q(total stored energy [J])
+Pd= -dwT/dt(/Q)wT(power dissipated [W])
+Q wT/Pd*                  (res onator Q [radians is dimensionless])
+Internal, external, and loaded Q (QI, QE, QL):
+QI  =wT/PdI(PdIis power dissipated internally, in R)
+QE =wT/PdE(PdEis power dissipated externally, in RTh)
+QL =wT/PdT(PdTis the total power dissipated, in R and RTh)
+R
+L
+CVThRTh
+G CL+
+- VThRTh
+PdT= PdI+ PdEQL-1= QI-1+QE-1
+QLo/ Perfect Match: QI=QE
+*IEEE definition: Q = owT/Pd</text>
+        </slide>
+        <slide>
+          <slideno>2</slideno>
+          <text>L14-3COUPLING TO RLC RESONATORS
+Thevenin and Norton Equivalent Sources:
+Thevenin equivalent sourceRL
+L
+CI()
+VThRTh
+Power dissipated Pd(f) in R = RL+RTh:
+Half-power frequencies:   R/2L = ,where = 1/        
+so: = 2=o/Q    and     Q = o/INo
+Norton equivalentG CLV
++
+-GNoPd()
+o1
+1/2
+Resonance
+22
+Th Th
+d2 2
+22
+Th
+22|V | |V | 11P( ) R R22 1|Z| |R j L |jC
+|V | R 1R 1R         ( j )( j )2L 2L LC LC 2L= =
++ +
+=    + 
+LCDominant factor near o</text>
+        </slide>
+        <slide>
+          <slideno>1</slideno>
+          <text>L14-2RLC RESONATOR WAVEFORMS
+Series resonator current i(t):
+Let = 0
+wT=wToe-(R/L)t
+= wm(t) + we(t)
+wm(t)Stored energy
+t 0wTo
+wTo/e
+~Q radians,
+Q/ secondswe(t)Energy w(t):
+e-2t e-t/Q
+= e-(R/L)t
+Q /2 =L /Rwemax=wmmax
+vmax=imax0ti(t)
+Io e-(R/2L)t= Ioe-t
+L/C /R
+(series resonance)
+Q /2 =C /G
+C/L / G
+(parallel)L
+C  RR- t - tj't 2L 2L
+e o o i(t) = R { I e } e = I cos( 't + )e
+   R-t22 L
+m1
+2w( t ) = L i c o s ( 't) e
+   R-t22 L
+e1
+2w( t ) = C v s i n( 't) e</text>
+        </slide>
+        <slide>
+          <slideno>4</slideno>
+          <text>L14-5MATCHING TO RESONATORS
+Transmission line feed:
+R
+L
+CVThZo
+Zo
+VThZo
+Zo
+CL+
+-R
+Ato:    ||2=   
+= 0      if matched, R = Zo
+= 1/9   if R = Zo/2 or 2ZoPd()
+1
+1/2
+0Behavior away from resonance:
+Series resonance:        Open circuit
+Parallel resonance:      Short circuit2
+o
+oRZ
+RZ
++
+o    
+1
+L/C
+=</text>
+        </slide>
+      </slides>
+      <videos/>
+    </lecture>
+    <lecture>
+      <lecture_title>Architecture, generalized TEM line, &#918;(z), &#915;(z), &#918; transformations</lecture_title>
+      <lecture_pdf_url>https://ocw.mit.edu/courses/6-013-electromagnetics-and-applications-spring-2009/resources/mit6_013s09_lec13/</lecture_pdf_url>
+      <lectureno>L13</lectureno>
+      <slides>
+        <slide>
+          <slideno>4</slideno>
+          <text>L13-5Z(z) = f(ZL, Zo, k, z):
+[ ]
+[]Z
+ZZL o [1 + (z)] 2jkzSubstituting: = Z(=  =  L  into z)  Zo ;  (z) eZZ+ [1L o - (z)]
+ZjLZ t a=on k zYields:         Z(z) ZoZjoZLt a n k z(z) TRANSFORMATIONS
+Example: Open Circuit, ZL= :
+In general:  -j &lt; Z=0 when z = - /4, -3/4,
+=when z = 0, - /2,
+(-A) &lt; +j
+(Yields ANY capacitance or inductance
+at a SINGLE )Z(=AA)jZoocotk jZ kA for kA&lt; &lt;1
+L/C 1        =j=
+LCAjCA
+capacitor Coz = -A
+z0
+z
+- 0322Im{Z
+4Open Short }
+circuit circuitL</text>
+        </slide>
+        <slide>
+          <slideno>5</slideno>
+          <text>EXAMPLES: Z(z) TRANSFORMATIONS
+L13-6 ExampleInductive Load, ZL = jLo for z = -/4: 
+Since: 
+Therefore: 
+Note:  = = = =  
+= 
+= =    o 
+o o 
+o o 2 
+L 
+o 2kz k , therefore tan(kz) 4 2 
+Z LC 1Z( ) = =   (C = CL L ) Z jL jC 
+Z(z) j L if 2, ,...[tan(-2 / ) = 0] A 
+A 
+A A Recall: L o o o L Z jZ tankz Z(z) Z Z jZ tankz  =  Zo 
+0 z/4 L ? o 
+Example  Source Transformation: 
+s oTh o o s Z jZ tank Z Z Z jZ tank + =  A 
+A 
+= V (e + e ) = 2V cos k jk -jkA A A+ + 
+Therefore: V = 2V = V Z /[(Z + Z )cos k  ] A A S S ATh + Zs VA + 
+-+ 
+-Zo 
+0 z 
+A 
+ZTh Vs 
+VTh ZA 
++ 
+-? 
+A 
+A S A o 
+S A ZV= V  where Z = -jZcot k Z+ Z A</text>
+        </slide>
+        <slide>
+          <slideno>8</slideno>
+          <text>MIT OpenCourseWare 
+http://ocw.mit.edu 
+6.013 Electromagnetics and Applications 
+Spring 2009 
+For information about citing these materials or our Terms of Use, visit: http://ocw.mit.edu/terms .</text>
+        </slide>
+        <slide>
+          <slideno>0</slideno>
+          <text>L13-1 EM GUIDANCE AND FILTERING 
+Generic System Architecture: 
+Signal 
+Processing 
+Signal 
+Processing Guide Antenna Antenna Guide Amplification 
+Microwave or optical 
+tuning, resonance 
+coupling waveguides 
+microwave integrated circuits matching transitions Detection 
+Systems fail at weakest link, so understand all parts 
+Communications, bi-static radar separately located systems 
+Radar, lidar, data recordingc o-located systems 
+Pass ive sensinguses receiver side only</text>
+        </slide>
+        <slide>
+          <slideno>2</slideno>
+          <text>TEM PHASOR EQUATIONS 
+( d2 
+Wave Equation: dz2 +2LC)V(z) =0 
+Voltage Solution: V(z) = V+e-jkz + V-ejkz 
+Test solution: [(-jk)2V+e-jkz + (jk)2V-ejkz] + 
+2LC[V+e-jkz + V-ejkz] = 0 
+Passes test iff: 
+Current I (z): Since: +
+-V+ +
+-V-
+Therefore: jL +  
+=Y(V ejkz Ve+jkz )o +  
+Line admittance: Y = k =  LC = o L L L Zo C 1= 
+TEM Equations: V(z) = V+e-jkz + V-ejkz 
+I(z) = Yo(V+e-jkz V-ejkz) k2 = 2LC 
+V(z) j L I(z) z  =  
+jkz jkz 1I(z) jk(V e V e ) +=  
+L13-3</text>
+        </slide>
+        <slide>
+          <slideno>1</slideno>
+          <text>L13-2 MICROWAVE CIRCUITS 
+Printed Circuits : 
+Equivalent TEM line circuit: Difference Equations:   Ez H z 0 = = 
+i(t,z) v(t,z) 
+-+ z 
+I(z) I(z+z) 
+Cz Lz Lz 
+Cz + 
+-+ 
+-
+z V(z) V(z+z) TEM  
+Wave Equation  V(z+z)  V(z) = -jLz I(z) 
+I(z+z)  I(z) = -jCzV(z) 
+Limit as z 0: 
+2 2 
+2 dV(z) LC V(z) 0 
+dz + = dV jL I dz 
+dI jC V dz = 
+=</text>
+        </slide>
+      </slides>
+      <videos/>
+    </lecture>
+    <lecture>
+      <lecture_title>Electric forces on e-beams, C plates, force from &#8706;w/&#8706;z; generators and sensors</lecture_title>
+      <lecture_pdf_url>https://ocw.mit.edu/courses/6-013-electromagnetics-and-applications-spring-2009/resources/mit6_013s09_lec05/</lecture_pdf_url>
+      <lectureno>L5</lectureno>
+      <slides>
+        <slide>
+          <slideno>6</slideno>
+          <text>L5-7 ELECTROSTATIC SENSORS 
+s s +  CV2/2 CV2/2 initially, then: 
+Voltage decays to Vo = VsR/(R + Rs)  
+Voltage puls e to amplifier, w w/s &gt; Eb &gt; ~10-20 [J] 
+Minimum detectable sEb/w [m]  (hears brownian motion) Cantilevered microphone: 
++ 
+-Rs V+ f 
+plate area A 
+s C, V 
+Cantilevered capacitor C at V volts R Vs 
+out</text>
+        </slide>
+        <slide>
+          <slideno>3</slideno>
+          <text>L5-4 ENERGY METHOD WITH A BATTERY 
+Incremental work dw: 
+*C = A/s +Q 
+-Q E +V 
+0 C ds 
+f 
+dQs 
+Externally applied force f w = 
+dw = f ds  = -V dQ + (V2/2) dC 
+To battery To capacitor 2CV
+2 
+dQ = VdC  dw = -(V2/2)dC 
+f = 
+Pe = -o E2/2 (as before) Q.E.D. Force and pressure: 
+2 2 2 o o 
+e2 A E dw V dC* V A PAds 2 ds 2 2s  = = = =</text>
+        </slide>
+        <slide>
+          <slideno>1</slideno>
+          <text>L5-2 ELECTRIC FORCES 
+ON CHARGED CONDUCTORS 
+Force on free charges: 
+Repulsive forces: 
+0 z 
+E(z) 
+Eo Deepest elec trons 
+experience zero force -e 
+Eo 
+Attractive pressure 
+Like charges  repel, 
+unlike charges attract +s 
++s E = 0 E 
+E -2 
+-2 
+-1 e s 
+s o o 
+o Force:                      f qE eE     [N ] 
+Electric pressur e:  P =  &lt;E&gt;      [N  m ] 
+Surface char ge:       = E       [C  m ] 
+EAverage E:  &lt; E&gt; =           [V m ] 2 
+Electric pressure: = =  
+  
+-2 2 
+e o o 1
+P =  E  [N m ]2</text>
+        </slide>
+        <slide>
+          <slideno>7</slideno>
+          <text>MIT OpenCourseWare 
+http://ocw.mit.edu 
+6.013 Electromagnetics and Applications 
+Spring 2009 
+For information about citing these materials or our Terms of Use, visit: http://ocw.mit.edu/terms .</text>
+        </slide>
+        <slide>
+          <slideno>0</slideno>
+          <text>L5-1 ELECTRIC FORCES ON CHARGES 
+Lorentz Force Law: 
+a = f/m = qE/m  eV/mL [m s-2] 
+Kinematics*: 
+Electron kinetic energy wk: 0 
+o t 
+o 
+2 o v a(t)dt 
+ v at 
+ z = z + zv t + at /2 = 
+= +  
+z anode, phosphors 
+cathode ray tube (CRT) -
++ -V cathode 
+heated 
+filament 
+Electron charge = -e 
+= -1.6x10-19 [C] z deflection plates 
+E 
+L 
+* For E in -z direction wk = fs = (eV/L)L = eV  [Joules] 
+Electron volt = energy of 1 el ectron moving 1 volt = e Joules ( )o fq E v H   Newtons fqE ma = +    = =</text>
+        </slide>
+        <slide>
+          <slideno>5</slideno>
+          <text>L5-6 ROTARY ELECTROSTATIC MOTORS 
+Energy derivative: 
+Torque: 
+Motor power: 
+Peak power: P = T  [W] 
+Average power: Pavg = P/2    (duty cycle =  ) 
+stator 
+rotor 
+T + 
+- 
+R v 
++ -
+Segmentation advantage: 
+T [Nm] = -dw/d   A nRs (n = # segments) n = 4 
+stator + v 
+-rotor = =  
+ = 2 
+2 o Qd( )dw 2CT[Nm] d d 
+A R
+C ,   A =  2 s 2 
+ = 
+  
+   2 2 o 
+22 
+o E Qs RTherefore : T  = A'  [Nm] 2 22R 
+R pressure gap- area A' 2 A = 2Rs</text>
+        </slide>
+        <slide>
+          <slideno>4</slideno>
+          <text>LATERAL FORCES  ENERGY METHOD
+Energy derivative: 
+Energy derivative: 
++Q 
+-Q +V 
+0 C 
+f &gt;&gt;  E s 
+D W L A = Ws +Q 
+-Q C s 
+f E 
+D W A = Ws 
+A Fringing
+field 
+2 2 
+o 
+2 2 2 o 
+o e2 2 
+o o dwf   (externally applied) dD 
+Q Q s w 2C 2 WD 
+(EWD) s Qs 1f ( E )Ws P A '  [N] 22W D 2 WD = 
+= =  
+ = = =  = 
+  
+ = = 
+ = + = + 
+=   +  
+  = =  = &amp; 2 
+o 
+D o 
+o o 
+2 
+o 
+e Qd( )dw 2Cf dD dD 
+(L-D)W DWCC C s s 
+W[D( -) L] s 
+( )E
+f A' [N] P A '; A' Ws  (E pushes, E pulls) 2 
+L5-5</text>
+        </slide>
+        <slide>
+          <slideno>2</slideno>
+          <text>L5-3 ENERGY METHOD 
+FOR FINDING FORCES 
+Force, work, and energy: 
+dw = f ds  f = [N] 
+C = A/s 
+w = CV2 = [J] 
+Q f(s) if C is open circuit 
+f = = 
+= 
+= -PeA [N] 
+Pe = [N m-2] = [J m-3] +Q 
+-Q E +V 
+0 C ds 
+f 
+Electric fie lds always pull on conductors attractive force The static pressure Pe of the 
+electric field on the upper 
+plate is the same with a 
+battery attached: 
+o e s s 1 
+2 P &lt;E&gt; E = =  is the force externally 
+applied to the upper plate 
+fff 
+s dw 
+ds 
+1 
+2 2 2 
+o 1Q 1Q s 
+2C 2 A =  
+dw 
+ds 2 
+o 1Q 
+2A 
+2 
+2 o 
+o 
+o (EA) 1( E )A2A 2  =  
+2 
+o 1 E2</text>
+        </slide>
+      </slides>
+      <videos/>
+    </lecture>
+    <lecture>
+      <lecture_title>Acoustic waves, boundary conditions, reflections, antennas</lecture_title>
+      <lecture_pdf_url>https://ocw.mit.edu/courses/6-013-electromagnetics-and-applications-spring-2009/resources/mit6_013s09_lec23/</lecture_pdf_url>
+      <lectureno>L23</lectureno>
+      <slides>
+        <slide>
+          <slideno>5</slideno>
+          <text>L23-6ACOUSTIC INTENSITY
+Ithresh0 dB (acoustic scale) = 10-12[Wm-2]
+uo= po/s= 310-5/425 7 10-8[ms-1]Plane Wave Intensity I = -2pu  n Wm :
+Example: small radio at beach: 
+Example: Threshold of hearing: Io= 1 [Wm-2] at 1 kHz
+
+uo= po/s= 0.07 [ms-1];    z = 2uo/= 10 microns2 222o o -2
+so s
+ss
+-3
+so op p uIntensity:    I(t) u  [Wm ],      I I(t)22
+Where:      P   { 425 Nsm  in surface air}==  = = = 
+= 
+2
+os op 2 I 850  ~ 30  [N/m ]== =
+12 5 2
+os op    2 I 850 10  ~ 3 10   [N/m ]==  = 
+-8o
+3-11 u 710z    2 2 210  [m] = 0.2  (&lt; atom )
+710  =</text>
+        </slide>
+        <slide>
+          <slideno>7</slideno>
+          <text>L23-8REFLECTIONS AT BOUNDARIES
+Evanescent Waves ( i&gt; c):
+Normal Incidence, two gases:warm
+coolzx
+itplunch!
+0z
+Reflections from Solid Surface () nu=0 :()
+()
+()+
++ = +  = = =
+ =    = =  =
+= +  =   = jk z jk z jk z oo t
+ii i
+io i o i t ot
+tt o o o o op: pe p e pT e 1 T a t  z 0 p 0
+u: p p pT 1 T a t  z 0 u 0
+Solving:   T 2   where k P
+uRecall:
+Where: cos t=                   and    sin t=                  sin i&gt; 1
+So: ktcost= j(k cos)( k s i n )z (k sin)z tt t t t t
+tt o t opp p ==-j x - j -x- jee
+it it/ =1
+ci
+tcsinc
+2
+t 1s i n</text>
+        </slide>
+        <slide>
+          <slideno>2</slideno>
+          <text>L23-3()()2pt , r p t k r  [ N m ]=  Differential Equations:
+Acoustic Wave Equation:
+Solution:ACOUSTIC EQUATIONS
+3- 2 2
+oup     [Nm ] [kg m s ]t  =  Newtons Law (f = ma):
+Conservation of Mass:
+"Acoustic Wave Equation" p   
+2ndspatial derivative = 2ndderivative in time22 o
+2opp0Pt = 1
+op1u    [s ]Pt</text>
+        </slide>
+        <slide>
+          <slideno>3</slideno>
+          <text>L23-4Example: assume p(t,r) = cos( t-kz):
+()o
+oou1 k p     u z p dt z cos t kzt=    =   =    
+Acoustic Impedance of Gas:
+(s425 Nsm-3[] for air 20C)Substituting solution into wave equation
+Acoustic Dispersion Relation:UNIFORM PLANE WAVES
+Velocity of Sound:
+Velocity of Sound in Liquids and Solids:Phase velocity:
+Group velocity:
+cs= (K/o)0.51,500 ms-1in water, 1,500  13,000 in solids
+Bulk moduluss-1
+o
+oskPc= =
+o
+so oPk= =
+== =
+ = == o
+ps
+o
+1
+o
+gs
+oPvck
+P kvcExample:
+Air at 0oC,  Surface at Po
+cs330 m/s
+(G = 1.4, o= 1.29 kg/m3
+Po= 1.01105N/m2)</text>
+        </slide>
+        <slide>
+          <slideno>4</slideno>
+          <text>L23-5ACOUSTIC POWER AND ENERGY
+Poynting Theorem, differential form:
+  =  +  =   
+ =   o
+o
+223
+o
+op u1up u p p u u p  tP t
+11up u p   [W/m ]2t PTry:
+AVnda 2 2
+o AVop upu nda dvt2 2 P =  +   
+Acoustic intensity Kinetic   Potential [Watts]-1 3- 2 2
+o
+o
+-2 2 1p u1Recall:    p     [Nm ] [kg m s ]      u    [s ]tP t
+Note:      Wave intensity [Wm ] pu  [(Nm )(ms )]
+ =      
+=
+Integral form:
+Wk [Jm-3]     WpI[Wm-2]
+Plane Wave Intensity I = -2pu  n Wm :
+==  = = = 
+= 2 222o o -2
+so s
+ss
+-3
+so op u pIntensity:    I(t) u  [Wm ],                I I(t)22
+Where:      P   { 425 Nsm  in surface air}Acoustic Poynting 
+Theorem</text>
+        </slide>
+        <slide>
+          <slideno>1</slideno>
+          <text>L23-2ACOUSTIC EQUATIONS
+Constitutive Equation:
+Fractional changes in gas dens ity and pressure are proportional:
+3 Equations, 3 Unknowns: Reduce to 2 unknowns ()p,u"adiabatic exponent" = 5/3 monotomic gas, ~1.4 air, 1-2 elseo
+1
+o(d 1d P   )pPP= =  Mass Conservation Equation:
+()()()
+() = =
+ =
++   + +  =
+e
+e
+o1 1oo1
+nd
+1Recall:         J u   Conservation of charget
+Acoustics:                u     Conservation of masst
+Linearize:     U utt
+Drop 2  order term u
+Linearized Conservation of Mass:
+Linearized Force Equation (f = ma):0
+ 1
+out
+=  oupt</text>
+        </slide>
+        <slide>
+          <slideno>8</slideno>
+          <text>MIT OpenCourseWare 
+http://ocw.mit.edu 
+6.013 Electromagnetics and Applications 
+Spring 2009 
+For information about citing these materials or our Terms of Use, visit: http://ocw.mit.edu/terms .</text>
+        </slide>
+        <slide>
+          <slideno>0</slideno>
+          <text>L23-1ACOUSTIC WAVES IN GASES
+Basic Differences with EM Waves:
+Electromagnetic Waves Acoustic Waves
+E, H are vectors  S
+Linear physics U(velocity) // S, P(pressure) is scalarNon-linear physics, use perturbations
+Acoustic Non-linearities:
+Compression heats the gas; cooling by conduction and radiation
+(adiabatic assumptionno heat transfer)
+Compression and advection introduce position shifts in wave
+Wave velocity depends on pressure, varies along wave
+(loud sounds form shock waves) Pz
+shock fronts Acoustic Variables:
+[]
+[] ()2
+o
+1
+oo
+3
+o1Pressure: P Nm  P p
+Velocity: U ms  U u u set U 0 here
+Density:  kg m
+=+
+=+ = =
+=  +  use perturbations</text>
+        </slide>
+      </slides>
+      <videos/>
+    </lecture>
+    <lecture>
+      <lecture_title>TEmn rectangular waveguide, cavity resonators, perturbations</lecture_title>
+      <lecture_pdf_url>https://ocw.mit.edu/courses/6-013-electromagnetics-and-applications-spring-2009/resources/mit6_013s09_lec16/</lecture_pdf_url>
+      <lectureno>L16</lectureno>
+      <slides>
+        <slide>
+          <slideno>8</slideno>
+          <text>L16-9WAVEGUIDES AND SYSTEMS
+Plane wave interference satisfies boundary conditions
+kz= kosini
+vg= vosinikx= kocosi
+vp= vo/sini=oo ok
+z
+= o/siniNull lines
+ox= 2/kx= o/cosi
+zo
+i
+xkokoiz
+()  = =   =jk x jk x jk z jk z jk z zz z
+oxx
+xx oo Ee e 2 jyE E y E e   sink x   k ma
+=xma2x=0x=a
+ = =      
+=  yy
+jk z o z
+zx x xEE E1 Hz xjjx z
+2E   ( xks i n kx zj k c o s kx ) ejEkz
+m = 3Parallel-plate waveguide: TE case
+x xE
+E</text>
+        </slide>
+        <slide>
+          <slideno>3</slideno>
+          <text>L16-4RECTANGULAR WAVEGUIDE MODES
+TE11
+1020
+1101
+zk=  TE10TE01TE20
+slope =vp=/kzslope =vg=d/dkz
+kzDispersion Relations()()()22 2
+zmnkca b = mn TE(M):a b&lt;
+TM11x
+TE11
+zxy
+E HH
+ab
+yz
+baE
+ yTM11zx
+zxy E
+EH
+H
+bb
+aa
+No TEoo,TMoo,
+TMmo,TMonTE10xy
+EE
+HH
+abx
+za
+y
+zb</text>
+        </slide>
+        <slide>
+          <slideno>9</slideno>
+          <text>MIT OpenCourseWare 
+http://ocw.mit.edu 
+6.013 Electromagnetics and Applications 
+Spring 2009 
+For information about citing these materials or our Terms of Use, visit: http://ocw.mit.edu/terms .</text>
+        </slide>
+        <slide>
+          <slideno>4</slideno>
+          <text>L16-5Modes and Dimensions:
+Cutoff Frequencies:TEm0modes: a = m x/2
+()=
+ == =jk zzm0 ox
+2
+22 2 o
+zo x o 2 Ey E 2 j s i n k x  e
+mm ck k k   ( )   0  if   = aa c
+m4
+3
+2
+1
+0TE20TM20
+fTE10PropagationEvanescence
+a = 10/2  c/2a = f102c/2a = f20 a=  10
+c/2b = f01Want b    a/2  so that 
+f01f20= c/a     (f01= c/2b)
+Single propagating mode
+(if a  2b) [TE10]
+(Two modes would interfere, 
+producing nulls in frequency)m0 0nmc ncf    ;   f2a 2b==
+RECTANGULAR WAVEGUIDE DESIGN
+a xbE
+TEmnmodes: kx= m/a, ky = n /b  ()()=  =  2 22
+222 o
+zo x y 2mnkk k kab c</text>
+        </slide>
+        <slide>
+          <slideno>1</slideno>
+          <text>L16-2TE10WAVEGUIDE MODE
+Add Sidewalls to TE1Parallel Plate Waveguide TE10:
+Surface charge s
+snE= x
+z
+yE
+H--a
+bPower flow+
+Surface current
+s Jn H=sJ
+Hx
+y Sidewall slots that
+dont block currenta
+b+
+Antennas can be 
+coupled through 
+holes or slots; slots at  
+angles can  radiate</text>
+        </slide>
+        <slide>
+          <slideno>2</slideno>
+          <text>L16-3MODE PATTERNS - TE
+()=jkzz
+o Ey 2 j E s i n mxeaTE modes: ()()() = =
+22 2
+2
+zx
+mnmkkcc a
+    = 0 for 'cutoff frequency' 
+phase
+zvk=
+group co
+zdcv0   at mdk a =  =
+co z kj &lt;  =  Evanescentkz
+1,0= c/a2,0= 2c/a3,0= 3c/a
+0Slope = cSlope = vpSlope = vgTE1 mode:
+xE(t,x,z) H(t, x, z)
+y
+a=x/2S
+TE2mode:
+za=x S</text>
+        </slide>
+        <slide>
+          <slideno>0</slideno>
+          <text>L16-1WAVEGUIDES AND SYSTEMS
+Plane wave interference satisfies boundary conditions
+kz=kosini
+vg=vosinikx=kocosi
+vp=vo/sini=oo ok
+oo
+()  = =   =jk x jk x jk z jk z jk z zz z
+oxx
+xx oo Ee e 2 jyE E y E e   sink x   k ma
+=xma2x=0x=a
+ = =      
+=  yy
+jk z o z
+zx x xEE E1 Hz xjjx z
+2E   ( xks i n kx zj k c o s kx ) ejENull lines
+z
+m = 3Parallel-plate waveguide: TE case
+E
+Ez
+= o/sinix= 2/kx= o/cosi
+x xzix
+kokoikz
+y</text>
+        </slide>
+        <slide>
+          <slideno>6</slideno>
+          <text>L16-7CAVITY RESONATOR PERTURBATION
+Work = force distance = w
+Fe[N/m2] =sE/2 (attractive)
+= E2/2; &lt;Fe&gt; = E2/4 = &lt;We&gt;[J/m3]
+Fm[N/m2] =JsHo/2(repulsive)
+= H2/2; &lt;Fm&gt; = oH2/4 = &lt;Wm&gt;[J/m3]
+At resonance &lt;we&gt; = &lt;wm&gt; = wT/2
+wT= n hf, so wT=n hf
+f[ H z ]  = wT/nh = f (wT)/wT
+f [Hz] = f (wmwe)/wT
+Thus pushing in the wall where Wm
+dominates does work and raises
+fmnp; where Wedominates fmnpdropsE
+H
+&lt;fe&gt;
+&lt;We&gt;, &lt;Wm&gt; &lt;fe&gt;&lt;fm&gt;Cross-section</text>
+        </slide>
+        <slide>
+          <slideno>5</slideno>
+          <text>L16-6TEmnwaveguide modes:
+()()   ==  =   =  2 22
+y 222 o x
+zo x y 2mnam ,  bn     k k k k22 a b cCAVITY RESONATOR DESIGN
+ab
+d a bx
+yz
+TEmnpresonator modes:  a = m x/2,   b = ny/2,   d = pz/2  
+()()
+()() ()()    =   ==     =  
+   = + +  = + +   2 2 22
+mnp 222
+zo x y 2
+z
+22 22 22
+mnp mnppp 2m n kk k k    0da b d c
+pp c mn m c n c c  fabd 2 a 2 b 2 dDerivation of         
+resonant frequencies fmnp
+Longest side Shortest side</text>
+        </slide>
+        <slide>
+          <slideno>7</slideno>
+          <text>L16-8Example:Matches coupler
+Waveguide coupler
+Horn transition
+Horn aperture Matches transitionPhysics of Matching:
+Choose waveguide that propagates only one mode at f.
+Structural discontinuities cause re flections; tuning cancels them.WAVEGUIDE SYSTEMS
+Given some reflecting obstacle:
+Cancel reactance       with
+[= f(freq.)] near obstacle
+Cancel reflection with offset
+[magnitude and phase ( )]</text>
+        </slide>
+      </slides>
+      <videos/>
+    </lecture>
+    <lecture>
+      <lecture_title>Optical fibers, applications, dielectric slab waveguide, fiber design</lecture_title>
+      <lecture_pdf_url>https://ocw.mit.edu/courses/6-013-electromagnetics-and-applications-spring-2009/resources/mit6_013s09_lec21/</lecture_pdf_url>
+      <lectureno>L21</lectureno>
+      <slides>
+        <slide>
+          <slideno>3</slideno>
+          <text>L21-4Optical Fiber  Simple Picture:
+ Total internal reflection in the higher glass core traps light
+ Small very shallow reflection angles.
+ Only certain angles are allowed: waves must interfere constructively     
+modes (characterized by Bessel functions)
+ Mode velocity = f( s, core size, mode)6 m125 mglass cladding 1
+glass core 2= 1+ 
+ / 0.02WAVES IN FIBERS
+evanescence
+E(r)</text>
+        </slide>
+        <slide>
+          <slideno>7</slideno>
+          <text>L21-8Fiber structure:FIBER WAVEGUIDE DESIGN
+Loss mechanisms:
+Rayleigh scattering from random density fluctuations
+Loss f4(scattering makes sky blue)
+Infrared absorption dominates for &gt; ~1.6 microns
+Minimum total attenuation 0.2 dB km-1
+110
+0.111 .8RayleighH2O
+~1.5 THzInfraredAttenuation (dB km-1)
+Typical: 10- m core in 125-m diameter glass, with 100- m-thick 
+plastic protective cladding (bundled in cables)
+Manufacturing: solid or hollow pr eform grown by vapor deposition 
+of SiO2and GeO2(using e.g. Si(Ge)Cl4+ O2= Si(Ge)O2+ 2Cl2)
+Architecture: various  single or multimode, polarization-selective
+Multimode core
+Clad
+Single-mode core
+Single polarization cladding</text>
+        </slide>
+        <slide>
+          <slideno>8</slideno>
+          <text>MIT OpenCourseWare 
+http://ocw.mit.edu 
+6.013 Electromagnetics and Applications 
+Spring 2009 
+For information about citing these materials or our Terms of Use, visit: http://ocw.mit.edu/terms .</text>
+        </slide>
+        <slide>
+          <slideno>4</slideno>
+          <text>L21-5OPTICAL WAVEGUIDES
+Dielectric slab waveguide example:
+Waves reflect if i&gt; c
+Glass/air c= sin-1(ng-1)   
+ng1.5   c41.8 
+Cladding/core c= ~sin-1(0.98)            
+c78.5x
+zSlab  &gt; o&gt; c
+TE or TM
+2d
+
+ 
++ = 
+
+=&gt;
+= &lt;z
+z
+zx jk z
+o
+x
+xj k z
+1
+xj k z
+1sink xEy E e x dcosk x
+E yE e   for  x d,
+ E yE e   for x dSlab waveguide fields:
+Boundary conditions for TEn:
+// y E  and E x  continuous yyEz E xx E z H t=      =  xTE1 TE2TE3Ey
++d
+-d0
+slabTEodd</text>
+        </slide>
+        <slide>
+          <slideno>0</slideno>
+          <text>L21-1
+Mars
+Earth
+Guided Wave Propagation:Free-Space Propagation:
+ Similar to radiowaves (but more absorption by clouds, haze)
+ Same expressions: antenna gain, effective area, power received 
+ Examples: TV controllers, inter-building and interplanetary links
+ Optical fibers guide waves
+ Rays inside fiber impact wall beyond critical angle
+total reflection and wave trapping
+ Little attenuation 0.5 &lt; &lt; 2 microns (can go &gt;100 km)OPTICAL COMMUNICATIONS
+Devices:
+ Detectors: phototubes, photod iodes, avalanche photodiodes
+ Sources: LEDs, laser diodes, fiber amplifiers, gas lasers
+ Modulators: amplitude and frequency, mixers, switches
+ Other: filters, spectral multiplexers and combinersglass fiberi&gt; cEvanescence outside</text>
+        </slide>
+        <slide>
+          <slideno>6</slideno>
+          <text>L21-7DIELECTRIC SLAB WAVEGUIDES TEodd n
+kxtan kxd=   (ratio of continuity equations)
+kx2+ 2= 2o(-o) (from dispersion equations)Field continuity equations:
+Transcendental equation, graphical solution:
+Increasing 
+kxd
+TE1
+modeTE3
+modeTE5
+mode/2 3 /2 5 /20x
+half-TE2
+mode
+= E(x)   =2
+oo
+x2
+x()tank d 1
+k</text>
+        </slide>
+        <slide>
+          <slideno>5</slideno>
+          <text>L21-6ELECTROMAGNETIC FIELD DISTRIBUTION
+Magnetic Field:
+()o HE j=    
+Inside the slab, |x| &lt; d:
+Outside, x &gt; d:()ozjk z xx
+oz x
+xxsink x cosk x HE x k z j k ecosk x    sink x     =       
+   
+() ()zxj k z
+1o z  HE x k z j e=    
+Matching Boundary Conditions at x = d:
+Dispersion relations: kx2+ kz2= 2o inside the slab, |x| &lt; d
+-2+ kz2= 2oooutside, |x| &gt; d   [let = o]
+() ()zz
+zzoojk z - d-jk z
+o x 1 1,3,5...
+jk z d jk z
+xo x 1Continuity of E :  E cosk d e E e  for TE
+Continuity of H: jk E sink d e j E e 
+ =
+  =    
+Therefore: kxtan kxd =  (ratio of continuity equations)
+kx2+ 2= 2o(-o) (from dispersion equations)2d Propagation
+EH zx
+TEodd</text>
+        </slide>
+        <slide>
+          <slideno>1</slideno>
+          <text>L21-2Fiber Communications Around the Globe
+ Fiber optics dominates long-distance telecommunications
+ In-line Erbium-Doped Fiber Amplifiers (EDFAs) make extremely 
+wideband transoceanic transmissi on possible without repeaters
+ Without fiber communications th ere would be no World Wide WebUNDERSEA OPTICAL FIBER CABLES
+2008: undersea about  1.5, some  are dark2.5 Gbp/s WDM
+560 Mbp/sOther regenerative
+2.5 Gbp/s 280 Mbp/sNon-repeated
+5.0 Gbp/s
+Tyco Submarine systems, 2000 Terrestrial systems  too numerous to depict
+Figure by MIT OpenCourseWare.</text>
+        </slide>
+        <slide>
+          <slideno>2</slideno>
+          <text>L21-3WAVELENGTH DIVISION MULTIPLEXING (WDM):
+ Multiple wavelengths combined onto one fiber
+ All wavelengths ampl ified simultaneously and 
+independently in each Optical Amplifier (OAMP)WDM MULTIPLEXED LINK
+2
+3
+n2
+3
+nOAMP OAMP OAMPMUX
+DEMUX~80 km of fiber 1 1
+passive multiplexing  e.g. prism</text>
+        </slide>
+      </slides>
+      <videos/>
+    </lecture>
+    <lecture>
+      <lecture_title>Boundary conditions, k&#8226;r, phase matching, non-uniform plane wave, Snell&#8217;s law</lecture_title>
+      <lecture_pdf_url>https://ocw.mit.edu/courses/6-013-electromagnetics-and-applications-spring-2009/resources/mit6_013s09_lec09/</lecture_pdf_url>
+      <lectureno>L9</lectureno>
+      <slides>
+        <slide>
+          <slideno>5</slideno>
+          <text>NON-UNIFORM PLANE WAVES (NUPW)
+Normal refraction: i&lt; c 
+Beyond the critical angle, evanescence: i 
+Glass Phase fronts 
+Air 
+t o &gt;o glass 
+z 
+Lines of 
+constant phase 
+t = 90 i &gt; c 
+&lt;o z 
+evanescent 
+region Lines of 
+constant 
+amplitude glass i x 
+ex kz  
+kt  
+kt  Lines of constant phase 
+L9-6</text>
+        </slide>
+        <slide>
+          <slideno>8</slideno>
+          <text>MIT OpenCourseWare 
+http://ocw.mit.edu 
+6.013 Electromagnetics and Applications 
+Spring 2009 
+For information about citing these materials or our Terms of Use, visit: http://ocw.mit.edu/terms .</text>
+        </slide>
+        <slide>
+          <slideno>7</slideno>
+          <text>L9-8 non-uniform plane wave 
+evanescent wave (  in direction of decay) 
+surface wave 
+inhomogeneous plane wave 
+   = kk 0 k 
+kEVANESCENT WAVES -- SUMMARY 
+Names: 
+Lossless medium: 
+( )   i j kjk rE,H e 
+   kk 0 Lossy medium: == 2 2 tx z t k j j k k 0 )t(S= Applications: 
+Optical fibers 
+Flat panel dis plays 
+Variable couplers 
+Global 
+communications Ionosphere 
+Earth</text>
+        </slide>
+        <slide>
+          <slideno>4</slideno>
+          <text>L9-5 ( )1 c t i sin n n  "critical angl e" = 
+ =  =   =  i o i c e.g., [ 2 ] [n 2] [ 45 ]  =  t i 
+i t sin n 
+sin n Therefore: t 90o sin t 1 as i c Glass, 
+2o z i r 
+t kt kr ki 
+kz oo k =  
+Air x 
+i r 
+t kt kr ki 
+, 
+t,t z c critical 
+angle 
+Glass 
+Air Let kt &gt; ki: x Let kt &lt; ki: 
+kt &lt; ki t &gt; i 
+Critical Angle c: kt &gt; ki t &lt; i kz kz 
+kz SNELLS LAW : ko sin i = kt sin t</text>
+        </slide>
+      </slides>
+      <videos/>
+    </lecture>
+    <lecture>
+      <lecture_title>Course philosophy, resonator perturbations and speech generation</lecture_title>
+      <lecture_pdf_url>https://ocw.mit.edu/courses/6-013-electromagnetics-and-applications-spring-2009/resources/mit6_013s09_lec24/</lecture_pdf_url>
+      <lectureno>L24</lectureno>
+      <slides>
+        <slide>
+          <slideno>3</slideno>
+          <text>L24-4ACOUSTIC RESONATORS
+AmnpResonances of a Box:
+Resonant Frequencies of the AmnpMode in a Box:()22
+jk x jk y jk zxyz
+okp0
+e.g.,  p p e+ =
+=
+f000 = 0  Hz (constant pressure)
+f001 = 340/2d 170 Hz for a one-meter closed pipe
+dz
+u
+zx
+b
+yy
+y
+xz2am( ) a2m
+n( ) b,    p( ) d22
+= =
+==
+2222 2 2 2
+xyz2xyzs2 222k kkk
+c()()() ==++= + +
+ == + +  =
+=+ +22
+2222
+mnp s x 222
+xyz
+mnp s111 2 bf ( ) c , where 2n
+p mnf  c ( ) ( ) ( )   [Hz]2a 2b 2d</text>
+        </slide>
+        <slide>
+          <slideno>2</slideno>
+          <text>L24-3ACOUSTIC ANTENNAS (2)
+Antenna Gain G( ,), Effective Area A( ,) [m2]:
+Antenna (Loudspeaker, Microphone) Configurations:Preceived = I(,) A(,) [W]
+null/2
+-+  
+G(,)Monopole
+Dipole
+Baffled 
+monopoleLense
+Parabolic dish
+Horn
+Array (end-fire        
+or broadside)r
+2
+tP( , )G( , )
+(P / 4 r ) =</text>
+        </slide>
+        <slide>
+          <slideno>0</slideno>
+          <text>L24-1ELECTROMAGNETICS
+AND APPLICATIONS
+Electromagnetics and Applications
+ Maxwells equations: statics, quasistatics, and wave phenomena
+ Applications: wireless, media, circuits, forces and generators, 
+computer speed, microwaves, ant ennas, photonics, acoustics, etc.
+Mathematical Methods
+ Partial differential and difference equations, phasors, vector calculus
+Problem Solving Techniques
+ Perturbation, boundary-value, and energy methods; duality
+Academic Review
+ Mechanics, quantum phenomena, devices, circuits, signals, linear
+systems
+Capstone SubjectProfessional Preparation
+Follow-on Subjects:
+Electromagnetic waves: 6. 632, Quasistatics: 6.641</text>
+        </slide>
+        <slide>
+          <slideno>4</slideno>
+          <text>L24-5RESONATOR MODAL DENSITY
+Modal Density in Rectangular Resonators:
+Example:Recall:
+Each cube has volume = cs3/8V
+where V = abd (volume of resonator)
+Number of modes in f 
+(Volume of shell)/(vol. of cell) 
+4f2f/[8(cs3/8V)] 
+4f2f V/cs3modes in  f
+Bathroom 3 33 meters
+lowest f100=cs/2a 340/6 57 Hz 
+Modal density at 500 Hz 450021 33/34032 modes/Hz
+How can we select just one mode  when we sing a single note?ncs/2bpcs/2d
+mcs/2af
+fmnpp=2
+m=2 3222
+mnp sp mnf  c ( ) ( ) ( )   [Hz]2a 2b 2d=+ +</text>
+        </slide>
+        <slide>
+          <slideno>8</slideno>
+          <text>MIT OpenCourseWare 
+http://ocw.mit.edu 
+6.013 Electromagnetics and Applications 
+Spring 2009 
+For information about citing these materials or our Terms of Use, visit: http://ocw.mit.edu/terms .</text>
+        </slide>
+        <slide>
+          <slideno>7</slideno>
+          <text>L24-8RESONANCE SHIFTS IN HUMAN VOICES
+d
+vocal chords
+Human Vocal Tract:
+Average force exerted by waves:
+Outward at maximum     (max wp)
+Inward at maximum        (max wu)
+(Bernoulli force)p
+u
+Resonator Total Energy wT= nhfo:
+Pressing inward at pmaxincreases wTand fo
+(Phonon number n = constant for slow changes)
+Recall:  pressure {N m-2] energy density [J m-3]
+Resonance Perturbations:
+wp&gt;&gt; wuat f3
+wu&gt;&gt; wpat f2
+wpwuat f1tf1f2f3
+0vowelspu
+T
+o
+os
+o(w w )f
+fw
+Pfc=
+Tongue position 
+determines vowel</text>
+        </slide>
+        <slide>
+          <slideno>6</slideno>
+          <text>L24-7HUMAN ACOUSTIC RESONATORS
+d
+vocal chordsHuman Vocal Tract:
+f1= cs/1= cs/4d
+= 340/(4 0.16)
+= 531 Hz
+Higher Resonances:
+f2= 3f1= 1594 Hz
+f3= 5f1= 2655 Hz
+Energy Densities at 
+Location  
+At f1:wpwu
+At f2:wu&gt;&gt; wp
+At f3:wp&lt;&lt; wup(t,z)
+u(t,z)
+z0
+ud
+p(t,z)u(t,z)
+p(t,z)u(t,z) f3
+z0z0 df2</text>
+        </slide>
+        <slide>
+          <slideno>5</slideno>
+          <text>L24-6EXCITATION OF RESONATORS
+TEM Resonators (with loss):
+I(t) =  Io cos ot
+V(,t) = Vocos(ot + ) sin(2/d)
+=  0 exactly at resonance
+Pin(t) IoVocos2(ot) sin(2/d)  [W]
+= 0 at voltage nulls
+Cannot excite TEMm modes by driving current in to voltage nulls!  (Or 
+by voltage sources in series at current nulls). Pin(t) = 0 in both cases.I(t)Vo
+V(z,t)Zo,c
+d
+Voltage null
+Acoustic Resonators:
+[]2 IW m p u n=
+Cannot excite acoustic modes with:
+velocity sources at pressure nulls (pk= 0), or
+pressure sources at velocity nulls (vk= 0)
+Bathroom Opera:
+Put u here
+Mouth velocity source
+Place mouth near a pressure maximum of desired mode</text>
+        </slide>
+        <slide>
+          <slideno>1</slideno>
+          <text>L24-2ACOUSTIC ANTENNAS
+Monopole Radiators:
+Wave equation: (2+ k2)p= 0*       (k = /cs)
+/= /= 0      (radial source) 
+Yields: d2p/dr2+ (2/r)dp /dr + k2p= 0
+Equivalent to: d2(rp)/dr2+ k2(rp) = 0
+General solution: rp ejkr
+Radiation outward: p (r) = (A/r)e-jkr
+Velocity field u:
+   = +  +      222
+22 2 2 211 1(r ) (sin )rrrr sin rs i nFar-Field: kr &gt;&gt; 1  r &gt;&gt; /2):
+Near-Field Radiation:p(r) = (A/r)e-jkru(r) = (A/r s)e-jkr= p(r)/s
+p(r) = (A/r)e-jkru(r) = (-jA/r2ks)e-jkr= -jp(r)/or
+Velocity mikes close to the lips boost lows; need compensation
+*3- 2 2
+oup     [Nm ] [kg m s ]t  =  
+pj u= Since                      therefore:Velocity 
+microphone = = +   jkr
+osp A1 u(r) r 1 ejr j k r</text>
+        </slide>
+      </slides>
+      <videos/>
+    </lecture>
+    <lecture>
+      <lecture_title>Lasers</lecture_title>
+      <lecture_pdf_url>https://ocw.mit.edu/courses/6-013-electromagnetics-and-applications-spring-2009/resources/mit6_013s09_lec22/</lecture_pdf_url>
+      <lectureno>L22</lectureno>
+      <slides>
+        <slide>
+          <slideno>6</slideno>
+          <text>L22-7Resonances
+108Hz (100 MHz) for 1-meter fiber;
+50 GHz line spacing for 0.5-mm diodesLASER RESONANCES
+Oscillator Resonant Frequencies f:
+Laser Output Spectrum:Cavity
+resonancesLaser     
+line shape, 
+width = f
+Line narrowingIf every atom can amplify at all frequencies, then 
+the strongest round-trip gain wins line narrowing   
+(homogeneous line broadening)
+If atoms can amplify only a portion of the band, 
+then all lines over threshold can yield output       
+(inhomogeneous line broadening)m
+mm
+i+1 imL     (mirrors  short circuits)2
+2L cm,  f   (N = refractive index)m2 L N
+cff2LN=
+= =
+=</text>
+        </slide>
+        <slide>
+          <slideno>7</slideno>
+          <text>L22-8EXAMPLES OF LASERS
+Electrically Pumped Solid-State Lasers:
+Forward-biased GaAs p-n junction  
+injects carriers into conduction band
+Compact (grain of sand)
+~50 percent efficiency
+&gt;100 W/cm2for arrays
+1 mW/micron2for diodes
+1-1000 mW typical
+Astrophysical Masers:
+Stellar Pumping: UV-IR pumped: H2O, OH, CO, etc.
+Interstellar collisions: OH, etc.
+holesp-type
+EF
+n-typeelectronsEActive region
+zEF
+Mirrors at both endsValence bandConduction 
+band+
+++
++-
+--
+-
+Chemical lasers:
+Weapons (high energy, fast)star</text>
+        </slide>
+        <slide>
+          <slideno>0</slideno>
+          <text>L22-1LASERS
+Representative applications:
+Amplifiers: Broad-band communications (avoid down-conversion)
+Oscillators: Frequency/distance reference, local oscillators, 
+illuminators, transmitters, CD/DVD players, sensors
+Blasting: Laser machining, labelin g, weapons, laser fusion (pellet 
+compression).  Peak &gt; 1015W, average &gt; 1kw; high 
+intensity because I |E |ii2
+Energy States:
++ionization, 
+free 
+electron
+ground state0 e.v
+-13.6 e.v.
+1420 MHzHydrogen atom
++
++-H
+HOStates:
+electronic (visible, UV)
+vibrational (visible)
+bending (IR)rotational (microwave)Water vapor H
+2O
+Chromium atoms in lattice (e.g. ruby), Erbium atoms in glass</text>
+        </slide>
+        <slide>
+          <slideno>1</slideno>
+          <text>L22-2Rate Equation:
+Then:          dn2/dt = -A n2-B(n2n1)[m-1s-1]   (collisionless system)Assume:     Two-level system, E2&gt; E1, and ni= atoms m-1in state i
+Spontaneous emission Induced emission
+Stimulated emission and absorption:
+Photon flux density F:
+B coefficient: Bij=FijFgij(f) Aij/3
+Line shape gij(f):                                         (Lorentzian)ij
+= g (f)df 1
+gij(f)
+f
+fofSpontaneous emission, states i to j:
+Aij= 3|Dij|2 (2/3hc3) [s-1]      (Decay time A= A-1)
+Dij[C m] = quantum dipole moment (electric or magnetic)
+Note: A-3very brief visible s, long microwave sn2
+n1An2
+n1BSTIMULATED EMISSION AND ABSORPTION
+2
+-2 -1
+oE1F   [photons m s ]2h f=
+ij 2
+o
+221g( f ) f (f f )14
+(f )= +</text>
+        </slide>
+        <slide>
+          <slideno>8</slideno>
+          <text>MIT OpenCourseWare 
+http://ocw.mit.edu 
+6.013 Electromagnetics and Applications 
+Spring 2009 
+For information about citing these materials or our Terms of Use, visit: http://ocw.mit.edu/terms .</text>
+        </slide>
+        <slide>
+          <slideno>4</slideno>
+          <text>L22-5PUMPING OF LASERS
+Three-Level Lasers:
+Pumping the 1-3 transition yields n1n3
+Large A32populates L2 so n2&gt;&gt; n1n30
+More levels can utilize transitions with larger As
+Large A23fills L2, and large A41empties L4Two-Level Lasers:
+Radiation pumping alone never yields n2&gt; n1
+(some 2-level lasers spatially isolate n2group)
+fpump&gt;foPump2
+1Lasing?
+Pump3
+2
+1lasingLarge A32
+Pump
+lasing3
+2
+14A32
+A411 Laser Power Efficiency (Pout/Pin ):
+Intrinsic efficiency: i=fL/fp(P nhf [W]) &lt; 1
+B/A efficiency @2: B= B21/(A21+B21) &lt; 1
+A/A efficiency @3: A= A32/(A31+A32) &lt; 1
+Total efficiency:  = iBA
+Pump photons s-1B &gt;&gt; A 3, so x-ray  
+lasers need pump power hfBhfA4 dn2/dt = - An2-B(n2n1)Pump
+A31
+A213
+2
+1A32
+B =F 21</text>
+        </slide>
+        <slide>
+          <slideno>3</slideno>
+          <text>L22-4
+Amplification Process:
+input amplification, exponential growth
+[Each    is a separate atom or molecule;
+need n2 &gt; n1for amplification]amplification 
+linear growthPump (repopulates level 2)
+n2replacement-rate limited 
+amplificationOptical 
+fiber
+2
+1hf hf 2hf 4hf  6hf BASIC LASER AMPLIFIER PHYSICS
+Intensity-limited amplification
+Amplification frequency f [Hz]:
+E2E1= hf [J],  
+h = 6.625 10-34[Js] P(z) Pine(g-)zexponential 
+growth
+linear
+zP(z)
+(g is gain, is attenuation)</text>
+        </slide>
+        <slide>
+          <slideno>2</slideno>
+          <text>L22-3Level PopulationsKinetic Temperature Tk:
+Thermal equilibrium Boltzmann distribution:
+()ijEE k Ti
+jnen=Ei[J]
+State energy
+n2 e-E/kT
+n1ninjif Trad, n2&gt; n1if Trad&lt; 0T = kinetic temperature   
+if collisions dominate
+T = radiation temperature if 
+radiation dominates fijElectron energy E in semiconductor
+E = hf
+kConduction band
+Valence band
+Energy band curvature 
+broadens the linewidthLinewidth Broadening Mechanisms:ENERGY LEVEL POPULATION AND WIDTH
+Collisions phase changes,         
+Fourier transform ff
+fofIsolated 
+atoms</text>
+        </slide>
+        <slide>
+          <slideno>5</slideno>
+          <text>L22-6LASER OSCILLATORS
+Laser Oscillation:
+L
+T AmplifierP+
+Lossy: Round-trip gain must exceed round-trip loss (threshold 
+condition); gain pump power Pp, so need Pp&gt;Pthresh
+Mirrors: Exit mirror has power transmission coefficient T &gt; 0
+At threshold, Gain Loss, so: P+(1  T)e2(g-)LP+
+round-trip gain = e2(g-)L1/(1  T) for oscillation
+Pout
+Pthresh
+PpumpQ-switching:    Set mirror reflectivity low 
+round-trip gain &lt; threshold. 
+When laser is fully pumped, 
+increase mirror reflectivity over threshold, yielding very large Q-switched pulseLossless: With perfect mirrors at 
+both ends a lossless
+amplifier must oscillate and saturate</text>
+        </slide>
+      </slides>
+      <videos/>
+    </lecture>
+    <lecture>
+      <lecture_title>Aperture antennas, diffraction</lecture_title>
+      <lecture_pdf_url>https://ocw.mit.edu/courses/6-013-electromagnetics-and-applications-spring-2009/resources/mit6_013s09_lec20/</lecture_pdf_url>
+      <lectureno>L20</lectureno>
+      <slides>
+        <slide>
+          <slideno>2</slideno>
+          <text>L20-3FAR-FIELD RADIATION
+Assume UPW in aperture:
+j-jkr
+E(,) =  -    sin E( )pqAozx , z e d x  d zff r
++jkr jkr r
+eeijkroq
+Fourier relationship:Close to the y axis
+S(f ) ==s(t)ej2f tt      s( ) S(f )e+j 2ft d t  dfjjkr 2
+E ( ,  o +j (x +z )xzffx z)   e E (x,z)e   dx dzrozAz
+xyaperture A
+Lz
+Lxz
+xJsE Erpq
+Hrp
+qz
+q
+y0rq r
+rriqrorpq
+Fraunhofer
+approximation
+(else, Fresnel)
+~Fourier (angle space)
+(frequency time)</text>
+        </slide>
+        <slide>
+          <slideno>7</slideno>
+          <text>r1Negative 
+contribution
+Positive contribution Fresnel zoner0r = r0 + /2
+r = r0 + Cell 
+phoneIncident 
+UPW</text>
+        </slide>
+        <slide>
+          <slideno>5</slideno>
+          <text>L20-6EXAMPLE: SLIT DIFFRACTION
+Pair of rectangular slots:
+Uniform illumination
+*=Spatial 
+domain
+Fourier 
+transformsL D
+=/D
+Angular 
+domain
+0/L(x,z) (x,z-D)
+z=0Dz</text>
+        </slide>
+        <slide>
+          <slideno>6</slideno>
+          <text>L20-7Tapered illumination reduces
+sidelobes,broadens beamwidth
+Parabolic 
+reflector
+Fourier
+G()E(z)DIFFRACTION
+Aperture tapering:
+z
+Fresnel zone plate:E ff   (j/2 r) (1+cos ) wr
+AE (x,z)e-jkpq
+oz  dx dz
+r = (r2
+1+ r2
+o)0.5=ro+ /2
+ror1
+Fresnel
+zoneblocked for
+Fresnel zone plate
+r = ro+ receiver
+transparent ringsBlocks rings of negative phase, 
+maximizing Huygens integral
+Aperture radius = r1maximizes 
+received signal.  Additional 
+transparent rings increase it further, yielding lense behavior
+Adjacent rings cancel if 1</text>
+        </slide>
+        <slide>
+          <slideno>4</slideno>
+          <text>L20-5RECTANGULAR APERTURE (2)
+Antenna Gain G( x,z):
+*
+A= aperture efficiency Ae/A 0.65 typically
+(non-uniform aperture amplitude and/or phase Ae&lt; A)
+Huygens approximation:
+*True for any uniformly illuminated apertureE ff   (j/2 r) (1+cos ) wr
+AE (x,z)e-jkpq
+oz  dx dzPt[W] GoG(x,z)
+I(x,z,r) [W m-2] A [m2]
+I(G(xz, ) =xz, ,r )
+(Pt/ 4r2)
+|E |2
+Ptx=Aoz  [W]    (A=L L2z)
+o
+|E2
+ff| 22 11 22 2 xL LI(xz, ,r) = [W/m ] ( = ) |Eo z| A sinc (x)sinc2(z z)22oo r 
+G(xz, ) = A(4 /22)sinc (  xLx/)sinc2( zLz/)
+42
+G=ooA =A A =2 eG    4sin   [ 1 as 0]</text>
+        </slide>
+        <slide>
+          <slideno>8</slideno>
+          <text>MIT OpenCourseWare 
+http://ocw.mit.edu 
+6.013 Electromagnetics and Applications 
+Spring 2009 
+For information about citing these materials or our Terms of Use, visit: http://ocw.mit.edu/terms .</text>
+        </slide>
+        <slide>
+          <slideno>0</slideno>
+          <text>L20-1APERTURE ANTENNAS
+Dense phased arrays ~apertures:
+Pairs of radiators cancel (e.g., a,b)
+Sum of pairs therefore = 0
+First null at  = ~/D
+Aperture antennas:
+Derivation of far-field aperture radiation:
+Parabolic 
+reflectorAperture 
+screenPhased array/2acancel
+bnullArray of 14 
+elementsD
+Find surface current Jsthat could produce the same aperture fields
+Find the far fields radiated by an infinitesimal element of Js
+Integrate the contributions  from the entire aperture
+Simplify the expressions by using small-angle approximationsNote the Fourier relationship between aperture and far fieldsz</text>
+        </slide>
+        <slide>
+          <slideno>1</slideno>
+          <text>L20-2APERTURE ANTENNAS
+Assume UPW in aperture:
+-jky Eo-jkyE++ = z Eoe    H  = x eo
++jky Eo+jkyE-- = z Eoe    H  = -x eo
+Satisfies E//continuous at y = 0
+Equivalent surface current:
+Js+ = y  [H(y=0 ) - H(y=0-)]
+    = y  x[Eoo/  + Eoo/]
+Jso ]= -z 2E /  [A m-1
+o
+z I  dz = Jsdx dz  (Hertzian dipole radiator)
+Radiated far fields:
+j -jkr
+E(,) =  o sin  J (x,z) epqffAzsdx dz2r
+j-jkr
+             = -  sin  E (x,z) epqA ozdx dzrz
+xyaperture A
+Lz
+Lxz
+xJsEErpq
+Hrp
+q</text>
+        </slide>
+      </slides>
+      <videos/>
+    </lecture>
+    <lecture>
+      <lecture_title>Receiving antennas: VTh in dipoles and loops; d&lt;\&lt;&#955;/2&#960;, G = 4&#960;A/&#955;2</lecture_title>
+      <lecture_pdf_url>https://ocw.mit.edu/courses/6-013-electromagnetics-and-applications-spring-2009/resources/mit6_013s09_lec19/</lecture_pdf_url>
+      <lectureno>L19</lectureno>
+      <slides>
+        <slide>
+          <slideno>6</slideno>
+          <text>L19-7NON-RECIPROCAL DEVICES
+Reciprocity:
+Non-reciprocal Devices:
+Non-reciprocal Antennas:22 tZ=   if  = t12 Z21  ,  =   everywhere.
+Exceptions: magnetized plasmas, 
+magnetized ferrites
+4-Port Circulators
+2 and 3-port circulatorsIsolatorswaveguides
+signal flow
+ferrite pill insideBias H
+Receiver
+Zo</text>
+        </slide>
+        <slide>
+          <slideno>7</slideno>
+          <text>MIRROR IMAGES
+L19-8
+Mirror
+Images:
+E must be to mirror
+H must be parallel
++
++Sources
+Image 
+charges
+and 
+currents-
+= 
+-J
+JE
+- Image 
+currentSource Hcurrent
+= 
+Source
+ImageFields above mirror equal
+Fields with image sources
+Examples: Path at normal incidence is /2 longer, but 
+adds in phase due to mirrors phase reversal
+Image
+Source/2
+/4 = z= 
+Normal gain has nulls Antenna patternat z = 0, /2, , etc.
+Antenna height above 
+ground matters!</text>
+        </slide>
+        <slide>
+          <slideno>8</slideno>
+          <text>MIT OpenCourseWare 
+http://ocw.mit.edu 
+6.013 Electromagnetics and Applications 
+Spring 2009 
+For information about citing these materials or our Terms of Use, visit: http://ocw.mit.edu/terms .</text>
+        </slide>
+        <slide>
+          <slideno>1</slideno>
+          <text>L19-2SMALL LOOP ANTENNA
+Quasistatic Limit:
+(Faradays Law) Ej= B
+ vE ds  =  -j cA Bda  =  VTh
+Plane wave
+(= 90ohere)y
+E
+xzHArea A +-
+&lt;&lt; /2ds
+da
+jXI+
+-
+-+
+VThVRrOpen Circuit Voltage:
+Vj=    Th A NoH z  sin
+= angle of incidence relative to z axis
+Radiation Resistance:21 |VP(=2=Th|
+rec) |VTh|  [W]      R8Rr
+rr 8Pec
+1 2
+P(rec)=I( )A22
+e()  [ sin]  = o|H()|   G()24 3G() = sin22    [Ae() sin ;  G()d =4 ]2 4
+|jA Ns i n2
+ooH| 2 A N=Rr =
+13 2 38[o22
+o| H | ][ sin ]22 4 2
+ohms for N-turn coil</text>
+        </slide>
+        <slide>
+          <slideno>3</slideno>
+          <text>L19-4SHORT DIPOLE ANTENNA
+Quasistatic Limit: Equivalent charges 
+at infinity+   +   +   +   +   +   +   +   +   +
+----------Eincident
+I
+Equipotentials
+= constant-Eincdeff VTh--
++++
+---
+++
+VETh= incdeff=E incdeffs i ndeffE
+E
+inc
++deff</text>
+        </slide>
+        <slide>
+          <slideno>0</slideno>
+          <text>L19-1RECEIVING ANTENNAS
+Reciprocity:
+2
+A (,)  =  G ( ,)e 4
+Not yet proved here; sometimes untrue (when?)
+Approach:
+Study small simple antennas; d &lt;&lt;  quasistatics
+Seek VThin equivalent circuit = open-circuit voltage
+Examples:  small loop antenna and short dipole
+jXI
++
+--V+ThVRr+RdI
++antenna
+-V Incoming 
+wave</text>
+        </slide>
+      </slides>
+      <videos/>
+    </lecture>
+    <lecture>
+      <lecture_title>Transients: Thevenin equivalents; L, C, diode loads; initial conditions; lossy TEM</lecture_title>
+      <lecture_pdf_url>https://ocw.mit.edu/courses/6-013-electromagnetics-and-applications-spring-2009/resources/mit6_013s09_lec12/</lecture_pdf_url>
+      <lectureno>L12</lectureno>
+      <slides>
+        <slide>
+          <slideno>10</slideno>
+          <text>L12-11Equivalent Circuit:
+L [Hy m-1], C [F m-1], 
+R[m-1], G[S m-1]
+Equations for z 0:i(z)
+v(t,z)
+zLz Lz
+CzC zRz Rz
+Gz Gz
+LOSSY TRANSMISSION LINES
+V(z) = V+e-jkz  kz
+I(z) = YoV+e-jkz  kzfor forward wave:decay
+Propagation e-jkz: decay rate (e-kz) and phase velocity (vp) = f()
+(Exception:  distortionless line for which R/L = G/C)dV(z)(R j L)I (z)dz
+dI( z )(G j C)V(z)dz= +
+= ++
++=+  + 
+=+
+=  + + = 2
+jkz jkz2dV ( z )(R j L)(G j C)V(z)
+dz
+V(z) V e V e
+k( R j L ) ( G j C ) k ' j k "
+oY( G j C ) / ( R j L )=+  +</text>
+        </slide>
+        <slide>
+          <slideno>4</slideno>
+          <text>L12-5DIODE-TERMINATED TEM LINE
+Example -- Logic Circuit:
+00.5vi
+physical 
+diodeideal 
+diode
+vL(t) = v+(t,D) + v-(t,D)vs(t)
+D/c sec0v(t)
+tvTh(t)
+v+(t,D)
+vL(t)1
+0.5
+v-(t,z) 0v+(t  z/c)0.25
+z0.5v(z,t)
+Dv(z,t)
+Let vs(t) = 1-volt ramped stepVs(t)
+-+Zo
+Zo,c 0.5v
+D-+
+- +0.5 V+
+-Zo
++vL(t)-+
+vL(t)
+z
+23
+41
+56Th sDv= V ( t -)c</text>
+        </slide>
+        <slide>
+          <slideno>3</slideno>
+          <text>L12-4CAPACITIVELY TERMINATED TEM LINE
+Example: Capacitive Load
+VTh = 2v+(t,D)Zo+
+-C
+zvL(t)
++
+-VThvL(t),  = ZoC sec
+0.5v+(t,D)
+t
+v-(t,D) t =D/c01
+vL= v-+ v+at the load 
+v-(t,D) = vL(t,D)  v+(t,D)Zo,c CZo
+u(t)+
+-
+Dz0
+1/2Zo0.5
+D 0
+z0zv(t,z)
+i(t,z)
+Dt = 0+, short-circuit response
+t , open-circuit responseD=u ( t- )c
+o+ -zzi(z,t) = Y [v (t - ) - v (t + )]cc</text>
+        </slide>
+        <slide>
+          <slideno>7</slideno>
+          <text>L12-8LIGHTNING STRIKE EXAMPLE
+Zo,cLightning strikes the midpoint
+What happens?
+Dz+
+-
+Figure by MIT OpenCourseWare.</text>
+        </slide>
+        <slide>
+          <slideno>6</slideno>
+          <text>L12-7Arbitrary initial conditions:
+v+v,i
+0 Dv+zv-
+v-i(t=0)v,i
+0 Dv(t=0)z
+Zo,c
+DzPut switches anywhere
++
+-Arbitrary circuits:INITIAL CONDITIONS</text>
+        </slide>
+        <slide>
+          <slideno>1</slideno>
+          <text>L12-2TEM LINE THEVENIN EQUIVALENT 
+Example: Given Vs(t):
+Then v(t, z=0) = Zoi(t, z=0)   yields equivalent circuitVs+
+-i(t, z=0)
+Zo v(t, z=0)Rs
++
+-
+Assume v-= 0  (no other sources)
+Solution at terminals:
+Solution for all t,z:v+(t, z=0) = Vs(t)              (voltage divider equation)+o
+osZ
+ZR+o
+osZ
+ZR
+(forward propagating wave only) +=+o
+s
+osZ zv( t , z ) V ( t )  cZ R    
+o+-
++-Zzzv(z,t) = v (t - )+v (t + )cc
+1z zi(z,t) = [v (t - )- v (t + )cc</text>
+        </slide>
+        <slide>
+          <slideno>11</slideno>
+          <text>MIT OpenCourseWare 
+http://ocw.mit.edu 
+6.013 Electromagnetics and Applications 
+Spring 2009 
+For information about citing these materials or our Terms of Use, visit: http://ocw.mit.edu/terms .</text>
+        </slide>
+        <slide>
+          <slideno>8</slideno>
+          <text>L12-9LIGHTNING STRIKE EXAMPLE
+Revenge?
+,cZo -
+Dz+
+Figure by MIT OpenCourseWare.</text>
+        </slide>
+        <slide>
+          <slideno>0</slideno>
+          <text>L12-1TRANSIENT SIGNALS IN COMPUTERS
+Ideal World:
+Reality:
+ Voltages exhibit propagation delay, decay, reflections
+ Spurious transients can superimpo se to flip bits erroneously
+ RFI generated and picked up by wires can flip bits
+ Ground loops matter
+ Only 1s and 0s
+ Instantaneous links
+vs.
+good risky</text>
+        </slide>
+        <slide>
+          <slideno>5</slideno>
+          <text>L12-6v+INITIAL CONDITIONS
+Example  charged TEM line:
+v(z,t) = v+(z  ct) + v-(z + ct)
+i(z,t) =     [v+(z  ct) - v-(z + ct)]Zo,c
+DzCharged to V, t&lt;0t = 0
++
+-
+Initial voltage and currents:
+Subsequent voltages and currents:
+v+
+v-v(z, 0 &lt; t &lt; D/c)
+0 DV
+z= +1 = -1 v-
+v+v(z, D/c &lt; t &lt; 2D/c)
+0 DV
+z= +1 = -1 v-
+v-Lossless 
+system, 
+rattles 
+forever= +1
+v+v-v(z, t&lt;0)
+0 DV
+z= +1 
+at endso1
+Z
+v+(z,t) =    [v(z,t) + Zoi(z,t)]
+v-(z,t) =     [v(z,t) - Zoi(z,t)]1
+2
+1
+2
+i(t &lt; 0) = 0</text>
+        </slide>
+        <slide>
+          <slideno>9</slideno>
+          <text>L12-10LIGHTNING STRIKE EXAMPLE
+One possibility:
+Temporary short through ionized channel
+Zo,c
+Dz+
+-
+v+
+0z= -1
+v-v-v-v+ v+v(z,to)
+2cto</text>
+        </slide>
+        <slide>
+          <slideno>2</slideno>
+          <text>L12-3TEM LINE THEVENIN EQUIVALENT
+Voltages at an Open Circuit:
+i(t,D) = Yo[v+(t,D)  v-(t,D)] = 0 (open circuit)
+ v-(t,D) = v+(t,D)
+ v(t,D) = v+(t,D) + v-(t,D) = 2v+(t,D)
+Thevenin Equivalent for TEM source:
+vopen circuit (t) = 2v+(t) = VTh(t)VTh(t) = 2v+(t)+
+-+Zo
+-v(t,D)v+(t  z/c)
+zD+
+-v(t,D)
+0
+ExampleResistive Load:
+VTh= 2v+(t) R vL(t)
+DZo
+z+
+-+
+-At z = D:   v-(t) = vL(t)  v+(t)
+But: v(t) = 2v+(t)
+Thus: v-(t) = v+(t)            = v+(t) 
+Define: = reflection coefficient = v-/v+at load =
+(= 0 if R = Z0,   = -1 if R = 0,   and = +1 if R = ) oR
+RZ+
+o
+oRZ
+RZ
++
++n
+nR1
+R1</text>
+        </slide>
+      </slides>
+      <videos/>
+    </lecture>
+    <lecture>
+      <lecture_title>Device and line delays; TEM parallel-plate line, telegraphers&#8217; equation, Zo</lecture_title>
+      <lecture_pdf_url>https://ocw.mit.edu/courses/6-013-electromagnetics-and-applications-spring-2009/resources/mit6_013s09_lec11/</lecture_pdf_url>
+      <lectureno>L11</lectureno>
+      <slides>
+        <slide>
+          <slideno>4</slideno>
+          <text>L11-5 TELEGRAPHERS EQUATIONS 
+Equivalent Circuit: 
+L [Henries m-1], C [Farads m-1] -+v(t,z) d 
+y 
+x z 
+i(t,z) 
+  Ez H z 0  = = W 
+i(z) i(z+z) Lz 
+v(t,z) v(t,z+ z) 
+z Lz Lz 
+Cz Cz Cz 
+Difference Equations: 
+Limit as z 0: =  
+=  di(z) v(z+z) - v(z) L z dt 
+dv(z) i(z+z) - i(z) C z dt dv(z) di(z) Ldz dt 
+di(z) dv(z) Cdz dt = 
+= 
+2 2 
+2 2 dv dvLC 
+dz dt = Wave Equation: (TEM)</text>
+        </slide>
+        <slide>
+          <slideno>5</slideno>
+          <text>L11-6 SOLUTION: 
+TELEGRAPHERS EQUATIONS 
+Wave Equation: 
+Solution: 
+Substituting into Wave Equation: v(z,t) = f+(t  z/c) + f-(t + z/c) 
+f+ and f-are arbitrary functions 
+(1/c2) [f+ (t  z/c) + f-(t + z/c)] = LC [f+ (t  z/c) + f-(t + z/c)] 
+Therefore: c1 LC 1 = =  
+Current I(z,t): 
+Recall: = -C[f+ (t  z/c) + f-(t + z/c)] 
+Therefore: i(z,t) = cC [f+(t  z/c)  f-(t + z/c)] 
+Where: = = o cC C LC C L= Y  "Characteristic a dmittance" 
+Therefore: i(z,t) = Yo[f+(t  z/c)  f-(t + z/c)] Zo = 1/Yo = ohms Characteristic impedanceL/C 2 2 
+2 2 dv dvLC 
+dz dt = 
+di(z) dv(z) Cdz dt=</text>
+        </slide>
+        <slide>
+          <slideno>3</slideno>
+          <text>L11-4 TRANSMISSION LINE VOLTAGES 
+Voltages between plates: 
+2 
+1 2 1 Eds V(z)  =  =    = v z c Since H  = 0 E ds 0  at fi xed z, 
+V(z) is uniquely defined 
+Surface charge density s(z) [C m-2]: 
+(Boundary condition; from 
+) =s n E(z) (z) = D 
+( ) ( ) =  =  = 2 
++ + 1  v(t,z) E ds d E t - z/c  here, where E xE t -z c Integrate E,H to find v(t,z),i(t,z) 1 
+2 d = 
+V(z)-+ E 
+ds c 
+x y z 
+( ) ( ) =  = 
+ v 
+o 
+o o o + + c  i(t,z) H ds (W/ )E t - z/c , where H = yE t-z c 
+v(t,z) = Z i(t,z)   [if ther e is no back ward propagati ng wave] 
+Z = d/W  [ohm s]  "Characteristic impedance" 
+Note: v(z) violates KV L, and i(z) violates KCL</text>
+        </slide>
+        <slide>
+          <slideno>2</slideno>
+          <text>PARALLEL-PLATE TRANSMISSION LINE
+Boundary Conditions: 
+E// =H=0  at per fect conductor s 
+W = 
+z 
+E S=EH 
+x H 
+z Uniform Plane Wave Solution:
+x-polarized wave propagating in
++z direction in free space
+= t -z y
+ Ex E + ( c )
+)
+1 z= ) E + ( Hy( o t -c 
+H z 
+I(z) 
+I(z) C n Currents in Plates:
+vC   A J I(z) Hds da =
+ 
+ =
+I(z) = H(z)W, independent of path C 
+Surface Currents Js(A m-1):
+-1J (z) =n H(z)   [A m ] s W 
+L11-3</text>
+        </slide>
+        <slide>
+          <slideno>0</slideno>
+          <text>LIMITS TO COMPUTATION SPEED
+Devices: Emitter Gate Drain 
+Carrier transit and diffusion times 
+(f = ma, v &lt; c ) Field-effe ct ChargeRC /; RL, LC time constants transistors Carriers 
+Beyond scope of 6.013 (read Section 8.2) 
+Interconnect, short lines &lt;&lt; : 
+DD 
+Wire resistance R  D/r2 2r dCapac itance C = A/d  D2/d
+ = RC  D3/r2d  const. if D:r:d = const.
+R is high for polysilicon, C is high for t hin gaps D
+L/R and  = LC scale well with size and do not limit speed
+Interconnect, long lines &gt;~ /8: 
+Propagation delay: c = 1/  &lt; 3 108 [m s-1] ( might be ~2 o)
+Reflec tions at wire and device junctions, unless carefully des igned
+Resistive loss
+Radiation and cross-talk (3-GHz clocks imply 30-GHz harmonic s)
+L11-1</text>
+        </slide>
+        <slide>
+          <slideno>8</slideno>
+          <text>MIT OpenCourseWare 
+http://ocw.mit.edu 
+6.013 Electromagnetics and Applications 
+Spring 2009 
+For information about citing these materials or our Terms of Use, visit: http://ocw.mit.edu/terms .</text>
+        </slide>
+        <slide>
+          <slideno>6</slideno>
+          <text>ARBITRARY TEM LINES
+Can we estimate L and C? 
+s 
+s i	 E f(z) 
+L	 LC 1 d 
+A
+d
+C = capacitanc e/m = A 
+= 
+Zo = C = C where LC =  
+dC = nC for n parallel square incremental capacitors (C =  [Fm-1]) 
+C = C/m for m capacitors C in series mTherefore:
+C = nC /m = n /m [Farads/m] N cel ls
+Zo = 	LC =  = m ohms [o= /]; osingle cell = 377  
+C n/m  on 
+L11-7</text>
+        </slide>
+        <slide>
+          <slideno>1</slideno>
+          <text>WIRED INTERCONNECTIONS
+Transverse EM Transmission Lines: 
+TEM: Ez = Hz = 0 
+Parallel wires Coaxial cable 
+z 
+Parallel Stripline Arbitra ry cross-section 
+plates  f(z) 
+L11-2</text>
+        </slide>
+        <slide>
+          <slideno>7</slideno>
+          <text>TRANSMISSION LINE VOLTAGES
+Velocity c
+v(z,t) 
+vs(t) Zo ohms, c [m/s] + 
+-
+z0 
+Matching boundary conditions: 
+v(t) and I(t) are continuous at z = 0 
+v(z,t) = vs(t  z/c) 
+i(z,t) = Z1 vs(t  z/c) 
+o 
+L11-8</text>
+        </slide>
+      </slides>
+      <videos/>
+    </lecture>
+    <lecture>
+      <lecture_title>Review vector operators; Maxwell&#8217;s differential equations (t), E, H, uniform plane wave; sin (&#969;t)</lecture_title>
+      <lecture_pdf_url>https://ocw.mit.edu/courses/6-013-electromagnetics-and-applications-spring-2009/resources/mit6_013s09_lec03/</lecture_pdf_url>
+      <lectureno>L3</lectureno>
+      <slides>
+        <slide>
+          <slideno>3</slideno>
+          <text>L3-4EM Wave Equation:
+() ()
+() ()
+() ()Eliminate H :   E= o Ht
+2Use identity:   A=  A A
+22  EYields:   E E=    = oo Hto2t 0MAXWELLS EQUATIONS: VACUUM SOLUTION
+0
+212 EEM Wave Equation E  =oo 0
+2t
+Second derivative in space second derivative in time ,
+therefore solution is any f(r,t) with identical dependencies on r,tConstitutive
+Gausss Law    Relations
+Faradays Law: E =                       D =  D = oE
+0Amperes Law: H = J +                 B = 0          B = oH
+Laplacian Operator: ()2221 2 =  = ()+ + 222xyzBt
+D
+t</text>
+        </slide>
+        <slide>
+          <slideno>7</slideno>
+          <text>L3-8ELECTROMAGNETIC AND OTHER WAVES
+A wave is a fixed disturbance propagating through a medium
+Medium A B A energy B energy
+String stretch velocity potential kinetic
+Acoustic pressure velocity potential kinetic
+Ocean height velocity potential kinetic
+Electromagnetic HE magnetic electric0 z
+A,Benergy density
+znullB
+A
+0A,B
+wave velocity</text>
+        </slide>
+        <slide>
+          <slideno>6</slideno>
+          <text>L3-7UNIFORM PLANE WAVE: EM FIELDS
+EM Wave in z direction:
+() ( ) ( ) E z,t=yE+cos tkz  ,  H z,t = x()E( )ocos t kz
+x
+z
+y
+Electric energy density
+Magnetic energy density
+zEz(), 0Hz(, 0)
+Linearity implies superposition of n waves, all ,+</text>
+        </slide>
+        <slide>
+          <slideno>9</slideno>
+          <text>MIT OpenCourseWare 
+http://ocw.mit.edu 
+6.013 Electromagnetics and Applications 
+Spring 2009 
+For information about citing these materials or our Terms of Use, visit: http://ocw.mit.edu/terms .</text>
+        </slide>
+        <slide>
+          <slideno>4</slideno>
+          <text>L3-5WAVE EQUATION SOLUTION
+Many are possible Try Uniform Plane Wave (UPW), f(x,y)
+Example:      Try: E =   y Ey(z)  in22 E                   E  =oo 02t0
+222
+2E(= + +y ) E
+xyz222
+Yields:
+Trial solution:   Ey(z,t) = E+(t  z/c); E+(arg) = arb. function of (arg)
+Test solution:   c-2E+ (t  z/c) - oo E+(t  z/c) = 0 iff:
+c =            3108[m s-1] in vacuum (velocity of light)
+E+(t  z/c) propagation
+z
+z = t = 0 arg = 0 arg = 0 at t1= z1/cThe position   where arg = 0 
+moves at velocity c
+0z10
+22EEyy =22 oo 0zt
+1
+ooy</text>
+        </slide>
+        <slide>
+          <slideno>1</slideno>
+          <text>L3-2PHYSICAL SIGNIFICANCE OF  ,  
+Gausss Law, Differential Form: =D
+
+DGausss divergence theorem: (A=ii) d v ( A n ) d avsw
+(diD)v= (D n)da=  dvvwis vi Dis the divergence of the vector field D
+Stokess theorem: vEdiis= ()E n d acA
+Faradays Law, Differential Form:BE=t
+BvEdis= ()E n d a== nd a Ed sciA i iAtvcEis the curl of the vector field E
+E
+B</text>
+        </slide>
+        <slide>
+          <slideno>8</slideno>
+          <text>L3-9Observable Reality
+Lorentz Force Law: f= q ( E + v  oH )
+J(x,y,z)  [A/m2]
+(x,y,z) [C/m3]
+q
+E,H
+f [N] qSources
+ObserverMaxwells 
+Equations v
+The fields E,H and the displacement and flux densities D,B permit 
+division of electromagnetics into  the Maxwell and Lorentz equationsRole of Maxwells Equations and Fields</text>
+        </slide>
+        <slide>
+          <slideno>2</slideno>
+          <text>L3-3E
+BMAXWELLS EQUATIONS
+Differential Form:
+E Electric field [volts/meter, V m-1]
+H Magnetic field [amperes/meter, A m-1]
+B Magnetic flux density [Tesla, T]
+D Electric displacement [ampere sec/m2, A s m-2]
+J Electric current density [amperes/m2, A m-2]
+ Electric charge density [coulombs/m3, C m-3]B=E-t
+DHJ= +tD=
+=B0
+
+D
+0
+B
+H
+DJwD=ndax dv       SV
+DE=,  B=H
+0
+0wBnd a=0S
+vEd=sBnd aAct
+vHds=+JDnd a n d aAA ctIntegral Form:</text>
+        </slide>
+        <slide>
+          <slideno>0</slideno>
+          <text>L3-1VECTOR OPERATORS , , 
+Vector Cross Product:
+Del () Operator:
+Divergence of A:
+Curl of A:=xy+ + zxy zxy z
+AB==d e t AxyA Az| A | | B | s i n
+BBBxyz
+=xA() B+y()+yBzAzy AzxB AxBzz()AxByAyBxVector Dot Product: AB=+AxxB AyyB+AzB=z|A||B|cos 
+AAAyA=xz+ +xy zVector: 
+xy z
+Ad=e txyz
+AAAxyzAx=+Axyy A+zAz
+AB
+  Gradient of : = xy+ + zxy z</text>
+        </slide>
+        <slide>
+          <slideno>5</slideno>
+          <text>L3-600
+0UNIFORM PLANE WAVE IN Z-DIRECTION
+Example: Ey(z,t) = E+(t - z/c)  [V/m]
+E.G.: Ey(z,t)  =  E+cos[ (t  z/c)]  =  E+cos(t  kz),
+where k = /c =
+0ooFunc(arg) = Func*[(-c)(arg)] = Func*(z  ct)
+To find magnetic fields:
+Faradays Law:                            H = -(E)-1
+odt BE=t
+()xy z
+E=detxyz=xE+costkzz
+EExy Ez = -xkE+sin(t  kz)
+H =   xx(k/o)E+sin(t  kz) dt = - (E+/o)cos(t  kz) 
+k =                ,      o= oo oo/</text>
+        </slide>
+      </slides>
+      <videos/>
+    </lecture>
+    <lecture>
+      <lecture_title>Conservation of energy, power, G(&#952;,&#966;), Ae= G&#955;2 /4&#960;, Rr, VTh, RF links</lecture_title>
+      <lecture_pdf_url>https://ocw.mit.edu/courses/6-013-electromagnetics-and-applications-spring-2009/resources/mit6_013s09_lec17/</lecture_pdf_url>
+      <lectureno>L17</lectureno>
+      <slides>
+        <slide>
+          <slideno>8</slideno>
+          <text>L17-9EXAMPLE  INTERSTELLAR COMM.
+
+=      = 22 Rad
+Rad 200 4PP G (,)  rs i n d d    G (,) d 44rdsteradians
+BGoGoB= 4 Go= 4/B
+Bis the beam solid  angleBis antenna 
+beamwidth
+Best microwave antennas: B1 arc min = (1/60)o(1/57) radians 2-12rad
+Go= 4/B23/2-24227108(or 80 dB)
+Strongest transmitters ~ 106Watts
+Nearest stars ~1 light year = 3 107sec  3108m/s 1016 m
+ =  2 688 2
+15 ra d
+re c t r 23 2P 10  10  10  0.03P G G 10  [W] [J/s]4 4 r 10 10  10
+Data rate R Prec[J/s] / 10-20[J/bit] = 10-15/10-20= 105bits/sec</text>
+        </slide>
+        <slide>
+          <slideno>9</slideno>
+          <text>MIT OpenCourseWare 
+http://ocw.mit.edu 
+6.013 Electromagnetics and Applications 
+Spring 2009 
+For information about citing these materials or our Terms of Use, visit: http://ocw.mit.edu/terms .</text>
+        </slide>
+        <slide>
+          <slideno>3</slideno>
+          <text>L17-4ANTENNA GAIN G( ,)
+Intensity at receiver:
+I(,,r) = G(,) (PR/4r2 )   [Wm-2] Gain over Isotropic, G(, ):
+Intensity actually radiated  [Wm-2]
+Intensity if PRwere radiated isotropicallyG(,)  =  I(,,r)_   
+(PR/4r2)
+backlobessidelobesG(,)
+Isotropic gain</text>
+        </slide>
+        <slide>
+          <slideno>7</slideno>
+          <text>L17-8SUMMARY
+Wireless communications are ubiquitous
+M [bps] = Prec/Eb= IAe/Eb= PtGtGr(/4r)2/Eb = data rateAr= Gr(2/4) = Antenna effective area [m2]
+Antennas have Thevenin equivalent circuits, radiation resistanceBoost antenna gain using lens es, mirrors, or phasing
+Eb&gt; ~10-20[J] at the receiver    (see footnote 39 on p360)G(, ) = I(,,r) / (Pt/4r2) = Antenna gain over isotropic</text>
+        </slide>
+        <slide>
+          <slideno>6</slideno>
+          <text>L17-7CIRCUIT PROPERTIES OF ANTENNAS
+Thevenin voltage VThis induced by incoming waves
+Reactive elements are tuned outMaximum power extractable 
+from the antenna:When transmitting:
+When receiving:Equivalent circuit of antenna
+VThRr
++
+-i(t)
++ -v(t) jX Reactance
+Thevenin voltage sourceRadiation resistance
+Power radiated = PR
+PR= &lt;i2(t)&gt;Rr[W] 
+Prec= &lt;(VTh(t)/2)2&gt;/RrVThRr
++ -Rr</text>
+        </slide>
+        <slide>
+          <slideno>0</slideno>
+          <text>L17-1WIRELESS COMMUNICATIONS
+RANGE
+Arms
+Length
+&lt;100 m
+&lt;100 km
+Global
+CosmicACTIVE
+Pills, hearing aids, computer 
+peripherals
+Wireless phones, remote 
+controllers, computer links
+Radio, television,  cell phones, 
+UWB, 802.11
+Ham radio, communications 
+satellites, radar, lidar
+Radio &amp; optical interplanetary 
+communications, radar, lidarPASSIVE
+Faucets, CDs, 
+thermometers, 
+Cameras, doors
+Multispectral remote 
+sensing
+Weather satellites
+Radio &amp; optical 
+astronomy</text>
+        </slide>
+        <slide>
+          <slideno>5</slideno>
+          <text>L17-6I(,,r) = Gt(,) (PR/4r2 )     [ W/m2 ] 
+Power Received from a particular direction
+Antenna Effective Area and GainIntensity radiated in a particular direction
+Prec= I(,) A(,)   [W]
+A(,) = G(,) (2/4)[m2]
+Power Received from a particular direction
+Prec= PtGtGr(/4r)2[W]     reciprocityANTENNA EFFECTIVE AREA Ae(,)[m2]</text>
+        </slide>
+        <slide>
+          <slideno>1</slideno>
+          <text>L17-2COMMUNICATION REQUIRES ENERGY AND POWER
+Typical receivers need: Eb&gt; ~10-20Joules/bit
+Received power required: Prec= MbpsEb[Watts]
+(Mbpsis data rate, bits/sec)</text>
+        </slide>
+        <slide>
+          <slideno>2</slideno>
+          <text>L17-3Transmitted Intensity: I( ,,r) [W/m2]
+I(,,r)area =
+(r d)(r sin d)
+dsteradiansIsotropic:
+r
+xz
+RADIATED POWER
+For isotropic radiation: I(,,r) = PR/4r2[Wm-2]
+Total power radiated [W]
+Steradian : unit of solid angle
+d, d: units of radians.
+Spheres:   span 4 steradiansPR=              I(,, r) r2 sindd
+d(steradians)2
+00
+main beam
+backlobessidelobesAntenna pattern:
+I(,,r)</text>
+        </slide>
+        <slide>
+          <slideno>4</slideno>
+          <text>L17-5HOW TO INCREASE ANTENNA GAIN  G( ,)?
+Focus the energy
+Lenses
+Mirrors
+PhasingPhotographs illustr ating lenses, mirrors, and  
+phasing removed d ue to cop yright res trictions.</text>
+        </slide>
+      </slides>
+      <videos/>
+    </lecture>
+    <lecture>
+      <lecture_title>Media, boundary conditions</lecture_title>
+      <lecture_pdf_url>https://ocw.mit.edu/courses/6-013-electromagnetics-and-applications-spring-2009/resources/mit6_013s09_lec02/</lecture_pdf_url>
+      <lectureno>L2</lectureno>
+      <slides>
+        <slide>
+          <slideno>2</slideno>
+          <text>MAGNETIC MATERIALS 
+Basic  Equations: 
+wS da = BBn 0 
+B =oH in vacuum e
+B =H =o (H +M)
+M =Magnetization Vector
++ eB + 
++ e 
+e 
+= permeability
+H = 0 magnetic 
+domains 
+M 
+magnetic 
+domain atoms 
+domain 
+wall 
+L2-3</text>
+        </slide>
+        <slide>
+          <slideno>9</slideno>
+          <text>L2-10 SUMMARY: BOUNDARY CONDITIONS 
+General Boundary Conditions: 
+( ) 
+( )   =  
+  = 1 2 s 
+1 2 nD D 
+nB B 0 
+( ) 1 2 nE E 0   = 
+( ) 1 2 s nH H J   = s 11E,D 
+22E,D 11H,B 
+22H,B s 
+Js 
+2 2 2 D= B= E= 0 
+ =  
+ = 
+ = 
+ = 1 s 
+1 
+1 
+1 s nD 
+nB 0 
+nE 0 
+nH J B is parallel to perfect conductors 
+E is perpendicular to perfect conductors Inside Perfect Conductors:</text>
+        </slide>
+        <slide>
+          <slideno>7</slideno>
+          <text>L2-8 FIELDS PARALLEL TO BOUNDARIES 
+Using Faradays Law: c t   v AE ds B  nda =-
+Therefore: 
+( ) 1 2 nE E 0   = E1// 
+-E2// A  L 
+n 1E
+2Eada,n ds 
+Using Amperes Law: 
+v AH  ds (J + D/ t)da c = 
+( ) 1 2 s nH H J   = Therefore: ( )   =   i i1// 2 // dE ds E E L     B da 0dt Aw 
+C v 
+( )   s a J nL ( ) 1// 2 // H ds H H L J da      D da t   =  i i iAw cv Aw 
+ 0 E1// =E2// (Lim 0)</text>
+        </slide>
+        <slide>
+          <slideno>0</slideno>
+          <text>L2-1 MEDIA AND BOUNDARY CONDITIONS 
+Media: conductivity , permittivity , perm eability  
+Conductivity ( ): Media are the only tools we have  to create or sense EM fields 
+J (current dens ity, A/m2) = 
+n = #qs/m3, q = charge (Coulombs),        average veloc ity (m/s) =  nq v E 
+=v 
+ = = =   = emp qE q fJ v at t t , t ; t f(T )m m m  
+Temperature T0 300K Metal 
+Semic onductor Superconductor 
+Metals: + 
++ ++ 
+---
++ -Semiconductors: 
++ -P{escape}  e-W/kT 
+E 
+(t = time befo re collisions r eset v  0)</text>
+        </slide>
+        <slide>
+          <slideno>1</slideno>
+          <text>-
++
+L2-2 DIELECTRICS 
+Vacuum: 
+=  =  
+=   
+ w x f o S V 
+f D E D nda  dv 
+free charge densi ty 
+Dielectric 
+Materials: 
+= = + 
+ = 
+ =     
+   
+  w x 
+w xS V o 
+o f p S V 
+p D E E P 
+Enda ( dv  
+Pnda dv  )+ 
+Polarization Vector p is polarization (surface) 
+charge density 
+=P -
+-
+-
+-+ 
++ 
++ 
++ -
+-
+-
+-
+-P E 
+p Metal plates 
++ 
++ 
++ 
++ 
++v = 0 polarized 
+atoms 
+medium +-
++-+-
++-
++- +-
++- +-+ -E +q-nucleus electron 
+cloud 
+E d Atom</text>
+        </slide>
+        <slide>
+          <slideno>3</slideno>
+          <text>L2-4 SATURATION AND HYSTERISIS 
+H &gt; 0 H = 0 magnetic 
+domains 
+M 
+0 slope  slope o B 
+H 
+satura tion = 3 
+m 1B H W [J/m ] Magneti c ener gy dens ity 2 
+0 -Hc magnetic 
+coercive fo rce H B 
+Area = hysteris is 
+loss [J/m3] Residual flux 
+dens ity Br</text>
+        </slide>
+        <slide>
+          <slideno>6</slideno>
+          <text>L2-7 FIELDS PERPENDICULAR 
+TO BOUNDARIES 
+Using Gausss Law: ( )   S v D n da  dv = : w 
+( )     =  w 1 2 s S Dnda D D A A 
+surface charge density s surface S n A 1D
+2D
+Therefore: 
+( )   =  1 2 s nD D 
+( ) 1 2 nB B 0   =   =1 2 s D D   yields: 
+( )A 1 2 B nda B B A 0  yields:    =  = w  (Lim A  0, 2 &lt;&lt;A)</text>
+        </slide>
+        <slide>
+          <slideno>10</slideno>
+          <text>MIT OpenCourseWare 
+http://ocw.mit.edu 
+6.013 Electromagnetics and Applications 
+Spring 2009 
+For information about citing these materials or our Terms of Use, visit: http://ocw.mit.edu/terms .</text>
+        </slide>
+        <slide>
+          <slideno>4</slideno>
+          <text>MEDIA PARAMETERS 
+Conductivity  Dielectric constant Relative permeabilities[Siemens/m] (/) /o o 
+Paraffin ~10-15 Vacuum 1.0 Bismuth 0.99983 
+Glass 10-12 Wood (fir) 1.8-2.0 Silver 0.99998 
+Dry earth 10-4-10-5 Teflon, petroleum 2.1 Copper 0.999991 
+Distilled water 2x10-4 Vaseline 2.2 Water 0.999991 
+Sea water 3-5 Paper 2-3 Vacuum 1.000000 
+Iron 107 Polystyrene 2.6 Air 1.0000004 
+Copper 5.8x107 Sandy soil 2.6 Aluminum 1.00002 
+Silver 6.1x107 Fused quartz 3.8 Cobalt 250 
+Ice 4.15 Nickel 600 
+Pyrex glass 5.1 Mild steel 2000 
+Aluminum oxide 8.8 Iron 5000 
+Ethyl alcohol 24.5 Mu metal 100,000 
+Water 81 Supermalloy 1,000,000 
+Titanium dioxide 100 
+L2-5</text>
+        </slide>
+        <slide>
+          <slideno>5</slideno>
+          <text>L2-6 INTEGRAL MAXWELLS EQUATIONS 
+Graphical Equations: 
+ = 
+ = 
+ =   
+  
+ 
+ 
+=  +     
+ 
+  
+   w x 
+w 
+v 
+v S V 
+S 
+A c 
+A A c Dnda  dv 
+0 
+B t Bnda 
+Ed 
+J D t s nda 
+Hds nda nda 
+ 
+D 
+0 
+B 
+E 
+B 
+H 
+DJ Gauss 
+Gauss 
+Faraday 
+Ampere 
+= =  D E,  B H Constitu tive relations</text>
+        </slide>
+        <slide>
+          <slideno>8</slideno>
+          <text>L2-9 PERFECT CONDUCTORS 
+Electric Fields: 
+Magnetic Fields: 
+= =    =   i iv A c{If E 0 and B nda E ds}   { B t 0} t 
+Superconductors (Cooper pairs dont impact lattice): 
+because =  
+Cooper pairs of electrons disa ssociate and superconductivity 
+fails when the external B(T) is above a critical threshold B0   inside  {if  andE 0}  { } { since 
+}{Wm = H2/2 [J/m3] , and wm } 
+Therefore: E = 0 inside perfect conductors 
+= 0 (sinc e
+ ) 
+Therefore: H = 0 inside perfect conductors 
+(if = , and H(t=0) = 0) J E= H  
+= +    i i ?c A Hds (J D/ t) da 
+ =   iw dv E n da v s</text>
+        </slide>
+      </slides>
+      <videos/>
+    </lecture>
+  </lectures>
+</doc>

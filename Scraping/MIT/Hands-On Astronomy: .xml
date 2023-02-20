@@ -1,0 +1,2370 @@
+<doc>
+  <source>MIT</source>
+  <date>28/01/2023</date>
+  <course>
+    <course_url>https://ocw.mit.edu/courses/12-409-hands-on-astronomy-observing-stars-and-planets-spring-2002/</course_url>
+    <course_title>Hands-On Astronomy: Observing Stars and Planets</course_title>
+    <course_tags>
+      <list>Engineering </list>
+      <list>Science </list>
+      <list>Computer Science </list>
+    </course_tags>
+  </course>
+  <lectures>
+    <lecture>
+      <lecture_title>Course Information (PDF)</lecture_title>
+      <lecture_pdf_url>https://ocw.mit.edu/courses/12-409-hands-on-astronomy-observing-stars-and-planets-spring-2002/resources/handout1_sp2002/</lecture_pdf_url>
+      <lectureno>1</lectureno>
+      <slides>
+        <slide>
+          <slideno>1</slideno>
+          <text>NOTEBOOK INSPECTIONS :  We plan to collect your observing notebook for inspection at least
+three times.  Nominally, this will be the week of March 11, April 22, and May 13 ,  though these dates
+are subject to change if we get really uncooperative weather. I'll remind you the week before aninspection, so that you can plan to bring any imaging results you've accumulated and turn them in with
+your notebook.   Notebooks will be returned at the start of the next class.
+/square4 Please be certain to bring your notebook to ALL class sessions.
+/square4 Make sure to get signatures in your notebook from your instructor or TA when you pass a
+competency demonstration (e.g. being sufficiently capable at finding objects without assistance to beable to go on to use the GOTO feature on the LX200).
+/square4 To help decide whether it'll be clear enough to observe on any given class night, use on-line weather
+information, which is linked to the 12.409 Web page
+(http://web.mit.edu/12.409/www/12.409.html ):
+1.weather model guidance output (this is the information which the weather service guys
+interpret to get the forecast in English for the media)
+2.Satellite images
+3.NWS most recent forecast
+Other available sources for weather forecast information include
+1.finger weather@cirrus.mit.edu
+2.telnet um-weather.sprl.umich.edu 3000
+3.Accu-weather tape, 936-XXXX (any 4 digits work here)
+4.www.weather.com , the Weather Channel's website.
+I'll do my ding-dang best to put a note on the website like Definitely going out tonight or
+Definitely staying in tonight if the decision's sufficiently obvious that I can make the call by 3-
+4 PM or so.  Unless you see a current note indicating we're staying in, it may not be safe to
+assume we're staying in!  Typically, if it seems it's going to be clear enough that you'll be able to
+see somestars, we'll try observing.
+/square4 If it's cloudy and the forecast says clearing this evening it's prudent to bring your
+observing clothes anyway---we may just go for it and you don't want to be caught
+unprepared by surprise!
+/square4 Partly cloudyin a forecast can mean anything from completely clear through
+completely overcast; it seems to actually  mean The numerical weather models
+disagee so we don't know what to forecast so we'll just say `partly cloudy' and bedone with it. The actual sky conditions during the afternoon are often a good cue.
+/square4 For Wallace nights (as for all classes) we'll still meet in the classroom as a group. We then travel as a
+group to wherever the van is parked.  (This assumes of course that you get to class on-time.  If you'relate and haven't made arrangements with me in advance, all bets are off as to whether/where we've
+gone...)</text>
+        </slide>
+        <slide>
+          <slideno>0</slideno>
+          <text>Massachusetts Institute of Technology
+Department of Earth, Atmospheric, and Planetary Sciences
+12.409 Hands-On Astronomy, Spring 2002
+Handout 1  Week of February 11, 2002 Copyright ( c) 1999
+Created S. Slivan
+Revised A. Rivkin and J. Thomas-Osip
+12.409 Course Information
+/square4 MASTER PLAN - to give you a sense of what this class entails. Final plans for a specific class are
+dependent upon weather conditions, so the scheduling of items from this list will be determinedweek-by-week. Sometimes we're extremely fortunate, with each section  getting 5 to 7 clear nights
+during the term. Sometimes we're extremely UNfortunate, with only 2 or 1 (or less?) useful nights.
+o Organization.  Observing Notebook.  Finding North.
+We begin the term using the telescopes on-campus.
+o Setting up your LX200.  If clear --- free night to observe from MIT.
+o List of suggested objects.  Coordinates and time.  Basic object-finding.
+o Observe ``easy'' objects.  Selected exercises in class.
+o Finish ``easy'' objects.  Do some ``intermediates''.
+o Possibly arrange daytime session to try solar observing.
+o Finding charts.  Palomar Sky Survey.  Coordinate precession.
+o CCD setup and use for imaging
+o Optics.
+ The telescopes get moved out to Wallace later on in the term (conditions permitting), to give us darker
+sky conditions for harder, fainter objects.
+o More advanced CCD techniques including color imaging and image processing
+techniques
+o More rock, less talk.
+o Assorted videotapes for use on poor-weather nights, selected from: The Mechanical
+Universe: Kepler's 3 Laws , Navigating in Space , special relativity.  Ring of Truth by
+Philip Morrison: Mapping , Doubt . Spaceflight (American space program). The
+Astronomers: Where is the Rest of the Universe? , Prospecting for Planets . NOVA: The
+Doomsday Asteroid .</text>
+        </slide>
+      </slides>
+      <videos/>
+    </lecture>
+    <lecture>
+      <lecture_title>Can We Observe x Tonight? (PDF)</lecture_title>
+      <lecture_pdf_url>https://ocw.mit.edu/courses/12-409-hands-on-astronomy-observing-stars-and-planets-spring-2002/resources/handout4_sp2002/</lecture_pdf_url>
+      <lectureno>4</lectureno>
+      <slides>
+        <slide>
+          <slideno>2</slideno>
+          <text>31.1 Effects on apparent brightness
+1.Extinction :  Loss of light as it passes through the atmosphere.  Normal extinction on a
+clear night is about 0.2 mag. at the zenith and increases quickly as you start looking at
+lower altitudes.
+2.Telescope:    How much does it help us?  It collects an amount of light proportional to
+the AREA of the objective mirror, as shown in Figure 2.
+For dark ad apted pupil
+For 8 LX200 telescope
+How many magnitudes fainter should we be able to see (theoretically) with the LX200,
+under IDEAL conditions (clean and otherwise perfect optics, ...)?
+I
+IA
+Atelescope
+eye2
+1= (3)
+3.  Effect of distance  on apparent brightness is known as the inverse square law.  The
+changing brightness of Mars is due mostly due to its changing distance as it orbits theSun.  This also contributes to changes in brightness of Venus (along with phase, the
+amount of the disk that we see illuminated by the Sun).</text>
+        </slide>
+        <slide>
+          <slideno>0</slideno>
+          <text>1Massachusetts Institute of Technology
+Department of Earth, Atmospheric, and Planetary Sciences
+12.409 Observing Stars and Planets, Spring 2002
+Handout 4 week of February 11, 2002 Copyright 1999
+Created S. Slivan
+Revised A. Rivkin and J. Thomas-Osip
+Can We Observe x Tonight?
+This is an important question to be able to answer, this being an observing subject and all.
+The answer to this question is yes only if the answer to the following 4 questions is
+yes:
+1.Is the weather cooperating?2.Is x bright enough, given our observing equipment?
+3.Is the sky dark enough?4.Is x high enough above our horizon?
+This handout addresses the answering of questions 2, 3, and 4, and explains how to use
+information published in the Astronomical Almanac to decide whether to go for a specific
+object at any given time.
+As for question 1, that's a different  class... (12.310)
+Contents
+1 Brightness Scale ........................................................................................................... 2
+1.1 Effects on apparent brightness ............................................................................... 3
+2 Coordinate Systems ...................................................................................................... 4
+2.1 Terrestrial coordinates ........................................................................................... 4
+2.2 Celestial coordinates .............................................................................................. 5
+2.3 Observer-based coordinates ................................................................................... 6
+3 Time Scales .................................................................................................................. 6
+3.1 Solar times ............................................................................................................ 6
+3.2 Sidereal times ........................................................................................................ 6
+4 Sun/Moon Rise/Set tables ............................................................................................ 7
+5 Other useful items in the Astronomical Almanac .......................................................... 8</text>
+        </slide>
+        <slide>
+          <slideno>6</slideno>
+          <text>7GST = Greenwich Sidereal Time:   HA of vernal equinox for observer at Greenwich;
+corresponds to the RA of the objects transiting the meridian for an observer at
+Greenwich.
+LST = Local Sidereal Time:  HA of vernal equinox for local observer; corresponds to
+the RA of the objects transiting the meridian for an observer's particular longitude.
+Relations for sidereal timescales:
+LST GST sidereal time solar time
+sidereal days in year
+solar days in yearobs =+ = 
+==l ;   
+where    
+   DD 10027379
+10027379366 25
+365 25.
+..
+.(6)
+Another way to look at this relates sidereal time to observer based coordinates and
+celestial coordinates above:
+LST RA HA =+ (7)
+Note that a  sidereal clock runs  faster  than a solar clock by 1 day/year, which is about 4
+minutes/day.
+A table mapping 0h UT each day to its corresponding GST is given in the Astronomical
+Almanac , Section B, Universal and Sidereal Times.
+4 Sun/Moon Rise/Set tables
+In Section A of the Astronomical Almanac , you'll find tables which can be used to
+quickly determine times of
+ sunrise and sunset
+ moonrise and moon set
+ civil twilight (morning &amp; evening)
+ nautical twilight (beginning &amp; ending)
+ astronomical twilight (beginning &amp; ending)
+We can call the state when the sky is as dark as it's going to get astronomical darkness,
+so ending astronomical twilight becomes beginning astronomical darkness, and
+beginning astronomical twilight becomes
+ending astronomical darkness.
+For our purposes, and for now, well stop here.  In this day and age, it is unusual for an
+astronomer (amateur or professional) to determine the hour angle, altitude, or azimuth for
+a target object longhand.  Usually, observers use software like Voyager III , or online
+ephemerides for moving targets (the planets and asteroids), to determine when and</text>
+        </slide>
+        <slide>
+          <slideno>5</slideno>
+          <text>62.3 Observer-based coordinates
+altitude (Alt):   measured due up from horizon  0o
+azimuth (Az):  measured East from North point  0o. Note that this creates a left-
+handed  coordinate system!
+hour angle (HA):   lines of constant hour angle are identical to those of constant right
+ascension, but HA values are measured eastward and westward from the observer's
+meridian    00h 00m 00s.  HA's are conventionally specified in the range 12h to +12h:
+objects which have yet to transit your meridian have a negative HA, while objects already
+past transit have a positive HA.
+3 Time Scales
+3.1 Solar times
+Solar times are based on the period of the rotation of the Earth with respect to the Sun.
+UT = Universal Time:  mean solar time at Prime Meridian at Greenwich  (l  = 0o 00' 00''
+= 0h 00m 00).  This is by convention the time scale used when documenting astronomical
+observations.
+ZT = Zone Time:  (e.g. EST, EDT) mean solar time at the reference longitude  for
+whatever time zone you happen to be in.  The reference longitude for the eastern time
+zone is lEST = -75o (it passes roughly through Philadelphia), so
+UT  = EST  (-75o/(15o /hour)) = EST + 5 hours
+LMT = Local Mean Time:  mean solar time at  your particular longitude lObs.  Tables in
+the Astronomical Almanac for sunrise/set, moonrise/set, and the various flavors of
+twilight are given in LMT.
+Relations:
+UT ZT UT LMTzone obs =- - - ll ; (5)
+3.2 Sidereal times
+Sidereal times are based on the interval between successive meridian passages of the
+vernal equinox (a point in space defined as a point on the meridian of Greenwich at the
+time of the vernal equinox  the change from winter to spring in the northern
+hemisphere).</text>
+        </slide>
+        <slide>
+          <slideno>7</slideno>
+          <text>8whether an object is observable at a given time.  However, it can be done with a bit of
+spherical trig and some time
+5 Other useful items in the Astronomical Almanac
+You may not use the use the Astronomical Almanac to calculate the sunset time, or thealtitude of an object but you might find some other useful purposes for it.  For example,
+Section F contains information regarding the configuration of the satellites of the planets
+which would help you identify which moons of Jupiter (or another planet) you are seeing.
+Also located right at the beginning are dates for the various phases of the moons, dates
+for any lunar and solar eclipses for the year, and other astronomical planetary
+pheonomena.</text>
+        </slide>
+        <slide>
+          <slideno>3</slideno>
+          <text>4Here's how the change, in magnitudes, depends on distance ---  if an object with distance
+R away from an observer appears to be magnitude M, then from a different distance r the
+same object would appear to be magnitude m according to
+mM m
+Ir
+IR
+IR R r
+IR
+R
+r
+R
+r-=
+=-
+=- 
+
+
+=-
+
+
+=-D
+25
+25
+25
+522
+2
+2.log()
+()
+.log()
+()
+.log
+log(4)
+This last form of the equation is commonly known as the distance modulus.
+2 Coordinate Systems
+ 2.1 Terrestrial coordinates
+latitude ( ffff):  + north / - south of the equator (range:  -90&lt; f&lt;90)
+longitude ( llll):  +east / - west of the Prime Meridian at Greenwich, UK where:
+l = 0o 00' 00'' = 0h 00m 00s (range:  -180&lt; l&lt;180 although sometimes you might see
+0&lt; l&lt;360).
+[the ' and '' are ARC MINUTES and ARC SECONDS.]
+[the h, m and s are HOURS, MINUTES and SECONDS OF TIME.]
+This sign convention is known as east longitude, the currently-adopted standard for
+usage in astronomy.  (Watch out when using older references though, which may have
+used the opposite sign convention, west longitude).  The rest of this handout assumes
+use of east longitude.
+Examples of notation and useful coordinates:
+ MIT Campus:
+f = +42o 21' 38" = +42o.3606
+l = -71o 05' 36" = -71o.0933 = -4h.73956 = -4h 44m 22s.4
+for the LX200 which uses only positive longtitude in degrees:
+l=288 54 24 = 288.9067</text>
+        </slide>
+        <slide>
+          <slideno>1</slideno>
+          <text>21 Brightness Scale
+The magnitude  system refers to the numeric scale used by astronomers to quantify object
+brightness.  Its rather baroque character can be traced to its origins over 2000 years ago,
+when the Greek scholar Hipparchus first began visually classifying stars into six
+brightness categories, with the brightest stars called "stars of the first magnitude", slightly
+fainter ones "stars of the second magnitude", and so on.  When 19th century astronomers
+sat down to come up with some sort of mathematical expression corresponding to
+Hipparchus' original six magnitudes, it was discovered that the brightness of some of the
+stars he'd assigned magnitude 1 were actually too bright to be so classed based on the rest
+of his system; these brightest stars now carry magnitudes of 0 and -1.
+Oops.But, let's press on, shall we?
+Call the intensity  of light source n I
+n, measured in energy
+area time.  The difference in magnitude
+between objects with respective intensities  I1 and I2 is then defined as
+Dmm mI
+I=- -21 1 02
+125.log (1)
+This definition can be rearranged to show the admittedly non-intuitive relationship
+between the objects' intensities in terms of magnitudes:
+-= = = --04 1 0 102
+104 2
+12104. log ; ;..DDDmI
+II
+IIImm    (2)
+Happily, for most of our purposes here in the seminar we won't need to mess around with
+Equation 1 up there; a few tabulated values should prove sufficient:
+DDDDmI2/I1
+0 1.0
+1 2.5
+2 6.3
+2.5 10
+3 16
+4 40
+5 100Object Magnitude
+Sun -26.8
+Full Moon -13.6
+Venus (at brightest) -4.4
+Jupiter -2
+Sirius ( a Cma) -1.4
+Vega ( a Lyr) 0.0
+Uranus +6 (naked eye limit)
+quasar +13
+faintest object detected (Earth-based) ( _glow of
+cigar on Moon seen from Earth)+29</text>
+        </slide>
+        <slide>
+          <slideno>4</slideno>
+          <text>5 Wallace Observatory, in Westford, MA:
+f = +42o 36'.6  = +42o.610
+l = -71o 29'.1 = -71o.485 = -4h.7657 = -4h 45m 56s
+for the LX200 which uses only positive longtitude in degrees:
+l=288 30 54 = 288.515
+ 2.2 Celestial coordinates
+declination (Dec, dddd): + north / - south of the celestial equator
+right ascension (RA, aaaa):+ east of vernal equinox (First Point of Aries)
+Note that the celestial equator and vernal equinox are not fixed with respect to the stars
+over long time periods (by virtue of a slow phenomenon called precession of the
+equinoxes)  so celestial coordinates are referenced to the equator and equinox at some
+particular date and time, such as year 2000.0 or 1950.0.  In general, the RA and Dec of an
+object at a specific date and time t may also be given in apparent coordinates, which
+are referenced to the true equinox at that same particular date and time t.  Apparent
+coordinates are given for aiming properly-aligned telescopes with accurate and precise
+setting circles, while 2000 or 1950 coordinates are used for plotting objects on star atlases
+for use in star-hopping.
+Sample notation:  the bright star Vega ( a Lyr), referenced to equator and equinox of
+1986.5:
+Dec 1986.5 = d1986.5 = +38o 46' 14''
+RA 1986.5 = a1986.5 = 18h 36m 28.9s
+Note that for RA, 24h = 360o , so 1h of RA = 15o .
+This is the basis of converting time to degrees and vice-versa:
+18h 36m 28.9s   18.60803h    15 deg/hr  =  279.1204o   279o 07' 13''
+and clarifies the otherwise weird-looking expression
+cos(18h 36m 28.9s) = 0.1585</text>
+        </slide>
+      </slides>
+      <videos/>
+    </lecture>
+    <lecture>
+      <lecture_title>Observing Tips (PDF)</lecture_title>
+      <lecture_pdf_url>https://ocw.mit.edu/courses/12-409-hands-on-astronomy-observing-stars-and-planets-spring-2002/resources/handout6_sp2002/</lecture_pdf_url>
+      <lectureno>6</lectureno>
+      <slides>
+        <slide>
+          <slideno>2</slideno>
+          <text>3 12.409, Spring 2002
+Sky and Telescope, Feb. 1984, pp. 131-133</text>
+        </slide>
+        <slide>
+          <slideno>1</slideno>
+          <text>2 12.409, Spring 2002
+Star Hopping
+Star hopping is analogous to looking at a map and jotting down some directions to follow while youre driving but you
+also want to include some picture of landmarks so you know youre on the right track.  Sufficient planning before an
+evening of observing can greatly decrease your frustration level when searching for faint fuzzies .
+The following is an example of a well prepared set of directions to find NGC 2392 (a planetary nebula ~8 mag that
+would count as an intermediate object in the menu).  In order to proceed you will need a Star atlas (preferableNortons) and the atlas overlays from the Atlas Supplement notebooks.
+1. Find Castor and Pollux (bright stars in Gemini) in the Atlas.
+2. Center the finderscope overlay on Pollux (aka b Geminorum).
+3. Note the  triangle formed by Pollux, s Geminorum (to the northwest), and u Geminorum (near the southwest edge
+of the field).
+4. Move the overlay so it is now centered on u Geminorum (this corresponds to your first telescope movement).
+5. Note the two new pairs of stars (64, 65 and i Geminorum, 59) that have entered from the west of the field.
+6. Move the overlay so it is centered on i Geminorum (the fainter 59 just to the southwest will confirm you have the
+right star at the telescopeyou might need to check your eyepiece).
+7. Note 57 at the south edge of the field.
+8. Move the overlay so that it is centered on 57.
+9. Now the fairly bright star, d Geminorum, should be just out of the FOV to the south (in the same direction you
+moved from i Geminorum to57).
+10. Move the overlay to the south and then center on d Geminorum.
+11. Note the equilateral triangle formed by d Geminorum, and 56 and 63 (to its southeast).
+12. Note the two faint stars on either side of 63 (this will confirm you have 63 in your eyepiece at the telescope).
+13. Note the flat triangle that 61 and 63 form with our target NGC 2392.
+14. Center (or put it at the sweet spot if your finder is a bit mis-aligned) the finderscope on the position of NGC 2392
+in the triangle (you will not be able to see it in the finder).
+A word about directions:  Notice that in a star atlas, east is left of north (opposite to land maps).  If you need to
+convince yourself of this remember that RA increases to the east.  Next remember that north is up on your map but inthe sky it is the direction pointing to Polaris (sometimes it helps to turn your map accordingly when you are outside atthe telescope).
+At the telescope:  Before you attempt to locate the object, figure out which way is N,S, E, and W when looking through
+your finder (and do the same for your eyepiece if you are using the diagonal).  Move the telescope N (using the N
+button) and stars will enter from the North edge of the field.  Do the same for E-W and youre ready to go.
+If you get lost, start over from the beginning of the process rather than attempting to figure it our on the flythis will
+only lead to frustration.
+The following is an article from Sky and Telescope Backyard Astronomy from Feb. 1984, pp. 131-133.</text>
+        </slide>
+        <slide>
+          <slideno>0</slideno>
+          <text>1Massachusetts Institute of Technology
+Department of Earth, Atmospheric, and Planetary Sciences
+12.409 Observing Stars and Planets, Spring 2002
+Handout 6 / week of 2002 February 25
+Observing Tips
+Vision
+Dark adaptation
+Dark adaptation takes time.  The eyes pupil expands to its maximum diameter in seconds after the lights go out.  The
+main cause of dark adaptation, however, is chemical and not related to the size of the pupil.  After going from light to
+dark our eyes gain in sensitivity due to the release of a chemical called rhodopsin that acts to bleach the photopigmentsin the cells in the retina..  The retina contains two main types of cells, rods and cones.  The rods are distributed over theentire retina, are sensitive to lower light levels, and are insensitive to red light.  In contrast, the cones are clusteredtowards the center of the optical axis, are sensitive to bright light, and have three types each of which are sensitive tored, green, or blue wavelengths.  Over the first 5-10 minutes in the dark, the cones reach their maximum level of darkadaptation.  This allows the general sense that one is dark adapted.  But over the next 20-40 minutes the rods willasymptotically approach their sensitivity limit and during this time period the eye can gain 2 or more magnitudes ofsensitivity (how much fainter is thisby what factor in intensity?  Hint:  see handout 4).  Using a red flashlight willhelp protect your night vision because the rods that are most sensitive at low light levels after dark adaptation are notsensitive to red light.
+Averted vision
+Averted vision (placing your target object away from the center of your eyes FOV by say 8-16 ) can help you seevery faint objects.  The reason for this is that the cones (sensitive to bright light) are centrally located creatingsomewhat of a blind spot to very dim objects whereas the rods (sensitive to lower light levels especially after darkadaptation) are distributed over the entire retina.
+Color
+Faint, deep-sky objects often disappoint beginning observers due to the lack of brilliant color as seen in the publishedimaging results.  The reason for this is again due to the physical nature of our natural detector.  Remember that only thecones are sensitive to color.  Unfortunately, they are also insensitive to low light levels compared to the rods.  Thus atlow light levels we are using just our rods and making black and white detections.  M42 is one of the only nebulae withhigh enough surface brightness to stimulate at least some peoples cone cells (this varies greatly from person toperson).
+Eye glasses
+Many who wear eyeglasses find it difficult to properly position their eye for viewing with an eyepiece;  the amount ofdifficulty varies somewhat with eyepiece design.  Theres also a problem of unwanted reflections of your eye and lightsin the observing environment.  The solution is to remove your glasses and then adjust the focus for your nowuncorrected eye; you and your partner (and probably your instructor and UTA) will thus each prefer slightly differentfocus settings (this works if your glasses correct primarily for nearsightedness or farsightedness; if youre severelyastigmatic youre sort of stuck with viewing with your glasses on although you should try it both ways to see which isbetter for you).
+Miscellaneous
+/square4 Use the moon filter to cut down the uncomfortable intensity from the full Moon
+/square4 Views through finderscope and main scope without the diagonal are inverted.  The view through the diagonal
+is left-right reversed but not inverted.  Explanation of this is left until handout 7 on optics and telescopedesign.</text>
+        </slide>
+        <slide>
+          <slideno>4</slideno>
+          <text>5 12.409, Spring 2002
+Sky and Telescope, Feb. 1984, pp. 131-133</text>
+        </slide>
+        <slide>
+          <slideno>3</slideno>
+          <text>4 12.409, Spring 2002
+Sky and Telescope, Feb. 1984, pp. 131-133</text>
+        </slide>
+      </slides>
+      <videos/>
+    </lecture>
+    <lecture>
+      <lecture_title>Useful Optics Information (PDF)</lecture_title>
+      <lecture_pdf_url>https://ocw.mit.edu/courses/12-409-hands-on-astronomy-observing-stars-and-planets-spring-2002/resources/handout7_sp2002/</lecture_pdf_url>
+      <lectureno>7</lectureno>
+      <slides>
+        <slide>
+          <slideno>1</slideno>
+          <text>2 12.409, Spring 2002
+1 How Do Telescopes Work?
+1.1 Light-Gathering and Image Formation
+Optical telescopes make use of 2 phenomena:
+ Reflection  of light, by mirrors (Figure 1), and
+ Refraction of light, by lenses (Figure 2)
+Figure 1 :  Light ray reflected from flat surface
+Refraction is the bending of light ray as it passes from one medium to another.
+Application of Snells Law:
+nnir 12sin sin qq = (1)
+where the value of n, the refractive index, is characteristic of the material the ray is
+passing through:
+n = 1.0000 for a perfect vacuum
+n = 1.0002 for air
+n  1.5 for glass
+n is really speed of light in vacuum
+speed of light in m    
+    edium.  Figure 2 illustrates the case where n2 &gt; n1.
+Figure 2 :  Light ray refracted at a boundary between 2 media
+Thats how you make a lens, as shown in Figure 3.  The distance labeled f is the focal
+length  of the lens.  The image of an object at infinity will be formed at the distance f
+behind the lens.  As well see later in Section 2, telescopes come in a variety of optical
+arrangements.  Many designs contain both refractive and reflective optics, but for the
+sake of simplifying the following presentation, only lenses are used for the sample
+telescopes.  In fact, for our purposes reflection and refraction are equivalent, in the sense
+that one can in principle construct a system using only lenses which is optically
+indistinguishable from a system using mirrors.  By using our lens as an objective  to
+collect light from some far-away object to create an image, we find we have constructed
+the basic astronomical refractor telescope .</text>
+        </slide>
+        <slide>
+          <slideno>8</slideno>
+          <text>9 12.409, Spring 2002
+An approximate method, taking the FOV of the eye to be 40o:  Using an eyepiece, your
+eye still sees a  FOV of  40o  but now you know that the telescope magnifies angles by a
+factor of M, so
+FOV   40o/M
+A few angular sizes, to help give you a feel of numbers vs. real-life:
+Object Angular size
+Sun, Moon 0.5 = 30
+M57 (Ring Nebula) 1 = 60
+Saturn ring extent 40
+Mars, at opposition 1990 18
+Mercury, Nov 1987 6.5
+2 Telescope Designs
+2.1 Refractors
+Figure 11 :  Galileos refractors
+Figure 12 :  Keplers refractors
+and here we have our friend the refractor from Page 7.
+Advantages:
+/square4 Theyre toughsealed tubes; little or no maintenance
+/square4 No obstruction (as found in Newtonian or Cassegrain reflectors in the next
+section) in light path to foul up the contrast
+/square4 Unsurpassed image quality for Moon, planets, double stars</text>
+        </slide>
+        <slide>
+          <slideno>7</slideno>
+          <text>8 12.409, Spring 2002
+The finderscope on the LX200 is this type of telescope.
+Notice that the image you see is inverted  (Figure 10).
+Figure 10 :  Refractor with eyepiece
+qq ff= =tan tand
+fd
+fObj e ; 
+f
+q== apparent angle
+real anglef
+fObj
+e 
+ this is the magnification
+Mf
+fObj
+e= (6)
+You see that the magnification of a telescope is variable, in the sense that exchanging
+among eyepieces of different focal length changes the magnification you get.  Using
+equation (6), you can calculate the magnifications that are obtained with the eyepieces in
+your observing kit and the 8 LX200 (you can check your math with handout 3).  As
+power increases, the image brightness decreases rapidly as does the perceived image
+sharpness.
+Field of view (FOV):
+It varies with the focal length of the eyepiece and also with the particular optical design
+of the eyepiece (i.e. a 25 mm orthoscopic probably has a different field of view than a
+25 mm Kellner).
+The only definitive way to determine your field of view with a given eyepiece is to put a
+star near the celestial equator at the east edge of your field, turn off your clock drive, and
+time it drifting across the field.  If it takes t seconds of time for a star at declination d to
+cross the width of the field, the field diameter d in arcseconds will be:
+darc tarc (sec) (sec) cos ( )secsec =  d15</text>
+        </slide>
+        <slide>
+          <slideno>5</slideno>
+          <text>6 12.409, Spring 2002
+/square4 Extinctionlight is scattered and absorbed as it passes through the atmosphere.
+This effect is minimum when the object youre observing is directly overhead,
+and is maximum when its down near the horizon.
+/square4 Contrast (or lack thereof)In Cambridge, theres lots of ambient light scattered
+in a sky with lots of dust and haze for it to reflect back at us from (though less,
+theres some in Westford as well, particularly if you look low in the east toward
+the nearby city of Lowell or to the southeast toward Boston).
+1.4 Resolving Power (and limit thereof)
+So far, our treatment of telescope operation has used refraction and reflection only.
+This is a subset of whats called geometric optics , and describes a sort of an ideal
+world case.  Geometrically, point-source stars in the sky would appear in the image
+as perfect Euclidean points as in the left side of Figure 7, but here in the real world
+we get blobs instead as shown on the right.  Why isnt the real world geometric?
+Figure 7 :  Ideal vs. Real-World resolution
+/square4 First, because of the physics of light being partly wave-like, a point source
+imaged through a circular aperture such as a telescope will not produce a point
+image but will in fact yield a small circular blot called a diffraction disk  (also
+known as an Airy disk) on the image instead.
+The physics of this are included in subject  8.03
+/square4 The disk diameter is well-defined and is inversely proportional to the diameter of
+the original aperture, so by successively increasing the aperture size from that of
+the unaided eye, to finder scope, to binoculars, to telescope, we can decrease the
+blot size by virtue of successively larger objectives, and thus increase the
+resolution available in the image
+/square4  until we hit the limit of observing conditions, that is.  Somewhere around the
+small-binocular-sized aperture range, another player kicks in to hold image blurs
+back to the 1-5 range, in the guise of atmospheric seeing youre looking up
+through an atmosphere complete with turbulence and density variations due
+primarily to temperature variations (e.g. when viewing from campus, the Bldg. 42
+steam plant smokestack).  Seeing at the best ground-based sites (such as Las
+Campanas, Chile) sometimes gets down in the range 0.4 to 0.8 .  Good seeing at
+Wallace is typically 3-5.  (Even with the seeing limit, larger apertures still win
+on the image brightness front;  at least you can get brighter  seeing blotches)</text>
+        </slide>
+        <slide>
+          <slideno>0</slideno>
+          <text>1Massachusetts Institute of Technology
+Department of Earth, Atmospheric, and Planetary Sciences
+12.409 Observing Stars and Planets, Spring 2002
+Handout 7 week of February 25, 2002 Copyright 1999
+Created S. Slivan
+Revised A. Rivkin and J. Thomas-Osip
+Useful Optics Information
+What you know so far (or at least may know so far) by experience with the LX200:
+/square4 Views through the telescope and finder scope are inverted
+/square4 Diagonal mirror view is right-side-up but left/right reversed
+/square4 You see fainter objects in the finder than you can with the unaided eye, and
+objects which are fainter still with the telescope itself
+/square4 Of the eyepieces in your kit,
+/boxshadowdwn 6.4 mm has the smallest field of view, highest magnification, and dimmest
+images
+/boxshadowdwn 40 mm has the widest field of view, least magnification, and brightest
+images
+/square4 Rings of color (particularly red and blue) around bright objects, especially bright
+stars and planets near the horizon
+/square4 A very defocused image of a point source has a doughnut shape
+The SECRETS behind these phenomena will be revealed herein!
+Contents
+1 HOW DO TELESCOPES WORK? 2
+1.1 Light-Gathering and Image Formation 2
+1.2 Image Size Depends On Focal Length 3
+1.3 Image Brightness Depends On Focal Ratio 4
+1.4 Resolving Power (and limit thereof) 6
+1.5 Magnification and Field of View 7
+2 TELESCOPE DESIGNS 9
+2.1 Refractors 9
+2.2 Reflectors 10
+2.3 Catadioptric (a combination of refracting and reflecting) 12</text>
+        </slide>
+        <slide>
+          <slideno>6</slideno>
+          <text>7 12.409, Spring 2002
+Breaking the seeing-limited barrier was one of the major motivations behind orbiting the
+Hubble Space Telescope, which could in fact be diffaction-limited to some truly amazing
+resolution if the primary mirror had been figured properly
+/square4 Finally, the resolution of the image you actually see or record with some detector
+can be further limited by the structure of the detector used, if its coarser than that
+intrinsically available in the image.  For example, the coarseness of the structure
+of light detectors on the retina limits resolution perceived by the eye to about 1.
+Theres a subtle distinction here between increasing the resolution  available in the image
+itself by using a larger objective (at least up to the limit imposed by the seeing), and
+increasing the magnification  of the image as youve done when observing visually by
+changing to a shorter focal-length eyepiece, which is dealt with in the following section.
+In short:  magnifying a non-resolved blotch will yield only a bigger non-resolved blotch.
+1.5 Magnification and Field of View
+Our demonstration telescope objective so far has been fine by itself for imaging, but for
+visual observing we need to add an eyepiece  which will let us see the image.  An
+eyepiece is just another lens, but instead of using it to collect light (as we do for an
+objective lens) well use it as if it were a magnifying lens like those youve played with
+beforewhat you were doing was putting an object   at the focal point and observing it
+from the other side (Figure 8) .
+Figure 8:  Magnifying lens
+To you, it looks like the image of the fly is at infinitythis is the most comfortable
+viewing arrangement for your eye (i.e. your eye focuses as if the fly were at infinity).  So,
+if we put these two lenses together, the eyepiece and the objective, we finally have a
+refractor telescope for visual observing (Figure 9).
+Figure 9 :  Refractor telescope</text>
+        </slide>
+        <slide>
+          <slideno>3</slideno>
+          <text>4 12.409, Spring 2002
+qq==d
+ff dObj Obj1(3)
+Thus, 1/  fObj  is a constant (with units of radians
+length) directly relating angular separation in the
+sky to linear distance on the image!
+Lets fix up the units to be something convenient:  1 radian  206265 arcseconds
+So the image scale of the objective lens (also called the plate scale ) is
+plate scalefi n m marc per mm
+Obj    206265
+()sec (4)
+EXAMPLE:   What is the linear diameter of the Moon on an image taken at the straight
+cassegrain focus of an LX200?
+/square4 First, we need the image scale.  For the LX200,    fObj  = 2000 mm, so the image
+scale at cassegrain focus, by Equation (4), is
+206265 arcsec/2000 mm = 103 arcsec/mm
+/square4 To use the image scale to determine image size, we now need to know the angular
+size of the target object.  The disk of the Moon subtends a diameter of about 1/2o ,
+which is 1800.
+1
+10317800 arcsec 
+  arc
+mmmmsec
+/square4 Thus, if we try to image the Moon onto a CCD detector (the SBIG ST-7E youll
+be using in class are approximately 7 mm  5 mm), the whole thing wont fit.  In
+this case we would need to either use different optics, or resign ourselves to
+splicing together an array of images.
+1.3 Image Brightness Depends On Focal Ratio
+The brightness  of the image you get depends upon two things (the symbol  is used here
+to indicate proportionality):
+1. How much light you collect from the object in the first place, which depends only on
+the area of your objective lens, or mirror (like raindrops into a bucket).
+The following is how how much does a telescope help us increase apparent brightness
+was computed in the Can we observe X tonight handout.
+Ardd age Brightness dObj ObjObj
+Obj ==
+
+ =  ppp22
+22
+24Im  
+So our 8-inch-objective telescope collects 64 times as much light as does a 1-inch-
+objective finder scope.</text>
+        </slide>
+        <slide>
+          <slideno>11</slideno>
+          <text>12 12.409, Spring 2002
+First, lets think about a slightly different question.  What happens to the image of the box
+in Figure 17 as the aperture A gets smaller?  Will the size of the image shrink or will a
+part of it be chopped off?  No, because each tiny portion of a lens forms a complete
+image  and therefore the final observed image is simply the sum of all of the independent
+contributions!
+Figure 17*:  Aperture experiment
+Applying this to our refractor means that each part of the mirror also creates a complete
+image.  If you were to block another part of the mirror (as shown in Figure 18), we can
+see that and image is still created but with somewhat less intensity.  How much less
+intensity (hint:  see handout 4)?
+Figure 18*:  Why isnt there a whole in the image?
+2.3 Catadioptric (a combination of refracting and reflecting)
+Recall that parabolic mirrors focus incoming light to a focal point but distort off-axis
+images into footballs, while spherical mirrors dont have this coma problem but neither
+do they have one focal point.  One answeruse a spherical mirror with a refractive
+corrector plate  of a certain (complex) curvature to correct the focus, thus creating a
+Schmidt-Cassegrain  (Figure 17).  Its a very popular design for smaller telescopes;  this
+is exactly the design of the LX200s we use:  8-inch (20 cm) f/10 SCT
+Figure 19 :  Schmidt-Cassegrain</text>
+        </slide>
+        <slide>
+          <slideno>12</slideno>
+          <text>13 12.409, Spring 2002
+Advantages:
+/square4 Wider undistorted field of view than a Newtonian
+/square4 More easily portable
+/square4 Mass-producible (spherical mirrors easy; corrector plate made by virtue of
+cleverness on the part of some telescope genius a few years back)
+/square4 Tube is sealed
+/square4 Compact tube allows motor drive to track sky motion more reliably
+Disadvantages:
+/square4 More optical surfaces than a Newtonian
+/square4 Larger central obstruction; some decrease in contrast of images results due to
+diffraction around the central obstruction.
+/square4 Need a diagonal mirror to observe objects at high altitude; this left/right swaps the
+image, making life more confusing
+                                                  
+* K. Gleason, Accelerated Introduction to Astronomy , University of Colorado at Boulder, 2001</text>
+        </slide>
+        <slide>
+          <slideno>9</slideno>
+          <text>10 12.409, Spring 2002
+Disadvantages:
+/square4 very expensive per inch of aperture
+/square4 (lenses have to be perfect; larger  more difficult to make  more expensive)
+/square4 big and heavy
+/square4 require tall mountingsshaky, expensive (again)
+/square4 Chromatic aberration  (Figure 13):  Refracted light splits up into a spectrum, and
+because different wavelengths focus at different distances, objects suddenly
+appear to grow red and blue rings around themselves that really dont belong
+there at all.
+Even though our LX200s are generally referred to as reflectors (as described in an
+upcoming section) the corrector plate is (as you may have suspected) in fact a lens, as
+are the eyepieces.  These elements could in principle cause chromatic aberration, but the
+corrector doesnt bend light enough to cause any appreciable amount, and the
+combination of lenses built into a particular eyepiece design are specifically chosen to
+mostly cancel out each others aberration and thus yield good color correction.
+The fringe colors you may see around bright objects when observed at very low altitudes
+are due to differential refraction by the atmosphere itself:  same physics, different culprit.
+Figure 13 :  Chromatic aberration
+Big refractors are a pain.
+2.2 Reflectors
+All large modern instruments are reflectors  of some kind.  A parabolic  mirror will focus
+parallel rays to a single point, as shown in Figure 14.
+Figure 14 :  Focus of parabolic mirror</text>
+        </slide>
+        <slide>
+          <slideno>2</slideno>
+          <text>3 12.409, Spring 2002
+Figure 3 :  Refraction by lens
+1.2 Image Size Depends On Focal Length
+Note that our refractor as described so far has no eyepiece lens and thus will not allow
+someone to directly view the image it has created, since the human visual system isnt
+designed to use already-focused light rays.  Even so, our simple instrument is in fact a
+telescope, and to see how and where the image is formed you could hold a white card or
+piece of photographic film at the focus, as in Figure 4 in which two stars are separated in
+the sky by angle q and are being observed.
+Figure 4:   Film at focus
+By similar triangles q is unchanged, so the separation of the stars in the image is
+proportional to their angular separation in the sky.
+Figure 5 :  Angular separation transformed to linear distance
+Also, from Figure 5 see that:
+tan q=dfObj(2)
+where d is the linear distance between the stars in the image, and fObj is the focal length of
+the lens.  Now, (physicists love to pull sneaky tricks like this one) since q is so small,
+what with the stars being at infinity and all, tan q   q.  This gets us</text>
+        </slide>
+        <slide>
+          <slideno>4</slideno>
+          <text>5 12.409, Spring 2002
+2. How big an image size youre spreading the light over.
+If you keep the amount of light constant, IMAGE BRIGHTNESS  1/AREA, and since
+AREA  f2 as shown in Figure 6, the IMAGE BRIGHTNESS  1/f2
+Figure 6 :  Exposed area is proportional to distance squared
+Putting points 1 and 2 together we get:
+IMAGE BRIGHTNESS  d2 1/f2 = d2/f2 = (d/f)2
+The square root of the reciprocal of this quantity is called the focal ratio  or f-number ,
+familiar to those of you whove used SLR cameras.
+fnumber focal ratiof
+dfocal length
+objective diameter-= = =   
+ (5)
+For our telescopes, the f-number is fixed at 2000mm/200mm = f/10
+On a camera lens, the f-numbver is adjustable  by virtue of an iris diaphragm which is
+used to effectively reduce d; f stayes fixed unless youre using a zoom lens.
+LOW F-NUMBERS:   brighter image, wide field (many arcsec per mm) so individual
+objects appear smaller .  Better for galaxies, faint nebulae, and the Milky Way, or for
+allowing shorter exposure times for bright objects (Moon, planets).
+HIGH F-NUMBERS:  dimmer image, narrow field, so individual objects appear larger .
+Better for limiting the accumulation of sky brightness fogging during long-exposures, or
+for larger images of bright objects.
+narrow field here does not mean that as you close up the aperture on your camera lens
+you narrow your field;  rather, it means that for two optical systems with the same
+diamter objective but with different f-numbers, the system with the higher f-number has a
+smaller field.
+Finally, even with the advantage afforded us by the bigger eye of the telescope, there
+are some rather anti-social effects which will cause us difficulties with our attempted
+viewing of faint objects:</text>
+        </slide>
+        <slide>
+          <slideno>10</slideno>
+          <text>11 12.409, Spring 2002
+Advantages:
+/square4 No chromatic aberration!
+/square4 Most light-collection capability for the money (you dont need perfect glass)
+/square4 Fewer optical surfaces
+/square4 Open tube less likely to dew up on you
+Disadvantages:
+/square4 The focus is in the incoming light path.  This means that whatever you use to
+either collect the light or redirect it and then collect will form a central
+obstruction .
+/square4 Open tube permits image-fuzzing air currents to wander around inside the tube as
+it cools to outside temperature
+/square4 Open-tube telescopes also require more careful treatment and maintenance, what
+with trying to keep dust  (and worse) out and also keep the mirrors aligned.
+/square4 Also parabolic mirrors work really well for images which are right on the
+central optical axis, but off-axis stuff is increasingly distorted into football-shaped
+blobs (i.e. only the very center of the field is undistorted)  This effect ( coma ) is
+particularly bad with short f-ratios (A spherical  mirror would fix this problem,
+but wont focus all incoming light to a focal point like a paraboloid does).
+Figure 15 :  Newtonian reflector
+Newtonian  reflectors (Figure 15) are ideally suited to short, stable mounts, ,and are of
+simple construction (many amateurs make their own!)
+Figure 16 :  Cassegrain reflector
+A Cassegrain  reflector (Figure 16) involves a rearrangement of the light path more
+convenient for larger telescopes.  The telescopes one finds at observatories typically are
+Cassegrains (including the 16-inch and 24-inch scopes at Wallace).
+So why doesnt the image have a whole in it due to the central obstruction?</text>
+        </slide>
+      </slides>
+      <videos/>
+    </lecture>
+    <lecture>
+      <lecture_title>The LX200 Object Library (PDF)</lecture_title>
+      <lecture_pdf_url>https://ocw.mit.edu/courses/12-409-hands-on-astronomy-observing-stars-and-planets-spring-2002/resources/handout10_sp2002/</lecture_pdf_url>
+      <lectureno>10</lectureno>
+      <slides>
+        <slide>
+          <slideno>1</slideno>
+          <text>2stars, the 250 brightest stars, interesting double stars, the GCVS, and the planets are all
+accessed with the STAR key.  The NGC, IC, and UGC are all accessed with with the
+CNGC key.  When either the STAR or CNGC key pressed, the display will show which
+of the above databases is currently active.  The LX200 will remember the last database
+used.
+1. Press M, STAR, or CNGC
+2. If necessary, change the database by pressing enter without entering a number
+3. Enter a the desired object catalog number and press ENTER
+4. To move the telescope press GOTO
+Setting the Zenith Limit (strongly recommended)
+To avoid hitting the base of the telescope with the CCD when performing a GOTO
+option, one can set a limit on how close the telescope can slew towards the zenith.
+1. select PARAMETERS from the OBJECT LIBRARY menu
+2. select LOWER from the PARAMETERS menu
+3. enter the limit in degrees from the zenith (start with 10) and press ENTER
+Using the Hi-Precision Pointing Option
+With the hi-precision setting activated, and an accurate alignment, the LX200 is capable
+of a pointing accuracy of 1 arc minute (for comparison, the 6.4 mm eyepiece has a FOV
+of about 10 arc minutes and the CCD has one of about 8x11 arc minutes).  Technically, in
+order to use the hi-precision pointing option it is helpful to use an illuminated reticle
+eyepiece.  But you can also use the CCD or equivalently a 6.4 mm eyepiece.
+It is not at all necessary that you use this option.  In fact, we suggest that you leave if off
+most of the time.  It may come in handy if you are trying to find a very dim object that
+you cant see in the eyepiece but intend to take a long exposure to capture it.  This could
+be very a frustrating experience if you are not sure it is in the CCD FOV.  Turning on this
+option will not guarantee that you will avoid this frustration but with an accurate
+alignment, it may make it less likely.
+To activate Hi-Precision pointing do the following:
+1. Select TELESCOPE from the TELESCOPE/OBJECT LIBRARY menu
+2. Scroll and select hi-precision (option #9) by pressing ENTER.
+3. When selected HI-PRECISION will change to upper case letters.
+When HP is active, the LX200 will perform a GOTO  slightly differently.  The LX200
+will find and slew to the nearest alignment star and prompt you to center the star (on the
+CCD or using a reticle eyepiece) and then press GOTO.</text>
+        </slide>
+        <slide>
+          <slideno>0</slideno>
+          <text>1Massachusetts Institute of Technology
+Department of Earth, Atmospheric, and Planetary Sciences
+Handout 10 /week of 2002 April 1 12.409 Hands-On Astronomy, Spring 2002
+/square4 The LX200 Object Library
+Whats in the Library? .....................................................................................................1
+How to Use it.................................................................................................................. 1
+Setting the Zenith Limit (strongly recommended) ............................................................2
+Using the Hi-Precision Pointing Option ...........................................................................2
+GOTO for Objects not in the Library ...............................................................................3
+Matching Coordinates (compensating for inaccurate alignment) ......................................3
+Whats in the Library?
+The LX200 has a library with 64,359 objects in it.  These are separated into eight
+databases (shown below) accessible through three keys on the keypad (M, STAR, and
+CNGC located on the right side of the keypad).
+/square4 110 Messier objects
+/square4 351 alignment stars: this list contains the 250 brightest stars, 100 doubles, and
+Sigma Octantis (the southern pole star).
+/square4 15,928 SAO (Smithsonian Astrophysical Observatory) catalog stars including all
+stars brighter than 7th magnitude.
+/square4 21,815 GCVS (General Catalog of Variable Stars):  complete catalog.
+/square4 8 planets
+/square4 7,840 NGC (New General Catalog) objects including galaxies, diffuse and
+planetary nebula, and globular and open clusters:  complete catalog
+/square4 12,921 UGC (Uppsala General Catalog) galaxies as faint as 15th magnitude:
+complete catalog.
+/square4 5,386 IC (Index Catalog) Objects:  complete catalog.
+A complete listing of the 351 alignment stars, and the Messier objects along with a partial
+listing of  NGC objects can be found in the atlas supplements.
+How to Use it
+In order to use the object library, the telescope must first be aligned using the two-star
+alignment procedure discussed in handout 3.  The more carefully you level your telescope
+and center your alignment stars the more accurate will be the pointing of the telescope.
+One can directly access the library using the M, STAR, and CNGC keys along with the
+specific catalog number of the desired object.  The Messier catalog is accessed by
+pressing the M key and then the appropriate M number for the desired object.  The SAO</text>
+        </slide>
+        <slide>
+          <slideno>2</slideno>
+          <text>3GOTO for Objects not in the Library
+If you would like to point to an object that is not in the library such as a comet or an
+asteroid, you will need accurate coordinates.  Remember that solar system objects movedaily through the sky so you need to find coordinates for them either using an ephemerisor Voyager (for the brighter asteroids).  It is best to find them for a time that is within an
+hour of when you want to observe it.  In the following procedure you input the
+coordinates to which you would like the telescope to point.
+1. Press and depress MODE until coordinates in RA and DEC are displayed (these are
+the coordinates where the telescope is currently pointing).
+2. Press the GOTO button (next to MODE, upper right corner of keypad).
+3. After a double beep, enter the new RA and press ENTER
+4. Enter the new DEC and press ENTER (if you need to enter a minus DEC setting,
+move the blinking cursor over the + sign using the W key and then press NEXT tochange + to -, PREV will change  to +).
+The telescope will now slew to your desired coordinates.  If your object is not
+therecheck your coordinates!
+Matching Coordinates (compensating for inaccurate
+alignment)
+If, after executing a GOTO operation, you find that your desired object is not well
+centered in the eyepiece (possibly due to poor leveling or centering of the alignment
+stars), you can fudge a bit to compensate for this without having to redo the whole
+alignment procedure (but just in an area of sky near where the telescope is currently
+pointing).  The following procedure will allow the next GOTO execution to be better
+centered provided that it is not too far away from the object you used to match
+coordinates.
+1. Center the object in the eyepiece
+2. Press and hold ENTER until the display reads Coordinates Matched</text>
+        </slide>
+      </slides>
+      <videos/>
+    </lecture>
+    <lecture>
+      <lecture_title>CCD User&#8217;s Guide (PDF)</lecture_title>
+      <lecture_pdf_url>https://ocw.mit.edu/courses/12-409-hands-on-astronomy-observing-stars-and-planets-spring-2002/resources/handout8_sp2002/</lecture_pdf_url>
+      <lectureno>8</lectureno>
+      <slides>
+        <slide>
+          <slideno>2</slideno>
+          <text>3/square4 Check that SCSI is the selected Port (it is the third symbol) and click OK
+/square4 Now under the Camera menu , select Establish COM Link
+13. Under the Camera  menu, select Setup   The following window will pop up:
+Set the Temperature regulation  to Active . The Setpoint  should be about 30C below
+ambient. Set Reuse dark frames  to Yes.  After you gain some experience with CCD
+imaging and what calibration frames you will need for a nights worth of imaging you will
+want to turn this option off.
+A word about which resolution mode to run in.  In High resolution mode the camera is
+configured for the smallest pixels and the highest resolution.  In Low resolution mode,
+pixels are binned together in 3x3 boxes to produce the largest effective pixels and thus</text>
+        </slide>
+        <slide>
+          <slideno>8</slideno>
+          <text>9pattern noise such as read out noise. When the dark frame is subtracted from the light
+frame, this pattern noise is removed from the resulting image.
+Always take dark frames of equal exposure length to your data images.  A set of 3-5 dark
+frames per exposure time per session (for all data taken at the same chip temperature is
+recommended.
+Zero-biases
+A zero-second exposure with the shutter closed that records readout noise.  This is
+included in the dark frames.  It is mentioned separately because advanced imagers
+sometimes use them in combination with a scaled master dark frame to reduce the
+amount of time spend taking dark frames.  This type of calibration is not recommended.
+Flat field frames
+A flat frame is a regular exposure of uniformly illuminated featureless surface such as a
+white projection screen or a blank patch of twilight sky through the same optics as your
+data images.  The purpose is to record pixel to pixel variations in the detector sensitivity
+caused by intrinsic variability in the detector as well as dust or other obstructions or
+aberrations in the optical path.  They are used to get the maximum possible accuracy
+from photometry (measuring magnitudes).  It is time consuming to get good ones and bad
+ones can actually make your images and photometry worse.  This type of calibration will
+also not be used in 12.409
+Packing Up
+When you are finished for the evening:
+1. Quit CCDOps (if it asks you to deactivate the temperature control, say yes)
+2. Unplug USB cable from computer
+3. Unplug camera from power (do not remove any cables from the camera just yet)
+4. Power off the SCSI converter box
+5. Remove the camera from the flip mirror
+6. Remove flip mirror and counterweights from telescope
+7. Unplug all remaining cables
+8. Carefully store all equipment in the case the way you found it
+Use the kit checklist to make sure you still have everything you started with (check
+around the ground nearby, your pockets, and nearby telescope kits if necessary) and that
+you havent inherited extra parts from someone elses kit.</text>
+        </slide>
+        <slide>
+          <slideno>5</slideno>
+          <text>6visual postion.  Then loosen the set screw for the eyepiece and slide the eyepiece in
+and out of the flip mirror seat until what you see in the eyepiece looks focused.  Do
+not adjust the focus knob after you have set it for the CCD.
+Observing Information
+Target Acquisition
+Now you are ready to acquire your target and take some data!  Remember that the viewthrough the eyepiece is left-right reversed, because the flip mirror has an internal
+diagonal mirror.  Sometimes it may be helpful to use the Dim Focus Mode  until you have
+found and centered your target in the CCD FOV.  This is a full chip 3x3 binned mode
+which allows fast downloads making the setup go a bit faster.
+Imaging
+1.  Once you have acquired your target, dismiss the focus window.  Under the Camera
+menu, select the Grab  command for taking individual images.  The window below will
+pop up.  Set your exposure time and choose your image size, full, half,  or quarter of the
+CCD array .  When you first start imaging, you can choose Also for Dark frame .  This will
+take a dark frame each time you take an image and subtract it before displaying it.  As
+you get more experienced, it will become more efficient to take your dark frames at the
+beginning or end of your imaging session (see the Calibration section below for more
+info).
+2. Under the Edit menu, you can select Show icon bar  to provide shortcuts to some
+common commands:</text>
+        </slide>
+        <slide>
+          <slideno>6</slideno>
+          <text>7
+You may find this useful.
+3. Saving an Image:
+Use the File/Save As  command, rather than Save . This is a safeguard so you don't
+overwrite an image.  Use the compressed  or uncompressed  file format (if you choose
+another format CCDOps will not be able to open this file).
+Create a folder in the data files directory on the machine with your name. Inside this
+folder, create a folder with the date. Inside this you can save your images. Make sure you
+choose a useful name for each image and create a paper log file with the pertinent
+information about the image.
+Example directory path:
+Data Files:AndyR:20020110:
+For example an image name might be:
+date.imagenumber.sb(YYMMDD.XXX.sb) or some other descriptive title like:
+Saturn1.sb (the sb stands for SBIG image format which is the only format the CCDOps
+can read)</text>
+        </slide>
+        <slide>
+          <slideno>7</slideno>
+          <text>84. Additional things to be aware of:
+/square4 While observing, keep an eye on the size of your stellar images. If they seem to
+have gotten blobbier over time, then either the focus has changed, the seeing has
+deteriorated, or both.
+/square4 Try to keep your target away from the edge of the array.
+/square4 As you work through your observing program, be aware of and check frequently
+for possible over-exposure.
+/square4 Be very careful to check what you have entered for your exposure time. At this
+point, we don't know the outcome of aborting an integration process. If you want
+to start a 60-sec exposure and accidentally type in 600-sec you may have to wait a
+bit for the longer exposure to finish. Whenever you enter a new exposure time,
+double-check for typos before  hitting ok or &lt;return&gt;!
+/square4 Check the position of the flip mirror, especially before taking a long exposure.  If
+you can see through the eyepiece, the flip mirror is not lined up with the CCD.
+Feeding Your Observing Notebook
+Just as you did for visual observing, you need to take sufficient notes for each image aswell as record general information about the conditions.
+For each data image record the following:  Number in image sequence, time, object,  and
+exposure time
+For darks:  exposure time is sufficient
+Calibration Frames
+What for?
+Taking calibration images and applying them to your data images reduces the amount ofnoise in your final product and allows you to see more detail.
+How many?
+In order to reduce the random noise in your calibration images, it is necessary to takemultiple calibration images and average them.  In general averaging n images will reduce
+the random noise in the product by a factor of 
+n.  It is a good idea to get in the habit of
+taking n+1 images so that you have an extra and can afford to throw one out if you find a
+cosmic ray hit.  A cosmic ray completely fills the wells of any pixel it hits as it passes
+through the detector.  If the signal from any contaminated pixels gets into your
+calibration image then the resulting image artifacts will be passed onto every data image
+you process with this calibration image.
+We recommend that you expose and save at least 5 of each type of calibration frame you
+need.
+What kind?
+There are three basic type of calibration frames: darks, zero-biases, and flats.  For 12.409purposes you will only need to take and apply dark frames.
+Dark frames:
+A dark frame is simply an image taken at the same temperature and for the same duration
+as the light frame with the source of light to the CCD blocked. This dark frame will
+contain an image of the noise caused by dark current (thermal noise) and other fixed</text>
+        </slide>
+        <slide>
+          <slideno>1</slideno>
+          <text>2Equipment Setup Procedure
+1. Setup and align the telescope.
+2. Attach flip mirror to visual back ( do not attach camera yet )
+3. Connect camera to SCSI box with parallel cable (long tan one)
+4. Plug power cord into camera ( but do not plug the other end to power yet )
+5. Attach camera to telescope ( do not attach the camera to the telescope before all
+cords have been plugged into the camera or you risk ruining your telescope
+alignment ).
+6. Mount and adjust counterweights on telescope
+7. Connect SCSI box to USB adapter cable (short white one) with SCSI cable (short
+gray one)
+8. Plug in and power SCSI box
+9. Plug in camera power cord to power (this powers the camera, there is no switch)
+10. Check that computer is on, not sleeping, and plugged in ( DO NOT ATTEMPT TO
+CONTROL CAMERA WITH COMPUTER USING BATTERY POWER )
+11. Connect USB cable to computer
+12. Start CCDOps software (double click CCDOps icon on computer desktop).  You
+should see a window similar to that below:  If you get an error message that requires
+you to restart your computer, do so and then drag the CCDOps preference file from
+the preferences folder inside the System folder to the trash and restart CCDOps.
+If you see Not found  next to Link:  in the lower left corner of the above window, check the
+following:
+/square4 Under the Misc menu , select Graphics/Comm Setup
+/square4 The following window will be displayed</text>
+        </slide>
+        <slide>
+          <slideno>4</slideno>
+          <text>5
+4. The focus mode displays the image as well as the peak value in brightness of the
+brightest object in the FOV.  Make sure the star is in the FOV and check for
+saturation and adjust exposure time or find another dimmer if necessary.  Make sure
+to record the exposure time in your notebook!
+5. After you get your first image, you can significantly shorten your download time by
+using Planet  mode.  It will take a full size image and then ask you to move a box (in
+both placement and size) to the part of the image you want to download. Click on the
+box and move it to where your star is located. Then press Resume.  Again it will take a
+image, but this time only of the small area you have selected.
+6. Now the general idea is to adjust the focus knob on the telescope, take an image,
+inspect it and iterate on this until you achieve the best focus possible.  It is best to
+start with fairly rough adjustments in one direction (say 1/2 turns of the focus knob).
+If the focus gets worse, then go in the other direction.  Go past a good focus and then
+come back.  A sufficiently out-of-focus image will appear as a "doughnut" shape
+owing to the secondary mirror obstruction of this Schmidt-Cassegrain design of
+telescope.  Adjust the focus knob so as to maximize the peak brightness value
+(without saturation) and minimize the size of the star image.  If saturation occurs you
+will need to choose a dimmer star if you cant decrease the exposure time enough
+prevent saturation.  The peak brightness value can vary by 30% or so due to seeing
+variations so when you are getting close to good focus you should take several images
+before deciding whether you need to adjust further.
+7. When you get close to good focus, it may help to use the Automatic Update Mode so
+that the system will continually take images until you tell it to stop.
+8. Once you are happy with the focus in the CCD camera, adjust the position of the
+eyepiece in its seat in the flip-mirror.  To do this, first flip the mirror back to the</text>
+        </slide>
+        <slide>
+          <slideno>3</slideno>
+          <text>4the lowest resolution.  This is results in smaller data files and thus faster download times
+from the camera to the computer.
+Resolution Binning Approx. Saturation Level
+High None 40,000
+Medium 2x2 65,000
+Low 3x3 65,000
+Once you press okay the camera will begin to cool and you should see the temperature
+begin to drop.  It will stabilize in a short time, you should see the % next to the
+temperature value drop below 100%. You want to let the temperature stabilize before you
+focus or take data. If the percentage does not drop below 100% in 10 minutes, you should
+raise your set point.  Monitor the percentage throughout the night, you can make it lower
+as the ambient temperature drops to reduce thermal noise.
+Focusing
+In order to obtain the best possible data from your image, you must pay some attention to
+getting the best focus possible. Unlike focusing when viewing through an eyepiece, when
+you focus the CCD camera you cant directly observe the image to determine its quality.
+Thus it may take a little practice to get the knack of dealing with the display because of
+the time lag between making a focus adjustment and being able to see its effect on the
+display screen.  You can reduce this delay by choosing a focus star that is bright enough
+to be well exposed with only a short (~0.1 sec) integration time and also by only
+digitizing the small part of the image that contains the star.
+Focus Procedure
+1. Select a relatively bright star (+2.5 to +3.5) that is well above the horizon (that way
+you are looking through less atmosphere, less seeing or scintillation problems closer
+to the zenith).  You want something that is bright enough to focus with in a short
+time, but dim enough not to saturate the detector (see approximate saturation counts
+in table on previous page).
+2. With the flip-mirror in the "visual" position, acquire the star in center of the FOV and
+do a preliminary focus by eye in the acquisition eyepiece.  The focus of the CCD will
+be quite a bit different from this focus so this does not need to be done carefullyits
+just to get you in the right ballpark.
+3. Now, flip the mirror so that the light goes to the CCD rather than your eye. Under the
+Camera  menu, select Focus  to bring up the focus control window (example shown
+below). The exposure time is measured in seconds. Change the exposure time to
+something short, like 0.1. There are three options under frame size, Full, Planet, or
+Dim Choose Full to begin with so you get the entire image and can figure out where
+your star is located.  Choose Manual  for the  Update Mode.  This allows you to tell it
+when to take and exposure manually.  Automatic  will simply keep taking exposure
+after exposure until you tell it to stop. Click ok -- the computer will tell you the image
+is being taken and then displayed.</text>
+        </slide>
+        <slide>
+          <slideno>0</slideno>
+          <text>1Massachusetts Institute of Technology
+Department of Earth, Atmospheric, and Planetary Sciences
+Handout 8 /week of 2002 March 18 12.409 Hands-On Astronomy, Spring 2002
+CCD Users Guide
+SBIG ST7E CCD camera and Macintosh iBook control computer with
+Meade flip mirror assembly mounted on LX200
+Contents
+CCD Kit Checklist ..........................................................................................................1
+Items inside the case....................................................................................................1
+Equipment Setup Procedure .............................................................................................2
+Focusing ....................................................................................................................... ...4
+Focus Procedure ..........................................................................................................4
+Observing Information ....................................................................................................6
+Target Acquisition .......................................................................................................6
+Imaging .......................................................................................................................6
+Feeding Your Observing Notebook .............................................................................8
+Calibration Frames ..........................................................................................................8
+What for? ....................................................................................................................8
+How many? .................................................................................................................8
+What kind? ..................................................................................................................8
+Dark frames: ............................................................................................................8
+Zero-biases ..............................................................................................................9
+Flat field frames .......................................................................................................9
+Packing Up ..................................................................................................................... .9
+CCD Kit Checklist
+Use the following checklists to
+1. Alert the instructor or TA about missing pieces before beginning a nights
+observing and
+2.  Ensure that the kit is complete for use by your classmates next time.
+Items inside the case
+1. SBIG ST7E CCD camera
+2. Camera power supply (large one with cords out either end)
+3. Parallel-to-SCSI converter box (small black box)
+4. Converter box power supply (small one)
+5. Parallel cable (long tan one)
+6. SCSI cable (short gray one)
+7. SCSI-to-USB adapter/cable (short white one)
+8. Meade flip mirror</text>
+        </slide>
+      </slides>
+      <videos/>
+    </lecture>
+    <lecture>
+      <lecture_title>Care and Feeding of Your Observing Notebook (PDF)</lecture_title>
+      <lecture_pdf_url>https://ocw.mit.edu/courses/12-409-hands-on-astronomy-observing-stars-and-planets-spring-2002/resources/handout2_sp2002/</lecture_pdf_url>
+      <lectureno>2</lectureno>
+      <slides>
+        <slide>
+          <slideno>6</slideno>
+          <text>Exposure #4: twelve minutes into a fifteen-minute exposure, and JO SEEMS TO HAVE
+GOTTEN HER TONGUE STUCK TO THE FREEZING COLD TRIPOD!  What was she
+thinking? Closed shutter immediately.  Takes 20 min. to polar align again.
+When in doubt, write it down .  Record anything interesting about the object, even if it seems trivial or
+irrelevant at the time.   Your first observations in this class won't be as good as the last ones you'll do
+towards the end of the term (or at least, they shouldn't  be, if we get a reasonable number of clear nights);
+you'll be training your eyes to see details you'd have missed at the beginning of the term and training yourhands to write nice neat notes and amazing beautiful sketches in a wind-whipped notebook, in the dark,
+while wearing your thick winter gloves, even as your fingers are getting cold and numb and I'm sipping a
+mocha and catching up on the latest professional lacrosse scores.    (Sounds great, doesn't it?)
+2  A note about working in pairs
+We work in pairs in this class for a number of reasons: it makes planning and set-up more efficient,
+you can help each other while observing, and it's usually a lot more fun than working alone, particularly if
+neither of you are quite sure of what you're doing (this is unquestionably the usual state of life in this
+seminar, so don't feel inadequate).
+Of course, the point of running the seminar is to individually afford you the opportunity, including
+equipment and knowledgeable staff resources, to do some observational astronomy yourself, at a specific,
+fairly relaxed level.  Thus, we feel it inappropriate to have students merely hand-duplicating others' at-the-telescope observing records rather than recording their own observations; such copying would, quite
+frankly, be a complete waste of time and effort (yours, and ours too) and misses the whole point of this
+class. Please feel free to chat with your instructor if you've any questions or concerns along these lines.</text>
+        </slide>
+        <slide>
+          <slideno>5</slideno>
+          <text>/square4 Any Weather Conditions  specifically affecting this observation, especially if the conditions have
+changed since the overall sky condition was noted when you started the session.
+Trying to view M31, but it's right in the path of the exhaust from the steam plant
+smokestack across the street.
+/square4 Anything Unusual  about sky or equipment, e.g.
+Images have been dimmer and increasing in blurredness though sky conditions
+seem unchanged. (?)
+(...more observing notes in here...)Aha!  Noticed that a significant covering of dew has formed on the corrector plate.
+Probably affects at least my preceding six photographs of the Moon.
+or</text>
+        </slide>
+        <slide>
+          <slideno>0</slideno>
+          <text>Handout 2 Week of February 11, 2002 Copyright 1999
+Created S. Slivan
+Revised A. Rivkin and J. Thomas-Osip
+Care and Feeding of Your Observing Notebook
+Part 1: Overview and Visual Observing1
+The observing notebook we asked each of you to get for use in this class will be used mostly forrecording observations , and sometimes also for writing calculations (and whatever other fun things we
+can think up for doing on cloudy class nights).
+ Massachusetts Institute of Technology
+Department of Earth, Atmospheric, and Planetary Sciences
+12.409 Observing Stars and Planets, Spring 2002
+The two primary reasons for keeping such a log are
+/square4  to remind yourself of what you did, and to allow you to analyze and interpret your recorded
+information more carefully at a later time.
+/square4  to remind you of things you might want to try or retry in the future.
+/square4  (besides, in this class, it gets inspected by the instructor.) OOPS, who said that?
+Sometimes the log finds use as additional data for some future project, yet unplanned when the
+observations were initially recorded, or is used by others as confirmation of something someone else saw
+or even possibly as additional data for one of their  future projects. As your work gets more oriented
+toward obtaining useful data for quantitative scientific or engineering work (e.g., 12.410J ``ObservationalTechniques of Optical Astronomy'', or physics ``Junior Lab'', or the electronics lab portion of 6.002,
+12.
+?e9 "Weather Control on Terrestrial Planets" and others), maintaining a quality lab notebook becomes
+crucial , and you'll probably hear this spiel again with even more verve and passion in those other classes.
+It makes sense, then, that Your Observing Notebook be maintained with particular attention paid t o
+clarity , neatness , and completeness . These aspects are all related and are all equally important (think for a
+moment about the limited value of  orderly sketches without any indication of what the seeing 2 or other
+atmospheric conditions are like, or a neat log whose contents otherwise make no apparent sense
+whatsoever) . A good observing log includes all the information necessary to reproduce your observations.
+The idea is to record all facts that may contribute in any way possible to your  later interpretation and
+understanding of the observation.
+                                                  
+1Part 2 comes in another handout later in the term.
+2Seeing  refers to the smearing and defocusing of images by  temperature-caused and other variations in
+the Earth's atmosphere.</text>
+        </slide>
+        <slide>
+          <slideno>4</slideno>
+          <text>/square4 The circular outline of the visible field should be drawn, so that sizes of and distances between
+objects can be estimated later.   With fifty pages of notebook for the term, there's no reason to
+struggle with micro-sized field circles less than about 3 inches (8 cm for the metric lovers) indiameter or to try to cram multiple sketches in with the written notes on any given page. In fact, forobjects with significant detail (like the Moon), one 4 to 5 inch (10 to 13 cm, 0.3 to 0.4 light-
+nanoseconds) sketch per page works best, giving you room to draw as well as room on the page for
+the written portion of your log; see figure 2  for a full-size sample of a boffo, high-class sketch drawnby an experienced visual observer. Some students have found it helpful to prepare empty circles on
+notebook pages indoors while planning the evening's work, to be filled in outdoors with sketches.
+/square4 Record what visual magnification  you were using for the sketch.  A common point of confusion here
+is to read the focal length of the eyepiece off its barrel and record that as the magnification.  While the
+two values are related, they're not the same!
+The magnification is more generally useful information than merely the focal length of the
+eyepiece  because the latter by itself doesn't tell the whole story:  the focal length of the telescope
+optics also figures in to what you see.
+For an LX200 the magnification equals 2000/f
+e, so with a standard selection of eyepieces:
+/square4 50x when using 40mm eyepiece
+/square4 77x when using 26mm eyepiece
+/square4 161x  when using 12.4mm eyepiece
+(For now you get these numbers free, along with a promise that you'll be shown the ``why and
+how'' derivation later on when we do some theory and practice of optics.)
+/square4 One easy but crucial  bit of information to record with your sketch is to mark with arrows the
+directions of north and east . Don't let us forget to demonstrate this individually for you:
+To identify north in your field, set the paddle speed to "CNTR" and move the telescope to the north
+(push the N button)  while at the same time observing the field in the eyepiece; and stars will move
+south . East and west can be determined similarly by moving the telescope toward the east (direction
+from which objects are rising); and the stars will move west.
+A most common observation enhanced with this information is a sketch of Jupiter and the relative
+positions of its four Galilean satellites: armed with north and east, you'll be able to use a reference(such as the  Astronomical Almanac  2002 , or the Voyager III  software application) and definitively label
+which moon is which.
+/square4 As best you can, identify the objects in your sketched visual field with labels, before you forget what
+it is that you drew!  AT THE TELESCOPE, put in enough information so that you can do the detailed
+labelling on your next trip inside.  Include at least enough ``field stars'' near the object in your sketch
+to provide definitive information about orientation and scale.  (This is where even the best ofintentions can start to slip on particularly cold nights...)</text>
+        </slide>
+        <slide>
+          <slideno>2</slideno>
+          <text>Then, for each  individual object you observe or photograph, include
+/square4 a clear statement of what  you are doing and why. This needn't be anything  particularly earth-
+shatteringly exciting or philosophical: something like
+Finding M13 to observe and sketch a globular cluster
+     is fine.
+/square4 Name  of object observed: common name if it has one, otherwise you're stuck with the catalog
+designation (e.g. ``Rosette Nebula'' vs. ``NGC-2237'').
+/square4 If you obtained the celestial coordinates  of the object from a reference source, it'll be convenient to
+have them in your notebook as you proceed to find the object with the telescope.
+However, working in the other direction by recording coordinates that you read off of the paddle
+readings on your LX200 may be somewhat less useful and less accurate (though they shouldn't be
+toooooo  bad).
+Figure 1:  Reference Magnitudes in Ursa Minor
+ www.starastronomy.org/Library/umical.html  copyright 1999 S*T*A*R Astronomy
+/square4 Description and Comments  - especially points which may not be clear in the pencil sketch you're
+about to make.  Don't worry about being overly structured with these; just keep them clear in meaningand clear in handwriting:
+Located Pleiades with naked eye; looks like a small faint cloud. Pointed telescope at it by
+sight.  Many stars spread over a fairly large field;  decide to sketch the finder field (mag.6 times) as suggested in Handout 5 to be able to cover its area.</text>
+        </slide>
+        <slide>
+          <slideno>1</slideno>
+          <text>1 "What am I expected to write in it?''
+As you become more practiced at making astronomical observations, you will find it easier to know what
+might be most useful to record.  Here's the list of basics to get you started:
+1.1 Before you go out
+Experience has shown that spending a little time planning a set of suitable targets for an evening's
+observin g will, in the long run, allow you to make better use of available observing time.  Choose objects
+you know will be well up in the sky during the time you plan to be at the telescope (altitude 20o) or
+greater is a good rule-of-thumb) because the seeing gets really really bad at lower altitudes. (You'll get a
+head-start on this for use during the term, in the form of a forthcoming handout with visibility information
+already computed for you.)  Even if you're doing easy objects which don't require that you makedetailed finder charts, use your notebook to sketch out a plan for the star hopping you'll use to locatethe object with the telescope (more about this later).  It's better to do as much of this preliminary
+paperwork as possible indoors beforehand, since trying to browse without direction through handouts and
+reference books out at the telescope in the (cold) wind with a red flashlight makes observing seem muchmore complex than it really is, and sops up valuable observing time.
+/square4  When you get outside
+At the beginning of the observing session you can record
+/square4 Date  and Location  of observing session, Observer(s) , and Instrument Used
+(In our class situation it's particularly useful to record the number of the telescope kit you're using, so
+that if you find an equipment problem that should be looked at by seminar staff outside of class you
+can definitively identify the offending kit.)
+/square4 Sky Conditions  - general description.
+Date: 1991 July 11
+Location: Keauhou Beach Hotel, 5 miles south of Kona, Hawaii.
+3:00 am HST: Mostly clear to the east where Sun will be during eclipse; a few scatteredclouds visible overhead.  What a relief!  Go back to bed.4:35 am: ACK!  OVERCAST!  Panic!  Should we try to go north?  Indecision:  stick it out
+here a while and see what happens.
+5:45 am: appears to be clearing, from the SOUTH, contrary to usual weather patterns.6:00 am: definite breaks in clouds now down here, but still looks solid to north (where all
+the TV crews are...). Looks like we may actually win!
+/square4 To quantify sky conditions, include an estimate of limiting magnitude , the magnitude beyond  which
+you cannot see with your dark-adapted but otherwise unaided eye; the chart in Figure 1 is provided
+for this purpose.
+3
+Date: 1984 Jan 21
+Location: Pine Glen, PA
+9:20 pm EST: Very dark sky (only 2 nights past New Moon),limiting mag. about 5.5
+                                                  
+3  If you REALLY want to do this RIGHT, include also an estimate of the size of the seeing disc in
+arcseconds, and grade the sky transparency  on a 1-10 scale.</text>
+        </slide>
+        <slide>
+          <slideno>3</slideno>
+          <text>The longer we stared at M42, the more we saw --- by moving my eye around in the field,
+averted vision picks up details in different areas. Faint wisps of nebula appear to extend
+over the entire field.
+M35 in Gemini just a big, dim glow.
+M74 face-on galaxy not found, though we verified that we had the correct star field
+visible at 50 ?.  The instructor agrees we have the right field.
+Impressions and other qualitative comments give your records some character and make your
+observations more personally interesting to review later on:
+M13 is spectacular viewed through the LX200!
+For a moment I had a weird feeling of seeing depth, as of a flat object held up in front of
+the Trapezium. The Orion Nebula feels ``cold'' (although this may be mostly because I'M
+COLD!!)
+/square4 Time  observations were made.  ``The time'' of an observation which isn't instantaneous, such as a
+sketch or long photographic exposure, should be recorded as separate start and end times (best), or as
+a start time and a duration (adequate). Traditionally, astronomers use ``UT'': Universal Time, the time
+at Greenwich, England, but local time is fine for us provided you explicitly record which time zoneyou're using (e.g. EST or EDT). If no UT clock is handy I'll normally just write down the clock time
+(zone time) and time zone while at the telescope and figure out the UT later on, the idea being that
+I'm less likely to misread my watch than goof an on-the-fly UT computation.
+/square4 Sketches  - through finder scope and/or through the various eyepieces you have available, as
+appropriate : you'll want to use low powers or the finder scope to sketch the field of spread-out
+objects like open star clusters; use high powers for small bright objects with detail like planets or forseeing details on the Moon. (Remember also to note if you're using the diagonal mirror attachment,
+since this yields a non-inverted but left/right-reversed  image in the eyepiece.)
+ Pencil works better than ballpoint pen does for showing objects of varying intensity (e.g.
+nebulae or planet atmospheric features), and you can also try representing wispy effects by
+intentionally smearing pencil marks with your finger. Ballpoints also freeze.</text>
+        </slide>
+      </slides>
+      <videos/>
+    </lecture>
+    <lecture>
+      <lecture_title>Solar Observing (PDF)</lecture_title>
+      <lecture_pdf_url>https://ocw.mit.edu/courses/12-409-hands-on-astronomy-observing-stars-and-planets-spring-2002/resources/handout12_sp2002/</lecture_pdf_url>
+      <lectureno>12</lectureno>
+      <slides>
+        <slide>
+          <slideno>0</slideno>
+          <text>1Massachusetts Institute of Technology
+Department of Earth, Atmospheric, and Planetary Sciences
+12.409 Hands-On Astronomy, Spring 2002
+Handout 12 / week of 2002 April 29 Copyright 1999
+Created S. Slivan
+Revised A. Rivkin and J. Thomas-Osip
+Solar Observing
+1. This is the only inherently hazardous form of observing:  be careful! (The Sun is mag. - 27)
+2. In this class, we use full-aperture solar filters made of aluminized Mylar or glass, specifically
+designed for safe telescopic observation of the Sun.
+a) Never look at Sun in an unfiltered telescope, finder scope, or binoculars, and don't trust a
+filter made of unknown material.
+b) "Retina knows no pain"Though intense visual light can cause discomfort and thus
+trigger the "look away" reflex, the IR and UV radiation causes damage without the
+observer knowing it because there are no pain receptors on the retina!
+c) There must not be pinholes or breaks in the filter or its coating.  You shouldn't be able to
+see anything (except the solar disk) through the filter.  Hold the filter up to the sky and
+make sure there are no leaksif any sky shows through the filter is unsafe, don't observe
+until you replace it!
+d) UNDER NO CIRCUMSTANCES SHOULD A FILTER BE USED AT THE
+EYEPIECE END OF BINOCULARS OR A TELESCOPE IN PLACE OF A FULL-
+APERTURE SOLAR FILTER!   Eyepiece "solar filters" are very dangerous due to the
+concentrated heat of the Sun near the focal plane. Unfortunately, such filters are
+commonly found, on low-quality department-store "Christmas Trash Scope" telescopes.
+If you stumble across one of these solar filters, do whoever owns it a favor: shatter it with
+a hammer and then throw it away.
+3. The filter must be secure  on the telescope, because if it comes off eye damage occurs in only
+1
+1000 sec.  Consider wind conditions as well as accidental bumping.  If the security of the filter
+on the telescope is at all in question for any reason, tape the filter on with duct tape.
+4. Keep the finder scope covered, or remove it completely, to avoid melting the crosshairs!
+Besides, children or unknowing adults might accidentally look through it.
+5. Similarly, make sure you don't let unfiltered Sun melt things that mount on the rear cell (e.g.
+dont point the telescope at the sun until youve secured a reliable solar filter on the main
+aperture:
+/square4 dust cap
+/square4 CCD (burns right through the shutter and melts the detector chip)
+/square4 eyepieces (melts the cement that holds the component lenses together)</text>
+        </slide>
+      </slides>
+      <videos/>
+    </lecture>
+    <lecture>
+      <lecture_title>&#8220;Chez 12.409&#8221; Menu for Spring 2002 (PDF)</lecture_title>
+      <lecture_pdf_url>https://ocw.mit.edu/courses/12-409-hands-on-astronomy-observing-stars-and-planets-spring-2002/resources/handout5_sp2002/</lecture_pdf_url>
+      <lectureno>5</lectureno>
+      <slides>
+        <slide>
+          <slideno>10</slideno>
+          <text>11 12.409, Spring 2002
+4.4 More Variable Stars
+1. VZ Cancri: (a pulsating variable) - one kind of star that intrinsically changes in brightness.  [ Dm = 0.7; period =
+4.3 hours]  This star's brightness sports a rapid rise followed by a slower fall.  Its period is short enough that you
+should be able to detect a brightness change over the course of only one night's observing, if you make yourbrightness estimates carefully.  Use your finder scope field and compare the star with field stars to its N and NW.Try making observations at intervals of about 1 hour, at the beginning, middle, and end of class.
+2. z Geminorum (in Gemini): one of the brightest Cepheid variables , another type of intrinsic variable. [ Dm = 0.5;
+period = 10.2 days]  You should be able to find it `eyes-only' by using the Sky Atlas 2000 .  z Gem has an
+abnormally symmetric light curve but a fairly small magnitude range, so make your estimates as carefully and as
+accurately as you can.  This is a candidate for naked-eye comparison (no telescope); The two nearby stars k Gem
+[mag. +3.6] and u Gem} [mag. +4.1] correspond closely in brightness to the extrema of z Gem.
+3. U Geminorum:  Namesake of the small class of stars U Gem/SS Cyg type, with outbursts', sometimes called
+cataclysmic variables  or mini-novae .  [ Dm = 6.7; unpredictable period ~ 60 to 260 days] Use your 40mm eyepiece
+to get 50x.  This will probably be one of the most challenging objects to find --- don't become discouraged if it
+takes some time (like attempts on more than one class night), because it glows faintly at only mag. +14.9 duringthe fainter part of its cycle.  14.9 is really pushing beyond the visual limits of an 8-inch telescope, even under idealconditions, so don't feel incompetent if you decide it's invisible (even from Wallace).  But most importantly, you
+should learn the star field, because that way, you can set an upper limiting magnitude to the star's brightness.  At
+60- to 260-day intervals, U Gem brightens quickly (taking 24 to 48 hours) to about magnitude +8.2, and stays therefor a week or two --- you should have no trouble identifying it then, either in Cambridge or at Wallace!  A finderchart appears in Burnham's Celestial Handbook, Vol.2 } on page 930, along with a plan of attack on page 925. Who
+will be the first to see U~Gem if it brightens for us this term?
+4.5 Satellite Observations
+Passages of the HST spacecraft and International Space Station (ISS) can be visible sometime during the couple hoursfollowing the end of twilight.  It's visible from our location with a LX200 at low power provided you're looking inprecisely the right place at the right time; it takes only 1 to 2 seconds to pass through the field.  Due to atmosphericdrag and other effects constantly affecting the orbit, accurate finder charts cannot be prepared until the day of theplanned observations.  Online sites will also give observation predictions for the Boston area.</text>
+        </slide>
+        <slide>
+          <slideno>2</slideno>
+          <text>3 12.409, Spring 2002
+/square4 Can you identify these constellations?
+Andromeda
+Cepheus
+Lyra
+Perseus
+Bootes
+Cygnus
+Orion
+Taurus
+Cassiopeia
+Hercules
+Pegasus
+Ursa Minor
+(Fainter constellations such as Cancer or Monoceros are difficult to see in Cambridge, since only the brightest stars
+show up here.  MUCH less of a problem at Wallace Observatory!) You do need to learn the brightest stars andconstellations in order to be able to find your way around the sky with binoculars, or with small telescopes such asours. If you don't yet know those 12 listed above, this is where having a copy of Rey's book with you really can helpout.
+/square4 Where is the Moon in the sky? (Also try to find it during the day if it's visible.)    When and where did/will it
+rise? Set?  What phase is it in now?  Is is waxing (getting bigger) or waning (getting smaller)? Where is it withrespect to the stars?  The position of the Moon changes SIGNIFICANTLY, about 12
+o to 15o  from night to
+night.
+/square4 Predict the next full moon  - Plot the Moon's positions  through the stars for a few weeks, carefully sketching
+the phase at each observation. Make a diagram of the Earth and Moon's orbit, showing the direction in whichthe Sun lies.  Label the appropriate position on the orbit with the corresponding date of each of yourobservations.  With enough observations, you should be able to calculate a date for the next full moon - check
+the AA afterward to see how close you came!
+/square4 Plot a Planet's Path   Jupiter and Saturn are up all semester. They are easy objects to find, so it's easy to
+record their motion on a star chart.  Photocopy the proper pages out of (in Uranometria 2000) and affix themto pages in your notebook.  Each observing night, look at one (or both) using your finderscope---although theplanets are bright enough to see without optical aid, the field stars near Jupiter and Saturn might not be easilyvisible from Cambridge without using the finder.  Plot the positions as accurately and as precisely as you can,recording the date and time of each marked position.  In which direction is each moving, and how fast?  Dothey appear to change direction over the course of the month?  Do you have enough positions to tell if/how theapparent speed  of motion changes over the course of the term?
+/square4 Can you find the constellation corresponding to your so-called astrological sun sign?  Is it even up for
+viewing anytime this term? You can use the Sun's coordinates in Astronomical Almanac  together with a Sky
+Atlas 2000  or Uranometria 2000  to figure out which of the thirteen  constellations which lie along the ecliptic
+the Sun is really  in on your birthdate---it  won't  be your so-called sun-sign.  (We will get to seeing why this
+is the case.)
+When you go out for an eyes-only session, feel invited (coerced, exhorted, cajoled) to bring along your Observing
+Notebook, and FEED IT!</text>
+        </slide>
+        <slide>
+          <slideno>5</slideno>
+          <text>6 12.409, Spring 2002
+4. h and  C Persei in Perseus (also called NGC 869 and 884) - The Double Cluster: a pair of open clusters.  A large
+object - sketch it in your finder scope and lowest power (pair just barely  fits in field at 50x).
+5. M3 in Canes Venatici - a globular cluster:  a few tens or hundreds of thousands of stars in an essentially spherical
+dense concentration. Being near Arcturus, M3 rises a little late for us early in the term, but becomes more
+cooperative after a few weeks.
+6. M13 in Hercules - The Hercules Cluster: one of the most famous globular clusters. Contains about 300,000 stars,
+24,000 light-years away.  Only available the last month of the semester.
+2.5 Galaxies   In general, galaxies are NOT easy objects; M31 is the only exception.
+1. M31 in Andromeda - the Andromeda Galaxy: a spiral galaxy , similar to our own and (relatively speaking) close
+by; it's only 2,400,000 light-years away.  It is only available during the first half of the Spring term.  We see ittilted about 15
+o from edge-on.  Can you see it in Cambridge without the telescope?  (At Wallace observatory, you
+would be able to find it visually, without the telescope.)  Use your lowest power to find it.  Sketch its appearance
+through the finder scope and through the available eyepieces.  The nucleus is easy to see; the fuzz of the spiralstructure is much more difficult: estimate its angular size through the LX200, and compare this with the extent ofits ellipse as plotted in the Sky Atlas 2000 .
+3 (/box3/box3/box3/box3 intermediate) Lunar Features and Non-trivial Deep Sky Objects
+This set of objects is designed to refine and sharpen your observational skills. You will be trying to find some more
+difficult objects here; be patient and thorough.
+3.1 The Moon Again
+The Moon is one of the most rewarding celestial objects for viewing with a small telescope.  Since it is so nearby, theMoon shows far more detail than anything else in the sky, even without using any telescope. (Besides, there's noproblem finding it).  The idea here is to become familiar with the various types of features visible on the lunar surface.
+Which particular types of features are best-viewed on a given night depend somewhat on the lunar phase.  The best
+time to view craters and mountains is when they lie along the  terminator , which divides day and night on the Moon.
+There, the sunlight strikes features at a glancing angle causing them to cast long shadows which helps a great deal tobring out topographic (strictly speaking, selenographic) relief visually.  The terminator is particularly rich in reliefnear First Quarter (and Last Quarter) phase. In contrast, the flat light and dark areas and the lunar rays will be moreclearly seen away  from this shadow line, especially around Full Moon phase.
+n.b. It may be wise to consider using the eyepiece-mountable ``Moon filter'' in your kit if you plan to be observing a
+substantially-lit Moon for a fairly long time; it's a very bright object! (up to mag. 13!).  (The kit has an assortment ofcolored filters too, if you're feeling particularly artistic).
+Begin  by making a LARGE rough sketch of the visible lunar surface, mainly to serve as a sort of  scaffolding within
+which you can subsequently make your more detailed observations.  Don't   spend too much time on this first sketch!
+Include only large dark patches, very noticeable craters, and other large features.  Once you've got your large sketch,you can proceed with some more detailed observations by selecting and answering questions from the following list,adding features to your sketch and indexing them appropriately as you go along.
+One way to handle this is to use the question number from the list as a short label for the feature on the sketch itself,
+(e.g., labeling a feature 2e on the sketch itself and noting 2e = crater with center peak) in your notebook. As you sketch
+and index the features in your notebook, leave space for the correct given name of each.  Back inside, you can use aprinted Sky and Telescope Lunar Map  to find the correct name for each feature you observed. If you want more</text>
+        </slide>
+        <slide>
+          <slideno>0</slideno>
+          <text>Massachusetts Institute of Technology
+Department of Earth, Atmospheric, and Planetary Sciences
+12.409 Observing Stars and Planets, Spring 2002
+Handout 5 / week of 2002 February 25  Copyright (c) 2002
+Created S. Slivan
+Revised A. Rivkin and J. Thomas-Osip
+Chez 12.409 Menu for Spring 2002
+This handout is intended to give you some direction as to what you might want to hunt for with your telescope. It'sdivided into sections as follows:
+Contents
+Reference information .......................................................................................................... ..................................................... 1
+1 Without the Telescope ........................................................................................................ .................................................... 2
+2 (/circleshadowdwn easy) Moon; Bright Planets &amp; Deep Sky Objects ................................................................................. .......................... 4
+2.1 The Moon ................................................................................................................... ..................................................... 4
+2.2 Planets .................................................................................................................... ......................................................... 4
+2.3 Some Stars ................................................................................................................. ...................................................... 5
+3 (/box3 intermediate) Lunar Features and Non-trivial Deep Sky Objects ................................................................. .................. 6
+3.1 The Moon Again ............................................................................................................. ................................................ 6
+3.2 Variable Stars - making visual estimates ................................................................................... .................................... 8
+3.3 More Clusters, Nebulae, Galaxies ........................................................................................... ....................................... 8
+4( expert) Faint Planets, Asteroids, and Other Challenging Stuff .......................................................................... ......... 9
+4.1 More Planets ............................................................................................................... ..................................................... 9
+4.2 Asteroids .................................................................................................................. ........................................................ 9
+4.3 Still More Clusters, Nebulae, Galaxies ..................................................................................... ................................... 10
+4.4 More Variable Stars ........................................................................................................ .............................................. 11
+4.5 Satellite Observations ..................................................................................................... .............................................. 11
+5 Charts and Tables ............................................................................................................ ...................................................... 12
+5.1 Object Information Table ................................................................................................... .......................................... 12
+5.2 Visibility of Easy ( /ring1) Objects ...................................................................................................................... ............... 13
+5.3 Visibility of Intermediate ( /box1) and Expert ( /rhombopen) Objects .............................................................................................. 14
+Reference information
+Celestial coordinates for the clusters, nebulae, variable stars, and galaxies included in this handout are provided in the
+table on page 12.
+More Information: This handout is intended to help you select what to observe. In order to actually locate the objects in
+the sky, you'll need some additional at-the-telescope reference material:
+/square4 The Stars  by H. A. Rey. Superior naked-eye introduction to the constellations, including much of  the lore
+going along with them. (Lindgren Library course reserve) 12.409 has copies you'll use  while observing inclass.
+/square4 Sky Atlas 2000.0  - a rather large ringbound set of star charts showing stars to 8
+th   mag. It's well-suited for
+locating objects with our LX200's and is in year 2000 coordinates. (Lindgren Library course reserve; ScienceLibrary map room) 12.409 has laminated copies you'll use outdoors while observing in class, as well as regularpaper copies for use indoors.</text>
+        </slide>
+        <slide>
+          <slideno>12</slideno>
+          <text>13 12.409, Spring 2002
+5.2 Visibility of Easy ( /ring1/ring1/ring1/ring1) Objects
+Bar marks dates between which object is above 20 altitude sometime  during class for our location.</text>
+        </slide>
+        <slide>
+          <slideno>11</slideno>
+          <text>12 12.409, Spring 2002
+5 Charts and Tables
+5.1 Object Information Table
+Items in bold  indicate well-known objects of special interest. Visibility information appears on
+pages 13 and 14. Note that coordinates given here for objects are for equator and equinox J2000.0.
+Description key: EN = emission nebula PN = planetary nebula
+GC = globular cluster OC = open cluster: mag. given as "brightest member (integrated)"GX = galaxy VS= variable star
+Object Con. RA2000 Dec2000 mvisual Type Description
+B Per Per 3h08m10s.1 +4057.3 ~2 VS /box1
+z Gem Gem 7h04m07s+2034'.1 3.7-4.2 VS /rhombopen
+HU Tau Tau 4h38m16s+2041'.0 5.9-6.7 VS /box1
+U Gem Gem 7h55m05s+2200'.2 8.2-14.9 VS /rhombopen
+VZ Cnc Cnc 8h40m52s+949'.5 7.2-7.9 VS /rhombopen
+h Per Per 2h19.m0 +5709' 7 (4.3) OC /ring1 half of the Double Cluster
+c Per Per 2h22.m4 +5707 7 (4.3) OC /ring1 the other half; hs buddy
+NGC2244 Mon 6h32.m3 +451' 7 (5.2) OC /box1 Rosette Nebula cluster
+NGC2419 Lyn 7h38.m1 +3852 10.3 GC /rhombopen
+NGC7635 Cas 23h20.m7 +6112 6.9 EN /box1 Bubble Nebula
+M1 Tau 5h34.m5 +2202' 8.4 EN /box1 Crab Nebula
+M3 CVn 13h42.m1 +2823' 6.3 GC /ring1
+M5 Ser 15h18.m5 +206' 6.1 GC /box1
+M13 Her 16h41.m7 +3628' 5.9 GC /ring1 Hercules Cluster
+M31 And 0h42.m7 +4116' 3.5 GX /ring1 Andromeda Galaxy
+M38 Aur 5h28.m7 +3551' 8 (7.0) OC /box1
+M42 Ori 5h35.m4 -523' 4 EN /ring1 Orion Nebula
+M44 Cnc 8h40.m1 +2000' 6 (3.9) OC /ring1 Beehive Cluster
+M45 Tau 3h47.m0 +2407' 3 (1.6) OC /ring1 The Pleiades
+M51 CVn 13h29.m9 +4712' 8.4 GX /rhombopen Whirlpool Galaxy
+M57 Lyr 18h53.m7 +3302' 9.0 PN /box1 Ring Nebula
+M64 Com 12h56.m7 +2133' 8.5 GX /box1 Blackeye Galaxy
+M65 Leo 11h19.m0 +1305' 9.4 GX /rhombopen spiral galaxy
+M66 Leo 11h20.m2 +1259' 9.0 GX /rhombopen spiral galaxy
+M81 UMa 9h55.m8 +6903' 7 0 GX /box1 spiral galaxy
+M82 UMa 9h56.m0 +6941' 8.4 GX /rhombopen irregular galaxy
+M92 Her 17h17.m1 +4309' 6.4 GC /box1
+M97 UMa 11h14.m9 +5500' 11.1 PN /rhombopen Owl Nebula
+M103 Cas 1h33.m3 +6043' 9 (6.9) OC /rhombopen
+M104 Vir 12h40.m0-1138' 8.3 GX /box1 SombreroGalaxy
+M107 Oph 16h32.m5 -1304' 9.2 GC /rhombopen</text>
+        </slide>
+        <slide>
+          <slideno>7</slideno>
+          <text>8 12.409, Spring 2002
+c) Note that at high powers under conditions of good seeing, some rilles will be revealed to really be craterlet chains
+(e.g. the Rheita Valley, labeled S on the Lunar Map, near crater Rheita #251).  Locate and examine one or morechains of craters.
+d) Examine the `Alpine Valley', a deep straight gorge cutting through the lunar Alps at the northeast corner of Mare
+Imbrium. (labeled aa on the Lunar Map, near crater Protagoras #238)
+3.2 Variable Stars - making visual estimates
+The stars listed here vary in brightness fairly regularly over a period of a few days.   If you observe one or more of
+these stars carefully on two or more different nights, you should be able to detect these changes .
+To make a visual estimation of the magnitude of a star, sketch the field you'll use (including the variable). Choose a
+number of other stars in the field and assign them each a letter name in order of decreasing magnitude (e.g., A =brightest, B = not quite as bright as A, ...), recording the letter names on your sketch.  Then make an estimate for thevariable star, so that on a scale of 1 to 10 between two ``lettered'' stars, say B and C, a B2 would represent a brightnessabout 20\% of the way from B down to C (brighter than C by about four times as much as it is fainter than B).  Keepyour eyes moving; look back and forth repeatedly among the 3 stars (brighter, fainter, variable) and judge the variable'sbrightness as best you can.  (Don't worry about trying to assign numerical values for the magnitudes at the telescope.)
+It is important that you approach the brightness estimation task without letting any preconceptions of what you think
+the star should  be doing affect your work.  At first you may find it difficult to distinguish between brightnesses which
+are less than 0.3 or 0.4 mag. apart; brightness estimation skill is improved only by practice.
+1.  b Persei (Algol, in Perseus) - an eclipsing binary  - orbiting pair of stars of different brightnesses whose orientation
+causes them to eclipse each other as seen from Earth.  A bright (bright enough for Cambridge!) variable star with a
+short period.  [Dm = 1.3; period = 2.9 days]  Using Rey's book or the atlas, you'll be able to locate it with your unaided
+eye, and will need to estimate its brightness relative to other nearby naked-eye stars (i.e. don't use the telescope at all
+for this one; even the finder field is too small a field).
+Suggestions for estimations using the LX200 :
+/square4 This type of work is best done with a low-power eyepiece. If the variable is the brightest object in the field, try
+using the finder scope; you want at least one star in the field to be brighter than the variable so you can makean accurate estimate.  It isn't as instructive to know only that the star was brighter than 7
+th magnitude if the star
+was actually varying between 7th and 5th magnitude.
+/square4 Center the star(s) in your field of view (to avoid vignetting, false contrast with inside of tube).
+/square4 Try viewing the star(s) slightly out-of-focus: apparently it's easier to compare the brightnesses of discs than of
+pinpoints.
+2. HU Tauri (in Taurus) - another eclipsing binary. [ Dm = 0.8; period = 2.1 days] Although plotted in the Sky Atlas
+2000 }, the 12s23 Atlas Supplement (hanging around the room) goes one better, with a copy of Uranometria  chart
+#134 for use as a finder chart.  You'll probably need to use your finder scope to get a good set of in-field
+comparison stars.  HU~Tau has a fairly small magnitude range, so make your estimates as carefully and as
+accurately as you can.
+3.3 More Clusters, Nebulae, Galaxies
+For these objects, the task of finding them at all among trackless expanses of stars is non-trivial, mainly because it's notnearly as obvious when you've successfully got one in your field.  To locate them, you'll need to be fairly adept at usingstar charts and finding your way around confusing star fields.  (Any awkwardness with charts in the dark spellstrouble.)  Your success or lack thereof also depends on your eyesight and the prevailing sky conditions, so please keep</text>
+        </slide>
+        <slide>
+          <slideno>13</slideno>
+          <text>14 12.409, Spring 2002
+5.3 Visibility of Intermediate ( /box1/box1/box1/box1) and Expert ( /rhombopen/rhombopen/rhombopen/rhombopen) Objects</text>
+        </slide>
+        <slide>
+          <slideno>3</slideno>
+          <text>4 12.409, Spring 2002
+2 (/circleshadowdwn/circleshadowdwn/circleshadowdwn/circleshadowdwn easy) Moon; Bright Planets &amp; Deep Sky Objects
+2.1 The Moon
+The Moon isnt up during the first week of the class, but is around for the end of it.  Its a bit of a shame since its a
+great object for beginning observers.  Nevertheless, we can enjoy it when it shows up.  Sketch the phase of the Moon
+(e.g. full, waxing crescent), then try your hand at drawing in some of the larger surface features. (If it's
+uncomfortably bright through the LX200, use the Moon filter.) How much of the Moon can you see at once through thefinder and through the various eyepieces? Try different eyepieces to obtain the magnification that gives the best viewsfor the prevailing sky conditions. What, in your opinion, did this optimal magnification turn out to be? (A morecomplete observing guide to the Moon is included in Section 3.1 as intermediate-level observing.)
+2.2 Planets
+1. Jupiter   The King of the Planets  rules the skies all month long.  Jupiter is at opposition this month, and is also
+unusually close to Earth Shining about mag. -2.6.  Jupiter is a large bright feature-filled object. At low power, you
+see a small oval disc flanked by some or all of its four bright Galilean moons.  Even with low powers you'll be ableto pick out one or two of the dark cloud (belts) near its equator. Higher powers will reveal smaller features only if
+the seeing is good (if the stars are twinkling madly forget it - you won't be able to use your telescope's resolvingpower to its fullest). If we do get a good night, you should be able to observe the Red Spot if it's facing us, on the
+south edge of the south equatorial belt. Careful observations of these details can show visible changes even overthe time span of only one night's observing, since Jupiter rotates once on its axis every 10 hours, and the innersatellites move fairly quickly in their orbits around Jupiter. A blue eyepiece filter helps to increase contrast of thedark band(s) and Red Spot (also try yellow-green, green, and orange).
+Try to observe Jupiter each opportunity you get!  Take care to accurately record the positions of the visible
+Galilean satellites, so that it will be possible to properly identify each with its name.  Avoid just taking a hurried
+look and then moving on to something else - take some time and give your eye a chance to really see what's there,
+particularly if our sky conditions are favorable.  (Jupiter's almost always worth at least 10 min. of observation,minimum.)  In order to observe more belts and hints of spots, patches, and other detail, you'll need to keepwatching for many minutes to catch the moments of good seeing and study the disk carefully.
+2. Saturn  - Available all semester (but in the later part only early in the evening).  Saturn's bright at around mag.
++0.7 this term, sitting in Taurus. This term its rings are wide open, near their maximum, so the shape of an objectyou think is Saturn should be unmistakably elliptical even at low power. If conditions are good try viewing Saturnthrough your yellow filter; it may help reveal some non-uniformity on the disc you see (also try other colors, andrecord your results).  Locating and positively identifying brightest satellites Titan (mag. +8.3) and Rhea (mag.+9.7) is an only slightly more difficult project: you need to compute their expected locations, most easily done
+using the Voyager III  application, or online sites (see your instructor for details).
+3. Mars  - Spring 2002 we find Mars hanging very low in the southwestern sky for the first half of the term.  It fades
+from mag. +1.0, as Earth pulls steadily away over the course of the semester and its size decreases steadily.  Howbig is it at the start of the class relative to the end?  Mars will be a tough observation to make relative to Jupiter andSaturn.
+4.  Other Planets   Unfortunately, the other major planets (Mercury, Venus, Uranus, Neptune, and Pluto) are all
+poorly situated for observing this Spring.  Theyre all too close to the Sun to see.  Thats OK, we dont need themanyhow.</text>
+        </slide>
+        <slide>
+          <slideno>6</slideno>
+          <text>7 12.409, Spring 2002
+detailed reference maps, go to the Stein Map Room in the Science Library or to the Lindgren Library (54-200) and use
+a lunar atlas there.
+If you look for but can't find an example of a particular feature, then  record that fact in your notebook. Of course, feel
+free to sketch in any other features or structure you find intriguing.
+1 The lunar seas:  maria , the flat darker gray lunar plains
+a) Estimate the percentage of visible surface covered by maria.
+b) What is the general shape of the maria?
+c) In general, are the maria connected to one another? Try to find an example of a lunar plain which is not connected
+to the others.
+d) Can you find areas which differ distinctly in reflectivity (darker or brighter) from that of the rest of the surface?
+e) Some of the mare floors show wavelike ripples when sunlight strikes them at a glancing angle ( i.e. near the
+terminator).  Try to find an example of this effect.
+f) Can you find examples of different sorts of interaction between craters and maria?  Which appears to have
+happened earlier in lunar history:
+/square4 larger-scale cratering, or
+/square4 formation of maria?
+g)  Examine the ``Straight Wall'' cliff, in eastern Mare Nubium. (labeled xx on the Lunar Map, near crater Birt {#37)
+It's 130 km long, 180 m high, slope of 40o).
+2.  The lunar craters
+a)  In which quadrant of the visible surface do most of the craters lie?
+b)  In general, which wall of a crater (inner or outer) is steeper?
+c)  Do most of the crater floors appear to be above, below, or level with the general ground-level of the surrounding
+region?  Try to find at least 1 example of each of these 3 cases.
+d)  The largest craters, such as Clavius, Plato, and Ptolemaeus, are often called walled plains .  Find one and contrast
+its shape and outside wall or lack thereof with that of the more moderately-sized craters.
+e)  Do all large craters have central peaks?
+f)  Are peaks always at the center?
+g)  Can you find an example where the central peak exhibits a hole at the summit?
+h)  Can you see examples of small craters on the rims of larger craters, deforming their walls?
+i)  Locate and examine a few twin craters.
+3.  The lunar mountains  - you can use the Lunar Map  to easily locate one or more visible mountain ranges.
+a) Do the mountain ranges appear in general to be straight or curved?
+b) Does one side appear to be steeper, in general?
+c) Look for a mountain peak (or a high crater wall) on the night side of the Moon, just over the terminator, that rises
+high enough to catch some of the rays of the rising Sun and shine like a bright spot of light.
+4.  Lunar  rays - these are best seen with Sun overhead (shadows absent).  Craters Tycho and Copernicus have
+particularly notable ray systems.a) Are the rays continuous across the lunar surface?  Do rays appear to pass equally well over maria, crater walls, and
+mountains?
+b) Do rays always appear to radiate from crater centers?
+c) Estimate the lengths of the rays associated with one crater (your choice!).  (The diameter of the Moon is about
+3480km.)
+5.  Rilles  and craterlet chains  - Rilles  are long narrow cracks in the surface, half a mile or so across.
+a) Find some rilles.
+b) Can you tell if rilles appear to be associated primarily with one specific type of lunar feature or are they fairly
+uniform in distribution?</text>
+        </slide>
+        <slide>
+          <slideno>8</slideno>
+          <text>9 12.409, Spring 2002
+that in mind as you begin to consider throwing your partner off the roof out of sheer frustration.  (We note, in fairness,
+that you have a couple of secret weapons well let you in on partway through the semester)
+When you do find one, draw what you see, with different eyepieces if there is a distinction.  Normally you'll want to
+stick with low power to get brighter images.  Note especially the important characteristics, such as angular size, shape,
+and any visible color. Using averted vision may help you see faint objects.  You can also try using the ``LPR'' (Light
+Pollution Reduction) filter to increase contrast by darkening the sky background (works best on emission nebulae).
+1. Rosette Nebula  (NGC-2237, -2238, -2239, -2246; and open cluster NGC-2244) in Monoceros - a diffuse emission
+nebula.  You won't see this one visually: even though it's about three times the size of the full moon, it is anEXTREMELY LOW-CONTRAST nebula. It's included here as an intermediate-level target for CCD observations(from Wallace?) rather than for sketching.   To observe it, use the LX200 to locate NGC-2244, the open cluster itlives with.
+2.  M1 in Taurus - The Crab Nebula , a diffuse emission nebula. Remnant of the Supernova of A.D.1054.  Be
+patient!  A small AND faint object!
+3. M38 in Auriga - an open cluster
+4. M81 in Ursa Major - a spiral galaxy seen face-on
+5. Bubble Nebula in Casseopia (aka NGC 7635)  Bright Nebula (HII region)
+6. M5 in Serpens  Globular cluster available late in the semester
+7. M92 in Hercules  Globular cluster also available late in the semester.
+8. M64  in Coma Berenices  The Black-eye Galaxy , a spiral
+9. M104  in Virgo  The Sombrero Galaxy , a spiral seen almost edge-on.  A small object that would fit nicely in the
+CCD FOV.
+10. M57 in Lyra  The Ring Nebula , a planetary nebula.  A small object that looks somewhat like a focus doughnut.
+3.5 Alien Spacecraft  Note especially any bumper stickers on the spaceship (as information about alien society).
+/e3rightAbove all, it's important to FEED YOUR NOTEBOOK !
+4( expert) Faint Planets, Asteroids, and Other Challenging Stuff
+4.1 More Planets
+As mentioned, earlier, Uranus, Neptune, and Pluto, which would normally go in this section, are not even theoretically
+possible during Spring in 2002.
+4.2 Asteroids
+Typically at least one or two of the four largest asteroids will be bright enough to observe using our telescopes.Locating and positively identifying an asteroid takes a bit of extra effort since they move significantly each day, so youneed an accurate finder chart that also shows stars at least as faint as you expect the asteroid to be.  To observe anasteroid, star-hop to its location as shown on your finder chart, and then at low magnification carefully and completely
+sketch the pattern of field stars you see.  Hopefully one of those stars is really your asteroid!  Be sure to save your</text>
+        </slide>
+        <slide>
+          <slideno>4</slideno>
+          <text>5 12.409, Spring 2002
+2.3 Some Stars
+Starting with some objects that should  make easy finding
+1. Use a star atlas to locate these stars by greek letter in the indicated constellation, then find them visually with your
+telescope.
+a. a Canis Majoris (Sirius, in Canis Major) - What color does this star appear to be?  Sirius is the brightest star
+in our sky at mag. -1.4.  Low in the eastern sky during class time.  Try the following while it's still in the murk below
+20o:
+/square4 Compare the unfiltered image of Sirius with that of Capella (a star nearer the zenith:  Zenith  is the
+point in the sky directly overhead) at the same high magnification.  Can you detect any difference inoverall quality, and in size?  Why would there be a difference?
+/square4 Compare the size of Sirius image at high magnification (use your 12mm eyepiece with the 2x
+Barlow lens to get 340x  as seen through blue and through orange eyepiece filters. Can you detectany difference in size?  Why would there be a difference?
+b.  a Aurigae (Capella, in Auriga) -  what color does this star appear to be?
+c. b Ori (Rigel n Orion) - What color does this star appear to be?
+2. Sketch the fields of these double stars .  Locate each using your lowest power (i.e., 6x), using your finder scope) and
+then work up in magnification until you can resolve the pair.  Given the field of view sizes for the eyepieces in whichthey can be resolved, estimate the angular separation between the component stars.
+a. i Cancri (in Cancer) - sketch the star field.  How do the two component stars differ?  Try viewing this pair
+slightly out-of-focus to intensify color.
+b.  b Monocerotis (in Monoceros) - Carefully sketch the star field; you'll need to use fairly high magnification
+for b Mon to appear double.  In what ways do b Mon and i Cnc differ?  If the sky conditions are particularly good, try
+to inspect the component stars very carefully at your highest power.  Notice anything?
+2.4 Clusters and Nebulae   Locate, describe and sketch each of the following objects (For coordinates of
+objects here, see the table last page of this handout:
+1. M42 in Orion - The Great Orion Nebula: a bright diffuse  emission nebula , about 1300 light-years away.  You
+should be able to locate this one VISUALLY in order to point the telescope, even in Cambridge, but in case youwimp out, its coordinates are in the table at the end of the handout. M42 contains stars in  formation; look for theTrapezium, a knot of four stars near the middle.  These four young hot stars apparently supply most of theenergy which excites the nebula's hydrogen gas, making it glow.
+2. M45 in Taurus  The Pleiades:  an open cluster .  This is another object you should have little trouble finding
+without the telescope in Cambridge.  A large object - sketch the view through the finder scope  (6x  since the whole
+cluster won't fit in the field at the higher magnifications using the LX200).  Its worthwhile to try drawing a smallerarea in more detail using lowest power eyepiece as well.  Do you know what car company takes its name from this
+astronomical object?
+3. M44 in Cancer - The Beehive Cluster: another open cluster.  Barely visible to naked eye under good  conditions
+as a faint glow or hazy patch of light.  It's a sprawling cluster, so you must use the low power eyepiece to be ableto get a reasonable amount of it in the field. Look for the ``beehive'' itself: the trapezoid formed by mag. 6.5 starsat the heart of the cluster.</text>
+        </slide>
+        <slide>
+          <slideno>9</slideno>
+          <text>10 12.409, Spring 2002
+finding chart, so that the next night you observe you can verify that the asteroid really was in your field by finding and
+sketching the same field a second time; your asteroid will be the object that moved!
+Making a finder chart:  The charts can be made using the Voyager III  application. This is an especially
+straightforward approach because the software handles both calculating the asteroid position as well as plotting it on astar chart.
+But you can plot a finder chart even if you don't have a spiffy program to do it for you, as long as you can get hold of
+an ephemeris ( Ephemeris  is astronomer-speak for a tabulation of an object's RA, Dec, and distance for some set of
+times at regular intervals. Complete ephemerides (plural form) for the four brightest asteroids 1-Ceres, 2-Pallas, 3-Juno, and 4-Vesta are printed each year in the Astronomical Almanac ; partial tables for other asteroids which are
+fainter but still potentially observable with small telescopes appear from time to time in Sky and Telescope  and
+Astronomy , usually with finder charts.  Various online sources for asteroid ephemerides also existask Andy for their
+addresses) for the asteroid covering the time you wish to observe. You'll need a star atlas that shows stars at least as
+faint as the asteroid, such as Sky Atlas 2000  (to mag. +8), Uranometria 2000   (to mag. +9), or the brand new
+Millennium Star Atlas  (to mag. +11). (Remember that you need to use a chart referenced to the same equinox as the
+coordinates you have, usually 2000. Watch out for older charts in 1950 coordinates!) Photocopy the appropriate chartand plot the asteroid's position at five- to ten-day intervals lightly in pencil, then draw a smooth curve passing throughall the points.
+Another way to handle the observations is reminiscent of the way asteroids are discovered todaywhen we begin
+using CCDs on the telescopes, move the telescope to the field containing the asteroid of interest (several relativelybright ones available this semester are listed below), and take several integrations separated by a few minutes.  Youshould easily be able to see the asteroid move relative to the background stars.  If the exposure is long enough and theasteroid is moving fast enough, you might even be able to get the target to leave a trail (this exercise is left for the
+reader).
+Plausibly observable asteroids this semester:  Vesta (pieces of Vesta have fallen to Earth), Mathilde (faint, maybe
+too faint.  The first body visited by the NEAR Shoemaker spacecraft), Juno, Zelinda, Kalliope, Papagena, Flora
+4.3 Still More Clusters, Nebulae, Galaxies
+1.  open cluster M103 in Cassiopeia (quite a small one)
+2. Owl Nebula - planetary nebula M97 in Ursa Major
+3.  irregular galaxy M82 in Ursa Major, seen on-edge
+4. Globular cluster NGC 2419 (quite faint and small), possibly not gravitationally bound to Milky Way
+5. spiral galaxy M66 in Leo
+6.  spiral galaxy M65 in Leo
+7. Whirlpool Galaxy - spiral galaxy M51 in Canes Venatici, seen face-on. Fairly close to the zenith late in the
+semester; so do some neck-stretches to loosen up beforehand.
+8. irregular galaxy M82 in Ursa Major, seen on-edge
+9. globular cluster M107 in Ophiuchus available late in the semester.</text>
+        </slide>
+        <slide>
+          <slideno>1</slideno>
+          <text>2 12.409, Spring 2002
+/square4 Nortons 2000  -useful for finding brighter objects (down to mag. ~ 6) or for use with binoculars.  This 18th
+edition is fairly recent; you may see the 17th edition ( Norton's Star Atlas ) around as well.  The main difference
+is that the new version is in 2000 coordinates while the older is in 1950. (Science Library Map Room; CSRReading Room)
+Additional reference materials, more appropriate for ``desk work'' such as making finder charts, computing
+observability, or obtaining detailed information about objects you're observing, include:
+/square4 The Astronomical Almanac 2002  - the official reference for more careful work, with LOTS of information
+(some of which is even useful for 12.409 work), including rise and set times for the Sun and Moon,coordinates for planets, bright asteroids, stars brighter than 5th magnitude, (Lindgren Library; Science Librarymap room ; CSR Reading Room; 12.409 classrooom).
+/square4 Uranometria 2000.0 , Vols. 1 &amp; 2  - hardcover atlas with stars to mag. 9.5.  Ideal for photocopying to make
+finder charts for harder objects!  (Lindgren Library ; Science Library map room; 12.409 classroom).
+/square4 Voyager III  application for Macintosh (installed on ibook computers in 12.409 classroom)
+/square4 HST Guide Star Catalog CD-ROMs  and Pickles  application for Macintosh -most useful for making charts to
+use when tracking down faint objects with our CCD cameras (Lindgren Library; 12.409 classroom)
+/square4 Burnham's Celestial Handbook, Vols. 1--3  - The ultimate source of detailed information about objects you're
+observing. (Science Library, CSR Reading Room; 12.409 classroom).
+Finally, note that the contents of this handout are intentionally restricted in scope to primarily those objects visible in
+the evenings  during the Spring.  More general information about what interesting celestial targets are up when can be
+found in:
+/square4 Astronomy  magazine (monthly).  The section titled Sky Almanac has a few subsections: Eye on the Sky
+dealing with naked-eye observations, Through the Eyepiece dealing with telescopic targets, and a usefulchart of planetary data. (CSR Reading Room) (stocked by Out Of Town News in Harvard Square)
+/square4 Sky and Telescope  magazine (monthly), with columns Rambling Through the Skies, Celestial Calendar',
+The Evening Sky, and Stars &amp; Planets. (CSR Reading Room) (stocked by ``Out Of Town News'' in
+Harvard Square, also see  www.skypub.com )
+1 Without the Telescope
+Whenever you can, try to get in some naked-eye observing on clear nights outside of class time.(Also try binoculars, if
+you have them.) It's not bad as a study break---grab a comfy chair, a copy of Rey's book and some cookies (and maybea sweater), amble on up to the roof of your living group (maybe not if its MacGregor, though)  and just mellow outunder the sky.  But, you say, what will I be able to look at on clear nights which aren't  my lab night ,when I  won' t
+have a telescope?
+Well,
+/square4 Do you know how to tell the compass directions at night? (If you don't already, you will REAL SOON; you'll
+need to get through one of the checkpoints in the class.) Start by finding North to get your bearings.</text>
+        </slide>
+      </slides>
+      <videos/>
+    </lecture>
+    <lecture>
+      <lecture_title>Color Imaging (PDF)</lecture_title>
+      <lecture_pdf_url>https://ocw.mit.edu/courses/12-409-hands-on-astronomy-observing-stars-and-planets-spring-2002/resources/handout11_sp2002/</lecture_pdf_url>
+      <lectureno>11</lectureno>
+      <slides>
+        <slide>
+          <slideno>1</slideno>
+          <text>2Earths atmosphere scatters blue light preferentially (Rayleigh scattering).  Also
+remember that images taken through the color filters will require longer exposures than
+unfiltered images in order to achieve the same signal-to-noise ratio simply because they
+cut down on the amount of light incident on the detector.
+LRGB Color Combination in Photoshop
+After you have acquired your luminance (this is just a fancy name for an image taken
+through the clear filter) and color images, you need to calibrate them as you would any
+grayscale images (as discussed in handout 9).  You should also perform any special
+processing needed such as kill warm pixels to each of the color images separately.When you are satisfied with the status of each of the color and luminance constituent
+images save them as TIFF files in CCDOPS.  The color combination will be performed
+using Photoshop.
+The first step is to create an RGB composite.
+1. Open all three R, G, and B .tiff images in photoshop.
+2. Display all three images using the grayscale mode ( Image-&gt;Mode-&gt;Grayscale ).
+Click yes to the discard color info if necessary.
+3. Select Merge Channels  from the Channels  menu (located in the layers and channels
+palette, click on channels then click and hold the arrow to the right).
+4. In the dialog box that appears, select RGB  in mode  and channels  should be 3.
+5. In the next dialog box you will need to specify which image is assigned to the red,
+blue and green channels.
+6. Save this as your RGB composite
+Luminance layering is a technique that allows one to combine a high-quality unfiltered
+image with an RGB composite (that has lower signal-to-noise simply due to the fact that
+the color filter reduces the amount of light received) to provide color information.
+1. Open the RGB composite image and save as  a new file name so as not to overwrite it.
+2. Open the luminance image
+3. Select the entire image ( Select-&gt;All  or 
+-A)
+4. Copy the selection ( Edit-&gt;Copy  or -C)
+5. Paste  ( Edit-&gt;Paste  or -V) it into the new LRGB image creating layer 1 on top of
+the background RGB composite.
+6. In the layers palette, select luminosity  from the pull-down menu (which by default has
+normal selected).  Now your image should appear to have color.
+7. If the color appears washed out, you can try setting the opacity to something less than
+100%.
+Heres where things get artsy</text>
+        </slide>
+        <slide>
+          <slideno>0</slideno>
+          <text>1Massachusetts Institute of Technology
+Department of Earth, Atmospheric, and Planetary Sciences
+Handout 9 /week of 2002 April 22 12.409 Hands-On Astronomy, Spring 2002
+Color Imaging
+Color Imaging is an Art...................................................................................................1
+Acquiring Color Images ..................................................................................................1
+LRGB Color Combination in Photoshop ..........................................................................2
+Color Imaging is an Art
+Although the CCDs used for astronomical imaging are monochrome devices (due to
+sensitivity requirements), it is possible to create color images by combining separate
+images captured through color filters.  The technique discussed below is just one of the
+many that one could use.  Creating color images is truly an art form and there may be
+multiple ways of achieving a pretty picture.  You may even discover that two different
+processes produce equally pleasing but ascetically different images.  So feel free to
+experiment!
+Acquiring Color Images
+In order to acquire color images, connect the cable leaving the side of the filter wheel
+(CFW-8A which will be attached to the front of the CCD camera) to the port on the
+camera next to the parallel port during normal set-up of the camera (as directed in
+handout 8).  If this cable is connected properly, the filter menu in CCDOPS should no
+longer be grayed out.  In order to use the filter wheel you need to choose Filter Setup
+from the Filter  menu.  Select CFW-8  in the pop-up menu for filter wheel  and none  for
+dark position .
+Now you can move the filter wheel your desired filter choice by selecting it under the
+Filter  menu.  These filter wheels have red, green, blue, and clear filters in positions 1-4.
+Position 5 contains no filter (the default name for position 5 in CCDOPS is lunar which
+you can change to open  in the filter setup dialog box if you want).  The 6th position
+doesnt exist in the CFW-8 filter wheels, so just ignore it.  If you happen pick it by
+accident, nothing will happen.
+Because the CCD chip is less sensitive to blue light than to green or red, it will most
+likely be necessary (unless the object youre imaging is much brighter in the blue than
+red and green) to take longer exposures through the blue filter to achieve the same image
+quality.  A good starting ratio for exposure times is R:G:B=1:1:1.6.  If  the blue or green
+images are noticeably more grainy than the red image, you can try increasing length of
+the blue or green exposures accordingly.  Also when imaging away from the zenith (say
+lower than 45 altitude), you may need to increase the blue exposure times because the</text>
+        </slide>
+      </slides>
+      <videos/>
+    </lecture>
+    <lecture>
+      <lecture_title>Basic CCD Image Processing (PDF)</lecture_title>
+      <lecture_pdf_url>https://ocw.mit.edu/courses/12-409-hands-on-astronomy-observing-stars-and-planets-spring-2002/resources/handout9_sp2002/</lecture_pdf_url>
+      <lectureno>9</lectureno>
+      <slides>
+        <slide>
+          <slideno>1</slideno>
+          <text>2Color Tables and S t r  e  t   c   h     e     s
+OK.  Now you've got your image.  How best to display it to bring out the details?
+Let's assume we have an image where the peak intensity is 10,000 counts, and we have a
+display where zero counts shows up as black, 10,000 shows up as white.  Most image
+processing software defaults to a linear mode where 5,000 counts would show up half as
+bright as 10,000 but twice as bright as 2,500.  This set of display parameters (black level,
+white level, function between them) is informally called the stretch .  What if you have a
+very faint object that only has 1000 counts?  Or what if you're looking at Jupiter and
+interested in the atmospheric features, all of which fall between 7,000 and 8,000 counts?As may be obvious, you can change the stretch.  Most commonly, the white or black
+levels are changed to maximize contrast-in the first example you'd set the white level
+low, perhaps to only 2,500 or 3,000 counts to make the faint object appear brighter.  In
+the second, you'd set the black level quite high, maybe 5,000 or 6,000 counts.  A general
+rule of thumb (which you may have deduced) is to set the black level a bit below the
+faintest level you want to see and the white level a bit above the brightest level you want
+to see.   In some software you can change from a linear to a log (for example) stretch.
+What would that do?  A square root stretch?  An exponential stretch?
+Note!  CCDOPS uses a black level and range rather than a black level and a white level.  As you
+can see, the two are exactly equivalent (e.g. use black level of 5,000 and range of 1,000 for the
+Jupiter example).
+There is no hard and fast rule about what levels should be set where, however.
+Particularly in 12.409, the main point is to get images that look good to you!  And since
+the original data doesn't get affected ( check to make sure this is true in the program
+you're using! ), you can always keep tweaking!
+The use of black for faint and white for bright is ultimately an arbitrary one.   Many
+display programs will allow you to invert  the image , making faint objects white and
+bright ones black.  This simulates what you would see in a photo negative, which is theimaging medium most astronomers used up until the 1980s.  Some astronomical software
+will allow setting blue through red or yellow, or user-defined color schemes.  These are
+called color tables (or occasionally  lookup tables ).   For our purposes here, we assume a
+standard black-to-white color table, but since looking cool is the name of the game, your
+mileage may vary.
+Saving your work
+There are 3 different file formats that the software we'll be using can handle. One is"SBIG", which is the native format created by the camera and specific to it.  The second
+is the more familiar TIFF format, and the third is FITS format, commonly used in
+astronomical research.</text>
+        </slide>
+        <slide>
+          <slideno>2</slideno>
+          <text>3For these purposes, you should save your work in the SBIG format.  That is the only kind
+of data that can be read by CCDOPS (though it can write in others).  Saving in
+compressed format will save a lot of space and has no negative effects, so we suggest you
+save your work compressed.
+Some specifics
+Much of the following comes from the CCDOPS manual (Version 4.0) by the Santa
+Barbara Instrument Group.  There are copies of the manual around the classroom and in
+PDF format on the computers in the same folder as the CCDOPS application.  It's usefulto get more details of the software and menus.
+To load an image that you have previously taken, use the Open command.  Easy!  The
+first thing that comes up is a window containing header information:  file name, date andtime the image was taken, exposure time, etc.  Click it to make it go away, and the imageappears in a new window, with another new window labeled Contrast.  If you need the
+header information again, click "Parameters" in the Display menu.
+There are a few ways to set the stretch:  you can enter values for the background ("back")
+and range ("Range") and hit return, you can click on the arrows which update in real-time
+(the buttons with two arrows move the numbers twice as quickly), or you can let thecomputer decide by clicking Auto.  Other things you can do in this window are invert the
+image so that black represents brighter pixels, smooth the image, and change the
+magnification of the image.  Play with the settings to get a feel for what things do-- there
+should be a sample image or two available if you haven't taken your own yet.
+Crosshairs
+To activate a set of crosshairs, pick Show Crosshairs  under the Display menu.  Now
+when you move the crosshairs over the image you get the X and Y value for the point(measured from upper left), the value in counts for the pixel the crosshair is directly over,
+the average value for a box centered under the crosshair (the initial size is 5 x 5 pixels,
+but that's changeable through a menu at the bottom of the window), and the RMS (rootmean square) variation of the pixels in the box.  We're not going to worry about the otherentries in the window, though you should at least be able to recognize the words!
+Coadds
+Sometimes it is necessary to take relatively short exposures due to sky brightnessconditions or to keep an object from saturating.  If your target is too faint (or the contrast
+too low on bright objects) to show up well in short exposures, the typical approach is to
+take several exposures and coadd them.  In order to coadd images, use the crosshairs tool
+to determine their relative offsets (and write them down-- the computer doesn't keep thisinformation) and then use the Co-add command in the Utility menu.  You can also use</text>
+        </slide>
+        <slide>
+          <slideno>0</slideno>
+          <text>1Massachusetts Institute of Technology
+Department of Earth, Atmospheric, and Planetary Sciences
+Handout 9 /week of 2002 April 1 12.409 Hands-On Astronomy, Spring 2002
+Basic CCD Image Processing
+What exactly is a CCD? ...................................................................................................1
+Contributions to signal ....................................................................................................1
+Color Tables and S t r  e  t   c   h     e     s.........................................................................2
+Saving your work ............................................................................................................2
+Some specifics ................................................................................................................. 3
+Crosshairs ..................................................................................................................... ..3
+Coadds ......................................................................................................................... ...3
+Dark Subtraction .............................................................................................................4
+Other commands .............................................................................................................4
+What exactly is a CCD?
+We're glad you asked.  To make a connection that doubtless many of you have already
+made, the CCD is basically a digital camera.  In fact, the digital cameras you can buy in
+the mall have CCDs as their detectors.  Astronomical CCDs are designed to be more
+sensitive to low light levels but the idea is the same:  the chip is divided into pixels and
+light falling onto each pixel is converted into an electronic signal.  This signal is typically
+expressed in "counts".   The resulting image is output in one of a few typical formats and
+can be manipulated by any number of image processing programs.
+Contributions to signal
+The number of counts recorded will come from a number of sources.  Ideally, the target
+object  will contribute the majority of the signal, and is of course the signal we're most
+interested in.  The sky will unavoidably contribute signal, depending upon the light
+pollution conditions and proximity to (and phase of) the Moon among other things.  As
+mentioned in Handout 8, signal unrelated to photons is also present in your images:  read
+noise  which occurs even in zero-second exposures with no incident light and dark current
+which is inherent in the electronics of the instrument, building up with time even with no
+incident light.  Differences in sensitivity across a chip leads to flat-field  effects.
+Again, as mentioned in Handout 8 it is important to take calibration frames to help make
+the most of your images though in this class it won't be necessary to take the kinds of
+calibration data necessary for astronomical research.   We can get away with just dark
+frames for our purposes.  The dark frames will be subtracted from the object frames,
+which will also take care of the read noise.
+Aside:  Can you think of a way to take care of the sky counts?  Would you still need dark
+frames?</text>
+        </slide>
+        <slide>
+          <slideno>3</slideno>
+          <text>4this command in order to average a number of frames without registering them (dark
+frames for instance).  Unfortunately, you'll have to do the coadding 2 images at a time.
+Better would be to use Average Images, also in the Utility menu, which lets you average
+many objects at once.
+Dark Subtraction
+If you are going to take a large number of frames with the same exposure times, it is bestto turn off auto dark subtraction and do it post facto.  Auto-subtracting images will take
+over twice as long as doing it manually.  Take a dark frame of the relevant exposure time
+first, then after your object frames have been taken use the Dark Subtract  command
+under the Utility menu.
+Other commands
+The Utility menu has a number of other commands of greater-or-lesser importance for12.409.  Smooth has the effect of replacing every pixel with a weighted sum of itself and
+its neighboring pixels.  Sharpen could also be used to, well, sharpen the image.  Both of
+these functions can be done with varying strengths.   Neither one would be used inresearch-quality data, but since we don't have that problem here, feel free to mess withthem to see what they do!  The same goes for the other commands in the Utility menu.
+Just make sure you know what you're saving when you save it, and keep backup copies of
+images!</text>
+        </slide>
+      </slides>
+      <videos/>
+    </lecture>
+    <lecture>
+      <lecture_title>Meade 8" LX200 Set-up (PDF)</lecture_title>
+      <lecture_pdf_url>https://ocw.mit.edu/courses/12-409-hands-on-astronomy-observing-stars-and-planets-spring-2002/resources/handout3_sp2002/</lecture_pdf_url>
+      <lectureno>3</lectureno>
+      <slides>
+        <slide>
+          <slideno>1</slideno>
+          <text>2B. Items inside the telescope case
+Meade 8 LX200 Telescope with 8 dust cover and cap for rear cell
+1. Power adapter and cord
+2. Handheld electronic control keypad
+3. 2 coiled cords (one for keypad w/ 4 pin phone jack connectors and one for the
+declination motor w/ DB-9 connectors that are slightly wider)
+C.  Items inside the accessory case
+1. Finderscope
+2. Visual back (allows connection of an eyepiece or diagonal)
+3. Diagonal prism
+4. 7 Meade series 4000 Super Plssel eyepieces each in their own plastic case
+/square4 6.4 mm (313  magnification, 0.17 field of view when used on f/10 Meade 8)
+/square4 9.7 mm (206 , 0.25)
+/square4 12.4 mm (161  , 0.32)
+/square4 15 mm (133  , 0.39)
+/square4 20 mm (100  , 0.52)
+/square4 26 mm (77  , 0.68)
+/square4 32 mm (63  , 0.83)
+/square4 40 mm (50  , 0.88)
+5. 2 Barlow lens
+6. Eyepiece filters (Moon filter and set of color filters)
+7. Light Pollution Reduction Filter
+Generalized Setup Procedure
+1. Attach telescope base to tripod.  Theres only one screw, and it can be a bit tricky to
+set it in correctly.  When the telescope is screwed to the tripod correctly, there should
+be no space between the base and tripod and the telescope base should not rotate.
+2. Attach finderscope to main telescope (see below)
+3. Level telescope (use bubble as guide, hopefully it shouldnt be too far off).
+4. Attach cables:
+/square4 Dec motor to main base
+/square4 Paddle to base
+/square4 Plug to converter
+/square4 Converter to base
+5. Power up!</text>
+        </slide>
+        <slide>
+          <slideno>3</slideno>
+          <text>46. Never wipe any optics  especially the corrector plate; the anti-reflection coating is
+very thing and will scratch easily.  If your corrector plate becomes covered with dew,
+alert your instructor or TA and well use a heat gun to evaporate it off.
+Alignment
+The purpose of the following procedure is to allow the telescope drive motor to properly
+track objects in the sky as the Earth rotates beneath them causing their apparent motion
+across the sky.  The LX200 telescopes are mounted in an altitude/azimuth (called alt-az
+for short) format meaning that the telescope moves along vertical and horizontal axes.  In
+order for the LX200 to be able to track objects in the night sky properly, it must be ableto convert between altitude/azimuth coordinates along which the telescope moves and
+Declination/Right Ascension coordinates along which celestial objects appear to move.
+Thus, the LX200 must know its location, and the local date and time should all be pre-
+programmed (by the instructor or TA).  The LX200 will store this information with the
+power off so there should be no need for you to change this information until we use the
+telescopes at Wallace and thus need to change the location.  In addition, the LX200 must
+also know where certain positions in the sky are located.  This is accomplished by
+pointing the telescope consecutively at two stars with known positions and is called
+alignment.  The procedure is outlined below.
+1. Turn on the telescope and after the self-diagnostic start-up test is complete the display
+will give you two choices (TELESCOPE and OBJECT LIBRARY).
+/square4 Select Telescope (by pressing enter with the arrow pointing at Telescope).
+2. Now your choices should be (SITE and ALIGN).
+/square4 Press the Next key to move the arrow to Align and select it using enter.
+3. The display should had two choices again (ALTAZ and POLAR).
+/square4 If there is NO checkmark next to ALTAZ, press enter once and the keypad should
+beep and a checkmark should appear next to ALTAZ.  Now press enter again to
+use the checked mode.
+/square4 If there is a checkmark next to ALTAZ, press enter to use the checked mode.
+4. Your choices now should be (1 Star or 2 Star Alignment).
+/square4 Press next to move the arrow to 2 Star Alignment and then press enter to select it.
+5. The display should now read (Level Base, then press ENTER)
+/square4 This is good time to double check that the base of the telescope is level and adjust
+the legs of the tripod if necessary.
+/square4 When you press enter you will see (Press ENTER, then pick align star)</text>
+        </slide>
+        <slide>
+          <slideno>4</slideno>
+          <text>56. Now you will see the beginning of the list of alignment stars contained in the
+LX200s memory.
+/square4 There are 33 choices in alphabetical order so it may save you time over the course
+of the semester to learn where some bright stars with names beginning with A and
+B are in the sky.
+/square4 Before you choose a star find it in the sky and if you are not yet familiar with
+bright stars and constellations it might be worth double checking that you have
+the correct star with the instructor or TA.
+/square4 Press the Next key to move the arrow down the list of stars until you get to the
+one you want (if you go past it use the Previous key to go back up)
+/square4 Select the star by pressing enter
+7. The display will read (Center the star you chose in step 6 and then press ENTER)
+/square4 You may move the telescope manually:  UNLOCK the Dec and RA clamps and
+point the telescope towards the star.  Sight along the telescope and adjust the
+telescope until you can see the star in the finder, then fine tune until it is centered
+in the finder and then the eyepiece.
+/square4 Or you may move the telescope electronically:  Make sure the speed is set to
+SLEW (this button on the keypad should be lit up).  Use the N, S, E, and W
+buttons to move the telescope until it is aimed at the star.  When you can see it in
+the finder, switch the speed to FIND to center it in the finder.  Then change the
+speed again to CNTR and center the star in the eyepiece.
+/square4 The more carefully you center the star in the eyepiece, the more precisely your
+telescope will be aligned.  Early in the semester when you will be looking at
+bright objects and not using the telescopes internal object library to find faint
+objects, it is not important to align the telescope too precisely.  Just make sure that
+the star is somewhere near the center of the eyepiece.  Later in the semester, when
+you may want to rely on the telescope to find very faint objects, a more precise
+alignment will be necessary.
+/square4 Once you have centered the star in the eyepiece, press enter.  Try not to delay too
+much between centering the star and pressing enter since at this point the
+telescope is not yet tracking the stars and thus if you wait too long the star will
+drift out of the center of the eyepiece.
+8. Repeat steps 6 and 7 for the second star EXCEPT FROM THIS POINT ON DO
+NOT UNLOCK THE RA AND DEC CLAMPS AND ATTEMPT TO MOVE
+THE TELESCOPE MANUALLY.   This will result in the telescope forgetting
+where it is pointed and you will need to start the alignment process all over.  Move
+the telescope only by using the keypad at speeds SLEW, FIND, or CNTR in
+directions N, S, E, and W.
+9. After you have completed aligning the second star, the display should read
+(TELESCOPE/OBJECT LIBRARY).  You are ready to use the telescope for
+observation now!</text>
+        </slide>
+        <slide>
+          <slideno>0</slideno>
+          <text>1Massachusetts Institute of Technology
+Department of Earth, Atmospheric, and Planetary Sciences
+12.409 Hands-On Astronomy, Spring 2002
+Handout 3 /week of 2002 February 11
+Meade 8 LX200 Set-up
+Contents
+Telescope Kit Checklist ...................................................................................................1
+A. Items external to the telescope case .........................................................................1
+B. Items inside the telescope case ................................................................................2
+C.  Items inside the accessory case ...............................................................................2
+General Usage Hints ........................................................................................................3
+Alignment ...................................................................................................................... .4
+Table 1:  Some Bright Stars Available For Alignment ..............................................6
+Packing Up ..................................................................................................................... .6
+There will be a second handout covering more advanced use of the telescope and the
+extra equipment (and cases!) well use.  For now, this will cover the topics needed for
+basic visual observing with the LX200.
+Telescope Kit Checklist
+Use the following checklists to
+1. Alert the instructor or TA about missing pieces before beginning a nights
+observing and
+2.  Ensure that the kit is complete for use by your classmates next time.
+A. Items external to the telescope case
+1. Tripod with C Clip, threaded rod and tension knob, and spreader bar
+2. A Sky Atlas 2000.0, laminated edition, and Atlas Supplement notebook
+3. 120VAC power outlet strip
+4. Counterweights
+5. Flashlights (one red and one white)</text>
+        </slide>
+        <slide>
+          <slideno>2</slideno>
+          <text>3FOR EMERGENCY STOP:  TURN OFF POWER ON BASE
+OR PULL POWER PLUG FROM BASE!
+When will you need to do this?  Hopefully, never.  When we attach CCD cameras to the
+telescopes later in IAP, however, there are situations where you realize in the middle of a
+long slew that there isnt clearance for the CCD camera to fit where it needs to.    While
+this is not the most elegant solution, it will work.  Realize, however, that this will
+necessitate realigning the telescope (see below).   But thats better than wrecking a new
+telescope and CCD (hint, hint)
+General Usage Hints
+1.    When selecting a spot for your tripod  think about how any potential obstructions
+near your observing area (buildings, trees, etc) will screen areas of the sky
+2. Tripod adjustments :  The tripod should be stable once youve secured the spreader
+bar using the threaded rod with the tension knob.  The length of the legs can be
+adjusted using the lock knobs (bolts with star shaped handles) at the ends of the legs.
+These are also used to level the telescope.
+3. DO NOT EVER force the motion of the telescope ; unlock the clamp first or use the
+electronic keypad controls.
+4.  Finderscope :
+/square4 The finderscope is located in the accessory case.  You will need to mount it on the
+telescope by sliding its bracket into the base and tightening the thumbscrews.
+/square4 The view is inverted and has a field size of 5.2.
+/square4 Check the finderscope alignment before you begin observing by centering a bright
+object at least 1/4 mile distant in a low-power (low magnification) eyepiece and
+then see how far off this object is from the center of the crosshairs in the finder.  It
+will most likely need adjustment, if you want it to be centered.  Ask the instructor
+or a TA to show you how to use the three thumbscrews on the finders mount to
+align it.  Or remember where the position of an object that is centered in the
+eyepiece is located relative to the finder crosshairs.  If you choose this second
+option, make sure you make a note of it in your notebook in case you forget.
+5. Focusing :
+/square4 The focusing mechanism is designed to allow for very fine adjustment of focus.
+It takes up to 45 turns of the knob to go from focusing at close distances(which
+you should not need to do in this class) to infinity.
+/square4 Turning the knob counter clockwise focuses towards infinity.
+/square4 It may be best to choose a partner with similar vision correction (i.e. those with
+coke bottle glasses should stick together to avoid many focusing adjustments).
+/square4 It is often difficult to focus on dim objects so if you are having trouble, it can be
+helpful to focus on a bright object and bring the telescope back to aim at your
+original object.</text>
+        </slide>
+        <slide>
+          <slideno>5</slideno>
+          <text>6Table 1:  Some Bright Stars Available For Alignment
+Star Visible in the evening in
+which semester?Constellation Magnitude (smaller
+numbers are brighter)
+Aldebaran Spring Taurus 0.87
+Alkaid Spring or early Fall Ursa Major (Big Dipper) 1.85
+Altair Fall Aquila 0.76
+Arcturus Early Fall or late Spring Bootes -0.05
+Betelguese Spring Orion 0.45
+Capella Spring Auriga 0.08
+Deneb Fall Cygnus 1.25
+Dubhe Fall and Spring Ursa Major (Big Dipper) 1.81
+Vega Fall Lyra 0.03
+Packing Up
+Use the telescope kit checklist to make sure you still have everything you started with
+(check around the ground nearby, your pockets, and nearby telescope kits if necessary)
+and that you havent inherited extra parts from someone elses kit.  The LX200 only fits
+in the case one way so please dont force it in the wrong way.  Once in the case, unlock
+the RA and Dec clamps as this will avoid damaging the drive and clamp mechanisms
+during transport of the cases.  Remember to remove the finderscope from the telescope
+by loosening the thumbscrews on the quick-release mount.  Use the checklist to make
+sure the accessories get back in the proper case  (be it the telescope case or the accessory
+case).  If after you leave class, you discover that youve accidentally walked off with
+something from class please make sure you contact you instructor by email as soon as
+possible to arrange for its return.  This can be avoided by using the cases as working
+storage rather than your pockets!</text>
+        </slide>
+      </slides>
+      <videos/>
+    </lecture>
+  </lectures>
+</doc>

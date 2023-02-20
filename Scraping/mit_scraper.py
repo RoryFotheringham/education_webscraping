@@ -111,7 +111,10 @@ class Scraper:
     def get_single_course_lectures(self, course_link):
         """ Gather all information for individual course by calling upon supporting methods """
         # Get all lecture PDF links for this course
-        lec_num_to_link = self.get_lecture_notes(course_link)
+        try:
+            lec_num_to_link = self.get_lecture_notes(course_link)
+        except:
+            return
         # Some lectures don't have PDF links
         if not lec_num_to_link:
             return
@@ -126,7 +129,10 @@ class Scraper:
             slides = self.get_pdf_data(lecture_pdf_url)
             # Get video content (assuming in same order as lecture slides)
             if videos:
-                video = videos[i]
+                try:
+                    video = videos[i]
+                except IndexError:
+                    video = None
             else:
                 video = None
             lectures.add_lecture(lecture_title, lecture_pdf_url, lecture_num, slides, (video))
@@ -290,7 +296,10 @@ class Scraper:
         # Requests URL and get response object
         if (not pdf_url) or (pdf_url == ""):
             return Slides()
-        response = requests.get(pdf_url)
+        try:
+            response = requests.get(pdf_url)
+        except:
+            return Slides()
         soup = BeautifulSoup(response.text, 'lxml')
         # Find all hyperlinks present on webpage
         link = soup.find('a', {'class': 'download-file'})

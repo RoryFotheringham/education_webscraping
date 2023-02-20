@@ -1,0 +1,1168 @@
+<doc>
+  <source>MIT</source>
+  <date>28/01/2023</date>
+  <course>
+    <course_url>https://ocw.mit.edu/courses/hst-510-genomics-computing-economics-and-society-fall-2005/</course_url>
+    <course_title>Genomics, Computing, Economics, and Society</course_title>
+    <course_tags>
+      <list>Science </list>
+      <list>Economics </list>
+      <list>Social Science </list>
+    </course_tags>
+  </course>
+  <lectures>
+    <lecture>
+      <lecture_title>Metabolic Networks and Learning Perl</lecture_title>
+      <lecture_pdf_url>https://ocw.mit.edu/courses/hst-510-genomics-computing-economics-and-society-fall-2005/resources/05g_oct27/</lecture_pdf_url>
+      <lectureno>6</lectureno>
+      <slides>
+        <slide>
+          <slideno>19</slideno>
+          <text>Competitive growth data: 
+reproducibility
+Correlation between two selection experiments
+Badarinarayana, et al. Nature Biotech.19: 1060</text>
+        </slide>
+        <slide>
+          <slideno>11</slideno>
+          <text>Precursors to cell growth
+How to define the growth function.
+The biomass composition has been determined 
+for several cells, E. coli and B. subtilis .
+This can be included in a complete metabolic 
+network
+When only the catabolic network is modeled, 
+the biomass composition can be described as 
+the 12 biosynthetic precursors and the energy 
+and redox cofactors</text>
+        </slide>
+        <slide>
+          <slideno>7</slideno>
+          <text>Under-Determined System
+All real  metabolic systems fall into this category, so far .
+Systems are moved into the other categories by measurement of fluxes 
+and additional assumptions.
+Infinite feasible flux distributions, however, they fall into a solution 
+space defined by the convex polyhedral cone.
+The actual flux distri bution is de termined by the cell's regulatory 
+mechanisms.
+It absence of kinetic information,  we can estimat e the metaboli cflux 
+distribution by postulating objective functions(Z) that underlie the 
+cells behavior.
+Within this framework, one can address questions related to the 
+capabilities of metabolic networks  to perform functions while 
+constrained by stoichiometry, lim ited thermodynamic information 
+(reversibility), and physicochemical constraints (ie. uptake rates)</text>
+        </slide>
+        <slide>
+          <slideno>2</slideno>
+          <text>0.000.010.020.030.040.050.060.070.080.090.10
+0 102 0 304 0 50Normal (m=20, s=4.47)
+Poisson (m=20)
+Binomial (N=2020, p=.01)
+Binomial, Poisson, Normal</text>
+        </slide>
+        <slide>
+          <slideno>8</slideno>
+          <text>FBA - Linear Program
+For growth, define a growth flux where a linear 
+combination of monomer (M) fluxes reflects the known 
+ratios (d) of the monomers in the final cell polymers.
+A linear programming finds a solution to the equations 
+below, while minimizing an objective function (Z).  
+Typically Z= growth(or production of a key compound).
+ ireactionsbiomass Mdgrowthv
+allMM 
+i ii i ii
+X vvv
+= =
+0bvS</text>
+        </slide>
+        <slide>
+          <slideno>4</slideno>
+          <text>Poisson frequency distribution as a function of X  {int0  ... }
+P(X) = P(X-1) /X     =     xe-/ X!2 = 
+n large &amp; p small P(X)  B(X)  = np
+For example, estimating the ex pected number of positives 
+in a given sized library of cDNAs, genomic clones,
+combinatorial chemistry, etc.   X= # of hits.
+Zero hit term = e-</text>
+        </slide>
+        <slide>
+          <slideno>6</slideno>
+          <text>Mean, variance, &amp; 
+linear correlation coefficient
+Expectation E (rth moment) of random variables X for any distribution f(X)
+First moment= Mean  ;variance 2  and standard deviation 
+E(Xr) = Xrf(X)  = E(X) 2= E[(X- )2]
+Pearson correlation coefficient    C= cov(X,Y) =  [(X-X)(Y-Y)]/(XY) 
+Independent X,Y implies C = 0,  
+but C =0 does not imply independent X,Y. (e.g. Y=X2)
+P = TDIST(C* sqrt((N-2)/(1-C2)) with dof= N-2 and two tails.
+where N is the sample size.
+www.stat.unipg.it/IASC/Misc-stat-soft.html</text>
+        </slide>
+        <slide>
+          <slideno>9</slideno>
+          <text>Steady-state flux optima
+ABRAx1
+x2RB
+DC
+Feasible flux
+distributionsx2
+Max Z=3 at (x2=1, x1=0)RC
+RDFlux Balance Constraints:
+RA&lt; 1 molecule/sec (external)
+RA= RB(because no net increase )
+x1+ x2&lt; 1  (mass conservation)
+x1&gt;0       (positive rates)
+x2&gt; 0
+Z  = 3RD + RC
+(But what if we really wanted to 
+select for a fixed ratio of 3:1?) 
+x1</text>
+        </slide>
+        <slide>
+          <slideno>12</slideno>
+          <text>in silico cells
+E. coli H. influenzae H. pylori
+Genes 695 362 268
+Reactions 720 488 444
+Metabolites    436 343 340
+(of total genes   4300               1700                  1800)
+Edwards, et al  2002. Genome-scale metabolic model of Helicobacter 
+pylori 26695. J Bacteriol. 184(16):4582-93.  
+Segre, et al, 2002 Analysis of optimality in natural and perturbed 
+metabolic networks. PNAS 99: 15112-7. ( Minimization Of Metabolic
+Adjustment ) http://arep.med.harvard.edu/moma/</text>
+        </slide>
+        <slide>
+          <slideno>15</slideno>
+          <text>Flux ratios at 
+each branch 
+point yields 
+optimal 
+polymer 
+composition 
+for replication 
+x,y are two of the 100s 
+of flux dimensionsFigure by MIT  OCW.</text>
+        </slide>
+        <slide>
+          <slideno>21</slideno>
+          <text>Non-optimal evolves to optimal
+Figures removed 
+due to copyright 
+reasons.
+Ibarra et al. Nature. 2002 Nov 14;420(6912):186-9. Escherichia coli K-12 
+undergoes adaptive evolution to achieve in silico predict ed optimal growth.</text>
+        </slide>
+        <slide>
+          <slideno>0</slideno>
+          <text>10 AM  Thu 27-Oct  2005
+week 6 of 14  Genomics, Computing, 
+Economics &amp; Society 
+MIT-OCW Health Sciences &amp; Technology 508/510
+Harvard Biophysics 101
+Economics, Public Policy,  Business, Health Policy</text>
+        </slide>
+        <slide>
+          <slideno>3</slideno>
+          <text>Binomial frequency distribution as a function of 
+X {int 0 ... n}
+p  and q         0 p  q  1               q = 1  p        two types of object or event.
+Factorials   0! = 1     n! = n(n-1)!
+Combinatorics (C= # subsets of size X are  possible from a  set of total size of n)
+n!
+X!(n-X)!      =    C(n,X) 
+B(X) = C(n, X) pXqn-X = np 2= npq
+(p+q)n  = B(X) = 1
+B(X: 350, n: 700, p: 0.1) = 1.5314810-157
+=PDF[ BinomialDistribution[700, 0.1], 350]  Mathematica
+~= 0.00   = BINOMDIST(350,700,0.1,0)   Excel</text>
+        </slide>
+        <slide>
+          <slideno>14</slideno>
+          <text>Biomass Composition
+0 5 10 15 20 25 30 35 40 4510-610-410-2100102
+ACCOA
+COAATP
+FADGLY
+NADHLEU
+SUCCOA
+metabolitescoeff. in growth reaction</text>
+        </slide>
+        <slide>
+          <slideno>17</slideno>
+          <text>Figure removed 
+due to copyright 
+reasons.Flux 
+DataFigure removed due to copyright reasons.</text>
+        </slide>
+        <slide>
+          <slideno>20</slideno>
+          <text>Essential 142 80 62
+Reduced growth 46 24 22
+Non essential 299 119 180 p = 410-3
+Essential 162 96 66
+Reduced growth 44 19 25
+Non essential 281 108 173 p = 10-5MOMAFBACompetitive growth data 2  p-values
+4x10-3
+1x10-5
+Position effectsNovel redundanciesOn minimal media
+negative    small
+selection   effect
+LP
+QP
+Hypothesis: next optima are achieved by regulation of activities.</text>
+        </slide>
+        <slide>
+          <slideno>16</slideno>
+          <text>Minimization 
+of Metabolic 
+Adjustment 
+(MoMA)
+Figure by MIT  OCW.</text>
+        </slide>
+        <slide>
+          <slideno>5</slideno>
+          <text>Normal frequency distribution as a function of X {-...  }
+Z= (X- )/   
+Normalized (standardized) variables 
+N(X) = exp(- 2/2) / (2 )1/2
+probability density function
+npqlarge N(X)  B(X)</text>
+        </slide>
+        <slide>
+          <slideno>10</slideno>
+          <text>Applicability of LP &amp; FBA
+Stoichiometry is well-known
+Limited thermodynamic information is required
+reversibility vs. irreversibility
+Experimental knowledge can be incorporated in to the 
+problem formulation
+Linear optimization allows the identification of the 
+reaction pathways used to fulfil the goals of the cell if it is 
+operating in an optimal manner.
+The relative value of the metabolites can be determined
+Flux distribution for the production of a commercial 
+metabolite can be identified.  Genetic Engineering 
+candidates</text>
+        </slide>
+        <slide>
+          <slideno>23</slideno>
+          <text>Class outline
+(1) Topic priorities for homework since last class
+(2) Quantitative exercise
+(3) Project level presentation &amp; discussion
+(4) Sub-project reports &amp; discussion
+(5) Discuss communication/presentation tools
+(6) Topic priorities, homework for next class</text>
+        </slide>
+        <slide>
+          <slideno>13</slideno>
+          <text>Where do the 
+Stochiometric 
+matrices (&amp; kinetic 
+parameters) come 
+from?Figures removed 
+due to copyright 
+reasons.
+EMP RBC , E.coli
+KEGG, Ecocyc</text>
+        </slide>
+        <slide>
+          <slideno>22</slideno>
+          <text>Non-linear constraints
+Desai RP, Nielsen LK, Papoutsakis ET. Stoichiometric modeling 
+of Clostridium acetobutylicum fermentations with non-linear 
+constraints. J Biotechnol. 1999 May 28;71(1-3):191-205.</text>
+        </slide>
+        <slide>
+          <slideno>1</slideno>
+          <text>Class outlinePhoto removed due 
+to copyright reas ons.
+(1) Topic priorities for homework since last class
+(2) Quantitative exercises:  psycho-statistics, 
+combinatorials, random/compression, 
+exponential/logistic, bits, association &amp; multi-
+hypotheses, linear programming optimization
+(3) Project level presentation &amp; discussion
+(4) Sub-project reports &amp; discussion: 
+Personalized Medicine &amp; Energy Metabolism 
+(5) Discuss communication/presentation tools
+(6) Topic priorities for homework for next class</text>
+        </slide>
+        <slide>
+          <slideno>18</slideno>
+          <text>0 50 100 150 200020406080100120140160180200
+1
+23
+4567
+8
+9
+10
+11
+121314
+1516
+17 18
+-50 0 50 100 150 200 250-50050100150200250
+12
+3
+4567
+8
+9
+10
+111213 14
+1516
+1718
+Experimental FluxesPredicted Fluxes
+-50 0 50 100 150 200 250-50050100150200250
+1
+23
+4567
+8
+910
+111213
+14
+1516
+17 18pyk(LP)WT (LP)
+Experimental FluxesPredicted FluxesC009-limited
+Figure r emoved due 
+to copyright reas ons.=0.91
+p=8e-8
+pyk(QP)
+Experimental FluxesPredicted Fluxes=0.56
+P=7e-3=-0.06
+p=6e-1</text>
+        </slide>
+      </slides>
+      <videos/>
+    </lecture>
+    <lecture>
+      <lecture_title>Class Organization</lecture_title>
+      <lecture_pdf_url>https://ocw.mit.edu/courses/hst-510-genomics-computing-economics-and-society-fall-2005/resources/05a_sep20/</lecture_pdf_url>
+      <lectureno>1</lectureno>
+      <slides>
+        <slide>
+          <slideno>3</slideno>
+          <text>101:   '99-'03  Simple to Complex
+'05  Complex to Simple
+'03  5 problem sets &amp;  project
+'05  Project starts on day 1
+'03 one 2 hr ppt lecture +  1.5 hr section per week
+'05  two 1.5 hr discussion (may include 30' ppt)
+'03 Project teams or 1 or two students
+'05  Project team of all students &amp; TFs
+'03 Choice of two campuses &amp; streaming video
+'05  Less choice
+'03 Tools: Perl &amp; Mathematica
+'05 Wiki (&amp; anything else)Figure removed due 
+to copyright reasons.</text>
+        </slide>
+        <slide>
+          <slideno>0</slideno>
+          <text>MIT-OCW Health Sciences &amp; Technology 508/510
+Harvard Biophysics 101
+Economics, Public Policy,  Business, Health Policy10 AM  Tue 20-Sep  2005Genomics, Computing, 
+Economics &amp; Society</text>
+        </slide>
+        <slide>
+          <slideno>14</slideno>
+          <text>Vaccines for the 21st Century
+http://books.nap.edu/html/vacc21/
+Level I      Most favorable: saves money &amp; Quality-Adjusted Life Years(QALY)
+Level II    &lt; $10,000 &lt;  Level III &lt; $100K per QALY saved  &lt; Level IV 
+Level I candidate vaccines: 
+Viral: CMV vaccine for 12 year olds, Flu vaccine for 20% of the US per year.
+Therapeutic vaccines: IDDM diab etes, MS, Rhe umatoid arthritis 
+Bacterial: Streptococcus B &amp; pneumoniae vaccine for infants &amp; 65 year olds.
+[HIV vaccines promi nent already within NIH.]
+A quantitative model that could be used by decision makers to 
+prioritize the development of vaccines against a number of disparate 
+diseases 1985 &amp; 1999.</text>
+        </slide>
+        <slide>
+          <slideno>15</slideno>
+          <text>Biomedical Priorities 
+"The complete conquest of cancer or heart disease would each lead to 
+an increase of a mere 3% in mean life span in humans, i.e. about a 
+tenth of what can be accomplished,  today, in laboratory animals of 
+delayed aging. " -- Miller, R.A. (2005) J.Am. Geriatrics Soc. 53:S284.</text>
+        </slide>
+        <slide>
+          <slideno>17</slideno>
+          <text>CAUSES OF DEATH - WORLDWIDE - 1990 (millions)
+1.  6.3  Ischemic Heart Disease  
+2.  4.4  Strokes 
+3.  4.3  Lower respiratory tract Infections 
+4.  2.9  Diarrheal Disease 
+5.  2.4  Perinatal Disorders  
+6.  2.2  Chronic Pulmonary Disease  
+7.  2.0  Tuberculosi s (Non-AIDS) 
+8.  1.1  Measles  
+9.  0.99 Traffic Accidents 
+10.  0.95  Lung Cancers 
+11.  0.86  Malaria 
+12.  0.79  Self-inflicted Injuries  13.  0.78 Liver Cirrhosis  
+14.  0.75  Stomach Cancer  
+15.  0.59  Birth Defects (Rubella &amp; CMV) 
+16.  0.57  Diabetes Mellitus 
+17.  0.56  Violence (Non-war) 
+18.  0.54  Tetanus 
+19.  0.54  Nephritis 
+20.  0.50  Drowning 
+21.  0.50  War 
+22.  0.50  Liver Cancer (Hepatitis B Virus) 
+30.  0.31  AIDS  HIV-1 
+50.40 Total Deaths</text>
+        </slide>
+        <slide>
+          <slideno>2</slideno>
+          <text>Genomics, Computing, Economics 
+&amp; Society Course planPhoto removed 
+due to copyright 
+reasons.
+This course will focus on understanding aspects of modern 
+technology displaying exponential growth curves and the impact on 
+global quality of life through a weekly updated class project 
+integrating knowledge and providing practical tools for political 
+and business decision-making concerning new aspects of 
+bioengineering, personalized medi cine, genetically modified 
+organisms, and stem cells. Interplays of economic, ethical, 
+ecological, and biophysical modeling will be explored through 
+multi-disciplinary teams of students, and individual brief reports.
+Specific (standard) skills to be developed: statistics, modeling, 
+datamining, systems biology, technology development.</text>
+        </slide>
+        <slide>
+          <slideno>1</slideno>
+          <text>Genomics, Computing, Economics 
+&amp; Society Course planPhoto removed 
+due to copyright 
+reasons.
+Each student will participate in a class-wide project to provide 
+decision-making tools for global/local technology development and 
+deployment. Each will have a web page or wiki describing and 
+updating their part of project going by the second class.
+Grades will be based on 
+25% participation(round robin),  25% personal wiki page (weekly) 
+25% contribution to group project/ article, 25% peer evaluations
+No prerequisites.  It is assumed that each of you brings some 
+expertise to be integrated with the goals and talents of other team 
+members.  Each student should make  this clear at the start of the 
+project and update it as the course proceeds.</text>
+        </slide>
+        <slide>
+          <slideno>6</slideno>
+          <text>101:    '99-'03  Simple to Complex
+'05  Complex to Simple
+Common ground for conservative, liberal, religious &amp; atheist?
+What is life?  Should we construct from scratch?
+Did life evolve using intelligent design?
+When does human life begin?  
+Stem cells &amp; therapeutic cloning?
+Can we compare Apples &amp; oranges?
+Should we buy iron-lungs 
+or polio-vaccine research?
+Do we invest in anti-terrorism 
+or anti-malaria?Photos removed 
+due to copyright 
+reasons.</text>
+        </slide>
+        <slide>
+          <slideno>13</slideno>
+          <text>Economics &amp; Global Ecology 
+"much of the current enthusiasm for market based regulation stems 
+from the results of a pilot program launched in th US in 1990.  
+Congress amended the clean air act that year to set up a market for the 
+permits that power plants must have to release SO2.. Supply &amp; 
+demand.. Market overseers need the power, analogous to the Federal 
+Reserve's.."   --W Gibbs, Sci Am 2005
+Quantifying the "unquantitifiable"
+Interconversions in modeling</text>
+        </slide>
+        <slide>
+          <slideno>7</slideno>
+          <text>Hot buttonsEvolution
+Stem Cells
+Life extension
+Eugenics, race
+Privacy
+Security, Terrorism
+Genetically modified organisms - GMOs
+Intelligent machines 
+Replicating machines
+Withholding experimental drugs (e.g. HIV &amp; Cancer)
+Gender
+Do no harm, abortion
+Substance abuse
+VioxxPhoto removed 
+due to copyright 
+reasons.</text>
+        </slide>
+        <slide>
+          <slideno>10</slideno>
+          <text>Human subject experimentation
+(not a test)  5 seconds each
+1. Write your name, email, school &amp; year. 
+2. Estimate  8 x 7 x 6 x 5 x 4 x 3 x 2 x 1 
+3. From a group "of 70 engineers and 30 lawyers: Dick is a 30 year old man. 
+He is married with no children.  A man of  high motivation, he promises to be 
+quite successful in his field. He is well  liked by his colleagues."  What is the 
+probability that Dick is an engineer?
+4. Write down a string of 10 random H &amp; T characters. 
+5.  From 10 people, how many different committees of 2 members?
+and of 8 members?  
+6. One individual has drawn 4 red balls and 1 white. Another 12 
+red and 8 white. What odds should each individual give that the 
+source is 2/3 red (rather than 2/3 white)?
+7. Estimate  1 x 2 x 3 x 4 x 5 x 6 x 7 x 8</text>
+        </slide>
+        <slide>
+          <slideno>18</slideno>
+          <text>The Maslow pyramid, 1943
+Figures by MIT OCW.</text>
+        </slide>
+        <slide>
+          <slideno>5</slideno>
+          <text>3 Exponential technologies
+(synergistic)
+1E-31E-11E+11E+31E+51E+71E+91E+111E+13
+1830 1850 1870 1890 1910 1930 1950 1970 1990 2010ureaE.coli
+B12tRNAoperons
+telegraphComputation &amp;
+Communication 
+(bits/sec)
+Synthesis 
+(daltons)
+Analysis
+(bp/$) tRNA
+Shendure J, Mitra R, Varma C, Church  GM,  2004 Nature Reviews of Genetics. 
+Carlson 2003 ;  Kurzweil 2002; Moore 1965</text>
+        </slide>
+        <slide>
+          <slideno>8</slideno>
+          <text>Initial Reading
+Limits to Growth, The 30-Year Update by Donella H. Meadows, 
+Jorgen Randers &amp; Dennis L. Meadows 2004
+Freakonomics by Levitt &amp; Dubner 2005
+As the Future Catches You  by Juan Enriquez 2000
+Genetic Programming IV: Routin e Human-Competitive Machine
+Intell igence by John R. Koza et al. 2003
+Consilience by E.O. Wilson 1998
+Redesign ing Humans by Gregory Stock 2002
+Scientific Conquest of Dea th 2004 
+Collapse by Jared Diamond 2005 
+The Tipp ing Point by Malcolm Gladwell 2000 
+The Wisdom of Crowds by James Surowiecki 2004  
+The Climate Of Man by Elizabeth Kolbert 2005
+Widescale Biodiesel  Production from Algae by Michael Briggs,
+Synthetic Life by WW Gibbs  2004
+Personalized medicine by Francis S. Co llins 2005Photos removed 
+due to copyright 
+reasons.</text>
+        </slide>
+        <slide>
+          <slideno>20</slideno>
+          <text>Framework draft outline
+Working title: Prove, Predict, prioritize, practice
+Breaking barriers &amp; building bridges
+Prove, predict: Connect problems, technologies, modeling options
+Example: Evolution - replicating &amp;/or intelligent machines 
+stem cells, abortion
+Model: Quantitatively define life.
+Prioritize, practice:  Metabolic networks
+Example: Carbon &amp; Energy 
+Model: Multilevel from molecular to global.
+Prioritize: Privacy vs openess
+Example: Personal genomics
+Model:   Evolutionary conservation, etc.</text>
+        </slide>
+        <slide>
+          <slideno>11</slideno>
+          <text>Economics Nobel 2002
+"Economics has been regarded as a non-experimental science, where 
+researchers  as in astronomy or meteorology  have had to rely 
+exclusively on field data, ..  however, these views have undergone a 
+transformation. Controlled laboratory experiments have emerged as a 
+vital component .. &amp; have shown th at basic postulates in economic 
+theory should be modified. .. cognitive psychologists who have 
+studied human judgment and decision-making, and experimental 
+economists who have tested econo mic models in the laboratory. ..
+Daniel Kahneman and Vernon Smith ."
+(see also: Judgement under Uncertainty 1974 Science 185:1124)
+Cognitive bias .. includes "very basic statistical and memory errors 
+that are common to all human beings and drastically skew the 
+reliability of anecdotal and legal ev idence &amp; significantly affect the 
+scientific method."</text>
+        </slide>
+        <slide>
+          <slideno>9</slideno>
+          <text>It seemed like a good idea at the time.
+Crops
+River life
+Grain trade
+Livestock
+Hygeine
+Insecticides
+Fertilizer
+Nuclear Power
+Tankers
+PetsMalaria
+Cholera
+Yersinia
+Flu &amp; HIV
+Polio
+Silent Spring
+Anoxic fish
+TMI, Chernobyl
+Mussels &amp; sea snakes
+Australian herbicidePhoto removed 
+due to copyright 
+reasons.
+Photo removed 
+due to copyright 
+reasons.</text>
+        </slide>
+        <slide>
+          <slideno>4</slideno>
+          <text>Previous class projects
+Andr Catic, Cal Collins, George Church, Hidde Ploegh, HL (2004) Preferred 
+in vivo ubiquitination sites. Bioinformatics 20: 3302-7. 
+Andrew Tolonen , DinuAlbeanu , Julia Corbett , Heather Handley , Charlotte 
+Henson &amp;PratapMalik(2002) Optimized in situ construction of oli gomers on 
+an array surface. Nucleic Acids Research , 30: e107 
+Hui Ge, George Church, Marc Vidal (2001) Correlation between transcriptome 
+and interactome data obtained from S. cerevisiae. Nature Gen etics, 29:482-6.
+John Aach, Martha Bulyk, George Church, Jason 
+Coma nder , Adnan Derti , Jay Shendure (2001) 
+Computational comparison of two draft sequences of the 
+human genome. Nature 409, 856-859. Photo removed 
+due to copyright 
+reasons.</text>
+        </slide>
+        <slide>
+          <slideno>12</slideno>
+          <text>High-level decisions
+Leon Kass, chairs the US President's Council on Bioethics, opposed 
+IVF '78 &amp; stem cell research '05 via  'the wisdom of repugnance'
+http://groups.msn.com/DebateCriticalThi nkingandPhilosophy/killingimmortality.msnw
+http://www.orionsarm.com/books/Wisdom_of_Repugnance.html
+http://www.seti.org/site/apps/nl/content2.asp?c=ktJ2J9MMIsE&amp;b=194993&amp;ct=1324903
+The Wisdom of Crowds 
+by James Surowiecki 2004
+Interracial-marriage: 
+Perez v. Sharp, CA 1948, 
+Loving v. Virginia,  
+U.S. Supreme Court 1967  Photo removed 
+due to copyright 
+reasons.</text>
+        </slide>
+        <slide>
+          <slideno>16</slideno>
+          <text>CAUSES OF DEATH - USA - 1999  (Thousands)
+1.  725  Heart Disease  
+2.  549  Malignant Neoplasms
+3.  167  Cerebrovascular Diseases  
+4.  124  Chronic Pulmonary Disease  
+5.    98  Accidents  
+6.    68  Diabetes Mellitus  
+7.    64 Influenza &amp; Pneumonia 
+8.    45  Alzheimer's Disease  
+9.    36  Nephritis, Nephorsis
+10.   31  Septicemia  
+11.   29  Self-inflicted Injuries  
+12.   26  Liver Cirrhosis 
+13.   17  Primary Hypertension (Renal)  
+14.   17  Homicide  
+15.   16  Aortic Aneurysm  
+16. 379  All Other Causes* 
+2,391 Total</text>
+        </slide>
+        <slide>
+          <slideno>19</slideno>
+          <text>Depolarization
+How do we make decisions? How do we bridge?
+Not "right vs wrong", nor "moral relativistic flip-flopping"
+What is the maximum discrepanc ies between societal benefit 
+vsactual strategies?  And how do we find them convincingly?
+What are the reasons for such? Do "special interests" 
+represent lags in the knowledgebase of the decision makers.  
+To what extent and by what means do we avoid oscillation?</text>
+        </slide>
+        <slide>
+          <slideno>21</slideno>
+          <text>Framework Draft continued
+Prioritize, practice:  Synthetic Biology &amp; chemistry 
+Examples: bioecurity, bioterrorism
+Genetically modified organisms - GMOs
+Withholding experimental drugs (e.g. HIV &amp; Cancer)
+Substance abuse, Vioxx
+Models: Risk &amp; benefit, systems models.</text>
+        </slide>
+      </slides>
+      <videos/>
+    </lecture>
+    <lecture>
+      <lecture_title>Biosphere Facts</lecture_title>
+      <lecture_pdf_url>https://ocw.mit.edu/courses/hst-510-genomics-computing-economics-and-society-fall-2005/resources/05e_oct11/</lecture_pdf_url>
+      <lectureno>4</lectureno>
+      <slides>
+        <slide>
+          <slideno>4</slideno>
+          <text>One form of HIV-1 Resistance
+Figure removed 
+due to copyright 
+reasons.</text>
+        </slide>
+        <slide>
+          <slideno>8</slideno>
+          <text>Class outline
+(1) Topic priorities for homework since last class
+(2) Quantitative exercise
+(3) Project level presentation &amp; discussion
+(4) Sub-project reports &amp; discussion
+(5) Discuss communication/presentation tools
+(6) Topic priorities, homework for next class</text>
+        </slide>
+        <slide>
+          <slideno>1</slideno>
+          <text>Photo removed due 
+to copyright reasons.Class outline
+(1) Topic priorities for homework since last class
+(2) Quantitative exercises:  psycho-statistics,
+combinatorials, random/compression, 
+exponential/logistic, bits, association &amp; multi-
+hypotheses
+(3) Project level presentation &amp; discussion
+(4) Sub-project reports &amp; discussion: 
+Personalized Medicine &amp; Energy Metabolism 
+(5) Discuss communication/presentation tools
+(6) Topic priorities for homework for next class</text>
+        </slide>
+        <slide>
+          <slideno>5</slideno>
+          <text>Association test for CCR-5 &amp; HIV resistance
+Alleles Obs NegObsSeroPostotal  ExpecNegExpecPos
+CCR-5 + 1278 1368 2646 1305 1341
+ccr-5 130 78 208 103 105
+total 1408 1446 2854
+P
+dof=(r-1)(c-1)=1 ChiSq=sum[(o-e)^2/e]= 15.6 0.00008
+Figure removed due 
+to copyright reasons.
+Samson et al. Nature  1996 382:722-5</text>
+        </slide>
+        <slide>
+          <slideno>3</slideno>
+          <text>SNPs &amp; Covariance in proteins
+e4  20% ApoE e3   80%
+Figure removed 
+due to copyright 
+reasons.
+Ancestral = Arg 112  Thr 61</text>
+        </slide>
+        <slide>
+          <slideno>2</slideno>
+          <text>Common Disease Common Variant 
+Theory.  How common?
+ApoE allele 4 : Alzheimers dementia, 
+&amp; hypercholesterolemia
+20% in humans,   &gt;97% in chimps
+HbS 17% &amp; G6PD 40% in a Saudi sample
+CCR532 : resistance to HIV  
+9% in caucasians</text>
+        </slide>
+        <slide>
+          <slideno>7</slideno>
+          <text>How many "new" mutations?
+G= generations of exponential population growth = 5000
+N'= population size = 6 x 109now; N= 104pre-G
+m= mutation rate per bp per generation = 10-8to 10-9 (ref)
+L= diploid genome = 6 x 109bp 
+ekG= N'/N;   so  k= 0.0028 
+Av # new mutations  &lt; Lektm= 4 x 103  to 4 x 104
+per genome         t=1 to 5000
+Take home: "High genomic deleterious mutation rates in hominids"
+accumulate over 5000 generations &amp; confound linkage methods
+And common (causative) allele assumptions.</text>
+        </slide>
+        <slide>
+          <slideno>0</slideno>
+          <text>10 AM  Tue 11-Oct  2005
+week 4 of 14  Genomics, Computing, 
+Economics &amp; Society 
+MIT-OCW Health Sciences &amp; Technology 508/510
+Harvard Biophysics 101
+Economics, Public Policy,  Business, Health Policy</text>
+        </slide>
+        <slide>
+          <slideno>6</slideno>
+          <text>But what if we test more than one locus?
+The future of genetic studies 
+of complex human diseases. 
+RefY= Number of Sib Pairs (Association)
+X= Population frequency (p)
+GRR=1.5, #alleles=1E6  
+1E+21E+31E+41E+51E+61E+71E+81E+91E+10
+1E-09 1E-08 1E-07 1E-06 0.00001 0.0001 0.001 0.01 0.1 1[based on Risch &amp; Merikangas  
+(1996) Science 273:  1516]
+|Y= Number of Sib Pairs (Association)
+X= Genotypic Relative Risk (GRR)
+      #alleles=1E6, p=0.5  (population frequency)
+1E+11E+21E+31E+41E+51E+61E+71E+8
+0.001 0.01 0.1 1 10 100 1000 10000
+1.001          1 .01          1 .1             2              1 1             1 01           1,001      10,0011-GRR
+GRR[based on Risch &amp; 
+Merikangas (1996)  
+Science 273: 1516 ]|
+|Y= Number of Sib Pairs (Assoca tion)
+X= Number of Alleles (Hypotheses) Test ed
+GRR= 1.5,  p= 0.5 (population frequency)
+02004006008001,0001,2001,4001,600
+1E+4 1E+6 1E+8 1E+10 1E+121E+14 1E+16 1E+181E+20 1E+22[based on Risch &amp; Merikangas 
+(1996) Science 273: 1516]|
+GRR = Genotypic relative risk</text>
+        </slide>
+      </slides>
+      <videos/>
+    </lecture>
+    <lecture>
+      <lecture_title>New Energy Sources and Personalized Medicine</lecture_title>
+      <lecture_pdf_url>https://ocw.mit.edu/courses/hst-510-genomics-computing-economics-and-society-fall-2005/resources/05d_oct4/</lecture_pdf_url>
+      <lectureno>3</lectureno>
+      <slides>
+        <slide>
+          <slideno>6</slideno>
+          <text>Brain complexity
+fig
+The retina's 10 million 
+detections per second 
+[.02 g] ... extrapolation ... 
+1014instructions per second
+to emulate the 1,500 gram 
+human brain.  ... thirty more 
+years .. (Morovec99)Figure r emoved due 
+to copyright reas ons.
+Edge &amp; motion detection 
+(examples )
+Discovering the Capacity of Human Memory Wang 2003 
+N=1011neurons, m=1000 connections: n!/[m!(n-m)!] = 10^8432 bits. 
+How Many Bytes in Human Memory ? Merkle 1988  
+Landauer 2 bits/sec  (&lt;10^8 bits per lifetime)</text>
+        </slide>
+        <slide>
+          <slideno>14</slideno>
+          <text>Class outline
+(1) Topic priorities for homework since last class
+(2) Quantitative exercise
+(3) Project level presentation &amp; discussion
+(4) Sub-project reports &amp; discussion
+(5) Discuss communication/presentation tools
+(6) Topic priorities, homework for next class</text>
+        </slide>
+        <slide>
+          <slideno>4</slideno>
+          <text>Vertebrate
+brain size 
+evolutionFigure r emoved due 
+to copyright reas ons.
+Human-chimp 1.2%
+Human-human 0.1%
+Genome: 2x 3Gbp
+Ongoing Adaptive E volution of ASPM, a B rain Size Determinant in Homo sapiens Science 2005 
+Bond et al 2002 ASPM is  a major  deter minant of cerebral co rticalsize. Nat Genet. 32(2) :316-20 .
+Jerison, Paleoneurology &amp; the E voluti on of Mind, Scientific Amer. 1976</text>
+        </slide>
+        <slide>
+          <slideno>9</slideno>
+          <text>THE FUTURE OF HUMAN NATURE
+http:/ /www.bu.edu/pardee/events/c onferences/2003/natu re-program .html
+The Singularity Is Near : When Humans Transcend Biology
+The Law of Accelerating Returns by Ray Kurzweil
+An analysis of the history of technology shows that technological 
+change is exponential, contrary to the common-sense "intuitive 
+linear" view. So we won't experience 100 years of progress in the 
+21st century -- it will be more like 20,000 years of progress (at 
+today's rate). .. ultra-high levels of intelligence that expand outward 
+in the universe at the speed of light. 
+http://www.kurzweilai.net/ar ticles/art0134.html?printable=1
+Bill Joy Wired 8.04 | Apr 2000 
+Our most powerful 21st-century technologies - robotics, genetic 
+engineering, and nanotech - are threatening to make humans 
+an endangered species.</text>
+        </slide>
+        <slide>
+          <slideno>2</slideno>
+          <text>Exponent.xls
+00.0050.010.0150.020.0250.030.035
+1591317212529333741454953576165A3 =MAX(r*A2*(1-A2),0)
+try r=  0.9,  1.01, 1.1,  1.5, 3, 3.67859, 4, 4.03
+try y(i) =r*y(i-1)   (i.e. A3=r*A2  etc.)
+Why the (1-A2) term?
+Why the MAX function?
+What happens when r is larger than 3?  (What assumptions?)</text>
+        </slide>
+        <slide>
+          <slideno>3</slideno>
+          <text>3 Exponential technologies
+(synergistic)
+1E-31E-11E+11E+31E+51E+71E+91E+111E+13
+1830 1850 1870 1890 1910 1930 1950 1970 1990 2010ureaE.coli
+B12tRNAoperons
+telegraphComputation &amp;
+Communication 
+(bits/sec)
+Synthesis 
+(daltons)
+Analysis
+(bp/$) tRNA
+Shendure J, Mitra R, Varma C, Church  GM,  2004 Nature Reviews of Genetics. 
+Carlson 2003 ;  Kurzweil 2002; Moore 1965</text>
+        </slide>
+        <slide>
+          <slideno>5</slideno>
+          <text>Bits &amp; complexity
+How many bits to represent your genome (from your mother)?
+How many additional bits for paternal DNA?
+How many bits to define the ribosome structure below?
+Figure r emoved due 
+to copyright reas ons.</text>
+        </slide>
+        <slide>
+          <slideno>7</slideno>
+          <text>Inheritance is not just DNA
+Photos r emoved due 
+to copyright reas ons.</text>
+        </slide>
+        <slide>
+          <slideno>11</slideno>
+          <text>Common Disease Common Variant 
+Theory.  How common?
+ApoE allele 4 : Alzheimers dementia, 
+&amp; hypercholesterolemia
+20% in humans,   &gt;97% in chimps
+HbS 17% &amp; G6PD 40% in a Saudi sample
+CCR532 : resistance to HIV  
+9% in caucasians</text>
+        </slide>
+        <slide>
+          <slideno>0</slideno>
+          <text>10 AM  Tue 4-Oct  2005Genomics, Computing, 
+Economics &amp; Society 
+MIT-OCW Health Sciences &amp; Technology 508/510
+Harvard Biophysics 101
+Economics, Public Policy,  Business, Health Policy</text>
+        </slide>
+        <slide>
+          <slideno>13</slideno>
+          <text>Energy &amp; CO2 Sequestration
+Humans consume 2kW per person = 1010 kW.
+Sunlight hits the earth at 40,000 times that rate (70% ocean).
+CO2/yr:  Fossil fuel use releases 5 Gton.
+Ocean &amp; terrestrial productivity = ~100 Gton each.
+Autotrophs: 1026 Prochlorococcus cells globally (108per liter)
+Sequestration v. respiration v. use: heterotrophs (Pelagi bacter ), 
+phages,  predators (Maxil lopoda,  Malacostraca, herring )Lab:100X
+Photos r emoved due 
+to copyright reas ons.0.1 mm 0.1 6 cm
+http://ww w.gsfc.nasa.gov/gsfc/s ervice/gallery/fact_s heets/earthsci/terra/ea rths_energy_balance.htm
+http://clear.eawag.ch/ models/optionenE.html http://en.wikipedia.org/wiki/Copepod
+Morris et al. Nature 2002  Dec 19-26; 420(6917):806-10.</text>
+        </slide>
+        <slide>
+          <slideno>10</slideno>
+          <text>Personalized Medicine/Genetics 
+Haplotype Diversity across 100 Candidate Genes for 
+Inflammation, Lipid Metabolism, and Blood Pressure 
+Regulation in Two Populations. Crawford, et al. 
+A common haplotype in the complement regulatory gene 
+factor H ( HF1/CFH ) predisposes individuals to age-related 
+macular degeneration Hageman, et al. 2005</text>
+        </slide>
+        <slide>
+          <slideno>12</slideno>
+          <text>SNPs &amp; Covariance in proteins
+e4  20% ApoE e3   80%
+Figure r emoved due 
+to copyright reas ons.
+Ancestral = Arg 112  Thr 61</text>
+        </slide>
+        <slide>
+          <slideno>8</slideno>
+          <text>Inheritance is not just DNA Photo removed 
+due to copyright 
+reasons.
+Current
+26720 km/h
+10,912 m
+pm-Mm
+3-1900oK
+5000 
+1017
+most tissues Photo removed 
+due to copyright 
+reasons.Past
+Locomotion 50
+Ocean depth 75m
+Visible  .4-.7 
+Temperature 275-370
+Memory years 20 
+Memory bits 109
+Cell therapy 0
+http:/ /www.techworld.com /opsys/featu res/index.cfm?fuseaction=displayfeat ures&amp;featureid=467&amp; page=1&amp;pagepos=5
+http://www.merkle.co m/humanMem ory.htm l</text>
+        </slide>
+        <slide>
+          <slideno>1</slideno>
+          <text>Class outlinePhoto removed 
+due to copyright 
+reasons.
+(1) Topic priorities for homework since last class
+(2) Quantitative exercise:  bits
+(3) Project level presentation &amp; discussion
+(4) Sub-project reports &amp; discussion: 
+Personalized Medicine &amp; Energy Metabolism 
+(5) Discuss communication/presentation tools
+(6) Topic priorities for homework for next class</text>
+        </slide>
+      </slides>
+      <videos/>
+    </lecture>
+    <lecture>
+      <lecture_title>Choose Projects
+Exercise - A Quantitative Definition of Life</lecture_title>
+      <lecture_pdf_url>https://ocw.mit.edu/courses/hst-510-genomics-computing-economics-and-society-fall-2005/resources/05c_sep27/</lecture_pdf_url>
+      <lectureno>2</lectureno>
+      <slides>
+        <slide>
+          <slideno>9</slideno>
+          <text>Exponent.xls
+00.0050.010.0150.020.0250.030.035
+1591317212529333741454953576165A3 =MAX(r*A2*(1-A2),0)
+try r=  0.9,  1.01, 1.1,  1.5, 3, 3.67859, 4, 4.03
+try y(i) =r*y(i-1)   (i.e. A3=r*A2  etc.)</text>
+        </slide>
+        <slide>
+          <slideno>3</slideno>
+          <text>Test cases for bio-complexitySnowflakes
+Mule
+Fire
+Brain-dead
+cloned beings, parts recreati ng whole- cells
+ecosystem - green animals symbionts
+Plant clippings (soil-dead)
+symmetry of plants &amp; animals, Fibonacci
+gas vs crystals 
+complexity function of size
+Economic systems
+Cellular Automata, Univ-Turing machines
+Logist ical map
+Autonomous agents
+Quantum, crypto randomness, incompressible
+Chemical vs structural complexity
+Ideas - Language - memes
+viruses, DNA
+computer viruses
+religion &amp; science memes
+Collections of ideas &amp; cultural artefacts (books)Static vs dynamic
+Photo removed due 
+to copyright reasons.</text>
+        </slide>
+        <slide>
+          <slideno>2</slideno>
+          <text>(1) Topic priorities for homework since last class
+(a) Your notes at top level and detailed level
+(b) Follow up on the discussion on Thu: What is life?
+Definitions of random and complex
+Statistical complexity, replicated complexity
+Compression algorithms
+Examples of test cases.
+(c) Exponential growth  xls example</text>
+        </slide>
+        <slide>
+          <slideno>7</slideno>
+          <text>Where do random numbers come from 
+really? 
+Monte Carlo.
+Uniformly distributed random variates Xi= remainder(aXi-1/ m)
+For example,  a= 75           m= 231 -1
+Given two XjXksuch  uniform random variates,
+Normally distributed random variates can be made 
+(with X= 0     X= 1)
+Xi=  sqrt(-2log(Xj)) cos(2 Xk)     ( NR, Press et al. p. 279-89 )</text>
+        </slide>
+        <slide>
+          <slideno>4</slideno>
+          <text>Meta-definition issues for bio-complexity
+Static vs dynamic
+Environmental conditions
+Density 3 or 4 D
+Hidden simple processes random seed vs pi
+functional vs imperative languages (Walter)
+In/out complexity
+Stan Miller  &amp; origin of life
+Adjacent possible (Kaufman)
+Rate of complexity change (4th law?)
+anthropocentrism biocentrism
+Photo removed due 
+to copyright reasons.</text>
+        </slide>
+        <slide>
+          <slideno>8</slideno>
+          <text>Class outline
+(1) Topic priorities for homework since last class
+(2) Quantitative exercise
+(3) Project level presentation &amp; discussion
+(4) Sub-project reports &amp; discussion
+(5) Discuss communication/presentation tools
+(6) Topic priorities for homework for next class</text>
+        </slide>
+        <slide>
+          <slideno>0</slideno>
+          <text>10 AM  Tue 27-Sep  2005Genomics, Computing, 
+Economics &amp; Society 
+MIT-OCW Health Sciences &amp; Technology 508/510
+Harvard Biophysics 101
+Economics, Public Policy,  Business, Health Policy</text>
+        </slide>
+        <slide>
+          <slideno>10</slideno>
+          <text>Figure by MIT  OCW.</text>
+        </slide>
+        <slide>
+          <slideno>5</slideno>
+          <text>What are random numbers good for? 
+Simulations.
+Permutation statistics.</text>
+        </slide>
+        <slide>
+          <slideno>1</slideno>
+          <text>Class outlinePhoto removed due 
+to copyright reasons.
+(1) Topic priorities for homework since last class
+(2) Quantitative exercise
+(3) Project level presentation &amp; discussion
+(4) Sub-project reports &amp; discussion
+(5) Discuss communication/presentation tools
+(6) Topic priorities for homework for next class</text>
+        </slide>
+        <slide>
+          <slideno>6</slideno>
+          <text>Where do random numbers come from?
+X {0,1}
+perl -e "print rand(1);"                           0.116790771484375
+0.8798828125   0.692291259765625     0.1729736328125
+excel: = RAND()   0.4854394999892640  0.6391685278993980
+0.1009497853098360
+f77: write(*,'(f29.15)') rand(1)  0.513854980468750
+0.175720214843750    0.308624267578125
+Mathematica: Random[Real, {0,1}]           0.7474293274369694
+0.5081794113149011  0.02423389638451016</text>
+        </slide>
+      </slides>
+      <videos/>
+    </lecture>
+  </lectures>
+</doc>

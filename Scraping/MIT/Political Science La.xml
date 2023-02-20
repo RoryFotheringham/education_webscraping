@@ -1,0 +1,4237 @@
+<doc>
+  <source>MIT</source>
+  <date>28/01/2023</date>
+  <course>
+    <course_url>https://ocw.mit.edu/courses/17-871-political-science-laboratory-spring-2012/</course_url>
+    <course_title>Political Science Laboratory</course_title>
+    <course_tags>
+      <list>Mathematics </list>
+      <list>Probability and Statistics </list>
+      <list>Social Science </list>
+    </course_tags>
+  </course>
+  <lectures>
+    <lecture>
+      <lecture_title>          17.871 Political Science Lab Lecture Slides: Multiple Regression
+        </lecture_title>
+      <lecture_pdf_url>https://ocw.mit.edu/courses/17-871-political-science-laboratory-spring-2012/resources/mit17_871s12_mulreg_12ver2/</lecture_pdf_url>
+      <lectureno>3</lectureno>
+      <slides>
+        <slide>
+          <slideno>14</slideno>
+          <text>15
+t 3D R l hi3DRelatitionship:  par ty 
+Rep Ind Dem</text>
+        </slide>
+        <slide>
+          <slideno>16</slideno>
+          <text>The method of least squares
+The method of least squares
+ 
+(again) 
+Pick  , and to minimize
+ Pick  ,  and  to minimize 0 1 2
+ 
+ n 
+((YY  YY  ))2 oror
+ ii ii 
+i1
+ 
+n 
+(Y  X  X )2
+ 
+i 0 1 i 2 2 
+i1 
+17</text>
+        </slide>
+        <slide>
+          <slideno>3</slideno>
+          <text>t t  
+       
+Did Cli h G lDid Clinton hurt Gore examp le 
+What alternative explanations would you need to 
+address? 
+Nonrandom selection into the treatment group (disliking Nonrandom selection into the treatment group (disliking 
+Clinton) from many sources 
+Lets address one source: party identification 
+How could we do this? 
+Matching: compare Democrats who like or dont like Clinton; do 
+the same for Republicans and independents 
+Multivariate regression: control for partisanship statistically 
+Also called multiple regression, Ordinary Least Squares (OLS) 
+Presentation below is intuitive 
+4</text>
+        </slide>
+        <slide>
+          <slideno>10</slideno>
+          <text>Tempting yet wron gg
+ pg y 
+normalizations 
+Subtract the Gore
+ 
+therm. from the
+ 
+avg. Gore therm.
+ avg. Gore therm. 
+score 
+Clinton thermometer 
+Subtract the Clinton
+Subtract the Clinton 
+therm. from the avg. Clinton therm. score 
+Clinton thermometer 
+11</text>
+        </slide>
+        <slide>
+          <slideno>20</slideno>
+          <text>Multivariate slope coefficients
+Multivariate slope coefficients
+ 
+cov((X1,Y )) Bivariate estimate:  B  1 vs Bivariate estimate: vs.
+1 var( X1)
+ 
+ M cov( X1,Y ) M Are Gore and Party ID 
+related? 
+cov( X1, X 2) 
+Multivariate estimate:  - Multivariate estimate: 1 22 
+Clinton effect 
+( G ) i (on Gore) in 
+multivariate ( M) 
+regression 1 var( X1) var( X1) Clinton effect 
+(on Gore) in 
+bivariate ( B) bivariate (B) 
+regression 
+Are Clinton and 
+Party IDy 
+related? 
+cov( X , X ) cov( XX )B M 1 2 B MM   MWhen does    ? Obviously, when  02
+1 1 var( X 1) 
+X1 is Clinton thermometer, X2 is PID, and Y is Gore thermometer
+ 
+21</text>
+        </slide>
+        <slide>
+          <slideno>6</slideno>
+          <text>t
+ R b l i Republican p iicture
+ 
+Clinton thermometer
+ 
+7</text>
+        </slide>
+        <slide>
+          <slideno>5</slideno>
+          <text>t t
+ IdIndepen ddent piicture
+ 
+Clinton thermometer
+ 
+6</text>
+        </slide>
+        <slide>
+          <slideno>28</slideno>
+          <text>. infix age 10-11 residence  16 greek 24 screen 102 
+timespast30 103 howmuchpast30 104 gpa 278-279 studying 281 
+i h 325 h hh 326 i li i 283 99 475 493
+ timeshs 325 howmuchhs 326 socializing 283 stwgt_99 475-493
+ 
+weight99 494-512 using  da3818.dat,clear
+ 
+(14138 observations read)
+ 
+. recode timespast30 timeshs (1 =0) (2=1.5) (3=4) (4=7.5) 
+(5=14.5) (6=29.5) (7=45)
+ 
+(timespast30: 6571 changes made)
+ 
+(timeshs  10272 changes made)
+(timeshs : 10272 changes made)
+ 
+. replace timespast30=0 if screen&lt;=3
+ (4631 real changes made)
+ 
+29</text>
+        </slide>
+        <slide>
+          <slideno>15</slideno>
+          <text>The Linear Relationship between Three
+The Linear Relationship between Three 
+Variables 
+Clinton Gore 
+X X Y 
+
+ Clinton 
+thermometer Gore 
+thermometer Party ID 
+i i i i X X Y 
+
+
+   , 2 2 , 1 1 0 
+16</text>
+        </slide>
+        <slide>
+          <slideno>1</slideno>
+          <text>t t  
+     
+Did Cli h G lDid Clinton hurt Gore examp le 
+Did Clinton hurt Gore in the 2000 election?
+ 
+Treatment is not liking Bill Clinton Treatment is not liking Bill Clinton 
+2</text>
+        </slide>
+        <slide>
+          <slideno>29</slideno>
+          <text>. tab timespast30
+ 
+timespast30 | Freq. Percent Cum.
+ 
+------------ ++---------------------------------- -
+0 | 4,652 33.37 33.37 
+1.5 | 2,737 19.64 53.01 
+4 | 2,653 19.03 72.04 
+7.5 | 1,854 13.30 85.34 
+14.5 | 1,648 11.82 97.17 
+29.5 | 350 2.51 99.68 
+45 |45 | 4545 0 32  0.32 100 00 100.00 
+------------+-----------------------------------
+Total | 13,939 100.00
+ 
+30</text>
+        </slide>
+        <slide>
+          <slideno>31</slideno>
+          <text>t 
+Th RThree Regress iions
+ 
+Dependent variable:  number of times drinking in past 30 days 
+Live in frat/sor house 
+(indicator variable) 
+M b f f /Member of frat/sor (indicator 
+variable) 
+Intercept 
+S.E.R. 
+R2R2 
+N 4.44 
+(0.35) 
+---
+4.54 
+(0.56) 
+6.49 
+011 .011 
+13,876 ---
+28 8 2.88 
+(0.16) 
+4.27 
+(0.059) 
+6.44 
+023.023 
+13,876 2.26 
+(0.38) 
+24 4 2.44 
+(0.18) 
+4.27 
+(0.059) 
+6.44 
+025.025 
+13,876 
+What is the substantive interpretation of the coefficients? 
+Nt S t d d i t h C Bt l i i iNote: Standard errors in paren theses. Corr. Between living in 
+frat/sor house and being a member of a Greek organization is .42 
+32</text>
+        </slide>
+        <slide>
+          <slideno>23</slideno>
+          <text>t        
+Why did the Clinton Coefficient
+Why did the Clinton Coefficient
+ 
+change from 0.62 to 0.51
+ 
+. corr gore clinton party, cov
+ 
+(obs=1745)
+ 
+| gore clinton party3
+ 
+------------- ++-------------------------- -
+gore | 660.681 
+clinton | 549.993 883.182 
+3 |  party3 | 13 7008  13.7008 16 905    16.905 8735.8735 
+24</text>
+        </slide>
+        <slide>
+          <slideno>8</slideno>
+          <text>Combined data picture withCombined data picture with 
+regression: bias!
+ 
+Clinton thermometer
+ 
+9</text>
+        </slide>
+        <slide>
+          <slideno>2</slideno>
+          <text>Bivariate regression of Gore thermometer on
+Bivariate regression of Gore thermometer on 
+Clinton thermometer 
+Clinton thermometer
+ 
+3</text>
+        </slide>
+        <slide>
+          <slideno>25</slideno>
+          <text>Another way of thinking about
+Another way of thinking about
+ 
+this 
+R i t Rewrite 
+cov( gore,clinton ) cov( clinton , party ) M  M
+ 1 22 1 var(clinton ) var( clinton ) 
+as 
+cov( gore,clinton ) cov(clinton , party ) 2 
+1 M  M 
+var(clinton ) var(clinton ) 
+Total effect = Direct effect + indirect effect
+ 
+The Total Effect of the Clinton thermome ter on the Gore thermometer (.61) can be
+ 
+Broken down into a direct effect of .51, plus an indirect effect (though party) of .11
+ 
+26</text>
+        </slide>
+        <slide>
+          <slideno>30</slideno>
+          <text>t
+    
+  
+    
+Kl b l Key exp lanatory var iiables
+ 
+Live in fraternity/sorority house 
+Indicator variable (dummy variable) Indicator variable (dummy variable) 
+Coded 1 if live in, 0 otherwise 
+Member of fraternity/sororityMember of fraternity/sorority 
+Indicator variable (dummy variable) 
+Coded 1 if member 0 otherwise
+ Coded 1 if member , 0 otherwise
+ 
+31</text>
+        </slide>
+        <slide>
+          <slideno>24</slideno>
+          <text>ThThe CCallcullatitions 
+B cov( gore ) cov( gore,clintonclinton ) 549549.993993
+ B    0.6227
+1 var(clinton ) 883.182 
+M cov( gore,clinton ) M cov(clinton , party ) 
+ 1 22 1 var((clilintton)) var((clilintton)) 
+549.993 16.905  5.7705 883.182 883.182 
+. corr gore clinton party,cov
+ 
+(obs=1745)
+ 0.6227  0.1105 
+| gore clinton party3
+ 
+-------------+---------------------------
+gore | 660.681
+  0.5122 
+clinton | 549.993 883.182
+ 
+party3 | 13.7008 16.905 .8735
+ 
+25</text>
+        </slide>
+        <slide>
+          <slideno>7</slideno>
+          <text>t t 
+ C b i d d i
+Combined data picture
+ 
+Clinton thermometer
+ 
+8</text>
+        </slide>
+        <slide>
+          <slideno>34</slideno>
+          <text>t 
+  
+Live in frat/ 
+Accountin gfor the effects of fratg 
+house living and Greek 
+membership on drinking
+membership on drinking
+ From 
+accounting identity: T=D+I 
+Effect Total Direct Indirect 
+Member of 2.88 2.44 0.44 
+Greek org. (85%) (15%) 
+4.44 2.26 2.18 
+sor. house (51%) (49%) From 
+bi i From multiple 
+regressions 
+bivariate 
+regressions 
+35</text>
+        </slide>
+        <slide>
+          <slideno>21</slideno>
+          <text>t t
+            
+     
+   
+     
+              
+        
+    
+        
+-             
+-------------------------- -------------------------- --------------------------
+-------------------------- -------------------------- --------------------------
+       
+ 
+Th OThe Output 
+. reg gore c linton party3
+ 
+Source | SS df MS Number of obs = 1745
+ 
+-------------+------------------------------ F( 2, 1742) = 1048.04
+ 
+Model | 629261.91629261.91 
+22 314630.955 Prob
+Prob &gt; F =
+Model | 
+0.0000
+ Residual | 522964.934 1742 300.209492         R-squa red  = 0.5461
+ 
+-------------+------------------------------ Adj R-squared =  0.5456
+ 
+Total | 1152226.84 1744  660.68053 Root MSE = 17.327
+ 
+gore | Coef. Std . Err.  t P&gt;|t |  [95%  Conf. Interval]
+ 
+-------------+------------ -------------------------- --------------------------
+clinton | .5122875 .0175952 29.12 
+0.000 .4777776  .5467975
+ 
+party3 || 5.770523 .5594846 10.31 0.000 
+4.673191 6.867856
+ 
+_cons | 28.6299 1.025 472  27.92 0.000 26.61862 30.64119
+ 
+Interpretation of clinton effect : Holding constant party identification a one - Interpretation of clinton effect : Holding constant party identification , a one 
+point increase in the Clinton feeling the rmometer is associated with a .51 increase 
+in the Gore thermometer. 
+22  2  314630.955           Prob Prob  F        0.0000</text>
+        </slide>
+        <slide>
+          <slideno>18</slideno>
+          <text>The Slope Coefficients MoreThe Slope Coefficients More 
+Simply 
+ cov( X1,Y )  cov( X1, X 2)
+ and
+  - and 1 var(X1) 2 var(X1)
+ 
+ cov( X 2,Y )  cov( X1, X 2)
+2  -1
+var(X 2) var(X 2)) var(X ) var(X
+ 
+X1 is Clinton thermometer, X2 is PID, and Y is Gore thermometer 
+19</text>
+        </slide>
+        <slide>
+          <slideno>0</slideno>
+          <text>g
+Addressing Alternative 
+Explanations:
+Explanations: 
+Multiple Re gression 
+17.871 
+Spring 2012 
+1</text>
+        </slide>
+        <slide>
+          <slideno>22</slideno>
+          <text>t
+ S i Separa te regress ions
+ 
+(1) (2) (3) 
+Interce ptp 23.1 55.9 28.6 
+Clinton 0.62 -- 0.51 
+PartyParty -- 15.715.7 5.85.8 
+ cov( X11,Y )  cov( X11, X 22)
+1  - 2 and
+ and
+ var(X1) var( X1) 
+cov( X ,Y )  cov( X , X ) cov( X 22 Y ) cov( X 11 X 22)
+2  -1var(X 2) var( X 2) 
+23</text>
+        </slide>
+        <slide>
+          <slideno>4</slideno>
+          <text>t t
+ DDemocra tiic piicture
+ 
+Clinton thermometer
+ 
+5</text>
+        </slide>
+        <slide>
+          <slideno>35</slideno>
+          <text>MIT OpenCourseWare
+http://ocw.mit.edu
+17.871 Political Science Laboratory
+Spring 2012
+For information about citing these materials or our Terms of Use, visit: http://ocw.mit.edu/terms .</text>
+        </slide>
+        <slide>
+          <slideno>13</slideno>
+          <text>14
+t 3D R 3DRellationshihip: Clinton ti Cli
+ 
+100 50 0</text>
+        </slide>
+        <slide>
+          <slideno>26</slideno>
+          <text>Di k i dG kL i f E lDrinking an d Greek Life Examp le 
+Why is there a correlation between living 
+in a fraternit yy/sororit yy house and drinkin gg? 
+Greek organizations often emphasize social 
+gatherin ggs that have alcohol. The effect is 
+ g 
+being in the Greek organization itself, not the 
+house. 
+Theres something about the House 
+environment itself.
+ 
+27</text>
+        </slide>
+        <slide>
+          <slideno>12</slideno>
+          <text>13
+3D Linear Relationship
+3DLinear Relationship</text>
+        </slide>
+        <slide>
+          <slideno>19</slideno>
+          <text>t
+
+Th M fThe Matriix form
+ 
+y1 
+y2 
+ 
+yyn 1x1,1 x2,1 xk,1 
+1x1,2 x2,2 xk,2 
+1     
+11 xx1,n xx2,n  xxk,n 
+ (( X X ))1 X yy
+ 
+20</text>
+        </slide>
+        <slide>
+          <slideno>11</slideno>
+          <text>12
+3D R l hi3DRelatitionship</text>
+        </slide>
+        <slide>
+          <slideno>9</slideno>
+          <text>Combined data picture withCombined data picture with 
+true regression lines overlaid
+ 
+Clinton thermometer
+ 
+10</text>
+        </slide>
+        <slide>
+          <slideno>32</slideno>
+          <text>t
+ 
+Th PiThe Picture
+ 
+ik Living in frat 
+house =2.26 
+X M 
+2  
+Drinks per 
+30 days house 
+=0.1921 Y X2 
+Member of 
+fraternit y =2.44X1 M 
+1  y 1 
+33</text>
+        </slide>
+        <slide>
+          <slideno>17</slideno>
+          <text>t
+
+
+n n
+ 
+Th Sl C ffiThe Slope Coefficiients 
+n n 
+(Y Y )(X  X ) (X  X )(X  Xi 1 1, i 1 1, i 2 2, )
+i
+ 
+ i1  i1
+ - and 1
+1 nn 22 nn 
+(X  X )2 (X  X1 1, i 1 1, )2
+ 
+i
+ 
+i1 i1
+ 
+n n 
+(Y Y )(X  X ) (X  X )(X  Xi 2 1, i 1 1, i 2 2, )
+i
+ 
+ i1  i1
+ -2 n 1 n
+ 
+2((XX 2  XX 2,i )) ((XX 2  XX 2,i ))  2  22
+ 
+i1 i1
+ 
+  
+0 1 X1 2 X Y 2
+ 
+X1 is Clinton thermometer, X2 is PID, and Y is Gore thermometer
+ 
+18</text>
+        </slide>
+        <slide>
+          <slideno>33</slideno>
+          <text>t t t
+ 
+ 
+  
+  
+A ti f th l ffAccoun ting for the total effect
+ 
+ B  M  M   
+1 1 2 21 
+Total effect = Direct effect + indirect effect 
+M
+ =2.26 
+Drinks per Living in frat 
+house X2 2 
+Drinks per 
+30 days =0.1921 Y 
+Member of 
+fraternity =2.44 X1 M 
+1  
+34</text>
+        </slide>
+      </slides>
+      <videos/>
+    </lecture>
+    <lecture>
+      <lecture_title>          17.871 Political Science Lab Lecture Slides: Introduction to STATA
+        </lecture_title>
+      <lecture_pdf_url>https://ocw.mit.edu/courses/17-871-political-science-laboratory-spring-2012/resources/mit17_871s12_01introtostat/</lecture_pdf_url>
+      <lectureno>2</lectureno>
+      <slides>
+        <slide>
+          <slideno>13</slideno>
+          <text>insheet 
+199960521980910 63 2 4  
+160916068405549 63 2 -3  
+941159210626002 63 2 6  
+941159210626002 63 2 6  
+941159210626002 63 2 6  
+infile HRHHID GESTCEN PES1 PES8 using filename 
+Or 
+infile str HRHHID GESTCEN PES1 PES8 using filename  Assume the following file was created using an ASCII text editor (e.g., 
+EMACS), and that spaces separate the variables: 
+14</text>
+        </slide>
+        <slide>
+          <slideno>28</slideno>
+          <text>Voila! 
+county_code  town  income  education  county_name  
+A Aville  50000  .3 Adams  
+A Bobville  60000  .4 Adams  
+B Candiceville  70000  .5 Brooks  
+B Dogville  80000  .5 Brooks  
+C Catville  100000  .5 Calhoun  
+29</text>
+        </slide>
+        <slide>
+          <slideno>3</slideno>
+          <text>Logic of quant research in this class 
+) , , (i i i x f y 
+4</text>
+        </slide>
+        <slide>
+          <slideno>20</slideno>
+          <text>Enter data yourselves 
+21</text>
+        </slide>
+        <slide>
+          <slideno>30</slideno>
+          <text>county  voters  Paul Bachmann  Johnson  Gingrich  Santorum  Huntsman  Other  Roemer  Romney  Perry  Cain 
+Adair  269 42 26 0 44 66 1 0 0 43 47 0 
+Adams  200 74 9 0 24 47 0 0 0 32 14 0 
+Allamakee  518 157 18 0 82 77 0 0 0 155 28 0 
+Appanoose  537 77 25 0 71 174 1 0 12 87 90 0 
+Audubon  223 41 17 0 32 54 0 0 0 48 31 0 
+Benton  1042 202 66 0 121 290 5 1 0 184 168 4 
+Black Hawk  3642 870 262 0 596 783 29 0 4 835 259 1 
+Boone  1344 276 104 0 160 400 4 0 0 230 170 0 
+Bremer  933 194 57 0 98 215 14 2 0 246 105 0 
+Buchanan  459 66 40 0 77 133 1 2 0 78 62 0 
+Buena Vista  716 169 26 0 128 154 3 0 0 124 110 2 
+Butler  552 99 41 0 71 157 4 0 0 92 87 0 
+Calhoun  435 75 31 0 54 131 2 2 0 69 71 0 
+Carroll  716 133 32 0 145 168 2 0 1 146 85 1 
+Cass 674 116 32 0 147 170 2 0 0 141 66 0 
+Cedar  711 188 34 0 84 167 4 1 0 165 67 0 
+Cerro Gordo  1571 304 100 0 235 345 5 1 0 408 170 2 
+Cherokee  537 95 20 0 78 155 0 0 0 126 63 0 
+Chickasaw  443 142 14 0 53 72 3 0 0 85 74 0 
+Clarke  367 98 42 0 46 51 1 2 0 65 62 0 
+Clay 733 150 40 0 137 165 4 2 0 149 75 0 
+Clayton  625 205 28 0 72 122 1 0 0 116 81 0 
+Clinton  1384 295 62 0 149 354 9 0 0 437 73 5 
+Crawford  437 72 22 0 84 101 0 0 0 93 64 0 
+31</text>
+        </slide>
+        <slide>
+          <slideno>4</slideno>
+          <text>Logic of data setup: 
+V1 V2  Vj 
+Obs1 
+Obs2 
+ 
+Obsi 
+5</text>
+        </slide>
+        <slide>
+          <slideno>6</slideno>
+          <text>Example, House Elections 
+7</text>
+        </slide>
+        <slide>
+          <slideno>23</slideno>
+          <text>Example:  one-for-one match 
+Election results, election_results.dta 
+county  cand1 cand2 cand2  
+A 10 20 30 
+B 40 50 60 
+C 70 80 90 
+Z 500 40 30 
+county  income educ catholic 
+A 10,000 .2 .3 
+B 40,000 .5 .6 
+C 70,000 .8 .9 
+Z 5,000 .95 .3 Demographics, demographics.dta 
+24</text>
+        </slide>
+        <slide>
+          <slideno>27</slideno>
+          <text>merge command  
+[make same sorting assumptions as before] 
+use demographic_data.dta 
+merge m:1 county_code using 
+county_code_mapping.dta 
+28</text>
+        </slide>
+        <slide>
+          <slideno>0</slideno>
+          <text>Introduction to Stata 
+17.871 
+Spring 2012 
+1</text>
+        </slide>
+        <slide>
+          <slideno>7</slideno>
+          <text>Using Stata to Analyze Data in Matrix 
+Form 
+Question:  Did Ron Paul do better in Iowa in 
+2012, compared to 2008 in counties with 
+college students? 
+Data sources: 
+2008:  Des Moines Register web site 
+2012: Iowa Republican Party, Google Doc 
+(https://www.google.com/fusiontables/DataSourc
+e?dsrcid=2475248 ) 
+ 
+8</text>
+        </slide>
+        <slide>
+          <slideno>26</slideno>
+          <text>many- to-one merge 
+county_code  town  income  education  
+A Aville  50000  .3 
+A Bobville  60000  .4 
+B Candiceville  70000  .5 
+B Dogville  80000  .5 
+C Catville  100000  .5 Demographic data, demographic_data.dta 
+county_code  county_name  
+A Adams  
+B Brooks  
+C Calhoun  County code mapping, county_code_mapping.dta 
+27</text>
+        </slide>
+        <slide>
+          <slideno>24</slideno>
+          <text>merge command results 
+[assume both datasets have previously been 
+sorted on county, by typing the command 
+sort county ] 
+use election_results.dta 
+merge county using 
+demographics.dta OR 
+merge 1:1 county using 
+demographics.dta 
+25</text>
+        </slide>
+        <slide>
+          <slideno>15</slideno>
+          <text>infix 
+         1         2 
+123456789012345678901 
+--------------------- 
+19996052198091063 2 4  
+16091606840554963 2-3  
+94115921
+062600263 2 6  
+94115921062600263 2 6  
+94115921062600263 2 6  
+infix HRHHID 1-15 GESTCEN 16-17 PES1 18-19 PES8 20-21 using 
+filename 
+Or 
+infile str15 HRHHID 1-15 GESTCEN 16-17 PES1 18-19 PES8 20- 21 
+using filename  Assume the following file was created using an ASCII text editor: 
+Dataset Handy label, not in dataset 
+16</text>
+        </slide>
+        <slide>
+          <slideno>5</slideno>
+          <text>Example, VRS Data 
+        HRHHID          GESTCEN  PES1   PES8 
+    199960521980910        63      2      4  
+    160916068405549        63      2     -3  
+    9411
+59210626002        63      2      6  
+    941159210626002        63      2      6  
+    941159210626002        63      2      6  
+6</text>
+        </slide>
+        <slide>
+          <slideno>12</slideno>
+          <text>infile 
+Data is not in Stata format, is in an ASCII file, 
+but is not separated only  by a tab or comma 
+(e.g., by a space) 
+ 
+13</text>
+        </slide>
+        <slide>
+          <slideno>1</slideno>
+          <text>The role of statistical packages in 
+research 
+Obvious answer 
+Manage data 
+Carry out appropriate statistical tests 
+Assist in displaying data 
+Less obvious answer 
+Channel the type of research you are likely to do 
+Limitations as to variables and cases 
+Types of analysis  is sometimes guided by choice of 
+package 
+ 
+2</text>
+        </slide>
+        <slide>
+          <slideno>31</slideno>
+          <text>Do-files 
+Do-files are the Stata scripting language to 
+automate analysis. 
+Here is how the first five lines of the Iowa 
+exercise would look in a do-file: 
+#delimit; 
+insheet using iowa_example_csv.dat; 
+list; 
+generate paulpct08=paul08/tvotes08; 
+generate paulpct12=paul12/tvotes12; 
+ 
+32</text>
+        </slide>
+        <slide>
+          <slideno>22</slideno>
+          <text>merge command 
+Used when you want to add data to a pre-
+existing data set, or you have more than one 
+dataset that has all the variables you need for 
+analysis. 
+Most important  thing:  each dataset must 
+have (at least) one identifier that links 
+observations, and allows merging. 
+Second thing:  both datasets must be sorted 
+on the common identifier(s) 
+23</text>
+        </slide>
+        <slide>
+          <slideno>17</slideno>
+          <text>1         2         3         4         5         6         7         8 
+12345678901234567890123456789012345678901234567890123456789012345678901234567890 
+01R327 031200290003401ADAMS      165555616661661111222226261116611966116116116666 
+02R327031200290003401ADAMS      666161116111666116666166111166116116191611666666 
+03R327031200290003401ADAMS      661166611116611666661191661116611699161116161611 
+04R327031200290003401ADAMS      161166616166119169911116616116611661616616611611 
+05R327031200290003401ADAMS      166666616111619166161161666666661611116666161111 
+06R327031200290003401ADAMS      166666161116161166111111661666661126611661666666 
+07R327031200290003401ADAMS      696661616666611169111611111161166611111161611616 
+08R327031200290003401ADAMS      119166666666166666611166666999991161661169999161 
+09R327031200290003401ADAMS      666616111161116666966161611166111666616661611119 
+10R327031200290003401ADAMS      611616661161661616661161161111111116161119919966 
+11R327031200290003401ADAMS      116191666161161166696616111616661161166911691666 
+12R327031200290003401ADAMS      611166699661616661166161116166111161116611666661 
+13R327031200290003401ADAMS      611666116616161666616616961666611666166661666611 
+14R327031200290003401ADAMS      116161111161166611611166661666166616616616661166 
+15R327031200290003401ADAMS      611616611616111161161111161661116611166111666166 
+16R327031200290003401ADAMS      161116619116666616611616166661966661611616616611 
+17R327031200290003401ADAMS      661116161111611666166661666611116161616666611111 
+18R327031200290003401ADAMS      111666991616661616661111661616611616116116161666 
+19R327031200290003401ADAMS      166616611161161161116611161666666111666111911611 
+20R327031200290003401ADAMS      616616616119161666166196666119666611661666111116 
+21R327031200290003401ADAMS      61111161111161                                   
+01R327 449800320009111ALFORD     655555996616916165555256511116116111911199199999 
+02R327449800320009111ALFORD     916916661169611661661161999911611611111161169999 
+VAR #  0004             WIDTH = 0002      MD=0   DK 01   COL 07-08      H27      
+                                                                                 
+          STATE:                                                                 
+          ......                                                                 
+          NEW ENGLAND                       BORDER STATES                        
+          ...........                       .............                        
+          01.  CONNECTICUT                  51.  KENTUCKY                        
+          02.  MAINE                        52.  MARYLAND                        
+          03.  MASSACHUSETTS                53.  OKLAHOMA                        
+18</text>
+        </slide>
+        <slide>
+          <slideno>11</slideno>
+          <text>insheet 
+        HRHHID          GESTCEN  PES1   PES8 
+    199960521980910        63      2      4  
+    160916068405549        63      2     -3  
+    9411
+59210626002        63      2      6  
+    941159210626002        63      2      6  
+    941159210626002        63      2      6  
+insheet using filename  Assume the following file was created by outputting a file from Excel in csv format: 
+12</text>
+        </slide>
+        <slide>
+          <slideno>8</slideno>
+          <text>Switch over to Stata run-through 
+9</text>
+        </slide>
+        <slide>
+          <slideno>25</slideno>
+          <text>Voila! 
+county cand1 cand2 cand2 income  educ catholic  
+A 10 20 30 10,000 .2 .3 
+B 40 50 60 40,000 .5 .6 
+C 70 80 90 70,000 .8 .9 
+Z 500 40 30 5,000 .95 .3 
+26</text>
+        </slide>
+        <slide>
+          <slideno>19</slideno>
+          <text>1         2         3         4         5         6         7         8 
+12345678901234567890123456789012345678901234567890123456789012345678901234567890 
+01R3270312 00290003401ADAMS      165555616 661661111222226261116611966116116116666 
+02R327031200290003401ADAMS      666161116111666116666166111166116116191611666666 
+03R327031200290003401ADAMS      661166611116611666661191661116611699161116161611 
+04R327031200290003401ADAMS      161166616166119169911116616116611661616616611611 
+05R327031200290003401ADAMS      166666616111619166161161666666661611116666161111 
+06R327031200290003401ADAMS      166666161116161166111111661666661126611661666666 
+07R327031200290003401ADAMS      696661616666611169111611111161166611111161611616 
+08R327031200290003401ADAMS      119166666666166666611166666999991161661169999161 
+09R327031200290003401ADAMS      666616111161116666966161611166111666616661611119 
+10R327031200290003401ADAMS      611616661161661616661161161111111116161119919966 
+11R327031200290003401ADAMS      116191666161161166696616111616661161166911691666 
+12R327031200290003401ADAMS      611166699661616661166161116166111161116611666661 
+13R327031200290003401ADAMS      611666116616161666616616961666611666166661666611 
+14R327031200290003401ADAMS      116161111161166611611166661666166616616616661166 
+15R327031200290003401ADAMS      611616611616111161161111161661116611166111666166 
+16R327031200290003401ADAMS      161116619116666616611616166661966661611616616611 
+17R327031200290003401ADAMS      661116161111611666166661666611116161616666611111 
+18R327031200290003401ADAMS      111666991616661616661111661616611616116116161666 
+19R327031200290003401ADAMS      166616611161161161116611161666666111666111911611 
+20R327031200290003401ADAMS      616616616119161666166196666119666611661666111116 
+21R327031200290003401ADAMS      61111161111161                                   
+01R3274498 00320009111ALFORD     655555996 616916165555256511116116111911199199999 
+02R327449800320009111ALFORD     916916661169611661661161999911611611111161169999 
+VAR #  0020 SESSION 1   WIDTH = 0001      MD=0   DK 01   COL 42-42      H27      
+                                                                                 
+          G -10- -27A     J 27-1-39               JUNE 7, 1841                    
+        
+  H271004       Y=66 N=149               MALLORY, VA.                    
+          TO ADJOURN, IN ORDER TO END DEBATE ON THE ADOPTION OF THE              
+          HOUSE RULES.  ADOPTION OF THE RULES WOULD PREVENT RECEIVING            
+          ANY ABOLITION PETITIONS.  (P. 27-2) 
+20</text>
+        </slide>
+        <slide>
+          <slideno>21</slideno>
+          <text>Return again to Stata run-through 
+22</text>
+        </slide>
+        <slide>
+          <slideno>10</slideno>
+          <text>insheet 
+Data is output from a spreadsheet into  csv 
+or comma -delimited format  
+Data is a simple I x J  matrix, and all the 
+variables are separated either by a tab or 
+comma 
+Stata is now smart enough to figure out that 
+the first line of the file contains the variable 
+names 
+11</text>
+        </slide>
+        <slide>
+          <slideno>18</slideno>
+          <text>1         2         3         4         5         6         7         8 
+12345678901234567890123456789012345678901234567890123456789012345678901234567890 
+01R32703 1200290003401ADAMS      165555616661661111222226261116611966116116116666 
+02R327031200290003401ADAMS      666161116111666116666166111166116116191611666666 
+03R327031200290003401ADAMS      661166611116611666661191661116611699161116161611 
+04R327031200290003401ADAMS      161166616166119169911116616116611661616616611611 
+05R327031200290003401ADAMS      166666616111619166161161666666661611116666161111 
+06R327031200290003401ADAMS      166666161116161166111111661666661126611661666666 
+07R327031200290003401ADAMS      696661616666611169111611111161166611111161611616 
+08R327031200290003401ADAMS      119166666666166666611166666999991161661169999161 
+09R327031200290003401ADAMS      666616111161116666966161611166111666616661611119 
+10R327031200290003401ADAMS      611616661161661616661161161111111116161119919966 
+11R327031200290003401ADAMS      116191666161161166696616111616661161166911691666 
+12R327031200290003401ADAMS      611166699661616661166161116166111161116611666661 
+13R327031200290003401ADAMS      611666116616161666616616961666611666166661666611 
+14R327031200290003401ADAMS      116161111161166611611166661666166616616616661166 
+15R327031200290003401ADAMS      611616611616111161161111161661116611166111666166 
+16R327031200290003401ADAMS      161116619116666616611616166661966661611616616611 
+17R327031200290003401ADAMS      661116161111611666166661666611116161616666611111 
+18R327031200290003401ADAMS      111666991616661616661111661616611616116116161666 
+19R327031200290003401ADAMS      166616611161161161116611161666666111666111911611 
+20R327031200290003401ADAMS      616616616119161666166196666119666611661666111116 
+21R327031200290003401ADAMS      61111161111161                                   
+01R32744 9800320009111ALFORD     655555996616916165555256511116116111911199199999 
+02R327449800320009111ALFORD     916916661169611661661161999911611611111161169999 
+VAR #  0005             WIDTH = 0002      MD=0   DK 01   COL 09-10      H27      
+                                                                                 
+          DISTRICT NUMBER:                                                       
+          ................                                                       
+          CODED BLANK FOR SENATE.                                                
+          AT -LARGE DISTRICTS ARE CODED 98,97,96, ACCORDING TO                    
+          ALPHABETICAL ORDER OF NAMES OF OCCUPANTS.  NO DISTINCTION              
+          BETWEEN THE VARIOUS KINDS OF AT-LARGE DISTRICTS IS MADE.               
+          DUE TO REPLACEMENTS WITHIN A CONGRESS, TWO MEMBERS MAY                 
+          LEGITIMATELY HAVE THE SAME DISTRICT NUMBER WITHIN A STATE.             
+19</text>
+        </slide>
+        <slide>
+          <slideno>29</slideno>
+          <text>collapse command 
+county  DistrictName -en voters  Paul Bachmann  Johnson  Gingrich  Santorum  Huntsman  Other  Roemer  Romney  Perry  Cain 
+Adair  Adair - 1NW ADAIR  46 7 4 11 10 0 0 0 8 6 0 
+Adair  Adair - 2NE STUART  51 8 5 3 15 1 0 0 6 13 0 
+Adair  Adair - 3SW FONTANELLE  55 9 6 16 14 0 0 0 3 7 0 
+Adair  Adair - 4SE ORIENT  50 4 6 6 15 0 0 0 13 6 0 
+Adair  Adair - 5GF GREENFIELD  67 14 5 8 12 0 0 0 13 15 0 
+Adams  Adams  Carbon  28 7 0 5 12 0 0 0 3 1 0 
+Adams  Adams - Corning 1A  19 7 0 1 6 0 0 0 4 1 0 
+Adams  Adams - Corning 1B  3 3 0 0 0 0 0 0 0 0 0 
+Adams  Adams - Corning 2A  9 2 0 2 0 0 0 0 5 0 0 
+Adams  Adams - Corning 2B  8 5 1 0 1 0 0 0 0 1 0 
+Adams  Adams - Corning 3A  12 4 0 0 0 0 0 0 6 2 0 
+Adams  Adams - Corning 3B  19 9 0 1 6 0 0 0 1 2 0 
+Adams  Adams  Nodaway  10 1 1 5 0 0 0 0 2 1 0 
+Adams  Adams  Prescott  32 21 3 2 1 0 0 0 3 2 0 
+Adams  Adams  Quincy  22 7 0 2 8 0 0 0 3 2 0 
+Adams  Adams - SE Adams  38 8 4 6 13 0 0 0 5 2 0 
+Allamakee  Allamakee - FV/TL/HF CITY  28 7 0 6 9 0 0 0 6 0 0 
+Allamakee  Allamakee - LF/CN/LS/LS CITY  64 20 2 21 7 0 0 0 4 10 0 
+Allamakee  Allamakee - PC/LT/WV CITY  42 20 0 7 9 0 0 0 5 1 0 
+Allamakee  Allamakee - PO/FK  20 4 1 5 3 0 0 0 6 1 0 
+Allamakee  Allamakee - PV CITY  35 7 1 2 3 0 0 0 21 1 0 
+Allamakee  Allamakee - UC/IA/NA CITY  31 4 1 3 4 0 0 0 16 3 0 
+Allamakee  Allamakee - UP/MK/FC/JF/LL  122 53 2 18 14 0 0 0 28 7 0 
+Allamakee  Allamakee - WK 1 CITY  33 8 1 6 12 0 0 0 5 1 0 
+collapse (sum) voters-Cain,by(county) 
+30</text>
+        </slide>
+        <slide>
+          <slideno>16</slideno>
+          <text>House Roll Call votes in the 27th Cong. 
+01R327031200290003401ADAMS      165555616661661111222226261116611966116116116666 
+02R327031200290003401ADAMS      666161116111666116666166111166116116191611666666 
+03R327031200290003401ADAMS      661166611116611666661191661116611699161116161611 
+04R327031200290003401ADAMS      161166616166119169911116616116611661616616611611 
+05R327031200290003401ADAMS      166666616111619166161161666666661611116666161111 
+06R327031200290003401ADAMS      166666161116161166111111661666661126611661666666 
+07R327031200290003401ADAMS      696661616666611169111611111161166611111161611616 
+08R327031200290003401ADAMS      119166666666166666611166666999991161661169999161 
+09R327031200290003401ADAMS      666616111161116666966161611166111666616661611119 
+10R327031200290003401ADAMS      611616661161661616661161161111111116161119919966 
+11R327031200290003401ADAMS      116191666161161166696616111616661161166911691666 
+12R327031200290003401ADAMS      611166699661616661166161116166111161116611666661 
+13R327031200290003401ADAMS      611666116616161666616616961666611666166661666611 
+14R327031200290003401ADAMS      116161111161166611611166661666166616616616661166 
+15R327031200290003401ADAMS      611616611616111161161111161661116611166111666166 
+16R327031200290003401ADAMS      161116619116666616611616166661966661611616616611 
+17R327031200290003401ADAMS      661116161111611666166661666611116161616666611111 
+18R327031200290003401ADAMS      111666991616661616661111661616611616116116161666 
+19R327031200290003401ADAMS      166616611161161161116611161666666111666111911611 
+20R327031200290003401ADAMS      616616616119161666166196666119666611661666111116 
+21R327031200290003401ADAMS      61111161111161                                   
+01R327449800320009111ALFORD     655555996616916165555256511116116111911199199999 
+02R327449800320009111ALFORD     916916661169611661661161999911611611111161169999 
+17</text>
+        </slide>
+        <slide>
+          <slideno>32</slideno>
+          <text>MIT OpenCourseWare
+http://ocw.mit.edu
+17.871 Political Science Laboratory
+Spring 2012
+For information about citing these materials or our Terms of Use, visit: http://ocw.mit.edu/terms .</text>
+        </slide>
+        <slide>
+          <slideno>2</slideno>
+          <text>Analysis -&gt; Packages 
+Baby exercises 
+Minitab, spreadsheets 
+Time series 
+TSP 
+Cross-sectional 
+SPSS, SAS 
+Time series &amp; cross-sectional 
+Stata, R 
+3</text>
+        </slide>
+        <slide>
+          <slideno>9</slideno>
+          <text>Return from Stata run-through 
+Why would you use different input 
+commands? 
+10</text>
+        </slide>
+        <slide>
+          <slideno>14</slideno>
+          <text>infix 
+Data is in an ASCII file, but you cannot rely on 
+spaces, commas, or other standard 
+delimeters  to separate variables  
+Datasets may have observations on more than 
+one line 
+15</text>
+        </slide>
+      </slides>
+      <videos/>
+    </lecture>
+    <lecture>
+      <lecture_title>          17.871 Political Science Lab Lecture Slides: Sampling And Inference
+        </lecture_title>
+      <lecture_pdf_url>https://ocw.mit.edu/courses/17-871-political-science-laboratory-spring-2012/resources/mit17_871s12_sam_and_inf12/</lecture_pdf_url>
+      <lectureno>5</lectureno>
+      <slides>
+        <slide>
+          <slideno>18</slideno>
+          <text>Play with some simulations
+ 
+	 http://onlinestatbook.com/stat_sim/sampling 
+_dist/index.html 
+19</text>
+        </slide>
+        <slide>
+          <slideno>37</slideno>
+          <text>diff. p. = .39; s.e. = .03
+ 
+The Picture 
+.398942398942 
+.39+.03=.42 .39-.03=.36 
+.39-2*.03=.33 .39+2*.03=.45 y 
+.19 
+ 4 3 2  68%  2 3 4Mean 
+95%
+ 
+99%
+ .000134 
+38</text>
+        </slide>
+        <slide>
+          <slideno>44</slideno>
+          <text>------------------------------------------------------------------------------
+------------------------------------------------------------------------------The Stata output 
+. reg loss gallup if year&gt;1948
+ 
+Source | SS df MS Number of obs = 14
+ 
+-------------+--------------------- --------- F( 1, 12) = 17.53
+ 
+Model | 3332.58872 1 3332.58872  Prob &gt; F  = 0.0013
+ 
+Residual | 2280.83985 12 190.069988          R-squared = 0.5937
+ 
+------------- ++------------------------------ Adj R-squared = 0.5598
+ Adj R squared = 0 5598
+ 
+Total | 5613.42857 13 4 31.802198           Root MSE = 13.787
+ 
+loss | Coef. Std. Err. t P&gt;|t| [95% Conf. Interval]
+
+ -------------+----------------------------------------------------------------
+gallup | 1.96812 .4700211 4. 19  0.001 .9440315 2.992208
+ 
+_cons | -127.4281 25.54753 -4. 99  0.000 -183.0914 -71.76486
+ 
+45</text>
+        </slide>
+        <slide>
+          <slideno>33</slideno>
+          <text>N = 15 twice; diff = 24,238; s.e. = 749
+ 
+yThe Picture 
+.398942398942 
+24,238+749=24,987 24,238-749=
+ 
+23,489
+ 
+24,238-2*749= 24,238+2*749= 
+22,740 25,736 
+24,238 
+ 4 3 2  68%  2 3 4Mean 
+95%
+ 
+99%
+ .000134 
+34</text>
+        </slide>
+        <slide>
+          <slideno>26</slideno>
+          <text>Confidence Intervals for Tuition
+Confidence Intervals for Tuition
+ 
+Example
+ 
+ 68% confidence interval = 29,735+ 567 = 
+[[,29,168 to 30 ,,302]] 
+ 95% confidence interval = 29,735+ 2*567 = 
+[28 601 to 30 869][28,601 to 30,869] 
+ 99% confidence interval = 29,735+ 3*567 = 
+[28 034 to 31 436][28,034 to 31,436] 
+27</text>
+        </slide>
+        <slide>
+          <slideno>25</slideno>
+          <text>N = 15; avg. = 29,735; s.d. = 2,196; s.e. = s/ n = 567
+ 
+The Picture
+ y.398942398942 
+29,735+567=30,302 29,735-567=29,168 
+29,735-2*567= 29,735+2*567= 
+28,601 30,869 
+29,735 
+ 4 3 2  68%  2 3 4Mean 
+95%
+ 
+99%
+ .000134 
+26</text>
+        </slide>
+        <slide>
+          <slideno>28</slideno>
+          <text>Constructing confidence intervals of
+Constructing confidence intervals of
+ 
+proportions 
+	 Let us say we drew a sample of 1,500 adults and asked 
+them if they approved of the way Barack Obama was 
+handling his job as president (March 23 25 2012 Gallup handling his job as president . (March 23-25, 2012 Gallup 
+Poll) Can we estimate the % of all American adults who 
+approve? 
+ N = 1500 
+ p = .43 
+ s.e. = p((1  p))
+ .43((1  .43))
+  0.0131500 n 
+http://www.gallup.com/poll/113980/gallup-daily-obama-job-approval.aspx
+ 
+29</text>
+        </slide>
+        <slide>
+          <slideno>45</slideno>
+          <text>MIT OpenCourseWare
+http://ocw.mit.edu
+17.871 Political Science Laboratory
+Spring 2012
+For information about citing these materials or our Terms of Use, visit: http://ocw.mit.edu/terms .</text>
+        </slide>
+        <slide>
+          <slideno>8</slideno>
+          <text>Exponential Distribution
+Exponential Distribution
+ 
+Example 
+.271441 
+0 500000 1.0e+06 Frac ttion 
+Mean = 250,000
+ 
+Median=125,000
+ s.d. = 283,474 Min = 0 
+00 
+Max = 1,000,000 inc 9</text>
+        </slide>
+        <slide>
+          <slideno>20</slideno>
+          <text>Central Limit Theorem 
+As the sample size n increases, the 
+distribution of the mean X of a random 
+sample taken from practically any 
+population approaches a normal pp pp 
+distribution, with mean : and standard 
+deviation  
+nn 
+21</text>
+        </slide>
+        <slide>
+          <slideno>17</slideno>
+          <text>Another way of looking at it:
+Another way of looking at it:
+ 
+The distribution of Inc2 I n c1
+ 
+n = 10 n = 100 n = 1,000 
+.565 .565 .565 
+Fraction .565 Fraction .565 
+Fraction .565 
+Mean = 51 845 Mean = 49 704 Mean = 49 816 diff -400000 0 600000 0 
+diff -400000 050000 600000 0 
+diff -400000 050000 600000 0 
+Mean = 51,845 
+s.d. = 124,815 Mean = 49,704 
+s.d. = 38,774 Mean = 49,816 
+s.d. = 13,932 
+18</text>
+        </slide>
+        <slide>
+          <slideno>12</slideno>
+          <text>Difference of means example
+ 
+.280203 Fraction State 1 
+Mean = 250,000 
+0 
+0 250000 500000 1.0e+06
+ 
+inc
+ 
+.251984
+ 
+State 2
+ 
+Fraction State 2 
+Mean = 300,000 
+13 inc2 0 250000 500000 1.0e+06 0</text>
+        </slide>
+        <slide>
+          <slideno>22</slideno>
+          <text>Most important standard errors
+ 
+Mean 
+n s 
+Proportion 
+n p p ) (1 
+Diff. of 2 means 
+2 2 
+2 
+1 2 
+1 
+n s 
+n s  
+Diff. of 2 
+proportions 2 2 2 
+1 1 1 ) (1 ) (1 
+n p p 
+n p p  
+Diff of 2 means (paired data) 
+n sd 
+Regression (slope) coeff. 
+xs n s e r 1 
+1 . . .  
+ 23</text>
+        </slide>
+        <slide>
+          <slideno>19</slideno>
+          <text>Reasoning Backward
+Reasoning Backward
+ 
+When you know n, X, and s, 
+but want to say something about  
+20</text>
+        </slide>
+        <slide>
+          <slideno>16</slideno>
+          <text>1,000 samples of 1,000
+ 
+300,0001.1e+06 (mmean) inc2
+250,000
+ 
+0 
+0 
+(mean) inc (mean) inc 1.1e+06 
+State 2 &gt; State 1: 1,000 times 17</text>
+        </slide>
+        <slide>
+          <slideno>21</slideno>
+          <text>Calculating Standard Errors 
+In general: 
+sstdd. err.  
+nn 
+22</text>
+        </slide>
+        <slide>
+          <slideno>5</slideno>
+          <text>Sampling
+Sampling
+ 
+Consequences for Statistical 
+Inference
+ 
+6</text>
+        </slide>
+        <slide>
+          <slideno>11</slideno>
+          <text>Consider 1 000 samples of
+Consider 1,000 samples of
+ 
+various sizes
+ 
+10 100 1000 Fraction .731 
+(mean) inc 0 250000 500000 1.0e+06 0 
+Fraction .731 
+(mean) inc 0 250000 500000 1.0e+06 0 
+Fraction .731 
+(mean) inc 0 250000 500000 1.0e+06 0 
+Mean =250,105 
+s.d.= 90,891 Skew= 0.38 Kurt= 3.13 Mean = 250,498 s.d.= 28,297 Skew= 0.02 Kurt= 2.90 Mean = 249,938 s.d.= 9,376 
+12 Skew= -0.50 Kurt= 6.80</text>
+        </slide>
+        <slide>
+          <slideno>42</slideno>
+          <text>Confidence Intervals for regression
+Confidence Intervals for regression
+ 
+example
+ 
+ 68% confidence interval = 1.97+ 0.47= 
+[1 50 to 2 44][1.50 to 2.44] 
+ 95% confidence interval = 1.97+ 2*0.47 = 
+[1 03 to 2 91][1.03 to 2.91] 
+ 99% confidence interval = 1.97+ 3*0.47  = 
+[0 62 3 32] [0.62 to 3.32] 
+43</text>
+        </slide>
+        <slide>
+          <slideno>1</slideno>
+          <text>Why do we sample?
+Cost/
+benefit Benefit benefit Benefit
+(precision)
+Cost
+(h lft)
+N(hasslefactor)
+2</text>
+        </slide>
+        <slide>
+          <slideno>23</slideno>
+          <text>Using Standard Errors we can
+ Using Standard Errors , we can
+ 
+construct confidence intervals 
+	 Confidence interval (ci) : an interval 
+between two numbers ,, where there is a 
+certain specified level of confidence that a 
+population pparameter lies pp 
+	 ci = sample parameter + ci = sample parameter + 
+multiple * sample standard error 
+24</text>
+        </slide>
+        <slide>
+          <slideno>27</slideno>
+          <text>What if someone (ahead of time) had 
+id I thi k th t iti fsaid, I think the average tuition of
+ 
+major research universities is $25k?
+ 
+ Note that $25,000 is well out of the 99% 
+confidence interval , [28,,034 to 31 ,436]]
+ ,[ , 
+ Q: How far away is the $25k estimate from 
+the sample mean?the sample mean? 
+ A: Do it in z-scores: (29,735-25,000)/567 = 
+83 58.35 
+28</text>
+        </slide>
+        <slide>
+          <slideno>36</slideno>
+          <text>Constructing confidence intervals of
+Constructing confidence intervals of
+ 
+difference of proportions 
+	 Let us say we drew a sample of 1,500 adults and asked 
+them if they approved of the way Barack Obama was 
+handling his job as president (March 23 25 2012 Gallup handling his job as president . (March 23-25, 2012 Gallup 
+Poll). We focus on the 1000 who are either independents 
+or Democrats. Can we estimate whether independents 
+and Democrats view Obama differently? 
+ N = 600 ind; 400 Dem. 
+ pp = .4 3( i n d) ; 43 (ind.); .8 2( D e m) ;d i f f 82 (Dem .); diff = .3 9 39  
+ s.e. = p (1 p ) p (1 p ) .43(1 .43) .82(1  .82)1 1 2 2	  	  .03 n 1	 nn n 600	 400400 600 1	 22 
+37</text>
+        </slide>
+        <slide>
+          <slideno>41</slideno>
+          <text>N = 14; slope=1.97; s.e. = 0.45
+ 
+The Picture 
+.398942398942 
+1.97+0.47=2.44 1.97-0.47=1.50 
+1.97-2*0.47=1.03 1.97+2*0.47=2.91 y 
+1.97 
+.000134 
+ 4 3 2  68%  2 3 4Mean 
+95% 42 
+99%</text>
+        </slide>
+        <slide>
+          <slideno>3</slideno>
+          <text>Sampling on IndependentSampling on Independent
+ 
+Variable
+ 
+y y 
+x x
+ 
+4</text>
+        </slide>
+        <slide>
+          <slideno>9</slideno>
+          <text>Consider 10 random samples of
+Consider 10 random samples , of
+ 
+n = 100 apiece
+ 
+Sample mean 
+1 253,396.9 
+2 198.789.6 
+3 271,074.2 
+44 238 928 7 238,928.7 
+5 280,657.3 
+6 241,369.8 
+7 249,036.7 
+8 226,422.7 
+9 210,593.4 
+10 212,137.3 
+Fracti oon .271441 
+0 
+0 250000 500000 1.0e+06 
+incinc 
+10</text>
+        </slide>
+        <slide>
+          <slideno>6</slideno>
+          <text>Statistical Inference:
+ 
+Learnin g About the Unknown From the 
+Known
+ 
+ Reasoning forward:  	 distributions of sample 
+means ,, when the ppoppulation mean ,, s.d.,, and 
+n are known. 
+	 Reasoning backward: learning about theReasoning backward: learning about the 
+population mean when only the sample, 
+sd a n d n are known s.d., and n are known 
+7</text>
+        </slide>
+        <slide>
+          <slideno>35</slideno>
+          <text>What if someone (ahead of time) had
+         
+          
+        
+said, , Private universities are no 
+more expensive than public 
+universities universities 
+	 Note that $0 is well out of the 99%Note that $0 is well out of the 99% 
+confidence interval, [$21,991 to $26,485] 
+	 Q: How far away is the $0 estimate from the
+ 	 Q: How far away is the $0 estimate from the 
+sample proportion? 
+A: Do it in z scores: (24 238 0)/749 = 32 4
+  A: Do itin z-scores: (24,238-0)/749 = 32.4 
+36</text>
+        </slide>
+        <slide>
+          <slideno>24</slideno>
+          <text>Constructing Confidence Intervals 
+ Lets say we draw a sample of tuitions from 15 
+private universities. Can we estimate what the 
+average of all private university tuitions is?
+ 
+N  =  1 5
+ 
+ Average = 29,735 
+ S.d. = 2,196 
+s 2,196
+  S.e. = 2 196 
+  567 
+n 1515 n 
+25</text>
+        </slide>
+        <slide>
+          <slideno>7</slideno>
+          <text>Reasoning Forward
+Reasoning Forward
+ 
+8</text>
+        </slide>
+        <slide>
+          <slideno>10</slideno>
+          <text>Consider 10 000 samples of n =
+ Consider 10,000 samples of n 
+100
+ 
+N = 10,000 .275972 
+Mean = 249,993 
+s.d. = 28,559 Skewness = 0.060 Kurtosis = 2.92 
+0 
+(mean) inc Fracction 
+0 250000 500000 1.0e+06 
+11</text>
+        </slide>
+        <slide>
+          <slideno>43</slideno>
+          <text>What if someone (ahead of time) had 
+id Th i l ti hi
+ said, There is no re lationship 
+between the presidents popularity 
+and how his partys House members 
+do at midterm ?? do at midterm 
+ Note that 0 is well out of the 99% 
+fid i t l [0 62 t 3 32] confidence interval, [0.62 to 3.32] 
+ Q: How far away is the 0 estimate from the 
+sample proportion? 
+ A: Do it in z-scores: (1.97-0)/0.47 = 4.19 
+44</text>
+        </slide>
+        <slide>
+          <slideno>40</slideno>
+          <text>Constructing confidence intervals of
+Constructing confidence intervals of
+ 
+regression coefficients 
+ Lets look at the relationship between the mid-
+term seat loss by the Presidents party at midterm 
+and the Presidents Gallup poll rating 
+Slope = 1.97 
+N1 4 N = 14 
+s.e.r. = 13.8
+ 
+= 8.14
+sxx 
+s.e.slope = 
+s.e.r. 1 13.8 1    0.47 
+Gallup approval rating (Nov .) 13 8.14 n 11 sx 13 814 
+loss Fitted values
+ 
+Fitted values
+ 
+41 1998 2002 0 
+1942 1950 1954 1962 
+1970 1978 
+1982 1986 1990 -40 -20 ge in House seats 
+1938 1942 
+1946 1958 1966 1974
+1994 -80 -60Chan g 
+30 40 50 60 70 
+Gallup approval rating (Nov )</text>
+        </slide>
+        <slide>
+          <slideno>4</slideno>
+          <text>Sampling on Dependent Variable 
+y y 
+x x
+ 
+5</text>
+        </slide>
+        <slide>
+          <slideno>30</slideno>
+          <text>Confidence Intervals for Obama
+ Confidence Intervals for Obama
+ 
+approval example 
+ 68% confidence interval = .43+ .013 = 
+[4 2t o 4 4 ] [.42 to .44] 
+ 95% confidence interval = .43+ 2*.013 = 
+[ 40 46][.40 to .46] 
+ 99% confidence interval = .43+3*.013 = 
+[ .39 to .47] 
+31</text>
+        </slide>
+        <slide>
+          <slideno>15</slideno>
+          <text>1,000 samples of 100
+ 
+300,0001.1e+06 (mmean) inc2
+250,000
+ 
+0 
+0 
+(mean) inc (mean) inc 1.1e+06 
+State 2 &gt; State 1: 909 times 16</text>
+        </slide>
+        <slide>
+          <slideno>31</slideno>
+          <text>What if someone (ahead of time) had 
+saidsaid, I think Americans are equally
+ I think Americans are equally 
+divided in how they think about 
+Obama. 
+	 Note that 50% is well out of the 99%Note that 50% is well out of the 99%
+ 
+confidence interval, [39% to 47%]
+ 
+	 Q: How far away is the 50% estimate from 	 Q: How far away is the 50% estimate from 
+the sample proportion? 
+A: Do it in z scores: ( 43 5)/ 013 = 53 	 A: Do itin z-scores: (.43-.5)/.013 = -5.3 
+32</text>
+        </slide>
+        <slide>
+          <slideno>0</slideno>
+          <text>Sampling and Inference
+Sampling and Inference
+ 
+The Quality of Data and Measures
+ 
+2012
+ 
+1</text>
+        </slide>
+        <slide>
+          <slideno>34</slideno>
+          <text>Confidence Intervals for difference
+Confidence Intervals for difference
+ 
+of tuition means example
+ 
+ 68% confidence interval = 24,238+ 749 = 
+[23 489 to 24 987][23,489 to 24,987] 
+ 95% confidence interval = 24,238+ 2*749 = 
+[22 740 to 25 736][22,740 to 25,736] 
+ 99% confidence interval =24,238+ 3*749 = 
+ [21,991 to 26,485] 
+35</text>
+        </slide>
+        <slide>
+          <slideno>29</slideno>
+          <text>N = 1,500; p. = .43; s.e. = p(1-p)/n = .013
+ 
+The Picture 
+.398942398942
+ 
+.43+.013=.44
+ .43-.013=.42
+ 
+.43-2*.013=.41
+ .43+2*.013=.45
+ y 
+.43
+ 
+ 4 3 2  68%  2 3 4Mean 
+95%
+ 
+99%
+ .000134 
+30</text>
+        </slide>
+        <slide>
+          <slideno>14</slideno>
+          <text>1,000 samples of 10 
+300,0001.1e+06(mmean) inc2
+250,000
+ 
+0 
+0 
+(mean) inc (mean) inc 1.1e+06 
+State 2 &gt; State 1: 673 times 15</text>
+        </slide>
+        <slide>
+          <slideno>39</slideno>
+          <text>What if someone (ahead of time) had 
+saidsaid, I think Democrats and
+ I think Democrats and 
+Independents are equally 
+unsupportive of Obama? 
+	 Note that 0% is well out of the 99%Note that 0% is well out of the 99%
+ 
+confidence interval, [30% to 48%]
+ 
+	 Q: How far away is the 0% estimate from 	 Q: How far away is the 0% estimate from 
+the sample proportion? 
+A: Do it in z scores: ( 39 0)/ 03 = 13 	 A: Do itin z-scores: (.39-0)/.03 = 13 
+40</text>
+        </slide>
+        <slide>
+          <slideno>38</slideno>
+          <text>Confidence Intervals for Obama
+Confidence Intervals for Obama
+ 
+Ind/Dem approval example 
+ 68% confidence interval = .39+ .03 = 
+[3 6t o 4 2 ] [.36 to .42] 
+ 95% confidence interval = .39+ 2*.03 = 
+[ 33 45][.33 to .45] 
+ 99% confidence interval = .39+3*.03 = 
+[ .30 to .48] 
+39</text>
+        </slide>
+        <slide>
+          <slideno>13</slideno>
+          <text>Take 1 000 samples of 10 of
+Take 1,000 samples of 10, of
+ 
+each state, and compare them
+ 
+First 10 samples 
+Sample State 1 State 2 
+11 311 410 311,410 &lt;&lt; 365 224 365,224 
+2 184,571 &lt; 243,062 
+3 468,574 &gt; 438,336 
+4 253,374 &lt; 557,909 
+5 220,934 &gt; 189,674 
+66 270 400 270,400 &lt;&lt; 284 309 284,309 
+7 127,115 &lt; 210,970 
+8 253,885 &lt; 333,208 
+9 152,678 &lt; 314,882 
+10 222,725 &gt; 152,312 14</text>
+        </slide>
+        <slide>
+          <slideno>32</slideno>
+          <text>= =    
+        Constructing confidence intervals of
+Constructing confidence intervals of
+ 
+differences of means
+ 
+ Lets say we draw a sample of tuitions from 15 
+private and public universities.  Can we estimate 
+what the difference in average tuitions is between the two types of universities? 
+ N = 15 in both cases 
+ Average = 29 735 (private); 5 498 (public); diff = 24 238 29,735 (private); 5,498 (public); diff 24,238  Average 
+ s.d. = 2,196 (private); 1,894 (public) 
+2 2  s.e. = s ss s 4 822 416 3 587 236 3,587,236 4,822,4161  2    749 n n 15 15
+1 2 33</text>
+        </slide>
+        <slide>
+          <slideno>2</slideno>
+          <text>Effects of samples
+ 
+ Obvious: influences marginals 
+ Less obviousLess obvious 
+ Allows effective use of time and effort
+ 
+Effect on multivariate techniques
+Effect on multivariate techniques 
+ Sampling of independent variable:  	 greater precision 
+in reggression estimates 
+ Sampling on dependent variable:  bias 
+3</text>
+        </slide>
+      </slides>
+      <videos/>
+    </lecture>
+    <lecture>
+      <lecture_title>          17.871 Political Science Lab Lecture Slides: Descriptive Stats
+        </lecture_title>
+      <lecture_pdf_url>https://ocw.mit.edu/courses/17-871-political-science-laboratory-spring-2012/resources/mit17_871s12_dscrp_stats12/</lecture_pdf_url>
+      <lectureno>1</lectureno>
+      <slides>
+        <slide>
+          <slideno>23</slideno>
+          <text>t
+ 
+  
+  
+ 
+ 
+ ----------------------
+El b dExplore age by votiing mo de
+ 
+. table race if b irth_year&gt;1900,c(mean age)
+ 
+race | mean(age)
+ 
+----------+-----------
+1 | 45.61229
+ 
+2 |2 | 42 89916
+ 42.89916 
+3 | 42.6952 4 | 45.09718 5 
+|| 52.08628 
+6 | 44.77392 9 | 40.86704 
+3 = Black 
+---------------------- 4 = Hispanic 
+5W h i t5 = White 
+24</text>
+        </slide>
+        <slide>
+          <slideno>0</slideno>
+          <text>t t It d i
+ 
+Statistics
+Introduction to 
+Descriptive
+Descriptive 
+Statistics 
+17.871 
+Spring 2012 
+1</text>
+        </slide>
+        <slide>
+          <slideno>32</slideno>
+          <text>0 Draw the box plots for the different
+Draw theboxplots forthedifferent  
+races 
+graph box age if birth _year&gt;1900&amp;race&gt;=3&amp;race&lt;=5,by(race) 
+3 4 
+3 = Black 
+4 = Hispanic 
+5=W h i t e 5=White 
+age 
+50 100 0 50 100 
+5 
+Graphs by race 
+33</text>
+        </slide>
+        <slide>
+          <slideno>18</slideno>
+          <text>t t 
+ MMore wor dds abbout thhe norma ll curve
+ 
+19
+0.4
+0.3
+0.2 34.1% 34.1%
+0.1 2.1% 2.1%
+0.1% 0.1%
+13.6% 13.6%
+0.0
+-3s -2s -1s m 1s 2s 2s
+Image by MIT OpenCourseWare.</text>
+        </slide>
+        <slide>
+          <slideno>40</slideno>
+          <text>t t t  
+  
+     
+SSo, whhats wrong w i h ith thhem 
+For non-time series data, hard to get a 
+compparison amon g groups;; the e yye is ver yy gg p 
+bad in judging relative size of circle slices 
+For time series data hard to grasp cross  For time series , data, hard to grasp cross 
+time comparisons 
+41</text>
+        </slide>
+        <slide>
+          <slideno>42</slideno>
+          <text>ns       
+60 70 80 90 100
+There is a difference between graphs in
+There is a difference between graphs in 
+research and publication 
+Publish OK .01 .02 .03 3 4 0 .02 .03 20 30 40 50 
+5Density 
+2 .03 Black Hispanic 0 .01 
+20 30 40 50 60 70 80 90 100 
+De it age 
+0 .01 .02 
+White Total nsity Densit y 
+normal age 
+Graphs by race 
+.01 .02 .03 White Total De 
+0 
+20 30 40 50 60 70 80 90 100 20 30 40 50 60 70 80 90 100 
+Age 
+Graphs by race Do not publish 
+43</text>
+        </slide>
+        <slide>
+          <slideno>34</slideno>
+          <text>A note about histograms with
+A note about histograms with
+ 
+unnatural categories 
+From the Current Population Survey (2000), Voter and Registration Survey 
+How long (have you/has name) lived at this address? 
+-9 No Response 
+-3 Refused -2 Don't know -1 Not in universe 1 Less than 1 month 2 1-6 months 
+33 7-11 months 7 11 months 
+4 1-2 years 5 3-4 years 6 5 years or longer 
+35</text>
+        </slide>
+        <slide>
+          <slideno>13</slideno>
+          <text>SkSkewness
+ 
+Frequency 
+Value 
+14</text>
+        </slide>
+        <slide>
+          <slideno>36</slideno>
+          <text>t 
+ GGraphh of reco dded data
+ f d d 
+histogram longevity, fraction
+histogram longevity, fraction
+ 
+.557134.557134 Fraction 
+0 1 2 3 4 5 6 7 8 9 10 0 
+longevity 
+37</text>
+        </slide>
+        <slide>
+          <slideno>41</slideno>
+          <text>Some words about graphicalSome words about graphical 
+presentation 
+Aspects of graphical integrity (following 
+Edward Tufte ,, Visual Dis play ofpy
+ 
+Quantitative Information )
+ 
+Main point should be readily apparent
+ Main point should be readily apparent
+ 
+Show as much data as possible 
+Write clear labels on the graph Write clear labels on the graph 
+Show data variation, not design variation 
+42</text>
+        </slide>
+        <slide>
+          <slideno>1</slideno>
+          <text>Key measures
+Key measures
+ 
+Describing data 
+Moment Non-mean based 
+measure 
+Center Mean Mode, median 
+SpreadSpread Variance 
+(standard deviation) Range, 
+Interquartile range 
+Skew Skewness -
+Peaked Kurtosis -
+2</text>
+        </slide>
+        <slide>
+          <slideno>14</slideno>
+          <text>Placement of Republican Party
+Placement of Republican Party 
+on 100-point scale 
+.1 .06 .08 sity 
+02 .04 Dens 
+0 .0 
+0 20 40 60 80 100 
+place on ideological scale - democratic party 
+Mean = 26.8; median = 25; mode = 25
+ 
+15</text>
+        </slide>
+        <slide>
+          <slideno>25</slideno>
+          <text>Divide into bins so that each bar
+ Divide into bins so that each bar 
+represents 1 year 
+.015 .02 .01 Density 
+.005 0 
+0 20 40 60 80 100 
+age 
+ hi t  if bi th 1900 idth(1)
+. hist age if birth_year&gt;1900,width(1)
+ 
+26</text>
+        </slide>
+        <slide>
+          <slideno>37</slideno>
+          <text>t t t
+= 
+     
+0
+Di f d Density pllot of data 
+Total area of last bar = Total area of last bar  .557
+557 
+Width of bar = 11 (arbitrary)
+ 
+Solve for: a = w h (or) 
+.557 = 11h =&gt; h = .051 
+15
+ 0 1 2 3 4 5 6 7 8 9 10 
+longevity 
+38</text>
+        </slide>
+        <slide>
+          <slideno>39</slideno>
+          <text>Three words about pie charts:
+Three words about pie charts: 
+dont use them 
+40</text>
+        </slide>
+        <slide>
+          <slideno>4</slideno>
+          <text>Variance, Standard Deviation of
+ Variance, Standard Deviation of 
+a Population 
+n (xi )2 
+ 2,,  n i1 
+((xxii ))2 
+ n 
+ n i1 
+5</text>
+        </slide>
+        <slide>
+          <slideno>9</slideno>
+          <text>t
+ 
+Skewness
+Skewness
+ 
+Asymmetrical distribution
+ 
+IncomeFrequency 
+Contribution to 
+didcandidates 
+Populations of
+countriescountries 
+Residual vote rates 
+Value	 Positive skew 
+Right skew  Right skew 
+10</text>
+        </slide>
+        <slide>
+          <slideno>35</slideno>
+          <text>Solution ,, Stepp 1 
+Map artificial category onto 
+natural  midpoint natural midpoint 
+-9 No Response missing 
+-3 Refused missin gg 
+-2 Don't know missing 
+-1 Not in universe missing 
+1 Less than 1 month 1/24 = 0.042 
+22 1 6 months 35 / 1 2=02 9 1-6 months 3.5/12 = 0.29
+ 
+3 7-11 months 9/12 = 0.75
+ 
+4 1-2 years 1.5
+ 
+5 3-4 years 3.5
+ 
+6 5 years or longer 10 (arbitrary)
+ 
+recode live length (min/ 1 = )(1= 042)(2= 29)(3= 75)(4=1 5)(5=3 5)(6=10) recode live_length (min/ -1 =.)(1=.042)(2= .29)(3= .75)(4=1 .5)(5=3 .5)(6=10) 
+36</text>
+        </slide>
+        <slide>
+          <slideno>26</slideno>
+          <text>t t  
+Add i k 10 it l
+ Add ticks at 10-year intervals 
+histogram totalscore, width (1) xlabel(-.2 (.1) 1)
+ .015 .02 .01 . Density 
+.005 0 
+20 30 40 50 60 70 80 90 100 
+age 
+27</text>
+        </slide>
+        <slide>
+          <slideno>15</slideno>
+          <text>Kt iKurtosis
+ 
+FFrequency k &gt; 3 leptokurtic 
+k = 3 mesokurtic 
+tykurtic 
+Value 
+16Image by MIT OpenCourseWare.
+k &lt; 3 pla
+Image by MIT OpenCourseWare.</text>
+        </slide>
+        <slide>
+          <slideno>21</slideno>
+          <text>t  
+ E l f Fl id Examp le of Florida voters 
+Question: does the age of voters vary by race?
+ 
+Combine Florida voter extract files, 2008 
+gen new_birth_date=date(birth_date,"MDY") 
+gen birth_year=year(new_b)
+ 
+2010 bi
+ gen age= 2010 -birthh_yea r 
+22</text>
+        </slide>
+        <slide>
+          <slideno>20</slideno>
+          <text>Commands in STATA forCommands in STATA for 
+univariate statistics 
+summarize varname 
+summarize varname detail summarize varname , detail 
+histogram varname, bin() start() width() 
+density/fraction/frequency normaldensity/fraction/frequency normal 
+graph box varnames 
+tabulate 
+21</text>
+        </slide>
+        <slide>
+          <slideno>6</slideno>
+          <text>t
+  
+Bi dBinary data 
+X  prob (X )  1  x  1
+ 
+sx 2  x(1 x)  sx  timeof proportion 
+) 1 (x x  
+7</text>
+        </slide>
+        <slide>
+          <slideno>24</slideno>
+          <text>G h bi th Graph birth year
+ .03 .02 .01 Density 
+0 
+0 20 40 60 80 100 0 20 40 60 80 100 
+age 
+. hist age if birth_year&gt;1900
+ 
+(bin=71, start=9, width=1.3802817)
+ 
+25</text>
+        </slide>
+        <slide>
+          <slideno>28</slideno>
+          <text>-------------------------------------------------------------
+. summ age if birth_year&gt;1900,det 
+age 
+Percentiles Smallest 
+1%1% 1818 99 
+5% 21 16 
+10% 24 
+16 
+
+25% 34 16 
+
+ 50% 48 
+Largest 
+75%75% 6363 107107 
+90% 77 
+107 95% 83 107 
+99% 91 107 Obs 12612114 
+Sum of Wgt. 12612114 
+Mean 49.47549 
+Std. Dev. 19.01049 
+Variance 361.3986 
+Skewness .2629496 
+Kurtosis 2.222442 
+29</text>
+        </slide>
+        <slide>
+          <slideno>5</slideno>
+          <text>ViVariance, S D S.D. off a SSamplle 
+n (x )2 
+2 n i  1 1 i  s ,, 
+Degrees of freedom 
+n )2 (xxi  ( ) i  s 
+i1 n 1 
+6</text>
+        </slide>
+        <slide>
+          <slideno>11</slideno>
+          <text>Skewness
+Skewness
+ 
+Asymmetrical distribution
+ 
+GPA of MIT students Frequency 
+Negative skew 
+Left skew 
+Value
+ 
+12</text>
+        </slide>
+        <slide>
+          <slideno>10</slideno>
+          <text>Distribution of the average $$ of dividends/tax return (in Ks)
+ 
+1.5 1 DensityHyde County SD .5 D Hyde County , SD 0 
+0 5 10 15 
+dividends_pc Mitsubishi i-MiEV
+ 
+(which is supposed to be all electric)
+ 
+6 .08 .1 .02 .04 .06 Density 
+0 
+0 50 100 150 
+var1 Fuel economy of cars for sale in the US 
+11</text>
+        </slide>
+        <slide>
+          <slideno>19</slideno>
+          <text>The z-score 
+or the 
+standardized score  standardized score 
+xx
+zz x
+x
+ 
+20</text>
+        </slide>
+        <slide>
+          <slideno>7</slideno>
+          <text>Example of this, using todays NBC 
+NNews/ M /Marist PPol l i ll in M i Michigan i	 h i 
+ 
+Candidate Pct. 
+Santorum 35 
+Romne y 37 y 
+Paul 13 
+Gingrich 8 
+[U t d [7] [Unaccoun ted 
+for] [7] gen santorum = 1 if 
+candidate==Santorum 
+replace santorum = 0 if candidate~=Santorum 
+ththe comman dd summ 
+santorum produces 
+MeanMean = .3535
+ 
+Var = .35(1-.35)=.2275
+ 
+S.d. = . 4769696 
+8</text>
+        </slide>
+        <slide>
+          <slideno>31</slideno>
+          <text>Draw the previous graph with a box
+Draw the previous graph with a box 
+plot 
+graph box age if birth_year&gt;1900 
+0} 100}1.5 x IQR 50age Upper quartile 
+Median Lower 
+quartile } Inter-quartile range } 0 q 
+32</text>
+        </slide>
+        <slide>
+          <slideno>33</slideno>
+          <text>0 Draw the box plots for the different 
+races usin gg over option 
+graph box age if birth _year&gt;1900&amp;race&gt;=3&amp;race&lt;=5,over(race) 
+3 = Black
+ 4 = Hispanic
+ 
+5=W h i t e
+ 5=White 
+age 
+50 100 
+345
+ 
+34</text>
+        </slide>
+        <slide>
+          <slideno>2</slideno>
+          <text>Key distinctionKey distinction 
+Population vs. Sample Notation
+ 
+PopulationPopulation vsvs. SampleSample 
+Greeks Romans 
+, ,  bs, b 
+3</text>
+        </slide>
+        <slide>
+          <slideno>29</slideno>
+          <text>Histograms by race Histograms by race 
+hist age if birth year &gt;1900&amp;race &gt;=3&amp;race&lt;=5,wid(1)
+ hist age if birth_year 1900&amp;race 3&amp;race 5,wid(1) 
+xlabel(20 (10) 100) normal by(race)
+ 
+4 
+3 = Black 
+4 = Hispanic 
+5=W h i t e 5 = White 
+Density 
+normal age 
+Graphs by race 
+.01 .02 .03 3 0 .02 .03 0 .01 . 20 30 40 50 60 70 80 90 100 
+5Density 
+20 30 40 50 60 70 80 90 100 
+D i t age 
+30</text>
+        </slide>
+        <slide>
+          <slideno>30</slideno>
+          <text>t 
+  
+M i ith hi Main iissues w ith histograms
+ 
+Proper level of aggregation 
+Non-regular data categories Non regular data categories 
+31</text>
+        </slide>
+        <slide>
+          <slideno>38</slideno>
+          <text>t t t t  
+  
+ 
+D i lDensity pllot template
+ 
+Category Fraction X-min X-max X-length Height 
+(density) 
+&lt;1 m o &lt; 1 mo. 0156.0156 00 1/121/12 082.082 19* .19 
+1-6 mo. .0909 1/12  .417 .22 
+7 11 mo 7-11 mo. 0430.0430  11 500.500 09.09 
+1-2 yr. .1529 1 2 1 .15 
+3 43-4 yr. 1404.1404 22 44 22 07.07 
+5+ yr. .5571 4 15 11 .05 
+* = .0156/.082
+ 
+39</text>
+        </slide>
+        <slide>
+          <slideno>27</slideno>
+          <text>c r e
+i ii il l    
+ S perimpose the normal Superimpose the normal curve 
+(with the same mean and s.d. as the empirical distribution) 
+hist age if birth_year&gt;1900,w id(1) xlabel(20 (10) 100) 
+normal
+ 
+5 .02 .01 .015 Density 
+.005 0 
+20 30 40 50 60 70 80 90 100 
+age 
+28</text>
+        </slide>
+        <slide>
+          <slideno>8</slideno>
+          <text>t t
+
+NNorma l d i l distributiion examp le
+ i b l 
+IQ 
+SAT 
+Height 
+N kNo skew 
+Zero skew 
+SymmetricalSymmetrical 
+Mean = median = mode 
+1 2 1 (( x )) // 22f (x)  e 2 
+ 2 
+9# PEOPLE
+600y c n e
+400u q e r F
+200
+HEIGHT
+(inches)
+46 52 58 64 70 76 82 88 94
+Image by MIT OpenCourseWare.</text>
+        </slide>
+        <slide>
+          <slideno>16</slideno>
+          <text>.15 .05 .1 Density 
+0 
+0 20 40 60 80 100 
+place on ideological scale - yourself 1 Mean s.d. Skew. Kurt. 
+Self-
+placement 55.1 26.4 -0.14 2.21 .04 .06 .08 .1 Density Rep. pty. 26.8 21.2 0.87 3.59 
+Dem. pty 74.7 21.8 -1.18 4.29 0 .02 
+0 20 40 60 80 100 
+place on ideological scale - democratic party .06 .08 .1 ensity 
+0 .02 .04 De 
+0 20 40 60 80 100 
+place on ideological scale - republican party Source: Cooperative Congressional Election Study, 2008
+ 
+17</text>
+        </slide>
+        <slide>
+          <slideno>17</slideno>
+          <text>t t 
+ N l d i i b iNorma l distribution
+Skewness = 0
+Kurtosis = 3 
+1 (( x )) / 2f ((xx))  e 2 f  2 e 
+18Frequency# PEOPLE
+HEIGHT
+(inches)600
+400
+46 52 58 64 70 76 82 88 94200
+Image by MIT OpenCourseWare.</text>
+        </slide>
+        <slide>
+          <slideno>43</slideno>
+          <text>MIT OpenCourseWare
+http://ocw.mit.edu
+17.871 Political Science Laboratory
+Spring 2012
+For information about citing these materials or our Terms of Use, visit: http://ocw.mit.edu/terms .</text>
+        </slide>
+        <slide>
+          <slideno>12</slideno>
+          <text>Placement of Republican Party
+Placement of Republican Party 
+on 100-point scale 
+.08 .06 ty 
+.02 .04 Densi t 
+0 . 
+0 20 40 60 80 100 
+place on ideological scale -republican party place on ideological scale republican party 
+13</text>
+        </slide>
+        <slide>
+          <slideno>22</slideno>
+          <text>t t t t  
+ Lk d i i b i f b i hLook at distribution of birth year
+ .02 .025 01 .015 Density 
+.005 . 0 0 
+1850 1900 1950 2000 
+birth_year 
+23</text>
+        </slide>
+        <slide>
+          <slideno>3</slideno>
+          <text>MMean 
+n 
+xi 
+i1   X n 
+4</text>
+        </slide>
+      </slides>
+      <videos/>
+    </lecture>
+    <lecture>
+      <lecture_title>          17.871 Political Science Lab Lecture Slides: Race and Voting in Florida
+        </lecture_title>
+      <lecture_pdf_url>https://ocw.mit.edu/courses/17-871-political-science-laboratory-spring-2012/resources/mit17_871s12_racndvotg_flo/</lecture_pdf_url>
+      <lectureno>4</lectureno>
+      <slides>
+        <slide>
+          <slideno>1</slideno>
+          <text>Hypothetical Statistics about Voting 
+Race  Pct. Voted  
+ (of registered) Avg. age  
+Black  56.2 38.2 
+Hispanic  62.2 45.2 
+White  68.2 52.2 
+Age group  Pct. Voted (of 
+registered) N 
+18-39 56.9 2.0m 
+40-59 66.9 2.0m 
+60-79 76.9 2.0m 
+80-100 86.9 2.0m 
+2</text>
+        </slide>
+        <slide>
+          <slideno>5</slideno>
+          <text>Actual regressions for Florida 
+(Dependent variable = 1 if voted, 0 
+otherwise) 
+Variable  (1) (2) (3) (4) 
+Age-18 0.0031 0.014  0.014 
+(Age -18)2  -0.00016  -0.00016 
+Race = Black (0,1)    -0.0089 0.025  
+Race = Hispanic (0,1)    -0.059 -0.032 
+Constant  0.58 0.45 0.68 0.45  
+N 11,830,049  11,830,049 11,864,194  11,830,049 
+R2 .32 .69 .032 .71 
+RMSE  .084 .057 .11 .055  
+Inflection point for age   43.9  44.0  
+6</text>
+        </slide>
+        <slide>
+          <slideno>2</slideno>
+          <text>Actual Statistics about Voting 
+Race  Pct. Voted  
+ (of registered) Avg. age  
+Black  67.4 42.8 
+Hispanic  62.3 45.2 
+White  68.2 52.2 
+Age group  Pct. Voted (of 
+registered) N 
+18-39 56.9 3.9m 
+40-59 71.3 4.2m 
+60-79 78.8 2.8m 
+80-100 58.8 0.9m 
+3</text>
+        </slide>
+        <slide>
+          <slideno>0</slideno>
+          <text>Race and Voting in Florida 
+17.871 
+Spring 2012 
+1</text>
+        </slide>
+        <slide>
+          <slideno>3</slideno>
+          <text>Black &amp; White Voters 
+0.2 .4 .6 .8(mean) voted
+20 40 60 80 100 120
+age
+White Black
+52.2 42.8  
+4</text>
+        </slide>
+        <slide>
+          <slideno>4</slideno>
+          <text>Hispanic &amp; White Voters 
+0.2 .4 .6 .8(mean) voted
+20 40 60 80 100 120
+age
+White Hispanic
+52.2 45.2  
+5</text>
+        </slide>
+        <slide>
+          <slideno>6</slideno>
+          <text>MIT OpenCourseWare
+http://ocw.mit.edu
+17.871 Political Science Laboratory
+Spring 2012
+For information about citing these materials or our Terms of Use, visit: http://ocw.mit.edu/terms .</text>
+        </slide>
+      </slides>
+      <videos/>
+    </lecture>
+    <lecture>
+      <lecture_title>          17.871 Political Science Lab Lecture Slides: Bivariate Relationships
+        </lecture_title>
+      <lecture_pdf_url>https://ocw.mit.edu/courses/17-871-political-science-laboratory-spring-2012/resources/mit17_871s12_bivarat_reg12/</lecture_pdf_url>
+      <lectureno>0</lectureno>
+      <slides>
+        <slide>
+          <slideno>29</slideno>
+          <text>1994
+1998 2002 0 
+1950 1954 1962 
+1970 
+1978 
+1982 1986 
+1990 -20 use seats 
+1942 
+1946 1950 
+195819661974
+19940 -40 Change in Ho u 
+1938 1946 -80 -60C 
+30 40 50 60 70 
+Gallup approval rating (Nov.) 
+loss Fitted values 
+30</text>
+        </slide>
+        <slide>
+          <slideno>48</slideno>
+          <text>How good  is the fitted line? How good is the fitted line? 
+Goodness-of-fit is often not relevant to research 
+Goodness of fit receives too much emphasis Goodness -of-fit receives too much emphasis 
+Focus on 
+Substantive inter ppretation of coefficients ((most im pportant )) 
+Statistical significance of coefficients  (less important)
+ 
+Confidence interval 
+Standard error of a coefficient 
+t-statistic: coeff./s.e. 
+Nevertheless, you should know about 
+Standard Error of the Regression (SER)Standard Error of the Regression (SER) 
+Standard Error of the Estimate (SEE) 
+Also called Regrettably called Root Mean Squared Error (Root 
+MSE )) in Stata 
+R-squared (R2) 
+Often not informative, use sparingly 
+49</text>
+        </slide>
+        <slide>
+          <slideno>51</slideno>
+          <text>bbeoStandard Error of the Regression picture
+ 
+bbeo Fitt d lFitted values 
+i Yi-Yi^Yi 
+10
+ 
+^ Yi 
+5
+ 
+0 
+0 10 20 30
+ 
+bpop
+bpop 
+52</text>
+        </slide>
+        <slide>
+          <slideno>64</slideno>
+          <text>| column e | 
+   |      770 |  t
+. tab ouse ote abo o co
+    
+  
+   
+  
+   
+   
+    
+    
+   
+  
+   
+   
+ 
+ 
+ 
+    
+    
+                   
+    
+    
+       
+            
+       
+           
+    
+                      
+                                
+            
+                   
+AbAbortition an dd vote chhoiice iin 2006
+2006 
+. tab housevote abortopinion,, col top 
++-------------------+ | Key       |
+|-------------------| |   frequency    |
+percentagg p 
++-------------------+ 
+   us house candidate |          stmt most agrees w/ view on abortion law 
+       voting for |    Never     Rarely  Sometimes    Always  other (pl |  Total 
+----------------------+-------------------------------------------------------+---------- 
+      Democrat 446      1,749     1,903      8,759     13,627 
+| 13.60      20.21     36.90      57.93      34.30 |  39.55 
+----------------------+-------------------------------------------------------+---------- 
+      Republican  | 1,900      4,381     1,639      2,006        758 |  10,684 
+| 57.93      50.62     31.78      13.27      33.76 |  31.01 
+----------------------+-------------------------------------------------------+---------- 
+other (please specify |    157 384 228        671        190 |  1,630 
+| 4.79       4.44     4.42       4.44       8.46 |  4.73 
+----------------------+-------------------------------------------------------+---------- 
+i won't vote in this  | 65 201 117        299         52 |       734 
+| 1.98       2.32     2.27       1.98       2.32 |  2.13 
+----------------------+---- ---------------------------------------------------+---------- 
+  haven't decided |    712      1,939     1,270      3,386        475 |  7,782 
+2 2 4 1 24.63 21.16 | 2 2 5 8 || 2 1 71 
+21.71 22.41 2 4 6 3 2 2 3 9 22.39 2 1 1 6 | 22.58 
+----------------------+-------------------------------------------------------+---------- 
+    Total |    3,280      8,654     5,157     15,121      2,245 |  34,457 | 
+100.00     100.00     100.00     100.00     100.00 |  100.00 
+65</text>
+        </slide>
+        <slide>
+          <slideno>6</slideno>
+          <text>beo  Fitted valuesbeo
+bpop    
+Linear Relationship between AfricanLinear Relationship between African 
+American Population &amp; Black Legislators 
+10 
+Black % in 
+state 5 legislatureslegislatures 
+0 
+ ^
+0 1311.31
+ 
+0 10 20 30 
+Black % in state population Black % in state population
+ ^
+1  0 359
+ 0.359 
+Y   X i 0 1 i i 
+7</text>
+        </slide>
+        <slide>
+          <slideno>33</slideno>
+          <text>Ri d lResiduals 
+34
+e=Y B BX ei= YiB0B1Xi</text>
+        </slide>
+        <slide>
+          <slideno>13</slideno>
+          <text>eob
+bpopbpop
+How did we get that line?How did we get that line? 
+3. Label the points 
+Yi 
+10 ^ Yi-Yi 
+^ YiBlack 
+% in 5 state 
+legis. 
+0 
+Black % in state population 
+Y  (  X ) i 0 1 i i bi residual  residual 
+0 10 20 30
+ 
+14</text>
+        </slide>
+        <slide>
+          <slideno>53</slideno>
+          <text>---------------------------------------------------- --------------------------
+        
+---------------------------------------------------- --------------------------
+SER i t	 ti SER interpre ttation called Root MSE in Stata
+ 
+On average in sample predictions will be off the
+ On average , in-sample predictions will be off the 
+mark by about one standard error of the 
+reggression 
+. reg beo bpop
+ 
+Source | SS df MS 	            N umber of obs =  41
+ 
+F( 11, 39) = 202 56
+ -------------+---------- -------------------- F( 39) 202.56
+ 
+Model | 351.26542 1 351.26542 Prob &gt; F = 0.0000
+ 
+Residual | 67.6326195 39 1.73416973 R-squared = 0.8385
+ 
+-------------+------------------------------ Adj R-squared =  0.8344
+ 
+Total || 418.898039 40 10. 472451  Root MSE  = 1.3169
+ 
+beo | Coef. Std . Err.  t P&gt;|t |  [95%  Conf. Interval]
+ 
+-------------+-------------------------------------- -------------------------
+0251876 14.23 0 000 .3075284  .4094219
+ bpop | bpop | .3586751 3586751  .0251876 14 23 0.000 3075284 4094219
+ 
+_cons | -1.314892 .3277508  -4.01 0.000 -1.977831 -.6519535
+ 
+54</text>
+        </slide>
+        <slide>
+          <slideno>3</slideno>
+          <text>Regression interpretationRegression interpretation 
+Three key things to learn (today) 
+1.	 Where does regression come from 
+22.	 To interpret the regression coefficient
+ To interpret the regression coefficient 
+3.	 To interpret the confidence interval 
+WWe will l ill learn hhow tto callcullatte con fidfidence 
+intervals in a couple of weeks 
+4</text>
+        </slide>
+        <slide>
+          <slideno>32</slideno>
+          <text>Residuals
+Residuals
+ 
+33</text>
+        </slide>
+        <slide>
+          <slideno>20</slideno>
+          <text>More regression examples
+More regression examples
+ 
+21</text>
+        </slide>
+        <slide>
+          <slideno>28</slideno>
+          <text>|          
+ 
+    
+   
+      
+              
+         
+     ---------------------------------------------------- --------------------------
+---------------------------------------------------- --------------------------
+ 
+ 
+ 
+Interppretingg confidence interval
+ 
+. reg bush sbc _mpct [aw=votes]
+ 
+(sum of wgt is 1.2207e+08)
+ 
+Source | SS df MS    Number of o bs =  50
+ 
+-------------+------------------------------ F(  1, 48) = 40.18
+ 
+Model | .118925068 1 .118925068        Prob &gt; F  = 0.0000
+ 
+Residual | .142084951 48 .002960103 R-squared = 0.4556
+ 
+-------------+---------- -------------------- Adjj R-sqquared = 0.4443
+ 
+Total | .261010018 49 .005326735 Root MSE = .05441
+ 
+bush | Coef. Std . Err.  t P&gt;|t |  [95%  Conf. Interval]
+ 
+-------------+-------------------------------------- -------------------------
+sbc_mpct | .261779 .04 13001  6.34 0.000 .1787395 .3448185
+ 
+_cons | .4563507 .0112155  40.69 0.000 .4338004 .4789011
+ 
+Coefficient interpretation : Coefficient interpretation : 
+ A 1 percentage point increase in Bapt ist percentage is associated with a 
+.26 percentage point increase in Bush vote share at the state level. 
+Confidence interval interpretation 
+ The 95% confidence interval lies between .18 and .34. 
+29</text>
+        </slide>
+        <slide>
+          <slideno>45</slideno>
+          <text>The Linear and Curvilinear Relationshi pp between 
+African American Population &amp; Black Legislators
+ 
+15 10es Y = 0.11 + 0.0088X + 0.013X2 5leg/Fitted valu
+0 
+0 10 20 30 
+pop 
+leg Fitted values 
+Fitted values 
+scatter beo pop || qfit beo pop
+ 
+46</text>
+        </slide>
+        <slide>
+          <slideno>18</slideno>
+          <text>---------------------------------------------------- --------------------------
+   
+Black elected officials example
+Black elected officials example
+ 
+. reg beo bpop
+ 
+Source | Source | SS df MS Number of obs 41
+ SS df MS Number of obs = 41
+ 
+-------------+------------------------------ F(  1, 39) = 202.56
+ 
+Model | 351.26542 1 351.26542 Prob &gt; F = 0.0000
+ 
+Residual | 67.6326195 39 1.73416973 R-squared = 0.8385
+ 
+-------------+------------------------------ Adj R-squared =  0.8344
+ 
+l | 18 898039 00 10 2 1 Root MSE = 1 3169
+ Total |  4 18.898039 10.472451 S 1.3169
+ 
+beo | Coef. Std . Err.  t P&gt;|t |  [95%  Conf. Interval]
+ 
+-------------+-------------------------------------- -------------------------
+bpop | .3586751 .0251876  14.23 0.000 .3075284 .4094219
+ 
+_cons | -1.314892 .3277508  -4.01 0.000 -1.977831 -.6519535 
+---------------------------------------------------- -------------------------
+Always include interpretation in 
+your presentations and papers 
+Interpretation : a one percenta ge point increase in your presentations and papers 
+g 
+black population leads to a .36 percentage point 
+increase in black composition in the legislature
+ 
+19</text>
+        </slide>
+        <slide>
+          <slideno>56</slideno>
+          <text>ed
+
+10.8 
+-.884722 
+   
+R-squasqua red
+ beo  Fitted values 
+(Yi-Yi) ^ 10 beo (Yi-Y)(Yi-Y) ^ _ _ 
+0 _ 
+YY 
+ n 
+(Y 
+i  Y)2 
+1.2 30.8 
+bpopbpop 
+2 i1r  n or 
+(Yi  Y)2 
+i1
+pct. variance "explained" 
+Also called coefficient of determination 
+57</text>
+        </slide>
+        <slide>
+          <slideno>19</slideno>
+          <text>beo  Fitted valuesbeo
+bpop
+The Linear Relationship between African
+The Linear Relationship between African
+ 
+American Population &amp; Black Legislators
+ 
+10 
+Black % in 
+state 
+legislatures 5
+ 
+(Y) 
+0 1.31 0 
+ 1 31 0 10 20 30 
+Black % in state population ( X) 
+1  0 359
+ 0.359 YY  X
+ X
+ ii i i 1 0 0 i i 1 
+20</text>
+        </slide>
+        <slide>
+          <slideno>31</slideno>
+          <text>Additional regression in bivariate
+Additional regression in bivariate
+ 
+relationship topics 
+Residuals 
+Com pparingg coefficients 
+Functional form 
+Goodness of fit (R2 and SER) Goodness of fit (R and SER) 
+Correlation 
+Discrete DV discrete EV Discrete DV, discrete EV 
+Using the appropriate graph/table
+ 
+32</text>
+        </slide>
+        <slide>
+          <slideno>39</slideno>
+          <text>scatter loss gallup, mlabel(year) ||  lfit loss gallup || lf it loss gallup if year &gt;1946 
+40
+1962
+1970197819861990199820020 0eats
+1942195019541978
+1982-40 -20ge in House s e
+19381942
+19461958 1966 1974
+1994-60Chan g
+-80
+30 40 50 60 70
+Gallup approval rating (Nov.)
+loss Fitted values
+Fitted values</text>
+        </slide>
+        <slide>
+          <slideno>69</slideno>
+          <text>------------------------------------------------------------------------------
+                   
+------------------------------------------------------------------------------
+   
+. reg beo bpop 
+Source | SS df MS          Number of obs =  41 
+-------------+------------------------------ F( 1, 39) = 202.56 
+Model | 351.26542 1 351.26542 Prob &gt; F  = 0.0000 
+Residual | 67.6326195 39 1.73416973  R-squared = 0.8385 
+-------------+--------------------- --------- Adj R-squared =  0.8344 
+Total | 418.898039 40 10.472451 Root MSE = 1.3169 
+beobeo || Coef StdStd. ErrErr. t P&gt;|t| [95% Conf Interval] Coef. t P&gt;|t| [95% Conf. Interval] 
+-------------+--------------------------------------------------------------- -
+bpop |  .3584751 .0251876 14.23 0.000 .3075284 .4094219 
+_cons | -1.314892 .3277508 -4. 01  0.000 -1.977831 -.6519535 
+. summ beo b poppp 
+Variable | Obs Mean Std. Dev.  Min Max 
+-------------+--------------------------------------------------------
+beo |
+ 41 2.317073 3.2 36117  0 10.8 
+bpop | 41 
+10.13171 8.266633 1.2 30.8 
+. gen st_be o=(beo-2.317073)/3.236117
+(9 missing values generated) 
+. gen st_bp op=(bpop-10.13171)/8.266633
+(9 missing values generated)(9 missing values generated) 
+70</text>
+        </slide>
+        <slide>
+          <slideno>62</slideno>
+          <text>t t
+ Di DV di EV
+Discrete DV, discrete EV
+ 
+Crosstabs 
+2 
+Gamma, Beta, etc. 
+63</text>
+        </slide>
+        <slide>
+          <slideno>52</slideno>
+          <text>Standard Error of the Regression (SER)
+ 
+or Standard Error of the Estimate 
+or Root Mean Squared Error (Root MSE)or Root Mean Squared Error (Root MSE) 
+22  n 
+(Yi Y 
+i )
+ 
+i1 
+d. f .
+ 
+d.f. equals n minus the number of estimate coefficients ( Bs). 
+In bivariate regression case, d.f. = n-2. 
+53</text>
+        </slide>
+        <slide>
+          <slideno>23</slideno>
+          <text>aa s
+tt
+How to add a regression line:
+ 
+StStatta comman d: lfitd lfit 80 
+MiamiFL 
+HoustonTXMobileAL 
+DallasTX PhoenixAZ LosAngelesCA 
+SanFranciscoCA 0 60 
+MemphisTNNorfolkVA 
+BaltimoreMD 
+KansasCityMOWashingtonDC 
+PittsburghPAClevelandOH NewYorkNY 
+BostonMA 
+SyracuseNY 
+Mi li M Portlan d 20 40 
+Minneapo lisM 
+Dulu 0 
+25 30 35 40 45 
+latitude 
+Fitted values JanTemp 
+scatter JanTemp latitude, mlabel(city) || lfit JanTemp latitude 
+or oftften bbetter 
+scatter JanTemp latitude, mlabel(city)  m(i) || lfit JanTemp latitude 
+24</text>
+        </slide>
+        <slide>
+          <slideno>24</slideno>
+          <text>-  
+    
+  
+  
+Presenting regression resultsPresenting regression results 
+Brief aside 
+First, show scatter plot 
+Label data points (if possible) Label data points (if possible) 
+Include best-fit line 
+Second show regression table Second , show regression table 
+Assess statistical significance with confidence 
+interval or p -value interval or p value 
+Assess robustness to control variables    
+((internal validit yy: nonrandom selection )) 
+25</text>
+        </slide>
+        <slide>
+          <slideno>8</slideno>
+          <text>eob
+bpopbpop
+How did we get that line?How did we get that line? 
+2. Decompose Yi into two parts 
+10 
+Black 
+% in 5 state 
+legis. 
+0 
+Black % in state population 
+Y   X i 0 1 i i b
+0 10 20 30
+ 
+9</text>
+        </slide>
+        <slide>
+          <slideno>71</slideno>
+          <text>MIT OpenCourseWare
+http://ocw.mit.edu
+17.871 Political Science Laboratory
+Spring 2012
+For information about citing these materials or our Terms of Use, visit: http://ocw.mit.edu/terms .</text>
+        </slide>
+        <slide>
+          <slideno>58</slideno>
+          <text>J
+UT 
+AL ID 
+NE 
+ND OK UT 
+WY.7 
+AL 
+AK 
+AZ AR GA IN KS 
+KY 
+LA MS MT 
+NC ND 
+SC SD 
+TN TX 
+WV .6 ct 2004 
+AR 
+CO 
+DE FL 
+IA 
+MIMN MO 
+NV 
+NH 
+NJ NMOH 
+OR PA VA 
+WA WI.5Bush P c 
+CACT DE HIIL ME 
+MD 
+MA NY 
+RIVT WA .4 
+MA 
+0 .2 .4 .6 
+Southern Baptist % 
+Bh Fitt d l Bush Fitted values
+ 
+59</text>
+        </slide>
+        <slide>
+          <slideno>22</slideno>
+          <text>---------------------------------------------------- --------------------------
+                            
+---------------------------------------------------- --------------------------
+. reg jantemp latitude
+ 
+Source | SS df MS             N umber of obs =  20
+ 
+-------------+------------------------------ F(  1, 18) = 49.34
+ 
+Model | 3250.72219 1 3250.72219        Prob &gt; F  = 0.0000
+ 
+Residual | 1185.82781 18 65.8793228 R-squared = 0.7327
+ 
+-------------+------------------------------ Adj R-squared =  0.7179
+ 
+Total | 4436.55 19 233.502632 Root MSE = 8.1166
+ 
+jantemp | jantemp | Coef. Std. Err. t P&gt;|t| [95% Conf. Interval]
+ Coef. Std. Err. t P&gt;|t| [95% Conf. Interval]
+ 
+-------------+-------------------------------------- -------------------------
+latitude | -2.341428 .33 33232  -7.02 0.000 -3.041714 -1.641142
+ 
+_cons | 125.5072 12.77915  9.82 0.000 98.65921 152.3552
+ 
+Interpretation : a one point increase in latitude is associated with a 2.3 
+decrease in average temperature (in Fahrenheit).
+ 
+Y   X i 0 1 i i 
+23</text>
+        </slide>
+        <slide>
+          <slideno>4</slideno>
+          <text>beo  Fitted values    beo
+bpop    
+Linear Relationship between AfricanLinear Relationship between African 
+American Population &amp; Black Legislators 
+10 
+Black % in 
+state 5 legislatureslegislatures 
+0 
+Black % in state populationBlack % in state population 0 10 20 30
+ 
+5</text>
+        </slide>
+        <slide>
+          <slideno>34</slideno>
+          <text>One important numerical property
+One important numerical property
+ 
+of residuals 
+The sum of the residuals is zero
+ 
+80 
+MiamiFL 
+H t T X M bil AL PhoenixAZ LosAngelesCA60 8 
+HoustonTXMobileAL 
+DallasTX 
+MemphisTNNorfolkVA SanFranciscoCA 
+BaltimoreMD 
+KansasCityMOWashingtonDC 
+PittsburghPAClevelandOH NewYorkNY 
+BostonMA 
+SyracuseNY Portlan d40 
+SyracuseNY 
+Minneapolis M 
+Dulu 0 20 
+25 30 35 40 45 25 30 35 40 45 
+latitude 
+Fitted values JanTemp 
+35</text>
+        </slide>
+        <slide>
+          <slideno>41</slideno>
+          <text>o ca      
+ 
+How to recode variables to 0 1 scale How to recode variables to 0-1 scale 
+Partyy ID exam pple: ppid7 
+Usually varies from 
+1 (st(strongg Repub lican) epub ) 
+to 8 (strong Democrat) 
+sometimes 0 needs to be recoded to missing (.). 
+Stata code? 
+repplace pid7 = ( p (pid7-1)/7 p )/ 
+42</text>
+        </slide>
+        <slide>
+          <slideno>26</slideno>
+          <text>|          
+ 
+    
+   
+      
+              
+         
+     ---------------------------------------------------- --------------------------
+---------------------------------------------------- --------------------------
+ 
+ 
+. reg bush sbc _mpct [aw=votes]
+ 
+(sum of wgt is 1.2207e+08)
+ 
+Source | SS df MS    Number of o bs =  50
+ 
+-------------+------------------------------ F(  1, 48) = 40.18
+ 
+Model | .118925068 1 .118925068        Prob &gt; F  = 0.0000
+ 
+Residual | .142084951 48 .002960103 R-squared = 0.4556
+ 
+-------------+---------- -------------------- A
+djj R-sqquared = 0.4443
+ 
+Total | .261010018 49 .005326735 Root MSE = .05441
+ 
+bush | Coef. Std . Err.  t P&gt;|t |  [95%  Conf. Interval]
+ 
+-------------+-------------------------------------- -------------------------
+sbc_mpct | .261779 .04 13001  6.34 0.000 .1787395 .3448185
+ 
+_cons | .4563507 .0112155  40.69 0.000 .4338004 .4789011
+ 
+Coefficient interpretation : Coefficient interpretation : 
+ A one percentage point increase in Baptist percentage is associated 
+with a .26 percentage point increase in  Bush vote share at the state 
+le ellevel. 
+27</text>
+        </slide>
+        <slide>
+          <slideno>10</slideno>
+          <text>eob
+bpopbpop
+How did we get that line?How did we get that line? 
+3. Label the points 
+Yi 
+10 
+^ YiBlack 
+% in 5 state 
+legis. 
+0 
+Black % in state population 
+Y  (  X ) i 0 1 i i b
+0 10 20 30
+ 
+11</text>
+        </slide>
+        <slide>
+          <slideno>5</slideno>
+          <text>The linear relationship between twoThe linear relationship between two 
+variables 
+Y  X
+ Y   X 
+i 0 1 i i
+ 
+Regression quantifies how one variable can be
+ 
+described in terms of another
+ 
+6</text>
+        </slide>
+        <slide>
+          <slideno>49</slideno>
+          <text>bbeoStandard Error of the Regression the idea
+ 
+bbeo Fitt d lFitted values 
+10
+ 
+5
+ 
+0 
+bpopbpop 0 10 20 30
+ 
+50</text>
+        </slide>
+        <slide>
+          <slideno>16</slideno>
+          <text>n 
+(Y   XX ))2 (Yi 0 1 i 
+i1 Sl fSolve for  0 1 
+n 
+(Y Yi )(X  Xi )
+^^ i1
+1  n or 
+ ((XX  XX ))2
+  ii 
+i1 
+var(X ) ) , cov(Y X Remember this for the problem set! 
+17</text>
+        </slide>
+        <slide>
+          <slideno>2</slideno>
+          <text>t t
+    
+ 
+ 
+CContiinuous DV, con tiinuous EV D V E V 
+Dependent Variable: DV 
+Explanatory (or independent) Variable: EVExplanatory (or independent) Variable: EV 
+E l W h t i t h l t i h i b tExamp le: What is the relationship between 
+Black percent in state legislatures and black 
+percen tit in sttatte popu llat i tions 
+3</text>
+        </slide>
+        <slide>
+          <slideno>65</slideno>
+          <text>t
+ U th i h/t blUse the appropr iate grap h/table
+ 
+Continuous DV, continuous EV 
+E.g., vote share by income growth 
+Use scatter plot 
+Continuous DV, discrete and unordered EV 
+E.g.,  vote share by religion or by union membership 
+Box plot, dot plot 
+Discrete DV, discrete EV 
+No graph: Use crosstabs ( tabulate ) 
+66</text>
+        </slide>
+        <slide>
+          <slideno>40</slideno>
+          <text>t
+         
+CCompar iing regress iion coe ffifficiients 
+As a general rule: 
+Code all your variables to vary between 0 and 1 Code all your variables to vary between 0 and 1 
+That is, minimum = 0, maximum = 1 
+Reggression coefficients then re ppresent the effect 
+of shifting from the minimum to the maximum.
+ 
+This allows yyou to more easil yy comppare the 
+relative importance of coefficients. 
+41</text>
+        </slide>
+        <slide>
+          <slideno>27</slideno>
+          <text>J
+UT 
+AL ID 
+NE 
+ND OK UT 
+WY.7 
+AL 
+AK 
+AZ AR GA IN KS 
+KY 
+LA MS MT 
+NC ND 
+SC SD 
+TN TX 
+WV .6 ct 2004 
+AR 
+CO 
+DE FL 
+IA 
+MIMN MO 
+NV 
+NH 
+NJ NMOH 
+OR PA VA 
+WA WI.5Bush P c 
+CACT DE HIIL ME 
+MD 
+MA NY 
+RIVT WA .4 
+MA 
+0 .2 .4 .6 
+Southern Baptist % 
+Bh Fitt d l Bush Fitted values
+ 
+28</text>
+        </slide>
+        <slide>
+          <slideno>59</slideno>
+          <text>Correlation
+Correlation
+ 
+60</text>
+        </slide>
+        <slide>
+          <slideno>68</slideno>
+          <text>Convert all variables, except dummy
+variables, to unit deviates:\ 
+new x =[ x mean(x)]/ sd(x) new_x = [x-mean(x)]/ sd(x) 
+new_y = [y-mean(y)]/sd(y)  etc. 
+Interpretation: a one standard deviation Interpretation: a one standard deviation 
+change in x yields, on average, a b standard 
+deviation change in y. 
+(For a dummy variable a change from category 0 (For a dummy variable , a change from category 0 
+to category 1 yields, on average, a b standard 
+deviation change in y. 
+69</text>
+        </slide>
+        <slide>
+          <slideno>35</slideno>
+          <text>---------------------------------------------------- --------------------------
+---------------------------------------------------- --------------------------
+    
+Generating predictions and residuals 
+. reg jantemp latitude
+ 
+Source | SS df MS             N umber of obs =  20
+ 
+-------------+------------------------------ F(  1, 18) = 49.34
+ 
+Model | 3250.72219 1 3250.72219        Prob &gt; F  = 0.0000
+ 
+Residual | 1185.82781 18 65.8793228 R-squared = 0.7327
+ 
+-------------+------------------------------ Adj R-squared =  0.7179
+ 
+Total | 4436.55 19 233.502632 Root MSE = 8.1166
+ 
+jantemp | Coef .  Std. Err. t P&gt;|t| [95% Conf. Interval]
+ 
+-------------+-------------------------------------- -------------------------
+latitude | -2.341428 .33 33232  -7.02 0.000 -3.041714 -1.641142
+ 
+_cons | 125.5072 12.77915  9.82 0.000 98.65921 152.3552
+ 
+. predict py
+ 
+(option xb assumed; fitted values)
+ (option xb assumed; fitted values)
+ 
+. predict ry, resid
+ 
+36</text>
+        </slide>
+        <slide>
+          <slideno>12</slideno>
+          <text>eob
+bpopbpop
+How did we get that line?How did we get that line? 
+3. Label the points 
+Yi 
+10 ^ Yi-Yi 
+^ YiBlack 
+% in 5 state 
+legis. 
+0 
+Black % in state population 
+Y  (  X ) i 0 1 i i b
+0 10 20 30
+ 
+13</text>
+        </slide>
+        <slide>
+          <slideno>17</slideno>
+          <text>RRegress iion comman ds iin STATA
+ d STATA 
+reg depvar expvars 
+E.g., reg y x 
+E.g., reg beo bpop 
+Making predictions from regression lines
+ 
+ppredict newvar 
+predict newvar, resid 
+newvar will now equal i 
+18</text>
+        </slide>
+        <slide>
+          <slideno>66</slideno>
+          <text>Two quick notes aboutTwo quick notes about
+ 
+comparing coefficients
+ 
+Recode/rescale independent variables to 
+be in 0-1 interval 
+new_x = [x-min(x)+1]/(max(x)-min(x)+1)
+ 
+Interpretation: a move from the minimum to Interpretation: a move from the minimum to 
+the maximum in the independent variable 
+yields an average change of b in the d.v. 
+67</text>
+        </slide>
+        <slide>
+          <slideno>14</slideno>
+          <text>What is i? (sometimes ui) 
+Wrong functional form 
+Measurement errorMeasurement error 
+Stochastic component in Y 
+Ud i YUnmeasure d inf l fluences on Y 
+Y   X i 0 1 i i 
+15</text>
+        </slide>
+        <slide>
+          <slideno>50</slideno>
+          <text>bbeoStandard Error of the Regression the idea
+ 
+bbeo Fitt d lFitted values 
+10
+ 
+5
+ 
+0 
+bpopbpop 0 10 20 30
+ 
+51</text>
+        </slide>
+        <slide>
+          <slideno>1</slideno>
+          <text>t
+     
+Tt i Testing assoc iiatiions (not causation!) 
+Continuous data 
+Scatter plot (always use first!) 
+(Pearson) correlation coefficient (rare should be rarer!) (Pearson) correlation coefficient (rare , should be rarer!) 
+(Spearman) rank-order correlation coefficient (rare)
+ 
+Regression coefficient (common) 
+Discrete data 
+Cross tabulations 
+ 2 
+Gamma, Beta, etc. 
+2</text>
+        </slide>
+        <slide>
+          <slideno>21</slideno>
+          <text>t t t  
+ T d L d Tempera ture an d Latiti ude
+ 80 
+LosAngelesCA 
+Ph i AZ MiamiFL 60 
+Portlan d SanFranciscoCA PhoenixAZ 
+NorfolkVA MobileAL 
+MemphisTN DallasTX HoustonTX 40 JanTemp 
+NewYorkNY 
+BostonMA BaltimoreMD 
+SyracuseNY WashingtonDC 
+ClevelandOH KansasCityMO 
+PittsburghPA 
+Minneapolis 20 J 
+Minneapolis 
+Dulu 0 
+25 30 35 40 45 
+latitudelatitude 
+scatter JanTemp l atitude, mlabel(city) 
+22</text>
+        </slide>
+        <slide>
+          <slideno>60</slideno>
+          <text>61
+t Cl i
+Correlation
+ 
+Cov ((xx, y)) Cov yCorr x y  r
+ (,) 
+ x y
+ 
+Corr(BushPct00,BushPct04) =0.96 = 00 04 
+0 014858 . .96
+ 0 01499  0 01605
+ .. 
+ Measures how closely data points -.4 
+-.6 -.6 
+-.4 -.2 0 
+new2000 .2 .4 fall along the line fallalong theline 
+ Varies between -1 and 1 
+(compare with Tufte p. 102) new20 004 
+-.2 0 .2 .4</text>
+        </slide>
+        <slide>
+          <slideno>7</slideno>
+          <text>eob
+bpopbpop
+How did we get that line? 
+1. Pick a value o ff Yi 
+Yi 
+10 
+Black 
+% in 5 state 
+legis. 
+0 
+Black % in state population 
+Y   X i 0 1 i i b
+0 10 20 30
+ 
+8</text>
+        </slide>
+        <slide>
+          <slideno>63</slideno>
+          <text>E lExamp le 
+What is the relationship between
+abortion sentiments and vote choice? 
+The abortion scale: 
+1. BY LAW, ABORTION SHOU LD NEVER BE PERMITTED.
+ 
+2. THE LAW SHOULD PERMIT ABORTION ONLY IN CASE OF RAPE, INCEST, OR WHEN 
+THE WOMAN'S LIFE IS IN DANGER.
+ 
+3. THE LAW SHOULD PERMIT  ABORTION FOR REASONS OTHER THAN RAPE, INCEST, 
+OR DANGER TO THE WOMAN'S LIFE BUT ONLY AFTER THE NEED FOR THE
+ OR DANGER TO THE WOMAN'S LIFE, BUT ONLY AFTER THE NEED FOR THE
+ 
+ABORTION HAS BEEN CLEARLY ESTABLISHED.
+ 
+4. BY LAW, A WOMA N SHOULD ALWAYS BE ABLE TO OBTAIN AN ABORTION AS A 
+MATTER OF PERSONAL CHOICE.
+ 
+64</text>
+        </slide>
+        <slide>
+          <slideno>9</slideno>
+          <text>eob
+bpopbpop
+How did we get that line?How did we get that line? 
+3. Label the points 
+Yi 
+10 
+Black 
+% in 5 state 
+legis. 
+0 
+Black % in state population 
+Y  (  X ) i 0 1 i i b
+0 10 20 30
+ 
+10</text>
+        </slide>
+        <slide>
+          <slideno>36</slideno>
+          <text>| i i |           
+        
+        
+       
+     
+-------------------------------------------------
+       
+      
+      
+    
+       
+      
+      
+   
+  
+t    
+                 
+gsort -ry
+ 
+. list city jantemp py rylist city	 jantemp py ry
+ 
++-------------------------------------------------+
+ 
+| city jantemp py ry |
+ 
+|-------------------------------------------------|
+ 
+1. 	|| PortlandOR 40 17.8015 22.1985 ||
+ 
+2. | SanFranciscoCA 49 36.53293 12.46707 |
+ 
+3. | LosAngelesCA 58 45.89864 12.10136 |
+ 
+4. | PhoenixAZ 54 48.24007 5.759929 |
+ 
+5. | 	 NewYorkNY 32 29.50864 2.491357 |
+ 
+|-------------------------------------------------|
+ 
+6. 	|  MiamiFL 67 64.63007 2.36993 |
+ 
+7. | BostonMA 29 27.16722 1.832785 |
+ 
+8. | NorfolkVA 39 38.87436 .125643 |
+ 
+9. | BaltimoreMD 32 34.1915 -2.1915 |
+ 
+10. | 	 SyracuseNY 22 24.82579 -2.825786 |
+ 
+|------------------------------------------------- ||
+ |
+ 
+11. | 	 MobileAL 50 52.92293 -2.922928 |
+ 
+12. | WashingtonDC 31 34.1915 -3.1915 |
+ 
+13. | MemphisTN 40 43.55721 -3.557214 |
+ 
+14. | ClevelandOH 25 29.50864 -4.508643 |
+ 
+15. | 	 DallasTX 43 48.24007 -5.240071 |
+ 
+|-------------------------------------------------|
+ 
+16. | HoustonTX 50 55.26435 -5.264356 |
+ 
+17. | KansasCityMO 28 34.1915 -6.1915 |
+ 
+18. | PittsburghPA 25 31.85007 -6.850072 |
+ 
+19. | 	 MinneapolisMN 12 20.14293 -8.142929 |
+ 
+D l 15.46007 8 460073 |
+ 2020. || DuluthMNhMN 77 15 46007 
+-8.460073 |
+ 
++-------------------------------------------------+
+ 
+37</text>
+        </slide>
+        <slide>
+          <slideno>57</slideno>
+          <text>m
+      ---------------------------------------------------- --------------------------
+         
+---------------------------------------------------- --------------------------
+   
+Interpreting SER (Root MSE) and R2
+ 
+. reg bush sbc_mpct
+ 
+Source | SS df MS             N umber of obs =  50
+ 
+-------------+------------------------------ F(  1, 48) = 11.83
+ 
+Model | .069183833 1 .069183833        Prob &gt; F  = 0.0012
+ 
+Residual | .280630922 48 .005846478 R-squared = 0.1978
+ 
+-------------+------------------------------ Adj R-squared =  0.1811
+ 
+Total || .349814756 49 .007 139077  Root MSE  = .07646
+ 
+bush | Coef. Std . Err.  t P&gt;|t |  [95%  Conf. Interval]
+ 
+-------------+-------------------------------------- -------------------------
+sbc pct | .196814196814 0572138 3.44 0 001 .0817779 3118501
+ sbc mpct |  .0572138 3 44 0.001 0817779 .3118501
+ 
+_cons | .4931758 .0155007  31.82 0.000 .4620095 .524342
+ 
+Interpreting SER (Root MSE) : Interpreting SER (Root MSE) : 
+ On average, in-sample predictions about Bushs vote share will be off 
+the mark by about 7.6% 
+Interpreting R2 
+ Regression model explains about 19.8% of the variation in Bush vote. 
+58</text>
+        </slide>
+        <slide>
+          <slideno>15</slideno>
+          <text>t   
+    
+T h M h d fL tSThe Method of Least Squares
+n 
+Pick andand  to minimize i 2 Pick 0 1 to minimize 0 1  i
+i1 
+2 n 
+((Yi Y )) ori ii 
+i1 10 
+5 
+n 
+2 0(Y  X ) 
+bpop 0 10 20 30i 0 1 i 
+ii11 
+Y   X i 0 1 i i beo  Fitted values Yi 
+^ 
+Yi ^ i Yi-Yi ^ beo
+16</text>
+        </slide>
+        <slide>
+          <slideno>67</slideno>
+          <text>=
+       
+  
+   
+    
+       ------------------------------------------------------------------------------
+                   
+------------------------------------------------------------------------------
+                              
+------------------------------------------------------------------------------
+------------------------------------------------------------------------------
+. reg beo bpop 
+Source | SS df MS          Number of obs =  41 
+-------------+------------------------------ F( 1, 39) = 202.56 
+Model | 351.26542 1 351.26542 Prob &gt; F  = 0.0000 
+Residual | 67.6326195 39 1.73416973  R-squared = 0.8385 
+-------------+--------------------- --------- Adj R-squared =  0.8344 
+Total | 418.898039 40 10.472451 Root MSE = 1.3169 
+beobeo || Coef StdStd. ErrErr. t P&gt;|t| [95% Conf Interval] Coef. t P&gt;|t| [95% Conf. Interval] 
+-------------+--------------------------------------------------------------- -
+bpop |  .3584751 .0251876 14.23 0.000 .3075284 .4094219 
+_cons | -1.314892 .3277508 -4. 01  0.000 -1.977831 -.6519535 
+Variable | Obs Mean Std. Dev.  Min Max 
+-------------+--------------------------------------------------------
+bpop |  41 10.13171 8.266633 1.2 30.8 
+. gen bpop01=(bpop-1.2)/(30.8-1.2) 
+. reg beo bpop01 
+Source | SS df MS          Number of obs =  41 
+-------------+------------------------------ F( 1, 39) = 202.56 
+Model | 351 265419 351.265419 11 351 265419 Prob &gt; F = 351.265419 Prob &gt; F 0 0000 Model | 0.0000 
+Residual | 67.63262 39 1.73416974 R-squared = 0.8385 
+-------------+--------------------- --------- Adj R-squared =  0.8344 
+Total | 418.898039 40 10.472451 Root MSE = 1.3169 
+beo |  Coef. Std. Err. t P&gt;|t| [95% Conf. Interval]
+-------------+----------------------------------------------------------------
+bpop01 |  10.61086 .7455536 14.23 0.000 9.10284 12.11889 
+_cons | -.8847219 .3048075 -2. 90  0.006 -1.501253 -.2681905 
+68</text>
+        </slide>
+        <slide>
+          <slideno>43</slideno>
+          <text>Functional Form
+Functional Form
+ 
+44</text>
+        </slide>
+        <slide>
+          <slideno>47</slideno>
+          <text>Goodness of regression fit
+Goodness of regression fit
+ 
+48</text>
+        </slide>
+        <slide>
+          <slideno>11</slideno>
+          <text>eob
+bpopbpop
+How did we get that line?How did we get that line? 
+3. Label the points 
+Yi 
+10 
+^ YiBlack 
+% in 5 state 
+legis. 
+0 
+Black % in state population 
+Y  (  X ) i 0 1 i i b
+0 10 20 30
+ 
+12</text>
+        </slide>
+        <slide>
+          <slideno>42</slideno>
+          <text>-    
+        
+Regression interpretation with 0 1 scale Regression interpretation with 0-1 scale 
+Continue with ppid7 exam pple 
+regress natlecon pid7 (both recoded to 0-1 scales)* 
+pid7 coefficient: b = -.46 (CCES data from 
+2006)
+ 
+Interpretation? 
+Shifting from being a strong Republican to a strong 
+Democrat corresponds with a .46 drop in evaluations 
+of the national economy (on the one -point national of the national economy (on the one point national 
+economy scale) 
+*natlecon originally coded so that 1 = excellent, 4 = poor, 5 = not sure 
+43</text>
+        </slide>
+        <slide>
+          <slideno>70</slideno>
+          <text>------------------------------------------------------------------------------
+   
+  
+  ------------------------------------------------------------------------------
+------------------------------------------------------------------------------
+------------------------------------------------------------------------------
+------------------------------------------------------------------------------
+. reg st_beo st_bpop 
+Source | SS df MS          Number of obs =  41 
+-------------+------------------------------ F( 1, 39) = 202.56 
+Model | 33.5418469 1 33.5418469  Prob &gt; F = 0.0000 
+Residual | 6.45814509 39 .165593464          R-squared = 0.8385 
+-------------+--------------------- --------- Adj R-squared =  0.8344 
+Total | 39.9999919 40 .999999799 Root MSE = .40693 
+st_beo |  Coef. Std. Err. t P&gt;|t| [95% Conf. Interval]
+-------------+----------------------------------------------------------------
+st_bpop |  .9157217 .0643416 14.23 0.000 .7855786 1.045865 
+_cons | 3.54e-07 .0635521 0. 00  1.000 -.1285458 .1285465 
+. reg beo bpop,beta 
+Source | SS df MS          Number of obs =  41 
+-------------+------------------------------ F( 1, 39) = 202.56 
+Model | 351.26542 1 351.26542 Prob &gt; F = 0.0000 
+Residual | 67.6326195 39 1.73416973          R-squared = 0.8385 
+-------------+--------------------- --------- Adj R-squared =  0.8344 
+Total | 418.898039 40 10.472451 Root MSE = 1.3169 
+beo | Coef. Std. Err. t P&gt;|t| Beta 
+-------------+----------------------------------------------------------------
+bpop | .3584751 .0251876 14.23 0.000 .9157218 
+_cons | -1.314892 .3277508 -4.01 0.000 
+. 
+71</text>
+        </slide>
+        <slide>
+          <slideno>61</slideno>
+          <text>t t t
+ WWarniing: DDont corre llate offten!!
+ 
+Correlation only measures linear relationship
+ 
+Correlation is sensitive to variance 
+Correlation usually doesnt measure a 
+theoretically interesting quantity 
+Same criticisms apply to R2, which is the 
+squared correlation between predictions and 
+dt itdata points. 
+Instead, focus on regression coefficients 
+(slopes)
+(slopes) 
+62</text>
+        </slide>
+        <slide>
+          <slideno>54</slideno>
+          <text>-      
+10.8
+884722884722-. 
+RR2: A less useful measure of fit: A less useful measure of fit
+ 
+bbeo Fitt d lFitted values 
+(Yi -Yi) ^ 10 
+(Yi Yi) 
+(Yi-Y)(Yi-Y) ^ 
+Y _ beo 
+Y 
+00 
+1.2 30.8 
+bpop 
+55</text>
+        </slide>
+        <slide>
+          <slideno>30</slideno>
+          <text>---------------------------------------------------- --------------------------
+---------------------------------------------------- --------------------------
+ 
+ 
+ 
+. reg loss gallup
+ 
+Source | SS df MS             N umber of obs =  17
+ 
+-------------+------------------------------ F(  1, 15) = 5.70
+ 
+Model | 2493.96962 1 2493.96962        Prob &gt; F  = 0.0306
+ 
+Residual | 6564.50097 15 437.633398 R-squared = 0.2753
+ 
+-------------+------------------------------ Adj R-squared =  0.2270
+ 
+Total | 9058.47059 16 566.154412 Root MSE = 20.92
+ 
+Seats | Coef. Std. Err.  t P&gt;|t |  [95%  Conf. Interval]
+ 
+-------------+-------------------------------------- -------------------------
+gallup | 1.283411 . 53762  2.39 0.031 .1375011 2.429321
+ 
+cons | -96.59926 29.25347 -3.30 0.005 -158.9516 -34.24697
+ 
+Coefficient interpretation : Coefficient interpretation : 
+ A 1 percentage point increase in pres idential approval is associated with 
+an avg. of 1.28 more seats won by t he presidents party in the midterm. 
+Confidence interval interpretation 
+ The 95% confidence interval lies between .14 and 2.43. 
+31</text>
+        </slide>
+        <slide>
+          <slideno>38</slideno>
+          <text>i |      
+      
+            
+       ------------------------------------------------------------------------------
+                
+------------------------------------------------------------------------------
+--------------------------- ---------------------------------------------------
+                 
+------------------------------------------------------------------------------
+. reg loss gallup
+ 
+Source | SS df MS Number of obs = 17
+ 
+-------------+--------------------- --------- F( 1, 15) = 5.70
+ 
+Model | 2493.96962 1 2 493.96962  Prob &gt; F  = 0.0306
+ 
+Residual | 6564.50097 15 437.633398          R-squared = 0.2753
+ 
+-------------+--------------------- --------- Adj R-squared = 0.2270
+ 
+Total | 9058.47059 16 566.15441 2  Root MSE = 20.92
+ 
+Seats | Coef. Std. Err. t P&gt;|t| [95% Conf. Interval]
+ 
+-------------+--------------------------------------------- ------------------
+53762 2.39 0 031 
+.1375011 2.429321
+ gallup | gallup | 1 283411 1.283411
+ .53762 2 39 0.031 1375011 2 429321
+ 
+_cons | -96.59926 29.25347 -3. 30  0.005 -158.9516 -34.24697
+ 
+. reg loss gallup if year&gt;1946
+ 
+Source | SS df MS Number of obs = 14
+ 
+-------------+--------------------- --------- F( 1, 12) = 17.53
+ 
+Model | 3332.58872 1 3 332.58872  Prob &gt; F  = 0.0013
+ 
+Residual | 2280.83985 12 190.069988 R-squared = 0.5937
+ 
+-------------+--------------------- --------- Adj R-squared = 0.5598
+ 
+Total | 5613.42857 13 431.802198           
+Root MSE = 13.787
+ 
+seats | seats | Coef StdStd. ErrErr. t P&gt;|t| [95% Conf Interval]
+ Coef. t P&gt;|t| [95% Conf. Interval]
+ 
+-------------+---------------------------------------------------------------
+gallup | 1.96812 .4700211 4. 19  0.001 .9440315 2.992208
+ 
+_cons | -127.4281 25.54753 -4. 99  0.000 -183.0914 -71.76486
+ 
+39</text>
+        </slide>
+        <slide>
+          <slideno>46</slideno>
+          <text>Log transformations
+Log transformations 
+(see Tufte, ch. 3) 
+Y = a + bX + e b = dY/dX, or 
+b = the unit change in Y given a 
+unit change in X Typical case 
+Y = a + b lnX + e b = dY/(dX/X), or 
+b = the unit change in Y given a 
+% change in X % change in X Log explanatory variable 
+ln Y = a + bX + e b = (dY/Y)/dX, or 
+b = the % change in Y given a 
+unit change in X Log dependent variable 
+ln Y = a + b ln X + e b = (dY/Y)/(dX/X), or 
+b = the % change in Y given a % change in X (elasticity) Economic production 
+47</text>
+        </slide>
+        <slide>
+          <slideno>55</slideno>
+          <text>_
+30 810.8       
+-.884722 
+R2: A less useful measure of fit
+R : A less useful measure of fit
+ 
+beo  Fitted values 
+(Yi -Yi) ^ 10 beo (Yi-Y) (Yi Yi) 
+(Yi-Y) ^ _ _ 
+1.2 30.8 Y 
+0 
+bpop 
+n ( i  Y )2  "    "  Y total sum of squares i1 
+= 
+ n (Y 
+i  Y )  "regression sum of squares   "2 i1 
+++ 
+ n  )2  (Yi  Yi  "residual sum of squares   " i1 
+56</text>
+        </slide>
+        <slide>
+          <slideno>25</slideno>
+          <text>t t t t  
+ 
+BhBush vote and S d Southhern BBaptiists
+ 
+ID 
+NE OK UT 
+WY.7 
+AL 
+AK 
+AZ AR GA IN KS 
+KY 
+LA MS 
+MO MT 
+NC ND 
+SC SD 
+TN TX 
+VA WV .6 Pct 2004 
+CA CO 
+CT DE FL 
+HIIL IA 
+ME 
+MD MIMN MO 
+NV 
+NH 
+NJ NMOH 
+OR PA VA 
+WA WI.5Bush P 
+MD 
+MA NY 
+RIVT.4 
+0 .2 .4 .6 
+St h Bt i t % Southern Baptist % 
+Bush Fitted values 
+26</text>
+        </slide>
+        <slide>
+          <slideno>0</slideno>
+          <text>Bivariate 
+Relationships 
+17.871 
+2012 
+1</text>
+        </slide>
+        <slide>
+          <slideno>44</slideno>
+          <text>t  
+          
+     
+AbAbout ththe Functitional Form F l F
+ 
+Linear in the variables vs. linear in the 
+pparameters 
+Y = a + bX + e (linear in both)
+ 
+YY = a + bX + cXcX2 + e (linear in parms.)
+ a bX e (linear in parms.)
+ 
+Y = a + Xb + e (linear in variables, not parms.) 
+Regression must be linear in parametersRegression must be linear in parameters 
+45</text>
+        </slide>
+        <slide>
+          <slideno>37</slideno>
+          <text>Use residuals to diagnose potential
+Use residuals to diagnose potential 
+problems 
+19621986 
+1990 1998 2002 0 
+1950 1954 1970 
+1978 
+1982 0 -20 n House seats 
+1942 
+1946 195819661974
+1994-60 -4Change i n 
+1938 -80 
+30 40 50 60 70 
+Gallup approval rating (Nov )Gallup approval rating (Nov .) 
+loss Fitted values 
+38</text>
+        </slide>
+      </slides>
+      <videos/>
+    </lecture>
+  </lectures>
+</doc>

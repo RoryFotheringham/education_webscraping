@@ -1,0 +1,5661 @@
+<doc>
+  <source>MIT</source>
+  <date>28/01/2023</date>
+  <course>
+    <course_url>https://ocw.mit.edu/courses/18-022-calculus-of-several-variables-fall-2010/</course_url>
+    <course_title>Calculus of Several Variables</course_title>
+    <course_tags>
+      <list>Mathematics </list>
+      <list>Linear Algebra </list>
+      <list>Differential Equations </list>
+    </course_tags>
+  </course>
+  <lectures>
+    <lecture>
+      <lecture_title>Forms on Rn</lecture_title>
+      <lecture_pdf_url>https://ocw.mit.edu/courses/18-022-calculus-of-several-variables-fall-2010/resources/mit18_022f10_l_34/</lecture_pdf_url>
+      <lectureno>&#160;34</lectureno>
+      <slides>
+        <slide>
+          <slideno>3</slideno>
+          <text>MIT OpenCourseWare
+http://ocw.mit.edu 
+18.022  Calculus of Several Variables 
+Fall 2010 
+For information about citing these materials or our Terms of Use, visit: http://ocw.mit.edu/terms .</text>
+        </slide>
+        <slide>
+          <slideno>2</slideno>
+          <text>Lets gure out what the Hodge star operator does in R3 . Supp ose 
+that 
+ =dx  dy. 
+Then  =  is a 1-form such that 
+   =dx  dy  dz. 
+It follows that  =dz. Similarly 
+(dx  dz)= dy and  (dy  dz =dx). 
+Let 
+ = f1 dx + f2 dy + f3 dz. 
+Putting all of this together, we see that 
+d = d(f 1 dx + f2 dy + f3 dz) 
+f3 f2 f3 f1 f2 f1 = y  z dx  x  z dy + x  y dz. 
+Similarly 
+d   = d  (f1 dx + f2 dy + f3 dz) 
+= d(f 1 dy  dz  f2 dx  dz + f3 dx  dy) 
+f3 f2 f1 =  z + y + x dx  dy  dz 
+f1 f2 f3 = + + . x y x 
+In other words, 
+curl = d and div = d  . 
+Note that this points to a way to unify the various versions of the 
+fundamen tal theorem of calculus for surfaces and three folds (namely , 
+the theor ems of Green, Stokes and Gauss). One can also use this 
+notation to express Maxw ells equations quite ecien tly. But these are 
+both other stories. 
+3</text>
+        </slide>
+        <slide>
+          <slideno>1</slideno>
+          <text>Denition 34.3. A basic k-form on Rn is a formal symb ol 
+dxi1  dxi2  ...dxik , 
+wher e 1  i1 &lt;i2 &lt; &lt;ik  n A gener al k-form on Rn is any  
+expression of the form 
+ = fi1i2...ik dxi1  dxi2  ... dxik , 
+1i1&lt;i2&lt;&lt;ikn 
+wher e fi1i2...ik are smooth functions. 
+Note that there are  n ,k 
+basic n-forms. 
+Supp ose we start with a general 1-form in R3 , 
+ = f1 dx + f2 dy + f3 dz. 
+We can formally dene a 2-form d as follows: 
+d = d(f1 dx + f2 dy + f3 dz) 
+=df1  dx +df2  dy +df3  dz 
+f1 f1 f1 = x dx + y dy + z dz  dx 
+f2 f2 f2 + x dx + y dy + z dz  dy 
+f3 f3 f3 + dx + dy + dz  dz x y z 
+f2 f1 f3 f1 f3 f2 = x  y dx  dy + x  z dx  dz + y  z dy  dz. 
+Note also that if 
+ = f12 dx  dy + f13 dx  dz + f23 dy  dz, 
+then we can formally dene a 3-form d as follows: 
+d = d(f12 dx  dy + f13 dx  dz + f23 dy  dz, ) 
+f12 f13 f23
+= z  y + x dx  dy  dz.
+The nal interesting formal operation on k-forms is:
+Denition 34.4. Let  be a k-form on Rn . The Hodge star oper
+ator assigns an (n  k)-form  to , which is dene d by the rule: 
+()   =dx1  dx2  dxn. 
+2</text>
+        </slide>
+        <slide>
+          <slideno>0</slideno>
+          <text>34. Forms on Rn 
+Denition 34.1. A basic 1-form on Rn is a formal symb ol 
+dx1,dx2,...,dxn. 
+A gener al 1-form on Rn is any expression of the form 
+ = f1 dx1 + f2 dx2 + + fn dxn, 
+wher e f1,f2,...,fn are smooth functions. 
+Note that there are n basic 1-forms. If f is a smooth function, we 
+get a 1-form using the forma l rule, 
+n f df = dxi. xii=1 
+Denition 34.2. A basic 2-form on Rn is any formal symb ol 
+dxi  dxj , 
+wher e 1  i&lt;j  n.A gener al 2-form on Rn is any expression of 
+the form 
+ = fij dxi  dxj 
+i&lt;j 
+wher e f1,f2,...,fn are smooth functions. 
+Note that there are  n = n(n  1) ,2 2 
+basic 2-forms. 2-forms satisfy the following formal rule, 
+dxi  dxj = dxj  dxi. 
+Given two 1-forms, 
+ = f1 dx1+f2 dx2++fn dxn and  = g1 dx1+g2 dx2++gn dxn,  
+we can multiply , using linearit y and skew-comm utativi ty, to get a 2
+form  
+   = (figj  fj gi)dxi  dxj . 
+i&lt;j 
+Notice how, using skew-co mmutativit y, we can write everything in 
+terms of basic 2-forms. Note also that skew-comm utativit y forces 
+dxi  dxi =0. 
+More generally: 
+1</text>
+        </slide>
+      </slides>
+      <videos/>
+    </lecture>
+    <lecture>
+      <lecture_title>Parametrised curves</lecture_title>
+      <lecture_pdf_url>https://ocw.mit.edu/courses/18-022-calculus-of-several-variables-fall-2010/resources/mit18_022f10_l_14/</lecture_pdf_url>
+      <lectureno>&#160;14</lectureno>
+      <slides>
+        <slide>
+          <slideno>3</slideno>
+          <text>Therefore 
+(1  e 2)x 2 +2pex + y 2 = p 2 . 
+There are three cases. The conic 
+C = { (x,y)  R2 | (1  e 2)x 2 +2pex + y 2 = p 2 }, 
+is an
+  
+ 
+
+ellipse if |e| &lt; 1 
+parab ola if |e| =1 
+hyperbola if |e| &gt; 1. 
+2Lets supp ose that
+|e|
+&lt; 1. First divide through by 1  e, 
+2pe 1 2 p2 
+2 x
++
+x +
+y =
+.
+1  e
+2 1  e2
+ 1  e
+2 
+If we complete the square, then we get
+pe 2 1 2 p2 
+x +1  e2 +1  e2 y = (1  e2)2 . 
+Finally divide through by the RHS to get
+2 2 x + pe 
+1p 1
+ee2 + 
+
+1y 
+p 
+e2 =1. 
+2 
+This is the equation of an ellipse. The centre of the ellipse is at 
+pe(1  e2 , 0). 
+One can check that this means one of the focal points is at the origin. 
+4</text>
+        </slide>
+        <slide>
+          <slideno>0</slideno>
+          <text>, 14. Parametrised Curves 
+Denition 14.1. A parametrise d dierentiable curve in Rn is 
+a dier entiable function r : I  Rn, wher e I is an open interval in R. 
+Remark 14.2. Any open interval I is one of four dier ent forms: 
+(a,b); (,b); (a, ); (, )= R, wher e a and b are real numb ers. 
+Denition 14.3. The velocity vector at time t of a parametrise d 
+dier entiable curve  is the derivative: r : I  Rn 
+v(t)= r(t)= Dr(t). 
+If v is dier entiable, then the acceleration vector at time t is the 
+derivative of the velocity vector: 
+a(t)= v(t)= r(t). 
+Example 14.4. Let 
+r : R  R3 
+be given by 
+r(t)=(a cos t,a sin t,bt). 
+This traces out a helix. The velocity vector is 
+v(t)=(a sin t,a cos t,b). 
+The acceleration vector is 
+a(t)=(a cos t, a sin t, 0). 
+The speed, that is the magnitude of the velocity vector, 
+v(t) =(a 2 + b2)1/2 , 
+is constant. Nevertheless the acceleration vector is not zero, as we are 
+travelling on a curve and not a straight line. 
+Lets now attac k a very famous problem. Kepler formulated three 
+laws of planetary motion, based on extensiv e observ ations of the recorded 
+positions of the planets. The rst law states that planets move around 
+in ellipses, where the sun is at one focal point of the ellipse; lets see 
+how one can deriv e this law from Newtons universal law of gravity. 
+Lets put the sun at the origin O of our coordinates. Lets supp ose 
+that the plane t is at the point P = P (t) at time t. Then 
+r(t): R  R3 , 
+is a parametrised dieren tiable curve, where r(t)= OP . 
+We will need a simple formula for the vector triple product in R3: 
+(u  v)  w=(u w)v  (v w)u. 
+One can check this formula using coordinates. 
+1</text>
+        </slide>
+        <slide>
+          <slideno>4</slideno>
+          <text>MIT OpenCourseWare
+http://ocw.mit.edu 
+18.022  Calculus of Several Variables 
+Fall 2010 
+For information about citing these materials or our Terms of Use, visit: http://ocw.mit.edu/terms .</text>
+        </slide>
+        <slide>
+          <slideno>2</slideno>
+          <text>On the other hand, 
+dv d(v  c)a  c = dt  c = dt 
+It follows that 
+v  c = GMu+ d,
+where dis a constan t vector. If we cross both sides with c, then the 
+LHS is zero and so the RHS is zero. It follows that d also lies in the 
+plane . Dene  to be the angle between dand u. Now 
+c2 = c c 
+=(r  v) c 
+=(v  c) r 
+=(GMu+ d) r 
+= GMr + rd cos . 
+Let c = c and d = d. Then 
+2cr = GM + d cos  
+p = ,1+ e cos  
+where 
+2c d p = and e = . GM GM 
+Lets express these equations in Cartesian coordinates and not polar 
+coordinates. We have 
+x = r cos  
+y = r sin . 
+Therefore 
+p = r + er cos , 
+so that 
+p = r + ex. 
+Solving for r, 
+r = p  ex. 
+Squaring both sides we get 
+r 2 =(p  ex)2 . 
+That is 
+x 2 + y 2 = p 2  2epx + e 2 x 2 . 
+3</text>
+        </slide>
+        <slide>
+          <slideno>1</slideno>
+          <text>Theorem 14.5 (Newton). Supp ose that 
+GM r, a =  r3 
+for some constants G and M. 
+Then r traces out either an ellipse, a parabola or a hyperbola. 
+Proof. We have 
+d(r  v)= dr v + dv 
+dt dt  r  dt 
+= v  v + r  a 
+= 0+ 0= 0, 
+since a and r are parallel by assumption. Hence 
+r  v = c, 
+a constan t vector. It follows that r and v lie in the plane  through 
+the origin and orthogonal to c. 
+We may write r = ru, where u is a unit vector. 
+d(ru) dr duv = = u+ r. dtdt dt 
+It follows that 
+c = r  v 
+dr du= ru dtu+ ru r dt 
+du2 = r.u  dt 
+So 
+GM dua  c =  r2 u r 2 u dt 
+du= GMu u dt 
+du= GM  u u  dt  
+dudu= GM (uu) dt  (u )u dt 
+d(GMu) = . dt 
+2</text>
+        </slide>
+      </slides>
+      <videos/>
+    </lecture>
+    <lecture>
+      <lecture_title>Cross product</lecture_title>
+      <lecture_pdf_url>https://ocw.mit.edu/courses/18-022-calculus-of-several-variables-fall-2010/resources/mit18_022f10_l_3/</lecture_pdf_url>
+      <lectureno>&#160;3</lectureno>
+      <slides>
+        <slide>
+          <slideno>5</slideno>
+          <text>MIT OpenCourseWare
+http://ocw.mit.edu 
+18.022  Calculus of Several Variables 
+Fall 2010 
+For information about citing these materials or our Terms of Use, visit: http://ocw.mit.edu/terms .</text>
+        </slide>
+        <slide>
+          <slideno>1</slideno>
+          <text>vector. On the other hand, we know that w= v. In this case, 
+v  w= v  (v) 
+= v  v 
+= v  v. 
+To get from the second to the third line, we just switched the factors. 
+But the only vector which is equal to its inverse is the zero vector. 
+Lets try to compute the cross product using (3.4). If v =(v1,v2,v3) 
+and w=(w1,w2,w3), then 
+v  w=(v1 + v2j+ v3k)  (w1 + w2j+ w3k) 
+= v1w1(  )+ v1w2(  j) + v1w3(  k) 
++ v2w1(j  )+ v2w2(j  j) + v2w3(j  k) 
++ v3w1(k )+ v3w2(k j) + v3w3(k k) 
+=(v2w3  v3w2) +(v3w1  v1w3) k. j +(v1w2  v2w1)
+Denition 3.6. A matrix A =(aij ) is a rectangular array of numb ers, 
+wher e aij is in the i row and jth column. If A has m rows and n 
+columns, then we say that A is a m  n matrix. 
+Example 3.7.
+A = 21 7= a11 a12 a13 ,02 4 a21 a22 a23 
+is a 2  3 matrix. a23 = 4. 
+Denition 3.8. If
+ab A = cd 
+is a 2  2 matrix, then the determinant of A is the scalar 
+ab = ad  bc.
+cd
+If
+ 
+abc
+def
+
+
+ A =
+gh i
+is a 3  3 matrix, then the determinant of A is the scalar 
+abc f
+df
+d
+ e
+ e
+def
+ b
+ = a
+ + c
+hi
+g
+i
+g
+h
+.
+gh i
+2</text>
+        </slide>
+        <slide>
+          <slideno>4</slideno>
+          <text>As v, wand v  wform a right-handed triple, it follows that w, v 
+and v  wform a left-hand ed triple. But then w, v and v  wform 
+a right-handed triple. It follows that 
+w = w. vv  
+This is (1). 
+To check (2), we check that 
+(u  (v + w)) x =(u  v + u  w) x,   
+for an arbitrary vector x. We rst attac k the LHS. By (3.12), we have 
+(u  (v + w)) x =(x  u)(v + w)  
+=(x  u) v +(x  u) w 
+=(u  v) x +(u  w) x. 
+We now attac k the RHS. 
+(u  v + u  w) x =(u  v) x +(u  v) x.   
+It follows that both sides are equal. This is (2). 
+We could check (3) by a similar argumen t. Here is another way. 
+(u + v)  w= w (u + v) 
+v = w u  w 
+= w + w. u  v  
+This is (3). 
+To prove (4), it suces to prove the rst equal ity, since the fact that 
+the rst term is equal to the third term follows by a similar deriv ation. 
+If  = 0, then both sides are the zero vector, and there is nothing to 
+prove. So we may assume that  = 0. Note rst that the magnitude 
+of both sides is the area of the parallelogram with sides v and w. 
+If &gt; 0, then v and v point in the same direction. Similarly v  w
+and (v  w) point in the same direction. As v, wand v  wfor a 
+right-handed set, then so do v, wand (v  w). But then (v  w) is 
+the cross product of v and w, that is, 
+(v)  w= (v  w). 
+If &lt; 0, then v and v point in the opposite direction. Similarly 
+v  wand (v  w) point in the opposite direction. But then v, w
+and (v  w) still form a right-handed set. This is (4).  
+5</text>
+        </slide>
+        <slide>
+          <slideno>0</slideno>
+          <text>3. Cross product
+Denition 3.1. Let v and wbe two vectors in R3 . The cross product 
+of v and w, denote d v  w, is the vector dene d as follows: 
+	the length of v  wis the area of the parallelogram with sides v 
+and w, that is, vw sin . 
+ v  wis ortho gonal to both v and w. 
+	the three vectors v, wand v  wform a right-hande d set of 
+vectors. 
+Remark 3.2. The cross product only makes sense in R3 . 
+Example 3.3. We have 
+  j  	 k  j = k, k = and  =j. 
+By contrast 
+j k, j =  and   k=   = k  	 j. 
+Theorem 3.4. Let u, v and wbe three vectors in R3 and let  be a 
+scalar. 
+(1) v  w= w v. 
+(2) u  (v + w)= u  v + u  w. 
+(3) (u + v)  w= u  w+ v  w. 
+(4) (v  w)=(v)  w= v  (w). 
+Before we prove (3.4), lets draw some conclusions from these prop
+erties. 
+Remark 3.5. Note that (1) of (3.4) is what really distinguishes the 
+cross product (the cross product is skew commutative). 
+Consider computing the cross product of , and j. On the one hand, 
+(  )  j= 0  j = 0. 
+On the other hand, 
+  (  j) =  k= j.
+In other words, the order in which we compu te the cross product is 
+importan t (the cross product is not associativ e). 
+Note that if v and ware parallel, then the cross product is the zero 
+vector. One can see this direc tly from the formula; the area of the 
+parallelogram is zero and the only vector of zero length is the zero 
+1</text>
+        </slide>
+        <slide>
+          <slideno>3</slideno>
+          <text>Example 3.11. The scalar triple product of , jand kis one. One 
+way to see this is geometric ally; the parallelepip ed determine d by these 
+three vectors is the unit cube, which has volume 1, and these vectors 
+form a right-hande d set, so that the sign is positive. 
+Another way to see this is to compute directly 
+(  j) k= kk=1. 
+Final ly one can use determinants, 
+0 
+0 10
+(  j)
+k=
+01
+ =1.
+ 
+1 
+Lemma 3.12. Let u, v and wbe three vectors in R3 . 
+Then 
+(u  v) w=(v  w) u =( w u) v.  
+Proof. In fact all three numbers have the same absolute value, namely 
+the volume of the parall elepip ed with sides u, v and w. On the other 
+hand, if u, v, and wis a right-handed set, then so is v, wand u and 
+vice-v ersa, so all three numbers have the same sign as well.  
+Lemma 3.13. Let v and wbe two vectors in R3 . 
+Then v = wif and only if v x = wx, for every vector x in R3 .  
+Proof. One direction is clear; if v = w, then v x = wx for any vector  
+x. 
+So, supp ose that we know that v x = wx, for every vector x.  
+Supp ose that v =(v1,v2,v3) and w=(w1,w2,w3). If we take x =, 
+then we see that 
+v1 = v  = w = w1. 
+Similarly , if we take x =j and x = k, then we also get 
+v2 = v j= wj= w2, 
+and 
+v3 = v k= wk= w3. 
+But then v = was they have the same comp onents.  
+Proof of (3.4) . We rst prove (1). Both sides have the same magni
+tude, namel y the area of the parallelogram with sides v and w. Further 
+both sides are orthogo nal to v and w, so the only thing to check is the 
+change in sign. 
+4 00</text>
+        </slide>
+        <slide>
+          <slideno>2</slideno>
+          <text>Note that the cross product of v and wis the (formal) determinan t
+jk
+v1 v2 v3 
+w1 w2 w3 .
+Lets now turn to the proof of (3.4). 
+Denition 3.9. Let u, v and wbe three vectors in R3 . The triple 
+scalar product is (u  v) w. 
+The triple scalar product is the signe d volume of the parall elepip ed 
+formed using the three vectors, u, v and w. Indeed, the volume of the 
+parallelepip ed is the area of the base times the heigh t. For the base, 
+we take the parallelogram with sides u and v. The magnitude of u  v 
+is the area of this parallelogram. The height of the parallelepip ed, up 
+to sign, is the length of wtimes the cosine of the angle, lets call this 
+, between u  v and w. The sign is positiv e, if u, v and wform a 
+right-hande d set and negativ e if they form a left-hande d set. 
+Lemma 3.10. If u =(u1,u2,u3), v =(v1,v2,v3) and w=(w1,w2,w3) 
+are three vectors in R3, then 
+u1 u2 u3 
+v1 v2 v3 
+w1 w2 w3 .
+ (u  v) w=  
+Proof. Wehavealready seen that 
+ u  v = jk
+u1 u2 u3 
+v1 v2 v3 .
+If one expands this determinan t and dots with w, this is the same as 
+replacing the top row by (w1,w2,w3), 
+(u  v) w=  w1 w2 w3 
+u1 u2 u3 
+v1 v2 v3 .
+Finally , if we switc h the rst row and the second row, and then the
+second row and the third row, the sign changes twice (whic h makes no
+change at all):
+(u  v) w=  u1 u2 u3 
+v1 v2 v3 .
+w1 w2 w3 
+3</text>
+        </slide>
+      </slides>
+      <videos/>
+    </lecture>
+    <lecture>
+      <lecture_title>Maxima and minima: II</lecture_title>
+      <lecture_pdf_url>https://ocw.mit.edu/courses/18-022-calculus-of-several-variables-fall-2010/resources/mit18_022f10_l_21/</lecture_pdf_url>
+      <lectureno>&#160;21</lectureno>
+      <slides>
+        <slide>
+          <slideno>5</slideno>
+          <text>MIT OpenCourseWare
+http://ocw.mit.edu 
+18.022  Calculus of Several Variables 
+Fall 2010 
+For information about citing these materials or our Terms of Use, visit: http://ocw.mit.edu/terms .</text>
+        </slide>
+        <slide>
+          <slideno>1</slideno>
+          <text>rst equation by the second: 
+yx = , xy 
+so that y2 = x2 . As x2 + y2 = 2 it follows that x2 = y2 = 1. So x = 1 
+and y = 1. This gives four potential points (1, 1), (1, 1), (1, 1), 
+(1, 1). Then the maxim um value of f is 1, and this occurs at the 
+rst and the last point. The minimum value of f is 1, and this occurs 
+at the second and the third point. 
+One can also try to param etrise the boundary: 
+r(t)= 
+2(cos t, sin t). 
+So we maximise the comp osition 
+h: [0, 2]  R, 
+where h(t) = 2cos t sin t. As I = [0, 2] is compact, h has a maxim um 
+and minim um on I. When h(t)=0, we get 
+cos 2 t  sin2 t =0. 
+Note that the LHS is cos 2t, so we want 
+cos2t =0. 
+It follows that 2t = /2+2m, so that 
+t = /4, 3/4, 5/4, and 7/4. 
+These give the four points we had before. 
+What is the closest point to the origin on the surface 
+F = { (x,y,z)  R3 | x  0,y  0,z  0,xyz = p }? 
+So we want to minimise the distance to the origin on F . The rst trick 
+is to minimise the square of the distance. In other words, we are trying 
+to minimise f(x,y,z)= x2 + y2 + z2 on the surface 
+F = { (x,y,z)  R3 | x  0,y  0,z  0,xyz = p }. 
+In words, given three numbers x , y  0 and z  0 whose product is 
+p&gt; 0, what is the minim um value of x2 + y2 + z2? 
+Now F is closed but it is not bounded, so it is not even clear that 
+the minim um exists. 
+Lets use the metho d of Lagrange multipliers. Let 
+h: R4  R, 
+be the function 
+h(x,y,z,)= x 2 + y 2 + z 2  (xyz  p). 
+2</text>
+        </slide>
+        <slide>
+          <slideno>0</slideno>
+          <text>21. Maxima and minima: II 
+To see how to maximise and minimise a function on the boundary , 
+lets conside a concrete example. 
+Let 
+K = { (x,y) | x 2 + y 2  2 }. 
+Then K is compact. Let 
+f : K  R, 
+be the function f(x,y)= xy. Then f is continuous and so f achieves 
+its maxim um and minim um. 
+I. Lets rst consider the interior points. Then 
+f(x,y)=(y,x), 
+so that (0, 0) is the only critical point. The Hessian of f is 
+01 Hf(x,y)= .10 
+d1 = 0 and d2 = 1=0 so that (0 , 0) is a saddle point. 
+It follows that the maxima and minima of f are on the boundary , 
+that is, the set of points 
+C = { (x,y) | x 2 + y 2 =2 }. 
+II. Let g : R2  R be the function g(x,y)= x2 + y2 . Then the 
+circle C is a level curve of g. The original proble m asks to maximise 
+and minimise 
+f(x,y)= xy subject to g(x,y)= x 2 + y 2 =2. 
+One way to proceed is to use the second equation to eliminate a vari
+able. The metho d of Lagrange multipliers does exactly the opposite. 
+Instead of eliminating a variable we add one more variable, tradition
+ally called . So now lets maximise and minimise 
+h(x,y,)= f(x,y)  (g(x,y)  2) = xy  (x 2 + y 2  2). 
+We nd the critical points of h(x,y,): 
+y =2x 
+x =2y 
+2= x 2 + y 2 . 
+First note that if x = 0 then y = 0 and x2 + y2 = 0 = 2, impossible. 
+So x = 0. Similarly one can check that y = 0 and  = 0. Divide the 
+1</text>
+        </slide>
+        <slide>
+          <slideno>3</slideno>
+          <text>is a point where the sum of the squares is a minim um. 
+Here is another such problem. Find the closest point to the origin 
+which also belongs to the cone 
+2 2 2 x + y = z, 
+and to the plane 
+x + y + z =3. 
+As before, we minimise f(x,y,z)= x2 + y2 + z2 subject to g1(x,y,z)= 
+x2 + y2  z2 = 0 and g2(x,y,z)= x + y + z = 3. Introduce a new 
+function, with two new variables 1 and 2, 
+h: R5  R, 
+given by 
+h(x,y,z,1,2)= f(x,y,z)  1g1(x,y,z)  2g2(x,y,z) 
+= x 2 + y 2 + z 2  1(x 2 + y 2  z 2)  2(x + y + z  3). 
+We nd the critical points of h: 
+2x =21x + 2 
+2y =21y + 2 
+2z = 21z + 2 
+2 2 2 z = x + y 
+3= x + y + z. 
+Supp ose we substrac t the rst equation from the second: 
+y  x = 1(y  x). 
+So either x = y or 1 = 1. Supp ose x = y. Then 1 = 1 and 2 = 0. In 
+this case z = z, so that z = 0. But then x2 +y2 = 0 and so x = y = 0, 
+which is not possible. 
+It follows that x = y, in which case z = 
+2x and 
+(2 
+2)x =3. 
+So 
+3 3(2 
+2) x = = . 2 2 
+2 
+This gives us two critical points: 
+3(2 
+2) 3(2 
+2) 3
+2(2 
+2)P1 =( , , )2 2 2 
+3(2 + 
+2) 3(2+ 
+2) 3
+2(2 
+2)P2 =( , ). 2 2 ,  2 
+Of the two, clearl y the rst is closest to the origin. 
+4</text>
+        </slide>
+        <slide>
+          <slideno>4</slideno>
+          <text>To nish, we had better show that this point is the closest to the 
+origin on the whole locus 
+F = { (x,y,z)  R3 | x 2 + y 2 = z 2 ,x + y + z =3 }. 
+Let 
+K = { (x,y,z)  F | x 2 + y 2 + z 2  25 }. 
+Then K is closed and bounded, whence compact. So f achieves its 
+minim um somewhere on K, and so it must achieve its minim um at 
+P = P1. Clearly outside f is at least 25 on F \ K, and so f is a 
+minim um at P1 on the whole of F . 
+5</text>
+        </slide>
+        <slide>
+          <slideno>2</slideno>
+          <text>We look for the critical points of h: 
+2x = yz 
+2y = xz 
+2z = xy 
+p = xyz. 
+Once again, it is not possible for any of the variables to be zero. 
+Taking the product of the rst three equations, we get 
+8(xyz)= 3(x 2 y 2 z 2). 
+So, dividing by xyz and using the last equation, we get 
+8= 3 p, 
+that is 2  = . p1/3 
+Taking the product of the rst two equations, and dividing by xy, we 
+get 
+4= 2 z 2 , 
+so that 
+1/3 z = p. 
+So h(x,y,z,) has a critical point at 
+2 (x,y,z,)=(p 1/3 ,p 1/3 ,p 1/3 , 1/3 ). p
+We check that the point 
+(x,y,z)=(p 1/3 ,p 1/3 ,p 1/3), 
+is a minim um of x2 + y2 + z2 subject to the constrain t xyz = p. At this 
+point the sum of the square s is 
+3p 2/3 . 
+1/3Supp ose that x 
+3p . Then the sum of the squares is at least 
+2/3 1/3 1/33p . Similarly if y 
+3p or z 
+3p . On the other hand, the 
+set 
+K = { (x,y,z)  R3 | x  [0, 
+3p 1/3],y  [0, 
+3p 1/3],z  [0, 
+3p 1/3],xyz = p }, 
+is closed and bounded, so that f achieves it minim um on this set, which 
+we have already decided is at 
+(x,y,z)=(p 1/3 ,p 1/3 ,p 1/3),
+since f is larger on the boundary. Putting all of this togeth er, the point
+(x,y,z)=(p 1/3 ,p 1/3 ,p 1/3),
+3</text>
+        </slide>
+      </slides>
+      <videos/>
+    </lecture>
+    <lecture>
+      <lecture_title>Functions</lecture_title>
+      <lecture_pdf_url>https://ocw.mit.edu/courses/18-022-calculus-of-several-variables-fall-2010/resources/mit18_022f10_l_7/</lecture_pdf_url>
+      <lectureno>&#160;7</lectureno>
+      <slides>
+        <slide>
+          <slideno>3</slideno>
+          <text>MIT OpenCourseWare
+http://ocw.mit.edu 
+18.022  Calculus of Several Variables 
+Fall 2010 
+For information about citing these materials or our Terms of Use, visit: http://ocw.mit.edu/terms .</text>
+        </slide>
+        <slide>
+          <slideno>0</slideno>
+          <text>7. Functions 
+Denition 7.1. A function f : A  B consists of: 
+(1)	the set A, which is called the domain of f, 
+(2)	the set B, which is called the range of f, 
+(3)	a rule which assigns to every element a  A an element b  B, 
+which we denote by f(a). 
+It is easy to write down examples of functions: 
+(1) Let A be the set of all people and let B = [0, ). Let f(x) be 
+the heigh t of person x, to the nearest inch. 
+(2)	f : R  R given by f(x)= x2 . 
+(3)	f : R  [0, ) given by f(x)= x2 . 
+(4)	f : [0, )  R given by f(x)= x2 . 
+(5)	f : [0, )  [0, ) given by f(x)= x2 . 
+(6)	f : R  {0, 1} given by 
+0	if x is rational f(x)= 1	if x is irrational. 
+(7)	f : N  {0, 1} given by 
+0	if x is even f(x)= 1	if x is odd. 
+Denition 7.2. If f : A  B and g : B  C are two functions, 
+then we can comp ose f and g to get a new function g  f : A  C. 
+If a  A, then (gf)(a)= g(f(a)). 
+If f : R  R is the function f(x) = sin x and g : R  R is the 
+function g(x)=2x, then gf : R  R is the function (gf)(x) = 
+2sin x, whilst f  g : R  R 
+is the function (f  g)(x) = sin2 
+x. 
+Denition 7.3. Let f : A  B be a function. 
+We say that f is injective if whenever f(a1)= f(a2) for some pair 
+a1, a2  A, then in fact a1 = a2. 
+We say that f is surje ctive if for every b  B, we may nd an 
+a  A such that f(a)= b. 
+We say that f is a bijection if f is both injective and surje ctive. 
+It is interesting to go through the examples above. The function in 
+(1) is neither injectiv e or surjectiv e. Indeed there are lots of people who 
+are ve foot nine, so just because there are two people with the same 
+heigh t, does not mean they are the same person. So f is not injectiv e. 
+On the other hand, there is no person who is a million inches high, so 
+f is not surjectiv e either. 
+1</text>
+        </slide>
+        <slide>
+          <slideno>2</slideno>
+          <text>If f : R  R is the function f(x)= x2, then the graph of f is the 
+parab ola, y = x2 , 
+{ (x,x 2) | x  R } R2 . 
+Now supp ose that g : R2  R is the function 
+g(x,y)= x 2 + y 2 . 
+The graph of g is the set z = x2 + y2 , 
+{ (x,y,x 2 + y 2) | (x,y)  R2 } R3 . 
+One way to picture g is to slice it using level curves and level sets. 
+If g : R2  R is any function, the level curve of g at heigh t c is the 
+set 
+{ (x,y)  R2 | g(x,y)= c } R2 . 
+In the example when f(x,y)= x2 + y2, the level curves are concen tric 
+circles of radius c, centred at the origin. If c = 0 the level curve is 
+the origin and if c&lt; 0 the level curve is empt y. Note that graph has a 
+minim um at the origin. 
+If g : R3  R is any function, the level set of g at height c is the set 
+{ (x,y,z)  R3 | g(x,y,z)= c } R3 . 
+If g(x,y,z)= z  x2  y2 then the level sets are parallel parab oloids. 
+It is interesting to try to visualise various functions. If we consider 
+f(x,y)= x2 y2, then this is an upside down parab oloid, which has a 
+maxim um at the origin. Note that the level curves are the same as the 
+level curves for f(x,y)= x2 + y2 (for dieren t values of c, of course). 
+Now consider the function f(x,y)= x2  y2 . If we consider xing 
+y = b and varying x, then we get a parab ola z = x2  b2 . If we consider 
+xing x = a and varying y, then we get an upside down parab ola, 
+z = a2  y2 . In fact the origin is a saddle point, a point which is 
+neither a maxim um nor a minim um. 
+3</text>
+        </slide>
+        <slide>
+          <slideno>1</slideno>
+          <text>The function in (2) is neither injective nor surjectiv e as well. f(1) = 
+1= f(1), but 1 =1. There is no real number whose square is 1, so 
+there is no real number a such that f(a)= 1. 
+The function in (3) is not injectiv e but it is surjectiv e. f(1) = f(1), 
+and 1 =1. But if b  0 then there is always a real number a  0 
+such that f(a)= b (namely , the square root of b). 
+The function in (4) is injectiv e but not surjectiv e. If f(a1)= f(a2), 
+then a2 = a2
+2. As both a1  0 and a2  0, this implies a1 = a2. On the 1 
+other hand, there is still no number whose square is 1. 
+The function in (5) is bijectiv e. It is injectiv e, as in (4) and it is 
+surjectiv e as in (3). 
+The function in (6) is not injectiv e but it is surjectiv e. f(0) = 0 = 
+f(1), but 0 = 1. On the other hand, if  b {0, 1} then either b =0 or 
+b = 1. But f(0)=0 and f(
+2) = 1. 
+The function in (7) is not injectiv e but it is surjectiv e. f(0) = f(2) = 
+0, but 0 =2. On the other hand, if b {0, 1} then either b = 0 or 
+b = 1. But f(0)=0 and f(1) = 1. 
+(8) f : R3  R given by f(v)= v. 
+(9) f : R3 {0}  R3 given by f(v)= v
+v . 
+(10) r : R  R3 given by f(t) = (cos t, sin t,t). 
+x(11) f : R  (0, ) is given by f(x)= e. 
+The funct ion in (8) is neither injectiv e nor surjectiv e. There are 
+plenty of unit vectors and there are no vectors of negativ e length. 
+The funct ion in (9) is neither injectiv e nor surjectiv e. There are 
+plenty of vectors which point in the same direction and the image 
+consists of vectors of unit length. 
+The function in (10) is injectiv e but not surjectiv e. 
+The function in (11) is bijectiv e. If f : A  B is a bijectiv e function, 
+then f has an inverse function g : B  A. gf : A  A is the 
+identity, it sends a to a. Similarly fg : B  B is the identity, it 
+sends b to b. The inverse of the exponential function is the logarithm 
+g : (0, )  R given by g(x) = ln x. 
+Denition 7.4. If A and B are two sets, the product of A and B, 
+denote d A  B is the set of ordered pairs 
+A  B{ (a,b) | a  A,b  B }. 
+The graph of a function f : A  B is the subset of the product 
+{ (a,f(a) | a  A } A  B. 
+The product R  R = R2 , R  R2 = R3, and so on. 
+2</text>
+        </slide>
+      </slides>
+      <videos/>
+    </lecture>
+    <lecture>
+      <lecture_title>Flux</lecture_title>
+      <lecture_pdf_url>https://ocw.mit.edu/courses/18-022-calculus-of-several-variables-fall-2010/resources/mit18_022f10_l_31/</lecture_pdf_url>
+      <lectureno>&#160;31</lectureno>
+      <slides>
+        <slide>
+          <slideno>2</slideno>
+          <text>Find the ux of the vector eld given by 
+  F (x,y,z)= y + zj+ xk, 
+through S in the direction of n. 
+First we need to parametrise S. We want a right handed triple of 
+unit vectors 
+(a, b,n) 
+which are pairwise orthogonal, so that they are an orthonormal basis. 
+Lets take 
+221 a=( ,, ). 333
+With this choice, it is clear that 
+an=0, 
+so that a is orthogonal to n, 
+b = n a
+  
+jj
+= 1/3 2/3 2/3 
+2/32/3 1/3 
+= 2/3 +1/3k. j +2/3
+This gives us a parametrisation,
+g : U  S  W, 
+given by 
+g(r,)= OP + r cos a+ r sin b 
+= (1, 1, 2) + (2r/3cos , 2r/3cos ,r/3cos )+(2r/3sin ,r/3sin , 2r/3sin ) 
+= (1+2r/3cos   2r/3sin , 1+2r/3cos  + r/3sin , 2+ r/3cos  +2r/3sin ), 
+where 
+U = (0, 2)  (0, 2), 
+and W is the whole of R3 minus the bounda ry of the disk. 
+Now 
+g = cos a+ sin b and g = r sin a+ r cos b,r  
+and so 
+g g = (cos a+ sin b)  (r sin a+ r cos b)r  
+= r(cos2  + sin2 )n = r
+n. 
+3</text>
+        </slide>
+        <slide>
+          <slideno>4</slideno>
+          <text>MIT OpenCourseWare
+http://ocw.mit.edu 
+18.022  Calculus of Several Variables 
+Fall 2010 
+For information about citing these materials or our Terms of Use, visit: http://ocw.mit.edu/terms .</text>
+        </slide>
+        <slide>
+          <slideno>1</slideno>
+          <text>and W is the whole of R3 minus the three lines P0P1, P1P2 and P2P0. 
+Now 
+g g = and P0P2 = (2, 3, 3), P0P1 = (1, 1, 2) = 
+s t 
+and so
+g g
+= s  t jk
+1 12
+3
+ 2
+ 3
+= 3 +k. j  
+Clearly , n and g g have the same direc tion. s  t 
+FdS= FdS  
+S  SW 
+= F(g(s,t)) g g ds dt s  t U 
+1  1s 
+= (2  s  3t, 1+2s +3t, 1+ s +2t) (3, 1, 1)dt ds 
+0 0 1s 1 
+= (6  3s  9t  1+2s +3t  1  s  2t)dt ds
+0 0 1s 1 
+= (4  2s  8t)dt ds
+0 0 
+1 
+4t  2st  4t2 1s ds 0 =
+0 
+1 
+= (4(1  s)  2s(1  s)  4(1  s)2)ds 
+0 
+1 
+= (2s  2s 2)ds 
+0 12s3 
+2  3 = s
+0 
+1 = . 3 
+Example 31.3. Let S be the disk of radius 2 centred around the point 
+P = (1, 1, 2) and ortho gonal to the vector 
+1 22 n=( , ). 3, 33
+2</text>
+        </slide>
+        <slide>
+          <slideno>0</slideno>
+          <text>31. Flux
+Let S  R3 be a smooth 2-manifold and let
+g : U  S  W, 
+be a dieomorphism. 
+Denition 31.1. Let f : S  W  R and F: S  W  R3 be two 
+functions, the rst a scalar function and the second a vector eld. We 
+dene   g gf dS = f(g(s,t)) s  t  ds dt 
+ SW  SW  
+FdS= F(g(s,t)) g g ds dt.   s  t SW SW 
+The second integral is called the ux of Facross S in the direction 
+of 
+g g 
+n= s  t . 
+g g 
+s  t  
+Note that  
+FdS= (FS.
+n)d  
+SW SW 
+Note also that one can dene the line integral of f and Fover the 
+whole of S using partitions of unity. 
+Example 31.2. Find the ux of the vector eld given by 
+F(x,y,z)= yj + xk,  + z 
+through the triangle S with vertic es 
+P0 = (1, 2, 1) P1 = (2, 1, 1) and P2 = (3, 1, 2), 
+in the direction of P0P1  P0P2 n= . 
+P0P1  P0P2
+First we parametrise S,
+g : U  S  W, 
+where 
+g(s,t)= P0P1 + tOP0 + sP0P2 = (1+ s +2t, 2  s  3t, 1+2s +3t), 
+and 
+U = { (s,t)  R2 0 &lt;s&lt; 1, 0 &lt;t&lt; 1  s }, | 
+1</text>
+        </slide>
+        <slide>
+          <slideno>3</slideno>
+          <text>Clearly this points in the direct ion of n. 
+FdS= FdS  
+S  SW  
+= F(g(r,)) g g dr d r   U
+ 2  2
+= (1+2r/3cos  + r/3sin , 2+ r/3cos  +2r/3sin , 
+0 0 
+1+2r/3cos   2r/3sin , )(r/3, 2r/3, 2r/3)dr d.  
+Now when we expand the integrand, we will clearly get 
+ +  cos  +  sin , 
+where ,  and  are ane linear functions of r (that is, of the form 
+mr + b). The integral of cos  and sin  over the range [0, 2] is zero. 
+Computing, we get 
+ = r(1/3 +4/3+2/3) = 7r/3, 
+so that  is a linear function of r. Therefore the integral reduces to 
+ 2  2  227r 7r2 
+dr d = d 3 60 0 0 0 2 14 = d 30 
+28 = . 3 
+4</text>
+        </slide>
+      </slides>
+      <videos/>
+    </lecture>
+    <lecture>
+      <lecture_title>Implicit functions</lecture_title>
+      <lecture_pdf_url>https://ocw.mit.edu/courses/18-022-calculus-of-several-variables-fall-2010/resources/mit18_022f10_l_13/</lecture_pdf_url>
+      <lectureno>&#160;13</lectureno>
+      <slides>
+        <slide>
+          <slideno>2</slideno>
+          <text>Similarly 
+F f x2 . x2 =  F 
+x3 
+So 
+F f (1, 3) =  x1 (1, 3, 1) 9 ,x1 F (1, 3, 1) = 11x3 
+and 
+f F (1, 3, 1) 0 x2 
+x2 (1, 3) =  F (1, 3, 1) = 11 =0. 
+x3 
+Denition 13.2. Let A  Rn be an open subset and let f : Rn  R 
+be a function. 
+The directional derivative of f in the direction of the unit vector 
+uis 
+Duf(P ) = lim f(P + hu)  f(P ) . 
+h0 h
+If u =ei then,
+f
+Dei f(P )= (P ),xi 
+the usual partial deriv ative. 
+Prop osition 13.3. If f is dier entiable at P then 
+Duf(P )= Df(P ) u. 
+Proof. Since A is open, we may nd &gt; 0 such that the param etrised 
+line 
+r :(,)  A, 
+given by r(h)= f(P )+ huis entirely contained in A. Consider the 
+comp osition of r and f, 
+f  r : R  R. 
+Then 
+Duf(P )= d(f  r) (0)dh 
+= D(r(0)) Dr(0) 
+= Df(P )  u. 
+Note that we can also write 
+Duf(P )= f(P ) u. 
+3</text>
+        </slide>
+        <slide>
+          <slideno>4</slideno>
+          <text>MIT OpenCourseWare
+http://ocw.mit.edu 
+18.022  Calculus of Several Variables 
+Fall 2010 
+For information about citing these materials or our Terms of Use, visit: http://ocw.mit.edu/terms .</text>
+        </slide>
+        <slide>
+          <slideno>1</slideno>
+          <text>be the function 
+F (x1,x2,y)= x 3
+1x2  x2y 2 + y 5 +1. 
+Let 
+S = { (x1,x2,y)  R3 | F (x1,x2,y)=0 }. 
+Then (1, 3, 1)  S. Lets compute the partial deriv atives of F , 
+F 2(1, 3, 1) = 3x x1 1x2 =9
+(1,3,1) 
+F 3 2(131)=( )xy ,, 1x2 (131),,=0
+F 
+y (1, 3, 1) = (2x2y +5y 4) = 11.
+(1,3,1) 
+So 
+DF (1, 3, 1) = (9, 0, 11). 
+Now what is importan t is that the last entry is non-zero (so that the 
+1  1 matrix (1) is invertible). It follows that we may nd open subsets 
+(1, 3)  U  R2 and 1  V  R and a C1 function f : U  V such 
+that 
+F (x1,x2,f(x1,x2)) = 0. 
+It is not possible to write down an explicit formula for f, but we can 
+calculate the partial deriv atives of f. 
+Dene a functio n 
+G: U  R, 
+by the rule 
+G(x 1,x2)= F (x1,x2,f(x1,x2)) = 0. 
+On the one hand, 
+G G =0 and =0. x1 x2 
+On the other hand, by the chain rule, 
+G = F x1 + F x2 + F f 
+x1 x1 x1 x2 x1 x3 x1 
+Now 
+x1 = 1 and x2 = 0. x1 x1 
+So 
+F f x1 . x1 =  F 
+x3 
+2</text>
+        </slide>
+        <slide>
+          <slideno>0</slideno>
+          <text>13. Implicit functions 
+Consider the curve y2 = x in the plane R2 , 
+C = { (x,y)  R2 | y 2 = x }. 
+This is not the graph of a functio n, and yet it is quite close to the graph 
+of a function. 
+Given any point on the graph, lets say the point (2, 4), we can always 
+nd open intervals U containing 2 and V containing 4 and a smooth 
+function f : U  V such that C  (U  V ) is the graph of f. 
+Indeed, take U = (0, ), V = (0, ) and f(x)= x. In fact, 
+we can do this for any point on the graph, apart from the origin. If 
+it is above the x-axis, the function above works. If the point we are 
+interested in is below the x-axis, replac e V by (0, ) and f(x)= x, 
+by g(x)= x. 
+How can we tell that the origin is a point where we cannot dene an 
+implicit function? Well away from the origin, the tangen t line is not 
+vertical but at the origin the tangen t line is vertical. In other words, if 
+we consider 
+F : R2  R, 
+given by F (x,y)= y2  x, so that C is the set of points where F is 
+zero, then 
+DF (x,y)=(1, 2y). 
+The locus where we run into trouble, is where 2y = 0. Somewhat 
+amazingly this works in general: 
+Theorem 13.1 (Implicit Function Theorem) . Let A  Rn+m be an 
+open subset and let F : A  Rm be a C1-function. Supp ose that 
+(a,b)  S = { (x,y)  A | F (x,y)= 0 }. 
+Assume that   Fidet =0. yj 
+Then we may nd open subsets a  U  Rn and b  V  Rm, wher e 
+U  V  A and a function f : U  V such that S  (U  V ) is the 
+graph of f, that is, 
+F (x,y)= 0 if and only if y = f(x). 
+wher e x  U and y  V . 
+Lets look at an example. Let 
+F : R3  R, 
+1</text>
+        </slide>
+        <slide>
+          <slideno>3</slideno>
+          <text>Note that the directional deriv ative is largest when 
+f(P ) u= , f(P ) 
+so that the gradien t always points in the direction of maximal change 
+(and in fact the magnitude of the gradien t, gives the maxim um change). 
+Note also that the directional deriv ative is zero if u is orthogonal to 
+the gradien t and that the directional deriv ative is smallest when 
+u = f(P ) . f(P ) 
+Prop osition 13.4. If f(P )=0 then the tangent hyperplane  to 
+the hypersurfac e 
+S = { Q  Rn | f(Q)  f(P )=0 }, 
+is the set of all points Q which satisfy the equation 
+f(P ) PQ =0. 
+Remark 13.5. If f is C1, then f is the graph of some function, locally 
+about P . 
+Proof. By denition, the point Q belongs to the tangen t hyperplane if 
+and only if there is a curve 
+r :(,)  S, 
+such that 
+r(0) = P and PQ. r(0) = 
+Now, since r(h)  S for all h  (,), we have F (r(h))=0. So 
+dF (r(h))0 = (0)dh 
+= F (r(0)) r(0) 
+= F (P )  PQ.  
+4</text>
+        </slide>
+      </slides>
+      <videos/>
+    </lecture>
+    <lecture>
+      <lecture_title>Triple integrals</lecture_title>
+      <lecture_pdf_url>https://ocw.mit.edu/courses/18-022-calculus-of-several-variables-fall-2010/resources/mit18_022f10_l_24/</lecture_pdf_url>
+      <lectureno>&#160;24</lectureno>
+      <slides>
+        <slide>
+          <slideno>2</slideno>
+          <text>wher e : D  R and : D  R are continuous functions. 
+Type 2: D = 23(W ) is an elementary region and 
+W = { (x,y,z)  R2 | (y,z)  D,(y,z)  x  (y,z) }, 
+wher e  : D  R and  : D  R are continuous functions. 
+Type 3: D = 13(W ) is an elementary region and 
+W = { (x,y,z)  R2 | (x,z)  D,(x,z)  y  (x,z) }, 
+wher e  : D  R and  : D  R are continuous functions. 
+Type 4: W is of type 1, 2 and 3. 
+The solid pyramid is of type 4. 
+Theorem 24.8. Let W  R3 be an elementary r egion and let f : W  
+R be a continuous function. 
+Then 
+(1) If W is of type 1, then 
+   (x,y )  
+f(x,y,z)dx dy dz = f(x,y,z)dz dx dy. 
+W 12(W ) (x,y ) 
+(2) If W if of type 2, then 
+   (y,z)  
+f(x, y, z) dx dy dz = f(x, y, z) dx dy dz. 
+W 23(W ) (y,z) 
+(3) If W if of type 3, then 
+   (x,z )  
+f(x,y,z)dx dy dz = f(x,y,z)dy dx dz. 
+W 13(W ) (x,z ) 
+Lets gure out the volume of the solid ellipsoid: 
+W = { (x,y,z)  R3 |  x
+a 2 
++  y
+b 2 
++  z
+c 2 
+ 1 }. 
+3</text>
+        </slide>
+        <slide>
+          <slideno>1</slideno>
+          <text>||   
+ Prop osition 24.4. Let W  R2 be a bounde d subset and let f : W  
+R and g : W  R be two integrable functions. Let  be a scalar. 
+Then 
+(1) f + g is integrable over W and    
+f(x,y,z)+g(x,y,z)dx dy dz = f(x,y,z)dx dy dz+ g(x,y,z)dx dy dz. 
+W W W 
+(2) f is integrable over W and   
+f(x,y,z)dx dy dz = f(x,y,z)dx dy dz. 
+W W 
+(3) If f(x,y,z)  g(x,y,z) for any (x,y,z)  W , then   
+f(x,y,z)dx dy dz  g(x,y,z)dx dy dz. 
+W W 
+(4) fis integrable over W and 
+| f(x,y,z)dx dy dz| |f(x,y,z)| dx dy dz. 
+W W 
+Prop osition 24.5. Let W = W1  W2  R3 be a bounde d subset and 
+let f : W  R be a bounde d function. 
+If f is integrable over W1 and over W2, then f is integrable over W 
+and and W1  W2, and we have 
+   
+f(x,y,z)dx dy dz = f(x,y,z)dx dy dz+ f(x,y,z)dx dy dz 
+W W1 W2 
+ f(x,y,z)dx dy dz. 
+W1W2 
+Denition 24.6. Dene three maps 
+ij : R3  R2 , 
+by projection onto the ith and jth coordinate. 
+In coordinates, we have 
+12(x,y,z)=(x,y),23(x,y,z)=(y,z), and 13(x,y,z)=(x,z). 
+For example, if we start with a solid pyramid and project onto the 
+xy-plane, the image is a squar e, but it project onto the xz-plane, the 
+image is a triangle. Similarly onto the yz-plane. 
+Denition 24.7. A bounde d subset W  R3 is an elementary sub
+set if it is one of four types: 
+Type 1: D = 12(W ) is an elementary region and 
+W = { (x,y,z)  R2 | (x,y) 
+2 D,(x,y)  z  (x,y) },</text>
+        </slide>
+        <slide>
+          <slideno>0</slideno>
+          <text>24. Triple integrals 
+Denition 24.1. Let B =[a,b]  [c,d]  [e,f]  R3 be a box in space. 
+A partition P of R is a triple of sequenc es: 
+a = x0 &lt;x1 &lt; &lt;xn = b 
+c = y0 &lt;y1 &lt; &lt;yn = d 
+e = z0 &lt;z1 &lt; &lt;zn = f. 
+The mesh of P is
+m(P) = max{ xi  xi1,yi  yi1,zi  zi1 | 1  i  k }.
+Now supp ose we are given a function
+f : B  R
+Pick
+cijk  Bijk =[xi1,xi]  [yj1,yj ]  [zi,zi1]. 
+Denition 24.2. The sum 
+nn	n
+S = f(cijk)(xi  xi1)(yj  yj1)(zi  zi1), 
+i=1 j=1 k=1 
+is called a Riemann sum . 
+Denition 24.3. The function f : B  R is called integrable, with 
+integral I, if for every &gt; 0, we may nd a &gt; 0 such that for every 
+mesh P whose mesh size is less than , we have 
+|I  S| &lt; , 
+wher e S is any Riemann sum associate d to P. 
+If W  R3 is a bounded subset and f : W  R is a bounded 
+function, then pick a box B containing W and extend f by zero to a 
+function f: B  R, 
+f(x)=	x if x  W 
+0 otherwise. 
+If f is integrable, then we write	  
+f(x,y,z)dx dy dz = f(x,y,z)dx dy dz. 
+W	 B 
+In particular  
+vol(W )= dx dy dz. 
+W 
+There are two pairs of results, which are much the same as the results 
+for double integrals: 
+1</text>
+        </slide>
+        <slide>
+          <slideno>4</slideno>
+          <text>MIT OpenCourseWare
+http://ocw.mit.edu 
+18.022  Calculus of Several Variables 
+Fall 2010 
+For information about citing these materials or our Terms of Use, visit: http://ocw.mit.edu/terms .</text>
+        </slide>
+        <slide>
+          <slideno>3</slideno>
+          <text>This is an elemen tary region of type 4.  
+vol(W )= dx dy dz 
+W 
+ a  bq
+1(x ) cq
+1(x
+a )(y
+b ) 
+2 2 2 
+a 
+=  q q dz dy dx 
+2 2 2 a b1(ax )c1(x
+a )(y
+b )
+2  a  bq
+1(x ) x 2  y 2  
+a 
+=  q 2c dy dx 
+2 1  a  ba b1(x
+a )
+2  a  bq
+1(x ) x 2  y 2  
+a 
+=2c  q 1  dy dx 
+2 a  ba b1(x
+a )
+  q  
+2c ab1(x
+a )2  x 2 
+=  qb2 2 dy dx 1  yb a b1(x )2 a 
+a 
+c  a  x 2  
+= b2 1  dx b a a
+a  x 2 
+= bc dx 1  a a 3 a x= bc x  3a2 
+ a3a= bc 2a  2 3a2
+4
+= abc. 3 
+4</text>
+        </slide>
+      </slides>
+      <videos/>
+    </lecture>
+    <lecture>
+      <lecture_title>Stokes theorem</lecture_title>
+      <lecture_pdf_url>https://ocw.mit.edu/courses/18-022-calculus-of-several-variables-fall-2010/resources/mit18_022f10_l_32/</lecture_pdf_url>
+      <lectureno>&#160;32</lectureno>
+      <slides>
+        <slide>
+          <slideno>2</slideno>
+          <text>It follows that
+ j k 
+x y z 
+u u u x y z 
+v v v g g
+= u  v 
+(y,z)   (x,z) (x,y) = j+ k. (u,v) (u,v) (u,v) 
+So, 
+curl Fg g = F3 F2 (y,z)+ F3 F1 (x,z)+ F2 F1 (x,y) . uv y  z (u,v) x  z (u,v) x  y (u,v) 
+On the other hand, if one looks at the proof of the second step of 
+Greens theorem, we see that 
+G2 G1 ,u  v 
+is also equal to the RHS (in fact, what we calculated in the proof of 
+Greens theorem was the third term of the RHS; by symmetry the other 
+two terms have the same form). This is (1). 
+For (2), lets paramet rise H2  U by x(u) =(u, 0) and S  W by 
+s(u) = g(x(u)). Then 
+Fds = Fds  
+S SW b 
+= F(s(u)) s(u)du 
+a
+ b
+= F(g(x(u))) Dg(x(u))x(u)du 
+a
+ b
+= G(x(u)) x(u)du 
+a 
+= G. ds 
+H2U 
+= G. ds, 
+H2  
+and this is (2).  
+This completes step 2. 
+Step 3: We again use partitions of unity. It is straigh tforw ard to 
+cover the bounded set K by nitely many compact subsets K1,K2,...,Kk, 
+such that given any smooth vector eld which is zero outside Ki, then 
+3</text>
+        </slide>
+        <slide>
+          <slideno>3</slideno>
+          <text>the conditions of step 2 hold. By using a partition of unity, we can nd 
+smooth functions 1,2,...,k such that i is zero outside Ki and 
+k
+1= i. 
+i=1 
+Multiplying both sides of this equation by F, we have 
+k
+F= Fi, 
+i=1 
+where Fi = iFis a smooth vector eld, which is zero outside Ki. In 
+this case 
+ k 
+curl FdS= curl Fi  dS  
+Si=1 S 
+k 
+= Fi  ds 
+i=1 M 
+= Fds.   
+M 
+4</text>
+        </slide>
+        <slide>
+          <slideno>1</slideno>
+          <text>and so the result reduces to Greens Theorem. This comp letes step 1. 
+Step 2: We supp ose that there is a compact subset K  S and a 
+parametrisation 
+g : H2  U  S  W, 
+which is compatible with the orien tation, such that 
+(1) F(x)= 0 if x  S  K, and 
+(2) K  S  W .
+Dene a vector eld G: H2
+ R2 by the rule 
+G(u,v)= F(g(u,v))  Dg(u,v)(u,v)  U 
+0 (u,v) /U. 
+Note that 
+x y z G1(u,v)= F1 + F2 + F3u u u 
+x y z G2(u,v)= F1 + F2 + F3 . v v v 
+Using step 1, it is enough to prove: 
+Claim 32.4. 
+(1) 
+curl S 
+H2 u  v du dv. F.d= G2 G1 
+S 
+(2) 
+Fds = Gds. 
+S H2 
+Proof of (32.4) . Note that 
+curl F
+=
+ j k 
+   
+x y z 
+F1 F2 F3 
+F3 F2 F3 F1 F2 F1  = y  z   x  z j+ x  y k. 
+On the other hand, 
+gx y z  =  + j+ k u u u u 
+gx y z  =  + j+ k. v v v v 
+2</text>
+        </slide>
+        <slide>
+          <slideno>0</slideno>
+          <text>32. Stokes Theorem 
+Denition 32.1. We say that a vector eld 
+, F: A  Rm 
+has comp act supp ort if there is a compact subset K  A such that 
+F(x)= 0, 
+for every x  A  K. 
+If S  R3 is a smooth manifold (possibly with bounda ry) then we 
+will call S a surfac e. An orientation is a continuous choice of unit 
+normal vector. Not every surface can be oriented. Consider for example 
+the Mobius band , which is obtained by taking a piece of paper and 
+attac hing it to itself, except that we add a twist. 
+Theorem 32.2 (Stok es Theorem). Let S  R3 be a smooth oriente d 
+surfac e with boundary and let F: S  R3 be a smooth vector eld 
+with compact support. 
+Then   
+curl FdS= Fds, 
+S S 
+wher e S is oriente d compatibly with the orientation on S. 
+Example 32.3. Let S be a smooth 2-manifold that looks like a pair 
+of pants. Choose the orientation of S such that the normal vector is 
+pointing outwar ds. Ther e are three oriente d curves C1, C2 and C3 (the 
+two legs and the waist). Supp ose that we are given a vector eld Bwith 
+zero curvatur e. Then (32.2) says that   
+Bds + Bds + Bds = curl BdS=0.   
+C3 C1C2S 
+Here C1and C2denote the curves C1 and C2 with the opposite orien
+tation. In other words,
+Bds = Bds + Bds.  
+C3 C1 C2 
+Proof of (32.2) . We prove this in three steps, in very much the same 
+way as we proved Greens Theorem. 
+Step 1: We supp ose that M = H2  R2  R3, where the plane is 
+the xy-plane. In this case, we can take n= k, and this induces the 
+standard orien tation of the boundary . Note that 
+curl Fn= F2 F1 , x  y 
+1</text>
+        </slide>
+        <slide>
+          <slideno>4</slideno>
+          <text>MIT OpenCourseWare
+http://ocw.mit.edu 
+18.022  Calculus of Several Variables 
+Fall 2010 
+For information about citing these materials or our Terms of Use, visit: http://ocw.mit.edu/terms .</text>
+        </slide>
+      </slides>
+      <videos/>
+    </lecture>
+    <lecture>
+      <lecture_title>Inclusion-exclusion</lecture_title>
+      <lecture_pdf_url>https://ocw.mit.edu/courses/18-022-calculus-of-several-variables-fall-2010/resources/mit18_022f10_l_23/</lecture_pdf_url>
+      <lectureno>&#160;23</lectureno>
+      <slides>
+        <slide>
+          <slideno>1</slideno>
+          <text>To integrate f over D1, break D1 into three parts. 
+  3  (x)  
+f(x,y)dx dy = f(x,y)dy dx 
+D1 3 (x) 
+ 1  
+9x 
+2 
+= f(x,y)dy dx 
+3 0 
+ 1  
+9x 
+2 
++ f(x,y)dy dx 
+21 
+1x
+ 3  
+9x 
+2 
++ f(x,y)dy dx. 
+1 0 
+One can do something similar for D2. 
+Example 23.3. Supp ose we are given that 
+  1  2y  
+f(x,y)dx dy = f(x,y)dx dy. 
+D 0 y 
+What is the region D? 
+It is the region bounde d by the two lines y = x and x =2y and 
+between the two lines y =0 and y =1. 
+Change order of integration: 
+  1  x  2  1  
+f(x,y)dx dy = f(x,y)dx dy+ f(x,y)dx dy. 
+D 0 x/2 1 x/2 
+Example 23.4. Calculate the volume of a solid ball of radius a. Let 
+B = { (x,y,z)  R3 | x 2 + y 2 + z 2  a 2 }. 
+We want the volume of B. Break into two pieces. Let 
+B+ = { (x,y,z)  R3 | x 2 + y 2 + z 2  a 2 ,z  0 }. 
+Let 
+D = { (x,y)  R2 | x 2 + y 2  a 2 }. 
+Then B+ is bounde d by the xy-plane and the graph of the function 
+f : D  R, 
+given by 
+f(x,y)= a2  x2  y2 . 
+2</text>
+        </slide>
+        <slide>
+          <slideno>2</slideno>
+          <text>It follows that 
+vol(B+)= a2  x2  y2 dy dx 
+ aD 
+ax 
+2 2 
+= a2 2 2 dy dx 
+a x y
+ 
+aa  
+
+a2
+
+xx2 
+ 
+2  
+2 2 y= 
+a 
+ax1  2  x2 
+a2  x2 dy dx. 
+2 2 a
+Now lets make the substitution 
+y dyt = so that dt = . 
+a2  x2 
+a2  x2 
+  1  
+2vol(B+)= a 
+1  t2(a  x 2)dt dx 
+a 1  1  
+2 = a 
+(a  x 2) 
+1  t2 dt dx 
+a 1 
+Now lets make the substitution 
+t = sin u so that dt = cos udu. 
+ a 2 
+vol(B+)= (a 2  x 2) 
+ cos 2 u du dx 
+2a  
+a  = (a 2  x 2)2 dx 
+a  2 x3 a 
+= a 2 x  3 a 
+3a= (a 3  3) 
+2a3 
+= . 3 
+Ther efore, we get the expected answer 
+4a3 
+vol(B) = 2 vol(B+)= . 3 
+Example 23.5. Now consider the example of a cone whose base radius 
+is a and whos e height is b. Put the central axis along the x-axis and 
+3</text>
+        </slide>
+        <slide>
+          <slideno>4</slideno>
+          <text>MIT OpenCourseWare
+http://ocw.mit.edu 
+18.022  Calculus of Several Variables 
+Fall 2010 
+For information about citing these materials or our Terms of Use, visit: http://ocw.mit.edu/terms .</text>
+        </slide>
+        <slide>
+          <slideno>0</slideno>
+          <text>23. Inclusion-Ex clusion 
+Prop osition 23.1. Let D = D1  D2 be a bounde d region and let 
+f : D  R be a function. 
+If f is integrable over D1 and over D2, then f is integrable over D 
+and and D1  D2, and we have 
+    
+f(x,y)dx dy = f(x,y)dx dy+ f(x,y)dx dy f(x,y)dx dy. 
+D D1 D2 D1D2 
+Example 23.2. Let 
+D = { (x,y)  R2 | 1  x 2 + y 2  9 }. 
+Then D is not an elementary region. Let 
+D1 = { (x,y)  D | y  0 } and D2 = { (x,y)  D | y  0 }. 
+Then D1 and D2 are both of type 1. 
+If f is continuous, then f is integrable over D and D1  D2. In fact 
+D1  D2 = L  R = { (x,y)  R2 | 3  x 1, 0  y  0 } 
+{ (x,y)  R2 | 1  x  3, 0  y  0 }. 
+Now L and R are elementary regions. We have 
+  3  0  
+f(x,y)dx dy = f(x,y)dy dx =0. 
+R 1 0 
+Ther efore, by symmetry, 
+f(x,y)dx dy = f(x,y)dx dy =0 
+L R 
+and so 
+   
+f(x,y)dx dy = f(x,y)dx dy + f(x,y)dx dy. 
+D D1 D2 
+1</text>
+        </slide>
+        <slide>
+          <slideno>3</slideno>
+          <text>0 the base in the yz-plane. In the xy-plane we get an equilater al triangle 
+of height b and base 2a. If we view this as a region of type 1, we have 
+x x (x)= a 1  and (x)= a 1  . b b 
+We want to integrate the function 
+f : D  R, 
+given by  2x f(x,y)= a2 1  y2 . b 
+So half of the volume of the cone is 
+ b  a(1)  2  
+  b 2 
+)bb
+x x x
+ x2 a
+2 1  b  y2 dy dx = a
+1  b dx
+2
+a(1 0 
+ ba2 2xx2 
+= 2 0 1  b + b2 dx 
+= a2 
+2  
+x  x2 
+b + x3 
+3b2 b 
+0 
+= 1 
+6(a2b). 
+Ther efore the volume is 
+1 
+3(a2b). 
+4</text>
+        </slide>
+      </slides>
+      <videos/>
+    </lecture>
+    <lecture>
+      <lecture_title>Conservative vector fields revisited</lecture_title>
+      <lecture_pdf_url>https://ocw.mit.edu/courses/18-022-calculus-of-several-variables-fall-2010/resources/mit18_022f10_l_29/</lecture_pdf_url>
+      <lectureno>&#160;29</lectureno>
+      <slides>
+        <slide>
+          <slideno>0</slideno>
+          <text>29. Conser vative vector fields revisited
+Let U  R2 be an open subset. Given a smooth function f : U  R 
+we get a smooth vector eld by taking F= grad f. Given a smooth 
+vector eld F: U  R2 we get a function by taking f = curl F. 
+Supp ose that M  U is a smooth 2-manifold with boundary . If we 
+start with F, then we have 
+curl FdA = Fds. 
+M M 
+Supp ose we start with f, and let C be a smooth orien ted curve. Pick 
+a parametrisation, 
+x:[a,b]  U, 
+such that x(a) = P and x(b)= Q. Then we have 
+  b 
+grad f ds = grad f(x(t)) x(t)dt   
+C a
+ b
+d = f(x(t))dt dta 
+= f(x(b))  f(x(a)) 
+= f(Q)  f(P ). 
+Denition 29.1. We say that X  Rn is star-shap ed with respect 
+to P  X, if given any point Q  X then the point 
+P + tPQ  X, 
+for every t  [0, 1]. 
+In other words, the line segmen t connecting P to Q belongs to X. 
+Theorem 29.2. Let U  R2 be an open and star-shap ed let F: U  
+R2 be a smooth vector eld. 
+The following are equivalent: 
+(1) curl F=0. 
+(2) F= grad f. 
+Proof. (2) implies (1) is easy. 
+We check (1) implies (2). Supp ose that U is star-shap ed with respect 
+to P =(x0,y0). Parametrise the line L from P to Q =(x,y) as follows 
+P + tPQ =(x0 + t(x  x0),y0 + t(y  y0)) = Pt, for 0  t  1. 
+1</text>
+        </slide>
+        <slide>
+          <slideno>1</slideno>
+          <text>Dene 
+f(x,y)= Fds 
+L 1 
+= xF1(Pt)+ yF2(Pt)dt. 
+0 
+Then 
+ 1f  = (xF 1(x0 + t(x  x0),y0 + t(y  y0)) + yF2(x0 + t(x  x0),y0 + t(y  y0))) dt x 0 x  1 F1 F2 = F1(Pt)+ tx (Pt)+ ty (Pt)dt. x x 0 
+On the other hand, 
+ F1 F2 
+t (tF 1(x0 + t(x  x0),y0 + t(y  y0))) = F1(Pt)+txt F1(Pt)+ty y (Pt). 
+Since curl F= 0, we have 
+F1 F2 = ,y x 
+and so  1f 
+x = 
+0 F1 
+t (Pt) dt = F1(x, y). 
+Similarly 
+f = F2(x,y). y 
+It follows that F= grad f.  
+Denition 29.3. Let F: U  R2 be a vector eld. Dene another 
+vector eld by the rule 
+F : U  R2 wher e  F =(F2,F1). 
+Theorem 29.4 (Divergence theorem in the plane) . Supp ose that M 
+R2 is a smooth 2-manifold with boundary M. 
+If F: U  R2 is a smooth vector eld, then 
+div FdA = Fnds, 
+M M 
+wher e nis the unit normal vector of the smooth oriente d curve C = M 
+which points out of M. 
+2</text>
+        </slide>
+        <slide>
+          <slideno>3</slideno>
+          <text>MIT OpenCourseWare
+http://ocw.mit.edu 
+18.022  Calculus of Several Variables 
+Fall 2010 
+For information about citing these materials or our Terms of Use, visit: http://ocw.mit.edu/terms .</text>
+        </slide>
+        <slide>
+          <slideno>2</slideno>
+          <text>Proof. Note that 
+curl(F) = div F, 
+and 
+F  ds =( F n)ds, 
+and so the result follows from Greens theorem applied to F.  
+3</text>
+        </slide>
+      </slides>
+      <videos/>
+    </lecture>
+    <lecture>
+      <lecture_title>Arclength</lecture_title>
+      <lecture_pdf_url>https://ocw.mit.edu/courses/18-022-calculus-of-several-variables-fall-2010/resources/mit18_022f10_l_15/</lecture_pdf_url>
+      <lectureno>&#160;15</lectureno>
+      <slides>
+        <slide>
+          <slideno>3</slideno>
+          <text>Note that there is an obvious way to get the unit tangen t vector. Take 
+the deriv ative and divide by the speed. In fact 
+dr(t) dr(s) ds = dt dsdt 
+= T(s) ds,dt 
+by the chain rule. So 
+dr(t) 
+T(s)= dt ,ds 
+dt 
+where the denominator is precisely the speed, so that the unit tangen t 
+vector is the unit vector which points in the direction of the velocity. 
+Example 15.11. Let r(t)=(a cos t,a sin t) be the standar d parametri
+sation of the circle of radius a. Then 
+s s = ta so that t = . a 
+So   ss r(s)=(a cos ,a sin ), aa 
+and   
+T(s)=( sin s, cos s ). aa 
+Denition 15.12. Let r : I  Rn be a C2 curve such that r(t) = 0 
+for all t. 
+The curvatur e (s) of r(s) is the magnitude of the vector 
+dT(s) ,ds 
+and the unit normal vector is the unit vector pointing in the direction 
+of 
+N(s)= dT(s) . ds 
+In the example above, 
+dT(s) 1  s  s  
+=( cos ,  sin ),dsaa a 
+which has length 1/a. So the larger the radius, the smaller the curva
+ture (whic h is what one migh t expect). The unit normal vector is 
+N(s)=( cos s,  sin s )= r(s). a a 
+4</text>
+        </slide>
+        <slide>
+          <slideno>5</slideno>
+          <text>MIT OpenCourseWare
+http://ocw.mit.edu 
+18.022  Calculus of Several Variables 
+Fall 2010 
+For information about citing these materials or our Terms of Use, visit: http://ocw.mit.edu/terms .</text>
+        </slide>
+        <slide>
+          <slideno>0</slideno>
+          <text>, 15. Arclength
+Denition 15.1. Let I be an open interval. A partition P of [a,b] 
+I is a sequenc e of points 
+a = t0 &lt;t1 &lt; &lt;tn = b, 
+for some n  1. The mesh of P is 
+m(P) = max
+i {|ti+1  ti|| 0  i  n  1 }. 
+Denition 15.2. Let r : I  Rn be a parametrise d dier entiable 
+curve, and let P be a partition. We think of 
+n1
+l(P)= r(ti+1)  r(ti), 
+i=0 
+as being an approximation to the length of the curve r([a,b]). 
+The curve r has length L if given any &gt; 0, there is a &gt; 0 such 
+that for every partition P whose mesh size is less than , we have 
+L  l(P) &lt; . 
+There are interesting exam ples of curves that dont have a length. 
+Start with interval [0, 1] in the plane. The length is 1. Now adjust 
+this curve, by adding in a triangular hump in the middle, so that we 
+get four line segmen ts of length 1/3. This is a curve of length 4/3. 
+Now add a hump to each of the four line segmen ts of length 1/3. 
+The length of the resulting curve is (4/3)2 . If we keep doing this, then 
+we get more and more complicated curves, whose length at stage n is 
+(4/3)n . This process converges to a very pointed curve whose length is 
+innite (in fact this curve is a fractal). 
+However: 
+Prop osition 15.3. If r : I  Rn is a C1-function, then the curve 
+r([a,b]) has a length  b 
+L = r(t) dt. 
+a 
+Remark 15.4. The fractal curve above is continuous but it is nowher e 
+dier entiable (the curve has too many sharp points). 
+In general the exact formula for the arclength is only of theoretical 
+interest. However there are some contrived examples where we can 
+calculately the arclength precisely . 
+Example 15.5. Let 
+r : R  R2 
+1</text>
+        </slide>
+        <slide>
+          <slideno>4</slideno>
+          <text>. One can try to calculate the curvature using the parameter t. By 
+the chain rule, 
+dT(t) dT(s) ds = . dt dsdt 
+So 
+dT(s) dT
+dt (t) 
+= . ds ds 
+dt 
+The denominator is the speed. It follows that 
+N(s) and dT(t) ,dt 
+point in the same direction, so that the unit normal vector is the unit 
+vector associated to 
+dT(t) . dt 
+On the other hand, the curvature is 
+dT(t) 
+dt 
+ds 
+dt 
+Note that the normal vector and the unit tangen t vector are always 
+orthogonal. 
+Indeed, 
+T(s) =1. 
+So 
+T(s) T(s)=1. 
+Dieren tiate both sides with respect to s, to get 
+T(s) T(s)+ T(s) T(s)=0.  
+It follows that 
+2T(s) T(s)=0, 
+that is 
+T(s) T(s)=0. 
+As N(s) points in the same direction as T(s), it follows that the tan
+gent vector and the normal vector are orthogonal. 
+5</text>
+        </slide>
+        <slide>
+          <slideno>1</slideno>
+          <text>, 
+ , be the parametrise d dier entiable curve given by 
+r(t)= a cos t + a sin tj.
+Then 
+r(t)= a sin t + a cos tj,
+and so 
+r(t) = a. 
+Henc e the length of the curve r([0, 2]) is 
+ 2 
+L = a dt =2a, 
+0 
+which is indeed the circumfer ence of a circle of radius a. 
+Example 15.6. Let 
+r : R  R3 
+be the parametrise d dier entiable curve given by 
+r(t)= a cos tj + bt  + a sin tk, 
+Then 
+r(t)= a sin tj + b  + a cos tk, 
+and so 
+r(t) = 
+a2 + b2 . 
+Henc e the length of the curve r([0, 2]) is 
+ 2 
+L = (a 2 + b2)1/2 dt =2(a 2 + b2)1/2 . 
+0 
+Example 15.7. Let 
+r : R  R2 
+be the parametrise d dier entiable curve given by 
+r(t)= a cos t + b sin tj.
+Then 
+r(t)= a sin t + b cos tj,
+and so 
+r(t) =(a 2 sin2 t + b2 cos 2 t)1/2 
+Henc e the length of the curve r([0, 2]) is 
+ 2 
+L = (a 2 sin2 t + b2 cos 2 t)1/2 dt, 
+0 
+the length of an ellipse, with major and minor axes of length a and b. 
+2</text>
+        </slide>
+        <slide>
+          <slideno>2</slideno>
+          <text>Denition 15.8. Let r : 
+1 I  Rn be a parametrise d dier entiable 
+curve, which is of class C. Supp ose that r(t) is nowher e zero. Given 
+a  I, dene the arclength parameter s(t), by the formula 
+t 
+s(t)= r() d = length of r([a,t]) if t  a
+a length of r([t,a]) if t&lt;a.
+By the fundam ental theorem of calculus 
+d t 
+s(t)= r() d dt a 
+= r(t), 
+which is the speed at time t. Since s(t) is nowhere zero, we can write t 
+as a function of s, that is we can write down the inverse function, t(s), 
+which will be C1 . 
+Example 15.9. For the helix, 
+j + b r(t)= a cos t + a sin tkt, 
+we have 
+1/2 s(t)= t 
+r() d = 
+a2 + b2 t. 
+0 
+Ther efore 
+s t(s)= .
+a2 + b2 
+In this case 
+r(s)= a cos 
+a2 s 
++ b2  + a sin 
+a2 s 
++ b2 j+ bk
+a2 s 
++ b2 . 
+In fact, one can always parametrise a curve by its arclength and in 
+this case the deriv ative is a unit vector: 
+Denition 15.10. Let r : I  Rn be a parametrise d dier entiable 
+curve parametrise d by the arclength. Then 
+T(s)= dr,ds
+is the unit tangent vector. 
+In the case of the helix, we get 
+a s a s b  r(s)= 
+a2 + b2 sin 
+a2 + b2 +
+a2 + b2 cos 
+a2 + b2 j+ 
+a2 + b2 k. 
+3</text>
+        </slide>
+      </slides>
+      <videos/>
+    </lecture>
+    <lecture>
+      <lecture_title>Vectors in R2 and R3</lecture_title>
+      <lecture_pdf_url>https://ocw.mit.edu/courses/18-022-calculus-of-several-variables-fall-2010/resources/mit18_022f10_l_1/</lecture_pdf_url>
+      <lectureno>&#160;1</lectureno>
+      <slides>
+        <slide>
+          <slideno>3</slideno>
+          <text>Example 1.10. A cycloid is the path traced in the plane, by a point 
+on the circumfer ence of a circle as the circle rolls along the ground. 
+Lets nd the parametric form of a cycloid. Lets suppose that the 
+circle has radius a, the circle rolls along the x-axis and the point is at 
+the origin at time t =0. We suppose that the cylinder rotates through 
+an angle of t radians in time t. So the circumfer ence travels a distanc e 
+of at. It follows that the centre of the circle at time t is at the point 
+P =(at,a). Call the point on the circumfer ence Q =(x,y) and let O 
+be the centre of coordinates. We have 
+(x,y)= OP + OQ = PQ. 
+Now relative to P , the point Q just goes around a circle of radius a. 
+Note that the circle rotates backwar ds and at time t =0, the angle 
+3/2. So we have 
+PQ =(a cos(3/2  t),a sin(3/2  t)) = (a sin t, a cos t) 
+Putting all of this together, we have 
+(x,y)=(at  a sin t,a  a cos t). 
+4</text>
+        </slide>
+        <slide>
+          <slideno>1</slideno>
+          <text>One way to think of this is in terms of directed line segmen ts. Note 
+that given a point P and a vector v we can add v to P to get another 
+point Q. If P =(p1,p2,p3) and v =(v1,v2,v3) then 
+Q = P + v =(p1 + v1,p2 + v2,p3 + v3). 
+If Q = PQ, such that Q (q1,q2,q3), then there is a unique vector = 
+P + v, namely 
+PQ =(q1  p1,q2  p2,q3  p3). 
+Lemma 1.6. Let P , Q and R be three points in R3 . 
+Then QR = PQ + PR. 
+Proof. Let us consider the result of adding QR to P , PQ + 
+P +(QR)=(P + QR PQ + PQ)+ 
+= Q + QR 
+= R. 
+On the other hand, there is at most one vector v such that when we 
+add it P we get R, namely the vector So QR =  PR. PQ + PR. 
+Note that (1.6) expresses the geometrically obvious statemen t that 
+if one goes from P to Q and then from Q to R, this is the same as 
+going from P to R. 
+Vectors arise quite naturally in nature. We can use vectors to rep
+resen t forces; every force has both a magnitude and a direction. The 
+combined eect of two forces is repre sented by the vector sum. Sim
+ilarly we can use vectors to measure both velocity and acceleration. 
+The equation 
+F= ma, 
+is the vector form of Newtons famous equation. 
+Note that R3 comes with three standard unit vectors 
+ = (1, 0, 0) j= (0, 1, 0) and k= (0, 0, 1), 
+which are called the standar d basis. Any vector can be written uniquely 
+as a linear combination of these vectors, 
+ v =(v1,v2,v3)= v1 + v2j+ v3k. 
+We can use vectors to parametrise lines in R3 . Supp ose we are given 
+two dieren t points P and Q of R3 . Then there is a unique line l 
+containing P and Q. Suppose that R =(x,y,z) is a general point of 
+2</text>
+        </slide>
+        <slide>
+          <slideno>2</slideno>
+          <text>the line. Note that the vector PQ, so that PR is parallel to the vector 
+PQ. PR is a scalar multiple of Algebraically , 
+PQ, PR = t
+for some scalar t  R. If P =(p1,p2,p3) and Q =(q1,q2,q3), then 
+(x  p1,y  p2,z  p3)= t(q1  p1,q2  p2,q3  p3)= t(v1,v2,v3), 
+where (v1,v2,v3)=(q1  p1,q2  p2,q3  p3). We can always rewrite 
+this as, 
+(x,y,z)=(p1,p2,p3)+ t(v1,v2,v3)=(p1 + tv1,p2 + tv2,p3 + tv3). 
+Writing these equations out in coordinates, we get 
+x = p1 + tv1 y = p2 + tv2 and z = p3 + tv3. 
+Example 1.7. If P = (1, 2, 3) and Q = (1, 0, 1), then v = (0, 2, 4) 
+and a gener al point of the line containing P and Q is given parametri
+cally by 
+(x,y,z) = (1, 2, 3) + t(0, 2, 4) = (1, 2+2t, 3  4t). 
+Example 1.8. Wher e do the two lines l1 and l2 
+(x,y,z) = (1, 2+2t, 3  4t) and (x,y,z) = (2t  1, 3+ t, 3t), 
+interse ct? 
+We are looking for a point (x,y,z) common to both lines. So we have 
+(1, 2+2s, 3  4s) = (2t  1, 3+ t, 3t). 
+Looking at the rst component, we must have t =1. Looking at the 
+second component, we must have 2+2s = 2, so that s =0. By 
+inspection, the third component comes out equal to 3 in both cases. So 
+the lines interse ct at the point (1, 2, 3). 
+Example 1.9. Wher e does the line 
+(x,y,z) = (1  t, 2  3t, 2t + 1) 
+interse ct the plane 
+2x  3y + z = 6? 
+We must have 
+2(1  t)  3(2  3t) + (2t +1) = 6. 
+Solving for t we get 
+9t  3=6, 
+so that t =1. The line interse cts the plane at the point 
+(x,y,z) = (0, 1, 3). 
+3</text>
+        </slide>
+        <slide>
+          <slideno>4</slideno>
+          <text>MIT OpenCourseWare
+http://ocw.mit.edu 
+18.022  Calculus of Several Variables 
+Fall 2010 
+For information about citing these materials or our Terms of Use, visit: http://ocw.mit.edu/terms .</text>
+        </slide>
+        <slide>
+          <slideno>0</slideno>
+          <text>1. Vectors in R2 and R3 
+Denition 1.1. A vector v  R3 is a 3-tuple of r eal numb ers (v1,v2,v3). 
+Hopefully the reader can well imagine the denition of a vector in 
+R2 . 
+Example 1.2. (1, 1, 0) and (
+2,, 1/e) are vectors in R3 . 
+Denition 1.3. The zero vector in R3 , denote d 0, is the vector 
+(0, 0, 0). If v =(v1,v2,v3) and w=(w1,w2,w3) are two vectors in 
+R3, the sum of v and w, denote d v + w, is the vector (v1 + w1,v2 + 
+w2,v3 + w3). 
+If v =(v1,v2,v3)  R3 is a vector and   R is a scalar, the scalar 
+product of  and v, denote d  v, is the vector (v 1,v2,v3).  
+Example 1.4. If v = (2, 3, 1) and w= (1, 5, 3) then v + w= 
+(3, 8, 4). If  = 3 then  v =(6, 9, 3). 
+Lemma 1.5. If  and  are scalars and u, v and ware vectors in R3 , 
+then 
+(1) 0+ v = 0. 
+(2) u +(v + w)=(u + v)+ w. 
+(3) u + v = v + u. 
+(4)  ( v)=() v.   
+(5) ( + ) v =  v +  v.  
+(6)  (u + v)=  u +  v.   
+Proof. We check (3). If u =(u1,u2,u3) and v =(v1,v2,v3), then 
+u + v =(u1 + v1,u2 + v2,u3 + v3) 
+=(v1 + u1,v2 + u2,v3 + u3) 
+= v + u.  
+We can interpret vector addition and scalar multiplication geometri
+cally. We can think of a vector as represen ting a displacem ent from 
+the origin. Geometri cally a vector v has a magnitude (or length) 
+|v| =(v12 + v22 + v2)1/2 and every non-zero vector has a direction 3 
+v u = . |v| 
+Multiplying by a scalar leaves the direction unchanged and rescales the 
+magnitude. To add two vectors v and w, think of transp orting the tail 
+of wto the endp oint of v. The sum of v and wis the vector whose tail 
+is the tail of the transp orted vector. 
+1</text>
+        </slide>
+      </slides>
+      <videos/>
+    </lecture>
+    <lecture>
+      <lecture_title>Manifolds with boundary</lecture_title>
+      <lecture_pdf_url>https://ocw.mit.edu/courses/18-022-calculus-of-several-variables-fall-2010/resources/mit18_022f10_l_28/</lecture_pdf_url>
+      <lectureno>&#160;28</lectureno>
+      <slides>
+        <slide>
+          <slideno>5</slideno>
+          <text>Gran ted this, Greens Theorem follows very easily , 
+     
+M F2 
+x  F1 
+y k
+dx dy =  
+i=1 M Fi,2 
+x  Fi,1 
+y dx dy 
+k  
+= Fi  ds. 
+i=1 M 
+= F  ds.  
+M 
+Lemma 28.5. Let K  Rn . Supp ose that K is containe din the union 
+of close d balls B1,B2,...,Bm, such that any point of K belongs to the 
+interior of at least one of B1,B2,...,Bm. 
+Then we may nd smooth functions 1,2,...,m such that i is zero 
+outside Bi and 
+m
+1= i. 
+i=1 
+Proof. We prove the case n = 2. The general case is similar, only 
+notationally more involved. First observ e that it is enough to nd 
+smooth functions 1,2,...,m, such that i is zero outside Bi and 
+such that 
+m
+ = i, 
+i=1 
+does not vanish at any point of K. Indeed, if we let 
+ii = , 
+then i is smooth, it vanishes outside Bi and dividing both sides of the 
+equation above by , we have 
+m
+1= i. 
+i=1 
+In fact it suces to nd functions 1,2,...,m, such that i vanishe s 
+outside Bi and which is non-zero on the interior of Bi (replacing i 
+by i 2, so that i 2 is positiv e on the interior of Bi, we get rid of the 
+anno ying possibilit y that the sum is zero because of cancelling). It is 
+enough to do this for one solid circle Bi and we migh t as well assume 
+that B = Bm = B1 is the solid unit circle. Using polar coordinates, we 
+want a function of one variable r which is zero outside [0, 1] and which 
+is non-zero on (0, 1), so we are now down to a one variable question. 
+6</text>
+        </slide>
+        <slide>
+          <slideno>2</slideno>
+          <text>, 
+  Proof. In the rst step we assume that 
+M = H2 = { (u,v) | v  0 } R2 . 
+By assumption we may nd a and b such that F= 0 outside the box 
+[a/2,a/2]  [0,b/2]  H2 . 
+So F(u,v)= 0 if u = a or v = b. Lets calculate the LHS, 
+    F2 F1 F2 F1 
+u  v du dv = u du dv  v du dv 
+H2 H2 H2 
+ b  a  a  bF2 F1 = du dv  dv du u v 
+ 0 
+b a a 0  a 
+= F2(a,v)  F2(a,v)dv  F1(u,b)  F1(u, 0)du 
+0 a 
+a 
+= F1(u, 0)du. 
+a 
+Okay, now lets parametrise the boundary of the upper half plane, 
+x: R  H2 
+by the rule 
+x(u) =(u, 0). 
+Then 
+x(u)=. 
+Lets calculate the RHS, 
+a 
+Fds = F(x(u)) x(u)du 
+H2   
+a 
+a 
+= F(u, 0)  du 
+a 
+a 
+= F1(u, 0)du. 
+a 
+So the result holds if M = H2 . This completes the rst step. 
+In the second step, we supp ose that there is a dieomorphism 
+g : H2  U  M  W, 
+such that for some positiv e real numbers a and b, we have 
+(1) [a,a]  [0,b]  H2  U, 
+(2) F= 0 outside g([a/2,a/2]  [0,b]), and 
+(3) det Dg(u,v) &gt; 0 for every (u,v)  H2  U. 
+3</text>
+        </slide>
+        <slide>
+          <slideno>4</slideno>
+          <text>Using this, we get 
+     G2 G1 G2 G1 
+H2 u  v du dv = 
+H2u  v du dv 
+ U  F2 F1 (x,y) = du dv 
+H2U x  y (u,v) 
+F2 F1 = x  y dx dy 
+ M W  F2 F1 = x  y dx dy. 
+M 
+Putting all of this together, we have 
+     F2 F1 G2 G1 
+x  y dx dy = u  v du dv 
+M H2 
+= Gds 
+H2 
+= Fds. 
+M 
+This completes step 2. 
+We now turn to the third and nal step. To complete the proof, we 
+need to invoke the existence of partitions of unity. Starting with F,I 
+claim that there are vector nitely many elds F1,F2,...,Fk, each of 
+which satisfy the hypotheses of step 2, such that 
+k
+F= F1 + F2 + + Fk = Fi. 
+i=1 
+Indeed, start with a partition of unity, 
+m
+1= i, 
+i=1 
+multiply both sides by F, to get 
+m
+F= i =1miF= Fi. 
+i=1 
+5</text>
+        </slide>
+        <slide>
+          <slideno>0</slideno>
+          <text>28. Manif olds with bound ary 
+Denition 28.1. Upper half space is the set 
+Hm = { (x1,x2,...,xm) | xm  0 } Rm . 
+The boundary of Hm, is 
+Hm = { (x1,x2,...,xm) | xm =0 } Mm . 
+Denition 28.2. A subset M  Rk is a smooth m-manifold with 
+boundary if for every a  M there is an open subset W  Rk and an 
+open subset U  Rm, and a dieomorphism 
+g : Hm  U  M  W. 
+The boundary of M is the set of points a which map to a point of the 
+boundary of Hm . 
+Example 28.3. The solid ellipse, 
+2 2 
+M = { (x,y)  R2 | x
+a + y
+b  1 }, 
+is a 2-manifold with boundary. 
+Let 
+U1 = { (u,v) | 0 &lt;u&lt; 2, 1 &lt;v&lt; 1 }
+and 
+W1 = R2 { (x, 0)  R2 | x  0 }. 
+Dene a function 
+g1 : U1  W1, 
+by the rule 
+g1(u,v)=(a(1  v)cos u,b(1  v)sin u). 
+Similarly , let 
+U2 = { (u,v) |  &lt; u &lt; , 1 &lt;v&lt; 1 } 
+and 
+W2 = R2 { (x, 0)  R2 | x  0 }. 
+Dene a function 
+g2 : U2  W2, 
+by the rule 
+g2(u,v)=(a(1  v)cos u,b(1  v)sin u). 
+Finally , let 
+U3 = { (u,v) | u 2 
+1 +(v  b)2 &lt;b }</text>
+        </slide>
+        <slide>
+          <slideno>1</slideno>
+          <text>= and 
+W3 = { (x,y) | x 2 + y 2 &lt;b }. 
+Dene a function 
+g3 : U3  W3, 
+by the rule 
+g3(u,v)=(u,v  b). 
+Let 
+F: R2  R2 , 
+be the function 
+F(x,y)=(y,x). 
+Then 
+ 2 
+Fds = (b sin t,a cos t)(a cos t,b sin t)dt   
+M 0
+ 2
+= ab dt 
+0 
+=2ab. 
+On the other hand, 
+curl F= F2 F1 =1  (1) = 2,x  y 
+and so 
+curl Fdx dy =2ab. 
+M 
+In fact this is not a coincidence: 
+Theorem 28.4 (Greens Theorem). Let M  R2 be a smooth 2
+manifold with boundary, and let F: M  R2 be a smooth vector eld 
+such that 
+{ (x,y)  M | F (x,y) 0 } R2 , 
+is a bounde d subset. 
+Then    F2 F1 
+M x  y dx dy = 
+M F ds. 
+Here M is oriente d, so that M is on the left as we go around M (in 
+the positive direction). 
+2</text>
+        </slide>
+        <slide>
+          <slideno>7</slideno>
+          <text>MIT OpenCourseWare
+http://ocw.mit.edu 
+18.022  Calculus of Several Variables 
+Fall 2010 
+For information about citing these materials or our Terms of Use, visit: http://ocw.mit.edu/terms .</text>
+        </slide>
+        <slide>
+          <slideno>6</slideno>
+          <text>At this point we realise we want a smooth function, 
+f : R  R, 
+all of whose derivatives are zero at 0 and yet the function f is not the 
+zero function. Such a function is given by 
+f(x)= e1/x2 .  
+7</text>
+        </slide>
+        <slide>
+          <slideno>3</slideno>
+          <text>In this case, parametrise M  W as follows; dene 
+s:(a,a)  M  W, 
+by the rule 
+s(u) = g(x(u)) = g(u, 0). 
+Note that this is compatible with the orientation, as we are assuming 
+that the Jacobian of g is positiv e. 
+a 
+Fds = F(s(u)) s(u)du   
+M a 
+a 
+= F(g(x(u)))Dg(x(u)) x(u)du 
+a 
+= Gds, 
+H2  
+where 
+G: H2 , R2 
+is dened by the rule 
+G(u,v)= F(g(u,v))Dg(u,v) if(u,v)  U 
+0 otherwise. 
+Now we compute, 
+G2 G1  x y x y
+u  v = u F1 v + F2 v  v F1 u + F2 u
+F1 x F1 y x 2x = + + F1x u y u v uv 
+F2 x F2 y y 2y+ + + F2x u y u v uv 
+F1 x F1 y x 2x  x v + y v u  F1 vu 
+F2 x F2 y y 2x  x v + y v u  F2 vu 
+F2 x y x y F1 x y x y = x u v  x u  y u v  x u 
+F2 F1 (x,y) = x  y (u,v) . 
+4</text>
+        </slide>
+      </slides>
+      <videos/>
+    </lecture>
+    <lecture>
+      <lecture_title>Chain rule</lecture_title>
+      <lecture_pdf_url>https://ocw.mit.edu/courses/18-022-calculus-of-several-variables-fall-2010/resources/mit18_022f10_l_12/</lecture_pdf_url>
+      <lectureno>&#160;12</lectureno>
+      <slides>
+        <slide>
+          <slideno>5</slideno>
+          <text>MIT OpenCourseWare
+http://ocw.mit.edu 
+18.022  Calculus of Several Variables 
+Fall 2010 
+For information about citing these materials or our Terms of Use, visit: http://ocw.mit.edu/terms .</text>
+        </slide>
+        <slide>
+          <slideno>2</slideno>
+          <text>Now a is dieren tiable (it is a polynomial, linear even). There is func
+tion 
+h: Rn  R2m , 
+which sends Q to (f(Q),g(Q)). The comp osition a  h: Rn  Rm is 
+the function we want to dieren tiate, it sends P to f(P )+ g(P ). The 
+chain rule says that that the function is dieren tiable at P and 
+D(f + g)(P )= Df(P )+ Dg(P ).
+Now supp ose that m = 1. Instead of a, consider the function
+m: R2  R, 
+given by m(x,y)= xy. Then m is dieren tiable, with derivative 
+Dm(x,y)=(y,x). 
+So the chain rule says the comp osition of h and m, namely the func
+tion which sends P to the product f(P )g(P ) is dieren tiable and the 
+deriv ative satises the usual rule 
+D(fg)(P )= g(P )D(f)(P )+ f(P )D(g)(P ). 
+Here is another example of the chain rule, supp ose 
+x = r cos  
+y = r sin . 
+Then 
+f	f x f y = + r	x r y r 
+f f = cos  + sin . x y 
+Similarly , 
+f	f x f y = +  x  y  
+f f = x r sin  + y r cos . 
+We can rewrite this as 	   	  cos  sin r	 x  =	 r sin r cos 	 y 
+Now the determinan t of 
+cos  sin  
+r sin r cos  
+3</text>
+        </slide>
+        <slide>
+          <slideno>1</slideno>
+          <text>since u = f1(x,y) and v = f2(x,y). Notice that in the last line we were 
+a bit slopp y and dropp ed P and Q. 
+If we split this vector equation into its comp onents we get 
+(gf) g f1 g f2  = (Q)(P )+ (Q) (P )x ux v x 
+(gf) g f1 g f2  = (Q)(P )+ (Q) (P ). y uy v y 
+Again, we could replace f1 by u and f2 by v in these equations, and 
+maybe even drop P and Q. 
+Example 12.3. Supp ose that f(x,y) = (cos(xy),exy) and g(u,v)= 
+u2 sin v. If we apply the chain rule, we get 
+D(g  f)(x) = (2u sin v(y sin xy)+ u 2 cos v(e xy), 2u sin vx sin xy  u 2 cos ve xy 
+= (2 cos(xy )sin(e xy)(y sin xy) + cos2(xy)cos(e xy)e xy,... ). 
+In general, the (i,k) entry of D(gf)(P ), that is  
+(gf)i 
+xk 
+is given by the dot product of the ith row of Dg(Q) and the kth column 
+of Df(P ), 
+m(g  f)i =  gi (Q) fj (P ). xkj=1 yj xi 
+If z =(gf)(P ), then we get  
+mzi  zi yj= (Q)(P ). xkj=1 yj xi 
+We can use the chain rule to prove some of the simple rules for 
+deriv atives. Supp ose that we have 
+f : Rn  Rm and g : Rn  Rm . 
+Supp ose that f and g are dieren tiable at P . What about f + g? 
+Well there is a function 
+a: R2m , Rm 
+which sends (u,v)  Rm  Rm to the sum u + v. In coordin ates 
+(u1,u2,...,um,v1,v2,...,vm), 
+a(u 1,u2,...,um,v1,v2,...,vm)=(u1 + v1,u2 + v2,...,um + vm). 
+2</text>
+        </slide>
+        <slide>
+          <slideno>0</slideno>
+          <text>12. Chain rule 
+Theorem 12.1 (Chain Rule) . Let U  Rn and let V  Rm be two 
+open subsets. Let f : U  V and g : V  Rp be two functions. 
+If f is dier entiable at P and g is dier entiable at Q = f(P ), then 
+g  f : U  Rp is dier entiable at P , with derivative: 
+D(gf)(P )=(D(g)(Q))(D(f)(P )).  
+It is interesting to untwist this result in specic cases. Supp ose we 
+are given 
+f : R  R2 and g : R2  R. 
+So f(x)=(f1(x),f2(x)) and w = g(y,z). Then 
+df1 (P )	 g g dx Df(P )= df2 and Dg(Q)=((Q), (Q)). (P )	 y z dx 
+So 
+d(gf) g df1 g df2  = D(gf)(P )= Dg(Q)Df(P )= (Q)(P )+ (Q)(P ). dx 	y dx z dx 
+Example 12.2. Supp ose that f(x)=(x2,x3) and g(y,z)= yz. If we 
+apply the chain rule, we get 
+D(gf)(x)= z(2x)+ y(3x 2)=5x 4 .  
+On the other hand (gf)(x)= x5, and of course  
+dx5
+4=5x. dx 
+Now supp ose that 
+f : R2  R2 and g : R2  R 
+So f(x,y)=(f1(x,y),f2(x,y)) and w = g(u,v). Then 
+f1 (P )	f2 (P ) g g x	x Df(P )= f2 f2 and Dg(Q)=( (Q), (Q)). (P ) (P )	 uv x	x 
+In this case 
+D(gf)=( (g  f) ,(g  f)) 	x y 
+g f1 g f2 g f1 g f2=( (Q) (P )+ (Q)(P ), (Q)(P )+ (Q)(P )). ux v x uy v y 
+g u g v g u g v =( (Q) (P )+ (Q)(P ), (Q)(P )+ (Q)(P ))uxv xuy v y 
+g u g v g u g v =( + , + ),u x v xu y v y 
+1</text>
+        </slide>
+        <slide>
+          <slideno>3</slideno>
+          <text>is 
+r(cos2  + sin2 )= r. 
+So if r = 0, then we can invert the matrix above and we get 
+   1 r cos   sin x r  = rr sin  cos   
+y  
+We now turn to a proof of the chain rule. We will need: 
+Lemma 12.4. Let A  Rn be an open subset and let f : A  Rm be 
+a function. 
+If f is dier entiable at P , then there is a constant M  0 and &gt; 0 
+such that if PQ &lt;, then 
+f(Q)  f(P ) &lt;MPQ. 
+Proof. As f is dierentiable at P , there is a constan t &gt; 0 such that 
+if PQ &lt;, then 
+f(Q)  f(P )  Df(P )PQ 
+ &lt; 1. 
+PQ 
+Hence 
+f(Q)  f(P )  Df(P )PQ. PQ &lt; 
+But then 
+f(Q)  f(P ) = f(Q)  f(P )  Df(P )PQ PQ + Df(P )
+PQ + Df(P )PQ f(Q)  f(P )  Df(P )
+PQ + KPQ  
+= MPQ, 
+where M =1+ K.  
+Proof of (12.1) . Lets x some notation. We want the deriv ative at P . 
+Let Q = f(P ). Let P  be a point in U (whic h we imagine is close to 
+P ). Finally , let Q = f(P ) (so if P  is close to P , then we expect Q 
+to be close to Q). 
+The trick is to carefully dene an auxiliary function G: V  Rp, 
+ 
+g(Q)g(Q)Dg(Q)(
+QQ) if Q = QG(Q)=  QQ 
+0 if Q = Q. 
+4</text>
+        </slide>
+        <slide>
+          <slideno>4</slideno>
+          <text>Then G is continuous at Q = f(P ), as g is dieren tiable at Q. Now, 
+(gf)(P )  (g PP ) f)(P )  Dg(Q)Df(P )(  
+P P  
+f(P )  f(P )  Df(P P )P )(
+= Dg(Q) + G(f(P ))f(P )  f(P ) 
+PP  . 
+PP  
+As P  approac hes P , note that 
+PP ) f(P )  f(P )  Df(P )(
+, 
+PP  
+and G(P ) both approac h zero and 
+f(P )  f(P ) M. 
+PP  
+So then 
+(g  f)(P )  (g  PP ) , f)(P )  Dg(Q)Df(P )(
+PP  
+approac hes zero as well, which is what we want.  
+5</text>
+        </slide>
+      </slides>
+      <videos/>
+    </lecture>
+    <lecture>
+      <lecture_title>Maxima and minima: I</lecture_title>
+      <lecture_pdf_url>https://ocw.mit.edu/courses/18-022-calculus-of-several-variables-fall-2010/resources/mit18_022f10_l_20/</lecture_pdf_url>
+      <lectureno>&#160;20</lectureno>
+      <slides>
+        <slide>
+          <slideno>0</slideno>
+          <text>20. Maxima and minima: I
+Recall that K  Rn is closed if the complemen t is open. Recall also 
+that this is equiv alent to saying that K contains all of its limit points. 
+Denition 20.1. We that K  Rn is bounde d if there is a real num
+ber M such that 
+x M, 
+for all x  K. 
+We say that K is compact if K is close d and bounde d. 
+Note that K is bounded if and only if 
+K  BM (O), 
+where O is the origin. 
+Example 20.2. 
+(1) [a,b]  R is compact. 
+(2) (a,b]  R is bounde d but not close d (whenc e not compact). 
+(3) [a, )  R is close d but not bounde d (whenc e not compact). 
+(4)
+K = { x  Rn |x M },
+is compact. 
+(5)
+K = { x  Rn |x &lt;M },
+is bounde d but not close d. 
+Theorem 20.3. Let f : K  R be a continuous function. 
+If K is compact then there are two points amin and amax in K such 
+that 
+f(amin)  f(x)  f(amax). 
+The proof of (20.3) is highly non-trivial. 
+Denition 20.4. Let K  Rn . We say that a  K is an interior 
+point if there is an open ball containing a which is containe d in K. 
+Otherwise a is a boundary point of K. 
+Example 20.5. If K =[a,b]  R then every point a&lt;x&lt;b is an 
+interior point and a and b are boundary points. 
+To nd the maxima and minima of f : K  R we break the problem 
+into two pieces: 
+I. The interior points. Use the deriv ative test, this lecture. 
+II. The boundary points. Use Lagrang e multipliers, see lecture 21. 
+1</text>
+        </slide>
+        <slide>
+          <slideno>2</slideno>
+          <text>Denition 20.9. If A is a symmetric n  n matrix, then the function
+Q(h)= x tAx, 
+is called a symmetric quadr atic form. 
+We say that Q is positive denite if x =0 implies that Q(x) &gt; 0. 
+We say that Q is positive denite if x =0 implies that Q(x) &lt; 0. 
+Example 20.10. If A = I2 then    
+10 x 2 2Q(x,y)=(x,y) = x + y,01 y 
+which is positive denite. If A = I2 then Q(x,y)= x2  y2 is 
+negative denite. Final ly if 
+10 
+0 1 
+then Q(x,y)= x2  y2 is neither positive nor negative denite. 
+Prop osition 20.11. If a  K  Rn is an interior point and f : K  
+R is C3 and a is a critic al point, then 
+(1)	If Q(h)= htHf(a)h is positive denite, then a is a minimum. 
+(2)	If Q(h)= htHf(a)h is negative denite, then a is a maximum. 
+(3) If Q(h)= htHf(a)h is not zero and is neither positive nor 
+negative denite, then a is a sadd le point. 
+Proof. Immediate from Taylors Theorem.	  
+Prop osition 20.12. If A is a n  n matrix, then let di be the deter
+minant of the upper left i  i submatrix. Let Q(h)= htAh. 
+(1)	If di &gt; 0 for all i, then Q is positive denite. 
+(2)	If di &gt; 0 for i even and di &lt; 0 for i odd, then Q is negative 
+denite. 
+Lets consider the 2  2 case. 
+ab A = bd 
+In this case 
+Q(x,y)= ax 2 +2bxy + cy 2 . 
+Assume that d1 = a&gt; 0. Lets complete the square. a = 2, some 
+&gt; 0. 
+Q(x,y)=(x + b/y)2 +(d  b2/2)y 2 =(x + b/y)2 +(ad  b2)/ay2 . 
+In this case d1 = a&gt; 0 and d2 = ad  b2 . So the coecien t of y2 is 
+positiv e if d2 &gt; 0 and negativ e if d2 &lt; 0. 
+3</text>
+        </slide>
+        <slide>
+          <slideno>3</slideno>
+          <text>MIT OpenCourseWare
+http://ocw.mit.edu 
+18.022  Calculus of Several Variables 
+Fall 2010 
+For information about citing these materials or our Terms of Use, visit: http://ocw.mit.edu/terms .</text>
+        </slide>
+        <slide>
+          <slideno>1</slideno>
+          <text>Notice that the boundary can have a rather complicated structu re in 
+higher dimensions. For example, in R3 the closed unit ball is compact. 
+The boundary is the set of points in the open unit ball and the set of 
+boundary points is the set of points on the unit sphere. 
+Denition 20.6. Let f : K  R be a function and let a  K be an 
+interior point. We say that f has a local minimum at a if there is 
+an open ball U = B(a) centred at a containe d in K such that 
+f(a)  f(x), 
+for all x  U. 
+We can dene local maxima in a similar fashion. 
+Denition 20.7. Let f : K  R be a dier entiable function. We 
+say that a point a  K in the interior of K is a critic al point if 
+Df(a)= 0. 
+Prop osition 20.8. Let K  Rn be a compact set and let f : K  R 
+be a dier entiable function. Let a  K be an interior point. 
+If a is a local maximum, then a is a critic al point. 
+Proof. 
+f (a) = limf(a + hei)  f(ei)  0 xih0 h 
+f (a) = limf(a + hei)  f(ei)  0.  xih0 h 
+Recall the one variable second deriv ative test: 
+(i) If f(a)=0 and f(a) &lt; 0, then a is a local maxim um of f. 
+(ii) If f(a)=0 and f(a) &gt; 0, then a is a local minim um of f. 
+(iii) If f(a)=0 and f(a) = 0, then we dont know. 
+The reason why the second deriv ative works follows from Taylors 
+Theorem with remainder, applied to the second Taylor polynomial. 
+To gure out the multi-v ariable form of the second deriv ative test, 
+we need to consider the multi-v ariable second Taylor polynomial: 
+Pa,2f(x)= f(a)+ f(a) h +1htHf(a)h. 2 
+Recall that 
+h = (h1, h2, . . . , hn) and Hf(a) = ( 2f 
+xixj (a)). 
+The importan t term is then 
+Q(h)= htHf(a)h. 
+2</text>
+        </slide>
+      </slides>
+      <videos/>
+    </lecture>
+    <lecture>
+      <lecture_title>Surface integrals</lecture_title>
+      <lecture_pdf_url>https://ocw.mit.edu/courses/18-022-calculus-of-several-variables-fall-2010/resources/mit18_022f10_l_30/</lecture_pdf_url>
+      <lectureno>&#160;30</lectureno>
+      <slides>
+        <slide>
+          <slideno>2</slideno>
+          <text>So
+T  T =
+ j k
+a sin  sin a sin  cos 
+a cos  cos a cos  sin  a sin  
+0 
+= a 2 sin2  cos  + a 2 sin2  sin j+ a 2 cos  sin k. 
+Ther efore, 
+T  T = a 2 sin (sin2  cos 2  + sin2  sin2  + cos2 )1/2 
+= a 2 sin . 
+As 0 &lt;&lt;, note that a2 sin &gt; 0. Henc e 
+area(M ) = area(M  W ) 
+= dS 
+ MW 
+= T  T d d 
+U 2   
+= a 2 sin  d d 
+0 0 2 
+=2a 2 dt 
+0 
+=4a2 . 
+Notic e that this is the surfac e area of a spher e of radius a. 
+Lets now supp ose that there are two dieren t ways to parametrise 
+the same piece M  W of the manifold M: 
+g : U  M  W and h: V  M  W. 
+Let use (u,v) coordinates for U  R2 and (s,t) coordinates for V  R2 . 
+Then 
+f=(h)1  g : U  V, 
+is a dieomorph ism. Note that g = h f. We then have 
+g (u,v)= (h  f)(u,v)
+u u 
+h s h t = (s,t)(u,v)+ (s,t)(u,v). s ut u
+3</text>
+        </slide>
+        <slide>
+          <slideno>1</slideno>
+          <text>Ther efore, 
+Ts  Tt =(a + b cos t)b(cos2 s cos 2 t + sin2 s cos 2 t + sin2 t)1/2 
+=(a + b cos t)b. 
+As a  b, note that (a + b cos t)b&gt; 0. Henc e 
+area(M ) = area(M  W ) 
+= dS 
+ MW 
+= Ts  Tt ds dt 
+U 2  2 
+= (a + b cos t)b ds dt 
+0 0 2 
+=2b (a + b cos t)dt 
+0 
+=42ab. 
+Notic e that this is the surfac e area of a cylinder of radius b and height 
+2a, as expected. 
+Example 30.2. We can parametrise the spher e, 
+M = { (x,y,z) | x 2 + y 2 + z 2 = a 2 }, 
+as follows. Let 
+U = (0,)  (0, 2), 
+and 
+W = R3 \{ (x,y,z) | x  0 and y =0 }. 
+Let 
+g : U  M  W, 
+be the function 
+g(,)=(a sin  cos ,a sin  sin ,a cos ). 
+Lets calculate the tangent vectors, 
+gT =  =(a cos  cos ,a cos  sin , a sin ), 
+T = g =(a sin  sin ,a sin  cos , 0).  
+2</text>
+        </slide>
+        <slide>
+          <slideno>0</slideno>
+          <text>30. Surf ace integrals
+Supp ose we are given a smooth 2-manifold M  R3 . Let
+g : U  M  W, 
+be a dieomorphism, where U  R2, with coordinates s and t. 
+We can dene two tangen t vectors, which span the tangen t plane to 
+M at P = g(s0,t0): 
+gTs(s0,t0)= (s0,t0)s 
+Tt(s0,t0)= g (s0,t0). t 
+We get an elemen t of area on M, 
+dS = Ts  Tt ds dt. 
+Using this we can dene the area of M  W to be 
+area(M  W )= dS = Ts  Tt ds dt. 
+MW U 
+Example 30.1. We can parametrise the torus, 
+M = { (x,y,z) | (a  x2 + y2)2 + z 2 = b2 }, 
+as follows. Let 
+U = (0, 2)  (0, 2), 
+and 
+W = R3 \{ (x,y,z) | x  0 and y =0, or x 2 + y 2  a 2 and z =0 }. 
+Let 
+g : U  M  W, 
+be the function 
+g(s,t) = ((a + b cos t)cos s, (a + b cos t)sin s,b sin t). 
+Lets calculate the tangent vectors, 
+Ts = g =((a + b cos t)sin s, (a + b cos t)cos s, 0),s 
+Tt = g =(b sin t cos s, b sin t sin s,b cos t). t 
+So
+Ts  Tt =
+ j k
+(a + b cos t)sin s (a + b cos t)cos s 0 
+b sin t cos s b sin t sin sb cos t
+=(a + b cos t)b cos s cos t +(a + b cos t)b sin s cos t k. j +(a + b cos t)b sin t
+1</text>
+        </slide>
+        <slide>
+          <slideno>3</slideno>
+          <text>Similarly 
+g (u,v)= (h  f)(u,v)v v 
+h s h t = (s,t)(u,v)+ (s,t)(u,v). s v t v 
+g g h s h t h s h t 
+u  v = s u + t u  s v + t v 
+h h s t s t = s  t u v  v u 
+h h (s,t) = . s  t (u,v)
+It follows that
+g g h h (s,t)
+. u  v  =  s  t |(u,v)|
+Hence
+g g h h (s,t) 
+U u  v  du dv = 
+U  s  t |(u,v)| du dv 
+h h =  s  t  ds dt. 
+V 
+Notice that the rst term is precisely the integral we use to dene 
+the area of M W . This formula then says that the area is indep enden t 
+of the choice of parametrisation. 
+4</text>
+        </slide>
+        <slide>
+          <slideno>4</slideno>
+          <text>MIT OpenCourseWare
+http://ocw.mit.edu 
+18.022  Calculus of Several Variables 
+Fall 2010 
+For information about citing these materials or our Terms of Use, visit: http://ocw.mit.edu/terms .</text>
+        </slide>
+      </slides>
+      <videos/>
+    </lecture>
+    <lecture>
+      <lecture_title>Taylor polynomials</lecture_title>
+      <lecture_pdf_url>https://ocw.mit.edu/courses/18-022-calculus-of-several-variables-fall-2010/resources/mit18_022f10_l_19/</lecture_pdf_url>
+      <lectureno>&#160;19</lectureno>
+      <slides>
+        <slide>
+          <slideno>5</slideno>
+          <text>MIT OpenCourseWare
+http://ocw.mit.edu 
+18.022  Calculus of Several Variables 
+Fall 2010 
+For information about citing these materials or our Terms of Use, visit: http://ocw.mit.edu/terms .</text>
+        </slide>
+        <slide>
+          <slideno>3</slideno>
+          <text>Denition 19.3. Let A  Rn be an open subset which is convex (if a 
+and b belong to A, then so does every point on the line segment between 
+them). Supp ose that f : A  R is Ck . 
+Given a  A, the kth Taylor polynomial of f centred at a is 
+ f  2f Pa,kf(x)= f(a)+ xi (a)(xiai)+1/2 xixj (a)(xiai)(xjaj )+... 
+1in 1i,jn 
+1  kf + k! xi1 xi2 ...xik (a)(xi1 ai1 )(xi2 ai2 ) ... (xik aik ). 
+1i1,i2,...,ik n 
+The remainder is the dier ence 
+Ra,kf(x)= f(x)  Pa,kf(x). 
+Theorem 19.4. Let A  Rn be an open subset which is convex. Sup
+pose that f : A  R is Ck+1, and let a and b belong to A. 
+Then there is a vector on the line segment between a and b such 
+that 
+Ra,k(b)= 1  k+1f ()(bi1 ai1 )(bi2 ai2 ) ... (bik+1 aik+1 ). (k + 1)! xi1 xi2 ...xik+11l1,l2,...,lk+1n 
+Proof. As A is open and convex, we may nd &gt; 0 so that the 
+parametrised line 
+r :(, 1+ )  Rn given by r(t)= a + t(b  a), 
+is contained in A. Let 
+g :(, 1+ )  R, 
+be the comp osition of r(t) and f(x). 
+Claim 19.5. 
+P0,kg(t)= Pa,kf(r(t)). 
+Proof of (19.5) . This is just the chain rule; 
+ f g(t)= xi (r(t))(bi  ai)
+1in
+ 2f g(t)= xixj (r(t))(bi  ai)(bj  aj ) 
+1ijn 
+and so on.  
+So the result follows by the one variable result.  
+4</text>
+        </slide>
+        <slide>
+          <slideno>4</slideno>
+          <text>We can write out the rst few terms of the Taylor series of f and get 
+something interesting. Let h = x  a. Then 
+ f  2f Pa,2f(x)= f(a)+ (a)hi +1/2 (a)hihj . 
+1in xi 1i&lt;jn xixj 
+The middle term is the same as multiplying the row vector formed by 
+the gradien t of f, 
+f f f f(a)=( (a), (a),... (a)),x1 x2 xn 
+and the column vector given by h. The last term is the same as mul
+tiplying the matr ix with entries 
+2f (a),xixj 
+on the left by h and on the right by the column vector given by h and 
+dividing by 2. 
+The matrix 
+2f Hf(a)=( (a)),xixj 
+is called the Hessian of f(x). 
+5</text>
+        </slide>
+        <slide>
+          <slideno>1</slideno>
+          <text>If we let 
+g(x)= Ra,k(x)  M(x  a)k+1 , 
+then 
+g k+1(x)= fk+1(x)  k!M. 
+Then we are looking for  such that 
+g k+1()=0. 
+Now the rst k deriv atives of g at a are all zero, 
+g i(a)=0 for 0  i  k. 
+By choice of M, 
+g(b)=0. 
+So by the mean value theorem, applied to g(x), there is a 1 between 
+a and b such that 
+g(1)=0. 
+Again by the mean value theorem, applied to g(x), there is a 2 between 
+a and 1 such that 
+g(2)=0. 
+Continuing in this way, by inducti on we may nd i,1  i  k +1 
+between a and i1 such that 
+g i(i)=0. 
+Let  = k+1.  
+2</text>
+        </slide>
+        <slide>
+          <slideno>2</slideno>
+          <text>Lets try an easy example. Start with
+f(x)= x 1/2
+1
+f(x)=	x1/2 
+2 
+1 f(x)= 22 x3/2
+3
+f(x)= 23 x5/2
+135
+f4(x)=   x7/2 
+24 
+1357 f5(x)=	 
+2 
+5  x9/2
+13579
+f6(x)=     x11/2 
+26 
+fk(x)=(1)k1 (2k  1)!! x(2k1)/2 
+2k 
+fk(9/4) = (1)k1 (2k  1)!! 22k1 
+2k 32k1 
+(2k  1)!!2k1 
+=(1)k1 
+32k1 . 
+Lets write down the Taylor polynom ial centred at a =9/4. 
+P9/4,5f(x)= f(9/4)+f(9/4)(x9/4)+f(9/4)/2(x9/4)2+f(9/4)/6(x9/4)3 
+f4(9/4)/24(x  9/4)4 + f5(9/4)/120(x  9/4)5 . 
+So, 
+P9/4,5f(x)=3/2+1/3(x  9/4)  1/33(x  9/4)2 +2/35(x  9/4)3 
+13523 135724  (x  9/4)4 +  (x  9/4)5 .  24 37	 120 39 	  
+If we plug in x = 2, so that x 9/4= 1/4 we get an appro ximation 
+to f(2) = 
+2. 
+10997 P9/4,3(2) = 3/2+1/ 3(1/4)1/33(1/4)22/35(1/4)3 =  1.41422 .... 7776 
+On the other hand, 
+13 13 |R3(2, 9/4)| = 4!  ()7/2(1/4)4 &lt; 4!  (1/2) = 1/16. 
+In fact 
+R3(2, 9/4) = 10997 
+2  4  106 . |	| 7776  
+3</text>
+        </slide>
+        <slide>
+          <slideno>0</slideno>
+          <text>19. Taylor Polynomials 
+If f : A  Rm is a dieren tiable function, and we are given a point 
+P  A, one can use the deriv ative to write down the best linear ap
+proximation to f at P . It is natural to wonder if one can do better 
+using quadratic, or even higher degree, polynomials. We start with the 
+one dimensional case. 
+Denition 19.1. Let I  R be an open interval and let f : I  R be 
+a Ck-function. Given a point a  I, let 
+Pa,kf(x)= f(a)+ f(a)(x  a)+ f
+2(a)(x  a)2 + f
+3!(a)(x  a)3 +  + fk
+k(
+! a)(x  a)k 
+k
+=  fi(a)(x  a)i . i! i=0 
+Then Pa,kf(x) is the kth Taylor polynomial of f, centred at a. The 
+remainder is the dier ence 
+Ra,kf(x)= f(x)  Pa,kf(x). 
+Note that we have chosen Pa,kf so that the rst k deriv atives of 
+Pa,kf at a are precisely the same as those of f. In other words, the 
+rst k deriv atives at a of the remainder are all zero. The remainder is 
+a measure of how good the Taylor polynomial appro ximates f(x) and 
+so it is very useful to estimate Ra,k(x). 
+Theorem 19.2 (Taylors Theorem with remainder) . Let I  R be an 
+open interval and let f : I  R be a Ck+1-function. Let a and b be 
+two points in I. 
+Then there is a  between a and b, such that 
+fk+1()(b  a)k+1Ra,kf(b)= . (k + 1)!
+Proof. If a = b then take  = a. The result is clear in this case. 
+Otherwise if we put 
+Ra,kf(b)M = ,(b  a)k+1 
+then 
+Ra,kf(b)= M(b  a)k+1 . 
+We want to show that there is some  between a and b such that 
+fk+1()M = . (k + 1)! 
+1</text>
+        </slide>
+      </slides>
+      <videos/>
+    </lecture>
+    <lecture>
+      <lecture_title>The Derivative</lecture_title>
+      <lecture_pdf_url>https://ocw.mit.edu/courses/18-022-calculus-of-several-variables-fall-2010/resources/mit18_022f10_l_9/</lecture_pdf_url>
+      <lectureno>&#160;9</lectureno>
+      <slides>
+        <slide>
+          <slideno>2</slideno>
+          <text>Denition 9.7. Let f : Rn  R be a dier entiable function. Then 
+at P , Df(P ) is a row vector, which is called the gradient of f,and isdenote d (f)the derivative of f
+P , 
+f
+f
+f
+(
+ ).
+ ,
+,...,
+x1 x2 xn P P P 
+The point (x1,x2,...,xn,xn+1) lies on the graph of f : Rn  R if 
+and only if xn+1 = f(x1,x2,...,xn). 
+The point (x1,x2,...,xn,xn+1) lies on the tangen t hyperplane of 
+f : Rn  R at P =(a1,a2,...,an) if and only if
+P xn+1 = f(a1,a2,...,an)+(f) (x1  a1,x2  a2,...,xn  an).  
+In other words, the vector 
+f  
+P ,...,
+f
+xn f
+(
+ , 1),
+ ,
+x1 x2 P P 
+is a norm al vector to the tangen t hyperplane and of course the point 
+(a1,a2,...,an,f(a1,a2,...,an)) is on the tangen t hyperplane. 
+Example 9.8. Let 
+D = { (x,y)  R2 | x 2 + y 2 &lt;r2 }, 
+the open ball of radius r, centred at the origin. 
+Let f : R2  R be the function given by 
+f(x,y)= r2  x2  y2 . 
+Then 
+f 2x/2
+ x,
+ = = x r2 2 2 r2 2 2  x y x y
+and so by symmetry, 
+f y
+x,
+ = = y r2  x2  y2 r2  x2  y2 
+At the point (a,b), the gradient is 
+(f)
+ = (a,b) 
+r2 1
+ a2  b2 (a,b).
+So the equation for the tangent plane is 
+1 z = f(a,b) 
+r2 (a(x  a)+ b(x  b)).  a2  b2 
+For example, if (a,b) = (0, 0), then the tangent plane is 
+z = r, 
+as expected. 
+3</text>
+        </slide>
+        <slide>
+          <slideno>0</slideno>
+          <text>9. The deriv ative 
+The deriv ative of a function represen ts the best linear appro ximation 
+of that function. In one variable, we are looking for the equation of 
+a straig ht line. We know a point on the line so that we only need to 
+determine the slope. 
+Denition 9.1. Let f : R  R be a function and let a  R be a real 
+numb er. f is dier entiable at a, with derivative   R, if 
+f(x)  f(a)lim = . 
+xa x  a
+To understand the denition of the deriv ative of a multi-v ariable 
+function, it is slightly better to recast (9.1): 
+Denition 9.2. Let f : R  R be a function and let a  R be a real 
+numb er. f is dier entiable at a, with derivative   R, if 
+f(x)  f(a)  (x  a)lim =0. 
+xa x  a 
+We are now ready to give the denition of the deriv ative of a function 
+of more than one variable:z 
+Denition 9.3. Let f : Rn  Rm be a function and let P  Rn be a 
+point. f is dier entiable at P , with derivative the m  n matrix A, 
+if 
+f(Q)  f(P )  APQ lim =0. 
+QP PQ 
+We will write Df(P )= A. 
+So how do we compute the deriv ative? We want to nd the matrix 
+A. Supp ose that  
+ab A = cd 
+Then       
+Ae1 = A a 
+c b 
+d 1 
+0 = a 
+c 
+and       
+Ae2 = A a 
+c b 
+d 0 
+1 = b 
+d . 
+In general, given an m  n matrix A, we get the jth column of A, 
+simply by multiplying A by the column vector determined by ej . 
+So we want to know what happ ens if we approac h P along the line 
+determined by ej . So we take = ej , where h goes to zero. In PQ h
+1</text>
+        </slide>
+        <slide>
+          <slideno>3</slideno>
+          <text>MIT OpenCourseWare
+http://ocw.mit.edu 
+18.022  Calculus of Several Variables 
+Fall 2010 
+For information about citing these materials or our Terms of Use, visit: http://ocw.mit.edu/terms .</text>
+        </slide>
+        <slide>
+          <slideno>1</slideno>
+          <text>other words, we take Q = P + hej . Lets assume that h&gt; 0. Sowe 
+consider the fractio n 
+f(Q)  f(P )  A(hej) f(Q)  f(P )  A(hej ) = 
+PQ h 
+f(Q)  f(P )  hAej= h 
+= f(Q)  f(P )  Aej . h
+Taking the limit we get the jth column of A,
+Aej = lim f(P + hej )  f(P ) .
+h0 h
+
+Now f(P + hej )  f(P ) is a column vector, whose entry in the ith row 
+is 
+fi(P +ej )fi(P )= fi(a1,a2,...,aj1,aj +h,aj+1,...,an)fi(a1,a2,...,aj1,aj ,aj+1,...,an). 
+and so for the expression on the right, in the ith row, we have 
+fi(P + hej )  fi(P )lim . 
+h0 h
+Denition 9.4. Let g : Rn  R be a function and let P  Rn . The 
+partial derivative of f at P =(a1,a2,...,an), with respect to xj is 
+the limit 
+f 
+xj g(a1,a2,...,aj + h,...,an)  g(a1,a2,...,an) = lim . 
+h0 hP 
+Putting all of this together, we get 
+Prop osition 9.5. Let f : Rn  Rm be a function. 
+If f is dier entiable at P , then Df(P ) is the matrix whose (i,j) 
+entry is the partial derivative 
+fi 
+xj P .
+Example 9.6. Let f : A  R2 be the function 
+f(x,y,z)=(x 3 y + x sin(xz ), log xyz). 
+Here A  R3 is the rst octant, the locus wher e x, y and z are all 
+positive. Supp osing that f is dier entiable at P , then the derivative is 
+given by the matrix of partial derivatives, 
+3x2y + sin(xz )+ xz cos(xz ) x3 x2 cos(xz )Df(P )=
+ 1 1 1 . 
+x y z 
+2</text>
+        </slide>
+      </slides>
+      <videos/>
+    </lecture>
+    <lecture>
+      <lecture_title>n-dimensional space</lecture_title>
+      <lecture_pdf_url>https://ocw.mit.edu/courses/18-022-calculus-of-several-variables-fall-2010/resources/mit18_022f10_l_5/</lecture_pdf_url>
+      <lectureno>&#160;5</lectureno>
+      <slides>
+        <slide>
+          <slideno>4</slideno>
+          <text>by the rule 
+f(v)= Av. 
+If v =(x,y), then 
+Av =(x + y,y). 
+Here I cheat a little, and write row vectors instead of column vectors. 
+Geometrically this is called a shear; it leaves the y-axis alone but one 
+goes furth er along the x-axis according to the value of y. If 
+ab A = cd 
+the resulting function sends (x,y) to (ax + by,cx + dy). In fact the 
+functions one gets this way are always linear. If 
+20 A = ,0 1 
+then f(x,y) = (2x  y), and this has the result of scaling by a factor 
+of 2 in the x-direction and reects in the y-direction. 
+In general if A is an m  n matrix, we get a function 
+f : Rn , Rm 
+using the same rule, f(v)= Av. If B is an n  p matrix, then we get 
+a function 
+g : Rp  Rn , 
+by the rule g(w)= Bw. Note that we can comp ose the functions f 
+and g, to get a function 
+f  g : Rp  Rm . 
+First we apply g to wto get a vector v in Rn and then we apply f to v 
+to get a vector in Rm . The comp osite function fg is given by the rule 
+(fg)(w)=(AB)w. In other words, matrix multiplication is chosen 
+so that it represen ts comp osition of functions. 
+As soon as one realises this, many aspects of matrix multiplication 
+become far less mysterious. For example, comp osition of functions is 
+not comm utativ e, for example 
+sin2x = 2 sin x, 
+and this is why AB = BA in general. Note that it is not hard to check 
+that comp osition of functions is associativ e, 
+f (gh)=(fg) h.   
+This is the easiest way to check that matrix multiplication is associa
+tive, that is, (8) of (5.10). 
+5</text>
+        </slide>
+        <slide>
+          <slideno>3</slideno>
+          <text>Example 5.11. Note however that AB = BA in gener al. For example 
+if A has shape 1  3 and B has shape 3  2, then it makes sense to 
+multiply A and B but it does not make sense to multiply B and A. 
+In fact even if it makes sense to multiply A and B and B and A, the 
+two products might not even have the same shape. For example, if 
+1 
+2  
+
+
+A =
+,
+1
+and
+B =2 13 ,
+then AB has shape 3  3,
+  
+2 13
+4 26
+1
+
+ 
+ AB =
+ ,
+2
+3
+but BA has shape 1  1, 
+BA = (2  2  3) = (3). 
+But even both products AB and BA make sense, and they have the 
+same shape, the products still dont have to be equal. Supp ose
+  
+A = 1 
+0 1 1 , and B = 1 1 0 1 . 
+Then AB and BA are both 2  2 matric es. But 
+21 11 AB = , and BA = .11 12 
+One can also dene determinan ts for n  n matrices. It is probably 
+easiest to explain the general rule using an example:
+1 
+21 1 
+1 1002
+01
+ 201
+201 1 
+1  2
+1 21
+1
+=
+ .
+1 21
+1
+01
+ 0
+ 0
+0
+ 01
+Notice that we as expand about the top row, the sign alternates ++, 
+so that the last term comes with a minus sign. 
+Finally , we try to explain the real meaning of a matrix. Let 
+11 A = .01 
+Given A, we can construct a function 
+f : R2  R2 , 
+4</text>
+        </slide>
+        <slide>
+          <slideno>6</slideno>
+          <text>MIT OpenCourseWare
+http://ocw.mit.edu 
+18.022  Calculus of Several Variables 
+Fall 2010 
+For information about citing these materials or our Terms of Use, visit: http://ocw.mit.edu/terms .</text>
+        </slide>
+        <slide>
+          <slideno>2</slideno>
+          <text>Denition 5.8. Supp ose that A =(aij ) is an m  n matrix and B = 
+(bij ) is an n  p matrix. The product C = AB =(cij ) is the m  p 
+matrix wher e 
+n
+cij = ai1b1j + ai2b2j + ai3b3j + + ainbnj = ailblj .  
+l=1 
+In other words, the entry in the ith row and jth column of C is the 
+dot product of the ith row of A and the jth column of B. This only 
+makes sense because the ith row and the jth column are both vectors 
+in Rn . 
+Example 5.9. Let 
+A =1 21 ,1 15 
+and   
+2 1 
+B =  1 
+1 4 
+1  . 
+Then C = AB has shape 2  2, and in fact 
+1	10 C = AB = . 4	10 
+Theorem 5.10. Let A, B and C be three matric es, and let  and  be 
+scalars. 
+(1)	If A, B and C have the same shape, then (A + B)+ C = 
+A +(B + C). 
+(2)	If A and B have the same shape, then A + B = B + A. 
+(3)	If A and B have the same shape, then (A + B)= A + B. 
+(4)	If Z is the zero matrix with the same shape as A, then Z + A = 
+A + Z. 
+(5)	(A) =()A. 
+(6) ( + )A = A + A. 
+(7)	If In is the matrix with ones on the diagonal and zeroes every
+wher e else and A has shape mn, then AIn = A and ImA = A. 
+(8)	If A has shape m  n and B has shape n  p and C has shape 
+p  q, then A(BC)=(AB)C. 
+(9)	If A has shape m  n and B and C have the same shape n  p, 
+then A(B + C)= AB + AC. 
+(10)	 If A and B have the same shape m  n and C has shape n  p, 
+then (A + B)C = AC + BC. 
+3</text>
+        </slide>
+        <slide>
+          <slideno>1</slideno>
+          <text>So the quadr atic function f(x)= ax2 + bx + c has at most one root. It 
+follows that the discriminan t is less than or equal to zero, with equalit y 
+if and only if f(x) has a root. So 
+4(v w)2  4v2w2 = b2  4ac  0.  
+Rearranging, gives 
+(v  w)2 v2w2 . 
+Taking square roots, gives 
+|v  w|vw. 
+Now if we have equalit y here, then the discriminan t must be equal to 
+zero, in which case we may nd a scalar  such that the vector v + w
+has zero lengt h. But the only vector of length zero is the zero vector, so 
+that v+w= 0. In other words, w= v and v and ware parallel.  
+Denition 5.5. If v and w Rn are non-zer o vectors, then the angle 
+between them is the unique angle 0     such that 
+v wcos  =  . vw 
+Note that the fraction is between 1 and 1, by (5.4), so this does 
+makes sense, and we showed in (5.4) that the angle is 0 or  if and only 
+if v and ware parallel. 
+Denition 5.6. If A =(aij ) and B =(bij ) are two m  n matric es, 
+then the sum A + B is the m  n matrix (aij + bij ). If  is a scalar, 
+then the scalar multiple A is the m  n matrix (a ij ). 
+Example 5.7. If 
+A =1 1 , and B =1 1 ,3 4 2 1 
+then  
+20 A + B = ,5 5 
+and  
+3 3 3A = .9 12 
+Note that if we attene d A and B to (1, 1, 3, 4) and (2, 0, 5, 5) 
+then the sum corresp onds to the usual vector sum (3, 1, 8, 9). Ditto 
+for scalar multiplication. 
+2</text>
+        </slide>
+        <slide>
+          <slideno>0</slideno>
+          <text>5. n-dimensional space 
+Denition 5.1. A vector in Rn is an n-tuple v =(v1,v2,...,vn). The 
+zero vector 0 = (0, 0,..., 0). Given two vectors v and win Rn, the 
+sum v + wis the vector (v1 + w1,v2 + w2,...,vn + wn). If  is a scalar, 
+the scalar product v is the vector (v 1,v2,...,vn). 
+The sum and scalar product of vectors in Rn obey the same rules as 
+the sum and scalar product in R2 and R3 . 
+Denition 5.2. Let v and w Rn . The dot product is the scalar 
+v w= v1w1 + v2w2 + ...vnwn.  
+The norm (or length) of v is the scalar 
+v = 
+v v.  
+The scalar product obeys the usual rules. 
+Example 5.3. Supp ose that v = (1, 2, 3, 4) and w= (2, 1, 1, 1) and 
+ = 2. Then 
+v + w= (3, 1, 4, 3) and w =(4, 2, 2, 2). 
+We have 
+v w=2  2+3  4= 1.  
+The standard basis of Rn is the set of vectors, 
+e1 = (1, 0,..., 0),e2 = (0, 1,..., 0),e1 = (0, 0, 1,..., 0), ...en = (0, 0,..., 1). 
+Note that if v =(v1,v2,...,vn), then 
+v = v1e1 + v2e2 + + vnen. 
+Lets adopt the (somewhat ad hoc) convention that v and ware 
+parallel if and only if either v is a scalar multiple of w, or vice-v ersa. 
+Note that if both v and ware non-zero vectors, then v is a scalar 
+multiple of wif and only if wis a scalar multiple of v. 
+Theorem 5.4 (Cauc hy-Schwarz-Bunjak owski). If v and ware two vec
+tors in Rn, then 
+|v  w|vw, 
+with equality if and only if v is parallel to w. 
+Proof. If either v or wis the zero vector, then there is nothing to prove. 
+So we may assume that neither vector is the zero vector. 
+Let u = xv + w, where x is a scalar. Then 
+0  u u =(v v)x 2 + 2(v w)x + ww= ax 2 + bx + c.   
+1</text>
+        </slide>
+        <slide>
+          <slideno>5</slideno>
+          <text>Functions given by matrices are obviously very special. Note that if 
+f(v)= Av, then 
+f(v + w)= A(v + w)= Av + Aw = f(v)+ f(w), 
+and 
+f(v)= A(v)= (Av)= f(v). 
+Any function which respects both addition of vectors and scalar multi
+plication is called linear and it is precisely the linear functions which 
+are given by matrices. In fact if e1,e2,...,en and f1,f2,...,fm are 
+standard bases for Rn and Rm, and f is linear, then 
+f(ej )= aij fi, 
+for some scalars aij , since f(ej ) is a vector in Rm and any vector in Rm 
+is a linear combinaton of the standard basis vectors f1,f2,...,fm. If 
+we put A =(aij ) then one can check that f is the function 
+f(v)= Av. 
+6</text>
+        </slide>
+      </slides>
+      <videos/>
+    </lecture>
+    <lecture>
+      <lecture_title>Higher derivatives</lecture_title>
+      <lecture_pdf_url>https://ocw.mit.edu/courses/18-022-calculus-of-several-variables-fall-2010/resources/mit18_022f10_l_11/</lecture_pdf_url>
+      <lectureno>&#160;11</lectureno>
+      <slides>
+        <slide>
+          <slideno>5</slideno>
+          <text>MIT OpenCourseWare
+http://ocw.mit.edu 
+18.022  Calculus of Several Variables 
+Fall 2010 
+For information about citing these materials or our Terms of Use, visit: http://ocw.mit.edu/terms .</text>
+        </slide>
+        <slide>
+          <slideno>4</slideno>
+          <text>then we may write down the inverse by hand, 
+1 d b . ad  bc ca 
+So   1 2y 2yDf(P )1 =2xy(2 + 3x) 3x2 2x 
+So,    
+Df(P )1f(P )= 1 2y 
+2 2yx2 + 
+2 y2 
+3 1 
+2xy(2 + 3x) 3x 2xy x
+1 2x2y  2y +2x3y= 2xy(2 + 3x) x4 +3x2y2  3x2 +2xy2 
+One nice thing about this metho d is that it is quite easy to implemen t 
+on a computer. Here is what happ ens if we start with (x0,y0) = (5, 2), 
+(x0,y0) = (5.00000000000000, 2.00000000000000) 
+(x1,y1) = (3.24705882352941, 0.617647058823529) 
+(x2,y2) = (2.09875150983980, 1.37996311951634) 
+(x3,y3) = (1.37227480405610, 0.561220968705054) 
+(x4,y4) = (0.959201654346683, 0.503839504009063) 
+(x5,y5) = (0.787655203525685, 0.657830227357845) 
+(x6,y6) = (0.755918792660404, 0.655438554539110) , 
+and if we start with (x0,y0) = (5, 5), 
+(x0,y0) = (5.00000000000000, 5.00000000000000) 
+(x1,y1) = (3.24705882352941, 1.85294117647059) 
+(x2,y2) = (2.09875150983980, 0.363541705259258) 
+(x3,y3) = (1.37227480405610, 0.306989760884339) 
+(x4,y4) = (0.959201654346683, 0.561589294711320) 
+(x5,y5) = (0.787655203525685, 0.644964218428458) 
+(x6,y6) = (0.755918792660404, 0.655519172668858) . 
+One can sketch the two curves and check that these give reasonable 
+solutions. One can also check that (x6,y6) lie close to the two given 
+curves, by computing x62 + y62  1 and y62  x63 . 
+5</text>
+        </slide>
+        <slide>
+          <slideno>2</slideno>
+          <text>If f(x0) = 0, then the linear equation 
+f(x0)+ f(x0)(x  x0)=0, 
+has the unique solution, 
+f(x0) x1 = x0  . f(x0) 
+Now just keep going (assuming that f(xi) is never zero), 
+f(x0) x1 = x0  f(x0) 
+f(x1) x2 = x1  f(x1) 
+.. ...= . 
+xn = xn1  ff
+(
+(x
+xn
+n
+1
+1)
+) . 
+Claim 11.6. Supp ose that x = limn xn exists and f(x) == 0. 
+Then f(x)=0. 
+Proof of (11.6) . Indeed, we have 
+xn = xn1  ff
+(
+(x
+xn
+n
+1
+1)
+) . 
+Take the limit as n goes to  of both sides: 
+f(x) x= x ,   f(x)
+we we used the fact that f and f are continuous and f(x) = 0. But 
+then 
+f(x)=0, 
+as claimed.  
+Supp ose that A  Rn is open and f : A  Rn is a function. Sup
+pose that f is C1 (that is, supp ose each of the coordinate functions 
+f1,f2,...,fn is C1). 
+The objectiv e is to nd a solution to the equation 
+f(P )= 0. 
+Start with any point P0  A. The best linear appro ximation to f at 
+P0 is given by 
+f(P0)+ Df(P0)PP0. 
+3</text>
+        </slide>
+        <slide>
+          <slideno>0</slideno>
+          <text>11. Higher deriv atives 
+We rst record a very useful: 
+Theorem 11.1. Let A  Rn be an open subset. Let f : A  Rm and 
+g : A  Rm be two functions and suppose that P  A. Let   A be 
+a scalar. 
+If f and g are dier entiable at P , then 
+(1) f +g is dier entiable at P and D(f +g)(P )= Df(P )+Dg(P ). 
+(2) f is dier entiable at P and D(f)(P )= D(f)(P ).  
+Now suppose that m =1. 
+(3) fg is dier entiable at P and D (fg)(P )= D(f)(P )g(P )+f(P )D(g)(P ). 
+(4) If g(P )=0, then fg is dier entiable at P and 
+D(f/g)(P )= D(f)(P )g(P )  f(P )D(g)(P ) . g2(P ) 
+If the partial deriv atives of f and g exist and are continuous, then 
+(11.1) follows from the well-kno wn single variab le case. One can prove 
+the general case of (11.1), by hand (basicall y lots of s and s). How
+ever, perhaps the best way to prove (11.1) is to use the chain rule, 
+proved in the next section. 
+What about higher deriv atives? 
+Denition 11.2. Let A  Rn be an open set and let f : A  R be a 
+function. The kth order partial derivative of f, with respect to 
+the variables xi1 , xi2 , ... xik is the iterated derivative 
+kf  f (P )= ( (... ( ) ... ))(P ). xik xik1 ...xi2 xi1 xik xik1 xi2 xi1 
+We will also use the notation fxik xik1 ...xi2 xi1 (P ). 
+Example 11.3. Let f : R2  R be the function f(x,t)= eat cos x. 
+Then 
+ fxx(x,t)= ((eat cos x))xx
+ = (eat sin x)x
+= eat cos x. 
+1</text>
+        </slide>
+        <slide>
+          <slideno>3</slideno>
+          <text>Assume that Df(P0) is an invertible matrix , that is, assume that 
+det Df(P0) = 0. Then the inverse matri x Df(P0)1 exists and the 
+unique solution to the linear equation 
+f(P0)+ Df(P0)PP0 = 0, 
+is given by 
+P1 = P0  Df(P0)1f(P0). 
+Notice that matrix multiplication is not comm utativ e, so that there is 
+a dierence between Df(P0)1f(P0) and f(P0)Df(P0)1 . If possible, 
+we get a sequence of solutions, 
+P1 = P0  Df(P0)1f(P0) 
+P2 = P1  Df(P1)1f(P1) 
+.. ...= . 
+Pn = Pn1  Df(Pn1)1f(Pn1). 
+Supp ose that the limit P = limn Pn exists and that Df(P) is 
+invertible. As before, if we take the limit of both sides, this implies 
+that 
+f(P)= 0. 
+Let us try a concrete example . 
+Example 11.7. Solve 
+x 2 + y 2 =1 
+2 3 y = x. 
+First we write down an appropriate function, f : R2  R2, given 
+by f(x,y)=(x2 + y2  1,y2  x3). Then we are looking for a point P 
+such that 
+f(P ) = (0, 0). 
+Then  
+2x 2y
+Df(P )= 2 . 3x 2y 
+The determinan t of this matrix is 
+4xy +6x 2 y =2xy(2 + 3x). 
+Now if we are given a 2  2 matrix 
+ab 
+cd, 
+4</text>
+        </slide>
+        <slide>
+          <slideno>1</slideno>
+          <text>On the other hand, 
+ fxt(x,t)= ((eat cos x))xt
+ = (aeat cos x)x
+= aeat sin x. 
+Similarly, 
+ ftx(x,t)= ((eat cos x))tx
+ = (eat sin x)t
+= aeat sin x. 
+Note that 
+ft(x,t)= aeat cos x. 
+It follows that f(x,t) is a solution to the Heat equation: 
+2f f a = . x2 t 
+Denition 11.4. Let A  Rn be an open subset and let f : A  Rm 
+be a function. We say that f is of class Ck if all kth partial derivatives 
+exist and are continuous. 
+We say that f is of class C (aka smooth) if f is of class Ck for 
+all k. 
+In lecture 10 we saw that if f is C1, then it is dieren tiable. 
+Theorem 11.5. Let A  Rn be an open subset and let f : A  Rm 
+be a function. 
+If f is C2, then 
+2f2f = ,xixj xj xi 
+for all 1  i,j  n. 
+The proof uses the Mean Value Theorem. 
+Supp ose we are given A  R an open subset and a funct ion f : A  
+R of class C1 . The objectiv e is to nd a solution to the equation 
+f(x)=0. 
+Newtons meth od proceeds as follows. Start with some x0  A. The 
+best linear appro ximation to f(x) in a neigh bourho od of x0 is given by 
+f(x0)+ f(x0)(x  x0). 
+2</text>
+        </slide>
+      </slides>
+      <videos/>
+    </lecture>
+    <lecture>
+      <lecture_title>Cylindrical and spherical coordinates</lecture_title>
+      <lecture_pdf_url>https://ocw.mit.edu/courses/18-022-calculus-of-several-variables-fall-2010/resources/mit18_022f10_l_6/</lecture_pdf_url>
+      <lectureno>&#160;6</lectureno>
+      <slides>
+        <slide>
+          <slideno>3</slideno>
+          <text>To calcula te e, we use the fact that it has unit length and it is 
+orthogonal to both e and e. We have 
+e = ee  
+ jk
+=
+ sin  cos  0 
+sin  cos  sin  sin  cos 
+= cos  cos  + sin  cos j (sin2 sin  + cos2  sin )k
+= cos  cos  + cos  sin j sin k
+Now when  increases, z decreases. So we want the vector with 
+negativ e z-comp onent, which is exactly the last vector we wrote down. 
+4</text>
+        </slide>
+        <slide>
+          <slideno>1</slideno>
+          <text>er points in the direction of increasing r. The vector e is a unit vector 
+pointing in the direction of increasing . It is orthogonal to er and so 
+in fact 
+e =  sin  + cos j.
+We will call a set of unit vectors which are pairwise orthogonal, an 
+orthonormal basis if we have two in the plane or three in space . 
+We want do some thing similar in space but now there are two choices 
+beyond Cartesian coordinates. The rst just takes polar coordinates 
+in the xy-plane and throws in the extra variable z. So a point P is 
+specied by three coordinates, (r,,z). r is the distance to the origin, 
+of the projection P  of P down to the xy-plane,  is the angle OP  makes 
+with the x-axis, so that (r,) are just polar coordinates for the point 
+P  in the xy-plane, and z is just the heigh t of P from the xy-plane. 
+x = r cos  
+y = r sin  
+z = z. 
+Note that the locus r = a, species a cylinder in three space. For 
+this reason we call (r,,z) cylindrical coordinates. The locus  = , 
+species a half-plane which is vertical (if we allow r&lt; 0 then we get 
+the full vertical plane). The locus z = a species a horizon tal plane, 
+parallel to the xy-plane. 
+The locus z = ar species a half cone. At heigh t one, the cone has 
+radius a, so the larger a the more open the cone. 
+The locus z = a is rather complicate d. If we x the angle, then we 
+get a line of this heigh t and this angle. The resulting surface is called 
+a helicoid, and looks a little bit like a spiral staircase. 
+Again it is useful to write down an orthonorma l coordinate frame. In 
+this case there are three vectors, pointing in the direction of increasing 
+r, increasing  and increasing z: 
+er = cos  + sin j
+e =  sin  + cos j
+ez = k. 
+The third coordinate system in space uses two angles and the dis
+tance to the origin, (,,).  is the distance to the origin,  is the 
+angle made by the projection of P down to the xy-plane and  is the 
+angle the radius vector makes with the z-axis. Typically we use coor
+dinates such that 0  z ,0  &lt; 2 and 0    . To get 
+from spherical coordin ates to Cartesian coordinates, we rst convert to 
+2</text>
+        </slide>
+        <slide>
+          <slideno>2</slideno>
+          <text>cylindrical coordinates, 
+r =  sin  
+ =  
+z =  cos . 
+So, in Cartesian coordinates we get 
+x =  sin  cos  
+y =  sin  sin  
+z =  cos . 
+The locus z = a represen ts a sphere of radius a, and for this reason 
+we call (,,) cylindrical coordinates. The locus  = a represen ts a 
+cone. 
+Example 6.1. Describ e the region 
+x 2 + y 2 + z 2  a 2 and x 2 + y 2  z 2 , 
+in spheric al coordinates. The rst region is the region inside the spher e 
+of radius, 
+  a. 
+The second is the region outside a cone. The surfac e of the cone is 
+given by z2 = x2 + y2 . Now one point on this cone is the point (1, 1, 1), 
+so that this a right-angle d cone, and the region is given by 
+/4    3/4. 
+So we can describ e this region by the inequalities 
+  a and /4    3/4. 
+Finally , lets write down the moving frame given by spherical coordi
+nates, the one corresp onding to increasing , increasing  and increasing 
+. 
+x + yj+ zk
+e = 
+x2 + y2 + z2
+= sin  cos  + sin  sin k. j + cos 
+e =  sin  + cos j.
+3</text>
+        </slide>
+        <slide>
+          <slideno>4</slideno>
+          <text>MIT OpenCourseWare
+http://ocw.mit.edu 
+18.022  Calculus of Several Variables 
+Fall 2010 
+For information about citing these materials or our Terms of Use, visit: http://ocw.mit.edu/terms .</text>
+        </slide>
+        <slide>
+          <slideno>0</slideno>
+          <text>6. Cylindrical and spherical coordina tes 
+Recall that in the plane one can use polar coordinates rather than 
+Cartesian coordinates. In polar coordinates we specify a point using 
+the distance r from the origin and the angle  with the x-axis. 
+In polar coordina tes, if a is a constan t, then r = a represen ts a circle 
+of radius a, centred at the origin, and if  is a constan t, then  =  
+represen ts a half ray, starting at the origin, making an angle . 
+Supp ose that r = a, a a constan t. This represen ts a spiral (in 
+fact, the Archimedes spiral), starting at the origin. The smaller a, the 
+tighter the spiral. 
+By convention, if r is negativ e, we use this to mean that we point in 
+the opposite direction to the direction given by . Also by convention, 
+ and  +2 represen t the same point. We may require r  0 and 
+0  &lt; 2 and if we are not at the origin, this gives us unique polar 
+coordinates. 
+It is straigh tforw ard to convert to and from polar coordinates: 
+x = r cos  
+y = r sin , 
+and 
+2 2 2 r = x + y 
+tan  = y/x. 
+For example, what curve does the equation r =2a cos  represen t? 
+Well if we multiply both sides by r, then we get 
+r 2 =2ar cos . 
+So we get 
+x 2 + y 2 =2ax. 
+Completing the square gives 
+(x  a)2 + y 2 = a 2 . 
+So this is a circle radius a, centred at (a, 0). Polar coordin ates can be 
+very useful when we have circles or lines through the origin, or there is 
+a lot of radially symmetry . 
+Instead of using the vectors  and j, in polar coordinates it makes 
+sense to use orthogonal vectors of unit length, that move as the point 
+moves (these are called moving frames). At a point P in the plane, 
+with polar coordinates (r,), we use the vector er to denote the vector 
+of unit length pointing in the radial direction: 
+er = cos  + sin j.
+1</text>
+        </slide>
+      </slides>
+      <videos/>
+    </lecture>
+    <lecture>
+      <lecture_title>Moving frames</lecture_title>
+      <lecture_pdf_url>https://ocw.mit.edu/courses/18-022-calculus-of-several-variables-fall-2010/resources/mit18_022f10_l_16/</lecture_pdf_url>
+      <lectureno>&#160;16</lectureno>
+      <slides>
+        <slide>
+          <slideno>5</slideno>
+          <text>MIT OpenCourseWare
+http://ocw.mit.edu 
+18.022  Calculus of Several Variables 
+Fall 2010 
+For information about citing these materials or our Terms of Use, visit: http://ocw.mit.edu/terms .</text>
+        </slide>
+        <slide>
+          <slideno>2</slideno>
+          <text>Theorem 16.4 (F renet Formulae). Let r : I  R3 be a regular smo oth 
+parametrise d curve. Then 
+N(s) = 
+   
+0 (s) 0
+
+T(s)
+ T(s) 
+
+ 
+
+
+N(s)
+ (s) 0 (s) 
+0 .
+B(s) B(s)
+ (s) 0
+Of course, s represen ts the arclength parameter and primes denote 
+deriv atives with respect to s. Notice that the 3  3 matrix A appearing 
+in (16.4) is skew-symmetric, that is At = A. The way we have 
+written the Frenet formulae, it appears that we have two 3  1 vectors; 
+strictly speaking these are the rows of two 3  3 matrices. 
+Theorem 16.5. Let I  R be an open interval and suppose we are 
+given two smooth functions 
+: I  R and  : I  R, 
+wher e (s) &gt; 0 for all s  I. 
+Then there is a regular smooth curve r : I  R3 parametrise d by 
+arclength with curvatur e (s) and torsion (s). Further, any two such 
+curves are congruent, that is, they are the same up to translation and 
+rotation. 
+Remark 16.6. Uniqueness is one of the hwk problems. 
+Lets consider the example of the helix: 
+Example 16.7. 
+s sbs r(s)=(a cos ,a sin , ), c cc 
+wher e 
+c 2 = a 2 + b2 . 
+Lets assume that a&gt; 0. By convention c&gt; 0. Then 
+T(s)= 1(a sin s,a cos s,b). c cc 
+Henc e 
+dT ssa ssa (s)= a (cos , sin , 0)= ( cos ,  sin , 0) = N(s)ds c2 cc c2 c cc2 
+It follows that 
+(s) = a and N(s)=( cos s,  sin s, 0). 2c cc 
+Final ly,
+B(s)=
+jk
+a a ssin s cos c c c c b 
+c 
+ cos 
+3 s  sin s 0 c c</text>
+        </slide>
+        <slide>
+          <slideno>0</slideno>
+          <text>16. Moving frames 
+Denition 16.1. We say a parametrise d dier entiable curve r : I  
+Rn is regular if r(t)=0  (the speed is never zero). 
+We say that r(t) is smooth if r(t) is C. 
+Given a regular smooth parametrised dieren tiable curve r : I  
+R3, we can parametrise by arclength , in which case we get can write 
+down the unit tangen t vector 
+T= dr (s). ds
+The curvature (s) is dened as the magnitude of 
+dT
+(s). ds 
+If the curvature is nowhere zero, then we dene the normal vector 
+N(s) as the unit vector pointing in the direction of the deriv ative of 
+the tangen t vector: 
+dT
+(s)= (s)N(s). ds 
+We have already seen that T(s) and N(s) are orthogon al. 
+Denition 16.2. 
+B(s)= T(s)  N(s). 
+is called the binormal vector. 
+The three vectors T(s), N(s), and B(s) are unit vectors and pairwise 
+orthogonal, that is, these vectors are an orthonormal basis of R3 . Notice 
+that T(s), N(s), and B(s) are a right handed set. 
+We call these vectors a moving frame or the Frenet-Serret frame. 
+Now 
+dB
+(s)  B(s)=0,ds 
+as 
+B(s) B(s) =1. 
+It follows that 
+dB
+(s),ds 
+1</text>
+        </slide>
+        <slide>
+          <slideno>1</slideno>
+          <text>lies in the plane spanned by T(s) and N(s).
+dB
+(s) T(s)= d(T N)(s) T(s)ds  
+ ds  
+ 
+dT dN
+= ds (s)  N(s)+ T(s)  ds (s)  T(s) 
+= (s)(N(s)  N(s)) T(s)+(T(s)  N(s)) T(s)   
+=0+(T(s)  T(s)) N(s) 
+=0. 
+It follows that 
+dB
+(s) and T(s),ds 
+are orthogonal, and so 
+dB
+(s) is parallel to N(s). ds 
+Denition 16.3. The torsion of the curve r(s) is the unique scalar 
+(s) such that 
+dB
+(s)= (s)N(s). ds 
+If we have a helix, the sign of the torsion distinguishes between a 
+right handed helix and a left handed helix. The magnitude of the 
+torsion measures how spread out the helix is (the curvature measures 
+how tight the turns are). Now 
+dN
+(s)ds 
+is orthogonal to N(s), and so it is a linear combination of T(s) and 
+B(s). In fact, 
+dN
+(s)= d(B T)(s)ds ds 
+dB dT
+= (s)  T(s)+ B(s)  (s)ds ds 
+= (s)N(s)  T(s)+ (s)B(s)  N(s) 
+= (s)B(s)  (s)T(s) 
+= (s)T(s)+ (s)B(s). 
+2</text>
+        </slide>
+        <slide>
+          <slideno>3</slideno>
+          <text>It follows that 
+B(s)=( b sin s,  b cos s, a )= 1(b sin s, b cos s,a). cccccc c c 
+Final ly, note that 
+dBbss b
+ds (s)= c2 (cos c, sin c, 0) = c2 N. 
+Using this we can compute the torsion: 
+b (s)= 2 . c
+It is interesting to use the torsion and curvature to characterise var
+ious geom etric properties of curves. Lets say that a paramet rised dif
+feren tiable curve r : I  R3 is planar if there is a plane  which 
+contains the image of r. 
+Theorem 16.8. A regular smooth curve r : I  R3 is planar if and 
+only if the torsion is zero. 
+Proof. We may assume that the curve passes through the origin. 
+Supp ose that r is planar. Then the image of r is contained in a 
+plane . As the curve passes through the origin,  contains the origin 
+as well. Note that the unit tangen t vector T(s) and the unit normal 
+vector N(s) are contained in . It follows that B(s) is a normal vector 
+to the plane; as B(s) is a unit vector, it must be constan t. But then 
+dB
+(s)= 0=0 N(s),ds 
+so that the torsion is zero. 
+Now supp ose that the torsion is zero. Then 
+dB (s)=0 N= 0,ds 
+so that B(s)= B0, is a constan t vector. Consider the functio n 
+f(s)= r(s) B(s)= r(s) B0. 
+Then 
+df (s)= d(r  B0)(s)ds ds 
+= T(s).B0 =0. 
+So f(s) is consta nt. It is zero when r(a)= 0 (the curve passes through 
+the origin) so that f(s) = 0. But then r(s) is always orthogonal to a 
+xed vector, so that r is contained in a plane, that is, C is planar.  
+4</text>
+        </slide>
+        <slide>
+          <slideno>4</slideno>
+          <text>It is interesting to try to gure out how to characterise curves which 
+are contained in spheres or cylinders. 
+5</text>
+        </slide>
+      </slides>
+      <videos/>
+    </lecture>
+    <lecture>
+      <lecture_title>Double integrals</lecture_title>
+      <lecture_pdf_url>https://ocw.mit.edu/courses/18-022-calculus-of-several-variables-fall-2010/resources/mit18_022f10_l_22/</lecture_pdf_url>
+      <lectureno>&#160;22</lectureno>
+      <slides>
+        <slide>
+          <slideno>1</slideno>
+          <text>given by 
+iD(x)=	1 if x  D 
+0 if x/ D. 
+If iD is integrable, then we say that the area of D is the integral 
+iD dx dy. 
+R 
+If iD is not integrable, then D does not have an area. 
+Example 22.5. Let 
+D = { (x,y)  [0, 1]  [0, 1] | x,y  Q }. 
+Then D does not have an area. 
+Denition 22.6. If f : D  R is a function and D is bounde d, then 
+pick D  R  R2 a rectangle. Dene 
+f: R  R, 
+by the rule 
+f(x)=	f(x) if x  D 
+0 otherwise. 
+We say that f is integrable over D if f is integrable over R. In this 
+case   
+f(x,y)dx dy = f(x,y)dx dy. 
+D	 R 
+Prop osition 22.7. Let D  R2 be a bounde d subset and let f : D  
+R and g : D  R be two integrable functions. Let  be a scalar. 
+Then 
+(1) f + g	is integrable over D and 
+	   
+f(x,y)+ g(x,y)dx dy = f(x,y)dx dy + g(x,y)dx dy. 
+D	 D D 
+(2) f is integrable over D and 
+f(x,y)dx dy = f(x,y)dx dy. 
+D	 D 
+(3) If f(x,y)  g(x,y) for any (x,y)  D, then 
+	  
+f(x,y)dx dy  g(x,y)dx dy. 
+D	 D 
+2</text>
+        </slide>
+        <slide>
+          <slideno>2</slideno>
+          <text>(4) |f| is integrable over D and 
+| 
+D f(x,y)dx dy| 
+D|f(x,y)| dx dy. 
+It is straigh tforw ard to integrate continuous functions over regions 
+of three special types: 
+Denition 22.8. A bounde d subset D  R2 is an elementary region 
+if it is one of three types: 
+Type 1: 
+D = { (x,y)  R2 | a  x  b,(x)  y  (x) }, 
+wher e  :[a,b]  R and  :[a,b]  R are continuous functions. 
+Type 2: 
+D = { (x,y)  R2 | c  y  d,(y)  x  (y) }, 
+wher e  :[c,d]  R and  :[c,d]  R are continuous functions. 
+Type 3: D is both type 1 and 2. 
+Theorem 22.9. Let D  R2 be an elementary region and let f : D  
+R be a continuous function. 
+Then 
+(1) If D is of type 1, then 
+  b  (x)  
+f(x,y)dx dy = f(x,y)dy dx. 
+D a(x) 
+(2) If D if of type 2, then 
+  d  (y)  
+f(x,y)dx dy = f(x,y)dx dy. 
+D c(y) 
+Example 22.10. Let D be the region bounde d by the lines x =0, 
+y =4 and the parabola y = x2 . Let f : D  R be the function given 
+by f(x,y)= x2 + y2 . 
+3</text>
+        </slide>
+        <slide>
+          <slideno>4</slideno>
+          <text>MIT OpenCourseWare
+http://ocw.mit.edu 
+18.022  Calculus of Several Variables 
+Fall 2010 
+For information about citing these materials or our Terms of Use, visit: http://ocw.mit.edu/terms .</text>
+        </slide>
+        <slide>
+          <slideno>3</slideno>
+          <text>If we view D as a region of type 1, then we get 
+  2  4  
+f(x,y)dx dy = x 2 + y 2 dy dx 
+D 0 x2 
+ 2 3 4 
+= x 2 y + ydx 30 x2  2 26 x6 
+= 4x 2 +3  x 4  3dx 
+0 4x3 26xx5 x7 2 
+= 3+3  5  37 0 
+25 27 25 27 
+=3+3  5  37 
+26 28 
+= + 35 7 1 22 
+=26 + . 35 7 
+On the other hand, if we view D as a region of type 2, then we get 
+  4  y  
+f(x,y)dx dy = x 2 + y 2 dx dy 
+D 0 0  4 3 yx= + xy 2 dy30 0 4 y3/2 
+= + y 5/2 dy30  4 2y5/2 2y7/2 
+= + 35 7 0 
+26 28 
+= + 35 7 1 22 
+=26 + . 35 7 
+4</text>
+        </slide>
+        <slide>
+          <slideno>0</slideno>
+          <text>22. Double integrals 
+Denition 22.1. Let R =[a,b]  [c,d]  R2 be a rectangle in the 
+plane. A partition P of R is a pair of sequenc es: 
+a = x0 &lt;x1 &lt; &lt;xn = b 
+c = y0 &lt;y1 &lt; &lt;yn = d.
+The mesh of P is
+m(P) = max{ xi  xi1,yi  yi1 | 1  i  k }.
+Now supp ose we are given a function
+f : R  R
+Pick
+cij  Rij =[xi1,xi]  [yj1,yj ]. 
+Denition 22.2. The sum 
+nn
+S = f(cij )(xi  xi1)(yj  yj1), 
+i=1 j=1 
+is called a Riemann sum . 
+We will use the short hand notation
+xi = xi  xi1 and yj = yj  yj1.
+Denition 22.3. The function f : R  R is called integrable, with 
+integral I, if for every &gt; 0, we may nd a &gt; 0 such that for every 
+mesh P whose mesh size is less than , we have 
+|I  S| &lt; , 
+wher e S is any Riemann sum associate d to P. 
+We write 
+f(x,y)dx dy = I,
+R 
+to mean that f is integrable with integral I. 
+We use a sneaky trick to integrate over regions other than rectangles. 
+Supp ose that D is a bounded subset of the plane. Then we can nd a 
+rectangle R which completely contains D. 
+Denition 22.4. The indic ator function of D  R is the function 
+iD : R 
+1 R,</text>
+        </slide>
+      </slides>
+      <videos/>
+    </lecture>
+    <lecture>
+      <lecture_title>Change of coordinates: I</lecture_title>
+      <lecture_pdf_url>https://ocw.mit.edu/courses/18-022-calculus-of-several-variables-fall-2010/resources/mit18_022f10_l_25/</lecture_pdf_url>
+      <lectureno>&#160;25</lectureno>
+      <slides>
+        <slide>
+          <slideno>2</slideno>
+          <text>computing I, we compute I2 , 
+   
+2  
+2 I2 = exdxeydy 
+    
+2 2 = exydx dy 
+  
+2 2 = exydx dy 
+ R2 
+= rer2 dr d 
+R2   2   
+2 = rerd dr 
+0 0 
+ 
+2 2 
+= rerd dr 
+0 0 
+ 
+2 =2 rerdr 
+0 
+er2  
+=2  2 
+0 
+= . 
+So I = . 
+Example 25.6. Find the area of the region D bounde d by the four 
+curves 
+xy =1, xy =3,y = x 3 , and y =2x 3 . 
+Dene two new variables, 
+3xu = and v = xy. y 
+Then D is a rectangle in uv-coordinates, 
+D = [1/2, 1]  [1, 3] 
+Now for the Jacobian we have 
+(u,v)(x,y)= 
+ 3x
+y 2 x
+y23 
+ =4x3 
+=4u. (x,y) yx y 
+It follows that 
+(x,y) 1 (u,v)= . (u,v) 4u 
+3</text>
+        </slide>
+        <slide>
+          <slideno>4</slideno>
+          <text>MIT OpenCourseWare
+http://ocw.mit.edu 
+18.022  Calculus of Several Variables 
+Fall 2010 
+For information about citing these materials or our Terms of Use, visit: http://ocw.mit.edu/terms .</text>
+        </slide>
+        <slide>
+          <slideno>3</slideno>
+          <text>This is nowher e zero. In fact note that we can solve for x and y ex
+plicitly in terms of u and v. 
+uv = x 4 and y = x. v 
+So 
+x =(uv)1/4 and y = u1/4 v 3/4 . 
+Ther efore 
+area(D )= dx dy 
+ D 
+1 = du dv 4u D 
+3  1  1 1 = du dv 4 1 1/2 u 
+ 31 1 = 4 [ln u]1/2 dv 
+1 31 = ln2dv 4 1 
+1 = ln2. 2 
+Theorem 25.7. Let g : U  V be a dieomorphism between open 
+subsets of R3 , 
+g(u,v,w)=(x(u,v,w),y(u,v,w),z(u,v,w)). 
+Let W   U be a region and let W = f(W )  V . Let f : W  R be 
+a function. 
+Then  
+f(x,y,z)dx dy dz = f(x(u,v,w),y(u,v,w),z(u,v,w))| det Dg(u,v,w)| du dv dw. 
+W W  
+As before, it is convenien t to introduce more notation:
+(x,y,z)
+(u,v,w) = det Dg(u,v,w). (u,v,w)
+4</text>
+        </slide>
+        <slide>
+          <slideno>0</slideno>
+          <text>25. Change of coordin ates: I
+Denition 25.1. A function f : U  V between two open subsets of 
+Rn is called a dieomorphism if: 
+(1) f is a bijection, 
+(2) f is dier entiable, and 
+(3) f1 is dier entiable. 
+Almost be denition of the inverse function, f  f1 : V  V and 
+f1  f : U  U are both the identity function, so that 
+(ff1)(y)= y and (f1 f)(x)= x.   
+It follows that 
+Df(x)Df1(y)= In and Df1(y)Df(x)= In, 
+by the chain rule. Taking determinan ts, we see that 
+det(Df)det(Df1) = det In =1. 
+Therefore, 
+det(Df1) = (det(Df))1 . 
+It follows that 
+det(Df)=0. 
+Theorem 25.2 (Inverse functio n theorem). Let U  Rn be an open 
+subset and let f : U  R be a function. 
+Supp ose that 
+(1) f is injective, 
+(2) f is C1, and 
+(3) Df(x)=0  for all x  U. 
+Then V = f(U)  Rn is open and the induc ed map f : U  V is a 
+dieomorphism. 
+Example 25.3. Let f(r,)=(r cos ,r sin ). Then 
+cos  sin  Df(r,)= ,r sin r cos  
+so that 
+det Df(r,)= r. 
+It follows that f denes a dieomorphism f : U  V between 
+U = (0, )(0, 2) and V = R2 \{ (x,y)  R2 | y =0,x  0 }. 
+1</text>
+        </slide>
+        <slide>
+          <slideno>1</slideno>
+          <text>Theorem 25.4. Let g : U  V be a dieomorphism between open 
+subsets of R2 , 
+g(u,v)=(x(u,v),y(u,v)). 
+Let D  U be a region and let D = f(D)  V . Let f : D  R be a 
+function. 
+Then 
+f(x,y)dx dy = f(x(u,v),y(u,v))| det Dg(u,v)| du dv. 
+D D 
+It is convenien t to use the following notation: 
+(x,y)(u,v) = det Dg(u,v). (u,v)
+The LHS is called the Jacobian. Note that 
+(x,y) (u,v) 1 
+(u,v)= (x,y) . (u,v) (x,y)
+2 Example 25.5. Ther e is no simple expression for the integral of ex. 
+However it is possible to compute the following integral 
+ 
+2 I = exdx. 
+ 
+(In what follows, we will ignor e issues relating to the fact that the 
+integrals are impr oper; in practic e all integrals conver ge). Inste ad of 
+2</text>
+        </slide>
+      </slides>
+      <videos/>
+    </lecture>
+    <lecture>
+      <lecture_title>Limits</lecture_title>
+      <lecture_pdf_url>https://ocw.mit.edu/courses/18-022-calculus-of-several-variables-fall-2010/resources/mit18_022f10_l_8/</lecture_pdf_url>
+      <lectureno>&#160;8</lectureno>
+      <slides>
+        <slide>
+          <slideno>5</slideno>
+          <text>MIT OpenCourseWare
+http://ocw.mit.edu 
+18.022  Calculus of Several Variables 
+Fall 2010 
+For information about citing these materials or our Terms of Use, visit: http://ocw.mit.edu/terms .</text>
+        </slide>
+        <slide>
+          <slideno>3</slideno>
+          <text>be given by t  (t, 0). As f is continuous, if we compose we must get 
+a function with a limit, 
+0 lim =lim 0=0. 
+t0 t2 +0 t0  
+Now suppose that we restrict to the line y = x. Now consider the 
+function 
+, f : R  R2 
+be given by t  (t,t). As f is continuous, if we compose we must get 
+a function with a limit, 
+t2 11 lim =lim = . 
+t0 t2 + t2 t0 22  
+The problem is that the limit along two dier ent lines is dier ent. So 
+the original limit cannot exist. 
+Example 8.15. Does the limit 
+3xlim , 
+(x,y )(0,0) x2 + y2 
+exist? Let us use polar coordinates. Note that 
+x3 r3 cos3  = = r cos 3 . x2 + y2 r2 
+So we guess the limit is zero. 
+3 
+lim x= lim r cos 3 
+(x,y )(0,0) |x2 + y2 | 
+r0 || 
+ lim |r| =0. 
+r0
+Example 8.16. Does the limit 
+xyz lim , 
+(x,y,z)(0,0,0) x2 + y2 + z2 
+exist? Same trick, but now let us use spheric al coordinates. 
+xyz 3 cos2  sin  cos  sin  lim = lim 
+(x,y,z)(0,0,0) |x2 + y2 + z2 | 
+0 | 2 | 
+= lim  cos 2  sin  cos  sin 
+0 | | 
+ lim =0. 
+0 || 
+Sometimes Norman needs to restrict to more complicat ed curves than 
+just lines: 
+4</text>
+        </slide>
+        <slide>
+          <slideno>0</slideno>
+          <text>8. Limits
+Denition 8.1. Let P  Rn be a point. The open ball of radius 
+&gt; 0 about P is the set 
+B(P )= { Q  Rn |PQ &lt; }. 
+The close d ball of radius &gt; 0 about P is the set 
+{ Q  Rn | PQ  }. 
+Denition 8.2. A subset A  Rn is called open if for every P  A 
+there is an &gt; 0 such that the open ball of radius  about P is entir ely 
+containe d in A, 
+B(P )  A. 
+We say that B is close d if the complement of B is open. 
+Put dieren tly, an open set is a union of open balls. Open balls are 
+open and closed balls are closed. [0, 1) is neither open nor closed. 
+Denition 8.3. Let B  Rn . We say that P  Rn is a limit point 
+if for every &gt; 0 the interse ction 
+B(P )  B =. 
+Example 8.4. 0 is a limit point of 
+1 { n | n  N } R. 
+Lemma 8.5. A subset B  Rn is close d if and only if B contains all 
+of its limit points. 
+Example 8.6. Rn {0} is open. One can see this directly from the 
+denition or from the fact that the complement {0} is close d. 
+Denition 8.7. Let A  Rn and let P  Rn be a limit point. Supp ose 
+that f : A  Rm is a function. 
+We say that f approaches L as Q approaches P and write 
+lim f(Q)= L, 
+QP
+if for every &gt; 0 we may nd &gt; 0 such that whenever Q  B(P )A 
+f(Q)  B(L). In this case we call L the limit. 
+It migh t help to understand the notion of a limit in terms of a game 
+played between two people. Lets call the rst player Larry and the 
+second player Norman. Larry wants to show that L is the limit of f(Q) 
+as Q approac hes P and Norman does not. 
+So Norman gets to choose &gt; 0. Once Norman has chosen &gt; 0, 
+Larry has to choose &gt; 0. The smaller that Norman chooses &gt; 0, 
+1</text>
+        </slide>
+        <slide>
+          <slideno>1</slideno>
+          <text>= , the harder Larry has to work (typicall y he will have to make a choice 
+of &gt; 0 very small). 
+Prop osition 8.8. Let f : A  Rm and g : A  Rm be two func
+tions. Let   R be a scalar. If P is a limit point of A and 
+lim f(Q)= L and lim g(Q)= M, 
+QP QP  
+then 
+(1) limQP (f + g)(Q)= L + M, and 
+(2) limQP (f)(Q)= L. 
+Now suppose that m =1. 
+(3) limQP (fg)(Q)= LM, and 
+(4) if M =0, then limQP (f/g)(Q)= L/M.  
+Proof. We just prove (1). Supp ose that &gt; 0. As L and M are limits, 
+we may nd 1 and 2 such that, if Q  P  &lt;1 and Q  A, then 
+f(Q)  L &lt; /2 and if Q  P  &lt;2 and Q  A, then g(Q)  L &lt; 
+/2. 
+Let  = min(1,2). If Q  P  &lt; and Q  A, then 
+(f + g)(Q)  L  M = (f(Q)  L)+(g(Q)  M) 
+(f(Q)  L) + (g(Q)  M) 
+ 2+2 
+where we applied the triangle inequalit y to get from the second line to 
+the third line. This is (1). (2-4) have similar proofs.  
+Denition 8.9. Let A  Rn and let P  A. If f : A  Rm is a 
+function, then we say that f is continuous at P , if 
+lim f(Q)= f(P ). 
+QP
+We say that f is continuous, if it continuous at every point of A. 
+Theorem 8.10. If f : Rn  R is a polynomial function, then f is 
+continuous. 
+A similar result holds if f is a rational function (a quotien t of two 
+polynomials). 
+Example 8.11. f : R2  R given by f(x,y)= x2 + y2 is continuous. 
+Sometimes Larry is very lucky: 
+2</text>
+        </slide>
+        <slide>
+          <slideno>4</slideno>
+          <text>Example 8.17. Does the limit 
+ylim , 
+(x,y )(0,0) y + x2 
+exist? If we restrict to the line t  (at,bt), then we get 
+bt b lim =lim =1. 
+t0 bt + a2t2 t0 b + at 
+But if we restrict to the conic t  (t,at2), then we get 
+at2 aa lim =lim = , 
+t0 at2 + t2 t0 1+ a 1+ a  
+and the limit changes as we vary a, so that the limit does not exist. 
+Note that if we start with 
+y 
+y + xd , 
+then Norman even needs to use curves of degree d, 
+t  (t,atd). 
+5</text>
+        </slide>
+        <slide>
+          <slideno>2</slideno>
+          <text>Example 8.12. Does the limit 
+2 2 
+lim x y, 
+(x,y )(0,0)x  y 
+exist? Here the domain of f is 
+A = { (x,y)  R2 | x =y }. 
+Note (0, 0) is a limit point of A. Note that if (x,y)  A, then 
+2 2x y= x + y, x  y 
+so that 
+2 2 
+lim x y= lim x + y =0. 
+(x,y )(0,0) (x,y )(0,0) x  y 
+So the limit does exist. 
+Norman likes the following result: 
+Prop osition 8.13. Let A  Rn and let B  Rm . Let f : A  B and 
+. g : B  Rl 
+Supp ose that P is a limit point of A, L is a limit point of B and 
+lim 
+QP f(Q) = L and lim 
+ML g(M) = E. 
+Then 
+lim 
+QP (g  f)(Q) = E. 
+Proof. Let &gt; 0. We may nd &gt; 0 such that if M  L &lt;, and 
+M  B, then g(M)  E &lt;. Given &gt; 0 we may nd &gt; 0 such 
+that if Q  P  &lt; and Q  A, then |f(Q)  L &lt;. But then if 
+Q  P  &lt; and Q  A, then M = f(Q)  B and M  L &lt;, so 
+that 
+(gf)(Q)  E = g(f(Q))  E  
+= g(M)  E 
+&lt; .  
+Example 8.14. Does 
+xylim 
+(x,y )(0,0) x2 + y2 
+exist? The answer is no. 
+To show that the answer is no, we suppose that the limit exists. 
+Supp ose we consider restricting to the x-axis. Let 
+, f : R  R2 
+3</text>
+        </slide>
+      </slides>
+      <videos/>
+    </lecture>
+    <lecture>
+      <lecture_title>Gauss theorem</lecture_title>
+      <lecture_pdf_url>https://ocw.mit.edu/courses/18-022-calculus-of-several-variables-fall-2010/resources/mit18_022f10_l_33/</lecture_pdf_url>
+      <lectureno>&#160;33</lectureno>
+      <slides>
+        <slide>
+          <slideno>2</slideno>
+          <text>Step 2: We supp ose that there is a compact subset K  M and a 
+parametrisation 
+g : H3  U  M  W, 
+such that 
+(1) F(x)= 0 for any x  M \ K. 
+(2) K  M  W .
+We may write
+g(u,v,w)=(x(u,v,w),y(u,v,w),z(u,v,w)). 
+Dene 
+G: H3  R3 , 
+by 
+(y,z) (x,z) (x,y)G1 = F1 + F3(v,w)  F2 (v,w) (v,w) 
+(y,z) (x,z) (x,y)G2 = F1 (u,w)+ F2 (u,w)  F3 (u,w) 
+(y,z) (x,z) (x,y)G3 = F1 + F3 ,(u,v)  F2 (u,v) (u,v)
+for any (u,v,w)  V and otherwise zero. Put dieren tly, 
+G(u,v,w)= F A if (u,v,w)  U 
+0 otherwise, 
+where A is the matrix of cofactors of the deriv ative Dg. 
+One can check (that is, there is a somewhat long and involved cal
+culation, similar, but much worse, than ones that appear in the proof 
+of Greens Theo rem or Stokes Theorem) that 
+div G= div Fdet Dg 
+= div F(x,y,z) . (u,v,w) 
+We have   
+div Fdx dy dz = div Gdx dy dz 
+M H3 
+d = G S, 
+H2  
+d = FS,  
+M 
+3</text>
+        </slide>
+        <slide>
+          <slideno>3</slideno>
+          <text>where the last equalit y needs to be checked (this is relativ ely straigh t
+forward). 
+This completes step 2. 
+Step 3: We nish o in the standard way. We may nd a partit ion 
+of unity 
+k
+1= i, 
+i=1 
+where i is a smooth function which is zero outside a compact subset 
+Ki such that Fi = iFis a smooth vector eld, which satises the 
+hypothesis of step 2, for each 1  i  k. We have 
+k
+F= Fi. 
+i=1 
+and so 
+ k 
+curl FdS= curl Fi  dS  
+S Si=1 
+k 
+= Fi  ds 
+i=1 M 
+= Fds.   
+M 
+4</text>
+        </slide>
+        <slide>
+          <slideno>0</slideno>
+          <text>33. Gauss Theo rem 
+Theorem 33.1 (Gauss Theorem). Let M  R3 be a smo oth 3-manifold 
+with boundary, and let F: M  R3 be a smooth vector eld with com
+pact support. 
+Then   
+div Fdx dy dz = FdS,  
+M M 
+wher e M is given the outwar d orientation. 
+Example 33.2. Three point charges are located at the points P1, P2 
+and P3. Ther e is an electric eld 
+E: R3 \{P1,P2,P3}  R3 , 
+which satises div E=0. 
+Supp ose there are four close d surfac es S1, S2, S3 and S4. Each Si 
+divides R3 into two pieces, which we will informal ly call the inside and 
+the outside. S1 and S2 and S3 are completely containe d in the inside 
+of S4. The inside of S1 contains the point P1 but neither P2 nor P3, 
+the inside of S2 contains the point P2 but neither P1 nor P3, and the 
+inside of S3 contains the point P3 but neither P1 nor P2. The inside 
+of S4, together with S4, minus the inside of S1, S2 and S3 is a smooth 
+3-manifold with boundary. We have 
+M = S1 S2 S3 S4. 
+Recall that primes denote the reverse orientation. (33.1) implies that 
+    
+EdS EdS EdS EdS  
+S4 S1 S2 S3    
+= EdS+ EdS+ EdS+ EdS  
+S4 S1S2S3
+= EdS 
+ M 
+= div Edx dy dz 
+M 
+=0. 
+In other words, we have 
+    
+dddd ES = ES + ES + E S.   
+S4 S1 S2 S3 
+Proof of (33.1) . The proof (as usual) is divided into three steps. 
+1</text>
+        </slide>
+        <slide>
+          <slideno>4</slideno>
+          <text>MIT OpenCourseWare
+http://ocw.mit.edu 
+18.022  Calculus of Several Variables 
+Fall 2010 
+For information about citing these materials or our Terms of Use, visit: http://ocw.mit.edu/terms .</text>
+        </slide>
+        <slide>
+          <slideno>1</slideno>
+          <text>Step 1: We rst supp ose that M = H3, upper half space. Supp ose 
+that we are given a vector eld G: H3  R3, which is zero outside 
+some box 
+K =[a/2,a/2]  [b/2,b/2]  [0,c/2]. 
+We calculate:   c  b  a   
+div Gdu dv dw = G1 + G2 + G1 du dv dw 
+H3 0 u v w 
+ c 
+bb a 
+= (G1(a,v,w)  G1(a,v,w)) dv dw 
+0 b 
+ca 
++ (G2(u,b,w)  G2(u, b,w)) du dw 
+ 0 
+b a
+a 
++ (G3(u,v,c)  G3(u,v, 0)) du dw 
+ b
+b  a
+a 
+=  G3(u,v, 0)du dw. 
+b a 
+On the other hand, lets parametrise the boundary H3, by 
+g : R2  H3 , 
+where 
+g(u,v)=(u,v, 0). 
+In this case 
+g g 
+u  v =  j= k. 
+It follows that 
+GdS= Gkdu dv  
+(H2) R2 
+ b  a 
+= G3(u,v, 0)du dv. 
+b a 
+Therefore 
+GdS= GdS
+H2  
+(H2)  
+ b  a 
+=  G3(u,v, 0)du dv. 
+b a 
+Putting all of this together, we have  
+div Gdu dv dw = dG S. 
+H3 H2  
+This completes step 1. 
+2</text>
+        </slide>
+      </slides>
+      <videos/>
+    </lecture>
+    <lecture>
+      <lecture_title>Dot product</lecture_title>
+      <lecture_pdf_url>https://ocw.mit.edu/courses/18-022-calculus-of-several-variables-fall-2010/resources/mit18_022f10_l_2/</lecture_pdf_url>
+      <lectureno>&#160;2</lectureno>
+      <slides>
+        <slide>
+          <slideno>1</slideno>
+          <text>Theorem 2.5. If v and ware any two vectors in R3, then 
+v  w= v w cos . 
+Proof. If v is the zero vector, then both sides are equal to zero, so that 
+they are equal to each other and the formula holds (note though, that 
+in this case the angle  is not determined ). 
+By symmetry , we may assume that v and ware both non-zero. Let 
+u = wv and apply the law of cosines to the triangl e with sides parallel 
+to u, v and w: 
+u2 = v2 + w2  2vw cos . 
+We have already seen that the LHS of this equation expands to 
+v v  2v w+ ww= v2  2v w+ w.   
+Cancelling the common terms v2 and w2 from both sides, and 
+dividing by 2, we get the desired formula.  
+We can use (2.5) to nd the angle between two vectors: 
+Example 2.6. Let v =  + kand w= +j. Then 
+1= v  w= vw cos  = 2 cos . 
+Ther efore cos  = 1/2 and so  =2/3. 
+Denition 2.7. We say that two vectors v and win R3 are ortho g
+onal if v w=0. 
+Remark 2.8. If neither v nor ware the zero vector, and v w=0 then 
+the angle between v and wis a right angle. Our convention is that the 
+zero vector is ortho gonal to every vector. 
+Example 2.9. , jand kare pairwise ortho gonal. 
+Given two vectors v and w, we can project v onto w. The resulting 
+vector is called the projection of v onto wand is denot ed projwv. For 
+example, if Fis a force and wis a direction, then the projection of F
+onto wis the force in the direction of w. 
+As projwv is parallel to w, we have 
+projwv = w, 
+for some scalar . Lets determine . Lets deal with the case that 
+  0 (so that the angle  between v and wis between 0 and /2). If 
+we take the norm of both sides, we get 
+ projwv = w = w, 
+2</text>
+        </slide>
+        <slide>
+          <slideno>2</slideno>
+          <text>(note that   0), so that 
+ =  projwv. w 
+But 
+cos  =  projwv, v 
+so that 
+ projwv = v cos . 
+Putting all of this together we get 
+ = v cos  
+w
+= vw cos 
+w2 
+v w=  . w2 
+There are a number of ways to deal with the case when &lt; 0 (so 
+that  &gt; /2). One can carry out a similar analysis to the one given 
+above. Here is another way. Note that the angle  between wand 
+u = v is equal to    &lt; /2. By what we already proved 
+u wprojw w. u = w2 
+But proju =  projv and u w= v w, so we get the same formulaw w  
+in the end. To summarise: 
+Theorem 2.10. If v and ware two vectors in R3, where wis not zero, 
+then   v wprojw w. v = w2 
+Example 2.11. Find the distanc e d between the line l containing the 
+points P1 = (1, 1, 2) and P2 = (4, 1, 0) and the point Q = (3, 2, 4). 
+Supp ose that R is the closest point on the line l to the point Q. Note 
+that P1P2 of the line. So we want the QR is ortho gonal to the direction 
+length of the vector P1Q  proj
+P1P
+2 P1Q, that is, we want 
+d = P1Q  projP1Q.P1P
+2 
+Now and P1P2 = (3, 2, 2). P1Q = (2, 3, 2) 
+3</text>
+        </slide>
+        <slide>
+          <slideno>3</slideno>
+          <text>We have 
+2 =32 +22 +22 = 17 and P1Q =6+6  4=8. P1P2 P1P2  
+It follows that 
+proj 8 (3, 2, 2).P1P
+2 P1Q = 17
+Subtr acting, we get 
+ 8 (3, 2, 2)= 1(10, 35, 50)= 5(2, 7, 10). P1QprojP1Q = (2, 3, 2)P1P
+2 17 17 17
+Taking the length, we get 
+5 (22 +72 + 102)1/2  3.64. 17
+Theorem 2.12. The angle subtende d on the circumference of a circle 
+by a diameter of the circle is always a right angle. 
+Proof. Supp ose that P and Q are the two endp oints of a diameter of 
+the circle and that R is a point on the circumf erence. We want to show 
+that the angle between QR is a right angle. PR and 
+Let O be the centre of the circle . Then
+PO + and QR = OR. PR = OR QO + 
+Note that PO. QO = Therefore 
+PO + (OR) PR QR =(OR) QO +   
+=(PO + OR) OR  (PO) 
+= 2  PO2OR
+= r 2  r 2 =0, 
+where r is the radius of the circle. PR and It follows that QR are 
+indeed orthogonal.  
+4</text>
+        </slide>
+        <slide>
+          <slideno>4</slideno>
+          <text>MIT OpenCourseWare
+http://ocw.mit.edu 
+18.022  Calculus of Several Variables 
+Fall 2010 
+For information about citing these materials or our Terms of Use, visit: http://ocw.mit.edu/terms .</text>
+        </slide>
+        <slide>
+          <slideno>0</slideno>
+          <text>2. Dot product
+Denition 2.1. Let v =(v1,v2,v3) and w=(w1,w2,w3) be two vectors 
+in R3 . The dot product of v and w, denote d v w, is the scalar  
+v1w1 + v2w2 + v3w3. 
+Example 2.2. The dot product of v = (1, 2, 1) and w= (2, 1, 3) 
+is 
+1 2+(2) 1+(1) (3) = 2  2+3=3.  
+Lemma 2.3. Let u, v and wbe three vectors in R3 and let  be a 
+scalar. 
+(1) (u + v) w= u w+ v w.   
+(2) v w= wv. 
+(3) (v) w= (v w). 
+(4) v	v =0 if and only if v = 0.  
+Proof. (13) are straigh tforw ard. 
+To see (4), rst note that one direction is clear. If v = 0, then 
+v v = 0. For the other direction, suppose that v v = 0. Then 	  
+v12 + v22 + v32 = 0. Now the square of a real number is non-negativ e and 
+if a sum of non-negativ e numbers is zero, then each term must be zero. 
+It follows that v1 = v2 = v3 = 0 and so v = 0.  
+Denition 2.4. If v  R3, then the norm or length of v =(v1,v2,v3) 
+is the scalar 
+v = 
+v v =(v12 + v22 + v32)1/2 .  
+It is interesting to note that if you know the norm, then you can 
+calculate the dot product: 
+(v + w)(v + w)= v v +2v w+ ww   
+(v  w)(v  w)= vw +  vv  2ww.   
+Subtracting and dividing by 4 we get 
+1 v w= ((v + w)(v + w)  (v  w)(v  w)) 	4   
+1 = 4(v + w2 v  w2). 
+Given two non-zero vectors v and win space, note that we can dene 
+the angle  between v and w. v and wlie in at least one plane (whic h 
+is in fact unique, unless v and ware parallel). Now just measure the 
+angle  between the v and win this plane. By convention we always 
+take 0    . 
+1</text>
+        </slide>
+      </slides>
+      <videos/>
+    </lecture>
+    <lecture>
+      <lecture_title>More about derivatives</lecture_title>
+      <lecture_pdf_url>https://ocw.mit.edu/courses/18-022-calculus-of-several-variables-fall-2010/resources/mit18_022f10_l_10/</lecture_pdf_url>
+      <lectureno>&#160;10</lectureno>
+      <slides>
+        <slide>
+          <slideno>2</slideno>
+          <text>Proof. Let a1,a2,...,am be the rows of A. Then the entry in the ith 
+row of Av is ai  v. So, 
+Av2 =(a1  v)2 +(a2  v)2 + +(an  v)2  
++ a12v2 + a22v2  + an2v2 
+=(a12 + a22 +  + an2)v2 
+= K2 2 .v
+Now take square roots of both sides.  
+Theorem 10.5. Let f : A  Rm be a function, wher e A  Rn is 
+open. 
+If f is dier entiable at P , then f is continuous at P . 
+Proof. Supp ose that Df(P )= A. Then 
+lim f(Q)  f(P )  A  
+=0. PQ 
+QP PQ 
+This is the same as to require 
+f(Q)  f(P )  A 
+lim  PQ =0. 
+QP PQ 
+But if this happ ens, then surely 
+lim 
+P f(Q)  f(P )  A PQ =0.
+Q 
+So 
+f(Q)  f(P ) = f(Q)  f(P )  A PQ + A PQ 
+f(Q)  f(P )  A  PQ + A  PQ 
+f(Q)  f(P )  A  PQ. PQ + K
+Taking the limit as Q approac hes P , both terms on the RHS go to zero, 
+so that 
+lim 
+P f(Q)  f(P ) =0, 
+Q
+and f is continuous at P .  
+3</text>
+        </slide>
+        <slide>
+          <slideno>0</slideno>
+          <text>10. More about deriv atives
+The main result is:
+Theorem 10.1. Let A  Rn be an open subset and let f : A  Rm 
+be a function. 
+If the partial derivatives 
+fi ,xj 
+exist and are continuous, then f is dier entiable. 
+We will need: 
+Theorem 10.2 (Mean value theorem) . Let f :[a,b]  R is con
+tinuous and dier entiable at every point of (a,b), then we may nd 
+c  (a,b) such that 
+f(b)  f(a)= f(c)(b  a). 
+Geometrically , (10.2) is clear. However it is surprisingly hard to give 
+a complete proof. 
+Proof of (10.1) . We may assume that m = 1. We only prove this in 
+the case when n = 2 (the general case is similar, only notationally more 
+involved). So we have 
+f : R2  R. 
+Supp ose that P =(a,b) and let  + h2Let PQ = h1 j. 
+P0 =(a,b) P1 =(a + h1,b) and P2 =(a + h1,b + h2)= Q. 
+Now 
+f(Q)  f(P )=[f(P2)  f(P1)] + [f(P1)  f(P0)]. 
+We apply the Mean value theorem twice. We may nd Q1 and Q2 such 
+that 
+f f f(P1)  f(P0)= (Q1)h1 and f(P2)  f(P1)= (Q2)h2. x y 
+Here Q1 lies somewhere on the line segmen t P0P1 and Q2 lies on the 
+line segmen t P1P2. Putting this together, we get 
+f f f(Q)  f(P )= x (Q1)h1 + y (Q2)h2. 
+1</text>
+        </slide>
+        <slide>
+          <slideno>1</slideno>
+          <text>Thus 
+(f (Q1)  f (P ))h1 +(f (Q2)  f (P ))h2 |f(Q)  f(P )  A  | = |x y y | PQ x 
+PQ PQ 
+(f f (f f 
+x (Q1)  x (P ))h1|y (Q2)  (P ))h2|y |
+| + 
+PQ PQ 
+(f (Q1)  f (P ))h1 (f (Q2)  f (P ))h2|x 
+h1x ||y 
+h2y |
++ || ||
+f f f f = |(x(Q1)  x(P ))| + |( y (Q2)  y (P ))|. 
+Note that as Q approac hes P , Q1 and Q2 both approac h P as well. As 
+the partials of f are continuous, we have 
+PQ f lim |f(Q)  f(P )  A  |  lim(( f (Q1) f (P ))+( f (Q2) (P ))) = 0. 
+QP PQ QP |x x||y y |
+
+Therefore f is dieren tiable at P , with deriv ative A.  
+Example 10.3. Let f : A  R be given by 
+x f(x,y)=  , 
+x2 + y2 
+wher e A = R2 Then{(0, 0)}.
+f =(x2 + y2)1/2  x(2x)(1/2)(x2 + y2)1/2 
+= y2 
+.
+x x2 + y2 (x2 + y2)3/2 
+Similarly 
+f xy . y = (x2 + y2)3/2 
+Now both partial derivatives exist and are continuous, and so f is dif
+ferentiable, with derivative the gradient, 
+f = ( (x2 + y2 
+y2)3/2 , (x2 + xy
+y2)3/2 )= (x2 +1 
+y2)3/2 (y 2 , xy). 
+Lemma 10.4. Let A =(aij ) be an m  n matrix. 
+If v  Rn then 
+Av Kv, 
+wher e  
+K =( a 2 )1/2 .ij 
+i,j 
+2</text>
+        </slide>
+        <slide>
+          <slideno>3</slideno>
+          <text>MIT OpenCourseWare
+http://ocw.mit.edu 
+18.022  Calculus of Several Variables 
+Fall 2010 
+For information about citing these materials or our Terms of Use, visit: http://ocw.mit.edu/terms .</text>
+        </slide>
+      </slides>
+      <videos/>
+    </lecture>
+    <lecture>
+      <lecture_title>Planes and distances</lecture_title>
+      <lecture_pdf_url>https://ocw.mit.edu/courses/18-022-calculus-of-several-variables-fall-2010/resources/mit18_022f10_l_4/</lecture_pdf_url>
+      <lectureno>&#160;4</lectureno>
+      <slides>
+        <slide>
+          <slideno>5</slideno>
+          <text>MIT OpenCourseWare
+http://ocw.mit.edu 
+18.022  Calculus of Several Variables 
+Fall 2010 
+For information about citing these materials or our Terms of Use, visit: http://ocw.mit.edu/terms .</text>
+        </slide>
+        <slide>
+          <slideno>1</slideno>
+          <text>not parallel. The cross product is a vector which is orthog onal to both 
+vectors, 
+n = P0P2. P0P1  
+So the equation we want is 
+(P0P2)=0. P0PP0P1   
+We can rewrite this a little. = OP  Expanding and rear P0P OP0. 
+ranging gives 
+OP (P0P2)= (P0P1  OP0  P0P1  P0P2).  
+Note that both sides involve the triple scalar product. 
+Example 4.3. What is the equation of the plane  through the three 
+points, P0 = (1, 1, 1), P1 = (2, 1, 0) and P2 = (0, 1, 1)? 
+and P0P2 =(1, 2, 2). P0P1 = (1, 2, 1) 
+Now a vector ortho gonal to both of these vectors is given by the cross 
+product: 
+n = P0P1  P0P2 
+jk
+1 2 1 
+1 2 2 =
++ k
+2 1
+2 2
+1 1 
+2 1 2 
+2=
+ j
+1
+1
+= 2 + 3k. j  4
+Note that 
+n P0P1 =2  6+4=0, 
+as expected. It follows that the equation of  is 
+2(x  1) + 3(y  1)  4(z  1) = 0, 
+so that 
+2x +3y  4z =1. 
+For example, if we plug in P2 = (0, 1, 1), then 
+2 0+3 1+4=1,  
+as expected. 
+2</text>
+        </slide>
+        <slide>
+          <slideno>0</slideno>
+          <text>4. Planes and distances 
+How do we represen t a plane  in R3? In fact the best way to specify 
+a plane is to give a normal vector n to the plane and a point P0 on the 
+plane. Then if we are given any point P on the plane, the vector P0P 
+is a vector in the plane, so that it must be orthogonal to the normal 
+vector n. Algebraically , we have 
+P0P n =0. 
+Lets write this out as an explicit equation. Supp ose that the point 
+P0 =(x0,y0,z0), P =(x,y,z) and n =(A,B,C). Then we have 
+(x  x0,y  y0,z  z0)(A,B,C)=0. 
+Expanding, we get 
+A(x  x0)+ B(y  y0)+ C(z  z0)=0, 
+which is one common way to write down a plane. We can always rewrite 
+this as 
+Ax + By + Cz = D. 
+Here 
+D = Ax0 + By0 + Cz0 =(A,B,C)(x0,y0,z0)= n OP0.  
+This is perhaps the most common way to write down the equation of 
+a plane. 
+Example 4.1. 
+3x  4y +2z =6, 
+is the equation of a plane. A vector normal to the plane is (3, 4, 2). 
+Example 4.2. What is the e quation of a plane p assing thr ough (1, 1, 2), 
+with normal vector n = (2, 1, 1)? We have 
+(x  1,y +1,z  2) (2, 1, 1) = 0. 
+So 
+2(x  1) + y +1  (z  2) = 0, 
+so that in other words, 
+2x + y  z = 1. 
+A line is determined by two points; a plane is determined by three 
+points, provided those points are not collinear (that is, provided they 
+dont lie on the same line). So given three points P0, P1 and P2, what is 
+the equation of the plane  containing P0, P1 and P2? Well, we would 
+like to nd a vector n orthogonal to any vector in the plane. Note that and are two vectors in the plane, which by assumption are P0P1 P0P2 
+1</text>
+        </slide>
+        <slide>
+          <slideno>2</slideno>
+          <text>Example 4.4. What is the parametric equation for the line l given as 
+the interse ction of the two planes 2x  y + z =1 and x + y  z =2? 
+Well we need two points on the interse ction of these two planes. If 
+we set z =0, then we get the interse ction of two lines in the xy-plane, 
+2x  y =1 
+x + y =2. 
+Adding these two equations we get 3x =3, so that x =1. It follows 
+that y =1, so that P0 = (1, 1, 0) is a point on the line. 
+Now suppose that y =0. Then we get 
+2x + z =1 
+x  z =2. 
+As before this says x =1 and so z = 1. So P1 = (1, 0, 1) is a point 
+on l. P0P = tP0P1, 
+for some parameter t. Expanding 
+(x  1,y  1,z)= t(0, 1, 1), 
+so that 
+(x,y,z) = (1, 1  t, t). 
+We can also calculate distances between planes and points, lines and 
+points, and lines and lines. 
+Example 4.5. What is the distanc e between the plane x  2y +3z =4 
+and the point P = (1, 2, 3)? 
+Call the closest point R. Then PR is ortho gonal to every vector in 
+the plane, that is, n = (1, 2, 3) PR is normal to the plane. Note that 
+is normal to the plane, so that PR is parallel to the plane. 
+Pick any point Q belonging to the plane. Then the triangle PQR has 
+a right angle at R, so that 
+PR =  projPQ. n 
+When x = z =0, then y = 2, so that Q = (0, 2, 0) is a point on the 
+plane. PQ =(1, 4, 3). 
+Now 
+n2 = n.  n. = 12 + 22 + 32 = 14 and n  P Q = 4. 
+So 
+projn P Q = 2 
+7(1, 2, 3). 
+3</text>
+        </slide>
+        <slide>
+          <slideno>4</slideno>
+          <text>is the distanc e between the two lines. 
+Now if we plug in t =0 to both lines we get 
+P  =(2, 1, 2) and P =(1, 2, 1). 
+So P P = (1, 1, 1). 
+Then 
+n2 =12 +32 = 10 and nP P = 2. 
+It follows that 
+projn P P = 2(0, 1, 3) = 1(0, 1, 3). 10 5 
+and so the distanc e between the two lines is 
+1
+10. 5 
+5</text>
+        </slide>
+        <slide>
+          <slideno>3</slideno>
+          <text>So the distanc e is 2
+14. 7 
+Here is another way to proceed. The line through P , pointing in the 
+direction n, will interse ct the plane at the point R. Now this line is 
+given parametric ally as 
+(x  1,y  2,z  3) = t(1, 2, 3), 
+so that 
+(x,y,z)=(t +1, 2  2t, 3+3t). 
+The point R corresponds to 
+(t + 1)  2(2  2t) + 3(3 + 3t)=4, 
+so that 
+14t = 2 that is t = 2 
+7 . 
+So the point R is 
+1 
+thesame answer asbefore(phew!). 
+ (9, 10, 27). 7
+It follows that 
+PR = 1(2, 4, 6)= 2(1, 2, 3),7 7
+Example 4.6. What is the distanc e between the two lines 
+(x,y,z)=(t2, 3t+1, 2t) and (x,y,z) = (2t1, 23t,t+1)? 
+If the two closest points are R and R then RR is orhogonal to the 
+direction of both lines. Now the direction of the rst line is (1, 3, 1) 
+and the direction of the second line is (2, 3, 1). A vector ortho gonal 
+to both is given by the cross product:
+jk
+13 1
+2 31
+= 3k. j  9
+To simplify some of the algebr a, lets take 
+n =k, j + 3
+which is parallel to the vector above, so that it is still ortho gonal to both 
+lines. 
+It follows that RR is parallel to n. Pick any two points P and P  
+on the two lines. Note that the length of the vector 
+projn P P, 
+4</text>
+        </slide>
+      </slides>
+      <videos/>
+    </lecture>
+    <lecture>
+      <lecture_title>Div grad curl and all that</lecture_title>
+      <lecture_pdf_url>https://ocw.mit.edu/courses/18-022-calculus-of-several-variables-fall-2010/resources/mit18_022f10_l_18/</lecture_pdf_url>
+      <lectureno>&#160;18</lectureno>
+      <slides>
+        <slide>
+          <slideno>3</slideno>
+          <text>A solution of the dier ential equation 
+2f =0, 
+is called a harmonic function . 
+Example 18.11. The function 
+c f(x,y,z)= (x2 + y2 + z2)1/2 , 
+is harmonic. 
+4</text>
+        </slide>
+        <slide>
+          <slideno>4</slideno>
+          <text>MIT OpenCourseWare
+http://ocw.mit.edu 
+18.022  Calculus of Several Variables 
+Fall 2010 
+For information about citing these materials or our Terms of Use, visit: http://ocw.mit.edu/terms .</text>
+        </slide>
+        <slide>
+          <slideno>0</slideno>
+          <text>18. Div grad curl and all that 
+Theorem 18.1. Let A  Rn be open and let f : A  R be a dier
+entiable function. 
+If r : I  A is a ow line for f : A  Rn, then the function 
+f  r : I  R is increasing. 
+Proof. By the chain rule, 
+d(f r) 
+dt  (t)= f(r(t))  r(t) 
+= r(t) r(t)  0.   
+Corollary 18.2. A close d parametrise d curve is never the ow line of 
+a conservative vector eld. 
+Once again, note that (18.2) is mainly a negativ e result: 
+Example 18.3. 
+F: R2{(0, 0)}  R2 given by F(x,y)=(x2 + y
+y,x2 + x
+y),2 2 
+is not a conservative vector eld as it has ow lines which are circles. 
+Denition 18.4. The del operator is the formal symb ol 
+     =  + j+ k. x y z 
+Note that one can formally dene the gradien t of a function 
+grad f : R3  R3 , 
+by the formal rule 
+f f f  grad f = f = x  + y j+ z k. 
+Using the operator del we can dene two other operations, this time 
+on vector elds: 
+Denition 18.5. Let A  R3 be an open subset and let F: A  R3 
+be a vector eld. 
+The diver gence of Fis the scalar function, 
+div F: A  R, 
+which is dene d by the rule 
+f f f div F(x,y,z)=  F(x,y,z)= x + y + z . 
+1</text>
+        </slide>
+        <slide>
+          <slideno>1</slideno>
+          <text>The curl of Fis the vector eld 
+curl F: A  R3 , 
+which is dene d by the rule 
+curl F(x,x,z)=  F (x,y,z)
+ 
+F F F F F F 3 2 3 1 2 1   j k. +   = y z x z x y 
+Note that thedeloperator makessense forany ,notjust 3. n n = 
+Sowecanden ethegradien tandthedivergence inalldimensions. 
+Howevercurlonly makessense when =3. n
+ 3R Denition 18.6. The vector eld FA iscalled rotation :  
+free if the curl is zero, curl F= 0, and it is called incompr essible if 
+the diver gence is zero, div F=0. 
+Prop osition 18.7. Let f be a scalar eld and Fa vector eld. 
+(1) If f is C2, then curl(grad f)= 0. Every conservative vector eld 
+is rotation free. 
+(2) If Fis C2, then div(curl F)=0. The curl of a vector eld is 
+incompr essible. 
+Proof. We compute; jk
+  =
+x y z 
+F1 F2 F3 
+curl(grad f)=  (f) 
+jk
+   =
+x y z 
+f f f 
+x y z 
+2f 2f 2f 2f 2f 2f k
+  j+   xz  zx yz 
+zy
+ xy 
+yx
+=
+= 0. 
+2</text>
+        </slide>
+        <slide>
+          <slideno>2</slideno>
+          <text>This gives (1). 
+div(curl F)=  ( f) 
+= 
+jk
+   
+x y z 
+F1 F2 F3 
+=
+   
+x y z 
+   
+x y z 
+F1 F2 F3 
+2F3 2F2 2F3 2F1 2F2 2F1 = xy  xz  yx + yz + zx  zy 
+=0. 
+This is (2).  
+Example 18.8. The gravitational eld 
+cx cy cz  F (x,y,z)= + j+ k, (x2 + y2 + z2)3/2 (x2 + y2 + z2)3/2 (x2 + y2 + z2)3/2 
+is a gradient vector eld, so that the gravitational eld is rotation free. 
+In fact if c f(x,y,z)= (x2 + y2 + z2)1/2 , 
+then F= grad f, so that 
+curl F= curl(grad f)= 0. 
+Example 18.9. A magnetic eld Bis always the curl of something, 
+B= curl A, 
+wher e Ais a vector eld. So 
+div( B) = div(curl A)=0. 
+Ther efore a magnetic eld is always incompr essible. 
+There is one other way to combine two del operators: 
+Denition 18.10. The L aplac e operator take a sc alar eld f : A  
+R and outputs another scalar eld 
+2f : A  R. 
+It is dene d by the rule 
+2f2f2f 2f = div(grad f)= x + y + z . 
+3</text>
+        </slide>
+      </slides>
+      <videos/>
+    </lecture>
+    <lecture>
+      <lecture_title>Vector fields</lecture_title>
+      <lecture_pdf_url>https://ocw.mit.edu/courses/18-022-calculus-of-several-variables-fall-2010/resources/mit18_022f10_l_17/</lecture_pdf_url>
+      <lectureno>&#160;17</lectureno>
+      <slides>
+        <slide>
+          <slideno>5</slideno>
+          <text>MIT OpenCourseWare
+http://ocw.mit.edu 
+18.022  Calculus of Several Variables 
+Fall 2010 
+For information about citing these materials or our Terms of Use, visit: http://ocw.mit.edu/terms .</text>
+        </slide>
+        <slide>
+          <slideno>1</slideno>
+          <text>As Fi is C1 for each i, it follows that f is C2 . But then 
+Fi 2f = xj xj xi 
+2f = xixj 
+= Fj .  xi 
+Notice that (17.4) is a negativ e result; one can use it show that 
+various vector elds are not conserv ative. 
+Example 17.5. Let 
+F : R2  R2 given by F (x, y) = (y, x). 
+Then 
+F1 
+y = 1 and F2 
+x = 1 = 1. 
+So F is not conservative. 
+Example 17.6. Let 
+F: R2 given by F(x,y)=(y,x + y).  R2 
+Then 
+F1 F2=1 and =1,y x 
+so Fmight be conservative. Lets try to nd 
+f : R2  R such that f(x,y)=(y,x + y). 
+If f exists, then we must have 
+f f = y and = x + y. x y 
+If we integrate the rst equation with respect to x, then we get 
+f(x,y)= xy + g(y). 
+Note that g(y) is not just a constant but it is a function of y. Ther e are 
+two ways to see this. One way, is to imagine that for every value of y, 
+we have a separate dier ential equation. If we integrate both sides, we 
+get an arbitr ary constant c. As we vary y, c varies, so that c = g(y) 
+is a function of y. On the other hand, if to take the partial derivatives 
+2</text>
+        </slide>
+        <slide>
+          <slideno>4</slideno>
+          <text>Then 
+1 t x(t)=  sin 2 a a
+y . = x2 + y2 
+Similarly 
+1 t y(t) = cos 2 a a
+x = . x2 + y2 
+So the ow lines are close d curves. In fact this means that Fis not 
+conservative. 
+5</text>
+        </slide>
+        <slide>
+          <slideno>2</slideno>
+          <text>of g(y) with respect to x, then we get 0. Now we take xy + g(y) and 
+dier entiate with respect to y, to get 
+(xy + g(y)) dg x + y = = x + (y). y dy 
+So 
+g(y)= y. 
+Integrating both sides with respect to y we get 
+g(y)= y 2/2+ c. 
+It follows that 
+(xy + y 2/2) = (y,x + y), 
+so that Fis conservative. 
+Denition 17.7. If F: A  Rn is a vector eld, we say that a 
+parametrise d dier entiable curve r : I  A is a ow line for F, if 
+r(t)= F(r(t)), 
+for all t  I. 
+Example 17.8. Let 
+F: R2  R2 given by F(x,y)=(y,x). 
+We check that 
+r : R  R2 given by r(t)=(a cos t,a sin t), 
+is a ow line. In fact 
+r(t)=(a sin t,a cos t), 
+and so 
+F(r(t)) = F(a cos t,a sin t) 
+= r(t), 
+so that r(t) is indeed a ow line. 
+Example 17.9. Let 
+F: R2  R2 given by F(x,y)=(x,y). 
+Lets nd a ow line through the point (a,b). We have 
+x(t)= x(t) x(0) = a 
+y(t)= y(t) y(0) = b. 
+Ther efore, 
+x(t)= aet and y(t)= bet , 
+gives the ow line through (a,b). 
+3</text>
+        </slide>
+        <slide>
+          <slideno>0</slideno>
+          <text>17. Vector fields 
+Denition 17.1. Let A  Rn be an open subset. A vector eld on 
+A is function F: A  Rn . 
+One obvious way to get a vector eld is to take the gradien t of a 
+dieren tiable function. If f : A  R, then 
+,f : A  Rn 
+is a vector eld. 
+Denition 17.2. A vector eld F: A  Rn is called a gradient 
+(aka conservative) vector eld if F= f for some dier entiable 
+function f : A  R. 
+Example 17.3. Let 
+F: R3 {0}  R3 , 
+be the vector eld 
+cx cy cz  F (x,y,z)= + j+ k, (x2 + y2 + z2)3/2 (x2 + y2 + z2)3/2 (x2 + y2 + z2)3/2 
+for some constant c. Then F(x,y,z) is the gradient of 
+f : R3 {0}  R, 
+given by 
+c f(x,y,z)= (x2 + y2 + z2)1/2 . 
+So Fis a conservative vector eld. Notice that if c&lt; 0 then Fmodels 
+the gravitational force and f is the potential (note that unfortunately 
+mathematicians and physicists have dier ent sign conventions for f). 
+Prop osition 17.4. If Fis a conservative vector eld and Fis C1 
+function, then 
+Fi Fj= ,xj xi 
+for all i and j between 1 and n. 
+Proof. If Fis conserv ative, then we may nd a dieren tiable function 
+f : A  Rn such that 
+f Fi = . xi 
+1</text>
+        </slide>
+        <slide>
+          <slideno>3</slideno>
+          <text>Example 17.10. Let 
+F: R2  R2 given by F(x,y)=(x 2  y 2 , 2xy). 
+Try 
+x(t)=2a cos t sin t 
+y(t)=2a sin2 t. 
+Then 
+x(t)=2a( sin2 t + cost) 
+x2(t)  y2(t) = . y(t) 
+Similarly 
+y(t)=4a cos t sin t 
+2x(t)y (t) = . y(t) 
+So 
+F(r(t))r(t)= . f(t) 
+So the curves themselves are ow lines, but this is not the correct 
+parametrisation. The ow lines are circles passing through the origin, 
+with centre along the y-axis. 
+Example 17.11. Let 
+F: R2{(0, 0)}  R2 given by F(x,y)=(x2 + y
+y2 ,x2 + x
+y2 ). 
+Then 
+F1 x2 + y2 2 y2 2 
+(x,y)=  2y=  x. y (x2 + y2)2 (x2 + y2)2 
+and 
+F2 x2 + y2 2 y2 2 
+(x,y)=  2x=  x. x (x2 + y2)2 (x2 + y2)2 
+So Fmight be conservative. Lets nd the ow lines. Try 
+t x(t)= a cos 2a
+t y(t)= a sin 2 . a
+4</text>
+        </slide>
+      </slides>
+      <videos/>
+    </lecture>
+    <lecture>
+      <lecture_title>Line integrals</lecture_title>
+      <lecture_pdf_url>https://ocw.mit.edu/courses/18-022-calculus-of-several-variables-fall-2010/resources/mit18_022f10_l_27/</lecture_pdf_url>
+      <lectureno>&#160;27</lectureno>
+      <slides>
+        <slide>
+          <slideno>1</slideno>
+          <text>As u is orien tation-rev ersing, we have u(c)= b and u(d) = a and so, 
+ d  d 
+f(y(t))y(t) dt = f(x(u(t )))u(t)x(u(t)) dt 
+c c  d 
+=  f(x(u(t )))x(u(t))u(t)dt 
+c 
+a 
+=  f(x(u))x(u) du 
+b b 
+= f(x(u))x(u) du.  
+a 
+Now supp ose that we have a vector eld on C, 
+. F: C  Rn 
+Denition 27.4. The line integral of Falong C is 
+  b 
+Fds = F(x(u)) x(u)du.   
+C a 
+Note that now the orien tation is very importan t: 
+Lemma 27.5. 
+ b 
+F(x(u)) x(u)du =  dF(y(t))  y(t)dtu(t) &gt; 0 c   
+cdF(y(t)) y(t)dtu(t) &lt; 0 a  
+Proof. We deal with the case that u is orien tation- reversing. The case 
+that u is orien tation-preserving is simila r and easier. 
+As u is orien tation-rev ersing, we have u(c)= b and u(d) = a and so, 
+ d  d 
+F(y(t)) y(t)dt = F(x(u(t ))) x(u(t))u(t)dt   
+c c
+a
+= F(x(u)) x(u)du 
+b  b 
+=  F(x(u)) x(u)du.   
+a 
+Example 27.6. If C is a piece of wire and f(x) is the mass density 
+at x  C, then the line integral 
+f ds, 
+C 
+is the total mass of the curve. Clearly this is always positive, whichever 
+way you parametrise the curve. 
+2</text>
+        </slide>
+        <slide>
+          <slideno>2</slideno>
+          <text>Example 27.7. If C is an oriente d path and F(x) is a force eld, then 
+the line integral 
+Fds, 
+C 
+is the work done when moving along C. If we reverse the orientation, 
+then the sign ips. For example, imagine C is a spiral stair case and 
+Fis the force due to gravity. Going up the stair case costs energy and 
+going down we gain energy. 
+Denition 27.8. Let U  Rk and V  Rl be two open subsets. 
+We say that 
+f : U  V, 
+is smooth if all higher order partials 
+nf (x1,x2,...,xk),xi1 ...xin 
+exist and are continuous. 
+Denition 27.9. Now suppose that X  Rk and Y  Rl are any two 
+subsets. We say that a function 
+f: X  Y, 
+is smooth, if given any point a  X we may nd a  U  Rk open, 
+and a smooth function 
+, F: U  Rl 
+such that f(x)= F(x), wher e x  X U (equivalently f|XU = F|XU ), 
+and we put 
+Df(x)= DF(x). 
+We say that fis a (smo oth) dieomorphism if fis bijective and 
+both fand f1 are smooth. 
+Notice that in the denition of a dieomorphism we are now requir
+ing more than we did (before we just required that fand f1 were 
+dieren tiable). 
+Remark 27.10. Note that if X is not very big then Df(x) might 
+not be unique. For example, if X = {x} is a single point, then there 
+are very many dier ent ways to extend fto a function Fin an open 
+neighb ourho od of x. In the examples we consider in this class, this will 
+not be an issue (namely, manifolds with boundary). 
+3</text>
+        </slide>
+        <slide>
+          <slideno>3</slideno>
+          <text>Example 27.11. The map 
+x:[a,b]  Rn , 
+is smooth if and only if there is a constant &gt; 0 and a smooth function 
+y :(a  ,b + )  Rn , 
+whose restriction to [a,b] is the function x, 
+y(t)= x(t) for all t  [a,b]. 
+Lemma 27.12. If 
+x:[a,b]  Rn , 
+is injective for all t  [a,b], then 
+x:[a,b]  C = x([a,b]), 
+is a dieomorphism. 
+4</text>
+        </slide>
+        <slide>
+          <slideno>4</slideno>
+          <text>MIT OpenCourseWare
+http://ocw.mit.edu 
+18.022  Calculus of Several Variables 
+Fall 2010 
+For information about citing these materials or our Terms of Use, visit: http://ocw.mit.edu/terms .</text>
+        </slide>
+        <slide>
+          <slideno>0</slideno>
+          <text>27. Line integrals 
+Let I be an open interval and let 
+x: I  Rn , 
+be a parametrised dieren tiable curve. If [a,b]  I then let C = 
+x([a,b]) be the image of [a,b] and let f : C  R be a function. 
+Denition 27.1. The line integral of f along C is 
+  b 
+f ds = f(x(u))x(u) du. 
+C a 
+Let u: J  I be a dieomorphism between two open intervals. 
+Supp ose that u is C1 . 
+Denition 27.2. We say that u is orientation-pr eserving if u(t) &gt; 
+0 for every t  J. 
+We say that u is orientation-r eversing if u(t) &lt; 0 for every 
+t  J. 
+Notice that u is always either orien tation-preserving or orien tation-
+reversing (this is a consequence of the intermediate value theorem, ap
+plied to the continuous function u(t)). 
+Dene a functio n 
+y : J  Rn , 
+by comp osition, 
+y(t)= x(u(t)), 
+so that y = x u.
+Now supp ose that u([c,d]) = [a,b]. Then C = y([c,d]), so that y 
+gives another parametrisation of C. 
+Lemma 27.3. 
+ b  d 
+f(x(u))x(u) du = f(y(t))y(t) dt. 
+a c 
+Proof. We deal with the case that u is orien tation- reversing. The case 
+that u is orien tation-preserving is simila r and easier. 
+1</text>
+        </slide>
+      </slides>
+      <videos/>
+    </lecture>
+    <lecture>
+      <lecture_title>Change of coordinates: II</lecture_title>
+      <lecture_pdf_url>https://ocw.mit.edu/courses/18-022-calculus-of-several-variables-fall-2010/resources/mit18_022f10_l_26/</lecture_pdf_url>
+      <lectureno>&#160;26</lectureno>
+      <slides>
+        <slide>
+          <slideno>3</slideno>
+          <text>Example 26.4. Consider a ball of radius a. Put the centre of the ball 
+at the point (0, 0, 0). 
+vol(W )= dx dy dz 
+ W 
+= 2 sin  d d d 
+ 2W    a  
+= 2 sin  d d d 
+0 0 0 2    3 a  
+= sin  d d 30 0 0
+ 2   3 
+a= sin  d d 30 0 
+3 2 a  =3 0 [ cos ]0 d 
+ 22a3 
+= d 3 0 
+4a3 
+= . 3 
+4</text>
+        </slide>
+        <slide>
+          <slideno>0</slideno>
+          <text>26. Change of coordinates: II 
+Example 26.1. Let D be the region bounde d by the cardiod, 
+r =1  cos . 
+If we multiply both sides by r, take r cos  over the other side, then we 
+get 
+(x 2 + y 2 + x)2 = x 2 + y 2 . 
+We have 
+area(D )= dx dy 
+ D 
+= r dr d 
+D    1cos  
+= r dr d
+
+ 0 1cos  2r= d 
+ 2 0  (1  cos )2 
+= d 2 
+ 
+1 cos2  =2  cos  + d 2 
+ 
+=2  sin  2  
+ = . 2 
+In R3, we can either use cylindrical or spherical coordinates, instead 
+of Cartesian coordinates. 
+Lets rst do the case of cylindrical coordinates. Recall that 
+x = r cos  
+y = r sin  
+z = z. 
+So the Jacobian is given by 
+(x,y,z)
+cos  r sin  0 
+r cos  (r,,z)=
+sin 
+ 0
+= r.
+(r,,z)
+0 0 1 
+1</text>
+        </slide>
+        <slide>
+          <slideno>2</slideno>
+          <text>vol(W )= dx dy dz 
+ W 
+= r dr d dz 
+ aW 
+ 2  
+a2z2  
+= r dr d dz 
+1 
+ a
+a 0 
+ 2  0 
+
+a= r 2 2z2 d dz 2 00 
+
+aa  2  
+=1 a 2  z 2 d dz 2 a 0 
+a 
+= a 2  z 2 dz 
+a 3 a z= a 2 z  3 a 
+4a3 
+= . 3 
+Now consider using spherical coordinates. Recall that 
+x =  sin  cos  
+y =  sin  sin  
+z =  cos . 
+So 
+(x,y,z) sin  cos  cos  cos   sin  sin 
+(,,)(,,)= sin  sin  cos  sin  sin  cos    cos   sin  0  
+= 2 cos 2  sin  + 2 sin3  = 2 sin . 
+Notice that this is greater than zero, if 0 &lt;&lt;. So, 
+  
+f(x,y,z)dx dy dz = f(,,)2 sin  dr d dz. 
+W W  
+3</text>
+        </slide>
+        <slide>
+          <slideno>4</slideno>
+          <text>MIT OpenCourseWare
+http://ocw.mit.edu 
+18.022  Calculus of Several Variables 
+Fall 2010 
+For information about citing these materials or our Terms of Use, visit: http://ocw.mit.edu/terms .</text>
+        </slide>
+        <slide>
+          <slideno>1</slideno>
+          <text>So,   
+f(x,y,z)dx dy dz = f(r,,z)dr d dz. 
+W W  
+Example 26.2. Consider a cone of height b and base radius a. Put 
+the vertex of the cone at the point (0, 0,b), so that the base of the cone 
+is the circle of radius a, centred at the origin, in the xy-plane. Note 
+that at height z, we have a circle of radius 
+z a 1  . b 
+vol(W )= dx dy dz 
+ W 
+= r dr d dz 
+ b W   
+2  a(1z/b  
+= r dr d dz 
+0 0 0 
+1  b  2 a(1z/b  
+= r 2 d dz 2 0 0 0 
+ b  2 2  1 2 z = a 1  d dz 2 0 0 b  a  z 2 
+= a2 1  dz ba  0 
+= a2bu 2 du 
+1 1 
+= a2bu 2 du 
+0 
+a2b = . 3 
+Example 26.3. Consider a ball of radius a. Put the centre of the ball 
+at the point (0, 0, 0). Note that 
+2 2 2 2 x + y + z = a, 
+translates to the equation 
+2 2 2 r + z = a, 
+so that 
+2 2 r = 
+a z. 
+2</text>
+        </slide>
+      </slides>
+      <videos/>
+    </lecture>
+  </lectures>
+</doc>

@@ -1,0 +1,4840 @@
+<doc>
+  <source>MIT</source>
+  <date>28/01/2023</date>
+  <course>
+    <course_url>https://ocw.mit.edu/courses/1-731-water-resource-systems-fall-2006/</course_url>
+    <course_title>Water Resource Systems</course_title>
+    <course_tags>
+      <list>Engineering </list>
+      <list>Environmental Engineering </list>
+      <list>Hydrology and Water Resource Systems </list>
+    </course_tags>
+  </course>
+  <lectures>
+    <lecture>
+      <lecture_title>River Basin Planning - Screening (PDF)</lecture_title>
+      <lecture_pdf_url>https://ocw.mit.edu/courses/1-731-water-resource-systems-fall-2006/resources/lect17/</lecture_pdf_url>
+      <lectureno>17</lectureno>
+      <slides>
+        <slide>
+          <slideno>3</slideno>
+          <text>Hydropower:  
+
+  
+hydro
+smax hydro,
+shydro
+s t sres
+smax hydro,
+shydro
+s t s hydro
+t sy C C Py C C PB
+,,
+, ~Reservoir hydropower 
+Low-head hydropower 
+ 
+Conditionality constraint : Reservoir-related export, hydropower,  and irrigation facilities cannot 
+be built unless reservoir is built ( ).  1,=res
+t sy
+ 
+Capital costs: 
+For Rio Colorado variable costs are a ssumed linearly proportional to capacity 
+ Reservoir:   res
+sres
+var , sres
+sres
+fixed sres
+s C y K   + =,
+  = fixed capital cost [$] res
+fixed s,
+  = variable capital cost [$/unit capacity] ~  res
+sCres
+fixed s,
+If  ys = 1 (so benefit &gt; 0) fixed costs are incurred.  
+Capital costs for export and import channels, hydropower, and irrigate d land facilities are 
+defined in the same way. 
+ 
+Operating Costs: 
+  [$/season]        = fraction of capital co st required for   
+            operation/maintenance each season res
+sres
+t sres
+t s K O, ,=res
+t s,
+ 
+Capacity Constraints 
+Reservoir storage: 
+         [volume] res
+s t sC S,res
+smax res,
+sres
+s y C C 
+Flows in channels from/to reservoir or river:  
+    or       [volume/season] exp
+s t sC E,res
+smax exp,
+sexp
+s y C C exp
+smax exp,
+sexp
+s y C C 
+    or     [volume/season] imp
+s t sC I,res
+smax imp,
+simp
+s y C C exp
+smax imp,
+simp
+s y C C 
+Land irrigated from reservoir or river diversions  
+    or  [area] land
+s t sC L,res
+smax land,
+sland
+s y C C exp
+smax land,
+sland
+s y C C 
+Hydropower  
+  [energy] hydro
+s t stC P ,
+  or  [power]  res
+smax hydro,
+shydro
+s y C Chydro
+smax hydro,
+shydro
+s y C C
+  = 1 [season] t
+ 
+Flow constraints 
+Flows in each of the 3 seasons assumed to repeat every year 
+      Reservoir inflow  t s t s t s I F Q,*
+, ,+ =
+      Tributary Import t s t s t s T I T, 1 ,*
+, 1 + + + =
+ 4</text>
+        </slide>
+        <slide>
+          <slideno>5</slideno>
+          <text>Interbasin transfers (exports) constructed: 
+ 2 of 2 exports (upper portion) and 1 of 2 imports (central portion) 
+ 
+Other cases using different objec tives, putting priority on regional income, irrigation income, etc, 
+give different configurations, see Major and Lenton (1979). 
+ 
+ 
+The following figures were taken from  Major, David C, and R.L. Lenton. Applied Water 
+Resource Systems Planning. Upper Saddle River, NJ: Pr entice Hall, 1979. ISBN: 0130433640. 
+ 
+Map of Rio Colorado Basin 
+Altitude Profile Along Rio Colorado River 
+Facilities in Rio Colorado Lower Basin 
+Schematic of Proposed Rio Colorado Basin Plan 
+Reservoir Cost-Capacity Curves 
+Reservoir Volume-Depth Curves 
+Reservoir Area-Depth Curves 
+ 
+Figures removed due to copyright restrictions. 
+ 6</text>
+        </slide>
+        <slide>
+          <slideno>4</slideno>
+          <text>Reservoir water balance )] ( [, , , , , , 1 , t s t s t s t s t s t s t sS e D E Q t S S    + =+
+       C y c l i c a l  s t o r a g e  4 , 1 ,s sS S=
+    Outflow to next site t s t s t s t sT I D F, 1 , 1 , , 1 + + ++ + =
+All states are non-negative 
+Evaporation-storage function  is an input derived from topography. ) (, ,t s t sS e
+ 
+Irrigation Constraints 
+Different amounts of land may be cultivated each season. 
+Water required to cultivate land area L  s,t
+    ,   t s t s t s L E, , ,=  = irrigation water requirement [depth/(season area)] t s,
+ 
+Downstream return flow: 
+   ,  t s t s t sE I, , , 1) 1 ( =+ = consumptive use coefficient [unitless] t s,
+ 
+Hydropower Constraints 
+Energy produced depends on rele ase (reservoir) or stream fl ow (low head) and head:  
+   ,  (, , , , t s t s t s s t s S H D P = )  = efficiency [unitless] s
+Head-storage function  is an input derived from topography. ) (, ,t s t sS H
+ 
+Results of Rio Colorado Study 
+Screening model produces following results: 
+ 
+1. Configuration of plan  (facilities built with  their capacities): 
+           , ,res
+sres
+sC yexp
+sexp
+sC y,imp
+simp
+sC y,land
+sChydro
+shydro
+s C y,
+ 
+2. Seasonal values of states: 
+                    t sQ, t sS, ) (, ,t s t sS e t sD, t sI, t sE, t sL, t sP, ) (, ,t s t sS H
+ 
+3. Benefits and costs for each facility and for overall plan: 
+  
+The base run, which maximizes national income, produced following plan: 
+Reservoirs constructed: 
+ 3 of 3 reservoirs in the u pper (Mendoza) portion of basin 
+ 0 of 2 reservoirs in central portion 
+ 1 of 3 reservoirs (Case de  Piedra) in lower portion 
+ 
+Irrigation areas constructed: 
+ 10 of 17 possible areas built in all 3 portions of the basin 
+ 
+Hydropower plants constructed: 
+ 2 of 13 possible plants constructed in  upper portion, on diversion aqueducts  
+ 5</text>
+        </slide>
+        <slide>
+          <slideno>0</slideno>
+          <text>MASSACHUSETTS INSTITUTE OF TECHNOLOGY  
+Department of Civil and Environmental Engineering 
+  
+1.731 Water Resource Systems 
+ 
+ 
+Lecture 17, River Basin Planning  Screening Models 
+Nov. 7, 2006 
+ 
+ 
+River Basin Planning 
+River basin planning is concerned with construction and operation of water resource facilities 
+such as: 
+ Reservoirs 
+ Canals and aqueducts 
+ Irrigation projects 
+ Hydroelectric plants 
+ Navigation facilities (e.g. locks) 
+ 
+There are several basic planning tasks asso ciated with large river basin projects: 
+ Determination of project location  and size 
+ Scheduling and sequencing of projects 
+ Real-time operation  of projects subject to variable (uncertain) inputs 
+ Evaluation of project reliability  and resilience  when inputs are variable (uncertain) 
+ Allocation  of project costs and benefits and associated financing  issues 
+ 
+Focus here on  screening and simulation aspects of planning. 
+ 
+  Identify configuration, operat ing policies, and likely     
+  benefits of the river basin plan 
+ 
+Screening Analyses 
+Begin with a map and schematic diagram id entifying promising sites for facilities. 
+ 
+Facilities considered: 
+1. Reservoirs 
+2. Hydropower 
+3. Irrigation areas 
+4. Exports and irrigation diversions 
+5. Imports and irrigation returns 
+ 
+Organize the plan by:  
+s = site (location of reservoir, river diversion, or low-head hydropower facility) 
+f = facility (reservoir, hydropower, export, import, irrigation) 
+t = time (e.g. season or year) 
+ 
+ 
+ 
+ 1</text>
+        </slide>
+        <slide>
+          <slideno>1</slideno>
+          <text>Relationships between sites and between proposed f acilities at a given site  are represented in a 
+network schematic. 
+ 
+Simple example (one site): 
+ 
+ Original Proposed Plan 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ Downstream flow 
+(measured) 
+*
+t 1, s F+Tributary flow (measured) 
+Site location (s) River Upstream flow (measured) 
+*
+t s,FUpstream flow (measured) 
+Downstream flow 
+(measured) Tributary flow 
+Ts+1, tHydropower 
+Ps,t Release D s,t 
+*
+t 1, s F+River 
+Reservoir storage S s,t Import I s,t 
+Inflow Q s,t 
+Land L s,t 
+Import I s+1,t Export E s,t Evap 
+es,tSs,t *
+t s,F*
+t 1, s T+
+ 
+Primary decision variables considered (defined fo r each site and/or time, in compatible units) 
+ Facilities sizes/capacities  [various units] exp
+simp
+sland
+shydro
+sres
+s C C C C C, , , ,
+ Reservoir storage Ss,t    [volume] 
+ Tributary inflow Ts,t    [volume/season] 
+ Reservoir inflow Qs,t  [volume/season] 
+ Reservoir release Ds,t  [volume/season] 
+ Import and export flow rates Is,t, E [volume/season] s,t  
+ Irrigated land Ls,t [area] 
+ Hydropower output P s,t  [energy] 
+Some proposed facilities may not be built  (i.e. optimum capacities are 0). 
+ 
+Screening Problem Formulation 
+For screening purposes use amortized objective function 
+All hydrologic inputs and deci sion variables represent long-te rm average hydrologic conditions 
+ for each season during a typical yea r 
+All time-dependent variab les repeat every year 
+: 
+ Benefits  are obtained  every season, depend on time-dependent states (export flow, 
+hydropower energy, cultivated land) 
+ Operating costs  are incurred every season, depend on facility capacities 
+ Capital costs  are incurred only at initial tim e, depend on facility capacities 
+ 2</text>
+        </slide>
+        <slide>
+          <slideno>2</slideno>
+          <text>f
+sf
+t s
+tf
+t s
+f sK T r d O B Maximize ) , (   , ,
+designs Project 
+Capital 
+cost Benefit Operating 
+cost 
+ 
+ 
+1 ) 1 () 1 () , (
+ ++=TT
+rr rT r d    Discount factor  r = interest rate, T  = planning period (yrs)  
+ 
+Subject to following constraint categories:  
+1. Capacity  
+2. Flow (water balance)  
+3. Irrigation  
+4. Hydropower  
+ 
+Example: Rio Colorado Basin, Argentina 
+Illustrate screening model with case study base d on plan developed for the Rio Colorado river 
+ basin in Argentina (see figures below). 
+Case study documented in Major D.C. and R.L. Lenton, Applied Water Resource Systems 
+ Plannin g, Prentice Hall, 1979. 
+Base plan designed to maximize national income 
+3 seasons define a typical year ( t  = 1, 2, 3). 
+Sites are located at each reservoir, river export, or low-head (no reservoir) hydropower facility  
+ as indicated on proposed  project map (below). 
+ 
+Seasonal Benefits: 
+For Rio Colorado each benefit is assumed linearly proportional  to an associated state variable 
+States are constrained by capacities . 
+Each capacity  (a decision variable) is constrained by maximum capacity  (a 
+specified input). f
+sCmax f,
+sC
+Benefit, state, and capacity &gt; 0 only if associated f acility integer variable : 1,=f
+t sy
+  
+Export :  
+
+
+
+    
+=
+res
+smax land,
+sland
+s t sexp
+smax land,
+sland
+s t sres
+smax exp,
+sexp
+s t sexp
+smax exp,
+sexp
+s t s
+exp
+t s
+y C C Ly C C Ly C C Ey C C E
+B
+,,,,
+,
+~~~~ Non-reservoir export 
+Reservoir export 
+Non-reservoir irrigated land 
+Reservoir irrigated land 
+ 
+integer variable 0 =  reservoir not built 
+1 = reservoir built=res
+sy  
+ 
+ 
+ 3</text>
+        </slide>
+      </slides>
+      <videos/>
+    </lecture>
+    <lecture>
+      <lecture_title>Variational and Adjoint Methods, Data Assimilation (PDF)</lecture_title>
+      <lecture_pdf_url>https://ocw.mit.edu/courses/1-731-water-resource-systems-fall-2006/resources/lect23/</lecture_pdf_url>
+      <lectureno>23</lectureno>
+      <slides>
+        <slide>
+          <slideno>2</slideno>
+          <text>Evaluate variation  (differential) of object ive at current iteration k  (generally not a minimum): 
+[]
+]) ([ ]) , ( ) , (
+[] [
+1), (), ()) ((,] [ )]) (( [) (
+, 0 , 01
+0,
+,,
+, 1 , 1 m
+ml
+l lT
+tm
+mt l t
+m t
+mt l t
+l t l tm lm lM
+lm l
+d dx dx g
+dxxx g
+dxd Wp tdx
+p txtxmh
+zWtx h zdF
+   
+ 
+ 
+   
+ +
+
+ +
+=+
+ =
+
+
+=+ +
+ 
+The differentials of the state as well as the parameter appear sin ce the state depends indirectly on 
+the parameter through the state eq uation and its initial condition. 
+ 
+In order to identify the desired gradient collect coefficients of each differential: 
+[]m
+mt l tT
+tl t
+ml
+l lm l l lT
+tl t l tp t
+p tt l t
+l tM
+lm l t iT
+i
+dx gW dx dxdxxx g
+p txtxmh
+zWtx h zdF
+    
+ 
+   
+
+
+
+  + + +
+
+
+
+
+
+
+
+ =
+  
+
+=+
+=+ ++
+=
+=
+) , ( ) (] [) , (
+), ()) ((,] [ )]) (( [) (
+,1
+0, 1 , 0 , 0 , 01
+0, 1 , 1,
+,,
+, 1
+1) ( ,1
+0
+ 
+Here   selects measurement times included in the model time step sum. 
+ ==otherwise    0) (   if    1   
+) ( , t i
+t i
+The dxt+1 term can be written: 
+  l l l T l TT
+tl t l tT
+tl t l t dx dx dx dx, 0 , 0 , ,1
+0, ,1
+0, 1 , 1      + = 
+=
+=+ +
+ 
+This gives: 
+[]m
+mt l tT
+tl t
+ml
+l lm l l T l Tp t p t
+p tt l t
+l tM
+lm l t iT
+i
+dx gW dxdxxx g
+p txtxmh
+zWtx h zdF
+   
+ 
+   
+
+
+
+  + +
+
++
+
+
+
+
+
+ =
+ 
+
+=++
+=
+=
+) , ( ) (] [) , (
+), ()) ((,] [ )]) (( [) (
+,1
+0, 1 , 0 , ,, ,
+,,
+, 1
+1) ( ,1
+0
+ 
+We seek the total derivative  d dF/ ) ( rather than the partial derivative    / ) ( F  with x t 
+fixed (since we wish to a ccount for the dependence of d xt on d ). 
+ 
+To isolate the effect of d select the unknown t so the coefficient of dxt  is zero. 
+This t satisfies the following adjoint equation : 
+ 3</text>
+        </slide>
+        <slide>
+          <slideno>4</slideno>
+          <text>Example: 
+Scalar linear state equation (AR1 proce ss) with uncertain initial condition: 
+ t t t t tu x x g x+ = =+  ) , (1  1 ,..., 0 = T t  
+   = =) (0x  
+tu and  , ,   are given. 
+ 
+Measurement equation: 
+    v x zt+ =) (
+ 
+Weights:  
+ 1 , = = W W z  
+ 
+Take 3 measurements  at times 3 2 1, ,z z z * 3 ) 3 ( *, 2 ) 2 ( *, ) 1 (t t t t t t= = = , where t* =  (1 - )-1. 
+ 
+Start search with =. 
+On iteration k with  carry out following steps: k =
+ 
+1. Solve state equation for specified =0x : 
+   
+=+ =t
+jjj t t
+t u x
+1   T t,..., 0=  
+ 
+2. Solve adjoint equation for 0 ..., , 1 =T t :    
+ 0           ) ( ) ( ) (* 3 3 * 3 , * 2 2 * 2 , * 1 * , 1 =  +  +  + = + T t t t t t t t t t t t x z x z x z       
+ 
+3.Compute objective function gradient: 
+ []0) (    =ddF 
+ 
+4. Take next search step 
+ 
+5. If not converged replace k with k  + 1 and return to 1. Otherwise, exit. 
+ 
+ 5</text>
+        </slide>
+        <slide>
+          <slideno>1</slideno>
+          <text>Optimization problem: Best  minimizes generalized least squares  objective function: 
+ 
+  
+Prior information 
+(regularization) term Measurement error 
+term 
+[] []m lm lm lm lM
+Wtx h zzWtx h z F Minimize
+        
+
+
+ +  
+==
+] [21)]) (( [ ] [ )]) (( [
+121) ( 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+    
+ Such that : 
+ ), (1 t t tx g x =+  1 ,..., 0 = T t
+) 
+ (0 =x  
+Indicial notation is used fo r matrix and vector products. 
+ 
+This generalized version of the least-squares objective includes a regularization term  that 
+penalizes deviations of  from a specified first guess  parameter value . 
+ 
+State equation is a differential constraint similar to those considered in Lecture 11.  However, 
+imbedding or response matrix methods described in Lecture 11 are not feasible for very large 
+problems . 
+ 
+Variational/Adjoint Solutions 
+Very large nonlinear least-squares problems (e.g. data assimilation problems) are often solved 
+with gradient-based  quasi-Newton (e.g. BFGS) or conjugate-gradient methods. 
+ 
+Key task in such iterative soluti on methods is computation of the objective function gradient 
+vector   d dF/ ) ( at the current iterate .  k =
+ 
+Find gradient by using a variational approach . Incorporate state equati on equality constraint 
+and its initial condition with Lagrange multipliers T tt ,..., 0 ;=  . 
+ 
+Minimization of the Lagrange-augmented obj ective is the same as minimization of F() since 
+Lagrange multiplier term is identically zero.   
+[] []
+)] ( [ ] ) , ( [] [21
+1)]) (( [ ] [ )]) (( [21) (
+, 0 , 01
+0, , 1 , 1       
+      
+l l lT
+tt l t l t l tm lm lM
+m lm l
+x x g xWtx h zzWtx h zF
+ +  + 
+=+  =
+
+
+=+ + 
+ 
+Here , , and . k =k
+t tx x=k
+t t =
+ 2</text>
+        </slide>
+        <slide>
+          <slideno>0</slideno>
+          <text>MASSACHUSETTS INSTITUTE OF TECHNOLOGY  
+Department of Civil and Environmental Engineering 
+  
+1.731 Water Resource Systems 
+ 
+ 
+Lecture 23 Variational and Adjoint Methods, Data Assimilation 
+Nov. 30, 2006 
+ 
+ 
+Background 
+Environmental models  increasing in size and complexity  
+ In many nonlinear problems (e.g. climate,  atmospheric, oceanographic analysis, 
+subsurface transport, etc.) small-scale variability can have large scale consequences  
+ This creates need to resolve large range of time and space scales (fine grids, extensive 
+coverage) 
+  
+Data sets are also increasing in size and diversity  (new in situ  and remote sensing instruments, 
+better communications, etc.). 
+ 
+Need for automated methods to merge model predictions and measurements  data 
+assimilation 
+ 
+Goal is to provide accurate descriptions of environmental conditions -- past, present, and future.  
+Important example: numerical weather prediction  
+ 
+Data Assimilation as an Optimization Problem 
+Basic objective is to obtain a phys ically consistent estimate of uncertain environmental variables 
+-- fit model predictions to data . 
+ 
+Similar to least-squares problem solved with Gauss-Newton, except problem size  (perhaps 106 
+unknowns, 107 measurements) requires a special approach. 
+ 
+State equation  (environmental model) de scribes physical system. 
+System is characterized by a very la rge spatially/temporally discretized state vector x t:  
+) , ( 1 t tx g x=+     initial state : )(0x    1 ,..., 0 = T t  = model time index 
+ is uncertain  parameter  vector  
+ 
+Measurement equation  describes how measurements assembled in measurement vector z t are 
+related to state: 
+     v x h zt + = ] [) ( M,..., 1=  = measurement index 
+  is uncertain measurement error vector v
+ ) (t = model time step t corresponding to measurement  
+ 
+Procedure: Find  that is most consistent with measurements and prior information. 
+ 1</text>
+        </slide>
+        <slide>
+          <slideno>3</slideno>
+          <text>+=
+
+=+
+M
+plm l t tp tt l t
+l t p t
+xtxmh
+zWtx h zxx g
+1) ( ,,,
+, 1 ,
+)) ((,] [ )]) (( [) , (
+ 
+    
+    ;    0,=p T  
+ 
+This difference equation is solved backward in time ( t = T-1, , 1, 0), from the specified 
+terminal condition  0=T  to the initial value 0, much like the dynamic programming 
+backward recursion. 
+ 
+The measurement residual term  in brackets acts as a forcing for the adjoint equation. 
+The equation forcingxx g
+p tt l t
+l t p t += +
+,,
+, 1 ,) , (   defines a  tangent linear model . 
+ 
+When t satisfies the adjoint equation the de sired objective function gradient is: 
+ []
+pt l tT
+tl t
+pl
+l lp l
+px g
+WddF
+
+  
+
+  = 
+=+) , ( ) (] [) ( ,1
+0, 1 , 0  
+ 
+Start search with =. 
+On iteration k with  carry out following steps: k =
+1. Solve state equation from  t = 0, , T -1, starting with initial condition )(0 =x . 
+2. Solve adjoint equation from  t = T-1, , 0, starting with  terminal condition 0=T . 
+3. Compute objective function gradient from  and tx t sequences 
+4. Take next search step 
+5. If not converged replace k with k  + 1 and return to 1. Otherwise, exit. 
+ 
+This approach requires 2 model evaluations: 
+ 1 forward solution of the state equation 
+ 1 backward solution of the adjoint equation.  
+ 
+By comparison, traditional finite difference evaluation requires N+1 model evaluations 
+N = number of elements in xt = O(106). 
+ 
+Special Case: Uncertain Initial Condition 
+The gradient equation simplifies considerably when  the only uncertain input to be estimated is 
+the initial condition, so   = =) (0x : 
+ []p lp l
+pWddF
+, 0 ] [) (   =  
+ 
+When the prior weighting is small or  is near  the objective gradient is approximately equal 
+to 0 . 
+ 4</text>
+        </slide>
+      </slides>
+      <videos/>
+    </lecture>
+    <lecture>
+      <lecture_title>Linear Programming Overview (PDF)</lecture_title>
+      <lecture_pdf_url>https://ocw.mit.edu/courses/1-731-water-resource-systems-fall-2006/resources/lect7/</lecture_pdf_url>
+      <lectureno>7</lectureno>
+      <slides>
+        <slide>
+          <slideno>2</slideno>
+          <text>Crop Allocation Example 
+Problem is to maximize revenue from two crops , given constraints on available land and water 
+and on minimum total crop grown. 
+ 
+Decision variables: 
+x1 = mass of crop 1 grown (tonnes = 103 kg)  
+x2 = mass of crop 2 grown (tonnes = 103 kg) 
+ 
+  
+constraint  negativity - non                 0 -                 constraint  negativity - non                  0 -                 (tonnes)  constraint  production  Minimum             25 -         (ha)   constraint  Land               76 2          /season) m  (10  constraint   Water           104 2         : such that11 6   Maximize
+2 21 12 12 13 3
+2 12 1
+2 1
+x xx xx xx xx xx x
+,x x
+   + ++
+ 
+Objective, right-hand side, and technological coefficients: 
+ cj   -- Crop values   ($/tonne) 
+ b1   -- Water available  (m3/season) 
+ b2   -- Land available  (ha) 
+A1j -- Water requirements  (103 m3/(season tonne) )  = (unit water requirement in 10-1 
+m/season)/(yield in tonnes/ha) 
+ A2j --  Land requirement  (ha/tonne) = (yie ld in tonnes/ha)-1
+ 
+ 
+ 
+ 
+x1x2 
+(76,0) (52,0) (25,0) (0,25) (0,38) 
+(44,16) Increasi ng F(x) 
+g1(x) water  
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ g2(x) land 
+g3(x) 
+production g4(x) 
+non-neg 
+F 
+g5(x) non-neg 
+ 3</text>
+        </slide>
+        <slide>
+          <slideno>1</slideno>
+          <text>1. Feasibility 
+x* is chosen to be feasible  
+ 
+2. Stationarity 
+If x* is a local maximum then:  
+ ** *] [ ] [ *) (
+Aij i
+jAi j Aij
+i j
+jj j
+jGxb x G
+cxx c
+xx F  =+ 
+= =
+= 
+ 
+For LPP stationarity condition reduces to a set of linear equations  in unknown is 
+  j Aij ic G=*
+The stationarity condition is satisfie d if this set of linear equations is consistent so: 
+] [ ] [* * *
+j Aij Aij c G Rank G Rank= =  
+ 
+There are four ways this can occur: 
+1). Corner solution : x* lies at intersection of n linea rly independent constraints. 
+ n m A= =* * . 
+2). Trivial interior solution : occurs only if c j =0. 
+ 0* *= =Am  
+3). Non-corner boundary solution : x* lies along a boundary but not at a corner. 
+ n m A&lt; =* *  
+4). Degenerate solution : Constraints are linearly dependent  (i.e. number of constraints 
+ exceeds rank of ). *
+AijG
+ * *
+Am&lt;  
+   
+3. Inequality Lagrange multiplier 
+If x* is a local maximum then:  
+ *)(                                0 x i i C   
+In case 1) above there will be only one solution that satisfies this condition. 
+ 
+4. Curvature 
+In LLP curvature condition applies for any x* since Lagrangian Hessian is always zero . 
+ 0)] ( [ ) *, (
+** * 2 2
+=   
+= =
+=lj ik
+x xk jAi j Aij i j j
+lj ik
+k jkl Z Zx xb x G x c
+Z Zx xx LW  
+ 
+ 
+ 
+ 
+ 
+ 
+ 2</text>
+        </slide>
+        <slide>
+          <slideno>0</slideno>
+          <text>MASSACHUSETTS INSTITUTE OF TECHNOLOGY  
+Department of Civil and Environmental Engineering 
+  
+1.731 Water Resource Systems 
+ 
+ 
+Lecture 7, Linear Programming Overview, Sept. 28, 2006 
+ 
+ 
+Linear Programming Problems (LPP) 
+Objectives and constraints are all linear functions  of decision variables: 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Total constraints = m T +m N = m  
+ 
+Optimal Solutions of Line ar Programming Problems: 
+For LPP: 
+Linear objective and constraint functions are both convex  and concave  so: 
+ Feasible region F  for LP is convex  (i.e. constructed from  convex functions gi(x) 0) 
+ Objective function for LP is concave  
+Therefore: 
+A candidate LPP solution x*  that is a local maximum  is also a global maximum . 
+ 
+To check whether x*  is a local/global maximum use necessary conditions: 
+ 
+Focus on constraints that are active  at x*: 
+ 
+  
+ 
+Row i of *
+AG = A ij if i is a technological constraint 
+Row i of  = b*
+Aib i if i is a technological constraint 
+Row i of *
+AG = -ij if i is a non-negativity constraint 
+Row i of  = 0 if i is a non-negativity constraint *
+Aib
+ 
+ 
+ 
+ 
+     ,..., 1          0 ) (    ,..., 1          ) () ,..., , (    2 1
+2 1
+N T T m i NiT i j ij Tij j n
+n,...,x ,x x
+m m m i x x gm i b x A x gsuch that:x c x x x F Maximize
++ + =   ==  ==
+Technological constraints (may be 
+equalities or inequalities) 
+Non-negativity  constraints 
+*) (                                0* * *x i b x G Ai j Aij C = 
+ 1</text>
+        </slide>
+        <slide>
+          <slideno>3</slideno>
+          <text>Pairs of constraints active at the 5 corners of the feasible solution are all linearly independent 
+(i.e. corresponding  have rank *
+AijG 2* *= = =n m A ).   
+So  is consistent and stationarity conditi on is satisfied at each of these corner 
+points. j Aij ic G=*
+ 
+There are no interior, non-co rner boundary, or degenerate solutions for this example. 
+So we need only consider the Lagrange multipliers at the 5 corner solutions: 
+Candidate Active     Lagrange Multipliers 
+Solution Constraints  
+(25, 0)  3, 5  3 = -6    5 = -5 
+(52, 0)  5, 1  1 = +3      5 = -8 
+(44, 16) 1, 2  1 = +1/3   2 = +16/3 
+(0, 38)  2, 4  2 = +11/2  4 = -1/2 
+(0, 25)  4, 3  4 = -11     3 = +5 
+ 
+x* = (44, 16) is the local/global  maximum  since it is the only corner solution with positive 
+Lagrange multipliers for all active constraints. 
+ 
+In this problem the optimum crop allocation mi xes Crop 1 and Crop 2 in a way that uses all 
+available land and water wh ile giving maximum revenue. 
+ 
+It is possible to generate a non-corner (non-unique)  boundary solution  to this problem by 
+changing the objective function to F(x) = 6 x1 + 12x 2.  Then n m A&lt; =* *   
+(2 , 1 , 1* *= = =n m A ). The objective function contours are parallel to g1(x) and any feasible 
+solution along g1(x) is local/global maximum. 
+ 
+It is possible to generate a degenerate solution  to this problem by changing the water constraint 
+to g1(x) = 2 x1 + x2. 152. Then * *
+Am&lt;  () 3 , 2 , 2* *= = =Am n   at the new corner (76, 0). 
+There is not a unique set of is satisfying stationarity condition at this corner. 
+So the inequality Lagrange multiplier condition cannot be checked.  
+ 4</text>
+        </slide>
+      </slides>
+      <videos/>
+    </lecture>
+    <lecture>
+      <lecture_title>Introduction (PDF)
+Example: Irrigation and Salination</lecture_title>
+      <lecture_pdf_url>https://ocw.mit.edu/courses/1-731-water-resource-systems-fall-2006/resources/lect1/</lecture_pdf_url>
+      <lectureno>1</lectureno>
+      <slides>
+        <slide>
+          <slideno>0</slideno>
+          <text>MASSACHUSETTS INSTITUTE OF TECHNOLOGY  
+Department of Civil and Environmental Engineering 
+  
+1.731 Water Resource Systems 
+ 
+ 
+Lecture 1, Introduction, Sept. 7, 2006 
+ 
+ 
+Logistics: 
+ 
+Student survey:  Fill in survey (Problem Set 1)  
+ 
+Text: On-line text suggested background but not essential.  Y ou can download a legal free copy 
+from http://www.wldelft.nl/rnd/intro/ fields/water-management/book.html
+ 
+Class format, grading, etc.:  See syllabus for details 
+ 
+Software used:  MATLAB, GAMS 
+ 
+Introduction to Water Resource Systems: 
+ 
+Key concepts based on words: wat er, resource, and system: 
+ Water is viewed as a valued resource, to be beneficially managed. 
+ Management frequently must deal with a complex system composed of many 
+interconnected parts -- It is often difficult to subdivide the original problem into independent subproblems.  How do we define th e system?  How large? Over what time 
+scale? How much detail? Should it incl ude social and political institutions? 
+ 
+We often try to find the best solution  but how do we define best? 
+ 
+Traditional examples of water resource systems problems: 
+ 
+ River basin management  select facilit ies (reservoirs, aqueducts, irrigation 
+infrastructure, etc.) to maximize benefit from resource 
+ Aquifer management  focus on installation a nd operation of wells and recharge areas, 
+longer time scales make water qualit y issues especially important 
+ Capacity expansion  how much shou ld facilities be expanded, when? 
+ Real-time operations  decisions  are. What to do today, considering impacts on the future 
+(e.g.  reservoir operations) 
+ Remediation  select best mix of remedies for cleaning up contamination, especially in 
+subsurface 
+ 
+New examples that go beyond water res ources but deal with environment: 
+ 
+ Hazard prevention/mitigation  how should we respond to hazards such as hurricanes and 
+associated flooding, rebuilding, prevention, etc. 
+ 1</text>
+        </slide>
+        <slide>
+          <slideno>2</slideno>
+          <text>Irrigation Example ( irrigation.m ) 
+ 
+How does irrigation efficiency affect net crop revenue?  Decision variables in boldface.  
+ 
+ Applied wate r 
+(QA , SA) 
+Root zone 
+Salinity = S ET 
+(QE ,0) 
+Infiltration 
+(QI, S )  
+ Assume steady-state. 
+ 
+QA, QE, QI m/yr 
+SA, S gm/m3 
+ 
+ 
+ 
+ 
+ 
+Water mass balance:     Salt mass balance: 
+0=  ) Q A(E I A Q Q      0= ) S A(A S Q QI A  
+Efficiency:      Salinity as a function of efficiency: 
+A AI
+Q QQeEQ-= = 1      eS-SA
+1=  
+ 
+Postulate yield as a function of  salinity (and efficiency): 
+3 1
+max03 1
+max011 1/
+A/
+)S - (SYSY ) Y( 
+
+
+ = 
+
+
+ =eSS  
+ 
+Assume revenue is linearl y proportional to Y:   
+) pAY( ) R(S Y=   
+ 
+Assume applied water cost is  linearly proportional to Q A: 
+0 500 100000.51 Relative 
+yield 
+Salinity  
+eQ QA AA Qc c ) C(E= =  
+ 
+Maximize net revenue (profit) with respect to e: 
+ 
+e ee
+eA Qc)S - (SpAY )   P( MaxE/
+A
+
+
+ =3 1
+max011 
+0.1 0.2 0.3 0.4 0.502004006008001000
+  
+net profit
+revenue
+cost
+Efficiency $ 
+ 
+Optimum efficiency = 0.31 
+ 
+Tradeoff:  Crop revenue vs. applied water cost 
+Constraints:  Mass balances 
+Uncertainty:  All functions &amp; parameters are uncertain 
+Policy:   What are implicit policy assumptions/implications? 
+ 3(Supporting file present in lecture notes section)</text>
+        </slide>
+        <slide>
+          <slideno>1</slideno>
+          <text>Energy-related topics  petroleum rese rvoir development, carbon sequestration, 
+investment in alternative energy sources, etc. 
+ Merging of diverse types of data for environmental characterization  data fusion, data 
+assimilation 
+ 
+What do these problems have in common? 
+ 
+1. Tradeoffs   optimal decision trades off opposing effects (often benefits vs. costs). 
+2. Constraints   limited resources 
+3. Uncertainty   many uncertainties about future events, physical processes, etc. 
+4. Policy/economics   inevitable when we seek best solutions where people are involved. 
+. 
+ 2</text>
+        </slide>
+      </slides>
+      <videos/>
+    </lecture>
+    <lecture>
+      <lecture_title>General Optimization Concepts (PDF)</lecture_title>
+      <lecture_pdf_url>https://ocw.mit.edu/courses/1-731-water-resource-systems-fall-2006/resources/lect3/</lecture_pdf_url>
+      <lectureno>3</lectureno>
+      <slides>
+        <slide>
+          <slideno>2</slideno>
+          <text>A solution improvement mechanism  challenging for nonlinear problems, often based 
+ on optimality conditions, sometimes ad hoc . 
+ 
+ 
+Types of search procedures: 
+ Exhaustive Searches  - For discrete problems : 
+Move methodically through all (or sometimes a subset) of the feasible solutions to 
+determine which has best objective value. 
+ Selective Searches   For continuous problems:  
+Use information from current and past candi date solutions (e.g.  objective value or 
+objective gradient) to determin e next feasible solution.  
+ 
+For now, focus on continuous probl ems and selective searches. 
+ 
+Global vs. Local Maxima for Continuous Problems 
+In practice, it is much easier to find  local optima: 
+x* is a local maximum  if F(x*)  F(x) for all feasible  x near  x* 
+x* is a local minimum  if F(x*)  F(x) for all feasible  x near  x* 
+ 
+Two key questions : 
+1. When is a local  optimum also global  optimum? 
+2. How do we know when a part icular candidate solution x* is a  local optimum ? 
+ 
+What can we say about  global optimality  based on  local properties  (near x*) ? 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ Global optima cannot  be 
+identified from local properties ! 
+Except in certain special cases 
+Feasible Region F(x) 
+Local max 
+Nonunique local min Global max 
+Inflection pt 
+Global min      dF (x)/dx=0 
+    dF (x)/dx  0 
+x 
+ 3</text>
+        </slide>
+        <slide>
+          <slideno>0</slideno>
+          <text>MASSACHUSETTS INSTITUTE OF TECHNOLOGY  
+Department of Civil and Environmental Engineering 
+  
+1.731 Water Resource Systems 
+ 
+ 
+Lecture 3, General Optimization Concepts 1, Sept. 14, 2006 
+ 
+ 
+Problem Formulation : 
+ 
+  ,..., 1          0 ) ,..., , (    ,..., 1          0 ) ,..., , (: such that) ,..., , (    Maximize
+2 12 12 1
+2 1
+m r i x x x gr i x x x gx x x F
+n in in
+n,...,x ,x x
++ = = = 
+ 
+ 
+Strict equality constraints  
+   Inequality constraints 
+ 
+Basic components: 
+ n decision variables   ] ,..., , [2 1 n i x x x x x = , collectively define a decision strategy. 
+ Scalar objective function   measures performance of decision 
+strategy  ) ,..., , ( ) (2 1 nx x x F x F 
+ r equality constraints g i(x), i=1,, r  
+ n-r inequality constraints g i(x), i= r + 1,, m 
+ 
+Note: 
+ Minimization of F(x) is maximization of F(x) 
+ g(x) &gt; 0 is same as g( x) &lt; 0 
+ 
+Feasible region F :  Set of x that satisfies constr aints (depends only on gi(x)). 
+ 
+Discrete optimization: F  consists of a finite numb er of feasible solutions  
+ 
+x2
+A           B        CA 
+ 
+ 
+B 
+ 
+ 
+C F  consists of 7 discrete x1 and x2 values, 
+indicated b y circles 
+ 
+x1F F 
+F F F 
+F F  
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+g1(x) = -1 fo r (x1, x2) = {AA, AB, AC,  BA, BB, CB, CC } 
+g1(x) = +1 o therwise 
+ 
+ 1</text>
+        </slide>
+        <slide>
+          <slideno>1</slideno>
+          <text>Continuous (non-discrete) optimization:  F  consists of an infinite number of feasible solutions 
+ 
+ 
+ x2 
+x1  
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Solving Opt imization Problems 
+ 
+Objectiv e in optim izatio n is to f ind the  best decision stra tegy among all feasible possibilities: 
+    We seek a  global optimum  
+ 
+Most common way to find optim um for large problem s is to use an  iterative search : 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+An iterative search algorithm  needs: 
+ A method for selecting an initia l feasible so lutio n - Can be form ulated as a secondary 
+optim ization problem  
+ A stopping criterion that detects following: 
+1. No feasible solution   no way to satisf y all constraints 
+2. Optim al solution found  satisfies optimality co nditions  
+3. Objective function unbounded over feasib le region  - Objective can be infinite  
+within feasible region. F  is bounded by curves corresponding 
+to gi(x) = 0. 
+Interior of F  is set of  points th at satisfy 
+gi(x) &lt; 0. F 
+g2(x)  0 
+g1(x)  0 
+g3(x)  0 g1(x) = 0 g2(x) = 0 
+g3(x) = 0 
+Evaluate 
+objective 
+functio
+Move to a 
+better feasib le 
+solutioStoFeasib l
+?
+Try
+again Pick initi al  
+solutioStart 
+Yes No Yes 
+No Evaluate 
+objective 
+functio
+Move to a 
+better feasib le 
+solutioStoFeasib l
+?
+Try
+again Pick initi al  
+solutioEvaluate 
+objective 
+function 
+Move to a 
+better feas ible 
+solut ion Stop Feasi ble 
+? 
+Try 
+again ?Pick initial 
+solut ion Yes 
+Exit 
+No
+ 2</text>
+        </slide>
+      </slides>
+      <videos/>
+    </lecture>
+    <lecture>
+      <lecture_title>Linear Programming Sensitivity Analysis (PDF)</lecture_title>
+      <lecture_pdf_url>https://ocw.mit.edu/courses/1-731-water-resource-systems-fall-2006/resources/lect9/</lecture_pdf_url>
+      <lectureno>9</lectureno>
+      <slides>
+        <slide>
+          <slideno>1</slideno>
+          <text>The objective function changes continuously as b1 changes.  Slope is constant and equal to i so  
+long as C (x*) remains the same; 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+In general, slope of each segment = i i b x F= / )(  = sensitivity of objective to bi. for a given 
+C (x*). For this example, this sensitivity has units of $/tonnes of water, which measures the value 
+of additional water.  Accordingly, i is called the shadow price  of water. 
+ 
+In the crop allocation example the i i b x F= / )(  vs. b 1 plot shows how the water shadow price 
+decreases as available water increases . This plot is called a derived demand , since it indicates 
+how the demand for water (price that farmer is w illing to pay) changes as more water becomes 
+available.  For b1 &gt; 152 additional water cannot be us ed and shadow price drops to i = 0. 
+ 
+Shadow price for a resource always  decreases as more resource becomes available . 25 104 38 152 275 
+b1 418 456 
+1/3 
+11/1 OriginaloptimumF(x) 
+Not to scale g3(x) 
+supply g1(x) 
+waterg2(x) 
+landg4(x) 
+non-neg 
+g5(x) non-neg b1 b1 + bx2 
+(0,38)
+1 
+  
+x* 
+(0,25)
+x (25,0) (52,0) (76,0) 1
+ 2</text>
+        </slide>
+        <slide>
+          <slideno>3</slideno>
+          <text>If 11/2   c+  c  22 the land g 1 1 2(x) and water  g1(x) constraints remain active so C (x*) = {1, 
+2} does not change.  Outside this range the active constraint set changes to either C (x*) = {2, 4} 
+or C (x*) = {1, 5} and the optimum solution chan ges to either (0, 38) or (152, 0).  
+As c1 increases  Crop 1 becomes more valuable and ev entually all water is devoted to 
+Crop 1 while some land goes unused. 
+As b1 decreases Crop 2 becomes more valuable and eventually all land is devoted to 
+Crop 2 while some water goes unused. 
+The objective function changes continuously as c1 changes.  Slope is constant and equal to  so 
+long as C (x*) . *
+1x
+ 
+In general, slope of each segment =  = sensitivity of objective to c*/ ) (i ix c x F=   i. for a given 
+C (x*).  
+ 
+Objective function and some cons traint gradients become linearly dependent at point where C 
+(x*) changes.  
+ 
+Technological Coefficients 
+ 
+When a LPP technological coefficient A ij changes 
+ The corresponding constraint function gradients (and tangent planes) rotate. 
+ The shape of the feasible region changes. 
+ The optimum objective function value and optimum solution x* change 
+ Eventually the active constraint set C (x*) also changes. 
+ 
+Some constraint gradients become linearly dependent at point where C (x*) changes.  
+ 
+When the technological coefficients  are resource requirements (as in this example) coefficient 
+changes favor one or another decision variable and the solution changes accordingly. Details can 
+be worked out following an appro ach similar to that outlined above. 
+ 
+Parametric analysis 
+Some LPP optimization software automatically de termines sensitivities and all values where the 
+active constraint set C (x*) over the feasible rang e of problem input values. In GAMS this must 
+be done by looping through discrete values of the changing input, re-solving the optimization 
+problem each time. 
+  
+ 4</text>
+        </slide>
+        <slide>
+          <slideno>2</slideno>
+          <text>Note some constraint gradients beco me linearly dependent at point where C (x*) changes.  
+ 
+ 
+Chan ges in C (x*)  1 
+25 38 1520 
+b 1/3 11 
+Not to scale  
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Objective Function Coefficients 
+When a LPP objective function coefficient c changes i
+ The objective function contourn planes rotate. 
+ The feasible region does not change. 
+ The optimum objective function value changes but the optimum solution x* does not 
+change so long as the active constraint set  C (x*) remains the bsame 
+ Eventually C (x*) also changes. 
+ 
+Focus on example when c1 (price of Crop 1) changes: 
+ F (x) = c 1 x+  c1 2 x2  = 6 x1 + 11 x 2     
+change c1  c1  +  c1
+ 
+g4(x) 
+non-neg x2
+(76,0) (52,0) (25,0) (0,25) (0,38) 
+g1(x) 
+waterg2(x) 
+landci  ci + ci
+g5(x) 
+non-neg g3(x) 
+supp ly  
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 3</text>
+        </slide>
+        <slide>
+          <slideno>0</slideno>
+          <text>MASSACHUSETTS INSTITUTE OF TECHNOLOGY  
+Department of Civil and Environmental Engineering 
+  
+1.731 Water Resource Systems 
+ 
+ 
+Lecture 9, Linear Programming Sensitivity Analysis, Oct. 5, 2006 
+ 
+ 
+Overview 
+An LPP depends on 3 types of problem inputs : 
+ Right-hand side  values (e.g resource limits)   b  i
+ Objective function  coefficients (e.g. unit costs)  cj 
+ Technological  coefficients (e.g. resource requirements) Aij  
+ 
+All may be uncertain or subject to change. 
+We wish to investigate sensitivity  of optimal solution to these coefficients. 
+ 
+n mA= =* * Suppose that optimal solution x* lies at a feasible region corner  defined by  
+linearly independent constraint  gradients, with a correspond ing set of active constraints C(x*).  
+ 
+When the problem inputs are ch anged slightly the active set C (x*) may remain the same while 
+the optimum solution may or may not change . As the input change becomes greater C (x*) may 
+also change.  Each input type  behaves somewhat differently. 
+ 
+Right-hand Side Values 
+As the right-hand side values change: 
+ The position but not the gradient of the co rresponding constraint function changes. 
+ The shape of the feasible region changes. 
+ The optimum objective function value and optimum solution x* change 
+ Eventually the active set C (x*) also changes. 
+ 
+Focus on example when b1 (water availability) changes: 
+ g1(x) = 2  x1 + x2   b1 = 104   
+ 
+change b1  b1  +  b1
+ 
+If 38   b1+  b  152 the water  g 1 1(x) constraints and land g2(x) constraints remain active so     
+C (x*) = {1, 2} does not change.  Outside this range th e land constraint is no longer active, so the 
+constraint set changes to either C (x*) = {1, 4} or C (x*) = {1, 5}.  
+As b1 increases water is eventually no longer lim iting and only Crop 1 is grown because 
+it uses less land. 
+As b1 decreases water is eventually too limited to permit all the land to be used and only 
+Crop 2 is grown because it uses less water. 
+ 1</text>
+        </slide>
+      </slides>
+      <videos/>
+    </lecture>
+    <lecture>
+      <lecture_title>Optimization over Time, Discounting (PDF)</lecture_title>
+      <lecture_pdf_url>https://ocw.mit.edu/courses/1-731-water-resource-systems-fall-2006/resources/lect14/</lecture_pdf_url>
+      <lectureno>14</lectureno>
+      <slides>
+        <slide>
+          <slideno>1</slideno>
+          <text>=+ =N
+ttt
+PN B r B
+1) 1 ( 
+=+ =N
+ttt
+PN C r C
+1) 1 (  
+  
+Present Value Example: 
+We wish to size a facility (e.g. a reservoir) that gives benefits B(x, I
+Benefit B 0 B1 1),  BN(x, I30B ) that are 
+received during each of the 30 years in the project life. 
+N = 30 = project life 
+x = facility size 
+It = specified time-dependent input (e.g. reservoir inflow). 
+r = interest rate 
+ 
+The input could be a historical ti me series that is assumed to re present likely fluctuations in 
+future inputs. The benefit is cr edited at the end of each year.  
+ 
+The reservoir capital cost Ccap is incurred at the initial time t = 0. A constant operating cost Cop 
+is incurred at the end of  each of the 30 years ( t = 1, , 30).   
+ 
+The optimal facility size maximizes the present value  of the net benefit: 
+    
+=
+=+   + =  =30
+130
+10 0 ) 1 ( ) ( ) ( ) , ( ) 1 ( ) ( ) ( ) (
+tt
+op cap
+tt ttr x C x C I x B r x C x B x F
+ 
+ 
+The optimal solution depends on the shape 
+of the benefit and cost functions. Often, B
+Optimum 
+size Present value 
+Size xB0 
+(x)  is concave in x and C0 (x) is convex  for 
+sufficiently large  x. 
+ 
+ 
+ 
+ 
+ 
+ 
+In this case if no cons traints are active the 
+optimum occurs where: 
+ 0) ( ) ( ) (0 0=  =dxx dC
+dxx dB
+dxx dF     or      
+dxx dC
+dxx dB ) ( ) (0 0=  
+ 
+This is the value of x  where the marginal increase in presen t value cost just starts to exceed the 
+marginal increase in present value benefit. 
+ 
+Amortization: 
+Amortization spreads an initial benefit B B0 (or expense C0) equally over N periods (so BtB  = B  and 
+Ct = C): Cost C 0 
+dxdC0dxdB0
+ 2</text>
+        </slide>
+        <slide>
+          <slideno>2</slideno>
+          <text>+ += + =
+=
+NN N
+tt
+r rrB r B B
+) 1 (1 ) 1 () 1 (
+10
+
+
+
++ +=NN
+r rrC C
+) 1 (1 ) 1 (
+0    
+ 
+Capital recovery 
+factor  
+ 
+The equal installments are: 
+
+
+
+
+ ++=
+1 ) 1 () 1 (
+0NN
+rr rC C
+
+
+
+
+ ++=
+1 ) 1 () 1 (
+0NN
+rr rB B       
+ 
+Amortization Example: 
+We wish to determine optimal size x of a facility (e.g. a reservoir) based on its performance over 
+a typical year  that is divided into 2 seasons. The inputs I1 and I 2 (e.g. reservoir inflow) for the 
+two seasons are derived from long-term averages  (i.e. climatology).  The corresponding benefits 
+are B(x, I B1 1) and B2(x, I).  2B
+ 
+The reservoir capital cost Ccap is incurred at the initial time t = 0 and is to be amortized over a 
+30 year project life at an interest rate r. A constant operating cost Cop is incurred over the year.  
+ 
+The optimal facility size maximizes the amortized net benefit for the typical year: 
+  
+
+
+
+
+ ++  =
+=1 ) 1 () 1 () ( ) ( ) , ( ) (3030 2
+1rr rx C x C I x B x Fcap op
+tt t  
+ 
+The economic assumptions used here are the same as those used in the present value example but 
+the inputs are treated in a way that makes the amortization approach more convenient. 
+ 
+An optimization done for a  typical year  usually requires fewer decisi on variables and constraints 
+than one done for the entire project life . However, it cannot account for the effects of unusually 
+wet or dry years.  
+ 
+Implications 
+The classical exponentia l discounting approach 
+outlined above tends to minimize the 
+advantages of future benefits (e.g. abundant clean water for the next  generation) and to 
+minimize the disadvantages of future costs 
+(e.g. increased sea levels due to climate 
+change).   
+ 
+For this reason classica l discounting has been 
+criticized by some environmental economists. Alternatives have been proposed in the economics literature bu t have not yet been 
+widely accepted. Classical exponential di scounting should be used with caution. 
+Present value of $1 
+accrued in the future 
+0 10 20 30 40 5000.20.40.60.81
+Yearsr = 0.05
+r = 0.10
+ 3</text>
+        </slide>
+        <slide>
+          <slideno>0</slideno>
+          <text>MASSACHUSETTS INSTITUTE OF TECHNOLOGY  
+Department of Civil and Environmental Engineering 
+  
+1.731 Water Resource Systems 
+ 
+ 
+Lecture 14 Optimization over Time, Discounting 
+Oct. 26, 2006 
+ 
+ 
+Temporal allocation of benefits and costs 
+Generally benefits and costs of water projec ts are not incurred at the same time.   
+Possible benefit/cost distribution for a project with  a large initial investment (e.g. capital cost): 
+ 
+ 
+ 
+Time Variable benefits incurred 
+throughout project period 
+Smaller operating costs incurred 
+throughout project period 
+Large capital cost incurred at beginning Benefits  
++ 
+Cost 
+-  
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Method used to compare benefits and costs depends on application. 
+ 
+Present value:  Convert all benefits and costs to an  equivalent present value at beginning 
+of project. 
+ 
+Amortization: Convert all benefits and costs to an  equal periodic (e.g. annual) payments 
+ 
+Present value 
+Value of initial investment B B0 at interest rate r after t years is:  
+  0) 1 (B r Bt
+t+ =
+ 
+ received (or a cost C Conversely, a benefit B Bi i incurred)  in year t is equivalent to an initial 
+investment B0 (or cost C): 0B
+    ttB r B+ =) 1 (0 ttC r C+ =) 1 (0
+ 
+Present value of a stream of be nefits (or costs) accrued over N years: 
+ 1</text>
+        </slide>
+      </slides>
+      <videos/>
+    </lecture>
+    <lecture>
+      <lecture_title>Nonlinear Programming Algorithms (PDF)</lecture_title>
+      <lecture_pdf_url>https://ocw.mit.edu/courses/1-731-water-resource-systems-fall-2006/resources/lect12_13/</lecture_pdf_url>
+      <lectureno>12</lectureno>
+      <slides>
+        <slide>
+          <slideno>0</slideno>
+          <text>MASSACHUSETTS INSTITUTE OF TECHNOLOGY  
+Department of Civil and Environmental Engineering 
+  
+1.731 Water Resource Systems 
+ 
+ 
+Lecture 12 &amp; 13, Nonlinear Programming, Oct. 19, 24 2006 
+ 
+ 
+Unconstrained Nonlinear Programming 
+General statement of unconstraine d nonlinear programmi ng (NLP) problem: 
+   ) ,..., , (    Maximize 2 1
+2 1n
+n,...,x ,x xx x x F 
+ 
+All candidate solutions are feasible for unconstr ained problems and optimum always lies inside 
+feasible region. 
+ 
+Necessary Conditions: 
+1. Feasibility 
+Any x* is feasible  
+ 
+2. Stationarity 
+If x* is a local maximum then:  
+ 0*) (=
+jxx F 
+ 
+3. Inequality Lagrange multiplier 
+Not applicable since there are no constraints 
+ 
+4. Curvature 
+If x* is local maximum then:. 
+ 0*) ( ) *, (2 2
+ = =
+k jlj ik
+k jklx xx FZ Zx xx LW 
+ 
+In NLP problems local maxima are usually not ne cessarily global maxima (convexity conditions 
+usually do not hold). 
+ 
+Finding a Local Maximum. 
+Use an iterative search that m oves from one candidate solution  on iteration k to a new 
+candidate solution  on iteration k  + 1: k
+ikx x=
+1 1+ +=k
+ikx x
+ 
+ 
+ 
+ 
+ 
+ 1</text>
+        </slide>
+        <slide>
+          <slideno>4</slideno>
+          <text>2.  should be rank 1, which implies that  for some vectors ukUk
+ik
+ik
+ij v u U=k and vk. 
+3.  should be symmetric  (since BkU Bk+1 should be symmetric)  
+ 
+There are various methods that satisfy these requirements asympto tically (for large k).  One of 
+the most widely used is the Broyden-Fltecher-Goldfarb-Shanno (BFGS) algorithm:  
+ k
+jk
+ik
+lk
+lk
+mk
+mjk
+lk
+ilk
+mk
+lmk
+lk
+ijxx B x B
+x B xU  
+ 
+ +  
+  =1 1 
+When we substitute  and  this simplifies to: k k kp x= k
+ik
+jk
+ijp B =
+ k
+jk
+ik
+lk
+lkk
+jk
+ik
+lk
+lk
+ijp pU  
+  
+ 
++ =1 1 
+ 
+The BFGS update maintains the negative definite ness of the approximate Hessian from iteration 
+to iteration.  
+ 
+As in steepest ascent, the univariate search and gradient evaluation together require many 
+function evaluations on each iteration. 
+ 
+Quasi-Newton characteristics : 
+ No need to derive Hessian  
+ Approximate Hessian is negative definite  
+ Univariate search  for k  is desirable 
+ Many function evaluations required 
+ Good convergence  properties 
+ Somewhat more expensive than steepest ascent but much more  reliable. 
+ 
+Gauss-Newton Methods 
+Unconstrained nonlinear least-squares problems have a special structure that leads to efficient 
+iterative search algorithms . These problems seek to minimize the weighted sum of squared 
+errors between a set of measurements yt (t = 1,, m) and a nonlinear model  that depends 
+on a set of decision variables (or parameters)   (j = 1,, n).  ) (j tx h
+jx
+     ) ,..., , (    Minimize 2 1
+2 1n
+n,...,x ,x xx x x F
+ 
+where  =  =
+=2
+1)] ( [21) ( x h y K x Ftm
+tt t  = sum of weighted squared errors, Kt = positive weight  
+Solve iteratively, starting with an initial estimate . Obtain search step as follows: 0x
+1. Set gradient at new iterate  equal to zero (from stationarity condition): 1+kx
+  0) ()] ( [) (1
+1
+11
+= =+
++
+=+
+
+jk
+t k
+tN
+tt t
+jk
+xx hx h y Kxx F 
+ 5</text>
+        </slide>
+        <slide>
+          <slideno>2</slideno>
+          <text>If the step  is too large the first-order expansion may not be valid. Control the step with kxk, 
+which is derived by maximizing F(xk+1) with respect to k (with pk given): 
+   ) (    Maximizek
+ik k
+kp x F
++
+ 
+Use an iterative univariate search algorithm  to solve this problem  (see Gill et al. for 
+alternatives). This requires multiple evaluations of F(x) on each iteration. 
+ 
+Usually the gradient  is derived numerically , using finite difference or adjoint 
+methods that require multiple evaluations of F (x) on each iteration. jkx x F / ) (
+ 
+Steepest ascent characteristics: 
+ Converges very slowly  (or not at all). 
+ Univariate search  for k  is essential 
+ Many function evaluations required 
+ 
+Newtons Method 
+Derive pk by expanding F(xk + 1) in a second-order Taylor series  about xk
+ (with k = 1, so 
+): k kp x= 
+ K+ ++ =+ k
+jk
+i
+j ikk
+i
+ikk kp px xx Fpxx Fx F x F) (
+21 ) () ( ) (21 
+where: k
+ij
+j ik
+kx xj iHx xx F
+x xx F= = 
+=) ( ) (2 2
+ = objective Hessian 
+ 
+Maximize increase in F(x) with respect to pk  : 
+ k
+jk
+ik
+ijk
+i
+ik
+kpp p H pxx F
+21 ) (   Maximize + 
+ 
+Necessary conditions for this quadra tic optimization problem imply that: 
+    where    = objective gradient k
+ik
+jk
+ijp H =ik k
+ikx x F  = =/ ) (  
+  
+The Newton direction   is solution to this set of linear  eqs. It is an ascent direction if 
+ &lt; 0 (negative definite). Modificat ions are needed at points where  and/or 
+. Modified Newton methods  replace indefinite Hessian by a positive definite 
+approximation (e.g. by using an eigenvalue decomposition). k kp x= 
+k
+ijH 0 / ) (=  ikx x F
+0=k
+ijH
+ 
+ 3</text>
+        </slide>
+        <slide>
+          <slideno>3</slideno>
+          <text>Usually the gradient and Hessian need to be computed numerically , using finite difference or 
+adjoint methods. Exact Hessian computation may be  infeasible for large problems because of the 
+number of function ev aluations required.  
+ 
+Newtons method characteristics : 
+ Hessian must be negative definite  
+ Converges faster than steepest ascent  
+ Many function evaluations required 
+ Very  expensive to compute  if numerical differe ntiation is required. k
+ijH
+ 
+Quasi-Newton Methods 
+Avoid computational disadvantag es of Newtons method and re tain good convergence properties 
+by gradually constructing a negative definite approximation to Hessian. 
+ 
+Basic idea is to use an iterati ve algorithm to update an approx imate negative definite Hessian 
+matrix ., using only information about gradient s and previous search steps.  The search 
+direction  pk
+ijkB B=
+k is found from an equation having the same form as the Newton equation: 
+  k
+ik
+jk
+ijp B =
+ 
+The new solution is usually obtai ned by using a search distance ak obtained from a univariate 
+search: 
+  k k k k k kp x x x x+ =  + =+1
+ 
+The iteration is often initialized with the negative of the identity matrix . 
+Consequently, the first step is a steepest ascent step. ij I B =  =0
+ 
+The approximate Hessian is obtained from:  
+  where  is an update matrix k k kU B B+ =+1 k
+ijkU U=
+ 
+How do we choose ?  Many options ! kU
+ 
+The curvature  of F(x) in the direction  at xk
+ik
+ik
+i x x x = +1 k is the quadratic form .  
+This can be expressed in terms of the objective gradient since: k
+jk
+ijk
+i x H x 
+   since   k
+ik
+ik
+ik
+ik
+ik
+jk
+ijk
+i x x x H x      =     +) (1K+  + =+ k
+ik
+ijk
+ik
+i x H  1
+We wish to obtain the same curvature when we replacekH by  1+kB . This implies: 
+        Quasi-Newton condition .for k  k +1 k
+ik
+jk
+ij x B  +1
+ 
+In most quasi-Newton methods  is chosen subject to following requirements: kU
+1. Bk+1 should satisfy the quasi-Newton condition : 
+ 4</text>
+        </slide>
+        <slide>
+          <slideno>5</slideno>
+          <text>2. Approximate   by a  first-order Taylor series expansion  around previous iteration: ) (j tx h
+  K+ + =+ k
+j
+jk
+t k
+tk
+t xxx hx h x h) () ( ) (1 
+  This is valid only if step  is sufficiently small . k
+jx
+3. Assume . jk
+t jk
+t x x h x x h  =  +/ ) ( / ) (1
+Then stationarity condition reduces to: 
+  k
+ik
+jk
+ijx B= 
+ 
+where: 
+ 
+ik
+t k
+tN
+tt t
+ik
+xx hx h y Kxx F
+ =
+=) ()] ( [) (
+1 
+=+ +
+
+=N
+t jk
+t
+ik
+t
+tk
+ijxx h
+xx hK B
+11 1) ( ) ( 
+ 
+This is the Gauss-Newton  search algorithm.  It has same fo rm as Quasi-Newton algorithm, with 
+a positive definite approximate Hessian kB  computed from the sensitivity derivatives 
+ and with . Sensitivity derivatives are usually be computed 
+numerically, from multiple evaluations of the function h(x). jk
+t x x h / ) ( )1 (= = k k kp x
+ 
+Algorithm performance often improved by adding a positive constant k to diagonals of kB so: 
+ k
+ik
+j ijk k
+ij x B   =  + ] [ 
+ 
+This gives Levenberg-Marquardt  search algorithm.  
+Small k    unmodified Gauss-Newton (steps may be too large) 
+Large k   Steepest descent (steps may be too small) 
+ It is helpful to adjust k dynamically to improve convergence.   Univariate search along  is 
+an alternative. kx
+ 
+Gauss-Newton characteristics : 
+ Specialized algorithm for least-squares (minimization) problems  
+ Approximate positive definite  Hessian is derived from sensitivity derivatives  
+ Many function evaluations required 
+ Good convergence  properties 
+ Most efficient  option for least-squares problems (depe nding on effort required to evaluate 
+sensitivity derivatives). 
+ 
+ 6</text>
+        </slide>
+        <slide>
+          <slideno>1</slideno>
+          <text>Search procedure: 
+Start by selecting an initial solution x0, set k  = 0.  
+1. Test for convergence , if converged set  and exit. kx x=*
+2.  Compute a search direction  vector  k
+ikp p=
+3.  Compute a search distance k  &gt; 0 along . For some search methods kpk is set to 1. 
+4.  Compute the new solution  and go to Step 1 k k k k k kp x x x x+ =  + =+1
+ 
+If search is an ascent method  then F (xk + 1)  F(x) for k sufficiently small. 
+ 
+ 
+ 
+ 
+First determine search direction pk. Then find 
+k that maximizes function along this 
+direction.  
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+There are a number of different search alternatives for UNLP.. 
+ 
+Steepest Ascent/Gradient Search 
+Derive pk by expanding F(xk + 1) in a first-order Taylor series  in   : k
+ik kp x= 
+ K++ =+ k
+ik
+ikk kpxx Fx F x F ) () ( ) (1 where  
+kx x i ik
+xx F
+xx F
+== ) ( ) ( = Gradient 
+ 
+The increase in F(x) is largest when  is aligned with the ob jective function gradient 
+ k
+ip
+jkx x F / ) (:
+ 
+ikk
+ixx Fp=) ( 
+ x0x1x2x3 p1
+x1=1p1
+x1x2
+ 2</text>
+        </slide>
+      </slides>
+      <videos/>
+    </lecture>
+    <lecture>
+      <lecture_title>Capacity Expansion (PDF)</lecture_title>
+      <lecture_pdf_url>https://ocw.mit.edu/courses/1-731-water-resource-systems-fall-2006/resources/lect21/</lecture_pdf_url>
+      <lectureno>21</lectureno>
+      <slides>
+        <slide>
+          <slideno>1</slideno>
+          <text>Following the conventions of dynamic programming, the optimization problem is: 
+  t = 1,, T ) ,..., , (
+,...T t t t
+Tutuu u x F Min
+ 
+where the cost-to-go just before the stage t expansion is the sum of the remaining expansion 
+costs: 
+:  
+==T
+t ii i i T t t t u x f u u x F) , ( ) ,..., , ( 
+ 
+Minimization is subject to the state equation: 
+   T t i u x xi i i ,..., ;1 = + =+
+ 
+and the following constraints on the decision variables: 
+ T t i D xi i ,..., ; ) (=    
+  T t i x xmax i ,..., ; 0 =  
+  T t i u umax i ,..., ; 0 =  
+ 
+ 
+Decision rule  )  at each t is obtained by finding sequence of expansions  that 
+minimizes  for a given capacity  at (t tx uT tu u,...,
+) ,..., , (T t t tu u x Ftx t and a given demand function D ().  
+ 
+Objective Function and Dynamic Programming Recursion 
+The cost of expansions at  different times is expressed as a present value: 
+ )((1(1[) 1 ( ) (() 1 ( ) , ()]1 ) )1t ttt t t t t u cx D x Dr u c i r u x f+ = + =    
+ 
+where: 
+   is obtained by inverting the demand function ) (1
+t t x D=
+ . tc = undiscounted cost of expansion t  
+ 
+This implies: 
+     ,    
+= + =T
+t ii iiT t t t u cx D x Dr u u x F ) ((1(1[) 1 ( ) ,..., , ()]1 )0 ) (1 1=+ +T T x V  
+ 
+The dynamic programming backward recursion is then: 
+ [] ) ( ) , ( ) ( 1 t t t t t t
+tut t u x V x u f Min x V ++ = +    ;   0 ) (1 1=++ T T x V  
+ 
+The expansion and capacity variables ut and x t are discretized and the optimum decision rule 
+ut(xt) is identified by searching through all feasible u t at Stage t, for specified xt and 
+, moving from Stage T + 1 backwards to Stage 1 ) ( 1 t t tu x V++
+ 2</text>
+        </slide>
+        <slide>
+          <slideno>2</slideno>
+          <text>Example: Water Supply System Expansion 
+ 
+Consider capacity expansion of a water supply system that has init ial capacity (0.7 mgd) that just 
+meets initial demand in Year 2000. 
+ 
+Expansion cost (exhibits economy of scale):                         Projected Demand: 
+ Year  Demand  ( MGD) 
+  
+2000 0.7 
+2005 0.9 
+2010 1.1 
+2015 1.7 
+2020 2.2 
+2025 2.5 
+2030 2.7 
+2035 2.8 Capacity (MGD) Cost( 106 $) 
+  
+0.5 20 
+1.0 30 
+1.5 36 
+2.0 40 
+2.5 42 
+ 
+ 
+ 
+ 
+Costs/demands at intermediate capacities/y ears obtained with linearly interpolation. 
+ 
+ Allow up to two more expansions after the initial expansion in 2000 (so problem has 3 
+stages).  
+ Annual interest rate = 0.08 
+ Discretize state and control variable  ranges into intervals of 0.1 mgd.  
+ Assume projected demand is always satisfied. 
+ 
+Solve with MATLAB program Lecture06_21.m . 
+Optimum solution:  u1 = 0.2, u2 = 0.2, u3 = 1.7  
+ 
+ 
+0 5 10 15 20 25 30 3500.511.522.53
+YearCapacity
+u1u3 
+Demand 
+u2  
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 3(Supporting file present in lecture notes section)</text>
+        </slide>
+        <slide>
+          <slideno>0</slideno>
+          <text>MASSACHUSETTS INSTITUTE OF TECHNOLOGY  
+Department of Civil and Environmental Engineering 
+  
+1.731 Water Resource Systems 
+ 
+ 
+Lecture 21 Capacity Expansion 
+Nov. 21, 2006 
+ 
+ 
+Problem Formulation 
+Capacity expansion problems are concerned with the timing  of facility expansions to meet 
+increasing demand. Since demand is difficult to forecast and expansion plans may need to 
+change over time, dynamic programming offers a convenient way to solve these problems. 
+ 
+Basic problem features: 
+ Determine an expansion strategy for a facility (e.g. a water treatment plant) which starts 
+with an initial  capacity  x1 at time  1. 
+ Capacity expansions  u1, u2, , u t , , u T  occur at discrete times 1 , 2 ,, t , ,T  
+(to be determined). These increase capacity to x 2, x3, , x t + 1 , , x T + 1 , respectively. 
+ Expansion t  defines the start of a new stage  that extends from time t to time  t+1. 
+ Capacities are constant  over each stage 
+ The demand  D() at any time   can never exceed the capacity at that time. 
+ The objective is to minimize cost  while satisfying demand.  
+ Cost usually increases le ss at higher capacities ( economy of scale). Basic problem 
+tradeoff is between cost of borrowing capital  for expansion vs. economy of scale 
+obtained with larger expansions 
+ 
+ 
+ 
+Time x1 x3 
+x2 x4 
+u1 u2 u3 
+1 2 3 
+D-1(x2) D-1(x1) Stage 1 Stage 2 Stage 3 . Capacity  xt expansion 
+ 
+ 
+ Demand D( ) 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 1</text>
+        </slide>
+      </slides>
+      <videos/>
+    </lecture>
+    <lecture>
+      <lecture_title>Supply and Demand, Groundwater Management (PDF)</lecture_title>
+      <lecture_pdf_url>https://ocw.mit.edu/courses/1-731-water-resource-systems-fall-2006/resources/lect16/</lecture_pdf_url>
+      <lectureno>16</lectureno>
+      <slides>
+        <slide>
+          <slideno>3</slideno>
+          <text>0                   ] [            : such that 
+5
+1 j05,...1
++ ==
+
+=
+jjj j g jj k jkj j
+p p
+pQ ps  - h h Ls p Rp L Minimize
+ Response matrix 
+Lift-drawdown 
+Supply requirement 
+Non-negativity 
+ 
+Study area is a hypothetical 9 km. by 9 km. (8100 ha) farming region which is discretized, for 
+simulation purposes, with a square grid of 9 by 9 cells, each 100 ha. in area: 
+ 
+9000 m. 35
+43
+4760
+66N 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+The cells are numbered starting in the lower le ft corner of the grid , increasing upward to 
+the upper left corner, continuing from bottom to top in each column, moving from left to right.   
+ 
+ Confined quifer is represented by a tw o-dimensional (vertically averaged) 
+approximation 
+ Candidate water supply wells located in: Cells 35, 43, 47, 60, and 66. 
+ Northern and southern  boundaries:  No-flux 
+ Western boundary: Specified head = 0.0 m. (above mean sea level) 
+ Eastern boundary: Specified head =  20.0 m. 
+ Ground surface at cell i:  hg(i) = h g = 30 m. 
+ Transmissivities: Variable, with a co nductive zone running generally from the 
+northwest to the southeast.   
+ Pumping cost = 0.10 $/Kwhr. 
+ Growing/pumping season = 150 days 
+ 
+In the absence of pumpage, flow mo ves generally from east to west.   
+ 
+Nominal (unpumped) water level elevations h0j (in m. above sea leve l) at the 5 wells are 
+obtained from a finite difference groundwater model: 
+ 
+ 
+ 4</text>
+        </slide>
+        <slide>
+          <slideno>2</slideno>
+          <text>If problem inputs are changed supply and demand curves can shift , changing equilibrium 
+quantity/price. 
+ 
+For a problem where pumped water is used to i rrigate crops lower suppl y costs and/or higher 
+crop prices can shift equilibri um towards higher production. 
+ 
+ 
+Resource 
+Quantity 
+(Q)  Resource 
+Price/cost 
+(P) 
+S(Q)  D(Q)  Nominal supply 
+costs 
+Lower supply costs 
+Nominal 
+crop prices Higher crop 
+prices  
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Example: Groundwater management 
+Consider the problem of pumpi ng groundwater for crop production.   Decision variables include 
+well pumping rates and land a llocated to various crops. 
+ 
+Supply and demand curves for this problem can be derived by considering the consumption and 
+production of water in two related sub-problems. 
+ 
+ Supply sub-problem:  Identify well pumping rates that  minimize pumping cost, subject 
+to constraint that specifies minimum water pumped. Provides a deri ved supply curve.   
+ Demand sub-problem:  Allocate crops to maximize crop revenue, subject to constraint 
+that specifies maximum available irrigati on water. Provides a de rived demand curve. 
+ 
+Illustrate this with an example with 3 crops and 5 wells that withdraw water from a confined 
+aquifer below the farming area.. 
+ 
+Derived Supply 
+The supply problem minimizes th e sum of the pumping costs j jp L  at the 5 wells: 
+  Lj = pumping lift (m) at well j  ;   j =1,,5 
+pj = pumping rate (m3/season) at well j 
+ = coefficient that converts units an d depends on the cost of energy.  
+ 
+Pumping lift depends on drawdown,  which is related to pumping rate are related by a response 
+matrix Rjk derived from a groundwater model. 
+ 
+Total pumping from all 5 wells must provide a specified quantity of water Q (m3/season). 
+ 
+ 3</text>
+        </slide>
+        <slide>
+          <slideno>1</slideno>
+          <text>The corresponding equilibrium price  is PE = D(QE) = S(QE) . 
+ 
+The net benefit is sometimes divided into two parts B = B BCS + BPQRB: 
+Consumers surplus:       EEQ
+CS P dQ Q D B =
+0) (
+ 
+ Producers quasi rent:    =EQ
+E PQR dQ Q S P B
+0) (
+ 
+Consumers surplus  is the extra amount consumer would have paid for QE units if they were 
+purchased in infinitesimally small increments from 0 to QE, rather than in a single batch of QE. It 
+represents the portion of net benefit accruing to the consumer . 
+ 
+Producers quasi-rent  is extra amount produc er obtains by selling QE,units in a single batch 
+rather than in infinitesimally small increments from 0 to QE.  It represents the portion of net 
+benefit accruing to the producer . 
+ 
+In the absence of constraints the quantity a nd price of the resource should converge to the 
+equilibrium values, since there is  always an incentive (for both consumer and producer) to move 
+from non-equilibrium to equilibrium values. 
+ 
+Sometimes imposed limits on prices or quant ities prevent movement to equilibrium: 
+ 
+ 
+ 
+PH 
+Resource 
+Quantity (Q)  Resource 
+Price/cost (P)  S(Q)  
+D(Q)  Supply &gt; Demand 
+(surplus) 
+Imposed price above equilibrium 
+Imposed price 
+below equilibrium PL 
+Demand &gt; Supply 
+(shortage) PE 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Imposed prices above equilibrium  create surpluses  since consumers are not willing to buy all 
+that producers want to supply at high price.. 
+ 
+Imposed prices below equilibrium  create shortages  since producers are not  willing to supply 
+all that consumers want  to buy at low price. 
+ 
+ 2</text>
+        </slide>
+        <slide>
+          <slideno>4</slideno>
+          <text>Well 
+ 35 43 47 60 66 
+H0i (m) 6.77 9.01 13.95 13.01 16.68
+ 
+The response matrix for this problem, which is listed in the table below, is composed of the 
+following partial derivatives, where sj  is drawdown at Well j and p k  is pumpage at Well k: 
+ 0,66 35,43,47,6      0,66; 35,43,47,6     = =
+= k jps
+R
+kj
+jk  
+ 
+These are obtained from a finite difference groundwater model, as described in Lecture 11 . 
+ 
+Response Matrix Coefficients (m/1000 m3/day) 
+  Pumping Well 
+ 35 43 47 60 66 
+35 .215     .123 .054 .071 .031 
+43 .123     .202 .071 .097 .041 
+47 .054     .071 .492 .078 .094 
+60 .071     .097 .078 .212 .054 Response Well 66 .031     .041 .094 .054 .202 
+ 
+The derived supply  S(Q) for this problem is obtained by plotting the shadow price  for the 
+supply constraint vs. this constraints right-hand side value Q (a separate GAMS solution is 
+required for each value of Q). The shadow price is the increa se in pumping cost required to 
+generate an additional unit of water. This price increases linearly since the relationship between 
+quantity pumped and lift is linear. 
+ 
+ 
+ 
+0 2 4 6 8
+x 10400.010.020.030.04
+1000 m3 pumped/season$ revenue/m3 pumpedS(Q) D(Q)  
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ Q 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 5</text>
+        </slide>
+        <slide>
+          <slideno>6</slideno>
+          <text>Coupled Problem 
+ 
+The equilibrium point (but not the supply and de mand curves) for this example can be obtained 
+by solving a coupled problem that combines the supply and demand subproblems. In this case 
+the objective is to maximize net benefit  (crop revenue  pumping cost): 
+ 
+  
+  0                    0            ] [                             8100             10: such that) (  
+025
+1 j145 ,...,1,3,...1
++ ===
+
+=
+jjj j g jj k jkj jj j jj j j j j j
+p p x x
+xps  - h h Ls p Rx Ap x Ap L x x y c Maximize 
+ 
+ 7</text>
+        </slide>
+        <slide>
+          <slideno>0</slideno>
+          <text>MASSACHUSETTS INSTITUTE OF TECHNOLOGY  
+Department of Civil and Environmental Engineering 
+  
+1.731 Water Resource Systems 
+ 
+ 
+Lecture 16 Supply and demand, Groundwater Management 
+Nov. 2, 2006 
+ 
+ 
+Supply and demand 
+Resource management problems often deal with the connection between th e benefits of limited 
+resources (e.g. water) and the cost of supply.  As more of a resource becomes available demand  
+for the resource typically decreases while supply  costs increase. The optimum level of resource 
+use depends on the relationship between supply and demand. 
+ 
+Demand: Price consumer is willing to pay for one  more unit of  resource (depends on value of 
+products produced with resource, change s with amount of resource available). 
+ 
+Supply: Cost of providing one more unit of resource (changes with amount of resource 
+available) 
+ 
+Optimum resource quantity and price/cost define d by intersection of demand and supply curves 
+(equilibrium point ). 
+ 
+ 
+Resource 
+Quantity (Q)  Resource 
+Price/cost (P)Consumers surplus 
+(BCS) 
+Producers quasi-rent  (BPQR ) 
+QE PE Supp lyS(Q)
+Dema ndD(Q)Equilibriumpoint 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+To see this, consider n et benef it: 
+   =QQ
+dQQS dQQD B
+00)( )(
+ 
+Benefit is m aximized w hen  
+ 0)( )( == QS QDdQdB     )( )( QS QD=  
+ 
+Solution to this condition is equilibrium quantity  Q = QE 
+ 1</text>
+        </slide>
+        <slide>
+          <slideno>5</slideno>
+          <text>Derived Demand 
+In this example the demand for water is ge nerated by crop producti on. Crop revenue is 
+maximized by allocating land to crops to make best  use of available land and water. This is an 
+extension of the crop alloca tion problem of Lecture 7: 
+ 
+Decision variables:   = land (ha) devoted to Crops 1, , n nx x x,... ,2 1
+ 
+Objective: Maximize crop revenue  ($) for one growing season 
+ 
+  
+    0       8100            10: such that) (  
+2143,...1
+
+jj jj jj j j j
+x x
+xx AQ x Ax x y c Maximize
+Water constraint  
+Land constraint 
+Non-negativity 
+ 
+Crop yield y j(x) often decreases as more land is develope d since the best land is typically used 
+first. 
+ Crop j  yield function:    (kg/ha) 2
+2 1 ) (j j j j jx y y x y =
+ Crop j  yield coefficients:  y1j (kg/ha),   y1j (kg/ha3) 
+ Crop j  price: cj ($/kg) 
+ Crop j  unit water requirement: A1j (m)     
+ Crop j  land requirement:  A2j (ha/kg) = 1/ yj(x) 
+ 
+To illustrate, use 3 crops w ith the following inputs:  
+ 
+ cj y1,j ($1000/ha) cj y2,j ($1000/ha3)Water Requirement 
+(m/season) 
+Crop 1 0.3    4.5 E-9 0.8   
+Crop 2 0.2 3.05 E-9 0.6 
+Crop 3 0.25 3.8 E-9 1.0 
+ 
+The d erived demand D(Q) for this problem is obtained by plotting the shadow price  for the 
+water constraint vs. this cons traints right-hand side value Q (a separate GAMS solution is 
+required for each value of Q). The shadow price is the increase  in crop revenue obtained from an 
+additional unit of irrigation water. This price decr eases (in a piecewise nonlinear fashion) until it 
+reaches 0.0 (water no longer limiting). 
+ 
+ 
+ 
+ 
+ 
+ 
+ 6</text>
+        </slide>
+      </slides>
+      <videos/>
+    </lecture>
+    <lecture>
+      <lecture_title>Multiobjective Optimization, Utility, Risk Aversion (PDF)</lecture_title>
+      <lecture_pdf_url>https://ocw.mit.edu/courses/1-731-water-resource-systems-fall-2006/resources/lect15/</lecture_pdf_url>
+      <lectureno>15</lectureno>
+      <slides>
+        <slide>
+          <slideno>2</slideno>
+          <text>The nature of the tradeoff is revealed in plot of  F2 vs F 1: 
+ Each  feasible solution  corresponds to a single point in the F2 - F1 plane. 
+ If a solution is inferior  it is possible to increase one of the objectives without decreasing 
+the other. 
+ Non-inferior (Pareto optimal) solutions lie on the Pareto frontier  which forms a 
+boundary separating inferior and infeasible solutions.  
+ Different Pareto optimal solutions represent different tradeoffs  between the two 
+objectives  if one objective is  increased by moving to anothe r Pareto solution the other 
+objective cannot increase (a nd usually decreases). 
+ 
+How can we identify the Pareto frontier in general? 
+Best alternative is usually to carry out a parametric analysis : 
+ Treat all but one objective ( Fi, i =,2,N ) in an N-objective problem as constraints with 
+specified right-hand values for F2,, F N . 
+ Maximize the remaining objective F1.  As the right-hand side values F 2,, F N  are 
+changed the solutions trace out the Pareto frontier.    
+ 
+In the example,  treat crop production objective  as a constraint and maximize environmental 
+quality F2 as a function of F 1: 
+ 
+ 
+constraint  negativity - non                 0 -                 constraint  negativity - non                  0 -                 (tonnes)  constraint  production  Minimum             25 -         (ha)   constraint  Land               76 2          /season) m  (10  constraint   Water           104 2         least at  be must  production  Crop          11 6       : such that        2 5  - ) (    
+2 21 12 12 13 3
+2 11 1 2 12 1 2 1 2
+2,1
+x xx xx xx xx xF     F x xx x ,x x F Maximize
+x x
+   + + + =  
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+The Pareto frontier can be obtained in GAMS by  solving the above problem in a loop which 
+varies F1 from 275 (the minimum feasible Pareto valu e) to 440 (the maximum feasible Pareto 
+value). 
+ 
+Same result is obtained if we treat environmental quality as a constraint and maximize crop 
+production  F1 as a function of F2. 
+ 
+Above concepts apply equally well to nonlin ear and discrete multi-objective optimization 
+problems. 
+ 
+ 
+ 
+ 3</text>
+        </slide>
+        <slide>
+          <slideno>5</slideno>
+          <text>Example:  
+Consider a risk adverse farmer faced with uncerta in revenue because of uncertainty in the farm 
+water supply. 
+ 
+F1 has 2 possible values 1 1F F , each with probability = 0.5. 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Suppose the (concave) utili ty function for this risk adverse farmer is . The farmer 
+can sell a crop option for a price P before the growing season st arts. The option guarantees the 
+farmer revenue P. The actual value of the crop is either ) ln( ) (1 1F F U=
+1 1F F+  or  1 1F F , depending on 
+uncertain water availability. What price is the farmer willing to accept for the option? 
+ 
+Suppose 1000 $1=F , 200 $1=F  
+ 
+If farmer sells the option for price P the mean (certain) utility is 
+ ) ln( ) (1 P F U=  
+ 
+If farmer does not sell the option an d accepts risk the mean utility is: 
+ 89 . 6 34 . 3 55 . 3 ) ln( 5 . 0 ) ln( 5 . 0 ) (1 1 1 = + =  + + = F F F F F U    
+ 
+Equate these two mean utilities and solve for P: 
+  40 . 982 $ ) 89 . 6 exp(= =P
+ 
+So the farmer is willing to sell the crop option for P = $982.40 rather to obtain expected revenue 
+of $1000. The  risk premium  is $17.60. 
+ 
+If the farmer is risk neutral  he would require that P = $1000 and the risk premium would be 
+zero. 
+ Average utility when 
+revenue is uncertain  
+F1 U 
+Average utility when 
+revenue is certain  
+0.5 0.5 0.5 
+0.5 Concave utility function      
+(risk averse) 
+Uncertainty lowers 
+average utility 
+Probabilities: 
+certain values 
+1F F11 1F F+ 1Funcerta invalues
+ 6</text>
+        </slide>
+        <slide>
+          <slideno>3</slideno>
+          <text>Different types of tradeoffs: 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ F1 Here small improvements in 
+environmental quality have a 
+large adverse impact on 
+Knee looks 
+like best 
+compromise F2 
+Here small improvements in revenue have a large adverse 
+impact on environmental Tradeoff is the 
+same 
+No obvious compromise ! 
+F1 F2
+Utility 
+ 
+Tradeoff curves do not tell us which  Pareto optimal solution to adopt. 
+One approach for finding a single opt imum solution is to identify a utility (or preference)  
+function. 
+The utility function defines combinations of F1, F2 ,, F N  values that a particular party 
+(individual, group, etc.) finds equally acceptable .  Contours of constant utility are called 
+indifference curves . 
+ 
+ 
+ 
+F1 Indifference curves 
+(contours of equal utility)  
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Pareto curve can be viewed as an equality constraint  in a new optimization problem where we 
+seek to maximize utility .  Then maximum utility solution lies at the point where the gradients to 
+the utility function and Pareto frontier c onstraint point in th e same direction. 
+ 
+Utility functions are difficult to measure, althoug h economists have developed indirect ways to 
+estimate them from surveys.   
+ 
+A typical example of a two-objective utility function  that may be fit to survey data is 
+the Cobbs-Douglas function: ) , (2 1F F UIncreasing utility F2 
+Pareto frontier 
+Maximum utility Pareto solution 
+ 4</text>
+        </slide>
+        <slide>
+          <slideno>1</slideno>
+          <text>constraint  negativity - non                 0 -                 constraint  negativity - non                  0 -                 (tonnes)  constraint  production Minimum             25 -         (ha)   constraint  Land               76 2          /season) m  (10  constraint   Water           104 2         : such that        2 5            11 6    
+2 21 12 12 13 3
+2 12 1
+2,12 1
+2 1
+x xx xx xx xx xx x Minimizex x Maximize
+x x,x x
+   + +++
+Pesticide concentrati on in groundwater (ppm) Crop revenue ($)  
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+All constraints and the feasible region are the same as before. 
+ 
+It is convenient to transform the problem so that both objectives are maximized .  Call the 
+negative of pesticide concentr ation environmental quality: 
+ 
+  Maximize
+constraint  negativity - non                 0 -                 constraint  negativity - non                  0 -                 (tonnes)  constraint  production  Minimum             25 -         (ha)   constraint  Land               76 2          /season) m  (10  constraint   Water           104 2         :  that        2 5  - ) (            11 6     ) (    
+2 21 12 12 13 3
+2 12 1 2 1 2
+2,12 1 2 1 1
+2 1
+x xx xx xx xx xx x ,x x F Maximizex x ,x x F+
+ 
+x x,x x
+   + + == Crop revenue ($) 
+Environmental quality (-ppm)  
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+There is a tradeoff  between the revenue and envir onmental quality objectives : As x1 and/or x 2 
+increases crop revenue increases environmental quality decreases (and vice versa) 
+ 
+ 
+ 
+(0,25)(x1, x2) 
+(0, 38)
+0 100 200 300 400 440  -50 
+-252 -200 -150 -100 
+F1 (40, 16)(40, 15)(30, 10) (25, 0)(12, 13)
+Infeasible
+Inferio rPareto 
+frontie rF2 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 2</text>
+        </slide>
+        <slide>
+          <slideno>4</slideno>
+          <text>where  and  are specified (or fit) non-negative coefficients 
+21 2 1 ) , ( F F F F U=
+ 
+The dependence of the utility function on any given objective value is typically nonlinear. 
+ 
+Utility and Risk  
+For the crop allocation example, consid er the dependence of utility on revenue F 1 for fixed 
+environmental quality F2.  
+ 
+To examine effects of uncertain F1 expand U (F1) in a Taylor series around mean revenue 1F:   
+  + 
++ + =2
+1 12
+12
+1 1
+11 1 ) (21) ( ) ( ) ( F F
+FUF FFUF U F U  
+ 
+Mean of this expression is: 
+  +
++ =2
+12
+12
+1 121) ( ) (FFUF U F U    where  variance of F =2
+1F 1
+ 
+When there is no uncertainty :   02
+1=F ) ( ) (1 1F U F U= . 
+When there is uncertainty :         relationship between 02
+1&gt;F ) (1F U and ) (1F U depends on 
+sign of . 2
+12/F U 
+ 
+Three possibilities: 
+ Risk averse :  U(F1) is concave ,  mean utility  is lower  when F 0 /2
+12&lt;  F U 1 is 
+uncertain (risk lowers utility) 
+ Risk neutral : U(F1) is linear ,     mean utility  is the same  when F 0 /2
+12=  F U 1 is 
+uncertain (risk has no effect on utility) 
+ Risk seeking : U(F1) is convex ,   mean utility  is higher when F 0 /2
+12&gt;  F U 1 is 
+uncertain (risk raises utility). 
+ 
+Utility is often a concave function of revenue  (decision-maker is risk averse ) for sufficiently 
+large revenue. 
+ 
+In the crop allocation example this could reflect the fact that the marginal utility gained by 
+having more revenue gradually decreases as environmental quality declines.  
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 5</text>
+        </slide>
+        <slide>
+          <slideno>0</slideno>
+          <text>MASSACHUSETTS INSTITUTE OF TECHNOLOGY  
+Department of Civil and Environmental Engineering 
+  
+1.731 Water Resource Systems 
+ 
+ 
+Lecture 15 Multiobjective Optimization and Utility 
+Oct. 31, 2006 
+ 
+ 
+Multiobjective problems 
+ 
+Benefits and costs are often incommensurate  (measured in different units) are they may accrue 
+to different parties  (equity issues): 
+ 
+Examples: 
+  Benefits     Costs 
+ 
+ Hydropower output   Loss of species habitats 
+ (MWhrs, $)    or recreational opportunities 
+      (Units ???) 
+ 
+ Additional crop revenues  Reduced crop revenues for 
+ for upstream farmers benefiting downstream farmers with 
+ from a water diversion ($)  less water ($)  
+ 
+ Information provided by  Sampling cost ($) 
+ a field monitoring   
+ program (Units ??) 
+ 
+Multiobjective analysis recognizes this by revealing  tradeoffs  among different objectives. 
+ 
+Extension of the crop allocation example 
+ 
+Extend previous example by considering 2 objectives  maximization of crop revenue  and 
+minimization of pesticide co ncentration in groundwater : 
+ 
+Decision variables: 
+x1 = mass of Crop 1 grown (tonnes = 103 kg)  
+x2 = mass of Crop 2 grown (tonnes = 103 kg) 
+ 
+ 
+  
+ 
+ 
+ 
+ 
+ 1</text>
+        </slide>
+      </slides>
+      <videos/>
+    </lecture>
+    <lecture>
+      <lecture_title>Real-time Optimization, Dynamic Programming (PDF)</lecture_title>
+      <lecture_pdf_url>https://ocw.mit.edu/courses/1-731-water-resource-systems-fall-2006/resources/lect19_20/</lecture_pdf_url>
+      <lectureno>19</lectureno>
+      <slides>
+        <slide>
+          <slideno>0</slideno>
+          <text>MASSACHUSETTS INSTITUTE OF TECHNOLOGY  
+Department of Civil and Environmental Engineering 
+  
+1.731 Water Resource Systems 
+ 
+ 
+Lecture 19,20 Real-Time Optimization, Dynamic Programming 
+Nov. 14, 16, 2006 
+ 
+ 
+Real-time optimization 
+Real-time optimization problems rely on decision rules that specify how decisions should 
+maximize future benefit, given the current state  of a system. State dependence provides a 
+convenient way to deal with uncertainty. Some examples: 
+ 
+ Reservoir releases  Decision rule specifies how current re lease should depend on current 
+storage. Primary uncertainty is future reservoir inflow. 
+ 
+ Water treatment  Decision rule specifies how current operating conditions (e.g. temperature 
+or chemical inputs) should depend on curre nt concentration in treatment tank. Primary 
+uncertainty is future influent concentration. 
+ 
+ Irrigation management - Decisi on rule specifies how current applied irrigation water should 
+depend on current soil moisture and temper ature. Primary uncertainties are future 
+meteorological variables. 
+ 
+Real-time optimization can be viewed  as a feedback control process: 
+ 
+ 
+Time loop ut State x t+1Input I t 
+Control System 
+ 
+Decision rule   
+ut(xt) )tI ,tu ,tg(x1 tx=+  
+ t+1 t At each time step: 
+ Observe state 
+ Derive control from decision rule 
+ Apply control. 
+1 ,..., 0= T t 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+State variables: xt (decision variables, depe nd on controls and inputs) 
+Control variables: u (decision variables, selected  to maximize benefit)   t
+Input variables: It (inputs, assigned specified values) 
+Decision rule:   (function that gives u )(t tx u  for any x )  t t
+ 
+State equation:   initial condition:  ), , (1 t t t tI u x g x =+ 0x
+ 
+ 1</text>
+        </slide>
+        <slide>
+          <slideno>2</slideno>
+          <text>Backward Recursion for Benefit-to-go 
+Dynamic programming uses a recursion  to construct decision rule : )(t tx u
+ 
+Define return function )  to be maximum benefit-to-go from t through T : (t tx V
+  [] ) ,..., , ,..., , ( ) (1 1
+1 ,..., 
+=T t T t t t
+Tutut t I I u u x F Max x V
+   
+Separate benefit term for Stage  t+1:  
+  
+
+
+
+
++ = +  + + +
+ ++ ) ,..., , ,..., , ( ) , , ( ) (1 1 1 1 1 1
+1 ,...11 T t T t t t
+Tu tut t t t
+tut t I I u u x F Max x x u f Max x V
+ 
+Replace second term in brackets with definition for : ) (1 1+ +t tx V
+[] ) ( ) , , ( ) (1 1 1+ + ++ =t t t t t t
+tut t x V x x u f Max x V   
+Substitute state equation for xt+1: 
+{} )] , , ( [ )] , , ( , , [ ) (1 t t t t t t t t t t t t
+tut t I u x g V I u x g x u f Max x V++ =   
+ 
+This equation is a backward recursion  for  , initialized with terminal benefit 
+.  Expression in braces depends only on u)(t tx V
+)] , , ( [1 t t t TI u x g V+ t [which is varied to find the 
+maximum], xt [the argument of V (xtt)], and I  [the specified input]. t
+ 
+At each stage find the u that maximizes  for all possible x )(t tx V . t t
+Store the results (e.g. as a function or tabl e) to obtain the desired decision rule . )(t tx u
+ 
+Example 1: Aqueduct Diversions 
+Maximize benefits from water diverted from 2 locations along an aqueduct. 
+Here the stages correspond to aqueduct sections rather than time (T = 2). 
+ 
+State equation: 
+      t = 0, 1, 2 t t tu x x =+1
+ Inflow 
+ x Outflo w x x 0 2 1
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Here stage numbers refer to diversion index  rather than time. 
+Benefit at each stage depends only on  control (diversion ), not on state. 
+Terminal benefit depends on system outflow . No input included  in state equation. u0 u1 
+Diversions &amp; benefitsf0(u0) f1(u1) V2(x2) 
+ 3</text>
+        </slide>
+        <slide>
+          <slideno>7</slideno>
+          <text>2 1  1  
+ 1 
+1 0 
+0 2  1 10 0 3 7 
+8 0 3 5 
+5 0 1 1 
+Optimal 
+control  
+ 
+ 
+ 
+Optimum controls and corresponding 
+return values  
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Return function value  
+ 
+ 
+Note that there is a path leav ing every state value. The optim um paths give a strategy for 
+maximizing benefit-to-go from t onward, for any value of state xt.  
+ 
+Optimal benefit for each possible initial storage is V(x). 00
+ 
+Computational Effort 
+ 
+The solution to the discretized optimization problem can be found by exhaustive enumeration  
+(by comparing benefit-to-go for all possible  combinations). )(t tx u
+ 
+Dynamic programming is much more efficient th an enumeration since it divides the original T 
+stage optimization problem into T smaller problems, one for each stage.  
+ 
+To compare computational effort of en umeration and dynamic programming assume: 
+ State dimension = M , Stages = T, Levels = L 
+ Equal number of levels for ut and x t at every stage 
+ All possible state transiti ons are permissible (i.e. L2 transitions at each stage)  
+Then total number of  evaluations required is: tV
+ Exhaustive enumeration:  LM(T+1)
+2M Dynamic Programming:  TL   
+For M = 1, L  = 10, T  = 10 the number of  evaluations required is:  tV
+11 Exhaustive enumeration:  10
+ Dynamic Programming:   103
+ 8</text>
+        </slide>
+        <slide>
+          <slideno>1</slideno>
+          <text>Dynamic Programming 
+Dynamic programming provides a general framewor k for deriving decision rules. Most dynamic 
+programming problems are divided into stages (e.g. time periods, spatial intervals, etc.): 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ Stage 1 
+0 
+u0 x0 f0(u0, x0, x1) 
+I0 1 2 
+u1 x1 x2 f1(u1 ,x1, x2) 
+I1 Stage 2 
+Stage t t-1 
+ut-1 xt-1 xt ft-1(ut-1, xt-1, xt)
+It-1 t Stage T 
+T-1 
+uT-1 xT-1 XTfT-1(uT-1, xT-1, xT)
+IT-1 T 
+VT(xT) 
+Benefit accrued over Stage t+1 is  : ) , , (1+t t t tx x u f
+ 
+Optimization problem: 
+Select  that maximizes benefit-to-go  (benefit accrued from current time t through 
+terminal time T) at each time t: 1 ,...,T tu u
+  t = 0,, T-1 ) ,..., , ,..., (1 1
+1 ,... 
+T t T t t
+Tutuu u x x F Max
+ 
+) (TTx V where benefit-to-go at t is terminal benefit ( salvage value )  plus sum of benefits for 
+stages t through T-1: 
+:  )( ) , , ( ) ,..., , ,..., (1
+1 1 1 T TT
+t ii i i i T t T t t x V x x u f u u x x F + =
+=+  
+ 
+ 
+ 
+subject to: Benefit-to-go Terminal 
+benefit Benefit from remaining stages 
+ ,..., ; ) , , (1 = =+ T t i I u x g xi i i t i 1   (state equation) 
+ 
+and other constraints on the decision variables: 
+   t t t u x } , {, T Tx } {  at t = 0,, T).  (decision variables lie within some set t
+ 
+Objective may be rewritten if we repeatedly apply state equation to write all  as 
+functions of : ) (t i xi&gt;
+1 1,..., , ,..., ,  T t T t tI I u u x
+  ,..., , ,..., , ( ) ,..., , ,..., (1 1 1   =T t T t t t T t T t tI I u u x F u u x x F )
+ 
+Decision rule  )  at each t is obtained by finding sequence of controls  that 
+maximizes  for a given state  and a given set of specified inputs 
+.  (t tx u1 ,...,T tu u
+) ,..., , ,..., , (1 1   T t T t t tI I u u x Ftx
+1 ,...,T tI I
+ 
+ 
+ 2</text>
+        </slide>
+        <slide>
+          <slideno>4</slideno>
+          <text>Then the optimization of problem at each stage reduces to an exhaustive search  through all 
+feasible levels of  to find the one that maximizes: 
+  j
+tu
+)] , , ( [ )] , , ( , , [1l
+tj
+tk
+t t tl
+tj
+tk
+t tk
+tj
+tt I u x g V I u x g x u f++
+for each feasible  and a single specified input level . k
+txl
+tI
+ 
+This is discrete dynamic programming. 
+ 
+Example 2: Reservoir Operations 
+Maximize benefits from water released fr om reservoir with variable inflows. 
+Stages correspond to 3 time periods (months, seasons, etc.  T = 3). 
+ 
+ 
+ 
+Storage  x t 
+Release u t Inflow I t 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+State equation: 
+      t  = 0, 1, 2 t t t tI u x x+  =+1
+ 
+Total benefit from released water and final storage  x3: 
+ ( ) ( ) ( ) ( ) ,..., , (3 3 2 2 1 1 0 0 2 0 0x V u f u f u f u u x F+++ = ) 
+ 
+Discretize all variables into compatible levels: 
+ u  = {0,1,2}       xt t = {0,1,2) It = {0,1)   t = 0, 1, 2  
+ 
+Inflows: I I I 0 1 2 
+  1 0 1 
+Terminal (outflow) benefits:  V(x) = 0 for all x 33 3 values 
+  
+Benefits for each release: 
+ u f t 0(u0)  f1(u f1) 2(u2) 
+ 0 0 0 0 
+ 1 3 4 1 
+ 2 2 5 3 
+ 
+Possible state transitions are deri ved from state equation, inputs, a nd permissible variable values: 
+Benefit is shown in parentheses after each feasible control value. 
+ 
+ 5</text>
+        </slide>
+        <slide>
+          <slideno>5</slideno>
+          <text>Show the possible transitions with a di agram where each feasible state level  is a circle and 
+each feasible control level  is a line connecting circles: k
+tx
+j
+tu
+ 
+Return 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Solve series of 3 optimization probl ems defined by recursion equation for t = 2, 1, 0. 
+Start at last stage and move backward: 
+ 
+Stage 3: Find V2(x2) for each level of x2: 
+ [] [ ]) ( ) ( ) ( ) ( ) (2 2 2 3 2 2
+23 3 2 2
+22 2 I u x V u f Max x V u f Max x V
+u u++ =+ =  
+ 
+Identify optimum u2(x2) values for each possible x2, V3(x3) specified as an input: 
+ 
+  X 2 u 2(x2) f2(u2) +  V 3(x3)     
+  0 0    0     +    0       = 0 
+   1    1     +    0       = 1 =  V2(x2) 
+   
+  1 0    0     +    0       = 0 
+   1    1     +    0       = 1 
+   2    3     +    0       = 3 =  V2(x2) 
+ 
+  2 1    1     +    0       = 1 
+   2    3     +    0       = 3 =  V2(x2) 
+ 
+ 
+ 
+ Optimum 
+Optimum 
+Optimum Stage 1 Stage 2 Stage 3 Control, benefit, and 
+return values 1(3) 
+3) 3) 1)
+1) 1) 0) 
+0) 0) 0) 
+0) 2) 
+2) 3) 
+3) 0) 
+0) 4) 
+5) 4) 
+1(1(1(  
+1(1(0(
+0(0(0(
+0(2(
+2(2(
+2(0(
+0(1(
+2(1(10 0 3 7 
+8 0 3 5 
+5 0 1 1 Control Benefit 
+ 6</text>
+        </slide>
+        <slide>
+          <slideno>3</slideno>
+          <text>Total benefit from diverted water and outflow  x3 is: 
+ ( ) ( ) ( ) , , (2 2 1 1 0 0 1 0 1x V u f u f u u x F++ = ) 
+ 
+The stage benefit and terminal benefit are: 
+0 0 021) ( u u f=                 1 1 1) (u u f= ) 1 ( ) (2 2 2 2x x x V=  
+ 
+Additional constraints are: 
+ 0              01u 1 02x0u  
+ 
+Solve problem by proceeding backwa rd, starting with last stage ( t = 2): 
+ 
+Stage 2: Find V(x) for specified x 11 1: 
+  []
+[]
+[]
+[] ) 1 ( 2) 1 )( () ( ) () ( ) ( ) (
+1 1 1 12
+1
+11 1 1 1 1
+11 1 2 1 1
+12 2 1 1
+11 1
+x x u x u Maxu x u x u Maxu x V u f Maxx V u f Max x V
+uuuu
+ + +  =+   + = + =+ =
+  
+ Solution that satisfies constraints: 
+                 1 1x u=1 1 1) (x x V=
+                            
+   Stage 1: Maximize V0(x0) for specified x: 0
+[]
+
+ + =+ =
+0 0 0
+01 1 0 0
+00 0
+21) ( ) ( ) (
+u x u Maxx V u f Max x V
+uu
+  
+  
+ Solution that satisfies constraints: 
+               0=u 00 0 0 ) (x x V=
+   
+Solution specifies that all water is withdrawn from second divers ion point, where it is most 
+valuable. 
+ 
+Discretization of Variables 
+In more complex problems the states, controls and inputs are freque ntly discretized into a finite 
+number of compatible levels. 
+ 
+Simplest case: 
+           ;   j, k, l = 1, 2,, L where L = number of discrete levels. l
+tj
+tk
+t I u x, ,t t tI u x, ,
+ 4</text>
+        </slide>
+        <slide>
+          <slideno>6</slideno>
+          <text>) for each level of x Stage 2: Find V(x11 1: 
+[] [ ]) ( ) ( ) ( ) ( ) (1 1 1 2 1 1
+12 2 1 1
+11 1 I u x V u f Max x V u f Max x V
+u u++ =+ =   
+ 
+Identify optimum u(x11) value for each possible x1, obtain V2(x2) from Stage 2: 
+   
+  x 1 u 1(x) f11(u1) +  V 2(x2)    
+Optimum   0 0    0     +    1       = 1 =  V1(x1)  
+ 
+  1 0   0      +    3       = 3   
+Optimum    1   4      +    1       = 5 =  V1(x1) 
+ 
+  2 0   0      +    3       = 4 
+Optimum    1   4      +    3       = 7 =  V1(x1) 
+   2   5      +    1       = 6 
+ 
+) for each level of x Stage 1: Find V(x00 0: 
+[] [ ]) ( ) ( ) ( ) ( ) (0 0 0 1 0 0
+01 1 0 0
+00 0 I u x V u f Max x V u f Max x V
+u u++ =+ =   
+ 
+Identify optimum u(x00) values for each x0, obtain V(x) from Stage 1: 11
+  x 1 u 0(x)    f 0 0(u0) +  V (x11)    
+  0 0     0      +    5       = 5 = V0(x Optimum 
+Optimum 
+Optimum 0) 
+   1     3      +    1       = 4  
+   
+  1 0     0     +    7       = 7 =  V0(x0) 
+   1     3     +    5       = 8 
+   2     2     +    1       = 3 
+ 
+  2 1     3     +    7       = 10 = V0(x0) 
+   2     2     +    5       = 7 
+ 
+The optimum u(xtt) decision rules for t = 0, 1, 2 define a complete  optimum decision strategy: 
+x0    u0     x     u1 1     x2     u2 
+0     0      0       0      0      1 
+1     1      1       1      1      2 
+2     1      2       1      2      2 
+ 
+ 
+ 
+ 
+ 
+ 
+ 7</text>
+        </slide>
+      </slides>
+      <videos/>
+    </lecture>
+    <lecture>
+      <lecture_title>General Optimization Concepts (cont.) (PDF)</lecture_title>
+      <lecture_pdf_url>https://ocw.mit.edu/courses/1-731-water-resource-systems-fall-2006/resources/lect4/</lecture_pdf_url>
+      <lectureno>4</lectureno>
+      <slides>
+        <slide>
+          <slideno>1</slideno>
+          <text>f(x) is a concave function if:  
+ Linear functions are both  
+convex and concave ! ] [ ) 1 ( ] [ ] ) 1 ( [B  
+ 
+ 
+ 
+ 
+ 
+ 
+Convex feasible region F:  
+ F  is convex if line connec ting any pair of points ( xA, xB) lies completely inside region: 
+ 
+ [0,1]    in  ) , (  all for           ) 1 (    +    F FBA B A x x x x  
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Convex feasible region  may be constructed from  m constraints that meet following 
+requirements: 
+ 
+All gi(x) are convex when g i(x)  0  
+Or:   
+All gi(x) are concave  when g i(x)  0 
+ 
+Feasible regions constructed from linear 
+functions are always convex . 
+ 
+ 
+ 
+Summary: 
+A local maximum/ minimum is a global  maximum/minimum over the feasible region  F if: 
+1. The feasible region is  convex  
+2. The objective function is  convex (for a maximum ) or concave (for a minimum)  
+ If the objective function is strictly  convex or concave, the optimum is unique . 
+ 
+ 
+ x2 
+x1 xA xB Y 
+Convex  x2 
+x1 xA 
+xB Y 
+Non-convex  A B A x f x f x x f  +   +
+Function lies  line connecting 2 points above
+Hessian negative semi-definite  x 
+i iijx xx fH =) (2
+x 
+g(x)  0 g(x) 
+0 
+g(x) convex   F  convex   
+ 2</text>
+        </slide>
+        <slide>
+          <slideno>0</slideno>
+          <text>MASSACHUSETTS INSTITUTE OF TECHNOLOGY  
+Department of Civil and Environmental Engineering 
+  
+1.731 Water Resource Systems 
+ 
+ 
+Lecture 4, General Optimization Concepts 2, Sept. 19, 2006 
+ 
+ 
+When is a local  optimum also a global  optimum? 
+ 
+A local maximum/ minimum is a global  maximum/minimum over the feasible region  F if: 
+1. The feasible region is  convex  
+2. The objective function is  convex (for a maximum ) or concave (for a minimum)  
+ If the objective function is strictly  convex or concave, the optimum is unique . 
+ 
+We need to define terms to apply this criterion. 
+ 
+Vector functions and derivatives: 
+Use vector notation used to represent multiple functions of multiple variables: 
+ m i x x x g x g x g yn i j i ,..., 1 ) ,..., , ( ) ( ) (2 1 = =  =  
+ 
+Selected derivatives of scal ar and vector functions:  
+ Gradient vector  of scalar function f(x): 
+in
+xx x f
+ ) ,..., ( 1
+ 
+ Hessian matrix  of scalar function f(x): 
+j in
+x xx x f
+  ) ,..., (1
+ (symmetric) 
+ Jacobian matrix  of vector function gi(x) 
+jn i
+xx x g
+ ) ,..., ( 1
+ 
+ 
+Convex/concave functions 
+Convexity of  functions can be defined geometrically  or in terms of Hessian : 
+ 
+ 
+f(x)
+x 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ f(x) is a convex function if: 
+] [ ) 1 ( ] [ ] ) 1 ( [B A B A x f x f x x f      +   +
+Hessian positive semi-definite  x 
+i iijx xx fConcave 
+Convex  Function lies below  line connectin g 2 points
+ =) (2
+H
+xA xB
+ 1</text>
+        </slide>
+        <slide>
+          <slideno>2</slideno>
+          <text>1D Examples: 
+  
+1. Objective is convex/concave , feasible region is convex     local maxima/minima are global 
+maxima/minima. 
+ 
+ 
+f(x) convex 
+over F 
+x f(x) 
+Convex  F Local = global min  f(x) concave 
+over F 
+x f(x) 
+Convex  F Local = global max
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+2. Objective is convex/concave , feasible region is not convex     local maxima/minima are not  
+necessarily global  maxima/minima. 
+ 
+ 
+Local  
+global max  f(x) concave 
+over F 
+x f(x) 
+Non-convex  F Local = global max
+f(x) convex over  F 
+xf(x) 
+Non-convex  F Local  
+global min  
+Local = global 
+min  
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+3. Objective is not convex/concave , feasible region is convex     local maxima/minima are not  
+necessarily global  maxima/minima. 
+ 
+ 
+f(x) not convex 
+over F 
+xf(x) 
+Convex  F Local  
+global min 
+Local = global min Local  global max f(x) not concave 
+over F 
+x f(x) 
+Convex  F Local = global max   
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 3</text>
+        </slide>
+      </slides>
+      <videos/>
+    </lecture>
+    <lecture>
+      <lecture_title>Differential Constraints (PDF)</lecture_title>
+      <lecture_pdf_url>https://ocw.mit.edu/courses/1-731-water-resource-systems-fall-2006/resources/lect11/</lecture_pdf_url>
+      <lectureno>11</lectureno>
+      <slides>
+        <slide>
+          <slideno>0</slideno>
+          <text>MASSACHUSETTS INSTITUTE OF TECHNOLOGY  
+Department of Civil and Environmental Engineering 
+  
+1.731 Water Resource Systems 
+ 
+ 
+Lecture 11, Differential Constraints and Response Matrices, Oct. 5, 2006 
+ 
+ 
+Standard formulation of optimization problem relies on algebraic constraints .  In many 
+environmental applications constr aints arise most naturally as differential equations .  How 
+should these differential constraints be handled? 
+ 
+Example  Allocation of waste heat discharges along a stream 
+Problem is to select heat discharges WA and W B at 2 locations xA and x B along stream in order to 
+maximize total heat discharged WA + W B, subject to upper limit ( Tmax) on water temperature T. 
+ 
+ 
+QT(x) 
+xT
+x x
+WA WBTmax
+L 0
+Heat sourcesStream temperature 
+profile 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Incorporate model based on stream energy balance (relates heat discharges and stream 
+temperature): 
+0 0 ) 0 ( ; ) ( ) ( ) ( 0 T T x x W x x W T T A kdxdTQdtdE
+B B A A e =  +  +  + = =      
+ 
+E = Energy per unit length [Joules/m]   
+ = Density of water [kg/m3] 
+ = Specific heat of water [Joules/(kg  C)] 
+Q = Stream flow [m3/day] 
+T = Water temperature [  C] 
+T0 =  Air temperature [  C] 
+A = Stream cross-section [m2] 
+ke = Exchange rate [1/day] 
+ 1</text>
+        </slide>
+        <slide>
+          <slideno>3</slideno>
+          <text>bi = T 0   for i =1  
+ bi = xT0  for i &gt;1 and xi  xA  or  x BB
+ bi = W + xT0 for xi = x A  
+ bi = W + xT0 for xi = x BB
+ 
+Both the explicit and implicit disc retizations are in a form that can be inserted directly into 
+optimization software such as GAMS (note that the implicit matrix equation does need not be 
+solved and the decision variables only appear on the right-hand side  the implicit constraints 
+relating each Ti to W A and WB are sufficient).  B
+ 
+The disadavantage of imbedding is the large number of decision variables and constraints  it 
+produces (one for each grid point for each scalar  differential equation). This is particularly 
+inefficient in the example problem since we real ly only care about the te mperature solutions at 
+the two points xA and x B . Solutions at all the other upstream po ints need to be computed in order 
+to obtain these two temperatures. B
+ 
+Response Matrix 
+Response matrix methods represent differential c onstraints with efficient linear approximations. 
+ 
+Assume we have a numerical model av ailable to evaluate temperatures ) , (A AW x T  and 
+) , , (B A B W W x T  at the discrete locations xA and xB, for any set of decision variables W B A and WBB. 
+ 
+ 
+Numerical Model 
+(Black Box) WA, WBTA=T(x A ,WA) 
+TB=T(x B ,WA ,WB) 
+Other inputs: 
+,,T0 
+ 
+ 
+ 
+ 
+ 
+   
+ 
+Expand these temperatures in a Taylor series around nominal decision values (e.g. WA = W B = 0): B
+ 
+ 
+ K++ =
+=A
+AW AA AA A A WWW x Tx T W x T
+0) , () 0 , ( ) , (  
+ K+++ =
+= =B
+BW BB BA
+AW AA BB B A B WWW x TWWW x Tx T W W x T
+0 0) , 0 , ( ) 0 , , () 0 , 0 , ( ) , , (  
+RBA RBBRAA
+ 
+ 
+Associate the sensitivity derivatives with the elements of a response matrix R and rearrange equations: 
+  
+=
+
+
++
+
+BA
+BA
+BB BAAA
+TT
+WW
+R RR
+TT 000
+ 4</text>
+        </slide>
+        <slide>
+          <slideno>2</slideno>
+          <text>Note that temperature is hi ghest at the discharge points xA and xB. Therefore, we can apply 
+temperature constraint only at xA and xB rather than at all points x : 
+B max BAxBx
+AA max AB A
+BWAW
+x T W e W Tx T W TW W Maximize
+at     0at                                      0: such that
+) (
+00,
+  + +  ++
+  
+ 
+ 
+This is in standard form, with algebraic rather th an differential constraints. This approach is best 
+when analytical solution is available, but that is not usually the case. 
+ 
+Imbedding 
+When an analytical solution is not available an  approximate numerical solution can be obtained 
+by discretizing the differential equation over a computational gr id of equally spaced points x1, x2, 
+, xN.. 
+ 
+In this example use either of two approximations for the spatial derivative at each computational 
+grid point: 
+xT T
+xx T x T
+xT i i i i
+ix= + + 1 1 ) ( ) (  Forward difference (explicit) 
+xT T
+xx T x T
+xT i i i i
+ix=   1 1) ( ) ( Backward difference (implicit) 
+The Dirac delta function is approximated by 1/ x. 
+ 
+The explicit discretization  yields a set of N coupled equations as follows: 
+           x0T Ti= i = x0
+) ( 1 0 i i iT T x T T   = +        x 0 &lt; x i  xA
+A 0 i i iW T T x T T  +    =+ ) (1      x A  &lt; x i   xBB
+B 0 i i iW T T x T T  +    =+ ) (1      x i &gt; x BB
+ 
+These first-order difference equations  have the same general form as the reservoir storage 
+equation in Problem Set 3. 
+ 
+The system of equations obtained from the implicit discretization  is most conveniently 
+expressed in matrix form: 
+N k i W W b T A B A k i ki , , 1 , ) , (K= =  
+ 
+where  Aii = 1   for i =1,, N 
+ Ai,i-1 = x-1   for i =2,, N 
+ Ai,k = 0  otherwise  
+ 
+ 3</text>
+        </slide>
+        <slide>
+          <slideno>1</slideno>
+          <text>WA , WB Source heat flux [Joules/ day]  
+(x - xA), (x - xB) = Dirac delta function at xA or xB [1/m], defined by: 
+  
+otherwise           0                                  ' ) ' ( ) ' ( ) (
+= &lt; =  Ux
+LxU L x x x x f dx x x x f 
+ 
+Assume steady state (dE /dt = 0) and simplify to: 
+0 0 ) 0 ( ; ) ( ) ( ) (T T x x W x x W T TdxdT
+B B A A =  +  +   =    
+ 
+Q QA ke
+ 1= =   
+ 
+Suppose solution to this equation at any x is T(x, WA, WB). Then optimization problem is: 
+  
+x  T W W x TW W Maximize
+max B AB A
+BWAW
+ +
+; ) , , (: such that,
+ 
+Note that the temperature constraint  as given here is evaluated at every x (infinite number of 
+algebraic constraints). 
+ 
+There are three ways to write the constraint  max B AT W W x T) , , (  in a practical (finite) form: 
+1. Analytical solution  - ) , , (B AW W x T  is written as an explicit function of WA and W B. 
+2. Imbedding  - ) , , (B AW W x T  is defined implicitly , by a set of discretized model 
+equations. 
+3. Response matrix  - ) , , (B AW W x T  is approximated by a Taylor series expressed in 
+terms of model sens itivity derivatives. 
+ 
+Analytical solution 
+Solution to stream equation with  upstream boundary condition imposed: 
+          d x e W d x e W T W W x Tx
+Bx
+Bx
+Ax
+A 0 B A   +  + =   
+0) (
+0) () ( ) ( ) , , (  
+ 
+Apply definition of  function to get: 
+0 B AT W W x T=) , , (       x   xA
+) () , , (Ax x
+A 0 B Ae W T W W x T + =    x A  &lt; x  xBB
+) ( ) () , , (Bx x
+BAx x
+A 0 B A e W e W T W W x T   + + =    x &gt; x BB
+ 
+ 2</text>
+        </slide>
+        <slide>
+          <slideno>4</slideno>
+          <text>Resulting constraints for the optimization problem are: 
+  
+
+
+
++
+
+maxmax
+000
+TT
+WW
+R RR
+TTBA
+BB BAAA
+ 
+In this example the response matrix approximation is exact  because the differential constraints 
+are linear  in the decision variables. Consequently, the response matrix elements can be identified 
+directly from the anal ytical solutions above. 
+ 
+More generally, we derive the sensitivity derivatives numerically, from multiple model 
+evaluations.  For example: 
+  ) 0 , 0 , ( ) 0 , , ( B BBAx T x TR  
+ 
+This approach does not require kno wledge of the model equations (i .e. the model can be a black 
+box). 
+ 
+The response matrix approach can also be used to approximate nonlinear  differential 
+constraints, so long as the Taylor seri es expansion is sufficiently accurate.  
+ 5</text>
+        </slide>
+      </slides>
+      <videos/>
+    </lecture>
+    <lecture>
+      <lecture_title>Optimality Conditions (PDF)</lecture_title>
+      <lecture_pdf_url>https://ocw.mit.edu/courses/1-731-water-resource-systems-fall-2006/resources/lect5_6/</lecture_pdf_url>
+      <lectureno>5</lectureno>
+      <slides>
+        <slide>
+          <slideno>0</slideno>
+          <text>MASSACHUSETTS INSTITUTE OF TECHNOLOGY  
+Department of Civil and Environmental Engineering 
+  
+1.731 Water Resource Systems 
+ 
+ 
+Lecture 5 &amp; 6, Optimality Conditions, Sept. 21 &amp; 26, 2006 
+ 
+ 
+How do we know when a particular candidate solution x * is a local maximum? 
+ 
+Necessary (Kuhn-Tucker) conditio ns for a candidate solution x* to be a local maximum  are: 
+1. Feasibility 
+2. Stationarity 
+3. Inequality Lagrange multipliers 
+4. Curvature 
+ 
+Preliminaries: 
+x* is a local maximum  if F(x*)   F(x) for all feasible  x near x* 
+ 
+*
+Am (x* )= 0 i  C (x*) = active set   active  constraints at x*:    g  i
+*
+Im (x* ) &lt; 0        i  C (x*)  inactive  constraints at x*:   g  i
+m m mI A = +* *  
+ 
+*
+Am*
+Am  by n matrix with rows the gradient vectors Form an   of the j ix x g  / *) (  constraint 
+functions active at x* . If Rank [* *
+A Am&lt;] =  j ix x g  / *) (  the problem is degenerate . 
+Otherwise * *
+A Am=  and the problem is non-degenerate . 
+ 
+*
+Am 0* A n  constraints active at x* define an The set of  dimensional constraint surface in 
+the n dimensional decision space.   
+ 
+*
+A*
+A  linearly independent gradient vectors form a basis for a Any  dimensional gradient 
+space . Any *
+A n*
+A n  tangent vectors  p (i = 1,, i ) normal to all the gradient vectors form 
+a basis for an *
+A n  dimensional tangent space .  
+ 
+Orthogonality condition satisfied by any vector pi  in tangent space: 
+0*) ( *) (
+=
+
+
+ij
+i
+ij
+ixx g
+pxx g
+p    i  C (x*)  
+ 
+*
+A n The tangent space can be viewed as a plane that intersects the  constraint surface at x* . 
+This plane approximates the constraint surface for x  sufficiently close to x* . 
+ 1</text>
+        </slide>
+        <slide>
+          <slideno>2</slideno>
+          <text>Define Lagrangian function  to be: 
+*)( *) ( ) *, (x g x F x Li i   =      
+ 
+ Then stationarity condition requires: 
+0) *, (=
+jxx L      
+ 
+3. Inequality Lagrange multipliers 
+ If x* is a local maximum  then the Lagrange multipliers for all inequality constraints 
+ active at x* must be non-negative:   0,  i  C (x*). i
+   
+4. Curvature 
+ Projection  of Lagrangian onto the constrai nt tangent space must have a negative semi-
+ definite Hessian . 
+  
+*
+A n*
+A n Projection operator is an n by  matrix Zik with columns composed of the  
+constraint tangent space basi s vectors.  These basis vect ors are linearly independent 
+solutions p of: i
+0*) ( *) (=
+
+ij
+i
+ji
+ixx g
+pxx gp        
+   
+=*1 A n
+i i ik p p ZK
+:  
+ Hessian of the proj ected Lagrangian is Wkl: 
+0) *, (2
+= =lj ik
+i jkl Z Zx xx LW     
+ If x* is a local maximum , Wkl must be negative semidefinite    Wkl  0. 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 3</text>
+        </slide>
+        <slide>
+          <slideno>5</slideno>
+          <text>KK
++
+
+ +
++ == +
+++ =
+222
+22
+) 0 ( ) 0 ( *] [ ) 0 ( *] [*] [ )] ( [)] 0 ( [ )] 0 ( [)] 0 ( [ )] ( [
+ 
+
+j i
+j ii
+ix x
+x xx F x
+xx Fx F x Fx F x Fx F x F
+ 
+If x* is a local maximum F(x) =  F [x()]  must be  F[x(0)] = F (x*) for all values of  along  the 
+arc.  This implies:  
+0) 0 ( *] [ )] 0 ( [=
+=
+ j
+jx
+xx F x F1).     
+ 
+0) 0 ( ) 0 ( *] [ )] 0 ( [2
+22
+
+
+ =
+
+  j i
+j ix x
+x xx F x F 2).  
+The stationarity  condition follows from 1). and the curvature condition  follows from 2), if the 
+requirement that  / ) 0 (ix  lies in the constraint tangent space and the definition of the 
+Lagrangian are invoked. 
+ 
+The stationarity condition takes care of feasible arcs that lie in the tangent space , which are the 
+only directions that are feasible for equality constraints. 
+ 
+If the constraint is an inequality  the feasible arc may also point into the feasible region , away 
+from the tangent space. Directions in to the feasible region are defined by:: 
+ 3). 0)] 0 ( [ ) 0 (
+&lt;
+
+ji j
+xx g x
+   for i an inequality  constraint  C (x*) 
+The objective function cannot increa se along this feasible arc if x*  is a local maximum.  So:  
+ 4). 0) 0 ( )] 0 ( [
+
+j
+jx
+xx F  for i an inequality  constraint  C (x*) 
+ 
+The inequality Lagrange multiplier condition  follows from 3) and 4).    
+ 
+ 6</text>
+        </slide>
+        <slide>
+          <slideno>3</slideno>
+          <text>Example: 
+Consider an two-dimensional example with 2 inequality constraints and 3 candidate solutions  
+(0,2)*
+Ax=
+F 
+x1x2
+0 2 1 -1 -2 0 2 -2x (x)2g0 12x2
+1x (x)1g2
+2x -2
+1-x F(x)
+ = +  ==
+-1 -4 g1(x)0 g2(x)0 
+(0,1)*
+Bx=(1,2)*
+Cx=) 2 , 0 (*=Ax , .,  ) 2 , 1 (*=Cx)1 , 0 (*=Bx
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Gradients are:     Lagrangian and its Hessian are:  
+1 01 22 2
+22
+12211
+112
+21
+1
+== == = =
+xg
+xgxgxxgxxFxxF
+
+
+ =  + +     =
+2 00 2 2 ) , (] 2 [ ] 1 [ ) , (
+12 2 22
+1 12
+22
+1
+   
+j ix xx Lx x x x x x L
+     
+ 
+Evaluate gradients at  candidate solutions 
+*
+Am*
+A*
+A n           jx x F / *) (jx x g  / *) (1 jx x g/ *) (2             ijZ 
+) 2 , 0 (*=Ax             1      1         1  
+
+0a
+
+
+40
+
+
+10
+
+
+10
+) 1 , 0 (*=Bx             1      1         1  
+
+0a
+
+
+20
+
+
+10
+
+
+10
+) 2 , 1 (*=Cx             2      2         0 None 
+
+
+42
+
+12
+
+
+10
+ 
+Check necessary conditions for a local maximum at each x*: 
+ 4</text>
+        </slide>
+        <slide>
+          <slideno>4</slideno>
+          <text>1. Feasibility: 
+All 3 candidate solutions are feasible. 
+ 
+2. Stationarity 
+Consider for all active constraints: 
+  W   Consistent ?  12 kl
+) 2 , 0 (*=Ax  Yes    0 -4 -2 a2 &lt; 0 
+) 1 , 0 (*=Bx  Yes  +2   0 -6 a2 &lt; 0 
+) 2 , 1 (*=Cx  Yes   -1  -5 None  
+  
+3. Inequality Lagrange Multipliers 
+Only   has non-negative Lagrange multipliers for active inequalities.  *
+Bx
+ 
+4. Curvature: 
+Both *
+Ax and  satisfy the curvature condition.  This condition does not apply to . *
+Cx*
+Bx
+ 
+Example Summary: 
+Only  is a local maximum .since it is the only solution that sa tisfies all 4 conditions.  For this 
+problem  is also a global maximum  (why?) *
+Bx
+*
+Bx
+ 
+Quick Outline of Derivation: 
+Derivation of necessary conditions is based on Taylor series approximations  of g(x) and F(x): i
+ 
+An infinitesimal feasible arc from x*  to x lies wholly inside the feasible region.  
+Let   be distance along this arc from x* to x. 
+x* = x(0)       x = x() 
+The vector tangent to this arc at x(0) is   / ) 0 (jx . 
+ 
+Infinitesimal arcs originating at x(0) are feasible  [i.e. 0)] ( [=x gi ] if the corresponding 
+ / ) 0 (jx  lies in the constraint tangent space .  To see this use a Taylor series expansion of 
+)] ( [x gi : 
+0) 0 ( )] 0 ( [)] 0 ( [ )] ( [ = +
++ = Kj
+ji
+i ix
+xx gx g x g    i  C (x*) 
+The first term on the right is zero because constraint i is active at x*  = x(0). 
+The second term on the right is zero since   / ) 0 (jx  is orthogonal to all the active constraint 
+vectors if it lies in constraint tangent space.  
+ 
+The Taylor series expansion of F[x()] along an infinitesimal arc is: 
+ 5</text>
+        </slide>
+        <slide>
+          <slideno>1</slideno>
+          <text>Intersection of active 
+constraint surfaces   xxxConstraint tangent spaceConstraint gradient space   
+*) (=Dimxx g
+ji
+*) ( =
+ n Dimxx gp
+jii 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Statement of Necessary Conditions for a Local Maximum: 
+1. Feasibility 
+x* must lie in the feasible region F: 
+g(x* ) =  0 i = 1,r  i
+g(x* )  0       i = r+ 1, , m  i
+ 
+2. Stationarity  
+Objective function gradient at x*  must lie in the constraint  gradient space (i.e. it has no 
+projection onto the constraint tangent plane). 
+ 
+ For non-degenerate problems this implies: 
+xjx g
+xjx F i
+i= *) ( *) (    i  C (x*)   
+ The i are Lagrange multipliers for the active constraints at x*. 
+* *
+A Am= If x* is a local maximum  this system of n linear equations in the  unknown is 
+must have a solution (i.e. it must be consistent ).  
+  
+* *
+A Am&lt; For degenerate problems include only  linearly independent constraints and set 
+i = 0 for the remaining redundant constraints  
+ 
+ Adopt convention that i = 0 for inactive constraints as well as redundant constraints 
+ so the stationarity condition can include all constraints: 
+xjx g
+xx F i
+i
+j = *) ( *) (     
+   
+  0   for each i  C (x*) (no sum over i ) *) (=x gi i
+ 
+ 2</text>
+        </slide>
+      </slides>
+      <videos/>
+    </lecture>
+    <lecture>
+      <lecture_title>Linear Algebra Review (PDF)</lecture_title>
+      <lecture_pdf_url>https://ocw.mit.edu/courses/1-731-water-resource-systems-fall-2006/resources/lect2/</lecture_pdf_url>
+      <lectureno>2</lectureno>
+      <slides>
+        <slide>
+          <slideno>4</slideno>
+          <text>The projection  Pij xj of any vector xi in Vn onto the subspace V m is a vector that 1) lies in Vm 
+and 2) obeys the property i j ij ix x P x+ =  , where  lies in the null space Vix n-m .(i.e. x i  - Pijxj 
+is orthogonal to all the vectors in Vm). It follows from these properties that the n by n projection 
+matrix  Pij is: 
+  T TA A A A P1] [=
+The matrix m by m  [ATA] is invertible since A has rank m. 
+ 
+Eigen problems 
+Eigen problem seeks a set of scalar eigenvalues k and eigenvectors  uk, for k = 1,, n 
+associated with the n by n matrix A. 
+ 
+The eigenvalues and eigenvectors satisfy: 
+       unknown  are   and         ,... 1        k k
+ik
+ik k
+j ij u n k u u A   = =
+ 
+The n eigenvalues are found by solving nth order polynomial in  for n roots : 
+ nI A     ,..., , 02 1 =   
+ 
+The corresponding n eigenvectors are found by substituting each k into  and 
+solving for the corresponding .  k
+ik k
+j ij u u A=
+ k
+iu
+ 
+Example:   
+=4 30 1A
+Eigenvalues:  4 , 1 ) 4 )( 1 (4 30 12 1= =    =    
+Eigenvector 1:   aaa
+uu
+uu
+uuany for   3 30 0
+4 30 1
+1
+21
+1
+1
+21
+1
+1
+21
+1
+11
+
+
+=
+
+
+
+
+
+
+
+
+
+
+=
+
+
+
+
+
+
+
+
+
+
+Eigenvector 2:   aa uu
+uu
+uuany for   0
+0 30 3
+4 30 12
+22
+1
+2
+22
+1
+2
+22
+1
+22
+
+=
+
+
+
+
+
+
+
+
+
+
+=
+
+
+
+
+
+
+
+
+
+
+ 
+Quadratic Forms/Definiteness: 
+Quadratic form  (or the matrix A that it depends upon) can be 
+classified as follows:  j ij iTx A x q Ax x x q =  =) (
+ q(x), A positive definite  if q(x) &gt; 0 for all  - if A symmetric  all eigenvalues of A &gt; 0 
+ q(x), A positive semidefinite  if q( x)  0 for all x - if A symmetric all eigenvalues of A  0 
+ q(x), A negative definite  if q( x) &lt; 0 for all x - if A symmetric  all eigenvalues of A &lt; 0 
+ q(x), A negative semi-definite if q( x)  0 for all x - if A symmetric all eigenvalues of A  0 
+ otherwise q(x) and A are indefinite  
+ 5</text>
+        </slide>
+        <slide>
+          <slideno>1</slideno>
+          <text>Systems of linear equations: 
+    m equations, n unknowns xi j ijb x A b Ax=  = j (i = 1,, m  j = 1,, n) 
+  
+Row echelon form of a matrix 
+This is convenient for analyzing a nd solving systems of linear equations. 
+A is in row echelon form  if: 
+ All rows with non-zero entries are above rows containing only zeros 
+ Leading (non-zero) entry of each row is to  right of leading entry in row above it 
+ All entries below a leading coefficient are zero 
+ 
+ A is row echelon :    A  is not row echelon  
+      
+=2 / 9 1 05 2 1A 
+=6 4 35 2 1A
+ 
+Reduced row echelon form of a matrix 
+MATLAB function  rref(A) 
+Add requirements that: 
+ All leading entries = 1 
+ All entries above and below leading entries = 0 
+A is reduced row echelon : 
+   
+ =2 / 9 1 04 0 1A
+ 
+Using elementary row operations to derive row and reduced row echelon forms: 
+ Elementary row operations     replace a given row with weighted sum of any two 
+rows. 
+ Carry out elementary row operations starti ng from top row down to meet requirements 
+for row echelon form . 
+                   
+ 
+=2 / 9 1 05 2 1
+6 4 35 2 1A
+ 
+2 2 1 ) )( 2 / 1 ( ) 2 / 3 ( r r r   + 
+ Carry out additional elementary row operations starting from top row down to meet 
+requirements for reduced row echelon form. 
+    
+  
+=2 / 9 1 04 0 1
+2 / 9 1 05 2 1A
+ 
+1 2 1 ) )( 2 ( r r r  + 
+Gaussian elimination: 
+MATLAB operator x=A\b  
+This is a procedure for solving systems of linear equations by applying a series of elementary 
+row operations: 
+ Augment A by appending b as last column to obtain [ A | b] 
+ Put [ A | b] in reduced row echelon  form 
+ 2</text>
+        </slide>
+        <slide>
+          <slideno>2</slideno>
+          <text>Solution x  is last column of row echelon matrix 
+ 
+
+= 
+ 
+
+
+=
+= 
+= =
+2 / 94
+2 / 9 1 04 0 1
+65
+4 32 1] | [65
+4 32 1
+x b Ab A b Ax 
+ 
+Matrix rank 
+MATLAB function rank(A)  
+Rank  of a matrix is number of non -zero rows in row echelon form: 
+ 
+
+
+=0 0 03 2 1
+6 4 23 2 1A Rank = number of non-zero rows = 1 
+ 
+ 
+Consistency and uniqueness 
+ System of linear equations b x A= is consistent if ]) | ([ ) (b A Rank A Rank =     
+ The m by n homogeneous system Ax=0 always has the  trivial solution  x = 0. 
+ An m by n  consistent non-homogeneous system Ax=b  has a unique solution if Rank (A) 
+= n = number of unknowns. 
+ An m by n consistent non-homogeneous system Ax=b  has a non-trivial non-unique 
+solution  if Rank (A) = r &lt; n = number of unknowns.  The number of free parameters in 
+the solution is n - r. 
+ 
+Determinant of a square matrix:  
+MATLAB function det(A) 
+Determinant |A | of A is a scalar matrix property us eful for solving eigen problems. 
+ 
+Determinant can be evaluated from row echelon form (which is upper triangular for a square 
+matrix). Apply the following rules: 
+ If an elementary row operation that transforms A  to B  has the form ciri+cjrj  rj , then 
+|A|= |B| / cj. 
+ |A|= product of the leading (diagonal) terms of the final row echelon form. 
+In this example row echelon is produced by an elementary row operation that replaces row 2 
+using c 2 =1: 
+ 2 1 / ) 2 ( / ) 2 (2 02 1
+4 32 1
+2  =  =  = c       1) 3 (
+22 2 1
+= + 
+cr r r
+ 
+In this example row echelon is produced by an elementary row operation that replaces row 2 
+using c 2 =-1/2: 
+ 3</text>
+        </slide>
+        <slide>
+          <slideno>0</slideno>
+          <text>MASSACHUSETTS INSTITUTE OF TECHNOLOGY  
+Department of Civil and Environmental Engineering 
+  
+1.731 Water Resource Systems 
+ 
+ 
+Lecture 2, Linear Algebra Review, Sept. 12, 2006 
+ 
+ 
+The notation and some of the basic concepts of li near algebra are needed in optimization theory, 
+which is concerned with large system s of equations in many variables.  
+ 
+You should learn or review the following topics . See any introductory linear algebra text for 
+details.  
+ 
+Indicial notation:    Vector :   x = [x1, x2, , x n]   xi  
+   Matrix :    ij
+mn mn
+A
+A AA A
+A 
+
+
+
+
+=
+LM O ML
+11 11
+ 
+Matrix transpose and symmetry: 
+MATLAB operator  
+    jiT
+ijTA A A= 
+ A is symmetric if AT=A (no change if rows and columns are interchanged)  
+ 
+Vector &amp; matrix operations products:  
+MATLAB operators + and * 
+  Vector sum i j iy x z y x z+ =  + =
+  
+  Matrix sum ij ij ijB A C B A C+ =  + =
+  
+  j iax z ax z=  =ij ijaA B aA B=  =    Scalar multiplication 
+ 
+  Scalar product,  x  and y are orthogonal  if xj jTy x z y x z =  =Ty = 0 
+ 
+ j ij ix A y Ax y =  =    Matrix-vector product , implied sum over repeated indices ( j) 
+ 
+    Matrix product , implied sum over repeated indices ( j) jk ij ikB A C AB C =  =
+ 
+   quadratic for m, implied sum over repeated indices ( i,j) j ij iTx A x q Ax x q =  =
+ 
+ 
+ 1</text>
+        </slide>
+        <slide>
+          <slideno>3</slideno>
+          <text>2 ) 2 / 1 /( ) 1 ( / ) 1 (1 02 1
+4 32 1
+2  =  = =  c         2 / 1) )( 2 / 1 ( ) 2 / 3 (
+22 2 1
+ = +
+cr r r
+ 
+ 
+Inverse of a square matrix: 
+MATLAB function  inv(A)  
+ []ik jk ijA A I AA A A =  = =   1 1 1
+ 
+ 
+Find A-1 by solving A[A-1] = I using Gaussian elimination (with A given and each column of A-1 
+considered to be an unknown vector). 
+ 
+If Rank (A) = r &lt; n then | A|=0 and matrix is singular   and has no inverse 
+ 
+Linear Dependence/Independence 
+Linear combination  of a set of m n-dimensional vectors x1j, , x mj   is: 
+   ;  xij jm
+jij j x a x a = 
+=1ij is an n by m  matrix whose columns are the xi1, , x jim vectors  
+ 
+The vectors xj1, , x jm are linearly independent  if ajxij has a unique (trivial) solution aj = 0. 
+If the ajs can be non-zero the vectors are linearly dependent . 
+ 
+Linear Vector Spaces, Subspaces, and Projections 
+The set of all possible n-dimensional vectors [ x1, x2  x n]  forms a linear vector space  Vn since 
+it is closed under vector addition and scalar multiplication (i.e.  any vector a1xi1 + a2xi2 is in Vn 
+if the vectors xi1 and x i2 are in V n). 
+ 
+Consider the n by m  matrix Aij with columns consisting of the m vectors Ai1, , A im from Vn.  
+The set of vectors that are li near combinations of these m column vectors form a linear vector 
+space Vm  which is a subspace (subset) of Vn . The subspace Vm  is spanned by the A i1, , A im. 
+If the m spanning vectors are linearly independent they form a basis for Vm . The dimension  of 
+Vm is the rank of Aij, which will be equal to m if the spanning vector s are linearly independent 
+and form a basis.  If m  = n = Rank  (A) then Vm = V n.  
+ 
+If the m columns of Aij  are linearly independent the n-m solutions of the system Aij xi  = 0 form 
+a basis for an n-m dimensional subspace Vn-m of Vn. Vn-m is the null space of Vm and vice versa. 
+Every vector in V n-m is orthogonal to every vector in Vm. 
+ 
+Each basis vector of Vm may be viewed as the normal vector  to a n-1 dimensional hyperplane . 
+The intersection of all m such hyperplanes is an n-m hyperplane that contains all vectors in the 
+null space Vn-m. 
+ 4</text>
+        </slide>
+      </slides>
+      <videos/>
+    </lecture>
+  </lectures>
+</doc>

@@ -1,0 +1,4387 @@
+<doc>
+  <source>MIT</source>
+  <date>28/01/2023</date>
+  <course>
+    <course_url>https://ocw.mit.edu/courses/16-06-principles-of-automatic-control-fall-2012/</course_url>
+    <course_title>Principles of Automatic Control</course_title>
+    <course_tags>
+      <list>Engineering </list>
+      <list>Aerospace Engineering </list>
+      <list>Guidance and Control Systems</list>
+    </course_tags>
+  </course>
+  <lectures>
+    <lecture>
+      <lecture_title>The Nyquist stability criterion (cont.)</lecture_title>
+      <lecture_pdf_url>https://ocw.mit.edu/courses/16-06-principles-of-automatic-control-fall-2012/resources/mit16_06f12_lecture_21/</lecture_pdf_url>
+      <lectureno>21</lectureno>
+      <slides>
+        <slide>
+          <slideno>3</slideno>
+          <text>Bode plot:
+ 
+103102101100101102102100Magnitude, dB
+103102101100101102300250200150100500Phase (deg)
+Frequency,  (rad/sec)40 dB/dec
+Nyquist plot:
+ 
+1 0.8 0.6 0.4 0.2 0 0.2 0.4 0.6 0.8 10.80.60.40.200.20.40.60.8
+Real AxisImaginary Axis=- =0 
+=+ =-1 
+=1 1 -1 
+Note that the Nyquist plot does not encircle 1, and therefore the number of unstable closed 
+loop poles is 
+4</text>
+        </slide>
+        <slide>
+          <slideno>6</slideno>
+          <text>MIT OpenCourseWare
+http://ocw.mit.edu
+16.06 Principles of Automatic Control
+Fall 2012
+For information about citing these materials or our Terms of Use, visit: http://ocw.mit.edu/terms .</text>
+        </slide>
+        <slide>
+          <slideno>2</slideno>
+          <text>2.	 Evaluate the number of CW encirclements about 1, and call that number N (see FPE 
+for how to count encirclements). 
+3. Determine the number of unstable poles of Gpsq, P . 
+4. The number of unstable poles of the closed loop system is 
+Z  N ` P 
+Finally, if k is unknown, we can instead plot Gpsq, and count encirclements of the point 
+1{k. This is useful for determining the range of gains for which the closed loop system is 
+stable, as in root locus. 
+Examples 
+G(s)
+-+ k(s+1)21
+Root locus:
+ 
+Im(s) 
+Re(s) -1 k&gt;0 k&lt;0 
+3</text>
+        </slide>
+        <slide>
+          <slideno>5</slideno>
+          <text>The Nyquist plot is:
+ 
+1 0.8 0.6 0.4 0.2 0 0.2 0.4 0.6 0.8 10.80.60.40.200.20.40.60.8
+Real AxisImaginary Axis
+=3-1 
+8
+=01
+For 1{k 1{8 p0  k  8q, system is stable.
+ 
+For 1{k  1 p0  k 1q, system is stable.
+ 
+For 1{8 1{k  0, pk  8q, system has 2 unstable poles.
+ 
+For 0 1{k  1 pk 1q, system has one unstable pole.
+ 
+Of course, this agrees with our Routh and root locus analysis.
+ 
+6</text>
+        </slide>
+        <slide>
+          <slideno>1</slideno>
+          <text>Stability Test, Version1: 
+Dene the contour C1 as shown below: 
+Im(s) 
+Re(s) 
+C1radius goes to 
+The contour encloses (in the limit) the entire right half plane. For this contour, plot the 
+contour map 
+1 ` kGpsq 
+The number of CW encirclements of the origin by 1 ` kGpC 1q is equal to Z  P , where Z is 
+the number of closed loop poles in the right half plane, and P is the number of open loop 
+poles in the right half plane. As an equation 
+Z  N ` P 
+where Z - the number of closed loop unstable poles, 
+N - the number of CW encirclements of 0, 
+P - the number of unstable poles 
+Stability Test, Version 2: 
+Since the 1 term in 1 ` kGpsq just shifts the contour map of kGpsq by one unit to the 
+right, it is often (usually) easier to plot kGpsq alone. This is known as the polar plot or 
+Nyquist plot for the system. Note that for each encirclement of 0 by 1 ` kGpsq, there is one 
+encirclement of 1 by kGpsq. So the Nyquist Criterion, in the usual form, is 
+1.	 Plot kGpsq for j8  s  j8. First evaluate kGpjq for  P r0, 8s and plot. Then 
+reect the image about the real axis and add to the previous image. Note that there no need to calculate kGpsq on the circular part of C
+1 if kGpsq 0 as s 8. 
+2</text>
+        </slide>
+        <slide>
+          <slideno>4</slideno>
+          <text>Z N ` P 
+0 ` 0 (no unstable open loop poles) 
+0, for k  1. 
+However, we can conclude more than that. The number of encirclements of 1{k is zero for 
+1 1  0 or   1 k k 
+1 1  0 or 1 k k 
+ 0  k 8 or 0  k 1 
+Therefore, the system is stable for k 1.
+ 
+For k 1, N  1, so there is one unstable pole.
+ 
+Example: 
+-+ k(s+1)31
+5</text>
+        </slide>
+        <slide>
+          <slideno>0</slideno>
+          <text>16.06 Principles of Automatic Control
+ 
+Lecture 21
+ 
+The Nyquist Stability Criterion 
+Can apply the argument principle to nding the stability of the closed loop system 
+-+ k G(s)y r
+The closed loop transfer function is 
+Y psq kGpsqT psq  R 1 ` kGpsq 
+The closed loop poles of T psq are the roots of 
+0  1 ` kGpsq 
+That is, the closed loop poles of T psq are zeros of 0  1 ` kGpsq. Note that the poles of 
+1 ` kGpsq are just the open loop poles of Gpsq. This suggests the following test for stability 
+of the closed loop system: 
+1</text>
+        </slide>
+      </slides>
+      <videos/>
+    </lecture>
+    <lecture>
+      <lecture_title>Block diagram manipulations, Mason&#8217; rule</lecture_title>
+      <lecture_pdf_url>https://ocw.mit.edu/courses/16-06-principles-of-automatic-control-fall-2012/resources/mit16_06f12_lecture_4/</lecture_pdf_url>
+      <lectureno>4</lectureno>
+      <slides>
+        <slide>
+          <slideno>0</slideno>
+          <text>16.06 Principles of Automatic Control
+ 
+Lecture 4
+ 
+Block Diagram Manipulations: 
+G1 G2
+G1G2
+G1
+G2G1 + G2 +
+=
+G1
+G2+
+-=1+G1G2G1
+The gain of a single loop feedback sys
+tem (with sign -1 in the loop) is the
+forward gain divided by the sum of 1
+plus the loop gain. 
+1</text>
+        </slide>
+        <slide>
+          <slideno>1</slideno>
+          <text>So,
+ 
+G2G2
+zre r e
+zG21
+- -=
+K
+HG
+-
+H1
+HKG-=
+Masons Rule: 
+1 Hpsq Hii i 
+Hpsqclosed-loop transfer function
+ 
+ system determinant
+ 
+1  all loop gains 
+
+ ` (products of 2 loops that dont touch) 
+
+  (products of 3 loops that dont touch) 
+ ... 
+Hi ith forward path 
+i determinant of ithpath 
+value of D for that part of diagram that does not touch path i 
+2</text>
+        </slide>
+        <slide>
+          <slideno>2</slideno>
+          <text>Example
+ 
+G1 G3G2- -+ + y u
+G1G2G3Hpsq 1 ` G1G2 ` G2G3 
+3</text>
+        </slide>
+        <slide>
+          <slideno>3</slideno>
+          <text>MIT OpenCourseWare
+http://ocw.mit.edu
+16.06 Principles of Automatic Control
+Fall 2012
+For information about citing these materials or our Terms of Use, visit: http://ocw.mit.edu/terms .</text>
+        </slide>
+      </slides>
+      <videos/>
+    </lecture>
+    <lecture>
+      <lecture_title>Bode compensation</lecture_title>
+      <lecture_pdf_url>https://ocw.mit.edu/courses/16-06-principles-of-automatic-control-fall-2012/resources/mit16_06f12_lecture_24/</lecture_pdf_url>
+      <lectureno>24</lectureno>
+      <slides>
+        <slide>
+          <slideno>0</slideno>
+          <text>16.06 Principles of Automatic Control
+ 
+Lecture 24
+ 
+Compensation 
+Compensation is the use of a dynamic controller Kpsq (as opposed to proportional control) 
+to improve the systems stability and error characteristics. 
+We have already seen compensation when we did root locus control, but we can do compen
+sation more systematically using frequency response techniques. 
+We look primarily at four types of compensation: 
++ 
+PD Control used primarily to add lead at the crossover frequency, allowing the 
+Lead Compensation compensated system to have a faster speed of response and/or 
+have more damping. 
++ 
+PI Control used primarily to increase the frequency response magnitude 
+Lag Compensation at low frequencies, reducing steady-state tracking errors. 
+Example: 
+Control the plant 
+1 Gpsq 2s
+so that the rise time of the step response is 
+tr  1 sec 
+and the overshoot is 
+Mp  10% 
+1</text>
+        </slide>
+        <slide>
+          <slideno>1</slideno>
+          <text>Solution: 
+We must rst translate this requirements into frequency response characteristics. For a 
+second order system, 
+ tan Mp e 
+1 where   sin 
+So eective  required is 
+  0.59p12q 
+Using the relationship 
+PM   100 
+we see that the required phase margin is about 59. So (rounding), require that PM  60 . 
+Next, gure out what the crossover frequency is. By dimensional analysis, know that 
+1 tr  c 
+Generally, will have 
+1{c  tr  2.2{c lo omo on lo omo on 
+for PM0 for PM90 
+For other, more reasonable values of PM, 
+PM ctr 
+30  1.2 
+45  1.26 
+60  1.3 
+So lets try 
+What must loop look like? c 1.3 
+tr  1.3 
+1 sec 
+1.3 r/s 
+2</text>
+        </slide>
+        <slide>
+          <slideno>3</slideno>
+          <text>Using exact expressions, 
+a1|KGpjcq|  1 ` 2{a2 
+c 2 c 
+1.18 
+So controller is 
+1 Kpsq p1 ` s{0.75q1.18 
+(PD controller) 
+Check results: Using Matlab, found that: 
+tr 0.96 sec, good! 
+Mp 0.24, not to spec. 
+Part of the problem is that phase lag increases below crossover, increasing Mr, and therefore 
+the peak overshoot. This will hopefully become a bit clearer when we do the Nichols plot. 
+Could x by increasing PM to  80 . 
+One problem with PD controller is that the gain is innite at high frequencies. So instead use lead compensator 
+1 ` s{a Kpsq k 1 ` s{b 
+4</text>
+        </slide>
+        <slide>
+          <slideno>4</slideno>
+          <text>MIT OpenCourseWare
+http://ocw.mit.edu
+16.06 Principles of Automatic Control
+Fall 2012
+For information about citing these materials or our Terms of Use, visit: http://ocw.mit.edu/terms .</text>
+        </slide>
+        <slide>
+          <slideno>2</slideno>
+          <text>|  | 
+a
+PD zero 
+original G(s) with PD 
+(1 zero) controller 
+1To get PD correct, need 60 phase lead from PD zero, 
+Kpsq 1 ` s{a 
+Since phase of Gpsq is 180 everywhere, the phase is 
+=Kpjq tan 1{a. 
+To get 60at c, need 
+c tan 1 60 
+a c a   0.75 tan 60 
+If we use unit gain, what is |KG| at crossover? Using straight lines, 
+|KG|
+-2 
+-1 0.75
+c=1.3 |  | = 1.78 
+(1.3/.75) 1.026 1.78 1
+(.75)221
+3</text>
+        </slide>
+      </slides>
+      <videos/>
+    </lecture>
+    <lecture>
+      <lecture_title>Compensator design examples, time delay of ZOH</lecture_title>
+      <lecture_pdf_url>https://ocw.mit.edu/courses/16-06-principles-of-automatic-control-fall-2012/resources/mit16_06f12_lecture_31/</lecture_pdf_url>
+      <lectureno>31</lectureno>
+      <slides>
+        <slide>
+          <slideno>4</slideno>
+          <text>The phase lag in Gd is due to the eect of the zero order hold. To see why, consider sampling 
+then holding a sinusoidal signal: 
+Note that the reconstructed signal is delayed by about 1{2 the sample period, so there is an 
+additional phase lag of T {2. At crossover, this lag is 
+0.025 180 
+10    7.2 
+2  
+This is precisely the additional phase lag seen in the Bode plots! 
+Compensator Redesign 
+Since we (now) understand that the ZOH adds phase lag at crossover, we should incorporate 
+that lag from the beginning when we do discrete design. Lets do that now: 
+=Gpj 10q174.3 
+To get PM  50 , need 
+=Kpj10q =Gpj 10q 180 ` PM ` 7.2 
+51.5 
+cT  180where 7.2  2  for this case. 
+Using a centered lead compensator, we get 
+c 
+b  2.86 a 
+So take 
+b 10  2.86  28.6  29 
+a 10{2.86  3.49  3.5 
+5</text>
+        </slide>
+        <slide>
+          <slideno>0</slideno>
+          <text>16.06 Principles of Automatic Control
+ 
+Lecture 31
+ 
+Example (continued) 
+We will use the third method. The zero and pole are at 
+1 ` sT {2 s 4.2  z   0.9002 1  sT {2 
+(lots of digits OK since near z=1.) 
+s 24  z  0.5385 
+Therefore, 
+z  0.9002 Kdpzq k1 
+z  0.5385 
+The determine k1 , match K and Kd at convenient point. Usually use 
+s  0, z  1 
+or s 2{T, z  0 
+or s 8, z 1 
+In our case 
+Kp0q 42.16  Kdp1q 0.216k1 
+ k1  195 
+Therefore, 
+1</text>
+        </slide>
+        <slide>
+          <slideno>5</slideno>
+          <text>Must also choose gain, so that crossover is at c  10. Net result is 
+1 ` s{3.5 Kpsq 35.12 1 ` s{29 
+Convert to discrete time by hand or by Matlab c2d to obtain 
+z  0.9162 Kdpzq 222.9 z  0.4679 
+See step response below. 
+0.20.40.60.81.01.2Step response 
+0.2 0.4 0.6 0.8 0.1 0.3 0.5 0.7 0.9
+Time, t C
+D
+6</text>
+        </slide>
+        <slide>
+          <slideno>6</slideno>
+          <text>MIT OpenCourseWare
+http://ocw.mit.edu
+16.06 Principles of Automatic Control
+Fall 2012
+For information about citing these materials or our Terms of Use, visit: http://ocw.mit.edu/terms .</text>
+        </slide>
+        <slide>
+          <slideno>1</slideno>
+          <text>z  0.9002 Kdpzq 195 z  0.5385 
+which agrees with the Matlab c2d command (using tustin option).
+ 
+How well does controller work?
+ 
+Must rst determine Gdpzq. Assuming no processing delay, can nd Gd using Matlab:
+ 
+gd=c2d(g,0.025 , zoh )
+ 
+which yields 
+z ` 0.9917 Gdpzq 0.0003099 pz  1qpz  0.9753q 
+Can use Matlab to compare step responses for continuous and discrete systems (next page). 
+Note that 
+Mp  0.246 (cont.)
+ 
+Mp  0.321 (disc.)
+ 
+Why is discrete worse? 
+0.20.40.60.81.01.2Step response 
+0.2 0.4 0.6 0.8 0.1 0.3 0.5 0.7 0.9
+Time, t continuous discrete 
+2</text>
+        </slide>
+        <slide>
+          <slideno>2</slideno>
+          <text>K.1 Look at Bode plots of GK, GdKd below. The magnitude plots agree well out to 50 r/s, well 
+beyond c  10 r/s. However, the phase plots are signicantly dierent, even at c. At c, 
+the dierence in the phases is 7.2 . This additional phase lag completely accounts for the 
+increased overshoot. 
+To see where the phase comes from, look at Bode plot of G, Gd and K, Kd separately. Note 
+that at c  10 r/s, almost all the additional phase comes from the discretization of G1, not 
+CC
+D
+D
+Frequency,  (rad/sec) Magnitude Phase 
+1In fact, in some sense the discretization of K produces no error at all if prewarping of frequencies is 
+considered. 
+3</text>
+        </slide>
+        <slide>
+          <slideno>3</slideno>
+          <text>-180/ring.cap
+-225/ring.cap-135/ring.cap-90/ring.cap
+-270/ring.capPhase 0Magnitude (dB) 20 40 
+-20
+-40
+-60
+-80
+Frequency,  (rad/sec) 0.01 0.1 1 10 100Bode Diagram (G, G d)
+Frequency,  (rad/sec) 0.01 0.1 1 10 10050 
+40 45 
+35 
+30 Magnitude (dB) 
+30/ring.cap60/ring.cap
+0/ring.capPhase Bode Diagram (K, K d)4</text>
+        </slide>
+      </slides>
+      <videos/>
+    </lecture>
+    <lecture>
+      <lecture_title>Complex poles and zeros, unstable poles, and non-minimum phase zeros</lecture_title>
+      <lecture_pdf_url>https://ocw.mit.edu/courses/16-06-principles-of-automatic-control-fall-2012/resources/mit16_06f12_lecture_19/</lecture_pdf_url>
+      <lectureno>19</lectureno>
+      <slides>
+        <slide>
+          <slideno>0</slideno>
+          <text>16.06 Principles of Automatic Control
+ 
+Lecture 19
+ 
+Bode Plots With Complex Poles 
+Second-order term: Usually in denominator: 
+1
+ 
+p s q2 ` 2 s ` 1
+n n 
+This is plotted much like rst-order term, except slope in high-frequency regime is -2 (-40 
+dB/dec). 
+1|Gpjnq|  2 
+1</text>
+        </slide>
+        <slide>
+          <slideno>3</slideno>
+          <text>So G1 and G2 have the same magnitude, but G2 always has more negative phase. 
+Note that we can write 
+1  s{10 G1psq G2psq 1 ` s{10looomooon 
+This part has magnitude 1, and phase 2 tan 1 {10, 
+which is negative for all   0. This result is general 
+for any system G1 with RHP zeros, G1 can be 
+expressed as 
+G1psq G2psq  Upsloomoon loomoon 
+has only LHP zeros M1, 0 
+A system with poles and zeros in LHP is called minimum phase, because it has less phase 
+lag than any stable system with the same magnitude plot. Therefore, a system with RHP 
+zeros is called nonminimum phase. 
+Two reasons to worry about NMP systems: 
+1. Usual Bode Rules for phase are backwards, so its easy to make mistakes. 
+2.	 Phase lag is bad, and NMP systems have excess phase lag! As we will see, this places 
+limitations on the performance we can achieve using feedback control. 
+4</text>
+        </slide>
+        <slide>
+          <slideno>4</slideno>
+          <text>MIT OpenCourseWare
+http://ocw.mit.edu
+16.06 Principles of Automatic Control
+Fall 2012
+For information about citing these materials or our Terms of Use, visit: http://ocw.mit.edu/terms .</text>
+        </slide>
+        <slide>
+          <slideno>2</slideno>
+          <text>1 ` s{10 G1psq1 ` s{1 
+and 
+1  s{10 G2psq1 ` s{1 
+G2 has a zero at s `10, and so is NMP. 
+Lets look at the magnitude and phase of each transfer function: 
+M1 |G 1pjq|  
+ `{ 1 j10 
+
+2 2`{ 1  10 1 ` j{1 
+ 
+
+ 
+1{2 
+1 ` 2{12 
+1 ` j{10 1  =G 1pjq= 1 ` j{1 
+ tan 1{10  tan 1{1 
+The magnitude of G2 is similar: 
+M2 |G 2pjq|  
+ 1  j{10
+ 
+ 
+
+  1 ` j{1 
+
+1{21 ` 2{102 
+1 ` 2{12 
+M 1 
+So G1 and G2 have the same magnitude plots. 
+The phase of G2 is: 
+1  j{10 2  =G 2pjq= 1 ` j{1 
+ tan 1p{10q tan 1p{1q
+ tan 1 {10 tan 1 {1looooomooooon loooomoooon 
+same term as in =G1.. same as term in =G1 
+but with a minus sign 
+3</text>
+        </slide>
+        <slide>
+          <slideno>1</slideno>
+          <text>10 1 10 010 110 210 300.511.5Magnitude 
+10 1 10 010 110 210 3150100500Phase (deg)
+Frequency,  (rad/sec)-90
+n
+-2 n
+The smaller the , the 
+more rapid the phase How rapid is phase change?
+ 
+Im(s) 
+Re(s) }phase changes by about 45,
+as  goes from (1-) to (1+). 
+Magnitude changes from ?1 to 1 to ?1 in same range. So width of peak/phase change is 22 2 22 
+about 2n. 
+Nonminimum Phase Systems 
+A system with a zero in the RHP is called a nonminimum phase system. Consider 
+2</text>
+        </slide>
+      </slides>
+      <videos/>
+    </lecture>
+    <lecture>
+      <lecture_title>Lead compensation</lecture_title>
+      <lecture_pdf_url>https://ocw.mit.edu/courses/16-06-principles-of-automatic-control-fall-2012/resources/mit16_06f12_lecture_25/</lecture_pdf_url>
+      <lectureno>25</lectureno>
+      <slides>
+        <slide>
+          <slideno>4</slideno>
+          <text>Using Matlab, found
+ 
+c 2.62 r/s 
+PM 36.5 
+Phase margin is larger than required, so can reduce phase lead by 6.5 at (new) c. 
+2.62 2.62 2.621 1 1=GK  tan p q tan p q tan p q0.5 2 b 
+ 150 
+Solving for b, we have 
+b  8 
+So new controller is 
+1 ` s Kpsq 9 1 ` s{8 
+which has 
+c 2.58 r/s 
+PM 30.9 
+DONE! The step response is shown in the gure below. Note that Mp is larger than would 
+be expected (  37%) given the PM. This is typical of systems with modest kp. 
+0.20.40.60.81.01.2Step response 
+Time, t 1 2 0 4 3 5 6 8 7 9Mp=45 %
+5</text>
+        </slide>
+        <slide>
+          <slideno>5</slideno>
+          <text>MIT OpenCourseWare
+http://ocw.mit.edu
+16.06 Principles of Automatic Control
+Fall 2012
+For information about citing these materials or our Terms of Use, visit: http://ocw.mit.edu/terms .</text>
+        </slide>
+        <slide>
+          <slideno>1</slideno>
+          <text>aa b
+b+90 |   | 
+ba
+ba
+abThe phase of the lead compensator is 
+=K  tan 1{a  tan 1{b 
+The maximum phase lead is 
+? ? 
+ab ab1 1p=Kqmax  tan  tan a b a a1 1 tan b{a  tan a{b a 
+2 tan 1 b{a  90 
+So to get 60phase lead (for this example), need lead ratio 
+b  13.92 a 
+So take 
+* a  0.35 r/s symmetric about c  1.3 b  4.9 r/s 
+As c  1.3 r/s, 
+1|G|  0.5917 1.32 c 
+b|K|k   3.73k a 
+2</text>
+        </slide>
+        <slide>
+          <slideno>0</slideno>
+          <text>16.06 Principles of Automatic Control
+ 
+Lecture 25
+ 
+Lead Compensation 
+One problem with PD controller is that the gain gets large at high frequencies. So instead 
+use lead compensator 
+1 ` s{a Kpsq k 1 ` s{b 
+What is the strategy? Look at Bode plot: 
+-2 
+-1 
+-2 |   | 
+
+original G with lead 
+ compensator 
+To get most phase lead for given lead ratio pb{aq, place pole and zero symmetrically around 
+desired crossover. This maximizes average slope near crossover. 
+The magnitude and phase of a lead compensator are 
+1</text>
+        </slide>
+        <slide>
+          <slideno>3</slideno>
+          <text>9
+1Kp constraint |   | 
+-1 
+-2 
+a=1 b0.5
+1
+2
+39
+4.5
+9/4 
+GGK To get better slope at crossover, add lead compensator. Its convenient to place zero at 
+s   1, since this cancels plant pole, and makes Bode plot simpler. Working out the 
+geometry, this puts the cross-over at 
+c  3 r/s 
+at least using the straight line approximation.
+ 
+Our goal is to use the smallest b that meets specs. At crossover, the phase is
+ 
+3 3 31 1 1=GK  tan p q tan p q tan p q0.5 2 b 
+3 136.9  tan 1p qb 
+ 150 (for PM  30) 
+Solving for b, 
+b  12.8 r/s 
+So trial controller is 
+1 ` s Kpsq 9 1 ` s{12 
+4</text>
+        </slide>
+        <slide>
+          <slideno>2</slideno>
+          <text>Therefore, |GK|  1  k  0.453. The compensator is then 
+Kpsq  0.453 1 ` s{0.35 
+1 ` s{4.9 
+Again from Matlab, 
+tr 0.91 sec, good! 
+Mp 19%, not to spec. 
+Lead Compensation to achieve minimum Kp. 
+The example is similar to, but not identical to, FPE example 6.15. 
+The problem is to control the plant 
+1 Gpsq p1 ` s{0.5qp1 ` sqp1 ` s{2q 
+So that 
+Kp 9 
+PM 30 
+Kp  9 guarantees only 10% tracking error in steady state; PM  30ensures a minimum 
+stability margin. First, consider a proportional controller, with unity feedback 
+KpSq k
+p  9 (since Gp0q 1). 
+Then the control system has 
+Kp 9 (as required) 
+PM 7.1 (too low) 
+So need to add lead compensation to increase PM. Bode: 
+3</text>
+        </slide>
+      </slides>
+      <videos/>
+    </lecture>
+    <lecture>
+      <lecture_title>Root locus rules, lead compensation</lecture_title>
+      <lecture_pdf_url>https://ocw.mit.edu/courses/16-06-principles-of-automatic-control-fall-2012/resources/mit16_06f12_lecture_13/</lecture_pdf_url>
+      <lectureno>13</lectureno>
+      <slides>
+        <slide>
+          <slideno>0</slideno>
+          <text>16.06 Principles of Automatic Control
+ 
+Lecture 13
+ 
+Root Locus Rules (cont-d)
+ 
+	 Rule 5 The locus crosses the j axis at points where the Routh criterion shows a 
+transition in the number of unstable roots. 
+Example: 
+1 Lpsq ps ` 1q3 
+The characteristic equation is 
+s 3 ` 3s 2 ` 3s ` 1 ` k  0 
+The Routh array is 
+1 3 
+3 1 ` k 
+8  k 0 3 
+1 ` k 0 
+So the transitions occur at k  8, 1.Look at locus: 
+1</text>
+        </slide>
+        <slide>
+          <slideno>5</slideno>
+          <text>MIT OpenCourseWare
+http://ocw.mit.edu
+16.06 Principles of Automatic Control
+Fall 2012
+For information about citing these materials or our Terms of Use, visit: http://ocw.mit.edu/terms .</text>
+        </slide>
+        <slide>
+          <slideno>1</slideno>
+          <text>k=8 For k  8,the characteristic equation is 
+s 3 ` 3s 2 ` 3s ` 9  0 
+which has roots at 
+? 
+s 3,  3jlo omo on 
+ 
+j axis crossing 
+ Rule 6 The locus will have multiple roots at points on the locus where 
+ddpsq dnpsqnpsq  dpsq  0 ds ds 
+(see FPE for details) 
+Example: 
+s ` 3 Lpsq ps ` 1qps ` 2q 
+2</text>
+        </slide>
+        <slide>
+          <slideno>2</slideno>
+          <text>where does locus depart/arrive real axis? 
+npsqs ` 3 
+dpsqs 2 ` 3s ` 2 
+n 1psq1 
+d1psq2s ` 3 
+npsqd1 1psq dpsqn psq 
+ps ` 3qp2s ` 3qps 2 ` 3s ` 2q
+2s 2 ` 9s ` 9 ps 2 ` 3s ` 2q
+s 2 ` 6s ` 7  0 ? 6 36  28 s   2 2? 
+s  3  2 
+as in recitation! 
+Lead Compensator Example 
+For the plant 
+2 Gpsq ps ` 1qps ` 2q
+nd a unity feedback controller with compensator Kpsq such that 
+tr 0.5 sec 
+Mp 10% 
+If the closed loop system is second order, the poles would need to have 
+Mp  0.10  e  tan     0.6325    sin   0.5912 
+So set   0.707 to allow some margin. 
+3</text>
+        </slide>
+        <slide>
+          <slideno>4</slideno>
+          <text>Must choose ,, k to make this work.
+ 
+We have multiple degrees of freedom, so answer is not unique. Lets x
+ 
+  3 
+to guarantee the real closed-loop pole settles faster than complex poles. Then  must be 
+selected to achieve desired angle condition. 
+Im(s)
+Re(s)90 /o.superior108.4 /o.superior123.7 /o.superior
+- -3 -2 -1 4.92
+33.61 
+3.16
+5</text>
+        </slide>
+        <slide>
+          <slideno>3</slideno>
+          <text>tr  1
+.
+n 8  n  3.6 rad/sec 
+This would place poles at 
+s 2.6  2.6j 
+To simplify, want poles at 
+s 3  3j 
+Look at locus with gain only: 
+Im(s) 
+Re(s) 
+So gain only doesnt work - must add lead compensation: 
+ps ` qKpsq k ps ` q
+where   . 
+Then rough locus will be 
+Im(s) 
+Re(s) --
+4</text>
+        </slide>
+      </slides>
+      <videos/>
+    </lecture>
+    <lecture>
+      <lecture_title>Bode plots (cont.)</lecture_title>
+      <lecture_pdf_url>https://ocw.mit.edu/courses/16-06-principles-of-automatic-control-fall-2012/resources/mit16_06f12_lecture_18/</lecture_pdf_url>
+      <lectureno>18</lectureno>
+      <slides>
+        <slide>
+          <slideno>1</slideno>
+          <text>10 010 110 210 310 010 110 2
+|K|
+20 40 dB 
++1, 20 dB/dec 2 ~ 3dB What about the phase? 
+=1 ` j{a  tan 1{a 
+10 010 110 210 3045 90 
+4 20 
+a a/5 5a 
+K
+11 
+That is, the phase varies by 90over the frequency range pa , 5aq.5 
+Some people nd it easier to draw the construction lines with breakpoints at a{10, 10a. 
+ Easier to draw 
+ Less phase error 
+2</text>
+        </slide>
+        <slide>
+          <slideno>2</slideno>
+          <text>Middle segment is not technically an asymptote anyway
+ 
+10 010 110 210 3045 90 
+2 20 
+K
+6
+200
+For K  1`1 
+s{a , the above magnitude and phase plots are ipped about |K| 1 or =K  0 . 
+10 010 110 210 310 2 10 1 10 0
+10 010 110 210 390 45 0
+ K |K|a
+-1 
+Bode Rules: 
+Rule 1: Manipulate the transfer function into Bode form. 
+Rule 2: Determine  for K0s term. Plot the low-frequency asymptote with slope (or 20 
+dB/dec) through the point   1, 1  1  K0. 
+3</text>
+        </slide>
+        <slide>
+          <slideno>7</slideno>
+          <text>- 45/dec 45/dec
+-90/dec0.05
+100
+5005
+-180/ring.cap-150/ring.cap-120/ring.cap-90/ring.cap-60/ring.cap-30/ring.capPhase 0/ring.cap
+0.01 0.1 1 10 100 1000
+Frequency,  (rad/sec) 0.5 50 8</text>
+        </slide>
+        <slide>
+          <slideno>3</slideno>
+          <text>Rule 3: Complete the composite magnitude asymptotes. At each break point, change the 
+slope by 1, or  2, as appropriate. 
+Rule 4: Sketch in approximate magnitude curve. (see FPE for more details). 
+Rule 5: Plot the low frequency asymptote of the phase curve p    90q. 
+Rule 6: The approximate phase is found by changing the phase by 90or 180 at each 
+breakpoint. 
+Rule 7: Locate the asymptotes for each phase curve, at break points 1{5 and 5 times (or 
+1{10 and 10 times) the frequency of the magnitude break point. 
+Rule 8: Graphically add the asymptotes, and draw the approximate phase curve. 
+Example: 
+2000ps ` 0.5qKGpsq sps ` 10qps ` 50q
+2p1 ` s{0.5q sp1 ` s{10qp1 ` s{50q 
+The magnitude break points are 
+0 0.5 
+x 10 
+x 50 
+The phase break points are 
+0 0.05, 5 
+x 1, 100 
+x 5, 500 
+4</text>
+        </slide>
+        <slide>
+          <slideno>0</slideno>
+          <text>16.06 Principles of Automatic Control
+ 
+Lecture 18
+ 
+Bode Plot Construction (continued) 
+Note that phase of s term is 
+=pjq =j  =j 
+  90 
+To plot 1 ` s{a term, note that 
+|1 ` j{a| p1 ` 2{a 2q1{2 
+$ 
+1,  ! a &amp; 
+ {a,  " a ?% 2,   a 
+Example: 
+Kpsq 1 ` s{20 
+1</text>
+        </slide>
+        <slide>
+          <slideno>5</slideno>
+          <text>Complete the composite magnitude  asymptotes 
+K0=2, =-1slope=-1
+slope=-1slope=0 
+slope=-20.550 10 
+10 10 3
+10 2
+10 1
+1
+0.1
+0.01Magnitude 
+0.1 1 10 100 1000
+Frequency,  (rad/sec) 
+Sketch the appropriate magnitude  curve 
+K0=2, =-1slope=-1
+slope=-1slope=0 
+slope=-20.5 10 50 10 3
+10 2
+10 1
+1
+0.1
+0.01Magnitude 
+0.1 1 10 100 1000
+Frequency,  (rad/sec) 6</text>
+        </slide>
+        <slide>
+          <slideno>6</slideno>
+          <text>0.01 0.1 1 10 100 1000
+Frequency,  (rad/sec) -180/ring.cap-150/ring.cap-120/ring.cap-90/ring.cap-60/ring.cap-30/ring.cap0/ring.capPhase approx. 
+smoothed 
+version 
+ 500
+ 555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000.05  5
+ 100- 90/dec- 45/dec
+- 45/dec  1
+0.01 0.1 1 10 100 1000
+Frequency,  (rad/sec) -180/ring.cap-150/ring.cap-120/ring.cap-90/ring.cap-60/ring.cap-30/ring.capPhase 0/ring.cap
+50 0.55007</text>
+        </slide>
+        <slide>
+          <slideno>8</slideno>
+          <text>MIT OpenCourseWare
+http://ocw.mit.edu
+16.06 Principles of Automatic Control
+Fall 2012
+For information about citing these materials or our Terms of Use, visit: http://ocw.mit.edu/terms .</text>
+        </slide>
+        <slide>
+          <slideno>4</slideno>
+          <text>10 3
+10 2
+10 1
+1
+0.1
+0.010.01 0.1 1 10 100 1000Choose appropriate scales on log-log paper 
+Frequency,  (rad/sec) Magnitude 
+Plot low-frequency asymptote 
+K0=2, =-1
+0.01 0.1 1 10 100 1000
+Frequency,  (rad/sec) 10 3
+10 2
+10 1
+1
+0.1
+0.01Magnitude 5</text>
+        </slide>
+      </slides>
+      <videos/>
+    </lecture>
+    <lecture>
+      <lecture_title>Bode plot problems</lecture_title>
+      <lecture_pdf_url>https://ocw.mit.edu/courses/16-06-principles-of-automatic-control-fall-2012/resources/mit16_06f12_lecture_17/</lecture_pdf_url>
+      <lectureno>17</lectureno>
+      <slides>
+        <slide>
+          <slideno>2</slideno>
+          <text>2. High-frequency: |KG|! 1.
+ 
+In this frequency range, T pjq KpjqGpjq
+ 
+3. Crossover: |KG|=1
+ 
+In this frequency range, |T || KG | 1
+ 
+1`KG |1`KG| 
+Note that at crossover, |T | depends on the phase of KG.
+ 
+If KG=1 (phase= 0), |T | 1{2.
+ 
+If KG=-1 (phase= 180), |T |8!
+ 
+Bottomlineisthatthephaseatcrossoverhasastrongeecton Mrfortheclosed-loopsystem.
+ 
+For now, its enough to note that at crossover, we will have/want
+ 
+180  =KG  0 
+In practice, we want the phase to be well away from 180 , but it will usually be less than 
+90 . A phase of 120often works well, but that depends on the actual specications. 
+Bode Plot Construction 
+The rst step is to the transfer function of interest in Bode form 
+ p1 ` s{s 1qp1 ` s{s 2q ... KGpsq K0s p1 ` s{saqp1 ` s{sbq ... 
+We can also have second order terms, which we will add later. Since we are plotting (for the 
+magnitudinal plot), log |KG|, we have 
+log |KGpjq|  log |K0|`  log ||
+` log |1 ` j{s1|` ... 
+ log |1 ` j{sa| ... 
+So on a log scale, plots of the individual terms add, since the log of a product is the sum of 
+logs. 
+The K0s term is plotted as a straight line, since 
+log |K0pjq  log K0 ` lo on log loooooomoooooon lo omo on omolo omo on 
+slope y-axis const x-axis 
+For example, plot magnitude of 10{s2 : 
+3</text>
+        </slide>
+        <slide>
+          <slideno>0</slideno>
+          <text>16.06 Principles of Automatic Control
+ 
+Lecture 17
+ 
+Frequency Response Design 
+Suppose we want to design a closed-loop system with a specic desired response. How 
+might we use the FR to accomplish this? 
+2 
+Hpsq n 
+s2 ` 2ns ` n 2 
+1 (Bode form) p s q2 `p2s q2 ` 1n n 
+The Bode (magnitude) plot is as shown in gure below. 
+Note: See FPE Figure 6.3 
+  small 
+  large Mr
+/n|H| 
+1
+1
+1</text>
+        </slide>
+        <slide>
+          <slideno>4</slideno>
+          <text>MIT OpenCourseWare
+http://ocw.mit.edu
+16.06 Principles of Automatic Control
+Fall 2012
+For information about citing these materials or our Terms of Use, visit: http://ocw.mit.edu/terms .</text>
+        </slide>
+        <slide>
+          <slideno>1</slideno>
+          <text>Well say more on Bode plot construction later. For now, a few importnat points: 
+	 The magnitude of the resonant peak is Mr 
+	 The resonant frequency, r, is close to n for lightly-damped systems with greater 
+damping. 
+	 The bandwidth (not shown) is the freq 
+	 uency at which |Hpq|  0.707|Hp0q| 
+For a given unity-feedback control system 
+-+ K(s) G(s)r
+what will closed-loop transfer function 
+KpsqGpsqT psq 1 ` KpsqGpsq
+look like? 
+low 
+frequency high 
+frequency KG T
+TKG 
+crossover |  | 
+We can consider three regimes 
+1. Low frequency: |KG|" 1 
+In this frequency range, T pjq 1. 
+2</text>
+        </slide>
+        <slide>
+          <slideno>3</slideno>
+          <text>|  | 
+100
+10 
+10.1 
+0.1 020 40 
+-20 dB 
+1 10 slope=-2, 
+or 20 dB/decade To plot 1 ` s{a term, note that 
+|1 ` j{a| p1 ` 2{a 2q1{2 
+$ 
+1  ! a &amp; 
+ {a  " a ?% 2   a 
+4</text>
+        </slide>
+      </slides>
+      <videos/>
+    </lecture>
+    <lecture>
+      <lecture_title>Lag compensation (cont.)</lecture_title>
+      <lecture_pdf_url>https://ocw.mit.edu/courses/16-06-principles-of-automatic-control-fall-2012/resources/mit16_06f12_lecture_26/</lecture_pdf_url>
+      <lectureno>26</lectureno>
+      <slides>
+        <slide>
+          <slideno>4</slideno>
+          <text>Error to Unit Ramp Input 
+Time, t (sec) 0.020.040.060.080.10.12
+0
+0 0.5 1.5 2.5 3.5 1 2 3 4without lag
+with  lagess =0.07
+ess =0.01Note that although the steady-state error to a ramp input is reduced, there is a long tail to 
+the response. Why? Look at Root locus: 
+Im(s) 
+Re(s) 
+Long time constant pole near zero. 
+Pole has small residue, but a long 
+time constant. 
+Note the constant pole near lag zero. Pole has small residue, but a long time constant. 
+This behavior is very typical of systems with lag of PI control. To eliminate, must increase 
+bandwidth (crossover frequency), which is not always desirable. 
+5</text>
+        </slide>
+        <slide>
+          <slideno>1</slideno>
+          <text>Lag Compensator 
+Consider the plant 
+In a unity feedback control system Gpsq  1 
+sps ` 10q 
+-+K G
+Suppose we use a proportional controller 
+Kpsq 141 
+For this controller, 
+c 10 r/s 
+PM 45 
+and the overshoot in response to a unit step is 
+Mp  23% 
+Suppose that we nd the response of the closed-loop system satisfactory, except that the 
+velocity constant Kv  14.1 is lower than desired ( Kv  100). How might we improve the 
+response? 
+Look at Bode plot: 
+2</text>
+        </slide>
+        <slide>
+          <slideno>3</slideno>
+          <text>We also need
+ 
+a ! c 
+So that not too much phase lag is added at crossover. Its common to use 
+a  c{10 
+which ensures  6 of phase lag will be added at crossover. 
+So the new Compensator is 
+s ` 1 Kpsq 141 s ` 0.14 
+How well does the new compensator work? Compare step responses, error response to ramp 
+inputs (see plots). 
+0 0.5 1 1.5 200.20.40.60.811.21.4
+Time, t (sec) Step response step response with lag 
+step response without lag 
+Note the slightly higher peak overshoot with the lag 
+/f_ilter due to lower phase margin (and also more lag 
+below crossover). 
+4</text>
+        </slide>
+        <slide>
+          <slideno>5</slideno>
+          <text>PI Control 
+PI (proportional-integral control) is used when the type of the system must be increased, 
+say, from type 0 to type 1. 
+Example: Consider a system that performs adequately with unity feedback 
+-+1 G(s)r
+where 
+1 Gpsq 100 , p1 ` s{1qp1 ` s{200q 
+but we desire a type 1 system with velocity constant Kv  100. Look at problem on Bode 
+plot: 
+10 2 10 1 10 010 110 210 310 1 10 010 110 210 3 |  | 
+original G Kv constraint 
+So the compensator is
+ 
+6</text>
+        </slide>
+        <slide>
+          <slideno>2</slideno>
+          <text>10 2 10 1 10 010 110 210 310 2 10 1 10 010 110 210 310 4Magnitude 
+-1 
+-2 original KG Modi/f_ied KG to meet K v constraint 
+Kv constraint Placing Kv constrain on Bode plot shows that we must somehow make slope steeper for a 
+bit to achieve the requirement, if we want crossover behavior to be similar. We do this with 
+a lag compensator: 
+s ` a 
+s ` b 
+
+ aa b
+b
+-90 |   | 
+0.
+On order to achieve our design goals, we need the lag ratio a{b to be the amount of additional 
+low frequency gain required. In our case, 
+a 100  7.1 b 14.1 
+3</text>
+        </slide>
+        <slide>
+          <slideno>6</slideno>
+          <text>3 s ` 3 Kpsq ` 1  s s 
+Note that error pole will be near s 3. To speed up error response, use 
+s ` 10 Kpsq p Kv  1000qs 
+which will result in pole near s 10. 
+7</text>
+        </slide>
+        <slide>
+          <slideno>0</slideno>
+          <text>16.06 Principles of Automatic Control
+ 
+Lecture 26
+ 
+From last time, we had plant and compensator 
+1 Gpsq p1 ` s{0.5qp1 ` sqp1 ` s{2q 
+1 ` s Kpsq 9 1 ` s{8 
+The closed-loop step response has 45% overshoot, when 37% expected. Why? 
+Look at Bode plot of H  KG : p1`KGq 
+10 1 10 010 110 210 6 10 4 10 2 10 010 2Magnitude |H| 
+Eective M rMr predicted by PM 
+
+Because of low Kp, D.C. gain of H is 0.9, which increases eective Mr by factor of 1/0.9. 
+1</text>
+        </slide>
+        <slide>
+          <slideno>7</slideno>
+          <text>MIT OpenCourseWare
+http://ocw.mit.edu
+16.06 Principles of Automatic Control
+Fall 2012
+For information about citing these materials or our Terms of Use, visit: http://ocw.mit.edu/terms .</text>
+        </slide>
+      </slides>
+      <videos/>
+    </lecture>
+    <lecture>
+      <lecture_title>Design examples, pre&#8208;warping, direct design</lecture_title>
+      <lecture_pdf_url>https://ocw.mit.edu/courses/16-06-principles-of-automatic-control-fall-2012/resources/mit16_06f12_lecture_34/</lecture_pdf_url>
+      <lectureno>34</lectureno>
+      <slides>
+        <slide>
+          <slideno>6</slideno>
+          <text>7</text>
+        </slide>
+        <slide>
+          <slideno>3</slideno>
+          <text>-+K G yr(The system might be continuous or discrete). Suppose we want the closed loop transfer 
+function 
+KG H  1 ` KG 
+to have a specic form, e.g., have a particular rise time, settling time, etc. Why not just solve for desired K in terms of G, H? 
+Hp1 ` KGq KG 
+H KGH ` KG 
+1 H K  G 1  H 
+So 
+K  
+1 H 
+G 1H 
+Note that K essentially cancels G with the factor 1{G, so makes the loop gain 
+H K  1  H 
+exactly what is needed to have the desired closed loop transfer function. 
+But we cant choose any H desired! 
+Constraints on H: 
+Stability In order that K not cancel on unstable pole or NMP zero, we must have that 
+1. H must have as zeros all the zeros of G outside the unit circle. 
+2. 1  H must have as zeros all the unstable poles of G. 
+Causality In order that K be causal, we must have: 
+3. The relative degree of H is at least as large as the relative degree of G. 
+4</text>
+        </slide>
+        <slide>
+          <slideno>2</slideno>
+          <text>Use lead compensator to get desired PM and crossover:
+ 
+=Gwpj 0q 204.1 
+lead  180  =G ` PM  74.1 
+c 
+b 7.15 a 
+b 100  7.15  715 
+a 100{7.15  14 
+1 ` W {14 KN pW q12.53 1 ` W {715 
+z  0.8692 Kdpzq149.7 z ` 0.5628 
+See step response below: 
+Direct Design 
+Suppose we have the usual unity feedback control structure: 
+3</text>
+        </slide>
+        <slide>
+          <slideno>1</slideno>
+          <text>where 6 anticipates lag compensation. 
+c 
+b 4.65 a 
+ b 51  4.65  237 
+a 51{4.65  11.0 
+1 ` W {11 Klead 5.44 1 ` W {237 
+For this compensator, Kp  136. So need lag ratio of 36.76. 
+W ` 5 Klag  W ` 0.136 
+Therefore, the compensator is 
+W ` 5 1 ` W {11 KpW q 5.44 W ` 0.136 1 ` W {237 
+The discrete time compensator is the Tustin transform, yielding 
+pz  0.9512qpz  0.8957qKdpzq 57.97 pz  0.9986qpz ` 0.0847q 
+Remarks: 
+1. Compensator is almost identical to what would be found if we used emulation, if we 
+include eective T {2 delay of ZOH. 
+2. W-Transformapproachguaranteesstabilityofdiscrete-timesystem. Notreallyanissue 
+for cT  0.5, but might be for faster crossover. 
+3. Note RHP zero at wW  ` T 2  200. This zero limits achievable bandwidth of con
+troller, just like time delay. 
+Example 
+Same plant as above. Make c pcq as high as practical and still have 50phase margin. 
+Solution: Lets pick crossover frequency c to be factor of only 2 below NMP zero. 
+c  100 
+2</text>
+        </slide>
+        <slide>
+          <slideno>7</slideno>
+          <text>MIT OpenCourseWare
+http://ocw.mit.edu
+16.06 Principles of Automatic Control
+Fall 2012
+For information about citing these materials or our Terms of Use, visit: http://ocw.mit.edu/terms .</text>
+        </slide>
+        <slide>
+          <slideno>4</slideno>
+          <text>Example
+ 
+25 Gpsq p1 ` s{2q2 
+z ` 0.9867 Gdpzq0.004934 pz  0.9802q2 
+T 0.01 
+do a direct design such that 
+1. The system is Type 1:  Hp1q 1. 
+2. The system is deadbeat (all poles of H at z  0). 
+Therefore, might select 
+1 z ` 1 Hpzq 2 2 z
+Then 
+1 1 z ` 1 Kdpzq   Gdpzq 2 z2  0.5z  0.5 
+See responses on next two pages. Note the ringing in urks. To eliminate, put zero of H at 
+0.9867. 
+5</text>
+        </slide>
+        <slide>
+          <slideno>0</slideno>
+          <text>16.06 Principles of Automatic Control
+ 
+Lecture 34
+ 
+Zeros: z  0.9867..  W  30, 000 
+z  8  W  `200 
+Poles: z  0.9802  W  2 
+Bode Gain: Gdp1q 25.
+ 
+Also, need to map crossover frequency:
+ 
+tanp cT {2qc   51.068 T {2 
+Theresnotmuchwarpingat T  0.5 (2%). At T  1.0, thereis9%warping; at T  1.5, 
+24%. So for most problems, may not need to prewarp. 
+Bode plot of G: 
+25 2
+-2 200 (NHP) 
+30,000 -1 
+To meet specs, need lead around c  51, lag below   5.1. 
+=Gpj 51q189.7 
+So need phase from lead compensator 
+lead  180  =Gpj 51q` 6 ` PM 
+ 65.7 
+1</text>
+        </slide>
+        <slide>
+          <slideno>5</slideno>
+          <text>To eliminate ringing, choose 
+Hpzq  1 
+1.9867 z ` 0.9867 
+z2 
+6</text>
+        </slide>
+      </slides>
+      <videos/>
+    </lecture>
+    <lecture>
+      <lecture_title>Modeling principles</lecture_title>
+      <lecture_pdf_url>https://ocw.mit.edu/courses/16-06-principles-of-automatic-control-fall-2012/resources/mit16_06f12_lecture_3/</lecture_pdf_url>
+      <lectureno>3</lectureno>
+      <slides>
+        <slide>
+          <slideno>4</slideno>
+          <text>MIT OpenCourseWare
+http://ocw.mit.edu
+16.06 Principles of Automatic Control
+Fall 2012
+For information about citing these materials or our Terms of Use, visit: http://ocw.mit.edu/terms .</text>
+        </slide>
+        <slide>
+          <slideno>1</slideno>
+          <text>Modeling a DC Motor 
+Physical layout: 
+Model:
+ 
+The states are: 
+x1   - motor angle
+ 
+x2  9- motor angular velocity
+ 
+x3  ia - armature current
+ 
+Find equations of motion: 
+d 9 x91     x2 (Kinematicsqdt 
+d91 : x92    dt 
+2
+ S S
+NN
+e= K eImage by MIT OpenCourseWare.
+Image by MIT OpenCourseWare.</text>
+        </slide>
+        <slide>
+          <slideno>0</slideno>
+          <text>16.06 Principles of Automatic Control
+ 
+Lecture 3
+ 
+Modeling principles: 
+1. Identify the states of the system: 
+ positions 
+ velocities 
+ inductor currents 
+ capacitor voltages 
+ etc 
+2. Use physics to nd dx1{dt, dx2{dt,... 
+3. Organize as: 
+dx 
+dt  fpx, uq y  gpx, uq 
+where 
+xstate vector 
+ucontrol input 
+youtput of measurement 
+4. Linearize if necessary. 
+1</text>
+        </slide>
+        <slide>
+          <slideno>2</slideno>
+          <text>From free body diagram:
+ 
+J: b9` T 
+b9 viscous drag on rotor 
+T  torque due to current 
+K tia, where Kt is a motor torque constant 
+So 
+b K t : 9   ` iaJ J 
+b K t x92  x2 ` x3J J 
+Now model the circuit. Start with motor part itself. The power supplied to the motor is 
+P  eia 
+This must equal (by 1st law) the torque power: 
+P  T 9 Ktia9
+Equating the previous two equations: 
+9e  Kt 
+Therefore, 
+Ke  Kt 
+So now we can nd dia{dt: 
+dia 1 pv a  iaRa  eqdt L
+1 9  pv a  iaRa  KtqL
+Therefore,
+ 
+3</text>
+        </slide>
+        <slide>
+          <slideno>3</slideno>
+          <text>9x3  Kt 
+L x2  Ra 
+L x3 ` 1 
+L va 
+In state-space form: 
+    
+0 1 0 0 
+9x  0 
+0 
+  ` 
+1 b{J 
+K t{L 
+0 0  
+x Kt{J 
+Ra{Lx ` 0 
+1 
+L va 
+This is in the form 
+x9Ax ` Bu 
+y Cx ` Du 
+Note: FPE uses 
+x9Fx ` Gu 
+y Hx 
+4</text>
+        </slide>
+      </slides>
+      <videos/>
+    </lecture>
+    <lecture>
+      <lecture_title>Effect of zeros</lecture_title>
+      <lecture_pdf_url>https://ocw.mit.edu/courses/16-06-principles-of-automatic-control-fall-2012/resources/mit16_06f12_lecture_7/</lecture_pdf_url>
+      <lectureno>7</lectureno>
+      <slides>
+        <slide>
+          <slideno>1</slideno>
+          <text>Example: 
+1 G0psq ,  0.5 s2 ` 2(s+1
+0 2 4 6 8 100.200.20.40.60.811.21.4
+t  
+h(t)
+h(t)
+h(t)+h(t)
+So a zero (with  0) tends to speed up time response increase overshoot. 
+Note that the zero is at root of 
+s ` 1  0  s 1{ 
+The eect is small if 
+|n|! 1 
+which is the same as 
+| 1{|"| n| 
+2</text>
+        </slide>
+        <slide>
+          <slideno>2</slideno>
+          <text>Im(s) 
+Re(s) 
+zero here has 
+small eect zero here has 
+big eect Non-Minimum Phase Zeros 
+For technical reasons, a zero in the right half plane are called non-minimum phase zeros.
+ 
+They have a funny (undesirable) eect on the response of a system.
+ 
+For a NMP zero,   0. So, the step response will be the original step response minus a
+ 
+constant times the derivative:
+ 
+0 2 4 6 8 100.200.20.40.60.811.2
+t
+3</text>
+        </slide>
+        <slide>
+          <slideno>4</slideno>
+          <text>So, net eect is that addition of the pole will smooth the original step response, increasing 
+the rise time, and reducing the overshoot, 
+=0 
+=1 (?) 
+5</text>
+        </slide>
+        <slide>
+          <slideno>5</slideno>
+          <text>MIT OpenCourseWare
+http://ocw.mit.edu
+16.06 Principles of Automatic Control
+Fall 2012
+For information about citing these materials or our Terms of Use, visit: http://ocw.mit.edu/terms .</text>
+        </slide>
+        <slide>
+          <slideno>0</slideno>
+          <text>16.06 Principles of Automatic Control
+ 
+Lecture 7
+ 
+Eects of Zeros on Step Response 
+Weve looked at the response of a second-order system: 
+2 
+Gpsq n 
+s2 ` 2(ns+n 2 
+What if we had a zero in the numerator? How would that change the response? Consider: 
+ps ` 1q2 
+Gpsq n 
+s2 ` 2(ns+n 2 
+The step response is then the inverse LT of 
+1 ps ` 1q2 
+Hpsqn  H0psq` sH 0psqss2 ` 2(ns+n 2 
+H0 is 
+1 2 
+H0psqn 
+ss2 ` 2(ns+n 2 
+that is, the LT of the step response of the second order system without the zero. 
+The second term is a constant ( ) times s times H0psq. Since multiplying by s is the same 
+as dierentiating in the time domain, we have that 
+d hptq h0ptq`  h 0ptqdt 
+where hptq is a step response with zero, and h0ptq is a step response without the zero. 
+1</text>
+        </slide>
+        <slide>
+          <slideno>3</slideno>
+          <text>This results in initial wrong way behavior that is very undesirable. 
+Examples of NMP systems: 
+1. Space shuttle on approach 
+2. Backing car 
+To get a backing car to return to a given line, must make the front end go the wrong way 
+rst: 
+path of the front end 
+Eect of Additional Poles 
+What happens if we add a third pole? 
+1 2 
+Gpsq n 
+s ` 1 s2 ` 2(ns+n 2 
+The new step response will be the convolution of the step response without the additional 
+pole with: 
+1  t e  ptq 
+1
+t
+4</text>
+        </slide>
+      </slides>
+      <videos/>
+    </lecture>
+    <lecture>
+      <lecture_title>The Routh criterion</lecture_title>
+      <lecture_pdf_url>https://ocw.mit.edu/courses/16-06-principles-of-automatic-control-fall-2012/resources/mit16_06f12_lecture_8/</lecture_pdf_url>
+      <lectureno>8</lectureno>
+      <slides>
+        <slide>
+          <slideno>1</slideno>
+          <text>Partial answer: A necessary condition for all the roots to be stable is that all the coe
+cients of psq be positive. So if at least one coecient is negative, system must be unstable. 
+A complete answer to the question is obtained using the Routh Array. The array is con
+stracted as bellow: 
+Row n: 1 a2 a4  
+Row n-1: a1 a3 a5  
+Row n-2: b1 b2 b3  
+Row n-3: c1 c2 c3  
+. . ... . 
+Row 2:   
+Row 1:  
+Row 0:  
+The rst two rows come directly from the polynomial pxq. Each subsequent row is formed 
+by operations on the two rows above: 
+1 a2 
+a1 a3 
+a1 
+1 a4 
+a1 a5 a1a2  a3
+ 
+ b1 a1 
+a1a4  a5
+ 
+ b2 a1 
+a1 a3 
+b1 b2 a1 
+b1a3  a1b2
+ 
+ c1 b1 b1
+ 
+The number of unstable poles is the number of sign changes in the rst column of the array. 
+Example: 
+psqs 3 ` 2s 2 ` 3s ` 8 
+The Routh Array is 
+H0 is 
+3 : 1 3 0 
+2 : 2 8 0 
+1 : 1 0 
+0 : 8 
+ 
+2</text>
+        </slide>
+        <slide>
+          <slideno>2</slideno>
+          <text>First column has two sign changes!
+ 
+There are two unstable poles. In fact, the roots are: 
+2.2483 0.1241 ` 1.8822i 
+0.1241  1.8822i 
+Note: We can scale any row of the array by a positive constant, and not change the sign of 
+any of the terms. This can simplify the algebra by eliminating fractions. 
+Stability vs. Parameter Range 
+Its much easier to use a calculator or Matlab to nd roots. So why use Routh?
+ 
+Routh allows us to determine symbolically what values of a parameter will lead to stability/instability.
+ 
+Example: 
+For what values of k is the following system stable? 
+-+K yr 1
+(s+1)3
+Solution:
+ 
+The Closed Loop transfer function is:
+ 
+K KGpsq ps`1q3 T psq  1 ` KGpsq 1 ` ps`K 
+1q3 
+K ps ` 1q3 ` K 
+ psqs 3 ` 3s 2 ` 3s ` 1 ` K 
+The Routh array is 
+3 : 1 3 0 
+2 : 3 1 ` K 0 
+1 : 8K 
+3 0 
+0 : 1 ` K 0 
+3</text>
+        </slide>
+        <slide>
+          <slideno>4</slideno>
+          <text>MIT OpenCourseWare
+http://ocw.mit.edu
+16.06 Principles of Automatic Control
+Fall 2012
+For information about citing these materials or our Terms of Use, visit: http://ocw.mit.edu/terms .</text>
+        </slide>
+        <slide>
+          <slideno>0</slideno>
+          <text>16.06 Principles of Automatic Control
+ 
+Lecture 8
+ 
+The Routh Stability Criterion 
+Suppose we have a transfer function 
+Y psq b0sm ` b1Sm1 ` ... ` bmT psq Rpsq sn ` a1sn1 ` ... ` an 
+We can always factor as 
+m ps  ziqT psq i1
+n ps  piqi1
+The closed-loop system is stable if 
+Rppiq 0, @ i 
+NB: It might turn out that there are pole-zero cancellations, that is, zi  pj for some i.j.
+ 
+If this happens, system is still unstable if Rppj q 0.
+ 
+The characteristic equation is:
+ 
+psq s n ` a1s n1 ` ... ` an1s ` an  0 
+The roots are, of course, p1,p2, ...pn. 
+Important question: 
+Can we tell if the system is stable, without actually solving for the roots? 
+1</text>
+        </slide>
+        <slide>
+          <slideno>3</slideno>
+          <text>For stability, need rst column to be positive, so that K  8 and K  1.
+ 
+If K 1, rst column is ` ` `, so there is 1 unstable pole.
+ 
+If K  8, rst column is ` ` `, so there are 2 unstable poles.
+ 
+Possible problems: 
+If the rst element of a row is zero, process fails.
+ 
+Solution: Replace 0 by f, a small positive number.
+ 
+If a whole row is zero, must replace row as explained in the book. This happens whenever
+ 
+there is a complex conjugate pair of roots on the imaginary axis.
+ 
+4</text>
+        </slide>
+      </slides>
+      <videos/>
+    </lecture>
+    <lecture>
+      <lecture_title>Frequency response design</lecture_title>
+      <lecture_pdf_url>https://ocw.mit.edu/courses/16-06-principles-of-automatic-control-fall-2012/resources/mit16_06f12_lecture_16/</lecture_pdf_url>
+      <lectureno>16</lectureno>
+      <slides>
+        <slide>
+          <slideno>5</slideno>
+          <text>MIT OpenCourseWare
+http://ocw.mit.edu
+16.06 Principles of Automatic Control
+Fall 2012
+For information about citing these materials or our Terms of Use, visit: http://ocw.mit.edu/terms .</text>
+        </slide>
+        <slide>
+          <slideno>0</slideno>
+          <text>16.06 Principles of Automatic Control
+ 
+Lecture 16
+ 
+Frequency Response Design 
+Problems with root locus: 
+	 Works only for rational transfer functions: 
+ps  ziqGpsq ps  piq
+If we start with experiment data, it may be dicult or impossible to put Gpsq in the form 
+above. 
+	 The connection between performance of the system and the root locus is sometimes 
+poor, so it is dicult to design for some kind of performance. 
+	 For simple problems, can guess that right solution is lead (for greater stability or faster response) or lag (for greater position or velocity constant). For other problems, its harder to guess the right form of the compensator. 
+Frequency response methods consider the behavior of Gpsq, Kpsq along the j axis. 
+That is, we look only at plots of Gpjq,Kpjq to determine stability, performance. 
+Some advantages: 
+	 Works with any Gpsq (or Gpjq), whether rational or not. 
+	 Its relatively easy to determine Gpjq from experimental data. 
+	 Performance requirements can usually be specied in terms of the frequency response characteristics. 
+	 The stability test is straightforward. 
+	 There are a few simple rules for determining the type of compensator to use. 
+1</text>
+        </slide>
+        <slide>
+          <slideno>2</slideno>
+          <text>G may be expressed in polar form as 
+GpjqMej 
+M= 
+So if we plot |Gpjq| and =Gpjq versus , we can easily determine the response to any 
+sinusoidal input. 
+Terminology: M |Gpjq|  magnitude of Gpjq
+  =Gpjq phase of Gpjq 
+Frequency Response of Lead Compensator 
+Recall that lead compensator has the form: 
+s `  Kpsqk , p  z s ` p 
+ 
+R.L. gain 
+Rewrite this as 
+k 1 ` s{ Kpsqp 1 ` s{p 
+1 ` s{K 1 ` s{p 
+ 
+"Bode" gain 
+What is magnitude and phase? 
+a 
+1 `p{q2 
+|Gpjq| K a 
+1 `p{pq2 
+=Gpjq tan 1p{q tan 1p{pq 
+Traditionally, |G| is plotted on a log-log plot, =G on a semilog plot, together called Bode 
+plot. 
+3</text>
+        </slide>
+        <slide>
+          <slideno>1</slideno>
+          <text>One disadvantage:
+ 
+ Some of the ideas are dicult, even if the techniques are not. 
+The Frequency Response 
+Consider an LTI system G with input u and output y: 
+Gu y
+If the input is uptq est, then a particular solution is: 
+yptq Gpsqe st 
+For a sinusoidal signal 
+uptqA cos t 
+ARepejtq 
+the response is 
+yptqARepGpjqejtq
+ApRerGpjqs cos t  ImrGpjqs sin tq 
+So the response is sinusoidal, with amplitude AM, where 
+M |Gpjq|a 
+ pRerGpjqsq2 ` ImrGpjqs2 
+yptq can be expressed more simply as 
+yptq AM cospt ` q 
+where 
+ ImrGpjqs1  tan RerGpjqs
+=Gpjq 
+2</text>
+        </slide>
+        <slide>
+          <slideno>4</slideno>
+          <text>magnitude in decibels=20 log10 |G| 
+Visualization using Root Locus plane 
+In root locus form, the lead compensator is 
+1 ` s{ ps `  Kpsq  1 ` s{p s ` plooomooon loomoon 
+Bode form root locus form 
+Bode gain=1 R.L. gain=p 
+ 
+Im(s) 
+Re(s) 
+--p=tan-1 (/p)=tan-1 (/)p2+ 2l= 
+2+ 2 l= 
+? ? 
+2`2 1`p{q2 So |G| p ? ? , as before. p2`2 1`p{pq2 
+=G    
+ tan 1{  tan 1 {p, as before. 
+5</text>
+        </slide>
+        <slide>
+          <slideno>3</slideno>
+          <text>Example: 
+1 ` s Kpsq 1 ` s{10 
+05101520Magnitude (dB)
+10210110010110210303060Phase (deg)Bode Diagram
+Frequency  (rad/sec)decade
+Notes: 
+ Low-frequency magnitude = 1 = K(0) 
+ High-frequency magnitude =10=K( 8) 
+ The phase is always positive - hence phase lead. 
+Often, magnitude is expressed in decibels, which is basically the log of |G|: 
+4</text>
+        </slide>
+      </slides>
+      <videos/>
+    </lecture>
+    <lecture>
+      <lecture_title>Zero degree root locus</lecture_title>
+      <lecture_pdf_url>https://ocw.mit.edu/courses/16-06-principles-of-automatic-control-fall-2012/resources/mit16_06f12_lecture_15/</lecture_pdf_url>
+      <lectureno>15</lectureno>
+      <slides>
+        <slide>
+          <slideno>3</slideno>
+          <text>Example
+ 
+s  1 Gpsq ps ` 1qps ` 3q 
+0 locus: 
+Note: 
+ Locus looks familiar but is dierent 
+ RHP zero tends to pull poles into RHP - bad. 
+4</text>
+        </slide>
+        <slide>
+          <slideno>2</slideno>
+          <text>=Lpsq 0 ` l  360 , linteger 
+So the rules are:
+ 
+	 Rule 1: The n branches of the locus start at the n poles. m approach the zeros, n-m 
+approach 8. (No change) 
+	 Rule 2: The locus is on the real axis to the left of an even number of poles and zeros. 
+	 Rule 3: The asymptotes are described by 
+   pi   zi 
+n  m , (no change) 
+l 360  pl  1q 
+n  m , l  1, 2, 3, ...n  m 
+Note: no 180 term. 
+	 Rule 4: The departure angles from poles and the arrival angles at poles are given by 
+ i  i  360 pl  1qdep  q i  i ` 360 pl  1qarr  q 
+where q is multiplicity of pole or zero, l  1, 2, ...q. 
+	 Rule 5: The locus crosses the imaginary axis for values of K at which Rouths criterion 
+shows a change in the number of unstable poles. (No change) 
+ Rule 6: No change in rule for when there are multiple points on the locus. 
+In summary, all rules are the same, except: 
+1. All 180s become 0s. 
+2. Odd becomes even in Rule 1. 
+3</text>
+        </slide>
+        <slide>
+          <slideno>1</slideno>
+          <text>For our discussion, the most interesting aspect is the right half plane zero at s `5.61.
+ 
+Why?
+ 
+Rewrite the transfer function as
+ 
+hpsq  Gpsq32.7Lpsqepsq 
+ 
+root locus gain of G(s) 
+Look at the feedback loop using only proportional gain1: 
+-+ k G(s)r e
+So the characteristic equation is: 
+0  1 ` kGpsq 1` 32.7kloomoon Lpsq 
+K 
+The question is, should k, (and therefore K) be positive or negative? 
+Note that because there are an o number of RHP poles and zeros, the D.C. gain Gp0q is 
+negative. To improve performance at D.C., must have negative gain. 
+There are other situations where a negative R.L. gain may be required, but this is the most 
+common. 
+Modication to the Root Locus Rules. 
+The fundamental result is that s is on the negative locus if 
+1 1 ` KLpsq 0  Lpsq K 
+for some negative K. If K is negative, 1{K is positive, so that the angle condition is 
+1For this system, a PD controller would be better, but that is not important for our argument. 
+2</text>
+        </slide>
+        <slide>
+          <slideno>4</slideno>
+          <text>MIT OpenCourseWare
+http://ocw.mit.edu
+16.06 Principles of Automatic Control
+Fall 2012
+For information about citing these materials or our Terms of Use, visit: http://ocw.mit.edu/terms .</text>
+        </slide>
+        <slide>
+          <slideno>0</slideno>
+          <text>16.06 Principles of Automatic Control
+ 
+Lecture 15
+ 
+The Negative p0q Root Locus 
+Sometimes, we need to plot the root locus for a negative gain parameter 
+Example: 
+Longitudinal dynamics of 747, M=0.8 at 20,000 ft. 
+h altitude 
+e elevator deection 
+hpsq 32.7ps ` 0.0045qps ` 5.645qps  5.61q epsq sps ` 0.003  0.0098jqps ` 0.6463  1.1211jq 
+Poles of system: 
+	 s  0 "energy mode" - represents change in total (kinetic plus potential) energy. Hard 
+to control with elevator - hence near cancellation with zero at s 0.0045. 
+	 s 0.6463  1.1211j "short period mode." The short period mode is dominated by 
+changes in aircraft pitch altitude, much like an arrow or weather vane feathering into 
+the wind. 
+	 s 0.003  0.0098j phugoid mode. This mode represents long period exchange of 
+kinetic and potential energy, with very small changes in aircraft angle of attack. 
+Note that: 
+1. There is a two orders of magnitude dierence between the natural frequencies of the 
+short period and phugoid modes. 
+2. The phugoid has only the modest damping (   0.29). Often, it is much lower, say, 
+only a few percent. 
+1</text>
+        </slide>
+      </slides>
+      <videos/>
+    </lecture>
+    <lecture>
+      <lecture_title>Stability margins, Bode gain-phase theorem</lecture_title>
+      <lecture_pdf_url>https://ocw.mit.edu/courses/16-06-principles-of-automatic-control-fall-2012/resources/mit16_06f12_lecture_23/</lecture_pdf_url>
+      <lectureno>23</lectureno>
+      <slides>
+        <slide>
+          <slideno>4</slideno>
+          <text>0-2 
+-1 
+-2 C|GK|
+Typical loop gain 
+for well-designed 
+control system In this case, the phase at cross-over will be a weighted average of 90 (weighted a lot), 
+180 (weighted some), and 0 (weighted hardly at all). So the phase will be between 90 
+and 180, with probably reasonable PM. 
+5</text>
+        </slide>
+        <slide>
+          <slideno>2</slideno>
+          <text>1   PM  tan ba 2 
+1 ` 42  22 
+The functional form isnt really important - the important point is that  is nearly a linear 
+function of PM: 
+0 20 40 60 80 00.20.40.60.81
+Phase Margin (deg) Damping Ration, actual   
+= PM 
+100 
+So can often predict (eective) damping ratio using approximation 
+PM   (PM in degrees) 100 
+Even when system is not second order, PM is a good predictor of peak overshoot ( Mp), and 
+resonant peak magnitude ( Mr). PM is often specied as a design requirement. 
+Bodes Gain-Phase Relationship 
+We saw that for poles and zeros in the left-half-plane, the phase of Gpjq is proportional to 
+the slope of the magnitude curve (on a log-log scale), but smeared-out. That is, 
+=Gpjq 90  slope of |G| 
+This idea can be made precise via Bodes gain-phase theorem: 
+For any stable, minimum phase system, the phase of Gpjq can 
+be determined uniquely from the magnitude of Gpjq. 
+3</text>
+        </slide>
+        <slide>
+          <slideno>5</slideno>
+          <text>MIT OpenCourseWare
+http://ocw.mit.edu
+16.06 Principles of Automatic Control
+Fall 2012
+For information about citing these materials or our Terms of Use, visit: http://ocw.mit.edu/terms .</text>
+        </slide>
+        <slide>
+          <slideno>3</slideno>
+          <text>The phase is in fact given by 
+ 81 dM =Gpjq W puqdu  du8 
+where 
+M  log |Gpjq| (natural log) 
+u  logp{0q
+dM  slope of Bode plot magnitude du 
+W puq weighting function 
+101 logpcothp qq2 
+Note that this is a funny sort of convolution - we are convolving a weighting function with 
+the slope of another function, but working on logarythmic axes! 
+The weighting function looks like: 
+W
+5
+4
+3
+2
+1
+-4 0-2 24u
+Note that 92% of area of W puq is within 1 decade of the center. So the phase is nearly 
+completely determined by the slope of M within ~1 decade. 
+Why is this result important? It implies that in almost every case, a well-designed control 
+loop will have a magnitude plot with slope -1 at the crossovr frequency!1 
+1Actually, in some cases, the slope might be +1, but this is rare. 
+4</text>
+        </slide>
+        <slide>
+          <slideno>0</slideno>
+          <text>16.06 Principles of Automatic Control
+ 
+Lecture 23
+ 
+Stability Margins 
+Stability margins measure how close a closed-loop system is to instability, that is, how large 
+or small a change in the system is required to make it become unstable. The two commonly used measures of stability are the gain margin and the phase margin. 
+	 The gain margin (GM) is the factor by which the gain can be increased before the system becomes unstable. 
+	 The phase margin (PM) is the amount of additional phase lag that would make the phase be 180
+ where |KGpjq|  1. 
+The GM and PM are important not only because they measure how close the closed-loop system is to instability, but also because they (but especially the PM) can be used to predict the transient behavior of the closed-loop system. 
+Gain and phase margin on Nyquist diagram: 
+Im(s) 
+Re(s) 
+PM -1 
+GM 1
+GM and PM on Bode diagram:
+ 
+1</text>
+        </slide>
+        <slide>
+          <slideno>1</slideno>
+          <text>10 1 10 010 110 210 4 10 2 10 010 2Magnitude 
+10 1 10 010 110 2300 200 100 0Phase (deg) 
+Frequency,  (rad/sec) GM 
+PM -180Relationship between PM and damping 
+When the phase margin is small, the closed-loop system is close to instability, so that there 
+will be closed-loop poles near the jaxis. That is, low PM  low damping ratio. 
+This result can be made explicit by considering the closed-loop system 
+r a
+s(s+b) -
+The closed-loop transfer function is 
+a T psq s2 ` bs ` a 
+So, 
+n a 
+b  ? 2 a 
+Can show that, for this system, 
+2</text>
+        </slide>
+      </slides>
+      <videos/>
+    </lecture>
+    <lecture>
+      <lecture_title>Effect of noise, steady-state errors</lecture_title>
+      <lecture_pdf_url>https://ocw.mit.edu/courses/16-06-principles-of-automatic-control-fall-2012/resources/mit16_06f12_lecture_9/</lecture_pdf_url>
+      <lectureno>9</lectureno>
+      <slides>
+        <slide>
+          <slideno>3</slideno>
+          <text>1 1 s lim eptq lim s  lim  0 
+s0 s0 1 ` L0psq s s0 s ` L0psqs 
+since L0p0q 0.
+ 
+What if we want to track a unit ramp instead?
+ 
+rptqtrptq
+1 Rpsq s2 
+The steady-state error for a type 0 system will be 
+ess  lim sSpsqRpsq
+s0 
+1 1 lim s 
+s0 1 ` Lpsq s2 
+1 1 lim 8 
+s0 1 ` Lp0q s 
+The steady-state error for a type 1 system will be 
+ess  lim sSpsqRpsq
+s0 
+1 1 lim s 2s0 1 ` L0psq ss 
+1 lim 
+s0 s ` L0psq
+1 L0psq 
+which is nite. We dene 
+Kv  L0psq "velocity error constant" 
+More generally, suppose that L(s) has the form 
+L0psqLpsq sn 
+L is said to be a type n system, and the error constant is Kp,or Kv or Ka...  L0p0q. 
+4</text>
+        </slide>
+        <slide>
+          <slideno>2</slideno>
+          <text>0246810121416182000.20.40.60.811.21.4
+ty(t)e(t)Use LTs: 
+1 1 1 Epsq SpsqRpsq Rpsq 1 ` Lpsq 1 ` Lpsq s 
+To nd the steady error, use nal value theorem: 
+1 lim eptq lim sEpsq 
+s0 s0 1 ` Lp0q 
+If L(0) is nite, we dene 
+Kp  Lp0q "positive error constant" 
+Furthermore, if L(0) is nite, we say that a system is a type 0 system. 
+So a type 0 system will always have a nite error in response to a steady input r, but the 
+error can be made small by making the position error constant large. 
+To make the steady error zero, we must have that L(0) is innite. Suppose we can express 
+L(s) as 
+L0p0qLpsq s 
+where L0p0q 0, L0p0q is nite. Then L is a type 1 system (one pole at s  0). We have 
+that 
+3</text>
+        </slide>
+        <slide>
+          <slideno>5</slideno>
+          <text>MIT OpenCourseWare
+http://ocw.mit.edu
+16.06 Principles of Automatic Control
+Fall 2012
+For information about citing these materials or our Terms of Use, visit: http://ocw.mit.edu/terms .</text>
+        </slide>
+        <slide>
+          <slideno>1</slideno>
+          <text>For good tracking of the reference input, want: 
+|Spsq| ! 1 
+For low sensitivity to sensor noise or errors, want: 
+|T psq| ! 1 
+But these goals are mutually exclusive, since 
+Spsq` T psq 1 
+So there is a fundamental trade-o between good tracking performance and low sensitivity
+ 
+to sensor noise.
+ 
+How is this trade-o addressed?
+ 
+In most (not all) systems, want good tracking performance at low frequency, low sensitivity
+ 
+to sensor noise at high frequency:
+ 
+-Reference inputs are low frequency 
+-Sensor noise is usually high frequency 
+So lets look at the lowest frequency,   0 ps  0q... 
+Steady-State Errors 
+Consider a unity feedback system without sensor noise or disturbance: 
+-+ K(s) G(s) yr e
+For stability, dene 
+Lpsq KpsqGpsq "Loop Gain" 
+What is the steady-state error to a unit step input? 
+2</text>
+        </slide>
+        <slide>
+          <slideno>0</slideno>
+          <text>16.06 Principles of Automatic Control
+ 
+Lecture 9
+ 
+Unity Feedback Control With Noise 
+Consider a typical unity feedback control system 
+-+ K(s) G(s)y r+ +
++e e
+vcontroller plant disturbance 
+sensor noise d, 
+-
+e1 is the error perceived by the control system; e is the actual error. The important transfer 
+functions are 
+Y 1 psq  SpsqR 1 ` KpsqGpsq
+E 1 psq SpsqD 1 ` KpsqGpsq
+E KpsqGpsqpsq T psqV 1 ` KpsqGpsq 
+SpsqSensitivity transfer function 
+T psqComplementary Sensitivity transfer function 
+For low sensitivity to disturbances, want: 
+|Spsq| ! 1 
+1</text>
+        </slide>
+        <slide>
+          <slideno>4</slideno>
+          <text>Kp K 0  lim Lpsq, n  0 
+s0 
+Kv K 1  lim sLpsq, n  1 
+s0 
+Ka K 2  lim s 2Lpsq, n  2 
+s0 
+. . . 
+Input 
+Type ptq tptq t2 
+2 ptq
+Type 0 ess  1 
+1`K p ess  8 ess  8 
+Type 1 0 1 
+Kv 8 
+Type 2 0 0 1 
+Ka 
+Obviously, this generalizes, but we usually care most about Kp and Kv - higher order inputs 
+are rare. 
+5</text>
+        </slide>
+      </slides>
+      <videos/>
+    </lecture>
+    <lecture>
+      <lecture_title>Lag compensation</lecture_title>
+      <lecture_pdf_url>https://ocw.mit.edu/courses/16-06-principles-of-automatic-control-fall-2012/resources/mit16_06f12_lecture_14/</lecture_pdf_url>
+      <lectureno>14</lectureno>
+      <slides>
+        <slide>
+          <slideno>0</slideno>
+          <text>16.06 Principles of Automatic Control
+ 
+Lecture 14
+ 
+Lead Compensator Example (cont-d) 
+To satisfy the angle condition, require that 
+  90  108.4  123.7 ` 180pmod 360q 37.9 
+From the geometry shown, 
+tan   3    6.93 
+To nd the gain K, we must invoke the magnitude condition that 
+|KpsqGpsq|  1 
+at the poles. 
+|KpsqGpsq|  2  K 
+ 
+ s ` 3
+ 
+ps ` 1qps ` 2qps ` 6  9q
+ 
+  1
+ 
+1  3.613.164.92Therefore, k  2 3  9.35. 
+So choose compensator 
+s ` 3 Kpsq 9.35 s ` 6.9 
+The closed loop transfer function is 
+Y s ` 3 T psq psq 18.7 R s3 ` 9.9s2 ` 41.4s ` 69.9 
+The closed loop poles are at 
+s 3.015  2.996j, 3.87 
+1</text>
+        </slide>
+        <slide>
+          <slideno>2</slideno>
+          <text>where   . Typically,  and  are much less (say, a factor of 100 than the natural 
+frequency of the dominant poles. 
+Why does this work? At low frequency ps  0q, the gain of the lag compensator is 
+0 `   0 `  
+So the lag compensator increases the d.c. gain by the lag ratio. However, the eect on the 
+dominant pole location is small: 
+Im(s)
+Re(s)(-)  small
+The change in phase angle at the desired pole location is small ( p5q), so the locus (away 
+from the origin) doesnt change much. Continuing the example from last time, the natural frequency of the dominant pole is 4.24 
+rad/sec. Need lag ratio of 5. So use compensator 
+s ` 0.5 
+s ` 0.1 
+So compensator with both lead and lag is 
+s ` 3 s ` 0.5 Kpsq 9.35  s ` 6.9 s ` 0.1 
+The response looks like: 
+t~10% 
+3</text>
+        </slide>
+        <slide>
+          <slideno>3</slideno>
+          <text>The peak overshoot is 3%, but the natural overshoot is about 10%. There is also a slow, 
+exponential tail. This is typical with lag compensation. Why? 
+The closed-loop pole-zero diagram is 
+Im(s) 
+Re(s) 
+-4 -3 -0.5 -0.46 -2.7+2.9j
+The near pole-zero cancellation of pole at -0.46 means the eect of that pole is small, but it has a very long time constant. This pole is responsible for the small but long time constant 
+error. 
+4</text>
+        </slide>
+        <slide>
+          <slideno>4</slideno>
+          <text>MIT OpenCourseWare
+http://ocw.mit.edu
+16.06 Principles of Automatic Control
+Fall 2012
+For information about citing these materials or our Terms of Use, visit: http://ocw.mit.edu/terms .</text>
+        </slide>
+        <slide>
+          <slideno>1</slideno>
+          <text>The performance stats are: 
+Mp 8.4%  10% 
+tr 0.42 sec  0.5 sec 
+kp 4.06  low 
+A note on Closed-Loop poles and zeros 
+Consider a closed-loop system with only one forward path and only one loop: 
+-+ K(s) G(s) yr
+F(s)
+The poles of 
+KpsqGpsqT psq 1 ` KpsqGpsqF psq 
+can be found using root locus or other means. 
+The zeros of T(s) can be found by plugging in for K,G,F, and clearing fractions. However, 
+the result is easy to state: 
+The zeros of T(s) are the zeros in the forwards path plus the poles in the feedback 
+path. Suppose we add the requirement that 
+kp  20 
+So that steady-state tracking performance is acceptable. How can we modify the controller? 
+Lag Compensation 
+A lag compensator has the form 
+s `  
+s `  
+2</text>
+        </slide>
+      </slides>
+      <videos/>
+    </lecture>
+    <lecture>
+      <lecture_title>Discrete design</lecture_title>
+      <lecture_pdf_url>https://ocw.mit.edu/courses/16-06-principles-of-automatic-control-fall-2012/resources/mit16_06f12_lecture_32/</lecture_pdf_url>
+      <lectureno>32</lectureno>
+      <slides>
+        <slide>
+          <slideno>3</slideno>
+          <text>Gpsq 1 1 1 1  `  2ps ` 1q 2 ss s ` 1 s s 
+Gpsq( z Tz z Z  `  T pz  1q2 sz  e z  1 
+z  1 Gpsq(
+Gdpzq Z z s 
+z  1 T `  1Tz  e z  1 
+z  1 0.025 `  1 z  0.9753 z  1 
+0.0003099z ` 0.0003073z2  1.9753z ` 0.9753 
+as before. 
+The basic control laws: 
+Proportional: 
+urks Kperks  Kpzq Kp 
+Derivative: 
+perks erk  1squrksK D T 
+kDperks erk  1sq 
+z  1 Kdpzqk Dp1  z 1q kd z 
+Integral: 
+urksurk  1s` KI  T erks 
+p1  z 1qUpzqK I  T Epzq
+z z KdpzqK I T  kI z  1 z  1 
+Lead: z   Kdpzq k ,    z   
+4</text>
+        </slide>
+        <slide>
+          <slideno>4</slideno>
+          <text>Example 
+Design a digital controller for the plant 
+1 Gpsq 2s
+with sample period T  1 sec, so that n  0.3 r/s, and   0.7. 
+The discretization plant is 
+T 2 z ` 1 1 z ` 1 Gdpzq  2 pz  1q2 2 pz  1q2 
+We want the closed loop poles to be at 
+z e sT 
+a 
+s1  n  j 1  2n 
+ 0.21  j0.21 
+So we want the dominant closed-loop poles at 
+z  0.791  0.170j (book slightly o) 
+Proportional gain does not work, since the locus is 
+which is entirely outside the unit circle. Instead, use a PD controller, which will be of the 
+form 
+z   Kdpzqk z 
+So new root locus will be: 
+5</text>
+        </slide>
+        <slide>
+          <slideno>0</slideno>
+          <text>16.06 Principles of Automatic Control
+ 
+Lecture 32
+ 
+(continued from previous lecture..)
+ 
+Note the much improved response. Now we have:
+ 
+Mp  0.246 (cont.) 
+Mp  0.231 (disc.) 
+- very close! 
+Full cycle processing delay 
+What happens when processing delay is a full period, T ? In the textbook, this case is 
+described as requiring that the numerator of Kd must have one less power of z than the 
+denominator. However, in the emulation approach, this might be tricky. The solution is to account for the delay in G
+d by adding the factor 1{z, which is the z-
+transform of a one sample delay. So for the previous example, we would have: 
+z ` 0.9917 Gdpzq 0.0003099 pz  1qpz  0.9753qz 
+So now we have an eective delay of 3
+2 T , 12 T from the ZOH, and T from the processing delay. 
+Lets redo the design assuming this larger delay: 
+3 180 
+=Kpj10q Gpj10q 180 ` PM ` cT  2  
+65.9 
+So the lead ratio satises 
+1</text>
+        </slide>
+        <slide>
+          <slideno>7</slideno>
+          <text>MIT OpenCourseWare
+http://ocw.mit.edu
+16.06 Principles of Automatic Control
+Fall 2012
+For information about citing these materials or our Terms of Use, visit: http://ocw.mit.edu/terms .</text>
+        </slide>
+        <slide>
+          <slideno>6</slideno>
+          <text>The step response is shown below. Notice that the overshoot is signicant - much more than 
+would be expected with   0.707, due to zero of the compensator. 
+So lets put derivative term in a minor loop: 
+7</text>
+        </slide>
+        <slide>
+          <slideno>2</slideno>
+          <text>Bode Diagram
+F
+requency (rad/sec)Magnitude PhaseC
+DC
+C
+CD
+D
+DDiscrete Design 
+Can also design directly in z-plane, using root locus or other tools. 
+When we designed Kdpzq using emulation methods, we needed Gdpzq only to rest our result, 
+not to do the design, for which we only needed Gpsq. (We also calculated the equivalent 
+delay, T {2 or 3T {2.) 
+For discrete design, however, we need Gdpzq, which may be calculated as 
+Gpsq(
+Gdpzqp1  z 1qZ s 
+Example 
+1 Gpsq , T  0.025 sps ` 1q 
+3</text>
+        </slide>
+        <slide>
+          <slideno>5</slideno>
+          <text>-1 1Choose  to get angle condition right 
+1  2  =pz  1q 140.9 
+3 =pz  0q 12.2 
+1 =pz  p1qq  5.4 
+We need 
+ 1  2  3 ` 1 ` 2 180 
+ 2 108.4  =pz  q 
+1 ` 0.170  
+ tan 0.791   
+  ` 0.8475 
+So controller is 
+z  0.8475 Kdpzq k z 
+To nd k, use gain condition 
+|KdpzqGdpzq|  1 at C. L. pole 
+ k  0.3647, 
+z  0.8475 Kdpzq 0.3647 z 
+6</text>
+        </slide>
+        <slide>
+          <slideno>1</slideno>
+          <text>c 
+b  4.685 a 
+So let 
+b  47 r/s 
+a  2.1 r/s 
+The continuous compensator is 
+1 ` s{2.1 Kpsq 21.1 1 ` s{47 
+Using the Tustin transform, we obtain: 
+z  0.9488 Kdpzq 305.3 z  0.2598 
+See the step response below. Why is the continuous and discrete response so dierent? 
+Kpsq for the continuous system and Kdpsq for the discrete system are dierent - they have 
+dierent DC gains and dierent lag ratios. As a result, the Bode plots for the loop gains are signicantly dierent (see the plot below). 
+0.20.40.60.81.01.2
+0.2 0.4 0.6 0.8 0.1
+0.3 0.5 0.7 0.9C
+DStep response
+Time, t
+2</text>
+        </slide>
+      </slides>
+      <videos/>
+    </lecture>
+    <lecture>
+      <lecture_title>The Nichols chart</lecture_title>
+      <lecture_pdf_url>https://ocw.mit.edu/courses/16-06-principles-of-automatic-control-fall-2012/resources/mit16_06f12_lecture_28/</lecture_pdf_url>
+      <lectureno>28</lectureno>
+      <slides>
+        <slide>
+          <slideno>6</slideno>
+          <text>Since the crossover and phase margin are the same, we expect to get similar performance. 
+Do we? 
+One clue can be seen in the Nichols chart, below. 
+225 180 135 90 45 02015105051015202530
+20 dB15 dB12 dB9 dB6 dB5 dB4 dB3 dB2 dB1 dB0 dB1 dB
+2 dB
+3 dB
+4 dB
+5 dB
+6 dB
+9 dB
+12 dB350
+340
+330
+300
+270
+240
+210180150120906030201052
+Phase, degMagnitude, dBr=7.44, Mr=1.61 (4.1 dB)
+c=10
+Note that, in this case, r is signicantly smaller than c, and Mr is larger than might be 
+7</text>
+        </slide>
+        <slide>
+          <slideno>9</slideno>
+          <text>270 225 180 135 9010080604020020Nichols Chart
+OpenLoop
+ Phase (deg)OpenLoop Gain (dB)N=+1N=0N=-2 19 dB
+6.27 dB
+3.52 dBExample 2. 
+1 ps ` 0.1q2 
+Gpsq s3 ps ` 10q2 
+-10 -.1
+Nichols chart is shown below. Note that care must be used to properly close contour near 
+  0. 
+10</text>
+        </slide>
+        <slide>
+          <slideno>5</slideno>
+          <text>For PM  45 , we expect 
+ 0.45 
+ Mp 0.21 
+Mr 1.24 
+In pretty good agreement with the actual results. 
+Now consider the plant 
+100 1 ` s{10 G2 ? s22 
+in a similar unity feedback control. For this system, we have 
+PM  45, c  10 r/s, also. 
+Bode plot: 
+101100101102103105100105Magnitude of G1
+101100101102103200150100500Phase, degrees
+
+6</text>
+        </slide>
+        <slide>
+          <slideno>3</slideno>
+          <text>The Nichols chart was once very useful, since computers were not available to do the kids of 
+calculations that are now done by e.g., Matlab. 
+However, Nichols chart may be used to give insight into the closed-loop behavior of systems. 
+Consider rst the system 
+-+G1r
+where 
+which has c  10 r/s, P M  45 . G1  ? 
+2 10 
+sp1 ` s{10q 
+Bode of G1: 
+101100101102103105100105Magnitude of G1
+101100101102103200150100500Phase, degrees
+-1
+-2
+The Nichols plot can be made by lifting points of the Bode plot, at individual frequencies, 
+and plotting on the Nichols chart. See plot below for the plot of G1 : 
+4</text>
+        </slide>
+        <slide>
+          <slideno>11</slideno>
+          <text>MIT OpenCourseWare
+http://ocw.mit.edu
+16.06  Principles of Automatic Control
+Fall 2012
+For information about citing these materials or our Terms of Use, visit: http://ocw.mit.edu/terms .</text>
+        </slide>
+        <slide>
+          <slideno>2</slideno>
+          <text>225 180 135 90 45 02015105051015202530
+20 dB15 dB12 dB9 dB6 dB5 dB4 dB3 dB2 dB1 dB0 dB1 dB
+2 dB
+3 dB
+4 dB
+5 dB
+6 dB
+9 dB
+12 dB350
+340
+330
+300
+270
+240
+210180150120906030201052
+Phase, degMagnitude, dB3</text>
+        </slide>
+        <slide>
+          <slideno>7</slideno>
+          <text>expected from the PM. So we would expect that the closed-loop system 
+G2T2  1 ` G2 
+would be a bit slower, and have more overshoot, than the system 
+G1T1  1 ` G1 
+even though they have the same PM and c. 
+In fact, this is the case, as seen from the step responses below. 
+0 0.5 1 1.5 200.20.40.60.811.21.41.6
+Time, t (sec)Step Responsey2(t)    Mp=0.34
+y1(t)    Mp=0.23
+Counting Encirclements on a Nichols Chart 
+Counting encirclements on a Nichols chart can be tricky, because 
+1. The 1{k point can be on either the 180 line or the 0line. 
+2. CW and CCW are reversed, because the orientation of the axes is reversed. 
+Will demonstrate with examples. 
+8</text>
+        </slide>
+        <slide>
+          <slideno>8</slideno>
+          <text>Example 1. 
+s  0.1 Gpsq 3000 ps  1qps  2qps ` 10q2 
+Nyquist and Nichols plots are shown below. 
+10 9 8 7 6 5 4 3 2 1 054321012345Nyquist Diagram
+Real Axi
+sImaginary AxisN=-2
+N=0N=+1
+9</text>
+        </slide>
+        <slide>
+          <slideno>0</slideno>
+          <text>16.06 Principles of Automatic Control
+ 
+Lecture 28
+ 
+The Nichols Chart 
+The Nichols chart may be thought of as a Nyquist plot on a log scale. A Nyquist plot is a 
+plot in the complex plane of 
+Gpjq RepGpjqq` jImpGpjqqlooooomooooon looooomooooon 
+x-coordinate y-coordinate 
+Instead, on a Nichols chart, we plot 
+log Gpjq log |Gpjq|`j =pGpjqqlooooomooooon loooomoooon 
+y-coordinate x-coordinate 
+Notice that we reverse the coordinates - the real part is plotted on the vertical, and the imaginary part is plotted on the horizontal. 
+In addition, the chart has contours of constant closed-loop magnitude and phase, 
+ G  M   1 ` G 
+G N = 1 ` G 
+The Nichols chart template is shown below. Usually, we are interested in the range of 
+frequencies where the phase is greater than 180
+ . The Nichols chart is often expanded (see 
+plot below). 
+1</text>
+        </slide>
+        <slide>
+          <slideno>10</slideno>
+          <text>Nichols Chart
+OpenLoop Phase (deg)OpenLoop Gain (dB)
+360 315 270 225 180 135 90 45 020015010050050100
+N=0
+N=2N=2
+N=111</text>
+        </slide>
+        <slide>
+          <slideno>1</slideno>
+          <text>360 315 270 225 180 135 90 45 02015105051015202530
+20 dB15 dB12 dB9 dB6 dB5 dB4 dB3 dB2 dB1 dB0 dB1 dB
+2 dB
+3 dB
+4 dB
+5 dB
+6 dB
+9 dB
+12 dB350
+340
+330
+300
+270
+240
+210180150120906030201052
+Phase, degMagnitude, dB2</text>
+        </slide>
+        <slide>
+          <slideno>4</slideno>
+          <text>225 180 135 90 45 02015105051015202530
+20 dB15 dB12 dB9 dB6 dB5 dB4 dB3 dB2 dB1 dB0 dB1 dB
+2 dB
+3 dB
+4 dB
+5 dB
+6 dB
+9 dB
+12 dB350
+340
+330
+300
+270
+240
+210180150120906030201052
+Phase, degMagnitude, dBr=9.57, Mr=1.31 (2.4 dB)
+c=10Note that r  c, so the peak in the frequency response (CL) is very close to crossover. 
+Note also that 
+Mp  0.23 
+5</text>
+        </slide>
+      </slides>
+      <videos/>
+    </lecture>
+    <lecture>
+      <lecture_title>The w-transform</lecture_title>
+      <lecture_pdf_url>https://ocw.mit.edu/courses/16-06-principles-of-automatic-control-fall-2012/resources/mit16_06f12_lecture_33/</lecture_pdf_url>
+      <lectureno>33</lectureno>
+      <slides>
+        <slide>
+          <slideno>3</slideno>
+          <text>apparent frequency in W. 
+Example 
+z ` 0.9867 Gdpzq0.004934 pz  0.9802q2 
+T 0.01 
+Design a controller Kdpzq so that 
+ PM  50 
+ c  50 r/s 
+ Kp  5000 
+First, nd GpW q using MATLAB: 
+gw=d2c(gd,  tustin ) 
+Result is 
+p1 ` W qp1  W q30,000 200GpW q 25p1 ` W {2q2 
+Zero at W 30, 000 can be ignored, but note presence of RHP zero at W `200. 
+Alternatively, map poles and zeros by 
+2 z  1 W  Tz ` 1 
+4</text>
+        </slide>
+        <slide>
+          <slideno>4</slideno>
+          <text>MIT OpenCourseWare
+http://ocw.mit.edu
+16.06 Principles of Automatic Control
+Fall 2012
+For information about citing these materials or our Terms of Use, visit: http://ocw.mit.edu/terms .</text>
+        </slide>
+        <slide>
+          <slideno>2</slideno>
+          <text>The W Transform 
+The W  Transform is used to allow the use of classical continuous time design techniques 
+(including Bode plots) on discrete-time systems. 
+Recall that the Tustin transform is 
+z  1 s  2 
+Tz ` 1 
+z  1 ` sT {2 
+1  sT {2 
+So there is no confusion, we use the variable W instead of s, so the W transform is 
+z  1 ` WT {2 
+1  WT {2 
+Can show that this mapping between z and W : 
+ Is one to one (unique W for each z, vice-verse). 
+ Maps the unit disk to the left half plane. 
+Note that the W-transform warps frequencies: 
+2 z  1 W  Tz ` 1 
+jT 2 e 1 jT (on unit circle) Te` 1 
+`jT {2  e jT {2 
+jT {2)  2 e (multiply top and bottom by e`jT {2 ` e jT {2 Te
+ 
+2j `T 
+ 
+ tan (Trig. identities) T 2
+ 
+j (=frequency in W domain)
+ 
+Therefore, 
+tanpT {2q  T {2 
+where  physical frequency, 
+3</text>
+        </slide>
+        <slide>
+          <slideno>0</slideno>
+          <text>16.06 Principles of Automatic Control
+ 
+Lecture 33
+ 
+-y r
+TT
+0.3
+091z-1
+zZOH G 0.0556+ +-
+Note that 
+Kdp1q 0.0556  1 
+z  1 Kdpzq Kdp1q 0.3091 z 
+The step response is shown below. Note the much improved response. The peak overshoot 
+is 
+Mp  0.042 
+very close to the ideal Mp  0.043 for   0.7071. 
+1</text>
+        </slide>
+        <slide>
+          <slideno>1</slideno>
+          <text>Discrete Design vs. Emulation 
+The text argues that discrete design should be used if 
+2 s  T  10n 
+or 
+ nT   0.63 5 
+I disagree. If the eective time delay is taken into account, emulation works well out to 
+cT  1 
+and maybe higher. But that is close to the upper limit on how high it is possible to cross 
+over due to T {2 time delay. 
+" T 1, less cons. upper limit c  2 0.6, more cons. upper limit. 
+So emulation should work in all but the most severe cases.
+ 
+2</text>
+        </slide>
+      </slides>
+      <videos/>
+    </lecture>
+    <lecture>
+      <lecture_title>NMP systems</lecture_title>
+      <lecture_pdf_url>https://ocw.mit.edu/courses/16-06-principles-of-automatic-control-fall-2012/resources/mit16_06f12_lecture_27/</lecture_pdf_url>
+      <lectureno>27</lectureno>
+      <slides>
+        <slide>
+          <slideno>0</slideno>
+          <text>16.06 Principles of Automatic Control
+ 
+Lecture 27
+ 
+Nonminimum Phase Systems 
+Our design rules so far are based on the bode gain-phase theorem, which applies to stable, 
+minimum phase systems. The RHP zeros or time delays of NMP systems place fundamental limitations on the achievable performance of any closed-loop systems. 
+Example: 
+Consider the plant 
+1  s{10 Gpsq  sp1 ` s{1q 
+Our goal is to design a closed-loop controller with bandwidth as large as possible. How well
+ 
+can we do?
+ 
+Bode plot:
+ 
+102101100101102104102100102
+-1-2-1
+|G|
+1</text>
+        </slide>
+        <slide>
+          <slideno>1</slideno>
+          <text>The slope at high frequency is 1, so it seems that we should be able to cross-over anywhere. 
+However, in this case we need to look at the phase plot, sicne gain-phase theorem does not 
+apply: 
+101100101102103350300250200150100500
+G
+Note that additional phase due to zero at s  `10 is negative.
+ 
+So if we use pure gain, the crossover frequency must be below about c  3.
+ 
+Lets add compensation to make slope 1 everywhere:
+ 
+1 ` s{1  cancels plant pole Kpsq  k 1 ` s{10  stable pole 
+1 1  s{10 KpsqGpsq  s 1 ` s{10 
+Bode Plot: 
+2</text>
+        </slide>
+        <slide>
+          <slideno>4</slideno>
+          <text>Time Delay 
+The eect of a pure time delay is similar to that of a NMP zero. Indeed, a time delay is 
+non-minimum phase. The transfer function os a T-second delay is 
+sT j T e  e 
+So the additional phase lag is T . As a practical matter, must cross over at 
+c  1{T 
+but more reasonably should have 
+c  0.6{T 
+Unstable systems 
+For an unstable system, the Bode gain-phase theorem does not apply either. In this case, 
+however, the disagreement between slope and phase occurs at low frequency (when viewed properly). 
+Example: 
+10 Gpsq  s  1 
+Bode: 
+101100101102103102100102Magnitude of G
+10110010110210320015010050Phase, degrees
+should crossover above 
+her
+e for good margins
+5</text>
+        </slide>
+        <slide>
+          <slideno>2</slideno>
+          <text>101100101102103104102100102Magnitude of GK
+1011001011021033002001000Phase, degrees
+
+should crossover below 
+her
+e for good margins
+-1So NMP zero causes signicant phase lag (relative to the phase expected from slope) at
+ 
+frequencies up to one decade below crossover.
+ 
+Suppose we could accept PM as low as PM  30. What would control system look like?
+ 
+Solve for k:
+ 
+=GK   90  2 tan 1{10 
+  150 
+ c 5.77 r/s 
+|GK| k{ 
+k  c 5.77 
+Therefore, 
+1 ` s Kpsq 5.77 1 ` s{10 
+KpsqGpsqT psq  1 ` KpsqGpsq
+1  s{10 2 ` 2p0.278qs s? ` 157.7 57.7 
+3</text>
+        </slide>
+        <slide>
+          <slideno>6</slideno>
+          <text>MIT OpenCourseWare
+http://ocw.mit.edu 
+16.06 Principles of Automatic Control 
+Fall 2012 
+For information about citing these materials or our Terms of Use, visit: http://ocw.mit.edu/terms .</text>
+        </slide>
+        <slide>
+          <slideno>5</slideno>
+          <text>Using arguments similar to those made for NMP zeros, can see that we need to crossover at 
+least at 
+c  2p 
+where p is the location of the unstable pole. 
+Note that this is a fuzzy requirement - inthe example, can stabilize the system wtih any 
+c  0, but margins will be poor unless c  2 r/s. 
+6</text>
+        </slide>
+        <slide>
+          <slideno>3</slideno>
+          <text>Im(s)
+R
+e(s)7.3j
+-7.3j-2.1 10See step response plotted below:
+ 
+0 0.5 1 1.5 2 2.5 300.511.5
+Time, t (sec)Step Response
+Note that Mp  49%. 
+In addition, there is a 20% undershoot (wrong way behavior). 
+The bottom line is that a non-minimum phase zero places fundamental limitations on the 
+bandwidth of the closed-loop system. As a practical matter, if the NMP zero is at s  a, we 
+must have 
+c  a{2 
+More realistically, to achieve reasonable phase margins and step response, we need 
+c  a{3 
+Even at   a{10, the NMP zero adds 12 of anomalous phase lag. 
+4</text>
+        </slide>
+      </slides>
+      <videos/>
+    </lecture>
+    <lecture>
+      <lecture_title>Nyquist with poles on imaginary axis</lecture_title>
+      <lecture_pdf_url>https://ocw.mit.edu/courses/16-06-principles-of-automatic-control-fall-2012/resources/mit16_06f12_lecture_22/</lecture_pdf_url>
+      <lectureno>22</lectureno>
+      <slides>
+        <slide>
+          <slideno>5</slideno>
+          <text>MIT OpenCourseWare
+http://ocw.mit.edu
+16.06 Principles of Automatic Control
+Fall 2012
+For information about citing these materials or our Terms of Use, visit: http://ocw.mit.edu/terms .</text>
+        </slide>
+        <slide>
+          <slideno>4</slideno>
+          <text>where 0 means no closed loop poles, 
+ 1 means counter-clockwise encirclement, 
+` 1means right-half-plane open-loop or pole. 
+So system is stable for: 
+1  1{k  0 
+ k 1 
+Also, note that for 1{k 1 p0  k  1q, N  1, so the number of unstable closed-loop 
+poles is: 
+Z N ` P 
+1 ` 1 
+2 
+5</text>
+        </slide>
+        <slide>
+          <slideno>0</slideno>
+          <text>16.06 Principles of Automatic Control
+ 
+Lecture 22
+ 
+Nyquist Plot for Gpsq with jaxis poles 
+Consider 
+1 Gpsq sps ` 1q2 
+Because of pole at s  0, must deform D contour pC1q. 
+Im(s) 
+Re(s) C1
+1</text>
+        </slide>
+        <slide>
+          <slideno>1</slideno>
+          <text>Bode:
+ 
+Nyquist:
+ 
+10 2 10 1 10 010 110 2150 100 50 050 Magnitude 
+10 2 10 1 10 010 110 2300 200 100 0Phase (deg)
+Frequency,  (rad/sec)
+2 1 0 1 21.5 1 0.5 00.511.5 Im(G)
+Re(G)
+= =1 
+=0 +=0 -
+0.5 
+Note that deformation in contour (small semicircle in C1) maps to large semicircle in GpC 1q. 
+Since there are no open loop poles inside C1, the number of closed loop poles is 
+2, if  0.5 1{k  0 pk  2q
+1, if 0 1{k 8 pk  0q 
+This result is of course in agreement with Routh, root locus. 
+2</text>
+        </slide>
+        <slide>
+          <slideno>2</slideno>
+          <text>A note on drawing the Nyquist diagram: 
+As   0 ` , note that the Nyquist diagram is asymptotic to the vertical line Repsq  
+2. Since the phase at zero frequency goes to 90 , it seems that the diagram should be 
+asymptotic to the imaginary axis. Why isnt it? 
+Express Gpsq as: 
+1 1 1 Gpsq   sps ` 1q2 ss2 ` 2s ` 1 
+For small s, can express as series around s  0: 
+1 Gpsq p1  2s ` Ops 2qqs
+1  2 ` Opqj 
+So the diagram is asymptotic to 1  2.j 
+Nyquist Plot of Open Loop Unstable System 
+Now consider the proportional control of an unstable system: 
+-+krs+1 
+s(1 - s/10) -
+The root locus: 
+20 15 10 5 0 5 10 15 105 0510 Im(s) 
+Re(s) 
+10 -1 
+3</text>
+        </slide>
+        <slide>
+          <slideno>3</slideno>
+          <text>Bode:
+ 
+Nyquist diagram:
+ 
+10 2 10 1 10 010 110 210 2 10 010 2Magnitude (dB) 
+10 2 10 1 10 010 110 2100 0100 Phase (deg) 
+Frequency,  (rad/sec) 
+4 3 2 1 012 1.5 1 0.5 00.511.52Im(G)
+Re(G)=0 +
+=0 --1.1 = 
+Note that arc at 8 is clockwise, because deformation at s  0 around pole is counter
+clockwise. 
+Sincethereisoneopenlooppoleinrighthandplane, needonecounter-clockwiseencirclement 
+for stability. 
+Z N ` P 
+0  1 ` 1 
+4</text>
+        </slide>
+      </slides>
+      <videos/>
+    </lecture>
+    <lecture>
+      <lecture_title>Dynamic response of closed-loop systems</lecture_title>
+      <lecture_pdf_url>https://ocw.mit.edu/courses/16-06-principles-of-automatic-control-fall-2012/resources/mit16_06f12_lecture_5/</lecture_pdf_url>
+      <lectureno>5</lectureno>
+      <slides>
+        <slide>
+          <slideno>1</slideno>
+          <text>j1 gsptqL 1 Gpsqs 
+1 100 Gpsq ssps ` a ` jbqps ` a  jbq
+r1 r2 r3 ` ` ss ` a ` jb s ` a  jb 
+Would nd r1,r2,r3 by partial fraction expansion.
+ 
+Then nd L 1of each term, add together, and simplify. A lot of work.
+ 
+Instead, use MATLAB: 
+num=[0 0 100]; 
+den=[1 10.1 101]; 
+sysg=tf(num,den); 
+t=0:0.01:5; y=step(sysg,t); plot(t,y); 
+The above code produces the following gure: 
+0 1 2 3 4 500.20.40.60.811.21.4
+Figure 1: Velocity of the motor.
+ 
+The above system was an open-loop system. Would do the same for a closed-loop system, 
+after nding the transfer function. 
+2</text>
+        </slide>
+        <slide>
+          <slideno>3</slideno>
+          <text>Then: 
+10 Hpsq 0.5s2 ` s ` 10 
+20 Hpsq s2 ` 2s ` 20 
+Find step response via MATLAB: 
+num=[0 0 20];
+ 
+den=[1 2 20];
+ 
+sysg=tf(num,den);
+ 
+t=0:0.01:5;
+ y=step(sysg,t);
+ plot(t,y);
+ xlabel(Time, t (sec));
+ 
+ylabel(Roll angle, \phi (deg));
+ 
+0 1 2 3 4 500.511.5
+Time, t (sec)Roll angle,  (deg)
+Figure 2: Roll angle vs time. 
+The result (shown in Figure 2 is NOT very good. Oscillatory! 
+More on this later. 
+4</text>
+        </slide>
+        <slide>
+          <slideno>4</slideno>
+          <text>MIT OpenCourseWare
+http://ocw.mit.edu
+16.06 Principles of Automatic Control
+Fall 2012
+For information about citing these materials or our Terms of Use, visit: http://ocw.mit.edu/terms .</text>
+        </slide>
+        <slide>
+          <slideno>0</slideno>
+          <text>16.06 Principles of Automatic Control
+ 
+Lecture 5
+ 
+Dynamic Response: 
+Usually, we nd the response of a system using Laplace techniques. Often, do within Matlab. 
+Example: DC Motor. 
+Suppose:
+ 
+J  0.01 kgm2; b  0.001 N-m-sec
+ 
+Kt  Ke  1 n-M/A  1 V/(rad/sec)
+ 
+Ra  10, L  1 H
+ 
+Then 
+ 100 psq Va s3 ` 10.1s2 ` 101s
+ 
+ s 100s
+ psq psq Va Va s3 ` 10.1s2 ` 101s 
+100 s2 ` 10.1s ` 101 
+100 Gpsq ps ` 5.05 ` j8.6889qps ` 5.05 `j8.6889q 
+What is the step response of the motor? That is, what is the velocity of the motor as a 
+function of time, if vaptq ptq? 
+By hand, would do: 
+1</text>
+        </slide>
+        <slide>
+          <slideno>2</slideno>
+          <text>Example: 
+The transfer function from aileron input ( a) to roll angle ( ) is given by 
+ k psq a sps ` 1q 
+where k  steady roll-rate per unit of aileron deection 
+  roll subsidence time constant 
+I M9
+Suppose a is measured in % of full deection, so a  1 is full right aileron, a 1 if full 
+left one. Then a typical set of parameters might be 
+k 100 deg/sec 
+ 0.5 sec 
+100 Gpsq sp0.5s ` 1q 
+Suppose we implement the following control law: 
+KG(s)-re a
+What is the transfer function of a closed-loop system? 
+Kk KGpsq sps`1qHpsq  Kk 1 ` KGpsq 1 ` sps`1q 
+Kk  s2 ` s ` Kk 
+Suppose we take K  0.1/deg. 
+3</text>
+        </slide>
+      </slides>
+      <videos/>
+    </lecture>
+    <lecture>
+      <lecture_title>The root locus method</lecture_title>
+      <lecture_pdf_url>https://ocw.mit.edu/courses/16-06-principles-of-automatic-control-fall-2012/resources/mit16_06f12_lecture_11/</lecture_pdf_url>
+      <lectureno>11</lectureno>
+      <slides>
+        <slide>
+          <slideno>5</slideno>
+          <text>MIT OpenCourseWare
+http://ocw.mit.edu
+16.06 Principles of Automatic Control
+Fall 2012
+For information about citing these materials or our Terms of Use, visit: http://ocw.mit.edu/terms .</text>
+        </slide>
+        <slide>
+          <slideno>0</slideno>
+          <text>16.06 Principles of Automatic Control
+ 
+Lecture 11
+ 
+The Root Locus Method 
+Often, it is useful to nd how the closed-loop poles of a system change as a single parameter 
+is varied. To do this, we use the root locus method. 
+Root - root of s polynomial equation 
+Locus - Set of points (plural - loci) 
+Consider a typical feedback loop 
+-+K(s) G(s)y r
+If both Kpsq and Gpsq are rational, then the loop gain may be expressed as 
+KpsqGpsq kLpsq 
+where 
+npsqLpsqdpsq 
+npsqs m ` b1s m1 ` ... ` bm 
+ps  z1qps  z2q...ps  zmq
+m 
+ ps  ziq
+i1
+dpsqs n ` a1s n1 ` ... ` an 
+n 
+ ps  piq
+i1
+1</text>
+        </slide>
+        <slide>
+          <slideno>4</slideno>
+          <text>=Lpsq 180 ` l  360 , where l is an integer. 
+This is the root locus phase condition , and the reason we call the locus for k  0 the
+ 
+180locus.
+ 
+Consider the example above:
+ 
+Im(s)
+Re(s)31
+22
+The phase of L(s) is given by 
+=Lpsq 1  1  2  3 
+To see if a given point is on the locus, could measure all the angles, add/subtract, and test 
+result. This used to be done mechanically with a spirule. However, its only important to be able to sketch general shapes; Matlab can do the rest. 
+Root Locus Rules 
+Rule 1 
+The n branches of the locus start at the n points of L(s). m branches end at the zeros of 
+L(s). n  m branches end at s 8. 
+Rule 2 
+The loci cover the real axis to the left of an odd number of poles and zeros.
+ To the left of the pole,   180
+
+ 
+To the left of a zero,   180 .
+ 
+5</text>
+        </slide>
+        <slide>
+          <slideno>3</slideno>
+          <text>-+s+3 
+s+8 k(s+1)(s+2) 1In this problem, 
+s ` 3 npsqLpsq  ps ` 8qps ` 1qps ` 2q dpsq 
+The characteristic equation is 
+ps ` 8qps ` 1qps ` 2q` kps ` 3q 0 
+Because the polynomial is cubic, we cant nd the roots (easily) in closed form. Nevertheless, 
+can sketch the root loci using root loci sketching rules: 
+Im(s) 
+Re(s) 
+With a little practice, you should be able to sketch root loci very rapidly. 
+Guidelines for Sketching Root Locus 
+Will give rules for k  0.
+ 
+For k  0 and 1 ` kLpsq 0 must have that
+ 
+1 Lpsq  negative real number k 
+That is, the phase of the L(s) must be: 
+4</text>
+        </slide>
+        <slide>
+          <slideno>2</slideno>
+          <text>Because characteristic equation is quadratic, we can nd the roots using the quadratic for
+mula: 
+? 
+s  1  1  4k 
+2 2 
+When 0  k  1
+4 , the roots are real, and between -1 and 0. For k  14 , the roots are complex, ? 
+1with real part 2 , and imaginary part that increases (asymptotically) as k. 
+Im(s) 
+Re(s) 
+Suppose our goal is to choose k so that   sin   0.5    30 . 
+Looking at the geometry in the gure, the imaginary part is 
+RepsqImpsq tan  
+1 Rpsq 2 
+sin 30 1{2 1tan   ? ? cos 30 3{2 3? 
+ Impsq 3{2 ? 
+4k  1But Impsq 2 
+6 k 1 
+Example: 
+What is the root locus of 
+3</text>
+        </slide>
+        <slide>
+          <slideno>1</slideno>
+          <text>Then the roots of the closed-loop system occur at: 
+1 ` KpsqGpsq 0 pq 
+or 
+1 ` kLpsq 0 pq 
+or 
+1 Lpsq pqk 
+or 
+dpsq` knpsq 0 pq 
+The root locus is the set of values s for which pq holds, and k is any positive real value. 
+(For reasons that will become clear later, this is the denition of the positive or 180 degree 
+locus. Will later dene the negative, or 0 degree locus.) 
+Example: 
+-+ ks(s+1)1
+In this case, 
+1 Lpsq , npsq 1 sps ` 1q
+dpsqsps ` 1q s 2 ` s 
+zeros: none 
+poles: pi  0, 1. 
+The characteristic equation is: 
+s 2 ` s ` k  0 
+2</text>
+        </slide>
+      </slides>
+      <videos/>
+    </lecture>
+    <lecture>
+      <lecture_title>Why automatic control? Categorization of control systems</lecture_title>
+      <lecture_pdf_url>https://ocw.mit.edu/courses/16-06-principles-of-automatic-control-fall-2012/resources/mit16_06f12_lecture_1/</lecture_pdf_url>
+      <lectureno>1</lectureno>
+      <slides>
+        <slide>
+          <slideno>0</slideno>
+          <text>16.06 Principles of Automatic Control
+ 
+Lecture 1
+ 
+Important information:
+ 
+ Active learning if an important part of the class. Come prepared to learn, think, contribute every class. 
+ Text is Franklin, Powell, Emami-Naeni, Feedback Control of Dynamic Systems, 5thEdition. 
+Note: NOT 4thedition. 
+ Grading 
+Quiz 1 20% 
+Quiz 2 20% 
+Final 30% 
+Homework 20% 
+Participation 5% 
+Sta Assessment 5% 
+	 See collaboration policy. It is NOT same the same as Unied. In particular, it is not allowed to use 
+solutions from past years from any source. 
+	 Generally, late assignments are not accepted. 
+	 May sometimes have to look ahead problems where you need to read material to be able to do the 
+problems. 
+Why automatic control? 
+Two broad categories of control: 
+	 Manual Control 	 Automatic Control 
+Well be discussing automatic control almost exclusively. Automatic control systems can be designed to hold 
+an output steady or to track a desired reference signal. 
+	 Regulator: keep output at a steady, known value 
+	 Tracking or servo system: Make output track a reference system 
+Canfurther categorizecontrol systems aseither open-loop or closed-loop. Closed-loopcontrollers(orfeedback 
+controllers) compute the control action based on the measured output of the system being controlled. 
+1</text>
+        </slide>
+        <slide>
+          <slideno>1</slideno>
+          <text>MIT OpenCourseWare
+http://ocw.mit.edu
+16.06 Principles of Automatic Control
+Fall 2012
+For information about citing these materials or our Terms of Use, visit: http://ocw.mit.edu/terms .</text>
+        </slide>
+      </slides>
+      <videos/>
+    </lecture>
+    <lecture>
+      <lecture_title>The Nyquist stability criterion</lecture_title>
+      <lecture_pdf_url>https://ocw.mit.edu/courses/16-06-principles-of-automatic-control-fall-2012/resources/mit16_06f12_lecture_20/</lecture_pdf_url>
+      <lectureno>20</lectureno>
+      <slides>
+        <slide>
+          <slideno>5</slideno>
+          <text>MIT OpenCourseWare
+http://ocw.mit.edu
+16.06 Principles of Automatic Control
+Fall 2012
+For information about citing these materials or our Terms of Use, visit: http://ocw.mit.edu/terms .</text>
+        </slide>
+        <slide>
+          <slideno>2</slideno>
+          <text>or
+ 
+G 1{k
+ 
+For there to be a closed loop pole on the j axis for k  0, we must have that two conditions 
+hold. First, G must have phase of 180 . The only frequency at which this happens is   1 
+rad/sec. Second, we must have that 
+|kG| | 1| 1 
+1 k  |G| 
+In this case, |G| 1{2 at   1, so k  2 is the required gain to place a pair of poles on the
+ 
+j axis.
+ 
+So the Bode plot plays a key role in stability analysis. We already have a partial result:
+ 
+If the open-loop system KGpsq is stable, and |KGpjq|  1 for 
+all  such that =KGpjq 180p mod 360q, then the closed-
+loop system is stable. 
+This result follows from our R.L. analysis.
+ 
+Note that the converse statement is not true,that is, there may be frequencies  such that
+ 
+|KGpjq|  1 and =KGpjq 180, and yet the closed loop system is stable.
+ 
+The Nyquist Criterion is the Frequency Response analogue of the Routh Criterion - it allows
+ 
+us to count the number of closed-loop, unstable poles. The Nyquist Criterion depends on
+ 
+Cauchys Principle of the Argument, or simply the argument principle.
+ 
+The Argument Principle 
+Consider a transfer function H1psq with pole/zero diagram 
+Im(s)
+R
+e(s)
+3</text>
+        </slide>
+        <slide>
+          <slideno>4</slideno>
+          <text>Im(s)
+R
+e(s)S0
+C12Im(H2)
+R
+e(H2)H2(S0)In this case, as we move once around C1, i, 2, and 1 return to their original values, 
+but 2 decreases by a net 360 . As a result,   =H 2 increases by a net 360 . But this is 
+equivalent to saying that H2pC1q encircles the origin exactly once in a clockwise direction. 
+More generally, the contour map H2pC1q encircles the origin counter-clockwise for each pole 
+inside C1, and clockwise for each zero. More succinctly, for a clockwise contour C1, 
+# of clockwise encirclements of the origin by HpC1q= Z - P 
+where Z = # of zeros of Hpsq inside C1; 
+and P = # of poles of Hpsq inside C1. 
+5</text>
+        </slide>
+        <slide>
+          <slideno>0</slideno>
+          <text>16.06 Principles of Automatic Control
+ 
+Lecture 20
+ 
+Bode Plots With Complex Poles 
+Suppose we have a proportional feedback system: 
+-+ k G(s)
+What values of k will lead to instability? Before we answer that, lets nd out what values 
+lead to neutral stability. Take, as an example, 
+1 Gpsq sps ` 1q2 
+Using root locus and Routh, we can deduce that the C.L. system is stable for 
+0  k  2 
+The root locus diagram is: 
+1</text>
+        </slide>
+        <slide>
+          <slideno>3</slideno>
+          <text>kps  ziqH1psq ps  piq 
+We are going to evaluate H1psq point-by-point around the contour C1 : 
+Im(s)
+R
+e(s)
+S0C1
+At each point on the contour, we calculate H1psq and plot: 
+Im(H1)
+R
+e(H1)
+H1(S0)
+At any point, say s0, the phase of H1ps0q is 
+ 
+  =H 1ps0q =ps 0  ziq =ps 0  piq
+ 
+ i  i 
+As we go around the contour (in this example), each i and i increases and decreases, but 
+returns to its original value after completing exactly one circuit. 
+Consider a second example, H2 : 
+4</text>
+        </slide>
+        <slide>
+          <slideno>1</slideno>
+          <text>5 4 3 2 1 0 1 23210123
+Real AxisImaginary Axisk&lt;2 k&gt;2
+-11k=2, =1So neutral stability occurs for k  2, corresponding to closed-loop poles at  1. 
+This result may be seen clearly on the Bode plot for this system. 
+101100101104102100102Magnitude
+101100101300250200150100Phase (deg)
+Frequency,  (rad/sec)|G|=1/2 at =1
+G=
+-180/ring.cap at =1
+Recall that the root locus condition is that 
+kG  1
+ 
+2</text>
+        </slide>
+      </slides>
+      <videos/>
+    </lecture>
+    <lecture>
+      <lecture_title>The z&#8208;transform, design by emulation, the Tustin transform</lecture_title>
+      <lecture_pdf_url>https://ocw.mit.edu/courses/16-06-principles-of-automatic-control-fall-2012/resources/mit16_06f12_lecture_30/</lecture_pdf_url>
+      <lectureno>30</lectureno>
+      <slides>
+        <slide>
+          <slideno>0</slideno>
+          <text>16.06 Principles of Automatic Control
+ 
+Lecture 30
+ 
+Z-transform Inversion 
+There are 3 ways to invert a Z-transform: 
+1. Partial Fraction Expansion 
+Example z F pzq pz  1{2qpz  1{3q 
+Using coverup method: 
+3 z F pzq  z  1{2 z  1{3 
+But we dont know the inverse transform of z1 
+a . 
+Instead, do PFE as 
+F pzq 1 z pz  1{2qpz  1{3q
+6 6  z  1{2 z  1{3 
+6z 6z F pzq  z  1{2 z  1{3 `  
+ frks p1{2qk p1{3qkrks 
+1</text>
+        </slide>
+        <slide>
+          <slideno>5</slideno>
+          <text>has some useful properties. Inverting, we have
+ 
+2 ` z  1 
+s  (2)Tz ` 1 
+Replacing every occurrence of s by the RHS of (2) in a given Kpsq is Tustins method, or the 
+bilinear transform . It results in a discrete controller, Kdpzq, that is a good approximation to 
+Kpsq. 
+Example: For the plant 
+Gpsq  1 
+sps ` 1q 
+nd a controller for the unity feedback, discrete-time system, with sample time T  0.025 
+sec (40 Hz sampling), with c  10 r/s, and PM  50 . 
+First, lets design for the continuous system: 
+a
+b-1 
+-2 
+10 
+Need to add a lead compensator at crossover to get desired PM. Compensator is 
+1 ` s{4.2 Kpsq 42.16 1 ` s{24 
+then 
+` 2 z  1 
+Kdpzq K Tz ` 1 
+3 ways to actually compute Kdpzq: 
+6</text>
+        </slide>
+        <slide>
+          <slideno>3</slideno>
+          <text>Observations: 
+1. The stability boundary is |z| 1. 
+2.	 The region near s  0 maps to the region z  1. For reasonable sampling rates, this is 
+where all the action is. 
+3.	 The z-plane pole locations give response information normalized to the sample rate, not 
+to dimensional time as in s-plane. So the meaning of, say, z  0.9 depends on the 
+sampling rate. 
+4.	 z 1 corresponds to   s{2, where s  2{T sample rate in radians/sec. s{2 is 
+the Nyquist frequency. 
+4</text>
+        </slide>
+        <slide>
+          <slideno>1</slideno>
+          <text>2. Inverse transform integral 
+1 frks F pzqz k1dz 2j 
+where the integral is counter-clockwise around the origin in the region of convergence. If the 
+integral is done using residues, this method reduces to method 1. 
+3. Long division 
+There is no analog to this in continuous time!1 
+By expanding F pzq in powers of 1{z, can obtain samples frks directly. 
+Example: 
+z 1 F pzq  z  a 1  az 
+Do long division: 
+1 ` az 11 ` a2z 2 ` 
+1  az 1 |1 
+11  az 
+1`az 
+`az 1  a2z 2 
+22`a z 
+22  a33`a z z 
+. . . 
+So frks ak , k  0. 
+In practice, not very practical2, but can be easily implemented to directly obtain, say, step 
+response. 
+Relationship between s and z. 
+Consider a continuous-time signal 
+fptq ptqe at 
+1Actually, expanding F psq in powers of 1{s yields the innite series (Taylor series) for fptq, which isnt 
+really that useful. 
+2Not very practical for hand computation. 
+2</text>
+        </slide>
+        <slide>
+          <slideno>2</slideno>
+          <text>Its Laplace transform is 
+1 F psq s ` a 
+with pole at s a. The z-transform of the sampled signal fpkT q is 
+z F pzq etz  e 
+with pole at z  e at. Therefore, there is a natural mapping 
+z  est 
+between s-plane and the z-plane. For example, if we want a system to have natural frequency 
+n and damping ratio , in the z-plane the poles should be at 
+ ?  
+n `j 12n T z  e 
+3</text>
+        </slide>
+        <slide>
+          <slideno>6</slideno>
+          <text>1. Actually do the substitution indicated above (ugh!) 
+2. Use the Matlab command 
+kd  c2dpk, 0.025, 1tustin1q 
+3. Map the poles and zeros of Kpsq 
+7</text>
+        </slide>
+        <slide>
+          <slideno>7</slideno>
+          <text>MIT OpenCourseWare
+http://ocw.mit.edu
+16.06 Principles of Automatic Control
+Fall 2012
+For information about citing these materials or our Terms of Use, visit: http://ocw.mit.edu/terms .</text>
+        </slide>
+        <slide>
+          <slideno>4</slideno>
+          <text>5. Vertical lines in s-plane (constant n) correspond to circles centered at z  0 in z-plane. 
+6. Horizontal lines in s-plane (constant d) correspond to radial lines from z  0 in z-plane. 
+7.	 Frequency greater than s{2 overlap lower frequencies in the z-plane. This is called 
+aliasing. So should sample at least twice as fast as highest frequency component in 
+Gpsq and rptq. 
+Design by Emulation 
+Can either design directly using, say, root locus in z-plane, or can design in continuous time, 
+and discretize the continuous controller. Must then verify that the design works, of course. 
+The book suggests three methods: 
+1. Tustins approximation 
+2. Matched Pole-Zero Method (MPZ) 3. Modied MPZ 
+Will start with... 
+Tustins approximation 
+We have found that 
+z  e sT 
+We can approximate z by 
+z  1 ` sT 
+or we can approximate z 1 by 
+11	 sT z  e  1  sT  z  1  sT 
+The more symmetric approximation 
+1 ` sT {2 z 	 (1)1  sT {2 
+5</text>
+        </slide>
+      </slides>
+      <videos/>
+    </lecture>
+    <lecture>
+      <lecture_title>PID control</lecture_title>
+      <lecture_pdf_url>https://ocw.mit.edu/courses/16-06-principles-of-automatic-control-fall-2012/resources/mit16_06f12_lecture_10/</lecture_pdf_url>
+      <lectureno>10</lectureno>
+      <slides>
+        <slide>
+          <slideno>5</slideno>
+          <text>0 10 20 30 4000.20.40.60.81
+ty
+5%The response has a long tail, due to slow pole  poles are at: 
+s  1.37  1.40j 
+s  0.065 
+ slow pole causes long tail 
+6</text>
+        </slide>
+        <slide>
+          <slideno>6</slideno>
+          <text>MIT OpenCourseWare
+http://ocw.mit.edu
+16.06 Principles of Automatic Control
+Fall 2012
+For information about citing these materials or our Terms of Use, visit: http://ocw.mit.edu/terms .</text>
+        </slide>
+        <slide>
+          <slideno>1</slideno>
+          <text>The resulting natural frequency is
+ 
+a 
+n  a2 ` kpA 
+So in the example, increasing kp increases the natural frequency, but reduces the damping
+ 
+ratio.
+ 
+Plot of pole location vs kp:
+ 
+Im(s) 
+Re(s) increasing k p
+-a 1/2 open loop
+pole location
+closed-loop
+pole location
+Derivative (D) control 
+To add damping to a system, it is often useful to add a derivative term to the control, 
+uptqk peptq` kDe9ptq 
+or 
+vpsqk pEpsq` kDsEpsq
+pk p ` kDsqEpsq
+KpsqEpsq 
+What is the characteristic equation? 
+0 1 ` KpsqGpsq 
+pkp ` kDsqA1 ` s2 ` a1s ` a2 
+0 s 2 `pa 1 ` kDAqs `pa 2 ` kpq 
+2</text>
+        </slide>
+        <slide>
+          <slideno>0</slideno>
+          <text>16.06 Principles of Automatic Control
+ 
+Lecture 10
+ 
+PID Control 
+A common way to design a control system is to use PID control. 
+PID = proportional-integral-derivative 
+Will consider each in turn, using an example transfer function 
+A Gpsq s2 ` a1s ` a2 
+Proportional (P) control 
+In proportional control, the control aw is simply a gain, to that u is proportional to e: 
+-+ kpG(s) yr e u
+u  kpe 
+For our example, the characteristic equation is 
+0 1 ` kpGpsq
+kpA1 ` s2 ` a1s ` a2 
+ 0 s 2 ` a1s ` a2 ` kpA 
+1</text>
+        </slide>
+        <slide>
+          <slideno>4</slideno>
+          <text>If PD control is in forward loop, 
+1.8s ` 3 T  s2 ` 2.8s ` 4 
+and the peak overshoot will be 16%, not 5%. So instead, use control structure 
+-+ 3
+1.8s y r u+G(s)
+(*)
+pq  mirror loop feedback 
+With this structure, we have: 
+tr 1.06s 
+Mp 4.6% 
+ess 0.25 
+So lets add integral control: 
+-+kv+k I/s 
+kDsy r+G(s)
+Take kI  0.25 (trust me!) 
+Then 
+Response sort of meets specs: T  3s ` 0.25 
+s3 ` 2.8s2 ` 4s ` 0.25 
+5</text>
+        </slide>
+        <slide>
+          <slideno>2</slideno>
+          <text>So increasing kD increases the damping ratio without changing the natural frequency, for
+ 
+this example.
+ 
+For kpxed, kDvarying, plot of closed-loop pole location is:
+ 
+Im(s) 
+Re(s)  pole position for k D = 0 
+ pole position for k D &gt; 0 
+increasing k D
+NB: For other Gpsq, results may vary.
+ 
+Sometimes, its better to place derivative feedback in the feedback path:
+ 
+-+ kp
+kD(s) y r u+G(s)
+Why? We get the same pole locations, but no additional zeros to cause additional overshoot. 
+Another way to think about this is that we want the derivative eect on y, because that 
+adds damping, but we dont want to dierentiate the reference. 
+Integral (I) control 
+Especially if the plant is a type 0 system, we may want to add integrator to controller to 
+drive steady-state error to zero: 
+`kIV psq pkp `kDsq Epsq
+  s 
+ 
+P I D 
+3</text>
+        </slide>
+        <slide>
+          <slideno>3</slideno>
+          <text>Example: 
+1 Gpsq s2 ` s ` 1 
+Suppose we want a system that 
+1. Has rise time above tr  1s 
+2. Has peak overshoot of Mp  0.05 
+3. Has zero steady-state error to step command 
+Lets do one piece at a time: 
+-+ kpG(s)
+Characteristic equation is 
+0  s 2 ` s ` 1 ` kp 
+So can only change n (and indirectly, ) with kp. for tr  1, need 
+1.8 1   n  1.8 n 
+So lets take kp  2 for simplicity. Then 
+kpG 3 T   1 ` kpGs2 ` s ` 4 
+  0.25, Low 
+To get Mp  5%, need   0.7. So add derivative control. Characteristic Equation is 
+0  s 2 `p1 ` kpqs ` 1 ` kp 
+The desired polynomial is 
+0  s 2 ` 2.8s ` 4 
+So take kD  1.8. 
+4</text>
+        </slide>
+      </slides>
+      <videos/>
+    </lecture>
+    <lecture>
+      <lecture_title>Digital control, the z-transform</lecture_title>
+      <lecture_pdf_url>https://ocw.mit.edu/courses/16-06-principles-of-automatic-control-fall-2012/resources/mit16_06f12_lecture_29/</lecture_pdf_url>
+      <lectureno>29</lectureno>
+      <slides>
+        <slide>
+          <slideno>3</slideno>
+          <text>rks  # 1, k  0 
+0, k  0  1 
+rk  k0s  z k0 
+rks  # 1, k  0 
+0, k  0  z 
+z1 , |z|  1 
+rksk 
+`  z 
+z1 , |z|  || 
+rkse akT 1 
+s`a  
+ z 
+ze aT 
+4</text>
+        </slide>
+        <slide>
+          <slideno>0</slideno>
+          <text>16.06 Principles of Automatic Control
+ 
+Lecture 29
+ 
+Digital Control 
+At one time, most control systems were implemented using analog devices (operational am
+pliers, linear circuit elements, etc). Today, most control systems are implemented using digital devices (computers, etc.) 
+The use of digital devices leads to systems which implement dierence equations in discrete 
+time rather than dierential equations in continuous time. This will require some new tools, 
+but much will be familiar. 
+Basic block diagram: 
+-
+y(t) r(t) 
+TTD/A + hold
+A/Dcontroller ++
+G(s)
+u(t) u(kt) e(kt) reference sampler error 
+Discrete-time components 
+Basic Components: 
+Sampler - Captures value of continuous time signal periodically so that A/D converter can 
+read it 
+Analog-to-digital (A/D) converter - converts samples continuous signal to discrete (bi
+nary encoded) signal. Often, 8, 12, or 14 bits. 
+1</text>
+        </slide>
+        <slide>
+          <slideno>4</slideno>
+          <text>MIT OpenCourseWare
+http://ocw.mit.edu
+16.06 Principles of Automatic Control
+Fall 2012
+For information about citing these materials or our Terms of Use, visit: http://ocw.mit.edu/terms .</text>
+        </slide>
+        <slide>
+          <slideno>1</slideno>
+          <text>Controller - Implemented on a computer, which implements a dierence equation, much as 
+a continuous-time controller is an implementation of a dierential equation on analog 
+components. 
+Digital-to-analog (D/A) converter - Converts a binary word to an analog signal. 
+Zero Order Hold - Holds a constant value analog signal for one period. 
+Discrete Time Control Time line 
+Control Computer 
+calculates next 
+value of u Control Computer 
+performs other 
+tasksSamples values 
+of r, y converted 
+to digital values Digital value of u 
+converted to 
+analog signal 
+kT kT+ (k+1)T 
+If the control computer is dedicated to a single task, then T is made as short as possible, 
+and   T. 
+If the computer has many tasks, then T is longer, and  ! T . In that case, can take   0. 
+Of course, can have anything in between. 
+For our purposes, we will assume one of the extremes, i.e., either   0, or   T. Of course, 
+can generalize to other cases. 
+Analysis of Discrete Systems. 
+Our system is a sampled-data system , meaning that it contains both discrete and continuous 
+signals. However, we can treat it as a discrete system, by treating the dynamics from vpkT q
+to ypkT q as discrete. 
+Discrete systems are a lot like continuous systems - they have step responses, pulse (not 
+impulse) responses, and transfer functions. The counterpart of the Laplace Transform is the Z-Transform. 
+Z-Transform 
+The Z-transform of a sequence frks is given by 
+2</text>
+        </slide>
+        <slide>
+          <slideno>2</slideno>
+          <text>8	kF pzq Z rfrkss  8frksz 
+Note: I am using the bilateral transform. 
+For every interesting property that you learned for the Laplace transforms, there is a corre
+sponding z-transform property.
+ 
+For instance,
+ 
+8 
+kZ rfrk  1ss  frk  1sz 
+k8 
+8 
+pk1`1q frk1sz
+k18 
+z 1F pzq 
+(similar to Lrf 9ptqs  sF psq )
+ 
+Using this property, can always dierentiate equations. E.g.,
+ yrksa
+1yrk  1s a2yrk  2s` b0urks` b1urk  1s` b2urk  2s 
+Z-transform both sized to obtain Y psq  pa
+1z 1  a2z 2qY pzq`pb 0 ` b1z 1 ` b2z 2qUpzq 
+So the transfer function from u to y is 
+Y pzq b0 ` b1z 1 ` b2z 2 
+Upzq	 1 ` a1z 1 ` b2z 2 
+b0z2 ` b1z ` b2z2 ` a1z ` a2 
+Some Select Transforms 
+3</text>
+        </slide>
+      </slides>
+      <videos/>
+    </lecture>
+    <lecture>
+      <lecture_title>Root locus rules</lecture_title>
+      <lecture_pdf_url>https://ocw.mit.edu/courses/16-06-principles-of-automatic-control-fall-2012/resources/mit16_06f12_lecture_12/</lecture_pdf_url>
+      <lectureno>12</lectureno>
+      <slides>
+        <slide>
+          <slideno>2</slideno>
+          <text>pi 
+n 
+To show this, consider a polynomial with roots z1,z2, ... The polynomial is then 
+ps  p1qps  p2q...ps  pnq
+s n pp 1 ` p2 ` ...pnqs n1 ` ... 
+Therefore, a1  pi.
+ 
+Now, the closed loop polynomial is given by
+ 
+dpsq` knpsq
+s n ` a1s n1 ` ... ` kps m ` b1s m1 ` ...q
+s n ` a1s n1 ` ... `pa nm ` kqs m ` ... 
+That is, the rst term to change in the polynomial is the anmterm. If nm  2, the a1term 
+is unchanged, and the centroid is a constant. 
+Note that if m poles go to the m zeros zi, the centroid of the remaining n  m poles must 
+go to 
+  pi  zi 
+n  m 
+in agreement with rule 3. 
+	 Rule 4 The angle(s) of departure of a branch of the locus from a pole of multiplicity 
+q is 
+ 
+qdep  i  i  180  360pl  1q
+ 
+and the angle(s) of arrival of a branch at a zero of multiplicity q is given by 
+ 
+qarr  i  i ` 180 ` 360pl  1q
+ 
+where the sum excludes to poles (or zeros) at the point of interest. 
+3</text>
+        </slide>
+        <slide>
+          <slideno>3</slideno>
+          <text>Example:
+ 
+s Lpsq ps ` 1qps2 ` 1q 
+Im(s)
+Re(s)
+2=90/o.superior1=45/o.superiordep=90/o.superior-45 /o.superior-90 /o.superior-180/o.superior
+1=90/o.superior
+dep  90  45  90  180 
+dep 225  135(mod 360) 
+4</text>
+        </slide>
+        <slide>
+          <slideno>0</slideno>
+          <text>16.06 Principles of Automatic Control
+ 
+Lecture 12
+ 
+Root Locus Rules 
+	 Rule 1 The n branches of the locus start at the n poles of L(s). m branches end at 
+the zeros of L(s). n  m branches end at s 8. 
+	 Rule 2 The locus covers the real axis to the left of an odd number of poles and 
+zeros. 
+To the left of the pole,   180 
+To the left of a zero,   180 . 
+=0 /o.superior
+=180 /o.superiors to the right of the pole 
+s to the left of the pole 
+To the right of a pole,   0 
+To the right of a zero,   0 . 
+So, 
+m n 
+=Lpsq i  i 
+i1 i1 
+m 1180  n1180 
+pm 1 ` n1q180  n1360 
+180 ` l 360 
+if m1 ` n1 is o, where 
+1</text>
+        </slide>
+        <slide>
+          <slideno>4</slideno>
+          <text>MIT OpenCourseWare
+http://ocw.mit.edu
+16.06 Principles of Automatic Control
+Fall 2012
+For information about citing these materials or our Terms of Use, visit: http://ocw.mit.edu/terms .</text>
+        </slide>
+        <slide>
+          <slideno>1</slideno>
+          <text>m1  number of zeros to the right of s 
+n1  number of poles to the right of s 
+	 Rule 3 For large k, n  m of the loci are asymptotic to the lines emanating from the 
+point s 8, with angles 
+180 ` 360 pl  1ql 	 , l  1, ...n  m n  m 
+	 pi 	 ziwhere   nm .
+ 
+Why? If s 8, k 8,then to highest order the equation
+ 
+dpsq` knpsq 0 
+becomes 
+s n ` ... ` kps m ` ...q 0 
+So the solution satises 
+n s  ksm , pk, s  8q 
+ "asymptotic to" 
+ s	 nm  k 
+ s pkq 1 
+nm 
+180 ` 360 pl  1q
+nm =k	 1 
+n  m 
+To get the point s  , do asymptotic analysis with next terms: 
+Result is that center of pattern is at: 
+  pi  zi s  n  m 
+A related rule, not in FPE, is: 
+ Rule 3a If n  m  2, the centroid of the closed-loop poles is constant, and is at 
+2</text>
+        </slide>
+      </slides>
+      <videos/>
+    </lecture>
+    <lecture>
+      <lecture_title>Block diagrams, the effect of feedback</lecture_title>
+      <lecture_pdf_url>https://ocw.mit.edu/courses/16-06-principles-of-automatic-control-fall-2012/resources/mit16_06f12_lecture_2/</lecture_pdf_url>
+      <lectureno>2</lectureno>
+      <slides>
+        <slide>
+          <slideno>0</slideno>
+          <text>16.06 Principles of Automatic Control
+ 
+Lecture 2
+ 
+Reasons for using automatic control: 
+ Reduce workload 
+ Perform tasks people cant 
+ Reduce the eects of disturbances 
+ Reduce the eects of plant variations 
+ Stabilize an unstable system 
+ Improve the performance of a system (time response) 
+ Improve the linearity of the system 
+Requires closed-loop control!! 
+Components in a typical control system: 
+Controller Actuator Dynamic process 
+Sensor Reference 
+Measurement 
+Sensor noise Output Control 
+signal Plant Disturbance 
+1</text>
+        </slide>
+        <slide>
+          <slideno>1</slideno>
+          <text>Typically, we are interested in cases where the plant and controller are linear and time-
+invariant, or can be modeled as such. Then we can represent components as transfer functions: 
+reference error controller control
+signalplantdisturbance
+output
+r e ud
++
+-++ K(s) G(s)y
+This block diagram form is extremely useful, and is used every day in this class. 
+Why are block diagrams so powerful? 
+System is described by dierential equations, but the transfer functions (Laplace transforms) 
+reduce the dierential equations to algebra. Yay! 
+Consider a very simple plant: 
+10 u y
+Suppose we want y to track reference signal r. Could control by open-loop control 
+10 u y r1/10 
+controller plant 
+or by closed-loop control
+ 
+2</text>
+        </slide>
+        <slide>
+          <slideno>3</slideno>
+          <text>Big idea:
+ 
+High gain control loop reduces the sensitivity of
+the control system to variations in the plant. 
+Now consider eects of a disturbance:
+ 
+Open-loop: 
+10 uyr1/10 +ddisturbance 
+dy 1 
+Closed-loop: 
+10 u y e5r
+-d
++
+y 1 1   0.02d 1`KG 51 
+Big Idea: 
+High-gain feedback control greatly reduces theeect of disturbances on the output of a control system. 
+4</text>
+        </slide>
+        <slide>
+          <slideno>4</slideno>
+          <text>MIT OpenCourseWare
+http://ocw.mit.edu
+16.06 Principles of Automatic Control
+Fall 2012
+For information about citing these materials or our Terms of Use, visit: http://ocw.mit.edu/terms .</text>
+        </slide>
+        <slide>
+          <slideno>2</slideno>
+          <text>10 u y e5
+plant r
+-Note that the control gain (5) is arbitrary - well gure out how to chose it later. 
+How well do these control systems work? 
+Look at transfer functions from r to y: 
+Open Loop Closed Loop 
+y 
+r 1 
+10  10  1 510 
+1`510  50 
+51  0.98 
+We want y
+r  1, so at rst glance, it looks like open-loop is better than closed-loop. However, 
+consider what happens if it turns out our plant model was wrong (or changes), so that really 
+G  15. Then 
+Open Loop Closed Loop 
+y 
+r 1 
+10  15  1.5 515 
+1`515  75 
+76  0.9868 
+That is, if the plant gain changes by 50%, the transfer function of the open-loop system 
+will vary by 5-%. However, the transfer function of the closed-loop system will vary by only 0.66% (in this case). 
+More generally, for a typical unity-feedback control system: 
+u y e r
+-K G
+The sensitivity of the closed-loop transfer function 
+KG yH   1`KG r 
+1 % change in H is S   1`KG % change in G 
+3</text>
+        </slide>
+      </slides>
+      <videos/>
+    </lecture>
+    <lecture>
+      <lecture_title>Higher harmonic control</lecture_title>
+      <lecture_pdf_url>https://ocw.mit.edu/courses/16-06-principles-of-automatic-control-fall-2012/resources/mit16_06f12_lecture_35/</lecture_pdf_url>
+      <lectureno>35</lectureno>
+      <slides>
+        <slide>
+          <slideno>0</slideno>
+          <text>16.06 Principles of Automatic Control
+ 
+Lecture 35
+ 
+Higher Harmonic Control 
+Helicopters and other rotating machinery often have serious vibration at multiples of the 
+rotation speed, or harmonics. 
+To eliminate vibration, need to have 
+1 Spsq 1 ` KpsqGpsq 
+psensitivity transfer function q 
+be zero at S  jN, 
+where   roatation rate in r/s 
+N  harmonic to be controlled. 
+Therefore, need to have 
+KpjNq8 
+To achieve this, K must have an oscillator at 
+n  N,   0. So 
+k Kpsq s2 `pN q2 
+But usually need a zero as well, because we want the pole on the j axis to move directly 
+left, at a departure angle of 180 . 
+Often, low gain control in OK, so the time constant T of the system can be long. That is, 
+the closed-loop poles associated with the oscillator will be at 
+1</text>
+        </slide>
+        <slide>
+          <slideno>1</slideno>
+          <text>1 S   jN T 
+where T is large, compared to 1{. 
+j
+jN
+-jNT1-
+For a given Gpsq, how do we get poles at desired location?
+ 
+We could use Root locus methods; however, we dont really know Gpsq,we only know Gpjq.
+ 
+Where are roots of 1 ` KpSqGpsq ?
+ 
+If we take
+ 
+as ` bN as ` bN Kpsq  s2 `pN q2 ps  jNqps ` jNq 
+then near s  jN, 
+paj ` bqN 1 KpsqGpsq GpjN q2jN s  jN 
+Using this approximation and setting KG 1at s  T 1 ` jN, we nd 
+2 ` 1  
+a  Re TGpjN q
+2 ` 1  
+b  Im TGpjN q 
+2</text>
+        </slide>
+        <slide>
+          <slideno>3</slideno>
+          <text>MIT OpenCourseWare
+http://ocw.mit.edu
+16.06 Principles of Automatic Control
+Fall 2012
+For information about citing these materials or our Terms of Use, visit: http://ocw.mit.edu/terms .</text>
+        </slide>
+        <slide>
+          <slideno>2</slideno>
+          <text>Example:
+ 
+1
+ Gpsq s ` 1
+ 
+ 1, N  1, T  10
+ 
+ a 0.2, b 0.2
+ 
+s  1
+ Kpsq0.2 s2 ` 1
+ 
+Root locus: 
+j
+
+3</text>
+        </slide>
+      </slides>
+      <videos/>
+    </lecture>
+    <lecture>
+      <lecture_title>Time-domain specifications</lecture_title>
+      <lecture_pdf_url>https://ocw.mit.edu/courses/16-06-principles-of-automatic-control-fall-2012/resources/mit16_06f12_lecture_6/</lecture_pdf_url>
+      <lectureno>6</lectureno>
+      <slides>
+        <slide>
+          <slideno>1</slideno>
+          <text>Mp  peak overshoot 
+tr  rise time (10% to 90%) 
+ts  settling time (1%) 
+tp  time of peak 
+Each of the above parameters may be important in the design of the control system. For 
+example, the designer of a hard disk drive may specify a maximum settling time of the response of the read/write head to a commanded change in position. 
+Peak overshoot is important, both because it is a measure (to a degree) of stability, and for 
+practical reasons, overshoot should be minimized (think of an elevator!). 
+Rise time t
+r(and to a lesser extent peak time tp) is a measure of the speed of response of the 
+system. Often, a maximum trwill be specied. 
+We can connect and nto Mp, tp, tr, with two important caveats: rst, some of the rela
+tionships are approximate. Second, additional poles and zeros will change the results, so all 
+of the results should be viewed as guidelines. 
+The step response of Hpsq is 
+ 
+1nthsptq 1  e cospdtq` a sinpdtq
+1  2 
+Using elementary calculus, we can nd tp and Mp(see text): 
+ tp  d 
+?  
+Mp e 12 
+ tan  e 
+where   sin 1 . 
+Typical values: 
+ Mp 
+0.5 0.16 
+0.7 0.05 
+2</text>
+        </slide>
+        <slide>
+          <slideno>2</slideno>
+          <text>The rise time is approximately
+ 
+1.8 tr  n 
+The rise time is a bit faster for systems with less damping, a bit longer for systems with 
+more damping, and sensitive to additional poles and zeros. 
+The settling time can be approximated via: 
+ntse 0.01 
+ ts  4.6 
+n 
+Note that, in reality, settling time varies discontinuously with , since as damping increases, 
+a peak may decrease from just over 1.01 to just under 1.01, so tsis drastically reduced. 
+Desired pole locations 
+Given specications on tr, Mp, and ts, where should poles be? 
+tr a 
+ 1.8 a n 
+ n 1.8  nmin a 
+Im(s)
+Re(s)x
+xn min 
+Likewise, to keep Mpless than a xed value, must have   pMpq: 
+3</text>
+        </slide>
+        <slide>
+          <slideno>0</slideno>
+          <text>16.06 Principles of Automatic Control
+ 
+Lecture 6
+ 
+Time Domain Specications: 
+Manycontrolsystemsaredominatedbyasecondorderpairofpoles. Solookattimeresponse 
+(to step input) of 
+2 
+Hpsq n 
+s2 ` 2ns+n 2 
+Typical response: 
+0 2 4 6 8 10 12 14 00.10.50.911.21.4
+Time, t (sec) Mp
+tp1%
+tstrt
+1</text>
+        </slide>
+        <slide>
+          <slideno>4</slideno>
+          <text>MIT OpenCourseWare
+http://ocw.mit.edu
+16.06 Principles of Automatic Control
+Fall 2012
+For information about citing these materials or our Terms of Use, visit: http://ocw.mit.edu/terms .</text>
+        </slide>
+        <slide>
+          <slideno>3</slideno>
+          <text>Im(s) 
+Re(s) 
+xxFinally, must have: 
+4.6 n ts 
+Im(s) 
+Re(s) 
+xx
+Putting these constraints together will yield an allowable region for the poles (see better 
+drawing in text): 
+Im(s) 
+Re(s) 
+N.B.: The allowable region is a guide. After a system is designed, the performance will have 
+to be evaluated. 
+4</text>
+        </slide>
+      </slides>
+      <videos/>
+    </lecture>
+  </lectures>
+</doc>

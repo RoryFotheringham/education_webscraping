@@ -1,0 +1,5050 @@
+<doc>
+  <source>MIT</source>
+  <date>28/01/2023</date>
+  <course>
+    <course_url>https://ocw.mit.edu/courses/18-657-mathematics-of-machine-learning-fall-2015/</course_url>
+    <course_title>Mathematics of Machine Learning</course_title>
+    <course_tags>
+      <list>Engineering </list>
+      <list>Computer Science </list>
+      <list>Artificial Intelligence </list>
+    </course_tags>
+  </course>
+  <lectures>
+    <lecture>
+      <lecture_title>Projected Gradient Descent (PDF)</lecture_title>
+      <lecture_pdf_url>https://ocw.mit.edu/courses/18-657-mathematics-of-machine-learning-fall-2015/resources/mit18_657f15_l12/</lecture_pdf_url>
+      <lectureno>12</lectureno>
+      <slides>
+        <slide>
+          <slideno>0</slideno>
+          <text>18.657: Mathematics of Machine Learning
+Lecturer: Philippe Rigollet Lecture 12
+Scribe:Michael Traub Oct. 19, 2015
+2.3 Projected Gradient Descent
+In the original gradient descent formulation, we hope to optimize min xf(x) where nC Ca d 
+fare convex, but we did not constrain the intermediate xk. Projected gradient descent will
+incorporate this condition.
+2.3.1 Projection onto Closed Convex Set
+First we must establish that it is possible to always be able to keep xkin the convex set C.
+One approach is to take the closest point (xk) C.
+Denition: LetCbe a closed convex subset of IRd. ThenxIRd, let(x) Cbe
+the minimizer of
+/badblx(x)/badbl= minx z
+zC/badbl  /badbl
+where/badbl/badbldenotes the Euclidean norm. Then (x) is unique and,
+/an}backetle{t(x)x,(x)z/an}backeti}ht 0z C (2.1)
+Proof.From the denition of :=(x), we have /badblx/badbl2 /badblxv/badbl2for anyv C. Fix
+w Cand dene v= (1t)+twfort(0,1]. Observe that since Cis convex we have
+v Cso that
+/badbl  /badbl2 /badbl  /badbl2 2x  x v =/badblxt(w)/badbl
+Expanding the right-hand side yields
+/badbl2 2 2x/badbl  /badblx/badbl 2t/an}backetle{tx,w/an}backeti}ht+t2/badblw/badbl
+This is equivalent to
+/an}backetle{tx,w /an}backeti}ht 2 t/badblw/badbl
+Since this is valid for all t(0,1), letting t0 yields (2.1).
+Proof of Uniqueness. Assume1,2 Csatisfy
+/an}backetle{t1x,1z/an}backeti}ht 0zC
+/an}backetle{t2x,2z/an}backeti}ht 0zC
+Takingz=2in the rst inequality and z=1in the second, we get
+/an}backetle{t1x,12/an}backeti}ht 0
+/an}backetle{tx2,12/an}backeti}ht 0
+Adding these two inequalities yields /badbl12/badbl20 so that 1=2.
+1</text>
+        </slide>
+        <slide>
+          <slideno>4</slideno>
+          <text>using triangle inequality and the fact that F(Xi) is aN-dimensional vector with each
+component bounded in absolute value by 1.
+Using the fact that the diameter of the 1ball is 2, R= 2 and the Lipschitz associated
+with our -risk isL NwhereLis the Lipschitz constant for . Our stochastic termRL
+k
+becomes 2 L/radicalBig
+N
+k. Imposing the same1
+nerror as before we nd that kN2n, which is very
+bad especially since we want log N.
+2.4 Mirror Descent
+Boosting is an example of when we want to do gradient descent on a non-Euclidean space,
+in particular a 1space. While the dual of the 2-norm is itself, the dual of the 1norm is
+theor sup norm. We want this appear if we have an 1constraint. The reason for this 
+is not intuitive because we are taking about measures on the same space IRd, but when we
+consider optimizations on other spaces we want a procedure that does is not indierent to
+the measure we use. Mirror descent accomplishes this.
+2.4.1 Bregman Projections
+Denition: If/badbl/badblis some norm on IRd, then/badbl/badblis its dual norm.
+Example: If dual norm of the pnorm/badbl/badblpis theqnorm/badbl/badblq, then1
+p+1
+q= 1. This is the
+limiting case of H olders inequality.
+In general we can also rene our bounds on inner products in IRdtoxy /badblx/badbl/badbly/badblif
+we consider xto be the primal and yto be the dual. Thinking like this, gradients live in
+the dual space, e.g. in gs(xx),xxis in the primal space, so gsis in the dual. The
+transpose of the vectors suggest that these vectors come from spaces with dierent measure,
+even though all the vectors are in IRd.
+Denition: Convex function  on a convex set Dis said to be
+(i) L-Lipschitz with respect to /badbl/badblif/badblg/badblLg(x)xD
+(ii)-strongly convex with respect to /badbl/badblif
+(y)(x)+g(yx)+2/badblyx/badbl2
+for allx,yDand forgf(x)
+Example: If  is twice dierentiable with Hessian Hand/badbl/badblis the2norm, then all
+eig(H).
+Denition (Bregman divergence): For a given convex function  on a convex set
+Dwithx,y D, the Bregman divergence of yfromxis dened as
+D(y,x) = (y)(x)(x)(yx)
+5</text>
+        </slide>
+        <slide>
+          <slideno>1</slideno>
+          <text>2.3.2 Projected Gradient Descent
+Algorithm 1 Projected Gradient Descent algorithm
+Input:x1 C, positive sequence {s}s1
+fors= 1 tok1do
+ys+1=xssgs, gsf(xs)
+xs+1=(ys+1)
+end for
+k1return Eitherx =/summationdisplay
+xsorxargmin f(x)kxs={x1,...,x1 k}
+Theorem: LetCbe a closed, nonempty convex subset of IRdsuch that diam( C)R.
+Letfbe a convex L-Lipschitz function on
+RCsuch that xargminxf(x) exists.C
+Then ifs=Lthenk
+LR LRf(x)f(x)andf(x)f(x)
+k
+k
+Moreover, if s=R, thenc &gt;0 such thatL s
+LR LRf(x)f(x)candf(x)f(x)
+k  c
+k
+Proof.Again we will use the identity that 2 ab=/badbla/badbl2+/badblb/badbl2/badbl2ab/badbl.
+By convexity, we have
+f(xs)f(x)gs(xsx)
+1= (xsys+1)(xsx)
+1=2/bracketleftBig
+/badbl2xsys+1/badbl+/badblxsx/badbl2/badblys+1x/badbl2/bracketrightBig
+Next,
+/badblys+1x/badbl2=/badbl2ys+1xs+1/badbl+/badblxs+1x/badbl2+2/an}backetle{tys+1
+2xs+1,xs+1x/an}backeti}ht
+=/badblys+1xs+1/badbl+/badbl2xs+1x/badbl+2/an}backetle{tys+1(ys+1),(ys+1)x/an}backeti}ht
+ /badblxs+1x/badbl2
+where we used that /an}backetle{tx(x),(x)z/an}backeti}ht 0z C, andx
+2 2 C. Also notice that
+/badblxs2y2 2s+1/badbl=/badblgs/badbl  LsincefisL-Lipschitz with respect to /badbl/badbl. Using this
+we nd
+k k1
+k/summationdisplay 1 1( )()/summationdisplay2 2+2 2f xsf x  L x sx x s+1xk2s=1 s=1/bracketleftBig
+/badbl  /badbl /badbl  /badbl/bracketrightBig
+L212L2R2
++x2k/badbl1x
+2/badbl  +2 2k
+2</text>
+        </slide>
+        <slide>
+          <slideno>5</slideno>
+          <text>This divergence is the error of the function ( y) from the linear approximation at x.
+Also note that this quantity is not symmetric with respect to xandy. If  is convex then
+D(y,x)0 because the Hessian is positive semi-denite. If  is -strongly convex then
+D(y,x)
+2/badblyx/badbl2and if the quadratic approximation is good then this approximately
+holds in equality and this divergence behaves like Euclidean norm.
+Proposition: Given convex function  on Dwithx,y,z D
+((x)(y))(xz) =D(x,y)+D(z,x)D(z,y)
+Proof.Looking at the right hand side
+= (x)(y)(y)(xy)+(z)(x)(x)(zx)
+/bracketleftBig
+(z)(y)(y)(zy)/bracketrightBig
+=(y)(yx+zy)(x)(zx)
+= ((x)(y))(xz)
+Denition (Bregman projection): GivenxIRd, aconvex dierentiablefunction
+onD  D IRdand convex C, the Bregman projection of xwith respect to  is
+(x)argminD(x,z)
+zC
+References
+[Bub15] S ebastien Bubeck, Convex optimization: algorithms and complexity , Now Publish-
+ers Inc., 2015.
+6</text>
+        </slide>
+        <slide>
+          <slideno>6</slideno>
+          <text>MIT OpenCourseWare
+http://ocw.mit.edu
+18.657 Mathematics of Machine Learning
+Fall 2015
+For information about citing these materials or our Terms of Use, visit: http://ocw.mit.edu/terms .</text>
+        </slide>
+        <slide>
+          <slideno>3</slideno>
+          <text>i.i.dX1,...,X n N(0,Id). This we can write these d-dimensional samples as a dnmatrix
+X. We can rewrite the matrix IK with entries IK ij=K(Xi,Xj) =/an}backetle{tXi,Xj/an}backeti}htIRdas a Wishart
+matrix IK = XX(in particular,1XdXis Wishart). Using results from random matrix
+theory, if we take n,d but holdnas a constant , then(IK 2min) (d1) . Takingd
+an approximation since we cannot take n,dto innity, we get
+min(IK)d/parenleftbiggn d12/radicalbigg
+d/parenrightbigg
+2
+using the fact that dn. This means that minbecoming too small is not a problem when
+we model our samples as coming from multivariate Gaussians.
+Now we turn our focus to the number of iterations k. Looking at our bound on the
+excess risk
+nRn,(f 
+R)minRn,(f)+C/radicalbigg
+kmax
+IKC2 kmin(IK)
+we notice that our all of the constants in our stochastic term can be computed given the
+number of points and the kernel. Since statistical error is often 1, to be generous we wantn
+to have precision up to1
+nto allow for fast rates in special cases. This gives us
+n3k2C2
+kmax
+min(IK)
+which is not bad since nis often not very big.
+In [Bub15], the rates for many a wide rage of problems with various assumptions are
+available. For example, if we assume strong convexity and Lipschitz we can get an exponen-
+tial rate so klogn. If gradient is Lipschitz, then we get get1
+kinstead of 1in the bound.k
+However, often times we are not optimizing over functions with these nice properties.
+Boosting
+We already know that isL-Lipschitz for boosting because we required it before.
+Remember that our optimization problem is
+n1min/summationdisplay
+(Yif(Xi))
+RNn
+|I
+|1i=11
+wheref=N
+j=1jfjandfjis thejthweak classier. Remember before we had some rate
+like/radicalBig
+logNc/summationtext
+nand we would hope to get some other rate that grows with log NsinceNcan
+be very large. Taking the gradient of the -loss in this case we nd
+N1Rn,(f) =/summationdisplay
+(Yif(Xi))(Yi)F(Xi)ni=1
+whereF(x) is the column vector [ f1(x),...,fN(x)]. Since|Yi| 1 andL, we can
+bound the 2norm of the gradient as
+/vextenddouble nL /vextenddoubleR/vextenddoublen,(f)/vextenddouble/vextenddouble/vextenddouble
+2n/vextenddouble /vextenddouble/vextenddouble/vextenddouble/summationdisplay
+F(X/vextenddouble i)/vextenddoublei=1/vextenddouble
+n/vextenddouble
+L/vextenddouble/vextenddouble
+n/summationdisplay
+)
+i=/badblF(Xi
+1/badbl L
+N
+4</text>
+        </slide>
+        <slide>
+          <slideno>2</slideno>
+          <text>2 2Minimizing over we getL=R
+2==R, completing the proof22 k L k
+RLf(x)f(x)
+k
+2
+Moreover, the proof of the bound for f(/summationtextk
+kxs)f(x) is identical because xkxs=/vextenddouble/vextenddouble
+2
+2/vextenddouble/vextenddouble
+R2as well./vextenddouble /vextenddouble
+2.3.3 Examples
+Support Vector Machines
+The SVM minimization as we have shown before is
+n1minn/summationdisplay
+max(0,1Yif(Xi))
+R
+In
+2i=1
+IK C
+wheref(Xi) =IKei=/summationtextn
+=1jK(X ,j jXi). Forconvenience, call gi() = max(0 ,1Yif(Xi)).
+In this case executing the projection onto the ellipsoid {:IKC2}is not too hard,
+but we do not know about C,R, orL. We must determine these we can know that our
+bound is not exponential with respect to n. First we nd Land start with the gradient of
+gi():
+gi() = 1I(1Yif(Xi)0)YiIKei
+ With this we bound the gradient of the -riskRn,(f) =1
+n
+n n/summationtextn
+=1gi(i).
+/vextenddouble/vextenddouble 1 1/vextenddoubleRn,(f)/vextenddouble/vextenddouble/summationdisplay/vextenddouble=/vextenddouble/vextenddouble/vextenddoublegi()/vextenddouble/vextenddoublen/vextenddouble
+/vextenddoublei=1/vextenddouble/vextenddouble/summationdisplay
+IKe/vextenddouble /vextenddouble in2
+i=1/badbl /badbl
+by the triangle inequality and the fact that that 1I(1/vextenddouble
+Yif(Xi)0)Yi1. We can now
+use the properties of our kernel K. Notice that /badblIKei
+1
+2/badblis the2norm of the ithcolumn so
+/badblIKei/badbln
+2=/parenleftBig/summationtext
+j=1K(Xj,Xi)2/parenrightBig
+. We also know that
+K(Xj,Xi)2=/an}backetle{tK(X2j,),K(Xi,)/an}backeti}ht  /badblK(Xj,)/badblKH/badbl(Xi,)/badblHkmax
+Combining all of these we get
+1/vextenddouble n n2/vextenddouble 1/vextenddoubleRn,(f)/vextenddouble
+max
+/summationdisplay /summationdisplay/vextenddouble/vextenddoublek2=kmaxn=L/vextenddouble/vextenddoubleni=1j=1
+To ndRwe try to evaluate diam {IKC2}= 2 max
+
+. We can use the
+IKC2
+condition to put bounds on the diameter
+C2 2CIKmin(IK)=diam{IKC2} /radicalbig
+min(IK)
+We need to understand how small mincan get. While it is true that these exist random
+samples selected by an adversary that make min= 0, we will consider a random sample of
+3</text>
+        </slide>
+      </slides>
+      <videos/>
+    </lecture>
+    <lecture>
+      <lecture_title>Introduction (PDF)</lecture_title>
+      <lecture_pdf_url>https://ocw.mit.edu/courses/18-657-mathematics-of-machine-learning-fall-2015/resources/mit18_657f15_l1/</lecture_pdf_url>
+      <lectureno>1</lectureno>
+      <slides>
+        <slide>
+          <slideno>3</slideno>
+          <text>Important Remark :Recall that R(h) = IP(h(X)/ne}ationslash=Y).
+   Ifh()
+=h({(X1,Y1),...,(Xn,Yn)};) is constructed from the data, R(h) denotes
+theconditional probability
+ R(h) = IP(h(X)/ne}ationslash=Y|(X1,Y1),.. .,(Xn,Yn)).
+  ratherthanIP( h(X)/ne}ationslash=Y). As aresult R(h)is arandomvariablesinceit dependsonthe
+randomness of the data ( X1,Y1),...,(Xn,Yn). One way to view this is to observe that
+ we compute the deterministic function R() and then plug in the random classier h.
+This problem is inherent to any method if we are not willing to make any assumption
+on the distribution of ( X,Y) (again, so much for distribution freeness!). This can actually
+be formalized in theorems, known as no-free-lunch theorems.
+Theorem:  For any integer n1, any classier hbuilt from ( X1,Y1),...,(Xn,Yn) and
+any &gt;0, there exists a distribution PX,Yfor (X,Y) such that R(h) = 0 and
+IER(hn)1/2.
+To be fair, note that here the distribution of the pair ( X,Y) is allowed to depend on
+nwhich is cheating a bit but there are weaker versions of the no-free-lunch theorem that
+essentially imply that it is impossible to learn without further assumptions. One such
+theorem is the following.
+Theorem:  For any classier hbuilt from ( X1,Y1),...,(Xn,Yn) and any sequence
+{an}n&gt;0 that converges to 0, there exists a distribution PX,Yfor (X,Y) such that
+R(h) = 0 and
+IER(hn)an,for alln1
+In the above theorem, the distribution of ( X,Y) is allowed to depend on the whole sequence
+{an}n&gt;0 but not on a specic n. The above result implies that the convergence to zero of
+the classication error may be arbitrarily slow.
+2.3 Generative vs discriminative approaches
+Both theorems above imply that we need to restrict the distribution PX,Yof (X,Y). But
+isnt that exactly what statistical modeling is? The is answer is not so clear depending on
+how we perform this restriction. There are essentially two schools: generative which is the
+statistical modeling approach and discriminative which is the machine learning approach.
+Generative: This approach consists in restricting the set of candidate distributions PX,Y.
+This is what is done in discriminant analysis1where it is assumed that the condition dis-
+1Amusingly, the generative approach is called discriminant analysis but dont let the terminology fool
+you.
+4</text>
+        </slide>
+        <slide>
+          <slideno>2</slideno>
+          <text>the information that we may ever hope to get, namely we know the regression function ().
+For a given Xto classify, if (X) = 1/2 we may just toss a coin to decide our prediction
+and discard Xsince it contains no information about Y. However, if (X) = 1/2, we have
+an edge over random guessing: if (X)&gt;1/2, it means that IP( Y= 1|X)&gt;IP(Y= 0|X)
+or, in words, that 1 is more likely to be the correct label. We will see that the classier
+h(X) = 1I((X)&gt;1/2) (called Bayes classier ) is actually the best possible classier in
+the sense that
+R(h) = infR(h),
+h()
+where the inmum is taken over all classiers, i.e. functions from Xto{0,1}. Note that
+unless(x) {0,1}for allx X(noiseless case), we have R(h) = 0. However, we can
+always look at the excess risk E(h) of a classier hdened by
+E(h) =R(h)R(h)0.
+In particular, we can hope to drive the excess risk to zero with enough observations by
+mimicking haccurately.
+2.2 Empirical risk
+The Bayes classier h, while optimal, presents a major drawback: we cannot compute it
+because we do not know the regression function . Instead, we have access to the data
+(X1,Y1),...,(Xn,Yn), which contains some (but not all) information about and thus h.
+In order to mimic the properties of hrecall that it minimizes R(h) over all h. But the
+function R() is unknown since it depends on the unknown distribution PX,Yof (X,Y). We
+ estimate it by the empirical classication error, or simply empirical risk Rn() dened for
+any classier hby
+n1Rn(h) =/summationdisplay
+1I(h(Xi) =Yi).ni=1
+  Since IE[1I( h(Xi) =Yi)] = IP(h(Xi) =Yi) =R(h), we have IE[ Rn(h)] =R(h) soRn(h) is
+anunbiased estimator of R(h). Moreover, for any h, by the law of large numbers, we have
+  Rn(h)R(h) asn , almost surely. This indicates that if nis large enough, Rn(h)
+should be close to R(h).
+As a result, in order to mimic the performance of h, let us use the empirical risk
+  minimizer (ERM) hdened to minimize Rn(h) over all classiers h. This is an easy enough
+  task: dene hsuchh(Xi) =Yifor alli= 1,...,nandh(x) = 0 ifx/{X1,...,X n}. We
+ haveRn(h) = 0, which is clearly minimal. The problem with this classier is obvious: it
+does not generalize outside the data. Rather, it predicts the label 0 for any xthat is not in
+ the data. We could have predicted 1 or any combination of 0 and 1 and still get Rn(h) = 0.
+ In particular it is unlikely that IE[ R(h)] will be small.
+3/ne}ationslash
+/ne}ationslash
+/ne}ationslash
+/ne}ationslash /ne}ationslash</text>
+        </slide>
+        <slide>
+          <slideno>6</slideno>
+          <text>MIT OpenCourseWare
+http://ocw.mit.edu
+18.657 Mathematics of Machine Learning
+Fall 2015
+For information about citing these materials or our Terms of Use, visit: http://ocw.mit.edu/terms .</text>
+        </slide>
+        <slide>
+          <slideno>5</slideno>
+          <text>Sincehis deterministic, we can use a concentration inequality to control/vextendsingle/vextendsingleRn(h)R(h)/vextendsingle/vextendsingle.
+However,
+n1  Rn(hn) =/summationdisplay
+1I(hn(Xi) =Yi)ni=1
+isnot  the average of independent random variables since hndepends in a complicated
+manner on all of the pairs ( Xi,Yi),i= 1,...,n. To overcome this limitation, we often use
+ a blunt, but surprisingly accurate tool: we sup out hn,
+/vextendsingle/vextendsingle    Rn(hn)R(hn)/vextendsingle/vextendsinglesup/vextendsingle
+h/vextendsingleRn(hn)R(hn)/vextendsingle
+H/vextendsingle.
+Controlling this supremum falls in the scope of suprema of empirical processes that we will
+study in quite a bit of detail. Clearly the supremum is smaller as His smaller but Hshould
+be kept large enough to have good approximation properties. This is the tradeo between
+approximation and estimation. It is also know in statistics as the bias-variance tradeo.
+References
+[DGL96] L. Devroye, L. Gy or, and G. Lugosi, A probabilistic theory of pattern recognition ,
+Applications of Mathematics (New York), vol. 31, Springer-Verlag, New York,
+1996. MR MR1383093 (97d:68196)
+[HTF09] Trevor Hastie, Robert Tibshirani, and Jerome Friedman, The elements of statis-
+tical learning , second ed., Springer Series in Statistics, Springer, New York, 2009,
+Data mining, inference, and prediction. MR 2722294 (2012d:62081)
+6/ne}ationslash</text>
+        </slide>
+        <slide>
+          <slideno>1</slideno>
+          <text>2. STATISTICAL LEARNING THEORY
+2.1 Binary classication
+A large partof this class will bedevoted tooneof thesimplest problemof statistical learning
+theory: binary classication (aka pattern recognition [DGL96]). In this problem, weobserve
+(X1,Y1),...,(Xn,Yn) that are nindependent random copies of ( X,Y) X{0,1}. Denote
+byPX,Ythe joint distribution of ( X,Y). The so-called featureXlives in some abstract
+spaceX(think IRd) andY {0,1}is called label. For example, Xcan be a collection of
+gene expression levels measured on a patient and Yindicates if this person suers from
+obesity. The goal of binary classication is to build a rule to predict YgivenXusing
+only the data at hand. Such a rule is a function h:X  {0,1}called a classier . Some
+classiers are better than others and we will favor ones that have low classication error
+R(h) = IP(h(X) =Y). Let us make some important remarks.
+Fist of all, since Y {0,1}thenYhas a Bernoulli distribution: so much for distribution
+free assumptions! However, we will not make assumptions on the marginal distribution of
+Xor, what matters for prediction, the conditional distribution of YgivenX. We write,
+Y|XBer((X)), where (X) = IP(Y= 1|X) = IE[Y|X] is called the regression function
+ofYontoX.
+Next, note that we did not write Y=(X). Actually we have Y=(X) +, where
+=Y(X) is anoise randomvariablethat satises IE[ |X] = 0. Inparticular, this noise
+accounts for the fact that Xmay not contain enough information to predict Yperfectly.
+This is clearly the case in our genomic example above: it not whether there is even any
+information about obesity contained in a patients genotype. The noise vanishes if and only
+if(x) {0,1}for allx X. Figure 2.1 illustrates the case where there is no noise and the
+the more realistic case where there is noise. When (x) is close to .5, there is essentially no
+information about YinXas theYis determined essentially by a toss up. In this case, it
+is clear that even with an innite amount of data to learn from, we cannot predict Ywell
+since there is nothing to learn. We will see what the eect of the noise also appears in the
+sample complexity./ne}ationslash
+Figure 2: The thick black curve corresponds to the noiseless case where Y=(X) {0,1}
+and the thin red curve corresponds to the more realistic case where [0,1]. In the latter
+case, even full knowledge of does not guarantee a perfect prediction of Y.
+In the presence of noise, since we cannot predict Yaccurately, we cannot drive the
+classication error R(h) to zero, regardless of what classier hwe use. What is the smallest
+value that can beachieved? As a thought experiment, assume to begin with that we have all
+2
+x(x)
+1
+.5</text>
+        </slide>
+        <slide>
+          <slideno>0</slideno>
+          <text>18.657: Mathematics of Machine Learning
+Lecturer: Philippe Rigollet Lecture 1
+Scribe:Philippe Rigollet Sep. 9, 2015
+1. WHAT IS MACHINE LEARNING (IN THIS COURSE) ?
+This course focuses on statistical learning theory , which roughly means understanding the
+amount of data required to achieve a certain prediction accuracy. To better understand
+what this means, we rst focus on stating some dierences between statistics andmachine
+learning since the two elds share common goals.
+Indeed,bothseemtotrytousedatatoimprovedecisions. Whiletheseeldshaveevolved
+in the same direction and currently share a lot of aspects, they were at the beginning quite
+dierent. Statistics was around much before machine learning and statistics was already
+a fully developed scientic discipline by 1920, most notably thanks to the contributions of
+R. Fisher, who popularized maximum likelihood estimation (MLE) as a systematic tool for
+statistical inference. However, MLErequiresessentially knowingtheprobabilitydistribution
+fromwhichthedataisdraw,uptosomeunknownparameterofinterest. Often, theunknown
+parameter has a physical meaning and its estimation is key in better understanding some
+phenomena. Enabling MLE thus requires knowing a lot about the data generating process:
+this is known as modeling . Modeling can be driven by physics or prior knowledge of the
+problem. In any case, it requires quite a bit of domain knowledge.
+More recently (examples go back to the 1960s) new types of datasets (demographics,
+social, medical,...) have become available. However, modeling the data that they contain
+is much more hazardous since we do not understand very well the input/output process
+thus requiring a distribution free approach. A typical example is image classication where
+the goal is to label an image simply from a digitalization of this image. Understanding
+what makes an image a cat or a dog for example is a very complicated process. However,
+for the classication task, one does not need to understand the labelling process but rather
+to replicate it. In that sense, machine learning favors a blackbox approach (see Figure 1).
+inputX outputYblackbox
+ y=f(x)+inputX outputY
+Figure 1: The machine learning blackbox (left) where the goal is to replicate input/output
+pairs from past observations, versus the statistical approach that opens the blackbox and
+models the relationship.
+These dierences between statistics and machine learning have receded over the last
+couple of decades. Indeed, on the one hand, statistics is more and more concerned with
+nite sample analysis, model misspecication and computational considerations. On the
+other hand, probabilistic modeling is now inherent to machine learning. At the intersection
+of the two elds, lies statistical learning theory , a eld which is primarily concerned with
+sample complexity questions, some of which will be the focus of this class.
+1</text>
+        </slide>
+        <slide>
+          <slideno>4</slideno>
+          <text>tributions of XgivenY(there are only two of them: one for Y= 0 and one for Y= 1) are
+Gaussians on X= IRd(see for example [HTF09] for an overview of this approach).
+Discriminative: This is the machine learning approach. Rather than making assumptions
+directly on the distribution, one makes assumptions on what classiers are likely to perform
+correctly. In turn, this allows to eliminate classiers such as the one described above and
+that does not generalize well.
+While it is important to understand both, we will focus on the discriminative approach
+in this class. Specically we are going to assume that we are given a class Hof classiers
+such that R(h) is small for some h H.
+2.4 Estimation vs. approximation
+Assumethat we aregiven a class Hin which weexpect to nda classier that performswell.
+Thisclassmaybeconstructedfromdomainknowledgeorsimplycomputational convenience.
+ We will see some examples in the class. For any candidate classier hnbuilt from the data,
+we can decompose its excess risk as follows:
+   E(hn) =R(hn)R(h) =R(hn)infR(h)+ infR(h)R(h).
+hH hH/bracehtipupleft
+estimat/bracehtipdownright
+io/bracehtipdownleft
+n error/bracehtipupright /bracehtipupleft
+approxim/bracehtipdownright
+a/bracehtipdownleft
+tion error/bracehtipupright
+On the one hand, estimation error accounts for the fact that we only have a nite
+amount of observations and thus a partial knowledge of the distribution PX,Y. Hopefully
+we can drive this error to zero as n . But we already know from the no-free-lunch
+theorem that this will not happen if His the set of all classiers. Therefore, we need to
+takeHsmall enough. On the other hand, if His too small, it is unlikely that we will
+nd classier with performance close to that of h. A tradeo between estimation and
+approximation can be made by letting H=Hngrow (but not too fast) with n.
+For now, assume that His xed. The goal of statistical learning theory is to understand
+how the estimation error drops to zero as a function not only of nbut also of H. For the
+rst argument, we will use concentration inequalities such as Hoedings and Bernsteins
+inequalities that allow us to control how close the empirical risk is to the classication error
+by bounding the random variable
+/vextendsinglen1/vextendsingle/summationdisplay
+1I(h(X (h /vextendsingle i) =Yi)IP (X) =Y)/vextendsingle
+n/vextendsingle
+i=1/vextendsingle
+with high probability. More generally we will be interested in results that allow to quantify
+how close the average of independent and identically distributed (i.i.d) random variables is
+to their common expected value.
+ Indeed, since by denition, we have Rn(h)Rn(h) for allh H, the estimation error
+ can be controlled as follows. Dene h Hto be any classier that minimizes R() overH
+(assuming that such a classier exist).
+   R(hn)infR(h) =R(hn)R(h)
+hH
+     =Rn(hn)Rn(h)+R(hn)Rn(h)+Rn n(h)R(h)/bracehtipupleft
+/bracehtipdownright/bracehtipdownleft
+0/bracehtipupright
+/vextendsingle/vextendsingle    Rn(hn)R(hn)/vextendsingle/vextendsingle+/vextendsingle/vextendsingleRn(h)R(h)/vextendsingle/vextendsingle.
+5/ne}ationslash /ne}ationslash</text>
+        </slide>
+      </slides>
+      <videos/>
+    </lecture>
+    <lecture>
+      <lecture_title>Fast Rates and VC Theory (PDF)</lecture_title>
+      <lecture_pdf_url>https://ocw.mit.edu/courses/18-657-mathematics-of-machine-learning-fall-2015/resources/mit18_657f15_l4/</lecture_pdf_url>
+      <lectureno>4</lectureno>
+      <slides>
+        <slide>
+          <slideno>3</slideno>
+          <text>Theorem: If Tsybakovs noise condition is satised with constant ,C0andt0, then
+there exists a constant C=C(,C0,t0) such that
+l )Eh)C/parenleftbigog(M/(1
+n/parenrightbig
+2
+with probability at least 1 .
+This rate of excess risk parametrized by is indeed an interpolation of the slow ( 0)
+ and the fast rate ( 1). Futhermore, note that the empirical risk minimizer hdoes not
+depend on the parameter at all! It automatically adjusts to the noise level, which is a
+very nice feature of the empirical risk minimizer.
+Proof.The majority of last proof remains valid and we will explain the dierence. After
+establishing that
+E(h)t0(j),
+we note that the lemma gives
+2  = IP[h(X)/ne}ationslash=h(X)]CE(h).j
+It follows tha t /radicalBigg
+ /parenleftbig2CE(h)log(M/)2log(M/)E(h)max ,n 3n/parenrightbig
+/parenleftBig2ClogM21
+E(h)max/parenleftbig/parenrightbig
+2log(M/),/parenrightBig
+.n 3na
+nd thus
+4. VAPNIK-CHERVONENKIS (VC) THEORY
+The upper bounds proved so far are meaningful only for a nite dictionary H, because if
+M=|H|is innite all of the bounds we have will simply be innity. To extend previous
+results to the innite case, we essentially need the condition that only a nite number of
+elements in an innite dictionary Hreally matter. This is the objective of the Vapnik-
+Chervonenkis (VC) theory which was developed in 1971.
+4.1 Empirical measure
+Recall from previous proofs (see (3.1) for example) that the key quantity we need to control
+is
+2sup/parenleftbig
+Rn(h)R(h).
+hH
+Instead of the union bound which would not work in th/parenrightbig
+e innite case, we seek some bound
+that potentially depends on nand the complexity of the set H. One approach is to consider
+some metric structure on Hand hope that if two elements in Hare close, then the quantity
+evaluated at these two elements are also close. On the other hand, the VC theory is more
+combinatorial and does not involve any metric space structure as we will see.
+4</text>
+        </slide>
+        <slide>
+          <slideno>7</slideno>
+          <text>MIT OpenCourseWare
+http://ocw.mit.edu
+18.657 Mathematics of Machine Learning
+Fall 2015
+For information about citing these materials or our Terms of Use, visit: http://ocw.mit.edu/terms .</text>
+        </slide>
+        <slide>
+          <slideno>0</slideno>
+          <text>18.657: Mathematics of Machine Learning
+Lecturer: Philippe Rigollet Lecture 4
+Scribe:Cheng Mao Sep. 21, 2015
+In this lecture, we continue to discuss the eect of noise on the rate of the excess risk
+   E(h) =R(h)R(h) wherehis the empirical risk minimizer. In the binary classication
+model, noise roughly means how close the regression function is from1
+2.In particular, if
+=1then we observe only noise, and if  {0,1}we are in the noiseless case which has2
+been studied last time. Especially, we achieved the fast ratelogMin the noiseless case byn assuming h Hwhich implies that h=h. This assumption was essential for the proof
+and we will see why it is necessary again in the following section.
+3.2 Noise conditions
+The noiseless assumption is rather unrealistic, so it is natural to ask what the rate of excess
+risk is when the noise is present but can be controlled. Instead of the condition  {0,1},
+we can control the noise by assuming that is uniformly bounded away from1
+2, which is
+the motivation of the following denition.
+Denition (Massarts noise condition): The noise in binary classication is said
+to satisfy Massarts condition with constant (0,1
+2]if|(X)1| almost surely.2
+Once uniform boundedness is assumed, the fast rate simply follows from last proof with
+appropriate modication of constants.
+   Theorem: LetcE(h) denote the excess risk of the empirical risk minimizer h=herm.
+If Massarts noise condition is satised with constant , then
+log(M/)E(h)n
+with probability at least 1 . (In particular =1gives exactly the noiseless case.)2
+Proof.   DeneZi(h) = 1I(h(Xi) =Yi)1I(h(Xi) =Yi). By the assumption h=hand the
+  denition of h=herm,
+  E(h) =R(h)R(h)
+   =Rn(h)Rn(h)+Rn(h)Rn(h)R(h)R(h) (3.1)
+n1  )/parenleftbig /parenrightbig
+/summationdisplay/parenleftbig Zi(h)IE[Zi(h]/parenrightbig
+. (3.2)ni=1
+Hence it suces to bound the deviation of/summationtext
+iZifrom its expectation. To this end, we
+hope to apply Bernsteins inequality. Since
+Var[Zi(h)]IE[Z2 i(h) ] = IP[h(Xi) =h(Xi)],
+1/ne}ationslash /ne}ationslash
+/ne}ationslash</text>
+        </slide>
+        <slide>
+          <slideno>6</slideno>
+          <text>vectors, then Rn(B) =k/n. Hence Rn(B) is indeed a measurement of the complexity of
+the setB.
+The set of vectors to our interest in the denition of Rademacher complexity of Ais
+T(z) :={(1I(z1A),...,1I(znA))T,A A}.
+Thus the key quantity here is the cardinality of T(z), i.e., the number of sign patterns these
+vectors can replicate as Aranges over A. Although the cardinality of Amay be innite,
+the cardinality of T(z) is bounded by 2n.
+7</text>
+        </slide>
+        <slide>
+          <slideno>1</slideno>
+          <text>we have that for any 1 jM,
+n1/summationdisplay Var[Zi(hj)]IP[hj(X) =h(X)] =:2
+nj.
+i=1
+Bernsteins inequality implies that
+n/bracketleftbig1/summationdisplay /bracketrightbig /parenleftbig nt2
+IP ( Zi(hj)IE[Zi(hj)])&gt; texpn 22
+i=1 j+2
+3t/parenrightbig=:.M
+Applying a union bound over 1 jMand taking
+22
+jlog(M/)2log(M/)t=t0(j) := max/radicalBigg
+/parenleftbig
+,n 3n/parenrightbig
+,
+we get that
+n1/summationdisplay
+(Zi(hj)IE[Zi(hj)])t0(j) (3.3)ni=1
+for all 1jMwith probability at least 1 .
+ Suppose h=h. It follows from (3.2) and (3.3) that with probability at least 1 ,j
+E(h)t0(j).
+(Note that so far the proof is exactly the same as the noiseless case.) Since |(X)1
+2| 
+ a.s. and h=h,
+   E(h) = IE[|2(X)1|1I(h(X) =h(X))]2IP[h(X) =h(X)] = 22
+.j j
+Therefore,/radicalBigg
+E(h)log(M/)2log(M/)E(h)max , , (3.4)n 3n
+so we conclude that with probabilit/parenleftbig
+y at least 1 ,/parenrightbig
+log(M/)E(h) .n
+ The assumption that h=hwas used twice in the proof. First it enables us to ignore
+the approximation error and only study the stochastic error. More importantly, it makes
+the excess risk appear on the right-hand side of (3.4) so that we can rearrange the excess
+risk to get the fast rate.
+Massarts noise condition is still somewhat strong because it assumes uniform bounded-
+ness offrom1
+2. Instead, we can allow to be close to1
+2but only with small probability,
+and this is the content of next denition.
+2/ne}ationslash
+/ne}ationslash /ne}ationslash</text>
+        </slide>
+        <slide>
+          <slideno>4</slideno>
+          <text>By denition
+n1Rn(h)R(h) =/summationdisplay/parenleftbig
+1I(h(Xi) =Yi)IE[1I(h(Xi) =Yi)]ni=1/parenrightbig
+.
+LetZ= (X,Y) andZi= (Xi,Yi), and let Adenote the class of measurable sets in the
+sample space X {0,1}. For a classier h, deneAh Aby
+{ZiAh}={h(Xi) =Yi}.
+Moreover, dene measures nandonAby
+n1n(A) =/summationdisplay
+1I(ZiA) and (A) = IP[ZiA]ni=1
+forA A. With this notation, the slow rate we proved is just
+log(2|A|/)supRn(h)R(h) = sup|n(A)(A)| 
+hH AA/radicalbigg
+.2n
+Since this is not accessible in the innite case, we hope to use one of the concentration
+inequalities to give an upperbound. Note that n(A) is a sum of random variables that may
+not be independent, so the only tool we can use now is the bounded dierence inequality.
+If we change the value of only one ziin the function
+z1,...,zn/mapstosup|n(A)(A)|,
+AA
+the value of the function will dier by at most 1 /n. Hence it satises the boundeddierence
+assumption with ci= 1/nfor all 1in. Applying the bounded dierence inequality, we
+get that
+/vextendsinglelog(2/) /vextendsinglesup|n(A)(A)|IE[sup|n(A)(A)|]
+AA AA/radicalbigg
+2n
+with probability/vextendsingle
+at least 1 . Note that this already preclu/vextendsingle/vextendsingle
+/vextendsingle
+des any fast rate (faster than
+n1/2). Toachieve fast rate, weneedTalagrand inequality andlocalization techniques which
+are beyond the scope of this section.
+It follows that with probability at least 1 ,
+log(2/)sup|n(A)(A)| IE[sup|n(A)(A)|]+
+A AA/radicalbigg
+.
+A 2n
+We will now focus on bounding the rst term on the right-hand side. To this end, we need
+a technique called symmetrization, which is the subject of the next section.
+4.2 Symmetrization and Rademacher complexity
+Symmetrization is a frequently used technique in machine learning. Let D={Z1,...,Z n}
+be the sample set. To employ symmetrization, we take another independent copy of the
+sample set D={Z
+1,...,Z
+n}. This sample only exists for the proof, so it is sometimes
+referred to as a ghost sample. Then we have
+n n1 1(A) = IP[ZA] = IE[/summationdisplay
+1I(Z
+iA)] = IE[ 1I( Z
+iA)|D] = IE[
+n nn(A)|D]
+i=1/summationdisplay
+i=1
+5/ne}ationslash /ne}ationslash
+/ne}ationslash</text>
+        </slide>
+        <slide>
+          <slideno>5</slideno>
+          <text>nwhere
+n:=1/summationtext
+i=11I(Z
+iA). Thus by Jensens inequality,n
+IE[sup|n(A)(A)|] = IE/bracketleftbig
+sup/vextendsingle/vextendsingle
+n(A)IE[
+n(A)|D]
+AA AA
+IE sup IE[ |n(A)
+n(A)||D/vextendsingle/vextendsingle
+]/bracketrightbig
+/bracketleftbig
+AA
+IE/bracketleftbig
+sup|n(A)n(A)|/bracketrightbig
+AA
+n1/bracketrightbig
+= IE/bracketleftbig
+sup/vextendsingle/summationdisplay/parenleftbig
+1I(ZiA)1I(Z
+AAniA)
+i=1/parenrightbig/vextendsingle/bracketrightbig
+.
+SinceDhas the same distribution of D, by sy/vextendsingle
+mmetry 1I( ZiA)1I(Z/vextendsingle
+iA) has the same
+distribution as i/parenleftbig
+1I(ZiA)1I(Z
+iA)/parenrightbig
+where1,..., nare i.i.d. Rad(1
+2), i.e.
+1IP[i= 1] = IP[ i=1] =,2
+andis are taken to be independent of both samples. Therefore,
+n
+IE[sup|n(A)(A)|]IE
+AA/bracketleftbig
+sup
+ AA/vextendsingle/vextendsingle1/summationdisplay
+i/parenleftbig
+1I(ZiA)1I(ZniA)
+i=1
+n/parenrightbig/vextendsingle/bracketrightbig
+2IE/bracketleftbig1/vextendsingle
+sup/vextendsingle/summationdisplay
+i1I(ZiA).
+AAni=1/vextendsingle/bracketrightbig
+(4.5)
+Usingsymmetrization we have boundedIE[sup/vextendsingle
+AA|n(A)(A)|/vextendsingle
+] by amuch nicer quantity.
+Yet we still need an upper bound of the last quantity that depends only on the structure
+ofAbut not on the random sample {Zi}. This is achieved by taking the supremum over
+allzi X {0,1}=:Y.
+Denition: The Rademacher complexity of a family of sets Ain a space Yis dened
+to be the quantity
+n
+Rn(A) = sup sup/vextendsingle1IE/bracketleftbig /summationdisplay
+i1I(ziA)
+z1,...,znYAAni=1/vextendsingle/bracketrightbig
+.
+The Rademacher complexity of a set BI/vextendsingle
+Rnis dened to b/vextendsingle
+e
+n1Rn(B) = IE/bracketleftbig
+sup
+bB/vextendsingle/vextendsingle
+n/summationdisplay
+ibi
+i=1/vextendsingle/vextendsingle/bracketrightbig
+.
+We conclude from (4.5) and the denition that
+IE[sup|n(A)(A)|]2Rn(A).
+AA
+nIn the denition of Rademacher complexity of a set, the quantity1sni=1ibimeasure
+how well a vector bBcorrelates with a random sign pattern {i}. The more complex
+Bis, the better some vector in Bcan replicate a sign pattern. In/vextendsingle/vextendsingle
+pa/summationtext
+rticular, i/vextendsingle/vextendsingle
+fBis the
+full hypercube [ 1,1]n, thenRn(B) = 1. However, if B[1,1]ncontains only k-sparse
+6</text>
+        </slide>
+        <slide>
+          <slideno>2</slideno>
+          <text>Denition (Tsybakovs noise condition or Mammen-Tsybakov noise condi-
+tion):The noise in binary classication is said to satisfy Tsybakovs condition if there
+exists(0,1),C10&gt;0 andt0(0,2] such that
+1 IP[|(X)| t]C10t
+2
+for allt[0,t0].
+In particular, as 1,t10
+, so this recovers Massarts condition with =t0and
+we have the fast rate. As 0,t11, so the condition is void and we have the slow
+rate. In between, it is natural to expect fast rate (meaning faster than slow rate) whose
+order depends on . We will see that this is indeed the case.
+Lemma: Under Tsybakovs noise condition with constants ,C0andt0, we have
+IP[h(X) =h(X)]CE(h)
+for any classier hwhereC=C(,C0,t0) is a constant.
+Proof.We have
+E(h) = IE[|2(X)1|1I(h(X) =h(X))]
+1IE[|2(X)1|1I(|(X)|&gt; t)1I(h(X) =h(X))]2
+12tIP[|(X) |&gt; t,h(X) =h(X)]2
+12tIP[h(X) =h(X)]2tIP[|(X)| t]2
+12tIP[h(X) =h(X)]2C0t1
+1where Tsybakovs condition was used in the last step. Take t=cIP[h(X) =h(X)]
+for
+some positive c=c(,C0,t0) to be chosen later. We assume that ct0to guarantee that
+t[0,t0]. Since(0,1),
+E(h)2cIP[h(X) =h(X)]1/12C c1IP[h(X) =h10 (X)]/
+cIP[h(X) =h(X)]1/
+by selecting csuciently small depending on andC0. Therefore
+1IP[h(X) =h(X)]E(h)
+c
+and choosing C=C(,C0,t0) :=ccompletes the proof.
+Having established the key lemma, we are ready to prove the promised fast rate under
+Tsybakovs noise condition.
+3/ne}ationslash
+/ne}ationslash
+/ne}ationslash
+/ne}ationslash
+/ne}ationslash
+/ne}ationslash
+/ne}ationslash
+/ne}ationslash /ne}ationslash
+/ne}ationslash
+/ne}ationslash</text>
+        </slide>
+      </slides>
+      <videos/>
+    </lecture>
+    <lecture>
+      <lecture_title>Chaining (PDF)</lecture_title>
+      <lecture_pdf_url>https://ocw.mit.edu/courses/18-657-mathematics-of-machine-learning-fall-2015/resources/mit18_657f15_l7/</lecture_pdf_url>
+      <lectureno>7</lectureno>
+      <slides>
+        <slide>
+          <slideno>5</slideno>
+          <text>MIT OpenCourseWare
+http://ocw.mit.edu
+18.657 Mathematics of Machine Learning
+Fall 2015
+For information about citing these materials or our Terms of Use, visit: http://ocw.mit.edu/terms .</text>
+        </slide>
+      </slides>
+      <videos/>
+    </lecture>
+    <lecture>
+      <lecture_title>Convexification (PDF)</lecture_title>
+      <lecture_pdf_url>https://ocw.mit.edu/courses/18-657-mathematics-of-machine-learning-fall-2015/resources/mit18_657f15_l8/</lecture_pdf_url>
+      <lectureno>8</lectureno>
+      <slides>
+        <slide>
+          <slideno>4</slideno>
+          <text>We are going to show that for any x X, it holds
+(1())1I(f(x)((x)1/2)&lt;0)]IE[(Yf(x))|X=x]R
+.(1.6)
+This will clearly imply the result by integrating with respect to x.
+Recall rst that
+IE[(Yf(x))|X=x] =H(x)(f(x)) and R
+= minH(x)() =((x)).
+IR
+so that (2.6) is equivalent to
+(1())1I(f(x)((x)1/2)&lt;0)]H(x)()((x))
+Since the right-hand side above is nonnegative, the case where f(x)((x)1/2)0 follows
+trivially. If f(x)((x)1/2)&lt;0, (2.6) follows if we prove that H(x)()1. The convexity
+of() gives
+H(x)() =(x)(f(x))+(1(x))(f(x))
+((x)f(x)+(1(x))f(x))
+=((12(x))f(x))
+(0) = 1,
+where the last inequality follows from the fact that is non decreasing and f(x)((x)
+1/2)&lt;0. This completes the proof of (2.6) and thus of the Lemma.
+IT is not hard to check the following values for the quantities (),candfor the three
+losses introduced above:
+Hinge loss: () = 1|12|withc= 1/2 and= 1.
+Exponential loss: () = 2/radicalbig
+(1) withc= 1/
+2 and= 1/2.
+Logistic loss: () =log(1)log(1) withc= 1/
+2 and= 1/2.
+References
+[Kea90] Michael J Kearns. The computational complexity of machine learning . PhD thesis,
+Harvard University, 1990.
+[Zha04] Tong Zhang. Statistical behavior and consistency of classication methods based
+on convex risk minimization. Ann. Statist. , 32(1):5685, 2004.
+5</text>
+        </slide>
+        <slide>
+          <slideno>0</slideno>
+          <text>18.657: Mathematics of Machine Learning
+Lecturer: Philippe Rigollet Lecture 8
+Scribe:Quan Li Oct. 5, 2015
+Part II
+Convexity
+1. CONVEX RELAXATION OF THE EMPIRICAL RISK MINIMIZATION
+ In the previous lectures, we have proved upper bounds on the excess risk R(herm)R(h)
+of the Empirical Risk Minimizer
+herm 1= argmin
+hHn
+1I(Yi=h(Xi)). (1.1)n/summationdisplay
+i=1/ne}ationslash
+However due to the nonconvexity of the objective function, the optimization problem
+(1.1) in general can not be solved eciently. For some choices of Hand the classication
+error function (e.g. 1I( )), the optimization problem can be NP-hard. However, the problem
+we deal with has some special features:
+1. Since the upper bound we obtained on the excess risk is O(/radicalBig
+dlogn), we only need ton
+approximate the optimization problem with error up to O(/radicalBig
+dlogn
+n).
+2. The optimization problem corresponds to the average case problem where the data
+i.i.d(Xi,Yi)PX,Y.
+3.Hcan be chosen to be some natural classiers, e.g. H={half spaces }.
+These special features might help us bypass the computational issue. Computational
+issueinmachinelearninghavebeenstudiedforquitesometime(see, e.g. [Kea90]), especially
+in the context of PAC learning. However, many of these problems are somewhat abstract
+and do not shed much light on the practical performance of machine learning algorithms.
+Toavoid thecomputational problem, thebasicideais to minimizea convex upperbound
+of the classication error function 1I( ) in (1.1). For the purpose of computation, we shall
+also require that the function class Hbe a convex set. Hence the resulting minimization
+becomes a convex optimization problem which can be solved eciently.
+1.1 Convexity
+Denition: A setCis convex if for all x,yCand[0,1],x+(1)yC.
+1</text>
+        </slide>
+        <slide>
+          <slideno>1</slideno>
+          <text>Denition: A function f:DIR on a convex domain Dis convex if it satises
+f(x+(1)y)f(x)+(1)f(y),x,yD,and[0,1].
+1.2 Convex relaxation
+The convex relaxation takes three steps.
+Step 1: Spinning.
+Using a mapping Y/masto2Y1, the i.i.d. data ( X1,Y1),(X2,Y2),...,(Xn,Yn) is transformed
+to lie inX {1,1}. These new labels are called spinnedlabels. Correspondingly, the task
+becomes to nd a classier h:X /masto {1,1}. By the relation
+h(X)/ne}ationslash=Yh(X)Y &gt;0,
+we can rewrite the objective function in (1.1) by
+n n1/summationdisplay 11I(h(Xi) =Yi) =/summationdisplay
+1 I(hn ni=1 i=1(Xi)Yi) (1.2)
+where1 I(z) = 1I(z &gt;0).
+Step 2: Soft classiers.
+The setHof classiers in (1.1) contains only functions taking values in {1,1}. As a result,
+it is non convex if it contains at least two distinct classiers. Soft classiers provide a way
+to remedy this nuisance.
+Denition: Asoft classier is any measurable function f:X [1,1]. The hard
+classier (or simply classier) associated to a soft classier fis given by h= sign(f).
+LetF IRXbe aconvexset soft classiers. Several popular choices for Fare:
+Linear functions:
+F:={/an}bracketle{ta,x/an}bracketri}ht:a A}.
+for some convex set A IRd. The associated hard classier h= sign(f) splits IRdinto
+two half spaces.
+Majority votes: given weak classiers h1,...,h M,
+M M
+F:=/braceleftBig/summationdisplay
+jhj(x) :j
+j=0,/summationdisplay
+j= 1/bracerightBig
+.
+1 j=1
+Letj,j= 1,2,...a family of functions, e.g., Fourier basis or Wavelet basis. Dene
+
+F:={/summationdisplay
+jj(x) : (1,2,...)
+j=1},
+where  is some convex set.
+2/ne}ationslash</text>
+        </slide>
+        <slide>
+          <slideno>5</slideno>
+          <text>MIT OpenCourseWare
+http://ocw.mit.edu
+18.657 Mathematics of Machine Learning
+Fall 2015
+For information about citing these materials or our Terms of Use, visit: http://ocw.mit.edu/terms .</text>
+        </slide>
+        <slide>
+          <slideno>3</slideno>
+          <text>so that
+f
+(x) = argmin H(),andR= minR(f) = minH)
+ fIRX(x)( .
+IR IR
+Since() is dierentiable, setting thederivative of H() to zero gives f(x) =, where
+H
+() =(x)()+(1(x))() = 0,
+which gives
+(x)()=1(x)()
+Since()isaconvex function, itsderivative () isnon-decreasing. Thenfromtheequation
+above, we have the following equivalence relation
+1(x) 0sign(f
+2(x))0. (1.4)
+Since the equivalence relation holds for all x X,
+1(X) sign(f
+(X))20.
+The following lemma shows that if the excess-riskR(f)R of a soft classier fis
+small, then the excess-risk of its associated hard classier sign( f) is also small.
+Lemma (Zhangs Lemma [Zha04]): Let: IR/mastoIR+be a convex non-decreasing
+function such that (0) = 1. Dene for any [0,1],
+() := inf H().
+IR
+If there exists c &gt;0 and[0,1] such that
+1|c2| (1()),[0,1], (1.5)
+then
+R(sign(f))R2c(R(f)R
+)
+Proof.Note rst that ()H(0) =(0) = 1 so that condition (2.5) is well dened.
+Next, let h= argminh{1,1}XIP[h(X) =Y] = sign(1/2) denote the Bayes classier,
+where= IP[Y= 1|X=x], . Then it is easy to verify that
+R(sign(f))R= IE[|2(X)1|1I(sign(f(X)) =h(X))]
+= IE[|2(X)1|1I(f(X)((X)1/2)&lt;0)]
+2cIE[((1((X)))1I(f(X)((X)1/2)&lt;0))]
+2c(IE[(1((X)))1I(f(X)((X)1/2)&lt;0)]),
+where the last inequality above follows from Jensens inequality.
+4/ne}ationslash
+/ne}ationslash</text>
+        </slide>
+        <slide>
+          <slideno>2</slideno>
+          <text>Step 3: Convex surrogate.
+Given a convex set Fof soft classiers, using the rewriting in (1.2), we need to solve that
+minimizes the empirical classication error
+1min
+fFn
+1 I(f(Xi)Yi),n/summationdisplay
+i=1
+However, while we are now working with a convex constraint, our objective is still not
+convex: we need a surrogate for the classication error.
+Denition: A function : IR/mastoIR+is called a convex surrogate if it is a convex
+non-decreasing function such that (0) = 1 and (z)1 I(z) for allzIR.
+The following is a list of convex surrogates of loss functions.
+Hinge loss: (z) = max(1+ z,0).
+Exponential loss: (z) = exp(z).
+Logistic loss: (z) = log2(1+exp( z)).
+To bypass the nonconvexity of 1 I(), we may use a convex surrogate () in place of
+ 1 I() and consider the minimizing the empirical -riskRn,dened by
+1Rn,(f) =nn/summationdisplay
+i=1(Yif(Xi))
+I
+t is the empirical counterpart of the -riskRdened by
+R(f) = IE[(Yf(X))].
+1.3-risk minimization
+In this section, we will derive the relation between the -riskR(f) of a soft classier fand
+the classication error R(h) = IP(h(X) =Y) of its associated hard classier h= sign(f)
+Let
+f
+= argmin E[(Y
+fIRXf(X))]
+where the inmum is taken over all measurable functions f:X IR.
+To verify that minimizing the serves our purpose, we will rst show that if the convex
+surrogate () is dierentiable, then sign( f
+(X))0 is equivalent to (X)1/2 where
+(X) = IP(Y= 1|X). Conditional on {X=x}, we have
+IE[(Yf(X))|X=x] =(x)(f(x))+(1(x))(f(x)).
+Let
+H() =(x)()+(1(x))() (1.3)/ne}ationslash
+3</text>
+        </slide>
+      </slides>
+      <videos/>
+    </lecture>
+    <lecture>
+      <lecture_title>Binary Classification (PDF)</lecture_title>
+      <lecture_pdf_url>https://ocw.mit.edu/courses/18-657-mathematics-of-machine-learning-fall-2015/resources/mit18_657f15_l2/</lecture_pdf_url>
+      <lectureno>2</lectureno>
+      <slides>
+        <slide>
+          <slideno>8</slideno>
+          <text>MIT OpenCourseWare
+http://ocw.mit.edu
+18.657 Mathematics of Machine Learning
+Fall 2015
+For information about citing these materials or our Terms of Use, visit: http://ocw.mit.edu/terms .</text>
+        </slide>
+      </slides>
+      <videos/>
+    </lecture>
+    <lecture>
+      <lecture_title>Online Learning with Structured Experts (PDF)</lecture_title>
+      <lecture_pdf_url>https://ocw.mit.edu/courses/18-657-mathematics-of-machine-learning-fall-2015/resources/mit18_657f15_l17/</lecture_pdf_url>
+      <lectureno>17</lectureno>
+      <slides>
+        <slide>
+          <slideno>22</slideno>
+          <text>follow the leader: random walk perturbation
+This also works in the combinatorial setting: just add an
+independent N(0,d)at each time to every component.
+ERn=Oe(B3/2p
+nlogd)
+and
+ECn=O(Bpnlogd),
+where B= max v2Skvk1.
+44</text>
+        </slide>
+        <slide>
+          <slideno>66</slideno>
+          <text>proof
+upper bounds:
+D=[ 0,+1)d,F(x)=1 dog i=1xilxiworks for full
+information but it is only optiP
+mal up to a logarithmic factor in the
+semi-bandit case.
+in the bandit case it does not work at all! Exponentially weightedaverage forecaster is used.
+lower bounds:careful construction of randomly chosen set Sin each case.
+108</text>
+        </slide>
+        <slide>
+          <slideno>19</slideno>
+          <text>computing the follow-the-perturbed leader forecaster
+In general, much easier. One only needs to solve a linear
+optimization problem over S.T h i sm a yb eh a r db u ti ti sw e l l
+understood.
+In our examples it becomes either a shortest path problem, or an
+assignment problem, or a minimum spanning tree problem.
+40</text>
+        </slide>
+        <slide>
+          <slideno>72</slideno>
+          <text>Dierent instances of CLEB: Follow the regularized leader
+D=Conv (S),t h e n
+wt+12arg min Xt
+T`sw+F(w)
+w2Ds=1!
+Particularly interesting choice: Fself-concordant barrier function ,
+Abernethy, Hazan and Rakhlin [2008]
+130</text>
+        </slide>
+        <slide>
+          <slideno>35</slideno>
+          <text>ag e n e r a lp r e d i c t o r
+A forecaster rst proposed by Piccolboni and Schindelhauer (2001).
+Crucial assumption: Hcan be encoded such that there exists an
+NNmatrix K=[k(i,j)]NNsuch that
+L=KH.
+Thus,
+`(i,j)=XN
+k(i,l)h(l,j).
+l=1
+Then we may estimate the losses by
+`ek(i,It)h(It,Jt)(i,Jt)=pIt,t.
+66</text>
+        </slide>
+        <slide>
+          <slideno>46</slideno>
+          <text>combinatorial prediction game
+Adversary
+Player
+80 Google. All rights reserved. This content is excluded from our
+Creative Commons license. For more information, seehttp://ocw.mit.edu/fairuse.</text>
+        </slide>
+        <slide>
+          <slideno>15</slideno>
+          <text>spanning trees
+The forecaster chooses a
+spanning tree in the completegraph K
+m. The cost is the sum
+of the losses over the edges.
+34</text>
+        </slide>
+        <slide>
+          <slideno>45</slideno>
+          <text>combinatorial prediction game
+Adversary
+Player
+79 Google. All rights reserved. This content is excluded from our
+Creative Commons license. For more information, seehttp://ocw.mit.edu/fairuse.</text>
+        </slide>
+        <slide>
+          <slideno>44</slideno>
+          <text>combinatorial prediction game
+Adversary
+Player
+78</text>
+        </slide>
+        <slide>
+          <slideno>70</slideno>
+          <text>Dierent instances of CLEB: LinExp (Entropy Function)
+D 1Pd=[ 0,+ )d,F(x)=1
+ i=1xilogxi
+8
+&gt;&gt;&lt;Full Info :Exponentially weighted average
+&gt;&gt;:Semi-Bandit=Bandit :Exp3
+Auer et al. [2002]
+8
+&gt;&gt;&gt;Full Info :Component Hedge
+&gt;&gt;&gt;&gt;Koolen, Warmuth and Kivinen [2010]
+&gt;&lt;
+&gt;&gt;Semi-Bandit: MW
+&gt;&gt;Kale, Reyzin and Schapire [2010]
+Bandit: new algorithm &gt;&gt;&gt;&gt;:
+124</text>
+        </slide>
+        <slide>
+          <slideno>23</slideno>
+          <text>why exponentially weighted averages?
+May be adapted to many di erent variants of the problem,
+including bandits, tracking, etc.
+45</text>
+        </slide>
+        <slide>
+          <slideno>18</slideno>
+          <text>computing the exponentially weighted average forecaster
+path planning: Sampling may be done by dynamic programming.
+assignments: Sum of weights (partition function) is the permanent
+of a non-negative matrix. Sampling may be done by a FPAS of
+Jerrum, Sinclair, and Vigoda (2004) .
+spanning trees: Propp and Wilson (1998) dene an exact sampling
+algorithm. Expected running time is the average hitting time ofthe Markov chain dened by the edge weights w
+t(v).
+39</text>
+        </slide>
+        <slide>
+          <slideno>31</slideno>
+          <text>internal regret and calibration
+By guaranteeing small internal regret, one obtains a calibrated
+forecaster.
+This can be achieved by an exponentially weighted average
+forecaster dened over N2actions.
+Can be extended even for calibration with checking rules.
+60</text>
+        </slide>
+        <slide>
+          <slideno>73</slideno>
+          <text>MIT OpenCourseWare
+http://ocw.mit.edu
+18.657 Mathematics of Machine Learning
+Fall 2015
+For information about citing these materials or our Terms of Use, visit: http://ocw.mit.edu/terms .</text>
+        </slide>
+        <slide>
+          <slideno>0</slideno>
+          <text>online learning with structured expertsa biased
+survey
+G abor Lugosi
+ICREA and Pompeu Fabra University, Barcelona
+1</text>
+        </slide>
+        <slide>
+          <slideno>14</slideno>
+          <text>assignments: learning permutations
+Given a complete
+bipartite graphK
+m,m,t h e
+forecaster chooses aperfect matching.The loss is the sumof the losses overthe edges.
+Helmbold and Warmuth (2007): full information case.
+33This image has been removed due to copyright restrictions.
+Please see the image athttp://38.media.tumblr.com/tumblr_m0ol5tggjZ1qir7tc.gif</text>
+        </slide>
+        <slide>
+          <slideno>24</slideno>
+          <text>multi-armed bandits
+The forecaster only observes `t(It)but not`t(i)fori6=It.
+Herbert Robbins (1952).
+46
+This image has been removed due to copyright restrictions. Please see the image at
+https://en.wikipedia.org/wiki/Herbert_Robbins#/media/File:1966-HerbertRobbins.jpg</text>
+        </slide>
+        <slide>
+          <slideno>13</slideno>
+          <text>combinatorial experts
+Often the class of experts is very large but has some combinatorial
+structure. Can the structure be exploited?
+path planning. At each time
+instance, the forecaster chooses apath in a graph between twoxed nodes. Each edge has anassociated loss. Loss of a path isthe sum of the losses over theedges in the path.
+Nis huge!!!
+32 Google. All rights reserved. This content is excluded from our
+Creative Commons license. For more information, seehttp://ocw.mit.edu/fairuse.</text>
+        </slide>
+        <slide>
+          <slideno>64</slideno>
+          <text>sampling paths
+In all these examples is uniform over S.
+Forpath planning it does not always work.
+What is the optimal choice of ?
+What is the optimal way of exploration?
+104</text>
+        </slide>
+      </slides>
+      <videos/>
+    </lecture>
+    <lecture>
+      <lecture_title>Gradient Descent (PDF)</lecture_title>
+      <lecture_pdf_url>https://ocw.mit.edu/courses/18-657-mathematics-of-machine-learning-fall-2015/resources/mit18_657f15_l11/</lecture_pdf_url>
+      <lectureno>11</lectureno>
+      <slides>
+        <slide>
+          <slideno>5</slideno>
+          <text>MIT OpenCourseWare
+http://ocw.mit.edu
+18.657 Mathematics of Machine Learning
+Fall 2015
+For information about citing these materials or our Terms of Use, visit: http://ocw.mit.edu/terms .</text>
+        </slide>
+      </slides>
+      <videos/>
+    </lecture>
+    <lecture>
+      <lecture_title>Support Vector Machines (PDF)</lecture_title>
+      <lecture_pdf_url>https://ocw.mit.edu/courses/18-657-mathematics-of-machine-learning-fall-2015/resources/mit18_657f15_l10/</lecture_pdf_url>
+      <lectureno>10</lectureno>
+      <slides>
+        <slide>
+          <slideno>4</slideno>
+          <text>MIT OpenCourseWare
+http://ocw.mit.edu
+18.657 Mathematics of Machine Learning
+Fall 2015
+For information about citing these materials or our Terms of Use, visit: http://ocw.mit.edu/terms .</text>
+        </slide>
+        <slide>
+          <slideno>2</slideno>
+          <text>Restricting to fWnnow does not change the minimum, which gives us the rst equality.
+For the second, we need to show that /bardblg/bardblWis equivalent to IK2.
+/bardblg/bardbl2=/an}bracketle{tg,g
+n/an}bracketri}ht
+n
+=/an}bracketle{t/summationdisplay
+iK(xi,
+i=1),
+n/summationdisplay
+jK(xj,
+=1)
+j/an}bracketri}ht
+=/summationdisplay
+ij/an}bracketle{tK(xi,(
+,j=1),K xj,
+i)/an}bracketri}ht
+n
+=/summationdisplay
+ijK(xi,xj)
+i,j=1
+=IK
+Weve reduced the innite dimensional problem to a minimization over nR. This
+works because were only interested in Gevaluated at a nite set of points. The matrix
+IK here is a Gram matrix, though we will not not use that. IK should be a measure of the
+similarity of the points xi. For example, we could have W={/an}bracketle{tx,/an}bracketri}htRd,xdR}withK(x,y
+the usual inner product K(x,y) =/an}bracketle{tx,y/an}bracketri}htRd.
+  Weve shown that fonly depends on Kthrough IK, but does Rn,depend on K(x,y)
+forx,y/{xi}? It turns out not to:
+n n n1Rn,=/summationdisplay 1(Yig(xi)) =/summationdisplay
+(Yi/summationdisplay
+jK(xj,xi)).n ni=1 i=1 j=1
+The last expression only involves IK. This makes it easy to encode all the knowledge about
+our problem that we need. The hard classier is
+n
+  h(x) = sign( f(x)) = sign( g(x)) = sign(/summationdisplay
+jK(xj,x))
+j=1
+If we are given a new point xn+1, we need to compute a new column for IK. Note that
+xn+1must be in some way comparable or similar to the previous {xi}for the whole idea of
+extrapolating from data to make sense.
+The expensive part of SVMs is calculating the nnmatrix IK. In some applications,
+IK may be sparse; this is faster, but still not as fast as deep learning. The minimization
+over the ellipsoid IKrequires quadratic programming, which is also relatively slow. In
+practice, its easier to solve the Lagrangian form of the problem
+n1 = argmin/summationdisplay
+(Yig(x i))+ IK
+Rnni=1
+This formulation is equivalent to the constrained one. Note that andare dierent.
+SVMs have few tuning parameters and so have less exibility than other methods.
+We now turn to analyzing the performance of SVM.
+3</text>
+        </slide>
+        <slide>
+          <slideno>3</slideno>
+          <text>Theorem: Excess Risk for SVM. Letbe anL-Lipschitz convex surrogate and
+  Wa RKHS with PSD Ksuch that max x|K(x,x)|=kmax&lt;. Lethn,= signfn,,
+wherefn,is the empirical -risk minimizer over F={f
+W./bardblf/bardblW}(that is,
+Rn,(fn,)Rn,(f)f F). Suppose kmax1. Then
+R(hn,)R2c/parenleftbigg  kmax 2log(2/)inf (R(f)R
+)/parenrightbigg
++2c/parenleftBigg
+8L +
+f/radicalbigg
+2L
+F n/parenrightBigg
+2c/parenleftBigg/radicalbigg
+n/parenrightBigg
+with probability 1 . The constants candare those from Zhangs lemma. For the
+hinge loss, c=1
+2and= 1.
+Proof.The rst term comes from optimizing over a restricted set Finstead of all classiers.
+The third term comes from applying the bounded dierence inequality. These arise in
+exactly the same way as they do for boosting, so we will omit the proof for those parts. For
+the middle term, we need to show that Rn,(F)kmax
+n.
+First,|f(x)|  /bardblf/bardblWkmaxkmax1 for all/radicalBig
+f F, so we can use the contraction
+inequality to replace Rn,(F) withRn(F). Next well expand f(xi) inside the Rademacher
+complexity and bound inner products using Cauchy-Schwartz.
+n1Rn(F) = sup Esup if(xi)
+x1,...,xn/bracketleftBigg
+fF/vextendsingle/vextendsingle
+/vextendsingle
+ni=1/vextendsingle/vextendsingle/bracketrightBigg/summationdisplay
+/vextendsingle/vextendsingle
+/vextendsingle
+n1=supE/bracketleftBigg
+sup/vextendsingle/vextendsingle
+/vextendsingle/summationdisplay
+/vextendsingle
+iK(x/vextendsingle
+/an}bracketle{ti,),fnx1,...,xnfFi=1/an}bracketri}ht/vextendsingle/vextendsingle/bracketrightBigg
+n1/vextendsingle
+=supE/vextendsingle/vextendsingle
+/bracketleftBigg
+sup/vextendsingle/vextendsingle/vextendsingle/an}bracketle{t/summationdisplay
+iK(xi,),f/vextendsingle
+n/vextendsingle
+x1,...,xnfFi=1/an}bracketri}ht/vextendsingle/vextendsingle/bracketrightBigg
+/vextendsingle
+/vextendsingle/vextendsingle /vextendsingle
+sup/radicaltp
+/radicalvertex/radicalvertex
+/radicalbtE/bracketleftBiggn
+/bardbl/summationdisplay
+iK(x2i,/vextendsingle
+nx1,...,xni=1)/bardblW/bracketrightBigg
+Now,
+n n n
+2E/bracketleftBigg
+/bardbl/summationdisplay
+iK(xi,)/bardblW/bracketrightBigg
+=E
+/an}bracketle{t/summationdisplay
+iK(xi,),/summationdisplay
+jK(xj,
+i=1 i=1 j=1)/an}bracketri}htW
+n
+=/summationdisplay
+/an}bracketle{tK(x E i,),K(xj,)/an}bracketri}ht[ij]
+i,j=1
+n
+=
+i/summationdisplay
+K(xi,xj)ij
+,j=1
+nkmax
+SoRn(F)kmax
+nandwearedonewiththenewpartsoftheproof. Theremainderfollows
+as with boosti/radicalBig
+ng, using symmetrization, contraction, the bounded dierence inequality, and
+Zhangs lemma.
+4</text>
+        </slide>
+        <slide>
+          <slideno>1</slideno>
+          <text>1.5.2 Risk Bounds for SVM
+We now analyze support vector machines (SVM) the same way we analyzed boosting. The
+general idea is to choose a linear classier that maximizes the margin (distance to classiers)
+while minimizing empirical risk. Classes that are not linearly separable can be embedded
+in a higher dimensional space so that they are linearly separable. We wont go into that,
+however; well just consider the abstract optimization over a RKHS W.
+Explicitly, we minimize the empirical -risk over a ball in Wwith radius :
+  f= min Rn,(f)
+fW,/bardblf/bardblW
+   The soft classier fis then turned into a hard classier h= sign(f). Typically in SVM 
+is the hinge loss, though all our convex surrogates behave similarly. To choose W(the only
+other free parameter), we choose a PSD K(x1,x2) that measures the similarity between two
+pointsx1andx2.
+As written, this is an intractable minimum over an innite dimensional ball {f,/bardblf/bardblW
+}. The minimizers, however, will all be contained in a nite dimensional subset.
+Theorem: Representer Theorem. LetWbe a RKHS with PSD Kand letG:
+nR/mastoRbe any function. Then
+minG(f(x1), ...,f(xn)) = min G(f(x1),...,f(xn))
+fW,/bardblf/bardbl f Wn,/bardblf/bardbl
+= min G(g(x1),...,g(xn)),
+Rn,IK2
+wheren
+Wn={fW|f() =g() =/summationdisplay
+iK(xi,
+i=1)}
+and IK ij=K(xi,xj).
+Proof. SinceWnis a linear subspace of W, we can decompose any f Wuniquely as
+ 
+f=f+fwithf W nandfW
+n. The Pythagorean theorem then gives
+/bardblf/bardbl2
+W=/bardblf/bardbl2
+W+/bardblf/bardbl2
+W
+ Moreover, since K(xi,)Wn,
+f(xi) =/an}bracketle{tf,K(xi,)/an}bracketri}htW= 0
+ Sof(xi) =f(xi) and
+G(f(x1  ),...,f(xn)) =G(f(x1),...,f(xn)).
+Because fdoes not contribute to G, we can remove it from the constraint:
+  min G(f(x1), ...,f(xn)) = min G(f(x1),...,f(xn)).fW,/bardblf/bardbl2+/bardblf/bardbl22 f /bardblW, f/bardbl22
+2</text>
+        </slide>
+        <slide>
+          <slideno>0</slideno>
+          <text>18.657: Mathematics of Machine Learning
+Lecturer: Philippe Rigollet Lecture 10
+Scribe:Aden Forrow Oct. 13, 2015
+Recall the following denitions from last time:
+Denition: A function K:X X /masto Ris called a positive symmetric denite kernel
+(PSD kernel) if
+1.x,x X,K(x,x) =K(x,x)
+2.nZ+,x1,x2,...,x n, thennmatrix with entries K(xi,xj) is positive de-
+nite. Equivalently, a R 1,a2,...,a n,
+n/summationdisplay
+aiajK(xi,xj)
+i,j=10
+Denition: LetWbe a Hilbert space of functions X /mastoR. A symmetric kernel K(,)
+is called a reproducing kernel ofWif
+1.x X, the function K(x,)W.
+2.x X,fW,/an}bracketle{tf(),K(x,)/an}bracketri}htW=f(x).
+If such a K(x,) exists, Wis called a reproducing kernel Hilbert space (RKHS).
+As before, /an}bracketle{t,/an}bracketri}htWand/bardbl/bardblWrespectively denote the inner product and norm of W. The
+subscript Wwill occasionally be omitted. We can think of the elements of Was innite
+linear combinations of functions of the form K(x,). Also note that
+/an}bracketle{tK(x,),K(y,)/an}bracketri}htW=K(x,y)
+Since so many of our tools rely on functions being bounded, wed like to be able to
+bound the functions in W. We can do this uniformly over x Xif the diagonal K(x,x) is
+bounded.
+Proposition: LetWbe a RKHS with PSD Ksuch that supxXK(x,x) =kmaxis
+nite. Then fW,
+sup|f(x)|  /bardblf/bardblW/radicalbig
+kmax
+xX
+.
+Proof.We rewrite f(x) as an inner product and apply Cauchy-Schwartz.
+f(x) =/an}bracketle{tf,K(x,)/an}bracketri}htW /bardblf/bardblW/bardblK(x,)/bardblW
+Now/bardblK(x,)/bardbl2
+W=/an}bracketle{tK(x,),K(x,)/an}bracketri}htW=K(x,x)kmax. The result follows immediately.
+1</text>
+        </slide>
+      </slides>
+      <videos/>
+    </lecture>
+    <lecture>
+      <lecture_title>Blackwell&#8217;s Approachability (PDF)</lecture_title>
+      <lecture_pdf_url>https://ocw.mit.edu/courses/18-657-mathematics-of-machine-learning-fall-2015/resources/mit18_657f15_l22/</lecture_pdf_url>
+      <lectureno>22</lectureno>
+      <slides>
+        <slide>
+          <slideno>2</slideno>
+          <text>Theorem: Blackwells Theorem LetSbe a closed convex set of2Rwith/bardblx/bardbl R
+xS. Ifz,asuch that (a,z)S, thenSis approachable.
+Moreover, there exists a strategy such that
+2Rd (n,S)n
+Proof.Well prove the rate; approachability of Sfollows immediately. The idea here is to
+transform the problem to a scalar one where Sions theorem applies by using half spaces.
+Suppose we have a half space H={xdR:/an}bracketle{tw,x/an}bracketri}ht c}withSH. By assumption,
+zasuch that (a,z)H. That is, zasuch that /an}bracketle{tw,(a,z)/an}bracketri}ht c, or
+maxmin/an}bracketle{tw,(a,z)/an}bracketri}ht c.
+zZ aA
+By Sions theorem,
+minmax/an}bracketle{tw,(a,z)
+aA zZ/an}bracketri}ht c.
+Soa
+Hsuch that z (a,z)H.
+This works for any Hcontaining S. We want to choose Htso that(at,zt) brings the
+average tcloser to Sthant1. An intuitive choice is to have the hyperplane Wbounding
+H tbe the separating hyperplane between Sandt1closest to S. This is Blackwells
+ strategy: let Wbe the hyperplane through targminS/bardblt1/bardblwith normal vector
+t1t. Then
+H={xdR:/an}bracketle{txt,t1t/an}bracketri}ht 0}.
+Finda
+Hand play it.
+We need one more equality before proving convergence. The average loss can be ex-
+panded:
+t1t t1 tt t
+t=1 t1 1(t1t)+t+tt t t
+Now we look at the distance of the average from S, using the above equation and the
+denition of t+1:
+d( ,S)2t=/bardbltt+1/bardbl2
+ /bardbltt/bardbl2
+=/vextenddouble/vextenddouble/vextenddouble2t1 1(t1t)+ (tt)t/vextenddouble
+/vextenddoublet
+t/vextenddouble
+=/parenleftbiggt1/parenrightbigg2
+d(2 2tt1t1,S) +/bardbl /vextenddouble/vextenddouble
+/bardbl+2/an}bracketle{ttt,t t2 t2t1t/an}bracketri}ht
+SincetH, the last term is negative; since tandtare both bounded by R, the middle
+2term is bounded by4R
+2. Letting 2
+t=t2d(2t,S) , we have a recurrence relationt
+2
+t2
+t1+4R2,
+3=+1</text>
+        </slide>
+        <slide>
+          <slideno>4</slideno>
+          <text>References
+[Bla56] D. Blackwell, An analog of the minimax theorem for vector payos , Pacic J.
+Math. 6 (1956), no. 1, 18
+[Sio58] M. Sion, On general minimax theorems . Pacic J. Math. 8 (1958), no. 1, 171176.
+5</text>
+        </slide>
+        <slide>
+          <slideno>5</slideno>
+          <text>MIT OpenCourseWare
+http://ocw.mit.edu
+18.657 Mathematics of Machine Learning
+Fall 2015
+For information about citing these materials or our Terms of Use, visit: http://ocw.mit.edu/terms .</text>
+        </slide>
+        <slide>
+          <slideno>1</slideno>
+          <text>f(,z) is lower semicontinuous and quasiconvex on AzZ, then
+inf supf(a,z) = sup inf f(a,z).
+aAzZ zaZA
+(Note - this wasnt given explicitly in lecture, but we do use it later.) Quasiconvex and
+quasiconcave are weaker conditions than convex and concave respectively.
+Blackwell looked at the case with vector losses. We have the following setup:
+Player 1 plays aA
+Player 2 plays zZ
+Player 1s payo is (a,z)dR
+We suppose AandZare both compact and convex, that (a,z) is bilinear, and that
+/bardbl(a,z)/bardbl RaA,zZ. All norms in this section are Euclidean norms. Can we
+translate the minimax theorem directly to this new setting? That is, if we x a set SdR,
+and ifzasuch that (a,z)S, does there exist an asuch that z (a,z)S?
+No. Well construct a counterexample. Let A=Z= [0,1],(a,z) = (a,z), and
+S={(a,z)[0,1]2:a=z}. Clearly, for any zZthere is an aAsuch that a=zand
+(a,z)S, but there is no aAsuch that z,a=z.
+Instead of looking for a single best strategy, well play a repeated game. At time t,
+player 1 plays at=at(a1,z1,...,at1,zt1) and player 2 plays zt=zt(a1,z1,...,a t1,zt1).
+Player 1s average loss after niterations is
+1n=n/summationdisplay
+(at,zt)nt=1
+Letd(x,S) be the distance between a point xdRand the set S, i.e.
+d(x,S) = inf
+sS/bardblxs/bardbl.
+IfSis convex, the inmum is a minimum attained only at the projection of xinS.
+Denition: AsetSisapproachable ifthereexistsastrategy at=at(a1,z1,...,a t1,zt1)
+ such that lim nd(n,S) = 0.
+Whether a set is approachable depends on the loss function (a,z). In our example, we can
+choosea0= 0 and at=zt1to get
+n1limn= lim/summationdisplay
+(zt1,zt) = (z,z)S.
+n nnt=1
+So thisSis approachable.
+7.2 Blackwells Theorem
+We have the same conditions on A,Z, and(a,z) as before.
+2</text>
+        </slide>
+        <slide>
+          <slideno>3</slideno>
+          <text>implying
+2
+n4nR2.
+Rewriting in terms of the distance gives the desired bound,
+2Rd (t,S)n
+Note that this proof fails for nonconvex S.
+7.3 Regret Minimization via Approachability
+Consider the case A= KK,Z=B(1). As we showed before, exponential weights Rn
+c/radicalbig
+nlog(K). We can get the same dependence on nwith an approachability-based strategy.
+First recall that
+n n1 1Rn=/summationdisplay 1(at,zt)min (ej,zt)n n jnt=1/summationdisplay
+t=1
+n n
+= m x/bracketleftBigg
+1a/summationdisplay 1(at,zt) (ej,zt)
+jn nt=1/summationdisplay
+t=1/bracketrightBigg
+If we dene a vector average loss
+n1n=/summationdisplay
+((at,zt)(e1,zt),...,(aKR t,zt)e
+t=1(K,zt))n,
+Rn  
+n0 if and only if all components of nare nonpositive. That is, we need d(n,OK)0,
+whereO={xKR:1xi0, iK }is the nonpositive orthant. Using Blackwells
+approachability strategy, we get
+Rnd(n,O/radicalbigg
+K)c .nKn
+TheKdependence is worse than exponential weights,
+Kinstead of log( K).
+How do we nd a
+H? As a concrete example, let K= 2. We need a/radicalbig
+
+Htp satisfy
+/an}bracketle{tw,(aH,z)/an}bracketri}ht=/an}bracketle{tw,/an}bracketle{taH,z/an}bracketri}htyz/an}bracketri}ht c
+for allz. Hereyis the vector of all ones. Note that c0 since 0 is in Sand therefore in
+H. Rearranging,
+/an}bracketle{taH,z/an}bracketri}ht/an}bracketle{tw,y/an}bracketri}ht  /an}bracketle{tw,z/an}bracketri}ht+c,
+Choosing a
+H=wwill work; the inequality reduces to/angbracketleftw,y/angbracketright
+/an}bracketle{tw,z/an}bracketri}ht  /an}bracketle{tw,z/an}bracketri}ht+c.
+Approachability in the banditsetting with only partial feedback is still an openproblem.
+4</text>
+        </slide>
+        <slide>
+          <slideno>0</slideno>
+          <text>18.657: Mathematics of Machine Learning
+Lecturer: Philippe Rigollet Lecture 22
+Scribe:Aden Forrow Nov. 30, 2015
+7. BLACKWELLS APPROACHABILITY
+7.1 Vector Losses
+David Blackwell introduced approachability in 1956 as a generalization of zero sum game
+theory to vector payos. Born in 1919, Blackwell was the rst black tenured professor at
+UC Berkeley and the seventh black PhD in math in the US.
+Recall our setup for online linear optimization. At time t, we choose an action atK
+and the adversary chooses ztB(1). We then get a loss (at,zt) =/an}bracketle{tat,zt/an}bracketri}ht. In the full
+information case, where we observe ztand not just (at,zt), this is the same as prediction
+with expert advice. Exponential weights leads to a regret bound
+Rn/radicalbiggn
+2log(K).
+Th
+e setup of a zero sum game is nearly identical:
+Player 1 plays a mixed strategy pn.
+Player 2 plays qm.
+Player 1s payo is pMq.
+HereMis the games payo matrix.
+Theorem: Von Neumann Minimax Theorem
+max minp Mq= min maxp Mq.
+pnqm qmpn
+The minimax is called the value of the game. Each player can prevent the other from doing
+any better than this. The minimax theorem implies that if there is a good response pqto
+any individual q, then there is a silver bullet strategy pthat works for any q.
+Corollary: Ifqn,psuch that pMqc, thenpsuch that q,pMqc.
+Von Neumanns minimax theorem can be extended to more general sets. The following
+theorem is due to Sion (1958).
+Theorem: Sions Minimax Theorem LetAandZbe convex, compact spaces, and
+f:AZR. Iff(a,) is upper semicontinuous and quasiconcave on ZaAand
+1</text>
+        </slide>
+      </slides>
+      <videos/>
+    </lecture>
+    <lecture>
+      <lecture_title>Prediction with Expert Advice (PDF)</lecture_title>
+      <lecture_pdf_url>https://ocw.mit.edu/courses/18-657-mathematics-of-machine-learning-fall-2015/resources/mit18_657f15_l15/</lecture_pdf_url>
+      <lectureno>15</lectureno>
+      <slides>
+        <slide>
+          <slideno>1</slideno>
+          <text>1. PREDICTION WITH EXPERT ADVICE
+1.1 Cumulative Regret
+LetAbe a convex set of actions we can take. For example, in the sequential investment
+example, A= N. If our options are discretefor instance, choosing edges in a graphthen
+think ofAas the convex hull of these options, and we can play one of the choices randomly
+according to some distribution. We will denote our adversarys moves by Z. At time t,
+we simultaneously reveal at Aandzt Z. Denote by (at,zt) the loss associated to the
+player/decision maker taking action atand his adversary playing zt.
+Inthegeneral case,/summationtextn
+t=1(at,zt)canbearbitrarilylarge. Therefore, ratherthanlooking
+at theabsoluteloss foraseriesof nsteps, wewill compareourloss totheloss ofabenchmark
+called an expert. An expert is simply some vector b An,b= (b1,...,bt,...,bTn) . If we
+chooseKexpertsb(1),...,b(K), then our benchmark value will be the minimum cumulative
+loss amongst of all the experts:
+n
+(j)benchmark = min
+jK/summationdisplay
+(bt,zt).
+1t=1
+Thecumulative regret is then dened as
+n n
+Rn=/summationdisplay(j)(at,zt)min (bt,zt).
+1jKt=1/summationdisplay
+t=1
+At timet, we have access to the following information:
+1. All of our previous moves, i.e. a1,...,at1,
+2. all of our adversarys previous moves, i.e. z1,...,zt1, and
+3. All of the experts strategies, i.e. b(1),...,b(K).
+Naively, one might try a strategy which chooses a=b tt, where bis the expert which
+has incurred minimal total loss for times 1 ,...,t1. Unfortunately, this strategy is easily
+exploitable by the adversary: he can simply choose an action which maximizes the loss for
+that move at each step. To modify our approach, we will instead take a convex combination
+of the experts suggested moves, weighting each according to the performanceof that expert
+thus far. To that end, we will replace (at,zt) by(p,(bt,zt)), where pKdenotes a
+(1) ( K)convex combination, bt= (bt,...,bt)T AKis the vector of the experts moves at time
+t, andzt Zis our adversarys move. Then
+n n
+Rn=/summationdisplay
+(pt,zt)min (ej,zt)
+1jKt=1/summationdisplay
+t=1
+whereejis the vector whose jth entry is 1 and the rest of the entries are 0. Since we are
+restricting ourselves to convex combinations of the experts moves, we can write A= K.
+We can now reduce our goal to an optimization problem:
+K n
+min
+K/summationdisplay
+j
+j=1/summationdisplay
+(ej,zt).
+t=1
+2</text>
+        </slide>
+        <slide>
+          <slideno>4</slideno>
+          <text>since IE Jej=/summationtextKpj=1t,jej. If we sum over t, the sum telescopes. Since W1=K, we are left
+withnn2
+log(Wn+1)log(K)/summationdisplay
+(pt,zt).8t=1
+We have
+K n
+log(Wn+1) = log
+/summationdisplay
+exp/parenleftBigg
+/summationdisplay
+(ej,zs)
+j=1 s=1/parenrightBigg
+,
+so settingnj= argmin1jK/summationtext(e 
+t=1j,zt), we obtain
+n n
+log(Wn+1)log/parenleftBigg
+exp/parenleftBigg
+/parenrightBigg/parenrightBigg/summationdisplay
+(ej,zs) =/summationdisplay
+(ej,zt).
+s=1 t=1
+Rearranging, we have
+n n /summationdisplay nlogK(pt,zt)
+t=/summationdisplay
+(ej,zt)+.81 t=1
+Finally, we optimize over to arrive at
+=/radicalbigg
+8logK oRnn/radicalbigg
+nl gK .2
+The improved constant comes from the assumption that our loss lies in an interval of size
+1 (namely [0 ,1]) rather than in an interval of size 2 (namely [ 1,1]).
+5</text>
+        </slide>
+        <slide>
+          <slideno>0</slideno>
+          <text>18.657: Mathematics of Machine Learning
+Lecturer: Philippe Rigollet Lecture 15
+Scribe:Zach Izzo Oct. 27, 2015
+Part III
+Online Learning
+It is often the case that we will be asked to make a sequence of predictions, rather
+than just one prediction given a large number of data points. In particular, this situa-
+tion will arise whenever we need to perform online classication: at time t, we have
+(X1,Y1),...,(Xt1,Yt1) iid random variables, and given Xt, we are asked to predict
+Yt {0,1}. Consider the following examples.
+Online Shortest Path: We have a graph G= (V,E) with two distinguished vertices
+sandt, and we wish to nd the shortest path from stot. However, the edge weights
+E1,...,E tchange with time t. Our observations after time tmay be all of the edge weights
+E1,...,E t; or our observations may only be the weights of edges through which our path
+traverses; orourobservationmayonlybethesumoftheweightsoftheedgeswevetraversed.
+Dynamic Pricing: We have a sequence of customers, each of which places a value vt
+on some product. Our goal is to set a price ptfor thetth customer, and our reward for
+doing so is ptifptvt(in which case the customer buys the product at our price) or 0
+otherwise (in which case the customer chooses not to buy the product). Our observations
+after time tmay bev1,...,vt; or, perhaps more realistically, our observations may only be
+1I(p1&lt; v1),...,1I(pt&lt; vt). (In this case, we only know whether or not the customer bought
+the product.)
+Sequential Investment: GivenNassets, a portfolio is N={xIRn:xi
+0,/summationtextNxi=1i= 1}. (tells what percentage of our funds to invest in each stock. We could
+also allow for negative weights, which would correspond to shorting a stock.) At each time
+t, we wish to create a portfolio tNto maximize T
+tzt, whereztIRNis a random
+variable which species the return of each asset at time t.
+There are two general modelling approaches we can take: statistical or adversarial.
+Statistical methods typically require that the observations are iid, and that we can learn
+somethingaboutfuturepointsfrompastdata. Forexample, inthedynamicpricingexample,
+we could assume vtN(v,1). Another example is the Markowitz model for the sequential
+investment example, in which we assume that log( zt) N(,).
+In this lecture, we will focus on adversarial models. We assume that ztcan be any
+bounded sequence of numbers, and we will compare our predictions to the performance of
+some benchmark. In these types of models, one can imagine that we are playing a game
+against an opponent, and we are trying to minimize our losses regardless of the moves he
+plays. In this setting, we will frequently use optimization techniques such as mirror descent,
+as well as approaches from game theory and information theory.
+1</text>
+        </slide>
+        <slide>
+          <slideno>5</slideno>
+          <text>MIT OpenCourseWare
+http://ocw.mit.edu
+18.657 Mathematics of Machine Learning
+Fall 2015
+For information about citing these materials or our Terms of Use, visit: http://ocw.mit.edu/terms .</text>
+        </slide>
+        <slide>
+          <slideno>2</slideno>
+          <text>From here, one option would be to use a projected gradient descent type algorithm: we
+dene
+qt+1=pt((eT1,zt),...,(eK,zT))
+Kand then pt+1=(pt) to be the projection of qt+1onto the simplex.
+1.2 Exponential Weights
+Suppose we instead use stochastic mirror descent with  = negative entropy. Then
+qtqt+1,j=pt+1,jexp((ej,zt)), pt+1,j= ,/summationtextK
+lq=1t+1,l
+where we have dened
+K/parenleftBigg
+wt,jpt= ej, expKwj=1 l=1,l/parenrightBigg
+wt,j=
+t/parenleftBiggt1 /summationdisplay
+/summationdisplay
+(ej,zs)
+s=1/parenrightBigg
+.
+This process looks at the los/summationtext
+s from each expert and downweights it exponentially according
+to the fraction of total loss incurred. For this reason, this method is called an exponential
+weighting (EW) strategy .
+Recall the denition of the cumulative regret Rn:
+n n
+Rn=/summationdisplay
+(pt,zt)min
+1jKt=1/summationdisplay
+(ej,zt).
+t=1
+Then we have the following theorem.
+Theorem: Assume (,z) is convex for all z Zand that (p,z)[0,1] for all p
+K,z Z. Then the EW strategy has regret
+logKnRn +.2
+In particular, for =/radicalBig
+2logK,n
+Rn/radicalbig
+2nlogK.
+Proof.We will recycle much of the mirror descent proof. Dene
+K
+ft(p) =/summationdisplay
+pj(ej,zt).
+j=1
+Denote/bardbl/bardbl:=||1. Then
+n n1/summationdisplay 1/bardblg/bardbl2tlogKft( (pt)ft)n/summationtext
+t=1p +,n 2 nt=1
+3</text>
+        </slide>
+        <slide>
+          <slideno>3</slideno>
+          <text>wheregtft(pt) and/bardbl  /bardblis the dual norm (in this case /bardbl  /bardbl=|  |). The 2 in the
+denominator of the rst term of this sum comes from setting = 1 in the mirror descent
+proof. Now,
+gtft(pt)gt= ((e1,zt),...,(eTK,zt)).
+Furthermore, since (p,z)[0,1], we have /bardblgt/bardbl=|gt|1 for all t. Thus
+n1
+n/summationtext
+t=1/bardblgt/bardbl2
+logK  logK+ +.2 n2n
+Substituting for ftyields
+nK K n/summationdisplay/summationdisplay nlogKpt,j(ej,zt)min/summationdisplay
+pj(ej,zt)+.
+pK 2t=1j=1 j=1/summationdisplay
+t=1
+Note that the boxed term is actually min 1jK/summationtextnt=1(ej,zt). Furthermore, applying
+Jensens to the unboxed term gives
+n K n /summationdisplay/summationdisplay
+pt,j(ej,zt)/summationdisplay
+(pt,zt).
+t=1j=1 t=1
+Substituting these expressions then yields
+nlogKRn+.2
+We optimize over to reach the desired conclusion.
+We now oer a dierent proof of the same theorem which will give us the optimal
+constant in the error bound. Dene
+/parenleftBiggt1/parenrightBiggK K/summationdisplay /summationdisplay/summationtextwt,jej=1 jwt,j= exp(ej,zs), Wt=wt,j, pt= .Wts=1 j=1
+Fort= 1, we initialize w1,j= 1, soW1=K. It should be noted that the starting values for
+w1,jare uniform, so were starting at the correct point (i.e. maximal entropy) for mirrored
+descent. Now we have
+/parenleftbigg Kexpt1  ,zW j=1 s=1(ej s) exp((ej,zt))t+1log gW/summationtext
+
+K tt/parenrightbigg
+= lo/parenleftBig
+ /summationtext1
+l  e=e/summationtext
+xp/parenleftBig
+1/summationtext
+j,z=1/parenrightBig
+(ls)
+= log(IE Jpt[exp((eJ,zt))])/parenrightBig
+12Hoedings lemma  log/parenleftBig
+IEe eJ J8(e ,zt)
+2/parenrightBig
+=IEJ(eJ,zt)8
+22
+Jensens    (IEJeJ,zt) =(pt,zt)8 8
+4</text>
+        </slide>
+      </slides>
+      <videos/>
+    </lecture>
+    <lecture>
+      <lecture_title>Concentration Inequalities (PDF)</lecture_title>
+      <lecture_pdf_url>https://ocw.mit.edu/courses/18-657-mathematics-of-machine-learning-fall-2015/resources/mit18_657f15_l3/</lecture_pdf_url>
+      <lectureno>3</lectureno>
+      <slides>
+        <slide>
+          <slideno>4</slideno>
+          <text>3. NOISE CONDITIONS AND FAST RATES
+ To measure the eectiveness of the estimator h, we would like to obtain an upper bound
+  on the excess risk E(h) =R(h)R(h). It should be clear, however, that this must depend
+signicantly on the amount of noise that we allow. In particular, if (X) is identically equal
+ to 1/2, then we should not expect to be able to say anything meaningful about E(h) in
+general. Understanding this trade-o between noise and rates will be the main subject of
+this chapter.
+3.1 The Noiseless Case
+A natural (albeit somewhat na ve) case to examine is the completely noiseless case. Here,
+we will have (X) {0,1}everywhere, Var( Y|X) = 0, and
+E(h) =R(h)R(h) = IE[|2(X)1|1I(h(X) =h(X))] = IP[h(X) =h(X)].
+Let us now denote
+  Zi= 1I(h(Xi) =Yi)1I(h(Xi) =Yi),
+ and write Zi=ZiIE[Zi]. Then notice that we have
+  |Zi|= 1I(h(Xi) =h(Xi)),
+and
+Var(Zi)IE[Z2 i] = IP[h(Xi) =h(Xi)].
+ For any classier hj H, we can similarly dene Zi(hj) (by replacing hwithhjthrough-
+out). Then, to set up an application of Bernsteins inequality, we can compute
+n1/summationdisplay Var(Zi(hj))IP[hj(Xi) =h(Xi)] =:2
+nj.
+i=1
+At this point, we will make a (fairly strong) assumption about our dictionary H, which
+ is thath H, which further implies that h=h. Since the random variables Zicompare
+  toh, this will allow us to use them to bound E(h), which rather compares to h. Now,
+ applying Bernstein (with c= 2) to the {Zi(hj)}ifor every jgives
+/bracketleftBiggn1/bracketrightBigg/summationdisplay nt2 IP Zi(hj)&gt; texp/parenleftBigg
+ =22
+i=1 j+4t3/parenrightBigg
+:,n M
+and a simple computation here shows that it is enough to take
+/radicalBigg
+22
+jlog(M/)4tmax ,log(M/)n 3n
+=:t0(j)
+ for this to hold. From here, we may use the assumption h=hto conclude that
+  IP/bracketleftBig
+E(h)&gt; t0(j)/bracketrightBig
+, h=h.j
+5/ne}ationslash /ne}ationslash
+/ne}ationslash /ne}ationslash
+/ne}ationslash
+/ne}ationslash
+/ne}ationslash</text>
+        </slide>
+        <slide>
+          <slideno>3</slideno>
+          <text>= IE/bracketleftbigg
+supg(X1,...,x i,...,X n)g(X1,...,X n)|Fi1
+xi/bracketrightbigg
+=:Bi.
+Similarly,
+iIE/bracketleftbigg
+infg(X1,...,x i,...,X n)g(X1,...,X n)|Fi1=:Ai.
+xi/bracketrightbigg
+At this point, our assumption on gimplies that /bardblBiAi/bardblcifor every i, and since
+AiiBiwithAi,Bi Fi1, an application of Azuma-Hoeding gives the result.
+2.3 Bernsteins Inequality
+Hoedings inequality is certainly a powerful concentration inequality for how little it as-
+sumes about the random variables. However, one of the major limitations of Hoeding is
+just this: Since it only assumes boundedness of the random variables, it is completely obliv-
+ious to their actual variances. When the random variables in question have some known
+variance, an ideal concentration inequality should capture the idea that variance controls
+concentration to some degree. Bernsteins inequality does exactly this.
+Theorem (Bernsteins Inequality): LetX1,...,X nbe independent, centered ran-
+dom variables with |X| cfor every i, and write 2=n1i iVar(Xi) for the average
+variance. Then/summationtext
+IP/bracketleftBigg
+1/summationdisplay nt2
+Xi&gt; t/bracketrightBigg
+exp/parenleftBigg
+n 22+2tci 3/parenrightBigg
+.
+Here, one should think of tas being xed and relatively small compared to n, so that
+strength of the inequality indeed depends mostly on nand 1/2.
+Proof.The idea of the proof is to do a Cherno bound as usual, but to rst use our
+assumptions on the variance to obtain a slightly better bound on the moment generating
+functions. To this end, we expand
+(sk X) skck2iIE[esXi] = 1+IE[ sXi]+IE/bracketleftBigg /bracketrightBigg/summationdisplay
+1+Var(Xi)/summationdisplay
+,k! k!k=2 k=2
+where we have used IE[ Xk
+i]IE[X2
+i|Xi|k2]Var(Xk2i)c. Rewriting the sum as an
+exponential, we get
+esc
+sXi2 sc1IE[e]sVar(Xi)g(s), g(s) := .c2s2
+The Cherno bound now gives
+IP/bracketleftBigg
+1/summationdisplay
+Xi&gt; t/bracketrightBigg
+exp/parenleftBigg
+inf[s2(/summationdisplay
+Var(Xi))g(s)nst]/parenrightBigg
+= exp/parenleftbigg
+ninf[s22g(s)st],n s&gt;0 s&gt;0i i/parenrightbigg
+and optimizing this over s(a fun calculus exercise) gives exactly the desired result.
+4</text>
+        </slide>
+        <slide>
+          <slideno>2</slideno>
+          <text>n1 n1 2 2= IE/bracketleftBig
+es/summationtextiIE[esn|Fn1]est IE[es/summationtexties(BnAn)/8]est,
+where we have used the fact that the /bracketrightBig
+i,i &lt; n, are allFnmeasureable, and then applied
+Hoedings lemma on the inner expectation. Iteratively isolating each  ilike this and
+applying Hoedings lemma, we get
+IP/bracketleftBiggn/summationdisplay s2
+&gt; t/bracketrightBigg
+exp/parenleftBigg/summationdisplay
+/bardblBA/bardbl2/parenrightBigg
+esti i i8.
+i i=1
+Optimizing over sas usual then gives the result.
+2.2 Bounded Dierences Inequality
+Although Azuma-Hoeding is a powerful result, its full generality is often wasted and can
+be cumbersome to apply to a given problem. Fortunately, there is a natural choice of the
+{Fi}iand{i}i, giving a similarly strong result which can be much easier to apply. Before
+we get to this, we need one denition.
+Denition (Bounded Dierences Condition): Letg:X IR and constants cibe
+given. Then gis said to satisfy the bounded dierences condition (with constants ci) if
+sup|g(x ,...,x )g(x ,...,x1 n 1 i,...,x n)| ci
+x1,...,xn,xi
+for every i.
+Intuitively, gsatises the bounded dierences condition if changing only one coordinate
+ofgat a time cannot make the value of gdeviate too far. It should not be too surprising
+that these types of functions thus concentrate somewhat strongly around their average, and
+this intuition is made precise by the following theorem.
+Theorem (Bounded Dierences Inequality): Ifg:X IR satises the bounded
+dierences condition, then
+2t2
+IP[|g(X1,...,X n)IE[g(X1,...,X n)|&gt; t]2exp/parenleftbigg
+/summationtext
+ic2
+i/parenrightbigg
+.
+Proof.Let{Fi}ibe given by Fi=(X1,...,X i), and dene the martingale dierences
+{i}iby
+i= IE[g(X1,...,X n)|Fi]IE[g(X1,...,X n)|Fi1].
+Then
+IP/bracketleftBigg
+|/summationdisplay
+i|&gt; t/bracketrightBigg
+= IP/vextendsingle
+g(X1,...,X n)IE[g(X1,...,X n)
+i/vextendsingle
+&gt; t ,
+exactly the quantity we want to bou/bracketleftbig/vextendsingle
+nd. Now, note that/vextendsingle/bracketrightbig
+iIE/bracketleftbigg
+supg(X1,...,x i,...,X n)|FiIE[g(X1,...,X n)|Fi1]
+xi/bracketrightbigg
+3</text>
+        </slide>
+        <slide>
+          <slideno>6</slideno>
+          <text>MIT OpenCourseWare
+http://ocw.mit.edu
+18.657 Mathematics of Machine Learning
+Fall 2015
+For information about citing these materials or our Terms of Use, visit: http://ocw.mit.edu/terms .</text>
+        </slide>
+        <slide>
+          <slideno>1</slideno>
+          <text>To obtain the bound in expectation, we start with a standard trick from probability
+which bounds a max by its sum in a slightly more clever way. Here, let {Zj}jbe centered
+random variables, then
+/bracketleftbigg /bracketrightbigg1/parenleftbigg /bracketleftbigg1IE max|Zj|= logexp sIE max|Zj|/bracketrightbigg/parenrightbigg
+logIE/bracketleftbigg
+exp/parenleftbigg
+smax|Zj|
+j s j s j/parenrightbigg/bracketrightbigg
+,
+where the last inequality comes from applying Jensens inequality to the convex function
+exp(). Now we bound the max by a sum to get
+2M1 )log/summationdisplay 1 s2log(2M sIE[exp(sZj)]log/parenleftbigg
+2Mexp/parenleftbigg /parenrightbigg/parenrightbigg
+= + ,s s 8n s 8nj=1
+ where we used Zj=Rn(hj)R(hj) in our case and then applied Hoedings Lemma. Bal-
+ancing terms by minimizing over s, this gives s= 2/radicalbig
+2nlog(2M) and plugging in produces
+/bracketleftbigglog(2M) IE max|Rn(hj)R(hj)| 
+j/bracketrightbigg/radicalbigg
+,2n
+which nishes the proof.
+2. CONCENTRATION INEQUALITIES
+Concentration inequalities are results that allow us to bound the deviations of a function of
+randomvariablesfromitsaverage. Therstofthesewewillconsiderisadirect improvement
+to Hoedings Inequality that allows some dependence between the random variables.
+2.1 Azuma-Hoeding Inequality
+Given a ltration {Fi}iof our underlying space X, recall that {i}iare called martingale
+dierences if, for every i, it holds that  i Fiand IE[ i|Fi] = 0. The following theorem
+gives a very useful concentration bound for averages of bounded martingale dierences.
+Theorem (Azuma-Hoeding): Suppose that {i}iare margingale dierences with
+respect to the ltration {Fi}i, and let Ai,Bi Fi1satisfyAiiBialmost surely
+for every i. Then
+IP/bracketleftBigg
+1/summationdisplay 2ni&gt; t/bracketrightBigg
+2t2
+expni/parenleftbigg
+/summationtextn
+i=1/bardblBiAi/bardbl2/parenrightbigg
+.
+In comparison to Hoedings inequality, Azuma-Hoeding aords not only the use of
+non-uniform boundedness, but additionally requires no independence of the random vari-
+ables.
+Proof.We start with a typical Cherno bound.
+IP/bracketleftBigg /bracketrightBigg/summationdisplay
+i&gt; tIE/bracketleftBig
+es/summationtexti/bracketrightBig
+est= IE
+i/bracketleftBig
+IE/bracketleftBig
+es/summationtexti|Fn1/bracketrightBig/bracketrightBig
+est
+2</text>
+        </slide>
+        <slide>
+          <slideno>5</slideno>
+          <text>However, we also know that 2
+ E(h), which implies thatj
+/radicalBigg
+2E(h)log(M/)4E(h)max ,log(M/)n 3n
+
+ with probability 1 , and solving for E(h) gives the improved rate
+log(M/)E(h)2 .n
+6</text>
+        </slide>
+        <slide>
+          <slideno>0</slideno>
+          <text>18.657: Mathematics of Machine Learning
+Lecturer: Philippe Rigollet Lecture 3
+Scribe:James Hirst Sep. 16, 2015
+1.5 Learning with a nite dictionary
+Recall from the end of last lecture our setup: We are working with a nite dictionary
+H={h1,...,h M}of estimators, andwewouldliketounderstandthescaling ofthis problem
+with respect to Mand the sample size n. GivenH, one idea is to simply try to minimize
+ the empirical risk based on the samples, and so we denethe empirical risk minimizer, herm,
+by
+  hermargminRn(h).
+hH
+  In what follows, we will simply write hinstead of hermwhen possible. Also recall the
+ denition of the oracle, h, which (somehow) minimizes the true risk and is dened by
+hargminR(h).
+hH
+  The following theorem shows that, although hcannot hope to do better than hin
+general, the dierence should not be too large as long as the sample size is not too small
+compared to M.
+ Theorem: The estimator hsatises
+ R(h)R(h)+/radicalbigg
+2log(2M/)
+n
+with probability at least 1 . In expectation, it holds that
+/radicalbigg
+2log(2M) IE[R(h)]R(h)+ .n
+Proof.   From the denition of h, we have Rn(h)Rn(h), which gives
+      R(h)R(h)+[Rn(h)R(h)]+[R(h)Rn(h)].
+The only term here that we need to control is the second one, but since we dont have
+ any real information about h, we will bound it by a maximum over Hand then apply
+Hoeding:
+log(2M/)     [Rn(h)R(h)]+[R(h)Rn(h)]2max|Rn(hj)R(hj)| 2
+j/radicalbigg
+2n
+with probability at least 1 , which completes the rst part of the proof.
+1</text>
+        </slide>
+      </slides>
+      <videos/>
+    </lecture>
+    <lecture>
+      <lecture_title>Boosting (PDF)</lecture_title>
+      <lecture_pdf_url>https://ocw.mit.edu/courses/18-657-mathematics-of-machine-learning-fall-2015/resources/mit18_657f15_l9/</lecture_pdf_url>
+      <lectureno>9</lectureno>
+      <slides>
+        <slide>
+          <slideno>4</slideno>
+          <text>In fact, the above claim holds both directions, i.e. if a kernel K(,) is PSD, it is also a
+reproducing kernel.
+A natural question to ask is, given a PSD kernel K(,), how can we build the corresponding
+Hilbert space (for which K(,) is a reproducing kernel)? Let us look at a few examples.
+Example 3 Let1,2,...,Mbe a set of orthonormal functions in L2([0,1]), i.e. for any
+j,k {1,2,...,M}/integraldisplay
+j(x)k(x)dx=
+x/an}bracketle{tj,k/an}bracketri}ht=jk
+LetK(x,x) =/summationtextM
+j=1j(x)j(x). We claim that the Hilbert space
+M
+W={/summationdisplay
+ajj( :
+=1)a1,a2,...,aM
+jIR}
+equipped with inner product /an}bracketle{t,/an}bracketri}htL2is a RKHS with reproducing kernel K(,).
+MProof. (1)K(x,) =j=1j(x)j()W. (Chooseaj=j(x)).
+(2) Iff() =/summationtextM
+j=1aj/summationtext
+j(),
+M M M
+/an}bracketle{tf(),K(x,)/an}bracketri}htL2=/an}bracketle{t/summationdisplay
+ajj(),/summationdisplay
+k(x)k()/an}bracketri}htL2=/summationdisplay
+ajj(x) =f(x)
+j=1 k=1 j=1
+(3)K(x,x) is a PSD kernel: a1,a2,...,anIR,
+/summationdisplay
+aiajK(x2i,xj) =/summationdisplay
+aiajk(xi)k(xj) =/summationdisplay
+(/summationdisplay
+aik(xi))
+i,j i,j,k ki0
+Example 4 IfX= IRd, andK(x,x) =/an}bracketle{tx,x/an}bracketri}htIRd, the corresponding Hilbert space is
+W={/an}bracketle{tw,/an}bracketri}ht:wIRd}(i.e. all linear functions) equipped with the following inner product:
+iff=/an}bracketle{tw,/an}bracketri}ht,g=/an}bracketle{tv,/an}bracketri}ht,/an}bracketle{tf,g/an}bracketri}ht/defines/an}bracketle{tw,v/an}bracketri}htIRd.
+Proof. (1)xIRd,K(x,) =/an}bracketle{tx,/an}bracketri}htIRdW.
+(2)f=/an}bracketle{tw,/an}bracketri}htIRdW,xIRd,/an}bracketle{tf,K(x,)/an}bracketri}ht=/an}bracketle{tw,x/an}bracketri}htIRd=f(x)
+(3)K(x,x) is a PSD kernel: a1,a2,...,anIR,
+/summationdisplay
+aiajK(xi,xj) =/summationdisplay
+aiaj,
+,j i,j/an}bracketle{txixj
+i/an}bracketri}ht=/an}bracketle{t/summationdisplay
+aixi,
+i/summationdisplay
+ajxj
+j/an}bracketri}htIRd=/bardbl/summationdisplay
+aix2iIRd0
+i/bardbl 
+5</text>
+        </slide>
+        <slide>
+          <slideno>3</slideno>
+          <text>1.5.1 Reproducing Kernel Hilbert Spaces (RKHS)
+Denition: A function K:X X /masto IR is called a positive symmetric denite kernel
+(PSD kernel) if
+(1)x,x X,K(x,x) =K(x,x)
+(2)nZ+,x1,x2,...,xn, then
+thnmatrix with K(xi,xj) as its element in ithrow
+andjcolumn is positive semi-denite. In other words, for any a1,a2,...,anIR,
+/summationdisplay
+aiajK(xi,xj) 0
+i,j
+Let us look at a few examples of PSD kernels.
+Example 1 LetX= IR,K(x,x) =/an}bracketle{tx,x/an}bracketri}htIRdis a PSD kernel, since a1,a2,...,anIR
+/summationdisplay
+aiaj/an}bracketle{txi,xj/an}bracketri}htIRd=/summationdisplay
+/an}bracketle{taixi,ajxj/an}bracketri}htIRd=/an}bracketle{t/summationdisplay
+aixi,/summationdisplay
+ajxj/an}bracketri}htIRd=/bardbl/summationdisplay
+a2ixi/bardblIRd0
+i,j i,j i j i
+Example 2 The Gaussian kernel K(x,x) = exp(1 2
+2/bardbl
+2xx/bardblIRd) is also a PSD kernel.
+Note that here and in the sequel, /bardbl  /bardblWand/an}bracketle{t,/an}bracketri}htWdenote the norm and inner product
+of Hilbert space W.
+Denition: LetWbe a Hilbert space of functions X /mastoIR. A symmetric kernel K(,)
+is called reproducing kernel ofWif
+(1)x X, the function K(x,)W.
+(2)x X,fW,/an}bracketle{tf(),K(x,)/an}bracketri}htW=f(x).
+If such aK(x,) exists,Wis called a reproducing kernel Hilbert space (RKHS).
+Claim: IfK(,) is a reproducing kernel for some Hilbert space W, thenK(,) is a
+PSD kernel.
+Proof.a1,a2,...,anIR, we have
+/summationdisplay
+aiajK(xi,xj) =/summationdisplay
+aiaj/an}bracketle{tK(xi,),K(xj,)/an}bracketri}ht(sinceK(,) is reproducing)
+i,j i,j 
+=/an}bracketle{t/summationdisplay
+aiK(xi,), ajK(xj,)W
+i/summationdisplay
+j /an}bracketri}ht
+=/bardbl/summationdisplay
+aiK(xi,
+i)/bardbl2
+W0
+4</text>
+        </slide>
+        <slide>
+          <slideno>5</slideno>
+          <text>MIT OpenCourseWare
+http://ocw.mit.edu
+18.657 Mathematics of Machine Learning
+Fall 2015
+For information about citing these materials or our Terms of Use, visit: http://ocw.mit.edu/terms .</text>
+        </slide>
+        <slide>
+          <slideno>1</slideno>
+          <text>(4) LetZi= (Xi,Yi),i= 1,2,...,nand
+n1g(Z1,Z2 ,...,Zn) = sup|R,n(f)R(f) =
+f|sup
+F fF|n/summationdisplay
+((
+i=1Yif(Xi))E[(Yif(Xi))])|
+Since() ismonotonically increasing, itisnotdiculttoverifythat Z1,Z2,...,Zn,Z
+i
+1 2L|g(Z1,...,Zi,...,Zn)g(Z1,...,Z
+i,...,Zn)| ((1)(n1))n
+The last inequality holds since gisL-Lipschitz. Apply Bounded Dierence Inequality,
+2t2
+P(|s|  upR,n(f)R(f)|E[sup|R,n(f)R(f)|]&gt;
+F F|t)2exp(
+ )
+f/summationtextnf i=(2L)21n
+Set the RHS of above equation to , we get:
+log(2/)  supR E ,n(f)R(f) [sup R,n(f)
+fF|  | 
+fF| R(f)|]+2L/radicalbigg
+2n
+with probability 1 .
+(5) Combining (1) - (4), we have
+ R(f)R(f)+8LRn(F)+2L/radicalbigg
+log(2/)
+2n
+with probability 1 .
+1.4 Boosting
+Inthissection, wewillspecializetheaboveanalysistoaparticularlearningmodel: Boosting.
+The basic idea of Boosting is to convert a set of weak learners (i.e. classiers that do better
+than random, but have high error probability) into a strong one by using the weighted
+average of weak learners opinions. More precisely, we consider the following function class
+M
+F={/summationdisplay
+jhj() :||11,hj:X /masto[1,1],j {1,2,...,Ma
+j=1}re classiers }
+and we want to upper bound Rn(F) for this choice of F.
+n M n1 1Rn(F) = sup E[sup iYif(Xi) ] = sup E[ supjYiihj(Xi) ]
+Z1,...,ZnfF|n/summationdisplay
+nZ ||111|
+1,...,Zi=n|/summationdisplay
+j=1/summationdisplay
+i=1|
+Letg() =|/summationtextM
+j=1j/summationtextn
+i=1Yiihj(Xi)|. It is easy to see that g() is a convex function, thus
+sup||11g() is achieved at a vertex of the unit 1ball{:/bardbl/bardbl11}. Dene the nite set
+Y1h1(X1) Y1h2(X1) Y1hM(X1)/braceleftiggY2h1(X2) Y2h2(X2)  Y2hM(X2)
+BX,Y/defines., ,...,.
+
+. /bracerightigg
+Ynh1(Xn)
+ 
+. ..
+Ynh2(Xn)
+
+.. .
+YnhM(Xn)
+2</text>
+        </slide>
+        <slide>
+          <slideno>2</slideno>
+          <text>Then
+Rn(F) = supRn(BX,Y).
+X,Y
+Notice max bBX,Yb| |2nand|BX,Y|= 2M. Therefore, using a lemma from Lecture 5,
+we get
+2log(2B 2 4RX,Y)log(M)
+n(BX,Y)max
+bBX,Y|b|2/radicalbig
+| |
+n/radicalbigg
+n
+Thus for Boosting,/bracketleftbig /bracketrightbig
+2log(4M) log(2 /) R(f)R(f)+8L/radicalbigg
++2L/radicalbigg
+with probability 1 - n 2n
+To get some ideas of what values Lusually takes, consider the following examples:
+(1) for hinge loss, i.e. (x) = (1+x)+,L= 1.
+(2) for exponential loss, i.e. (x) =ex,L=e.
+(3) for logistic loss, i.e. (x) = log2(1+ex),L=e
+1+elog2(e)2.43
+  Now we have bounded R(f)R(f), but this is not yet the excess risk. Excess risk is
+ dened asR(f)R(f), wheref= argminfR(f). The following theorem provides a
+bound for excess risk for Boosting.
+Theorem: LetF={/summationtextM
+j=1jhj:/bardbl/bardbl11,hjsare weak classiers }andis anL-
+   Lipschitz convex surrogate. Dene f= argminfFR,n(f) andh= sign(f). Then
+ 
+/parenleftbig/parenrightbig/parenleftigg
+2log(4M) log(2/)R(h)R2cinfR(f)R(f) +2c8L +
+fF/radicalbigg
+n/parenrightigg
+2c/parenleftigg
+2L/radicalbigg
+2n/parenrightigg
+with probability 1 
+Proof.
+R(h)R2c/parenleftbigR(f)R(f)/parenrightbig
+/parenleftigg
+ 2log(4M) log(2 /)2cinfR(f)R(f)+8L +2L
+fF/radicalbigg
+n/radicalbigg
+2n/parenrightigg
+
+ 2log(4M) log(2/)2cinfR(f)R(f) +2c
+fF/parenleftigg
+8L/radicalbigg
+n/parenrightigg
++2c/parenleftigg
+2L/radicalbigg
+2n/parenrightigg/parenleftbig /parenrightbig
+Here the rst inequality uses Zhangs lemma and the last one uses the fact that for ai0
+and[0,1], (a1+a2+a3)a
+1+a
+2+a
+3.
+1.5 Support Vector Machines
+In this section, we will apply our analysis to another important learning model: Support
+Vector Machines (SVMs). We will see that hinge loss (x) = (1 +x)+is used and the
+associated function class is F={f:/bardblf/bardblW}whereWis a Hilbert space. Before
+analyzing SVMs, let us rst introduce Reproducing Kernel Hilbert Spaces (RKHS).
+3</text>
+        </slide>
+        <slide>
+          <slideno>0</slideno>
+          <text>18.657: Mathematics of Machine Learning
+Lecturer: Philippe Rigollet Lecture 9
+Scribe:Xuhong Zhang Oct. 7, 2015
+Recall that last lecture we talked about convex relaxation of the original problem
+n1h= argmin 1I(h(Xi) =Yi)
+hHn/summationdisplay
+i=1
+by considering soft classiers (i.e. whose output is in [ 1,1] rather than in {0,1}) and
+convex surrogates of the loss function (e.g. hinge loss, exponential loss, logistic loss):
+n1  f= argminR,n(f) = argmin (Yif(Xi))
+fF fFn/summationdisplay
+i=1
+ Andh= sign(f) will be used as the hard classier.
+   We want to bound the quantity R(f)R(f), wheref= argminfFR(f).
+  (1)f= argminfFR,n(f), thus
+     R(f) =R(f)+R,n(f)R,n(f)+R,n(f)R,n(f)+R(f)R(f)
+   R(f)+R,n(f)R,n(f)+R(f)R(f)
+  R(f)+2sup |R,n(f)R(f)
+fF|
+ (2) Let us rst focus on E[supfF|R,n(f)R(f)|]. Using the symmetrization trick as
+before, weknowit isupper-boundedby2 Rn(F), wheretheRademacher complexity
+n1Rn(F) = sup E[sup|/summationdisplay
+i(Yif(Xi)) ]
+X1,...,Xn,Y1,...,YnfFni=1|
+One thing to notice is that (0) = 1 for the loss functions we consider (hinge loss,
+exponential loss and logistic loss), but in order to apply contraction inequality later,
+we require(0) = 0. Let us dene () =()1. Clearly(0) = 0, and
+n1E[sup|/summationdisplay
+((Yif(Xi))E[(Yif(Xi))]) ]
+fFni=1|
+n1=E[sup|/summationdisplay
+((Yif(X)Ei) [( i
+1Yif(X))])
+fFni=|]
+2Rn(F)
+(3) The Rademacher complexity of  Fis still dicult to deal with. Let us assume
+that() isL-Lipschitz, (as a result, () is alsoL-Lipschitz), apply the contraction
+inequality, we have
+Rn(F)2LRn(F)
+1/ne}ationslash</text>
+        </slide>
+      </slides>
+      <videos/>
+    </lecture>
+    <lecture>
+      <lecture_title>Covering Numbers (PDF)</lecture_title>
+      <lecture_pdf_url>https://ocw.mit.edu/courses/18-657-mathematics-of-machine-learning-fall-2015/resources/mit18_657f15_l6/</lecture_pdf_url>
+      <lectureno>6</lectureno>
+      <slides>
+        <slide>
+          <slideno>0</slideno>
+          <text>18.657: Mathematics of Machine Learning
+Lecturer: Philippe Rigollet Lecture 6
+Scribe:Ali Makhdoumi Sep. 28, 2015
+5. LEARNING WITH A GENERAL LOSS FUNCTION
+In the previous lectures we have focused on binary losses for the classication problem and
+developed VCtheory forit. Inparticular, theriskforaclassication function h:X  {0,1}
+and binary loss function the risk was
+R(h) = IP(h(X) =Y) = IE[1I( h(X) =Y)].
+In this lecture we will consider a general loss function and a general regression model where
+Yis not necessarily a binary variable. For the binary classication problem, we then used
+the followings:
+Hoedings inequality: it requires boundedness of the loss functions.
+Bounded dierence inequality: again it requires boundedness of the loss functions.
+VC theory: it requires binary nature of the loss function.
+Limitations of the VC theory:
+Hard to nd the optimal classication: the empirical risk minimization optimization,
+i.e.,
+n1min
+hn/summationdisplay
+1I(h(Xi) =Yi)
+i=1
+is a dicult optimization. Even though it is a hard optimization, there are some
+algorithms that try to optimize this function such as Perceptron and Adaboost.
+This is not suited for regression. We indeed know that classication problem is a
+subset of Regression problem as in regression the goal is to nd IE[ Y|X] for a general
+Y(not necessarily binary).
+In this section, we assume that Y[1,1] (this is not a limiting assumption as all the
+results can bederived for any bounded Y) and we have a regression problem where ( X,Y)
+X [1,1]. Most of the results that we preset here are the analogous to the results we had
+in binary classication. This would be a good place to review those materials and we will
+refer to the techniques we have used in classication when needed.
+5.1 Empirical Risk Minimization
+5.1.1 Notations
+Loss function: In binary classication the loss function was 1I( h(X) =Y). Here, we
+replace this loss function by (Y,f(X)) which we assume is symmetric, where f F,
+f:X [1,1] is the regression functions. Examples of loss function include
+1/\e}atio\slash /\e}atio\slash
+/\e}atio\slash
+/\e}atio\slash</text>
+        </slide>
+        <slide>
+          <slideno>6</slideno>
+          <text>For anyp1, dene
+1
+dx
+p(f,g) =/parenleftiggn1p /summationdisplay
+|f(xi)g(x)pi,ni=1 |/parenrightigg
+and forp=, dene
+dx
+(f,g) = max |f(xi)g(xi)
+i|.
+ Using the previous theorem, in order to bound Rx
+nwe need to bound the covering number
+withdx
+1norm. We claim that it is sucient to bound the covering number for the innity-
+norm. In order to show this, we will compare the covering number of the norms dx
+p(f,g) =
+1 /parenleftbig1
+n/summationtextn
+i=1|f(xpi)g(xi)|/parenrightbig
+pforp1 and conclude that a bound on N(F,dx
+,) implies a
+bound on N(F,dx
+p,) for any p1.
+Proposition: For any 1 pqand &gt;0, we have that
+N(F,dx
+p,)N(F,dx
+q,).
+Proof.First note that if q=, then the inequality evidently holds. Because, we have
+n1(/summationdisplay 1
+|zi|p)pmaxn ii=1|zi|,
+which leads to B(f,dx
+,)B(f,dx
+p,) andN(f,d,)N(f,dp,). Now suppose that
+1pq &lt;. Using H olders inequality with r=q
+p1 we obtain
+/parenleftigg /parenrightigg 1/parenleftigg /parenrightigg(11)1/parenleftigg /parenrightigg 1/parenleftigg /parenrightigg 1 n n n1p r p pr n1q
+1n/summationdisplay 1
+|z|pinp/summationdisplay
+i1/summationdisplay
+i=1|zi|pr=ni=1 =/summationdisplay
+.
+i|zi|q
+=1
+This inequality yeilds
+B(f,dx
+q,) ={g:dx
+q(f,g)} B(f,dx
+p,),
+which leads to N(f,dq,)N(f,dp,).
+Using this propositions we only need to bound N(F,dx
+,).
+Let the function class be F={f(x) =/a\}bracketle{tf,x/a\}bracketri}ht,fBd,xBd}, where1 1
+p q + = 1. Thisp q
+leads to|f| 1.
+Claim: N(F,dx
+,)(2)d.
+This leads to
+x/radicalbigg
+2dlog(4/)Rn(F)inf
+0{+ .
+&gt; n}
+Taking=O(/radicalig
+dlogn), we obtainn
+Rx d
+n(F)O(/radicalbigg
+logn).n
+7</text>
+        </slide>
+        <slide>
+          <slideno>5</slideno>
+          <text>dx
+1(f,f). We have that
+n1Rx
+n(F) = IE/bracketleftigg
+sup if(xi)
+fF|n/summationdisplay
+i=1|/bracketrightigg
+IE/bracketleftiggn n1 1sup|/summationdisplay
+i(f(xi)f(xi)) +IE sup if(xi)
+fFn fFni=1 |/bracketrightigg /bracketleftigg
+|/summationdisplay
+i=1|/bracketrightigg
++IE/bracketleftiggn1max if(xi)
+fV|n/summationdisplay
+i=1|/bracketrightigg
+/radicalbigg
+2log(2+|V|)
+n/radicalbigg
+2log(2N(=+F,dx
+1,)).n
+Since the previous bound holds for any , we can take the inmum over all 0 to obtain
+x/radicalbigg
+/braceleftbig2log(2N(F,dx
+Rn(F)inf+1,))
+0 n/bracerightbig
+.
+The previous bound clearly establishes a trade-o because as decreases N(F,dx
+1,) in-
+creases.
+5.2.2 Computing Covering Numbers
+As a warm-up, we will compute the covering number of the 2ball of radius 1 indRdenoted
+byB2. We will show that the covering is at most (3
+)d. There are several techniques to
+prove this result: one is based on a probabilistic method argument and one is based on
+greedily nding an -net. We will describe the later approach here. We select points in V
+one after another so that at step k, we have ukB2\k
+j=1B(uj,). We will continue this
+procedure until we run out of points. Let it be step N. This means that V={u1,...,u N}
+is an-net. We claim that the balls B(ui,) andB(uj,) for any i,j12 2 {,...,N}are
+disjoint. The reason is that if vB(ui,)B(uj,), then we would have2 2
+ /bardbluiuj/bardbl2 /bardbluiv/bardbl2+/bardblvuj/bardbl2+ =,2 2
+which contradicts the way we have chosen the points. On the other hand, we have that
+N
+j=1B(uj,)(1+)B2. Comparing the volume of these two sets leads to2 2
+ |V|( )dvol(B2)(1+ )dvol(B2),2 2
+wherevol(B2) denotes the volume of the unit Euclidean ball in ddimensions. It yields,
+|V| /parenleftbig
+1+d
+22d3d
+= +1 . /parenleftbig 
+2/parenrightbig/parenrightbigg
+/parenrightbigd/parenleftbigg
+/parenleftbigg
+/parenrightbigg
+6</text>
+        </slide>
+        <slide>
+          <slideno>7</slideno>
+          <text>MIT OpenCourseWare
+http://ocw.mit.edu
+18.657 Mathematics of Machine Learning
+Fall 2015
+For information about citing these materials or our Terms of Use, visit: http://ocw.mit.edu/terms .</text>
+        </slide>
+        <slide>
+          <slideno>3</slideno>
+          <text>Theorem: Assume that Fis nite and that takes values in [0 ,1]. We have
+/radicalbigg
+2log(2Rn(F)|F|) .n
+Proof.From the previous lecture, for BnR, we have that
+n1 2log(2B)Rn(B) = IE/bracketleftigg
+max
+bB|n/summationdisplay
+ibi
+i=1|/bracketrightigg
+| |max
+bB|b|2/radicalbig
+.n
+Here, we have
+(y(x 1,f1))
+.B= .,.
+(yn,f(xn)f F
+
+.
+)
+Sincetakes values in [0 ,1], this
+im
+pliesB
+ {b:|b|2
+n}. Plugging this bound in the
+previous inequality completes the proof.
+5.2 The General Case
+Recall that for the classication problem, we had F  {0,1}X. We have seen that the
+cardinality of the set {(f(x1),...,f(xn)),f
+erm F}plays an important role in bounding the
+risk off(this is not exactly what we used but the XOR argument of the previous lecture
+allows us to show that the cardinality of this set is the same as the cardinality of the set
+that interests us). In this lecture, this set might be uncountable. Therefore, we need to
+introduce a metric on this set so that we can treat the close points in the same manner. To
+this end we will dene covering numbers (which basically plays the role of VC dimension
+in the classication).
+5.2.1 Covering Numbers
+Denition: Given a set of functions Fand a pseudo metric donF((F,d) is a metric
+space) and  &gt;0. An-netof (F,d) is a set Vsuch that for any f F, there exists
+gVsuch that d(f,g). Moreover, the covering numbers of (F,d) are dened by
+N(F,d,) = inf{|V|:Vis an-net}.
+For instance, for the Fshown in the Figure 5.2.1 the set of points {1,2,3,4,5,6}is a
+covering. However, the covering number is 5 as point 6 can be removed from Vand the
+resulting points are still a covering.
+Denition: Givenx= (x1,...,x n), theconditional Rademacher average of a class of
+4</text>
+        </slide>
+        <slide>
+          <slideno>4</slideno>
+          <text>functions Fis dened as
+Rx
+n= IE/bracketleftiggn1sup 
+fF/vextendsingle/vextendsingle
+n/summationdisplay
+if(xi)
+i=1/bracketrightigg
+/vextendsingle/vextendsingle.
+Note that in what follows we consider a general class of functions F. However, for
+applying the results in order to bound empirical risk minimization, we take xito be (xi,yi)
+andFto beF. We dene the empirical l1distance as
+n
+dx 1
+1(f,g) =n/summationdisplay
+i
+=1|f(x)
+ig(xi)|.
+Theorem: If 0f1 for all f F, then for any x= (x1,...,x n), we have
+Rx
+n(F)inf
+0/radicalbigg
+x /braceleftbig2log(2N(F,d+1,))
+n/bracerightbig
+.
+Proof.Fixx= (x1,...,x n) and &gt;0. LetVbe a minimal -net of ( F,dx
+1). Thus,
+by denition we have that |V|=N(F,dx
+1,). For any f F, denefVsuch that
+56
+5 432 1 F</text>
+        </slide>
+        <slide>
+          <slideno>2</slideno>
+          <text>5.1.2 Symmetrization and Rademacher Complexity
+Similar to the binary loss case we rst use symmetrization technique and then intro-
+duce Rademacher random variables. Let Dn={(X1,Y1),...(Xn,Yn)}be the sample set
+and dene an independent sample (ghost sample) with the same distribution denoted by
+D
+n={(X
+1,Y
+1),...(X
+n,Y
+n)}( for each i, (X
+i,Y
+i) is independent from Dnwith the same
+distribution as of ( Xi,Yi)). Also, let i {1,+1}be i.i.d. Rad(1) random variables2
+independent of DnandD
+n. We have
+IE/bracketleftiggn1sup| i
+fFn/summationdisplay
+(Yi,f(X))
+i=1IE[(Yi,f(Xi))]|/bracketrightigg
+n n1 1= IE/bracketleftigg
+sup (Yi,f(X (Yi)) IEi,f(X
+i))Dn
+fF|n/summationdisplay
+i=1/bracketleftigg
+n/summationdisplay
+i=1|/bracketrightigg
+|/bracketrightigg
+n n1 1= IE/bracketleftigg
+sup|IE/bracketleftigg/summationdisplay
+(Yi,f(Xi)) (Yi,f(X
+i))Dn
+fFni=1n/summationdisplay
+i=1|/bracketrightigg
+|/bracketrightigg
+n(a)
+IE/bracketleftiggn1 1supIE/bracketleftigg
+|/summationdisplay
+(Yi,f(Xi))/summationdisplay
+(Y ,f(X
+i i))| |Dn
+fFn ni=1 i=1/bracketrightigg/bracketrightigg
+IE/bracketleftiggn n1sup|/summationdisplay 1(Yi,f(Xi)) (Y
+i,f(X
+fFn ni))
+i=1/summationdisplay
+i=1|/bracketrightigg
+(b) 1= IE/bracketleftiggn
+sup|/summationdisplay
+i/parenleftbig
+(Yi,f(Xi))(YX
+fFni,f(
+i))
+i=1/parenrightbig
+|/bracketrightigg
+n(c) 12IE/bracketleftigg
+sup
+fF|n/summationdisplay
+i(Yi,f(Xi))
+i=1|/bracketrightigg
+n
+2supIE/bracketleftigg
+1sup|/summationdisplay
+i(yi,f(xi))
+DnfFni=1|/bracketrightigg
+.
+where (a) follows from Jensens inequality with convex function f(x) =x, (b) follows from
+the fact that ( X ,Y) and (X | |
+i i i,Yi) has the same distributions, and (c) follows from triangle
+inequality.
+Rademacher complexity: of a class Fof functions for a given loss function (,) and
+samplesDnis dened as
+n1Rn(F) = supIE/bracketleftigg
+sup|/summationdisplay
+i(yi,f(xi)).
+DnfFni=1|/bracketrightigg
+Therefore, we have
+IE/bracketleftiggn1sup|/summationdisplay
+(Yi,f(Xi))
+fFni=1IE[(Yi,f(Xi))]|/bracketrightigg
+2Rn(F)
+and we only require to bound the Rademacher complexity.
+5.1.3 Finite Class of functions
+Suppose that the class of functions Fis nite. We have the following bound.
+3</text>
+        </slide>
+        <slide>
+          <slideno>1</slideno>
+          <text>(a,b) = 1I( a=b) ( this is the classication loss function).
+(a,b) =|ab|.
+(a,b) = (ab)2.
+(a,b) =|ab|p,p1.
+We further assume that 0 (a,b)1.
+Risk: risk is the expectation of the loss function, i.e.,
+R(f) = IEX,Y[(Y,f(X))],
+where the joint distribution is typically unknown and it must be learned from data.
+Data: we observe a sequence ( X1,Y1),...,(Xn,Yn) ofnindependent draws from a joint
+distribution PX,Y, where ( X,Y) X [1,1]. We denote the data points by Dn=
+{(X1,Y1),...,(Xn,Yn)}.
+Empirical Risk : the empirical risk is dened as
+n1Rn(f) =n/summationdisplay
+(Yi,f(Xi)),
+i=1
+  and the empirical risk minimizer denoted by ferm(orf) is dened as the minimizer of
+empirical risk, i.e.,
+argminRn(f).
+fF
+ In order to control the risk of fwe shall compare its performance with the following oracle:
+fargminR(f).
+fF
+Note that this is an oracle as in order to nd it one need to have access to PXYand then
+ optimize R(f) (we only observe the data Dn). Since fis the minimizer of the empirical
+ risk minimizer, we have that Rn(f)Rn(f), which leads to
+R(f)R(f)   Rn(f)+Rn(f)Rn(f)+Rn(f)R(f)+R(f)
+      R(f)+R(f)Rn(f)+Rn(f)R(f)R(f)+2sup
+fF|Rn(f)R(f)|.
+Therefore, the quantity of interest that we need to bound is
+sup|Rn(f)R(f)
+fF|.
+Moreover, from theboundeddierence inequality, we know that sincethe loss function (,)
+ is bounded by 1, supfF|Rn(f)R(f)|has the bounded dierence property with ci=1
+n
+fori= 1,...,n, and the bounded dierence inequality establishes
+P/bracketleftigg
+2t2
+sup|  Rn(f)R(f)|IE/bracketleftigg
+sup|Rn(f)R(f)
+fF|/bracketrightigg
+t
+fF/bracketrightigg
+exp/parenleftbigg
+x2
+i i/parenrightbigg
+= e pc2nt2,
+which in turn yields/parenleftbig /parenrightbig/summationtext
+log(1/delta)|supRn(f)R(f)| I|E/bracketleftigg
+supRn(f)R(f) 
+fF f|/bracketrightigg
++
+/radicalbigg
+,w.p. 1
+F 2n.
+ As a result we only need to bound the expectation IE[supfF|Rn(f)R(f)|].
+2/\e}atio\slash</text>
+        </slide>
+      </slides>
+      <videos/>
+    </lecture>
+    <lecture>
+      <lecture_title>Mirror Descent (PDF)</lecture_title>
+      <lecture_pdf_url>https://ocw.mit.edu/courses/18-657-mathematics-of-machine-learning-fall-2015/resources/mit18_657f15_l13/</lecture_pdf_url>
+      <lectureno>13</lectureno>
+      <slides>
+        <slide>
+          <slideno>3</slideno>
+          <text>Equations (ii) and (iii) are direct results of Mirror descent algorithm.
+Equation (iv) is the result of applying proposition 1.
+Inequality (v) is a result of the fact that x=  s+1 (yCs+1), thus for x
+  C  D, we have
+D(x ,ys+1)D(x ,xs+1).
+We will justify the following derivations to prove inequality (vi):
+(a)D(xs,ys+1) = (xs)(ys+1)(ys+1)(xsys+1)
+(b) [(x2s)(ys+1)](xsys+1)2/badblys+1xs/badbl
+(c) /badblgs/badbl/badblxsys+1/badbl2/badblys+1xs/badbl2
+(d)2L2
+.2
+Equation (a) is the denition of Bregman divergence.
+To show inequality (b), we used the fact that  is -strongly convex which implies that
+(ys+1)(xs) (xs)T(ys+1xs)
+2/badbly2s+1xs/badbl.
+According to the Mirror descent algorithm, (xs) (ys+1) =gs. We use H olders
+inequality to show that gs(xsys+1) /badblgs/badbl/badblxsys+1/badbland derive inequality (c).
+Lookingatthequadraticterm axbx2fora,b &gt;0,itisnothardtoshowthatmax ax
+abx2=
+2. We use this statement with x=/badblys+1xs/badbl,a= gb/badbls/badblL4 andb=to derive2
+inequality (d).
+Again, we use telescopic sum to get
+k1/summationdisplay L2D(x,x1)[f(xs)f(x)] + . (2.1)k 2 ks=1 
+We use the denition of Bregman divergence to get
+D(x,x1) = (x)(x1)(x1)(xx1)
+(x)(x1)
+sup (x) min ( x)
+x x
+CD CD
+R2.
+Where we used the fact x1argmin ( x) in the description of the Mirror Descent
+CD
+algorithm to prove (x1)(xx1)0. We optimize the right hand side of equation (2.1)
+forto get
+k1/summationdisplay
+(x 2[f(xs)f)]ks=RL
+1/radicalbigg
+.k
+To conclude the proof, let xx C.
+Note that with the right geometry, we can get projected gradient descent as an instance
+the Mirror descent algorithm.
+4</text>
+        </slide>
+        <slide>
+          <slideno>8</slideno>
+          <text>MIT OpenCourseWare
+http://ocw.mit.edu
+18.657 Mathematics of Machine Learning
+Fall 2015
+For information about citing these materials or our Terms of Use, visit: http://ocw.mit.edu/terms .</text>
+        </slide>
+        <slide>
+          <slideno>4</slideno>
+          <text>2.4.3 Remarks
+The Mirror Descent is sometimes called Mirror Prox. We can write xs+1as
+xs+1= argmin D(x,ys+1)
+xCD
+= argmin( x)
+x(ys+1)x
+CD
+= argmin( x) xs
+x[( )gs]x
+CD
+= argmin (gsx)+(x)
+x(xs)x
+CD
+= argmin (gsx)+D(x,xs)
+xCD
+Thus, we have
+xs+1= argmin (gsx)+D(x,xs).
+xCD
+To getxs+1, in the rst term on the right hand side we look at linear approximations
+close toxsin the direction determined by the subgradient gs. If the function is linear, we
+would just look at the linear approximation term. But if the function is not linear, the
+linear approximation is only valid in a small neighborhood around xs. Thus, we penalized
+by adding the term D(x,xs). We can penalized by the square norm when we choose
+D(x,xs) =/badblxxs/badbl2. In this case we get back the projected gradient descent algorithm
+as an instance of Mirror descent algorithm.
+But if we choose a dierent divergence D(x,xs), we are changing the geometry and we
+can penalize dierently in dierent directions depending on the geometry.
+Thus, using the Mirror descent algorithm, we could replace the 2-norm in projected
+gradient descent algorithm by another norm, hoping to get less constraining Lipschitz con-
+stant. On the other hand, the norm is a lower bound on the strong convexity parameter.
+Thus, there is trade o in improvement of rate of convergence.
+2.4.4 Examples
+Euclidean Setup:
+(x) =1x2, =dR, (x) =(x) =x. Thus, the updates will be similar to2/badbl /badbl D 
+the gradient descent.
+1D(y,x) =/badbly/badbl21 /badblx2
+2/badbl2x2y+/badblx/badbl
+1=/badblxy/badbl2.2
+Thus, Bregman projection with this potential function ( x) is the same as the usual Eu-
+clidean projection and the Mirror descent algorithm is exactly the same as the projected
+descent algorithm since it has the same update and same projection operator.
+Note that = 1 since D1(y,x)2/badblxy/badbl2.
+1Setup:
+We look at D=dR+\{0}.
+5</text>
+        </slide>
+        <slide>
+          <slideno>0</slideno>
+          <text>18.657: Mathematics of Machine Learning
+Lecturer: Philippe Rigollet Lecture 13
+Scribe:Mina Karzand Oct. 21, 2015
+Previously, we analyzed the convergence of the projected gradient descent algorithm.
+We proved that optimizing the convex L-Lipschitz function fon a closed, convex set Cwith
+diam(C)Rwith step sizes s=Rwould give us accuracy of f(x)f(x)+LR
+L kafterk
+kiterations.
+Although it might seem that projected gradient descent algorithm provides dimension-
+free convergence rate, it is not always true. Reviewing the proof of convergence rate, we
+realize that dimension-free convergence is possible when the objective function fand the
+constraint set Care well-behaved in Euclidean norm (i.e., for all x Candgf(x), we
+have that |x|2and|g|2are independent of the ambient dimension). We provide an examples
+of the cases that these assumptions are not satised.
+Consider the dierentiable, convex function fon the Euclidean ball B2,nsuch that
+/badblf(x)/badbl 1,xB2,n. This implies that f(x)nand the projected  | | 2
+gradient descent converges to the minimum of finBn2,/radicalignat ratek. Using the
+log(n)method of mirror descent we can get convergence rate of/radicalbig
+k
+To get better rates of convergence in the optimization problem, we can use the Mirror
+Descent algorithm. The idea is to change the Euclidean geometry to a more pertinent
+geometry to a problem at hand. We will dene a new geometry by using a function which
+is sometimes called potential function ( x). We will use Bregman projection based on
+Bregman divergence to dene this geometry.
+The geometric intuition behind the mirror Descent algorithm is the following: The
+projected gradient described in previous lecture works in any arbitrary Hilbert space Hso
+that thenormof vectors isassociated withaninnerproduct. Now, supposeweareinterested
+in optimization in a Banach space D. In other words, the norm (or the measure of distance)
+that we use does not derive from an inner product. In this case, the gradient descent does
+not even make sense since the gradient f(x) are elements of dual space. Thus, the term
+xf(x) cannot be performed. (Note that in Hilbert space used in projected gradient
+descent, the dual space of His isometric to H. Thus, we didnt have any such problems.)
+The geometric insight of the Mirror Descent algorithm is that to perform the optimiza-
+tion in the primal space D, one can rst map the point x Din primal space to the dual
+spaceD, then perform the gradient update in the dual space and nally map the optimal
+point back to the primal space. Note that at each update step, the new point in the primal
+spaceDmight be outside of the constraint set C  D, in which case it should be projected
+into the constraint set C. The projection associate with the Mirror Descent algorithm is
+Bergman Projection dened based on the notion of Bergman divergence.
+Denition (Bregman Divergence): Forgivendierentiable, -stronglyconvexfunc-
+tion (x) :D R, we dene the Bregman divergence associated with  to be:
+D(y,x) = (y)(x)(x)T(yx)
+1</text>
+        </slide>
+        <slide>
+          <slideno>2</slideno>
+          <text>Moreover, D(z,(y))D(z,y).
+Proof.Dene= (y) andh(t) =D(+t(z),y).Sinceh(t) is minimized at t= 0C
+(due to the denition of projection), we have
+h(0) =xD(x,y)|x=(z)0
+where suing the denition of Bregman divergence,
+xD(x,y) =(x)(y)
+Thus,
+(()(y))(z)0.
+Using proposition 1, we know that
+(()(y))(z) =D(,y)+D(z,)D(z,y)0,
+and since D(,y)0, we would have D(z,)D(z,y).
+Theorem: Assume that fis convex and L-Lipschitz w.r.t. /badbl./badbl. Assume that  is
+-strongly convex on C  Dw.r.t./badbl./badbland
+R2= sup ( x) m
+xin (x)
+CD xCD
+ta/radicaligkex1= argminx(x) (assume that it exists). Then, Mirror Descent with =CD
+R2
+L Rgives,
+2 2f(x)f(x)RL/radicalbigg
+andf(x)kf(x)RL/radicalbigg
+,k
+Proof.Takex C D. Similar to the proof of the projected gradient descent, we have:
+(i)
+f(xs)f(x)gs(xsx)
+(ii)1=((xs)(ys+1))(xs)x
+(iii)1=( (xs) (ys+1))(xsx)  
+(iv)1=/bracketleftig
+D(xs,ys+1)+D(x ,xs)D(x ,ys+1)/bracketrightig
+(v)1/bracketleftig
+D(xs,ys+1)+D(x,xs)D(x,xs+1)/bracketrightig
+(vi)L21+/bracketleftig
+D(x,xs)22D(x,xs+1)/bracketrightig
+Where (i) is due to convexity of the function f.
+3</text>
+        </slide>
+        <slide>
+          <slideno>7</slideno>
+          <text>gradient descent. Thus, using Mirror descent would be most benecial.
+Other Potential Functions:
+There are other potential functions which are strongly convex w.r.t 1norm. In partic-
+ular, for
+1(x) =|x|p 1
+p, p= 1+p log(d)
+then  is c/radicalbig
+log(d)-strongly convex w.r.t 1norm.
+8</text>
+        </slide>
+        <slide>
+          <slideno>5</slideno>
+          <text>Dene ( x) to be the negative entropy so that:
+d
+(x) =/summationdisplay
+xilog(xi), (x) =(x) ={1+log(xdi)
+i=1}i=1
+(s+1)(s)(s+1)Thus, looking at the update function y= (x)gs, we get log( yi) =
+(s)log(xi)(s) (s+1) ( s) (s)giand for all i= 1,,d, we have yi=xiexp(gi). Thus,
+y(s)=x(s)exp(g(s)).
+We call this setup exponential Gradient Descent or Mirror Descent with multiplicative
+weights.
+The Bregman divergence of this mirror map is given by
+D(y,x) = (y)(x)(x)(yx)
+/summationdisplayd /summationdisplayd d
+=yilog(yi)xilog(xi)(1+log( xi))(yixi)
+i 1/summationdisplay
+i
+=1 i
+= =1
+/summationdisplaydyi=yilog()+xii=1/summationdisplayd
+(yi
+i=1xi)
+Note that/summationtextd
+i=1yilog(yi
+i) is call the Kullback-Leibler divergence (KL-div) between yx
+andx.
+We show that the projection with respect to this Bregman divergence on the simplex
+d={xdR:d
+i=1xi= 1,xi0}amounts to a simple renormalization y/mastoy/|y|1. To
+prove so, we prov/summationtext
+ide the Lagrangian:
+/summationdisplayd /summationdisplayd dyLi=yilog()+(xixii=1 i=yi)+(
+1/summationdisplay
+xi
+i=11).
+To nd the Bregman projection, for all i= 1,,dwe write
+ yL i= +1+ = 0xixi
+Thus, for all i, we have xi=yi. We know that/summationtextd
+i=1xi= 1. Thus, =1/summationtextyi.
+Thus, we have  y
+d(y) =
+1. The Mirror Descent algorithm with this update and|y|
+projection would be:
+ys+1=xsexp(gs)
+yxs+1=.|y|1
+To analyze the rate of convergence, we want to study the 1norm on  d. Thus, we have
+to show that for some ,  is-strongly convex w.r.t ||1on d.
+6</text>
+        </slide>
+        <slide>
+          <slideno>6</slideno>
+          <text>D(y,x) =KL(y,x)+/summationdisplay
+(xi
+iyi)
+=KL(y,x)
+12|xy|2
+1
+Where we used the fact that x,ydto showi(xiyi) = 0 and used Pinsker
+inequality show the result. Thu/summationtexts,  is 1-strongly conve/summationtext
+x w.r.t.||1on d.
+Remembering that ( x) =d
+i=1xilog(xi) was dened to be negative entropy, we know
+thatlog(d)(x)0 forxd. Thus,
+R2= max( x)
+xdmin (x) = log(d).
+xd
+Corollary: Letfbe a convex function on  dsuch that
+/badblg/badblL,gf(x),xd.
+2log(d)Then, Mirror descent with =1/radicalig
+givesL k
+2log(d) 2log(d)f(xk)f(x)L/radicalbigg
+, f(x
+k)f(x)kL/radicalbigg
+k
+Boosting: For weak classiers f1(x),,fN(x) andn, we dene
+N f1(x)
+.f=
+/summationdisplay
+jfjandF(x) =
+j=1..
+fN(x)
+so thatf(x) is the weighted majority vote classier. Note that |F|1.
+As shown before, in boosting, we have:
+n
+g=R/hatwide1
+n,(f) =/summationdisplay
+(yif(xi))(yi)F(xi),ni=1
+Since|F| 1 and|y| 1, then|g| LwhereLis the Lipschitz constant of    
+(e.g., a constant like eor 2).
+/radicalbigg
+/hatwide /hatwide2log(N)Rn,(f
+k)minRn,(f)L
+nk
+We need the number of iterations kn2log(N).
+The functions fjs could hit all the vertices. Thus, if we want to t them in a ball, the
+/radicaligball has to be radius
+N. This is why the projected gradient descent would give the rate of
+N
+k. But by looking at the gradient we can determine the right geometry. In this case, the
+gradient is bounded by sup-norm which is usually the most constraining norm in projected
+7</text>
+        </slide>
+        <slide>
+          <slideno>1</slideno>
+          <text>We will usetheconvex openset D nRwhoseclosure contains theconstraint set C  D.
+Bregman divergence is the error term of the rst order Taylor expansion of the function 
+inD.
+Also, note that the function ( x) is said to be -strongly convex w.r.t. a norm /badbl./badblif
+(y)(x)(x)T (yx)2/badblyx/badbl2.
+We used the following property of the Euclidean norm:
+2ab=/badbla/badbl2+/badblb/badbl2/badblab/badbl2
+in the proof of convergence of projected gradient descent, where we chose a=xsys+1and
+b=xsx.
+To prove the convergence of the Mirror descent algorithm, we use the following property
+oftheBregmandivergence inasimilarfashion. Thispropositionshowsthat theBregmandi-
+vergenceessentially behaves astheEuclideannormsquaredintermsof projections:
+Proposition: Given-strongly dierentiable convex function  : D R, for all
+x,y,z D,
+[(x)(y)](xz) =D(x,y)+D(z,x)D(z,y).
+As described previously, the Bregman divergence is used in each step of the Mirror descent
+algorithm to project the updated value into the constraint set.
+Denition (Bregman Projection): Given-strongly dierentiable convex function
+ :D Rand for all x Dand closed convex set C D
+(x) = argmin DC (z,x)
+zCD
+2.4.2 Mirror Descent Algorithm
+Algorithm 1 Mirror Descent algorithm
+Input:x1argmin ( x),:d dR R such that (x) = (x)CD  
+fors= 1,,kdo
+(ys+1) =(xs)gsforgsf(xs)
+xs+1= (yCs+1)
+end for
+return Eitherx=1
+k/summationtextk
+s=1xsorxargminx x1, ,xkf(x){  }
+Proposition: Letz C D, theny D,
+(((y)(y))((y)z)0
+2</text>
+        </slide>
+      </slides>
+      <videos/>
+    </lecture>
+    <lecture>
+      <lecture_title>Linear Bandits (PDF)</lecture_title>
+      <lecture_pdf_url>https://ocw.mit.edu/courses/18-657-mathematics-of-machine-learning-fall-2015/resources/mit18_657f15_l21/</lecture_pdf_url>
+      <lectureno>21</lectureno>
+      <slides>
+        <slide>
+          <slideno>3</slideno>
+          <text>Note that for all a Awe have
+n
+log(wn+1) = log/parenleftBigg /parenleftBiggn
+a/parenrightBigg/parenrightBigg/summationdisplay
+exp
+A/summationdisplayTa zs
+s=1 /summationdisplay
+.
+s=/an}bracketle{ta ,zs
+1/an}bracketri}ht
+UsingE[zs] =zs, leads to
+n
+E[log(wn+1)] /summationdisplaya ,zs. (6.2)
+s=1/an}bracketle{t /an}bracketri}ht
+We also have that
+log(w1) = log|A| 2klogn. (6.3)
+Plugging (6.2) and (6.3) into (6.1), leads to
+E[Rn]n+E/bracketleftBiggn/bracketrightBigg/summationdisplay/summationdisplay
+pta)(T 2n(at)2klogz+ . (6.4)12 t=1aA
+nIt remains to control the quadratic term E/bracketleftbig/summationtextp a aTz2
+t=1aAt( )(  t) . We use the fact that
+|(j)zt|,|(j)at| 1 to obtain/summationtext /bracketrightbig
+E/bracketleftBiggn n /summationdisplay/summationdisplayT2 T2pt(a)(a zt) = p a)Et(qt[(a zt) ]
+t=1aA/bracketrightBigg/summationdisplay
+t=1a/summationdisplay
+A
+n k
+=/summationdisplay/summationdisplay2 k (j)pt(a)/parenleftbigg
+(1)0+/summationdisplay/parenrightbigg
+[j2a zt]k t=1aA j=1
+(j)n|ajzt|1
+/summationdisplay/summationdisplay k2
+(a)/parenleftbigg2
+t/parenrightbiggkp =n. t=1aA
+Plugging this bound into (6.4), we have
+k22klognE[Rn]n+n+ .2 
+Lettinglogn=1
+/3and=n1/radicalBig
+kn4/3leads to
+E[3/2 2/3Rn]Ck n/radicalbig
+logn.
+Literature: The bound we just proved has been improved in [VKH07] where they show
+O(d3/2nlogn) bound with a better exploration in the algorithm. The exploration that we
+used in the algorithm was coordinate-wise. The key is that we have a linear problem and we
+can use better tools from linear regression such as least square estimation. However, we will
+describe a slightly dierent approach in which we never explore and the exploration is com-
+pletely done with the exponential weighting. This approach also gives a better performance
+in terms of the dependency on k. In particular, we obtain the bound O(dnlogn) which
+coincides with the bound recently shown in [BCK 12] using a Johns ellipsoid.
+4</text>
+        </slide>
+        <slide>
+          <slideno>4</slideno>
+          <text>1Theorem: LetCt=Eatqt[a aT
+t],zt= (aTt tzt)Ctat, and= 0(sothat pt=qt). Using
+Geometric Hedge algorithm with = 2/radicalBig
+lognfor linear bandit with bandit feedbackn
+leads to
+E[Rn]CK/radicalbig
+nlogn.
+Proof.We follow the same lines of the proof as the previous theorem to obtain (6.4). Note
+that the only fact that we used in order to obtain (6.4) is unbiasedness, i.e., E[zt] =zt,
+which holds here as well since
+E[zEt] = [1TCtatatzt] =1CEt[Tatat]zt=zt.
+Note that we can use pseudo-inverse instead of inverse so that invertibility is not an issue.
+Therefore, rewriting (6.4) with = 0, we obtain
+/bracketleftBiggn/summationdisplay/summationdisplayT22klognE[Rn]Eatpt pt(a)(a zt)
+/bracketrightBigg
++ .2 t=1aA
+We now bound the quadratic term as follows
+n n
+T2 T2Eatpt/bracketleftBigg/summationdisplay/summationdisplay
+pt(a)(a zt)/bracketrightBigg
+=/summationdisplay/summationdisplay
+p a)Et(atpt(a zt)
+t=1aA t=1aA/bracketleftbig /bracketrightbig
+CT
+t=C1n nTt, zt=(atzt)Ctat=/summationdisplay
+a)Tp aE t(zT 2ta= pt(T
+t a)Tz aE(1T1atzt)CtatatCta
+t=1a/summationdisplay
+A/bracketleftbig /bracketrightbig/summationdisplay
+t=1a
+T/summationdisplay
+A
+n n|a/bracketleftbig
+tzt|1 E/bracketrightbig
+/summationdisplay/summationdisplayT1 T1[ataT
+p(a)t]=CtT1a CE t tatatCta= pt(a)a Cta
+t=1aA/bracketleftbig /bracketrightbig /summationdisplay
+t=1a/summationdisplay
+A
+n n /summationdisplay/summationdisplaytr(AB)=tr(BA)= ( )tr(T1 1pt r(ta a C a) =/summationdisplay/summationdisplay
+pt(a)tTCtaa)
+t=1aA t=1aA
+n n n
+=/summationdisplay
+tr(1CEtapt[Taa]) =/summationdisplay
+tr(1CtCt) =tr(Ik) =kn.
+t=1 t=1/summationdisplay
+t=1
+Plugging this bound into previous bound yields
+2klognE[Rn]nk+ .2 
+lognLetting= 2/radicalBig
+, leads to E[Rn]nCknlogn.
+References
+[BCK 12] Bubeck, Sbastien, Nicolo Cesa-Bianchi, and Sham M. Kakade. Towards mini-
+max policies for online linear optimization with bandit feedback . arXiv preprint
+arXiv:1202.3079 (2012). APA
+5</text>
+        </slide>
+        <slide>
+          <slideno>0</slideno>
+          <text>18.657: Mathematics of Machine Learning
+Lecturer: Philippe Rigollet Lecture 21
+Scribe:Ali Makhdoumi Nov. 25, 2015
+6. LINEAR BANDITS
+Recall form last lectures that in prediction with expert advise, at each time t, the player
+playsat {e1,...,ek}and the adversary plays ztsuch that l(at,zt)1 for some loss
+function. One example of such loss function is linear function l(at,zt) =aT
+tztwhere|zt|
+1. Linear bandits are a more general setting where the player selects an action at A Rk,
+whereAis a convex set and the adversary selects zTt Zsuch that |ztat| 1. Similar to
+the prediction with expert advise, the regret is dened as
+Rn=E/bracketleftBiggn n/summationdisplayTAtzt/bracketrightBigg
+minTa zt,
+aKt=1/summationdisplay
+t=1
+whereAtis a random variable in A. Note that in the prediction with expert advise, the set
+Awas essentially apolyhedronandwehadminn TaK aTzt=1 t= min1jke zjt. However, in
+the linear bandit setting the minimizer of aTztcan be any point of the set Aand essentially
+the umber experts that the player tries to comp/summationtext
+ete with are innity. Similar, to the
+prediction with expert advise we have two settings:
+1Full feedback: after time t, the player observes zt.
+2Bandit feedback: after time t, the player observes AT
+tzt, whereAtis the action that
+player has chosen at time t.
+We next, see if we can use the bounds we have developed in the prediction with expert
+advise in this setting. In particular, we have shown the following bounds for prediction
+with expert advise:
+1Prediction with kexpert advise, full feedback: Rn2nlogk.
+2Prediction with kexpert advise, bandit feedback: Rn2nklogk.
+The idea to deal with linear bandits is to discretize the set A. Suppose that Ais bounded
+(e.g.,A B2, whereB2is thel2ball inRk). We can use a1-covering ofnAwhich we
+have shown to be of size (smaller than) O(nk). This means there exist y1,...,y|N|such that
+for anya A, there exist yisuch that ||yia|| 1. We now can bound the regret forn
+general case, where the experts can be any point in A, based on the regret on the discrete
+set,N={y1,...,y|N|},as follows.
+Rn=E/bracketleftBiggn/bracketrightBiggn /summationdisplayTAtzt
+t1minTa ztaA= t=1/bracketleftBiggn/summationdisplay
+n
+=E/summationdisplayTAtzt/bracketrightBigg
+minTa zt+o(1).
+aNt=1/summationdisplay
+t=1
+Therefore, werestrictactions Attoacombinationoftheactionsthatbelongto {y1,...,y|N|}
+(we can always do this), then using the bounds for the prediction with expert advise, we
+obtain the following bounds:
+1</text>
+        </slide>
+        <slide>
+          <slideno>2</slideno>
+          <text>Proof.Let the overall distribution of atbeqtdened as qt= (1)pt+U, whereUis a
+uniform distribution over the set {e1,...,e k}. Under this distribution, ztis an unbiased
+estimator of zt, i.e.,
+kk(Eatqt[zt] = 0(1j))+/summationdisplay
+ztej=zt.k j=1
+following thesamelines of theproofthat wehadforanalyzingexponential weight algorithm,
+we will dene
+1
+wt= e p z
+aA/parenleftBiggt
+xTas
+s=1/parenrightBigg/summationdisplay/summationdisplay
+.
+We then have
+log/parenleftbiggwt+1/parenrightbigg
+= log/parenleftBigg/summationdisplayTpt(a)exp a ztwta/parenleftbig
+
+A/parenrightBigg
+/parenrightbig
+e2x1x+x
+2log/parenleftBigg/summationdisplayT1( )/parenleftbigg
+1 +2(T2pta a z t a zs)2aA/parenrightbigg/parenrightBigg
+(T1= log/parenleftBigg
+1+/summationdisplay
+)/parenleftbigg
+ +2(T2pta a z t a zt)2aA/parenrightbigg/parenrightBigg
+log(1+x)x
+/summationdisplayT12pt(T2a)/parenleftbigg
+a zt+(a zt)2aA/parenrightbigg
+.
+Taking expectation from both sides leads to
+Eatqt/bracketleftbiggwt+1log/parenleftbigg
+wt/parenrightbigg/bracketrightbigg
+ Eatqt/bracketleftBigg
+pt(a)Ta zt
+aA/bracketrightBigg/bracketleftBigg/summationdisplay 2
++TEatqt/summationdisplay2pt(a)(a zt)2aA/bracketrightBigg
+=/bracketleftbig2
+TEtptatzt/bracketrightbig
++2E a aqpt(a)(Ta zt)2t t/bracketleftBigg
+a/summationdisplay
+A/bracketrightBigg
+2qt=(1)pt+U= Eatqt/bracketleftbigT atzT 2E t a/bracketrightbig
++1 U1tzTa t+Et a2tqt/bracketleftBigg
+pt(a)(a zt)
+aA/bracketrightBigg
+aTzt1/bracketleftbig /bracketrightbig  2/bracketleftbig /bracketrightbig /summationdisplay
+tTEatqtatzt+ + qt/bracketleftBigg/summationdisplayT2Eat pt(a)(a z1 1t)2aA/bracketrightBigg
+.
+We next, take summation of the previous relation for t= 1 up to nand use a telescopic
+cancellation to obtain
+n nT 2
+T2E[logw E+][logw1]E n1/bracketleftBigg/summationdisplay
+atzt/bracketrightBigg
++n+E pt(a)(a z1t) 12t=1/bracketleftBigg/summationdisplay
+t=1a/summationdisplay
+A/bracketrightBigg
+n n 2
+E[log ]E/bracketleftBigg/summationdisplayT Tatz2w1 t/bracketrightBigg
++n+E pt(a)(a zt).(6.1)12t=1/bracketleftBigg/summationdisplay
+t=1aA/bracketrightBigg/summationdisplay
+3</text>
+        </slide>
+        <slide>
+          <slideno>1</slideno>
+          <text>1Linear bandit, full feedback: Rn/radicalbig
+2nlog(nk) =O(knlogn), which in terms
+of dependency to nis of order O(n) that is what we expect to have.
+2Linear bandit, bandit feedback: Rn/radicalbig
+2nnklog(nk) = (n), which is useless in
+terms of dependency of nas we expect to obtain O(n) behavior.
+The topic of this lecture is to provide bounds for the linear bandit in the bandit feedback.
+Problem Setup: Let us recap the problem formulation:
+at timet, player chooses action at A [1,1]k.
+at timet, adversary chooses zt Z Rk, whereaT
+tzt=/an}bracketle{tat,zt/an}bracketri}ht [0,1].
+Bandit feedback: player observes /an}bracketle{tat,zt/an}bracketri}ht( rather than ztin the full feedback setup).
+Literature: O(n3/4) regret bound has been shown in [BB04]. Later on this bound has
+been improved to O(n2/3) in [BK04] and [VH06] with Geometric Hedge algorithm, which
+we will describe and analyze below. We need the following assumption to show the results:
+Assumption: There exist such that e1,...,e k A. This assumption guarantees that
+Ahas full-dimension around zero.
+We also discretize Awith a1-net of size Cnkand only consider the resulting discrete setn
+and denote it by A, where|A| (3n)k. All we need to do is to bound
+Rn=E/bracketleftBiggn/summationdisplayTAtzt/bracketrightBiggn
+min/summationdisplayTa zt.
+aAt=1 t=1
+For anytanda, we dene
+t1exp
+t(/parenleftBig
+ zs=1T
+sa
+p a) = ,t1
+aAexp/summationtext/parenrightBig
+/parenleftBig
+ zs=1Tsa/parenrightBig
+whereis a parameter (that we will/summationtext
+choose later) an/summationtext
+dztis denedto incorporate the idea of
+exploration versus exploitation. The algorithm which is termed Geometric Hedge Algorithm
+is as follows:
+At timetwe have
+Exploitation: with probability 1 drawataccording to ptand letzt= 0.
+Exploration: with probabilityletat=ejfor some 1kjkandzt=
+k j)
+2/an}bracketle{t(akt,zta/an}bracketri}htt=z e tj.
+Note that is the the parameter that we have by assumption on the set A, andand
+are the parameters of the algorithm that we shall choose later.
+Theorem: Using Geometric Hedge algorithm for linear bandit with bandit feedback,
+with=1=g
+1/3and/radicalBig
+lon
+4/3, we haven kn
+E[Rn]2/3Cn/radicalbig
+log3/2n k .
+2</text>
+        </slide>
+        <slide>
+          <slideno>6</slideno>
+          <text>MIT OpenCourseWare
+http://ocw.mit.edu
+18.657 Mathematics of Machine Learning
+Fall 2015
+For information about citing these materials or our Terms of Use, visit: http://ocw.mit.edu/terms .</text>
+        </slide>
+        <slide>
+          <slideno>5</slideno>
+          <text>[BB04] McMahan, H. Brendan, and Avrim Blum. Online geometric optimization in the
+bandit setting against an adaptive adversary . Conference on Learning theory
+(COLT) 2004.
+[VH06] Dani, Varsha, and ThomasP. Hayes. Robbing the bandit: Less regret in online geo-
+metric optimization against an adaptive adversary . Proceedings of the seventeenth
+annual ACM-SIAM symposium on Discrete algorithm. Society for Industrial and
+Applied Mathematics, 2006.
+[BK04] Awerbuch, Baruch, and Robert D. Kleinberg. Adaptive routing with end-to-end
+feedback: Distributed learning and geometric approaches .Proceedings of thethirty-
+sixth annual ACM symposium on Theory of computing. ACM, 2004.
+[VKH07] Dani, Varsha, Sham M. Kakade, and Thomas P. Hayes, The price of bandit in-
+formation for online optimization , Advances in Neural Information Processing
+Systems. 2007.
+6</text>
+        </slide>
+      </slides>
+      <videos/>
+    </lecture>
+    <lecture>
+      <lecture_title>Potential Based Approachability (PDF)</lecture_title>
+      <lecture_pdf_url>https://ocw.mit.edu/courses/18-657-mathematics-of-machine-learning-fall-2015/resources/mit18_657f15_l23/</lecture_pdf_url>
+      <lectureno>23</lectureno>
+      <slides>
+        <slide>
+          <slideno>5</slideno>
+          <text>MIT OpenCourseWare
+http://ocw.mit.edu
+18.657 Mathematics of Machine Learning
+Fall 2015
+For information about citing these materials or our Terms of Use, visit: http://ocw.mit.edu/terms .</text>
+        </slide>
+      </slides>
+      <videos/>
+    </lecture>
+    <lecture>
+      <lecture_title>Adversarial Bandits (PDF)</lecture_title>
+      <lecture_pdf_url>https://ocw.mit.edu/courses/18-657-mathematics-of-machine-learning-fall-2015/resources/mit18_657f15_l20/</lecture_pdf_url>
+      <lectureno>20</lectureno>
+      <slides>
+        <slide>
+          <slideno>2</slideno>
+          <text>Fort= 1, we initialize w1,j= 1, soW1=K.
+Since IE1 p
+J=Pa ,t/summationtextK j,tKj=1= , the expression above becomespt j,t
+IElog(n 2KnWn+1)logK /summationtext
+tl a=1(t,zt)+2 Noting that log( Wn+1) = log(/summationtextK
+j=1exp(/summationtextt1l e ,zs=1(j s))
+and dening j= argmin1jK/summationtextnlt=1(ej,zt), we obtain:
+K t1 t1
+log(Wn+1)log(/summationdisplay
+exp(/summationdisplay
+l(ej,zs))) =/summationdisplay
+l(ej,zs)
+j=1 s=1 s=1
+Together:
+n nlogKKn /summationdisplay
+l(at,zt)min tj/summationdisplay
+l(ej,z)
+Kt t=1 +
+1 2=1
+The choice of :=2logKnKyields the bound Rn2KlogKn.
+3</text>
+        </slide>
+        <slide>
+          <slideno>3</slideno>
+          <text>MIT OpenCourseWare
+http://ocw.mit.edu
+18.657 Mathematics of Machine Learning
+Fall 2015
+For information about citing these materials or our Terms of Use, visit: http://ocw.mit.edu/terms .</text>
+        </slide>
+        <slide>
+          <slideno>1</slideno>
+          <text>Lemma: l(ej,zt) is an unbiased estimator of l(ej,zt)
+K I(P l(e e =roof.Ek,zt)1ket)
+atl(ej,zt) =/summationtextPk=1 (a=e) =l(e ,z)P(at=ej) tk j t
+Denition (Exp 3 Algorithm): Let &gt;0 be xed. Dene the exponential weights
+as
+/summationtextt1(j) exp( l(ej,zs))ps=1
+t+1,j=/summationtextk
+l=1exp(/summationtextt1ls=1(ej,zs))
+(Exp3 stands for Exponential weights for Exploration and Exploitation.)
+We will show that the regret of Exp3 is bounded by2nKlogK. This bound is
+K
+times bigger than the bound on the regret under the full feedback. The
+Kmultiplier is
+the price of have smaller information set at the time t. The are methods that allow to get
+rid of log Kterm in this expression. On the other hand, it can be shown that
+2nKis the
+optimal regret.
+/summationtextt/summationtextK1W eProof.LetWt,j= exp(k l(e ,=jzs)),W1 t=/summationtextWs j=1t,j, andp=j=1t,j j
+t W.t
+W/summationtextK(/summationtext1exptle ,z l e ,zt+1 j=1 s=1(j s))exp( ( j t))
+log( ) = log( ) (5.1)W/summationtextKet
+xp(/summationtext1t ls=1(ej,zj=1 s))
+t1
+ = log(IE Jptexp(/summationdisplay
+l(eJ,zs))) (5.2)
+s=1
+ 2
+log(12IEJptl(eJ,z s)+IEJptl(eJ,zs) (5.3)2
+  where inequality is obtained by plugging in IE Jptl(eJ,zt) into the inequality
+2x2
+expx1x+2
+.
+K Kl(ej,zt)1I(a e)IEJptl(eJzt) =/summationdisplayt=j, pt,jl(eJ,zt) =/summationdisplay
+pt,j =l(at,zt) (5.4)P(at=ej)j=1 j=1
+K Kl2
+2 (ej,zt)1I(a)  t=ejIEJptl(eJ,zt) =/summationdisplay
+pt,jl2(eJ,zt) =/summationdisplay
+pt,j (5.5)P2(at=ej)j=1 j=1
+l2(ej,zt)1=Pat,t (5.6)Pat,t
+Summing from 1 through n, we get
+log(Wt+1)2log(n
+1)/summationtextlt=1(at,zt)+W2/summationtext
+1.
+Pa ,tt
+2</text>
+        </slide>
+        <slide>
+          <slideno>0</slideno>
+          <text>18.657: Mathematics of Machine Learning
+Lecturer: Philippe Rigollet Lecture 20
+Scribe:Vira Semenova Nov. 23, 2015
+In this lecture, we talk about the adversarial bandits under limited feedback. Adver-
+sarial bandit is a setup in which the loss function l(a,z) :AxZis determinitic. Lim-
+ited feedback means that the information available to the DM after the step tisIt=
+{l(a1,z1),...,l(at1,zt)}, namely consits of the realised losses of the past steps only.
+5. ADVERSARIAL BANDITS
+Consider the problem of prediction with expert advice. Let the set of adversary moves be Z
+and the set of actions of a decision maker A={e1,...,eK}. At time t,at Aandzt Zare
+simultaneously revealed.Denote the loss associated to the decision at Aand his adversary
+playingztbyl(at,zt). We compare the total loss after nsteps to the minimum expert loss,
+namely:
+n
+min
+ /summationdisplay
+lt(ej,zt),
+1j Kt=1
+whereejis the choice of expert j {1,2,..,K}.
+The cumulative regret is then dened as
+n n
+Rn=/summationdisplay
+lt(at,zt)min/summationdisplay
+lt(ej,zt)
+1jKt=1 t=1
+The feedback at step tcan be either full or limited. The full feedback setup means that
+thevector f= (l(e1,zt),...,l(eK,zt)) oflossesincurredatapairofadversaryschoice ztand
+each bandit ej {e1,...,eK}is observed after each step t. Hence, the information available
+to the DM after the step tisI=t t {l(a1,zt),...,l(aK,zt=1 t)}. The limited feedback means
+that the time tfeedback consists of the realised loss l(at,zt) only. Namely, the information
+available to the DM is It={l(a1,z1),...,l(at,zt)}. An example of the rst setup is portfolio
+optimization problems, where the loss of all possible portfolios is observed at time t. An
+example of the second setup is a path planning problem and dynamic pricing, where the
+loss of the chosen decision only is observed. This lecture has limited feedback setup.
+The two strategies, dened in the past lectures, were exponential weights, which yield
+the regret of order RncnlogKand Follow the Perturbed Leader. We would like to
+play exponential weights, dened as:
+1exp(tpt,j/summationtextl=s=1(ej,zs))/summationtextk
+l=1exp(/summationtextt1ls=1(ej,zs))
+This decision rule is not feasible, since the loss l(ej,zt) are not part of the feedback if
+ej=at. We will estimate it by
+l(ej,zt)1I(at=ej)l(ej,zt) =P(at=ej)
+1/ne}ationslash</text>
+        </slide>
+      </slides>
+      <videos/>
+    </lecture>
+    <lecture>
+      <lecture_title>The VC Inequality (PDF)</lecture_title>
+      <lecture_pdf_url>https://ocw.mit.edu/courses/18-657-mathematics-of-machine-learning-fall-2015/resources/mit18_657f15_l5/</lecture_pdf_url>
+      <lectureno>5</lectureno>
+      <slides>
+        <slide>
+          <slideno>3</slideno>
+          <text>We apply this result to our problem by observing that
+Rn(A) = sup (
+,Rn(T z))
+z1,... zn
+whereT(z) is dened in (4.1). In particular, since T(z) {0,1}, we have |b|2n
+for allbT(z). Moreover, by denition of the shatter coecients, if B=T(z), then
+|B| 2|T(z)| 2SA(n). Together with the above lemma, it yields the desired inequality:
+/radicalbigg
+2log(2SA(n))Rn(A) .n
+Step 3: Sauer-Shelah Lemma
+We need to use a lemma from combinatorics to relate the shatter coecients to the VC
+dimension. A priori, it is not clear from its denition that the VC dimension may be at
+all useful to get better bounds. Recall that steps 1 and 2 put together yield the following
+bound
+2log(2S(n))IE[sup n(A)
+A(A) ]
+A| | A2/radicalbigg
+(4.3)n
+In particular, if SA(n) is exponential in n, the bound (4.3) is not informative, i.e., it does
+not imply that the uniform deviations go to zero as the sample size ngoes to innity. The
+VC inequality suggest that this is not the case as soon as VC(A)&lt;but it is not clear a
+priori. Indeed, it may be the case that
+VCSA(n) = 2nforndandSA(n) = 2n1 forn &gt; d,
+which would imply that ( A) =d &lt;but that the right-hand side in (4.3) is larger than
+2 for alln. It turns our that this can never be the case: if the VC dimension is nite, then
+the shatter coecients are at most polynomial inn. This result is captured by the Sauer-
+Shelah lemma, whose proof is omitted. The reading section of the course contains pointers
+to various proofs, specically the one based on shiftingwhich is an important technique in
+enumerative combinatorics.
+Lemma (Sauer-Shelah): IfVC(A) =d, thenn1,
+d
+SA(n)/summationdisplay/parenleftbiggn en d
+.k/parenrightbigg
+dk=0/parenleftig /parenrightig
+Together with (4.3), it clearly yields the VC inequality. By applying the bounded dierence
+inequality, we also obtain the following VC inequality that holds with high probability. This
+is often the preferred from for this inequality in the literature.
+Corollary (VC inequality): For any family of sets Asuch that VC(A) =dand any
+(0,1), it holds with probability at least 1 ,
+/radicalbigg
+2dlog(2en/d)/radicalbigg
+log(2/)supnA)(A)| 2 +
+AA|( .n 2n
+4</text>
+        </slide>
+        <slide>
+          <slideno>1</slideno>
+          <text>IfSA(n) = 2nfor all positive integers n, thenVC(A) :=
+In words, Ashatters someset of points of cardinality dbut shatters noset of points of
+cardinality d+1. In particular, Aalso shatters no set of points of cardinality d&gt; dso that
+the VC dimension is well dened.
+Inthesequel, wewillseethattheVCdimensionwillplaytherolesimilartoofcardinality,
+but on an exponential scale. For interesting classes Asuch that card( A) =, we also may
+haveVC(A)&lt;. For example, assume that Ais the class of half-lines ,A={(,a],a
+IR} {[a,),aIR}, which is clearly innite. Then, we can clearly shatter a set of size
+2 but we for three points z1,z2,z3,IR, if for example z1&lt; z2&lt; z3, we cannot create the
+pattern (0 ,1,0) (see Figure 4.1). Indeed, half lines can can only create patterns with zeros
+followed by ones or with ones followed by zeros but not an alternating pattern like (0 ,1,0).
+00
+10
+01
+11000
+100
+110
+111
+001
+011
+101
+Figure 1: If A={halines}, then any set of size n= 2 is shattered because we can
+create all 2n= 4 0/1 patterns (left); if n= 3 the pattern (0 ,1,0) cannot be reconstructed:
+SA(3) = 7&lt;23(right). Therefore, VC(A) = 2.
+4.2 The VC inequality
+We have now introducedall the ingredients necessary tostate themain result of this section:
+the VC inequality.
+Theorem (VC inequality): For any family of sets Awith VC dimension VC(A) =d,
+it holds /radicalbigg
+2dlog(2en/d)IE sup|n(A)(A)| 2
+AA n
+Notethatthisresultholdsevenif AisinniteaslongasitsVCdimensionisnite. Moreover,
+observe that log( |A|) has been replaced by a term of order dlog 2en/d.
+To prove the VC inequality, we proceed in three steps:/parenleftbig /parenrightbig
+2</text>
+        </slide>
+        <slide>
+          <slideno>0</slideno>
+          <text>18.657: Mathematics of Machine Learning
+Lecturer: Philippe Rigollet Lecture
+Scribe:Vira Semenova andPhilippe Rigollet Sep. 23, 2015
+In this lecture, we complete the analysis of the performance of the empirical risk mini-
+mizer under a constraint on the VC dimension of the family of classiers. To that end, we
+will see how to control Rademacher complexities using shatter coecients. Moreover, we
+will see how the problem of controlling uniform deviations of the empirical measure nfrom
+the true measure as done by Vapnik and Chervonenkis relates to our original classication
+problem.
+4.1 Shattering
+Recall from the previous lecture that we are interested in sets of the form
+T(z) :=/braceleftbig
+(1I(z1A),...,1I(znA)),A A, z= (z1,...,zn). (4.1)
+In particular, the cardinality of T(z), i.e., the numbe/bracerightbig
+r of binary patterns these vectors
+can replicate as Aranges over A, will be of critical importance, as it will arise when
+controlling the Rademacher complexity. Although the cardinality of Amay be innite, the
+cardinality of T(z) is always at most 2n. When it is of the size 2n, we say that Ashatters
+the setz1,...,zn. Formally, we have the following denition.
+Denition: A collection of sets Ashatters the set of points {z1,z2,...,zn}
+card{(1I(z1A),...,1I(znA)),A A}= 2n.
+The sets of points {z1,z2,...,zn}that we are interested are realizations of the pairs Z1=
+(X1,Y1),...,Z n= (Xn,Yn) and may, in principle take any value over the sample space.
+Therefore, we dene the shatter coecient to be the largest cardinality that we may obtain.
+Denition: Theshatter coecients of a class of sets Ais the sequence of numbers
+{SA(n)}n1, where for any n1,
+SA(n) = sup card (1I( z1A),...,1I(znA)),A
+z1,...,zn{    A}
+and the suprema are taken over the whole sample space.
+Bydenition,the nthshattercoecient SA(n)isequalto2nifthereexistsaset {z1,z2,...,zn}
+thatAshatters. The largest of such sets is precisely the Vapnik-Chervonenkis or VC di-
+mension.
+Denition: The Vapnik-Chervonenkis dimension, or VC-dimension of
+dVCAis the largest
+integerdsuch that SA(d) = 2 . We write ( A) =d.
+15</text>
+        </slide>
+        <slide>
+          <slideno>5</slideno>
+          <text>When applying XOR componentwise, we have
+
+1I(h(x1) =y1)
+1I(h(x1= 1) y
+ ..
+) 1 ..
+ .
+1I(h(xi) .
+
+=yi) = 1I(h(xi) = 1)
+..
+.
+.
+ .
+.
+1I(h(xn) =yn)
+ 
+ 
+1I(h(xn) = 1)...
+yi
+ ...
+yn 
+
+Since XOR is a bijection, we must have card[ T(x,y)] = card[ T(x)]. The lemma follows
+by taking the supremum on each side of the equality.
+It yields the following corollary to the VC inequality.
+Corollary: LetHbe a family of classiers with VC dimension d. Then the empirical
+ risk classier hermoverHsatises
+erm/radicalbigg
+2dlog(2en/d)R(h)minR(h)+4 +
+hH n/radicalbigg
+log(2/)
+2n
+with probability 1 .
+Proof.Recall from Lecture 3 that
+R(herm)min )   R(h2sup
+hH hH
+The proof follows directly by applyi/vextendsingle/vextendsingleRn(h)R(h)/vextendsingle
+ng (4.4) and the above lemma./vextendsingle
+6/ne}ationslash
+/ne}ationslash
+/ne}ationslash</text>
+        </slide>
+        <slide>
+          <slideno>6</slideno>
+          <text>MIT OpenCourseWare
+http://ocw.mit.edu
+18.657 Mathematics of Machine Learning
+Fall 2015
+For information about citing these materials or our Terms of Use, visit: http://ocw.mit.edu/terms .</text>
+        </slide>
+        <slide>
+          <slideno>4</slideno>
+          <text>Note that the logarithmic term log(2 en/d) is actually superuous and can be replaced
+by a numerical constant using a more careful bounding technique. This is beyond the scope
+of this class and the interested reader should take a look at the recommending readings.
+4.3 Application to ERM
+The VC inequality provides an upper bound for supAA|n(A)(A)|in terms of the VC
+dimension of the class of sets A. This result translates directly to our quantity of interest:
+2VC( )log2en)sup|Rnh)VC(A)log(2/(R(h) 2n/parenrightbig
++
+hH/radicaligg
+A
+|/parenleftbig /radicalbigg
+(4.4)2n
+whereA={Ah:h H}andAh={(x,y) X {0,1}:h(x) =y}. Unfortunately, the
+VC dimension of this class of subsets of X {0,1}is not very natural. Since, a classier h
+is a{0,1}valued function, it is more natural to consider the VC dimension of the family
+A=/braceleftbig
+{h= 1}:h H/bracerightbig
+.
+Denition: LetHbe a collection of classiers and dene
+A={h= 1}:h H
+We dene the VC d/braceleftbig
+imension VC( ) o/bracerightbig
+=/braceleftbig
+A:h H,h() = 1I( A).
+H  fHto be the VC dimension of/bracerightbig
+A.
+  It is not clear how VC(A) relates to the quantity VC(A), where A={Ah:h H}and
+Ah={(x,y) X {0,1}:h(x) =y}that appears in the VC inequality. Fortunately, these
+two are actually equal as indicated in the following lemma.
+Lemma: Dene the two families for sets: = AXh:h 2{0,1}where
+{ A {  H} 
+Ah= (x,y) X {0,1}:h(x) =y}andA=/braceleftbig
+{h= 1 :h 2X.
+S S  VCA}  H 
+Then,A(n) =A(n) for alln1. It implies ( ) = VC(A/bracerightbig
+).
+Proof.Fixx= (x1,...,xn) Xnandy= (y1,y2,...,yn) {0,1}nand dene
+T(x,y) ={(1I(h(x1) =y1),...,1I(h(xn) =yn)),h H}
+and
+T(x) ={(1I(h(x1) = 1),...,1I(h(xn) = 1)),h H}
+To that end, x v {0,1}and recall the XOR (exclusive OR) boolean function from {0,1}
+to{0,1}dened by uv= 1I(u=v). It is clearly1a bijection since ( uv)v=u.
+1One way to see that is to introduce the spinned variables u = 2u1 andv = 2v1 that live in
+/tildewider {1,1}. Thenuv=uv, and the claim follows by observing that ( uv)v =u. Another way is to simply
+write a truth table.
+5/ne}ationslash
+/ne}ationslash
+/ne}ationslash
+/ne}ationslash /ne}ationslash
+/ne}ationslash</text>
+        </slide>
+        <slide>
+          <slideno>2</slideno>
+          <text>1. Symmetrization, to bound the quantity of interest by the Rademacher complexity:
+IE[sup|n(A)(A)|]2Rn( )
+AAA.
+We have already done this step in the previous lecture.
+2. Control of the Rademacher complexity using shatter coecients. We are going to
+show that
+gR(A)/radicaligg
+2lo
+n/parenleftbig
+2SA(n)
+n/parenrightbig
+3. We are going to need the Sauer-Shelah lemma to bound the shatter coecients by
+the VC dimension. It will yield
+S(n)/parenleftigen/parenrightigd
+, d=VC A (dA).
+Put together, these three steps yield the VC inequality.
+Step 2: Control of the Rademacher complexity
+We prove the following Lemma.
+Lemma: For anyBIRn, such that |B|&lt;:, it holds
+n/bracketleftbig/vextendsingle1 2/vextendsingle )B/bracketrightbig (Rn( ) = IE max /vextendsingle/summationdisplay log 2B
+ibi/vextendsinglemax| |
+bBn bBi=1|b|2/radicalbig
+n
+where||2denotes the Euclidean norm.
+Proof.Note that
+1Rn(B) = IEn/bracketleftbig
+maxZb,
+bB|
+whereZb=/summationtextn
+i=1ibi. In particular, since/vextendsingle/vextendsingle/bracketrightbig
+|bi| i|bi|  |bi|, a.s., Hoedings lemma
+implies that the moment generating function of Zbis controlled by
+n n
+IE/bracketleftbig
+exp(sZb)/bracketrightbig
+=/productdisplay
+IE
+i=1/bracketleftbig
+exp(sibi)/bracketrightbig
+/productdisplay
+exp(s2b2
+i/2) = exp( s2b2
+2/2) (4.2)
+i=1| |
+Next, to control IE max bBZb|, we use the same technique as in Lecture 3, section 1.5.
+ To that end, dene/bracketleftbig
+B=B/vextendsingle/vextendsingle
+{B/bracketrightbig
+}and observe that for any s &gt;0,
+IE/bracketleftbigg1max|Zb|/bracketrightbigg
+= IE/bracketleftbigg
+maxZb/bracketrightbigg
+= logexp/parenleftbigg
+sIE/bracketleftbigg
+maxZb/bracketrightbigg/parenrightbigg1logIE exp smaxZb,
+bB bB s bB s/bracketleftbigg /parenleftbigg
+bB/parenrightbigg/bracketrightbigg
+where the last inequality follows from Jensens inequality. Now we bound the max by a
+sum to get/bracketleftbigg /bracketrightbigg1/summationdisplay log|B|s b2
+IE max|Zb| log IE[exp( sZb)] +| |2,
+bB s s2n
+bB
+where in the last inequality, we used (4.2). Optimizing over s &gt;0 yields the desired
+result.
+3</text>
+        </slide>
+      </slides>
+      <videos/>
+    </lecture>
+    <lecture>
+      <lecture_title>Stochastic Bandits (PDF)</lecture_title>
+      <lecture_pdf_url>https://ocw.mit.edu/courses/18-657-mathematics-of-machine-learning-fall-2015/resources/mit18_657f15_l18/</lecture_pdf_url>
+      <lectureno>18</lectureno>
+      <slides>
+        <slide>
+          <slideno>0</slideno>
+          <text>18.657: Mathematics of Machine Learning
+Lecturer: Philippe Rigollet Lecture 1
+Scribe:Haihao (Sean) Lu Nov. 2, 2015
+3. STOCHASTIC BANDITS
+3.1 Setup
+The stochastic multi-armed bandit is a classical model for decision making and is dened
+as follows:
+There are Karms(dierent actions). Iteratively, a decision maker chooses an arm k
+{1,...,K}, yielding a sequence XK,1,...,X K,t,..., which are i.i.d random variables with
+meank. Dene = max jjor argmax. A policy is a sequence {t}t1, which
+indicates which arm to be pulled at time t.t {1,...,K}and it depends only on the
+observations strictly interior to t. The regret is then dened as:
+n n
+Rn= maxIE[ XK,t]IE[Xt,t]
+k/summationdisplay
+t=1/summationdisplay
+t=1
+n
+=nIE[/summationdisplay
+Xt,t]
+t=1
+n
+=nIE[IE[
+K/summationdisplay
+Xt,t|t]]
+t=1
+=/summationdisplay
+kIE[Tk(n)],
+k=1
+nwhere  k=kandTk(n) =/summationtext
+t=11I(t=k) is the number of time when arm kwas
+pulled.
+3.2 Warm Up: Full Info Case
+X1,t
+.Assume in this subsection that K= 2 and we observe the full information
+..
+at
+XK,t
+timetafter choosing t. So in each iteration, a normal idea is to choose
+the arm
+with
+highest average return so far. That is
+ t= argmax Xk,t
+k=1,2
+where
+1Xk,t=tt/summationdisplay
+s=1
+Assume from now on that all random variable Xk,tare subGaussian with variance proxy
+2 2
+2, which means IE[ euxu ]e2for alluIR. For example, N(0,2) is subGaussian withXk,s
+18</text>
+        </slide>
+        <slide>
+          <slideno>2</slideno>
+          <text>Algorithm 1 Upper Condence Bound (UCB)
+fort= 1 toKdo
+t=t
+end for
+fort=K+1 tondo
+t1
+Tk(t) =/summationdisplay
+1I(t=k)
+s=1
+(number of time we have pull arm kbefore time t)
+1k,t=/summationdisplay
+XK,tsTk(t)s=1
+logt)targmax/braceleftigg
+2 (k,t+2
+k[K]/radicaligg
+Tk(t)/bracerightigg
+,
+end for
+Theorem: The UCB policy has regret
+K /summationdisplaylogn 2
+Rn8 +(1+ )k 3k,k&gt;0/summationdisplay
+k
+k=1
+Proof.From now on we x ksuch that  k&gt;0. Then
+n
+IE[Tk(n)] = 1+
+t=/summationdisplay
+IP(t=k).
+K+1
+Note that for t &gt; K,
+2logt 2logt{t=k}  {k,t+2/radicaligg
+,t+2 }Tk(t)/radicaligg
+T(t)
+/braceleftigg /radicaligg
+2logt/radicaligg
+/uniondisplay 2logt 2logt {kk,t+2 } {,t+2 }/uniondisplay
+{k+2Tk(t) T(t)/radicaligg
+,t=k}Tk(t)/bracerightigg
+And from a union bound, we have
+/radicaligg
+2logt 2logtIP(k,tk&lt;2 ) = IP( k,tk&lt;2Tk(t)/radicaligg
+)Tk(t)
+ts8logt
+/summationdisplay
+exp(s)2s=1
+1=t3
+3t1</text>
+        </slide>
+        <slide>
+          <slideno>5</slideno>
+          <text>MIT OpenCourseWare
+http://ocw.mit.edu
+18.657 Mathematics of Machine Learning
+Fall 2015
+For information about citing these materials or our Terms of Use, visit: http://ocw.mit.edu/terms .</text>
+        </slide>
+        <slide>
+          <slideno>1</slideno>
+          <text>variance proxy 2and any boundedrandomvariable X[a,b] is subGaussianwith variance
+proxy (ba)2/4 by Hoedings Lemma.
+Therefore,
+Rn= IE[T2(n)], (3.1)
+where  = 12. Besides,
+n
+  T2(n) = 1+/summationdisplay
+1I(X2,t&gt; X1,t)
+t=2
+n
+= 1+/summationdisplay 1I(X2,tX1,t(21)).
+t=2
+  It is easy to check that ( X2,tX1,t)(21) is centered subGaussian with variance proxy
+22, whereby
+2 tIE[1I(X22,t&gt; X1,t)]e4
+by a simple Cherno Bound. Therefore,
+2
+Rn(1+/summationdisplay 42te24)+ , (3.2)t=0
+whereby the benchmark is
+42
+Rn+ .
+3.3 Upper Condence Bound (UCB)
+Without loss of generality, from now on we assume = 1. A trivial idea is that after s
+pulls on arm k, we use k,s=1/summationtext
+j{pulls ofk}XK,jand choose the one with largest k,s.s
+The problem of this trivial policy is that for some arm, we might try it for only limited
+times, which give a bad average and then we never try it again. In order to overcome this
+limitation, a good idea is to choose the arm with highest upperbound estimate on the mean
+of each arm at some probability lever. Note that the arm with less tries would have a large
+deviations from its mean. This is called Upper Condence Bound policy.
+2</text>
+        </slide>
+        <slide>
+          <slideno>3</slideno>
+          <text>2logt 2logtThus IP( k&gt; k t+ 2
+k)1, 3and similarly we have IP( &gt; ,t+ 2 ) 1,T(t)t T3(t)t
+whereby/radicalig /radicalig
+n n n /summationdisplay 1 2logtIP(t=k)2 k+2/radicaligg
+/summationdisplay
++/summationdisplay
+IP( ,t=k)t3 Tk(t)t=K+1 t=1 t=1
+ n1 8logt2/summationdisplay
++/summationdisplay
+IP(Tk(t) ,t=k)t32
+t=1 t=1 k
+ n
+2/summationdisplay1 gn+/summationdisplay 8loIP(Tk(t) ,t=k)t32
+t=1 t=1 k
+ /summationdisplay1 8 o2 + (3
+t=1/summationdisplay l gnIPs )t 2
+s=1 k
+
+2/summationdisplay1 8log n+t22
+t=1 k
+28logn= + ,32
+k
+wheresis the counter of pulling arm k. Therefore we have
+K
+Rn=/summationdisplay /summationdisplay 28lognkIE[Tk(n)] k(1+ + ) ,32
+k k,kk =1 &gt;0
+which furnishes the proof.
+Consider the case K= 2 at rst, then from the theorem above we know Rnlogn,
+which is consistent with intuition that when the dierence of two arm is small, it is hard to
+distinguish which to choose. On the other hand, it always hold that Rnn. Combining
+logn log(n2)these two results, we have Rn  n, whereby Rn up to a constant. 
+Actually it turns out to be the optimal bound. When K3, we can similarly get the
+log(n2)result that Rn/summationtext
+k
+kk. This, however, is not the optimal bound. The optimal bound
+should be/summationtextlog(n/H)
+kk, which includes the harmonic sum and H=1. See [Lat15]./summationtext
+k2
+k
+3.4 Bounded Regret
+From above we know UCB policy can give regret that increases with at most rate log nwith
+n. In this section we would consider whether it is possible to have bounded regret. Actually
+it turns out that if there is a known separator between the expected reward of optimal arm
+and other arms, there is a bounded regret policy.
+We would only consider the case when K= 2 here. Without loss of generality, we
+assume1=and2=, then there is a natural separator 0.2 2
+4</text>
+        </slide>
+        <slide>
+          <slideno>4</slideno>
+          <text>Algorithm 2 Bounded Regret Policy (BRP)
+1= 1 and 2= 2
+fort= 3 tondo
+ifmaxkk,t&gt;0then
+thent= argmaxkk,t
+else
+t= 1,t+1= 2
+end if
+end for
+Theorem: BRP has regret
+16Rn+.
+Proof.
+IP(t= 2) = IP( 2,t&gt;0,t= 2)+IP( 2,t0,t= 2)
+Note that
+n n /summationdisplay
+IP(2,t&gt;0,t= 2)IE 1I(2,t&gt;0,t= 2)
+t=3/summationdisplay
+t=3
+n
+IE/summationdisplay
+1I(2,t2&gt;0,t= 2)
+t=3
+
+/summationdisplay 2
+es
+8
+s=1
+8=,2
+wheresis the counter of pulling arm 2 and the third inequality is a Cherno bound.
+Similarly,
+n n/summationdisplay
+IP(2,t0,t= 2) =/summationdisplay
+IP(1,t0,t1= 1)
+t=3 t=3
+8,2
+Combining these two inequality, we have
+16Rn(1+ ) ,2
+References
+[Lat15] Tor Lattimore, Optimally condent UCB : Improved regret for nite-armed bandits ,
+Arxiv:1507.07880, 2015.
+5</text>
+        </slide>
+      </slides>
+      <videos/>
+    </lecture>
+    <lecture>
+      <lecture_title>Prediction of Individual Sequences (PDF)</lecture_title>
+      <lecture_pdf_url>https://ocw.mit.edu/courses/18-657-mathematics-of-machine-learning-fall-2015/resources/mit18_657f15_l19/</lecture_pdf_url>
+      <lectureno>19</lectureno>
+      <slides>
+        <slide>
+          <slideno>4</slideno>
+          <text>MIT OpenCourseWare
+http://ocw.mit.edu
+18.657 Mathematics of Machine Learning
+Fall 2015
+For information about citing these materials or our Terms of Use, visit: http://ocw.mit.edu/terms .</text>
+        </slide>
+        <slide>
+          <slideno>3</slideno>
+          <text>It can be shown using Von Neumann minimax theorem that
+n n
+(yt)z1,...,zn,yB2/summationdisplay
+Wt/an}bracketle{tyty,zt/an}bracketri}ht  supE c n
+MDSWt1,...,W=1n/bardbl/summationdisplay
+t=1/bardbl 
+where the supremum is over all martingale dierence sequences (MDS) with values in B2.
+By the previous part, this upper bound is cn. We conclude an interesting equivalence of
+(a) deterministic statements that hold for all sequences, (b) tail bounds on the size of a
+martingale, and (c) in-expectation bound on this size.
+In fact, this connection between probabilistic bounds and existence of prediction strate-
+gies for individual sequences is more general and requires further investigation.
+4</text>
+        </slide>
+        <slide>
+          <slideno>0</slideno>
+          <text>18.657: Mathematics of Machine Learning
+Lecturer: Alexander Rakhlin Lecture 19
+Scribe:Kevin Li Nov. 16, 2015
+4. PREDICTION OF INDIVIDUAL SEQUENCES
+In this lecture, we will try to predict the next bit given the previous bits in the sequence.
+Given completely random bits, it would be impossible to correctly predict more than half
+of the bits. However, certain cases including predicting bits generated by a human can
+be correct greater than half the time due to the inability of humans to produce truly
+random bits. We will show that the existence of a prediction algorithm that can predict
+better than a given threshold exists if and only if the threshold saties certain probabilistic
+inequalities. For more information on this topic, you can look at the lecture notes at
+http://stat.wharton.upenn.edu/ ~rakhlin/courses/stat928/stat928_notes.pdf
+4.1 The Problem
+To state the problem formally, given a sequence y1,...,yn,... {1,+1}, we want to nd
+a prediction algorithm yt=yt(y1,...,yt1) that correctly predicts ytas much as possible. 
+iidIn order to get a grasp of the problem, we will consider the case where y1,...,ynBer(p).
+It is easy to see that we can get
+n1IE/bracketleftBigg
+n/summationdisplay
+=
+=1{ytyt
+t}/bracketrightBigg
+min{p,1p}
+by letting ytequal majority vote of the rst t1 bits. Eventually, the bit that occurs
+with higher probability will alway/BDs have occurred more times. So the central limit theorem
+shows that our loss will approach min {1p,1p}at the rate of O().n
+Knowing that the distribution of the bits are iid Bernoulli random variables made the
+prediction problem fairly easy. More surprisingly is the fact that we can achieve the same
+for any individual sequence.
+Claim: There is an algorithm such that the following holds for any sequence y1,...,yn,....
+n1limsup/summationdisplay
+{yt=yt}min{yn,1n
+nnt=1y} 0 a.s.
+
+It is clear that no deterministic strategy can achieve this bound. For any deterministic
+strategy, we can just choose yt=ytand the predictions would be wrong every time. So
+we need a non-deterministic algorithm that chooses qt= IE[yt][1,1].
+To prove this claim, we will look at a more general problem. Take a xed horizon n1,
+and function :{1}n /CA. Does/BDthere exist a randomized prediction strategy such that
+for anyy1,...,ynn1IE[/summationdisplay
+{yt=ytnt=1}](y1,...,yn) ?
+1
+/BD/ne}ationslash
+/ne}ationslash
+/ne}ationslash</text>
+        </slide>
+        <slide>
+          <slideno>1</slideno>
+          <text>For certain such as0, it is clear that no randomized strategy exists. However for
+1, the strategy of randomly predicting the next bit ( qt= 0) satises the inequality.2
+Lemma: For a stable , the following are equivalent
+n1a)(qt)t=1,...,ny1,...,ynIE[/summationdisplay
+{yt=yt}](y1,...,yn)nt=1
+1b) IE[(1,...,n)]where1,...,nare Rademacher random variables2
+where stable is dened as follows
+Denition (Stable Function): A function :{1}nis stable if
+1|(...,yi,...)(...,yi,...)| n
+Proof.(a=
+11b)SupposeIE  &lt;. Take(y1,...,yn) = (1,...
+/CA
+,n). ThenIE[1nynt=1{t=2
+t}] =&gt;IE[]sotheremustexistasequence(n1,...,1n)suchthatIE[/summationtext
+/summationtext
+t{yt=t}]&gt;2 n=1
+(1,...,n).
+(b=a) Recu/BDrsively dene V(y1,...,yt) such that y1,...,yn
+/BD
+1V(y1,...,yt1) = min max/parenleftBig
+IE[{yt=yt}]+V(y1,...y
+/BD
+ n)
+qt[1,1]yt1n/parenrightBig
+Looking at the denition, we can see that IE[1n
+t=1{yt=yt}] =V( )n V(y1,...,yn).
+Now we note that V(y1,...,yt) =tIE[(y1,/summationtext
+.
+/BD
+..,yt,t n +1,...,n)] satises the recursive2
+denition since
+1 tminmax IE[yt=yt] IE[(y1,...,yt,t+1,...,n)]
+qtytn{ } 
+/BD
+2n
+qtyt t1=minmaxIE[(y1,...,yt,t+1,...,n)]
+qtyt2n2n
+q t1q 1=minm x {t  ta tIE[(y1,...,yt1,1,t+1,...,n)],IE[(y . 1,  1, ..,yt1,t+1,...,n)]
+qt 2n 2n2n2n}
+t1=IE[(y1,...,yt1,t,t+1,...,  n)]2n
+=V(y1,...,yt1)
+The rst equality uses the fact that for a,b {1},{1a=b}=ab, the second uses the2
+fact that yt {1}, the third minimizes the entire expression by choosing qtso that the
+two expressions in the max are equal. Here the fact that is stable means qt[1,1] and
+is the only place where we need to be stable.
+Therefore we have
+/BD
+n1IE[/summationdisplay 1{yt=yt}] =V()V(y1,...,yn) =IE[(1,...,n)]++(y1,...,yn)n 2t=1(y1,...,yn)
+2
+/BD/ne}ationslash
+/ne}ationslash
+/ne}ationslash
+/ne}ationslash
+/ne}ationslash
+/ne}ationslash
+/ne}ationslash/BD/ne}ationslash</text>
+        </slide>
+        <slide>
+          <slideno>2</slideno>
+          <text>by b).
+By choosing = min{y,1y}+c, this shows there is an algorithm that satises ourn
+original claim.
+4.2 Extensions
+4.2.1 Supervised Learning
+We can extend the problem to a regression type problem by observing xtand trying to
+predictyt. In this case, the objective we are trying to minimize would be
+1 1ln/summationdisplay
+(yt,yt)inf
+fF,n/summationdisplay
+l(f(xt)yt)
+It turns out that the best achievable performance in such problems is governed by martin-
+gale (or, sequential) analogues of Rademacher averages, covering numbers, combinatorial
+dimensions, and so on. Much of Statistical Learning techniques extend to this setting of
+online learning. In addition, the minimax/relaxation framework gives a systematic way of
+developing new prediction algorithms (in a way similar to the bit prediction problem).
+4.2.2 Equivalence to Tail Bounds
+We can also obtain probabilistic tail bound on functions on hypercube by using part a) of
+the earlier lemma. Rearranging part a) of the lemma we get 1 2(1y1,...,yn)qtyt.n
+This implies/summationtext
+2
+IP/parenleftbig 1 1 (1,...,n)&lt;/parenrightbig
+= IP/parenleftbig
+12(1,...,n)&gt; IP2 n/summationdisplay
+qtt&gt; e2n
+So IE1=existence of a strategy = tail boun/parenrightbig
+d for/parenleftbig
+1&lt;./parenrightbig
+2 2
+We can extend the results to higher dimensions. Consider z1,...,znB2whereB2is
+a ball in a Hilbert space. We can dene recursively y0= 0 and yt+1= ProjB2(yt1zt).n
+Based on the properties of projections, for every, we have1/summationtext/an}bracketle{t/an}bracketri}ht 1y B 2 yty ,zt n.n
+zTakingy t= ,/bardbl/summationtext
+/summationtextzt/bardbl
+n n
+z1,...,zn,/summationdisplay
+zt/bardbl
+t=1/bardbln/summationdisplay
+yt, zt
+t=1/an}bracketle{t  /an}bracketri}ht
+Take a martingale dierence sequence Z1,...,Z nwith values in B2. Then
+n n
+IP/parenleftbig
+/bardbl/summationdisplay 2nZt
+t=1/bardbln &gt; /parenrightbig
+IP(/summationdisplay
+t=1/an}bracketle{tyt,Zt/an}bracketri}ht&gt; )e2
+Integrating out the tail,
+n
+IE/bardbl/summationdisplay
+Zt
+t=1/bardbl cn
+3</text>
+        </slide>
+      </slides>
+      <videos/>
+    </lecture>
+    <lecture>
+      <lecture_title>Stochastic Gradient Descent (PDF)</lecture_title>
+      <lecture_pdf_url>https://ocw.mit.edu/courses/18-657-mathematics-of-machine-learning-fall-2015/resources/mit18_657f15_l14/</lecture_pdf_url>
+      <lectureno>14</lectureno>
+      <slides>
+        <slide>
+          <slideno>5</slideno>
+          <text>References
+[Nem12] Arkadi Nemirovski, On safe tractable approximations of chance constraints , Euro-
+pean J. Oper. Res. 219(2012), no. 3, 707718. MR 2898951 (2012m:90133)
+[NS06] Arkadi Nemirovski and Alexander Shapiro, Convex approximations of chance
+constrained programs , SIAM J. Optim. 17(2006), no. 4, 969996. MR 2274500
+(2007k:90077)
+6</text>
+        </slide>
+        <slide>
+          <slideno>0</slideno>
+          <text>18.657: Mathematics of Machine Learning
+Lecturer: Philippe Rigollet Lecture 14
+Scribe:Sylvain Carpentier Oct. 26, 2015
+In this lecture we will wrap up the study of optimization techniques with stochastic
+optimization. The tools that we are going to develop will turn out to be very ecient in
+minimizing the -risk when we can bound the noise on the gradient.
+3. STOCHASTIC OPTIMIZATION
+3.1 Stochastic convex optimization
+Weareconsideringrandomfunctions x/masto(x,Z)wherexistheoptimization parameterand
+Za random variable. Let PZbe the distribution of Zand let us assume that x/masto(x,Z) is
+convexPZa.s. In particular, IE[ (x,Z)] will also be convex. The goal of stochastic convex
+optimization is to approach min xIE[(x,Z)] when is convex. For our purposes, will C C C
+be a deterministic convex set. However, stochastic convex optimization can be dened more
+broadly. The constraint can be itself stochastic :
+C={x,IE[g(x,Z)]0}, gconvexPZa.s.
+C={x,IP[g(x,Z)0]1},chance constraint
+The second constraint is not convex a priori but remedies are possible (see [NS06, Nem12]).
+In the following, we will stick to the case where Xis deterministic. A few optimization
+problems we tackled can be interpreted in this new framework.
+3.1.1 Examples
+Boosting. Recall that the goal in Boosting is to minimize the -risk:
+minIE[(f
+Y(X))],
+
+where  is the simplex of IRd. Dene Z= (X,Y) and the random function (,Z) =
+(Yf(X)), convex PZa.s.
+Linear regression. Here the goal is the minimize the 2risk:
+min IE[(Yf2(X)) ].
+IRd
+DeneZ= (X,Y) and the random function (,Z) = (Yf(X))2, convex PZa.s.
+Maximum likelihood. We consider samples Z1,...,Z niid with density p,. For
+instance, ZN(,1). The likelihood functions associated to this set of samples is   /masto/producttextn
+=1p(Zi). Letp(Z) denote the true density of Zi (it does not have to be of the form p
+forsome. Then
+n1/productdisplay/integraldisplayp(z)IE[log p(Zi)] =log( ) p(z)dz+C=n p(z)i=1KL(p,p)+C
+1</text>
+        </slide>
+        <slide>
+          <slideno>1</slideno>
+          <text>whereCis a constant in . Hence maximizing the expected log-likelihood is equivalent to
+minimizing the expected Kullback-Leibler divergence:
+n
+maxIE[log/productdisplay
+p(Zi)]
+i=1KL(p,p)
+External randomization. Assume that we want to minimize a function of the form
+1f(x) =n/summationdisplay
+fi(x),ni=1
+where the functions f1,...,fnare convex. As we have seen, this arises a lot in empirical
+risk minimization. In this case, we treat this problem as deterministic problem but inject
+articial randomness as follows. Let Ibe a random variable uniformly distributed on
+[n] =:{1,...,n}. We have the representation f(x) = IE[fI(x)], which falls into the context
+of stochastic convex optimization with Z=Iand(x,I) =fI(x).
+Important Remark :There is a key dierence between the case where we assume that
+wearegivenindependentrandomvariablesandthecasewherewegeneratearticialran-
+domness. LetusillustratethisdierenceforBoosting. Wearegiven( X1,Y1),...,(Xn,Yn)
+i.i.d from some unknown distribution. In the rst example, our aim is to minimize
+IE[(Yf(X))] based on these nobservations and we will that the stochastic gradient
+allows to do that by take one pair ( Xi,Yi) in each iteration. In particular, we can use
+each pair at most once. We say that we do one pass on the data.
+We could also leverage our statistical analysis of the empirical risk minimizer from
+previous lectures and try to minimize the empirical -risk
+1Rn,(f) =n/summationdisplay
+(
+i=1Yif(Xi))n
+by generating kindependent random variables I1,...,Ikuniform over [ n] and run the
+stochasticgradientdescenttousonerandomvariable Ijineachiteration. Thedierence
+hereisthat kcanbearbitrarylarge, regardlessofthenumber nofobservations(wemake
+multiple passes onthedata). However, minimizingIE I[(YIf(XI))|X1,Y1,...,X n,Yn]
+will perform no better than the empirical risk minimizer whose statistical performance
+is limited by the number nof observations.
+3.2 Stochastic gradient descent
+If the distribution of Zwas known, then the function x/mastoIE[(x,Z)] would be known and
+we could apply gradient descent, projected gradient descent or any other optimization tool
+seen before in the deterministic setup. However this is not the case in reality where the
+true distribution PZis unknown and we are only given the samples Z1,...,Z nand the
+random function (x,Z). In what follows, we denote by (x,Z) the set of subgradients of
+the function y/masto(y,Z) at point x.
+2</text>
+        </slide>
+        <slide>
+          <slideno>4</slideno>
+          <text>where the last inequality comes from
+D(xs,ys+1) = (xs)(ys+1)(ys+1)(xsys+1)
+[(x2s)(ys+1)](xsys+1)2/badblys+1xs/badbl
+/badblgs/badblx y y x2/badblss+1/badbl2/badbls+1s/badbl
+2/badblgs/badbl2
+.2
+Summing and taking expectations, we get
+k1/summationdisplay L2D(x,x1)[f(xs) ]
+s=1+kf(x) . (3.1)2 k
+We conclude as in the previous lecture.
+3.4 Stochastic coordinate descent
+Letfbe a convex L-Lipschitz and dierentiable function on IRd. Let us denote by ifthe
+partial derivative of fin the direction ei. One drawback of the Gradient Descent Algorithm
+is that at each step one has to update every coordinate ifof the gradient. The idea of
+the stochastic coordinate descent is to pick at each step a direction ejuniformly and to
+choose that ejto be the direction of the descent at that step. More precisely, of Iis drawn
+uniformly on [ d], then IE[ dIf(x)eI] =f(x). Therefore, the vector dIf(x)eIthat has
+only one nonzero coordinate is an unbiased estimate of the gradient f(x). We can use
+this estimate to perform stochastic gradient descent.
+Algorithm 3 Stochastic Coordinate Descent algorithm
+Input: x1 C, positive sequence {s}s1, independent random variables I ,...,I  1 k
+uniform over [ d].
+fors= 1 tok1do
+ys+1=xssdIf(x)eI, gs(xs,Zs)
+xs+1=(ys+1) C
+end for
+k1return xk=k/summationdisplay
+xs
+s=1
+If we apply Stochastic Gradient Descent to this problem for =R/radicalBig
+2, we directlyL dk
+obtain
+2dIE[f(xk)]f(x)RL/radicalbigg
+k
+We are in a trade-o situation where the updates are much easier to implement but where
+we need more steps to reach the same precision as the gradient descent alogrithm.
+5</text>
+        </slide>
+        <slide>
+          <slideno>6</slideno>
+          <text>MIT OpenCourseWare
+http://ocw.mit.edu
+18.657 Mathematics of Machine Learning
+Fall 2015
+For information about citing these materials or our Terms of Use, visit: http://ocw.mit.edu/terms .</text>
+        </slide>
+        <slide>
+          <slideno>2</slideno>
+          <text>Algorithm 1 Stochastic Gradient Descent algorithm
+Input:x1 C, positive sequence {s}s1, independent random variables Z ,...,Z  1 k
+with distribution PZ.
+fors= 1 tok1do
+ys+1=xssgs, gs(xs,Zs)
+xs+1=(yCs+1)
+end for
+1return xk=k
+k/summationdisplay
+xs
+s=1
+Note the dierence here with the deterministic gradient descent which returns either
+xkorx
+k= argmin f(x). In the stochastic framework, the function f(x) = IE[(x,)] is
+x1,...,xn
+typically unknown and xkcannot be computed.
+Theorem: LetCbea closed convex subset of IRdsuch that diam( C)R. Assume that
+he convex function f(x) = IE[(x,Z)] attains its minimum on CatxIRd. Assume
+that(x,Z) is convex PZa.s. and that IE /badblg/badbl2L2for allg(x,Z) for allx. Then
+ifs=R
+L,k
+LRIE[f(xk)]f(x)
+k
+Proof.
+f xsf x g sxsx
+= IE[gs(xsx)|xs]
+1= IE[(ys+1xs)(xsx)xs]  |
+1=IE[/badblx2 2sy2s+1/badbl+/badblxsx
+2/badbl /badblys+1x/badbl |xs]
+1(2IE[/badblgs/badbl2|xs]+IE[/badblx2sx/badbl |xs]IE[/badblxs+1xx/badbl2
+2|s]
+Taking expectations and summing over swe get
+k1/summationdisplay L2R2
+f(xs) (
+s=1f x)k+.2 2k
+Using Jensens inequality and chosing =R
+L, we getk
+LRIE[f(xk)]f(x)
+k
+3( )()()</text>
+        </slide>
+        <slide>
+          <slideno>3</slideno>
+          <text>3.3 Stochastic Mirror Descent
+We can also extend the Mirror Descent to a stochastic version as follows.
+Algorithm 2 Mirror Descent algorithm
+Input: x1argmin ( x),:dRdRsuch that (x) =(x), independentCD
+random variables Z1,...,Z kwith distribution PZ.
+fors= 1,,kdo
+(ys+1) =(xs)gsforgs(xs,Zs)
+xs+1=  (yCs+1)
+end for
+return x=1k
+k/summationtext
+s=1xs
+Theorem: Assume that  is -strongly convex on C  Dw.r.t./badbl/badbland
+R2= sup ( x)  x)
+xmin (
+CD xCD
+takex1= argminx(x) (assume that it exists). Then, Stochastic Mirror DescentCD
+with=R
+L/radicalBig
+2xRoutputs  k, such that
+IE[f(xk)]f(x)RL/radicalbigg
+2.k
+Proof.We essentially reproduce the proof for the Mirror Descent algorithm.
+Takex C D. We have
+f(xs ss
+IE[gs(xsx)|xs]
+1=IE[((xs)(ys+1))(xsx)|xs]
+1=IE[((xs)(ys+1))(xsx)|xs]
+1=IE/bracketleftBig
+D(xs,ys+1)+D(x,xs)D(x ,ys+1)/vextendsingle/vextendsinglexs/bracketrightBig
+1IE/bracketleftBig
+D(xs,ys+1)+D(x ,xs)D(x,xs+1)x/vextendsingle/vextendsingles/bracketrightBig
+2IE[/badblgs/badbl21|xs]+ IE2/bracketleftBig
+D(x,xs)D(x,xs+1)/vextendsingle/vextendsinglexs/bracketrightBig)f(x)g(xx)
+4</text>
+        </slide>
+      </slides>
+      <videos/>
+    </lecture>
+    <lecture>
+      <lecture_title>Follow the Perturbed Leader (PDF)</lecture_title>
+      <lecture_pdf_url>https://ocw.mit.edu/courses/18-657-mathematics-of-machine-learning-fall-2015/resources/mit18_657f15_l16/</lecture_pdf_url>
+      <lectureno>16</lectureno>
+      <slides>
+        <slide>
+          <slideno>4</slideno>
+          <text>MIT OpenCourseWare
+http://ocw.mit.edu
+18.657 Mathematics of Machine Learning
+Fall 2015
+For information about citing these materials or our Terms of Use, visit: http://ocw.mit.edu/terms .</text>
+        </slide>
+        <slide>
+          <slideno>1</slideno>
+          <text>In the above example, we have
+n n/summationdisplay nnp
+tztminpztn1 1,
+pk 2 2t=1    
+/summationdisplay
+t=1
+which gives raise to linear regret.
+Now lets consider FPL. FPL regularizes FL by adding a small amount of noise, which
+can guarantee square root regret under oblivious adversary situation.
+Algorithm 1 Follow the Perturbed Leader (FPL)
+Input:Letbe a random variables uniformly drawn on [0 ,1]K.
+fort= 1 tondo
+t1
+pt= argmin
+pK/summationdisplay
+s=1/parenleftbig
+pzs+/parenrightbig
+.
+end for
+We analyze this strategy in oblivious adversaries, which means the sequence ztis chosen
+ahead of time, rather than adaptively given. The following theorem gives a bound for regret
+of FPL:
+Theorem: FPL with =1yields expected regret:kn
+IE[Rn]2
+2nK .
+Before proving the theorem, we introduce the so-called Be-The-Leader Lemma at rst.
+Lemma: (Be-The-Leader)
+For all loss function (p,z), let
+t
+p
+t= arg min (p,zs),
+pK/summationdisplay
+s=1
+then we haven n /summationdisplay
+(p
+t,zt)
+t=1/summationdisplay
+(pn,zt)
+t=1
+Proof.The proof goes by induction on n. Forn= 1, it is clearly true. From nton+1, it
+2</text>
+        </slide>
+        <slide>
+          <slideno>3</slideno>
+          <text>wherep= argminpK/summationtextnp zt=1t.
+Now let
+t1
+h() =zt/parenleftigg
+arg min p[+
+pK/summationdisplay
+zs],
+s=1/parenrightigg
+then we have a easy observation that
+IE[zt(ptqt)] = IE[h()]IE[h(+zt)].
+Hence,
+IE[zt(ptqK Kt)] =/integraldisplay
+h()d/integraldisplay
+h()d
+[0,1]K z+[0,1]Kt 
+K/integraldisplay
+h()d
+[0,1]K
+\/braceleftBig
+z ,1]Kt+[0/bracerightBig
+K/integraldisplay
+1d
+[0,1]K\/braceleftBig
+zt+[0,1]K
+ /bracerightBig
+= IP(i[K],(i)zt(i))
+K
+/summationdisplay
+IP/parenleftbigg
+Unif/parenleftbigg1[0,]/parenrightbigg
+zt(i)i=1/parenrightbigg
+Kzt(i)K , (2.2)
+where the rst inequality is from the fact that h()0, the second inequality uses
+h()1, the second equation is just geometry and the last inequality is due to zt(i)1.
+Combining (2.1) and (2.2) together, we have
+2IE[Rn]+Kn .
+In particular, with =/radicalig
+2, we haveKn
+IE[Rn]2
+2Kn ,
+which completes the proof.
+4</text>
+        </slide>
+        <slide>
+          <slideno>2</slideno>
+          <text>follows from:
+n+1 n /summationdisplay
+(pt,zt) =/summationdisplay
+(p
+t,zt)+(pn
++1,zn+1)
+t=1 i=1
+n
+/summationdisplay
+(p
+n,zt)+(p
+n+1,zn+1)
+i=1
+n
+/summationdisplay
+(p
+n+1,zt)+(p
+n+1,zn+1),
+i=1
+wheretherstinequality usesinductionandthesecondinequality followsfromthedenition
+ofp
+n.
+Proof of Theorem . Dene
+t
+qt= argmin p(+
+pK/summationdisplay
+zs).
+s=1
+Using the Be-The-Leader Lemma with
+/braceleftbiggpT(+z1)if t= 1(p,zt) =pTzt if t &gt;1,
+we haven n
+q1+/summationdisplay
+qtztminq(+
+qt=K
+1/summationdisplay
+zt),
+t=1
+whereby for any qK,
+n/summationdisplay/parenleftig2qtztqzt/parenrightig
+/parenleftig
+qq1/parenrightig
+ /bardblq 1
+iq1
+=1/bardbl /bardbl/bardbl,
+where the second inequality uses H olders inequality and the third inequality is from the
+fact that qandq1are on the simplex and is in the box.
+Now let
+t
+qt= arg min p/parenleftigg
++zt+/summationdisplay
+zs
+pK
+s=1/parenrightigg
+and
+t
+pt= arg min p+
+/parenleftigg
++0
+pK/summationdisplay
+zs
+s=1/parenrightigg
+.
+Therefore,
+n n
+IE[Rn]/summationdisplay
+p
+tzt
+iminpzt
+pk
+=1/summationdisplay
+i=1
+n/parenleftig /parenrightign
+/summationdisplay
+qtztpTzt+/summationdisplay
+IE[(pt t
+i=1 =1q)zt]
+i
+n2+/summationdisplay
+IE[(ptqt)zt], (2.1)i=1
+3</text>
+        </slide>
+        <slide>
+          <slideno>0</slideno>
+          <text>18.657: Mathematics of Machine Learning
+Lecturer: Philippe Rigollet Lecture 16
+Scribe:Haihao (Sean) Lu Nov. 2, 2015
+Recall that in last lecture, we talked about prediction with expert advice. Remember
+thatl(ej,zt) means the loss of expert jat timet, whereztis one adversarys move. In this
+lecture, for simplexity we replace the notation ztand denote by ztthe loss associated to all
+experts at time t:
+zt=
+(e1,zt)
+... ,
+(eK,zt)
+whereby for pK,p
+zt=Kp ej=1j(j,zt). This gives an alternative denition of ft(p)
+in last lecture. Actually it is easy to check ft(p) =pzt, thus we can rewrite the theorem
+for exponential weighting(EW/summationtext
+) strategy as
+n n
+Rn/summationdisplay
+p
+tztminp
+pt=1k/summationdisplayzt2nlogK,
+t=1/radicalbig
+where the rst inequality is Jensen inequality:
+n n/summationdisplay
+p
+zzt
+t=1/summationdisplay
+(pz,zt).
+t=1
+We consider EW strategy for bounded convex losses. Without loss of generality, we
+assume(p,z)[0,1], for all ( p,z)KZ, thus in notation here, we expect ptK
+andzK t[0,1] . Indeed if (p,z)[m,M] then one can work with a rescaled loss (a,z) =
+(a,z)m. Note that now we have bounded gradient on pt, sinceztis bounded.Mm
+2. FOLLOW THE PERTURBED LEADER (FPL)
+In this section, we consider a dierent strategy, called Follow the Perturbed Leader.
+At rst, we introduce Follow the Leader strategy, and give an example to show that
+Follow the Leader can be hazardous sometimes. At time t, assume that choose
+t1
+pt= argmin
+pK/summationdisplay
+pzs.
+s=1
+Notethat thefunctiontobeoptimized islinear in p, wherebytheoptimal solutionshould
+be a vertex of the simplex. This method can be viewed as a greedy algorithm, however, it
+might not be a good strategy.
+Consider the following example. Let K= 2,z1= (0,),z2= (0,1),z3= (1,0),
+z4= (0,1)and so on (alternatively having (0 ,1)and (1,0)whent2), where is small
+enough. Then with Following the Leader Strategy, we have that p1is arbitrary and in the
+best case p1= (1,0), andp2= (1,0),p3= (0,1),p4= (1,0)and so on (alternatively
+having (0 ,1)and (1,0)whent2).
+1</text>
+        </slide>
+      </slides>
+      <videos/>
+    </lecture>
+  </lectures>
+</doc>

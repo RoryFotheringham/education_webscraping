@@ -1,0 +1,1115 @@
+<doc>
+  <source>MIT</source>
+  <date>28/01/2023</date>
+  <course>
+    <course_url>https://ocw.mit.edu/courses/18-445-introduction-to-stochastic-processes-spring-2015/</course_url>
+    <course_title>Introduction to Stochastic Processes</course_title>
+    <course_tags>
+      <list>Mathematics </list>
+      <list>Probability and Statistics</list>
+    </course_tags>
+  </course>
+  <lectures>
+    <lecture>
+      <lecture_title>Stationary Distribution (PDF)</lecture_title>
+      <lecture_pdf_url>https://ocw.mit.edu/courses/18-445-introduction-to-stochastic-processes-spring-2015/resources/mit18_445s15_lecture24/</lecture_pdf_url>
+      <lectureno>24</lectureno>
+      <slides>
+        <slide>
+          <slideno>5</slideno>
+          <text>MIT OpenCourseWare
+http://ocw.mit.edu
+18.445 Introduction to Stochastic Processes
+Spring 2015
+For information about citing these materials or our Terms of Use, visit: http://ocw.mit.edu/terms .</text>
+        </slide>
+        <slide>
+          <slideno>0</slideno>
+          <text>18.445 Introduction to Stochastic Processes
+Lecture 24: Stationary distribution
+Hao Wu
+MIT
+13 May 2015
+Hao Wu (MIT) 18.445 13 May 2015 1 / 5</text>
+        </slide>
+      </slides>
+      <videos/>
+    </lecture>
+    <lecture>
+      <lecture_title>Markov Chains: Time-reversal (PDF)</lecture_title>
+      <lecture_pdf_url>https://ocw.mit.edu/courses/18-445-introduction-to-stochastic-processes-spring-2015/resources/mit18_445s15_lecture3/</lecture_pdf_url>
+      <lectureno>3</lectureno>
+      <slides>
+        <slide>
+          <slideno>11</slideno>
+          <text>MIT OpenCourseWare
+http://ocw.mit.edu
+18.445 Introduction to Stochastic Processes
+Spring 2015
+For information about citing these materials or our Terms of Use, visit: http://ocw.mit.edu/terms .</text>
+        </slide>
+        <slide>
+          <slideno>4</slideno>
+          <text>Simple random walk on graph
+ 
+Example Consider simple random walk on graph G = (V , E) (which is 
+connected). The measure 
+deg(x)(x) = , x  2|E| 
+satises detailed balance equations ; therefore the simple random walk 
+on G is reversible. 
+Hao Wu (MIT) 18.445 18 February 2015 5 / 11</text>
+        </slide>
+        <slide>
+          <slideno>10</slideno>
+          <text>Homework 1 due Feb. 23rd  
+Hao Wu (MIT) 18.445 18 February 2015 11 / 11</text>
+        </slide>
+        <slide>
+          <slideno>0</slideno>
+          <text>18.445 Introduction to Stochastic Processes
+Lecture 3: Markov chains: time-reversal
+Hao Wu
+MIT
+18 February 2015
+Hao Wu (MIT) 18.445 18 February 2015 1 / 11</text>
+        </slide>
+        <slide>
+          <slideno>1</slideno>
+          <text>Recall 
+Consider a Markov chain with state space  and transition matrix P : 
+P[X n+1 = y | Xn = x] = P(x, y). 
+A probability measure  is stationary if  = P. 
+If P is irreducible, there exists a unique stationary distribution. 
+Todays goal 
+Ergodic Theorem 
+Time-reversal of Markov chain 
+Birth-and-Death chains 
+Total variation distance 
+Hao Wu (MIT) 18.445 18 February 2015 2 / 11</text>
+        </slide>
+      </slides>
+      <videos/>
+    </lecture>
+    <lecture>
+      <lecture_title>Summary on Random Walk on Networks (PDF)</lecture_title>
+      <lecture_pdf_url>https://ocw.mit.edu/courses/18-445-introduction-to-stochastic-processes-spring-2015/resources/mit18_445s15_lecture11/</lecture_pdf_url>
+      <lectureno>11</lectureno>
+      <slides>
+        <slide>
+          <slideno>7</slideno>
+          <text>Random walk on torus
+ 
+A 2-dimensional torus : 
+Z2 
+N = ZN  ZN .  1Two vertices x = (x, x2) and  1y = (y, y2) are neighbors if,
+ 
+1 1either x= y, x2  y2  1 mod N 
+2 2or x= y, x1  y1  1 mod N 
+This is a network and assume that all edges have unit resistance.
+ 
+Theorem 
+Hao Wu (MIT) 18.445 18 March 2015 8 / 9 Let k = |x  y| 2 on Z2 N. There exist constants 0 &lt; c &lt; C &lt;  such 
+that 
+cN2 log k  Ex [y ]  CN2 log k. 
+Image by MIT OpenCourseWare.</text>
+        </slide>
+        <slide>
+          <slideno>6</slideno>
+          <text>v0Bv0.
+Random walk on binary tree
+ 
+Tk 2 is a network 
+all edges have unit resistance 
+there are N = 2k+1  1 vertices 
+there are N  1 edges 
+Theorem 
+Consider the random walk (X n)n on this network. Let B be the set of 
+leaves. Dene the commute time 
+Bv0 = min{n  B : Xn = v0.} 
+E [ ]  2(N  1) Then 
+Hao Wu (MIT) 18 March 2015 7 / 9 
+ 18.445</text>
+        </slide>
+        <slide>
+          <slideno>4</slideno>
+          <text>Random walk on network
+ 
+Consider a random walk on network 
+ (G = (V , E), {c(e) : e  E}). 
+Transition matrix : P (x, y) = c(x, y)/c(x) 
+It is reversible 
+The stationary measure :  (x) = c(x)/cG. 
+The commute time is dened by 
+ba = min{n  b : Xn = a}. 
+Commute Time Identity 
+Ea[ba] = cGR(a  b). 
+Assume that the network is transitive, then 
+Ea[b] = Eb[a]. 
+In particular, 
+2Ea[b] = cGR(a  b). 
+Hao Wu (MIT) 18.445 18 March 2015 5 / 9</text>
+        </slide>
+        <slide>
+          <slideno>8</slideno>
+          <text>Random walk on torus
+ 
+Hao Wu (MIT) 18.445 18 March 2015 9 / 9
+ Y
+Z
+X
+Image by MIT OpenCourseWare.</text>
+        </slide>
+        <slide>
+          <slideno>9</slideno>
+          <text>MIT OpenCourseWare
+http://ocw.mit.edu
+18.445 Introduction to Stochastic Processes
+Spring 2015
+For information about citing these materials or our Terms of Use, visit: http://ocw.mit.edu/terms .</text>
+        </slide>
+        <slide>
+          <slideno>3</slideno>
+          <text>Estimates on effective resistance
+ 
+Effective resistance and energy of ows 
+R(a  z) = inf{E () :  unit ow from a to z}. 
+Corollaries 
+If r(e)  r'(e) for all e , we have 
+R(a  z; r)  R(a  z; r'). 
+Upper bound : For any unit ow  from a to z, we have 
+R(a  z) E(). 
+Lower bound : Nash-William Inequality. { k } are disjoint 
+edge-cut sets which separate a from z , then 
+ 1 
+  
+R(a  z)  c(e) . 
+k ek 
+Hao Wu (MIT) 18.445 18 March 2015 4 / 9</text>
+        </slide>
+        <slide>
+          <slideno>2</slideno>
+          <text>Three operations 
+Dene the effective resistance between a and z by 
+W (a)  W (z)R(a  z) = . ||I|| 
+Three operations without changing the effective resistance
+ 
+Parallel Law : Conductances in parallel add.
+ Series Law : Resistances in series add.
+ Gluing : Identify vertices with the same voltage.
+ 
+Hao Wu (MIT) 18.445 18 March 2015 3 / 9</text>
+        </slide>
+        <slide>
+          <slideno>1</slideno>
+          <text>Effective Resistance
+ 
+Consider a network (G = (V , E), {c(e) : e  E}).
+ 
+Suppose that W is a voltage with source a  V and sink z  V .
+ 
+Let I be the corresponding current ow :
+  I(xy) = ( W (x)  W (y))/r(x, y).
+ 
+Dene the effective resistance between a and z by
+ 
+W (a)  W (z)R(a  z) = . ||I|| 
+Effective resistance and Escape probability 
+1Pa[z &lt; +] = .a c(a)R(a  z) 
+Effective resistance and Greens function 
+Gz (a, a) = c(a)R(a  z). 
+Hao Wu (MIT) 18.445 18 March 2015 2 / 9</text>
+        </slide>
+        <slide>
+          <slideno>0</slideno>
+          <text>18.445 Introduction to Stochastic Processes 
+Lecture 11: Summary on random walks on network 
+Hao Wu 
+MIT 
+18 March 2015 
+Hao Wu (MIT) 18.445 18 March 2015 1 / 9</text>
+        </slide>
+        <slide>
+          <slideno>5</slideno>
+          <text>Random walk on binary tree
+ 
+A tree is a connected graph with no cycles.
+ 
+A rooted tree has a distinguished vertex v 0, called the root.
+ 
+The depth of a vertex v is its graph distance to the root.
+ 
+A leaf is a vertex with degree one.
+ A rooted binary tree of depth k, denoted by T
+2 k , is a tree with a root v0
+ 
+such that
+ 
+v0 has degree 2. 
+For 1  j  k  1, every vertex at
+ 
+distance j from the root has
+ 
+degree 3.
+ 
+The vertices at distance k from
+ 
+the root are leaves (they have
+ degree 1).
+ 
+18.445 18 March 2015 6 / 9 Hao Wu (MIT)</text>
+        </slide>
+      </slides>
+      <videos/>
+    </lecture>
+    <lecture>
+      <lecture_title>Introduction to Finite Markov Chains (PDF)</lecture_title>
+      <lecture_pdf_url>https://ocw.mit.edu/courses/18-445-introduction-to-stochastic-processes-spring-2015/resources/mit18_445s15_lecture1/</lecture_pdf_url>
+      <lectureno>1</lectureno>
+      <slides>
+        <slide>
+          <slideno>14</slideno>
+          <text>About this course 
+Random walks on graphs
+ 
+Denition 
+Theorem 
+Hao Wu (MIT) 18.445 04 February 2015 15 / 15 Given a graph G = (V , E), we dene simple random walk on G to be 
+the Markov chain with state space V and transition matrix : 
+1/deg (x) if y  xP(x, y) = . 0 else 
+Dene 
+deg(x)(x) = , x  V .2|E| 
+Then  is a stationary distribution for the simple random walk on the 
+graph. 
+(</text>
+        </slide>
+        <slide>
+          <slideno>8</slideno>
+          <text>About this course 
+Coupon collecting
+ 
+The collectors situation can be modeled by a Markov chain on the 
+state space {0, 1, ..., N} : 
+X0 = 0 
+Xn : the number of different types among the collectors rst n 
+coupons. 
+P[X n+1 = k + 1 | Xn = k] = (N  k)/N, 
+P[X n+1 = k | Xn = k] = k/N. 
+ : the rst time that the collector obtains all N types. 
+Hao Wu (MIT) 18.445 04 February 2015 9 / 15</text>
+        </slide>
+        <slide>
+          <slideno>3</slideno>
+          <text>About this course 
+Todays goal
+ 
+1 
+2 
+3 
+4 Denitions 
+Gamblers ruin coupon collecting stationary distribution 
+Hao Wu (MIT) 18.445 04 February 2015 4 / 15 1
+2
+3
+4</text>
+        </slide>
+        <slide>
+          <slideno>7</slideno>
+          <text>About this course 
+Coupon collecting
+ 
+A company issues N different types of coupons. A collector desires a
+ 
+complete set.
+ 
+Question :
+ How many coupons must he obtain so that his collection contains all N
+ types.
+ Assumption : each coupon is equally likely to be each of the N types.
+ 
+Hao Wu (MIT) 18.445 04 February 2015 8 / 15</text>
+        </slide>
+        <slide>
+          <slideno>2</slideno>
+          <text>About this course 
+Grading 
+Grading : 
+5 Homeworks (10% each) 
+Midterm (15%, April 1st.) 
+Final (35%, May) 
+Homeworks : 
+Homeworks will be collected at the end of the class on the due date. 
+Due dates : Feb. 23rd, Mar. 9th, Apr. 6th, Apr. 22nd, May. 4th 
+Collaboration on homework is encouraged. 
+Individually written solutions are required. 
+Exams : 
+The midterm and the nal are closed book, closed notes, no 
+calculators. 
+Hao Wu (MIT) 18.445 04 February 2015 3 / 15</text>
+        </slide>
+        <slide>
+          <slideno>10</slideno>
+          <text>About this course 
+Notations
+ 
+ : state space 
+ : measure on  
+P, Q : transition matrices ||||
+f : function on  
+Notations 
+P : measure on  
+PQ : transition matrix 
+Pf : function on  
+Associative 
+(P)Q = (PQ ) 
+(PQ )f = P(Qf ) 
+Hao Wu (MIT) 18.445 04 February 2015 11 / 15</text>
+        </slide>
+        <slide>
+          <slideno>12</slideno>
+          <text>About this course 
+Stationary distribution 
+Consider a Markov chain with state space  and transition matrix P . 
+Recall that 
+P[X n+1 = y | Xn = x] = P(x, y). 
+0 : the distribution of X 0 
+n : the distribution of X n 
+Denition 
+Hao Wu (MIT) 
+ 18.445 04 February 2015 13 / 15 We call a probability measure  is stationary if 
+ = P. 
+If  is stationary and the initial measure  0 equals  , then 
+n = , n.</text>
+        </slide>
+        <slide>
+          <slideno>11</slideno>
+          <text>About this course 
+Notations
+ 
+Consider a Markov chain with state space  and transition matrix P . 
+Recall that 
+P[X n+1 = y | Xn = x] = P(x, y). 
+0 : the distribution of X 0 
+n : the distribution of X n 
+Then we have that 
+n+1 = nP. 
+n = 0Pn . 
+E[f (Xn)] = 0Pnf . 
+Hao Wu (MIT) 18.445 04 February 2015 12 / 15</text>
+        </slide>
+        <slide>
+          <slideno>15</slideno>
+          <text>MIT OpenCourseWare
+http://ocw.mit.edu
+18.445 Introduction to Stochastic Processes
+Spring 2015
+For information about citing these materials or our Terms of Use, visit: http://ocw.mit.edu/terms .</text>
+        </slide>
+        <slide>
+          <slideno>6</slideno>
+          <text>About this course 
+Gamblers ruin 
+The gamblers situation can be modeled by a Markov chain on the 
+state space 
+{0, 1, ..., N} : 
+X0 : initial money in purse 
+Xn : the gamblers fortune at time n 
+P[X n+1 = Xn + 1 | Xn] = 1/2, 
+P[X n+1 = Xn  1 | Xn] = 1/2. 
+The states 0 and N are absorbing. 
+ : the time that the gambler stops. 
+Answer to the questions 
+Theorem 
+Hao Wu (MIT) 18.445 04 February 2015 7 / 15 Assume that X 0 = k for some 0  k  N. Then 
+kP[X  = N] = , E[] = k(N  k).N</text>
+        </slide>
+        <slide>
+          <slideno>0</slideno>
+          <text>18.445 Introduction to Stochastic Processes 
+Lecture 1: Introduction to nite Markov chains 
+Hao Wu 
+MIT 
+04 February 2015 
+Hao Wu (MIT) 18.445 04 February 2015 1 / 15</text>
+        </slide>
+        <slide>
+          <slideno>5</slideno>
+          <text>About this course 
+Gamblers ruin
+ 
+Consider a gambler betting on the outcome of a sequence of
+ 
+independent fair coin tosses.
+ If head, he gains one dollar.
+ If tail, he loses one dollar.
+ If he reaches a fortune of N dollars, he stops.
+ 
+If his purse is ever empty, he stops.
+ 
+Questions : 
+What are the probabilities of the two possible fates ? 
+How long will it take for the gambler to arrive at one of the two 
+possible fates ? 
+Hao Wu (MIT) 18.445 04 February 2015 6 / 15</text>
+        </slide>
+        <slide>
+          <slideno>1</slideno>
+          <text>About this course 
+Course description
+ 
+Course description : 
+This course is an introduction to Markov chains, random walks, 
+martingales. 
+Time and place : 
+Course : Monday and Wednesday, 11 :00 am-12 :30pm.
+Bibliography : Markov Chains and Mixing Times, by David A. Levin, 
+Yuval Peres, Elizabeth L. Wilmer 
+Hao Wu (MIT) 18.445 04 February 2015 2 / 15</text>
+        </slide>
+        <slide>
+          <slideno>13</slideno>
+          <text>About this course 
+Random walks on graphs 
+Denition 
+Denition 
+04 February 2015 14 / 15 Hao Wu (MIT) 18.445 A graph G = (V , E) consists of a vertex set V and an edge set E : 
+V : set of vertices 
+E : set of pairs of vertices 
+When (x, y)  E, we write x  y : x and y are joined by an edge. 
+We say y is a neighbor of x . 
+ ( ) : For x V , deg x the number of neighbors of x . 
+Given a graph G = (V , E), we dene simple random walk on G to be 
+the Markov chain with state space V and transition matrix : 
+ 
+1/deg (x) if y  xP(x, y) = . 0 else</text>
+        </slide>
+        <slide>
+          <slideno>4</slideno>
+          <text>About this course 
+ : nite state space 
+P : transition matrix |||| 
+Denition 
+Hao Wu (MIT) 18.445 04 February 2015 5 / 15 A sequence of random variables (X 0, X1, X2, ...) is a Markov chain with 
+state space  and transition matrix P if 
+for all n  0, and all sequences (x 0, x1, ..., xn, xn+1), we have that 
+P[X n+1 = xn+1 | X0 = x0, ..., Xn = xn] 
+= P[X n+1 = xn+1 | Xn = xn] = P(xn, xn+1).</text>
+        </slide>
+        <slide>
+          <slideno>9</slideno>
+          <text>About this course 
+Coupon collecting 
+Answer to the question. 
+Theorem 
+A more precise answer.
+ Theorem 
+For any c &gt; 0, we have that 
+cP[ &gt; N log N + cN]  e. 
+Hao Wu (MIT) 18.445 04 February 2015 10 / 15 NN 1E[] = N  N log N.k k=1</text>
+        </slide>
+      </slides>
+      <videos/>
+    </lecture>
+    <lecture>
+      <lecture_title>Hitting Times (PDF)</lecture_title>
+      <lecture_pdf_url>https://ocw.mit.edu/courses/18-445-introduction-to-stochastic-processes-spring-2015/resources/mit18_445s15_lecture10/</lecture_pdf_url>
+      <lectureno>10</lectureno>
+      <slides>
+        <slide>
+          <slideno>0</slideno>
+          <text>18.445 Introduction to Stochastic Processes
+Lecture 10: Hitting times
+Hao Wu
+MIT
+16 March 2015
+Hao Wu (MIT) 18.445 16 March 2015 1 / 8</text>
+        </slide>
+        <slide>
+          <slideno>8</slideno>
+          <text>MIT OpenCourseWare
+http://ocw.mit.edu
+18.445 Introduction to Stochastic Processes
+Spring 2015
+For information about citing these materials or our Terms of Use, visit: http://ocw.mit.edu/terms .</text>
+        </slide>
+      </slides>
+      <videos/>
+    </lecture>
+    <lecture>
+      <lecture_title>Martingales: Uniformly Integrable (PDF)</lecture_title>
+      <lecture_pdf_url>https://ocw.mit.edu/courses/18-445-introduction-to-stochastic-processes-spring-2015/resources/mit18_445s15_lecture18/</lecture_pdf_url>
+      <lectureno>18</lectureno>
+      <slides>
+        <slide>
+          <slideno>12</slideno>
+          <text>MIT OpenCourseWare
+http://ocw.mit.edu
+18.445 Introduction to Stochastic Processes
+Spring 2015
+For information about citing these materials or our Terms of Use, visit: http://ocw.mit.edu/terms .</text>
+        </slide>
+        <slide>
+          <slideno>0</slideno>
+          <text>18.445 Introduction to Stochastic Processes
+Lecture 18: Martingale: Uniform integrable
+Hao Wu
+MIT
+22 April 2015
+Hao Wu (MIT) 18.445 22 April 2015 1 / 12</text>
+        </slide>
+      </slides>
+      <videos/>
+    </lecture>
+    <lecture>
+      <lecture_title>Martingales: Convergence (PDF)</lecture_title>
+      <lecture_pdf_url>https://ocw.mit.edu/courses/18-445-introduction-to-stochastic-processes-spring-2015/resources/mit18_445s15_lecture17/</lecture_pdf_url>
+      <lectureno>17</lectureno>
+      <slides>
+        <slide>
+          <slideno>5</slideno>
+          <text>Question
+Suppose that a martingale Xis bounded in L1, then we have the a.s.
+convergence.
+Question : Do we have E[X1] =E[X 0]?
+Answer : It is true when we have convergence in L1.
+Convergence in Lpforp&gt;1 implies convergence in L1. (Today)
+Convergence in L1. (Next lecture)
+Hao Wu (MIT) 18.445 15 April 2015 6 / 10</text>
+        </slide>
+        <slide>
+          <slideno>0</slideno>
+          <text>18.445 Introduction to Stochastic Processes
+Lecture 17: Martingle: a.s convergence and Lp-convergence
+Hao Wu
+MIT
+15 April 2015
+Hao Wu (MIT) 18.445 15 April 2015 1 / 10</text>
+        </slide>
+        <slide>
+          <slideno>10</slideno>
+          <text>MIT OpenCourseWare
+http://ocw.mit.edu
+18.445 Introduction to Stochastic Processes
+Spring 2015
+For information about citing these materials or our Terms of Use, visit: http://ocw.mit.edu/terms .</text>
+        </slide>
+      </slides>
+      <videos/>
+    </lecture>
+    <lecture>
+      <lecture_title>Introduction to Markov Chain Mixing (PDF)</lecture_title>
+      <lecture_pdf_url>https://ocw.mit.edu/courses/18-445-introduction-to-stochastic-processes-spring-2015/resources/mit18_445s15_lecture4/</lecture_pdf_url>
+      <lectureno>4</lectureno>
+      <slides>
+        <slide>
+          <slideno>1</slideno>
+          <text>Announcement 
+Midterm : April 6th.(on class)
+ Final : MaThe tests are closed book, closed notes, no calculators.
+ 
+Recall 
+If (X
+n)n is an irreducible Markov chain with stationary distribution  , 
+then 
+nn1lim 1 [Xj =x] = (x), P  a.s. 
+n n j=0 
+Todays goal We will show that X n converges to  under some "strong 
+sense". 
+total variation distance 
+the convergence theorem 
+mixing times 
+Hao Wu (MIT) 18.445 23 February 2015 2 / 9 y 18th.</text>
+        </slide>
+        <slide>
+          <slideno>9</slideno>
+          <text>MIT OpenCourseWare
+http://ocw.mit.edu
+18.445 Introduction to Stochastic Processes
+Spring 2015
+For information about citing these materials or our Terms of Use, visit: http://ocw.mit.edu/terms .</text>
+        </slide>
+        <slide>
+          <slideno>0</slideno>
+          <text>18.445 Introduction to Stochastic Processes
+Lecture 4: Introduction to Markov chain mixing
+Hao Wu
+MIT
+23 February 2015
+Hao Wu (MIT) 18.445 23 February 2015 1 / 9</text>
+        </slide>
+      </slides>
+      <videos/>
+    </lecture>
+    <lecture>
+      <lecture_title>Martingales: Optional Stopping Theorem (PDF)</lecture_title>
+      <lecture_pdf_url>https://ocw.mit.edu/courses/18-445-introduction-to-stochastic-processes-spring-2015/resources/mit18_445s15_lecture16/</lecture_pdf_url>
+      <lectureno>16</lectureno>
+      <slides>
+        <slide>
+          <slideno>11</slideno>
+          <text>MIT OpenCourseWare
+http://ocw.mit.edu
+18.445 Introduction to Stochastic Processes
+Spring 2015
+For information about citing these materials or our Terms of Use, visit: http://ocw.mit.edu/terms .</text>
+        </slide>
+        <slide>
+          <slideno>0</slideno>
+          <text>18.445 Introduction to Stochastic Processes
+Lecture 16: Optional stopping theorem
+Hao Wu
+MIT
+13 April 2015
+Hao Wu (MIT) 18.445 13 April 2015 1 / 15</text>
+        </slide>
+      </slides>
+      <videos/>
+    </lecture>
+    <lecture>
+      <lecture_title>Countable State Space Chain 2 (PDF)</lecture_title>
+      <lecture_pdf_url>https://ocw.mit.edu/courses/18-445-introduction-to-stochastic-processes-spring-2015/resources/mit18_445s15_lecture13/</lecture_pdf_url>
+      <lectureno>13</lectureno>
+      <slides>
+        <slide>
+          <slideno>0</slideno>
+          <text>18.445 Introduction to Stochastic Processes
+Lecture 13: Countable state space chains 2
+Hao Wu
+MIT
+1 April 2015
+Hao Wu (MIT) 18.445 1 April 2015 1 / 5</text>
+        </slide>
+        <slide>
+          <slideno>5</slideno>
+          <text>MIT OpenCourseWare
+http://ocw.mit.edu
+18.445 Introduction to Stochastic Processes
+Spring 2015
+For information about citing these materials or our Terms of Use, visit: http://ocw.mit.edu/terms .</text>
+        </slide>
+      </slides>
+      <videos/>
+    </lecture>
+    <lecture>
+      <lecture_title>Random Walk on Networks 2 (PDF)</lecture_title>
+      <lecture_pdf_url>https://ocw.mit.edu/courses/18-445-introduction-to-stochastic-processes-spring-2015/resources/mit18_445s15_lecture9/</lecture_pdf_url>
+      <lectureno>9</lectureno>
+      <slides>
+        <slide>
+          <slideno>8</slideno>
+          <text>MIT OpenCourseWare
+http://ocw.mit.edu
+18.445 Introduction to Stochastic Processes
+Spring 2015
+For information about citing these materials or our Terms of Use, visit: http://ocw.mit.edu/terms .</text>
+        </slide>
+        <slide>
+          <slideno>0</slideno>
+          <text>18.445 Introduction to Stochastic Processes
+Lecture 9: Random walk on networks 2
+Hao Wu
+MIT
+11 March 2015
+Hao Wu (MIT) 18.445 11 March 2015 1 / 8</text>
+        </slide>
+      </slides>
+      <videos/>
+    </lecture>
+    <lecture>
+      <lecture_title>Irreducible and Recurrence (PDF)</lecture_title>
+      <lecture_pdf_url>https://ocw.mit.edu/courses/18-445-introduction-to-stochastic-processes-spring-2015/resources/mit18_445s15_lecture23/</lecture_pdf_url>
+      <lectureno>23</lectureno>
+      <slides>
+        <slide>
+          <slideno>5</slideno>
+          <text>MIT OpenCourseWare
+http://ocw.mit.edu
+18.445 Introduction to Stochastic Processes
+Spring 2015
+For information about citing these materials or our Terms of Use, visit: http://ocw.mit.edu/terms .</text>
+        </slide>
+        <slide>
+          <slideno>0</slideno>
+          <text>18.445 Introduction to Stochastic Processes
+Lecture 23: Irreducibility and recurrence
+Hao Wu
+MIT
+11 May 2015
+Hao Wu (MIT) 18.445 11 May 2015 1 / 5</text>
+        </slide>
+        <slide>
+          <slideno>4</slideno>
+          <text>Recurrence
+Suppose that Xis a continuous time Markov chain and that Yis its
+jump chain.
+Denition
+A state xis recurrent if Px[ft:Xt=xgis unbounded] = 1.
+A state xis transient if Px[ft:Xt=xgis unbounded] &lt;1.
+Theorem
+Let X be an irreducible continuous time Markov chain.
+If x is recurrent for Y , then x is recurrent for X.
+If x is transient for Y , then x is transient for X.
+Either all states are recurrent, or all states are transient.
+R
+Remark A state xis recurrent for Xif and only if1
+0Pt(x;xR)dt=1.
+A state xis transient for Xif and only if1
+0Pt(x;x)dt&lt;1.
+Hao Wu (MIT) 18.445 11 May 2015 5 / 5</text>
+        </slide>
+      </slides>
+      <videos/>
+    </lecture>
+    <lecture>
+      <lecture_title>Poisson Process (PDF)</lecture_title>
+      <lecture_pdf_url>https://ocw.mit.edu/courses/18-445-introduction-to-stochastic-processes-spring-2015/resources/mit18_445s15_lecture20/</lecture_pdf_url>
+      <lectureno>20</lectureno>
+      <slides>
+        <slide>
+          <slideno>7</slideno>
+          <text>MIT OpenCourseWare
+http://ocw.mit.edu
+18.445 Introduction to Stochastic Processes
+Spring 2015
+For information about citing these materials or our Terms of Use, visit: http://ocw.mit.edu/terms .</text>
+        </slide>
+        <slide>
+          <slideno>0</slideno>
+          <text>18.445 Introduction to Stochastic Processes
+Lecture 20: Poisson process
+Hao Wu
+MIT
+29 April 2015
+Hao Wu (MIT) 18.445 29 April 2015 1 / 7</text>
+        </slide>
+      </slides>
+      <videos/>
+    </lecture>
+    <lecture>
+      <lecture_title>Continuous Time Markov Chain (PDF)</lecture_title>
+      <lecture_pdf_url>https://ocw.mit.edu/courses/18-445-introduction-to-stochastic-processes-spring-2015/resources/mit18_445s15_lecture21/</lecture_pdf_url>
+      <lectureno>21</lectureno>
+      <slides>
+        <slide>
+          <slideno>7</slideno>
+          <text>MIT OpenCourseWare
+http://ocw.mit.edu
+18.445 Introduction to Stochastic Processes
+Spring 2015
+For information about citing these materials or our Terms of Use, visit: http://ocw.mit.edu/terms .</text>
+        </slide>
+        <slide>
+          <slideno>0</slideno>
+          <text>18.445 Introduction to Stochastic Processes
+Lecture 21: Continuous time Markov chains
+Hao Wu
+MIT
+04 May 2015
+Hao Wu (MIT) 18.445 04 May 2015 1 / 7</text>
+        </slide>
+      </slides>
+      <videos/>
+    </lecture>
+    <lecture>
+      <lecture_title>Stationary Times (PDF)</lecture_title>
+      <lecture_pdf_url>https://ocw.mit.edu/courses/18-445-introduction-to-stochastic-processes-spring-2015/resources/mit18_445s15_lecture5/</lecture_pdf_url>
+      <lectureno>5</lectureno>
+      <slides>
+        <slide>
+          <slideno>0</slideno>
+          <text>18.445 Introduction to Stochastic Processes
+Lecture 5: Stationary times
+Hao Wu
+MIT
+25 February 2015
+Hao Wu (MIT) 18.445 25 February 2015 1 / 12</text>
+        </slide>
+        <slide>
+          <slideno>12</slideno>
+          <text>MIT OpenCourseWare
+http://ocw.mit.edu
+18.445 Introduction to Stochastic Processes
+Spring 2015
+For information about citing these materials or our Terms of Use, visit: http://ocw.mit.edu/terms .</text>
+        </slide>
+      </slides>
+      <videos/>
+    </lecture>
+    <lecture>
+      <lecture_title>Random Walk on Networks 1 (PDF)</lecture_title>
+      <lecture_pdf_url>https://ocw.mit.edu/courses/18-445-introduction-to-stochastic-processes-spring-2015/resources/mit18_445s15_lecture8/</lecture_pdf_url>
+      <lectureno>8</lectureno>
+      <slides>
+        <slide>
+          <slideno>5</slideno>
+          <text>Voltage
+Denition
+Consider a network (G= (V;E);fc(e) :e2Eg). We distinguish two
+vertices a(the source) and z(the sink). A voltage is a function on V
+which is harmonic on Vnfa;zg.
+Remark A voltage is completely determined by its boundary values
+W(a)andW(z).
+Hao Wu (MIT) 18.445 09 March 2015 6 / 10</text>
+        </slide>
+        <slide>
+          <slideno>2</slideno>
+          <text>Network
+Denition
+A network is a nite undirected connected graph G= (V;E)endowed
+with non-negative numbers fc(e) :e2Eg.
+c(e): conductance. Write c(x;y)forc(e)where e=fx;yg.
+Clearly c(x;y) =c(y;x).
+r(e) =1=c(e): resistance.
+Hao Wu (MIT) 18.445 09 March 2015 3 / 10</text>
+        </slide>
+        <slide>
+          <slideno>10</slideno>
+          <text>MIT OpenCourseWare
+http://ocw.mit.edu
+18.445 Introduction to Stochastic Processes
+Spring 2015
+For information about citing these materials or our Terms of Use, visit: http://ocw.mit.edu/terms .</text>
+        </slide>
+        <slide>
+          <slideno>0</slideno>
+          <text>18.445 Introduction to Stochastic Processes
+Lecture 8: Random walk on networks 1
+Hao Wu
+MIT
+09 March 2015
+Hao Wu (MIT) 18.445 09 March 2015 1 / 10</text>
+        </slide>
+      </slides>
+      <videos/>
+    </lecture>
+    <lecture>
+      <lecture_title>Countable State Space Chain 1 (PDF)</lecture_title>
+      <lecture_pdf_url>https://ocw.mit.edu/courses/18-445-introduction-to-stochastic-processes-spring-2015/resources/mit18_445s15_lecture12/</lecture_pdf_url>
+      <lectureno>12</lectureno>
+      <slides>
+        <slide>
+          <slideno>12</slideno>
+          <text>MIT OpenCourseWare
+http://ocw.mit.edu
+18.445 Introduction to Stochastic Processes
+Spring 2015
+For information about citing these materials or our Terms of Use, visit: http://ocw.mit.edu/terms .</text>
+        </slide>
+        <slide>
+          <slideno>0</slideno>
+          <text>18.445 Introduction to Stochastic Processes
+Lecture 12: Countable state space chains 1
+Hao Wu
+MIT
+30 March 2015
+Hao Wu (MIT) 18.445 30 March 2015 1 / 12</text>
+        </slide>
+      </slides>
+      <videos/>
+    </lecture>
+    <lecture>
+      <lecture_title>Conditional Expectation and Introduction to Martingales (PDF)</lecture_title>
+      <lecture_pdf_url>https://ocw.mit.edu/courses/18-445-introduction-to-stochastic-processes-spring-2015/resources/mit18_445s15_lecture15/</lecture_pdf_url>
+      <lectureno>15</lectureno>
+      <slides>
+        <slide>
+          <slideno>11</slideno>
+          <text>MIT OpenCourseWare
+http://ocw.mit.edu
+18.445 Introduction to Stochastic Processes
+Spring 2015
+For information about citing these materials or our Terms of Use, visit: http://ocw.mit.edu/terms .</text>
+        </slide>
+        <slide>
+          <slideno>1</slideno>
+          <text>About the midterm : total=23
+1 in [80;100]; 5 in [70;80); 6 in [60;70)
+4 in [40;60); 7 in [10;40)
+Todays Goal :
+probability space
+conditional expectation
+introduction to martingales
+Hao Wu (MIT) 18.445 08 April 2015 2 / 11</text>
+        </slide>
+        <slide>
+          <slideno>0</slideno>
+          <text>18.445 Introduction to Stochastic Processes
+Lecture 15: Introduction to martingales
+Hao Wu
+MIT
+08 April 2015
+Hao Wu (MIT) 18.445 08 April 2015 1 / 11</text>
+        </slide>
+      </slides>
+      <videos/>
+    </lecture>
+    <lecture>
+      <lecture_title>Infinitesimal Generator (PDF)</lecture_title>
+      <lecture_pdf_url>https://ocw.mit.edu/courses/18-445-introduction-to-stochastic-processes-spring-2015/resources/mit18_445s15_lecture22/</lecture_pdf_url>
+      <lectureno>22</lectureno>
+      <slides>
+        <slide>
+          <slideno>0</slideno>
+          <text>18.445 Introduction to Stochastic Processes
+Lecture 22: Innitesimal generator
+Hao Wu
+MIT
+06 May 2015
+Hao Wu (MIT) 18.445 06 May 2015 1 / 9</text>
+        </slide>
+        <slide>
+          <slideno>9</slideno>
+          <text>MIT OpenCourseWare
+http://ocw.mit.edu
+18.445 Introduction to Stochastic Processes
+Spring 2015
+For information about citing these materials or our Terms of Use, visit: http://ocw.mit.edu/terms .</text>
+        </slide>
+      </slides>
+      <videos/>
+    </lecture>
+    <lecture>
+      <lecture_title>Summary on Mixing Times (PDF)</lecture_title>
+      <lecture_pdf_url>https://ocw.mit.edu/courses/18-445-introduction-to-stochastic-processes-spring-2015/resources/mit18_445s15_lecture7/</lecture_pdf_url>
+      <lectureno>7</lectureno>
+      <slides>
+        <slide>
+          <slideno>0</slideno>
+          <text>18.445 Introduction to Stochastic Processes
+Lecture 7: Summary on mixing times
+Hao Wu
+MIT
+04 March 2015
+Hao Wu (MIT) 18.445 04 March 2015 1 / 9</text>
+        </slide>
+        <slide>
+          <slideno>9</slideno>
+          <text>MIT OpenCourseWare
+http://ocw.mit.edu
+18.445 Introduction to Stochastic Processes
+Spring 2015
+For information about citing these materials or our Terms of Use, visit: http://ocw.mit.edu/terms .</text>
+        </slide>
+      </slides>
+      <videos/>
+    </lecture>
+    <lecture>
+      <lecture_title>Galton-Watson Tree (PDF)</lecture_title>
+      <lecture_pdf_url>https://ocw.mit.edu/courses/18-445-introduction-to-stochastic-processes-spring-2015/resources/mit18_445s15_lecture19/</lecture_pdf_url>
+      <lectureno>19</lectureno>
+      <slides>
+        <slide>
+          <slideno>7</slideno>
+          <text>MIT OpenCourseWare
+http://ocw.mit.edu
+18.445 Introduction to Stochastic Processes
+Spring 2015
+For information about citing these materials or our Terms of Use, visit: http://ocw.mit.edu/terms .</text>
+        </slide>
+        <slide>
+          <slideno>1</slideno>
+          <text>Rooted trees
+Atree is a connected graph with no cycles.
+Arooted tree has a distinguished vertex v0, called the root.
+Thedepth of a vertex vis its graph distance to the root.
+Aleafis a vertex with degree one.
+Consider a regular rooted tree :
+each vertex has a xed number
+(say m) of offspring
+Zn:the number vertices in the
+n-th generation
+A rooted binary tree
+for regular tree : Zn=mn
+In real life, we often encounter trees where the number of offspring of a
+vertex is random.
+Hao Wu (MIT) 18.445 27 April 2015 2 / 7</text>
+        </slide>
+        <slide>
+          <slideno>0</slideno>
+          <text>18.445 Introduction to Stochastic Processes
+Lecture 19: Galton-Watson tree
+Hao Wu
+MIT
+27 April 2015
+Hao Wu (MIT) 18.445 27 April 2015 1 / 7</text>
+        </slide>
+      </slides>
+      <videos/>
+    </lecture>
+    <lecture>
+      <lecture_title>Lower Bounds on Mixing Times (PDF)</lecture_title>
+      <lecture_pdf_url>https://ocw.mit.edu/courses/18-445-introduction-to-stochastic-processes-spring-2015/resources/mit18_445s15_lecture6/</lecture_pdf_url>
+      <lectureno>6</lectureno>
+      <slides>
+        <slide>
+          <slideno>0</slideno>
+          <text>18.445 Introduction to Stochastic Processes
+Lecture 6: Lower bounds on mixing times
+Hao Wu
+MIT
+02 March 2015
+Hao Wu (MIT) 18.445 02 March 2015 1 / 8</text>
+        </slide>
+        <slide>
+          <slideno>8</slideno>
+          <text>MIT OpenCourseWare
+http://ocw.mit.edu
+18.445 Introduction to Stochastic Processes
+Spring 2015
+For information about citing these materials or our Terms of Use, visit: http://ocw.mit.edu/terms .</text>
+        </slide>
+      </slides>
+      <videos/>
+    </lecture>
+    <lecture>
+      <lecture_title>Markov Chains: Stationary Distribution (PDF)</lecture_title>
+      <lecture_pdf_url>https://ocw.mit.edu/courses/18-445-introduction-to-stochastic-processes-spring-2015/resources/mit18_445s15_lecture2/</lecture_pdf_url>
+      <lectureno>2</lectureno>
+      <slides>
+        <slide>
+          <slideno>0</slideno>
+          <text>18.445 Introduction to Stochastic Processes
+Lecture 2: Markov chains: stationary distribution
+Hao Wu
+MIT
+17 February 2015
+Hao Wu (MIT) 18.445 17 February 2015 1 / 7</text>
+        </slide>
+        <slide>
+          <slideno>1</slideno>
+          <text>Announcement : The midterm is postponed to April 6th. 
+Recall 
+Consider a Markov chain with state space  and transition matrix P : 
+P[X n+1 = y | Xn = x] = P(x, y). 
+0 : the distribution of X 0; n : the distribution of X n. 
+We call a probability measure  is stationary if  = P. 
+If  is stationary and  0 = , then  n = , n. 
+Todays goal 
+Irreducible, aperiodic 
+existence and uniqueness of stationary distribution. 
+Hao Wu (MIT) 18.445 17 February 2015 2 / 7</text>
+        </slide>
+        <slide>
+          <slideno>7</slideno>
+          <text>MIT OpenCourseWare
+http://ocw.mit.edu
+18.445 Introduction to Stochastic Processes
+Spring 2015
+For information about citing these materials or our Terms of Use, visit: http://ocw.mit.edu/terms .</text>
+        </slide>
+        <slide>
+          <slideno>6</slideno>
+          <text>Summary about stationary distribution
+ 
+In the proof of the existence and the uniqueness of stationary 
+distribution, the crucial assumption is that P is irreducible. 
+When P is irreducible, we can explicitly write out the stationary 
+distribution 
+1 (x) = &gt; 0, x  . Ex [+]x 
+In fact, the existence does not require irreducibility, but the uniqueness does. 
+Hao Wu (MIT) 18.445 17 February 2015 7 / 7</text>
+        </slide>
+      </slides>
+      <videos/>
+    </lecture>
+  </lectures>
+</doc>
