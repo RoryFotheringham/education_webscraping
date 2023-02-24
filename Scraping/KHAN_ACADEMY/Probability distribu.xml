@@ -1,0 +1,4017 @@
+<doc>
+  <source>KHAN_ACADEMY</source>
+  <date>None</date>
+  <course>
+    <course_url>https://www.khanacademy.org/math/probability/xa88397b6:probability-distributions-expected-value</course_url>
+    <course_title>Probability distributions &amp; expected value</course_title>
+    <course_tags>
+      <list>None</list>
+    </course_tags>
+  </course>
+  <lectures>
+    <lecture>
+      <lecture_title>Probability distributions introduction</lecture_title>
+      <lecture_pdf_url>https://www.khanacademy.org/math/probability/xa88397b6:probability-distributions-expected-value/xa88397b6:probability-distributions-introduction/v/discrete-probability-distribution</lecture_pdf_url>
+      <lectureno>1</lectureno>
+      <slides/>
+      <videos>
+        <video>
+          <video_url>https://www.khanacademy.org/math/probability/xa88397b6:probability-distributions-expected-value/xa88397b6:probability-distributions-introduction/v/discrete-probability-distribution</video_url>
+          <video_title>Constructing a probability distribution for random variable </video_title>
+          <transcript>
+            <slice>
+              <time_slice>00:00</time_slice>
+              <text_slice>Voiceover:Let's say we define</text_slice>
+            </slice>
+            <slice>
+              <time_slice>00:01</time_slice>
+              <text_slice>the random variable capital X</text_slice>
+            </slice>
+            <slice>
+              <time_slice>00:03</time_slice>
+              <text_slice>as the number of heads we get</text_slice>
+            </slice>
+            <slice>
+              <time_slice>00:05</time_slice>
+              <text_slice>after three flips of a fair coin.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>00:08</time_slice>
+              <text_slice>So given that definition
+of a random variable,</text_slice>
+            </slice>
+            <slice>
+              <time_slice>00:11</time_slice>
+              <text_slice>what we're going to try
+and do in this video</text_slice>
+            </slice>
+            <slice>
+              <time_slice>00:12</time_slice>
+              <text_slice>is think about the
+probability distributions.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>00:15</time_slice>
+              <text_slice>So what is the probability</text_slice>
+            </slice>
+            <slice>
+              <time_slice>00:16</time_slice>
+              <text_slice>of the different possible outcomes</text_slice>
+            </slice>
+            <slice>
+              <time_slice>00:19</time_slice>
+              <text_slice>or the different possible values</text_slice>
+            </slice>
+            <slice>
+              <time_slice>00:20</time_slice>
+              <text_slice>for this random variable.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>00:22</time_slice>
+              <text_slice>We'll plot them to see how</text_slice>
+            </slice>
+            <slice>
+              <time_slice>00:23</time_slice>
+              <text_slice>that distribution is spread out</text_slice>
+            </slice>
+            <slice>
+              <time_slice>00:26</time_slice>
+              <text_slice>amongst those possible outcomes.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>00:29</time_slice>
+              <text_slice>So let's think about all
+of the different values</text_slice>
+            </slice>
+            <slice>
+              <time_slice>00:31</time_slice>
+              <text_slice>that you could get when
+you flip a fair coin</text_slice>
+            </slice>
+            <slice>
+              <time_slice>00:35</time_slice>
+              <text_slice>three times.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>00:36</time_slice>
+              <text_slice>So you could get all heads,</text_slice>
+            </slice>
+            <slice>
+              <time_slice>00:40</time_slice>
+              <text_slice>heads, heads, heads.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>00:42</time_slice>
+              <text_slice>You could get heads, heads, tails.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>00:45</time_slice>
+              <text_slice>You could get heads, tails, heads.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>00:48</time_slice>
+              <text_slice>You could get heads, tails, tails.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>00:51</time_slice>
+              <text_slice>You could have tails, heads, heads.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>00:54</time_slice>
+              <text_slice>You could have tails, head, tails.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>00:58</time_slice>
+              <text_slice>You could have tails, tails, heads.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>01:00</time_slice>
+              <text_slice>And then you could have all tails.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>01:03</time_slice>
+              <text_slice>So there's eight equally,</text_slice>
+            </slice>
+            <slice>
+              <time_slice>01:05</time_slice>
+              <text_slice>when you do the actual experiment</text_slice>
+            </slice>
+            <slice>
+              <time_slice>01:07</time_slice>
+              <text_slice>there's eight equally
+likely outcomes here.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>01:10</time_slice>
+              <text_slice>But which of them, how would these relate</text_slice>
+            </slice>
+            <slice>
+              <time_slice>01:12</time_slice>
+              <text_slice>to the value of this random variable?</text_slice>
+            </slice>
+            <slice>
+              <time_slice>01:15</time_slice>
+              <text_slice>So let's think about,
+what's the probability,</text_slice>
+            </slice>
+            <slice>
+              <time_slice>01:17</time_slice>
+              <text_slice>there is a situation
+where you have zero heads.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>01:20</time_slice>
+              <text_slice>So what's the probably
+that our random variable X</text_slice>
+            </slice>
+            <slice>
+              <time_slice>01:23</time_slice>
+              <text_slice>is equal to zero?</text_slice>
+            </slice>
+            <slice>
+              <time_slice>01:25</time_slice>
+              <text_slice>Well, that's this
+situation right over here</text_slice>
+            </slice>
+            <slice>
+              <time_slice>01:29</time_slice>
+              <text_slice>where you have zero heads.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>01:30</time_slice>
+              <text_slice>It's one out of the eight equally</text_slice>
+            </slice>
+            <slice>
+              <time_slice>01:33</time_slice>
+              <text_slice>likely outcomes.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>01:34</time_slice>
+              <text_slice>So that is going to be 1/8.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>01:40</time_slice>
+              <text_slice>What's the probability that our random</text_slice>
+            </slice>
+            <slice>
+              <time_slice>01:43</time_slice>
+              <text_slice>variable capital X is equal to one?</text_slice>
+            </slice>
+            <slice>
+              <time_slice>01:48</time_slice>
+              <text_slice>Well, let's see.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>01:49</time_slice>
+              <text_slice>Which of these outcomes
+gets us exactly one head?</text_slice>
+            </slice>
+            <slice>
+              <time_slice>01:53</time_slice>
+              <text_slice>We have this one right over here.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>01:56</time_slice>
+              <text_slice>We have that one right over there.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>01:58</time_slice>
+              <text_slice>We have this one right over there.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>02:01</time_slice>
+              <text_slice>And I think that's all of them.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>02:02</time_slice>
+              <text_slice>So three out of the eight
+equally likely outcomes</text_slice>
+            </slice>
+            <slice>
+              <time_slice>02:05</time_slice>
+              <text_slice>provide us, get us to one head,</text_slice>
+            </slice>
+            <slice>
+              <time_slice>02:09</time_slice>
+              <text_slice>which is the same thing as saying</text_slice>
+            </slice>
+            <slice>
+              <time_slice>02:11</time_slice>
+              <text_slice>that our random variable equals one.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>02:13</time_slice>
+              <text_slice>So this has a 3/8 probability.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>02:16</time_slice>
+              <text_slice>So what's the probability,</text_slice>
+            </slice>
+            <slice>
+              <time_slice>02:18</time_slice>
+              <text_slice>I think you're getting,</text_slice>
+            </slice>
+            <slice>
+              <time_slice>02:19</time_slice>
+              <text_slice>maybe getting the hang
+of it at this point.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>02:21</time_slice>
+              <text_slice>What's the probability
+that the random variable X</text_slice>
+            </slice>
+            <slice>
+              <time_slice>02:23</time_slice>
+              <text_slice>is going to be equal to two?</text_slice>
+            </slice>
+            <slice>
+              <time_slice>02:25</time_slice>
+              <text_slice>Well, for X to be equal to two,</text_slice>
+            </slice>
+            <slice>
+              <time_slice>02:27</time_slice>
+              <text_slice>we must, that means we have two heads</text_slice>
+            </slice>
+            <slice>
+              <time_slice>02:30</time_slice>
+              <text_slice>when we flip the coins three times.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>02:31</time_slice>
+              <text_slice>So that's this outcome
+meets this constraint.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>02:35</time_slice>
+              <text_slice>This outcome would get</text_slice>
+            </slice>
+            <slice>
+              <time_slice>02:37</time_slice>
+              <text_slice>our random variable to be equal to two.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>02:38</time_slice>
+              <text_slice>And this outcome would make</text_slice>
+            </slice>
+            <slice>
+              <time_slice>02:40</time_slice>
+              <text_slice>our random variable equal to two.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>02:42</time_slice>
+              <text_slice>And this is three out of the eight</text_slice>
+            </slice>
+            <slice>
+              <time_slice>02:43</time_slice>
+              <text_slice>equally likely outcomes.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>02:45</time_slice>
+              <text_slice>So this has a 3/8 probability.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>02:47</time_slice>
+              <text_slice>And then finally we could say</text_slice>
+            </slice>
+            <slice>
+              <time_slice>02:50</time_slice>
+              <text_slice>what is the probability</text_slice>
+            </slice>
+            <slice>
+              <time_slice>02:52</time_slice>
+              <text_slice>that our random variable X</text_slice>
+            </slice>
+            <slice>
+              <time_slice>02:54</time_slice>
+              <text_slice>is equal to three?</text_slice>
+            </slice>
+            <slice>
+              <time_slice>02:55</time_slice>
+              <text_slice>Well, how does our random
+variable X equal three?</text_slice>
+            </slice>
+            <slice>
+              <time_slice>02:58</time_slice>
+              <text_slice>Well we have to get three heads</text_slice>
+            </slice>
+            <slice>
+              <time_slice>02:59</time_slice>
+              <text_slice>when we flip the coin.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>03:00</time_slice>
+              <text_slice>So there's only one out of the eight</text_slice>
+            </slice>
+            <slice>
+              <time_slice>03:02</time_slice>
+              <text_slice>equally likely outcomes
+that meets that constraint.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>03:05</time_slice>
+              <text_slice>So it's a 1/8 probability.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>03:08</time_slice>
+              <text_slice>So now we just have to think about</text_slice>
+            </slice>
+            <slice>
+              <time_slice>03:09</time_slice>
+              <text_slice>how we plot this, to see
+how this is distributed.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>03:12</time_slice>
+              <text_slice>So let me draw...</text_slice>
+            </slice>
+            <slice>
+              <time_slice>03:14</time_slice>
+              <text_slice>So over here on the vertical axis</text_slice>
+            </slice>
+            <slice>
+              <time_slice>03:17</time_slice>
+              <text_slice>this will be the probability.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>03:20</time_slice>
+              <text_slice>Probability.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>03:24</time_slice>
+              <text_slice>And it's going to be between zero and one.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>03:26</time_slice>
+              <text_slice>You can't have a
+probability larger than one.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>03:29</time_slice>
+              <text_slice>So just like this.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>03:33</time_slice>
+              <text_slice>So let's see, if this
+is one right over here,</text_slice>
+            </slice>
+            <slice>
+              <time_slice>03:37</time_slice>
+              <text_slice>and let's see everything here</text_slice>
+            </slice>
+            <slice>
+              <time_slice>03:39</time_slice>
+              <text_slice>looks like it's in eighths</text_slice>
+            </slice>
+            <slice>
+              <time_slice>03:40</time_slice>
+              <text_slice>so let's put everything
+in terms of eighths.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>03:42</time_slice>
+              <text_slice>So that's half.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>03:43</time_slice>
+              <text_slice>This is a fourth.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>03:45</time_slice>
+              <text_slice>That's a fourth.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>03:46</time_slice>
+              <text_slice>That's not quite a fourth.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>03:49</time_slice>
+              <text_slice>This is a fourth right over here.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>03:51</time_slice>
+              <text_slice>And then we can do it in terms of eighths.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>03:54</time_slice>
+              <text_slice>So that's a pretty good approximation.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>03:59</time_slice>
+              <text_slice>And then over here we
+can have the outcomes.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>04:01</time_slice>
+              <text_slice>Outcomes.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>04:04</time_slice>
+              <text_slice>And so outcomes, I'll say outcomes for</text_slice>
+            </slice>
+            <slice>
+              <time_slice>04:07</time_slice>
+              <text_slice>alright let's write this</text_slice>
+            </slice>
+            <slice>
+              <time_slice>04:09</time_slice>
+              <text_slice>so value for X</text_slice>
+            </slice>
+            <slice>
+              <time_slice>04:16</time_slice>
+              <text_slice>So X could be zero</text_slice>
+            </slice>
+            <slice>
+              <time_slice>04:18</time_slice>
+              <text_slice>actually let me do those same colors,</text_slice>
+            </slice>
+            <slice>
+              <time_slice>04:21</time_slice>
+              <text_slice>X could be zero.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>04:24</time_slice>
+              <text_slice>X could be one.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>04:26</time_slice>
+              <text_slice>X could be two.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>04:29</time_slice>
+              <text_slice>X could be equal to two.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>04:32</time_slice>
+              <text_slice>X could be equal to three.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>04:34</time_slice>
+              <text_slice>X could be equal to three.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>04:36</time_slice>
+              <text_slice>So these are the possible</text_slice>
+            </slice>
+            <slice>
+              <time_slice>04:37</time_slice>
+              <text_slice>values for X.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>04:38</time_slice>
+              <text_slice>And now we're just going
+to plot the probability.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>04:40</time_slice>
+              <text_slice>The probability that X has
+a value of zero is 1/8.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>04:45</time_slice>
+              <text_slice>That's, I'll make a little bit of a bar</text_slice>
+            </slice>
+            <slice>
+              <time_slice>04:48</time_slice>
+              <text_slice>right over here that goes up to 1/8.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>04:52</time_slice>
+              <text_slice>So let draw it like this.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>04:55</time_slice>
+              <text_slice>So goes up to, so this
+is 1/8 right over here.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>05:01</time_slice>
+              <text_slice>The probability that X equals one is 3/8.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>05:03</time_slice>
+              <text_slice>So 2/8, 3/8 gets us right over</text_slice>
+            </slice>
+            <slice>
+              <time_slice>05:06</time_slice>
+              <text_slice>let me do that in the purple color</text_slice>
+            </slice>
+            <slice>
+              <time_slice>05:08</time_slice>
+              <text_slice>So probability of one, that's 3/8.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>05:11</time_slice>
+              <text_slice>That's right over there.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>05:13</time_slice>
+              <text_slice>That's 3/8.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>05:15</time_slice>
+              <text_slice>So let me draw that bar, draw that bar.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>05:21</time_slice>
+              <text_slice>And just like that.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>05:23</time_slice>
+              <text_slice>The probability that X equals two.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>05:25</time_slice>
+              <text_slice>The probability that X equals two</text_slice>
+            </slice>
+            <slice>
+              <time_slice>05:26</time_slice>
+              <text_slice>is also 3/8.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>05:28</time_slice>
+              <text_slice>So that's going to be on the same level.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>05:30</time_slice>
+              <text_slice>Just like that.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>05:31</time_slice>
+              <text_slice>And then, the probability
+that X equals three</text_slice>
+            </slice>
+            <slice>
+              <time_slice>05:35</time_slice>
+              <text_slice>well that's 1/8.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>05:37</time_slice>
+              <text_slice>So it's going to the same
+height as this thing over here.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>05:40</time_slice>
+              <text_slice>I'm using the wrong color.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>05:43</time_slice>
+              <text_slice>So it's going to look like this.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>05:45</time_slice>
+              <text_slice>It's going to look like this.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>05:47</time_slice>
+              <text_slice>And actually let me just write
+this a little bit neater.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>05:50</time_slice>
+              <text_slice>I can write that three.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>05:52</time_slice>
+              <text_slice>Cut and paste.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>05:54</time_slice>
+              <text_slice>Move that three a little closer in</text_slice>
+            </slice>
+            <slice>
+              <time_slice>05:56</time_slice>
+              <text_slice>so that it looks a little bit neater.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>05:57</time_slice>
+              <text_slice>And I can actually move that
+two in actually as well.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>05:59</time_slice>
+              <text_slice>So cut and paste.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>06:03</time_slice>
+              <text_slice>So I can move that two.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>06:04</time_slice>
+              <text_slice>And there you have it!</text_slice>
+            </slice>
+            <slice>
+              <time_slice>06:05</time_slice>
+              <text_slice>We have made a probability distribution</text_slice>
+            </slice>
+            <slice>
+              <time_slice>06:08</time_slice>
+              <text_slice>for the random variable X.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>06:10</time_slice>
+              <text_slice>And the random variable X</text_slice>
+            </slice>
+            <slice>
+              <time_slice>06:11</time_slice>
+              <text_slice>can only take on these discrete values.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>06:13</time_slice>
+              <text_slice>It can't take on the value half</text_slice>
+            </slice>
+            <slice>
+              <time_slice>06:15</time_slice>
+              <text_slice>or the value pi or anything like that.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>06:17</time_slice>
+              <text_slice>So this, what we've just done here</text_slice>
+            </slice>
+            <slice>
+              <time_slice>06:20</time_slice>
+              <text_slice>is constructed a discrete
+probability distribution.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>06:24</time_slice>
+              <text_slice>Let me write that down.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>06:26</time_slice>
+              <text_slice>So this is a discrete,</text_slice>
+            </slice>
+            <slice>
+              <time_slice>06:31</time_slice>
+              <text_slice>it only, the random variable only takes on</text_slice>
+            </slice>
+            <slice>
+              <time_slice>06:33</time_slice>
+              <text_slice>discrete values.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>06:34</time_slice>
+              <text_slice>It can't take on any values
+in between these things.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>06:36</time_slice>
+              <text_slice>So discrete probability.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>06:38</time_slice>
+              <text_slice>Probability distribution.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>06:40</time_slice>
+              <text_slice>Distribution for our random variable X.</text_slice>
+            </slice>
+          </transcript>
+        </video>
+        <video>
+          <video_url>https://www.khanacademy.org/math/probability/xa88397b6:probability-distributions-expected-value/xa88397b6:probability-distributions-introduction/v/valid-discrete-probability-distribution-examples</video_url>
+          <video_title>Valid discrete probability distribution examples </video_title>
+          <transcript>
+            <slice>
+              <time_slice>00:00</time_slice>
+              <text_slice>- [Instructor] Anthony DeNoon</text_slice>
+            </slice>
+            <slice>
+              <time_slice>00:01</time_slice>
+              <text_slice>is analyzing his basketball statistics.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>00:05</time_slice>
+              <text_slice>The following table
+shows a probability model</text_slice>
+            </slice>
+            <slice>
+              <time_slice>00:08</time_slice>
+              <text_slice>for the results from his
+next two free throws.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>00:12</time_slice>
+              <text_slice>And so he has various outcomes
+of those two free throws,</text_slice>
+            </slice>
+            <slice>
+              <time_slice>00:15</time_slice>
+              <text_slice>and then the corresponding probability.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>00:16</time_slice>
+              <text_slice>Missing both free throws, 0.2.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>00:19</time_slice>
+              <text_slice>Making exactly one free throw, 0.5.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>00:23</time_slice>
+              <text_slice>And making both free throws, 0.1.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>00:26</time_slice>
+              <text_slice>Is this a valid probability model?</text_slice>
+            </slice>
+            <slice>
+              <time_slice>00:30</time_slice>
+              <text_slice>Pause this video and see if you
+can make a conclusion there.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>00:34</time_slice>
+              <text_slice>So let's think about what makes
+a valid probability model.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>00:38</time_slice>
+              <text_slice>One, the sum of the probabilities</text_slice>
+            </slice>
+            <slice>
+              <time_slice>00:40</time_slice>
+              <text_slice>of all the scenarios
+need to add up to 100%.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>00:44</time_slice>
+              <text_slice>So we would definitely want to check that.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>00:47</time_slice>
+              <text_slice>And also, they would all
+have to be positive values</text_slice>
+            </slice>
+            <slice>
+              <time_slice>00:51</time_slice>
+              <text_slice>or I guess I should say none
+of them can be negative values.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>00:54</time_slice>
+              <text_slice>You could have a scenario
+that has a 0% probability.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>00:58</time_slice>
+              <text_slice>And so all of these look
+like positive probabilities,</text_slice>
+            </slice>
+            <slice>
+              <time_slice>01:02</time_slice>
+              <text_slice>so we meet that second test</text_slice>
+            </slice>
+            <slice>
+              <time_slice>01:04</time_slice>
+              <text_slice>that all the probabilities
+are non-negative,</text_slice>
+            </slice>
+            <slice>
+              <time_slice>01:07</time_slice>
+              <text_slice>but do they add up to 100%?</text_slice>
+            </slice>
+            <slice>
+              <time_slice>01:10</time_slice>
+              <text_slice>So if I add .2 to .5, that is .7,</text_slice>
+            </slice>
+            <slice>
+              <time_slice>01:14</time_slice>
+              <text_slice>plus .1, they add up to 0.8</text_slice>
+            </slice>
+            <slice>
+              <time_slice>01:18</time_slice>
+              <text_slice>or they add up to 80%.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>01:19</time_slice>
+              <text_slice>So this is not a valid probability model.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>01:22</time_slice>
+              <text_slice>In order for it to be valid,</text_slice>
+            </slice>
+            <slice>
+              <time_slice>01:24</time_slice>
+              <text_slice>they would all, all the various scenarios</text_slice>
+            </slice>
+            <slice>
+              <time_slice>01:26</time_slice>
+              <text_slice>need to add up exactly to 100%.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>01:29</time_slice>
+              <text_slice>In this case, we only add up to 80%.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>01:32</time_slice>
+              <text_slice>If we add it up to 1.1 or 110%,</text_slice>
+            </slice>
+            <slice>
+              <time_slice>01:35</time_slice>
+              <text_slice>then we would also have a problem.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>01:37</time_slice>
+              <text_slice>We can just write no.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>01:39</time_slice>
+              <text_slice>Let's do another example.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>01:43</time_slice>
+              <text_slice>So here we are told you are a space alien.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>01:48</time_slice>
+              <text_slice>You visit planet Earth
+and abduct 97 chickens,</text_slice>
+            </slice>
+            <slice>
+              <time_slice>01:52</time_slice>
+              <text_slice>47 cows, and 77 humans.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>01:56</time_slice>
+              <text_slice>Then you randomly select
+one Earth creature</text_slice>
+            </slice>
+            <slice>
+              <time_slice>01:58</time_slice>
+              <text_slice>from your sample to experiment on.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>02:00</time_slice>
+              <text_slice>Each creature has an equal
+probability of getting selected.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>02:05</time_slice>
+              <text_slice>Create a probability model to show</text_slice>
+            </slice>
+            <slice>
+              <time_slice>02:07</time_slice>
+              <text_slice>how likely you are to select
+each type of Earth creature.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>02:10</time_slice>
+              <text_slice>Input your answers as fractions</text_slice>
+            </slice>
+            <slice>
+              <time_slice>02:12</time_slice>
+              <text_slice>or as decimals rounded
+to the nearest hundredth.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>02:15</time_slice>
+              <text_slice>So in the last example, we wanted to see</text_slice>
+            </slice>
+            <slice>
+              <time_slice>02:18</time_slice>
+              <text_slice>whether the probability model
+was valid, was legitimate.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>02:22</time_slice>
+              <text_slice>Here, we wanna construct a
+legitimate probability model.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>02:26</time_slice>
+              <text_slice>Well, how would we do that?</text_slice>
+            </slice>
+            <slice>
+              <time_slice>02:28</time_slice>
+              <text_slice>Well, the estimated probability
+of getting a chicken</text_slice>
+            </slice>
+            <slice>
+              <time_slice>02:30</time_slice>
+              <text_slice>is gonna be the fraction
+that you're sampling from</text_slice>
+            </slice>
+            <slice>
+              <time_slice>02:33</time_slice>
+              <text_slice>that is our chickens because
+any one of the animals</text_slice>
+            </slice>
+            <slice>
+              <time_slice>02:36</time_slice>
+              <text_slice>are equally likely to be selected.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>02:38</time_slice>
+              <text_slice>97</text_slice>
+            </slice>
+            <slice>
+              <time_slice>02:40</time_slice>
+              <text_slice>of the 97</text_slice>
+            </slice>
+            <slice>
+              <time_slice>02:42</time_slice>
+              <text_slice>plus 47</text_slice>
+            </slice>
+            <slice>
+              <time_slice>02:44</time_slice>
+              <text_slice>plus 77 animals are chickens.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>02:47</time_slice>
+              <text_slice>And so what is this going to be?</text_slice>
+            </slice>
+            <slice>
+              <time_slice>02:48</time_slice>
+              <text_slice>This is gonna be 97 over.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>02:51</time_slice>
+              <text_slice>97,</text_slice>
+            </slice>
+            <slice>
+              <time_slice>02:53</time_slice>
+              <text_slice>47, and 77,</text_slice>
+            </slice>
+            <slice>
+              <time_slice>02:55</time_slice>
+              <text_slice>you add 'em up.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>02:56</time_slice>
+              <text_slice>Three sevens is a 21.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>02:58</time_slice>
+              <text_slice>And then let's see, two plus nine is 11,</text_slice>
+            </slice>
+            <slice>
+              <time_slice>03:01</time_slice>
+              <text_slice>plus four is 15,</text_slice>
+            </slice>
+            <slice>
+              <time_slice>03:02</time_slice>
+              <text_slice>plus seven is 22,</text_slice>
+            </slice>
+            <slice>
+              <time_slice>03:05</time_slice>
+              <text_slice>so 221.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>03:07</time_slice>
+              <text_slice>So 97 of the 221 animals are chickens.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>03:11</time_slice>
+              <text_slice>And so I'll just write 97, 221s.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>03:14</time_slice>
+              <text_slice>They say that we can answer as fractions,</text_slice>
+            </slice>
+            <slice>
+              <time_slice>03:17</time_slice>
+              <text_slice>so I'm just gonna go that way.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>03:19</time_slice>
+              <text_slice>What about cows?</text_slice>
+            </slice>
+            <slice>
+              <time_slice>03:20</time_slice>
+              <text_slice>Well, 47</text_slice>
+            </slice>
+            <slice>
+              <time_slice>03:22</time_slice>
+              <text_slice>of the 221 are cows,</text_slice>
+            </slice>
+            <slice>
+              <time_slice>03:24</time_slice>
+              <text_slice>so there's a 47, 221st probability</text_slice>
+            </slice>
+            <slice>
+              <time_slice>03:28</time_slice>
+              <text_slice>of getting a cow.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>03:30</time_slice>
+              <text_slice>And then last but not least,</text_slice>
+            </slice>
+            <slice>
+              <time_slice>03:31</time_slice>
+              <text_slice>you have 77 of the 221s are human.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>03:36</time_slice>
+              <text_slice>Is this a legitimate
+probability distribution?</text_slice>
+            </slice>
+            <slice>
+              <time_slice>03:38</time_slice>
+              <text_slice>We'll add these up.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>03:40</time_slice>
+              <text_slice>If you add these three fractions up,</text_slice>
+            </slice>
+            <slice>
+              <time_slice>03:42</time_slice>
+              <text_slice>the denominator's gonna be 221</text_slice>
+            </slice>
+            <slice>
+              <time_slice>03:44</time_slice>
+              <text_slice>and we already know that
+97 plus 47 plus 77 is 221.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>03:48</time_slice>
+              <text_slice>So it definitely adds up to one,</text_slice>
+            </slice>
+            <slice>
+              <time_slice>03:50</time_slice>
+              <text_slice>and none of these are negative,</text_slice>
+            </slice>
+            <slice>
+              <time_slice>03:53</time_slice>
+              <text_slice>so this is a legitimate
+probability distribution.</text_slice>
+            </slice>
+          </transcript>
+        </video>
+        <video>
+          <video_url>https://www.khanacademy.org/math/probability/xa88397b6:probability-distributions-expected-value/xa88397b6:probability-distributions-introduction/v/example-analyzing-discrete-probability-distribution</video_url>
+          <video_title>Probability with discrete random variable example </video_title>
+          <transcript>
+            <slice>
+              <time_slice>00:00</time_slice>
+              <text_slice>- [Lecturer] Hugo plans to
+buy packs of baseball cards</text_slice>
+            </slice>
+            <slice>
+              <time_slice>00:03</time_slice>
+              <text_slice>until he gets the card
+of his favorite player,</text_slice>
+            </slice>
+            <slice>
+              <time_slice>00:06</time_slice>
+              <text_slice>but he only has enough money
+to buy at most four packs.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>00:11</time_slice>
+              <text_slice>Suppose that each pack has probability 0.2</text_slice>
+            </slice>
+            <slice>
+              <time_slice>00:15</time_slice>
+              <text_slice>of containing the card Hugo is hoping for.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>00:19</time_slice>
+              <text_slice>Let the random variable X</text_slice>
+            </slice>
+            <slice>
+              <time_slice>00:21</time_slice>
+              <text_slice>be the number of packs of cards Hugo buys.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>00:24</time_slice>
+              <text_slice>Here is the probability
+distribution for X.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>00:28</time_slice>
+              <text_slice>So it looks like there
+is a 0.2 probability</text_slice>
+            </slice>
+            <slice>
+              <time_slice>00:32</time_slice>
+              <text_slice>that he buys one pack,
+and that makes sense</text_slice>
+            </slice>
+            <slice>
+              <time_slice>00:35</time_slice>
+              <text_slice>because that first pack,
+there is a 0.2 probability</text_slice>
+            </slice>
+            <slice>
+              <time_slice>00:39</time_slice>
+              <text_slice>that it contains his
+favorite player's card,</text_slice>
+            </slice>
+            <slice>
+              <time_slice>00:42</time_slice>
+              <text_slice>and if it does, at that
+point he'll just stop,</text_slice>
+            </slice>
+            <slice>
+              <time_slice>00:43</time_slice>
+              <text_slice>he won't buy any more packs.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>00:46</time_slice>
+              <text_slice>Now what about the probability
+that he buys two packs?</text_slice>
+            </slice>
+            <slice>
+              <time_slice>00:49</time_slice>
+              <text_slice>Well, over here they give it
+a 0.16, and that makes sense,</text_slice>
+            </slice>
+            <slice>
+              <time_slice>00:53</time_slice>
+              <text_slice>there is a .8 probability
+that he does not get the card</text_slice>
+            </slice>
+            <slice>
+              <time_slice>00:57</time_slice>
+              <text_slice>he wants on the first one,</text_slice>
+            </slice>
+            <slice>
+              <time_slice>00:58</time_slice>
+              <text_slice>and then there's another .2</text_slice>
+            </slice>
+            <slice>
+              <time_slice>01:00</time_slice>
+              <text_slice>that he gets it on the second one.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>01:02</time_slice>
+              <text_slice>So 0.8 times 0.2 does indeed equal 0.16.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>01:10</time_slice>
+              <text_slice>But they're not asking
+us to calculate that,</text_slice>
+            </slice>
+            <slice>
+              <time_slice>01:12</time_slice>
+              <text_slice>they give it to us.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>01:13</time_slice>
+              <text_slice>Then, the probability that
+he gets three packs is 0.128,</text_slice>
+            </slice>
+            <slice>
+              <time_slice>01:18</time_slice>
+              <text_slice>and then they've left
+blank the probability</text_slice>
+            </slice>
+            <slice>
+              <time_slice>01:20</time_slice>
+              <text_slice>that he gets four packs.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>01:22</time_slice>
+              <text_slice>But this is the entire discrete
+probability distribution,</text_slice>
+            </slice>
+            <slice>
+              <time_slice>01:25</time_slice>
+              <text_slice>because Hugo has to stop at four,</text_slice>
+            </slice>
+            <slice>
+              <time_slice>01:28</time_slice>
+              <text_slice>even if he doesn't get
+the card he wants at four</text_slice>
+            </slice>
+            <slice>
+              <time_slice>01:31</time_slice>
+              <text_slice>on the fourth pack, he's just
+going to stop over there.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>01:35</time_slice>
+              <text_slice>So we could actually figure
+out this question mark</text_slice>
+            </slice>
+            <slice>
+              <time_slice>01:37</time_slice>
+              <text_slice>by just realizing that
+these four probabilities</text_slice>
+            </slice>
+            <slice>
+              <time_slice>01:40</time_slice>
+              <text_slice>have to add up to one.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>01:43</time_slice>
+              <text_slice>But let's just first answer the question,</text_slice>
+            </slice>
+            <slice>
+              <time_slice>01:45</time_slice>
+              <text_slice>find the indicated probability,</text_slice>
+            </slice>
+            <slice>
+              <time_slice>01:47</time_slice>
+              <text_slice>what is the probability
+that X is greater than</text_slice>
+            </slice>
+            <slice>
+              <time_slice>01:50</time_slice>
+              <text_slice>or equal to two?</text_slice>
+            </slice>
+            <slice>
+              <time_slice>01:51</time_slice>
+              <text_slice>What is the probability, remember,</text_slice>
+            </slice>
+            <slice>
+              <time_slice>01:53</time_slice>
+              <text_slice>X is the number of packs
+of cards Hugo buys.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>01:56</time_slice>
+              <text_slice>I encourage you to pause the video</text_slice>
+            </slice>
+            <slice>
+              <time_slice>01:58</time_slice>
+              <text_slice>and try to figure it out.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>02:01</time_slice>
+              <text_slice>So let's look at the
+scenarios we're talking about.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>02:03</time_slice>
+              <text_slice>Probability that our
+discrete random variable X</text_slice>
+            </slice>
+            <slice>
+              <time_slice>02:06</time_slice>
+              <text_slice>is greater than or equal to two,</text_slice>
+            </slice>
+            <slice>
+              <time_slice>02:08</time_slice>
+              <text_slice>well, that's these three
+scenarios right over here.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>02:12</time_slice>
+              <text_slice>And so what is their combined probability?</text_slice>
+            </slice>
+            <slice>
+              <time_slice>02:15</time_slice>
+              <text_slice>Well you might want to say,</text_slice>
+            </slice>
+            <slice>
+              <time_slice>02:17</time_slice>
+              <text_slice>hey we did figure out what the probability</text_slice>
+            </slice>
+            <slice>
+              <time_slice>02:19</time_slice>
+              <text_slice>of getting exactly four packs are,</text_slice>
+            </slice>
+            <slice>
+              <time_slice>02:22</time_slice>
+              <text_slice>but we have to remember that
+these all add up to 100%.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>02:26</time_slice>
+              <text_slice>And so this right over here is 0.2</text_slice>
+            </slice>
+            <slice>
+              <time_slice>02:29</time_slice>
+              <text_slice>and so this is 0.2, the
+other three combined</text_slice>
+            </slice>
+            <slice>
+              <time_slice>02:32</time_slice>
+              <text_slice>have to add up to 0.8.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>02:34</time_slice>
+              <text_slice>0.8 plus 0.2 is one, or 100%.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>02:38</time_slice>
+              <text_slice>So just like that we
+know that this is 0.8.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>02:42</time_slice>
+              <text_slice>If for kicks we wanted to figure out</text_slice>
+            </slice>
+            <slice>
+              <time_slice>02:45</time_slice>
+              <text_slice>this question mark right over here</text_slice>
+            </slice>
+            <slice>
+              <time_slice>02:47</time_slice>
+              <text_slice>we could just say that
+look, have to add up to one.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>02:50</time_slice>
+              <text_slice>So, we could say, the
+probability of exactly four</text_slice>
+            </slice>
+            <slice>
+              <time_slice>02:55</time_slice>
+              <text_slice>is going to be equal to one</text_slice>
+            </slice>
+            <slice>
+              <time_slice>02:56</time_slice>
+              <text_slice>minus 0.2 minus 0.16 minus 0.128.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>03:05</time_slice>
+              <text_slice>I get one minus .2 minus .16
+minus .128 is equal to 0.512.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>03:17</time_slice>
+              <text_slice>Is equal to 0.512, 0.512.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>03:23</time_slice>
+              <text_slice>You might immediately say, wait, wait,</text_slice>
+            </slice>
+            <slice>
+              <time_slice>03:25</time_slice>
+              <text_slice>this seems like a very high probability,</text_slice>
+            </slice>
+            <slice>
+              <time_slice>03:27</time_slice>
+              <text_slice>there's more than a 50% chance
+that he buys four packs,</text_slice>
+            </slice>
+            <slice>
+              <time_slice>03:32</time_slice>
+              <text_slice>and you have to remember,
+he has to stop at four.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>03:35</time_slice>
+              <text_slice>Even if on the fourth he
+doesn't get the card he wants</text_slice>
+            </slice>
+            <slice>
+              <time_slice>03:38</time_slice>
+              <text_slice>he still has to stop there.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>03:39</time_slice>
+              <text_slice>So, there's a high probability</text_slice>
+            </slice>
+            <slice>
+              <time_slice>03:41</time_slice>
+              <text_slice>that that's where we end up.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>03:43</time_slice>
+              <text_slice>There's a little less than 50% chance</text_slice>
+            </slice>
+            <slice>
+              <time_slice>03:45</time_slice>
+              <text_slice>that he gets the card he's
+looking for before that point.</text_slice>
+            </slice>
+          </transcript>
+        </video>
+      </videos>
+    </lecture>
+    <lecture>
+      <lecture_title>Theoretical &amp; empirical probability distributions</lecture_title>
+      <lecture_pdf_url>https://www.khanacademy.org/math/probability/xa88397b6:probability-distributions-expected-value/xa88397b6:theoretical-empirical-probability-distributions/v/theoretical-probability-distribution-example-tables</lecture_pdf_url>
+      <lectureno>2</lectureno>
+      <slides/>
+      <videos>
+        <video>
+          <video_url>https://www.khanacademy.org/math/probability/xa88397b6:probability-distributions-expected-value/xa88397b6:theoretical-empirical-probability-distributions/v/theoretical-probability-distribution-example-tables</video_url>
+          <video_title>Theoretical probability distribution example: tables </video_title>
+          <transcript>
+            <slice>
+              <time_slice>00:00</time_slice>
+              <text_slice>- [Instructor] We're
+told that a board game</text_slice>
+            </slice>
+            <slice>
+              <time_slice>00:01</time_slice>
+              <text_slice>has players roll two
+3-sided dice, these exist</text_slice>
+            </slice>
+            <slice>
+              <time_slice>00:05</time_slice>
+              <text_slice>and actually I looked it up, they do exist</text_slice>
+            </slice>
+            <slice>
+              <time_slice>00:07</time_slice>
+              <text_slice>and they're actually fascinating.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>00:08</time_slice>
+              <text_slice>And subtract the numbers
+showing on the faces.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>00:12</time_slice>
+              <text_slice>The game only looks at
+non-negative differences.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>00:16</time_slice>
+              <text_slice>For example, if a player
+rolls a one and a three,</text_slice>
+            </slice>
+            <slice>
+              <time_slice>00:20</time_slice>
+              <text_slice>the difference is two.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>00:22</time_slice>
+              <text_slice>Let D represent the
+difference in a given roll.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>00:26</time_slice>
+              <text_slice>Construct the theoretical
+probability distribution of D.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>00:30</time_slice>
+              <text_slice>So pause this video and see
+if you can have a go at that</text_slice>
+            </slice>
+            <slice>
+              <time_slice>00:32</time_slice>
+              <text_slice>before we work through it together.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>00:35</time_slice>
+              <text_slice>All right, now let's
+work through it together.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>00:38</time_slice>
+              <text_slice>So let's just think about
+all of the scenarios</text_slice>
+            </slice>
+            <slice>
+              <time_slice>00:40</time_slice>
+              <text_slice>for the two die.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>00:42</time_slice>
+              <text_slice>So let me draw a little table here.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>00:44</time_slice>
+              <text_slice>So let me do it like that</text_slice>
+            </slice>
+            <slice>
+              <time_slice>00:46</time_slice>
+              <text_slice>and let me do it like this.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>00:49</time_slice>
+              <text_slice>And then let me put a little
+divider right over here.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>00:52</time_slice>
+              <text_slice>And for this top, this
+is going to be die one</text_slice>
+            </slice>
+            <slice>
+              <time_slice>00:56</time_slice>
+              <text_slice>and then this is going to be die two.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>00:59</time_slice>
+              <text_slice>Die one can take on one, two, or three</text_slice>
+            </slice>
+            <slice>
+              <time_slice>01:03</time_slice>
+              <text_slice>and die two could be one, two, or three.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>01:08</time_slice>
+              <text_slice>And so let me finish making
+this a bit of a table here.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>01:13</time_slice>
+              <text_slice>And what we wanna do is
+look at the difference</text_slice>
+            </slice>
+            <slice>
+              <time_slice>01:16</time_slice>
+              <text_slice>but the non-negative difference.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>01:17</time_slice>
+              <text_slice>So we'll always subtract the
+lower die from the higher die.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>01:21</time_slice>
+              <text_slice>So what's the difference here?</text_slice>
+            </slice>
+            <slice>
+              <time_slice>01:22</time_slice>
+              <text_slice>Well, this is going to be zero.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>01:24</time_slice>
+              <text_slice>If I roll a one and a one.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>01:26</time_slice>
+              <text_slice>Now, what if I roll a two and a one?</text_slice>
+            </slice>
+            <slice>
+              <time_slice>01:28</time_slice>
+              <text_slice>Well, here the difference is
+going to be two minus one,</text_slice>
+            </slice>
+            <slice>
+              <time_slice>01:30</time_slice>
+              <text_slice>which is one.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>01:32</time_slice>
+              <text_slice>Here the difference is three
+minus one, which is two.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>01:35</time_slice>
+              <text_slice>Now what about right over here?</text_slice>
+            </slice>
+            <slice>
+              <time_slice>01:37</time_slice>
+              <text_slice>Well, here the higher die
+is two the lower one is one,</text_slice>
+            </slice>
+            <slice>
+              <time_slice>01:41</time_slice>
+              <text_slice>right over here.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>01:42</time_slice>
+              <text_slice>So two minus one is one,</text_slice>
+            </slice>
+            <slice>
+              <time_slice>01:45</time_slice>
+              <text_slice>two minus two is zero.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>01:47</time_slice>
+              <text_slice>And now this is gonna be the higher roll,</text_slice>
+            </slice>
+            <slice>
+              <time_slice>01:50</time_slice>
+              <text_slice>die one is gonna have the
+high roll in this scenario.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>01:52</time_slice>
+              <text_slice>Three minus two is one.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>01:54</time_slice>
+              <text_slice>And then right over here,
+three minus one is two.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>01:59</time_slice>
+              <text_slice>Now die one rolls a two,</text_slice>
+            </slice>
+            <slice>
+              <time_slice>02:00</time_slice>
+              <text_slice>die two rolls a three.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>02:03</time_slice>
+              <text_slice>Die three is higher,
+three minus two is one.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>02:05</time_slice>
+              <text_slice>And then three minus three is zero.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>02:08</time_slice>
+              <text_slice>So we've come up with all of the scenarios</text_slice>
+            </slice>
+            <slice>
+              <time_slice>02:10</time_slice>
+              <text_slice>and we can see that we're
+either gonna end up with a zero</text_slice>
+            </slice>
+            <slice>
+              <time_slice>02:13</time_slice>
+              <text_slice>or one or a two when we look
+at the positive difference.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>02:16</time_slice>
+              <text_slice>So there's a scenario of
+getting a zero, a one or a two.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>02:22</time_slice>
+              <text_slice>Those are the different differences</text_slice>
+            </slice>
+            <slice>
+              <time_slice>02:24</time_slice>
+              <text_slice>that we could actually get.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>02:26</time_slice>
+              <text_slice>And so let's think about the
+probability of each of them.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>02:28</time_slice>
+              <text_slice>What's the probability that
+the difference is zero.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>02:31</time_slice>
+              <text_slice>Well, we can see that one, two, three</text_slice>
+            </slice>
+            <slice>
+              <time_slice>02:36</time_slice>
+              <text_slice>of the nine equally likely outcomes,</text_slice>
+            </slice>
+            <slice>
+              <time_slice>02:38</time_slice>
+              <text_slice>result in a difference of zero.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>02:40</time_slice>
+              <text_slice>So it's gonna be three
+out of nine or one-third.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>02:44</time_slice>
+              <text_slice>What about a difference of,
+let me use the blue, one?</text_slice>
+            </slice>
+            <slice>
+              <time_slice>02:49</time_slice>
+              <text_slice>Well, we could see there
+are one, two, three, four</text_slice>
+            </slice>
+            <slice>
+              <time_slice>02:54</time_slice>
+              <text_slice>of the nine scenarios have that.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>02:56</time_slice>
+              <text_slice>So there is a four ninths probability.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>02:59</time_slice>
+              <text_slice>And then last but not
+least a difference of two.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>03:02</time_slice>
+              <text_slice>Well, there's two out of the
+nine scenarios that have that.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>03:05</time_slice>
+              <text_slice>So there is a two ninths
+probability right over there.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>03:09</time_slice>
+              <text_slice>And we're done.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>03:10</time_slice>
+              <text_slice>We've constructed the theoretical
+probability distribution</text_slice>
+            </slice>
+            <slice>
+              <time_slice>03:13</time_slice>
+              <text_slice>of D.</text_slice>
+            </slice>
+          </transcript>
+        </video>
+        <video>
+          <video_url>https://www.khanacademy.org/math/probability/xa88397b6:probability-distributions-expected-value/xa88397b6:theoretical-empirical-probability-distributions/v/theoretical-probability-distribution-example-multiplication</video_url>
+          <video_title>Theoretical probability distribution example: multiplication </video_title>
+          <transcript>
+            <slice>
+              <time_slice>00:00</time_slice>
+              <text_slice>- [Instructor] We're told
+that Kai goes to a restaurant</text_slice>
+            </slice>
+            <slice>
+              <time_slice>00:02</time_slice>
+              <text_slice>that advertises a promotion saying,</text_slice>
+            </slice>
+            <slice>
+              <time_slice>00:04</time_slice>
+              <text_slice>"1 in 5 customers get a free dessert!"</text_slice>
+            </slice>
+            <slice>
+              <time_slice>00:07</time_slice>
+              <text_slice>Suppose Kai goes to the
+restaurant twice in a given week,</text_slice>
+            </slice>
+            <slice>
+              <time_slice>00:12</time_slice>
+              <text_slice>and each time he has a 1/5 probability</text_slice>
+            </slice>
+            <slice>
+              <time_slice>00:15</time_slice>
+              <text_slice>of getting a free dessert.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>00:17</time_slice>
+              <text_slice>Let X represent the
+number of free desserts</text_slice>
+            </slice>
+            <slice>
+              <time_slice>00:21</time_slice>
+              <text_slice>Kai gets in his two trips.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>00:23</time_slice>
+              <text_slice>Construct the theoretical
+probability distribution of X.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>00:28</time_slice>
+              <text_slice>All right, so pause this video</text_slice>
+            </slice>
+            <slice>
+              <time_slice>00:30</time_slice>
+              <text_slice>and see if you can work through this</text_slice>
+            </slice>
+            <slice>
+              <time_slice>00:31</time_slice>
+              <text_slice>before we do it together.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>00:34</time_slice>
+              <text_slice>All right, so first let's just think about</text_slice>
+            </slice>
+            <slice>
+              <time_slice>00:36</time_slice>
+              <text_slice>the possible values that X could take on.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>00:38</time_slice>
+              <text_slice>This is the number of
+free desserts he gets,</text_slice>
+            </slice>
+            <slice>
+              <time_slice>00:40</time_slice>
+              <text_slice>and he visits twice.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>00:42</time_slice>
+              <text_slice>So there's some world in which</text_slice>
+            </slice>
+            <slice>
+              <time_slice>00:44</time_slice>
+              <text_slice>he doesn't get any free desserts.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>00:46</time_slice>
+              <text_slice>So that's 0 in his two visits.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>00:50</time_slice>
+              <text_slice>Maybe on one of the visits,</text_slice>
+            </slice>
+            <slice>
+              <time_slice>00:51</time_slice>
+              <text_slice>he gets a dessert and
+the other one he doesn't,</text_slice>
+            </slice>
+            <slice>
+              <time_slice>00:53</time_slice>
+              <text_slice>and maybe in both of his visits</text_slice>
+            </slice>
+            <slice>
+              <time_slice>00:55</time_slice>
+              <text_slice>he actually is able to get a free dessert.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>00:57</time_slice>
+              <text_slice>So he's going to have someplace</text_slice>
+            </slice>
+            <slice>
+              <time_slice>00:58</time_slice>
+              <text_slice>from 0 to 2 free desserts in a given week.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>01:02</time_slice>
+              <text_slice>So we just have to figure out</text_slice>
+            </slice>
+            <slice>
+              <time_slice>01:03</time_slice>
+              <text_slice>the probability of each of these.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>01:05</time_slice>
+              <text_slice>So let's first of all think
+about the probability,</text_slice>
+            </slice>
+            <slice>
+              <time_slice>01:08</time_slice>
+              <text_slice>let me write it over here,</text_slice>
+            </slice>
+            <slice>
+              <time_slice>01:10</time_slice>
+              <text_slice>the probability that
+capital X is equal to 0</text_slice>
+            </slice>
+            <slice>
+              <time_slice>01:13</time_slice>
+              <text_slice>is going to be equal to what?</text_slice>
+            </slice>
+            <slice>
+              <time_slice>01:15</time_slice>
+              <text_slice>Well, that's going to be the probability</text_slice>
+            </slice>
+            <slice>
+              <time_slice>01:16</time_slice>
+              <text_slice>that he doesn't get a
+dessert on both days.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>01:20</time_slice>
+              <text_slice>And it's important to realize</text_slice>
+            </slice>
+            <slice>
+              <time_slice>01:21</time_slice>
+              <text_slice>that these are independent events.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>01:23</time_slice>
+              <text_slice>It's not like the restaurant's gonna say,</text_slice>
+            </slice>
+            <slice>
+              <time_slice>01:24</time_slice>
+              <text_slice>"Oh, if you didn't get
+a dessert on one day,</text_slice>
+            </slice>
+            <slice>
+              <time_slice>01:26</time_slice>
+              <text_slice>you're more likely to get
+another the other day,"</text_slice>
+            </slice>
+            <slice>
+              <time_slice>01:27</time_slice>
+              <text_slice>or, "Somehow if you got
+it on a previous day,</text_slice>
+            </slice>
+            <slice>
+              <time_slice>01:29</time_slice>
+              <text_slice>you're less likely than another day."</text_slice>
+            </slice>
+            <slice>
+              <time_slice>01:31</time_slice>
+              <text_slice>That they are independent events.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>01:33</time_slice>
+              <text_slice>So the probability of not
+getting it on any one day</text_slice>
+            </slice>
+            <slice>
+              <time_slice>01:36</time_slice>
+              <text_slice>is four out of five,</text_slice>
+            </slice>
+            <slice>
+              <time_slice>01:39</time_slice>
+              <text_slice>and the probability of not
+getting it on two of the days,</text_slice>
+            </slice>
+            <slice>
+              <time_slice>01:42</time_slice>
+              <text_slice>I would just multiply them</text_slice>
+            </slice>
+            <slice>
+              <time_slice>01:43</time_slice>
+              <text_slice>because they are independent events.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>01:45</time_slice>
+              <text_slice>So four over five times four over five.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>01:49</time_slice>
+              <text_slice>So the probability that X is equal to 0</text_slice>
+            </slice>
+            <slice>
+              <time_slice>01:52</time_slice>
+              <text_slice>is going to be 16/25, 16 over 25.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>01:57</time_slice>
+              <text_slice>Now what about the probability
+that X is equal to 1?</text_slice>
+            </slice>
+            <slice>
+              <time_slice>02:03</time_slice>
+              <text_slice>What is this going to be?</text_slice>
+            </slice>
+            <slice>
+              <time_slice>02:05</time_slice>
+              <text_slice>Well, there are two scenarios over here.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>02:08</time_slice>
+              <text_slice>There's one scenario
+where let's say on day one</text_slice>
+            </slice>
+            <slice>
+              <time_slice>02:12</time_slice>
+              <text_slice>he does not get the dessert,</text_slice>
+            </slice>
+            <slice>
+              <time_slice>02:14</time_slice>
+              <text_slice>and on day two he does get the dessert.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>02:17</time_slice>
+              <text_slice>But then of course
+there's the other scenario</text_slice>
+            </slice>
+            <slice>
+              <time_slice>02:20</time_slice>
+              <text_slice>where on day one he gets the dessert,</text_slice>
+            </slice>
+            <slice>
+              <time_slice>02:23</time_slice>
+              <text_slice>and then on day two he
+doesn't get the dessert.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>02:28</time_slice>
+              <text_slice>These are the two scenarios</text_slice>
+            </slice>
+            <slice>
+              <time_slice>02:29</time_slice>
+              <text_slice>where he's going to get X equals 1.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>02:31</time_slice>
+              <text_slice>And so if we add these
+together, let's see.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>02:34</time_slice>
+              <text_slice>4/5 times 1/5, this is going to be 4/25,</text_slice>
+            </slice>
+            <slice>
+              <time_slice>02:39</time_slice>
+              <text_slice>and then this is going to be 4/25 again.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>02:43</time_slice>
+              <text_slice>And you add these two together,</text_slice>
+            </slice>
+            <slice>
+              <time_slice>02:45</time_slice>
+              <text_slice>you're going to get 8/25.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>02:48</time_slice>
+              <text_slice>And then last but not least,</text_slice>
+            </slice>
+            <slice>
+              <time_slice>02:50</time_slice>
+              <text_slice>and actually we could
+figure out this last one</text_slice>
+            </slice>
+            <slice>
+              <time_slice>02:51</time_slice>
+              <text_slice>by subtracting 16 and 8 from 25,</text_slice>
+            </slice>
+            <slice>
+              <time_slice>02:55</time_slice>
+              <text_slice>which would actually give us 1/25th,</text_slice>
+            </slice>
+            <slice>
+              <time_slice>02:57</time_slice>
+              <text_slice>but let's just write this out.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>02:58</time_slice>
+              <text_slice>The probability that X equals 2,</text_slice>
+            </slice>
+            <slice>
+              <time_slice>03:01</time_slice>
+              <text_slice>this is the probability that
+he gets a dessert on both days.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>03:03</time_slice>
+              <text_slice>So 1/5 chance on day one</text_slice>
+            </slice>
+            <slice>
+              <time_slice>03:06</time_slice>
+              <text_slice>and 1/5 chance on the second day.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>03:09</time_slice>
+              <text_slice>So 1/5 times 1/5 is 1/25.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>03:12</time_slice>
+              <text_slice>And you can do a reality check here.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>03:14</time_slice>
+              <text_slice>These all need to add up to one.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>03:16</time_slice>
+              <text_slice>And they do indeed add up to one.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>03:17</time_slice>
+              <text_slice>16 plus 8 plus 1 is 25.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>03:20</time_slice>
+              <text_slice>So 25/25 is what they all add up to.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>03:22</time_slice>
+              <text_slice>And we're done.</text_slice>
+            </slice>
+          </transcript>
+        </video>
+        <video>
+          <video_url>https://www.khanacademy.org/math/probability/xa88397b6:probability-distributions-expected-value/xa88397b6:theoretical-empirical-probability-distributions/v/probability-distributions-empirical-data</video_url>
+          <video_title>Probability distributions from empirical data </video_title>
+          <transcript>
+            <slice>
+              <time_slice>00:00</time_slice>
+              <text_slice>- [Instructor] We're told
+that Jada owns a restaurant</text_slice>
+            </slice>
+            <slice>
+              <time_slice>00:02</time_slice>
+              <text_slice>where customers can make
+their orders using an app.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>00:05</time_slice>
+              <text_slice>She decides to offer a discount</text_slice>
+            </slice>
+            <slice>
+              <time_slice>00:07</time_slice>
+              <text_slice>on appetizers to attract more customers.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>00:09</time_slice>
+              <text_slice>And she's curious about the probability</text_slice>
+            </slice>
+            <slice>
+              <time_slice>00:12</time_slice>
+              <text_slice>that a customer orders a
+large number of appetizers.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>00:16</time_slice>
+              <text_slice>Jada tracked how many appetizers</text_slice>
+            </slice>
+            <slice>
+              <time_slice>00:19</time_slice>
+              <text_slice>were in each of the past 500 orders.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>00:22</time_slice>
+              <text_slice>All right, so the number of appetizers,</text_slice>
+            </slice>
+            <slice>
+              <time_slice>00:24</time_slice>
+              <text_slice>so 40 out of the 500
+ordered zero appetizers,</text_slice>
+            </slice>
+            <slice>
+              <time_slice>00:27</time_slice>
+              <text_slice>and for example, 120 out of the
+500 ordered three appetizers</text_slice>
+            </slice>
+            <slice>
+              <time_slice>00:32</time_slice>
+              <text_slice>and so on and so forth.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>00:33</time_slice>
+              <text_slice>Let X represent the number of
+appetizers in a random order.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>00:37</time_slice>
+              <text_slice>Based on these results,
+construct an approximate</text_slice>
+            </slice>
+            <slice>
+              <time_slice>00:40</time_slice>
+              <text_slice>probability distribution of X.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>00:43</time_slice>
+              <text_slice>Pause this video and see if
+you can have a go at this</text_slice>
+            </slice>
+            <slice>
+              <time_slice>00:45</time_slice>
+              <text_slice>before we do this together.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>00:48</time_slice>
+              <text_slice>All right, so they're
+telling us an approximate</text_slice>
+            </slice>
+            <slice>
+              <time_slice>00:51</time_slice>
+              <text_slice>probability distribution,
+because we don't know</text_slice>
+            </slice>
+            <slice>
+              <time_slice>00:54</time_slice>
+              <text_slice>the actual probability.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>00:56</time_slice>
+              <text_slice>We can't get into people's minds</text_slice>
+            </slice>
+            <slice>
+              <time_slice>00:58</time_slice>
+              <text_slice>and figure out the probability
+that the neurons fire</text_slice>
+            </slice>
+            <slice>
+              <time_slice>01:00</time_slice>
+              <text_slice>in exactly the right
+way to order appetizers.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>01:03</time_slice>
+              <text_slice>But what we can do is
+look at past results,</text_slice>
+            </slice>
+            <slice>
+              <time_slice>01:06</time_slice>
+              <text_slice>empirical data right over here</text_slice>
+            </slice>
+            <slice>
+              <time_slice>01:09</time_slice>
+              <text_slice>to approximate the distribution.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>01:11</time_slice>
+              <text_slice>So what we can do is look at the last 500,</text_slice>
+            </slice>
+            <slice>
+              <time_slice>01:14</time_slice>
+              <text_slice>and for each of the outcomes</text_slice>
+            </slice>
+            <slice>
+              <time_slice>01:16</time_slice>
+              <text_slice>think about what fraction of
+the last 500 had that outcome.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>01:19</time_slice>
+              <text_slice>And that will be our approximation.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>01:21</time_slice>
+              <text_slice>And so the outcomes here, we
+could have zero appetizers,</text_slice>
+            </slice>
+            <slice>
+              <time_slice>01:24</time_slice>
+              <text_slice>one, two, three, four, five, or six.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>01:29</time_slice>
+              <text_slice>Now the approximate probability</text_slice>
+            </slice>
+            <slice>
+              <time_slice>01:32</time_slice>
+              <text_slice>of zero appetizers is
+going to be 40 over 500,</text_slice>
+            </slice>
+            <slice>
+              <time_slice>01:36</time_slice>
+              <text_slice>which is the same thing as four over 50,</text_slice>
+            </slice>
+            <slice>
+              <time_slice>01:40</time_slice>
+              <text_slice>which is the same thing as two over 25.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>01:44</time_slice>
+              <text_slice>So I'll write two 25th right over there.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>01:47</time_slice>
+              <text_slice>The probability of one appetizer,</text_slice>
+            </slice>
+            <slice>
+              <time_slice>01:49</time_slice>
+              <text_slice>well, that's going to be 90, the over 500,</text_slice>
+            </slice>
+            <slice>
+              <time_slice>01:52</time_slice>
+              <text_slice>which is the same thing as nine over 50.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>01:55</time_slice>
+              <text_slice>And I think that's
+already in lowest terms.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>01:58</time_slice>
+              <text_slice>Then 160 over 500 is the
+same thing as 16 over 50,</text_slice>
+            </slice>
+            <slice>
+              <time_slice>02:05</time_slice>
+              <text_slice>which is the same thing as eight over 25.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>02:10</time_slice>
+              <text_slice>And we just keep going.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>02:11</time_slice>
+              <text_slice>120 out of 500 is the same
+thing as 12 out of 50,</text_slice>
+            </slice>
+            <slice>
+              <time_slice>02:17</time_slice>
+              <text_slice>or six out of 25.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>02:20</time_slice>
+              <text_slice>Six out of 25, and then 50 out of 500.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>02:25</time_slice>
+              <text_slice>Well, that's one out of every 10.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>02:27</time_slice>
+              <text_slice>So I'll just write it like that.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>02:29</time_slice>
+              <text_slice>30 out of 500 is the same
+thing as three out of 50.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>02:36</time_slice>
+              <text_slice>I'll just write it like that.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>02:38</time_slice>
+              <text_slice>And that last but not least, 10 out of 500</text_slice>
+            </slice>
+            <slice>
+              <time_slice>02:40</time_slice>
+              <text_slice>is the same thing as one in 50.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>02:44</time_slice>
+              <text_slice>And we're done.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>02:45</time_slice>
+              <text_slice>We have just constructed an approximate</text_slice>
+            </slice>
+            <slice>
+              <time_slice>02:47</time_slice>
+              <text_slice>probability distribution
+for our random variable X.</text_slice>
+            </slice>
+          </transcript>
+        </video>
+      </videos>
+    </lecture>
+    <lecture>
+      <lecture_title>Decisions with probability</lecture_title>
+      <lecture_pdf_url>https://www.khanacademy.org/math/probability/xa88397b6:probability-distributions-expected-value/xa88397b6:decisions-probability/v/probabilities-fair-decisions-example</lecture_pdf_url>
+      <lectureno>3</lectureno>
+      <slides/>
+      <videos>
+        <video>
+          <video_url>https://www.khanacademy.org/math/probability/xa88397b6:probability-distributions-expected-value/xa88397b6:decisions-probability/v/probabilities-fair-decisions-example</video_url>
+          <video_title>Using probabilities to make fair decisions example </video_title>
+          <transcript>
+            <slice>
+              <time_slice>00:00</time_slice>
+              <text_slice>- [Instructor] We're told
+that Roberto and Jocelyn</text_slice>
+            </slice>
+            <slice>
+              <time_slice>00:01</time_slice>
+              <text_slice>decide to roll a pair
+of fair six-sided dice</text_slice>
+            </slice>
+            <slice>
+              <time_slice>00:05</time_slice>
+              <text_slice>to determine who has to
+dust their apartment.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>00:08</time_slice>
+              <text_slice>If the sum is seven,
+then Roberto will dust.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>00:11</time_slice>
+              <text_slice>If the sum is 10 or 11,
+then Jocelyn will dust.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>00:15</time_slice>
+              <text_slice>If the sum is anything
+else, they'll roll again.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>00:19</time_slice>
+              <text_slice>Is this a fair way to decide who dusts?</text_slice>
+            </slice>
+            <slice>
+              <time_slice>00:22</time_slice>
+              <text_slice>Why or why not?</text_slice>
+            </slice>
+            <slice>
+              <time_slice>00:24</time_slice>
+              <text_slice>So pause this video and see</text_slice>
+            </slice>
+            <slice>
+              <time_slice>00:25</time_slice>
+              <text_slice>if you can figure this out
+before we do it together.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>00:28</time_slice>
+              <text_slice>All right, now let's do this together.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>00:31</time_slice>
+              <text_slice>So what I wanna do is
+make a table that shows</text_slice>
+            </slice>
+            <slice>
+              <time_slice>00:33</time_slice>
+              <text_slice>all of the different scenarios for rolling</text_slice>
+            </slice>
+            <slice>
+              <time_slice>00:37</time_slice>
+              <text_slice>two fair six-sided dice.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>00:40</time_slice>
+              <text_slice>So let me make columns for roll one.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>00:44</time_slice>
+              <text_slice>So that is when you get a one.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>00:48</time_slice>
+              <text_slice>This is when you get a two.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>00:49</time_slice>
+              <text_slice>This is when you get a three.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>00:51</time_slice>
+              <text_slice>This is when you get a four.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>00:53</time_slice>
+              <text_slice>This is when you get a five.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>00:55</time_slice>
+              <text_slice>And then, this is when you get a six.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>00:58</time_slice>
+              <text_slice>And then here, let's do the other die.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>01:02</time_slice>
+              <text_slice>So this is when you get a one.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>01:04</time_slice>
+              <text_slice>This is when you get a two.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>01:06</time_slice>
+              <text_slice>This is when you get a three.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>01:08</time_slice>
+              <text_slice>This is when you get a four.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>01:10</time_slice>
+              <text_slice>This is when you get a five.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>01:13</time_slice>
+              <text_slice>And then, this is when you get a six.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>01:15</time_slice>
+              <text_slice>So one way to think about it</text_slice>
+            </slice>
+            <slice>
+              <time_slice>01:16</time_slice>
+              <text_slice>is this is roll one</text_slice>
+            </slice>
+            <slice>
+              <time_slice>01:21</time_slice>
+              <text_slice>or let me write it this way,</text_slice>
+            </slice>
+            <slice>
+              <time_slice>01:22</time_slice>
+              <text_slice>d1 and d2.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>01:25</time_slice>
+              <text_slice>This could be a one, a two,
+a three, a five or a six.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>01:29</time_slice>
+              <text_slice>And this could be a one,
+a two, a three, a four,</text_slice>
+            </slice>
+            <slice>
+              <time_slice>01:33</time_slice>
+              <text_slice>a five or a six.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>01:36</time_slice>
+              <text_slice>Now what we could do is
+fill in these 36 squares</text_slice>
+            </slice>
+            <slice>
+              <time_slice>01:40</time_slice>
+              <text_slice>to figure out what the sum is.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>01:41</time_slice>
+              <text_slice>Actually, let me just do that</text_slice>
+            </slice>
+            <slice>
+              <time_slice>01:42</time_slice>
+              <text_slice>and I'll try to do it really fast,</text_slice>
+            </slice>
+            <slice>
+              <time_slice>01:43</time_slice>
+              <text_slice>one + one is two.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>01:44</time_slice>
+              <text_slice>So it's three, four, five, six, seven.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>01:49</time_slice>
+              <text_slice>This is three, four,
+five, six, seven, eight.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>01:53</time_slice>
+              <text_slice>This is four, five,
+six, seven, eight, nine.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>01:57</time_slice>
+              <text_slice>This is five, six, seven, eight, nine, 10.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>02:02</time_slice>
+              <text_slice>This is six, seven, eight, nine, 10, 11.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>02:06</time_slice>
+              <text_slice>Last but not least,</text_slice>
+            </slice>
+            <slice>
+              <time_slice>02:07</time_slice>
+              <text_slice>seven, eight, nine, 10, 11 and 12,</text_slice>
+            </slice>
+            <slice>
+              <time_slice>02:11</time_slice>
+              <text_slice>took a little less time than I suspected.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>02:13</time_slice>
+              <text_slice>All right, let's think
+about this scenario.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>02:15</time_slice>
+              <text_slice>If the sum is seven,
+then Roberto will dust.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>02:18</time_slice>
+              <text_slice>So where is the sum seven?</text_slice>
+            </slice>
+            <slice>
+              <time_slice>02:20</time_slice>
+              <text_slice>So we have that ones, twice, three times,</text_slice>
+            </slice>
+            <slice>
+              <time_slice>02:24</time_slice>
+              <text_slice>four, five, six.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>02:27</time_slice>
+              <text_slice>So six out of, so six of these outcomes</text_slice>
+            </slice>
+            <slice>
+              <time_slice>02:30</time_slice>
+              <text_slice>result in a sum of seven.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>02:32</time_slice>
+              <text_slice>And how many possible equally
+likely outcomes are there?</text_slice>
+            </slice>
+            <slice>
+              <time_slice>02:36</time_slice>
+              <text_slice>Well, there are six times six</text_slice>
+            </slice>
+            <slice>
+              <time_slice>02:38</time_slice>
+              <text_slice>equally possible outcomes or 36.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>02:41</time_slice>
+              <text_slice>So six out of the 36</text_slice>
+            </slice>
+            <slice>
+              <time_slice>02:43</time_slice>
+              <text_slice>or this is another way of saying</text_slice>
+            </slice>
+            <slice>
+              <time_slice>02:44</time_slice>
+              <text_slice>there's a 1/6 probability
+that Roberto will dust.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>02:48</time_slice>
+              <text_slice>And then, let's think
+about the 10s or 11s.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>02:51</time_slice>
+              <text_slice>If the sum is 10 or 11,</text_slice>
+            </slice>
+            <slice>
+              <time_slice>02:53</time_slice>
+              <text_slice>then Jocelyn will dust.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>02:56</time_slice>
+              <text_slice>So 10 or 11,</text_slice>
+            </slice>
+            <slice>
+              <time_slice>02:58</time_slice>
+              <text_slice>so we have one, two,</text_slice>
+            </slice>
+            <slice>
+              <time_slice>03:01</time_slice>
+              <text_slice>three, four, five.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>03:05</time_slice>
+              <text_slice>So this is only happening
+five out of the 36 times.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>03:10</time_slice>
+              <text_slice>So in any given roll,</text_slice>
+            </slice>
+            <slice>
+              <time_slice>03:11</time_slice>
+              <text_slice>it's a higher probability that Roberto</text_slice>
+            </slice>
+            <slice>
+              <time_slice>03:14</time_slice>
+              <text_slice>will dust than Jocelyn will dust.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>03:16</time_slice>
+              <text_slice>And of course, if neither of these happen,</text_slice>
+            </slice>
+            <slice>
+              <time_slice>03:18</time_slice>
+              <text_slice>they are going to roll again.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>03:19</time_slice>
+              <text_slice>But on that second roll,</text_slice>
+            </slice>
+            <slice>
+              <time_slice>03:20</time_slice>
+              <text_slice>there's a higher probability
+that Roberto will dust</text_slice>
+            </slice>
+            <slice>
+              <time_slice>03:23</time_slice>
+              <text_slice>than Jocelyn will dust.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>03:24</time_slice>
+              <text_slice>So in general, this is not fair.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>03:27</time_slice>
+              <text_slice>There's a higher probability
+that Roberto dusts.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>03:30</time_slice>
+              <text_slice>So this is our choice.</text_slice>
+            </slice>
+          </transcript>
+        </video>
+      </videos>
+    </lecture>
+    <lecture>
+      <lecture_title>Expected value</lecture_title>
+      <lecture_pdf_url>https://www.khanacademy.org/math/probability/xa88397b6:probability-distributions-expected-value/expected-value-geo/v/expected-value-of-a-discrete-random-variable</lecture_pdf_url>
+      <lectureno>4</lectureno>
+      <slides/>
+      <videos>
+        <video>
+          <video_url>https://www.khanacademy.org/math/probability/xa88397b6:probability-distributions-expected-value/expected-value-geo/v/expected-value-of-a-discrete-random-variable</video_url>
+          <video_title>Mean (expected value) of a discrete random variable </video_title>
+          <transcript>
+            <slice>
+              <time_slice>00:00</time_slice>
+              <text_slice>- [Instructor] So, I'm
+defining the random variable x</text_slice>
+            </slice>
+            <slice>
+              <time_slice>00:03</time_slice>
+              <text_slice>as the number of workouts that
+I will do in a given week.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>00:07</time_slice>
+              <text_slice>Now right over here,</text_slice>
+            </slice>
+            <slice>
+              <time_slice>00:08</time_slice>
+              <text_slice>this table describes the
+probability distribution for x.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>00:13</time_slice>
+              <text_slice>And as you can see,</text_slice>
+            </slice>
+            <slice>
+              <time_slice>00:14</time_slice>
+              <text_slice>x can take on only a
+finite number of values,</text_slice>
+            </slice>
+            <slice>
+              <time_slice>00:17</time_slice>
+              <text_slice>zero, one, two, three, or four.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>00:19</time_slice>
+              <text_slice>And so, because there's a
+finite number of values here,</text_slice>
+            </slice>
+            <slice>
+              <time_slice>00:22</time_slice>
+              <text_slice>we would call this a
+discrete random variable.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>00:26</time_slice>
+              <text_slice>And you can see that this is a valid</text_slice>
+            </slice>
+            <slice>
+              <time_slice>00:28</time_slice>
+              <text_slice>probability distribution because</text_slice>
+            </slice>
+            <slice>
+              <time_slice>00:30</time_slice>
+              <text_slice>the combined probability is one.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>00:33</time_slice>
+              <text_slice>.1 plus 0.15,</text_slice>
+            </slice>
+            <slice>
+              <time_slice>00:35</time_slice>
+              <text_slice>plus 0.4, plus 0.25, plus 0.1</text_slice>
+            </slice>
+            <slice>
+              <time_slice>00:38</time_slice>
+              <text_slice>is one.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>00:39</time_slice>
+              <text_slice>And none of these are
+negative probabilities,</text_slice>
+            </slice>
+            <slice>
+              <time_slice>00:42</time_slice>
+              <text_slice>which wouldn't have made sense.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>00:44</time_slice>
+              <text_slice>But what we care about in
+this video is the notion of</text_slice>
+            </slice>
+            <slice>
+              <time_slice>00:47</time_slice>
+              <text_slice>an expected value of a
+discrete random variable,</text_slice>
+            </slice>
+            <slice>
+              <time_slice>00:51</time_slice>
+              <text_slice>which we would just note this way.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>00:53</time_slice>
+              <text_slice>And one way to think about it is,</text_slice>
+            </slice>
+            <slice>
+              <time_slice>00:55</time_slice>
+              <text_slice>once we calculate the expected
+value of this variable,</text_slice>
+            </slice>
+            <slice>
+              <time_slice>00:58</time_slice>
+              <text_slice>of this random variable,</text_slice>
+            </slice>
+            <slice>
+              <time_slice>01:00</time_slice>
+              <text_slice>that in a given week, that
+would give you a sense</text_slice>
+            </slice>
+            <slice>
+              <time_slice>01:03</time_slice>
+              <text_slice>of the expected number of workouts.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>01:06</time_slice>
+              <text_slice>This is also sometimes
+referred to as the mean</text_slice>
+            </slice>
+            <slice>
+              <time_slice>01:10</time_slice>
+              <text_slice>of a random variable.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>01:11</time_slice>
+              <text_slice>This, right over here,
+is the Greek letter mu,</text_slice>
+            </slice>
+            <slice>
+              <time_slice>01:14</time_slice>
+              <text_slice>which is often used to denote the mean.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>01:17</time_slice>
+              <text_slice>So, this is the mean of
+the random variable x.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>01:20</time_slice>
+              <text_slice>But how do we actually compute it?</text_slice>
+            </slice>
+            <slice>
+              <time_slice>01:23</time_slice>
+              <text_slice>To compute this, we essentially just take</text_slice>
+            </slice>
+            <slice>
+              <time_slice>01:25</time_slice>
+              <text_slice>the weighted sum of the various outcomes,</text_slice>
+            </slice>
+            <slice>
+              <time_slice>01:28</time_slice>
+              <text_slice>and we weight them by the probabilities.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>01:31</time_slice>
+              <text_slice>So, for example, this is going to be,</text_slice>
+            </slice>
+            <slice>
+              <time_slice>01:34</time_slice>
+              <text_slice>the first outcome here is zero,</text_slice>
+            </slice>
+            <slice>
+              <time_slice>01:36</time_slice>
+              <text_slice>and we'll weight it by
+its probability of 0.1.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>01:39</time_slice>
+              <text_slice>So, it's zero</text_slice>
+            </slice>
+            <slice>
+              <time_slice>01:41</time_slice>
+              <text_slice>times 0.1.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>01:44</time_slice>
+              <text_slice>Plus, the next outcome is one,</text_slice>
+            </slice>
+            <slice>
+              <time_slice>01:47</time_slice>
+              <text_slice>and it'd be weighted by
+its probability of 0.15.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>01:51</time_slice>
+              <text_slice>So, plus one</text_slice>
+            </slice>
+            <slice>
+              <time_slice>01:53</time_slice>
+              <text_slice>times 0.15.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>01:56</time_slice>
+              <text_slice>Plus, the next outcome is</text_slice>
+            </slice>
+            <slice>
+              <time_slice>01:59</time_slice>
+              <text_slice>two and has a probability of 0.4,</text_slice>
+            </slice>
+            <slice>
+              <time_slice>02:02</time_slice>
+              <text_slice>plus two</text_slice>
+            </slice>
+            <slice>
+              <time_slice>02:03</time_slice>
+              <text_slice>times 0.4.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>02:06</time_slice>
+              <text_slice>Plus,</text_slice>
+            </slice>
+            <slice>
+              <time_slice>02:08</time_slice>
+              <text_slice>the outcome three has
+a probability of 0.25,</text_slice>
+            </slice>
+            <slice>
+              <time_slice>02:12</time_slice>
+              <text_slice>plus three</text_slice>
+            </slice>
+            <slice>
+              <time_slice>02:13</time_slice>
+              <text_slice>times 0.25.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>02:16</time_slice>
+              <text_slice>And then last but not least,</text_slice>
+            </slice>
+            <slice>
+              <time_slice>02:19</time_slice>
+              <text_slice>we have the outcome
+four workouts in a week,</text_slice>
+            </slice>
+            <slice>
+              <time_slice>02:22</time_slice>
+              <text_slice>that has a probability of 0.1,</text_slice>
+            </slice>
+            <slice>
+              <time_slice>02:24</time_slice>
+              <text_slice>plus four</text_slice>
+            </slice>
+            <slice>
+              <time_slice>02:26</time_slice>
+              <text_slice>times 0.1.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>02:28</time_slice>
+              <text_slice>Well, we can simplify this a little bit.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>02:31</time_slice>
+              <text_slice>Zero times anything is just zero.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>02:34</time_slice>
+              <text_slice>So, one times 0.15</text_slice>
+            </slice>
+            <slice>
+              <time_slice>02:37</time_slice>
+              <text_slice>is 0.15.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>02:39</time_slice>
+              <text_slice>Two times 0.4</text_slice>
+            </slice>
+            <slice>
+              <time_slice>02:41</time_slice>
+              <text_slice>is 0.8.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>02:44</time_slice>
+              <text_slice>Three times 0.25</text_slice>
+            </slice>
+            <slice>
+              <time_slice>02:46</time_slice>
+              <text_slice>is 0.75.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>02:49</time_slice>
+              <text_slice>And then four times .1 is 0.4.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>02:52</time_slice>
+              <text_slice>And so, we just have to
+add up these numbers.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>02:55</time_slice>
+              <text_slice>So, we get</text_slice>
+            </slice>
+            <slice>
+              <time_slice>02:57</time_slice>
+              <text_slice>0.15,</text_slice>
+            </slice>
+            <slice>
+              <time_slice>03:00</time_slice>
+              <text_slice>plus .8,</text_slice>
+            </slice>
+            <slice>
+              <time_slice>03:03</time_slice>
+              <text_slice>plus .75,</text_slice>
+            </slice>
+            <slice>
+              <time_slice>03:07</time_slice>
+              <text_slice>plus .4,</text_slice>
+            </slice>
+            <slice>
+              <time_slice>03:10</time_slice>
+              <text_slice>and let's say 0.4,</text_slice>
+            </slice>
+            <slice>
+              <time_slice>03:12</time_slice>
+              <text_slice>0.75,</text_slice>
+            </slice>
+            <slice>
+              <time_slice>03:15</time_slice>
+              <text_slice>0.8.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>03:16</time_slice>
+              <text_slice>Let's add 'em all together.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>03:18</time_slice>
+              <text_slice>And so, let's see, five plus five is 10.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>03:21</time_slice>
+              <text_slice>And then this is two plus eight is 10,</text_slice>
+            </slice>
+            <slice>
+              <time_slice>03:24</time_slice>
+              <text_slice>plus seven is 17, plus four is 21.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>03:28</time_slice>
+              <text_slice>So, we get all of this is
+going to be equal to 2.1.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>03:33</time_slice>
+              <text_slice>So, one way to think about it is</text_slice>
+            </slice>
+            <slice>
+              <time_slice>03:35</time_slice>
+              <text_slice>the expected value of x,</text_slice>
+            </slice>
+            <slice>
+              <time_slice>03:38</time_slice>
+              <text_slice>the expected number of
+workouts for me in a week,</text_slice>
+            </slice>
+            <slice>
+              <time_slice>03:41</time_slice>
+              <text_slice>given this probability
+distribution, is 2.1.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>03:45</time_slice>
+              <text_slice>Now you might be saying,
+wait, hold on a second.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>03:48</time_slice>
+              <text_slice>All of the outcomes
+here are whole numbers.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>03:51</time_slice>
+              <text_slice>How can you have 2.1 workouts in a week?</text_slice>
+            </slice>
+            <slice>
+              <time_slice>03:53</time_slice>
+              <text_slice>What is .1 of a workout?</text_slice>
+            </slice>
+            <slice>
+              <time_slice>03:55</time_slice>
+              <text_slice>Well, this isn't saying
+that in a given week,</text_slice>
+            </slice>
+            <slice>
+              <time_slice>03:58</time_slice>
+              <text_slice>you would expect me to
+work out exactly 2.1 times.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>04:01</time_slice>
+              <text_slice>But this is valuable
+because you could say, well,</text_slice>
+            </slice>
+            <slice>
+              <time_slice>04:04</time_slice>
+              <text_slice>in 10 weeks, you would expect me</text_slice>
+            </slice>
+            <slice>
+              <time_slice>04:06</time_slice>
+              <text_slice>to do roughly 21 workouts.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>04:10</time_slice>
+              <text_slice>Sometimes I might do zero
+workouts, sometimes one,</text_slice>
+            </slice>
+            <slice>
+              <time_slice>04:12</time_slice>
+              <text_slice>sometimes two, sometimes
+three, sometimes four.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>04:15</time_slice>
+              <text_slice>But in 100 weeks,</text_slice>
+            </slice>
+            <slice>
+              <time_slice>04:16</time_slice>
+              <text_slice>you might expect me to do 210 workouts.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>04:20</time_slice>
+              <text_slice>So, even for a random variable</text_slice>
+            </slice>
+            <slice>
+              <time_slice>04:22</time_slice>
+              <text_slice>that can only take on integer values,</text_slice>
+            </slice>
+            <slice>
+              <time_slice>04:25</time_slice>
+              <text_slice>you can still have a
+non-integer expected value,</text_slice>
+            </slice>
+            <slice>
+              <time_slice>04:29</time_slice>
+              <text_slice>and it is still useful.</text_slice>
+            </slice>
+          </transcript>
+        </video>
+        <video>
+          <video_url>https://www.khanacademy.org/math/probability/xa88397b6:probability-distributions-expected-value/expected-value-geo/v/interpreting-expected-value</video_url>
+          <video_title>Interpreting expected value </video_title>
+          <transcript>
+            <slice>
+              <time_slice>00:00</time_slice>
+              <text_slice>- [Instructor] We're told a
+certain lottery ticket costs $2</text_slice>
+            </slice>
+            <slice>
+              <time_slice>00:03</time_slice>
+              <text_slice>and the back of the ticket says,</text_slice>
+            </slice>
+            <slice>
+              <time_slice>00:05</time_slice>
+              <text_slice>"The overall odds of winning
+a prize with this ticket</text_slice>
+            </slice>
+            <slice>
+              <time_slice>00:08</time_slice>
+              <text_slice>are one to 50,</text_slice>
+            </slice>
+            <slice>
+              <time_slice>00:09</time_slice>
+              <text_slice>and the expected return
+for this ticket is $0.95."</text_slice>
+            </slice>
+            <slice>
+              <time_slice>00:13</time_slice>
+              <text_slice>Which interpretations of the
+expected value are correct?</text_slice>
+            </slice>
+            <slice>
+              <time_slice>00:16</time_slice>
+              <text_slice>Choose all answers that apply.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>00:19</time_slice>
+              <text_slice>Pause this video, have a go at that.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>00:21</time_slice>
+              <text_slice>All right, now let's go
+through each of these choices.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>00:24</time_slice>
+              <text_slice>So choice A says the probability</text_slice>
+            </slice>
+            <slice>
+              <time_slice>00:26</time_slice>
+              <text_slice>that one of these tickets wins
+a prize is 0.95 on average.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>00:32</time_slice>
+              <text_slice>Well, I see where they're
+getting that 0.95.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>00:34</time_slice>
+              <text_slice>They're getting it from right over here,</text_slice>
+            </slice>
+            <slice>
+              <time_slice>00:36</time_slice>
+              <text_slice>but that's not the probability
+that you're winning,</text_slice>
+            </slice>
+            <slice>
+              <time_slice>00:38</time_slice>
+              <text_slice>that's the expected return.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>00:40</time_slice>
+              <text_slice>The probability that
+you win is much lower.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>00:42</time_slice>
+              <text_slice>If the odds are one to 50,</text_slice>
+            </slice>
+            <slice>
+              <time_slice>00:44</time_slice>
+              <text_slice>that means that the probability
+of winning is one to 51.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>00:49</time_slice>
+              <text_slice>So it's a much lower probability
+than this right over here.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>00:52</time_slice>
+              <text_slice>So definitely rule that out.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>00:54</time_slice>
+              <text_slice>Someone who buys this ticket
+is most likely to win $0.95.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>01:00</time_slice>
+              <text_slice>That is not necessarily the case either.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>01:03</time_slice>
+              <text_slice>We don't know what the different
+outcomes are for the prize.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>01:08</time_slice>
+              <text_slice>It's very likely that there's no outcome</text_slice>
+            </slice>
+            <slice>
+              <time_slice>01:10</time_slice>
+              <text_slice>for that prize where
+you win exactly $0.95.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>01:13</time_slice>
+              <text_slice>Instead, there's likely to be
+outcomes that are much larger</text_slice>
+            </slice>
+            <slice>
+              <time_slice>01:16</time_slice>
+              <text_slice>than that with very low probabilities,</text_slice>
+            </slice>
+            <slice>
+              <time_slice>01:18</time_slice>
+              <text_slice>and then when you take
+the weighted average</text_slice>
+            </slice>
+            <slice>
+              <time_slice>01:20</time_slice>
+              <text_slice>of all of the outcomes,</text_slice>
+            </slice>
+            <slice>
+              <time_slice>01:22</time_slice>
+              <text_slice>then you get an expected return of $0.95.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>01:25</time_slice>
+              <text_slice>So it's actually maybe even
+impossible to win exactly $0.95.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>01:29</time_slice>
+              <text_slice>So I would rule that out.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>01:31</time_slice>
+              <text_slice>If we looked at many of these tickets,</text_slice>
+            </slice>
+            <slice>
+              <time_slice>01:33</time_slice>
+              <text_slice>the average return would
+be about $0.95 per ticket.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>01:38</time_slice>
+              <text_slice>That one feels pretty interesting,</text_slice>
+            </slice>
+            <slice>
+              <time_slice>01:40</time_slice>
+              <text_slice>'cause we're looking at
+many of these tickets.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>01:42</time_slice>
+              <text_slice>And so across many of them, you
+would expect to, on average,</text_slice>
+            </slice>
+            <slice>
+              <time_slice>01:46</time_slice>
+              <text_slice>get the expected return as your return.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>01:49</time_slice>
+              <text_slice>And so this is what we are seeing here.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>01:51</time_slice>
+              <text_slice>The average return would be about that.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>01:53</time_slice>
+              <text_slice>It would be approximately that.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>01:54</time_slice>
+              <text_slice>So I like that choice.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>01:56</time_slice>
+              <text_slice>That is a good interpretation
+of expected value.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>01:58</time_slice>
+              <text_slice>And then choice D,</text_slice>
+            </slice>
+            <slice>
+              <time_slice>02:00</time_slice>
+              <text_slice>if 1,000 people each bought
+one of these tickets,</text_slice>
+            </slice>
+            <slice>
+              <time_slice>02:03</time_slice>
+              <text_slice>they'd expect a net gain
+of about $950 in total.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>02:09</time_slice>
+              <text_slice>This one is tempting.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>02:10</time_slice>
+              <text_slice>Instead of net gain,
+if it just said return,</text_slice>
+            </slice>
+            <slice>
+              <time_slice>02:14</time_slice>
+              <text_slice>this would make a lot of sense.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>02:15</time_slice>
+              <text_slice>In fact, it would be completely
+consistent with choice C.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>02:18</time_slice>
+              <text_slice>If you have 1,000 people,
+that would be many tickets,</text_slice>
+            </slice>
+            <slice>
+              <time_slice>02:21</time_slice>
+              <text_slice>and if on average, if their average return</text_slice>
+            </slice>
+            <slice>
+              <time_slice>02:23</time_slice>
+              <text_slice>is about $0.95 per ticket,</text_slice>
+            </slice>
+            <slice>
+              <time_slice>02:25</time_slice>
+              <text_slice>then their total return
+would be about $950,</text_slice>
+            </slice>
+            <slice>
+              <time_slice>02:29</time_slice>
+              <text_slice>but they didn't write return
+here, they wrote net gain.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>02:32</time_slice>
+              <text_slice>Net gain would be how much you
+get minus how much you paid.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>02:36</time_slice>
+              <text_slice>And 1,000 people would have to pay,</text_slice>
+            </slice>
+            <slice>
+              <time_slice>02:38</time_slice>
+              <text_slice>if they each got a
+ticket, would pay $2,000.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>02:41</time_slice>
+              <text_slice>So they would pay 2,000.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>02:43</time_slice>
+              <text_slice>They would expect a return of $950.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>02:46</time_slice>
+              <text_slice>Their net gain would
+actually be negative $1,050.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>02:50</time_slice>
+              <text_slice>So we would rule that one out as well.</text_slice>
+            </slice>
+          </transcript>
+        </video>
+        <video>
+          <video_url>https://www.khanacademy.org/math/probability/xa88397b6:probability-distributions-expected-value/expected-value-geo/v/expected-payoff-example-lottery</video_url>
+          <video_title>Expected payoff example: lottery ticket </video_title>
+          <transcript>
+            <slice>
+              <time_slice>00:00</time_slice>
+              <text_slice>- [Instructor] We're told
+a Pick 4 lottery game</text_slice>
+            </slice>
+            <slice>
+              <time_slice>00:01</time_slice>
+              <text_slice>involves drawing four numbered
+balls from separate bins,</text_slice>
+            </slice>
+            <slice>
+              <time_slice>00:05</time_slice>
+              <text_slice>each containing balls labeled from 0 to 9.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>00:08</time_slice>
+              <text_slice>So there are 10,000 possible
+selections in total.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>00:11</time_slice>
+              <text_slice>For example, you could get</text_slice>
+            </slice>
+            <slice>
+              <time_slice>00:12</time_slice>
+              <text_slice>a 0, a 0, a 0 and a 0,</text_slice>
+            </slice>
+            <slice>
+              <time_slice>00:14</time_slice>
+              <text_slice>a 0, a 0, a 0 and a 1,</text_slice>
+            </slice>
+            <slice>
+              <time_slice>00:16</time_slice>
+              <text_slice>all the way up to 9,999, four nines.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>00:21</time_slice>
+              <text_slice>Players can choose to play a
+straight bet, where the player</text_slice>
+            </slice>
+            <slice>
+              <time_slice>00:23</time_slice>
+              <text_slice>wins if they match all four
+digits in the correct order.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>00:27</time_slice>
+              <text_slice>The lottery pays $4,500 on a
+successful $1 straight bet.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>00:33</time_slice>
+              <text_slice>Let X represent a player's
+net gain on a $1 straight bet.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>00:39</time_slice>
+              <text_slice>Calculate the expected net gain.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>00:42</time_slice>
+              <text_slice>And they say, hint, the expected
+net gain can be negative.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>00:46</time_slice>
+              <text_slice>So why don't you pause this video</text_slice>
+            </slice>
+            <slice>
+              <time_slice>00:47</time_slice>
+              <text_slice>and see if you can calculate
+the expected net gain?</text_slice>
+            </slice>
+            <slice>
+              <time_slice>00:51</time_slice>
+              <text_slice>All right.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>00:52</time_slice>
+              <text_slice>So there's a couple of ways
+that we can approach this.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>00:54</time_slice>
+              <text_slice>One way is to just think about
+the two different outcomes.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>00:57</time_slice>
+              <text_slice>There's a scenario where you
+win with your straight bet.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>01:01</time_slice>
+              <text_slice>There's a scenario where you
+lose with your straight bet.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>01:04</time_slice>
+              <text_slice>Now let's think about</text_slice>
+            </slice>
+            <slice>
+              <time_slice>01:05</time_slice>
+              <text_slice>the net gain in either
+one of those scenarios.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>01:09</time_slice>
+              <text_slice>The scenario where you win, you pay $1,</text_slice>
+            </slice>
+            <slice>
+              <time_slice>01:12</time_slice>
+              <text_slice>we know it's a $1 straight
+bet, and you get $4,500.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>01:16</time_slice>
+              <text_slice>So what's the net gain?</text_slice>
+            </slice>
+            <slice>
+              <time_slice>01:18</time_slice>
+              <text_slice>So it's going to be $4,500 minus one.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>01:22</time_slice>
+              <text_slice>So your net gain is going to be $4,499.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>01:29</time_slice>
+              <text_slice>Now what about the net gain in
+the situation that you lose?</text_slice>
+            </slice>
+            <slice>
+              <time_slice>01:32</time_slice>
+              <text_slice>Well, in the situation that you lose,</text_slice>
+            </slice>
+            <slice>
+              <time_slice>01:33</time_slice>
+              <text_slice>you just lose a dollar.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>01:35</time_slice>
+              <text_slice>So this is just going to be
+negative $1 right over here.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>01:40</time_slice>
+              <text_slice>Now let's think about</text_slice>
+            </slice>
+            <slice>
+              <time_slice>01:41</time_slice>
+              <text_slice>the probabilities of
+each of these situations.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>01:44</time_slice>
+              <text_slice>So the probability, so
+the probability of a win</text_slice>
+            </slice>
+            <slice>
+              <time_slice>01:47</time_slice>
+              <text_slice>we know is 1 in 10,000,</text_slice>
+            </slice>
+            <slice>
+              <time_slice>01:49</time_slice>
+              <text_slice>1 in 10,000.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>01:52</time_slice>
+              <text_slice>And what's the probability of a loss?</text_slice>
+            </slice>
+            <slice>
+              <time_slice>01:55</time_slice>
+              <text_slice>Well, that's going to be 9,999</text_slice>
+            </slice>
+            <slice>
+              <time_slice>01:58</time_slice>
+              <text_slice>out of 10,000.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>02:00</time_slice>
+              <text_slice>And then our expected net gain is just</text_slice>
+            </slice>
+            <slice>
+              <time_slice>02:02</time_slice>
+              <text_slice>going to be the weighted
+average of these two.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>02:05</time_slice>
+              <text_slice>So I could write our expected net gain</text_slice>
+            </slice>
+            <slice>
+              <time_slice>02:08</time_slice>
+              <text_slice>is going to be 4,499</text_slice>
+            </slice>
+            <slice>
+              <time_slice>02:12</time_slice>
+              <text_slice>times the probability of that, 1 in 10,000</text_slice>
+            </slice>
+            <slice>
+              <time_slice>02:16</time_slice>
+              <text_slice>plus negative 1 times this,</text_slice>
+            </slice>
+            <slice>
+              <time_slice>02:19</time_slice>
+              <text_slice>so that I could just write that</text_slice>
+            </slice>
+            <slice>
+              <time_slice>02:20</time_slice>
+              <text_slice>as minus 9,999 over 10,000.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>02:26</time_slice>
+              <text_slice>And so this is going to
+be equal to, let's see,</text_slice>
+            </slice>
+            <slice>
+              <time_slice>02:28</time_slice>
+              <text_slice>it's going to be 4,499</text_slice>
+            </slice>
+            <slice>
+              <time_slice>02:31</time_slice>
+              <text_slice>minus 9,999,</text_slice>
+            </slice>
+            <slice>
+              <time_slice>02:35</time_slice>
+              <text_slice>all of that over 10,000.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>02:38</time_slice>
+              <text_slice>And let's see, this is
+going to be equal to</text_slice>
+            </slice>
+            <slice>
+              <time_slice>02:43</time_slice>
+              <text_slice>negative 5,500 over 10,000,</text_slice>
+            </slice>
+            <slice>
+              <time_slice>02:47</time_slice>
+              <text_slice>negative 5,500 over 10,000,</text_slice>
+            </slice>
+            <slice>
+              <time_slice>02:51</time_slice>
+              <text_slice>which is the same thing
+as negative 55 over 100,</text_slice>
+            </slice>
+            <slice>
+              <time_slice>02:55</time_slice>
+              <text_slice>or I could write it this way.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>02:56</time_slice>
+              <text_slice>This is equal to negative .55.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>03:00</time_slice>
+              <text_slice>I could write it this way, 0.55.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>03:03</time_slice>
+              <text_slice>So that's one way to calculate
+the expected net gain.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>03:07</time_slice>
+              <text_slice>Another way to approach
+it is to say, all right,</text_slice>
+            </slice>
+            <slice>
+              <time_slice>03:09</time_slice>
+              <text_slice>what if we were to get 10,000 tickets?</text_slice>
+            </slice>
+            <slice>
+              <time_slice>03:11</time_slice>
+              <text_slice>What is our expected net
+gain on the 10,000 tickets?</text_slice>
+            </slice>
+            <slice>
+              <time_slice>03:15</time_slice>
+              <text_slice>Well, we would pay $10,000</text_slice>
+            </slice>
+            <slice>
+              <time_slice>03:21</time_slice>
+              <text_slice>and we would expect to win once.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>03:22</time_slice>
+              <text_slice>It's not a guarantee, but
+we would expect to win once.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>03:25</time_slice>
+              <text_slice>So expect</text_slice>
+            </slice>
+            <slice>
+              <time_slice>03:29</time_slice>
+              <text_slice>4,500 in payout.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>03:32</time_slice>
+              <text_slice>And so you would then, let's
+see, you would have a net gain</text_slice>
+            </slice>
+            <slice>
+              <time_slice>03:37</time_slice>
+              <text_slice>of, it would be negative $5,500,</text_slice>
+            </slice>
+            <slice>
+              <time_slice>03:41</time_slice>
+              <text_slice>negative $5,500.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>03:45</time_slice>
+              <text_slice>Now this is the net gain
+when you do 10,000 tickets.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>03:48</time_slice>
+              <text_slice>Now, if you wanted to find the
+expected net gain per ticket</text_slice>
+            </slice>
+            <slice>
+              <time_slice>03:52</time_slice>
+              <text_slice>you would then just divide by 10,000.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>03:53</time_slice>
+              <text_slice>And if you did that,</text_slice>
+            </slice>
+            <slice>
+              <time_slice>03:54</time_slice>
+              <text_slice>you would get exactly what we
+just calculated the other way.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>03:58</time_slice>
+              <text_slice>So any way you try to approach this</text_slice>
+            </slice>
+            <slice>
+              <time_slice>04:00</time_slice>
+              <text_slice>this is not a great bet.</text_slice>
+            </slice>
+          </transcript>
+        </video>
+        <video>
+          <video_url>https://www.khanacademy.org/math/probability/xa88397b6:probability-distributions-expected-value/expected-value-geo/v/expected-payoff-example-protection-plan</video_url>
+          <video_title>Expected payoff example: protection plan </video_title>
+          <transcript>
+            <slice>
+              <time_slice>00:00</time_slice>
+              <text_slice>- [Instructor] We're told
+that an electronic store</text_slice>
+            </slice>
+            <slice>
+              <time_slice>00:01</time_slice>
+              <text_slice>gives customers the option of
+purchasing a protection plan</text_slice>
+            </slice>
+            <slice>
+              <time_slice>00:05</time_slice>
+              <text_slice>when customers buy a new television.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>00:06</time_slice>
+              <text_slice>That's actually quite common.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>00:08</time_slice>
+              <text_slice>The customer pays $80 for the plan and,</text_slice>
+            </slice>
+            <slice>
+              <time_slice>00:10</time_slice>
+              <text_slice>if their television is
+damaged or stops working,</text_slice>
+            </slice>
+            <slice>
+              <time_slice>00:14</time_slice>
+              <text_slice>the store will replace it
+for no additional charge.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>00:17</time_slice>
+              <text_slice>The store knows that 2% of
+customers who buy this plan</text_slice>
+            </slice>
+            <slice>
+              <time_slice>00:21</time_slice>
+              <text_slice>end up needing a replacement</text_slice>
+            </slice>
+            <slice>
+              <time_slice>00:22</time_slice>
+              <text_slice>that costs the store $1,200 each.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>00:25</time_slice>
+              <text_slice>Here's a table that summarizes
+the possible outcomes</text_slice>
+            </slice>
+            <slice>
+              <time_slice>00:28</time_slice>
+              <text_slice>from the store's perspective.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>00:31</time_slice>
+              <text_slice>Let X represent the store's net gain</text_slice>
+            </slice>
+            <slice>
+              <time_slice>00:34</time_slice>
+              <text_slice>from one of these plans.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>00:36</time_slice>
+              <text_slice>Calculate the expected net gain.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>00:39</time_slice>
+              <text_slice>So pause this video, see if
+you can have a go at that</text_slice>
+            </slice>
+            <slice>
+              <time_slice>00:41</time_slice>
+              <text_slice>before we work through this together.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>00:44</time_slice>
+              <text_slice>So we have the two scenarios here.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>00:46</time_slice>
+              <text_slice>The first scenario is
+that the store does need</text_slice>
+            </slice>
+            <slice>
+              <time_slice>00:49</time_slice>
+              <text_slice>to replace the TV
+because something happens</text_slice>
+            </slice>
+            <slice>
+              <time_slice>00:51</time_slice>
+              <text_slice>and so it's gonna cost
+$1,200 to the store.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>00:53</time_slice>
+              <text_slice>But remember they got $80
+for the protection plan.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>00:56</time_slice>
+              <text_slice>So you have a net gain of negative $1,120</text_slice>
+            </slice>
+            <slice>
+              <time_slice>00:59</time_slice>
+              <text_slice>from the store's perspective.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>01:01</time_slice>
+              <text_slice>There's the other scenario,</text_slice>
+            </slice>
+            <slice>
+              <time_slice>01:02</time_slice>
+              <text_slice>which is more favorable for the store,</text_slice>
+            </slice>
+            <slice>
+              <time_slice>01:03</time_slice>
+              <text_slice>which is a customer does
+not need a replacement TV,</text_slice>
+            </slice>
+            <slice>
+              <time_slice>01:07</time_slice>
+              <text_slice>so that has no cost and so their net gain</text_slice>
+            </slice>
+            <slice>
+              <time_slice>01:09</time_slice>
+              <text_slice>is just the $80 for the plan.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>01:11</time_slice>
+              <text_slice>So to figure out the expected net gain,</text_slice>
+            </slice>
+            <slice>
+              <time_slice>01:13</time_slice>
+              <text_slice>we just have to figure
+out the probabilities</text_slice>
+            </slice>
+            <slice>
+              <time_slice>01:14</time_slice>
+              <text_slice>of each of these and take
+the weighted average of them.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>01:17</time_slice>
+              <text_slice>So what's the probability
+that they will have</text_slice>
+            </slice>
+            <slice>
+              <time_slice>01:19</time_slice>
+              <text_slice>to replace the TV?</text_slice>
+            </slice>
+            <slice>
+              <time_slice>01:20</time_slice>
+              <text_slice>Well, we know 2% of
+customers who buy this plan</text_slice>
+            </slice>
+            <slice>
+              <time_slice>01:22</time_slice>
+              <text_slice>end up needing a replacement.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>01:24</time_slice>
+              <text_slice>So we could say this is two over 100</text_slice>
+            </slice>
+            <slice>
+              <time_slice>01:26</time_slice>
+              <text_slice>or maybe I'll write it as 0.02.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>01:29</time_slice>
+              <text_slice>This is the probability of X.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>01:32</time_slice>
+              <text_slice>And then the probability of not
+needing a replacement, 0.98.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>01:36</time_slice>
+              <text_slice>And so our expected net gain</text_slice>
+            </slice>
+            <slice>
+              <time_slice>01:40</time_slice>
+              <text_slice>is going to be equal to the probability</text_slice>
+            </slice>
+            <slice>
+              <time_slice>01:43</time_slice>
+              <text_slice>of needing replacement times
+the net gain of a replacement.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>01:46</time_slice>
+              <text_slice>So it's going to be times -$1,120.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>01:53</time_slice>
+              <text_slice>And then we're gonna
+have plus the probability</text_slice>
+            </slice>
+            <slice>
+              <time_slice>01:56</time_slice>
+              <text_slice>of not needing replacement, which is 0.98</text_slice>
+            </slice>
+            <slice>
+              <time_slice>02:00</time_slice>
+              <text_slice>times the net gain there.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>02:01</time_slice>
+              <text_slice>So that is $80.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>02:05</time_slice>
+              <text_slice>So we have 0.02x-1,120 is equal to that.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>02:13</time_slice>
+              <text_slice>And to that, we're gonna add,</text_slice>
+            </slice>
+            <slice>
+              <time_slice>02:15</time_slice>
+              <text_slice>I'll open parentheses,
+0.98x80, close parentheses,</text_slice>
+            </slice>
+            <slice>
+              <time_slice>02:23</time_slice>
+              <text_slice>is going to be equal to $56.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>02:27</time_slice>
+              <text_slice>So this is equal to $56.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>02:30</time_slice>
+              <text_slice>And now you understand why the stores</text_slice>
+            </slice>
+            <slice>
+              <time_slice>02:33</time_slice>
+              <text_slice>like to sell these replacement plans.</text_slice>
+            </slice>
+          </transcript>
+        </video>
+      </videos>
+    </lecture>
+  </lectures>
+</doc>

@@ -1,0 +1,4008 @@
+<doc>
+  <source>KHAN_ACADEMY</source>
+  <date>None</date>
+  <course>
+    <course_url>https://www.khanacademy.org/math/trigonometry/trig-with-general-triangles</course_url>
+    <course_title>Non-right triangles &amp; trigonometry</course_title>
+    <course_tags>
+      <list>None</list>
+    </course_tags>
+  </course>
+  <lectures>
+    <lecture>
+      <lecture_title>Law of sines</lecture_title>
+      <lecture_pdf_url>https://www.khanacademy.org/math/trigonometry/trig-with-general-triangles/law-of-sines/v/law-of-sines</lecture_pdf_url>
+      <lectureno>1</lectureno>
+      <slides>
+        <slide>
+          <slideno>1</slideno>
+          <text> ## What is the law of sines?  The law of sines is a formula that can be used to solve any triangles, not just right triangles.  The **law of sines** states that in any triangle, the ratio of the sine of an angle to the opposite side length is equal for all three angles and sides. It looks like this:  $\dfrac{\sin({A})}{a} = \dfrac{\sin{(B)}}{b} = \dfrac{\sin{(C)}}{c}$  Where $A$, $B$, and $C$ are the angle measures of the triangle, and $a$, $b$, and $c$ are the opposite side lengths.  Practice with our [Solve triangles using the law of sines exercise](/e/law_of_sines). ## What is the law of cosines?  The **law of cosines** states that in any triangle, the square of a side is equal to the sum of the squares of the other two sides minus twice the product of the other two sides and the cosine of the opposite angle. It looks like this:  $\begin{align} a^2 &amp;= b^2 + c^2 - 2bc \cos{(A)}\\\\ b^2 &amp;= a^2 + c^2 - 2ac \cos{(B)}\\\\ c^2 &amp;= a^2 + b^2 - 2ab \cos{(C)} \end{align}$  Practice with our [Solve triangles using the law of cosines exercise](/e/law_of_cosines). ## What does it mean to solve a "general triangle"?  Solving a "general triangle" means finding all of its side lengths and angle measures. In some cases, we might only need to find one or two missing pieces of information, but in other cases we might need to find all six. The law of sines and the law of cosines can help us with this.  Practice with our [General triangle word problems exercise](/e/law-of-sines-and-cosines-word-problems). ## How do we choose between using the law of sines and the law of cosines to solve a triangle?  It depends on what pieces of information we already know! If we know two sides and the angle between them, we'll use the law of cosines to find the third side. If we know two angles and one side, we'll use the law of sines to find the other two sides.  Check out our [Trig word problem: stars video](/v/law-of-cosines-word-problem).  Check out our [Laws of sines and cosines review article](/a/laws-of-sines-and-cosines-review).</text>
+        </slide>
+      </slides>
+      <videos>
+        <video>
+          <video_url>https://www.khanacademy.org/math/trigonometry/trig-with-general-triangles/law-of-sines/v/law-of-sines</video_url>
+          <video_title>Solving for a side with the law of sines </video_title>
+          <transcript>
+            <slice>
+              <time_slice>00:00</time_slice>
+              <text_slice>Voiceover:We've got a triangle here where</text_slice>
+            </slice>
+            <slice>
+              <time_slice>00:02</time_slice>
+              <text_slice>we know two of the angles
+and one of the sides.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>00:05</time_slice>
+              <text_slice>And what I claim, is that I
+can figure out everything else</text_slice>
+            </slice>
+            <slice>
+              <time_slice>00:08</time_slice>
+              <text_slice>about this triangle just
+with this information.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>00:10</time_slice>
+              <text_slice>You give me two angles and a side,</text_slice>
+            </slice>
+            <slice>
+              <time_slice>00:12</time_slice>
+              <text_slice>and I can figure out what the other</text_slice>
+            </slice>
+            <slice>
+              <time_slice>00:13</time_slice>
+              <text_slice>two sides are going to be.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>00:14</time_slice>
+              <text_slice>And I can, of course,
+figure out the third angle.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>00:17</time_slice>
+              <text_slice>So, let's try to figure that out.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>00:19</time_slice>
+              <text_slice>And the way that we're going to do it,</text_slice>
+            </slice>
+            <slice>
+              <time_slice>00:20</time_slice>
+              <text_slice>we're going to use something
+called the Law of Sines.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>00:23</time_slice>
+              <text_slice>In a future video, I will
+prove the Law of Sines.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>00:26</time_slice>
+              <text_slice>But here, I am just going to show you how</text_slice>
+            </slice>
+            <slice>
+              <time_slice>00:29</time_slice>
+              <text_slice>we can actually apply it.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>00:30</time_slice>
+              <text_slice>And it's a fairly straightforward idea.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>00:32</time_slice>
+              <text_slice>The Law of Sines just tells us</text_slice>
+            </slice>
+            <slice>
+              <time_slice>00:33</time_slice>
+              <text_slice>that the ratio between
+the sine of an angle,</text_slice>
+            </slice>
+            <slice>
+              <time_slice>00:37</time_slice>
+              <text_slice>and the side opposite to it,</text_slice>
+            </slice>
+            <slice>
+              <time_slice>00:39</time_slice>
+              <text_slice>is going to be constant for any
+of the angles in a triangle.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>00:42</time_slice>
+              <text_slice>So for example, for this
+triangle right over here.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>00:45</time_slice>
+              <text_slice>This is a 30 degree angle,</text_slice>
+            </slice>
+            <slice>
+              <time_slice>00:46</time_slice>
+              <text_slice>This is a 45 degree angle.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>00:48</time_slice>
+              <text_slice>They have to add up to 180.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>00:50</time_slice>
+              <text_slice>So this right over here
+has to be a, let's see,</text_slice>
+            </slice>
+            <slice>
+              <time_slice>00:54</time_slice>
+              <text_slice>it's going to be 180 minus 45 minus 30.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>00:59</time_slice>
+              <text_slice>That's 180 minus 75, so
+this is going to equal</text_slice>
+            </slice>
+            <slice>
+              <time_slice>01:04</time_slice>
+              <text_slice>105 degree angle, right over here.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>01:08</time_slice>
+              <text_slice>And so applying the Law of Sines,</text_slice>
+            </slice>
+            <slice>
+              <time_slice>01:10</time_slice>
+              <text_slice>actually let me label the different sides.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>01:12</time_slice>
+              <text_slice>Let's call this side right over here,</text_slice>
+            </slice>
+            <slice>
+              <time_slice>01:17</time_slice>
+              <text_slice>side A or has length A.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>01:20</time_slice>
+              <text_slice>And let's call this side,
+right over here, has length B.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>01:27</time_slice>
+              <text_slice>So the Law of Sines tells us</text_slice>
+            </slice>
+            <slice>
+              <time_slice>01:28</time_slice>
+              <text_slice>that the ratio between
+the sine of an angle,</text_slice>
+            </slice>
+            <slice>
+              <time_slice>01:31</time_slice>
+              <text_slice>and that the opposite side is going to be</text_slice>
+            </slice>
+            <slice>
+              <time_slice>01:33</time_slice>
+              <text_slice>constant through this triangle.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>01:35</time_slice>
+              <text_slice>So it tells us that sine of
+this angle, sine of 30 degrees</text_slice>
+            </slice>
+            <slice>
+              <time_slice>01:41</time_slice>
+              <text_slice>over the length of the side opposite,</text_slice>
+            </slice>
+            <slice>
+              <time_slice>01:44</time_slice>
+              <text_slice>is going to be equal to
+sine of a 105 degrees,</text_slice>
+            </slice>
+            <slice>
+              <time_slice>01:53</time_slice>
+              <text_slice>over the length of the
+side opposite to it.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>01:56</time_slice>
+              <text_slice>Which is going to be equal
+to sine of 45 degrees.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>02:04</time_slice>
+              <text_slice>equal to the length of the side opposite.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>02:08</time_slice>
+              <text_slice>So sine of 45 degrees over B.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>02:10</time_slice>
+              <text_slice>And so if we wanted to figure out A,</text_slice>
+            </slice>
+            <slice>
+              <time_slice>02:12</time_slice>
+              <text_slice>we could solve this
+equation right over here.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>02:16</time_slice>
+              <text_slice>And if we wanted to solve for B,</text_slice>
+            </slice>
+            <slice>
+              <time_slice>02:17</time_slice>
+              <text_slice>we could just set this equal
+to that right over there.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>02:19</time_slice>
+              <text_slice>So let's solve each of these.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>02:21</time_slice>
+              <text_slice>So what is the sine of 30 degrees?</text_slice>
+            </slice>
+            <slice>
+              <time_slice>02:24</time_slice>
+              <text_slice>Well, you might just remember
+it from your unit circles</text_slice>
+            </slice>
+            <slice>
+              <time_slice>02:25</time_slice>
+              <text_slice>or from even 30, 60, 90
+triangles and that's 1/2.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>02:28</time_slice>
+              <text_slice>And if you don't remember it,</text_slice>
+            </slice>
+            <slice>
+              <time_slice>02:30</time_slice>
+              <text_slice>you can use a calculator to verify that.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>02:32</time_slice>
+              <text_slice>I have already verified that</text_slice>
+            </slice>
+            <slice>
+              <time_slice>02:33</time_slice>
+              <text_slice>this is in degree mode, so it's 0.5.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>02:36</time_slice>
+              <text_slice>So this is going to be
+equal to 1/2 over two.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>02:42</time_slice>
+              <text_slice>So another way of thinking about it,</text_slice>
+            </slice>
+            <slice>
+              <time_slice>02:44</time_slice>
+              <text_slice>that's going to be equal to 1/4,</text_slice>
+            </slice>
+            <slice>
+              <time_slice>02:45</time_slice>
+              <text_slice>this piece is equal to 1/4</text_slice>
+            </slice>
+            <slice>
+              <time_slice>02:47</time_slice>
+              <text_slice>is equal to sine of a 105 degrees over A.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>02:53</time_slice>
+              <text_slice>Let me write this, this is equal to</text_slice>
+            </slice>
+            <slice>
+              <time_slice>02:55</time_slice>
+              <text_slice>sine of 105 degrees over A.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>03:00</time_slice>
+              <text_slice>And actually, we could also say,</text_slice>
+            </slice>
+            <slice>
+              <time_slice>03:02</time_slice>
+              <text_slice>since we could actually
+do both at the same time,</text_slice>
+            </slice>
+            <slice>
+              <time_slice>03:04</time_slice>
+              <text_slice>that this is equal to that.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>03:06</time_slice>
+              <text_slice>That 1/4 is equal to sine
+of 45 degrees over B.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>03:14</time_slice>
+              <text_slice>Actually, sine of 45 degrees
+is another one of those</text_slice>
+            </slice>
+            <slice>
+              <time_slice>03:18</time_slice>
+              <text_slice>that is easy to jump out of unit circles.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>03:20</time_slice>
+              <text_slice>You might remember it's
+square of two over two.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>03:23</time_slice>
+              <text_slice>Let's just write, that's
+square root of two over two.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>03:27</time_slice>
+              <text_slice>And you can use a calculator,</text_slice>
+            </slice>
+            <slice>
+              <time_slice>03:28</time_slice>
+              <text_slice>but you'll get some decimal
+value right over there.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>03:31</time_slice>
+              <text_slice>But either case, in
+either of these equations,</text_slice>
+            </slice>
+            <slice>
+              <time_slice>03:32</time_slice>
+              <text_slice>let's solve for A then let's solve for B.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>03:34</time_slice>
+              <text_slice>So one thing we could do is we could</text_slice>
+            </slice>
+            <slice>
+              <time_slice>03:35</time_slice>
+              <text_slice>take the reciprocal of both
+sides of this equation.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>03:38</time_slice>
+              <text_slice>The reciprocal of 1/4 is four.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>03:41</time_slice>
+              <text_slice>And the reciprocal of this right-hand side</text_slice>
+            </slice>
+            <slice>
+              <time_slice>03:43</time_slice>
+              <text_slice>is A over the sine of 105 degrees.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>03:49</time_slice>
+              <text_slice>And then to solve for A,
+we could just multiply</text_slice>
+            </slice>
+            <slice>
+              <time_slice>03:50</time_slice>
+              <text_slice>both sides times the
+sine of a 105 degrees.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>03:54</time_slice>
+              <text_slice>So we get four times the sine
+of 105 degrees is equal to A.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>04:03</time_slice>
+              <text_slice>Let's get our calculator out,</text_slice>
+            </slice>
+            <slice>
+              <time_slice>04:05</time_slice>
+              <text_slice>so four times the sine of 105 gives us,</text_slice>
+            </slice>
+            <slice>
+              <time_slice>04:11</time_slice>
+              <text_slice>it's approximately equal to,</text_slice>
+            </slice>
+            <slice>
+              <time_slice>04:14</time_slice>
+              <text_slice>let's just round to the
+nearest 100th, 3.86.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>04:18</time_slice>
+              <text_slice>So A is approximately equal to 3.86.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>04:25</time_slice>
+              <text_slice>Which looks about right if this is two,</text_slice>
+            </slice>
+            <slice>
+              <time_slice>04:27</time_slice>
+              <text_slice>and I have made my angles appropriately,</text_slice>
+            </slice>
+            <slice>
+              <time_slice>04:29</time_slice>
+              <text_slice>that looks like about 3.86.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>04:31</time_slice>
+              <text_slice>Let's figure out what B is.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>04:33</time_slice>
+              <text_slice>We could once again take the reciprocal of</text_slice>
+            </slice>
+            <slice>
+              <time_slice>04:34</time_slice>
+              <text_slice>both sides of this and we get</text_slice>
+            </slice>
+            <slice>
+              <time_slice>04:37</time_slice>
+              <text_slice>four is equal to B over
+square root of two over two,</text_slice>
+            </slice>
+            <slice>
+              <time_slice>04:44</time_slice>
+              <text_slice>we could multiply both sides times</text_slice>
+            </slice>
+            <slice>
+              <time_slice>04:46</time_slice>
+              <text_slice>square root of two over two.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>04:48</time_slice>
+              <text_slice>And we would get B is equal to</text_slice>
+            </slice>
+            <slice>
+              <time_slice>04:51</time_slice>
+              <text_slice>four times the square
+root of two over two.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>04:57</time_slice>
+              <text_slice>Come to think of it, B is four times</text_slice>
+            </slice>
+            <slice>
+              <time_slice>04:59</time_slice>
+              <text_slice>the sine of 45 degrees.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>05:02</time_slice>
+              <text_slice>Let's figure out what that is.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>05:04</time_slice>
+              <text_slice>If we wanted actual numerical value,</text_slice>
+            </slice>
+            <slice>
+              <time_slice>05:05</time_slice>
+              <text_slice>we could just write this
+as two square roots of two.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>05:08</time_slice>
+              <text_slice>But let's actually
+figure out what that is.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>05:09</time_slice>
+              <text_slice>Two square roots of two is equal to 2.83.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>05:15</time_slice>
+              <text_slice>So B is approximately equal to 2.83.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>05:20</time_slice>
+              <text_slice>So [I'm] be clear, this
+four divided by two is</text_slice>
+            </slice>
+            <slice>
+              <time_slice>05:23</time_slice>
+              <text_slice>two square roots of two, which is 2.8.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>05:27</time_slice>
+              <text_slice>Which is approximately equal to 2.83</text_slice>
+            </slice>
+            <slice>
+              <time_slice>05:31</time_slice>
+              <text_slice>if we round to the nearest 100th, 2.83,</text_slice>
+            </slice>
+            <slice>
+              <time_slice>05:34</time_slice>
+              <text_slice>which also seems pretty reasonable here.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>05:36</time_slice>
+              <text_slice>So the key of the Law of Cosines is</text_slice>
+            </slice>
+            <slice>
+              <time_slice>05:40</time_slice>
+              <text_slice>if you have two angles and a side,</text_slice>
+            </slice>
+            <slice>
+              <time_slice>05:44</time_slice>
+              <text_slice>you're able to figure out
+everything else about it.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>05:46</time_slice>
+              <text_slice>Or if you actually had
+two sides and an angle,</text_slice>
+            </slice>
+            <slice>
+              <time_slice>05:52</time_slice>
+              <text_slice>you also would be able to figure out</text_slice>
+            </slice>
+            <slice>
+              <time_slice>05:54</time_slice>
+              <text_slice>everything else about the triangle.</text_slice>
+            </slice>
+          </transcript>
+        </video>
+        <video>
+          <video_url>https://www.khanacademy.org/math/trigonometry/trig-with-general-triangles/law-of-sines/v/law-of-sines-example</video_url>
+          <video_title>Solving for an angle with the law of sines </video_title>
+          <transcript>
+            <slice>
+              <time_slice>00:00</time_slice>
+              <text_slice>Voiceover:Say you're out
+flying kites with a friend</text_slice>
+            </slice>
+            <slice>
+              <time_slice>00:02</time_slice>
+              <text_slice>and right at this moment</text_slice>
+            </slice>
+            <slice>
+              <time_slice>00:04</time_slice>
+              <text_slice>you're 40 meters away from your friend</text_slice>
+            </slice>
+            <slice>
+              <time_slice>00:06</time_slice>
+              <text_slice>and you know that the length of the kite's</text_slice>
+            </slice>
+            <slice>
+              <time_slice>00:09</time_slice>
+              <text_slice>string is 30 meters,</text_slice>
+            </slice>
+            <slice>
+              <time_slice>00:11</time_slice>
+              <text_slice>and you measure the angle</text_slice>
+            </slice>
+            <slice>
+              <time_slice>00:12</time_slice>
+              <text_slice>between the kite and the ground</text_slice>
+            </slice>
+            <slice>
+              <time_slice>00:14</time_slice>
+              <text_slice>where you're standing</text_slice>
+            </slice>
+            <slice>
+              <time_slice>00:15</time_slice>
+              <text_slice>and you see that it's a 40 degree angle.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>00:18</time_slice>
+              <text_slice>What you're curious about is</text_slice>
+            </slice>
+            <slice>
+              <time_slice>00:19</time_slice>
+              <text_slice>whether you can use your
+powers of trigonometry</text_slice>
+            </slice>
+            <slice>
+              <time_slice>00:22</time_slice>
+              <text_slice>to figure out the angle between the string</text_slice>
+            </slice>
+            <slice>
+              <time_slice>00:25</time_slice>
+              <text_slice>and the ground.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>00:27</time_slice>
+              <text_slice>I encourage you to pause the video now</text_slice>
+            </slice>
+            <slice>
+              <time_slice>00:29</time_slice>
+              <text_slice>and figure out if you can do that</text_slice>
+            </slice>
+            <slice>
+              <time_slice>00:31</time_slice>
+              <text_slice>using just the information that you have.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>00:34</time_slice>
+              <text_slice>Whenever I see, I guess,
+a non right triangle</text_slice>
+            </slice>
+            <slice>
+              <time_slice>00:38</time_slice>
+              <text_slice>where I'm trying to
+figure out some lengths</text_slice>
+            </slice>
+            <slice>
+              <time_slice>00:39</time_slice>
+              <text_slice>of sides or some lengths of angles,</text_slice>
+            </slice>
+            <slice>
+              <time_slice>00:41</time_slice>
+              <text_slice>I immediately think
+maybe the Law of Cosine</text_slice>
+            </slice>
+            <slice>
+              <time_slice>00:45</time_slice>
+              <text_slice>might be useful or the Law
+of Sines might be useful.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>00:48</time_slice>
+              <text_slice>So, let's think about which one</text_slice>
+            </slice>
+            <slice>
+              <time_slice>00:49</time_slice>
+              <text_slice>could be useful in this case.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>00:51</time_slice>
+              <text_slice>Law of Cosines, and I'll
+just rewrite them here.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>00:53</time_slice>
+              <text_slice>The Law of Cosine is c squared is equal</text_slice>
+            </slice>
+            <slice>
+              <time_slice>00:55</time_slice>
+              <text_slice>to a squared plus b squared</text_slice>
+            </slice>
+            <slice>
+              <time_slice>00:57</time_slice>
+              <text_slice>minus 2ab cosine of theta.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>01:02</time_slice>
+              <text_slice>So what it's doing is it's relating</text_slice>
+            </slice>
+            <slice>
+              <time_slice>01:04</time_slice>
+              <text_slice>3 sides of a triangle.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>01:07</time_slice>
+              <text_slice>So a, b, c to an angle.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>01:11</time_slice>
+              <text_slice>So, for example, if I do 2 sides</text_slice>
+            </slice>
+            <slice>
+              <time_slice>01:13</time_slice>
+              <text_slice>and the angle in between them,</text_slice>
+            </slice>
+            <slice>
+              <time_slice>01:15</time_slice>
+              <text_slice>I can figure out the third side.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>01:16</time_slice>
+              <text_slice>Or if I know all 3 sides,</text_slice>
+            </slice>
+            <slice>
+              <time_slice>01:18</time_slice>
+              <text_slice>then I can figure out this angle.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>01:21</time_slice>
+              <text_slice>But that's not the situation</text_slice>
+            </slice>
+            <slice>
+              <time_slice>01:22</time_slice>
+              <text_slice>that we have over here.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>01:23</time_slice>
+              <text_slice>We're trying to figure
+out this question mark</text_slice>
+            </slice>
+            <slice>
+              <time_slice>01:27</time_slice>
+              <text_slice>and we don't know 3 of the sides.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>01:30</time_slice>
+              <text_slice>We're trying to figure out an angle</text_slice>
+            </slice>
+            <slice>
+              <time_slice>01:31</time_slice>
+              <text_slice>but we don't know 3 of the sides.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>01:32</time_slice>
+              <text_slice>The Law of Cosine just doesn't seem,</text_slice>
+            </slice>
+            <slice>
+              <time_slice>01:34</time_slice>
+              <text_slice>at least in an obvious way,</text_slice>
+            </slice>
+            <slice>
+              <time_slice>01:35</time_slice>
+              <text_slice>that it's going to help me.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>01:36</time_slice>
+              <text_slice>I could also try to find this angle.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>01:38</time_slice>
+              <text_slice>Once again, we don't know all 3 sides</text_slice>
+            </slice>
+            <slice>
+              <time_slice>01:40</time_slice>
+              <text_slice>to be able to solve for the angle.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>01:41</time_slice>
+              <text_slice>So maybe Law of Sines could be useful.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>01:44</time_slice>
+              <text_slice>So the Law of Sines, the Law of Sines.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>01:50</time_slice>
+              <text_slice>Let's say that this is,</text_slice>
+            </slice>
+            <slice>
+              <time_slice>01:52</time_slice>
+              <text_slice>the measure of this angle is a,</text_slice>
+            </slice>
+            <slice>
+              <time_slice>01:54</time_slice>
+              <text_slice>the measure of this angle is lower case b,</text_slice>
+            </slice>
+            <slice>
+              <time_slice>01:56</time_slice>
+              <text_slice>the measure of this angle is lower case c,</text_slice>
+            </slice>
+            <slice>
+              <time_slice>01:58</time_slice>
+              <text_slice>length of this side is capital C,</text_slice>
+            </slice>
+            <slice>
+              <time_slice>02:00</time_slice>
+              <text_slice>length of this side is capital A,</text_slice>
+            </slice>
+            <slice>
+              <time_slice>02:01</time_slice>
+              <text_slice>length of this side is capital B.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>02:04</time_slice>
+              <text_slice>The Law of Sine tells us</text_slice>
+            </slice>
+            <slice>
+              <time_slice>02:05</time_slice>
+              <text_slice>the ratio between the sine
+of each of these angles</text_slice>
+            </slice>
+            <slice>
+              <time_slice>02:09</time_slice>
+              <text_slice>and the length of the opposite side</text_slice>
+            </slice>
+            <slice>
+              <time_slice>02:11</time_slice>
+              <text_slice>is constant.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>02:13</time_slice>
+              <text_slice>So sine of lower case a over capital A</text_slice>
+            </slice>
+            <slice>
+              <time_slice>02:15</time_slice>
+              <text_slice>is the same as lower
+case b over capital B,</text_slice>
+            </slice>
+            <slice>
+              <time_slice>02:19</time_slice>
+              <text_slice>which is going to be the same as</text_slice>
+            </slice>
+            <slice>
+              <time_slice>02:22</time_slice>
+              <text_slice>lower case c over capital C.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>02:25</time_slice>
+              <text_slice>Let's see if we can leverage that somehow</text_slice>
+            </slice>
+            <slice>
+              <time_slice>02:27</time_slice>
+              <text_slice>right over here.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>02:28</time_slice>
+              <text_slice>We know this angle and the opposite side</text_slice>
+            </slice>
+            <slice>
+              <time_slice>02:33</time_slice>
+              <text_slice>so we can write that ratio.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>02:35</time_slice>
+              <text_slice>Sine of 40 degrees over 30.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>02:41</time_slice>
+              <text_slice>Let's see. Can we say
+that that's going to be</text_slice>
+            </slice>
+            <slice>
+              <time_slice>02:43</time_slice>
+              <text_slice>equal to the sine of this angle over that?</text_slice>
+            </slice>
+            <slice>
+              <time_slice>02:45</time_slice>
+              <text_slice>Well it would be, but we
+don't know either of these</text_slice>
+            </slice>
+            <slice>
+              <time_slice>02:47</time_slice>
+              <text_slice>so that doesn't seem like
+it's going to help us.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>02:49</time_slice>
+              <text_slice>But, we do know this side.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>02:51</time_slice>
+              <text_slice>Maybe we could use the Law of Cosines</text_slice>
+            </slice>
+            <slice>
+              <time_slice>02:53</time_slice>
+              <text_slice>to figure out this angle,</text_slice>
+            </slice>
+            <slice>
+              <time_slice>02:54</time_slice>
+              <text_slice>because if we know 2 angles of a triangle,</text_slice>
+            </slice>
+            <slice>
+              <time_slice>02:56</time_slice>
+              <text_slice>then we can figure out the third angle.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>02:58</time_slice>
+              <text_slice>So let's do that.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>02:59</time_slice>
+              <text_slice>Let's say that this angle
+right over here is theta.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>03:02</time_slice>
+              <text_slice>We know this distance right
+over here is 40 meters,</text_slice>
+            </slice>
+            <slice>
+              <time_slice>03:04</time_slice>
+              <text_slice>so we can say that the
+sine of theta over 40,</text_slice>
+            </slice>
+            <slice>
+              <time_slice>03:11</time_slice>
+              <text_slice>this ratio is going to be the same</text_slice>
+            </slice>
+            <slice>
+              <time_slice>03:13</time_slice>
+              <text_slice>as the sine of 40 over 30.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>03:16</time_slice>
+              <text_slice>Now we can just solve for theta.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>03:19</time_slice>
+              <text_slice>Multiplying both sides times 40,</text_slice>
+            </slice>
+            <slice>
+              <time_slice>03:22</time_slice>
+              <text_slice>you're going to get, let's see.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>03:26</time_slice>
+              <text_slice>40 divided by 30 is 4/3.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>03:28</time_slice>
+              <text_slice>4/3 sine of 40 degrees is
+equal to sine of theta,</text_slice>
+            </slice>
+            <slice>
+              <time_slice>03:38</time_slice>
+              <text_slice>is equal to sine of theta.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>03:40</time_slice>
+              <text_slice>Now to solve for theta,
+we just need to take</text_slice>
+            </slice>
+            <slice>
+              <time_slice>03:42</time_slice>
+              <text_slice>the inverse sine of both sides.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>03:44</time_slice>
+              <text_slice>So inverse sine of 4 over
+3 sine of 40 degrees.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>03:54</time_slice>
+              <text_slice>Put some parentheses here,</text_slice>
+            </slice>
+            <slice>
+              <time_slice>03:55</time_slice>
+              <text_slice>is equal to theta.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>03:57</time_slice>
+              <text_slice>That will give us that angle here</text_slice>
+            </slice>
+            <slice>
+              <time_slice>03:59</time_slice>
+              <text_slice>and we can use that information
+and this information</text_slice>
+            </slice>
+            <slice>
+              <time_slice>04:01</time_slice>
+              <text_slice>to figure out the angle
+that we really care about.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>04:04</time_slice>
+              <text_slice>So, let's get a calculator out and see if</text_slice>
+            </slice>
+            <slice>
+              <time_slice>04:06</time_slice>
+              <text_slice>we can calculate it.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>04:07</time_slice>
+              <text_slice>Let me just verify, I am in degree mode.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>04:10</time_slice>
+              <text_slice>Very important.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>04:11</time_slice>
+              <text_slice>All right, now I'm going
+to take the inverse</text_slice>
+            </slice>
+            <slice>
+              <time_slice>04:13</time_slice>
+              <text_slice>sine of 4/3 times sine of 40 degrees,</text_slice>
+            </slice>
+            <slice>
+              <time_slice>04:25</time_slice>
+              <text_slice>and that gets me,</text_slice>
+            </slice>
+            <slice>
+              <time_slice>04:26</time_slice>
+              <text_slice>and I deserve a little bit of a drum roll,</text_slice>
+            </slice>
+            <slice>
+              <time_slice>04:29</time_slice>
+              <text_slice>58, well if we round to the nearest,</text_slice>
+            </slice>
+            <slice>
+              <time_slice>04:34</time_slice>
+              <text_slice>let's just maintain our precision here.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>04:37</time_slice>
+              <text_slice>So 58.99 degrees roughly.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>04:40</time_slice>
+              <text_slice>This is approximately
+equal to 58.99 degrees.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>04:47</time_slice>
+              <text_slice>So, if that is 58.99 degrees,</text_slice>
+            </slice>
+            <slice>
+              <time_slice>04:49</time_slice>
+              <text_slice>what is this one?</text_slice>
+            </slice>
+            <slice>
+              <time_slice>04:50</time_slice>
+              <text_slice>It's going to 180 minus
+this angle's measure</text_slice>
+            </slice>
+            <slice>
+              <time_slice>04:53</time_slice>
+              <text_slice>minus that angle's measure.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>04:55</time_slice>
+              <text_slice>Let's calculate that.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>04:56</time_slice>
+              <text_slice>It's going to 180
+degrees minus this angle,</text_slice>
+            </slice>
+            <slice>
+              <time_slice>05:00</time_slice>
+              <text_slice>so minus 40,</text_slice>
+            </slice>
+            <slice>
+              <time_slice>05:03</time_slice>
+              <text_slice>minus the angle that we just figured out.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>05:03</time_slice>
+              <text_slice>Actually I can get all of our precision</text_slice>
+            </slice>
+            <slice>
+              <time_slice>05:04</time_slice>
+              <text_slice>by just typing in second answer.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>05:07</time_slice>
+              <text_slice>So that just says our previous answer</text_slice>
+            </slice>
+            <slice>
+              <time_slice>05:09</time_slice>
+              <text_slice>so I get all that precision there</text_slice>
+            </slice>
+            <slice>
+              <time_slice>05:10</time_slice>
+              <text_slice>and so I get 81.01 degrees.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>05:15</time_slice>
+              <text_slice>So, if I want to round to the nearest,</text_slice>
+            </slice>
+            <slice>
+              <time_slice>05:16</time_slice>
+              <text_slice>let's say I want to round
+to nearest hundredth</text_slice>
+            </slice>
+            <slice>
+              <time_slice>05:18</time_slice>
+              <text_slice>of a degree, then I'd say 81.01 degrees.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>05:21</time_slice>
+              <text_slice>So this, this right over here,</text_slice>
+            </slice>
+            <slice>
+              <time_slice>05:24</time_slice>
+              <text_slice>is approximately 81.01
+degrees and we're done.</text_slice>
+            </slice>
+          </transcript>
+        </video>
+        <video>
+          <video_url>https://www.khanacademy.org/math/trigonometry/trig-with-general-triangles/law-of-sines/v/proof-law-of-sines</video_url>
+          <video_title>Proof of the law of sines </video_title>
+          <transcript>
+            <slice>
+              <time_slice>00:00</time_slice>
+              <text_slice>I will now do a proof
+of the law of sines.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>00:04</time_slice>
+              <text_slice>So, let's see, let me draw
+an arbitrary triangle.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>00:08</time_slice>
+              <text_slice>That's one side right there.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>00:11</time_slice>
+              <text_slice>And then I've got
+another side here.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>00:13</time_slice>
+              <text_slice>I'll try to make it look a
+little strange so you realize</text_slice>
+            </slice>
+            <slice>
+              <time_slice>00:15</time_slice>
+              <text_slice>it can apply to any triangle.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>00:19</time_slice>
+              <text_slice>And let's say we know the
+following information.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>00:24</time_slice>
+              <text_slice>We know this angle -- well,
+actually, I'm not going to say</text_slice>
+            </slice>
+            <slice>
+              <time_slice>00:28</time_slice>
+              <text_slice>what we know or don't know, but
+the law of sines is just a</text_slice>
+            </slice>
+            <slice>
+              <time_slice>00:30</time_slice>
+              <text_slice>relationship between different
+angles and different sides.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>00:32</time_slice>
+              <text_slice>Let's say that this angle
+right here is alpha.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>00:36</time_slice>
+              <text_slice>This side here is A.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>00:38</time_slice>
+              <text_slice>The length here is A.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>00:40</time_slice>
+              <text_slice>Let's say that this side
+here is beta, and that</text_slice>
+            </slice>
+            <slice>
+              <time_slice>00:44</time_slice>
+              <text_slice>the length here is B.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>00:47</time_slice>
+              <text_slice>Beta is just B with
+a long end there.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>00:50</time_slice>
+              <text_slice>So let's see if we can find a
+relationship that connects A</text_slice>
+            </slice>
+            <slice>
+              <time_slice>00:53</time_slice>
+              <text_slice>and B, and alpha and beta.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>00:56</time_slice>
+              <text_slice>So what can we do?</text_slice>
+            </slice>
+            <slice>
+              <time_slice>00:58</time_slice>
+              <text_slice>And hopefully that
+relationship we find will</text_slice>
+            </slice>
+            <slice>
+              <time_slice>01:00</time_slice>
+              <text_slice>be the law of sines.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>01:01</time_slice>
+              <text_slice>Otherwise, I would have
+to rename this video.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>01:04</time_slice>
+              <text_slice>So let me draw an
+altitude here.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>01:06</time_slice>
+              <text_slice>I think that's the proper term.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>01:10</time_slice>
+              <text_slice>If I just draw a line from this
+side coming straight down, and</text_slice>
+            </slice>
+            <slice>
+              <time_slice>01:15</time_slice>
+              <text_slice>it's going to be perpendicular
+to this bottom side, which I</text_slice>
+            </slice>
+            <slice>
+              <time_slice>01:18</time_slice>
+              <text_slice>haven't labeled, but I'll
+probably, if I have to label</text_slice>
+            </slice>
+            <slice>
+              <time_slice>01:21</time_slice>
+              <text_slice>it, probably label it C,
+because that's A and B.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>01:23</time_slice>
+              <text_slice>And this is going to
+be a 90 degree angle.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>01:29</time_slice>
+              <text_slice>I don't know the
+length of that.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>01:31</time_slice>
+              <text_slice>I don't know anything about it.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>01:32</time_slice>
+              <text_slice>All I know is I went from this
+vertex and I dropped a line</text_slice>
+            </slice>
+            <slice>
+              <time_slice>01:38</time_slice>
+              <text_slice>that's perpendicular
+to this other side.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>01:40</time_slice>
+              <text_slice>So what can we do
+with this line?</text_slice>
+            </slice>
+            <slice>
+              <time_slice>01:42</time_slice>
+              <text_slice>Well let me just say
+that it has length x.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>01:45</time_slice>
+              <text_slice>The length of this line is x.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>01:49</time_slice>
+              <text_slice>Can we find a relationship
+between A, the length of</text_slice>
+            </slice>
+            <slice>
+              <time_slice>01:52</time_slice>
+              <text_slice>this line x, and beta?</text_slice>
+            </slice>
+            <slice>
+              <time_slice>01:55</time_slice>
+              <text_slice>Well, sure.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>01:56</time_slice>
+              <text_slice>Let's see.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>01:57</time_slice>
+              <text_slice>Let me find an
+appropriate color.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>02:02</time_slice>
+              <text_slice>OK.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>02:03</time_slice>
+              <text_slice>That's, I think, a good color.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>02:05</time_slice>
+              <text_slice>So what's the relationship?</text_slice>
+            </slice>
+            <slice>
+              <time_slice>02:07</time_slice>
+              <text_slice>If we look at this angle right
+here, beta, x is opposite to it</text_slice>
+            </slice>
+            <slice>
+              <time_slice>02:10</time_slice>
+              <text_slice>and A is the hypotenuse, if we
+look at this right triangle</text_slice>
+            </slice>
+            <slice>
+              <time_slice>02:13</time_slice>
+              <text_slice>right here, right?</text_slice>
+            </slice>
+            <slice>
+              <time_slice>02:14</time_slice>
+              <text_slice>So what deals with
+opposite and hypotenuse?</text_slice>
+            </slice>
+            <slice>
+              <time_slice>02:18</time_slice>
+              <text_slice>Whenever we do trigonometry, we
+should always just right soh</text_slice>
+            </slice>
+            <slice>
+              <time_slice>02:20</time_slice>
+              <text_slice>cah toa at the top of the page.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>02:21</time_slice>
+              <text_slice>Soh cah toa.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>02:22</time_slice>
+              <text_slice>So what deals with
+opposite of hypotenuse?</text_slice>
+            </slice>
+            <slice>
+              <time_slice>02:24</time_slice>
+              <text_slice>Sine, right?</text_slice>
+            </slice>
+            <slice>
+              <time_slice>02:24</time_slice>
+              <text_slice>Soh, and you should probably
+guess that, because I'm</text_slice>
+            </slice>
+            <slice>
+              <time_slice>02:26</time_slice>
+              <text_slice>proving the law of sines.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>02:28</time_slice>
+              <text_slice>So the sine of beta is
+equal to the opposite</text_slice>
+            </slice>
+            <slice>
+              <time_slice>02:36</time_slice>
+              <text_slice>over the hypotenuse.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>02:37</time_slice>
+              <text_slice>It's equal to this opposite,
+which is x, over the</text_slice>
+            </slice>
+            <slice>
+              <time_slice>02:42</time_slice>
+              <text_slice>hypotenuse, which is
+A, in this case.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>02:46</time_slice>
+              <text_slice>And if we wanted to solve for
+x, and I'll just do that,</text_slice>
+            </slice>
+            <slice>
+              <time_slice>02:48</time_slice>
+              <text_slice>because it'll be convenient
+later, we can multiply both</text_slice>
+            </slice>
+            <slice>
+              <time_slice>02:51</time_slice>
+              <text_slice>sides of this equation by A
+and you get A sine of</text_slice>
+            </slice>
+            <slice>
+              <time_slice>02:56</time_slice>
+              <text_slice>beta is equal to x.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>02:59</time_slice>
+              <text_slice>Fair enough.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>03:00</time_slice>
+              <text_slice>That got us someplace.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>03:02</time_slice>
+              <text_slice>Well, let's see if we
+can find a relationship</text_slice>
+            </slice>
+            <slice>
+              <time_slice>03:03</time_slice>
+              <text_slice>between alpha, B, and x.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>03:06</time_slice>
+              <text_slice>Well, similarly, if we look at
+this right triangle, because</text_slice>
+            </slice>
+            <slice>
+              <time_slice>03:09</time_slice>
+              <text_slice>this is also a right triangle,
+of course, x here, relative to</text_slice>
+            </slice>
+            <slice>
+              <time_slice>03:13</time_slice>
+              <text_slice>alpha, is also the opposite
+side, and B now is</text_slice>
+            </slice>
+            <slice>
+              <time_slice>03:16</time_slice>
+              <text_slice>the hypotenuse.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>03:16</time_slice>
+              <text_slice>So we can also write that sine
+of alpha -- let me do it in a</text_slice>
+            </slice>
+            <slice>
+              <time_slice>03:22</time_slice>
+              <text_slice>different color -- is equal
+to opposite over hypotenuse.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>03:32</time_slice>
+              <text_slice>The opposite is x and
+the hypotenuse is B.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>03:40</time_slice>
+              <text_slice>And let's solve for x
+again, just to do it.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>03:42</time_slice>
+              <text_slice>Multiply both sides by B
+and you get B sine of</text_slice>
+            </slice>
+            <slice>
+              <time_slice>03:47</time_slice>
+              <text_slice>alpha is equal to x.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>03:50</time_slice>
+              <text_slice>So now what do we have?</text_slice>
+            </slice>
+            <slice>
+              <time_slice>03:51</time_slice>
+              <text_slice>We have two different ways that
+we solved for this thing that I</text_slice>
+            </slice>
+            <slice>
+              <time_slice>03:55</time_slice>
+              <text_slice>dropped down from this
+side, this x, right?</text_slice>
+            </slice>
+            <slice>
+              <time_slice>03:56</time_slice>
+              <text_slice>We have A sine of
+beta is equal to x.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>03:59</time_slice>
+              <text_slice>And then B sine of
+alpha is equal to x.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>04:03</time_slice>
+              <text_slice>Well, if they're both equal
+to x, then they're both</text_slice>
+            </slice>
+            <slice>
+              <time_slice>04:05</time_slice>
+              <text_slice>equal to each other.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>04:06</time_slice>
+              <text_slice>So let me write that down.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>04:08</time_slice>
+              <text_slice>Let me write that down
+in a soothing color.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>04:13</time_slice>
+              <text_slice>So we know that A sine of beta
+is equal to x, which is also</text_slice>
+            </slice>
+            <slice>
+              <time_slice>04:21</time_slice>
+              <text_slice>equal to B sine of beta --
+sorry, B sine of alpha.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>04:28</time_slice>
+              <text_slice>If we divide both sides of this
+equation by A, what do we get?</text_slice>
+            </slice>
+            <slice>
+              <time_slice>04:32</time_slice>
+              <text_slice>We get sine of beta, right,
+because the A on this side</text_slice>
+            </slice>
+            <slice>
+              <time_slice>04:36</time_slice>
+              <text_slice>cancels out, is equal to
+B sine of alpha over A.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>04:42</time_slice>
+              <text_slice>And if we divide both sides of
+this equation by B, we get</text_slice>
+            </slice>
+            <slice>
+              <time_slice>04:47</time_slice>
+              <text_slice>sine of beta over B is equal
+to sine of alpha over A.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>05:04</time_slice>
+              <text_slice>So this is the law of sines.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>05:07</time_slice>
+              <text_slice>The ratio between the sine of
+beta and its opposite side --</text_slice>
+            </slice>
+            <slice>
+              <time_slice>05:12</time_slice>
+              <text_slice>and it's the side that it
+corresponds to, this B -- is</text_slice>
+            </slice>
+            <slice>
+              <time_slice>05:15</time_slice>
+              <text_slice>equal to the ratio of the sine
+of alpha and its opposite side.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>05:20</time_slice>
+              <text_slice>And a lot of times in the
+books, let's say, if this angle</text_slice>
+            </slice>
+            <slice>
+              <time_slice>05:23</time_slice>
+              <text_slice>was theta, and this was C, then
+they would also write that's</text_slice>
+            </slice>
+            <slice>
+              <time_slice>05:27</time_slice>
+              <text_slice>also equal to the sine
+of theta over C.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>05:32</time_slice>
+              <text_slice>And the proof of adding
+this here is identical.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>05:37</time_slice>
+              <text_slice>We've picked B arbitrarily, B
+as a side, we could have done</text_slice>
+            </slice>
+            <slice>
+              <time_slice>05:39</time_slice>
+              <text_slice>the exact same thing with theta
+and C, but instead of dropping</text_slice>
+            </slice>
+            <slice>
+              <time_slice>05:43</time_slice>
+              <text_slice>the altitude here, we would
+have had to drop one of</text_slice>
+            </slice>
+            <slice>
+              <time_slice>05:46</time_slice>
+              <text_slice>the other altitudes.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>05:47</time_slice>
+              <text_slice>And I think you could
+figure out that part.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>05:49</time_slice>
+              <text_slice>But the important thing
+is we have this ratio.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>05:51</time_slice>
+              <text_slice>And of course, you could have
+written it -- since it's a</text_slice>
+            </slice>
+            <slice>
+              <time_slice>05:53</time_slice>
+              <text_slice>ratio, you could flip both
+sides of the ratio -- you could</text_slice>
+            </slice>
+            <slice>
+              <time_slice>05:55</time_slice>
+              <text_slice>write it B over the sine of B
+is equal to A over</text_slice>
+            </slice>
+            <slice>
+              <time_slice>06:02</time_slice>
+              <text_slice>the sine of alpha.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>06:04</time_slice>
+              <text_slice>And this is useful, because if
+you know one side and its</text_slice>
+            </slice>
+            <slice>
+              <time_slice>06:09</time_slice>
+              <text_slice>corresponding angle, the angle
+opposite it that kind of opens</text_slice>
+            </slice>
+            <slice>
+              <time_slice>06:12</time_slice>
+              <text_slice>up into that side, and say you
+know the other side, then you</text_slice>
+            </slice>
+            <slice>
+              <time_slice>06:15</time_slice>
+              <text_slice>could figure out the angle
+that opens up into it.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>06:19</time_slice>
+              <text_slice>If you know three of these
+things, you can figure</text_slice>
+            </slice>
+            <slice>
+              <time_slice>06:21</time_slice>
+              <text_slice>out the fourth.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>06:21</time_slice>
+              <text_slice>And that's what's useful
+about the law of sines.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>06:26</time_slice>
+              <text_slice>So maybe now I will do a few
+law of sines word problems.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>06:30</time_slice>
+              <text_slice>I'll see you in the next video.</text_slice>
+            </slice>
+          </transcript>
+        </video>
+      </videos>
+    </lecture>
+    <lecture>
+      <lecture_title>Law of cosines</lecture_title>
+      <lecture_pdf_url>https://www.khanacademy.org/math/trigonometry/trig-with-general-triangles/law-of-cosines/v/law-of-cosines-example</lecture_pdf_url>
+      <lectureno>2</lectureno>
+      <slides/>
+      <videos>
+        <video>
+          <video_url>https://www.khanacademy.org/math/trigonometry/trig-with-general-triangles/law-of-cosines/v/law-of-cosines-example</video_url>
+          <video_title>Solving for a side with the law of cosines </video_title>
+          <transcript>
+            <slice>
+              <time_slice>00:00</time_slice>
+              <text_slice>- [Voiceover] Let's say
+that I've got a triangle,</text_slice>
+            </slice>
+            <slice>
+              <time_slice>00:03</time_slice>
+              <text_slice>and this side has length b,</text_slice>
+            </slice>
+            <slice>
+              <time_slice>00:07</time_slice>
+              <text_slice>which is equal to 12,</text_slice>
+            </slice>
+            <slice>
+              <time_slice>00:10</time_slice>
+              <text_slice>12 units or whatever units
+of measurement we're using.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>00:14</time_slice>
+              <text_slice>Let's say that this side right over here,</text_slice>
+            </slice>
+            <slice>
+              <time_slice>00:17</time_slice>
+              <text_slice>this side right over here, has length c,</text_slice>
+            </slice>
+            <slice>
+              <time_slice>00:20</time_slice>
+              <text_slice>and that happens to be equal to nine.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>00:23</time_slice>
+              <text_slice>And that we want to figure out the length</text_slice>
+            </slice>
+            <slice>
+              <time_slice>00:30</time_slice>
+              <text_slice>of this side, and this side has length a,</text_slice>
+            </slice>
+            <slice>
+              <time_slice>00:33</time_slice>
+              <text_slice>so we need to figure out what
+a is going to be equal to.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>00:36</time_slice>
+              <text_slice>Now, we won't be able to figure this out</text_slice>
+            </slice>
+            <slice>
+              <time_slice>00:38</time_slice>
+              <text_slice>unless we also know the angle here,</text_slice>
+            </slice>
+            <slice>
+              <time_slice>00:40</time_slice>
+              <text_slice>because you could bring the blue side</text_slice>
+            </slice>
+            <slice>
+              <time_slice>00:44</time_slice>
+              <text_slice>and the green side close together,</text_slice>
+            </slice>
+            <slice>
+              <time_slice>00:45</time_slice>
+              <text_slice>and then a would be small,</text_slice>
+            </slice>
+            <slice>
+              <time_slice>00:46</time_slice>
+              <text_slice>but if this angle was larger
+than a would be larger.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>00:49</time_slice>
+              <text_slice>So we need to know what
+this angle is as well.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>00:51</time_slice>
+              <text_slice>So let's say that we know that this angle,</text_slice>
+            </slice>
+            <slice>
+              <time_slice>00:53</time_slice>
+              <text_slice>which we will call theta,</text_slice>
+            </slice>
+            <slice>
+              <time_slice>00:55</time_slice>
+              <text_slice>is equal to 87 degrees.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>00:59</time_slice>
+              <text_slice>So how can we figure out a?</text_slice>
+            </slice>
+            <slice>
+              <time_slice>01:01</time_slice>
+              <text_slice>I encourage you to pause this
+and try this on your own.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>01:04</time_slice>
+              <text_slice>Well, lucky for us, we
+have the Law of Cosines,</text_slice>
+            </slice>
+            <slice>
+              <time_slice>01:07</time_slice>
+              <text_slice>which gives us a way for
+determining a third side</text_slice>
+            </slice>
+            <slice>
+              <time_slice>01:10</time_slice>
+              <text_slice>if we know two of the sides
+and the angle between them.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>01:13</time_slice>
+              <text_slice>The Law of Cosines tells
+us that a squared is going</text_slice>
+            </slice>
+            <slice>
+              <time_slice>01:18</time_slice>
+              <text_slice>to be equal b squared plus c squared.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>01:23</time_slice>
+              <text_slice>Now, if we were dealing
+with a pure right triangle,</text_slice>
+            </slice>
+            <slice>
+              <time_slice>01:25</time_slice>
+              <text_slice>if this was 90 degrees, then
+a would be the hypotenuse,</text_slice>
+            </slice>
+            <slice>
+              <time_slice>01:28</time_slice>
+              <text_slice>and we would be done, this would
+be the Pythagorean Theorem.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>01:30</time_slice>
+              <text_slice>But the Law of Cosines
+gives us an adjustment</text_slice>
+            </slice>
+            <slice>
+              <time_slice>01:32</time_slice>
+              <text_slice>to the Pythagorean Theorem,
+so that we can do this</text_slice>
+            </slice>
+            <slice>
+              <time_slice>01:34</time_slice>
+              <text_slice>for any arbitrary angle.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>01:36</time_slice>
+              <text_slice>So Law of Cosines tell
+us a squared is going</text_slice>
+            </slice>
+            <slice>
+              <time_slice>01:38</time_slice>
+              <text_slice>to be b squared plus c squared,</text_slice>
+            </slice>
+            <slice>
+              <time_slice>01:41</time_slice>
+              <text_slice>minus two times bc,</text_slice>
+            </slice>
+            <slice>
+              <time_slice>01:48</time_slice>
+              <text_slice>times the cosine of theta.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>01:55</time_slice>
+              <text_slice>And this theta is the angle that opens up</text_slice>
+            </slice>
+            <slice>
+              <time_slice>01:59</time_slice>
+              <text_slice>to the side that we care about.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>02:02</time_slice>
+              <text_slice>So we can use theta because
+we're looking for a.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>02:05</time_slice>
+              <text_slice>If they gave us another
+angle right over here,</text_slice>
+            </slice>
+            <slice>
+              <time_slice>02:06</time_slice>
+              <text_slice>that's not the angle that we would use.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>02:08</time_slice>
+              <text_slice>We care about the angle that opens up</text_slice>
+            </slice>
+            <slice>
+              <time_slice>02:10</time_slice>
+              <text_slice>into the side that we
+are going to solve for.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>02:13</time_slice>
+              <text_slice>So now let's solve for a,</text_slice>
+            </slice>
+            <slice>
+              <time_slice>02:14</time_slice>
+              <text_slice>because we know what bc
+and theta actually are.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>02:18</time_slice>
+              <text_slice>So a squared is going to
+be equal to b squared...</text_slice>
+            </slice>
+            <slice>
+              <time_slice>02:24</time_slice>
+              <text_slice>so it's going to be equal to 144,</text_slice>
+            </slice>
+            <slice>
+              <time_slice>02:27</time_slice>
+              <text_slice>plus c squared which is 81, so plus 81,</text_slice>
+            </slice>
+            <slice>
+              <time_slice>02:32</time_slice>
+              <text_slice>minus two times b times c.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>02:35</time_slice>
+              <text_slice>So, it's minus two,
+I'll just write it out.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>02:37</time_slice>
+              <text_slice>Minus two times 12 times nine,</text_slice>
+            </slice>
+            <slice>
+              <time_slice>02:45</time_slice>
+              <text_slice>times the cosine of 87 degrees.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>02:52</time_slice>
+              <text_slice>And this is going to be equal to,</text_slice>
+            </slice>
+            <slice>
+              <time_slice>02:56</time_slice>
+              <text_slice>let's see, this is 225 minus,</text_slice>
+            </slice>
+            <slice>
+              <time_slice>03:00</time_slice>
+              <text_slice>let's see, 12 times nine is 108.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>03:03</time_slice>
+              <text_slice>108 times two is 216.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>03:05</time_slice>
+              <text_slice>Minus 216 times the cosine of 87 degrees.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>03:12</time_slice>
+              <text_slice>Now, let's get our calculator out</text_slice>
+            </slice>
+            <slice>
+              <time_slice>03:13</time_slice>
+              <text_slice>in order to approximate this.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>03:15</time_slice>
+              <text_slice>And remember, this is a squared.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>03:16</time_slice>
+              <text_slice>Actually, before I get my calculator out,</text_slice>
+            </slice>
+            <slice>
+              <time_slice>03:18</time_slice>
+              <text_slice>let's just solve for a.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>03:19</time_slice>
+              <text_slice>So a is just going to be
+the square root of this.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>03:21</time_slice>
+              <text_slice>So a is going to be equal
+to the square root...</text_slice>
+            </slice>
+            <slice>
+              <time_slice>03:26</time_slice>
+              <text_slice>of all of this business, which
+I can just copy and paste.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>03:29</time_slice>
+              <text_slice>It's going to be equal to
+the square root of that.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>03:31</time_slice>
+              <text_slice>So let me copy and paste it.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>03:34</time_slice>
+              <text_slice>So a is going to be equal
+to the square root of that,</text_slice>
+            </slice>
+            <slice>
+              <time_slice>03:36</time_slice>
+              <text_slice>which we can now use the
+calculator to figure out.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>03:39</time_slice>
+              <text_slice>Let me increase this radical a little bit,</text_slice>
+            </slice>
+            <slice>
+              <time_slice>03:40</time_slice>
+              <text_slice>so that we make sure we're
+taking the square root</text_slice>
+            </slice>
+            <slice>
+              <time_slice>03:42</time_slice>
+              <text_slice>of this whole thing.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>03:43</time_slice>
+              <text_slice>So let me get my calculator out.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>03:45</time_slice>
+              <text_slice>So I want to find that square root of 220.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>03:49</time_slice>
+              <text_slice>Actually, before I do that,
+let me just make sure I'm</text_slice>
+            </slice>
+            <slice>
+              <time_slice>03:50</time_slice>
+              <text_slice>in degree mode, and I am in degree mode.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>03:53</time_slice>
+              <text_slice>Because we're evaluating a
+trig function in degrees here.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>03:58</time_slice>
+              <text_slice>So that's fine, so let me exit.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>03:59</time_slice>
+              <text_slice>So it's going to be 225 minus 216,</text_slice>
+            </slice>
+            <slice>
+              <time_slice>04:04</time_slice>
+              <text_slice>times cosine</text_slice>
+            </slice>
+            <slice>
+              <time_slice>04:08</time_slice>
+              <text_slice>of 87 degrees.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>04:10</time_slice>
+              <text_slice>Not 88 degrees, 87 degrees.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>04:13</time_slice>
+              <text_slice>And we deserve a drumroll now.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>04:16</time_slice>
+              <text_slice>This is going to be 14.61,</text_slice>
+            </slice>
+            <slice>
+              <time_slice>04:20</time_slice>
+              <text_slice>or 14.618.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>04:22</time_slice>
+              <text_slice>If, say, we wanted to
+round to the nearest tenth,</text_slice>
+            </slice>
+            <slice>
+              <time_slice>04:24</time_slice>
+              <text_slice>just to get an approximation,</text_slice>
+            </slice>
+            <slice>
+              <time_slice>04:25</time_slice>
+              <text_slice>it would be approximately 14.6.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>04:28</time_slice>
+              <text_slice>So a is approximately equal</text_slice>
+            </slice>
+            <slice>
+              <time_slice>04:31</time_slice>
+              <text_slice>to 14.6, whatever units we're using long.</text_slice>
+            </slice>
+          </transcript>
+        </video>
+        <video>
+          <video_url>https://www.khanacademy.org/math/trigonometry/trig-with-general-triangles/law-of-cosines/v/law-of-cosines-missing-angle</video_url>
+          <video_title>Solving for an angle with the law of cosines </video_title>
+          <transcript>
+            <slice>
+              <time_slice>00:00</time_slice>
+              <text_slice>Voiceover:Let's say you're studying</text_slice>
+            </slice>
+            <slice>
+              <time_slice>00:01</time_slice>
+              <text_slice>some type of a little hill</text_slice>
+            </slice>
+            <slice>
+              <time_slice>00:02</time_slice>
+              <text_slice>or rock formation right over here.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>00:05</time_slice>
+              <text_slice>And you're able to figure
+out the dimensions.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>00:06</time_slice>
+              <text_slice>You know that from this
+point to this point</text_slice>
+            </slice>
+            <slice>
+              <time_slice>00:08</time_slice>
+              <text_slice>along the base, straight
+along level ground,</text_slice>
+            </slice>
+            <slice>
+              <time_slice>00:10</time_slice>
+              <text_slice>is 60 meters.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>00:11</time_slice>
+              <text_slice>You know the steeper side,</text_slice>
+            </slice>
+            <slice>
+              <time_slice>00:13</time_slice>
+              <text_slice>steeper I guess surface or edge</text_slice>
+            </slice>
+            <slice>
+              <time_slice>00:15</time_slice>
+              <text_slice>of this cliff or whatever you</text_slice>
+            </slice>
+            <slice>
+              <time_slice>00:17</time_slice>
+              <text_slice>wanna call it, is 20 meters.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>00:19</time_slice>
+              <text_slice>And then the longer side here,</text_slice>
+            </slice>
+            <slice>
+              <time_slice>00:20</time_slice>
+              <text_slice>I guess the less steep
+side, is 50 meters long.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>00:24</time_slice>
+              <text_slice>So you're able to measure that.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>00:25</time_slice>
+              <text_slice>But now what you wanna do is use your</text_slice>
+            </slice>
+            <slice>
+              <time_slice>00:26</time_slice>
+              <text_slice>knowledge of trigonometry,</text_slice>
+            </slice>
+            <slice>
+              <time_slice>00:29</time_slice>
+              <text_slice>given this information,</text_slice>
+            </slice>
+            <slice>
+              <time_slice>00:30</time_slice>
+              <text_slice>to figure out how steep is this side.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>00:32</time_slice>
+              <text_slice>What is the actual inclination</text_slice>
+            </slice>
+            <slice>
+              <time_slice>00:34</time_slice>
+              <text_slice>relative to level ground?</text_slice>
+            </slice>
+            <slice>
+              <time_slice>00:35</time_slice>
+              <text_slice>Or another way of thinking about it,</text_slice>
+            </slice>
+            <slice>
+              <time_slice>00:37</time_slice>
+              <text_slice>what is this angle theta right over there?</text_slice>
+            </slice>
+            <slice>
+              <time_slice>00:41</time_slice>
+              <text_slice>And I encourage you to pause the video</text_slice>
+            </slice>
+            <slice>
+              <time_slice>00:42</time_slice>
+              <text_slice>and think about it on your own.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>00:45</time_slice>
+              <text_slice>Well it might be ringing a bell.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>00:47</time_slice>
+              <text_slice>Well you know three sides of a triangle</text_slice>
+            </slice>
+            <slice>
+              <time_slice>00:50</time_slice>
+              <text_slice>and then we want to figure out an angle.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>00:52</time_slice>
+              <text_slice>And so the thing that
+jumps out in my head,</text_slice>
+            </slice>
+            <slice>
+              <time_slice>00:54</time_slice>
+              <text_slice>well maybe the law of
+cosines could be useful.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>00:57</time_slice>
+              <text_slice>Let me just write out the law of cosines,</text_slice>
+            </slice>
+            <slice>
+              <time_slice>01:00</time_slice>
+              <text_slice>before we try to apply it to this</text_slice>
+            </slice>
+            <slice>
+              <time_slice>01:02</time_slice>
+              <text_slice>triangle right over here.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>01:04</time_slice>
+              <text_slice>So the law of cosines tells us</text_slice>
+            </slice>
+            <slice>
+              <time_slice>01:06</time_slice>
+              <text_slice>that C-squared is equal to A-squared,</text_slice>
+            </slice>
+            <slice>
+              <time_slice>01:09</time_slice>
+              <text_slice>plus B-squared, minus two A B,</text_slice>
+            </slice>
+            <slice>
+              <time_slice>01:12</time_slice>
+              <text_slice>times the cosine of theta.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>01:16</time_slice>
+              <text_slice>And just to remind ourselves</text_slice>
+            </slice>
+            <slice>
+              <time_slice>01:17</time_slice>
+              <text_slice>what the A, B's, and C's are,</text_slice>
+            </slice>
+            <slice>
+              <time_slice>01:20</time_slice>
+              <text_slice>C is the side that's
+opposite the angle theta.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>01:23</time_slice>
+              <text_slice>So if I were to draw an arbitrary</text_slice>
+            </slice>
+            <slice>
+              <time_slice>01:25</time_slice>
+              <text_slice>triangle right over here.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>01:27</time_slice>
+              <text_slice>And if this is our angle theta,</text_slice>
+            </slice>
+            <slice>
+              <time_slice>01:29</time_slice>
+              <text_slice>then this determines that C is that side,</text_slice>
+            </slice>
+            <slice>
+              <time_slice>01:33</time_slice>
+              <text_slice>and then A and B could be either</text_slice>
+            </slice>
+            <slice>
+              <time_slice>01:34</time_slice>
+              <text_slice>of these two sides.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>01:35</time_slice>
+              <text_slice>So A could be that one
+and B could be that one.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>01:37</time_slice>
+              <text_slice>Or the other way around.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>01:39</time_slice>
+              <text_slice>As you can see, A and B</text_slice>
+            </slice>
+            <slice>
+              <time_slice>01:40</time_slice>
+              <text_slice>essentially have the same role in this</text_slice>
+            </slice>
+            <slice>
+              <time_slice>01:42</time_slice>
+              <text_slice>formula right over here.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>01:43</time_slice>
+              <text_slice>This could be B or this could be A.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>01:46</time_slice>
+              <text_slice>So what we wanna do is</text_slice>
+            </slice>
+            <slice>
+              <time_slice>01:48</time_slice>
+              <text_slice>somehow relate this angle...</text_slice>
+            </slice>
+            <slice>
+              <time_slice>01:49</time_slice>
+              <text_slice>We wanna figure out what theta</text_slice>
+            </slice>
+            <slice>
+              <time_slice>01:51</time_slice>
+              <text_slice>is in our little hill
+example right over here.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>01:54</time_slice>
+              <text_slice>So if this is going to be theta,</text_slice>
+            </slice>
+            <slice>
+              <time_slice>01:55</time_slice>
+              <text_slice>what is C going to be?</text_slice>
+            </slice>
+            <slice>
+              <time_slice>01:57</time_slice>
+              <text_slice>Well C is going to be this 20 meter side.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>02:01</time_slice>
+              <text_slice>And then we could set either</text_slice>
+            </slice>
+            <slice>
+              <time_slice>02:02</time_slice>
+              <text_slice>one of these to be A or B.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>02:03</time_slice>
+              <text_slice>We could say that this A is 50 meters</text_slice>
+            </slice>
+            <slice>
+              <time_slice>02:05</time_slice>
+              <text_slice>and B is 60 meters.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>02:08</time_slice>
+              <text_slice>And now we could just
+apply the law of cosines.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>02:11</time_slice>
+              <text_slice>So the law of cosines tells us</text_slice>
+            </slice>
+            <slice>
+              <time_slice>02:13</time_slice>
+              <text_slice>that 20-squared is equal to A-squared,</text_slice>
+            </slice>
+            <slice>
+              <time_slice>02:18</time_slice>
+              <text_slice>so that's 50 squared,</text_slice>
+            </slice>
+            <slice>
+              <time_slice>02:21</time_slice>
+              <text_slice>plus B-squared, plus 60 squared,</text_slice>
+            </slice>
+            <slice>
+              <time_slice>02:26</time_slice>
+              <text_slice>minus two times A B.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>02:31</time_slice>
+              <text_slice>So minus two times 50, times 60, times 60,</text_slice>
+            </slice>
+            <slice>
+              <time_slice>02:39</time_slice>
+              <text_slice>times the cosine of theta.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>02:44</time_slice>
+              <text_slice>This works out well for us</text_slice>
+            </slice>
+            <slice>
+              <time_slice>02:45</time_slice>
+              <text_slice>because they've given us everything.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>02:46</time_slice>
+              <text_slice>There's really only one unknown.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>02:48</time_slice>
+              <text_slice>There's theta here.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>02:49</time_slice>
+              <text_slice>So let's see if we can solve for theta.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>02:52</time_slice>
+              <text_slice>So 20 squared, that is 400.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>02:56</time_slice>
+              <text_slice>50 squared is 2,500.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>03:03</time_slice>
+              <text_slice>60 squared is 3,600.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>03:08</time_slice>
+              <text_slice>And then 50 times...</text_slice>
+            </slice>
+            <slice>
+              <time_slice>03:11</time_slice>
+              <text_slice>Let's see, two times 50 is 100,</text_slice>
+            </slice>
+            <slice>
+              <time_slice>03:13</time_slice>
+              <text_slice>times 60, this is all equal to 6,000.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>03:17</time_slice>
+              <text_slice>So let's see, if we simplify</text_slice>
+            </slice>
+            <slice>
+              <time_slice>03:19</time_slice>
+              <text_slice>this a little bit we're going to get</text_slice>
+            </slice>
+            <slice>
+              <time_slice>03:21</time_slice>
+              <text_slice>400 is equal to 2,500 plus 3,600.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>03:27</time_slice>
+              <text_slice>Let's see, that'd be 6,100.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>03:30</time_slice>
+              <text_slice>That's equal to 6,000...</text_slice>
+            </slice>
+            <slice>
+              <time_slice>03:31</time_slice>
+              <text_slice>Let me do this in a new color.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>03:32</time_slice>
+              <text_slice>So when I add these two, I get 6,100.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>03:38</time_slice>
+              <text_slice>Did I do that right?</text_slice>
+            </slice>
+            <slice>
+              <time_slice>03:39</time_slice>
+              <text_slice>Yeah.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>03:39</time_slice>
+              <text_slice>So it's 2,000 plus 3,000, plus 5,000.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>03:41</time_slice>
+              <text_slice>500 plus 600 is 1,100.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>03:43</time_slice>
+              <text_slice>So I get 6,100 minus 6,000,</text_slice>
+            </slice>
+            <slice>
+              <time_slice>03:50</time_slice>
+              <text_slice>times the cosine of theta.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>03:56</time_slice>
+              <text_slice>And let's see, now we can subtract</text_slice>
+            </slice>
+            <slice>
+              <time_slice>03:57</time_slice>
+              <text_slice>6,100 from both sides.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>04:00</time_slice>
+              <text_slice>So I'm just gonna subtract
+6,100 from both sides</text_slice>
+            </slice>
+            <slice>
+              <time_slice>04:04</time_slice>
+              <text_slice>so that I get closer
+to isolating the theta.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>04:07</time_slice>
+              <text_slice>So let's do that.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>04:08</time_slice>
+              <text_slice>So this is going to be negative 5,700.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>04:14</time_slice>
+              <text_slice>Is that right?</text_slice>
+            </slice>
+            <slice>
+              <time_slice>04:15</time_slice>
+              <text_slice>5,700 plus...</text_slice>
+            </slice>
+            <slice>
+              <time_slice>04:18</time_slice>
+              <text_slice>Yes, that is right.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>04:20</time_slice>
+              <text_slice>Right, because if this
+was the other way around,</text_slice>
+            </slice>
+            <slice>
+              <time_slice>04:21</time_slice>
+              <text_slice>if this was 6,100 minus 400</text_slice>
+            </slice>
+            <slice>
+              <time_slice>04:24</time_slice>
+              <text_slice>it would be positive 5,700.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>04:27</time_slice>
+              <text_slice>Alright.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>04:29</time_slice>
+              <text_slice>And then these two of course cancel out.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>04:31</time_slice>
+              <text_slice>And this is going to be equal to</text_slice>
+            </slice>
+            <slice>
+              <time_slice>04:33</time_slice>
+              <text_slice>negative 6,000 times the cosine of theta.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>04:39</time_slice>
+              <text_slice>Now we can divide both
+sides by negative 6,000.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>04:48</time_slice>
+              <text_slice>And we get...</text_slice>
+            </slice>
+            <slice>
+              <time_slice>04:50</time_slice>
+              <text_slice>I'm just gonna swap the sides.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>04:51</time_slice>
+              <text_slice>We get cosine of theta is equal to...</text_slice>
+            </slice>
+            <slice>
+              <time_slice>04:55</time_slice>
+              <text_slice>Let's see we could divide the numerator</text_slice>
+            </slice>
+            <slice>
+              <time_slice>04:57</time_slice>
+              <text_slice>and the denominator by
+essentially negative 100.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>05:01</time_slice>
+              <text_slice>So these are both going
+to become positive.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>05:03</time_slice>
+              <text_slice>So cosine of theta is equal to 57 over 60.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>05:11</time_slice>
+              <text_slice>And actually that can
+be simplified even more.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>05:13</time_slice>
+              <text_slice>Three goes into 57, is that 19 times?</text_slice>
+            </slice>
+            <slice>
+              <time_slice>05:18</time_slice>
+              <text_slice>Yep, so this is actually...</text_slice>
+            </slice>
+            <slice>
+              <time_slice>05:19</time_slice>
+              <text_slice>This could be simplified.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>05:20</time_slice>
+              <text_slice>This is equal to 19 over 20.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>05:25</time_slice>
+              <text_slice>We actually didn't have to
+do that simplification step</text_slice>
+            </slice>
+            <slice>
+              <time_slice>05:27</time_slice>
+              <text_slice>because we're about to
+use our calculators,</text_slice>
+            </slice>
+            <slice>
+              <time_slice>05:29</time_slice>
+              <text_slice>but that makes the math
+a little more tractable.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>05:32</time_slice>
+              <text_slice>Right, 3 goes into 57, yeah, 19 times.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>05:36</time_slice>
+              <text_slice>And so now we can take the</text_slice>
+            </slice>
+            <slice>
+              <time_slice>05:37</time_slice>
+              <text_slice>inverse cosine of both sides.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>05:39</time_slice>
+              <text_slice>So we could get theta is equal to the</text_slice>
+            </slice>
+            <slice>
+              <time_slice>05:42</time_slice>
+              <text_slice>inverse cosine, or the
+arc cosine, of 19 over 20.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>05:55</time_slice>
+              <text_slice>So let's get our calculator out</text_slice>
+            </slice>
+            <slice>
+              <time_slice>05:56</time_slice>
+              <text_slice>and see if we get
+something that makes sense.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>05:59</time_slice>
+              <text_slice>So we wanna do the inverse
+cosine of 19 over 20.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>06:11</time_slice>
+              <text_slice>And we deserve a drum roll.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>06:13</time_slice>
+              <text_slice>We get 18.19 degrees.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>06:18</time_slice>
+              <text_slice>And I already verified that my</text_slice>
+            </slice>
+            <slice>
+              <time_slice>06:19</time_slice>
+              <text_slice>calculator is in degree mode.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>06:22</time_slice>
+              <text_slice>So it gets 18.19 degrees.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>06:25</time_slice>
+              <text_slice>So if we wanted to round,</text_slice>
+            </slice>
+            <slice>
+              <time_slice>06:26</time_slice>
+              <text_slice>this is approximately
+equal to 18.2 degrees,</text_slice>
+            </slice>
+            <slice>
+              <time_slice>06:32</time_slice>
+              <text_slice>if we wanna round to the nearest tenth.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>06:35</time_slice>
+              <text_slice>So that essentially gives us a sense</text_slice>
+            </slice>
+            <slice>
+              <time_slice>06:37</time_slice>
+              <text_slice>of how steep this slope actually is.</text_slice>
+            </slice>
+          </transcript>
+        </video>
+        <video>
+          <video_url>https://www.khanacademy.org/math/trigonometry/trig-with-general-triangles/law-of-cosines/v/law-of-cosines</video_url>
+          <video_title>Proof of the law of cosines </video_title>
+          <transcript>
+            <slice>
+              <time_slice>00:01</time_slice>
+              <text_slice>In the last video, we had a
+word problem where we had-- we</text_slice>
+            </slice>
+            <slice>
+              <time_slice>00:04</time_slice>
+              <text_slice>essentially had to figure out
+the sides of a triangle, but</text_slice>
+            </slice>
+            <slice>
+              <time_slice>00:07</time_slice>
+              <text_slice>instead of, you know, just
+being able to do the</text_slice>
+            </slice>
+            <slice>
+              <time_slice>00:08</time_slice>
+              <text_slice>Pythagorean theorem and because
+it was a right triangle, it was</text_slice>
+            </slice>
+            <slice>
+              <time_slice>00:11</time_slice>
+              <text_slice>just kind of a normal triangle.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>00:13</time_slice>
+              <text_slice>It wasn't a right triangle.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>00:14</time_slice>
+              <text_slice>And we just kind of chugged
+through it using SOHCAHTOA and</text_slice>
+            </slice>
+            <slice>
+              <time_slice>00:17</time_slice>
+              <text_slice>just our very simple trig
+functions, and we got</text_slice>
+            </slice>
+            <slice>
+              <time_slice>00:20</time_slice>
+              <text_slice>the right answer.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>00:21</time_slice>
+              <text_slice>What I want to do now is to
+introduce you to something</text_slice>
+            </slice>
+            <slice>
+              <time_slice>00:23</time_slice>
+              <text_slice>called the law of cosines,
+which we essentially proved in</text_slice>
+            </slice>
+            <slice>
+              <time_slice>00:26</time_slice>
+              <text_slice>the last video, but I want to
+kind of prove it in a more--</text_slice>
+            </slice>
+            <slice>
+              <time_slice>00:29</time_slice>
+              <text_slice>you know, without the word
+problem getting in the way, and</text_slice>
+            </slice>
+            <slice>
+              <time_slice>00:31</time_slice>
+              <text_slice>I want to show you, once you
+know the law of cosines, so you</text_slice>
+            </slice>
+            <slice>
+              <time_slice>00:33</time_slice>
+              <text_slice>can then apply it to a problem,
+like we did in the past,</text_slice>
+            </slice>
+            <slice>
+              <time_slice>00:35</time_slice>
+              <text_slice>and you'll do it faster.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>00:37</time_slice>
+              <text_slice>I have a bit of a mixed opinion
+about it because I'm not a</text_slice>
+            </slice>
+            <slice>
+              <time_slice>00:41</time_slice>
+              <text_slice>big fan of memorizing things.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>00:43</time_slice>
+              <text_slice>You know, when you're 40 years
+old, you probably won't have</text_slice>
+            </slice>
+            <slice>
+              <time_slice>00:46</time_slice>
+              <text_slice>the law of cosines still
+memorized, but if you have that</text_slice>
+            </slice>
+            <slice>
+              <time_slice>00:49</time_slice>
+              <text_slice>ability to start with the trig
+functions and just move</text_slice>
+            </slice>
+            <slice>
+              <time_slice>00:51</time_slice>
+              <text_slice>forward, then you'll
+always be set.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>00:53</time_slice>
+              <text_slice>And I'd be impressed if
+you're still doing trig</text_slice>
+            </slice>
+            <slice>
+              <time_slice>00:55</time_slice>
+              <text_slice>at 40, but who knows?</text_slice>
+            </slice>
+            <slice>
+              <time_slice>00:56</time_slice>
+              <text_slice>So let's go and let's
+see what this law of</text_slice>
+            </slice>
+            <slice>
+              <time_slice>00:58</time_slice>
+              <text_slice>cosines is all about.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>01:00</time_slice>
+              <text_slice>So let's say that I
+know this angle theta.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>01:07</time_slice>
+              <text_slice>And let's called this
+side-- I don't know, a.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>01:12</time_slice>
+              <text_slice>No, let's call this side b.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>01:14</time_slice>
+              <text_slice>I'm being a little
+arbitrary here.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>01:17</time_slice>
+              <text_slice>Actually, let me stay in
+the colors of the sides.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>01:21</time_slice>
+              <text_slice>Let's call that b and let's
+call this c, and let's</text_slice>
+            </slice>
+            <slice>
+              <time_slice>01:28</time_slice>
+              <text_slice>call this side a.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>01:31</time_slice>
+              <text_slice>So if this is a right triangle,
+then we could have used</text_slice>
+            </slice>
+            <slice>
+              <time_slice>01:33</time_slice>
+              <text_slice>the Pythagorean theorem
+somehow, but now we can't.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>01:37</time_slice>
+              <text_slice>So what do we do?</text_slice>
+            </slice>
+            <slice>
+              <time_slice>01:38</time_slice>
+              <text_slice>So we know a-- well, let's
+assume that we know b, we know</text_slice>
+            </slice>
+            <slice>
+              <time_slice>01:42</time_slice>
+              <text_slice>c, we know theta, and then
+we want to solve for a.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>01:45</time_slice>
+              <text_slice>But, in general, as long as you
+know three of these, you can</text_slice>
+            </slice>
+            <slice>
+              <time_slice>01:49</time_slice>
+              <text_slice>solve for the fourth once you
+know the law of cosines.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>01:51</time_slice>
+              <text_slice>So how can we do it?</text_slice>
+            </slice>
+            <slice>
+              <time_slice>01:52</time_slice>
+              <text_slice>Well, we're going to do
+it the exact same way we</text_slice>
+            </slice>
+            <slice>
+              <time_slice>01:54</time_slice>
+              <text_slice>did that last problem.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>01:57</time_slice>
+              <text_slice>We can drop a line
+here to make-- oh, my</text_slice>
+            </slice>
+            <slice>
+              <time_slice>02:01</time_slice>
+              <text_slice>God, that's messy.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>02:02</time_slice>
+              <text_slice>I thought I was using
+the line tool.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>02:04</time_slice>
+              <text_slice>Edit, undo.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>02:08</time_slice>
+              <text_slice>So I can drop a line like that.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>02:11</time_slice>
+              <text_slice>So I have two right angles.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>02:14</time_slice>
+              <text_slice>And then once I have right
+triangles, then now I can start</text_slice>
+            </slice>
+            <slice>
+              <time_slice>02:16</time_slice>
+              <text_slice>to use trig functions and
+the Pythagorean theorem,</text_slice>
+            </slice>
+            <slice>
+              <time_slice>02:18</time_slice>
+              <text_slice>et cetera, et cetera.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>02:20</time_slice>
+              <text_slice>So, let's see, this is a right
+angle, this is a right angle.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>02:25</time_slice>
+              <text_slice>So what is this side here?</text_slice>
+            </slice>
+            <slice>
+              <time_slice>02:29</time_slice>
+              <text_slice>Let me pick another color.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>02:30</time_slice>
+              <text_slice>I'm probably going to get too
+involved with all the colors,</text_slice>
+            </slice>
+            <slice>
+              <time_slice>02:33</time_slice>
+              <text_slice>but it's for your improvement.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>02:36</time_slice>
+              <text_slice>So what is this side here?</text_slice>
+            </slice>
+            <slice>
+              <time_slice>02:37</time_slice>
+              <text_slice>What is the length of that
+side, that purple side?</text_slice>
+            </slice>
+            <slice>
+              <time_slice>02:40</time_slice>
+              <text_slice>Well, that purple side is just,
+you know, we use SOHCAHTOA.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>02:44</time_slice>
+              <text_slice>I was just going to write
+SOHCAHTOA up here.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>02:50</time_slice>
+              <text_slice>So this purple side is adjacent
+to theta, and then this blue or</text_slice>
+            </slice>
+            <slice>
+              <time_slice>02:56</time_slice>
+              <text_slice>mauve side b is the hypotenuse
+of this right triangle.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>03:03</time_slice>
+              <text_slice>So we know that-- I'm just
+going to stick to one color</text_slice>
+            </slice>
+            <slice>
+              <time_slice>03:06</time_slice>
+              <text_slice>because it'll take me forever
+if I keep switching colors.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>03:08</time_slice>
+              <text_slice>We know that cosine of theta--
+let's call this side, let's</text_slice>
+            </slice>
+            <slice>
+              <time_slice>03:13</time_slice>
+              <text_slice>call this kind of subside--
+I don't know, let's</text_slice>
+            </slice>
+            <slice>
+              <time_slice>03:16</time_slice>
+              <text_slice>call this d, side d.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>03:21</time_slice>
+              <text_slice>We know that cosine of theta
+is equal to d over b, right?</text_slice>
+            </slice>
+            <slice>
+              <time_slice>03:27</time_slice>
+              <text_slice>And we know b.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>03:30</time_slice>
+              <text_slice>Or that d is equal to what?</text_slice>
+            </slice>
+            <slice>
+              <time_slice>03:36</time_slice>
+              <text_slice>It equals b cosine theta.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>03:42</time_slice>
+              <text_slice>Now, let's call this
+side e right here.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>03:47</time_slice>
+              <text_slice>Well, what's e?</text_slice>
+            </slice>
+            <slice>
+              <time_slice>03:48</time_slice>
+              <text_slice>Well, e is this whole c
+side-- c side, oh, that's</text_slice>
+            </slice>
+            <slice>
+              <time_slice>03:52</time_slice>
+              <text_slice>interesting-- this whole c side
+minus this d side, right?</text_slice>
+            </slice>
+            <slice>
+              <time_slice>03:56</time_slice>
+              <text_slice>So e is equal to c minus d.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>04:02</time_slice>
+              <text_slice>We just solved for d, so
+side e is equal to c</text_slice>
+            </slice>
+            <slice>
+              <time_slice>04:09</time_slice>
+              <text_slice>minus b cosine of theta.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>04:14</time_slice>
+              <text_slice>So that's e.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>04:15</time_slice>
+              <text_slice>We got e out of the way.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>04:18</time_slice>
+              <text_slice>Well, what's this magenta
+side going to be?</text_slice>
+            </slice>
+            <slice>
+              <time_slice>04:21</time_slice>
+              <text_slice>Well, let's call this magenta--
+let's call it m from magenta.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>04:27</time_slice>
+              <text_slice>Well, m is opposite to theta.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>04:32</time_slice>
+              <text_slice>Now, we know it.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>04:33</time_slice>
+              <text_slice>We've solved for c as well, but
+we know b, and b is simple.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>04:36</time_slice>
+              <text_slice>So what relationship gives us
+m over b, or involves the</text_slice>
+            </slice>
+            <slice>
+              <time_slice>04:40</time_slice>
+              <text_slice>opposite and the hypotenuse?</text_slice>
+            </slice>
+            <slice>
+              <time_slice>04:41</time_slice>
+              <text_slice>Well, that's sine:
+opposite over hypotenuse.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>04:45</time_slice>
+              <text_slice>So we know that m over b is
+equal to sine of theta.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>04:49</time_slice>
+              <text_slice>We know that-- let
+me go over here.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>04:52</time_slice>
+              <text_slice>m over b, right, because this
+is the hypotenuse, is equal to</text_slice>
+            </slice>
+            <slice>
+              <time_slice>04:57</time_slice>
+              <text_slice>sine of theta, or that m
+is equal to b sine</text_slice>
+            </slice>
+            <slice>
+              <time_slice>05:08</time_slice>
+              <text_slice>of theta, right?</text_slice>
+            </slice>
+            <slice>
+              <time_slice>05:10</time_slice>
+              <text_slice>So we figured out m, we
+figured out e, and now</text_slice>
+            </slice>
+            <slice>
+              <time_slice>05:13</time_slice>
+              <text_slice>we want to figure out a.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>05:14</time_slice>
+              <text_slice>And this should
+jump out at you.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>05:16</time_slice>
+              <text_slice>We have two sides of
+a right triangle.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>05:17</time_slice>
+              <text_slice>We want to figure
+out the hypotenuse.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>05:19</time_slice>
+              <text_slice>We can use the
+Pythagorean theorem.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>05:22</time_slice>
+              <text_slice>The Pythagorean theorem tells
+us a squared is equal to m</text_slice>
+            </slice>
+            <slice>
+              <time_slice>05:28</time_slice>
+              <text_slice>squared plus e squared, right?</text_slice>
+            </slice>
+            <slice>
+              <time_slice>05:31</time_slice>
+              <text_slice>Just the square of
+the other two sides.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>05:33</time_slice>
+              <text_slice>Well, what's m squared
+plus e squared?</text_slice>
+            </slice>
+            <slice>
+              <time_slice>05:35</time_slice>
+              <text_slice>Let me switch to another
+color just to be arbitrary.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>05:38</time_slice>
+              <text_slice>a squared is equal
+to m squared.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>05:42</time_slice>
+              <text_slice>m is b sine of theta.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>05:44</time_slice>
+              <text_slice>So it's b sine of theta
+squared plus e squared.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>05:53</time_slice>
+              <text_slice>Well, e we figure out is this.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>05:55</time_slice>
+              <text_slice>So it's plus c minus b
+cosine theta squared.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>06:02</time_slice>
+              <text_slice>Now, let's just chug
+through some algebra.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>06:04</time_slice>
+              <text_slice>So that equals b sine-- b
+squared sine squared of theta.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>06:13</time_slice>
+              <text_slice>Sine squared of theta
+just means sine of</text_slice>
+            </slice>
+            <slice>
+              <time_slice>06:13</time_slice>
+              <text_slice>theta squared, right?</text_slice>
+            </slice>
+            <slice>
+              <time_slice>06:15</time_slice>
+              <text_slice>Plus, and we just foiled
+this out, although I</text_slice>
+            </slice>
+            <slice>
+              <time_slice>06:17</time_slice>
+              <text_slice>don't like using foil.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>06:18</time_slice>
+              <text_slice>I just multiply it out.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>06:20</time_slice>
+              <text_slice>c squared minus 2cb cosine
+theta plus b squared</text_slice>
+            </slice>
+            <slice>
+              <time_slice>06:33</time_slice>
+              <text_slice>cosine theta, right?</text_slice>
+            </slice>
+            <slice>
+              <time_slice>06:35</time_slice>
+              <text_slice>I just expanded this out
+by multiplying it out.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>06:38</time_slice>
+              <text_slice>And now let's see if we can
+do anything interesting.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>06:40</time_slice>
+              <text_slice>Well, if we take this term and
+this term, we get-- those two</text_slice>
+            </slice>
+            <slice>
+              <time_slice>06:46</time_slice>
+              <text_slice>terms are b squared sine
+squared of theta plus b squared</text_slice>
+            </slice>
+            <slice>
+              <time_slice>06:54</time_slice>
+              <text_slice>cosine-- this should be squared
+there, right, because</text_slice>
+            </slice>
+            <slice>
+              <time_slice>06:57</time_slice>
+              <text_slice>we squared it.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>06:58</time_slice>
+              <text_slice>b squared cosine squared of
+theta, and then we have plus c</text_slice>
+            </slice>
+            <slice>
+              <time_slice>07:03</time_slice>
+              <text_slice>squared minus 2bc cosine theta.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>07:10</time_slice>
+              <text_slice>Well, what does
+this simplify to?</text_slice>
+            </slice>
+            <slice>
+              <time_slice>07:12</time_slice>
+              <text_slice>Well, this is the same thing
+as b squared times the</text_slice>
+            </slice>
+            <slice>
+              <time_slice>07:17</time_slice>
+              <text_slice>sine squared theta plus
+cosine squared of theta.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>07:22</time_slice>
+              <text_slice>Something should be jumping out
+at you, and that's plus c</text_slice>
+            </slice>
+            <slice>
+              <time_slice>07:27</time_slice>
+              <text_slice>squared minus 2bc cosine theta.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>07:33</time_slice>
+              <text_slice>Well, this thing, sine
+squared plus cosine</text_slice>
+            </slice>
+            <slice>
+              <time_slice>07:36</time_slice>
+              <text_slice>squared of any angle is 1.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>07:37</time_slice>
+              <text_slice>That's one of the
+earlier identities.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>07:40</time_slice>
+              <text_slice>That's the Pythagorean
+identity right there.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>07:41</time_slice>
+              <text_slice>So this equals 1, so then
+we're left with-- going</text_slice>
+            </slice>
+            <slice>
+              <time_slice>07:47</time_slice>
+              <text_slice>back to my original color.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>07:48</time_slice>
+              <text_slice>We're almost there-- a squared
+is equal to-- this term just</text_slice>
+            </slice>
+            <slice>
+              <time_slice>07:56</time_slice>
+              <text_slice>becomes 1, so b squared.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>07:58</time_slice>
+              <text_slice>We're just left with a b
+squared plus c squared</text_slice>
+            </slice>
+            <slice>
+              <time_slice>08:07</time_slice>
+              <text_slice>minus 2bc cosine of theta.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>08:16</time_slice>
+              <text_slice>That's pretty neat, and this
+is called the law of cosines.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>08:20</time_slice>
+              <text_slice>And it's useful because, you
+know, if you know an angle</text_slice>
+            </slice>
+            <slice>
+              <time_slice>08:24</time_slice>
+              <text_slice>and two of the sides of
+any triangle, you can now</text_slice>
+            </slice>
+            <slice>
+              <time_slice>08:28</time_slice>
+              <text_slice>solve for the other side.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>08:31</time_slice>
+              <text_slice>Or really, if you want to, if
+you know three sides of a</text_slice>
+            </slice>
+            <slice>
+              <time_slice>08:35</time_slice>
+              <text_slice>triangle, you can now solve
+for any angle, so that</text_slice>
+            </slice>
+            <slice>
+              <time_slice>08:37</time_slice>
+              <text_slice>also is very useful.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>08:39</time_slice>
+              <text_slice>The only reason why I'm a
+little bit, you know, here,</text_slice>
+            </slice>
+            <slice>
+              <time_slice>08:42</time_slice>
+              <text_slice>there, is I don't-- if you are
+in trigonometry right now and</text_slice>
+            </slice>
+            <slice>
+              <time_slice>08:46</time_slice>
+              <text_slice>you might have a test, you
+should memorize this because</text_slice>
+            </slice>
+            <slice>
+              <time_slice>08:48</time_slice>
+              <text_slice>it'll make you faster, and
+you'll get the answer</text_slice>
+            </slice>
+            <slice>
+              <time_slice>08:50</time_slice>
+              <text_slice>right quicker.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>08:51</time_slice>
+              <text_slice>I'm not a big fan of just
+memorizing it without knowing</text_slice>
+            </slice>
+            <slice>
+              <time_slice>08:55</time_slice>
+              <text_slice>where it came from, because a
+year from now or two years from</text_slice>
+            </slice>
+            <slice>
+              <time_slice>08:58</time_slice>
+              <text_slice>now when you go to college and
+it's been four years since you</text_slice>
+            </slice>
+            <slice>
+              <time_slice>09:01</time_slice>
+              <text_slice>took trigonometry, you probably
+won't have this memorized.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>09:05</time_slice>
+              <text_slice>And if you face a trig problem
+all of a sudden, it's good to</text_slice>
+            </slice>
+            <slice>
+              <time_slice>09:06</time_slice>
+              <text_slice>kind of get there from scratch.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>09:09</time_slice>
+              <text_slice>With that said, this is the law
+of cosines, and if you use the</text_slice>
+            </slice>
+            <slice>
+              <time_slice>09:11</time_slice>
+              <text_slice>law of cosines, you could have
+done that problem we just did a</text_slice>
+            </slice>
+            <slice>
+              <time_slice>09:14</time_slice>
+              <text_slice>lot faster because we just--
+you know, you just have to set</text_slice>
+            </slice>
+            <slice>
+              <time_slice>09:17</time_slice>
+              <text_slice>up the triangle and then just
+substitute into this, and you</text_slice>
+            </slice>
+            <slice>
+              <time_slice>09:19</time_slice>
+              <text_slice>could have solved for a in
+that ship off-course problem.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>09:23</time_slice>
+              <text_slice>I'll see you in the next video.</text_slice>
+            </slice>
+          </transcript>
+        </video>
+      </videos>
+    </lecture>
+    <lecture>
+      <lecture_title>Solving general triangles</lecture_title>
+      <lecture_pdf_url>https://www.khanacademy.org/math/trigonometry/trig-with-general-triangles/solving-general-triangles/v/law-of-cosines-word-problem</lecture_pdf_url>
+      <lectureno>3</lectureno>
+      <slides>
+        <slide>
+          <slideno>1</slideno>
+          <text> ![](web+graphie://cdn.kastatic.org/ka-perseus-graphie/7d8edef19dea37e95df7f26a55694a9360c7e803)  ## Law of sines  $\dfrac{a}{\sin(\alpha)}=\dfrac{b}{\sin(\beta)}=\dfrac{c}{\sin(\gamma)}$  ## Law of cosines  $c^2=a^2+b^2-2ab\cos(\gamma)$  *Want to learn more about the law of sines? Check out [this video](/v/law-of-sines).*   *Want to learn more about the law of cosines? Check out [this video](/v/law-of-cosines-example).* ## Practice set 1: Solving triangles using the law of sines  This law is useful for finding a missing angle when given an angle and two sides, or for finding a missing side when given two angles and one side.  ###Example 1: Finding a missing side  Let's find $AC$ in the following triangle:   ![](web+graphie://cdn.kastatic.org/ka-perseus-graphie/1c93acfa8bd13bc11d5f09e868aa81b948a2f2d8)  According to the law of sines, $\dfrac{AB}{\sin(\angle C)}=\dfrac{AC}{\sin(\angle B)}$. Now we can plug the values and solve:  $\begin{align} \dfrac{AB}{\sin(\angle C)}&amp;=\dfrac{AC}{\sin(\angle B)} \\\\ \dfrac{5}{\sin(33^\circ)}&amp;=\dfrac{AC}{\sin(67^\circ)}\\\\ \dfrac{5\sin(67^\circ)}{\sin(33^\circ)}&amp;=AC \\\\ 8.45&amp;\approx AC \end{align}$  ###Example 2: Finding a missing angle  Let's find $m\angle A$ in the following triangle:   ![](web+graphie://cdn.kastatic.org/ka-perseus-graphie/9243f02568eb5119058d86cba71afcf234b7e995)  According to the law of sines, $\dfrac{BC}{\sin(\angle A)}=\dfrac{AB}{\sin(\angle C)}$. Now we can plug the values and solve:  $\begin{align} \dfrac{BC}{\sin(\angle A)}&amp;=\dfrac{AB}{\sin(\angle C)} \\\\ \dfrac{11}{\sin(\angle A)}&amp;=\dfrac{5}{\sin(25^\circ)} \\\\ 11\sin(25^\circ)&amp;=5\sin(\angle A) \\\\ \dfrac{11\sin(25^\circ)}{5}&amp;=\sin(\angle A) \end{align}$  Evaluating using the calculator and rounding:  $m\angle A=\sin^{-1}\left(\dfrac{11\sin(25^\circ)}{5}\right)\approx 68.4^\circ$  Remember that if the missing angle is obtuse, we need to take $180^\circ$ and subtract what we got from the calculator.  [[&#9731; graded-group-set 1]]  *Want to try more problems like this? Check out [this exercise](/e/law_of_sines).* ## Practice set 2: Solving triangles using the law of cosines  This law is mostly useful for finding an angle measure when given all side lengths. It's also useful for finding a missing side when given the other sides and one angle measure.  ###Example 1: Finding an angle  Let's find $m\angle B$ in the following triangle:   ![](web+graphie://cdn.kastatic.org/ka-perseus-graphie/b61306a6bb1736ffc025181bf73b236edb51edac)  According to the law of cosines:  $(AC)^2=(AB)^2+(BC)^2-2(AB)(BC)\cos(\angle B)$  Now we can plug the values and solve:  $\begin{align} (5)^2&amp;=(10)^2+(6)^2-2(10)(6)\cos(\angle B) \\\\ 25&amp;=100+36-120\cos(\angle B) \\\\ 120\cos(\angle B)&amp;=111 \\\\ \cos(\angle B)&amp;=\dfrac{111}{120} \end{align}$  Evaluating using the calculator and rounding:  $m\angle B=\cos^{-1}\left(\dfrac{111}{120}\right)\approx 22.33^\circ$  ###Example 2: Finding a missing side  Let's find $AB$ in the following triangle:   ![](web+graphie://cdn.kastatic.org/ka-perseus-graphie/c9156233e93399c6d3d9e68f8a8aa9a0b879832b)  According to the law of cosines:  $(AB)^2=(AC)^2+(BC)^2-2(AC)(BC)\cos(\angle C)$  Now we can plug the values and solve:  $\begin{align} (AB)^2&amp;=(5)^2+(16)^2-2(5)(16)\cos(61^\circ) \\\\ (AB)^2&amp;=25+256-160\cos(61^\circ) \\\\ AB&amp;=\sqrt{281-160\cos(61^\circ)} \\\\ AB&amp;\approx 14.3 \end{align}$  [[&#9731; graded-group-set 3]]  *Want to try more problems like this? Check out [this exercise](/e/law_of_cosines).* ## Practice set 3: General triangle word problems  [[&#9731; graded-group-set 4]]  *Want to try more problems like this? Check out [this exercise](/e/law-of-sines-and-cosines-word-problems).*</text>
+        </slide>
+      </slides>
+      <videos>
+        <video>
+          <video_url>https://www.khanacademy.org/math/trigonometry/trig-with-general-triangles/solving-general-triangles/v/law-of-cosines-word-problem</video_url>
+          <video_title>Trig word problem: stars </video_title>
+          <transcript>
+            <slice>
+              <time_slice>00:01</time_slice>
+              <text_slice>Voiceover:Artemis seeks knowledge of</text_slice>
+            </slice>
+            <slice>
+              <time_slice>00:02</time_slice>
+              <text_slice>the width of Orion's belt,</text_slice>
+            </slice>
+            <slice>
+              <time_slice>00:04</time_slice>
+              <text_slice>which is a pattern of stars
+in the Orion constellation.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>00:08</time_slice>
+              <text_slice>She has previously
+discovered the distances</text_slice>
+            </slice>
+            <slice>
+              <time_slice>00:10</time_slice>
+              <text_slice>from her house to
+Alnitak, 736 lights years,</text_slice>
+            </slice>
+            <slice>
+              <time_slice>00:16</time_slice>
+              <text_slice>and to Mintaka, 915 light years,</text_slice>
+            </slice>
+            <slice>
+              <time_slice>00:20</time_slice>
+              <text_slice>which are the endpoints of Orion's belt.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>00:23</time_slice>
+              <text_slice>She knows the angle between these</text_slice>
+            </slice>
+            <slice>
+              <time_slice>00:26</time_slice>
+              <text_slice>stars in the sky is three degrees.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>00:29</time_slice>
+              <text_slice>What is the width of Orion's belt?</text_slice>
+            </slice>
+            <slice>
+              <time_slice>00:31</time_slice>
+              <text_slice>That is, what is the distance</text_slice>
+            </slice>
+            <slice>
+              <time_slice>00:32</time_slice>
+              <text_slice>between Alnitak and Mintaka?</text_slice>
+            </slice>
+            <slice>
+              <time_slice>00:36</time_slice>
+              <text_slice>And they want us to the
+answer in light years.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>00:39</time_slice>
+              <text_slice>So let's draw a little diagram</text_slice>
+            </slice>
+            <slice>
+              <time_slice>00:40</time_slice>
+              <text_slice>to make sure we understand
+what's going on.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>00:42</time_slice>
+              <text_slice>Actually, even before we do that,</text_slice>
+            </slice>
+            <slice>
+              <time_slice>00:43</time_slice>
+              <text_slice>I encourage you to pause</text_slice>
+            </slice>
+            <slice>
+              <time_slice>00:44</time_slice>
+              <text_slice>this and try this on your own.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>00:46</time_slice>
+              <text_slice>Now let's make a diagram.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>00:48</time_slice>
+              <text_slice>Alright, so let's say
+that this is Artemis'</text_slice>
+            </slice>
+            <slice>
+              <time_slice>00:50</time_slice>
+              <text_slice>house right over here.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>00:52</time_slice>
+              <text_slice>This is Artemis' house.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>00:53</time_slice>
+              <text_slice>I'll say that's A for Artemis' house.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>00:57</time_slice>
+              <text_slice>And then...</text_slice>
+            </slice>
+            <slice>
+              <time_slice>00:58</time_slice>
+              <text_slice>Alright, let me say H...</text_slice>
+            </slice>
+            <slice>
+              <time_slice>01:00</time_slice>
+              <text_slice>Let me say this is home.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>01:01</time_slice>
+              <text_slice>This is home right over here.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>01:03</time_slice>
+              <text_slice>And we have these 2 stars.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>01:04</time_slice>
+              <text_slice>So she's looking out into the night sky</text_slice>
+            </slice>
+            <slice>
+              <time_slice>01:07</time_slice>
+              <text_slice>and she sees these stars,</text_slice>
+            </slice>
+            <slice>
+              <time_slice>01:09</time_slice>
+              <text_slice>Alnitak, which is 736 light years away,</text_slice>
+            </slice>
+            <slice>
+              <time_slice>01:14</time_slice>
+              <text_slice>and obviously I'm not going
+to draw this to scale.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>01:17</time_slice>
+              <text_slice>So this is Alnitak.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>01:21</time_slice>
+              <text_slice>And Mintaka.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>01:25</time_slice>
+              <text_slice>So let's say this is
+Mintaka right over here.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>01:28</time_slice>
+              <text_slice>Mintaka.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>01:31</time_slice>
+              <text_slice>And we know a few things.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>01:32</time_slice>
+              <text_slice>We know that this
+distance between her home</text_slice>
+            </slice>
+            <slice>
+              <time_slice>01:35</time_slice>
+              <text_slice>and Alnitak is 736 light years.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>01:40</time_slice>
+              <text_slice>So this distance right over here.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>01:42</time_slice>
+              <text_slice>So that right over there.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>01:44</time_slice>
+              <text_slice>Everything we'll do is in light years.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>01:45</time_slice>
+              <text_slice>That's 736.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>01:47</time_slice>
+              <text_slice>And the distance between</text_slice>
+            </slice>
+            <slice>
+              <time_slice>01:48</time_slice>
+              <text_slice>her house and Mintaka is 915 light years.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>01:54</time_slice>
+              <text_slice>So it would take light 915 years</text_slice>
+            </slice>
+            <slice>
+              <time_slice>01:57</time_slice>
+              <text_slice>to get from her house to Mintaka,</text_slice>
+            </slice>
+            <slice>
+              <time_slice>01:58</time_slice>
+              <text_slice>or from Mintaka to her house.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>02:01</time_slice>
+              <text_slice>So this is 915 light years.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>02:04</time_slice>
+              <text_slice>And what we wanna do is figure out</text_slice>
+            </slice>
+            <slice>
+              <time_slice>02:05</time_slice>
+              <text_slice>the width of Orion's belt,</text_slice>
+            </slice>
+            <slice>
+              <time_slice>02:07</time_slice>
+              <text_slice>which is the distance
+between Alnitak and Mintaka.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>02:11</time_slice>
+              <text_slice>So we need to figure out this distance</text_slice>
+            </slice>
+            <slice>
+              <time_slice>02:15</time_slice>
+              <text_slice>right over here.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>02:17</time_slice>
+              <text_slice>And the one thing that they did give us</text_slice>
+            </slice>
+            <slice>
+              <time_slice>02:21</time_slice>
+              <text_slice>is this angle.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>02:23</time_slice>
+              <text_slice>They did give us that
+angle right over there.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>02:26</time_slice>
+              <text_slice>They said that the angle between</text_slice>
+            </slice>
+            <slice>
+              <time_slice>02:28</time_slice>
+              <text_slice>these stars in the sky is three degrees.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>02:30</time_slice>
+              <text_slice>So this is three degrees right over there.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>02:33</time_slice>
+              <text_slice>So how can we figure out the distance</text_slice>
+            </slice>
+            <slice>
+              <time_slice>02:36</time_slice>
+              <text_slice>between Alnitak and Mintaka?</text_slice>
+            </slice>
+            <slice>
+              <time_slice>02:38</time_slice>
+              <text_slice>Let's just say that this is equal to X.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>02:40</time_slice>
+              <text_slice>This is equal to X.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>02:42</time_slice>
+              <text_slice>How do we do that?</text_slice>
+            </slice>
+            <slice>
+              <time_slice>02:43</time_slice>
+              <text_slice>Well if we have two sides</text_slice>
+            </slice>
+            <slice>
+              <time_slice>02:45</time_slice>
+              <text_slice>and an angle between them,</text_slice>
+            </slice>
+            <slice>
+              <time_slice>02:47</time_slice>
+              <text_slice>we could use the law of cosines</text_slice>
+            </slice>
+            <slice>
+              <time_slice>02:50</time_slice>
+              <text_slice>to figure out the third side.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>02:55</time_slice>
+              <text_slice>So the law of cosines,</text_slice>
+            </slice>
+            <slice>
+              <time_slice>02:56</time_slice>
+              <text_slice>so let's just apply it.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>02:58</time_slice>
+              <text_slice>So the law of cosines tells us</text_slice>
+            </slice>
+            <slice>
+              <time_slice>03:02</time_slice>
+              <text_slice>that X squared is going to be equal</text_slice>
+            </slice>
+            <slice>
+              <time_slice>03:05</time_slice>
+              <text_slice>to the sum of the squares
+of the other two sides.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>03:09</time_slice>
+              <text_slice>So it's going to be equal to 736 squared,</text_slice>
+            </slice>
+            <slice>
+              <time_slice>03:14</time_slice>
+              <text_slice>plus 915 squared, minus two times 736,</text_slice>
+            </slice>
+            <slice>
+              <time_slice>03:28</time_slice>
+              <text_slice>times 915, times the cosine of this angle.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>03:37</time_slice>
+              <text_slice>Times the cosine of three degrees.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>03:41</time_slice>
+              <text_slice>So once again,</text_slice>
+            </slice>
+            <slice>
+              <time_slice>03:43</time_slice>
+              <text_slice>we're trying to find the length of</text_slice>
+            </slice>
+            <slice>
+              <time_slice>03:44</time_slice>
+              <text_slice>the side opposite the three degrees.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>03:46</time_slice>
+              <text_slice>We know the other two sides,</text_slice>
+            </slice>
+            <slice>
+              <time_slice>03:48</time_slice>
+              <text_slice>so the law of cosines, it essentially...</text_slice>
+            </slice>
+            <slice>
+              <time_slice>03:51</time_slice>
+              <text_slice>Sorry, I just had to cough off camera</text_slice>
+            </slice>
+            <slice>
+              <time_slice>03:54</time_slice>
+              <text_slice>because I had some peanuts
+and my throat was dry.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>03:56</time_slice>
+              <text_slice>Where was I?</text_slice>
+            </slice>
+            <slice>
+              <time_slice>03:56</time_slice>
+              <text_slice>Oh, I was saying,</text_slice>
+            </slice>
+            <slice>
+              <time_slice>03:58</time_slice>
+              <text_slice>if we know the angle and
+we know the two sides</text_slice>
+            </slice>
+            <slice>
+              <time_slice>04:00</time_slice>
+              <text_slice>on either side of the angle,</text_slice>
+            </slice>
+            <slice>
+              <time_slice>04:01</time_slice>
+              <text_slice>we can figure out the
+length of the side opposite</text_slice>
+            </slice>
+            <slice>
+              <time_slice>04:03</time_slice>
+              <text_slice>by the law of cosines.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>04:04</time_slice>
+              <text_slice>Where it essentially starts off not too</text_slice>
+            </slice>
+            <slice>
+              <time_slice>04:06</time_slice>
+              <text_slice>different than the Pythagorean theorem,</text_slice>
+            </slice>
+            <slice>
+              <time_slice>04:08</time_slice>
+              <text_slice>but then we give an adjustment</text_slice>
+            </slice>
+            <slice>
+              <time_slice>04:09</time_slice>
+              <text_slice>because this is not an
+actual right triangle.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>04:12</time_slice>
+              <text_slice>And the adjustment...</text_slice>
+            </slice>
+            <slice>
+              <time_slice>04:13</time_slice>
+              <text_slice>So we have the 736
+squared, plus 915 squared,</text_slice>
+            </slice>
+            <slice>
+              <time_slice>04:16</time_slice>
+              <text_slice>minus two times the
+product of these sides,</text_slice>
+            </slice>
+            <slice>
+              <time_slice>04:19</time_slice>
+              <text_slice>times the cosine of this angle.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>04:21</time_slice>
+              <text_slice>Or another way we could
+say, think about it is,</text_slice>
+            </slice>
+            <slice>
+              <time_slice>04:23</time_slice>
+              <text_slice>X, let me write that,</text_slice>
+            </slice>
+            <slice>
+              <time_slice>04:28</time_slice>
+              <text_slice>X is to equal to the square root of all</text_slice>
+            </slice>
+            <slice>
+              <time_slice>04:31</time_slice>
+              <text_slice>of this stuff.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>04:33</time_slice>
+              <text_slice>So, I can just copy and paste that.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>04:37</time_slice>
+              <text_slice>Copy and paste.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>04:40</time_slice>
+              <text_slice>X is going to be equal to
+the square root of that.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>04:44</time_slice>
+              <text_slice>And so let's get our
+calculator to calculate it.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>04:48</time_slice>
+              <text_slice>And let me verify that I'm in degree mode.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>04:51</time_slice>
+              <text_slice>Yes, I am indeed in degree mode.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>04:53</time_slice>
+              <text_slice>And so let's exit that.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>04:55</time_slice>
+              <text_slice>And so I wanna calculate
+the square root of</text_slice>
+            </slice>
+            <slice>
+              <time_slice>04:58</time_slice>
+              <text_slice>736 squared, plus 915 squared,</text_slice>
+            </slice>
+            <slice>
+              <time_slice>05:06</time_slice>
+              <text_slice>minus two times 736, times 915,</text_slice>
+            </slice>
+            <slice>
+              <time_slice>05:15</time_slice>
+              <text_slice>times cosine of three degrees.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>05:19</time_slice>
+              <text_slice>And we deserve a drum roll now.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>05:22</time_slice>
+              <text_slice>X is 100, if we round...</text_slice>
+            </slice>
+            <slice>
+              <time_slice>05:24</time_slice>
+              <text_slice>Let's see, what did they want us to do?</text_slice>
+            </slice>
+            <slice>
+              <time_slice>05:25</time_slice>
+              <text_slice>Round your answer to
+the nearest light years.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>05:27</time_slice>
+              <text_slice>So to the nearest light year</text_slice>
+            </slice>
+            <slice>
+              <time_slice>05:28</time_slice>
+              <text_slice>is going to be 184 light years.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>05:31</time_slice>
+              <text_slice>So X is approximately
+equal to 184 light years.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>05:40</time_slice>
+              <text_slice>So it would take light 184 years</text_slice>
+            </slice>
+            <slice>
+              <time_slice>05:43</time_slice>
+              <text_slice>to get from Mintaka to Alnitak.</text_slice>
+            </slice>
+            <slice>
+              <time_slice>05:47</time_slice>
+              <text_slice>And so hopefully this actually shows you</text_slice>
+            </slice>
+            <slice>
+              <time_slice>05:49</time_slice>
+              <text_slice>if you are going to do any astronomy,</text_slice>
+            </slice>
+            <slice>
+              <time_slice>05:51</time_slice>
+              <text_slice>the law of cosines, law of sines,</text_slice>
+            </slice>
+            <slice>
+              <time_slice>05:54</time_slice>
+              <text_slice>in fact all of trigonometry,</text_slice>
+            </slice>
+            <slice>
+              <time_slice>05:55</time_slice>
+              <text_slice>becomes quite, quite handy.</text_slice>
+            </slice>
+          </transcript>
+        </video>
+      </videos>
+    </lecture>
+  </lectures>
+</doc>
