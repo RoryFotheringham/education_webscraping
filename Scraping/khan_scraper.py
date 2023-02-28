@@ -196,7 +196,7 @@ class Scraper:
             print('=============================')
             handler = XMLHandler()
             final_name = handler.clean_name('{}.xml'.format(unit_title[:20]))
-            if os.path.exists('./Scraping/KHAN_ACADEMY/{}'.format(final_name)):
+            if os.path.exists('./Scraping/KHAN_ACADEMY/{}'.format(final_name)) or os.path.exists('./KHAN_ACADEMY/{}'.format(final_name)):
                 continue
             
             course = Course(unit_title, link_join(self.base_url, unit_link), ['None'], 'None')
