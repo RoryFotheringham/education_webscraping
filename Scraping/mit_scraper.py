@@ -14,7 +14,7 @@ import os
 
 
 class Scraper:
-    SCROLL_PAUSE_TIME = 1.0
+    SCROLL_PAUSE_TIME = 0.4
     COURSES_ON_ONE_SCROLL = 10  # The MIT website displays 10 more pages every time you scroll
 
     def __init__(self, num_courses, skip):
@@ -57,12 +57,22 @@ class Scraper:
             # Wait to load page
             time.sleep(self.SCROLL_PAUSE_TIME)
 
+            attempts = 0
             # Calculate new scroll height and compare with last scroll height
-            new_height = self.driver.execute_script("return document.documentElement.scrollHeight")
-            if new_height == last_height:
-                break
-            last_height = new_height
+            while last_height == self.driver.execute_script("return document.documentElement.scrollHeight"):
+                attempts += 1
+                if attempts > 3:
+                    #print("ERROR: attempted to sleep for {} seconds, could not load more data on page".format(self.SCROLL_PAUSE_TIME * attempts))
+                    break
+                if scroll_num > 500:
+                    break
+                else:
+                    # wait a bit more
+                    time.sleep(self.SCROLL_PAUSE_TIME)
+
+            last_height = self.driver.execute_script("return document.documentElement.scrollHeight")
         
+        print("Scrolling took: {} seconds".format(self.SCROLL_PAUSE_TIME * scroll_num))
         self.parse_main_page()
 
     def parse_main_page(self):
@@ -329,7 +339,7 @@ class Scraper:
 
 if __name__ == '__main__':
     parser = argparse.ArgumentParser()
-    parser.add_argument('-c', '--count', default=20, type=int)
+    parser.add_argument('-c', '--count', default=200, type=int)
     parser.add_argument('-s', '--skip', default=1, type=int)
     args = parser.parse_args()
 
