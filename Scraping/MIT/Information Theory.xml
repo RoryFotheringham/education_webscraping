@@ -1,0 +1,6442 @@
+<doc>
+  <source>MIT</source>
+  <date>28/01/2023</date>
+  <course>
+    <course_url>https://ocw.mit.edu/courses/6-441-information-theory-spring-2010/</course_url>
+    <course_title>Information Theory</course_title>
+    <course_tags>
+      <list>Engineering </list>
+      <list>Computer Science </list>
+      <list>Electrical Engineering </list>
+    </course_tags>
+  </course>
+  <lectures>
+    <lecture>
+      <lecture_title>Feedback capacity</lecture_title>
+      <lecture_pdf_url>https://ocw.mit.edu/courses/6-441-information-theory-spring-2010/resources/mit6_441s10_lec14/</lecture_pdf_url>
+      <lectureno>14</lectureno>
+      <slides>
+        <slide>
+          <slideno>4</slideno>
+          <text>Feedback capacity
+Let us try to show that CF B  C
+Try Fanos inequalit y for code words
+However, the channel is no longer a DMC
+For DMC, we used:
+Assume that the message M is drawn with
+uniform PMF from {1, 2,..., 2nR}
+Then nR = H(M)
+Also
+H(M)= H(MY )+ I(M; Y ) |
+= H(M|Y )+ H(Y )  H(Y |M) 
+= H(M|Y )+ H(Y )  H(Y |X) 
+= H(MY )+ I(X; Y ) |
+ 1+ PenR + nC 
+no longer applicable!</text>
+        </slide>
+        <slide>
+          <slideno>5</slideno>
+          <text>Feedback capacity
+We still have 
+nR = H(M) 
+Need to relate I(M; Y ) to I(X; Y ), which 
+will give then a relation to C as before 
+n I(M; Yn) 
+Yi1,M)
+ H(Yn) 
+ H(Y [i]
+ =
+ |
+=1i
+n
+Yi1, M, X[i])
+ H(Yn) 
+ H(Y [i]
+ =
+ |
+=1i
+n
+n H(Yn)  H(Y [i]X[i])
+ =
+ |
+i=1
+n 
+i=1 H(Y [i]) 
+ H(Y [i]X[i])
+|
+ 
+=
+=1i
+n
+I(X[i]; Y [i])
+i=1 
+ nC</text>
+        </slide>
+        <slide>
+          <slideno>7</slideno>
+          <text>Discussion
+DMC does not benet from feedback 
+What other things might happen: 
+-There is an unkno wn part of the channel 
+-There is memo ry in the channel</text>
+        </slide>
+        <slide>
+          <slideno>6</slideno>
+          <text>Feedback capacity 
+Thus, we still have that 
+nR = H(M)  1+ PenR + nC 
+which as for the DMC implies 
+R  n 1+ PeR + C 
+so R  C 
+Hence C = CF B 
+FEEDBA CK DOES NOT HELP!</text>
+        </slide>
+        <slide>
+          <slideno>1</slideno>
+          <text>Feedback channel
+What types of channels do we think if as 
+being feedback channels? 
+Byzantine general problem 
+Error in forward and feedback channel 
+But does that mean that we cannot trans
+mit without error?</text>
+        </slide>
+        <slide>
+          <slideno>3</slideno>
+          <text>Feedback capacity
+The probabilit y of error is: 
+Pe = P ( = M) M 
+where g(Yn)= M 
+CF B is the supremum of all achievable rates 
+Clearly CF B  C 
+How about the reverse direction? 
+Let us reconsider the hapless intra-a rmy 
+messengers. 
+But do we suer in rate?</text>
+        </slide>
+        <slide>
+          <slideno>8</slideno>
+          <text>MIT OpenCourseWare
+http://ocw.mit.edu 
+6.441 Information Theory 
+Spring 2010 
+For information about citing these materials or our Terms of Use, visit: http://ocw.mit.edu/terms .</text>
+        </slide>
+        <slide>
+          <slideno>2</slideno>
+          <text>Perfect feedback
+as good as we are going to get in terms of 
+feedback 
+Feedback code: (2nR, n) is a sequence of 
+mappings xi(M,Y i1) where each xi is a 
+function of the message M and the previous 
+received signals 
+Question: why only the past received sig
+nals?</text>
+        </slide>
+        <slide>
+          <slideno>0</slideno>
+          <text>LECTURE 14
+Last time:
+Fanos Lemma revisited  
+Fanos inequalit y for codewords  
+Converse to the coding theorem  
+Lecture outline
+Feedback channel: setting up the prob  
+lem 
+Perfect feedback  
+Feedback capacit y  
+Reading: Sct. 8.12.</text>
+        </slide>
+      </slides>
+      <videos/>
+    </lecture>
+    <lecture>
+      <lecture_title>The channel coding theorem</lecture_title>
+      <lecture_pdf_url>https://ocw.mit.edu/courses/6-441-information-theory-spring-2010/resources/mit6_441s10_lec10/</lecture_pdf_url>
+      <lectureno>10</lectureno>
+      <slides>
+        <slide>
+          <slideno>10</slideno>
+          <text>Weak coding theorem
+Let us introduce a r.v. S uniformly dis
+tributed over all possible values of s 
+ES[EM [S ]]  M 
+Markov inequalit y states that 
+P (EM [S ]  2ES[EM [s ]])  1 
+M M 2 
+since we picked the messages to have uni
+form distribution, we have that the half of 
+the messages with lowest probabilit y of er
+ror have probabilit y of error  2</text>
+        </slide>
+        <slide>
+          <slideno>7</slideno>
+          <text>Upper bound to probability of several
+typical sequences
+P 
+Xn(m),Y n  Tn m 
+ |
+
+y xn(m) 
+en(C) 
+xn(m),yn
+TnPY n|Xn n |
+PXn(xn(m)) 
+ en(C)</text>
+        </slide>
+        <slide>
+          <slideno>5</slideno>
+          <text>Bound on the pair not being typical
+The probabilit y of the pair not being typical 
+approaches 0 as n  
+i
+xn(m);yn 
+=1 n
+i=1 ln PY |X (yi|xi)
+n n PY (yi)
+Through the WLLN, the above converges 
+in probabilit y to 
+X (yx)C = 
+xX ,yY PX(x)PY X(y|x) ln PY || 
+| PY (y) 
+Hence, for any  
+limn P 
+xn(m), yn 
+ Tn|m 
+ 0</text>
+        </slide>
+        <slide>
+          <slideno>6</slideno>
+          <text>Upper bound to probability of several
+typical sequences
+Consider m =m 
+Given how the codebook was chosen, the 
+variables Xn(m),Y n are indep endent con
+ditioned on m having been transmitted 
+Hence 
+P (Xn(m),Y n)  Tn|m 
+ PXn(xn(m))PY n(yn) = 
+xn(m),yn
+Tn 
+Because of the denition of Tn, for all pairs 
+in the set 
+nPY n(yn)  PY n|Xn 
+y|xn(m) 
+en(C)</text>
+        </slide>
+        <slide>
+          <slideno>13</slideno>
+          <text>MIT OpenCourseWare
+http://ocw.mit.edu 
+6.441 Information Theory 
+Spring 2010 
+For information about citing these materials or our Terms of Use, visit: http://ocw.mit.edu/terms .</text>
+        </slide>
+        <slide>
+          <slideno>3</slideno>
+          <text>Upper bound on probability
+Let m be the event that, given message 
+m enters the system, an error occurs. 
+The mean probabilit y of error over all en
+semble of codes is 
+E[m]= P (m = 1) 
+(indicato r function) 
+Error occurs when 
+
+xn(m), yn 
+ Tn 
+or 
+
+xn(m), yn 
+ Tn for m =m</text>
+        </slide>
+        <slide>
+          <slideno>9</slideno>
+          <text>Weak coding theorem
+How do we make codebooks that are good?
+Clearly, some of the codebooks are very 
+bad, for instance codebooks in which all 
+the codewords are identical 
+Even within a more reasonable codebook, 
+some codewords may do very badly 
+Expurgated codes. Let us introduce a r.v. 
+M uniformly distributed over all possible 
+values of m 
+The average probabilit y of error over all 
+codebooks is EM [Ecodebook s[M ]] 
+Let us select n large enough E[m]   for 
+every m, hence 
+EM [Ecodebook s[M ]]   
+so 
+Ecodebook s[EM [M ]]</text>
+        </slide>
+        <slide>
+          <slideno>12</slideno>
+          <text>Interp retation
+Random codebooks are good! 
+How can we implement coding strategies 
+that are random and how well do they per
+form? 
+How well do random codebooks perform for 
+nite length codewords?</text>
+        </slide>
+        <slide>
+          <slideno>11</slideno>
+          <text>Weak coding theorem
+We can therefo re create a codebook using 
+only the best half codewords 
+What is the penalty? 
+The rate is reduced because  M nR
+2  = e 
+ln(M) ln2 so R  n n 
+which is arbitra rily close to ln(
+nM) as n  
+(M grows with n as needed to maintain 
+rate)</text>
+        </slide>
+        <slide>
+          <slideno>1</slideno>
+          <text>Overview
+Consider a DMC with transition probabili
+ties PY X(yx)||
+For any block length n, let 
+nPYnXn(yxn)= 
+in 
+=1 PY X(yixi)| |||
+PXn(xn)= n
+i=1 PX(xi) 
+PY n(yn)= n
+i=1 PY (yi) 
+Let R be an arbitra ry rate R&lt;C 
+For each n consider choosing a code of 
+M = enR codewords, where each code-
+word is chosen indep endently with proba
+bility assignment PXn(xn) 
+We assume the messages are equip roba
+ble, so the entrop y rate (per symb ol) of 
+the messages is R</text>
+        </slide>
+        <slide>
+          <slideno>0</slideno>
+          <text>LECTURE 10
+Last time:
+Maximizing capacit y: Arimoto-Blahut
+  
+Examples 
+Lecture outline
+The channel coding theorem overview
+  
+Upper bound on the error probabilit y
+  
+Bound on not being typical  
+Bound on too many elements being typ  
+ical 
+Coding theorem (weak)  
+Reading: Reading: Scts. 8.4, 8.7.</text>
+        </slide>
+        <slide>
+          <slideno>4</slideno>
+          <text>Upper bound on probability
+Hence, through the union bound 
+E[m]= P 
+xn(m), y n 
+ Tn
+ 
+&#13;
+ 
+xn(m), y n 
+ Tn m | 
+m=m 
+ P 
+xn(m), y n 
+ Tn 
++  
+P 
+xn(m), y n 
+ Tn |m 
+m=m</text>
+        </slide>
+        <slide>
+          <slideno>2</slideno>
+          <text>Overview
+Let  = CR and let the set Tn be the set 2  
+of pairs (xn, yn) such that 
+|n 1i 
+xn; yn 
+ C|  
+where i is the sample natural mutual infor
+mation 
+nn)i 
+xn; yn 
+= ln PY n|Xn(y|x 
+PY n(yn) 
+For every n and each code in the ensemble, 
+the decoder, given yn, selects the message 
+m for which 
+xn(m), yn 
+ Tn . 
+We assume an error if there are no such 
+codewords or more than one codeword.</text>
+        </slide>
+        <slide>
+          <slideno>8</slideno>
+          <text>Weak coding theorem
+E[m] is upper bounded by two terms that 
+go to 0 as n  
+thus the average probabilit y of error given
+that m was transmitted goes to 0 as n 
+This is the average probabilit y of error aver
+aged over the ensemble of codes, therefo re 
+&gt; 0 and for any rate R&lt;C there must 
+exist a code length n with average proba
+bility or error less than  
+Thus, we can create a sequence of codes 
+with maximal probabilit y of error converg
+ing to 0 as n</text>
+        </slide>
+      </slides>
+      <videos/>
+    </lecture>
+    <lecture>
+      <lecture_title>Shannon-Fano-Elias codes, Slepian-Wolf</lecture_title>
+      <lecture_pdf_url>https://ocw.mit.edu/courses/6-441-information-theory-spring-2010/resources/mit6_441s10_lec07a/</lecture_pdf_url>
+      <lectureno>7</lectureno>
+      <slides>
+        <slide>
+          <slideno>2</slideno>
+          <text>Elias codes
+Enco der has a sliding structure 
+The length of the codeword is variable 
+Take a binary string 011010111010 
+we can consider it as a real 0.011010111010 
+Supp ose the probabilit y assignment is 0.7 
+for 0 and 0.3 for 1 
+We can create a description of the source-
+word as follows:
+divide the interval [0,1)
+as new bits are read, subdivide the the spec
+ied interval further in proportion to the 
+probabilities</text>
+        </slide>
+        <slide>
+          <slideno>5</slideno>
+          <text>Length of the codeword
+The average length is then: 
+
+xnX n PXn (xn)  
+log  
+1  
+ +1 
+PXn(xn) 
+ H(Xn)+2 
+This is very close to the limit given by the 
+AEP 
+Hoewever, for short sequences, this may 
+not be particula rly good</text>
+        </slide>
+        <slide>
+          <slideno>4</slideno>
+          <text>Length of the codeword
+We make the codeword long enough to de
+termine in which part of the sourcew ord 
+interval we are 
+That is to say that the codeword interval 
+must be inside the sourcew ord interval 
+2n  PXn (xn) 
+n  log 
+PXn (xn) 
+ 
+1  
+n  log PXn (xn) 
+which is satised by taking 
+ 
+1  
+n = log  +1 PXn(xn)</text>
+        </slide>
+        <slide>
+          <slideno>3</slideno>
+          <text>Mapping the sourceword to the
+codeword
+For the sourcew ord, after n  1 source bits, 
+an interval [an1, bn1) has been specied 
+Bit n species a new interval [an, bn) such 
+that 
+If bit n is 0, then an = an1 and bn = 
+an1+ p(bn1  an1) 
+If bit n is 1, then an = an1+p(bn1 an1) 
+and bn = bn1 
+The codeword divides interval in halves 
+We do not necessa rily need to receive the 
+whole codeword to start decoding</text>
+        </slide>
+        <slide>
+          <slideno>1</slideno>
+          <text>Human codes
+Human codes are optimal 
+The algorithm we have builds from the least 
+likely elements onwards 
+Do we need to view the whole codeword to 
+decode? 
+Would such a code be more or less robust 
+to slight errors in distribution? 
+In general, how important is it to know the 
+actual distribution? 
+Still want to make frequent elements short 
+and infrequent one longer.</text>
+        </slide>
+        <slide>
+          <slideno>6</slideno>
+          <text>MIT OpenCourseWare
+http://ocw.mit.edu 
+6.441 Information Theory 
+Spring 2010 
+For information about citing these materials or our Terms of Use, visit: http://ocw.mit.edu/terms .</text>
+        </slide>
+        <slide>
+          <slideno>0</slideno>
+          <text>LECTURE 7
+Last time:
+Human codes  
+Lecture outline
+Elias codes  
+Slepian-W olf  
+Comp ression: pulling it together  
+Reading: Scts. 5.8-5.9, 14.4 through the 
+end of 14.4.4.1.</text>
+        </slide>
+      </slides>
+      <videos/>
+    </lecture>
+    <lecture>
+      <lecture_title>Strong coding theorem, error exponents</lecture_title>
+      <lecture_pdf_url>https://ocw.mit.edu/courses/6-441-information-theory-spring-2010/resources/mit6_441s10_lec12/</lecture_pdf_url>
+      <lectureno>12</lectureno>
+      <slides>
+        <slide>
+          <slideno>2</slideno>
+          <text>Error exponent
+Dene 
+Er(R) = max 01 max PX (E0(, PX(x)) 
+R) 
+then 
+Ecodebook s[Pe,m]  2NEr(R)
+Ecodebook s,messag es[Pe]  2NEr(R)
+For a BSC:</text>
+        </slide>
+        <slide>
+          <slideno>5</slideno>
+          <text>Error exponent positivit y
+To show concavit y, we need to show that
+1,2   [0, 1]
+E0(3, PX(x))
+ E0(1, PX(x)) + (1  )E0(2, PX(x))
+for 3= 1+ 2
+We shall use the fact that
+(1+ 1) (1)(1+ 2)
++ =1 1+ 3 1+ 3 
+and Holders inequalit y: 
+1 x 1 1x 
+j cjdj  
+j cjx 
+j cj 1x</text>
+        </slide>
+        <slide>
+          <slideno>9</slideno>
+          <text>Error exponent positivity 
+Proof continued 
+kY  
+ 
+
+
+
+
+1+ 3
+1+3 
+PX(j)PY X(kj)1 
+ log
+ |
+|
+jX 
+1+1 
+PX(j)PY X(kj)1 
+
+
+
+(1+ 1)
+ log
+ 
+
+ |
+|
+kY
+
+ 1+2 
+PX(j)PY X(kj)1 jX
+ 
+
+
+
+(1+ 2)
+ (1  )
+ |
+ 
+
+ |
+jX
+ E0(3, PX)  E0(1, PX) + (1  )E0(2, PX) 
+so E0 is concave!</text>
+        </slide>
+        <slide>
+          <slideno>3</slideno>
+          <text>Expunge codewords 
+The new Pe,m is bounded as follows: 
+Pe,m 
+2.2NEr(max 01 max PX (E0(,P X (x))log(2M )))= N 
+=2.2NEr(max 01 max PX (E0(,P X (x))N log(M )))N 
+4.2NEr(max 01 max PX (E0(,P X (x))log(M ))) 
+4.2NEr(R) N 
+= 
+Now we must consider positivit y. Let PX(x) 
+be such that I(X; Y ) &gt; 0, well show that 
+the behavio r of Er is:</text>
+        </slide>
+        <slide>
+          <slideno>0</slideno>
+          <text>LECTURE 12   
+Last time: 
+Strong coding theorem  
+Revisiting channel and codes  
+Bound on probabilit y of error  
+Error exponent  
+Lecture outline 
+Error exponent behavio r  
+Expunging bad codewords
+  
+Error exponent positivit y
+  
+Strong coding theorem</text>
+        </slide>
+        <slide>
+          <slideno>4</slideno>
+          <text>Error exponent positivity
+We have that: 
+1. E0(, PX(x)) &gt; 0, &gt; 0 
+2. I(X; Y )  E0(,P X (x)) &gt; 0, &gt; 0 
+3. 2E0(,PX (x))  0, &gt; 0 2 
+We can check that 
+I(X; Y )= E0(,P X (x)) 
+ |=0 
+then showing 3 will establish the LHS of 2 
+Showing the RHS of 2 will establish 1 
+Let us show 3</text>
+        </slide>
+        <slide>
+          <slideno>1</slideno>
+          <text>Last time 
+Ecodebook s[Pe,m]  2N(E0(,P X (x))R) 
+for 
+E0(, PX(x)) 
+
+
+1+
+1  
+PX(x)PY X (yix)1+  log
+ =
+ |
+ 
+
+ |
+y xN
+We need to: 
+get rid of the expectation over codes  
+by throwing out the worst half of the 
+codes 
+Show that the bound behaves well (ex  
+ponent is N for some &gt; 0) 
+Relate the bound to capacit y</text>
+        </slide>
+        <slide>
+          <slideno>12</slideno>
+          <text>Error exponent positivit y 
+Proof continued
+Taking the ratio of the derivatives, Er(R,PX )=
+R 
+ 
+Er(R, PX) is positive for R&lt;C 
+Moreover 
+2Er(R,PX )= [2E0(,P X )]1 &gt; 0 R2 2 
+thus Er(R, PX) is convex and decreasing in 
+R over RCR &lt;R&lt;C</text>
+        </slide>
+        <slide>
+          <slideno>13</slideno>
+          <text>Error exponent positivity
+Proof continued 
+Taking Er(R) = max PX Er(R, PX) 
+is the maximum of functions that are con
+vex and decreasing in R and so is also con
+vex 
+For the PX that yields capacit y, Er(R, PX) 
+is positive for R&lt;C 
+So we have positivit y of error exponent for 
+0 &lt;R&lt;C and capacit y has been intro
+duced 
+This completes the coding theorem 
+Note: there are degenerate cases in which 
+Er(R,PX )= constant and 2Er(R,PX )=0  2 
+when would that happen?</text>
+        </slide>
+        <slide>
+          <slideno>7</slideno>
+          <text>Error exponent positivity 
+Proof continued 
+1 
+PX(j)PY X(kj)1+3 ||
+jX
+(1+1)
+1+3
+
+ 
+
+
+
+
+ 1+1 
+PX(j)PY |X(k|j)1 
+jX 
+(1)(1+ 2)
+1+3
+
+1+2 
+PX(j)PY |X(k|j)1 
+jX 
+
+
+ 
+1+ 3
+||1+3 
+PX(j)PY X(kj)1 
+jX
+
+
+
+
+
+
+(1+1)
+1+1 
+PX(j)PY |X(k|j)1 
+jX 
+1+2 
+PX(j)PY |X(k|j)1 
+jX 
+(1)(1+ 2)</text>
+        </slide>
+        <slide>
+          <slideno>8</slideno>
+          <text>Error exponent positivity 
+Proof continued 
+
+
+
+1+ 3
+||1+3 
+PX(j)PY X(kj)1 
+
+kY
+ jX
+
+ 
+(1+ 1)
+1+1 
+PX(j)PY X(k|j)1 
+
+
+|
+kY 
+ 
+PX(j)PY |X(k|j)1+1 
+2 jX
+
+(1)(1+ 2)
+jX
+
+
+
+kY  
+
+ 
+
+
+(1+1)
+1+1 
+PX(j)PY X(k|j)1 
+
+|
+jX
+ 
+
+ 
+
+(1)
+ 
+
+
+(1+ 2)
+||1+2 
+PX(j)PY X(kj)1 
+
+jX</text>
+        </slide>
+        <slide>
+          <slideno>14</slideno>
+          <text>MIT OpenCourseWare
+http://ocw.mit.edu 
+6.441 Information Theory 
+Spring 2010 
+For information about citing these materials or our Terms of Use, visit: http://ocw.mit.edu/terms .</text>
+        </slide>
+        <slide>
+          <slideno>10</slideno>
+          <text>Error exponent positivity 
+Proof continued 
+Hence, extremum, if it exists, of E0(, PX)
+E0(,P X )R over  occurs at  = R, which 
+implies that 
+E0(,P X ) E0(,P X )= I(X; Y ) |=1  R  |=0  
+is necessa ry for Er(R, PX) = max 01[E0(, PX)
+R] to have a maximum 
+We have now placed mutual information 
+somewhere in the expression 
+Critical rate is RCR is dened as E0(,P X ) 
+ |=1</text>
+        </slide>
+        <slide>
+          <slideno>6</slideno>
+          <text>Let us pick 
+(1+3)  
+cj = PX(j) 1+3 PY X(kj)1+3 
+(1)(1+ rho|
+2) |
+1 
+dj = PX(j) 1+3 PY X(kj)1+3 ||
+(1 + 1) x = 1+ 3</text>
+        </slide>
+        <slide>
+          <slideno>11</slideno>
+          <text>Error exponent positivity
+Proof continued 
+From E0(,P X )= R 
+we obtain 
+R = 2E0(,P X ) 
+ 2 
+Hence R &lt; 0, R decreases monotonically  
+from C to RCR 
+We can write 
+Er(R, PX)= E0(, PX)  E0(,P X ) 
+ 
+for Er(R, PX)= E0(, PX)  R ( allows 
+parametric relation)
+then
+Er(R,PX ) 2E0(,P X )
+=  &gt; 0 2</text>
+        </slide>
+      </slides>
+      <videos/>
+    </lecture>
+    <lecture>
+      <lecture_title>Finite state Markov channels</lecture_title>
+      <lecture_pdf_url>https://ocw.mit.edu/courses/6-441-information-theory-spring-2010/resources/mit6_441s10_lec22/</lecture_pdf_url>
+      <lectureno>22</lectureno>
+      <slides>
+        <slide>
+          <slideno>14</slideno>
+          <text>Markov channels
+How about multiple access? 
+When the CSI is perfect at the senders and 
+the receiver, simply consider that the chan
+nel state is the cartesian product of the 
+channel states for all the users (note: the 
+users must know each others channel) 
+The capacit y region for multiple-access chan
+nels and the coding theorem arguments show 
+that the arguments for the single user case 
+extend well 
+Take expectation over all states of all users
+R1+ R2  
+E max PX1|S1,S2,PX2|S1,S2((X1,X2); Y|S1,S2) 
+R2  max PX2|S2(X2; Y|X1,S1,S2) 
+R1  max PX1|S1(X1; Y|X2,S1,S2)</text>
+        </slide>
+        <slide>
+          <slideno>4</slideno>
+          <text>Indecomposable channels
+Applying twice the chain rule on mutual in
+formation, we obtain (with the input distri
+bution that yields Cn) 
+Cn 
+=1 I X; Yn|S0= s /prime 
+0 n 
++I Xn 
++1; Y|S0= s0/prime ,X 
++I Xn 
++1; Yn
++1|S0= s0/prime ,X,Y 
+let us bound each element in the sum: 
+the rst term is upper bounded by log(|X |)
+the second term is 0 
+the third term, using the chain rule on mu
+tual information and the cardinalit y bound 
+on the information about Sn, can be upper 
+bounded by: 
+log(|S|)+I Xn 
++1; Yn
++1|S0= s0/prime ,X,Y,Sn</text>
+        </slide>
+        <slide>
+          <slideno>6</slideno>
+          <text>Markov channels
+A special case of indecomp osable channels 
+arise when we have a Markov description 
+for the channel states, the states are inde
+pendent of the inputs conditioned on other 
+states 
+Assume the states form a single class of 
+recurrent states, aperiodic 
+Then we have indecomp osable channel (see 
+lecture 4) 
+How might we establish a coding theorem 
+for such channels with nite input alphab et 
+and no other constraint on input?</text>
+        </slide>
+        <slide>
+          <slideno>12</slideno>
+          <text>Markov channels
+How can we take ISI into account? 
+Block fading model: within each block we 
+have a particula r ISI prole 
+Transmit optimal scheme for that ISI pro
+le 
+Problem: what happens at junction of chan
+nels? 
+For undersp read channels, coherence time 
+is much longer than delay spread 
+Time in a channel state is of the order of 
+a coherence time 
+Time during which echo from previous 
+state persists is small with respect to co
+herence time</text>
+        </slide>
+        <slide>
+          <slideno>0</slideno>
+          <text>LECTURE 22 
+Last time: 
+ Broadcast channel 
+ Gaussian degraded broadcast channel
+Lecture outline 
+ Finite-state channels 
+ Lower capacit y and upper capacities
+ Indecomp osable channels 
+ Markov channels</text>
+        </slide>
+        <slide>
+          <slideno>3</slideno>
+          <text>/epsilon1 Indecomposable channels
+Suppose that we have nite input alphab et 
+X and a nite set of states S 
+Indecomp osable means that the initial state 
+does not matter /epsilon1&gt; 0, n0s.t.n&gt;n 0 
+|PSn|Xn,S0(sn|xn,s0)  PSn|Xn,S0(sn|xn,s0/prime )| 
+For such channels: C = C 
+Proof: pick some integer number  
+let s/prime 
+0 be an initial state such that the max
+imum average mutual information over n 
+samples starting from s0 /prime yields Cn 
+let s/prime/prime 
+0 be an initial state such that the max
+imum average mutual information over n 
+samples starting from s0 /prime/prime yields Cn</text>
+        </slide>
+        <slide>
+          <slideno>2</slideno>
+          <text>Upper and lower capacities
+PYn|Xn,S0 yn,sn|xn,s0 
+= sn PYn,Sn|Xn,S0 yn,sn|xn,s0 
+Upper capacit y: 
+C = limn Cn 
+where 
+Cn = 1 maxPXn(xn) max s0 I(Xn; Yn|s0)n 
+Lower capacit y:
+C = limn Cn
+where
+Cn = 1 maxPXn(xn) mins0 I(Xn; Yn|s0)
+n 
+Neither is the capacit y</text>
+        </slide>
+        <slide>
+          <slideno>13</slideno>
+          <text>Markov channels
+How can we take ISI into account? 
+Perform waterlling in the following way: 
+	decomp ose along a basis for all chan
+nels in the set of possible channels 
+	replicate channels to have channels re
+peated in proportion to their frequency 
+of occurrence 
+	perform water-lling 
+What if the block approach does not work? 
+Use partial codebook approach.</text>
+        </slide>
+        <slide>
+          <slideno>11</slideno>
+          <text>Markov channels
+What happens when we do not have perfect 
+CSI at sender and receiver? 
+Consider the case of AWGN channels with 
+dierent states where the channel state rep
+resents an amplication factor (this view is 
+clearly equivalent to changing the psd of 
+the AWGN) 
+We have that: 
+ 
+Y = SX + N 
+when channel S is in force 
+The receiver has perfect CSI 
+The sender has some function of S 
+We then have that: 
+C = max E 21ln 1+ S
+(
+2 U) 
+N 
+ is a mapping from U to R+ such that 
+E [(U)] P</text>
+        </slide>
+        <slide>
+          <slideno>15</slideno>
+          <text>MIT OpenCourseWare
+http://ocw.mit.edu 
+6.441 Information Theory 
+Spring 2010 
+For information about citing these materials or our Terms of Use, visit: http://ocw.mit.edu/terms .</text>
+        </slide>
+        <slide>
+          <slideno>8</slideno>
+          <text>Markov channels
+If receiver and sender both have Markovian 
+channel side information (CSI) and sender 
+is a function of receiver CSI, then this con
+cept extends 
+Example: delayed knowledge at the sender 
+of state of channel (because of delays in 
+feedback, for example) 
+Let Ui be the sender CSI (SCSI), which 
+is a deterministic function g of the perfect 
+receiver CSI (RCSI) Vi (thus, the receiver 
+knows the channel exactly Vi = Si) such 
+that Ui remains Markovian 
+Then the capacit y is given by (using sta
+tionarity to eliminate time subscripts): 
+C = uU PU (u) max PX|UI(X; Y |S, U = =u 
+u)</text>
+        </slide>
+        <slide>
+          <slideno>7</slideno>
+          <text>Markov channels
+Suppose the current state is known at the 
+sender and the receiver 
+For each state, establish capacit y as though 
+that were the only state, let Cs be the ca
+pacity if we were to remain in state s always 
+Average over all the states, the capacit y is:
+sS sCs 
+The coding theorem relies on interleaving 
+codewords over the dierent states 
+Pick one codebook per state, send portions 
+of the codeword in a codebook only when 
+that state occurs 
+Because of recurrence, each state is always 
+guaranteed to reappear eventually 
+The average transmission rate is the aver
+age of the transmissions over all the code-
+books</text>
+        </slide>
+        <slide>
+          <slideno>1</slideno>
+          <text>Finite-state channels
+The state of the channel at time i is Si 
+The state determines the transition proba
+bility in the following way: 
+PY n,Sn|Xn,S0 yn,sn|xn,s0 
+we assume that the channel is stationa ry 
+There is memory that is dierent than in 
+the case of ISI channel -memory in state 
+rather than in input 
+The transition probabilities are determined 
+recursively from the one-step transition prob
+abilities: 
+PY n,Sn|Xn,S0 yn,sn|xn,s0 
+= sn1 PYn,Sn|Xn,Sn1 yn,sn|xn,sn1 
+PY n1,Sn1|Xn1,S0 yn1,sn1|xn1,s0</text>
+        </slide>
+        <slide>
+          <slideno>5</slideno>
+          <text>Indecomposable channels
+Similarly, we obtain the bound: 
+1 Cn  n [ log(|S|) 
+  
++I Xn 
++1; Yn 
++1|S0 = s /prime/prime 
+0,X,Y,Sn 
+then 
+Cn  Cn 
+1 =[log(|X |) + 2 log(|S|)
+n
++I Xn
++1; Yn
++1|S0= s0/prime ,X,Y,Sn 
+I Xn
++1; Yn
++1|S0= s0/prime/prime ,X,Y,Sn 
+1
+=[log(|X |) + 2 log(|S|)
+n
++I Xn
++1; Yn
++1|S0= s0/prime ,X,Sn 
+I Xn
++1; Yn
++1|S0= s0/prime/prime ,X,Sn 
+1  [log(|X |) + 2 log(|S|) n
++/epsilon1(n ) log(|X |)]
+where /epsilon1 can be made arbitrarily small by ap
+propriately large choice of  (which entails 
+suciently large n)</text>
+        </slide>
+        <slide>
+          <slideno>9</slideno>
+          <text>Markov channels 
+Other cases: 
+	Known at the receiver but not the sender: 
+then the computation is more involved, 
+but the theorem for indecomp osable chan
+nels still holds. Sender does not change 
+strategy . 
+	Known at the sender but not the re
+ceiver: strategies for the receiver to es
+timate the channel are important. 
+	Channel statistics known but channel 
+not known: sender does not change 
+strategy . Hypothesis testing at receiver. 
+Recall Gilbert-Eliot channel. More states: 
+dierent approach is required.</text>
+        </slide>
+        <slide>
+          <slideno>10</slideno>
+          <text>Markov channels 
+What happens when we have for instance 
+dierent types of AWGN channels? 
+The theorems need to be revisited. The 
+niteness of states is still an important as
+pect. 
+Suppose we have two channels, one (chan
+nel 1) with noise psd N0 and the other(channel 
+2) with noise psd N0 /prime &gt;N0 
+Perfect CSI at the sender and the receiver 
+Does water-lling work? 
+With a modication: make several chan
+nels with noise energy WN0 and several 
+channels with noise energy WN0 /prime in propor
+tion 1: 2 
+Then do water-lling on these channels 
+This is power control</text>
+        </slide>
+      </slides>
+      <videos/>
+    </lecture>
+    <lecture>
+      <lecture_title>Introduction, entropy</lecture_title>
+      <lecture_pdf_url>https://ocw.mit.edu/courses/6-441-information-theory-spring-2010/resources/mit6_441s10_lec01/</lecture_pdf_url>
+      <lectureno>1</lectureno>
+      <slides>
+        <slide>
+          <slideno>3</slideno>
+          <text>Conditional entropy: chain rule 
+H(YX)= EZ[H(YX = Z)] 
+=  |
+PX(x)  
+PY ||
+X(y|x)log2[PY |X(y|x)] 
+xX yY 
+=   
+PX,Y (x, y) log2[PY |X(y|x)] 
+xX ,yY 
+Compa re with joint entrop y: 
+H(X, Y ) 
+=   
+PX,Y (x, y) log2[PX,Y (x, y)] 
+xX ,yY 
+=   
+PX,Y (x, y) log2[PY |X(y|x)PX(x)] 
+xX ,yY
+=   
+PX,Y (x, y) log2[PY |X(y|x)]
+xX ,yY
+  
+PX,Y (x, y) log2[PX(x)]
+xX ,yY
+= H(YX)+ H(X)
+ |
+This is the Chain Rule for entrop y: 
+H(X1, . . . , Xn)= n
+i=1 H(Xi|X1 . . . Xi1). Ques
+tion: H(YX)= H(XY )? | |</text>
+        </slide>
+        <slide>
+          <slideno>2</slideno>
+          <text>Entropy
+Entrop y is a measure of the average un  
+certaint y associated with a random vari
+able 
+The entrop y of a discrete r.v. X is H(X)=
+  
+PX(x)log2(PX(x))
+  
+xX
+entrop y is always non-negative  
+Joint entrop y: the entrop y of two dis  
+crete r.v.s X, Y with joint PMF PX,Y (x, y) 
+is: 
+H(X, Y )=  
+xX ,yY PX,Y (x, y)log2 
+PX,Y (x, y) 
+Conditional entrop y: expected value of  
+entropies calculated according to condi
+tional distributions H(YX)= EZ[H(YX = | |
+Z)] for r.v. Z indep endent of X and
+identically distributed with X. Intuitively ,
+this is the average of the entrop y of Y
+given X over all possible values of X.</text>
+        </slide>
+        <slide>
+          <slideno>0</slideno>
+          <text>LECTURE 1
+Introduction
+2 Handouts
+Lecture outline
+Goals and mechanics of the class  
+notation  
+entrop y: denitions and properties  
+mutual information: denitions and prop  
+erties 
+Reading: Ch. 1, Scts. 2.1-2.5.</text>
+        </slide>
+        <slide>
+          <slideno>1</slideno>
+          <text>Goals
+Our goals in this class are to establish an 
+understanding of the intrinsic properties of 
+transmission of information and the rela
+tion between coding and the fundamental 
+limits of information transmission in the 
+context of communications 
+Our class is not a comp rehensive introduc
+tion to the eld of information theory and 
+will not touch in a signicant manner on 
+such important topics as data comp ression 
+and complexit y, which belong in a source-
+coding class 
+Notation
+	random variable (r.v.) : X 
+	sample value of a random variable : x
+	set of possible sample values x of the
+r.v. X : X 
+	Probabilit y mass function (PMF) of a 
+discrete r.v. X : PX(x) 
+	Probabilit y densit y function (pdf) of a 
+continuous r.v. : pX(x)</text>
+        </slide>
+        <slide>
+          <slideno>4</slideno>
+          <text>Relative entropy
+Relative entrop y is a measure of the dis
+tance between two distributions, also known 
+as the Kullback Leibler distance between 
+PMFs PX(x) and PY (y). 
+Denition: 
+D(PX||PY )= 
+xX PX(x) log 
+PX (x) 
+PY (x) 
+in eect we are considering the log to be a
+r.v. of which we take the mean (note that 
+we assume 0log(0) = 0 and p log(p )= p 0</text>
+        </slide>
+        <slide>
+          <slideno>7</slideno>
+          <text>MIT OpenCourseWare
+http://ocw.mit.edu 
+6.441 Information Theory 
+Spring 2010 
+For information about citing these materials or our Terms of Use, visit: http://ocw.mit.edu/terms .</text>
+        </slide>
+        <slide>
+          <slideno>5</slideno>
+          <text>Mutual information
+Mutual Information: let X, Y be r.v.s with 
+joint PMF PX,Y (x, y) and marginal PMFs 
+PX(x) and PY (y) 
+Denition: 
+I(X; Y )  PX,Y (x, y)  
+=  
+PX,Y (x, y) log PX(x)P Y (y)xX ,yY
+= D 
+PX,Y (x, y)||PX(x)P Y (y)
+intuitively: measure of how dependent the
+r.v.s are 
+Useful expression for mutual information:
+I(X; Y )= H(X)+ H(Y )  H(X, Y ) 
+= X)
+ H(Y )  H(Y |
+= Y )
+ H(X)  H(X|
+= I(Y ; X) 
+Question: what is I(X; X)?</text>
+        </slide>
+        <slide>
+          <slideno>6</slideno>
+          <text>Mutual information chain rule
+Conditional mutual information: I(X; YZ)=
+|
+H(X|Z)  H(X|Y, Z) 
+I(X1, . . . , Xn; Y ) 
+= H(X1, . . . , Xn)  H(X1, . . . , Xn|Y ) 
+= H
+n(X1, . . . , Xn)  H(X1, . . . , Xn|Y ) 
+=
+ H(Xi|X1 . . . Xi1)
+i=1
+n
+ 
+n
+H(Xi|X1 . . . Xi1,Y )
+i=1
+=
+ I(Xi; Y |X1 . . . Xi1)
+i=1 
+Look at 3 r.v.s: I(X1,X2; Y )= I(X1; Y )+
+I(X2; YX1) where I(X2; YX1) is the extra | |
+information about Y given by X2, but not 
+given by X1</text>
+        </slide>
+      </slides>
+      <videos/>
+    </lecture>
+    <lecture>
+      <lecture_title>Gaussian channels with feedback</lecture_title>
+      <lecture_pdf_url>https://ocw.mit.edu/courses/6-441-information-theory-spring-2010/resources/mit6_441s10_lec19/</lecture_pdf_url>
+      <lectureno>19</lectureno>
+      <slides>
+        <slide>
+          <slideno>2</slideno>
+          <text>Gaussian channels with feedback
+A code is now a mapping xi(M,Y i1) from 
+the messages in M = {1, 2,..., 2nR} and 
+from Yi1 onto reals under the constraint 
+ENn 
+n 1 
+in 
+=1 xi(m,Y i1) 
+P
+m {1, 2,..., 2nR}
+How do we dene capacit y? Lets try:
+1	 
+= max	 I (Xn; Yn) Cn,F B	
+1trace
+Xn
+P n 
+n 
+moreover 
+I (Xn; Yn) 
+= h(Yn)  h(Yn |Xn) 
+= h(Xn)  h(Xn |Yn) 
+but then select (X1,X2, . . . , Xn) = (0,N1, . . . , Nn1) 
+the mutual information blows up!</text>
+        </slide>
+        <slide>
+          <slideno>3</slideno>
+          <text>Gaussian channels with feedback 
+Lets try: 
+1 
+I (M; Yn)
+ = max Cn,F B 
+1trace
+Xnn n
+P
+Note: in the case of no feedback, then M 
+and Xn are equivalent 
+I (M; Yn) 
+= h(Yn)  h
+n(Yn |M) 
+M,Y i1)
+ = h(Yn) 
+ h(Yi
+|
+=1i
+n
+M,Y i1,Xi)
+ = h(Yn) 
+ h(Yi
+|
+=1i
+n
+M,Y i1, Xi, Ni1)
+ = h(Yn) 
+ h(Yi
+|
+=1i
+n
+Xi, Ni1)
+ = h(Yn) 
+= h(Yn) 
+h(Yi
+|
+=1i
+n
+i=1
+Ni1)
+ h(N i
+|
+= h(Yn)  h(Nn)</text>
+        </slide>
+        <slide>
+          <slideno>7</slideno>
+          <text>An upper bound
+Fact 1:
+Xn+Nn +XnNn =2 
+Xn +Nn
+Look at elements in the diagonal and the
+o-diagonals
+Fact 2:
+If C = A  B is symmetric positive denite,
+when A and B are also symmetric positive 
+denite, then A B |||| 
+Consider V N (0,C),W N (0,B) inde
+pendent random variables 
+Let S = V + W , then S N (0,A) 
+h(S)  h(S|V )= h(W |V )= h(W ) so |A| 
+|B|</text>
+        </slide>
+        <slide>
+          <slideno>8</slideno>
+          <text>An upper bound
+From fact 1:
+2(Xn +Nn)  Xn+Nn =XnNn
+hence 2(Xn +Nn)  Xn+Nn is positive 
+denite 
+From fact 2: 
+|Xn+Nn||2(Xn +Nn)| =2n|(Xn + 
+Nn)| 
+Hence 
+Cn,F B = 
+1 max  
+21 
+n ln |X
+n
+N+
+nNn| 
+ntrace
+Xn
+P || 
+ 
+1  Xn +Nn 
+max ln2n 
+n 1trace
+Xn
+P 2n |
+|Nn|| 
+ln(2) = Cn + 2</text>
+        </slide>
+        <slide>
+          <slideno>1</slideno>
+          <text>Gaussian channels with feedback
+In the case of a DMC that there is no ben
+et to feedback 
+The same arguments extend to the case 
+where we have continuous inputs and out
+puts 
+What happens in the case when the noise 
+is not white? We can garner information 
+about future noise from past noise 
+Yi = Xi + Ni 
+but now the Xi is also a function of the 
+past Y s, within an energy per codeword 
+constraint</text>
+        </slide>
+        <slide>
+          <slideno>5</slideno>
+          <text>Gaussian channels with feedback
+Do we have coding theorems? 
+Joint typicalit y between input and output 
+hold as a means of decoding 
+WLLN of large numb ers holds 
+Sparsity argument for having multiple iden
+tical mappings holds 
+Converse: Fanos lemma still holds, with 
+M being directly involved in the bound 
+Question: how does this compa re to the 
+non-feedback capacit y?</text>
+        </slide>
+        <slide>
+          <slideno>4</slideno>
+          <text>Gaussian channels with feedback
+How do we maximize I (M; Yn), or equiva
+lently h(Yn)  h(Nn) 
+Since a Gaussian distribution maximizes en
+tropy, 
+1h(Yn)  2 ln 
+(2e)n|Xn+Nn|  
+we can always achieve this by taking the
+Xs to be jointly Gaussian with the past Y s
+Xi = i1 
+j=1 i,jYj + Vi + ci 
+where Vi is mutually indep endent from the 
+Yjs, for 1  j  i  1 and any constant 
+ci will leave the autocorrelation matrix un
+changed. Note that the past Xs are a con
+stant, so in particula r we can select ci = 
+ i1 
+j=1 i,jxj 
+so 
+= i1Xi j=1 i,jNj + Vi</text>
+        </slide>
+        <slide>
+          <slideno>6</slideno>
+          <text>Gaussian channels with feedback 
+Non-feedback capacit y is simply Gaussian 
+colored noise channel: 
+Cn = max1trace
+Xn1I (Xn; Yn) 
+n P n 
+In this case 
+I (Xn; Yn) 
+= h(Yn)  h(Yn |Xn) 
+= h(Xn + Nn)  h(Nn) 
+which is maximized by taking Xn to be 
+Gaussian colored noise determined using water-
+lling 
+so Cn = max1  
+1 ln |Xn+Nn| 
+ntrace
+Xn
+P 2n |Nn| 
+From our previous discussion, 
+Cn,F B = 21 
+n ln |X
+n
+N+
+nNn| 
+|| 
+we can nd this if we determine the i,js, 
+but this may not be easy</text>
+        </slide>
+        <slide>
+          <slideno>10</slideno>
+          <text>MIT OpenCourseWare
+http://ocw.mit.edu 
+6.441 Information Theory 
+Spring 2010 
+For information about citing these materials or our Terms of Use, visit: http://ocw.mit.edu/terms .</text>
+        </slide>
+        <slide>
+          <slideno>0</slideno>
+          <text>LECTURE 19
+Last time:
+Gaussian channels: parallel  
+colored noise  
+inter-symb ol interference  
+general case: multiple inputs and out  
+puts 
+Lecture outline
+Gaussian channels with feedback  
+Upper bound to benet of capacit y  
+Reading: Section 10.6.</text>
+        </slide>
+        <slide>
+          <slideno>9</slideno>
+          <text>Writing on dirty paper
+Supp ose that the sender knows the degra
+dation d exactly , what should he do? What 
+should the receiver do? 
+May not always be able to subtract d at the 
+sender. 
+Example: we try to send S uniformly dis
+tributed over [1, 1] 
+select X such that (X + d) mod 2 = S 
+X = S  d mod 2 and the receiver takes 
+mod 2</text>
+        </slide>
+      </slides>
+      <videos/>
+    </lecture>
+    <lecture>
+      <lecture_title>Entropies of stochastic processes</lecture_title>
+      <lecture_pdf_url>https://ocw.mit.edu/courses/6-441-information-theory-spring-2010/resources/mit6_441s10_lec04/</lecture_pdf_url>
+      <lectureno>4</lectureno>
+      <slides>
+        <slide>
+          <slideno>2</slideno>
+          <text>Stochastic processes 
+A discrete stochastic process is a Markov 
+chain if 
+PXn|X0,...,X n1 xn|x0, . . . , xn1 = PXn|Xn1 xn|xn1 
+for n =1, 2,... and all (x0,x1, . . . , xn) X n . 
+We deal with time invariant Markov chains 
+Xn: state after n transitions 
+ belongs to a nite set, e.g., {1,...,m} 
+ X0 is either given or random 
+(given current state, the past does not mat
+ter) 
+pi,j = P(Xn+1 = j | Xn = i) 
+= P(Xn+1 = j | Xn = i, Xn1,...,X0) 
+Markov chain is characterized by probabilit y 
+transition matrix P =[pi,j]</text>
+        </slide>
+        <slide>
+          <slideno>11</slideno>
+          <text>Hidden Markov models
+Consider an ALOHA wireless model 
+M users sharing the same radio channel to 
+transmit packets to a base station 
+During each time slot, a packet arrives to 
+a users queue with probabilit y p, indep en
+dently of the other M 1 users 
+Also, at the beginning of each time slot, if 
+a user has at least one packet in its queue, 
+it will transmit a packet with probabilit y q, 
+indep endently of all other users 
+If two packets collide at the receiver, they 
+are not successfully transmitted and remain 
+in their respective queues</text>
+        </slide>
+        <slide>
+          <slideno>4</slideno>
+          <text>Review of Markov chains
+Recurrent and transient states. 
+State i is recurrent if: starting from i, and 
+from wherever you can go, there is a way 
+of returning to i. If not recurrent, called 
+transient . Recurrent class collection of re
+current states that communicate to each 
+other and to no other state. 
+A recurrent state is periodic if: there is an 
+integer d&gt; 1 such that ri,i(k) = 0 when k 
+is not an integer multiple of d 
+Assume a single class of recurrent states, 
+aperiodic. Then, 
+lim ri,j(n)= jn 
+where j does not depend on the initial 
+conditions 
+lim P(Xn = jX0) = jn |</text>
+        </slide>
+        <slide>
+          <slideno>0</slideno>
+          <text>LECTURE 4 
+Last time: 
+Types of convergence  
+Weak Law of Large Numb ers  
+Strong Law of Large Numb ers
+  
+Asymptotic Equipa rtition Property  
+Lecture outline 
+Stochastic processes  
+Markov chains  
+Entrop y rate  
+Random walks on graphs  
+Hidden Markov models  
+Reading: Chapter 4.</text>
+        </slide>
+        <slide>
+          <slideno>5</slideno>
+          <text>1, . . . , m can be found as the unique  
+solution of the balance equations 
+j =  
+kpk,j 
+k 
+together with 
+ 
+j =1 
+j</text>
+        </slide>
+        <slide>
+          <slideno>13</slideno>
+          <text>Hidden Markov processes
+Let Xi, X2,... be a stationa ry Markov chain 
+and let Yi = (Xi) be a process, each term 
+of which is a function of the corresponding 
+state in the Markov chain 
+Y1,Y2,... form a hidden Markov chain, which 
+is not always a Markov chain, but is still 
+stationa ry 
+What is its entrop y rate?</text>
+        </slide>
+        <slide>
+          <slideno>3</slideno>
+          <text>Review of Markov chains
+State occupancy probabilities, given initial 
+state i: 
+ri,j(n)= P(Xn = jX0= i) | 
+Key recursion: 
+m
+ri,j(n)=  
+ri,k(n  1)pk,j 
+k=1 
+With random initial state: 
+m
+P(Xn = j)=  
+P(X0= i)ri,j(n) 
+i=1 
+Does rij converge to something? 
+Does the limit depend on initial state?</text>
+        </slide>
+        <slide>
+          <slideno>9</slideno>
+          <text>Random walk on graph
+We call a random walk the Markov chain in
+which the states are the nodes of the graph
+Wi,jpi,j = Wi
+Wi
+i = 2W 
+Check: 
+i i = 1 and 
+ 
+i ipi,j =  
+i Wi 
+2W Wi,j 
+Wi 
+=  Wi,j 
+i 2W 
+= Wj 
+2W 
+= j</text>
+        </slide>
+        <slide>
+          <slideno>10</slideno>
+          <text>Random walk on graph
+H(X2X1)
+=   
+|
+i  
+pi,j log(p i,j)
+i j
+=   Wi  Wi,j log Wi,j 
+i 2WjWi Wi
+=   Wi,j log Wi,j 
+2W Wi
+ i,j
+=   Wi,j log Wi,j 
+2W 2W
+i,j 
++  Wi,j log  Wi  
+2W 2Wi,j 
+= Wi,j log Wi,j  
++  Wi log  Wi  
+  
+2W 2W 2W 2Wi,j i 
+Entrop y rate is dierence of two entropies
+Note: time reversibilit y for Markov chain 
+that can be represented as random walk 
+on undirected weighted graph</text>
+        </slide>
+        <slide>
+          <slideno>15</slideno>
+          <text>MIT OpenCourseWare
+http://ocw.mit.edu 
+6.441 Information Theory 
+Spring 2010 
+For information about citing these materials or our Terms of Use, visit: http://ocw.mit.edu/terms .</text>
+        </slide>
+        <slide>
+          <slideno>8</slideno>
+          <text>Random walk on graph
+Consider undirected graph G =(N , E, W) 
+where N , E, W are the nodes, edges and 
+weights. With each edge there is an as
+sociated edge weight Wi,j 
+= Wi,j Wj,i 
+Wi =  
+Wi,j 
+j 
+W =  
+Wi,j 
+i,j:j&gt;i 
+2W =  
+Wi 
+i</text>
+        </slide>
+        <slide>
+          <slideno>14</slideno>
+          <text>Hidden Markov processes 
+We suspect that the eect of initial infor
+mation should decay 
+H(Yn|Yn1)H(Yn|Yn1,X1) = I(X1; Yn|Yn1) 
+should go to 0 
+Indeed, 
+n
+lim I (X1; Yn) = lim  
+I 
+X1; YiYi1 
+n n i=1 |
+= 
+I 
+X1; Yi |Yi1 
+i=1 
+since we have an innite sum in which the 
+terms are non-negative and which is upper 
+bounded by H(X1), the terms must tend 
+to 0</text>
+        </slide>
+        <slide>
+          <slideno>1</slideno>
+          <text>Stochastic processes 
+A stochastic process is an indexed sequence 
+or r.v.s X0,X1,... characterized by the joint 
+PMF PX0,X1,...,X n (x0,x1, . . . , xn), (x0,x1, . . . , xn)  
+X n for n =0, 1,.... 
+A stochastic process is stationa ry if 
+PX0,X1,...,X n (x0,x1, . . . , xn) 
+= PXl,Xl+1,...,X l+n (x0,x1, . . . , xn) 
+for every shift l and all (x0,x1, . . . , xn) X n .</text>
+        </slide>
+        <slide>
+          <slideno>6</slideno>
+          <text>Entropy rate
+The entrop y rate of a stochastic process is 
+1 lim H(Xn) n n 
+if it exists 
+For a stationa ry stochastic process, the en
+tropy rate exists and is equal to 
+lim H(XnXn1)n |
+since conditioning decreases entrop y and by 
+stationa rity, it holds that 
+H(Xn+1|Xn)	 H(Xn+1|X2n) 
+= H(Xn|Xn1) 
+so it reaches a limit (decreasing non-negative 
+sequence) 
+Chain rule 
+1 1 n
+nH(Xn)= n  
+H(Xi|Xi1) 
+i=1 
+since the elements in the sum on the RHS
+reach a limit, that is the limit of the LHS</text>
+        </slide>
+        <slide>
+          <slideno>7</slideno>
+          <text>Entropy rate 
+Markov chain entrop y rate: 
+lim H(XnXn1)n |
+= lim H(XnXn1)n |
+= H(X2X1) 
+=   
+p|
+i,ji log(p i,j) 
+i,j</text>
+        </slide>
+        <slide>
+          <slideno>12</slideno>
+          <text>Hidden Markov models 
+Let Xi =(N[1]i, N[2]i, . . . , N[M]) denote 
+the random vecto r at time i where N[m]i is 
+the numb er of packets that are in user ms 
+queue at time i. Xi is a Markov chain. 
+Consider the random vecto r Yi =(Z[1],Z[2],...,Z[M]) 
+where Z[m]i = 1 if user m transmits during 
+time slot i and Z[i] = 0 otherwise 
+Is Yi Markov?</text>
+        </slide>
+      </slides>
+      <videos/>
+    </lecture>
+    <lecture>
+      <lecture_title>Data compression, Kraft inequality, optimal codes</lecture_title>
+      <lecture_pdf_url>https://ocw.mit.edu/courses/6-441-information-theory-spring-2010/resources/mit6_441s10_lec05/</lecture_pdf_url>
+      <lectureno>5</lectureno>
+      <slides>
+        <slide>
+          <slideno>2</slideno>
+          <text>Codes for random variables
+C is nonsingula r if every element of X maps 
+onto a dierent element of D 
+The extension of a code C : X  D is the 
+code 
+C : X D 
+xn C(xn)= C(x1)C(x2) ...C(xn)  
+A code is uniquely decodable if its extension 
+is nonsingula r 
+A code is instantaneous (or prex code) i 
+no codeword of C is a prex of any other 
+codeword C 
+Visually: construct a tree whose leaves are 
+codewords</text>
+        </slide>
+        <slide>
+          <slideno>9</slideno>
+          <text>Optimal codes
+Thus a bound on the optimal code length 
+is 
+PX(i) logD(PX(i)) = HD(X)  
+iX
+This is lower bound, equalit y holds i PX 
+is D-adic, PX(i)= Dl(i) for integer l(i)</text>
+        </slide>
+        <slide>
+          <slideno>0</slideno>
+          <text>LECTURE 5
+Last time: 
+Stochastic processes  
+Markov chains  
+Entrop y rate  
+Random walks on graphs
+  
+Hidden Markov models
+  
+Lecture outline 
+Codes  
+Kraft inequalit y  
+optimal codes.  
+Reading: Scts. 5.1-5.4.</text>
+        </slide>
+        <slide>
+          <slideno>5</slideno>
+          <text>Kraft inequality
+Given lengths l1,l2, . . . , lm satisfying Krafts 
+inequalit y, we can construct a tree by as
+signing C(i) to rst available node at depth 
+C(i)</text>
+        </slide>
+        <slide>
+          <slideno>6</slideno>
+          <text>Extended Kraft inequality
+Kraft inequalit y holds for all countably in
+nite set of codewords 
+Let n(y1y2 . . . yli) be the real l
+ji 
+=1 yjDj 
+associated with the ith codeword 
+Why are the n(y1y2 . . . yli)s for dierent code-
+words dierent? 
+By the same reasoning, all intervals 
+ 1  
+n(y1y2 . . . yli),n(y1y2 . . . yli)+ Dli 
+are disjoint 
+since these intervals are all in (0, 1), the 
+sum of their lengths is  1 
+For converse, reorder indices in increasing 
+order and assign intervals as we walk along 
+the unit interval</text>
+        </slide>
+        <slide>
+          <slideno>8</slideno>
+          <text>Optimal codes
+Let us relax the second constraint and re
+place the rst with equalit y to obtain a 
+lower bound 
+J = 
+xX PX(x)l(x)+  
+xX Dl(x)  1 
+J use Lagrange multipliers and set l(i)=0 
+PX(i)   log(D )Dl(i)=0 
+equivalently Dl(i)= PX (i) 
+ log(D ) 
+using Kraft inequalit y (now relaxed to equal
+ity) yields 
+1=  
+Dl(x)=  PX(i) 
+iX iX  log(D ) 
+so  = 1 , yielding l(i)=  logD(PX(i))log(D )</text>
+        </slide>
+        <slide>
+          <slideno>7</slideno>
+          <text>Optimal codes
+Optimal code is dened as code with small
+est possible C(L) with respect to PX 
+Optimization: 
+minimize 
+xX PX(x)l(x) 
+subject to 
+xX Dl(x)  1 
+and l(x)s are integers</text>
+        </slide>
+        <slide>
+          <slideno>10</slideno>
+          <text>Optimal codes
+The optimal codelength L satises 
+HD(X)  L HD(X)+1 
+Upper bound: take l(i)= logD(PX(i)) 
+ 
+D logD(PX (i))  
+PX(i)=1 
+iX 
+thus these lengths satisfy Krafts inequalit y 
+and we can create a prex-free code with 
+these lengths 
+L	 
+PX(i) logD(PX(i))
+iX
+	 
+PX(i)( logD(PX(i)) + 1) 
+iX 
+= HD(X)+1 
+We call these types of codes Shannon codes</text>
+        </slide>
+        <slide>
+          <slideno>12</slideno>
+          <text>MIT OpenCourseWare
+http://ocw.mit.edu 
+6.441 Information Theory 
+Spring 2010 
+For information about citing these materials or our Terms of Use, visit: http://ocw.mit.edu/terms .</text>
+        </slide>
+        <slide>
+          <slideno>1</slideno>
+          <text>Codes for random variables
+Notation: the concatenation of two strings 
+x and y is denoted by xy. The set of all 
+strings over a nite alphab et D is denoted 
+by D. W.l.o.g. assume D =0, 1,...,D  1 
+where D = |D  |. 
+Denition: a source code for a random 
+variable X is a map 
+C : X  D 
+xC(x) 
+where C(x) is the codeword associated with 
+x 
+l(x) is the length of C(x) 
+The length of a code C is 
+L(C)= EX[l(X)]</text>
+        </slide>
+        <slide>
+          <slideno>11</slideno>
+          <text>Optimal codes 
+Is this as tight as it gets?
+Consider coding several symb ols together
+C : X n  D 
+expected codeword length is 
+xnX n PXn(xn)l(xn) 
+optimum satises 
+HD(Xn)  L HD(Xn)+1 
+per symb ol codeword length is 
+HD(Xn) L HD(Xn)+ 1 
+n  n  n n</text>
+        </slide>
+        <slide>
+          <slideno>4</slideno>
+          <text>Kraft inequality
+Each leaf of T  is a descendant of at most 
+one leaf of T 
+Leaf in T corresponding to codeword C(i) 
+has exactly DlMAX li descendants in T  (1 
+if li = lMAX) 
+Summing over all leaves of T gives 
+m 
+DlMAX li  DlMAX 
+i=1 
+m 
+Dli  
+i=1  1</text>
+        </slide>
+        <slide>
+          <slideno>3</slideno>
+          <text>Kraft inequality
+Any instantaneous code C with code lengths 
+l1,l2, . . . , lm must satisfy 
+m 
+Dli  1 
+i=1 
+Conversely , given lengths l1,l2, . . . , lm that 
+satisfy the above inequalit y, there exists an 
+instantaneous code with these codeword 
+lengths 
+Proof: construct a D-ary tree T (code
+words are leaves) 
+Extend tree T to D-ary tree T  with depth 
+lMAX, total numb er of leaves is DlMAX</text>
+        </slide>
+      </slides>
+      <videos/>
+    </lecture>
+    <lecture>
+      <lecture_title>Fano&#8217;s inequality and the converse to the coding theorem</lecture_title>
+      <lecture_pdf_url>https://ocw.mit.edu/courses/6-441-information-theory-spring-2010/resources/mit6_441s10_lec13/</lecture_pdf_url>
+      <lectureno>13</lectureno>
+      <slides>
+        <slide>
+          <slideno>10</slideno>
+          <text>Consequences of the AEP: the typical
+set
+Why is it typical? The probabilit y of being 
+more than  away from H(X) goes can be 
+arbitra rily close to 0 as n , hence 
+Pr(A (n))  1   
+We can select  to be arbitra rily small, so 
+that the distribution of messages is arbi
+trarily close to uniform in the typical set 
+The max of the probabilit y of error must 
+be bounded away from 0 in the typical set 
+for the max of the probabilit y of error to 
+be bounded away from 0 
+The probabilit y of error is dominated by the
+probabilit y of the typical set as we let &gt; 0</text>
+        </slide>
+        <slide>
+          <slideno>2</slideno>
+          <text>|Fanos inequality for code words
+An error occurs when the decoder makes 
+the wrong decision in selecting the message 
+that was transmitted 
+Let M {1, 2,..., 2nR} be the transmitted 
+message and let M be the estimate of the 
+received message from Yn 
+M is uniformly distributed in {1, 2,..., 2nR}
+and consecutive message transmissions are 
+IID (thus, we do not make use of a numb er 
+of messages, but consider a single message 
+transmission) 
+The probabilit y of error for a codebook for 
+transmission of Mis Pe,M = P (M = M)= 
+EY n[P (M = MYn)] 
+Consider an indicato r variable E = 1 when 
+an error occurs and E = 0 otherwise</text>
+        </slide>
+        <slide>
+          <slideno>4</slideno>
+          <text>Fanos inequality for code words
+Given the denition of rate, |M| =2nR, so 
+H(M|E,Y )  PenR +1 
+Hence 
+H(MY )|
+ PenR 
+For a given codebook, M determines X, so 
+H(X|Y )= H(M|Y )  1+ PenR 
+for a DMC with a given codebook and uni
+formly distributed input messages</text>
+        </slide>
+        <slide>
+          <slideno>5</slideno>
+          <text>From Fanos inequality for code words
+to the coding theorem converse
+We now want to relate this to mutual in
+formation and to capacit y 
+Strategy: 
+-will need to have mutual information ex
+pressed as H(M)  H(M|Y ) 
+-rate will need to come in play -try the fact 
+that H(M)= nR for uniformly distributed 
+messages 
+-will need capacit y to come into play. We 
+rememb er that combining the chain rule 
+for entropies and the fact that condition
+ing reduces entrop y yields the fact that for 
+a DMC I(Xn; Yn)  nC</text>
+        </slide>
+        <slide>
+          <slideno>9</slideno>
+          <text>Consequences of the AEP: the typical
+set
+Denition: A (n) is a typical set with respect 
+to PX(x) if it is the set of sequences in the 
+set of all possible sequences xn n with X
+probabilit y: 
+2n(H(X)+)  PXn (xn)  2n(H(X)) 
+equivalently 
+1 H(X)    n log(P Xn (xn))  H(X)+  
+We shall use the typical set to describ e a 
+set with characteristics that belong to the 
+majority of elements in that set.</text>
+        </slide>
+        <slide>
+          <slideno>11</slideno>
+          <text>MIT OpenCourseWare
+http://ocw.mit.edu 
+6.441 Information Theory 
+Spring 2010 
+For information about citing these materials or our Terms of Use, visit: http://ocw.mit.edu/terms .</text>
+        </slide>
+        <slide>
+          <slideno>0</slideno>
+          <text>LECTURE 13 
+Last time: 
+Strong coding theorem  
+Revisiting channel and codes
+  
+Bound on probabilit y of error
+  
+Error exponent  
+Lecture outline 
+Fanos Lemma revisited  
+Fanos inequalit y for codewords  
+Converse to the coding theorem  
+Reading: Sct. 8.9.</text>
+        </slide>
+        <slide>
+          <slideno>8</slideno>
+          <text>Revisiting the message distribution
+We have assumed that we can select the 
+messages to be uniformly distributed 
+This is crucial to get H(M)= nR 
+Does the converse only work when the mes
+sages are uniformly distributed? 
+Let us revisit the consequences of the AEP</text>
+        </slide>
+        <slide>
+          <slideno>3</slideno>
+          <text>| |Fanos inequality for code words 
+H(E,MY )|
+= H(MY )+ H(EM, Y )
+ | |
+= H(MY )|
+= H(EY )+ H(ME,Y ) | |
+ 1+ H(M|E,Y ) 
+Let us consider upper bounding the RHS 
+H(ME,Y )|
+we are not averaging over codebooks 
+as for the coding theorem, 
+but are considering a specic codebook 
+= H(XE,Y )|
+= EM,Y [P (M = MY )]H(XE =1,Y ) 
++ = MY )]) (1  EM,Y [P (M |
+H(XE =0,Y )
+ |
+= PeH(XE =1,Y ) |
+ PeH(X|E = 1) 
+ Pe log(|M|  1)</text>
+        </slide>
+        <slide>
+          <slideno>1</slideno>
+          <text>Fanos lemma
+Supp ose we have r.v.s X and Y , Fanos 
+lemma bounds the error we expect when 
+estimating X from Y 
+We generate an estimato r of X that is =X 
+g(Y ). 
+Probabilit y of error Pe = Pr( = X) X 
+Indicato r function for error E which is 0 
+when X = X and 1 otherwise. Thus, Pe = 
+P (E = 1)
+Fanos lemma:
+H(E)+ Pe log(|X|  1)  H(X|Y )
+We now need to consider the case where
+we are dealing with codewords 
+Want to show that vanishingly small prob
+ability of error is not possible if the rate is 
+above capacit y</text>
+        </slide>
+        <slide>
+          <slideno>6</slideno>
+          <text>Converse to the channel coding
+theorem
+Consider some sequence of codebooks (2nR, n), 
+indexed by n, such that the maximum prob
+ability of error over each codebook goes to 
+0 as n goes to  
+Assume (well revisit this later) that the 
+message M is drawn with uniform PMF 
+from {1, 2, . . . , 2nR} 
+Then nR = H(M) 
+Also 
+H(M)= H(MY )+ I(M; Y )
+ |
+= H(M|Y )+ H(Y )  H(Y |M) 
+= H(M|Y )+ H(Y )  H(Y |X) 
+= H(MY )+ I(X; Y ) |
+ 1+ PenR + nC 
+Hence R  1+ PeR + C n</text>
+        </slide>
+        <slide>
+          <slideno>7</slideno>
+          <text>Converse to the channel coding
+theorem
+Letting n go to , we obtain that R 
+C (since the maximum probabilit y of error 
+goes to 0 by our assumption) 
+Moreover, we obtain the following bound
+on error: Pe  1  C 
+R  1 
+nR 
+Note: 
+-for R&lt;C, the bound has a negative RHS, 
+so does not bound probabilit y of error in a 
+way that is inconsistent with forward cod
+ing theorem 
+-for R&gt;C, bound becomes 1  C for large R 
+n, but 1  C 1 is always lower bound R R  
+-as R goes to innit y, bound becomes 1, 
+so is tight bound 
+-RHS of bound does not vary with n in 
+the way we would expect, since the bound 
+increases with n</text>
+        </slide>
+      </slides>
+      <videos/>
+    </lecture>
+    <lecture>
+      <lecture_title>Strong coding theorem, types of errors</lecture_title>
+      <lecture_pdf_url>https://ocw.mit.edu/courses/6-441-information-theory-spring-2010/resources/mit6_441s10_lec11/</lecture_pdf_url>
+      <lectureno>11</lectureno>
+      <slides>
+        <slide>
+          <slideno>9</slideno>
+          <text>Upper bound on probability
+Proof continued 
+Averaging the error over all possible codes:
+Ecodebook s[Pe,m]  
+(M  1)  
+PXN 
+xN (m)
+ 
+yN xN (m) 
+NPYN XN 
+y |xN (m)1r 
+ |
+ 
+P
+xN (m)
+ XN 
+xN (m) 
+PY N |XN 
+yN |xN (m)r</text>
+        </slide>
+        <slide>
+          <slideno>3</slideno>
+          <text>Upper bound on probability
+Recall that for the weak coding theorem we 
+performed a typicalit y-based decoding 
+That decoding led to a WLLN type of ar
+gument, which was the source of the poor 
+handle we have on the behavio r of error 
+probabilit y with N 
+Let us then consider another criterion for 
+decoding: maximum likelihood (ML) 
+select m for which probabilit y of receiving 
+yN is maximum 
+N NPY N,XN 
+y|xN (m) 
+ PY N,XN 
+y|xN (m) 
+= m m
+Let Ym be the set of output vecto rs yN 
+whose decoding is the message m 
+The probabilit y of error when the message 
+m was transmitted is: 
+NPe,m = 
+yN mPYN XN 
+yxN (m) 
+YC ||</text>
+        </slide>
+        <slide>
+          <slideno>0</slideno>
+          <text>LECTURE 11
+Last time:
+The channel coding theorem overview
+  
+Upper bound on the error probabilit y
+  
+Bound on not being typical  
+Bound on too many elements being typ  
+ical
+Coding theorem (weak)
+  
+Lecture outline
+Strong coding theorem  
+Revisiting channel and codes  
+Bound on probabilit y of error  
+Error exponent</text>
+        </slide>
+        <slide>
+          <slideno>8</slideno>
+          <text>Upper bound on probability
+Proof continued 
+Combining results, we obtain that 
+Pr[errorm,XN = xN (m),Y N = yN ]  | 
+  
+Pr 
+A 
+m, x N (m), y N   
+m=m
+ 
+ (M  1)  
+PXN 
+xN (m)
+xN (m) 
+ P
+yN xN (m)r  
+PY
+YN
+N |
+|X
+XN
+N 
+yN |
+|xN (m
+)r</text>
+        </slide>
+        <slide>
+          <slideno>5</slideno>
+          <text>Upper bound on probability 
+Proof continued 
+For a given m, xN (m), yN , let A 
+m, xN (m), yN  
+be the event that 
+PYN XN 
+yN |xN (m) 
+ PYN XN 
+yN |xN (m) 
+| |
+an error occurs when at least one of the 
+events A 
+m, xN (m), yN 
+, m =m takes place 
+therefo re 
+Pr[errorm,XN = xN (m),Y N = yN ]  | 
+= Pr &#13;
+ 
+A 
+m, x N (m), y N 
+ 
+m=m
+ 
+  
+Pr 
+A 
+m, x N (m), y N 
+
+m=m</text>
+        </slide>
+        <slide>
+          <slideno>1</slideno>
+          <text>Revisiting channel and codes
+Consider a DMC with transition probabili
+ties PY X(yx)||
+For any block length N, let 
+NPY N |XN (y|xN )= 
+iN 
+=1 PY |X(yi|xi) 
+PXN (xN )= N
+i=1 PX(xi) 
+PY N (yN )= 
+in 
+=1 PY (yi) 
+in particula r we can select the input prob
+ability to be capacit y-achieving, since IID 
+inputs yield capacit y for a DMC 
+the output alphab et Y and the input alpha
+bet X may be dierent</text>
+        </slide>
+        <slide>
+          <slideno>4</slideno>
+          <text>Upper bound on probability 
+Theo rem: 
+The average probabilit y of decoding error 
+given that the message m was sent, aver
+aged over all possible block codes, is bounded, 
+for any choice of   [0, 1] by 
+Ecodebook s[Pe,m]  (M  1) 
+ 
+1 1+ 
+  
+PXN 
+xN  
+PYN XN 
+yN xN 
+1+ 
+N 
+N ||  
+y x
+Proof: 
+The probabilit y of error given that m was 
+transmitted averaged over all possible codes 
+is: 
+Ecodebook s[Pe,m]=  
+xN (m) yN 
+NPXN 
+xN (m) 
+PY N |XN 
+y |xN (m) 
+Pr[error|m, XN = xN (m),Y N = yN ]</text>
+        </slide>
+        <slide>
+          <slideno>7</slideno>
+          <text>=  Upper bound on probability 
+Proof continued 
+Pr 
+A 
+m, x N (m), y N  
+xN (m):PY N |XN 
+yN |xN (m)
+PY N |XN 
+yN |xN (m) 
+PXN 
+xN (m) 
+  
+PXN 
+xN (m) 
+xN (m)
+PY N |XN 
+yN |xN (m)r
+|N |
+ PYN XN 
+yxN (m)r 
+for any r&gt; 0 
+note that the last expression does not de
+pend on m because we sum over all the 
+possible codes for m</text>
+        </slide>
+        <slide>
+          <slideno>12</slideno>
+          <text>Upper bound on probability
+From our denition of M and R, M  1 
+2NR 
+Hence 
+Ecodebook s[Pe,m]  2N(E0(,P X (x)))R 
+for 
+E0(, PX(x)) 
+
+
+1+
+1  
+PX(x)PY X (yix)1+  log
+ =
+ |
+ 
+
+ |
+y xN
+This looks exponential, but we need to make 
+sure that 
+E0(, PX(x)))  R &gt; 0</text>
+        </slide>
+        <slide>
+          <slideno>10</slideno>
+          <text>Upper bound on probability
+Proof continued 
+Picking r = 1 implies 1  r = r so1+ 
+Averaging the error over all possible codes:
+Ecodebook s[Pe,m]  
+(M  1)   
+PXN 
+xN 
+
+N N y x
+1+1 
+PYN XN 
+yN |xN 
+1+ 
+|
+QED!</text>
+        </slide>
+        <slide>
+          <slideno>13</slideno>
+          <text>Upper bound on probability
+What we have done: 
+related the probabilit y of error to some ex
+ponential function of the input and transi
+tion PMFs 
+What needs to be done: 
+get rid of the expectation over codes  
+by throwing out the worst half of the 
+codes 
+Show that the bound behaves well (ex  
+ponent is N for some &gt; 0) 
+Relate the bound to capacit y -this was  
+immediate in the weak coding theorem 
+because we were using the WLLN and 
+therefo re capacit y was related to the 
+sample mean, which we used to per
+form typical set decoding</text>
+        </slide>
+        <slide>
+          <slideno>14</slideno>
+          <text>MIT OpenCourseWare
+http://ocw.mit.edu 
+6.441 Information Theory 
+Spring 2010 
+For information about citing these materials or our Terms of Use, visit: http://ocw.mit.edu/terms .</text>
+        </slide>
+        <slide>
+          <slideno>6</slideno>
+          <text>Upper bound on probability
+Proof continued 
+Why not just use the union bound 
+  
+Pr &#13;
+ 
+A 
+m, x N (m), y N   
+m=m
+  
+  
+Pr 
+A 
+m, x N (m), y N 
+
+m=m 
+if RHS is  1, then it remains so even after 
+being raised to a power 
+if RHS if  1, then it increases when raised 
+to a power in [0, 1] 
+Let us now compute 
+Pr 
+A 
+m, xN (m), yN  
+as a sum over the possible encodings of m</text>
+        </slide>
+        <slide>
+          <slideno>11</slideno>
+          <text>Upper bound on probability 
+Have we used the DMC nature of the chan
+nel? Only insofa r as it provides block-by
+block memo rylessness. Let us now make 
+greater use of the DMC assumption 
+We assume PXn(xn)= N
+i=1 PX(xi) so 
+Ecodebook s[Pe,m]   N
+(M  1)  
+...   
+...  
+PX(xi) 
+y1 yN x1 xN i=1 
+1 1+ 
+PY X (yixi)1+ ||
+ N
+=(M  1)  
+...   
+PX(x)
+  
+y1 yN i=1 x
+1 1+
+PY X (yix)1+
+||
+N
+=(M  1)   
+PX(x)
+i=1 yx
+1 1+
+PY X (yix)1+
+||
+ 
+1 1+ 
+=(M  1) {  
+PX(x)PY X (yix)1+  N 
+y xN || }</text>
+        </slide>
+        <slide>
+          <slideno>2</slideno>
+          <text>Revisiting channel and codes
+The code is a block code with bit blocks 
+of length L being mapp ed onto code se
+quences of length N 
+For binary sequences, the block code maps 
+all the possible M =2L binary sequences 
+onto sequences xN 
+The rate of a block code is R = log M 
+N 
+Let c be the duration of an output symb ol 
+y from Y, the data rate in bits is R 
+c 
+For any positive integer and R&gt; 0, a(N, R) 
+block code is a code of length N which has 
+2NR codewords</text>
+        </slide>
+      </slides>
+      <videos/>
+    </lecture>
+    <lecture>
+      <lecture_title>Additive Gaussian noise channel</lecture_title>
+      <lecture_pdf_url>https://ocw.mit.edu/courses/6-441-information-theory-spring-2010/resources/mit6_441s10_lec17/</lecture_pdf_url>
+      <lectureno>17</lectureno>
+      <slides>
+        <slide>
+          <slideno>10</slideno>
+          <text>Spreading
+For a given T with energy constraint E over
+that time in the input, maximum mutual
+information in terms of nats per second is:
+21 
+TW ln 
+1+ E 
+WN0 
+limit as W  is 2TNE 
+0 
+spreading is always benecial, but its eect 
+is bounded 
+Geometric interp retation in terms of con
+cavity</text>
+        </slide>
+        <slide>
+          <slideno>3</slideno>
+          <text>AWGN Channel
+We operate in sampled time, hence already 
+in a bandlimited world 
+We ignore issues of impossibilit y of ban
+dlimiting and time-limiting simultaneously 
+(one can obtain bounds for the limiting in 
+time, and we are inherently considering very 
+long times, as per the coding theorem) 
+Yi = Xi + Ni 
+Nyquist rate of the output is Nyquist rate 
+of the input 
+The input and the noise are indep endent
+The input has a constraint on its average 
+energy , or average variance</text>
+        </slide>
+        <slide>
+          <slideno>17</slideno>
+          <text>MIT OpenCourseWare
+http://ocw.mit.edu 
+6.441 Information Theory 
+Spring 2010 
+For information about citing these materials or our Terms of Use, visit: http://ocw.mit.edu/terms .</text>
+        </slide>
+        <slide>
+          <slideno>14</slideno>
+          <text>Upper bound on probability 
+Hence, through the union bound 
+E[m]= P 
+xn(m), y n 
+ Tn 
+ 
+&#13;
+ 
+xn(m), y n 
+ Tn m 
+m=m | 
+P 
+xn(m), y n 
+ 
+ 
+P 
+x  T
+nn 
+ 
++  n(m),y  Tn |m
+m=m
+The probabilit y of the pair not being typical 
+approaches 0 as n  
+i
+xn(m);yn 
+=1 n
+i=1 ln fY |X (yi|xi) 
+n n fY (yi) 
+Through the WLLN, the above converges 
+in probabilit y to 
+fY X (yx)
+C = 
+xX ,yY fX(x)fY |X(y|x) ln f|
+Y (y)|dxdy 
+Hence, for any  
+limn P 
+xn(m), yn 
+ Tn|m 
+ 0</text>
+        </slide>
+        <slide>
+          <slideno>6</slideno>
+          <text>Capacity of AWGN Channel
+Note that this maximizes EY [h(X  y|Y = 
+y)] 
+The Xis are still IID 
+EY [h(X  y|Y = y)] 
+= EY [h( YX= y)] |
+X)  h
+1( 
+ 2 ln 
+2e2 
+ 
+X 
+We can clearly see that adding a constant 
+to the input would not help 
+Note that, if the channel is acting like a 
+jammer to the signal, then the jammer can
+not control the h(X) term, only can control 
+the h(X Y ) term |
+All of the above inequalities are reached 
+with equalit y if the channel is an AWGN 
+channel</text>
+        </slide>
+        <slide>
+          <slideno>8</slideno>
+          <text>Application: DS-CDMA systems
+Consider a direct-sequence code division mul
+tiple access system 
+Set U of users sharing the bandwidth 
+Every user acts as a jammer to every other 
+user 
+Xij = 
+kU\{j} Xik + Ni 
+The capacit y for user j is 
++2 
+1+  
+2
+1
+ Xj 
+2
+Xk N
+kU\{j} 
+i ln
+ Cj =
+2</text>
+        </slide>
+        <slide>
+          <slideno>12</slideno>
+          <text>Coding theorem
+Let  = CR and let the set Tn be the set 2  
+of pairs (xn, yn) such that 
+|n 1i 
+xn; yn 
+ C|  
+where i is the sample natural mutual infor
+mation 
+nn)i 
+xn; yn 
+= ln fY n|Xn(y|x 
+fY n(yn) 
+For every n and each code in the ensemble, 
+the decoder, given yn, selects the message 
+m for which 
+xn(m), yn 
+ Tn . 
+We assume an error if there are no such 
+codewords or more than one codeword.</text>
+        </slide>
+        <slide>
+          <slideno>13</slideno>
+          <text>Upper bound on probability
+Let m be the event that, given message 
+m enters the system, an error occurs. 
+The mean probabilit y of error over all en
+semble of codes is 
+E[m]= P (m = 1) 
+(indicato r function) 
+Error occurs when 
+
+xn(m), yn 
+ Tn 
+or 
+
+xn(m), yn 
+ Tn for m =m</text>
+        </slide>
+        <slide>
+          <slideno>15</slideno>
+          <text>Upper bound to probability of several
+typical sequences
+Consider m =m 
+Given how the codebook was chosen, the 
+variables Xn(m),Y n are indep endent con
+ditioned on m having been transmitted 
+Hence 
+P Xn(m),Y n  Tn|m 
+ fXn(xn(m))fY n(yn)dxn(m)dyn= 
+xn(m),yn
+Tn  
+Because of the denition of Tn, for all pairs 
+in the set 
+nfY n(yn)  fY n|Xn 
+y|xn(m) 
+en(C)</text>
+        </slide>
+        <slide>
+          <slideno>0</slideno>
+          <text>LECTURE 17
+Last time:
+Dierential entrop y  
+Entrop y rate and Burgs theorem  
+AEP  
+Lecture outline
+White Gaussian noise  
+Bandlimited WGN  
+Additive White Gaussian Noise (AWGN)  
+channel
+Capacit y of AWGN channel
+  
+Application: DS-CDMA systems  
+Spreading  
+Coding theorem  
+Reading: Sections 10.1-10.3.</text>
+        </slide>
+        <slide>
+          <slideno>2</slideno>
+          <text>Bandlimited WGN
+WGN is always bandlimited to some band
+width W , thus the noise is passed through 
+a bandpass lter 
+The power densit y spectrum is now non
+zero only over an interval W of frequency
+The energy of the noise is then WN0 
+The Nyquist rate is then W and samples 
+are W 1 apart in time 
+Discrete-time samples of the bandlimited 
+noise, which by abuse of notation we still 
+denote N, are IID 
+)NNi N (0,2</text>
+        </slide>
+        <slide>
+          <slideno>5</slideno>
+          <text>Capacity of AWGN Channel    
+Another view of capacit y 
+I(X; Y )= h(X)  h(X|Y )
+= h(X)  EY [h(X  y|Y = y)]
+In particula r, we can select  so that Y is 
+the LLSE estimate of X from Y 
+For X Gaussian, then this estimate is also 
+the MMSE estimate of X from Y 
+The error of the estimate is = X  y X 
+The error is indep endent of the value y (re
+call that for any jointly Gaussian random 
+variables, the rst rv can be expressed as 
+the weighted sum of the second plus an 
+indep endent Gaussian rv) 
+The error is Gaussian</text>
+        </slide>
+        <slide>
+          <slideno>7</slideno>
+          <text>Capacity of AWGN Channel
+Thus, the channel is acting as an optimal 
+jammer to the signal 
+Saddle point: 
+-if the channel acts as an AWGN channel, 
+then the sender should send bandlimited 
+W GN under a specic variance constraint 
+(energy constraint) 
+-if the input is bandlimited WGN, then un
+der a variance constraint on the noise, the 
+channel will act as an AWGN channel 
+The capacit y is thus 
+2 21 Y  
+1 
+X 
+C = 2ln 2 = 2ln 1+ 2 
+N N 
+for small SNR, roughly proportional to SNR</text>
+        </slide>
+        <slide>
+          <slideno>16</slideno>
+          <text>Upper bound to probability of several
+typical sequences
+P 
+Xn(m),Y n  Tn m 
+ 
+fYnX|
+n 
+yn xn(m) 
+en(C) 
+xn(m),yn
+Tn | |
+fXn(xn(m))dxn(m)dyn
+ en(C) 
+E[m] is upper bounded by two terms that 
+go to 0 as n , thus the average proba
+bility of error given that m was transmitted 
+goes to 0 as n  
+This is the average probabilit y of error aver
+aged over the ensemble of codes, therefo re 
+&gt; 0 and for any rate R&lt;C there must 
+exist a code length n with average proba
+bility or error less than  
+Thus, we can create a sequence of codes 
+with maximal probabilit y of error converg
+ing to 0 as n  
+We can expurgate codebooks as before</text>
+        </slide>
+        <slide>
+          <slideno>4</slideno>
+          <text>Capacity of AWGN Channel
+We have a memo ryless channel 
+Same arguments as for DMC imply the Xis 
+should be IID, yielding IID Yis 
+The variance of Yi is 2+ 2 
+X N 
+Hence we omit the i subscript in the fol
+lowing 
+I(X; Y )= h(Y )  h(Y |X)
+= h(Y )  EX[h(Y  x|X = x)]
+= h(Y )  EX[h(N|X = x)]
+= h(Y )  h(N)
+ 21 ln 
+2e(2 
+N ) 
+ 21 
+N  
+X + 2 ln 
+2e2 
+To achieve inequalit y with equalit y, select 
+the Xis to be IID N (0,2 ) (could have X
+any mean other than 0, but would aect 
+second moment without changing variance, 
+so not useful in this case), hence the Xis 
+are themselves samples of bandlimited W GN</text>
+        </slide>
+        <slide>
+          <slideno>1</slideno>
+          <text>White Gaussian Noise (WGN)
+WGN is a good model for a variety of noise
+processes:
+-ambient noise
+-dark current
+-noise from ampliers
+A sample at any time N(t) is Gaussian
+It is dened by its power spectrum: R(t)=
+N0(t)
+Its power spectral densit y is N0 over the
+whole spectrum (at PSD)
+What is its bandwidth?
+What is its energy?
+Do we ever actually have WGN?</text>
+        </slide>
+        <slide>
+          <slideno>9</slideno>
+          <text>Spreading
+What happens when use more bandwidth 
+(spreading)? 
+Let us revisit the expression for capacit y:
+1 2 
+C = ln 1+ X 
+2 2 
+N 
+Problem: when we change the bandwidth, 
+we also change the numb er of samples 
+Think in terms of numb er of degrees of 
+freedom 
+For time T and bandwidth W 
+The total energy of the input stays the 
+same, but the energy of the noise is pro
+portional to W 
+Or, alternatively , per degree of freedom, we
+have the same energy per degree of free
+dom for the noise, but the energy for the
+1input decreases proportionally to W</text>
+        </slide>
+        <slide>
+          <slideno>11</slideno>
+          <text>Coding theorem
+We no longer have a discrete input alpha
+bet, but a continuous input alphab et 
+We now have transition pdfs fY x)|X(y|
+For any block length n, let 
+nfY n|Xn(y|xn)= 
+in 
+=1 fY |X(yi|xi) 
+fXn(xn)= n
+i=1 fX(xi) 
+fY n(yn)= n
+i=1 fY (yi) 
+Let R be an arbitra ry rate R&lt;C 
+For each n consider choosing a code of 
+M = enR codewords, where each code-
+word is chosen indep endently with pdf as
+signment fXn(xn)</text>
+        </slide>
+      </slides>
+      <videos/>
+    </lecture>
+    <lecture>
+      <lecture_title>Maximizing capacity, Blahut-Arimoto</lecture_title>
+      <lecture_pdf_url>https://ocw.mit.edu/courses/6-441-information-theory-spring-2010/resources/mit6_441s10_lec09/</lecture_pdf_url>
+      <lectureno>9</lectureno>
+      <slides>
+        <slide>
+          <slideno>4</slideno>
+          <text>Arimoto-Blahut
+Combining the two means maximization when
+e
+yY PY X (y|x) log(PXY (x|y)) | |
+PX(x)= 
+xX  
+e
+yY PY |X (y|x) log(PX|Y (x|y)) 
+PY X (yx) log PY |X (y|x) 
+yY ||
+
+PX (x)PY X (yx)  
+PX (x)exX ||
+=  
+PY X (yx) log PY |X (y|x) 
+yY || 
+PX (x)PY X (yx)  
+
+xPX (x) e 
+ |
+xX |
+X   
+Note also that 
+xX PX(x) = 1. 
+This may be very hard to solve.</text>
+        </slide>
+        <slide>
+          <slideno>6</slideno>
+          <text>Arimoto-Blahut 
+Equivalently 
+ log(P X(x))1+
+yY PY |X(y|x) log 
+PX|Y (x|y)
++ 
+ =0 
+so 
+e 
+xX PY |X (y|x) log
+PX|Y (x|y) 
+PX(x)= 
+PY X (yx) log
+PXY (xy)
+
+xX e 
+xX || ||
+(this ensures that  is such that the sum 
+of the PX(x)s is 1) 
+What about the constraint we did not use 
+for positivit y? 
+The solution we found satises that.</text>
+        </slide>
+        <slide>
+          <slideno>9</slideno>
+          <text>|
+
+
+
+
+Convergence of Arimoto-Blahut 
+Why is the limit C?
+Let PXbe a capacit y achieving PMF
+
+
+Pr+1(x)X 
+Pr (x)X
+ 
+Xx
+PX(x) log
+PX(x)
+ =
+xX 
+log
+ cx 
+PXr (x1), ..., P Xr (x) 
+|X |
+Pr 
+X
+x
+ (x1), ..., P Xr (x) 
+PXr (x)
+ X cx
+X(x) 
+|X |
+P 
+PY X(y|x)
+ =
+|
+xX
+log
+yY
+
+PY X(yx)||
+(x)PY X
+xPr X(yx)X 
+X(x)  |
+P 
+PY X(yx)| 
+|
+xX 
+log
+yY
+
+xX  
+PXr (x
+)
+x) PY |X (y| 
+Pr 
+X (x)PYy
+Y PY |X (y|x) log
+X (y|x)
+xX
+ |
+ e</text>
+        </slide>
+        <slide>
+          <slideno>13</slideno>
+          <text>Other types of maximization 
+Interio r point metho ds 
+Cutting plane algorithms</text>
+        </slide>
+        <slide>
+          <slideno>8</slideno>
+          <text>Convergence of Arimoto-Blahut 
+Proof: 
+For any given PXr , we can increase mutual 
+information by taking 
+PXr (x)PY X (yx)PYr 
+|X = 
+xX PXr (x)|
+PY |X |
+(y|x) 
+With PYr 
+X xed, then choose PXr+1 by |
+PY X (yx) log(Pr (xy))XY Pr+1(x)= e 
+yY ||||
+X PYX (yx) log(PXr 
+Y (xy))
+ 
+xX e 
+yY ||||
+If we dene 
+Pr+1 XYJr = 
+xX 
+yY X (x)PY |X(y|x) log 
+P
+Pr
+Xr|
++1(x
+(x|y
+)) 
+Then Ir  Jr  Ir+1  Jr+1  ... 
+This an upper bounded non-decreasing se
+quence, therefo re it reaches a limit</text>
+        </slide>
+        <slide>
+          <slideno>11</slideno>
+          <text>Convergence of Arimoto-Blahut 
+Hence 
+
+
+
+Pr+1(x)X 
+Pr (x)XPX(x) log
+xX 
+ C  Jr 
+Sum over r 
+m
+m 
+=0r
+ (C  Jr)
+
+ 
+Pr+1(x)X 
+Pr (x)X xX PX(x) log
+r=0
+
+ 
+Pm+1(x)X 
+PX0(x)
+= PX(x) log
+Xx
+
+P (x)  PX(x) log X
+PX0(x)
+xX
+CJr  0 and non increasing, with bounded 
+sum, so it goes to 0, hence Jr converges 
+to C 
+In practice, convergence can be 
+very slow</text>
+        </slide>
+        <slide>
+          <slideno>12</slideno>
+          <text>Example</text>
+        </slide>
+        <slide>
+          <slideno>10</slideno>
+          <text>|
+
+
+Convergence of Arimoto-Blahut
+By considering the K-L distance, we have 
+that 
+PX(x)PY X(yx)
+xX 
+yY ||
+
+xPX(x)PY X (yx)log 
+xX || 0
+PXr (x)PY
+X (y
+)
+|x
+X
+ |
+so
++1rP X 
+Pr (x)X
+
+(x)
+  
+Xx
+PX(x) log
+ PX(x)  
+PY X(y|x)
+|
+xX
+log
+yY
+
+PY X(yx)||
+(x)PY X
+xP X(yx)X 
+ X(x)  |
+P 
+PY X(yx)||
+xX 
+log
+yY
+
+xX  
+PXr (x
+)
+|
+(x)P|x
+Y ) PY X (y 
+y
+Y PY |X (y|x) log
+Pr 
+X X (y|x)
+xX
+ |
+ e</text>
+        </slide>
+        <slide>
+          <slideno>5</slideno>
+          <text>Arimoto-Blahut 
+Proof: 
+The rst two statements follow immedi
+ately from our lemma 
+For any value of x where PXY (xy) = 0,||
+PX(x) should be set to 0 to obtain the max
+imum. 
+To nd the maximum over the PMF PX, 
+let us rst ignore the constraint of positiv
+ity and use a Lagrange multiplier for the 
+
+x PX(x)=1 
+Then 
+PX 
+(x){
+xX 
+yY PX(x)PY |X(y|x) log 
+PX
+P|
+XY 
+((
+xx
+)|y) 
++ 
+ (
+xX PX(x)  1)} =0</text>
+        </slide>
+        <slide>
+          <slideno>7</slideno>
+          <text>Convergence of Arimoto-Blahut 
+Let PX 0 be a PMF and let 
+Pr+1 cx 
+PXr (x1),...,PXr (x) 
+X X(x)= Pr (x)
+xcx 
+PXr (x1),...,PXr (x|X |
+)
+PXr (x) X |X|
+where 
+cx 
+PXr (x1), . . . , P Xr (x) 
+|X |
+= e 
+yY PY |X (y|x) log
+
+xP
+PY
+X |
+(X
+x(
+)y
+P|x
+Y ) 
+|X (y|x)  
+X 
+the sequence Ir of I(X; Y ) for X taking the 
+PMF PXR for Ir converges to C from below</text>
+        </slide>
+        <slide>
+          <slideno>1</slideno>
+          <text>Arimoto-Blahut 
+Lemma 1: 
+I(X; Y ) = max  
+PX(x)PY X(yx) 
+PX|Y  yY xX  ||
+log PXY (x|y)  
+P|
+X(x)  
+Proof:
+I(X; Y )= 
+xX 
+xY PX|Y (x|y)PY (y) log PX|Y (x|y)
+PX (x) 
+Recall: 
+y)= PX (x)PY X (y|x)PX|Y (x| 
+xX PX (x)|
+PY |X (y|x) 
+and 
+PY (y)= 
+xX PX(x)PY |X(y|x)</text>
+        </slide>
+        <slide>
+          <slideno>3</slideno>
+          <text>Arimoto-Blahut 
+Capacit y is 
+C = max max  
+PX(x)PY X(yx) 
+PX PX|YyY xX ||
+
+PXY (xy)
+log 
+P|
+X(x)|
+For xed PX, RHS is maximized when 
+PXY (xy)= PX (x)PY |X (y|x)|| 
+xX PX (x)PY |X (y|x) 
+For xed PX|Y , RHS is maximized when 
+PY X (yx) log( PXY (xy))e 
+yY ||||
+PX(x)= 
+xX 
+yY PY |X (y|x) log( PX|Y (x|y)) 
+e</text>
+        </slide>
+        <slide>
+          <slideno>14</slideno>
+          <text>MIT OpenCourseWare
+http://ocw.mit.edu 
+6.441 Information Theory 
+Spring 2010 
+For information about citing these materials or our Terms of Use, visit: http://ocw.mit.edu/terms .</text>
+        </slide>
+        <slide>
+          <slideno>0</slideno>
+          <text>LECTURE 9 
+Last time: 
+Channel capacit y  
+Binary symmetric channels  
+Erasure channels  
+Maximizing capacit y  
+Lecture outline 
+Maximizing capacit y: Arimoto-Blahut  
+Convergence 
+Examples</text>
+        </slide>
+        <slide>
+          <slideno>2</slideno>
+          <text>Arimoto-Blahut
+I(X; Y )   
+yY 
+PXPX(x)PY X(yx)||
+xX 
+Y (xy)|
+
+ 
+|
+PX(x)log
+I(X; Y )   
+yY 
+PXPY (y)PXY (xy)| =
+|
+xX 
+Y (xy)|
+
+|
+PX(x)log
+
+PXY (xy)||
+PXPY (y)PXY (xy) log | =
+|
+Y (xy)|
+|
+ yY xX
+1
+x
+)
+ (using log(x)  1 
+PY (y)PXY (xy)| 
+|
+YX yx 
+yY xX
+0 PY (y)PXY (x|y)
+ 
+=
+|</text>
+        </slide>
+      </slides>
+      <videos/>
+    </lecture>
+    <lecture>
+      <lecture_title>Channel capacity, binary symmetric and erasure channels</lecture_title>
+      <lecture_pdf_url>https://ocw.mit.edu/courses/6-441-information-theory-spring-2010/resources/mit6_441s10_lec08/</lecture_pdf_url>
+      <lectureno>8</lectureno>
+      <slides>
+        <slide>
+          <slideno>6</slideno>
+          <text>Binary Erasure Channel (BEC) 
+H(E)= H() 
+H(YE)|
+= P (E = 0)H(YE = 0)+ P (E = 1)H(YE = 1)
+ | |
+= (1  )H(X) 
+H(YX)= H() |
+Thus C = maxPX (x)(H(Y |E)) = 1</text>
+        </slide>
+        <slide>
+          <slideno>10</slideno>
+          <text>Maximizing capacity
+I(X; Y ) 
+=  
+PX(k)PY X(jk)||
+kX ,jY 
+PY X(jk)  
+log 
+iX PX|
+(i)P|
+Y |X(j|i) 
+thus 
+I(X;Y ) = I(X = k; Y )  log(e) = 
+PX (k) 
+Note that 
+= k; Y ) I(X; Y )= 
+kX s.t.P X (k)&gt;0 PX(k)I(X 
+so C = 
+kX s.t.P X (k)&gt;0 PX(k)I(X = k; Y ) 
+since all the I(X = k; Y ) are the same 
+and their convex combination is C, each 
+of them individually is C</text>
+        </slide>
+        <slide>
+          <slideno>0</slideno>
+          <text>LECTURE 8 
+Last time: 
+Elias codes  
+Slepian-W olf  
+Comp ression: pulling it together  
+Lecture outline 
+Channel capacit y  
+Binary symmetric channels  
+Erasure channels  
+Maximizing capacit y  
+Reading: Reading: Scts. 8.1-8.3.</text>
+        </slide>
+        <slide>
+          <slideno>13</slideno>
+          <text>DMC capacity
+What about channels that are not symmet
+ric? 
+All inputs may not be useful, but all outputs 
+are 
+For any capacit y-achieving input probabil
+ity, the output probabilities are all positive 
+(for reachable outputs) 
+For some PX(k) = 0 (which must exist for 
+there to be 0 probabilit y outputs) 
+PY X (jk)
+jY PY |X(j|k) log P|
+Y (j)| C 
+but if there is PY (j) = 0, then LHS is</text>
+        </slide>
+        <slide>
+          <slideno>17</slideno>
+          <text>MIT OpenCourseWare
+http://ocw.mit.edu 
+6.441 Information Theory 
+Spring 2010 
+For information about citing these materials or our Terms of Use, visit: http://ocw.mit.edu/terms .</text>
+        </slide>
+        <slide>
+          <slideno>5</slideno>
+          <text>Binary Erasure Channel (BEC)
+E indicato r variable that is 1 if there is an 
+error and is 0 otherwise 
+C = max I(X; Y )
+PX (x)
+= max (H(Y )  H(YX))
+PX (x) |
+= max (H(Y, E)  H(YX))
+PX (x) |
+= max (H(E)+ H(Y X)) 
+PX (x) |E)  H(Y |</text>
+        </slide>
+        <slide>
+          <slideno>14</slideno>
+          <text>DMC capacity
+The output probabilit y vecto r that achieves 
+capacit y is unique and all input probabilit y 
+vecto rs that give rise to the output vecto r 
+yield capacit y. 
+Because of concavit y of mutual information 
+in input probabilit y, if two input probabili
+ties were capacit y-achieving, then any con
+vex combination would also be capacit y-
+achieving 
+Take a random variable Z to represent the 
+value of  
+For all values of Z, I(X; Y ) are the same 
+(corresponding to convex combinations of 
+optimal input distributions), so Y and Z 
+are indep endent, so the PMF of Y does 
+not depend on Z and is unique.</text>
+        </slide>
+        <slide>
+          <slideno>15</slideno>
+          <text>DMC capacity
+Let m be the smallest numb er of inputs 
+that can be used with non-zero probabilit y 
+to achieve capacit y and let X be such a set 
+of inputs. Then, for output alphab et Y, 
+m  |Y| and the input probabilit y to achieve 
+capacit y using inputs in X only is unique. 
+Proceed by contradiction. The output prob
+abilities can be expressed as the solution of 
+the |Y| equations 
+PX(x)PY X(y
+xX ||x)= PY (y)y Y 
+(how about
+xX PX(x) = 1? Sum over all 
+the ys) 
+and there exists at least one valid such 
+PX(x)</text>
+        </slide>
+        <slide>
+          <slideno>3</slideno>
+          <text>Channel capacity
+The inequalit y can be met with equalit y if 
+we take the Xs to be indep endent, because 
+the Y s then are also indep endent 
+Moreover, by taking the Xs to be IID, then 
+we can maximize the last RHS if we select 
+the PMF of X that maximizes each term 
+of the sum 
+Thus, capacit y of a DMC is the maximum 
+average mutual information</text>
+        </slide>
+        <slide>
+          <slideno>12</slideno>
+          <text>Symmetric DMC capacity 
+Another view: 
+I(X = k; Y )
+ 
+
+ 
+
+PY X(jk) 
+
+iX||
+PY X(j|k) log
+ =
+|
+ 1 
+|X | PY X(ji)||jY
+within a partition of outputs, each column 
+of the T matrix is a permutation of each 
+other column 
+thus, all I(X = k; Y ) are the same</text>
+        </slide>
+        <slide>
+          <slideno>2</slideno>
+          <text>Channel capacity
+Channel capacit y for a DMC is also for any 
+n&gt; 1 
+1 maxPXn(xn) I(Xn; Yn)n 
+Indeed, 
+max I(Xn; Yn)
+PXn(xn)
+= H(Yn)  H(Yn Xn) 
+n|
+n 
+i=1 
+n H(Y [i]|Yi1)  H(Y [i]X[i])
+|
+ =
+=1i
+n
+H(Y [i]) 
+ H(Y [i]X[i])
+ 
+=
+|
+=1i
+n
+i=1
+I(X[i]; Y [i])
+i=1</text>
+        </slide>
+        <slide>
+          <slideno>16</slideno>
+          <text>DMC capacit y
+If m&gt; then there is a homogeneous
+ |Y|
+solution with m 
+The sum of the elements of this homoge
+neous solution is 0, hence we can pick a 
+sum of the solution to the equations and of 
+a homogeneous solution (that sum is also 
+a solution) so that one element is 0, which 
+contradicts the fact that m is minimum 
+The same line of reasoning yields unique
+ness. The equations cannot have a homo
+geneous solution by the above argument, 
+so the solution must be unique.</text>
+        </slide>
+        <slide>
+          <slideno>11</slideno>
+          <text>Symmetric DMC capacity
+Consider BSC 
+If we take the inputs to be equip robable, 
+then we maximize H(Y ) 
+H(YX = k) is the same for k =0, 1 |
+For symmetric DMC, capacit y is achieved 
+by having equip robable inputs 
+Check: for symmetric DMC selecting all 
+the inputs equip robable ensures that every 
+output has the same probabilit y 
+all of the H(YX = k) are equal |
+since we have the same set of transition 
+probabilit y values, albeit over dierent out
+puts</text>
+        </slide>
+        <slide>
+          <slideno>1</slideno>
+          <text>Channel capacity
+We describ e a channel by a set of transition 
+probabilities 
+Assume a discrete input alphab et X and a 
+discrete output alphab et Y 
+The transition probabilities are: 
+PYnXn(ynxn)| |
+for all n 
+Let us rst restrict ourselves to discrete 
+memo ryless channels (DMCs), for which 
+nPY n|Xn(y|xn)= n
+i=1 PY |X(y[i]|x[i]) 
+The capacit y of a DMC channel is dened 
+as 
+C = maxPX (x) I(X; Y ) 
+Well see later why this capacit y is actu
+ally achievable when we study the coding 
+theorem</text>
+        </slide>
+        <slide>
+          <slideno>4</slideno>
+          <text>Binary Symmetric Channel (BSC)
+I(X; Y )= H(Y )  H(YX) 
+= H(Y )   |
+PX(x)H(Y |X = x) 
+x=0,1 
+=1  H() 
+where H()= ( log() + (1  ) log(1  ))</text>
+        </slide>
+        <slide>
+          <slideno>8</slideno>
+          <text>Maximizing capacity
+A set of necessa ry and sucient conditions 
+on an input PMF to achieve capacit y over 
+a DMC is that 
+I(X = k; Y )= C for all k s.t. PX(k) &gt; 0 
+I(X = k; Y )  C for all k s.t. PX(k)=0 
+where 
+I(X = k; Y )
+
+
+PY X(jk)||
+PX(i)PY PY X(jk) log |
+ =
+ 
+iX
+|
+X(ji)|jY
+ |
+C is the capacit y of the channel</text>
+        </slide>
+        <slide>
+          <slideno>9</slideno>
+          <text>Maximizing capacity
+We use the following theorem for the proof:
+Let f() be a concave function of  = 
+(1, . . . , m) over the region R when  is a 
+probabilit y vecto r. Assume that the partial 
+derivatives f() are dened and continuk 
+ous over R with the possible exception that 
+limk0 f() is allowed to be +. Then a k 
+necessa ry and sucient condition on  to 
+maximize f over R is that: 
+f() =  k s. t. k &gt; 0k 
+f()   for all other k k</text>
+        </slide>
+        <slide>
+          <slideno>7</slideno>
+          <text>Symmetric channels
+Let us consider the transition matrix T the 
+|X ||Y| matrix whose elements are PY |X(y|x) 
+A DMC is symmetric i the set of out
+puts can be partitioned into subsets such 
+that for all subsets the matrix T (using in
+puts as rows and outputs as columns) has 
+the property that within each partition the 
+rows are permutations of each other and 
+the columns are permutations of each other</text>
+        </slide>
+      </slides>
+      <videos/>
+    </lecture>
+    <lecture>
+      <lecture_title>Joint source channel coding</lecture_title>
+      <lecture_pdf_url>https://ocw.mit.edu/courses/6-441-information-theory-spring-2010/resources/mit6_441s10_lec15/</lecture_pdf_url>
+      <lectureno>15</lectureno>
+      <slides>
+        <slide>
+          <slideno>1</slideno>
+          <text>Data compression
+Consider coding several symb ols together
+C : X n  D 
+expected codeword length is 
+xnX n PXn(xn)l(xn) 
+optimum satises 
+HD(Xn)  L HD(Xn)+1 
+per symb ol codeword length is 
+HD(Xn) 
+n  L 
+n  HD(Xn) 
+n + 1 
+n 
+Thus, we have that the rate R is lower 
+bounded by entrop y</text>
+        </slide>
+        <slide>
+          <slideno>0</slideno>
+          <text>LECTURE 15
+Last time:
+Feedback channel: setting up the prob  
+lem 
+Perfect feedback  
+Feedback capacit y  
+Lecture outline
+Data comp ression  
+Joint source and channel coding theorem  
+Converse  
+Robustness  
+Brain teaser  
+Reading: Sct. 8.13.</text>
+        </slide>
+        <slide>
+          <slideno>8</slideno>
+          <text>Converse to the joint source channel
+coding theorem
+We need to show that a probabilit y of error 
+bounded that converges 0 as n  implies 
+that H(V ) &lt;C 
+Let us use Fanos inequalit y:
+H(Vn|Vn)  1+ nP n log(|V|) e 
+Let us now use the denition of entrop y 
+rate: 
+The entrop y rate of a stochastic process V
+is 
+lim n 1 
+n H(V n) 
+if it exists 
+Equivalently , the entrop y rate of a stochas
+tic process is 
+n 1H(Vn|Vn)+ n 1I(Vn; Vn)</text>
+        </slide>
+        <slide>
+          <slideno>10</slideno>
+          <text>Robustness of joint source channel
+coding theorem and its converse
+The joint channel source coding theorem 
+and its converse hold under very general 
+conditions: 
+-memo ry in the input 
+-memo ry in channel state 
+-multiple access 
+-but not broadcast conditions</text>
+        </slide>
+        <slide>
+          <slideno>9</slideno>
+          <text>Converse to the joint source channel
+coding theorem
+Hence, we have that 
+1 1
+H(V )  n (1 + nP n log(|V|)) + nI(Vn; Vn)e 
+1 1 = n + Pen log(|V|)+ nI(Vn; Vn) 
+1 1  n + Pn log(|V|)+ nI(X; Y )e 
+from DPT 
+1  n + Pn log(|V|)+ Ce 
+since Pn 0, it must be that H(V )  Ce 
+for the above to be true for all n</text>
+        </slide>
+        <slide>
+          <slideno>6</slideno>
+          <text>Joint source channel coding
+We require at most n(H(V )+ ) bits to 
+describ e the elements of the typical set 
+Let us create a set of messages from these 
+sequences 
+The maximum probabilit y of any message 
+being decoded in error is arbitra rily close 
+to 0 as long as R = H(V )+ &lt;C for all n 
+LARGE ENOUGH 
+Note: the size of the X may not be n, but 
+it grows in n 
+The receiver decodes to attempt to recover 
+an element from the typical set 
+Because we have assumed that the AEP is 
+satised, we have that  can be chosen to 
+be as small as we want</text>
+        </slide>
+        <slide>
+          <slideno>11</slideno>
+          <text>A brain teaser</text>
+        </slide>
+        <slide>
+          <slideno>12</slideno>
+          <text>MIT OpenCourseWare
+http://ocw.mit.edu 
+6.441 Information Theory 
+Spring 2010 
+For information about citing these materials or our Terms of Use, visit: http://ocw.mit.edu/terms .</text>
+        </slide>
+        <slide>
+          <slideno>2</slideno>
+          <text>Channel coding
+Coding theorem: 
+For any source of messages, any rate R 
+below C is feasible, i.e achievable with low 
+enough probabilit y of error 
+Ecodebook s,messag es[Pe]  2NEr(R,PX ) 
+For the PX that yields capacit y, Er(R, PX) 
+is positive for R&lt;C 
+also the maximum probabilit y of error is up
+per bounded 
+Converse: 
+For any source of IID messages, any trans
+mission at rate R above C is bounded away 
+from 0 
+R  n 1+ PeR + C</text>
+        </slide>
+        <slide>
+          <slideno>5</slideno>
+          <text>Joint source channel coding 
+A (n) is a typical set if it is the set of se
+quences in the set of all possible sequences 
+vn n with probabilit y: V
+2n(H(V )+)  PV n (vn)  2n(H(V ))
+Since we assume that our V sequence satis
+es the AEP, for all , there exists a typical 
+set that has probabilit y 
+Pr(A (n))  1   
+and has cardinalit y upper bounded by 2n(H(V )+) 
+We encode only those elements in the typ
+ical set, the ones outside will contribute  
+to the probabilit y of error</text>
+        </slide>
+        <slide>
+          <slideno>7</slideno>
+          <text>Joint source channel coding
+The probabilit y of error is upper bounded 
+by the probabilit y that we are not in the 
+typical set, plus the probabilit y that we are 
+in the typical set but we have an error 
+Thus, we have that for any upper bound
+ on the probabilit y of error, there exists a 
+large enough n such that the probabilit y of 
+error is upper bounded by  
+Note: the probabilit y of error from not be
+ing in the typical set may be higher or lower 
+than that from incorrect decoding 
+Thus, we have shown the forward part of 
+the theorem: 
+for any V1, . . . , Vn that satises the AEP, 
+there exists a source code and a channel 
+code such that Pn 0 as n  e  
+Moreover, the source coding and 
+the channel coding may be 
+done indep endently</text>
+        </slide>
+        <slide>
+          <slideno>3</slideno>
+          <text>Joint source and channel coding 
+Is H  C enough?
+Should coding be done jointly or not?</text>
+        </slide>
+        <slide>
+          <slideno>4</slideno>
+          <text>Joint source channel coding
+Consider a sequence of input symb ols Vn = 
+(V1, . . . Vn) 
+Assume that Vn =(V1, . . . Vn) satises the 
+AEP 
+We map the sequence onto a codeword 
+X(Vn) 
+The receiver receives Y (a vecto r) and cre
+ates an estimate Vn = g(Y ) of Vn 
+We consider the end-to-end probabilit y of 
+error: 
+Pen = P (Vn =Vn)</text>
+        </slide>
+      </slides>
+      <videos/>
+    </lecture>
+    <lecture>
+      <lecture_title>Multiple access channels</lecture_title>
+      <lecture_pdf_url>https://ocw.mit.edu/courses/6-441-information-theory-spring-2010/resources/mit6_441s10_lec20/</lecture_pdf_url>
+      <lectureno>20</lectureno>
+      <slides>
+        <slide>
+          <slideno>0</slideno>
+          <text>LECTURE 20 
+Last time: 
+Gaussian channels with feedback  
+Upper bound to benet of capacit y
+  
+Lecture outline 
+Multiple access channels  
+Coding theorem  
+Capacit y region for Gaussian channels  
+Reading: Section 14.1-14.3.</text>
+        </slide>
+        <slide>
+          <slideno>11</slideno>
+          <text>Capacity region
+ 
+2   
+2  
+W1 X1 W2 X2FDMA: 2 ln 1+ W12 , 2 ln 1+ W22 
+N N 
+for equal energies, equal W s desirable 
+TDMA: let  be the fraction of time that 
+user 1 transmits 
+  
+2   
+2 
+ X1 X2 
+2ln 1+ 2 , 1
+2  ln 1+ (1)2
+N N
+for equal energies,  =0.5 desirable 
+How do we achieve points on the dominant 
+face, that yields maximum sum rate? 
+First way: time share between the corners 
+Other way: rate splitting</text>
+        </slide>
+        <slide>
+          <slideno>13</slideno>
+          <text>Capacity region 
+We have 
++ ln
++ ln
+= ln
+= ln
+
+
+2
+1
+1+ X1 
+2 +(1  )2 
+N X1 ln
++ 2 
+X2 2
+
+ 
+2 
+X21
+1+
+2 
+N + (1  )2 
+X1 2
+
+(1  )2 
+X1 
+2 1
+1+
+2
+N
+
+ 
+ 
+2 
+X1 2 
+X2 
+2 
+N 1
+ 1
+1+
+ ln
+1+
+ +
+2+ 2 
+X2 N2
+ 2
+
+ 
+2+ 2 
+X1 X21
+1+
+2 
+N2</text>
+        </slide>
+        <slide>
+          <slideno>7</slideno>
+          <text>0 E1 
+, fX1(x1) , fX2(x2) 
+ R1&gt; 0 
+We can establish analogous results for er
+rors of type 2 and 3</text>
+        </slide>
+        <slide>
+          <slideno>2</slideno>
+          <text>Coding theorem 
+mi: message sent by user i 
+mi: decoded message for user i 
+Pe1(Pe2): probabilit y that the decoded code-
+word for user 1 (2) is dierent from that 
+sent by user 1 (2) while the decoded code-
+word for user 2 (1) is the same as the one 
+sent by user 2 (1) (such errors will be de
+noted as errors of type 1 (2)) 
+Pe1,2: probabilit y that the decoded code-
+words for both users 1 and 2 are dierent 
+from those sent by those users (such an 
+error will be denoted as error of type 3) 
+We begin by bounding the probabilit y of er
+ror with an exponential argument and then
+we explo re the behavio r of that argument</text>
+        </slide>
+        <slide>
+          <slideno>1</slideno>
+          <text>Multiple access channels
+Several users share the same medium 
+What is the right metric? Joint informa
+tion? 
+User 1 has rate R1 and user 2 has rate R2 
+How do we relate them to mutual informa
+tion?
+Model: Yi = X1i + X2i + Ni
+Liao and Ahlsw ede (indep endently , 1972)
+R1  I(X1; Y |X2) 
+R2  I(X2; Y |X1)
+R1+ R2  I((X1,X2); Y )</text>
+        </slide>
+        <slide>
+          <slideno>4</slideno>
+          <text>Coding theorem 
+Using arguments simila r to those for the 
+single user strong coding theorem, we can 
+establish 
+  [0, 1], fX1(x1) and fX2(x2) probabil
+ity densit y functions for X1 and X2, respec
+tively , we have 
+Pe1,m1,m2  
+exp 
+N 
+R1+ E1 
+, fX1(x1) , fX2(x2)
+0 
+where we have dened, 
+E01 
+, fX1(x1) , fX2(x2) 
+= N 1 
+ln fX2(x2)
+yx2
+ 1 1+ 
+fX1(x) fY X,X2 
+yx,x2
+1+ dx dx2dy 
+x | |</text>
+        </slide>
+        <slide>
+          <slideno>14</slideno>
+          <text>Capacity region 
+If we have 
+2 
+X2 1
+= ln 
+then R1 is dened as 1+
+ R2
+2 +(1)2, 
+N X1 2
+
+
+
+ R2
+2+ 2 
+X1 X2 
+2 
+N 1
+2
+ln
+1+
+
+ 
+2 
+X11
+= ln
++ ln
+One variable provides all the necessa ry de
+grees of freedom 1+
+2 
+N  + (1  )2 
+X1 + 2 
+X2 2
+
+(1  )2 
+X1 
+2 1
+1+
+2
+N</text>
+        </slide>
+        <slide>
+          <slideno>16</slideno>
+          <text>MIT OpenCourseWare
+http://ocw.mit.edu 
+6.441 Information Theory 
+Spring 2010 
+For information about citing these materials or our Terms of Use, visit: http://ocw.mit.edu/terms .</text>
+        </slide>
+        <slide>
+          <slideno>15</slideno>
+          <text>Capacity region 
+In general, for  users, the capacit y region 
+is 
+
+iS Ri  I((Xi)iS; Y |(Xi)iS), S {1,...,} 
+We have 2  1 pseudo-users are sucient 
+to achieve any point on the multiple-access 
+dominant face</text>
+        </slide>
+        <slide>
+          <slideno>9</slideno>
+          <text>Capacity region 
+Cover-Wyner region for two users</text>
+        </slide>
+        <slide>
+          <slideno>10</slideno>
+          <text>Capacity region
+Consider AWGN Multiple-access channel, 
+user i has energy 2 
+X1 
+Pentagon: dominant face corresponds to
+ 
+2+2 
+1ln 1+ X1 X2 
+2 2 
+N 
+Interference cancellation at the corners: 
+ 
+2   
+2  
+1
+2ln 1+ 2 X
++1 
+2 , 1
+2ln 1+ X
+22 
+X2 N N 
+
+1  
+2   
+2  
+ln 1+ X1 , 1ln 1+ X2 
+2 2 2 2+2 
+N X1 N 
+without interference cancellation: 
+2 2
+1
+2 ln  
+1+ 2 X
++1 
+2  
+, 1
+2 ln  
+1+ 2 X
++2 
+2  
+X2 N X1 N 
+Recall DS-CDMA example</text>
+        </slide>
+        <slide>
+          <slideno>6</slideno>
+          <text>Coding theorem
+Let q1,N , q2,N be a pair of probabilit y den
+sity functions for the codewords of length 
+N of users 1 and 2 
+In order for E01 
+, q1,N, q2,N
+
+R1
+in [0, 1],
+necessa ry and sucient that
+to be
+strictly positive for
+some 
+ it is
+
+ 
+
+E01 
+, q1,N, q2,N 
+ R1 
+ 
+
+=0
+&gt; 0.
+We have that: 
+For all fX1(x1) , fX2(x2) probabilit y densit y 
+functions for X1, X2, we have 
+I(X1;YX2)|&gt;R1  0N 
+  [0, 1] s.t.</text>
+        </slide>
+        <slide>
+          <slideno>12</slideno>
+          <text>Capacity region
+Make one user (say user 1) into two virtual
+users (virtual user 1 and virtual user 3) and
+split energy between these two virtual users
+Virtual user 1 rate: 
+ 
+2 
+1ln 1+ X1 
+2 2 +(1)2+2 
+N X1 X2 
+User 2 rate: 
+ 
+2 
+1ln 1+ X2 
+2 2 +(1)2 
+N X1 
+Virtual user 3 rate: 
+ 
+(1)2 
+1ln 1+ X1 
+2 2 
+N</text>
+        </slide>
+        <slide>
+          <slideno>3</slideno>
+          <text>Coding theorem 
+We rst consider errors of type 1 -results 
+for errors of type 2 can be derived analo
+gously 
+We denote Pe1,m1,m2 the probabilit y that 
+an error of type 1 occurs conditioned on 
+messages m1 and m2 being sent 
+Using the overba r to denote expectation 
+Pe1,m1,m2 
+= 
+y 
+x1 
+x2 fX1(x1) fX2(x2) fY |X1,X2(y|x1,x2) 
+P 
+(
+ | 
+dx2dx1dy. m1= m1)  m2= m2y, x1,x2
+Using the union bound, we obtain 
+P 
+(
+
+m1= m1)  m2= m2y, x1,x2 |  
+  
+P 
+(
+ |y, x1,x2 
+m=m1 m1= m)  m2= m2 
+0    1.</text>
+        </slide>
+        <slide>
+          <slideno>8</slideno>
+          <text>Coding theorem 
+Let us dene 
+Emin = min 
+max  
+E01 
+, q1,N, q2,N  
+ R1 
+, 
+max  
+E2 
+, fX1(x1) , fX2(x2) 
+ R2 
+,0 
+max  
+E03 
+, q1,N, q2,N  
+ (R1+ R2)  
+where E02 and E03 is dened analogously to 
+E01. We may state the following theorem: 
+For allfX1(x1) , fX2(x2) probabilit y densit y 
+functions for X1, X1, for any messages m1 
+and m2 of users 1 and 2, we have 
+P em1,m2  3eNEmin 
+and 
+I 
+X1; Y |X2 
+&gt;R1  0 and N 
+I 
+X2; Y |X1 
+&gt;R2  0 and N 
+I 
+X1,X2 
+; Y  
+N &gt;R1+ R2  0  Emin &gt; 0</text>
+        </slide>
+        <slide>
+          <slideno>5</slideno>
+          <text>Coding theorem
+It now suces to determine the behavio r 
+of the exponent to determine whether the 
+upper bound to error probabilit y becomes 
+vanishingly small 
+The following lemma parallels the one for 
+the one-user case 
+If I (X1; Y |X2) &gt; 0, then for all 1    0 
+we have 
+NE01 
+, fX1(x1) , fX2(x2) 
+I (X1; Y |X2)   &gt; 0 
+(1) 
+E01 
+, fX1(x1) , fX2(x2) 
+ 0 (2) 
+2NE01 
+, fX1(x1) , fX2(x2) 
+2  0 (3) 
+E01 
+, fX1(x1) , fX2(x2)
+= I (X1; Y |X2) .  N =0 
+(4)</text>
+        </slide>
+      </slides>
+      <videos/>
+    </lecture>
+    <lecture>
+      <lecture_title>Channel side information, wide-band channels</lecture_title>
+      <lecture_pdf_url>https://ocw.mit.edu/courses/6-441-information-theory-spring-2010/resources/mit6_441s10_lec23/</lecture_pdf_url>
+      <lectureno>23</lectureno>
+      <slides>
+        <slide>
+          <slideno>11</slideno>
+          <text>Interp retation
+We may relax the assumption of the peak 
+bandwidth 
+Assume second moment (variance) scales 
+as  1 and fourth moment (kurtosis) scales 
+1as 2
+The mutual information goes to 0 as   
+ 
+We may also relax the assumption regard
+ing the channel block-fading in time and
+frequency as long as we have decorrelation</text>
+        </slide>
+        <slide>
+          <slideno>5</slideno>
+          <text>Upper bound to capacity
+We rst rewrite the mutual information term:
+1 
+X[j](i+1) TW ; Y [j](i+1)T W  
+TI iTW +1 iT W +1 
+1 
+Y [j](i+1)T W  
+= h T iTW +1 
+1 
+Y [j](i+1)T W X[j](i+1)TW 
+ Th iTW +1 |iT W +1 (2)
+We may upper bound the rst term of (2):
+1 
+Y [j](i+1)TW 
+Th iTW +1
+1  
+ 
+ln (2e)TW  Y [j](i+1) TW2T 
+iT W +1 
+Gaussian distribution bound TW
+ 21 
+T ln (2e)TW 
+F 2 2 X[i]+1 
+i=1 
+from Hadama rds inequalit y 
+TW
+= W ln (2e)+ 1  
+F2
+ln 
+2 
+X[i]+1 
+2 2Ti=1 
+W W  
+2  
+ 2 ln (2e)+ 2 ln F E + 1 (3) 
+from concavit y of ln and our average energy 
+constraint.</text>
+        </slide>
+        <slide>
+          <slideno>2</slideno>
+          <text>Channel model 
+Block fading in bandwidth and in time 
+Over each coherence bandwidth of size W ,
+the channel experiences Rayleigh at fading
+All the channels over distinct coherence band
+widths are indep endent, yielding a block-
+fading model in frequency 
+We transmit over  coherence bandwidths 
+The energy of the propagation coecient 
+F [i]j over coherence bandwidth i at sam
+pled time j is F 
+For input X[i]j at sample time j (we sample 
+at the Nyquist rate W ), the corresponding 
+output is Y [i]j = F [i]jX[i]j + N[i]j, where 
+the N[i]js are samples of WGN bandlimited 
+to a bandwidth of W , with energy normal
+ized to 1</text>
+        </slide>
+        <slide>
+          <slideno>3</slideno>
+          <text>Channel model 
+The time variations are block-fading in na
+ture 
+The propagation coecient of the channel 
+remains constant for T symb ols (the co
+herence interval), then changes to a value 
+indep endent of previous values 
+Thus, F [i](j+1)T W is a constant vecto r and jT W +1 
+the F [i](j+1)T W are mutually indep endent jT W +1 
+for j =1, 2,.... 
+Signal constraints: 
+For the signals over each coherence band
+  
+width, the second moment is upper bounded 
+by E[X2] E
+ 
+The amplitude is upper bounded by  
+E[X2]  E</text>
+        </slide>
+        <slide>
+          <slideno>1</slideno>
+          <text>Spreading over fading channels 
+Channel decorrelates in time T 
+Channel decorrelates in frequency W 
+Recall Markov channels: dicult y arises when 
+we do not know the channel 
+Gilbert-Eliot channel: hypothesis testing for 
+what channel state is 
+Consider several channels in parallel in fre
+quency (recall that if channels are known, 
+we can water-ll)</text>
+        </slide>
+        <slide>
+          <slideno>7</slideno>
+          <text>Upper bound to capacity
+Hence, we may rewrite (3) as 
+1 
+(i+1)TW (i+1)TW  
+Th YiTW +1 |XiT W +1 
+1  
+(i+1)T W 
+2  
+= EX ln xiT W +1 F 2 +1 2T
+W
++ ln(2 e) (5)2 
+We seek to minimize the RHS of (5) sub
+ject to the second moment constraint hold
+ing with equalit y and the subject to the 
+peak amplitude constraint 
+The distribution for X which minimizes the 
+RHS of (5) subject to our constraints can 
+be found using the concavit y of the ln func
+tion 
+The distribution is such that the only val
+ues which Xcan take are 0 and  with || 
+2 2 E 
+probabilities 1 Eand E
+2, respectively . 2</text>
+        </slide>
+        <slide>
+          <slideno>10</slideno>
+          <text>Interpretation
+Over any channel (slice of of bandwidth of 
+size W ), we do not have enough energy to 
+measure the channel satisfacto rily 
+Necessa ry assumptions: 
+energy scales per bandwidth slice over  
+the whole bandwidth 
+peak energy per bandwidth slice over  
+the whole bandwidth</text>
+        </slide>
+        <slide>
+          <slideno>9</slideno>
+          <text>Upper bound to capacity
+What is the limit for  innite? 
+ln(1 + x)  x for small x 
+First term goes to 2 
+F W E
+2 
+Second term also goes to 2 
+F W E
+2 
+Graphical interp retation</text>
+        </slide>
+        <slide>
+          <slideno>8</slideno>
+          <text>Upper bound to capacity
+Thus, we may lower bound (5) by 
+1 
+(i+1) TW (i+1)T W  
+Th Y |XiT W +1 iT W +1 
+2Eln  
+TW 2 
+F 2 +1  
++ W ln(2 e)  2T2 E 2 
+(6) 
+Combining (6), (3) and (1) yields 
+C 
+W, E, F 2 , T, ,  
+W ln  
+F 2 E +1   
+2  
+E2 
+ln  
+TW 2 
+F 2 +1  
+(7) 2T2 E</text>
+        </slide>
+        <slide>
+          <slideno>12</slideno>
+          <text>MIT OpenCourseWare
+http://ocw.mit.edu 
+6.441 Information Theory 
+Spring 2010 
+For information about citing these materials or our Terms of Use, visit: http://ocw.mit.edu/terms .</text>
+        </slide>
+        <slide>
+          <slideno>4</slideno>
+          <text>Upper bound to capacity 
+Capacit y is C 
+W, E,2 , T, ,  
+F 
+C 
+W, E, F 2 , T, ,  
+= lim max 
+
+1 k1 k pX 
+
+ 
+I 
+X[j](i+1)T W ; Y [j](i+1)T W 
+k T iTW +1 iT W +1  
+i=1 j=1 
+(1) 
+where the fourth central moment of X[j]i is 
+upper bounded by  
+2 and its average energy 
+constraint is E
+ . 
+Since we have no sender channel side in
+formation and all the bandwidth slices are 
+indep endent, we may use the fact that mu
+tual information is concave in the input dis
+tribution to determine that selecting all the 
+inputs to be IID maximizes the RHS of (1).</text>
+        </slide>
+        <slide>
+          <slideno>6</slideno>
+          <text>Upper bound to capacity 
+We now proceed to minimize the second 
+term of (1) 
+X[j](i+1)T W Y [j](i+1)TWConditioned on iT W +1 , iT W +1 
+is Gaussian, since F [j](i+1)T W is GaussianiT W +1 
+and N(i+1)TW Gaussian and indep endentiT W +1 
+of F 
+T 1 h 
+Y [j](i+1)T W |X[j](i+1)T W  
+iT W +1 iT W +1 
+1  
+
+= EX ln (2e)T  Y [j](i+1) TW
+2T iTW +1
+(4) 
+ (i+1) TW has kth diagonal term F 2 x[k]2+ Y [j]iT W +1 
+1 and o-diagonal (k, j) term equal to x(k)x(j)F 2, 
+conditioned on 
+X[j](i+1)T W = x =[x(1), ...,x(TW )]iT W +1 
+The eigenvalues j of Y are 1 for j = 
+1 ...TW  1 and ||x|| 2 2 +1 for j = TW .F</text>
+        </slide>
+        <slide>
+          <slideno>0</slideno>
+          <text>LECTURE 23 
+Last time: 
+Finite-state channels  
+Lower capacit y and upper capacities  
+Indecomp osable channels  
+Markov channels  
+Lecture outline 
+Spreading over fading channels  
+Channel model  
+Upper bound to capacit y  
+Interp retation</text>
+        </slide>
+      </slides>
+      <videos/>
+    </lecture>
+    <lecture>
+      <lecture_title>Differential entropy, maximizing entropy</lecture_title>
+      <lecture_pdf_url>https://ocw.mit.edu/courses/6-441-information-theory-spring-2010/resources/mit6_441s10_lec16/</lecture_pdf_url>
+      <lectureno>16</lectureno>
+      <slides>
+        <slide>
+          <slideno>0</slideno>
+          <text>LECTURE 16
+Last time:
+Data comp ression  
+Coding theorem  
+Joint source and channel coding theorem  
+Converse  
+Robustness  
+Brain teaser  
+Lecture outline
+Dierential entrop y  
+Entrop y rate and Burgs theorem  
+AEP  
+Reading: Chapters 9, 11.</text>
+        </slide>
+        <slide>
+          <slideno>4</slideno>
+          <text>Dierential entrop y 
+The chain rules still hold: 
+h(X, Y )= h(X)+ h(YX)= h(Y )+ h(X Y ) | |
+I((X, Y ); Z)= I(X; Z)+ I(Y ; ZY )|
+K-L distance D(fX(x)||fY (y)) =  fX(x) ln 
+fX (x) 
+fY (y) 
+still remains non-negative in all cases 
+Conditioning still reduces entrop y, because 
+dierential entrop y is concave in the input 
+(Jensens inequalit y) 
+Let f(x)= x ln(x) then 
+1 f (x)= xx  ln(x) 
+=  ln(x)  1 
+and 
+1 f(x)=  &lt; 0 x 
+for x&gt; 0. 
+Hence I(X; Y )= h(Y )  h(Y |X)  0</text>
+        </slide>
+        <slide>
+          <slideno>10</slideno>
+          <text>Entropy rate and Burgs theorem 
+The constraints E 
+XiXi+k  
+= k, k =0, 1,...,p, 
+i can be viewed as an autocorrelation con
+straint 
+By selecting the ais according to the Yule-
+Walker equations, that give p+1 equations 
+ion p + 1 unkno wns 
+R(0) =  p
+k=1 akR(k)+ 2 
+R(l)=  p
+k=1 akR(l  k) 
+(recall that R(k)= R(k)) we can solve for 
+a1,a2, . . . , ap, 2 
+What is the entrop y rate? 
+n
+h(Xn)=  
+h(X i|Xi1)
+i=1
+n
+=  
+h(X iXi1)|ip 
+i=1 
+n
+=  
+h(i) 
+i=1</text>
+        </slide>
+        <slide>
+          <slideno>5</slideno>
+          <text>Dierential entrop y 
+H(X)  0 always 
+and H(X)=0 for X a constant 
+Let us consider h(X) for X constant 
+For X constant fX(x)= (x) 
+ +  
+1  
+h(X)= fX(x) ln dx (4) 
+ fX(x) 
+h(X)   
+Dierential entrop y is not always positive 
+See 9.3 for discussion of relation between 
+discrete and dierential entrop y 
+Entrop y under a transfo rmation: 
+h(X + c)= h(X) 
+h(X )= h(X)+ ln (||)</text>
+        </slide>
+        <slide>
+          <slideno>3</slideno>
+          <text>Dierential entropy 
+Dierential entrop y: 
+ +  
+1  
+h(X)= fX(x) ln dx (3) 
+ fX(x) 
+All denitions follow as before replacing PX 
+with fX and summation with integration 
+I(X; Y )
+ +  +  fX,Y (x, y) 
+= fX,Y (x, y) ln dxdy 
+  fX(x)f Y (y)
+= D 
+fX,Y (x, y)||fX(x)f Y (y)
+= h(Y )  h(Y |X)
+= h(X)  h(X|Y )
+Joint entrop y is dened as 
+h(Xn)=   fXn(xn)ln 
+fXn(xn) 
+dx1 . . . dxn</text>
+        </slide>
+        <slide>
+          <slideno>7</slideno>
+          <text>Maximizing entropy
+Consider some other random variable Y with 
+fy(y) pdf that satises the conditions but 
+is not of the above form 
+h(Y )= 
+fY (x) ln(fY (x))dx 
+
+fY (x)  
+fX(x) fY (x) ln
+ fX(x) dx
+ =  
+
+()ln( ()) f f dx x x Y X D(fY ||fX)  
+fY (x) ln(fX(x))dx =
+
+
+
+0  1+
+
+m 
+m i=1 fY (x)
+ iri(x)
+ dx
+ =  
+
+0  1+
+
+fX(x)
+ iri(x)
+ dx
+ =  
+i=1
+= h(X) 
+Special case: for a given variance, a Gaus
+sian distribution maximizes entrop y 
+For X  N(0,2), h(X) = 1 ln(2 e2)2</text>
+        </slide>
+        <slide>
+          <slideno>6</slideno>
+          <text>Maximizing entropy 
+For H(Z), the uniform distribution maxi
+mized entrop y, yielding log(|Z|) 
+The only constraint we had then was that 
+the inputs be selected from the set Z 
+We now seek a fX(x) that maximizes h(X) 
+subject to some set of constraints 
+fX(x)  0 
+ fX(x)dx =1 
+ fX(x)r i(x)dx = i where {(r1,1),..., (rm, m)}
+is a set of constraints on X 
+01+m Let us consider fX(x)= e i=1 iri(x). 
+Let us show it achieves a maximum entrop y</text>
+        </slide>
+        <slide>
+          <slideno>11</slideno>
+          <text>AEP 
+WLLN still holds:
+ 1 ln 
+fXn(xn) 
+E[ln(f X(x))] = h(X)
+n 
+in probabilit y for Xis IID 
+Dene V ol(A)= 
+A dx1 . . . dxn 
+Dene the typical set A(
+n) as: 
+
+(x1, . . . , xn)s.t.| 1 ln 
+fXn(xn) 
+ h(X)|  
+n 
+By the WLLN, P (A (n)) &gt; 1   for n large 
+enough</text>
+        </slide>
+        <slide>
+          <slideno>13</slideno>
+          <text>MIT OpenCourseWare
+http://ocw.mit.edu 
+6.441 Information Theory 
+Spring 2010 
+For information about citing these materials or our Terms of Use, visit: http://ocw.mit.edu/terms .</text>
+        </slide>
+        <slide>
+          <slideno>12</slideno>
+          <text>AEP 
+1= fXn(xn)dx1 . . . dxn 
+1   
+(n) en(h(X)+)dx1 . . . dxn A 
+en(h(X)+)  V ol(A (n)) 
+For n large enough, P (A(
+n)) &gt; 1   so 
+1     
+(n) fXn(xn)dx1 . . . dxn A 
+1     
+A(n) en(h(X))dx1 . . . dxn 
+1    V ol(A(
+n))en(h(X))</text>
+        </slide>
+        <slide>
+          <slideno>1</slideno>
+          <text>Continuous random variables
+We consider continuous random variables 
+with probabilit y densit y functions (pdfs) 
+X has pdf fX(x) 
+Cumulative distribution function (CDF) 
+FX(x)= P (X  x)=  x fX(t)dt 
+pdfs are not probabilities and may be greater 
+than 1 
+in particula r for a discrete Z 
+PZ(z)= PZ(z) 
+but for continuous X 
+P (X  x)= P (X  x)= FX x  x 
+fX(t)dt   
+so fX(x)= dFX (x)= 1fX x  
+dx</text>
+        </slide>
+        <slide>
+          <slideno>8</slideno>
+          <text>Entropy rate and Burgs theorem 
+The dierential entrop y rate of a stochastic 
+process {Xi} is dened to be limn h(Xn) 
+n 
+if it exists 
+In the case of a stationa ry process, we can 
+show that the dierential entrop y rate is 
+limn h(X n|Xn1) 
+The maximum entrop y rate stochastic pro
+cess {Xi} satisfying the constraints E 
+XiXi+k  
+= 
+k, k =0, 1,...,p, i is the pth order Gauss-
+Markov process of the form 
+p
+Xi =   
+akXik +i 
+k=1 
+where the is are IID  N(0,2), indep en
+dent of past Xs and a1,a2, . . . , ap, 2 are 
+chosen to satisfy the constraints 
+In particula r, let X1, . . . , Xn satisfy the con
+straints and let Z1, . . . , Zn be a Gaussian 
+process with the same covariance matrix as 
+X1, . . . , Xn. The entrop y of Zn is at least 
+as great as that of Xn .</text>
+        </slide>
+        <slide>
+          <slideno>2</slideno>
+          <text>Continuous random variables
+In general, for Y = g(X) 
+Get CDF of Y : FY (y)= P(Y  y) Dier
+entiate to get 
+dFYfY (y)= (y)dy 
+X: uniform on [0,2] 
+Find pdf of Y = X3 
+Solution: 
+FY (y)= P(Y  y)= P(X3  y) (1) 
+= P(X  y 1/3)= 1 y 1/3 (2)2
+dFY 1 fY (y)= dy (y)= 
+6y2/3</text>
+        </slide>
+        <slide>
+          <slideno>9</slideno>
+          <text>Entropy rate and Burgs theorem
+Facts about Gaussians: 
+-we can always nd a Gaussian with any 
+arbitra ry autocorrelation function 
+-for two jointly Gaussian random variables 
+X and Y with an arbitra ry covariance, we 
+can always express Y = AX + Z for some 
+matrix A and Z indep endent of X 
+-if Y and X are jointly Gaussian random 
+variables and Y = X + Z then Z must also 
+be 
+-a Gaussian random vecto r Xn has pdf 
+1 fXn(xn)= 
+2|Xn|n 
+e1(xnXn)T 1(xnXn)2 Xn
+where  and  denote autocovariance and 
+mean, respectively 
+-The entrop y is h(Xn)= 1
+2ln 
+(2e)n|Xn|</text>
+        </slide>
+      </slides>
+      <videos/>
+    </lecture>
+    <lecture>
+      <lecture_title>Different types of convergence, asymptotic equipartition property (AEP), typical set, joint typicality</lecture_title>
+      <lecture_pdf_url>https://ocw.mit.edu/courses/6-441-information-theory-spring-2010/resources/mit6_441s10_lec03/</lecture_pdf_url>
+      <lectureno>3</lectureno>
+      <slides>
+        <slide>
+          <slideno>15</slideno>
+          <text>Jointly typical sequences
+Use the union bound 
+Pr((Xn,Y n)  A (n))
+ Pr((Xn,Y n)  A (n))
++ Pr((Xn)  A(n)) 
++ Pr((Yn)  A(n)) 
+For A single typical sequence for pair, A 
+for X and A for Y 
+each element in the RHS goes to 0</text>
+        </slide>
+        <slide>
+          <slideno>12</slideno>
+          <text>Consequences of the AEP: using the
+typical set for compression
+Description in typical set requires no more 
+than n(H(X)+ ) + 1 bits (correction of 1 
+bit because of integralit y) 
+(n)C 
+Description in atypical set A requires 
+no more than n log(|X |) + 1 bits 
+Add another bit to indicate whether in A (n) 
+or not to get whole description</text>
+        </slide>
+        <slide>
+          <slideno>0</slideno>
+          <text>LECTURE 3 
+Convergence and Asymptotic
+Equipa rtition Property
+Last time: 
+Convexit y and concavit y  
+Jensens inequalit y  
+Positivit y of mutual information
+  
+Data processing theorem  
+Fanos inequalit y  
+Lecture outline 
+Types of convergence  
+Weak Law of Large Numb ers  
+Strong Law of Large Numb ers
+  
+Asymptotic Equipa rtition Property  
+Reading: Scts. 3.1-3.2.</text>
+        </slide>
+        <slide>
+          <slideno>10</slideno>
+          <text>Consequences of the AEP: the typical
+set
+Why is it typical? AEP says &gt; 0, &gt; 0, 
+n0 such that n&gt;n0 
+Pr(A (n))  1   
+(note:  can be ) 
+How big is the typical set? 
+1=  
+PXn (xn) 
+xnX n 
+ 
+PXn (xn)  
+xnA(n) 
+  
+2n(H(X)+) 
+xn (n)A
+| (n)|2n(H(X)+)= A
+|A (n)| 2n(H(X)+)</text>
+        </slide>
+        <slide>
+          <slideno>16</slideno>
+          <text>MIT OpenCourseWare
+http://ocw.mit.edu 
+6.441 Information Theory 
+Spring 2010 
+For information about citing these materials or our Terms of Use, visit: http://ocw.mit.edu/terms .</text>
+        </slide>
+        <slide>
+          <slideno>2</slideno>
+          <text>Types of convergence
+Sure convergence: a random sequence
+  
+X1,... converges surely to r.v. X if  
+ the sequence Xn() converges to X() 
+as n  
+Almost sure convergence (also called con  
+vergence with probabilit y 1) the random 
+sequence converges a.s. (w.p. 1) to X 
+if the sequence X1(),... converges to 
+X() for all  except possibly on a set of 
+ of probabilit y 0 
+Mean-squa re convergence: X1,... con  
+verges in m.s. sense to r.v. X if 
+limn EXn[|Xn  X|2]  0 
+Convergence in probabilit y: the sequence
+  
+converges in probabilit y to X if &gt; 0
+limn Pr[|Xn  X| &gt;]  0 
+Convergence in distribution: the sequence  
+converges in distribution if the cumula
+tive distribution function Fn(x)= Pr(Xn  
+x) satises limn Fn(x) FX(x) at all  
+x for which F is continuous.</text>
+        </slide>
+        <slide>
+          <slideno>9</slideno>
+          <text>Consequences of the AEP: the typical
+set
+Denition: A (n) is a typical set with respect 
+to PX(x) if it is the set of sequences in the 
+set of all possible sequences xn n with X
+probabilit y: 
+2n(H(X)+)  PXn (xn)  2n(H(X)) 
+equivalently 
+1 H(X)    n log(P Xn (xn))  H(X)+  
+As n increases, the bounds get closer to
+gether, so we are considering a smaller range 
+of probabilities 
+We shall use the typical set to describ e a 
+set with characteristics that belong to the 
+majority of elements in that set. 
+Note: the variance of the entrop y is nite</text>
+        </slide>
+        <slide>
+          <slideno>8</slideno>
+          <text>AEP
+1 	n log(P Xn(xn)) 
+1 n
+=  
+log(P X(xi)) ni=1 
+1 n
+=  
+yi n i=1 
+using the WLLN on Y 
+n 1 n
+i=1 yi EY [Y ] in probabilit y  
+EY [Y ]= EZ[log(P X(Z))] = H(X) 
+for some r.v. Z identically distributed with 
+X</text>
+        </slide>
+        <slide>
+          <slideno>1</slideno>
+          <text>Types of convergence
+Recall what a random variable is: a map
+ping from its set of sample values  onto
+R 
+X :
+  R
+X() 
+In the cases we have been discussing,  = 
+X and we map onto [0, 1]</text>
+        </slide>
+        <slide>
+          <slideno>5</slideno>
+          <text>Weak Law of Large Numbers
+Consequence of Cheb yshevs inequalit y: Ran
+dom variable X 
+2=  
+(x  E[X])2PX(x)X 
+xX 
+2 
+X  c 2 Pr(|X  E[X]| c) 
+2 
+Pr(|X  E[X]| c)  cX 
+2 
+1 Pr(|X  E[X]| kX)  k2</text>
+        </slide>
+        <slide>
+          <slideno>7</slideno>
+          <text>AEP
+If X1, . . . , Xn are IID with distribution PX, 
+then 
+1log(P X1,...,X n(x1, . . . , xn))  H(X) in probn 
+ability 
+Notation: Xij =(Xi, . . . , Xj) (if i = 1, gen
+erally omitted) 
+Proof: create r.v. Y that takes the value 
+yi =  log(P X(xi)) with probabilit y PX(xi) 
+(note that the value of Y is related to its 
+probabilit y distribution) 
+we now apply the WLLN to Y</text>
+        </slide>
+        <slide>
+          <slideno>13</slideno>
+          <text>Consequences of the AEP: using the
+typical set for compression
+Let l(xn) be the length of the binary de
+ PXn (xn)(n(H(X)+ ) + 2) scription of xn 
+ &gt; 0, n0 s.t. n &gt; n0, 
+EXn[l(Xn)] 
+=  
+PXn (x n) l(x n) +  
+PXn (x n) l(x n) 
+xnA (n) 
+ xnA (n)C 
+(n)xnA 
++  
+PXn (xn)(n log(|X |) + 2) 
+(n)C 
+xnA 
+= nH(X)+ n +2 
+for  small enough with respect to 
+so EXn[1l(Xn)]  H(X)+ for n sucientlyn 
+large.</text>
+        </slide>
+        <slide>
+          <slideno>3</slideno>
+          <text>Relations among types of convergence
+Venn diagram of relation:</text>
+        </slide>
+        <slide>
+          <slideno>6</slideno>
+          <text>Strong Law of Large Numbers
+Theo rem: (SLLN) If Xi are IID, and EX[X] &lt;||
+, then 
+X1+ + XnMn =  EX[X], w.p.1. n</text>
+        </slide>
+        <slide>
+          <slideno>11</slideno>
+          <text>Pr(A (n))  (1  ) 
+ 1     
+(n) PXn (xn) 
+xnA 
+|A (n)|2n(H(X)) 
+ |A(n)| 2n(H(X))(1  ) 
+Visualize:</text>
+        </slide>
+        <slide>
+          <slideno>14</slideno>
+          <text>Jointly typical sequences 
+A (n) is a typical set with respect to PX,Y (x, y) 
+if it is the set of sequences in the set of all 
+possible sequences (xn,yn n withn) X Y
+probabilit y: 
+2n(H(X)+)  PXn (xn)  2n(H(X)) 
+2n(H(Y )+)  PY n 
+yn 
+ 2n(H(Y )) 
+2n(H(X,Y )+)  PXn,Y n 
+xn, y n 
+ 2n(H(X,Y )) 
+for (Xn,Y n) sequences of length n IID ac
+ncording PXn,Y n(x,yn)= 
+in 
+=1 PX,Y (xi, yi) 
+Pr((Xn,Y n)  A(
+n)) 1as n</text>
+        </slide>
+        <slide>
+          <slideno>4</slideno>
+          <text>Weak Law of Large Numbers 
+X1,X2,... i.i.d. 
+nite mean  and variance 2 
+X1+ + XnMn =  
+n 
+E[Mn]=  
+Var(Mn)=  
+2 
+Pr(|Mn  | )  nX 
+2</text>
+        </slide>
+      </slides>
+      <videos/>
+    </lecture>
+    <lecture>
+      <lecture_title>Gaussian channels: parallel, colored noise, inter-symbol interference</lecture_title>
+      <lecture_pdf_url>https://ocw.mit.edu/courses/6-441-information-theory-spring-2010/resources/mit6_441s10_lec18/</lecture_pdf_url>
+      <lectureno>18</lectureno>
+      <slides>
+        <slide>
+          <slideno>4</slideno>
+          <text>Parallel Gaussian channels 
+Hence (X1,...,Xk) is 0-mean with 
+ 
+P 10 ... 0  
+0 P 2 ... 0 
+= (X1,...,Xk) ... ... ... ...  
+00 ... Pk  
+the total energy constraint is a constraint 
+we handle using Lagrange multipliers 
+The function we now consider is 
+1k
+j=1 2ln 
+1+ 
+P
+jj 
+2  
++  k
+j=1 Pj 
+after dierentiating with respect to Pj 
+11 
+Pj+j2+  =02 
+so we want to choose the Pj + Nj to be 
+constant subject to the additional constrain 
+that the Pjs must be non-negative 
+Select a dummy variable  then k
+j=1(  
+j2)+ = P</text>
+        </slide>
+        <slide>
+          <slideno>16</slideno>
+          <text>General case 
+We choose 
+ 
+N0W + 
+ui =   
+2i 
+for i = 0, where  satises 
+ 
+  N
+20
+W
+i +
+= TPW 
+i such that i=0
+and ui satises 
+2k 
+ui = TPW 
+i=1 
+We have reduced several channels, each 
+with its own user, to a single channel with 
+a comp osite user 
+The sum of all the mutual informations av
+eraged over time is upper bounded by 
+1 1  
+  N0
+W
+i +  
+ 
+ln 1+ 2i
+T 2 N0W 
+i such that i=0 
+2</text>
+        </slide>
+        <slide>
+          <slideno>10</slideno>
+          <text>ISI channels
+= TdYj k=0 kXjk + Nj 
+we may rewrite this as Yn = AXn + Nn 
+with some correction facto r at the begin
+ning for Xs before time 1 
+A1Yn = Xn + A1Nn 
+consider mutual information between Xn 
+and A1Yn -same as between Xn and Yn 
+equivalent to a colored Gaussian noise chan
+nel 
+spectral domain water-lling</text>
+        </slide>
+        <slide>
+          <slideno>11</slideno>
+          <text>General case
+Single user in multipath 
+Yk = fkSk + Nk 
+where fk is the complex matrix with entries 
+f [j, i]=
+
+ 
+
+all paths m
+gm[j, j  i] for 0  j  i  
+0 otherwise
+For the multiple access model, each source 
+has its own time-va rying channel 
+K 
+i=1 
+the receiver and the sender have perfect 
+knowledge of the channel for all times 
+In the case of a time-va rying channel, this 
+would require knowledge of the future be
+havio r of the channel 
+the mutual information between input and 
+output is 
+I (Yk; Sk)= h (Yk)  h (Nk) kSik + Nk
+ Yk
+ fi
+ =</text>
+        </slide>
+        <slide>
+          <slideno>7</slideno>
+          <text>Colored noise
+Consider the decomp osition QQT = (N1,...,Nn), 
+where QQT = I 
+Indeed, (N1,...,Nn) is a symmetric positive 
+semi-denite matrix 
+|(X1,...,X n) +(N1,...,N n)| 
+= |(X1,...,X n)+ QQT | 
+= |Q||QT (X1,...,X n)Q +||QT | 
+= |QT (X1,...,X n)Q +| 
+Also, 
+trace 
+QT (X1,...,X n)Q 
+= trace 
+QQT (X1,...,X n)  
+= trace((X1,...,X n)) 
+so energy constraint on input becomes a 
+constraint on new matrix QT (X1,...,X n)Q</text>
+        </slide>
+        <slide>
+          <slideno>17</slideno>
+          <text>MIT OpenCourseWare
+http://ocw.mit.edu 
+6.441 Information Theory 
+Spring 2010 
+For information about citing these materials or our Terms of Use, visit: http://ocw.mit.edu/terms .</text>
+        </slide>
+        <slide>
+          <slideno>2</slideno>
+          <text>Parallel Gaussian channels
+How do we allocate our resources across 
+channels when we want to maximize the 
+total mutual information: 
+We seek the maximum over all 
+fX1,...,Xk(x1, . . . , xk)s.t. E 
+jk 
+=1(Xj)2 
+ P 
+of I 
+(X1,...,Xk); (Y 1,...,Y k) 
+Intuitively , we know that channels with good 
+SNR get more input energy , channels with 
+bad SNR get less input energy</text>
+        </slide>
+        <slide>
+          <slideno>5</slideno>
+          <text>Parallel Gaussian channels 
+Water-lling graphical interp retation
+Revisit the issue of spreading in frequency</text>
+        </slide>
+        <slide>
+          <slideno>12</slideno>
+          <text>General case 
+We may actually deal with complex random 
+variables, in which case we have 2k degrees 
+of freedom 
+We shall use the random vecto rs S2k, Y 2k 
+and N2k, whose rst k comp onents and 
+last k comp onents are, respectively , the real 
+and imagina ry parts of the corresponding 
+vecto rs Sk, Yk and Nk 
+More generally , the channel may change the 
+dimensionalit y of the problem, for instance 
+because of time variations 
+Y  2k = f2
+2k
+kS 
+2k + N 2k 
+Let us consider the 2k by 2k matrix f2
+2k
+k Tf2
+2k
+k 
+Let 1...., 2k be the eigenvalues of f2
+2k
+k Tf2
+2k
+k 
+These eigenvalues are real and non-negative</text>
+        </slide>
+        <slide>
+          <slideno>13</slideno>
+          <text>General case
+Using water-lling arguments simila r to the
+ones for colored noise, we may establish
+that maximum mutual information per sec
+2kondis 1 
+i=1ln 1+ uii 
+2T WN0
+2
+where ui is given by 
+ 
+WN0+ 
+ui =   2i 
+and 
+2k
+ui = TPW 
+i=1</text>
+        </slide>
+        <slide>
+          <slideno>14</slideno>
+          <text>General case
+Let us consider the multiple access case 
+We place a constraint, P , on the sum of 
+all the K users powers 
+The users may cooperate, and therefo re 
+act as an antenna array 
+Such a model is only reasonable if the users 
+are co-located or linked to each other in 
+some fashion 
+There are M =2Kk input degrees of free
+dom and 2k output degrees of freedom 
+[Y [1] ...Y [2k]]
+= fM 2k 
+S[1] ... Si[M]T +[N[1] ...N[2k]] 
+where we have dened 
+
+S[1] ... S[M] 
+= S1[1] ...S1[2k],S2[1] ...
+S2[2k], . . . , SK[1] . . . SK[2k]
+f2
+Mk = 
+f12
+2k
+k,f22
+2k
+k, . . . , fk 2
+2k
+k</text>
+        </slide>
+        <slide>
+          <slideno>8</slideno>
+          <text>Colored noise
+We know that because conditioning reduces 
+entrop y, h(W, V )  h(W )+ h(V ) 
+In particula r, if W and V are jointly Gaus
+sian, then this means that 
+ln   
+ ln 
+2  
++ ln 
+2 
+|W,V |V W 
+hence |W,V | 2  2 
+V W 
+the RHS is the product of the diagonal 
+terms of W,V 
+Hence, we can use information theory to 
+show Hadama rds inequalit y, which states 
+that the determinant of any positive de
+nite matrix is upper bounded by the prod
+uct of its diagonal elements</text>
+        </slide>
+        <slide>
+          <slideno>9</slideno>
+          <text>Colored noise 
+Hence, |QT (X1,...,Xn)Q+| is upper bounded 
+by the product 
+
+i(i + i) 
+where the diagonal elements of QT (X1,...,Xn)Q 
+are the is 
+their sum is upper bounded by nP 
+To maximize the product, we would want 
+to take the elements to be equal to some 
+constant 
+At least, we want to make them as equal 
+as possible 
+i =(  i)+ 
+where  i = nP 
+(X1,...,Xn)= Q diag (i)QT</text>
+        </slide>
+        <slide>
+          <slideno>6</slideno>
+          <text>Colored noise
+Yi = Xi + Ni 
+for n time samples (N1,...,N n) is not a di
+agonal matrix: colored stationa ry GN 
+Energy constraint n 1E[Xi 2]  P 
+Example: we can make 
+I 
+(X1,...,Xn); (Y 1,...,Y n) 
+= h(Y 1,...,Y n)  h(Y 1,...,Y n |X1,...,Xn) 
+= h(Y 1,...,Y n)  h(N1,...,Nn) 
+Need to maximize the rst entrop y 
+Using the fact that a Gaussian maximizes 
+entrop y for a given autocorrelation matrix, 
+we obtain that the maximum is 
+1 ln 
+(2e)n 
+2 |(X1,...,Xn) +(N1,...,Nn)|
+note that the constraint on energy is a con
+straint on the trace of (X1,...,Xn) 
+Consider |(X1,...,Xn) +(N1,...,Nn)|</text>
+        </slide>
+        <slide>
+          <slideno>15</slideno>
+          <text>General case
+fM 2kT fM 2k has M eigenvalues, all of which 
+are real and non-negative and at most 2k 
+of which are non-zero 
+Let us assume that there are  positive 
+eigenvalues, which we denote 1,...,  
+We have decomp osed our multiple-access
+channels into  channels which may be in
+terpreted as parallel indep endent channels
+The input has M   additional degrees of 
+freedom, but those degrees of freedom do 
+not reach the output 
+The maximization along the active  chan
+nels may now be performed using water-
+lling techniques 
+Let T be the duration of the transmission</text>
+        </slide>
+        <slide>
+          <slideno>0</slideno>
+          <text>LECTURE 18
+Last time:
+White Gaussian noise  
+Bandlimited WGN  
+Additive White Gaussian Noise (AWGN)  
+channel
+Capacit y of AWGN channel
+  
+Application: DS-CDMA systems  
+Spreading  
+Coding theorem  
+Lecture outline
+Gaussian channels: parallel  
+colored noise  
+inter-symb ol interference  
+general case: multiple inputs and out  
+puts 
+Reading: Sections 10.4-10.5.</text>
+        </slide>
+        <slide>
+          <slideno>3</slideno>
+          <text>Parallel Gaussian channels
+I 
+(X1,...,Xk); (Y 1,...,Y k) 
+= h(Y 1,...,Y k)  h(Y 1,...,Y k X1,...,Xk) 
+= h(Y 1,...,Y k)  h(N1,...,Nk|
+)
+k
+= h(Y 1,...,Y k)   
+h(Nj)
+j=1
+k k
+  
+h(Yj)   
+h(Nj) 
+j=1 j=1
+k
+ 1 ln  
+1+ Pj 
+ 
+j=1 2 j2 
+where E[(Xi)2] = Pi 
+hence k
+j=1 Pj  P 
+equalit y is achieved for the Xjs indep endent 
+and Gaussian (but not necessa rily IID)</text>
+        </slide>
+        <slide>
+          <slideno>1</slideno>
+          <text>Parallel Gaussian channels
+Yj = Xj + Nj 
+where 2j is the variance for channel j (su
+perscript to show that it could be some
+thing else than several samples from a sin
+gle channel) 
+the noises on the channels are mutually in
+dependent 
+the constraint on energy , however, is over 
+all the channels 
+E k
+j=1(Xj)2 
+ P</text>
+        </slide>
+      </slides>
+      <videos/>
+    </lecture>
+    <lecture>
+      <lecture_title>Broadcast channels</lecture_title>
+      <lecture_pdf_url>https://ocw.mit.edu/courses/6-441-information-theory-spring-2010/resources/mit6_441s10_lec21/</lecture_pdf_url>
+      <lectureno>21</lectureno>
+      <slides>
+        <slide>
+          <slideno>10</slideno>
+          <text>Degraded broadcast channel
+fY1,Y2X(y1,y2x)= fY1X(y1x)fY2Y1(y2y1)| |||| |
+X Y1 Y2   
+Consider at rst indep endent transmissions 
+to the two receivers 
+The capacit y region is the closure of the 
+(R1,R2) such that 
+R2  I(U; Y2) 
+R1  I(X; Y1|U) 
+for some auxilia ry U whose cardinalit y is less 
+than that of any of the input and the out
+puts</text>
+        </slide>
+        <slide>
+          <slideno>5</slideno>
+          <text>Broadcast channel 
+The decoding is done indep endently at each 
+receiver i 
+Yn  {1,..., 2nRi} 
+ny mi 
+An error occurs whenever =mi for i =1 mi 
+or i =2 
+What is the drawback here? 
+If we assume that for each user the mes
+sages are uniformly distributed and that the 
+two users have indep endent transmissions, 
+then the above works well 
+There is no requirement that the informa
+tion for the dierent users be uncorrelated, 
+so we are not considering IID over {1,..., 2nR1
+for user 1 and {1,..., 2nR1} for user 2 }</text>
+        </slide>
+        <slide>
+          <slideno>12</slideno>
+          <text>Degraded broadcast channel
+The results for receivers with dependent 
+information can be obtained by using the 
+fact that if (R1,R2) is an achievable rate 
+pair when we have indep endent informa
+tion, then: 
+For R0  R2 for a degraded broadcast chan
+nel, (R0,R1,R2R0) is an achievable triplet 
+of rates with common information 
+U is decoded by both and carries the infor
+mation of user 1, that is also received by 
+user 2 
+Important example: degraded Gaussian broad
+cast channel 
+Y1= X + Z1 
+Y2= X + Z1+ Z2 
+Consider R0 is R2</text>
+        </slide>
+        <slide>
+          <slideno>4</slideno>
+          <text>Broadcast channel 
+General model of a stationa ry memo ryless 
+broadcast channel for one input and two 
+outputs: 
+fY1n,Y2n|Yn 
+y1 n, y2 n|xn 
+= 
+in 
+=1 pY1,Y2|X(y1i, y2i|xi) 
+Receiver 1 has rate R1 and receiver 2 has 
+rate R2 
+The encoding maps the information to the 
+two receivers to a single codeword: 
+n{1,..., 2nR1}{1,..., 2nR2}  X 
+(m1,m2) xn</text>
+        </slide>
+        <slide>
+          <slideno>16</slideno>
+          <text>MIT OpenCourseWare
+http://ocw.mit.edu 
+6.441 Information Theory 
+Spring 2010 
+For information about citing these materials or our Terms of Use, visit: http://ocw.mit.edu/terms .</text>
+        </slide>
+        <slide>
+          <slideno>15</slideno>
+          <text>Degraded broadcast channel
+Note: the total rate at user 1 is less than 
+if we had no broadcast 
+Hark back to our multiple-access channel:
+the
+sum of the rates is upper bounded by 
+ln 1+ E
+2 
+N1 1
+2
+
+
+
+
+1
+2
+ln
+
+1+
+1
+2
+ln
+(1 )E 
+2+ 
+ 
+ E + 2 
+N1 
++ (1  )E
+E
+21+
+N1
+ N2
+
+E + 2 E + 2+ 2 
+N1 N2 N1 
+2 1
+= ln
+2
+ E + 2+ 2 
+N1 N2 N1
+E + 2 E + 2+ 2 
+N1 N2 N11
+= ln
+2
+ 2 2+ 2 
+N1 N2 N1+ E
+
+N2 
+
+2E + (1  )+ E
+2
+2 
+N2 =
+1
+2
+ln
+1+
+2
++ E
+N1
+ N1</text>
+        </slide>
+        <slide>
+          <slideno>6</slideno>
+          <text>Broadcast channel
+How do we take the common information 
+into account? Look at common informa
+tion with rate R0 (rememb er the Esperanto) 
+Theencodingmaps theinformation tothe 
+Thedecodingisdone indep endently ateach 
+two receivers to a single codeword: 
+{1,..., 2nR0}{1,..., 2nR1}{1,..., 2nR2}  
+nX 
+(m1,m2,m0) xn  
+receiver i
+Yn  {1,..., 2nRi}{1,..., 2nR0}
+mi mi 
+0)n (
+ y
+ mi,m
+An error occurs whenever
+
+= mi or
+for i =1 or i =2
+i 
+0</text>
+        </slide>
+        <slide>
+          <slideno>11</slideno>
+          <text>Degraded broadcast channel 
+Metho d: 
+we generate codewords for user 2 by se
+lecting IID sequences Un using  fU (ui) and 
+mapping each of the messages m2 in {1,..., 2nR2}
+onto some un(m2) 
+for each possible un(m2), we generate a 
+codeword for user 1 mapping (m1,m2) onto 
+xn(m1,m2) using  fXU (xiui(m2))||
+Note: X is transmitted, U is not 
+Deco ding: 
+user 1 decodes by looking at jointly typical 
+(Un(m2),Y2 n) pairs 
+user 2 can rst look at typical (Un(m2),Y1 n) 
+pairs 
+having thus decoded m2, it can reconsti
+tute Un(m2) and then look at jointly typical 
+(Un(m2),Xn(m1,m2),Y1 n) triplet</text>
+        </slide>
+        <slide>
+          <slideno>3</slideno>
+          <text>Broadcast channel
+Users have dierent information 
+Example of person speaking two languages 
+to two receivers who speak dierent lan
+guages (orthogonal signals) 
+Can do better than speaking to one half 
+the time and to the other the rest of the 
+time 
+Communicate in Esperanto using binary code 
+(of course!) 
+By choosing arrangement of Language 1 
+and Language 2 words, communicate an 
+extra bit (1 is Language 1 and 0 is language 
+2) to both users 
+Esperanto is shared by both users (com
+mon information) 
+Can we nd a general framew ork to encom
+pass all of these dierent cases?</text>
+        </slide>
+        <slide>
+          <slideno>14</slideno>
+          <text>|Degraded broadcast channel
+For user 1: consider that we are trying to 
+communicate the indep endent X, U over a 
+channel with noise N1 
+From our coding theorem, user 1 rst de
+codes m2 and is thus able to reconstitute 
+U 
+Knowing U, user 1 now tries to recover XU
+|
+Subtracting U, there is E left for XU, 
+which is R1 = 21ln 1+ E
+2 
+N1</text>
+        </slide>
+        <slide>
+          <slideno>0</slideno>
+          <text>LECTURE 21 
+Last time: 
+Multiple access channels  
+Coding theorem  
+Capacit y region for Gaussian channels  
+Lecture outline 
+Broadcast channel  
+Gaussian degraded broadcast channel  
+Reading: Section 14.6.</text>
+        </slide>
+        <slide>
+          <slideno>7</slideno>
+          <text>Broadcast channel
+What happens to the separation theorem?
+By comp ressing for each user indep endently , 
+then the messages are uniformly distributed 
+over all possible messages for each user, 
+but possibly this does not hold for the two 
+messages jointly 
+If we comp ress indep endently for each user, 
+AEP no longer holds, so in general may not 
+be optimum in terms of minimizing descrip
+tion of what we want to transmit 
+Equivalently: if there is common informa
+tion, because for instance the users are cor
+related in the information they need to re
+ceive, then we have been wasteful 
+If we do the comp ression of all the data 
+jointly , then not clear how the decoders 
+work, because they are indep endent.</text>
+        </slide>
+        <slide>
+          <slideno>2</slideno>
+          <text>Broadcast channel
+Example where user 2 may have a subset
+of user 1: video 
+user with better SNR obtains better reso
+lution than user with worse SNR 
+dierent rates over the Internet 
+Does the separation theorem hold?</text>
+        </slide>
+        <slide>
+          <slideno>9</slideno>
+          <text>Broadcast channel
+Although the broadcast channel capacit y 
+region is not known in general, we do know 
+that the region depends only fY1X(y1x)||
+and on fY2X(y2x)||
+Type 1 error: user 1 has an error, type 2 
+error: user 2 has an error, type 3 error: 
+both have errors 
+Over the channel for each user, the proba
+bility of errors of type 1 and 2 depends on 
+the marginal pdf only 
+The probabilit y of error of type 3 is lower 
+bounded by the probabilit y that at least one 
+user has an error and upper bounded by the 
+sum of the probabilities that both have an 
+error</text>
+        </slide>
+        <slide>
+          <slideno>8</slideno>
+          <text>Broadcast channel 
+A rate triplet (R0,R1,R2) is achievable i 
+there exists a sequence of ((2nR0, 2nR1, 2nR2),n) 
+codes that have probabilit y of error vanish 
+as n  
+The capacit y region is in general not known 
+Not surprising when we consider the lan
+guage example 
+Exception: degraded broadcast channel, to 
+be seen later 
+For R0  min{R1,R2} for a broadcast chan
+nel, (R0,R1  R0,R2  R0) is an achievable 
+triplet of rates with common information</text>
+        </slide>
+        <slide>
+          <slideno>1</slideno>
+          <text>Broadcast channel
+Single source, several receivers 
+The information to the receivers may be 
+the same, or user 2 may have a subset of 
+user 1, or the users have dierent informa
+tion 
+Example where the receivers have the same 
+information: radio 
+The rate is then no better than the worst-
+case channel</text>
+        </slide>
+        <slide>
+          <slideno>13</slideno>
+          <text>Degraded broadcast channel
+Energy constraint E on input 
+The second user decodes m2 from U 
+Rate R0 is clearly upper bounded by the 
+case where we communicate with only user
+2 in mind: 1
+2ln 1+ 2+E 
+2 
+N2 N1 
+In particula r, we can always express R0 as 
+1  
+(1)E  
+ln 1+ 2 E+2+2 
+N2 N1 
+with the upper bound being achieved for 
+ =0</text>
+        </slide>
+      </slides>
+      <videos/>
+    </lecture>
+    <lecture>
+      <lecture_title>Jensen&#8217;s inequality, data processing theorem, Fanos&#8217;s inequality</lecture_title>
+      <lecture_pdf_url>https://ocw.mit.edu/courses/6-441-information-theory-spring-2010/resources/mit6_441s10_lec02/</lecture_pdf_url>
+      <lectureno>2</lectureno>
+      <slides>
+        <slide>
+          <slideno>12</slideno>
+          <text>Fanos lemma
+Supp ose we have r.v.s X and Y , Fanos 
+lemma bounds the error we expect when 
+estimating X from Y 
+We generate an estimato r of X that is =X 
+g(Y ). 
+Probabilit y of error Pe = Pr( = X) X 
+Indicato r function for error E which is 1 
+when X = X and 0 otherwise. Thus, Pe = 
+P (E = 0)
+Fanos lemma:
+H(E)+ Pe log(|X|  1)  H(X|Y )</text>
+        </slide>
+        <slide>
+          <slideno>6</slideno>
+          <text>Mutual information and transition
+probability
+Let us call PY X(yx) the transition proba||
+bility from X to Y . Consider a r.v. Z that 
+takes values 0 and 1 with probabilit y  and 
+1   and s.t. 
+PY |X,Z(y|x, 0) = PY
+|X(y|x) 
+PY |X,Z(y|x, 1) = PY
+|X(y|x) 
+and Z is indep endent from X 
+I(X;(Y, Z)) = I(X; Z)+ I(X; YZ)|
+and 
+I(X;(Y, Z)) = I(X; Y )+ I(X; ZY )|
+hence 
+I(X; Y |Z)  I(X; Y ) 
+so 
+I(X; Y |Z = 0)+(1 )I(X; Y |Z = 1)  I(X; Y ) 
+For a xed input assignment, I(X; Y ) is 
+convex in the transition probabilities</text>
+        </slide>
+        <slide>
+          <slideno>13</slideno>
+          <text>Proof of Fanos lemma
+H(E,XY )|
+= H(XY )+ H(EX, Y ) | |
+= H(XY )|
+H(E,XY )|
+= H(EY )+ H(XE,Y ) | |
+H(E|Y )  H(E) 
+H(XE,Y )|
+= PeH(X|E = O, Y ) + (1  Pe)H(X|E =1,Y ) 
+= PeH(XE = O, Y ) |
+ PeH(X|E = O) 
+ Pe log(|X|  1)</text>
+        </slide>
+        <slide>
+          <slideno>10</slideno>
+          <text>Data Processing Theorem 
+If X Y Z then I(X; Y )  I(X; Z)  
+I(X; Y, Z)= I(X; Z)+ I(X; YZ)|
+I(X; Y, Z)= I(X; Y )+ I(X; ZY )|
+X and Z are conditionally indep endent given 
+Y , so I(X; ZY )=0 |
+hence I(X; Z)+ I(X; YZ)= I(X; Y ) so |
+I(X; Y )  I(X; Z) with equalit y i I(X; Y |Z)= 
+0 
+note: X Z Y I(X; YZ)=0 Y    |
+depends on X only through Z 
+Consequence: you cannot undo degra
+dation</text>
+        </slide>
+        <slide>
+          <slideno>2</slideno>
+          <text>Jensens inequality
+if f is a convex function and X is a r.v., 
+then 
+EX[f(X)]  f(EX[X]) 
+if f is strictly convex, then EX[f(X)] = 
+f (EX[X]) X = E[X].</text>
+        </slide>
+        <slide>
+          <slideno>5</slideno>
+          <text>Conditioning reduces entropy
+H(YX)= EZ[H(YX = Z)] 
+=  |
+PX(x)  
+PY ||
+X(y|x)log2[PY |X(y|x)] 
+xX yY 
+PY (y)= 
+xX PX(x)PY |X(y|x) hence by con
+cavity H(Y |X)  H(Y ). 
+Hence I(X; Y )= H(Y )  H(Y |X)  0. 
+Indep endence bound: 
+H(X1, . . . , Xn) 
+n
+=  
+H(Xi|X1, . . . , Xi1) 
+i=1 
+n 
+H(Xi)
+  
+i=1
+Question: H(Y |X = x)  H(Y )?</text>
+        </slide>
+        <slide>
+          <slideno>0</slideno>
+          <text>LECTURE 2
+Convexit y and related notions
+Last time:
+Goals and mechanics of the class  
+notation  
+entrop y: denitions and properties  
+mutual information: denitions and prop  
+erties 
+Lecture outline
+Convexit y and concavit y  
+Jensens inequalit y  
+Positivit y of mutual information  
+Data processing theorem  
+Fanos inequalit y  
+Reading: Scts. 2.6-2.8, 2.11.</text>
+        </slide>
+        <slide>
+          <slideno>11</slideno>
+          <text>Consequence: Second Law of
+Thermodynamics
+The conditional entrop y H(XnX0) is non |
+decreasing as n increases for a stationa ry 
+Markov process X0, . . . , Xn 
+Look at the Markov chain X0  Xn1 
+Xn 
+DPT says
+I(X0; Xn1)  I(X0; Xn)
+H(Xn1)H(Xn1|X0)  H(Xn)H(Xn|X0) 
+so H(Xn1|X0)  H(Xn|X0) 
+Note: we still have that H(Xn|X0)  H(Xn).</text>
+        </slide>
+        <slide>
+          <slideno>14</slideno>
+          <text>MIT OpenCourseWare
+http://ocw.mit.edu 
+6.441 Information Theory 
+Spring 2010 
+For information about citing these materials or our Terms of Use, visit: http://ocw.mit.edu/terms .</text>
+        </slide>
+        <slide>
+          <slideno>1</slideno>
+          <text>Convexity
+Denition: a function f(x) is convex over 
+(a, b) i x1,x2  (a, b) and 0    1 
+f (x1 + (1  )x2)  f (x1) + (1  )f(x2) 
+and is strictly convex i equalit y holds i 
+ =0 or  = 1. 
+f is concave i f is convex. 
+Convenient test: if f has a second deriva 
+tive that is non-negative (positive) every 
+where , then f is convex (strictly convex)</text>
+        </slide>
+        <slide>
+          <slideno>9</slideno>
+          <text>Markov chain
+Consequences: 
+X Y Z i X and Z are conditionally  
+indep endent given Y 
+PX,ZY (x, z|y)|
+PX,Y,Z(x, y, z) = PY (y) 
+PX,Y (x, y) = PZY (zy)PY (y) ||
+= PXY (xy)PZY (zy)||||
+so Markov implies conditional indep en
+dence and vice versa 
+X Y Z Z Y X (see above  
+LHS and last RHS)</text>
+        </slide>
+        <slide>
+          <slideno>8</slideno>
+          <text>Markov chain
+Markov chain: 
+random variables X, Y, Z form a Markov chain 
+in that order X Y Z if the joint PMF 
+can be written as
+PX,Y,Z(x, y, z)= PX(x)PY X(yx)PZY (zy).
+||||</text>
+        </slide>
+        <slide>
+          <slideno>3</slideno>
+          <text>Concavity of entropy 
+Let f(x)= x log(x) then 
+1 f(x)= x log(e) x  log(x) 
+=  log(x)  log(e) 
+and 
+1 f(x)=  log(e) &lt; 0
+x 
+for x&gt; 0. 
+f(PX(x)) H(X)= 
+x|X |
+thus the entrop y of X is concave in the
+value of PX(x) for every x.
+Thus, consider two random variables, X1
+and X2 with common X . Then the ran
+dom variable X dened over the same
+such that PX(x)= PX1(x) + (1  )PX2(x)
+satises:
+H(X)  H(X1) + (1  )H(X2).
+X</text>
+        </slide>
+        <slide>
+          <slideno>4</slideno>
+          <text>Maximum entropy
+Consider any random variable X11 on X . For 
+simplicit y, consider X = {1,..., |X |} (we 
+just want to use the elements of X as in
+dices). Now consider X21 a random vari
+able such PX1(x)= PX1(shif t(x)) where 
+2 1 
+shift denotes the cyclic shift on (1,..., X ). 
+Clearly H(X11) = H(X21). Moreover, con
+sider X12 dened over the same X such that 
+PX2(x)= PX1(x) + (1  )PX1(x) then 
+1 1 2 
+H(X12)  H(X11). 
+We can show recursively with the obvious 
+extension of notation that 
+H(X1 n)  H(X1 m) 
+n&gt;m  1. Now limnPX1 n(x)= |X 1 
+|
+x X . Hence, the uniform distribution 
+maximizes entrop y and H(X)  log(|X |).</text>
+        </slide>
+        <slide>
+          <slideno>7</slideno>
+          <text>X Mutual information and input
+probability
+Consider a r.v. Z such that PXZ(x0) = ||
+P (x), PXZ(x1) = P (x), Z takes values 0 ||
+and 1 with probabilit y  and 1   and Z
+and Y are conditionally indep endent, given
+I(Y ; ZX)=0
+ |
+and 
+I(Y ;(Z, X)) = I(Y ; Z)+ I(Y ; XZ)
+|
+= I(Y ; X)+ I(Y ; ZX)|
+so 
+I(X; Y |Z)  I(X; Y ).
+Mutual information is a concave function 
+of the input probabilities. 
+Exercise: jamming game in which we try 
+to maximize mutual information and jam
+mer attempts to reduce it. What will the 
+policies be?</text>
+        </slide>
+      </slides>
+      <videos/>
+    </lecture>
+    <lecture>
+      <lecture_title>Huffman codes</lecture_title>
+      <lecture_pdf_url>https://ocw.mit.edu/courses/6-441-information-theory-spring-2010/resources/mit6_441s10_lec06/</lecture_pdf_url>
+      <lectureno>6</lectureno>
+      <slides>
+        <slide>
+          <slideno>6</slideno>
+          <text>Why does this work?
+Amalgamation is not always least likely event 
+in X</text>
+        </slide>
+        <slide>
+          <slideno>2</slideno>
+          <text>Human codes
+Denition: let X be a set of m source sym
+bols, let D be a D-ary alphab et. A Human 
+code 
+CHuff is an optimum instanta : X  D 
+neous code in which the 2+(( m2)mod (D
+1)) least likely source symb ols have the
+same length and dier only in the last digit
+Proposition: for any set of source symb ols 
+X with m symb ols, it is possible dene a 
+Human code for those source symb ols 
+Consider a binary code: 
+reorder the xi in terms of decreasing prob
+ability 
+the two least likely symb ols are xm1, xm</text>
+        </slide>
+        <slide>
+          <slideno>4</slideno>
+          <text>How do we construct them?
+Find the q = 2+((m  2)mod (D  1)) least
+likely source symb ols xm, . . . , xmq+1
+Delete these symb ols from the set of source
+symb ols and replace them with a single sym
+bol ymq
+Assign p(ymq)= m
+i=mqp(xi)
+Now we have new set of symb ols X
+Construct a code CHuff,mq : X D
+Note: could be using arbitra ry weight func
+tion instead of probabilit y</text>
+        </slide>
+        <slide>
+          <slideno>10</slideno>
+          <text>Optimal codes and complete trees
+Optimal code can be seen as a complete 
+tree with some numb er B of unused termi
+nal nodes 
+By contradiction, if there are incomplete 
+intermediate nodes, nodes of higher order 
+could complete intermediate nodes without 
+adverse eect on length 
+B  D 2, otherwise we could swap unused 
+terminal nodes to group D  1 of them, 
+in which case we can altogether eliminate 
+those terminal nodes</text>
+        </slide>
+        <slide>
+          <slideno>1</slideno>
+          <text>Kraft inequality
+Any instantaneous code C with code lengths 
+l1,l2, . . . , lm must satisfy 
+m 
+Dli  1 
+i=1 
+Conversely , given lengths l1,l2, . . . , lm that 
+satisfy the above inequalit y, there exists and 
+instantaneous code with these codeword 
+lengths 
+How do we achieve such a code in a prac
+tical fashion? 
+Make frequent elements short and infre
+quent one longer.</text>
+        </slide>
+        <slide>
+          <slideno>11</slideno>
+          <text>Optimal codes and complete trees
+How large is B? B + m = n(D  1) + D so 
+D  2  B is the remainder of dividing m  2 
+by D  1, or (m  2)mod (D  1) 
+B = D  2	 ((m  2)mod (D  1)) 
+That is why we rst group the q = 2+((m
+2)mod (D  1)) least likely source symb ols
+After we have group ed those symb ols, a 
+complete tree is needed for the remaining 
+m  q symb ols plus the symb ol created by 
+the amalgamation of the least likely q sym
+bols 
+Use the fact that B + q = D 
+m  q +1	= n(D  1) + D  B  q +1 
+= n(D  1) + 1 
+=(n  1)(D  1) + D</text>
+        </slide>
+        <slide>
+          <slideno>13</slideno>
+          <text>MIT OpenCourseWare
+http://ocw.mit.edu 
+6.441 Information Theory 
+Spring 2010 
+For information about citing these materials or our Terms of Use, visit: http://ocw.mit.edu/terms .</text>
+        </slide>
+        <slide>
+          <slideno>9</slideno>
+          <text>Complete trees
+The numb er of terminal nodes in a com
+plete code tree with alphab et size D must 
+be of the form D + n(D  1) 
+Smallest complete tree has D terminal nodes
+When we replace a terminal node by an in
+termediate node, we lose one terminal node 
+and gain D more, for a net gain of D  1</text>
+        </slide>
+        <slide>
+          <slideno>0</slideno>
+          <text>LECTURE 6
+Last time: 
+Kraft inequalit y  
+optimal codes.  
+Lecture outline 
+Human codes  
+Reading: Scts. 5.5-5.7.</text>
+        </slide>
+        <slide>
+          <slideno>8</slideno>
+          <text>Complete trees
+Denition: a complete code tree is a 
+nite code tree in which each intermediate 
+node has D nodes of the next higher order 
+stemming from it 
+In a complete tree the Kraft inequalit y is 
+satised with equalit y</text>
+        </slide>
+        <slide>
+          <slideno>7</slideno>
+          <text>Why does this work? 
+Two questions arise: 
+Why is it enough to now nd a Human 
+code CHuff,mq? 
+Where does the the q = 2+((m2)mod (D
+1)) come from? 
+Add one more letter for the q symb ols xm, . . . , xmq 
+with respect to CHuff,mq 
+Average length of code is average length of 
+CHuff,mq, plus p(ymq)= m
+i=mqp(xi) 
+Could we have done better by taking some 
+unused node in CHuff,mq to represent some 
+of the xm, . . . , xmq? Well see that this is 
+not possible and it is related to the rst 
+question</text>
+        </slide>
+        <slide>
+          <slideno>5</slideno>
+          <text>Why does this work? 
+Illustrate for binary</text>
+        </slide>
+        <slide>
+          <slideno>12</slideno>
+          <text>What happens if the unlikely events
+change probabilit y?
+Major change may be necessa ry in the code
+Cannot do a good job of coding until all 
+events have been catalogued</text>
+        </slide>
+        <slide>
+          <slideno>3</slideno>
+          <text>Human codes for binary D
+For the code C to be optimal, l(xi)  l(xj) 
+for i  j 
+for every maximal length codeword C(xi) 
+there must a codeword C(xj) that diers 
+only in the last bit -otherwise erase one bit 
+while still satisfying prex condition 
+to satisfy that C(xm) and C(xm1) dier 
+only in the last bit: nd xi such that C(xm) 
+and C(xi) dier only in the last bit and if 
+xi = xm, swap them 
+repeat with code for symb ols x1, . . . , xm2</text>
+        </slide>
+      </slides>
+      <videos/>
+    </lecture>
+  </lectures>
+</doc>

@@ -1,0 +1,3593 @@
+<doc>
+  <source>MIT</source>
+  <date>28/01/2023</date>
+  <course>
+    <course_url>https://ocw.mit.edu/courses/15-066j-system-optimization-and-analysis-for-manufacturing-summer-2003/</course_url>
+    <course_title>System Optimization and Analysis for Manufacturing</course_title>
+    <course_tags>
+      <list>Engineering </list>
+      <list>Mathematics </list>
+      <list>Systems Engineering </list>
+    </course_tags>
+  </course>
+  <lectures>
+    <lecture>
+      <lecture_title>15</lecture_title>
+      <lecture_pdf_url>https://ocw.mit.edu/courses/15-066j-system-optimization-and-analysis-for-manufacturing-summer-2003/resources/ses20_monte_carlo/</lecture_pdf_url>
+      <lectureno>&#160;</lectureno>
+      <slides>
+        <slide>
+          <slideno>21</slideno>
+          <text>Jrmie GallienClass 2 Wrap-Up
+1.Monte-Carlo Framework, Algorithm &amp; 
+Examples
+2.Crystal Ball Modeling
+3.Theory of Random Number Generation</text>
+        </slide>
+        <slide>
+          <slideno>10</slideno>
+          <text>Jrmie GallienTaskDescriptionDuration (weeks)PrecedenceLSLFESEFSlack
+AMarket Study14-129-115-129-1150
+BExternal Developer Focus Group10-125-115-129-1194
+CFeature Selection4A,B-115-111-115-1110
+DHardware Engineering25C-111-86-111-860
+EOperating System Devlpt.16D,B-86-70-86-700
+FAdvertising Campaign20D,M,N-200-2000
+GSupplier Selection &amp; Negotiation20D-73-53-86-6613
+HComponent Engineering &amp; Inventory Buildup45G-53-8-66-2113
+IAssembly Facility Setup18D-26-8-86-6860
+JFinished Good Inventory Buildup7I,H-8-1-21-1413
+KLibrary &amp; Programmer Toolkit Devlpt.12E-70-58-70-580
+LExternal Development Support Setup5K-57-52-58-531
+MInternal Game Devlpt.30K-50-20-58-288
+NExternal Game Devlpt.32L,O-52-20-52-200
+OPlatform Promotion6K-58-52-58-520
+PPublisher Selection &amp; Negotiation5M-6-1-28-2322
+QWebsite Setup20M-200-28-88
+RRelease Promotion Material Design3D,M,N-17-14-20-173
+SDistribution Channels Devlpt. &amp; Negotiation9R-14-5-17-83
+TCarrier Selection &amp; Negotiation4S-5-1-8-43
+ULaunch Event Organization &amp; PR5R-50-17-1212
+VHardware &amp; Software Shipment1J,T,P,N-10-4-33
+WLaunch!0V,U,Q,F00000Critical Path Solution</text>
+        </slide>
+        <slide>
+          <slideno>17</slideno>
+          <text>Jrmie GallienSolution
+1.Generate a sample U from U[0,1]
+2.if U &lt; p0then X = x0
+if p0&lt; U &lt; p0+ p1then X = x1
+..
+if p0+  + pj-1 &lt; U &lt; p0+  + pjthen X =xj
+P( X = xj)= P(p0+  +pj-1 &lt; U &lt; p0+  +pj)
+= pj</text>
+        </slide>
+        <slide>
+          <slideno>5</slideno>
+          <text>Jrmie GallienDreamCast Launch Project
+Task Description Duration (weeks) Precedence
+AMarket Study14
+BExternal Developer Focus Group10
+CFeature Selection4A,B
+DHardware Engineering25C
+EOperating System Devlpt.16D,B
+FAdvertising Campaign20D,M,N
+GSupplier Selection &amp; Negotiation20D
+HComponent Inventory Buildup45G
+IAssembly Facility Setup18D
+JFinished Good Inventory Buildup7I,H
+KLibrary &amp; Programmer Toolkit Devlpt.12E
+LExternal Development Support Setup5K
+MInternal Game Devlpt.30K
+NExternal Game Devlpt.32L,O
+OPlatform Promotion6K
+PPublisher Selection &amp; Negotiation5M
+QWebsite Setup20M
+RRelease Promotion Material Design3D,M,N
+SDistribution Channels Devlpt. &amp; Negotiation9R
+TCarrier Selection &amp; Negotiation4S
+ULaunch Event Organization &amp; PR5R
+VHardware &amp; Software Shipment1J,T,P,N
+WLaunch!0V,U,Q,F</text>
+        </slide>
+        <slide>
+          <slideno>15</slideno>
+          <text>Jrmie GallienLinear Congruential Generator
+Example: Zi= ( 11Zi-1 ) modulo 16 
+Z0= 1
+Z1= (11) mod 16 = 11
+Z2= (121) mod 16 = 9
+Z3= (99) mod 16 = ?
+Z4= (33) mod 16 = ?
+Huge literature on LCG periods, parameter choice, 
+statistical tests for randomness
+Crystal Ball uses Zi= (630,360,016Zi-1 ) mod (231-1)</text>
+        </slide>
+        <slide>
+          <slideno>6</slideno>
+          <text>Jrmie GallienB
+10C
+4
+E
+16D
+25G
+20I
+18
+H
+45J
+7
+K
+12M
+30P
+5
+N
+32L
+5
+O
+6R
+3S
+9 T
+4U
+5
+F
+20Q
+20V
+1W
+0
+A
+14
+Ext Dev
+Focus GrpMktStudy
+Features
+HW Eng
+O/S Dev
+Advert PlanSupp Sel &amp; Neg
+Comps
+InvSetup Factory
+FG Inv Build
+SW Dev Kit
+Dev SuppIntDev
+Ext DevPlatform
+MktgPublisher
+Sel&amp; NegSetup
+Website
+Release
+PromoDistr Neg
+Carrier NegPlan Launch
+EventShip HW 
+&amp; SWGO!</text>
+        </slide>
+        <slide>
+          <slideno>2</slideno>
+          <text>Jrmie Gallien1.Generate n samples of X: X1,  , Xn
+2.Compute h( X1), h(X2), , h( Xn)
+3.Estimate = E[ h( X) ] with
+= [h(X1)+h(X2)++h( Xn)]/nMonte-Carlo Algorithm
+Why is a good estimator?</text>
+        </slide>
+        <slide>
+          <slideno>0</slideno>
+          <text>Jrmie GallienClass 2 Outline
+1.Monte-Carlo:
+Framework/Definition
+Algorithm
+Examples
+2.Random Number Generation</text>
+        </slide>
+        <slide>
+          <slideno>8</slideno>
+          <text>Jrmie GallienB
+10C
+4
+E
+16D
+25G
+20I
+18
+H
+45J
+7
+K
+12M
+30P
+5
+N
+32L
+5
+O
+6R
+3S
+9 T
+4U
+5
+F
+20Q
+20V
+1W
+0
+A
+14
+0, 10
+4,14
+ES, EF
+LS, LF0, 14
+0,14 14, 18
+14,18
+43, 59
+43, 5918, 43
+18, 43
+59, 71
+59, 7143, 61
+103,121
+43, 63
+56,76108, 115
+121,128
+63, 108
+76, 121
+71, 77
+71, 7771, 101
+79, 109
+71, 76
+72, 77101, 121
+109,129
+101, 106
+123,128
+77, 109
+77, 109 109, 129
+109, 129108, 111
+112,115111, 116
+124,129124, 125
+128, 129
+111, 120
+115,124120, 124
+124,128129, 129
+129, 129
+A
+d</text>
+        </slide>
+        <slide>
+          <slideno>16</slideno>
+          <text>Jrmie GallienDiscrete Distributions
+We want to simulate a random variable X 
+defined byP( X = xj) = pj,j=0,1,,m
+1.Generate a sample U from U[0,1]
+2.if U &lt; p0then X = x0
+if p0&lt; U &lt; p0+ p1then X = x1
+..
+if p0+  + pj-1 &lt; U &lt; p0+  + pjthen X = xj
+Why does this work?</text>
+        </slide>
+        <slide>
+          <slideno>11</slideno>
+          <text>Jrmie GallienTaskDescriptionDuration (weeks)PrecedenceLSLFESEFSlack
+AMarket Study14-129-115-129-1150
+BExternal Developer Focus Group10-125-115-129-1194
+CFeature Selection4A,B-115-111-115-1110
+DHardware Engineering25C-111-86-111-860
+EOperating System Devlpt.16 D,B-86-70-86-700
+FAdvertising Campaign20D,M,N-200-2000
+GSupplier Selection &amp; Negotiation20D-73-53-86-6613
+HComponent Engineering &amp; Inventory Buildup45G-53-8-66-2113
+IAssembly Facility Setup18D-26-8-86-6860
+JFinished Good Inventory Buildup7I,H-8-1-21-1413
+KLibrary &amp; Programmer Toolkit Devlpt.12E-70-58-70-580
+LExternal Development Support Setup5K-57-52-58-531
+MInternal Game Devlpt.30 K-50-20-58-288
+NExternal Game Devlpt.32 L,O-52-20-52-200
+OPlatform Promotion6K-58-52-58-520
+PPublisher Selection &amp; Negotiation5M-6-1-28-2322
+QWebsite Setup20M-200-28-88
+RRelease Promotion Material Design3D,M,N-17-14-20-173
+SDistribution Channels Devlpt. &amp; Negotiation9R-14-5-17-83
+TCarrier Selection &amp; Negotiation4S-5-1-8-43
+ULaunch Event Organization &amp; PR5R-50-17-1212
+VHardware &amp; Software Shipment1J,T,P,N-10-4-33
+WLaunch!0V,U,Q,F00000Stochastic Task Durations
+Duration of development tasks E, M and N 
+now follow exponential distributions with 
+means 16, 30 and 32 respectively.
+What is the probability that the total project 
+duration will be more than 135 weeks?</text>
+        </slide>
+        <slide>
+          <slideno>12</slideno>
+          <text>Jrmie GallienStochastic Programming
+X1~N(1500,350)
+Stochastic Demand X2~N(2000,600)
+X3~N(1500,450) Plants (i)Distribution
+Centers (j)
+X1
+X2
+X3Cap1
+Cap2Capacity Demand
+Transportation
+Unit CostsCij</text>
+        </slide>
+        <slide>
+          <slideno>14</slideno>
+          <text>Jrmie GallienU[0,1] Sample Generation
+1.Calculate Z1, Z2, given by the Linear 
+Congruential Generator:
+Zi= (aZi-1 + c ) modulo m
+where m, a, c and Z0are non-neg. integers
+2.Take Ui= Zi/ m as a proxy to an 
+independent sequence of U[0,1] random 
+variates (note: 0 Ui1 for all i)modulus seed</text>
+        </slide>
+        <slide>
+          <slideno>7</slideno>
+          <text>Jrmie GallienCritical Path Algorithm
+1.A task Early Start Date 
+is the largest of all 
+Early Finish Dates of 
+its predecessors
+2.A task Late Finish Date 
+is the earliest of all 
+Late Start Dates of its 
+successorsA
+14
+D
+3
+C
+5B
+10
+ES, EF
+LS, LFA
+142 ,   16
+LS, LF
+5 ,   10
+LS, LF5 ,   15
+LS, LF
+A
+14
+D
+3
+C
+5B
+10ES, EF
+20, 34
+ES, EF
+14, 19ES, EF
+15, 25 LS, LFES, EF</text>
+        </slide>
+        <slide>
+          <slideno>3</slideno>
+          <text>Jrmie GallienA Sales Incentive Plan
+A company has a sales incentive plan with the 
+following structure: In the months when sales are 
+lower than $10,000, a salesrepget a base salary of 
+$2000. If the monthly sales achieved are between 
+$10,000 and $15,000, then he/she is paid 20% of the 
+sales. Finally, if the monthly sales figure is larger than 
+$15,000, the salesrepget 30% of the sales.
+Assuming the monthly sales achieved by a salesman 
+follows an exponential distribution with mean $15,000, 
+what is the mean and standard deviation of the 
+salesmans monthly salary under this compensation 
+plan?</text>
+        </slide>
+        <slide>
+          <slideno>4</slideno>
+          <text>Jrmie GallienProduct Reliability
+Consider a product reliability model given by:
+Component life lengths:XA~ exp(5.1); XB~ N(4.5,1); XC~ exp(6.5)
+XD~ exp(5.4); XE~ exp(6.4); XF~ N(5.5,0.8)
+What is the probability that the product will function for at least 3 
+years (warranty period)?A B
+CE
+DF</text>
+        </slide>
+        <slide>
+          <slideno>20</slideno>
+          <text>Jrmie GallienExponential Distribution
+Variable exp( l) has cdf. F(t) = 1 exp(- lt);
+F-1(y) = -log(1-y) / l
+1.Generate U from U[0,1]
+2.Compute X = -log(1-U ) / l
+3.The distribution of X is exp( l) !</text>
+        </slide>
+        <slide>
+          <slideno>1</slideno>
+          <text>Jrmie GallienMonte-Carlo Framework
+Estimate = E[ h( X) ]
+where X= {X1,,Xm} is a random vector in Rm,
+h(.) is a function Rm&gt;R,
+and E[ | h( X) | ] &lt;</text>
+        </slide>
+        <slide>
+          <slideno>19</slideno>
+          <text>Jrmie GallienSolution
+1.Generate a sample U from U[0,1]
+2.Set X = F-1( U )
+P ( X &lt; t ) = P( F-1(U) &lt; t ) = P( U &lt; F(t) ) = F(t)
+1
+0F(x)
+xU[0,1]
+F-1( U )</text>
+        </slide>
+        <slide>
+          <slideno>13</slideno>
+          <text>Jrmie GallienRandom Number Generation
+The key in a Monte-Carlo simulation is to 
+generate sample values drawn from a known 
+probability distribution. How is this done?
+Generate Sample Value from Uniform[0,1]
+Discrete Distribution
+Inverse transform method
+Rejection methodContinuous Distribution
+Inverse transform method
+Rejection method
+Composition method
+Polar method</text>
+        </slide>
+        <slide>
+          <slideno>9</slideno>
+          <text>Jrmie Gallien71, 76
+72, 77120, 124
+124,128111, 120
+115,124111, 116
+124,129
+108, 111
+112,115101, 106
+123,12871, 101
+79, 109124, 125
+128, 129
+101, 121
+109,12943, 61
+103,121
+43, 63
+56,76108, 115
+121,128
+63, 108
+76, 121
+0, 10
+4,14B
+10C
+4
+E
+16D
+25G
+20I
+18
+H
+45J
+7
+K
+12M
+30P
+5
+N
+32L
+5
+O
+6R
+3S
+9 T
+4U
+5
+F
+20Q
+20V
+1W
+0
+A
+14
+ES, EF
+LS, LF0, 14
+0,14 14, 18
+14,18
+43, 59
+43, 5918, 43
+18, 43
+59, 71
+59, 71
+71, 77
+71, 7777, 109
+77, 109 109, 129
+109, 129129, 129
+129, 129
+A
+d</text>
+        </slide>
+        <slide>
+          <slideno>18</slideno>
+          <text>Jrmie GallienContinuous Distributions
+We want to simulate a random variable X 
+defined byP( X &lt; t) = F(t)(F inversible)
+1.Generate a sample U from U[0,1]
+2.Set X = F-1( U )
+Why does this work?</text>
+        </slide>
+      </slides>
+      <videos/>
+    </lecture>
+    <lecture>
+      <lecture_title>5</lecture_title>
+      <lecture_pdf_url>https://ocw.mit.edu/courses/15-066j-system-optimization-and-analysis-for-manufacturing-summer-2003/resources/lec5_formulating_mgmt_problem/</lecture_pdf_url>
+      <lectureno>&#160;</lectureno>
+      <slides>
+        <slide>
+          <slideno>0</slideno>
+          <text>Guidelines on Form ulating a Managem ent Problem  as 
+a Linear Program ming Model  Prof. Stephen Graves
+ 
+General Rules of Thum b
+        There is usually m ore than one correct form ulation of a problem . 
+ Sometimes it is unclear whether to use inequality or equality constraints. 
+ Sometimes our intuition tells us that a constraint is irrelevant (i.e., it is never 
+binding).  Try to find such constraints.  But when in doubt, leave the 
+constraint in. 
+ 
+Identifying Decision Variables
+ Start by using decision variables that agree with your intuition.  Ask 
+yourself, "W hat decision m ust I m ake in order to determ ine the outcom e?" 
+ 
+Identifying Constraints
+ Some constraints are resource-related: can' t use m ore than available 
+                              2G2 + G3 + W 1 + W 2 &lt;= 16000 (256K m emory) 
+ 
+ Other constraints are capacity lim its 
+ Coal production from  Consol m ine    &lt;=    m ine capacity 
+ Requirem ents 
+     Must satisfy dem and 
+ Quality Constraints 
+ Must have at least 19 % average volatility in coking coal 
+ Policy Constraints 
+ At least 50% union m ines 
+ Must satisfy workstation dem and from  key custom er 
+15.066J   Summer 2003 47</text>
+        </slide>
+        <slide>
+          <slideno>2</slideno>
+          <text>Exam ple - Logistics Planning Problem  
+ 
+One Product   Bulk Road Salt 
+Planning Period  Month 
+Planning Horizon  12 Months:  April ---- March 
+ 
+Production Locations:  4 Mines 
+ 
+Stockage Locations:  4 Mines 
+    50 Stockpiles 
+    100' s of Custom er Sites 
+ 
+Transportation:  Mines to Stockpiles by Rail ( Barges) 
+    Stockpiles to Custom ers by Truck 
+ 
+Issues:    Production Plan for Seasonal Dem and 
+    Transportation and Inventory Plan  
+    Decision Support for Bidding Process  
+ 
+Indices:  i---m ines;  j--stockpiles;  k--custom ers;  t--tim e periods 
+ 
+Data Requirem ents: 
+  dem and forecasts 
+  capacities 
+  cost coefficients 
+ 
+Decision Variables 
+ 
+ Production at i in tim e period t 
+ 
+ Inventory at i at end of tim e period t 
+ Inventory at j at end of tim e period t 
+ Inventory at k at end of tim e period t 
+ 
+ Rail shipm ents from i to j in t 
+ Truck shipm ents from  j to k in t 
+15.066J   Summer 2003 49</text>
+        </slide>
+        <slide>
+          <slideno>1</slideno>
+          <text>Balance Constraints 
+ Conservation of Flow: Flow In equals Flow Out  
+ Inventory @ t+1 equals Inventory @ t plus production m inus dem and 
+ 
+Identif ying Objective Function
+ maximize revenue m inus cost 
+ minimize cost m inus revenue 
+ minimize num ber of people hired 
+ Be careful to m ake sure all costs and profits are properly accounted for, 
+appearing once and only once. 
+ net out any sunk or fixed costs 
+ 
+Classes of LP Models  
+1. Product Mix (e.g., Digital Short Term  Planning) 
+ 
+2. Blending  
+ 
+3. Multi Period Planning 
+ 
+4. Multi Stage Coordination  
+ 
+5. Covering and Cutting Stock Problem s 
+ 
+6. Design Param eter Optim ization 
+ 
+7. Network Planning 
+ 
+8.  Network Design 
+ 
+9. Capital Budgeting 
+ 
+10. Process Design and Layout 
+15.066J   Summer 2003 48</text>
+        </slide>
+        <slide>
+          <slideno>3</slideno>
+          <text>Constraints 
+ 
+ 
+  Inventory Flow Balance 
+ 
+ 
+ 
+ 
+  Lim its on Production/Transportation Activities 
+ 
+ m ine production 
+ 
+ 
+ 
+ rail cars 
+ 
+ 
+ 
+ inbound at stockpiles 
+ 
+ 
+ 
+ outbound link lim it 
+ 
+ 
+ 
+ inventory storage  
+ 
+ 
+ 
+  Objective 
+ 
+MIN Cost   =  production costs   +   inve ntory holding costs  +  m ine to stockpile 
+shipm ent costs  +  stockpile to custom er shipm ent costs 
+ 
+ 
+15.066J   Summer 2003 50</text>
+        </slide>
+      </slides>
+      <videos/>
+    </lecture>
+    <lecture>
+      <lecture_title>11</lecture_title>
+      <lecture_pdf_url>https://ocw.mit.edu/courses/15-761-introduction-to-operations-management-spring-2013</lecture_pdf_url>
+      <lectureno>5</lectureno>
+      <slides/>
+      <videos/>
+    </lecture>
+    <lecture>
+      <lecture_title>21</lecture_title>
+      <lecture_pdf_url>https://ocw.mit.edu/courses/15-066j-system-optimization-and-analysis-for-manufacturing-summer-2003/resources/lec21_advanced_topics/</lecture_pdf_url>
+      <lectureno>&#160;</lectureno>
+      <slides>
+        <slide>
+          <slideno>12</slideno>
+          <text>2002 - Jrmie GallienNewsvendor Model Parameters
+q = Order Quantity decision
+c = Unit Cost 
+r = Unit Revenue parameters
+s = Unit Salvage Value (r &gt; c &gt; s)
+d = Demand (unknown) random variable</text>
+        </slide>
+        <slide>
+          <slideno>0</slideno>
+          <text>2002 - Jrmie GallienClass 7 Outline
+Advanced Topics in Simulation:
+1.Variance Reduction
+A.Common Random Numbers
+B.Antithetic Variables
+C.Control Variates
+2.Simulation-Based Optimization</text>
+        </slide>
+        <slide>
+          <slideno>7</slideno>
+          <text>2002 - Jrmie GallienAV Implementation
+Want to estimate E[ h(X) ].  Let U1, U2,   , Unthe 
+Uniform[ 0,1 ] numbers used to generate X1,  , Xn
+Idea: Compute Xiusing 1  Ui!!! 
+Why do Xiand Xihave the same distribution?
+Estimators: Z(n) = (Z1+Z2+Z3+ +Zn) / n
+Z(n) = (Z1+Z2+Z3+ +Zn) / n 
+with Zi= h(Xi) and Zi= h(Xi)
+Take W(n) = (Z(n) + Z(n)) / 2 !
+When does it work best / worst?</text>
+        </slide>
+        <slide>
+          <slideno>15</slideno>
+          <text>2002 - Jrmie GallienModule Wrap-Up
+Class 1 Definitions, The Simulation Process
+Class 2 Monte-Carlo Theory and 
+Applications, Crystal Ball
+Class 3 Ontario Gateway: Monte-Carlo Case
+Class 4 Discrete-Event Theory and 
+Applications, Simul8
+Class 5 Human Genome Project: Discrete-
+Event Case
+Class 6 Design of Simulation Experiments
+Class 7 Advanced Topics: Variance 
+Reduction, Simulation-Based 
+Optimization</text>
+        </slide>
+        <slide>
+          <slideno>9</slideno>
+          <text>2002 - Jrmie GallienVariance Reduction: Results
+For the reliability example, the results 
+obtained where:
+Estimator
+Raw Antithetic Control Variate
+Standar d Absolute 0.144 0.100 0.023
+Deviation Relative 100% 69% 16%</text>
+        </slide>
+        <slide>
+          <slideno>16</slideno>
+          <text>2002 - Jrmie GallienFollow-up Classes
+ESD.76J / 1.019 Systems Simulation
+Spring, 12 credits. Comparable footprint.
+1.021J Introduction to Modeling and Simulation
+Spring, 12 credits. Continuous models, engineering 
+applications.
+2.141 Modeling and Simulation of Dynamics Systems
+Fall, 12 credits. Advanced engineering simulation class.</text>
+        </slide>
+        <slide>
+          <slideno>2</slideno>
+          <text>2002 - Jrmie GallienWhy Variance Reduction?
+Cost estimate within 1% for policy RCNC2 in 
+Ontario Gateway 200,000 iterations !!!
+Instead of brute-force sample size approach, 
+lets try to reduce the estimator variance
+Ynz1/2S2n
+nIdea:
+Reduce
+this term!</text>
+        </slide>
+        <slide>
+          <slideno>10</slideno>
+          <text>2002 - Jrmie GallienSimulation-Based Optimization
+Remember Monte-Carlo framework:
+The associated optimization problem is:Estimate E[ h( X) ]
+where X= {X1,,Xm} is a random vector in Rm
+Max d E[ h( X,q) ]
+s.t. q F
+where Xis a random vector in Rm
+qa vector of decision variables in Rw
+Fis a subset of Rw(feasible region)</text>
+        </slide>
+        <slide>
+          <slideno>4</slideno>
+          <text>2002 - Jrmie GallienCommon Random Numbers
+This technique (CRN) is used when 
+comparing alternatives
+Intuition? 
+Implication: Use the same (synchronized) 
+seeds of random numbers during simulation 
+runs intended to compare alternatives
+Is this always beneficial?</text>
+        </slide>
+        <slide>
+          <slideno>3</slideno>
+          <text>2002 - Jrmie GallienThe Wall
+Relative Est imation Accuracy
+0.00%5.00%10.00%15.00%20.00%25.00%30.00%35.00%40.00%45.00%50.00%
+3
+1003
+2003
+3003
+4003
+500
+3
+6003
+7003
+8003
+900
+3
+Sample SizeCI Width / Estimate</text>
+        </slide>
+        <slide>
+          <slideno>6</slideno>
+          <text>2002 - Jrmie GallienAntithetic Variables (AV)
+Idea: Take the average of negatively 
+correlated (unbiased) estimators!
+Whats the intuition?</text>
+        </slide>
+        <slide>
+          <slideno>17</slideno>
+          <text>2002 - Jrmie GallienModule Wrap-Up
+Industrial decision-making is interdisciplinary:
+Contextual
+knowledge
+Operations
+Finance
+Accounting
+Methodological
+skills
+Probability
+OptimizationSoftware
+Implementation
+Solver
+Crystal Ball
+Simul8
+Output Analysis
+Sensitivity Analysis
+StatisticsIndustrial
+ProblemDecision
+Model
+Decision</text>
+        </slide>
+        <slide>
+          <slideno>1</slideno>
+          <text>2002 - Jrmie GallienWhy Variance Reduction?
+Example: Rare Event Probability (Insurance, 
+Risk Analysis, Reliability, Public Health, etc.)
+Simulation Model for Catastrophic Event C 
+with p &lt; 1/1M (exact value unknown)
+How many trials to estimate p with 1% 
+accuracy?
+Remember:
+Here (UB  LB) / E[C] &lt; 1% n &gt; 2.6 x 1011!!!Ynz1/2S2n
+n</text>
+        </slide>
+        <slide>
+          <slideno>8</slideno>
+          <text>2002 - Jrmie GallienControl Variates
+Let Y be the raw output variable
+Let X be some variable correlated to Y
+Definition: Z = Y + c( X-E[X] )
+Intuition?
+VarZ = Var Y + c2 VarX + 2c Cov(X,Y), so
+VarZ  is minimized when c = - Cov(X,Y) / Var X</text>
+        </slide>
+        <slide>
+          <slideno>5</slideno>
+          <text>2002 - Jrmie GallienFormal CRN Argument
+Want to estimate E[ g(X)-h(X) ]
+Generate X1, X2, X3, , Xn, Zi= g(Xi)-h(Xi)
+Estimator Z(n) = (Z1+Z2+Z3+ +Zn) / n 
+Var(Z(n)) = Var( g(X)-h(X) ) / n
+= (Varg(X) + Var h(X) - 2Cov[g(X),h(X)] )/ n
+CRN is only a good idea when g(X) and h(X) 
+are positively correlated!</text>
+        </slide>
+        <slide>
+          <slideno>13</slideno>
+          <text>2002 - Jrmie GallienModel Derivation
+Profit:IF d &gt; q IF d &lt;q
+Profit: ()crq ()crd
+r -cs -c
+EAP: ()()()()s-cqdP r-cqdP +&gt;Incremental Analysis:q q +1:()()csdq+(demand &gt; order qty) (demand &lt; order qty)
+As long as the Expected Additional Profit [EAP] is 
+positive, it is lucrative to increase q  to q + 1 !!!</text>
+        </slide>
+        <slide>
+          <slideno>11</slideno>
+          <text>2002 - Jrmie GallienNewsvendor Model
+One time decision under uncertainty
+Trade-off: Ordering or producing
+too much (waste, salvage value &lt; cost) versus
+too little (excess demand is lost)
+Examples:
+Restaurant;
+Fashion;
+High Tech;
+Capacity and Inventory decisions</text>
+        </slide>
+      </slides>
+      <videos/>
+    </lecture>
+    <lecture>
+      <lecture_title>7</lecture_title>
+      <lecture_pdf_url>https://ocw.mit.edu/courses/15-066j-system-optimization-and-analysis-for-manufacturing-summer-2003/resources/ses7_simplex_method/</lecture_pdf_url>
+      <lectureno>&#160;</lectureno>
+      <slides>
+        <slide>
+          <slideno>3</slideno>
+          <text>Overview of Sim plex Method
+ 
+ 1.   Som ehow find a BFS (canonical form ) to start the algorithm .  If you can' t find 
+a place to start, then possibly the LP form ulation has no feasible solution.  For m ost 
+problem s we actually need to solve a ' fabricat ed' LP to f ind an initial BFS f or the problem  
+of interest. 
+ 
+ 2.   Determ ine whether or not the curre nt BFS can be im proved.  This is done by 
+asking whether there is a way to im prove the objective function by m aking a m arginal 
+change at the corner point - nam ely by incr easing from  zero the value of one of the non 
+isolated (non basic) variables. 
+ 
+ 3.   Stop if the current BFS is optim al (no im provem ent possible).  Otherwise, 
+identify an adjacent BFS with a better objec tive value and perform  the pivot operations 
+necessary to change the canonical form .  The pivot is perform ed by elem entary row 
+operations. 
+ 
+ [In som e cases, im provem ent may be possible and it m ay be possible to im prove 
+the objective indef initely (i.e., m ake inf inite profits).  In such cases, the algorithm  stops 
+and reports that the solution is unbounded.  You should either quit school and cash in 
+your fortune, or take a look at the LP you ha ve tried to solve and understand why it is 
+mis-form ulated.] 
+ 
+ 4.  Repeat step 2 with the new BFS. 
+ 
+15.066J  Summer 2003 54</text>
+        </slide>
+        <slide>
+          <slideno>0</slideno>
+          <text>The Simplex Method for Solving a Linear Program 
+Prof. Stephen Graves  
+           
+ 
+Observations from  Geom etry 
+ 
+   feasible region is a convex polyhedron 
+ 
+   an optim um occurs at a corner point 
+ 
+   possible algorithm  - search over corner points  
+ 
+Issues:  
+ 
+   how to identify or characterize a corner point? 
+ 
+   how to find a corner point to get started?  
+ 
+  how to search efficiently over the corner points?  
+ 
+   how to know when to stop?  
+ 
+Consider  Standard Form  for LP:
+ 
+   All constraints are expressed as equalities. 
+ 
+   All variables are restricted to be non negative. 
+15.066J  Summer 2003 51</text>
+        </slide>
+        <slide>
+          <slideno>4</slideno>
+          <text>SIMPLEX METHOD - EXAMPLE  
+ 
+ 
+ORIGINAL LP PROBLEM - ADD SLACKS, PUT INTO STANDARD (AND 
+CANONICAL) FORM 
+ 
+ 
+    Z  -  40 S      -      50 E     =    0 
+ 
+               4/5 S     +   6/5 E    +   X 1     =  16 
+ 
+                  2 S      +     3 E           +  X 2   =  30 
+ 
+               2/3 S      +      2 E      +  X 3  =  16 
+ 
+                  16/3 S      +      4 E        +  X 4 =  64 
+ 
+  
+Note  from  the canonical form , we identify a BFS (a corner point) by setting the non-
+isolated variables equal to zero. From  the above, we identify the solution: 
+    S=0, E=0, X 1 = 16, X 2 = 30, X 3 = 16, X 4 = 64. 
+    and objective value Z = 0 
+ 
+Can we im prove this solution by increasing one of the non-isolated variables?   
+ 
+From  the objective row we see that if we increase S by 1 and hold E at 0, then Z increases 
+by 40. Sim ilarly, if we increase E by 1 and hold S at 0, then Z increases by 50.  Thus, it 
+appears that we can im prove the solution by increasing either S or E.   
+ 
+Since the rate of increase is greater for E, we select E to increase. 
+ 
+By how m uch can we increase E?  To answer this question we exam ine each of the 
+constraint rows to see what happens to the isolated variables as we increase E, holding S 
+at 0.  To f acilitate this assessm ent, we can re-write the constraint equations as f ollows 
+(dropping S): 
+ 
+X1 =  16 -  6/5 E     
+X2 =  30 -   3 E 
+X3 =  16 -   2 E 
+X4 =  64 -   4 E 
+ 
+We will increase E until one of the isolated variables reaches 0  which occurs when E = 
+8, and X 3 =  0. 
+ 
+This also tells us how to identify the adjacent BFS (corner point): the next corner point 
+will have S and X 3 as non-isolated variables.   
+15.066J  Summer 2003 55</text>
+        </slide>
+        <slide>
+          <slideno>1</slideno>
+          <text>ORIGINAL LP PROBLEM - ADD SLACKS AND PUT INTO STD FORM: 
+ 
+Max    Z =     40 S   +     50 E 
+ 
+ s.t.          4/5 S   +  6/5 E        &lt;= 16 
+ 
+                  2 S    +     3 E        &lt;=   30 
+ 
+               2/3 S    +     2 E         &lt;= 16 
+ 
+             16/3 S    +     4 E       &lt;= 64 
+ 
+     S, E &gt;=   0  
+ 
+(6, 6, 4, 0, 0, 8)
+(9, 4, 4, 0, 2, 0)(0, 8, 6.4, 6, 0, 32)
+(12, 0,  6.4, 6, 8, 0)
+SE
+(0, 0, 16, 30, 16, 64)( S, E, X1 , X2, X3, X4)
+15.066J  Summer 2003 52</text>
+        </slide>
+        <slide>
+          <slideno>5</slideno>
+          <text>To create the next canonical form  we perform  a series of elem entary row operations so as 
+to replace X 3 with E in the set of isolated variables.  This can be done as follows: 
+ 
+ Give E a coef ficient of  1 by m ultiplying constraint 3 by  : 
+ 
+New Constraint 3:              1/3 S      +       E      +  X 3  =  8 
+ 
+ 
+ Elim inate E from  constraint 1 by subtracti ng 6/5 * constraint 3 from  constraint 1: 
+ 
+Old Constraint 1:      4/5 S     +   6/5 E    +   X 1    =  16 
+ 
+-6/5* New Constraint 3:         -2/5 S     -   6/5E   -3/5 X 3 =  -48/5 
+------------------------------------------------------------------------------------------------ 
+New Constraint 1:      2/5 S                      +   X 1  -3/5 X3 =  32/5 
+ 
+ Do the sam e for constraints 2 and 4 
+ 
+ Elim inate E from  objective row by adding 50* constraint 3 to the objective row: 
+ 
+Old Objective:     Z   -  40 S      -      50 E     =    0 
+ 
+50*New Constraint 3   50/3 S      +      50 E      +  25 X 3  =  400 
+------------------------------------------------------------------------------------------------ 
+New Objective:       Z -70/3 S            +  25 X 3  =  400
+15.066J  Summer 2003 56</text>
+        </slide>
+        <slide>
+          <slideno>2</slideno>
+          <text>In Standard Form , the constraints (exclusive of the non negativity constraints) for the 
+LP can be expressed as a linear system , Ax = b . 
+ 
+A Basic Solution  to Ax = b  (where A is an m  by n m atrix and m  &lt; n) is obtained by 
+setting n - m  variables equal to zero and solving the resulting m  by m  linear system  of 
+equations. 
+ 
+In a Basic Solution, the n - m  variables at zero are called non- basic variables , while the 
+remaining m  variables are called basic variables . 
+ 
+If all of the basic variables take non negativ e values, then the Basic Solution is called a 
+Basic Feasible Solution (BFS) . 
+ 
+Key Property:  There is a unique corner point co rresponding to each Basic Feasible 
+Solution; and there is at least one Basic Feasible Solution corresponding to each corner 
+point (also known as extrem e points).
+ 
+ 
+ 
+Canonical Form  
+ 
+   All constraints are expressed as equalities. 
+   All variables are restricted to be non negative. 
+   RHS' s for all constraints are non negative. 
+   Each constraint equation has an isolated (basic) variable. 
+ 
+  
+Intent of the Canonical Form  - allows one to identify BFS' s, and to m ove from  one BFS' s 
+to another easily through a "pivot operation."  To identify the BFS, we set all of the non-
+isolated (non basic) variables to zero, and r ead off the values for the isolated (basic) 
+variables from  the canonical form . 
+ 
+15.066J  Summer 2003 53</text>
+        </slide>
+        <slide>
+          <slideno>6</slideno>
+          <text>The result from  these operations is a new canonical form : 
+ 
+      Z - 70/3 S             +    25 X 3  =   400 
+ 
+         2/5 S                      +  X 1           -  3/5 X 3    =   32/5 
+ 
+                     S                       +  X 2   -  3/2 X 3  =    6 
+ 
+              1/3 S      +           E           +  1/2 X 3  =    8 
+ 
+             4 S                           -      2 X 3  +  X4 =   32 
+ 
+ 
+From  the canonical form , we identify a BFS (a corner point) by setting the non-isolated 
+variables equal to zero, nam ely set S =  X 3 = 0. 
+Thus, we identify the solution: 
+    S=0, E=8, X 1 = 32/5, X 2 = 6, X 3 = 0 , X 4 = 32. 
+    and objective value Z = 400. 
+ 
+Can we im prove this solution by increasing one of the non-isolated variables?   
+ 
+From  the objective row we see that if we increase S by 1 and hold X 3 at 0, then Z 
+increases by 70/3. If we increase X 3 by 1 and hold S at 0, then Z decreases by 25.  Thus, 
+it appears that we can im prove the solution, but only by increasing S.   
+ 
+By how m uch can we increase S?  To answer this question we exam ine each of the 
+constraint rows to see what happens to the isolated variables as we increase S, holding 
+X3 at 0.  W e re-write the constraint equations as follows (dropping X 3): 
+ 
+X1 =  32/5 -  2/5 S     
+X2 =  6 -   S 
+E =  8 -   1/3 S 
+X4 =  32 -   4 S 
+ 
+We will increase S until one of the isolated variables reaches 0  which occurs when S = 
+6, and X 2 =  0. 
+ 
+This also tells us how to identify the adjacent BFS (corner point): the next corner point 
+will have X 2 and X 3 as non-isolated variables.   
+ 
+To create the next canonical form  we perform  a series of elem entary row operations so as 
+to replace X 2 with S in the set of isolated variables.  This can be done as before:
+15.066J  Summer 2003 57</text>
+        </slide>
+        <slide>
+          <slideno>7</slideno>
+          <text>After a series of elem entary row operations to isolate S in constraint 2: 
+ 
+ Z   +  70/3 X 2 -     10 X 3   =   540 
+ 
+       X1 -    2/5 X 2     =   4 
+ 
+  S   +  X2 -  3/2 X 3   =    6 
+ 
+          E  -     1/3 X 2 +        X 3   =    6 
+ 
+    -         4 X 2 +     4 X 3            +  X 4 =    8 
+ 
+ 
+ 
+From  this canonical form  we identify the solution:  
+   S=6, E=6, X1 = 4, X 2 = 0, X 3 = 0 , X 4 = 8. 
+    and objective value Z = 540. 
+ 
+We see that we can im prove this solution by increasing X 3, and we find that we can 
+increase X 3 until X 4 reaches 0.  W e then replace X 4 by X 3 in the set of  isolated 
+variables: 
+ 
+Z    +  40/3 X 2            +     5/2 X 4 =     560 
+ 
+   X1 -     2/5  X 2     =         4 
+ 
+  S  -     1/2  X 2            +     3/8 X 4 = 9 
+ 
+         E  +    2/3  X 2            -      1/4 X 4 = 4 
+ 
+    -              X 2     +        X 3      +     1/4 X 4 =          2 
+ 
+From  this canonical form  we identify the solution:  
+   S=9, E=4, X1 = 4, X 2 = 0, X 3 = 2 , X 4 = 0. 
+    and objective value Z = 560. 
+ 
+We see that we cannot im prove this solution by increasing either X 2 or X4. This is the 
+optim al solution.  
+15.066J  Summer 2003 58</text>
+        </slide>
+      </slides>
+      <videos/>
+    </lecture>
+    <lecture>
+      <lecture_title>14</lecture_title>
+      <lecture_pdf_url>https://ocw.mit.edu/courses/15-066j-system-optimization-and-analysis-for-manufacturing-summer-2003/resources/lec14_intro_simulation/</lecture_pdf_url>
+      <lectureno>6</lectureno>
+      <slides>
+        <slide>
+          <slideno>15</slideno>
+          <text>2002 - Jrmie GallienExperiment Design
+Warm-up Period?
+Run Length?
+Number of Trials?
+How to analyze and interpret the results?</text>
+        </slide>
+        <slide>
+          <slideno>9</slideno>
+          <text>2002 - Jrmie GallienClearPictures: Simulation Goals
+Estimate the average and standard dev. of 
+delivery leadtime through the pull section;
+Estimate the average and standard dev. of 
+WIP inventory through the pull section;
+Determine the production bottleneck;
+Estimate the impact of purchasing more 
+machines on leadtime and inventory;</text>
+        </slide>
+        <slide>
+          <slideno>8</slideno>
+          <text>2002 - Jrmie GallienSimulation Goal
+System Design  Vs.  System Analysis
+Strategic? Key Performance
+Measures?Tactical?
+Control?
+What about ClearPictures, Inc.?</text>
+        </slide>
+        <slide>
+          <slideno>0</slideno>
+          <text>2002 - Jrmie GallienSystems Optimization and Analysis
+(15.066J) 
+Simulation Module
+Professor J rmie Gallien
+Operations Management Group,
+MIT Sloan School of Management</text>
+        </slide>
+        <slide>
+          <slideno>5</slideno>
+          <text>2002 - Jrmie GallienSimulation Module Outline
+Week ClassDateTopic Reading Assignment
+1 1 15-JulIntroduc tion, Simulation Process
+and S tochastic Modeling
+2 16-JulMonte-Carlo Theory and
+Examples (with Crystal Ball)
+TUT117-JulMonte-Carlo Modeling and
+Crystal Ball Tutorial
+2 3 21-JulOntario Gateway Case
+Discussion
+4 22-JulDiscrete-Event Framework and
+Examples (with Simul8)
+TUT224-JulDiscrete-Event Modeling and
+Simul8 Tutorial
+3 5 28-JulDiscrete Event Case
+Discussion
+6 29-JulExperimental Design and
+Simulation Analysis
+7 30-JulAdvanced Modeling Examples,
+Simulation-Based O ptimization
+TUT331-JulExperimental Design and
+Simulation Analysis TutorialHomework 3Human G enome Case Write-Up
+Proba/Stat Review 2 ChecklistHomework 2Homework 1
+Ontario Gateway Case Write-Up
+Implement ClearPictures model in Simul8 Introduc tion to Simul8ClearPictures, Inc. Questions 1 to 3 in ClearPictures, Inc.
+Proba/Stat Review 1 Checklist</text>
+        </slide>
+        <slide>
+          <slideno>6</slideno>
+          <text>2002 - Jrmie GallienOptional References
+Law, A. and W. Kelton, Simulation Modeling 
+and Analysis , 3rded., McGraw-Hill (2000).
+Ross, S., Simulation , 3rded., Academic Press 
+(2002).
+Swain, J., Power Tools for Visualization and 
+Decision-Making, OR/MS Today, February 
+2001. Available online at 
+http://www.lionhrtpub.com/orms/surveys/Simulation/Simulation.html</text>
+        </slide>
+        <slide>
+          <slideno>11</slideno>
+          <text>2002 - Jrmie GallienSystem Modeling
+2aModel on paper
+2bUser/Client feedback
+2cSensitivity analysisProcess Flow Diagram, Flow Chart
+Model assumption sheet!
+Theoretical: TOC, Queueing theory
+2dData collection &amp; Fit Prioritize, mock data example, fitting 
+software1Define s imulation goal
+3Implement the model
+4Debug, Validate, Sensitivity2Model the system
+5Design the experiment</text>
+        </slide>
+        <slide>
+          <slideno>7</slideno>
+          <text>2002 - Jrmie GallienThe Simulation Process
+1Define the simulation goal
+2Model the system
+3Implement the model
+4Debug, Validate, Sensitivity
+5Design the experiment
+6Run the experiment
+7Analyze and communicateKeep the goal in mind!
+Customer feedback!
+Choice of tool is key
+Never skip!
+Customer feedback!Never skip!
+Use confidence intervals!Run length, warm start, 
+variance reduction</text>
+        </slide>
+        <slide>
+          <slideno>16</slideno>
+          <text>2002 - Jrmie GallienClass 1 Wrap-Up
+1.Simulation Process
+2.Modeling
+3.Choice of simulation tool</text>
+        </slide>
+        <slide>
+          <slideno>12</slideno>
+          <text>2002 - Jrmie GallienClearPictures Production Model
+Box / Sensor 
+Board AssemblySensor Firmware 
+Test
+ST2
+ST1Inspection
+85%15%
+CustomerTRIAN[5,10,15]U[13,24]U[15,25]
+N[9.5,4]
+U[10,15]
+360</text>
+        </slide>
+        <slide>
+          <slideno>3</slideno>
+          <text>2002 - Jrmie GallienTypes of Simulation
+Physical Vs. Digital
+Static Vs. Dynamic
+Discrete Event Vs. Continuous Time
+This Module: Digital, Static &amp; Dynamic 
+Discrete Event Simulation</text>
+        </slide>
+        <slide>
+          <slideno>10</slideno>
+          <text>2002 - Jrmie GallienSystem Modeling
+Everything should be made as simple as possible, 
+but not simpler. Albert Einstein .
+The simulation goal should be the guiding light when 
+deciding what to model
+Get client/user feedback early, and maintain model + 
+assumption sheet for communication purposes
+For random variables, collect data and fit 
+distributions after modeling the system, with 
+sensitivity analysis in mind!</text>
+        </slide>
+        <slide>
+          <slideno>14</slideno>
+          <text>2002 - Jrmie GallienValidation &amp; Debugging
+Slow Graphical Animation
+Step-by-step event list</text>
+        </slide>
+        <slide>
+          <slideno>1</slideno>
+          <text>2002 - Jrmie GallienBio
+Eng.D in Production Systems from Ecole des 
+Mines de Paris, France
+Ph.D in Operations Research from MIT
+Research: Manufacturing Revenue Management, 
+Dynamic Pricing, Auctions, Procurement, 
+Scheduling
+Experience in eCommerce Fulfillment, 
+Electronics, Aeronautics, Transportation and 
+Software</text>
+        </slide>
+        <slide>
+          <slideno>2</slideno>
+          <text>2002 - Jrmie GallienWhat is Simulation?
+Application Domains: Science, Justice, Engineering, 
+Education, Entertainment, Management
+Experiment
+Input A OutcomeSystem
+ModelInput B OutcomeSystem
+Model
+Input B OutcomeReal
+SystemInput A OutcomeReal
+SystemModelingInference Validation</text>
+        </slide>
+        <slide>
+          <slideno>4</slideno>
+          <text>2002 - Jrmie GallienSimulation Module Goals
+Develop the practical skills necessary to 
+design, implement and analyze discrete-
+event simulation systems;
+Practice of Modeling!!!
+Cover the basic theory underlying discrete-
+event simulation methods.</text>
+        </slide>
+        <slide>
+          <slideno>13</slideno>
+          <text>2002 - Jrmie GallienModel Implementation
+General programming language (C++, Java)
+Simulation-oriented language (MODSIM)
+Simulation software with GUI (Simul8, Witness)
+Excel Add-in (Crystal Ball, @Risk)
+FLEXIBILITY COST REQ. SKILLS DEV. TIME RUN T IME
+General Prog. Language Very High Low Very High High Low
+Simulation Language High High High Medium Low
+Simulation Software Medium High Medium Low Medium
+Excel Add-in Low Low Low Lowes t High</text>
+        </slide>
+      </slides>
+      <videos/>
+    </lecture>
+    <lecture>
+      <lecture_title>23</lecture_title>
+      <lecture_pdf_url>https://ocw.mit.edu/courses/15-066j-system-optimization-and-analysis-for-manufacturing-summer-2003/resources/lec23_nonlinear_progamming/</lecture_pdf_url>
+      <lectureno>&#160;</lectureno>
+      <slides>
+        <slide>
+          <slideno>2</slideno>
+          <text>Now suppose that the given point (Q1, Q2, Q3 ) is f easible;  that is, it satisf ies the 
+constraint:  g(Q1, Q2, Q3 )  =  K 
+ 
+What is the best f easible direction ? 
+ 
+The best f easible direction (f or ascent) w ill be the solution to the f ollowing optim ization 
+problem : 
+ 
+ 3SD H d f ii iMAX    =        +   xi 2 d x 2 Q i=1i
+222s. t..        x  + x  + x  =  112 3
+3TD d g ii               =          x  =  0i 2 d x Q i=1i
+
+
+
+
+
+ 
+ 
+By using two Lagrange m ultipliers to solv e the problem , you can find that the best 
+feasible direction (called the reduced gradient ) is given by: 
+ 
+( )f   g  ** * *x =   x ,  x  , x    =  f  -   g12 3g  g
+33 f g  g  gwher e   f   g  =     , and g   g  =     QQ QQii ii i=1 i=1
+           
+ 
+The reduced gradient can then be used as a search direction to im prove the current 
+solution.  To see that the reduced gradient is a feasible direction, we note that  
+f   g  *x g    f g  -   g g = =  0g  g 
+Besides determ ining the reduced gradient, an algorithm  would also need to determ ine the 
+"step size:" nam ely how far to m ove along the reduced gradient.  An algorithm  stops 
+when the reduced gradient equals (approxim ately) the zero vector.  
+15.066J  Summer 2003 98</text>
+        </slide>
+        <slide>
+          <slideno>0</slideno>
+          <text>NON LINEAR PROGRAMMING 
+Prof. Stephen Graves 
+ 
+ Consider the exam ple we used to introduce Lagrange m ultipliers: 
+ 
+  3SD HQii iiMIN     f(Q , Q, Q)   =   + 12 3 Q2i=1 i
+3TDiis.t.     g (Q, Q, Q)   =    =  K12 3 Qi=1 i
+ 
+ 
+Some definitions:  
+ 
+Gradient of  f: 
+ f f  ff  =  ,  ,    QQ Q12 3
+SD H SD H SD H 333 11 1 22 2     =   +  ,   +  ,  + 22 2 22 QQ Q12 3  
+
+ 
+2 
+ 
+Gradient of g:  
+  g g  gg  =  ,  ,    QQ Q12 3
+TD TD TD 33 11 22     =     ,    ,  22QQ Q12  
+
+ 
+2
+3 
+ 
+ 
+Directional derivatives: 
+ 
+Let x = (x1, x2, x3 ) denote a direction.  The directional derivative for f and g are given 
+by: 
+ 
+15.066J  Summer 2003 96</text>
+        </slide>
+        <slide>
+          <slideno>1</slideno>
+          <text>33SD H d f  f ii i  =       x =     +   xii 2 d x Q 2 Q i i=1 i=1i     
+ 
+ 33TD d g  g ii  =       x =       xii 2 d x Q Q i i=1 i=1i     
+ 
+Note:  the directional derivative is the "dot  product" of the gradient and the direction 
+vector. 
+ 
+ 
+For a given point, say (Q1, Q2, Q3 ), what is the direction of steepest ascent  for t he 
+objective function f?  That is, what direction provides the largest value f or the directional 
+derivative?  The direction of  steepest as cent w ill be the solution to the f ollowing 
+optim ization problem : 
+ 
+ 3SD H d f ii iMAX    =        +   xi 2 d x 2 Q i=1i
+222s. t.            x  + x  + x  =  112 3
+
+
+  
+ 
+By using a Lagrange m ultiplier to solve this problem , you can show that the direction of 
+steepest ascent is given by  
+ 
+ 12 3  = (x , x, x ) = f/f  x*  
+ 
+That is, the "best" direction is the (norm alized ) gradient; for our exam ple, the direction of 
+steepest ascent (not norm alized) is 
+SD H SD H SD H 333 11 1 22 2 =   +  ,   +  ,  + 22 2 22 QQ Q12 3
+ 
+*x2 
+Note that since the actual problem  is a minimization, we actually want the direction of 
+steepest descent , which would just be the negative of the gradient. 
+15.066J  Summer 2003 97</text>
+        </slide>
+      </slides>
+      <videos/>
+    </lecture>
+    <lecture>
+      <lecture_title>26</lecture_title>
+      <lecture_pdf_url>https://ocw.mit.edu/courses/15-066j-system-optimization-and-analysis-for-manufacturing-summer-2003/resources/lec26_course_summary/</lecture_pdf_url>
+      <lectureno>&#160;</lectureno>
+      <slides>
+        <slide>
+          <slideno>2</slideno>
+          <text>Simulation  
+ most com mon tool for m odeling m anufacturing system s 
+ descriptive m odeling, very powerful tool for capturing uncertainty in com plex 
+system s 
+ a variety of software tools exist for building sim ulation m odels ranging from  
+spreadsheet add-ins to sim ulation program ming languages 
+ capability f or num erical experim entation of  existing and planned system s 
+ design of sim ulation entails identifying state space for system  and events that 
+result in state transitions. 
+ issues with sim ulation include appropriate level of  detail;  m odel validation;  
+design of experim ents and interpretation and analysis of output for decision 
+support  
+ 
+Decision Analysis  
+ powerf ul framework f or representing and structuring m ulti-stage decisions, 
+subject to uncertainty 
+ based on underlying set of axiom s for rational decision m aking 
+ most applicable for one-tim e decision contexts with large risks 
+ very useful for assessing value of inform ation or sam pling 
+ formalizes concept of  maximizing utility 
+15.066J  Summer 2003 102</text>
+        </slide>
+        <slide>
+          <slideno>0</slideno>
+          <text>COURSE SUMMARY 
+Prof. Stephen Graves 
+ 
+ Introduce optim ization and sim ulation paradigm s for the study and analysis of 
+manufacturing system s for decision support.  
+ 
+ Not just form al methods and algorithm s, but also a way to think  about m anufacturing 
+system s and processes.   
+ 
+ Exposure to wide range of applications and im plem entation challenges 
+ 
+ Exposure to spreadsheet solvers and sim ulation tools: YOU CAN DO IT 
+YOURSELF! 
+ 
+ Integration with Operations Managem ent: sim ulation; system s dynam ics (Beer 
+Gam e); logistics m odeling and optim ization; theory of constraints 
+ 
+Optim ization :  Prescriptive m odel with decision variables; an objective or criterion 
+function to optim ize, subject to constraints due to lim ited resources, policy 
+considerations, physical relationships, flow balance, etc. 
+ 
+15.066J  Summer 2003 100</text>
+        </slide>
+        <slide>
+          <slideno>1</slideno>
+          <text>Linear Programs : 
+ pervasive, m any applications 
+ easy to solve via readily-available, general-purpose codes 
+ very robust algorithm s 
+ concept of shadow prices, i. e., m arginal value of constrained resource 
+ importance of  sensitivity analysis and what if s 
+ some art required to build successful (large) application 
+Network Flow Problem s 
+ pervasive, m any applications for m odeling flows in m anufacturing, 
+transportation, telecom munication system s etc. 
+ very powerful algorithm s  specialization of LP 
+Stochastic Program s 
+ very im portant (and interesting) extension to LP to incorporate uncertainty 
+for dynam ic decision contexts 
+ very com putationally intensive 
+ starting to see a few large-scale applications;  should be com mon-place in 
+next ten years.  
+Integer, Nonlinear Programs: 
+ pervasive, m any applications 
+ problem s of m odest size are readily solvable 
+ algorithm s quite different from  that for LP 
+ commercial codes available for IP and NLP, but not as powerful or robust as 
+for LP  but they keep getting better and better 
+ much m ore art needed for building successful application - both in m odeling 
+and in choice and tuning of algorithm s 
+ IP is very useful for m odeling econom y of scale effects; for discrete choices, 
+e. g., in system  or network design, or investm ent decisions; and for scheduling 
+and routing decisions. 
+ For IPs, com putational tim e can be m ajor concern in routine applications --- 
+in which case, heuristic procedures are often warranted. 
+ Engineering design and optim ization of design param eters are good 
+application context for NLPs.  Another com mon context is process 
+optim ization, where the control param eters are the decision variables. 
+ For NLPs, not able to assure global optim um is found 
+ 
+15.066J  Summer 2003 101</text>
+        </slide>
+      </slides>
+      <videos/>
+    </lecture>
+    <lecture>
+      <lecture_title>18</lecture_title>
+      <lecture_pdf_url>https://ocw.mit.edu/courses/15-761-introduction-to-operations-management-spring-2013</lecture_pdf_url>
+      <lectureno>&#160;</lectureno>
+      <slides/>
+      <videos/>
+    </lecture>
+    <lecture>
+      <lecture_title>3</lecture_title>
+      <lecture_pdf_url>https://ocw.mit.edu/courses/15-066j-system-optimization-and-analysis-for-manufacturing-summer-2003/resources/ses3_graves/</lecture_pdf_url>
+      <lectureno>&#160;</lectureno>
+      <slides>
+        <slide>
+          <slideno>3</slideno>
+          <text>(0, 10)(0, 40/3)(0, 16)
+(0, 8)
+(24, 0) (20, 0) (15, 0) (12, 0)
+SE
+15.066J 24 Summer 2003</text>
+        </slide>
+        <slide>
+          <slideno>4</slideno>
+          <text>(6, 6)
+(9, 4)(0, 8)
+(12, 0)SE
+(0, 0)
+ 
+15.066J 25 Summer 2003</text>
+        </slide>
+        <slide>
+          <slideno>6</slideno>
+          <text>X/4  + Y/ 2  &gt;= 4
+XY
+(0, 8)
+(16, 0 )
+ 
+ 
+15.066J 27 Summer 2003</text>
+        </slide>
+        <slide>
+          <slideno>7</slideno>
+          <text>X/4  + Y/10  &gt; = 2
+XY(0, 20 )
+(8, 0)
+ 
+ 
+X/12  +  Y/12  &gt; = 1(0, 12 )
+(12, 0 )Y
+X 
+15.066J 28 Summer 2003</text>
+        </slide>
+        <slide>
+          <slideno>2</slideno>
+          <text>E
+S2/3 S  + 2 E  &lt;=  16
+(0, 8)
+(24, 0 )
+ 
+ 
+ 
+E
+S16/3 S + 4 E  &lt;=  64
+(12, 0 )(0, 16 )
+15.066J 23 Summer 2003</text>
+        </slide>
+        <slide>
+          <slideno>0</slideno>
+          <text>TWO HYPOTHETICAL EXAMPLES 
+ 
+1. A furniture m anufacturer produces two type s of desks: Standard and Executive.  
+These desks are sold to an office furniture wholesaler, and for all practical 
+purposes, there is an unlim ited m arket for any mix of these desks, at least within the 
+manufacturers production capacity.  Each  desk has to go through four basic 
+operations: cutting of the lum ber, joini ng of the pieces, prefinishing, and final 
+finish.  Each unit of the Standard desk produced takes 48 m inutes of cutting tim e, 2 
+hours of joining, 40 m inutes of prefinis hing, and 5 hours and 20 m inutes of final 
+finishing tim e.  Each unit of the Execu tive desk requires 72 m inutes of cutting, 3 
+hours of joining, 2 hours of prefinishing, and 4 hours of final finishing tim e.    The 
+daily capacity for each operation am ounts to 16 hours of cutting, 30 hours of 
+joining, 16 hours of prefinishing, and 64 hours of final finishing tim e.  The profit 
+per unit produced is $40 for the Standard desk and $50 for the Executive desk.  
+What product m ix is optim al? 
+ 
+2. A firm  produces 3 types of refined chem icals:  A, B, and C.  At least 4 tons of A, 2 
+tons of B, and 1 ton of C have to be  produced per day.  The inputs used are 
+compounds X and Y.  Each ton of X yields 1/4 ton of A, 1/4 ton of B, and 1/12 ton 
+of C.  Each ton of Y yields 1/2 ton of  A, 1/10 ton of B, and 1/12 ton of C.  
+Com pound X costs $250 per ton, com pound Y $400 per ton.  The cost of processing 
+is $250 per ton of X and $200 per ton of Y.   Am ounts produced in excess of daily 
+requirem ents have no value as the products  undergo chem ical changes if not used 
+immediately.  The problem  is to find the m inimum cost input m ix. 
+15.066J 21 Summer 2003</text>
+        </slide>
+        <slide>
+          <slideno>9</slideno>
+          <text>OBSERVATIONS ON THE GRAPHICAL METHOD
+FOR SOLVING A LINEAR PROGRAM
+ 
+  
+ 1. The set of feasible plans is called the feasible set  or feasible region .  It is always 
+polygonal  or polyhedral . 
+ 
+ 2. A constraint is said to be binding  or active  if it is satisfied at equality at the 
+optimal solution. 
+ 
+ 3. Every equality  (=) constraint is binding . 
+ 
+ 4. A constraint is said to be inactive  or non binding  if it is satisfied with strict 
+inequality  at the optimal solution. 
+ 
+ 5. Geometrically, an active constraint is one that passes through the optimal 
+solution. 
+ 
+ 6. Geometrically, an inactive constraint  is one that does not pass through the 
+optimal solution. 
+ 
+ 7. There may be more than one optimal solution to a linear program, i.e., there 
+may be multiple optima . 
+ 
+ 8. A linear program is unbounded  if there exist feasible plans with arbitrarily 
+large (if a max problem) or arbitrarily small (if a min problem) objective values.  
+If this happens in practice, the formulation has been mis-specified. 
+ 
+ 9. A linear program is infeasible  if there is no plan that satisfies all of the 
+constraints. 
+ 
+ 
+ 
+15.066J 30 Summer 2003</text>
+        </slide>
+        <slide>
+          <slideno>5</slideno>
+          <text>(6, 6)
+(9, 4)(0, 8)
+(12, 0)
+SE
+(0, 0)Z = 800
+Z = 560
+Z = 400
+15.066J 26 Summer 2003</text>
+        </slide>
+        <slide>
+          <slideno>1</slideno>
+          <text>E
+S4/5 S  + 6/5 E  &lt;=  16
+(20, 0 )(0, 40/3 )
+ 
+ 
+ 
+E
+S2 S + 3  E  &lt;=  30
+(15, 0 )(0, 10 )
+ 
+15.066J 22 Summer 2003</text>
+        </slide>
+        <slide>
+          <slideno>8</slideno>
+          <text>XY
+(0, 20)
+(16, 0)(16/3, 20/3)
+(8, 4)
+Z = 4 KZ = 6.4KZ = 9 K
+15.066J 29 Summer 2003</text>
+        </slide>
+      </slides>
+      <videos/>
+    </lecture>
+    <lecture>
+      <lecture_title>4</lecture_title>
+      <lecture_pdf_url>https://ocw.mit.edu/courses/15-066j-system-optimization-and-analysis-for-manufacturing-summer-2003/resources/lec4_networks/</lecture_pdf_url>
+      <lectureno>2</lectureno>
+      <slides>
+        <slide>
+          <slideno>9</slideno>
+          <text>Once all of the possible candidate work stations have been enum erated and costed, then 
+the system  design problem  is to choose a set of work stations that covers all of the tasks 
+at the m inimum cost.  This can be form ulated and solved as a shortest path problem . 
+ 
+This approach extends to handle (i) m ulti-produc t assem bly system s;  (ii) single products 
+with a partially-ordered precedence structure fo r the tasks;  (iii) probabilistic task tim es 
+or task options;  (iv) dem and requirem ents given as a distribution. 
+ 
+ 
+15.066J  Summer 2003 
+ 46</text>
+        </slide>
+        <slide>
+          <slideno>0</slideno>
+          <text>Netw ork Problems 
+Prof. Stephen Graves 
+ 
+Netw ork (or graph) is defined by a set of nodes  (vertices) and a set of arcs; each arc is 
+given by a pair of nodes, e. g., (i, j) which denotes that there is an arc between node i and 
+node j, perm itting flow between i and j.  Usually we deal with directed arcs; e. g., arc (i, 
+j) signifies that there can be flow from  node i to node j. 
+ 
+Networks are a useful m odeling construct for representing a variety of problem s, 
+especially where we are attem pting to m odel som e type of flow - m aterial flow; 
+transportation flows; com munication flows; etc. 
+ 
+Due to the specialized structure of som e network problem s, there are very efficient, 
+specialized algorithm s for solving these problem s; however, all these problem s can also 
+be solved as LP' s. 
+ 
+The general form  for a network problem  is as follows: 
+ 
+decision variables :   xij denotes flow on arc from  i to j  
+ 
+flow balance constraints :  for every node i, flow into node i m ust equal flow out of node 
+i. 
+ 
+  
+  iS  +  kix
+k   =  ijx
+j     +  iD 
+where S i is the exogenous supply at node i and D i is the exogenous dem and at node i.   If 
+Si &gt; 0 and D i = 0, then node i is a  source or supply node .  If S i =  0 and D i &gt; 0, then node 
+i is a  sink or dem and node .  If S i = 0 and D i = 0, then node i is a  transshipm ent node . 
+ 
+arc capacity constraints :  for every arc (i, j), there can be an upper bound U ij: 
+ 
+     ijx    ijU
+15.066J  Summer 2003 
+ 37</text>
+        </slide>
+        <slide>
+          <slideno>1</slideno>
+          <text>objective function :  minimize flow cost for c ij being the per unit cost of flow on arc (i, j) 
+ 
+  MIN   
+   ij  c
+j
+i  ijx
+ 
+ 
+   Transportation problem : Network consists of supply nodes and dem and nodes only. 
+ 
+ 
+   Assignm ent problem : Transportation problem  with one unit of supply at each supply 
+node and one unit of dem and at each dem and node.  Problem  is to find a one-to-one 
+assignm ent between "supply" nodes (say, personnel) and "dem and" nodes (say, tasks).  
+Due to structure of  problem , LP solution will always be integer. 
+ 
+  Shortest path problem : One supply node and one dem and node; problem  is to send one 
+unit of flow from  supply node to the dem and node, where the arc costs are the "length" of 
+the arc. 
+ 
+  Longest path problem : sam e as shortest pa th, but now want to find longest path from  
+supply node to dem and node.  This is of interest for finding critical path for a PERT or 
+CPM project network. 
+ 
+  Max Flow problem : One supply node and one dem and node.  Given the arc capacities, 
+the problem  is to determ ine the m aximum amount of flow that the network can handle 
+from  the supply node to the dem and node. 
+ 
+  Min Cost Network Flow problem : Find th e network flow that satisfies dem and at 
+demand nodes at m inimum cost, given the network structure, and capacities, and supply 
+at supply nodes. 
+15.066J  Summer 2003 
+ 38</text>
+        </slide>
+        <slide>
+          <slideno>8</slideno>
+          <text>SHORTEST PATH EXAMPLE: 
+DESIGN OF AN ASSEMBLY LINE  --- EQUIPMENT SELECTION AND TASK 
+ASSIGNMENT 
+ 
+ 
+Suppose we want to design and lay out an assem bly line for a given product.  To 
+assem ble the product entails com pleting N task s, where the assem bly tasks are num bered 
+according to their precedence sequence; that is , task 1 precedes task 2, task 2 precedes 
+task 3, etc. 
+ 
+We are given a projection of the annual dem and for the product and we wish to design an 
+assem bly system  that will have suf ficient capacity to m eet the dem and and will be the 
+minimum cost system. 
+ 
+The assem bly system  is to be a serial line, c onsisting of work stations in sequence.  Each 
+task is to be assigned to a single work stati on and each work station is responsible for the 
+completion of one or m ore tasks.  Thus, in an assem bly system , we associate a set of 
+consecutive tasks to each work station. 
+ 
+The cost for each possible work station (i. e., each set of consecutive tasks)  is  a com plex 
+derivation.   
+ 
+If the work station is a m anual station, then the costs include the direct labor costs plus 
+costs for tooling, part feeders and fixtures.   The latter costs need to be am ortized over the 
+annual product volum e.  And, in order to be a candidate station, it needs to have a cycle 
+time small enough to be able to satisfy the projected annual dem and for the product. 
+ 
+If the station is autom ated, then there is an  investm ent cost for the prim ary assem bly 
+resource (robot or piece of fixed autom ation), plus the am ortized costs for tooling, part 
+feeders and fixtures; there is also a variab le operating cost, which covers m aintenance, 
+material handling and indirect labor.  Again, the station needs to be designed so that its 
+cycle tim e is capable of m eeting the annual dem and for the product. 
+ 
+If both an autom ated and a m anual station are feasible options for a proposed work 
+station (i. e., a set of consecutive tasks), then  the least cost alternative is chosen for 
+further consideration. 
+ 
+15.066J  Summer 2003 
+ 45</text>
+        </slide>
+        <slide>
+          <slideno>2</slideno>
+          <text>NETW ORK EXAMPLE 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+15.066J  Summer 2003 
+ 39</text>
+        </slide>
+        <slide>
+          <slideno>6</slideno>
+          <text>SHORTEST PATH EXAMPLE: 
+NUMBER OF OPTIONS IN PRODUCT LINE 
+ 
+ Currently, a m anufacturing com pany offers  its custom ers 20 different options for 
+lighting panels.  Power or lighting panels ar e the circuit boxes that take the m ain bus 
+from  the power com pany, and connect it to se veral branch circuits that power various 
+parts or functions of a building.    Each pane l consists of a box, trim , an interior and the 
+breakers.  The interior provides the basic functionality of  the lighting panel.  The 
+elem ents of  the interior consist of  three bus  bars, which function as the m ain electrical 
+conductor and carry the electrical supply thr oughout the lighting panel, and the m ain lug, 
+which form s the connection between the m ain electric supply and the lighting panel.  
+Circuit breakers form  the connection betw een the individual house circuits and the 
+electrical supply carried by the bus bars.  Th e box holds the lighting panel and the trim  
+provides a protective cover as well as the access to the breakers. 
+ Lighting panels differ according to the outside dim ensions and layout of the box, 
+both of which are driven by the num ber of circuits that can be handled.  There are 
+currently 20 different length interiors.  E ach size currently has its own box.  As the 
+number of different box sizes increases, so doe s the cost to m anufacture this variety.  
+This is exacerbated by the fact that there are four trim s options for each box size.  It is 
+possible, though, to reduce the num ber of opti ons offered by substituting a larger, m ore 
+capable box (larger interior) than desired or needed by the custom er.  The advantage to 
+the com pany is having fewer item s to m anufact ure, stock and service;  furtherm ore, 
+custom ers will get m ore than they wante d, which has a positive utility provided that it 
+does not com e at a higher price.  Reduci ng the num ber of boxes that are m anufactured 
+will reduce the m anufacturing overhead that  is driven by product variety ( e. g., 
+scheduling, purchasing, m anufacturing engineer ing).  The disadvantage from  limiting the 
+number of options is that the com pany w ill be giving away part of the product, by 
+providing m ore than the custom er wants;  in pa rticular, there will be wasted m aterial cost, 
+for which the com pany will not be able to recover the costs. 
+ 
+ 
+   
+ The com pany estim ates that the overhead cost per year for each box size is 
+$26,000.  The m aterial cost for each box is estim ated to be $0.60 per inch of length, plus 
+15.066J  Summer 2003 
+ 43</text>
+        </slide>
+        <slide>
+          <slideno>4</slideno>
+          <text>ASSIGNMENT PROBLEM 
+ 
+For four room mates, determ ine best assignm ent to four weekly clean-up jobs; m atrix 
+provides m easure of perform ance for assigning individual to task. 
+ 
+ 
+ Kitchen Bathroom  Basem ent Yard 
+John 2 4 6 8 
+Paul 4 6 1 3 
+George 6 2 3 1 
+Ringo 8 4 2 5 
+ 
+15.066J  Summer 2003 
+ 41</text>
+        </slide>
+        <slide>
+          <slideno>5</slideno>
+          <text>MAXIMUM FLOW  PROBLEM 
+ 
+Determ ine the m aximum flow from  a source node (node A) to a sink node (node I), 
+where there is a capacity lim it or bound on flow on each arc. 
+ 
+ 
+20 
+3 
+4 
+13 2 7 19 
+4 18 
+3 5 3 2 
+7 26 
+15 
+15.066J  Summer 2003 
+ 42</text>
+        </slide>
+        <slide>
+          <slideno>7</slideno>
+          <text>$5 for the ends of the boxes.  Also, m arketing projects that custom ers would actually 
+prefer getting a bigger boxes, as long they are not 12" larger than what was requested. 
+ 
+ 
+ 
+ To m odel the problem , create a network: 
+ 
+Nodes:   One node for each box length 
+ 
+Arcs:  Arc (i, j) denotes using the box le ngth assigned to node j to dem and for the 
+box length assigned to nodes i+1, i+2,   j. 
+ 
+Arc Cost: the cost for arc (i, j) is th e annual fixed cost per box ($26,000) plus the 
+annual increm ental cost for m aterial for supplying box j to m eet dem and for boxes i+1, 
+i+2, ... j. 
+  Note that if the difference between  the box lengths for nodes j and i+1 is 
+greater than 12", then the arc has an infinite cost (or is not defined). 
+ 
+15.066J  Summer 2003 
+ 44</text>
+        </slide>
+        <slide>
+          <slideno>3</slideno>
+          <text>TRANSPORTATION PROBLEM 
+ 
+Given three warehouses, each with a supply of televisions, determ ine least-cost allocation 
+to four sales offices; m atrix provides per unit costs for transporting one unit from  
+warehouse to sales office. 
+ 
+ 
+ Cambridge Brighton Somerville Quincy  Supply 
+Nashua $15 $17 $14 $18  400 
+Acton $18 $12 $13 $19  750 
+Brockton $13 $15 $16 $13  380 
+       
+Demand 320 280 560 370  1530 
+ 
+15.066J  Summer 2003 
+ 40</text>
+        </slide>
+      </slides>
+      <videos/>
+    </lecture>
+    <lecture>
+      <lecture_title>1</lecture_title>
+      <lecture_pdf_url>https://ocw.mit.edu/courses/15-066j-system-optimization-and-analysis-for-manufacturing-summer-2003/resources/ses1_freund/</lecture_pdf_url>
+      <lectureno>1</lectureno>
+      <slides>
+        <slide>
+          <slideno>1</slideno>
+          <text>Based on m arket forecasts and 1996 produc tion characteristics, NBS is planning 
+to accept bids for 1,225 m tons  (1.225 m illion tons) of coking coal.  This coal m ust have 
+an average volatility of  at least 19% (volatility is the percent of  volatile or burnable 
+matter in the coal).  Also, as a hedge agains t adverse labor relations, NBS has decided to 
+procure at least 50% of its coking coal from  union m ines (United Mine W orkers).  
+Finally, Steve Coggins needs to keep in m ind that capacity for bringing in coal by rail is 
+limited to roughly 650 m tons per year, and capac ity for bring in coal by truck is lim ited 
+to 720 m tons per year.   
+ 
+Questions : 
+ 
+ 
+ 
+1. How m uch coal should Coggins contract for from  each supplier?  
+ 
+ 
+2. What will be NBS' s total cost of supply? 
+ 
+ 
+3. What will be NBS' s average cost of supply?  
+15.066J 2 Summer 2003</text>
+        </slide>
+        <slide>
+          <slideno>8</slideno>
+          <text>Follow-up Questions : 
+ 
+ 
+ 
+4. What is the cost of coking coal on the m argin?   I.e., how m uch does an 
+extra ton of coking coal cost NBS?   (Why is this a valuable question to 
+ask?) 
+ 
+ 
+5. How should NBS value a nonunion/union supplier on a cost basis?   
+Should they pay a prem ium fee for a uni on supplier?  Is this a legitim ate 
+way to think about the problem ? 
+ 
+ 
+6. How should NBS value a low-vol./high-vol. supplier on a cost basis?   
+Should they pay a prem ium for an extr a % volatility?   Is this a legitim ate 
+way to think about the problem ? 
+ 
+ 
+7. Should NBS consider expanding their trucking capacity?   If so, how m uch 
+should they be willing to spend?  
+ 
+ 
+8. Should NBS consider expanding their rail capacity?   If so, how m uch 
+should they be willing to spend?  
+ 
+ 
+9. Should Coggins be willing to negotiate a higher price in order to get m ore 
+coal from  Bedford and/or Gaston?   If so, how high should he be willing to 
+go? 
+ 
+ 
+10. If Florence is uneconom ical, how m uch m ust NBS insist that they lower 
+their price before they would take them  on as a supplier?  
+ 
+11. If NBS contracts with Earlham , and their actual volatility rating goes 
+down, how m uch of a penalty should NBS insist on in their contract?  
+ 
+15.066J 9 Summer 2003</text>
+        </slide>
+        <slide>
+          <slideno>4</slideno>
+          <text>Excel Solver Output for NBS  
+ 
+   
+   
+Target Cell (M in)  
+ Cell Name Orig inal Value Fina l Value 
+ $C$19 COST TOTAL 0 73268 
+   
+   
+Adjustable Cells  
+ Cell Name Orig inal Value Fina l Value 
+ $D$8 Amount from  Ashl ey 0 55 
+ $E$8 Amount from  Bedford 0 600 
+ $F$8 Amount from  Consol  0 0 
+ $G$8 Amount from  Dunby  0 20 
+ $H$8 Amount from  Earl am 0 100 
+ $I$8 Amount from  Florence 0 0 
+ $J$8 Amount from  Gast on 0 450 
+ $K$8 Amount from  Hopt  0 0 
+   
+   
+Constraint  
+ Cell Name Cell Value Formula  Status Slack 
+ $C$12 Suppl y 1225 $C$12=$B $12 Binding 0
+ $C$13 Volatility 0$C$13&gt;=$B$13 Binding 0
+ $C$15 Truck 720$C$15&lt;=$B $15 Binding 0
+ $C$16 Rail 505$C$16&lt;=$B $16 Not Binding 145
+ $C$14 Union 125$C$14&gt;=$B $14 Not Binding 125
+ $D$8 Amount from  Ashl ey 55$D$8&gt;=0 Not Binding 55
+ $E$8 Amount from  Bedford 600$E$8&gt;=0 Not Binding 600
+ $F$8 Amount from  Consol  0$F$8&gt;=0 Binding 0
+ $G$8 Amount from  Dunby  20$G$8&gt;=0 Not Binding 20
+ $H$8 Amount from  Earl am 100$H$8&gt;=0 Not Binding 100
+ $I$8 Amount from  Florence 0$I$8&gt;=0 Binding 0
+ $J$8 Amount from  Gast on 450$J$8&gt;=0 Not Binding 450
+ $K$8 Amount from  Hopt  0$K$8&gt;=0 Binding 0
+ $D$8 Amount from  Ashl ey 55$D$8&lt;=$D$9 Not Binding 245
+ $E$8 Amount from  Bedford 600$E$8&lt;=$E$9 Binding 0
+ $F$8 Amount from  Consol  0$F$8&lt;=$F$9 Not Binding 510
+ $G$8 Amount from  Dunby  20$G$8&lt;=$G$9 Not Binding 635
+ $H$8 Amount from  Earl am 100$H$8&lt;=$H$9 Not Binding 475
+ $I$8 Amount from  Florence 0$I$8&lt;=$I$9 Not Binding 680
+ $J$8 Amount from  Gast on 450$J$8&lt;=$J$9 Binding 0
+ $K$8 Amount from  Hopt  0$K$8&lt;=$K$9 Not Binding 490
+15.066J 5 Summer 2003</text>
+        </slide>
+        <slide>
+          <slideno>0</slideno>
+          <text>New Bedford Steel Coking Coal Supply Problem  1  
+ 
+ New Bedford Steel (NBS) is a sm all st eel m anufacturing com pany.  Coking coal 
+is a necessary raw m aterial in the producti on of steel, and NBS pr ocures 1.0 - 1.5 m illion 
+tons of coking coal per year.  It is now time to plan for the 1997 production, and Stephen 
+Coggins, coal supply m anager for NBS, ha s solicited and received bids from  the 
+following eight suppliers for next year.  He has organized the inform ation about the bids 
+in the f ollowing table. 
+ 
+  Bids Received from  Potential Coking Coal Suppliers  
+ 
+ 
+  Ashley  Bedford  Consol  Dunby  Earlam  Florence  Gaston  Hopt
+ 
+Capacity 300 600 510 655 575 680 450 490 
+(mtons) 
+ 
+Union/  U U N U N U N N 
+Nonunion 
+ 
+Truck/  R T R T T T R R 
+Rail 
+ 
+ 
+Volatility (%) 15 16 18 20 21 22 23 25 
+ 
+ 
+Price ($/ton) 49.50 50.00 61.00 63.50 66.50 71.00 72.50 80.00 
+                                                 
+1 This case and t he following lect ure not es have  been prepared and written by  Professor Rob 
+Freund, MIT Sloan School of Management. 
+15.066J 1 Summer 2003</text>
+        </slide>
+        <slide>
+          <slideno>5</slideno>
+          <text>Sensitivity Report from Solver for NBS Problem 
+ 
+ 
+Microsoft Excel 4.0 Sensitivity Report  
+Worksheet: New Bedford  
+   
+   
+Changing C ells  
+   Final Reduced Object ive Allowable Allowable 
+ Cell Name Value Cost Coefficient Increase Decrease 
+ $D$8 Amount from  Ashl ey 55 0 49.5 0.5 1
+ $E$8 Amount from  Bedford 600 -1.5 50 1.5 1E+30
+ $F$8 Amount from  Consol  0 2.5 61 1E+30 2.5
+ $G$8 Amount from  Dunby  20 0 63.5 0.167 0.05
+ $H$8 Amount from  Earl am 100 0 66.5 0.05 0.2
+ $I$8 Amount from  Florence 0 1.5 71 1E+30 1.5
+ $J$8 Amount from  Gast on 450 -1 72.5 1 1E+30
+ $K$8 Amount from  Hopt  0 0.5 80 1E+30 0.5
+   
+Constraint  
+   Final Shadow Constrai nt Allowable Allowable 
+ Cell Name Value Price R.H. Side Increase Decrease 
+ $C$12 Suppl y 1225 61.5 1225 5 25
+ $C$13 Volatility 0 3 0 20 100
+ $C$15 Truck 720 -1 720 20 3.33
+ $C$16 Rail 505 0 650 1E+30 145
+ $C$14 Union 125 0 0 125 1E+30
+   
+15.066J 6 Summer 2003</text>
+        </slide>
+        <slide>
+          <slideno>3</slideno>
+          <text>Excel Spreadsheet for New  Bedford Steel  
+Optimal Solution
+ 
+  The third row gives the optim al values for the decision variables.    The optim al value 
+of the objective function is row 14, colum n 3: the m inimum total cost. 
+ 
+  Rows 7 - 11 denote constraints on the proc urem ent plan.  The second colum n gives the 
+limit or target f or the constraint.  The third colum n now gives the value for the constraint 
+for the given (optim al) purchase decisions.   
+ 
+ 
+           
+   Ashl ey Bedford Consol  Dunby  Earlam Florence Gaston Hopt  
+ Amount from  55 600 0 20 100 0 450 0 
+ Capacity  300 600 510 655 575 680 450 490 
+           
+ Limit          
+Suppl y 1225 1225 1 1 1 1 1 1 1 1 
+Volatility 0 0 -4 -3 -1 1 2 3 4 6 
+Union 0 125 1 1 -1 1 -1 1 -1 -1 
+Truck 720 720  1  1 1 1   
+Rail 650 505 1  1    1 1 
+           
+  TOTAL         
+COST  73267 49.50 50.00 61.00 63.50 66.50 71.00 72.50 80.00 
+           
+           
+ 
+15.066J 4 Summer 2003</text>
+        </slide>
+        <slide>
+          <slideno>7</slideno>
+          <text>Now, let' s consider the volatility constraint from  the NBS case.   Suppose that we re-
+write the constraint as f ollows: 
+ 
+ 0.15A  +  0.16B  + ....  + 0.25H   &gt;=   0.19 (A  +  B  +  ....  +  H) 
+ 
+That is, the LHS is the am ount of volatile matter supplied, m easured in m tons, and the 
+RHS is the required level of  volatile m atter m easured in m tons.  The constraint says that 
+the am ount supplied needs be greater than the am ount required. 
+ 
+The shadow price on this constraint will c onvey the change to the objective function for 
+the optim al solution when we re-solve with the above constraint replaced with the 
+following constraint: 
+ 
+ 0.15A  +  0.16B  + ....  + 0.25H   &gt;=   0.19 (A  +  B  +  ....  +  H)   +  1 
+ 
+When we do this, the objective function would increase by 300 units ($300,000 in this 
+case).  Note a unit increase to the above constraint is com parable to adding 100 to the 
+RHS for the original constraint as form ulated earlier; thus, we expect that adding 1 to the 
+original constraint would increase the obj ective function by 3, which is the reported 
+shadow price. 
+ 
+Interpretation:  At the m argin for the optim al solution, the additional cost to supply 1 
+mton of volatile m atter is $300,000 (or $300 for 1 ton of volatile m atter). 
+ 
+We can reinterpret this in term s of the vola tility content of  coal.  Each percentage point 
+of volatility will supply 0.01 tons of volatile m atter per ton of coal.  Since the cost to 
+supply 1 ton of volatile m atter is $300, each per centage point of volatility has a value of 
+$3 per ton of coal. 
+ 
+15.066J 8 Summer 2003</text>
+        </slide>
+        <slide>
+          <slideno>6</slideno>
+          <text>Sensitivity Report :  Notes f or NBS Case Discussion  
+ 
+Shadow  Price  for a constraint is how m uch th e objective function for the optim al 
+solution will increase if  we increase the RHS (right-hand-side) of  the constraint by one 
+unit.   
+ 
+Reduced Cost for a decision variable can be interp reted to be the shadow price on the 
+non-negativity constraint for that decision vari able, provided the decision variable is not 
+at its upper  bound in the optim al solution. 
+ 
+If the variable is at its upper bound in the optim al solution, then the convention of the 
+Excel Solver sets the reduced cost to be the shadow price on the upper bound constraint. 
+ 
+If the decision variable equals zero in the op timal solution, then the reduced cost is the 
+amount by which the objective function coeffici ent for the variable can increase before 
+the variable m ay becom e non-zero in the optim al solution;  that is, the variable will 
+remain at zero if the objective function coeffi cient is changed by as m uch as the reduced 
+cost.  For changes greater than the reduced cost, the variable m ay becom e non-zero in the 
+optim al solution. 
+ 
+If the decision variable equals its upper bound in the optim al solution, then the reduced 
+cost is the am ount by which the objective f unction coefficient for the variable can 
+increase before the variable m ay drop below the upper bound in the optim al solution.   
+ 
+Caution :  Different solvers m ay use different conve ntions, particularly with the signs of 
+the shadow prices or the reduced costs.  You always need to check your econom ic 
+intuition to assure that you are m aking the ri ght interpretation.  Also, different solvers 
+may refer to dual prices , rather than shadow prices:  they are the sam e. 
+ 
+15.066J 7 Summer 2003</text>
+        </slide>
+        <slide>
+          <slideno>2</slideno>
+          <text>Excel Spreadsheet for New  Bedford Steel
+ 
+In the third row we have defined the decisi on cells.  In the fourth row we give the 
+capacity lim its for each source.   
+ 
+  Rows 7 - 11 denote constraints on the proc urem ent plan.  The second colum n gives the 
+limit or target f or the constraint.  The third co lumn is the value f or the constraint f or the 
+given purchase decisions.  The rest of th e colum ns denote the coefficients for the 
+constraints. 
+ 
+  Row 14 records the cost f or the procurem ent policy; colum n 3 will give the total cost, 
+while colum ns 4 - 11 give the per ton cost from  each supplier. 
+ 
+ 
+ 
+           
+   Ashl ey Bedford Consol  Dunby  Earlam Florence Gaston Hopt  
+ Amount from  0 0 0 0 0 0 0 0 
+ Capacity  300 600 510 655 575 680 450 490 
+           
+ Limit          
+Suppl y 1225 0 1 1 1 1 1 1 1 1 
+Volatility 0 0 -4 -3 -1 1 2 3 4 6 
+Union 0 0 1 1 -1 1 -1 1 -1 -1 
+Truck 720 0  1  1 1 1   
+Rail 650 0 1  1    1 1 
+           
+  TOTAL         
+COST  0 49.50 50.00 61.00 63.50 66.50 71.00 72.50 80.00 
+           
+           
+15.066J 3 Summer 2003</text>
+        </slide>
+        <slide>
+          <slideno>9</slideno>
+          <text>New Bedford Steel Coking Coal Supply Problem  - Addendum  
+ From  the optim al solution we can use the shadow prices on the resource and 
+quality constraints to inf er an ex-post  imputed cost for each coal source.  The shadow 
+prices tell us that there is an opportunity cost of $1/ton for usage of truck capacity and 
+that each percentage point in volatility can be valued at $3 per ton.  W e can then com pare 
+the (im puted) costs for coal as follows: 
+  Ashley  Bedford  Consol  Dunby  Earlam  Florence  Gaston  Hopt
+ 
+price/ton $49.50 $50.00 $61.00 $63.50 $66.50 $71.00 $72.50 $80.00 
+ 
+trucking   +1.00   +1.00  +1.00  +1.00  
+costs 
+ 
+net 
+volatility  +12.00  +9.00  +3.00  -3.00  -6.00   -9.00 -12.00 -18.00 
+cost 
+  ______________________________________________________________ 
+ 
+imputed $61.50 $60.00 $64.00 $61.50 $61.50 $63.00 $60.50 $62.00 
+cost/ton 
+ 
+Note -- the net volatility cost (or prem ium) for a coal source is the dif ference between its 
+volatility and the target of 19%, m ultiplied by $3/ton. 
+Observations:  
+ In the optim al solution, coal sources A, D and E are used but are not at their upper 
+bounds.  They all have an im puted cost of $61.50, the shadow price for the supply 
+constraint. 
+ In the optim al solution, coal sources B and G are at their upper bounds.  The 
+difference between their im puted costs and $61.50 (shadow price for the supply 
+constraint) is their reduced costs. 
+ In the optim al solution, coal sources C, F and H are at their lower  bound of 0.  
+The difference between their im puted costs and $61.50 (shadow price for the supply 
+constraint) is their reduced costs.  
+15.066J 10 Summer 2003</text>
+        </slide>
+      </slides>
+      <videos/>
+    </lecture>
+    <lecture>
+      <lecture_title>2</lecture_title>
+      <lecture_pdf_url>https://ocw.mit.edu/courses/15-066j-system-optimization-and-analysis-for-manufacturing-summer-2003/resources/ses2_freund/</lecture_pdf_url>
+      <lectureno>&#160;</lectureno>
+      <slides>
+        <slide>
+          <slideno>5</slideno>
+          <text>How Linear Program s are Solved on the Com puter  
+ 
+ 1. A linear program ming m odel is solved on a com puter by a technique called the 
+Simplex Method , developed by Dantzig in 1947.  (Som e com mercial codes now 
+use an alternative m ethod, called the Interior Point m ethod, developed by 
+Karm arkar in 1984.) 
+ 
+ 2. The sim plex m ethod works by perform ing a sequence of pivots.   Each pivot starts 
+with a f easible solution and either gene rates an im proved feasible solution or 
+concludes that the current feasible solution is the optim al solution.   
+ 
+ 3. At each pivot, the com puter m ust solve a system  of m  equations in m   variables, 
+where  m   is the num ber of constraints in the problem . 
+ 
+4.   Typically, the num ber of pivots that m ust be perform ed is roughly proportional to 
+the num ber n of decision variables in the problem .  Therefore, the m ore 
+constraints the problem  has ( m  ) and the more decision variables the problem  has 
+( n ) , the m ore com puter tim e will be needed to solve the problem . 
+ 
+5. The sim plex m ethod is conceptually sim ple and easy to learn. W e will teach it to 
+you in about one hour. 
+ 
+6. Today  solve LPs with 1000s of cons traints, 10,000s of decision variables on a 
+desk top m achine with com mercial packages. 
+  
+15.066J 18 Summer 2003</text>
+        </slide>
+        <slide>
+          <slideno>7</slideno>
+          <text>Microsoft Excel 4.0 Answer Report  
+Worksheet: DEC   
+   
+Target Cell (M ax)  
+ Cell Name Orig inal Value Fina l Value  
+ $C$24 Revenue Total 0 213912  
+   
+   
+Adjustable Cells  
+ Cell Name Orig inal Value Fina l Value  
+ $D$8 Product ion of GP-1 0 1800  
+ $E$8 Product ion of GP-2 0 1035.29  
+ $F$8 Product ion of GP-3 0 300  
+ $G$8 Product ion of W S-1 0 500  
+ $H$8 Product ion of W S-2 0 2700  
+   
+   
+ 
+ 
+Microsoft Excel 4.0 Sensitivity Report  
+Worksheet: DEC   
+   
+Changing C ells  
+   Final Reduced Object ive Allowable Allowable 
+ Cell Name Value Cost Coefficient Increase Decrease 
+ $D$8 Product ion of GP-1 1800 52.94 60 1E+30 52.94 
+ $E$8 Product ion of GP-2 1035.29 0 40 1E+30 21.79 
+ $F$8 Product ion of GP-3 300 30 30 1E+30 30 
+ $G$8 Product ion of W S-1 500 -17.94 30 17.94 1E+30 
+ $H$8 Product ion of W S-2 2700 0 15 1E+30 15 
+       
+Constraints      
+   Final Shadow Constrai nt Allowable Allowable 
+ Cell Name Value Price R.H. Side Increase Decrease 
+ $C$15 Chip sets Total 6335 0 7000 1E+30 664.71 
+ $C$16 1 Meg Mem Total 3600 0 4000 1E+30 400 
+ $C$17 256K M em Total 5571 0 16000 1E+30 10429.41 
+ $C$18 Disk Dri ves Tot al 3000 24 3000 1130 910 
+ $C$21 GP Fam ily Total 3135 0 3800 1E+30 664.71 
+ $C$22 WS Fam ily Total 3200 15 3200 500 2300 
+       
+ 
+15.066J 20 Summer 2003</text>
+        </slide>
+        <slide>
+          <slideno>3</slideno>
+          <text>Com mon Type of Mathem atical Model
+ 
+ 
+ 
+  New Bedford Steel  DEC Manufacturing  
+ 
+ 
+ 
+An objective  to be optim ized      minimize procurem ent maximize quarterly 
+                                                           cost                                     revenue 
+ 
+ 
+A set of decision variables                  amount of coal to           number of units of  
+                                                                 contract with each each fam ily to produce 
+ supplier  A,B,...,H G1, G2, G3, W 1, W 2 
+ 
+ 
+An objective function  that 
+expresses the  objective  in 49.50A + ...+ 80.00H 60G1 +  ...  + 15W 2 
+terms of the decision variables          
+   
+ 
+Constraints  that lim it or 
+otherwise im pose requirem ents          (Rail capacity) (Dem and for GP fam ily) 
+on the relationships between               A + C + G + H  650 G1 + G2 + G3  3,800 
+the decision variables                                                                             
+ 
+ 
+Nonnegativity conditions  on 
+the decision variables                         A   0,  B    0                               G1  0, ..., W 2  0
+15.066J 16 Summer 2003</text>
+        </slide>
+        <slide>
+          <slideno>6</slideno>
+          <text>Excel Spreadsheet for DEC Short Run Manufacturing Problem  
+ 
+ 
+   
+Short  Run M anufact uring  Probl ems at DEC   
+   
+   
+   
+   
+  GP-1 GP-2 GP-3 WS-1 WS-2 
+ Production of  
+ Minimum suppl y 0 500 0 500 400
+ Maximum demand 1800 3800 300 3200 3200
+   
+   
+  Total  
+ Supply  
+Chip sets 7000 0 1 1 1 1 1
+1 Meg Mem 4000 0 2  
+256K Mem 16000 0 2 1 1 1
+Disk Dri ves 3000 0 0.30 1.70 1.40 
+   
+ Demand  
+GP Fam ily 3800 0 1 1 1  
+WS Family 3200 0 1 1
+   
+Revenue  0 60 40 30 30 15
+   
+   
+ 
+15.066J 19 Summer 2003</text>
+        </slide>
+        <slide>
+          <slideno>4</slideno>
+          <text>Constraints can be equality  or inequality  constraints.  If inequality, they can be 
+less than or equal to  () or greater than or equal to  (). 
+ 
+ Each constraint can be rearranged to have the form at, e.g., 
+ 
+                                     G1 + G2 + G3                                                            3800 
+ 
+                             constraint function                 relation                     right-hand side (RHS ) 
+ 
+ A feasible plan  or feasible solution  is an assignm ent of decision variables that 
+satisf ies all constraints  and nonnegativity conditions . 
+ 
+ The goal of the problem  is to find a feasible plan  that optim izes the objective 
+function , i.e., an assignm ent of decision variab les that satisf ies all constraints and 
+optim izes the objective.  This is called a constrained optim ization problem . 
+ 
+ An optim al plan  or optim al solution  is a feasible plan that achieves the best value 
+of the objective function over all other feasible plans. 
+ 
+ Finally, we call the problem  a linear program  if all constraint functions are linear , 
+and if the objective function is linear , i.e., of the form , 
+ 
+e.g.,    A  +  2B    5C  +  7D,    not     AB  +  C  +  D, 
+ 
+not     A2  +  B  +  C  +  D,    not     (A2    sin(B/C)) log (D). 
+15.066J 17 Summer 2003</text>
+        </slide>
+        <slide>
+          <slideno>2</slideno>
+          <text>Formulation of Sample DEC Manufacturing Problem  
+15.066J 15 Summer 2003</text>
+        </slide>
+        <slide>
+          <slideno>1</slideno>
+          <text>reputation for custom er satisfaction and se rvice. Brian took a quick stab at the 
+market/sales situation and then developed the following target data for the first quarter of 
+1989: 
+ 
+     M inimum  M aximum 
+     Acceptable  Custom er 
+ System   Supply    Dem and
+ GP-1       1,800  
+ GP-2    500    
+ GP-3       300 
+ W S-1    500    
+ W S-2    400    
+ GP FAMILY      3,800 
+ W S FAMILY      3,200 
+   
+Brian Shannahan then proceeded to analyze DEC' s problem  and to form ulate a 
+manufacturing strategy. 
+15.066J 14 Summer 2003</text>
+        </slide>
+        <slide>
+          <slideno>0</slideno>
+          <text>Short-Run Manufacturing Problem s at DEC2
+ 
+ In the fourth quarter of 1989, the co rporate dem and/supply group of Digital 
+Equipm ent Corporation (DEC) was under pressu re to com e up with a m anufacturing plan 
+for dealing with a series of m ajor supply s hortfalls that were im pacting on the production, 
+revenue, and custom er satisfaction of one of DEC' s new fam ily of general purpose 
+computer system s and workstations.   The cr itical com ponents for this fam ily of system s 
+that were going to be in short supply in th e first quarter of 1989 were CPU chip sets, 1-
+meg memory boards, 256K m emory boards, and disk drives.  Pertinent data for these 
+components and their usage in the fam ily of system s is given below: 
+ 
+       1-Meg   256K  Disk 
+ System  List Price  Chip Sets  Mem ory Mem ory Drive Avg.
+ GP-1  $60,000 1  2    0.3 
+ GP-2  $40,000 1    2  1.7 
+ GP-3  $30,000 1    1   
+ W S-1  $30,000 1    1  1.4 
+ W S-2  $15,000 1    1   
+ 
+       1989 
+First Quarter 
+Availability:    7,000  4,000  8  16,000 3  7,000 
+ 
+ Brian Shannahan of corporate suppl y/dem and was asked on short notice to 
+form ulate a m anufacturing strategy given these shortf alls.  Brian wanted to take into 
+account both the im portance of revenue for DE C as well as the m aintenance of DEC' s 
+                                                 
+2  This case and t he following lect ure not es have  been prepared and written by  Professor Rob 
+Freund, MIT Sloan School of Management. 
+15.066J 13 Summer 2003</text>
+        </slide>
+      </slides>
+      <videos/>
+    </lecture>
+    <lecture>
+      <lecture_title>22</lecture_title>
+      <lecture_pdf_url>https://ocw.mit.edu/courses/15-066j-system-optimization-and-analysis-for-manufacturing-summer-2003/resources/lec22_nonlinear_programming/</lecture_pdf_url>
+      <lectureno>9</lectureno>
+      <slides>
+        <slide>
+          <slideno>6</slideno>
+          <text>ISSUES WITH NON LINEAR PROGRAMS  
+ 
+ 
+ Optim al solution m ay occur at extr eme point; m ay occur on the boundary of 
+feasible region; m ay occur in the interior of feasible region. 
+ 
+ 
+ Many problem s will have both a global op timum and several local optim a; it is 
+very hard to distinguish between local and global optim a. 
+15.066J  Summer 2003 88</text>
+        </slide>
+        <slide>
+          <slideno>5</slideno>
+          <text>Example : Design param eters for coil spring (from Rajan Ram aswam ys thesis, Computer 
+Tools for Preliminary Parametric Design,  Ph. D., LFM 1993) The coil spring is used to 
+provide a clam ping force in an indexing m echanism . Hence, it m ust deliver a specified 
+force while satisfying constraints on com pressed length, geom etry and m aterial. The 
+objective is to find the lightest feasible design, i. e., m inimize m ass. The following 
+equations com e from  Marks handbook for m echanical engineers: 
+ 
+(1)  C = Dspring/Dwire 
+C is spring coefficient; Dspring is spring diam eter (in); and Dwire is the wire diam eter 
+(in). 
+ 
+(2)    Kw = (4*C -1)/(4*C- 4) + 0.615/C  
+Kw is the W ahl curvature correction factor. 
+ 
+(3)  Kspring = (Dwire 4 * G)/(8 * Dspring 3 * Ncoils) 
+Kspring is the spring stiffness (lb/in); G is torsional m odulus (Mpsi); and Ncoils is the 
+number of coils. 
+ 
+(4)  L_Free = (Ncoils * Dwire +Tau_Max * 3.14*Dwire 3)/(8 * Dspring * Kw * Kspring) 
+L_Free is free length (in); Tau_Max is the peak allowable shear stress (Mpsi). 
+ 
+(5)  F_Act = Kspring * (L_Free  -  L_C)  
+F_Act is the force acting (lb); L_C is the com pressed length (in). 
+ 
+(6)  Tau = (Kw * 8 * F_Act * Dspring) / (3.14 * Dwire 3)  
+Tau is the shear stress (Mpsi). 
+ 
+(7) Mass = Rho * Ncoils * 3.14 * 3.14 * Dwire 2 * Dspring/4 
+Mass is the m ass of the spring (oz); and Rho is the density of the spring m aterial (lb/in 3). 
+ 
+For this problem , L_C, G, Rho, Tau_Max are given constants. 
+We are given a lower bound on F_Act, nam ely the desired force; an upper bound on Tau, 
+namely Tau-Max, a lower bound on L_Free, nam ely L_C, and upper and lower bounds 
+on C, Dspring and Dwire. The num ber of coils (Ncoils) has to be at least 3. 
+ 
+15.066J  Summer 2003 87</text>
+        </slide>
+        <slide>
+          <slideno>7</slideno>
+          <text>APPROACHES TO NON LINEAR PROGRAMS  
+ 
+ 
+ 
+ Approxim ate non linear functions with linear or piece-wise linear functions, 
+possibly by using binary integer variables.  This works well if the non linear functions 
+separate by decision variable. 
+ 
+ Use m onotonic or algebraic transform ation (e. g., logs) to m ake non linear 
+functions linear. 
+ 
+ Solve for necessary conditions given by Lagrangean Function (if constraints are 
+equalities) or given by Kuhn Tucker conditions  (if constraints are inequalities).  This 
+works well if there are very few constraints or  if the objective is quadratic and all of  the 
+constraints are linear ( a quadratic program ). 
+ 
+ Use a search algorithm : 
+ 
+Find a feasible point (vector) to start  X 
+ 
+Find a feasible direction of im provem ent  D 
+ 
+Move to new point along direction of im provem ent, step size : 
+ X  : =   X  +    D  
+ 
+Continue until som e convergence criterion satisfied. 
+ 
+ 
+ 
+ 
+15.066J  Summer 2003 89</text>
+        </slide>
+        <slide>
+          <slideno>2</slideno>
+          <text>Example : Site Location; given custom er locations (xi, yi), find the location (X, Y) 
+that m inimizes the weighted distances from  the custom er to the central warehouse (or 
+minimizes the m aximum distance to an em ergency vehicle location). 
+ The distance from  custom er i to the warehouse is d i and is typically a non-linear 
+function of the decision variables (xi, yi), and  (X, Y). To wit, we m ight have 
+ 
+()()22
+ii i
+ii idx X yY
+or
+dx X yY= +
+=+ 
+We then have an objective:
+1 N
+ii
+iMin wd
+=  subject to constraints on the decision variables. 
+ 
+Example :   Determ ine the production quantitie s for each fam ily of car (luxury, 
+interm ediate, m id size, com pact, subcom pact) that m aximizes net revenue subject to 
+production capacity constraints, fleet fuel m ileage constraints. (Haas, SM thesis, 1977) 
+ 
+Decision variables are q i and p i, which denote the quantity and price f or each car f amily. 
+ 
+We then need to assum e a relationship between price and quantity, e.g., linear supply-
+demand function:   where aii i qa bp=i
+)i and b i are positive constants. 
+ 
+The objective of the m odel is non-linear, to m aximize profits: 
+() (  ii i i i i
+iiMax q pC q pC  =     where C i equals the cost per unit for car from  
+family i. W e would have linear capacity constraints: 
+ 
+for each resourc e type j:   where  is the a mount of  available respourc e of type j,
+and  is the pe r unit consum ption of  resource  j to produce  a unit of c ar i.iji j j
+i
+ijRq K K
+R
+ 
+We also have a non-linear fleet fuel m ileag e constraint; the fleet fuel m ileage is 
+computed as the harm onic average, and needs to exceed som e target, say 30 m pg: 
+12
+12
+12...30
+...n
+n
+nqq qmpgq qq
+mpg mpg mpg+++
+++ +  where mpg i is the m iles per gallon f or car 
+family i. 
+15.066J  Summer 2003 84</text>
+        </slide>
+        <slide>
+          <slideno>3</slideno>
+          <text>Example :  Flow in Pipes  - In designing a ne twork of pipes, say, for a chem ical 
+processing facility, you m ight be given th e network topology (nodes and edges), the 
+desired flow inputs at supply points, desire d flow outputs at cons umption points, and 
+inlet pressures at supply points.  The decisi on variables are the size of pipes (diam eter) 
+needed to connect the nodes of the network. 
+ The problem  is to determ ine for each e dge of the network, the diam eter of the 
+pipe and the flow rate on that edge. W e define the variables: 
+ 
+qj is the flow rate on edge j,   
+dpj is the pressure drop across edge j, and  
+dj is the diam eter of edge j.      
+ 
+There are flow balance constraints at each node  of the network (i.e., flow into the node = 
+flow out of the node), and constraints on the external flow inputs and outputs. 
+ For each edge, the flow rate is a non-linear  function of the diam eter of the pipe 
+and the drop in pressure across the edge, e.g., : 
+ 
+ qj2 = c  dpj  dj5 
+ 
+where c is a constant, and the drop in pressure across an edge equals the difference in the 
+node potentials.  The objective would be to minimize the cost of the pipes, which 
+depends on the diam eters chosen. 
+ 
+ 
+15.066J  Summer 2003 85</text>
+        </slide>
+        <slide>
+          <slideno>0</slideno>
+          <text>NON LINEAR PROGRAMMING 
+Prof. Stephen Graves 
+ 
+ In a linear program , the constraints are lin ear in the decision variables, and so is 
+the objective function.  In a non linear program , the constraints and/or the objective 
+function can also be non linear function of the decision variables. 
+ 
+Example:  Gasoline Blending:  The qualities of  a blend are determ ined by the 
+qualities of the stocks used in the blend.  An  optim ization is to determ ine the volum e of 
+each input stock in each blend so that the obj ective function is optim ized subject to the 
+output blends satisf ying their quality specif ications, stock availability constraints, and 
+blend dem and constraints. 
+ 
+The decision variables are xij denoting the am ount of stock i in blend j.  
+ 
+For the m ost part the constraints can be written as linear f unctions; but som e of the 
+quality constraints are non linear: 
+ 
+Distillation Blending: 
+ 
+Djk = bk + ck * ln [ i  ( Sik * VFij)  ]  
+ 
+where  
+ 
+ 
+ Djk is the k th distillation point f or blend j. 
+ 
+ Sik  is the k th distillation point f or stock i. 
+ 
+VFij is the volum e fraction of stock i in blend j and is equal to xij/ (i  xij)  
+ 
+and  bk and   ck are constants. 
+15.066J  Summer 2003 82</text>
+        </slide>
+        <slide>
+          <slideno>4</slideno>
+          <text>Example : Robot Motion Planning (taken from  LFM thesis, Evaluation of a New Robotic 
+Assembly Workcell Using Statistical Experimental Techniques and Scheduling 
+Procedures  by Erol Erturk, 1991) 
+ 
+ 
+The problem  is to determ ine the velocity  and acceleration for a new robot assem bly 
+system  for a given displacem ent of length d. Th e objective is to m inimize tim e, subject to 
+a constraint on placem ent accuracy. W e assum e the robot accelerates at a constant rate of 
+acceleration until it reaches its peak velocity, th en will travel at its peak velocity, until it 
+must decelerate also at a linear rate.  Then the tim e (in seconds) to travel a distance d is: 
+ 
+Travel tim e = T = v/a + d/v 
+ 
+where a is the acceleration and deceleration rate (inch/sec 2), and v is the peak velocity 
+(inch/sec) . 
+ 
+The accuracy (in m ils) of the placem ent depends upon the acceleration rate and the peak 
+velocity and has been found em pirically to be given by: 
+ 
+0.022   0.0079  - 0.0002 Aaccuracy v a va == +  
+ 
+The optim ization is then to m inimize T, subject to a constraint on accuracy A, as well as 
+upper bounds on acceleration (a) and velocity (v). 
+15.066J  Summer 2003 86</text>
+        </slide>
+        <slide>
+          <slideno>1</slideno>
+          <text>Octane Blending: 
+ 
+OCTjk = ak{  i  ( bi  * bi * VFij) -   i  (c i * VFij)2 }  
+ 
+  +   dk{  i  ( ei * VFij)  -   i  (f i * VFij)2 }2 
+ 
+  +   gk  i  { ( hi * VFij) -    ( ji  * ki * VFij * VFij)} 
+ 
+where OCTjk are the various octane indices for blend j. 
+ 
+For both Djk and OCTjk the optim ization problem  would have sim ple upper bounds and 
+lower bounds for each blend and for each quality index. 
+ 
+Thus the constraints for the form ulation would include: 
+ 
+j
+ij
+i
+ij
+ifor each stock i:    wher e  is the av ailability of st ock i
+for each blend j:  x  whe re  is the require ment for blend j
+for each combination i, j, we  define :  V
+plus upper  bouij i i
+jj
+ij
+ijxA A
+RR
+x
+x
+
+=
+
+
+nds and l ower bounds on the dist illationpoint s and oc tane levels for each blend
+ 
+ 
+15.066J  Summer 2003 83</text>
+        </slide>
+      </slides>
+      <videos/>
+    </lecture>
+    <lecture>
+      <lecture_title>9</lecture_title>
+      <lecture_pdf_url>https://ocw.mit.edu/courses/15-066j-system-optimization-and-analysis-for-manufacturing-summer-2003/resources/lec9_integer_linear_prog/</lecture_pdf_url>
+      <lectureno>&#160;</lectureno>
+      <slides>
+        <slide>
+          <slideno>1</slideno>
+          <text>Branch and Bound
+ 
+  Key idea is divide and conquer.  Solve ILP as LP, then partition problem  into two or 
+more pieces.  (this is called branching )  Solve the LP version of the sub-problem s and, if 
+necessary , continue partitioning.  (solving the LP version yields a bound  on the ILP) 
+  The efficiency of approach com es when  it is possible to "fathom " a sub-problem .  
+Fathom ing occurs when we have determ ined that we do not need to explore any further 
+the possible solutions within a sub-problem . 
+ We can fathom  a sub-problem  if any of the following conditions are discovered 
+when we solve the LP version of the sub-problem : 
+a.  there is no feasible solution to the sub-problem ; 
+b.  the optim al LP solution satisfies the integer requirem ents of the ILP; 
+c.  the optim al objective value from  the sub-problem  LP is worse than the best 
+known solution to the ILP (the incum bent solution). 
+ 
+Exam ple:  MAX Z = X +  Y 
+   s. t.  X + 2Y  &lt;=  16 
+     2X  + Y &lt;=  14.9 
+     X , Y &gt;= 0, INTEGER 
+ 
+ 
+Solve LP relaxation:   X*  =  4.6;    Y*  =  5.7;   Z = 10.3 
+ 
+Partition into two sub-problem s to try to f orce one of  the variables (Y) to be integer: 
+ 
+ MAX Z = X +  Y    MAX Z = X +  Y 
+s. t. X + 2Y  &lt;=  16  s. t.  X + 2Y    &lt;=  16 
+  2X  + Y &lt;=  14.9    2X  + Y    &lt;=  14.9 
+          Y    &gt;=  6     Y  &lt;=  5 
+ 
+Solve each LP relaxation:    
+X*  =  4;    Y*  =  6;   Z = 10   X*  =  4.95;    Y*  =  5;   Z = 9.95 
+ 
+15.066J  Summer 2003 73</text>
+        </slide>
+        <slide>
+          <slideno>2</slideno>
+          <text>BRANCH AND BOUND EXAMPLE 
+ 
+  MAX    Z = 60 X1 + 60 X2 + 40 X3 + 10 X4 + 20 X5 + 3 X6 
+ 
+    SUBJECT TO 
+ 
+             3 X1 + 5 X2 + 4 X3 + X4 + 4 X5 + X6 &lt;=   10 
+ 
+    X1, X2, X3, X4, X5, X6  = 0 or 1 
+________________________________________________________________________ 
+ 
+15.066J  Summer 2003 74</text>
+        </slide>
+        <slide>
+          <slideno>3</slideno>
+          <text>BRANCH AND BOUND EXAMPLE 
+ 
+  MAX    Z = 60 X1 + 60 X2 + 40 X3 + 10 X4 + 20 X5 + 3 X6 
+ 
+    SUBJECT TO 
+ 
+             3 X1 + 5 X2 + 4 X3 + X4 + 4 X5 + X6 &lt;=   10 
+ 
+    X1, X2, X3, X4, X5, X6  = 0 or 1 
+________________________________________________________________________ 
+ 
+ 
+ 
+ 
+15.066J  Summer 2003 75</text>
+        </slide>
+        <slide>
+          <slideno>0</slideno>
+          <text>INTEGER LINEAR PROGRAMMING: SOLUTION TECHNIQUES 
+Prof. Stephen Graves 
+ 
+  For linear program ming, the sim plex m ethod is a very robust solution algorithm .  For 
+any kind of  linear program , it will solve the lin ear program  very quickly regardless of  the 
+problem  context or the m athem atical structure. 
+  For integer program ming there is no robus t solution procedure.  There is no one 
+method that will work well for all or m ost problem s.  In fact, m ost integer program ming 
+problem s are tim e-consum ing to solve and can be enorm ously difficult to solve, 
+depending on the m athem atical structure. 
+  There are m any very sophisticated a nd com plicated m ethods designed to solve 
+efficiently specific classes or types of inte ger program s, e. g., the traveling salesm an 
+problem  or the knapsack problem . 
+  Four general purpose m ethods for solving integer program s: 
+ 
+a.  Rounding.   The idea is to solve the linear progr am version of the problem , and then 
+round the solution to be integer.  The resulti ng answer m ay or m ay not be optim al.  It 
+may or m ay not be feasible.  It m ay or m ay not be near optim al.  For som e problem s the 
+decision of how to do the rounding is obvious; for som e others it is not. 
+b.  Enumeration.   The idea is to enum erate all possi ble integer solutions.  This is a good 
+idea only when the num ber of integer variables is fairly sm all, or your com puter budget is 
+large: if  there are 10 binary variables, there will be 2 10 = 1024 possible solutions, etc. 
+c.  Cutting Plane Methods.   The idea here is to cut away  the f easible region until all of  
+the rem aining corner points are integer points.   This is done by adding constraints (cuts) 
+to the original problem , and then solving the resulting problem  as a linear program .  This 
+method is increasing in im portance for som e specialized classes of problem s. 
+d.  Branch and Bound.   The idea here is to divide and conquer.  The m ethod proceeds 
+by partially enum erating solutions and solving linear program s over sm aller feasible 
+regions, gaining inform ation and being able to ignore a huge num ber of possible 
+solutions in the process.  This is th e m ost successful general purpose integer 
+program ming technique available.  Solving integer program s with up to 100 binary 
+integer variables is relatively routine with desktop codes, such as LINDO or CPLEX.   
+ 
+ 
+ 
+ 
+15.066J  Summer 2003 72</text>
+        </slide>
+      </slides>
+      <videos/>
+    </lecture>
+    <lecture>
+      <lecture_title>20</lecture_title>
+      <lecture_pdf_url>https://ocw.mit.edu/courses/15-066j-system-optimization-and-analysis-for-manufacturing-summer-2003/resources/lec20_experiment_design/</lecture_pdf_url>
+      <lectureno>&#160;</lectureno>
+      <slides>
+        <slide>
+          <slideno>14</slideno>
+          <text>2002 - Jrmie GallienWelchs Method for Warm-up
+01020304050
+1 3773109 145181 217 253289 325 361397433469505541 577613649 685 721757 793 829865 901 937973TimeMoving
+Average
+Average
+20
+40
+60
+80
+100</text>
+        </slide>
+        <slide>
+          <slideno>8</slideno>
+          <text>2002 - Jrmie GallienExample
+Suppose we build a simulation model to 
+assess the weekly cost of a proposed supply 
+chain inventory policy
+From the simulation data output (Spreadsheet 
+Confidence Interval on SloanSpace), we want 
+to estimate:
+1. The average weekly cost C with CI
+2. P(C&gt;$2M) with CI</text>
+        </slide>
+        <slide>
+          <slideno>3</slideno>
+          <text>2002 - Jrmie GallienWhat is a Fractile?
+Let be a number in (0,1) e.g. 0.05
+z1-/2is the (1- /2)-th fractile of a standard 
+normal distribution, and is defined as:
+PN0,1z1/21/2
+/2 = 0.0251= 0.95
+/2 = 0.025
+Z1-/2 -Z1-/2</text>
+        </slide>
+        <slide>
+          <slideno>11</slideno>
+          <text>2002 - Jrmie GallienReplication/Deletion Approach
+( Yij: j-th observation in the i-th replication )
+For each replication i, instead of the estimator: 
+Yi(m) = (Yi1+Yi2+Yi3+ +Yim) / m,
+consider the modified estimator:
+Yi(m,L) = (YiL+Yi(L+1)+Yi(L+2)+ +Yim) / (m-L+1) 
+An estimator for lim E[Yt] when t   is then
+Y(n) = ( Y1(m,L) + Y2(m,L)  + Yn(m,L) ) / n</text>
+        </slide>
+        <slide>
+          <slideno>1</slideno>
+          <text>2002 - Jrmie GallienExperimental Design Issues
+Static Simulation
+(Monte-Carlo)How many replications 
+should be run ?
+Dynamic Simulation
+(Discrete-Event)
+Non-terminatingHow many replications 
+should be run?
+For each replication:
+When t o star t collect ing 
+data?
+How much data should be 
+collected?How many replications 
+should be run ?Terminating</text>
+        </slide>
+        <slide>
+          <slideno>9</slideno>
+          <text>2002 - Jrmie GallienSteady-State Analysis
+Number of experiment replications?
+(n)
+Warm-up period length?
+(L)Data collection period length?
+(m-L)</text>
+        </slide>
+        <slide>
+          <slideno>0</slideno>
+          <text>2002 - Jrmie GallienClass 5 Outline
+Experiment Design and Output Analysis:
+1.Theory and Construction of Confidence 
+Intervals
+2.Monte-Carlo and Terminating Simulations
+3.Non-Terminating Simulations (Steady State)</text>
+        </slide>
+        <slide>
+          <slideno>5</slideno>
+          <text>2002 - Jrmie GallienSo What?
+From the CLT:
+So that when n is large, we can write:
+Re-arranging gives:
+This is the definition of a (1- )% confidence interval!!!YnEY
+S2n
+nN0,1
+Pz1/2YnEY
+S2n
+nz1/21
+PYnz1/2S2n
+nEYYnz1/2S2n
+n1</text>
+        </slide>
+        <slide>
+          <slideno>6</slideno>
+          <text>2002 - Jrmie GallienBuilding Confidence Intervals
+For n large (n&gt;30), the (1- )% confidence interval is:
+For n small (n&lt;30), use:Ynz1/2S2n
+n
+fractile of the
+std. normal
+distribution
+Yntn1,1/2S2n
+nfractile of the
+t (student)
+distribution
+with n-1 d.f.</text>
+        </slide>
+        <slide>
+          <slideno>2</slideno>
+          <text>2002 - Jrmie GallienHow Many Replications?
+Simulation output: Y1, Y2, Y3, , Yn
+We (typically) want to estimate E[Y]!
+1.What is the accuracy of the estimator:
+Y(n) = (Y1+Y2+Y3+ +Yn) / n ?
+2.How much should n be (number of independent 
+replications) in order to guarantee a given 
+estimation accuracy?</text>
+        </slide>
+        <slide>
+          <slideno>7</slideno>
+          <text>2002 - Jrmie GallienSo, How Many Replications?
+W = UB  LB is the width of the confidence 
+interval, centered around Y(n)
+A measure of the relative estimation error is 
+thus   W / Y(n)
+So a good termination criteria is to set an 
+estimation error and run a number of 
+replications nsuch that:
+W / Y(n) &lt;</text>
+        </slide>
+        <slide>
+          <slideno>4</slideno>
+          <text>2002 - Jrmie GallienStatistical Estimation Theory
+Define: 
+A version of the CLT says that when n   :
+For smaller (n&lt;30) values of n, a good 
+approx. is:Yn1
+n
+i1n
+Yi S2n1
+n1
+i1n
+YiYn2
+YnEY
+S2n
+nN0,1
+YnEY
+S2n
+ntn1</text>
+        </slide>
+        <slide>
+          <slideno>12</slideno>
+          <text>2002 - Jrmie GallienExperimental Data Plot
+0102030405060708090
+1 3977115 153191 229 267305 343 381419 457495 533 571609 647685 723 761799 837875913 951989TimeQueue
+Series1
+Series2
+Series3
+Series4
+Series5
+Series6
+Series7
+Series8
+Series9
+Series10</text>
+        </slide>
+        <slide>
+          <slideno>13</slideno>
+          <text>2002 - Jrmie GallienWelchs Method for Warm-up
+( Yij: j-th observation in the i-th replication )
+Compute the average across replications for each 
+time point:
+Yt[n] = (Y1t+Y2t+Y3t+ +Ynt) / n
+Welchs method is to plot the moving average 
+process of Yt[n] based on various lags w:
+Yt[n,w] = (Yt-w[n] +  + Yt[n] +  +Yt+w[n]) / (2w + 1)</text>
+        </slide>
+        <slide>
+          <slideno>10</slideno>
+          <text>2002 - Jrmie GallienSteady-State Analysis
+Let Y1, Y2, Y3,  , Yt,  be a stochastic process 
+(e.g. queue length at time index t).
+We want to estimate lim E[ Yt] when t   !
+Data Yij: j-th observation in the i-th replication
+Y11, Y12, Y13,  , Y1j,  , Y1m
+Y21, Y22, Y23,  , Y2j,  , Y2m
+Yn1, Yn2, Yn3,  , Ynj,  , Ynm1streplication
+last observation2ndreplication
+last replication
+first observation</text>
+        </slide>
+      </slides>
+      <videos/>
+    </lecture>
+    <lecture>
+      <lecture_title>8</lecture_title>
+      <lecture_pdf_url>https://ocw.mit.edu/courses/15-066j-system-optimization-and-analysis-for-manufacturing-summer-2003/resources/lec8_intro_int_linear_prog/</lecture_pdf_url>
+      <lectureno>4</lectureno>
+      <slides>
+        <slide>
+          <slideno>5</slideno>
+          <text>ROUTING AND SCHEDULING PROBLEMS 
+ 
+The best-known routing/scheduling problem  is the so-called traveling salesm an problem  - 
+given N cities to visit, create a m inimum-cost or minimum-length tour that originates in a 
+given city, visits each city exactly once and returns to the city of origin.  This problem , 
+while quite im portant in its own right, is th e fundam ental sub-problem  for m ore com plex 
+vehicle-routing and m achine-scheduling problem s.  The traveling salesm an problem  is 
+also the standard benchm ark for testing a nd evaluating new com binatorial-optim ization 
+algorithm s. 
+15.066J  Summer 2003 64</text>
+        </slide>
+        <slide>
+          <slideno>6</slideno>
+          <text>CUTTING STOCK PROBLEM 
+ 
+A firm  that m anufactures oil-drilling rigs purch ases steel beam s from  a steel supplier.  
+The steel supplier will deliver a batch of  beams at a tim e.  The steel beam s com e in 
+varying lengths that range f rom 38 f eet to 42 feet, and will vary both within a batch and 
+from  batch to batch.  The firm  uses the beam s to m ake brackets, and the first step in the 
+fabrication process is to cut the beam s to th e bracket length.  The bracket lengths can be 6 
+feet, 7 feet, 8 feet, or 10 feet.  
+Given a batch of beam s and give n a set of requirem ents for brackets, the firm  must decide 
+how to cut the beam s so as to m inimize trim  loss.   
+As a sim ple exam ple, suppose we have on hand 10 forty-foot beam s and we need to 
+produce the following: 
+ 
+ 10 6'   brackets 
+   8 7'   brackets 
+ 15 8'   brackets 
+   8 10' brackets 
+ 
+How should the beam s be cut to m inimize m aterial usage?  
+ 
+15.066J  Summer 2003 65</text>
+        </slide>
+        <slide>
+          <slideno>7</slideno>
+          <text>FORW ARD PLANNING FOR AUTOMOBILE COMPONENTS 
+ 
+ 
+[From  Michael J. Chrzanowskis LFM thesis, Development of a Manufacturing and 
+Business Planning Tool to Aid in Forward Planning , 1993] Consider a m anufacturing 
+enterprise that produces a fam ily of auto mobile com ponents at several m anufacturing 
+locations. About two dozen item s represents  80% of the enterprise' s manufacturing 
+volum e.  There are five locations; the loca tions differ in term s of their m anufacturing 
+processes, their production rates, their costs, and their capacities.   
+The forward planning process determ ines wh ich products are to be m ade at what 
+locations.  These decisions are com plicated  by the f act that the allocation decision 
+depends on investm ent decisions, which need to be determ ined concurrently.  In order to 
+manufacture a product at a particular location may require an investm ent or investm ents 
+at the location.  These investm ents are associ ated with product features, and result in the 
+location having the capability of producing any product with a specific feature.  Thus, a 
+particular investm ent at a location m ay be applicable to m ore than one product. 
+15.066J  Summer 2003 66</text>
+        </slide>
+        <slide>
+          <slideno>8</slideno>
+          <text>COMPONENT ASSIGNMENT 
+ 
+(From  Dennis J. Arnows LFM thesis, Increasing Throughput in a Surface Mount 
+Assembly Line by Improving Machine Balance and Revising Metrics , 1993)  A surface 
+mount assem bly operation consists of three m ajor steps: solder paste application, 
+component placem ent, and solder re-flow.  For m ost products, the bottleneck of the 
+process is the com ponent placem ent step. 
+ 
+There are three insertion m achines in sequence.  Each of these m achines has different 
+capabilities in term s of what types of com pone nts it can handle and at what speed it can 
+operate.  The first m achine is a high-speed ch ip shooter.  The second m achine is a pick-
+and-place m achine that operates about ten tim es slower than the chip shooter; but the 
+pick-and-place is needed to handle som e large com ponents that cant be inserted by the 
+chip shooter.  The third m achine is also a pick-and-place m achine but with slightly 
+different characteristics than the other pick-and-place m achine. 
+ 
+Products are m anufactured in batches, where each  board in a batch visits each of the three 
+machines in sequence.  One issue in opera ting the line is how to assign com ponents to 
+each of these m achines so as to increase the throughput of the line.   
+ 
+For instance suppose we consider a product that has 509 com ponents to insert of the 
+following types: 
+ 
+Com ponent Type Num ber of Com ponents 
+A 358 
+B 2 
+C 3 
+D 71 
+F 35 
+G 11 
+I 12 
+J 12 
+K 4 
+L 1 
+15.066J  Summer 2003 67</text>
+        </slide>
+        <slide>
+          <slideno>0</slideno>
+          <text>INTRODUCTION TO INTEGER LINEAR PROGRAMMING 
+WAREHOUSE LOCATION 
+Prof. Stephen Graves 
+ 
+A firm  wants to decide where to locate its ware houses to best serve its custom er base.  It 
+has aggregated the custom er base according to three-digit zip code regions; for each 
+aggregate custom er, the firm  has estim ated the annual product dem and for that region. 
+The firm  has also generated a list of candida te warehouse sites; for each candidate site, 
+the firm  has estim ated the annual fixed cost  for opening and operating the warehouse, the 
+per-unit transportation costs for supplying the warehouse from  the firm 's production 
+facilities, and the per-unit transportation co sts for supplying each aggregate custom er 
+from  this warehouse.  In addition to m inimizing costs for distribution, the firm  insists that 
+the warehouse service to each custom er m eet som e minimum service threshold, e. g., 
+delivery within 24 hours.  
+15.066J  Summer 2003 59</text>
+        </slide>
+        <slide>
+          <slideno>9</slideno>
+          <text>The operating speeds (in seconds) for inserti ng a com ponent vary by com ponent type and 
+by m achine: 
+ 
+Com ponent Type Machine 1 Machine 2 Machine 3 
+A 0.3 2.6 2.8 
+B 0.3 2.8 3.0 
+C 0.36 2.8 3.0 
+D 0.48 2.8 3.0 
+F 0.57 2.8 3.0 
+G 0.57 3.0 3.3 
+I 0.96 3.0 3.6 
+J  2.8 3.0 
+K  3.6 4.5 
+L   4.5 
+ 
+Blanks in the table signify that the m achine cannot handle that type of com ponent. 
+ 
+15.066J  Summer 2003 68</text>
+        </slide>
+        <slide>
+          <slideno>2</slideno>
+          <text>FIXED CHARGE PROBLEM 
+ 
+The cost function for m any production activitie s consists of a fixed com ponent and a 
+variable com ponent.  If there is no production activity, the cost is zero.  If there is any 
+production activity at all, then a fixed cost is incurred; this often will correspond to a 
+setup or changeover cost.  Beyond the fixed cost , there m ay be a variable cost that is 
+proportional to the am ount of production. 
+ 
+Sometimes, if we talk about the production co st function for a production departm ent or 
+line, there m ay be several fixed charges de pending upon the num ber of shifts to be run 
+(or som e other m easure of activity).  There m ay be a fixed charge for operating the first 
+shift; this would include overhead and indir ect costs required to keep the f acility open 
+and operate the departm ent.   If  two shifts are to be run, there will be a fixed charge for 
+each shift, with the charge for the second sh ift usually sm aller than for the first.  
+Similarly, there are three fixed charges if thr ee shifts are running.  To this, we need add 
+the variable production costs, where the va riable cost rate m ay also depend upon the 
+shift. Here it would be com mon to expect that th e variable cost rate f or the f irst shif t to be 
+lower than for the second, which is lower than the third shift. 
+15.066J  Summer 2003 61</text>
+        </slide>
+        <slide>
+          <slideno>4</slideno>
+          <text>LOGICAL CONSTRAINTS 
+ 
+1.  Mutually exclusive alternatives - pick at m ost one from  a set: 
+  ix
+i=1n
+   1
+ 
+2.  contingent decisions: 
+ if j then m ust have i:   xi &gt;= xj  
+ if j, then cannot have i:  1 -  xj &gt;= xi 
+ 
+3.   set covering - at least one from  a set m ust be chosen:    ix
+i=1n
+   1
+15.066J  Summer 2003 63</text>
+        </slide>
+        <slide>
+          <slideno>3</slideno>
+          <text>APPROXIMATING NON LINEAR FUNCTIONS 
+ 
+Suppose we wish to m inimize a piece-wise linear  cost function; let x denote the decision 
+variable and c(x), the cost function,  is specified as follows: 
+ 
+ dc(x)
+dx = 2 for 0  x 5; 
+ 
+ dc(x)
+dx = 1 for 5  x 12; 
+ 
+ dc(x)
+dx = 3 for 12  x 18. 
+ 
+We can m odel c(x) with integer variables so that the m inimization of c(x), subject to 
+various constraints on x, can be solved as an integer program . 
+ 
+ c(x) =  2x1 + x2 + 3x3 
+ 
+ x =   x1 + x2 + x3 
+ 
+ 5y1 &lt;= x1 &lt;= 5  ;   7y2 &lt;= x2 &lt;= 7y1  ;  0 &lt;= x3 &lt;= 6y2  
+ 
+ and y1 = 0 or 1;   y2 = 0 or 1. 
+15.066J  Summer 2003 62</text>
+        </slide>
+        <slide>
+          <slideno>10</slideno>
+          <text>OPTIMIZATION OF IN-LINE INSPECTION IN W AFER FABRICATION 
+ 
+(From  John W . Beans LFM thesis, Variation Reduction in a Wafer Fabrication Line 
+Through Inspection Optimization , 1997) One im portant source of lost output in 
+semiconductor m anufacturing is special-cause defects or excursions.  
+ Excursions are typically caused by a preventable condition that can be corrected 
+through better system  design and m aintenance.  System  improvem ents are cost effective 
+until a reasonable risk level is achieved.  A com pany m ust live with som e level of  
+excursion risk below which it is uneconom ical or im possible to achieve im provem ent.  At 
+this point, the im pact of excursions can only be lim ited by im proved detection. 
+ The im pact of an excursion depends on its severity and how m uch product is 
+affected before it is identified by in-line inspection and corrected.  Excursions can be 
+traced to certain higher risk process steps.  These high-risk steps include m etal 
+deposition, photolithography, etchant steps and film  deposition steps. 
+Each excursion has a different im pact on the lots, wafers and dice it affects. Som e 
+excursions are interm ittent while others are consistent.  One excursion m ay impact all 
+wafers but only a few dice per wafer.  Anothe r may only im pact one out of three wafers 
+but every die on these wafers.   
+ 
+ The locations of in-line inspection determ ine the im pact of an excursion. Proper 
+excursion control will consider both the inform ational and production loops shown in the 
+figure.  The solid line represents the flow of product and the dotted line represents the 
+flow of inform ation.   
+ 
+Excursion
+SourceInspectio n
+Locatio n
+Source is identified an d
+corrective action taken.Defect is detected.
+ 
+Flow of excursionary m aterial and inform ation. 
+ 
+ There m ay be an opportunity to im prove the control of excursions through the 
+improved allocation of inspection resources for several reasons. First, in-line inspection 
+plans are developed during the initial process developm ent and m ay or m ay not be 
+adjusted as the process is m odified.  Hence, current inspection plans m ay be artifacts of 
+past processing conditions. Second, there is a tendency to view inspection plan 
+modifications in isolation.  Inspections m ay be added, m oved or rem oved based on data 
+collected at a single area in the process.  This data m ay indicate the need to m odify a 
+specific inspection step, but a holistic view of the process could uncover additional 
+opportunities for im provem ent. 
+15.066J  Summer 2003 69</text>
+        </slide>
+        <slide>
+          <slideno>11</slideno>
+          <text>The analysis tools that were developed include the form ulation for an 
+optim ization routine and a scenario analysis tool.  Both tools are built f rom the sam e 
+general form ulation that m athem atically represents the nature of excursion occurrences 
+and the typical procedures followed by the defect reduction group.  
+ The m odel form ulation begins by breaking the several hundred process steps 
+down into m odules based on the m ost probable inspection locations. Typically, the top 
+30-50 possible inspection locations are used to divide the process into m odules.  Process 
+steps are sectioned into m odules according to the following guidelines.   
+ Queue lim itations -- Queue lim its between steps prevent any additional m aterial 
+handling or inspection.  The m ost com mon exam ple is the queue restriction following 
+each cleaning operation.  Product m ust be processed im mediately following a 
+cleaning operation to prevent re-contam ination of the wafer surface. 
+ Process lim itations -- Processing conditions m ake certain locations unfavorable for 
+inspection.  Photo-resist residue, deposited film s or etching operations m ay reduce 
+the sensitivity of an inspection below acceptable levels. 
+ Risk assessm ent -- Certain steps can be grouped together because of low probability 
+of excursion occurrence, Pr[excursion]. 
+ 
+15.066J  Summer 2003 70</text>
+        </slide>
+        <slide>
+          <slideno>1</slideno>
+          <text>A SPARE PARTS PROBLEM 
+ 
+An office equipm ent com pany has a crew of fi eld representatives who provide service to 
+the com pany's custom ers.  W hen an installed piece of equipm ent (a photocopier) fails, a 
+field representative is sent to attem pt to dia gnose and repair the equipm ent.  In order to 
+be able to com plete the repair on site, the field representative carries an inventory of 
+spare parts.  If the repair requires the replacem ent of parts that the field rep does not have 
+on hand, then the field rep m ust return to the local sales office or warehouse for the part 
+and then turn around and return to the custom er site.  This greatly increases the am ount 
+of tim e the custom er is inconvenienced due to the failed copier.  However, since the field 
+representative m ust carry the spare parts in his/her vehicle, there is a physical lim it on 
+how m any different types of spare parts can be carried.  Furtherm ore, it is very hard to 
+anticipate what parts are needed on any partic ular repair job; in m ost instances the 
+custom er is not able to provide very he lpful diagnostic inform ation when reporting a 
+failure. 
+ 
+Suppose that there are 100 replaceable parts in the copier, and that pj, j = 1, 2, ... 100, is 
+the probability that part j is needed to com plete a repair, given that the copier has f ailed.  
+For sim plicity, assum e that the probability of  requiring part i is independent of  the 
+probability of  requiring part j, f or all pairs i, j.  Let sj be the space consum ed by part j, 
+and suppose that the field rep' s vehicle can carry 40 cubic feet of spare parts. 
+15.066J  Summer 2003 60</text>
+        </slide>
+      </slides>
+      <videos/>
+    </lecture>
+    <lecture>
+      <lecture_title>16</lecture_title>
+      <lecture_pdf_url>https://ocw.mit.edu/courses/15-066j-system-optimization-and-analysis-for-manufacturing-summer-2003/resources/ses16_ontario/</lecture_pdf_url>
+      <lectureno>7</lectureno>
+      <slides>
+        <slide>
+          <slideno>2</slideno>
+          <text>Contextual 
+Operations 
+Finance Accounting 
+skills 
+Probability 
+iImplementation 
+Solver Crystal Ball Simul8 
+Sensitivity Analysis Statistics Industrial 
+Problem Decision 
+Model 
+Decision 
+ Jrmie Gallien Class 3 Wrap-Up 
+Industrial decision-making is interdisciplinary 
+knowledge 
+Methodological 
+Optim zation Software 
+Output Analysis</text>
+        </slide>
+        <slide>
+          <slideno>0</slideno>
+          <text>Jrmie Gallien Class 3 Outline 
+1. Ontario Gateway 
+Background 
+Insurance options 
+Probability model 
+Simulation model 
+Results and discussion 
+2. Discrete-event Framework</text>
+        </slide>
+        <slide>
+          <slideno>1</slideno>
+          <text>Insurance Model 
+ 
+Value of Losses to You ? 
+Jrmie Gallien Each insurance policy can be represented 
+graphically by a curve in the plane: 
+Actual Cost</text>
+        </slide>
+      </slides>
+      <videos/>
+    </lecture>
+  </lectures>
+</doc>

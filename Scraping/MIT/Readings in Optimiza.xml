@@ -1,0 +1,2532 @@
+<doc>
+  <source>MIT</source>
+  <date>28/01/2023</date>
+  <course>
+    <course_url>https://ocw.mit.edu/courses/15-099-readings-in-optimization-fall-2003/</course_url>
+    <course_title>Readings in Optimization</course_title>
+    <course_tags>
+      <list>Engineering </list>
+      <list>Mathematics </list>
+      <list>Systems Engineering </list>
+    </course_tags>
+  </course>
+  <lectures>
+    <lecture>
+      <lecture_title>_Kalai Paper #1, &#8220;A Subexponential Randomized Simplex Algorithm.&#8221;
+Kalai Paper #2, &#8220;Linear Programming, the Simplex Algorithm and Simple Polytopes.&#8221;_
+Both presentations courtesy of Dan Stratila. Used with permission&#160;(PDF). This is a summary presentation based on two papers: Kalai, Gil. &#8220;A Subexponential Randomized Simplex Algorithm (Extended Abstract).&#8221; In Proceedings of the 24th Annual Association for Computing Machinery Symposium on Theory of Computing. New York, NY: ACM Press, 1992. and,
+Kalai, Gil. &#8220;Linear Programming, the Simplex Algorithm and Simple Polytopes.&#8221; Jerusalem, Israel: Hebrew University of Jerusalem, May 1997.</lecture_title>
+      <lecture_pdf_url>https://ocw.mit.edu/courses/15-099-readings-in-optimization-fall-2003/resources/ses4_kalai/</lecture_pdf_url>
+      <lectureno>4</lectureno>
+      <slides>
+        <slide>
+          <slideno>29</slideno>
+          <text>The dual problems
+Primal (we run B on this problem): 
+max{cx : Ax  b}. (4) 
+Dual (we see what B does to this problem): 
+min{yb : y  0, yA = c}. (5) 
+We will imagine the dual problem in the yA = c space, so only the inequality 
+constraints y  0 dene facets; yA = c is simply an ane transformation of the 
+space. 
+29</text>
+        </slide>
+        <slide>
+          <slideno>30</slideno>
+          <text>The correspondence, up to step 3
+C	:= initial feasible basis  C := initial feasible vertex. (Not true.) 
+Choosing random h  H \ C  choosing random facet yh  0 that contains C: 
+	We know, by complementary slackness, that un-tight constraints in the primal 
+correspond to 0-level variable components in the dual. 
+Only the yi  0 constraints dene facets in the dual polytope.  
+Active constraint at a vertex C denes a facet that constains C.  
+Solve recursively the LP with constrains H \h starting from C  solve recursively 
+LP on facet yh = 0 starting from C. 
+If we remove a constraint in the primal, this is the same as requiring yh = 0  
+in the dual. 
+30</text>
+        </slide>
+        <slide>
+          <slideno>31</slideno>
+          <text>The correspondence, step 4
+In both cases we obtain a new basis ( vertex) B.
+If B violates h  B not optimal: infeasible primal solutions correspond to 
+suboptimal dual solutions. 
+C := basis(B, h) is a pivot operation  C := move away along an unique edge 
+from yh = 0. But, there is no move along an edge in A3! 
+Slight adjustment to A3, in order to achieve perfect duality: in step 1, pick a 
+random facet among d active facets. 
+After we found optimum w on facet F0, this facet is not active (since w optimum 
+on it). Moreover, this facet is dened by d  1 of the edges at w (in a simple 
+polytope, every d  1 edges at a vertex dene a facet, and conversely). 
+31</text>
+        </slide>
+        <slide>
+          <slideno>25</slideno>
+          <text>Algorithm 3
+A3 (start vertex v): 
+1. From d facets containing v, select a facet F0 at random, with equal probability. 
+2. Apply A3 to F0 recursively, and let w be the optimum. 
+3. Set v := w and go to step 1. 
+Simple! This algorithm is the dual of the algorithm discovered by Sharir and 
+Welzl [SW92] (more about this later). 
+For now, note that in a simple polytope, there can be at most 1 non-active facet 
+adjacent to any vertex v, unless v is optimal. 
+25</text>
+        </slide>
+        <slide>
+          <slideno>2</slideno>
+          <text>Polytopes and polyhedra
+A polyhedron P  Rd is the intersection of nitely many halfspaces, or in matrix 
+notation P := {x  Rd : Ax  b}, where A  Rnd and b  Rn . A polytope is a 
+bounded polyhedron. 
+Dimension of polyhedron P is dim(P ) := dim(a( P )), where a(P ) is the ane 
+hull of all points in P . 
+A polyhedron P  Rd with dim(P ) = k is often called a k-polyhedron. If 
+d = k, P called full-dimensional. (Most of the time we assume full-dimensional 
+d-polyhedra, not concerned much about the surrounding space.) 
+An inequality ax  , where a  Rd and   R, is called valid if ax   for all 
+x  P . 
+2</text>
+        </slide>
+        <slide>
+          <slideno>3</slideno>
+          <text>Vertices, edges, ..., facets
+A face F of P is the intersection of P with a valid inequality ax  , i.e. 
+F := {x  P : ax = }. 
+Faces of dimension d  1 are called facets, 1 ... edges, and 0 ... vertices. Vertices
+are points,  basic feasible solutions (algebraic), or extreme points (linear cost).
+Since 0x  0 is valid, P is a d-dimensional face of P . 0x  1 is valid too, so  is 
+a face of P , and we dene its dimension to be 1. 
+Some vertices are connected by edges, so we can dene a graph G = 
+(V (G), E(G)), where V (G) = {v : v  vert(P )} and E(G) = {(v, w) 
+V (G)2 :  edge E of P s.t. v  E, w  E}. 
+For unbounded polyhedra often a  node is introduced in V (G), and we add 
+graph arcs (v, ) whenever v  E where E is an unbounded edge of P . 
+3</text>
+        </slide>
+        <slide>
+          <slideno>38</slideno>
+          <text>How smart the oracle?
+Not too smart: 
+1. Solve max{cx : x  Fi} for each facet Fi using some polynomial LP algorithm. 
+2. Rank all values.
+Only needs to be done once per instance. Hence bound nlog d+1 can be achieved
+by a polynomial-pivot-time deterministic simplex algorithm! 
+Not combinatorial; overkill. 
+38</text>
+        </slide>
+        <slide>
+          <slideno>5</slideno>
+          <text>Linear programming and the simplex method
+A linear programming problem max{cx : Ax  b} is the problem of maximizing 
+a linear function over a polyhedron. 
+	If problem bounded (cost of feas. sol. nite), optimum can be achieved at 
+some vertex v. 
+If problem unbounded, can nd edge E of P = {x  Rd : Ax  b} s.t. cx is  
+unbounded on the edge. 
+	If problem bounded, vertex v is optimal  cv  cw for all w adjacent to v 
+(for all (v, w)  E(G)). 
+Geometrically, the simplex method starts at a vertex (b.f.s.) and moves from one 
+vertex to another along a cost-increasing edge (pivots) until it reaches an optimal 
+vertex (optimal b.f.s). 
+5</text>
+        </slide>
+        <slide>
+          <slideno>34</slideno>
+          <text>Status of Hirsch conjecture for polytopes
+Still open!
+Exponential bound (d, n)  n2d3 [Larman, 1970].
+Until recently (w.r.t. 1992) no sub-exponential bound known.
+Bounds of n2 log d+3 and nlog d+1 in [Kal92b, KK92] respectively.
+How randomized pivot rules aect the Hirsch conjecture? A randomized simplex
+algorithm gives only hope that a deterministic algorithm with the same complexity
+may be devised.
+But, because E[...] is over choices, at least one of these choices (even if we dont
+know it), yields a path of length less that E[...].
+34</text>
+        </slide>
+        <slide>
+          <slideno>23</slideno>
+          <text>Algorithm 2
+Delete step 4, repeat steps 13 until step 1 detects an optimal vertex. Equivalent 
+to setting c := 1 in 1. 
+A2 (start vertex v):
+1. Starting from	 v, nd vertices on r active facets F1, F2, . . . , F r. If unable to 
+nd r distinct active facets  opt. vertex found. 
+2. Choose a facet Fk at random from F1, F2, . . . , F r with equal probability. 
+3. Solve max{cx : x  Fk} recursively. Let the optimum vertex be w. 
+4. Delete inactive facets, set v := w, and go to step 1. 
+Recurrence is: 
+f2(d, n)  f2(d 1, n 1) + n/2
+g(d, i) +
+2
+n/2
+n i=d	 i=1 g(d, n i). (3)
+23</text>
+        </slide>
+        <slide>
+          <slideno>37</slideno>
+          <text>A4: the recursion
+At most f4(d, n/2) pivots for step 2. Pivots from step 4 (counting everything 
+that happens) is again f4(d, n/2). Clearly, step 3 takes f4(d  1, n  1). Hence: 
+f4(d, n)  2f4(d, n/2) + f4(d  1, n  1) + 1. (6) 
+To solve this, let (d, t) := 2tf4(d, 2t). Then, from (6), we obtain (d, t) 
+(d  1, t) + (d, t  1). 
+By simple combinatorial reasoning (counting all paths to the bottom), this yields
+
+d + t 
+log n + d
+(d, t)  . So f4(d, n)  n d log n .
+a + b
+Finally, by combinatorics a  ab (or ba), we obtain f4(d, n)  nlog d+1 . 
+37</text>
+        </slide>
+        <slide>
+          <slideno>14</slideno>
+          <text>Main result in this talkcontext
+In the simplex algorithm we often make choices on which vertex to move to next. 
+Criteria for choosing the next vertex are called pivot rules. 
+In the early days, believed simple rules guarantee a polynomial number of 
+vertices in path. Klee and Minty [KM72] have shown exponential behaviour. 
+After that, not known even if LP can be solved in polynomial time at all, until 
+[Kha79]. But still, 
+	Finding a pivot rule (deterministic or randomized) that would yield a polynomial 
+number of vertex changesopen since simplex introduced. 
+For some f(n), exponential: f(n)  (kn), k &gt; 1. Polynomial: f(n)  O(nk) 
+for some xed k  1. Subexponential f(nk) for any xed k  1 and 
+f(n)  (kn) for any xed k &gt;1. )  O(n
+14</text>
+        </slide>
+        <slide>
+          <slideno>13</slideno>
+          <text>Abstract objective functions and the combinatorial structure
+An abstract objective function assigns a value to every vertex of a simple polytope 
+P, s.t. every non-empty face F of P has a unique local maximum vertex. 
+AOFs are gen. of linear objective functions. Most results here apply. 
+The combinatorial structure of a polytope is all the information on facet inclusion,
+e.g. all vertices, all edges and the vertices they are composed of, all 3-facets and 
+their composition, etc. 
+Lemma: Given graph G(P) of simple polytope P, connected subgraph H = 
+(V(H), E(H)) with k vertices denes a k-face if and only if  AOF s.t. all 
+vertices in V(H) come before all vertices in V(G(P )) \ V(H). 
+Property: The combinatorial structure of any simple polytope is determined by 
+its graph. 
+13</text>
+        </slide>
+        <slide>
+          <slideno>16</slideno>
+          <text>Algorithm 1
+Simplest randomization (Dantzig, others): next vertex random with equal prob. 
+among neighboring cost-increasing vertices. Hard to analyize in general; Gartner, 
+Henk and Ziegler show quadratic lower bounds on Klee-Minty cubes. 
+Reminder: P Given P = {x  Rd : Ax  b}, so in LP terms: d = # of variables, 
+n = # of constraints. Also given c  Rd . 
+A1-1 (parameter r, start vertex v): 
+1. Find vertices on r facets F1, F2, . . . , F r s.t. Fi, cv &lt; max{cx : x  Fi}. 
+2. Choose a facet Fk at random from F1, F2, . . . , F r with equal probability. 
+3. Solve max{cx : x  Fk} recursively. Let the optimum vertex be w. 
+4. Finish solving the problem from w recursively. 
+How is this a simplex algorithm? 
+16</text>
+        </slide>
+        <slide>
+          <slideno>0</slideno>
+          <text>Polytopes, their diameter, and randomized simplex
+Presentation by: Dan Stratila
+Operations Research Center
+Session 4: October 6, 2003
+Based primarily on:
+Gil Kalai. A subexponential randomized simplex algorithm (extended abstract).
+In STOC. 1992. [Kal92a].
+and on:
+Gil Kalai. Linear programming, the simplex algorithm and simple polytopes.
+Math. Programming (Ser. B), 1997. [Kal97].</text>
+        </slide>
+        <slide>
+          <slideno>24</slideno>
+          <text>A2: the bounds
+d 
+log d By solving the recurrences, we get f2(d, Kd)  2C
+Kd , and f2(d, n)  n C 
+. 
+When co-dimension (m := n  d) is small the following bound is very useful: 
+2Cm log d . 
+Next: the interesting A3. 
+24</text>
+        </slide>
+        <slide>
+          <slideno>1</slideno>
+          <text>Structure of the talk
+1. Introduction to polytopes, linear programming, and the simplex method.
+2. A few facts about polytopes. 
+3. Choosing the next pivot. Main result in this talk. 
+4. Subexponential randomized simplex algorithms. 
+5. Duality between two subexponential simplex algorithms. 
+6. The Hirsch conjecture, and applying randomized simplex to it. 
+7. Improving diameter results using an oracle for choosing pivots. 
+1</text>
+        </slide>
+        <slide>
+          <slideno>10</slideno>
+          <text>hk,c(P ) = hk(P ), proof (2/2)
+Summing over all v  vert(P ), we obtain fk(P ) = d 
+r 
+. r=k hr,c(P ) k 
+Equations linearly independent in hr,c. This completely determines hr,c(P ) in 
+terms of fk(P ). But fk(P ) independent of c, so same true for hr(P ). 
+10</text>
+        </slide>
+        <slide>
+          <slideno>11</slideno>
+          <text>The Euler Formula and Dehn-Sommerville Relations
+r=k(1)rkfr(P ) . We can expess hk(P ) =d 
+r 
+k 
+We know that h0(P ) =hd(P ) = 1, hence f0(P )f1(P )++(1)dfd(P ) = 1, 
+d+ (1)d1fd1(P ) = 1(1). or f0(P )f1(P ) +
+In 3 dimensions, V E +F = 2. 
+Back to hk,c(P ), note that if degc(v) =k then degc(v) =d k. 
+Because of independence of c, we obtain the Dehn-Sommerville Relations: 
+hk(P ) =hdk(P ). 
+11</text>
+        </slide>
+        <slide>
+          <slideno>32</slideno>
+          <text>The correspondence, steps 4 and 5
+Hence only one remaining edge can be cost-improving  any simplex algorithm 
+will take it. So, our algorithm takes it when it tries to nd the d-th facet. 
+But this implies that the choice of d facets available to A3 is exactly the same as 
+the choice of d facets available after moving along the unique edge. 
+In steps 5 and 1 this yields the same choice of un-tight constraints in the primal!
+So, a variant of the Sharir-Welzl algorithm B when followed on the dual polytope 
+is exactly the same as the (slightly modied) Kalai algorithm A3. 
+32</text>
+        </slide>
+        <slide>
+          <slideno>26</slideno>
+          <text>A3: the recursion
+1First, if all facets active, with probability d the chosen facet yields n i active 
+facets at step 3, for i = 1, . . . , d . 
+1Second, if one facet inactive, with probability d1 the chosen facet yields n i 
+facets at step 3, for i = 1, . . . , d  1. 
+Second alternative is worse, so we factor it in and obtain recursion f3(d, n) 
+f(d 1, n 1) + 1 d1 f(d, n i).i=1 d1 
+This yields bound f3(d, n) eCn log d . A4, which we do not present now, gives 
+eCd log n, better, like A2. 
+26</text>
+        </slide>
+        <slide>
+          <slideno>15</slideno>
+          <text>Main result in this talk
+Shortly before a dierent technique in [SW92], shorty aftewards a subexponential 
+analysis for it in [MSW96]. 
+	The rst randomized pivot rule that yields subexponential expected path length 
+(presented from [Kal92a, Kal97]). 
+Expectation over internal random choices of algorithm; applicable to all LP 
+instances. 
+Immediate application to diameter of polytopes and the Hirsch conjecture (more 
+about diameters and the Hirsch conjecture later). 
+15</text>
+        </slide>
+        <slide>
+          <slideno>19</slideno>
+          <text>A1-1: Implementation of step 4
+A facet F is active w.r.t. a vertex v if w  vert(F) s.t. cw &gt; cv.
+Apply algorithm recursively from w using only those facets which are active. At 
+most n 1 such facets (Fk from step 3 cannot be active). 
+Complexity analysis
+Let f1(P, c) := E[# of pivots when solving max{cx : x  P} by A1]. Let 
+f1(d, n) := max 
+f1({x  Rd : Ax  b}, c) : A  Rnd, c  Rd, b  Rn
+. 
+First part of analysis: probabilistic reasoning to obtain a recurrence relation on 
+f1(d, n). 
+Second part: solving the recurrence (using generating functions).
+19</text>
+        </slide>
+        <slide>
+          <slideno>17</slideno>
+          <text>A1-1: Implementation of step 1
+For step 1, easy to nd the rst d facets. For the rest r  d facets, let 
+k := d, z := v and proceed as follows: 
+1. Solve an LP from z with only the k facets recursively. Let result be z.
+2. If z feasible for original problem, optimum found, A1-1 terminates. 
+3. Otherwise, rst edge E on path that leaves P gives new facet F . Let z be the 
+point in E  F . If r facets, stop; otherwise go to step 1. 
+Up to now we are tracing a path along the vertices of the original problem.
+17</text>
+        </slide>
+        <slide>
+          <slideno>21</slideno>
+          <text>(The real) Algorithm 1
+Before analyzing the recurrence, we improve A1-1. 
+1A1 (parameter c &gt; 2, start vertex v): 
+1. Starting from v, nd vertices on r active facets F1, F2, . . . , F r. 
+2. Choose a facet Fk at random from F1, F2, . . . , F r with equal probability. 
+3. Solve max{cx : x  Fk} recursively. Let the optimum vertex be w. 
+4. Let l := |{F : F active w.r.t. If l &gt; (1  c)n then let v := w and go to w}|. 
+step 1; otherwise, nish solving recursively from w. 
+Let r := max n 
+2 , d
+. What is probability of not returning to step 1? If r = n 
+easily geometric with ratio = P( no return) = P(l &lt; (1  c)n) = 1  c. 
+In general, analysis more complicated.
+21</text>
+        </slide>
+        <slide>
+          <slideno>33</slideno>
+          <text>The Hirsch conjecture
+The diameter (G(P )) of a polytope is the diameter of its graph, i.e. the longest 
+shortest path between any pair (v, w) of vertices. Denote by ( G(P )) the longest 
+shortest path in the cost-function directed graph of P . 
+Let (d, n) := max{(G(P )) : P is a d-polytope with n facets }. Let H(d, n) := 
+max{(G(P )) : P is a d-polytope with n facets, c is any cost function }. 
+Clearly, the simplex algorithm cannot guarantee a better performance on P than 
+(G(P )). Moreover, (d, n)  H(d, n). 
+Conjecture (Hirsch, [Dan63]): (P )  n  d.
+False for unbounded polyhedra [KW67]. Lower bound of (d, n)  n d+ d/5. 
+Still best lower bound! 
+33</text>
+        </slide>
+        <slide>
+          <slideno>6</slideno>
+          <text>Vertices as intersections of facets
+Any polytope can be represented by its facets P = {x  Rd : Ax  b}, or by its 
+vertices P = conv({v : v  vert(P)}). 
+If vertices are given, then LP is trivialjust select the best one. Most of the 
+time, facets are given. Number of vert. exponential in number of facets makes 
+generating all vertices from the facets impractical. 
+Represent a vertex v as intersection of d facets. Any vertex is situated at the 
+intersection of at least d facets; any non-empty intersection of d facets yields a 
+vertex. 
+dWhen situated at a vertex v given by i=1Fi, easy to nd all adjacent vertices. 
+Remove each facet Fi, and intersect with all other facets not in {F1, . . . , F d}. 
+Except when...
+6</text>
+        </slide>
+        <slide>
+          <slideno>28</slideno>
+          <text>The duality of A4 and the Sharir-Welzl algorithm
+Following [Gol95], we show what the Sharir-Welzl algorithm (Algorithm B) 
+[MSW96] does to the polytope of the dual LP. Reminder: algorithm B was called 
+BasisLP in the second part of Session 3. 
+Unlike before, well use lots of traditional LP terminology. Let H be a set of 
+constraints, and B a set of constraints that dene a basis. 
+B (set of constraints H, basis C with C H): 
+1. Begin at C. 
+2. Choose random constraint h H \C 
+3. Solve LP recursively with constraints H \ {h}, from C. Let result be B.
+4. If B violates h, then form new basis C := basis( B, h); otherwise optimum 
+found. 
+5. Let C := C and go to step 1. 
+28</text>
+        </slide>
+        <slide>
+          <slideno>8</slideno>
+          <text>A few facts about polytopes
+Disclaimer: results not used or related to subexponential simplex pivot rules (main
+result in this talk).
+The f -vector: fk(P ) :=# of k-faces of P .
+Degrees: let degc(v) w.r.t. to some objective function c be the # of neighboring
+vertices w with cw &lt; cv.
+The h-vector: hk,c(P ) :=# of vertices of degree k w.r.t. objective c in P .
+Note: there is always one vertex of degree d, and one of degree 0.
+Property: hk,c(P ) = hk(P ), independent of c.
+8</text>
+        </slide>
+        <slide>
+          <slideno>12</slideno>
+          <text>Cyclic polytopes and the upper bound theorem
+A cyclic d-polytope with n vertices is dened by n scalars t1, . . . , t n as
+conv({(ti, t2 
+i , . . . , tid) : i = 1, d}). Can use other curves too.
+All cyclic d-polytopes with n vertices have same structure, denote by C(d, n).
+The polar C(d, n) := {x  (Rd) : xv  1,v  C(d, n)} is a simple polytope.
+Property: C(d, n) has the maximum number of k-facets for any polytope with
+n vertices.
+The polar C(d, n) has the maximum number of k-facets for any polytope with 
+n facets (the face lattice).
+Exact expression for fk1 elaborate, but a simple one is fk1 =
+min{d,k} d i
+hi(P). For more interesting details, see [Zie95]. i=0 k  i 
+12</text>
+        </slide>
+        <slide>
+          <slideno>9</slideno>
+          <text>hk,c(P ) =hk(P ), proof (1/2)
+Proof. Count p :=|{(F, v) :F is a k-face of P , v is max. on F }, in two ways.
+Pick facets. Because c in general position  v unique for each F , hence 
+p =fk(P ). 
+On the other hand, pick a vertex v, and assume degc(v) =r. Let T ={(v, w) : 
+cv &gt; cw}, by denition T =r. | | 
+For simple polytopes, each vertex v has d adjacent edges, and any k of them 
+dene a k-face F that includes v. 
+
+T 
+So, # of k-facets that contain v as local maximum is |
+k| = 
+r 
+.
+k 
+9</text>
+        </slide>
+        <slide>
+          <slideno>40</slideno>
+          <text>[MSW96] J. Matou sek, M. Sharir, and E. Welzl. A subexponential bound for linear programming. Algorithmica , 
+16(4-5):498516, 1996. 
+[SW92] Micha Sharir and Emo Welzl. A combinatorial bound for linear programming and related problems. In 
+STACS 92 (Cachan, 1992), volume 577 of Lecture Notes in Comput. Sci., pages 569579. Springer, Berlin, 
+1992. 
+[Zie95] G unter M. Ziegler. Lectures on polytopes , volume 152 of Graduate Texts in Mathematics . Springer-Verlag, 
+New York, 1995. 
+40</text>
+        </slide>
+        <slide>
+          <slideno>18</slideno>
+          <text>A1-1: Implementation of steps 2 and 3
+First, note that when solving max{cx : x  Fk}, tracing a path along vertices of 
+Fk. This is also a path along vertices of P, since we are working with Fk in its 
+dimension. 
+If k = r or k = r 1, then last vertex  Fk, can continue our path in step 3. 
+But if k &lt; r  1, then backtracking from the last vertex found when discovered. 
+Not honest simplex. 
+Easy to x. Since facet Fk is chosen uniformly among facets F1, . . . , F r, this 
+can be done by choosing uniformly among Fi1, . . . , F ir , where i1, . . . , i r order in 
+which facets encountered by step 1. 
+So, generate random k before step 1, and stop once reached k-th facet (Kalai 
+also oers another workaround). 
+18</text>
+        </slide>
+        <slide>
+          <slideno>7</slideno>
+          <text>Degeneracy and simple polytopes
+When a vertex is at the intersection of &gt; dfacets, procedure above may leave us 
+at the same vertex. Worse, sometimes need such changes before can move away 
+from a vertex in cost-increasing direction. 
+This is (geometric) degeneracy. In standard form degenerate vertices yield 
+degenerate b.f. solutions. Other degenerate b.f. solutions may appear because 
+of redundant constraints. 
+If all vertices of P belong to at most dfacets ( exactly d), P is called simple. 
+Simple polytopes correspond to non-degenerate LPs, and have many properties 
+[Zie95, Kal97]. 
+We restrict ourselves to simple polytopes. Ok for two reasons: 1) any LP can 
+be suitably perturbed to become non-degenerate; 2) perturbation can be made 
+implicit in the algorithms. 
+7</text>
+        </slide>
+        <slide>
+          <slideno>20</slideno>
+          <text>A1-1: Analysis of step 1
+It takes f1(d, i) to solve an LP in d variables with i facets using A1-1. So step 1 
+takes at most r
+i=1 f1(d, i). 
+In step 2, note that there is at least one vertex in the path for each random 
+number generated. 
+In step 3, the expected complexity is f1(d 1, n 1). 
+After step 3, we only need to consider the active facets w.r.t. w. How many? 
+Assume facets F1, . . . , F r are ordered according to their top vertex. Then selecting 
+facet i  at most n i 1 active facets w.r.t. w. 
+So with probability 1 we will have n i 1 active facets, for i = 1,2, . . . , r . r 
+Rec.: f1(d, n) = 2r f1(d, i)+ f1(d 1, n 1)+1 n1 l f1(d, n i).i=d rnr1 i=d 
+20</text>
+        </slide>
+        <slide>
+          <slideno>27</slideno>
+          <text>Subexponential behaviour
+2 4 6 8 10 12 145001000150020002500
+200 400 600 800 1000 1200510811091.51092109
+Figure 2: Asymptotic behaviour of the exponential 2d , the polynomial d3 and the 
+subexponential 2
+d . 
+27</text>
+        </slide>
+        <slide>
+          <slideno>22</slideno>
+          <text>A1: the recurrence
+2
+r
+ 1 1
+r
+f1(d, n) 
+ f1(d, i) + f (d  1, n  1) + f1(d, n  i)i.1  c 1  c (1  c)n i=d i=cn 
+(1) 
+
+d + logb n1Taking b = 1c, we get a bound of f1(d, n)  bd(6n)logbn 
+logb n . 
+1Taking c = 1  , we obtain 
+d
+f1(d, n)  n 16
+d . (2) 
+22</text>
+        </slide>
+        <slide>
+          <slideno>36</slideno>
+          <text>Algorithm 4
+A4 (start vertex v):
+1. From	 the active facets w.r.t v, select a facet F0 at random, with equal 
+probability. 
+2. Find vertices recursively until reached F0, or until optimum found. 
+3. Solve recursively on F0. Let result be v. 
+4.	Go to step 1. 
+As mentioned, bound of eCd log n . 
+Now instead of selecting F0 at random, order all facets in increasing order 
+F1, . . . , F n of max{cx : x  Fi}. Select F0 s.t. max{x : x  F0} above the 
+median (i &gt; n/2 in the ordering). 
+Let f4(d, n) be the number of steps using the oracle. 
+36</text>
+        </slide>
+        <slide>
+          <slideno>35</slideno>
+          <text>A friendly oracle
+So all our bounds on the number of simplex pivots, immediately apply to H(d, n) 
+(since simplex takes only monotone paths) and hence to (d, n). 
+In algorithms A1A4 we spend at most O(d2n) for each pivot, and generate at 
+most 1 random number per pivot. 
+What if we allow much more time per pivot? Result will still apply to the Hirsch 
+conjecture. Do not want algorithms such as construct the graph, nd the 
+shortest path, then parse it, since analysis is equivalent to Hirsch conjecture. 
+But, can still make use of a more powerful oracle that makes choices at each 
+pivot step. Works from within Algorithm 4. 
+35</text>
+        </slide>
+        <slide>
+          <slideno>4</slideno>
+          <text>Example of a 3-polytope
+12
+5
+378 6
+4
+F
+12
+34
+56
+78
+F
+Figure 1: A 3-polytope (left) and its graph (right). Four vertices, three edges, 
+and facet F are shown in corresponding colors. 
+4</text>
+        </slide>
+        <slide>
+          <slideno>39</slideno>
+          <text>References
+[Dan63] George B. Dantzig. Linear programming and extensions . Princeton University Press, Princeton, N.J., 
+1963. 
+[Gol95] Michael Goldwasser. A survey of linear programming in randomized subexponential time. ACM SIGACT 
+News , 26(2):96104, 1995. 
+[Kal92a] Gil Kalai. A subexponential randomized simplex algorithm (extended abstract). In Proceedings of the 
+twenty-fourth annual ACM symposium on Theory of computing , pages 475482. ACM Press, 1992. 
+[Kal92b] Gil Kalai. Upper bounds for the diameter and height of graphs of convex polyhedra. Discrete Comput. 
+Geom. , 8(4):363372, 1992. 
+[Kal97] Gil Kalai. Linear programming, the simplex algorithm and simple polytopes. Math. Programming , 79(1-3, 
+Ser. B):217233, 1997. 
+[Kha79] L. G. Khachiyan. A polynomial algorithm in linear programming. Dokl. Akad. Nauk SSSR , 244(5):1093 
+1096, 1979. 
+[KK92] Gil Kalai and Daniel J. Kleitman. A quasi-polynomial bound for the diameter of graphs of polyhedra. 
+Bull. Amer. Math. Soc. (N.S.) , 26(2):315316, 1992. 
+[KM72] Victor Klee and George J. Minty. How good is the simplex algorithm? In Inequalities, III (Proc. Third 
+Sympos., Univ. California, Los Angeles, Calif., 1969; dedicated to the memory of Theodore S. Motzkin) , 
+pages 159175. Academic Press, New York, 1972. 
+[KW67] Victor Klee and David W. Walkup. The d-step conjecture for polyhedra of dimension d &lt;6. Acta Math. , 
+117:5378, 1967. 
+39</text>
+        </slide>
+      </slides>
+      <videos/>
+    </lecture>
+    <lecture>
+      <lecture_title>Zabinsky and Smith Paper, &#8220;Pure Adaptive Search in Global Optimization.&#8221;
+Presentation courtesy of Michael Yee. Used with permission&#160;(PDF). This is a summary presentation based on: Zabinsky, Zelda B., and Robert L. Smith. &#8220;Pure Adaptive Search in Global Optimization.&#8221; Mathematical Programming 55 (1992): 323-38.
+Presentation courtesy of Michael Yee and Kwong-Meng Teo. Used with permission&#160;(PDF). This is a summary presentation based on: Zabinsky, Zelda B., and Robert L. Smith. &#8220;Pure Adaptive Search in Global Optimization.&#8221; Mathematical Programming 55 (1992): 323-38.</lecture_title>
+      <lecture_pdf_url>https://ocw.mit.edu/courses/15-099-readings-in-optimization-fall-2003/resources/ses6_zabinsky1/</lecture_pdf_url>
+      <lectureno>6</lectureno>
+      <slides>
+        <slide>
+          <slideno>1</slideno>
+          <text>Pure Adaptive Search (PAS)
+Step 0 . Set k= 0, and S0=S
+Step 1 . Generate Xk+1uniformly distributed in Sk, and set Wk+1=f(Xk+1)
+Step 2 . If stopping criterion met, STOP. Otherwise, set
+Sk+1={x:xSandf(x)&lt; W k+1},
+Increment k, Goto Step 1.
+Pure Adaptive Search [4]
+Solis and Wetz
+Give sucient conditions for convergence of random global search methods
+Experimental support for linear relation between function evaluations and
+dimension
+PAS satises H1 since objective function values are increasing
+PAS satises H2 since the optimal solution is always in the restricted feasible
+region
+Pure Adaptive Search [5]
+Importance of Strict Improvement
+What if consecutive points were allowed to have equal objective function
+values?
+LetSbe a unit hypersphere, with f(x) = 1 onSexcept for a depression on a
+hypersphere of radius /epsilon1,S/epsilon1, where f(x)drops to value 0at the center of the
+/epsilon1-ballS/epsilon1
+Then, P(random point is in S/epsilon1) = volume( S/epsilon1)/volume( S) =/epsilon1n
+Thus, PAS could have expected number of iterations that is exponential in
+dimension (if strict improvement were not enforced)
+Pure Adaptive Search [6]
+Some Notation
+Letp(y) =P(Yky), fork= 1,2, . . . andyyy
+For PRS,
+p(y) =v(S(y))/v(S),
+where S(y) ={x:xSandf(x)y}andv()is Lebesgue measure
+Note that for PAS,
+P(Wk+1y|Wk=z) =v(S(y))/v(S(z)) =p(y)/p(z),
+fork= 1,2, . . . andyyzy
+Pure Adaptive Search [7]</text>
+        </slide>
+        <slide>
+          <slideno>4</slideno>
+          <text>Performance Bounds
+LetN(y)be the number of iterations require by PAS to achieve a value of yor
+better. Then
+N(y) =N((yy)/(yy)) + 1
+Corollary 1. The cumulative distribution of N(y)is given by
+P(N(y)k) =k1/summationdisplay
+i=0p(y)(ln(1 /p(y)))i
+i!,
+with
+E[N(y)] = 1 + ln(1 /p(y)), V ar (N(y)) = ln(1 /p(y))
+Pure Adaptive Search [16]
+Bounds for Lipschitz Functions
+Lemma 3. For global optimization problem (P) over a convex feasible region S
+inndimensions with diameter dS= max {/bardblwv/bardbl, w, v S}and Lipschitz
+constant kf,
+p(y)((yy)/kfdS)n,foryyy.
+Theorem 4. For any global optimization problem (P) over a convex feasible
+region in ndimensions with diameter at most dand Lipschitz constant at most
+k,
+E[N(y)]1 + [ln( kd/(yy))]n
+and
+V ar (N(y))[ln(kd/(yy))]n
+foryyy.
+Pure Adaptive Search [17]
+Conclusions
+Complexity of PRS is exponentially worse than that of PAS
+General performance bounds using theory from stochastic processes
+Specic performance bounds for Lipschitz functions : linear in dimension!
+But is this too good to be true?!
+Pure Adaptive Search [18]</text>
+        </slide>
+        <slide>
+          <slideno>0</slideno>
+          <text>Pure Adaptive Search in Global Optimization
+by
+Z. B. Zabinsky and R. L. Smith
+Presented by Michael Yee
+November 3, 2003
+Outline
+Pure Random Search versus Pure Adaptive Search
+Relationship to Solis and Wetz (1981)
+Distribution of improvement in objective function value
+Performance bounds
+Pure Adaptive Search [1]
+Global Optimization Problem
+Problem (P):
+min
+xSf(x)
+where xRn,Sis convex, compact subset of Rn, and fcontinuous over S
+fsatises Lipschitz condition , i.e., |f(x)f(y)| kf/bardblxy/bardbl,x, yS
+x= arg min xSf(x)
+y=f(x) = min xSf(x)
+y= max xSf(x)
+Pure Adaptive Search [2]
+Pure Random Search (PRS)
+Generate sequence of independent, uniformly distributed points
+X1, X2, . . . ,
+in the feasible region S. Denote their associated objective function values by
+Y1=f(X1), Y2=f(X2), . . .
+When stopping criterion met, best point generated so far is taken as
+approximation to true optimal solution
+Pure Adaptive Search [3]
+This presentation is based on: Zabinsky, Zelda B., and Robert L. Smith. Pure Adaptive Search
+in Global Optimization. Mathematical Programming 55, 1992, pp. 323-338.</text>
+        </slide>
+        <slide>
+          <slideno>3</slideno>
+          <text>Linear versus Exponential
+Theorem 1. LetkandR(k)be respectively the number of PAS and PRS
+iterations needed to attain an objective function value of yor better, for
+yyy. Then
+R(k) =ek+o(k),with probability 1,
+where limko(k)/k= 0, with probability 1.
+Proof. Use general fact about records that limklnR(k)
+k= 1, with probability
+1...2
+Pure Adaptive Search [12]
+Relative Improvement
+Denition. LetZk= (yYk)/(Yky)be the relative improvement obtained
+by the kth iteration of PRS.
+Then, the cumulative distribution function FofZkis given by
+F(z) =P(Zkz)
+=P(Yk(y+zy)/(1 +z))
+=/braceleftbigg
+0 if z &lt; 0,
+1p((y+zy)/(1 +z)) if 0 z &lt;.
+Note also that the random variables Zkare iid and nonnegative.
+Pure Adaptive Search [13]
+Relative Improvement Process
+Lemma 2. LetZ1, Z2, . . . denote a sequence of iid nonnegative continuous
+random variables with density fand cdf F. Let M(z)denote the number of
+record values (in the max sense) of {Zi, i= 1,2, . . .}less than or equal to z.
+Then {M(z), z0}is a nonhomogeneous Poisson process with intensity
+function (z) =f(z)/(1F(z))and mean value function m(z) =/integraltextz
+0(z)ds.
+Theorem 2. LetN(z)be the number of PAS iterations achieving a relative
+improvement at most zforz0. Then {N(z), z0}is a nonhomogeneous
+Poisson process with mean value function
+m(z) = ln(1 /p((y+zy)/(1 +z))),for0z &lt;.
+Pure Adaptive Search [14]
+Distribution of Objective Function Values
+Theorem 3. P(Wky) =/summationtextk1
+i=0p(y)(ln(1 /p(y)))i
+i!
+Proof. The events {Wk&lt; y}and{N((yy)/(yy))&lt; k}are equivalent, so
+P(Wky) =P(Wk&lt; y) =P(N((yy)/(yy))&lt; k),
+and by previous theorem N(z)is a Poisson random variable with mean
+m(z) = ln(1 /p((y+zy)/(1 +z))),
+etc.2
+Pure Adaptive Search [15]</text>
+        </slide>
+        <slide>
+          <slideno>2</slideno>
+          <text>Connection Between PAS and PRS
+Denition. Epoch iis said to be a record of the sequence {Yk, k= 0,1,2, . . .}if
+Yi&lt;min(Y0, Y1, . . . , Y i1). The corresponding value Yiis called a record value .
+Lemma 1. For the global optimization problem (P), the stochastic process
+{Wk, k= 0,1,2, . . .}  { YR(k), k= 0,1,2, . . .}, where R(k)is the kth record of
+the sequence {Yk, k= 0,1,2, . . .}. In particular,
+P(Wky) =P(YR(k)y),fork= 0,1,2, . . . , andyyy
+Pure Adaptive Search [8]
+Proof of Lemma 1
+Proof. First, we show that the conditional distributions are equal.
+P(YR(k+1)y|YR(k)=x) =P(YR(k)+1y|YR(k)=x)
++P(YR(k)+2y, YR(k)+1x|YR(k)=x) +  
+=P(YR(k)+1y)
++P(YR(k)+2y)P(YR(k)+1x) +  
+=P(Y1y)/summationtext
+i=0P(Y1x)i
+=P(Y1y)
+1P(Y1x)
+=v(S(y))/v(S(x))
+=P(Wk+1y|Wk=x).
+Pure Adaptive Search [9]
+Next, we use induction to show that the unconditional distributions are equal.
+By denition, R(0) = 0 andY0=W0=y, thus YR(0)=W0.
+For the base case k= 1,
+P(YR(1)y) =P(YR(1)y|Y0=y)
+=P(W1y|W0=y)
+=P(W1y), for all yyy
+Thus, YR(1)W1.
+Pure Adaptive Search [10]
+Fork &gt; 1, suppose that YR(i)Wifori= 1,2, . . . , k . Then,
+P(YR(k+1)y) =E[P(YR(k+1)y|YR(k))]
+=/integraltextx
+0P(YR(k+1)y|YR(k)=x) dFYR(k)(x)
+=/integraltextx
+0P(Wk+1y|Wk=x) dFWk(x)
+=E[P(Wk+1y|Wk)]
+=P(Wky), for all yyy
+Thus, YR(k+1)Wk+1.
+Finally, since the two sequences are equal in conditional and marginal
+distribution, they are equal in joint distribution. 2
+Pure Adaptive Search [11]</text>
+        </slide>
+      </slides>
+      <videos/>
+    </lecture>
+    <lecture>
+      <lecture_title>Clarkson Paper, &#8220;Las Vegas Algorithms for Linear and Integer Programming When the Dimension Is Small.&#8221;
+Presentation courtesy of Susan Martonosi. Used with permission&#160;(PDF). This is a summary presentation based on: Clarkson, Kenneth L. &#8220;Las Vegas Algorithms for Linear and Integer Programming When the Dimension Is Small.&#8221; Journal of the ACM 42, no. 2 (March 1995): 488-99.
+_Motwani and Raghavan, Chapter 9 in Randomized Algorithms.
+_
+Presentation courtesy of Jan De Mot. Used with permission&#160;(PDF). This is a summary presentation based on:
+Motwani, Rajeev, and Prabhakar Raghavan. Chapter 9 in Randomized Algorithms. Cambridge, UK: Cambridge University Press, 1995. ISBN: 0-521-47465-5.</lecture_title>
+      <lecture_pdf_url>https://ocw.mit.edu/courses/15-099-readings-in-optimization-fall-2003/resources/ses3_clarkson/</lecture_pdf_url>
+      <lectureno>3</lectureno>
+      <slides>
+        <slide>
+          <slideno>10</slideno>
+          <text>Recursive Algorithm: Proof of Lemma 1
+Proof. Lemma 1: When V is nonempty, it contains a constraint of B(H). 
+Suppose on the contrary that V /negationslash=  contains no constraints of B(H). 
+L 
+Let a point x /precedesequal y if (x1, /bardblx/bardbl 2)  (y1, /bardbly/bardbl2) (x is better than y). 
+Let x  (T ) be the optimal solution over a set of constraints T .T h e n x (R S) satises 
+all the constraints of B(H) (it is feasible), and thus x  (R  S) /followsequal x (B(H)). 
+ However, since R  S  H, we know that x  (R  S) /precedesequal x (H)= x (B(H)).T h u s , 
+ x (R  S) has the same obj. fcn value and norm as x  (B(H)). By the uniqueness of 
+ this point, x  (R  S)= x (B(H)) = x (H),a n d V = . Contradiction! 
+So, every time V is added to S, at least one extreme constraint of H is added (so well 
+do this at most d times). 
+10</text>
+        </slide>
+        <slide>
+          <slideno>9</slideno>
+          <text>Lemma 3. The probability that any given execution of the loop body is successful (|V |2 n for this recursive version of the algorithm) is at least 1/2, and so on 
+average, two executions or less are required to obtain a successful one 
+This will leave us with a runningtime 
+ T (n, d) 2dT (3d n, d)+ O(d2 n) for n&gt; 9d2 . 
+9</text>
+        </slide>
+        <slide>
+          <slideno>13</slideno>
+          <text>Recursive Algorithm: Proof of Lemma 2
+Let N = number of subsets of H\S of size r s.t. x  (subset )=x (R S). 
+m NThen N = Px and Px = m . r (r )
+To nd N ,n o t et h a t x  (subset )CH and x (subset )=x  (R S)only if 
+  x (subset )CR as well 
+  x (subset )satises all constraints of R 
+Therefore, N = No. of subsets of H\S of size r s.t. x  (subset )CR and x (subset ) 
+satises all constraints of R. 
+13</text>
+        </slide>
+        <slide>
+          <slideno>2</slideno>
+          <text>Applications of the Algorithms
+Algorithms give a bound that is good in n (number of constraints), but bad in d 
+(dimension). So we require the problem to have a small dimension. 
+	Chebyshevapproximation: ttinga function by a rational function where both 
+the numerator and denominator have relatively small degree. The dimension is the 
+sum of the degrees of the numerator and denominator. 
+	Linear separability: separatingtwo sets of points in d-dimensional space by a 
+hyperplane 
+	Smallest enclosing circle problem: nd a circle of smallest radius that encloses 
+points in d dimensional space 
+2</text>
+        </slide>
+        <slide>
+          <slideno>0</slideno>
+          <text>Las Vegas Algorithms for Linear (and Integer) Programming
+when the Dimension is Small
+Kenneth L. Clarkson 
+presented by Susan Martonosi 
+September 29, 2003 
+This presentation is based on: Clarkson, Kenneth L. Las Vegas Algorithms for Linear and Integer Programming When the Dimension
+is Small. Journal of the ACM  42(2), March 1995, pp. 488-499. Preliminary version in Proceedings of the 29th Annual IEEE
+Symposium on Foundations of Computer Science, 1988.</text>
+        </slide>
+        <slide>
+          <slideno>7</slideno>
+          <text>Recursive Algorithm
+Input: A set of constraints H. Output: The optimum B(H) 
+1. S ; Cd 9d2 
+2. If n Cd return Simplex(H) 
+2.1 else repeat: choose R H\S at random, with |R|= r = d n
+x Recursive (R S)
+V {h H|vertex dened by x violates h}
+if |V |2 n then S S V
+until V = 
+2.2 return x 
+7</text>
+        </slide>
+        <slide>
+          <slideno>3</slideno>
+          <text>Previous work
+ Megiddo: Deterministic algorithm for LP in O(22dn) 
+ Clarkson; Dyer: O(3d2 n) 
+ Dyer and Frieze: Randomized algo. with expected time no better than O(d3dn) 
+ This papers mixed algo.: Expected time  O(d2 n)+( l o g n)O(d)d/2+O(1) + O(d4n log n) as n  
+3</text>
+        </slide>
+        <slide>
+          <slideno>23</slideno>
+          <text>Algorithm 3: Mixed
+	Follow the Recursive Algorithm, but rather than calling itself, call the Iterative 
+Algorithm instead  	Runtime of Recursive: T (n, d)  2(d +1 )T (3d n, d)+ O(d2 n), for n&gt; 9d2 
+	  	In place of T (3d (n), substitute in runtime of Iterative algorithm on 3d n 
+constraints  	Runtime of Mixed Algorithm: O(d2 n)+(d2 log n)O(d)d/2+O(1)+O(d4n log n) 
+23</text>
+        </slide>
+        <slide>
+          <slideno>19</slideno>
+          <text>Algorithm 2: Iterative
+Input: A set of constraints H. Output: The optimum B(H) 
+1. h H, wh 1; Cd =9d2 
+2. If n Cd, return Simplex(H) 
+2.1 else repeat:
+choose R H at random, with |R|=r =Cd
+x Simplex(R)
+V {h H|vertex dened by x violates h}
+w(H)if w(V )29d1 then for h V , wh 2wh 
+until V = 
+2.2 return x 
+19</text>
+        </slide>
+        <slide>
+          <slideno>17</slideno>
+          <text>Recursive Algorithm: Running Time
+As longas n&gt; 9d2 , 
+	Have at most d+1 augmentations to S (succesful iterations), with expected 2 tries 
+until success 	  	With each success, S grows by at most 2 n,s i n c e |V|2 n 
+	After each success, we run the Recursive algorithm on a problem of size |SR|   2d n + d n =3d n 
+	After each recursive call, we check for violated constraints, which takes O(nd) each 
+of at most d+1 times 
+ T(n,d) 2(d+1 )T(3d n,d)+ O(d2 n), for n&gt; 9d2 
+17</text>
+        </slide>
+        <slide>
+          <slideno>1</slideno>
+          <text>Outline
+ Applications of the algorithm 
+ Previous work 
+ Assumptions and notation 
+ Algorithm 1: Recurrent Algorithm 
+ Algorithm 2: Iterative Algorithm 
+ Algorithm 3: Mixed Algorithm 
+ Contribution of this paper to the eld 
+1</text>
+        </slide>
+        <slide>
+          <slideno>21</slideno>
+          <text>/prime Iterative Algorithm: Running Time
+The Iterative Algorithm runs in O(d2 n log n)+(d log n)O(d)d/2+O(1) expected time, 
+as n , where the constant factors do not depend on d. 
+First start by showingexpected number of loop iterations = O(d log n) 
+	By Lemma 3.1, at least one extreme constraint h B(H) is doubled duringa 
+successful iteration 
+	Let d/prime = |B(H)|.A f t e r kd/prime successful executions w(B(H)) = 2nh ,hB (H) 
+where nh i s t h en u m b e ro ft i m e s h entered V and thus hB (H) nh	 kd/prime 
+	hB (H) wh  hB (H)2k = d/prime2k
+2
+	When members of V are doubled, increase in w(H)= w(V )  9d1 , so after kd/prime 
+successful iterations, we have 
+/prime 2kd
+9d2 
+1)kd9d1 w(H)  n(1 +  ne 
+21</text>
+        </slide>
+        <slide>
+          <slideno>6</slideno>
+          <text>Algorithm 1: Recursive
+	Try to eliminate redundant constraints 
+	Once our problem has a small number of constraints (n 9d2), then use Simplex 
+to solve it. 
+	Build up a smaller set of constraints that eventually include all of the extreme 
+constraints and a small number of redundant constraints  	Choose r = d n unchosen constraints of H\S at random 
+	Recursively solve the problem on the subset of constraints, R S 
+	Determine which remainingconstraints (V ) are violated by this optimal solution  	Add V to S if its not too big(|V |2 n). 
+ Otherwise, if V is too big, then pick r new constraints 
+We stop once V is empty: weve found a set S R such that no other constraints 
+in H are violated by its optimal solution. This optimal solution x is thus optimal 
+for the original problem. 
+6</text>
+        </slide>
+        <slide>
+          <slideno>14</slideno>
+          <text>Recursive Algorithm: Proof of Lemma 2
+For some such subset of H\S of size r and such that x  (subset )=x (R S),l e t T 
+be the minimal set of constraints such that x  (subset )=x (T S). 
+  x (subset )CR implies T R 
+ nondegeneracy implies T is unique and |T |d 
+Let ix =|T |. 
+ In order to have x  (T S)=x (R S)(and thus x  (subset )=x (R S)), when 
+constructingour subset we must choose: 
+ the ix constraints of T R 
+ r ix constraints from H\S\T \V 
+14</text>
+        </slide>
+        <slide>
+          <slideno>18</slideno>
+          <text>Algorithm 2: Iterative
+	Doesnt call itself, calls Simplex directly each time 
+	Associates weight wh to each constraint which determines the probability with 
+which it is selected 
+	Each time a constraint is violated, its weight is doubled 
+	Dont add V t oas e t S; rather reselect R (of size 9d2) over and over until it includes 
+the set B(H) 
+18</text>
+        </slide>
+        <slide>
+          <slideno>15</slideno>
+          <text>rix ) mr +1(mvxix(mvxix 
+Therefore, N = mvxix and Px =(m  rdrix1) 
+(m rix r ) r ) 
+(mvxix  rix1)  dmr +1E[|V |]  mr +1 
+xCH vx (m rdr ) rd 
+(where the summand is E[No. of x CR violatingexactly one constraint in R]  d) 
+For the degenerate case, we can perturb the vector b by adding (/epsilon1, /epsilon12, ..., /epsilon1n) and 
+show that the bound on |V | holds for this perturbed problem, and that the perturbed 
+problem has at least as many violated constraints as the original degenerate problem. 
+15</text>
+        </slide>
+        <slide>
+          <slideno>20</slideno>
+          <text>Iterative Algorithm: Analysis
+	Lemma 1: If the set V is nonempty, then it contains a constraint of B(H) still 
+holds (proof as above with S = ). 
+	Lemma 2: Let S  H and let R  H\S be a random subset of size r, with 
+|H\S| = m.L e t V  H be the set of constraints violated by O(R  S).T h e n 
+the expected size of V is no more than d(mr +1)  still holds with the following rd 
+changes. Consider each weight-doubling as the creation of multinodes. So size of 
+a set is actually its weight. So we have S = , and thus |H\S| = m = w(H). 
++1	 w(H)This gives us E[w(V )]  d(w(H)9d2
+9d1 9d2d 
+	Lemma 3: If we dene a successful iteration to be w(V )  2w(H) , then Lemma 3 9d1 
+holds, and the probability that any given execution of the loop body is successful 
+is at least 1/2, and so on average, two executions or less are required to obtain a 
+successful one. 
+20</text>
+        </slide>
+        <slide>
+          <slideno>24</slideno>
+          <text>Contributions of this paper to the eld
+	Leadingterm in dependence on n is O(d2 n), an improvement over O(d3dn) 
+	Algorithm can also be applied to integer programming (Jans talk) 
+	Algorithm was later applied as overlying algorithm to incremental algorithms 
+(Jans talk) to give a sub-exponential bound for linear programming (rather than 
+usingSimplex once n  9d2, use an incremental algorithm) 
+24</text>
+        </slide>
+        <slide>
+          <slideno>16</slideno>
+          <text>Recursive Algorithm: Proof of Lemma 3
+Proof. Lemma 3: P(successful execution)  1/2; E[Executions til 1st success]  2. 
+Here, P(unsuccessful execution) = P(|V | &gt; 2 n) 
+  2E[|V |]  2dmr +1 =2nd n+1 (since r = d  n)  2 n  rd n1 
+So, P(unsuccessful execution) = P (|V | &gt; 2 n)  P(|V | &gt; 2E[|V |])  1/2,b y 
+the Markov Inequality. 
+P(successful execution)  1/2, and the expected number of loops until our rst 
+successful execution is less than 2. 
+16</text>
+        </slide>
+        <slide>
+          <slideno>8</slideno>
+          <text>Recursive Algorithm: Proof Roadmap
+Questions: 
+	How do we know that S doesnt get too large before it has all extreme constraints? 
+	How do we know we will nd a set of violated constraints V thats not too big(i.e. 
+the loop terminates quickly)? 
+Roadmap: 
+Lemma 1. If the set V is nonempty, then it contains a constraint of B(H).
+Lemma 2. Let S  H and let R  H\S be a random subset of size r,w i t h |H\S| =
+m.L e t V  H be the set of constraints violated by O(R  S). Then the expected size
+of V is no more than d(mr +1) .
+rd 
+And well use this to show the followingLemma: 
+8</text>
+        </slide>
+        <slide>
+          <slideno>11</slideno>
+          <text>Recursive Algorithm: Proof of Lemma 2
+Proof. Lemma 2: The expected size of V is no more than d(mr +1) . rd 
+First assume problem nondegenerate.
+Let CH = {x  (T  S)|T  H\S}, subset of optima.
+Let CR = {x  (T  S)|T  R}
+The call Recursive( R  S) returns an element x  (R  S):
+ an element of CH 
+ unique element of CR satisfyingevery constraint in R. 
+11</text>
+        </slide>
+        <slide>
+          <slideno>22</slideno>
+          <text>V sure to be empty when w(B(H)) &gt;w(H) (i.e. P (Choose B(H)) &gt; 1).T h i s 
+gives us:
+k&gt; ln(n/d/prime) ,o r kd/prime = O(d log n) successful iterations = O(d log n) iterations.
+ln 2 2d 
+9d1 
+Within a loop: 
+	Can select a sample R in O(n) time [Vitter 84] 
+	Determiningviolated constraints, V ,i s O(dn) 
+2Cd 	Simplex algorithm takes dO(1) time per vertex, times d/2 vertices [?]. Using 
+Stirlings approximation, this gives us O(d)d/2+O(1) for Simplex 
+Total runningtime: 
+O(d log n)  [O(dn)+ O(d)d/2+O(1)]= O(d2 n log n)+(d log n)O(d)d/2+O(1) 
+22</text>
+        </slide>
+        <slide>
+          <slideno>5</slideno>
+          <text>Notation
+Let: 
+	H denote the set of constraints dened by A and b 
+O(S) be the optimal value of the objective function for the LP dened on S  H 
+	Each vertex of F (A, b) is dened by d or fewer constraints i m p l i e st h a t 
+B(H)  H of size d or less such that O(B(H)) = O(H). We call this subset 
+B(H) the basis of H. All other constraints in H\B(H) are redundant. 
+	a constraint h  H be called extreme if O(H\h) &lt; O(H) (these are the 
+constraints in B(H)). 
+5</text>
+        </slide>
+        <slide>
+          <slideno>4</slideno>
+          <text>Assumptions
+ Minimize x1 subject to Ax b 
+ The polyhedron F(A,b) is non-empty and bounded and 0 F(A,b) 
+ The minimum we seek occurs at a unique point, which is a vertex of F(A,b) 
+ If a problem is bounded and has multiple optimal solutions with optimal value 
+ x1, choose the one with the minimum Euclidean norm 
+ min{/bardblx/bardbl2|x F(A,b),x 1= x1} 
+ Each vertex of F(A,b) is dened by d or fewer constraints 
+4</text>
+        </slide>
+        <slide>
+          <slideno>12</slideno>
+          <text>Recursive Algorithm: Proof of Lemma 2
+Choose x CH and let vx = number of constraints in H violated by x.    E[|V |]= E[ xCH vxI(x = x (R  S))] = vxPx xCH 
+where 
+ 1 if x = x  (R  S)I(x = x (R  S)) = 0 otherwise 
+and Px = P (x = x  (R  S)) 
+H o wt o n d Px? 
+12</text>
+        </slide>
+      </slides>
+      <videos/>
+    </lecture>
+    <lecture>
+      <lecture_title>_Dunagan and Vempala Paper, &#8220;Simple Polynomial-Time Rescaling Algorithm for Solving Linear Programs.&#8221;
+_
+Dunagan, John, and Santosh Vempala. &#8220;A Simple Polynomial-Time Rescaling Algorithm for Solving Linear Programs.&#8221; In Proceedings of the 36th Annual Association for Computing Machinery Symposium on Theory of Computing. New York, NY: ACM Press, 2004.
+Storn and Price Paper, &#8220;Differential Evolution - A Simple and Efficient Heuristic for Global Optimization over Continuous Spaces.&#8221;
+Presentation courtesy of David Craft. Used with permission (PDF). This is a summary presentation based on: Storn, Rainer, and Kenneth Price. &#8220;Differential Evolution - A Simple and Efficient Heuristic for Global Optimization over Continuous Spaces.&#8221; Journal of Global Optimization 11 (1997): 341-59.</lecture_title>
+      <lecture_pdf_url>https://ocw.mit.edu/courses/15-099-readings-in-optimization-fall-2003/resources/ses2_storn_price/</lecture_pdf_url>
+      <lectureno>2</lectureno>
+      <slides>
+        <slide>
+          <slideno>9</slideno>
+          <text>Numerical verification
+Much of the paper is devoted to trying the algorithm on many 
+functions, and comparing the algorith m to representative 
+algorithms of other classes.  These classes are:
+Annealing algorithms
+Evolutionary algorithms
+The m ethod of stochastic differential equations
+Summ ary of tests: DE is the only algorithm which consistently 
+found the optimal solution, and often with fewer function 
+evaluations than the other methods.</text>
+        </slide>
+        <slide>
+          <slideno>0</slideno>
+          <text>Differential Evolution:
+a stochastic nonlinear optimization 
+algorithm by Storn and Price, 1996
+Presented by David Craft
+September 15, 2003
+This presen tation is based on : Storn , Rainer, an d Kenneth  Price.  Differential Evoluti on  A Simple and 
+Efficient  Heuristic for Global Optim ization ove r Continuous Spaces.  Journal of  Global Op timization 11, 
+1997,  pp. 341-359.</text>
+        </slide>
+        <slide>
+          <slideno>15</slideno>
+          <text>Example: Appliance Job Scheduling
+Hourly electricity prices
+(cents/kWh):
+Power requirements for 
+3 different jobs (kW):
+Start time constraints.</text>
+        </slide>
+        <slide>
+          <slideno>12</slideno>
+          <text>Why is DE good?
+Simple vector subtraction to generate random direction.
+More variation in population (because solution has not 
+converged yet) leads to more varied search over solution 
+space.
+= (xr2-xr3) [discuss: size and direction]
+Annealing versus self-annealing.</text>
+        </slide>
+        <slide>
+          <slideno>8</slideno>
+          <text>DE: Selection
+If the objective value COST( ui) is lower than COST( xi), then 
+uireplaces xiin the next generation.  Otherwise, we keep xi.</text>
+        </slide>
+        <slide>
+          <slideno>4</slideno>
+          <text>DE: From old points to mutants
+...
+....
+.
+.......
+.
+.</text>
+        </slide>
+        <slide>
+          <slideno>16</slideno>
+          <text>Example: Appliance Job Scheduling
+Objective:  find start times for each job which minimize cost.
+Cost includes a charge on the maximum power used throughout 
+the day.  This couples the problems!
+1min () ()
+.. 1,...,J
+ii i
+iiitx Dx
+sta xu i J=+
+ =
+where
+() ()(,)ii
+ixl
+ii i ixtx ptetxdt+=Cost of job i 
+started at time xi
+[0,] () max (,)tT i i Dxr etx= Demand charge</text>
+        </slide>
+        <slide>
+          <slideno>6</slideno>
+          <text>DE:  Crossover xiand vi to form 
+the trial vector ui
+xi = (xi1, xi2, xi3, xi4,xi5)
+vi = (vi1, vi2, vi3, vi4,vi5)
+ui = (__, __, __, __, __)
+For each component of vector, draw a random number 
+in U[0,1].  Call this randj.  Let 0&lt;=CR&lt;1 be a cutoff.  If 
+randj&lt;=CR, uij= vij, else uij= xij.
+To ensure at least some crossover, one component of ui
+is selected at random to be from vi.</text>
+        </slide>
+        <slide>
+          <slideno>1</slideno>
+          <text>The highlights of
+Differential Evolution (DE)
+A population of solution vectors are successively updated by 
+addition, subtraction, and com ponent swapping, until the 
+population converges, hopefully to the opti mum.
+No derivatives are used.
+Very few parameters to set.
+A simple and apparently  very reliable met hod.</text>
+        </slide>
+        <slide>
+          <slideno>17</slideno>
+          <text>Convergence for different F
+Other settings: CR=0.3, NP=6</text>
+        </slide>
+        <slide>
+          <slideno>14</slideno>
+          <text>Dealing with constraints
+Penalty methods for difficult constraints.
+Simple projection back to feasible set for 
+l&lt;=x&lt;=u type constraints. 
+Or, random value U[ l,u] (when, why?)</text>
+        </slide>
+        <slide>
+          <slideno>5</slideno>
+          <text>DE:  Crossover xiand vi to form 
+the trial vector
+..
+Possible trial vectorsoriginal x
+mutant v</text>
+        </slide>
+        <slide>
+          <slideno>3</slideno>
+          <text>DE: forming the mutant vector
+vi = xr1+F.(xr2-xr3)
+.  xr1.  xr3
+.  xr2...
+.Solution space
+.  vi.xi</text>
+        </slide>
+        <slide>
+          <slideno>13</slideno>
+          <text>Variations of DE
+xr1 :  instead of random, could use best
+(xr2-xr3) : instead of single difference, could 
+use more vectors, for more variation. 
+for example ( xr2-xr3+xr4-xr5) 
+Crossover: something besides bernoulli 
+trials</text>
+        </slide>
+        <slide>
+          <slideno>11</slideno>
+          <text>The rest of the talk
+Why is DE good?
+Variations of DE.
+How do we deal with constraints?
+An example from electricity load management.</text>
+        </slide>
+        <slide>
+          <slideno>10</slideno>
+          <text>Numerical verification: example
+The fifth De Jong function, or Shekels Foxholes
+(See equation 10 on page 348 of the Differential Evolution
+paper.)</text>
+        </slide>
+        <slide>
+          <slideno>19</slideno>
+          <text>Wrap-up
+DE is widely used, easy to impl ement, extensions and variations 
+available, but no convergence proofs.
+More information:
+DE homepage:  practical advice (e.g. start with NP=10*D and 
+CR=0.9, F=0.8), source codes, etc.
+http://www.icsi.berkeley.edu/~storn/code.html
+DE bibliography, 1995-2002.  Almost entirely DE applications.
+http://www.lut.fi/~jlam pine/debiblio.htm</text>
+        </slide>
+        <slide>
+          <slideno>7</slideno>
+          <text>DE:  Crossover xiand vi to form 
+the trial vector ui
+xi = (xi1, xi2, xi3, xi4,xi5)
+vi = (vi1, vi2, vi3, vi4,vi5)
+So, for example, maybe we have
+ui = (vi1, xi2, xi3, xi4,vi5)Index 1 randomly
+selected as definite 
+crossover
+rand5&lt;=CR, so it 
+crossed over too</text>
+        </slide>
+        <slide>
+          <slideno>2</slideno>
+          <text>DE: the algorithm
+Start with NPrandomly chosen solution vectors.
+For each i in (1,  NP), form a mutant vector
+vi = xr1+F.(xr2-xr3)
+Where r1, r2, and r3 are three mutually distinct 
+randomly drawn indices from (1,  NP), and 
+also distinct from i, and 0&lt;F&lt;=2 .</text>
+        </slide>
+        <slide>
+          <slideno>18</slideno>
+          <text>Appliance Job Scheduling: Solution
+Solution
+Total energy profile
+Electricity price over time</text>
+        </slide>
+      </slides>
+      <videos/>
+    </lecture>
+    <lecture>
+      <lecture_title>Solis and Wets Paper, &#8220;Minimization by Random Search Techniques.&#8221;
+Presentation courtesy of Michele Aghassi. Used with permission&#160;(PDF). This is a summary presentation based on: Solis, F. J., and R. J-B. Wets. &#8220;Minimization by Random Search Techniques.&#8221; Mathematical Operations Research 6 (1981): 19-30.
+Romeijn Thesis Book, &#8220;Global Optimization by Random Walk Sampling Methods.&#8221;</lecture_title>
+      <lecture_pdf_url>https://ocw.mit.edu/courses/15-099-readings-in-optimization-fall-2003/resources/ses5_solis_wets/</lecture_pdf_url>
+      <lectureno>5</lectureno>
+      <slides>
+        <slide>
+          <slideno>5</slideno>
+          <text>What is an Appropriate Goal?
+	Problems 
+	Global min may not exist 
+	Finding min may require exhaustive examination (e.g. min occurs at point at 
+which f singularly discontinuous) 
+	Response 
+Denition 1. is the Essential Inmum of f on Si 
+ = i n f {t| v(x  S| f(x) &lt;t) &gt;0} , 
+where vdenotes n-dimensional volume or Lebesgue measure. Optimality region 
+for P is given by 
+(
+{x	 S| f(x) &lt; + /epsilon1} ,nite =R/epsilon1,M {x	 S| f(x) &lt;M} ,  = , 
+for a given big M&gt; 0 
+5</text>
+        </slide>
+        <slide>
+          <slideno>14</slideno>
+          <text>/lscript
+/lscript 
+/lscript 
+/lscript Local Search Convergence Theorem, I
+Theorem 2. Suppose f is a measurable function, S  Rn is a measurable, and (H1)  kand (H3) are satised. Let xbe a sequence generated by the algorithm. Then, k=0 
+  klim P x  R/epsilon1,M = 1. 
+k 
+Proof. Let x0 be the initial iterate used by the algorithm. By (H1), all future iterates 
+in L0  R/epsilon1,M . L0 is compact. Therefore p  Z s.t. p &gt; diam (L 0). 
+  
+  P x/lscript+p  R/epsilon1,M, x/negationslash R/epsilon1,M 
+P x /lscript+p  R/epsilon1,M | x /negationslash = ` 
+  R/epsilon1,M P x/lscript /negationslash R/epsilon1,M 
+  
+ P x /lscript+p  R/epsilon1,M, x /negationslash R/epsilon1,M 
+ 
+ P x /negationslash R/epsilon1,M, dist(x k,R/epsilon1,M )  (p  (k  /lscript)), 
+k = /lscript, ...,/lscript + p) 
+ p by repeated Bayes rule and (H3) 
+14</text>
+        </slide>
+        <slide>
+          <slideno>13</slideno>
+          <text>Example Satisfying (H3)
+/2 x y L 
+R 
+ M, 0 
+k 
+k  z I II 
+v(region II) &gt;v(region I) = . v(hypersphere with radius k) v(hypersphere with radius ) 
+13</text>
+        </slide>
+        <slide>
+          <slideno>9</slideno>
+          <text>Example Satisfying (H1) and (H2), II
+Due to Baba et al. [1]. 
+(kk,k  S and f(k) &lt;f (x) k kD(x ,) = kx, o.w. 
+k k  N (x , I) 
+Why? 
+ 
+ (H1) satised since f(xk)  nonincreasing by construction k=0 
+k  (H2) satised because S contained in support of N (x, I) 
+9</text>
+        </slide>
+        <slide>
+          <slideno>6</slideno>
+          <text>What is Random Search?
+Conceptual Algorithm: 
+1. Initialize: Find x0  S.S e t k := 0 
+2. Generate k  Rn (random) from distribution k 
+k+13. Set x = D(xk,k).C h o o s e k+1.S e t k := k +1. Gotostep1. 
+   k  0 1 k1 k(A) = P x  A  x ,x ,...,x 
+This captures both 
+ Local search = supp (k) is bounded and v(S  supp (k)) &lt;v (S) 
+ Global search = supp (k) is such that v(S  supp (k)) = v(S) 
+6</text>
+        </slide>
+        <slide>
+          <slideno>18</slideno>
+          <text>Conclusion and Summary of Part I
+ Why use randomsearch techniques? 
+ How to handle pathological cases? (essential inmum, optimality region) 
+ Conceptual Algorithmunies past examples in the literature 
+ Global and local search methods 
+ Sucient conditions for convergence and theorems 
+ Issue of stopping criteria 
+ Computational results 
+18</text>
+        </slide>
+        <slide>
+          <slideno>3</slideno>
+          <text>Outline
+ Part I: Solis and Wets paper 
+ Motivation for using randomsearch 
+ Appropriate goals of randomsearch algorithms 
+ Conceptual Algorithm encompassing several concrete examples 
+ Sucient conditions for global search convergence, and theorem 
+ Local search methods and sucient conditions for convergence, and theorem 
+ Dening stopping criteria 
+ Some computational results 
+ Part II: Intro to Sampling Methods 
+ Traditional Methods 
+ Hit-and-run algorithm 
+3</text>
+        </slide>
+        <slide>
+          <slideno>1</slideno>
+          <text>Recap of Past Sessions
+	LP 
+	Kalai (1992, 1997) 
+	use randomized pivot rules 
+	Motwani and Raghavan (1995), Clarkson (1998, 1995) 
+	solve on a randomsubset of constraints, recursively 
+	Dunagan and Vempala (2003): LP Feasibility (Ax  0, 0 /negationslash=	0) 
+	Generate randomvectors and test for feasibility 
+	If not, try moving in deterministic (w.r.t. random vector already selected) 
+direction to achieve feasibility 
+	NLP 
+	Storn and Price (1997): Unconstrained NLP 
+	Heuristic 
+	Select randomsubsets of solution population vectors 
+	Performaddition, subtraction, component swapping and test for obj func 
+improvement 
+1</text>
+        </slide>
+        <slide>
+          <slideno>7</slideno>
+          <text>Sucient Conditions for Convergence
+ 
+(H1) D s.t. f(xk)  nonincreasingk=0 
+f(D(x,))  f(x) 
+  S = f(D(x,))  min {f(x),f()} 
+(H2) Zero probability of repeatedly missing any positive-volume subset of S. 
+ Y 
+A  S s.t. v(A) &gt; 0, (1  k(A)) = 0 
+k=0 
+i.e. sampling strategy given by k cannot consistently ignore a part of S with 
+positive volume (Global search methods satisfy (H2)) 
+7</text>
+        </slide>
+        <slide>
+          <slideno>12</slideno>
+          <text>Example Satisfying (H3), I
+ int(S) /negationslash=  
+ R, S {x |f(x) }convex and compact 
+Happens whenever f quasi-convex and either S compact or f has bounded level 
+sets 
+ k chosen via uniformdistribution on hypersphere with center xk and radius k 
+0 1  k is a function of x, x,..., xk1 and 1,...,k1 such that  =i n fkk &gt; 0 
+ 
+(
+k,k S k kD(x ,) = kx, o.w. 
+Proof. L0 compact convex since level sets are. 
+R/epsilon1,M has nonempty interior since S does. 
+ can draw ball contained in interior of R/epsilon1,M . 
+v(region I) Now take  =  and  = &gt; 02 v(hypersphere with radius ) 
+12</text>
+        </slide>
+        <slide>
+          <slideno>2</slideno>
+          <text>Motivation
+What about provably convergent algorithms for constrained NLPs? 
+	Randomsearch techniques rst proposed in the 1950s 
+	pre-1981 proofs of convergence were highly specic and involved 
+	Solis and Wets, 1981: Can we give more general sucient conditions for convergence, 
+unifying the past results in the literature? 
+	Solis and Wets paper interesting more from a unifying theoretical standpoint 
+	Computational results of the paper relatively unimpressive 
+2</text>
+        </slide>
+        <slide>
+          <slideno>8</slideno>
+          <text>Example Satisfying (H1) and (H2), I
+DuetoGaviano[2]. 
+k k kD(x ,) = ( 1  k)x + kk where 
+h i k k k kk = a r g m i n f ((1  )x +  ) | (1  )x +  S 
+[0,1] 
+k k unif on n-dimsphere with center xand r  2diam (S). 
+Why? 
+ 
+ (H1) satised since f (xk)  nonincreasing by construction k=0 
+ (H2) satised because sphere contains S 
+8</text>
+        </slide>
+        <slide>
+          <slideno>16</slideno>
+          <text>Stopping Criteria
+	k k	So far, we gave a conceptual method for generating xsuch that f (x)  k=0 
+essential inf plus buer 
+	In practice, need stopping criterion 
+	Easy to give stopping criterion if have LB on k(R/epsilon1,M ) (unrealistic) 
+	How to do this without knowing a priori essential inf or R/epsilon1,M ? 
+	Has been shown that even if S compact and convex and f  C2, each step of alg 
+leaves unsampled square region of nonzero measure, over which f can be redened 
+so that global min is in unsampled region 
+	search for a good stopping criterion seems doomed to fail 
+16</text>
+        </slide>
+        <slide>
+          <slideno>0</slideno>
+          <text>Minimization by Random Search Techniques 
+by Solis and Wets
+and
+an Intro to Sampling Methods
+Presenter: Michele Aghassi
+October 27, 2003
+This presentation is based on: Solis, F. J., and R. J-B. Wets. Minimization by Random Search Techniques. Mathematical
+Operations Research  6, 1981, pp. 19-30.</text>
+        </slide>
+        <slide>
+          <slideno>15</slideno>
+          <text>Local Search Convergence Theorem, II
+` 
+xkp  
+Claim: P /negationslashR/epsilon1,M (1 p)k , k { 1, 2,... } 
+By induction 
+  ` 
+(k =1 ) P xp R/epsilon1,M  
+ P xp R/epsilon1,M, x 0 /negationslashR/epsilon1,M  p 
+      
+R/epsilon1,M |x(k1)p R/epsilon1,M P x(k1)pxkp R/epsilon1,M = P xkp /negationslash /negationslash /negationslash (Genl k) P /negationslash R/epsilon1,M 
+h  i ` 
+x(k1)p R/epsilon1,M 1 pk1 1 P xkp R/epsilon1,M | /negationslash
+ ` 
+1 p` 
+1 pk1 
+    
+ P xkp+/lscript R/epsilon1,M  P xkp R/epsilon1,M  1  ` 
+1 pk, /lscript =0, 1,...,p 1 
+15</text>
+        </slide>
+        <slide>
+          <slideno>17</slideno>
+          <text>/prime Rates of Convergence
+	Measured by distributional characteristics of number of iters or function evals 
+required to reach essential inf (e.g. mean) 
+	Solis and Wets tested 3 versions of the conceptual alg (1 local search, 2 global 
+search) on various problems (constrained and unconstrained) 
+	They report results only for 
+min xx 
+xRn 
+3with stopping criterion /bardblxk/bardbl10
+	Found that mean number of function evals required n. 
+17</text>
+        </slide>
+        <slide>
+          <slideno>20</slideno>
+          <text>Part II: Approximate Sampling Methods
+	Performbetter computationally (ecient) 
+	generates a sequence of points, whose limiting distribution is equal to target 
+distribution 
+Hit-and-Run: Generate randompoint in S, a bounded open subset of Rd, according to 
+some target distribution . 
+1. Initialize: select starting point x0 S. n := 0. 
+2. Randomly generate direction n in Rd, according to distribution  
+(corresponds to randomly generating a point on a unit sphere). 
+n3. Randomly select step size from n { |x+ n S}according to distribution 
+L(xn,n)
+n+1 n
+4. Set x := x+ nn . n := n +1. Repeat. 
+e.g. generate point according to uniformdistribution on S: use all uniformdistributions 
+20</text>
+        </slide>
+        <slide>
+          <slideno>19</slideno>
+          <text>Part II: Traditional Sampling Methods
+	Transformation method 
+	easier to generate Y than X, but well-behaved transformation between the two 
+	Acceptance-rejection method 
+	Generate a RV and subject it to a test (based on a second RV) in order to 
+determine acceptance 
+	Markov-regression 
+	Generate random vector component-wise, using marginal distributions w.r.t. 
+components generated already 
+Impractical because complexity increases rapidly with dimension. 
+19</text>
+        </slide>
+        <slide>
+          <slideno>10</slideno>
+          <text>Global Search Convergence Theorem
+ kTheorem 1. Suppose f measurable, S  Rn measurable, (H1), (H2), and xk=0 generated by the algorithm. Then 
+  klim P x  R/epsilon1,M = 1 
+k
+k
+ R/epsilon1,M = x/lscript /negationslash Proof. By (H1), x/negationslash  R/epsilon1,M , /lscript&lt;k 
+  k1 Y` kP x  S\R/epsilon1,M  1  /lscript(R/epsilon1,M ) 
+/lscript=0 
+    k1 Y` k kP x  R/epsilon1,M =1  P x  S\R/epsilon1,M  1  1  /lscript(R/epsilon1,M )
+/lscript=0
+  k1 Y` k1  lim P x  R/epsilon1,M  1  lim 1  /lscript(R/epsilon1,M ) =1, 
+k k /lscript=0 
+where last equality follows from(H2). 
+10</text>
+        </slide>
+        <slide>
+          <slideno>21</slideno>
+          <text>Further Reading
+References
+[1] Baba, N., T. Shoman, and Y. Sawaragi. A Modied Convergence Theorem for a 
+Random Optimization Algorithm, Information Science, 13 (1977). 
+[2] Gaviano,	M. Some General Results on the Convergence of Random Search 
+Algorithms in Minimization Problems. In Towards Global Optimization,e d s . L . 
+Dixon and G. Szego. Amsterdam. 
+[3] Solis,	Francisco J. and Roger J.B. Wets. Minimization by Random Search 
+Techniques, Mathematics of Operations Research, 6: 19 -30 (1981). 
+[4] H.E. Romeijn,	Global Optimization by Random Walk Sampling Methods,T h e s i s 
+Publishers, Amsterdam, 1992. 
+21</text>
+        </slide>
+        <slide>
+          <slideno>11</slideno>
+          <text>Local Search Methods
+	Easy to nd examples for which the algorithm will get trapped at local minimum 
+	Drastic sucient conditions ensure convergence to optimality region, but are very 
+dicult to verify 
+For instance 
+(H3) x0  S  
+L0= x  S | f (x)  f (x0)  
+is compact and 
+&gt; 0 and   (0, 1] (possibly depending on x0) s.t., k and x  L0, 
+`  	  
+k D(x,)  R/epsilon1,M  dist(D(x,),R/epsilon1,M ) &lt; dist(x,R/epsilon1,M )   . 
+If	f and S are nice, local search methods demonstrate better convergence behavior. 
+11</text>
+        </slide>
+        <slide>
+          <slideno>4</slideno>
+          <text>Why Use Random Search Techniques?
+Let f : Rn  R, S  Rn . 
+(P) min f (x) 
+s.t. x  S 
+ Function characteristics dicult to compute (e.g. gradients, etc.) 
+ Function is bumpy 
+ Need global minimum, but there are lots of local minima 
+ Limited computer memory 
+4</text>
+        </slide>
+      </slides>
+      <videos/>
+    </lecture>
+    <lecture>
+      <lecture_title>_MAXCUT; Semidefinite Programming; and the Goemans-Williamson Paper, &#8220;Improved Approximation Algorithms for Maximum Cut and Satisfiability Problems Using Semidefinite Programming.&#8221;
+_
+Presentation courtesy of&#160;Rob Freund (PDF). This is a summary presentation based on: Goemans, Michel X., and David P. Williamson. &#8220;Improved Approximation Algorithms for Maximum Cut and Satisfiability Problems Using Semidefinite Programming.&#8221; Journal of the ACM 42, no. 6 (November 1995): 1115-45.</lecture_title>
+      <lecture_pdf_url>https://ocw.mit.edu/courses/15-099-readings-in-optimization-fall-2003/resources/ses1_goemans1/</lecture_pdf_url>
+      <lectureno>1</lectureno>
+      <slides>
+        <slide>
+          <slideno>25</slideno>
+          <text>Example
+SDP Duality 
+SDD : maximize 11 y1+1 9y2 
+    	  
+101 028	 123 
+ s.t.	 y1 037  +y2 260  +S =  290 
+175 804 307 
+S /followsequal 0 
+is the same as: 
+SDD : maximize	 11y1+1 9y2 
+s.t. 	  1 1y1 0y22 0y1 2y23 1y1 8y2 
+ 2 0y1 2y29 3y1 6y20 7y1 0y2 /followsequal 0. 
+3 1y1 8y20 7y1 0y27 5y1 4y2 
+2003 Massachusetts Institute of Technology 26</text>
+        </slide>
+        <slide>
+          <slideno>23</slideno>
+          <text>/summationtext 
+/summationtext SDP Duality
+and so equivalently: 
+m 
+SDD : maximize yibi 
+i=1 
+m 
+s.t. C  yiAi /followsequal 0 
+i=1 
+2003 Massachusetts Institute of Technology 24</text>
+        </slide>
+        <slide>
+          <slideno>4</slideno>
+          <text>/summationtext 
+/summationtext 
+/summationdisplay /summationdisplay /parenleftBigg /parenrightBigg Linear Alternative Perspective 
+Programming LP Dual Problem... 
+m 
+LD : maximize yibi 
+i=1 m 
+s.t. yiai + s = c 
+i=1 
+ns /Rfractur+. 
+For feasible solutions x of LP and (y, s)of LD, the duality gap 
+is simply 
+m m 
+c x  yibi = c  yiai x = s x 0 
+i=1 i=1 
+2003 Massachusetts Institute of Technology 5</text>
+        </slide>
+        <slide>
+          <slideno>29</slideno>
+          <text>The MAX CUT 
+Problem 
+M. Goemans and D. Williamson, Improved 
+Approximation Algorithms for Maximum Cut and 
+Satisf iability Problems using Semidef inite 
+Programming, J. ACM 42 1115-1145, 1995. 
+2003 Massachusetts Institute of Technology 30</text>
+        </slide>
+        <slide>
+          <slideno>22</slideno>
+          <text>/summationtext
+/summationtext
+/summationdisplay SDP Duality
+m 
+SDD : maximize yibi 
+i=1 
+m 
+s.t.	 yiAi + S = C 
+i=1 
+S /followsequal 0. 
+Notice m 
+S = C  yiAi /followsequal 0 
+i=1 
+2003 Massachusetts Institute of Technology 23</text>
+        </slide>
+        <slide>
+          <slideno>40</slideno>
+          <text>The MAX CUT Computing a Good Solution 
+Problem 
+Proposition: 
+vT  /parenleftbig 
+vi)/negationslash vj) /parenrightbig 
+= arccos( vj )iP sign(rT  = sign(rT  .  
+2003 Massachusetts Institute of Technology 41</text>
+        </slide>
+        <slide>
+          <slideno>37</slideno>
+          <text>/summationtext /summationtext The MAX CUT Formulations
+Problem
+We relax this condition by removing the rank-1 restriction:
+n n 
+1RELAX : maximize Y 4 wij (1  Yij ) 
+i=1 j=1 
+s.t.	 Yjj =1,j =1,... ,n 
+Y /followsequal 0. 
+It is therefore easy to see that RELAX provides an upper bound 
+on MAXCUT, i.e., 
+MAXCUT  RELAX.
+2003 Massachusetts Institute of Technology 38</text>
+        </slide>
+        <slide>
+          <slideno>46</slideno>
+          <text>The Logarithmic Barrier Function for SPD Matrices
+Let X /followsequal 0, equivalently X  Sn .+
+X will have n nonnegative eigenvalues, say 
+1(X),..., n(X) 0(possibly counting multiplicities). 
+Sn ={X  Sn | j(X) 0,j =1,...,n, + 
+and j(X)=0 for some j {1,...,n }}. 
+2003 Massachusetts Institute of Technology 47</text>
+        </slide>
+        <slide>
+          <slideno>49</slideno>
+          <text>/summationtext 
+/summationtext
+/summationdisplay
+Interior-point Primal and Dual SDP 
+Methods for SDP 
+SDP : minimize C  X 
+s.t.	 Ai  X = bi ,i =1,. ..,m , 
+X /followsequal 0 
+and m 
+SDD : maximize yibi 
+i=1 m 
+s.t.	 yiAi + S = C 
+i=1 
+S /followsequal 0 . 
+If X and (y, S)are feasible for the primal and the dual, the duality gap is: 
+m 
+C  X  yibi = S  X  0 . 
+i=1 
+Also, 
+S  X =0  SX =0 .
+2003 Massachusetts Institute of Technology 50</text>
+        </slide>
+        <slide>
+          <slideno>32</slideno>
+          <text>/summationtext /summationtext The MAX CUT Formulations 
+Problem 
+n n 
+1MAXCUT : maximize x 4 wij(1  xixj) 
+i=1 j=1 
+s.t. xj {  1,1},j =1,...,n . 
+Let 
+Y = xxT . 
+Then 
+Yij = xixj i =1,...,n , j =1,...,n . 
+2003 Massachusetts Institute of Technology 33</text>
+        </slide>
+        <slide>
+          <slideno>39</slideno>
+          <text>/parenleftBig /parenrightBig The MAX CUT Computing a Good Solution
+Problem
+Let 
+Y solve RELAX 
+Factorize = VT  Y V 
+vT   v1  Yij = VT  =i vj V =[  v2  vn]and   V 
+ij 
+Let r be a random uniform vector on the unit n-sphere Sn 
+S := {i | rT vi  0} 
+S := {i | rT vi &lt; 0} 
+2003 Massachusetts Institute of Technology 40</text>
+        </slide>
+        <slide>
+          <slideno>53</slideno>
+          <text>/summationtext Interior-point Primal and Dual SDP 
+Methods for SDP 
+and rewrite KKT conditions as: 
+ 
+ Ai  X = bi ,i =1,... ,m, X /follows 0   m 
+yiAi + S = C   i=1  XS = I. 
+2003 Massachusetts Institute of Technology 54</text>
+        </slide>
+        <slide>
+          <slideno>12</slideno>
+          <text>Facts about
+Eigenvalues and
+Eigenvectors
+The decomposition of M into M = QDQT is called its 
+eigendecomposition. 
+2003 Massachusetts Institute of Technology 13</text>
+        </slide>
+        <slide>
+          <slideno>1</slideno>
+          <text>Outline 
+ Alternate View of Linear Programming
+ Facts about Symmetric and Semidefinite Matrices
+ SDP 
+ SDP Duality 
+ Approximately Solving MAXCUT using SDP and Random 
+Vectors 
+ Interior-Point Methods for SDP 
+2003 Massachusetts Institute of Technology 2</text>
+        </slide>
+        <slide>
+          <slideno>41</slideno>
+          <text>^Vi 
+Vj ^ 
+0 The MAX CUT 
+Problem Computing a Good Solution 
+2003 Massachusetts Institute of Technology 42</text>
+        </slide>
+        <slide>
+          <slideno>50</slideno>
+          <text>/summationdisplay /productdisplay Interior-point Primal and Dual SDP 
+Methods for SDP 
+  
+n n 
+B(X)=  ln(i(X)) =  ln  i(X) =  ln(det(X )) . 
+j=1 j=1 
+Consider: 
+BSDP () : minimize C  X   ln(det(X )) 
+s.t. Ai  X = bi ,i =1, ..., m , 
+X /follows 0. 
+Let f(X)denote the objective function of BSDP (). Then: 
+f(X)= C  X1 
+2003 Massachusetts Institute of Technology 51</text>
+        </slide>
+        <slide>
+          <slideno>20</slideno>
+          <text>Semidefinite Programming
+SDP 
+...Example 
+SDP : minimize x11+4x12+6x13+9x22+0x23+7x33 
+s.t.	 x11+0x12+2x13+3x22+1 4x23+5x33 =1 1 
+0x11+4x12+1 6x13+6x22+0x23+4x33 =1 9 
+	 
+x11 x12 x13
+X =  x21 x22 x23  /followsequal 0.
+x31 x32 x33
+It may be helpful to think of X /followsequal 0 as stating that each of the n eigenvalues 
+of X must be nonnegative. 
+2003 Massachusetts Institute of Technology 21</text>
+        </slide>
+        <slide>
+          <slideno>13</slideno>
+          <text>Facts about
+Symmetric
+Matrices
+ If X  Sn, then X = QDQT for some orthonormal matrix Q 
+and some diagonal matrix D. The columns of Q form a set of n 
+orthogonal eigenvectors of X, whose eigenvalues are the 
+corresponding entries of the diagonal matrix D. 
+ X /followsequal 0 if and only if X = QDQT where the eigenvalues (i.e.,
+the diagonal entries of D) are all nonnegative.
+ X /follows 0 if and only if X = QDQT where the eigenvalues (i.e.,
+the diagonal entries of D) are all positive.
+2003 Massachusetts Institute of Technology 14</text>
+        </slide>
+        <slide>
+          <slideno>0</slideno>
+          <text>Semidefinite Programming (SDP)
+and the Goemans-Williamson
+MAXCUT Paper
+Robert M. Freund
+September 8, 2003
+This presentation is based on: Goemans, Michel X., and David P. Williamson. Improved Approximation Algorithms for Maximum Cut and
+Satisfiability Problems Using Semidefinite Programming. Journal of the ACM 42(6), November 1995, pp. 1115-1145.</text>
+        </slide>
+        <slide>
+          <slideno>15</slideno>
+          <text>/parenleftbigg /parenrightbigg Facts about 
+SymmetricMatrices 
+ Consider the matrix M defined as follows:
+P v M = T , v d 
+where P /follows 0, v is a vector, and d is a scalar. Then M /followsequal 0 if 
+TP 1and only if d  v v  0.
+ For a given column vector a, the matrix X := aaT is SPSD, 
+i.e., X = aaT /followsequal 0. 
+ If M /followsequal 0, then there is a matrix N for which M = NTN .T o 
+1see this, simply take N = D2QT . 
+2003 Massachusetts Institute of Technology 16</text>
+        </slide>
+        <slide>
+          <slideno>5</slideno>
+          <text>/summationdisplay Linear Alternative Perspective 
+Programming ...LP Dual Problem
+ If LP and LD are feasible, then there exists x  and (y ,s ) 
+feasible for the primal and dual, respectively, for which 
+m 
+    c  x  yibi = s  x =0 
+i=1 
+2003 Massachusetts Institute of Technology 6</text>
+        </slide>
+        <slide>
+          <slideno>24</slideno>
+          <text>Example
+SDP Duality 
+   	   /parenleftbigg/parenrightbigg	 123 101	 028 11 	  A1=  037 , A 2=  260  ,b = , and C =  29019175 804 307 
+SDD : maximize 11 y1+1 9y2 
+    	 
+101 028	 123
+ s.t.	 y1 037  +y2 260  +S =  290 
+175 804 307 
+S /followsequal 0 
+2003 Massachusetts Institute of Technology 25</text>
+        </slide>
+        <slide>
+          <slideno>38</slideno>
+          <text>/summationtext /summationtext 
+/parenleftBig /parenrightBig The MAX CUT Computing a Good Solution 
+Problem 
+n n 
+1RELAX : maximize Y 4 wij (1 Yij ) 
+i=1 j=1 
+s.t. Yjj =1,j =1,... ,n 
+Y /followsequal 0. 
+Let Y solve RELAX 
+Factorize = VT  Y V 
+vT   v1  Yij = VT  =i vj V =[  v2  vn]and  V 
+ij 
+2003 Massachusetts Institute of Technology 39</text>
+        </slide>
+        <slide>
+          <slideno>51</slideno>
+          <text>/summationtext Interior-point Primal and Dual SDP 
+Methods for SDP 
+BSDP () : minimize C  X   ln(det(X )) 
+s.t. Ai  X = bi ,i =1, ..., m , 
+X /follows 0. 
+f(X)= C  X1 
+Karush-Kuhn-Tucker conditions for BSDP ()are: 
+ 
+ Ai  X = bi ,i =1,... ,m ,       X /follows 0, 
+   m     C  X1= yiAi. 
+i=1 
+2003 Massachusetts Institute of Technology 52</text>
+        </slide>
+        <slide>
+          <slideno>33</slideno>
+          <text>/summationtext /summationtext The MAX CUT Formulations
+Problem
+Also let W be the matrix whose (i,j)th element is wij for 
+i =1,...,n and j =1,...,n . Then 
+n n 
+MAXCUT : maximize Y,x 1	wij (1  Yij)4 
+i=1 j=1 
+s.t.	 xj {  1,1},j =1,...,n 
+Y = xxT. 
+2003 Massachusetts Institute of Technology 34</text>
+        </slide>
+        <slide>
+          <slideno>52</slideno>
+          <text>/summationtext Interior-point Primal and Dual SDP 
+Methods for SDP 
+ 
+ Ai  X = bi ,i =1,...,m ,   X /follows 0, 
+m    C  X1= yiAi. 
+i=1 
+Define 
+S = X1 , 
+which implies 
+XS = I ,
+2003 Massachusetts Institute of Technology 53</text>
+        </slide>
+        <slide>
+          <slideno>45</slideno>
+          <text>The MAX CUT 
+Problem Computing a Good Solution 
+So we have 
+MAXCUT  E[Cut] RELAX  0.87856  MAXCUT  0.87856 
+This is an impressive result, in that it states that the value of the 
+semidefinite relaxation is guaranteed to be no more than 12.2% 
+higher than the value of NP -hard problem MAXCUT. 
+2003 Massachusetts Institute of Technology 46</text>
+        </slide>
+        <slide>
+          <slideno>26</slideno>
+          <text>/summationdisplay
+/summationdisplay Weak Duality
+SDP Duality
+Weak Duality Theorem: Given a feasible solution X of SDP 
+and a feasible solution (y, S)of SDD , the duality gap is 
+m 
+C  X  yibi = S  X  0 . 
+i=1 
+If m 
+C  X  yibi =0 , 
+i=1 
+then X and (y, S)are each optimal solutions to SDP and 
+SDD , respectively, and furthermore, SX =0. 
+2003 Massachusetts Institute of Technology 27</text>
+        </slide>
+        <slide>
+          <slideno>48</slideno>
+          <text>/summationdisplay /productdisplay 
+/parenleftBig /parenrightBig /parenleftBig /parenrightBig 
+/summationtext The Logarithmic Barrier Function for SPD Matrices
+  
+n n 
+B(X): =  ln(i(X)) =  ln  i(X) =  ln(det( X)). 
+j=1 j=1 
+ Quadratic Taylor expansion at X = X: 
+  X1  2DX1  2DX1 B(X + D) B(X)+   D +1 2 X1  2  X1  2 .2
+B(X)has the same remarkable properties in the context of 
+interior-point methods for SDP as the barrier function 
+n j=1ln(xj )does in the context of linear optimization. 
+2003 Massachusetts Institute of Technology 49</text>
+        </slide>
+        <slide>
+          <slideno>3</slideno>
+          <text>Linear Alternative Perspective 
+Programming 
+LP : minimize cx 
+s.t. ai x = bi,i =1,...,m 
+nx /Rfractur+. 
+Minimize the linear function cx, subject to the condition that x 
+must solve m given equations ai x = bi,i =1,...,m , and that 
+nx must lie in the convex cone K = /Rfractur+. 
+2003 Massachusetts Institute of Technology 4</text>
+        </slide>
+        <slide>
+          <slideno>44</slideno>
+          <text>/summationtext 
+/parenleftBig /parenrightBig 
+/parenleftBig /parenrightBig The MAX CUT Computing a Good Solution 
+Problem 
+E[Cut]= 1 wij arccos( Yij )2 i,j 
+= /summationtext wij 1  2arccos( 1 Yij )Yij Yij4  1 
+i,j /summationtext 2arccos(t )wij 1   1 Yij min 1t1  4 1t 
+i,j 
+2 = RELAX  min 0 1cos  
+ RELAX  0.87856 
+2003 Massachusetts Institute of Technology 45</text>
+        </slide>
+        <slide>
+          <slideno>35</slideno>
+          <text>/summationtext /summationtext The MAX CUT Formulations
+Problem
+The rst set of constraints are equivalent to 
+Yjj =1,j =1,...,n . 
+n n 
+MAXCUT : maximize Y,x 1	wij (1  Yij)4 i=1 j=1 
+s.t.	 Yjj =1,j =1,...,n 
+Y = xxT. 
+2003 Massachusetts Institute of Technology 36</text>
+        </slide>
+        <slide>
+          <slideno>7</slideno>
+          <text>Semidefinite 
+Cone Facts about the 
+Sn denotes the set of symmetric n  n matrices 
+Sn 
++ denotes the set of (SPSD) n  n matrices. 
+Sn 
+++ denotes the set of (SPD) n  n matrices. 
+2003 Massachusetts Institute of Technology 8</text>
+        </slide>
+        <slide>
+          <slideno>17</slideno>
+          <text>/summationdisplay /summationdisplay
+Semidefinite Programming
+SDP 
+Linear Function of X 
+Let X  Sn. What will a linear function of X look like? 
+If C(X)is a linear function of X, then C(X)can be written as 
+C  X, where 
+n n 
+C  X := CijXij. 
+i=1 j=1 
+There is no loss of generality in assuming that the matrix C is 
+also symmetric. 
+2003 Massachusetts Institute of Technology 18</text>
+        </slide>
+        <slide>
+          <slideno>6</slideno>
+          <text>Semidefinite 
+Cone Facts about the 
+If X is an n n matrix, then X is a symmetric positive 
+semidefinite (SPSD) matrix if X =XT and 
+vTXv 0 for any v /Rfracturn 
+If X is an n n matrix, then X is a symmetric positive definite 
+(SPD) matrix if X =XT and 
+vTXv &gt; 0 for any v /Rfracturn,v /negationslash=0 
+2003 Massachusetts Institute of Technology 7</text>
+        </slide>
+        <slide>
+          <slideno>10</slideno>
+          <text>/parenleftbig /parenrightbig 
+/bracketleftbig /bracketrightbig Facts about
+Eigenvalues and
+Eigenvectors
+The corresponding eigenvectors q1,q2,...,qn of M can be 
+chosen so that they are orthonormal, namely 
+i/parenrightbigT /parenleftbig 
+qjq =0for i /negationslash/parenleftbig i/parenrightbigT /parenleftbig i/parenrightbig 
+=j, and q q =1 
+Define: 
+2 nQ := q 1 q  q 
+Then Q is an orthonormal matrix: 
+QTQ =I, equivalently QT =Q1 
+2003 Massachusetts Institute of Technology 11</text>
+        </slide>
+        <slide>
+          <slideno>30</slideno>
+          <text>The MAX CUT
+Problem
+G is an undirected graph with nodes N = {1,...,n } and edge 
+set E. 
+Let wij = wji be the weight on edge (i, j),f o r (i, j) E. 
+We assume that wij  0 for all (i, j) E. 
+The MAX CUT problem is to determine a subset S of the nodes 
+N for which the sum of the weights of the edges that cross from 
+S to its complement  S := N \ S). S is maximized ( 
+2003 Massachusetts Institute of Technology 31</text>
+        </slide>
+        <slide>
+          <slideno>43</slideno>
+          <text>/summationtext /parenleftbig /parenrightbig 
+/summationtext The MAX CUT Computing a Good Solution 
+Problem 
+vi)/negationslash vj ) E[Cut]=1 wij  P sign(rT  = sign(rT 2 i,j 
+T1 /summationtext arccos(i v vj )
+=2 wij
+  i,j 
+1 /summationtext arccos( Yij )=2 wij  i,j 
+=1 wij arccos( Yij )2 i,j 
+2003 Massachusetts Institute of Technology 44</text>
+        </slide>
+        <slide>
+          <slideno>36</slideno>
+          <text>/summationtext /summationtext The MAX CUT Formulations 
+Problem 
+n n 
+MAXCUT : maximize Y,x 1 wij (1  Yij)4 i=1 j=1 
+s.t. Yjj =1,j =1,...,n 
+Y = xxT. 
+Notice that the matrix Y = xxT is a rank-1 SPSD matrix. 
+2003 Massachusetts Institute of Technology 37</text>
+        </slide>
+        <slide>
+          <slideno>9</slideno>
+          <text>Facts about 
+Eigenvalues and 
+Eigenvectors 
+If M is a square n n matrix, then  is an eigenvalue of M with 
+corresponding eigenvector q if 
+Mq =q and q /negationslash
+=0. 
+Let 1,2,..., n enumerate the eigenvalues of M. 
+2003 Massachusetts Institute of Technology 10</text>
+        </slide>
+        <slide>
+          <slideno>28</slideno>
+          <text>SDP Some Important 
+Weaknesses of 
+ There may be a finite or infinite duality gap.
+ The primal and/or dual may or may not attain their optima.
+ Both programs will attain their common optimal value if both
+programs have feasible solutions that are SPD.
+ There is no finite algorithm for solving SDP .
+ There is a simplex algorithm, but it is not a finite algorithm. 
+There is no direct analog of a basic feasible solution for SDP . 
+2003 Massachusetts Institute of Technology 29</text>
+        </slide>
+        <slide>
+          <slideno>42</slideno>
+          <text>The MAX CUT 
+Problem Computing a Good Solution 
+Let r be a random uniform vector on the unit n-sphere Sn 
+S := {i | rT vi  0} 
+S := {i | rT vi &lt; 0} 
+Let E[Cut]denote the expected value of this cut. 
+Theorem: E[Cut] 0.87856  MAXCUT 
+2003 Massachusetts Institute of Technology 43</text>
+        </slide>
+        <slide>
+          <slideno>18</slideno>
+          <text>SDP 
+Semidefinite Programming 
+Denition of SDP 
+SDP : minimize C  X
+s.t. Ai  X = bi ,i =1,...,m, 
+X /followsequal 0, 
+X /followsequal 0 is the same as X  Sn + 
+The data for SDP consists of the symmetric matrix C (which is 
+the data for the objective function) and the m symmetric matrices 
+A1,...,A m, and the mvector b, which form the m linear 
+equations. 
+2003 Massachusetts Institute of Technology 19</text>
+        </slide>
+        <slide>
+          <slideno>11</slideno>
+          <text>/bracketleftbig /bracketrightbig
+Facts about
+Eigenvalues and
+Eigenvectors
+1,2,..., n are the eigenvalues of M 
+1q,q2,...,qn are the corresponding orthonormal eigenvectors of 
+M 
+2 nQ := q 1 q  q 
+Q1QTQ = I, equivalently QT = 
+Define D:   
+10 0 
+ 0  2   D :=  ...  .
+0 n 
+Property: M = QDQT . 
+2003 Massachusetts Institute of Technology 12</text>
+        </slide>
+        <slide>
+          <slideno>14</slideno>
+          <text>/productdisplay Facts about 
+SymmetricMatrices 
+ If M is symmetric, then 
+n 
+det(M )= j 
+j=1 
+2003 Massachusetts Institute of Technology 15</text>
+        </slide>
+        <slide>
+          <slideno>16</slideno>
+          <text>SDP 
+X 
+Semidefinite Programming 
+Think about 
+Let X  Sn. Think of X as: 
+ a matrix 
+ an array of n2 components of the form (x11,...,x nn) 
+ an object (a vector) in the space Sn . 
+All three different equivalent ways of looking at X will be useful. 
+2003 Massachusetts Institute of Technology 17</text>
+        </slide>
+        <slide>
+          <slideno>27</slideno>
+          <text>SDP Duality Strong Duality 
+ Strong Duality Theorem: Let z and zD denote the optimal P 
+objective function values of SDP and SDD , respectively. 
+Suppose that there exists a feasible solution X of SDP such that 
+X /follows 0, and that there exists a feasible solution (  y,S)of SDD 
+such that S /follows 0. Then both SDP and SDD attain their optimal 
+values, and 
+  zP = zD . 
+2003 Massachusetts Institute of Technology 28</text>
+        </slide>
+        <slide>
+          <slideno>31</slideno>
+          <text>/summationtext /summationtext The MAX CUT Formulations 
+Problem 
+The MAX CUT problem is to determine a subset S of the nodes 
+N for which the sum of the weights wij of the edges that cross 
+from S to its complement  S := N \ S). S is maximized ( 
+ Let xj =1 for j  S and xj = 1 for j  S. 
+nn 
+1MAXCUT : maximize x 4 wij(1  xixj ) 
+i=1 j=1 
+s.t. xj {  1, 1},j =1,...,n . 
+2003 Massachusetts Institute of Technology 32</text>
+        </slide>
+        <slide>
+          <slideno>54</slideno>
+          <text>/summationtext 
+/summationdisplay /summationdisplay /summationdisplay /summationdisplay
+Interior-point Primal and Dual SDP 
+Methods for SDP 
+ 
+ Ai  X = bi ,i =1,... ,m, X /follows 0   m 
+yiAi + S = C   i=1  XS = I. 
+If (X, y, S)is a solution of this system, then X is feasible for 
+SDP , (y, S)is feasible for SDD , and the resulting duality gap is 
+n n n n 
+S  X = SijXij = ( SX)jj = ( I)jj = n. 
+i=1 j=1 j=1 j=1 
+2003 Massachusetts Institute of Technology 55</text>
+        </slide>
+        <slide>
+          <slideno>8</slideno>
+          <text>Facts about the
+Semidefinite
+Cone
+Let X, Y  Sn .
+X /followsequal 0 denotes that X is SPSD
+X /followsequal Y  denotes that X  Y /followsequal 0
+X /follows 0 to denote that X is SPD, etc.
+Remark: Sn = {X  Sn | X /followsequal 0} is a convex cone.
++ 
+2003 Massachusetts Institute of Technology 9</text>
+        </slide>
+        <slide>
+          <slideno>56</slideno>
+          <text>Interior-point 
+Methods for SDP Primal and Dual SDP 
+This suggests that we try solving BSDP ()for a variety of 
+values of  as   0. 
+Interior-point methods for SDP are very similar to those for linear 
+optimization, in that they use Newtons method to solve the KKT 
+system as   0. 
+2003 Massachusetts Institute of Technology 57</text>
+        </slide>
+        <slide>
+          <slideno>55</slideno>
+          <text>/summationtext Interior-point Primal and Dual SDP 
+Methods for SDP 
+ 
+ Ai  X = bi ,i =1,... ,m, X /follows 0   m 
+yiAi + S = C   i=1  XS = I. 
+If (X, y, S)is a solution of this system, then X is feasible for 
+SDP , (y, S)is feasible for SDD , the duality gap is 
+S  X = n.
+2003 Massachusetts Institute of Technology 56</text>
+        </slide>
+        <slide>
+          <slideno>2</slideno>
+          <text>/summationtextLinear Alternative Perspective 
+Programming 
+LP : minimize c x 
+s.t. ai x = bi,i =1,...,m 
+nx /Rfractur+. 
+nc x means the linear function  j=1 cjxj  
+n n/Rfractur+ := {x /Rfractur|x 0}is the nonnegative orthant. 
+n is a convex cone. /Rfractur+
+K is convex cone if x, w K and ,  0  x + w K.
+2003 Massachusetts Institute of Technology 3</text>
+        </slide>
+        <slide>
+          <slideno>21</slideno>
+          <text>Semidefinite Programming 
+SDP 
+LP SDP 
+LP : minimize cx 
+s.t. ai x = bi,i =1,...,m 
+nx /Rfractur+. 
+Define:  	   ai10 ... 0 c10 ... 0 
+ 0   0  ... 0 	   a
+.i2 ... 0 
+. ,i =1,...,m , and C =  ..c
+..2 ... .. . Ai =  .. .....
+ . . .	 .. . 
+0 0 ... ain	 0 0 ... cn 
+SDP : minimize C X 
+s.t.	 Ai X = bi ,i =1,...,m , 
+Xij =0,i =1,...,n , j = i+1,...,n , 	  x10 ... 0 
+  0 x2 ... 0 	. /followsequal0, X =  .. ......
+ . . . 
+0 0 ... xn 
+2003 Massachusetts Institute of Technology 22</text>
+        </slide>
+        <slide>
+          <slideno>34</slideno>
+          <text>/summationtext /summationtext The MAX CUT Formulations 
+Problem 
+n n 
+MAXCUT : maximize Y,x 1	wij (1  Yij)4 i=1 j=1 
+s.t.	 xj {  1, 1},j =1,...,n 
+Y = xxT. 
+2003 Massachusetts Institute of Technology 35</text>
+        </slide>
+        <slide>
+          <slideno>47</slideno>
+          <text>/summationdisplay /productdisplay The Logarithmic Barrier Function for SPD Matrices
+Sn = {X  Sn | j(X) 0,j =1,...,n, + 
+and j(X)= 0 for some j {1,...,n }}. 
+A natural barrier function is: 
+  
+n n 
+B(X): =  ln(i(X)) =  ln  i(X) =  ln(det( X)). 
+j=1 j=1 
+This function is called the log-determinant function or the 
+logarithmic barrier function for the semidefinite cone. 
+2003 Massachusetts Institute of Technology 48</text>
+        </slide>
+        <slide>
+          <slideno>19</slideno>
+          <text>Semidefinite Programming
+SDP 
+Example... 
+   	   101 028 /parenleftbigg/parenrightbigg	 12311 	  A1=  037 , A 2=  260  ,b = , and C =  290 ,19175 804 307 
+The variable X will be the 3 3symmetric matrix: 
+	 
+x11 x12 x13 
+ X =  x21 x22 x23 , 
+x31 x32 x33 
+SDP : minimize x11+4x12+6x13+9x22+0x23+7x33 
+s.t.	 x11+0x12+2x13+3x22+1 4x23+5x33 =1 1 
+0x11+4x12+1 6x13+6x22+0x23+4x33 =1 9 
+	  x11 x12 x13
+X =  x21 x22 x23 /followsequal 0.
+x31 x32 x33
+2003 Massachusetts Institute of Technology 20</text>
+        </slide>
+        <slide>
+          <slideno>57</slideno>
+          <text>Website for SDP 
+A good website for semidefinite programming is: 
+http://www-user.tu-chemnitz.de/ helmberg/semidef.html . 
+2003 Massachusetts Institute of Technology 58</text>
+        </slide>
+      </slides>
+      <videos/>
+    </lecture>
+  </lectures>
+</doc>

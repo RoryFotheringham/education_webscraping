@@ -1,0 +1,4279 @@
+<doc>
+  <source>MIT</source>
+  <date>28/01/2023</date>
+  <course>
+    <course_url>https://ocw.mit.edu/courses/6-883-pervasive-human-centric-computing-sma-5508-spring-2006/</course_url>
+    <course_title>Pervasive Human Centric Computing (SMA 5508)</course_title>
+    <course_tags>
+      <list>Engineering </list>
+      <list>Computer Science </list>
+      <list>Programming Languages </list>
+    </course_tags>
+  </course>
+  <lectures>
+    <lecture>
+      <lecture_title>User Interface GUIs, More Phone Programming</lecture_title>
+      <lecture_pdf_url>https://ocw.mit.edu/courses/6-883-pervasive-human-centric-computing-sma-5508-spring-2006/resources/l9_symbpythonii/</lecture_pdf_url>
+      <lectureno>L9</lectureno>
+      <slides>
+        <slide>
+          <slideno>22</slideno>
+          <text>if def handle_modify(self): item = self.get_current_item() def main(): app = MyApp() try: hosts =item is not None: # Display dat a in Form for user to edit.            [u"some.foo.com", u"other.foo.com"] i =# Save modified record in database. pass #appuifw.popup_menu(hosts, u"Select server:")  if iomitted def handle_add(self): new_item = is not None: app.connect(hosts[i])self.edit_item(ToDoItem()) if new_item is not None: #app.loop() finally: app.close()if __name__ ==User enters new data into Form.            # Save new record in "__main__": main()database. pass # omitted def 
+handle_delete(self): item = self. get_current_item()      if item is 
+not None: # Remove reco rd from database.  pass 
+# omitted def get_current_item(self): # Return currently 
+selected item, or None if the list is empty. if not self.data: 
+return None else: current = appuifw.app.body.current ()            
+return self.data[current]</text>
+        </slide>
+        <slide>
+          <slideno>7</slideno>
+          <text>Processes (exe, app)
+ an application has 
+only one user 
+interface thread
+ sockets &amp; file 
+objects cannot be 
+shared among 
+threads
+ why? 
+Pervasive Computing MIT 6.883 SMA 5508 Spring 2006 Larry Rudolph 
+Figure by MIT OCW.</text>
+        </slide>
+        <slide>
+          <slideno>5</slideno>
+          <text>DLLs and APIs
+ API: the exported published behaviour a 
+system component exposes to other components 
+ Symbian OS DLL components can:
+ define an API for use by other components (system libs, app. engines) 
+ implement an API defined by a framework 
+ GUI applications, device drivers 
+ these are plug-ins into a framework 
+Pervasive Computing MIT 6.883 SMA 5508 Spring 2006 Larry Rudolph</text>
+        </slide>
+        <slide>
+          <slideno>20</slideno>
+          <text>import e32import appuifwfrom MyDataAccess import 
+MyDataAccesse32.ao_yield()def format(item) :  # Format the item as a short 
+unicode string. return u"" # omittedclass MyApp:  def __init __(self):        
+self.lock = e32.Ao_lock() sel f.old_title = appuifw.app.title        
+appuifw.app.title = u"My Application" se lf.exit_flag = False        
+appuifw.app.exit_key_handler = self.abor t  self.data = [] 
+appuifw.app.body = appuifw.Listbox([u"Loading ..."], self.handle_modify)        
+self.menu_add = (u"Add", self.handle_add) self.menu_del = (u"Delete", 
+self.handle_delete) appuifw.app.menu = [] # First call to refresh() 
+will fill in the menu.</text>
+        </slide>
+        <slide>
+          <slideno>3</slideno>
+          <text>Processes, Threads, 
+Active Objects Process: address space + threads 
+ A main thread interacts with user interface. 
+Can directly call UI. If blocks, application blocks 
+ Heap (shared by all threads) 
+ No statics (in DLL), but yes in new: S60-FP3
+ Thread: Program Counter + AO + stack (small)
+ AO (Active Object): Pieces of thread code that interacts with User Interface 
+Pervasive Computing MIT 6.883 SMA 5508 Spring 2006 Larry Rudolph</text>
+        </slide>
+        <slide>
+          <slideno>21</slideno>
+          <text>Def connect(self, host): self.db = 
+MyDataAccess(host)  self.db.listen(self.notify)           
+# Set up callback for change notifications. def loop(self): try: self.lock.wait() while 
+not self.exit_flag:  self.refresh()               
+self.lock.wait() finally: self.db.close() def 
+close(self): appuifw.app.menu = [] appuifw.app.body = None 
+appuifw.app.exit_key_handler = None 
+appuifw.app.title = self.old_title def abort(self): # 
+Exit-key handler. se lf.exit_flag = True        
+self.lock.signal() def notify(self, in_sync): # 
+Handler for database change not ifications.  if 
+in_sync: self.lock.signal()   def refresh(self): # Note selected item.        
+current_item = self.get_current_i tem()  # Get updated 
+data. self.data = self.db.get_data() if not self.data: 
+content = [u"(Empty)"] else: content = [format(item) 
+for item in self.data] if current_item in self.data: # 
+Update the displayed data, # retaining the previous 
+selection. index = self.data.index(current_item) appuifw.app.body.set_list(content, index) else: # 
+Previously selected item is no longer  present, so allow         
+# the selection to be reset.            
+appuifw.app.body.set_list(content) if not self.data: 
+appuifw.app.menu = [self.menu_add] else: 
+appuifw.app.menu = [self.menu_add, self.menu_del]</text>
+        </slide>
+        <slide>
+          <slideno>18</slideno>
+          <text>Using the screen
+ Appuifw contains an instance of the class 
+application, called app 
+ appuifw.app.title = utitle of screen
+ appuifw.app.screen = normal # size  *.app.body = Text | Listbox | Canvas  *.app.menu = list of (title, callback)  *.app.set_tabs( list of tab names, callback) 
+Pervasive Computing MIT 6.883 SMA 5508 Spring 2006 Larry Rudolph</text>
+        </slide>
+        <slide>
+          <slideno>9</slideno>
+          <text>What kind of OS?
+ Multi-tasking 
+ Multi-threading 
+ Real-time 
+Pervasive Computing MIT 6.883 SMA 5508 Spring 2006 Larry Rudolph</text>
+        </slide>
+        <slide>
+          <slideno>0</slideno>
+          <text>More Python on 
+Series 60
+Larry Rudolph
+SMA 5508 MIT 6.883 (Spring 2006)
+March 10
+1 Pervasive Computing MIT 6.883 SMA 5508 Spring 2006 Larry Rudolph</text>
+        </slide>
+        <slide>
+          <slideno>16</slideno>
+          <text>Nokias Approach
+ Nokias UI philosophy (are they unique?) 
+ Uniform across apps; branded look&amp;feel 
+ Screen title at top 
+ Optional tabs just below that 
+ Body (and for pop-ups) 
+ Bottom softkeys: Menu (left), Exit (right) 
+Pervasive Computing MIT 6.883 SMA 5508 Spring 2006 Larry Rudolph</text>
+        </slide>
+        <slide>
+          <slideno>4</slideno>
+          <text>Processes
+ Each application and each service (I think) 
+execute as separate processes 
+ Each process has its own address space
+ We will not deal with interprocess communication (but could use sockets) 
+ An application is a process that may have 
+ UI and Engine parts 
+ Access System and Server APIs 
+Pervasive Computing MIT 6.883 SMA 5508 Spring 2006 Larry Rudolph</text>
+        </slide>
+        <slide>
+          <slideno>2</slideno>
+          <text>Todays Topics
+ Examples 
+ Screen 
+ Network 
+ Active Objects 
+ Bluetooth 
+ Callgate 
+Pervasive Computing MIT 6.883 SMA 5508 Spring 2006 Larry Rudolph</text>
+        </slide>
+        <slide>
+          <slideno>15</slideno>
+          <text>User Interface 
+Approach
+ What should we care about? 
+ Graphical User Interface (GUI) is big deal
+ Small screen ==&gt; make best of poor situation
+ Will screens get bigger? Will Nokias UI 
+approach scale? 
+ What about other input modalities? 
+ Alternatives: PocketPC, Palm, Blackberry 
+ Gameboy, Playstation, Smart Watches 
+Pervasive Computing MIT 6.883 SMA 5508 Spring 2006 Larry Rudolph</text>
+        </slide>
+        <slide>
+          <slideno>13</slideno>
+          <text>Pythons AO
+ Previous discussion was for Symbian in 
+general 
+ Python hides the scheduler
+ but after setting up callbacks, just do a return 
+ Can control AO by allocating an e32.Ao_lock() and then doing wait() and signal() with this lock 
+Pervasive Computing MIT 6.883 SMA 5508 Spring 2006 Larry Rudolph</text>
+        </slide>
+        <slide>
+          <slideno>10</slideno>
+          <text>UI Thread
+ places objects on screen
+ registers callbacks procedures associated with 
+screen &amp; keyboard events 
+ when event occurs, want to pass control to the callback procedure. 
+ what if thread is executing something else?
+ Callbacks should execute quickly 
+ UI thread should spend most of the time idle 
+Pervasive Computing MIT 6.883 SMA 5508 Spring 2006 Larry Rudolph</text>
+        </slide>
+        <slide>
+          <slideno>19</slideno>
+          <text>SMS messaging
+ Can send SMS: sms_send(nmbr, mess) 
+ limit of 160 characters 
+ Can access phones inbox 
+ plop it into a list, access fields of mess 
+ Register callback for whenever mess arrives
+ Need to be connect to phone network and 
+need to be running when msg arrives 
+Pervasive Computing MIT 6.883 SMA 5508 Spring 2006 Larry Rudolph</text>
+        </slide>
+        <slide>
+          <slideno>14</slideno>
+          <text>Python User Interface
+ This diagram 
+ Ignore it shows the pieces 
+Pervasive Computing MIT 6.883 SMA 5508 Spring 2006 Larry Rudolph Python for S60 UI 
+application
+appuifw
+Series 60 UI elements
+Series 60 
+Common UISeries 60 
+UI application
+&lt;&lt;resource&gt;&gt;Graphics
+CanvasPython APIPython API
+Content_handlerImage
+Symbian GDI
+Figure by MIT OCW.</text>
+        </slide>
+        <slide>
+          <slideno>12</slideno>
+          <text>Active Objects
+ If Symbian written 
+today, AOs would be called listeners 
+ Get called by 
+scheduler (have a 
+little bit of state) 
+ Run to completion 
+then return to 
+scheduler 
+Pervasive Computing MIT 6.883 SMA 5508 Spring 2006 Larry Rudolph 
+Figure by MIT OCW.</text>
+        </slide>
+        <slide>
+          <slideno>8</slideno>
+          <text>Process &amp; Threads
+ only one thread in 
+process has 
+access to UI 
+ sockets &amp; file 
+objects cannot be shared among 
+threads 
+ why? 
+Pervasive Computing MIT 6.883 SMA 5508 Spring 2006 Larry Rudolph 
+Figure by MIT OCW.</text>
+        </slide>
+        <slide>
+          <slideno>17</slideno>
+          <text>SPy60 Approach
+ provide option for more usable screen area
+ great for prototyping. 
+i i l Use default font &amp; size; minor graphics 
+Pervasive Comput ng MIT 6.883 SMA 5508 Spr ng 2006 Larry Rudo ph</text>
+        </slide>
+        <slide>
+          <slideno>6</slideno>
+          <text>Apps, DLL, API
+ServerApplication 
+UIApplication 
+EngineServer
+API
+System Libs: cone.lib, wserv.lib, estor.lib, euser.lib
+User Library: euser.dll
+Kernel: ekem.exe
+.exe.app.dll.dll
+Figure by MIT OCW.</text>
+        </slide>
+        <slide>
+          <slideno>11</slideno>
+          <text>Coordination
+ Dont use normal thread locks:
+import thread 
+lock = thread.allocate_lock() 
+ Whole application gets blocked, since no
+UI actions would be handled 
+ Use e32.Ao_lock instead 
+Pervasive Computing MIT 6.883 SMA 5508 Spring 2006 Larry Rudolph</text>
+        </slide>
+        <slide>
+          <slideno>1</slideno>
+          <text>Where to get 
+information
+ www.forum.nokia.com
+ there are a few more documents (like 
+getting started; building an app; C++ 
+extensions) to be gotten from the 1.2 
+python release 
+ Around the web, but bunch of older versions around -- be careful 
+ our wiki, look at IAP 2006 
+Pervasive Computing MIT 6.883 SMA 5508 Spring 2006 Larry Rudolph</text>
+        </slide>
+      </slides>
+      <videos/>
+    </lecture>
+    <lecture>
+      <lecture_title>Location - API</lecture_title>
+      <lecture_pdf_url>https://ocw.mit.edu/courses/6-883-pervasive-human-centric-computing-sma-5508-spring-2006/resources/l6_proximity/</lecture_pdf_url>
+      <lectureno>L6</lectureno>
+      <slides>
+        <slide>
+          <slideno>11</slideno>
+          <text>Pervasive Computing MIT 6.883 SMA 5508 Spring 2006 Larry Rudolph
+LLL (cont)Alice &amp; Bob switch
+When looking for Bob, you find Alice, 
+and she forwards call to Bob.
+Bob accepts calls forwarded from Alice 
+(the calls look like they came from Bob)
+Bob forwards all other call to Alice
+Bob and Charlie switch
+Look for Bob, find Alice who forwards 
+to Charlie who forwards to Bob</text>
+        </slide>
+        <slide>
+          <slideno>0</slideno>
+          <text>1 Pervasive Computing MIT 6.883 SMA 5508 Spring 2006 Larry Rudolph
+Location Again
+Location APIs and Room-Size Location
+Feb 28, 2006
+Larry Rudolph</text>
+        </slide>
+        <slide>
+          <slideno>23</slideno>
+          <text>Pervasive Computing MIT 6.883 SMA 5508 Spring 2006 Larry Rudolph
+What doesnt work
+Signal strength does not work well
+need radio map
+Track while walking
+10 sec to detect, walking rate ~ 1 m/s, 
+easy to miss dongle altogether
+Embed location info in dongle name
+takes even longer to detect
+Cached BT names, must not use</text>
+        </slide>
+        <slide>
+          <slideno>18</slideno>
+          <text>Pervasive Computing MIT 6.883 SMA 5508 Spring 2006 Larry Rudolph
+Tradeoffs
+Handheld is beacon
+better power usage
+better precision (precise 
+listener location)
+less interference 
+Handheld is listener
+Control over privacy
+(Can you suggest others)</text>
+        </slide>
+        <slide>
+          <slideno>1</slideno>
+          <text>Pervasive Computing MIT 6.883 SMA 5508 Spring 2006 Larry Rudolph
+GPS &amp; Cell Location
+Figure by MIT OCW.</text>
+        </slide>
+        <slide>
+          <slideno>6</slideno>
+          <text>Pervasive Computing MIT 6.883 SMA 5508 Spring 2006 Larry Rudolph</text>
+        </slide>
+        <slide>
+          <slideno>20</slideno>
+          <text>Pervasive Computing MIT 6.883 SMA 5508 Spring 2006 Larry Rudolph
+Bluetooth Beacons
+First decision -- Where to put beacons
+Put them in PCs -- they are everywhere
+Unfortunately, they disappear :(
+Put them in powered usb hub, near AC outlet
+Initialize via laptop, then remove laptop
+BT Dongle will continue to respond to 
+inquiry</text>
+        </slide>
+        <slide>
+          <slideno>8</slideno>
+          <text>Pervasive Computing MIT 6.883 SMA 5508 Spring 2006 Larry Rudolph
+How to spoof
+Borrow friends phone
+register it with tracking service (TS)
+TS sends msg to phone for confirmation
+Answer msg, delete it, return phone
+No need to borrow phone if know phone ID
+when phone is turned off,  put its ID into 
+a different phone, do the above steps, 
+and then  turn off.</text>
+        </slide>
+        <slide>
+          <slideno>24</slideno>
+          <text>Pervasive Computing MIT 6.883 SMA 5508 Spring 2006 Larry RudolphSeveral Hacks 
+neededTakes too long to 
+recognize dongles
+Faster if use two 
+dongles
+Signal come and goes
+Incorporate model of human motion
+Probabilistic 
+filteringImage removed due to copyright considerations.</text>
+        </slide>
+        <slide>
+          <slideno>13</slideno>
+          <text>Pervasive Computing MIT 6.883 SMA 5508 Spring 2006 Larry Rudolph
+Bookkeeping View
+When switching, 
+just exchange 
+current id info
+How to know when to stop forwarding?Image removed due to copyright restrictions.</text>
+        </slide>
+        <slide>
+          <slideno>25</slideno>
+          <text>Pervasive Computing MIT 6.883 SMA 5508 Spring 2006 Larry Rudolph
+More hacks
+If you know where you are,
+then know where you might go next
+can do inquiry of specific dongles</text>
+        </slide>
+        <slide>
+          <slideno>7</slideno>
+          <text>Pervasive Computing MIT 6.883 SMA 5508 Spring 2006 Larry Rudolph
+http://www.jcp.org/en/jsr/all (J2ME 
+Packages)</text>
+        </slide>
+        <slide>
+          <slideno>12</slideno>
+          <text>Graph View of LLL
+ Nodes always in 
+some cycle
+ Forward thru 
+whole cycle
+Pervasive Computing MIT 6.883 SMA 5508 Spring 2006 Larry Rudolph Image removed due to copyright restrictions.</text>
+        </slide>
+        <slide>
+          <slideno>4</slideno>
+          <text>Pervasive Computing MIT 6.883 SMA 5508 Spring 2006 Larry Rudolph
+What information?
+Current position (Cell or GPS or Other)
+How current?  How precise?
+Request periodic updates
+what happens when client disconnects
+Heading and orientation information
+Waypoints (and associated notes)
+Lots of competing systems
+J2ME, Symbian,  and each operator</text>
+        </slide>
+        <slide>
+          <slideno>3</slideno>
+          <text>Pervasive Computing MIT 6.883 SMA 5508 Spring 2006 Larry Rudolph
+Clients RoleAsk server for location of handset
+Must know how to contact handset
+Long round-trip, so done 
+asynchronously
+How to ensure privacy?
+emergency call --&gt;  always allow
+ask servers owner
+when and how often?</text>
+        </slide>
+        <slide>
+          <slideno>22</slideno>
+          <text>When detect BT dongle
+update map location</text>
+        </slide>
+        <slide>
+          <slideno>10</slideno>
+          <text>Pervasive Computing MIT 6.883 SMA 5508 Spring 2006 Larry Rudolph
+Assumptions
+Phone can forward calls to another 
+phone
+Phones can change their ID (also #, IP)
+Can detect ID &amp; # of incoming call
+Can detect cell tower connection
+Can connect to any of a set of servers</text>
+        </slide>
+        <slide>
+          <slideno>9</slideno>
+          <text>Pervasive Computing MIT 6.883 SMA 5508 Spring 2006 Larry Rudolph
+Larrys Location Larceny
+How to foil tracking -- even when cell 
+towers know your phones location
+Switch  IDs when near each other when
+Alice and Bob realize theyre in same 
+cell
+Figure by MIT OCW.</text>
+        </slide>
+        <slide>
+          <slideno>17</slideno>
+          <text>Pervasive Computing MIT 6.883 SMA 5508 Spring 2006 Larry Rudolph
+Beacons &amp; ListenersRoom-level tracking requires beacons &amp; 
+listeners
+Two choices:
+Scatter listeners throughout 
+environment that detect your position &amp; 
+update server
+Server provides location info &amp; alerts
+Scatter beacons throughout environment and your handheld is 
+listener</text>
+        </slide>
+        <slide>
+          <slideno>2</slideno>
+          <text>Pervasive Computing MIT 6.883 SMA 5508 Spring 2006 Larry Rudolph
+Location Servers 
+LocationWhere should the server be located?
+On handset
+Respond to inquires about location 
+with option to deny
+When handset lost or disconnected, 
+cannot find it.
+In network
+Privacy concerns</text>
+        </slide>
+        <slide>
+          <slideno>14</slideno>
+          <text>Pervasive Computing MIT 6.883 SMA 5508 Spring 2006 Larry Rudolph
+Inverse linksIf a node is shut off rest will be 
+unreachable
+Use servers to deal with reverse links
+Node chooses server at random, if two nodes contact same server and are both 
+in same cell, then
+switch info, and tell server about 
+switch.  nodes periodically make sure 
+partner alive
+with unsynchronized clocks and freq switching, cannot easily reconstruct 
+c
+ycle</text>
+        </slide>
+        <slide>
+          <slideno>5</slideno>
+          <text>Pervasive Computing MIT 6.883 SMA 5508 Spring 2006 Larry Rudolph
+Lots more details
+Time, angle of arrival, speed, 
+acceleration
+Type of location technology specs
+number of satellites, cell towers, weather
+pitch, roll, magnetic compass quality
+My strategy:
+first list all information you think is important and then check with standard</text>
+        </slide>
+        <slide>
+          <slideno>15</slideno>
+          <text>Pervasive Computing MIT 6.883 SMA 5508 Spring 2006 Larry Rudolph
+Landmark Databases
+Convert from location to known object
+how close is nearby
+Which databases of landmarks should be 
+used
+Local override to database?</text>
+        </slide>
+        <slide>
+          <slideno>21</slideno>
+          <text>Image removed due to copyright considerations.</text>
+        </slide>
+        <slide>
+          <slideno>19</slideno>
+          <text>Pervasive Computing MIT 6.883 SMA 5508 Spring 2006 Larry Rudolph
+Bluetooth Beacons
+Bluetooth devices respond to inquires
+with BT-ID and Name
+range: 10 meters (room level)
+leakage through walls &amp; floors
+hear floor 7, 8, and 9 --&gt; you are on 8
+Inexpensive ($20 / beacon)
+Handhelds have BT</text>
+        </slide>
+        <slide>
+          <slideno>16</slideno>
+          <text>17 Pervasive Computing MIT 6.883 SMA 5508 Spring 2006 Larry Rudolph
+Indoor Tracking
+Proximity Events
+Room Level Tracking</text>
+        </slide>
+      </slides>
+      <videos/>
+    </lecture>
+    <lecture>
+      <lecture_title>Python&#174; on Series 60 Phones</lecture_title>
+      <lecture_pdf_url>https://ocw.mit.edu/courses/6-883-pervasive-human-centric-computing-sma-5508-spring-2006/resources/l8_symbianpython/</lecture_pdf_url>
+      <lectureno>L8</lectureno>
+      <slides>
+        <slide>
+          <slideno>0</slideno>
+          <text>Phony Programming 
+(Series 60 Symbian Phones)
+Larry Rudolph
+MIT 6.883 &amp; SMA 5508
+March 6, 2006
+1 Pervasive Computing MIT 6.883 SMA 5508 Spring 2006 Larry Rudolph</text>
+        </slide>
+        <slide>
+          <slideno>24</slideno>
+          <text>ApplicationsApplications software can be divided into GUI parts
+(which use UIQ) and engines (which don't deal withgraphics). Some applications are simply thin layersover middleware components: others have substantialengines.
+CommunicationsIndustry-standard communications protocols for serialand sockets-based communication, dial-up networkingTCP/IP, and infrared.
+Language systems The Java runtime environment.
+Symbian OS ConnectCommunications protocols to connect to a PC, andservices such as file format conversion, datasynchronization for contacts, schedule entries ande-mail, clipboard synchronization, printing to aPC-based printer.
+Figure by MIT OCW.</text>
+        </slide>
+        <slide>
+          <slideno>9</slideno>
+          <text>Larrys Deja Vu
+ Despite the fact that 
+ Programmable Mobile Phones are new artifacts 
+ the OS and programming repeat mistakes  Designs that make sense for disconnected, single
+use devices, remain as devices become connected
+and multi-use and multi-tasked. 
+ Inertia is a powerful force 
+Pervasive Computing MIT 6.883 SMA 5508 Spring 2006 Larry Rudolph</text>
+        </slide>
+        <slide>
+          <slideno>26</slideno>
+          <text>Installing stuff 
+ a package or installation file in symbian: 
+ application_name.sis 
+ Get it onto the phone 
+ push via bluetooth (or send message) 
+ Open up message and install 
+ if there is flash memory, install it there 
+Pervasive Computing MIT 6.883 SMA 5508 Spring 2006 Larry Rudolph</text>
+        </slide>
+        <slide>
+          <slideno>11</slideno>
+          <text>Symbian OS Basics
+ Kernel: Protected Mode; Controls H/W 
+ Server: Manages one or more resources 
+ no UI (user interface) 
+ yes API (application program interface) 
+ may be device driver or kernel service  Application: A program with a UI 
+ Each application is a process; own virtual address 
+ If interacts with server, can be called a client  Engine: part of app. manipulates its data not UI 
+Pervasive Computing MIT 6.883 SMA 5508 Spring 2006 Larry Rudolph</text>
+        </slide>
+        <slide>
+          <slideno>13</slideno>
+          <text>RAM Memory Parts
+Figure by MIT OCW.</text>
+        </slide>
+        <slide>
+          <slideno>10</slideno>
+          <text>Programming Languages 
+Series 60 Phones
+ C++ for Symbian 
+ access to all the phones functions 
+ not so easy  Java 
+ highly sandboxed. 
+ no access to file system, phone, and more 
+ not the choice language for virus writers  Python 
+ nearly ready for public release 
+ will have interface to all Symbian APIs 
+Pervasive Computing MIT 6.883 SMA 5508 Spring 2006 Larry Rudolph</text>
+        </slide>
+        <slide>
+          <slideno>22</slideno>
+          <text>C++ Programming
+ Tutorials: C++ for Java programmers 
+ http://www.cs.brown.edu/courses/cs123/javatoc.shtml 
+ There are many others on-line 
+ Easier to go from java to c++ (java has less weirdness) 
+Pervasive Computing MIT 6.883 SMA 5508 Spring 2006 Larry Rudolph</text>
+        </slide>
+        <slide>
+          <slideno>28</slideno>
+          <text>Pervasive Computing MIT 6.883 SMA 5508 Spring 2006 Larry Rudolphquery() pops up a dialog with prompt string and input type
+other types can be number date code
+the + concatenates the two unicode stringsGet User Input
+import appuifwimport appuifw
+planet = appuifw.query(uplanet = appuifw.query(u Which planet?Which planet? ,u,utexttext))
+appuifw.note(uappuifw.note(u Hello Hello +planet , u+planet , u infoinfo))</text>
+        </slide>
+        <slide>
+          <slideno>17</slideno>
+          <text>Response to key
+ press
+Keyboard
+Kernel/Driver
+Window Server
+Application
+CPU PowerInterrupt
+ISR/DFC
+Key EventKey Event
+Handle Key
+EventHandle Key
+EventUpdate Window
+Draw
+Request
+Figure by MIT OCW.</text>
+        </slide>
+        <slide>
+          <slideno>23</slideno>
+          <text>Symbian Layers
+Group Description
+BaseProvides the fundamental APIs for all of Symbian OS,
+which I've described in this chapter.
+MiddlewareGraphics, data, and other components to support the
+GUI, engines, and applications.
+UIThe system GUI framework including the Shell (in
+UIQ, the Application Launcher) application.
+Figure by MIT OCW.</text>
+        </slide>
+        <slide>
+          <slideno>31</slideno>
+          <text>Hiding the unicode
+Pervasive Computing MIT 6.883 SMA 5508 Spring 2006 Larry Rudolph # this is file sma.py# this is file sma.py
+# wrappers to appuifw, e32, and bluetooth# wrappers to appuifw, e32, and bluetooth
+def note( str , type =def note( str , type = infoinfo):):
+appuifw.note( unicode(str), type )appuifw.note( unicode(str), type )
+def query( str , type =def query( str , type = texttext):):
+return appuifw.query( unicode(str), type )return appuifw.query( unicode(str), type )
+def menu( list, prompt =def menu( list, prompt = select oneselect one ):):
+ulist = [ unicode(u) : for u in list ]ulist = [ unicode(u) : for u in list ]
+return appuifw.menu( ulist , unicode(return appuifw.menu( ulist , unicode( 
+prompt ) )prompt ) )</text>
+        </slide>
+        <slide>
+          <slideno>19</slideno>
+          <text>Server Client
+Inter-thread read
+Inter-thread write
+Response Request
+Kernel ExecutiveKernel PrivilegeClient
+InterfaceUser Privilege
+Figure by MIT OCW.</text>
+        </slide>
+        <slide>
+          <slideno>2</slideno>
+          <text>Whats so special about phony 
+programming? 
+ Inherently very little --- Practically very much 
+ History 
+ originally: phones were h/w appliances 
+ past: s/w - h/w co-design  reduced costs 
+ near past: new features all s/w 
+ near future: 3rd party software 
+ In computer world, two approaches 
+ Intel: H/W, Microsoft: O/S, separate h/w from s/w 
+ Apple: H/W &amp; S/W, easier to integrate, high costs $ 
+ Companies have no history of being open !! 
+Pervasive Computing MIT 6.883 SMA 5508 Spring 2006 Larry Rudolph</text>
+        </slide>
+        <slide>
+          <slideno>14</slideno>
+          <text></text>
+        </slide>
+        <slide>
+          <slideno>25</slideno>
+          <text>Symbian 60 Phone 
+Programming in 
+Python
+Larry Rudolph
+MIT 6.883 &amp; SMA 5508
+March 2006
+26 Pervasive Computing MIT 6.883 SMA 5508 Spring 2006 Larry Rudolph</text>
+        </slide>
+        <slide>
+          <slideno>5</slideno>
+          <text>Pocket PC Phones</text>
+        </slide>
+        <slide>
+          <slideno>30</slideno>
+          <text>Our own interface: 
+sma.py
+There are a bunch of annoyances in the current UI 
+Lets put wrappers around basic calls We should go back and do this for location 
+32 Pervasive Computing MIT 6.883 SMA 5508 Spring 2006 Larry Rudolph</text>
+        </slide>
+        <slide>
+          <slideno>15</slideno>
+          <text>Memory
+ RAM: partitioned into 4k pages 
+ kernel, process, DLL, MMU tables, Video, C: 
+ Thread memory: Shared:Heap, Nonshared:Stack  DLL -- no writable static data (yes for exes) 
+ requires multiple copies of instantiated dll 
+ Files (does this remind you of something) 
+ C: RAM -- r/w file system.  Zerod on cold boot 
+ restored from ROM on cold boot 
+ Z: ROM -- can be reflashed (not easy) 
+ D: Memory Card 
+ 512 byte blocks written atomically; VFAT f ormat 
+Pervasive Computing MIT 6.883 SMA 5508 Spring 2006 Larry Rudolph</text>
+        </slide>
+        <slide>
+          <slideno>12</slideno>
+          <text>Processes &amp; Threads
+ Three boundaries 
+ DLL or module: cheap to cross 
+ Privilege: medium to cross 
+ Process: expensive to cross  Processes, Threads, Context Switches 
+ Process: has its own address space (256 MB) 
+ Thread: Unit of execution within a process 
+ Preemptively scheduled; 2MB nonshared ==&gt; 128 thds/pro  Executables 
+ exe: single entry point 
+ dynamic link library (DLL): multiple entries 
+ Shared (OS) vs Polymorphic (app) 
+Pervasive Computing MIT 6.883 SMA 5508 Spring 2006 Larry Rudolph</text>
+        </slide>
+        <slide>
+          <slideno>1</slideno>
+          <text>Whats so special 
+about phones?
+ Ignorant Operator 
+ really ignorant operator  Scarce Resources 
+ Power -- slow processor, small memory, small disk 
+ Size -- Screen and keyboard area 
+ Heat -- To keep this low, must constrain above 
+ Price -- Different than PC, since each feature costs the same, due to volumes 
+ Reboot -- these are rare events 
+ Brand loyalty -- hardly any, mistakes are costly  Its new and exciting! 
+Pervasive Computing MIT 6.883 SMA 5508 Spring 2006 Larry Rudolph</text>
+        </slide>
+        <slide>
+          <slideno>7</slideno>
+          <text>Symbian Phones</text>
+        </slide>
+        <slide>
+          <slideno>32</slideno>
+          <text>Using sma.py
+import smaimport sma
+planets = [planets = [ MarsMars ,, EarthEarth ,, VenusVenus ]]
+prompt =prompt = Enter your home planetEnter your home planet 
+index = sma.menu(planets, prompt)index = sma.menu(planets, prompt)
+sma.note(sma.note( HelloHello +planets[index] )+planets[index] )
+Pervasive Computing MIT 6.883 SMA 5508 Spring 2006 Larry Rudolph</text>
+        </slide>
+        <slide>
+          <slideno>33</slideno>
+          <text>No more slides
+ It is easier to go through the pythonreference document, rather than
+reproducing it all here... 
+Pervasive Computing MIT 6.883 SMA 5508 Spring 2006 Larry Rudolph</text>
+        </slide>
+        <slide>
+          <slideno>21</slideno>
+          <text>C++ Programming
+ The real stuff but documentation is difficult 
+ Everything depends on the SDK 
+ Software Development Kit runs under Windows 
+ The processor on phone is ARM (same as iPaq) 
+ Must do cross-compilation 
+ compile with different libraries and assembly instructions  There is an Emulator -- but it is really a simulator 
+ e.g. it executes x86 code not arm code 
+ so must compile either for ARM or x86 
+ emulator is needed for debugging 
+Pervasive Computing MIT 6.883 SMA 5508 Spring 2006 Larry Rudolph</text>
+        </slide>
+        <slide>
+          <slideno>16</slideno>
+          <text>Event Handling
+ Efficient handling major OS design
+ native OS server is single event-handling thread 
+ Symbian organized as Event-driven 
+ Active Objects : non-preemptive event 
+handling 
+ and client-server structure 
+Pervasive Computing MIT 6.883 SMA 5508 Spring 2006 Larry Rudolph</text>
+        </slide>
+        <slide>
+          <slideno>18</slideno>
+          <text>Active Objects
+ Each active object has virtual member function 
+called RunL() 
+ gets called when event happens 
+ events have associated priority  Active Objects execute non-preemptively 
+ RunL() should execute for short time 
+ no need for mutex, semaphores, critical sections 
+ fewer context-switches  Compute-intensive threads: 
+ Simulate using pseudoevents 
+ split task into pieces, generate low-prio event 
+Pervasive Computing MIT 6.883 SMA 5508 Spring 2006 Larry Rudolph</text>
+        </slide>
+        <slide>
+          <slideno>6</slideno>
+          <text>Linux Based Phones</text>
+        </slide>
+        <slide>
+          <slideno>8</slideno>
+          <text>Symbian Epoc OS
+ Originally developed for the Psion handheld computer
+ competition with Palm 
+ single user, small memory, instant-on, no network  EPOC operating system 
+ Symbian independent company 
+ partly owned by Nokia, Sony (no one controls them) 
+ EPOC and Symbian names became intermixed  Nearly all documentation and tools are for commercial
+developers 
+ high start-up cost 
+Pervasive Computing MIT 6.883 SMA 5508 Spring 2006 Larry Rudolph</text>
+        </slide>
+        <slide>
+          <slideno>3</slideno>
+          <text>Current Choices
+ Most phones have two ASICs 
+ Modem/Telephone service 
+ Embedded processor and extra features  Palm-Based: Slow to integrate 
+ Pocket-PC: Appears to be aggressive 
+ Can they maintain two OSs (Windows &amp; WinCE)? 
+ Linux: (actually, Linux+Java) 
+ Still hidden from user Motorola phones 
+ iPaq 6315 has GSM/SIM  Symbian: Mostly on Nokia and Sony/Ericsson 
+ IDC Predicts: Pa:10%, Po:27%, Li:4%, Sy:53% 
+Pervasive Computing MIT 6.883 SMA 5508 Spring 2006 Larry Rudolph</text>
+        </slide>
+        <slide>
+          <slideno>4</slideno>
+          <text>Palm Phones</text>
+        </slide>
+        <slide>
+          <slideno>27</slideno>
+          <text>Pervasive Computing MIT 6.883 SMA 5508 Spring 2006 Larry Rudolphimport appuifw  #  the application user interface fw(?)
+uHello World,  #  u  for a unicode string.  All GUI
+#  strings are unicode.  Others can be
+uinfo #  specifies the type of noteHello World
+import appuifwimport appuifw
+appuifw.note(uappuifw.note(u Hello WorldHello World ,u,uinfoinfo))</text>
+        </slide>
+        <slide>
+          <slideno>29</slideno>
+          <text>Pervasive Computing MIT 6.883 SMA 5508 Spring 2006 Larry RudolphThe menu method pops up the list of items in first param
+It returns with an index into the list of menu items
+Note that the prompt param must also be a unicode stringGet More User Input
+import appuifwimport appuifw
+planets = [ uplanets = [ u MarsMars , u, uEarthEarth , u, uVenusVenus ]]
+prompt = uprompt = u Enter your home planetEnter your home planet 
+index = appuifw.menu(planets, prompt)index = appuifw.menu(planets, prompt)
+appuifw.note(uappuifw.note(u Hello Hello +planets[index] , u+planets[index] , u infoinfo))</text>
+        </slide>
+        <slide>
+          <slideno>20</slideno>
+          <text>Java Programming
+ Lots of examples at www.forum.nokia.com 
+ great for games and network connectivity  Compile on server 
+ Install on phone via: 
+ bluetooth connection 
+ mms message (email) 
+ upload from web server  On phone, java applet must be opened toinstall before being run. 
+Pervasive Computing MIT 6.883 SMA 5508 Spring 2006 Larry Rudolph</text>
+        </slide>
+      </slides>
+      <videos/>
+    </lecture>
+    <lecture>
+      <lecture_title>Pre-Recorded Speech (cont.)</lecture_title>
+      <lecture_pdf_url>https://ocw.mit.edu/courses/6-883-pervasive-human-centric-computing-sma-5508-spring-2006/resources/l14_simplespeech/</lecture_pdf_url>
+      <lectureno>L14</lectureno>
+      <slides>
+        <slide>
+          <slideno>2</slideno>
+          <text>Pervasive Computing MIT 6.883 SMA 5508 Spring 2006 Larry Rudolph
+Simpler than S-
+Builder 
+Simple:
+send audio to server
+receive string in the domain
+but what about domain?
+open a connection with server w/ domain
+stream audio over connection; get string
+when done</text>
+        </slide>
+        <slide>
+          <slideno>1</slideno>
+          <text>Pervasive Computing MIT 6.883 SMA 5508 Spring 2006 Larry Rudolph
+Speechbuilder +/-
+Speechbuilder is a great tool, but 
+Grammar is limited
+Forces use of action and attribute
+Domain has lots of components
+complicated compile of domain pieces -
+- vocabulary, natural language, scoring
+Must start server with domain framework</text>
+        </slide>
+        <slide>
+          <slideno>0</slideno>
+          <text>1 Pervasive Computing MIT 6.883 SMA 5508 Spring 2006 Larry Rudolph
+Simple Speech 
+Recognition
+Larry Rudolph</text>
+        </slide>
+        <slide>
+          <slideno>7</slideno>
+          <text>Pervasive Computing MIT 6.883 SMA 5508 Spring 2006 Larry Rudolph
+more speed
+pipeline whole process.
+what about grammar parse?
+do a Virturbi search
+get back confidence levels</text>
+        </slide>
+        <slide>
+          <slideno>3</slideno>
+          <text>Pervasive Computing MIT 6.883 SMA 5508 Spring 2006 Larry Rudolph
+Streaming Audio
+Long process:  
+each step can be seconds.
+Streaming can speed things up (a lot)Speak Speak 
+(Capture)(Capture)
+Send to Send to 
+serverserver
+RecogRecog
+nizenize
+return return ProcessProcess</text>
+        </slide>
+        <slide>
+          <slideno>4</slideno>
+          <text>Pervasive Computing MIT 6.883 SMA 5508 Spring 2006 Larry Rudolph
+Streaming Audio
+Start sending audio before 
+user is done speaking 
+Start recognition before audio done arriving
+Still must wait for return stringSpeak Speak 
+(Capture)(Capture)
+Send to Send to 
+serverserver
+RecognizeRecognize
+returetu
+rn rn 
+ProcessProcess</text>
+        </slide>
+        <slide>
+          <slideno>6</slideno>
+          <text>Pervasive Computing MIT 6.883 SMA 5508 Spring 2006 Larry Rudolph
+Speed up process
+Do not do natural language filtering
+Do not do very limited vocabulary
+(what should one do with extraneous 
+words -- fastest is to recognize them 
+since ignoring them slows down 
+parsing)</text>
+        </slide>
+        <slide>
+          <slideno>5</slideno>
+          <text>Pervasive Computing MIT 6.883 SMA 5508 Spring 2006 Larry Rudolph
+Streaming 
+recognitionRecall, recognition proceedings in 
+several stages:
+waveform to phonemes 
+phonemes to words
+words to sentences
+Natural language filtering 
+Grammar ParseMuch of  this 
+can be pipelined
+NL requires 
+whole sentence</text>
+        </slide>
+      </slides>
+      <videos/>
+    </lecture>
+    <lecture>
+      <lecture_title>Security</lecture_title>
+      <lecture_pdf_url>https://ocw.mit.edu/courses/6-883-pervasive-human-centric-computing-sma-5508-spring-2006/resources/l18_security/</lecture_pdf_url>
+      <lectureno>L18</lectureno>
+      <slides>
+        <slide>
+          <slideno>22</slideno>
+          <text>Proxy to Proxy
+Case 2: users key is indirectly on the ACL
+Alice (Client Proxy) 
+Db (private key)
+Eb (public key)
+ACL
+Server certs[tag]Da Bob (Server Proxy) 
+Da (private key)
+Ea (public key) Rejected:
+Alices client certs ACL
+List of CA certs
+[tag]Da, certs
+Client performs ACL: {Eb friends} 
+certificate chain Server verifies 
+discovery. certificate 
+chain.</text>
+        </slide>
+        <slide>
+          <slideno>1</slideno>
+          <text>Who cares about 
+Privacy?
+	 Everybody? Nobody? Criminals? Governments? 
+Corporations? 
+	 Privacy is the right to keep information hidden. But 
+there is lots of information. 
+	 You do not have to use stuf f that can be tracked, or 
+do you? 
+	 We in academia can have real impact here 
+Pervasive Computing MIT 6.883 SMA 5508 Spring 2006 Larry 
+Rudolph</text>
+        </slide>
+        <slide>
+          <slideno>10</slideno>
+          <text>Point to point 
+communication
+	 Public Key scheme: many people can send 
+messages to Alice 
+	 But basically a one-to-one protocol: 
+	 With signing and with replies 
+	 Not well suited for pervasive computing 
+	 Environment filled with devices 
+Pervasive Computing MIT 6.883 SMA 5508 Spring 2006 Larry 
+Rudolph</text>
+        </slide>
+        <slide>
+          <slideno>5</slideno>
+          <text>Where security?
+	Communicate thru insecure area 
+	Over internet 
+	Through air (bluetooth, 802.11, ..) 
+	USB keyboard, Monitor via cable 
+	Assumed to be secure 
+	Shared resources or devices 
+	RFID Tags -- very insecure 
+	stand next to you and listen to your
+cards response and replicate it later 
+	Want active RFID tags 
+ use radio power to drive computation 
+Pervasive Computing MIT 6.883 SMA 5508 Spring 2006 Larry 
+Rudolph</text>
+        </slide>
+        <slide>
+          <slideno>17</slideno>
+          <text>SPKI/SDSI: Name 
+(cert
+(issuer Certificate 
+(name
+(public-key
+(rsa-pkcs1-md5
+(e #23#)
+(n
++Txw9NAHq4r|)))
+friends))
+(subject
+(public-key
+(rsa-pkcs1-md5
+(e #23#)
+(n
+afWcYjRw|))))) |AMMgMuKpqK13pHMhC8kuxaSeCo+yt8TadcgnG8bEo+erdrSBveY3CMBkkZqrM0St4KkmMuHMXhsp5FX71XBiVW1+JGCBLfI7hxWDZCxGTMgbR4Fk+ctyUxIv3CQ93uYVkg9ca6awCxtS0EI7sLuEB+HKuOLjzTsH+ 
+|AKg3tOzoJ5PGQ5q9jzxzwxE8o6bIZ6/cE8gEL+1xJa23viE3bz68ruhpD5muqJ+uyDCNxgAZ0JVXJazmX1QjiGudj9kEmuni8gJRLZRu0T5E3K7OU2dodu0kdDg32kym7+ooZNe/F0zWGekfESeezyQ25kvNO3XQvMHX</text>
+        </slide>
+        <slide>
+          <slideno>16</slideno>
+          <text>SPKI/SDSI: Name 
+Certificates
+Traditional:	SPKI/SDSI:
+{MIT Larry, KL}Kmit	{Kc friends, Kd c}K
+{Kc friends, Kec}K  Local name spaces	 {Kc friends, Kf c }K
+	Groups If Kc friends is on an ACL, 
+Kd, Ke and Kf are allowed to 
+access the object. 
+Pervasive Computing MIT 6.883 SMA 5508 Spring 2006 Larry 
+Rudolph</text>
+        </slide>
+        <slide>
+          <slideno>19</slideno>
+          <text>SPKI/SDSI: 
+(certAuthorization Certificate
+(issuer
+(public-key
+(rsa-pkcs1-md5
+(e #23#)
+(n
+|AMMgMuKpqK13pHMhC8kuxaSeCo+yt8TadcgnG8bEo+erdrSBveY3C 
+MBkkZqrM0St4KkmMuHMXhsp5FX71XBiVW1+JGCBLfI7hxWDZCxGTMg 
+bR4Fk+ctyUxIv3CQ93uYVkg9ca6awCxtS0EI7sLuEB+HKuOLjzTsH+ 
++Txw9NAHq4r|))))
+(subject
+(public-key
+(rsa-pkcs1-md5
+(e #23#)
+(n
+|AKg3tOzoJ5PGQ5q9jzx zwxE8o6bIZ6/cE8gEL +1xJa23viE3bz68ru 
+hpD5muqJ+uyDCNxgAZ0J VXJazmX1QjiGudj9kE muni8gJRLZRu0T5E3 
+K7OU2dodu0kdDg32kym7 +ooZNe/F0zWGekfESe ezyQ25kvNO3XQvMHX 
+afWcYjRw|))))
+(tag
+(http
+(* set GET POST) 
+(propagate))(* prefix http://ostri ch.lcs.mit.edu/demo/)))</text>
+        </slide>
+        <slide>
+          <slideno>11</slideno>
+          <text>Want group keys
+	 Want all students in SMA 5508 and 6.883 to access 
+course web site 
+	 Want all SMA students to access SMAs main site, etc. 
+	 A person belongs to many groups 
+	 Grant access based on group 
+	 Add/remove people from group 
+Pervasive Computing MIT 6.883 SMA 5508 Spring 2006 Larry 
+Rudolph</text>
+        </slide>
+        <slide>
+          <slideno>3</slideno>
+          <text>Who cares about 
+Security? 
+ Today, nearly everyone 
+ Limit discussion to information security 
+ Are you allowed to use this device? 
+ authorization  Are you who you say you are? 
+ authentication 
+ Is this device what you think it is? 
+ authentication 
+Pervasive Computing MIT 6.883 SMA 5508 Spring 2006 Larry 
+Rudolph</text>
+        </slide>
+        <slide>
+          <slideno>27</slideno>
+          <text>Example: Public resource
+Mary wants to turn on/off a public light switch.
+[tag]Dm 
+ok 
+1.	Mary sends request (either signed or unsigned) via her 
+proxy to the light switchs proxy.
+2.	Light switchs proxy has no ACL. It honors Marys request.
+Light switchs proxy may require requests to be 
+signed for auditing purposes.
+Pervasive Computing MIT 6.883 SMA 5508 Spring 2006 Larry 
+Rudolph</text>
+        </slide>
+        <slide>
+          <slideno>20</slideno>
+          <text>Proxy to Proxy
+Initialization :
+Da (private key)
+Ea (public key)
+Alices client certs
+List of CA certs
+Alice (Client Proxy) Bob (Server Proxy) 
+Db (private key) 
+Eb (public key) 
+ACL Server certs Set up SSL connection: 
+Server auth Session key for privacy Freshness (nonce) Protection from MIM</text>
+        </slide>
+        <slide>
+          <slideno>25</slideno>
+          <text>Certificate Chain 
+Verification (Server Proxy) 
+ Verify certificate chains 
+ Input: devices ACL, requestors public key, 
+requestors certificate chain, tag 
+ Output: 1 if certificate chain proves that the 
+public key is authorized to perform the tags 
+operations on the device; 0 otherwise. 
+Pervasive Computing MIT 6.883 SMA 5508 Spring 2006 Larry 
+Rudolph</text>
+        </slide>
+        <slide>
+          <slideno>30</slideno>
+          <text>More fun
+	 Integrating access control with name lookup services 
+	 Trusting untrusting devices 
+	 Using public terminals in Startbucks as a cache for 
+handheld 
+Pervasive Computing MIT 6.883 SMA 5508 Spring 2006 Larry 
+Rudolph</text>
+        </slide>
+        <slide>
+          <slideno>29</slideno>
+          <text>Example:users key is indirectly on ACL
+Mary wants to play music on Johns speaker.
+ACL 
+j friends, Em}Ej ACL: {E
+j friends} 
+ok 
+[tag]Dm 
+[tag]Dm, {E
+1. Mary sends signed request via her  proxy to Johns speakers proxy. 
+2. Johns speakers proxy rejects first request, and returns the ACL. 
+1. Marys proxy derives a chain of certificates and sends second 
+request to Johns speakers proxy.
+4. Johns speakers proxy verifies second request.</text>
+        </slide>
+        <slide>
+          <slideno>9</slideno>
+          <text>Certification Authority
+ No, it all depends on having correct public keys. 
+ How did Alice know that B1  is Bobs public key?  
+ Use a certification authority: 
+ some trusted site that associates keys with names. 
+ Hierarchy of CAs 
+Pervasive Computing MIT 6.883 SMA 5508 Spring 2006 Larry 
+Rudolph</text>
+        </slide>
+        <slide>
+          <slideno>2</slideno>
+          <text>Do we have privacy?
+ Mobile Location Protocol 
+ another standard 
+ Used to keep track of your mobile phone 
+ In case you make an emergency call 
+Pervasive Computing MIT 6.883 SMA 5508 Spring 2006 Larry 
+Rudolph</text>
+        </slide>
+        <slide>
+          <slideno>26</slideno>
+          <text>Proxy to Proxy
+Case 2 revisited
+users key is indirectly on the ACL
+Alice (Client Proxy) 
+Db (private key)
+Eb (public key)
+ACL
+Server certs[tag]Da Bob (Server Proxy)
+Da (private key)
+Ea (public key) Rejected:
+Alices client certs ACL
+List of CA certs
+[tag]Da, certs 
+ Signed request provides proof of authenticity of the request 
+ Certificate chain provides proof  that the request is authorized 
+Pervasive Computing MIT 6.883 SMA 5508 Spring 2006 Larry 
+Rudolph</text>
+        </slide>
+        <slide>
+          <slideno>15</slideno>
+          <text>SPKI/SDSI Introduction
+(Simple Public-Key Infrastructure/Simpl e Distributed Securi ty Infrastructure) 
+ Designed by Ron Rivest, Butler  Lampson  and Carl Ellison 
+ Each public key is a CA 
+ Name certificate: defines a name in issuers name space 
+Rudolph  
+issuer to subject 
+Pervasive Computing MIT 6.883 SMA 5508 Spring 2006 Larry Authorization certificate: grants a specific authorization from</text>
+        </slide>
+        <slide>
+          <slideno>12</slideno>
+          <text>Usage Scenario
+DirectorDirector 
+ ACL 
+Director 
+ ACL 
+K1 Students Director 
+ ACL 
+K1 Students TA Directors Office 
+TA 
+TA 
+Student K1 TAs Student Student</text>
+        </slide>
+        <slide>
+          <slideno>24</slideno>
+          <text>Certificate Chain Discovery
+(Client Proxy)
+ Derive certificate chains
+ Input: devices ACL, requestors public key, 
+requestors set of signed certificates, tag 
+ Output: a chain of certificates leading from an 
+entry on the ACL to the requestors public key.
+(The certificate chain consists of si gned certificates. It proves that the 
+requestor is authorized to perform the tags operations on the device.) 
+* Recall, intuitively, a tag is a set of requests.
+Pervasive Computing MIT 6.883 SMA 5508 Spring 2006 Larry 
+Rudolph</text>
+        </slide>
+        <slide>
+          <slideno>14</slideno>
+          <text>SPKI/SDSI Introduction
+(Simple Public-Key Infrastructure/Simpl e Distributed Securi ty Infrastructure) 
+A group key infrastructure 
+Build secure, scalable distributed computing 
+systems 
+Fine-grained access control over an 
+untrusted network 
+Pervasive Computing MIT 6.883 SMA 5508 Spring 2006 Larry 
+Rudolph</text>
+        </slide>
+        <slide>
+          <slideno>23</slideno>
+          <text>Certificate Chaining 
+Example
+ Bobs ACL says only MIT faculty are allowed to access his 
+server. 
+ Alices first request is simply signed with Alices key, and Bob 
+rejects this request. 
+ Alices second request contains  a chain consisting of the 
+following certificates: 
+A certificate saying she is an CSAIL Professor
+A second certificate saying CSAIL Professors are MIT 
+faculty 
+Pervasive Computing MIT 6.883 SMA 5508 Spring 2006 Larry 
+Rudolph</text>
+        </slide>
+        <slide>
+          <slideno>0</slideno>
+          <text>Security &amp; Privacy
+Larry Rudolph
+1 Pervasive Computing MIT 6.883 SMA 5508 Spring 2006 Larry 
+Rudolph</text>
+        </slide>
+        <slide>
+          <slideno>4</slideno>
+          <text>Anonymity
+ I am having a conversation with Alice 
+ Do you know we are talking? 
+ Do you know what we are talking about? 
+ Do you know who we are? 
+ Need indirection 
+ but also many-to-one (so things get lost) 
+ think about publish/subscribe 
+ think about multiple personalities 
+ multiple credit cards, cell phones, BlueTooth IDs 
+ rent personality every 5 min from trusted server 
+Pervasive Computing MIT 6.883 SMA 5508 Spring 2006 Larry 
+Rudolph</text>
+        </slide>
+        <slide>
+          <slideno>28</slideno>
+          <text>Users key directly on ACL
+Mary wants to log into an account on a dialup machine. 
+[tag]Dm 
+ok 
+ACL: {Ec,
+Ef,
+1. Mary sends signed request via her proxy to the dialups Em} 
+proxy. 
+1. Dialups proxy has an ACL which contains Marys 
+public-key. It checks the signature on Marys request,
+Pervasive Computing MIT 6.883 SMA 5508 Spring 2006 Larry 
+Rudolph 
+and honors Marys request to login if the signature verifies.</text>
+        </slide>
+        <slide>
+          <slideno>18</slideno>
+          <text>SPKI/SDSI: Authorization Model
+	 Simple trust policy model 
+	 Authorizations specified in flexible, user-defined tags 
+	 Authorizations can be defined as specific or as general 
+as desired 
+	 Delegation (specific) 
+Pervasive Computing MIT 6.883 SMA 5508 Spring 2006 Larry 
+Rudolph</text>
+        </slide>
+        <slide>
+          <slideno>7</slideno>
+          <text>Public Key Crypto-system
+ Very quick overview 
+ Ke=Public Key, Kd= Private Key 
+ Encrypt message, E = Encrypt (M,Ke) 
+ Decrypt message, M = Decrypt (E,Kd) 
+ where M = Decrypt ( Encrypt (M,Ke), Kd) 
+ and M = Encrypt ( Decrypt (M,Kd), Ke) 
+ Given Ke, M, Encrypt (M,Ke) 
+ cannot easily compute Kd. 
+Pervasive Computing MIT 6.883 SMA 5508 Spring 2006 Larry 
+Rudolph</text>
+        </slide>
+        <slide>
+          <slideno>8</slideno>
+          <text>Signing Messages
+	 Alice &amp; Bob have keys A1, A2, B1, B2 
+	 Alice sends message M to Bob 
+	 Encrypt( M &amp; Encrypt( Alice , A2) , B1 ) 
+	 Bob decrypts message M using B1 and then uses
+Alices public key, A1 to decrypt the name Alice . 
+	 Does Bob know that Alice sent the msg M? 
+Pervasive Computing MIT 6.883 SMA 5508 Spring 2006 Larry 
+Rudolph</text>
+        </slide>
+        <slide>
+          <slideno>21</slideno>
+          <text>Proxy to Proxy
+Case 1: users key is directly on the ACL
+Alice (Client) 
+Da (private key) 
+Ea (public key) 
+Alices client certs 
+List of CA certs Db (private key) 
+Eb (public key) 
+ACL 
+Server certs [tag]Da 
+Response Signed by alice 
+Bob (Server) 
+ACL: {Ec,
+Eb,
+Ea}</text>
+        </slide>
+        <slide>
+          <slideno>13</slideno>
+          <text>Access Control
+Security Model 
+Useful mechanism in guarding access to resources 
+Suitable for dynamic environments 
+Each resource maintains a list referencing a set of 
+valid keys 
+	 Granting, delegating, revoking access 
+	 user/application does not know accessibility of resource without 
+explicitly attempting access 
+Rudolph User User User 
+Pervasive Computing MIT 6.883 SMA 5508 Spring 2006 Larry Resource</text>
+        </slide>
+        <slide>
+          <slideno>6</slideno>
+          <text>Pervasive ComPublic Key Crypto-system
+puting MIT 6.883 SMA 5508 Spring 2006 Larry 
+Rudolph</text>
+        </slide>
+      </slides>
+      <videos/>
+    </lecture>
+    <lecture>
+      <lecture_title>iPAQ, Python&#174;, Connectivity</lecture_title>
+      <lecture_pdf_url>https://ocw.mit.edu/courses/6-883-pervasive-human-centric-computing-sma-5508-spring-2006/resources/l2_python_intro/</lecture_pdf_url>
+      <lectureno>L2</lectureno>
+      <slides>
+        <slide>
+          <slideno>4</slideno>
+          <text>Pervasive Computing MIT 6.883 SMA 5508 Spring 2006 Larry Rudolph
+Installing software
+/etc/ipkg.conf points to feeds
+we will maintain our own feed
+ipkg picks first matching file, not last while 
+searching list of feeds
+Copy files to ipaq via
+secure copy
+scp localFile.py root@ipaqip:/usr/bin/
+serial cable
+xmodem/ymodem, sx on linux</text>
+        </slide>
+        <slide>
+          <slideno>12</slideno>
+          <text>Pervasive Computing MIT 6.883 SMA 5508 Spring 2006 Larry Rudolph
+Lets design it right
+What do we want?
+Everything should just work without 
+setup
+Observation
+most interaction is local
+remote interaction is rare
+overhead for rare cases is ok
+How to setup/find a server without a fixed name or ip address?
+Interactive class discussion</text>
+        </slide>
+        <slide>
+          <slideno>10</slideno>
+          <text>Pervasive Computing MIT 6.883 SMA 5508 Spring 2006 Larry Rudolph
+Online Tutorials
+Tutorials
+http://www.python.org/doc/tut/tut.html
+http://diveintopython.org/
+http://www.intelinfo.com /newly_researched_free_tra
+ining/Python.html
+use google or go to python.org</text>
+        </slide>
+        <slide>
+          <slideno>11</slideno>
+          <text>Pervasive Computing MIT 6.883 SMA 5508 Spring 2006 Larry Rudolph
+Discussion about 
+network infrastructureInitialization
+Network
+Static IP, DNS server -- why IPv6 and 
+why not
+DHCP:  get ip and dns server -- vast improvement
+Servers
+Feed, chat, device, anything new
+too many servers &amp; must always be up
+What will naive user do?</text>
+        </slide>
+        <slide>
+          <slideno>6</slideno>
+          <text>Pervasive Computing MIT 6.883 SMA 5508 Spring 2006 Larry Rudolph
+Connectivity
+Ipaq: 802.11 (WiFi) or Bluetooth
+Mobile: GPRS (edge) or Bluetooth</text>
+        </slide>
+        <slide>
+          <slideno>0</slideno>
+          <text>1 Pervasive Computing MIT 6.883 SMA 5508 Spring 2006 Larry Rudolph
+iPaq Intro, Python, 
+and Connectivity
+Feb 13, 2006
+Larry Rudolph</text>
+        </slide>
+        <slide>
+          <slideno>2</slideno>
+          <text>Pervasive Computing MIT 6.883 SMA 5508 Spring 2006 Larry Rudolph
+Setting up iPaq
+Why Linux?
+Why not Linux on newer models?
+Things particular to these iPaqs
+batteries
+no solid connections (check cables 
+often)
+when in doubt, reinstall</text>
+        </slide>
+        <slide>
+          <slideno>3</slideno>
+          <text>Pervasive Computing MIT 6.883 SMA 5508 Spring 2006 Larry Rudolph
+Connecting to iPaqSerial cable (not usb)
+after boot, can just login via some 
+terminal program (minicom/hyperterm)
+ssh over the network
+setup wireless connection to network
+ssh -l root xxx.xxx.xx.xxx
+need ip address (do not need dns name)
+make sure you are connecting to YOUR ipaq.  Easy to mistype ip address.</text>
+        </slide>
+        <slide>
+          <slideno>7</slideno>
+          <text>8 Pervasive Computing MIT 6.883 SMA 5508 Spring 2006 Larry Rudolph
+Go to Python 
+Tutorial Slides
+Lets go through the slides from the Zope 
+corporation on an introduction to Python by 
+the inventor of python, Guido van Rossum</text>
+        </slide>
+        <slide>
+          <slideno>8</slideno>
+          <text>Pervasive Computing MIT 6.883 SMA 5508 Spring 2006 Larry Rudolph
+Server Codeimport sys, socket
+if len(sys.argv) &lt; 2:
+print "usage: socketserver &lt;port&gt;"
+sys.exit(2)
+# create the server sockets = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+port = int(sys.argv[1])
+# allow the socket to be re-used immediately after a close
+s.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR, 1)
+s.bind( ("0.0.0.0", port) )
+s.listen(5)               # start the server socket
+(client, address) = s.accept()
+print "accepted connection from %s:%d" % (address[0], address[1])
+while True:
+data = client.recv(1024)
+if len(data) == 0:
+print "connection with %s closed." % address[0]
+break
+sys.stdout.write(data)
+client.close()</text>
+        </slide>
+        <slide>
+          <slideno>5</slideno>
+          <text>Pervasive Computing MIT 6.883 SMA 5508 Spring 2006 Larry Rudolph
+Is your ipaq, your 
+ipaq?Anonymous vs Personal  handheldTelephone exampleLandline telephones are anonymousCell/Mobile phones are personalTradeoffsprivate statecan be lost or stolen; should be protectedsetup overhead on userdaily underhead on user: setup once &amp; forgetless dependent on connectivitypublic/private keys easy to use once setup</text>
+        </slide>
+        <slide>
+          <slideno>1</slideno>
+          <text>Pervasive Computing MIT 6.883 SMA 5508 Spring 2006 Larry Rudolph
+Administration
+iPaqs and Mobile Phones very similar
+both use python, bluetooth, internet
+This week:
+Ipaq comments, Python, Network
+Problem set, due in one week
+On your own, watch:
+Jamey Hicks on Linux on iPaq
+(video)</text>
+        </slide>
+        <slide>
+          <slideno>9</slideno>
+          <text>Pervasive Computing MIT 6.883 SMA 5508 Spring 2006 Larry Rudolph
+Client Code
+import sys
+import socket
+if len(sys.argv) &lt; 3: 
+print "usage: socketclient &lt;address&gt; &lt;port&gt;"
+sys.exit(2)
+s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+s.connect( (sys.argv[1], int(sys.argv[2]) ) )
+print "connected.  type stuff."
+while True:
+data = sys.stdin.readline()
+if len(data) == 0:
+print "closing connection with server"
+break
+s.send(data)</text>
+        </slide>
+      </slides>
+      <videos/>
+    </lecture>
+    <lecture>
+      <lecture_title>Publish-Subscribe and Middleware</lecture_title>
+      <lecture_pdf_url>https://ocw.mit.edu/courses/6-883-pervasive-human-centric-computing-sma-5508-spring-2006/resources/l20_publish_subs/</lecture_pdf_url>
+      <lectureno>L20</lectureno>
+      <slides>
+        <slide>
+          <slideno>14</slideno>
+          <text>Suggested additions
+ Need distributed, replicated or federated local instances 
+ (from paper by Storz, Friday, &amp; Davies) 
+ Multiple event heap instances -- but not easy of implement 
+ View: processes that share a view have consistent ordering 
+ Session identifiers 
+ non-destructive operation on per-session identifier basis 
+ can share, copy, or destroy ids for different semantics 
+Pervasive Computing MIT 6.883 SMA 5508 Spring 2006 Larry 
+Rudolph</text>
+        </slide>
+        <slide>
+          <slideno>9</slideno>
+          <text>What is the big deal?
+	 Virtual shared memory 
+	 tuples with [address,value] 
+	 stores are inserts, loads are non-destructive
+reads 
+	 Virtual message passing 
+	 tuples with [dest, data] 
+	 recv are destructive reads 
+	 Even more, when matching on multiple fields 
+	 Allows many types of implementations 
+Rudolph Pervasive Computing MIT 6.883 SMA 5508 Spring 2006 Larry</text>
+        </slide>
+        <slide>
+          <slideno>15</slideno>
+          <text>More general issues
+ Lots and lots of middleware systems 
+ no winner (may never happen) 
+ What gets communicated? 
+ services, events, XML records 
+ The shared space is often a: BROKER 
+ The broker stores the tuples and does the matching 
+Pervasive Computing MIT 6.883 SMA 5508 Spring 2006 Larry 
+Rudolph</text>
+        </slide>
+        <slide>
+          <slideno>6</slideno>
+          <text>Tuple-space
+ A third communication mechanism! 
+
+ formed basis of Linda programming language 
+ tuple: ordered collection of typed elements 
+	 Basic Operations
+ out: inserts a tuple, whose fields are either
+ actual : a static value 
+ formal : a program variable 
+ in: extracts tuple, argument is template to match 
+ actuals match fields of equal type and value 
+ formals match fields of same type 
+Pervasive Computing MIT 6.883 SMA 5508 Spring 2006 Larry  rd: same as in, but does not remove matched tupleRudolph</text>
+        </slide>
+        <slide>
+          <slideno>4</slideno>
+          <text>Agent communication
+ Message-passing 
+ two parts: destination, data 
+ Agent Bob: Send(Alice, D o you want to go out?) 
+ Agent Alice: Recv(from,msg) 
+ from = Bob; msg = do you want to go out? 
+ send(Bob, No) 
+ Issues: 
+ Sender must know dest ination, recv need not 
+ blocking or non-blocking 
+ low performance, lots of copying of data 
+ Note: MP can implement SM and vica-versa 
+ MP on clusters, SM on multiprocessors 
+Pervasive Computing MIT 6.883 SMA 5508 Spring 2006 Larry 
+Rudolph</text>
+        </slide>
+        <slide>
+          <slideno>3</slideno>
+          <text>Agent communication
+	 Two main choices: 
+	 (which was best used to be religious 
+battle)
+	 Shared memory (SM) 
+	 agents load and store values 
+	 start with a set of numbers 
+	 remove two numbers, insert their sum 
+	 done when only one value remains 
+	 issues: synchronization, locks, etc. 
+	 Message-passing (MP) 
+Pervasive Computing MIT 6.883 SMA 5508 Spring 2006 Larry 
+Rudolph</text>
+        </slide>
+        <slide>
+          <slideno>10</slideno>
+          <text>Agent Interaction Choices
+ Direct communication model 
+ Jini 
+ FIPA 
+ Indirect, Shared Data-space models 
+ EventHeap (centalized) 
+ MARS (fully distributed) 
+ Event-based publish/subscribe models 
+ Siena 
+ Jini Distributed Events 
+ Selective subscription 
+Pervasive Computing MIT 6.883 SMA 5508 Spring 2006 Larry 
+Rudolph</text>
+        </slide>
+        <slide>
+          <slideno>16</slideno>
+          <text>Big Issues
+	 Naming 
+	 This is a big, big deal. 
+	 e.g. how do you name a camera: 
+	 model brand, IP, DNS name, location,
+virtual space 
+	 via attributes (color, 740x1024),ownership? 
+	 Is there only one name for the agent? 
+	 Matching 
+	 A big deal 
+	 Which attributes explicit, which implicit 
+	 Where to do the lookup? 
+Pervasive Computing MIT 6.883 SMA 5508 Spring 2006 Larry 
+Rudolph</text>
+        </slide>
+        <slide>
+          <slideno>18</slideno>
+          <text>Issues
+ Standards 
+ XML, SOAP, WSDL 
+ Proprietary Interfaces 
+ Middleware may be new Operating System 
+ Whoever controls it will dominate 
+ Not clear if there is or will be a winner 
+ Integration with web-services 
+ Lightweight devices are different 
+ May want stateful communication 
+Pervasive Computing MIT 6.883 SMA 5508 Spring 2006 Larry 
+Rudolph</text>
+        </slide>
+        <slide>
+          <slideno>1</slideno>
+          <text>Agents
+ An agent is an autonomous program. 
+ It executes code and can communicate with 
+other agents. 
+	 All the components in a pervasive computingapplication (whatever that is) usually called agents 
+	 An agent may be a proxy for a device 
+	 Devices, like camera or keyboards, are
+controlled by some proxy agent
+
+	 There is some issue in how to start them 
+	 There can be problems when they crash Agents may appear or disappear at any time 
+	 there may be replicates 
+Pervasive Computing MIT 6.883 SMA 5508 Spring 2006 Larry 
+Rudolph</text>
+        </slide>
+        <slide>
+          <slideno>12</slideno>
+          <text>Event Heap 
+Extensions
+	 Extended Delivery Semantics: 
+	 Per-source ordering, always see events in
+order they are generated by the source 
+	 Total order: if tuple space is centralized, get
+this even if multiple sources 
+	 Persistent Queries: 
+	 non-destructive read of those matching 
+	 also matches tuples inserted in future 
+	 Event Notification: 
+	 like PQ, get notified of future matches 
+	 at most once semantics 
+Pervasive Computing MIT 6.883 SMA 5508 Spring 2006 Larry 
+Rudolph</text>
+        </slide>
+        <slide>
+          <slideno>7</slideno>
+          <text>Tuple-space example
+Rudolph 
+Pervasive Computing MIT 6.883 SMA 5508 Spring 2006 Larry</text>
+        </slide>
+        <slide>
+          <slideno>5</slideno>
+          <text>Message Passing via 
+Sockets
+	Sockets are general
+Application can specify 
+	port 
+ protocol
+ other attributes
+	Message-Passing 
+	library does all thespecification 
+	may reformat data 
+Pervasive Computing MIT 6.883 SMA 5508 Spring 2006 Larry 
+Rudolph</text>
+        </slide>
+        <slide>
+          <slideno>17</slideno>
+          <text>Issues
+ Addition information provided by broker 
+ for services: how to interface them 
+ filtering events 
+ higher level events implemented at broker 
+ based on multiple basic events 
+ Adaptivity 
+ When to discard services, events 
+ keep alive, heartbeats 
+ Invoke new instance of service automatically 
+ Fault tolerance 
+Pervasive Computing MIT 6.883 SMA 5508 Spring 2006 Larry 
+Rudolph</text>
+        </slide>
+        <slide>
+          <slideno>11</slideno>
+          <text>Stanfords Event Heap
+ Based on Tuple Space paradigm 
+ tuple: arbitrary mix of typed fields 
+ mechanism for passing data &amp; events 
+ Extensions make it useful for agents 
+ many projects exist based on different extensions 
+Pervasive Computing MIT 6.883 SMA 5508 Spring 2006 Larry 
+Rudolph</text>
+        </slide>
+        <slide>
+          <slideno>0</slideno>
+          <text>Publish &amp; Subscribe
+Larry Rudolph
+May 3, 2006
+SMA 5508 &amp; MIT 6.883
+1 Pervasive Computing MIT 6.883 SMA 5508 Spring 2006 Larry 
+Rudolph</text>
+        </slide>
+        <slide>
+          <slideno>8</slideno>
+          <text>Linda programming example
+Pervasive Computing MIT 6.883 SMA 5508 Spring 2006 Larry 
+Rudolph</text>
+        </slide>
+        <slide>
+          <slideno>13</slideno>
+          <text>Need more than 
+simple event heap</text>
+        </slide>
+        <slide>
+          <slideno>2</slideno>
+          <text>A collection of agents
+	Parallel or distributed programming 
+	a bunch of communicating agents working to
+solve a problem
+	faster 
+	two heads better than one 
+	geographically distributed 
+	everyone cant live together 
+Pervasive Computing MIT 6.883 SMA 5508 Spring 2006 Larry 
+Rudolph</text>
+        </slide>
+      </slides>
+      <videos/>
+    </lecture>
+    <lecture>
+      <lecture_title>Kiosk</lecture_title>
+      <lecture_pdf_url>https://ocw.mit.edu/courses/6-883-pervasive-human-centric-computing-sma-5508-spring-2006/resources/l16_kiosk/</lecture_pdf_url>
+      <lectureno>L16</lectureno>
+      <slides>
+        <slide>
+          <slideno>7</slideno>
+          <text>IBM BlueBoard
+MIT 6.894; SMA 5508  Fall2004  Larry Rudolph  Lecture  Kiosk
+ 9</text>
+        </slide>
+        <slide>
+          <slideno>4</slideno>
+          <text>Commercial
+Huge market in Kiosks (in $billions) 
+Point of Sales (POS), without human salesperson 
+Informational display 
+subtle (and not subtle) form of advertisement 
+replace human agent, e.g. guidance 
+Whole focus on current customer interaction
+Real focus is on reducing cost of doing business 
+MIT 6.894; SMA 5508  Fall2004  Larry Rudolph  Lecture  Kiosk
+ 6</text>
+        </slide>
+        <slide>
+          <slideno>14</slideno>
+          <text>iCom 
+Open 24 hours a day 
+Background mode is low 
+bandwidth 
+Can transform into foreground, 
+tele-meetings 
+Screen projections syncd at 
+each site 
+nothing is recorded 
+Bulletin board for messages 
+ordered by popularity and age 
+MIT 6.894; SMA 5508  Fall2004  Larry Rudolph  Lecture  Kiosk
+1</text>
+        </slide>
+        <slide>
+          <slideno>10</slideno>
+          <text>2
+Community Wall
+Ambient display give sense of community 
+Work teams more distributed Content Selection 
+chose which 10 items to present 
+re-evaluate every 10 min 
+Backstage rules 
+relevance of item at specific time 
+User Interaction 
+touching item increases its space and value 
+touching item can cause action (email) 
+MIT 6.894; SMA 5508  Fall2004  Larry Rudolph  Lecture  Kiosk
+1</text>
+        </slide>
+        <slide>
+          <slideno>16</slideno>
+          <text>9
+Dummbo (Georga Tech)
+MIT 6.894; SMA 5508  Fall2004  Larry Rudolph  Lecture  Kiosk
+1</text>
+        </slide>
+        <slide>
+          <slideno>17</slideno>
+          <text>0
+A Wallable Macro Device 
+(CRL -- DEC, COMPAQ, 
+HP)
+Message Panel (on the wall)
+audio/visual messages to visitors or members
+an elaborate info kiosk
+presented here for the cool te chnology (scary faces) 
+MIT 6.894; SMA 5508  Fall2004  Larry Rudolph  Lecture  Kiosk
+2</text>
+        </slide>
+        <slide>
+          <slideno>12</slideno>
+          <text>Notification Collage
+Motivation 
+Aware of many things: people, events, stuff 
+Too much info in our environment Info is static and dynamic Relevance depends on time Sometimes act on info when aware of it Information awareness is a result of gossiping 
+People post stuff by dragging it to Collage 
+Potential extension: 
+only my friends see stuff I look at 
+their friends will see it, if they look at it also 
+MIT 6.894; SMA 5508  Fall2004  Larry Rudolph  Lecture  Kiosk
+1</text>
+        </slide>
+        <slide>
+          <slideno>8</slideno>
+          <text>0
+BlueBoard
+Details 
+Year began: 2000 
+1.3 Meter Plasma Display (touchscreen)
+Badge reader (RFID)
+No keyboard or mouse
+Laptop PC hidden
+Thin client software
+Fast Personal Use
+walk up, check calendar, walk away with 5 sec 
+Small Group Collaborative Use 
+MIT 6.894; SMA 5508  Fall2004  Larry Rudolph  Lecture  Kiosk
+1</text>
+        </slide>
+        <slide>
+          <slideno>15</slideno>
+          <text>8
+Dummbo
+Normal white board; no special training 
+Everything captured (audio &amp; writing) 
+MIT 6.894; SMA 5508  Fall2004  Larry Rudolph  Lecture  Kiosk 
+1 
+SMARTBoard is commercial product 
+Detects which pen is picked up and writing</text>
+        </slide>
+        <slide>
+          <slideno>5</slideno>
+          <text>Usual Kiosk Features
+Users should 
+not be allowed to exit browser 
+have no access to os or other apps cannot change settings privacy must be protected 
+After period of inactivity, kiosk resets 
+A different mode of web browser 
+Mozilla, Opera, Explorer, Safari all have Kiosk 
+modes 
+Sounds like an information appliance 
+MIT 6.894; SMA 5508  Fall2004  Larry Rudolph  Lecture  Kiosk
+ 7</text>
+        </slide>
+        <slide>
+          <slideno>6</slideno>
+          <text>Academic
+Emphasis is on richer interaction 
+Collaboration is the key concept 
+between people 
+between objects (physical and virtual) 
+between places 
+Lets look at some examples 
+MIT 6.894; SMA 5508  Fall2004  Larry Rudolph  Lecture  Kiosk
+ 8</text>
+        </slide>
+        <slide>
+          <slideno>2</slideno>
+          <text>What is a kiosk?
+A stall set up in a publicplace whereonecanobtain
+inform ation, e.g.touristinformation. The information 
+may be prov ided by a hu man or by acom puter .In the
+latter case,the data may be stored locally (e.g. onCD-
+ROM) or accessed v ia
+a network usingso me k ind of  distributed information
+retr ievalsystem such as Gopheror World-Wide Web .
+MIT 6.894; SMA 5508  Fall 2004  Larry Rudolph  Lecture  Kiosk
+ 3</text>
+        </slide>
+        <slide>
+          <slideno>18</slideno>
+          <text>MIT 6.894; SMA 5508  Fall2004  Larry Rudolph  Lecture  Kiosk 2 
+3 
+Media Spaces (Xerox 
+1987)</text>
+        </slide>
+        <slide>
+          <slideno>3</slideno>
+          <text>What is a Kiosk
+Word  His to r y : The word kiosk was originallytakeninto English from
+Turkish,in which its source kk meantpavilion. The open st ructures
+referredto bythe Turkish word were used assumm erhouses in Turkey and
+Persia. The f irstrecorded use of k ioskin English (1625) refers tothese
+Middle Eastern pavi l ions, which Europeans imitated in their own gardens
+and parks. In France and Belg ium, wherethe Turkish word had alsobeen
+borrowed, their word kios q u e was applied to someth ing lower onthe scale,
+structures rese mbl ingthese pavi lions butused as placesto sellnewspapers
+or as bandstands.  England borrowed thislowly structure from France and
+reborrowed the word, which is f irstrecorded in 1865 wi th referenceto a
+place where newspapers are sold.
+MIT 6.894; SMA 5508  Fall2004  Larry Rudolph  Lecture  Kiosk
+ 4</text>
+        </slide>
+        <slide>
+          <slideno>9</slideno>
+          <text>1
+Personal vs Communal 
+Uses
+P-con: image of person 
+representing that persons content 
+Personalize by linking content 
+beforehand (at some web site) 
+Share info: 
+drag-n-drop info to p-con 
+email gets sent when badge-out 
+http://www.richgossweiler.com/projects
+MIT 6.894; SMA 5508  Fall2004  Larry Rudolph  Lecture  Kiosk
+1 /BlueBoard/index.html</text>
+        </slide>
+        <slide>
+          <slideno>11</slideno>
+          <text>MIT 6.894; SMA 5508  Fall2004  Larry Rudolph  Lecture  Kiosk 1 
+3 
+Dynamic Profile based on 
+Context Sensing</text>
+        </slide>
+        <slide>
+          <slideno>13</slideno>
+          <text>6
+iCom (MIT Media Lab)
+A multipoint awareness and communication 
+portal for connecting remote social spaces
+MIT 6.894; SMA 5508  Fall2004  Larry Rudolph  Lecture  Kiosk
+1</text>
+        </slide>
+        <slide>
+          <slideno>0</slideno>
+          <text>Kiosks 
+and more kiosks
+MIT 6.894; SMA 5508  Fall 2004  Larry Rudolph</text>
+        </slide>
+        <slide>
+          <slideno>1</slideno>
+          <text>Intelligent Environments
+Pervasive computing deals with:
+human-centric input modalities
+hand-held devices
+intelligent environments
+A small aspect of intelligent environments is 
+a kiosk 
+commercial -- very big market
+academic -- very few projects
+MIT 6.894; SMA 5508  Fall2004  Larry Rudolph  Lecture  Kiosk
+ 2</text>
+        </slide>
+      </slides>
+      <videos/>
+    </lecture>
+    <lecture>
+      <lecture_title>Keyboards and GUIs
+The Dasher Project</lecture_title>
+      <lecture_pdf_url>https://ocw.mit.edu/courses/6-883-pervasive-human-centric-computing-sma-5508-spring-2006/resources/l10_gui/</lecture_pdf_url>
+      <lectureno>L10</lectureno>
+      <slides>
+        <slide>
+          <slideno>3</slideno>
+          <text>Pervasive Computing MIT 6.883 SMA 5508 Spring 2006 Larry Rudolph
+KISS:  Keep it 
+simple
+Goal is for user to not think about how to do something; it 
+should be automatic:
+If there is a choice, then one must think
+movie theaters offer very limited choice of candy
+supermarkets offer huge variety of soft drinks -- what is 
+difference?
+Save file via menu, keyboard, icon, rightclick, ...
+One mouse button simpler than three
+Pay a lot of money for large screen, why waste it on rarely used menu bar</text>
+        </slide>
+        <slide>
+          <slideno>14</slideno>
+          <text>Pervasive Computing MIT 6.883 SMA 5508 Spring 2006 Larry Rudolph
+Expressive Typing
+Writing with a pen on paper does more 
+than express words:
+it is a picture &amp; conveys non-verbal expression
+Use the intercharacter typing speed to 
+vary either the font or the inter-character 
+spacing or vertical alignment</text>
+        </slide>
+        <slide>
+          <slideno>5</slideno>
+          <text>Pervasive Computing MIT 6.883 SMA 5508 Spring 2006 Larry Rudolph
+Manipulation
+Indirect Manipulation
+E.g. program places graphic objects on screen
+Nothing is clickable
+Today it feels awkward to use keys on mobile phone to 
+manipulate objects on screen.  
+Everything used to be that way.
+Direct Manipulation of Objects
+User directly manipulates Graphical Objects with mouse 
+or keyboard
+Tangible User Interface of the future, users will 
+manipulate physical objects with their hands</text>
+        </slide>
+        <slide>
+          <slideno>13</slideno>
+          <text>Pervasive Computing MIT 6.883 SMA 5508 Spring 2006 Larry Rudolph
+Dasher
+go to 
+www.inference.phy.cam.ac.u k/dasher</text>
+        </slide>
+        <slide>
+          <slideno>16</slideno>
+          <text>Pervasive Computing MIT 6.883 SMA 5508 Spring 2006 Larry Rudolph
+Glade (for linux, x-
+windows)
+Three layers:
+user application, user GUI, window system
+we care about first two, glade deals with GUI
+Application separate from GUI
+Interface is via callbacks
+Each widget has a set of standard interfaces
+see http://glade.gnome.org/index.html</text>
+        </slide>
+        <slide>
+          <slideno>15</slideno>
+          <text>Pervasive Computing MIT 6.883 SMA 5508 Spring 2006 Larry Rudolph
+GUI Programming
+Embed in code
+Java AWT,  Python TCL,TK
+Very hard to code, debug, maintain and modify
+Use GUI builder, e.g. Visual Basic
+rapid prototype
+reliable
+consistency across applications
+easier to implement help and undo
+easier to port</text>
+        </slide>
+        <slide>
+          <slideno>11</slideno>
+          <text>Pervasive Computing MIT 6.883 SMA 5508 Spring 2006 Larry Rudolph
+Touch Screens
+Not exactly the same as a mouse
+Click:  no button down or button up
+dwell:  leave finger in same location
+double click hard to hit same pixel twice in a row
+Movement: absolute, no consistent origin
+top left, or bottom right can be (0,0)
+Drag:  very difficult, need modal command
+modes are considered harmful , e.g. shift lock is bad
+Wheel:  perhaps use some gesture?
+Not easy to simply replace mouse with touch</text>
+        </slide>
+        <slide>
+          <slideno>2</slideno>
+          <text>Pervasive Computing MIT 6.883 SMA 5508 Spring 2006 Larry Rudolph
+User Interface Goal II
+As interfaces become easier to use, they become harder 
+to create [Meyers 1994]
+Do you agree?
+KISS: Keep It Simple
+It takes a lot of hard work to make things look simple
+What user interfaces do you like?
+iPod, Tivo, ...
+Microsoft Windows 2000 have dynamic pulldown menus
+Does anyone like them?  why not?</text>
+        </slide>
+        <slide>
+          <slideno>6</slideno>
+          <text>Pervasive Computing MIT 6.883 SMA 5508 Spring 2006 Larry Rudolph
+Widgets
+For lack of natural term, GUI objects are Widgets
+Everything in a GUI is a widget
+Widget is picture displayed on screen that is under control of 
+the GUI.
+Widgets are hierarchical:  th ey contain other widgets.  
+Examples are:
+Window frame, radio button, scroll bar, menu, ..
+GUIs support certain types of pictures
+others types must be converted</text>
+        </slide>
+        <slide>
+          <slideno>7</slideno>
+          <text>Pervasive Computing MIT 6.883 SMA 5508 Spring 2006 Larry Rudolph
+Any problem in computer programming 
+can be solved by adding a level of 
+abstraction
+Performance can be improved in programs by removing a level of abstraction
+Indirection used to support abstractionBig Idea: Abstraction</text>
+        </slide>
+        <slide>
+          <slideno>9</slideno>
+          <text>Pervasive Computing MIT 6.883 SMA 5508 Spring 2006 Larry Rudolph
+MiceMouse is clicked inside of window or widget
+e.g.: controls standard widgets: drag a slider, twist a 
+dial, scroll up or down -- all ways to enter a number
+Major innovation: mouse cursor changes sprite as moves between widgets
+Real world analogy: frog looks different on a lilly pad and in the pond, car looks same in drive- &amp; park- way
+Mouse is part of GUI, but not multiple mice
+New need arising from wireless mouse and from pda or cell phone as mouse
+Perhaps we need different sprites per user?</text>
+        </slide>
+        <slide>
+          <slideno>12</slideno>
+          <text>Pervasive Computing MIT 6.883 SMA 5508 Spring 2006 Larry Rudolph
+Keyboards
+It seems simple, precise, and nothing newOne hand typing --my idea:  double keypress -- means mirror keyaa means ;; ss means ll &amp; gg means hhI needed it when I sat with a baby in my lapthere exist other one hand keyboards:  twiddler (chording keyboard) half keyboardTelephone pad keyboard: 1-2, 2-3, 1-4, 1-4-2-5,  2-5
+Keyboard entry not exacton-screen keyboarda G could be an f, t, h, or bCellphone keyboarda G could be a 4 or H or I</text>
+        </slide>
+        <slide>
+          <slideno>0</slideno>
+          <text>1 Pervasive Computing MIT 6.883 SMA 5508 Spring 2006 Larry Rudolph
+GUIs and Keyboards
+Larry Rudolph
+March 13, 2006</text>
+        </slide>
+        <slide>
+          <slideno>1</slideno>
+          <text>Pervasive Computing MIT 6.883 SMA 5508 Spring 2006 Larry Rudolph
+User Interface Goal
+Convey and gather information from user
+Support a set of standard actions and outputs
+Graphical User Interfaces have been well studied and used
+Must understand them before generalizing
+Pervasive computing uses many types of user 
+interfaces
+A web page is an example of a GUI
+Why is there a need for anything else?
+Because of historical and efficiency reasons
+Want more direct and richer variety of interface</text>
+        </slide>
+        <slide>
+          <slideno>4</slideno>
+          <text>Pervasive Computing MIT 6.883 SMA 5508 Spring 2006 Larry Rudolph
+KISS:  Keep it 
+simple
+People do not think about repetitive actions
+Do you really want to delete file?
+after third time, people usually click OK without thinking
+Lots of research on design principles
+and it is often ignored :(</text>
+        </slide>
+        <slide>
+          <slideno>8</slideno>
+          <text>Pervasive Computing MIT 6.883 SMA 5508 Spring 2006 Larry Rudolph
+Non-widgets
+A GUI is a level of abstraction between user and program, 
+hence it affects performance
+Graphical Computer Games demand high performance for realistic animations
+They directly manipulate the screen, mouse, keyboard
+Audio not part of GUI
+Duh.  OK, but not part of window system either
+Could do it by assigning a channel to each application and have user select the channel as in a radio</text>
+        </slide>
+        <slide>
+          <slideno>10</slideno>
+          <text>Pervasive Computing MIT 6.883 SMA 5508 Spring 2006 Larry Rudolph
+Mice II
+Mouse actions:  
+Click is two actions:  button down and button up
+Movement is relative: delta x, delta y events
+Drag:  move while button is down
+Wheel: Button D or Button U events
+One button mouse easier to handle
+Multiple button mouse requires training
+people have been successfully trained already
+Mouse acceleration big success.  
+Are there other applications of acceleration?</text>
+        </slide>
+      </slides>
+      <videos/>
+    </lecture>
+    <lecture>
+      <lecture_title>Location - Cricket</lecture_title>
+      <lecture_pdf_url>https://ocw.mit.edu/courses/6-883-pervasive-human-centric-computing-sma-5508-spring-2006/resources/l7_batscrickets/</lecture_pdf_url>
+      <lectureno>L7</lectureno>
+      <slides>
+        <slide>
+          <slideno>13</slideno>
+          <text>Image removed due to copyright restrictions.</text>
+        </slide>
+        <slide>
+          <slideno>19</slideno>
+          <text>Figure by MIT OCW.ORACLE 7
+Relational DatabaseMobile 
+Application
+Bat
+Sensor
+Resource 
+MonitorsOuijaProxy
+ServerOuija
+Proxy
+ServerFast PathCORBA
+Oracle C Interface (OCI)Spatial
+Indexing
+Proxy
+THREE-TIER ARCHITECTURE</text>
+        </slide>
+        <slide>
+          <slideno>1</slideno>
+          <text>Location of what?
+	Objects 
+	Static, Moveable, or Mobile 
+	Frequency of movement: door, desk, 
+laptop 
+	Dumb or Networked 
+	People 
+	Waldo asks Where am i? 
+	System asks wheres Waldo? 
+	Services 
+	applications, resources, sensors, actuators 
+	where is a device, web site, app</text>
+        </slide>
+        <slide>
+          <slideno>15</slideno>
+          <text>Image removed due to copyright restrictions.</text>
+        </slide>
+        <slide>
+          <slideno>8</slideno>
+          <text>BAT Details
+	Ultrasound transmitters 
+	5 cm x 3 cm x 3 cm; 35 grams 
+	unique id (48 bit) 
+	temp id (10 bit) -- reduces power 
+	button (just one) 
+	rf transceiver 
+	Receivers in ceiling 
+	Base station 
+	periodically queries, then bats respond 
+	query time, recv time, room temp 
+	330 m/s + .6*temp; &gt;2 receivers ==&gt; 
+location</text>
+        </slide>
+        <slide>
+          <slideno>20</slideno>
+          <text>Better Trackers
+Bayesian filtering on sensory data 
+Predict where person will be in future. 
+position and speed over near past 
+behavior (avg speed) over long 
+term
+Uses 
+Filter bad sensory data 
+Likely place to find someone 
+Predict which sensors to monitor 
+Pervasive Computing MIT 6.883 SMA 5508 Spring 2006 Larry 
+Rudolph</text>
+        </slide>
+        <slide>
+          <slideno>4</slideno>
+          <text>Image removed due to copyright restrictions.</text>
+        </slide>
+        <slide>
+          <slideno>12</slideno>
+          <text>Application: Follow-
+me Desktop
+Pervasive Computing MIT 6.883 SMA 5508 Spring 2006 Larry 
+Rudolph Figure by MIT OCW.pjspjspjs
+Spatial monitoring application that moves users' desktops around with them. The application registers with the Spatial Monitor:
+(A)  As the user (pjs) approaches the display
+(B) Or moves away from it
+(C) The spatial monitor sends a positive or negative containment event to the application that transfers or removes the desktop
+       to or from the screen.(A) (B) (C)</text>
+        </slide>
+        <slide>
+          <slideno>0</slideno>
+          <text>Tracking Indoors
+1 Rudolph 
+Pervasive Computing MIT 6.883 SMA 5508 Spring 2006 Larry</text>
+        </slide>
+        <slide>
+          <slideno>24</slideno>
+          <text>Division of Labor
+	Determining the location of object
+	Associating name with location 
+	Object (or person) has name
+	Object has a location 
+	physical or virtual (instantiation of 
+program on some machine) 
+	Need scalable solution to connect them 
+	RFIDs demand scalability
+Pervasive Computing MIT 6.883 SMA 5508 Spring 2006 Larry 
+Rudolph</text>
+        </slide>
+        <slide>
+          <slideno>14</slideno>
+          <text>Image removed due to copyright restrictions.</text>
+        </slide>
+        <slide>
+          <slideno>21</slideno>
+          <text>A few details of 
+Bayesian Filtering
+Bayes filters estimate posterior distribution over the state xt of 
+a dynamical system conditioned on all sensor information 
+collected so far: 
+To compute the likelihood of an observation z given a position x on 
+the graph, we have to integrate over all 3d positions projected onto 
+x: 
+See Voronoi tracking  Liao, et al.</text>
+        </slide>
+        <slide>
+          <slideno>7</slideno>
+          <text>Cambridge ATTs BAT
+Pervasive Computing MIT 6.883 SMA 5508 Spring 2006 Larry 
+Rudolph Image removed due to copyright restrictions.</text>
+        </slide>
+        <slide>
+          <slideno>11</slideno>
+          <text>Pervasive ComProgramming 
+Model?
+ Analogous to window-system. BAT 
+enters workstation space, causes an event call-back 
+puting MIT 6.883 SMA 5508 Spring 2006 Larry 
+Rudolph 
+Image removed due to copyright restrictions.</text>
+        </slide>
+        <slide>
+          <slideno>10</slideno>
+          <text>Feedback of Location-
+service
+Human-centric view of location 
+information 
+Cuteness reduces concern over privacy 
+Image removed due to copyright restrictions.</text>
+        </slide>
+        <slide>
+          <slideno>23</slideno>
+          <text>Universal 
+Location 
+Framework
+Stack: Sensor, Measure, Fusion, 
+Application 
+Location API (preliminary) 
+What: timestamp, position, 
+uncertainty 
+When: Automatic (push), Manual 
+(pulll), Periodic 
+802.11 base station location 
+Calibrated database of signal characteristics 
+3 to 30 meter accuracy</text>
+        </slide>
+        <slide>
+          <slideno>3</slideno>
+          <text>Tangential Note:
+Larrys conjecture
+	Any sensing service in pervasive computing only 
+needs: 
+	some cameras 
+	lots of computing power
+ some clever algorithms 
+ Any sensing service in pervasive computing 
+	can be done cheaper with application-specific 
+hardware! 
+	E.g: Location tracking &amp; recognition</text>
+        </slide>
+        <slide>
+          <slideno>18</slideno>
+          <text>Image removed due to copyright restrictions.</text>
+        </slide>
+        <slide>
+          <slideno>16</slideno>
+          <text>Image removed due to copyright restrictions.</text>
+        </slide>
+        <slide>
+          <slideno>22</slideno>
+          <text>Image removed due to copyright restrictions.</text>
+        </slide>
+        <slide>
+          <slideno>5</slideno>
+          <text>Cambridge ATTs BAT</text>
+        </slide>
+        <slide>
+          <slideno>17</slideno>
+          <text>How well does it 
+work?
+Image removed due to copyright restrictions.</text>
+        </slide>
+        <slide>
+          <slideno>2</slideno>
+          <text>Tracking technology 
+	Some examples:
+	802.11; Bluetooth (Intel, HP, ..), 
+RFID 
+	ParcTab (Xerox) 
+	Active Badge (Cambridge ATT) 
+	BATs (Cambridge ATT) 
+	Crickets (MIT) 
+	Cameras 
+Pervasive Computing MIT 6.883 SMA 5508 Spring 2006 Larry 
+Rudolph</text>
+        </slide>
+        <slide>
+          <slideno>9</slideno>
+          <text>More on BATs
+ Deployment
+ 50 staff members, 200 BATS, 750 
+Receivers, 3 Radio cells, 10,000 sq ft 
+office space
+ 20 ms per bat enables 50 BATs / sec
+ Smart scheduling reduces BATs power
+ while at rest, reduce frequency of query 
+ detect activity at PC to deduce rest 
+ Convert BAT location to object location
+ Centralized Datebase 
+ less latency than distributed query 
+ better filtering and error detection</text>
+        </slide>
+        <slide>
+          <slideno>6</slideno>
+          <text>Cambridge ATTs BAT
+Pervasive Computing MIT 6.883 SMA 5508 Spring 2006 Larry 
+Rudolph Image removed due to copyright restrictions.</text>
+        </slide>
+      </slides>
+      <videos/>
+    </lecture>
+    <lecture>
+      <lecture_title>Sketching</lecture_title>
+      <lecture_pdf_url>https://ocw.mit.edu/courses/6-883-pervasive-human-centric-computing-sma-5508-spring-2006/resources/l17_sketch/</lecture_pdf_url>
+      <lectureno>L17</lectureno>
+      <slides>
+        <slide>
+          <slideno>2</slideno>
+          <text>Comparison to speech
+ Noisy environment -- can write but cannot talk
+ Sketches useful after communication is over 
+ Can express things for which there are 
+ too many words 
+ no words 
+ picture is worth at least 1,000 words
+ Compare to GUI? 
+ GUI provides fixed, visible vocabulary 
+ sketching has invisible domain 
+ Sketching like speech relies on users familiarity 
+Pervasive Computing MIT 6.883 SMA 5508 Spring 2006 Larry 
+Rudolph</text>
+        </slide>
+        <slide>
+          <slideno>16</slideno>
+          <text>A parse in action
+Pervasive Computing MIT 6.883 SMA 5508 Spring 2006 Larry 
+Rudolph</text>
+        </slide>
+        <slide>
+          <slideno>13</slideno>
+          <text>Visual Language 
+Syntax</text>
+        </slide>
+        <slide>
+          <slideno>20</slideno>
+          <text>General strategies
+Simpler is better 
+ more specific is better 
+ user feedback 
+ single stroke rather than bunch of parts 
+rule based system 
+ not virturbi-like search 
+Pervasive Computing MIT 6.883 SMA 5508 Spring 2006 Larry 
+Rudolph</text>
+        </slide>
+        <slide>
+          <slideno>27</slideno>
+          <text>Some basic shapes 
+that have been 
+Rudolph 
+defined 
+Pervasive Computing MIT 6.883 SMA 5508 Spring 2006 Larry</text>
+        </slide>
+        <slide>
+          <slideno>22</slideno>
+          <text>direction, curvature &amp; 
+speed
+ Find places with 
+ minimum speed
+Rudolph  maximal curvature 
+Pervasive Computing MIT 6.883 SMA 5508 Spring 2006 Larry</text>
+        </slide>
+        <slide>
+          <slideno>21</slideno>
+          <text>Early 
+Processing
+ Find line segments 
+ so find the vertices 
+ not so easy 
+ wrong geometry 
+ round corners</text>
+        </slide>
+        <slide>
+          <slideno>19</slideno>
+          <text>More detail
+ delay commitment -- until body is done
+ timing is crucial 
+ too early, not enough information
+ too late, not useful to user 
+ people tend to draw all of one object
+before moving to a new one 
+ longer figure remains unchanged,
+more likely new strokes will not be
+added 
+Pervasive Computing MIT 6.883 SMA 5508 Spring 2006 Larry 
+Rudolph</text>
+        </slide>
+        <slide>
+          <slideno>12</slideno>
+          <text>Very similar to Galaxy</text>
+        </slide>
+        <slide>
+          <slideno>31</slideno>
+          <text>Xstroke
+# 1 2 3
+# 4 5 6
+# 7 8 9
+# The extents of the grid will be automatically inferred based on the
+# bounding box of the input stroke. This makes xstroke robust to many
+# stroke distortions including translation and independent scaling
+# along the X and Y axes.
+#
+# For example, an intuitive stroke for the letter L might be:
+#
+# Key L = 14789
+# Key L = 147?89           (7? means 7 is optional) 
+[1 2] means 1 or 2 
+What letter is this? 
+([12]*[45][78]|[12][45]+[78]?)?[78]*[4] *(1?[2][369]+|1[25][369]*)([369]+[25]+ 
+8?[147]?[258]*[369]+|[25]*8?[147]+[258] +[369]*)([369]*[58][74]+|[369]+[58][74]*) 
+B Pervasive Computing MIT 6.883 SMA 5508 Spring 2006 Larry 
+Rudolph</text>
+        </slide>
+        <slide>
+          <slideno>5</slideno>
+          <text>Why no recognition
+ actually, a spectrum of recognition
+ quickly prototyping user interfaces 
+ easier than using CAD tools 
+ easier to brainstorm; be creative 
+ what to do with recognition errors?
+ separate window? 
+ nothing: do not want to interfere? 
+Pervasive Computing MIT 6.883 SMA 5508 Spring 2006 Larry 
+Rudolph</text>
+        </slide>
+        <slide>
+          <slideno>14</slideno>
+          <text>Probability to the 
+rescue
+	To give a label to an elem ent in drawing, base it 
+one multiple features 
+	Use Bayes Theorem 
+	prob this is the label given these features 
+	probability given this label, would have 
+these features 
+	accounting for the likelihood of these 
+Rudolph features here 
+Pervasive Computing MIT 6.883 SMA 5508 Spring 2006 Larry</text>
+        </slide>
+        <slide>
+          <slideno>18</slideno>
+          <text>MIT Assists Approach
+ Interprets and understands as being drawn 
+ sequence of strokes while system watches 
+ Very limited domain -- mechanical engineering
+ general architecture to 
+ represent ambiguities 
+ add contextual knowledge to resolve
+ambiguities 
+ low-level --- purely geometric
+ high-level -- domain specific 
+Pervasive Computing MIT 6.883 SMA 5508 Spring 2006 Larry 
+Rudolph</text>
+        </slide>
+        <slide>
+          <slideno>3</slideno>
+          <text>Perceptual User Interface (PUI)
+	Vision, speech, gestures are come to mind 
+	Hey, dont forget sketching 
+	Sketching modes 
+	formal -- CAD tools 
+	informal 
+	ambiguity encourages the de signer to explore more 
+ideas in early stages 
+	ignore details such as color, alignment, size 
+	both? 
+	do not to do both from scr atch. when ready, fix up 
+informal sketch 
+Pervasive Computing MIT 6.883 SMA 5508 Spring 2006 Larry 
+Rudolph</text>
+        </slide>
+        <slide>
+          <slideno>4</slideno>
+          <text>Differences in strategies
+ Recognize vs. Dont recognize 
+ Similar to speech trade-offs 
+ word recognition 
+ sentence (concept) recognition 
+ When is recognition done? 
+ stroke-based (while drawing) 
+ image-based (after drawing is done) 
+Pervasive Computing MIT 6.883 SMA 5508 Spring 2006 Larry 
+Rudolph</text>
+        </slide>
+        <slide>
+          <slideno>24</slideno>
+          <text>Description of shapes
+ Built-in, basic shapes fine, but limited
+ Want hierarchical, composible shapes
+ One approach 
+ constrained rule-based 
+ 2-d is harder than 1-d, so constrains 
+work better 
+ language for describing shape
+Pervasive Computing MIT 6.883 SMA 5508 Spring 2006 Larry 
+Rudolph</text>
+        </slide>
+        <slide>
+          <slideno>23</slideno>
+          <text>One is not enough
+ Use average based filtering
+ divide into regions of max 
+curvature and min speed
+ curvature &amp; speed not 
+uniform
+ different approx on each 
+ combined is best 
+Pervasive Computing MIT 6.883 SMA 5508 Spring 2006 Larry 
+Rudolph</text>
+        </slide>
+        <slide>
+          <slideno>25</slideno>
+          <text>Domain 
+Description in 
+Ladder
+Pervasive Computing MIT 6.883 SMA 5508 Spring 2006 Larry 
+Rudolph</text>
+        </slide>
+        <slide>
+          <slideno>30</slideno>
+          <text>PADCAM:
+A human-centric sketching user interface
+ Use any pen 
+ Use any paper 
+ Draw as usual 
+ Strokes captured with timing info 
+ as if done on touch screen 
+ If system crashes, still have notes 
+Pervasive Computing MIT 6.883 SMA 5508 Spring 2006 Larry 
+Rudolph</text>
+        </slide>
+        <slide>
+          <slideno>1</slideno>
+          <text>Motivation
+ Natural Interface 
+ touch screens + more 
+ Mass-market of h/w devices available
+ Still lack of s/w &amp; applications for it 
+ Similar and different from speech 
+ how? 
+Pervasive Computing MIT 6.883 SMA 5508 Spring 2006 Larry 
+Rudolph</text>
+        </slide>
+        <slide>
+          <slideno>11</slideno>
+          <text>Lots of ambiguities 
+ Attachment 
+ text to line 
+ Gap 
+ omitted values 
+ Role 
+ what is legend? 
+ Segmentation 
+ single terminal represents
+multiple syntactic entities 
+ Occlusion 
+Pervasive Computing MIT 6.883 SMA 5508 Spring 2006 Larry 
+Rudolph</text>
+        </slide>
+        <slide>
+          <slideno>15</slideno>
+          <text>Fixup the description
+Pervasive Computing MIT 6.883 SMA 5508 Spring 2006 Larry 
+Rudolph</text>
+        </slide>
+        <slide>
+          <slideno>10</slideno>
+          <text>SILKs Editing Gestures 
+ Recognizes gestures through Rubines algorithm 
+ statistical pattern-recogn ition trains classifiers 
+ used only 15 to 20 examples for each primitive 
+ To classify gesture, co mpute its distinguishing f. 
+Rudolph  angles, point-to-point distances 
+Pervasive Computing MIT 6.883 SMA 5508 Spring 2006 Larry</text>
+        </slide>
+        <slide>
+          <slideno>6</slideno>
+          <text>Some projects
+ Assist (Davis -- MIT / CSAIL) 
+ more about this later  Silk (Landay and Myers 2001)  Sketching Interfaces Like Krazy  more in next slildes  some others not discussed  Burlap (Mankoff, Hudson 2000)  mediation used to correct recognition errors  DENIM (Lin, Newman 2000)  sketch tool for web designers 
+ minimize the amount of recognition 
+Pervasive Computing MIT 6.883 SMA 5508 Spring 2006 Larry 
+Rudolph</text>
+        </slide>
+        <slide>
+          <slideno>28</slideno>
+          <text>Pervasive Computing MIT 6.883 SMA 5508 Spring 2006 Larry
+Sketching Flowcharts
+Rudolph</text>
+        </slide>
+        <slide>
+          <slideno>0</slideno>
+          <text>Sketching Interface
+Larry Rudolph
+April 24, 2006
+1 Pervasive Computing MIT 6.883 SMA 5508 Spring 2006 Larry 
+Rudolph</text>
+        </slide>
+        <slide>
+          <slideno>7</slideno>
+          <text>Real-time Recognition
+ Start with visual language 
+ syntax in a declarative grammar 
+ consider multiple ambiguous interpretations
+ use probability to disambiguate 
+Pervasive Computing MIT 6.883 SMA 5508 Spring 2006 Larry 
+Rudolph</text>
+        </slide>
+        <slide>
+          <slideno>9</slideno>
+          <text>Silk for Web Design
+ Designer sketches UI (for web)</text>
+        </slide>
+        <slide>
+          <slideno>29</slideno>
+          <text>PADCAM:
+A human-centric sketching user interface
+Pervasive Computing MIT 6.883 SMA 5508 Spring 2006 Larry 
+Rudolph</text>
+        </slide>
+        <slide>
+          <slideno>26</slideno>
+          <text></text>
+        </slide>
+        <slide>
+          <slideno>17</slideno>
+          <text>Domain dependent
+ Like speech, good results require 
+limiting of the domain 
+ Accuracy not very good a couple of years ago 
+ Must do more analysis in each domain
+Pervasive Computing MIT 6.883 SMA 5508 Spring 2006 Larry 
+Rudolph</text>
+        </slide>
+        <slide>
+          <slideno>8</slideno>
+          <text>How Silk Works
+ As designer sketches, silk recognizes them
+ Assumed to use touch-screen 
+ Add behavior through storyboarding 
+ drawing arrows between related screens
+ SILK transforms rough design to real one 
+Pervasive Computing MIT 6.883 SMA 5508 Spring 2006 Larry 
+Rudolph</text>
+        </slide>
+      </slides>
+      <videos/>
+    </lecture>
+    <lecture>
+      <lecture_title>Discussion of Readings (cont.)
+Bluetooth Tutorial Slides</lecture_title>
+      <lecture_pdf_url>https://ocw.mit.edu/courses/6-883-pervasive-human-centric-computing-sma-5508-spring-2006/resources/r2_bluetooth_tut/</lecture_pdf_url>
+      <lectureno>R2</lectureno>
+      <slides>
+        <slide>
+          <slideno>2</slideno>
+          <text>Server (rfcomm/L2CAP)
+port = 1    #or 
+0x1001server_sock=BluetoothSocket( RFCOMM) # or L2CAPserver_sock.bind(("",port))server_sock.listen(1)client_sock, client_info = server_sock.accept()print "Accepted connection from ", client_infodata = client_sock.recv(1024)print "received [%s]" % dataclient_sock.close()server_sock.close()</text>
+        </slide>
+        <slide>
+          <slideno>3</slideno>
+          <text>Service Discovery
+port = get_available_port( RFCOMM 
+)server_sock=BluetoothSocket( RFCOMM 
+)server_sock.bind(("",port))server_sock.listen(1)ad
+vertise_service( server_sock, "Bluetooth Serial 
+Port",                     service_classes = [ 
+SERIAL_PORT_CLASS ],                    profiles = [ 
+SERIAL_PORT_PROFILE ] )client_sock, 
+client_info = server_sock.accept()print "Accepted 
+connection from ", client_infodata = 
+client_sock.recv(1024)</text>
+        </slide>
+        <slide>
+          <slideno>5</slideno>
+          <text>Dynamically allocate 
+port
+from bluetooth import *socket = 
+BluetoothSocket( RFCOMM )while True:    
+free_port = get_available_port( RFCOMM )    
+try:        socket.bind( ( "", free_port ) )        break    
+except BluetoothError:        print "couldn't bind to ", free_port# listen, accept, and the rest of 
+the program...</text>
+        </slide>
+        <slide>
+          <slideno>7</slideno>
+          <text>Pervasive Computing MIT 6.883 SMA 5508 Spring 2006 Larry Rudolph
+If confused ...
+Can always go look at source ...
+on my linux machine,
+/usr/lib/python2.3/site-
+packages/bluetooth.py
+look at class DeviceDiscoverer for the 
+skeleton code.</text>
+        </slide>
+        <slide>
+          <slideno>4</slideno>
+          <text>import sysfrom bluetooth import 
+*service_matches = find_service( name = 
+"Bluetooth Serial Port",  uuid = 
+SERIAL_PORT_CLASS )if len(service_matches) 
+== 0:    print "couldn't find the service!":  
+sys.exit(0)first_match = service_matches[0]port = 
+first_match["port"]name = first_match["name"]host 
+= first_match["host"]print "connecting to ", 
+hostsock=BluetoothSocket( RFCOMM 
+)sock.connect((host, port))sock.send("hello!!")</text>
+        </slide>
+        <slide>
+          <slideno>1</slideno>
+          <text>from bluetooth import *target_name = "My 
+Phone"target_address = Nonenearby_devices = 
+discover_devices()for address in nearby_devices:    
+if target_name == lookup_name( address ):        
+target_address = address        breakif 
+target_address is not None:    print "found target 
+bluetooth device with address ", 
+target_addresselse:    print "could not find target 
+bluetooth device nearby"</text>
+        </slide>
+        <slide>
+          <slideno>0</slideno>
+          <text>1 Pervasive Computing MIT 6.883 SMA 5508 Spring 2006 Larry Rudolph
+Bluetooth Tutorial
+Larry Rudolph</text>
+        </slide>
+        <slide>
+          <slideno>6</slideno>
+          <text>Asynchronous
+from bluetooth import *from select import *class 
+MyDiscoverer(DeviceDiscoverer):    def pre_inquiry(self):        self.done = False        def device_discovered(self, address, device_class, name):        print "%s - %s" % (address, name)    def inquiry_complete(self):        self.done = Trued = 
+MyDiscoverer()d.find_devices(lookup_names = 
+True)while True:    can_read, can_write, has_exc = select( [d], [ ], [ ] )    if d in can_read:        d.process_event()    if d.done: break</text>
+        </slide>
+      </slides>
+      <videos/>
+    </lecture>
+    <lecture>
+      <lecture_title>Location - GPS</lecture_title>
+      <lecture_pdf_url>https://ocw.mit.edu/courses/6-883-pervasive-human-centric-computing-sma-5508-spring-2006/resources/l5a/</lecture_pdf_url>
+      <lectureno>L5</lectureno>
+      <slides>
+        <slide>
+          <slideno>19</slideno>
+          <text>Service Description
+Service A: Ringing profiles
+in private settings
+Service B: Ringing profiles
+in public settings
+Service C: Lunch service
+Service D: Localization of 
+predefined friendsThe mobile phone 'knows' when the user
+is in a meeting or in class
+The mobile phone 'knows' when the user
+enters a movie theater or a restaurant
+A suggestion for lunch is pushed by the
+retailer to the mobile phone when theuser is around a restaurant or fast food place
+The mobile phone can locate predefined
+friends and alert the user when they arewithin a certain distance
+Location-Based Services.
+Figure by MIT OCW.</text>
+        </slide>
+        <slide>
+          <slideno>21</slideno>
+          <text>Figure by MIT OCW.A: Private ringing
+profiles
+B: Public ringing
+profiles
+C: Lunch service
+D: Class slides
+E: Location tracking
+F: Activity trackingServicesPassive Context-
+AwarenessActive Context-
+AwarenessPersonalization
+Different ringing profiles
+that are set manually
+Different ringing profiles
+that are set manually
+Manual search for
+appropriate lunch place
+Manual search to see
+if class slides are
+available online
+Manual location 
+tracking of predefined
+friends
+Display of potential call-
+receiver's social situation
+(e.g. meeting, home, out)The phone prompts the
+user to adjust the profile
+when sensing it is in
+a movie theater or at arestaurantThe phone prompts the
+user to adjust the profilewhen sensing it is in
+a meeting or class
+Single alert around noon
+for lunch place according
+to user's preferences
+If signed up, the phone
+alerts user of available
+slides for class
+Locations tracking of
+friends and setting to
+alert when they are withina certain range
+In a new context, the
+phone prompts the userto display the user's
+situation to possible
+callersThe phone automatically
+changes profile when sen-sing the user is at a meeting
+or in class 
+The phone automatically
+changes profile when sen-sing the user is at a movie
+theater or at a restaurant
+Alerts the user when
+passing by a lunch place
+or relevance and suggestsplaces at noon.
+Automatic alert every
+time the teacher updates
+class slide website
+Location detection of
+friends that alerts when
+they are within 300 feetof user
+Automatic switch to
+display of social
+situation when enteringa new context
+The three levels of services presented to participants.</text>
+        </slide>
+        <slide>
+          <slideno>20</slideno>
+          <text>ServiceRated 
+usefulnessRated IntrusivenessAverage# of daily use
+Service A: Private 
+ringing profiles
+Service B: Public 
+ringing profiles
+Service C: Lunch 
+service
+Service D: 
+Localization of 
+predefined friends3.75
+2.6
+2.2
+3.752.1
+2.2
+3.7
+3.251.5
+0.4
+0.3
+1.3
+1 = not useful at all, 5 = very useful
+1 = not intrusive, 5 = very intrusive
+A VERAGE RATING OF THE SERVICES
+Figure by MIT OCW.</text>
+        </slide>
+        <slide>
+          <slideno>12</slideno>
+          <text>It is universal
+ But is it what we want? 
+ Human-centric versions of location: 
+ name of place 
+ map of place What good is GPS? 
+Pervasive Computing MIT 6.883 SMA 5508 Spring 2006 Larry Rudolph</text>
+        </slide>
+        <slide>
+          <slideno>16</slideno>
+          <text>Places -- big and 
+small
+ People refer to location as places 
+ countries, cities, towns, streets, buildings 
+ rooms, spaces within buildings 
+ relation to other places, 
+ e.g. across from Starbucks 
+ GPS is too precise and may require 
+accurate map or building plan
+ Jim might be at 42.3325N, -71.11861E but is he in the shower at the moment? 
+Pervasive Computing MIT 6.883 SMA 5508 Spring 2006 Larry Rudolph</text>
+        </slide>
+        <slide>
+          <slideno>11</slideno>
+          <text>Enhanced Method
+ E-OTD: Enhanced observed time difference 
+ Time from base station to phone 
+ Time from base station to fixed location 
+ Ratio gives better estimation of position 
+ Also use triangulation (from several bases) 
+ Both yield order of magnitude improvement 
+ and lots of research for even better results
+Pervasive Computing MIT 6.883 SMA 5508 Spring 2006 Larry Rudolph</text>
+        </slide>
+        <slide>
+          <slideno>7</slideno>
+          <text>Image removed due to copyright restrictions.
+Please see:http://home.pacific.net.au/~gnb/gps/mnea.html _____________________________________</text>
+        </slide>
+        <slide>
+          <slideno>22</slideno>
+          <text>Does Age Matter?
+ Not much in this sample of 23 
+participants. 
+ surprising result 
+Pervasive Computing MIT 6.883 SMA 5508 Spring 2006 Larry Rudolph N = 23
+N
+Average Age
+Average Mobile Phone
+Ownership
+Average User Level
+( a scale from 1-6)Personalization
+8 8
+23.7 22.9
+2.2 Years 2.6 Years 2.7 Years
+3.1 3.8 3.4257Passive Context-
+AwarenessActive Context-
+Awareness
+General participant demographics.
+Figure by MIT OCW.</text>
+        </slide>
+        <slide>
+          <slideno>1</slideno>
+          <text>Outline
+ Positioning Technology 
+ GPS and others 
+ Location Specifiers 
+ Privacy Issues 
+Pervasive Computing MIT 6.883 SMA 5508 Spring 2006 Larry Rudolph</text>
+        </slide>
+        <slide>
+          <slideno>5</slideno>
+          <text>GPS 
+ Python interface to a bluetooth gps
+ Connect to the GPS normally:
+ from socket import *
+ sock = socket(AF_BT, SOCK_STREAM) 
+ Read input from $ up to a \r character 
+using the sock.recv(1) command 
+(reading one byte at a time).
+Pervasive Computing MIT 6.883 SMA 5508 Spring 2006 Larry Rudolph</text>
+        </slide>
+        <slide>
+          <slideno>3</slideno>
+          <text>Global Positioning 
+Systems
+ 1978 US Department of Defense begins project 
+ 1984 Crash of Korean Flight due to poor 
+navigational equipment ==&gt; gps for civilian use 
+ 1985 Complete system fully operational 
+ 24 satellites (11,000 mile orbit) &amp; $12 billion
+ 2000, selective availability turned off 
+ 3 to 15 meter accuracy for everyone 
+Pervasive Computing MIT 6.883 SMA 5508 Spring 2006 Larry Rudolph</text>
+        </slide>
+        <slide>
+          <slideno>23</slideno>
+          <text>Their Conclusions
+Pervasive Computing MIT 6.883 SMA 5508 Spring 2006 Larry Rudolph Image removed due to copyright restrictions. Please see: http://home.pacific.net.au/~gnb/gps/.</text>
+        </slide>
+        <slide>
+          <slideno>0</slideno>
+          <text>Location, Location, 
+Location
+Larry Rudolph 
+1 Pervasive Computing MIT 6.883 SMA 5508 Spring 2006 Larry Rudolph</text>
+        </slide>
+        <slide>
+          <slideno>8</slideno>
+          <text>Image removed due to copyright restrictions.
+Please see:http://home.pacific.net.au/~gnb/gps/mnea.html _____________________________________</text>
+        </slide>
+        <slide>
+          <slideno>13</slideno>
+          <text>Other Data Formats
+ Geographic Information System (GIS) 
+ developed set of XML descriptions 
+ static (river): Geo Markup Language 
+ dynamic (cars, events): Point-of-
+interest
+ NVML: Navigation mark-up language
+ SKiCAL: iCalendar VEVENT used to 
+describe event information 
+ event meta-info: location 
+Pervasive Computing MIT 6.883 SMA 5508 Spring 2006 Larry Rudolph</text>
+        </slide>
+        <slide>
+          <slideno>18</slideno>
+          <text>Can we study this?
+ Before investing heavily in location-
+based services, we should find out if 
+people will use them. 
+ The evidence is still mixed 
+Pervasive Computing MIT 6.883 SMA 5508 Spring 2006 Larry Rudolph</text>
+        </slide>
+        <slide>
+          <slideno>15</slideno>
+          <text>Pervasive Computing MIT 6.883 SMA 5508 Spring 2006 Larry RudolphPeople 
+dont 
+speak GPS
+ Different people 
+have different 
+views of the world.</text>
+        </slide>
+        <slide>
+          <slideno>2</slideno>
+          <text>Universal Location
+ On earth, we need three piece of 
+information: 
+ latitude, longitude, &amp; altitude
+ there are other possibilities 
+ Global Positioning Systems can give us that information 
+ Can then use mapping to do something useful with that information 
+Pervasive Computing MIT 6.883 SMA 5508 Spring 2006 Larry Rudolph</text>
+        </slide>
+        <slide>
+          <slideno>10</slideno>
+          <text>GSM Cellular 
+Location
+ Cell size depends on 
+terrain &amp; number of 
+users
+ Error: about 500 m 
+(urban) to 15km (rural)
+ Base stations have 3 
+sectors antennas, 120 degree 
+Pervasive Computing MIT 6.883 SMA 5508 Spring 2006 Larry Rudolph</text>
+        </slide>
+        <slide>
+          <slideno>4</slideno>
+          <text>How it works
+ Receiver measures travel time of random code 
+sent from satellite (about 0.1 sec) 
+ compute distance, call it X
+ Receivers position can be anywhere on a 
+sphere of radius X with satellite at center
+ Given four satellite readings, can figure out 
+position in 3 dimensions 
+ Lets look at some government slides 
+ mms.nps.gov/gis/gps/How_GPS_Works.ppt 
+Pervasive Computing MIT 6.883 SMA 5508 Spring 2006 Larry Rudolph</text>
+        </slide>
+        <slide>
+          <slideno>6</slideno>
+          <text>GPS (cont)
+buf = sock.recv(1)
+while buf!= $: b uf= sock.recv(1)
+while buf[-1]!= \r:buf+= sock.recv(1)
+if buf[0:6]==$GPGGA :
+(GPGGA,utcTime, lat,ns,lon,ew,post f ix,sats,hdop,al t ,altu
+nits,sep,sepuni ts,age,sid)= buf.spli t(,)
+lat itude =float(lat)
+longitude =float(lon)
+Pervasive Computing MIT 6.883 SMA 5508 Spring 2006 Larry Rudolph</text>
+        </slide>
+        <slide>
+          <slideno>17</slideno>
+          <text>Location Tracking: 
+Good, Bad, or Ugly?
+ Not too many people seem to be 
+concerned about location-based services 
+tracking them. 
+ You have no privacy, get over it
+-- Scott McNealy, CEO Sun
+Pervasive Computing MIT 6.883 SMA 5508 Spring 2006 Larry Rudolph</text>
+        </slide>
+        <slide>
+          <slideno>9</slideno>
+          <text>GSM Cellular location
+ GSM mobile telephone network: cells 
+ towers fixed, signal available indoors 
+ unaffected by urban canyon effect
+ CellID: detect base transceiver stations 
+(BTS) 
+ phone is registered with a BTS 
+ usually, but not always, the closest one 
+Pervasive Computing MIT 6.883 SMA 5508 Spring 2006 Larry Rudolph</text>
+        </slide>
+        <slide>
+          <slideno>14</slideno>
+          <text>Spatial Databases
+ Set of functions to 
+ quickly search, query, analyze spacial 
+info 
+ how objects spatially relate to each 
+other
+ many geometry types and typical queries 
+Pervasive Computing MIT 6.883 SMA 5508 Spring 2006 Larry Rudolph</text>
+        </slide>
+      </slides>
+      <videos/>
+    </lecture>
+    <lecture>
+      <lecture_title>Socket Programming and Bluetooth</lecture_title>
+      <lecture_pdf_url>https://ocw.mit.edu/courses/6-883-pervasive-human-centric-computing-sma-5508-spring-2006/resources/l3/</lecture_pdf_url>
+      <lectureno>L3</lectureno>
+      <slides>
+        <slide>
+          <slideno>10</slideno>
+          <text>Protocols
+ Lots of different protocols -- common two:
+ UDP (unreliable) &amp; TCP (reliable) 
+ Why different protocols? 
+ End-to-end argument 
+ Dont put stuff in lower layers that may not 
+be needed by the end-points. 
+ What is an end-point? 
+ Specify in socket allocation, AF_INET, 
+SOCK_STREAM 
+Pervasive Computing MIT 6.883 SMA 5508 Spring 2006 Larry Rudolph</text>
+        </slide>
+        <slide>
+          <slideno>6</slideno>
+          <text>Lots of Layers
+ seven official layers to ISO, but mostly three:
+ DNS name (domain name system) 
+ blah.com blah.edu blah.sg stuff at the 
+end 
+ IP address 
+ MAC address 
+Pervasive Computing MIT 6.883 SMA 5508 Spring 2006 Larry Rudolph</text>
+        </slide>
+        <slide>
+          <slideno>8</slideno>
+          <text>Ports
+ First allocate socket 
+ Message contains a port number
+ Sending message: 
+ must specify port in destination 
+address
+ Receiving message
+ application tells OS its associated 
+port
+ the Bind command 
+Pervasive Computing MIT 6.883 SMA 5508 Spring 2006 Larry Rudolph</text>
+        </slide>
+        <slide>
+          <slideno>12</slideno>
+          <text>Server Code
+s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+s.bind( ("0.0.0.0", port) )
+s.listen(5) 
+(client, address) = s.accept()
+while True:
+data = client.recv(1024) 
+if len(data) == 0: break 
+client.close() 
+Pervasive Computing MIT 6.883 SMA 5508 Spring 2006 Larry Rudolph</text>
+        </slide>
+        <slide>
+          <slideno>11</slideno>
+          <text>Setting things up
+ Client &amp; Server agree on Port number 
+ Server starts up first 
+ specifies protocol, IP, port 
+ activates the socket 
+ waits for a client to connect 
+ Client starts up second 
+ specifies protocol, 
+ Connects to IP, Port 
+Pervasive Computing MIT 6.883 SMA 5508 Spring 2006 Larry Rudolph</text>
+        </slide>
+        <slide>
+          <slideno>0</slideno>
+          <text>Sockets, TCP/IP and 
+Bluetooth
+Lecture 3
+Feb 15, 2006
+Larry Rudolph
+1 Pervasive Computing MIT 6.883 SMA 5508 Spring 2006 Larry Rudolph</text>
+        </slide>
+        <slide>
+          <slideno>1</slideno>
+          <text>A little history
+ Simple case: two devices, one cable (2 
+wires) 
+ e.g. first telephone
+ one device puts pulses on wire, the 
+other senses them. Went from analog =&gt; digital 
+ Generalize: multiple devices, one wire 
+ why do we want this? 
+Pervasive Computing MIT 6.883 SMA 5508 Spring 2006 Larry Rudolph</text>
+        </slide>
+        <slide>
+          <slideno>13</slideno>
+          <text>Client Code
+s = socket.socket(socket.AF_INET, socket.SOCK_STREAM) 
+s.connect( (sys.argv[1], int(sys.argv[2]) ) ) 
+while True: 
+s.send(question) 
+ans = s.recv(max_size) 
+Pervasive Computing MIT 6.883 SMA 5508 Spring 2006 Larry Rudolph</text>
+        </slide>
+        <slide>
+          <slideno>9</slideno>
+          <text>Pervasive Computing MIT 6.883 SMA 5508 Spring 2006 Larry Rudolph Image removed due to copyright restrictions.</text>
+        </slide>
+        <slide>
+          <slideno>7</slideno>
+          <text>What happens at 
+end?
+ message arrives at destination machine 
+ Operating system deals with it -- why? 
+ places msg buffer in system memory 
+ How does OS know the associated app? 
+ what are the choices? 
+ must specify some type of name 
+ done via agreement 
+Pervasive Computing MIT 6.883 SMA 5508 Spring 2006 Larry Rudolph</text>
+        </slide>
+        <slide>
+          <slideno>4</slideno>
+          <text>Gateway or Bridge
+ Special device that transfers packets 
+from ethernet to the rest of the world
+ How does it know where to send it? 
+ Another address 
+ IP address aaa.bbb.ccc.ddd 
+ 4 fields of 8 bits (256 values) per field
+ last field is local network 
+ Where is that address specified? 
+Pervasive Computing MIT 6.883 SMA 5508 Spring 2006 Larry Rudolph</text>
+        </slide>
+        <slide>
+          <slideno>3</slideno>
+          <text>Ethernet 
+ Ethernet is a type of bus -- easy to add 
+devices
+ Every ethernet device has a unique device 
+address 
+ how do you know it is unique? 
+ a company sells you a unique address 
+ this is known as a MAC 
+ all devices listen for their mac on bus 
+ What if devices is not on the bus? 
+Pervasive Computing MIT 6.883 SMA 5508 Spring 2006 Larry Rudolph</text>
+        </slide>
+        <slide>
+          <slideno>2</slideno>
+          <text>Bus
+ signal broadcast (all devices sense it) 
+ first broadcast an address 
+ device with that address receives data 
+ and acks it 
+ Who knows the devices address? 
+Pervasive Computing MIT 6.883 SMA 5508 Spring 2006 Larry Rudolph</text>
+        </slide>
+        <slide>
+          <slideno>5</slideno>
+          <text>Layers
+ Need different layers 
+ lowest (bottom) for physical transport 
+ higher layers as get more removed 
+ Which picture makes sense? (first bits on 
+left)
+ (top Header (bot H B T) top Trailer ) 
+ (bot Header (top H B T) bot Trailer ) 
+Pervasive Computing MIT 6.883 SMA 5508 Spring 2006 Larry Rudolph</text>
+        </slide>
+        <slide>
+          <slideno>14</slideno>
+          <text>Bluetooth
+ Nearly the same
+from bluetooth import *
+port = 1
+server_sock = BluetoothSocket( RFCOMM )
+server_sock.bind( , port)
+server_sock.listen(1)
+client_sock, client_info = server_sock.accept()
+data = client_sock.recv(1024) 
+client_sock.close(): server_sock.close()
+Pervasive Computing MIT 6.883 SMA 5508 Spring 2006 Larry Rudolph</text>
+        </slide>
+      </slides>
+      <videos/>
+    </lecture>
+    <lecture>
+      <lecture_title>More Bluetooth</lecture_title>
+      <lecture_pdf_url>https://ocw.mit.edu/courses/6-883-pervasive-human-centric-computing-sma-5508-spring-2006/resources/l4/</lecture_pdf_url>
+      <lectureno>L4</lectureno>
+      <slides>
+        <slide>
+          <slideno>2</slideno>
+          <text>Barbie Bluetooth 
+Found this on the gizmodo site: 
+Some die-hard Trekkie would probably love 
+to get his hands on this. A guy from New Zealand modeled this Barbie doll to a) look like a Star Trek crew member, and b) act as a Bluetooth handsfree headset. Yes, thats right, its embedded with a Bluetooth headset. According to Ms. Barbie herself: Headset 
+You can use me to make and receive calls with Bluetooth1.1 compatible mobile phones. I have no wires. I workwithin a 10 meter radius of your phone so you can leaveyour mobile in your pocket or a bag. You turn me on/off,receive calls, make calls and pair me with other devices bypressing in the small of my back. 
+Pervasive Computing MIT 6.883 SMA 5508 Spring 2006 Larry Rudolph</text>
+        </slide>
+        <slide>
+          <slideno>0</slideno>
+          <text>Bluetooth
+Larry Rudolph
+Feb 16, 2006
+1 Pervasive Computing MIT 6.883 SMA 5508 Spring 2006 Larry Rudolph</text>
+        </slide>
+        <slide>
+          <slideno>4</slideno>
+          <text>Programming 
+Concepts
+ Choose a communication partner 
+ Desired type of communication 
+ Connection 
+ initiate outgoing or accept incoming 
+ Send &amp; Receive data 
+Pervasive Computing MIT 6.883 SMA 5508 Spring 2006 Larry Rudolph</text>
+        </slide>
+        <slide>
+          <slideno>6</slideno>
+          <text>Common protocols
+ RFCOMM
+ com port (rs232) replacement, streaming 
+ only 30 ports available 
+ reliable 
+ L2CAP 
+ connection oriented, customizable 
+reliability 
+ reserved ports: 1 -- 4095 (odd numbered) 
+ unreserved: 4097 -- 32765 (odd 
+Pervasive Computing MIT 6.883 SMA 5508 Spring 2006 Larry Rudolph numbered )</text>
+        </slide>
+        <slide>
+          <slideno>1</slideno>
+          <text>What is bluetooth?
+ Wireless, short-range communication 
+ about 10 meters 
+ Replacement for USB cables 
+ Low power, low cost 
+ Automatically hook together mobile devices 
+ The term covers lots of things from HW to SW
+Pervasive Computing MIT 6.883 SMA 5508 Spring 2006 Larry Rudolph</text>
+        </slide>
+        <slide>
+          <slideno>3</slideno>
+          <text>Our focus
+ What we dont care about 
+ bluetooth headsets, keyboards, ovens 
+ how to blast advertisements at users
+ What we do care about 
+ how to send data between bluetooth 
+devices using python code 
+ Give a foundation to let you discover more 
+Pervasive Computing MIT 6.883 SMA 5508 Spring 2006 Larry Rudolph</text>
+        </slide>
+        <slide>
+          <slideno>5</slideno>
+          <text>Choosing Partner
+ Every device has a bluetooth address 
+ unlike TCP, same address at all layers 
+ 48-bit mac address (unique) 
+ could be changed by software 
+ Devices have bluetooth name 
+ User supplied, not unique 
+ My Phone is a common name 
+Pervasive Computing MIT 6.883 SMA 5508 Spring 2006 Larry Rudolph</text>
+        </slide>
+        <slide>
+          <slideno>7</slideno>
+          <text>Service ID
+ Every service has a 128 bit (supposedly) 
+unique identifier -- UUID 
+ some reserved, developers registered 
+ Service class ID 
+ Service Description -- human readable 
+ Protocol Descriptor -- which prot. used 
+ Profile Descriptor -- which ones, e.g. mouse 
+Pervasive Computing MIT 6.883 SMA 5508 Spring 2006 Larry Rudolph</text>
+        </slide>
+        <slide>
+          <slideno>9</slideno>
+          <text>HCI Tools
+Pervasive Computing MIT 6.883 SMA 5508 Spring 2006 Larry Rudolph</text>
+        </slide>
+        <slide>
+          <slideno>8</slideno>
+          <text>Bluetooth Freq 
+Hopping
+ Designed for BT device rich 
+environments 
+ Lots of radio interference 
+ Divide spectrum into 72 slices 
+ Frequency hop between slice 
+ pseudo-random hopping 
+ hard to track without knowing seed 
+ Why pairing / discovery takes so long 
+Pervasive Computing MIT 6.883 SMA 5508 Spring 2006 Larry Rudolph</text>
+        </slide>
+      </slides>
+      <videos/>
+    </lecture>
+    <lecture>
+      <lecture_title>Debugging</lecture_title>
+      <lecture_pdf_url>https://ocw.mit.edu/courses/6-883-pervasive-human-centric-computing-sma-5508-spring-2006/resources/l19_spchanim_bbg/</lecture_pdf_url>
+      <lectureno>L19</lectureno>
+      <slides>
+        <slide>
+          <slideno>12</slideno>
+          <text>Stop/Inspect/Go 
+ Logs 
+ Log all interesting events ( I/O ?) 
+ Need way to organize independent logs 
+ Need way to see paths in the forest 
+ visualization tools are helpful 
+ extensive log event tags 
+ Log control-flow history 
+ off-line playback or re-execution 
+Pervasive Com puting MI T 6.88 3 SMA 5508  Spring 2006 Lar ry 
+Rudolph</text>
+        </slide>
+        <slide>
+          <slideno>14</slideno>
+          <text>Concurrency 
+ Debuggers dont deal well with threads. 
+ Conditional Breakpoints: 
+ Break when phone locks DB &amp; camera locks mic 
+ Need deterministic replay 
+ Need to understand all po ssible parallel executions 
+ race-condition detector 
+ Software Transactions (memory &amp; data-base) 
+ hand time-outs 
+ heart-beat messages 
+Pervasive Com puting MI T 6.88 3 SMA 5508  Spring 2006 Lar ry
+Rudolph</text>
+        </slide>
+        <slide>
+          <slideno>16</slideno>
+          <text>Virtual 
+Computer
+ Start with a set of 
+ Emulators &amp; Virtual Computers 
+ Add 
+ Scheduler (various orderings) 
+ Fault-Injection 
+ Instrumentation 
+ Debug under idealized world 
+ then move to real world 
+Pervasive Com puting MI T 6.88 3 SMA 5508  Spring 2006 Lar ry
+Rudolph</text>
+        </slide>
+        <slide>
+          <slideno>19</slideno>
+          <text>How to support this? 
+	 Too hard at the moment to automatically fix all
+problems. 
+	 Worthwhile to point out potential sources 
+	 Monitor everything, learn whats typical 
+	 report what is atypical 
+	 monitoring must be on-line and cheap 
+	 Use human-level timing 
+	 sec, min, hour, day, week, month, year 
+Pervasive Com puting MI T 6.88 3 SMA 5508  Spring 2006 Lar ry
+Rudolph</text>
+        </slide>
+        <slide>
+          <slideno>21</slideno>
+          <text>Use out-of-band 
+communication
+	 If main application has problems 
+	 error messages may not get 
+forwarded
+	 normal channels of communication 
+might be the source of difficulties 
+	 want separate communication 
+channel 
+	 Use IM &amp; SMS for query 
+	 ubiquitous, natural, usually works 
+Pervasive Com puting MI T 6.88 3 SMA 5508  Spring 2006 Lar ry
+Rudolph</text>
+        </slide>
+        <slide>
+          <slideno>13</slideno>
+          <text>Risk of 
+Masking Bugs 
+	 Shared Memory (lots of experience) 
+	 Many things look like share memory 
+ automatic synchronization; caching; distributed FS 
+	 Low-level bugs due to strange timing bugs 
+	 set flag; check flag; do operation 
+	 Programmers think everything executes at same rate 
+	 weird bugs when on process executes a little, pauses,
+executes a little more, pauses, etc. 
+Pervasive Com puting MI T 6.88 3 SMA 5508  Spring 2006 Lar ry
+Rudolph</text>
+        </slide>
+        <slide>
+          <slideno>9</slideno>
+          <text>Informing the user
+ System consisted of lots of components on lots of machines 
+ flash (XP), galaxy (Linux), audio (iPaq) 
+ how to find out about serious errors? 
+ cannot inform user; no output dev 
+ not clear if other apps will forward 
+Pervasive Com puting MI T 6.88 3 SMA 5508  Spring 2006 Lar ry
+Rudolph</text>
+        </slide>
+        <slide>
+          <slideno>20</slideno>
+          <text>Isnt this like data-
+mining?
+ Data mining for failure indicators? 
+ No long log files; no labeled data 
+ On-line and easier 
+ Finding outliers is expensive 
+ Finding what recently changed is cheap 
+Outlier 
+Pervasive Com puting MI T 6.88 3 SMA 5508  Spring 2006 Lar ry
+Rudolph</text>
+        </slide>
+        <slide>
+          <slideno>17</slideno>
+          <text>Yet another approach
+Pervasive Com puting MI T 6.88 3 SMA 5508  Spring 2006 Lar ry 18 Rudolph</text>
+        </slide>
+        <slide>
+          <slideno>10</slideno>
+          <text>Some Challenges of 
+traditional debugging 
+approaches 
+Pervasive Com puting MI T 6.88 3 SMA 5508  Spring 2006 Lar ry 11 Rudolph</text>
+        </slide>
+        <slide>
+          <slideno>11</slideno>
+          <text>Stop/Inspect/Go 
+	Stepping through the code (e.g. gdb) 
+	stop and inspect memory &amp; data structures 
+	hard to get program to stop or break at correct point 
+	Run backwards 
+	problem usually occurs just before death, so backup
+and check data-structures 
+	Many ops are reversible ( x = x + 1  x = x - 1) 
+	push on stack control flow and non-reverse ops 
+Pervasive Com puting MI T 6.88 3 SMA 5508  Spring 2006 Lar ry
+Rudolph</text>
+        </slide>
+        <slide>
+          <slideno>18</slideno>
+          <text>Change-point 
+detections
+	 What do you do when things stop working? 
+	 Seek out a friend. Their first question: 
+What did you change? 
+	 Your first response: Nothing 
+	 Your second response: Oh yea, thanks 
+	 Too hard with pervasive computing env. 
+Pervasive Com puting MI T 6.88 3 SMA 5508  Spring 2006 Lar ry
+Rudolph</text>
+        </slide>
+        <slide>
+          <slideno>1</slideno>
+          <text>Outline
+ Video of Speech Controlled Animation 
+ Survey of approaches to debugging 
+Pervasive Com puting MI T 6.88 3 SMA 5508  Spring 2006 Lar ry
+Rudolph</text>
+        </slide>
+        <slide>
+          <slideno>7</slideno>
+          <text>Our approach 
+ Command: action and parameters 
+ error: incompatible action and param 
+ dogs: sit, run, lick, beg, bark 
+ cats: sit, run, lick, sleep, purr 
+ Consider the error: dog purr 
+ if cat is on stage, it purrs 
+ if dog is on stage, do random action 
+ random actor does random action 
+Pervasive Com puting MI T 6.88 3 SMA 5508  Spring 2006 Lar ry
+Rudolph</text>
+        </slide>
+        <slide>
+          <slideno>3</slideno>
+          <text>Voice controlled 
+animation
+ A very fertile domain: room for improvement 
+ mouse is very limited 
+ hard to specify parameters 
+ choose from list -- awkward when long
+ one action and one parameter
+	speech allows multiple parameters (and sub-parameters) 
+ objects are parameters; adjec tives are params of params 
+ Unfortunately, no good mode ls of childrens voices 
+ so we have to act like children :) 
+Pervasive Com puting MI T 6.88 3 SMA 5508  Spring 2006 Lar ry
+Rudolph</text>
+        </slide>
+        <slide>
+          <slideno>15</slideno>
+          <text>Distributed 
+Communication
+	 Central way to control system-
+wide parameters 
+	 duplicate message detection; non-
+idempotent operations 
+	 unified interface to debuggers on 
+different systems &amp; OSs 
+	 start up; switch between 
+debuggers 
+	 Distributed LEDs (one per 
+process)
+Pervasive Com puting MI T 6.88 3 SMA 5508  Spring 2006 Lar ry
+Rudolph</text>
+        </slide>
+        <slide>
+          <slideno>4</slideno>
+          <text>Testbed for other 
+ideas
+	 Naming 
+	 give basic object a name 
+	 give composite object a name (macro) 
+	 many parameters come from context (environment) 
+	 differentiate between base object and instantiated 
+object 
+Pervasive Com puting MI T 6.88 3 SMA 5508  Spring 2006 Lar ry
+Rudolph</text>
+        </slide>
+        <slide>
+          <slideno>5</slideno>
+          <text>Controlling Errors 
+ Two types of consequences to errors: 
+ something useful (or interesting) 
+ something destructive (or boring) 
+ Who gets to decide? 
+ tolerating some errors --&gt; flexibility 
+ avoiding all errors --&gt; too rigid 
+Pervasive Com puting MI T 6.88 3 SMA 5508  Spring 2006 Lar ry
+Rudolph</text>
+        </slide>
+        <slide>
+          <slideno>0</slideno>
+          <text>Debugging 
+Applications in 
+Pervasive Computing 
+Larry Rudolph
+May 1, 2006
+SMA 5508; MIT 6.883
+Pervasive Com puting MI T 6.88 3 SMA 5508  Spring 2006 Lar ry 1 Rudolph</text>
+        </slide>
+        <slide>
+          <slideno>22</slideno>
+          <text>Wrapping up 
+ My conclusion is that 
+ physical world poses new challenges 
+ users must help in fixing problems 
+ system must help the user in this task 
+ weve only just begun ... 
+Pervasive Com puting MI T 6.88 3 SMA 5508  Spring 2006 Lar ry
+Rudolph</text>
+        </slide>
+        <slide>
+          <slideno>6</slideno>
+          <text>Semantics
+ Where does the semantics get checked? 
+ no consensus (speech, vision, sketch) 
+Pervasive Com puting MI T 6.88 3 SMA 5508  Spring 2006 Lar ry
+Rudolph</text>
+        </slide>
+        <slide>
+          <slideno>8</slideno>
+          <text>Considerations
+ Really depends on the cost of error 
+ can action be undone easily? 
+ is the user getting frustrated? 
+ Rather than selecting at random 
+ choose the most likely action 
+Pervasive Com puting MI T 6.88 3 SMA 5508  Spring 2006 Lar ry
+Rudolph</text>
+        </slide>
+        <slide>
+          <slideno>2</slideno>
+          <text>Turning bugs 
+into features
+	 Speech recognition is not 100% 
+	 Who likes it when its wrong? 
+	 Children 
+	 Example: story telling (easy reading) 
+	 Computer recognizes the words that the child is
+reading and animates it 
+Pervasive Com puting MI T 6.88 3 SMA 5508  Spring 2006 Lar ry
+Rudolph</text>
+        </slide>
+      </slides>
+      <videos/>
+    </lecture>
+    <lecture>
+      <lecture_title>XWand and Arrays</lecture_title>
+      <lecture_pdf_url>https://ocw.mit.edu/courses/6-883-pervasive-human-centric-computing-sma-5508-spring-2006/resources/l12_arrays/</lecture_pdf_url>
+      <lectureno>L12</lectureno>
+      <slides>
+        <slide>
+          <slideno>7</slideno>
+          <text>Bring your own
+Bring your own 
+environment
+environment
+Environment should have lots ofEnvironment should have lots of 
+input sensorsinput sensors
+output actuatorsoutput actuators
+Cylinders are nice form factors for arrays ofCylinders are nice form factors for arrays of 
+sensors &amp; actuatorssensors &amp; actuators</text>
+        </slide>
+        <slide>
+          <slideno>17</slideno>
+          <text>Laser Array
+Laser Array
+LIDAR (laser array accurately detect objects in frontLIDAR (laser array accurately detect objects in front 
+of autonomous car)of autonomous car)
+Lasers within all pointing forward. Mirror defectsLasers within all pointing forward. Mirror defects 
+then outward -- hologram Lens have them all forwardthen outward -- hologram Lens have them all forward 
+focusedfocused
+Parallel communicationParallel communication
+My favorite: two ships passing at seaMy favorite: two ships passing at sea</text>
+        </slide>
+        <slide>
+          <slideno>1</slideno>
+          <text>Good use for Boxes
+Good use for Boxes
+A box is a good shape for storageA box is a good shape for storage
+peoplepeople
+shoesshoes
+circuit boardscircuit boards</text>
+        </slide>
+        <slide>
+          <slideno>19</slideno>
+          <text>Laser Array
+Laser Array
+LIDAR (laser array accurately detect objects in frontLIDAR (laser array accurately detect objects in front 
+of autonomous car)of autonomous car)
+Lasers within all pointing forward. Mirror defectsLasers within all pointing forward. Mirror defects 
+then outward -- hologram Lens have them all forwardthen outward -- hologram Lens have them all forward 
+focusedfocused
+Parallel communicationParallel communication
+My favorite: two ships passing at seaMy favorite: two ships passing at sea</text>
+        </slide>
+        <slide>
+          <slideno>6</slideno>
+          <text>Critique of XWand
+Critique of XWand
+Need to be in an immersive, instrumented space
+Need to be in an immersive, instrumented space
+Does not work everywhere, e.g. on trains such asDoes not work everywhere, e.g. on trains such as 
+the hogwarts expressthe hogwarts express
+Why not simply use a hand with better cameraWhy not simply use a hand with better camera 
+tracking algorithms?tracking algorithms?</text>
+        </slide>
+        <slide>
+          <slideno>21</slideno>
+          <text>Put it all together
+Put it all together
+Sally OLees visualizationSally OLees visualization 
+initial viewinitial view</text>
+        </slide>
+        <slide>
+          <slideno>8</slideno>
+          <text>Camera Arrays
+Camera Arrays</text>
+        </slide>
+        <slide>
+          <slideno>26</slideno>
+          <text>tks comments
+tks comments
+what about keyboard or buttonswhat about keyboard or buttons
+what about handwritingwhat about handwriting
+he wants a pen with ink, phone, buttons.he wants a pen with ink, phone, buttons.</text>
+        </slide>
+        <slide>
+          <slideno>11</slideno>
+          <text>Self-reconfigurable Camera
+Self-reconfigurable Camera 
+Array
+Array</text>
+        </slide>
+        <slide>
+          <slideno>3</slideno>
+          <text>Mobile Device Form
+Mobile Device Form
+Wand, stick, staff, cylinderWand, stick, staff, cylinder
+Gandalfs StaffGandalfs Staff
+Harry Potters WandHarry Potters Wand
+James Bonds PenJames Bonds Pen</text>
+        </slide>
+        <slide>
+          <slideno>12</slideno>
+          <text>Array of projectors
+Array of projectors
+Need small onesNeed small ones
+Need ones with low powerNeed ones with low power
+Lasers!Lasers!</text>
+        </slide>
+        <slide>
+          <slideno>9</slideno>
+          <text>Camera
+Camera 
+Array
+Array
+CamerasCameras  are small, say 1 square inchare small, say 1 square inch
+a dozen per foota dozen per foot
+Processing: if we wait .. will be okProcessing: if we wait .. will be ok</text>
+        </slide>
+        <slide>
+          <slideno>25</slideno>
+          <text>Discussion
+Discussion
+Please attack my 1/2 baked proposal
+Please attack my 1/2 baked proposal
+Would like to form study groupWould like to form study group
+array sizes (optimal numbers)array sizes (optimal numbers)
+processing needsprocessing needs
+heat &amp; power requirementsheat &amp; power requirements
+can we build a prototype?can we build a prototype?
+Maybe transform mouses into mice?
+Maybe transform mouses into mice?</text>
+        </slide>
+        <slide>
+          <slideno>16</slideno>
+          <text>Speaker Array
+Speaker Array
+Virtual sound placed anywhereVirtual sound placed anywhere
+Many for personal useMany for personal use
+home theater
+home theater
+Yamaha (CES05)
+Yamaha (CES05)
+42 speakers
+42 speakers</text>
+        </slide>
+        <slide>
+          <slideno>18</slideno>
+          <text>Laser Array
+Laser Array
+LIDAR (laser array accurately detect objects in frontLIDAR (laser array accurately detect objects in front 
+of autonomous car)of autonomous car)
+Lasers within all pointing forward. Mirror defectsLasers within all pointing forward. Mirror defects 
+then outward -- hologram Lens have them all forwardthen outward -- hologram Lens have them all forward 
+focusedfocused
+Parallel communicationParallel communication
+My favorite: two ships passing at seaMy favorite: two ships passing at sea</text>
+        </slide>
+        <slide>
+          <slideno>24</slideno>
+          <text>Dimensions
+Dimensions
+Size:
+Size: 
+Pen (is there enough spread?)Pen (is there enough spread?)
+Wand (will it get too hot?)Wand (will it get too hot?)
+Staff (my choice; interleaved spiral arrays)
+Staff (my choice; interleaved spiral arrays)</text>
+        </slide>
+        <slide>
+          <slideno>13</slideno>
+          <text>Display 
+Holograms Display 
+Holograms
+Blue-Optics (start up) 
+laser, lens, hologram on chip 
+key insight, reduce noise variation, not noise 
+array output? 
+Blue-Optics (start up)
+laser, lens, hologram on chip
+key insight, reduce noise variation, not noise
+array output?</text>
+        </slide>
+        <slide>
+          <slideno>22</slideno>
+          <text></text>
+        </slide>
+        <slide>
+          <slideno>15</slideno>
+          <text>Microphone Array
+Microphone Array
+&lt; camera&lt; camera
+CSAIL &amp; othersCSAIL &amp; others
+Need fixed, large spacingNeed fixed, large spacing
+Virtual microphone(s) placed anywhereVirtual microphone(s) placed anywhere</text>
+        </slide>
+        <slide>
+          <slideno>0</slideno>
+          <text>Dangerous Idea: boxDangerous Idea: box
+Safe Idea: cylinderSafe Idea: cylinder
+oror
+Wand = User InterfaceWand = User Interface
+Harry Potters digital wand
+Harry Potters digital wand
+Larry Rudolph
+Larry Rudolph</text>
+        </slide>
+        <slide>
+          <slideno>4</slideno>
+          <text>The computer science of
+The computer science of 
+Harrys wand
+Harrys wand
+Point it at something, then shout some Latin-likePoint it at something, then shout some Latin-like 
+commandcommand
+Location, Object, Speech recognition
+Location, Object, Speech recognition
+camera,camera,  microphone, ghost sensorsmicrophone, ghost sensors
+Torch, Zapping, ImagesTorch, Zapping, Images
+lasers and electricity
+lasers and electricity</text>
+        </slide>
+        <slide>
+          <slideno>5</slideno>
+          <text>XWand
+XWand
+Andrew Wilson (Microsoft Research)Andrew Wilson (Microsoft Research)
+UI for Intelligent SpacesUI for Intelligent Spaces</text>
+        </slide>
+        <slide>
+          <slideno>23</slideno>
+          <text>If I had a cylinder, Id ...
+If I had a cylinder, Id ...
+Talk long distances wirelesslyTalk long distances wirelessly
+Burn through walls with lasersBurn through walls with lasers
+Shock my enemies with static elect.Shock my enemies with static elect.
+Wave it around in a field to rechargeWave it around in a field to recharge
+Play DDR by opening it up &amp; lay flat for 2-d arrayPlay DDR by opening it up &amp; lay flat for 2-d array</text>
+        </slide>
+        <slide>
+          <slideno>14</slideno>
+          <text>Scalable self-calibrating display
+Scalable self-calibrating display 
+technology for seamless large-scale
+technology for seamless large-scale 
+displays
+displays
+MIT thesis by Rajeev Surati (under TK)
+MIT thesis by Rajeev Surati (under TK)
+Projector array
+Projector array
+Self-calibration via
+Self-calibration via
+camera
+camera</text>
+        </slide>
+        <slide>
+          <slideno>20</slideno>
+          <text>Sonar
+Sonar 
+Array
+Array
+Multi-sensorMulti-sensor 
+travel aid for thetravel aid for the 
+blind (Borenstein)blind (Borenstein)</text>
+        </slide>
+        <slide>
+          <slideno>2</slideno>
+          <text>Poor use for boxes
+Poor use for boxes
+hard to hold a box
+hard to hold a box
+fingers like to curl
+fingers like to curl</text>
+        </slide>
+        <slide>
+          <slideno>10</slideno>
+          <text>We have (had) one too
+We have (had) one too</text>
+        </slide>
+      </slides>
+      <videos/>
+    </lecture>
+  </lectures>
+</doc>

@@ -1,0 +1,1812 @@
+<doc>
+  <source>MIT</source>
+  <date>28/01/2023</date>
+  <course>
+    <course_url>https://ocw.mit.edu/courses/18-409-behavior-of-algorithms-spring-2002/</course_url>
+    <course_title>Behavior of Algorithms</course_title>
+    <course_tags>
+      <list>Engineering </list>
+      <list>Computer Science </list>
+      <list>Mathematics </list>
+    </course_tags>
+  </course>
+  <lectures>
+    <lecture>
+      <lecture_title>Introduction to Linear Programming
+von Neumann&#8217;s Algorithm, Primal and Dual Simplex Methods
+Duality</lecture_title>
+      <lecture_pdf_url>https://ocw.mit.edu/courses/18-409-behavior-of-algorithms-spring-2002/resources/lect11/</lecture_pdf_url>
+      <lectureno>11</lectureno>
+      <slides/>
+      <videos/>
+    </lecture>
+    <lecture>
+      <lecture_title>Growth Factors of Partial and Complete Pivoting
+Speeding up GE of Graphs with Low Bandwidth or Small Separators</lecture_title>
+      <lecture_pdf_url>https://ocw.mit.edu/courses/18-409-behavior-of-algorithms-spring-2002/resources/lect6/</lecture_pdf_url>
+      <lectureno>6</lectureno>
+      <slides>
+        <slide>
+          <slideno>1</slideno>
+          <text>The rest of the reduction proceeds similarly, obtaining
+  
+ 1 0 0 0 1
+0 1 0 0 2
+0 0 1 0 4 
+0 0 0 1 8 
+0 0 0 0 16 
+.
+The exponentially large magnitude of the lower-right entry is an artifact of the reduction. 
+Because of rounding, the lower-right entry of the original matrix may not be recoverable 
+from the reduced matrix. (Technically, Matlab solves this system, because every entry in 
+the last column is exactly a power of two. See the le kahan2.m for a very similar system 
+that Matlab cannot solve.) 
+2.2 Smoothed analysis 
+What does smoothed analysis tell us about the example? On one hand, we have already 
+seen that if an entire matrix has noise in it, then Gaussian elimination requires relatively 
+few bits of precision, even without pivoting. But on the other hand, if we perturb only the 
+nonzero entries in the above system, then the error still creeps in. 
+Hence, our current application of smoothed analysis to Gaussian elimination fails for this 
+example. Applying smoothed analysis to Gaussian elimination with complete pivoting may 
+resolve this issue. 
+3 Complete pivoting 
+Gaussian elimination with complete pivoting permutes rows and columns to ensure that 
+the pivot is the largest magnitude entry in the entire submatrix that remains to be row 
+reduced. 
+It is easy to check that complete pivoting guarantees L &lt; 1. The algorithm also gives 
+Theorem 1 (Wilkinson). 
+U  
+A  n
+1 
+4((log n)+1). 
+Therefore, complete pivoting requires no more than log2 n bits of precision for best possible 
+accuracy. 
+2</text>
+        </slide>
+        <slide>
+          <slideno>2</slideno>
+          <text>However, people do not use complete pivoting in practice. Partial pivoting rarely fails, 
+and complete pivoting requires twice as many oating point operations to nd the largest 
+magnitude entry (the pivot). 
+We should also note that it may be possible to improve upon Wilkinsons theorem. Nearly 
+always, the growth factor is actually less than n. Perhaps by assuming that there is noise in 
+the input, we can nd a better bound. Or perhaps we can calculate a better bound directly. 
+Proof of Wilkinson. Let A(r) denote the lower-right r-by-r submatrix that is obtained 
+after n  r  1 eliminations. Assume that complete pivoting has already been performed, 
+so that the largest magnitude entry in A(r) is the upper-left entry. Let pr denote this entry, 
+i.e. the pivot. 
+Then A = pn and A(r) = pr , so we need to bound |pr /pn. (Note that U | | |A  
+maxr A(r) .)A 
+Wilkinsons theorem will be a consequence of the next theorem. 2 
+Theorem 2. 
+1|p1| 2 2 log2(231/2 41/3 n1/(n1))+ 1 
+2 log n .  
+|pn| 
+Proof. The result follows from two facts: 
+r
+det(A(r)) = pi, (1) 
+i=1 
+det(A(r))  (r pr )r . (2) | |
+(Inequality (2) is Hadamards inequality.) Immediately, we have 
+r
+pi  (r pr )r| |
+i=1 
+rrIf qr = log pr |, then i=1 qi  2 log r + rqr , so |
+r1 r qi  2 log r + (r  1)qr , (3) 
+i=1 
+which implies 
+r1qi log r + qr 1  1  
++ qr = 2 log r r1 . (4) r(r  1)  2(r  1) r r i=1 
+3</text>
+        </slide>
+        <slide>
+          <slideno>3</slideno>
+          <text>4 Now, rewriting (1), we obtain 
+n 
+i=1 qi = log(det(A)) . (5) n1 n1 
+Summing inequality (4) over r = 2,...,n1 with (5), we get 
+n  n1  qr1 qn 1  
+  (n1)1/(n2)  qr log(det(A)) 
+r 1+ n1  2 log 2 31/2 41/3 + + n1 , r r=2 r=2 
+so 
+q1 + qn 1  
+  (n1)1/(n2)  log(det(A)) 
+n1  2 log 2 31/2 41/3 + n1 . 
+Using (1) and (3), we can bound the last term in the RHS: 
+ n log(det(A))= 1 n
+n1 n1 qi  2(n1) log n+ qn. 
+i=1 
+Thus, 
+q1 + qn 1  
+n1  2 log 2 31/2 41/3 + 2(nn 
+1) log n+ qn,   (n1)1/(n2) 
+so 
+qn(n2)
+q1 qn  q1  n1
+1  
+  (n1)1/(n2) 1 1/(n1) + n1  2 log 2 31/2 41/3 + 2 log n 2(n1) log n, 
+and nally, 
+1  1 q1 qn  2 log 2 31/2 41/3 n 1/(n1) + 2 log n. 2   (n1)1/(n2) 
+Speeding up the solution of linear systems 
+If a matrix A = (aij ) is banded within b diagonals of the main diagonal, i.e. aij = 0 implies 
+i  j b  1, then Gaussian elimination with partial pivoting can reduce the matrix in | |
+time O(nb2) and space O(nb). (You can check that the upper-triangular matrix U in the 
+factorization is banded by 2b (approximately).) 
+Given an arbitrary matrix, we would like to permute the rows and columns so that the 
+matrix is banded. If the matrix is symmetric, then this problem becomes a graph problem. 
+Dene the graph of a symmetric n-by-n A = (aij ) to be an undirected graph on n vertices 
+in which there is an edge (i,j) if and only if aij = 0. (The diagonal of  A is irrelevant.) 
+4</text>
+        </slide>
+        <slide>
+          <slideno>5</slideno>
+          <text>4.1.3 Feige-Krauthgamer 98 
+Feige and Krauthgamer performed a more general analysis. Starting with an arbitrary (0, 
+1)-matrix of bandwidth b, they ipped entries in the band with probability p. (The case in 
+which the original matrix is the zero matrix is Turners analysis.) 
+Feige and Krauthgamers analysis deals with a certain class of perturbed matrices, similar 
+to smoothed complexity analysis. 
+4.2 Graph Separators 
+For a graph G, an -vertex separator is a subset C  V such that V \C is the disjoint 
+union of sets Aand Bwith no edges between Aand B, and |A, B V .|| || |
+If we can nd an -vertex separator, then we can make progress toward rearranging the 
+matrix into banded form, since there are no edges between the vertices in Aand the vertices 
+in B. 
+2Theorem 3 (Lipton-Tarjan). Every n-node planar graph has a 3 -vertex separator C 
+satisfying |C
+8n.|
+Denition 4. If S is a family of graphs closed under subgraph, then S satises an f(n)-
+separator theorem if there exists an  &lt; 1 such that all graphs in S have -separators of 
+size f(V).| |
+Theorem 5 (Lipton-Rose-Tarjan). If S has cn -separators, then if Gis the non-zero 
+structure of a linear system, and GS, then we can solve Gin space and time given by 
+the following table. 
+space = ll time 
+3/2) = 1 O(nlog n) O(n2 
+2 3 &gt;1 n n2 
+4.3 Non-planar graphs 
+What if the graph of a matrix is not planar? There are a number of heuristic contenders. 
+One of the rst was developed by Kernighan and Cuthill. 
+A newer, promising approach uses the eigenvector structure of the Laplacian matrix of the 
+graph of A. Each diagonal entry of a Laplacian matrix of a graph is the degree of the 
+corresponding vertex. The o-diagonal entries are negated edge weights. 
+6</text>
+        </slide>
+        <slide>
+          <slideno>6</slideno>
+          <text>The Laplacian matrix is positive semidenite, with 0 as an eigenvalue with multiplicity 1 (if 
+the graph is connected). The eigenvector corresponding to the second smallest eigenvalue 
+can be used to order the vertices. The ordering can be used to cut the graph eciently. 
+Details will be provided in the next lecture. 
+7</text>
+        </slide>
+        <slide>
+          <slideno>4</slideno>
+          <text>4.1 Breadth-rst search 
+4.1.1 Cuthill-McKee 69 
+One of the rst algorithms to transform matrices into banded matrices was developed by 
+Cuthill and McKee in 1969. Given an arbitrary vertex v, the algorithm is as folows: 
+1. Perform a breadth-rst search on the graph of Arooted at v. Label each vertex with 
+its distance from v, so that the vertices are partitioned into distinct levels. 
+2. Order the vertices by level, i.e. nd a permutation such that if (i) &lt; (j), then 
+the level of iis no higher than the level of j. 
+3. Permute the rows and columns of Aaccording to the permutation . 
+Note that if the BFS partitions the vertices so that each level contains relatively few vertices, 
+then the resulting matrix is banded into a relatively small region. To be precise, if Li is the 
+set of vertices in level i, then the bandwidth of the permuted matrix is  3  maxi Li.| |
+4.1.2 Turner 86 
+In 1986, Turner analyzed Cuthill-McKee, nding an improvement in the process. His im
+provement was 
+1. Start with a random root v. 
+2. Run Cuthill-McKee. 
+3. Let wbe the last vertex (corresponding to row and column n). 
+4. Run Cuthill-McKee from w. 
+Turners analysis was probablistic. For a xed b, he constructed a random (0, 1)-matrix 
+in which each entry within bdiagonals from the main diagonal was 1 with probability p 
+and all other entries were 0. He found that for p log n , the bandwidth of the matrix was n 
+almost certainly b. Cuthill-McKee produced a permuted matrix with bandwith about 3b. 
+In contrast, Turners improvement achieved a bandwith of b+ O(log n). 
+5</text>
+        </slide>
+        <slide>
+          <slideno>0</slideno>
+          <text>18.409 The Behavior of Algorithms in Practice 28 Feb. 2002 
+Lecture 6 
+Lecturer: Dan Spielman Scribe: Brian Sutton 
+1 Outline 
+ When Gaussian elimination with partial pivoting fails. 
+ Analysis of complete pivoting. 
+ Speeding up the solution of linear systems. 
+2 When partial pivoting fails 
+2.1 An example 
+In lecture 3, we saw an example of a linear system that Matlab fails to solve. Here is a 
+similar system:    
+1 0 0 0 1 1
+
+1 1 0 0 1 
+1 1 1 0 1 
+1 1 1 1 1 
+x =
+
+1
+1
+1
+
+.
+1 1 1 1 1 1
+We will solve this system using Gaussian elimination with partial pivoting.
+First, we permute the rows so that the (1, 1)-entry has the largest magnitude in the rst
+column. Actually, we do not need to permute; our pivot is already in the right place.
+Eliminating the nonzero entries in the rst column, we get
+  
+ 1 0 0 0 1
+0 1 0 0 2
+0 1 1 0 2
+0 1 1 1 2 
+0 1 1 1 2 
+1 
+.</text>
+        </slide>
+      </slides>
+      <videos/>
+    </lecture>
+    <lecture>
+      <lecture_title>The Largest Singular Value of a Matrix</lecture_title>
+      <lecture_pdf_url>https://ocw.mit.edu/courses/18-409-behavior-of-algorithms-spring-2002/resources/lect3/</lecture_pdf_url>
+      <lectureno>3</lectureno>
+      <slides>
+        <slide>
+          <slideno>0</slideno>
+          <text>18.409 The Behavior of Algorithms in Practice 2/14/2 
+Lecture 3 
+Lecturer: Dan Spielman Scribe: Arvind Sankar 
+1 Largest singular value 
+In order to bound the condition number, we need an upper bound on the largest 
+singular value in addition to the lower bound on the smallest that we derived 
+last class. Since the largest singular value of A + G can be bounded by 
+n(A + G) = A + G   A+ G 
+and we cant really do much about A, the important thing to do is bound G. 
+To start o with a weak but easy bound, we use the following simple lemma. 
+Lemma 1. If ai denote the columns of the matrix A, then 
+max ai   A 
+d max ai
+i i 
+Proof. If ei denotes the vector with 1 in the ith component but 0s everywhere 
+else, then 
+Aei = ai 
+Hence the lefthand inequality is clear. For the other inequality, let x be a unit 
+vector and write   
+Ax = A x iei = xiai 
+i i 
+Therefore  
+ai Ax  |xi|
+i 
+Applying CauchySchwarz and using the fact that x= 1, we get 
+ai2 ai2 d max x Ax     
+i 
+i 
+which is what we want. 
+If g is a vector of Gaussian random variables with variance 1, then g2 is 
+distributed according to the 2 distribution with d degrees of freedom, which 
+has density function 
+xd/21ex/2 
+(d/2)2d/2 
+We need the following bound on how large a 2 random variable can be. 
+1</text>
+        </slide>
+        <slide>
+          <slideno>4</slideno>
+          <text>To see that N  (d  1)2d, observe that the sets | |
+B(x, /6) = {u  Sd1 : d(u, x)  /6}, x  N
+are disjoint. A lower bound on the (d  1)dimensional volume of each B(x, /6) 
+is given by the volume of the (d  1)dimensional ball of radius sin(/6) = 1/2. 
+If Sd1 denotes the volume of Sd1 and Vd the volume of the unit ball in 
+d dimensions, then 
+Vd = 2d/2 
+d(d/2) and Sd1 = 2d/2 
+(d/ 2) 
+Hence 
+|N |  2d1 Sd1 
+Vd1 
+((d  1)/2)= 2d1(d  1) (d/2) 
+ 2d(d  1) 
+A somewhat tighter bound can be obtained by using the fact that 
+lim ((d  1)/2) e = 
+d (d/ 2) 
+d 
+References 
+[Sza90] Stanislaw J. Szarek, Spaces with large distance to n and random ma
+trices, American Journal of Mathematics 112 (1990), no. 6, 899942. 
+5</text>
+        </slide>
+        <slide>
+          <slideno>2</slideno>
+          <text>3 with xn 1/2. Hence 
+Gx= xiGvi=   xiiui xnn  G/2 
+i i 
+Hence G 2k
+d implies that there exists x N such that 
+Gx k
+d 
+By the union bound and lemma 2, we obtain 
+N |kd2 ed(k2 1)/2Pr{G 2k
+d}  |
+which is the stated result. 
+Gaussian elimination 
+In the next couple of lectures, we will use the results we have proved to analyze 
+Gaussian elimination. Briey, Gaussian elimination solves a system 
+Ax = b 
+by performing row and column operations on A to reduce it to an upper trian
+gular matrix, which can then be easily solved. 
+Theoretically, one can view this process as factoring A into a product of 
+a lower triangular matrix representing the row operations performed (actually, 
+their inverses), and an upper triangular matrix representing the result of these 
+operations. This is called the LU factorization of A. 
+There are three pivoting strategies one can use while performing this algo
+rithm (pivoting is the process of permuting rows and/or columns before doing 
+the elimination). 
+1.	No pivoting: Just what it says. This can be done only if we never run into 
+zeros on the diagonal. This is easy to analyze. 
+2.	Partial pivoting: Here only row permutations are permitted. The strategy 
+is to bring the largest entry in the column we are considering onto the 
+diagonal. The LU factorization now actually has to be written as 
+LU = P A 
+where P is a permutation matrix representing the row permutations per
+formed. Partial pivoting guarantees that no entry in L can exceed 1 in 
+absolute value. 
+3.	Complete pivoting: Here both row and column permutations are permit
+ted, and the strategy is to move the largest entry in the part of the matrix 
+that we have not yet processed to the diagonal. The factorization now 
+looks like 
+LU = P AQ 
+where P and Q are permutation matrices. 
+3</text>
+        </slide>
+        <slide>
+          <slideno>1</slideno>
+          <text>2 Lemma 2. If X is a random variable distributed according to the 2 distribution 
+with d degrees of freedom, then 
+ed(k1)/2Pr{X kd} kd/21 
+Since G  kd implies max i gi  k
+d, hence using lemma 2 and the 
+union bound, we get 
+ed(k2 1)/2Pr{G kd} dkd2 
+A sharper bound using nets 
+The bound above is unsatisfying: for any xed unit vector x, the vector Gx is 
+a Gaussian random vector, and so its length should be about 
+d on average. 
+This section will show how to get a bound on Gthat uses this idea to get a 
+bound on Gthat grows as 
+d rather than as d. 
+Let Sd1 denote the (d 1)dimensional unit sphere (the boundary of the 
+unit ball in d dimensions). 
+Denition 1. A net on Sd1 is a collection of points {x1, x2, . . . xn} such 
+that for any x Sd1 , 
+min 
+i x xi  
+We will use only 1nets, and the following lemma claims that they need not 
+be too large. 
+Lemma 3. For d 2, there exists a 1net with at most 2d(d 1) points. 
+Using this lemma, we can prove the following bound on G: 
+Lemma 4. If G is a matrix of standard normal variables, then 
+ed(k2 1)/2Pr{G 2k
+d} 2d(d 1)kd2 
+(This lemma appears with a slightly dierent bound as lemma 2.8 on pg. 907 
+of [Sza90]) 
+Proof. Let N be the 1net given by lemma 3. Let G = UV T be the singu
+lar value decomposition of G, and let ui and vi be the columns of U and V 
+respectively. By denition of the net, there exists a vector x N such that 
+vn x 1 
+This is equivalent to 
+1 vn x  2 
+Expanding x in the basis vi, we obtain 
+x = xivi 
+i 
+2</text>
+        </slide>
+        <slide>
+          <slideno>3</slideno>
+          <text>4 L, U and  Wilkinson showed that if   x represent the computed values of L, U 
+and x in oating point to an accuracy of , then 
+A such that (A + A)x = b 
+with 
+A d(3A + 5LU ) 
+Matlab uses partial pivoting, and it can be shown that there exist matrices A 
+for which partial pivoting fails, in the sense that U  becomes exponentially 
+large (in d). This leads to a total loss of precision unless at least d bits are used 
+to store intermediate results. 
+Wilkinson also showed that for complete pivoting, 
+U  
+A d 1 
+2lg d 
+which means that the number of bits required is only lg2 d in the worst case. 
+However, complete pivoting is much more expensive in oating point than par
+tial pivoting, which seems to work quite well in practice. One of the goals of 
+this class is to understand why. In the next couple of lectures, we will show in 
+fact that no pivoting does well most of the time. 
+Proof of technical lemmas 
+For completeness, we give the proofs of lemmas 2 and 3. 
+Proof of lemma 2. We have 
+xd/21ex/2 
+Pr{X kd}= dx(d/2)2d/2 kd 
+ (x + (k 1)d)d/21 e(k1)d/2x/2 
+= dx(d/2)2d/2 d 
+Using x + (k 1)d kx, 
+xd/21ex/2 
+kd/21 e(k1)d/2  
+dx(d/2)2d/2 
+kd/21 e(k1)d/2 d 
+and we are done. 
+Proof of lemma 3. Let N be a maximal set of points on the unit sphere such 
+that the greatcircle distance between any two points in N is at least /3. 
+Then N will be a 1net, because if u were a unit vector such that no vector in N 
+is within distance 1 of u, then there would be no point of N within greatcircle 
+distance /3 of u, so u could be added to N . 
+4</text>
+        </slide>
+      </slides>
+      <videos/>
+    </lecture>
+    <lecture>
+      <lecture_title>Strong Duality Theorem of Linear Programming
+Renegar&#8217;s Condition Numbers</lecture_title>
+      <lecture_pdf_url>https://ocw.mit.edu/courses/18-409-behavior-of-algorithms-spring-2002/resources/lect12/</lecture_pdf_url>
+      <lectureno>12</lectureno>
+      <slides/>
+      <videos/>
+    </lecture>
+    <lecture>
+      <lecture_title>The Expected Number of Facets of the Shadow of a Polytope Given by Gaussian Random Constraints: Angle Bound and Overview of Phase 1</lecture_title>
+      <lecture_pdf_url>https://ocw.mit.edu/courses/18-409-behavior-of-algorithms-spring-2002/resources/lect19/</lecture_pdf_url>
+      <lectureno>19</lectureno>
+      <slides>
+        <slide>
+          <slideno>0</slideno>
+          <text>18.409 The Behavior of Algorithms in Practice 5/2/2002 
+Lecture 19 
+Lecturer: Dan Spielman Scribe: Matthew Lepinski 
+Where We Are in the Proof 
+We are trying to bound the quantity: 
+Pr [dist(0,  ((b1 . . . b d))) &lt; ] 
+b1,...,b d 
+Where the probability is over the distribution with density 
+d
+( i(bi))[0  (b1 . . . b d)]vol((b1 . . . b d)) 
+i=1 
+Also recall that the i are Gaussian with variance 2 1 and have centers of norm   
+1 + 4 dlog(n).
+Last Time We Proved 
+d(1 + )2Pr [dist(b 1,dist(b 2, . . . , b d)) &lt; ] e 
+b1,...,b d 2 
+Where dist(b 2, . . . , b d) denotes the ane span of b2, . . . , b d. 
+Today We Will Prove 
+10d2Pr [dist(0, dist(b 2, . . . , b d)) &lt; dist(b 1,dist(b 2, . . . , b d))]  (1) 
+b1,...,b d 2 
+How Smooth are Gaussians 
+We will now prove a utility lemma which will be useful later. 
+Lemma 1 Let  is a Guassian distribution centered at 0 with variance 2 . If X and Y are 
+points such that X T and X Y&lt;  T, then 
+(Y) 3T 
+(X) e 22 
+1</text>
+        </slide>
+        <slide>
+          <slideno>1</slideno>
+          <text>Proof The worst case is when X = T and Y = T + . In this case we have: 
+(T +2) 
+(Y)= e 22 2T 2 
+22 = e T 2 (X) e2sigma 2 
+Note: If  &lt; T/2, this Lemma gives us that 
+(Y) 3 
+2 
+(X)  e
+Proof of Todays Bound 
+Goal: Prove the origin is not much closer to dist(b 1, . . . , b d) than b1 is. 
+Note: Since Gaussians are smooth, the chance of any nearby conguration is about the 
+same. 
+Idea: Fix the shape of the simplex and shift it a little towards b1. The resulting congu
+ration is just as likely and has the origin farther from dist(b 1, . . . , b d). 
+Change of Variables 
+It will be easier to x the shape of the simplex if we do another change of variables. 
+Our handle on the simplex will be its center of gravity: 
+1 d
+x = bid i=1 
+The shape of the simplex will be determined by the values: 
+i = x bi 
+For i = 2 . . . d. 
+Additionally, we set 
+d
+i = 0 
+i=1 
+which denes 1. 
+2</text>
+        </slide>
+        <slide>
+          <slideno>4</slideno>
+          <text>2. a, Pr[g(a, b) ] ()2 
+Then Pr[f(a)g(a, b) &lt; ] 5 
+Note: To really apply this to the previous circumstances, we would need to do this in the 
+ world where 
+ a = {1, . . .  2} 
+b = x  
+Proof 
+ 2i+1
+Pr[f(a)g(a, b) &lt; ] Pr[f(a) &lt; ] + Pr[f(a) &lt; 2i and g(a, b) &lt;
+ i1 
+2i+2) + 2i(2i+1)2 = (1 + 
+i1 i2 
+Back to the Original Problem 
+Recall that the quantity which we were originally interested in was: 
+Pr dist(z,r , (b1 . . . b d )) &lt; , z &gt; &lt;  
+,r,b 1 ,...,b d 3 
+Where the distribution of , r, and bi was: 
+   d
+ [&lt; , a j &gt;r]i(aj ) i (ai )
+j{1 ,..., d} aj i=1
+,r [z  (b1 . . . b d )]Vol((b1 . . . b d )) 
+We have succeeded in bounding the probability that z,r is close to the boundary of the 
+triangle. Therefore, all that remains is to show it is unlikely that the angle is small. (That 
+is, it is unlikely that &lt; , z &gt; is small). 
+Idea: Rotate the plane specied by  and r while preserving the intersection of the plane 
+with the ray z. 
+5</text>
+        </slide>
+        <slide>
+          <slideno>6</slideno>
+          <text>(This is what was meant earlier by the comment that f is almost constant for small changes 
+in ) 
+Therefore, we could show that: 
+1Pr[cos( ) &lt; ] &lt; poly(n, d, )2 
+ 
+Putting it All Together 
+We now have bounds showing it is unlikely the distance to the boundary is small and it is 
+unlikely that the angle is small. Therefore, we can apply a Combination Lemma to get the 
+following bound: 
+Pr dist( z,r , (b1 . . . b d )) &lt; , z &gt;&lt;  &lt; poly(n, d, 1) 
+,r,b 1 ,...,b d 3 
+This bound implies that the expected size of the shadow of the polytope is polynomial. 
+7</text>
+        </slide>
+        <slide>
+          <slideno>2</slideno>
+          <text>Observe that 
+(b1 . . . b d) = (x1 . . . xd) = x+ (1 . . .d) 
+Therefore, 
+0  (b1 . . . b d) x  (1 . . .d) 
+Similarly, 
+dist(0 ,dist(b 2, . . . , b d) = dist(0, dist( 2, . . . ,  d) 
+Note: This change of variables is just a linear transformation and so the Jacobian of the 
+transformation is constant. 
+Dening the Contraction Map 
+We observe that: 
+Pr [dist(b 1,dist(b 2, . . . , b d)) &lt; ] 
+b1,...,b d 
+max Pr[dist(x, dist( 2, . . . ,  d)) &lt; dist( 1,dist( 2, . . . ,  d))] 
+1 ,..., d x 
+Subject to the condition that 1 i 2 for all i and where x is has distribution: 
+d
+(x) = ( i(bi))[x  (1 . . .  d)] 
+i=1 
+Let S be (1 . . .  d). Let S be obtained by contracting S at 1 by a factor of (1 ). That 
+is, S is the set of points y such that 
+dist(y, dist( 2, . . . ,  d)) dist( 1,dist( 2, . . . ,  d)) 
+We observe that 
+Pr[dist(x, dist( 2, . . . ,  d)) &lt; dist( 1,dist( 2, . . . ,  d))] = (S) (S) 
+x (S) 
+To show this quantity is small, we just need to show that the probability measures dont 
+change much. 
+Let  be the contraction map specied above. 
+3</text>
+        </slide>
+        <slide>
+          <slideno>5</slideno>
+          <text>Another Change of Variables 
+Previously, we had been specifying the plane with the variables  and r. Now we will 
+instead specify the plane by the variables  and t where tz is the point where the ray z 
+intersects the plane. 
+Note: r = t &lt; , z &gt; 
+Jacobian r =&lt; , z &gt; t 
+Also, for convenience we choose tz = z,r to be the origin of the plane containing the bi s. 
+We will now bound the quantity: 
+max Pr[&lt; , r &gt;&lt; ] 
+b1 ,...,b d ,t  
+Subject to the constraint that bi   and t. Where the distribution for  is: | |
+   d
+&lt; , z &gt;  [&lt; , a j &gt;t &lt; , z &gt;] i(aj ) i (ai ) 
+j{1,..., d } aj i=1 
+Observe that in the above expression everything except the term &lt; , z &gt; is like a constant 
+for small changes in . We will write this distribution function as &lt; , z &gt; f(). 
+Longitude and Latitude 
+We will now change to Longitude and Latitude where we express the unit vector  as an 
+angle,  (latitude) and a point,  on the unit sphere of d1 dimensions. 
+That is,  Sd becomes  [0, /2] and  Sd1 . Where cos( ) =&lt; , z &gt;. 
+The Jacobian of this transformation is [sin( )]d1 which is like a constant for  /2. 
+Therefore, we get that: 
+max max Pr[cos( ) &lt; ]
+ b1 ,...,b d ,t Pr[&lt; , r &gt;&lt; ] 
+b1 ,...,b d ,t,  
+Where the density is the same as before except &lt; , z &gt; is replaced by cos( ). That is, the
+density is f() cos( ).
+Note: We could derive a 0 such that 0 = poly(n, d, 1/) and 0   0
+f() 
+f() e 
+6</text>
+        </slide>
+        <slide>
+          <slideno>3</slideno>
+          <text>Bounding (S)/(S) 
+We observe that  moves points by at most a distance of 2. Also, we know that x is at 
+a distance of at most 3 from the center of its distribution. 
+Therefore, from Lemma 1, we know that under the map, , the product of the s changes 
+my at most a factor of: 
+e 362 d 
+22 
+Which is at least:   92d1  2 
+Additionally, are contraction map has a Jacobian of (1  )d at every point. 
+Note: (1  )d  (1  d) 
+This implies that 
+(S) 92d 10d2 
+(1  d)  1 (S)  1  2 2 
+Therefore, 
+(S)  (S) 10d2 
+(S)  2 
+Completing the Bound 
+Using Combination Lemma 2 which we will prove in the next section, we get that: 
+10ed22(1 + ) Pr[dist(0 ,dist( b2, . . . , b d)) &lt; ]   4 
+Therefore, since the simplex has d symmetric faces, we get that: 
+10ed32(1 + ) Pr[dist(0 , (b1, . . . , b d)) &lt; ]   4 
+The Combination Lemma 
+Lemma 2 Let a, b have some distribution such that 
+1. Pr[f(a) &lt; ]   
+4</text>
+        </slide>
+      </slides>
+      <videos/>
+    </lecture>
+    <lecture>
+      <lecture_title>The Condition Number</lecture_title>
+      <lecture_pdf_url>https://ocw.mit.edu/courses/18-409-behavior-of-algorithms-spring-2002/resources/lect2/</lecture_pdf_url>
+      <lectureno>2</lectureno>
+      <slides>
+        <slide>
+          <slideno>1</slideno>
+          <text>Proof of Lemma 1: 
+||b||Ax = b  x = A1b  ||b||  ||b||  ||A1|| = 1(A) 
+1 n(A)Ax = b  ||b||  ||A||  ||x|| = n(A)  ||x||  ||x|| ||b|| 
+Lemma 1 follows from these two inequalities. 
+Lemma 2. If Ax = b and (A + A)(x + x) = b then 
+||x||
+||x + x||  (A) ||A||
+||A|| 
+Exercise: Prove Lemma 2. 
+In regards to the condition number, sometimes people state things like: 
+For any function f, the condition number of f at x is dened as: 
+||f(x)  f(x + x)||lim sup 
+0||x||&lt; ||x|| 
+If f is dierentiable, this is equivalent to the Jacobian of f: ||J(f)||. A result of Demmels 
+is that condition numbers are related to a problem being illposed. A problem Ax = b is 
+illposed if the condition number (A) = , which occurs i 1(A) = 0. Letting V := {A : 
+1(A) = 0}, we state the following Lemma: 
+Lemma 3. 1(A) = dist(A, V ), i.e. the Euclidian distance from A to the set V. 
+Proof to Lemma 3: Consider the singular value decomposition (SVD), A = USV T , U, V 
+orthogonal. S is dened as the diagonal matrix composed of singular values, 1, . . . , n. 
+nConstruct a matrix B to be the singular matrix closest to A. Then A = iuiviT 
+i=1 
+nand B = i=2 iuiviT . Now consider the Frobenius norm, denoted ||M||F of A and B: 
+= T = 1. Since 1(B) = 0 and B, dist(A, V )  1(A). ||A  B||F ||1u1v1 ||F 
+The following claim will help us prove that dist(A, V )  1(A). For a singular matrix B 
+and let A = A  B. The following claim implies that ||A  B||  1, and Lemma 5 implies 
+that ||A  B||F  ||A  B||, 
+Claim 4. If (A + A) is singular, then ||A||F  1 
+2</text>
+        </slide>
+        <slide>
+          <slideno>0</slideno>
+          <text>18.409 The Behavior of Algorithms in Practice 2/12/2 
+Lecture 2 
+Lecturer: Dan Spielman Scribe: Steve Weis 
+Linear Algebra Review 
+A n x n matrix has n singular values. For a matrix A, the largest singular value is denoted 
+as n(A). Similarly, the smallest is denoted as 1(A). They are dened as follows: 
+n(A) = ||A|| = max ||Ax|| 
+x ||x|| 
+1(A) = ||A1||1 = min ||Ax|| 
+x ||x||
+There are several other equivalent denitions: 
+{n(A), . . . , 1(A)} = n(AT A), . . . , 1(AT A)} { 
+i(A) = min max ||Ax|| = max min ||Ax|| 
+subspacesS,dim(S )=ixS ||x|| subspacesS,dim(S )=(ni+1) xS ||x|| 
+Another classic denition is to take a unit sphere and apply A to it, resulting in some 
+hyperellipse. n will be the length of the largest axis, n1 will be the length of the next 
+largest orthogonal axis, etc.. 
+Exercise: Prove that every real matrix A has a singularvalue decompsition as A = USV , 
+where U and V are orthogonal matrices and S is nonnegative diagonal, and all entries in 
+U, S, and V are real. 
+Condition Numbers 
+The singular values dene a condition number of a matrix as follows: 
+(A) := n (A) = ||A||
+1 (A) ||A1||1 
+Lemma 1. If Ax = b and A(x + x) = b + b then 
+||x||
+||x||  (A) ||b||
+||b|| 
+1</text>
+        </slide>
+        <slide>
+          <slideno>3</slideno>
+          <text>Lemma 9. Pr[dist(a 1 + g1, span(a 2 + g2, . . . , a d + gd))  ]  
+Proof of Lemma 9: This proof will take advantage of the following lemmas regarding 
+gaussian distributions: 
+Lemma 10. A a Gaussian distribution g has density: 
+2 
+( 
+21 
+)d  ||g||
+e22 
+Lemma 11. A univariate Gaussian x with mean x0 and standard deviation  has density: 
+e 1 (xx0)2 
+22 
+2  
+Lemma 12. The Gaussian distribution is spherically symmetric. That is, it is invariant 
+under orthogonal changes of basis. 
+Exercise: Prove Lemma 12. 
+Returning to the proof, x a2, . . . , a d and g2, . . . , g d. Let S = span (a2 + g2, . . . , a d + gd). 
+We want to upperbound the distance of the vector a1 + g1 to the multidimensional plane 
+S, which has dim(S ) = d  1. Since the vector is of higher dimension, the distance to 
+the span will be bounded by one element. We can then just select x to be a univariate 
+Gaussian random variable such that x = g11 and x0 = a11. Using Lemma 11 and the fact 
+2g
+that e22  1, we can prove lemma 12: 
+ 2  a11+ 1 g11 2 2   Pr[g11  a11&lt; ] = 
+a11 
+2  e 22 
+2 =    | | 
+Part (a) of Theorem 6 follows from these lemmas and claims. 
+4</text>
+        </slide>
+        <slide>
+          <slideno>2</slideno>
+          <text>Proof: v,||v|| = 1, s.t.(A + A)v = 0, 
+n(A)  1. ||Av||  1(A)  ||Av||  1  
+by the next lemma, we 
+Lemma 5. ||A||F  n(A) 
+Proof: The Froebinus norm, which is the root of the sum of the squares of the entries in 
+a matrix, does not change under a change of basis. That is, if V is an orthonormal matrix, 
+then: ||AV ||F = In particular, if A = USV is the singularvalue decomposition of ||A||F . 
+A, then  
+= ||USV ||F = = i 2 . ||A||F ||S||F 
+We now state the main theorem that will be proved in this and the next lectures. 
+Theorem 6. Let A be a dbyd matrix such that i, j, a ij  1. Let G be a dbyd with | |
+Gaussian random variance 2  1. We will start to prove the following claims: 
+a. Pr[1(A + G)  ] 2 d3/2 
+ 
+
+log 1/
+b. Pr[(A) &gt; d2(1 +   )]  2 
+To give a geometric characterization of what it means for 1 to be small. Let a1, . . . , a d be 
+the columns of A. Each ai is a delement vector. We now dene height(a 1, . . . , a d) as the 
+shortest distance from some ai to the span of the remaining vectors: 
+height(a 1, . . . , a d) = min dist(a i, span(a 1, . . . , a i1, ai+1, . . . , a d))
+i 
+Lemma 7. height(a 1, . . . , a d) 
+d1(A) 
+Proof: Let v be a vector such that ||v|| = 1, ||Av|| = 1(A) = d
+i=1 aivi|| Since v is a ||
+1unit vector, some coordinate |vi|  
+d . Assume it is v1. Then: 
+d vi 1 || 
+i=2 ai v1 + a1|| = v1 
+d1(A)  dist(a 1, span(a 2, . . . , a d))  1(A)
+d 
+dLemma 8. Pr[height(a 1 + g1, . . . , a n + gn)  ]  
+This lemma follows from the union bound applied to the following Lemma: 
+3</text>
+        </slide>
+      </slides>
+      <videos/>
+    </lecture>
+    <lecture>
+      <lecture_title>Spectral Parititioning of Well-Shaped Meshes and Nearest Neighbor Graphs
+Turner&#8217;s Theorem for Bandwidth of Semi-Random Graphs</lecture_title>
+      <lecture_pdf_url>https://ocw.mit.edu/courses/18-409-behavior-of-algorithms-spring-2002/resources/lect9/</lecture_pdf_url>
+      <lectureno>9</lectureno>
+      <slides>
+        <slide>
+          <slideno>2</slideno>
+          <text>1 
+0 Lemma 1. AA : G  Gb(n, p) u, v such that u  v | 2b   where  = |
+(1 + ) log 2 n exists a path with length  2 between. 
+1p 
+to prove this show:
+The number of possible neighbours of u and r are 2b
+| u  r | . 
+2b1
+n(1  p 2)i = n(1  p 2) (i  p 2)i = nn1  p2 = n2 p2  
+i= i0 
+Lemma 2. Let li = min i(Vi), ri = max i(Vi). i  3ri  li  b + , follows 
+from: 
+Lemma 3. i  3ri  3b  ri3  li  (2b  ) 
+3</text>
+        </slide>
+        <slide>
+          <slideno>1</slideno>
+          <text>For every vertex, locate a ball at that vertex of radius 0.5 the shortest edge 
+leaving that vertex. 
+Need to show: 
+longest edge on vertex 
+shortest edge on vertex is bounded  number of neighbours of vertex 
+Look at a band matrix with bandwith b:
+For an ordering  : V  [1..n] bandwith of G under 
+(G,  ) = min  (u)   (v) &gt; b
+b || 
+ (u, v)  E 
+Bandwith of G is min  (G,  ) = (G)
+Cuthill  Mc Kee used BFS: outputs  such that:
+d( 1(1)) &lt; d( 1(1), u)
+ (u) &lt;  (v)
+ 
+G(n, p) graph on n noodes in which each edge (i, j) is chosen to be in graph 
+with prob p indepently. 
+Theorem 2. For almost all G G(n, p) 
+(G)  n  4log 1 n 
+1p 
+Pf 2. Claim follows if (G)  n  2k: U1, U  2 :U1 =U2 = U no edges | | | |
+between U1 and U2. Set k = 2 log 1 n : 
+1p 
+     2 nn e n  k (1  p)k2  ( e)2k ( n1 
+2 )k = k 0 k k n k  
+Turner: dene Gb(n, p) same as G(n, p), but not edges for | i  j &gt; b|
+(Bandmatrix) 
+1) (G b(n, p))  b  4 log b almost always 1 
+1p 
+2) A levelset heuristic returns  at (G,  )  3(1 + )b  &gt; 0 for almost all 
+G G b(n, p) 
+to proof 1) we use the same arguments as before, 2): Let Vi = u : dist(u, 1) = i 
+Theorem 3. for almost all AA : G  Gb(n, p)  &gt; 0, b  (1 + ) log 12 n 
+1p 
+V1 | (1 + )pb| 
+V2 | (1 + )(2  p)b | 
+1 +  i  3 :| Vi | b 
+(G,  )  max Vi  Vi+1 i | | 
+2</text>
+        </slide>
+        <slide>
+          <slideno>0</slideno>
+          <text>1 18.409 The Behavior of Algorithms in Practice 3/12/2002 
+Lecture 9 
+Lecturer: Dan Spielman Scribe: Stephan Kalhamer 
+Well shaped mesh 
+Split a partition space into simplices and get a graph on vertices: 
+largest edge aspect ration() = min vertices distance vertices to plane through opponent face  1 
+well  shaped = bounded aspect ratio 
+History: 
+Miller  Thorsten 
+Teng  Vavasis (Knearest neighbour graph) 
+Every knearest neighbour graph in d is a k  ply intersection graph 
+Denition 1. A kply intersection graph comes from a set of balls B1,...,Bn  
+d such that no point lies in the interior of more than k balls. 
+(i,j)  E if Bi  Bj =  
+d = kissing number in 
+(max. number of unit balls through another unit ball: 2 = 6)
+(planar is a 1ply intersection graph)
+An overlap graph is a set of interior disjoint balls B1, ...B n:
+(i,j)  E if Bi  Bj =  and Bi  Bj =    
+Theorem 1. MTTV 
+Every well shaped mesh is a bounded degree subgraph of an overlap graph. 
+Pf 1. 
+Claim 1. for aspect ratio  ,then graph has degree  f (). Can lower bound 
+angle of a corner of a simplex, so can upper bound number of simplices at a 
+vertex. 
+1</text>
+        </slide>
+      </slides>
+      <videos/>
+    </lecture>
+    <lecture>
+      <lecture_title>The Expected Number of Facets of the Convex Hull of Gaussian Random Points in the Plane (cont.)</lecture_title>
+      <lecture_pdf_url>https://ocw.mit.edu/courses/18-409-behavior-of-algorithms-spring-2002/resources/lect16/</lecture_pdf_url>
+      <lectureno>16</lectureno>
+      <slides>
+        <slide>
+          <slideno>3</slideno>
+          <text>The Jacobi matrix 
+ax ay bx by  
+0 0 sin() cos() r 
+J =
+
+sin()  cos() 0 0 
+l cos() l sin() r cos() r sin()
+
+l 
+ 
+0 1 0 1 t 
+and the Jacobian 
+| det J| = (l + r) sin(), 
+hence 
+da db = (l + r) sin() dr dl d dt . 
+6</text>
+        </slide>
+        <slide>
+          <slideno>2</slideno>
+          <text>To see this, notice that g1() is the probability of the rest of the points ai lying on the 
+origin side of the line aj ak . This probability decreases when the distance of the line aj ak 
+to o decreases, thus g1() is monotone.
+1
+As in Proposition 1, for t &lt; 8 lg n; l,r &lt; 28 lg n; 0 &lt; 1 &lt; 2 &lt; 16 lg n holds 
+(tz + ru1 ) 2&lt; e , (tz + ru2 ) 
+1which implies for 0 &lt; 1 &lt; 2 &lt; 16 lg n 
+g2(1) 2 . g2(2)  e 
+Finally, for small values of , sin()  , so for 0 &lt; 1 &lt; 2 &lt; 1 
+16 lg n 
+g(1 ) 4 1 . g(2 )  2e 2 
+The following fact is the analog of Proposition 2: 
+f (x1 ) x1Proposition 3. If for x1 &lt; x2 f (x2 )  c x2 then 
+0 f(x) dx   2 
+K 4c K 
+f(x) dx 
+0 
+It is left to set K = 1 . The lemma is proven. 16 lg n 
+At the end we justify the change of variables (aj ,ak )  (l,r,t, ) that we made in the 
+proof and compute the Jacobian of this transform. Let a = aj and b = ak be two points 
+in R2 , specied by four parameters l,r,h, as shown on gure 1. By the straightforward 
+calculation, 
+ax = lsin() 
+ay = t lcos() 
+bx = rsin() 
+by = t+ rcos() 
+5</text>
+        </slide>
+        <slide>
+          <slideno>0</slideno>
+          <text>Proof of Lemma 1. 
+Let u be a unit vector along aj ak (and assume that z is a unit vector). Look at 
+2(s+r)2 d(ak ) = (tz + ru) = e 2 e 2 , 
+where d and s are dened at gure 2. 
+Proposition 1. For s &gt; 1, r  1 
+s 
+2 s 
+2e 
+2 
+(s+r)2  e 
+e 2 
+1As a corollary, for 0 &lt; r1 &lt; r2 &lt; 8 lg n holds 
+(tz + r1u )(l + r1) 2 . (tz + r2u )(l + r2)  e 
+3</text>
+        </slide>
+        <slide>
+          <slideno>1</slideno>
+          <text>a j ak z 
+d r 
+s u 
+Figure 2: 
+f (x1 )Proposition 2. Let f be s.t. for 0 &lt; x1 &lt; x2 &lt; K and f (x2 ) &lt; c. Then 
+0 f(x) dx c . K 
+f(x) dx K 
+0 
+Proof. One can split the interval [0, K] into K subintervals of length . The integral of f 
+K
+on each subinterval is lower bounded by c1 K c1 f(x). f(x) dx, thus f(x) dx 
+0 0 0 
+It is sucient to choose K = 1/8 lg n to nish the proof of Lemma 1. 
+Proof of Lemma 2. 
+Let 
+ 
+g() = [CH j,k] (ai)  sin() (tz + ru )(tz  lu ) 
+a g2() 
+g1() 
+In order to estimate the ratio (2) it will be sucient to conne ourselves to 0 &lt;  &lt; 16 lg n 
+in the denominator. For 0 &lt; 1 &lt; 2 &lt;  holds2 
+g1(1) 
+g1(2)  1. 
+4 1</text>
+        </slide>
+      </slides>
+      <videos/>
+    </lecture>
+    <lecture>
+      <lecture_title>The Expected Number of Facets of the Shadow of a Polytope Given by Gaussian Random Constraints</lecture_title>
+      <lecture_pdf_url>https://ocw.mit.edu/courses/18-409-behavior-of-algorithms-spring-2002/resources/lect17/</lecture_pdf_url>
+      <lectureno>17</lectureno>
+      <slides>
+        <slide>
+          <slideno>1</slideno>
+          <text>| 
+
+
+  
+ probability we can take the limit as we increase the number of rays to get the expected 
+value from Theorem 1: 
+E[ Optc sin +c cos  (a1, . . . , a n) ] = lim P r[Optzi = Optzi+1 ] |
+M  i 
+Denition 2. 
+ang(z,   (a1 , . . . , a d )) = 
+x(a1 ,...,a d ) ang(xOz ) min 
+ang z (a1, . . . , a n) = ang(z, Opt z (a1, . . . , a n)) 
+This denition refers to the angle of a ray with relation to a point on a simplex. Note that 
+where ang(xOz ) is the angle between the rays x and z at the origin. If Optzi = Optzi+1 
+2 2then ang zi  M , so: P r[Optzi = Optzi+1 ]  P r[ang zi (a1, . . . , a n)  M ]. 
+Denition 3. For any z, Pz () = P r[ang z (a1, . . . , a n)  ] 
+Using these denitions, we can bound the expected value from Theorem 1: 
+ 2lim P r[Optzi = Optzi+1 ]  max lim Pz () 
+z0  M  i 
+We are going to make a very brute force argument about the value of Pz (). 
+Claim 4. For any z, 
+Pz () = P r[optz = {1, . . . ,  d} ang(z,   (a1 , . . . , a d ))  ] = 
+1,..., d 
+P r[optz = {1, . . . ,  d}]P r[ang(z,   (a1 , . . . , a d ))optz = {1, . . . ,  d}] |
+1,..., d 
+The second line is derived from the basic law of conditional probability. It will suce to 
+bound the second term only. 
+Denition 5. CH 1,..., d = the event a1 , . . . , a d are on the convex hull. That is, |||| = 
+1, r  0 such that &lt; , a i &gt;= r for i=1,...,d; j / {1, . . . ,  d} &lt; , a j &gt; r 
+Denition 6. Cross z,1,..., d = event that the ray through z crosses (a1 , . . . , a d ) 
+2</text>
+        </slide>
+        <slide>
+          <slideno>2</slideno>
+          <text>Note that optz = {1, . . . ,  d} if and only if CH 1,..., d and Cross z,1 ,..., d . 
+These denitions suggest a change of variables. Replace a1 , . . . , a d with , r, b 1 , . . . , b d 
+where a1 , . . . , a d lie in on the plane specied by  and r, and b1 , . . . , b d indicate where 
+on that plane a1 , . . . , a d lie. Thus, bi  Rd1 while ai  Rd . Note that we originally 
+had d2 variables. There is a onetoone correspondence with the new variables since b 
+contributes d(d 1) variables,  contributes (d 1) and r is a single variable. Since we 
+have a change of variables, we need to compute its Jacobian. See web page for this lecture 
+for some references. 
+Dans Aggravation 
+To be more concrete, we need to indicate how a1 , . . . , a d are computed from , r, b 1 , . . . , b d . 
+Fix some vector z. Choose a basis for the plane in Rd orthogonal to z through the origin. 
+The points b1 , . . . , b d lie in this plane. Now, for  = z, r 0 we can use ai=bi + rz. To 
+handle other values of , let T be the orthogonal linear transformation that maps z to  
+and is the identity on the orthogonal space. In general, we will apply this as follows: 
+ai = T (bi + rz) = T (bi ) + rz 
+There is one catch in that this is not welldened for  = z. But, this is a set of measure 
+zero, so it does not matter. Now we can dene the derivatives in each variable: The 
+Jacobian of this change of variables is the subject of a theorem of Blaschke: da1 . . .dad = 
+V ol((b1 , . . . , b d )) dr d  db1 . . .dbd . This allows us to dene the second term of 
+Claim 4: 
+P r[ang(z,  (a1 , . . . , a d ))optz = {1, . . . ,  d}] =  | 
+  [&lt; aj ,  &gt;r]j (aj )  
+,r j /{1,..., d } aj 
+[Cross z ] [ang (z,  (a1 , . . . , a d ) ] (a1 ) . . . (a d ) V ol((a1 , . . . , a d )) 
+b1 ,...,b d 
+Let ,r (bi ) = i (T (bi ) + r). We want to understand ang(z,  (a1 , . . . , a d ), which i 
+is the angle of incidence between the plane and a vector. Let z,r and  be the point and 
+angle where z intersects the plane. Let x be a boundary point of (a1 , . . . , a d ) and  
+be the angle ang(x0z). Let T = dist(O, z,r ) and  = dist(x, z ,r ). From all this, we can 
+ sin arrive at the following bound:  tan( ) = T  cos  sin  . This can replace the  2(1+4
+d log n) 
+[ang . . .] term in the above integral. 
+3</text>
+        </slide>
+        <slide>
+          <slideno>0</slideno>
+          <text>18.409 The Behavior of Algorithms in Practice 4/25/2 
+Lecture 17 
+Lecturer: Dan Spielman Scribe: Steve Weis 
+Shadow Vertex Rule Review 
+To briey review the shadow vertex rule, suppose we have a convex polytope given as the 
+convex hull of a collection of points, an objective function and an initial vector. Moreover, 
+assume that we know the facet of the polytope pierced by the ray through the initial 
+vector. The algorithm continuously modies the initial vector until it becomes the objective 
+function, all the while tracing the point where the ray through the vector pierces the hull 
+of the polytope. Of course, when one actually implements the algorithm, it takes discrete 
+steps jumping from facet to facet of the convex hull. We need to try and prove a bound on 
+the number of facets this algorithm will crawl over. 
+In order to show this, we will look at an evenly distributed collection of M rays in the plane 
+spanned by the initial vector and the objective funciton, and count the number of times two 
+adjacent rays pierce dierent facets. The probability this occurs is upper bounded by .M 
+To bound the constant c in this probability, we consider the cone of largest angle around 
+a ray that only pierces the facet the ray pierces, and prove that the probability that this 
+angle is less than  is at most c. 
+Dans Favorite LP 
+Given an objective function c and a convex hull CH(0, a 1, . . . , a n), maximize  such that 
+c  CH.  
+Let Opt z (a1, . . . , a n) denote set of indices of the corners of the simplex on the convex 
+hull pierced by the ray through z. 
+Theorem 1. Let c and c be vectors. Let a1, . . . , a n be Gaussian random vectors centered 
+at a1, . . . , a n, which have norm  1 and variance 2 . Then: 
+1 E[ Optc sin +c cos  (a1, . . . , a n)|]  poly(n, d, ) | 
+This expected value is the number of facets which pass through the plane generated by 
+the objective function vector and the initial vector. Consider (z1, . . . , z m) regularly spaced 
+vectors in the plane dened by span(c, c). We need to measure the probability two adjacent 
+rays do not pierce the same simplex, i.e P r[Optzi = Optzi+1 ]. By calculating this 
+1
+c</text>
+        </slide>
+        <slide>
+          <slideno>3</slideno>
+          <text>Claim 7. P r[i||ai|| &gt; 4 dlog(n)]  e4d log n 
+nThere are at most facets and n e4d log n  e3d log n . So, assuming max ||ai||   d d 
+(dlog(n)), our estimate is o by at most 1. 
+4</text>
+        </slide>
+      </slides>
+      <videos/>
+    </lecture>
+    <lecture>
+      <lecture_title>Spectral Partitioning Introduced</lecture_title>
+      <lecture_pdf_url>https://ocw.mit.edu/courses/18-409-behavior-of-algorithms-spring-2002/resources/lect7/</lecture_pdf_url>
+      <lectureno>7</lectureno>
+      <slides/>
+      <videos/>
+    </lecture>
+    <lecture>
+      <lecture_title>Worst-Case Complexity of the Simplex Method</lecture_title>
+      <lecture_pdf_url>https://ocw.mit.edu/courses/18-409-behavior-of-algorithms-spring-2002/resources/lect14/</lecture_pdf_url>
+      <lectureno>14</lectureno>
+      <slides>
+        <slide>
+          <slideno>3</slideno>
+          <text>In d dimensions, a hypercube is dened by the 2d constraints 
+0  x1  1 
+0  x2  1 
+... 
+0  xi  1 
+... 
+Our feasible set is 
+x1 0   1 
+x1 1  xi  x2  
+P := ... 
+xi1 1  xi1  xi  
+..., 
+with  = 1/3. We will index the constraints as follows: 
+1 2 
+x1 0   1 
+... 
+2i 
+xi12i1 
+xi 1  xi1   
+... 
+Claim: x is a vertex of P if and only if inequality 2i 1 or 2i is tight for each i. To prove 
+the claim, observe that it is impossible to satisfy inequalities 2i 1 and 2i simultaneously. 
+Thus, in order to make d inequalities tight, we must choose one inequality from each pair. 
+Theorem 5. Blands rule visits every vertex of P when solving 
+1. max xd s.t. x  P if started at (0,0,..., 0). 
+2. min xd s.t. x  P if started at (0,..., 0,1). 
+Proof. The proof is by induction. Assume that the theorem is true for d  1 dimensions. 
+We will prove part (1) of the theorem. The proof of part (2) is very similar. 
+The walk around the polytope begins with a sequence of points satisfying xd = xd1. 
+Because Blands rule will not loosen this equality until it is impossible to loosen any equality 
+of lower index (without decreasing the objective function), the walk starts by maximizing 
+xd1 over the polytope in d  1 dimensions that is the projection of P to coordinates 
+4</text>
+        </slide>
+        <slide>
+          <slideno>4</slideno>
+          <text>x1,...,xd1. Thus, by induction (part (1)), the walk visits every vertex of P satisfying 
+xd = xd1. 
+The next step is to (0,0,..., 0,1,1  ). Now, xd gets larger as xd1 gets smaller, so that 
+the walk visits every vertex satisfying xd = 1  xd1 by induction (part (2)). 
+2.5 Pivot rules under perturbation 
+There are two types of perturbations one might consider: 
+1. Absolute perturbations: Write the feasible set as Ax  b, and suppose A is subject 
+to absolute perturbations. This model seems strange, since A can be so sparse. (In 
+our worst-case instance for Blands rule, A contained only one nonzero entry in any 
+row.) 
+2. Zero-preserving perturbations: Our proof for the exponential running time of Blands 
+rule holds up under zero-preserving perturbations. What about problem instances 
+for the greedy pivot rule? The rst worst-case instance, provided by Jeroslow, does 
+not hold up under perturbation. It is not known whether the instance provided by 
+Amenta and Ziegler holds up under perturbation. 
+3 Smoothed analysis of the simplex method 
+Our smoothed analysis of the simplex method will take advantage of some nice properties 
+of the shadow-vertex pivot rule. 
+3.1 Denition of the shadow-vertex pivot rule 
+The inspiration for this rule comes from the fact that linear programming is easy in two 
+dimensions. The idea is to project the feasible polytope to a convex polygon, i.e. take a 
+shadow, that satises 
+1. The optimal vertex maps to the exterior, 
+2. The start vertex maps to the exterior, 
+5</text>
+        </slide>
+        <slide>
+          <slideno>2</slideno>
+          <text>2.2 Time complexity of deterministic pivot rules 
+The simplex method with any of the above four deterministic pivot rules takes exponential 
+time in worst-case. There are no known polynomial time pivot rules. We have the belief, 
+Almost all deterministic pivot rules take exponential time in the worst case. 
+A powerful tool for generating polytopes that produce slow behavior for a particular pivot 
+rule was provided by Amenta and Ziegler. 
+The following question came from the audience: Is the performance bad because the poly
+tope has large diameter, or because the algorithm chooses a poor path? 
+It seems that the polytope of an LP in d dimensions with n constraints has polynomial 
+diameter in n and d. Our best proven result is 
+Theorem 3 (Kalai-Kleitman). The diameter of the polytope is  nlog2 n . 
+But we have the conjecture 
+Conjecture 4 (Hirsch). The diameter of the polytope is  n  d + 1. (Actually, the 
+conjecture might be n  d  1. We dont remember.) 
+2.3 Time complexity of random pivot rules 
+We know very little about the time complexity of random pivot rules. We do know that 
+there exist random pivot rules that take nO(
+d) steps. This result was proved independently 
+by Kalai and Matou sek-Sharir-Welzl. 
+2.4 Worst-case complexity of Blands rule 
+The initial paper on constructing worst-case inputs for a pivot rule was by Klee-Minty. 
+We will construct a deformed hypercube that will cause Blands rule to visit every vertex 
+when started at a particular vertex. 
+3</text>
+        </slide>
+        <slide>
+          <slideno>5</slideno>
+          <text>and then optimize over the shadow. To construct such a shadow, nd a linear function t that 
+is optimized by the current vertex and map each vertex v of the polytope to (v,c,v,t). 
+Claim: If a vertex v of the polytope projects to the exterior of the shadow, then one can 
+compute which neighbor of v will be visited next on the shadow. 
+Thus, algorithmically, the shadow-vertex pivot rule is reasonable. The rules major analyt
+ical advantage is the fact that we can succinctly describe the vertices that are visited as 
+follows. Let optz(A,b) denote the vertex optimizing zT x s.t. Ax b. Then the vertices 
+encountered when optimizing c are 
+&#13;
+ 
+opt(1)t+c (A,b). 
+01 
+3.2 Worst-case complexity of the shadow-vertex pivot rule 
+The shadow-vertex pivot rule has exponential worst-case complexity. The following instance 
+induces exponential running time: 
+x1 0   1 
+x1 1 xi 	x2  
+... 
+(xi1 xi2)	 1 (xi1 xi2)  xi  
+..., 
+where  = 1/3 and  = 1/12. 
+3.3 Smoothed analysis of the shadow-vertex pivot rule 
+We will prove the following theorem in upcoming lectures. 
+a1,..., Theorem 6. Let t and c be arbitrary vectors, bi {1,1}, and  a n vectors of norm 
+at most 1. If a1,...,an are Gaussian random vectors of variance 2 centered at ai, then 
+ 
+1
+ &#13;
+ 
+01 opt(1)t+c (a1,...,an,b1,...,bn) 
+ 
+poly(n,d,
+ ).
+ E 
+It is an open problem to prove a similar result for perturbations that preserve feasibility 
+(or unfeasibility). 
+6</text>
+        </slide>
+        <slide>
+          <slideno>1</slideno>
+          <text>2. The feasible polytope P is simple. 
+3. Exactly d planes meet at any vertex. 
+4. Every vertex has exactly d neighbors. 
+One can show that under a perturbation of the bis, the feasible polytope is simple with high 
+probability. 
+2 Worst-case complexity of the simplex method 
+We will assume that P is a simple polytope. Our denition of the simplex method, 
+1. Find some vertex of P , 
+2. Move to one of the d neighbors improving the objective function, and iterate, 
+is incomplete. It does not specify how to nd the initial vertex, nor how to choose the next 
+neighbor in the sequence. Finding the initial vertex will be addressed in a later lecture. Now 
+we look at pivot rules, which specify which neighbor to choose in step (2) of the algorithm. 
+Chvatls book is a good reference on pivot rules. 
+2.1 Pivot rules 
+1. Greedy: Choose the vertex giving the maximal improvement in the objective function. 
+2. Blands rule: Index the constraints. The current vertex v satises exactly d constraints 
+with equality, i.e. it lies at the intersection of d faces of the polytope. Any adjacent 
+vertex w lies on d  1 of these faces. So when moving from v to w, exactly one 
+constraint is loosened from tightness. Choose w so that the constraint that is loosened 
+has least index. 
+3. Dantzigs largest coecient: Similar to Blands. 
+4. Steepest edge: Make the most progress per distance travelled. 
+5. Random. 
+2</text>
+        </slide>
+        <slide>
+          <slideno>0</slideno>
+          <text>1 18.409 The Behavior of Algorithms in Practice 9 Apr. 2002 
+Lecture 14 
+Lecturer: Dan Spielman Scribe: Brian Sutton 
+In this lecture, we study the worst-case complexity of the simplex method. We conclude by 
+stating, without proof, one of the major theorems in the smoothed analysis of the simplex 
+method. 
+More common geometric view of the simplex method 
+The animation that we saw in an earlier lecture is not the most common way of viewing 
+the simplex method geometrically. Here we give a more common interpretation. 
+Start with the LP formulation 
+Tmax c x 
+s.t. ai T x  bi. 
+Each constraint ai T x  bi denes a halfspace, so the complete set of constraints denes a 
+polytope P (assuming that the LP is feasible and nite). Solving the LP is equivalent to 
+nding the vertex of this polytope that lies farthest in the direction of c. 
+The simplex method is 
+1. Find some vertex of P . 
+2. Move to an adjacent vertex in the direction of c, i.e. which improves the objective 
+function, and iterate. 
+Denition 1. A basic feasible solution of an LP is a feasible x for which exactly d con
+straints are tight. Equivalently x is a vertex of the feasible polytope. 
+Note that this denition is equivalent to the denition given in an earlier lecture. 
+Observation 2. If the ais and bis are in general position, then 
+1. No x satises d + 1 constraints with equality. 
+1</text>
+        </slide>
+      </slides>
+      <videos/>
+    </lecture>
+    <lecture>
+      <lecture_title>Gaussian Elimination Without Pivoting</lecture_title>
+      <lecture_pdf_url>https://ocw.mit.edu/courses/18-409-behavior-of-algorithms-spring-2002/resources/lect4/</lecture_pdf_url>
+      <lectureno>4</lectureno>
+      <slides>
+        <slide>
+          <slideno>4</slideno>
+          <text>vw Therefore, A(1) = B  . 
+Let a(1) be the i, j entry of A(1). It suces to show that i,j 
+(1) (1) aj,j  ai,j | | |
+i2,i=j 
+We know that 
+|wj |bi,j  viwj 
+
+(1) bi,j |+ |= | | |  | |vi| ai,j  i2,i=j i2,i=j i2,i=j i2,i=j 
+Since A is diagonally dominant, it follows that 
+i2,i=j (1) wj wj|ai,j |  (|bj,j |  |wj |) + |
+ |(||  |vj |) = |bj,j | |
+||||vj | 
+wj vj (1) 
+j,j bj,j  =
+a|  
+Denition 5 A is positive denite if A is symmetric and for all x, xAxT &gt; 0 
+Exercise: The above denition is equivalent to the following: 
+1. All eigenvalues of A are positive. 
+2. All principal minors of A are positive denite. 
+Exercise: Eigenvalues of A2..n,2..n interlace the eigenvalues of A. 
+Additionally, the following two facts are implied by Item #2 above: 
+ Diagonal entries of A are positive. 
+ The entry with the largest absolute value lies on a diagonal. 
+Theorem 6 If A is positive denite, then A(k)  A. 
+Note: This implies that U   A. 
+5</text>
+        </slide>
+        <slide>
+          <slideno>3</slideno>
+          <text>Unfortunately, using complete pivoting requires about twice as many oating point opera
+tions as partial pivoting. Therefore, since partial pivoting works well in practice, complete 
+pivoting is hardly ever used. 
+Sometimes You Dont Need to Pivot 
+1. If A is diagonally dominant then it is possible to bound the size of the entries in L. 
+2. If A is positive denite then it is possible to bound the size of the entries in U . 
+Having both of these conditions is very nice. In practice, both of these conditions show up 
+quite often. 
+Denition 2 A matrix, A, is (columnwise) diagonally dominant if for all j, 
+ai,j |aj,j |  
+i=j 
+Theorem 3 If A is (columnwise) diagonally dominant, then li,j  1. Equivalently, if A 
+is diagonally dominant then one does not permute when using partial pivoting. 
+Proof After the kth round of Gaussian Elimination, we refer to the n  k by n  k matrix 
+in the lower left corner as A(k). 
+If suces to prove that all of the A(k) are diagonally dominant. We will show that A(1) is 
+diagonally dominant. A straightforward inductive argument can be used to show all of the 
+A(k) are diagonally dominant. 
+Claim 4 A(1) is diagonally dominant. 
+Let   
+ w A = 
+v B 
+Then one step of Gaussian Elimination yields 
+1 0  w A = vw v I 0 B    
+4</text>
+        </slide>
+        <slide>
+          <slideno>6</slideno>
+          <text>) A Smoothed Analysis Theorem 
+   Theorem 7 Let A be any matrix with A  1 and let A = A + G where G is a Gaussian 
+random matrix with variance 2 . Then 
+[U  &gt; 4n 7 
+2log(n)/] (1) P rob &lt;  
+  log( 1 
+[L &gt; 4n 7 
+2log(n)/] (2) P rob &lt;  
+where A = LU .
+We will prove this theorem during the next lecture.
+7</text>
+        </slide>
+        <slide>
+          <slideno>2</slideno>
+          <text>L, U and  Theorem 1 (Wilkinson) If you solve Ax = b computing   x, then there exists a 
+A such that 
+(A + A)x = b 
+and   
+L  A  nmach 3 + 5  U 
+A A 
+The problem with the previous example is that although A had small entries, U had a very 
+large entry. 
+When doing Gaussian Elimination, we say that the growth factor is: 
+U 
+A 
+Partial Pivoting 
+Idea: Permute the rows but not the columns such that the pivot is the largest entry in its 
+column. 
+Note: This is the technique used by Matlab. 
+At step j in the Gaussian Elimination, permute the rows so that |aj,j |  |ai,j for all i &gt; j. | 
+This guarantees that L  1. However, in the worst case, partial pivoting yields a growth 
+factor of 2n1 for an nbyn matrix. 
+Complete Pivoting 
+Idea: Permute the rows and the columns such that the pivot is the largest entry in the 
+matrix. 
+Wilkinson proved that Complete Pivoting guarantees that: 
+U 
+A  n
+1 
+2log(n) 
+However, it is conjectured that the growth factor can be upper bounded by something closer 
+to n. 
+3</text>
+        </slide>
+        <slide>
+          <slideno>5</slideno>
+          <text>Proof We rst prove that the A(k) are positive denite. We will show that A(1) is 
+positive denite. A straightforward inductive argument can be used to show all of the A(k) 
+are diagonally dominant. 
+It is easy to see that A(1) is symmetric and so it suces to show that for all x, xAxT &gt; 0. 
+Let   
+ vT 
+A = 
+v B 
+and recall that T 
+A(1) = B  vv
+ 
+Therefore, 
+xAx T (x2 . . . x n)A(1)(x2 . . . x n)T = 
+x 2 + 2x1 vixi + bi,j xixj  (bi,j  vivj )xixj 1  i2 i2,j2 i2,j2 
+Therefore, by cancellation, 
+ 2 
+ xAxT (x2 . . . x n)A(1)(x2 . . . x n)T = xi + vixi 
+ i2 
+This means that for any x2 . . . x n, setting 
+vixi x1 =   i2 
+yields xAxT = (x 2 . . . x n)A(1)(x2 . . . x n)T . Therefore, if A(1) is not positive denite, then 
+neither is A. 
+Now all that remains to be shown is that A(1)This will follow from two facts   A. 
+that were previously observed about positive denite matrices. (We repeat them here for 
+convenience. 
+ Diagonal entries of A are positive. 
+ The entry with the largest absolute value lies on a diagonal. 
+(1)Therefore, we know that the largest entry of A(1) is aj,j for some j 2. 
+2 
+0 &lt; a(1) = bj,j  v
+ j bj,j = aj,j j,j 
+6</text>
+        </slide>
+        <slide>
+          <slideno>1</slideno>
+          <text>Floating Point 
+We consider a model of oating point computation where it is possible to represent numbers 
+of the form: 
+m2b 
+2t 
+Where mis an integer such that 2t  m 2t . 
+In this model, t is the precision of the oating point representation. In what follows, we 
+will ignore bounds on b. 
+Let mach be dened so that 1 + mach is the smallest number greater than 1 which the 
+machine can represent. 
+The goal of a oating point computation is to provide an answer which is correct to within 
+a factor of (1  mach). 
+Consider the example in the previous section where  &lt;  mach. In this case, we will compute 
+the LU factorization as:    
+1 0  1 
+1 
+ 1 0 1 
+ 
+1
+2 This means that using Gaussian Elimination (with no pivoting) we will actually be solving 
+the system:      
+x
+x1 1 = 
+1 0 1 
+And so will get the solution: 
+1
+2 = 1
+= 1  
+x
+x
+2
+1 Which is nowhere near the correct solution to the original system. 
+Note: The matrix in the previous example is wellconditioned, having a condition number 
+of about 2.68, but we still fail miserably when doing Gaussian Elimination on this matrix. 
+Exercise: Do the same thing for the system: 
+     
+x
+x1 1 1 = 
+1 1 
+You should observe that permuting the rows/columns of the matrix (pivoting) allows you 
+to solve the system with Gaussian Elimination even when  &lt;  mach. 
+2</text>
+        </slide>
+        <slide>
+          <slideno>0</slideno>
+          <text>18.409 The Behavior of Algorithms in Practice 2/21/2002 
+Lecture 4 
+Lecturer: Dan Spielman Scribe: Matthew Lepinski 
+A Gaussian Elimination Example 
+To solve:      
+ 1 x1 1 = 
+1 1 x2 1 
+First factor the matrix to get: 
+      
+1 0  1 x1 1 = 1 
+1 0 1 
+1 
+x2 1 
+Next solve:      
+1 0 y1 1 = 1 
+1 y2 1 
+To get: 
+y1 = 1 
+y2 = 1  1 
+ 
+Finally solve:      
+ 1 x1 = y1 
+0 1  1 
+x2 y2 
+To get: 
+x1 = 0 
+x2 = 1 
+Which is the solution to the original system. When viewed this way, Gaussian elimination 
+is just LU factorization of a matrix followed by some simple substitutions. 
+1</text>
+        </slide>
+      </slides>
+      <videos/>
+    </lecture>
+    <lecture>
+      <lecture_title>Analysis of von Neumann&#8217;s Algorithm</lecture_title>
+      <lecture_pdf_url>https://ocw.mit.edu/courses/18-409-behavior-of-algorithms-spring-2002/resources/lect13/</lecture_pdf_url>
+      <lectureno>13</lectureno>
+      <slides/>
+      <videos/>
+    </lecture>
+    <lecture>
+      <lecture_title>Smoothed Analysis of Gaussian Elimination Without Pivoting</lecture_title>
+      <lecture_pdf_url>https://ocw.mit.edu/courses/18-409-behavior-of-algorithms-spring-2002/resources/lect5/</lecture_pdf_url>
+      <lectureno>5</lectureno>
+      <slides>
+        <slide>
+          <slideno>1</slideno>
+          <text>2 /2exFact: For a Gaussian random variable, G, with mean 0 and variance 1, P r[G &gt; x]  
+2x 
+Using this fact together with the union bound, we get: 
+2 ex2/2nP r[max( A1:k,(k +1):n,A(k+1):n,1:k ) &gt; x]  2 
+2x (2) 
+In order to combine the probability bounds from (1) and (2) we use the following combina
+tion lemma. 
+Lemma 2 (Combination Lemma 1) Let A and B be independent random variables s.t. 
+ P r[A &gt; x]  x 
+ex2/2 
+P r[B &gt; x]  x 
+Then,  
+( 2 log( ))P r[AB &gt; x]  x 
+Proof AB &gt; x A &gt; x/2 log  or i 2 log  s.t. i B i+ 1 and A x/i + 1 
+Therefore, 
+P r[AB &gt; x]  P r[A x/ 2 log( )] + P r[A x/i+ 1]P r [B i] 
+i
+2 log( ) 
+ 2 log( )
+ x
+Since the random variables in A1 and A1:k,k +1:n, Ak+1:n,1:k are independent we can use 1:k,1:k 
+the combination lemma to get the following bound: 
+3/2  nP r[ A(k) nx]  x (2 log n + 4) (3)A 
+Finally, the union bound lets us get the following bound on the tail probability of the growth 
+factor, U  
+A 
+nP r[ U x] 7/2 
+(2  
+log n+ 4) (4)A  x 
+2</text>
+        </slide>
+        <slide>
+          <slideno>0</slideno>
+          <text>18.409 The Behavior of Algorithms in Practice 2/26/2002 
+Lecture 5 
+Lecturer: Dan Spielman Scribe: Nitin Thaper 
+Smoothed Complexity of Gaussian Elimination 
+Today we will show that the smoothed complexity of solving an n x n linear system to t bits 
+of accuracy, using Gaussian Elimination without pivoting, is O(n3(log( n/) + t)). 
+More formally, we want to prove the following result. 
+   Theorem 1 Let A be any matrix with A  1 and let A = A + G where G is a Gaussian 
+random matrix with variance 2  1. Then the expected number of digits needed to solve 
+Ax = b to t bits of accuracy is O(log(n/ ) + t). 
+We will prove this theorem via a sequence of lemmas. 
+Recall that if we run Gaussian Elimination with mach precision then we get x s.t. 
+(A + A)x = b and  
+A
+ nmach 3 + 5LU  
+A A 
+Also, 
+x  x (A) A 
+x  A 
+In the last class, we showed that 
+A(k)U   max  
+k A A 
+where A(k) is the (n  k  1)x(n  k  1) matrix after rst k eliminations. 
+We also proved that 
+A(k)  nA1 
+A 1:k,1:k  max(A1:k,(k +1):n, A(k+1):n,1:k ) 
+and 
+k3/2 
+P r[A1 
+1:k,1:k  &gt; x]  x (1) 
+1</text>
+        </slide>
+        <slide>
+          <slideno>2</slideno>
+          <text>Next we need to bound L. 
+k1 
+j,k Exercise: For j &gt; k, Lj,k = a 
+k1 ak,k 
+Now, 
+a = 1:k1,1:k1a1:k1,k (k1) ak,k + gk,k  ak,1:k1A1 
+k,k 
+And since the gk,k are chosen independently, 
+P r[|ak,k (k1) &lt; ]  / | 
+Equivalently, since the gk,k do not appear in aj,k (k1), j &gt; k 
+P r[|ak,k (k1) &lt; |{a k1}, j &gt; k]  /j,k | 
+which can be rewritten as: 
+1 1 P r[ (k1) &gt; x | a k1, j &gt; k] x (5)j,k  / ak,k | |
+Exercise: Show that 
+P r[j : a(k1) &gt; x] n5/2(2log n+ 4) 
+j,k |  x (6) 
+Lemma 3 (Combination Lemma 2) Let A and B be random variables satisfying: 
+P r[A &gt; x]  /x 
+P r[B &gt; x A]  /x |
+Then 
+P r[AB &gt; x]  2log x +  +  
+x 
+Proof 
+AB &gt; x  either A &gt; x or B &gt; x or i,1  i  log xs.t.A  2i1 and B  x/2i 
+It follows that: 
+logx 
+P r[AB &gt; x]  P r[A &gt; x] + P r[B &gt; x] + P r[A  2i1 and B  x/2i] 
+i=1 
+ /x+ /x + P r[A  2i1]P r[B  x/2iA  2i1] |
+i
++    2i
+ x +2i x
+i 
++  + 2log x
+ x
+3</text>
+        </slide>
+        <slide>
+          <slideno>3</slideno>
+          <text>The above combination lemma lets us combine the bounds in (5) and (6) to get the following 
+bound on L: 
+P r[L 5n 7/2( log n + 1)x log x/] 1/x 
+So far weve proved the following: 
+P r[L 5n 7/2( log n + 1)x log x/] 1/x 
+P r[ U  2n 7/2(  
+log n + 1)x/ ] 1/xA 
+P r[A n 1/2(1 + 4 log x/n] 1/x 
+ n 3/2P r[A1x/] 1/x 
+Combining everything, we get: 
+3P r[ (A)LU  10n 9( log n + 1)2(1 + 4 log x/n)x /3] 4/xA 
+In order to get an estimate of the digits we need a statment about the log of (A)LU  . A 
+Exercise: If P r[a &gt; xk ] 1/x then E[log(a )] k log( ) + f (k) where f (k) ( 121/k )2 
+Using this fact lets us claim the desired result, viz., 
+E[log( (A)LU  )] O(log( n/))A 
+Drawbacks of this analysis 
+This analysis is limited to the case when no pivoting is done. It would be desirable to 
+prove something about partial pivoting. It seems that we should be able to get a high 
+probability result with exponentially instead of polynomially small probability for this case. 
+Experiments seem to validate this hypothesis too. 
+4 1</text>
+        </slide>
+      </slides>
+      <videos/>
+    </lecture>
+    <lecture>
+      <lecture_title>Spectral Partitioning of Planar Graphs</lecture_title>
+      <lecture_pdf_url>https://ocw.mit.edu/courses/18-409-behavior-of-algorithms-spring-2002/resources/lect8/</lecture_pdf_url>
+      <lectureno>8</lectureno>
+      <slides/>
+      <videos/>
+    </lecture>
+    <lecture>
+      <lecture_title>The Expected Number of Facets of the Convex Hull of Gaussian Random Points in the Plane</lecture_title>
+      <lecture_pdf_url>https://ocw.mit.edu/courses/18-409-behavior-of-algorithms-spring-2002/resources/lect15/</lecture_pdf_url>
+      <lectureno>15</lectureno>
+      <slides>
+        <slide>
+          <slideno>0</slideno>
+          <text>18.409 The Behavior of Algorithms in Practice 4/18/02 and 4/23/02
+Lecture 15/16
+Lecturer: Dan Spielman Scribe: Mikhail Alekhnovitch 
+Let a1, ..., an be independent random gaussian points in the plane with variance 1. Today 
+lecture is devoted to the following question: what is the expected size of their convex hull? 
+Theorem 1 (Renyi-Salanke). 
+E [size of C.H.] = ( lg n). 
+a1 ,...,a n 
+In this lecture we will prove a weaker bound O(lg2 n). First we notice, that 
+ 3 n 
+3 
+Pr[o  C.H.]  4 . 
+This is because the probability that o  C.H. of three points is exactly 3/4, so we can divide 
+all points into n/3 groups of 3, and each group covers o with probability 1/4. Thus, with 
+exponentially high probability o C.H. so we can assume for the rest of the lecture that 
+this is always the case. 
+For a vector z consider the edge (aj , ak ) of the convex hull that crosses z clockwise. Denote 
+Pz () = Pr[ang (zoak )) &lt; ]. 
+Then clearly 
+2  3 n 
+3 
+E[size of C.H.]  lim Pz () + n . 
+0  4 
+Denote by CHj,k the event that (aj , ak ) is an edge of CH(a1, ..., an ) and other points lie 
+on the origin side of the line aj ak . For a xed vector z, Cross jk is the event that the edge 
+(aj , ak ) crosses z clockwise. 
+    
+Pz () = Pr CHj,k  Cross j,k Pr ang(zoak ) &lt;  CH j,k  Cross j,k =  |
+j,k 
+1</text>
+        </slide>
+        <slide>
+          <slideno>2</slideno>
+          <text>2
+ 3 
+n 
+3 2
+ rsin()   3  
+68 lg n n 
+3 
+&lt;  + n + 1. 4
+E[size of C.H.] lim Pz () + n lim Pr 
+0  4 0  
+We estimate the latter probability using the Combination Lemma from Lecture 19. Namely, 
+we show that 
+Pr[r &lt; ] &lt; O(lg n )
+Pr[sin( ) &lt; ] = O(lg n 2).
+Thus, the following two lemmas imply the theorem: 
+Lemma 1. t8 lg n 
+[r &lt; ](l + r)(a k) dr 
+r0  
+(l+ r)(a k) dr O( lg n) (1) 
+r0 
+Lemma 2. t8 lg n, l,r28 lg n 
+ 
+[sin() ] [CH j,k] sin()(a j )(a k )
+ i=j,k
+O((lg n )2) (2)   
+[CH j,k] sin()(a j )(a k ) 
+ i=j,k
+3</text>
+        </slide>
+        <slide>
+          <slideno>1</slideno>
+          <text>a j akr 
+l z 
+ t 
+O 
+Figure 1: 
+  
+= Pr ang(zoak ) &lt;  CH j,k  Cross j,k |
+for any choice of j and k (the latter equation follows because of the symmetry). Assume 
+that (aj , ak ) crosses z. It will be convenient to choose the coordinates , t, l, r instead of 
+aj , ak (see gure 1). Let  = ang(zoa k ). Then the probability Pz () can be expressed as: 
+   
+[CH j,k] [ &lt; ] (l + r)sin( )(a j )(a k ) d dt dl dr  
+t, i=j,k l,r0  
+[CH j,k] (l + r)sin( )(a j )(a k ) d dt dl dr  
+t, i=j,k l,r0 
+We need the following claim that estimates the maximal norm of n gaussian points in the 
+plane. 
+Claim 2.   1 Pr max 8 lg n &lt; . 
+i ||ai|| &gt;n 
+In the assumption of the claim, we can bound t 8 lg n; r, l  28 lg n. Once again we 
+can assume that this is always the case (it can change the expectation at most by 1). When 
+ is suciently small, 
+1 1 r sin() r sin() &gt; tan() = . 2 2  t + r cos()  68 lg n 
+Thus 
+2</text>
+        </slide>
+      </slides>
+      <videos/>
+    </lecture>
+    <lecture>
+      <lecture_title>Smoothed Analysis and Monotone Adversaries for Bandwidth and Graph Bisection
+McSherry&#8217;s Spectral Bisection Algorithm</lecture_title>
+      <lecture_pdf_url>https://ocw.mit.edu/courses/18-409-behavior-of-algorithms-spring-2002/resources/lect10/</lecture_pdf_url>
+      <lectureno>10</lectureno>
+      <slides/>
+      <videos/>
+    </lecture>
+  </lectures>
+</doc>

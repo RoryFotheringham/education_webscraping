@@ -1,0 +1,872 @@
+<doc>
+  <source>MIT</source>
+  <date>28/01/2023</date>
+  <course>
+    <course_url>https://ocw.mit.edu/courses/6-881-representation-and-modeling-for-image-analysis-spring-2005/</course_url>
+    <course_title>Representation and Modeling for Image Analysis</course_title>
+    <course_tags>
+      <list>Engineering </list>
+      <list>Computer Science </list>
+      <list>Systems Engineering </list>
+    </course_tags>
+  </course>
+  <lectures>
+    <lecture>
+      <lecture_title>Belief Propagation (PDF)</lecture_title>
+      <lecture_pdf_url>https://ocw.mit.edu/courses/6-881-representation-and-modeling-for-image-analysis-spring-2005/resources/bptutorial/</lecture_pdf_url>
+      <lectureno>17</lectureno>
+      <slides>
+        <slide>
+          <slideno>5</slideno>
+          <text>Outline
+Inference in Graphical Models
+ Pairwise Markov random fields
+ Belief propagation for trees
+Variational Methods
+ Mean field
+ Bethe approximation &amp; BP
+Extensions of Belief Propagation
+ Efficient message passing implementation 
+ Generalized BP 
+ Particle filters and nonparametric BP</text>
+        </slide>
+        <slide>
+          <slideno>12</slideno>
+          <text>Belief Propagation for Trees
+ Dynamic programming algorithm which exactly 
+computes all marginals
+ On Markov chains, BP equivalent to alpha-beta 
+or forward-backward algorithms for HMMs
+ Sequential message schedules require each 
+message to be updated only once
+ Computational cost:
+number of nodes
+discrete states 
+for each node
+Belief Prop:
+Brute Force:</text>
+        </slide>
+        <slide>
+          <slideno>0</slideno>
+          <text>Variational Methods, Belief
+Propagation, &amp; Graphical Models
+Erik Sudderth
+Massachusetts Institute of Technology</text>
+        </slide>
+        <slide>
+          <slideno>17</slideno>
+          <text></text>
+        </slide>
+        <slide>
+          <slideno>8</slideno>
+          <text></text>
+        </slide>
+        <slide>
+          <slideno>19</slideno>
+          <text></text>
+        </slide>
+        <slide>
+          <slideno>30</slideno>
+          <text></text>
+        </slide>
+        <slide>
+          <slideno>10</slideno>
+          <text></text>
+        </slide>
+        <slide>
+          <slideno>1</slideno>
+          <text></text>
+        </slide>
+        <slide>
+          <slideno>21</slideno>
+          <text></text>
+        </slide>
+        <slide>
+          <slideno>27</slideno>
+          <text>Implications for Loopy BP
+Bethe Free Energy is an Approximation 
+ BP may have multiple fixed points (non-convex) 
+ BP is not guaranteed to converge 
+ Few general guarantees on BPs accuracy 
+Characterizations of BP Fixed Points 
+ All graphical models have at least one BP fixed point
+ Stable fixed points are local minima of Bethe 
+ For graphs with cycles, BP is almost never exact 
+ As cycles grow long, BP becomes exact (coding)</text>
+        </slide>
+        <slide>
+          <slideno>13</slideno>
+          <text>Inference for Graphs with Cycles
+ For graphs with cycles, the dynamic 
+programming BP derivation breaks 
+Junction Tree Algorithm 
+ Cluster nodes to break cycles
+ Run BP on the tree of clusters
+ Exact, but often intractable 
+Loopy Belief Propagation 
+ Iterate local BP message updates
+on the graph with cycles
+ Hope beliefs converge 
+ Empirically, often very effective</text>
+        </slide>
+        <slide>
+          <slideno>31</slideno>
+          <text>Dynamic Quantization
+(Coughlan et. al., ECCV 2002 &amp; 2004 CVPR GMBV workshop) 
+Images removed due to copyright considerations. 
+ Deformable template: State at each node is 
+discretization of position and orientation of some 
+point along the letter contour 
+ Rules for pruning unlikely states based on local 
+evidence, and current message estimates, allow efficient, nearly globally optimal matching</text>
+        </slide>
+        <slide>
+          <slideno>23</slideno>
+          <text></text>
+        </slide>
+        <slide>
+          <slideno>32</slideno>
+          <text>Generalized Belief Propagation
+idi i (Yed a, Freeman, &amp; We ss, NIPS 2000) 
+ Big idea: cluster nodes to break shortest cycles
+ Non-overlapping clusters: exactly equivalent to 
+loopy BP on the graph of cluster nodes 
+ Overlapping clusters: higher-order Kikuchi free 
+energies ensure that information not over-counted</text>
+        </slide>
+        <slide>
+          <slideno>34</slideno>
+          <text></text>
+        </slide>
+        <slide>
+          <slideno>3</slideno>
+          <text></text>
+        </slide>
+        <slide>
+          <slideno>4</slideno>
+          <text>Other Graphical Models
+Images removed due to copyright considerations. 
+Pictorial Structures Articulated Models (Constellation Models)</text>
+        </slide>
+        <slide>
+          <slideno>15</slideno>
+          <text>Outline
+Inference in Graphical Models
+ Pairwise Markov random fields
+ Belief propagation for trees
+Variational Methods
+ Mean field
+ Bethe approximation &amp; BP
+Extensions of Belief Propagation
+ Efficient message passing implementation 
+ Generalized BP 
+ Particle filters and nonparametric BP</text>
+        </slide>
+        <slide>
+          <slideno>25</slideno>
+          <text></text>
+        </slide>
+        <slide>
+          <slideno>16</slideno>
+          <text></text>
+        </slide>
+        <slide>
+          <slideno>22</slideno>
+          <text>Structured Mean Field
+Structured Original Graph Nave Mean Field Mean Field 
+ Any subgraph for which inference is tractable 
+leads to a mean field style approximation for 
+which the update equations are tractable</text>
+        </slide>
+        <slide>
+          <slideno>7</slideno>
+          <text></text>
+        </slide>
+        <slide>
+          <slideno>2</slideno>
+          <text>Nearest-Neighbor Grids
+Low Level Vision 
+ Image denoising 
+ Stereo 
+ Optical flow 
+ Shape from shading
+ Superresolution 
+ Segmentation 
+unobserved or hidden variable 
+local observation of</text>
+        </slide>
+        <slide>
+          <slideno>18</slideno>
+          <text></text>
+        </slide>
+        <slide>
+          <slideno>29</slideno>
+          <text></text>
+        </slide>
+        <slide>
+          <slideno>20</slideno>
+          <text></text>
+        </slide>
+        <slide>
+          <slideno>14</slideno>
+          <text>A Brief History of Loopy BP
+ 1993: Turbo codes (and later LDPC codes, 
+rediscovered from Gallagers 1963 thesis) 
+revolutionize error correcting codes (Berrou et. al.) 
+ 1995-1997: Realization that turbo decoding 
+algorithm is equivalent to loopy BP (MacKay &amp; Neal) 
+ 1997-1999: Promising results in other domains, &amp; 
+theoretical analysis via computation trees (Weiss) 
+ 2000: Connection between loopy BP &amp; variational 
+approximations, using ideas from statistical physics 
+(Yedidia, Freeman, &amp; Weiss) 
+ 2001-2005: Many results interpreting, justifying, 
+and extending loopy BP</text>
+        </slide>
+        <slide>
+          <slideno>28</slideno>
+          <text>Outline
+Inference in Graphical Models
+ Pairwise Markov random fields
+ Belief propagation for trees
+Variational Methods
+ Mean field
+ Bethe approximation &amp; BP
+Extensions of Belief Propagation
+ Efficient message passing implementation 
+ Generalized BP 
+ Particle filters and nonparametric BP</text>
+        </slide>
+        <slide>
+          <slideno>35</slideno>
+          <text>Nonparametric Belief Propagation
+(Sudderth, Ihler, Freeman, &amp; Willsky) 
+Belief Propagation Particle Filters
+ General graphs 
+ian  Markov chains 
+ Discrete or Gauss  General potentials 
+Nonparametric BP 
+ General graphs 
+ General potentials</text>
+        </slide>
+        <slide>
+          <slideno>9</slideno>
+          <text></text>
+        </slide>
+        <slide>
+          <slideno>11</slideno>
+          <text></text>
+        </slide>
+        <slide>
+          <slideno>33</slideno>
+          <text></text>
+        </slide>
+        <slide>
+          <slideno>24</slideno>
+          <text></text>
+        </slide>
+        <slide>
+          <slideno>26</slideno>
+          <text></text>
+        </slide>
+        <slide>
+          <slideno>6</slideno>
+          <text></text>
+        </slide>
+      </slides>
+      <videos/>
+    </lecture>
+    <lecture>
+      <lecture_title>Shape Based Curve Evolution (PDF)</lecture_title>
+      <lecture_pdf_url>https://ocw.mit.edu/courses/6-881-representation-and-modeling-for-image-analysis-spring-2005/resources/shapecurves/</lecture_pdf_url>
+      <lectureno>12</lectureno>
+      <slides>
+        <slide>
+          <slideno>4</slideno>
+          <text>Training Data
+	The training set, T, consists of a set of 
+surfaces: T = {u1, u2, , un } 
+T = { 
+ , } 
+	The mean shape 
+m	= 
+3/14/05	 6.881 5</text>
+        </slide>
+        <slide>
+          <slideno>2</slideno>
+          <text>3/14/05 6.881 3</text>
+        </slide>
+        <slide>
+          <slideno>14</slideno>
+          <text>Spine Mean Shape
+3/14/05 6.881
+ 15</text>
+        </slide>
+        <slide>
+          <slideno>16</slideno>
+          <text>6.881Segmentation of the Vertebrae
+3/14/05 17</text>
+        </slide>
+        <slide>
+          <slideno>1</slideno>
+          <text>Segmentation
+ Active Contours, Snakes, Level Sets 
+3/14/05 6.881 2</text>
+        </slide>
+        <slide>
+          <slideno>17</slideno>
+          <text>Comparison to human e xpert 
+3/14/05 18
+Leventon 6.881</text>
+        </slide>
+        <slide>
+          <slideno>10</slideno>
+          <text>Modified Evolution Equation
+3/14/05 6.881
+ 11</text>
+        </slide>
+        <slide>
+          <slideno>3</slideno>
+          <text>Shape Prior for Segmentation
+ Train on a set of shapes 
+ Mean shape 
+ PCA-based model of variation 
+ Bias the segmentation towards likely shapes
+3/14/05 6.881 4</text>
+        </slide>
+        <slide>
+          <slideno>0</slideno>
+          <text>Shape Influence in Geodesic 
+Active Contours
+Leventon , Grimson, Faugeras
+Presenter: Polina Golland 
+Images courtesy of Michael Leventon.</text>
+        </slide>
+        <slide>
+          <slideno>8</slideno>
+          <text>Shape+Pose Estimation
+ Given the current contour
+ Probability model 
+3/14/05 6.881 9</text>
+        </slide>
+        <slide>
+          <slideno>13</slideno>
+          <text>Spine Modes
+ 3D Models of seven thoracic vertebrae (T3-T9)
+3/14/05 6.881 14</text>
+        </slide>
+        <slide>
+          <slideno>7</slideno>
+          <text>Modified Evolution Equation
+3/14/05 6.881
+ 8</text>
+        </slide>
+        <slide>
+          <slideno>15</slideno>
+          <text>Spine 1st Mode of Variation
+3/14/05 6.881
+ 16</text>
+        </slide>
+        <slide>
+          <slideno>6</slideno>
+          <text>Shape Distribution
+3/14/05 6.881
+ 7</text>
+        </slide>
+        <slide>
+          <slideno>11</slideno>
+          <text>Corpus Callosum Segmentation
+3/14/05 6.881
+ 12</text>
+        </slide>
+        <slide>
+          <slideno>18</slideno>
+          <text>Summary
+	Introduced shape prior into curve evolution
+ Previous work  Fourier decomposition and ASH 
+ This one is the first for the level set formulation 
+	PCA on training examples 
+	2D and 3D 
+	Several follow -up methods that perform 
+optimization differently. 
+3/14/05	 6.881
+ 19</text>
+        </slide>
+        <slide>
+          <slideno>12</slideno>
+          <text>Corpus Callosum Segmentation
+3/14/05 6.881
+ 13</text>
+        </slide>
+        <slide>
+          <slideno>9</slideno>
+          <text>Shape+Pose Estimation (contd)
+ Inside term 
+ Gradient Term 
+ Shape prior: Gaussian (PCA model) 
+ Pose prior: uniform over the image 
+3/14/05 6.881 10</text>
+        </slide>
+        <slide>
+          <slideno>5</slideno>
+          <text>Principal Modes of Variation
+(using PCA) 
+1st Mode 2nd Mode 
+3rd Mode 4th Mode 
+3/14/05 6.881 6</text>
+        </slide>
+      </slides>
+      <videos/>
+    </lecture>
+    <lecture>
+      <lecture_title>Eigenfaces (PDF)</lecture_title>
+      <lecture_pdf_url>https://ocw.mit.edu/courses/6-881-representation-and-modeling-for-image-analysis-spring-2005/resources/l02/</lecture_pdf_url>
+      <lectureno>2</lectureno>
+      <slides>
+        <slide>
+          <slideno>0</slideno>
+          <text>Face Recognition Using 
+E igenf aces 
+Math ew A . Turkand A lexP. Pentland
+Presenter: Polina Golland</text>
+        </slide>
+        <slide>
+          <slideno>4</slideno>
+          <text>Il lustr
+ation of Face S p ace 
+0 0 881 5
+ 0 2/7/5 6.u1u2
+W1W2W334
+2 1Face Space
+Figure by MIT OCW.</text>
+        </slide>
+        <slide>
+          <slideno>2</slideno>
+          <text>B asic I dea
+ac
+ 	PC Aon f e imag es 
+ F ac e imag es lie in a low dimensional sp ac e 
+ Imag es of th e same p erson are c lose to eac hoth er 
+mag es of di f ferent p eop le are f  I	 arth er aw ay 
+0 0 881	 3 0 2/7/5	 6.</text>
+        </slide>
+        <slide>
+          <slideno>6</slideno>
+          <text>T aining contd
+r
+ac  E ig enf es uk are th e eig env ec tors of C 
+ K eepa small numb er ( M) of eig enf es
+ ac
+ In th e ex p eriments, M =16, M =7
+	R esultingmodel: 
+ Mean f e ac
+ac
+  M eig enf es uk (k =1,,M) 
+0 0 881	 7 0 2/7/5	 6.</text>
+        </slide>
+        <slide>
+          <slideno>15</slideno>
+          <text>I mage Datab ase Resul
+ ts contd 
+ V aryth e th resh old (R O C , p rec ision/ rec all) 
+ 10 0 % ac c urac y , c h ec kf or unk now n lab els 
+ 19% ac ross illuminations 
+ 39% ac ross orientations 
+ 60 % ac ross siz es 
+ 20 % unk now n, c h ec kth e ac c urac y
+ 10 0 % ac ross illuminations
+ 94% ac ross orientations
+ 74% ac ross siz es
+0 0 881 16 0 2/7/5 6.</text>
+        </slide>
+        <slide>
+          <slideno>14</slideno>
+          <text>I mage Datab ase Resul
+ ts 
+Imag e D atab ase
+ 16 p eop le
+ 3 illuminations, 3 ang les, 3 h ead siz es
+	U se one imag e p er p erson to train 
+ M =16, M =7 
+ all at th e same illumination, ang le, siz e. 
+ Test on all oth er imag es, f
+ orc ingrec og nition 
+ 96% ac ross illuminations 
+ 85% ac ross orientations 
+ 64% ac ross siz es 
+0 0 881	 15 0 2/7/5	 6.</text>
+        </slide>
+        <slide>
+          <slideno>18</slideno>
+          <text>S ummar
+ y
+	F ac es h av e a lot of struc ture, lets tryto 
+c ap ture it automatic ally . 
+	Prior w orkf ted temp lates
+ oc used on c raf
+ Th is p ap er learns th e struc ture th roug hPC A 
+	S trongassump tions on th e struc ture 
+ F ac e imag es c an b e ap p rox imated b ya linear low 
+dimensional sp ac e 
+ Th eyc luster in th at sp ac e w .t. th e p erson r.
+ic 	F airlynav e c lassifation 
+0	0 881 19 0 2/7/5	 6.</text>
+        </slide>
+        <slide>
+          <slideno>1</slideno>
+          <text>r l	 inition
+ P obem Def
+ac	 ac 	R ec og niz e f es v s. non-f es 
+ac 	R ec og niz e f es of a p artic ular p erson v s. 
+acf	es of oth er p eop le 
+ D o it f ast 
+0 0 881	 2 0 2/7/5	 6.</text>
+        </slide>
+        <slide>
+          <slideno>11</slideno>
+          <text>E igenf
+ aces 
+0 0 881 12
+ 0 2/7/5 6.M.E. Leventon, E.L. Grimson, and O. Faugeras, "Statistical Shape Influence in Geodesic 
+Active Contours," Proc. IEEE Conf. Computer Vision and Pattern Recognition, pp. 316-323, 2000.Image removed due to copyright considerations. Please see Figure 2 in:</text>
+        </slide>
+        <slide>
+          <slideno>3</slideno>
+          <text>Recognition
+ec	 ac
+ 	Giv en a new imag e, p roj t onto f e sp ac e 
+f ac  Ith e residual is too h ig h , its not a f e
+f ec
+ Ith e p roj tion is c lose to one of th e p rototy p es, 
+assig n it to th at c lass 
+ O th erw ise, its a new f e ac
+0 0 881	 4 0 2/7/5	 6.</text>
+        </slide>
+        <slide>
+          <slideno>7</slideno>
+          <text>Detection
+ Giv en a new imag e , c omp ute its w eig h ts 
+= uk T( -)k 
+ac 	Th e f e is rep resented b yth e w eig h t v ec tor 
+= M]T [1 2  
+fI|| -- kuk|| &lt; ac, th is is a f e imag e. 
+fI||  || &lt; th is is a f e f ac rom c lass n. n , 
+0 0 881	 8 0 2/7/5	 6.</text>
+        </slide>
+        <slide>
+          <slideno>17</slideno>
+          <text>f mance
+ Notes on P eror
+ More sensitiv e to h ead siz e th an oth er f tors
+ ac
+ N ormaliz ation, w indow ing 
+ R elated to th e f eness map ac
+	S h ould b e sensitiv e to orientation, as p arts of 
+acth e f e g et oc c luded
+ec
+  May b e th e p roj tion is h elp ingit 
+ Wh at h ap p ens w h en w e v aryall f tors at
+ ac
+onc e?
+0 0 881	 18 0 2/7/5	 6.</text>
+        </slide>
+        <slide>
+          <slideno>5</slideno>
+          <text>T aining
+r
+np ut: M inp ut imag es in a v ec tor f
+  I orm i 
+ac  Mean f e
+ =M-1  i 
+ Z ero-mean data = -i i 
+ Z ero-mean data matrix A = [ 1 M]2  
+ C ov arianc e matrix C =M-1  T= AAT 
+i i 
+0 0 881 6 0 2/7/5 6.</text>
+        </slide>
+        <slide>
+          <slideno>19</slideno>
+          <text>S ince T h en
+ More ex p lic it models of th e obec
+ j t sh ap e 
+A p  A c tiv e S h ap e/p earanc e Models 
+ N on-linear sub sp ac e/ old modeling
+ manif
+ Mix ture of Gaussians
+ K ernel PC A
+ L oc allyL inear E mb edding , I
+ somap s
+ non-neg ativ e dec omp osition, etc .
+ C lassifation
+ ic
+ac
+  F ish er f es (F ish er L inear D isc riminant) 
+ic  O th er c lassifation meth ods 
+0 0 881 20 0 2/7/5 6.</text>
+        </slide>
+        <slide>
+          <slideno>13</slideno>
+          <text>E x p er	 ts
+ imental Resul
+ I mag e D atab ase 
+ C ontrolled ex p eriment 
+ac
+ 	R eal-time f e rec og nition 
+ U nc onstrained rec og nition, c loser to th e real-w orld 
+0 0 881	 14 0 2/7/5	 6.</text>
+        </slide>
+        <slide>
+          <slideno>12</slideno>
+          <text>Faceness Map
+	F or eac hw indow loc ation, ev aluate its 
+distanc e f ac rom th e f e sp ac e 
+ Slow , f aster alg orith ms ex ist 
+0	0 881 13 0 2/7/5	 6.M.E. Leventon, E.L. Grimson, and O. Faugeras, "Statistical Shape Influence in Geodesic 
+Active Contours," Proc. IEEE Conf. Computer Vision and Pattern Recognition, pp. 316-323, 2000.Image removed due to copyright considerations. Please see Figure 3 in:</text>
+        </slide>
+        <slide>
+          <slideno>9</slideno>
+          <text>E x ampes of p oj
+ l r ections 
+0 0 881 10
+ 0 2/7/5 6.M.E. Leventon, E.L. Grimson, and O. Faugeras, "Statistical Shape Influence in Geodesic 
+Active Contours," Proc. IEEE Conf. Computer Vision and Pattern Recognition, pp. 316-323, 2000.Image removed due to copyright considerations. Please see Figure 3 in:</text>
+        </slide>
+        <slide>
+          <slideno>16</slideno>
+          <text>Real	 ace r
+ -time f	 ecognition
+	Motion detec tion, p lus h ead loc aliz ation: small 
+b lobon topof a b ig g er b lob 
+	R un th e rec og niz er on th e h ead w indow
+	2-3 times/ sec ond (longtime ag o, so mig h t 
+ac tuallyb e reallyf ast on a modern c omp uter) 
+yp 	N o ac c urac/rec ision rep orted 
+0	0 881 17 0 2/7/5	 6.</text>
+        </slide>
+        <slide>
+          <slideno>10</slideno>
+          <text>Notes
+	U se E uc lidean distanc e 
+ not Mah alanob is distanc e 
+ N ot c lear h ow th e c lasses
+kare c onstruc ted 
+ h ere used j ust one imag e p er p erson
+	F ree p arameters: 
+ac  numb er of eig enf es M and th resh olds 
+ in th e ex p eriments, M =7, and th e th resh olds v aried 
+ac	 ac  E ig enf es looklik e f es 
+0 0 881	 11 0 2/7/5	 6.</text>
+        </slide>
+      </slides>
+      <videos/>
+    </lecture>
+    <lecture>
+      <lecture_title>Introduction, Tutorial on PCA (PDF)</lecture_title>
+      <lecture_pdf_url>https://ocw.mit.edu/courses/6-881-representation-and-modeling-for-image-analysis-spring-2005/resources/l01/</lecture_pdf_url>
+      <lectureno>1</lectureno>
+      <slides>
+        <slide>
+          <slideno>5</slideno>
+          <text>Format
+ For each topical cluster 
+ Tutorial on the method/theory 
+ Paper presentations 
+ Discussion 
+ We will expect that you 
+ Have read the assigned reading material 
+ Have questions and are ready to discuss 
+02/02/05 6.881 6</text>
+        </slide>
+        <slide>
+          <slideno>4</slideno>
+          <text>Syllabus (Approximate) contd
+ Shape descriptors 
+ Transformations and manipulating them 
+ Information Theoretic Methods 
+ Classification 
+02/02/05 6.881 5</text>
+        </slide>
+        <slide>
+          <slideno>14</slideno>
+          <text>Properties
+	m is the sample mean 
+	{v1,vk} form an orthonormal basis 
+	vis are the k largest eigenvectors of the 
+sample covariance 
+	they can also be found sequentially! 
+	Mahalanobis distance 
+(x-y)TS-1(x-y) 
+02/02/05	 6.881
+ 16</text>
+        </slide>
+        <slide>
+          <slideno>9</slideno>
+          <text>Course participation
+	Please register for the course 
+ It increases the likelihood of your actually reading 
+the papers 
+ It increases the likelihood I will be able to offer this seminar again in the future 
+	Sitting in on this course is ok, but you still 
+have to read the papers and participate in the discussions. You might also be asked to 
+present. 
+	so you might as well get the credit for it 
+02/02/05	 6.881 10</text>
+        </slide>
+        <slide>
+          <slideno>3</slideno>
+          <text>Syllabus cont d
+ Graph algorithms 
+ Theory: Graph cut algorithms 
+ Applications: segmentation, stereo 
+ Clustering 
+ Theory: hierarchical, k -means, spectral 
+ Applications: grouping in images 
+ Graphical Models 
+ Theory: MRFs, inference in graphical models 
+ Applications: regularization, part/layer models 
+02/02/05 6.881 4</text>
+        </slide>
+        <slide>
+          <slideno>7</slideno>
+          <text>Grades
+ 40% method/paper presentations 
+ 20% participation in the discussions 
+ 30% final paper &amp; presentation 
+ Project or analysis paper 
+ 10% paper review 
+02/02/05 6.881 8</text>
+        </slide>
+        <slide>
+          <slideno>12</slideno>
+          <text>End of logistics
+02/02/05 6.881
+ 14</text>
+        </slide>
+        <slide>
+          <slideno>0</slideno>
+          <text>6.881 Representation and 
+Modeling for Image Analysis
+Instructor: Polina Golland</text>
+        </slide>
+        <slide>
+          <slideno>11</slideno>
+          <text>Looking Ahead
+ Tutorial on calculus of variations 
+ Mumford -Shah functional, snakes 
+ Level Set curve evolution 
+ Tutorial on EM 
+ EM segmentation 
+ EM for tracking in layer models 
+ EM for generative model training 
+02/02/05 6.881 13</text>
+        </slide>
+        <slide>
+          <slideno>15</slideno>
+          <text>Geometric Interpretation
+	Linear subspace that explains 
+most variability in the sample. 
+	Prefix optimal  
+	Error measure: sum of squares. 
+	K-dimensional Gaussian distribution that best approximates the sample. 
+	In physics: principal axes of inertia. 
+02/02/05 6.881	 17</text>
+        </slide>
+        <slide>
+          <slideno>1</slideno>
+          <text>Goals
+	Learn useful mathematical techniques 
+	Read vision papers that use them 
+	Old and new classics 
+	Practice 
+	Presenting work 
+	Writing/reviewing papers 
+	Understand the interconnectedness of 
+everything 
+02/02/05	 6.881
+ 2</text>
+        </slide>
+        <slide>
+          <slideno>16</slideno>
+          <text>Extensions
+ Data lies in a non -linear space 
+ Kernel PCA 
+ Locally linear embedding (LLE) 
+ Other manifold learning methods 
+02/02/05 6.881 18</text>
+        </slide>
+        <slide>
+          <slideno>13</slideno>
+          <text>Principal Component Analysis
+	Samples { x1,,xn} 
+	Find the best low dimensional approximation 
+of the samples 
+	Restrict to linear approximations 
+	Minimize sum squares error 
+	Blackboard derivation of PCA 
+02/02/05	 6.881 15</text>
+        </slide>
+        <slide>
+          <slideno>8</slideno>
+          <text>Final Project/Paper
+The goal is to write a conference paper and 
+to get feedback on it. 
+We will also have final presentations on the projects in the last three classes. 
+Proposals due: March 4. 
+Final papers due: May 1. 
+Paper reviews due: May 12. 
+02/02/05 6.881 9</text>
+        </slide>
+        <slide>
+          <slideno>6</slideno>
+          <text>When you present
+	Meet with us the week before to go over the 
+presentation 
+	Present the paper/method in class and set the stage for discussion 
+	What is the problem? 
+	What methods are used? 
+	What are the main assumptions? 
+	How robust are the results? 
+ Possible extensions: point to others  work or suggest 
+your own ideas 
+02/02/05	 6.881
+ 7</text>
+        </slide>
+        <slide>
+          <slideno>2</slideno>
+          <text>Syllabus
+ Subspace (Manifold) learning 
+ Theory: PCA 
+ Applications: Eigen faces, Active Shape &amp; 
+Active Appearance Models. 
+ Additional topics: kernel PCA, LLE 
+ Boundary Detection 
+ Theory: Calculus of variations 
+ Applications: Mumford -Shah functional,              
+active contours: snakes and level sets 
+ EM: 
+ Theory: EM algorithm 
+ Applications: segmentation, tracking 
+02/02/05 6.881 3</text>
+        </slide>
+        <slide>
+          <slideno>10</slideno>
+          <text>First Topic Cluster: PCA
+ Today: 
+ tutorial on Principal Component Analysis 
+ Next week 
+ Eigenfaces 
+ PCA on intensity values of the faces images 
+ More recent work: kernel PCA 
+ Presenter: Polina Golland 
+ Active Shape &amp; Active Appearance Models 
+ PCA on point locations and intensity variation 
+ Looking for a presenter 
+02/02/05 6.881
+ 12</text>
+        </slide>
+      </slides>
+      <videos/>
+    </lecture>
+  </lectures>
+</doc>

@@ -1,0 +1,5441 @@
+<doc>
+  <source>MIT</source>
+  <date>28/01/2023</date>
+  <course>
+    <course_url>https://ocw.mit.edu/courses/15-561-information-technology-essentials-spring-2005/</course_url>
+    <course_title>Information Technology Essentials</course_title>
+    <course_tags>
+      <list>Engineering </list>
+      <list>Computer Science </list>
+      <list>Business </list>
+    </course_tags>
+  </course>
+  <lectures>
+    <lecture>
+      <lecture_title>Relational Databases (PDF)</lecture_title>
+      <lecture_pdf_url>https://ocw.mit.edu/courses/15-561-information-technology-essentials-spring-2005/resources/lecture6/</lecture_pdf_url>
+      <lectureno>6</lectureno>
+      <slides>
+        <slide>
+          <slideno>12</slideno>
+          <text>Customer Unique Id 
+Product Unique Id 
+Reference to a Customer Order Unique Id</text>
+        </slide>
+        <slide>
+          <slideno>16</slideno>
+          <text>Display an Entire Table 
+SELECT *
+FROM Employees;</text>
+        </slide>
+        <slide>
+          <slideno>4</slideno>
+          <text>Example: Northwind Traders</text>
+        </slide>
+        <slide>
+          <slideno>0</slideno>
+          <text>15.561 
+Information Technology Essentials 
+Session 6 
+Relational Databases 
+Acknowledgments:
+Adapted from Chris Dellarocas, U. Md..
+Copyright  2005 Thomas Malone, Chris Dellarocas</text>
+        </slide>
+        <slide>
+          <slideno>11</slideno>
+          <text>Enter Relational Databases 
+	A relational DB supports storage of data as a set of 
+inter-related tables 
+	Each table stores data about a set of Entities 
+	Each table row is a record about one such Entity 
+	Each record column is a field specifying an attribute of this Entity 
+	Each record has a field that acts as a unique identifier of an entity 
+	Relationships among entities are specified by referring to this 
+unique identifier from other tables</text>
+        </slide>
+        <slide>
+          <slideno>13</slideno>
+          <text>( ) Relational Database Management 
+Systems DBMS
+	Allows the creation of relational databases 
+	Supports specialized languages for easy retrieval of 
+data from a set of inter-related tables 
+	Supports easy construction of a Graphical User 
+Interface on top of the database 
+	Allows very large table sizes 
+	Provides security, fault tolerance, multi-user support, 
+etc.</text>
+        </slide>
+        <slide>
+          <slideno>9</slideno>
+          <text>Spreadsheets are awkward for storing 
+relationships 
+	Main difficulty is that an Order is essentially a 
+relationship between one Customer and one or more 
+Products</text>
+        </slide>
+        <slide>
+          <slideno>6</slideno>
+          <text>From Spreadsheets to Databases 
+	Spreadsheets are great for keeping track of data for 
+one type of entities 
+	Participants of a conference 
+	Students of a class 
+	Customers of a company 
+	.</text>
+        </slide>
+        <slide>
+          <slideno>2</slideno>
+          <text>Why are we learning this? 
+	Databases are perhaps the single most important class 
+of corporate applications 
+	Databases are surprisingly powerful data modeling 
+and analysis tools in situations where spreadsheets 
+fall short 
+	Students who plan to work in management consulting will soon 
+find this out 
+	MS Access is a great example of how easy it is to 
+build powerful applications without the need of a 
+background in technology</text>
+        </slide>
+        <slide>
+          <slideno>24</slideno>
+          <text>More Join examples 
+ Produce a list of all products and their suppliers 
+ Produce a list of all suppliers for Tofu</text>
+        </slide>
+        <slide>
+          <slideno>25</slideno>
+          <text>SQL Summary 
+select columns and/or expressions 
+from tables 
+where conditions on the rows 
+group by group rows together 
+order by order the rows</text>
+        </slide>
+        <slide>
+          <slideno>10</slideno>
+          <text>Storage of information is not even half the 
+story 
+	The reason we build databases is in order to easily 
+retrieve information to answer questions that support 
+managerial decision-making 
+	For example: 
+Who are our top 10 customers based on their total 
+order value in the year 2002? 
+	Can you do this using a spreadsheet?</text>
+        </slide>
+        <slide>
+          <slideno>22</slideno>
+          <text>Grouping and Aggregates 
+	Each different value for the GROUP BY fields defines a new 
+group 
+	One row of output is produced for each group 
+	Several rows of input table may belong to same group. They are aggregated using 
+aggregation operator. 
+	Compute total value of all orders 
+SELECT OrderID,
+Sum([UnitPrice]*[Quantity]*(1-[Discount]))
+AS Subtotal
+FROM [Order Details]
+GROUP BY OrderID;
+ Create a table that shows how many line items are in each order</text>
+        </slide>
+        <slide>
+          <slideno>15</slideno>
+          <text>SQL  Structured Query Language 
+ Every statement yields a table of values as output 
+ Sometimes theres only one row in the table! 
+select columns and/or expressions
+from tables
+where conditions on the rows
+group by group rows together
+order by order the rows</text>
+        </slide>
+        <slide>
+          <slideno>14</slideno>
+          <text></text>
+        </slide>
+        <slide>
+          <slideno>21</slideno>
+          <text>Aggregates 
+ Can make calculations on entire columns 
+ sum, avg, max, min, count 
+ What is the total value of a given customer order 
+SELECT OrderID, Sum([UnitPrice]*[Quantity]*(1- [Discount]))
+AS Subtotal
+FROM [Order Details]
+WHERE OrderID=11001;
+ returns a table with just one row! 
+ What is average unit price of our products?</text>
+        </slide>
+        <slide>
+          <slideno>19</slideno>
+          <text>Compute Columns 
+ Find total inventory value of each product 
+SELECT ProductName,
+UnitPrice*UnitsInStock AS TotalValue
+FROM Products;
+ Nice names for output columns 
+	Name following computed column (e.g., TotalValue) will be used to name output 
+column 
+ Find total price for each line item in Order Details table</text>
+        </slide>
+        <slide>
+          <slideno>20</slideno>
+          <text>Sorting 
+ Can sort output by contents of a column 
+ sort in ascending or descending order 
+ sort by more than one column (second one breaks ties) 
+ Sort products by total inventory value 
+SELECT ProductName,
+UnitPrice*UnitsInStock AS TotalValue
+FROM Products
+ORDER BY TotalValue DESC;
+ What are our 10 most expensive products?</text>
+        </slide>
+        <slide>
+          <slideno>18</slideno>
+          <text>Choose Rows 
+ Find US Employees 
+SELECT FirstName, LastName
+FROM Employees
+WHERE Country = USA;
+ Find employees hired after Jan. 1, 1993</text>
+        </slide>
+        <slide>
+          <slideno>7</slideno>
+          <text>What is the basic spreadsheet data 
+model? 
+ Each row stores data about one entity 
+ Each column stores data about an attribute 
+ Each cell stores data about an attribute of an entity</text>
+        </slide>
+        <slide>
+          <slideno>3</slideno>
+          <text>What is a database 
+ Boring answer 
+ A structured collection of data 
+ Example: A telephone directory 
+ Insightful answer 
+ A data-centered mirror of an organizations business processes 
+ Structure of data reflects organizational processes 
+ Content of data reflects organizations history</text>
+        </slide>
+        <slide>
+          <slideno>17</slideno>
+          <text>Choose Columns 
+	Choosing a subset of columns is sometimes called a "project" 
+operation 
+	Display first and last name of all employees 
+SELECT FirstName, LastName
+FROM Employees;
+	Display company name and contact name for all customers</text>
+        </slide>
+        <slide>
+          <slideno>1</slideno>
+          <text>Outline 
+ What is a database? 
+ What is a database management system? 
+ An Introduction to Microsoft Access 
+ How to create a database 
+ How to retrieve data from a database 
+ How to build a nice Graphical User Interface on top of a database</text>
+        </slide>
+        <slide>
+          <slideno>5</slideno>
+          <text>Representing the Real World as Data 
+What Data Are Businesses Interested In? 
+	Entity 
+	a person, place, thing, or event on which we maintain information 
+	Examples: Employees, Customers, Products, Warehouses 
+	Attribute 
+	characteristic or quality of particular entity 
+	Examples: Employees SSN, Customers Address, Products Unit 
+Price 
+	Relationships Among Entities 
+	Examples:
+ Customer - Orders - Product(s)
+ Order - Serviced by - Employee</text>
+        </slide>
+        <slide>
+          <slideno>23</slideno>
+          <text>Joins 
+ Combine rows from one table with rows from another 
+ Usually join on some common column 
+ Don' t combine rows unless their value in the common column is the same 
+ WHERE clause says the common column must be same in each table 
+ Produce a list of all products and their categories 
+SELECT Products.ProductName,
+Categories.CategoryName
+FROM Categories, Products
+WHERE
+Categories.CategoryID = Products.CategoryID;</text>
+        </slide>
+        <slide>
+          <slideno>8</slideno>
+          <text>Spreadsheet limitations 
+	Things get complicated when we want to keep track 
+of several inter-related entities 
+	For example: 
+	Customers 
+	Products 
+	Orders 
+	Lets try it!</text>
+        </slide>
+      </slides>
+      <videos/>
+    </lecture>
+    <lecture>
+      <lecture_title>Systems that Span Multiple Enterprises (PDF)</lecture_title>
+      <lecture_pdf_url>https://ocw.mit.edu/courses/15-561-information-technology-essentials-spring-2005/resources/lecture14/</lecture_pdf_url>
+      <lectureno>14</lectureno>
+      <slides>
+        <slide>
+          <slideno>1</slideno>
+          <text>Three generations of the Web 
+ 1st generation (early 1990s) 
+	You see static web pages 
+	Needed: URL, HTTP, HTML 
+ 2nd generation (late 1990s) 
+	Simple interactions between humans and remote applications 
+	E.g., You fill out a form on a web page to order a product 
+	Needed: Forms, CGI, ASP, Cookies, Java applets,  
+ 3rd generation (2000s) 
+	Complex interactions among humans and multiple agents (services) 
+	E.g., Your agent interacts with many other remote agents to book 
+your travel reservations 
+	Needed: XML, SOAP, UDDI, Semantic Web,</text>
+        </slide>
+        <slide>
+          <slideno>13</slideno>
+          <text>Example ontology 
+CIA World Factbook information on the 
+United States 
+ In HTML: 
+www.daml.org/2001/12/factbook/us.html 
+ In earlier language upon which OWL (Ontology 
+Working Language of W3C) is based: 
+www.daml.org/cgi-
+bin/hyperdaml?http://www.daml.org/2001/12/factbo 
+ok/us.daml</text>
+        </slide>
+        <slide>
+          <slideno>5</slideno>
+          <text>XML Example: Companies 
+&lt;Company&gt; 
+&lt;CompanyID=642&gt;
+&lt;Ticker&gt;WCOM&lt;/Ticker&gt;
+&lt;Company_name&gt;MCI WorldCom Inc&lt;/Company_name&gt;
+&lt;Market_cap&gt;$100,721,720&lt;/Market_cap&gt;
+&lt;Competitor_reference=542/&gt;
+&lt;Competitor_reference=573/&gt;
+&lt;/Company&gt; 
+&lt;Company&gt; 
+&lt;CompanyID=542&gt;
+&lt;Ticker&gt;T&lt;/Ticker&gt;
+&lt;Company_name&gt;AT&amp;T Corp&lt;/Company_name&gt;
+&lt;Market_cap&gt;$114,815,359&lt;/Market_cap&gt;
+&lt;Competitor_reference=642/&gt;
+&lt;/Company&gt; SM, CD</text>
+        </slide>
+        <slide>
+          <slideno>14</slideno>
+          <text>Web Services 
+ Technologies for making it easy for computer 
+programs to automatically share information 
+(and computing tasks) with each other over 
+the Internet 
+ An approach to developing software that takes 
+advantage of these technologies 
+Adapted from: Frank Coyle, XML, Web 
+Services, and the Data Revolution , 2002.</text>
+        </slide>
+        <slide>
+          <slideno>22</slideno>
+          <text>How will programmers implement 
+web services? 
+Two alternative development environments: 
+ .Net - Microsoft 
+ J2EE (Java 2 Enterprise Edition)  Sun, 
+IBM, Oracle, and others</text>
+        </slide>
+        <slide>
+          <slideno>12</slideno>
+          <text>Ontology 
+A set of statements (and usually rules for reasoning) 
+about the world 
+E.g.: 
+ Publications (e.g., books, magazines, articles) 
+and their properties (e.g., titles, authors, 
+reviews, reprintings) 
+ Vehicles (e.g., cars, trucks, vans) and their 
+properties (e.g., prices, owners, manufacturers, 
+repair records)</text>
+        </slide>
+        <slide>
+          <slideno>16</slideno>
+          <text>Examples of possible web services 
+ Credit card authorization 
+ Currency converter (e.g., dollars to euros) 
+ Stock quote provider 
+ Shipping rate calculator 
+ Insurance rate quotes 
+  
+Adapted from Anura Guruge, Web Services: Theory 
+and Practice. Elsevier, 2004, p. 2.</text>
+        </slide>
+        <slide>
+          <slideno>23</slideno>
+          <text>Two ways of using web services 
+ Inside a single company
+ Hagel &amp; Brown: Start at the edge and move toward 
+the core 
+ Between companies</text>
+        </slide>
+        <slide>
+          <slideno>24</slideno>
+          <text>Strategic implications for IT industry 
+ Web/browsers become a single front end 
+through which a diverse set of applications 
+can be accessed 
+ Web/browsers become an execution 
+environment for B2B/web applications 
+ The Webtop instead of the desktop 
+ The Webserver instead of operating system 
+ Implications for Microsoft/Windows? 
+ Hence big efforts/fights about Web standards 
+Adapted from Benjamin Grosof, MIT.</text>
+        </slide>
+        <slide>
+          <slideno>8</slideno>
+          <text>Example: Custom website using 
+backend from Amazon 
+ Request to Amazon web service for best-selling books 
+on dogs (result is XML document containing 
+information about dog books): 
+	http://xml.amazon.com/onca/xml2?t=webservices-20&amp;dev-t= 
+D2ED5GR7A6RZ7Y&amp;KeywordSearch=dogs&amp;mode=books&amp;type=li 
+te&amp;page=1&amp;f=xml 
+ Web site that uses the Amazon web service to create a 
+customized on-line store: 
+	http://www.kokogiak.com/amazon4/</text>
+        </slide>
+        <slide>
+          <slideno>20</slideno>
+          <text>WSDL 
+ Web Services Description Language
+ Describes the types of messages a service 
+receives and the types of messages it returns 
+in reply 
+ Together with UDDI, allows automated 
+agents to assemble collections of web services 
+on the fly to perform a given task</text>
+        </slide>
+        <slide>
+          <slideno>17</slideno>
+          <text>Web Services Protocol Architecture 
+WSDL 
+(Describes a Web services characteristics) 
+White pages 
+(lists contact info for 
+company offering 
+service) UDDI 
+Yellow pages 
+(organizes services into 
+broad categories Green pages 
+(Provides WSDL 
+descriptions) 
+SOAP 
+XML 
+HTTP 
+(or other message transport) 
+Adapted from PricewaterhouseCoopers, Technology 
+Forecast: 2002-2004 , Volume 1, 2002. pp. 596.</text>
+        </slide>
+        <slide>
+          <slideno>9</slideno>
+          <text>Simple Web Services Architecture 
+HTTP HTTP
+HTML XML Amazon Kokogiak Me 
+ Other examples: 
+ www.googlealert.com 
+ www.googleduel.com 
+ www.ipilot.net</text>
+        </slide>
+        <slide>
+          <slideno>6</slideno>
+          <text>( ) What do you and your agents need 
+to understand an XML document? 
+	Two alternatives: 
+	DTD  Document Type Definition 
+	Specifies the kinds of elements and attributes that are allowable 
+within a given type of XML document 
+	Very limited options for expressing what kinds of values are valid 
+(e.g., cannot require a field to contain a date or numeric value) 
+	XML Schema 
+	Much more flexible way of specifying what kinds of values can be 
+included in a given type of XML document 
+	E.g., date, time, integer, or combination of other types</text>
+        </slide>
+        <slide>
+          <slideno>25</slideno>
+          <text>Strategic implications for 
+other industries 
+Role Aggregator 
+Leveraged 
+Growth 
+Platform Value-
+added 
+service 
+portfolios Vendor-sponsored 
+communities Process networks 
+Closed Open Economic webs 
+Examples Schwab IBM/Oracle Cisco/Nike Li &amp; Fung Microsoft/Intel Orchestrator Shaper 
+Adapted from Out of the Box, John Hagel III, 
+Harvard Business School Press pp. 161.</text>
+        </slide>
+        <slide>
+          <slideno>2</slideno>
+          <text>Problem: 
+What does a web page mean? 
+	HTML specifies appearance, not meaning. 
+	Thats fine, if the only readers of the information will be 
+humans. 
+	But if you want your agents (programs working on your behalf) 
+to be able to process the information, they need to be able 
+understand what is on a web page. 
+	It is possible to write screen scrapers that know the formats of 
+each different web page and pick out the data they need. 
+	But this is very tedious and unstable.</text>
+        </slide>
+        <slide>
+          <slideno>10</slideno>
+          <text>RDF 
+Resource Description Framework 
+ A precise XML format for making statements about 
+the world 
+ E.g.:
+ The product described on
+www.example.com/id0304 is a car.
+ A car is a kind of motor vehicle.
+ Richard Schmalensee thinks that
+www.example.com is a great website.</text>
+        </slide>
+        <slide>
+          <slideno>19</slideno>
+          <text>UDDI 
+ Universal Discovery, Description, and 
+Integration 
+ Rules for responding to certain SOAP 
+messages to provide information about 
+available web services in 3 ways: 
+ Yellow pages: services listed by categories such as 
+geography, industry, functionality 
+ White pages: contact info for a given service 
+ Green pages: WSDL descriptions for how a given service 
+works</text>
+        </slide>
+        <slide>
+          <slideno>4</slideno>
+          <text>What is XML? 
+	XML - eXtensible Markup Language 
+	a meta-language that allows groups of users to create 
+and share their own vocabularies of machine-
+understandable elements (indicated by tags) within 
+a document 
+ E.g., a customer document might include name, address, etc. 
+	Provides an infrastructure for creating 
+interoperable computer applications that cross firm 
+boundaries</text>
+        </slide>
+        <slide>
+          <slideno>18</slideno>
+          <text>SOAP 
+ Simple Object Access Protocol 
+ Includes: 
+ A format for specifying messages in XML 
+ including elements called: envelope, header, 
+and body 
+ Rules for servers to follow when they receive a 
+SOAP message</text>
+        </slide>
+        <slide>
+          <slideno>15</slideno>
+          <text>A web service 
+ A self-contained, server-based program
+ Designed to perform a single function
+ With interfaces expressed in a standard form 
+(based on XML) 
+ Published in such a way that it can be called 
+upon remotely (generally via HTTP) 
+Adapted from: PricewaterhouseCoopers, 
+Technology Forecase: 2002-2004 , Volume 1, 
+2002.</text>
+        </slide>
+        <slide>
+          <slideno>26</slideno>
+          <text>What else could you do?</text>
+        </slide>
+        <slide>
+          <slideno>3</slideno>
+          <text>Better solution: 
+Machine readable web pages 
+ The information can be stored in a format that 
+ is easy for computers to understand 
+ has a standardized meaning upon which many 
+people agree</text>
+        </slide>
+        <slide>
+          <slideno>21</slideno>
+          <text>Example: Semantic Web Travel Agent 
+WSDL 
+(Describes a Web services characteristics) 
+White pages 
+(lists contact info for 
+company offering 
+service) UDDI 
+Yellow pages 
+(organizes services into 
+broad categories Green pages 
+(Provides WSDL 
+descriptions) 
+SOAP 
+XML 
+HTTP 
+(or other message transport) Agent finds airlines, 
+condo rental agencies, car 
+rental agencies, etc. using 
+UDDI and WSDL. 
+Agent asks questions and gets answers via SOAP. 
+The questions and answers 
+are formatted in XML. 
+The messages are 
+transported via HTTP. 
+Adapted from PricewaterhouseCoopers, Technology 
+Forecast: 2002-2004 , Volume 1, 2002. pp. 596.</text>
+        </slide>
+        <slide>
+          <slideno>7</slideno>
+          <text>DTD fragment for previous example 
+...
+&lt;!ELEMENT Company (CompanyID, Ticker, Company_name,
+Market_cap, Competitor_reference *)&gt;
+&lt;!ELEMENT CompanyID #PCDATA&gt;
+&lt;!ELEMENT Competitor_reference CompanyID&gt;
+* = zero, 1, or several 
+SM, CD</text>
+        </slide>
+        <slide>
+          <slideno>0</slideno>
+          <text>15.561 
+Information Technology Essentials 
+Session 14 
+Systems that span 
+multiple enterprises 
+Acknowledgments:
+Slides marked SM are adapted from Stuart Madnick, MIT.
+Copyright  2004 Thomas Malone, Stuart Madnick, Chris Dellarocas, &amp; Benjamin Grosof Slides marked CD are adapted from Chris Dellarocas , MIT.</text>
+        </slide>
+      </slides>
+      <videos/>
+    </lecture>
+    <lecture>
+      <lecture_title>Networks II (PDF)</lecture_title>
+      <lecture_pdf_url>https://ocw.mit.edu/courses/15-561-information-technology-essentials-spring-2005/resources/lecture4/</lecture_pdf_url>
+      <lectureno>4</lectureno>
+      <slides>
+        <slide>
+          <slideno>4</slideno>
+          <text>/
+( ) 
+( ) 
+( ) 
+( ) 
+( ) Example: 
+TCP IP protocol architecture 
+Application layer 
+Provides communication between applications on separate machines 
+e.g., email, file transfer, web browsing
+Transport layer 
+Provides end-to-end reliable data transfer across multiple networks 
+e.g., TCP - Transmission Control Protocol
+Internet layer 
+Routes data from source to destination through one or more networks 
+IP - Internet Protocol
+Network access layer 
+Manages logical interface between a machine and its local network 
+e.g., Ethernet, X.25
+Physical Layer 
+Converts bits to signals and back e.g., wires, radio, etc.</text>
+        </slide>
+        <slide>
+          <slideno>1</slideno>
+          <text>Outline 
+ Network protocols 
+ Enterprise networking 
+ Example: Looking at a web page 
+ Wireless networks 
+ Wireless telephony 
+ Wireless data communication</text>
+        </slide>
+        <slide>
+          <slideno>15</slideno>
+          <text>Generations of cellular technology 
+ First Generation (1G, 1980s and 90s) 
+	Analog, primarily used for voice, low bandwidth (eg., 9.6Kbps) 
+	Ex: AMPS (USA) 
+ Second Generation (2G, 1990s and early 2000s) 
+	Digital, cheaper, somewhat higher bandwidth (e.g., 14.4 Kbps), 
+more data services (e.g., short messages, caller ID) 
+	Ex: GSM, TDMA, CDMA, PCS 
+ Third Generation (3G, started 2002) 
+	Digital, much higher bandwidth (e.g., 2Mbps), many more 
+services (e.g., video) 
+	Ex: WCDMA, CDMA2000</text>
+        </slide>
+        <slide>
+          <slideno>8</slideno>
+          <text>Looking at a Web page 
+ Connect your PC to the Internet 
+ Dialup an Internet service provider (via modem) 
+	Establish a point-to-point link with the providers machine 
+ Using PPP (Point to Point Protocol) 
+ Your PC receives a temporary IP address 
+ Using DHCP (Dynamic Host Configuration Protocol) 
+ Your PC receives the address of a Domain Name Server (DNS) 
+ Start your browser program (e.g. Internet Explorer) 
+ Type in a URL (Uniform Resource Locator)</text>
+        </slide>
+        <slide>
+          <slideno>12</slideno>
+          <text>Cellular Phone Networks 
+Frequency 
+reuse 
+Handoff 
+CD</text>
+        </slide>
+        <slide>
+          <slideno>18</slideno>
+          <text>What is Wireless IP? 
+ A wireless connectivity solution employing IP that enables 
+devices to access an Intranet or the Internet 
+PDAs Laptops / Wireless 
+Devices 
+Wired 
+Devices Internet
+Intranet 
+Cell Phones Workstations 
+Pagers Future Devices? 
+CD Wireless 
+Devices Existing Wireless 
+Infrastructure 
+Spare radio capacity</text>
+        </slide>
+        <slide>
+          <slideno>19</slideno>
+          <text>( ) Wi-Fi 
+Wireless Fidelity
+ Protocol for wireless LANs 
+ 802.11b format  11 Mbps 
+ 802.11g format  20+ Mbps 
+ Allows you to 
+ Connect to Internet in local hot spots 
+ Connect many PCs to the Internet through one access point</text>
+        </slide>
+        <slide>
+          <slideno>7</slideno>
+          <text>Example: The World Wide Web 
+	A collection of interlinked documents stored on computer servers 
+all over the world and accessible to user clients via the Internet. 
+	Documents communicated in HTML (HyperText Markup Language) 
+	Rules for requesting and providing documents (and other interactions 
+between clients and servers) are defined by HTTP (HyperText Transfer 
+Protocol) 
+	Documents may contain easily clickable links to other 
+documents. 
+	Documents are identified by web addresses called URLs (Uniform 
+Resource Locators) 
+	Hypertext means text documents that contain embedded links 
+to other documents.</text>
+        </slide>
+        <slide>
+          <slideno>17</slideno>
+          <text>Cellular acronyms 
+ AMPS  Advanced Mobile Phone System 
+ CDMA  Code Division Multiple Access 
+ FDMA  Frequency Division Multiple Access 
+ GSM - Global System for Mobile Communication 
+ IS  Interim Standard 
+ PCS  Personal Communications Services 
+ TDMA  Time Division Multiple Access 
+ WCDMA  Wideband CDMA</text>
+        </slide>
+        <slide>
+          <slideno>21</slideno>
+          <text>How will networks change business?</text>
+        </slide>
+        <slide>
+          <slideno>2</slideno>
+          <text>What does it mean to be on the 
+Internet? 
+ Run TCP/IP protocol 
+ Have an IP address 
+ Have ability to send IP packets to other machines on 
+the Internet 
+CD</text>
+        </slide>
+        <slide>
+          <slideno>9</slideno>
+          <text>( ) Looking at a Web page cont.
+ Browser asks DNS for the IP address of the MIT Server 
+ DNS replies with 18.170.0.167 
+ Browser opens TCP connection to 18.170.0.167 
+ Browser sends the command GET/class/syllabus.htm 
+ The MIT Server sends file syllabus.htm 
+ TCP connection is released 
+ Browser displays the contents of syllabus.htm 
+Adapted from Erik Brynjolfsson, MIT.</text>
+        </slide>
+        <slide>
+          <slideno>14</slideno>
+          <text>1 
+2 3 
+4 1 
+2 
+3 
+4 
+1 
+2 
+3 
+4 
+1 
+2 
+3 
+4 1 
+2 
+3 
+4 
+1 
+2 
+3 
+4 
+1 
+2 3 
+4 s 
+( ) 
+( ) 
+( ) Multiplexing: Squeezing many 
+channels into one 
+1 2 3 4 1 2 3 4 1 2 
+1 4 3 1 2 2 3 4 2 1 2 
+2 3 1 2 3 4 4 1 3 2 4 
+4 1 2 3 4 3 1 2 1 3 3 
+3 2 4 4 1 1 2 3 4 4 1 Frequency Division Multiple Acces
+FDMA
+Time Division Multiple Access 
+TDMA
+Code Division Multiple Access 
+CDMA
+Multiplexer Multiplexer</text>
+        </slide>
+        <slide>
+          <slideno>16</slideno>
+          <text>Different cellular standards 
+Standard Appx. 
+Freq. 
+(MHz) Mode Multi
+plexing 
+method Voice 
+channels 
+/ radio 
+channel Comments 
+Analog (AMPS) 800  900 Analog FDMA 1 Common in US, but becoming obsolete 
+GSM 900, Digital TDMA 8 Common in Europe &amp; Asia, growing in 
+1800-2100 US. 
+CDMA 800 Digital CDMA 20-60 Qualcomm holds key patents 
+(IS-95) 
+TDMA (IS-54 &amp; 800, Digital TDMA 3-6 Most common digital cellular in US 
+IS-136) 1800-2000 
+PCS 1800-2100 Digital - - Generic term for 1800-2100 MHz svcs 
+WCDMA Many Digital CDMA Many Migration path from GSM. Up to 2 
+Mbps. 
+CDMA2000 Any Digital CDMA Many Migration path from CDMA. Common 
+in S. Korea. Up to 2 Mbps 
+Note: Acronyms defined on next slide</text>
+        </slide>
+        <slide>
+          <slideno>20</slideno>
+          <text>Bluetooth 
+	Wireless device connectivity 
+	Named after Scandinavian king who united several unruly 
+kingdoms 
+	Short range (&lt; 10m) 
+	Sample uses 
+	Wireless PDAs always connected to desktop via mobile phone 
+	Wireless headphones connected to notebook 
+	Office/Home device networks that automatically reconfigure by presence</text>
+        </slide>
+        <slide>
+          <slideno>11</slideno>
+          <text>Cellular Phone Networks 
+Frequency 
+reuse 
+Handoff 
+CD</text>
+        </slide>
+        <slide>
+          <slideno>5</slideno>
+          <text>Different types of connection protocols 
+X.25 -- A packet switching protocol for connecting devices on 
+a WAN 
+Frame relay -- Another packet switching protocol for 
+connecting devices on a WAN (faster but less error 
+checking than X.25. Up to about 45 Mbps) 
+Asynchronous Transfer Mode (ATM) -- A cell switching 
+protocol that establishes virtual circuits from fixed size 
+packets (faster than X.25, e.g., suitable for real-time video. 
+Up to about 622 Mbps)</text>
+        </slide>
+        <slide>
+          <slideno>13</slideno>
+          <text>Cellular Phone Networks 
+Frequency 
+reuse 
+Handoff 
+CD</text>
+        </slide>
+        <slide>
+          <slideno>6</slideno>
+          <text>Different types of connection 
+boxes 
+Hub - Connects parts of a network, typically different parts of the same 
+LAN (network access level) 
+Bridge -- Connects two LANs using software (network access level) 
+Switch -- Connects different LANs, typically using hardware only 
+(network access level ) 
+Router -- Connects two networks that may or may not be similar and 
+routes packets appropriately (Internet level) 
+Gateway -- Connects networks that use different protocols (transport level 
+or above)</text>
+        </slide>
+        <slide>
+          <slideno>10</slideno>
+          <text>How a cell phone works 
+CD</text>
+        </slide>
+        <slide>
+          <slideno>3</slideno>
+          <text>Network Protocols 
+ Rules of behavior 
+	What, when, and how should A send messages to B and vice 
+versa? 
+ Protocol layers 
+	Each layer uses the layers below it and can be used by the layers 
+above it 
+	Often, multiple alternatives can be substituted at one layer 
+without affecting the other layers</text>
+        </slide>
+        <slide>
+          <slideno>0</slideno>
+          <text>.
+15.561 
+Information Technology Essentials 
+Session 4 
+Networks II 
+Acknowledgments:
+Slides marked CD are adapted from Chris Dellarocas , U. Md.
+Copyright  2005 Thomas Malone, Chris Dellarocas</text>
+        </slide>
+      </slides>
+      <videos/>
+    </lecture>
+    <lecture>
+      <lecture_title>&#8220;Under the Hood&#8221; of a Commercial Website (PDF)</lecture_title>
+      <lecture_pdf_url>https://ocw.mit.edu/courses/15-561-information-technology-essentials-spring-2005/resources/lecture11/</lecture_pdf_url>
+      <lectureno>11</lectureno>
+      <slides>
+        <slide>
+          <slideno>15</slideno>
+          <text>Load balancing solutions 
+Companies: Cisco, HydraWeb
+S
+B S
+A 
+Load 
+balancer 
+Web 
+erv er Web 
+erv er Distributes client requests among 
+replicated servers 
+Web oaLalaibros Internet Lclod Repcted wer blncerv
+aa er Webs ers</text>
+        </slide>
+        <slide>
+          <slideno>7</slideno>
+          <text>Web Hosting 
+ Ensure 24x7 site operation 
+ Provide access to network bandwidth 
+ Provide physical site security</text>
+        </slide>
+        <slide>
+          <slideno>5</slideno>
+          <text>Issue # 1: Network and Physical Security</text>
+        </slide>
+        <slide>
+          <slideno>27</slideno>
+          <text>Total Costs 
+Startup 
+Software $2,260,900 85% 
+Hardware $394,850 15% 
+Total $2,655,750 
+Operating 
+Software $897,650 76% 
+Hardware $280,150 24% 
+Total $1,177,800</text>
+        </slide>
+        <slide>
+          <slideno>19</slideno>
+          <text>Issue # 4: Large-scale content 
+development 
+	Large number of authors contributing site content 
+	Diverse types of content (e.g., image, video, and other 
+media files) 
+	Need for regular content posting and replacement 
+(i.e., weekly sales promotions) 
+	Often one or more approvals are required before 
+content is posted 
+	Some content needs to be personalized or tailored to match the needs and interests of a site visitor</text>
+        </slide>
+        <slide>
+          <slideno>18</slideno>
+          <text>Akamai network 
+ Over 15,000 servers in over 65 countries
+AKAMAI SERVERS 
+Figure by MIT OCW.</text>
+        </slide>
+        <slide>
+          <slideno>26</slideno>
+          <text>Typical Software Costs 
+Startup Costs 
+Software Applications $310,250 
+Web design $1,105,000 
+Enterprise Integration $364,000 
+Other labor $403,650 
+Facilties $78,000 
+Total $2,260,900 
+Annual Operating Costs 
+Maintenance $7,150 
+Labor $890,500 
+Total $897,650</text>
+        </slide>
+        <slide>
+          <slideno>14</slideno>
+          <text>Technological Alternatives 
+ Local load balancer 
+ Site mirroring 
+ Content routing</text>
+        </slide>
+        <slide>
+          <slideno>20</slideno>
+          <text>Additional issues 
+	Often support for multiple languages and time zones 
+is required 
+	Content presentation must consistently conform to 
+branding and appearance standards 
+	Version archiving and an audit trail 
+	Content must be viewable across a variety of 
+browsing devices, not just PCs</text>
+        </slide>
+        <slide>
+          <slideno>23</slideno>
+          <text>A Three Layer Website Architecture INTERNET 
+/ Front-end 
+Middleware 
+Back-end Profile 
+DataBase BROWSER 
+Content 
+DataBase Session 
+management 
+software 
+Inventory 
+Database Firewall 
+Database 
+intelligence Web interface
+Manage page hits 
+Customer and session 
+Management 
+Transacion and requests 
+management 
+Read
+Store data Web Server Load Balancer 
+Web Server /</text>
+        </slide>
+        <slide>
+          <slideno>22</slideno>
+          <text>Enterprise-level eCommerce sites: 
+Summary of Technologies 
+ Security 
+ Physical security: Hosting 
+ Access control: Firewalls 
+ Availability/Fault Tolerance 
+ Replication 
+ Performance/Scalability 
+ Replication 
+ Load Balancing 
+ Web Caching 
+ Content management 
+ Content Management Software</text>
+        </slide>
+        <slide>
+          <slideno>6</slideno>
+          <text>Types of firewalls 
+	Packet filter: Looks at each packet entering or leaving 
+the network and accepts or rejects it based on user-
+defined rules. 
+	Application gateway: Applies security mechanisms to 
+specific applications, such as FTP and Telnet servers. 
+	Proxy server: Intercepts all messages entering and 
+leaving the network. The proxy server effectively 
+hides the true network addresses</text>
+        </slide>
+        <slide>
+          <slideno>28</slideno>
+          <text>Moral of this lecture 
+Computer Systems can be Fast, Cheap, or Reliable
+ Choose any two</text>
+        </slide>
+        <slide>
+          <slideno>0</slideno>
+          <text>15.561 
+Information Technology Essentials 
+Session 11 
+Under the hood of 
+a commercial website 
+Acknowledgments:
+Adapted from Chris Dellarocas, U. Md..
+Copyright  2005 Thomas Malone, Chris Dellarocas</text>
+        </slide>
+        <slide>
+          <slideno>9</slideno>
+          <text>There is no single right answer 
+	Select level of hosting based on what kind of 
+company you are 
+	basic eCommerce presence  shared hosting
+ Century 21
+	some in-house expertise, high volume  dedicated hosting 
+ LandsEnd, Vanguard 
+	eCommerce pioneer  collocated hosting
+ Yahoo, Amazon</text>
+        </slide>
+        <slide>
+          <slideno>10</slideno>
+          <text>Issue # 2: Ensuring Availability and 
+Fault Tolerance 
+ Why do computers crash? 
+ Hardware errors 
+ Operating system errors 
+ Application errors 
+ Human errors 
+ Use redundancy to restore normal operation after crashes 
+ Data redundancy 
+ Active Replication</text>
+        </slide>
+        <slide>
+          <slideno>16</slideno>
+          <text></text>
+        </slide>
+        <slide>
+          <slideno>24</slideno>
+          <text>How much does it cost? 
+	Typical e-Commerce corporate site 
+	600,000 unique visitors per month 
+	Growth aimed at 3 million visitors per month in two 
+years</text>
+        </slide>
+        <slide>
+          <slideno>8</slideno>
+          <text>The various flavors of hosting 
+ Free hosting 
+	Your site on a shared server. Usually a shared domain name. Usually 
+supported by advertising 
+ Shared hosting 
+	Your site (and domain name) on a shared server in a special facility with 
+staff to respond when machines go down, etc. Often bundled with email. 
+ Dedicated hosting 
+	Your site(s) on a separate, dedicated server in a special facility. Varying 
+amounts of additional services (such as design of server configuration, 
+firewalls, replication, etc.) 
+ Collocated hosting 
+	Similar to dedicated hosting except you own the server rather than renting it.</text>
+        </slide>
+        <slide>
+          <slideno>2</slideno>
+          <text>/
+wsWeb 
+server The story so far 
+CGI ASP 
+script 
+Internet Webbro er Static 
+content Database</text>
+        </slide>
+        <slide>
+          <slideno>25</slideno>
+          <text>Typical Hardware Costs 
+Startup Costs 
+Servers $129,000 33% 
+Network Hardware $115,050 29% 
+Labor $124,800 32% 
+Facilities $26,000 7% 
+Total $394,850 
+Annual Operating Costs 
+Maintenance $10,400 
+Hosting $65,000 
+Labor $204,750 
+Total $280,150</text>
+        </slide>
+        <slide>
+          <slideno>17</slideno>
+          <text>User enters standard URL 
+Rich content served locally 
+User browser request embedded objects Intelligent content routing 
+AKAMAI SERVER CUSTOMER 
+WEB SERVER STEP 1 
+STEP 1 STEP 2 
+STEP 2 STEP 3 
+STEP 3 STEP 4 
+STEP 4 Web Server returns HTML with embedded URLs 
+pointing to Akamai Network 
+Figure by MIT OCW. Companies: Akamai, Sandpiper</text>
+        </slide>
+        <slide>
+          <slideno>4</slideno>
+          <text>Enterprise-level eCommerce sites: 
+Summary of Technologies 
+ Security 
+ Physical security: Hosting 
+ Access control: Firewalls 
+ Availability/Fault Tolerance 
+ Replication 
+ Performance/Scalability 
+ Replication 
+ Load Balancing 
+ Web Caching 
+ Content management 
+ Content Management Software</text>
+        </slide>
+        <slide>
+          <slideno>3</slideno>
+          <text>Issues for building enterprise-level 
+eCommerce sites 
+	Security 
+	Physical security 
+	Access control 
+	Availability/Fault Tolerance 
+	Ensure the computer services remain available to users in the 
+face of partial failures 
+	Performance/Scalability 
+	Ensure that response time remains acceptable as site traffic 
+grows 
+	Content management 
+	Ensure that content development is done in a streamlined and 
+orderly fashion</text>
+        </slide>
+        <slide>
+          <slideno>12</slideno>
+          <text>Active Replication 
+	Establish redundant copies of vital programs and 
+servers 
+	process groups 
+	every group member operates on its own replica 
+	Every message is processed by all group members 
+ members remain in mutually consistent states 
+	If one member fails, other members can still respond</text>
+        </slide>
+        <slide>
+          <slideno>21</slideno>
+          <text>Solution: Content management systems 
+ Automatic support for content management workflows</text>
+        </slide>
+        <slide>
+          <slideno>1</slideno>
+          <text>Outline 
+ Issues for building enterprise-class systems 
+ Typical commercial website architecture: Travelocity 
+ How much does it cost?</text>
+        </slide>
+        <slide>
+          <slideno>11</slideno>
+          <text>Data Replication 
+ Keep several copies of same data (replicas) 
+ If one server is down, query next server 
+ Can improve response when load is heavy 
+ Problem: How to synchronize replicas?</text>
+        </slide>
+        <slide>
+          <slideno>13</slideno>
+          <text>Issue # 3 Scalability: 
+Why you should care 
+	 the No.1 reason that customers got fed up and took 
+their business elsewhere was technical problems, 
+including unacceptably slow response times. 
+ Fortune magazine 
+	 28% of Netizens that encountered glitches, left the 
+site never to return 
+ Business Week</text>
+        </slide>
+      </slides>
+      <videos/>
+    </lecture>
+    <lecture>
+      <lecture_title>Introduction: Fundamentals of Computing I&#160;(PDF)</lecture_title>
+      <lecture_pdf_url>https://ocw.mit.edu/courses/15-561-information-technology-essentials-spring-2005/resources/lecture1/</lecture_pdf_url>
+      <lectureno>1</lectureno>
+      <slides>
+        <slide>
+          <slideno>4</slideno>
+          <text>Main Course Objectives 
+ Become comfortable with the technologies
+that are shaping business today 
+ Acquire tools that will help you assesstechnological trends long after you have leftSloan 
+CD</text>
+        </slide>
+        <slide>
+          <slideno>18</slideno>
+          <text>PROCESSOR MEMORY
+op-
+code symbolic 
+000 stop 1xx add 
+2xx subtract 
+3xx store 
+5xx load 
+6xx branch 
+7xx branch zero INPUT/OUTPUT 
+IN 
+OUT +030 +400 7 
+4 
+1 
+0 8 
+2 5 
++ 9 
+6 
+-3 421 00 
+01 
+02 
+03 
+98 07 06 05 04 
+99 199 598 399 901 398 901 
+BLACKBOARD CALCULATOR  902 
+000 
+000 
+000 
+START BUTTON NEXT INSTRUCTION 
+COUNTER 
+ 
+op-
+code symbolic 
+901 get 902 put INSTRUCTIONS 
+So what are: 
+MIPS and MHz all about? 
+SM</text>
+        </slide>
+        <slide>
+          <slideno>14</slideno>
+          <text>Program
+0.  Get
+1. Store 20
+2. Add 193. Put
+4. StopLMC STORED PROGRAM CONCEPTS
+IN 
+OUT +030 +400 PROCESSOR INPUT/OUTPUT 
+7 
+4 
+1 
+0 8 
+2 5 
++ 9 
+6 
+-3 
+CALCULATOR 00 
+98 97  
+99 Label Loc Contents 
+01 
+02 
+03 
+04 Program 
+0. Get 
+1. Store 20 
+2. Add 19 3. Put 
+4. Stop MEMORY 
+REGISTER 
+ISSUES : 
+ Where is LMC program stored? 
+ How does LMC understand instructions like STOP? It only likes numbers. 
+ How does LMC handle symbolic labels like A, B, C? 
+ANSWERS (Stored Program Concept): 
+SM</text>
+        </slide>
+        <slide>
+          <slideno>21</slideno>
+          <text>Conclusions 
+1. There are many detailed facts about computers. 
+2. Many of them will change every year of your career. 
+3. You will never know them all. 
+4. Thats okay. 
+5. What you need to know is: 
+ What kinds of questions to ask 
+ How to make sense of the answers. 
+6. The basic concepts you have learned today will be 
+useful for a long time.</text>
+        </slide>
+        <slide>
+          <slideno>19</slideno>
+          <text>BASIC FACTS TO ASK ABOUT 
+ANY COMPUTER 
+LMC ANSWERS 
+1. MEMORY 
+(A) BASIC UNIT 3 DECIMAL DIGIT NUMBER 
+(B) MAXIMUM SIZE 100 LOCATIONS 
+2. REGISTERS 
+(A) HOW MANY 1 
+(B) NUMBERS 3 DECIMAL DIGIT NUMBER 
+3. INSTRUCTIONS 
+(A) NUMBER 7 INSTRUCTIONS 
+SM</text>
+        </slide>
+        <slide>
+          <slideno>1</slideno>
+          <text>Why bother? 
+ Why should you, as a manager, care about
+information technology?</text>
+        </slide>
+        <slide>
+          <slideno>8</slideno>
+          <text>01
+02
+03
+0504PROCESSORPROCESSOR MEMORY
+MEMORY INPUT/OUTPUTINPUT/OUTPUT
+IN 
+OUT +030 +400 7 
+4 
+1 
+0 8 
+2 5 
++ 9 
+6 
+-3 421 00 
+98 97  
+99 602 311 006 007 212 134 
+BLACKBOARD CALCULATOR REGISTER 
+STORE
+LOAD 
+MEMORY 
+ There are 100 locations on the blackboard 
+ Each location identified by number from 00 to 99 
+ Each location has room for one 3-digit number 
+ Load moves number from blackboard to  register. Example: LOAD 01 
+ Store moves number from register to  blackboard. Example: STORE 00 
+SM</text>
+        </slide>
+        <slide>
+          <slideno>9</slideno>
+          <text>PROCESSOR MEMORY
+ INPUT/OUTPUT 
+IN 
+OUT +030 +400 7 
+4 
+1 
+0 8 
+2 5 
++ 9 
+6 
+-3 421 00 
+01 
+02 
+03 
+98 97  05 04 
+99 602 311 006 007 212 134 
+BLACKBOARD CALCULATORPUT GET REGISTER 
+INPUT/OUTPUT 
+ Input and Output conveyors hold 3-digit numbers 
+ GET moves number from INPUT to REGISTER 
+ PUT moves number from REGISTER to OUTPUT 
+SM</text>
+        </slide>
+        <slide>
+          <slideno>3</slideno>
+          <text>BuzzwordsBuzzwords
+Technological reality</text>
+        </slide>
+        <slide>
+          <slideno>20</slideno>
+          <text>INTEL PENTIUM 4 ANSWERS
+1. MEMORY
+(A) INDUSTRY 8 BINARY DIGITS (BITS) = 1 BYTE 
+BASIC UNIT
+8 BITS
+0  0  1  0  1  1  0  1
+(B) BASIC UNIT 32 BITS = 4 BYTES 
+(C) TYPICAL SIZE MEMORY RAM:  128 MB  1GB 
+2. REGISTERS 
+(A) HOW MANY ABOUT 50 REGISTERS 
+(B) NUMBERS VARIOUS TYPES 
+3. INSTRUCTIONS 
+(A) NUMBER ABOUT 500 
+SM</text>
+        </slide>
+        <slide>
+          <slideno>6</slideno>
+          <text>A Typical Computer 
+Keyboard 
+Mouse 
+Central 
+Processing 
+Unit 
+(CPU) Memory 
+Monitor 
+CD 
+Laser printer</text>
+        </slide>
+        <slide>
+          <slideno>2</slideno>
+          <text>BuzzwordsBuzzwords
+????????????????????????????</text>
+        </slide>
+        <slide>
+          <slideno>13</slideno>
+          <text>Program to: 
+1) Read WAGE and BONUS amount from INPUT 
+2) Compute total PAY 
+3) Output total PAY 
+PROCESSORPROCESSOR MEMORY MEMORY INPUT/OUTPUT 
+IN 
+OUT +030 +400 7 
+4 
+1 
+0 8 
+2 5 
++ 9 
+6 
+-3 
+CALCULATOR REGISTER 
+00 
+98 97 96 
+99 596 
+WAGE 
+BONUS 
+PAY Label Loc Contents INPUT/OUTPUT
+BONUS WAGE  
+STEP INSTRUCTION STEP INSTRUCTION 
+1. 5. 
+2. 6. 
+3. 7. 
+4. 8. SM</text>
+        </slide>
+        <slide>
+          <slideno>10</slideno>
+          <text>PROCESSOR MEMORY
+ INPUT/OUTPUT 
+IN 
+OUT +030 +400 7 
+4 
+1 
+0 8 
+2 5 
++ 9 
+6 
+-3 421 00 
+01 
+02 
+03 
+98 97  05 04 
+99 602 311 006 007 212 134 
+BLACKBOARD CALCULATOR REGISTER 
+PROCESSOR/CALCULATOR 
+ Register has room for one 3-digit number 
+ Calculator can add and subtra ct numbers from memory to 
+register
+Examples: ADD 02
+SM SUBTRACT 03</text>
+        </slide>
+        <slide>
+          <slideno>16</slideno>
+          <text>INSTRUCTION SEQUENCING
+PROCESSOR MEMORY 
+op-
+code symbolic 
+000 stop 1xx add 
+2xx subtract 
+3xx store 
+5xx load 
+901 get 
+902 put SEQUENCING 
+1. LOOK AT COUNTER 
+2. GET THAT INSTRUCTION 
+3. 
+4. PULL COUNTER CORD 
+) INPUT/OUTPUT 
+IN 
+OUT +030 +400 7 
+4 
+1 
+0 8 
+2 5 
++ 9 
+6 
+-3 421 00 
+01 
+02 
+03 
+98 07 06 05 04 
+99 199 598 399 901 398 901 
+BLACKBOARD CALCULATOR  902 
+000 
+000 
+000 
+START BUTTON NEXT INSTRUCTION 
+COUNTER 
+ 
+INSTRUCTIONS 
+INSTRUCTION 
+PERFORM THAT INSTRUCTION 
+(REPEAT
+SM</text>
+        </slide>
+        <slide>
+          <slideno>15</slideno>
+          <text>LMC MACHINE LANGUAGE AND ASSEMBLY LANGUAGE
+PROCESSOR MEMORY 
+op-
+code symbolic 
+000 stop 1xx add 
+2xx subtract 
+3xx store 
+5xx load 
+901 get 
+902 put STEP INSTRUCTION 
+00 get
+01 store w 
+02 get
+03 store b 
+04 load w 
+05 
+06 
+07 stop LOC INSTRUCTION 
+00 901 
+01 398 
+02 901 
+03 399 
+04 598 
+05 199 
+06 902 
+07 000 1 ASSEMBLY LANG 
+(Source Program) 2 
+(Object Program) INPUT/OUTPUT 
+IN 
+OUT +030 +400 7 
+4 
+1 
+0 8 
+2 5 
++ 9 
+6 
+-3 421 00 
+01 
+02 
+03 
+98 07 06 05 04 
+99 199 598 399 901 398 901 
+BLACKBOARD CALCULATOR  902 
+000 
+w 
+b 
+INSTRUCTIONS 
+add b 
+put MACHINE LANG 
+SM</text>
+        </slide>
+        <slide>
+          <slideno>11</slideno>
+          <text>LMC INSTRUCTIONS
+PROCESSORPROCESSOR MEMORY MEMORY INPUT/OUTPUT 
+IN 
+OUT +030 +400 7 
+4 
+1 
+0 8 
+2 5 
++ 9 
+6 
+-3 421 00 
+01 
+02 
+03 
+98 97  05 04 
+99 602 311 006 007 212 134 
+BLACKBOARD CALCULATOR INPUT/OUTPUT
+REGISTERGET 
+PUT ADD 
+STORE SUB LOAD 
+1. Get 
+2. Put 
+3. Load x (Load 01) 
+4. Store x (Store 05) 
+5. Add x (Add 02) 
+6. Sub x (Sub 03) 
+7. Stop SM</text>
+        </slide>
+        <slide>
+          <slideno>5</slideno>
+          <text>Course overview 
+ Technology
+ Applications of Technology</text>
+        </slide>
+        <slide>
+          <slideno>7</slideno>
+          <text>A Simplified Computer 
+INPUT/OUTPUTINPUT/OUTPUT
+INPUT CONVEYOR 
+OUTPUT 
+CONVEYOR +030 +400 7 
+4 
+1 
+0 8 
+2 5 
++ 9 
+6 
+-3 421 00 
+01 
+02 
+03 
+98 97  05 04 
+99 602 311 006 007 212 134 
+BLACKBOARD CALCULATORLITTLE 
+MAN PROCESSORPROCESSOR MEMORY
+MEMORY
+SM</text>
+        </slide>
+        <slide>
+          <slideno>17</slideno>
+          <text>INSTRUCTION SEQUENCING
+MEMORY INPUT/OUTPUT 
+IN 
+OUT +030 +400 7 
+4 
+1 
+0 8 
+2 5 
++ 9 
+6 
+-3 421 00 
+01 
+02 
+03 
+98 07 06 05 04 
+99 199 598 399 901 398 901 
+BLACKBOARD CALCULATOR  902 
+000 
+000 
+000 
+START BUTTON NEXT INSTRUCTION 
+COUNTER 
+ PROCESSOR 
+CONTROL FLOW 
+ BRANCH always puts a new address in the instruction counter 
+ BRANCH ZERO puts a new address in the instruction counter if the 
+REGISTER is 0. Otherwise it incr eases the instruction counter by 1. 
+Examples: BRANCH 02 
+BRANCH ZERO 06 SM</text>
+        </slide>
+        <slide>
+          <slideno>0</slideno>
+          <text>15.561 
+Information Technology
+Essentials 
+Thomas Malone 
+Acknowledgments: 
+Slides marked SM are adapted from Stuart Madnick, MIT. 
+Copyright  2005 Thomas Malone, Chris Dellarocas, Stuart Madnick Slides marked CD are adapted from Chris Dellarocas, U. Md.</text>
+        </slide>
+        <slide>
+          <slideno>12</slideno>
+          <text>SYMBOLIC LMC ADDRESSES
+PROCESSORPROCESSOR MEMORY
+MEMORY INPUT/OUTPUT 
+IN 
+OUT +030 +400 7 
+4 
+1 
+0 8 
+2 5 
++ 9 
+6 
+-3 
+CALCULATOR INPUT/OUTPUT
+REGISTER 
+00 
+98 97 96 
+99 596 
+400 
+030 
+000 
+006 WAGE 
+BONUS 
+PAY Label Loc Contents 
+EXAMPLE INSTRUCTION SEQUENCE Optional 2-digit 3-digit 
+number numberCalculate Pay = Wage + Bonus (permanent) (optional) 
+1. Load Wage 
+2. Add Bonus 
+3. Store Pay 
+SM 
+4. Stop</text>
+        </slide>
+      </slides>
+      <videos/>
+    </lecture>
+    <lecture>
+      <lecture_title>Emerging Technologies; Course Wrap-up (PDF)</lecture_title>
+      <lecture_pdf_url>https://ocw.mit.edu/courses/15-561-information-technology-essentials-spring-2005/resources/lecture16/</lecture_pdf_url>
+      <lectureno>16</lectureno>
+      <slides>
+        <slide>
+          <slideno>1</slideno>
+          <text>Technology futures 
+ Communications 
+ Input/Output 
+ Computing</text>
+        </slide>
+        <slide>
+          <slideno>5</slideno>
+          <text>Kurzweils predictions - 2009 
+ $1K computer does 1 trillion calculations / second 
+ Computers embedded in clothes and jewelry. 
+ Most routine business transactions involve a human 
+and a virtual personality 
+ Translating telephones are common 
+ Human musicians routinely jam with cybernetic 
+musicians.</text>
+        </slide>
+        <slide>
+          <slideno>2</slideno>
+          <text>Communications 
+ Bandwidth will get much, much cheaper and more 
+available. 
+	More people will have more decision-making power in 
+organizations. 
+	Will videoconferencing be as good as being there? 
+	Wireless will be increasingly important. 
+	There will never be enough bandwidth. 
+	...or will there?</text>
+        </slide>
+        <slide>
+          <slideno>9</slideno>
+          <text>Questions 
+ What do you think will happen? 
+ What do you think should happen? 
+ How will these things affect business?</text>
+        </slide>
+        <slide>
+          <slideno>10</slideno>
+          <text>Course wrap-up</text>
+        </slide>
+        <slide>
+          <slideno>3</slideno>
+          <text>/ Input Output 
+	Human interfaces will improve, but less rapidly than some 
+expect. 
+	Speech 
+	Written natural language 
+	Tangible interfaces 
+	Electronic paper 
+	Neural interfaces 
+	Computers will be more capable of acting in the physical world. 
+	Vision 
+	Robotics / Motion 
+	Desktop fabs 
+	RFID</text>
+        </slide>
+        <slide>
+          <slideno>12</slideno>
+          <text>Lessons 
+1.	The details of hardware, software, and networks will change 
+every year, but the fundamental concepts illustrated by the 
+Little Man Computer will be important for a very long time. 
+2.	The Internet, and everything built upon it, depends on 
+multiple layers of protocols with the packet-switched 
+Internet Protocol layer playing a key role. 
+3.	Relational databases are the most common means of 
+organizing and storing large amounts of data in organizations 
+today. They can also be a powerful tool for data modeling and 
+analysis in consulting, investment banking, etc.</text>
+        </slide>
+        <slide>
+          <slideno>6</slideno>
+          <text>Kurzweils predictions - 2019 
+ $1K computer has approximately the computational 
+capacity of a human brain. 
+ Computers are invisible and embedded everywhere. 
+ 3D virtual reality displays in glasses are primary way 
+of communicating with people and accessing 
+computer-generated information. 
+ All-encompassing virtual environments allow 
+virtually any kind of interaction over any distance. 
+ Virtual personalities (e.g., teachers, lovers) are 
+common.</text>
+        </slide>
+        <slide>
+          <slideno>11</slideno>
+          <text>Course outline 
+ Technology 
+ Fundamentals (Little Man Computer, computer architecture) 
+ Networks 
+ Databases 
+ Web technologies 
+ Computer security / cryptography 
+ Applications of technology 
+ Software development 
+ Enterprise systems 
+ Under the hood of a commercial web site 
+ Systems that span enterprises 
+ Business Intelligence (data mining, data warehousing) 
+ Emerging technologies</text>
+        </slide>
+        <slide>
+          <slideno>13</slideno>
+          <text>( ) Lessons cont.
+4.	Software development is a key enabler or failure point in 
+many organizations. Managing it well usually requires 
+getting requirements feedback iteratively and adding 
+appropriately-skilled staff early. 
+5.	As digital transactions become more common, every 
+manager (and citizen) should understand their security risks 
+and available countermeasures. 
+6.	The original Web model focused on presenting static 
+information to human viewers. One of the most important 
+trends in Web technologies today is the "semantic Web, 
+which explicitly codes information about meaning as well as 
+appearance. This will enable better searching, b2b 
+integration, software agent applications, etc.</text>
+        </slide>
+        <slide>
+          <slideno>8</slideno>
+          <text>Kurzweils predictions - 2099 
+ The number of software-based humans vastly exceeds 
+the number of those using carbon-based neurons. 
+ Humans who do not use the enormous computational 
+augmentations available cannot meaningfully 
+participate in dialog with those who do. 
+ Life expectancy is no longer a viable term in relation 
+to intelligent beings.</text>
+        </slide>
+        <slide>
+          <slideno>0</slideno>
+          <text>15.561 
+Information Technology Essentials 
+Session 16 
+Emerging Technologies 
+Copyright  2005 Thomas Malone</text>
+        </slide>
+        <slide>
+          <slideno>7</slideno>
+          <text>Kurzweils predictions - 2029 
+ $1K computer has approximately the computational 
+capacity of 1000 human brains. 
+ Neural interfaces to computers have been perfected, 
+and computational augmentation of human brains is 
+available. 
+ Computers have read all available human literature. 
+ There is growing discussion about the legal rights of 
+computers.</text>
+        </slide>
+        <slide>
+          <slideno>4</slideno>
+          <text>Computing 
+ Computers will be much, much faster and cheaper. 
+	Limits to current technologies?
+ Quantum computing
+ Nanotechnology
+ DNA computing/ biological computing
+ Computers will be everywhere. 
+ Ubiquitous computing 
+ Information appliances 
+ Wearables 
+ Computers will be smarter. 
+ Limits to artificial intelligence?</text>
+        </slide>
+        <slide>
+          <slideno>14</slideno>
+          <text>A final lesson 
+7.	Every few years, computers will be able to support (or 
+automate) more of the activities that go on in businesses. 
+Therefore, some of the most important technology 
+opportunities wont involve making new technologies, but in 
+figuring out new ways to use technologies. Finding (and 
+exploiting) the most promising of these new opportunities 
+can give you significant advantages.</text>
+        </slide>
+      </slides>
+      <videos/>
+    </lecture>
+    <lecture>
+      <lecture_title>Networks I (PDF)</lecture_title>
+      <lecture_pdf_url>https://ocw.mit.edu/courses/15-561-information-technology-essentials-spring-2005/resources/lecture3/</lecture_pdf_url>
+      <lectureno>3</lectureno>
+      <slides>
+        <slide>
+          <slideno>23</slideno>
+          <text>Hierarchy of networks
+End User 
+Local Area Network #1 LAN #2 
+(LAN#1) [MIT] 
+Harvard 
+End User LAN #3 
+Internet Service Provider #1 (ISP#1)MIT 
+End User Backbone Network #2 
+[Worldcom, Sprint, 
+Backbone Network #1 Genuity (Level 3), Cable 
+MIT [ATT] &amp; Wireless, ] 
+ISP#3 
+AOL ISP#2 
+gateway 
+Local Area Network #n 
+End User End User 
+SM 
+UCLA For further info, see: navigators.com/isp.html</text>
+        </slide>
+        <slide>
+          <slideno>10</slideno>
+          <text>Bitmapped graphics 
+ Numbers, letters, and words are not enough: we want pictures
+	Representing a picture 
+	Draw a very fine grid on it
+ grid cells are called pixels or dots
+	See what is in each grid cell
+ bitmap: is cell empty or full?
+ grayscale: how dark is the cell?
+ color: what color is the cell?
+ Represent each cell with a prespecified # of bits (how many?) 
+	Store the bits for the cells in a prespecified order
+ e.g., all the cells for the top row, then the next row, etc.
+CD</text>
+        </slide>
+        <slide>
+          <slideno>4</slideno>
+          <text>Representing Numbers 
+1 0 1 1
+1x23 + 0x22 + 1x21 + 1x20
+1x8 + 0x4 + 1x2 + 1x1
+11
+  3 2 1 
+0011 0010 0001 4-bit binary 
+representation Number 
+CD</text>
+        </slide>
+        <slide>
+          <slideno>7</slideno>
+          <text>( ) Formatted Documents contd
+Example: 
+	This is a nicely formatted line. 
+Could be stored internally as: 
+	&lt;BG PAR&gt; T h i s   i s   a &lt;BG UNDERLINE&gt; n I c e l y  
+&lt;EN UNDERLINE&gt; &lt;BG COLOR&gt; 1 f o r m a t t e d &lt;EN 
+COLOR&gt;   l i n e . &lt;CR&gt; 
+Where: 
+	&lt;BG PAR&gt;, &lt;BG UNDERLINE&gt;, &lt;EN UNDERLINE&gt;, &lt;BG COLOR&gt;, &lt;EN 
+COLOR&gt;, &lt;CR&gt; are special byte sequences that denote the beginning and 
+end of various formatting features 
+	Different word processors use different byte sequences, thats why 
+documents require conversion to be used by a different wp 
+CD</text>
+        </slide>
+        <slide>
+          <slideno>15</slideno>
+          <text>Multiplexing: Squeezing many 
+channels into one 
+1 
+2 3 
+4 1 
+2 
+3 
+4	1 
+2	 Frequency Division Multiplexing 
+3
+(FDM) 
+4
+1 
+2 
+3 
+4 1 2 3 4 1 2 3 4 1 2	1
+Time Division Multiplexing
+2 (TDM) 
+3
+4
+Multiplexer Multiplexer</text>
+        </slide>
+        <slide>
+          <slideno>12</slideno>
+          <text>Digital Convergence 
+separate 
+Today delivery 
+methods 
+Over-the-air TV 
+Radio (am/fm) 
+Cable TV Telephone 
+FAX Computer/modem 
+Wireless telephone Meter readings Residence
+Future?
+single digital 
+pipe to deliver all services 
+SM</text>
+        </slide>
+        <slide>
+          <slideno>18</slideno>
+          <text>Local and Wide Area Networks 
+ Local Area Networks (LANs)
+ Short distances 
+ Within organizations 
+ Typical technology: Ethernet or Token Ring 
+ Wide Area Networks (WANs) 
+ Long distances 
+ Across organizations (typically multiple LANs) 
+ Typical technology: Public Switched, Leased Line 
+SM</text>
+        </slide>
+        <slide>
+          <slideno>0</slideno>
+          <text>15.561 
+Information Technology Essentials 
+Session 3 
+Networks I 
+Acknowledgments:
+Slides marked SM are adapted from Stuart Madnick, MIT.
+Slides marked CD are adapted from Chris Dellarocas , U. Md..
+Copyright  2005 Thomas Malone, Chris Dellarocas, Stuart Madnick</text>
+        </slide>
+        <slide>
+          <slideno>5</slideno>
+          <text>Representing Characters 
+Character ASCII* 
+representation 
+A 1010 0001 
+B 1010 0010 
+C 1010 0011 
+  
+0 0101 0000 
+1 0101 0001 
+ 
+* American Standard Code for Information Interchange</text>
+        </slide>
+        <slide>
+          <slideno>14</slideno>
+          <text>What is bandwidth? 
+	Technically: 
+ The range of usable frequencies in a communications medium 
+	Practically: 
+	The amount of information that can be carried by a communications 
+medium per unit of time</text>
+        </slide>
+        <slide>
+          <slideno>24</slideno>
+          <text>( ) Internet Addresses IP addresses
+18. 171. 0. 30 
+12. 34. 23. 40 155. 22. 11. 250 Host 
+Host Host 
+Host 
+9.74.1123.05
+CD</text>
+        </slide>
+        <slide>
+          <slideno>1</slideno>
+          <text>Outline 
+ Point to point connections 
+	Representing information 
+ Analog vs digital 
+ Representing words and pictures 
+ Communications media and bandwidth 
+ Networks 
+ LANs vs WANs 
+ Circuit switched vs packet switched 
+ Example: The Internet</text>
+        </slide>
+        <slide>
+          <slideno>19</slideno>
+          <text>Two forms of network connection 
+Circuit switching
+	A dedicated end-to-end connection is established for the duration of the 
+connection 
+	Used in telephone network 
+Packet switching 
+	Messages are divided into small packets 
+	Each packet is separately routed to the destination 
+	Different packets can take different paths and times 
+	Missing or garbled packets are retransmitted, if necessary 
+	Packets are reassembled into messages at the destination</text>
+        </slide>
+        <slide>
+          <slideno>13</slideno>
+          <text>Connection media  Examples 
+Medium Speed Cost
+Twisted wire 300 BPS  10 MBPS Low
+Microwave 256 KBPS  100 MBPS
+Coaxial cable 56 KBPS  200 MBPS
+Optical fiber 500 KBPS  10 GBPS High
+BPS = bits per second 
+From Laudon &amp; Laudon, Management Information Systems: Organization and Technology , Prentice Hall, 1998</text>
+        </slide>
+        <slide>
+          <slideno>11</slideno>
+          <text>Movement Towards Digital
+analog
+Boston
+(MIT)
+Boston(MIT)digital
+digitalmodem
+modem modemmodem
+AT&amp;TPactelNYNEX
+digital
+digitaldigital
+BostonL.A.UCLA
+UCLAdigital
+analog
+SM</text>
+        </slide>
+        <slide>
+          <slideno>26</slideno>
+          <text>Who controls the Internet?</text>
+        </slide>
+        <slide>
+          <slideno>8</slideno>
+          <text>Example: Web Pages
+CD</text>
+        </slide>
+        <slide>
+          <slideno>9</slideno>
+          <text>CD</text>
+        </slide>
+        <slide>
+          <slideno>21</slideno>
+          <text>Comparison 
+Circuit switching 
+Minimum delay 
+Very inefficient use of 
+connection capacity 
+When overloaded, unable 
+to make connection at all 
+Both ends of connection
+must use same data rate
+Packet switching 
+Variable delay 
+Much more efficient use of 
+connection capacity 
+Can almost always connect, 
+but may be long delays 
+Data- rate conversion is easy</text>
+        </slide>
+        <slide>
+          <slideno>22</slideno>
+          <text>The Internet 
+ What is the Internet?
+ Outgrowth of ARPANET 
+ Based on TCP/IP 
+ A collection of interconnected networks 
+ Provides appearance of widespread connectivity 
+ What is it used for? 
+ E-mail, file transfer, terminal access, client-server traffic, 
+information browsing (aka Web), distributed work, electronic 
+commerce, etc. 
+SM</text>
+        </slide>
+        <slide>
+          <slideno>3</slideno>
+          <text>Data: Analog vs. Digital 
+	Analog data 
+ can take on any value within a continuous range 
+	Examples:
+ human voice
+ Bostons temperature
+	Digital data 
+ can take on only a finite set of discrete values 
+	Examples: 
+ data stored in binary computers 
+ the US standard sizes of clothes 
+CD</text>
+        </slide>
+        <slide>
+          <slideno>2</slideno>
+          <text>ii i
+ii i i i
+l A simple point-to-point connection 
+Workstat on Commun cat ons 
+Processor 
+Workstat on Commun cat ons 
+Processor Commun cat ons 
+Channe
+ processors convert data into signals 
+ signals are transported through channels 
+ channels utilize one or more connection media 
+CD</text>
+        </slide>
+        <slide>
+          <slideno>17</slideno>
+          <text>Networks are about sharing 
+Network 
+ The network allows an entity to switch its attention 
+among a large number of others 
+ Permits sharing of resources attached to the network, 
+including the resources of the network itself. 
+SM</text>
+        </slide>
+        <slide>
+          <slideno>20</slideno>
+          <text>Packet switching 
+Chicago 
+message  San Francisco 
+Boston
+node
+LA UCLA  
+MIT  node 
+1/3 NYC 
+1/3 2/3 message   Denver  
+2/3 Dallas 3/3 
+3/3 
+Disassembly  Reassembly 
+Atlanta 
+Routing SM</text>
+        </slide>
+        <slide>
+          <slideno>16</slideno>
+          <text>Full Connectivity doesn't scale!
+Why build networks? 
+End User B
+A End User End User 
+End User D 
+ll ivi l Fu Connect ty doesn't sca e! SM C</text>
+        </slide>
+        <slide>
+          <slideno>25</slideno>
+          <text>Understanding Internet Addresses 
+	18.154.0.27
+	uniquely assigned to a specific Internet connection point 
+	32-bit address 
+	each number between dots is the decimal representation of 8 bits 
+in the address 
+	In this case: 
+ 18 specifies MIT (MIT owns all addresses 18.xxx.yyy.zzz) 
+ 154 specifies the subnet corresponding to building E56 
+ 0.27 is host number within the subnet 
+	Every internet address can optionally have a descriptive host 
+name (e.g.LASAGNA.MIT.EDU)</text>
+        </slide>
+        <slide>
+          <slideno>6</slideno>
+          <text>Formatted Documents 
+	 In addition to text, must contain information about how it appears on 
+paper 
+ bold, italic, underlined text 
+ different sizes of type
+ page breaks
+	 Invisible formatting characters are embedded in text 
+ special begin formatting character 
+ format specification character (i.e. bold type) 
+ text string for which formatting applies 
+ special end formatting character 
+	 Same character codes have different meaning when interpreted as 
+letters and when as format specifications
+ 65 could mean either A or bold depending on context
+CD</text>
+        </slide>
+      </slides>
+      <videos/>
+    </lecture>
+    <lecture>
+      <lecture_title>Programming Languages (PDF)</lecture_title>
+      <lecture_pdf_url>https://ocw.mit.edu/courses/15-561-information-technology-essentials-spring-2005/resources/lecture5/</lecture_pdf_url>
+      <lectureno>5</lectureno>
+      <slides>
+        <slide>
+          <slideno>15</slideno>
+          <text>Interpreting high level languages 
+ Advantages 
+	Can give machine independence 
+ (e.g., one machine can look like another) 
+ Can be easier to debug and modify 
+ Can give more flexibility at run time 
+ Disadvantages 
+ Slower</text>
+        </slide>
+        <slide>
+          <slideno>4</slideno>
+          <text>1
+2
+3
+45
+6
+7
+A sample LMC program 
+1 ASSEMBLY LANG 
+INSTRUCTIONS
+op-
+code 
+000 1xx 
+2xx 
+3xx 
+5xx 
+901 
+902 symbolic 
+stop 
+add 
+subtract 
+store 
+load get 
+put (Source Program)
+STEP INSTRUCTION 
+00 get 
+01 store w 
+02 get 
+03 store b 
+04 load w 
+05 add b 
+06 put 
+07 stop 2 MACHINE LANG. 
+(Object Program) 
+LOC INSTRUCTION 
+00 901 
+0 398 
+0 901 
+0 399 
+0 598 
+0 199 
+0 902 
+0 000 
+Source: S. Madnick , MIT</text>
+        </slide>
+        <slide>
+          <slideno>19</slideno>
+          <text>Whats good about Java? 
+ Highly interactive
+ Traditional Web - application software runs on server
+ Java applets dynamically downloaded and run on client 
+(e.g., input data validation) 
+ Nice programming language 
+ Simpler than C/C++ 
+ Object-oriented 
+ Secure programming environment 
+ Sandbox approach 
+ Portable (write once, run anywhere) 
+ Based on Java byte-code interpreter 
+SM</text>
+        </slide>
+        <slide>
+          <slideno>2</slideno>
+          <text>Types of software 
+ System software 
+ Operating systems 
+ Programming languages 
+ Database systems 
+ Application software 
+ General office tasks (word processing, etc.) 
+ Accounting 
+ Design 
+ Factory automation</text>
+        </slide>
+        <slide>
+          <slideno>8</slideno>
+          <text>High-level languages 
+ Closer to how people think about their problems 
+ No one-to-one correspondence to machine language 
+ General purpose 
+ Example: 
+Z = X + Y</text>
+        </slide>
+        <slide>
+          <slideno>16</slideno>
+          <text>Fourth-generation languages 
+ Even closer to how people think about their problems 
+ Special purpose 
+ Examples: 
+	Scripting languages
+ FIND ALL RECORDS WHERE NAME IS SMITH
+ Spreadsheet formulas?</text>
+        </slide>
+        <slide>
+          <slideno>18</slideno>
+          <text>jClass inheritance in 
+ob ect-oriented programming 
+Bank account 
+Owner 
+Balance 
+----
+Open 
+Deposit 
+Withdrawal Credit card account 
+Owner 
+Balance 
+Credit limit 
+----
+Open Deposit 
+Withdrawal 
+Authorize charge 
+Checking account 
+Owner 
+Balance 
+Minimum balance: $100 
+----
+Open 
+Deposit 
+Withdrawal Joes checking account 
+Owner: Joe 
+Balance: $400 
+Minimum balance: $100 
+----
+Open 
+Deposit 
+Withdrawal</text>
+        </slide>
+        <slide>
+          <slideno>20</slideno>
+          <text>S 
+J D 
+/
+Wi (S) 
+ (D) 
+ (J) 
+} Java Operation 
+Internet Servers 
+Sun UNIX 
+ndows 2000 Static pages 
+Dynamic pages 
+Java applets 
+HTML 
+page Java 
+applet HTML 
+page Java 
+applet same Mac OS 
+Windows XP
+( ) ( ) Netscape Win 2000
+Windows 2000 OS 
+PC Hardware HTML 
+Interpreter Java 
+interpreter HTML Interpreter Java 
+interpreter 
+Netscape Mac OS
+Mac OS 
+PowerMac Hardware different } 
+SM Client environments</text>
+        </slide>
+        <slide>
+          <slideno>21</slideno>
+          <text>e
+Java reality check 
+ Highly interactive
+ or too slow (interpretive) 
+ Nice programming language or too limited 
+ Secure environment or (1) not secure enough or
+(2) too secure (restrictive) 
+ Portable only if consistent Java interpreter availabl 
+(Java dialects) 
+SM</text>
+        </slide>
+        <slide>
+          <slideno>23</slideno>
+          <text>Y2K problem 
+ Why was this a hard problem? 
+ Was money wasted?</text>
+        </slide>
+        <slide>
+          <slideno>0</slideno>
+          <text>15.561 
+Information Technology Essentials 
+Session 5 
+Programming Languages 
+Acknowledgments:
+Copyright  2005 Thomas Malone, Stuart Madnick Slides marked SM are adapted from Stuart Madnick, MIT.</text>
+        </slide>
+        <slide>
+          <slideno>14</slideno>
+          <text>Interpreting high level languages 
+Interpreter Z = X + Y 
+... 
+High-level 
+language 
+program 
+(source code)</text>
+        </slide>
+        <slide>
+          <slideno>6</slideno>
+          <text>Assembly language 
+ Mnemonic 
+ Symbolic addressing 
+ One-to-one correspondence with machine language 
+ Example: 
+Get X 
+Add Y 
+Store Z</text>
+        </slide>
+        <slide>
+          <slideno>12</slideno>
+          <text>Example 3  Java 
+import java.io.*; 
+import java.lang.*; 
+/** 
+** Prompts user for list of numbers and outputs average 
+**/ 
+class AverageNumbers { 
+public static void main (String[] args) { 
+float sum = 0; 
+float average = 0; 
+int counter = 0; 
+System.out.println("THIS PROGRAM WILL FIND THE 
+AVERAGE OF THE INTEGERS YOU ENTER THROUGH THE KEYBOARD. TYPE 999 TO 
+INDICATE END OF DATA."); 
+try { 
+BufferedReader in = new BufferedReader(new 
+InputStreamReader(System.in)); 
+String cin = "0"; 
+System.out.println("Please enter a number."); 
+while (!(cin=in.readLine()).equals("999")) 
+{ 
+sum = sum + Integer.parseInt(cin); 
+counter = counter + 1; 
+System.out.println("Please enter another 
+number."); 
+} 
+in.close(); 
+average = sum/counter; 
+System.out.println("The average of the numbers is : 
+"+average);
+}
+catch (IOException e)
+{
+System.out.println("Ooops.."); 
+} 
+} 
+}</text>
+        </slide>
+        <slide>
+          <slideno>5</slideno>
+          <text>Machine language 
+ Binary 
+ Machine dependent 
+ Stored in the computer when the program is running 
+ Example: 
+01110110001010010010 .</text>
+        </slide>
+        <slide>
+          <slideno>17</slideno>
+          <text>j Ob ect-oriented programming 
+ A special kind of high-level language 
+ Can increase programming efficiency and software 
+re-use 
+ Combines procedures and data into objects 
+ Arranges objects in class hierarchies 
+ Inherits properties of objects in this hierarchy</text>
+        </slide>
+        <slide>
+          <slideno>7</slideno>
+          <text>Automatically translating assembly 
+language to machine language 
+X 
+Y 
+Assembler Get 
+Add 
+Store Z 
+... 11001000100 
+01100100011 
+10001011001 
+... 
+Assembly Machine 
+language language 
+program program 
+(source code) (object code)</text>
+        </slide>
+        <slide>
+          <slideno>1</slideno>
+          <text>Outline 
+ Types of software 
+ Types of programming languages 
+ Examples 
+ Java 
+ Y2K</text>
+        </slide>
+        <slide>
+          <slideno>22</slideno>
+          <text>What will happen with Java?</text>
+        </slide>
+        <slide>
+          <slideno>9</slideno>
+          <text>High-level languages - Examples 
+ Fortran 
+ Basic 
+ Visual Basic 
+ C 
+ C++ 
+ Java</text>
+        </slide>
+        <slide>
+          <slideno>3</slideno>
+          <text>Programming languages 
+ Machine language 
+ Assembly language 
+ High-level languages 
+ Fourth-generation languages</text>
+        </slide>
+        <slide>
+          <slideno>13</slideno>
+          <text>Automatically translating high-level 
+language to machine language 
+Compiler Z = X + Y 
+... 11001000100 
+01100100011 
+10001011001 
+... 
+High-level Machine 
+language language 
+program program 
+(source code) (object code)</text>
+        </slide>
+      </slides>
+      <videos/>
+    </lecture>
+    <lecture>
+      <lecture_title>Fundamentals of Computing II (PDF)</lecture_title>
+      <lecture_pdf_url>https://ocw.mit.edu/courses/15-561-information-technology-essentials-spring-2005/resources/lecture2/</lecture_pdf_url>
+      <lectureno>2</lectureno>
+      <slides>
+        <slide>
+          <slideno>11</slideno>
+          <text>liiCPU Issues an Address 
+CPU Address nes 
+00101010 Data L nes 
+... ... 
+MEMORY 
+CPU: I need the contents of memory location 50 !</text>
+        </slide>
+        <slide>
+          <slideno>20</slideno>
+          <text>Keychain drives 
+ Hold 16 MB  2 GB 
+ Attach to USB (Universal Serial Bus) port 
+ Usually use flash memory 
+ A special kind of ROM that can be rapidly erased and re-recorded</text>
+        </slide>
+        <slide>
+          <slideno>21</slideno>
+          <text>I/O Devices 
+ Input 
+ Keyboard 
+ Mouse 
+ Hard Disk 
+ Floppy Disk 
+  
+ Output 
+ Printer 
+ Screen 
+ Speakers</text>
+        </slide>
+        <slide>
+          <slideno>7</slideno>
+          <text>Interpretation of a decimal number 
+3 7 9
+3x100 + 7x10 + 9x1
+3x102 + 7x101 + 9x100</text>
+        </slide>
+        <slide>
+          <slideno>34</slideno>
+          <text>Illusion # 2: Virtual Memory 
+	Some data is not used for a long time 
+ Why keep it all in memory? 
+	Copy a unit of data (called a page) to hard disk and 
+use memory for other data 
+	Copy pages back from hard disk to main memory as 
+they're needed 
+	Process (and its programmer) not aware that main 
+memory is too small (the big memory illusion) 
+ It asks for a main memory location (Page # , offset on page) 
+ OS has to get that page into main memory if not already there</text>
+        </slide>
+        <slide>
+          <slideno>37</slideno>
+          <text>Microcomputer Operating Systems 
+ DOS
+ text-based interface, no multitasking 
+ Windows 
+ windows, cooperative multitasking 
+ filenames restricted to 8 characters 
+ bad memory management! 
+ Windows 98 
+ large filenames 
+ built-in networking capabilities 
+ plug-and-play device configuration</text>
+        </slide>
+        <slide>
+          <slideno>26</slideno>
+          <text>( ) A modern PC architecture 
+simplified
+RAM Cache CPU 
+BUS
+Vi
+llDi ll
+Fl
+iDi
+il 
+Sl l Di deo 
+Contro er VRAM sk Contro er 
+oppy 
+Dr ve sk 
+Dr ve Faster Channe
+ower Channesk 
+Cache</text>
+        </slide>
+        <slide>
+          <slideno>4</slideno>
+          <text>iiCl
+i
+iA Real Computer 
+CPU 
+Memory 0101 
+1101 
+Reg sters 001 
+Instruct on 
+Counter ock Keyboard 
+Mon tor Mouse 
+Laser pr nter</text>
+        </slide>
+        <slide>
+          <slideno>22</slideno>
+          <text>Computer Displays 
+	Computer screen divided into small dots (pixels) 
+	Each pixel can be displayed in a different color 
+	Screen resolution: Number of pixels per screen 
+	640x480 
+	1024x768 
+	Color information for each pixel stored in memory, read and 
+converted to video signal 60 times per second 
+	To store information for a 1024x768 screen with 256 possible colors for 
+each pixel we need _______ bytes</text>
+        </slide>
+        <slide>
+          <slideno>30</slideno>
+          <text>Operating system 
+	Allocates and assigns: 
+	memory
+ e.g., file system, virtual memory
+	processor time
+ e.g., multitasking, multiprocessing
+	input-output devices
+ e.g., printer, keyboard, etc.
+	May also provide other capabilities useful to many users or 
+programs 
+	Graphical User Interface (GUI) capabilities 
+	Fonts, network protocols, ... 
+	Web browser?</text>
+        </slide>
+        <slide>
+          <slideno>13</slideno>
+          <text>CPU Characteristics 
+	Family: Determines the set of instructions it understands 
+ Intel 80386, 80486, Pentium, Pentium II, 
+ Motorola: 68030, 68040 
+	Clock Speed 
+ Pentium: 500 MHz  2.2 GHz 
+	Data bus width: Size of data that can be manipulated at one time 
+ 80486: 32 bits, Pentium: 64 bits 
+	Address bus width: Limits the amount of memory that can be 
+installed in the computer 
+ LMC: 3 decimal digits. Locations _______ 
+ Pentium: 32 bits. Locations ________
+ Itanium: 64 bits. Locations _________</text>
+        </slide>
+        <slide>
+          <slideno>31</slideno>
+          <text>Operating system as magician: 
+The four illusions 
+	Many separate computers, one for each process 
+ Multitasking 
+	Large memory 
+ Virtual memory 
+	Disks and other secondary storage are organized as 
+collections of files 
+ File systems 
+	Windows and menus 
+ Graphical User Interface (GUI)</text>
+        </slide>
+        <slide>
+          <slideno>15</slideno>
+          <text>Semiconductor Memory 
+ RAM (Random Access Memory) 
+ Can access any location equally fast 
+ Loses contents without power 
+	Two main types 
+ Static (SRAM): Faster, expensive 
+ Dynamic (DRAM): Slower, cheaper, consumes less power and 
+space 
+ ROM (Read Only Memory) 
+ Retains memory even without power 
+ Useful to store programs executed upon system start-up (e.g. BIOS)</text>
+        </slide>
+        <slide>
+          <slideno>36</slideno>
+          <text>Illusion # 4: Windows and Menus 
+ Reality: Screen is an array of pixels 
+ Illusion 1: Menus 
+	Depending on where you click, different action happens 
+	Technique: OS looks up location where mouse was clicked, 
+executes appropriate action 
+ Illusion 2: Overlapping windows 
+	A window may cover part or all of another 
+	When a window is uncovered, its contents are redisplayed 
+	Technique: OS saves bitmap of covered windows 
+	Application does not need to know how to redraw the contents 
+of its window</text>
+        </slide>
+        <slide>
+          <slideno>29</slideno>
+          <text>Operating systems - Examples 
+ DOS
+ Windows (95, 98, NT, 2000, XP) 
+ Mac OS X 
+ Unix 
+ Linux 
+ ...</text>
+        </slide>
+        <slide>
+          <slideno>39</slideno>
+          <text>Selecting an Operating System 
+ Is our existing software compatible with the OS? 
+ Does the OS have a large base of compatible software? 
+ How reliable is the OS? Does it crash frequently? 
+ Is the OS available for a wide variety of hardware? 
+ How quickly does it run? 
+ How easy it is to learn and use? 
+ How easy is it to install and configure? 
+ How much does it cost?</text>
+        </slide>
+        <slide>
+          <slideno>23</slideno>
+          <text>/ Buses: Connecting I O to CPU 
+	One set of wires connect all devices and CPU 
+	Transport of information is shared (public) 
+	Hence called a bus (public transportation) 
+	Nearly all computers use a bus to connect CPU and 
+I/O Devices 
+	Buses allow easy addition/replacement of I/O 
+Devices 
+	Modern PCs come equipped with expansion slots, directly 
+connected to the bus 
+	I/O Device controllers implemented as expansion cards 
+	Examples: ISA, PCI, PCMCIA, IEEE 1394 (FireWire)</text>
+        </slide>
+        <slide>
+          <slideno>14</slideno>
+          <text>Expressing Memory Capacity 
+ Measured in bytes (=groups of 8 bits) 
+ Each byte can store a binary number from 00000000 to 
+11111111 (255 = 28-1) 
+ More generally: n binary digits can store numbers from 0 to 2
+n-1 
+ Frequently used multiples: 
+ Kilobyte (KB) = 1,024 (210) bytes 
+ Megabyte (MB) = 1,024 KB = 1,048,576 (220) bytes 
+ Gigabyte (GB) = 1,024 MB ~ 1 billion (230) bytes</text>
+        </slide>
+        <slide>
+          <slideno>17</slideno>
+          <text>Hard Disk Geometry 
+ Head moves back and forth 
+ To read/write some data: 
+1. Head moves over desired track 
+2. System waits until desired 
+sector passes under head 
+3. Data is read/written TRACK 
+CYLINDER SECTOR 
+Figure by MIT OCW.</text>
+        </slide>
+        <slide>
+          <slideno>0</slideno>
+          <text>15.561 
+Information Technology Essentials 
+Session 2 
+Fundamentals of Computing II 
+Acknowledgments:.
+Copyright  2003 Thomas Malone, Chris Dellarocas Adapted from slides by Chris Dellarocas, U. Md..</text>
+        </slide>
+        <slide>
+          <slideno>28</slideno>
+          <text>Types of software 
+ System software 
+ Operating systems 
+ Programming languages 
+ Database systems 
+ Application software 
+ General office tasks (word processing, etc.) 
+ Accounting 
+ Design 
+ Factory automation</text>
+        </slide>
+        <slide>
+          <slideno>12</slideno>
+          <text>li iMemory makes the data available 
+CPU Address nes 
+00101010 Data L nes 
+01111111 
+... ... 
+MEMORY 
+Memory: Location 50 contains the number 127</text>
+        </slide>
+        <slide>
+          <slideno>10</slideno>
+          <text>li iCPU and Memory Interaction 
+CPU 
+Address nes Data L nes 
+... ... 
+MEMORY</text>
+        </slide>
+        <slide>
+          <slideno>5</slideno>
+          <text>INTEL PENTIUM 4 ANSWERS
+1. MEMORY
+(A) INDUSTRY	 8 BINARY DIGITS (BITS) = 1 BYTE 
+BASIC UNIT 
+8 BITS
+0 0 1 0 1 1 0 1
+(B) BASIC UNIT 32 BITS = 4 BYTES 
+(C) TYPICAL SIZE MEMORY RAM: 128 MB  1GB 
+2. REGISTERS 
+(A) HOW MANY ABOUT 50 REGISTERS 
+(B) NUMBERS VARIOUS TYPES 
+3. INSTRUCTIONS 
+(A) NUMBER ABOUT 500 
+SM</text>
+        </slide>
+        <slide>
+          <slideno>1</slideno>
+          <text>Outline: 
+Fundamentals of Computing 
+ Computer architecture 
+	Hardware Components
+ CPU, Memory, I/O, Buses
+ Understanding PC specs 
+ Operating Systems 
+ What is an OS? 
+	OS Functions 
+ Multitasking, Virtual Memory, File Systems, Window systems 
+ Microcomputer operating systems</text>
+        </slide>
+        <slide>
+          <slideno>25</slideno>
+          <text>Cache Memory: Motivation 
+	Cheap main memory is slower than CPU 
+	Example: Pentium PCs
+ CPU 2ns (500MHZ)
+ Main memory (100MHZ SDRAM) 10ns
+	Instructions that access main memory take many more clock ticks 
+than those that don't 
+	Solution: 
+	automatically keep copies of most frequently used memory locations 
+in fast (but expensive) memory = cache memory</text>
+        </slide>
+        <slide>
+          <slideno>35</slideno>
+          <text>Illusion # 3: File Systems 
+ Reality: 
+ Disks are sets of tracks 
+ Tracks are sets of sectors 
+ Sectors can store fixed-sized byte blocks 
+ Illusion: 
+ Disks are sets of directories 
+ Directories contain other directories or files 
+ Files are variable-size byte sequences 
+ Directories and files have names</text>
+        </slide>
+        <slide>
+          <slideno>9</slideno>
+          <text>The CPU 
+	CPU = Central Processing Unit 
+	Internal clock ticks very fast (e.g., 1.6 GHz = 1.6 billion ticks per 
+second) 
+ activities are synchronized to start on a clock tick 
+ some activities take more than one clock tick 
+	Instruction execution is automatic 
+ (tick) find memory address of next instruction 
+ (tick) retrieve instruction from memory 
+ (tick) decode the instruction 
+ (tick) fetch argument from memory if necessary 
+ (tick) execute instruction 
+ (tick) store result in memory if necessary</text>
+        </slide>
+        <slide>
+          <slideno>38</slideno>
+          <text>( ) Microcomputer Operating Systems 
+contd
+ Windows NT (including Windows 2000, Windows XP) 
+ full multitasking 
+ full memory management 
+ UNIX (including Linux) 
+ great memory management, multitasking 
+ complex, text-based interface 
+ Mac OS X 
+ Based on Unix 
+ Easy to use 
+ can only run on Macintoshes</text>
+        </slide>
+        <slide>
+          <slideno>19</slideno>
+          <text>( ) DVD Digital Video Disk
+ New, improved CD-ROM 
+ smaller, denser pits 
+ two layers of pits recorded on the same disk 
+ DVDs can hold up to 17GB of data. 
+1.6 m spacing 
+0.83 m 
+minimum 0.4 m 
+minimum 0.74 m minimum 
+Figures by MIT OCW.</text>
+        </slide>
+        <slide>
+          <slideno>33</slideno>
+          <text>Multitasking issues 
+	How is control passed to next task? 
+	Cooperative multitasking (Windows, Windows 95)
+ Application explicitly passes control back to OS
+ What if application never passes control back?
+	Preemptive multitasking (Unix, NT, XP) 
+	Operating system interrupts application when I/O requested or 
+when preset time limit has passed 
+	Can one task access the memory of another one? 
+	Preventing this is called memory management 
+	Done by Unix, NT, XP, Mac OS X (Not by older versions of Mac OS 
+and Windows)</text>
+        </slide>
+        <slide>
+          <slideno>18</slideno>
+          <text>CD-ROMs 
+ Slower than hard disks 
+ Data is encoded by burning miniature pits on a 
+photoreflective surface; read by laser 
+ CDs can hold up to 650MB of data. 
+ CD-ROM drive maximum transfer speed is expressed 
+in multiples of 150KB/sec 
+ 4X drive --&gt; 600KB/sec 
+ 20X drive --&gt; 3000KB/sec</text>
+        </slide>
+        <slide>
+          <slideno>6</slideno>
+          <text>Binary Computers 
+	Real computers don't store and calculate with 3-digit decimal 
+numbers 
+	A bit (b inary digit ) distinguishes between two states 
+ TRUE and FALSE 
+ 1 and 0 
+	Bits are easier to implement in machines 
+ Light bulb on or off 
+ High vs. low voltage (on wires) 
+ Magnetized or not (computer hard disks, floppies, tapes) 
+ Pit or no pit detected by a laser (compact discs)</text>
+        </slide>
+        <slide>
+          <slideno>27</slideno>
+          <text>Summary: A modern PC 
+ Processor: Pentium (500 MHz  3.6 GHz) 
+ Main Memory: 64 MB - 4 GB 
+ Floppy Drive: 1.44MB (3.5-inch disks) 
+ Hard Drive: 10 - 500GB 
+ Graphics: 640x480  2048x1536, 256 to 16 million colors 
+ Video Memory: 32 - 256MB</text>
+        </slide>
+        <slide>
+          <slideno>24</slideno>
+          <text>li iA simple bus architecture 
+CPU 
+Address nes Data L nes 
+BUS
+... ... ... ... ... ... 
+... ... ... ... ... ... 
+MEMORY DISK VIDEO</text>
+        </slide>
+        <slide>
+          <slideno>2</slideno>
+          <text>BlLi le 1 2 3 4 
+l lLi
+0 
+1 
+2 
+3 
+4 
+5 
+  
+  
+0 
+0 
+0 The Little Man Computer 
+ackboard tt
+Man 33 Input Conveyor 
+Ca cu ator ne Contents 
+100 
+101 
+304 
+408 
+203 
+521 
+97 
+98 
+99 
+Output Conveyor 
+CD</text>
+        </slide>
+        <slide>
+          <slideno>32</slideno>
+          <text>Illusion # 1: Multitasking 
+ Reality: 
+	One CPU 
+	One instruction at a time 
+ Illusion: 
+	Several application programs executing concurrently 
+ Implementation: 
+	Operating system divides CPU time among application programs 
+(time sharing) 
+	each program thinks it is the only one running 
+	OS copies Instruction Pointer and Registers back and forth as 
+each program takes its turn</text>
+        </slide>
+        <slide>
+          <slideno>8</slideno>
+          <text>Interpretation of a binary number 
+1 1 0 1 1
+1x24 + 1x23 + 0x22 + 1x21 + 1x20
+1x16 + 1x8 + 0x4 + 1x2 + 1x1
+27</text>
+        </slide>
+        <slide>
+          <slideno>3</slideno>
+          <text>BASIC FACTS TO ASK ABOUT ANY COMPUTER
+LMC ANSWERS 
+1. MEMORY 
+(A) BASIC UNIT 3 DECIMAL DIGIT NUMBER 
+(B) MAXIMUM SIZE 100 LOCATIONS 
+2. REGISTERS 
+(A) HOW MANY 1 
+(B) NUMBERS 3 DECIMAL DIGIT NUMBER 
+3. INSTRUCTIONS 
+(A) NUMBER 7 INSTRUCTIONS 
+SM</text>
+        </slide>
+        <slide>
+          <slideno>16</slideno>
+          <text>Hard Disks and Floppies 
+	Slower than main memory 
+	Bits stored as magnetic field of different polarity 
+	Magnetized surface of disk rotates under a magnetized head 
+(read/write mechanism) 
+	Disk divided into tracks, each at different radius from center 
+	Tracks are divided into sectors</text>
+        </slide>
+      </slides>
+      <videos/>
+    </lecture>
+    <lecture>
+      <lecture_title>Introduction to Microsoft&#174; Access (PDF)</lecture_title>
+      <lecture_pdf_url>https://ocw.mit.edu/courses/15-561-information-technology-essentials-spring-2005/resources/lecture7/</lecture_pdf_url>
+      <lectureno>7</lectureno>
+      <slides>
+        <slide>
+          <slideno>1</slideno>
+          <text>The lines in the relationships view represent relationships among tables. 
+Typically, they join together a field in one table, which refers to a field in another 
+table. Lines are created manually by clicking the first field and the dragging to the 
+second field. 
+2. Tables 
+Open Table (For example: Employees) 
+Double-clicking a table shows content in table view 
+Similar to Excel or other spreadsheet 
+Add rows at end 
+Add employee data about Prof. Malone, the TAs, etc. (notice 
+that some field can be specified as required fields and the 
+system does not complete record entry unless they have been 
+filled in; example: First Name, Last Name) 
+Rows = data records, database content 
+Columns = fields, part of database design 
+2</text>
+        </slide>
+        <slide>
+          <slideno>3</slideno>
+          <text>3. Queries 
+Access uses SQL as its query language. In addition it supports a 
+graphical front-end that allows easier specification of queries and 
+automatically translates them into SQL 
+Simple Queries 
+Create query to list employee names (click Queries tab in the 
+main Access window, click the New button, select Design view  
+there is also an option to use a wizard for semi-automatically 
+generating some simple queries) 
+Explain sections of design view screen 
+Upper half of screen lists all the database tables that participate 
+in the query (all the tables you would list in the FROM clause of 
+SQL) 
+Lower half of screen lists all the fields of the above tables that 
+are either being displayed or participate in some way in the 
+selection, grouping or aggregation of the final query output 
+Example: Employees table, first and last fields 
+Run 
+To run a query, select View then Datasheet View 
+Save as query 
+If you attempt to close the query design window then the system 
+asks for a name to save the query under 
+Query is saved under the Queries tab 
+Query views 
+Double-clicking a query runs it and opens it in Datasheet View
+Select View, Design View
+Select View, SQL View
+Modify query to sort by last name 
+Click on the Sort row of the Design View 
+Modify query to find USA employees 
+Drag and Drop Country field into lower half of screen 
+Click on Criteria row of Country field and enter 
+USA 
+Deselect the Show check mark 
+Remove criteria 
+Modify query to find employees hired after 1/1/93 
+Drap and Drop HireDate field into lower half of screen 
+Click on Criteria row of HireDate field and enter &gt; 
+1/1/93 
+4</text>
+        </slide>
+        <slide>
+          <slideno>6</slideno>
+          <text>Nested queries (queries that use other queries) 
+Generate a list of employees in order of the total of value of all 
+orders for which they are responsible. 
+Use Employees and Orders tables and the query Order 
+Subtotals that already exists in the database. (To add 
+the pre-existing query, select it under the Queries tab 
+in the Show Table dialog box.) Group by Employees 
+LastName and FirstName. Use aggregate function 
+Sum on the field Subtotal in Order Subtotals and 
+Sort (descending) on this field. 
+7</text>
+        </slide>
+        <slide>
+          <slideno>2</slideno>
+          <text>Switch to design view 
+Select View then Design View
+Every field has a Name, a Data Type and a Description
+The lower right part of the screen provides context-
+sensitive help on the element that the cursor is on. More
+help can be obtained by pressing F1.
+There are several different data types that a field can
+have
+Text, Number, Date/Time, Currency, Autonumber 
+Properties of data types 
+Formatting (e.g. birth date field) 
+Validation rules (e.g. birth date field) 
+Indexing: 
+Users can optionally instruct Access to create an index on any field of any table 
+Pros: faster to find and retrieve data 
+Cons: slower to enter and save data 
+Primary key: 
+Every table must have a field whose value uniquely identifies 
+each record in the table (e.g. the SSN for people, the ISBN for 
+books, etc.) 
+That field is called the primary key and is marked in the fields 
+list with a key icon 
+Create New Table (Example: A students table) 
+Use wizard and select a table template that comes close (e.g. 
+Employees table) 
+Selectively add fields from the table template 
+Id, first, last, e-mail 
+Show in table view to add sample record 
+e.g. Ben Lee, yoongl@mit.edu 
+Show in design view to create from scratch 
+(Note: You can also import and export tables to and from Excel.) 
+3</text>
+        </slide>
+        <slide>
+          <slideno>5</slideno>
+          <text>Joins 
+Create query to find all customers who placed an order in a given 
+time frame (e.g. 1/1/95 - 12/31/95) 
+Goto to Queries tab/Click New/Select Design View/Add 
+Customers table and Orders table 
+Access does automatic join based on the relationships 
+that have been encoded by the designer (shown as 
+connecting lines on the screen) 
+Select customer, order date, enter between 1/1/95 and 
+12/31/95 in criteria row for order date 
+If a field contains more text than is visible, open a Zoom 
+window (Shift F2) to read it 
+Run, show SQL 
+Save query to use in Totals section 
+Create new query to find customers who placed at least one order 
+for a given product 
+Use Customers, Orders, Order Details, and Products 
+tables. Set product name = "Tofu" as a selection 
+criterion 
+Look at complex SQL query generated by a query that looks simple 
+in the Design view. 
+OPTIONAL: Ask students to find all employees who handled an 
+order for a specific customer (e.g. "North/South") 
+Totals (name for queries using aggregate functions) 
+Select View then Totals. This inserts a row in the lower half of 
+the screen which allows us to define one aggregate function per 
+field selected 
+Construct a query which calculates average unit price over all 
+products 
+select unit price from products table, select Totals, 
+select Avg in the Total row 
+Generate unique list of customers who placed an order in a given 
+time frame 
+(group by customers, where on order date, and select 
+count as aggregate function on order ID) 
+Number of products supplied by each supplier 
+(join products and suppliers, group by suppliers, count 
+products) 
+6</text>
+        </slide>
+        <slide>
+          <slideno>0</slideno>
+          <text>MASSACHUSETTS INSTITUTE OF TECHNOLOGY 
+Sloan School of Management 
+15.561 IT Essentials 
+Spring 2005 
+An Introduction to Microsoft Access 
+*Lecture Script 
+1. Introduction 
+Open Database: Northwind.mdb 
+Select File then Open Database 
+Note file extension .mdb 
+Discuss Access UI 
+An Access database consists of one or more tables 
+Queries can be defined to retrieve information from the tables 
+Forms can be specified to provide a nicer, graphical user interface 
+for entering and viewing data stored in tables or generated by 
+queries 
+Reports can be defined in order to nicely format and print the 
+contents of tables and the output of queries 
+Macros and modules containing Visual Basic code can be written 
+to provide additional functionality to a database application. 
+View Relationships 
+Select Tools then Relationships 
+The Northwind Traders database keeps track of the day-to-day 
+operations of a small food distribution company. The company 
+stocks products provided by suppliers . Products are grouped into 
+categories. Its employees service customers who place orders. 
+Every order has an order header and one or more order detail 
+records. Each order detail record contains information about one 
+item ordered. Orders are shipped to customers using one out of a 
+set of shippers that the company works with. 
+* Adapted from Chris Dellarocas, Univ. of Md. 
+1</text>
+        </slide>
+        <slide>
+          <slideno>4</slideno>
+          <text>Modify query to AND the USA criteria 
+As before, insert the USA criterion
+By default criteria on different fields are ANDed
+together
+Modify query to OR the USA criteria 
+Move the USA criterion to the row marked or 
+Show SQL for AND vs. OR 
+5</text>
+        </slide>
+      </slides>
+      <videos/>
+    </lecture>
+    <lecture>
+      <lecture_title>PDF - 2.7 MB</lecture_title>
+      <lecture_pdf_url>https://ocw.mit.edu/courses/15-561-information-technology-essentials-spring-2005/resources/lecture8/</lecture_pdf_url>
+      <lectureno>8</lectureno>
+      <slides>
+        <slide>
+          <slideno>2</slideno>
+          <text>How it all started 
+The Web as a Static Document Repository 
+	Tim Berners-Lees original vision for the WWW (circa 1989) 
+	An easy way to access cross-linked static documents stored 
+in a variety of servers around the world 
+	Initial specification defined: 
+	A language for formatting such documents (HTML) 
+	A simple protocol for communicating between browsers and servers (HTTP)</text>
+        </slide>
+        <slide>
+          <slideno>36</slideno>
+          <text>Support for B2B applications 
+	Original Web was conceived as a communication 
+medium between computers and humans 
+	Amazing new applications will become possible if 
+computers can automatically read and understand 
+Web pages 
+	Electronic purchasing 
+	Intelligence gathering 
+	. 
+	Problem: 
+	HTML pages are unstructured 
+	HTML only provides information about presentation, not meaning</text>
+        </slide>
+        <slide>
+          <slideno>9</slideno>
+          <text>/ WWW is a Client Server System 
+ Web Clients 
+ Use HTTP protocol to connect to servers 
+ Request and display Web pages stored in servers 
+ Typical clients: Web browsers 
+ Web Servers 
+ Listen for incoming connections from clients 
+ Use HTTP protocol to converse with clients 
+ Store and transmit Web pages to clients</text>
+        </slide>
+        <slide>
+          <slideno>24</slideno>
+          <text>Cookies 
+	A method for identifying web users and delivering 
+customized web sites 
+	First time user connects to a web site, s/he is asked to fill in personal 
+information form 
+	Server packages information into a cookie file and sends cookie 
+to browser 
+	Browser stores cookie in local file system 
+	Each subsequent time browser visits site, it sends cookie back to 
+server 
+	Server uses information stored in cookie to identify user and 
+possibly customize the supplied web pages 
+	Privacy implications?</text>
+        </slide>
+        <slide>
+          <slideno>20</slideno>
+          <text>Enter Java Applets 
+	Programming language to enable interactive Web 
+pages 
+	Developed by Sun Microsystems 
+	originally for programming intelligent microwave ovens!!! 
+	Java programs are called applets 
+	Applets are platform-independent 
+	They can run equally well on Windows, Macs, Unix, etc. 
+	Require special browsers that can support Java though</text>
+        </slide>
+        <slide>
+          <slideno>10</slideno>
+          <text>Summary: WWW The Original Concept 
+(1989-1995) 
+ Human Readers    Interconnected Static Documents 
+ Main advantage: 
+ Universality 
+ Main disadvantage 
+ Lack of interactivity 
+ Yet another mass broadcast medium 
+ Main business use 
+ Awareness building</text>
+        </slide>
+        <slide>
+          <slideno>28</slideno>
+          <text>Multiple Delivery Devices 
+ Business motivation: 
+	Allow users to access web content from a variety of devices 
+ PC Browsers 
+ PDAs (e.g. Palm Pilots) 
+ Mobile Phones 
+ Telephones (via voice interface) 
+  
+ Problems of current Web model 
+ Each access device has different look-and-feel requirements 
+ HTML specifies formatting for PC browsers only</text>
+        </slide>
+        <slide>
+          <slideno>6</slideno>
+          <text>How the Web works 
+. ed /sl .
+ Open Location: http://w ebm it. u oan/w w w /ind ex htm l
+Look ingu p host: 
+w eb . m it. ed u. . .
+Webser v er 
+D om ain N am e S er v er What is the 
+I Pad d r ess of 
+w eb . m it. ed u ? 1 8 . 3 0 . 0 . 2 2 
+I nter net 
+Webcl ient 
+I nter net E x pl or er , 
+ir ef ox , N etscape, etc. ) (
+F</text>
+        </slide>
+        <slide>
+          <slideno>25</slideno>
+          <text>&lt;HTML&gt; 
+ &lt;BODY&gt; 
+  &lt;P&gt;Jane Doe&lt;/P&gt; 
+&lt;P&gt;&lt;font COLOR="#FF0000"&gt; 
+ 
+is just right for you&lt;/P&gt; 
+&lt;P&gt;&lt;font COLOR="#FF0000"&gt; 
+ 
+is just right for you&lt;/P&gt; 
+ &lt;/BODY&gt; &lt;?HTML&gt; Jane Doe 
+is just right for you. 
+is just right for you. 
+Product MKT 
+18-24 
+25-40 
+25-40 
+18-24 
+41-60 41-60 TYPE: text/html 
+output&lt;Name&gt;; 
+while (get.next.product()) 
+{
+ output "&lt;PRODUCT&gt; 
+is just right for you"; 
+} 
+ODBC USER=0xx32 BROWSER/CLIENT 
+CLIENT NETWORK 1ab16 
+1ab16 
+1ab16 
+2bc61 
+2bc61 
+2bc61 Age = 24 
+Name1 = Matt 
+Name1 = Sam Name1 = Jane Name2 = Lane 
+Name2 = Doe 
+Name2 = Paul 0xx32 
+0xx32 0xx32 0xx32 
+Age = 35 
+Age = 55 COOKIE Cookie applications 
+Widget1&lt;/font&gt; 
+Widget2&lt;/font&gt; Widget1 
+Widget2
+Widget0 
+Widget1 
+Widget2 
+Widget3 
+Widget4 
+Widget5 GET: server.com/dynamic.app? SERVER 
+SERVER 
+The user's browser passes the contents of the cookie to the Web server. The server uses this cookie to look up information 
+about the user (this information may have been gained from a previous registration process). The information (specifically, 
+the user's age) is used to query a database via ODBC to determine which products should be recommended to this user. The 
+resulting list of products is inserted into a dynamically created HTML page and sent to the user's browser for display. 
+Figure by MIT OCW.</text>
+        </slide>
+        <slide>
+          <slideno>3</slideno>
+          <text>The turning point 
+1993 - Marc Andreesen (student at UIUC) writes Mosaic  
+first graphical WWW browser 
+(precursor of Netscape)</text>
+        </slide>
+        <slide>
+          <slideno>11</slideno>
+          <text>Evolution of the WWW 
+Business Drivers 
+ Enable transactions 
+ Allow interactivity between browser and server 
+ Facilitate personalization 
+ Support multiple browsing devices 
+ Better organize and retrieve Web content 
+ Support Business-to-Business applications</text>
+        </slide>
+        <slide>
+          <slideno>32</slideno>
+          <text>( ) How does Google work? cont.
+ After you enter a query: 
+ Programs check the indexes to determine which 
+pages contain the combination of words you 
+entered. 
+ Google provides a list of these pages in order of 
+page rank (order is probably affected by other 
+factors, too)</text>
+        </slide>
+        <slide>
+          <slideno>22</slideno>
+          <text>Evolution of the WWW 
+Business Drivers 
+ Enable transactions
+ Allow interactivity between browser and server 
+ Facilitate personalization 
+ Support multiple browsing devices 
+ Better organize and retrieve Web content 
+ Support Business-to-Business applications</text>
+        </slide>
+        <slide>
+          <slideno>35</slideno>
+          <text>Evolution of the WWW 
+Business Drivers 
+ Enable transactions 
+ Allow interactivity between browser and server 
+ Facilitate personalization 
+ Support multiple browsing devices 
+ Better organize and retrieve Web content 
+ Support Business-to-Business applications</text>
+        </slide>
+        <slide>
+          <slideno>17</slideno>
+          <text>( ) Microsoft Active Server Pages ASP
+	Competing technology to CGI 
+	Scripting Language is similar to Visual Basic 
+	MS Access can automatically convert database tables, 
+queries and forms into ASP pages 
+	Requires Microsoft web server</text>
+        </slide>
+        <slide>
+          <slideno>12</slideno>
+          <text>The Web as a transaction facilitator 
+	Business Motivation: Low-cost front-end for allowing 
+customers to connect to corporate computers 
+	Customer registration/Address changes 
+	Order tracking/Customer support 
+	Online Transactions: eCommerce 
+	Problems of original Web concept 
+	Static web pages 
+	No interactivity 
+	Stateless protocol: no support for multi-step transactions 
+	Insecure communications</text>
+        </slide>
+        <slide>
+          <slideno>38</slideno>
+          <text>Enter: The Semantic Web 
+	The Next Generation Web with well-established infrastructure for 
+expressing information in a 
+	 Precise, Human-readable, and Machine-interpretable form. 
+	Enable syntactic and semantic interoperability among independently-
+developed Web applications, allowing them to efficiently perform 
+sophisticated tasks for humans. 
+	Enable Web resources to be accessible by their semantics rather than by 
+keywords and syntactic forms. 
+	Enable inferencing: 
+	Chris is an associate professor at MIT. 
+	Associate professors are permanent employees. 
+	Chris is a permanent employee of MIT.</text>
+        </slide>
+        <slide>
+          <slideno>15</slideno>
+          <text>CGI 
+	Common Gateway Interface 
+	Set of standards for writing handler scripts 
+	How it works 
+	All URLs that refer to a special directory (e.g. /cgi) cause the 
+execution of a corresponding script at the server (for example 
+http://web.mit.edu/cgi/test) 
+	Scripts typically translate parameters into SQL statements for a 
+database and translate the query results into an HTML page</text>
+        </slide>
+        <slide>
+          <slideno>37</slideno>
+          <text>What is the underlying issue? 
+	When storing documents on the web, specify not only 
+their appearance, but also their semantics (i.e. their 
+meaning!)</text>
+        </slide>
+        <slide>
+          <slideno>4</slideno>
+          <text>( ) How the original Web works 
+. ed/sl .
+ Open Location: http://w ebm it. u oan/w w w /ind ex htm l
+I x , 
+, N ) v
+D vI
+Webcl ient 
+nter net Epl or er
+ir ef ox etscape, etc.Webserer 
+om ain N am e S erer nter net 
+(
+F</text>
+        </slide>
+        <slide>
+          <slideno>14</slideno>
+          <text>Web Forms Under the Hood 
+	Server sends original html page containing input fields 
+	User types info into fields and presses submit button 
+	Client establishes connection with handler script at server 
+side (script filename contained in web page) 
+	Client collects user input into a long string and sends it 
+along with an HTTP command back to server 
+	POST customer=John+Doe&amp;cardno=1234567890&amp;expires=6/98&amp;
+product=123&amp;quantity=5
+	Handler script at server reads parameter string and 
+processes it, usually producing a new page as a result</text>
+        </slide>
+        <slide>
+          <slideno>13</slideno>
+          <text>Web Forms 
+	Pages which contain fields to be filled by user 
+	Usually contain a Submit button 
+	When user presses Submit, server responds by 
+sending a page containing information specific to the 
+user-supplied parameters 
+	Examples: 
+	Web search tools 
+	Order forms in commercial web sites</text>
+        </slide>
+        <slide>
+          <slideno>16</slideno>
+          <text>Server 
+software Example: FedEx 
+Custom 
+script Translate airbill number into query 
+as expected by legacy system 
+Package results returned by legacy 
+system into a Web page 
+Webb r ow ser I nter net Webser v er D atab ase 
+Leg acy 
+sy stem</text>
+        </slide>
+        <slide>
+          <slideno>0</slideno>
+          <text>15.561 
+Information Technology Essentials 
+Session 8 
+Web Technologies 
+Acknowledgments:
+Adapted from Chris Dellarocas, U. Md..
+Copyright  2005 Thomas Malone, Chris Dellarocas</text>
+        </slide>
+        <slide>
+          <slideno>5</slideno>
+          <text>Anatomy of a URL 
+or r
+ U R L =U nif m R esouce Locator 
+. ed /sl . http:// w ebm it. u oan/w w w /ind ex htm l 
+N am e of pr otocol 
+for com m u nication
+v f e
+ w ith serer D om ain nam e of w eb P athnam e ofil
+( ar v e pag e is w ithin w ebserer http is stand dw eb serer w her v s 
+otocol ed l f e sy pr ) storocalil stem</text>
+        </slide>
+        <slide>
+          <slideno>26</slideno>
+          <text>Summary: WWW The Current Concept 
+(1995-today) 
+ Human Users    Documents and Applications 
+ Main business use 
+ B2C Transactions 
+ Customer Support</text>
+        </slide>
+        <slide>
+          <slideno>8</slideno>
+          <text>C ontactinghost:
+w eb . m it. ed u. . .
+How the Web works 
+. ed/sl .
+ Open Location: http://w ebm it. u oan/w w w /ind ex htm l
+v
+D vI
+( I x , 
+F , N ) 
+Webserer 
+om ain N am e S erer nter net 
+Webcl ient 
+nter net Epl or er
+ir ef ox etscape, etc.</text>
+        </slide>
+        <slide>
+          <slideno>30</slideno>
+          <text>How does Google work? 
+ Before you ever enter a query: 
+ Programs (called web crawlers or spiders)
+follow links from one page to another all over the 
+web. 
+ The programs construct indexes of which words 
+appear on which pages and save the indexes (and 
+often copies of the pages) on massive server 
+farms maintained by Google. 
+ Each page is also assigned a page rank based on 
+the number of other pages that link to it. Links 
+from pages that, in turn, have lots of other pages 
+linking to them are weighted more heavily.</text>
+        </slide>
+        <slide>
+          <slideno>31</slideno>
+          <text>Googles page rank formula 
+ PR(A) = (1-d) + d(PR(t1)/C(t1) + ... + PR(tn)/C(tn)) 
+ Where 
+ t1 - tn are pages linking to page A, 
+ C is the number of outbound links that a page has 
+ d is a damping factor, usually set to 0.85. 
+ In words: 
+ a page' s PageRank = 0.15 + 0.85 * (a "share" of the PageRank 
+of every page that links to it) 
+ "share" = the linking page' s PageRank divided by the number 
+of outbound links on the page.</text>
+        </slide>
+        <slide>
+          <slideno>1</slideno>
+          <text>World-Wide-Web 
+or The Triumph of Anarchy 
+	Perhaps the most important human technological artifact that 
+evolved more or less ad-hoc 
+	Limited original vision of the WWW has very little to do with 
+todays impressive reality 
+	Web Users have consistently innovated in figuring out new 
+ways of leveraging this powerful medium 
+	Web architects then try to catch up by extending (read 
+patching) the Web infrastructure to support these new uses</text>
+        </slide>
+        <slide>
+          <slideno>7</slideno>
+          <text>How the Web works 
+. ed /sl .
+ Open Location: http://w ebm it. u oan/w w w /ind ex htm l
+C ontactinghost: 
+w eb . m it. ed u. . .
+Webser v er 
+D om ain N am e S er v er I nter net 
+Webcl ient 
+I nter net E x pl or er , 
+ir ef ox , N etscape, etc. ) P l ease sendm e f il e 
+/sl oan/w w w /ind ex . html H er e it is 
+(
+F</text>
+        </slide>
+        <slide>
+          <slideno>19</slideno>
+          <text>The Interactive Web 
+	Business Motivation: 
+	Allow complex interaction between user browser and corporate 
+server 
+	Web becomes an extension of the users PC 
+	Browser becomes a window to a variety of corporate applications 
+	Problems with Web Forms/CGI/ASP 
+	All processing done at server side 
+	Rapid user interaction with Web page not possible 
+	Need local processing to create highly interactive Web pages</text>
+        </slide>
+        <slide>
+          <slideno>33</slideno>
+          <text>( ) Google numbers 
+as of December 2004
+	Over four billion Web pages, each an average of 10KB, all fully indexed. 
+	Up to 2,000 PCs in a cluster. 
+	Over 30 clusters. 
+	One petabyte of data in a cluster -- so much that hard disk error rates of 10-15 
+begin to be a real issue. 
+	Sustained transfer rates of 2Gbps in a cluster. 
+	An expectation that two machines will fail every day in each of the larger 
+clusters. 
+	No complete system failure since February 2000. 
+Source: ZDNet  UK &lt;http://www.zdnet.com.au/insight/software/0,39023769,39168647,00.htm&gt;</text>
+        </slide>
+        <slide>
+          <slideno>23</slideno>
+          <text>Personalized Interaction 
+	Business motivation: 
+	Low cost medium for gathering information from customers to 
+allow 
+ Personalized service
+ Targeted advertising
+	Problems with current model 
+ Does not allow easy identification of distinct customers</text>
+        </slide>
+        <slide>
+          <slideno>21</slideno>
+          <text>S 
+J D 
+/
+Wi (S) 
+ (D) 
+ (J) 
+} Java Operation 
+Internet Servers 
+Sun UNIX 
+ndows XP Static pages 
+Dynamic pages 
+Java applets 
+HTML 
+page Java 
+applet HTML 
+page Java 
+applet same Mac OS 
+Mac OS
+( ) ( ) Netscape Win XP
+Windows XP 
+PC Hardware HMTL 
+Interpreter Java 
+interpreter HMTL 
+Interpreter Java 
+interpreter 
+Netscape Mac OS
+Mac OS 
+PowerMac Hardware different } 
+Adapted from Stuart Madnick , MIT Client environments</text>
+        </slide>
+        <slide>
+          <slideno>27</slideno>
+          <text>Evolution of the WWW 
+Business Drivers 
+ Enable transactions 
+ Allow interactivity between browser and server 
+ Facilitate personalization 
+ Support multiple browsing devices 
+ Better organize and retrieve Web content 
+ Support Business-to-Business applications</text>
+        </slide>
+        <slide>
+          <slideno>34</slideno>
+          <text>Problems with todays searches 
+ Text keywords are 
+misleading 
+ HTML does not give any 
+clues as to the true 
+meaning of the data 
+ Example: 
+ Desperately seeking 
+Wendy Cook</text>
+        </slide>
+        <slide>
+          <slideno>39</slideno>
+          <text></text>
+        </slide>
+        <slide>
+          <slideno>18</slideno>
+          <text>Evolution of the WWW 
+Business Drivers
+ Enable transactions 
+ Allow interactivity between browser and server 
+ Facilitate personalization 
+ Support multiple browsing devices 
+ Better organize and retrieve Web content 
+ Support Business-to-Business applications</text>
+        </slide>
+        <slide>
+          <slideno>29</slideno>
+          <text>Organize and Index Web Content 
+	Web is useless unless we can easily locate relevant 
+resources 
+	Current solution: Search Engines 
+	Index the Web by automatically discovering web pages and 
+organizing them around keywords found in their text</text>
+        </slide>
+      </slides>
+      <videos/>
+    </lecture>
+    <lecture>
+      <lecture_title>Managing Software Development (PDF)</lecture_title>
+      <lecture_pdf_url>https://ocw.mit.edu/courses/15-561-information-technology-essentials-spring-2005/resources/lecture12/</lecture_pdf_url>
+      <lectureno>12</lectureno>
+      <slides>
+        <slide>
+          <slideno>8</slideno>
+          <text>End-user development 
+User recognizes needUser recognizes need
+User acquires development toolsUser acquires development tools
+User implements solutionUser implements solution
+User uses the solutionUser uses the solution
+User revises and enhances solutionUser revises and enhances solution DoneDoneYes 
+No User satisfied?</text>
+        </slide>
+        <slide>
+          <slideno>9</slideno>
+          <text>End-user development 
+ Advantages 
+ Can be much faster 
+ Improved requirements determination 
+ Increased user involvement and satisfaction 
+ Disadvantages 
+ Often, users lack the right implementation skills 
+ Many problems cant be solved within the limitations of the tools 
+ Lack of quality assurance and standards for programs and data 
+ Lack of sharing of programs and data 
+ Reduced opportunity for reuse of results 
+BG</text>
+        </slide>
+        <slide>
+          <slideno>10</slideno>
+          <text>Outsourcing 
+ Contract out the performance of any or all of the 
+above steps to another firm 
+ Advantages 
+ Economies of scale 
+ Flexibility 
+ Predictability 
+ Freeing up human resources and capital 
+ Disadvantages 
+ Loss of control 
+ Vulnerability of strategic information 
+ Dependency</text>
+        </slide>
+        <slide>
+          <slideno>12</slideno>
+          <text>Open source 
+	Advantages 
+	Usually lower cost 
+	Sometimes easier to adapt packaged software to own needs 
+	Philosophically appealing to many people 
+	Disadvantages 
+	Usually lower quality support 
+	Only a few kinds of software are currently available in this format 
+(Linux operating system, Apache web server, etc.)</text>
+        </slide>
+        <slide>
+          <slideno>3</slideno>
+          <text>Traditional systems development 
+life cycle 
+ Advantages 
+ For well-understood problems, produces predictable outcomes 
+ Disadvantages 
+ Inflexible 
+	Long delay before any useful results
+ May be obsolete by then
+ Often hard to know requirements until actual use</text>
+        </slide>
+        <slide>
+          <slideno>0</slideno>
+          <text>15.561 
+Information Technology Essentials 
+Session 12 
+Managing 
+software development 
+Acknowledgments: 
+Slides marked SM are adapted from Stuart Madnick, MIT. 
+Copyright  2005 Thomas Malone Slides marked BG are adapted from Benjamin Grosof, MIT.</text>
+        </slide>
+        <slide>
+          <slideno>6</slideno>
+          <text>Packaged software 
+Project definitionProject definition
+Identify basic requirementsIdentify basic requirements
+Select packageSelect package
+Train usersTrain usersCustomize packageCustomize package Redesign organizational processesRedesign organizational processes
+Operation
+Operation</text>
+        </slide>
+        <slide>
+          <slideno>14</slideno>
+          <text>.
+Facts and Fallacies about 
+Software Development 
+	Facts 
+	The most important factor in software development is the quality of 
+the programmers. 
+	The best programmers are up to 28 times better than the worst. 
+	Adding people to a late project makes it later. 
+	One of the most common causes of runaway projects is poor 
+estimation. 
+	The other most common cause of runaway projects is unstable 
+requirements. 
+	Requirements errors are the most expensive to fix during
+production.
+	Maintenance typically consumes 40 to 80 percent of software costs. 
+	Enhancements represent roughly 60 percent of maintenance costs. 
+Adapted from Robert L. Glass, Facts and Fallacies of Software Engineering , Addison Wesley, 2003</text>
+        </slide>
+        <slide>
+          <slideno>2</slideno>
+          <text>Traditional systems development 
+life cycle (waterfall model) 
+Project definitionProject definition
+Systems analysisSystems analysis
+DesignDesign
+ProgrammingProgramming
+DeploymentDeploymentHigh level requirements 
+Detailed requirements Decomposition into modules Writing and testing code Installation and operation (sale) 
+MaintenanceMaintenance Fixing bugs and changing features 
+BG</text>
+        </slide>
+        <slide>
+          <slideno>16</slideno>
+          <text>Why is software hard?</text>
+        </slide>
+        <slide>
+          <slideno>7</slideno>
+          <text>Packaged software 
+	Advantages 
+	By amortizing development and maintenance costs over many 
+organizations, it is possible to get superior solutions at much lower 
+cost 
+	Disadvantages 
+	Customizing software can be very time-consuming and expensive 
+	May have to change organization to fit software, rather than vice 
+versa</text>
+        </slide>
+        <slide>
+          <slideno>15</slideno>
+          <text>.
+( ) Facts and Fallacies about 
+Software Development cont.
+	Fallacies 
+	Software needs more methodologies. 
+	You teach people how to program by showing them how to write 
+programs. 
+Adapted from Robert L. Glass, Facts and Fallacies of Software Engineering , Addison Wesley, 2003</text>
+        </slide>
+        <slide>
+          <slideno>1</slideno>
+          <text>Approaches to software development 
+ Traditional systems development life cycle 
+ Prototyping 
+ Packaged software 
+ End-user development 
+ Outsourcing 
+ Open source</text>
+        </slide>
+        <slide>
+          <slideno>11</slideno>
+          <text>Open source 
+Someone develops working prototypeSomeone develops working prototype
+Use the prototypeUse the prototype
+Revise and enhance prototypeRevise and enhance prototypeSome 
+developer wants 
+to do more? 
+Project endsProject endsNo 
+Yes</text>
+        </slide>
+        <slide>
+          <slideno>13</slideno>
+          <text>Problems with software development 
+ Computerworld magazine*
+ Nearly one-third of all projects fail 
+ More than half come in over budget 
+ Only 16% of all projects come in on time and on budget 
+ Key factor for success or failure: 
+ User involvement/input 
+*Survey of 8000 projects from 385 companies. SM</text>
+        </slide>
+        <slide>
+          <slideno>4</slideno>
+          <text>Prototyping 
+Project definitionProject definition
+Identify basic requirementsIdentify basic requirements
+Develop a workingDevelop a working protoypeprotoype
+Use the prototypeUse the prototype
+Revise and enhance prototypeRevise and enhance prototypeUser satisfied? 
+DeploymentDeployment
+MaintenanceMaintenanceYes 
+No 
+BG</text>
+        </slide>
+        <slide>
+          <slideno>5</slideno>
+          <text>Prototyping 
+	Advantages 
+	Especially useful when exact requirements are hard to know in 
+advance 
+ user interfaces 
+ decision systems
+ electronic commerce?
+	Encourages user involvement 
+	Disadvantages 
+	Hard to predict and control outcomes reliably 
+	If repeated, significant reimplementations are needed, can be very 
+expensive 
+	May result in systems that are inefficient, unreliable, or hard to 
+maintain</text>
+        </slide>
+      </slides>
+      <videos/>
+    </lecture>
+    <lecture>
+      <lecture_title>PDF 2.1 MB</lecture_title>
+      <lecture_pdf_url>https://ocw.mit.edu/courses/15-561-information-technology-essentials-spring-2005/resources/lecture13/</lecture_pdf_url>
+      <lectureno>13</lectureno>
+      <slides>
+        <slide>
+          <slideno>3</slideno>
+          <text>Enterprise Systems 
+	IT applications that 
+	serve key corporate functions, and 
+	involve centralized information shared by many users 
+ Include 
+ one or more databases 
+	programs to add, delete, change, analyze, or otherwise act upon data 
+elements in those databases 
+Adapted from Siebel Systems, Inc., Stanford University Graduate School of Business Case No. EC-18, November 1999 .</text>
+        </slide>
+        <slide>
+          <slideno>8</slideno>
+          <text>( ) Customer Relationship Management 
+Web-based selling
+ On-line sales 
+ product catalogs 
+ shopping carts 
+ credit cards 
+ shopping lists 
+ product configurator for complex products 
+ On-line service 
+ help 
+ on-line marketing analysis 
+ track on-line activities</text>
+        </slide>
+        <slide>
+          <slideno>11</slideno>
+          <text>Other examples of enterprise systems 
+ EAI  Enterprise Application Integration 
+ Enterprise portals 
+ ERM  Employee Relationship Management 
+ Product Lifecycle Management (PLM)</text>
+        </slide>
+        <slide>
+          <slideno>6</slideno>
+          <text>( ) 
+( ) Enterprise Resource Planning ERP
+Systems cont.
+	Potential risks 
+	Difficult to implement 
+	Often easier to adapt business processes to the software than 
+vice versa 
+	Inflexible
+  like wet cement
+	Overly hierarchical?</text>
+        </slide>
+        <slide>
+          <slideno>2</slideno>
+          <text>Major IT applications in business
+Executive
+Support
+Systems
+Management 
+Information 
+Systems 
+Knowledge 
+Worker 
+Systems 
+Transaction
+Processing
+Systems
+5-year 
+sales 
+trend 
+forecasts 5-year 
+budget 
+forecasts 5-year 
+operating 
+plan Profit 
+planning Manpower planning 
+Annual 
+budgeting 
+Cost analysis Sales 
+management 
+Sales region 
+analysis Inventory 
+control 
+Production 
+scheduling Capital investment 
+analysis 
+Pricing/profitability 
+analysis Relocation 
+analysis 
+Contract cost 
+analysis 
+Engineering 
+workstations Word 
+processing Email Web viewing Spreadsheets 
+Public web sites 
+Order tracking 
+Order 
+processing Machine control 
+Plant scheduling 
+Material 
+movement 
+control Securities 
+trading 
+Cash 
+management Payroll 
+Accounts 
+payable 
+Accounts 
+receivable Compensation 
+Training &amp; 
+Development 
+Employee 
+records 
+Sales and Manufacturing Finance Accounting Human 
+Marketing resources 
+Adapted from Laudon &amp; Laudon, Management Information Systems: Organization and Technology , Prentice Hall, 1998, p. 39</text>
+        </slide>
+        <slide>
+          <slideno>1</slideno>
+          <text>Outline 
+ Overview of major IT applications 
+ Examples of enterprise systems 
+ Enterprise Resource Planning (ERP) 
+ Customer Relationship Management (CRM) 
+ Supply Chain Management (SCM) 
+ Trends and business issues in IT applications</text>
+        </slide>
+        <slide>
+          <slideno>13</slideno>
+          <text>Business issues with IT applications 
+ Whether to buy? 
+ Analyzing costs and benefits 
+ Business benefits vs. technical benefits 
+ Buying early vs. buying late 
+ What to buy? 
+ Matching capabilities and needs 
+ Compatibility and standards 
+ How to implement? 
+ Top management support 
+ User involvement 
+ Phased approach</text>
+        </slide>
+        <slide>
+          <slideno>7</slideno>
+          <text>( ) Customer Relationship Management 
+CRM Systems 
+ Sales Force Automation (pre-sales) 
+ managing leads and contacts 
+ generating proposals 
+ configuring products, telemarketing 
+ Customer Service and Support (post-sales) 
+ help desks 
+ call centers 
+ field service operations 
+ Marketing automation</text>
+        </slide>
+        <slide>
+          <slideno>5</slideno>
+          <text>( ) Enterprise Resource Planning ERP
+systems 
+ Integrate many software applications and business 
+functions using a common database 
+ Potential benefits 
+ Cycle time reduction 
+ Faster information transactions 
+ Better financial management 
+ Laying the groundwork for electronic commerce 
+ Encourages organizations to manage processes more explicitly 
+Adapted from: T. Davenport, Mission Critical , Harvard Business School Press, 2000, p. 7- 9.</text>
+        </slide>
+        <slide>
+          <slideno>10</slideno>
+          <text>( ) 
+( ) Supply Chain Management SCM
+Systems cont.
+ Increase responsiveness to supply and demand 
+fluctuations without sacrificing margins 
+ linking with suppliers, customers, and transportation providers 
+ Reduce inventory 
+ Improve reliability of delivery commitments 
+ ATP (Available To Promise) 
+ Manage changes in product mix 
+ including new product introductions</text>
+        </slide>
+        <slide>
+          <slideno>12</slideno>
+          <text>Trends in IT applications 
+ Web-based 
+ Mobile / wireless 
+ Integrated 
+ Across functions within a company 
+ Across companies 
+ Component-based</text>
+        </slide>
+        <slide>
+          <slideno>0</slideno>
+          <text>15.561 
+Information Technology Essentials 
+Session 13 
+Enterprise Systems 
+Copyright  2005 Thomas Malone</text>
+        </slide>
+        <slide>
+          <slideno>4</slideno>
+          <text>( )
+ Enterprise Resource Planning ERP
+systems 
+Central 
+database 
+Human 
+resource 
+management 
+applications Service 
+applications Sales and 
+delivery 
+applications Financial 
+applications 
+Manufacturing 
+applications 
+Inventory 
+and supply 
+applications Reporting 
+applications 
+Customers Suppliers 
+Employees Managers and 
+stakeholders 
+Sales 
+force 
+and 
+customer 
+service 
+reps Back-office 
+administrators 
+and workers 
+Source: T. Davenport, Putting the Enterprise into the Enterprise System, Harvard Business Review, July-August 1998, pp. 121- 131.</text>
+        </slide>
+        <slide>
+          <slideno>9</slideno>
+          <text>( ) Supply Chain Management SCM
+Systems 
+ Managing interrelated activities from your suppliers 
+suppliers to your customers customers. 
+ May involve: 
+ changing information flows and decision-making within a firm 
+ changing information flows and decision-making between firms 
+	using new software tools to enable these changes 
+ ERP systems 
+ Cross-organizational planning, scheduling, and optimization 
+tools</text>
+        </slide>
+      </slides>
+      <videos/>
+    </lecture>
+    <lecture>
+      <lecture_title>Business Intelligence: Data Mining and Data Warehousing (PDF)</lecture_title>
+      <lecture_pdf_url>https://ocw.mit.edu/courses/15-561-information-technology-essentials-spring-2005/resources/lecture15/</lecture_pdf_url>
+      <lectureno>15</lectureno>
+      <slides>
+        <slide>
+          <slideno>9</slideno>
+          <text>Sample Data Mining Applications 
+ Direct Marketing 
+ identify which prospects should be included in a mailing list 
+ Market segmentation 
+ identify common characteristics of customers who buy same products 
+ Customer churn 
+ Predict which customers are likely to leave your company for a competitor 
+ Market Basket Analysis 
+ Identify what products are likely to be bought together 
+ Insurance Claims Analysis 
+ discover patterns of fraudulent transactions 
+ compare current transactions against those patterns</text>
+        </slide>
+        <slide>
+          <slideno>29</slideno>
+          <text>Bank is losing customers 
+	Clustering analysis on call-center detail 
+	Interesting clusters that contain many people who are no
+longer customers 
+	Cluster X: People considerably older than average customer
+and less likely to have mortgage or credit card 
+	Cluster Y: People who have se veral accounts, tend to call 
+after hours and have to wait when they call. Almost never
+visit a branch and often use foreign ATMs</text>
+        </slide>
+        <slide>
+          <slideno>23</slideno>
+          <text>Neural Networks 
+	Start from an initial 
+estimate for the weights w13 3 w36 
+1 w14 w23 
+	Feed the independent w15variables for the first 4 w46
+record into inputs 1 and 2
+2	w24 
+	Compare with output w25 5 w56 Output 
+and calculate error Inputs 
+Hidden 
+	Update estimates of Layer
+weights by back-propagating error 6</text>
+        </slide>
+        <slide>
+          <slideno>16</slideno>
+          <text>Clustering (example) 
+Buys 
+groceries 
+online 
+X X 
+XX X X 
+XX 
+Income</text>
+        </slide>
+        <slide>
+          <slideno>19</slideno>
+          <text>Decision Tree pros and cons 
+	Pros 
+	One of the most intuitive techniques, people really like decision trees 
+	Really helps get some intuition as to what is going on 
+	Can lead to direct actions/decision procedures 
+	Cons 
+	Independent variables are not always the best separators 
+	Maybe some of them are correlated/redundant 
+	Maybe the best splitter is a linear combination of those variables
+(remember factor analysis)</text>
+        </slide>
+        <slide>
+          <slideno>2</slideno>
+          <text>Major IT applications in business
+Executive 
+Support 
+Systems
+Management 
+Information 
+Systems 
+Knowledge 
+Worker 
+Systems 
+Transaction 
+Processing 
+Systems
+5-year
+sales 
+forecasts 5-year forecasts 5-year plan Profit 
+planning planning 
+Annual Sales 
+Sales region
+analysis Inventory 
+Production 
+scheduling analysis 
+Pricing/profitability
+analysis Relocation analysis 
+analysis 
+Engineering Word 
+processing Email 
+Public web sites 
+Order 
+processing Plant scheduling 
+Material 
+movement Securities trading Payroll 
+payable 
+receivable Development 
+Employee trend budget operating Manpower 
+budgeting Cost analysis management control Capital investment 
+Contract cost 
+workstations Web viewing Spreadsheets 
+Order tracking Machine control 
+control Cash 
+management Accounts 
+Accounts Compensation 
+Training &amp; 
+records 
+Sales and Manufacturing Finance Accounting Human 
+Marketing resources 
+Adapted from Laudon &amp; Laudon, Management Information Systems: Organization and Technology , Prentice Hall, 1998, p. 39</text>
+        </slide>
+        <slide>
+          <slideno>10</slideno>
+          <text>Business uses of data mining 
+Essentially five tasks 
+	Classification 
+	Classify credit applicants as low, medium, high risk 
+	Classify insurance claims as normal, suspicious 
+	Estimation 
+	Estimate the probability of a direct mailing response 
+	Estimate the lifetime value of a customer 
+	Prediction 
+	Predict which customers will leave within six months 
+	Predict the size of the balance that will be transferred by a credit
+card prospect</text>
+        </slide>
+        <slide>
+          <slideno>4</slideno>
+          <text>Operational vs.
+Decision Support Systems 
+	Operational Systems 
+	Support day to day transactions 
+	Contain current, up to date data 
+	Examples: customer orders, invent ory levels, bank account balances 
+	Decision Support Systems 
+	Support strategic decision making 
+	Contain historical, summarized data 
+	Examples: performance summary, customer profitability, market 
+segmentation</text>
+        </slide>
+        <slide>
+          <slideno>0</slideno>
+          <text>15.561 
+Information Technology Essentials 
+Session 15 
+Business Intelligence:
+Data Mining and
+Data Warehousing 
+Copyright  2005 Chris Dellarocas and Thomas Malone Adapted from Chris Dellarocas, U. Md.</text>
+        </slide>
+        <slide>
+          <slideno>13</slideno>
+          <text>Market Basket Analysis 
+ Association and sequence discovery 
+ Principal concepts 
+	Support or Prevalence: frequency that a particular association
+appears in the database 
+	Confidence: conditional predictability of B, given A 
+ Example: 
+	Total daily transactions: 1,000 
+	Number which include soda: 500 
+	Number which include orange juice: 800 
+	Number which include soda and orange juice: 450 
+	SUPPORT for soda and orange juice = 45% (450/1,000) 
+	CONFIDENCE of soda  orange juice = 90% (450/500) 
+	CONFIDENCE of orange juice  soda = 56% (450/800)</text>
+        </slide>
+        <slide>
+          <slideno>11</slideno>
+          <text>Business uses of data mining 
+	Affinity Grouping 
+	Find out items customers are likely to buy together 
+	Find out what books to recommend to Amazon.com users 
+	Description 
+	Help understand large volumes of data by uncovering interesting 
+patterns</text>
+        </slide>
+        <slide>
+          <slideno>14</slideno>
+          <text>Applying Market Basket Analysis 
+	Create co-occurrence matrix 
+	What is the right set of items??? 
+	Generate useful rules 
+ Weed out the trivial and the inexplicable from the useful 
+	Figure out how to act on them 
+	Similar techniques can be applied to time series for
+mining useful sequences of actions</text>
+        </slide>
+        <slide>
+          <slideno>15</slideno>
+          <text>Clustering 
+	Divide a database into groups (clusters) 
+	Goal: Find groups that are very different from each
+other, and whose members are similar to each other 
+	Number and attributes of these groups are not known 
+in advance</text>
+        </slide>
+        <slide>
+          <slideno>35</slideno>
+          <text>What is a data mart? 
+ A subset of a data warehouse focused on a particular
+subject or department</text>
+        </slide>
+        <slide>
+          <slideno>18</slideno>
+          <text>Decision tree construction algorithms 
+	Start with a training set (i.e. preclassified records of loan 
+customers) 
+	Each customer record contains
+ Independent variables: income, time with employer, debt
+ Dependent variable: outcome of past loan
+	Find the independent variable that best splits the records into
+groups where one single class (low risk, high risk)
+predominates 
+	Measure used: entropy of information (diversity) 
+	Objective: 
+ max[ diversity before  (diversity left + diversity right) ]
+	Repeat recursively to generate lower levels of tree</text>
+        </slide>
+        <slide>
+          <slideno>3</slideno>
+          <text>Operational vs.
+Decision Support Systems 
+Decision 
+Support 
+Systems 
+Transactional 
+Support 
+Systems 
+Linkages with Suppliers, customers, partners</text>
+        </slide>
+        <slide>
+          <slideno>22</slideno>
+          <text>Neural Networks 
+	Example: Build a neural 
+w13 net to calculate credit 3 w36
+risk for loan applicants
+1 w14 w23 
+4 w46	Inputs: annual income, w15 
+loan amount, loan 6 
+2	w24duration 
+w56 Output w25 5	Outputs: probability of Inputsdefault [0,1] 
+Hidden 
+	Training set: data from Layer 
+past customers with
+known outcomes</text>
+        </slide>
+        <slide>
+          <slideno>36</slideno>
+          <text>Data Warehousing considerations 
+ What data to include? 
+ How to reconcile inconsistencies? 
+ How often to update?</text>
+        </slide>
+        <slide>
+          <slideno>21</slideno>
+          <text>Neural Networks 
+ Weights are 
+w13determined using a 3 w36
+training set, I.e. a 1 w14 w23
+number of test cases 
+4 w46 w15 where both the 
+inputs and the
+outputs are known 2 w24
+6 
+w56 Output w25 5Inputs 
+Hidden 
+Layer</text>
+        </slide>
+        <slide>
+          <slideno>37</slideno>
+          <text>To delve deeper 
+ Recommended books 
+Data Mining Techniques: Michael J. A. Berry and Gordon Linoff 
+ Useful collections of links 
+ http://databases.about.com/cs/datamining/</text>
+        </slide>
+        <slide>
+          <slideno>34</slideno>
+          <text>What is a data warehouse? 
+	A collection of data from multiple sources 
+ within the company 
+ outside the company 
+	Usually includes data relevant to the entire enterprise 
+	Usually includes summary data an d historical data as well as 
+current operational data 
+	Usually requires cleaning and other integration before use 
+	Therefore, usually stored in separate databases from current
+operational data</text>
+        </slide>
+        <slide>
+          <slideno>8</slideno>
+          <text>What is Data Mining? 
+ Using a combination of artificial intelligence and 
+statistical analysis to analyze data 
+ and discover useful patterns that are  hidden t h e r e</text>
+        </slide>
+        <slide>
+          <slideno>5</slideno>
+          <text>Example of an Operational Application:
+Order Entry</text>
+        </slide>
+        <slide>
+          <slideno>7</slideno>
+          <text>What is Business Intelligence? 
+	Collecting and refining information from many 
+sources 
+	Analyzing and presenting the information in useful 
+ways 
+	So people can make better business decisions</text>
+        </slide>
+        <slide>
+          <slideno>26</slideno>
+          <text>The Virtuous Cycle of Data Mining 
+information using data mining 
+techniques 2. Transform data into 
+1. Identify the 3. Act on 
+business problem the information 
+4. Measure the results</text>
+        </slide>
+        <slide>
+          <slideno>1</slideno>
+          <text>Outline 
+ Operational vs. Decision Support Systems 
+ What is Business Intelligence? 
+ Overview of Data Mining 
+ Case Studies 
+ Data Warehouses</text>
+        </slide>
+        <slide>
+          <slideno>25</slideno>
+          <text>Neural networks pros and cons 
+	Pros 
+	Versatile, give good results in complicated domains 
+	Cons 
+	Neural nets cannot explain the data 
+	Inputs and outputs usually need to be massaged into fixed intervals
+(e.g., between -1 and +1)</text>
+        </slide>
+        <slide>
+          <slideno>27</slideno>
+          <text>Case study 1: Bank is losing customers 
+ Attrition rate greater than acquisition rate 
+ More profitable customers seem to be the ones to go 
+ What can the bank do?</text>
+        </slide>
+        <slide>
+          <slideno>31</slideno>
+          <text>Case study 2: Bank of America 
+ BoA wants to expand its portfolio of home equity loans 
+ Direct mail campaigns have been disappointing 
+ Current common-sense models of likely prospects 
+ People with college-age children 
+ People with high but variable incomes</text>
+        </slide>
+        <slide>
+          <slideno>20</slideno>
+          <text>Neural Networks 
+	Powerful method for 
+constructing w13 3 w36predictive models 1 w14 w23 
+w15	Each node applies 4 w46 
+an activation function to its input 2 w24 6 
+w56 Output w25 5 
+	Activation function Inputs 
+results are Hiddenmultiplied by wij Layerand passed on to 
+output</text>
+        </slide>
+        <slide>
+          <slideno>12</slideno>
+          <text>Overview of Data Mining Techniques 
+ Market Basket Analysis 
+ Automatic Clustering 
+ Decision Trees and Rule Induction 
+ Neural Networks</text>
+        </slide>
+        <slide>
+          <slideno>17</slideno>
+          <text>Decision Trees 
+Income &gt; $40,000
+Job &gt; 5 Years	 High Debt
+Low Risk	 High Risk High Risk Low Risk 
+	Data mining is used to construct the tree 
+	Example algorithm: CART (Classification and
+Regression Trees)</text>
+        </slide>
+        <slide>
+          <slideno>24</slideno>
+          <text>Neural Networks 
+ Repeat with next 
+w13training set record 3 w36
+until model converges 1 w14 w23
+4 w46 w15 6 
+2 w24 
+w56 Output w25 5Inputs 
+Hidden 
+Layer</text>
+        </slide>
+        <slide>
+          <slideno>28</slideno>
+          <text>Bank is losing customers 
+ Step 1: Identify the opportunity for data analysis 
+ Reducing attrition is a profitable opportunity 
+ Step 2: Decide what data to use 
+ Traditional approach: surveys 
+ New approach: Data Mining</text>
+        </slide>
+        <slide>
+          <slideno>32</slideno>
+          <text>Enter data mining 
+	BoA maintains a large historical DB of its retail customers 
+	Used past customers who had (had not) obtained the product to
+build a decision tree that classi fied a customer as likely (not 
+likely) to respond to a home equity loan 
+	Performed clustering of customers 
+	An interesting cluster came up: 
+	39% of people in cluster had both pers onal and business accounts with the bank 
+	This cluster accounted for 27% of the 11% of customers who had been classified 
+by the DT as likely respondents to a home equity offer</text>
+        </slide>
+        <slide>
+          <slideno>6</slideno>
+          <text>Example of a DSS Application:
+Annual performance summary</text>
+        </slide>
+        <slide>
+          <slideno>33</slideno>
+          <text>Completing the cycle  
+3. The resulting Actions ( Act) 
+	Develop a campaign strategy based on the new understanding of
+the market 
+	The acceptance rate for the home equity offers more than doubled 
+4. Completing the Cycle ( Measure ) 
+	Transformation of the retail side of Bank of America from a mass-
+marketing institution to a targeted-marketing institution (learning
+institution) 
+	Product mix best for each customer =&gt; Market basket analysis 
+came to exist</text>
+        </slide>
+        <slide>
+          <slideno>30</slideno>
+          <text>Bank is losing customers 
+ Step 3: Turn results of data mining into action</text>
+        </slide>
+      </slides>
+      <videos/>
+    </lecture>
+    <lecture>
+      <lecture_title>Computer Security I: Encryption and Digital Signatures (PDF)</lecture_title>
+      <lecture_pdf_url>https://ocw.mit.edu/courses/15-561-information-technology-essentials-spring-2005/resources/lec9and10/</lecture_pdf_url>
+      <lectureno>9</lectureno>
+      <slides>
+        <slide>
+          <slideno>0</slideno>
+          <text>15.561 
+Information Technology Essentials 
+Sessions 9 &amp; 10 
+Computer Security 
+Acknowledgments:
+Adapted from Chris Dellarocas, U. Md..
+Copyright  2005 Thomas Malone, Chris Dellarocas</text>
+        </slide>
+        <slide>
+          <slideno>12</slideno>
+          <text>Digital Signatures 
+	Key property: Public and private keys can be applied in either 
+order 
+	Alice has message M 
+	She applies her private key to it 
+	She sends encrypted message to Bob 
+	Bob decrypts it with Alices public key
+	gets back original message 
+	infers that Alice is indeed the sender (since only Alice has the private key that 
+corresponds to her public key) 
+	In that way, encrypting a message with ones private key acts 
+as a digital signature!</text>
+        </slide>
+        <slide>
+          <slideno>21</slideno>
+          <text>/ SSL TLS 
+Negotiate Security Options 
+Merchants digital certificate 
+Customer 
+Random session key generated by customer Merchant 
+and encrypted with merchants public key 
+Ongoing communication with 
+both parties using session key</text>
+        </slide>
+        <slide>
+          <slideno>20</slideno>
+          <text>/ SSL TLS 
+	Secure Sockets Layer / Transport Layer Security 
+	Provides reasonable level of security 
+	Often used for transactions between consumers and 
+merchants</text>
+        </slide>
+        <slide>
+          <slideno>31</slideno>
+          <text>Defensive Measures 
+ Virus scanners and removers 
+ Malware scanners and removers 
+ Firewalls 
+ Intrusion Detection Systems</text>
+        </slide>
+        <slide>
+          <slideno>36</slideno>
+          <text>Application-level gateways 
+FTP 
+PROXY 
+TELNET 
+PROXY OUTSIDE INSIDE 
+CONNECTION CONNECTION 
+OUTSIDE CLIENT APPLICATION-LEVEL GATEWAY 
+PROXY-SERVER CLIENT-PROXY 
+INSIDE SERVER 
+Figure by MIT OCW.</text>
+        </slide>
+        <slide>
+          <slideno>16</slideno>
+          <text>Certificates 
+ Used to certify a users identity to another user 
+ The certificate issuer' s name 
+ Who the certificate is being issued for (a.k.a the subject) 
+ The public key of the subject 
+ Some time stamps 
+ Digitally signed by issuer 
+ Issuer must be a trusted entity 
+ All users must have a reliable public key of the issuer 
+ in order to verify signed certificate</text>
+        </slide>
+        <slide>
+          <slideno>11</slideno>
+          <text>Needed: Message Authentication 
+ Make sure Bob gets the message unaltered 
+ Dont let Alice deny sending the message 
+Plausible 
+Deniability 
+ Don' t care about eavesdropper Darth, unless 
+Darth changes the message 
+ How can cryptography help?</text>
+        </slide>
+        <slide>
+          <slideno>19</slideno>
+          <text>Applications: eCommerce Security 
+	Needed to transmit sensitive information through the 
+Web 
+	credit card numbers 
+	merchandise orders 
+	Requirements 
+	sender and receiver must authenticate each other before sending 
+any real data 
+	all real data must flow encrypted through the network 
+	no intercepted communication can be used to an intruders
+advantage</text>
+        </slide>
+        <slide>
+          <slideno>3</slideno>
+          <text>A birds eye view of the Internet 
+Bob Amazon.com</text>
+        </slide>
+        <slide>
+          <slideno>29</slideno>
+          <text>Spyware, Adware, Malware 
+ Programs that are (usually) added to your computer 
+without your knowledge and that do things you dont 
+want, such as: 
+	Display unwanted ads in pop-up windows 
+	Surreptitiously send information about your computer and your 
+actions to someone else 
+	Change toolbars, homepages, etc. 
+	Common sources: 
+	Free software you download and install 
+	Some web pages</text>
+        </slide>
+        <slide>
+          <slideno>15</slideno>
+          <text>( ) Public Key Infrastructure PKI
+	Certificate Authorities are Trusted Third Parties 
+charged with the responsibility to generate trusted 
+certificates for requesting individuals organizations 
+	Certificates contain the requestors public key and are digitally 
+signed by the CA 
+	Before a certificate is issued, CA must verify the identity of the 
+requestor 
+	These certificates can then facilitate automatic 
+authentication of two parties without the need for 
+out-of-band communication</text>
+        </slide>
+        <slide>
+          <slideno>17</slideno>
+          <text>Web browsers come with a number of 
+certificates already installed</text>
+        </slide>
+        <slide>
+          <slideno>40</slideno>
+          <text>1988 1989 1990 1991 1992 1993 1994 1995 1996 1997 1998 1999 1,000 2,000 3,000 4,000 5,000 6,000 7,000 8,000 NUMBER OF INCIDENTS 
+YEARSDespite all that 
+security breaches are on the rise 
+Figure by MIT OCW.</text>
+        </slide>
+        <slide>
+          <slideno>8</slideno>
+          <text>Public key cryptography 
+ Secret key cryptography: Based on a secret key 
+ Same secret key used for encryption and decryption 
+ Problem: How to transmit key securely on the Internet??? 
+ Public key cryptography: Two keys used 
+ Public key known to everybody. Used for encryption. 
+ Private key known only to owner. Used for decryption. 
+{Message} Only Bob 
+encrypted using Bobs public key who knows the 
+corresponding 
+private key 
+can decrypt Alice Bob</text>
+        </slide>
+        <slide>
+          <slideno>1</slideno>
+          <text>What is computer security? 
+ Securing communications 
+	Three steps: 
+ Secrecy = prevent understanding of intercepted communication 
+ Authentication = establish identity of sender 
+ Integrity = establish that communication has not been tampered 
+with 
+ Securing access to resources 
+	Two steps:
+ Authenticate = establish identity of the requestor
+ Authorize = grant or deny access</text>
+        </slide>
+        <slide>
+          <slideno>5</slideno>
+          <text>Traditional cryptography 
+PLAINTEXT PLAINTEXT Memo..... 
+Confidential 
+Memo..... Confidential 
+Memo..... Confidential Memo..... Confidential 
+Memo..... Confidential 
+Memo..... Confidential HF GIN PGP ............ ......... ....... .... 
+END PGP KEY 
+CIPHERTEXT ENCRYPTION DECRYPTION 
+Figure by MIT OCW.</text>
+        </slide>
+        <slide>
+          <slideno>24</slideno>
+          <text>Smart Cards 
+Something you have 
+	Several subcategories 
+	One of interest here is cryptographic smart cards: 
+	Store users digital certificate and/or private key 
+	Used to prevent private keys from being hacked from users 
+computer 
+	What happens if a smart card is stolen?</text>
+        </slide>
+        <slide>
+          <slideno>34</slideno>
+          <text>Types of firewalls 
+	Packet filter: Looks at each packet entering or leaving 
+the network and accepts or rejects it based on user-
+defined rules. 
+	Stateless 
+	Stateful 
+	Proxy server: Intercepts all messages entering and 
+leaving the network. The proxy server effectively 
+hides the true network addresses</text>
+        </slide>
+        <slide>
+          <slideno>38</slideno>
+          <text>How do Intrusion Detection Systems work? 
+	IDS uses data mining techniques to uncover and 
+report suspicious activities 
+	Two main strategies: 
+	Pattern recognition 
+	Anomaly detection</text>
+        </slide>
+        <slide>
+          <slideno>35</slideno>
+          <text>Packet-level firewalls 
+INSIDE 
+CONNECTION OUTSIDE 
+CONNECTION INSIDE HOST 
+OUTSIDE INSIDE OUTSIDE HOST 
+PACKET FILTERING ROUTER 
+Figure by MIT OCW.</text>
+        </slide>
+        <slide>
+          <slideno>18</slideno>
+          <text>PKI Industry 
+ Main players: trusted third party CAs 
+ Verisign 
+ Entrust 
+ Cybertrust 
+ RSA 
+ Revenue from 
+ products (PKI servers for intranets and extranets) 
+ services (certificate services for individuals and organizations)</text>
+        </slide>
+        <slide>
+          <slideno>25</slideno>
+          <text>System Access Controls 
+Something you know 
+ Login procedures 
+	Usually something you know 
+ Password leaks 
+	Commonly used password 
+	Explicitly told
+ Voluntarily
+ Trojan horse
+	Trial and error 
+	Intercepted communication 
+ paper, camera, wiretap, file on disk, emanations, password sniffing on networks 
+ Passwords are inconvenient 
+	In client/server environment, user doesnt want to enter password for every service she 
+connects to</text>
+        </slide>
+        <slide>
+          <slideno>37</slideno>
+          <text>/ Firewall performance security 
+tradeoffs 
+HYBRID 
+INSPECTION 
+SPEED SLOWER WEAKER STRONGER 
+SECURITY APPLICATION 
+LEVEL GATEWAYS 
+STATEFUL 
+CIRCUIT-LEVEL 
+GATEWAYS PACKET 
+FILTERS 
+FASTER 
+Figure by MIT OCW.</text>
+        </slide>
+        <slide>
+          <slideno>41</slideno>
+          <text>HIGH 
+INTRUDER 
+KNOWLEDGE 
+LOW 
+1980 1985 1990 1995 2000 "Stealth"/Advanced Scanning 
+Denial of Service 
+Automated Probes/Scans 
+Graphical User Interface 
+Packet Spoofing Network Management Diagnostics 
+Sweepers 
+Hijacking Sessions 
+Back Doors 
+Password Cracking 
+Self-Replicating Code 
+Password Guessing .. and require far less technical expertise 
+ATTACK 
+SOPHISTICATION 
+ATTACKERS Distributed Attack Tools 
+Techniques 
+WWW Attacks 
+Sniffer 
+Disabling Audits Burglaries 
+Exploiting Known Vulnerabilities TOOLS 
+Figure by MIT OCW.</text>
+        </slide>
+        <slide>
+          <slideno>27</slideno>
+          <text>Sneaking through the backdoor 
+	Strategies whose goal is to gain control by bypassing 
+access control defenses 
+	Exploit holes in applications that connect our 
+machine to the network 
+	Viruses 
+	Buffer overflow attacks</text>
+        </slide>
+        <slide>
+          <slideno>6</slideno>
+          <text>Ceasars Cipher: Encryption by 
+Substitution 
+ Substitute for each letter (block of bits) 
+IBM
+Encrypt: each letter goes to previous 
+letter in the alphabet 
+HAL
+ How can you crack a substitution cipher? 
+ I.e., how can you guess the key?</text>
+        </slide>
+        <slide>
+          <slideno>33</slideno>
+          <text>What a firewall does 
+	Hides the structure of the network by making it appear that 
+all transmissions originate from the firewall. 
+	Blocks all data not specifically requested by a legitimate user 
+of the network. 
+	Screens data for source and destination address so you 
+receive data from only trusted locations like people on your 
+approved guest list. 
+	Screens the contents of data packets for known hacker attacks</text>
+        </slide>
+        <slide>
+          <slideno>28</slideno>
+          <text>Viruses and Worms 
+ Programs that run on machines where theyre not wanted 
+ Transmitted through I/O channels 
+ Disguise themselves 
+ How? 
+ Often dont act right away 
+ Why not? 
+ Why hasnt anyone written a definitive virus eliminator?</text>
+        </slide>
+        <slide>
+          <slideno>10</slideno>
+          <text>Encryption is not enough: Spoofs 
+	Pretending to be someone else 
+	Hard to login without someones password 
+	But can send out communications with someone 
+elses name on it 
+	email 
+ 1993: Dartmouth sent a message saying midterm exam was 
+cancelled 
+ Message appeared to come from the Professor!</text>
+        </slide>
+        <slide>
+          <slideno>4</slideno>
+          <text>Communication security issues 
+	Encryption - How do I ensure the secrecy of my transactions? 
+	Authentication - How do I verify the true identity of my 
+counterparts? 
+	Integrity - How can I be sure the message hasnt been altered? 
+II
+Consumer 
+mpost or nt ernet 
+Bob hnt Merca
+Alice 
+Darth</text>
+        </slide>
+        <slide>
+          <slideno>13</slideno>
+          <text>Public Key Management 
+	Public key cryptography works as long as 
+V Private key is really kept secret 
+V Hard to compute private key from public key 
+	Get the correct public key from some trusted source 
+	Bob can send public key over insecure 
+communication channel 
+	But how do you know Darth didn' t send you his 
+key instead?</text>
+        </slide>
+        <slide>
+          <slideno>7</slideno>
+          <text>Public-key cryptography 
+PLAINTEXT PLAINTEXT Memo..... 
+Confidential 
+Memo..... Confidential 
+Memo..... Confidential Memo..... Confidential 
+Memo..... Confidential 
+Memo..... Confidential HF GIN PGP ............ ......... ....... .... END PGP PUBLIC KEY 
+CIPHERTEXT ENCRYPTION DECRYPTION PRIV ATE KEY 
+Figure by MIT OCW.</text>
+        </slide>
+        <slide>
+          <slideno>42</slideno>
+          <text>Security Resources 
+ www.microsoft.com/security 
+ Advisories 
+ Patches 
+ IIS Security Checklist 
+ www.securityfocus.com 
+ Bugtraq Mailing List 
+ Tools, Books, Links 
+ Vulnerabilities and Fixes</text>
+        </slide>
+        <slide>
+          <slideno>32</slideno>
+          <text>Firewalls</text>
+        </slide>
+        <slide>
+          <slideno>22</slideno>
+          <text>( ) Applications: Virtual Private 
+Networks VPNs
+ Secure, private networks that operate over a public 
+network (like the Internet). 
+ Messages are confidential 
+ Only authorized users can access network 
+ Tunneling -- encrypted messages from one protocol 
+are packaged inside another protocol.</text>
+        </slide>
+        <slide>
+          <slideno>2</slideno>
+          <text>Topic 1: Securing communications 
+ What can go wrong?</text>
+        </slide>
+        <slide>
+          <slideno>23</slideno>
+          <text>Topic 2: Access Control 
+ Something you have 
+ Something you know 
+ Something you are</text>
+        </slide>
+        <slide>
+          <slideno>39</slideno>
+          <text>Other prevention measures 
+ Stay current on patch levels for Microsoft'
+ s OS and 
+web server.</text>
+        </slide>
+        <slide>
+          <slideno>14</slideno>
+          <text>A central key distributor 
+	Alice asks the distributor for Bob' s public key 
+	The distributor sends it to Alice and "digitally signs" it 
+	Alice knows the key came from the distributor 
+ Now just have to be sure that the distributor is honest and got Bob' s key 
+from Bob, not Darth 
+	Requires one secure communication per user 
+	Bob sends public key to distributor when he joins the system 
+	Secret keys require secure communication between every 
+pair of users</text>
+        </slide>
+        <slide>
+          <slideno>30</slideno>
+          <text>Denial of service attacks 
+	Flood a server with fake messages (with spoofed IP 
+addresses) so that no legitimate messages can get 
+through 
+	Flood someones mailbox 
+	Recent attacks on eBay, Yahoo, etc. 
+	Difficult to trace since fake messages are sent from a 
+variety of hijacked machines</text>
+        </slide>
+        <slide>
+          <slideno>9</slideno>
+          <text>Public key cryptography works if 
+	Private key remains secret 
+	Never leaves the owners computer 
+	Typically encrypted and password-protected 
+	Difficult to guess private key from knowledge of 
+public key 
+	Boils down to trying all different key combinations 
+	Difficulty of breaking the code rises exponentially with the bit 
+length of the key 
+	1024-bit keys require more time than the life of the universe in 
+order to be broken 
+	Reliable public key distributed 
+	This is the most difficult problem!</text>
+        </slide>
+        <slide>
+          <slideno>26</slideno>
+          <text>Fingerprint Reader 
+Match 
+Camera "Liveness" test Match Match Face Pattern 
+Microphone Face Pattern Database Enter Biometrics 
+Something you are 
+Fingerprint Template Template Database 
+FACE RECOGNITION FINGERPRINT RECOGNITION 
+VOICE AUTHENTICATION 
+V oiceprint Database V oiceprint 
+Figure by MIT OCW.</text>
+        </slide>
+      </slides>
+      <videos/>
+    </lecture>
+  </lectures>
+</doc>

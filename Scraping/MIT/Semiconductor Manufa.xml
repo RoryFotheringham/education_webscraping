@@ -1,0 +1,1846 @@
+<doc>
+  <source>MIT</source>
+  <date>28/01/2023</date>
+  <course>
+    <course_url>https://ocw.mit.edu/courses/6-780-semiconductor-manufacturing-spring-2003/</course_url>
+    <course_title>Semiconductor Manufacturing</course_title>
+    <course_tags>
+      <list>Engineering </list>
+      <list>Electronics </list>
+      <list>Systems Engineering </list>
+    </course_tags>
+  </course>
+  <lectures>
+    <lecture>
+      <lecture_title>Design of Experiments and Response Surface Modeling (PDF)</lecture_title>
+      <lecture_pdf_url>https://ocw.mit.edu/courses/6-780-semiconductor-manufacturing-spring-2003/resources/ln9response/</lecture_pdf_url>
+      <lectureno>10</lectureno>
+      <slides>
+        <slide>
+          <slideno>4</slideno>
+          <text></text>
+        </slide>
+        <slide>
+          <slideno>17</slideno>
+          <text></text>
+        </slide>
+        <slide>
+          <slideno>8</slideno>
+          <text></text>
+        </slide>
+        <slide>
+          <slideno>19</slideno>
+          <text></text>
+        </slide>
+        <slide>
+          <slideno>10</slideno>
+          <text></text>
+        </slide>
+        <slide>
+          <slideno>1</slideno>
+          <text></text>
+        </slide>
+        <slide>
+          <slideno>21</slideno>
+          <text></text>
+        </slide>
+        <slide>
+          <slideno>12</slideno>
+          <text></text>
+        </slide>
+        <slide>
+          <slideno>3</slideno>
+          <text></text>
+        </slide>
+        <slide>
+          <slideno>14</slideno>
+          <text></text>
+        </slide>
+        <slide>
+          <slideno>5</slideno>
+          <text></text>
+        </slide>
+        <slide>
+          <slideno>16</slideno>
+          <text></text>
+        </slide>
+        <slide>
+          <slideno>7</slideno>
+          <text></text>
+        </slide>
+        <slide>
+          <slideno>18</slideno>
+          <text></text>
+        </slide>
+        <slide>
+          <slideno>20</slideno>
+          <text></text>
+        </slide>
+        <slide>
+          <slideno>22</slideno>
+          <text></text>
+        </slide>
+        <slide>
+          <slideno>9</slideno>
+          <text></text>
+        </slide>
+        <slide>
+          <slideno>0</slideno>
+          <text></text>
+        </slide>
+        <slide>
+          <slideno>11</slideno>
+          <text></text>
+        </slide>
+        <slide>
+          <slideno>2</slideno>
+          <text></text>
+        </slide>
+        <slide>
+          <slideno>13</slideno>
+          <text></text>
+        </slide>
+        <slide>
+          <slideno>15</slideno>
+          <text></text>
+        </slide>
+        <slide>
+          <slideno>6</slideno>
+          <text></text>
+        </slide>
+      </slides>
+      <videos/>
+    </lecture>
+    <lecture>
+      <lecture_title>RSM and Regression (PDF) (PDF)</lecture_title>
+      <lecture_pdf_url>https://ocw.mit.edu/courses/6-780-semiconductor-manufacturing-spring-2003/resources/regression/</lecture_pdf_url>
+      <lectureno>11</lectureno>
+      <slides>
+        <slide>
+          <slideno>11</slideno>
+          <text>12e
+34 i ) 10 l 2 
+7 9 DF 
+it 3 
+4 
+7 DF 
+x | Parameter Estimates 
+x 1 
+1 1 1 DF 
+Copyright 2003  Duane S. Boning. Polynomial Regression 
+ Generated using JMP package 
+RSquare 
+RSquare Adj 
+Root Mean Sq Error 
+Mean of Response 
+Observat ons (or Sum Wgts0.936427 
+0.918264 
+2.540917 
+82.1 Summary of Fit Model 
+Error 
+C. TotaSource 
+665.70617 
+45.19383 
+710.90000 Sum of Squares 
+332.853 
+6.456 Mean Squar 
+51.5551 F Ratio 
+&lt;.0001 Prob &gt; F Analysis of Variance 
+Lack Of F
+Pure Error 
+Total Error Source 
+18.193829 
+27.000000 
+45.193829 Sum of Squares 
+6.0646 
+6.7500 Mean Square 
+0.8985 F Ratio 
+0.5157 Prob &gt; F 
+0.9620 Max RSq Lack Of Fit 
+Intercept 
+x*x Term 
+35.657437 
+5.2628956 
+-0.127674 Estimate 
+5.617927 0.558022 
+0.012811 Std Error 
+6.35 
+9.43 
+-9.97 t Ratio 
+0.0004 &lt;.0001 
+&lt;.0001 Prob&gt;|t
+x*x Source Nparm 
+574.28553 641.20451 Sum of Squares 
+88.9502 99.3151 F Ratio 
+&lt;.0001 &lt;.0001 Prob &gt; F 
+Effect Tests 
+35  
+ 
+ 
+Next Time 
+ Ti
+ 
+Copyright 2003  Duane S. Boning. Summary 
+Comparison of Treatments  ANOVA 
+Multivariate Analysis of Variance 
+Regression Modeling 
+me Series Models 
+Forecasting</text>
+        </slide>
+        <slide>
+          <slideno>6</slideno>
+          <text>719 2 
+ 2 
+ i i  j
+ (
+l 
+ 2 
+ i
+i
+ i l). 
+ll R = D -T 
+Copyright 2003  Duane S. Boning. Measures of Model Goodness  R
+Goodness of fit  R
+Quest on cons dered: how much better does the model do that ust 
+using the grand average? 
+Think of this as the fraction of squared deviations from the grand 
+average) in the data which is captured by the mode
+Adjusted R
+For fair comparison between models w th different numbers of 
+coefficients, an alternat ve is often used 
+Think of this as (1  var ance remaining in the residua
+Reca
+Regression Fundamentals 
+	Use least square error as measure of goodness to 
+estimate coefficients in a model
+	One parameter model: 
+ Model form 
+ Squared error 
+ Estimation using normal equations 
+ Estimate of experimental error 
+ Precision of estimate: variance in b 
+ Confidence interval for  
+ Analysis of variance: significance of b 
+ Lack of fit vs. pure error 
+	Polynomial regression 
+Copyright 2003  Duane S. Boning. 
+21  
+ l: 
+ l  wi
+ 
+ i inimi
+i
+ l
+Copyright 2003  Duane S. Boning. Least Squares Regression 
+We use least-squares to estimate 
+coefficients in typical regression models 
+One-Parameter Mode
+Goa is to estimate th best b 
+How define best? 
+That b wh ch m zes sum of squared 
+error between predict on and data 
+The residua  sum of squares (for the 
+best estimate) is 20</text>
+        </slide>
+        <slide>
+          <slideno>9</slideno>
+          <text></text>
+        </slide>
+        <slide>
+          <slideno>4</slideno>
+          <text>513 Example: Anova 
+A B C 
+11 10 
+10 8 
+12 6 
+A B C 6 8 10 12 
+i
+i
+A 3 1 
+B 3 8 4 
+C 3 1 
+f iati df F it 
+2 9 
+Wi 6 2 
+l 8 
+Copyright 2003  Duane S. Boning. 12 
+10 
+11 
+Anova: S ngle Factor 
+SUMMARY 
+Groups Count Sum Average Var ance 
+33 11 
+2 4 
+33 11 
+ANOVA 
+Source o  Var on SS MS P-value F cr
+Between Groups 18 4.5 0.064 5.14 
+thin Groups 12 
+Tota 30 Excel: Data Analysis, One-Variation Anova 
+14  i
+model: 
+ t 
+ t 
+W iti 0 2) 
+ 
+ 
+ i
+ 
+ 
+Copyright 2003  Duane S. Boning. ANOVA  Implied Model 
+The ANOVA approach assumes a s mple mathematical 
+Where is the treatment mean (for treatment type t) 
+And is the treatment effect 
+t h being zero mean normal residuals ~N(0,
+Checks 
+Plot residuals against time order 
+Exam ne distribution of resi duals: should be IID, Normal 
+Plot residuals vs. estimates 
+Plot residuals vs. other variables of interest 
+15  
+ 
+Copyright 2003  Duane S. Boning. MANOVA  Two Dependencies 
+Can extend to two (or more) variables of interest. MANOVA 
+assumes a mathematical model, agai n simply capturing the means 
+(or treatment offsets) for each discrete variable level: 
+Assumes that the effects fr om the two variables are additive</text>
+        </slide>
+        <slide>
+          <slideno>5</slideno>
+          <text>616 
+ i li li
+ 
+l 3 
+2 
+5 DF 
+Tube 
+Gas 1 
+2 1 2 DF Gas 
+10 40 10 15 2 36 7 1 
+Tube C B A 
+25 18 44 13 2 
+3-1 -2 -31 2 
+20 20 
+5 5 5 -5 -5 -5 
+13 2367 
+Copyright 2003  Duane S. Boning. Example: Two Factor MANOVA 
+Two LPCVD deposit on tube types, three gas supp ers. Does supp er matter 
+in average particle counts on wafers? 
+Experiment: 3 lots on each tube, for each gas; report average # particles added 
+Model 
+Error 
+C. TotaSource 
+1350.00 
+28.00 
+1378.00 Sum of Squares 
+450.0 
+14.0 Mean Square 
+32.14 F Ratio 
+0.0303 Prob &gt; F Analysis of Variance 
+Source Nparm 
+150.00 
+1200.00 Sum of Squares 
+10.71 
+42.85 F Ratio 
+0.0820 0.0228 Prob &gt; F Effect Tests Factor 1 
+Factor 2 
+-10 20 -10 -10 20 -10 
+20 20 20 20 
+18 44 
+17  
+(2) 
+i
+ l l ) 
+j l
+Copyright 2003  Duane S. Boning. MANOVA  Two Factors with Interactions 
+Can split out the model more explicitly IID, ~N 0,
+An effect that depends on both 
+t &amp;  factors simultaneously 
+t = first factor = 1,2,  k (k = # eve s of first factor
+i = second factor = 1,2,  n (n = # levels of second factor) 
+j = replication = 1,2,  m (m = # rep lications at t, th combination of factor levels May be interaction: not si mp y additive  effects may depend 
+synergistically on both factors: 
+Estimate by: 
+18 F0 
+the grand 
+average Wi
+(Error) Pr(F0) degrees 
+of 
+Copyright 2003  Duane S. Boning. MANOVA Table  Two Way with Interactions 
+mean square 
+Total about thin Groups Between levels 
+of factor 1 (T) freedom sum of 
+squares source of 
+variation 
+Between levels 
+of factor 2 (B) 
+Interaction</text>
+        </slide>
+        <slide>
+          <slideno>0</slideno>
+          <text>11 Copyright 2003  Duane S. Boning. SMA 6304 / MIT 2.853 / MIT 2.854 
+Manufacturing Systems 
+Lecture 10: Data and Regression 
+Analysis 
+Lecturer: Prof. Duane S. Boning 
+Agenda 
+1. Comparison of Treatments (One Variable) 
+ Analysis of Variance (ANOVA) 
+2. Multivariate Analysis of Variance 
+ Model forms 
+3. Regression Modeling 
+ Regression fundamentals 
+ Significance of model terms 
+ Confidence intervals 
+Copyright 2003  Duane S. Boning. 
+3 
+ld 
+78 80 82 84 86 88 90 92 
+0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 1 A 
+2 A 
+3 A 
+4 A 5 A 
+6 A 
+7 A 8 A 
+9 A 
+10 A 11 B 
+12 B 
+13 B 
+14 B 
+15 B 16 B 
+17 B 
+18 B 19 B 
+20 B 
+Copyright 2003  Duane S. Boning. Is Process B Better Than Process A? 
+yie
+time order time 
+order method yield 
+89.7 81.4 
+84.5 
+84.8 87.3 
+79.7 
+85.1 81.7 
+83.7 
+84.5 
+84.7 
+86.1 
+83.2 
+91.9 
+86.3 79.3 
+82.6 
+89.1 83.7 
+88.5 2</text>
+        </slide>
+        <slide>
+          <slideno>1</slideno>
+          <text>24 
+2 
+of 
+
+of 
+Copyright 2003  Duane S. Boning. Two Means with Internal Estimate of Variance 
+Method A Method B 
+Pooled estimate of 
+Estimated variance with =18 d.o.f 
+Estimated standard error 
+So only about 80% confident that 
+mean difference is real (signficant) 
+Comparison of Treatments 
+Population A Population C Sample A 
+Sample B Sample C
+Population B
+ Consider multiple conditions (treatments, settings for some variable) 
+ There is an overall mean  and real effects or deltas between conditions .i
+ We observe samples at each condition of interest 
+ Key question: are the observed differences in mean significant? 
+	Typical assumption (should be checked): the underlying variances are all the 
+same  usually an unknown value ( 02) 
+Copyright 2003  Duane S. Boning.	 5 
+Steps/Issues in Analysis of Variance 
+1. Within group variation 
+	Estimates underlying population variance 
+2. Between group variation 
+	Estimate group to group variance 
+3. Compare the two estimates of variance 
+	If there is a difference betw een the different  treatments, 
+then the between group variation estimate will be inflated 
+compared to the within group estimate 
+	We will be able to establish confidence in whether or not 
+observed differences between  treatments are significant 
+Hint: well be using F tests to look at ratios of variances 
+Copyright 2003  Duane S. Boning. 6</text>
+        </slide>
+        <slide>
+          <slideno>3</slideno>
+          <text>410  F i
+ Use F 
+ i
+i 
+better 
+Copyright 2003  Duane S. Boning. (4) Compute Significance Level 
+Calculate observed ratio (w th appropriate 
+degrees of freedom in numerator and 
+denominator) 
+distribution to find how likely a ratio this 
+large is to have occurred by chance alone 
+This is our signif cance level 
+I f 
+then we say that the mean differences or treatment 
+effects are s gnificant to (1- )100% confidence or 
+11  
+Copyright 2003  Duane S. Boning. (5) Variance Due to Treatment Effects 
+We also want to estimate the sum of squared 
+deviations from the grand mean among all 
+samples: 
+12 F0 
+average Pr(F0) degrees 
+of 
+freedomsquares variation 
+Al
+Copyright 2003  Duane S. Boning. (6) Results: The ANOVA Table 
+mean square 
+Total about 
+the grand Within 
+treatments Between 
+treatments sum of source of 
+so referred to 
+as residual SS</text>
+        </slide>
+        <slide>
+          <slideno>10</slideno>
+          <text></text>
+        </slide>
+        <slide>
+          <slideno>2</slideno>
+          <text>37  
+0 2 
+t ithin tth 
+ ith j
+ 
+wi
+ i (
+Copyright 2003  Duane S. Boning. (1) Within Group Variation 
+Assume that each group is normally distributed and shares a 
+common variance 
+S S = sum of square deviations w group (there are k groups) 
+Estimate of w thin group variance in t group ( ust variance formula) 
+Pool these (across different condi tions) to get estimate of common 
+thin group variance: 
+This is the w thin group mean square variance estimate) 
+8  1 = 2 k 
+ nd 
+of 2 
+ 
+sT 2 
+l
+t 
+Copyright 2003  Duane S. Boning. (2) Between Group Variation 
+We will be testing hypothesis =  = 
+If all the means are in fact equal, then a 2 estimate 
+could be formed based on the observed 
+differences between group means: 
+If all the treatments in fact have different means, then 
+estimates something larger: 
+Variance is inf ated by the 
+real treatment effects 
+9  ibilitiT 2, 
+F 
+ 
+Copyright 2003  Duane S. Boning. (3) Compare Variance Estimates 
+We now have two different poss es for s
+depending on whether the observed sample mean 
+differences are real or are just occurring by chance 
+(by sampling) 
+U s e statistic to see if the ratios of these variances 
+are likely to have occurred by chance! 
+Formal test for significance:</text>
+        </slide>
+        <slide>
+          <slideno>8</slideno>
+          <text>925 1 
+8 
+9 DF 
+8836.6440 
+64.6695 
+8901.3135 8836.64 
+8.08 1093.146 io 
+l
+age Zeroed 0 
+0.500983 0 
+0.015152 . 
+33.06 t Ratio 
+. |t| 
+age 1 1 DF 
+8836.6440 1093.146 io 
+0 10 20 30 40 50 i i
+0 25 50 75 100 8 
+22 35 40 57 73 
+78 
+87 98 
+i
+i
+Copyright 2003  Duane S. Boning. Example Regression 
+Model 
+Error 
+C. Total Source Sum of Squares Mean Square F Rat
+&lt;.0001 Prob &gt; F 
+Tested against reduced mode : Y=0 Analysis of Variance 
+Intercept Term Estimate Std Error 
+&lt;.0001 Prob&gt;Parameter Estimates 
+Source Nparm Sum of Squares F Rat
+&lt;.0001 Prob &gt; F Effect Tests Whole Model ncome Leverage Res duals 
+age Leverage, P&lt;.0001 Age Income 
+6 . 1 6 
+9.88 14.35 24.06 30.34 32.17 
+42.18 
+43.23 48.76 
+ Note that this s mple model assumes an intercept of 
+zero  model must go through origin 
+ We w ll relax this requirement soon 
+26  
+ 
+ i i
+ l
+ 
+i
+SSR i
+SSL i
+SSE 
+Copyright 2003  Duane S. Boning. Lack of Fit Error vs. Pure Error 
+Sometimes we have replicated data 
+E.g. multiple runs at same x values in a designed experiment 
+We can decompose the res dual error contribut ons 
+This al ows us to TEST for lack of fit 
+By lack of fit we mean evidence that the linear model form is 
+nadequate Where 
+= res dual sum of squares error 
+= lack of f t squared error 
+= pure replicate error 
+27  Model form 
+ 
+Copyright 2003  Duane S. Boning. Regression: Mean Centered Models 
+Estimate by</text>
+        </slide>
+        <slide>
+          <slideno>7</slideno>
+          <text>822  
+equations 
+ 
+l i
+le 
+ i
+l
+ 
+ i
+2 of 2 
+Copyright 2003  Duane S. Boning. Least Squares Regression, cont. 
+Least squares estimation via normal 
+For linear problems, we need not 
+calcu ate SS( ); rather, d rect solution for 
+b is possib
+Recognize that vector of res duals will be 
+normal to vector of x va ues at the least 
+squares estimate 
+Estimate of experimental error 
+Assum ng model structure is adequate, 
+estimate s can be obtained: 
+23  
+Copyright 2003  Duane S. Boning. Precision of Estimate: Variance in b 
+We can calculate the variance in  our estimate of the slope, b: 
+W h y ? 
+24  
+ 
+i i
+ 
+ i
+ i   
+ ion) 
+i
+Copyright 2003  Duane S. Boning. Confidence Interval for 
+Once we have the standard error in b, we can calculate confidence 
+ntervals to some des red (1- )100% level of confidence 
+Analysis of variance 
+Test hypothes s: 
+If conf dence interval for includes 0, then not significant 
+Degrees of freedom (need in order to use t distribut
+p = # parameters est mated 
+by least squares</text>
+        </slide>
+      </slides>
+      <videos/>
+    </lecture>
+    <lecture>
+      <lecture_title>Sensors and Signals (PDF)</lecture_title>
+      <lecture_pdf_url>https://ocw.mit.edu/courses/6-780-semiconductor-manufacturing-spring-2003/resources/ln15sensors/</lecture_pdf_url>
+      <lectureno>15</lectureno>
+      <slides>
+        <slide>
+          <slideno>9</slideno>
+          <text></text>
+        </slide>
+        <slide>
+          <slideno>4</slideno>
+          <text></text>
+        </slide>
+        <slide>
+          <slideno>0</slideno>
+          <text></text>
+        </slide>
+        <slide>
+          <slideno>11</slideno>
+          <text></text>
+        </slide>
+        <slide>
+          <slideno>12</slideno>
+          <text></text>
+        </slide>
+        <slide>
+          <slideno>7</slideno>
+          <text></text>
+        </slide>
+        <slide>
+          <slideno>2</slideno>
+          <text></text>
+        </slide>
+        <slide>
+          <slideno>13</slideno>
+          <text></text>
+        </slide>
+        <slide>
+          <slideno>8</slideno>
+          <text></text>
+        </slide>
+        <slide>
+          <slideno>3</slideno>
+          <text></text>
+        </slide>
+        <slide>
+          <slideno>10</slideno>
+          <text></text>
+        </slide>
+        <slide>
+          <slideno>5</slideno>
+          <text></text>
+        </slide>
+        <slide>
+          <slideno>6</slideno>
+          <text></text>
+        </slide>
+        <slide>
+          <slideno>1</slideno>
+          <text></text>
+        </slide>
+      </slides>
+      <videos/>
+    </lecture>
+    <lecture>
+      <lecture_title>Factory Design and Efficiency (PDF)</lecture_title>
+      <lecture_pdf_url>https://ocw.mit.edu/courses/6-780-semiconductor-manufacturing-spring-2003/resources/costcycle/</lecture_pdf_url>
+      <lectureno>21</lectureno>
+      <slides>
+        <slide>
+          <slideno>9</slideno>
+          <text></text>
+        </slide>
+        <slide>
+          <slideno>4</slideno>
+          <text></text>
+        </slide>
+        <slide>
+          <slideno>0</slideno>
+          <text></text>
+        </slide>
+        <slide>
+          <slideno>11</slideno>
+          <text></text>
+        </slide>
+        <slide>
+          <slideno>7</slideno>
+          <text></text>
+        </slide>
+        <slide>
+          <slideno>2</slideno>
+          <text></text>
+        </slide>
+        <slide>
+          <slideno>8</slideno>
+          <text></text>
+        </slide>
+        <slide>
+          <slideno>3</slideno>
+          <text></text>
+        </slide>
+        <slide>
+          <slideno>10</slideno>
+          <text></text>
+        </slide>
+        <slide>
+          <slideno>5</slideno>
+          <text></text>
+        </slide>
+        <slide>
+          <slideno>6</slideno>
+          <text></text>
+        </slide>
+        <slide>
+          <slideno>1</slideno>
+          <text></text>
+        </slide>
+      </slides>
+      <videos/>
+    </lecture>
+    <lecture>
+      <lecture_title>Overview of Semiconductor Manufacturing (PDF)</lecture_title>
+      <lecture_pdf_url>https://ocw.mit.edu/courses/6-780-semiconductor-manufacturing-spring-2003/resources/ln1statsa/</lecture_pdf_url>
+      <lectureno>1</lectureno>
+      <slides>
+        <slide>
+          <slideno>9</slideno>
+          <text></text>
+        </slide>
+        <slide>
+          <slideno>4</slideno>
+          <text></text>
+        </slide>
+        <slide>
+          <slideno>0</slideno>
+          <text></text>
+        </slide>
+        <slide>
+          <slideno>11</slideno>
+          <text></text>
+        </slide>
+        <slide>
+          <slideno>12</slideno>
+          <text></text>
+        </slide>
+        <slide>
+          <slideno>7</slideno>
+          <text></text>
+        </slide>
+        <slide>
+          <slideno>2</slideno>
+          <text></text>
+        </slide>
+        <slide>
+          <slideno>13</slideno>
+          <text></text>
+        </slide>
+        <slide>
+          <slideno>8</slideno>
+          <text></text>
+        </slide>
+        <slide>
+          <slideno>3</slideno>
+          <text></text>
+        </slide>
+        <slide>
+          <slideno>14</slideno>
+          <text></text>
+        </slide>
+        <slide>
+          <slideno>10</slideno>
+          <text></text>
+        </slide>
+        <slide>
+          <slideno>5</slideno>
+          <text></text>
+        </slide>
+        <slide>
+          <slideno>6</slideno>
+          <text></text>
+        </slide>
+        <slide>
+          <slideno>1</slideno>
+          <text></text>
+        </slide>
+      </slides>
+      <videos/>
+    </lecture>
+    <lecture>
+      <lecture_title>Analysis and Design of Experiments (PDF)</lecture_title>
+      <lecture_pdf_url>https://ocw.mit.edu/courses/6-780-semiconductor-manufacturing-spring-2003/resources/ln6experimenta/</lecture_pdf_url>
+      <lectureno>7</lectureno>
+      <slides>
+        <slide>
+          <slideno>4</slideno>
+          <text></text>
+        </slide>
+        <slide>
+          <slideno>17</slideno>
+          <text></text>
+        </slide>
+        <slide>
+          <slideno>8</slideno>
+          <text></text>
+        </slide>
+        <slide>
+          <slideno>10</slideno>
+          <text></text>
+        </slide>
+        <slide>
+          <slideno>1</slideno>
+          <text></text>
+        </slide>
+        <slide>
+          <slideno>12</slideno>
+          <text></text>
+        </slide>
+        <slide>
+          <slideno>3</slideno>
+          <text></text>
+        </slide>
+        <slide>
+          <slideno>14</slideno>
+          <text></text>
+        </slide>
+        <slide>
+          <slideno>5</slideno>
+          <text></text>
+        </slide>
+        <slide>
+          <slideno>16</slideno>
+          <text></text>
+        </slide>
+        <slide>
+          <slideno>7</slideno>
+          <text></text>
+        </slide>
+        <slide>
+          <slideno>18</slideno>
+          <text></text>
+        </slide>
+        <slide>
+          <slideno>9</slideno>
+          <text></text>
+        </slide>
+        <slide>
+          <slideno>0</slideno>
+          <text></text>
+        </slide>
+        <slide>
+          <slideno>11</slideno>
+          <text></text>
+        </slide>
+        <slide>
+          <slideno>2</slideno>
+          <text></text>
+        </slide>
+        <slide>
+          <slideno>13</slideno>
+          <text></text>
+        </slide>
+        <slide>
+          <slideno>15</slideno>
+          <text></text>
+        </slide>
+        <slide>
+          <slideno>6</slideno>
+          <text></text>
+        </slide>
+      </slides>
+      <videos/>
+    </lecture>
+    <lecture>
+      <lecture_title>Statistics Review: Estimation (PDF)</lecture_title>
+      <lecture_pdf_url>https://ocw.mit.edu/courses/6-780-semiconductor-manufacturing-spring-2003/resources/lecture9_3/</lecture_pdf_url>
+      <lectureno>3</lectureno>
+      <slides>
+        <slide>
+          <slideno>3</slideno>
+          <text>410 llContinuous Distribution: Unit Normal 
+ 
+ 
+  pdf 
+Copyright 2003  Duane S. Boning. Normalization 
+c d f Mean Variance 
+11 ll
+ l
+distri
+tails 
+1 
+Copyright 2003  Duane S. Boning. Using the Unit Normal pdf and cdf 
+We often want to ta k about 
+percentage points of the 
+bution  portion in the 
+0.1 0.5 0.9 
+12 llreasoning 
+from 
+ 
+ 
+ 
+ idence: 
+ 
+ 
+ 
+Copyright 2003  Duane S. Boning. Philosophy 
+The field of statistics is about 
+in the face of 
+uncertainty, based on evidence 
+observed data 
+Beliefs: 
+Distribution or model form Distribution/model parameters 
+Ev
+Finite set of observations or data drawn from a population 
+Models: 
+Seek to explain data</text>
+        </slide>
+        <slide>
+          <slideno>2</slideno>
+          <text>37 ll pdf 
+x a 1 
+b 
+x a b 
+Copyright 2003  Duane S. Boning.  Continuous Distribution: Uniform 
+c d f 
+8 ll
+x a 1 
+b 
+x a b 
+x si i in x 
+Copyright 2003  Duane S. Boning. Standard Questions You Should Be Able To Answer 
+(For a Known cdf or pdf) 
+ Probability ts w th
+some range  Probability less than or 
+equal to some value 
+Continuous Distribution: Normal (Gaussian) 
+1 
+c d f 0.84 
+0.5 
+0.16 
+0 
+ pdf 
+Copyright 2003  Duane S. Boning. 9</text>
+        </slide>
+        <slide>
+          <slideno>11</slideno>
+          <text>1234 lli i i
+2. i i i li
+ 
+3. Esti i i i
+4. ls 
+ i
+ i
+ 
+5. i
+1. i
+ l i i ) 
+2. )? 
+ 
+Copyright 2003  Duane S. Boning. Summary 
+1. Rev ew: Probability Distr butions &amp; Random Var ables 
+Sampling: Key d stribut ons aris ng in samp ng 
+Chi-square, t, and F distributions 
+mat on: Reason ng about the populat on based on a sample 
+Some basic confidence interva
+Estimate of mean w th variance known 
+Estimate of mean w th variance not known 
+Estimate of variance 
+Hypothes s tests 
+Next Time: 
+Are effects (some variable) s gnificant? 
+ANOVA (Ana ys s of Var ance
+How do we model the effect of some variable(s
+Regression modeling</text>
+        </slide>
+        <slide>
+          <slideno>4</slideno>
+          <text>513 llMoments of the Population 
+ 
+ 
+ 
+ 
+ 
+Coefficient 
+Population 
+Copyright 2003  Duane S. Boning. vs. Sample Statistics 
+Mean 
+Variance 
+Standard 
+Deviation 
+Covariance 
+Correlation Sample 
+Sampling and Estimation 
+	Sampling: act of making observations from populations 
+	Random sampling: when each observation is identically 
+and independently distributed (IID) 
+	Statistic: a function of sample data; a value that can be 
+computed from data (contains no unknowns) 
+ average, median, standard deviation 
+Copyright 2003  Duane S. Boning. 
+15 lll
+ili ion) 
+l
+) 
+n = 20 
+n = 10 
+n = 2 
+l
+i
+Copyright 2003  Duane S. Boning. Population vs. Sampling Distribution 
+Popu ation 
+(probab ty density funct
+Samp e Mean 
+(statisticSamp e Mean 
+(sampling d stribution) 14</text>
+        </slide>
+        <slide>
+          <slideno>5</slideno>
+          <text>616 llSampling and Estimation, cont. 
+ 
+ 
+ 
+A statistic 
+ 
+will be di ill
+ibution 
+ i
+ 
+i
+Copyright 2003  Duane S. Boning.Sampling Random sampling 
+Statistic 
+is a random variable, which itself has a 
+sampling distribution 
+I.e., if we take multiple random samples, the value for the statistic 
+fferent for each set of samples, but w  be governed by 
+the same sampling distr
+If we know the appropriate sampling distr bution, we can 
+reason about the population based on the observed 
+value of a statistic 
+E.g. we calculate a sample mean from a random sample; in what 
+range do we think the actual (population) mean really s ts? 
+17 ll 
+i
+ n 
+ 
+ 
+i
+ 
+Copyright 2003  Duane S. Boning.Sampling and Estimation  An Example 
+Suppose we know that the thickness of 
+a part is normally distributed w th std. 
+dev. of 10: 
+We sample = 50 random parts and 
+compute the mean part thickness: 
+First question: What  is distribution of 
+Second question: can we use 
+knowledge of    distr bution to reason 
+about the actual ( population) mean 
+given observed (sample) mean? 
+18 ll 
+ 
+ 
+ l
+ Mini i i ll
+ 
+ i
+ 
+Copyright 2003  Duane S. Boning. Estimation and Confidence Intervals 
+Point Estimation: 
+Find best values for para meters of a distribution 
+Should be 
+Unbiased: expected value of estimate should be true va ue 
+mum var ance: should be estimator w th sma est variance 
+Interval Estimation: 
+Give bounds that contain actual value w th a given 
+probability 
+Must know sampling distribution!</text>
+        </slide>
+        <slide>
+          <slideno>6</slideno>
+          <text>719 ll
+  i l
+ (
+1 
+ l 
+i
+ 
+l
+Copyright 2003  Duane S. Boning.Confidence Intervals: Variance Known 
+We know , e.g. from h storica  data 
+Estimate mean in some interval to 1- )100% confidence 
+0.1 0.5 0.9 Remember the unit norma
+percentage po nts 
+Apply to the sampling 
+distribution for the 
+samp e mean 
+20 ll
+i  i  Example, Contd 
+ distribution to 
+ 
+n = 50 
+ion 
+li i  
+Copyright 2003  Duane S. Boning. 95% conf dence nterval, = 0.05 Second question: can we use knowledge  of
+reason about the actual (population) mean given observed 
+(sample) mean? 
+~95% of distribut
+es w thin +/- 2 of mean 
+21 ll 
+distri
+ 
+ 
+ l i
+iation or  
+ 
+ i i
+F 
+ i i
+Copyright 2003  Duane S. Boning. Reasoning &amp; Sampling Distributions 
+Example shows that we need to know our sampling 
+bution in order to reason about the sample and 
+population parameters 
+Other important sampling distributions: 
+Student-t 
+Use instead of norma distr bution when we dont know actual 
+var
+Chi-square 
+Use when we are ask ng about var ances 
+Use when we are ask ng about ratios of var ances</text>
+        </slide>
+        <slide>
+          <slideno>10</slideno>
+          <text>1131 ll
+ 
+distributed population 
+ 
+population 
+ 
+si 2 
+ io of 
+ F distribution 
+  x 
+ n = 20 
+ l l1 2 
+2 2 
+ io 
+io! 
+Copyright 2003  Duane S. Boning. Concept of the F Distribution 
+Assume we have a normally 
+We generate two different 
+random samples from the 
+In each case, we calculate a 
+sample variance 
+What range will the rat
+these two variances take? 
+Purely by chance (due to 
+sampling) we get a range of 
+ratios even though drawing from same population Example: 
+Assume ~ N(0,1) 
+Take samples of size 
+Ca cu ate s and s and take ratio 
+95% confidence interval on rat
+Large range in rat
+32 ll 
+i
+ H0 
+ 
+ i ly 
+ H1 
+ l )
+l) 
+ 
+jH0 l to 
+) H0 i
+Copyright 2003  Duane S. Boning.Hypothesis Testing 
+A statistical hypothesis is a statement about the parameters of a 
+probability distr bution 
+is the null hypothesis 
+E.g.   
+Would ind cate that the machine is working correct
+is the alternative hypothesis 
+E . g . 
+Indicates an undesirab e change (mean shift  in the machine 
+operation (perhaps a worn too
+In general, we formulate our hypothesis, generate a random 
+sample, compute a statistic, and then seek to re ect or fai
+reject (accept based on probabilities associated w th the 
+statistic and level of confidence we select 
+33 llx From? 
+ 
+ 
+ iss 
+ ) 
+ider H1 an 
+i i
+le ,  risks ider H0 
+l
+ 
+ i
+Copyright 2003  Duane S. Boning. Which Population is Sample 
+Two error probabilities in decision: 
+Type I error: false alarm Type II error: mPower of test (correct alarm
+Cons
+alarm condition 
+Set decis on po nt (and 
+sample size) based on 
+acceptabCons the 
+norma  condition 
+Control charts are hypothesis tests: 
+Is my process  n control or has a significant change occurred?</text>
+        </slide>
+        <slide>
+          <slideno>7</slideno>
+          <text>822 ll 
+s2
+l ion 
+li
+l i0 5 10 15 20 25 30 0 0.01 0.02 0.03 0.04 0.05 0.06 0.07 0.08 0.09 0.1 
+Copyright 2003  Duane S. Boning. Sampling: The Chi-Square Distribution 
+Typical use: find distribution 
+of variance when mean is 
+known 
+E x : 
+So if we calculate , we can use 
+know edge of chi-square distribut
+to put bounds on where we be eve 
+the actual (popu ation) variance s ts 
+23 ll  
+k  , tk  N(0,1) 
+ xi ~ N(, 2)
+ (
+i
+Copyright 2003  Duane S. Boning.Typical use: Find dist ribution of average when is NOT known 
+F o r 
+Consider  . Then 
+This is just the normalized distance from mean normalized 
+to our estimate of the sample var ance) Sampling: The Student-t Distribution 
+24 ll 
+ n 
+ 
+  
+i ion: 
+i i
+i ion) 
+Copyright 2003  Duane S. Boning. Back to our Example 
+Suppose we do not know either the variance or the mean in 
+our parts population: 
+We take our sample of size = 50, and calculate 
+Best estimate of population mean and variance (std.dev.)? If had to pick a range where would be 95% of time? 
+Have to use the appropriate sampling d stribut
+In th s case  the t-distribut on (rather than normal 
+distr but</text>
+        </slide>
+        <slide>
+          <slideno>0</slideno>
+          <text>11 Copyright 2003  Duane S. Boning. SMA 6304 / MIT 2.853 / MIT 2.854 
+Manufacturing Systems 
+Lecture 9: Statistical Inference 
+Lecturer: Prof. Duane S. Boning 
+Agenda 
+1. Review: Probability Distributions &amp; Random Variables 
+2.	Sampling : Key distributions arising in sampling 
+	Chi-square, t, and F distributions 
+3.	Estimation : 
+Reasoning about the population based on a sample 
+4.	Some basic confidence intervals 
+	Estimate of mean with variance known 
+	Estimate of mean with variance not known 
+	Estimate of variance 
+5.	Hypothesis tests 
+Copyright 2003  Duane S. Boning.
+3 llDiscrete Distribution: Bernoulli 
+ i
+ 
+x p 
+1 -p 
+0 1   
+Copyright 2003  Duane S. Boning. Bernoulli trial: an experiment w th two outcomes 
+Probability mass function (pmf): 
+f(x) 2</text>
+        </slide>
+        <slide>
+          <slideno>9</slideno>
+          <text>1028 ll i
+ 2 i
+Copyright 2003  Duane S. Boning. Confidence Intervals: Estimate of Variance 
+The appropriate sampling distribution is the Ch -square 
+Because s asymmetric, c.i. bounds not symmetric. 
+29 ll0 10 20 30 40 50 60 70 80 90 1000 0.005 0.01 0.015 0.02 0.025 0.03 0.035 0.04 0.045 
+Example, Contd 
+ sT 2 = 
+ith n 
+Copyright 2003  Duane S. Boning. Fourth question: for our example (where we observed 
+102.3) w = 50 samples, what is the 95% confidence interval 
+for the population variance? 
+30 ll 
+l
+ x ~ N(x, 2 
+x)1, x2 n 
+ y ~ N(y, 2 
+y) 1, y2 m 
+ 
+or 
+Copyright 2003  Duane S. Boning. Sampling: The F Distribution 
+Typical use: compare the spread of two populations 
+E x a m p e : 
+ from which we sample x , , x
+from which we sample y , , y
+Then</text>
+        </slide>
+        <slide>
+          <slideno>8</slideno>
+          <text>925 ll 
+ 
+ ith 
+(1-)
+ibuti i
+i i
+i
+Copyright 2003  Duane S. Boning. Confidence Intervals: Variance Unknown 
+Case where we dont know variance a priori 
+Now we have to estimate not only the mean based on 
+our data, but also estimate the variance 
+Our estimate of the mean to some interval w
+100% confidence becomes 
+Note that the t distr on is slightly w der than the normal 
+distribut on, so that our conf dence interval on the true mean is 
+not as t ght as when we know the variance. 
+26 ll
+Example, Contd 
+ l
+ 
+? 
+n = 50 
+is 
+l i
+i i il 
+Copyright 2003  Duane S. Boning. Third question: can we use know edge of  distribution to 
+reason about the actual (population) mean given observed 
+(sample) mean  even though we werent told 
+t distribution 
+slight y w der than 
+gauss an d stribut on 95% confidence interva
+27 ll 
+Copyright 2003  Duane S. Boning.Once More to Our Example 
+Fourth question: how about a c onfidence interval on our 
+estimate of the variance of the thickness of our parts, based on 
+our 50 observations?</text>
+        </slide>
+        <slide>
+          <slideno>1</slideno>
+          <text>24 llDiscrete Distribution: Binomial 
+ 
+ n 
+ p 
+ x 
+Copyright 2003  Duane S. Boning. Repeated random Bernoulli trials 
+is the number of trials 
+is the probability of success on any one trial 
+is the number of successes in n trials 
+5 llDiscrete Distribution: Poisson 
+ i n is 
+large and p 
+ 
+ i )
+ l
+ 
+ 
+Copyright 2003  Duane S. Boning. Poisson is a good approximation to B nomial when 
+is small (&lt; 0.1) Example applications: 
+# m sprints on page(s  of a book 
+# transistors which fai  on first day of operation Mean: 
+Variance: 
+6 ll 
+ 
+ i
+Copyright 2003  Duane S. Boning.  Continuous Distributions 
+Uniform Distribution 
+Normal Distribution 
+Unit (Standard) Normal D stribution</text>
+        </slide>
+      </slides>
+      <videos/>
+    </lecture>
+    <lecture>
+      <lecture_title>Hypothesis Tests and Control Chart Introduction (PDF)</lecture_title>
+      <lecture_pdf_url>https://ocw.mit.edu/courses/6-780-semiconductor-manufacturing-spring-2003/resources/ln4controlchatc/</lecture_pdf_url>
+      <lectureno>4</lectureno>
+      <slides>
+        <slide>
+          <slideno>4</slideno>
+          <text></text>
+        </slide>
+        <slide>
+          <slideno>17</slideno>
+          <text></text>
+        </slide>
+        <slide>
+          <slideno>8</slideno>
+          <text></text>
+        </slide>
+        <slide>
+          <slideno>19</slideno>
+          <text></text>
+        </slide>
+        <slide>
+          <slideno>10</slideno>
+          <text></text>
+        </slide>
+        <slide>
+          <slideno>1</slideno>
+          <text></text>
+        </slide>
+        <slide>
+          <slideno>21</slideno>
+          <text></text>
+        </slide>
+        <slide>
+          <slideno>12</slideno>
+          <text></text>
+        </slide>
+        <slide>
+          <slideno>3</slideno>
+          <text></text>
+        </slide>
+        <slide>
+          <slideno>14</slideno>
+          <text></text>
+        </slide>
+        <slide>
+          <slideno>5</slideno>
+          <text></text>
+        </slide>
+        <slide>
+          <slideno>16</slideno>
+          <text></text>
+        </slide>
+        <slide>
+          <slideno>7</slideno>
+          <text></text>
+        </slide>
+        <slide>
+          <slideno>18</slideno>
+          <text></text>
+        </slide>
+        <slide>
+          <slideno>20</slideno>
+          <text></text>
+        </slide>
+        <slide>
+          <slideno>9</slideno>
+          <text></text>
+        </slide>
+        <slide>
+          <slideno>0</slideno>
+          <text></text>
+        </slide>
+        <slide>
+          <slideno>11</slideno>
+          <text></text>
+        </slide>
+        <slide>
+          <slideno>2</slideno>
+          <text></text>
+        </slide>
+        <slide>
+          <slideno>13</slideno>
+          <text></text>
+        </slide>
+        <slide>
+          <slideno>15</slideno>
+          <text></text>
+        </slide>
+        <slide>
+          <slideno>6</slideno>
+          <text></text>
+        </slide>
+      </slides>
+      <videos/>
+    </lecture>
+    <lecture>
+      <lecture_title>Statistics Review: Distributions (PDF)</lecture_title>
+      <lecture_pdf_url>https://ocw.mit.edu/courses/6-780-semiconductor-manufacturing-spring-2003/resources/ln2estimation/</lecture_pdf_url>
+      <lectureno>2</lectureno>
+      <slides>
+        <slide>
+          <slideno>4</slideno>
+          <text></text>
+        </slide>
+        <slide>
+          <slideno>0</slideno>
+          <text></text>
+        </slide>
+        <slide>
+          <slideno>2</slideno>
+          <text></text>
+        </slide>
+        <slide>
+          <slideno>3</slideno>
+          <text></text>
+        </slide>
+        <slide>
+          <slideno>5</slideno>
+          <text></text>
+        </slide>
+        <slide>
+          <slideno>6</slideno>
+          <text></text>
+        </slide>
+        <slide>
+          <slideno>1</slideno>
+          <text></text>
+        </slide>
+      </slides>
+      <videos/>
+    </lecture>
+    <lecture>
+      <lecture_title>Advanced Control Charts, Nested Variance&#160;(PDF)</lecture_title>
+      <lecture_pdf_url>https://ocw.mit.edu/courses/6-780-semiconductor-manufacturing-spring-2003/resources/ln5advcontrol/</lecture_pdf_url>
+      <lectureno>6</lectureno>
+      <slides>
+        <slide>
+          <slideno>4</slideno>
+          <text></text>
+        </slide>
+        <slide>
+          <slideno>0</slideno>
+          <text></text>
+        </slide>
+        <slide>
+          <slideno>7</slideno>
+          <text></text>
+        </slide>
+        <slide>
+          <slideno>2</slideno>
+          <text></text>
+        </slide>
+        <slide>
+          <slideno>8</slideno>
+          <text></text>
+        </slide>
+        <slide>
+          <slideno>3</slideno>
+          <text></text>
+        </slide>
+        <slide>
+          <slideno>5</slideno>
+          <text></text>
+        </slide>
+        <slide>
+          <slideno>6</slideno>
+          <text></text>
+        </slide>
+        <slide>
+          <slideno>1</slideno>
+          <text></text>
+        </slide>
+      </slides>
+      <videos/>
+    </lecture>
+    <lecture>
+      <lecture_title>MANOVA, Factorial Experiments (PDF)
+Quiz #1</lecture_title>
+      <lecture_pdf_url>https://ocw.mit.edu/courses/6-780-semiconductor-manufacturing-spring-2003/resources/ln7manova/</lecture_pdf_url>
+      <lectureno>9</lectureno>
+      <slides>
+        <slide>
+          <slideno>9</slideno>
+          <text></text>
+        </slide>
+        <slide>
+          <slideno>4</slideno>
+          <text></text>
+        </slide>
+        <slide>
+          <slideno>0</slideno>
+          <text></text>
+        </slide>
+        <slide>
+          <slideno>11</slideno>
+          <text></text>
+        </slide>
+        <slide>
+          <slideno>12</slideno>
+          <text></text>
+        </slide>
+        <slide>
+          <slideno>7</slideno>
+          <text></text>
+        </slide>
+        <slide>
+          <slideno>2</slideno>
+          <text></text>
+        </slide>
+        <slide>
+          <slideno>13</slideno>
+          <text></text>
+        </slide>
+        <slide>
+          <slideno>8</slideno>
+          <text></text>
+        </slide>
+        <slide>
+          <slideno>3</slideno>
+          <text></text>
+        </slide>
+        <slide>
+          <slideno>14</slideno>
+          <text></text>
+        </slide>
+        <slide>
+          <slideno>15</slideno>
+          <text></text>
+        </slide>
+        <slide>
+          <slideno>10</slideno>
+          <text></text>
+        </slide>
+        <slide>
+          <slideno>5</slideno>
+          <text></text>
+        </slide>
+        <slide>
+          <slideno>6</slideno>
+          <text></text>
+        </slide>
+        <slide>
+          <slideno>1</slideno>
+          <text></text>
+        </slide>
+      </slides>
+      <videos/>
+    </lecture>
+    <lecture>
+      <lecture_title>Run by Run Control (PDF)</lecture_title>
+      <lecture_pdf_url>https://ocw.mit.edu/courses/6-780-semiconductor-manufacturing-spring-2003/resources/ln17runbyrun/</lecture_pdf_url>
+      <lectureno>17</lectureno>
+      <slides>
+        <slide>
+          <slideno>9</slideno>
+          <text></text>
+        </slide>
+        <slide>
+          <slideno>4</slideno>
+          <text></text>
+        </slide>
+        <slide>
+          <slideno>0</slideno>
+          <text></text>
+        </slide>
+        <slide>
+          <slideno>11</slideno>
+          <text></text>
+        </slide>
+        <slide>
+          <slideno>12</slideno>
+          <text></text>
+        </slide>
+        <slide>
+          <slideno>7</slideno>
+          <text></text>
+        </slide>
+        <slide>
+          <slideno>2</slideno>
+          <text></text>
+        </slide>
+        <slide>
+          <slideno>8</slideno>
+          <text></text>
+        </slide>
+        <slide>
+          <slideno>3</slideno>
+          <text></text>
+        </slide>
+        <slide>
+          <slideno>10</slideno>
+          <text></text>
+        </slide>
+        <slide>
+          <slideno>5</slideno>
+          <text></text>
+        </slide>
+        <slide>
+          <slideno>6</slideno>
+          <text></text>
+        </slide>
+        <slide>
+          <slideno>1</slideno>
+          <text></text>
+        </slide>
+      </slides>
+      <videos/>
+    </lecture>
+    <lecture>
+      <lecture_title>Planning (PDF)</lecture_title>
+      <lecture_pdf_url>https://ocw.mit.edu/courses/6-780-semiconductor-manufacturing-spring-2003/resources/ln21prodplan/</lecture_pdf_url>
+      <lectureno>20</lectureno>
+      <slides>
+        <slide>
+          <slideno>4</slideno>
+          <text></text>
+        </slide>
+        <slide>
+          <slideno>0</slideno>
+          <text></text>
+        </slide>
+        <slide>
+          <slideno>2</slideno>
+          <text></text>
+        </slide>
+        <slide>
+          <slideno>3</slideno>
+          <text></text>
+        </slide>
+        <slide>
+          <slideno>5</slideno>
+          <text></text>
+        </slide>
+        <slide>
+          <slideno>1</slideno>
+          <text></text>
+        </slide>
+      </slides>
+      <videos/>
+    </lecture>
+    <lecture>
+      <lecture_title>Scheduling (PDF)
+Quiz #2</lecture_title>
+      <lecture_pdf_url>https://ocw.mit.edu/courses/6-780-semiconductor-manufacturing-spring-2003/resources/ln19schedule/</lecture_pdf_url>
+      <lectureno>19</lectureno>
+      <slides>
+        <slide>
+          <slideno>9</slideno>
+          <text></text>
+        </slide>
+        <slide>
+          <slideno>4</slideno>
+          <text></text>
+        </slide>
+        <slide>
+          <slideno>0</slideno>
+          <text></text>
+        </slide>
+        <slide>
+          <slideno>7</slideno>
+          <text></text>
+        </slide>
+        <slide>
+          <slideno>2</slideno>
+          <text></text>
+        </slide>
+        <slide>
+          <slideno>8</slideno>
+          <text></text>
+        </slide>
+        <slide>
+          <slideno>3</slideno>
+          <text></text>
+        </slide>
+        <slide>
+          <slideno>5</slideno>
+          <text></text>
+        </slide>
+        <slide>
+          <slideno>6</slideno>
+          <text></text>
+        </slide>
+        <slide>
+          <slideno>1</slideno>
+          <text></text>
+        </slide>
+      </slides>
+      <videos/>
+    </lecture>
+  </lectures>
+</doc>
