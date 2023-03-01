@@ -11,6 +11,41 @@ import math
 from common import Course, Lectures, Slides, Video, Slice, CourseProviders, XMLHandler, link_join
 import argparse
 import os
+from threading import Thread
+import functools
+from alive_progress import alive_bar
+
+
+# Custom exception for timeout
+class TimeoutException(Exception):
+    def __init__(self, *args: object) -> None:
+        super().__init__(*args)
+
+
+def timeout(timeout):
+    def deco(func):
+        @functools.wraps(func)
+        def wrapper(*args, **kwargs):
+            res = [TimeoutException('function [%s] timeout [%s seconds] exceeded!' % (func.__name__, timeout))]
+            def newFunc():
+                try:
+                    res[0] = func(*args, **kwargs)
+                except Exception as e:
+                    res[0] = e
+            t = Thread(target=newFunc)
+            t.daemon = True
+            try:
+                t.start()
+                t.join(timeout)
+            except Exception as je:
+                print ('error starting thread')
+                raise je
+            ret = res[0]
+            if isinstance(ret, BaseException):
+                raise ret
+            return ret
+        return wrapper
+    return deco
 
 
 class Scraper:
@@ -134,18 +169,20 @@ class Scraper:
 
         # Get content of each lecture (each PDF link for a course)
         lectures = Lectures()
-        for i, (lecture_title, lecture_pdf_url, lecture_num) in enumerate(lec_num_to_link):
-            # Get lecture slide content
-            slides = self.get_pdf_data(lecture_pdf_url)
-            # Get video content (assuming in same order as lecture slides)
-            if videos:
-                try:
-                    video = videos[i]
-                except IndexError:
+        with alive_bar(len(lec_num_to_link), dual_line=True, title='Load Lectures for {}'.format(course_link)) as bar:
+            for i, (lecture_title, lecture_pdf_url, lecture_num) in enumerate(lec_num_to_link):
+                # Get lecture slide content
+                slides = self.get_pdf_data(lecture_pdf_url)
+                # Get video content (assuming in same order as lecture slides)
+                if videos:
+                    try:
+                        video = videos[i]
+                    except IndexError:
+                        video = None
+                else:
                     video = None
-            else:
-                video = None
-            lectures.add_lecture(lecture_title, lecture_pdf_url, lecture_num, slides, (video))
+                lectures.add_lecture(lecture_title, lecture_pdf_url, lecture_num, slides, (video))
+                bar()
 
         return lectures
 
@@ -322,6 +359,16 @@ class Scraper:
         raw_data = response.content
 
         slides = Slides()
+        try:
+            slides = self.get_slides(raw_data, link)
+        except TimeoutException:
+            print("Timed out whilst reading PDF slides")
+            slides = None #handle errors here
+        return slides   
+    
+    @timeout(60)
+    def get_slides(self, raw_data, link):
+        slides = Slides()
         with BytesIO(raw_data) as data:
             try:
                 read_pdf = PyPDF2.PdfReader(data)
@@ -339,7 +386,7 @@ class Scraper:
 
 if __name__ == '__main__':
     parser = argparse.ArgumentParser()
-    parser.add_argument('-c', '--count', default=200, type=int)
+    parser.add_argument('-c', '--count', default=400, type=int)
     parser.add_argument('-s', '--skip', default=1, type=int)
     args = parser.parse_args()
 
