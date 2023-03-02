@@ -2,6 +2,7 @@ import sqlite3
 import os
 import xml.etree.ElementTree as ET
 from enum import Enum
+from alive_progress import alive_bar
 
 
 class DatabaseCaller:
@@ -21,9 +22,9 @@ class DatabaseCaller:
     def query(self, query, single_result=False, *args):
         self.c.execute(query, args)
         if single_result:
-            print(self.c.fetchone())
+            return self.c.fetchone()
         else:
-            print(self.c.fetchall())
+            return self.c.fetchall()
 
 
 class DatabaseHandler:
@@ -57,10 +58,16 @@ class DatabaseHandler:
     def fill_db(self):
         # Go through MIT files first
         print("\n========= MIT ===========\n")
-        for f in os.listdir(self.MIT_DIR):
-            print("{}\n".format(f))
-            self.index_xml(os.path.join(self.MIT_DIR, f))
-            self.course_id += 1
+        with alive_bar(len(os.listdir(self.MIT_DIR)), dual_line=True, title='Inserting into database') as bar:
+            for f in os.listdir(self.MIT_DIR):
+                bar.text = f
+                # check that its an XML file
+                dot_split = f.split('.')
+                if (len(dot_split) < 2) or (dot_split[1] != 'xml'):
+                    continue
+                self.index_xml(os.path.join(self.MIT_DIR, f))
+                self.course_id += 1
+                bar()
         print("\n========= KHAN ACADEMY ===========\n")
         for f in os.listdir(self.KHAN_DIR):
             print("{}\n".format(f))
@@ -80,9 +87,10 @@ class DatabaseHandler:
         self.conn_meta.commit()
 
     def add_page_metadata(self, doc_id, slide_id, slide_text):
-        query = ("INSERT INTO slide_metadata VALUES (?, ?, ?)")
-        self.c.execute(query, [doc_id, slide_id, slide_text])
-        self.conn_meta.commit()
+        # query = ("INSERT INTO slide_metadata VALUES (?, ?, ?)")
+        # self.c.execute(query, [doc_id, slide_id, slide_text])
+        # self.conn_meta.commit()
+        pass
 
     def index_xml(self, filein):
         tree = ET.parse(filein)
